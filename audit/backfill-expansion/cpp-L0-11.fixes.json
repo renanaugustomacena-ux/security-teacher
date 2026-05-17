@@ -1,0 +1,1204 @@
+{
+  "fixes": [
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_1",
+      "english": "Class",
+      "set": {
+        "code": "class Dog {\npublic:\n    std::string name;\n    void bark() { std::cout << \"Woof!\\n\"; }\n};"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_1",
+      "english": "Object",
+      "set": {
+        "code": "Dog rex;\nrex.name = \"Rex\";\nrex.bark();"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_1",
+      "english": "Namespace",
+      "set": {
+        "code": "namespace app {\n    int version = 1;\n    void run() { std::cout << version; }\n}"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_1",
+      "english": "std::cout",
+      "set": {
+        "code": "int age = 25;\nstd::cout << \"Age: \" << age << \"\\n\";"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_1",
+      "english": "std::cin",
+      "set": {
+        "code": "int n;\nstd::cout << \"Enter a number: \";\nstd::cin >> n;"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_1",
+      "english": "Stream Insertion",
+      "set": {
+        "code": "int x = 10;\nstd::string label = \"value\";\nstd::cout << label << \" = \" << x << \"\\n\";"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_1",
+      "english": "Main Function",
+      "set": {
+        "code": "int main() {\n    std::cout << \"Hello, World!\\n\";\n    return 0;\n}"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_2",
+      "english": "New Operator",
+      "set": {
+        "code": "int* p = new int(5);\nstd::cout << *p << \"\\n\";\ndelete p;"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_2",
+      "english": "Pointer",
+      "set": {
+        "code": "int x = 42;\nint* p = &x;\nstd::cout << \"Value: \" << *p;"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_2",
+      "english": "Dereference",
+      "set": {
+        "code": "int x = 10;\nint* p = &x;\nint v = *p;\nstd::cout << v;"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_2",
+      "english": "Null Pointer",
+      "set": {
+        "code": "int* p = nullptr;\nif (p == nullptr) {\n    std::cout << \"Pointer is null\\n\";\n}"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_2",
+      "english": "Array New",
+      "set": {
+        "code": "int* arr = new int[5];\narr[0] = 10;\nstd::cout << arr[0];\ndelete[] arr;"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_4",
+      "english": "Floating Point",
+      "set": {
+        "code": "double pi = 3.14159;\ndouble r = 5.0;\nstd::cout << \"Area: \" << pi * r * r;"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_4",
+      "english": "Character",
+      "set": {
+        "code": "char c = 'A';\nchar next = c + 1;\nstd::cout << c << \" \" << next;"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_4",
+      "english": "Boolean",
+      "set": {
+        "code": "bool ready = true;\nbool done = false;\nstd::cout << std::boolalpha << ready << \" \" << done;"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_4",
+      "english": "Void",
+      "set": {
+        "code": "void greet() {\n    std::cout << \"Hello!\\n\";\n}\n// greet(); // call it"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_4",
+      "english": "Type Cast",
+      "set": {
+        "code": "double d = 3.99;\nint x = static_cast<int>(d);\nstd::cout << x; // prints 3"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_5",
+      "english": "Reference",
+      "set": {
+        "code": "int x = 10;\nint& r = x;\nr = 20;\nstd::cout << x; // prints 20"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_5",
+      "english": "Pass by Reference",
+      "set": {
+        "code": "void inc(int& n) { ++n; }\nint x = 5;\ninc(x);\nstd::cout << x; // 6"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_5",
+      "english": "Pass by Value",
+      "set": {
+        "code": "void f(int n) { n = 99; }\nint x = 5;\nf(x);\nstd::cout << x; // still 5"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_5",
+      "english": "Range For Loop",
+      "set": {
+        "code": "std::vector<int> vec = {1, 2, 3};\nfor (auto& x : vec) {\n    std::cout << x << \" \";\n}"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_6",
+      "english": "Function Overloading",
+      "set": {
+        "code": "int add(int a, int b) { return a + b; }\ndouble add(double a, double b) { return a + b; }\nstd::cout << add(1, 2) << \" \" << add(1.5, 2.5);"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_6",
+      "english": "Default Argument",
+      "set": {
+        "code": "void greet(std::string name = \"World\") {\n    std::cout << \"Hello, \" << name << \"!\\n\";\n}\n// greet(); greet(\"Alice\");"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_6",
+      "english": "Inline Function",
+      "set": {
+        "code": "inline int sq(int x) { return x * x; }\nint result = sq(5);\nstd::cout << result; // 25"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_6",
+      "english": "String Concatenation",
+      "set": {
+        "code": "std::string a = \"Hello\";\nstd::string b = \" World\";\nstd::string s = a + b;\nstd::cout << s;"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_7",
+      "english": "Enum",
+      "set": {
+        "code": "enum Color { RED, GREEN, BLUE };\nColor c = GREEN;\nstd::cout << c; // prints 1"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_7",
+      "english": "Enum Class",
+      "set": {
+        "code": "enum class Color { Red, Green, Blue };\nColor c = Color::Green;\nif (c == Color::Green) std::cout << \"Green\";"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_7",
+      "english": "Switch Statement",
+      "set": {
+        "code": "int x = 2;\nswitch (x) {\n    case 1: std::cout << \"one\"; break;\n    case 2: std::cout << \"two\"; break;\n    default: std::cout << \"other\";\n}"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_7",
+      "english": "Constexpr",
+      "set": {
+        "code": "constexpr int sq(int x) { return x * x; }\nconstexpr int val = sq(5);\nstd::cout << val; // 25"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_8",
+      "english": "File Stream",
+      "set": {
+        "code": "std::ifstream f(\"data.txt\");\nstd::string line;\nwhile (std::getline(f, line)) {\n    std::cout << line << \"\\n\";\n}"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_8",
+      "english": "Output File Stream",
+      "set": {
+        "code": "std::ofstream out(\"log.txt\");\nout << \"Hello file!\" << std::endl;\nout.close();"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_8",
+      "english": "GetLine",
+      "set": {
+        "code": "std::string line;\nstd::cout << \"Enter text: \";\nstd::getline(std::cin, line);\nstd::cout << \"You said: \" << line;"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_1",
+      "english": "Member Variable",
+      "set": {
+        "code": "class Circle {\npublic:\n    double radius = 1.0;\n    double area() { return 3.14 * radius * radius; }\n};"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_1",
+      "english": "Member Function",
+      "set": {
+        "code": "class Greeter {\npublic:\n    void hello() { std::cout << \"Hello!\\n\"; }\n};\nGreeter g; g.hello();"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_1",
+      "english": "Constructor",
+      "set": {
+        "code": "class Box {\n    int size;\npublic:\n    Box(int s) : size(s) {}\n    int getSize() { return size; }\n};"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_1",
+      "english": "Destructor",
+      "set": {
+        "code": "class Logger {\npublic:\n    Logger() { std::cout << \"Created\\n\"; }\n    ~Logger() { std::cout << \"Destroyed\\n\"; }\n};"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_1",
+      "english": "Class Definition",
+      "set": {
+        "code": "class Box {\n    int width, height;\npublic:\n    Box(int w, int h) : width(w), height(h) {}\n    int area() { return width * height; }\n};"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_1",
+      "english": "Struct",
+      "set": {
+        "code": "struct Point {\n    int x, y;\n};\nPoint p{3, 4};\nstd::cout << p.x << \", \" << p.y;"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_2",
+      "english": "Getter",
+      "set": {
+        "code": "class Account {\n    int balance = 0;\npublic:\n    int getBalance() const { return balance; }\n};"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_3",
+      "english": "Copy Constructor",
+      "set": {
+        "code": "class Buf {\n    int* data;\npublic:\n    Buf(const Buf& o) : data(new int(*o.data)) {}\n};"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_3",
+      "english": "Move Constructor",
+      "set": {
+        "code": "class Buf {\n    int* data;\npublic:\n    Buf(Buf&& o) noexcept : data(o.data) { o.data = nullptr; }\n};"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_3",
+      "english": "Delegating Constructor",
+      "set": {
+        "code": "class Box {\n    int w, h;\npublic:\n    Box(int w, int h) : w(w), h(h) {}\n    Box() : Box(1, 1) {}\n};"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_3",
+      "english": "Deleted Function",
+      "set": {
+        "code": "class Singleton {\npublic:\n    Singleton(const Singleton&) = delete;\n    Singleton& operator=(const Singleton&) = delete;\n};"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_4",
+      "english": "Static Member",
+      "set": {
+        "code": "class Counter {\npublic:\n    static int count;\n    Counter() { ++count; }\n};\nint Counter::count = 0;"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_4",
+      "english": "Singleton",
+      "set": {
+        "code": "class DB {\npublic:\n    static DB& instance() {\n        static DB db;\n        return db;\n    }\n};"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cpp_oop_5",
+      "english": "Base Class",
+      "set": {
+        "code": "class Animal {\npublic:\n    std::string name;\n    void eat() { std::cout << name << \" eats\\n\"; }\n};"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cpp_oop_5",
+      "english": "Derived Class",
+      "set": {
+        "code": "class Dog : public Animal {\npublic:\n    void bark() { std::cout << \"Woof!\\n\"; }\n};"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cpp_oop_5",
+      "english": "Constructor Chaining",
+      "set": {
+        "code": "class Animal {\npublic:\n    Animal(std::string n) : name(n) {}\n    std::string name;\n};\nclass Dog : public Animal {\npublic:\n    Dog() : Animal(\"dog\") {}\n};"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cpp_oop_6",
+      "english": "Virtual Function",
+      "set": {
+        "code": "class Shape {\npublic:\n    virtual double area() { return 0; }\n};\nclass Circle : public Shape {\n    double r;\npublic:\n    double area() override { return 3.14 * r * r; }\n};"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cpp_oop_6",
+      "english": "Override Keyword",
+      "set": {
+        "code": "class Base {\npublic:\n    virtual void speak() { std::cout << \"...\\n\"; }\n};\nclass Dog : public Base {\npublic:\n    void speak() override { std::cout << \"Woof!\\n\"; }\n};"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cpp_oop_7",
+      "english": "Abstract Class",
+      "set": {
+        "code": "class Shape {\npublic:\n    virtual double area() = 0;\n    virtual ~Shape() = default;\n};"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cpp_oop_8",
+      "english": "Polymorphic Container",
+      "set": {
+        "code": "std::vector<std::unique_ptr<Animal>> zoo;\nzoo.push_back(std::make_unique<Dog>());\nzoo.push_back(std::make_unique<Cat>());"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cpp_oop_8",
+      "english": "Down-Cast",
+      "set": {
+        "code": "Animal* a = new Dog();\nDog* d = dynamic_cast<Dog*>(a);\nif (d) d->bark();"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cpp_oop_9",
+      "english": "typeid",
+      "set": {
+        "code": "Animal* a = new Dog();\nstd::cout << typeid(*a).name();\ndelete a;"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cpp_oop_9",
+      "english": "Dynamic Cast",
+      "set": {
+        "code": "Animal* a = getAnimal();\nif (auto* d = dynamic_cast<Dog*>(a)) {\n    d->bark();\n}"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cpp_oop_10",
+      "english": "Sealed Class",
+      "set": {
+        "code": "class Leaf final {\npublic:\n    int value;\n    Leaf(int v) : value(v) {}\n};\n// class Sub : public Leaf {}; // ERROR"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cpp_oop_12",
+      "english": "Variant Polymorphism",
+      "set": {
+        "code": "std::variant<Cat, Dog> pet = Dog{};\nstd::visit([](auto& a) { a.speak(); }, pet);"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cpp_oop_12",
+      "english": "CRTP",
+      "set": {
+        "code": "template<class Derived>\nstruct Base {\n    void call() { static_cast<Derived*>(this)->impl(); }\n};\nstruct MyClass : Base<MyClass> {\n    void impl() { std::cout << \"Hello\\n\"; }\n};"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cpp_oop_13",
+      "english": "Operator Overloading",
+      "set": {
+        "code": "struct Vec {\n    double x, y;\n    Vec operator+(const Vec& o) const {\n        return {x + o.x, y + o.y};\n    }\n};"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cpp_oop_13",
+      "english": "Increment Operator",
+      "set": {
+        "code": "struct Counter {\n    int n = 0;\n    Counter& operator++() { ++n; return *this; }\n};\nCounter c; ++c;"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cpp_oop_14",
+      "english": "Equality Operator",
+      "set": {
+        "code": "struct Point {\n    int x, y;\n    bool operator==(const Point& o) const {\n        return x == o.x && y == o.y;\n    }\n};"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cpp_oop_14",
+      "english": "Spaceship Operator",
+      "set": {
+        "code": "struct Point {\n    int x, y;\n    auto operator<=>(const Point&) const = default;\n};\nPoint a{1,2}, b{1,3};\nbool lt = (a < b); // true"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cpp_oop_14",
+      "english": "Implicit Bool",
+      "set": {
+        "code": "struct Valid {\n    bool ok;\n    explicit operator bool() const { return ok; }\n};\nValid v{true};\nif (v) std::cout << \"valid\";"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cpp_oop_15",
+      "english": "Stream Operator",
+      "set": {
+        "code": "struct Point { int x, y; };\nstd::ostream& operator<<(std::ostream& os, const Point& p) {\n    return os << \"(\" << p.x << \",\" << p.y << \")\";\n}"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cpp_oop_15",
+      "english": "Subscript Operator",
+      "set": {
+        "code": "class Array {\n    int data[10];\npublic:\n    int& operator[](size_t i) { return data[i]; }\n};"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cpp_oop_15",
+      "english": "Function Call Operator",
+      "set": {
+        "code": "struct Square {\n    int operator()(int x) const { return x * x; }\n};\nSquare sq;\nstd::cout << sq(5); // 25"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cpp_oop_16",
+      "english": "User-Defined Literal",
+      "set": {
+        "code": "constexpr long double operator\"\" _km(long double d) {\n    return d * 1000.0;\n}\nauto dist = 5.0_km; // 5000.0"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_1",
+      "english": "Vector",
+      "set": {
+        "code": "std::vector<int> v = {1, 2, 3};\nv.push_back(4);\nfor (int x : v) std::cout << x << \" \";"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_1",
+      "english": "List",
+      "set": {
+        "code": "std::list<int> l = {3, 1, 2};\nl.push_front(0);\nl.sort();\nfor (int x : l) std::cout << x << \" \";"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_1",
+      "english": "Deque",
+      "set": {
+        "code": "std::deque<int> dq;\ndq.push_back(1);\ndq.push_front(0);\nstd::cout << dq.front() << \" \" << dq.back();"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_1",
+      "english": "Array",
+      "set": {
+        "code": "std::array<int, 3> a = {10, 20, 30};\nfor (int x : a) std::cout << x << \" \";\nstd::cout << \"size: \" << a.size();"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_1",
+      "english": "Emplace Back",
+      "set": {
+        "code": "struct Point { int x, y; };\nstd::vector<Point> pts;\npts.emplace_back(3, 4);\nstd::cout << pts[0].x; // 3"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_2",
+      "english": "Map",
+      "set": {
+        "code": "std::map<std::string, int> ages;\nages[\"Alice\"] = 30;\nages[\"Bob\"] = 25;\nfor (auto& [k, v] : ages) std::cout << k << \": \" << v << \"\\n\";"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_2",
+      "english": "Set",
+      "set": {
+        "code": "std::set<int> s = {3, 1, 2, 1};\nfor (int x : s) std::cout << x << \" \";\n// prints 1 2 3 (sorted, unique)"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_2",
+      "english": "Unordered Map",
+      "set": {
+        "code": "std::unordered_map<std::string, int> m;\nm[\"key\"] = 42;\nif (m.count(\"key\")) {\n    std::cout << m[\"key\"];\n}"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_2",
+      "english": "Find",
+      "set": {
+        "code": "std::map<std::string, int> m = {{\"a\", 1}};\nauto it = m.find(\"a\");\nif (it != m.end()) std::cout << it->second;"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_2",
+      "english": "Insert",
+      "set": {
+        "code": "std::map<std::string, int> m;\nauto [it, ok] = m.insert({\"key\", 42});\nif (ok) std::cout << \"Inserted: \" << it->second;"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_3",
+      "english": "Stack Adapter",
+      "set": {
+        "code": "std::stack<int> st;\nst.push(1);\nst.push(2);\nstd::cout << st.top(); // 2\nst.pop();"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_3",
+      "english": "Queue Adapter",
+      "set": {
+        "code": "std::queue<int> q;\nq.push(10);\nq.push(20);\nstd::cout << q.front(); // 10\nq.pop();"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_3",
+      "english": "Priority Queue",
+      "set": {
+        "code": "std::priority_queue<int> pq;\npq.push(3); pq.push(1); pq.push(5);\nstd::cout << pq.top(); // 5"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_4",
+      "english": "Iterator",
+      "set": {
+        "code": "std::vector<int> v = {10, 20, 30};\nfor (auto it = v.begin(); it != v.end(); ++it) {\n    std::cout << *it << \" \";\n}"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_5",
+      "english": "Sort",
+      "set": {
+        "code": "std::vector<int> v = {3, 1, 4, 1, 5};\nstd::sort(v.begin(), v.end());\nfor (int x : v) std::cout << x << \" \";"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_5",
+      "english": "Std Find Algorithm",
+      "set": {
+        "code": "std::vector<int> v = {10, 20, 30};\nauto it = std::find(v.begin(), v.end(), 20);\nif (it != v.end()) std::cout << \"Found at index \" << (it - v.begin());"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_5",
+      "english": "Find If",
+      "set": {
+        "code": "std::vector<int> v = {1, 2, 3, 4};\nauto it = std::find_if(v.begin(), v.end(),\n    [](int x) { return x > 2; });\nif (it != v.end()) std::cout << *it; // 3"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_5",
+      "english": "Binary Search",
+      "set": {
+        "code": "std::vector<int> v = {1, 3, 5, 7, 9};\nbool found = std::binary_search(v.begin(), v.end(), 5);\nstd::cout << std::boolalpha << found; // true"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_5",
+      "english": "Lower Bound",
+      "set": {
+        "code": "std::vector<int> v = {1, 3, 5, 7};\nauto it = std::lower_bound(v.begin(), v.end(), 4);\nstd::cout << *it; // 5 (first not less than 4)"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_5",
+      "english": "Min Element",
+      "set": {
+        "code": "std::vector<int> v = {5, 2, 8, 1, 9};\nauto it = std::min_element(v.begin(), v.end());\nstd::cout << \"Min: \" << *it; // 1"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_5",
+      "english": "Comparator",
+      "set": {
+        "code": "std::vector<int> v = {3, 1, 4, 1, 5};\nstd::sort(v.begin(), v.end(), std::greater<>{});\nfor (int x : v) std::cout << x << \" \"; // 5 4 3 1 1"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_6",
+      "english": "Transform",
+      "set": {
+        "code": "std::vector<int> a = {1, 2, 3}, b(3);\nstd::transform(a.begin(), a.end(), b.begin(),\n    [](int x) { return x * x; });\n// b = {1, 4, 9}"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_6",
+      "english": "Remove",
+      "set": {
+        "code": "std::vector<int> v = {1, 0, 2, 0, 3};\nauto it = std::remove(v.begin(), v.end(), 0);\nv.erase(it, v.end());\n// v = {1, 2, 3}"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_6",
+      "english": "Erase Remove Idiom",
+      "set": {
+        "code": "std::vector<int> v = {1, 2, 3, 2, 4};\nv.erase(std::remove(v.begin(), v.end(), 2), v.end());\nfor (int x : v) std::cout << x << \" \"; // 1 3 4"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_6",
+      "english": "Unique",
+      "set": {
+        "code": "std::vector<int> v = {1, 1, 2, 3, 3};\nauto it = std::unique(v.begin(), v.end());\nv.erase(it, v.end());\n// v = {1, 2, 3}"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_7",
+      "english": "Accumulate",
+      "set": {
+        "code": "std::vector<int> v = {1, 2, 3, 4, 5};\nint sum = std::accumulate(v.begin(), v.end(), 0);\nstd::cout << \"Sum: \" << sum; // 15"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_7",
+      "english": "Iota",
+      "set": {
+        "code": "std::vector<int> v(5);\nstd::iota(v.begin(), v.end(), 1);\nfor (int x : v) std::cout << x << \" \"; // 1 2 3 4 5"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_7",
+      "english": "Count",
+      "set": {
+        "code": "std::vector<int> v = {1, 2, 1, 3, 1};\nauto n = std::count(v.begin(), v.end(), 1);\nstd::cout << \"Count of 1: \" << n; // 3"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_7",
+      "english": "Count If",
+      "set": {
+        "code": "std::vector<int> v = {1, 2, 3, 4, 5};\nauto n = std::count_if(v.begin(), v.end(),\n    [](int x) { return x % 2 == 0; });\nstd::cout << \"Evens: \" << n; // 2"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_7",
+      "english": "All Of",
+      "set": {
+        "code": "std::vector<int> v = {2, 4, 6};\nbool allEven = std::all_of(v.begin(), v.end(),\n    [](int x) { return x % 2 == 0; });\nstd::cout << std::boolalpha << allEven; // true"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_7",
+      "english": "Any Of",
+      "set": {
+        "code": "std::vector<int> v = {1, 3, 4, 7};\nbool hasEven = std::any_of(v.begin(), v.end(),\n    [](int x) { return x % 2 == 0; });\nstd::cout << std::boolalpha << hasEven; // true"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_8",
+      "english": "Filter View",
+      "set": {
+        "code": "std::vector<int> v = {1, 2, 3, 4, 5};\nauto evens = v | std::views::filter(\n    [](int x) { return x % 2 == 0; });\nfor (int x : evens) std::cout << x << \" \"; // 2 4"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_8",
+      "english": "Transform View",
+      "set": {
+        "code": "std::vector<int> v = {1, 2, 3};\nauto sq = v | std::views::transform(\n    [](int x) { return x * x; });\nfor (int x : sq) std::cout << x << \" \"; // 1 4 9"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_8",
+      "english": "Take View",
+      "set": {
+        "code": "std::vector<int> v = {10, 20, 30, 40, 50};\nauto first3 = v | std::views::take(3);\nfor (int x : first3) std::cout << x << \" \"; // 10 20 30"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_8",
+      "english": "Pipe Operator",
+      "set": {
+        "code": "std::vector<int> v = {1, 2, 3, 4, 5};\nauto result = v\n    | std::views::filter([](int x) { return x > 2; })\n    | std::views::transform([](int x) { return x * 10; });\nfor (int x : result) std::cout << x << \" \"; // 30 40 50"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cpp_templates_1",
+      "english": "Template",
+      "set": {
+        "code": "template <typename T>\nT add(T a, T b) { return a + b; }\nauto r = add(3, 4); // 7"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cpp_templates_1",
+      "english": "Function Template",
+      "set": {
+        "code": "template<class T>\nT maxVal(T a, T b) { return (a > b) ? a : b; }\nstd::cout << maxVal(3, 7); // 7"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cpp_templates_1",
+      "english": "Template Argument",
+      "set": {
+        "code": "template<class T>\nT identity(T x) { return x; }\nauto a = identity<int>(42);\nauto b = identity<double>(3.14);"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cpp_templates_1",
+      "english": "Type Deduction",
+      "set": {
+        "code": "template<class T>\nT square(T x) { return x * x; }\nauto a = square(5);    // T = int\nauto b = square(2.5);  // T = double"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cpp_templates_2",
+      "english": "Class Template",
+      "set": {
+        "code": "template<class T>\nclass Box {\n    T value;\npublic:\n    Box(T v) : value(v) {}\n    T get() const { return value; }\n};\nBox<int> b(42);"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cpp_templates_2",
+      "english": "Specialization",
+      "set": {
+        "code": "template<class T>\nclass Printer {\npublic:\n    void print(T v) { std::cout << v; }\n};\ntemplate<>\nclass Printer<bool> {\npublic:\n    void print(bool v) { std::cout << (v ? \"true\" : \"false\"); }\n};"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cpp_templates_3",
+      "english": "Non-Type Parameter",
+      "set": {
+        "code": "template<int N>\nclass Buffer {\n    int data[N];\npublic:\n    int size() const { return N; }\n};\nBuffer<64> buf;"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cpp_templates_3",
+      "english": "Template Default Argument",
+      "set": {
+        "code": "template<class T = int>\nclass Stack {\n    std::vector<T> data;\npublic:\n    void push(T v) { data.push_back(v); }\n};\nStack<> s; // uses int"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cpp_templates_3",
+      "english": "Type Alias Template",
+      "set": {
+        "code": "template<class T>\nusing Vec = std::vector<T>;\nVec<int> numbers = {1, 2, 3};\nVec<std::string> words = {\"hi\"};"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cpp_templates_3",
+      "english": "Variable Template",
+      "set": {
+        "code": "template<class T>\nconstexpr T pi = T(3.14159265358979);\nauto f = pi<float>;\nauto d = pi<double>;"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cpp_templates_4",
+      "english": "Static Assert",
+      "set": {
+        "code": "template<class T>\nvoid process(T val) {\n    static_assert(sizeof(T) >= 4, \"Type too small\");\n}"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_1",
+      "english": "Unique Ptr",
+      "set": {
+        "code": "auto p = std::make_unique<int>(42);\nstd::cout << *p;\n// automatically deleted when p goes out of scope"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_1",
+      "english": "Make Unique",
+      "set": {
+        "code": "struct Point { int x, y; };\nauto p = std::make_unique<Point>(Point{3, 4});\nstd::cout << p->x << \", \" << p->y;"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_1",
+      "english": "Move Only",
+      "set": {
+        "code": "auto p = std::make_unique<int>(42);\nauto q = std::move(p);\n// p is now nullptr\nstd::cout << *q; // 42"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_1",
+      "english": "Custom Deleter",
+      "set": {
+        "code": "auto deleter = [](FILE* f) { fclose(f); };\nstd::unique_ptr<FILE, decltype(deleter)> file(\n    fopen(\"data.txt\", \"r\"), deleter);"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_2",
+      "english": "Shared Ptr",
+      "set": {
+        "code": "auto p = std::make_shared<int>(42);\nauto q = p; // shared ownership\nstd::cout << p.use_count(); // 2"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_2",
+      "english": "Make Shared",
+      "set": {
+        "code": "auto p = std::make_shared<std::string>(\"hello\");\nstd::cout << *p << \"\\n\";\nstd::cout << \"refs: \" << p.use_count();"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_2",
+      "english": "Reference Count",
+      "set": {
+        "code": "auto a = std::make_shared<int>(10);\nauto b = a;\nstd::cout << a.use_count(); // 2\nb.reset();\nstd::cout << a.use_count(); // 1"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_2",
+      "english": "Enable Shared From This",
+      "set": {
+        "code": "class Node : public std::enable_shared_from_this<Node> {\npublic:\n    std::shared_ptr<Node> getPtr() {\n        return shared_from_this();\n    }\n};"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_3",
+      "english": "Lock",
+      "set": {
+        "code": "auto sp = std::make_shared<int>(42);\nstd::weak_ptr<int> w = sp;\nif (auto locked = w.lock()) {\n    std::cout << *locked; // 42\n}"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_4",
+      "english": "Lock Guard",
+      "set": {
+        "code": "std::mutex m;\nvoid safe_print(const std::string& msg) {\n    std::lock_guard lk(m);\n    std::cout << msg << \"\\n\";\n}"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_1",
+      "english": "Exception",
+      "set": {
+        "code": "try {\n    throw std::runtime_error(\"boom\");\n} catch (const std::exception& e) {\n    std::cout << e.what();\n}"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_1",
+      "english": "Try Block",
+      "set": {
+        "code": "try {\n    int result = riskyOperation();\n    std::cout << result;\n} catch (...) {\n    std::cout << \"Error occurred\\n\";\n}"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_1",
+      "english": "Rethrow",
+      "set": {
+        "code": "try {\n    riskyCall();\n} catch (const std::exception& e) {\n    std::cerr << \"Log: \" << e.what();\n    throw; // rethrow to caller\n}"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_2",
+      "english": "std::exception",
+      "set": {
+        "code": "class AppError : public std::exception {\npublic:\n    const char* what() const noexcept override {\n        return \"Application error\";\n    }\n};"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_2",
+      "english": "Custom Exception",
+      "set": {
+        "code": "class NetworkErr : public std::runtime_error {\npublic:\n    NetworkErr(const std::string& msg)\n        : std::runtime_error(msg) {}\n};\nthrow NetworkErr(\"timeout\");"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_2",
+      "english": "Out of Range",
+      "set": {
+        "code": "std::vector<int> v = {1, 2, 3};\ntry {\n    v.at(10); // throws std::out_of_range\n} catch (const std::out_of_range& e) {\n    std::cerr << e.what();\n}"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_3",
+      "english": "Noexcept",
+      "set": {
+        "code": "void safeSwap(int& a, int& b) noexcept {\n    int tmp = a;\n    a = b;\n    b = tmp;\n}"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_4",
+      "english": "Optional",
+      "set": {
+        "code": "std::optional<int> findIndex(const std::vector<int>& v, int x) {\n    for (int i = 0; i < v.size(); ++i)\n        if (v[i] == x) return i;\n    return std::nullopt;\n}"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_4",
+      "english": "Expected",
+      "set": {
+        "code": "std::expected<int, std::string> divide(int a, int b) {\n    if (b == 0) return std::unexpected(\"div by zero\");\n    return a / b;\n}"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_1",
+      "english": "Lambda Expression",
+      "set": {
+        "code": "auto doubleIt = [](int x) { return x * 2; };\nstd::cout << doubleIt(5);  // 10\nstd::cout << doubleIt(21); // 42"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_1",
+      "english": "Capture List",
+      "set": {
+        "code": "int x = 10;\nauto show = [x]() {\n    std::cout << \"captured: \" << x << \"\\n\";\n};\nshow();"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_1",
+      "english": "Capture By Value",
+      "set": {
+        "code": "int val = 5;\nauto f = [val]() { return val * 2; };\nval = 100;\nstd::cout << f(); // still 10"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_1",
+      "english": "Capture By Reference",
+      "set": {
+        "code": "int count = 0;\nauto inc = [&count]() { ++count; };\ninc(); inc();\nstd::cout << count; // 2"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_1",
+      "english": "Init Capture",
+      "set": {
+        "code": "auto p = std::make_unique<int>(42);\nauto f = [ptr = std::move(p)]() {\n    std::cout << *ptr;\n};\nf(); // prints 42"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_1",
+      "english": "Mutable Lambda",
+      "set": {
+        "code": "int x = 0;\nauto counter = [x]() mutable {\n    return ++x;\n};\nstd::cout << counter(); // 1\nstd::cout << counter(); // 2"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_1",
+      "english": "Trailing Return",
+      "set": {
+        "code": "auto divide = [](int a, int b) -> double {\n    return static_cast<double>(a) / b;\n};\nstd::cout << divide(7, 2); // 3.5"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_2",
+      "english": "std::function",
+      "set": {
+        "code": "std::function<int(int)> doubler = [](int x) { return x * 2; };\nstd::cout << doubler(5);  // 10\nstd::cout << doubler(21); // 42"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_2",
+      "english": "Functor",
+      "set": {
+        "code": "struct Adder {\n    int base;\n    int operator()(int x) const { return base + x; }\n};\nAdder add5{5};\nstd::cout << add5(10); // 15"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_2",
+      "english": "Bind",
+      "set": {
+        "code": "int multiply(int a, int b) { return a * b; }\nauto triple = std::bind(multiply, 3, std::placeholders::_1);\nstd::cout << triple(10); // 30"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_3",
+      "english": "Generic Lambda",
+      "set": {
+        "code": "auto print = [](auto x) {\n    std::cout << x << \"\\n\";\n};\nprint(42);\nprint(\"hello\");\nprint(3.14);"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_3",
+      "english": "Constexpr Lambda",
+      "set": {
+        "code": "auto sq = [](int x) constexpr { return x * x; };\nconstexpr int val = sq(5);\nstatic_assert(val == 25);"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_3",
+      "english": "Recursive Lambda",
+      "set": {
+        "code": "std::function<int(int)> fact = [&](int n) -> int {\n    return n <= 1 ? 1 : n * fact(n - 1);\n};\nstd::cout << fact(5); // 120"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_3",
+      "english": "Immediately Invoked",
+      "set": {
+        "code": "const auto config = []() {\n    // complex init logic\n    return 42;\n}();\nstd::cout << config; // 42"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_4",
+      "english": "Plus Functor",
+      "set": {
+        "code": "std::vector<int> v = {1, 2, 3, 4};\nint sum = std::accumulate(v.begin(), v.end(), 0, std::plus<>{});\nstd::cout << sum; // 10"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_4",
+      "english": "Reference Wrapper",
+      "set": {
+        "code": "int x = 10;\nauto rw = std::ref(x);\nrw.get() = 20;\nstd::cout << x; // 20"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_4",
+      "english": "Partial Application",
+      "set": {
+        "code": "int add(int a, int b) { return a + b; }\nauto add5 = std::bind_front(add, 5);\nstd::cout << add5(3);  // 8\nstd::cout << add5(10); // 15"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_2",
+      "english": "Delete Operator",
+      "set": {
+        "code": "int* p = new int(42);\nstd::cout << *p;\ndelete p;\np = nullptr;"
+      }
+    }
+  ]
+}

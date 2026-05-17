@@ -1,0 +1,964 @@
+{
+  "fixes": [
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_1",
+      "english": "Auto Keyword",
+      "set": {
+        "code": "auto x = 42;        // int\nauto pi = 3.14;     // double\nauto name = std::string(\"C++\");"
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_1",
+      "english": "Auto Return",
+      "set": {
+        "code": "auto add(int a, int b) {\n    return a + b;\n}\n// auto r = add(3, 4);  // r == 7"
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_1",
+      "english": "Nullptr",
+      "set": {
+        "code": "int* p = nullptr;\nif (p == nullptr) {\n    p = new int(42);\n}"
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_1",
+      "english": "Range For",
+      "set": {
+        "code": "std::vector<int> v = {1, 2, 3};\nfor (auto& x : v) {\n    x *= 2;\n}"
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_2",
+      "english": "Rvalue Reference",
+      "set": {
+        "code": "void process(std::string&& s) {\n    std::string local = std::move(s);\n}\n// process(std::string(\"temp\"));"
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_2",
+      "english": "Std Move",
+      "set": {
+        "code": "std::string a = \"hello\";\nstd::string b = std::move(a);\n// a is now in a valid but unspecified state"
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_2",
+      "english": "Rvalue Move Constructor",
+      "set": {
+        "code": "struct Buffer {\n    int* data;\n    Buffer(Buffer&& other) noexcept\n        : data(other.data) { other.data = nullptr; }\n};"
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_2",
+      "english": "Rvalue Move Assignment",
+      "set": {
+        "code": "Buffer& operator=(Buffer&& other) noexcept {\n    delete[] data;\n    data = other.data;\n    other.data = nullptr;\n    return *this;\n}"
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_3",
+      "english": "Default Function",
+      "set": {
+        "code": "struct Widget {\n    Widget() = default;\n    Widget(const Widget&) = default;\n    Widget& operator=(const Widget&) = default;\n};"
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_3",
+      "english": "Modern Deleted Function",
+      "set": {
+        "code": "struct Singleton {\n    Singleton(const Singleton&) = delete;\n    Singleton& operator=(const Singleton&) = delete;\n};"
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_3",
+      "english": "Override Specifier",
+      "set": {
+        "code": "struct Base { virtual void draw() {} };\nstruct Circle : Base {\n    void draw() override { /* circle drawing */ }\n};"
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_3",
+      "english": "Final Specifier",
+      "set": {
+        "code": "struct Base { virtual void f() {} };\nclass Derived final : public Base {\n    void f() final { /* cannot override further */ }\n};"
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_3",
+      "english": "Constexpr Function Modern",
+      "set": {
+        "code": "constexpr int sq(int x) {\n    return x * x;\n}\nstatic_assert(sq(5) == 25);"
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_3",
+      "english": "Strongly Typed Enum",
+      "set": {
+        "code": "enum class Color { Red, Green, Blue };\nColor c = Color::Red;\n// int x = c;  // error: no implicit conversion"
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_3",
+      "english": "Modern User-Defined Literal",
+      "set": {
+        "code": "using namespace std::chrono_literals;\nauto timeout = 500ms;\nauto delay = 2s;"
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_4",
+      "english": "Tuple",
+      "set": {
+        "code": "auto t = std::make_tuple(1, \"hello\", 3.14);\nauto val = std::get<0>(t);  // 1\nauto [a, b, c] = t;  // structured binding"
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_4",
+      "english": "Modern Array",
+      "set": {
+        "code": "std::array<int, 5> a = {1, 2, 3, 4, 5};\nstd::sort(a.begin(), a.end());\nauto sz = a.size();  // 5, constexpr"
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_4",
+      "english": "Chrono",
+      "set": {
+        "code": "auto start = std::chrono::steady_clock::now();\n// ... work ...\nauto elapsed = std::chrono::steady_clock::now() - start;"
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_4",
+      "english": "Random",
+      "set": {
+        "code": "std::mt19937 gen{42};\nstd::uniform_int_distribution<int> dist(1, 100);\nint roll = dist(gen);"
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_4",
+      "english": "Regex",
+      "set": {
+        "code": "std::regex re(R\"(\\d{3}-\\d{4})\");\nstd::smatch match;\nstd::regex_search(phone, match, re);"
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_4",
+      "english": "Thread",
+      "set": {
+        "code": "std::thread t([]{ std::cout << \"working\"; });\nt.join();  // wait for completion"
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_4",
+      "english": "Atomic",
+      "set": {
+        "code": "std::atomic<int> counter{0};\n// from multiple threads:\ncounter.fetch_add(1, std::memory_order_relaxed);"
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_4",
+      "english": "Modern Make Shared",
+      "set": {
+        "code": "auto p = std::make_shared<std::string>(\"hello\");\nstd::cout << *p << std::endl;\nstd::cout << p.use_count();  // 1"
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_5",
+      "english": "Structured Bindings",
+      "set": {
+        "code": "std::map<std::string, int> m = {{\"a\", 1}};\nfor (auto& [key, val] : m) {\n    std::cout << key << \": \" << val;\n}"
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_5",
+      "english": "If Init",
+      "set": {
+        "code": "std::map<std::string, int> m = {{\"x\", 42}};\nif (auto it = m.find(\"x\"); it != m.end()) {\n    std::cout << it->second;\n}"
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_5",
+      "english": "Constexpr If",
+      "set": {
+        "code": "template<class T>\nauto to_string(T val) {\n    if constexpr (std::is_integral_v<T>)\n        return std::to_string(val);\n    else\n        return val;\n}"
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_5",
+      "english": "Std Optional",
+      "set": {
+        "code": "std::optional<int> find(int id) {\n    if (id > 0) return id * 10;\n    return std::nullopt;\n}\n// auto v = find(3).value_or(-1);"
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_5",
+      "english": "Std String View",
+      "set": {
+        "code": "void greet(std::string_view name) {\n    std::cout << \"Hello, \" << name;\n}\ngreet(\"world\");  // no allocation"
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_5",
+      "english": "Std Filesystem",
+      "set": {
+        "code": "namespace fs = std::filesystem;\nfs::path p = \"/tmp/data.txt\";\nif (fs::exists(p))\n    auto sz = fs::file_size(p);"
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_5",
+      "english": "Std Visit",
+      "set": {
+        "code": "std::variant<int, std::string> v = 42;\nstd::visit([](auto& val) {\n    std::cout << val;\n}, v);"
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_6",
+      "english": "Concept",
+      "set": {
+        "code": "template<class T>\nconcept Number = std::integral<T> || std::floating_point<T>;\n\nvoid calc(Number auto x) { /* ... */ }"
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_6",
+      "english": "Requires Clause",
+      "set": {
+        "code": "template<class T>\n    requires std::integral<T>\nT double_it(T x) {\n    return x * 2;\n}"
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_6",
+      "english": "Requires Expression",
+      "set": {
+        "code": "template<class T>\nconcept Addable = requires(T a, T b) {\n    { a + b } -> std::same_as<T>;\n};"
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_6",
+      "english": "Auto Concept",
+      "set": {
+        "code": "void print(std::integral auto x) {\n    std::cout << x;\n}\nprint(42);  // OK\n// print(3.14);  // error"
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_7",
+      "english": "Co Await",
+      "set": {
+        "code": "Task<int> fetch_data() {\n    auto result = co_await async_read();\n    co_return result;\n}"
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_7",
+      "english": "Co Yield",
+      "set": {
+        "code": "Generator<int> range(int n) {\n    for (int i = 0; i < n; ++i)\n        co_yield i;\n}"
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_8",
+      "english": "Module",
+      "set": {
+        "code": "export module math;\nexport int add(int a, int b) {\n    return a + b;\n}"
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_8",
+      "english": "Import",
+      "set": {
+        "code": "import math;\nint main() {\n    return add(2, 3);\n}"
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_8",
+      "english": "Std Format",
+      "set": {
+        "code": "std::string name = \"C++\";\nint ver = 23;\nauto s = std::format(\"{} version {}\", name, ver);"
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_8",
+      "english": "Three Way Comparison",
+      "set": {
+        "code": "struct Point {\n    int x, y;\n    auto operator<=>(const Point&) const = default;\n};\n// Point{1,2} < Point{1,3}  // true"
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_8",
+      "english": "Designated Initializer",
+      "set": {
+        "code": "struct Config {\n    int width = 800;\n    int height = 600;\n    bool fullscreen = false;\n};\nConfig c{.width = 1920, .fullscreen = true};"
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_5",
+      "english": "Variadic Template",
+      "set": {
+        "code": "template<class... Args>\nvoid log(Args... args) {\n    (std::cout << ... << args) << '\\n';\n}"
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_5",
+      "english": "Fold Expression",
+      "set": {
+        "code": "template<class... Args>\nauto sum(Args... args) {\n    return (... + args);  // left fold\n}\n// sum(1, 2, 3) == 6"
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_5",
+      "english": "Apply",
+      "set": {
+        "code": "auto add = [](int a, int b) { return a + b; };\nauto args = std::make_tuple(3, 4);\nint result = std::apply(add, args);  // 7"
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_6",
+      "english": "Enable If",
+      "set": {
+        "code": "template<class T>\nstd::enable_if_t<std::is_integral_v<T>, T>\ndouble_it(T val) {\n    return val * 2;\n}"
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_6",
+      "english": "If Constexpr",
+      "set": {
+        "code": "template<class T>\nstd::string stringify(T val) {\n    if constexpr (std::is_arithmetic_v<T>)\n        return std::to_string(val);\n    else\n        return val;\n}"
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_8",
+      "english": "Constexpr Function",
+      "set": {
+        "code": "constexpr int factorial(int n) {\n    return (n <= 1) ? 1 : n * factorial(n - 1);\n}\nstatic_assert(factorial(5) == 120);"
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_8",
+      "english": "Consteval",
+      "set": {
+        "code": "consteval int compile_hash(const char* s) {\n    int h = 0;\n    while (*s) h = h * 31 + *s++;\n    return h;\n}\nconstexpr int h = compile_hash(\"key\");"
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_1",
+      "english": "Worker Thread",
+      "set": {
+        "code": "void work() { std::cout << \"running\"; }\nstd::thread t(work);\nt.join();"
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_1",
+      "english": "Joinable",
+      "set": {
+        "code": "std::thread t(work);\n// ... do other things ...\nif (t.joinable())\n    t.join();"
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_1",
+      "english": "Jthread",
+      "set": {
+        "code": "std::jthread t([](std::stop_token st) {\n    while (!st.stop_requested())\n        do_work();\n});\n// auto-joins on destruction"
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_2",
+      "english": "Mutex",
+      "set": {
+        "code": "std::mutex mtx;\nint shared_data = 0;\nvoid inc() {\n    std::lock_guard lk(mtx);\n    ++shared_data;\n}"
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_2",
+      "english": "Scoped Lock",
+      "set": {
+        "code": "std::mutex m1, m2;\n{\n    std::scoped_lock lk(m1, m2);  // deadlock-free\n    // access both resources safely\n}"
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_2",
+      "english": "Shared Mutex",
+      "set": {
+        "code": "std::shared_mutex sm;\nvoid reader() {\n    std::shared_lock lk(sm);  // many readers OK\n}\nvoid writer() {\n    std::unique_lock lk(sm);  // exclusive\n}"
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_2",
+      "english": "Try Lock",
+      "set": {
+        "code": "std::mutex m;\nif (m.try_lock()) {\n    // got the lock, do work\n    m.unlock();\n} else {\n    // lock busy, try later\n}"
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_3",
+      "english": "Atomic Flag",
+      "set": {
+        "code": "std::atomic_flag lock = ATOMIC_FLAG_INIT;\nwhile (lock.test_and_set())  // spinlock\n    ;  // busy wait\nlock.clear();  // release"
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_3",
+      "english": "Compare Exchange",
+      "set": {
+        "code": "std::atomic<int> val{5};\nint expected = 5;\nbool ok = val.compare_exchange_strong(expected, 10);\n// if val==5, set to 10 and return true"
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_4",
+      "english": "Future",
+      "set": {
+        "code": "auto fut = std::async(std::launch::async, [] {\n    return 42;\n});\nint result = fut.get();  // blocks until ready"
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_4",
+      "english": "Promise",
+      "set": {
+        "code": "std::promise<int> prom;\nstd::future<int> fut = prom.get_future();\nstd::thread t([&]{ prom.set_value(42); });\nint val = fut.get();  // 42\nt.join();"
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_4",
+      "english": "Packaged Task",
+      "set": {
+        "code": "std::packaged_task<int(int)> task([](int x){ return x*x; });\nauto fut = task.get_future();\nstd::thread t(std::move(task), 5);\nint result = fut.get();  // 25\nt.join();"
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_4",
+      "english": "Condition Variable",
+      "set": {
+        "code": "std::condition_variable cv;\nstd::mutex m;\nbool ready = false;\n// producer:\n{ std::lock_guard lk(m); ready = true; }\ncv.notify_one();"
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_4",
+      "english": "Wait Predicate",
+      "set": {
+        "code": "std::unique_lock lk(m);\ncv.wait(lk, []{ return ready; });\n// wakes only when ready == true"
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_5",
+      "english": "Move Constructor Impl",
+      "set": {
+        "code": "struct Buffer {\n    int* data;\n    size_t sz;\n    Buffer(Buffer&& o) noexcept\n        : data(o.data), sz(o.sz) {\n        o.data = nullptr; o.sz = 0;\n    }\n};"
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_5",
+      "english": "Move Iterator",
+      "set": {
+        "code": "std::vector<std::string> src = {\"a\", \"b\", \"c\"};\nstd::vector<std::string> dst(\n    std::make_move_iterator(src.begin()),\n    std::make_move_iterator(src.end()));"
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_5",
+      "english": "Self Move",
+      "set": {
+        "code": "Buffer& operator=(Buffer&& other) noexcept {\n    if (this == &other) return *this;\n    delete[] data;\n    data = other.data;\n    other.data = nullptr;\n    return *this;\n}"
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_6",
+      "english": "Universal Reference",
+      "set": {
+        "code": "template<class T>\nvoid wrapper(T&& arg) {\n    process(std::forward<T>(arg));\n}\n// binds to both lvalues and rvalues"
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_6",
+      "english": "Perfect Forwarding",
+      "set": {
+        "code": "template<class... Args>\nauto make_widget(Args&&... args) {\n    return Widget(std::forward<Args>(args)...);\n}"
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_6",
+      "english": "Emplace Forwarding",
+      "set": {
+        "code": "std::vector<std::pair<int, std::string>> v;\nv.emplace_back(1, \"hello\");  // constructs in-place\n// no temporary pair created"
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_7",
+      "english": "Sink Argument",
+      "set": {
+        "code": "class Logger {\n    std::string tag_;\npublic:\n    void set_tag(std::string tag) {\n        tag_ = std::move(tag);  // sink: take by value, move in\n    }\n};"
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_8",
+      "english": "Thread Local",
+      "set": {
+        "code": "thread_local int req_count = 0;\nvoid handle_request() {\n    ++req_count;  // each thread has its own copy\n}"
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_1",
+      "english": "Singleton Pattern",
+      "set": {
+        "code": "class Config {\npublic:\n    static Config& instance() {\n        static Config cfg;\n        return cfg;\n    }\n    Config(const Config&) = delete;\n};"
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_1",
+      "english": "Factory",
+      "set": {
+        "code": "std::unique_ptr<Shape> make(Type t) {\n    if (t == Type::Circle) return std::make_unique<Circle>();\n    return std::make_unique<Square>();\n}"
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_1",
+      "english": "Prototype",
+      "set": {
+        "code": "struct Shape {\n    virtual std::unique_ptr<Shape> clone() const = 0;\n};\nstruct Circle : Shape {\n    std::unique_ptr<Shape> clone() const override {\n        return std::make_unique<Circle>(*this);\n    }\n};"
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_1",
+      "english": "Named Constructor",
+      "set": {
+        "code": "class Temperature {\n    double kelvin_;\npublic:\n    static Temperature from_celsius(double c) {\n        return Temperature{c + 273.15};\n    }\n};"
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_2",
+      "english": "CRTP Pattern",
+      "set": {
+        "code": "template<class Derived>\nstruct Printable {\n    void print() {\n        static_cast<Derived*>(this)->do_print();\n    }\n};\nstruct Log : Printable<Log> {\n    void do_print() { std::cout << \"log\"; }\n};"
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_2",
+      "english": "Pimpl Idiom",
+      "set": {
+        "code": "// widget.h\nclass Widget {\n    class Impl;\n    std::unique_ptr<Impl> pImpl;\npublic:\n    Widget();\n    ~Widget();\n    void draw();\n};"
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_3",
+      "english": "Visitor",
+      "set": {
+        "code": "using Shape = std::variant<Circle, Rect>;\nauto area = [](auto& s) { return s.area(); };\nShape shape = Circle{5.0};\ndouble a = std::visit(area, shape);"
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_4",
+      "english": "Strong Typedef",
+      "set": {
+        "code": "struct UserId { int v; };\nstruct OrderId { int v; };\nvoid process(UserId u, OrderId o);\n// process(OrderId{1}, UserId{2}); // type error!"
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_1",
+      "english": "Setw",
+      "set": {
+        "code": "std::cout << std::setw(10) << \"Name\"\n           << std::setw(6) << \"Age\" << '\\n';\nstd::cout << std::setw(10) << \"Alice\"\n           << std::setw(6) << 30 << '\\n';"
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_1",
+      "english": "Setprecision",
+      "set": {
+        "code": "double pi = 3.14159265;\nstd::cout << std::setprecision(2) << pi << '\\n';  // 3.1\nstd::cout << std::fixed << std::setprecision(4) << pi;  // 3.1416"
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_1",
+      "english": "Hex",
+      "set": {
+        "code": "int x = 255;\nstd::cout << std::hex << x << '\\n';    // ff\nstd::cout << std::dec << x << '\\n';    // 255"
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_1",
+      "english": "Stream Iterator",
+      "set": {
+        "code": "std::vector<int> v = {1, 2, 3};\nstd::copy(v.begin(), v.end(),\n    std::ostream_iterator<int>(std::cout, \" \"));\n// output: 1 2 3"
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_2",
+      "english": "Bidirectional File Stream",
+      "set": {
+        "code": "std::fstream f(\"data.txt\", std::ios::in | std::ios::out);\nstd::string line;\nstd::getline(f, line);\nf << \"appended\";"
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_2",
+      "english": "Binary Mode",
+      "set": {
+        "code": "std::ifstream f(\"image.bin\", std::ios::binary);\nchar buf[1024];\nf.read(buf, sizeof(buf));\nauto bytes = f.gcount();"
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_2",
+      "english": "Seekg",
+      "set": {
+        "code": "std::ifstream f(\"data.bin\", std::ios::binary);\nf.seekg(0, std::ios::end);\nauto size = f.tellg();\nf.seekg(0, std::ios::beg);  // back to start"
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_3",
+      "english": "String Stream",
+      "set": {
+        "code": "std::stringstream ss(\"42 hello 3.14\");\nint n; std::string s; double d;\nss >> n >> s >> d;\n// n=42, s=\"hello\", d=3.14"
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_3",
+      "english": "IStringStream",
+      "set": {
+        "code": "std::string csv = \"10,20,30\";\nstd::istringstream iss(csv);\nint val; char sep;\nwhile (iss >> val) { iss >> sep; }"
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_3",
+      "english": "From Chars",
+      "set": {
+        "code": "char buf[] = \"12345\";\nint val;\nauto [ptr, ec] = std::from_chars(buf, buf + 5, val);\n// fast, no allocation, no locale"
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_1",
+      "english": "CMakeLists",
+      "set": {
+        "code": "cmake_minimum_required(VERSION 3.20)\nproject(myapp CXX)\nset(CMAKE_CXX_STANDARD 20)"
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_1",
+      "english": "Add Library",
+      "set": {
+        "code": "add_library(engine STATIC\n    engine.cpp\n    physics.cpp)\ntarget_include_directories(engine PUBLIC include)"
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_4",
+      "english": "Include Guard",
+      "set": {
+        "code": "#ifndef WIDGET_H\n#define WIDGET_H\nclass Widget { /* ... */ };\n#endif  // WIDGET_H"
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_2",
+      "english": "Benchmark Library",
+      "set": {
+        "code": "static void BM_sort(benchmark::State& state) {\n    for (auto _ : state) {\n        std::vector<int> v = {5, 3, 1};\n        std::sort(v.begin(), v.end());\n    }\n}\nBENCHMARK(BM_sort);"
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_3",
+      "english": "OpenMP",
+      "set": {
+        "code": "#pragma omp parallel for\nfor (int i = 0; i < n; ++i) {\n    result[i] = heavy_compute(data[i]);\n}"
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_4",
+      "english": "Branch Prediction Hint",
+      "set": {
+        "code": "int process(int x) {\n    if (x > 0) [[likely]] {\n        return fast_path(x);\n    } else [[unlikely]] {\n        return slow_path(x);\n    }\n}"
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_4",
+      "english": "No Discard",
+      "set": {
+        "code": "[[nodiscard]] int compute(int x) {\n    return x * x;\n}\n// compute(5);      // warning: discarded\n// int r = compute(5);  // OK"
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_1",
+      "english": "Metafunction",
+      "set": {
+        "code": "template<class T>\nstruct add_const {\n    using type = const T;\n};\nusing CI = add_const<int>::type;  // const int"
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_1",
+      "english": "Index Sequence",
+      "set": {
+        "code": "template<size_t... Is>\nvoid print_tuple(const auto& t, std::index_sequence<Is...>) {\n    ((std::cout << std::get<Is>(t) << ' '), ...);\n}"
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_2",
+      "english": "Compile Time If Branch",
+      "set": {
+        "code": "template<class T>\nvoid serialize(const T& val) {\n    if constexpr (sizeof(T) <= 8)\n        write_inline(val);\n    else\n        write_buffered(val);\n}"
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_4",
+      "english": "Custom Concept",
+      "set": {
+        "code": "template<class T>\nconcept Sortable = requires(T t) {\n    t.begin();\n    t.end();\n    std::sort(t.begin(), t.end());\n};"
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_4",
+      "english": "Compound Requirement",
+      "set": {
+        "code": "template<class T>\nconcept Hashable = requires(T t) {\n    { std::hash<T>{}(t) } -> std::convertible_to<size_t>;\n};"
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_4",
+      "english": "Type Requirement",
+      "set": {
+        "code": "template<class T>\nconcept Container = requires {\n    typename T::value_type;\n    typename T::iterator;\n};"
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_4",
+      "english": "Metaprogramming Constexpr Lambda",
+      "set": {
+        "code": "constexpr auto sq = [](int x) { return x * x; };\nstatic_assert(sq(5) == 25);\nconstexpr auto cube = [](int x) { return x * x * x; };"
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_4",
+      "english": "Trailing Requires",
+      "set": {
+        "code": "template<class T>\nT add(T a, T b) requires std::integral<T> {\n    return a + b;\n}"
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_1",
+      "english": "Test Macro",
+      "set": {
+        "code": "TEST(MathTest, AddsTwo) {\n    EXPECT_EQ(add(1, 2), 3);\n    EXPECT_EQ(add(-1, 1), 0);\n}"
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_1",
+      "english": "Expect",
+      "set": {
+        "code": "TEST(CalcTest, Multiply) {\n    EXPECT_EQ(mul(3, 4), 12);\n    EXPECT_NE(mul(0, 5), 5);\n    EXPECT_GT(mul(2, 3), 0);\n}"
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_1",
+      "english": "Assert",
+      "set": {
+        "code": "TEST(PtrTest, NotNull) {\n    auto p = create();\n    ASSERT_NE(p, nullptr);  // fatal: stops if null\n    EXPECT_EQ(p->value(), 42);\n}"
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_1",
+      "english": "Test Fixture",
+      "set": {
+        "code": "class StackTest : public ::testing::Test {\nprotected:\n    Stack<int> stack;\n    void SetUp() override { stack.push(42); }\n};\nTEST_F(StackTest, Pop) { EXPECT_EQ(stack.pop(), 42); }"
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_2",
+      "english": "Test Case",
+      "set": {
+        "code": "TEST_CASE(\"vector operations\") {\n    std::vector<int> v;\n    v.push_back(1);\n    REQUIRE(v.size() == 1);\n}"
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_2",
+      "english": "Section",
+      "set": {
+        "code": "TEST_CASE(\"math\") {\n    SECTION(\"addition\") {\n        REQUIRE(add(1, 2) == 3);\n    }\n    SECTION(\"subtraction\") {\n        REQUIRE(sub(5, 3) == 2);\n    }\n}"
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_2",
+      "english": "Require",
+      "set": {
+        "code": "TEST_CASE(\"string ops\") {\n    std::string s = \"hello\";\n    REQUIRE(s.size() == 5);\n    REQUIRE(s[0] == 'h');\n}"
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_2",
+      "english": "Approx",
+      "set": {
+        "code": "TEST_CASE(\"floating point\") {\n    double result = compute_pi();\n    REQUIRE(result == Approx(3.14159).epsilon(0.001));\n}"
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_2",
+      "english": "BDD Style",
+      "set": {
+        "code": "SCENARIO(\"deposit money\") {\n    GIVEN(\"an empty account\") {\n        Account acc;\n        WHEN(\"depositing 100\") {\n            acc.deposit(100);\n            THEN(\"balance is 100\") {\n                REQUIRE(acc.balance() == 100);\n            }\n        }\n    }\n}"
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_3",
+      "english": "Mock Class",
+      "set": {
+        "code": "class MockDb : public Database {\npublic:\n    MOCK_METHOD(int, get, (std::string key), (override));\n    MOCK_METHOD(void, put, (std::string, int), (override));\n};"
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_3",
+      "english": "Mock Method",
+      "set": {
+        "code": "class MockLogger : public Logger {\npublic:\n    MOCK_METHOD(void, log, (std::string msg), (override));\n    MOCK_METHOD(int, level, (), (const, override));\n};"
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_3",
+      "english": "Expectation",
+      "set": {
+        "code": "MockDb db;\nEXPECT_CALL(db, get(\"key\"))\n    .Times(1)\n    .WillOnce(Return(42));\nService svc(db);\nEXPECT_EQ(svc.lookup(\"key\"), 42);"
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_9",
+      "english": "GSL",
+      "set": {
+        "code": "void process(gsl::span<int> data) {\n    for (auto& x : data)\n        x *= 2;\n}\nint arr[] = {1, 2, 3};\nprocess(arr);"
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_9",
+      "english": "Not Null",
+      "set": {
+        "code": "void draw(gsl::not_null<Widget*> w) {\n    w->render();  // guaranteed non-null\n}\n// draw(nullptr);  // compile error"
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_9",
+      "english": "Narrow Cast",
+      "set": {
+        "code": "long big = 42;\nauto small = gsl::narrow<int>(big);  // OK\n// gsl::narrow<int>(1L << 40);  // throws: narrowing"
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_9",
+      "english": "Final Action",
+      "set": {
+        "code": "FILE* f = fopen(\"data.txt\", \"r\");\nauto cleanup = gsl::finally([&]{ fclose(f); });\n// f is closed when cleanup goes out of scope"
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_11",
+      "english": "Replace TypeDef",
+      "set": {
+        "code": "// old: typedef std::vector<int> IntList;\nusing IntList = std::vector<int>;\ntemplate<class T>\nusing Vec = std::vector<T>;  // alias template"
+      }
+    }
+  ]
+}

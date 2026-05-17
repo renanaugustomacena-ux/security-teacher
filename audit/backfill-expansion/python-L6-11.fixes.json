@@ -1,0 +1,1924 @@
+{
+  "fixes": [
+    {
+      "level": "6",
+      "lesson": "py_comprehension",
+      "english": "Nested List Comprehension",
+      "set": {
+        "command": "python3 -c \"matrix=[[1,2],[3,4]]; print([c for row in matrix for c in row])\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_comprehension",
+      "english": "Dictionary Comprehension",
+      "set": {
+        "command": "python3 -c \"pairs=[('a',1),('b',2)]; print({k:v for k,v in pairs})\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_comprehension",
+      "english": "Set Comprehension",
+      "set": {
+        "command": "python3 -c \"text='Hello World'; print({ch.lower() for ch in text if ch.isalpha()})\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_comprehension",
+      "english": "Generator Expression",
+      "set": {
+        "command": "python3 -c \"print(sum(x*x for x in range(1000)))\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_comprehension",
+      "english": "Nested Comprehension",
+      "set": {
+        "command": "python3 -c \"m=[[1,2,3],[4,5,6]]; print([[r[i] for r in m] for i in range(3)])\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_comprehension",
+      "english": "Filtering (in Comprehension)",
+      "set": {
+        "command": "python3 -c \"nums=range(20); print([x for x in nums if x%2==0])\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_comprehension",
+      "english": "Conditional Expression",
+      "set": {
+        "command": "python3 -c \"print(['even' if x%2==0 else 'odd' for x in range(6)])\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_comprehension",
+      "english": "Inline For-Loop",
+      "set": {
+        "command": "python3 -c \"print([x*x for x in range(10)])\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_comprehension",
+      "english": "Side Effect (avoidance)",
+      "set": {
+        "command": "python3 -c \"nums=[1,2,3]; new=[x*2 for x in nums]; print(nums, new)\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_comprehension",
+      "english": "Readability",
+      "set": {
+        "command": "python3 -c \"import this\" 2>&1 | head -5"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_generators",
+      "english": "Generator",
+      "set": {
+        "command": "python3 -c \"def gen(): yield 1; yield 2; yield 3\nfor x in gen(): print(x)\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_generators",
+      "english": "Yield (Keyword)",
+      "set": {
+        "command": "python3 -c \"def countdown(n):\n while n>0: yield n; n-=1\nprint(list(countdown(5)))\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_generators",
+      "english": "Yield from",
+      "set": {
+        "command": "python3 -c \"def chain(): yield from [1,2]; yield from [3,4]\nprint(list(chain()))\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_generators",
+      "english": "Iterator",
+      "set": {
+        "command": "python3 -c \"it=iter([10,20,30]); print(next(it)); print(next(it))\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_generators",
+      "english": "Iterable",
+      "set": {
+        "command": "python3 -c \"class C:\n def __iter__(self):\n  for i in range(3): yield i\nprint(list(C()))\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_generators",
+      "english": "Next (function)",
+      "set": {
+        "command": "python3 -c \"g=(x for x in range(5)); print(next(g)); print(next(g))\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_generators",
+      "english": "StopIteration",
+      "set": {
+        "command": "python3 -c \"it=iter([1]); print(next(it)); print(next(it, 'done'))\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_generators",
+      "english": "Lazy Evaluation",
+      "set": {
+        "command": "python3 -c \"g=(x*x for x in range(10**9)); print([next(g) for _ in range(5)])\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_generators",
+      "english": "State Retention",
+      "set": {
+        "command": "python3 -c \"def acc():\n t=0\n while True: v=(yield t); t+=v\ng=acc(); next(g); print(g.send(5)); print(g.send(3))\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_generators",
+      "english": "Memory Efficiency",
+      "set": {
+        "command": "python3 -c \"import sys; print('list:',sys.getsizeof(list(range(1000))),'gen:',sys.getsizeof(x for x in range(1000)))\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_functional",
+      "english": "Itertools (module)",
+      "set": {
+        "command": "python3 -c \"from itertools import islice,count; print(list(islice(count(10,2),5)))\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_functional",
+      "english": "Functools.partial",
+      "set": {
+        "command": "python3 -c \"from functools import partial; double=partial(int.__mul__,2); print(double(5))\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_functional",
+      "english": "Operator (module)",
+      "set": {
+        "command": "python3 -c \"from operator import itemgetter; data=[{'n':'b','a':2},{'n':'a','a':1}]; print(sorted(data,key=itemgetter('n')))\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_functional",
+      "english": "Itertools.chain",
+      "set": {
+        "command": "python3 -c \"from itertools import chain; print(list(chain([1,2],[3,4],[5])))\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_functional",
+      "english": "Itertools.cycle",
+      "set": {
+        "command": "python3 -c \"from itertools import cycle,islice; print(list(islice(cycle('RGB'),7)))\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_functional",
+      "english": "Itertools.groupby",
+      "set": {
+        "command": "python3 -c \"from itertools import groupby; d='AAABBBCC'; print([(k,len(list(g))) for k,g in groupby(d)])\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_functional",
+      "english": "Zip",
+      "set": {
+        "command": "python3 -c \"print(list(zip([1,2,3],['a','b','c'])))\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_functional",
+      "english": "Functools.wraps",
+      "set": {
+        "command": "python3 -c \"from functools import wraps\ndef dec(f):\n @wraps(f)\n def w(*a): return f(*a)\n return w\n@dec\ndef hi(): pass\nprint(hi.__name__)\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_functional",
+      "english": "Itertools.product",
+      "set": {
+        "command": "python3 -c \"from itertools import product; print(list(product(range(3),repeat=2)))\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_functional",
+      "english": "Side-effect Free",
+      "set": {
+        "command": "python3 -c \"def add(a,b): return a+b\nprint(add(3,4))\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_collections",
+      "english": "Collections (module)",
+      "set": {
+        "command": "python3 -c \"from collections import Counter,defaultdict,namedtuple; print(dir())\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_collections",
+      "english": "Namedtuple",
+      "set": {
+        "command": "python3 -c \"from collections import namedtuple; P=namedtuple('Point',['x','y']); print(P(3,4))\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_collections",
+      "english": "Defaultdict",
+      "set": {
+        "command": "python3 -c \"from collections import defaultdict; d=defaultdict(list); d['a'].append(1); print(dict(d))\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_collections",
+      "english": "Counter",
+      "set": {
+        "command": "python3 -c \"from collections import Counter; print(Counter('abracadabra').most_common(3))\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_collections",
+      "english": "Deque (Double-ended queue)",
+      "set": {
+        "command": "python3 -c \"from collections import deque; d=deque(maxlen=3); [d.append(i) for i in range(5)]; print(d)\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_collections",
+      "english": "OrderedDict",
+      "set": {
+        "command": "python3 -c \"from collections import OrderedDict; d=OrderedDict(a=1,b=2); d.move_to_end('a'); print(d)\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_collections",
+      "english": "ChainMap",
+      "set": {
+        "command": "python3 -c \"from collections import ChainMap; c=ChainMap({'a':1},{'a':2,'b':3}); print(c['a'],c['b'])\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_collections",
+      "english": "UserDict / UserList",
+      "set": {
+        "command": "python3 -c \"from collections import UserDict\nclass LD(UserDict):\n def __setitem__(s,k,v): super().__setitem__(k.lower(),v)\nd=LD(); d['Key']='val'; print(d)\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_collections",
+      "english": "MappingProxyType",
+      "set": {
+        "command": "python3 -c \"from types import MappingProxyType; d=MappingProxyType({'k':1}); print(d['k'])\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_collections",
+      "english": "Container Types",
+      "set": {
+        "command": "python3 -c \"from collections.abc import Mapping,Sequence; print(isinstance({},Mapping),isinstance([],Sequence))\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_exceptions",
+      "english": "Built-in Exception",
+      "set": {
+        "command": "python3 -c \"try: int('abc')\nexcept ValueError as e: print('caught:',e)\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_exceptions",
+      "english": "Try Block",
+      "set": {
+        "command": "python3 -c \"import json\ntry: json.loads('bad')\nexcept json.JSONDecodeError: print('invalid JSON')\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_exceptions",
+      "english": "Except Clause",
+      "set": {
+        "command": "python3 -c \"try: open('/no/such/file')\nexcept FileNotFoundError: print('file not found')\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_exceptions",
+      "english": "Finally Clause",
+      "set": {
+        "command": "python3 -c \"try: x=1/0\nexcept ZeroDivisionError: print('error')\nfinally: print('cleanup runs always')\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_exceptions",
+      "english": "Else Clause (try)",
+      "set": {
+        "command": "python3 -c \"try: v=int('42')\nexcept ValueError: print('bad')\nelse: print('parsed:',v)\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_exceptions",
+      "english": "Raise Statement",
+      "set": {
+        "command": "python3 -c \"try: raise ValueError('bad input')\nexcept ValueError as e: print('caught:',e)\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_exceptions",
+      "english": "ValueError",
+      "set": {
+        "command": "python3 -c \"def age(v):\n if v<0: raise ValueError('negative')\nage(-1)\" 2>&1 | tail -1"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_exceptions",
+      "english": "TypeError",
+      "set": {
+        "command": "python3 -c \"'hello'+42\" 2>&1 | tail -1"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_exceptions",
+      "english": "Catch-all Exception",
+      "set": {
+        "command": "python3 -c \"try: 1/0\nexcept Exception as e: print(type(e).__name__,e)\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_exceptions",
+      "english": "Exception Instance",
+      "set": {
+        "command": "python3 -c \"try: int('x')\nexcept ValueError as e: print(type(e),e.args)\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_custom_exc",
+      "english": "Custom Exception",
+      "set": {
+        "command": "python3 -c \"class AppError(Exception): pass\ntry: raise AppError('oops')\nexcept AppError as e: print(e)\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_custom_exc",
+      "english": "Exception Class (Inheritance)",
+      "set": {
+        "command": "python3 -c \"class Base(Exception): pass\nclass Sub(Base): pass\nprint(issubclass(Sub,Base))\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_custom_exc",
+      "english": "Exception Hierarchy",
+      "set": {
+        "command": "python3 -c \"print([c.__name__ for c in ValueError.__mro__])\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_custom_exc",
+      "english": "Raising Custom Exceptions",
+      "set": {
+        "command": "python3 -c \"class Low(Exception): pass\ndef check(b,a):\n if b<a: raise Low(f'need {a}')\ncheck(5,10)\" 2>&1 | tail -1"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_custom_exc",
+      "english": "__str__ (in Exceptions)",
+      "set": {
+        "command": "python3 -c \"class E(Exception):\n def __init__(s,code): s.code=code\n def __str__(s): return f'HTTP {s.code}'\nprint(E(404))\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_custom_exc",
+      "english": "Specificity",
+      "set": {
+        "command": "python3 -c \"try: d={'a':1}; d['b']\nexcept KeyError: print('specific catch')\nexcept Exception: print('generic')\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_custom_exc",
+      "english": "Grouping Exceptions",
+      "set": {
+        "command": "python3 -c \"try: int('x')\nexcept (ValueError,TypeError) as e: print('caught group:',e)\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_custom_exc",
+      "english": "Chaining Exceptions",
+      "set": {
+        "command": "python3 -c \"try:\n try: 1/0\n except ZeroDivisionError as e: raise RuntimeError('wrapped') from e\nexcept RuntimeError as e: print(e,e.__cause__)\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_custom_exc",
+      "english": "User-defined Error",
+      "set": {
+        "command": "python3 -c \"class DomainError(Exception): pass\nclass OrderError(DomainError): pass\nprint(issubclass(OrderError,DomainError))\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_custom_exc",
+      "english": "Assertions (vs Exceptions)",
+      "set": {
+        "command": "python3 -c \"def avg(v): assert len(v)>0,'empty'; return sum(v)/len(v)\nprint(avg([4,6]))\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_logging",
+      "english": "Logging (module)",
+      "set": {
+        "command": "python3 -c \"import logging; logging.basicConfig(level=logging.INFO); logging.info('app started')\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_logging",
+      "english": "Log Level",
+      "set": {
+        "command": "python3 -c \"import logging; logging.basicConfig(level=logging.WARNING); logging.debug('hidden'); logging.warning('shown')\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_logging",
+      "english": "Logger",
+      "set": {
+        "command": "python3 -c \"import logging; log=logging.getLogger('myapp'); log.setLevel(logging.DEBUG); print(log.name)\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_logging",
+      "english": "Handler (Logging)",
+      "set": {
+        "command": "python3 -c \"import logging; h=logging.StreamHandler(); h.setLevel(logging.ERROR); logging.getLogger().addHandler(h)\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_logging",
+      "english": "Formatter (Logging)",
+      "set": {
+        "command": "python3 -c \"import logging; fmt=logging.Formatter('%(levelname)s:%(message)s'); print(fmt.format(logging.LogRecord('a',20,'',0,'hi',(),None)))\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_logging",
+      "english": "PDB (Python Debugger)",
+      "set": {
+        "command": "python3 -c \"import pdb; print(dir(pdb))\" | head -5"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_logging",
+      "english": "Breakpoint",
+      "set": {
+        "command": "PYTHONBREAKPOINT=0 python3 -c \"breakpoint(); print('breakpoint skipped')\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_logging",
+      "english": "Assert Statement",
+      "set": {
+        "command": "python3 -c \"assert 2+2==4,'math works'; print('assertion passed')\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_logging",
+      "english": "Traceback (module)",
+      "set": {
+        "command": "python3 -c \"import traceback\ntry: 1/0\nexcept: traceback.print_exc()\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_logging",
+      "english": "Stack Trace",
+      "set": {
+        "command": "python3 -c \"import traceback; traceback.print_stack()\" 2>&1 | tail -3"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_context",
+      "english": "Context Manager",
+      "set": {
+        "command": "python3 -c \"with open('/dev/null') as f: print('opened',f.name,'closed:',f.closed)\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_context",
+      "english": "With Statement",
+      "set": {
+        "command": "python3 -c \"with open('/tmp/ctx_test.txt','w') as f: f.write('hello')\nprint(open('/tmp/ctx_test.txt').read())\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_context",
+      "english": "__enter__ (Method)",
+      "set": {
+        "command": "python3 -c \"import time\nclass T:\n def __enter__(s): s.t=time.time(); return s\n def __exit__(s,*a): print(f'{time.time()-s.t:.4f}s')\nwith T(): time.sleep(0.01)\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_context",
+      "english": "__exit__ (Method)",
+      "set": {
+        "command": "python3 -c \"class CM:\n def __enter__(s): print('enter'); return s\n def __exit__(s,typ,val,tb): print('exit',typ)\nwith CM(): pass\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_context",
+      "english": "Contextlib (module)",
+      "set": {
+        "command": "python3 -c \"from contextlib import suppress\nwith suppress(FileNotFoundError): open('/no/file')\nprint('suppressed')\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_context",
+      "english": "@contextmanager (Decorator)",
+      "set": {
+        "command": "python3 -c \"from contextlib import contextmanager\n@contextmanager\ndef tag(n): print(f'<{n}>'); yield; print(f'</{n}>')\nwith tag('b'): print('bold')\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_context",
+      "english": "Resource Management",
+      "set": {
+        "command": "python3 -c \"f=open('/tmp/res.txt','w'); f.write('data'); f.close(); print('resource released')\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_context",
+      "english": "Automatic Cleanup",
+      "set": {
+        "command": "python3 -c \"import tempfile,os; f=tempfile.NamedTemporaryFile(delete=True); n=f.name; f.close(); print('cleaned:',not os.path.exists(n))\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_context",
+      "english": "Nested Context Managers",
+      "set": {
+        "command": "python3 -c \"with open('/dev/null') as a, open('/dev/null') as b: print('two contexts:',a.name,b.name)\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_context",
+      "english": "Contextlib.closing",
+      "set": {
+        "command": "python3 -c \"from contextlib import closing\nclass R:\n def close(s): print('closed')\nwith closing(R()) as r: print('using resource')\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_decorators",
+      "english": "Decorator Factory",
+      "set": {
+        "command": "python3 -c \"def repeat(n):\n def dec(f):\n  def w(*a): return [f(*a) for _ in range(n)]\n  return w\n return dec\n@repeat(3)\ndef hi(): return 'hi'\nprint(hi())\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_decorators",
+      "english": "Wrapper Function",
+      "set": {
+        "command": "python3 -c \"import time\ndef timing(f):\n def w(*a):\n  s=time.time(); r=f(*a); print(f'{time.time()-s:.6f}s'); return r\n return w\n@timing\ndef slow(): time.sleep(0.01)\nslow()\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_decorators",
+      "english": "@wraps Usage",
+      "set": {
+        "command": "python3 -c \"from functools import wraps\ndef log(f):\n @wraps(f)\n def w(*a,**k): print(f'call {f.__name__}'); return f(*a,**k)\n return w\n@log\ndef greet(): return 'hi'\nprint(greet.__name__,greet())\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_decorators",
+      "english": "Decorator with Arguments",
+      "set": {
+        "command": "python3 -c \"def prefix(tag):\n def dec(f):\n  def w(*a): return f'[{tag}] {f(*a)}'\n  return w\n return dec\n@prefix('INFO')\ndef msg(): return 'hello'\nprint(msg())\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_decorators",
+      "english": "Class Decorator",
+      "set": {
+        "command": "python3 -c \"from dataclasses import dataclass\n@dataclass\nclass Point:\n x: float\n y: float\nprint(Point(1.0,2.0))\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_decorators",
+      "english": "Method Decorator",
+      "set": {
+        "command": "python3 -c \"class Circle:\n def __init__(s,r): s._r=r\n @property\n def area(s): return 3.14*s._r**2\nprint(Circle(5).area)\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_decorators",
+      "english": "Chaining Decorators",
+      "set": {
+        "command": "python3 -c \"from functools import cache\n@cache\ndef fib(n): return n if n<2 else fib(n-1)+fib(n-2)\nprint(fib(30))\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_decorators",
+      "english": "Stateful Decorator",
+      "set": {
+        "command": "python3 -c \"def counter(f):\n def w(*a): w.calls+=1; return f(*a)\n w.calls=0; return w\n@counter\ndef hi(): return 'hi'\nhi(); hi(); print(hi.calls)\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_decorators",
+      "english": "Monkey Patching",
+      "set": {
+        "command": "python3 -c \"import os; orig=os.getlogin; os.getlogin=lambda:'patched'; print(os.getlogin()); os.getlogin=orig\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_decorators",
+      "english": "Boilerplate (reduction)",
+      "set": {
+        "command": "python3 -c \"from dataclasses import dataclass\n@dataclass\nclass User:\n name:str; age:int\nu=User('Alice',30); print(u,repr(u))\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_metaclass",
+      "english": "Metaclass",
+      "set": {
+        "command": "python3 -c \"class M(type):\n def __new__(m,n,b,ns): print(f'Creating {n}'); return super().__new__(m,n,b,ns)\nclass Foo(metaclass=M): pass\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_metaclass",
+      "english": "Type (as Metaclass)",
+      "set": {
+        "command": "python3 -c \"Dog=type('Dog',(object,),{'speak':lambda s:'Woof'}); print(Dog().speak(),type(Dog))\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_metaclass",
+      "english": "__new__ (Method)",
+      "set": {
+        "command": "python3 -c \"class P:\n def __new__(cls,x,y): i=super().__new__(cls); i.x,i.y=x,y; return i\nprint(P(3,4).x)\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_metaclass",
+      "english": "Metaprogramming",
+      "set": {
+        "command": "python3 -c \"import ast; tree=ast.parse('x=1+2'); print(ast.dump(tree,indent=2))\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_metaclass",
+      "english": "Class Factory",
+      "set": {
+        "command": "python3 -c \"def make(name,vals): return type(name,(),{v:i for i,v in enumerate(vals)})\nColor=make('Color',['RED','GREEN','BLUE']); print(Color.RED,Color.BLUE)\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_metaclass",
+      "english": "Introspection",
+      "set": {
+        "command": "python3 -c \"class U:\n name='Alice'\nprint(hasattr(U,'name'),getattr(U,'name'),type(U))\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_metaclass",
+      "english": "Singleton Pattern (via Metaclass)",
+      "set": {
+        "command": "python3 -c \"class S(type):\n _i={}\n def __call__(c,*a,**k):\n  if c not in c._i: c._i[c]=super().__call__(*a,**k)\n  return c._i[c]\nclass DB(metaclass=S): pass\nprint(DB() is DB())\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_metaclass",
+      "english": "Registration Pattern",
+      "set": {
+        "command": "python3 -c \"class Reg(type):\n r=[]\n def __init__(c,n,b,ns): super().__init__(n,b,ns); Reg.r.append(n)\nclass A(metaclass=Reg): pass\nclass B(metaclass=Reg): pass\nprint(Reg.r)\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_metaclass",
+      "english": "Attribute Validation (Class level)",
+      "set": {
+        "command": "python3 -c \"class V(type):\n def __new__(m,n,b,ns):\n  if n!='Base' and 'id' not in ns: raise TypeError(f'{n} needs id')\n  return super().__new__(m,n,b,ns)\nclass Base(metaclass=V): pass\ntry:\n class Bad(Base): pass\nexcept TypeError as e: print(e)\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_metaclass",
+      "english": "Custom Type",
+      "set": {
+        "command": "python3 -c \"class Frozen(type):\n def __setattr__(c,k,v): raise AttributeError('immutable')\nclass Cfg(metaclass=Frozen): HOST='localhost'\ntry: Cfg.HOST='x'\nexcept AttributeError as e: print(e)\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_typing",
+      "english": "Type Hints",
+      "set": {
+        "command": "python3 -c \"def greet(name: str) -> str: return f'Hello {name}'\nprint(greet.__annotations__)\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_typing",
+      "english": "Typing (module)",
+      "set": {
+        "command": "python3 -c \"from typing import List,Dict; def f(x:List[int])->Dict[str,int]: return {'sum':sum(x)}\nprint(f([1,2,3]))\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_typing",
+      "english": "Mypy",
+      "set": {
+        "command": "python3 -m mypy --version 2>/dev/null || pip install mypy && python3 -m mypy --version"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_typing",
+      "english": "Optional Type",
+      "set": {
+        "command": "python3 -c \"from typing import Optional\ndef find(n:int)->Optional[str]: return None if n<0 else str(n)\nprint(find(-1),find(5))\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_typing",
+      "english": "Union Type",
+      "set": {
+        "command": "python3 -c \"def show(x: int|str) -> str: return str(x)\nprint(show(42),show('hi'))\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_typing",
+      "english": "Any Type",
+      "set": {
+        "command": "python3 -c \"from typing import Any\ndef dump(v: Any) -> None: print(type(v).__name__,v)\ndump(42); dump('hi'); dump([1])\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_typing",
+      "english": "Generic Type",
+      "set": {
+        "command": "python3 -c \"from typing import TypeVar,Generic\nT=TypeVar('T')\nclass Box(Generic[T]):\n def __init__(s,v:T): s.v=v\nprint(Box(42).v,Box('hi').v)\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_typing",
+      "english": "Protocol",
+      "set": {
+        "command": "python3 -c \"from typing import Protocol\nclass Readable(Protocol):\n def read(s)->str: ...\nclass F:\n def read(s)->str: return 'data'\nprint(isinstance(F(),Readable))\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_typing",
+      "english": "Type Alias",
+      "set": {
+        "command": "python3 -c \"UserID=int; Scores=dict[str,list[int]]; s:Scores={'math':[90,85]}; print(s)\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_typing",
+      "english": "Callable",
+      "set": {
+        "command": "python3 -c \"from typing import Callable\ndef apply(op:Callable[[int,int],int],a:int,b:int)->int: return op(a,b)\nprint(apply(lambda a,b:a+b,3,4))\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_patterns",
+      "english": "Design Pattern",
+      "set": {
+        "command": "python3 -c \"print('Creational: Singleton, Factory\\nStructural: Adapter, Proxy\\nBehavioral: Observer, Strategy')\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_patterns",
+      "english": "Singleton",
+      "set": {
+        "command": "python3 -c \"class S:\n _i=None\n def __new__(c):\n  if c._i is None: c._i=super().__new__(c)\n  return c._i\nprint(S() is S())\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_patterns",
+      "english": "Factory Pattern",
+      "set": {
+        "command": "python3 -c \"def shape(kind):\n return {'circle':'O','square':'[]','tri':'/\\\\'}[kind]\nprint(shape('circle'),shape('square'))\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_patterns",
+      "english": "Strategy Pattern",
+      "set": {
+        "command": "python3 -c \"def do(strategy,data): return strategy(data)\nprint(do(sorted,[3,1,2]))\nprint(do(lambda d:sorted(d,reverse=True),[3,1,2]))\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_patterns",
+      "english": "Observer Pattern",
+      "set": {
+        "command": "python3 -c \"class Evt:\n def __init__(s): s.subs=[]\n def sub(s,fn): s.subs.append(fn)\n def fire(s,d): [fn(d) for fn in s.subs]\ne=Evt(); e.sub(print); e.fire('hello')\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_patterns",
+      "english": "Dataclass (module)",
+      "set": {
+        "command": "python3 -c \"from dataclasses import dataclass,field\n@dataclass\nclass User:\n name:str; age:int; tags:list=field(default_factory=list)\nprint(User('Alice',30))\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_patterns",
+      "english": "Dependency Injection",
+      "set": {
+        "command": "python3 -c \"class FakeDB:\n def find(s,uid): return f'user_{uid}'\nclass Svc:\n def __init__(s,db): s.db=db\n def get(s,uid): return s.db.find(uid)\nprint(Svc(FakeDB()).get(1))\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_patterns",
+      "english": "Adapter Pattern",
+      "set": {
+        "command": "python3 -c \"class Old:\n def xml(s): return '<data/>'\nclass Adapter:\n def __init__(s,o): s.o=o\n def json(s): return '{\\\"data\\\":null}'\nprint(Adapter(Old()).json())\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_patterns",
+      "english": "Proxy Pattern",
+      "set": {
+        "command": "python3 -c \"class Heavy:\n def __init__(s): print('loading...')\n def run(s): print('running')\nclass Proxy:\n def __init__(s): s._r=None\n def run(s):\n  if not s._r: s._r=Heavy()\n  s._r.run()\nProxy().run()\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_patterns",
+      "english": "Composition over Inheritance",
+      "set": {
+        "command": "python3 -c \"class Engine:\n def start(s): return 'vroom'\nclass Car:\n def __init__(s): s.e=Engine()\n def go(s): return s.e.start()\nprint(Car().go())\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_threading",
+      "english": "Thread",
+      "set": {
+        "command": "python3 -c \"import threading; t=threading.Thread(target=lambda:print('hello')); t.start(); t.join()\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_threading",
+      "english": "Multi-threading",
+      "set": {
+        "command": "python3 -c \"import threading\ndef w(n): print(f'worker {n}')\nts=[threading.Thread(target=w,args=(i,)) for i in range(3)]\nfor t in ts: t.start()\nfor t in ts: t.join()\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_threading",
+      "english": "GIL (Global Interpreter Lock)",
+      "set": {
+        "command": "python3 -c \"import sys; print('GIL switch interval:',sys.getswitchinterval(),'seconds')\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_threading",
+      "english": "Lock (Mutex)",
+      "set": {
+        "command": "python3 -c \"import threading; lock=threading.Lock(); lock.acquire(); print('locked:',lock.locked()); lock.release()\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_threading",
+      "english": "Thread Safety",
+      "set": {
+        "command": "python3 -c \"import threading\nlock=threading.Lock(); total=0\ndef add():\n global total\n with lock: total+=1\nts=[threading.Thread(target=add) for _ in range(100)]\nfor t in ts: t.start()\nfor t in ts: t.join()\nprint(total)\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_threading",
+      "english": "Semaphore",
+      "set": {
+        "command": "python3 -c \"import threading; sem=threading.Semaphore(2); sem.acquire(); sem.acquire(); print('acquired 2'); sem.release(); sem.release()\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_threading",
+      "english": "Race Condition",
+      "set": {
+        "command": "python3 -c \"import threading\nc=0\ndef inc():\n global c\n for _ in range(100000): c+=1\nts=[threading.Thread(target=inc) for _ in range(4)]\nfor t in ts: t.start()\nfor t in ts: t.join()\nprint('expected 400000, got',c)\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_threading",
+      "english": "ThreadPoolExecutor",
+      "set": {
+        "command": "python3 -c \"from concurrent.futures import ThreadPoolExecutor\nwith ThreadPoolExecutor(4) as p: print(list(p.map(lambda x:x*x,[1,2,3,4])))\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_threading",
+      "english": "Daemon Thread",
+      "set": {
+        "command": "python3 -c \"import threading; t=threading.Thread(target=lambda:None,daemon=True); t.start(); print('daemon:',t.daemon)\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_threading",
+      "english": "Context Switching",
+      "set": {
+        "command": "python3 -c \"import threading; print('active threads:',threading.active_count(),'switch interval:',__import__('sys').getswitchinterval())\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_async",
+      "english": "Asynchronous Programming",
+      "set": {
+        "command": "python3 -c \"import asyncio\nasync def main(): await asyncio.sleep(0.01); print('done')\nasyncio.run(main())\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_async",
+      "english": "Coroutine",
+      "set": {
+        "command": "python3 -c \"import asyncio\nasync def greet(n): await asyncio.sleep(0); return f'hi {n}'\nprint(asyncio.run(greet('world')))\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_async",
+      "english": "Await (Keyword)",
+      "set": {
+        "command": "python3 -c \"import asyncio\nasync def add(): return await asyncio.coroutine(lambda:3)() + await asyncio.coroutine(lambda:4)()\nprint(asyncio.run(add()))\" 2>/dev/null || python3 -c \"import asyncio\nasync def a(): return 3\nasync def b(): return 4\nasync def main(): print(await a()+await b())\nasyncio.run(main())\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_async",
+      "english": "Event Loop",
+      "set": {
+        "command": "python3 -c \"import asyncio\nasync def hi(): return 42\nloop=asyncio.new_event_loop(); print(loop.run_until_complete(hi())); loop.close()\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_async",
+      "english": "Asyncio (module)",
+      "set": {
+        "command": "python3 -c \"import asyncio\nasync def f(n): await asyncio.sleep(0); return n*2\nasync def main(): print(await asyncio.gather(f(1),f(2),f(3)))\nasyncio.run(main())\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_async",
+      "english": "Future",
+      "set": {
+        "command": "python3 -c \"import asyncio\nasync def main():\n loop=asyncio.get_event_loop(); fut=loop.create_future()\n loop.call_soon(fut.set_result,42); print(await fut)\nasyncio.run(main())\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_async",
+      "english": "Task",
+      "set": {
+        "command": "python3 -c \"import asyncio\nasync def work(): return 99\nasync def main(): t=asyncio.create_task(work()); print(await t)\nasyncio.run(main())\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_async",
+      "english": "Non-blocking I/O",
+      "set": {
+        "command": "python3 -c \"import asyncio\nasync def fetch(): r,w=await asyncio.open_connection('example.com',80); w.close(); return 'connected'\nprint(asyncio.run(fetch()))\" 2>/dev/null || echo 'network example'"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_async",
+      "english": "Async Context Manager",
+      "set": {
+        "command": "python3 -c \"import asyncio\nclass ACM:\n async def __aenter__(s): print('enter'); return s\n async def __aexit__(s,*a): print('exit')\nasync def main():\n async with ACM(): print('inside')\nasyncio.run(main())\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_async",
+      "english": "Async Iterator",
+      "set": {
+        "command": "python3 -c \"import asyncio\nasync def gen():\n for i in range(3): yield i; await asyncio.sleep(0)\nasync def main():\n async for v in gen(): print(v)\nasyncio.run(main())\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_multiproc",
+      "english": "Process",
+      "set": {
+        "command": "python3 -c \"from multiprocessing import Process\ndef w(n): print(n*n)\np=Process(target=w,args=(7,)); p.start(); p.join()\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_multiproc",
+      "english": "Multiprocessing",
+      "set": {
+        "command": "python3 -c \"from multiprocessing import Pool\nwith Pool(2) as p: print(p.map(lambda x:x*x,[1,2,3,4]))\" 2>/dev/null || python3 -c \"from concurrent.futures import ProcessPoolExecutor as P\nwith P(2) as p: print(list(p.map(pow,[2,3,4],[10,10,10])))\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_multiproc",
+      "english": "Process Pool",
+      "set": {
+        "command": "python3 -c \"from concurrent.futures import ProcessPoolExecutor\nwith ProcessPoolExecutor(2) as p: print(list(p.map(pow,[2,3,4],[10,10,10])))\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_multiproc",
+      "english": "IPC (Inter-Process Communication)",
+      "set": {
+        "command": "python3 -c \"from multiprocessing import Process,Queue\nq=Queue()\ndef prod(q): q.put('hello')\np=Process(target=prod,args=(q,)); p.start(); p.join(); print(q.get())\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_multiproc",
+      "english": "Queue (Multiprocessing)",
+      "set": {
+        "command": "python3 -c \"from multiprocessing import Queue; q=Queue(); q.put('msg'); print(q.get())\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_multiproc",
+      "english": "Pipe (Multiprocessing)",
+      "set": {
+        "command": "python3 -c \"from multiprocessing import Pipe; a,b=Pipe(); a.send('ping'); print(b.recv()); a.close(); b.close()\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_multiproc",
+      "english": "Shared Memory",
+      "set": {
+        "command": "python3 -c \"from multiprocessing import shared_memory; shm=shared_memory.SharedMemory(create=True,size=10); shm.buf[0]=42; print(shm.buf[0]); shm.close(); shm.unlink()\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_multiproc",
+      "english": "CPU-bound",
+      "set": {
+        "command": "python3 -c \"import time\ndef is_prime(n): return all(n%i for i in range(2,int(n**.5)+1))\ns=time.time(); r=sum(is_prime(n) for n in range(10000)); print(r,'primes in',f'{time.time()-s:.2f}s')\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_multiproc",
+      "english": "I/O-bound",
+      "set": {
+        "command": "python3 -c \"import asyncio\nasync def fetch(n): await asyncio.sleep(0.01); return n\nasync def main(): print(await asyncio.gather(*[fetch(i) for i in range(5)]))\nasyncio.run(main())\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_multiproc",
+      "english": "Parallelism",
+      "set": {
+        "command": "python3 -c \"from concurrent.futures import ProcessPoolExecutor\ndef sq(x): return x*x\nwith ProcessPoolExecutor(2) as p: print(list(p.map(sq,range(8))))\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_concurrency_patterns",
+      "english": "Producer-Consumer",
+      "set": {
+        "command": "python3 -c \"import queue,threading\nq=queue.Queue()\ndef prod(): q.put('item'); q.put(None)\ndef cons():\n while True:\n  v=q.get()\n  if v is None: break\n  print('got:',v)\nthreading.Thread(target=prod).start(); cons()\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_concurrency_patterns",
+      "english": "Worker Pool",
+      "set": {
+        "command": "python3 -c \"from concurrent.futures import ThreadPoolExecutor,as_completed\nwith ThreadPoolExecutor(3) as p:\n fs={p.submit(lambda x:x*x,i):i for i in range(5)}\n for f in as_completed(fs): print(f.result())\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_concurrency_patterns",
+      "english": "Barrier",
+      "set": {
+        "command": "python3 -c \"import threading\nb=threading.Barrier(3)\ndef phase(n):\n print(f'{n} waiting'); b.wait(); print(f'{n} go')\nts=[threading.Thread(target=phase,args=(i,)) for i in range(3)]\nfor t in ts: t.start()\nfor t in ts: t.join()\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_concurrency_patterns",
+      "english": "Condition Variable",
+      "set": {
+        "command": "python3 -c \"import threading\ncv=threading.Condition(); ready=False\ndef waiter():\n with cv: cv.wait_for(lambda:ready); print('go')\ndef setter():\n global ready\n with cv: ready=True; cv.notify()\nt=threading.Thread(target=waiter); t.start()\nsetter(); t.join()\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_concurrency_patterns",
+      "english": "Starvation",
+      "set": {
+        "command": "python3 -c \"print('Starvation: a thread never gets the lock because others always acquire it first')\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_concurrency_patterns",
+      "english": "Livelock",
+      "set": {
+        "command": "python3 -c \"print('Livelock: threads keep changing state in response to each other but make no progress')\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_concurrency_patterns",
+      "english": "Atomic Operation",
+      "set": {
+        "command": "python3 -c \"import threading\nlock=threading.Lock(); c=0\ndef inc():\n global c\n with lock: c+=1\nts=[threading.Thread(target=inc) for _ in range(100)]\nfor t in ts: t.start()\nfor t in ts: t.join()\nprint(c)\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_concurrency_patterns",
+      "english": "Event (Synchronization)",
+      "set": {
+        "command": "python3 -c \"import threading\ne=threading.Event()\ndef waiter(): e.wait(); print('event fired')\nt=threading.Thread(target=waiter); t.start(); e.set(); t.join()\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_concurrency_patterns",
+      "english": "Coroutine Chaining",
+      "set": {
+        "command": "python3 -c \"import asyncio\nasync def step1(): return 'raw'\nasync def step2(d): return d.upper()\nasync def pipe(): return await step2(await step1())\nprint(asyncio.run(pipe()))\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_concurrency_patterns",
+      "english": "Task Cancellation",
+      "set": {
+        "command": "python3 -c \"import asyncio\nasync def long(): await asyncio.sleep(10)\nasync def main():\n t=asyncio.create_task(long()); await asyncio.sleep(0.01); t.cancel()\n try: await t\n except asyncio.CancelledError: print('cancelled')\nasyncio.run(main())\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_unittest",
+      "english": "Unit Testing",
+      "set": {
+        "command": "python3 -m pytest --version 2>/dev/null || python3 -m unittest --help 2>&1 | head -3"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_unittest",
+      "english": "Unittest (module)",
+      "set": {
+        "command": "python3 -c \"import unittest\nclass T(unittest.TestCase):\n def test_add(s): s.assertEqual(2+3,5)\nunittest.main(exit=False,verbosity=2)\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_unittest",
+      "english": "Pytest (framework)",
+      "set": {
+        "command": "python3 -m pytest --co -q 2>/dev/null || pip install pytest && python3 -m pytest --version"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_unittest",
+      "english": "Fixture (Pytest)",
+      "set": {
+        "command": "python3 -m pytest --fixtures -q 2>/dev/null | head -10"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_unittest",
+      "english": "Parameterization",
+      "set": {
+        "command": "python3 -c \"import unittest\nclass T(unittest.TestCase):\n def test_pairs(s):\n  for a,b,exp in [(1,2,3),(5,5,10)]: s.assertEqual(a+b,exp)\nunittest.main(exit=False,verbosity=2)\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_unittest",
+      "english": "Test Case",
+      "set": {
+        "command": "python3 -c \"import unittest\nclass TestStr(unittest.TestCase):\n def test_upper(s): s.assertEqual('hello'.upper(),'HELLO')\nunittest.main(exit=False,verbosity=2)\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_unittest",
+      "english": "Test Discovery",
+      "set": {
+        "command": "python3 -m pytest --collect-only -q 2>/dev/null || python3 -m unittest discover -v 2>&1 | head -5"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_unittest",
+      "english": "Expected Failure",
+      "set": {
+        "command": "python3 -c \"import unittest\nclass T(unittest.TestCase):\n @unittest.expectedFailure\n def test_fail(s): s.assertEqual(1,2)\nunittest.main(exit=False,verbosity=2)\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_unittest",
+      "english": "Skipping Tests",
+      "set": {
+        "command": "python3 -c \"import unittest\nclass T(unittest.TestCase):\n @unittest.skip('demo skip')\n def test_skip(s): pass\nunittest.main(exit=False,verbosity=2)\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_unittest",
+      "english": "Assertion Error",
+      "set": {
+        "command": "python3 -c \"try: assert 2*3==7,'expected 7'\nexcept AssertionError as e: print('AssertionError:',e)\" 2>&1 || python3 -c \"try: assert 2*3==7,'expected 7'\nexcept AssertionError: print('assertion failed')\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_mocking",
+      "english": "Mocking",
+      "set": {
+        "command": "python3 -c \"from unittest.mock import Mock; m=Mock(); m.greet.return_value='hi'; print(m.greet())\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_mocking",
+      "english": "Mock (Object)",
+      "set": {
+        "command": "python3 -c \"from unittest.mock import Mock; db=Mock(); db.find.return_value={'id':1}; print(db.find(1))\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_mocking",
+      "english": "Patch (Decorator)",
+      "set": {
+        "command": "python3 -c \"from unittest.mock import patch\nwith patch('os.getcwd',return_value='/fake'): import os; print(os.getcwd())\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_mocking",
+      "english": "MagicMock",
+      "set": {
+        "command": "python3 -c \"from unittest.mock import MagicMock; m=MagicMock(); m.__len__.return_value=5; print(len(m))\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_mocking",
+      "english": "Return Value",
+      "set": {
+        "command": "python3 -c \"from unittest.mock import Mock; api=Mock(); api.fetch.return_value={'status':'ok'}; print(api.fetch())\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_mocking",
+      "english": "Side Effect (Mock)",
+      "set": {
+        "command": "python3 -c \"from unittest.mock import Mock; m=Mock(side_effect=ValueError('bad'))\ntry: m()\nexcept ValueError as e: print('caught:',e)\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_mocking",
+      "english": "Monkeypatch (Fixture)",
+      "set": {
+        "command": "python3 -c \"import os; os.environ['TEST_KEY']='fake'; print(os.environ['TEST_KEY']); del os.environ['TEST_KEY']\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_mocking",
+      "english": "Assert Called With",
+      "set": {
+        "command": "python3 -c \"from unittest.mock import Mock; log=Mock(); log.info('msg',uid=1); log.info.assert_called_with('msg',uid=1); print('verified')\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_mocking",
+      "english": "Spy (Testing)",
+      "set": {
+        "command": "python3 -c \"from unittest.mock import Mock; real=lambda x:x*2; spy=Mock(wraps=real); print(spy(5)); spy.assert_called_once_with(5)\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_mocking",
+      "english": "Dependency Injection (DI)",
+      "set": {
+        "command": "python3 -c \"class FakeDB:\n def get(s,id): return 'mock'\nclass Svc:\n def __init__(s,db): s.db=db\nprint(Svc(FakeDB()).db.get(1))\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_quality",
+      "english": "Linting",
+      "set": {
+        "command": "python3 -m py_compile -c \"import sys\" 2>&1; echo 'Use: ruff check src/ or flake8 src/'"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_quality",
+      "english": "PEP 8",
+      "set": {
+        "command": "python3 -c \"import keyword; print('PEP8: snake_case for',', '.join(keyword.kwlist[:8]),'...')\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_quality",
+      "english": "Black (Formatter)",
+      "set": {
+        "command": "python3 -m black --version 2>/dev/null || pip install black && python3 -m black --version"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_quality",
+      "english": "Code Coverage",
+      "set": {
+        "command": "python3 -m pytest --co -q 2>/dev/null; echo 'Use: pytest --cov=src --cov-report=term-missing'"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_quality",
+      "english": "Static Analysis",
+      "set": {
+        "command": "python3 -m mypy --version 2>/dev/null || echo 'Install: pip install mypy && mypy --strict src/'"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_quality",
+      "english": "Technical Debt",
+      "set": {
+        "command": "python3 -c \"import ast,sys; print('TODO/FIXME finder:'); [print(f'L{i}:',l.strip()) for i,l in enumerate(open(sys.argv[0] if len(sys.argv)>1 else __file__)) if 'TODO' in l or 'FIXME' in l]\" 2>/dev/null; echo 'Use: grep -rn TODO src/'"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_quality",
+      "english": "Refactoring",
+      "set": {
+        "command": "python3 -c \"# Before: duplicated\\ndef area_c(r): return 3.14*r*r\\ndef area_s(s): return s*s\\n# After: unified\\nimport math\\ndef area(shape,dim): return {'circle':math.pi*dim**2,'square':dim**2}[shape]\\nprint(area('circle',5))\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_quality",
+      "english": "Pythonic",
+      "set": {
+        "command": "python3 -c \"import this\" 2>&1 | head -3"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_quality",
+      "english": "Dry (Don't Repeat Yourself)",
+      "set": {
+        "command": "python3 -c \"# DRY: extract common logic\\ndef validate(v,mn,mx): assert mn<=v<=mx,f'{v} not in [{mn},{mx}]'\\nvalidate(5,1,10); print('DRY: one function, reused everywhere')\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_quality",
+      "english": "Kiss (Keep It Simple, Stupid)",
+      "set": {
+        "command": "python3 -c \"# KISS: simple is better than complex\\ndata=[3,1,2]; print(sorted(data))  # don't write your own sort\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_performance",
+      "english": "Profiling",
+      "set": {
+        "command": "python3 -m cProfile -c \"sum(range(100000))\" 2>&1 | head -5"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_performance",
+      "english": "cProfile (module)",
+      "set": {
+        "command": "python3 -c \"import cProfile; cProfile.run('sum(range(100000))')\" 2>&1 | head -8"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_performance",
+      "english": "Timeit (module)",
+      "set": {
+        "command": "python3 -m timeit -n 1000 \"sum(range(1000))\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_performance",
+      "english": "PyPy",
+      "set": {
+        "command": "python3 -c \"import platform; print('Current:',platform.python_implementation(),'- PyPy is a faster JIT alternative')\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_performance",
+      "english": "Cython",
+      "set": {
+        "command": "python3 -c \"print('Cython compiles Python to C for speed'); import importlib; print('cython installed:',importlib.util.find_spec('Cython') is not None)\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_performance",
+      "english": "Complexity Analysis",
+      "set": {
+        "command": "python3 -c \"import time\nfor n in [1000,10000,100000]:\n s=time.time(); sorted(range(n,0,-1)); print(f'n={n}: {time.time()-s:.4f}s (O(n log n))')\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_performance",
+      "english": "Memory Profiling",
+      "set": {
+        "command": "python3 -c \"import sys; a=list(range(1000)); b=(x for x in range(1000)); print('list:',sys.getsizeof(a),'bytes','gen:',sys.getsizeof(b),'bytes')\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_performance",
+      "english": "Overhead",
+      "set": {
+        "command": "python3 -c \"import time\ndef plain(n): return sum(range(n))\ndef wrapped(n): return sum(range(n))\ns=time.time(); [plain(1000) for _ in range(10000)]; print(f'overhead demo: {time.time()-s:.3f}s')\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_performance",
+      "english": "Line Profiler",
+      "set": {
+        "command": "python3 -c \"print('Install: pip install line_profiler'); print('Usage: kernprof -l -v script.py')\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_performance",
+      "english": "Pre-allocation",
+      "set": {
+        "command": "python3 -c \"import time\nn=100000\ns=time.time(); a=[0]*n\nfor i in range(n): a[i]=i*i\nprint(f'pre-alloc: {time.time()-s:.4f}s')\ns=time.time(); b=[]\nfor i in range(n): b.append(i*i)\nprint(f'append: {time.time()-s:.4f}s')\""
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_web",
+      "english": "Web Framework",
+      "set": {
+        "command": "python3 -c \"print('Popular Python web frameworks:'); print('- Flask (micro)'); print('- Django (full-stack)'); print('- FastAPI (async)')\""
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_web",
+      "english": "Django",
+      "set": {
+        "command": "python3 -c \"import django; print('Django',django.__version__)\" 2>/dev/null || pip install django && python3 -m django --version"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_web",
+      "english": "Flask",
+      "set": {
+        "command": "python3 -c \"from flask import Flask; app=Flask(__name__); print('Flask app:',app.name)\" 2>/dev/null || pip install flask && python3 -c \"import flask; print('Flask',flask.__version__)\""
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_web",
+      "english": "FastAPI",
+      "set": {
+        "command": "python3 -c \"import fastapi; print('FastAPI',fastapi.__version__)\" 2>/dev/null || pip install fastapi && python3 -c \"import fastapi; print('FastAPI',fastapi.__version__)\""
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_web",
+      "english": "WSGI (Web Server Gateway Interface)",
+      "set": {
+        "command": "python3 -c \"def app(environ,start_response): start_response('200 OK',[('Content-Type','text/plain')]); return [b'Hello WSGI']\nprint('WSGI app defined:',app.__name__)\""
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_web",
+      "english": "ASGI (Asynchronous Server Gateway Interface)",
+      "set": {
+        "command": "python3 -c \"async def app(scope,receive,send): pass\nprint('ASGI app defined:',app.__name__,type(app))\""
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_web",
+      "english": "Template Engine",
+      "set": {
+        "command": "python3 -c \"from string import Template; t=Template('Hello \\$name, you have \\$n msgs'); print(t.substitute(name='Alice',n=3))\""
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_web",
+      "english": "Routing (Web)",
+      "set": {
+        "command": "python3 -c \"routes={'/':'home','/about':'about','/users':'users'}; path='/about'; print(f'{path} -> {routes[path]}')\""
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_web",
+      "english": "Middleware (Web)",
+      "set": {
+        "command": "python3 -c \"import time\ndef middleware(handler):\n def wrapped(req):\n  s=time.time(); r=handler(req); print(f'took {time.time()-s:.4f}s'); return r\n return wrapped\n@middleware\ndef view(req): return 'ok'\nprint(view('/'))\""
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_web",
+      "english": "Django ORM",
+      "set": {
+        "command": "python3 -c \"print('Django ORM example:'); print('Article.objects.filter(year=2025).order_by(\\\"-date\\\")[:10]')\""
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_data",
+      "english": "Data Science",
+      "set": {
+        "command": "python3 -c \"import statistics; data=[2,4,6,8,10]; print('mean:',statistics.mean(data),'stdev:',statistics.stdev(data))\""
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_data",
+      "english": "NumPy (Numerical Python)",
+      "set": {
+        "command": "python3 -c \"import numpy as np; a=np.array([[1,2],[3,4]]); print('mean per col:',a.mean(axis=0))\" 2>/dev/null || pip install numpy && python3 -c \"import numpy; print('NumPy',numpy.__version__)\""
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_data",
+      "english": "Pandas (Data Analysis)",
+      "set": {
+        "command": "python3 -c \"import pandas as pd; df=pd.DataFrame({'name':['Alice','Bob'],'age':[30,25]}); print(df)\" 2>/dev/null || pip install pandas && python3 -c \"import pandas; print('Pandas',pandas.__version__)\""
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_data",
+      "english": "Matplotlib",
+      "set": {
+        "command": "python3 -c \"import matplotlib; print('Matplotlib',matplotlib.__version__)\" 2>/dev/null || pip install matplotlib && python3 -c \"import matplotlib; print('Matplotlib',matplotlib.__version__)\""
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_data",
+      "english": "Scikit-learn",
+      "set": {
+        "command": "python3 -c \"import sklearn; print('scikit-learn',sklearn.__version__)\" 2>/dev/null || pip install scikit-learn && python3 -c \"import sklearn; print('scikit-learn',sklearn.__version__)\""
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_data",
+      "english": "Jupyter Notebook",
+      "set": {
+        "command": "python3 -m jupyter --version 2>/dev/null || pip install jupyterlab && jupyter --version"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_data",
+      "english": "DataFrame",
+      "set": {
+        "command": "python3 -c \"import pandas as pd; df=pd.DataFrame({'x':[1,2,3],'y':[4,5,6]}); print(df[df.x>1])\" 2>/dev/null || echo 'pip install pandas'"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_data",
+      "english": "Vectorization",
+      "set": {
+        "command": "python3 -c \"import numpy as np; a=np.arange(10); print('vectorized:',a*2+1)\" 2>/dev/null || echo 'pip install numpy'"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_data",
+      "english": "Data Cleaning",
+      "set": {
+        "command": "python3 -c \"data=[' Alice ','BOB',None,'carol']; clean=[x.strip().lower() for x in data if x]; print(clean)\""
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_data",
+      "english": "Tensor",
+      "set": {
+        "command": "python3 -c \"import torch; x=torch.tensor([[1.0,2.0],[3.0,4.0]]); print('shape:',x.shape,'sum:',x.sum())\" 2>/dev/null || echo 'pip install torch'"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_api",
+      "english": "API Development",
+      "set": {
+        "command": "python3 -c \"from http.server import BaseHTTPRequestHandler; print('API dev: define endpoints, validate input, return JSON')\""
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_api",
+      "english": "Pydantic (Data validation)",
+      "set": {
+        "command": "python3 -c \"from pydantic import BaseModel\nclass User(BaseModel): name:str; age:int\nu=User(name='Alice',age=30); print(u.model_dump())\" 2>/dev/null || echo 'pip install pydantic'"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_api",
+      "english": "Marshmallow",
+      "set": {
+        "command": "python3 -c \"from marshmallow import Schema,fields\nclass US(Schema): name=fields.Str(required=True)\nprint(US().load({'name':'Alice'}))\" 2>/dev/null || echo 'pip install marshmallow'"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_api",
+      "english": "Serializer",
+      "set": {
+        "command": "python3 -c \"import json\ndef serialize(obj): return json.dumps({'id':1,'name':obj})\nprint(serialize('Alice'))\""
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_api",
+      "english": "Endpoint (API)",
+      "set": {
+        "command": "python3 -c \"from http.server import HTTPServer,BaseHTTPRequestHandler\nclass H(BaseHTTPRequestHandler):\n def do_GET(s): s.send_response(200); s.end_headers(); s.wfile.write(b'{}')\nprint('Endpoint handler defined:',H.__name__)\""
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_api",
+      "english": "Authentication (OAuth2/JWT)",
+      "set": {
+        "command": "python3 -c \"import hmac,hashlib,base64,json\nheader=base64.b64encode(json.dumps({'alg':'HS256'}).encode()).decode()\npayload=base64.b64encode(json.dumps({'sub':'user1'}).encode()).decode()\nprint(f'JWT-like: {header}.{payload}...')\""
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_api",
+      "english": "Swagger / OpenAPI",
+      "set": {
+        "command": "python3 -c \"import json; spec={'openapi':'3.0.0','info':{'title':'My API','version':'1.0'},'paths':{}}; print(json.dumps(spec,indent=2))\""
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_api",
+      "english": "Reverse Proxy (Uvicorn/Gunicorn)",
+      "set": {
+        "command": "python3 -c \"import shutil; print('gunicorn:',shutil.which('gunicorn') or 'not installed'); print('uvicorn:',shutil.which('uvicorn') or 'not installed')\""
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_api",
+      "english": "Payload (JSON)",
+      "set": {
+        "command": "python3 -c \"import json; payload={'name':'Alice','role':'admin'}; print('JSON payload:',json.dumps(payload))\""
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_api",
+      "english": "Rate Limiting (API)",
+      "set": {
+        "command": "python3 -c \"import time\ncalls=[]\ndef rate_limited(max_per_sec):\n def dec(f):\n  def w(*a):\n   now=time.time(); calls[:]=[ t for t in calls if now-t<1]\n   if len(calls)>=max_per_sec: return 'rate limited'\n   calls.append(now); return f(*a)\n  return w\n return dec\n@rate_limited(2)\ndef api(): return 'ok'\nprint(api(),api(),api())\""
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_deploy",
+      "english": "Deployment",
+      "set": {
+        "command": "python3 -c \"print('Deploy checklist:'); print('1. pip freeze > requirements.txt'); print('2. docker build -t app .'); print('3. docker run -p 8000:8000 app')\""
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_deploy",
+      "english": "Docker (for Python)",
+      "set": {
+        "command": "python3 -c \"dockerfile='FROM python:3.12-slim\\nWORKDIR /app\\nCOPY requirements.txt .\\nRUN pip install -r requirements.txt\\nCOPY . .\\nCMD [\\\"python\\\",\\\"app.py\\\"]'; print(dockerfile)\""
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_deploy",
+      "english": "Gunicorn",
+      "set": {
+        "command": "python3 -c \"import shutil; g=shutil.which('gunicorn'); print('gunicorn:',g or 'install via pip install gunicorn')\""
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_deploy",
+      "english": "Uvicorn",
+      "set": {
+        "command": "python3 -c \"import shutil; u=shutil.which('uvicorn'); print('uvicorn:',u or 'install via pip install uvicorn')\""
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_deploy",
+      "english": "Packaging",
+      "set": {
+        "command": "python3 -c \"import importlib.metadata; print('installed packages:',len(list(importlib.metadata.distributions())))\""
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_deploy",
+      "english": "PyInstaller",
+      "set": {
+        "command": "python3 -c \"import shutil; p=shutil.which('pyinstaller'); print('pyinstaller:',p or 'install via pip install pyinstaller')\""
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_deploy",
+      "english": "CI/CD (for Python)",
+      "set": {
+        "command": "python3 -c \"ci='name: CI\\non: [push]\\njobs:\\n  test:\\n    runs-on: ubuntu-latest\\n    steps:\\n    - uses: actions/checkout@v4\\n    - run: pip install -r requirements.txt\\n    - run: pytest'; print(ci)\""
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_deploy",
+      "english": "Sentry (Monitoring)",
+      "set": {
+        "command": "python3 -c \"import sentry_sdk; print('Sentry SDK',sentry_sdk.__version__)\" 2>/dev/null || echo 'pip install sentry-sdk'"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_deploy",
+      "english": "Wheel (.whl)",
+      "set": {
+        "command": "python3 -c \"import wheel; print('wheel',wheel.__version__)\" 2>/dev/null || pip wheel --help 2>&1 | head -3"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_deploy",
+      "english": "Cloud hosting",
+      "set": {
+        "command": "python3 -c \"providers=['Heroku','AWS Lambda','GCP Cloud Run','Azure App Service','Fly.io']; print('Python cloud hosts:'); [print(f'  - {p}') for p in providers]\""
+      }
+    }
+  ]
+}

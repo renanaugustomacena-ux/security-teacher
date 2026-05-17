@@ -34,6 +34,7 @@ export default {
 age = 25
 print(user_name, age)`,
               task: 'Definisci due variabili che rappresentano nome ed eta di un utente e stampale insieme sulla console.',
+              command: 'python3 -c "x = 42; print(x)"',
             },
             {
               english: 'Print',
@@ -47,6 +48,7 @@ print(user_name, age)`,
               code: 'print("Hello, Python!")',
               note: 'print() \u00E8 una funzione integrata (built-in) che invia dati allo standard output.',
               task: `Mostra il messaggio 'Hello, Python!' sulla console usando la funzione print.`,
+              command: `python3 -c "print('Hello, Python!')"`,
             },
             {
               english: 'Input',
@@ -60,6 +62,7 @@ print(user_name, age)`,
               code: 'name = input("Enter your name: ")',
               note: "La funzione input() restituisce sempre una stringa, indipendentemente da cosa digita l'utente.",
               task: `Chiedi all'utente di inserire il proprio nome e salva la risposta nella variabile name.`,
+              command: `python3 -c "name = input('Name: '); print('Hi', name)"`,
             },
             {
               english: 'String',
@@ -74,6 +77,7 @@ print(user_name, age)`,
               code: `greeting = 'Hello, world'
 first_word = greeting[:5]`,
               task: 'Estrai i primi cinque caratteri da una stringa di saluto usando lo slicing.',
+              command: `python3 -c "s = 'Hello, world'; print(s[:5])"`,
             },
             {
               english: 'Comment',
@@ -87,6 +91,8 @@ first_word = greeting[:5]`,
               code: '# This is a comment\nprint("Hi")',
               note: "I commenti vengono ignorati dall'interprete e servono a spiegare il codice agli esseri umani.",
               task: `Aggiungi una riga di commento sopra una chiamata a print che mostra 'Hi'.`,
+              command: `python3 -c "# This is a comment
+print('Hi')"`,
             },
             {
               english: 'Indentation',
@@ -102,6 +108,8 @@ first_word = greeting[:5]`,
     send_email(user)
     log('email sent')`,
               task: `Costruisci un blocco condizionale indentato che invia una mail e registra l'azione solo per utenti attivi.`,
+              command: `python3 -c "if True:
+    print('indented block')"`,
             },
             {
               english: 'Syntax',
@@ -116,6 +124,7 @@ first_word = greeting[:5]`,
               code: `for item in cart:
     total += item.price`,
               task: 'Scrivi un ciclo for sintatticamente corretto che somma i prezzi degli articoli in un carrello.',
+              command: 'python3 -c "for i in range(3): print(i)"',
             },
             {
               english: 'Statement',
@@ -131,6 +140,7 @@ first_word = greeting[:5]`,
 config = load_config()
 return config`,
               task: 'Scrivi tre istruzioni consecutive che importano un modulo, caricano la configurazione e la restituiscono.',
+              command: `python3 -c "import json; print(json.dumps({'ok': True}))"`,
             },
             {
               english: 'Expression',
@@ -144,6 +154,7 @@ return config`,
               note: "Un'espressione \u00E8 una combinazione di valori e operatori che viene valutata per produrre un risultato.",
               code: 'discounted = price * (1 - discount_rate)',
               task: `Calcola il prezzo scontato di un prodotto usando un'espressione aritmetica con due variabili.`,
+              command: 'python3 -c "price = 100; discount = 0.2; print(price * (1 - discount))"',
             },
             {
               english: 'Keyword',
@@ -158,6 +169,7 @@ return config`,
               code: `import keyword
 print(keyword.kwlist)`,
               task: `Stampa l'elenco di tutte le parole chiave riservate di Python usando il modulo keyword.`,
+              command: 'python3 -c "import keyword; print(keyword.kwlist)"',
             },
           ],
         },
@@ -179,6 +191,7 @@ print(keyword.kwlist)`,
               code: `retry_count = 3
 timeout_seconds = 30`,
               task: 'Definisci due variabili intere che rappresentano il numero di tentativi e il timeout in secondi.',
+              command: 'python3 -c "n = 42; print(type(n), n)"',
             },
             {
               english: 'Float',
@@ -194,6 +207,7 @@ timeout_seconds = 30`,
 tax_rate = 0.22
 total = price * (1 + tax_rate)`,
               task: `Calcola il prezzo totale con IVA partendo da due variabili float per il prezzo e l'aliquota.`,
+              command: 'python3 -c "price = 9.99; tax = 0.22; print(price * (1 + tax))"',
             },
             {
               english: 'Boolean',
@@ -208,6 +222,7 @@ total = price * (1 + tax_rate)`,
               code: `is_admin = True
 has_access = is_admin and user.verified`,
               task: `Determina se un utente puo' accedere combinando un flag amministratore con la verifica dell'account.`,
+              command: 'python3 -c "a = True; b = False; print(a and not b)"',
             },
             {
               english: 'Type',
@@ -221,6 +236,7 @@ has_access = is_admin and user.verified`,
               code: "type(5) # returns <class 'int'>",
               note: 'Python \u00E8 a tipizzazione forte (non permette operazioni tra tipi incompatibili).',
               task: 'Verifica il tipo del valore 5 usando la funzione type, che restituira int.',
+              command: `python3 -c "print(type(5), type('hi'), type(3.14))"`,
             },
             {
               english: 'Value',
@@ -237,6 +253,8 @@ has_access = is_admin and user.verified`,
 
 status = get_status()`,
               task: 'Definisci una funzione che restituisce un valore di stato e assegnalo a una variabile.',
+              command: `python3 -c "def status(): return 'ok'
+print(status())"`,
             },
             {
               english: 'Literal',
@@ -252,6 +270,7 @@ status = get_status()`,
 GREETING = 'Welcome'
 PI = 3.14`,
               task: 'Assegna a tre costanti rispettivamente un letterale intero, uno stringa e uno float.',
+              command: 'python3 -c "MAX = 100; PI = 3.14; print(MAX, PI)"',
             },
             {
               english: 'Constant',
@@ -267,6 +286,7 @@ PI = 3.14`,
 TIMEOUT = 30
 API_URL = 'https://api.example.com'`,
               task: `Dichiara tre costanti a livello di modulo per i tentativi massimi, il timeout e l'URL dell'API.`,
+              command: 'python3 -c "MAX_RETRIES = 3; TIMEOUT = 30; print(MAX_RETRIES, TIMEOUT)"',
             },
             {
               english: 'None',
@@ -282,6 +302,7 @@ API_URL = 'https://api.example.com'`,
 if result is None:
     result = fetch_user(42)`,
               task: 'Verifica con il confronto is None se la cache ha restituito un valore prima di chiamare il backend.',
+              command: 'python3 -c "x = None; print(x is None)"',
             },
             {
               english: 'Dynamic Typing',
@@ -297,6 +318,7 @@ if result is None:
 value = 'forty-two'
 value = [1, 2, 3]`,
               task: 'Riassegna la stessa variabile a tre oggetti di tipo diverso per illustrare la tipizzazione dinamica.',
+              command: `python3 -c "v = 42; print(type(v)); v = 'hello'; print(type(v))"`,
             },
             {
               english: 'Casting',
@@ -310,6 +332,7 @@ value = [1, 2, 3]`,
               code: 'int("10") # 10\nstr(5) # "5"',
               note: 'Si ottiene chiamando il costruttore del tipo desiderato (es. int(), str(), float()).',
               task: `Converti la stringa '10' in intero e il numero 5 in stringa usando int e str.`,
+              command: `python3 -c "print(int('10'), str(5), float('3.14'))"`,
             },
           ],
         },
@@ -331,6 +354,7 @@ value = [1, 2, 3]`,
               code: `total = subtotal + shipping
 is_free = shipping == 0`,
               task: `Combina un operatore aritmetico e uno di confronto per calcolare il totale e verificare se la spedizione e' gratuita.`,
+              command: 'python3 -c "a = 10; b = 3; print(a + b, a - b, a * b)"',
             },
             {
               english: 'Assignment',
@@ -345,6 +369,7 @@ is_free = shipping == 0`,
               code: `x, y = 10, 20
 x, y = y, x`,
               task: `Scambia il valore di due variabili in una singola riga sfruttando l'assegnamento multiplo.`,
+              command: 'python3 -c "x, y = 10, 20; x, y = y, x; print(x, y)"',
             },
             {
               english: 'Addition',
@@ -357,6 +382,7 @@ x, y = y, x`,
               code: 'x = 10 + 5 # 15',
               note: "L'operatore + pu\u00F2 anche concatenare stringhe.",
               task: 'Somma 10 e 5 e assegna il risultato 15 alla variabile x.',
+              command: 'python3 -c "print(10 + 5)"',
             },
             {
               english: 'Subtraction',
@@ -372,6 +398,7 @@ start = time.time()
 run_job()
 elapsed = time.time() - start`,
               task: `Calcola la durata di esecuzione di un'operazione sottraendo il timestamp iniziale da quello finale.`,
+              command: 'python3 -c "print(20 - 7)"',
             },
             {
               english: 'Multiplication',
@@ -385,6 +412,7 @@ elapsed = time.time() - start`,
               code: `separator = '-' * 40
 print(separator)`,
               task: `Costruisci una riga separatrice di 40 trattini ripetendo un carattere con l'operatore di moltiplicazione.`,
+              command: `python3 -c "print('-' * 40)"`,
             },
             {
               english: 'Division',
@@ -398,6 +426,7 @@ print(separator)`,
               code: `average = total_score / num_students
 pages = total_items // page_size`,
               task: 'Calcola la media dei punteggi con la divisione decimale e il numero di pagine con la divisione intera.',
+              command: 'python3 -c "print(7 / 2, 7 // 2)"',
             },
             {
               english: 'Modulo',
@@ -412,6 +441,7 @@ pages = total_items // page_size`,
     if n % 2 == 0:
         print(n, 'is even')`,
               task: `Itera sui numeri da zero a nove e stampa solo quelli pari sfruttando l'operatore modulo.`,
+              command: `python3 -c "for n in range(6): print(n, 'even' if n % 2 == 0 else 'odd')"`,
             },
             {
               english: 'Exponentiation',
@@ -425,6 +455,7 @@ pages = total_items // page_size`,
               code: 'x = 2 ** 10 # 1024',
               note: "Si usa il doppio asterisco (**), non l'accento circonflesso (^).",
               task: `Calcola 2 elevato alla 10 con l'operatore ** e salva il risultato 1024 in x.`,
+              command: 'python3 -c "print(2 ** 10)"',
             },
             {
               english: 'Comparison',
@@ -439,6 +470,7 @@ pages = total_items // page_size`,
               code: `if user.age >= 18:
     allow_purchase()`,
               task: `Verifica con un operatore di confronto se l'utente e' maggiorenne prima di consentire l'acquisto.`,
+              command: 'python3 -c "age = 21; print(age >= 18)"',
             },
             {
               english: 'Logical Operator',
@@ -453,6 +485,7 @@ pages = total_items // page_size`,
               code: `if user.is_active and not user.is_banned:
     grant_access(user)`,
               task: `Combina due condizioni con gli operatori logici and e not per concedere l'accesso solo agli utenti attivi e non bannati.`,
+              command: 'python3 -c "a = True; b = False; print(a and b, a or b, not b)"',
             },
           ],
         },
@@ -471,6 +504,7 @@ pages = total_items // page_size`,
               context: 'environment',
               difficulty: 'beginner',
               note: 'Include editor, debugger e strumenti in un solo programma (es. VS Code, PyCharm).',
+              command: `python3 -c "import sys; print('Python', sys.version, 'at', sys.executable)"`,
             },
             {
               english: 'Interpreter',
@@ -486,6 +520,7 @@ pages = total_items // page_size`,
 print(sys.version)
 print(sys.executable)`,
               task: `Stampa la versione dell'interprete Python in uso e il percorso del suo eseguibile.`,
+              command: 'python3 --version',
             },
             {
               english: 'Script',
@@ -503,6 +538,7 @@ print(sys.executable)`,
 if __name__ == '__main__':
     main()`,
               task: 'Struttura uno script Python con una funzione main eseguita solo quando il file viene lanciato direttamente.',
+              command: `python3 -c "if __name__ == '__main__': print('running as script')"`,
             },
             {
               english: 'Shell (REPL)',
@@ -520,6 +556,7 @@ if __name__ == '__main__':
 >>> print(name)
 Alice`,
               task: 'Sperimenta nella shell interattiva calcolando una somma e definendo una variabile da stampare subito dopo.',
+              command: `python3 -c "print(2 + 3); print('interactive demo')"`,
             },
             {
               english: 'Execution',
@@ -530,6 +567,7 @@ Alice`,
                 "During execution, Python reads your .py file top-to-bottom and runs each statement in order. = Durante l'esecuzione, Python legge il file .py dall'alto verso il basso ed esegue ogni istruzione in ordine.",
               context: 'execution',
               difficulty: 'beginner',
+              command: `python3 -c "print('executed successfully')"`,
             },
             {
               english: 'Debugger',
@@ -547,6 +585,7 @@ def calculate(data):
     pdb.set_trace()
     return sum(data)`,
               task: 'Inserisci un breakpoint con pdb dentro una funzione per ispezionarne lo stato durante il debug.',
+              command: `python3 -c "import pdb; print('debugger module loaded:', pdb.__name__)"`,
             },
             {
               english: 'Error',
@@ -562,6 +601,10 @@ def calculate(data):
 except ValueError as err:
     print('Invalid number:', err)`,
               task: `Cattura l'errore di conversione quando l'input dell'utente non e' un numero valido e mostra un messaggio chiaro.`,
+              command: `python3 -c "try:
+    int('abc')
+except ValueError as e:
+    print('Error:', e)"`,
             },
             {
               english: 'Exception',
@@ -578,6 +621,10 @@ except ValueError as err:
 except ConnectionError:
     response = cache.get(user_id)`,
               task: `Gestisci l'eccezione di connessione ricadendo sui dati in cache quando la chiamata API fallisce.`,
+              command: `python3 -c "try:
+    1/0
+except ZeroDivisionError as e:
+    print('Caught:', e)"`,
             },
             {
               english: 'Traceback',
@@ -589,6 +636,7 @@ except ConnectionError:
               context: 'debugging',
               difficulty: 'intermediate',
               note: 'Il report dettagliato che Python stampa quando avviene un errore.',
+              command: 'python3 -c "import traceback; traceback.print_stack()"',
             },
             {
               english: 'Library',
@@ -605,6 +653,7 @@ except ConnectionError:
 with open('config.json') as f:
     config = json.load(f)`,
               task: 'Carica un file di configurazione JSON sfruttando la libreria standard senza installare dipendenze esterne.',
+              command: `python3 -c "import json; print(json.dumps({'key': 'value'}))"`,
             },
           ],
         },
@@ -632,6 +681,7 @@ with open('config.json') as f:
               code: `scores = [85, 92, 78, 90]
 average = sum(scores) / len(scores)`,
               task: 'Calcola la media dei punteggi memorizzati in una lista usando le funzioni sum e len.',
+              command: 'python3 -c "scores = [85, 92, 78]; print(sum(scores) / len(scores))"',
             },
             {
               english: 'Index',
@@ -647,6 +697,7 @@ average = sum(scores) / len(scores)`,
 first = items[0]
 last = items[-1]`,
               task: `Estrai il primo e l'ultimo elemento di una lista usando un indice positivo e uno negativo.`,
+              command: `python3 -c "items = ['a', 'b', 'c']; print(items[0], items[-1])"`,
             },
             {
               english: 'Slice',
@@ -660,6 +711,7 @@ last = items[-1]`,
               code: 'my_list[1:3] # elements from index 1 to 2',
               note: 'Sintassi: [start:stop:step].',
               task: `Estrai una porzione della lista contenente gli elementi dall'indice 1 al 2 incluso.`,
+              command: 'python3 -c "nums = [0,1,2,3,4]; print(nums[1:3])"',
             },
             {
               english: 'Append',
@@ -672,6 +724,7 @@ last = items[-1]`,
               difficulty: 'beginner',
               code: 'list.append("new_item")',
               task: `Aggiungi la stringa 'new_item' in coda a una lista esistente con il metodo append.`,
+              command: 'python3 -c "lst = [1, 2]; lst.append(3); print(lst)"',
             },
             {
               english: 'Remove',
@@ -686,6 +739,7 @@ last = items[-1]`,
               code: `users = ['alice', 'bob', 'eve']
 users.remove('eve')`,
               task: `Rimuovi un utente specifico dalla lista degli utenti attivi senza conoscerne l'indice.`,
+              command: `python3 -c "lst = ['a', 'b', 'c']; lst.remove('b'); print(lst)"`,
             },
             {
               english: 'Pop',
@@ -700,6 +754,7 @@ users.remove('eve')`,
               code: `queue = ['task1', 'task2', 'task3']
 next_task = queue.pop(0)`,
               task: 'Estrai e rimuovi il prossimo task in testa alla coda per processarlo immediatamente.',
+              command: 'python3 -c "lst = [10, 20, 30]; val = lst.pop(0); print(val, lst)"',
             },
             {
               english: 'Sort',
@@ -713,6 +768,7 @@ next_task = queue.pop(0)`,
               note: 'Modifica la lista originale (in-place).',
               code: 'users.sort(key=lambda u: u.created_at, reverse=True)',
               task: `Ordina una lista di utenti per data di creazione dal piu' recente al piu' vecchio.`,
+              command: 'python3 -c "lst = [3, 1, 2]; lst.sort(); print(lst)"',
             },
             {
               english: 'Reverse',
@@ -726,6 +782,7 @@ next_task = queue.pop(0)`,
               code: `history = [10, 20, 30, 40]
 history.reverse()`,
               task: `Inverti l'ordine degli elementi di una lista di storico in modo che il piu' recente venga prima.`,
+              command: 'python3 -c "lst = [1, 2, 3]; lst.reverse(); print(lst)"',
             },
             {
               english: 'List Comprehension',
@@ -739,6 +796,7 @@ history.reverse()`,
               note: 'Modo conciso per creare nuove liste basandosi su iterabili esistenti.',
               code: 'active_names = [u.name for u in users if u.is_active]',
               task: 'Filtra dalla lista degli utenti solo quelli attivi e raccogli i loro nomi in una nuova lista.',
+              command: 'python3 -c "squares = [x**2 for x in range(6)]; print(squares)"',
             },
             {
               english: 'Length (len)',
@@ -753,6 +811,7 @@ history.reverse()`,
 if len(items) == 0:
     print('Cart is empty')`,
               task: `Verifica con la funzione len se il carrello e' vuoto prima di mostrare il riepilogo.`,
+              command: `python3 -c "items = ['a', 'b', 'c']; print(len(items))"`,
             },
           ],
         },
@@ -774,6 +833,7 @@ if len(items) == 0:
               code: `user = {'id': 42, 'name': 'Alice', 'role': 'admin'}
 print(user['role'])`,
               task: 'Costruisci un dizionario che descrive un utente con id, nome e ruolo, poi stampa il ruolo.',
+              command: `python3 -c "user = {'name': 'Alice', 'role': 'admin'}; print(user['role'])"`,
             },
             {
               english: 'Key',
@@ -790,6 +850,7 @@ scores['alice'] = 95
 if 'bob' in scores:
     print(scores['bob'])`,
               task: `Aggiungi una chiave a un dizionario di punteggi e verifica se un'altra chiave esiste prima di leggerla.`,
+              command: `python3 -c "d = {}; d['name'] = 'Bob'; print('name' in d)"`,
             },
             {
               english: 'Dictionary Value',
@@ -803,6 +864,7 @@ if 'bob' in scores:
               code: `config = {'timeout': 30, 'retries': 3}
 timeout = config['timeout']`,
               task: 'Recupera il valore associato alla chiave timeout in un dizionario di configurazione.',
+              command: `python3 -c "cfg = {'timeout': 30}; print(cfg['timeout'])"`,
             },
             {
               english: 'Item',
@@ -816,6 +878,7 @@ timeout = config['timeout']`,
               code: `for key, value in settings.items():
     print(f'{key}: {value}')`,
               task: 'Itera su tutti gli elementi di un dizionario di impostazioni e stampa ciascuna coppia chiave-valore.',
+              command: `python3 -c "d = {'a': 1, 'b': 2}; [print(k, v) for k, v in d.items()]"`,
             },
             {
               english: 'Get',
@@ -829,6 +892,7 @@ timeout = config['timeout']`,
               code: 'dict.get("key", "default_value")',
               note: 'Restituisce None o un valore di default se la chiave non esiste.',
               task: `Recupera dal dizionario il valore associato a 'key' restituendo 'default_value' se manca.`,
+              command: `python3 -c "d = {'a': 1}; print(d.get('b', 'default'))"`,
             },
             {
               english: 'Update',
@@ -841,6 +905,7 @@ timeout = config['timeout']`,
               difficulty: 'intermediate',
               code: 'dict.update({"new_key": "new_value"})',
               task: `Aggiungi al dizionario la coppia 'new_key'/'new_value' usando il metodo update.`,
+              command: `python3 -c "d = {'a': 1}; d.update({'b': 2}); print(d)"`,
             },
             {
               english: 'Keys',
@@ -855,6 +920,7 @@ timeout = config['timeout']`,
 for key in config.keys():
     print(key)`,
               task: 'Itera su tutte le chiavi di un dizionario di configurazione e stampale una per riga.',
+              command: `python3 -c "d = {'host': 'localhost', 'port': 8080}; print(list(d.keys()))"`,
             },
             {
               english: 'Values',
@@ -868,6 +934,7 @@ for key in config.keys():
               code: `prices = {'apple': 1.0, 'bread': 2.5}
 total = sum(prices.values())`,
               task: 'Calcola la somma totale di tutti i valori contenuti in un dizionario di prezzi.',
+              command: `python3 -c "d = {'apple': 1.0, 'bread': 2.5}; print(sum(d.values()))"`,
             },
             {
               english: 'Items',
@@ -882,6 +949,7 @@ total = sum(prices.values())`,
 for name, qty in inventory.items():
     print(name, qty)`,
               task: `Spacchetta nome e quantita' di ogni prodotto di un inventario iterando sugli items del dizionario.`,
+              command: `python3 -c "d = {'x': 10, 'y': 20}; print(list(d.items()))"`,
             },
             {
               english: 'Key-Value Pair',
@@ -894,6 +962,7 @@ for name, qty in inventory.items():
               difficulty: 'beginner',
               code: `settings = {'debug': True, 'log_level': 'INFO', 'port': 8080}`,
               task: `Costruisci un dizionario di impostazioni dell'applicazione con tre coppie chiave-valore eterogenee.`,
+              command: `python3 -c "settings = {'debug': True, 'port': 8080}; print(settings)"`,
             },
           ],
         },
@@ -917,6 +986,7 @@ for name, qty in inventory.items():
 
 x, y = get_point()`,
               task: 'Definisci una funzione che restituisce una tupla con le coordinate di un punto e spacchettala nella chiamata.',
+              command: 'python3 -c "point = (10, 20); x, y = point; print(x, y)"',
             },
             {
               english: 'Immutable',
@@ -932,6 +1002,7 @@ x, y = get_point()`,
 # point[0] = 5  # TypeError: tuple is immutable
 new_point = (5, point[1])`,
               task: `Crea una nuova tupla derivata da una esistente invece di modificarla, poiche' le tuple sono immutabili.`,
+              command: `python3 -c "t = (1, 2, 3); print(t); print('tuples are immutable')"`,
             },
             {
               english: 'Unpacking',
@@ -945,6 +1016,7 @@ new_point = (5, point[1])`,
               code: 'x, y = (10, 20)',
               note: 'Assegna i singoli elementi a variabili in un colpo solo.',
               task: 'Spacchetta la tupla (10, 20) nelle variabili x e y in una sola riga.',
+              command: 'python3 -c "a, b, c = (1, 2, 3); print(a, b, c)"',
             },
             {
               english: 'Set',
@@ -959,6 +1031,7 @@ new_point = (5, point[1])`,
               code: `tags = ['python', 'web', 'python', 'api']
 unique_tags = set(tags)`,
               task: 'Rimuovi i tag duplicati da una lista convertendola in un set.',
+              command: `python3 -c "tags = ['py', 'web', 'py']; print(set(tags))"`,
             },
             {
               english: 'Unique',
@@ -973,6 +1046,7 @@ unique_tags = set(tags)`,
 if len(set(emails)) != len(emails):
     raise ValueError('Duplicate emails')`,
               task: 'Verifica che tutti gli indirizzi email di una lista di utenti siano unici sollevando un errore in caso contrario.',
+              command: 'python3 -c "lst = [1,2,2,3,3]; print(list(set(lst)))"',
             },
             {
               english: 'Intersection',
@@ -985,6 +1059,7 @@ if len(set(emails)) != len(emails):
               difficulty: 'intermediate',
               code: 'set1 & set2',
               task: `Calcola l'intersezione tra set1 e set2 ottenendo gli elementi comuni con l'operatore &.`,
+              command: 'python3 -c "a = {1,2,3}; b = {2,3,4}; print(a & b)"',
             },
             {
               english: 'Union',
@@ -997,6 +1072,7 @@ if len(set(emails)) != len(emails):
               difficulty: 'intermediate',
               code: 'set1 | set2',
               task: `Unisci set1 e set2 ottenendo un nuovo insieme con tutti gli elementi tramite l'operatore |.`,
+              command: 'python3 -c "a = {1,2}; b = {2,3}; print(a | b)"',
             },
             {
               english: 'Difference',
@@ -1009,6 +1085,7 @@ if len(set(emails)) != len(emails):
               difficulty: 'intermediate',
               code: 'set1 - set2',
               task: `Ottieni gli elementi presenti in set1 ma non in set2 usando l'operatore di sottrazione.`,
+              command: 'python3 -c "a = {1,2,3}; b = {2,3}; print(a - b)"',
             },
             {
               english: 'Symmetric Difference',
@@ -1021,6 +1098,7 @@ if len(set(emails)) != len(emails):
               difficulty: 'advanced',
               code: 'set1 ^ set2',
               task: `Trova gli elementi presenti in set1 o set2 ma non in entrambi con l'operatore ^.`,
+              command: 'python3 -c "a = {1,2,3}; b = {2,3,4}; print(a ^ b)"',
             },
             {
               english: 'Frozen Set',
@@ -1036,6 +1114,7 @@ if len(set(emails)) != len(emails):
 if user.role in ADMIN_ROLES:
     grant_full_access()`,
               task: 'Definisci un insieme immutabile di ruoli amministrativi e verifica se il ruolo di un utente vi appartiene.',
+              command: 'python3 -c "fs = frozenset({1, 2, 3}); print(fs, type(fs))"',
             },
           ],
         },
@@ -1056,6 +1135,7 @@ if user.role in ADMIN_ROLES:
               code: '"Hello {}".format(name)',
               note: 'Metodo classico di formattazione stringhe.',
               task: `Inserisci il valore della variabile name nella stringa 'Hello {}' usando il metodo format.`,
+              command: `python3 -c "print('Hello {}'.format('world'))"`,
             },
             {
               english: 'F-String',
@@ -1069,6 +1149,7 @@ if user.role in ADMIN_ROLES:
               code: 'f"Name: {name}"',
               note: 'Introdotte in Python 3.6, sono il modo pi\u00F9 moderno e veloce di formattare stringhe.',
               task: `Costruisci una stringa che mostra 'Name:' seguito dal valore di name usando una f-string.`,
+              command: `python3 -c "name = 'Alice'; print(f'Hello, {name}!')"`,
             },
             {
               english: 'Join',
@@ -1082,6 +1163,7 @@ if user.role in ADMIN_ROLES:
               code: `tags = ['python', 'web', 'api']
 label = ', '.join(tags)`,
               task: 'Unisci una lista di tag in una singola stringa separata da virgole, pronta per essere stampata.',
+              command: `python3 -c "tags = ['python', 'web', 'api']; print(', '.join(tags))"`,
             },
             {
               english: 'Split',
@@ -1094,6 +1176,7 @@ label = ', '.join(tags)`,
               difficulty: 'beginner',
               code: '"A,B,C".split(",") # ["A", "B", "C"]',
               task: `Dividi la stringa 'A,B,C' usando la virgola come separatore per ottenere la lista ['A', 'B', 'C'].`,
+              command: `python3 -c "print('A,B,C'.split(','))"`,
             },
             {
               english: 'Strip',
@@ -1108,6 +1191,7 @@ label = ', '.join(tags)`,
               code: `raw = input('Email: ')
 email = raw.strip().lower()`,
               task: `Pulisci l'input dell'utente rimuovendo spazi iniziali e finali e convertendolo in minuscolo.`,
+              command: `python3 -c "s = '  hello  '; print(repr(s.strip()))"`,
             },
             {
               english: 'Replace',
@@ -1120,6 +1204,7 @@ email = raw.strip().lower()`,
               difficulty: 'beginner',
               code: '"Hello".replace("H", "J") # "Jello"',
               task: `Sostituisci la lettera 'H' con 'J' nella stringa 'Hello' ottenendo 'Jello'.`,
+              command: `python3 -c "print('Hello'.replace('H', 'J'))"`,
             },
             {
               english: 'Lower/Upper',
@@ -1134,6 +1219,7 @@ email = raw.strip().lower()`,
 if username.lower() == stored_user.lower():
     print('match')`,
               task: 'Confronta due nomi utente in modo case-insensitive convertendo entrambi in minuscolo prima del confronto.',
+              command: `python3 -c "s = 'Hello'; print(s.lower(), s.upper())"`,
             },
             {
               english: 'Find/Index',
@@ -1149,6 +1235,7 @@ if username.lower() == stored_user.lower():
 pos = url.find('://')
 scheme = url[:pos]`,
               task: 'Trova la posizione del delimitatore :// in un URL ed estrai lo schema che lo precede.',
+              command: `python3 -c "url = 'https://example.com'; print(url.find('://'))"`,
             },
             {
               english: 'Escape Character',
@@ -1163,6 +1250,7 @@ scheme = url[:pos]`,
               code: `row = 'name\\tage\\tcity'
 lines = 'line1\\nline2'`,
               task: 'Costruisci una riga in formato TSV separata da tabulazioni e una stringa multiriga separata da newline usando i caratteri di escape.',
+              command: `python3 -c "print('col1\\tcol2\\nval1\\tval2')"`,
             },
             {
               english: 'Raw String',
@@ -1177,6 +1265,7 @@ lines = 'line1\\nline2'`,
 pattern = re.compile(r'\\d{3}-\\d{4}')
 match = pattern.search(text)`,
               task: 'Compila una regex per un numero di telefono usando una stringa grezza per evitare il doppio escape dei backslash.',
+              command: `python3 -c "import re; print(re.findall(r'\\d+', 'abc123def456'))"`,
             },
           ],
         },
@@ -1206,6 +1295,7 @@ match = pattern.search(text)`,
 else:
     order.shipping_fee = 5.99`,
               task: 'Applica uno sconto del 10% agli ordini sopra i 100 euro e altrimenti aggiungi le spese di spedizione.',
+              command: `python3 -c "x = 15; print('big' if x > 10 else 'small')"`,
             },
             {
               english: 'Else Clause',
@@ -1221,6 +1311,11 @@ else:
 else:
     return redirect('/login')`,
               task: 'Mostra la dashboard agli utenti autenticati e, nel ramo else, reindirizza al login.',
+              command: `python3 -c "n = 4
+if n % 2 == 0:
+    print('even')
+else:
+    print('odd')"`,
             },
             {
               english: 'Elif (Else If)',
@@ -1238,6 +1333,13 @@ elif status_code < 500:
 else:
     log.error("server error")`,
               task: 'Usa una catena elif per classificare i codici di stato HTTP in ok, errore client e errore server.',
+              command: `python3 -c "code = 404
+if code < 300:
+    print('ok')
+elif code < 500:
+    print('client err')
+else:
+    print('server err')"`,
             },
             {
               english: 'Comparison Operator',
@@ -1254,6 +1356,7 @@ else:
 if expired or token.revoked:
     raise AuthError("token invalid")`,
               task: `Confronta la scadenza del token con l'orario corrente usando l'operatore <= e solleva un errore se e' scaduto.`,
+              command: 'python3 -c "print(5 > 3, 5 == 5, 5 != 3, 5 <= 5)"',
             },
             {
               english: 'Boolean Expression',
@@ -1268,6 +1371,7 @@ if expired or token.revoked:
 if can_checkout:
     process_order(cart, user)`,
               task: `Costruisci un'espressione booleana che combini carrello non vuoto, metodo di pagamento e flag di blocco prima del checkout.`,
+              command: 'python3 -c "a, b = True, False; print(a and b, a or b, not b)"',
             },
             {
               english: 'Nested If',
@@ -1284,6 +1388,12 @@ if can_checkout:
     else:
         grant_read_access(user)`,
               task: `Annida un if interno sul ruolo dentro un if esterno sullo stato attivo dell'utente per assegnare i permessi.`,
+              command: `python3 -c "x = 15
+if x > 10:
+    if x > 20:
+        print('very big')
+    else:
+        print('medium')"`,
             },
             {
               english: 'Conditional Execution',
@@ -1299,6 +1409,10 @@ if can_checkout:
     enable_sql_echo(engine)
 run_migrations(engine)`,
               task: `Esegui codice in modo condizionale: attiva il logging SQL solo se la modalita' debug e' abilitata.`,
+              command: `python3 -c "debug = True
+if debug:
+    print('debug mode on')
+print('running')"`,
             },
             {
               english: 'Membership Operator (in)',
@@ -1314,6 +1428,7 @@ run_migrations(engine)`,
 if user.role in ALLOWED_ROLES:
     grant_access(user)`,
               task: `Verifica con l'operatore in se il ruolo dell'utente appartiene al set dei ruoli consentiti.`,
+              command: `python3 -c "fruits = ['apple', 'banana']; print('apple' in fruits)"`,
             },
             {
               english: 'Identity Operator (is)',
@@ -1330,6 +1445,7 @@ if result is None:
     result = fetch_from_db(key)
     cache.set(key, result)`,
               task: `Usa l'operatore di identita' is per controllare se il valore in cache e' esattamente None prima di interrogare il database.`,
+              command: 'python3 -c "x = None; print(x is None, x is not None)"',
             },
             {
               english: 'Truthiness',
@@ -1346,6 +1462,7 @@ if errors:
     return render("form.html", errors=errors)
 save(form_data)`,
               task: 'Sfrutta la truthiness della lista di errori per decidere se mostrare di nuovo il form o salvare i dati.',
+              command: `python3 -c "print(bool(''), bool('hi'), bool(0), bool(42), bool([]))"`,
             },
           ],
         },
@@ -1367,6 +1484,7 @@ save(form_data)`,
               code: `for user in db.query(User).filter_by(active=True):
     user.send_email("Weekly newsletter")`,
               task: 'Itera con un ciclo for sugli utenti attivi del database e invia a ciascuno la newsletter settimanale.',
+              command: `python3 -c "for fruit in ['apple', 'banana', 'cherry']: print(fruit)"`,
             },
             {
               english: 'While Loop',
@@ -1382,6 +1500,10 @@ while attempts < 3 and not connected:
     connected = try_connect(host)
     attempts += 1`,
               task: 'Usa un ciclo while per ritentare la connessione fino a tre volte o fino al successo.',
+              command: `python3 -c "n = 3
+while n > 0:
+    print(n)
+    n -= 1"`,
             },
             {
               english: 'Iteration',
@@ -1396,6 +1518,7 @@ while attempts < 3 and not connected:
     if row["status"] == "paid":
         total += float(row["amount"])`,
               task: `Ad ogni iterazione del CSV somma l'importo solo se la riga ha lo stato pagato.`,
+              command: `python3 -c "for ch in 'Python': print(ch, end=' ')"`,
             },
             {
               english: 'Break Statement',
@@ -1410,6 +1533,9 @@ while attempts < 3 and not connected:
         found = user
         break`,
               task: `Termina il ciclo con break appena trovi l'utente con l'email cercata, evitando iterazioni inutili.`,
+              command: `python3 -c "for n in range(10):
+    if n == 5: break
+    print(n)"`,
             },
             {
               english: 'Continue Statement',
@@ -1425,6 +1551,9 @@ while attempts < 3 and not connected:
         continue
     process(path)`,
               task: 'Salta con continue i file nascosti e processa solo i rimanenti dentro il ciclo.',
+              command: `python3 -c "for n in range(6):
+    if n % 2 == 0: continue
+    print(n)"`,
             },
             {
               english: 'Range (function)',
@@ -1438,6 +1567,7 @@ while attempts < 3 and not connected:
               code: `for page in range(1, total_pages + 1):
     items.extend(api.fetch_page(page))`,
               task: `Usa range per iterare sui numeri di pagina e accumulare i risultati di un'API paginata.`,
+              command: 'python3 -c "print(list(range(1, 6)))"',
             },
             {
               english: 'Enumerate',
@@ -1451,6 +1581,7 @@ while attempts < 3 and not connected:
               code: 'for i, val in enumerate(list):',
               note: 'Restituisce un oggetto enumerazione (indice, valore).',
               task: `Itera sulla lista ottenendo a ogni passaggio l'indice i e il valore val tramite enumerate.`,
+              command: `python3 -c "for i, v in enumerate(['a','b','c']): print(i, v)"`,
             },
             {
               english: 'Infinite Loop',
@@ -1467,6 +1598,10 @@ while attempts < 3 and not connected:
     handler.process(message)
     queue.task_done()`,
               task: `Costruisci un ciclo infinito che consumi messaggi da una coda di lavoro finche' il servizio resta attivo.`,
+              command: `python3 -c "i=0
+while True:
+    if i>=3: break
+    print(i); i+=1"`,
             },
             {
               english: 'Nested Loop',
@@ -1482,6 +1617,9 @@ while attempts < 3 and not connected:
         if value < 0:
             negatives += 1`,
               task: 'Usa un ciclo annidato su righe e colonne di una matrice per contare i valori negativi.',
+              command: `python3 -c "for i in range(3):
+    for j in range(3):
+        print(i, j)"`,
             },
             {
               english: 'Else in Loops',
@@ -1499,6 +1637,10 @@ while attempts < 3 and not connected:
 else:
     raise ItemNotFound(sku)`,
               task: 'Aggiungi un blocco else al ciclo for che venga eseguito solo se nessuna iterazione ha invocato break.',
+              command: `python3 -c "for n in range(5):
+    if n == 99: break
+else:
+    print('loop completed')"`,
             },
           ],
         },
@@ -1520,6 +1662,7 @@ else:
               code: `if user.is_authenticated and user.has_permission("edit"):
     show_edit_button()`,
               task: `Combina con l'operatore and l'autenticazione e il permesso di modifica prima di mostrare il pulsante.`,
+              command: 'python3 -c "print(True and True, True and False)"',
             },
             {
               english: 'Or Operator',
@@ -1533,6 +1676,7 @@ else:
               note: 'Almeno una condizione deve essere vera.',
               code: 'display_name = profile.nickname or profile.email or "Anonymous"',
               task: `Usa l'operatore or in catena per scegliere il primo nome non vuoto da nickname, email o un default.`,
+              command: `python3 -c "name = '' or 'Anonymous'; print(name)"`,
             },
             {
               english: 'Not Operator',
@@ -1547,6 +1691,7 @@ else:
               code: `if not response.ok:
     raise APIError(response.status_code)`,
               task: `Inverti con l'operatore not il flag di successo della risposta HTTP per sollevare un errore.`,
+              command: 'python3 -c "print(not True, not False, not 0)"',
             },
             {
               english: 'Short-circuit Evaluation',
@@ -1562,6 +1707,7 @@ else:
               code: `if user is not None and user.is_admin:
     show_admin_panel()`,
               task: `Sfrutta la valutazione a corto circuito per proteggerti da user None prima di leggere l'attributo is_admin.`,
+              command: 'python3 -c "x = None; print(x and x.upper())"',
             },
             {
               english: 'Truth Table',
@@ -1572,6 +1718,9 @@ else:
                 'Building a truth table for your conditions helps you verify that all edge cases are covered. = Costruire una tabella della verit\u00E0 per le tue condizioni aiuta a verificare che tutti i casi limite siano coperti.',
               context: 'logic',
               difficulty: 'intermediate',
+              command: `python3 -c "for a in [True,False]:
+    for b in [True,False]:
+        print(f'{a} AND {b} = {a and b}')"`,
             },
             {
               english: 'Precedence (Logical)',
@@ -1586,6 +1735,7 @@ else:
               code: `if (is_admin or is_owner) and not is_banned:
     allow_action()`,
               task: 'Usa le parentesi per controllare la precedenza logica tra or, and e not nella regola di autorizzazione.',
+              command: 'python3 -c "print((True or False) and not False)"',
             },
             {
               english: 'Bitwise Operator',
@@ -1602,6 +1752,7 @@ permissions = READ | WRITE
 if permissions & WRITE:
     file.write(data)`,
               task: `Combina i flag dei permessi con l'operatore bit a bit | e verifica un singolo bit con &.`,
+              command: 'python3 -c "R,W,X = 4,2,1; perm = R|W; print(bin(perm), bool(perm & W))"',
             },
             {
               english: 'Any (function)',
@@ -1615,6 +1766,7 @@ if permissions & WRITE:
               code: `if any(order.is_overdue for order in orders):
     notify_collections_team()`,
               task: `Usa la funzione any con un'espressione generatore per rilevare se almeno un ordine e' in ritardo.`,
+              command: 'python3 -c "nums = [0, 0, 3, 0]; print(any(n > 0 for n in nums))"',
             },
             {
               english: 'All (function)',
@@ -1628,6 +1780,7 @@ if permissions & WRITE:
               code: `if all(field.is_valid for field in form.fields):
     form.save()`,
               task: 'Usa la funzione all per salvare il form solo quando ogni campo passa la validazione.',
+              command: 'python3 -c "nums = [1, 2, 3]; print(all(n > 0 for n in nums))"',
             },
             {
               english: 'Compound Condition',
@@ -1641,6 +1794,7 @@ if permissions & WRITE:
               code: `if temperature > 30 and humidity > 80 and not ventilation_on:
     alerts.send("climate risk")`,
               task: `Crea una condizione composta che attivi un allarme solo se temperatura, umidita' e ventilazione coincidono.`,
+              command: 'python3 -c "t, h = 32, 85; print(t > 30 and h > 80)"',
             },
           ],
         },
@@ -1666,6 +1820,10 @@ if permissions & WRITE:
         return False
     return gateway.charge(user, amount)`,
               task: `Applica il pattern early return per gestire i casi limite all'inizio della funzione e mantenere piatto il flusso principale.`,
+              command: `python3 -c "def div(a,b):
+    if b==0: return None
+    return a/b
+print(div(10,0), div(10,2))"`,
             },
             {
               english: 'Guard Clause',
@@ -1684,6 +1842,10 @@ if permissions & WRITE:
         raise Forbidden()
     post.delete()`,
               task: `Inserisci clausole di guardia in testa alla funzione per validare utente e proprieta' prima di cancellare il post.`,
+              command: `python3 -c "def greet(name):
+    if not name: raise ValueError('empty')
+    print('Hi', name)
+greet('Alice')"`,
             },
             {
               english: 'Flag Variable',
@@ -1702,6 +1864,10 @@ for row in rows:
 if not found:
     raise NotFound(target_id)`,
               task: 'Usa una variabile flag found per ricordare se la ricerca nella lista ha avuto successo.',
+              command: `python3 -c "found=False
+for n in [1,2,3]:
+    if n==2: found=True; break
+print('found:', found)"`,
             },
             {
               english: 'Sentinel Value',
@@ -1718,6 +1884,7 @@ value = cache.get(key, SENTINEL)
 if value is SENTINEL:
     value = compute_and_cache(key)`,
               task: 'Definisci un valore sentinella per distinguere una chiave mancante in cache da un None salvato esplicitamente.',
+              command: `python3 -c "MISSING=object(); d={'a':1}; v=d.get('b',MISSING); print(v is MISSING)"`,
             },
             {
               english: 'Dispatch Table (Dictionary)',
@@ -1736,6 +1903,7 @@ if value is SENTINEL:
 }
 response = handlers[request.method](request)`,
               task: 'Sostituisci una catena if-elif con una tabella di dispatch che mappi il metodo HTTP alla funzione handler.',
+              command: `python3 -c "ops={'+': lambda a,b: a+b, '*': lambda a,b: a*b}; print(ops['+'](3,4))"`,
             },
             {
               english: 'State Machine',
@@ -1746,6 +1914,11 @@ response = handlers[request.method](request)`,
                 "The app works as a finite state machine. = L'app lavora come una macchina a stati finiti.",
               context: 'architecture',
               difficulty: 'expert',
+              command: `python3 -c "state='idle'
+for ev in ['start','stop']:
+    if state=='idle' and ev=='start': state='running'
+    elif state=='running' and ev=='stop': state='idle'
+    print(ev, '->', state)"`,
             },
             {
               english: 'Recursion (Base case)',
@@ -1761,6 +1934,10 @@ response = handlers[request.method](request)`,
         return 1
     return n * factorial(n - 1)`,
               task: 'Definisci il caso base n == 0 in factorial per fermare la chiamata ricorsiva ed evitare il RecursionError.',
+              command: `python3 -c "def fact(n):
+    if n==0: return 1
+    return n*fact(n-1)
+print(fact(5))"`,
             },
             {
               english: 'List Filtering (if in comprehension)',
@@ -1773,6 +1950,7 @@ response = handlers[request.method](request)`,
               difficulty: 'intermediate',
               code: 'active_users = [u for u in users if u.is_active and not u.is_banned]',
               task: 'Filtra gli utenti dentro una list comprehension tenendo solo quelli attivi e non bannati.',
+              command: 'python3 -c "nums = range(10); print([n for n in nums if n % 2 == 0])"',
             },
             {
               english: 'Exception-based Control Flow',
@@ -1790,6 +1968,12 @@ response = handlers[request.method](request)`,
 except KeyError:
     value = DEFAULT_TIMEOUT`,
               task: `Adotta lo stile EAFP: tenta l'accesso alla chiave e gestisci l'eccezione KeyError invece di controllare prima.`,
+              command: `python3 -c "d = {'a': 1}
+try:
+    v = d['b']
+except KeyError:
+    v = 'default'
+print(v)"`,
             },
             {
               english: 'Match Case (Structural Pattern Matching)',
@@ -1809,6 +1993,11 @@ except KeyError:
     case _:
         log.warning("unknown event")`,
               task: 'Usa match case per distinguere tipi di evento in un dizionario e instradare ciascuno al suo handler.',
+              command: `python3 -c "cmd = 'quit'
+match cmd:
+    case 'start': print('starting')
+    case 'quit': print('bye')
+    case _: print('unknown')"`,
             },
           ],
         },
@@ -1835,6 +2024,8 @@ except KeyError:
               code: `def calculate_discount(price, percent):
     return price * (1 - percent / 100)`,
               task: 'Definisci una funzione che calcoli il prezzo scontato a partire da prezzo e percentuale.',
+              command: `python3 -c "def greet(name): return f'Hello, {name}'
+print(greet('Alice'))"`,
             },
             {
               english: 'Definition (def)',
@@ -1847,6 +2038,8 @@ except KeyError:
               difficulty: 'beginner',
               code: 'def my_function():',
               task: 'Dichiara una funzione chiamata my_function senza parametri usando la parola chiave def.',
+              command: `python3 -c "def add(a, b): return a + b
+print(add(3, 4))"`,
             },
             {
               english: 'Return Statement',
@@ -1864,6 +2057,8 @@ except KeyError:
             return user
     return None`,
               task: `Usa l'istruzione return per uscire subito dalla funzione appena trovi l'utente corrispondente.`,
+              command: `python3 -c "def double(x): return x * 2
+print(double(21))"`,
             },
             {
               english: 'Parameter',
@@ -1879,6 +2074,8 @@ except KeyError:
     invoice = build_invoice(customer_id, amount, currency)
     mailer.send(invoice)`,
               task: 'Dichiara i parametri customer_id, amount e currency con un valore di default nella firma della funzione.',
+              command: `python3 -c "def greet(name, greeting='Hello'): print(f'{greeting}, {name}')
+greet('Bob')"`,
             },
             {
               english: 'Argument',
@@ -1892,6 +2089,8 @@ except KeyError:
               note: 'Il valore reale inviato alla funzione quando viene chiamata.',
               code: 'send_invoice(customer_id=42, amount=199.99, currency="USD")',
               task: 'Chiama send_invoice passando gli argomenti per nome in modo da rendere esplicito il significato di ogni valore.',
+              command: `python3 -c "def add(a, b): return a+b
+print(add(a=5, b=3))"`,
             },
             {
               english: 'Call',
@@ -1904,6 +2103,8 @@ except KeyError:
               difficulty: 'beginner',
               code: 'my_function()',
               task: 'Invoca la funzione my_function aggiungendo le parentesi tonde dopo il nome.',
+              command: `python3 -c "def say_hi(): print('Hi!')
+say_hi()"`,
             },
             {
               english: 'Docstring',
@@ -1919,6 +2120,10 @@ except KeyError:
     """Return the email lowercased and stripped of whitespace."""
     return email.strip().lower()`,
               task: 'Aggiungi una docstring tra tripli apici subito sotto la firma della funzione per descrivere il contratto.',
+              command: `python3 -c "def add(a,b):
+    'Return sum of a and b.'
+    return a+b
+print(add.__doc__)"`,
             },
             {
               english: 'Built-in Function',
@@ -1933,6 +2138,7 @@ except KeyError:
 sorted_names = sorted(names, key=len)
 longest_count = len(max(names, key=len))`,
               task: 'Combina le funzioni integrate sorted, len e max per ordinare e misurare i nomi degli utenti.',
+              command: `python3 -c "print(len('hello'), max(1,5,3), sorted([3,1,2]))"`,
             },
             {
               english: 'Positional Argument',
@@ -1948,6 +2154,8 @@ longest_count = len(max(names, key=len))`,
 
 connect("db.internal", 5432, 30)`,
               task: `Chiama connect passando host, porta e timeout come argomenti posizionali nell'ordine della firma.`,
+              command: `python3 -c "def sub(a, b): return a - b
+print(sub(10, 3))"`,
             },
             {
               english: 'Keyword Argument',
@@ -1960,6 +2168,8 @@ connect("db.internal", 5432, 30)`,
               difficulty: 'intermediate',
               code: 'func(name="John", age=30)',
               task: `Chiama func passando name uguale a 'John' ed age uguale a 30 come argomenti nominati.`,
+              command: `python3 -c "def info(name, age): print(name, age)
+info(age=30, name='Bob')"`,
             },
           ],
         },
@@ -1982,6 +2192,8 @@ connect("db.internal", 5432, 30)`,
     for msg in messages:
         log.write(f"[{level}] {msg}")`,
               task: 'Dichiara *messages come parametro variadico per accettare un numero arbitrario di stringhe nel logger.',
+              command: `python3 -c "def total(*args): return sum(args)
+print(total(1, 2, 3, 4))"`,
             },
             {
               english: '**kwargs (Arbitrary Keyword Arguments)',
@@ -1998,6 +2210,8 @@ connect("db.internal", 5432, 30)`,
 
 make_request("/api/users", Authorization="Bearer abc", Accept="application/json")`,
               task: 'Usa **kwargs per raccogliere gli header HTTP come dizionario e inoltrarli alla chiamata requests.get.',
+              command: `python3 -c "def show(**kw): print(kw)
+show(name='Al', age=30)"`,
             },
             {
               english: 'Lambda Function',
@@ -2011,6 +2225,7 @@ make_request("/api/users", Authorization="Bearer abc", Accept="application/json"
               code: 'lambda x: x * 2',
               note: 'Pu\u00F2 avere pi\u00F9 argomenti ma una sola espressione.',
               task: 'Crea una funzione anonima inline che riceve x e restituisce il suo doppio.',
+              command: 'python3 -c "double = lambda x: x * 2; print(double(5))"',
             },
             {
               english: 'Closure',
@@ -2029,6 +2244,10 @@ make_request("/api/users", Authorization="Bearer abc", Accept="application/json"
 
 double = make_multiplier(2)`,
               task: 'Crea una chiusura che catturi il parametro factor della funzione esterna e lo riusi a ogni chiamata interna.',
+              command: `python3 -c "def make_adder(n):
+    def add(x): return x+n
+    return add
+add5=make_adder(5); print(add5(10))"`,
             },
             {
               english: 'Decorator',
@@ -2042,6 +2261,12 @@ double = make_multiplier(2)`,
               code: '@my_decorator\ndef func():',
               note: 'Si lascia spesso il termine inglese decorator nelle conversazioni tecniche.',
               task: 'Applica il decoratore my_decorator alla funzione func usando la sintassi con @.',
+              command: `python3 -c "def loud(fn):
+    def w(*a): print('calling'); return fn(*a)
+    return w
+@loud
+def hi(): print('hi')
+hi()"`,
             },
             {
               english: 'Wrapper',
@@ -2060,6 +2285,14 @@ double = make_multiplier(2)`,
         return result
     return wrapper`,
               task: 'Definisci una funzione wrapper che misuri il tempo di esecuzione della funzione originale e poi inoltri il risultato.',
+              command: `python3 -c "import time
+def timed(fn):
+    def w(*a):
+        t=time.time(); r=fn(*a); print(f'{time.time()-t:.4f}s'); return r
+    return w
+@timed
+def slow(): time.sleep(0.01)
+slow()"`,
             },
             {
               english: 'Generator Function',
@@ -2077,6 +2310,10 @@ double = make_multiplier(2)`,
         for line in f:
             yield line.rstrip()`,
               task: 'Trasforma la lettura del file in una funzione generatore con yield per scorrere le righe senza caricarle tutte in memoria.',
+              command: `python3 -c "def count_up(n):
+    i=0
+    while i<n: yield i; i+=1
+print(list(count_up(5)))"`,
             },
             {
               english: 'Higher-Order Function',
@@ -2093,6 +2330,8 @@ double = make_multiplier(2)`,
 
 uppercased = apply_to_all(str.upper, names)`,
               task: `Scrivi una funzione di ordine superiore che accetti un'altra funzione come argomento e la applichi a una lista.`,
+              command: `python3 -c "def apply(fn, lst): return [fn(x) for x in lst]
+print(apply(str.upper, ['a','b']))"`,
             },
             {
               english: 'Inner Function',
@@ -2108,6 +2347,10 @@ uppercased = apply_to_all(str.upper, names)`,
         return value.strip().lower()
     return {clean(k): clean(v) for k, v in raw.items()}`,
               task: 'Definisci una funzione interna clean dentro parse_request per riusare la pulizia delle stringhe solo localmente.',
+              command: `python3 -c "def outer():
+    def inner(): return 'inside'
+    return inner()
+print(outer())"`,
             },
             {
               english: 'Recursion',
@@ -2123,6 +2366,10 @@ uppercased = apply_to_all(str.upper, names)`,
     for child in node.children:
         yield from walk(child)`,
               task: 'Implementa con la ricorsione una visita ad albero che produca ciascun nodo e poi richiami se stessa sui figli.',
+              command: `python3 -c "def fib(n):
+    if n<=1: return n
+    return fib(n-1)+fib(n-2)
+print([fib(i) for i in range(8)])"`,
             },
           ],
         },
@@ -2149,6 +2396,9 @@ def increment():
 increment()
 print(counter)`,
               task: 'Mostra la differenza di scope creando una variabile locale che oscura quella di modulo senza modificarla.',
+              command: `python3 -c "x=10
+def f(): x=20; print('local', x)
+f(); print('global', x)"`,
             },
             {
               english: 'Global',
@@ -2163,6 +2413,9 @@ print(counter)`,
 def get_database_url():
     return CONFIG["database"]["url"]`,
               task: 'Definisci la costante CONFIG a livello globale del modulo e leggila dalla funzione interna.',
+              command: `python3 -c "CFG = 'production'
+def show(): print(CFG)
+show()"`,
             },
             {
               english: 'Local',
@@ -2178,6 +2431,11 @@ def get_database_url():
     tax = subtotal * 0.22
     return subtotal + tax`,
               task: 'Crea le variabili locali subtotal e tax dentro la funzione: spariscono al termine della chiamata.',
+              command: `python3 -c "def calc():
+    total = 100
+    tax = total * 0.22
+    return total + tax
+print(calc())"`,
             },
             {
               english: 'Nonlocal',
@@ -2196,6 +2454,12 @@ def get_database_url():
         return n
     return increment`,
               task: 'Usa la parola chiave nonlocal nella funzione interna per modificare la variabile n del closure esterno.',
+              command: `python3 -c "def counter():
+    n=0
+    def inc():
+        nonlocal n; n+=1; return n
+    return inc
+c=counter(); print(c(), c(), c())"`,
             },
             {
               english: 'LEGB Rule',
@@ -2207,6 +2471,14 @@ def get_database_url():
               context: 'foundations',
               difficulty: 'advanced',
               note: "L'ordine in cui Python cerca i nomi delle variabili.",
+              command: `python3 -c "x='global'
+def outer():
+    x='enclosing'
+    def inner():
+        x='local'
+        print(x)
+    inner()
+outer()"`,
             },
             {
               english: 'Namespace',
@@ -2223,6 +2495,7 @@ import statistics
 
 result = math.sqrt(statistics.mean(values))`,
               task: 'Usa due namespace distinti, math e statistics, qualificando ogni funzione con il nome del modulo.',
+              command: 'python3 -c "import math; print(dir(math)[:5])"',
             },
             {
               english: 'Shadowing',
@@ -2239,6 +2512,7 @@ def process(item):
     id = item.identifier
     return id`,
               task: 'Mostra lo shadowing: la variabile locale id dentro la funzione nasconde la built-in id per tutto lo scope locale.',
+              command: 'python3 -c "id = 42; print(id)"',
             },
             {
               english: 'Module-level Variable',
@@ -2255,6 +2529,9 @@ DEFAULT_TIMEOUT = 30
 def fetch(url):
     return http.get(url, retries=MAX_RETRIES, timeout=DEFAULT_TIMEOUT)`,
               task: 'Dichiara le costanti MAX_RETRIES e DEFAULT_TIMEOUT a livello modulo e riusale dalle funzioni del file.',
+              command: `python3 -c "MAX_RETRIES = 5
+def fetch(): print('retries:', MAX_RETRIES)
+fetch()"`,
             },
             {
               english: 'Global Keyword',
@@ -2267,6 +2544,10 @@ def fetch(url):
               difficulty: 'intermediate',
               code: 'global x\nx = 10',
               task: `Dichiara x come variabile globale all'interno di una funzione e assegnale il valore 10.`,
+              command: `python3 -c "x=0
+def inc():
+    global x; x+=1
+inc(); inc(); print(x)"`,
             },
             {
               english: 'Nonlocal Keyword',
@@ -2285,6 +2566,12 @@ def fetch(url):
         return total
     return add`,
               task: 'Applica la keyword nonlocal alla variabile total per permettere alla funzione interna add di aggiornarla.',
+              command: `python3 -c "def accum():
+    t=0
+    def add(v):
+        nonlocal t; t+=v; return t
+    return add
+a=accum(); print(a(5), a(3))"`,
             },
           ],
         },
@@ -2308,6 +2595,9 @@ def fetch(url):
 
 worker.submit(task, callback=on_complete)`,
               task: `Passa la funzione on_complete come callback al worker, che la richiamera' al termine dell'elaborazione.`,
+              command: `python3 -c "def on_done(r): print('done:', r)
+def run(cb): cb(42)
+run(on_done)"`,
             },
             {
               english: 'Map (function)',
@@ -2320,6 +2610,7 @@ worker.submit(task, callback=on_complete)`,
               difficulty: 'intermediate',
               code: 'map(lambda x: x*2, my_list)',
               task: 'Applica una lambda che raddoppia ogni elemento di my_list usando la funzione map.',
+              command: 'python3 -c "print(list(map(lambda x: x*2, [1,2,3])))"',
             },
             {
               english: 'Filter (function)',
@@ -2332,6 +2623,7 @@ worker.submit(task, callback=on_complete)`,
               difficulty: 'intermediate',
               code: 'filter(lambda x: x > 0, my_list)',
               task: 'Filtra da my_list i soli elementi maggiori di zero usando filter con una lambda.',
+              command: 'python3 -c "print(list(filter(lambda x: x>0, [-1, 2, -3, 4])))"',
             },
             {
               english: 'Reduce (function)',
@@ -2347,6 +2639,8 @@ worker.submit(task, callback=on_complete)`,
 
 total = reduce(lambda acc, order: acc + order.amount, orders, 0)`,
               task: `Usa reduce di functools per accumulare l'importo totale degli ordini partendo da zero.`,
+              command:
+                'python3 -c "from functools import reduce; print(reduce(lambda a,b: a+b, [1,2,3,4]))"',
             },
             {
               english: 'Currying',
@@ -2365,6 +2659,10 @@ total = reduce(lambda acc, order: acc + order.amount, orders, 0)`,
 add_tax = add(0.22)
 price_with_tax = add_tax(100)`,
               task: 'Trasforma una somma a due argomenti in funzioni curried che accettino un argomento alla volta.',
+              command: `python3 -c "def mul(a):
+    def inner(b): return a*b
+    return inner
+double=mul(2); print(double(5))"`,
             },
             {
               english: 'Pure Function',
@@ -2378,6 +2676,8 @@ price_with_tax = add_tax(100)`,
               code: `def apply_discount(price, percent):
     return price * (1 - percent / 100)`,
               task: `Scrivi una funzione pura che restituisca sempre lo stesso output a parita' di input e non muti nulla all'esterno.`,
+              command: `python3 -c "def add(a, b): return a + b
+print(add(3, 4))"`,
             },
             {
               english: 'Side Effect',
@@ -2395,6 +2695,9 @@ def record_event(name):
     metrics_count += 1
     log.info(name)`,
               task: 'Evidenzia gli effetti collaterali della funzione: modifica una variabile globale e scrive su un logger esterno.',
+              command: `python3 -c "log=[]
+def record(msg): log.append(msg)
+record('event1'); print(log)"`,
             },
             {
               english: 'Immutable Data',
@@ -2412,6 +2715,11 @@ class Money:
     amount: int
     currency: str`,
               task: 'Definisci una dataclass frozen Money per rendere immutabili i dati monetari e prevenire mutazioni accidentali.',
+              command: `python3 -c "t = (1, 2, 3)
+try:
+    t[0] = 9
+except TypeError as e:
+    print(e)"`,
             },
             {
               english: 'List/Dict Comprehension',
@@ -2424,6 +2732,7 @@ class Money:
               difficulty: 'intermediate',
               code: 'emails_by_id = {user.id: user.email for user in users if user.is_active}',
               task: 'Usa una dict comprehension per creare una mappa id->email considerando solo gli utenti attivi.',
+              command: 'python3 -c "sq = {x: x**2 for x in range(5)}; print(sq)"',
             },
             {
               english: 'Partial Application',
@@ -2441,6 +2750,8 @@ class Money:
 log_error = partial(log.write, level="ERROR")
 log_error("db connection lost")`,
               task: 'Applica functools.partial per pre-impostare il parametro level e ottenere una versione specializzata della funzione di log.',
+              command:
+                'python3 -c "from functools import partial; add5=partial(int.__add__, 5); print(add5(3))"',
             },
           ],
         },
@@ -2468,6 +2779,10 @@ log_error("db connection lost")`,
     def __init__(self, name):
         self.name = name`,
               task: 'Definisci una classe User con un costruttore che riceve il nome e lo memorizza come attributo di istanza.',
+              command: `python3 -c "class Dog:
+    def __init__(self, name): self.name=name
+    def bark(self): print(f'{self.name}: woof!')
+Dog('Rex').bark()"`,
             },
             {
               english: 'Object',
@@ -2481,6 +2796,8 @@ log_error("db connection lost")`,
               code: `user = User('Marco')
 print(type(user))`,
               task: `Crea un oggetto della classe User passando il nome e stampa il suo tipo per verificare che sia un'istanza.`,
+              command: `python3 -c "class Cat: pass
+c = Cat(); print(type(c))"`,
             },
             {
               english: 'Instance',
@@ -2495,6 +2812,8 @@ print(type(user))`,
 bob = User('Bob')
 print(alice is bob)`,
               task: `Crea due istanze distinte della classe User e verifica che siano oggetti separati con identita' diversa.`,
+              command: `python3 -c "class X: pass
+a, b = X(), X(); print(a is b)"`,
             },
             {
               english: '__init__ (Method)',
@@ -2511,6 +2830,9 @@ print(alice is bob)`,
         self.x = x
         self.y = y`,
               task: `Implementa il metodo __init__ della classe Point per inizializzare le coordinate x e y all'atto della creazione.`,
+              command: `python3 -c "class Point:
+    def __init__(self, x, y): self.x=x; self.y=y
+p=Point(3,4); print(p.x, p.y)"`,
             },
             {
               english: 'self (Parameter)',
@@ -2528,6 +2850,10 @@ print(alice is bob)`,
     def increment(self):
         self.count += 1`,
               task: `Definisci una classe Counter che usa self per accedere e modificare l'attributo count nel metodo increment.`,
+              command: `python3 -c "class Counter:
+    def __init__(self): self.n=0
+    def inc(self): self.n+=1; return self.n
+c=Counter(); print(c.inc(), c.inc())"`,
             },
             {
               english: 'Attribute',
@@ -2543,6 +2869,9 @@ print(alice is bob)`,
         self.brand = brand
         self.speed = 0`,
               task: 'Definisci una classe Car con un attributo brand passato al costruttore e un attributo speed inizializzato a zero.',
+              command: `python3 -c "class Car:
+    def __init__(self, brand): self.brand=brand; self.speed=0
+c=Car('Fiat'); print(c.brand)"`,
             },
             {
               english: 'Method',
@@ -2559,6 +2888,9 @@ print(alice is bob)`,
     def deposit(self, amount):
         self.balance += amount`,
               task: `Aggiungi alla classe Account un metodo deposit che incrementa il saldo dell'importo passato come argomento.`,
+              command: `python3 -c "class Calc:
+    def add(self, a, b): return a+b
+print(Calc().add(3,4))"`,
             },
             {
               english: 'Constructor',
@@ -2574,6 +2906,9 @@ print(alice is bob)`,
         self.name = name
         self.price = price`,
               task: `Scrivi il costruttore della classe Product che riceve name e price e li assegna agli attributi dell'istanza.`,
+              command: `python3 -c "class Product:
+    def __init__(self, name, price): self.name=name; self.price=price
+p=Product('Book', 9.99); print(p.name, p.price)"`,
             },
             {
               english: 'Instance Variable',
@@ -2588,6 +2923,9 @@ print(alice is bob)`,
     def __init__(self, name):
         self.name = name  # variabile di istanza`,
               task: 'Definisci una variabile di istanza name nella classe Dog assegnandola a self dentro __init__.',
+              command: `python3 -c "class Dog:
+    def __init__(self, name): self.name=name
+a=Dog('Rex'); b=Dog('Max'); print(a.name, b.name)"`,
             },
             {
               english: 'Class Variable',
@@ -2603,6 +2941,10 @@ print(alice is bob)`,
     def __init__(self, name):
         self.name = name`,
               task: 'Aggiungi alla classe Dog una variabile di classe species condivisa da tutte le istanze.',
+              command: `python3 -c "class Dog:
+    species='Canis'
+    def __init__(self, name): self.name=name
+print(Dog.species)"`,
             },
           ],
         },
@@ -2626,6 +2968,11 @@ print(alice is bob)`,
 class Dog(Animal):
     pass`,
               task: 'Definisci una classe Dog che eredita da Animal in modo da riusare automaticamente il metodo eat.',
+              command: `python3 -c "class Animal:
+    def speak(self): return 'sound'
+class Dog(Animal):
+    def speak(self): return 'woof'
+print(Dog().speak())"`,
             },
             {
               english: 'Parent Class (Base Class)',
@@ -2643,6 +2990,10 @@ class Dog(Animal):
 class Manager(Employee):
     pass`,
               task: 'Definisci la classe genitore Employee con un attributo name e una classe figlia Manager che la estende.',
+              command: `python3 -c "class Base:
+    def hello(self): print('base')
+class Child(Base): pass
+Child().hello()"`,
             },
             {
               english: 'Child Class (Subclass)',
@@ -2660,6 +3011,10 @@ class Car(Vehicle):
     def honk(self):
         print('beep')`,
               task: 'Crea una sottoclasse Car che eredita da Vehicle e aggiunge un nuovo metodo honk specifico per le auto.',
+              command: `python3 -c "class Vehicle: pass
+class Car(Vehicle):
+    def honk(self): print('beep')
+Car().honk()"`,
             },
             {
               english: 'Override (Method)',
@@ -2678,6 +3033,11 @@ class Dog(Animal):
     def speak(self):
         print('woof')`,
               task: `Sovrascrivi il metodo speak nella sottoclasse Dog per stampare 'woof' invece del comportamento ereditato da Animal.`,
+              command: `python3 -c "class A:
+    def greet(self): return 'hi'
+class B(A):
+    def greet(self): return 'hello'
+print(B().greet())"`,
             },
             {
               english: 'Super (function)',
@@ -2690,6 +3050,11 @@ class Dog(Animal):
               difficulty: 'intermediate',
               code: 'super().__init__()',
               task: `Richiama il costruttore della classe genitore dall'interno della sottoclasse con super.`,
+              command: `python3 -c "class A:
+    def __init__(self): self.x=1
+class B(A):
+    def __init__(self): super().__init__(); self.y=2
+b=B(); print(b.x, b.y)"`,
             },
             {
               english: 'Multiple Inheritance',
@@ -2710,6 +3075,12 @@ class Flyer:
 class Duck(Swimmer, Flyer):
     pass`,
               task: `Definisci la classe Duck che eredita contemporaneamente da Swimmer e Flyer applicando l'ereditarieta' multipla.`,
+              command: `python3 -c "class A:
+    def a(self): return 'A'
+class B:
+    def b(self): return 'B'
+class C(A,B): pass
+c=C(); print(c.a(), c.b())"`,
             },
             {
               english: 'Method Resolution Order (MRO)',
@@ -2728,6 +3099,11 @@ class C(A): pass
 class D(B, C): pass
 print(D.__mro__)`,
               task: `Stampa l'attributo __mro__ della classe D per ispezionare l'ordine di risoluzione dei metodi calcolato dall'algoritmo C3.`,
+              command: `python3 -c "class A: pass
+class B(A): pass
+class C(A): pass
+class D(B,C): pass
+print(D.__mro__)"`,
             },
             {
               english: 'Mixin',
@@ -2747,6 +3123,12 @@ class User(JSONMixin):
     def __init__(self, name):
         self.name = name`,
               task: `Definisci un mixin JSONMixin che aggiunge il metodo to_json e applicalo alla classe User tramite ereditarieta'.`,
+              command: `python3 -c "class JsonMixin:
+    def to_json(self):
+        import json; return json.dumps(self.__dict__)
+class User(JsonMixin):
+    def __init__(self,n): self.name=n
+print(User('Al').to_json())"`,
             },
             {
               english: 'Is-a Relationship',
@@ -2758,6 +3140,9 @@ class User(JSONMixin):
               context: 'design',
               difficulty: 'intermediate',
               note: 'Es: Un Cane "\u00E8 un" Animale.',
+              command: `python3 -c "class Animal: pass
+class Dog(Animal): pass
+d=Dog(); print(isinstance(d, Animal))"`,
             },
             {
               english: 'Polymorphism',
@@ -2775,6 +3160,11 @@ class Square:
 for shape in shapes:
     print(shape.area())`,
               task: 'Sfrutta il polimorfismo iterando una lista di forme e chiamando area() su ciascuna senza sapere il tipo concreto.',
+              command: `python3 -c "class Cat:
+    def speak(self): return 'meow'
+class Dog:
+    def speak(self): return 'woof'
+for a in [Cat(), Dog()]: print(a.speak())"`,
             },
           ],
         },
@@ -2799,6 +3189,11 @@ for shape in shapes:
         if amount > 0:
             self._balance += amount`,
               task: `Incapsula il saldo della classe BankAccount esponendolo solo tramite un metodo deposit che valida l'importo.`,
+              command: `python3 -c "class Acct:
+    def __init__(self): self._bal=0
+    def deposit(self,a): self._bal+=a
+    def bal(self): return self._bal
+a=Acct(); a.deposit(100); print(a.bal())"`,
             },
             {
               english: 'Abstraction',
@@ -2815,6 +3210,14 @@ class Storage(ABC):
     @abstractmethod
     def save(self, data): ...`,
               task: 'Astrai i dettagli di salvataggio definendo una classe Storage con un metodo astratto save che le sottoclassi devono implementare.',
+              command: `python3 -c "from abc import ABC, abstractmethod
+class Shape(ABC):
+    @abstractmethod
+    def area(self): ...
+class Sq(Shape):
+    def __init__(self,s): self.s=s
+    def area(self): return self.s**2
+print(Sq(4).area())"`,
             },
             {
               english: 'Private Attribute',
@@ -2828,6 +3231,9 @@ class Storage(ABC):
               code: 'self.__secret = 123',
               note: 'In Python non sono veramente inaccessibili, ma scatta il "name mangling".',
               task: 'Definisci un attributo privato __secret con valore 123 usando il doppio underscore.',
+              command: `python3 -c "class C:
+    def __init__(self): self.__secret=42
+o=C(); print(o._C__secret)"`,
             },
             {
               english: 'Protected Attribute',
@@ -2841,6 +3247,9 @@ class Storage(ABC):
               code: 'self._internal_value = 10',
               note: 'Segnale convenzionale per dire "non usare fuori da questa classe o sottoclassi".',
               task: 'Crea un attributo protetto _internal_value impostato a 10 con la convenzione del singolo underscore.',
+              command: `python3 -c "class C:
+    def __init__(self): self._internal=10
+print(C()._internal)"`,
             },
             {
               english: 'Interface',
@@ -2857,6 +3266,13 @@ class Serializable(ABC):
     @abstractmethod
     def to_dict(self) -> dict: ...`,
               task: `Definisci un'interfaccia Serializable tramite ABC che obbliga le sottoclassi a fornire un metodo to_dict.`,
+              command: `python3 -c "from abc import ABC, abstractmethod
+class Serializable(ABC):
+    @abstractmethod
+    def to_dict(self): ...
+class User(Serializable):
+    def to_dict(self): return {'ok': True}
+print(User().to_dict())"`,
             },
             {
               english: 'Abstract Base Class (ABC)',
@@ -2875,6 +3291,14 @@ class Shape(ABC):
     def draw(self):
         pass`,
               task: 'Crea una Abstract Base Class Shape con un metodo astratto draw che obbliga ogni sottoclasse a fornire la propria implementazione.',
+              command: `python3 -c "from abc import ABC, abstractmethod
+class Shape(ABC):
+    @abstractmethod
+    def draw(self): ...
+try:
+    Shape()
+except TypeError as e:
+    print(e)"`,
             },
             {
               english: 'Composition',
@@ -2893,6 +3317,11 @@ class Car:
     def __init__(self):
         self.engine = Engine()`,
               task: `Usa la composizione facendo in modo che la classe Car contenga al suo interno un'istanza di Engine come attributo.`,
+              command: `python3 -c "class Engine:
+    def start(self): return 'vroom'
+class Car:
+    def __init__(self): self.engine=Engine()
+print(Car().engine.start())"`,
             },
             {
               english: 'Aggregation',
@@ -2912,6 +3341,11 @@ class Classroom:
     def __init__(self, students):
         self.students = students  # esistono fuori da Classroom`,
               task: `Modella un'aggregazione passando una lista di Student gia' esistenti al costruttore di Classroom invece di crearli internamente.`,
+              command: `python3 -c "class Student:
+    def __init__(self,n): self.name=n
+class Room:
+    def __init__(self,sts): self.sts=sts
+s=Student('Al'); r=Room([s]); print(r.sts[0].name)"`,
             },
             {
               english: 'Method Overloading',
@@ -2930,6 +3364,9 @@ class Classroom:
             return 'Hello!'
         return f'Hello, {name}!'`,
               task: 'Simula il sovraccarico dei metodi in Python usando un argomento di default che cambia il comportamento del metodo hello.',
+              command: `python3 -c "class G:
+    def hi(self, name=None): return f'Hello, {name}!' if name else 'Hello!'
+g=G(); print(g.hi(), g.hi('Bob'))"`,
             },
             {
               english: 'Duck Typing',
@@ -2944,6 +3381,12 @@ class Classroom:
               code: `def quack_it(thing):
     thing.quack()  # non importa il tipo, basta che abbia .quack()`,
               task: 'Sfrutta il duck typing in una funzione quack_it che invoca .quack() su qualsiasi oggetto senza controllarne il tipo.',
+              command: `python3 -c "class A:
+    def speak(self): return 'A'
+class B:
+    def speak(self): return 'B'
+def talk(obj): print(obj.speak())
+talk(A()); talk(B())"`,
             },
           ],
         },
@@ -2963,6 +3406,11 @@ class Classroom:
               difficulty: 'intermediate',
               code: '@property\ndef name(self):',
               task: `Trasforma il metodo name in un getter di proprieta' applicando il decoratore @property.`,
+              command: `python3 -c "class C:
+    def __init__(self): self._x=0
+    @property
+    def x(self): return self._x
+o=C(); print(o.x)"`,
             },
             {
               english: 'Getter',
@@ -2980,6 +3428,11 @@ class Classroom:
     def balance(self):
         return self._balance`,
               task: `Definisci un getter per l'attributo balance della classe Account usando il decoratore @property.`,
+              command: `python3 -c "class Acct:
+    def __init__(self,b): self._b=b
+    @property
+    def balance(self): return self._b
+print(Acct(100).balance)"`,
             },
             {
               english: 'Setter',
@@ -2992,6 +3445,13 @@ class Classroom:
               difficulty: 'intermediate',
               code: '@name.setter\ndef name(self, value):',
               task: `Definisci il setter della proprieta' name che riceve value usando il decoratore @name.setter.`,
+              command: `python3 -c "class C:
+    def __init__(self): self._n=''
+    @property
+    def name(self): return self._n
+    @name.setter
+    def name(self,v): self._n=v.strip()
+o=C(); o.name=' Al '; print(o.name)"`,
             },
             {
               english: 'Classmethod (Decorator)',
@@ -3004,6 +3464,11 @@ class Classroom:
               difficulty: 'advanced',
               code: '@classmethod\ndef func(cls, ...):',
               task: 'Dichiara un metodo di classe func che riceve cls come primo parametro tramite @classmethod.',
+              command: `python3 -c "class User:
+    def __init__(self,n): self.name=n
+    @classmethod
+    def guest(cls): return cls('Guest')
+print(User.guest().name)"`,
             },
             {
               english: 'Staticmethod (Decorator)',
@@ -3020,6 +3485,10 @@ class Classroom:
     def square(x):
         return x * x`,
               task: `Definisci un metodo statico square nella classe Math che eleva al quadrato un numero senza ricevere ne' self ne' cls.`,
+              command: `python3 -c "class Math:
+    @staticmethod
+    def square(x): return x*x
+print(Math.square(7))"`,
             },
             {
               english: 'Dunder Method (Magic Method)',
@@ -3037,6 +3506,11 @@ class Classroom:
     def __add__(self, other):
         return Vector(self.x + other.x, self.y + other.y)`,
               task: `Implementa il metodo dunder __add__ nella classe Vector per supportare l'operatore + tra due vettori.`,
+              command: `python3 -c "class Vec:
+    def __init__(self,x,y): self.x=x; self.y=y
+    def __add__(self,o): return Vec(self.x+o.x, self.y+o.y)
+    def __repr__(self): return f'Vec({self.x},{self.y})'
+print(Vec(1,2)+Vec(3,4))"`,
             },
             {
               english: '__str__ vs __repr__',
@@ -3055,6 +3529,11 @@ class Classroom:
     def __repr__(self):
         return f'Point(x={self.x}, y={self.y})'`,
               task: `Implementa sia __str__ (per l'utente) sia __repr__ (per lo sviluppatore) nella classe Point con due rappresentazioni diverse.`,
+              command: `python3 -c "class P:
+    def __init__(self,x,y): self.x=x; self.y=y
+    def __str__(self): return f'({self.x},{self.y})'
+    def __repr__(self): return f'P({self.x},{self.y})'
+p=P(1,2); print(str(p), repr(p))"`,
             },
             {
               english: 'Operator Overloading',
@@ -3073,6 +3552,11 @@ class Classroom:
     def __add__(self, other):
         return Money(self.amount + other.amount)`,
               task: `Sovraccarica l'operatore + nella classe Money implementando __add__ per sommare due importi e restituire un nuovo Money.`,
+              command: `python3 -c "class Money:
+    def __init__(self,a): self.a=a
+    def __add__(self,o): return Money(self.a+o.a)
+    def __repr__(self): return f'\${self.a}'
+print(Money(10)+Money(20))"`,
             },
             {
               english: 'Slots (__slots__)',
@@ -3089,6 +3573,10 @@ class Classroom:
         self.x = x
         self.y = y`,
               task: 'Ottimizza la memoria della classe Point dichiarando __slots__ per impedire la creazione del dizionario __dict__.',
+              command: `python3 -c "class P:
+    __slots__=('x','y')
+    def __init__(self,x,y): self.x=x; self.y=y
+p=P(1,2); print(p.x, p.y)"`,
             },
             {
               english: 'Descriptor',
@@ -3108,6 +3596,15 @@ class Classroom:
             raise ValueError('must be positive')
         instance.__dict__[self.name] = value`,
               task: `Definisci un descrittore Positive che intercetta __set__ per impedire l'assegnamento di valori negativi a un attributo.`,
+              command: `python3 -c "class Pos:
+    def __set_name__(self,o,n): self.n=n
+    def __set__(self,obj,v):
+        if v<0: raise ValueError
+        obj.__dict__[self.n]=v
+    def __get__(self,obj,t): return obj.__dict__.get(self.n,0)
+class C:
+    x=Pos()
+c=C(); c.x=5; print(c.x)"`,
             },
           ],
         },
@@ -3139,6 +3636,7 @@ def greet(name):
 import mymodule
 print(mymodule.greet('Anna'))`,
               task: 'Crea il modulo mymodule.py con la funzione greet e importalo da un altro file per richiamarla.',
+              command: 'python3 -c "import math; print(math.sqrt(16), math.pi)"',
             },
             {
               english: 'Package',
@@ -3154,6 +3652,7 @@ print(mymodule.greet('Anna'))`,
 from mypackage import utils
 utils.helper()`,
               task: 'Organizza il codice in un package mypackage con __init__.py e importa la sottomodulo utils dal package.',
+              command: 'python3 -c "import json.tool; print(json.tool.__name__)"',
             },
             {
               english: 'Import Statement',
@@ -3166,6 +3665,7 @@ utils.helper()`,
               difficulty: 'beginner',
               code: 'import math',
               task: 'Importa il modulo math della libreria standard per accedere alle funzioni matematiche.',
+              command: 'python3 -c "import math; print(math.ceil(4.2))"',
             },
             {
               english: 'From ... Import',
@@ -3179,6 +3679,7 @@ utils.helper()`,
               code: `from math import pi, sqrt
 print(sqrt(pi))`,
               task: 'Usa la sintassi from ... import per portare nel namespace corrente solo pi e sqrt dal modulo math.',
+              command: 'python3 -c "from math import pi, sqrt; print(sqrt(pi))"',
             },
             {
               english: 'As (Alias)',
@@ -3192,6 +3693,7 @@ print(sqrt(pi))`,
 import pandas as pd
 arr = np.array([1, 2, 3])`,
               task: `Importa numpy con l'alias np usando la parola chiave as e crea un array di tre elementi.`,
+              command: `python3 -c "import collections as col; print(col.Counter('hello'))"`,
             },
             {
               english: 'Standard Library',
@@ -3207,6 +3709,8 @@ arr = np.array([1, 2, 3])`,
 import datetime
 print(os.getcwd(), datetime.date.today())`,
               task: 'Sfrutta la libreria standard importando os e datetime per stampare la directory corrente e la data di oggi.',
+              command:
+                'python3 -c "import os, datetime; print(os.getcwd(), datetime.date.today())"',
             },
             {
               english: 'Third-party Library',
@@ -3222,6 +3726,7 @@ print(os.getcwd(), datetime.date.today())`,
 response = requests.get('https://api.example.com/users')
 print(response.status_code)`,
               task: 'Usa la libreria di terze parti requests per eseguire una richiesta GET e stampare lo status code della risposta.',
+              command: 'pip install --help | head -1',
             },
             {
               english: 'Pip (Package Manager)',
@@ -3237,6 +3742,7 @@ print(response.status_code)`,
 pip install requests==2.31.0
 pip install -r requirements.txt`,
               task: 'Installa requests in versione 2.31.0 con pip e poi installa tutte le dipendenze elencate in requirements.txt.',
+              command: 'pip list --format=columns | head -5',
             },
             {
               english: 'PyPI (Python Package Index)',
@@ -3251,6 +3757,7 @@ pip install -r requirements.txt`,
 python -m build
 python -m twine upload dist/*`,
               task: 'Pubblica il pacchetto su PyPI costruendo la distribuzione con build e caricandola con twine.',
+              command: 'pip show pip | head -3',
             },
             {
               english: '__name__ == "__main__"',
@@ -3268,6 +3775,7 @@ python -m twine upload dist/*`,
 if __name__ == '__main__':
     main()`,
               task: `Aggiungi il blocco if __name__ == '__main__' per eseguire la funzione main solo quando il file viene lanciato direttamente.`,
+              command: `python3 -c "if __name__ == '__main__': print('running as main')"`,
             },
           ],
         },
@@ -3289,6 +3797,7 @@ if __name__ == '__main__':
     content = f.read()
     print(type(f))`,
               task: `Apri data.txt con un context manager e stampa il tipo dell'oggetto file ottenuto per ispezionarne la natura.`,
+              command: `python3 -c "import io; f=io.StringIO('hello'); print(type(f), f.read())"`,
             },
             {
               english: 'Open (function)',
@@ -3302,6 +3811,7 @@ if __name__ == '__main__':
               code: `with open('notes.txt', 'r', encoding='utf-8') as f:
     text = f.read()`,
               task: 'Apri il file notes.txt in lettura con codifica UTF-8 dentro un blocco with per leggerne il contenuto.',
+              command: `python3 -c "import tempfile, os; p=os.path.join(tempfile.gettempdir(),'test.txt'); open(p,'w').write('hi'); print(open(p).read())"`,
             },
             {
               english: 'Mode',
@@ -3315,6 +3825,7 @@ if __name__ == '__main__':
               code: `with open('log.txt', 'a') as f:
     f.write('nuova riga\\n')`,
               task: `Apri log.txt in modalita' append ('a') e scrivi una nuova riga in coda al contenuto esistente.`,
+              command: `python3 -c "import tempfile, os; p=os.path.join(tempfile.gettempdir(),'m.txt'); open(p,'w').write('line1\\n'); open(p,'a').write('line2\\n'); print(open(p).read())"`,
             },
             {
               english: 'Read',
@@ -3329,6 +3840,7 @@ if __name__ == '__main__':
     content = f.read()
 print(len(content))`,
               task: `Leggi l'intero contenuto di report.txt con read() e stampa la lunghezza in caratteri della stringa risultante.`,
+              command: `python3 -c "import tempfile, os; p=os.path.join(tempfile.gettempdir(),'r.txt'); open(p,'w').write('hello'); print(open(p).read())"`,
             },
             {
               english: 'Readline',
@@ -3345,6 +3857,7 @@ print(len(content))`,
         process(line)
         line = f.readline()`,
               task: 'Itera il file app.log una riga alla volta con readline() per processarlo senza caricarlo tutto in memoria.',
+              command: `python3 -c "import io; f=io.StringIO('line1\\nline2\\n'); print(f.readline().strip(), f.readline().strip())"`,
             },
             {
               english: 'Write',
@@ -3359,6 +3872,7 @@ print(len(content))`,
     f.write('prima riga\\n')
     f.write('seconda riga\\n')`,
               task: 'Apri output.txt in scrittura e usa il metodo write() per inserire due righe terminate da \\n.',
+              command: `python3 -c "import tempfile, os; p=os.path.join(tempfile.gettempdir(),'w.txt'); f=open(p,'w'); f.write('data\\n'); f.close(); print(open(p).read())"`,
             },
             {
               english: 'Close',
@@ -3375,6 +3889,7 @@ try:
 finally:
     f.close()`,
               task: `Chiudi esplicitamente l'oggetto file dentro un blocco finally per liberare il descrittore anche in caso di eccezione.`,
+              command: `python3 -c "import io; f=io.StringIO('hi'); print(f.read()); f.close(); print('closed:', f.closed)"`,
             },
             {
               english: 'With Statement (Context Manager)',
@@ -3387,6 +3902,9 @@ finally:
               difficulty: 'intermediate',
               code: 'with open("file.txt") as f:',
               task: `Apri il file 'file.txt' come f con un context manager che lo chiude automaticamente.`,
+              command: `python3 -c "import tempfile, os; p=os.path.join(tempfile.gettempdir(),'ctx.txt'); open(p,'w').write('hi')
+with open(p) as f:
+    print(f.read())"`,
             },
             {
               english: 'Binary Mode',
@@ -3399,6 +3917,7 @@ finally:
               code: `with open('image.png', 'rb') as f:
     raw_bytes = f.read()`,
               task: `Apri image.png in modalita' binaria ('rb') per leggere i byte grezzi senza decodifica come testo.`,
+              command: `python3 -c "import tempfile, os; p=os.path.join(tempfile.gettempdir(),'b.bin'); open(p,'wb').write(b'\\x00\\x01\\x02'); print(open(p,'rb').read())"`,
             },
             {
               english: 'Seek (method)',
@@ -3413,6 +3932,7 @@ finally:
     f.seek(0)  # torna all'inizio
     header = f.read(16)`,
               task: `Sposta il cursore all'inizio di data.bin con seek(0) e leggi i primi 16 byte come header.`,
+              command: `python3 -c "import io; f=io.BytesIO(b'ABCDEF'); f.seek(3); print(f.read())"`,
             },
           ],
         },
@@ -3434,6 +3954,7 @@ finally:
 data = {'name': 'Alice', 'age': 30}
 payload = json.dumps(data)`,
               task: 'Serializza il dizionario data in una stringa JSON usando json.dumps prima di inviarlo in rete.',
+              command: `python3 -c "import json; print(json.dumps({'name': 'Alice', 'age': 30}))"`,
             },
             {
               english: 'Deserialization',
@@ -3448,6 +3969,7 @@ payload = json.dumps(data)`,
 payload = '{"name": "Alice", "age": 30}'
 data = json.loads(payload)`,
               task: 'Deserializza la stringa JSON payload con json.loads ricostruendo un dizionario Python nativo.',
+              command: `python3 -c "import json; d=json.loads('{\\"a\\": 1}'); print(d, type(d))"`,
             },
             {
               english: 'JSON (module)',
@@ -3460,6 +3982,7 @@ data = json.loads(payload)`,
               difficulty: 'beginner',
               code: 'import json\njson.loads(string)',
               task: 'Importa il modulo json e converti la stringa in un oggetto Python tramite json.loads.',
+              command: 'python3 -c "import json; print(json.dumps([1,2,3], indent=2))"',
             },
             {
               english: 'CSV (module)',
@@ -3477,6 +4000,7 @@ with open('users.csv') as f:
     for row in reader:
         print(row['name'])`,
               task: 'Leggi users.csv con csv.DictReader e stampa il campo name di ogni riga indicizzandolo come chiave del dizionario.',
+              command: `python3 -c "import csv, io; r=csv.reader(io.StringIO('a,b\\n1,2')); [print(row) for row in r]"`,
             },
             {
               english: 'YAML',
@@ -3492,6 +4016,7 @@ with open('config.yaml') as f:
     config = yaml.safe_load(f)
 print(config['database']['host'])`,
               task: 'Carica config.yaml con yaml.safe_load e accedi al campo database.host per leggere la configurazione.',
+              command: `python3 -c "print('YAML needs: pip install pyyaml'); import importlib; print('yaml' if importlib.util.find_spec('yaml') else 'not installed')"`,
             },
             {
               english: 'Pickle (module)',
@@ -3509,6 +4034,8 @@ with open('model.pkl', 'wb') as f:
 with open('model.pkl', 'rb') as f:
     loaded = pickle.load(f)`,
               task: `Serializza l'oggetto model con pickle.dump in modalita' binaria e poi ricaricalo da disco con pickle.load.`,
+              command:
+                'python3 -c "import pickle; data=[1,2,3]; b=pickle.dumps(data); print(pickle.loads(b))"',
             },
             {
               english: 'Parsing',
@@ -3524,6 +4051,7 @@ raw = '{"users": [{"id": 1}, {"id": 2}]}'
 parsed = json.loads(raw)
 print(parsed['users'][0]['id'])`,
               task: `Effettua il parsing della stringa JSON raw con json.loads e accedi all'id del primo utente dell'array users.`,
+              command: `python3 -c "import json; d=json.loads('{\\"users\\": [{\\"id\\": 1}]}'); print(d['users'][0]['id'])"`,
             },
             {
               english: 'Encoding (UTF-8)',
@@ -3536,6 +4064,7 @@ print(parsed['users'][0]['id'])`,
               code: `with open('articolo.txt', 'r', encoding='utf-8') as f:
     testo = f.read()`,
               task: `Apri articolo.txt specificando encoding='utf-8' per leggere correttamente caratteri accentati ed emoji.`,
+              command: `python3 -c "s='ciao'; print(s.encode('utf-8'), len(s.encode('utf-8')))"`,
             },
             {
               english: 'Load/Dump',
@@ -3552,6 +4081,7 @@ with open('users.json', 'w') as f:
     json.dump(users, f)  # su file
 string = json.dumps(users)  # su stringa`,
               task: 'Salva il dizionario users su file con json.dump e produci anche la versione stringa con json.dumps.',
+              command: `python3 -c "import json; s=json.dumps({'a':1}); print(json.loads(s))"`,
             },
             {
               english: 'Delimiter',
@@ -3568,6 +4098,7 @@ with open('data.csv') as f:
     for row in reader:
         print(row)`,
               task: `Leggi data.csv usando il punto e virgola come delimitatore passando delimiter=';' a csv.reader.`,
+              command: `python3 -c "import csv, io; r=csv.reader(io.StringIO('a;b;c'), delimiter=';'); print(next(r))"`,
             },
           ],
         },
@@ -3592,6 +4123,7 @@ python -m venv .venv
 source .venv/bin/activate
 pip install requests`,
               task: 'Crea un ambiente virtuale nella cartella .venv, attivalo e installa requests in isolamento dal sistema.',
+              command: 'python3 -m venv --help | head -3',
             },
             {
               english: 'Venv (module)',
@@ -3606,6 +4138,7 @@ pip install requests`,
 python -m venv myenv
 source myenv/bin/activate`,
               task: `Usa il modulo venv per creare l'ambiente myenv e attivalo prima di installare le dipendenze del progetto.`,
+              command: `python3 -c "import venv; print('venv module available:', venv.__name__)"`,
             },
             {
               english: 'Requirements File',
@@ -3624,6 +4157,7 @@ flask==3.0.0
 # da shell
 pip install -r requirements.txt`,
               task: 'Elenca le dipendenze con versioni esatte in requirements.txt e installale tutte insieme con pip install -r.',
+              command: 'pip freeze | head -5',
             },
             {
               english: 'Dependency',
@@ -3637,6 +4171,7 @@ pip install -r requirements.txt`,
 requests==2.31.0
 numpy>=1.24,<2.0`,
               task: 'Blocca la dipendenza requests a una versione esatta e numpy a un intervallo di versioni in requirements.txt.',
+              command: 'pip show pip | grep -i requires',
             },
             {
               english: 'Environment Variable',
@@ -3651,6 +4186,7 @@ numpy>=1.24,<2.0`,
 api_key = os.environ['API_KEY']
 debug = os.environ.get('DEBUG', 'false')`,
               task: `Leggi la variabile d'ambiente API_KEY con os.environ e DEBUG con un valore di default tramite get().`,
+              command: `python3 -c "import os; print(os.environ.get('HOME', 'not set'))"`,
             },
             {
               english: 'Dotenv (.env)',
@@ -3667,6 +4203,7 @@ import os
 load_dotenv()
 secret = os.environ['SECRET_KEY']`,
               task: 'Carica le variabili dal file .env con load_dotenv() e accedi a SECRET_KEY tramite os.environ.',
+              command: `python3 -c "import os; os.environ['MY_VAR']='hello'; print(os.environ['MY_VAR'])"`,
             },
             {
               english: 'Absolute Import',
@@ -3679,6 +4216,7 @@ secret = os.environ['SECRET_KEY']`,
               code: `from myapp.utils.helpers import format_date
 from myapp.models import User`,
               task: 'Usa import assoluti come from myapp.utils.helpers import format_date per rendere le importazioni robuste agli spostamenti.',
+              command: `python3 -c "from os.path import join, exists; print(join('/tmp', 'test'))"`,
             },
             {
               english: 'Circular Import',
@@ -3694,6 +4232,10 @@ def use_b():
     from module_b import helper  # import dentro la funzione
     helper()`,
               task: `Risolvi un import circolare spostando l'import di module_b dentro la funzione invece di tenerlo a livello top.`,
+              command: `python3 -c "def use_json():
+    import json
+    return json.dumps({'lazy': True})
+print(use_json())"`,
             },
             {
               english: 'Search Path (sys.path)',
@@ -3708,6 +4250,7 @@ def use_b():
 sys.path.append('/opt/mylibs')
 print(sys.path)`,
               task: 'Aggiungi /opt/mylibs al percorso di ricerca di Python tramite sys.path.append e stampa la lista aggiornata.',
+              command: `python3 -c "import sys; print('\\n'.join(sys.path[:5]))"`,
             },
             {
               english: 'Package Registry',
@@ -3722,6 +4265,7 @@ print(sys.path)`,
 pip install --index-url https://pypi.org/simple/ requests
 pip config set global.index-url https://my-private-registry.com/simple/`,
               task: 'Installa requests dal registro pacchetti PyPI ufficiale e poi configura pip per usare un registro privato come default.',
+              command: `pip config list 2>/dev/null || echo 'default: https://pypi.org/simple/'`,
             },
           ],
         },
@@ -3747,6 +4291,8 @@ pip config set global.index-url https://my-private-registry.com/simple/`,
               note: `Quando si supera un livello di annidamento, conviene tornare a un ciclo for esplicito per leggibilita'.`,
               code: 'flat = [c for row in matrix for c in row]',
               task: 'Appiattisci una matrice 2D in una sola lista con una comprehension annidata, senza scrivere due cicli for espliciti.',
+              command:
+                'python3 -c "matrix=[[1,2],[3,4]]; print([c for row in matrix for c in row])"',
             },
             {
               english: 'Dictionary Comprehension',
@@ -3760,6 +4306,7 @@ pip config set global.index-url https://my-private-registry.com/simple/`,
               difficulty: 'intermediate',
               code: '{k: v for k, v in list_of_tuples}',
               task: 'Costruisci un dizionario da list_of_tuples assegnando k come chiave e v come valore.',
+              command: `python3 -c "pairs=[('a',1),('b',2)]; print({k:v for k,v in pairs})"`,
             },
             {
               english: 'Set Comprehension',
@@ -3772,6 +4319,7 @@ pip config set global.index-url https://my-private-registry.com/simple/`,
               difficulty: 'intermediate',
               code: 'unique = {ch.lower() for ch in text if ch.isalpha()}',
               task: 'Costruisci un insieme di caratteri alfabetici unici da una stringa usando una set comprehension con filtro.',
+              command: `python3 -c "text='Hello World'; print({ch.lower() for ch in text if ch.isalpha()})"`,
             },
             {
               english: 'Generator Expression',
@@ -3786,6 +4334,7 @@ pip config set global.index-url https://my-private-registry.com/simple/`,
               note: 'Usa le parentesi tonde (). Non crea la lista in memoria, ma produce valori uno alla volta.',
               code: 'total = sum(x * x for x in range(1_000_000))',
               task: `Calcola la somma dei quadrati del primo milione di interi con un'espressione generatore, evitando di materializzare la lista in memoria.`,
+              command: 'python3 -c "print(sum(x*x for x in range(1000)))"',
             },
             {
               english: 'Nested Comprehension',
@@ -3798,6 +4347,8 @@ pip config set global.index-url https://my-private-registry.com/simple/`,
               difficulty: 'advanced',
               code: 'transposed = [[row[i] for row in matrix] for i in range(len(matrix[0]))]',
               task: 'Traspone una matrice quadrata usando una comprehension annidata, scambiando righe e colonne.',
+              command:
+                'python3 -c "m=[[1,2,3],[4,5,6]]; print([[r[i] for r in m] for i in range(3)])"',
             },
             {
               english: 'Filtering (in Comprehension)',
@@ -3810,6 +4361,7 @@ pip config set global.index-url https://my-private-registry.com/simple/`,
               difficulty: 'intermediate',
               code: 'evens = [x for x in numbers if x % 2 == 0]',
               task: 'Filtra solo i numeri pari da una lista usando la clausola if di una list comprehension.',
+              command: 'python3 -c "nums=range(20); print([x for x in nums if x%2==0])"',
             },
             {
               english: 'Conditional Expression',
@@ -3822,6 +4374,7 @@ pip config set global.index-url https://my-private-registry.com/simple/`,
               difficulty: 'intermediate',
               code: `labels = ['even' if x % 2 == 0 else 'odd' for x in nums]`,
               task: `Etichetta ogni numero come 'even' o 'odd' usando un'espressione condizionale ternaria dentro una comprehension.`,
+              command: `python3 -c "print(['even' if x%2==0 else 'odd' for x in range(6)])"`,
             },
             {
               english: 'Inline For-Loop',
@@ -3834,6 +4387,7 @@ pip config set global.index-url https://my-private-registry.com/simple/`,
               difficulty: 'beginner',
               code: 'squares = [x * x for x in range(10)]',
               task: 'Genera la lista dei quadrati da 0 a 9 con un ciclo for in linea, senza usare append in un ciclo esplicito.',
+              command: 'python3 -c "print([x*x for x in range(10)])"',
             },
             {
               english: 'Side Effect (avoidance)',
@@ -3845,6 +4399,7 @@ pip config set global.index-url https://my-private-registry.com/simple/`,
               context: 'philosophy',
               difficulty: 'advanced',
               note: 'Non usare print() o modificare variabili globali dentro una comprehension.',
+              command: 'python3 -c "nums=[1,2,3]; new=[x*2 for x in nums]; print(nums, new)"',
             },
             {
               english: 'Readability',
@@ -3856,6 +4411,7 @@ pip config set global.index-url https://my-private-registry.com/simple/`,
               context: 'philosophy',
               difficulty: 'intermediate',
               note: 'Se una comprehension \u00E8 troppo lunga, \u00E8 meglio usare un normale ciclo for.',
+              command: 'python3 -c "import this" 2>&1 | head -5',
             },
           ],
         },
@@ -3878,6 +4434,8 @@ pip config set global.index-url https://my-private-registry.com/simple/`,
         for line in f:
             yield line.rstrip()`,
               task: `Definisci un generatore che legge un file riga per riga, evitando di caricare l'intero contenuto in memoria.`,
+              command: `python3 -c "def gen(): yield 1; yield 2; yield 3
+for x in gen(): print(x)"`,
             },
             {
               english: 'Yield (Keyword)',
@@ -3894,6 +4452,9 @@ pip config set global.index-url https://my-private-registry.com/simple/`,
         yield n
         n -= 1`,
               task: `Definisci una funzione generatrice che usa yield per emettere un conto alla rovescia mantenendo lo stato tra una chiamata e l'altra.`,
+              command: `python3 -c "def countdown(n):
+ while n>0: yield n; n-=1
+print(list(countdown(5)))"`,
             },
             {
               english: 'Yield from',
@@ -3905,6 +4466,8 @@ pip config set global.index-url https://my-private-registry.com/simple/`,
               difficulty: 'expert',
               code: 'yield from range(10)',
               task: 'Delega a un generatore range(10) restituendone i valori uno a uno con yield from.',
+              command: `python3 -c "def chain(): yield from [1,2]; yield from [3,4]
+print(list(chain()))"`,
             },
             {
               english: 'Iterator',
@@ -3919,6 +4482,7 @@ pip config set global.index-url https://my-private-registry.com/simple/`,
 print(next(it))
 print(next(it))`,
               task: `Ottieni l'iteratore di una lista con iter() e avanza manualmente con next() per consumare un elemento alla volta.`,
+              command: 'python3 -c "it=iter([10,20,30]); print(next(it)); print(next(it))"',
             },
             {
               english: 'Iterable',
@@ -3935,6 +4499,10 @@ print(next(it))`,
     def __iter__(self):
         for i in range(self.n): yield i`,
               task: 'Rendi una classe personalizzata iterabile implementando __iter__ in modo da poterla usare in un ciclo for.',
+              command: `python3 -c "class C:
+ def __iter__(self):
+  for i in range(3): yield i
+print(list(C()))"`,
             },
             {
               english: 'Next (function)',
@@ -3947,6 +4515,7 @@ print(next(it))`,
               difficulty: 'intermediate',
               code: 'first_match = next((u for u in users if u.is_admin), None)',
               task: 'Recupera il primo elemento che soddisfa una condizione da un generatore usando next() con un valore di default per evitare StopIteration.',
+              command: 'python3 -c "g=(x for x in range(5)); print(next(g)); print(next(g))"',
             },
             {
               english: 'StopIteration',
@@ -3963,6 +4532,7 @@ try:
 except StopIteration:
     pass`,
               task: `Itera manualmente con next() e cattura StopIteration per terminare il ciclo quando l'iteratore è esaurito.`,
+              command: `python3 -c "it=iter([1]); print(next(it)); print(next(it, 'done'))"`,
             },
             {
               english: 'Lazy Evaluation',
@@ -3977,6 +4547,8 @@ except StopIteration:
               code: `squares = (x * x for x in range(10**9))
 first_ten = [next(squares) for _ in range(10)]`,
               task: `Sfrutta la valutazione pigra di un'espressione generatore per estrarre solo i primi dieci quadrati da un range enorme, senza calcolare il resto.`,
+              command:
+                'python3 -c "g=(x*x for x in range(10**9)); print([next(g) for _ in range(5)])"',
             },
             {
               english: 'State Retention',
@@ -3993,6 +4565,10 @@ first_ten = [next(squares) for _ in range(10)]`,
         x = yield total
         total += x`,
               task: `Definisci un generatore che mantiene lo stato (somma corrente) tra una yield e l'altra ricevendo nuovi valori tramite send().`,
+              command: `python3 -c "def acc():
+ t=0
+ while True: v=(yield t); t+=v
+g=acc(); next(g); print(g.send(5)); print(g.send(3))"`,
             },
             {
               english: 'Memory Efficiency',
@@ -4003,6 +4579,7 @@ first_ten = [next(squares) for _ in range(10)]`,
                 "Using generators improves memory efficiency for large datasets. = Usare i generatori migliora l'efficienza di memoria per grandi set di dati.",
               context: 'performance',
               difficulty: 'intermediate',
+              command: `python3 -c "import sys; print('list:',sys.getsizeof(list(range(1000))),'gen:',sys.getsizeof(x for x in range(1000)))"`,
             },
           ],
         },
@@ -4026,6 +4603,8 @@ for i, val in enumerate(itertools.count(10, 2)):
     if i == 5: break
     print(val)`,
               task: 'Importa itertools e usa count() per generare una sequenza infinita di numeri pari a partire da 10, interrompendoti dopo cinque elementi.',
+              command:
+                'python3 -c "from itertools import islice,count; print(list(islice(count(10,2),5)))"',
             },
             {
               english: 'Functools.partial',
@@ -4038,6 +4617,8 @@ for i, val in enumerate(itertools.count(10, 2)):
               difficulty: 'advanced',
               code: 'half = partial(multiply, 0.5)',
               task: 'Crea la funzione half che applica multiply fissando il primo argomento a 0.5 con partial.',
+              command:
+                'python3 -c "from functools import partial; double=partial(int.__mul__,2); print(double(5))"',
             },
             {
               english: 'Operator (module)',
@@ -4052,6 +4633,7 @@ for i, val in enumerate(itertools.count(10, 2)):
               code: `from operator import itemgetter
 sorted_users = sorted(users, key=itemgetter('age'))`,
               task: 'Ordina una lista di dizionari per una chiave usando operator.itemgetter, evitando di scrivere una lambda manuale.',
+              command: `python3 -c "from operator import itemgetter; data=[{'n':'b','a':2},{'n':'a','a':1}]; print(sorted(data,key=itemgetter('n')))"`,
             },
             {
               english: 'Itertools.chain',
@@ -4065,6 +4647,8 @@ sorted_users = sorted(users, key=itemgetter('age'))`,
               code: `from itertools import chain
 all_items = list(chain(list_a, list_b, list_c))`,
               task: `Concatena tre liste in un unico iterabile con itertools.chain, senza creare copie intermedie con l'operatore +.`,
+              command:
+                'python3 -c "from itertools import chain; print(list(chain([1,2],[3,4],[5])))"',
             },
             {
               english: 'Itertools.cycle',
@@ -4079,6 +4663,7 @@ all_items = list(chain(list_a, list_b, list_c))`,
 colors = cycle(['red', 'green', 'blue'])
 row_colors = [next(colors) for _ in rows]`,
               task: 'Assegna a ogni riga di una tabella un colore alternato in modo ciclico usando itertools.cycle per ruotare tra tre valori.',
+              command: `python3 -c "from itertools import cycle,islice; print(list(islice(cycle('RGB'),7)))"`,
             },
             {
               english: 'Itertools.groupby',
@@ -4094,6 +4679,7 @@ data.sort(key=lambda r: r['city'])
 for city, rows in groupby(data, key=lambda r: r['city']):
     print(city, list(rows))`,
               task: 'Raggruppa righe per città con itertools.groupby, ricordando di ordinare prima i dati perché groupby raggruppa solo elementi consecutivi.',
+              command: `python3 -c "from itertools import groupby; d='AAABBBCC'; print([(k,len(list(g))) for k,g in groupby(d)])"`,
             },
             {
               english: 'Zip',
@@ -4106,6 +4692,7 @@ for city, rows in groupby(data, key=lambda r: r['city']):
               difficulty: 'beginner',
               code: 'zip([1, 2], ["a", "b"]) # (1, "a"), (2, "b")',
               task: `Accoppia le liste [1, 2] e ['a', 'b'] con zip generando le coppie (1, 'a') e (2, 'b').`,
+              command: `python3 -c "print(list(zip([1,2,3],['a','b','c'])))"`,
             },
             {
               english: 'Functools.wraps',
@@ -4123,6 +4710,14 @@ def log(fn):
     def wrapper(*a, **kw): return fn(*a, **kw)
     return wrapper`,
               task: 'Scrivi un decoratore che usa functools.wraps per preservare nome e docstring della funzione originale, mantenendo introspezione corretta.',
+              command: `python3 -c "from functools import wraps
+def dec(f):
+ @wraps(f)
+ def w(*a): return f(*a)
+ return w
+@dec
+def hi(): pass
+print(hi.__name__)"`,
             },
             {
               english: 'Itertools.product',
@@ -4136,6 +4731,8 @@ def log(fn):
               code: `from itertools import product
 grid = list(product(range(3), repeat=2))`,
               task: 'Genera tutte le coordinate di una griglia 3x3 con itertools.product, evitando due cicli for annidati.',
+              command:
+                'python3 -c "from itertools import product; print(list(product(range(3),repeat=2)))"',
             },
             {
               english: 'Side-effect Free',
@@ -4146,6 +4743,8 @@ grid = list(product(range(3), repeat=2))`,
                 'Functional code aims to be side-effect free. = Il codice funzionale punta ad essere senza effetti collaterali.',
               context: 'philosophy',
               difficulty: 'advanced',
+              command: `python3 -c "def add(a,b): return a+b
+print(add(3,4))"`,
             },
           ],
         },
@@ -4165,6 +4764,8 @@ grid = list(product(range(3), repeat=2))`,
               difficulty: 'intermediate',
               code: 'from collections import Counter, defaultdict, namedtuple',
               task: 'Importa dal modulo collections i contenitori specializzati (Counter, defaultdict, namedtuple) che useremo per modellare i dati.',
+              command:
+                'python3 -c "from collections import Counter,defaultdict,namedtuple; print(dir())"',
             },
             {
               english: 'Namedtuple',
@@ -4177,6 +4778,7 @@ grid = list(product(range(3), repeat=2))`,
               difficulty: 'intermediate',
               code: 'Point = namedtuple("Point", ["x", "y"])',
               task: 'Definisci una namedtuple Point con i campi x e y usando il modulo collections.',
+              command: `python3 -c "from collections import namedtuple; P=namedtuple('Point',['x','y']); print(P(3,4))"`,
             },
             {
               english: 'Defaultdict',
@@ -4193,6 +4795,7 @@ groups = defaultdict(list)
 for name, team in pairs:
     groups[team].append(name)`,
               task: 'Raggruppa nomi per squadra con un defaultdict(list), evitando di controllare ogni volta se la chiave esiste prima di fare append.',
+              command: `python3 -c "from collections import defaultdict; d=defaultdict(list); d['a'].append(1); print(dict(d))"`,
             },
             {
               english: 'Counter',
@@ -4205,6 +4808,7 @@ for name, team in pairs:
               difficulty: 'intermediate',
               code: 'Counter("abcab") # {"a": 2, "b": 2, "c": 1}',
               task: `Conta le occorrenze dei caratteri nella stringa 'abcab' ottenendo {'a': 2, 'b': 2, 'c': 1}.`,
+              command: `python3 -c "from collections import Counter; print(Counter('abracadabra').most_common(3))"`,
             },
             {
               english: 'Deque (Double-ended queue)',
@@ -4221,6 +4825,8 @@ recent = deque(maxlen=5)
 for event in stream:
     recent.append(event)`,
               task: `Mantieni una finestra scorrevole degli ultimi cinque eventi con una deque a lunghezza massima, sfruttando l'append O(1) a entrambi i lati.`,
+              command:
+                'python3 -c "from collections import deque; d=deque(maxlen=3); [d.append(i) for i in range(5)]; print(d)"',
             },
             {
               english: 'OrderedDict',
@@ -4237,6 +4843,7 @@ cache = OrderedDict()
 cache['a'] = 1
 cache.move_to_end('a')`,
               task: 'Usa un OrderedDict per implementare una cache LRU sfruttando move_to_end per portare in coda la chiave appena acceduta.',
+              command: `python3 -c "from collections import OrderedDict; d=OrderedDict(a=1,b=2); d.move_to_end('a'); print(d)"`,
             },
             {
               english: 'ChainMap',
@@ -4252,6 +4859,7 @@ cache.move_to_end('a')`,
 settings = ChainMap(cli_args, env_vars, defaults)
 print(settings['debug'])`,
               task: `Componi una configurazione a strati (CLI, environment, default) con ChainMap, lasciando che la priorità venga risolta dall'ordine delle mappe.`,
+              command: `python3 -c "from collections import ChainMap; c=ChainMap({'a':1},{'a':2,'b':3}); print(c['a'],c['b'])"`,
             },
             {
               english: 'UserDict / UserList',
@@ -4267,6 +4875,10 @@ class LowercaseDict(UserDict):
     def __setitem__(self, key, value):
         super().__setitem__(key.lower(), value)`,
               task: 'Crea un dizionario personalizzato che normalizza le chiavi in minuscolo ereditando da UserDict invece di sottoclassare direttamente dict.',
+              command: `python3 -c "from collections import UserDict
+class LD(UserDict):
+ def __setitem__(s,k,v): super().__setitem__(k.lower(),v)
+d=LD(); d['Key']='val'; print(d)"`,
             },
             {
               english: 'MappingProxyType',
@@ -4280,6 +4892,7 @@ class LowercaseDict(UserDict):
               code: `from types import MappingProxyType
 CONFIG = MappingProxyType({'debug': False, 'host': 'localhost'})`,
               task: 'Esponi un dizionario di configurazione come vista read-only con MappingProxyType, per impedire modifiche accidentali da altre parti del codice.',
+              command: `python3 -c "from types import MappingProxyType; d=MappingProxyType({'k':1}); print(d['k'])"`,
             },
             {
               english: 'Container Types',
@@ -4295,6 +4908,8 @@ def summarize(data):
     if isinstance(data, Mapping): return len(data.keys())
     if isinstance(data, Sequence): return len(data)`,
               task: 'Distingui tra mapping e sequence con isinstance() sulle ABC di collections.abc, invece di controllare tipi concreti come dict o list.',
+              command:
+                'python3 -c "from collections.abc import Mapping,Sequence; print(isinstance({},Mapping),isinstance([],Sequence))"',
             },
           ],
         },
@@ -4324,6 +4939,8 @@ def summarize(data):
 except ValueError:
     n = 0`,
               task: `Cattura l'eccezione integrata ValueError quando converti un input utente in intero, restituendo zero come fallback sicuro.`,
+              command: `python3 -c "try: int('abc')
+except ValueError as e: print('caught:',e)"`,
             },
             {
               english: 'Try Block',
@@ -4338,6 +4955,9 @@ except ValueError:
 except json.JSONDecodeError:
     data = {}`,
               task: `Avvolgi in un blocco try la decodifica di un payload JSON, così un input malformato non manda in crash l'intero programma.`,
+              command: `python3 -c "import json
+try: json.loads('bad')
+except json.JSONDecodeError: print('invalid JSON')"`,
             },
             {
               english: 'Except Clause',
@@ -4353,6 +4973,8 @@ except json.JSONDecodeError:
 except FileNotFoundError:
     config = open('default.yml')`,
               task: 'Cattura specificamente FileNotFoundError con una clausola except per ricadere su un file di configurazione di default.',
+              command: `python3 -c "try: open('/no/such/file')
+except FileNotFoundError: print('file not found')"`,
             },
             {
               english: 'Finally Clause',
@@ -4370,6 +4992,9 @@ try:
 finally:
     conn.close()`,
               task: 'Garantisci la chiusura della connessione al database in un blocco finally, indipendentemente dal successo o fallimento della query.',
+              command: `python3 -c "try: x=1/0
+except ZeroDivisionError: print('error')
+finally: print('cleanup runs always')"`,
             },
             {
               english: 'Else Clause (try)',
@@ -4387,6 +5012,9 @@ except NotFound:
 else:
     audit.log(user)`,
               task: `Esegui l'auditing del recupero utente nella clausola else del try, in modo che venga loggato solo quando non è stata sollevata alcuna eccezione.`,
+              command: `python3 -c "try: v=int('42')
+except ValueError: print('bad')
+else: print('parsed:',v)"`,
             },
             {
               english: 'Raise Statement',
@@ -4399,6 +5027,8 @@ else:
               difficulty: 'intermediate',
               code: 'raise ValueError("Invalid value")',
               task: `Solleva manualmente una ValueError con il messaggio 'Invalid value' tramite raise.`,
+              command: `python3 -c "try: raise ValueError('bad input')
+except ValueError as e: print('caught:',e)"`,
             },
             {
               english: 'ValueError',
@@ -4413,6 +5043,9 @@ else:
     if value < 0:
         raise ValueError('age must be non-negative')`,
               task: `Solleva ValueError quando un argomento ha il valore semanticamente sbagliato, come un'età negativa, segnalando chiaramente il problema al chiamante.`,
+              command: `python3 -c "def age(v):
+ if v<0: raise ValueError('negative')
+age(-1)" 2>&1 | tail -1`,
             },
             {
               english: 'TypeError',
@@ -4428,6 +5061,7 @@ else:
         raise TypeError('a must be numeric')
     return a + b`,
               task: 'Solleva TypeError quando un argomento ha il tipo sbagliato, in modo che il chiamante capisca subito che il problema è di tipo e non di valore.',
+              command: `python3 -c "'hello'+42" 2>&1 | tail -1`,
             },
             {
               english: 'Catch-all Exception',
@@ -4447,6 +5081,8 @@ except Exception:
     logger.exception('unexpected')
     raise`,
               task: 'Cattura prima le eccezioni specifiche e solo dopo Exception come ultima rete, rilanciandola per non nascondere i bug imprevisti.',
+              command: `python3 -c "try: 1/0
+except Exception as e: print(type(e).__name__,e)"`,
             },
             {
               english: 'Exception Instance',
@@ -4462,6 +5098,8 @@ except Exception:
 except ValueError as e:
     logger.error('parse failed: %s', e)`,
               task: `Lega l'istanza dell'eccezione a una variabile con 'as e' per poter loggare il messaggio originale dell'errore.`,
+              command: `python3 -c "try: int('x')
+except ValueError as e: print(type(e),e.args)"`,
             },
           ],
         },
@@ -4482,6 +5120,9 @@ except ValueError as e:
               code: `class PaymentDeclined(Exception):
     pass`,
               task: `Definisci un'eccezione personalizzata per un errore di dominio (pagamento rifiutato) ereditando direttamente da Exception.`,
+              command: `python3 -c "class AppError(Exception): pass
+try: raise AppError('oops')
+except AppError as e: print(e)"`,
             },
             {
               english: 'Exception Class (Inheritance)',
@@ -4494,6 +5135,9 @@ except ValueError as e:
               difficulty: 'intermediate',
               code: 'class MyError(Exception):',
               task: 'Definisci una classe di eccezione personalizzata MyError che eredita da Exception.',
+              command: `python3 -c "class Base(Exception): pass
+class Sub(Base): pass
+print(issubclass(Sub,Base))"`,
             },
             {
               english: 'Exception Hierarchy',
@@ -4509,6 +5153,7 @@ except ValueError as e:
 class DBError(AppError): pass
 class NotFound(DBError): pass`,
               task: 'Costruisci una gerarchia di eccezioni con una classe base di applicazione e sotto-classi più specifiche, così i chiamanti possono catturare al livello che preferiscono.',
+              command: 'python3 -c "print([c.__name__ for c in ValueError.__mro__])"',
             },
             {
               english: 'Raising Custom Exceptions',
@@ -4523,6 +5168,10 @@ class NotFound(DBError): pass`,
               code: `if balance < amount:
     raise InsufficientFunds(f'need {amount}, have {balance}')`,
               task: `Solleva un'eccezione custom con un messaggio descrittivo che mostra i valori reali, in modo che il chiamante capisca esattamente cosa è andato storto.`,
+              command: `python3 -c "class Low(Exception): pass
+def check(b,a):
+ if b<a: raise Low(f'need {a}')
+check(5,10)" 2>&1 | tail -1`,
             },
             {
               english: '__str__ (in Exceptions)',
@@ -4539,6 +5188,10 @@ class NotFound(DBError): pass`,
     def __str__(self):
         return f'HTTP {self.status} on {self.url}'`,
               task: `Sovrascrivi __str__ in un'eccezione custom per produrre un messaggio di errore leggibile che combina stato HTTP e URL.`,
+              command: `python3 -c "class E(Exception):
+ def __init__(s,code): s.code=code
+ def __str__(s): return f'HTTP {s.code}'
+print(E(404))"`,
             },
             {
               english: 'Specificity',
@@ -4557,6 +5210,9 @@ except ValueError:
 except Exception:
     handle_unknown()`,
               task: `Cattura prima l'eccezione più specifica (ValueError) e solo dopo quella generica, altrimenti il blocco specifico non verrà mai eseguito.`,
+              command: `python3 -c "try: d={'a':1}; d['b']
+except KeyError: print('specific catch')
+except Exception: print('generic')"`,
             },
             {
               english: 'Grouping Exceptions',
@@ -4572,6 +5228,8 @@ except Exception:
 except (FileNotFoundError, PermissionError, IsADirectoryError):
     config = DEFAULTS`,
               task: 'Raggruppa eccezioni correlate in una sola clausola except usando una tupla, evitando di duplicare la stessa logica di recupero.',
+              command: `python3 -c "try: int('x')
+except (ValueError,TypeError) as e: print('caught group:',e)"`,
             },
             {
               english: 'Chaining Exceptions',
@@ -4584,6 +5242,10 @@ except (FileNotFoundError, PermissionError, IsADirectoryError):
               difficulty: 'expert',
               code: 'raise NewError from old_error',
               task: 'Solleva una NewError concatenandola a old_error con la clausola from per preservare il contesto.',
+              command: `python3 -c "try:
+ try: 1/0
+ except ZeroDivisionError as e: raise RuntimeError('wrapped') from e
+except RuntimeError as e: print(e,e.__cause__)"`,
             },
             {
               english: 'User-defined Error',
@@ -4598,6 +5260,9 @@ except (FileNotFoundError, PermissionError, IsADirectoryError):
 class UserError(DomainError): pass
 class OrderError(DomainError): pass`,
               task: `Crea una gerarchia di errori definiti dall'utente per il tuo dominio, così diversi livelli dell'applicazione possono gestirli con precisione.`,
+              command: `python3 -c "class DomainError(Exception): pass
+class OrderError(DomainError): pass
+print(issubclass(OrderError,DomainError))"`,
             },
             {
               english: 'Assertions (vs Exceptions)',
@@ -4613,6 +5278,8 @@ class OrderError(DomainError): pass`,
     assert len(values) > 0, 'internal: empty list not expected here'
     return sum(values) / len(values)`,
               task: `Usa un'asserzione per un invariante interno della funzione, non per validare input utente, sapendo che con il flag -O verrà rimossa.`,
+              command: `python3 -c "def avg(v): assert len(v)>0,'empty'; return sum(v)/len(v)
+print(avg([4,6]))"`,
             },
           ],
         },
@@ -4634,6 +5301,7 @@ class OrderError(DomainError): pass`,
 logging.basicConfig(level=logging.INFO)
 logging.info('app started')`,
               task: 'Configura il modulo logging con basicConfig e registra un messaggio INFO, sostituendo print() per output adatto alla produzione.',
+              command: `python3 -c "import logging; logging.basicConfig(level=logging.INFO); logging.info('app started')"`,
             },
             {
               english: 'Log Level',
@@ -4648,6 +5316,7 @@ logging.info('app started')`,
 logger.debug('ignored')
 logger.warning('shown')`,
               task: `Imposta il livello di log a WARNING in modo che i messaggi DEBUG vengano filtrati e solo gli avvisi e gli errori arrivino all'output.`,
+              command: `python3 -c "import logging; logging.basicConfig(level=logging.WARNING); logging.debug('hidden'); logging.warning('shown')"`,
             },
             {
               english: 'Logger',
@@ -4660,6 +5329,7 @@ logger.warning('shown')`,
               difficulty: 'intermediate',
               code: 'logger = logging.getLogger(__name__)',
               task: 'Ottieni un logger nominato con __name__ chiamando logging.getLogger nel modulo corrente.',
+              command: `python3 -c "import logging; log=logging.getLogger('myapp'); log.setLevel(logging.DEBUG); print(log.name)"`,
             },
             {
               english: 'Handler (Logging)',
@@ -4676,6 +5346,8 @@ fh = logging.FileHandler('app.log')
 fh.setLevel(logging.ERROR)
 logging.getLogger().addHandler(fh)`,
               task: 'Aggiungi un FileHandler al root logger così tutti gli errori vengano scritti su file, senza dover modificare le chiamate di log esistenti.',
+              command:
+                'python3 -c "import logging; h=logging.StreamHandler(); h.setLevel(logging.ERROR); logging.getLogger().addHandler(h)"',
             },
             {
               english: 'Formatter (Logging)',
@@ -4690,6 +5362,7 @@ logging.getLogger().addHandler(fh)`,
 fmt = logging.Formatter('%(asctime)s [%(levelname)s] %(name)s: %(message)s')
 handler.setFormatter(fmt)`,
               task: 'Configura un Formatter che includa timestamp, livello e nome del logger nel messaggio, per rendere i log più leggibili in produzione.',
+              command: `python3 -c "import logging; fmt=logging.Formatter('%(levelname)s:%(message)s'); print(fmt.format(logging.LogRecord('a',20,'',0,'hi',(),None)))"`,
             },
             {
               english: 'PDB (Python Debugger)',
@@ -4702,6 +5375,7 @@ handler.setFormatter(fmt)`,
               difficulty: 'intermediate',
               code: 'import pdb; pdb.set_trace()',
               task: 'Importa pdb e imposta un breakpoint interattivo nel codice con pdb.set_trace.',
+              command: 'python3 -c "import pdb; print(dir(pdb))" | head -5',
             },
             {
               english: 'Breakpoint',
@@ -4718,6 +5392,7 @@ handler.setFormatter(fmt)`,
     breakpoint()
     return total`,
               task: `Inserisci una chiamata a breakpoint() prima del return per fermare l'esecuzione e ispezionare le variabili locali nel debugger.`,
+              command: `PYTHONBREAKPOINT=0 python3 -c "breakpoint(); print('breakpoint skipped')"`,
             },
             {
               english: 'Assert Statement',
@@ -4733,6 +5408,7 @@ handler.setFormatter(fmt)`,
     assert b != 0, 'divisor must be non-zero'
     return a / b`,
               task: `Aggiungi un'istruzione assert per individuare precocemente errori logici durante lo sviluppo, ricordando che viene rimossa con il flag -O.`,
+              command: `python3 -c "assert 2+2==4,'math works'; print('assertion passed')"`,
             },
             {
               english: 'Traceback (module)',
@@ -4749,6 +5425,9 @@ try:
 except Exception:
     logger.error('failure:\\n%s', traceback.format_exc())`,
               task: 'Cattura il traceback completo come stringa con traceback.format_exc() e inviarlo al logger, invece di lasciarlo stampare a stderr.',
+              command: `python3 -c "import traceback
+try: 1/0
+except: traceback.print_exc()"`,
             },
             {
               english: 'Stack Trace',
@@ -4759,6 +5438,7 @@ except Exception:
                 "Review the stack trace to find the root cause of the error. = Rivedi lo stack trace per trovare la causa radice dell'errore.",
               context: 'debugging',
               difficulty: 'intermediate',
+              command: 'python3 -c "import traceback; traceback.print_stack()" 2>&1 | tail -3',
             },
           ],
         },
@@ -4779,6 +5459,7 @@ except Exception:
               code: `with open('data.csv') as f:
     rows = list(csv.reader(f))`,
               task: `Apri un file dentro un context manager con 'with' così la chiusura della risorsa avviene automaticamente anche in caso di errore.`,
+              command: `python3 -c "with open('/dev/null') as f: print('opened',f.name,'closed:',f.closed)"`,
             },
             {
               english: 'With Statement',
@@ -4792,6 +5473,8 @@ except Exception:
               code: `with open('out.txt', 'w') as f:
     f.write('hello')`,
               task: `Scrivi su un file usando un'istruzione with, lasciando che il blocco gestisca apertura, eccezioni e chiusura della risorsa.`,
+              command: `python3 -c "with open('/tmp/ctx_test.txt','w') as f: f.write('hello')
+print(open('/tmp/ctx_test.txt').read())"`,
             },
             {
               english: '__enter__ (Method)',
@@ -4810,6 +5493,11 @@ except Exception:
     def __exit__(self, *exc):
         self.elapsed = time.time() - self.start`,
               task: `Implementa il metodo __enter__ di un context manager che cronometra un blocco di codice, restituendo self per essere usato dopo 'as'.`,
+              command: `python3 -c "import time
+class T:
+ def __enter__(s): s.t=time.time(); return s
+ def __exit__(s,*a): print(f'{time.time()-s.t:.4f}s')
+with T(): time.sleep(0.01)"`,
             },
             {
               english: '__exit__ (Method)',
@@ -4827,6 +5515,10 @@ except Exception:
         if exc_type: self.rollback()
         else: self.commit()`,
               task: `Implementa __exit__ in modo che esegua commit in uscita normale e rollback se è stata sollevata un'eccezione, ricevuta tramite exc_type.`,
+              command: `python3 -c "class CM:
+ def __enter__(s): print('enter'); return s
+ def __exit__(s,typ,val,tb): print('exit',typ)
+with CM(): pass"`,
             },
             {
               english: 'Contextlib (module)',
@@ -4841,6 +5533,9 @@ except Exception:
 with suppress(FileNotFoundError):
     os.remove('tmp.log')`,
               task: `Usa contextlib.suppress per ignorare un'eccezione specifica durante una cancellazione opportunistica, senza un try/except vuoto esplicito.`,
+              command: `python3 -c "from contextlib import suppress
+with suppress(FileNotFoundError): open('/no/file')
+print('suppressed')"`,
             },
             {
               english: '@contextmanager (Decorator)',
@@ -4853,6 +5548,10 @@ with suppress(FileNotFoundError):
               difficulty: 'advanced',
               code: '@contextlib.contextmanager\ndef my_manager():',
               task: 'Trasforma la funzione my_manager in un context manager usando il decoratore di contextlib.',
+              command: `python3 -c "from contextlib import contextmanager
+@contextmanager
+def tag(n): print(f'<{n}>'); yield; print(f'</{n}>')
+with tag('b'): print('bold')"`,
             },
             {
               english: 'Resource Management',
@@ -4863,6 +5562,7 @@ with suppress(FileNotFoundError):
                 'Context managers are the best way for resource management. = I context manager sono il modo migliore per la gestione delle risorse.',
               context: 'best-practices',
               difficulty: 'intermediate',
+              command: `python3 -c "f=open('/tmp/res.txt','w'); f.write('data'); f.close(); print('resource released')"`,
             },
             {
               english: 'Automatic Cleanup',
@@ -4874,6 +5574,7 @@ with suppress(FileNotFoundError):
                 'The main benefit of "with" is automatic cleanup. = Il beneficio principale di "with" \u00E8 la pulizia automatica.',
               context: 'foundations',
               difficulty: 'intermediate',
+              command: `python3 -c "import tempfile,os; f=tempfile.NamedTemporaryFile(delete=True); n=f.name; f.close(); print('cleaned:',not os.path.exists(n))"`,
             },
             {
               english: 'Nested Context Managers',
@@ -4886,6 +5587,7 @@ with suppress(FileNotFoundError):
               difficulty: 'intermediate',
               code: 'with open("a.txt") as a, open("b.txt") as b:',
               task: `Apri contemporaneamente 'a.txt' come a e 'b.txt' come b in un unico blocco with.`,
+              command: `python3 -c "with open('/dev/null') as a, open('/dev/null') as b: print('two contexts:',a.name,b.name)"`,
             },
             {
               english: 'Contextlib.closing',
@@ -4901,6 +5603,10 @@ from urllib.request import urlopen
 with closing(urlopen('http://example.com')) as page:
     body = page.read()`,
               task: 'Avvolgi un oggetto che ha solo close() ma non supporta nativamente il protocollo with usando contextlib.closing, per ottenere chiusura automatica.',
+              command: `python3 -c "from contextlib import closing
+class R:
+ def close(s): print('closed')
+with closing(R()) as r: print('using resource')"`,
             },
           ],
         },
@@ -4935,6 +5641,14 @@ with closing(urlopen('http://example.com')) as page:
         return wrapper
     return decorator`,
               task: 'Definisci una fabbrica di decoratori @retry(times=3) che riprova fino a tre volte una funzione che solleva eccezioni.',
+              command: `python3 -c "def repeat(n):
+ def dec(f):
+  def w(*a): return [f(*a) for _ in range(n)]
+  return w
+ return dec
+@repeat(3)
+def hi(): return 'hi'
+print(hi())"`,
             },
             {
               english: 'Wrapper Function',
@@ -4953,6 +5667,14 @@ with closing(urlopen('http://example.com')) as page:
         return result
     return wrapper`,
               task: 'Scrivi una funzione wrapper interna a un decoratore che misura e stampa il tempo di esecuzione della funzione originale.',
+              command: `python3 -c "import time
+def timing(f):
+ def w(*a):
+  s=time.time(); r=f(*a); print(f'{time.time()-s:.6f}s'); return r
+ return w
+@timing
+def slow(): time.sleep(0.01)
+slow()"`,
             },
             {
               english: '@wraps Usage',
@@ -4971,6 +5693,14 @@ def log_call(f):
         return f(*args, **kwargs)
     return wrapper`,
               task: 'Applica @wraps(f) al wrapper interno del decoratore per preservare nome, docstring e firma della funzione originale.',
+              command: `python3 -c "from functools import wraps
+def log(f):
+ @wraps(f)
+ def w(*a,**k): print(f'call {f.__name__}'); return f(*a,**k)
+ return w
+@log
+def greet(): return 'hi'
+print(greet.__name__,greet())"`,
             },
             {
               english: 'Decorator with Arguments',
@@ -4984,6 +5714,14 @@ def log_call(f):
               difficulty: 'advanced',
               code: '@repeat(3)\ndef my_func():',
               task: 'Applica il decoratore parametrico repeat con argomento 3 alla funzione my_func.',
+              command: `python3 -c "def prefix(tag):
+ def dec(f):
+  def w(*a): return f'[{tag}] {f(*a)}'
+  return w
+ return dec
+@prefix('INFO')
+def msg(): return 'hello'
+print(msg())"`,
             },
             {
               english: 'Class Decorator',
@@ -5000,6 +5738,12 @@ class User:
     name: str
     age: int`,
               task: 'Applica il decoratore di classe @dataclass alla classe User per generare automaticamente __init__, __repr__ ed __eq__.',
+              command: `python3 -c "from dataclasses import dataclass
+@dataclass
+class Point:
+ x: float
+ y: float
+print(Point(1.0,2.0))"`,
             },
             {
               english: 'Method Decorator',
@@ -5017,6 +5761,11 @@ class User:
     def area(self):
         return 3.14 * self._r ** 2`,
               task: 'Usa il decoratore di metodo @property per esporre area come attributo calcolato di sola lettura della classe Circle.',
+              command: `python3 -c "class Circle:
+ def __init__(s,r): s._r=r
+ @property
+ def area(s): return 3.14*s._r**2
+print(Circle(5).area)"`,
             },
             {
               english: 'Chaining Decorators',
@@ -5032,6 +5781,10 @@ class User:
 def fibonacci(n):
     return n if n < 2 else fibonacci(n-1) + fibonacci(n-2)`,
               task: `Concatena due decoratori @log_call e @cache sulla funzione fibonacci, ricordando che si applicano dal basso verso l'alto.`,
+              command: `python3 -c "from functools import cache
+@cache
+def fib(n): return n if n<2 else fib(n-1)+fib(n-2)
+print(fib(30))"`,
             },
             {
               english: 'Stateful Decorator',
@@ -5049,6 +5802,12 @@ def fibonacci(n):
     wrapper.calls = 0
     return wrapper`,
               task: `Costruisci un decoratore con stato che mantiene un contatore wrapper.calls per registrare quante volte la funzione e' stata chiamata.`,
+              command: `python3 -c "def counter(f):
+ def w(*a): w.calls+=1; return f(*a)
+ w.calls=0; return w
+@counter
+def hi(): return 'hi'
+hi(); hi(); print(hi.calls)"`,
             },
             {
               english: 'Monkey Patching',
@@ -5065,6 +5824,7 @@ def fake_get(url):
     return {'status': 200}
 requests.get = fake_get`,
               task: 'Esegui un monkey patching su requests.get sostituendolo con fake_get per evitare chiamate di rete reali durante i test.',
+              command: `python3 -c "import os; orig=os.getlogin; os.getlogin=lambda:'patched'; print(os.getlogin()); os.getlogin=orig"`,
             },
             {
               english: 'Boilerplate (reduction)',
@@ -5075,6 +5835,11 @@ requests.get = fake_get`,
                 'Decorators are great for reducing boilerplate code. = I decoratori sono ottimi per ridurre il codice ripetitivo.',
               context: 'best-practices',
               difficulty: 'intermediate',
+              command: `python3 -c "from dataclasses import dataclass
+@dataclass
+class User:
+ name:str; age:int
+u=User('Alice',30); print(u,repr(u))"`,
             },
           ],
         },
@@ -5101,6 +5866,9 @@ requests.get = fake_get`,
 class MyClass(metaclass=Meta):
     pass`,
               task: 'Definisci una metaclasse Meta che stampa un messaggio quando viene creata una nuova classe che la usa come metaclass.',
+              command: `python3 -c "class M(type):
+ def __new__(m,n,b,ns): print(f'Creating {n}'); return super().__new__(m,n,b,ns)
+class Foo(metaclass=M): pass"`,
             },
             {
               english: 'Type (as Metaclass)',
@@ -5115,6 +5883,7 @@ class MyClass(metaclass=Meta):
               code: `Dog = type('Dog', (object,), {'bark': lambda self: 'Woof'})
 print(type(Dog))`,
               task: 'Usa type() come metaclasse per costruire dinamicamente la classe Dog con un metodo bark, senza una definizione class esplicita.',
+              command: `python3 -c "Dog=type('Dog',(object,),{'speak':lambda s:'Woof'}); print(Dog().speak(),type(Dog))"`,
             },
             {
               english: '__new__ (Method)',
@@ -5132,6 +5901,9 @@ print(type(Dog))`,
         instance.x, instance.y = x, y
         return instance`,
               task: `Sovrascrivi il metodo __new__ in Point per creare e configurare l'istanza prima che __init__ venga eseguito.`,
+              command: `python3 -c "class P:
+ def __new__(cls,x,y): i=super().__new__(cls); i.x,i.y=x,y; return i
+print(P(3,4).x)"`,
             },
             {
               english: 'Metaprogramming',
@@ -5142,6 +5914,7 @@ print(type(Dog))`,
                 'Frameworks like Django use metaprogramming to turn class definitions into database tables automatically. = Framework come Django usano la metaprogrammazione per trasformare le definizioni di classe in tabelle di database automaticamente.',
               context: 'architecture',
               difficulty: 'expert',
+              command: `python3 -c "import ast; tree=ast.parse('x=1+2'); print(ast.dump(tree,indent=2))"`,
             },
             {
               english: 'Class Factory',
@@ -5157,6 +5930,8 @@ print(type(Dog))`,
 
 Color = make_enum('Color', ['RED', 'GREEN', 'BLUE'])`,
               task: 'Implementa una fabbrica di classi make_enum(name, values) che costruisce a runtime una classe con un attributo numerico per ogni valore.',
+              command: `python3 -c "def make(name,vals): return type(name,(),{v:i for i,v in enumerate(vals)})
+Color=make('Color',['RED','GREEN','BLUE']); print(Color.RED,Color.BLUE)"`,
             },
             {
               english: 'Introspection',
@@ -5175,6 +5950,9 @@ print(hasattr(User, 'name'))
 print(getattr(User, 'name'))
 print(dir(User))`,
               task: 'Utilizza hasattr, getattr e dir() per ispezionare gli attributi della classe User tramite introspezione a runtime.',
+              command: `python3 -c "class U:
+ name='Alice'
+print(hasattr(U,'name'),getattr(U,'name'),type(U))"`,
             },
             {
               english: 'Singleton Pattern (via Metaclass)',
@@ -5193,6 +5971,13 @@ print(dir(User))`,
             cls._instances[cls] = super().__call__(*args, **kwargs)
         return cls._instances[cls]`,
               task: `Implementa il pattern Singleton tramite una metaclasse che cachea l'istanza nel dizionario _instances al primo __call__.`,
+              command: `python3 -c "class S(type):
+ _i={}
+ def __call__(c,*a,**k):
+  if c not in c._i: c._i[c]=super().__call__(*a,**k)
+  return c._i[c]
+class DB(metaclass=S): pass
+print(DB() is DB())"`,
             },
             {
               english: 'Registration Pattern',
@@ -5210,6 +5995,12 @@ print(dir(User))`,
         super().__init__(name, bases, namespace)
         PluginRegistry.plugins.append(cls)`,
               task: 'Crea una metaclasse PluginRegistry che registra automaticamente ogni classe figlia nella lista condivisa plugins.',
+              command: `python3 -c "class Reg(type):
+ r=[]
+ def __init__(c,n,b,ns): super().__init__(n,b,ns); Reg.r.append(n)
+class A(metaclass=Reg): pass
+class B(metaclass=Reg): pass
+print(Reg.r)"`,
             },
             {
               english: 'Attribute Validation (Class level)',
@@ -5227,6 +6018,14 @@ print(dir(User))`,
             raise TypeError(f'{name} must define id')
         return super().__new__(mcs, name, bases, namespace)`,
               task: 'Scrivi una metaclasse Validated che solleva TypeError se la classe creata non definisce un attributo id.',
+              command: `python3 -c "class V(type):
+ def __new__(m,n,b,ns):
+  if n!='Base' and 'id' not in ns: raise TypeError(f'{n} needs id')
+  return super().__new__(m,n,b,ns)
+class Base(metaclass=V): pass
+try:
+ class Bad(Base): pass
+except TypeError as e: print(e)"`,
             },
             {
               english: 'Custom Type',
@@ -5244,6 +6043,11 @@ print(dir(User))`,
 class Config(metaclass=StrictType):
     HOST = 'localhost'`,
               task: 'Definisci un tipo personalizzato StrictType ereditando da type per impedire la modifica degli attributi della classe Config.',
+              command: `python3 -c "class Frozen(type):
+ def __setattr__(c,k,v): raise AttributeError('immutable')
+class Cfg(metaclass=Frozen): HOST='localhost'
+try: Cfg.HOST='x'
+except AttributeError as e: print(e)"`,
             },
           ],
         },
@@ -5264,6 +6068,8 @@ class Config(metaclass=StrictType):
               code: 'def greet(name: str) -> str:',
               note: "Python rimane a tipizzazione dinamica; i hints sono ignorati dall'interprete ma usati da editor e checker.",
               task: `Annota la funzione greet dichiarando che name e' una stringa e il ritorno e' una stringa.`,
+              command: `python3 -c "def greet(name: str) -> str: return f'Hello {name}'
+print(greet.__annotations__)"`,
             },
             {
               english: 'Typing (module)',
@@ -5279,6 +6085,8 @@ class Config(metaclass=StrictType):
 def users_by_id(users: List[Dict[str, int]]) -> Dict[int, str]:
     return {u['id']: u['name'] for u in users}`,
               task: 'Importa List e Dict dal modulo typing e annota la funzione users_by_id con tipi composti complessi.',
+              command: `python3 -c "from typing import List,Dict; def f(x:List[int])->Dict[str,int]: return {'sum':sum(x)}
+print(f([1,2,3]))"`,
             },
             {
               english: 'Mypy',
@@ -5294,6 +6102,8 @@ def users_by_id(users: List[Dict[str, int]]) -> Dict[int, str]:
 
 result: str = add(1, 2)`,
               task: `Esegui mypy script.py per scoprire l'errore di tipo sull'assegnazione di un int a una variabile annotata come str.`,
+              command:
+                'python3 -m mypy --version 2>/dev/null || pip install mypy && python3 -m mypy --version',
             },
             {
               english: 'Optional Type',
@@ -5309,6 +6119,9 @@ result: str = add(1, 2)`,
 def find_user(uid: int) -> Optional[str]:
     return None`,
               task: `Annota il tipo di ritorno di find_user con Optional[str] per indicare che la funzione puo' restituire una stringa o None.`,
+              command: `python3 -c "from typing import Optional
+def find(n:int)->Optional[str]: return None if n<0 else str(n)
+print(find(-1),find(5))"`,
             },
             {
               english: 'Union Type',
@@ -5325,6 +6138,8 @@ def find_user(uid: int) -> Optional[str]:
 def stringify(x: Union[int, str]) -> str:
     return str(x)`,
               task: 'Usa il tipo unione Union[int, str] per dichiarare che il parametro x della funzione stringify accetta interi o stringhe.',
+              command: `python3 -c "def show(x: int|str) -> str: return str(x)
+print(show(42),show('hi'))"`,
             },
             {
               english: 'Any Type',
@@ -5340,6 +6155,9 @@ def stringify(x: Union[int, str]) -> str:
 def dump(value: Any) -> None:
     print(value)`,
               task: 'Annota il parametro value della funzione dump con il tipo Any per disabilitare il controllo statico su quel valore.',
+              command: `python3 -c "from typing import Any
+def dump(v: Any) -> None: print(type(v).__name__,v)
+dump(42); dump('hi'); dump([1])"`,
             },
             {
               english: 'Generic Type',
@@ -5352,6 +6170,11 @@ def dump(value: Any) -> None:
               difficulty: 'advanced',
               code: 'List[T]',
               task: 'Indica una lista parametrizzata sul tipo generico T scrivendo List[T] nelle annotazioni.',
+              command: `python3 -c "from typing import TypeVar,Generic
+T=TypeVar('T')
+class Box(Generic[T]):
+ def __init__(s,v:T): s.v=v
+print(Box(42).v,Box('hi').v)"`,
             },
             {
               english: 'Protocol',
@@ -5370,6 +6193,12 @@ class Readable(Protocol):
 def ingest(src: Readable) -> str:
     return src.read()`,
               task: 'Definisci un Protocol Readable con un metodo read() e usalo come annotazione per accettare qualsiasi classe con quel metodo.',
+              command: `python3 -c "from typing import Protocol
+class Readable(Protocol):
+ def read(s)->str: ...
+class F:
+ def read(s)->str: return 'data'
+print(isinstance(F(),Readable))"`,
             },
             {
               english: 'Type Alias',
@@ -5382,6 +6211,7 @@ def ingest(src: Readable) -> str:
               difficulty: 'intermediate',
               code: 'UserID = int',
               task: `Crea un alias di tipo UserID equivalente a int per rendere piu' chiare le annotazioni.`,
+              command: `python3 -c "UserID=int; Scores=dict[str,list[int]]; s:Scores={'math':[90,85]}; print(s)"`,
             },
             {
               english: 'Callable',
@@ -5396,6 +6226,9 @@ def ingest(src: Readable) -> str:
 def apply(op: Callable[[int, int], int], a: int, b: int) -> int:
     return op(a, b)`,
               task: 'Annota il parametro op con Callable[[int, int], int] per richiedere una funzione che riceve due int e ne restituisce uno.',
+              command: `python3 -c "from typing import Callable
+def apply(op:Callable[[int,int],int],a:int,b:int)->int: return op(a,b)
+print(apply(lambda a,b:a+b,3,4))"`,
             },
           ],
         },
@@ -5412,6 +6245,7 @@ def apply(op: Callable[[int, int], int], a: int, b: int) -> int:
               example: `A reusable design pattern like Strategy or Observer captures a proven solution so teams do not reinvent it for every project. = Uno schema progettuale riutilizzabile come Strategy o Observer cattura una soluzione provata cosi' i team non la reinventano ad ogni progetto.`,
               context: 'architecture',
               difficulty: 'intermediate',
+              command: `python3 -c "print('Creational: Singleton, Factory\\nStructural: Adapter, Proxy\\nBehavioral: Observer, Strategy')"`,
             },
             {
               english: 'Singleton',
@@ -5429,6 +6263,12 @@ def apply(op: Callable[[int, int], int], a: int, b: int) -> int:
             cls._instance = super().__new__(cls)
         return cls._instance`,
               task: 'Implementa il pattern Singleton nella classe Logger sovrascrivendo __new__ per garantire una sola istanza condivisa.',
+              command: `python3 -c "class S:
+ _i=None
+ def __new__(c):
+  if c._i is None: c._i=super().__new__(c)
+  return c._i
+print(S() is S())"`,
             },
             {
               english: 'Factory Pattern',
@@ -5446,6 +6286,9 @@ def apply(op: Callable[[int, int], int], a: int, b: int) -> int:
         return Square()
     raise ValueError(kind)`,
               task: `Implementa una funzione shape_factory che restituisce l'istanza giusta di Circle o Square senza esporre le classi al chiamante.`,
+              command: `python3 -c "def shape(kind):
+ return {'circle':'O','square':'[]','tri':'/\\\\'}[kind]
+print(shape('circle'),shape('square'))"`,
             },
             {
               english: 'Strategy Pattern',
@@ -5463,6 +6306,9 @@ def apply(op: Callable[[int, int], int], a: int, b: int) -> int:
 sort_with(sorted, [3, 1, 2])
 sort_with(lambda d: list(reversed(sorted(d))), [3, 1, 2])`,
               task: `Realizza il pattern Strategy passando la funzione di ordinamento come parametro strategy per scegliere l'algoritmo a runtime.`,
+              command: `python3 -c "def do(strategy,data): return strategy(data)
+print(do(sorted,[3,1,2]))
+print(do(lambda d:sorted(d,reverse=True),[3,1,2]))"`,
             },
             {
               english: 'Observer Pattern',
@@ -5482,6 +6328,11 @@ sort_with(lambda d: list(reversed(sorted(d))), [3, 1, 2])`,
         for fn in self.subs:
             fn(data)`,
               task: 'Implementa la classe Event del pattern Observer con un metodo subscribe(fn) e un fire(data) che notifica tutti gli osservatori.',
+              command: `python3 -c "class Evt:
+ def __init__(s): s.subs=[]
+ def sub(s,fn): s.subs.append(fn)
+ def fire(s,d): [fn(d) for fn in s.subs]
+e=Evt(); e.sub(print); e.fire('hello')"`,
             },
             {
               english: 'Dataclass (module)',
@@ -5495,6 +6346,11 @@ sort_with(lambda d: list(reversed(sorted(d))), [3, 1, 2])`,
               code: '@dataclass\nclass User:',
               note: 'Introdotte in Python 3.7 per semplificare classi che contengono principalmente dati.',
               task: 'Trasforma la classe User in una dataclass applicando il decoratore @dataclass.',
+              command: `python3 -c "from dataclasses import dataclass,field
+@dataclass
+class User:
+ name:str; age:int; tags:list=field(default_factory=list)
+print(User('Alice',30))"`,
             },
             {
               english: 'Dependency Injection',
@@ -5513,6 +6369,12 @@ sort_with(lambda d: list(reversed(sorted(d))), [3, 1, 2])`,
 
 service = UserService(repo=FakeRepo())`,
               task: `Applica l'iniezione delle dipendenze passando il repo al costruttore di UserService cosi' da poter usare un FakeRepo nei test.`,
+              command: `python3 -c "class FakeDB:
+ def find(s,uid): return f'user_{uid}'
+class Svc:
+ def __init__(s,db): s.db=db
+ def get(s,uid): return s.db.find(uid)
+print(Svc(FakeDB()).get(1))"`,
             },
             {
               english: 'Adapter Pattern',
@@ -5533,6 +6395,12 @@ class JsonAdapter:
     def fetch_json(self):
         return xml_to_json(self.client.fetch_xml())`,
               task: `Crea un adattatore JsonAdapter che incapsula XmlClient ed espone fetch_json convertendo internamente l'output XML in JSON.`,
+              command: `python3 -c "class Old:
+ def xml(s): return '<data/>'
+class Adapter:
+ def __init__(s,o): s.o=o
+ def json(s): return '{\\"data\\":null}'
+print(Adapter(Old()).json())"`,
             },
             {
               english: 'Proxy Pattern',
@@ -5552,6 +6420,15 @@ class JsonAdapter:
             self._real = HeavyImage(self.path)
         self._real.display()`,
               task: 'Implementa un Proxy ImageProxy che istanzia HeavyImage in modo pigro solo alla prima chiamata di display().',
+              command: `python3 -c "class Heavy:
+ def __init__(s): print('loading...')
+ def run(s): print('running')
+class Proxy:
+ def __init__(s): s._r=None
+ def run(s):
+  if not s._r: s._r=Heavy()
+  s._r.run()
+Proxy().run()"`,
             },
             {
               english: 'Composition over Inheritance',
@@ -5573,6 +6450,12 @@ class Car:
     def start(self):
         self.engine.start()`,
               task: 'Modella Car favorendo la composizione: invece di ereditare da Engine, istanzialo come attributo e delega start().',
+              command: `python3 -c "class Engine:
+ def start(s): return 'vroom'
+class Car:
+ def __init__(s): s.e=Engine()
+ def go(s): return s.e.start()
+print(Car().go())"`,
             },
           ],
         },
@@ -5605,6 +6488,7 @@ t = threading.Thread(target=worker)
 t.start()
 t.join()`,
               task: 'Avvia un thread tramite threading.Thread(target=worker) e attendi la sua terminazione con t.join() prima di proseguire.',
+              command: `python3 -c "import threading; t=threading.Thread(target=lambda:print('hello')); t.start(); t.join()"`,
             },
             {
               english: 'Multi-threading',
@@ -5622,6 +6506,11 @@ threads = [threading.Thread(target=download, args=(u,)) for u in urls]
 for t in threads: t.start()
 for t in threads: t.join()`,
               task: 'Scarica una lista di URL in multithreading creando un thread per ogni elemento e aspettando il completamento di tutti.',
+              command: `python3 -c "import threading
+def w(n): print(f'worker {n}')
+ts=[threading.Thread(target=w,args=(i,)) for i in range(3)]
+for t in ts: t.start()
+for t in ts: t.join()"`,
             },
             {
               english: 'GIL (Global Interpreter Lock)',
@@ -5633,6 +6522,7 @@ for t in threads: t.join()`,
               context: 'internals',
               difficulty: 'advanced',
               note: 'Rende Python meno efficiente per compiti pesanti di CPU in multithreading.',
+              command: `python3 -c "import sys; print('GIL switch interval:',sys.getswitchinterval(),'seconds')"`,
             },
             {
               english: 'Lock (Mutex)',
@@ -5650,6 +6540,7 @@ counter = 0
 with lock:
     counter += 1`,
               task: `Proteggi l'incremento della variabile condivisa counter con un threading.Lock() usando il blocco \`with lock\` per garantire l'esclusione reciproca.`,
+              command: `python3 -c "import threading; lock=threading.Lock(); lock.acquire(); print('locked:',lock.locked()); lock.release()"`,
             },
             {
               english: 'Thread Safety',
@@ -5671,6 +6562,15 @@ def deposit(amount):
     with lock:
         balance += amount`,
               task: `Rendi thread-safe la funzione deposit avvolgendo l'aggiornamento di balance in un blocco \`with lock\` su un Lock globale.`,
+              command: `python3 -c "import threading
+lock=threading.Lock(); total=0
+def add():
+ global total
+ with lock: total+=1
+ts=[threading.Thread(target=add) for _ in range(100)]
+for t in ts: t.start()
+for t in ts: t.join()
+print(total)"`,
             },
             {
               english: 'Semaphore',
@@ -5689,6 +6589,7 @@ def download(url):
     with sem:
         fetch(url)`,
               task: 'Limita a tre i download paralleli usando un threading.Semaphore(3) come context manager attorno alla chiamata di rete.',
+              command: `python3 -c "import threading; sem=threading.Semaphore(2); sem.acquire(); sem.acquire(); print('acquired 2'); sem.release(); sem.release()"`,
             },
             {
               english: 'Race Condition',
@@ -5708,6 +6609,15 @@ def increment():
 
 threads = [threading.Thread(target=increment) for _ in range(10)]`,
               task: 'Riproduci una race condition lanciando dieci thread che incrementano counter senza lock e osserva come il valore finale risulti errato.',
+              command: `python3 -c "import threading
+c=0
+def inc():
+ global c
+ for _ in range(100000): c+=1
+ts=[threading.Thread(target=inc) for _ in range(4)]
+for t in ts: t.start()
+for t in ts: t.join()
+print('expected 400000, got',c)"`,
             },
             {
               english: 'ThreadPoolExecutor',
@@ -5723,6 +6633,8 @@ threads = [threading.Thread(target=increment) for _ in range(10)]`,
 with ThreadPoolExecutor(max_workers=10) as pool:
     results = list(pool.map(fetch, urls))`,
               task: 'Esegui in parallelo le chiamate HTTP usando un ThreadPoolExecutor con dieci worker e raccogli i risultati con pool.map(fetch, urls).',
+              command: `python3 -c "from concurrent.futures import ThreadPoolExecutor
+with ThreadPoolExecutor(4) as p: print(list(p.map(lambda x:x*x,[1,2,3,4])))"`,
             },
             {
               english: 'Daemon Thread',
@@ -5738,6 +6650,7 @@ with ThreadPoolExecutor(max_workers=10) as pool:
 t = threading.Thread(target=heartbeat, daemon=True)
 t.start()`,
               task: `Avvia un thread demone passando daemon=True al costruttore cosi' che si chiuda automaticamente alla fine del programma principale.`,
+              command: `python3 -c "import threading; t=threading.Thread(target=lambda:None,daemon=True); t.start(); print('daemon:',t.daemon)"`,
             },
             {
               english: 'Context Switching',
@@ -5747,6 +6660,7 @@ t.start()`,
               example: `The OS performs a context switching operation every few milliseconds, and the saved/restored state adds measurable overhead. = Il sistema operativo esegue un'operazione di cambio di contesto ogni pochi millisecondi, e lo stato salvato e ripristinato aggiunge un overhead misurabile.`,
               context: 'internals',
               difficulty: 'expert',
+              command: `python3 -c "import threading; print('active threads:',threading.active_count(),'switch interval:',__import__('sys').getswitchinterval())"`,
             },
           ],
         },
@@ -5773,6 +6687,9 @@ async def main():
 
 asyncio.run(main())`,
               task: 'Scrivi un programma asincrono che definisce la coroutine main, attende asyncio.sleep(1) e la avvia con asyncio.run(main()).',
+              command: `python3 -c "import asyncio
+async def main(): await asyncio.sleep(0.01); print('done')
+asyncio.run(main())"`,
             },
             {
               english: 'Coroutine',
@@ -5792,6 +6709,9 @@ async def fetch(url):
 
 asyncio.run(fetch('https://example.com'))`,
               task: 'Dichiara la coroutine fetch con async def, simula un I/O non bloccante con await asyncio.sleep e poi avviala tramite asyncio.run.',
+              command: `python3 -c "import asyncio
+async def greet(n): await asyncio.sleep(0); return f'hi {n}'
+print(asyncio.run(greet('world')))"`,
             },
             {
               english: 'Await (Keyword)',
@@ -5807,6 +6727,13 @@ asyncio.run(fetch('https://example.com'))`,
     b = await fetch_b()
     return a + b`,
               task: 'Usa la parola chiave await dentro la coroutine total per attendere in sequenza i risultati di fetch_a() e fetch_b().',
+              command: `python3 -c "import asyncio
+async def add(): return await asyncio.coroutine(lambda:3)() + await asyncio.coroutine(lambda:4)()
+print(asyncio.run(add()))" 2>/dev/null || python3 -c "import asyncio
+async def a(): return 3
+async def b(): return 4
+async def main(): print(await a()+await b())
+asyncio.run(main())"`,
             },
             {
               english: 'Event Loop',
@@ -5825,6 +6752,9 @@ asyncio.set_event_loop(loop)
 loop.run_until_complete(main())
 loop.close()`,
               task: 'Crea manualmente un event loop con asyncio.new_event_loop() ed esegui la coroutine main con loop.run_until_complete prima di chiuderlo.',
+              command: `python3 -c "import asyncio
+async def hi(): return 42
+loop=asyncio.new_event_loop(); print(loop.run_until_complete(hi())); loop.close()"`,
             },
             {
               english: 'Asyncio (module)',
@@ -5840,6 +6770,10 @@ loop.close()`,
 async def fetch_all(urls):
     return await asyncio.gather(*[fetch(u) for u in urls])`,
               task: 'Usa asyncio.gather per eseguire in parallelo tutte le coroutine fetch(u) di una lista di URL e raccoglierne i risultati.',
+              command: `python3 -c "import asyncio
+async def f(n): await asyncio.sleep(0); return n*2
+async def main(): print(await asyncio.gather(f(1),f(2),f(3)))
+asyncio.run(main())"`,
             },
             {
               english: 'Future',
@@ -5857,6 +6791,11 @@ fut = loop.create_future()
 loop.call_later(1, fut.set_result, 42)
 result = loop.run_until_complete(fut)`,
               task: 'Crea una Future con loop.create_future() e programma con call_later la chiamata di fut.set_result(42) dopo un secondo.',
+              command: `python3 -c "import asyncio
+async def main():
+ loop=asyncio.get_event_loop(); fut=loop.create_future()
+ loop.call_soon(fut.set_result,42); print(await fut)
+asyncio.run(main())"`,
             },
             {
               english: 'Task',
@@ -5872,6 +6811,10 @@ async def main():
     task = asyncio.create_task(fetch('url'))
     result = await task`,
               task: 'Avvolgi la coroutine fetch in un task con asyncio.create_task() per schedularla in concorrenza e poi attendi il risultato con await.',
+              command: `python3 -c "import asyncio
+async def work(): return 99
+async def main(): t=asyncio.create_task(work()); print(await t)
+asyncio.run(main())"`,
             },
             {
               english: 'Non-blocking I/O',
@@ -5889,6 +6832,9 @@ async def fetch(url):
         async with s.get(url) as resp:
             return await resp.text()`,
               task: `Implementa una fetch con I/O non bloccante usando aiohttp.ClientSession dentro un async with per non fermare l'event loop.`,
+              command: `python3 -c "import asyncio
+async def fetch(): r,w=await asyncio.open_connection('example.com',80); w.close(); return 'connected'
+print(asyncio.run(fetch()))" 2>/dev/null || echo 'network example'`,
             },
             {
               english: 'Async Context Manager',
@@ -5907,6 +6853,13 @@ async def get(url):
         async with session.get(url) as resp:
             return await resp.text()`,
               task: `Apri una ClientSession con un async with cosi' che il gestore di contesto asincrono chiuda la sessione anche in caso di eccezione.`,
+              command: `python3 -c "import asyncio
+class ACM:
+ async def __aenter__(s): print('enter'); return s
+ async def __aexit__(s,*a): print('exit')
+async def main():
+ async with ACM(): print('inside')
+asyncio.run(main())"`,
             },
             {
               english: 'Async Iterator',
@@ -5922,6 +6875,12 @@ async def get(url):
     async for line in fetch_lines(url):
         print(line)`,
               task: `Itera su uno stream di righe con un async for cosi' che ogni elemento venga atteso senza bloccare l'event loop.`,
+              command: `python3 -c "import asyncio
+async def gen():
+ for i in range(3): yield i; await asyncio.sleep(0)
+async def main():
+ async for v in gen(): print(v)
+asyncio.run(main())"`,
             },
           ],
         },
@@ -5949,6 +6908,9 @@ p = Process(target=work, args=(10,))
 p.start()
 p.join()`,
               task: 'Avvia un nuovo processo con multiprocessing.Process(target=work, args=(10,)) e attendi la sua conclusione con p.join().',
+              command: `python3 -c "from multiprocessing import Process
+def w(n): print(n*n)
+p=Process(target=w,args=(7,)); p.start(); p.join()"`,
             },
             {
               english: 'Multiprocessing',
@@ -5965,6 +6927,9 @@ p.join()`,
 with Pool(4) as pool:
     results = pool.map(heavy_compute, dataset)`,
               task: `Sfrutta il multiprocessing per distribuire heavy_compute su quattro processi paralleli tramite Pool.map sull'intero dataset.`,
+              command: `python3 -c "from multiprocessing import Pool
+with Pool(2) as p: print(p.map(lambda x:x*x,[1,2,3,4]))" 2>/dev/null || python3 -c "from concurrent.futures import ProcessPoolExecutor as P
+with P(2) as p: print(list(p.map(pow,[2,3,4],[10,10,10])))"`,
             },
             {
               english: 'Process Pool',
@@ -5981,6 +6946,8 @@ with ProcessPoolExecutor(max_workers=8) as pool:
     for r in pool.map(crunch, chunks):
         print(r)`,
               task: 'Costruisci un pool di otto processi con ProcessPoolExecutor e applica la funzione crunch a tutti i chunk in parallelo.',
+              command: `python3 -c "from concurrent.futures import ProcessPoolExecutor
+with ProcessPoolExecutor(2) as p: print(list(p.map(pow,[2,3,4],[10,10,10])))"`,
             },
             {
               english: 'IPC (Inter-Process Communication)',
@@ -5997,6 +6964,10 @@ q = Queue()
 Process(target=producer, args=(q,)).start()
 Process(target=consumer, args=(q,)).start()`,
               task: 'Realizza la comunicazione IPC tra due processi condividendo una Queue passata come argomento al producer e al consumer.',
+              command: `python3 -c "from multiprocessing import Process,Queue
+q=Queue()
+def prod(q): q.put('hello')
+p=Process(target=prod,args=(q,)); p.start(); p.join(); print(q.get())"`,
             },
             {
               english: 'Queue (Multiprocessing)',
@@ -6013,6 +6984,7 @@ q = Queue()
 q.put('msg')
 value = q.get()`,
               task: `Trasferisci dati tra processi in modo sicuro usando multiprocessing.Queue: chiama q.put('msg') nel produttore e q.get() nel consumatore.`,
+              command: `python3 -c "from multiprocessing import Queue; q=Queue(); q.put('msg'); print(q.get())"`,
             },
             {
               english: 'Pipe (Multiprocessing)',
@@ -6030,6 +7002,7 @@ Process(target=worker, args=(child,)).start()
 parent.send('ping')
 print(parent.recv())`,
               task: 'Crea una pipe bidirezionale con multiprocessing.Pipe() e usa send/recv per scambiare messaggi tra il processo padre e il worker.',
+              command: `python3 -c "from multiprocessing import Pipe; a,b=Pipe(); a.send('ping'); print(b.recv()); a.close(); b.close()"`,
             },
             {
               english: 'Shared Memory',
@@ -6046,6 +7019,8 @@ import numpy as np
 shm = shared_memory.SharedMemory(create=True, size=1024)
 arr = np.ndarray((128,), dtype='int64', buffer=shm.buf)`,
               task: 'Alloca un blocco di shared_memory.SharedMemory di 1024 byte e mappalo su un array NumPy per evitare il costo di serializzazione tra processi.',
+              command:
+                'python3 -c "from multiprocessing import shared_memory; shm=shared_memory.SharedMemory(create=True,size=10); shm.buf[0]=42; print(shm.buf[0]); shm.close(); shm.unlink()"',
             },
             {
               english: 'CPU-bound',
@@ -6065,6 +7040,9 @@ def is_prime(n):
 with Pool() as p:
     p.map(is_prime, range(10**6))`,
               task: 'Distribuisci il calcolo CPU-bound is_prime su tutti i core disponibili tramite multiprocessing.Pool().map per aggirare il GIL.',
+              command: `python3 -c "import time
+def is_prime(n): return all(n%i for i in range(2,int(n**.5)+1))
+s=time.time(); r=sum(is_prime(n) for n in range(10000)); print(r,'primes in',f'{time.time()-s:.2f}s')"`,
             },
             {
               english: 'I/O-bound',
@@ -6082,6 +7060,10 @@ async def fetch_all(urls):
     async with aiohttp.ClientSession() as s:
         return await asyncio.gather(*[s.get(u) for u in urls])`,
               task: `Affronta un carico I/O-bound di download multipli con asyncio e aiohttp invece di creare processi: il GIL non e' il collo di bottiglia.`,
+              command: `python3 -c "import asyncio
+async def fetch(n): await asyncio.sleep(0.01); return n
+async def main(): print(await asyncio.gather(*[fetch(i) for i in range(5)]))
+asyncio.run(main())"`,
             },
             {
               english: 'Parallelism',
@@ -6097,6 +7079,9 @@ async def fetch_all(urls):
 with Pool(processes=4) as pool:
     pool.map(cpu_heavy, dataset)`,
               task: 'Ottieni vero parallelismo eseguendo cpu_heavy su quattro processi separati con multiprocessing.Pool, aggirando il limite del GIL.',
+              command: `python3 -c "from concurrent.futures import ProcessPoolExecutor
+def sq(x): return x*x
+with ProcessPoolExecutor(2) as p: print(list(p.map(sq,range(8))))"`,
             },
           ],
         },
@@ -6125,6 +7110,15 @@ def consumer():
     item = q.get()
     q.task_done()`,
               task: `Implementa il pattern produttore-consumatore con queue.Queue: il producer chiama q.put('item') e il consumer q.get() seguito da task_done().`,
+              command: `python3 -c "import queue,threading
+q=queue.Queue()
+def prod(): q.put('item'); q.put(None)
+def cons():
+ while True:
+  v=q.get()
+  if v is None: break
+  print('got:',v)
+threading.Thread(target=prod).start(); cons()"`,
             },
             {
               english: 'Worker Pool',
@@ -6140,6 +7134,10 @@ def consumer():
 with ThreadPoolExecutor(max_workers=5) as pool:
     futures = [pool.submit(handle, task) for task in tasks]`,
               task: 'Costruisci un worker pool di cinque thread con ThreadPoolExecutor e invia con pool.submit ogni task da elaborare.',
+              command: `python3 -c "from concurrent.futures import ThreadPoolExecutor,as_completed
+with ThreadPoolExecutor(3) as p:
+ fs={p.submit(lambda x:x*x,i):i for i in range(5)}
+ for f in as_completed(fs): print(f.result())"`,
             },
             {
               english: 'Barrier',
@@ -6160,6 +7158,13 @@ def phase():
     barrier.wait()
     run()`,
               task: 'Sincronizza tre thread con threading.Barrier(3): ogni thread chiami barrier.wait() per attendere gli altri prima di iniziare la fase successiva.',
+              command: `python3 -c "import threading
+b=threading.Barrier(3)
+def phase(n):
+ print(f'{n} waiting'); b.wait(); print(f'{n} go')
+ts=[threading.Thread(target=phase,args=(i,)) for i in range(3)]
+for t in ts: t.start()
+for t in ts: t.join()"`,
             },
             {
               english: 'Condition Variable',
@@ -6179,6 +7184,15 @@ def consumer():
         cv.wait_for(lambda: ready)
         process()`,
               task: `Usa una threading.Condition: il consumatore chiama cv.wait_for(lambda: ready) finche' il produttore non imposta ready=True e chiama cv.notify().`,
+              command: `python3 -c "import threading
+cv=threading.Condition(); ready=False
+def waiter():
+ with cv: cv.wait_for(lambda:ready); print('go')
+def setter():
+ global ready
+ with cv: ready=True; cv.notify()
+t=threading.Thread(target=waiter); t.start()
+setter(); t.join()"`,
             },
             {
               english: 'Starvation',
@@ -6189,6 +7203,7 @@ def consumer():
                 "Fair scheduling algorithms prevent starvation by ensuring every thread eventually gets CPU time. = Algoritmi di scheduling equi prevengono l'inedia garantendo che ogni thread ottenga tempo di CPU.",
               context: 'errors',
               difficulty: 'expert',
+              command: `python3 -c "print('Starvation: a thread never gets the lock because others always acquire it first')"`,
             },
             {
               english: 'Livelock',
@@ -6199,6 +7214,7 @@ def consumer():
                 'In a livelock, threads keep changing state but make no progress. = In un livelock, i thread cambiano stato ma non progrediscono.',
               context: 'errors',
               difficulty: 'expert',
+              command: `python3 -c "print('Livelock: threads keep changing state in response to each other but make no progress')"`,
             },
             {
               english: 'Atomic Operation',
@@ -6220,6 +7236,15 @@ def inc():
     with lock:
         counter += 1`,
               task: `Trasforma l'incremento di counter in un'operazione atomica avvolgendolo in un blocco \`with lock\` su un Lock condiviso.`,
+              command: `python3 -c "import threading
+lock=threading.Lock(); c=0
+def inc():
+ global c
+ with lock: c+=1
+ts=[threading.Thread(target=inc) for _ in range(100)]
+for t in ts: t.start()
+for t in ts: t.join()
+print(c)"`,
             },
             {
               english: 'Event (Synchronization)',
@@ -6241,6 +7266,10 @@ def waiter():
 def setter():
     ready.set()`,
               task: `Coordina due thread con threading.Event: il waiter blocca su ready.wait() finche' il setter non chiama ready.set().`,
+              command: `python3 -c "import threading
+e=threading.Event()
+def waiter(): e.wait(); print('event fired')
+t=threading.Thread(target=waiter); t.start(); e.set(); t.join()"`,
             },
             {
               english: 'Coroutine Chaining',
@@ -6257,6 +7286,11 @@ def setter():
     parsed = await parse(raw)
     return await store(parsed)`,
               task: 'Concatena tre coroutine fetch, parse e store dentro pipeline awaitando ciascuna in sequenza per costruire un flusso asincrono.',
+              command: `python3 -c "import asyncio
+async def step1(): return 'raw'
+async def step2(d): return d.upper()
+async def pipe(): return await step2(await step1())
+print(asyncio.run(pipe()))"`,
             },
             {
               english: 'Task Cancellation',
@@ -6278,6 +7312,13 @@ async def main():
     except asyncio.CancelledError:
         pass`,
               task: 'Gestisci la cancellazione di un task chiamando task.cancel() e intercettando asyncio.CancelledError in un blocco try/except per liberare le risorse.',
+              command: `python3 -c "import asyncio
+async def long(): await asyncio.sleep(10)
+async def main():
+ t=asyncio.create_task(long()); await asyncio.sleep(0.01); t.cancel()
+ try: await t
+ except asyncio.CancelledError: print('cancelled')
+asyncio.run(main())"`,
             },
           ],
         },
@@ -6300,6 +7341,8 @@ async def main():
               example: `Practicing unit testing means writing fast, isolated tests for one function at a time so regressions surface immediately. = Praticare i test unitari significa scrivere test rapidi e isolati per una funzione alla volta cosi' le regressioni emergono subito.`,
               context: 'testing',
               difficulty: 'intermediate',
+              command:
+                'python3 -m pytest --version 2>/dev/null || python3 -m unittest --help 2>&1 | head -3',
             },
             {
               english: 'Unittest (module)',
@@ -6317,6 +7360,10 @@ class TestMath(unittest.TestCase):
     def test_add(self):
         self.assertEqual(2 + 3, 5)`,
               task: 'Scrivi una classe di test con unittest che verifica il risultato di una semplice somma usando assertEqual.',
+              command: `python3 -c "import unittest
+class T(unittest.TestCase):
+ def test_add(s): s.assertEqual(2+3,5)
+unittest.main(exit=False,verbosity=2)"`,
             },
             {
               english: 'Pytest (framework)',
@@ -6330,6 +7377,8 @@ class TestMath(unittest.TestCase):
               note: 'Molto pi\u00F9 conciso e potente di unittest; usa semplici asserzioni Python.',
               code: 'pip install pytest && pytest -v tests/',
               task: 'Installa pytest e lancia tutta la suite di test in modalita verbosa per vedere il nome di ogni test eseguito.',
+              command:
+                'python3 -m pytest --co -q 2>/dev/null || pip install pytest && python3 -m pytest --version',
             },
             {
               english: 'Fixture (Pytest)',
@@ -6347,6 +7396,7 @@ class TestMath(unittest.TestCase):
 def sample_user():
     return {'name': 'Alice', 'email': 'alice@test.com'}`,
               task: 'Definisci una fixture pytest che crea un utente di esempio condivisibile fra piu test della stessa suite.',
+              command: 'python3 -m pytest --fixtures -q 2>/dev/null | head -10',
             },
             {
               english: 'Parameterization',
@@ -6363,6 +7413,11 @@ def sample_user():
 def test_add(a, b, expected):
     assert a + b == expected`,
               task: 'Parametrizza il test della funzione somma con tre casi diversi cosi da coprire piu scenari con un solo blocco di codice.',
+              command: `python3 -c "import unittest
+class T(unittest.TestCase):
+ def test_pairs(s):
+  for a,b,exp in [(1,2,3),(5,5,10)]: s.assertEqual(a+b,exp)
+unittest.main(exit=False,verbosity=2)"`,
             },
             {
               english: 'Test Case',
@@ -6377,6 +7432,10 @@ def test_add(a, b, expected):
     user = User(email='Alice@Test.com')
     assert user.email == 'alice@test.com'`,
               task: `Scrivi un caso di test che controlla che la classe User normalizzi sempre l'email in minuscolo dopo la creazione.`,
+              command: `python3 -c "import unittest
+class TestStr(unittest.TestCase):
+ def test_upper(s): s.assertEqual('hello'.upper(),'HELLO')
+unittest.main(exit=False,verbosity=2)"`,
             },
             {
               english: 'Test Discovery',
@@ -6389,6 +7448,8 @@ def test_add(a, b, expected):
               difficulty: 'intermediate',
               code: 'pytest --collect-only -q',
               task: 'Esegui la sola fase di scoperta dei test con pytest, senza eseguirli, per verificare quali file e funzioni verrebbero raccolti.',
+              command:
+                'python3 -m pytest --collect-only -q 2>/dev/null || python3 -m unittest discover -v 2>&1 | head -5',
             },
             {
               english: 'Expected Failure',
@@ -6401,6 +7462,11 @@ def test_add(a, b, expected):
               difficulty: 'intermediate',
               code: '@pytest.mark.xfail',
               task: 'Marca un test come fallimento previsto applicando il decoratore @pytest.mark.xfail.',
+              command: `python3 -c "import unittest
+class T(unittest.TestCase):
+ @unittest.expectedFailure
+ def test_fail(s): s.assertEqual(1,2)
+unittest.main(exit=False,verbosity=2)"`,
             },
             {
               english: 'Skipping Tests',
@@ -6412,6 +7478,11 @@ def test_add(a, b, expected):
               difficulty: 'intermediate',
               code: '@pytest.mark.skip',
               task: 'Salta un test senza eseguirlo applicando il decoratore @pytest.mark.skip.',
+              command: `python3 -c "import unittest
+class T(unittest.TestCase):
+ @unittest.skip('demo skip')
+ def test_skip(s): pass
+unittest.main(exit=False,verbosity=2)"`,
             },
             {
               english: 'Assertion Error',
@@ -6426,6 +7497,9 @@ def test_add(a, b, expected):
     result = 2 * 3
     assert result == 7, f'Expected 7, got {result}'`,
               task: 'Scrivi un assert che fallisce di proposito mostrando nel messaggio il valore effettivo per facilitare il debug del test.',
+              command: `python3 -c "try: assert 2*3==7,'expected 7'
+except AssertionError as e: print('AssertionError:',e)" 2>&1 || python3 -c "try: assert 2*3==7,'expected 7'
+except AssertionError: print('assertion failed')"`,
             },
           ],
         },
@@ -6443,6 +7517,7 @@ def test_add(a, b, expected):
                 'Using mocking to simulate a database call lets you test your logic without needing a real database. = Usare la simulazione per emulare una chiamata al database permette di testare la logica senza bisogno di un database reale.',
               context: 'testing',
               difficulty: 'intermediate',
+              command: `python3 -c "from unittest.mock import Mock; m=Mock(); m.greet.return_value='hi'; print(m.greet())"`,
             },
             {
               english: 'Mock (Object)',
@@ -6459,6 +7534,7 @@ mock_db = Mock()
 mock_db.find.return_value = {'id': 1, 'name': 'Bob'}
 assert mock_db.find(1)['name'] == 'Bob'`,
               task: 'Crea un oggetto Mock che simula un client di database e configura il valore restituito dal metodo find.',
+              command: `python3 -c "from unittest.mock import Mock; db=Mock(); db.find.return_value={'id':1}; print(db.find(1))"`,
             },
             {
               english: 'Patch (Decorator)',
@@ -6471,6 +7547,8 @@ assert mock_db.find(1)['name'] == 'Bob'`,
               difficulty: 'advanced',
               code: '@patch("module.ClassName")',
               task: 'Sostituisci ClassName del modulo module con un mock applicando @patch al test.',
+              command: `python3 -c "from unittest.mock import patch
+with patch('os.getcwd',return_value='/fake'): import os; print(os.getcwd())"`,
             },
             {
               english: 'MagicMock',
@@ -6488,6 +7566,8 @@ mock_obj = MagicMock()
 mock_obj.__iter__.return_value = iter([1, 2, 3])
 assert list(mock_obj) == [1, 2, 3]`,
               task: 'Usa MagicMock per simulare un oggetto iterabile cosi da poterlo passare a un ciclo for nel codice sotto test.',
+              command:
+                'python3 -c "from unittest.mock import MagicMock; m=MagicMock(); m.__len__.return_value=5; print(len(m))"',
             },
             {
               english: 'Return Value',
@@ -6503,6 +7583,7 @@ assert list(mock_obj) == [1, 2, 3]`,
 service = Mock()
 service.fetch_user.return_value = {'id': 42, 'role': 'admin'}`,
               task: 'Imposta il return_value di un mock per restituire sempre un utente amministratore di esempio durante il test.',
+              command: `python3 -c "from unittest.mock import Mock; api=Mock(); api.fetch.return_value={'status':'ok'}; print(api.fetch())"`,
             },
             {
               english: 'Side Effect (Mock)',
@@ -6518,6 +7599,9 @@ service.fetch_user.return_value = {'id': 42, 'role': 'admin'}`,
 mock_api = Mock()
 mock_api.call.side_effect = ConnectionError('timeout')`,
               task: 'Configura il side_effect di un mock perche sollevi un ConnectionError e verifica come il codice gestisce il timeout.',
+              command: `python3 -c "from unittest.mock import Mock; m=Mock(side_effect=ValueError('bad'))
+try: m()
+except ValueError as e: print('caught:',e)"`,
             },
             {
               english: 'Monkeypatch (Fixture)',
@@ -6533,6 +7617,7 @@ mock_api.call.side_effect = ConnectionError('timeout')`,
     monkeypatch.setenv('API_KEY', 'fake-key')
     assert os.environ['API_KEY'] == 'fake-key'`,
               task: `Usa la fixture monkeypatch per impostare una variabile d'ambiente fittizia solo per la durata del singolo test.`,
+              command: `python3 -c "import os; os.environ['TEST_KEY']='fake'; print(os.environ['TEST_KEY']); del os.environ['TEST_KEY']"`,
             },
             {
               english: 'Assert Called With',
@@ -6549,6 +7634,7 @@ logger = Mock()
 logger.info('user logged in', user_id=42)
 logger.info.assert_called_with('user logged in', user_id=42)`,
               task: 'Verifica con assert_called_with che il logger sia stato invocato con esattamente il messaggio e gli argomenti attesi.',
+              command: `python3 -c "from unittest.mock import Mock; log=Mock(); log.info('msg',uid=1); log.info.assert_called_with('msg',uid=1); print('verified')"`,
             },
             {
               english: 'Spy (Testing)',
@@ -6565,6 +7651,8 @@ with patch.object(repo, 'save', wraps=repo.save) as spy:
     service.create_user('Alice')
     spy.assert_called_once()`,
               task: 'Avvolgi il metodo save del repository con una spia che ne registra le chiamate ma lascia eseguire il codice reale.',
+              command:
+                'python3 -c "from unittest.mock import Mock; real=lambda x:x*2; spy=Mock(wraps=real); print(spy(5)); spy.assert_called_once_with(5)"',
             },
             {
               english: 'Dependency Injection (DI)',
@@ -6575,6 +7663,11 @@ with patch.object(repo, 'save', wraps=repo.save) as spy:
                 'DI makes it easier to inject mocks into your code. = La DI rende pi\u00F9 facile inserire i mock nel codice.',
               context: 'architecture',
               difficulty: 'advanced',
+              command: `python3 -c "class FakeDB:
+ def get(s,id): return 'mock'
+class Svc:
+ def __init__(s,db): s.db=db
+print(Svc(FakeDB()).db.get(1))"`,
             },
           ],
         },
@@ -6594,6 +7687,7 @@ with patch.object(repo, 'save', wraps=repo.save) as spy:
               difficulty: 'beginner',
               code: 'ruff check src/ tests/',
               task: 'Lancia il linter ruff sulle cartelle src e tests per individuare import inutilizzati e violazioni di stile prima del commit.',
+              command: `python3 -m py_compile -c "import sys" 2>&1; echo 'Use: ruff check src/ or flake8 src/'`,
             },
             {
               english: 'PEP 8',
@@ -6605,6 +7699,7 @@ with patch.object(repo, 'save', wraps=repo.save) as spy:
               context: 'standards',
               difficulty: 'beginner',
               note: 'Python Enhancement Proposal numero 8: la guida di stile ufficiale di Python.',
+              command: `python3 -c "import keyword; print('PEP8: snake_case for',', '.join(keyword.kwlist[:8]),'...')"`,
             },
             {
               english: 'Black (Formatter)',
@@ -6617,6 +7712,8 @@ with patch.object(repo, 'save', wraps=repo.save) as spy:
               difficulty: 'intermediate',
               code: 'black --line-length 100 src/ tests/',
               task: 'Formatta automaticamente tutto il codice in src e tests con black usando una lunghezza massima di riga di 100 caratteri.',
+              command:
+                'python3 -m black --version 2>/dev/null || pip install black && python3 -m black --version',
             },
             {
               english: 'Code Coverage',
@@ -6629,6 +7726,7 @@ with patch.object(repo, 'save', wraps=repo.save) as spy:
               difficulty: 'intermediate',
               code: 'pytest --cov=src --cov-report=term-missing',
               task: 'Esegui i test misurando la copertura del modulo src e mostrando in console le righe non coperte da nessun test.',
+              command: `python3 -m pytest --co -q 2>/dev/null; echo 'Use: pytest --cov=src --cov-report=term-missing'`,
             },
             {
               english: 'Static Analysis',
@@ -6640,6 +7738,7 @@ with patch.object(repo, 'save', wraps=repo.save) as spy:
               difficulty: 'intermediate',
               code: 'mypy --strict src/',
               task: `Esegui l'analisi statica con mypy in modalita strict sul pacchetto src per intercettare ogni errore di tipo prima dell'esecuzione.`,
+              command: `python3 -m mypy --version 2>/dev/null || echo 'Install: pip install mypy && mypy --strict src/'`,
             },
             {
               english: 'Technical Debt',
@@ -6651,6 +7750,7 @@ with patch.object(repo, 'save', wraps=repo.save) as spy:
               context: 'management',
               difficulty: 'beginner',
               note: 'Il costo del lavoro extra causato dalla scelta di una soluzione facile ora invece di una migliore a lungo termine.',
+              command: `python3 -c "import ast,sys; print('TODO/FIXME finder:'); [print(f'L{i}:',l.strip()) for i,l in enumerate(open(sys.argv[0] if len(sys.argv)>1 else __file__)) if 'TODO' in l or 'FIXME' in l]" 2>/dev/null; echo 'Use: grep -rn TODO src/'`,
             },
             {
               english: 'Refactoring',
@@ -6661,6 +7761,7 @@ with patch.object(repo, 'save', wraps=repo.save) as spy:
                 'Safe refactoring relies on having good test coverage so you know nothing breaks after restructuring. = Un refactoring sicuro si basa su una buona copertura di test per sapere che nulla si rompe dopo la ristrutturazione.',
               context: 'development',
               difficulty: 'intermediate',
+              command: `python3 -c "# Before: duplicated\\ndef area_c(r): return 3.14*r*r\\ndef area_s(s): return s*s\\n# After: unified\\nimport math\\ndef area(shape,dim): return {'circle':math.pi*dim**2,'square':dim**2}[shape]\\nprint(area('circle',5))"`,
             },
             {
               english: 'Pythonic',
@@ -6672,6 +7773,7 @@ with patch.object(repo, 'save', wraps=repo.save) as spy:
               context: 'philosophy',
               difficulty: 'beginner',
               note: 'Codice che segue la filosofia e le convenzioni proprie di Python.',
+              command: 'python3 -c "import this" 2>&1 | head -3',
             },
             {
               english: "Dry (Don't Repeat Yourself)",
@@ -6682,6 +7784,7 @@ with patch.object(repo, 'save', wraps=repo.save) as spy:
                 'Avoid duplicate code by following the DRY principle. = Evita il codice duplicato seguendo il principio DRY.',
               context: 'philosophy',
               difficulty: 'beginner',
+              command: `python3 -c "# DRY: extract common logic\\ndef validate(v,mn,mx): assert mn<=v<=mx,f'{v} not in [{mn},{mx}]'\\nvalidate(5,1,10); print('DRY: one function, reused everywhere')"`,
             },
             {
               english: 'Kiss (Keep It Simple, Stupid)',
@@ -6692,6 +7795,7 @@ with patch.object(repo, 'save', wraps=repo.save) as spy:
                 'The KISS principle encourages simplicity in design. = Il principio KISS incoraggia la semplicit\u00E0 nel design.',
               context: 'philosophy',
               difficulty: 'beginner',
+              command: `python3 -c "# KISS: simple is better than complex\\ndata=[3,1,2]; print(sorted(data))  # don't write your own sort"`,
             },
           ],
         },
@@ -6709,6 +7813,7 @@ with patch.object(repo, 'save', wraps=repo.save) as spy:
                 'Use profiling to identify execution bottlenecks. = Usa il profiling per identificare i colli di bottiglia.',
               context: 'performance',
               difficulty: 'intermediate',
+              command: 'python3 -m cProfile -c "sum(range(100000))" 2>&1 | head -5',
             },
             {
               english: 'cProfile (module)',
@@ -6722,6 +7827,7 @@ with patch.object(repo, 'save', wraps=repo.save) as spy:
               note: 'Il profiler standard di Python raccomandato per la maggior parte degli usi.',
               code: 'python -m cProfile -s cumulative -o profile.out app.py',
               task: `Profila l'esecuzione di app.py con cProfile ordinando le funzioni per tempo cumulativo e salvando il report su file.`,
+              command: `python3 -c "import cProfile; cProfile.run('sum(range(100000))')" 2>&1 | head -8`,
             },
             {
               english: 'Timeit (module)',
@@ -6737,6 +7843,7 @@ with patch.object(repo, 'save', wraps=repo.save) as spy:
 elapsed = timeit.timeit('sum(range(1000))', number=10000)
 print(f'{elapsed:.3f}s')`,
               task: 'Misura con timeit quanto impiega a eseguire diecimila volte la somma dei primi mille interi e stampa il tempo totale.',
+              command: 'python3 -m timeit -n 1000 "sum(range(1000))"',
             },
             {
               english: 'PyPy',
@@ -6750,6 +7857,7 @@ print(f'{elapsed:.3f}s')`,
               note: "Usa la compilazione Just-In-Time (JIT) per velocizzare l'esecuzione.",
               code: 'pypy3 -m pip install requests && pypy3 my_script.py',
               task: `Installa requests dentro l'ambiente PyPy ed esegui lo script con l'interprete JIT per misurare il guadagno prestazionale.`,
+              command: `python3 -c "import platform; print('Current:',platform.python_implementation(),'- PyPy is a faster JIT alternative')"`,
             },
             {
               english: 'Cython',
@@ -6767,6 +7875,7 @@ def fib(int n):
         a, b = b, a + b
     return a`,
               task: 'Scrivi una funzione Fibonacci in Cython con tipi statici cdef per ottenere prestazioni vicine al C compilato.',
+              command: `python3 -c "print('Cython compiles Python to C for speed'); import importlib; print('cython installed:',importlib.util.find_spec('Cython') is not None)"`,
             },
             {
               english: 'Complexity Analysis',
@@ -6777,6 +7886,9 @@ def fib(int n):
                 'Algorithm complexity affects performance on large data. = La complessit\u00E0 algoritmica influisce sulle prestazioni con grandi dati.',
               context: 'computer-science',
               difficulty: 'intermediate',
+              command: `python3 -c "import time
+for n in [1000,10000,100000]:
+ s=time.time(); sorted(range(n,0,-1)); print(f'n={n}: {time.time()-s:.4f}s (O(n log n))')"`,
             },
             {
               english: 'Memory Profiling',
@@ -6789,6 +7901,7 @@ def fib(int n):
               difficulty: 'advanced',
               code: 'python -m memory_profiler script.py',
               task: 'Profila il consumo di memoria di script.py linea per linea per individuare allocazioni inattese o leak nella pipeline.',
+              command: `python3 -c "import sys; a=list(range(1000)); b=(x for x in range(1000)); print('list:',sys.getsizeof(a),'bytes','gen:',sys.getsizeof(b),'bytes')"`,
             },
             {
               english: 'Overhead',
@@ -6799,6 +7912,10 @@ def fib(int n):
                 'Abstract classes add a small performance overhead. = Le classi astratte aggiungono un piccolo sovraccarico prestazionale.',
               context: 'performance',
               difficulty: 'intermediate',
+              command: `python3 -c "import time
+def plain(n): return sum(range(n))
+def wrapped(n): return sum(range(n))
+s=time.time(); [plain(1000) for _ in range(10000)]; print(f'overhead demo: {time.time()-s:.3f}s')"`,
             },
             {
               english: 'Line Profiler',
@@ -6811,6 +7928,7 @@ def fib(int n):
               difficulty: 'advanced',
               code: 'kernprof -l -v script.py',
               task: 'Esegui kernprof per misurare il tempo speso su ogni singola riga del file script.py e individuare il punto piu lento.',
+              command: `python3 -c "print('Install: pip install line_profiler'); print('Usage: kernprof -l -v script.py')"`,
             },
             {
               english: 'Pre-allocation',
@@ -6826,6 +7944,14 @@ result = [0] * n
 for i in range(n):
     result[i] = i * i`,
               task: 'Pre-alloca una lista di diecimila elementi prima del ciclo cosi da evitare le riallocazioni interne dovute alle append.',
+              command: `python3 -c "import time
+n=100000
+s=time.time(); a=[0]*n
+for i in range(n): a[i]=i*i
+print(f'pre-alloc: {time.time()-s:.4f}s')
+s=time.time(); b=[]
+for i in range(n): b.append(i*i)
+print(f'append: {time.time()-s:.4f}s')"`,
             },
           ],
         },
@@ -6849,6 +7975,7 @@ for i in range(n):
                 'Choosing the right web framework depends on whether you need a full-stack solution or a lightweight microservice. = Scegliere il framework web giusto dipende dal fatto che ti serva una soluzione full-stack o un microservizio leggero.',
               context: 'web-development',
               difficulty: 'beginner',
+              command: `python3 -c "print('Popular Python web frameworks:'); print('- Flask (micro)'); print('- Django (full-stack)'); print('- FastAPI (async)')"`,
             },
             {
               english: 'Django',
@@ -6866,6 +7993,7 @@ class Article(models.Model):
     title = models.CharField(max_length=200)
     published_at = models.DateTimeField(auto_now_add=True)`,
               task: 'Definisci un modello Django Article con titolo e data di pubblicazione cosi che ORM e admin lo riconoscano automaticamente.',
+              command: `python3 -c "import django; print('Django',django.__version__)" 2>/dev/null || pip install django && python3 -m django --version`,
             },
             {
               english: 'Flask',
@@ -6885,6 +8013,7 @@ app = Flask(__name__)
 def health():
     return jsonify(status='ok')`,
               task: 'Costruisci una piccola app Flask che espone una rotta /health restituendo un JSON di stato per i probe di liveness.',
+              command: `python3 -c "from flask import Flask; app=Flask(__name__); print('Flask app:',app.name)" 2>/dev/null || pip install flask && python3 -c "import flask; print('Flask',flask.__version__)"`,
             },
             {
               english: 'FastAPI',
@@ -6903,6 +8032,7 @@ app = FastAPI()
 def get_user(user_id: int):
     return {'id': user_id, 'name': 'Alice'}`,
               task: `Crea un endpoint FastAPI tipizzato che riceve un user_id intero dall'URL e restituisce l'utente corrispondente come JSON.`,
+              command: `python3 -c "import fastapi; print('FastAPI',fastapi.__version__)" 2>/dev/null || pip install fastapi && python3 -c "import fastapi; print('FastAPI',fastapi.__version__)"`,
             },
             {
               english: 'WSGI (Web Server Gateway Interface)',
@@ -6913,6 +8043,8 @@ def get_user(user_id: int):
               context: 'backend',
               difficulty: 'advanced',
               note: 'Standard per la comunicazione tra server web e app Python sincrone.',
+              command: `python3 -c "def app(environ,start_response): start_response('200 OK',[('Content-Type','text/plain')]); return [b'Hello WSGI']
+print('WSGI app defined:',app.__name__)"`,
             },
             {
               english: 'ASGI (Asynchronous Server Gateway Interface)',
@@ -6924,6 +8056,8 @@ def get_user(user_id: int):
               context: 'backend',
               difficulty: 'advanced',
               note: 'Il successore di WSGI, supporta la programmazione asincrona.',
+              command: `python3 -c "async def app(scope,receive,send): pass
+print('ASGI app defined:',app.__name__,type(app))"`,
             },
             {
               english: 'Template Engine',
@@ -6939,6 +8073,7 @@ def get_user(user_id: int):
 tpl = Template('Hello {{ name }}, you have {{ n }} messages.')
 print(tpl.render(name='Alice', n=3))`,
               task: 'Usa il motore di template Jinja2 per renderizzare un saluto personalizzato passando nome e numero di messaggi come variabili.',
+              command: `python3 -c "from string import Template; t=Template('Hello \\$name, you have \\$n msgs'); print(t.substitute(name='Alice',n=3))"`,
             },
             {
               english: 'Routing (Web)',
@@ -6953,6 +8088,7 @@ print(tpl.render(name='Alice', n=3))`,
 def product(product_id):
     return {'id': product_id}`,
               task: 'Definisci in Flask una rotta che gestisce GET e PUT sullo stesso URL parametrico per ottenere e aggiornare un prodotto.',
+              command: `python3 -c "routes={'/':'home','/about':'about','/users':'users'}; path='/about'; print(f'{path} -> {routes[path]}')"`,
             },
             {
               english: 'Middleware (Web)',
@@ -6971,6 +8107,14 @@ async def add_timing(request, call_next):
     response.headers['X-Time'] = f'{time.time() - start:.3f}'
     return response`,
               task: 'Scrivi un middleware FastAPI che misura il tempo di ogni richiesta e lo aggiunge come header X-Time nella risposta.',
+              command: `python3 -c "import time
+def middleware(handler):
+ def wrapped(req):
+  s=time.time(); r=handler(req); print(f'took {time.time()-s:.4f}s'); return r
+ return wrapped
+@middleware
+def view(req): return 'ok'
+print(view('/'))"`,
             },
             {
               english: 'Django ORM',
@@ -6983,6 +8127,7 @@ async def add_timing(request, call_next):
               difficulty: 'intermediate',
               code: `recent = Article.objects.filter(published_at__year=2025).order_by('-published_at')[:10]`,
               task: `Recupera con l'ORM di Django i dieci articoli piu recenti pubblicati nel 2025 ordinati in ordine cronologico inverso.`,
+              command: `python3 -c "print('Django ORM example:'); print('Article.objects.filter(year=2025).order_by(\\"-date\\")[:10]')"`,
             },
           ],
         },
@@ -7000,6 +8145,7 @@ async def add_timing(request, call_next):
                 'Python is the leading language for data science. = Python \u00E8 il linguaggio leader per la data science.',
               context: 'data-science',
               difficulty: 'beginner',
+              command: `python3 -c "import statistics; data=[2,4,6,8,10]; print('mean:',statistics.mean(data),'stdev:',statistics.stdev(data))"`,
             },
             {
               english: 'NumPy (Numerical Python)',
@@ -7016,6 +8162,7 @@ async def add_timing(request, call_next):
 arr = np.array([[1, 2], [3, 4]])
 print(arr.mean(axis=0))`,
               task: `Crea una matrice NumPy due per due e calcola la media di ciascuna colonna con un'unica chiamata vettorializzata.`,
+              command: `python3 -c "import numpy as np; a=np.array([[1,2],[3,4]]); print('mean per col:',a.mean(axis=0))" 2>/dev/null || pip install numpy && python3 -c "import numpy; print('NumPy',numpy.__version__)"`,
             },
             {
               english: 'Pandas (Data Analysis)',
@@ -7031,6 +8178,7 @@ print(arr.mean(axis=0))`,
 df = pd.read_csv('sales.csv')
 top = df.groupby('region')['total'].sum().nlargest(5)`,
               task: 'Carica il file sales.csv in un dataframe pandas e calcola le cinque regioni con il fatturato totale piu alto.',
+              command: `python3 -c "import pandas as pd; df=pd.DataFrame({'name':['Alice','Bob'],'age':[30,25]}); print(df)" 2>/dev/null || pip install pandas && python3 -c "import pandas; print('Pandas',pandas.__version__)"`,
             },
             {
               english: 'Matplotlib',
@@ -7047,6 +8195,7 @@ plt.plot([1, 2, 3, 4], [1, 4, 9, 16])
 plt.xlabel('x'); plt.ylabel('x^2')
 plt.savefig('square.png')`,
               task: 'Disegna con Matplotlib la curva della funzione x al quadrato sui primi quattro interi e salva il grafico come square.png.',
+              command: `python3 -c "import matplotlib; print('Matplotlib',matplotlib.__version__)" 2>/dev/null || pip install matplotlib && python3 -c "import matplotlib; print('Matplotlib',matplotlib.__version__)"`,
             },
             {
               english: 'Scikit-learn',
@@ -7063,6 +8212,7 @@ model = LogisticRegression()
 model.fit(X_train, y_train)
 accuracy = model.score(X_test, y_test)`,
               task: `Addestra un modello di regressione logistica con scikit-learn sui dati di training e misura l'accuratezza sul set di test.`,
+              command: `python3 -c "import sklearn; print('scikit-learn',sklearn.__version__)" 2>/dev/null || pip install scikit-learn && python3 -c "import sklearn; print('scikit-learn',sklearn.__version__)"`,
             },
             {
               english: 'Jupyter Notebook',
@@ -7075,6 +8225,8 @@ accuracy = model.score(X_test, y_test)`,
               difficulty: 'beginner',
               code: 'pip install jupyterlab && jupyter lab --port 8888',
               task: 'Installa JupyterLab e avvia il server interattivo sulla porta 8888 per esplorare i dati in un notebook nel browser.',
+              command:
+                'python3 -m jupyter --version 2>/dev/null || pip install jupyterlab && jupyter --version',
             },
             {
               english: 'DataFrame',
@@ -7090,6 +8242,7 @@ accuracy = model.score(X_test, y_test)`,
 df = pd.DataFrame({'name': ['Alice', 'Bob'], 'age': [30, 25]})
 print(df[df.age > 26])`,
               task: 'Costruisci un DataFrame con nome ed eta di due persone e filtra le righe degli utenti con eta superiore a 26 anni.',
+              command: `python3 -c "import pandas as pd; df=pd.DataFrame({'x':[1,2,3],'y':[4,5,6]}); print(df[df.x>1])" 2>/dev/null || echo 'pip install pandas'`,
             },
             {
               english: 'Vectorization',
@@ -7106,6 +8259,7 @@ print(df[df.age > 26])`,
 a = np.arange(1_000_000)
 b = a * 2 + 1  # vettorializzato, niente for loop`,
               task: `Sostituisci un ciclo Python che moltiplica un milione di numeri con un'operazione vettorializzata di NumPy per ottenere uno speedup di cento volte.`,
+              command: `python3 -c "import numpy as np; a=np.arange(10); print('vectorized:',a*2+1)" 2>/dev/null || echo 'pip install numpy'`,
             },
             {
               english: 'Data Cleaning',
@@ -7119,6 +8273,7 @@ b = a * 2 + 1  # vettorializzato, niente for loop`,
               code: `df = df.dropna(subset=['email'])
 df['email'] = df['email'].str.strip().str.lower()`,
               task: 'Pulisci il dataframe rimuovendo le righe senza email e normalizzando il campo email in minuscolo senza spazi bianchi.',
+              command: `python3 -c "data=[' Alice ','BOB',None,'carol']; clean=[x.strip().lower() for x in data if x]; print(clean)"`,
             },
             {
               english: 'Tensor',
@@ -7135,6 +8290,7 @@ x = torch.tensor([[1.0, 2.0], [3.0, 4.0]], requires_grad=True)
 y = (x ** 2).sum()
 y.backward()`,
               task: 'Crea un tensore PyTorch due per due con gradienti attivi e calcola la backpropagation della somma dei quadrati.',
+              command: `python3 -c "import torch; x=torch.tensor([[1.0,2.0],[3.0,4.0]]); print('shape:',x.shape,'sum:',x.sum())" 2>/dev/null || echo 'pip install torch'`,
             },
           ],
         },
@@ -7153,6 +8309,7 @@ y.backward()`,
                 'Python is great for fast API development. = Python \u00E8 ottimo per lo sviluppo rapido di API.',
               context: 'backend',
               difficulty: 'beginner',
+              command: `python3 -c "from http.server import BaseHTTPRequestHandler; print('API dev: define endpoints, validate input, return JSON')"`,
             },
             {
               english: 'Pydantic (Data validation)',
@@ -7171,6 +8328,9 @@ class User(BaseModel):
     email: EmailStr
     age: int`,
               task: `Definisci un modello Pydantic User che valida automaticamente il formato dell'email e il tipo di ogni campo in ingresso.`,
+              command: `python3 -c "from pydantic import BaseModel
+class User(BaseModel): name:str; age:int
+u=User(name='Alice',age=30); print(u.model_dump())" 2>/dev/null || echo 'pip install pydantic'`,
             },
             {
               english: 'Marshmallow',
@@ -7187,6 +8347,9 @@ class UserSchema(Schema):
     name = fields.Str(required=True)
     email = fields.Email()`,
               task: 'Definisci uno schema Marshmallow che valida nome obbligatorio ed email ben formata prima di salvare un nuovo utente.',
+              command: `python3 -c "from marshmallow import Schema,fields
+class US(Schema): name=fields.Str(required=True)
+print(US().load({'name':'Alice'}))" 2>/dev/null || echo 'pip install marshmallow'`,
             },
             {
               english: 'Serializer',
@@ -7200,6 +8363,9 @@ class UserSchema(Schema):
               code: `def serialize_user(user):
     return {'id': user.id, 'name': user.name, 'email': user.email}`,
               task: 'Scrivi un piccolo serializzatore che converte un modello User in un dizionario JSON-friendly omettendo i campi sensibili.',
+              command: `python3 -c "import json
+def serialize(obj): return json.dumps({'id':1,'name':obj})
+print(serialize('Alice'))"`,
             },
             {
               english: 'Endpoint (API)',
@@ -7215,6 +8381,10 @@ def create_order(order: OrderIn) -> OrderOut:
     saved = repo.save(order)
     return saved`,
               task: `Esponi un endpoint POST /orders che riceve un OrderIn validato da Pydantic e restituisce l'ordine salvato come OrderOut.`,
+              command: `python3 -c "from http.server import HTTPServer,BaseHTTPRequestHandler
+class H(BaseHTTPRequestHandler):
+ def do_GET(s): s.send_response(200); s.end_headers(); s.wfile.write(b'{}')
+print('Endpoint handler defined:',H.__name__)"`,
             },
             {
               english: 'Authentication (OAuth2/JWT)',
@@ -7230,6 +8400,10 @@ def create_order(order: OrderIn) -> OrderOut:
 token = jwt.encode({'sub': user_id, 'exp': expiry}, SECRET, algorithm='HS256')
 payload = jwt.decode(token, SECRET, algorithms=['HS256'])`,
               task: `Firma un token JWT con l'identificatore utente e una scadenza e poi decodificalo verificando la firma con la stessa chiave.`,
+              command: `python3 -c "import hmac,hashlib,base64,json
+header=base64.b64encode(json.dumps({'alg':'HS256'}).encode()).decode()
+payload=base64.b64encode(json.dumps({'sub':'user1'}).encode()).decode()
+print(f'JWT-like: {header}.{payload}...')"`,
             },
             {
               english: 'Swagger / OpenAPI',
@@ -7240,6 +8414,7 @@ payload = jwt.decode(token, SECRET, algorithms=['HS256'])`,
                 "Adding type hints and Pydantic models to your FastAPI endpoints automatically generates an interactive Swagger UI for testing and exploration. = Aggiungere type hint e modelli Pydantic ai tuoi endpoint FastAPI genera automaticamente un'interfaccia Swagger interattiva per test ed esplorazione.",
               context: 'documentation',
               difficulty: 'beginner',
+              command: `python3 -c "import json; spec={'openapi':'3.0.0','info':{'title':'My API','version':'1.0'},'paths':{}}; print(json.dumps(spec,indent=2))"`,
             },
             {
               english: 'Reverse Proxy (Uvicorn/Gunicorn)',
@@ -7252,6 +8427,7 @@ payload = jwt.decode(token, SECRET, algorithms=['HS256'])`,
               difficulty: 'advanced',
               code: 'gunicorn -w 4 -k uvicorn.workers.UvicornWorker app:app --bind 127.0.0.1:8000',
               task: 'Avvia gunicorn con quattro worker uvicorn dietro nginx, vincolandolo a localhost porta 8000 cosi che il proxy gestisca TLS.',
+              command: `python3 -c "import shutil; print('gunicorn:',shutil.which('gunicorn') or 'not installed'); print('uvicorn:',shutil.which('uvicorn') or 'not installed')"`,
             },
             {
               english: 'Payload (JSON)',
@@ -7267,6 +8443,7 @@ payload = jwt.decode(token, SECRET, algorithms=['HS256'])`,
 resp = requests.post('https://api.example.com/users', json={'name': 'Alice', 'role': 'admin'})
 print(resp.json())`,
               task: 'Invia una richiesta POST con requests passando il payload JSON come dizionario e stampa la risposta deserializzata.',
+              command: `python3 -c "import json; payload={'name':'Alice','role':'admin'}; print('JSON payload:',json.dumps(payload))"`,
             },
             {
               english: 'Rate Limiting (API)',
@@ -7286,6 +8463,19 @@ limiter = Limiter(key_func=get_remote_address)
 @limiter.limit('10/minute')
 def search(): ...`,
               task: `Applica con slowapi un limite di dieci richieste al minuto per IP all'endpoint /search per prevenire l'abuso delle API.`,
+              command: `python3 -c "import time
+calls=[]
+def rate_limited(max_per_sec):
+ def dec(f):
+  def w(*a):
+   now=time.time(); calls[:]=[ t for t in calls if now-t<1]
+   if len(calls)>=max_per_sec: return 'rate limited'
+   calls.append(now); return f(*a)
+  return w
+ return dec
+@rate_limited(2)
+def api(): return 'ok'
+print(api(),api(),api())"`,
             },
           ],
         },
@@ -7303,6 +8493,7 @@ def search(): ...`,
                 "Setting up a CI/CD pipeline that runs tests, builds a Docker image, and deploys automatically reduces human error in the deployment process. = Configurare una pipeline CI/CD che esegue test, costruisce un'immagine Docker e distribuisce automaticamente riduce gli errori umani nel processo di deployment.",
               context: 'devops',
               difficulty: 'beginner',
+              command: `python3 -c "print('Deploy checklist:'); print('1. pip freeze > requirements.txt'); print('2. docker build -t app .'); print('3. docker run -p 8000:8000 app')"`,
             },
             {
               english: 'Docker (for Python)',
@@ -7320,6 +8511,7 @@ RUN pip install -r requirements.txt
 COPY . .
 CMD ["python", "app.py"]`,
               task: 'Scrivi un Dockerfile minimale basato su python 3.12 slim che installa le dipendenze e avvia app.py come comando di default.',
+              command: `python3 -c "dockerfile='FROM python:3.12-slim\\nWORKDIR /app\\nCOPY requirements.txt .\\nRUN pip install -r requirements.txt\\nCOPY . .\\nCMD [\\"python\\",\\"app.py\\"]'; print(dockerfile)"`,
             },
             {
               english: 'Gunicorn',
@@ -7332,6 +8524,7 @@ CMD ["python", "app.py"]`,
               difficulty: 'intermediate',
               code: 'gunicorn -w 4 --timeout 30 --access-logfile - app:app',
               task: `Avvia l'app WSGI con quattro worker gunicorn e timeout di trenta secondi, indirizzando il log degli accessi su stdout.`,
+              command: `python3 -c "import shutil; g=shutil.which('gunicorn'); print('gunicorn:',g or 'install via pip install gunicorn')"`,
             },
             {
               english: 'Uvicorn',
@@ -7344,6 +8537,7 @@ CMD ["python", "app.py"]`,
               difficulty: 'intermediate',
               code: 'uvicorn main:app --host 0.0.0.0 --port 8000 --workers 2 --reload',
               task: 'Avvia il server ASGI uvicorn esponendo main:app su tutte le interfacce con due worker e ricarica automatica per lo sviluppo.',
+              command: `python3 -c "import shutil; u=shutil.which('uvicorn'); print('uvicorn:',u or 'install via pip install uvicorn')"`,
             },
             {
               english: 'Packaging',
@@ -7355,6 +8549,7 @@ CMD ["python", "app.py"]`,
               difficulty: 'advanced',
               code: 'python -m build && twine upload dist/*',
               task: 'Costruisci il pacchetto sorgente e il wheel a partire da pyproject.toml e poi caricali su PyPI con twine in un solo passaggio.',
+              command: `python3 -c "import importlib.metadata; print('installed packages:',len(list(importlib.metadata.distributions())))"`,
             },
             {
               english: 'PyInstaller',
@@ -7366,6 +8561,7 @@ CMD ["python", "app.py"]`,
               difficulty: 'advanced',
               code: 'pyinstaller --onefile --name myapp app.py',
               task: 'Impacchetta app.py in un singolo eseguibile chiamato myapp con PyInstaller cosi da distribuirlo senza richiedere Python.',
+              command: `python3 -c "import shutil; p=shutil.which('pyinstaller'); print('pyinstaller:',p or 'install via pip install pyinstaller')"`,
             },
             {
               english: 'CI/CD (for Python)',
@@ -7375,6 +8571,7 @@ CMD ["python", "app.py"]`,
               example: `A typical Python CI/CD pipeline runs ruff, mypy and pytest on every push, then publishes a wheel or Docker image on tag. = Una tipica pipeline CI/CD Python esegue ruff, mypy e pytest a ogni push, poi pubblica un wheel o un'immagine Docker al tag.`,
               context: 'devops',
               difficulty: 'intermediate',
+              command: `python3 -c "ci='name: CI\\non: [push]\\njobs:\\n  test:\\n    runs-on: ubuntu-latest\\n    steps:\\n    - uses: actions/checkout@v4\\n    - run: pip install -r requirements.txt\\n    - run: pytest'; print(ci)"`,
             },
             {
               english: 'Sentry (Monitoring)',
@@ -7389,6 +8586,7 @@ CMD ["python", "app.py"]`,
 
 sentry_sdk.init(dsn='https://key@sentry.io/123', traces_sample_rate=0.1)`,
               task: 'Inizializza Sentry con il DSN del progetto e attiva il campionamento delle tracce al dieci percento per il monitoraggio in produzione.',
+              command: `python3 -c "import sentry_sdk; print('Sentry SDK',sentry_sdk.__version__)" 2>/dev/null || echo 'pip install sentry-sdk'`,
             },
             {
               english: 'Wheel (.whl)',
@@ -7402,6 +8600,7 @@ sentry_sdk.init(dsn='https://key@sentry.io/123', traces_sample_rate=0.1)`,
               note: 'Pi\u00F9 veloce da installare rispetto ai pacchetti sorgente.',
               code: 'pip wheel --no-deps -w dist/ .',
               task: 'Costruisci il file wheel del progetto corrente nella cartella dist senza includere le dipendenze, pronto per la distribuzione.',
+              command: `python3 -c "import wheel; print('wheel',wheel.__version__)" 2>/dev/null || pip wheel --help 2>&1 | head -3`,
             },
             {
               english: 'Cloud hosting',
@@ -7412,6 +8611,7 @@ sentry_sdk.init(dsn='https://key@sentry.io/123', traces_sample_rate=0.1)`,
                 'Deploy your Python API to AWS or Heroku. = Distribuisci la tua API Python su AWS o Heroku.',
               context: 'infrastructure',
               difficulty: 'beginner',
+              command: `python3 -c "providers=['Heroku','AWS Lambda','GCP Cloud Run','Azure App Service','Fly.io']; print('Python cloud hosts:'); [print(f'  - {p}') for p in providers]"`,
             },
           ],
         },

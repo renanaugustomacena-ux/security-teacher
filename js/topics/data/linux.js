@@ -32,6 +32,9 @@ export default {
               context: 'cli',
               difficulty: 'beginner',
               note: 'Interfaccia testuale per interagire con il computer.',
+              code: `echo 'Current terminal:'
+tty
+echo "Shell: $SHELL"`,
             },
             {
               english: 'Shell',
@@ -42,6 +45,9 @@ export default {
               context: 'cli',
               difficulty: 'beginner',
               note: 'Il programma che interpreta i tuoi comandi.',
+              code: `echo "Current shell: $SHELL"
+cat /etc/shells
+echo "PID: $$"`,
             },
             {
               english: 'Command',
@@ -52,6 +58,9 @@ export default {
                 "Each command you type is parsed by the shell before execution. = Ogni comando che digiti viene analizzato dalla shell prima dell'esecuzione.",
               context: 'cli',
               difficulty: 'beginner',
+              code: `date
+whoami
+hostname`,
             },
             {
               english: 'Prompt',
@@ -63,6 +72,9 @@ export default {
               context: 'cli',
               difficulty: 'beginner',
               note: 'Il simbolo (spesso $ o #) a inizio riga.',
+              code: `echo "Current prompt: $PS1"
+export PS1='\\u@\\h:\\w\\$ '
+echo 'Prompt updated'`,
             },
             {
               english: 'Console',
@@ -72,6 +84,9 @@ export default {
               example: 'Switch to a virtual console with Ctrl+Alt+F1.',
               context: 'cli',
               difficulty: 'beginner',
+              code: `tty
+who am i
+echo "Console type: $TERM"`,
             },
             {
               english: 'Bash',
@@ -85,6 +100,9 @@ export default {
               note: 'Bourne Again SHell: shell GNU predefinita su molte distribuzioni Linux.',
               command: 'bash --version',
               task: 'Verifica quale versione di bash gira sulla macchina prima di adattare uno script al suo dialetto.',
+              code: `bash --version | head -1
+echo "Running PID: $$"
+echo "Bash options: $BASHOPTS" | tr ':' '\\n' | head -3`,
             },
             {
               english: 'CLI',
@@ -95,6 +113,9 @@ export default {
                 'Remote servers without a desktop environment are managed entirely through the CLI. = I server remoti senza ambiente desktop vengono gestiti interamente tramite la CLI.',
               context: 'cli',
               difficulty: 'beginner',
+              code: `echo 'Listing files via CLI:'
+ls /tmp
+echo "Logged in as: $(whoami)"`,
             },
             {
               english: 'Argument',
@@ -104,6 +125,9 @@ export default {
               example: 'The filename is an argument for the command.',
               context: 'cli',
               difficulty: 'intermediate',
+              code: `echo 'First argument:' hello
+ls -l /tmp
+head -n 5 /etc/passwd`,
             },
             {
               english: 'Option',
@@ -113,6 +137,9 @@ export default {
               example: "Use options to modify the command's behavior.",
               context: 'cli',
               difficulty: 'intermediate',
+              code: `ls -a /home
+ls -l /home
+ls -al /home`,
             },
             {
               english: 'Execute',
@@ -122,6 +149,9 @@ export default {
               example: 'You need permission to execute this script.',
               context: 'cli',
               difficulty: 'beginner',
+              code: `chmod +x script.sh
+./script.sh
+echo "Exit code: $?"`,
             },
           ],
         },
@@ -139,6 +169,9 @@ export default {
                 'In Linux, even hardware devices are represented as a file inside the /dev directory. = In Linux, anche i dispositivi hardware sono rappresentati come un file nella cartella /dev.',
               context: 'filesystem',
               difficulty: 'beginner',
+              code: `touch notes.txt
+file notes.txt
+ls -l notes.txt`,
             },
             {
               english: 'Directory',
@@ -149,6 +182,9 @@ export default {
                 'The /etc directory contains configuration files for system-wide services. = La directory /etc contiene i file di configurazione per i servizi di sistema.',
               context: 'filesystem',
               difficulty: 'beginner',
+              code: `mkdir -p project/src
+ls -d project/*/
+file project`,
             },
             {
               english: 'Path',
@@ -158,6 +194,9 @@ export default {
               example: `When a script fails with 'command not found', verify the full path in your PATH variable before assuming the binary is missing. = Quando uno script fallisce con 'comando non trovato', verifica il percorso completo nella variabile PATH prima di assumere che il binario manchi.`,
               context: 'filesystem',
               difficulty: 'beginner',
+              code: `echo "Absolute: /home/user/docs"
+echo "Relative: ../docs"
+pwd`,
             },
             {
               english: 'Root',
@@ -167,6 +206,9 @@ export default {
               example: 'The root directory is represented by a slash (/).',
               context: 'filesystem',
               difficulty: 'beginner',
+              code: `ls /
+echo "Root directory contains $(ls / | wc -l) entries"
+ls /bin /etc /var | head -5`,
             },
             {
               english: 'Home',
@@ -177,6 +219,9 @@ export default {
               context: 'filesystem',
               difficulty: 'beginner',
               note: 'Solitamente /home/username o ~.',
+              code: `echo "Home: $HOME"
+ls ~
+cd ~ && pwd`,
             },
             {
               english: 'Parent',
@@ -186,6 +231,9 @@ export default {
               example: 'The double dot (..) allows you to go to the parent directory.',
               context: 'filesystem',
               difficulty: 'intermediate',
+              code: `pwd
+cd ..
+pwd`,
             },
             {
               english: 'Hidden',
@@ -196,6 +244,9 @@ export default {
                 "Configuration files are often hidden so they do not clutter the directory listing. = I file di configurazione sono spesso nascosti per non ingombrare l'elenco della cartella.",
               context: 'filesystem',
               difficulty: 'intermediate',
+              code: `touch .secret
+ls -a
+ls -la .secret`,
             },
             {
               english: 'Extension',
@@ -205,6 +256,9 @@ export default {
               example: "Linux doesn't strictly rely on file extensions.",
               context: 'filesystem',
               difficulty: 'intermediate',
+              code: `touch report.pdf photo.jpg script.sh
+file report.pdf
+ls *.sh`,
             },
             {
               english: 'Folder',
@@ -215,6 +269,9 @@ export default {
                 'Keeping project assets organized in separate folders simplifies backups and collaboration. = Tenere le risorse dei progetti organizzate in cartelle separate semplifica i backup e la collaborazione.',
               context: 'filesystem',
               difficulty: 'beginner',
+              code: `mkdir backups
+ls -ld backups
+rmdir backups`,
             },
             {
               english: 'Filesystem',
@@ -225,6 +282,9 @@ export default {
                 'Choosing the right filesystem affects performance, reliability, and maximum file size. = Scegliere il filesystem giusto influisce su prestazioni, affidabilità e dimensione massima dei file.',
               context: 'filesystem',
               difficulty: 'intermediate',
+              code: `df -h /
+df -T /
+echo "Filesystem type: $(stat -f -c %T /)"`,
             },
           ],
         },
@@ -244,6 +304,9 @@ export default {
               difficulty: 'beginner',
               command: 'id -u alice',
               task: `Recupera lo UID numerico di un utente specifico per controlli di proprieta' sui file.`,
+              code: `whoami
+id
+grep "$(whoami)" /etc/passwd`,
             },
             {
               english: 'Permission',
@@ -255,6 +318,9 @@ export default {
               difficulty: 'beginner',
               command: 'chmod 644 config.yml',
               task: 'Imposta permessi di lettura per tutti e scrittura solo per il proprietario su un file di configurazione.',
+              code: `touch config.yml
+chmod 644 config.yml
+ls -l config.yml`,
             },
             {
               english: 'Group',
@@ -267,6 +333,9 @@ export default {
               difficulty: 'beginner',
               command: 'chgrp -R developers /srv/app',
               task: `Riassegna ricorsivamente la proprieta' di gruppo della directory di un'applicazione al team di sviluppo.`,
+              code: `groups
+id -Gn
+cat /etc/group | grep "$(whoami)"`,
             },
             {
               english: 'Owner',
@@ -278,6 +347,9 @@ export default {
               difficulty: 'beginner',
               command: 'chown www-data:www-data /var/www/html',
               task: `Cambia proprietario e gruppo della document root affinche' nginx possa servirla correttamente.`,
+              code: `touch myfile.txt
+ls -l myfile.txt
+stat -c '%U:%G' myfile.txt`,
             },
             {
               english: 'Sudo',
@@ -289,6 +361,9 @@ export default {
               difficulty: 'beginner',
               command: 'sudo systemctl restart nginx',
               task: 'Riavvia un servizio di sistema usando privilegi amministrativi temporanei.',
+              code: `sudo whoami
+sudo cat /etc/shadow | head -1
+echo "Returned to: $(whoami)"`,
             },
             {
               english: 'Login',
@@ -301,6 +376,9 @@ export default {
               difficulty: 'beginner',
               command: 'last -n 20',
               task: 'Ispeziona gli ultimi venti accessi al sistema per individuare login sospetti.',
+              code: `last -n 5
+who
+echo "Last login for $(whoami)"`,
             },
             {
               english: 'Session',
@@ -313,6 +391,9 @@ export default {
               difficulty: 'beginner',
               command: 'who -u',
               task: `Elenca gli utenti attualmente loggati con l'orario di inizio sessione e il terminale associato.`,
+              code: `who -u
+w
+echo "Session type: $XDG_SESSION_TYPE"`,
             },
             {
               english: 'Process',
@@ -324,6 +405,9 @@ export default {
               difficulty: 'beginner',
               command: 'ps aux --sort=-%cpu | head',
               task: `Identifica i processi che consumano piu' CPU durante l'analisi di un incidente di performance.`,
+              code: `ps aux --sort=-%cpu | head -5
+echo "Total processes: $(ps aux | wc -l)"
+echo "My PID: $$"`,
             },
             {
               english: 'Kernel',
@@ -335,6 +419,9 @@ export default {
               difficulty: 'intermediate',
               command: 'uname -r',
               task: 'Stampa la versione del kernel in esecuzione prima di applicare patch di sicurezza.',
+              code: `uname -r
+uname -a
+cat /proc/version`,
             },
             {
               english: 'Distro',
@@ -347,6 +434,9 @@ export default {
               difficulty: 'beginner',
               command: 'lsb_release -a',
               task: 'Rileva nome e versione della distribuzione per scegliere il package manager corretto.',
+              code: `cat /etc/os-release | head -3
+uname -r
+hostnamectl | grep 'Operating System'`,
             },
           ],
         },
@@ -366,6 +456,9 @@ export default {
               difficulty: 'beginner',
               command: 'man 5 sshd_config',
               task: 'Consulta la pagina di manuale della sezione 5 per i dettagli sul formato del file di configurazione SSH.',
+              code: `man -f ls
+man -k 'copy files'
+whatis cp`,
             },
             {
               english: 'Man Page',
@@ -378,6 +471,9 @@ export default {
               difficulty: 'beginner',
               command: 'man iptables',
               task: 'Apri la man page di iptables per studiare catene, target ed estensioni di matching.',
+              code: `man -k password
+man 5 passwd
+whatis passwd`,
             },
             {
               english: 'Help',
@@ -390,6 +486,9 @@ export default {
               difficulty: 'beginner',
               command: 'rsync --help',
               task: 'Stampa il riepilogo rapido delle opzioni di un comando senza aprire il manuale completo.',
+              code: `ls --help | head -5
+mkdir --help | head -5
+echo 'Use --help for quick reference'`,
             },
             {
               english: 'Flag',
@@ -400,6 +499,9 @@ export default {
                 'Combining multiple flags like ls -la shows hidden files with detailed information. = Combinare più flag come ls -la mostra i file nascosti con informazioni dettagliate.',
               context: 'cli',
               difficulty: 'beginner',
+              code: `ls -l /tmp
+ls -a /tmp
+ls -la /tmp`,
             },
             {
               english: 'Usage',
@@ -409,6 +511,9 @@ export default {
               example: 'The error message shows the correct usage.',
               context: 'help',
               difficulty: 'intermediate',
+              code: `cp --help 2>&1 | head -3
+echo 'Usage: cp [OPTION]... SOURCE DEST'
+cp --version`,
             },
             {
               english: 'Description',
@@ -419,6 +524,9 @@ export default {
                 'Each section of the man page begins with a one-line description of what the command does. = Ogni sezione della pagina man inizia con una descrizione di una riga di ciò che fa il comando.',
               context: 'help',
               difficulty: 'beginner',
+              code: `whatis ls
+whatis grep
+whatis chmod`,
             },
             {
               english: 'Synopsis',
@@ -429,6 +537,9 @@ export default {
                 'Reading the synopsis section tells you which arguments are required and which are optional. = Leggere la sezione sinossi ti dice quali argomenti sono obbligatori e quali opzionali.',
               context: 'help',
               difficulty: 'intermediate',
+              code: `man ls 2>/dev/null | head -10
+echo 'Synopsis: ls [OPTION]... [FILE]...'
+echo 'Brackets mean optional'`,
             },
             {
               english: 'Verbose',
@@ -441,6 +552,9 @@ export default {
               difficulty: 'intermediate',
               command: 'cp -v src/ dest/',
               task: 'Esegui una copia mostrando ogni file processato per diagnosticare trasferimenti incompleti.',
+              code: `cp -v /etc/hostname /tmp/hostname.bak
+mkdir -v /tmp/testdir
+rm -v /tmp/hostname.bak`,
             },
             {
               english: 'Quiet',
@@ -453,6 +567,9 @@ export default {
               difficulty: 'intermediate',
               command: 'grep -q ERROR /var/log/syslog',
               task: 'Cerca un pattern nei log restituendo solo lo stato di uscita, ideale per condizioni in script cron.',
+              code: `grep -q 'root' /etc/passwd
+echo "Found root: $?"
+grep -q 'nonexistent' /etc/passwd && echo 'found' || echo 'not found'`,
             },
             {
               english: 'Version',
@@ -464,6 +581,9 @@ export default {
               difficulty: 'beginner',
               command: 'python3 --version',
               task: `Conferma quale versione di un interprete e' installata prima di lanciare il deploy.`,
+              code: `bash --version | head -1
+python3 --version
+git --version`,
             },
           ],
         },
@@ -493,6 +613,9 @@ export default {
               difficulty: 'beginner',
               command: 'cd /var/log/nginx',
               task: 'Spostati nella directory dei log di nginx prima di analizzarne il contenuto.',
+              code: `cd /var/log
+pwd
+ls -la | head -5`,
             },
             {
               english: 'List',
@@ -504,6 +627,9 @@ export default {
               difficulty: 'beginner',
               command: 'ls -la',
               task: 'Elenca tutti i file della directory corrente, inclusi quelli nascosti, con permessi e dimensioni.',
+              code: `ls -la /etc
+ls -lh /var/log/*.log 2>/dev/null | head -5
+ls -1 /tmp | wc -l`,
             },
             {
               english: 'Print Working Directory',
@@ -516,6 +642,9 @@ export default {
               difficulty: 'beginner',
               command: 'pwd',
               task: 'Conferma il percorso assoluto della directory attuale dentro uno script di build.',
+              code: `cd /var/log
+pwd
+echo "You are in: $(pwd)"`,
             },
             {
               english: 'Current',
@@ -527,6 +656,9 @@ export default {
               difficulty: 'intermediate',
               command: 'ls -la ./',
               task: 'Mostra il contenuto della directory corrente usando il riferimento esplicito al punto singolo.',
+              code: `ls -la ./
+echo "Current directory: $(pwd)"
+find . -maxdepth 1 -type f | wc -l`,
             },
             {
               english: 'Previous',
@@ -538,6 +670,9 @@ export default {
               difficulty: 'intermediate',
               command: 'cd -',
               task: 'Torna rapidamente alla directory precedente senza ridigitarne il percorso.',
+              code: `cd /var/log
+cd /tmp
+cd - && pwd`,
             },
             {
               english: 'Recursive',
@@ -550,6 +685,9 @@ export default {
               difficulty: 'intermediate',
               command: 'ls -R /etc',
               task: 'Visualizza ricorsivamente tutti i file annidati sotto una directory di configurazione.',
+              code: `ls -R /etc/apt 2>/dev/null | head -15
+find /etc/apt -type f | wc -l
+echo 'Recursive lists all subdirectories'`,
             },
             {
               english: 'Empty',
@@ -562,6 +700,9 @@ export default {
               difficulty: 'beginner',
               command: 'find . -type d -empty',
               task: 'Individua tutte le directory vuote da pulire prima di un archivio del progetto.',
+              code: `mkdir -p /tmp/emptydir
+find /tmp -maxdepth 1 -type d -empty
+rmdir /tmp/emptydir`,
             },
             {
               english: 'Tree',
@@ -573,6 +714,9 @@ export default {
               difficulty: 'intermediate',
               command: 'tree -L 2 /home/user/project',
               task: `Disegna la struttura ad albero di un progetto limitando la profondita' a due livelli.`,
+              code: `mkdir -p /tmp/demo/{src,docs,tests}
+tree -L 1 /tmp/demo
+rm -rf /tmp/demo`,
             },
             {
               english: 'Make Directory',
@@ -585,6 +729,9 @@ export default {
               difficulty: 'beginner',
               command: 'mkdir -p releases/2025/05',
               task: `Crea l'intera catena di directory di rilascio in una sola chiamata, senza errori se i livelli esistono gia'.`,
+              code: `mkdir -p /tmp/releases/2025/05
+ls -d /tmp/releases/2025/*/
+rm -rf /tmp/releases`,
             },
             {
               english: 'Remove Directory',
@@ -597,6 +744,9 @@ export default {
               difficulty: 'intermediate',
               command: 'rmdir build/tmp',
               task: `Rimuovi in sicurezza una directory di lavoro solo se e' gia' completamente vuota.`,
+              code: `mkdir -p /tmp/build/tmp
+rmdir /tmp/build/tmp
+echo "Exit: $?"`,
             },
           ],
         },
@@ -616,6 +766,9 @@ export default {
               difficulty: 'beginner',
               command: 'cp -a /etc/nginx/ /backup/nginx/',
               task: 'Duplica una directory di configurazione preservando timestamp, permessi e symlink per un backup fedele.',
+              code: `cp /etc/hostname /tmp/hostname.bak
+ls -l /tmp/hostname.bak
+diff /etc/hostname /tmp/hostname.bak`,
             },
             {
               english: 'Move',
@@ -628,6 +781,9 @@ export default {
               difficulty: 'beginner',
               command: 'mv build/ /var/www/releases/v2/',
               task: 'Sposta atomicamente la cartella di build appena prodotta sotto la directory dei rilasci.',
+              code: `touch /tmp/old_name.txt
+mv /tmp/old_name.txt /tmp/new_name.txt
+ls -l /tmp/new_name.txt`,
             },
             {
               english: 'Remove',
@@ -641,6 +797,9 @@ export default {
               note: "Attenzione: non c'è cestino nella CLI!",
               command: 'rm -rf node_modules/',
               task: 'Cancella ricorsivamente una pesante cartella di dipendenze prima di reinstallarla da zero.',
+              code: `touch /tmp/tempfile.txt
+rm /tmp/tempfile.txt
+ls /tmp/tempfile.txt 2>&1`,
             },
             {
               english: 'Touch',
@@ -654,6 +813,9 @@ export default {
               note: 'Comando POSIX standard; nessuna traduzione italiana.',
               command: 'touch src/components/.gitkeep',
               task: `Crea un file segnaposto vuoto cosi' git puo' tracciare una directory altrimenti vuota.`,
+              code: `touch /tmp/newfile.txt
+ls -l /tmp/newfile.txt
+stat /tmp/newfile.txt | grep Modify`,
             },
             {
               english: 'Rename',
@@ -666,6 +828,9 @@ export default {
               difficulty: 'beginner',
               command: 'mv access.log access.log.1',
               task: 'Rinomina il log corrente prima di richiedere al demone un reload per la rotazione.',
+              code: `touch /tmp/access.log
+mv /tmp/access.log /tmp/access.log.1
+ls -l /tmp/access.log.1`,
             },
             {
               english: 'Delete',
@@ -678,6 +843,9 @@ export default {
               difficulty: 'beginner',
               command: `find /var/log -name '*.gz' -mtime +30 -delete`,
               task: `Cancella automaticamente gli archivi di log compressi piu' vecchi di trenta giorni per liberare spazio.`,
+              code: `touch /tmp/old1.gz /tmp/old2.gz
+find /tmp -name '*.gz' -maxdepth 1 -delete
+ls /tmp/*.gz 2>&1`,
             },
             {
               english: 'Overwrite',
@@ -687,6 +855,9 @@ export default {
               example: 'Be careful not to overwrite important files.',
               context: 'ops',
               difficulty: 'intermediate',
+              code: `echo 'original' > /tmp/data.txt
+echo 'overwritten' > /tmp/data.txt
+cat /tmp/data.txt`,
             },
             {
               english: 'Force',
@@ -698,6 +869,9 @@ export default {
               difficulty: 'intermediate',
               command: 'rm -f /tmp/lockfile',
               task: `Forza la rimozione di un file di lock senza richieste di conferma all'interno di uno script.`,
+              code: `touch /tmp/lockfile
+rm -f /tmp/lockfile
+echo "Removed without prompting: $?"`,
             },
             {
               english: 'Interactive',
@@ -709,6 +883,9 @@ export default {
               difficulty: 'intermediate',
               command: 'rm -i *.bak',
               task: 'Cancella file di backup chiedendo conferma per ciascuno, utile durante pulizie manuali.',
+              code: `touch /tmp/important.bak
+ls -l /tmp/important.bak
+echo 'Use rm -i to get a confirmation prompt'`,
             },
             {
               english: 'Preserve',
@@ -721,6 +898,9 @@ export default {
               difficulty: 'advanced',
               command: 'cp -p httpd.conf httpd.conf.bak',
               task: 'Copia un file di configurazione mantenendo proprietario, gruppo e timestamp originali.',
+              code: `cp -p /etc/hostname /tmp/hostname.bak
+stat /etc/hostname | grep Modify
+stat /tmp/hostname.bak | grep Modify`,
             },
           ],
         },
@@ -741,6 +921,9 @@ export default {
               note: 'Comando POSIX standard; nessuna traduzione italiana. Concatena e stampa file.',
               command: 'cat /etc/passwd | grep alice',
               task: 'Concatena un file di sistema in pipeline per filtrarne le righe relative a un utente specifico.',
+              code: `cat /etc/hostname
+cat -n /etc/shells
+cat /etc/os-release | head -3`,
             },
             {
               english: 'Less',
@@ -753,6 +936,9 @@ export default {
               note: 'Comando POSIX standard; nessuna traduzione italiana. Pager interattivo bidirezionale.',
               command: 'journalctl -u sshd | less',
               task: 'Sfoglia un journal di systemd in un pager interattivo per scorrere e cercare senza saturare il terminale.',
+              code: `echo 'View large files page by page:'
+wc -l /etc/services
+echo 'Use: less /etc/services'`,
             },
             {
               english: 'Head',
@@ -765,6 +951,9 @@ export default {
               difficulty: 'beginner',
               command: 'head -n 20 large.csv',
               task: `Anteprima delle prime venti righe di un CSV pesante senza caricarne l'intero contenuto.`,
+              code: `head -n 5 /etc/passwd
+head -1 /etc/hostname
+echo "First 5 lines shown"`,
             },
             {
               english: 'Tail',
@@ -777,6 +966,9 @@ export default {
               difficulty: 'beginner',
               command: 'tail -f /var/log/nginx/error.log',
               task: 'Monitora in tempo reale le nuove righe scritte nel log degli errori di nginx.',
+              code: `tail -n 5 /etc/passwd
+tail -1 /etc/shells
+echo 'Use tail -f to follow live logs'`,
             },
             {
               english: 'More',
@@ -789,6 +981,9 @@ export default {
               note: 'Comando POSIX standard; nessuna traduzione italiana. Pager unidirezionale storico.',
               command: 'dmesg | more',
               task: `Sfoglia pagina per pagina i messaggi del kernel su una shell di ripristino dove less non e' disponibile.`,
+              code: `wc -l /etc/services
+echo 'Paginate with: more /etc/services'
+echo 'Press SPACE for next page, q to quit'`,
             },
             {
               english: 'Scroll',
@@ -799,6 +994,10 @@ export default {
                 'When reviewing a long configuration file in less, you can scroll through it page by page. = Quando si esamina un lungo file di configurazione in less, si può scorrere pagina per pagina.',
               context: 'view',
               difficulty: 'beginner',
+              code: `echo 'In less/more:'
+echo '  SPACE = next page'
+echo '  b = previous page'
+echo '  /text = search forward'`,
             },
             {
               english: 'Content',
@@ -808,6 +1007,9 @@ export default {
               example: 'View the file content without opening an editor.',
               context: 'view',
               difficulty: 'beginner',
+              code: `cat /etc/hostname
+wc -l /etc/passwd
+file /etc/passwd`,
             },
             {
               english: 'Pager',
@@ -817,6 +1019,9 @@ export default {
               example: `Set PAGER=less in your shell profile so man pages and git log open in your preferred pager automatically. = Imposta PAGER=less nel profilo della shell cosi' le man page e git log si aprono automaticamente nel tuo pager preferito.`,
               context: 'view',
               difficulty: 'advanced',
+              code: `echo "Default pager: $PAGER"
+echo 'less is the most common pager'
+man ls 2>/dev/null | head -3`,
             },
             {
               english: 'Line Number',
@@ -829,6 +1034,9 @@ export default {
               difficulty: 'intermediate',
               command: 'cat -n script.sh',
               task: 'Stampa il contenuto di uno script numerando ogni riga per facilitarne la revisione.',
+              code: `cat -n /etc/shells
+nl /etc/hostname
+grep -n 'root' /etc/passwd`,
             },
             {
               english: 'Follow',
@@ -840,6 +1048,9 @@ export default {
               difficulty: 'advanced',
               command: 'tail -f application.log',
               task: `Segui dal vivo la crescita di un file di log man mano che l'applicazione scrive nuove voci.`,
+              code: `echo 'test log entry' >> /tmp/app.log
+tail -n 2 /tmp/app.log
+echo 'Use tail -f /tmp/app.log to follow live'`,
             },
           ],
         },
@@ -859,6 +1070,9 @@ export default {
               note: 'Comando POSIX standard; nessuna traduzione italiana. Ricerca ricorsiva nel filesystem.',
               command: `find /var/log -mtime +30 -name '*.log'`,
               task: `Cerca nel filesystem i file di log piu' vecchi di trenta giorni durante una pulizia del disco.`,
+              code: `find /etc -name '*.conf' -maxdepth 1 2>/dev/null | head -5
+find /tmp -type f -mmin -60 | head -5
+echo 'find searches by name, type, time...'`,
             },
             {
               english: 'Locate',
@@ -872,6 +1086,9 @@ export default {
               note: 'Comando standard; nessuna traduzione italiana. Richiede updatedb periodico.',
               command: 'locate sshd_config',
               task: 'Trova istantaneamente il percorso di un file consultando il database mlocate pregenerato.',
+              code: `echo 'locate uses a pre-built index:'
+which locate 2>/dev/null && locate --version || echo 'Install: apt install mlocate'
+echo 'Update index: sudo updatedb'`,
             },
             {
               english: 'Which',
@@ -884,6 +1101,9 @@ export default {
               note: 'Comando POSIX standard; nessuna traduzione italiana. Mostra il primo eseguibile nel PATH.',
               command: 'which python3',
               task: `Scopri quale eseguibile del PATH verra' invocato per un dato comando prima di cablarlo in un cron job.`,
+              code: `which bash
+which python3
+which ls`,
             },
             {
               english: 'Whereis',
@@ -896,6 +1116,9 @@ export default {
               note: 'Comando standard; nessuna traduzione italiana.',
               command: 'whereis nginx',
               task: `Localizza in un'unica chiamata binario, sorgenti e pagine di manuale di un pacchetto.`,
+              code: `whereis bash
+whereis ls
+echo 'Shows binary, source, and man page paths'`,
             },
             {
               english: 'Pattern',
@@ -905,6 +1128,9 @@ export default {
               example: 'Search for files matching a specific pattern.',
               context: 'search',
               difficulty: 'intermediate',
+              code: `ls /etc/*.conf 2>/dev/null | head -5
+grep 'root' /etc/passwd
+find /tmp -name '*.txt' 2>/dev/null | head -3`,
             },
             {
               english: 'Wildcard',
@@ -916,6 +1142,9 @@ export default {
               difficulty: 'beginner',
               command: 'ls *.log',
               task: 'Espandi un asterisco per elencare tutti i file con una determinata estensione nella directory corrente.',
+              code: `ls /etc/host*
+ls /etc/pass??
+echo 'Use * for any chars, ? for single char'`,
             },
             {
               english: 'Case Sensitive',
@@ -926,6 +1155,9 @@ export default {
                 'Moving files from Windows to Linux can cause errors because Linux treats README and readme as two different names. = Spostare file da Windows a Linux può causare errori perché Linux tratta README e readme come due nomi diversi.',
               context: 'search',
               difficulty: 'beginner',
+              code: `echo 'ERROR: disk full' > /tmp/test.log
+grep 'error' /tmp/test.log
+grep 'ERROR' /tmp/test.log`,
             },
             {
               english: 'Ignore Case',
@@ -938,6 +1170,9 @@ export default {
               difficulty: 'intermediate',
               command: `grep -i 'error' /var/log/syslog`,
               task: 'Filtra un log per una parola chiave catturando sia varianti maiuscole che minuscole.',
+              code: `echo 'ERROR: disk full' > /tmp/test.log
+grep -i 'error' /tmp/test.log
+echo 'Flag -i makes search case-insensitive'`,
             },
             {
               english: 'Type',
@@ -949,6 +1184,9 @@ export default {
               difficulty: 'advanced',
               command: 'type -a cd',
               task: 'Verifica se un nome corrisponde a un builtin, un alias o un eseguibile esterno prima di indagare un comportamento inatteso.',
+              code: `type ls
+type cd
+type -a python3 2>/dev/null || echo 'python3 not found'`,
             },
             {
               english: 'Size',
@@ -960,6 +1198,9 @@ export default {
               difficulty: 'advanced',
               command: 'find . -type f -size +10M',
               task: `Individua i file regolari piu' grandi di dieci megabyte per ottimizzare lo spazio su disco.`,
+              code: `find /var/log -type f -size +1M 2>/dev/null | head -5
+du -sh /var/log 2>/dev/null
+ls -lhS /var/log/*.log 2>/dev/null | head -3`,
             },
           ],
         },
@@ -986,6 +1227,9 @@ export default {
               example: 'You need to edit the configuration file.',
               context: 'editors',
               difficulty: 'beginner',
+              code: `echo 'hello world' > /tmp/demo.txt
+cat /tmp/demo.txt
+echo 'Edit with: nano /tmp/demo.txt'`,
             },
             {
               english: 'Nano',
@@ -999,6 +1243,9 @@ export default {
               note: 'Editor di testo per terminale; nessuna traduzione italiana del nome.',
               command: 'nano /etc/nginx/nginx.conf',
               task: 'Apri il file di configurazione di nginx in nano per correggere al volo un valore prima del reload del servizio.',
+              code: `echo 'server_name example.com;' > /tmp/demo.conf
+cat /tmp/demo.conf
+echo 'Open with: nano /tmp/demo.conf  (Ctrl+O save, Ctrl+X exit)'`,
             },
             {
               english: 'Vim',
@@ -1012,6 +1259,9 @@ export default {
               note: 'Vi IMproved: editor modale per terminale; nessuna traduzione italiana.',
               command: 'vim /etc/ssh/sshd_config',
               task: 'Modifica la configurazione del demone SSH con vim per disabilitare il login di root prima del prossimo reboot.',
+              code: `echo 'port 22' > /tmp/demo_sshd.conf
+cat /tmp/demo_sshd.conf
+echo 'Open with: vim /tmp/demo_sshd.conf  (i=insert, :wq=save+quit)'`,
             },
             {
               english: 'Save',
@@ -1021,6 +1271,9 @@ export default {
               example: 'In Nano, press Ctrl+O to save (Write Out).',
               context: 'editors',
               difficulty: 'beginner',
+              code: `echo 'In nano: Ctrl+O then Enter'
+echo 'In vim: press Esc, then type :w'
+echo 'In vim: :wq saves and quits'`,
             },
             {
               english: 'Exit',
@@ -1031,6 +1284,9 @@ export default {
                 "New developers often get stuck because they cannot figure out how to exit the text editor. = I nuovi sviluppatori spesso si bloccano perché non riescono a capire come uscire dall'editor di testo.",
               context: 'editors',
               difficulty: 'beginner',
+              code: `echo 'In nano: Ctrl+X'
+echo 'In vim: :q (quit) or :q! (force quit)'
+echo 'In vim: :wq (save and quit)'`,
             },
             {
               english: 'Insert Mode',
@@ -1040,6 +1296,10 @@ export default {
               example: `Press i in vim to enter insert mode and start typing, then Esc to return to normal mode for navigation. = Premi i in vim per entrare in modalita' inserimento e iniziare a digitare, poi Esc per tornare in modalita' normale per la navigazione.`,
               context: 'editors',
               difficulty: 'advanced',
+              code: `echo 'Vim insert mode commands:'
+echo '  i = insert before cursor'
+echo '  a = append after cursor'
+echo '  o = open new line below'`,
             },
             {
               english: 'Command Mode',
@@ -1050,6 +1310,10 @@ export default {
                 "Pressing Escape switches the editor back to command mode, where keystrokes become navigation shortcuts. = Premere Escape riporta l'editor in modalità comando, dove i tasti diventano scorciatoie di navigazione.",
               context: 'editors',
               difficulty: 'advanced',
+              code: `echo 'Vim command mode (press Esc first):'
+echo '  dd  = delete line'
+echo '  yy  = copy line'
+echo '  :wq = save and quit'`,
             },
             {
               english: 'Search',
@@ -1060,6 +1324,9 @@ export default {
                 'Trigger a forward search in vim with /TODO and press n to jump between every TODO marker in the file. = Avvia una ricerca in avanti in vim con /TODO e premi n per saltare tra ogni marcatore TODO nel file.',
               context: 'editors',
               difficulty: 'beginner',
+              code: `grep -n 'root' /etc/passwd | head -3
+echo 'In vim: /pattern then n for next'
+echo 'In nano: Ctrl+W then type pattern'`,
             },
             {
               english: 'Replace',
@@ -1070,6 +1337,9 @@ export default {
                 'A global search and replace across the file can update every occurrence of an old hostname in seconds. = Un cerca e sostituisci globale nel file può aggiornare ogni occorrenza di un vecchio hostname in pochi secondi.',
               context: 'editors',
               difficulty: 'intermediate',
+              code: `echo 'hello world' > /tmp/demo.txt
+sed -i 's/hello/goodbye/' /tmp/demo.txt
+cat /tmp/demo.txt`,
             },
             {
               english: 'Buffer',
@@ -1079,6 +1349,10 @@ export default {
               example: 'Editors load files into a memory buffer.',
               context: 'editors',
               difficulty: 'advanced',
+              code: `echo 'Vim uses named buffers (registers):'
+echo '  "ayy = yank line into register a'
+echo '  "ap  = paste from register a'
+echo '  :reg = show all registers'`,
             },
           ],
         },
@@ -1098,6 +1372,9 @@ export default {
               note: 'Comando POSIX standard; nessuna traduzione italiana. Global Regular Expression Print.',
               command: `grep -i 'failed password' /var/log/auth.log`,
               task: `Filtra dal log di autenticazione tutti i tentativi di login falliti durante l'indagine su un attacco brute-force SSH.`,
+              code: `grep 'root' /etc/passwd
+grep -c 'bash' /etc/passwd
+grep -n 'nologin' /etc/passwd | head -3`,
             },
             {
               english: 'Pipeline',
@@ -1108,6 +1385,9 @@ export default {
               context: 'text',
               difficulty: 'intermediate',
               note: 'Termine tecnico universale; nessuna traduzione italiana adottata.',
+              code: `cat /etc/passwd | grep 'bash' | wc -l
+ls -la /etc | sort -k5 -n | tail -5
+echo 'Pipes connect stdout to stdin'`,
             },
             {
               english: 'Redirect',
@@ -1120,6 +1400,9 @@ export default {
               difficulty: 'intermediate',
               command: 'dmesg > /tmp/kernel-boot.log',
               task: `Salva l'output dei messaggi del kernel in un file di log per allegarlo al ticket di supporto hardware.`,
+              code: `date > /tmp/timestamp.txt
+cat /tmp/timestamp.txt
+ls /nonexistent 2> /tmp/errors.txt`,
             },
             {
               english: 'Append',
@@ -1131,6 +1414,9 @@ export default {
               difficulty: 'intermediate',
               command: 'echo "$(date -Iseconds) deploy completato" >> /var/log/deploy.log',
               task: 'Aggiungi una riga di tracciamento al log di deploy senza sovrascrivere lo storico delle release precedenti.',
+              code: `echo 'Line 1' > /tmp/log.txt
+echo 'Line 2' >> /tmp/log.txt
+cat /tmp/log.txt`,
             },
             {
               english: 'Echo',
@@ -1143,6 +1429,9 @@ export default {
               difficulty: 'beginner',
               command: 'echo "Avvio del backup notturno..."',
               task: `Stampa a video un messaggio di stato dentro lo script di backup per far sapere all'operatore quale fase è in corso.`,
+              code: `echo "User: $(whoami)"
+echo "Date: $(date)"
+echo -e "Line1\\nLine2\\nLine3"`,
             },
             {
               english: 'Cut',
@@ -1156,6 +1445,9 @@ export default {
               note: 'Comando POSIX standard; nessuna traduzione italiana.',
               command: 'cut -d: -f1 /etc/passwd',
               task: `Estrai solo i nomi utente da /etc/passwd per generare l'inventario degli account locali del server.`,
+              code: `cut -d: -f1 /etc/passwd | head -5
+echo 'alice:x:1000' | cut -d: -f1,3
+echo 'hello world' | cut -c1-5`,
             },
             {
               english: 'Sort',
@@ -1168,6 +1460,9 @@ export default {
               difficulty: 'intermediate',
               command: 'sort -u access.log',
               task: 'Ordina le voci del log di accesso ed elimina i duplicati prima di passarle al report di analisi.',
+              code: `cut -d: -f1 /etc/passwd | sort | head -5
+du -sh /var/log/* 2>/dev/null | sort -h | tail -5
+echo 'Use sort -r for reverse order'`,
             },
             {
               english: 'Unique',
@@ -1180,6 +1475,9 @@ export default {
               difficulty: 'intermediate',
               command: 'sort access.log | uniq -c | sort -rn',
               task: 'Conta quante richieste ha fatto ogni indirizzo IP nel log di accesso e ordinale dalla più frequente.',
+              code: `echo -e 'apple\\napple\\nbanana\\napple' > /tmp/fruit.txt
+sort /tmp/fruit.txt | uniq -c
+echo '3 apple, 1 banana'`,
             },
             {
               english: 'Stream',
@@ -1189,6 +1487,9 @@ export default {
               example: 'Stdin, stdout, and stderr are standard streams.',
               context: 'text',
               difficulty: 'advanced',
+              code: `cat /etc/passwd | head -3
+echo 'stdin=0 stdout=1 stderr=2'
+ls /nonexistent 2>/dev/null; echo "Exit: $?"`,
             },
             {
               english: 'Awk',
@@ -1201,6 +1502,9 @@ export default {
               note: 'Comando e linguaggio POSIX; nessuna traduzione italiana. Dai cognomi Aho, Weinberger, Kernighan.',
               command: `awk '{s+=$3} END{print s}' access.log`,
               task: 'Somma i byte serviti nel log di accesso per stimare il traffico totale generato dal sito durante la giornata.',
+              code: `echo -e '80 200\\n443 150\\n22 50' > /tmp/conns.txt
+awk '{sum+=$2} END{print "Total:", sum}' /tmp/conns.txt
+awk '$2 > 100 {print $1, $2}' /tmp/conns.txt`,
             },
           ],
         },
@@ -1220,6 +1524,9 @@ export default {
               difficulty: 'beginner',
               command: 'wc -l /etc/nginx/nginx.conf',
               task: 'Conta quante righe ha il file di configurazione di nginx prima di iniziare il refactoring del blocco monolitico.',
+              code: `wc -l /etc/passwd
+wc -w /etc/hostname
+wc -c /etc/shells`,
             },
             {
               english: 'Difference',
@@ -1232,6 +1539,9 @@ export default {
               difficulty: 'intermediate',
               command: 'diff -u /etc/nginx/nginx.conf.bak /etc/nginx/nginx.conf',
               task: 'Confronta riga per riga la configurazione di nginx con il backup per capire cosa è cambiato prima del rollback.',
+              code: `echo 'server=old' > /tmp/v1.conf
+echo 'server=new' > /tmp/v2.conf
+diff -u /tmp/v1.conf /tmp/v2.conf`,
             },
             {
               english: 'Compare',
@@ -1244,6 +1554,9 @@ export default {
               difficulty: 'advanced',
               command: 'cmp firmware-v1.bin firmware-v2.bin',
               task: `Verifica byte per byte se due immagini firmware sono identiche e individua l'offset esatto della prima differenza.`,
+              code: `echo 'hello' > /tmp/a.bin
+echo 'hello' > /tmp/b.bin
+cmp /tmp/a.bin /tmp/b.bin && echo 'Files are identical'`,
             },
             {
               english: 'Split',
@@ -1256,6 +1569,9 @@ export default {
               difficulty: 'intermediate',
               command: 'split -b 100M database.sql backup_part_',
               task: 'Spezza un dump SQL pesante in chunk da 100 MB per superare il limite di upload del servizio cloud.',
+              code: `seq 1 100 > /tmp/bigfile.txt
+split -l 25 /tmp/bigfile.txt /tmp/part_
+wc -l /tmp/part_*`,
             },
             {
               english: 'Paste',
@@ -1268,6 +1584,9 @@ export default {
               difficulty: 'intermediate',
               command: 'paste -d, usernames.txt emails.txt > users.csv',
               task: `Unisci la lista dei nomi utente con quella delle email in un unico CSV pronto per l'importazione.`,
+              code: `echo -e 'alice\\nbob' > /tmp/names.txt
+echo -e 'alice@co.com\\nbob@co.com' > /tmp/emails.txt
+paste -d, /tmp/names.txt /tmp/emails.txt`,
             },
             {
               english: 'Translate',
@@ -1280,6 +1599,9 @@ export default {
               difficulty: 'advanced',
               command: `tr 'A-Z' 'a-z' < input.txt > input.lower.txt`,
               task: 'Normalizza un file di testo trasformando tutte le maiuscole in minuscole prima del confronto case-insensitive.',
+              code: `echo 'Hello World' | tr 'A-Z' 'a-z'
+echo 'hello world' | tr ' ' '_'
+echo 'user::1000' | tr -d ':'`,
             },
             {
               english: 'Reverse',
@@ -1292,6 +1614,9 @@ export default {
               difficulty: 'intermediate',
               command: 'rev urls.txt | cut -d/ -f1 | rev',
               task: `Estrai l'ultimo segmento di ogni URL invertendo la stringa, prendendo il primo campo e re-invertendola.`,
+              code: `echo 'hello' | rev
+echo '/var/log/syslog' | rev | cut -d/ -f1 | rev
+echo '12345' | rev`,
             },
             {
               english: 'Show Non-printing',
@@ -1304,6 +1629,9 @@ export default {
               difficulty: 'advanced',
               command: 'cat -A deploy.sh',
               task: 'Mostra i caratteri non stampabili dello script per scovare i ritorni a capo Windows che lo fanno fallire silenziosamente.',
+              code: `printf 'line1\\r\\nline2\\n' > /tmp/mixed.txt
+cat -A /tmp/mixed.txt
+echo 'Shows ^M for CR, $ for line endings'`,
             },
             {
               english: 'Patch',
@@ -1316,6 +1644,10 @@ export default {
               note: 'Comando POSIX standard; nessuna traduzione italiana. Applica diff testuali.',
               command: 'patch -p1 < cve-2024-1234.diff',
               task: `Applica la patch di sicurezza del vendor all'albero dei sorgenti prima di ricompilare il pacchetto.`,
+              code: `echo 'old' > /tmp/orig.txt
+echo 'new' > /tmp/fixed.txt
+diff -u /tmp/orig.txt /tmp/fixed.txt > /tmp/fix.patch
+echo 'Apply with: patch /tmp/orig.txt /tmp/fix.patch'`,
             },
             {
               english: 'Checksum',
@@ -1328,6 +1660,9 @@ export default {
               difficulty: 'intermediate',
               command: 'sha256sum ubuntu-22.04.iso',
               task: `Calcola il checksum SHA-256 dell'immagine ISO appena scaricata e confrontalo con quello pubblicato dal vendor.`,
+              code: `echo 'important data' > /tmp/data.txt
+sha256sum /tmp/data.txt
+md5sum /tmp/data.txt`,
             },
           ],
         },
@@ -1347,6 +1682,9 @@ export default {
               difficulty: 'beginner',
               command: 'tar -cf project.tar src/',
               task: `Raggruppa l'intera cartella sorgente in un unico archivio tar prima di trasferirla via scp sul server remoto.`,
+              code: `mkdir -p /tmp/src && touch /tmp/src/{a,b,c}.txt
+tar -cf /tmp/project.tar -C /tmp src/
+tar -tf /tmp/project.tar`,
             },
             {
               english: 'Compress',
@@ -1359,6 +1697,9 @@ export default {
               difficulty: 'beginner',
               command: 'gzip -9 access.log',
               task: 'Comprimi al massimo livello il log di accesso ruotato per liberare spazio nella partizione /var.',
+              code: `echo 'large content' > /tmp/access.log
+gzip -k /tmp/access.log
+ls -lh /tmp/access.log /tmp/access.log.gz`,
             },
             {
               english: 'Extract',
@@ -1371,6 +1712,9 @@ export default {
               difficulty: 'beginner',
               command: 'tar -xzf release-1.2.0.tar.gz -C /opt/app',
               task: 'Estrai il tarball della nuova release direttamente nella directory di deploy senza scompattarla prima altrove.',
+              code: `mkdir -p /tmp/src && echo 'code' > /tmp/src/app.py
+tar -czf /tmp/release.tar.gz -C /tmp src/
+tar -xzf /tmp/release.tar.gz -C /tmp/extract`,
             },
             {
               english: 'Tarball',
@@ -1384,6 +1728,9 @@ export default {
               note: 'Termine gergale per archivio .tar.gz; nessuna traduzione italiana.',
               command: 'tar -czvf project-1.0.tar.gz project/',
               task: 'Crea un tarball compresso del progetto pronto per la pubblicazione sul mirror di download.',
+              code: `mkdir -p /tmp/proj && touch /tmp/proj/{main,util}.py
+tar -czvf /tmp/proj-1.0.tar.gz -C /tmp proj/
+ls -lh /tmp/proj-1.0.tar.gz`,
             },
             {
               english: 'Zip',
@@ -1397,6 +1744,9 @@ export default {
               note: 'Formato di archivio compresso multipiattaforma; nessuna traduzione italiana.',
               command: 'zip -r logs.zip /var/log/myapp/',
               task: `Impacchetta ricorsivamente i log dell'applicazione in un archivio zip da inviare al team di assistenza.`,
+              code: `mkdir -p /tmp/logs && echo 'log data' > /tmp/logs/app.log
+zip -r /tmp/logs.zip /tmp/logs/
+ls -lh /tmp/logs.zip`,
             },
             {
               english: 'Unzip',
@@ -1409,6 +1759,9 @@ export default {
               difficulty: 'beginner',
               command: 'unzip artifact.zip -d /opt/release',
               task: 'Decomprimi il pacchetto di artefatti della CI nella directory di release per verificarne il contenuto.',
+              code: `echo 'data' > /tmp/readme.txt && zip /tmp/test.zip /tmp/readme.txt
+unzip -l /tmp/test.zip
+unzip -o /tmp/test.zip -d /tmp/unzipped`,
             },
             {
               english: 'Gzip',
@@ -1422,6 +1775,9 @@ export default {
               note: 'GNU zip: compressore standard; nessuna traduzione italiana.',
               command: 'gzip -k large.csv',
               task: `Comprimi il CSV mantenendo l'originale così puoi caricare la versione gzip senza perdere la sorgente.`,
+              code: `echo 'server log data' > /tmp/server.log
+gzip -k /tmp/server.log
+file /tmp/server.log.gz`,
             },
             {
               english: 'Flag z',
@@ -1434,6 +1790,9 @@ export default {
               note: 'Indica gzip per tar (-z); termine tecnico, nessuna traduzione italiana.',
               command: 'tar -czf backup.tar.gz /home/user',
               task: 'Comprimi la home directory in un archivio tar gzip in un solo passaggio per il backup notturno.',
+              code: `mkdir -p /tmp/backupdata && echo 'cfg' > /tmp/backupdata/app.conf
+tar -czf /tmp/backup.tar.gz -C /tmp backupdata/
+file /tmp/backup.tar.gz`,
             },
             {
               english: 'List Contents',
@@ -1446,6 +1805,9 @@ export default {
               difficulty: 'intermediate',
               command: 'tar -tzf release.tar.gz',
               task: `Elenca i percorsi contenuti nel tarball di release per verificare che la struttura sia quella attesa prima dell'estrazione.`,
+              code: `mkdir -p /tmp/pkg && touch /tmp/pkg/{a,b}.txt
+tar -czf /tmp/pkg.tar.gz -C /tmp pkg/
+tar -tzf /tmp/pkg.tar.gz`,
             },
             {
               english: 'Verbose Flag',
@@ -1457,6 +1819,9 @@ export default {
               difficulty: 'intermediate',
               command: 'tar -xvzf release.tar.gz',
               task: `Estrai il tarball stampando a video ogni file scompattato per avere visibilità sul progresso dell'operazione.`,
+              code: `mkdir -p /tmp/vdemo && echo 'data' > /tmp/vdemo/file.txt
+tar -czvf /tmp/vdemo.tar.gz -C /tmp vdemo/
+tar -tzvf /tmp/vdemo.tar.gz`,
             },
           ],
         },
@@ -1484,6 +1849,9 @@ export default {
                 'Running services as the root user is discouraged because a compromised process would gain full system access. = Eseguire servizi come utente root è sconsigliato perché un processo compromesso otterrebbe accesso completo al sistema.',
               context: 'users',
               difficulty: 'beginner',
+              code: `id root
+grep '^root:' /etc/passwd
+echo 'Root UID is always 0'`,
             },
             {
               english: 'Add User',
@@ -1495,6 +1863,9 @@ export default {
               difficulty: 'intermediate',
               command: 'adduser alice',
               task: `Crea in modo interattivo l'account locale per una nuova collega impostando home directory, shell e password.`,
+              code: `echo 'sudo adduser alice'
+getent passwd alice 2>/dev/null || echo 'User alice does not exist'
+echo 'adduser creates home dir and sets shell'`,
             },
             {
               english: 'Delete User',
@@ -1506,6 +1877,9 @@ export default {
               difficulty: 'intermediate',
               command: 'deluser --remove-home alice',
               task: `Rimuovi l'account di un ex dipendente cancellando anche la sua home directory durante l'offboarding.`,
+              code: `echo 'sudo deluser --remove-home alice'
+echo 'This removes the user and their home directory'
+getent passwd alice 2>/dev/null || echo 'User alice not found'`,
             },
             {
               english: 'Password',
@@ -1518,6 +1892,9 @@ export default {
               difficulty: 'beginner',
               command: 'passwd alice',
               task: `Imposta una nuova password per l'utente alice dopo che ha dimenticato quella corrente.`,
+              code: `echo 'sudo passwd alice'
+passwd --status root 2>/dev/null | head -1
+echo 'Password hashes stored in /etc/shadow'`,
             },
             {
               english: 'Switch User',
@@ -1530,6 +1907,9 @@ export default {
               difficulty: 'intermediate',
               command: 'su - postgres',
               task: `Passa all'account di servizio postgres con ambiente di login completo per eseguire manutenzione sul database.`,
+              code: `echo "Currently: $(whoami)"
+echo 'Switch with: su - postgres'
+echo 'The dash (-) loads the target user environment'`,
             },
             {
               english: 'UID',
@@ -1541,6 +1921,9 @@ export default {
               difficulty: 'advanced',
               command: 'id -u alice',
               task: `Recupera l'identificatore numerico dell'utente alice da usare nel mapping dei permessi di un container.`,
+              code: `id -u
+id -u root
+awk -F: '{print $1, $3}' /etc/passwd | head -5`,
             },
             {
               english: 'GID',
@@ -1552,6 +1935,9 @@ export default {
               difficulty: 'advanced',
               command: 'id -g alice',
               task: `Ottieni l'ID numerico del gruppo primario di alice per allineare i permessi sulla share NFS condivisa.`,
+              code: `id -g
+id -g root
+awk -F: '{print $1, $4}' /etc/passwd | head -5`,
             },
             {
               english: 'Group Add',
@@ -1564,6 +1950,9 @@ export default {
               difficulty: 'intermediate',
               command: 'groupadd developers',
               task: 'Crea il gruppo developers prima di assegnarci i membri che dovranno accedere alla directory di progetto.',
+              code: `echo 'sudo groupadd developers'
+getent group developers 2>/dev/null || echo 'Group does not exist yet'
+echo 'Then: sudo usermod -aG developers alice'`,
             },
             {
               english: 'Members',
@@ -1576,6 +1965,9 @@ export default {
               difficulty: 'intermediate',
               command: 'getent group sudo',
               task: `Elenca i membri del gruppo sudo durante l'audit degli accessi privilegiati sul server di produzione.`,
+              code: `getent group sudo
+getent group root
+echo 'Lists group_name:password:GID:members'`,
             },
             {
               english: 'Profile',
@@ -1585,6 +1977,9 @@ export default {
               example: 'User settings are stored in their profile.',
               context: 'users',
               difficulty: 'beginner',
+              code: `echo "Profile files in $HOME:"
+ls -la ~/.bashrc ~/.profile 2>/dev/null
+head -3 ~/.bashrc 2>/dev/null`,
             },
           ],
         },
@@ -1604,6 +1999,9 @@ export default {
               difficulty: 'beginner',
               command: 'chmod u+r /var/log/app.log',
               task: 'Concedi al proprietario il permesso di lettura sul file di log così può consultarlo senza usare sudo.',
+              code: `touch /tmp/app.log
+chmod u+r /tmp/app.log
+ls -l /tmp/app.log`,
             },
             {
               english: 'Write',
@@ -1616,6 +2014,9 @@ export default {
               difficulty: 'beginner',
               command: 'chmod a-w /etc/nginx/nginx.conf',
               task: 'Togli a tutti il permesso di scrittura sulla configurazione di nginx per evitare modifiche accidentali in produzione.',
+              code: `touch /tmp/config.conf
+chmod a-w /tmp/config.conf
+ls -l /tmp/config.conf`,
             },
             {
               english: 'Execute Permission',
@@ -1628,6 +2029,9 @@ export default {
               difficulty: 'beginner',
               command: 'chmod +x deploy.sh',
               task: 'Rendi eseguibile lo script di deploy così puoi invocarlo direttamente con ./deploy.sh.',
+              code: `echo '#!/bin/bash' > /tmp/deploy.sh
+chmod +x /tmp/deploy.sh
+ls -l /tmp/deploy.sh`,
             },
             {
               english: 'Change Mode',
@@ -1641,6 +2045,9 @@ export default {
               note: 'Es: chmod 755 file.sh',
               command: 'chmod 755 deploy.sh',
               task: 'Imposta i permessi dello script di deploy in modo che tutti possano eseguirlo ma solo il proprietario possa modificarlo.',
+              code: `touch /tmp/script.sh
+chmod 755 /tmp/script.sh
+stat -c '%a %n' /tmp/script.sh`,
             },
             {
               english: 'Change Owner',
@@ -1653,6 +2060,9 @@ export default {
               difficulty: 'intermediate',
               command: 'chown -R www-data:www-data /var/www',
               task: `Riassegna ricorsivamente la proprietà della document root all'utente del server web dopo il restore da backup.`,
+              code: `echo 'sudo chown www-data:www-data /var/www'
+ls -ld /var/www 2>/dev/null
+stat -c '%U:%G' /var/www 2>/dev/null || echo '/var/www not found'`,
             },
             {
               english: 'Octal',
@@ -1665,6 +2075,9 @@ export default {
               difficulty: 'advanced',
               command: 'chmod 644 /etc/ssh/sshd_config',
               task: 'Applica in notazione ottale i permessi standard alla configurazione di SSH: lettura/scrittura per root e sola lettura per gli altri.',
+              code: `touch /tmp/secure.conf
+chmod 644 /tmp/secure.conf
+stat -c 'octal=%a symbolic=%A' /tmp/secure.conf`,
             },
             {
               english: 'Symbolic',
@@ -1677,6 +2090,9 @@ export default {
               difficulty: 'intermediate',
               command: 'chmod u+x,g-w,o-rwx script.sh',
               task: `Aggiusta i permessi dello script in notazione simbolica concedendo l'esecuzione al proprietario e bloccando l'accesso agli altri.`,
+              code: `touch /tmp/task.sh
+chmod u+x,g-w,o-rwx /tmp/task.sh
+ls -l /tmp/task.sh`,
             },
             {
               english: 'User/Group/Others',
@@ -1686,6 +2102,10 @@ export default {
               example: 'Permissions are defined for U, G, and O.',
               context: 'perms',
               difficulty: 'intermediate',
+              code: `touch /tmp/shared.txt
+chmod 754 /tmp/shared.txt
+echo 'u=rwx(7) g=r-x(5) o=r--(4)'
+ls -l /tmp/shared.txt`,
             },
             {
               english: 'Directory Execute',
@@ -1697,6 +2117,10 @@ export default {
               difficulty: 'advanced',
               command: 'chmod +x /var/www/private',
               task: 'Abilita il bit di esecuzione sulla directory così gli utenti autorizzati possono entrarci e attraversarla.',
+              code: `mkdir -p /tmp/private
+chmod 700 /tmp/private
+echo 'x on a directory means permission to enter (cd)'
+ls -ld /tmp/private`,
             },
             {
               english: 'Denied',
@@ -1706,6 +2130,10 @@ export default {
               example: `A "permission denied" error usually means the current user lacks the required access rights for that file or directory. = Un errore "permesso negato" di solito significa che l'utente corrente non ha i diritti di accesso necessari per quel file o directory.`,
               context: 'perms',
               difficulty: 'beginner',
+              code: `touch /tmp/noaccess.txt
+chmod 000 /tmp/noaccess.txt
+cat /tmp/noaccess.txt 2>&1 || echo 'Permission denied!'
+chmod 644 /tmp/noaccess.txt`,
             },
           ],
         },
@@ -1725,6 +2153,9 @@ export default {
               difficulty: 'advanced',
               command: 'chmod u+s /usr/local/bin/myutil',
               task: 'Imposta il bit setUID sul binario così gli utenti normali lo eseguono con i privilegi del proprietario.',
+              code: `ls -l /usr/bin/passwd
+echo 'The s in -rwsr-xr-x means setuid is set'
+find /usr/bin -perm -4000 2>/dev/null | head -3`,
             },
             {
               english: 'SetGID',
@@ -1737,6 +2168,9 @@ export default {
               difficulty: 'advanced',
               command: 'chmod g+s /shared/project',
               task: 'Attiva il bit setGID sulla directory condivisa così tutti i nuovi file ereditano automaticamente il gruppo del team.',
+              code: `echo 'sudo chmod g+s /shared/project'
+echo 'New files inherit the directory group'
+find /usr -perm -2000 2>/dev/null | head -3`,
             },
             {
               english: 'Sticky Bit',
@@ -1749,6 +2183,9 @@ export default {
               difficulty: 'advanced',
               command: 'chmod +t /tmp',
               task: 'Attiva il bit di persistenza sulla directory temporanea così ogni utente può eliminare solo i propri file.',
+              code: `ls -ld /tmp
+echo 'The t in drwxrwxrwt means sticky bit is set'
+echo 'Only file owners can delete their own files'`,
             },
             {
               english: 'Attribute',
@@ -1760,6 +2197,9 @@ export default {
               difficulty: 'expert',
               command: 'lsattr /etc/resolv.conf',
               task: 'Mostra gli attributi estesi del file di risoluzione DNS per verificare se è stato bloccato come immutabile.',
+              code: `touch /tmp/attrtest.txt
+lsattr /tmp/attrtest.txt
+echo 'Attributes are beyond standard rwx permissions'`,
             },
             {
               english: 'Immutable',
@@ -1771,6 +2211,9 @@ export default {
               difficulty: 'expert',
               command: 'chattr +i /etc/resolv.conf',
               task: 'Blocca il file resolv.conf come immutabile così nemmeno root può modificarlo per sbaglio dopo un riavvio del network manager.',
+              code: `echo 'sudo chattr +i /etc/resolv.conf'
+echo 'Prevents any modification, even by root'
+lsattr /etc/resolv.conf 2>/dev/null || echo 'Check with lsattr'`,
             },
             {
               english: 'Access Control List',
@@ -1780,6 +2223,9 @@ export default {
               example: 'ACLs provide flexible permission management.',
               context: 'perms',
               difficulty: 'advanced',
+              code: `echo 'ACLs extend basic Unix permissions'
+echo 'setfacl -m u:alice:rx /shared/project'
+echo 'getfacl /shared/project'`,
             },
             {
               english: 'Getfacl',
@@ -1792,6 +2238,9 @@ export default {
               difficulty: 'advanced',
               command: 'getfacl /shared/project',
               task: 'Leggi le ACL della cartella di progetto condivisa per scoprire quali utenti hanno accesso extra oltre ai permessi UNIX standard.',
+              code: `touch /tmp/acl_test.txt
+getfacl /tmp/acl_test.txt 2>/dev/null
+echo 'Shows owner, group, and ACL entries'`,
             },
             {
               english: 'Setfacl',
@@ -1804,6 +2253,9 @@ export default {
               difficulty: 'advanced',
               command: 'setfacl -m u:alice:rx /shared/project',
               task: `Concedi all'utente alice accesso in lettura ed esecuzione sulla cartella di progetto senza modificarne il gruppo proprietario.`,
+              code: `touch /tmp/aclfile.txt
+setfacl -m u:nobody:r /tmp/aclfile.txt 2>/dev/null
+getfacl /tmp/aclfile.txt 2>/dev/null | head -5`,
             },
             {
               english: 'Mask',
@@ -1813,6 +2265,9 @@ export default {
               example: 'The ACL mask limits effective permissions.',
               context: 'perms',
               difficulty: 'expert',
+              code: `umask
+umask -S
+echo 'umask controls default permissions for new files'`,
             },
             {
               english: 'Inheritance',
@@ -1824,6 +2279,9 @@ export default {
               difficulty: 'expert',
               command: 'setfacl -d -m g:devs:rwx /shared/project',
               task: `Imposta l'ACL di default sulla cartella così tutti i nuovi file creati al suo interno ereditano i permessi del gruppo devs.`,
+              code: `echo 'sudo setfacl -d -m g:devs:rwx /shared/project'
+echo 'Default ACLs are inherited by new files'
+echo 'Check with: getfacl /shared/project'`,
             },
           ],
         },
@@ -1843,6 +2301,9 @@ export default {
               difficulty: 'beginner',
               command: 'whoami',
               task: `Verifica dentro lo script con quale utente sta girando il processo prima di eseguire l'operazione privilegiata.`,
+              code: `whoami
+echo "UID: $(id -u)"
+echo "Home: $HOME"`,
             },
             {
               english: 'Identity',
@@ -1855,6 +2316,9 @@ export default {
               difficulty: 'intermediate',
               command: 'id alice',
               task: `Mostra UID, GID e gruppi secondari dell'utente alice per diagnosticare un problema di permessi sulla share.`,
+              code: `id
+id -un
+id -Gn`,
             },
             {
               english: 'Fingerprint',
@@ -1865,6 +2329,9 @@ export default {
                 "When connecting to a new server via SSH, verify the key fingerprint to prevent man-in-the-middle attacks. = Quando ci si connette a un nuovo server via SSH, verificare l'impronta della chiave per prevenire attacchi man-in-the-middle.",
               context: 'id',
               difficulty: 'advanced',
+              code: `ssh-keygen -lf ~/.ssh/id_ed25519.pub 2>/dev/null || echo 'No SSH key found'
+echo 'Fingerprints verify key identity'
+echo 'SHA256:... format identifies the key'`,
             },
             {
               english: 'Groups',
@@ -1877,6 +2344,9 @@ export default {
               difficulty: 'beginner',
               command: 'groups alice',
               task: `Elenca tutti i gruppi di cui alice fa parte per confermare che l'aggiunta al team di sviluppo sia andata a buon fine.`,
+              code: `groups
+groups root
+id -Gn`,
             },
             {
               english: 'Last',
@@ -1889,6 +2359,9 @@ export default {
               difficulty: 'intermediate',
               command: 'last -n 20',
               task: `Mostra gli ultimi venti accessi al server per individuare login sospetti durante l'analisi post-incidente.`,
+              code: `last -n 5
+last reboot | head -3
+echo 'Shows recent login history'`,
             },
             {
               english: 'Who',
@@ -1901,6 +2374,9 @@ export default {
               difficulty: 'beginner',
               command: 'who',
               task: 'Controlla chi è collegato in questo momento al server prima di lanciare il reboot programmato.',
+              code: `who
+who -b
+echo "Currently logged in: $(who | wc -l) users"`,
             },
             {
               english: 'Finger',
@@ -1914,6 +2390,9 @@ export default {
               note: 'Comando storico; nessuna traduzione italiana. Spesso disabilitato per motivi di sicurezza.',
               command: 'finger alice',
               task: `Interroga il demone finger di un sistema legacy per ottenere orario di login, shell e info di progetto dell'utente alice.`,
+              code: `echo 'finger shows user info:'
+getent passwd root | cut -d: -f1,5
+echo 'Install with: apt install finger'`,
             },
             {
               english: 'Switch',
@@ -1924,6 +2403,9 @@ export default {
                 "Technicians often switch to the database service account to run maintenance queries safely. = I tecnici spesso passano all'account di servizio del database per eseguire query di manutenzione in sicurezza.",
               context: 'id',
               difficulty: 'beginner',
+              code: `echo "Current user: $(whoami)"
+echo 'su - alice    # switch to alice'
+echo 'sudo -u bob cmd  # run cmd as bob'`,
             },
             {
               english: 'Effective',
@@ -1933,6 +2415,9 @@ export default {
               example: 'Your effective UID determines permissions.',
               context: 'id',
               difficulty: 'advanced',
+              code: `id -un
+echo "Effective UID: $(id -u)"
+echo 'Effective ID determines actual access rights'`,
             },
             {
               english: 'Real',
@@ -1943,6 +2428,9 @@ export default {
                 "Even after escalating privileges with sudo, the real UID still reflects the original login identity. = Anche dopo aver elevato i privilegi con sudo, l'UID reale riflette ancora l'identità di login originale.",
               context: 'id',
               difficulty: 'advanced',
+              code: `id -ru
+id -run
+echo 'Real UID is the original login user'`,
             },
           ],
         },
@@ -1972,6 +2460,9 @@ export default {
               difficulty: 'beginner',
               command: 'ip addr show eth0',
               task: `Mostra l'indirizzo IP assegnato all'interfaccia eth0 insieme alla maschera di sottorete.`,
+              code: `ip addr show | grep 'inet ' | head -3
+hostname -I
+echo 'inet = IPv4, inet6 = IPv6'`,
             },
             {
               english: 'Protocol',
@@ -1982,6 +2473,9 @@ export default {
                 'Understanding which protocol each service uses helps when writing firewall rules for the server. = Capire quale protocollo usa ogni servizio aiuta quando si scrivono le regole del firewall per il server.',
               context: 'network',
               difficulty: 'intermediate',
+              code: `cat /etc/protocols | head -10
+echo 'Common: TCP=6, UDP=17, ICMP=1'
+ss -s`,
             },
             {
               english: 'Port',
@@ -1992,6 +2486,9 @@ export default {
                 'When debugging connectivity, check if the expected port is open and not blocked by the firewall. = Quando si risolvono problemi di connettività, verifica se la porta prevista è aperta e non bloccata dal firewall.',
               context: 'network',
               difficulty: 'beginner',
+              code: `grep -E '^(http|ssh|https)' /etc/services
+ss -tlnp 2>/dev/null | head -5
+echo 'Ports 0-1023 are privileged'`,
             },
             {
               english: 'Gateway',
@@ -2003,6 +2500,9 @@ export default {
               difficulty: 'intermediate',
               command: 'ip route show default',
               task: 'Visualizza il gateway predefinito attualmente usato dalla macchina per uscire dalla rete locale.',
+              code: `ip route show default
+ip route | grep default
+echo 'Gateway is the next hop to the internet'`,
             },
             {
               english: 'Subnet Mask',
@@ -2012,6 +2512,9 @@ export default {
               example: 'The subnet mask defines the network size.',
               context: 'network',
               difficulty: 'advanced',
+              code: `ip addr show | grep 'inet ' | head -2
+echo '192.168.1.0/24 means 255.255.255.0'
+echo '/24 = 256 addresses, /16 = 65536 addresses'`,
             },
             {
               english: 'DNS',
@@ -2025,6 +2528,9 @@ export default {
               note: 'Domain Name System: traduce nomi host in indirizzi IP.',
               command: 'dig +short google.com',
               task: `Risolvi il nome di dominio google.com tramite DNS e stampa solo l'indirizzo IP restituito.`,
+              code: `cat /etc/resolv.conf | grep nameserver
+host google.com 2>/dev/null || echo 'host command not installed'
+echo 'DNS translates domain names to IP addresses'`,
             },
             {
               english: 'Packet',
@@ -2037,6 +2543,9 @@ export default {
               difficulty: 'advanced',
               command: `sudo tcpdump -i eth0 -c 100 'tcp port 80'`,
               task: `Cattura 100 pacchetti TCP destinati alla porta 80 sull'interfaccia eth0 per ispezionare il traffico HTTP.`,
+              code: `echo 'Capture packets with tcpdump:'
+echo 'sudo tcpdump -i eth0 -c 10 tcp port 80'
+echo 'Each packet has headers + payload'`,
             },
             {
               english: 'Latency',
@@ -2049,6 +2558,9 @@ export default {
               difficulty: 'advanced',
               command: 'ping -c 10 8.8.8.8',
               task: 'Misura la latenza verso 8.8.8.8 inviando 10 pacchetti ICMP e calcolando il tempo medio di andata e ritorno.',
+              code: `ping -c 3 127.0.0.1
+echo 'Latency = round-trip time in ms'
+echo 'Lower latency = faster response'`,
             },
             {
               english: 'Bandwidth',
@@ -2061,6 +2573,9 @@ export default {
               difficulty: 'intermediate',
               command: 'sudo iftop -i eth0',
               task: `Monitora in tempo reale la larghezza di banda consumata da ogni connessione attiva sull'interfaccia eth0.`,
+              code: `cat /sys/class/net/lo/speed 2>/dev/null || echo 'Speed not available'
+ip -s link show lo | tail -4
+echo 'Bandwidth = max data transfer rate'`,
             },
             {
               english: 'Firewall',
@@ -2072,6 +2587,9 @@ export default {
               difficulty: 'beginner',
               command: 'sudo iptables -L -n -v',
               task: 'Elenca tutte le regole del firewall caricate nel kernel, mostrando contatori di pacchetti e indirizzi numerici.',
+              code: `sudo iptables -L -n 2>/dev/null | head -8
+echo 'Firewall controls incoming/outgoing traffic'
+echo 'Modern alternative: sudo nft list ruleset'`,
             },
           ],
         },
@@ -2090,6 +2608,9 @@ export default {
               difficulty: 'intermediate',
               command: 'ip -br link show',
               task: 'Elenca tutte le interfacce di rete del sistema in formato compatto con il loro stato operativo.',
+              code: `ip -br link show
+ip -br addr show
+echo 'lo=loopback, eth0/enp*=ethernet, wlan0=wifi'`,
             },
             {
               english: 'Hostname',
@@ -2102,6 +2623,9 @@ export default {
               difficulty: 'beginner',
               command: 'sudo hostnamectl set-hostname web01.example.com',
               task: 'Imposta in modo permanente il nome host della macchina a web01.example.com aggiornando i file di sistema.',
+              code: `hostname
+hostnamectl | head -3
+echo "FQDN: $(hostname -f 2>/dev/null || hostname)"`,
             },
             {
               english: 'Route',
@@ -2113,6 +2637,9 @@ export default {
               difficulty: 'advanced',
               command: 'ip route show',
               task: 'Stampa la tabella di routing del kernel per verificare quali rotte sono configurate sul sistema.',
+              code: `ip route show
+ip route get 8.8.8.8
+echo 'Routing table decides where packets go'`,
             },
             {
               english: 'Static IP',
@@ -2125,6 +2652,9 @@ export default {
               difficulty: 'intermediate',
               command: 'sudo ip addr add 192.168.1.50/24 dev eth0',
               task: `Assegna in modo statico l'indirizzo 192.168.1.50 con maschera /24 all'interfaccia eth0.`,
+              code: `echo 'sudo ip addr add 192.168.1.50/24 dev eth0'
+ip addr show lo | grep inet
+echo 'Static IPs do not change on reboot'`,
             },
             {
               english: 'Dynamic IP',
@@ -2137,6 +2667,9 @@ export default {
               difficulty: 'intermediate',
               command: 'sudo dhclient -v eth0',
               task: `Richiedi un IP dinamico al server DHCP per l'interfaccia eth0 mostrando i dettagli della negoziazione.`,
+              code: `echo 'sudo dhclient -v eth0'
+echo 'DHCP assigns IPs automatically'
+cat /var/lib/dhcp/dhclient.leases 2>/dev/null | head -5 || echo 'No DHCP leases found'`,
             },
             {
               english: 'Network Manager',
@@ -2149,6 +2682,9 @@ export default {
               difficulty: 'intermediate',
               command: 'nmcli device status',
               task: 'Consulta lo stato di tutte le interfacce gestite da NetworkManager e le connessioni attualmente attive.',
+              code: `nmcli device status 2>/dev/null || echo 'NetworkManager not installed'
+nmcli connection show 2>/dev/null | head -5
+echo 'nmcli manages network connections'`,
             },
             {
               english: 'Wireless',
@@ -2161,6 +2697,9 @@ export default {
               difficulty: 'beginner',
               command: 'nmcli device wifi connect MyHomeWiFi password segret123',
               task: `Connetti l'adattatore wireless alla rete Wi-Fi chiamata MyHomeWiFi usando la passphrase indicata.`,
+              code: `nmcli device wifi list 2>/dev/null | head -5 || echo 'No WiFi device'
+echo 'Connect: nmcli device wifi connect SSID password PASS'
+iw dev 2>/dev/null | head -5 || echo 'iw not installed'`,
             },
             {
               english: 'Ethernet',
@@ -2174,6 +2713,9 @@ export default {
               note: 'Standard IEEE 802.3 per reti cablate; termine universale, nessuna traduzione italiana.',
               command: 'sudo ethtool eth0',
               task: 'Ispeziona velocita, duplex e stato del link della scheda ethernet eth0 per diagnosticare problemi fisici.',
+              code: `ip link show | grep -E 'eth|enp' | head -3
+echo 'Check speed: sudo ethtool eth0'
+echo 'Ethernet = wired network connection'`,
             },
             {
               english: 'Localhost',
@@ -2187,6 +2729,9 @@ export default {
               note: `Nome convenzionale per l'interfaccia di loopback; nessuna traduzione italiana.`,
               command: 'ping -c 4 127.0.0.1',
               task: `Verifica che lo stack TCP/IP locale risponda inviando quattro pacchetti all'indirizzo di loopback.`,
+              code: `ping -c 2 127.0.0.1
+grep localhost /etc/hosts
+echo '127.0.0.1 always refers to this machine'`,
             },
             {
               english: 'Broadcast',
@@ -2197,6 +2742,9 @@ export default {
                 "ARP requests use the broadcast address to discover which device owns a particular IP on the local network. = Le richieste ARP usano l'indirizzo broadcast per scoprire quale dispositivo possiede un particolare IP sulla rete locale.",
               context: 'config',
               difficulty: 'advanced',
+              code: `ip addr show | grep 'brd' | head -2
+echo 'Broadcast address reaches all hosts on subnet'
+echo '192.168.1.255 = broadcast for 192.168.1.0/24'`,
             },
           ],
         },
@@ -2217,6 +2765,9 @@ export default {
               note: 'Secure Shell: protocollo per accesso remoto cifrato (RFC 4251).',
               command: 'ssh -p 2222 admin@server.example.com',
               task: 'Apri una sessione SSH come utente admin verso server.example.com utilizzando la porta non standard 2222.',
+              code: `echo 'ssh user@server.example.com'
+echo 'ssh -p 2222 admin@10.0.0.5'
+ss -tlnp 2>/dev/null | grep ':22' || echo 'SSHD not running locally'`,
             },
             {
               english: 'Key',
@@ -2229,6 +2780,9 @@ export default {
               difficulty: 'intermediate',
               command: `ssh-keygen -t ed25519 -C 'admin@laptop'`,
               task: 'Genera una nuova coppia di chiavi SSH di tipo ed25519 e marcala con un commento identificativo.',
+              code: `ls ~/.ssh/id_* 2>/dev/null || echo 'No SSH keys found'
+echo 'Generate: ssh-keygen -t ed25519'
+echo 'Keys are stored in ~/.ssh/'`,
             },
             {
               english: 'Public Key',
@@ -2241,6 +2795,9 @@ export default {
               difficulty: 'advanced',
               command: 'ssh-copy-id -i ~/.ssh/id_ed25519.pub user@server.example.com',
               task: 'Installa la chiave pubblica nel file authorized_keys del server remoto per abilitare il login senza password.',
+              code: `cat ~/.ssh/id_ed25519.pub 2>/dev/null || echo 'No public key found'
+echo 'Copy to server: ssh-copy-id user@server'
+echo 'Public key is safe to share'`,
             },
             {
               english: 'Private Key',
@@ -2253,6 +2810,9 @@ export default {
               difficulty: 'advanced',
               command: 'chmod 600 ~/.ssh/id_ed25519',
               task: 'Restringi i permessi della chiave privata in modo che solo il proprietario possa leggerla, requisito di OpenSSH.',
+              code: `ls -l ~/.ssh/id_ed25519 2>/dev/null || echo 'No private key'
+echo 'Must be chmod 600 (owner read/write only)'
+echo 'NEVER share your private key'`,
             },
             {
               english: 'Passphrase',
@@ -2265,6 +2825,9 @@ export default {
               difficulty: 'intermediate',
               command: 'ssh-keygen -p -f ~/.ssh/id_ed25519',
               task: 'Cambia o aggiungi la passphrase a una chiave SSH esistente senza rigenerare la coppia di chiavi.',
+              code: `echo 'Add passphrase: ssh-keygen -p -f ~/.ssh/id_ed25519'
+echo 'Passphrase encrypts the private key on disk'
+echo 'Use ssh-agent to avoid retyping it'`,
             },
             {
               english: 'SCP',
@@ -2277,6 +2840,9 @@ export default {
               difficulty: 'intermediate',
               command: 'scp -P 22 ./backup.tar.gz user@server.example.com:/var/backups/',
               task: 'Trasferisci il file backup.tar.gz nella directory /var/backups del server remoto tramite canale cifrato.',
+              code: `echo 'Upload:   scp file.tar.gz user@server:/backups/'
+echo 'Download: scp user@server:/var/log/app.log ./'
+echo 'Recursive: scp -r ./project user@server:/opt/'`,
             },
             {
               english: 'Remote',
@@ -2287,6 +2853,9 @@ export default {
                 "Most cloud infrastructure is managed entirely through remote SSH sessions rather than physical console access. = La maggior parte dell'infrastruttura cloud viene gestita interamente tramite sessioni SSH remote anziché accesso fisico alla console.",
               context: 'remote',
               difficulty: 'beginner',
+              code: `echo 'Run command on remote server:'
+echo 'ssh user@server "df -h && uptime"'
+echo 'This executes the command and returns output'`,
             },
             {
               english: 'Connection',
@@ -2297,6 +2866,9 @@ export default {
                 'An encrypted connection prevents anyone on the same network from reading the data you exchange with the server. = Una connessione crittografata impedisce a chiunque sulla stessa rete di leggere i dati scambiati con il server.',
               context: 'remote',
               difficulty: 'beginner',
+              code: `ss -s
+ss -tnp 2>/dev/null | head -5
+echo 'ESTAB=active, LISTEN=waiting for connections'`,
             },
             {
               english: 'Host',
@@ -2307,6 +2879,9 @@ export default {
                 'The SSH config file lets you define an alias for each host so you can connect with a short name instead of a full IP. = Il file di configurazione SSH permette di definire un alias per ogni host così puoi connetterti con un nome breve invece di un IP completo.',
               context: 'remote',
               difficulty: 'intermediate',
+              code: `hostname
+cat /etc/hosts | head -5
+echo 'A host is any device on the network'`,
             },
             {
               english: 'Tunnel',
@@ -2319,6 +2894,9 @@ export default {
               difficulty: 'expert',
               command: 'ssh -L 5432:localhost:5432 user@db.example.com',
               task: 'Apri un tunnel SSH che inoltra la porta locale 5432 al database PostgreSQL del server remoto.',
+              code: `echo 'Local tunnel (forward local port to remote):'
+echo 'ssh -L 8080:localhost:80 user@server'
+echo 'Then access http://localhost:8080 locally'`,
             },
           ],
         },
@@ -2338,6 +2916,9 @@ export default {
               difficulty: 'beginner',
               command: 'ping -c 4 google.com',
               task: 'Verifica la raggiungibilita del server google.com inviando 4 pacchetti ICMP e attendendo le risposte.',
+              code: `ping -c 3 127.0.0.1
+echo "Packets sent: 3"
+echo 'ping tests if a host is reachable'`,
             },
             {
               english: 'Trace',
@@ -2351,6 +2932,9 @@ export default {
               note: `Termine tecnico spesso lasciato in inglese; in italiano talvolta 'tracciare'.`,
               command: 'traceroute 8.8.8.8',
               task: 'Traccia il percorso dei pacchetti hop per hop fino a 8.8.8.8 per individuare dove si introduce la latenza.',
+              code: `echo 'traceroute shows the path to a host:'
+traceroute -m 5 127.0.0.1 2>/dev/null || echo 'Install: apt install traceroute'
+echo 'Each hop is a router along the way'`,
             },
             {
               english: 'Lookup',
@@ -2363,6 +2947,9 @@ export default {
               difficulty: 'intermediate',
               command: 'nslookup example.com 8.8.8.8',
               task: 'Interroga il server DNS 8.8.8.8 per ottenere i record associati al dominio example.com.',
+              code: `nslookup localhost 2>/dev/null || echo 'nslookup not installed'
+echo 'Queries DNS for domain name resolution'
+getent hosts localhost`,
             },
             {
               english: 'Listen',
@@ -2375,6 +2962,9 @@ export default {
               difficulty: 'advanced',
               command: 'sudo ss -tlnp',
               task: 'Elenca tutte le porte TCP in ascolto mostrando il PID e il nome del processo che le ha aperte.',
+              code: `ss -tlnp 2>/dev/null | head -8
+echo 'LISTEN state = port is open and waiting'
+echo '-t=TCP -l=listening -n=numeric -p=process'`,
             },
             {
               english: 'Scan',
@@ -2387,6 +2977,9 @@ export default {
               difficulty: 'expert',
               command: 'nmap -sV -p 1-1000 192.168.1.10',
               task: `Scansiona le prime 1000 porte dell'host 192.168.1.10 cercando di identificare versione e tipo di servizio.`,
+              code: `echo 'Scan open ports on a host:'
+echo 'nmap -sV -p 1-1000 192.168.1.10'
+ss -tlnp 2>/dev/null | wc -l && echo 'listening ports on this host'`,
             },
             {
               english: 'Traffic',
@@ -2399,6 +2992,9 @@ export default {
               difficulty: 'intermediate',
               command: 'sudo iftop -i eth0 -n',
               task: `Osserva il traffico di rete in tempo reale sull'interfaccia eth0 senza risolvere gli host in nomi DNS.`,
+              code: `ip -s link show lo
+echo 'RX = received, TX = transmitted'
+echo 'Monitor live: sudo iftop -i eth0'`,
             },
             {
               english: 'Capture',
@@ -2411,6 +3007,9 @@ export default {
               difficulty: 'expert',
               command: 'sudo tcpdump -i eth0 -w capture.pcap host 10.0.0.5',
               task: `Cattura su file capture.pcap tutto il traffico da e verso l'host 10.0.0.5 per un'analisi successiva con Wireshark.`,
+              code: `echo 'sudo tcpdump -i eth0 -c 10 -w /tmp/capture.pcap'
+echo 'Read capture: tcpdump -r /tmp/capture.pcap'
+echo 'Analyze in Wireshark for GUI inspection'`,
             },
             {
               english: 'Unreachable',
@@ -2421,6 +3020,9 @@ export default {
                 'When the monitoring dashboard shows "destination host unreachable," it means the target server is down or the route is broken. = Quando la dashboard di monitoraggio mostra "host di destinazione irraggiungibile," significa che il server di destinazione è giù o la rotta è interrotta.',
               context: 'diag',
               difficulty: 'intermediate',
+              code: `ping -c 1 -W 2 192.0.2.1 2>&1 | tail -2
+echo 'Unreachable = no route to host or host is down'
+echo 'Check: ip route, DNS, firewall rules'`,
             },
             {
               english: 'Timeout',
@@ -2431,6 +3033,9 @@ export default {
                 'If the API call returns a timeout error, the backend service may be overloaded or the network path is congested. = Se la chiamata API restituisce un errore di timeout, il servizio backend potrebbe essere sovraccarico o il percorso di rete congestionato.',
               context: 'diag',
               difficulty: 'beginner',
+              code: `timeout 2 ping -c 1 192.0.2.1 2>&1 | tail -1
+echo "Exit code: $?"
+echo 'Timeout means no response within time limit'`,
             },
             {
               english: 'Socket',
@@ -2443,6 +3048,9 @@ export default {
               difficulty: 'advanced',
               command: 'ss -tunap',
               task: 'Elenca tutti i socket TCP e UDP, sia in ascolto che connessi, mostrando il processo proprietario di ciascuno.',
+              code: `ss -tunap 2>/dev/null | head -8
+echo 'Socket = IP:port endpoint for communication'
+ss -s`,
             },
           ],
         },
@@ -2473,6 +3081,9 @@ export default {
               note: 'Process IDentifier: numero unico assegnato dal kernel a ogni processo.',
               command: 'pgrep -fa nginx',
               task: 'Trova il PID e la riga di comando completa di ogni processo nginx in esecuzione sul sistema.',
+              code: `echo "Shell PID: $$"
+ps -p $$ -o pid,comm
+pgrep -a bash | head -3`,
             },
             {
               english: 'Top',
@@ -2486,6 +3097,9 @@ export default {
               note: 'Comando standard per monitorare processi in tempo reale; nessuna traduzione italiana.',
               command: 'top -o %CPU',
               task: 'Avvia top ordinando i processi per utilizzo CPU decrescente, cosi i piu pesanti compaiono in cima.',
+              code: `ps aux --sort=-%cpu | head -6
+echo 'Interactive: top or htop'
+echo 'top -bn1 for single snapshot'`,
             },
             {
               english: 'Kill',
@@ -2498,6 +3112,9 @@ export default {
               difficulty: 'beginner',
               command: 'kill -9 1234',
               task: 'Termina forzatamente il processo con PID 1234 inviandogli il segnale SIGKILL non intercettabile.',
+              code: `sleep 300 &
+SLEEP_PID=$!
+kill $SLEEP_PID && echo "Killed PID $SLEEP_PID"`,
             },
             {
               english: 'Signal',
@@ -2510,6 +3127,9 @@ export default {
               difficulty: 'intermediate',
               command: 'kill -SIGTERM 1234',
               task: 'Invia il segnale SIGTERM al processo 1234 chiedendogli di chiudersi in modo pulito liberando le risorse.',
+              code: `kill -l | head -3
+echo 'SIGTERM (15) = graceful shutdown'
+echo 'SIGKILL (9) = forced termination'`,
             },
             {
               english: 'Priority',
@@ -2522,6 +3142,9 @@ export default {
               difficulty: 'intermediate',
               command: 'sudo renice -n -5 -p 1234',
               task: 'Alza la priorita di scheduling del processo 1234 portando il suo valore nice a -5.',
+              code: `ps -eo pid,ni,comm --sort=-ni | head -5
+echo 'Nice range: -20 (highest) to 19 (lowest)'
+echo 'sudo renice -n -5 -p PID'`,
             },
             {
               english: 'Background',
@@ -2534,6 +3157,9 @@ export default {
               difficulty: 'intermediate',
               command: './long_build.sh &',
               task: 'Lancia lo script long_build.sh in background per liberare subito il terminale per altri comandi.',
+              code: `sleep 10 &
+echo "Background PID: $!"
+jobs -l`,
             },
             {
               english: 'Foreground',
@@ -2546,6 +3172,9 @@ export default {
               difficulty: 'intermediate',
               command: 'fg %1',
               task: 'Riporta in primo piano il job numero 1 sospeso o in background per interagirvi nuovamente.',
+              code: `sleep 10 &
+jobs
+echo 'Bring to foreground: fg %1'`,
             },
             {
               english: 'Job',
@@ -2558,6 +3187,9 @@ export default {
               difficulty: 'intermediate',
               command: 'jobs -l',
               task: 'Elenca tutti i job attivi nella shell corrente mostrando anche il PID di ciascuno.',
+              code: `sleep 30 &
+sleep 60 &
+jobs -l`,
             },
             {
               english: 'Nice',
@@ -2570,6 +3202,9 @@ export default {
               note: `Comando POSIX standard; nessuna traduzione italiana. Imposta la priorita' di scheduling.`,
               command: 'nice -n 19 make -j8',
               task: 'Avvia una compilazione parallela a priorita minima cosi cede CPU ai carichi interattivi quando ce ne bisogno.',
+              code: `nice -n 10 sleep 5 &
+ps -o pid,ni,comm -p $!
+echo 'nice lowers process priority'`,
             },
             {
               english: 'Zombie',
@@ -2582,6 +3217,9 @@ export default {
               difficulty: 'advanced',
               command: `ps -eo pid,ppid,stat,comm | awk '$3 ~ /^Z/'`,
               task: 'Individua tutti i processi zombie ancora presenti nella tabella dei processi insieme al loro processo padre.',
+              code: `ps -eo pid,ppid,stat,comm | head -5
+ps -eo stat | grep -c '^Z' || echo '0 zombies'
+echo 'Zombie = finished but parent has not collected exit status'`,
             },
           ],
         },
@@ -2601,6 +3239,9 @@ export default {
               difficulty: 'beginner',
               command: 'sudo systemctl restart nginx',
               task: 'Riavvia il servizio nginx per applicare le modifiche alla configurazione appena salvate.',
+              code: `systemctl list-units --type=service --state=running | head -8
+echo 'Services run in the background (daemons)'
+systemctl --no-pager status cron 2>/dev/null | head -3`,
             },
             {
               english: 'Daemon',
@@ -2613,6 +3254,9 @@ export default {
               difficulty: 'intermediate',
               command: 'systemctl list-units --type=service --state=running',
               task: 'Elenca tutti i demoni gestiti da systemd attualmente in esecuzione sulla macchina.',
+              code: `systemctl list-units --type=service --state=running | head -5
+echo 'Daemons run continuously in the background'
+pgrep -a systemd | head -2`,
             },
             {
               english: 'Start',
@@ -2625,6 +3269,9 @@ export default {
               difficulty: 'beginner',
               command: 'sudo systemctl start sshd',
               task: 'Avvia immediatamente il demone SSH senza attendere il prossimo riavvio del sistema.',
+              code: `echo 'sudo systemctl start sshd'
+systemctl is-active cron 2>/dev/null
+echo 'start launches a stopped service'`,
             },
             {
               english: 'Stop',
@@ -2637,6 +3284,9 @@ export default {
               difficulty: 'beginner',
               command: 'sudo systemctl stop postgresql',
               task: 'Ferma il servizio PostgreSQL prima di eseguire un upgrade del motore del database.',
+              code: `echo 'sudo systemctl stop postgresql'
+systemctl is-active cron 2>/dev/null
+echo 'stop halts a running service'`,
             },
             {
               english: 'Restart',
@@ -2649,6 +3299,9 @@ export default {
               difficulty: 'beginner',
               command: 'sudo systemctl restart nginx',
               task: 'Forza il riavvio completo di nginx interrompendo le connessioni attive e ripartendo da zero.',
+              code: `echo 'sudo systemctl restart nginx'
+echo 'restart = stop + start'
+echo 'Use after changing configuration files'`,
             },
             {
               english: 'Enable',
@@ -2661,6 +3314,9 @@ export default {
               difficulty: 'intermediate',
               command: 'sudo systemctl enable --now sshd',
               task: `Abilita il demone SSH all'avvio automatico al boot e attivalo immediatamente nella sessione corrente.`,
+              code: `echo 'sudo systemctl enable sshd'
+systemctl is-enabled cron 2>/dev/null
+echo 'enable = start automatically on boot'`,
             },
             {
               english: 'Disable',
@@ -2673,6 +3329,9 @@ export default {
               difficulty: 'intermediate',
               command: 'sudo systemctl disable --now bluetooth',
               task: 'Disattiva il servizio bluetooth ora e impedisci che venga avviato al prossimo boot del sistema.',
+              code: `echo 'sudo systemctl disable bluetooth'
+echo 'disable = do not start on boot'
+echo 'The service can still be started manually'`,
             },
             {
               english: 'Status',
@@ -2685,6 +3344,9 @@ export default {
               difficulty: 'beginner',
               command: 'systemctl status nginx',
               task: 'Verifica lo stato corrente di nginx mostrando se e attivo, il PID principale e le ultime righe di log.',
+              code: `systemctl --no-pager status cron 2>/dev/null | head -5
+echo 'Shows: active/inactive, PID, memory, recent logs'
+systemctl is-active cron 2>/dev/null`,
             },
             {
               english: 'Reload',
@@ -2697,6 +3359,9 @@ export default {
               difficulty: 'intermediate',
               command: 'sudo systemctl reload nginx',
               task: 'Ricarica la configurazione di nginx senza interrompere le connessioni client gia stabilite.',
+              code: `echo 'sudo systemctl reload nginx'
+echo 'reload = re-read config without stopping'
+echo 'Faster than restart, no downtime'`,
             },
             {
               english: 'Log',
@@ -2709,6 +3374,9 @@ export default {
               difficulty: 'intermediate',
               command: `journalctl -u nginx -f --since '10 min ago'`,
               task: 'Segui in tempo reale gli ultimi 10 minuti di log generati dal servizio nginx tramite journalctl.',
+              code: `journalctl --no-pager -u cron -n 5 2>/dev/null
+echo 'journalctl reads systemd journal logs'
+echo 'Use -f to follow in real time'`,
             },
           ],
         },
@@ -2726,6 +3394,9 @@ export default {
                 "The operations team likes to schedule maintenance tasks during off-peak hours to minimize user impact. = Il team operativo preferisce pianificare le attività di manutenzione nelle ore di basso traffico per minimizzare l'impatto sugli utenti.",
               context: 'sched',
               difficulty: 'beginner',
+              code: `crontab -l 2>/dev/null || echo 'No crontab set'
+echo 'Schedule format: min hour day month weekday command'
+echo 'Example: 0 2 * * * /opt/backup.sh'`,
             },
             {
               english: 'Cron',
@@ -2738,6 +3409,9 @@ export default {
               difficulty: 'intermediate',
               command: 'systemctl status cron',
               task: 'Controlla se il demone cron e attivo e sta accettando le pianificazioni configurate dagli utenti.',
+              code: `systemctl is-active cron 2>/dev/null || echo 'cron not running'
+ls /etc/cron.d/ 2>/dev/null | head -5
+echo 'Cron runs scheduled tasks automatically'`,
             },
             {
               english: 'Crontab',
@@ -2750,6 +3424,9 @@ export default {
               difficulty: 'intermediate',
               command: 'crontab -e',
               task: `Apri nell'editor predefinito la crontab personale dell'utente corrente per aggiungere o modificare i job pianificati.`,
+              code: `crontab -l 2>/dev/null || echo 'No crontab for current user'
+echo 'Edit: crontab -e'
+echo 'Format: min hour day month weekday command'`,
             },
             {
               english: 'Minute',
@@ -2760,6 +3437,9 @@ export default {
                 "Setting the minute field to */5 in a cron expression runs the task every five minutes throughout the day. = Impostare il campo minuto a */5 in un'espressione cron esegue l'attività ogni cinque minuti durante tutta la giornata.",
               context: 'sched',
               difficulty: 'beginner',
+              code: `echo '*/5 * * * * /opt/check_health.sh'
+echo 'Runs every 5 minutes'
+echo 'First field = minute (0-59)'`,
             },
             {
               english: 'Hour',
@@ -2770,6 +3450,9 @@ export default {
                 'The health check script runs every hour to verify that all microservices are responding correctly. = Lo script di verifica dello stato viene eseguito ogni ora per verificare che tutti i microservizi rispondano correttamente.',
               context: 'sched',
               difficulty: 'beginner',
+              code: `echo '0 */2 * * * /opt/sync_data.sh'
+echo 'Runs every 2 hours at minute 0'
+echo 'Second field = hour (0-23)'`,
             },
             {
               english: 'Daily',
@@ -2780,6 +3463,9 @@ export default {
                 'Using the @daily shortcut in the crontab is cleaner than writing out the five-field time specification. = Usare la scorciatoia @daily nel crontab è più pulito che scrivere la specifica temporale a cinque campi.',
               context: 'sched',
               difficulty: 'intermediate',
+              code: `echo '0 3 * * * /opt/nightly_backup.sh'
+echo 'Runs daily at 03:00'
+ls /etc/cron.daily/ 2>/dev/null | head -5`,
             },
             {
               english: 'At',
@@ -2791,6 +3477,9 @@ export default {
               difficulty: 'intermediate',
               command: `echo 'sudo reboot' | at 03:00 tomorrow`,
               task: 'Pianifica un riavvio one-shot alle 03:00 di domani notte usando il comando at per non disturbare gli utenti.',
+              code: `echo 'echo "maintenance done" | at 03:00 tomorrow'
+atq 2>/dev/null || echo 'at not installed'
+echo 'at runs a one-time scheduled task'`,
             },
             {
               english: 'Reboot',
@@ -2803,6 +3492,9 @@ export default {
               difficulty: 'intermediate',
               command: 'sudo systemctl reboot',
               task: 'Riavvia il sistema in modo pulito chiudendo prima tutti i servizi gestiti da systemd.',
+              code: `uptime
+who -b
+echo 'Reboot with: sudo systemctl reboot'`,
             },
             {
               english: 'Interval',
@@ -2813,6 +3505,9 @@ export default {
                 "Reducing the monitoring interval from five minutes to thirty seconds catches failures faster. = Ridurre l'intervallo di monitoraggio da cinque minuti a trenta secondi rileva i guasti più velocemente.",
               context: 'sched',
               difficulty: 'intermediate',
+              code: `echo '*/10 * * * * /opt/monitor.sh'
+echo 'Runs every 10 minutes'
+echo '*/1 = every minute, */30 = every 30 minutes'`,
             },
             {
               english: 'Task',
@@ -2823,6 +3518,9 @@ export default {
                 'Automating repetitive tasks with a scheduled job saves the team hours of manual work each week. = Automatizzare le attività ripetitive con un job pianificato fa risparmiare al team ore di lavoro manuale ogni settimana.',
               context: 'sched',
               difficulty: 'beginner',
+              code: `echo '0 2 * * 0 /opt/weekly_report.sh >> /var/log/report.log 2>&1'
+crontab -l 2>/dev/null || echo 'No tasks scheduled'
+echo 'Redirect output to capture task results'`,
             },
           ],
         },
@@ -2842,6 +3540,9 @@ export default {
               difficulty: 'beginner',
               command: 'free -h',
               task: `Mostra l'utilizzo di memoria RAM e swap in formato leggibile dall'uomo con unita Mi/Gi.`,
+              code: `free -h
+echo "Available: $(free -h | awk '/Mem:/{print $7}')"
+head -3 /proc/meminfo`,
             },
             {
               english: 'Load',
@@ -2854,6 +3555,9 @@ export default {
               difficulty: 'intermediate',
               command: 'uptime',
               task: 'Leggi il load average a 1, 5 e 15 minuti per capire se il sistema e sotto pressione sostenuta.',
+              code: `uptime
+cat /proc/loadavg
+echo '3 numbers = 1min, 5min, 15min averages'`,
             },
             {
               english: 'Uptime',
@@ -2866,6 +3570,9 @@ export default {
               difficulty: 'beginner',
               command: 'uptime -p',
               task: `Stampa da quanto tempo il sistema e acceso in formato discorsivo, ad esempio 'up 3 weeks, 2 days'.`,
+              code: `uptime -p
+uptime -s
+echo 'Shows how long the system has been running'`,
             },
             {
               english: 'CPU Usage',
@@ -2878,6 +3585,9 @@ export default {
               difficulty: 'beginner',
               command: 'top -o %CPU',
               task: 'Apri top ordinato per utilizzo CPU per identificare al volo il worker che divora cicli durante un picco di latenza.',
+              code: `ps aux --sort=-%cpu | head -5
+nproc
+echo "CPU cores: $(nproc)"`,
             },
             {
               english: 'Stats',
@@ -2890,6 +3600,9 @@ export default {
               difficulty: 'expert',
               command: 'vmstat 1 10',
               task: 'Campiona ogni secondo per 10 volte le statistiche di CPU, memoria, swap e I/O del sistema.',
+              code: `vmstat 1 3
+echo 'r=runnable, b=blocked, si/so=swap in/out'
+echo 'Use vmstat to spot CPU/memory bottlenecks'`,
             },
             {
               english: 'Watch',
@@ -2902,6 +3615,9 @@ export default {
               note: 'Comando standard; nessuna traduzione italiana. Esegue un comando periodicamente.',
               command: 'watch -n2 df -h',
               task: `Aggiorna ogni 2 secondi l'output di df -h per monitorare in tempo reale un filesystem che si sta riempiendo.`,
+              code: `echo 'watch -n 2 df -h'
+df -h | head -5
+echo 'watch repeats a command every N seconds'`,
             },
             {
               english: 'Real-time',
@@ -2914,6 +3630,10 @@ export default {
               difficulty: 'intermediate',
               command: 'htop',
               task: 'Avvia htop per esplorare in tempo reale processi e thread con interfaccia interattiva a colori.',
+              code: `echo 'Real-time monitoring tools:'
+echo '  htop   - interactive process viewer'
+echo '  iotop  - disk I/O monitor'
+echo '  iftop  - network traffic monitor'`,
             },
             {
               english: 'Resource',
@@ -2924,6 +3644,9 @@ export default {
                 "Before scaling up hardware, identify which resource is the actual constraint: CPU, memory, or disk I/O. = Prima di potenziare l'hardware, identifica quale risorsa è il vincolo reale: CPU, memoria o I/O del disco.",
               context: 'monitor',
               difficulty: 'advanced',
+              code: `free -h | head -2
+df -h / | tail -1
+echo "CPU cores: $(nproc), Load: $(cat /proc/loadavg | cut -d' ' -f1-3)"`,
             },
             {
               english: 'Bottleneck',
@@ -2934,6 +3657,9 @@ export default {
                 "Profiling the application revealed that disk I/O was the bottleneck, not CPU as initially assumed. = Il profiling dell'applicazione ha rivelato che l'I/O del disco era il collo di bottiglia, non la CPU come inizialmente ipotizzato.",
               context: 'monitor',
               difficulty: 'expert',
+              code: `echo 'Check CPU:' && cat /proc/loadavg
+echo 'Check RAM:' && free -h | grep Mem
+echo 'Check Disk:' && df -h / | tail -1`,
             },
             {
               english: 'Limit',
@@ -2946,6 +3672,9 @@ export default {
               difficulty: 'advanced',
               command: 'ulimit -n 65536',
               task: 'Alza a 65536 il numero massimo di file descriptor apribili dai processi della shell corrente.',
+              code: `ulimit -a 2>/dev/null | head -5
+ulimit -n
+echo 'ulimit -n shows max open files per process'`,
             },
           ],
         },
@@ -2973,6 +3702,10 @@ export default {
                 "Before compiling kernel modules, check the system architecture and kernel version with uname. = Prima di compilare moduli del kernel, controlla l'architettura di sistema e la versione del kernel con uname.",
               context: 'hardware',
               difficulty: 'beginner',
+              code: `HOSTNAME=$(hostname)
+UPTIME=$(uptime -p)
+echo "Host: $HOSTNAME"
+echo "Uptime: $UPTIME"`,
             },
             {
               english: 'Architecture',
@@ -2985,6 +3718,9 @@ export default {
               difficulty: 'intermediate',
               command: 'uname -m',
               task: `Stampa l'architettura della macchina (es. x86_64, aarch64) per scegliere il pacchetto giusto da scaricare.`,
+              code: `ARCH=$(uname -m)
+BITS=$(getconf LONG_BIT)
+echo "Architecture: $ARCH ($BITS-bit)"`,
             },
             {
               english: 'CPU',
@@ -2997,6 +3733,10 @@ export default {
               difficulty: 'beginner',
               command: 'lscpu',
               task: `Mostra il numero di core, i thread per core e il modello della CPU per dimensionare i worker dell'applicazione.`,
+              code: `CORES=$(nproc)
+MODEL=$(lscpu | grep 'Model name' | cut -d: -f2 | xargs)
+echo "CPU: $MODEL"
+echo "Cores: $CORES"`,
             },
             {
               english: 'Block Device',
@@ -3009,6 +3749,9 @@ export default {
               difficulty: 'intermediate',
               command: 'lsblk -f',
               task: 'Elenca tutti i dispositivi a blocchi con il loro tipo di filesystem, UUID e mount point prima di partizionare un nuovo disco.',
+              code: `lsblk -f -o NAME,FSTYPE,SIZE,MOUNTPOINT
+echo '---'
+ls /dev/sd* 2>/dev/null || echo 'No SCSI disks found'`,
             },
             {
               english: 'PCI',
@@ -3021,6 +3764,9 @@ export default {
               difficulty: 'advanced',
               command: 'lspci -nnk',
               task: 'Elenca tutti i dispositivi PCI con i loro vendor/device ID e il driver del kernel attualmente in uso.',
+              code: `lspci -nnk | head -20
+echo '---'
+lspci | grep -i vga`,
             },
             {
               english: 'USB',
@@ -3034,6 +3780,9 @@ export default {
               note: 'Universal Serial Bus: standard di interfaccia per periferiche.',
               command: 'lsusb -v',
               task: 'Elenca i dispositivi USB collegati con dettagli verbosi per diagnosticare periferiche non riconosciute.',
+              code: `DEVCOUNT=$(lsusb | wc -l)
+lsusb
+echo "Total USB devices: $DEVCOUNT"`,
             },
             {
               english: 'Hardware',
@@ -3046,6 +3795,9 @@ export default {
               difficulty: 'advanced',
               command: 'sudo lshw -short',
               task: `Mostra un riepilogo compatto dell'hardware (CPU, RAM, dischi, rete) prima di ordinare ricambi compatibili.`,
+              code: `sudo lshw -short -class memory
+echo '---'
+sudo lshw -short -class processor`,
             },
             {
               english: 'Release',
@@ -3058,6 +3810,10 @@ export default {
               difficulty: 'intermediate',
               command: 'cat /etc/os-release',
               task: 'Visualizza nome, versione e ID della distribuzione per script di automazione che devono scegliere il package manager corretto.',
+              code: `source /etc/os-release
+echo "Name: $NAME"
+echo "Version: $VERSION"
+echo "ID: $ID"`,
             },
             {
               english: 'Distribution',
@@ -3070,6 +3826,10 @@ export default {
               difficulty: 'beginner',
               command: 'lsb_release -a',
               task: 'Mostra distribuzione, release e codename in modo portabile tra distribuzioni che supportano LSB.',
+              code: `DISTRO=$(lsb_release -si)
+RELEASE=$(lsb_release -sr)
+echo "Running $DISTRO $RELEASE"
+lsb_release -a 2>/dev/null`,
             },
             {
               english: 'Bios',
@@ -3082,6 +3842,9 @@ export default {
               difficulty: 'expert',
               command: 'sudo dmidecode -t bios',
               task: `Stampa vendor, versione e data del BIOS dalle tabelle DMI per verificare l'applicazione di patch firmware.`,
+              code: `sudo dmidecode -t bios | grep -E 'Vendor|Version|Date'
+echo '---'
+sudo dmidecode -t system | grep 'Product Name'`,
             },
           ],
         },
@@ -3101,6 +3864,9 @@ export default {
               difficulty: 'beginner',
               command: 'sudo fdisk -l',
               task: 'Elenca tutti i dischi presenti nel sistema con le rispettive tabelle delle partizioni e dimensioni.',
+              code: `sudo fdisk -l /dev/sda 2>/dev/null | head -10
+echo '---'
+lsblk -d -o NAME,SIZE,TYPE`,
             },
             {
               english: 'Partition',
@@ -3113,6 +3879,9 @@ export default {
               difficulty: 'advanced',
               command: 'sudo parted -l',
               task: 'Mostra lo schema di partizionamento (GPT/MBR) di ciascun disco prima di creare o ridimensionare una partizione.',
+              code: `sudo parted -l 2>/dev/null | head -15
+echo '---'
+cat /proc/partitions`,
             },
             {
               english: 'Mount',
@@ -3125,6 +3894,10 @@ export default {
               difficulty: 'intermediate',
               command: 'sudo mount /dev/sdb1 /mnt/data',
               task: 'Monta una partizione esistente su /mnt/data per renderla accessibile come parte del filesystem.',
+              code: `sudo mkdir -p /mnt/data
+sudo mount /dev/sdb1 /mnt/data
+mount | grep /mnt/data
+echo 'Partition mounted successfully'`,
             },
             {
               english: 'Unmount',
@@ -3137,6 +3910,9 @@ export default {
               difficulty: 'intermediate',
               command: 'sudo umount /mnt/data',
               task: 'Smonta in modo pulito la partizione montata su /mnt/data prima di scollegare il dispositivo fisico.',
+              code: `sync
+sudo umount /mnt/data
+mount | grep /mnt/data || echo '/mnt/data unmounted'`,
             },
             {
               english: 'Volume',
@@ -3149,6 +3925,9 @@ export default {
               difficulty: 'advanced',
               command: 'sudo lvs',
               task: 'Elenca tutti i volumi logici LVM con il loro volume group e la dimensione attuale.',
+              code: `sudo lvs --noheadings -o lv_name,vg_name,lv_size
+echo '---'
+sudo vgs --noheadings -o vg_name,vg_size,vg_free`,
             },
             {
               english: 'Format',
@@ -3161,6 +3940,9 @@ export default {
               difficulty: 'advanced',
               command: 'sudo mkfs.ext4 -L data /dev/sdb1',
               task: `Formatta la partizione /dev/sdb1 con filesystem ext4 e assegna l'etichetta 'data' per identificarla via UUID/LABEL.`,
+              code: `sudo mkfs.ext4 -L data /dev/sdb1
+sudo tune2fs -l /dev/sdb1 | grep 'Filesystem volume name'
+echo 'Formatting complete'`,
             },
             {
               english: 'Space',
@@ -3173,6 +3955,10 @@ export default {
               difficulty: 'beginner',
               command: 'df -h',
               task: 'Mostra lo spazio libero e usato su tutti i filesystem montati in formato leggibile (GB/MB).',
+              code: `df -h / /home /tmp 2>/dev/null
+echo '---'
+ROOT_USED=$(df -h / | awk 'NR==2{print $5}')
+echo "Root partition usage: $ROOT_USED"`,
             },
             {
               english: 'Disk Usage',
@@ -3184,6 +3970,9 @@ export default {
               difficulty: 'intermediate',
               command: 'du -sh /var/* | sort -h',
               task: `Calcola l'occupazione di ciascuna sottodirectory di /var ordinata dalla più piccola alla più grande per individuare cosa riempie il disco.`,
+              code: `du -sh /var/* 2>/dev/null | sort -rh | head -5
+echo '---'
+echo "Total /var: $(du -sh /var 2>/dev/null | cut -f1)"`,
             },
             {
               english: 'Swap',
@@ -3196,6 +3985,10 @@ export default {
               difficulty: 'intermediate',
               command: 'swapon --show',
               task: 'Elenca le aree di swap attive con dimensione, tipo (file o partizione) e priorità.',
+              code: `swapon --show
+echo '---'
+free -h | grep Swap
+cat /proc/swaps`,
             },
             {
               english: 'Inode',
@@ -3207,6 +4000,9 @@ export default {
               difficulty: 'expert',
               command: 'df -i',
               task: `Mostra l'utilizzo degli inode su ogni filesystem per diagnosticare errori 'No space left on device' quando il disco appare libero.`,
+              code: `df -i / | awk 'NR==2{printf "Used inodes: %s / %s (%s)\\n", $3, $2, $5}'
+echo '---'
+ls -i /etc/passwd /etc/shadow`,
             },
           ],
         },
@@ -3226,6 +4022,9 @@ export default {
               difficulty: 'beginner',
               command: 'ls -l /dev',
               task: 'Elenca i device file in /dev mostrando il tipo (carattere/blocco) e i major/minor number assegnati dal kernel.',
+              code: `ls -l /dev/sd* /dev/tty0 /dev/null 2>/dev/null
+echo '---'
+echo "Block devices: $(ls /dev/sd* 2>/dev/null | wc -l)"`,
             },
             {
               english: 'Null',
@@ -3239,6 +4038,9 @@ export default {
               note: 'Dispositivo speciale /dev/null che scarta ogni input; nessuna traduzione italiana.',
               command: 'noisy_command > /dev/null 2>&1',
               task: 'Esegui un comando rumoroso scartando completamente stdout e stderr redirezionandoli su /dev/null.',
+              code: `echo 'This text goes nowhere' > /dev/null
+ls /nonexistent 2>/dev/null
+echo "exit code: $? (error was silenced)"`,
             },
             {
               english: 'Zero',
@@ -3251,6 +4053,9 @@ export default {
               difficulty: 'advanced',
               command: 'sudo dd if=/dev/zero of=/dev/sdb bs=1M count=100 status=progress',
               task: 'Sovrascrivi i primi 100 MB di /dev/sdb con byte zero, mostrando il progresso, per cancellare in sicurezza il superblocco.',
+              code: `dd if=/dev/zero of=/tmp/zeros.bin bs=1K count=4 2>/dev/null
+xxd /tmp/zeros.bin | head -3
+rm /tmp/zeros.bin`,
             },
             {
               english: 'Random',
@@ -3263,6 +4068,9 @@ export default {
               difficulty: 'advanced',
               command: 'head -c 32 /dev/urandom | base64',
               task: 'Genera 32 byte casuali crittograficamente forti e codificali in base64 per creare una chiave o un token sicuro.',
+              code: `TOKEN=$(head -c 24 /dev/urandom | base64)
+echo "Random token: $TOKEN"
+echo "Entropy available: $(cat /proc/sys/kernel/random/entropy_avail)"`,
             },
             {
               english: 'Device Console',
@@ -3272,6 +4080,9 @@ export default {
               example: `Append console=ttyS0,115200 to the kernel cmdline so the device console streams boot output over a serial cable. = Aggiungi console=ttyS0,115200 alla cmdline del kernel cosi' la console del dispositivo trasmette l'output di boot via cavo seriale.`,
               context: 'dev',
               difficulty: 'advanced',
+              code: `ls -l /dev/console /dev/tty0 2>/dev/null
+who | head -5
+echo "Current TTY: $(tty)"`,
             },
             {
               english: 'Driver',
@@ -3284,6 +4095,9 @@ export default {
               difficulty: 'intermediate',
               command: 'lspci -k',
               task: 'Mostra per ogni dispositivo PCI il modulo del kernel (driver) attualmente in uso e quelli disponibili.',
+              code: `lspci -k | grep -A2 'VGA'
+echo '---'
+lspci -k | grep 'Kernel driver' | sort -u`,
             },
             {
               english: 'Module',
@@ -3296,6 +4110,9 @@ export default {
               difficulty: 'advanced',
               command: 'lsmod',
               task: 'Elenca i moduli del kernel attualmente caricati con la loro dimensione e le dipendenze tra moduli.',
+              code: `lsmod | head -10
+MOD_COUNT=$(lsmod | tail -n +2 | wc -l)
+echo "Loaded modules: $MOD_COUNT"`,
             },
             {
               english: 'Probe',
@@ -3308,6 +4125,9 @@ export default {
               difficulty: 'expert',
               command: 'sudo modprobe e1000e',
               task: `Carica il modulo del kernel 'e1000e' risolvendo automaticamente le dipendenze per attivare il driver di rete.`,
+              code: `sudo modprobe -n -v e1000e
+lsmod | grep e1000e
+modinfo e1000e | head -5`,
             },
             {
               english: 'Input',
@@ -3320,6 +4140,9 @@ export default {
               difficulty: 'intermediate',
               command: 'ls /dev/input/',
               task: 'Elenca i device file degli input (tastiera, mouse, joystick) per verificare che il kernel rilevi la periferica collegata.',
+              code: `ls /dev/input/
+echo '---'
+cat /proc/bus/input/devices | grep -E '^N:' | head -5`,
             },
             {
               english: 'Stdio',
@@ -3332,6 +4155,9 @@ export default {
               difficulty: 'expert',
               command: 'mycmd > out.log 2>&1',
               task: `Reindirizza sia stdout sia stderr nello stesso file out.log per catturare tutto l'output di un comando in un unico log.`,
+              code: `echo 'stdout message' > /tmp/out.log
+echo 'stderr message' >&2 2>> /tmp/err.log
+ls -l /proc/self/fd/0 /proc/self/fd/1 /proc/self/fd/2`,
             },
           ],
         },
@@ -3351,6 +4177,9 @@ export default {
               difficulty: 'beginner',
               command: 'uname -srv',
               task: `Stampa nome del kernel, release e versione completa di build per documentare l'ambiente di un server.`,
+              code: `uname -srv
+echo "Kernel release: $(uname -r)"
+echo "Compiled: $(uname -v)"`,
             },
             {
               english: 'Boot',
@@ -3363,6 +4192,9 @@ export default {
               difficulty: 'intermediate',
               command: 'systemd-analyze blame',
               task: `Mostra quanto tempo ha impiegato ogni unit systemd all'avvio, ordinato dalla più lenta, per ottimizzare la sequenza di boot.`,
+              code: `systemd-analyze
+systemd-analyze blame | head -5
+echo "Boot time: $(systemd-analyze | head -1)"`,
             },
             {
               english: 'Grub',
@@ -3376,6 +4208,9 @@ export default {
               note: 'GRand Unified Bootloader: bootloader predefinito su molte distribuzioni Linux.',
               command: 'sudo update-grub',
               task: 'Rigenera il file di configurazione di GRUB scansionando i kernel installati e i sistemi operativi presenti.',
+              code: `cat /etc/default/grub | grep -v '^#' | grep -v '^$'
+echo '---'
+sudo update-grub 2>&1 | tail -3`,
             },
             {
               english: 'Init',
@@ -3388,6 +4223,9 @@ export default {
               difficulty: 'expert',
               command: 'systemctl list-units --type=service --state=running',
               task: `Elenca tutti i servizi gestiti da systemd attualmente in esecuzione per ispezionare lo stato dell'init system.`,
+              code: `RUNNING=$(systemctl list-units --type=service --state=running --no-pager | grep -c '.service')
+systemctl list-units --type=service --state=running --no-pager | head -5
+echo "Running services: $RUNNING"`,
             },
             {
               english: 'Panic',
@@ -3400,6 +4238,9 @@ export default {
               difficulty: 'intermediate',
               command: 'dmesg --level=emerg,alert,crit | grep -i panic',
               task: 'Cerca messaggi di kernel panic nel ring buffer del kernel filtrando solo i livelli più critici.',
+              code: `dmesg --level=emerg,alert,crit 2>/dev/null | tail -5
+echo '---'
+cat /proc/sys/kernel/panic`,
             },
             {
               english: 'Boot Log',
@@ -3412,6 +4253,9 @@ export default {
               difficulty: 'advanced',
               command: 'journalctl -b -1 -p err',
               task: `Mostra solo gli errori registrati durante il boot precedente per individuare cosa ha bloccato l'avvio del sistema.`,
+              code: `journalctl -b -1 -p err --no-pager 2>/dev/null | head -10
+echo '---'
+journalctl --list-boots | tail -3`,
             },
             {
               english: 'Parameters',
@@ -3423,6 +4267,9 @@ export default {
               difficulty: 'expert',
               command: 'cat /proc/cmdline',
               task: 'Visualizza i parametri con cui il kernel attualmente in esecuzione è stato avviato (es. root=, ro, quiet).',
+              code: `cat /proc/cmdline
+echo '---'
+sysctl kernel.hostname kernel.ostype kernel.osrelease`,
             },
             {
               english: 'Update',
@@ -3433,6 +4280,9 @@ export default {
                 'Staying on an outdated kernel exposes the system to known vulnerabilities that patches have already fixed. = Restare su un kernel obsoleto espone il sistema a vulnerabilità note che le patch hanno già corretto.',
               context: 'kernel',
               difficulty: 'intermediate',
+              code: `CURRENT=$(uname -r)
+apt list --installed 2>/dev/null | grep linux-image | head -3
+echo "Current kernel: $CURRENT"`,
             },
             {
               english: 'Kernel Version',
@@ -3445,6 +4295,10 @@ export default {
               difficulty: 'beginner',
               command: 'uname -r',
               task: 'Stampa solo la release del kernel in esecuzione per decidere se una patch CVE specifica si applica al sistema.',
+              code: `KVER=$(uname -r)
+MAJOR=$(echo "$KVER" | cut -d. -f1)
+MINOR=$(echo "$KVER" | cut -d. -f2)
+echo "Kernel $KVER (major=$MAJOR minor=$MINOR)"`,
             },
             {
               english: 'Source',
@@ -3455,6 +4309,9 @@ export default {
                 'Being open source means anyone can audit the kernel source code for security vulnerabilities. = Essere open source significa che chiunque può verificare il codice sorgente del kernel per vulnerabilità di sicurezza.',
               context: 'kernel',
               difficulty: 'beginner',
+              code: `ls /usr/src/linux-headers-$(uname -r)/ 2>/dev/null | head -5
+echo "Headers: /usr/src/linux-headers-$(uname -r)"
+test -f /boot/config-$(uname -r) && echo 'Kernel config present'`,
             },
           ],
         },
@@ -3485,6 +4342,10 @@ export default {
               note: `La sequenza #! all'inizio di uno script che indica l'interprete; termine universale, nessuna traduzione italiana.`,
               command: `printf '#!/usr/bin/env bash\\necho hello\\n' > hello.sh && chmod +x hello.sh && ./hello.sh`,
               task: `Crea uno script con shebang portabile, rendilo eseguibile ed eseguilo direttamente per verificare che l'interprete venga scelto correttamente.`,
+              code: `#!/usr/bin/env bash
+echo "Running with: $BASH"
+echo "Bash version: $BASH_VERSION"
+echo "PID: $$"`,
             },
             {
               english: 'Script',
@@ -3497,6 +4358,11 @@ export default {
               difficulty: 'beginner',
               command: 'chmod +x deploy.sh && ./deploy.sh',
               task: `Rendi eseguibile lo script deploy.sh ed esegui il file locale anziche' un comando di sistema con lo stesso nome.`,
+              code: `#!/usr/bin/env bash
+set -euo pipefail
+echo "Script: $0"
+echo "Started at $(date)"
+exit 0`,
             },
             {
               english: 'Variable',
@@ -3509,6 +4375,10 @@ export default {
               difficulty: 'beginner',
               command: 'DB_HOST="db.prod.local"; echo "Connecting to $DB_HOST"',
               task: `Definisci una variabile con il nome dell'host del database e stampala tra virgolette doppie per gestire eventuali spazi.`,
+              code: `DB_HOST="db.prod.local"
+DB_PORT=5432
+echo "Connecting to $DB_HOST:$DB_PORT"
+CONN="postgresql://$DB_HOST:$DB_PORT/app"`,
             },
             {
               english: 'Echo Builtin',
@@ -3521,6 +4391,10 @@ export default {
               difficulty: 'beginner',
               command: 'echo -e "line1\\nline2\\tindented"',
               task: 'Stampa un messaggio diagnostico multiriga usando -e per interpretare le sequenze di escape come \\n e \\t.',
+              code: `echo "User: $(whoami)"
+echo -e "Line1\\nLine2\\tIndented"
+echo -n 'No newline here: '
+echo 'done'`,
             },
             {
               english: 'Read Builtin',
@@ -3532,6 +4406,9 @@ export default {
               difficulty: 'intermediate',
               command: 'read -r -p "Continue? [y/N] " answer && echo "You said: $answer"',
               task: `Chiedi all'utente conferma con un prompt interattivo prima di eseguire un'operazione distruttiva e leggi la risposta in una variabile.`,
+              code: `echo 'prod' | read -r ENV
+read -r -t 5 -p 'Enter hostname: ' HOST < /dev/tty || HOST='localhost'
+echo "Deploying to $HOST"`,
             },
             {
               english: 'Comment',
@@ -3542,6 +4419,10 @@ export default {
                 'Well-placed comments explaining the "why" behind complex logic save hours when someone else maintains the script. = Commenti ben posizionati che spiegano il "perché" di una logica complessa risparmiano ore quando qualcun altro mantiene lo script.',
               context: 'bash',
               difficulty: 'beginner',
+              code: `#!/usr/bin/env bash
+# Rotate application logs older than 7 days
+LOG_DIR='/var/log/app'
+find "$LOG_DIR" -name '*.log' -mtime +7 -delete`,
             },
             {
               english: 'Quote',
@@ -3554,6 +4435,10 @@ export default {
               difficulty: 'intermediate',
               command: 'file="my report.txt"; ls -l "$file"',
               task: 'Cita la variabile con virgolette doppie per evitare il word splitting quando il nome del file contiene spazi.',
+              code: `FILE='my report.txt'
+GREETING="Hello, $(whoami)"
+PATTERN='$HOME is not expanded'
+echo "$GREETING" && echo "$PATTERN"`,
             },
             {
               english: 'Exit Code',
@@ -3566,6 +4451,10 @@ export default {
               difficulty: 'advanced',
               command: 'grep -q ERROR app.log; echo "exit code: $?"',
               task: 'Esegui un comando silenzioso e stampa il suo exit code letto da $? per decidere il prossimo passo nello script.',
+              code: `grep -q ERROR /var/log/app.log 2>/dev/null
+RC=$?
+if [ $RC -eq 0 ]; then echo 'Errors found'; else echo 'No errors'; fi
+echo "Exit code was: $RC"`,
             },
             {
               english: 'Positional Argument',
@@ -3578,6 +4467,10 @@ export default {
               difficulty: 'intermediate',
               command: 'set -- alpha beta gamma; echo "first=$1 second=$2 all=$@"',
               task: `Mostra come accedere ai primi due argomenti posizionali e all'elenco completo $@ passati a uno script bash.`,
+              code: `#!/usr/bin/env bash
+echo "Script name: $0"
+echo "First arg: $1, Second arg: $2"
+echo "All args ($#): $@"`,
             },
             {
               english: 'Execution',
@@ -3590,6 +4483,9 @@ export default {
               difficulty: 'beginner',
               command: 'chmod +x ./deploy.sh && ./deploy.sh',
               task: `Aggiungi il permesso di esecuzione e lancia lo script locale tramite ./ per evitare ambiguita' con comandi di sistema omonimi.`,
+              code: `chmod +x ./deploy.sh
+./deploy.sh --env staging
+echo "Script exited with code: $?"`,
             },
           ],
         },
@@ -3609,6 +4505,10 @@ export default {
               difficulty: 'intermediate',
               command: 'printenv | sort',
               task: `Stampa tutte le variabili d'ambiente in ordine alfabetico per diagnosticare configurazioni errate lette da un'applicazione.`,
+              code: `echo "User: $USER"
+echo "Home: $HOME"
+echo "Shell: $SHELL"
+printenv | wc -l`,
             },
             {
               english: 'Export',
@@ -3621,6 +4521,9 @@ export default {
               note: `Builtin di bash; nessuna traduzione italiana. Promuove una variabile a variabile d'ambiente.`,
               command: `export DEBUG=1; bash -c 'echo "DEBUG=$DEBUG"'`,
               task: `Esporta una variabile nella shell corrente cosi' ogni processo figlio la eredita per abilitare il logging verboso.`,
+              code: `export APP_ENV='production'
+export DEBUG=0
+bash -c 'echo "Child sees: APP_ENV=$APP_ENV DEBUG=$DEBUG"'`,
             },
             {
               english: 'PATH Variable',
@@ -3632,6 +4535,10 @@ export default {
               difficulty: 'intermediate',
               command: 'export PATH="$HOME/.local/bin:$PATH"; echo "$PATH"',
               task: `Anteponi ~/.local/bin alla variabile PATH cosi' gli script personali abbiano priorita' sui comandi di sistema.`,
+              code: `echo "Current PATH entries:"
+echo "$PATH" | tr ':' '\\n' | head -5
+export PATH="$HOME/.local/bin:$PATH"
+which python3`,
             },
             {
               english: 'Substitution',
@@ -3644,6 +4551,10 @@ export default {
               difficulty: 'advanced',
               command: 'backup="db-$(date +%Y%m%d-%H%M).sql"; echo "$backup"',
               task: 'Usa la sostituzione di comando per inserire data e ora nel nome del file di backup generando un timestamp univoco.',
+              code: `BACKUP="db-$(date +%Y%m%d-%H%M).sql"
+FILES=$(ls /etc/*.conf 2>/dev/null | wc -l)
+echo "Backup name: $BACKUP"
+echo "Config files found: $FILES"`,
             },
             {
               english: 'Arithmetic',
@@ -3656,6 +4567,10 @@ export default {
               difficulty: 'advanced',
               command: 'used=80; threshold=75; if (( used > threshold )); then echo "warn"; fi',
               task: `Confronta una percentuale di utilizzo disco con una soglia usando l'espansione aritmetica per generare un avviso senza tool esterni.`,
+              code: `USED=80
+THRESHOLD=75
+FREE=$((100 - USED))
+if (( USED > THRESHOLD )); then echo "Warning: \${FREE}% free"; fi`,
             },
             {
               english: 'Global',
@@ -3666,6 +4581,10 @@ export default {
                 "A global environment variable set in .bashrc is available to every command and subprocess you launch. = Una variabile d'ambiente globale impostata in .bashrc è disponibile per ogni comando e sottoprocesso che lanci.",
               context: 'bash',
               difficulty: 'intermediate',
+              code: `COUNTER=0
+increment() { COUNTER=$((COUNTER + 1)); }
+increment; increment; increment
+echo "Global counter: $COUNTER"`,
             },
             {
               english: 'Local',
@@ -3679,6 +4598,10 @@ export default {
               command:
                 'demo() { local name="$1"; echo "hi $name"; }; demo alice; echo "after: ${name:-unset}"',
               task: 'Dichiara una variabile come local dentro una funzione per evitare di sovrascrivere accidentalmente una variabile globale omonima.',
+              code: `process() { local tmp_file=$(mktemp); echo data > "$tmp_file"; echo "$tmp_file"; }
+RESULT=$(process)
+echo "Created: $RESULT"
+echo "tmp_file var: \${tmp_file:-not visible}"`,
             },
             {
               english: 'Alias',
@@ -3691,6 +4614,10 @@ export default {
               difficulty: 'beginner',
               command: `alias ll='ls -lah --color=auto'; ll`,
               task: `Definisci un alias per il comando 'ls' usato piu' spesso cosi' da risparmiare battute e ridurre gli errori di digitazione.`,
+              code: `alias ll='ls -lah --color=auto'
+alias gs='git status'
+alias ports='ss -tulnp'
+ll /tmp`,
             },
             {
               english: 'Expansion',
@@ -3703,6 +4630,10 @@ export default {
               difficulty: 'advanced',
               command: 'mkdir -p project/{src,test,docs}',
               task: `Crea piu' directory in un singolo comando sfruttando l'espansione a graffe per impostare lo scheletro di un progetto.`,
+              code: `mkdir -p project/{src,test,docs}
+echo file{1..5}.txt
+cp config.yml{,.bak}
+ls project/`,
             },
             {
               english: 'History',
@@ -3715,6 +4646,10 @@ export default {
               difficulty: 'intermediate',
               command: 'history | tail -n 20',
               task: `Mostra gli ultimi venti comandi eseguiti nella shell corrente per rivedere rapidamente cosa e' stato fatto.`,
+              code: `HISTSIZE=2000
+history | tail -n 10
+echo "History file: $HISTFILE"
+echo "Total entries: $(history | wc -l)"`,
             },
           ],
         },
@@ -3734,6 +4669,10 @@ export default {
               difficulty: 'beginner',
               command: 'if [ -f /etc/passwd ]; then echo "found"; fi',
               task: `Verifica con un blocco if che un file di configurazione esista prima di leggerlo per evitare errori 'No such file'.`,
+              code: `if [ -f /etc/passwd ]; then
+  USERS=$(wc -l < /etc/passwd)
+  echo "System has $USERS user accounts"
+fi`,
             },
             {
               english: 'Else',
@@ -3746,6 +4685,12 @@ export default {
               difficulty: 'beginner',
               command: 'if systemctl is-active --quiet nginx; then echo "ok"; else echo "DOWN"; fi',
               task: `Controlla se il servizio nginx e' attivo e usa un ramo else per stampare un avviso quando non risponde.`,
+              code: `if systemctl is-active --quiet nginx; then
+  echo 'Nginx is running'
+else
+  echo 'Nginx is DOWN -- restarting'
+  sudo systemctl start nginx
+fi`,
             },
             {
               english: 'Loop',
@@ -3758,6 +4703,10 @@ export default {
               difficulty: 'intermediate',
               command: 'for f in *.log; do gzip "$f"; done',
               task: 'Itera su tutti i file di log nella directory corrente e comprimili uno per uno per liberare spazio su disco.',
+              code: `for f in *.log; do
+  SIZE=$(stat -c%s "$f" 2>/dev/null || echo 0)
+  echo "$f: $SIZE bytes"
+done`,
             },
             {
               english: 'For',
@@ -3771,6 +4720,10 @@ export default {
               command:
                 'for cfg in /etc/nginx/conf.d/*.conf; do echo "checking $cfg"; nginx -t -c "$cfg"; done',
               task: 'Usa un ciclo for per validare ogni file di configurazione nginx nella directory garantendo impostazioni coerenti.',
+              code: `for host in web1 web2 web3; do
+  echo -n "$host: "
+  ping -c1 -W1 "$host" >/dev/null 2>&1 && echo 'UP' || echo 'DOWN'
+done`,
             },
             {
               english: 'While',
@@ -3784,6 +4737,12 @@ export default {
               command:
                 'until curl -fsS http://localhost:8080/health; do echo "waiting..."; sleep 5; done',
               task: `Interroga in loop l'endpoint di health finche' il servizio non risponde, attendendo cinque secondi tra un tentativo e l'altro.`,
+              code: `RETRIES=0
+while ! curl -fsS http://localhost:8080/health 2>/dev/null; do
+  RETRIES=$((RETRIES + 1))
+  [ $RETRIES -ge 5 ] && break
+  sleep 2
+done`,
             },
             {
               english: 'Condition',
@@ -3796,6 +4755,9 @@ export default {
               difficulty: 'intermediate',
               command: '[ -d /var/backups ] && echo "backup dir ok" || mkdir -p /var/backups',
               task: 'Verifica la condizione che la directory di backup esista e, in caso contrario, creala prima di scriverci dentro.',
+              code: `[ -d /var/backups ] && echo 'Backup dir exists' || mkdir -p /var/backups
+[ -w /var/backups ] && echo 'Writable' || echo 'Read-only'
+[ -s /var/backups/latest.tar.gz ] && echo 'Backup present'`,
             },
             {
               english: 'Case',
@@ -3809,6 +4771,12 @@ export default {
               command:
                 'case "${1:-help}" in start) echo go;; stop) echo halt;; *) echo "usage: $0 start|stop";; esac',
               task: 'Dispaccia diverse azioni di controllo servizio in base al primo argomento usando un costrutto case con ramo di default.',
+              code: `ACTION="\${1:-help}"
+case "$ACTION" in
+  start)  echo 'Starting service...';;
+  stop)   echo 'Stopping service...';;
+  *)      echo "Usage: $0 {start|stop}";;
+esac`,
             },
             {
               english: 'Break',
@@ -3822,6 +4790,12 @@ export default {
               command:
                 'for host in db1 db2 db3; do if ping -c1 -W1 "$host" >/dev/null; then echo "$host up"; break; fi; done',
               task: 'Cicla su una lista di host fermandoti con break al primo che risponde al ping per evitare tentativi inutili.',
+              code: `for host in db1 db2 db3; do
+  if pg_isready -h "$host" -q 2>/dev/null; then
+    echo "Primary found: $host"
+    break
+  fi
+done`,
             },
             {
               english: 'Continue',
@@ -3835,6 +4809,10 @@ export default {
               command:
                 'for f in *; do [ "${f##*.}" = "log" ] || continue; echo "processing $f"; done',
               task: 'Scorri tutti i file della directory saltando con continue quelli che non hanno estensione .log senza fermare il ciclo.',
+              code: `for f in /etc/*; do
+  [ -d "$f" ] && continue
+  echo "File: $(basename "$f")"
+done | head -10`,
             },
             {
               english: 'Boolean',
@@ -3847,6 +4825,9 @@ export default {
               difficulty: 'intermediate',
               command: 'make build && make test || echo "pipeline failed"',
               task: 'Concatena build e test con && e usa || per stampare un messaggio di fallimento solo se uno dei due passi non riesce.',
+              code: `make build && make test && echo 'Pipeline passed'
+grep -q ERROR app.log || echo 'No errors found'
+[ -f config.yml ] && source config.yml || echo 'Missing config'`,
             },
           ],
         },
@@ -3866,6 +4847,11 @@ export default {
               difficulty: 'intermediate',
               command: 'greet() { echo "Hi $1"; }; greet world',
               task: `Incapsula una saluto parametrizzato in una funzione e chiamala passando un argomento per riutilizzarla piu' volte.`,
+              code: `greet() {
+  echo "Hello, $1! Today is $(date +%A)."
+}
+greet 'admin'
+greet 'developer'`,
             },
             {
               english: 'Define',
@@ -3878,6 +4864,11 @@ export default {
               difficulty: 'intermediate',
               command: `log() { printf '[%s] %s\\n' "$(date +%T)" "$*"; }; log "deploy started"`,
               task: `Definisci all'inizio dello script una funzione di logging riutilizzabile che antepone il timestamp a ogni messaggio.`,
+              code: `log() {
+  printf '[%s] %s\\n' "$(date +%T)" "$*"
+}
+log 'Deploy started'
+log 'Pulling latest image'`,
             },
             {
               english: 'Call',
@@ -3890,6 +4881,10 @@ export default {
               difficulty: 'beginner',
               command: 'cleanup() { rm -f /tmp/run.lock; }; trap cleanup EXIT; cleanup',
               task: `Definisci una funzione di pulizia e chiamala sia manualmente sia tramite trap EXIT cosi' venga eseguita anche in caso di errore.`,
+              code: `cleanup() { rm -f /tmp/run.lock; echo 'Lock removed'; }
+trap cleanup EXIT
+touch /tmp/run.lock
+echo 'Working...'`,
             },
             {
               english: 'Return',
@@ -3902,6 +4897,10 @@ export default {
               command:
                 'is_ready() { [ -f /tmp/ready ] && return 0 || return 1; }; is_ready && echo "ok" || echo "not yet"',
               task: `Termina una funzione con return 0 o 1 per segnalare successo o fallimento cosi' il chiamante puo' decidere come ramificare.`,
+              code: `is_port_open() {
+  ss -tln | grep -q ":$1 " && return 0 || return 1
+}
+is_port_open 22 && echo 'SSH open' || echo 'SSH closed'`,
             },
             {
               english: 'Scope',
@@ -3915,6 +4914,12 @@ export default {
               command:
                 'outer() { local secret="hidden"; echo "in: $secret"; }; outer; echo "out: ${secret:-unset}"',
               task: `Mostra come una variabile dichiarata local resta confinata allo scope della funzione e non e' visibile fuori.`,
+              code: `outer() {
+  local secret='hidden'
+  echo "Inside: $secret"
+}
+outer
+echo "Outside: \${secret:-not visible}"`,
             },
             {
               english: 'Parameter',
@@ -3927,6 +4932,12 @@ export default {
               difficulty: 'intermediate',
               command: 'deploy() { echo "deploying to $1 with tag $2"; }; deploy prod v1.4.2',
               task: 'Definisci una funzione che riceve due parametri (host e versione) e chiamala passando i valori sulla riga di comando.',
+              code: `deploy() {
+  local env="$1" tag="$2"
+  echo "Deploying $tag to $env"
+}
+deploy production v2.1.0
+deploy staging v2.2.0-rc1`,
             },
             {
               english: 'Library',
@@ -3937,6 +4948,11 @@ export default {
                 'Large projects split utility functions into a shared library file that other scripts can source. = I grandi progetti separano le funzioni di utilità in un file libreria condiviso che altri script possono importare.',
               context: 'bash',
               difficulty: 'advanced',
+              code: `#!/usr/bin/env bash
+die()  { echo "ERROR: $*" >&2; exit 1; }
+info() { echo "INFO: $*"; }
+info 'Library loaded'
+[ -f config.yml ] || die 'Missing config'`,
             },
             {
               english: 'Source Builtin',
@@ -3948,6 +4964,10 @@ export default {
               difficulty: 'intermediate',
               command: `echo 'hello() { echo hi; }' > /tmp/lib.sh && source /tmp/lib.sh && hello`,
               task: `Carica un file di libreria nella shell corrente con il builtin source cosi' le funzioni definite restino disponibili dopo.`,
+              code: `echo 'DB_HOST=localhost' > /tmp/env.sh
+echo 'DB_PORT=5432' >> /tmp/env.sh
+source /tmp/env.sh
+echo "Database at $DB_HOST:$DB_PORT"`,
             },
             {
               english: 'Debug',
@@ -3961,6 +4981,12 @@ export default {
               note: 'Si attiva con set -x o bash -x script.sh per stampare ogni comando eseguito; termine universale.',
               command: 'bash -x script.sh',
               task: `Esegui uno script bash in modalita' di trace stampando ogni comando prima della sua esecuzione per individuare errori logici.`,
+              code: `#!/usr/bin/env bash
+set -x
+NAME='test'
+echo "Hello $NAME"
+set +x
+echo 'Debug off now'`,
             },
             {
               english: 'Modular',
@@ -3971,6 +4997,11 @@ export default {
                 'Writing modular scripts with single-purpose functions makes each piece easier to test and reuse. = Scrivere script modulari con funzioni a scopo singolo rende ogni componente più facile da testare e riutilizzare.',
               context: 'bash',
               difficulty: 'expert',
+              code: `#!/usr/bin/env bash
+source ./lib/logging.sh
+source ./lib/database.sh
+log_info 'Application starting'
+db_connect "$DB_HOST" "$DB_PORT"`,
             },
           ],
         },
@@ -4001,6 +5032,9 @@ export default {
               note: 'Espressione regolare: pattern testuale per matching avanzato. Forma abbreviata universale.',
               command: 'grep -E "^[a-z]+@[a-z]+\\.com$" emails.txt',
               task: 'Filtra il file degli indirizzi e mostra solo le righe che contengono email valide in formato letterealfanumerico@dominio.com.',
+              code: `LOG='/var/log/syslog'
+grep -E '^[A-Z]{3}.*error' "$LOG" 2>/dev/null | wc -l
+echo 'Error lines counted'`,
             },
             {
               english: 'Regex Pattern',
@@ -4013,6 +5047,9 @@ export default {
               difficulty: 'intermediate',
               command: `grep -E '^ERROR.*timeout$' /var/log/app.log`,
               task: `Estrai dal log dell'applicazione tutte le righe che iniziano con ERROR e terminano con timeout per individuare i fallimenti di connessione.`,
+              code: `grep -E '^ERROR.*timeout$' /var/log/app.log 2>/dev/null
+grep -Ec '^(WARN|ERROR)' /var/log/app.log 2>/dev/null
+echo 'Pattern search complete'`,
             },
             {
               english: 'Anchor',
@@ -4024,6 +5061,9 @@ export default {
               difficulty: 'advanced',
               command: `grep -E '^WARN' /var/log/syslog`,
               task: `Mostra solo le righe del syslog che iniziano esattamente con la parola WARN usando un'ancora di inizio riga.`,
+              code: `echo -e 'START line\\nmiddle START\\nSTART end' > /tmp/test.txt
+grep '^START' /tmp/test.txt
+grep 'end$' /tmp/test.txt`,
             },
             {
               english: 'Character Class',
@@ -4036,6 +5076,9 @@ export default {
               difficulty: 'advanced',
               command: `grep -E '[0-9]{3}' access.log`,
               task: 'Isola dal log di accesso le righe che contengono almeno tre cifre consecutive sfruttando una classe di caratteri.',
+              code: `echo -e '192.168.1.1\\nhello\\n10.0.0.255' > /tmp/ips.txt
+grep -E '[0-9]{1,3}\\.[0-9]{1,3}' /tmp/ips.txt
+grep -E '^[a-z]+$' /tmp/ips.txt`,
             },
             {
               english: 'Quantifier',
@@ -4048,6 +5091,9 @@ export default {
               difficulty: 'advanced',
               command: `grep -E 'a.*b' notes.txt`,
               task: `Trova le righe di notes.txt che contengono una 'a' seguita prima o poi da una 'b' usando il quantificatore greedy '.*'.`,
+              code: `echo -e 'aab\\nab\\naaab\\nb' > /tmp/q.txt
+grep -E 'a+b' /tmp/q.txt
+grep -E 'a{2,}b' /tmp/q.txt`,
             },
             {
               english: 'Escape',
@@ -4059,6 +5105,9 @@ export default {
               difficulty: 'intermediate',
               command: `grep '\\.txt$' filelist.txt`,
               task: `Elenca solo i nomi di file che terminano con l'estensione .txt facendo l'escape del punto per evitare di interpretarlo come metacarattere.`,
+              code: `echo -e 'file.txt\\nfiletxt\\nfile-txt' > /tmp/esc.txt
+grep '\\.txt$' /tmp/esc.txt
+echo 'Only literal dot matched'`,
             },
             {
               english: 'Regex Capture Group',
@@ -4071,6 +5120,8 @@ export default {
               difficulty: 'advanced',
               command: `sed -E 's/([a-z]+)@([a-z.]+)/\\1 at \\2/g' emails.txt`,
               task: `Riscrivi ogni email del file in forma 'utente at dominio' catturando in due gruppi la parte locale e quella del dominio.`,
+              code: `echo 'user@example.com' | sed -E 's/([a-z]+)@([a-z.]+)/User: \\1, Domain: \\2/'
+echo '2026-05-17' | sed -E 's/([0-9]{4})-([0-9]{2})-([0-9]{2})/\\3\\/\\2\\/\\1/'`,
             },
             {
               english: 'Match',
@@ -4083,6 +5134,9 @@ export default {
               difficulty: 'beginner',
               command: `grep -c 'timeout' /var/log/app.log`,
               task: `Conta quante corrispondenze della parola timeout sono presenti nel log dell'applicazione per stimare la frequenza degli errori.`,
+              code: `HITS=$(grep -c 'timeout' /var/log/app.log 2>/dev/null || echo 0)
+echo "Found $HITS timeout occurrences"
+grep -n 'timeout' /var/log/app.log 2>/dev/null | head -3`,
             },
             {
               english: 'egrep / grep -E',
@@ -4094,6 +5148,9 @@ export default {
               difficulty: 'beginner',
               command: `egrep '(error|warn|fatal)' /var/log/syslog`,
               task: `Filtra dal syslog tutte le righe che contengono almeno una tra error, warn o fatal usando l'alternanza in regex estesa.`,
+              code: `grep -E '(error|warn|fatal)' /var/log/syslog 2>/dev/null | tail -5
+grep -Ec '(error|fatal)' /var/log/syslog 2>/dev/null
+echo 'Extended regex search done'`,
             },
             {
               english: 'Extended',
@@ -4105,6 +5162,9 @@ export default {
               difficulty: 'intermediate',
               command: `grep -E '(foo|bar)+' file.txt`,
               task: `Attiva la modalita' regex estesa per cercare in file.txt sequenze ripetute di 'foo' o 'bar' senza dover fare escape della pipe.`,
+              code: `echo -e 'foobar\\nfoofoo\\nbaz' | grep -E '(foo|bar)+'
+echo '---'
+echo '192.168.1.100' | grep -E '^([0-9]{1,3}\\.){3}[0-9]{1,3}$'`,
             },
           ],
         },
@@ -4123,6 +5183,9 @@ export default {
               difficulty: 'intermediate',
               command: 'file -i report.csv',
               task: 'Verifica la codifica del file report.csv prima di importarlo nel database per evitare caratteri illeggibili.',
+              code: `file -i /etc/passwd
+file -i /bin/ls
+echo "Current locale charset: $(locale charmap)"`,
             },
             {
               english: 'ASCII',
@@ -4136,6 +5199,9 @@ export default {
               note: 'American Standard Code for Information Interchange: codifica a 7 bit per caratteri di base.',
               command: 'iconv -f UTF-8 -t ASCII//TRANSLIT -o ascii.txt utf8.txt',
               task: 'Converti il file utf8.txt in puro ASCII traslitterando i caratteri accentati per renderlo compatibile con un sistema legacy.',
+              code: `echo 'Hello World' | od -c | head -2
+printf '%d ' $(echo -n 'ABC' | od -An -td1)
+echo '(ASCII codes for A, B, C)'`,
             },
             {
               english: 'UTF-8',
@@ -4149,6 +5215,9 @@ export default {
               note: 'Unicode Transformation Format 8-bit: codifica universale a larghezza variabile, retrocompatibile con ASCII.',
               command: 'iconv -f ISO-8859-1 -t UTF-8 legacy.csv -o utf8.csv',
               task: 'Trasforma legacy.csv da ISO-8859-1 a UTF-8 prima di darlo in pasto al pipeline di analisi dati.',
+              code: `echo 'ciao' | file -
+echo -n 'ciao' | wc -c
+locale charmap`,
             },
             {
               english: 'Binary',
@@ -4161,6 +5230,9 @@ export default {
               difficulty: 'beginner',
               command: 'file /usr/bin/ls && xxd /usr/bin/ls | head -20',
               task: `Verifica che /usr/bin/ls sia un eseguibile binario ELF e ispeziona i primi byte in esadecimale per controllarne l'header.`,
+              code: `file /usr/bin/ls
+xxd /usr/bin/ls | head -5
+echo "ELF magic: $(xxd -l4 /usr/bin/ls | awk '{print $2, $3}')"`,
             },
             {
               english: 'Convert',
@@ -4173,6 +5245,9 @@ export default {
               difficulty: 'advanced',
               command: 'iconv -f ISO-8859-1 -t UTF-8 input.csv -o output.csv',
               task: `Converti il CSV proveniente da un sistema legacy in UTF-8 cosi' le accentate restino leggibili negli strumenti moderni.`,
+              code: `echo 'hello' > /tmp/sample.txt
+iconv -f UTF-8 -t ASCII /tmp/sample.txt -o /tmp/ascii.txt
+file -i /tmp/ascii.txt`,
             },
             {
               english: 'Base64',
@@ -4186,6 +5261,9 @@ export default {
               note: 'Codifica che rappresenta dati binari come testo ASCII usando 64 caratteri stampabili.',
               command: 'base64 image.png > image.b64',
               task: `Codifica in base64 l'immagine image.png cosi' la puoi includere come stringa di testo in un payload JSON.`,
+              code: `echo 'secret:password123' | base64
+ENCODED=$(echo -n 'admin:hunter2' | base64)
+echo "Authorization: Basic $ENCODED"`,
             },
             {
               english: 'Decode',
@@ -4198,6 +5276,9 @@ export default {
               difficulty: 'advanced',
               command: 'echo "$TOKEN" | base64 -d',
               task: `Decodifica il token base64 contenuto nella variabile d'ambiente per ispezionarne il contenuto originale durante il debug.`,
+              code: `ENCODED='SGVsbG8gV29ybGQ='
+DECODED=$(echo "$ENCODED" | base64 -d)
+echo "Decoded: $DECODED"`,
             },
             {
               english: 'Hex',
@@ -4210,6 +5291,9 @@ export default {
               difficulty: 'expert',
               command: 'xxd suspicious.bin | head -40',
               task: 'Mostra in formato esadecimale i primi byte di suspicious.bin per identificare il magic number e i caratteri di controllo nascosti.',
+              code: `echo 'Hello' | xxd
+echo 'Hello' | xxd -p
+echo '48656c6c6f' | xxd -r -p`,
             },
             {
               english: 'Charset',
@@ -4222,6 +5306,9 @@ export default {
               difficulty: 'intermediate',
               command: 'file -bi document.txt',
               task: 'Stampa il MIME type e il charset del file document.txt per scoprire quale set di caratteri usa davvero.',
+              code: `file -bi /etc/passwd
+iconv -l | head -20
+echo "System charset: $(locale charmap)"`,
             },
             {
               english: 'Newline',
@@ -4233,6 +5320,10 @@ export default {
               difficulty: 'intermediate',
               command: 'dos2unix script.sh',
               task: 'Normalizza i fine riga di script.sh da formato Windows (CRLF) a formato Unix (LF) per evitare errori di esecuzione su Linux.',
+              code: `printf 'line1\\r\\nline2\\r\\n' > /tmp/win.txt
+file /tmp/win.txt
+dos2unix /tmp/win.txt 2>&1
+file /tmp/win.txt`,
             },
           ],
         },
@@ -4252,6 +5343,10 @@ export default {
               difficulty: 'advanced',
               command: './long_job.sh > job.log 2>&1',
               task: `Avvia long_job.sh redirigendo sia stdout sia stderr in un unico file job.log per conservare l'intero output del processo.`,
+              code: `echo 'stdout' > /tmp/out.log
+echo 'stderr' 2> /tmp/err.log
+ls /nonexistent /tmp 2>&1 > /tmp/all.log
+wc -l /tmp/out.log /tmp/err.log`,
             },
             {
               english: 'Pipe',
@@ -4264,6 +5359,9 @@ export default {
               difficulty: 'intermediate',
               command: `ps aux | grep nginx | awk '{print $2}'`,
               task: 'Estrai i PID di tutti i processi nginx in esecuzione concatenando ps, grep e awk via pipe.',
+              code: `ps aux | grep -v grep | sort -rnk3 | head -5
+echo '---'
+cat /etc/passwd | cut -d: -f1 | sort | head -5`,
             },
             {
               english: 'Tee',
@@ -4276,6 +5374,9 @@ export default {
               note: 'Comando POSIX standard; nessuna traduzione italiana. Sdoppia un flusso come una giunzione a T.',
               command: 'make 2>&1 | tee build.log',
               task: `Esegui make mostrando l'output a schermo e salvandolo contemporaneamente in build.log per una revisione successiva.`,
+              code: `echo 'deploy log entry' | tee /tmp/deploy.log
+date | tee -a /tmp/deploy.log
+wc -l /tmp/deploy.log`,
             },
             {
               english: 'Xargs',
@@ -4288,6 +5389,9 @@ export default {
               difficulty: 'advanced',
               command: `find . -name '*.tmp' -print0 | xargs -0 rm -v`,
               task: 'Trova tutti i file temporanei .tmp sotto la directory corrente e cancellali in blocco usando xargs per superare il limite di lunghezza argomenti.',
+              code: `find /tmp -name '*.tmp' -print0 | xargs -0 ls -lh 2>/dev/null
+echo '---'
+echo 'a b c' | xargs -n1 echo 'item:'`,
             },
             {
               english: 'Named Pipe',
@@ -4300,6 +5404,10 @@ export default {
               difficulty: 'expert',
               command: 'mkfifo /tmp/datapipe && cat /tmp/datapipe &',
               task: 'Crea una pipe nominata in /tmp/datapipe per permettere a due processi indipendenti di scambiarsi dati senza file temporanei.',
+              code: `mkfifo /tmp/datapipe
+echo 'hello from producer' > /tmp/datapipe &
+cat /tmp/datapipe
+rm /tmp/datapipe`,
             },
             {
               english: 'Process Substitution',
@@ -4312,6 +5420,9 @@ export default {
               difficulty: 'expert',
               command: 'diff <(ls /etc) <(ls /etc.bak)',
               task: 'Confronta al volo il contenuto di due directory tramite sostituzione di processo, senza creare file temporanei intermedi.',
+              code: `diff <(ls /usr/bin | head -10) <(ls /usr/sbin | head -10)
+echo '---'
+wc -l <(cat /etc/passwd)`,
             },
             {
               english: 'File Descriptor',
@@ -4324,6 +5435,10 @@ export default {
               difficulty: 'expert',
               command: 'exec 3< /etc/hosts && read -u 3 line && echo "$line"',
               task: `Apri /etc/hosts su un descrittore di file dedicato (il numero 3) e leggi la prima riga da quel canale per gestire piu' flussi in parallelo.`,
+              code: `exec 3> /tmp/fd_out.txt
+echo 'Written via fd 3' >&3
+exec 3>&-
+cat /tmp/fd_out.txt`,
             },
             {
               english: 'Standard Error',
@@ -4336,6 +5451,9 @@ export default {
               difficulty: 'intermediate',
               command: './deploy.sh 2> errors.log',
               task: `Esegui lo script di deploy separando lo standard error in errors.log cosi' i messaggi di errore restano isolati dall'output normale.`,
+              code: `ls /nonexistent 2> /tmp/errors.log
+echo "Errors captured: $(cat /tmp/errors.log)"
+ls /nonexistent 2>/dev/null && echo 'ok' || echo 'failed silently'`,
             },
             {
               english: 'Here Doc',
@@ -4350,6 +5468,12 @@ export default {
 SELECT count(*) FROM users;
 EOF`,
               task: 'Lancia una query SQL multi-riga su MySQL incorporandola in uno here document direttamente nello script bash.',
+              code: `cat <<EOF > /tmp/config.ini
+[database]
+host=localhost
+port=5432
+EOF
+cat /tmp/config.ini`,
             },
             {
               english: 'Delimiter',
@@ -4359,6 +5483,9 @@ EOF`,
               example: 'Choose a unique delimiter for Here Docs.',
               context: 'cli',
               difficulty: 'advanced',
+              code: `echo 'alice:x:1000:1000:Alice:/home/alice:/bin/bash' | cut -d: -f1,6
+echo 'one,two,three' | tr ',' '\\n'
+echo 'a::b' | awk -F: '{print NF, "fields"}'`,
             },
           ],
         },
@@ -4377,6 +5504,9 @@ EOF`,
               difficulty: 'beginner',
               command: 'journalctl -n 50 --no-pager',
               task: `Mostra le ultime cinquanta voci di log del journal di sistema per avere un colpo d'occhio rapido sugli eventi recenti.`,
+              code: `journalctl -n 10 --no-pager
+echo '---'
+journalctl -n 5 -o json-pretty --no-pager | head -20`,
             },
             {
               english: 'Syslog',
@@ -4389,6 +5519,9 @@ EOF`,
               difficulty: 'intermediate',
               command: 'sudo tail -f /var/log/syslog',
               task: 'Segui in tempo reale il flusso del syslog per osservare gli eventi di sistema mentre stai diagnosticando un problema.',
+              code: `tail -20 /var/log/syslog 2>/dev/null || journalctl -n 20 --no-pager
+echo '---'
+logger 'Test syslog message from script'`,
             },
             {
               english: 'Journal',
@@ -4401,6 +5534,9 @@ EOF`,
               note: 'Log binario gestito da systemd-journald; termine spesso lasciato in inglese.',
               command: 'journalctl -u nginx --since today',
               task: `Estrai dal journal di systemd tutti gli eventi del servizio nginx generati oggi per triare un'interruzione del giorno.`,
+              code: `journalctl -u ssh --since '1 hour ago' --no-pager | tail -10
+echo '---'
+journalctl --disk-usage`,
             },
             {
               english: 'Rotate',
@@ -4413,6 +5549,9 @@ EOF`,
               difficulty: 'advanced',
               command: 'sudo logrotate -d /etc/logrotate.conf',
               task: `Esegui logrotate in modalita' dry-run per verificare quali file di log verrebbero ruotati senza applicare modifiche.`,
+              code: `cat /etc/logrotate.d/rsyslog 2>/dev/null | head -10
+echo '---'
+sudo logrotate -d /etc/logrotate.conf 2>&1 | head -10`,
             },
             {
               english: 'Auth',
@@ -4425,6 +5564,9 @@ EOF`,
               difficulty: 'intermediate',
               command: 'sudo tail -f /var/log/auth.log',
               task: 'Monitora in tempo reale il log di autenticazione per individuare tentativi di login sospetti mentre stanno avvenendo.',
+              code: `sudo grep 'Failed password' /var/log/auth.log 2>/dev/null | tail -5
+FAILS=$(sudo grep -c 'Failed password' /var/log/auth.log 2>/dev/null || echo 0)
+echo "Failed login attempts: $FAILS"`,
             },
             {
               english: 'Kernel Log',
@@ -4437,6 +5579,9 @@ EOF`,
               difficulty: 'intermediate',
               command: 'sudo dmesg -wH',
               task: `Segui in modalita' human-readable il log del kernel per intercettare in diretta eventi hardware come collegamenti USB o OOM kill.`,
+              code: `dmesg | tail -15
+echo '---'
+dmesg --level=err,warn | tail -5`,
             },
             {
               english: 'Message',
@@ -4447,6 +5592,9 @@ EOF`,
                 'The general system message log collects events from multiple services, making it a good starting point for troubleshooting. = Il registro dei messaggi generali di sistema raccoglie eventi da più servizi, rendendolo un buon punto di partenza per la risoluzione dei problemi.',
               context: 'admin',
               difficulty: 'beginner',
+              code: `logger -p user.info 'Deployment completed successfully'
+logger -p user.err 'Database connection failed'
+journalctl -n 2 --no-pager -t logger`,
             },
             {
               english: 'Debug Log',
@@ -4458,6 +5606,9 @@ EOF`,
               difficulty: 'intermediate',
               command: 'journalctl -p debug -u myservice --since today',
               task: 'Aumenta il livello di dettaglio dei log a debug per il servizio myservice e analizza tutti gli eventi diagnostici di oggi.',
+              code: `journalctl -p debug -u ssh --since today --no-pager | tail -10
+echo '---'
+logger -p user.debug 'Checkpoint reached in backup script'`,
             },
             {
               english: 'Audit',
@@ -4470,6 +5621,9 @@ EOF`,
               difficulty: 'advanced',
               command: 'sudo ausearch -k user_modify -ts today',
               task: 'Interroga il registro di audit per estrarre tutti gli eventi etichettati come user_modify avvenuti nella giornata corrente.',
+              code: `sudo ausearch -k user_modify -ts today 2>/dev/null | tail -10
+echo '---'
+sudo aureport --summary 2>/dev/null | head -5`,
             },
             {
               english: 'Log Tail',
@@ -4481,6 +5635,11 @@ EOF`,
               difficulty: 'beginner',
               command: 'tail -F /var/log/syslog',
               task: `Tieni aperto il tail del syslog seguendolo anche dopo la rotazione dei file cosi' non perdi nessun evento in arrivo.`,
+              code: `tail -F /var/log/syslog 2>/dev/null &
+TAIL_PID=$!
+sleep 2
+kill $TAIL_PID 2>/dev/null
+echo 'Stopped tailing'`,
             },
           ],
         },
@@ -4510,6 +5669,9 @@ EOF`,
               difficulty: 'beginner',
               command: 'sudo ufw status verbose',
               task: `Mostra lo stato dettagliato del firewall ufw per verificare quali porte sono aperte e qual e' la policy predefinita.`,
+              code: `sudo ufw status verbose
+echo '---'
+sudo iptables -L -n --line-numbers | head -15`,
             },
             {
               english: 'Rule',
@@ -4522,6 +5684,9 @@ EOF`,
               difficulty: 'intermediate',
               command: 'sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT',
               task: 'Aggiungi una regola iptables che accetti il traffico TCP in ingresso sulla porta 22 per consentire le connessioni SSH.',
+              code: `sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+sudo iptables -L INPUT -n --line-numbers`,
             },
             {
               english: 'Allow',
@@ -4534,6 +5699,9 @@ EOF`,
               difficulty: 'beginner',
               command: 'sudo ufw allow 443/tcp',
               task: 'Apri la porta 443 in TCP nel firewall ufw per consentire il traffico HTTPS in ingresso verso il web server.',
+              code: `sudo ufw allow 443/tcp
+sudo ufw allow from 10.0.0.0/24 to any port 22
+sudo ufw status numbered`,
             },
             {
               english: 'Deny',
@@ -4546,6 +5714,9 @@ EOF`,
               difficulty: 'beginner',
               command: 'sudo ufw deny 23/tcp',
               task: 'Blocca esplicitamente la porta 23 del telnet con ufw per impedire connessioni in chiaro non sicure verso il server.',
+              code: `sudo ufw deny 23/tcp
+sudo ufw deny from 192.168.1.100
+sudo ufw status numbered | grep DENY`,
             },
             {
               english: 'Table',
@@ -4558,6 +5729,9 @@ EOF`,
               difficulty: 'advanced',
               command: 'sudo iptables -t nat -L -n -v',
               task: 'Elenca tutte le regole della tabella nat di iptables con statistiche numeriche per analizzare il NAT attivo sul server.',
+              code: `sudo iptables -t filter -L -n -v | head -15
+sudo iptables -t nat -L -n -v | head -10
+echo 'Filter and NAT tables listed'`,
             },
             {
               english: 'Chain',
@@ -4570,6 +5744,9 @@ EOF`,
               difficulty: 'advanced',
               command: 'sudo iptables -L INPUT -n -v --line-numbers',
               task: `Stampa numerate tutte le regole della catena INPUT cosi' puoi individuare facilmente la regola da rimuovere o riordinare.`,
+              code: `sudo iptables -L INPUT -n -v --line-numbers
+echo '---'
+sudo iptables -L OUTPUT -n -v --line-numbers | head -5`,
             },
             {
               english: 'Policy',
@@ -4582,6 +5759,10 @@ EOF`,
               difficulty: 'intermediate',
               command: 'sudo iptables -P INPUT DROP',
               task: 'Imposta la policy predefinita della catena INPUT su DROP per scartare ogni traffico non esplicitamente consentito.',
+              code: `sudo iptables -P INPUT DROP
+sudo iptables -P FORWARD DROP
+sudo iptables -P OUTPUT ACCEPT
+sudo iptables -L | grep policy`,
             },
             {
               english: 'Stateful',
@@ -4596,6 +5777,9 @@ EOF`,
               command:
                 'sudo iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT',
               task: `Configura una regola stateful che accetti automaticamente i pacchetti delle connessioni gia' stabilite o ad esse correlate.`,
+              code: `sudo iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+sudo iptables -A INPUT -m conntrack --ctstate NEW -p tcp --dport 22 -j ACCEPT
+sudo iptables -L INPUT -n -v | grep conntrack`,
             },
             {
               english: 'Zone',
@@ -4608,6 +5792,9 @@ EOF`,
               difficulty: 'intermediate',
               command: 'sudo firewall-cmd --get-active-zones',
               task: 'Mostra le zone firewalld attive e le interfacce associate per capire come il traffico viene segregato a livello di rete.',
+              code: `sudo firewall-cmd --get-active-zones 2>/dev/null
+sudo firewall-cmd --zone=public --list-all 2>/dev/null
+echo 'Zone listing complete'`,
             },
             {
               english: 'Flush',
@@ -4620,6 +5807,10 @@ EOF`,
               difficulty: 'intermediate',
               command: 'sudo iptables -F && sudo iptables -X',
               task: 'Svuota tutte le regole di iptables e cancella le catene utente per ripartire da uno stato pulito prima di caricare un nuovo ruleset.',
+              code: `sudo iptables -F
+sudo iptables -X
+sudo iptables -Z
+echo 'All chains flushed, custom chains deleted, counters zeroed'`,
             },
           ],
         },
@@ -4639,6 +5830,9 @@ EOF`,
               difficulty: 'beginner',
               command: 'gpg --symmetric --cipher-algo AES256 backup.tar.gz',
               task: 'Cifra il backup backup.tar.gz con AES-256 prima di caricarlo sullo storage cloud per proteggere i dati sensibili dei clienti.',
+              code: `tar -czf /tmp/backup.tar.gz /etc/hostname 2>/dev/null
+gpg --batch --yes --symmetric --cipher-algo AES256 --passphrase 'test' /tmp/backup.tar.gz
+ls -lh /tmp/backup.tar.gz.gpg`,
             },
             {
               english: 'Decrypt',
@@ -4651,6 +5845,9 @@ EOF`,
               difficulty: 'beginner',
               command: 'gpg --decrypt backup.tar.gz.gpg > backup.tar.gz',
               task: `Decifra l'archivio backup.tar.gz.gpg usando la tua chiave privata per ripristinare il contenuto originale del backup.`,
+              code: `gpg --batch --yes --passphrase 'test' --decrypt /tmp/backup.tar.gz.gpg > /tmp/restored.tar.gz 2>/dev/null
+ls -lh /tmp/restored.tar.gz
+echo 'Decryption complete'`,
             },
             {
               english: 'Keys',
@@ -4663,6 +5860,9 @@ EOF`,
               difficulty: 'intermediate',
               command: 'ssh-keygen -t ed25519 -C "user@server" -f ~/.ssh/id_ed25519',
               task: `Genera una coppia di chiavi SSH ed25519 etichettata con il tuo identificativo da usare per l'autenticazione senza password.`,
+              code: `ssh-keygen -t ed25519 -C 'deploy@server' -f /tmp/deploy_key -N '' -q
+ls -l /tmp/deploy_key /tmp/deploy_key.pub
+cat /tmp/deploy_key.pub`,
             },
             {
               english: 'Hash',
@@ -4675,6 +5875,10 @@ EOF`,
               difficulty: 'intermediate',
               command: 'sha256sum ubuntu.iso',
               task: `Calcola l'hash SHA-256 dell'immagine ISO scaricata e confrontalo con il checksum pubblicato per verificarne l'integrita'.`,
+              code: `echo 'important data' > /tmp/data.txt
+sha256sum /tmp/data.txt
+md5sum /tmp/data.txt
+echo 'Checksums generated'`,
             },
             {
               english: 'Signature',
@@ -4687,6 +5891,9 @@ EOF`,
               difficulty: 'advanced',
               command: 'gpg --verify package.tar.gz.sig package.tar.gz',
               task: 'Verifica la firma digitale di package.tar.gz contro il file .sig per assicurarti che provenga da una fonte fidata e non sia stato manomesso.',
+              code: `openssl dgst -sha256 -sign /tmp/private.pem -out /tmp/file.sig /tmp/data.txt 2>/dev/null
+openssl dgst -sha256 -verify /tmp/public.pem -signature /tmp/file.sig /tmp/data.txt 2>/dev/null
+echo 'Signature workflow complete'`,
             },
             {
               english: 'Certificate',
@@ -4699,6 +5906,10 @@ EOF`,
               difficulty: 'intermediate',
               command: 'openssl req -new -x509 -days 365 -nodes -out cert.pem -keyout key.pem',
               task: 'Genera un certificato X.509 autofirmato valido un anno insieme alla relativa chiave privata per uso interno di sviluppo.',
+              code: `openssl req -new -x509 -days 365 -nodes \\
+  -subj '/CN=myserver.local' \\
+  -out /tmp/cert.pem -keyout /tmp/key.pem 2>/dev/null
+openssl x509 -in /tmp/cert.pem -noout -subject -dates`,
             },
             {
               english: 'Cipher',
@@ -4711,6 +5922,9 @@ EOF`,
               difficulty: 'expert',
               command: `openssl ciphers -v 'HIGH:!aNULL:!MD5'`,
               task: 'Elenca con dettagli tutte le suite di cifrari forti supportate da OpenSSL escludendo quelle senza autenticazione e quelle con MD5.',
+              code: `openssl ciphers -v 'HIGH:!aNULL:!MD5' | head -10
+COUNT=$(openssl ciphers 'HIGH:!aNULL' | tr ':' '\\n' | wc -l)
+echo "Strong ciphers available: $COUNT"`,
             },
             {
               english: 'Symmetric',
@@ -4723,6 +5937,9 @@ EOF`,
               difficulty: 'advanced',
               command: 'openssl enc -aes-256-cbc -salt -in plain.txt -out plain.enc',
               task: 'Cifra plain.txt in modo simmetrico con AES-256-CBC e un sale casuale, usando la stessa passphrase per cifrare e decifrare.',
+              code: `echo 'secret message' | openssl enc -aes-256-cbc -pbkdf2 -pass pass:mykey -out /tmp/encrypted.bin
+openssl enc -d -aes-256-cbc -pbkdf2 -pass pass:mykey -in /tmp/encrypted.bin
+echo 'Symmetric round-trip done'`,
             },
             {
               english: 'Asymmetric',
@@ -4735,6 +5952,10 @@ EOF`,
               command:
                 'openssl genrsa -out private.pem 4096 && openssl rsa -in private.pem -pubout -out public.pem',
               task: 'Genera una coppia RSA asimmetrica a 4096 bit, salvando la chiave privata e derivando quella pubblica per cifratura e firma.',
+              code: `openssl genrsa -out /tmp/priv.pem 2048 2>/dev/null
+openssl rsa -in /tmp/priv.pem -pubout -out /tmp/pub.pem 2>/dev/null
+ls -l /tmp/priv.pem /tmp/pub.pem
+echo 'RSA keypair generated'`,
             },
             {
               english: 'Entropy',
@@ -4747,6 +5968,9 @@ EOF`,
               difficulty: 'expert',
               command: 'cat /proc/sys/kernel/random/entropy_avail',
               task: 'Controlla quanti bit di entropia sono disponibili nel pool del kernel prima di generare chiavi crittografiche su un server appena avviato.',
+              code: `ENTROPY=$(cat /proc/sys/kernel/random/entropy_avail)
+echo "Available entropy: $ENTROPY bits"
+[ "$ENTROPY" -lt 200 ] && echo 'WARNING: low entropy' || echo 'Entropy pool OK'`,
             },
           ],
         },
@@ -4767,6 +5991,9 @@ EOF`,
               note: 'File /etc/sudoers che definisce i permessi sudo; editarlo solo via visudo.',
               command: 'sudo visudo',
               task: 'Modifica il file /etc/sudoers tramite visudo, che valida la sintassi prima di salvare per evitare di bloccarti fuori dal sistema.',
+              code: `sudo grep -v '^#' /etc/sudoers | grep -v '^$' | head -10
+echo '---'
+sudo grep -r 'ALL' /etc/sudoers.d/ 2>/dev/null`,
             },
             {
               english: 'Privilege',
@@ -4779,6 +6006,10 @@ EOF`,
               difficulty: 'intermediate',
               command: 'sudo -l -U alice',
               task: `Elenca i comandi privilegiati che l'utente alice puo' eseguire via sudo per verificare il rispetto del principio del minimo privilegio.`,
+              code: `sudo -l 2>/dev/null | tail -10
+echo '---'
+id
+groups`,
             },
             {
               english: 'Escalate',
@@ -4791,6 +6022,10 @@ EOF`,
               difficulty: 'advanced',
               command: 'sudo -i',
               task: `Effettua un'escalation a una shell di root con ambiente di login completo per eseguire una serie di operazioni amministrative.`,
+              code: `whoami
+sudo whoami
+sudo -u www-data whoami
+echo "Back to: $(whoami)"`,
             },
             {
               english: 'PAM',
@@ -4803,6 +6038,9 @@ EOF`,
               note: `Pluggable Authentication Modules: framework modulare per l'autenticazione.`,
               command: 'sudo cat /etc/pam.d/sshd',
               task: `Ispeziona la pila di moduli PAM configurata per il servizio sshd per capire come viene autenticato l'accesso SSH.`,
+              code: `cat /etc/pam.d/common-auth | grep -v '^#' | head -5
+echo '---'
+ls /etc/pam.d/ | head -10`,
             },
             {
               english: 'Chroot',
@@ -4816,6 +6054,10 @@ EOF`,
               note: 'Comando che cambia la directory radice apparente di un processo, creando una jail filesystem.',
               command: 'sudo chroot /mnt/recovery /bin/bash',
               task: `Entra in una jail chroot sulla partizione di ripristino per riparare un sistema rotto senza esporre il filesystem dell'host.`,
+              code: `sudo mkdir -p /tmp/jail/{bin,lib,lib64}
+sudo cp /bin/bash /tmp/jail/bin/
+ldd /bin/bash
+echo 'Chroot jail skeleton created at /tmp/jail'`,
             },
             {
               english: 'Lock',
@@ -4828,6 +6070,10 @@ EOF`,
               difficulty: 'beginner',
               command: 'sudo passwd -l alice',
               task: `Blocca l'account dell'utente alice subito dopo le sue dimissioni per impedire qualsiasi futuro accesso al sistema.`,
+              code: `sudo passwd -S alice 2>/dev/null
+sudo passwd -l alice 2>/dev/null
+sudo passwd -S alice 2>/dev/null
+echo 'Account locked (L status)'`,
             },
             {
               english: 'Expiration',
@@ -4840,6 +6086,9 @@ EOF`,
               difficulty: 'intermediate',
               command: 'sudo chage -M 90 -W 7 alice',
               task: 'Imposta la scadenza della password di alice a novanta giorni con avviso una settimana prima per forzare un cambio periodico.',
+              code: `sudo chage -l alice 2>/dev/null | head -5
+sudo chage -M 90 -W 14 alice 2>/dev/null
+echo 'Password expires in 90 days, warn at 14'`,
             },
             {
               english: 'Sudo Audit',
@@ -4851,6 +6100,9 @@ EOF`,
               difficulty: 'intermediate',
               command: `sudo grep 'COMMAND=' /var/log/auth.log | tail -50`,
               task: 'Esegui un audit di sudo estraendo dal log di auth gli ultimi cinquanta comandi privilegiati eseguiti dagli utenti.',
+              code: `sudo grep 'COMMAND=' /var/log/auth.log 2>/dev/null | tail -10
+COUNT=$(sudo grep -c 'COMMAND=' /var/log/auth.log 2>/dev/null || echo 0)
+echo "Total sudo commands today: $COUNT"`,
             },
             {
               english: 'Restricted',
@@ -4863,6 +6115,9 @@ EOF`,
               difficulty: 'advanced',
               command: 'sudo usermod -s /bin/rbash alice',
               task: 'Assegna ad alice una shell ristretta rbash per impedirle di eseguire comandi arbitrari pur lasciandole accesso al sistema.',
+              code: `sudo useradd -s /bin/rbash restricted_user 2>/dev/null
+sudo mkdir -p /home/restricted_user/bin
+echo 'Restricted shell assigned -- user cannot cd or modify PATH'`,
             },
             {
               english: 'Compliance',
@@ -4875,6 +6130,9 @@ EOF`,
               difficulty: 'advanced',
               command: 'sudo lynis audit system',
               task: 'Lancia una scansione di compliance con Lynis per confrontare la configurazione del sistema contro i benchmark di sicurezza.',
+              code: `sudo lynis audit system --quick 2>/dev/null | tail -15
+echo '---'
+sudo lynis show warnings 2>/dev/null | head -10`,
             },
           ],
         },
@@ -4894,6 +6152,9 @@ EOF`,
               difficulty: 'intermediate',
               command: 'sudo ausearch -ts today -m USER_CMD',
               task: 'Ricostruisci la traccia di audit della giornata interrogando auditd per tutti gli eventi di tipo USER_CMD eseguiti dagli utenti.',
+              code: `sudo ausearch -ts today -m USER_CMD --no-pager 2>/dev/null | tail -15
+echo '---'
+sudo aureport --summary 2>/dev/null | head -10`,
             },
             {
               english: 'Logwatch',
@@ -4906,6 +6167,9 @@ EOF`,
               note: 'Tool standard di analisi log; nome proprio, nessuna traduzione italiana.',
               command: 'sudo logwatch --detail high --range today --service all',
               task: 'Genera un report Logwatch ad alto dettaglio per tutti i servizi della giornata corrente per riassumere gli eventi rilevanti.',
+              code: `sudo logwatch --detail med --range today --service sshd 2>/dev/null | head -20
+echo '---'
+echo 'Logwatch daily report generated'`,
             },
             {
               english: 'Intrusion',
@@ -4918,6 +6182,9 @@ EOF`,
               difficulty: 'beginner',
               command: 'sudo aide --check',
               task: 'Esegui un controllo di rilevamento intrusioni con AIDE per scoprire modifiche non autorizzate ai binari critici del sistema.',
+              code: `sudo aide --check 2>/dev/null | head -20
+echo '---'
+sudo rkhunter --check --skip-keypress 2>/dev/null | tail -10`,
             },
             {
               english: 'Fail2Ban',
@@ -4931,6 +6198,10 @@ EOF`,
               note: 'Demone Python che banna IP malevoli via iptables/nftables; nome proprio.',
               command: 'sudo fail2ban-client status sshd',
               task: 'Mostra lo stato della jail sshd di Fail2Ban per vedere quanti IP sono stati bannati di recente per tentativi di login falliti.',
+              code: `sudo fail2ban-client status sshd 2>/dev/null
+echo '---'
+sudo fail2ban-client get sshd bantime 2>/dev/null
+sudo fail2ban-client get sshd maxretry 2>/dev/null`,
             },
             {
               english: 'Event',
@@ -4942,6 +6213,9 @@ EOF`,
               difficulty: 'beginner',
               command: 'sudo ausearch -m USER_LOGIN -ts today',
               task: `Estrai dal registro di audit tutti gli eventi di USER_LOGIN della giornata per ricostruire chi e' entrato sul server.`,
+              code: `sudo ausearch -m USER_LOGIN -ts today --no-pager 2>/dev/null | tail -10
+LOGINS=$(sudo ausearch -m USER_LOGIN -ts today 2>/dev/null | grep -c 'type=USER_LOGIN')
+echo "Login events today: $LOGINS"`,
             },
             {
               english: 'Alert',
@@ -4951,6 +6225,11 @@ EOF`,
               example: `Wire an alert from Logwatch to PagerDuty when failed sudo attempts exceed a threshold within five minutes. = Cabla un'allerta da Logwatch a PagerDuty quando i tentativi sudo falliti superano una soglia in cinque minuti.`,
               context: 'sec',
               difficulty: 'beginner',
+              code: `DISK_USE=$(df / --output=pcent | tail -1 | tr -d ' %')
+if [ "$DISK_USE" -gt 85 ]; then
+  logger -p user.crit "ALERT: disk usage at \${DISK_USE}%"
+fi
+echo "Current disk usage: \${DISK_USE}%"`,
             },
             {
               english: 'Monitor',
@@ -4963,6 +6242,9 @@ EOF`,
               difficulty: 'beginner',
               command: 'sudo auditctl -w /etc/passwd -p wa -k passwd_changes',
               task: 'Configura una regola di auditd per monitorare scritture e cambi attributo sul file /etc/passwd ed etichetta gli eventi come passwd_changes.',
+              code: `sudo auditctl -w /etc/passwd -p wa -k passwd_watch
+sudo auditctl -w /etc/shadow -p wa -k shadow_watch
+sudo auditctl -l | grep -E 'passwd|shadow'`,
             },
             {
               english: 'Baseline',
@@ -4975,6 +6257,9 @@ EOF`,
               command:
                 'sudo aide --init && sudo mv /var/lib/aide/aide.db.new.gz /var/lib/aide/aide.db.gz',
               task: `Cattura una baseline integrale del filesystem con AIDE subito dopo l'installazione cosi' le scansioni future segnaleranno qualsiasi deriva.`,
+              code: `sudo aide --init 2>/dev/null
+sudo mv /var/lib/aide/aide.db.new.gz /var/lib/aide/aide.db.gz 2>/dev/null
+echo 'AIDE baseline database initialized'`,
             },
             {
               english: 'Forensics',
@@ -4987,6 +6272,9 @@ EOF`,
               command:
                 'sudo dd if=/dev/sda of=/mnt/evidence/disk.img bs=4M status=progress conv=noerror,sync',
               task: `Acquisisci un'immagine forense bit a bit del disco /dev/sda su storage esterno con dd per analizzarla in seguito in sola lettura.`,
+              code: `sudo dd if=/dev/sda of=/tmp/mbr_backup.img bs=512 count=1 2>/dev/null
+md5sum /tmp/mbr_backup.img 2>/dev/null
+echo 'MBR forensic copy created with hash for chain of custody'`,
             },
             {
               english: 'Incident',
@@ -4996,6 +6284,10 @@ EOF`,
               example: `Trigger your incident response runbook the moment an alert escalates from suspicious to confirmed compromise. = Innesca il runbook di risposta agli incidenti nel momento in cui un'allerta passa da sospetta a compromissione confermata.`,
               context: 'sec',
               difficulty: 'intermediate',
+              code: `TIMESTAMP=$(date -u +%Y%m%dT%H%M%SZ)
+sudo last -10 | head -5
+sudo grep 'Failed password' /var/log/auth.log 2>/dev/null | tail -3
+echo "Incident review at $TIMESTAMP"`,
             },
           ],
         },
@@ -5025,6 +6317,9 @@ EOF`,
               difficulty: 'beginner',
               command: 'apt show nginx',
               task: 'Visualizza i metadati del pacchetto nginx, comprese versione, dipendenze e descrizione, prima di installarlo.',
+              code: `apt show nginx 2>/dev/null | head -10
+echo '---'
+dpkg -l | grep nginx | head -3`,
             },
             {
               english: 'Repository',
@@ -5037,6 +6332,10 @@ EOF`,
               difficulty: 'intermediate',
               command: 'sudo add-apt-repository ppa:deadsnakes/ppa && sudo apt update',
               task: `Aggiungi un repository PPA al sistema e rinfresca subito l'indice dei pacchetti per renderlo utilizzabile.`,
+              code: `cat /etc/apt/sources.list | grep -v '^#' | head -5
+echo '---'
+ls /etc/apt/sources.list.d/
+echo 'Repository sources listed'`,
             },
             {
               english: 'Install',
@@ -5049,6 +6348,9 @@ EOF`,
               difficulty: 'beginner',
               command: 'sudo apt install -y nginx build-essential',
               task: 'Installa nginx insieme alla toolchain di compilazione, accettando in automatico tutte le dipendenze proposte.',
+              code: `sudo apt install -y curl jq
+dpkg -s curl | grep -E 'Status|Version'
+which curl && curl --version | head -1`,
             },
             {
               english: 'Package Index Update',
@@ -5060,6 +6362,9 @@ EOF`,
               difficulty: 'beginner',
               command: 'sudo apt update',
               task: `Aggiorna l'indice dei pacchetti scaricando i metadati piu' recenti da tutti i repository configurati.`,
+              code: `sudo apt update 2>&1 | tail -3
+echo '---'
+apt list --upgradable 2>/dev/null | head -5`,
             },
             {
               english: 'Upgrade',
@@ -5072,6 +6377,10 @@ EOF`,
               difficulty: 'beginner',
               command: 'sudo apt update && sudo apt upgrade -y',
               task: `Aggiorna l'indice e applica tutti gli upgrade di sicurezza disponibili senza chiedere conferma interattiva.`,
+              code: `sudo apt update -qq
+UPGRADES=$(apt list --upgradable 2>/dev/null | tail -n +2 | wc -l)
+echo "Packages to upgrade: $UPGRADES"
+sudo apt upgrade -y --dry-run 2>&1 | tail -3`,
             },
             {
               english: 'Package Removal',
@@ -5083,6 +6392,9 @@ EOF`,
               difficulty: 'beginner',
               command: 'sudo apt purge -y nginx && sudo apt autoremove -y',
               task: 'Rimuovi nginx insieme ai suoi file di configurazione e ripulisci le dipendenze rimaste orfane.',
+              code: `sudo apt purge -y telnet 2>/dev/null
+sudo apt autoremove -y 2>&1 | tail -3
+dpkg -l | grep telnet || echo 'Package fully removed'`,
             },
             {
               english: 'Dependency',
@@ -5094,6 +6406,9 @@ EOF`,
               difficulty: 'intermediate',
               command: 'apt-cache depends nginx',
               task: `Elenca tutte le dipendenze dichiarate dal pacchetto nginx per capire cosa verra' tirato dentro al momento dell'installazione.`,
+              code: `apt-cache depends nginx 2>/dev/null | head -10
+echo '---'
+apt-cache rdepends curl 2>/dev/null | head -10`,
             },
             {
               english: 'Source Code',
@@ -5106,6 +6421,9 @@ EOF`,
               difficulty: 'advanced',
               command: 'apt source nginx',
               task: 'Scarica il codice sorgente del pacchetto nginx nella directory corrente per poterlo ispezionare e ricompilare.',
+              code: `apt-cache showsrc coreutils 2>/dev/null | grep -E 'Package|Version|Binary' | head -6
+echo '---'
+apt source --download-only coreutils 2>/dev/null || echo 'Source download attempted'`,
             },
             {
               english: 'Binary Package',
@@ -5117,6 +6435,9 @@ EOF`,
               difficulty: 'intermediate',
               command: 'sudo dpkg -i ./app_1.2.3_amd64.deb',
               task: 'Installa direttamente un pacchetto binario .deb scaricato a mano, bypassando i repository configurati.',
+              code: `dpkg -l | head -15
+PKG_COUNT=$(dpkg -l | grep '^ii' | wc -l)
+echo "Installed packages: $PKG_COUNT"`,
             },
             {
               english: 'Mirror',
@@ -5127,6 +6448,10 @@ EOF`,
                 'Point apt at a nearby mirror like archive.ubuntu.com geographic regional URL to cut package download latency. = Punta apt a un mirror vicino come un URL regionale archive.ubuntu.com per ridurre la latenza di download dei pacchetti.',
               context: 'admin',
               difficulty: 'intermediate',
+              code: `grep -h '^deb ' /etc/apt/sources.list 2>/dev/null | head -3
+echo '---'
+MIRROR=$(grep -m1 'http' /etc/apt/sources.list 2>/dev/null | awk '{print $2}')
+echo "Current mirror: $MIRROR"`,
             },
           ],
         },
@@ -5146,6 +6471,10 @@ EOF`,
               difficulty: 'beginner',
               command: 'tar -czf /backup/home-$(date +%F).tar.gz /home/user',
               task: `Crea un backup compresso della home dell'utente includendo la data corrente nel nome del file.`,
+              code: `STAMP=$(date +%F)
+tar -czf /tmp/etc-backup-$STAMP.tar.gz /etc/hostname /etc/hosts 2>/dev/null
+ls -lh /tmp/etc-backup-$STAMP.tar.gz
+echo "Backup created: etc-backup-$STAMP.tar.gz"`,
             },
             {
               english: 'Restore',
@@ -5157,6 +6486,10 @@ EOF`,
               difficulty: 'beginner',
               command: 'tar -xzf /backup/home-2026-05-17.tar.gz -C /',
               task: 'Ripristina un archivio di backup tar.gz nella radice del filesystem mantenendo i permessi originali.',
+              code: `tar -tzf /tmp/etc-backup-*.tar.gz 2>/dev/null | head -5
+mkdir -p /tmp/restore-test
+tar -xzf /tmp/etc-backup-*.tar.gz -C /tmp/restore-test/ 2>/dev/null
+echo 'Archive listed and test restore done'`,
             },
             {
               english: 'Sync',
@@ -5169,6 +6502,10 @@ EOF`,
               difficulty: 'intermediate',
               command: 'rsync -avz --delete /home/user/projects/ user@nas:/backup/projects/',
               task: `Sincronizza la cartella progetti su un NAS remoto eliminando dal NAS i file che non esistono piu' in locale.`,
+              code: `mkdir -p /tmp/sync-target
+rsync -avz /etc/hostname /tmp/sync-target/
+ls -l /tmp/sync-target/
+echo 'Sync complete'`,
             },
             {
               english: 'Snapshot',
@@ -5181,6 +6518,9 @@ EOF`,
               command:
                 'sudo btrfs subvolume snapshot -r /mnt/data /mnt/data/.snapshots/$(date +%F)',
               task: 'Crea uno snapshot Btrfs in sola lettura del subvolume dati prima di un aggiornamento rischioso.',
+              code: `SNAP="snapshot-$(date +%F-%H%M)"
+sudo btrfs subvolume snapshot -r /mnt/data "/mnt/data/.snapshots/$SNAP" 2>/dev/null
+echo "Created read-only snapshot: $SNAP"`,
             },
             {
               english: 'Incremental',
@@ -5193,6 +6533,10 @@ EOF`,
               difficulty: 'advanced',
               command: 'rsync -avz --link-dest=/backup/yesterday/ /home/ /backup/today/',
               task: 'Esegui un backup incrementale che condivide via hardlink i file invariati rispetto a quello del giorno precedente.',
+              code: `YESTERDAY=/backup/$(date -d yesterday +%F)
+TODAY=/backup/$(date +%F)
+rsync -avz --link-dest="$YESTERDAY" /home/ "$TODAY/" 2>/dev/null
+echo "Incremental backup using hardlinks from $YESTERDAY"`,
             },
             {
               english: 'Backup Archive',
@@ -5205,6 +6549,9 @@ EOF`,
               difficulty: 'intermediate',
               command: 'tar -czf - /var/www | gpg -c -o /backup/www-$(date +%F).tar.gz.gpg',
               task: 'Costruisci un archivio di backup compresso e cifralo con GPG in un solo passaggio, evitando file temporanei in chiaro.',
+              code: `tar -czf - /etc/hosts 2>/dev/null | gpg --batch --yes --symmetric --passphrase 'backup' -o /tmp/hosts.tar.gz.gpg
+ls -lh /tmp/hosts.tar.gz.gpg
+echo 'Encrypted archive created'`,
             },
             {
               english: 'Clone',
@@ -5216,6 +6563,10 @@ EOF`,
               difficulty: 'advanced',
               command: 'sudo dd if=/dev/sda of=/dev/sdb bs=4M status=progress conv=noerror,sync',
               task: `Clona blocco per blocco un disco difettoso su un drive sano mostrando l'avanzamento e tollerando errori di lettura.`,
+              code: `sudo dd if=/dev/sda of=/dev/sdb bs=4M status=progress conv=noerror,sync 2>/dev/null &
+DD_PID=$!
+echo "Disk clone PID: $DD_PID"
+echo 'Send USR1 to check progress: kill -USR1 $DD_PID'`,
             },
             {
               english: 'Remote Backup',
@@ -5227,6 +6578,10 @@ EOF`,
               difficulty: 'intermediate',
               command: `rsync -avz -e 'ssh -p 22' /var/data/ backup@offsite.example.com:/backup/data/`,
               task: 'Spedisci un backup remoto via SSH verso uno storage off-site, comprimendo i dati durante il trasferimento.',
+              code: `rsync -avz -e 'ssh -p 22' /etc/hostname backup@offsite:/backup/ 2>/dev/null
+echo '---'
+scp /tmp/etc-backup-*.tar.gz backup@offsite:/backup/ 2>/dev/null
+echo 'Remote backup attempted'`,
             },
             {
               english: 'Retention',
@@ -5237,6 +6592,10 @@ EOF`,
                 'Set a retention policy of 7 daily, 4 weekly and 12 monthly snapshots to balance recovery options against storage costs. = Imposta una policy di conservazione di 7 snapshot giornalieri, 4 settimanali e 12 mensili per bilanciare opzioni di recupero e costi di storage.',
               context: 'admin',
               difficulty: 'advanced',
+              code: `BACKUP_DIR='/backup'
+find "$BACKUP_DIR" -name '*.tar.gz' -mtime +30 -print 2>/dev/null
+find "$BACKUP_DIR" -name '*.tar.gz' -mtime +30 -delete 2>/dev/null
+echo 'Backups older than 30 days removed'`,
             },
             {
               english: 'Integrity',
@@ -5249,6 +6608,10 @@ EOF`,
               command:
                 'sha256sum /backup/*.tar.gz > /backup/SHA256SUMS && sha256sum -c /backup/SHA256SUMS',
               task: 'Genera i checksum SHA-256 di tutti gli archivi di backup e verifica subito che siano leggibili senza corruzione.',
+              code: `sha256sum /tmp/etc-backup-*.tar.gz > /tmp/SHA256SUMS 2>/dev/null
+cat /tmp/SHA256SUMS
+sha256sum -c /tmp/SHA256SUMS 2>/dev/null
+echo 'Integrity verification done'`,
             },
           ],
         },
@@ -5268,6 +6631,10 @@ EOF`,
               difficulty: 'beginner',
               command: 'sudo systemctl status nginx',
               task: `Controlla lo stato del web server nginx per verificare se e' attivo e quante richieste sta servendo.`,
+              code: `sudo systemctl status nginx --no-pager 2>/dev/null | head -5
+echo '---'
+nginx -v 2>&1
+curl -sI http://localhost | head -3`,
             },
             {
               english: 'Request',
@@ -5279,6 +6646,9 @@ EOF`,
               difficulty: 'intermediate',
               command: 'curl -v -X GET https://example.com/api/users',
               task: 'Invia una richiesta HTTP GET mostrando in dettaglio header, metodo e handshake TLS della connessione.',
+              code: `curl -s -o /dev/null -w 'HTTP %{http_code} in %{time_total}s\\n' https://example.com
+curl -s https://httpbin.org/get | head -5
+echo 'Request complete'`,
             },
             {
               english: 'Response',
@@ -5289,6 +6659,9 @@ EOF`,
                 'Cache a slow upstream response with Nginx proxy_cache to cut latency for repeated GET requests on the same URL. = Memorizza in cache una risposta upstream lenta con Nginx proxy_cache per ridurre la latenza su richieste GET ripetute allo stesso URL.',
               context: 'web',
               difficulty: 'intermediate',
+              code: `STATUS=$(curl -s -o /dev/null -w '%{http_code}' https://example.com)
+SIZE=$(curl -sI https://example.com | grep -i content-length | awk '{print $2}')
+echo "Status: $STATUS, Size: $SIZE bytes"`,
             },
             {
               english: 'Header',
@@ -5300,6 +6673,9 @@ EOF`,
               difficulty: 'advanced',
               command: `curl -I -H 'User-Agent: test' https://example.com`,
               task: 'Recupera solo gli header HTTP di risposta passando uno User-Agent personalizzato per simulare un client specifico.',
+              code: `curl -sI https://example.com | head -10
+echo '---'
+curl -s -H 'Accept: application/json' -H 'X-Custom: test' https://httpbin.org/headers | head -5`,
             },
             {
               english: 'Proxy',
@@ -5310,6 +6686,10 @@ EOF`,
                 'Front your backend with an nginx reverse proxy to terminate TLS, add caching and unify access logs in one place. = Metti davanti al backend un reverse proxy nginx per terminare il TLS, aggiungere caching e unificare i log di accesso in un unico punto.',
               context: 'web',
               difficulty: 'advanced',
+              code: `export http_proxy='http://proxy.corp:8080'
+export https_proxy='http://proxy.corp:8080'
+curl -v --proxy http://proxy.corp:8080 https://example.com 2>&1 | head -5
+echo 'Proxy configuration set'`,
             },
             {
               english: 'Load Balancing',
@@ -5319,6 +6699,10 @@ EOF`,
               example: `Distribute traffic across three backend hosts with nginx upstream load balancing so a single node failure doesn't take down the site. = Distribuisci il traffico su tre host di backend con il bilanciamento del carico upstream di nginx cosi' il fallimento di un singolo nodo non abbatte il sito.`,
               context: 'web',
               difficulty: 'expert',
+              code: `for i in 1 2 3 4 5; do
+  SERVER=$(curl -sI http://lb.local | grep X-Served-By | awk '{print $2}')
+  echo "Request $i served by: $SERVER"
+done`,
             },
             {
               english: 'Access Log',
@@ -5331,6 +6715,9 @@ EOF`,
               difficulty: 'intermediate',
               command: `sudo tail -f /var/log/nginx/access.log | grep -v '200'`,
               task: 'Segui in tempo reale il log di accesso di nginx filtrando via le richieste andate a buon fine per evidenziare gli errori.',
+              code: `sudo tail -5 /var/log/nginx/access.log 2>/dev/null
+echo '---'
+sudo awk '{print $1}' /var/log/nginx/access.log 2>/dev/null | sort | uniq -c | sort -rn | head -5`,
             },
             {
               english: 'Configuration',
@@ -5342,6 +6729,10 @@ EOF`,
               difficulty: 'intermediate',
               command: 'sudo nginx -t && sudo systemctl reload nginx',
               task: 'Valida la configurazione di nginx e ricaricala a caldo solo se il test passa, evitando di interrompere il servizio.',
+              code: `sudo nginx -t 2>&1
+echo '---'
+sudo nginx -T 2>/dev/null | grep -E 'server_name|listen' | head -5
+echo 'Config test complete'`,
             },
             {
               english: 'Virtual Host',
@@ -5351,6 +6742,10 @@ EOF`,
               example: `Host multiple domains on one IP via nginx server_name blocks so each virtual host serves its own document root. = Ospita piu' domini su un solo IP via blocchi server_name di nginx cosi' ogni host virtuale serve la propria document root.`,
               context: 'web',
               difficulty: 'advanced',
+              code: `ls /etc/nginx/sites-enabled/ 2>/dev/null
+echo '---'
+sudo grep -r 'server_name' /etc/nginx/sites-enabled/ 2>/dev/null
+echo 'Virtual host configurations listed'`,
             },
             {
               english: 'SSL/TLS',
@@ -5363,6 +6758,9 @@ EOF`,
               note: 'Secure Sockets Layer / Transport Layer Security: protocolli per crittografare il traffico di rete.',
               command: 'sudo certbot --nginx -d example.com -d www.example.com',
               task: `Ottieni e installa automaticamente un certificato SSL/TLS Let's Encrypt configurando nginx per i due domini.`,
+              code: `sudo certbot certificates 2>/dev/null | head -10
+echo '---'
+openssl s_client -connect example.com:443 </dev/null 2>/dev/null | grep -E 'subject|issuer|dates'`,
             },
           ],
         },
@@ -5379,6 +6777,10 @@ EOF`,
               example: `Connect to a PostgreSQL database with psql -h db.example.com -U analyst reports during ad hoc data exploration. = Connettiti a un database PostgreSQL con psql -h db.example.com -U analyst reports durante un'esplorazione dati ad hoc.`,
               context: 'db',
               difficulty: 'beginner',
+              code: `sudo systemctl status mysql --no-pager 2>/dev/null | head -5
+echo '---'
+mysql --version 2>/dev/null || psql --version 2>/dev/null
+echo 'Database engine checked'`,
             },
             {
               english: 'Query',
@@ -5392,6 +6794,10 @@ EOF`,
               command:
                 'mysql -u root -p -e "SELECT id, email FROM users WHERE active=1 LIMIT 10;" appdb',
               task: `Esegui una query SQL contro il database appdb passando direttamente l'istruzione da riga di comando.`,
+              code: `mysql -u root -e 'SELECT user, host FROM mysql.user;' 2>/dev/null
+echo '---'
+mysql -u root -e 'SHOW DATABASES;' 2>/dev/null
+echo 'Query complete'`,
             },
             {
               english: 'DB Table',
@@ -5401,6 +6807,9 @@ EOF`,
               example: `Inspect a DB table structure with \\d+ users inside psql to see columns, indexes and foreign keys at a glance. = Ispeziona la struttura di una tabella DB con \\d+ users dentro psql per vedere colonne, indici e foreign key a colpo d'occhio.`,
               context: 'db',
               difficulty: 'beginner',
+              code: `mysql -u root -e 'USE information_schema; SELECT TABLE_NAME, TABLE_ROWS FROM TABLES WHERE TABLE_SCHEMA="appdb" LIMIT 10;' 2>/dev/null
+echo '---'
+echo 'Table listing complete'`,
             },
             {
               english: 'Record',
@@ -5410,6 +6819,9 @@ EOF`,
               example: `Insert a new record with INSERT INTO users(name, email) VALUES('Alice', 'a@example.com') and capture the returning id. = Inserisci un nuovo record con INSERT INTO users(name, email) VALUES('Alice', 'a@example.com') e cattura l'id restituito.`,
               context: 'db',
               difficulty: 'beginner',
+              code: `mysql -u root -e 'SELECT id, email, created_at FROM appdb.users ORDER BY id DESC LIMIT 5;' 2>/dev/null
+ROWS=$(mysql -u root -sNe 'SELECT COUNT(*) FROM appdb.users;' 2>/dev/null || echo 0)
+echo "Total records: $ROWS"`,
             },
             {
               english: 'Client',
@@ -5421,6 +6833,10 @@ EOF`,
               difficulty: 'intermediate',
               command: 'mysql -h db.internal -P 3306 -u readonly -p reports',
               task: 'Avvia il client mysql per collegarti al database reports su un host remoto usando un utente in sola lettura.',
+              code: `mysql -h localhost -P 3306 -u readonly -e 'SELECT 1;' 2>/dev/null
+echo '---'
+psql -h localhost -U readonly -c 'SELECT version();' 2>/dev/null
+echo 'Client connection tested'`,
             },
             {
               english: 'Server',
@@ -5432,6 +6848,10 @@ EOF`,
               difficulty: 'beginner',
               command: 'sudo systemctl restart mysql && sudo systemctl status mysql',
               task: 'Riavvia il server MySQL e verifica subito che sia tornato a rispondere correttamente alle connessioni.',
+              code: `sudo systemctl restart mysql 2>/dev/null
+sudo systemctl status mysql --no-pager 2>/dev/null | head -3
+ss -tlnp | grep 3306
+echo 'DB server restarted'`,
             },
             {
               english: 'Dump',
@@ -5444,6 +6864,10 @@ EOF`,
               command:
                 'mysqldump -u root -p --single-transaction --routines appdb > appdb-$(date +%F).sql',
               task: 'Esporta un dump SQL consistente del database appdb includendo le stored procedure, senza bloccare le scritture.',
+              code: `STAMP=$(date +%F)
+mysqldump -u root --single-transaction appdb > "/backup/appdb-$STAMP.sql" 2>/dev/null
+ls -lh "/backup/appdb-$STAMP.sql" 2>/dev/null
+echo "Dump saved: appdb-$STAMP.sql"`,
             },
             {
               english: 'Import',
@@ -5456,6 +6880,9 @@ EOF`,
               difficulty: 'intermediate',
               command: 'mysql -u root -p staging < appdb-2026-05-17.sql',
               task: 'Importa un dump SQL nel database staging per riprodurre localmente lo stato di produzione.',
+              code: `mysql -u root -e 'CREATE DATABASE IF NOT EXISTS staging;' 2>/dev/null
+mysql -u root staging < /backup/appdb-latest.sql 2>/dev/null
+echo 'Database imported into staging'`,
             },
             {
               english: 'DB Connection Pool',
@@ -5465,6 +6892,9 @@ EOF`,
               example: `Front Postgres with a DB connection pool like PgBouncer so thousands of short-lived clients reuse a few warm sessions. = Metti davanti a Postgres un pool di connessioni DB come PgBouncer cosi' migliaia di client di breve durata riusano poche sessioni calde.`,
               context: 'db',
               difficulty: 'beginner',
+              code: `mysql -u root -e "SHOW STATUS LIKE 'Threads_connected';" 2>/dev/null
+mysql -u root -e "SHOW VARIABLES LIKE 'max_connections';" 2>/dev/null
+echo 'Connection pool status checked'`,
             },
             {
               english: 'Grant',
@@ -5474,6 +6904,9 @@ EOF`,
               example: `So a BI user can query without altering data, grant read-only access with GRANT SELECT ON reports TO analyst at the database level. = Cosi' un utente BI puo' interrogare senza alterare i dati, concedi accesso in sola lettura con GRANT SELECT ON reports TO analyst a livello di database.`,
               context: 'db',
               difficulty: 'advanced',
+              code: `mysql -u root -e "CREATE USER IF NOT EXISTS 'appuser'@'%' IDENTIFIED BY 'securepass';" 2>/dev/null
+mysql -u root -e "GRANT SELECT, INSERT ON appdb.* TO 'appuser'@'%';" 2>/dev/null
+mysql -u root -e "SHOW GRANTS FOR 'appuser'@'%';" 2>/dev/null`,
             },
           ],
         },
@@ -5503,6 +6936,10 @@ EOF`,
               difficulty: 'intermediate',
               command: 'docker run -d --name web -p 8080:80 --restart unless-stopped nginx:alpine',
               task: 'Avvia un container nginx in background pubblicando la porta 8080 e con riavvio automatico salvo arresto manuale.',
+              code: `docker run -d --name web -p 8080:80 nginx:alpine
+docker ps --filter name=web
+curl -s http://localhost:8080 | head -3
+docker stop web && docker rm web`,
             },
             {
               english: 'Image',
@@ -5514,6 +6951,9 @@ EOF`,
               difficulty: 'intermediate',
               command: 'docker pull nginx:1.27-alpine && docker image inspect nginx:1.27-alpine',
               task: `Scarica una specifica versione dell'immagine nginx e ispezionane i metadati come layer, comando di entrypoint e variabili.`,
+              code: `docker pull alpine:3.19
+docker image ls alpine
+docker image inspect alpine:3.19 --format '{{.Size}}' | numfmt --to=iec`,
             },
             {
               english: 'Docker',
@@ -5526,6 +6966,9 @@ EOF`,
               note: 'Docker Inc. e il suo runtime di container; nome proprio, nessuna traduzione italiana.',
               command: 'docker run --rm -it -v $(pwd):/work -w /work alpine sh',
               task: 'Avvia una shell Alpine usa-e-getta montando la directory corrente come spazio di lavoro dentro al container.',
+              code: `docker info --format '{{.ServerVersion}}'
+docker system df
+echo "Running containers: $(docker ps -q | wc -l)"`,
             },
             {
               english: 'Docker Volume',
@@ -5538,6 +6981,9 @@ EOF`,
               command:
                 'docker volume create pgdata && docker run -d -v pgdata:/var/lib/postgresql/data postgres:16',
               task: 'Crea un volume Docker nominato e montalo come storage persistente per i dati di PostgreSQL.',
+              code: `docker volume create appdata
+docker volume inspect appdata --format '{{.Mountpoint}}'
+docker run --rm -v appdata:/data alpine sh -c 'echo test > /data/file.txt && cat /data/file.txt'`,
             },
             {
               english: 'Network',
@@ -5550,6 +6996,10 @@ EOF`,
               command:
                 'docker network create --driver bridge appnet && docker run -d --network appnet --name api myapp:latest',
               task: `Crea una rete bridge dedicata e aggancia il container dell'applicazione affinche' possa parlare con gli altri servizi sulla stessa rete.`,
+              code: `docker network create --driver bridge appnet
+docker network ls
+docker network inspect appnet --format '{{.IPAM.Config}}'
+docker network rm appnet`,
             },
             {
               english: 'Orchestration',
@@ -5559,6 +7009,10 @@ EOF`,
               example: `Kubernetes performs container orchestration by scheduling pods across nodes and restarting them if a worker dies. = Kubernetes esegue l'orchestrazione dei container schedulando pod tra i nodi e riavviandoli se un worker muore.`,
               context: 'cloud',
               difficulty: 'expert',
+              code: `docker compose version
+docker compose -f docker-compose.yml up -d 2>/dev/null
+docker compose ps
+echo 'Stack orchestrated via compose'`,
             },
             {
               english: 'Registry',
@@ -5570,6 +7024,9 @@ EOF`,
               difficulty: 'intermediate',
               command: 'docker login registry.internal && docker push registry.internal/app:1.2.3',
               task: `Autenticati al registry privato e carica una nuova versione taggata dell'immagine prima del rollout in produzione.`,
+              code: `docker tag myapp:latest registry.internal/myapp:1.2.3
+docker push registry.internal/myapp:1.2.3 2>/dev/null
+echo 'Image tagged and pushed to private registry'`,
             },
             {
               english: 'Namespace',
@@ -5582,6 +7039,9 @@ EOF`,
               difficulty: 'expert',
               command: 'sudo lsns -t pid,net,mnt -p $(pgrep -f nginx | head -1)',
               task: `Elenca i namespace pid, net e mnt utilizzati dal processo nginx per capire l'isolamento applicato al container.`,
+              code: `PID=$(docker inspect --format '{{.State.Pid}}' web 2>/dev/null || echo 1)
+sudo lsns -p "$PID" 2>/dev/null | head -10
+echo 'Container namespaces: pid, net, mnt, uts, ipc, user'`,
             },
             {
               english: 'Cgroups',
@@ -5594,6 +7054,9 @@ EOF`,
               note: 'Control Groups: feature kernel per limitare e isolare risorse di gruppi di processi.',
               command: `docker run -d --cpus='1.5' --memory='512m' --name capped nginx`,
               task: `Avvia un container con limiti via cgroups di una CPU e mezzo e 512 MB di memoria per evitare che affami l'host.`,
+              code: `docker run -d --name capped --cpus='1.0' --memory='256m' nginx:alpine
+docker stats capped --no-stream
+docker rm -f capped`,
             },
             {
               english: 'Microservices',
@@ -5603,6 +7066,10 @@ EOF`,
               example: `Split a monolith into microservices so each team can deploy its own container image independently several times a day. = Spezza un monolite in microservizi cosi' ogni team puo' fare deploy della propria immagine container in modo indipendente piu' volte al giorno.`,
               context: 'cloud',
               difficulty: 'advanced',
+              code: `docker compose ps 2>/dev/null
+for SVC in api worker db redis; do
+  echo "$SVC: $(docker inspect --format '{{.State.Status}}' $SVC 2>/dev/null || echo 'not running')"
+done`,
             },
           ],
         },
@@ -5623,6 +7090,10 @@ EOF`,
               command:
                 'virt-install --name ubuntu24 --memory 4096 --vcpus 2 --disk size=40 --cdrom ubuntu-24.04.iso --os-variant ubuntu24.04',
               task: 'Crea una nuova macchina virtuale Ubuntu con 4 GB di RAM, 2 vCPU e disco da 40 GB partendo da una ISO.',
+              code: `virsh list --all 2>/dev/null
+VMS=$(virsh list --all 2>/dev/null | grep -c running || echo 0)
+echo "Running VMs: $VMS"
+virsh dominfo ubuntu24 2>/dev/null | head -5`,
             },
             {
               english: 'Hypervisor',
@@ -5633,6 +7104,9 @@ EOF`,
                 'KVM turns the Linux kernel into a type-1 hypervisor that schedules guest VMs alongside regular processes. = KVM trasforma il kernel Linux in un hypervisor di tipo 1 che schedula VM guest accanto ai processi regolari.',
               context: 'cloud',
               difficulty: 'advanced',
+              code: `grep -Ec '(vmx|svm)' /proc/cpuinfo
+lsmod | grep kvm
+virsh version 2>/dev/null | head -3`,
             },
             {
               english: 'Guest',
@@ -5642,6 +7116,9 @@ EOF`,
               example: `Install the qemu-guest-agent inside each guest OS so the hypervisor can request clean shutdowns and consistent snapshots. = Installa qemu-guest-agent in ogni sistema operativo guest cosi' l'hypervisor puo' richiedere shutdown puliti e snapshot consistenti.`,
               context: 'cloud',
               difficulty: 'intermediate',
+              code: `virsh list --all 2>/dev/null
+virsh dominfo ubuntu24 2>/dev/null | grep -E 'State|CPU|Max memory'
+echo 'Guest VM details retrieved'`,
             },
             {
               english: 'Hypervisor Host',
@@ -5651,6 +7128,10 @@ EOF`,
               example: `Reserve at least 20% headroom on each hypervisor host so noisy neighbour VMs don't starve the host itself. = Riserva almeno il 20% di margine su ogni host hypervisor cosi' VM rumorose non affamano l'host stesso.`,
               context: 'cloud',
               difficulty: 'intermediate',
+              code: `virsh nodeinfo 2>/dev/null
+echo '---'
+virsh nodecpumap 2>/dev/null
+echo 'Host hypervisor resources listed'`,
             },
             {
               english: 'VM Snapshot',
@@ -5662,6 +7143,9 @@ EOF`,
               difficulty: 'intermediate',
               command: `virsh snapshot-create-as --domain ubuntu24 --name pre-upgrade --description 'Before kernel 6.7 upgrade'`,
               task: `Crea uno snapshot della VM ubuntu24 prima di un upgrade del kernel cosi' da poter ripristinare lo stato in caso di problemi.`,
+              code: `virsh snapshot-create-as --domain ubuntu24 --name pre-upgrade --description 'Before upgrade' 2>/dev/null
+virsh snapshot-list ubuntu24 2>/dev/null
+echo 'VM snapshot created for rollback'`,
             },
             {
               english: 'Emulation',
@@ -5674,6 +7158,9 @@ EOF`,
               command:
                 'qemu-system-aarch64 -M virt -cpu cortex-a72 -m 2G -drive file=arm.qcow2,if=virtio -nographic',
               task: 'Avvia in emulazione completa una macchina virtuale ARM su un host x86 per testare un binario per architettura diversa.',
+              code: `qemu-system-x86_64 --version 2>/dev/null | head -1
+qemu-img info /var/lib/libvirt/images/ubuntu24.qcow2 2>/dev/null | head -5
+echo 'QEMU emulator checked'`,
             },
             {
               english: 'Provisioning',
@@ -5683,6 +7170,10 @@ EOF`,
               example: `Automate VM provisioning with Terraform and cloud-init so a new host comes up fully configured in under five minutes. = Automatizza il provisioning delle VM con Terraform e cloud-init cosi' un nuovo host si presenta completamente configurato in meno di cinque minuti.`,
               context: 'cloud',
               difficulty: 'advanced',
+              code: `virt-install --name testvm --memory 2048 --vcpus 2 \\
+  --disk size=20 --os-variant ubuntu24.04 \\
+  --cdrom /iso/ubuntu-24.04.iso --noautoconsole 2>/dev/null
+echo 'VM provisioned with 2 vCPUs, 2GB RAM, 20GB disk'`,
             },
             {
               english: 'Cloud',
@@ -5692,6 +7183,9 @@ EOF`,
               example: `Most modern cloud infrastructure rents out Linux VMs by the hour from hypervisor pools spanning entire datacenters. = La maggior parte dell'infrastruttura cloud moderna affitta VM Linux a ore da pool di hypervisor che coprono interi datacenter.`,
               context: 'cloud',
               difficulty: 'beginner',
+              code: `cloud-init status 2>/dev/null
+cat /run/cloud-init/result.json 2>/dev/null
+echo "Instance ID: $(cloud-init query instance-id 2>/dev/null || echo 'not a cloud instance')"`,
             },
             {
               english: 'Passthrough',
@@ -5701,6 +7195,10 @@ EOF`,
               example: 'PCI passthrough gives VM direct hardware access.',
               context: 'cloud',
               difficulty: 'expert',
+              code: `lspci -nnk | grep -A2 'NVIDIA' 2>/dev/null
+echo '---'
+virsh nodedev-list --cap pci 2>/dev/null | head -5
+echo 'PCI passthrough devices listed'`,
             },
             {
               english: 'Migration',
@@ -5713,6 +7211,10 @@ EOF`,
               command:
                 'virsh migrate --live --persistent --undefinesource ubuntu24 qemu+ssh://node2/system',
               task: 'Migra a caldo la VM ubuntu24 verso un altro host hypervisor senza interrompere le connessioni attive.',
+              code: `virsh migrate --live --persistent ubuntu24 qemu+ssh://node2/system 2>/dev/null
+echo '---'
+virsh list --all 2>/dev/null
+echo 'Live migration to node2 attempted'`,
             },
           ],
         },
@@ -5732,6 +7234,9 @@ EOF`,
               difficulty: 'intermediate',
               command: 'sysbench cpu --threads=$(nproc) --time=60 run',
               task: 'Esegui un benchmark CPU della durata di un minuto usando tutti i core disponibili per confrontare due configurazioni hardware.',
+              code: `CORES=$(nproc)
+sysbench cpu --threads="$CORES" --time=10 run 2>/dev/null | grep 'events per second'
+echo "Benchmark ran on $CORES threads"`,
             },
             {
               english: 'Tuning',
@@ -5743,6 +7248,10 @@ EOF`,
               difficulty: 'advanced',
               command: 'sudo sysctl -w net.core.somaxconn=4096 net.ipv4.tcp_max_syn_backlog=8192',
               task: 'Applica un tuning di rete aumentando la coda di accettazione e il backlog SYN per assorbire picchi di connessioni in arrivo.',
+              code: `sysctl net.core.somaxconn
+sudo sysctl -w net.core.somaxconn=4096
+sysctl net.core.somaxconn
+echo 'TCP listen backlog tuned'`,
             },
             {
               english: 'Performance Profile',
@@ -5756,6 +7265,10 @@ EOF`,
               command:
                 'sudo perf record -F 99 -g -p $(pgrep nginx | head -1) -- sleep 30 && sudo perf report',
               task: 'Cattura un profilo prestazionale di nginx per 30 secondi a 99 Hz con stack trace, poi apri il report interattivo.',
+              code: `TARGET=$(pgrep -f nginx | head -1)
+sudo perf record -F 99 -g -p "$TARGET" -- sleep 10 2>/dev/null
+sudo perf report --stdio 2>/dev/null | head -20
+echo 'CPU profile captured'`,
             },
             {
               english: 'Strace Trace',
@@ -5769,6 +7282,9 @@ EOF`,
               command:
                 'sudo strace -f -p $(pgrep nginx | head -1) -e trace=openat,read,write -o nginx.strace',
               task: `Aggancia strace al processo nginx tracciando solo i syscall di I/O su file e salvando l'output per analisi successiva.`,
+              code: `strace -c -f ls /etc 2>&1 | tail -15
+echo '---'
+strace -e trace=openat ls /tmp 2>&1 | head -10`,
             },
             {
               english: 'P99 Latency',
@@ -5778,6 +7294,9 @@ EOF`,
               example: `Alert on P99 latency rather than the median so a small fraction of slow users still surfaces in your dashboards. = Allerta sulla latenza P99 invece della mediana cosi' una piccola frazione di utenti lenti emerge comunque nelle tue dashboard.`,
               context: 'perf',
               difficulty: 'intermediate',
+              code: `for i in $(seq 1 100); do
+  curl -s -o /dev/null -w '%{time_total}\\n' http://localhost:8080
+done | sort -n | tail -1 | xargs -I{} echo 'P99 latency: {}s'`,
             },
             {
               english: 'Throughput',
@@ -5788,6 +7307,9 @@ EOF`,
                 'Measure disk throughput with fio --rw=read --bs=1M --size=1G to compare an NVMe device against a spinning disk. = Misura il throughput del disco con fio --rw=read --bs=1M --size=1G per confrontare un dispositivo NVMe con un disco rotativo.',
               context: 'perf',
               difficulty: 'intermediate',
+              code: `dd if=/dev/zero of=/tmp/bench.dat bs=1M count=256 oflag=direct 2>&1 | tail -1
+rm -f /tmp/bench.dat
+echo 'Disk throughput measured'`,
             },
             {
               english: 'Optimization',
@@ -5797,6 +7319,10 @@ EOF`,
               example: 'Premature optimization is the root of evil.',
               context: 'perf',
               difficulty: 'intermediate',
+              code: `echo 'deadline' | sudo tee /sys/block/sda/queue/scheduler 2>/dev/null
+sudo sysctl -w vm.swappiness=10
+echo "Swappiness: $(cat /proc/sys/vm/swappiness)"
+echo 'I/O scheduler and swap tuned'`,
             },
             {
               english: 'Cache',
@@ -5809,6 +7335,10 @@ EOF`,
               difficulty: 'intermediate',
               command: 'sync && echo 3 | sudo tee /proc/sys/vm/drop_caches',
               task: 'Forza il flush della cache delle pagine del kernel prima di misurare le prestazioni di lettura a freddo del disco.',
+              code: `free -h | grep Mem
+sync && echo 3 | sudo tee /proc/sys/vm/drop_caches > /dev/null
+free -h | grep Mem
+echo 'Page cache cleared'`,
             },
             {
               english: 'Overhead',
@@ -5818,6 +7348,10 @@ EOF`,
               example: `Strace can add huge overhead to a hot loop, so attach it briefly during reproduction and detach as soon as you have data. = Strace puo' aggiungere un overhead enorme a un loop caldo, quindi attaccalo brevemente durante la riproduzione e staccalo appena hai i dati.`,
               context: 'perf',
               difficulty: 'advanced',
+              code: `time ls /etc > /dev/null 2>&1
+echo '---'
+vmstat 1 3
+echo 'System overhead sampled'`,
             },
             {
               english: 'Scalability',
@@ -5827,6 +7361,10 @@ EOF`,
               example: `Design a stateless web tier for horizontal scalability so adding more backend pods linearly increases request throughput. = Progetta un tier web stateless per scalabilita' orizzontale cosi' aggiungere piu' pod di backend aumenta linearmente il throughput delle richieste.`,
               context: 'perf',
               difficulty: 'advanced',
+              code: `for T in 1 2 4 8; do
+  echo -n "Threads=$T: "
+  sysbench cpu --threads=$T --time=5 run 2>/dev/null | grep 'events per second'
+done`,
             },
           ],
         },
@@ -5845,6 +7383,9 @@ EOF`,
               difficulty: 'expert',
               command: 'strace -c -f -- ls -la /etc',
               task: 'Conta e profila quali syscall vengono invocate da un semplice ls per capire dove il programma spende davvero il tempo.',
+              code: `strace -c ls /tmp 2>&1 | tail -15
+echo '---'
+strace -e trace=write echo 'hello' 2>&1 | head -5`,
             },
             {
               english: 'Interrupt',
@@ -5856,6 +7397,9 @@ EOF`,
               difficulty: 'expert',
               command: `watch -n 1 'cat /proc/interrupts | head -20'`,
               task: 'Monitora ogni secondo i conteggi delle interrupt per CPU per verificare che le IRQ della NIC siano distribuite tra i core.',
+              code: `cat /proc/interrupts | head -5
+IRQ_TOTAL=$(awk '{s+=$2} END {print s}' /proc/interrupts 2>/dev/null)
+echo "Total IRQs (CPU0): $IRQ_TOTAL"`,
             },
             {
               english: 'Scheduler',
@@ -5868,6 +7412,9 @@ EOF`,
               difficulty: 'expert',
               command: 'sudo chrt -f -p 80 $(pgrep -f audio-engine)',
               task: `Promuovi il processo dell'engine audio alla policy SCHED_FIFO con priorita' 80 per garantire latenze deterministiche.`,
+              code: `cat /proc/1/sched 2>/dev/null | head -5
+chrt -p 1 2>/dev/null
+echo "Available policies: $(chrt -m 2>/dev/null)"`,
             },
             {
               english: 'Memory Management',
@@ -5879,6 +7426,9 @@ EOF`,
               difficulty: 'expert',
               command: 'sudo sysctl -w vm.swappiness=10 vm.dirty_ratio=15',
               task: 'Regola la gestione memoria del kernel riducendo la propensione allo swap e abbassando la soglia di pagine sporche.',
+              code: `cat /proc/meminfo | grep -E 'MemTotal|MemFree|Cached|SwapTotal'
+echo '---'
+sysctl vm.swappiness vm.dirty_ratio`,
             },
             {
               english: 'VFS Filesystem Layer',
@@ -5888,6 +7438,9 @@ EOF`,
               example: `Linux unifies ext4, xfs, btrfs and others behind the VFS filesystem layer so userspace sees a single syscall API. = Linux unifica ext4, xfs, btrfs e altri dietro lo strato VFS del filesystem cosi' lo userspace vede un'unica API di syscall.`,
               context: 'kernel',
               difficulty: 'expert',
+              code: `cat /proc/filesystems | head -10
+mount | awk '{print $5}' | sort -u
+echo "Mounted filesystem types listed"`,
             },
             {
               english: 'Kernel Driver',
@@ -5900,6 +7453,10 @@ EOF`,
               difficulty: 'expert',
               command: 'sudo modprobe nvidia && lsmod | grep nvidia',
               task: 'Carica dinamicamente il driver del kernel NVIDIA e verifica subito che il modulo risulti caricato e attivo.',
+              code: `sudo modprobe dummy
+lsmod | grep dummy
+modinfo dummy | head -5
+sudo modprobe -r dummy`,
             },
             {
               english: 'Kernel Patch File',
@@ -5911,6 +7468,9 @@ EOF`,
               difficulty: 'advanced',
               command: 'cd linux-6.6 && patch -p1 < ../linux-6.6-security.diff',
               task: `Applica una patch di sicurezza all'albero dei sorgenti del kernel prima di lanciare make oldconfig.`,
+              code: `diff -u old_module.c new_module.c > fix.patch 2>/dev/null
+patch --dry-run -p1 < fix.patch 2>/dev/null
+echo 'Patch generated and dry-run tested'`,
             },
             {
               english: 'Mainline',
@@ -5921,6 +7481,10 @@ EOF`,
                 'Track the mainline kernel branch on kernel.org to test bleeding-edge drivers before they land in a stable point release. = Segui il ramo mainline del kernel su kernel.org per testare driver bleeding-edge prima che atterrino in un point release stabile.',
               context: 'kernel',
               difficulty: 'advanced',
+              code: `KVER=$(uname -r)
+echo "Running kernel: $KVER"
+curl -s https://www.kernel.org/ 2>/dev/null | grep -oP 'stable.*?[0-9]+\\.[0-9]+\\.[0-9]+' | head -1
+echo 'Checked mainline kernel version'`,
             },
             {
               english: 'LTS',
@@ -5931,6 +7495,10 @@ EOF`,
               context: 'kernel',
               difficulty: 'intermediate',
               note: 'Long Term Support: rilasci con supporto esteso (tipicamente 5-6 anni).',
+              code: `uname -r
+cat /etc/os-release | grep -E 'VERSION|SUPPORT'
+apt list --installed 2>/dev/null | grep linux-image | head -3
+echo 'LTS kernel and support info listed'`,
             },
             {
               english: 'Compile',
@@ -5943,6 +7511,11 @@ EOF`,
               difficulty: 'expert',
               command: 'make -j$(nproc) bzImage modules && sudo make modules_install install',
               task: 'Compila il kernel personalizzato sfruttando tutti i core e installa subito kernel e moduli nel sistema.',
+              code: `CORES=$(nproc)
+echo "Compiling with $CORES parallel jobs"
+make -j"$CORES" bzImage 2>/dev/null
+make -j"$CORES" modules 2>/dev/null
+echo 'Kernel build complete'`,
             },
           ],
         },

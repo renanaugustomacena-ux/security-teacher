@@ -31,7 +31,9 @@ export default {
                 'A database stores structured information. = Un database memorizza informazioni strutturate.',
               context: 'foundations',
               difficulty: 'beginner',
-              code: 'CREATE DATABASE my_app;',
+              code: `CREATE DATABASE my_app;
+GRANT ALL PRIVILEGES
+  ON DATABASE my_app TO admin;`,
               note: 'In italiano si usa quasi sempre "database" anche se "base di dati" è la traduzione formale.',
               task: `Crea un nuovo database chiamato my_app per ospitare i dati dell'applicazione.`,
             },
@@ -44,7 +46,11 @@ export default {
                 'A table organizes data into rows and columns. = Una tabella organizza i dati in righe e colonne.',
               context: 'foundations',
               difficulty: 'beginner',
-              code: 'CREATE TABLE users (id INT, name VARCHAR(50));',
+              code: `CREATE TABLE users (
+  id INT PRIMARY KEY,
+  name VARCHAR(50) NOT NULL,
+  email VARCHAR(255) UNIQUE
+);`,
               tool: 'PostgreSQL, MySQL',
               task: 'Definisci una tabella users con due colonne, un identificatore intero e un nome di al massimo 50 caratteri.',
             },
@@ -57,7 +63,8 @@ export default {
                 'The orders table has over two million rows spanning five years of sales. = La tabella ordini ha oltre due milioni di righe che coprono cinque anni di vendite.',
               context: 'foundations',
               difficulty: 'beginner',
-              code: "INSERT INTO users VALUES (1, 'Marco');",
+              code: `INSERT INTO users (id, name, email)
+VALUES (1, 'Marco', 'marco@email.com');`,
               note: 'In teoria relazionale si chiama "tupla". Nel linguaggio quotidiano: "riga" o "record".',
               task: 'Inserisci una nuova riga nella tabella users con id 1 e nome Marco.',
             },
@@ -70,7 +77,9 @@ export default {
                 'A column defines an attribute of the data. = Una colonna definisce un attributo del dato.',
               context: 'foundations',
               difficulty: 'beginner',
-              code: 'ALTER TABLE users ADD COLUMN age INT;',
+              code: `ALTER TABLE users
+  ADD COLUMN age INT,
+  ADD COLUMN city VARCHAR(100);`,
               note: 'La l finale di "column" non si pronuncia: KO-lom, non KO-lumn.',
               task: 'Aggiungi alla tabella users una nuova colonna age di tipo intero tramite ALTER TABLE.',
             },
@@ -83,7 +92,11 @@ export default {
                 'The schema defines the structure of the database. = Lo schema definisce la struttura del database.',
               context: 'foundations',
               difficulty: 'beginner',
-              code: 'CREATE SCHEMA analytics;',
+              code: `CREATE SCHEMA analytics;
+CREATE TABLE analytics.events (
+  id SERIAL PRIMARY KEY,
+  event_type VARCHAR(50)
+);`,
               note: 'In inglese si pronuncia con la K dura (SKII-ma), non come in italiano.',
               task: 'Crea uno schema dedicato chiamato analytics per isolare gli oggetti di reportistica.',
             },
@@ -134,7 +147,9 @@ export default {
                 'The support team runs a query every morning to find unresolved tickets older than 48 hours. = Il team di supporto esegue una query ogni mattina per trovare i ticket irrisolti da più di 48 ore.',
               context: 'foundations',
               difficulty: 'beginner',
-              code: 'SELECT * FROM users;',
+              code: `SELECT name, email
+FROM users
+WHERE active = true;`,
               note: 'In italiano si dice "query" (con pronuncia inglese), raramente "interrogazione".',
               task: 'Scrivi una query semplice che recuperi tutte le colonne e tutte le righe della tabella users.',
             },
@@ -147,7 +162,10 @@ export default {
                 "The dashboard iterates over the result set to build a chart of monthly revenue trends. = La dashboard itera sull'insieme dei risultati per costruire un grafico dei trend di fatturato mensile.",
               context: 'foundations',
               difficulty: 'beginner',
-              code: 'SELECT name FROM users; -- returns rows',
+              code: `SELECT name, email
+FROM users
+WHERE city = 'Roma';
+-- Returns matching rows`,
               task: 'Esegui una query sulla tabella users che restituisca solo la colonna name come result set.',
             },
           ],
@@ -200,7 +218,10 @@ export default {
                 'Analysts write SQL queries to extract sales trends from millions of rows. = Gli analisti scrivono query SQL per estrarre trend di vendita da milioni di righe.',
               context: 'foundations',
               difficulty: 'beginner',
-              code: 'SELECT * FROM users;',
+              code: `-- SQL: Structured Query Language
+SELECT name, age
+FROM users
+WHERE age >= 18;`,
               note: 'Si pronuncia "ES-KIU-EL" o "SI-kuel" (più informale). In Italia di solito ES-KIU-EL.',
               task: 'Lancia un comando SQL standard che estragga tutti i record dalla tabella users.',
             },
@@ -298,7 +319,10 @@ export default {
                 "Without a primary key, the ORM cannot track which row to update during a save operation. = Senza una chiave primaria, l'ORM non può tracciare quale riga aggiornare durante un'operazione di salvataggio.",
               context: 'foundations',
               difficulty: 'beginner',
-              code: 'id INT PRIMARY KEY',
+              code: `CREATE TABLE products (
+  id INT PRIMARY KEY,
+  name VARCHAR(100)
+);`,
               note: 'Identifica univocamente ogni riga. Spesso si abbrevia PK.',
               task: 'Dichiara la colonna id come chiave primaria di tipo intero per identificare univocamente le righe.',
             },
@@ -311,7 +335,10 @@ export default {
                 'Adding a foreign key from orders to customers prevents orphaned order records. = Aggiungere una chiave esterna da ordini a clienti previene record di ordini orfani.',
               context: 'foundations',
               difficulty: 'beginner',
-              code: 'user_id INT REFERENCES users(id)',
+              code: `CREATE TABLE orders (
+  id INT PRIMARY KEY,
+  user_id INT REFERENCES users(id)
+);`,
               note: 'Si abbrevia FK. In italiano spesso "chiave foreign" o "FK".',
               task: 'Definisci la colonna user_id come chiave esterna che referenzia la colonna id della tabella users.',
             },
@@ -324,7 +351,10 @@ export default {
                 'The registration form rejects duplicates because the email column has a unique constraint. = Il modulo di registrazione rifiuta i duplicati perché la colonna email ha un vincolo di unicità.',
               context: 'foundations',
               difficulty: 'beginner',
-              code: 'email VARCHAR(255) UNIQUE',
+              code: `CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  email VARCHAR(255) UNIQUE
+);`,
               task: 'Imponi un vincolo di unicità sulla colonna email per evitare duplicati negli account utente.',
             },
             {
@@ -336,7 +366,11 @@ export default {
                 'Marking the username column as NOT NULL ensures every account has an identifier. = Contrassegnare la colonna username come NOT NULL garantisce che ogni account abbia un identificativo.',
               context: 'foundations',
               difficulty: 'beginner',
-              code: 'name VARCHAR(50) NOT NULL',
+              code: `CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(50) NOT NULL,
+  email VARCHAR(255) NOT NULL
+);`,
               task: 'Definisci la colonna name come VARCHAR(50) con vincolo NOT NULL per rendere il valore obbligatorio.',
             },
             {
@@ -348,7 +382,11 @@ export default {
                 'The status column uses a default value of "pending" so new orders are triaged automatically. = La colonna stato usa un valore predefinito di "pending" così i nuovi ordini vengono smistati automaticamente.',
               context: 'foundations',
               difficulty: 'beginner',
-              code: 'created_at TIMESTAMP DEFAULT NOW()',
+              code: `CREATE TABLE posts (
+  id SERIAL PRIMARY KEY,
+  status VARCHAR(20) DEFAULT 'draft',
+  created_at TIMESTAMP DEFAULT NOW()
+);`,
               task: 'Imposta NOW() come valore predefinito della colonna created_at affinché venga popolata automaticamente.',
             },
             {
@@ -387,7 +425,11 @@ export default {
                 'The team added a CHECK constraint on the age column to reject values below zero. = Il team ha aggiunto un vincolo CHECK sulla colonna età per rifiutare valori sotto zero.',
               context: 'foundations',
               difficulty: 'beginner',
-              code: 'age INT CHECK (age >= 0)',
+              code: `CREATE TABLE products (
+  id SERIAL PRIMARY KEY,
+  price DECIMAL CHECK (price > 0),
+  age INT CHECK (age >= 0)
+);`,
               task: `Aggiungi un vincolo CHECK sulla colonna age che impedisca l'inserimento di valori negativi.`,
             },
             {
@@ -412,7 +454,11 @@ export default {
                 'The enrollment table uses a composite key of student_id and course_id to prevent duplicate registrations. = La tabella iscrizioni usa una chiave composta di student_id e course_id per prevenire registrazioni duplicate.',
               context: 'foundations',
               difficulty: 'beginner',
-              code: 'PRIMARY KEY (user_id, role_id)',
+              code: `CREATE TABLE enrollments (
+  student_id INT,
+  course_id INT,
+  PRIMARY KEY (student_id, course_id)
+);`,
               task: 'Definisci una chiave primaria composta dalle colonne user_id e role_id per la tabella di associazione.',
             },
           ],
@@ -495,7 +541,9 @@ export default {
                 'The DBA queries metadata from information_schema to track table sizes and column types. = Il DBA interroga i metadati da information_schema per monitorare dimensioni delle tabelle e tipi di colonna.',
               context: 'foundations',
               difficulty: 'beginner',
-              code: 'SELECT * FROM information_schema.tables;',
+              code: `SELECT table_name, column_name
+FROM information_schema.columns
+WHERE table_schema = 'public';`,
               task: 'Interroga information_schema.tables per leggere i metadati relativi a tutte le tabelle del database.',
             },
             {
@@ -557,7 +605,9 @@ export default {
                 'The dashboard runs a SELECT on the orders table every five minutes to refresh revenue totals. = La dashboard esegue una SELECT sulla tabella ordini ogni cinque minuti per aggiornare i totali di fatturato.',
               context: 'sql',
               difficulty: 'beginner',
-              code: 'SELECT name FROM users;',
+              code: `SELECT name, email, age
+FROM users
+WHERE active = true;`,
               note: 'Il comando più usato in SQL.',
               task: 'Recupera solo la colonna name dalla tabella users tramite una semplice SELECT.',
             },
@@ -595,7 +645,10 @@ export default {
                 'Adding a WHERE clause on the order date reduced the scanned rows from ten million to just three thousand. = Aggiungere una clausola WHERE sulla data ordine ha ridotto le righe scansionate da dieci milioni a solo tremila.',
               context: 'sql',
               difficulty: 'beginner',
-              code: 'SELECT * FROM users WHERE active = true;',
+              code: `SELECT name, email
+FROM users
+WHERE active = true
+  AND age >= 18;`,
               task: 'Filtra la tabella users con una clausola WHERE per ottenere solo gli account attivi.',
             },
             {
@@ -620,7 +673,11 @@ export default {
                 "The fraud filter selects transactions where the amount exceeds 5000 AND the country differs from the cardholder's. = Il filtro antifrode seleziona transazioni dove l'importo supera 5000 AND il paese differisce da quello del titolare.",
               context: 'sql',
               difficulty: 'beginner',
-              code: 'WHERE age > 18 AND active = true',
+              code: `SELECT name, city
+FROM users
+WHERE age > 18
+  AND active = true
+  AND city IS NOT NULL;`,
               task: 'Combina con AND due condizioni nella clausola WHERE per ottenere gli utenti maggiorenni e attivi.',
             },
             {
@@ -656,7 +713,10 @@ export default {
                 'The notification service fetches users whose preferred language is IN the list of supported locales. = Il servizio notifiche recupera gli utenti la cui lingua preferita è IN nella lista delle lingue supportate.',
               context: 'sql',
               difficulty: 'beginner',
-              code: "WHERE country IN ('IT', 'FR', 'DE')",
+              code: `SELECT name, country
+FROM users
+WHERE country IN ('IT', 'FR', 'DE')
+ORDER BY name;`,
               task: `Seleziona gli utenti il cui country compare nell'insieme IT, FR e DE usando l'operatore IN.`,
             },
             {
@@ -668,7 +728,10 @@ export default {
                 'The payroll query selects employees whose salary falls BETWEEN 30000 and 60000 euros. = La query paghe seleziona i dipendenti il cui stipendio è BETWEEN 30000 e 60000 euro.',
               context: 'sql',
               difficulty: 'beginner',
-              code: 'WHERE age BETWEEN 18 AND 65',
+              code: `SELECT name, age
+FROM users
+WHERE age BETWEEN 18 AND 65
+ORDER BY age;`,
               note: 'Inclusivo di entrambi gli estremi.',
               task: `Filtra con BETWEEN gli utenti la cui età è compresa nell'intervallo 18-65 anni.`,
             },
@@ -688,7 +751,8 @@ export default {
                 "The registration endpoint runs an INSERT to save each new user's profile into the accounts table. = L'endpoint di registrazione esegue un INSERT per salvare il profilo di ogni nuovo utente nella tabella account.",
               context: 'sql',
               difficulty: 'beginner',
-              code: "INSERT INTO users (name, age) VALUES ('Marco', 30);",
+              code: `INSERT INTO users (name, email, age)
+VALUES ('Marco', 'marco@email.com', 30);`,
               task: 'Inserisci nella tabella users una nuova riga con nome Marco e età 30.',
             },
             {
@@ -712,7 +776,11 @@ export default {
                 'Batch inserts pass multiple rows in a single VALUES clause to reduce round trips to the server. = Gli inserimenti batch passano più righe in una singola clausola VALUES per ridurre i round trip verso il server.',
               context: 'sql',
               difficulty: 'beginner',
-              code: "VALUES (1, 'Anna'), (2, 'Luca');",
+              code: `INSERT INTO users (id, name)
+VALUES
+  (1, 'Anna'),
+  (2, 'Luca'),
+  (3, 'Eva');`,
               note: 'Si possono inserire più righe contemporaneamente con virgole.',
               task: `Inserisci due righe in un solo statement passando le coppie (1, 'Anna') e (2, 'Luca') alla clausola VALUES.`,
             },
@@ -725,7 +793,10 @@ export default {
                 'After the price review, the manager runs an UPDATE to adjust all discounted products at once. = Dopo la revisione prezzi, il manager esegue un UPDATE per aggiornare tutti i prodotti scontati in una volta.',
               context: 'sql',
               difficulty: 'beginner',
-              code: 'UPDATE users SET active = false WHERE id = 5;',
+              code: `UPDATE users
+SET active = false,
+    updated_at = NOW()
+WHERE last_login < '2025-01-01';`,
               note: 'SEMPRE specificare WHERE, altrimenti aggiorna tutte le righe!',
               task: `Disattiva l'utente con id 5 impostando il flag active a false tramite un UPDATE mirato.`,
             },
@@ -738,7 +809,11 @@ export default {
                 'The migration script uses SET to change the status column from "active" to "archived" for old records. = Lo script di migrazione usa SET per cambiare la colonna stato da "attivo" ad "archiviato" per i vecchi record.',
               context: 'sql',
               difficulty: 'beginner',
-              code: "SET name = 'Mario', age = 31",
+              code: `UPDATE users
+SET name = 'Mario',
+    age = 31,
+    updated_at = NOW()
+WHERE id = 5;`,
               task: 'Aggiorna in un solo passaggio i campi name e age con la clausola SET indicando i nuovi valori.',
             },
             {
@@ -750,7 +825,9 @@ export default {
                 "The GDPR compliance job runs a DELETE on personal data for users who requested account removal. = Il job di conformità GDPR esegue una DELETE sui dati personali degli utenti che hanno richiesto la cancellazione dell'account.",
               context: 'sql',
               difficulty: 'beginner',
-              code: 'DELETE FROM users WHERE id = 5;',
+              code: `DELETE FROM users
+WHERE active = false
+  AND last_login < '2024-01-01';`,
               note: 'Senza WHERE cancella tutto! Usare con attenzione.',
               task: `Rimuovi dalla tabella users la riga corrispondente all'utente con id 5.`,
             },
@@ -763,7 +840,9 @@ export default {
                 'Before reloading test data, the CI pipeline runs TRUNCATE on all staging tables to start fresh. = Prima di ricaricare i dati di test, la pipeline CI esegue TRUNCATE su tutte le tabelle di staging per ripartire da zero.',
               context: 'sql',
               difficulty: 'beginner',
-              code: 'TRUNCATE TABLE logs;',
+              code: `-- Remove all rows instantly
+TRUNCATE TABLE logs;
+-- Unlike DELETE, cannot be rolled back`,
               note: 'Più veloce di DELETE ma non genera log per riga e non si può usare con WHERE.',
               task: 'Svuota completamente la tabella logs con TRUNCATE per liberare spazio mantenendo lo schema.',
             },
@@ -776,7 +855,9 @@ export default {
                 "The API uses RETURNING to get the auto-generated id right after inserting a new order. = L'API usa RETURNING per ottenere l'id generato automaticamente subito dopo aver inserito un nuovo ordine.",
               context: 'sql',
               difficulty: 'beginner',
-              code: "INSERT INTO users (name) VALUES ('Eva') RETURNING id;",
+              code: `INSERT INTO users (name, email)
+VALUES ('Eva', 'eva@email.com')
+RETURNING id, created_at;`,
               tool: 'PostgreSQL',
               task: `Inserisci un nuovo utente Eva facendoti restituire dall'INSERT l'id appena generato tramite RETURNING.`,
             },
@@ -789,7 +870,10 @@ export default {
                 'The sync process uses an UPSERT to create new product records or refresh prices if they already exist. = Il processo di sincronizzazione usa un UPSERT per creare nuovi record prodotto o aggiornare i prezzi se esistono già.',
               context: 'sql',
               difficulty: 'beginner',
-              code: 'INSERT INTO users ... ON CONFLICT (id) DO UPDATE SET ...;',
+              code: `INSERT INTO users (email, name)
+VALUES ('marco@email.com', 'Marco')
+ON CONFLICT (email)
+DO UPDATE SET name = EXCLUDED.name;`,
               note: 'Combinazione di UPdate + inSERT. In PostgreSQL: ON CONFLICT.',
               task: `Esegui un upsert che inserisca una nuova riga nella tabella users oppure aggiorni quella esistente in caso di conflitto sull'id.`,
             },
@@ -802,7 +886,9 @@ export default {
                 'The import script specifies ON CONFLICT on the email column to skip rows that already exist. = Lo script di importazione specifica ON CONFLICT sulla colonna email per saltare le righe che esistono già.',
               context: 'sql',
               difficulty: 'beginner',
-              code: 'ON CONFLICT (email) DO NOTHING',
+              code: `INSERT INTO users (email, name)
+VALUES ('anna@email.com', 'Anna')
+ON CONFLICT (email) DO NOTHING;`,
               tool: 'PostgreSQL',
               task: 'Aggiungi la clausola ON CONFLICT (email) DO NOTHING per ignorare silenziosamente eventuali duplicati.',
             },
@@ -822,7 +908,9 @@ export default {
                 'The marketing report uses DISTINCT to count unique visitors from the access log table. = Il report marketing usa DISTINCT per contare i visitatori unici dalla tabella dei log di accesso.',
               context: 'sql',
               difficulty: 'beginner',
-              code: 'SELECT DISTINCT country FROM users;',
+              code: `SELECT DISTINCT country
+FROM users
+ORDER BY country;`,
               task: `Estrai l'elenco dei paesi distinti presenti nella tabella users eliminando i duplicati con DISTINCT.`,
             },
             {
@@ -834,7 +922,10 @@ export default {
                 "The mobile app fetches only the first 20 notifications using a LIMIT clause to save bandwidth. = L'app mobile recupera solo le prime 20 notifiche usando una clausola LIMIT per risparmiare banda.",
               context: 'sql',
               difficulty: 'beginner',
-              code: 'SELECT * FROM users LIMIT 10;',
+              code: `SELECT name, email
+FROM users
+ORDER BY created_at DESC
+LIMIT 10;`,
               note: 'In SQL Server si usa TOP, in Oracle ROWNUM o FETCH FIRST.',
               task: 'Recupera i primi 10 record della tabella users limitando il risultato con LIMIT.',
             },
@@ -847,7 +938,10 @@ export default {
                 'Page three of results is loaded by setting an OFFSET of 40 and a LIMIT of 20. = La terza pagina di risultati viene caricata impostando un OFFSET di 40 e un LIMIT di 20.',
               context: 'sql',
               difficulty: 'beginner',
-              code: 'SELECT * FROM users LIMIT 10 OFFSET 20;',
+              code: `SELECT name, email
+FROM users
+ORDER BY name
+LIMIT 10 OFFSET 20;`,
               note: 'Utile per la paginazione.',
               task: 'Salta i primi 20 utenti e recupera i successivi 10 combinando LIMIT e OFFSET.',
             },
@@ -860,7 +954,11 @@ export default {
                 'Cursor-based pagination outperforms OFFSET pagination on tables with millions of rows. = La paginazione basata su cursore supera la paginazione con OFFSET su tabelle con milioni di righe.',
               context: 'sql',
               difficulty: 'beginner',
-              code: 'LIMIT 20 OFFSET 40 -- page 3',
+              code: `-- Page 3 (20 items per page)
+SELECT name, email
+FROM users
+ORDER BY id
+LIMIT 20 OFFSET 40;`,
               task: 'Implementa la terza pagina della lista con 20 record per pagina usando LIMIT 20 e OFFSET 40.',
             },
             {
@@ -872,7 +970,9 @@ export default {
                 'The admin panel displays a COUNT of pending support tickets refreshed every minute. = Il pannello admin mostra un COUNT dei ticket di supporto in attesa aggiornato ogni minuto.',
               context: 'sql',
               difficulty: 'beginner',
-              code: 'SELECT COUNT(*) FROM users;',
+              code: `SELECT COUNT(*) AS total_users
+FROM users
+WHERE active = true;`,
               task: 'Conta tutte le righe della tabella users restituendo il totale con COUNT(*).',
             },
             {
@@ -884,7 +984,10 @@ export default {
                 "The autocomplete feature uses LIKE with a trailing wildcard to suggest city names as the user types. = La funzione di autocompletamento usa LIKE con un wildcard finale per suggerire nomi di città mentre l'utente digita.",
               context: 'sql',
               difficulty: 'beginner',
-              code: "WHERE name LIKE 'M%'",
+              code: `SELECT name, email
+FROM users
+WHERE name LIKE 'M%'
+ORDER BY name;`,
               note: '% per qualsiasi sequenza, _ per un singolo carattere.',
               task: 'Trova con LIKE tutti gli utenti il cui nome inizia con la lettera M.',
             },
@@ -935,7 +1038,10 @@ export default {
                 "The display name falls back to the email via COALESCE when the user hasn't set a nickname. = Il nome visualizzato ricade sull'email tramite COALESCE quando l'utente non ha impostato un nickname.",
               context: 'sql',
               difficulty: 'beginner',
-              code: 'SELECT COALESCE(nickname, name) FROM users;',
+              code: `SELECT
+  name,
+  COALESCE(nickname, name) AS display_name
+FROM users;`,
               task: `Restituisci il nickname dell'utente oppure, se assente, ripiega sul nome usando COALESCE.`,
             },
           ],
@@ -1051,7 +1157,10 @@ export default {
                 "The revenue report groups sales by month using EXTRACT on the order timestamp. = Il report fatturato raggruppa le vendite per mese usando EXTRACT sul timestamp dell'ordine.",
               context: 'sql',
               difficulty: 'beginner',
-              code: 'SELECT EXTRACT(YEAR FROM created_at);',
+              code: `SELECT
+  EXTRACT(YEAR FROM created_at) AS year,
+  EXTRACT(MONTH FROM created_at) AS month
+FROM orders;`,
               task: `Estrai con EXTRACT l'anno dal campo created_at di ciascuna riga.`,
             },
             {
@@ -1063,7 +1172,11 @@ export default {
                 'The monthly dashboard uses DATE_TRUNC to round all timestamps to the first of each month for grouping. = La dashboard mensile usa DATE_TRUNC per arrotondare tutti i timestamp al primo di ogni mese per il raggruppamento.',
               context: 'sql',
               difficulty: 'beginner',
-              code: "SELECT DATE_TRUNC('month', created_at);",
+              code: `SELECT
+  DATE_TRUNC('month', created_at) AS month,
+  COUNT(*)
+FROM orders
+GROUP BY month;`,
               tool: 'PostgreSQL',
               task: 'Tronca con DATE_TRUNC il campo created_at al mese per raggruppare gli eventi su base mensile.',
             },
@@ -1092,7 +1205,9 @@ export default {
                 'The order summary page uses a JOIN between orders and products to display item names alongside quantities. = La pagina riepilogo ordini usa una JOIN tra ordini e prodotti per mostrare i nomi degli articoli accanto alle quantità.',
               context: 'sql',
               difficulty: 'beginner',
-              code: 'SELECT * FROM orders JOIN users ON orders.user_id = users.id;',
+              code: `SELECT u.name, o.total
+FROM orders o
+JOIN users u ON o.user_id = u.id;`,
               task: 'Combina le tabelle orders e users con un JOIN sulla relazione user_id per arricchire ogni ordine con i dati utente.',
             },
             {
@@ -1104,7 +1219,10 @@ export default {
                 'Using an INNER JOIN between customers and invoices excludes customers who have never made a purchase. = Usare una INNER JOIN tra clienti e fatture esclude i clienti che non hanno mai effettuato un acquisto.',
               context: 'sql',
               difficulty: 'beginner',
-              code: 'SELECT u.name, o.total FROM users u INNER JOIN orders o ON u.id = o.user_id;',
+              code: `SELECT u.name, o.total, o.created_at
+FROM users u
+INNER JOIN orders o ON u.id = o.user_id
+WHERE o.total > 100;`,
               note: 'JOIN da solo è equivalente a INNER JOIN.',
               task: 'Recupera nome utente e totale ordine con un INNER JOIN tra users e orders sul campo id.',
             },
@@ -1117,7 +1235,11 @@ export default {
                 'A LEFT JOIN from users to orders reveals which customers have never placed an order. = Una LEFT JOIN da utenti a ordini rivela quali clienti non hanno mai effettuato un ordine.',
               context: 'sql',
               difficulty: 'beginner',
-              code: 'SELECT * FROM users u LEFT JOIN orders o ON u.id = o.user_id;',
+              code: `SELECT u.name, o.total
+FROM users u
+LEFT JOIN orders o ON u.id = o.user_id
+WHERE o.id IS NULL;
+-- Users with no orders`,
               note: 'Le righe della tabella sinistra senza match avranno NULL nelle colonne di destra.',
               task: 'Recupera tutti gli utenti con i relativi ordini, includendo anche chi non ne ha effettuati, tramite LEFT JOIN.',
             },
@@ -1143,7 +1265,10 @@ export default {
                 'The reconciliation script uses a FULL OUTER JOIN to spot records that exist in the warehouse but not in the source. = Lo script di riconciliazione usa una FULL OUTER JOIN per individuare record presenti nel warehouse ma non nella sorgente.',
               context: 'sql',
               difficulty: 'beginner',
-              code: 'SELECT * FROM a FULL OUTER JOIN b ON a.id = b.a_id;',
+              code: `SELECT a.name, b.name
+FROM employees a
+FULL OUTER JOIN departments b
+  ON a.dept_id = b.id;`,
               note: 'Non supportato in MySQL: serve UNION di LEFT e RIGHT JOIN.',
               task: 'Unisci le tabelle a e b con FULL OUTER JOIN per ottenere tutte le righe da entrambi i lati, anche quelle senza corrispondenza.',
             },
@@ -1169,7 +1294,10 @@ export default {
                 'An org-chart report uses a SELF JOIN on the employees table to pair each person with their direct manager. = Un report organigramma usa un SELF JOIN sulla tabella dipendenti per accoppiare ogni persona con il proprio responsabile diretto.',
               context: 'sql',
               difficulty: 'beginner',
-              code: 'SELECT e.name, m.name FROM employees e JOIN employees m ON e.manager_id = m.id;',
+              code: `SELECT e.name AS employee,
+       m.name AS manager
+FROM employees e
+JOIN employees m ON e.manager_id = m.id;`,
               task: 'Affianca a ogni dipendente il nome del proprio manager facendo un self join sulla tabella employees tramite manager_id.',
             },
             {
@@ -1225,7 +1353,10 @@ export default {
                 'The sales dashboard uses GROUP BY to show total revenue per region for the current quarter. = La dashboard vendite usa GROUP BY per mostrare il fatturato totale per regione nel trimestre corrente.',
               context: 'sql',
               difficulty: 'beginner',
-              code: 'SELECT country, COUNT(*) FROM users GROUP BY country;',
+              code: `SELECT country, COUNT(*) AS total
+FROM users
+GROUP BY country
+ORDER BY total DESC;`,
               task: 'Conta gli utenti per ogni paese raggruppando le righe della tabella users con GROUP BY country.',
             },
             {
@@ -1237,7 +1368,10 @@ export default {
                 'The report shows only countries HAVING more than 1000 registered users to focus on key markets. = Il report mostra solo i paesi HAVING più di 1000 utenti registrati per concentrarsi sui mercati chiave.',
               context: 'sql',
               difficulty: 'beginner',
-              code: 'GROUP BY country HAVING COUNT(*) > 100',
+              code: `SELECT country, COUNT(*) AS total
+FROM users
+GROUP BY country
+HAVING COUNT(*) > 100;`,
               note: 'WHERE filtra prima del GROUP BY, HAVING dopo.',
               task: 'Filtra con HAVING i gruppi di country mostrando solo quelli con più di 100 utenti.',
             },
@@ -1250,7 +1384,11 @@ export default {
                 'The financial dashboard relies on aggregate functions like SUM and AVG to summarize quarterly performance. = La dashboard finanziaria si basa su funzioni di aggregazione come SUM e AVG per sintetizzare le performance trimestrali.',
               context: 'sql',
               difficulty: 'beginner',
-              code: 'SELECT AVG(price) FROM products;',
+              code: `SELECT
+  COUNT(*) AS total,
+  AVG(price) AS avg_price,
+  MAX(price) AS max_price
+FROM products;`,
               task: 'Calcola il prezzo medio dei prodotti tramite la funzione di aggregazione AVG su products.',
             },
             {
@@ -1262,7 +1400,10 @@ export default {
                 "The checkout page calculates the cart total by running SUM on the line_item prices. = La pagina checkout calcola il totale del carrello eseguendo SUM sui prezzi delle righe d'ordine.",
               context: 'sql',
               difficulty: 'beginner',
-              code: 'SELECT SUM(amount) FROM orders;',
+              code: `SELECT user_id,
+  SUM(amount) AS total_spent
+FROM orders
+GROUP BY user_id;`,
               task: 'Calcola con SUM il totale degli importi presenti nella tabella orders.',
             },
             {
@@ -1352,7 +1493,10 @@ export default {
                 'The product listing page uses ORDER BY price to show the cheapest items first. = La pagina catalogo prodotti usa ORDER BY prezzo per mostrare prima gli articoli più economici.',
               context: 'sql',
               difficulty: 'beginner',
-              code: 'SELECT * FROM users ORDER BY created_at DESC;',
+              code: `SELECT name, created_at
+FROM users
+ORDER BY created_at DESC
+LIMIT 20;`,
               task: 'Ordina gli utenti dal più recente al più vecchio applicando ORDER BY created_at DESC.',
             },
             {
@@ -1389,7 +1533,10 @@ export default {
                 'The search combines local and international results with a UNION so users see both in a single list. = La ricerca combina risultati locali e internazionali con una UNION così gli utenti vedono entrambi in una lista unica.',
               context: 'sql',
               difficulty: 'beginner',
-              code: 'SELECT name FROM users UNION SELECT name FROM customers;',
+              code: `SELECT name, email FROM users
+UNION
+SELECT name, email FROM customers
+ORDER BY name;`,
               note: 'UNION rimuove duplicati. Usa UNION ALL per mantenerli.',
               task: 'Unisci con UNION i nomi presenti nelle tabelle users e customers eliminando i duplicati.',
             },
@@ -1402,7 +1549,9 @@ export default {
                 "The log aggregator uses UNION ALL instead of UNION to preserve every event including duplicates. = L'aggregatore di log usa UNION ALL invece di UNION per preservare ogni evento inclusi i duplicati.",
               context: 'sql',
               difficulty: 'beginner',
-              code: 'SELECT * FROM a UNION ALL SELECT * FROM b;',
+              code: `SELECT name, 'user' AS source FROM users
+UNION ALL
+SELECT name, 'customer' FROM customers;`,
               note: 'Più veloce di UNION perché non deduplica.',
               task: 'Concatena con UNION ALL i record delle tabelle a e b conservando tutti i duplicati.',
             },
@@ -1415,7 +1564,9 @@ export default {
                 'The promo engine uses INTERSECT to find customers who appear in both the loyalty and newsletter lists. = Il motore promozioni usa INTERSECT per trovare clienti presenti sia nella lista fedeltà che nella newsletter.',
               context: 'sql',
               difficulty: 'beginner',
-              code: 'SELECT id FROM a INTERSECT SELECT id FROM b;',
+              code: `SELECT email FROM newsletter_subscribers
+INTERSECT
+SELECT email FROM active_users;`,
               task: 'Calcola con INTERSECT gli id presenti in entrambe le tabelle a e b.',
             },
             {
@@ -1427,7 +1578,10 @@ export default {
                 "The churn report uses EXCEPT to list users who were active last month but haven't logged in this month. = Il report churn usa EXCEPT per elencare gli utenti attivi il mese scorso che non hanno effettuato l'accesso questo mese.",
               context: 'sql',
               difficulty: 'beginner',
-              code: 'SELECT id FROM users EXCEPT SELECT user_id FROM orders;',
+              code: `SELECT id FROM users
+EXCEPT
+SELECT user_id FROM orders;
+-- Users who never ordered`,
               note: 'In Oracle si chiama MINUS.',
               task: 'Trova con EXCEPT gli utenti che non hanno mai effettuato ordini sottraendo gli user_id di orders dagli id di users.',
             },
@@ -1440,7 +1594,10 @@ export default {
                 'The report gives the SUM column an alias called "total_revenue" for readability. = Il report assegna alla colonna SUM un alias chiamato "total_revenue" per leggibilità.',
               context: 'sql',
               difficulty: 'beginner',
-              code: 'SELECT u.name AS user_name FROM users u;',
+              code: `SELECT u.name AS user_name,
+       o.total AS order_total
+FROM users u
+JOIN orders o ON u.id = o.user_id;`,
               note: 'Le keyword AS sono opzionali ma rendono il codice più leggibile.',
               task: `Rinomina con AS la colonna name in user_name e abbrevia la tabella users con l'alias u.`,
             },
@@ -1485,7 +1642,12 @@ export default {
                 "The invoice query uses a CASE expression to label orders above 500 euros as premium for reporting. = La query fatture usa un'espressione CASE per etichettare gli ordini sopra i 500 euro come premium per i report.",
               context: 'sql',
               difficulty: 'beginner',
-              code: "CASE WHEN age >= 18 THEN 'adult' ELSE 'minor' END",
+              code: `SELECT name,
+  CASE
+    WHEN age >= 18 THEN 'adult'
+    ELSE 'minor'
+  END AS category
+FROM users;`,
               task: `Classifica le righe come 'adult' o 'minor' in base all'età usando un'espressione CASE WHEN.`,
             },
             {
@@ -1667,7 +1829,11 @@ export default {
                 'Each user has one profile in a one-to-one relationship. = Ogni utente ha un profilo in una relazione uno a uno.',
               context: 'design',
               difficulty: 'beginner',
-              code: 'user_id INT UNIQUE REFERENCES users(id)',
+              code: `CREATE TABLE user_profiles (
+  user_id INT UNIQUE REFERENCES users(id),
+  bio TEXT,
+  avatar_url VARCHAR(500)
+);`,
               task: 'Modella una relazione uno a uno definendo user_id come chiave esterna UNIQUE verso users(id).',
             },
             {
@@ -1679,7 +1845,12 @@ export default {
                 'A user has many orders, a one-to-many relationship. = Un utente ha molti ordini, una relazione uno a molti.',
               context: 'design',
               difficulty: 'beginner',
-              code: 'orders.user_id REFERENCES users(id)',
+              code: `CREATE TABLE orders (
+  id SERIAL PRIMARY KEY,
+  user_id INT REFERENCES users(id),
+  total DECIMAL(10, 2)
+);
+-- One user has many orders`,
               note: 'Il caso più comune. La FK sta nel lato "molti".',
               task: 'Imposta la relazione uno a molti facendo riferire orders.user_id a users(id) come chiave esterna.',
             },
@@ -1692,7 +1863,11 @@ export default {
                 'Students and courses have a many-to-many relationship. = Studenti e corsi hanno una relazione molti a molti.',
               context: 'design',
               difficulty: 'beginner',
-              code: 'CREATE TABLE student_course (student_id INT, course_id INT);',
+              code: `CREATE TABLE student_course (
+  student_id INT REFERENCES students(id),
+  course_id INT REFERENCES courses(id),
+  PRIMARY KEY (student_id, course_id)
+);`,
               note: 'Richiede una tabella di giunzione (join table).',
               task: 'Crea la tabella ponte student_course con due colonne intere per gestire la relazione molti a molti.',
             },
@@ -1705,7 +1880,11 @@ export default {
                 'A junction table implements many-to-many. = Una tabella di giunzione implementa molti a molti.',
               context: 'design',
               difficulty: 'beginner',
-              code: 'CREATE TABLE user_role (user_id INT, role_id INT, PRIMARY KEY(user_id, role_id));',
+              code: `CREATE TABLE user_role (
+  user_id INT REFERENCES users(id),
+  role_id INT REFERENCES roles(id),
+  PRIMARY KEY (user_id, role_id)
+);`,
               note: 'Detta anche "associative table" o "linking table".',
               task: 'Definisci la tabella di giunzione user_role con chiave primaria composta da user_id e role_id.',
             },
@@ -1770,7 +1949,11 @@ export default {
                 'Removing a user automatically triggers CASCADE to delete all their related orders and reviews. = Rimuovere un utente attiva automaticamente CASCADE per cancellare tutti i suoi ordini e recensioni correlati.',
               context: 'design',
               difficulty: 'beginner',
-              code: 'FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE',
+              code: `CREATE TABLE orders (
+  id SERIAL PRIMARY KEY,
+  user_id INT REFERENCES users(id)
+    ON DELETE CASCADE
+);`,
               note: 'Attenzione: può cancellare molti dati a catena!',
               task: 'Configura la chiave esterna user_id con ON DELETE CASCADE per propagare le cancellazioni alle righe figlie.',
             },
@@ -1819,7 +2002,11 @@ export default {
                 'The schema uses a domain constraint to ensure the status column only accepts active, inactive, or suspended. = Lo schema usa un vincolo di dominio per assicurare che la colonna stato accetti solo attivo, inattivo o sospeso.',
               context: 'design',
               difficulty: 'beginner',
-              code: "CHECK (status IN ('active', 'inactive'))",
+              code: `CREATE TABLE orders (
+  id SERIAL PRIMARY KEY,
+  status VARCHAR(20)
+    CHECK (status IN ('pending', 'shipped', 'delivered'))
+);`,
               task: `Limita con un vincolo CHECK i valori di status all'insieme 'active' e 'inactive' definendo un dominio chiuso.`,
             },
             {
@@ -1857,7 +2044,11 @@ export default {
                 'Microservices generate a UUID on the client side so that each service can create records without coordinating with a central sequence. = I microservizi generano un UUID lato client in modo che ogni servizio possa creare record senza coordinarsi con una sequenza centrale.',
               context: 'design',
               difficulty: 'beginner',
-              code: 'id UUID DEFAULT gen_random_uuid() PRIMARY KEY',
+              code: `CREATE TABLE sessions (
+  id UUID DEFAULT gen_random_uuid()
+    PRIMARY KEY,
+  user_id INT REFERENCES users(id)
+);`,
               tool: 'PostgreSQL',
               note: 'Universally Unique IDentifier. 128 bit, virtualmente unici.',
               task: 'Definisci la colonna id di tipo UUID con valore predefinito gen_random_uuid() come chiave primaria.',
@@ -1979,7 +2170,11 @@ export default {
                 'Product metadata varies by category, so the team stores custom attributes in a JSON column. = I metadati dei prodotti variano per categoria, quindi il team memorizza gli attributi personalizzati in una colonna JSON.',
               context: 'design',
               difficulty: 'beginner',
-              code: 'metadata JSONB',
+              code: `CREATE TABLE events (
+  id SERIAL PRIMARY KEY,
+  metadata JSONB NOT NULL DEFAULT '{}'
+);
+CREATE INDEX idx_meta ON events USING gin(metadata);`,
               tool: 'PostgreSQL',
               note: 'In PostgreSQL preferire JSONB (binary) per performance.',
               task: 'Memorizza dati semi-strutturati nella colonna metadata sfruttando il tipo binario JSONB.',
@@ -1993,7 +2188,10 @@ export default {
                 'Defining the order status as an ENUM of "pending", "shipped", and "delivered" prevents typos. = Definire lo stato ordine come ENUM di "pending", "shipped" e "delivered" previene errori di battitura.',
               context: 'design',
               difficulty: 'beginner',
-              code: "CREATE TYPE status AS ENUM ('active', 'inactive');",
+              code: `CREATE TYPE order_status
+  AS ENUM ('pending', 'shipped', 'delivered');
+ALTER TABLE orders
+  ADD COLUMN status order_status;`,
               tool: 'PostgreSQL, MySQL',
               task: `Crea un tipo ENUM chiamato status con i valori 'active' e 'inactive' per vincolare i campi di stato.`,
             },
@@ -2059,7 +2257,10 @@ export default {
                 'Use soft delete to keep historical data. = Usa la cancellazione logica per mantenere dati storici.',
               context: 'design',
               difficulty: 'beginner',
-              code: 'deleted_at TIMESTAMP NULL',
+              code: `ALTER TABLE users
+  ADD COLUMN deleted_at TIMESTAMP NULL;
+-- Query active users:
+SELECT * FROM users WHERE deleted_at IS NULL;`,
               note: 'Invece di DELETE, si imposta una colonna deleted_at.',
               task: 'Aggiungi alla tabella la colonna deleted_at di tipo TIMESTAMP nullable per implementare la cancellazione logica.',
             },
@@ -2072,7 +2273,13 @@ export default {
                 'Every table in the system includes audit columns like created_at, updated_at, and modified_by for compliance tracking. = Ogni tabella nel sistema include colonne di audit come created_at, updated_at e modified_by per il tracciamento della conformità.',
               context: 'design',
               difficulty: 'beginner',
-              code: 'created_at TIMESTAMP, updated_at TIMESTAMP, created_by INT',
+              code: `CREATE TABLE posts (
+  id SERIAL PRIMARY KEY,
+  title VARCHAR(200),
+  created_at TIMESTAMP DEFAULT NOW(),
+  updated_at TIMESTAMP DEFAULT NOW(),
+  created_by INT REFERENCES users(id)
+);`,
               task: 'Aggiungi alla tabella le colonne di audit created_at, updated_at e created_by per tracciare ogni modifica.',
             },
             {
@@ -2108,7 +2315,11 @@ export default {
                 'Instead of storing country names as free text, the schema references a lookup table with standardized ISO codes and labels. = Invece di memorizzare i nomi dei paesi come testo libero, lo schema fa riferimento a una tabella di lookup con codici ISO e etichette standardizzati.',
               context: 'design',
               difficulty: 'beginner',
-              code: 'CREATE TABLE countries (code CHAR(2) PRIMARY KEY, name VARCHAR(100));',
+              code: `CREATE TABLE countries (
+  code CHAR(2) PRIMARY KEY,
+  name VARCHAR(100) NOT NULL
+);
+INSERT INTO countries VALUES ('IT', 'Italy');`,
               task: 'Crea la tabella di lookup countries con codice ISO a due caratteri come chiave primaria e una colonna name.',
             },
             {
@@ -2119,7 +2330,13 @@ export default {
               example: `A polymorphic association on a Comment table lets one foreign key reference posts, photos, or videos through a discriminator column. = Un'associazione polimorfica su una tabella Comment permette a una chiave esterna di riferire post, foto o video tramite una colonna discriminatore.`,
               context: 'design',
               difficulty: 'beginner',
-              code: 'commentable_type VARCHAR, commentable_id INT',
+              code: `CREATE TABLE comments (
+  id SERIAL PRIMARY KEY,
+  body TEXT,
+  commentable_type VARCHAR(50),
+  commentable_id INT
+);
+-- Can reference posts, photos, etc.`,
               note: "Comune in ORM ma rompe l'integrità referenziale.",
               task: `Modella un'associazione polimorfica con commentable_type e commentable_id per collegare il commento a entità diverse.`,
             },
@@ -2510,7 +2727,11 @@ export default {
                 'A materialized view caches query results. = Una vista materializzata mette in cache i risultati della query.',
               context: 'normalization',
               difficulty: 'intermediate',
-              code: 'CREATE MATERIALIZED VIEW user_stats AS SELECT user_id, COUNT(*) FROM orders GROUP BY user_id;',
+              code: `CREATE MATERIALIZED VIEW user_stats AS
+SELECT user_id, COUNT(*) AS order_count
+FROM orders
+GROUP BY user_id;
+-- REFRESH MATERIALIZED VIEW user_stats;`,
               tool: 'PostgreSQL',
               task: 'Crea una vista materializzata user_stats che precalcoli per ogni user_id il numero di ordini effettuati.',
             },
@@ -2543,7 +2764,12 @@ export default {
                 'A nightly job computes pre-aggregation of daily sales totals so the morning dashboard loads in under one second. = Un job notturno calcola la pre-aggregazione dei totali vendite giornalieri in modo che la dashboard mattutina si carichi in meno di un secondo.',
               context: 'normalization',
               difficulty: 'intermediate',
-              code: 'CREATE TABLE daily_sales AS SELECT date, SUM(amount) FROM sales GROUP BY date;',
+              code: `CREATE TABLE daily_sales AS
+SELECT
+  DATE(created_at) AS sale_date,
+  SUM(amount) AS total
+FROM sales
+GROUP BY sale_date;`,
               task: 'Pre-aggrega le vendite per data creando la tabella daily_sales con la somma giornaliera degli importi.',
             },
             {
@@ -2555,7 +2781,13 @@ export default {
                 'The line_total computed column automatically multiplies price by quantity, ensuring the derived value is always consistent. = La colonna calcolata line_total moltiplica automaticamente prezzo per quantità, assicurando che il valore derivato sia sempre coerente.',
               context: 'normalization',
               difficulty: 'intermediate',
-              code: 'total DECIMAL GENERATED ALWAYS AS (price * quantity) STORED',
+              code: `CREATE TABLE order_items (
+  id SERIAL PRIMARY KEY,
+  price DECIMAL(10,2),
+  quantity INT,
+  total DECIMAL GENERATED ALWAYS AS
+    (price * quantity) STORED
+);`,
               tool: 'PostgreSQL',
               task: 'Aggiungi una colonna calcolata total di tipo DECIMAL generata sempre come prodotto di price e quantity, salvata su disco.',
             },
@@ -2568,7 +2800,12 @@ export default {
                 'A generated column is computed automatically. = Una colonna generata viene calcolata automaticamente.',
               context: 'normalization',
               difficulty: 'intermediate',
-              code: "full_name VARCHAR GENERATED ALWAYS AS (first_name || ' ' || last_name) STORED",
+              code: `CREATE TABLE users (
+  first_name VARCHAR(50),
+  last_name VARCHAR(50),
+  full_name VARCHAR(101) GENERATED ALWAYS AS
+    (first_name || ' ' || last_name) STORED
+);`,
               task: 'Definisci la colonna generata full_name come concatenazione di first_name e last_name memorizzata sul disco.',
             },
             {
@@ -2631,7 +2868,9 @@ export default {
                 'Adding an index on the email column reduced the login query time from 200ms to under 1ms on a table with ten million rows. = Aggiungere un indice sulla colonna email ha ridotto il tempo della query di login da 200ms a meno di 1ms su una tabella con dieci milioni di righe.',
               context: 'indexing',
               difficulty: 'intermediate',
-              code: 'CREATE INDEX idx_users_email ON users(email);',
+              code: `-- Speed up email lookups
+CREATE INDEX idx_users_email
+  ON users(email);`,
               note: 'Plurale: "indexes" o "indices". Entrambi corretti.',
               task: 'Crea un indice idx_users_email sulla colonna email della tabella users per velocizzare le ricerche per email.',
             },
@@ -2644,7 +2883,9 @@ export default {
                 'The DBA ran CREATE INDEX CONCURRENTLY to build an index on the orders table without locking production writes. = Il DBA ha eseguito CREATE INDEX CONCURRENTLY per costruire un indice sulla tabella ordini senza bloccare le scritture in produzione.',
               context: 'indexing',
               difficulty: 'intermediate',
-              code: 'CREATE INDEX idx_orders_user_id ON orders(user_id);',
+              code: `CREATE INDEX idx_orders_user_id
+  ON orders(user_id);
+-- Speeds up JOIN on user_id`,
               task: 'Crea con CREATE INDEX un indice idx_orders_user_id sulla colonna user_id della tabella orders.',
             },
             {
@@ -2747,7 +2988,9 @@ export default {
                 'A B-tree index on a timestamp column powers fast range queries like fetching every order placed in the last 24 hours. = Un indice B-tree su una colonna timestamp alimenta query di intervallo veloci come recuperare ogni ordine piazzato nelle ultime 24 ore.',
               context: 'indexing',
               difficulty: 'intermediate',
-              code: 'CREATE INDEX idx ON t(c) USING btree;',
+              code: `-- B-tree: default, good for = < > BETWEEN
+CREATE INDEX idx_users_age
+  ON users(age) USING btree;`,
               note: 'Albero bilanciato. Ottimo per range queries e ordinamento.',
               task: 'Crea un indice B-tree sulla colonna c della tabella t per supportare confronti e range scan.',
             },
@@ -2773,7 +3016,11 @@ export default {
                 'A GIN index over a tsvector column lets Postgres serve full-text search across millions of articles in tens of milliseconds. = Un indice GIN su una colonna tsvector permette a Postgres di servire ricerca full-text su milioni di articoli in decine di millisecondi.',
               context: 'indexing',
               difficulty: 'intermediate',
-              code: "CREATE INDEX idx_search ON docs USING gin(to_tsvector('english', text));",
+              code: `-- GIN: for full-text search
+CREATE INDEX idx_search
+  ON docs USING gin(
+    to_tsvector('english', body)
+  );`,
               tool: 'PostgreSQL',
               note: 'Generalized Inverted Index. Ottimo per array, JSONB, full-text.',
               task: `Crea un indice GIN su to_tsvector('english', text) della tabella docs per abilitare la ricerca full-text.`,
@@ -2811,7 +3058,10 @@ export default {
                 'A composite index covers multiple columns. = Un indice composito copre più colonne.',
               context: 'indexing',
               difficulty: 'intermediate',
-              code: 'CREATE INDEX idx ON orders(user_id, created_at);',
+              code: `CREATE INDEX idx_orders_user_date
+  ON orders(user_id, created_at);
+-- Optimizes: WHERE user_id = 1
+--   AND created_at > '2025-01-01'`,
               note: "L'ordine delle colonne conta! Si chiama anche multicolumn.",
               task: 'Crea un indice composito sulle colonne user_id e created_at della tabella orders per query filtrate e ordinate.',
             },
@@ -2824,7 +3074,10 @@ export default {
                 'A covering index includes all needed columns. = Un indice copertura include tutte le colonne necessarie.',
               context: 'indexing',
               difficulty: 'intermediate',
-              code: 'CREATE INDEX idx ON orders(user_id) INCLUDE (total);',
+              code: `CREATE INDEX idx_orders_cover
+  ON orders(user_id)
+  INCLUDE (total, status);
+-- Index-only scan, no table lookup`,
               note: "La query è risolta solo dall'indice, senza accesso alla tabella.",
               task: 'Crea un indice di copertura sulla colonna user_id includendo total per soddisfare la query senza accessi alla tabella.',
             },
@@ -2837,7 +3090,10 @@ export default {
                 'A partial index covers a subset of rows. = Un indice parziale copre un sottoinsieme di righe.',
               context: 'indexing',
               difficulty: 'intermediate',
-              code: "CREATE INDEX idx ON orders(id) WHERE status = 'pending';",
+              code: `CREATE INDEX idx_pending_orders
+  ON orders(id)
+  WHERE status = 'pending';
+-- Only indexes pending orders`,
               tool: 'PostgreSQL',
               task: `Crea un indice parziale sulla colonna id di orders limitato alle righe con status uguale a 'pending'.`,
             },
@@ -2850,7 +3106,9 @@ export default {
                 'A unique index on email enforces that no two users share the same address even under concurrent registration attempts. = Un indice univoco su email impone che nessuna coppia di utenti condivida lo stesso indirizzo, anche sotto tentativi concorrenti di registrazione.',
               context: 'indexing',
               difficulty: 'intermediate',
-              code: 'CREATE UNIQUE INDEX idx ON users(email);',
+              code: `CREATE UNIQUE INDEX idx_users_email
+  ON users(email);
+-- Enforces uniqueness via index`,
               task: `Crea un indice univoco sulla colonna email della tabella users per garantire l'unicità degli indirizzi.`,
             },
             {
@@ -2862,7 +3120,9 @@ export default {
                 'An expression index works on computed values. = Un indice su espressione lavora su valori calcolati.',
               context: 'indexing',
               difficulty: 'intermediate',
-              code: 'CREATE INDEX idx ON users(LOWER(email));',
+              code: `CREATE INDEX idx_users_email_lower
+  ON users(LOWER(email));
+-- Optimizes: WHERE LOWER(email) = ...`,
               tool: 'PostgreSQL',
               task: 'Crea un indice su espressione applicando LOWER(email) per supportare ricerche case-insensitive.',
             },
@@ -2955,7 +3215,10 @@ export default {
               example: `Drop any unused index detected by pg_stat_user_indexes after a full month of production traffic to reclaim disk and write speed. = Elimina ogni indice inutilizzato rilevato da pg_stat_user_indexes dopo un mese pieno di traffico in produzione per recuperare disco e velocita' di scrittura.`,
               context: 'indexing',
               difficulty: 'intermediate',
-              code: 'SELECT * FROM pg_stat_user_indexes WHERE idx_scan = 0;',
+              code: `SELECT indexrelname, idx_scan
+FROM pg_stat_user_indexes
+WHERE idx_scan = 0
+ORDER BY pg_relation_size(indexrelid) DESC;`,
               tool: 'PostgreSQL',
               task: 'Identifica gli indici inutilizzati interrogando pg_stat_user_indexes con il filtro idx_scan = 0.',
             },
@@ -2968,7 +3231,10 @@ export default {
                 'CREATE INDEX CONCURRENTLY avoids blocking. = CREATE INDEX CONCURRENTLY evita il blocco.',
               context: 'indexing',
               difficulty: 'intermediate',
-              code: 'CREATE INDEX CONCURRENTLY idx ON huge_table(col);',
+              code: `-- Build index without locking writes
+CREATE INDEX CONCURRENTLY
+  idx_users_city
+  ON users(city);`,
               tool: 'PostgreSQL',
               note: 'Più lento ma non blocca scritture in produzione.',
               task: 'Crea un indice in modo concorrente con CONCURRENTLY sulla huge_table per evitare lock di scrittura.',
@@ -3002,7 +3268,11 @@ export default {
                 'A full-text index lets the search bar match documents on stemmed keywords instead of brittle LIKE expressions. = Un indice full-text permette alla barra di ricerca di abbinare documenti su parole chiave stemmate invece che su fragili espressioni LIKE.',
               context: 'indexing',
               difficulty: 'intermediate',
-              code: "CREATE INDEX idx ON docs USING gin(to_tsvector('english', body));",
+              code: `CREATE INDEX idx_docs_search
+  ON docs USING gin(
+    to_tsvector('english', body)
+  );
+-- Query: WHERE to_tsvector('english', body) @@ to_tsquery('database')`,
               tool: 'PostgreSQL',
               task: 'Crea un indice full-text GIN sulla colonna body della tabella docs usando to_tsvector con lingua inglese.',
             },
@@ -3025,7 +3295,9 @@ export default {
               example: `Build a JSON Index on the metadata column so queries that filter by metadata->>'country' stay fast as documents grow. = Costruisci un JSON Index sulla colonna metadata cosi' le query che filtrano per metadata->>'country' restano veloci man mano che i documenti crescono.`,
               context: 'indexing',
               difficulty: 'intermediate',
-              code: 'CREATE INDEX idx ON events USING gin(payload);',
+              code: `CREATE INDEX idx_events_payload
+  ON events USING gin(payload);
+-- Query: WHERE payload @> '{"type": "click"}'`,
               tool: 'PostgreSQL',
               task: 'Crea un indice GIN sulla colonna payload della tabella events per velocizzare le query su documenti JSON.',
             },
@@ -3130,7 +3402,10 @@ export default {
                 'A transaction groups multiple operations. = Una transazione raggruppa più operazioni.',
               context: 'transactions',
               difficulty: 'intermediate',
-              code: 'BEGIN; UPDATE ...; UPDATE ...; COMMIT;',
+              code: `BEGIN;
+UPDATE accounts SET balance = balance - 100 WHERE id = 1;
+UPDATE accounts SET balance = balance + 100 WHERE id = 2;
+COMMIT;`,
               note: 'Tutto o niente: o tutte le operazioni passano, o nessuna.',
               task: 'Apri una transazione con BEGIN, esegui due UPDATE correlati e conferma le modifiche con COMMIT.',
             },
@@ -3142,7 +3417,10 @@ export default {
               example: `Wrap a multi-statement balance transfer inside BEGIN and COMMIT so a failure halfway rolls back both the debit and the credit. = Avvolgi un trasferimento di saldo multi-statement dentro BEGIN e COMMIT cosi' un fallimento a meta' fa il rollback sia del debito sia del credito.`,
               context: 'transactions',
               difficulty: 'intermediate',
-              code: 'BEGIN;',
+              code: `BEGIN;
+-- All statements below are atomic
+INSERT INTO orders (user_id, total)
+VALUES (1, 59.99);`,
               note: 'In SQL Server: BEGIN TRANSACTION. In Postgres: BEGIN o START TRANSACTION.',
               task: 'Avvia una transazione esplicita inviando il comando BEGIN al database.',
             },
@@ -3154,7 +3432,11 @@ export default {
               example: `Only issue COMMIT after every business rule has been validated, otherwise partial changes will become permanently visible to other sessions. = Emetti COMMIT solo dopo che ogni regola di business e' stata validata, altrimenti modifiche parziali diventeranno permanentemente visibili ad altre sessioni.`,
               context: 'transactions',
               difficulty: 'intermediate',
-              code: 'COMMIT;',
+              code: `BEGIN;
+UPDATE inventory SET stock = stock - 1
+  WHERE product_id = 42;
+COMMIT;
+-- Changes are now permanent`,
               note: 'Rende effettive le modifiche e le rende visibili agli altri.',
               task: 'Conferma in modo permanente le modifiche della transazione corrente inviando COMMIT.',
             },
@@ -3166,7 +3448,11 @@ export default {
               example: `When the second UPDATE raises a unique violation, issue ROLLBACK to undo the first one and leave the database in its prior state. = Quando il secondo UPDATE solleva una violazione di unicita', emetti ROLLBACK per annullare il primo e lasciare il database nello stato precedente.`,
               context: 'transactions',
               difficulty: 'intermediate',
-              code: 'ROLLBACK;',
+              code: `BEGIN;
+DELETE FROM orders WHERE id = 99;
+-- Oops, wrong order!
+ROLLBACK;
+-- Nothing was deleted`,
               task: 'Annulla tutte le modifiche della transazione in corso con il comando ROLLBACK.',
             },
             {
@@ -3177,7 +3463,12 @@ export default {
               example: `Set a SAVEPOINT before risky bulk operations so you can roll back to it without losing earlier work in the same transaction. = Imposta un SAVEPOINT prima di operazioni di massa rischiose cosi' puoi rollbackare a esso senza perdere il lavoro precedente nella stessa transazione.`,
               context: 'transactions',
               difficulty: 'intermediate',
-              code: 'SAVEPOINT before_update; ROLLBACK TO before_update;',
+              code: `BEGIN;
+UPDATE users SET name = 'Mario' WHERE id = 1;
+SAVEPOINT before_delete;
+DELETE FROM orders WHERE user_id = 1;
+ROLLBACK TO before_delete;
+COMMIT;`,
               task: 'Definisci il savepoint before_update e successivamente effettua un ROLLBACK fino a quel punto della transazione.',
             },
             {
@@ -3482,7 +3773,11 @@ export default {
                 'A lock prevents concurrent modifications. = Un lock previene modifiche concorrenti.',
               context: 'transactions',
               difficulty: 'intermediate',
-              code: 'LOCK TABLE users IN EXCLUSIVE MODE;',
+              code: `BEGIN;
+LOCK TABLE inventory
+  IN EXCLUSIVE MODE;
+UPDATE inventory SET stock = stock - 1;
+COMMIT;`,
               task: 'Acquisisci un lock esclusivo sulla tabella users con LOCK TABLE per bloccare scritture concorrenti.',
             },
             {
@@ -3513,7 +3808,11 @@ export default {
               example: `Postgres prefers a row lock over a table lock so two transactions updating different orders rarely block each other. = Postgres preferisce un row lock a un table lock cosi' due transazioni che aggiornano ordini diversi raramente si bloccano a vicenda.`,
               context: 'transactions',
               difficulty: 'intermediate',
-              code: 'SELECT * FROM users WHERE id = 1 FOR UPDATE;',
+              code: `BEGIN;
+SELECT * FROM accounts
+WHERE id = 1
+FOR UPDATE;
+-- Row is locked until COMMIT`,
               task: 'Blocca la riga utente con id 1 acquisendo un row lock tramite SELECT ... FOR UPDATE.',
             },
             {
@@ -3556,7 +3855,11 @@ export default {
               example: `The product editor uses optimistic locking on a version column so the UPDATE fails when a colleague has already saved the page. = L'editor prodotti usa lock ottimistico su una colonna version cosi l'UPDATE fallisce quando un collega ha gia' salvato la pagina.`,
               context: 'transactions',
               difficulty: 'intermediate',
-              code: 'UPDATE products SET ..., version = version + 1 WHERE id = 1 AND version = 5;',
+              code: `UPDATE products
+SET price = 29.99,
+    version = version + 1
+WHERE id = 1 AND version = 5;
+-- Fails if version changed`,
               task: 'Implementa il lock ottimistico aggiornando il prodotto solo se la versione corrente è ancora 5 e incrementandola.',
             },
             {
@@ -3567,7 +3870,11 @@ export default {
               example: `The checkout flow uses pessimistic locking via SELECT FOR UPDATE on the inventory row so two carts cannot claim the last unit. = Il flusso di checkout usa lock pessimistico via SELECT FOR UPDATE sulla riga di inventario cosi due carrelli non possono reclamare l'ultima unita'.`,
               context: 'transactions',
               difficulty: 'intermediate',
-              code: 'SELECT ... FOR UPDATE;',
+              code: `BEGIN;
+SELECT * FROM inventory
+WHERE product_id = 42
+FOR UPDATE;
+-- Lock held until COMMIT`,
               task: 'Applica il lock pessimistico bloccando le righe selezionate con la clausola FOR UPDATE prima di modificarle.',
             },
           ],
@@ -3594,7 +3901,12 @@ export default {
               example: `A subquery in the WHERE clause computes the average order total and filters customers who spent more than that threshold. = Una subquery nella clausola WHERE calcola il totale medio degli ordini e filtra i clienti che hanno speso piu' di quella soglia.`,
               context: 'sql',
               difficulty: 'intermediate',
-              code: 'SELECT * FROM users WHERE id IN (SELECT user_id FROM orders);',
+              code: `SELECT name, email
+FROM users
+WHERE id IN (
+  SELECT user_id FROM orders
+  WHERE total > 100
+);`,
               task: 'Recupera gli utenti che hanno effettuato almeno un ordine usando una sottoquery con IN su orders.user_id.',
             },
             {
@@ -3606,7 +3918,13 @@ export default {
                 'A correlated subquery references the outer query. = Una sottoquery correlata fa riferimento alla query esterna.',
               context: 'sql',
               difficulty: 'intermediate',
-              code: 'SELECT * FROM users u WHERE EXISTS (SELECT 1 FROM orders o WHERE o.user_id = u.id);',
+              code: `SELECT u.name, u.email
+FROM users u
+WHERE EXISTS (
+  SELECT 1 FROM orders o
+  WHERE o.user_id = u.id
+    AND o.total > 500
+);`,
               note: 'Eseguita per ogni riga della query esterna. Spesso lenta.',
               task: 'Filtra con una sottoquery correlata gli utenti per cui esiste almeno un ordine collegato tramite EXISTS.',
             },
@@ -3619,7 +3937,12 @@ export default {
                 'The query uses EXISTS to check whether the customer has at least one active subscription. = La query usa EXISTS per verificare se il cliente ha almeno un abbonamento attivo.',
               context: 'sql',
               difficulty: 'intermediate',
-              code: 'WHERE EXISTS (SELECT 1 FROM orders WHERE user_id = users.id)',
+              code: `SELECT u.name
+FROM users u
+WHERE EXISTS (
+  SELECT 1 FROM orders o
+  WHERE o.user_id = u.id
+);`,
               note: 'Spesso più veloce di IN per controlli di esistenza.',
               task: `Verifica con EXISTS l'esistenza di almeno un ordine collegato a ciascun utente nella tabella users.`,
             },
@@ -3632,7 +3955,13 @@ export default {
                 'Use NOT EXISTS to find customers without any orders, since it short-circuits as soon as the inner query produces a row. = Usa NOT EXISTS per trovare clienti senza alcun ordine, dato che si interrompe appena la query interna produce una riga.',
               context: 'sql',
               difficulty: 'intermediate',
-              code: 'WHERE NOT EXISTS (SELECT 1 FROM ...)',
+              code: `SELECT u.name
+FROM users u
+WHERE NOT EXISTS (
+  SELECT 1 FROM orders o
+  WHERE o.user_id = u.id
+);
+-- Users with no orders`,
               task: 'Filtra con NOT EXISTS le righe per cui la sottoquery non restituisce alcun risultato.',
             },
             {
@@ -3643,7 +3972,11 @@ export default {
               example: `Pulling the latest login date with a scalar subquery in the SELECT list keeps the main query single-row-per-customer. = Estrarre l'ultima data di login con una scalar subquery nella lista SELECT mantiene la query principale a una riga per cliente.`,
               context: 'sql',
               difficulty: 'intermediate',
-              code: 'SELECT name, (SELECT COUNT(*) FROM orders WHERE user_id = u.id) FROM users u;',
+              code: `SELECT name,
+  (SELECT COUNT(*)
+   FROM orders
+   WHERE user_id = u.id) AS order_count
+FROM users u;`,
               task: 'Affianca a ogni utente il numero di ordini effettuati tramite una sottoquery scalare con COUNT(*) correlata.',
             },
             {
@@ -3654,7 +3987,13 @@ export default {
               example: `Wrapping a heavy aggregation as an inline view inside FROM lets the outer query treat its result as just another table. = Avvolgere un'aggregazione pesante come inline view dentro FROM permette alla query esterna di trattare il suo risultato come un'altra tabella.`,
               context: 'sql',
               difficulty: 'intermediate',
-              code: 'SELECT * FROM (SELECT user_id, COUNT(*) c FROM orders GROUP BY user_id) sub;',
+              code: `SELECT sub.user_id, sub.order_count
+FROM (
+  SELECT user_id, COUNT(*) AS order_count
+  FROM orders
+  GROUP BY user_id
+) sub
+WHERE sub.order_count > 5;`,
               note: 'Detta anche "derived table".',
               task: 'Usa una vista inline che pre-aggrega gli ordini per user_id e poi seleziona tutto dal risultato.',
             },
@@ -3666,7 +4005,12 @@ export default {
               example: `Use price > ANY (SELECT price FROM competitors) to flag products that beat at least one rival's published price. = Usa price > ANY (SELECT price FROM competitors) per segnalare i prodotti che battono almeno un prezzo pubblicato dai concorrenti.`,
               context: 'sql',
               difficulty: 'intermediate',
-              code: "WHERE price > ANY (SELECT price FROM products WHERE category = 'A')",
+              code: `SELECT name, price
+FROM products
+WHERE price > ANY (
+  SELECT price FROM products
+  WHERE category = 'electronics'
+);`,
               task: `Filtra i prodotti il cui prezzo è maggiore di almeno uno dei prezzi della categoria A usando l'operatore ANY.`,
             },
             {
@@ -3678,7 +4022,12 @@ export default {
                 'Filter with price < ALL (SELECT price FROM competitors) to keep products that undercut every single rival on record. = Filtra con price < ALL (SELECT price FROM competitors) per tenere i prodotti che battono ogni singolo concorrente registrato.',
               context: 'sql',
               difficulty: 'intermediate',
-              code: 'WHERE price > ALL (SELECT price FROM ...)',
+              code: `SELECT name, price
+FROM products
+WHERE price > ALL (
+  SELECT price FROM products
+  WHERE category = 'books'
+);`,
               task: 'Filtra i prodotti il cui prezzo supera quello di tutti i record restituiti dalla sottoquery con ALL.',
             },
             {
@@ -3689,7 +4038,14 @@ export default {
               example: `A LATERAL JOIN gives each customer row access to a per-customer subquery, like fetching their three most recent orders. = Una LATERAL JOIN da' a ogni riga cliente accesso a una subquery per cliente, come recuperare i suoi tre ordini piu' recenti.`,
               context: 'sql',
               difficulty: 'intermediate',
-              code: 'SELECT * FROM users u, LATERAL (SELECT * FROM orders WHERE user_id = u.id LIMIT 5) o;',
+              code: `SELECT u.name, recent.total
+FROM users u,
+LATERAL (
+  SELECT total FROM orders
+  WHERE user_id = u.id
+  ORDER BY created_at DESC
+  LIMIT 3
+) recent;`,
               tool: 'PostgreSQL',
               task: 'Recupera per ogni utente i suoi cinque ordini più recenti utilizzando un LATERAL JOIN con LIMIT 5.',
             },
@@ -3718,7 +4074,13 @@ export default {
               example: `Splitting a 200-line analytical query into named CTE steps makes each stage easier to debug and reuse across reports. = Suddividere una query analitica di 200 righe in step CTE nominati rende ogni fase piu' facile da debuggare e riutilizzare tra report.`,
               context: 'sql',
               difficulty: 'intermediate',
-              code: 'WITH active_users AS (SELECT * FROM users WHERE active) SELECT * FROM active_users;',
+              code: `WITH active_users AS (
+  SELECT id, name
+  FROM users
+  WHERE active = true
+)
+SELECT * FROM active_users
+ORDER BY name;`,
               note: 'Common Table Expression.',
               task: 'Definisci una CTE active_users che isoli gli utenti attivi e poi selezionala con una query principale.',
             },
@@ -3731,7 +4093,13 @@ export default {
                 'Open the query with WITH recent_orders AS (...) to name the rolling-window result and reference it twice in the final SELECT. = Apri la query con WITH recent_orders AS (...) per nominare il risultato a finestra mobile e riferirlo due volte nella SELECT finale.',
               context: 'sql',
               difficulty: 'intermediate',
-              code: 'WITH cte AS (...) SELECT * FROM cte;',
+              code: `WITH recent_orders AS (
+  SELECT * FROM orders
+  WHERE created_at > NOW() - INTERVAL '7 days'
+)
+SELECT user_id, SUM(total)
+FROM recent_orders
+GROUP BY user_id;`,
               task: 'Introduci una CTE con la clausola WITH cte AS (...) e poi consultala con una semplice SELECT * FROM cte.',
             },
             {
@@ -3743,7 +4111,14 @@ export default {
                 'A recursive CTE walks an org_chart table from CEO down to interns by joining each manager row to its direct reports. = Una CTE ricorsiva attraversa una tabella org_chart dal CEO agli stagisti unendo ogni riga manager ai suoi riporti diretti.',
               context: 'sql',
               difficulty: 'intermediate',
-              code: 'WITH RECURSIVE tree AS (SELECT * FROM nodes WHERE parent IS NULL UNION ALL SELECT n.* FROM nodes n JOIN tree t ON n.parent = t.id) SELECT * FROM tree;',
+              code: `WITH RECURSIVE tree AS (
+  SELECT id, name, parent_id, 0 AS depth
+  FROM categories WHERE parent_id IS NULL
+  UNION ALL
+  SELECT c.id, c.name, c.parent_id, t.depth + 1
+  FROM categories c JOIN tree t ON c.parent_id = t.id
+)
+SELECT * FROM tree;`,
               task: 'Costruisci con WITH RECURSIVE una CTE tree che percorra la gerarchia di nodes partendo dalle radici con parent NULL.',
             },
             {
@@ -3786,7 +4161,14 @@ export default {
                 'Chaining multiple CTEs in one WITH block lets a report stage filtering, aggregation, and ranking as separate readable steps. = Concatenare CTE multiple in un singolo blocco WITH permette a un report di organizzare filtraggio, aggregazione e ranking come step leggibili separati.',
               context: 'sql',
               difficulty: 'intermediate',
-              code: 'WITH a AS (...), b AS (SELECT * FROM a WHERE ...) SELECT * FROM b;',
+              code: `WITH
+  active AS (SELECT * FROM users WHERE active),
+  totals AS (
+    SELECT user_id, SUM(amount) AS total
+    FROM orders GROUP BY user_id
+  )
+SELECT a.name, t.total
+FROM active a JOIN totals t ON a.id = t.user_id;`,
               task: 'Concatena due CTE nominate a e b separate da virgola, dove b filtra ulteriormente i dati prodotti da a.',
             },
             {
@@ -3839,7 +4221,10 @@ export default {
                 'A window function like AVG(amount) OVER (PARTITION BY customer_id) keeps row detail while adding per-customer aggregates. = Una funzione finestra come AVG(amount) OVER (PARTITION BY customer_id) mantiene il dettaglio di riga aggiungendo aggregati per cliente.',
               context: 'sql',
               difficulty: 'intermediate',
-              code: 'SELECT name, salary, AVG(salary) OVER (PARTITION BY dept) FROM employees;',
+              code: `SELECT name, salary,
+  AVG(salary) OVER (PARTITION BY dept)
+    AS dept_avg
+FROM employees;`,
               task: 'Affianca a ogni dipendente lo stipendio medio del suo dipartimento usando AVG con OVER e PARTITION BY dept.',
             },
             {
@@ -3850,7 +4235,13 @@ export default {
               example: `The OVER clause turns a regular aggregate into a window function, so each row keeps its detail and gains a per-group statistic. = La clausola OVER trasforma un aggregato normale in una funzione finestra, cosi' ogni riga mantiene il dettaglio e guadagna una statistica per gruppo.`,
               context: 'sql',
               difficulty: 'intermediate',
-              code: 'SUM(amount) OVER (PARTITION BY user_id)',
+              code: `SELECT user_id,
+  amount,
+  SUM(amount) OVER (
+    PARTITION BY user_id
+    ORDER BY created_at
+  ) AS running_total
+FROM orders;`,
               task: 'Calcola con SUM(amount) OVER (PARTITION BY user_id) la somma cumulata per ciascun utente come funzione finestra.',
             },
             {
@@ -3861,7 +4252,12 @@ export default {
               example: `Add PARTITION BY region inside OVER so the running total restarts for each region instead of accumulating across the whole table. = Aggiungi PARTITION BY region dentro OVER cosi' il totale corrente riparte per ogni regione invece di accumulare sull'intera tabella.`,
               context: 'sql',
               difficulty: 'intermediate',
-              code: 'AVG(salary) OVER (PARTITION BY dept)',
+              code: `SELECT dept, name, salary,
+  RANK() OVER (
+    PARTITION BY dept
+    ORDER BY salary DESC
+  ) AS dept_rank
+FROM employees;`,
               note: 'Come GROUP BY ma senza collassare le righe.',
               task: `Suddividi la finestra per dipartimento con PARTITION BY dept e calcola la media salariale all'interno di ogni gruppo.`,
             },
@@ -3874,7 +4270,12 @@ export default {
                 'The leaderboard query assigns each player a unique rank with ROW_NUMBER() OVER (ORDER BY score DESC) even when scores are tied. = La query della classifica assegna a ogni giocatore una posizione unica con ROW_NUMBER() OVER (ORDER BY score DESC) anche quando i punteggi sono pari.',
               context: 'sql',
               difficulty: 'intermediate',
-              code: 'ROW_NUMBER() OVER (ORDER BY created_at)',
+              code: `SELECT
+  ROW_NUMBER() OVER (
+    ORDER BY created_at DESC
+  ) AS row_num,
+  name, email
+FROM users;`,
               task: 'Assegna a ciascuna riga un numero progressivo ordinato per created_at usando ROW_NUMBER() OVER.',
             },
             {
@@ -3886,7 +4287,11 @@ export default {
                 'Use RANK() OVER (ORDER BY total DESC) on sales totals so tied salespeople share a position and the next rank is skipped accordingly. = Usa RANK() OVER (ORDER BY total DESC) sui totali vendite cosi i venditori pari condividono una posizione e il prossimo rank viene saltato di conseguenza.',
               context: 'sql',
               difficulty: 'intermediate',
-              code: 'RANK() OVER (ORDER BY score DESC)',
+              code: `SELECT name, score,
+  RANK() OVER (
+    ORDER BY score DESC
+  ) AS position
+FROM players;`,
               note: 'Pareggi: 1, 2, 2, 4.',
               task: 'Assegna con RANK() OVER (ORDER BY score DESC) un ranking ai record dal punteggio più alto al più basso.',
             },
@@ -3911,7 +4316,11 @@ export default {
               example: `Compute month-over-month deltas with LAG(revenue) OVER (ORDER BY month) so each row sees the previous month's revenue alongside its own. = Calcola le variazioni mese su mese con LAG(revenue) OVER (ORDER BY month) cosi ogni riga vede il ricavo del mese precedente accanto al proprio.`,
               context: 'sql',
               difficulty: 'intermediate',
-              code: 'LAG(price, 1) OVER (ORDER BY date)',
+              code: `SELECT date, price,
+  LAG(price, 1) OVER (
+    ORDER BY date
+  ) AS prev_price
+FROM stock_prices;`,
               task: 'Recupera con LAG il prezzo della riga precedente ordinata per data per confrontarlo con quello corrente.',
             },
             {
@@ -3923,7 +4332,11 @@ export default {
                 'Pair each event with the next one using LEAD(event_at) OVER (PARTITION BY user_id ORDER BY event_at) to measure session gaps. = Affianca a ogni evento il successivo usando LEAD(event_at) OVER (PARTITION BY user_id ORDER BY event_at) per misurare i gap di sessione.',
               context: 'sql',
               difficulty: 'intermediate',
-              code: 'LEAD(price, 1) OVER (ORDER BY date)',
+              code: `SELECT date, price,
+  LEAD(price, 1) OVER (
+    ORDER BY date
+  ) AS next_price
+FROM stock_prices;`,
               task: `Recupera con LEAD il prezzo della riga successiva ordinata per data per analizzare l'andamento.`,
             },
             {
@@ -3965,7 +4378,13 @@ export default {
                 'A stored procedure encapsulates SQL logic. = Una procedura memorizzata incapsula logica SQL.',
               context: 'sql',
               difficulty: 'intermediate',
-              code: 'CREATE PROCEDURE update_balance(p_id INT, p_amt DECIMAL) ...',
+              code: `CREATE PROCEDURE transfer(
+  p_from INT, p_to INT, p_amount DECIMAL
+)
+LANGUAGE SQL AS $$
+  UPDATE accounts SET balance = balance - p_amount WHERE id = p_from;
+  UPDATE accounts SET balance = balance + p_amount WHERE id = p_to;
+$$;`,
               task: 'Crea una stored procedure update_balance che accetti id e importo come parametri e modifichi il saldo.',
             },
             {
@@ -3976,7 +4395,11 @@ export default {
               example: `Wrap recurring tax math inside a SQL function so every report uses the same formula instead of copying it across queries. = Avvolgere il calcolo ricorrente delle tasse dentro una funzione SQL cosi' ogni report usa la stessa formula invece di copiarla tra query.`,
               context: 'sql',
               difficulty: 'intermediate',
-              code: 'CREATE FUNCTION square(n INT) RETURNS INT AS $$ SELECT n * n; $$ LANGUAGE SQL;',
+              code: `CREATE FUNCTION total_orders(uid INT)
+RETURNS DECIMAL AS $$
+  SELECT COALESCE(SUM(total), 0)
+  FROM orders WHERE user_id = uid;
+$$ LANGUAGE SQL;`,
               task: 'Definisci la funzione SQL square che riceve un intero n e ne restituisce il quadrato.',
             },
             {
@@ -3987,7 +4410,10 @@ export default {
               example: `An AFTER INSERT trigger on orders writes a row into the audit_log so every new order leaves a tamper-evident trail. = Un trigger AFTER INSERT su orders scrive una riga in audit_log cosi' ogni nuovo ordine lascia una traccia a prova di manomissione.`,
               context: 'sql',
               difficulty: 'intermediate',
-              code: 'CREATE TRIGGER trg_audit BEFORE UPDATE ON users FOR EACH ROW EXECUTE FUNCTION audit_fn();',
+              code: `CREATE TRIGGER trg_updated_at
+  BEFORE UPDATE ON users
+  FOR EACH ROW
+  EXECUTE FUNCTION set_updated_at();`,
               task: 'Crea un trigger trg_audit che prima di ogni UPDATE su users invochi la funzione audit_fn per ogni riga.',
             },
             {
@@ -4045,7 +4471,11 @@ export default {
               example: `Define a view named active_customers so dashboards can SELECT from one stable name instead of copying the filter logic everywhere. = Definisci una vista chiamata active_customers cosi' le dashboard possono SELECT da un nome stabile invece di copiare la logica del filtro ovunque.`,
               context: 'sql',
               difficulty: 'intermediate',
-              code: 'CREATE VIEW active_users AS SELECT * FROM users WHERE active;',
+              code: `CREATE VIEW active_users AS
+SELECT id, name, email
+FROM users
+WHERE active = true
+  AND deleted_at IS NULL;`,
               task: 'Crea la vista active_users che esponga solo gli utenti con il flag active uguale a vero.',
             },
             {
@@ -4109,7 +4539,9 @@ export default {
               context: 'nosql',
               difficulty: 'intermediate',
               tool: 'Redis, DynamoDB',
-              code: `SET user:1 '{"name":"Marco"}'`,
+              code: `SET user:1 '{"name":"Marco"}'
+SET user:2 '{"name":"Anna"}'
+GET user:1`,
               task: `Memorizza in uno store chiave-valore la chiave user:1 associata al documento JSON che descrive l'utente Marco.`,
             },
             {
@@ -4323,7 +4755,13 @@ export default {
                 'The document model in MongoDB stores a whole user profile, with addresses and preferences, in one JSON document instead of joined tables. = Il modello a documenti in MongoDB memorizza un intero profilo utente, con indirizzi e preferenze, in un documento JSON invece che in tabelle unite.',
               context: 'nosql',
               difficulty: 'intermediate',
-              code: '{ "name": "Marco", "addresses": [...] }',
+              code: `{
+  "name": "Marco",
+  "email": "marco@email.com",
+  "addresses": [
+    { "city": "Roma", "zip": "00100" }
+  ]
+}`,
               task: `Modella l'utente come documento che annida un array di addresses senza ricorrere a tabelle separate.`,
             },
             {
@@ -4357,7 +4795,13 @@ export default {
               example: `An order document can hold its line items as an embedded document array so reading the full order needs just one query. = Un documento ordine puo' contenere le sue righe come array di documenti embedded cosi' leggere l'ordine completo richiede una sola query.`,
               context: 'nosql',
               difficulty: 'intermediate',
-              code: '{ user: { name: "Marco", address: { city: "Roma" } } }',
+              code: `db.users.insertOne({
+  name: "Marco",
+  address: {
+    city: "Roma",
+    zip: "00100"
+  }
+})`,
               task: 'Incorpora nel documento utente un sotto-documento address con la città Roma come documento embedded.',
             },
             {
@@ -4504,7 +4948,11 @@ export default {
                 'A replication factor of 3 keeps three copies. = Un fattore di replicazione 3 mantiene tre copie.',
               context: 'nosql',
               difficulty: 'intermediate',
-              code: "WITH replication = { 'class': 'SimpleStrategy', 'replication_factor': 3 }",
+              code: `CREATE KEYSPACE my_app
+WITH replication = {
+  'class': 'SimpleStrategy',
+  'replication_factor': 3
+};`,
               tool: 'Cassandra',
               task: 'Configura il keyspace Cassandra con SimpleStrategy e replication factor 3 per mantenere tre copie dei dati.',
             },
@@ -4577,7 +5025,10 @@ export default {
                 'A MongoDB collection named users groups every user document the same way an RDBMS would group rows inside a table. = Una collezione MongoDB chiamata users raggruppa ogni documento utente come un RDBMS raggrupperebbe righe dentro una tabella.',
               context: 'nosql',
               difficulty: 'intermediate',
-              code: 'db.users.find()',
+              code: `-- MongoDB collection operations
+db.users.find()
+db.users.countDocuments()
+db.users.drop()`,
               tool: 'MongoDB',
               note: 'Equivalente di una tabella in SQL.',
               task: 'Recupera con find tutti i documenti contenuti nella collezione users del database corrente.',
@@ -4615,7 +5066,10 @@ export default {
               example: `db.orders.find({ status: "paid" }) returns every paid order document in the collection as a cursor the driver can iterate. = db.orders.find({ status: "paid" }) restituisce ogni documento ordine pagato nella collezione come cursore che il driver puo' iterare.`,
               context: 'nosql',
               difficulty: 'intermediate',
-              code: 'db.users.find({ age: { $gt: 18 } })',
+              code: `db.users.find(
+  { age: { $gt: 18 }, active: true },
+  { name: 1, email: 1, _id: 0 }
+).sort({ name: 1 })`,
               tool: 'MongoDB',
               task: 'Trova con find tutti i documenti della collezione users in cui age è maggiore di 18.',
             },
@@ -4627,7 +5081,10 @@ export default {
               example: `db.users.findOne({ email: "a@b.com" }) returns the first matching user document or null when no user has that email. = db.users.findOne({ email: "a@b.com" }) restituisce il primo documento utente corrispondente o null quando nessun utente ha quell'email.`,
               context: 'nosql',
               difficulty: 'intermediate',
-              code: 'db.users.findOne({ email: "a@b.com" })',
+              code: `db.users.findOne(
+  { email: "marco@email.com" },
+  { name: 1, age: 1 }
+)`,
               tool: 'MongoDB',
               task: 'Recupera con findOne il primo documento utente la cui email coincide con a@b.com.',
             },
@@ -4639,7 +5096,12 @@ export default {
               example: `db.users.insertOne({ email: "x@y.com", role: "admin" }) adds the document and returns the generated ObjectId for the new row. = db.users.insertOne({ email: "x@y.com", role: "admin" }) aggiunge il documento e restituisce l'ObjectId generato per la nuova riga.`,
               context: 'nosql',
               difficulty: 'intermediate',
-              code: 'db.users.insertOne({ name: "Eva" })',
+              code: `db.users.insertOne({
+  name: "Eva",
+  email: "eva@email.com",
+  age: 28,
+  active: true
+})`,
               tool: 'MongoDB',
               task: 'Inserisci con insertOne un singolo nuovo documento utente di nome Eva nella collezione users.',
             },
@@ -4651,7 +5113,11 @@ export default {
               example: `db.events.insertMany(batch) ingests a thousand event documents in one round trip, far faster than looping insertOne in the driver. = db.events.insertMany(batch) ingerisce mille documenti evento in un singolo round trip, molto piu' veloce di un loop di insertOne nel driver.`,
               context: 'nosql',
               difficulty: 'intermediate',
-              code: 'db.users.insertMany([{...},{...}])',
+              code: `db.users.insertMany([
+  { name: "Anna", age: 25 },
+  { name: "Luca", age: 32 },
+  { name: "Eva", age: 28 }
+])`,
               tool: 'MongoDB',
               task: 'Inserisci in blocco più documenti nella collezione users tramite insertMany passando un array.',
             },
@@ -4664,7 +5130,10 @@ export default {
                 'db.orders.updateOne({ _id: id }, { $set: { status: "shipped" } }) flips a single order to shipped without touching siblings. = db.orders.updateOne({ _id: id }, { $set: { status: "shipped" } }) cambia un singolo ordine a shipped senza toccare i fratelli.',
               context: 'nosql',
               difficulty: 'intermediate',
-              code: 'db.users.updateOne({ _id: 1 }, { $set: { active: true } })',
+              code: `db.users.updateOne(
+  { _id: ObjectId("507f1f77bcf86cd799439011") },
+  { $set: { active: true, updated_at: new Date() } }
+)`,
               tool: 'MongoDB',
               task: 'Aggiorna con updateOne il documento con _id 1 impostando il flag active a true tramite $set.',
             },
@@ -4721,7 +5190,10 @@ export default {
                 'db.orders.find({ status: { $in: ["paid", "shipped"] } }) selects orders whose status appears in the provided list of values. = db.orders.find({ status: { $in: ["paid", "shipped"] } }) seleziona gli ordini il cui status compare nella lista di valori fornita.',
               context: 'nosql',
               difficulty: 'intermediate',
-              code: "{ status: { $in: ['active', 'pending'] } }",
+              code: `db.users.find({
+  status: { $in: ['active', 'pending'] },
+  country: 'IT'
+})`,
               tool: 'MongoDB',
               task: `Filtra con $in i documenti il cui status è uno tra 'active' e 'pending'.`,
             },
@@ -4746,7 +5218,13 @@ export default {
                 'db.users.updateOne({ _id: id }, { $set: { verified: true } }) flips one field on a document and leaves the rest untouched. = db.users.updateOne({ _id: id }, { $set: { verified: true } }) cambia un campo su un documento e lascia il resto intatto.',
               context: 'nosql',
               difficulty: 'intermediate',
-              code: '{ $set: { name: "Mario" } }',
+              code: `db.users.updateOne(
+  { email: "marco@email.com" },
+  { $set: {
+    name: "Mario",
+    updated_at: new Date()
+  }}
+)`,
               tool: 'MongoDB',
               task: `Aggiorna il campo name del documento al valore Mario usando l'operatore $set.`,
             },
@@ -4772,7 +5250,10 @@ export default {
                 'db.posts.updateOne({ _id: id }, { $inc: { views: 1 } }) atomically bumps the views counter on a post without a read-modify-write loop. = db.posts.updateOne({ _id: id }, { $inc: { views: 1 } }) incrementa atomicamente il contatore views su un post senza un ciclo read-modify-write.',
               context: 'nosql',
               difficulty: 'intermediate',
-              code: '{ $inc: { views: 1 } }',
+              code: `db.articles.updateOne(
+  { _id: articleId },
+  { $inc: { views: 1, shares: 1 } }
+)`,
               tool: 'MongoDB',
               task: `Incrementa di uno il contatore views del documento tramite l'operatore $inc.`,
             },
@@ -4784,7 +5265,13 @@ export default {
               example: `db.users.updateOne({ _id: id }, { $push: { roles: "editor" } }) appends a new role to the existing roles array in one step. = db.users.updateOne({ _id: id }, { $push: { roles: "editor" } }) aggiunge un nuovo ruolo all'array roles esistente in un passo.`,
               context: 'nosql',
               difficulty: 'intermediate',
-              code: '{ $push: { tags: "new" } }',
+              code: `db.users.updateOne(
+  { _id: userId },
+  { $push: {
+    tags: "premium",
+    logins: { date: new Date() }
+  }}
+)`,
               tool: 'MongoDB',
               task: `Aggiungi con $push il valore 'new' in coda all'array tags del documento.`,
             },
@@ -4829,7 +5316,14 @@ export default {
                 'The aggregation pipeline transforms documents. = La pipeline di aggregazione trasforma documenti.',
               context: 'nosql',
               difficulty: 'intermediate',
-              code: 'db.orders.aggregate([{$match:{...}}, {$group:{...}}])',
+              code: `db.orders.aggregate([
+  { $match: { status: "completed" } },
+  { $group: {
+    _id: "$user_id",
+    total: { $sum: "$amount" }
+  }},
+  { $sort: { total: -1 } }
+])`,
               tool: 'MongoDB',
               task: 'Costruisci sulla collezione orders una pipeline di aggregazione che concateni uno stage $match e uno stage $group.',
             },
@@ -4841,7 +5335,12 @@ export default {
               example: `Putting $match as the first aggregation stage filters documents early so later stages process a much smaller working set. = Mettere $match come prima fase di aggregazione filtra i documenti presto cosi' le fasi successive elaborano un working set molto piu' piccolo.`,
               context: 'nosql',
               difficulty: 'intermediate',
-              code: '{ $match: { status: "active" } }',
+              code: `db.orders.aggregate([
+  { $match: {
+    status: "active",
+    created_at: { $gte: ISODate("2025-01-01") }
+  }}
+])`,
               tool: 'MongoDB',
               task: `Aggiungi alla pipeline uno stage $match che selezioni solo i documenti con status uguale a 'active'.`,
             },
@@ -4854,7 +5353,13 @@ export default {
                 'An aggregation stage like $group: { _id: "$country", total: { $sum: "$amount" } } rolls revenue up per country. = Una fase di aggregazione come $group: { _id: "$country", total: { $sum: "$amount" } } aggrega il fatturato per paese.',
               context: 'nosql',
               difficulty: 'intermediate',
-              code: '{ $group: { _id: "$user", total: { $sum: "$amount" } } }',
+              code: `db.orders.aggregate([
+  { $group: {
+    _id: "$category",
+    total: { $sum: "$amount" },
+    count: { $sum: 1 }
+  }}
+])`,
               tool: 'MongoDB',
               task: 'Raggruppa con $group i documenti per user calcolando il totale come somma del campo amount.',
             },
@@ -4866,7 +5371,13 @@ export default {
               example: `Adding $project: { name: 1, email: 1, _id: 0 } trims the output documents to just the fields the API actually returns. = Aggiungere $project: { name: 1, email: 1, _id: 0 } restringe i documenti di output ai soli campi che l'API restituisce davvero.`,
               context: 'nosql',
               difficulty: 'intermediate',
-              code: '{ $project: { name: 1, _id: 0 } }',
+              code: `db.users.aggregate([
+  { $project: {
+    name: 1,
+    email: 1,
+    _id: 0
+  }}
+])`,
               tool: 'MongoDB',
               task: 'Riformatta i documenti con $project mostrando solo il campo name e nascondendo _id.',
             },
@@ -4890,7 +5401,14 @@ export default {
               example: `An aggregation pipeline can join orders with users by adding a $lookup stage that pulls in the matching user document by its _id. = Una pipeline di aggregazione puo' unire ordini e utenti aggiungendo uno stage $lookup che recupera il documento utente corrispondente tramite il suo _id.`,
               context: 'nosql',
               difficulty: 'intermediate',
-              code: '{ $lookup: { from: "orders", localField: "_id", foreignField: "user_id", as: "orders" } }',
+              code: `db.users.aggregate([
+  { $lookup: {
+    from: "orders",
+    localField: "_id",
+    foreignField: "user_id",
+    as: "user_orders"
+  }}
+])`,
               tool: 'MongoDB',
               task: `Unisci con $lookup la collezione orders accostando a ogni utente l'array dei suoi ordini sul campo user_id.`,
             },
@@ -4937,7 +5455,16 @@ export default {
                 'A single product-search request returns the page rows, the total count, and per-brand facets by branching the pipeline with a $facet stage. = Una singola richiesta di ricerca prodotti restituisce le righe di pagina, il conteggio totale e le faccette per brand ramificando la pipeline con uno stage $facet.',
               context: 'nosql',
               difficulty: 'intermediate',
-              code: '{ $facet: { byCategory: [...], total: [...] } }',
+              code: `db.products.aggregate([
+  { $facet: {
+    byCategory: [
+      { $group: { _id: "$category", count: { $sum: 1 } } }
+    ],
+    totalCount: [
+      { $count: "total" }
+    ]
+  }}
+])`,
               tool: 'MongoDB',
               task: 'Esegui con $facet più sotto-pipeline in parallelo, una byCategory e una total, restituendo tutti i risultati insieme.',
             },
@@ -5033,7 +5560,13 @@ export default {
               example: `Pick a MongoDB shard key with high cardinality and uniform write distribution so no single shard becomes a write hotspot. = Scegli una shard key di MongoDB con alta cardinalita' e distribuzione uniforme delle scritture cosi' nessun shard diventa un hotspot.`,
               context: 'nosql',
               difficulty: 'intermediate',
-              code: 'sh.shardCollection("db.users", { _id: "hashed" })',
+              code: `// Enable sharding on database
+sh.enableSharding("myapp")
+// Shard the users collection
+sh.shardCollection(
+  "myapp.users",
+  { _id: "hashed" }
+)`,
               tool: 'MongoDB',
               task: 'Configura lo sharding della collezione db.users definendo come shard key _id in modalità hashed.',
             },
@@ -5112,7 +5645,9 @@ export default {
                 'The session middleware issues a Redis SET command to store the user token under a key like session:42 with a 30-minute expiry. = Il middleware di sessione invia un comando Redis SET per memorizzare il token utente sotto una chiave come session:42 con scadenza di 30 minuti.',
               context: 'nosql',
               difficulty: 'intermediate',
-              code: 'SET user:1 "Marco"',
+              code: `SET user:1 "Marco"
+SET user:1:email "marco@email.com"
+GET user:1`,
               tool: 'Redis',
               task: 'Memorizza con SET la stringa Marco sotto la chiave user:1 in Redis.',
             },
@@ -5223,7 +5758,11 @@ export default {
                 'A Redis list backed by a doubly linked list makes LPUSH/RPOP a constant-time queue for background job workers. = Una lista Redis basata su lista doppiamente collegata rende LPUSH/RPOP una coda in tempo costante per worker di job in background.',
               context: 'nosql',
               difficulty: 'intermediate',
-              code: 'LPUSH queue task1',
+              code: `LPUSH queue "task_3"
+LPUSH queue "task_2"
+LPUSH queue "task_1"
+RPOP queue
+-- Returns "task_3"`,
               tool: 'Redis',
               task: 'Aggiungi un task in testa alla lista Redis queue tramite il comando LPUSH.',
             },
@@ -5273,7 +5812,10 @@ export default {
                 'Tracking active sessions with the Redis Set datatype via SADD online:users alice bob automatically deduplicates user IDs and gives O(1) membership checks. = Tracciare le sessioni attive con il tipo Set di Redis tramite SADD online:users alice bob deduplica automaticamente gli ID utente e dà controlli di membership O(1).',
               context: 'nosql',
               difficulty: 'intermediate',
-              code: 'SADD users "marco"',
+              code: `SADD online_users "marco"
+SADD online_users "anna"
+SISMEMBER online_users "marco"
+-- Returns 1 (true)`,
               tool: 'Redis',
               task: `Aggiungi con SADD l'elemento marco al set Redis users di tipo Set.`,
             },
@@ -5299,7 +5841,9 @@ export default {
                 'Store a user profile as a Redis hash with HSET user:1 name Marco age 30 so each field can be updated independently. = Memorizza il profilo utente come hash Redis con HSET user:1 name Marco age 30 cosi ogni campo può essere aggiornato indipendentemente.',
               context: 'nosql',
               difficulty: 'intermediate',
-              code: 'HSET user:1 name Marco age 30',
+              code: `HSET user:1 name "Marco" age 30 city "Roma"
+HGET user:1 name
+HGETALL user:1`,
               tool: 'Redis',
               task: 'Memorizza con HSET sotto la chiave hash user:1 i campi name uguale a Marco e age uguale a 30.',
             },
@@ -5324,7 +5868,10 @@ export default {
                 'Build a leaderboard with a sorted set: ZADD leaderboard 100 marco 95 alice keeps entries ordered by score automatically. = Costruisci una classifica con un sorted set: ZADD leaderboard 100 marco 95 alice mantiene le voci ordinate per punteggio automaticamente.',
               context: 'nosql',
               difficulty: 'intermediate',
-              code: 'ZADD leaderboard 100 marco',
+              code: `ZADD leaderboard 100 "marco"
+ZADD leaderboard 95 "anna"
+ZADD leaderboard 88 "luca"
+ZRANGE leaderboard 0 -1 WITHSCORES`,
               tool: 'Redis',
               task: `Inserisci con ZADD l'utente marco nel sorted set leaderboard assegnandogli il punteggio 100.`,
             },
@@ -5337,7 +5884,9 @@ export default {
                 'Add a player to a high-score table with ZADD scores 95 alice and the sorted set re-ranks entries in O(log N). = Aggiungi un giocatore alla tabella dei punteggi con ZADD scores 95 alice e il sorted set ri-classifica le voci in O(log N).',
               context: 'nosql',
               difficulty: 'intermediate',
-              code: 'ZADD scores 95 alice 88 bob',
+              code: `ZADD scores 95 "alice" 88 "bob" 72 "carol"
+ZRANK scores "alice"
+ZREVRANGE scores 0 2 WITHSCORES`,
               tool: 'Redis',
               task: 'Aggiungi al sorted set scores con ZADD i punteggi 95 di alice e 88 di bob in un solo comando.',
             },
@@ -5525,7 +6074,10 @@ export default {
                 'The order-event bus relies on Redis Streams with consumer groups so each worker claims a distinct slice of pending messages. = Il bus di eventi ordine si affida a Redis Streams con consumer group cosi ogni worker reclama una porzione distinta di messaggi pendenti.',
               context: 'nosql',
               difficulty: 'intermediate',
-              code: 'XADD events * type click user 1',
+              code: `XADD events * type click page /home
+XADD events * type click page /about
+XLEN events
+-- Returns 2`,
               tool: 'Redis',
               task: 'Aggiungi allo stream events un evento con campi type e user usando XADD con id automatico.',
             },
@@ -5616,7 +6168,10 @@ export default {
                 'Run EXPLAIN SELECT * FROM users WHERE email = $1 to see the execution plan Postgres would pick without actually running the query. = Esegui EXPLAIN SELECT * FROM users WHERE email = $1 per vedere il piano di esecuzione che Postgres sceglierebbe senza eseguire effettivamente la query.',
               context: 'optimization',
               difficulty: 'intermediate',
-              code: 'EXPLAIN SELECT * FROM users WHERE id = 1;',
+              code: `EXPLAIN
+SELECT name, email
+FROM users
+WHERE id = 1;`,
               task: `Analizza con EXPLAIN il piano di esecuzione della SELECT che cerca l'utente con id 1.`,
             },
             {
@@ -5637,7 +6192,12 @@ export default {
               example: `Use EXPLAIN ANALYZE on a slow report query to see real timings per plan node, not just the planner's cost estimates. = Usa EXPLAIN ANALYZE su una query di reportistica lenta per vedere i tempi reali per nodo del piano, non solo le stime di costo del planner.`,
               context: 'optimization',
               difficulty: 'intermediate',
-              code: 'EXPLAIN ANALYZE SELECT * FROM users WHERE active;',
+              code: `EXPLAIN ANALYZE
+SELECT u.name, COUNT(o.id)
+FROM users u
+JOIN orders o ON u.id = o.user_id
+WHERE u.active = true
+GROUP BY u.name;`,
               tool: 'PostgreSQL',
               note: 'Mostra tempi reali, non solo stime.',
               task: 'Esegui realmente la query e misura tempi e righe con EXPLAIN ANALYZE sulla SELECT degli utenti attivi.',
@@ -5877,7 +6437,10 @@ export default {
                 'Query pg_stat_statements ORDER BY total_exec_time DESC LIMIT 20 to find the worst queries by cumulative CPU time. = Interroga pg_stat_statements ORDER BY total_exec_time DESC LIMIT 20 per trovare le peggiori query per tempo CPU cumulativo.',
               context: 'optimization',
               difficulty: 'intermediate',
-              code: 'SELECT * FROM pg_stat_statements ORDER BY total_time DESC;',
+              code: `SELECT query, calls, total_exec_time
+FROM pg_stat_statements
+ORDER BY total_exec_time DESC
+LIMIT 10;`,
               tool: 'PostgreSQL',
               note: 'Estensione PostgreSQL che registra statistiche di esecuzione per ogni query.',
               task: 'Identifica le query più costose interrogando pg_stat_statements ordinate per total_time decrescente.',
@@ -5900,7 +6463,11 @@ export default {
               example: `Switch to eager loading with User.findAll({ include: [Order] }) to fetch users and their orders in a single JOIN. = Passa all'eager loading con User.findAll({ include: [Order] }) per recuperare utenti e i loro ordini in una singola JOIN.`,
               context: 'optimization',
               difficulty: 'intermediate',
-              code: 'User.findAll({ include: [Order] })',
+              code: `// ORM eager loading (avoids N+1)
+User.findAll({
+  include: [{ model: Order }],
+  where: { active: true }
+})`,
               note: 'Risolve il problema N+1.',
               task: `Carica gli utenti con i relativi ordini in un'unica chiamata applicando l'eager loading tramite include su Order.`,
             },
@@ -6190,7 +6757,10 @@ export default {
                 'Define a backup schedule in cron such as 0 3 * * * /usr/local/bin/backup.sh to run every night at 3 AM with retention. = Definisci una schedule di backup in cron come 0 3 * * * /usr/local/bin/backup.sh per girare ogni notte alle 3 del mattino con retention.',
               context: 'administration',
               difficulty: 'intermediate',
-              code: '0 3 * * * /usr/local/bin/backup.sh',
+              code: `# Cron: full backup at 3 AM daily
+0 3 * * * /usr/local/bin/backup.sh --full
+# Incremental backup every 6 hours
+0 */6 * * * /usr/local/bin/backup.sh --incremental`,
               task: 'Schedula in cron una riga 0 3 * * * che invoca /usr/local/bin/backup.sh ogni notte alle 3 del mattino.',
             },
           ],
@@ -6233,7 +6803,10 @@ export default {
               example: `A late-night DROP TABLE incident is reversed with point-in-time recovery by restoring last night's base backup and replaying WAL up to 02:14 UTC. = Un incidente notturno di DROP TABLE viene annullato con il recovery a un punto nel tempo ripristinando il base backup di ieri sera e riproducendo il WAL fino alle 02:14 UTC.`,
               context: 'administration',
               difficulty: 'intermediate',
-              code: "recovery_target_time = '2026-04-26 14:00:00'",
+              code: `-- postgresql.conf: restore to a specific point
+restore_command = 'cp /archive/%f %p'
+recovery_target_time = '2026-04-26 14:00:00'
+recovery_target_action = 'promote'`,
               tool: 'PostgreSQL',
               note: 'Abbreviato PITR.',
               task: `Imposta recovery_target_time a '2026-04-26 14:00:00' nel recovery.conf per fare PITR fino a quel preciso istante.`,
@@ -6277,7 +6850,10 @@ export default {
               example: `Continuous backup ships every closed segment to the WAL archive on S3 so a clone can be rebuilt to any second within the retention window. = Il backup continuo invia ogni segmento chiuso all'archivio WAL su S3 cosi una clone puo' essere ricostruita a qualsiasi secondo dentro la finestra di retention.`,
               context: 'administration',
               difficulty: 'intermediate',
-              code: "archive_command = 'cp %p /archive/%f'",
+              code: `-- postgresql.conf: enable WAL archiving
+wal_level = replica
+archive_mode = on
+archive_command = 'cp %p /archive/%f'`,
               tool: 'PostgreSQL',
               task: `Configura archive_command come 'cp %p /archive/%f' in postgresql.conf per archiviare ogni segmento WAL chiuso.`,
             },
@@ -6336,7 +6912,10 @@ export default {
               example: `Provision a new application account with CREATE USER app_api WITH PASSWORD 'strong-secret' so the service can log in. = Provisiona un nuovo account applicativo con CREATE USER app_api WITH PASSWORD 'strong-secret' cosi il servizio può autenticarsi.`,
               context: 'administration',
               difficulty: 'intermediate',
-              code: "CREATE USER alice WITH PASSWORD 'secret';",
+              code: `CREATE USER alice
+  WITH PASSWORD 'secret'
+  VALID UNTIL '2027-01-01'
+  CONNECTION LIMIT 10;`,
               task: `Crea l'utente alice con password 'secret' tramite CREATE USER WITH PASSWORD per dargli accesso al cluster.`,
             },
             {
@@ -6348,7 +6927,11 @@ export default {
                 'Group permissions with CREATE ROLE app_readonly then GRANT SELECT to it once and assign the role to every read-only user. = Raggruppa i permessi con CREATE ROLE app_readonly poi fai GRANT SELECT una sola volta e assegna il ruolo a ogni utente in sola lettura.',
               context: 'administration',
               difficulty: 'intermediate',
-              code: 'CREATE ROLE app_readonly;',
+              code: `CREATE ROLE app_readonly
+  NOSUPERUSER
+  NOCREATEDB
+  NOCREATEROLE
+  INHERIT;`,
               tool: 'PostgreSQL',
               task: 'Definisci un ruolo di gruppo app_readonly con CREATE ROLE per concentrare poi i grant in sola lettura su un unico contenitore.',
             },
@@ -6361,7 +6944,9 @@ export default {
                 'Allow the reporting team to read sales data with GRANT SELECT ON sales TO reports without giving them write access. = Permetti al team di reporting di leggere i dati di vendita con GRANT SELECT ON sales TO reports senza dargli accesso in scrittura.',
               context: 'administration',
               difficulty: 'intermediate',
-              code: 'GRANT SELECT ON users TO alice;',
+              code: `GRANT SELECT, INSERT
+  ON users, orders
+  TO alice;`,
               task: 'Concedi ad alice il privilegio SELECT sulla tabella users tramite GRANT SELECT ON users TO alice.',
             },
             {
@@ -6373,7 +6958,10 @@ export default {
                 'When an analyst changes team, run REVOKE INSERT, UPDATE, DELETE ON orders FROM alice to immediately drop write privileges. = Quando un analista cambia team, esegui REVOKE INSERT, UPDATE, DELETE ON orders FROM alice per togliere subito i privilegi di scrittura.',
               context: 'administration',
               difficulty: 'intermediate',
-              code: 'REVOKE INSERT ON users FROM alice;',
+              code: `REVOKE INSERT, UPDATE
+  ON users
+  FROM alice
+  CASCADE;`,
               task: 'Revoca ad alice il privilegio INSERT sulla tabella users con REVOKE INSERT ON users FROM alice.',
             },
             {
@@ -6385,7 +6973,10 @@ export default {
                 'A SELECT privilege on a table lets a role read rows but not modify them, while INSERT and UPDATE require separate grants. = Un privilegio SELECT su una tabella permette a un ruolo di leggere le righe ma non di modificarle, mentre INSERT e UPDATE richiedono grant separati.',
               context: 'administration',
               difficulty: 'intermediate',
-              code: 'SELECT, INSERT, UPDATE, DELETE',
+              code: `-- Common database privileges
+GRANT SELECT, INSERT ON orders TO app_role;
+GRANT UPDATE, DELETE ON orders TO admin_role;
+GRANT USAGE ON SCHEMA public TO app_role;`,
               task: 'Assegna i quattro privilegi SELECT, INSERT, UPDATE, DELETE separatamente al ruolo applicativo per consentire la CRUD completa.',
             },
             {
@@ -6397,7 +6988,10 @@ export default {
                 'Assign the app_readonly role to a new analyst with GRANT app_readonly TO alice instead of granting individual table permissions. = Assegna il ruolo app_readonly a un nuovo analista con GRANT app_readonly TO alice invece di concedere permessi per tabella singola.',
               context: 'administration',
               difficulty: 'intermediate',
-              code: 'GRANT app_readonly TO alice;',
+              code: `-- Assign role to user
+GRANT app_readonly TO alice;
+GRANT app_readonly TO bob;
+ALTER ROLE alice SET search_path = myapp, public;`,
               tool: 'PostgreSQL',
               task: `Assegna il ruolo app_readonly all'utente alice con GRANT app_readonly TO alice invece di permessi per singola tabella.`,
             },
@@ -6410,7 +7004,12 @@ export default {
                 'Reserve superuser privileges for break-glass accounts only because a superuser bypasses every grant and security policy. = Riserva i privilegi superuser solo per account break-glass perché un superuser bypassa ogni grant e policy di sicurezza.',
               context: 'administration',
               difficulty: 'intermediate',
-              code: 'ALTER USER admin WITH SUPERUSER;',
+              code: `-- Grant superuser privileges
+ALTER USER admin WITH SUPERUSER;
+-- Verify superuser status
+SELECT usename, usesuper
+  FROM pg_user
+  WHERE usesuper = TRUE;`,
               task: `Promuovi l'account admin a superuser con ALTER USER admin WITH SUPERUSER, riservandolo a procedure break-glass.`,
             },
             {
@@ -6433,7 +7032,10 @@ export default {
                 'Edit pg_hba.conf to add host all all 10.0.0.0/24 scram-sha-256 and reload PostgreSQL so the VPN subnet can authenticate. = Modifica pg_hba.conf per aggiungere host all all 10.0.0.0/24 scram-sha-256 e ricarica PostgreSQL cosi la subnet VPN può autenticarsi.',
               context: 'administration',
               difficulty: 'intermediate',
-              code: 'host all all 0.0.0.0/0 md5',
+              code: `# TYPE  DATABASE  USER  ADDRESS       METHOD
+local   all       all                 peer
+host    all       all   127.0.0.1/32  md5
+host    all       all   10.0.0.0/24   scram-sha-256`,
               tool: 'PostgreSQL',
               note: 'File di configurazione PostgreSQL per Host-Based Authentication.',
               task: `Aggiungi a pg_hba.conf la riga host all all 0.0.0.0/0 md5 e ricarica PostgreSQL per applicare l'host-based authentication.`,
@@ -6472,7 +7074,10 @@ export default {
               example: `Alert on connection count exceeding 80% of max_connections so the on-call has time to scale PgBouncer before the database refuses logins. = Genera alert quando il numero di connessioni supera l'80% di max_connections cosi l'on-call ha tempo di scalare PgBouncer prima che il database rifiuti login.`,
               context: 'administration',
               difficulty: 'intermediate',
-              code: 'SELECT COUNT(*) FROM pg_stat_activity;',
+              code: `SELECT state, COUNT(*) AS connections
+  FROM pg_stat_activity
+  GROUP BY state
+  ORDER BY connections DESC;`,
               tool: 'PostgreSQL',
               task: 'Interroga pg_stat_activity con SELECT COUNT(*) per misurare le connessioni attive e confrontarle con max_connections.',
             },
@@ -6496,7 +7101,12 @@ export default {
                 'Kill any long-running query active for more than 5 minutes on the OLTP cluster, since it is likely holding locks and blocking writers. = Termina ogni long-running query attiva da più di 5 minuti sul cluster OLTP, perché probabilmente sta tenendo lock e bloccando i writer.',
               context: 'administration',
               difficulty: 'intermediate',
-              code: "SELECT * FROM pg_stat_activity WHERE state = 'active' AND query_start < NOW() - INTERVAL '5 minutes';",
+              code: `SELECT pid, NOW() - query_start AS duration,
+       state, LEFT(query, 80) AS query
+  FROM pg_stat_activity
+  WHERE state = 'active'
+    AND query_start < NOW() - INTERVAL '5 minutes'
+  ORDER BY duration DESC;`,
               tool: 'PostgreSQL',
               task: `Filtra pg_stat_activity per state='active' e query_start anteriore a NOW() - INTERVAL '5 minutes' per stanare le query incagliate.`,
             },
@@ -6509,7 +7119,11 @@ export default {
                 'When lock contention shows up in pg_locks, look for a transaction that took an exclusive lock on a hot row and forgot to commit. = Quando appare contesa di lock in pg_locks, cerca una transazione che ha preso un lock esclusivo su una riga calda e ha dimenticato di fare commit.',
               context: 'administration',
               difficulty: 'intermediate',
-              code: 'SELECT * FROM pg_locks WHERE NOT granted;',
+              code: `SELECT l.pid, l.locktype, l.mode,
+       a.query
+  FROM pg_locks l
+  JOIN pg_stat_activity a ON l.pid = a.pid
+  WHERE NOT l.granted;`,
               tool: 'PostgreSQL',
               task: 'Interroga pg_locks filtrando WHERE NOT granted per individuare la contesa di lock e capire chi sta bloccando chi.',
             },
@@ -6522,7 +7136,11 @@ export default {
                 "Monitor disk usage to avoid full storage. = Monitora l'uso del disco per evitare storage pieno.",
               context: 'administration',
               difficulty: 'intermediate',
-              code: "SELECT pg_size_pretty(pg_database_size('mydb'));",
+              code: `SELECT tablename,
+       pg_size_pretty(pg_total_relation_size(tablename::regclass)) AS total
+  FROM pg_tables
+  WHERE schemaname = 'public'
+  ORDER BY pg_total_relation_size(tablename::regclass) DESC;`,
               tool: 'PostgreSQL',
               task: `Stima lo spazio occupato da mydb chiamando pg_size_pretty(pg_database_size('mydb')) per intercettare in tempo la saturazione del volume.`,
             },
@@ -6555,7 +7173,11 @@ export default {
                 'Expose a /healthz endpoint that runs SELECT 1 against the database so the load balancer can drop unhealthy app instances quickly. = Esponi un endpoint /healthz che esegue SELECT 1 sul database cosi il load balancer può rimuovere rapidamente le istanze app non in salute.',
               context: 'administration',
               difficulty: 'intermediate',
-              code: 'SELECT 1;',
+              code: `-- Basic health check query
+SELECT 1 AS healthy;
+-- Extended check with uptime
+SELECT pg_postmaster_start_time() AS started,
+       NOW() - pg_postmaster_start_time() AS uptime;`,
               task: 'Esponi un /healthz che esegue SELECT 1 sul database per dare al load balancer un segnale di vita immediato.',
             },
           ],
@@ -6625,7 +7247,12 @@ export default {
                 'Use logical replication via CREATE PUBLICATION to replicate selected tables between Postgres major versions during an upgrade. = Usa la replicazione logica via CREATE PUBLICATION per replicare tabelle selezionate tra versioni major di Postgres durante un upgrade.',
               context: 'replication',
               difficulty: 'advanced',
-              code: 'CREATE PUBLICATION pub FOR ALL TABLES;',
+              code: `-- On publisher
+CREATE PUBLICATION pub FOR ALL TABLES;
+-- On subscriber
+CREATE SUBSCRIPTION sub
+  CONNECTION 'host=primary dbname=mydb'
+  PUBLICATION pub;`,
               tool: 'PostgreSQL',
               task: 'Pubblica tutte le tabelle al subscriber con CREATE PUBLICATION pub FOR ALL TABLES per impostare la replica logica tra due major version.',
             },
@@ -6657,7 +7284,10 @@ export default {
                 'Sync replication waits for replica acknowledgment. = La replicazione sincrona aspetta conferma dalla replica.',
               context: 'replication',
               difficulty: 'advanced',
-              code: 'synchronous_commit = on',
+              code: `-- postgresql.conf on primary
+synchronous_commit = on
+synchronous_standby_names = 'replica1, replica2'
+wal_level = replica`,
               tool: 'PostgreSQL',
               task: 'Imposta synchronous_commit = on in postgresql.conf affinché ogni COMMIT attenda la conferma dalla replica sincrona.',
             },
@@ -6681,7 +7311,11 @@ export default {
                 'Track replication lag with SELECT NOW() - pg_last_xact_replay_timestamp() and alert if it stays above 5 seconds. = Traccia il replication lag con SELECT NOW() - pg_last_xact_replay_timestamp() e genera alert se resta sopra i 5 secondi.',
               context: 'replication',
               difficulty: 'advanced',
-              code: 'SELECT NOW() - pg_last_xact_replay_timestamp();',
+              code: `SELECT client_addr,
+       state,
+       sent_lsn - replay_lsn AS byte_lag,
+       NOW() - pg_last_xact_replay_timestamp() AS time_lag
+  FROM pg_stat_replication;`,
               tool: 'PostgreSQL',
               task: 'Calcola il lag della replica con SELECT NOW() - pg_last_xact_replay_timestamp() e configura un alert oltre i 5 secondi.',
             },
@@ -7122,7 +7756,10 @@ export default {
                 'User profiles are placed via hash sharding on user_id so the load spreads evenly across the eight shards even when traffic skews to power users. = I profili utente vengono distribuiti via sharding per hash su user_id cosi il carico si distribuisce uniformemente sulle otto shard anche quando il traffico si concentra sui power user.',
               context: 'replication',
               difficulty: 'advanced',
-              code: 'shard = hash(key) % num_shards',
+              code: `-- Distribute rows across shards by hash
+shard_id = hash(user_id) % num_shards
+-- Example: 4 shards
+-- user_id=42 -> hash(42) % 4 = 2 -> shard_2`,
               task: 'Calcola lo shard di destinazione con shard = hash(key) % num_shards per distribuire uniformemente le chiavi sui nodi.',
             },
             {
@@ -7279,7 +7916,11 @@ export default {
                 'Apply table partitioning by month on a time-series table so old partitions can be detached and archived without rewriting the parent. = Applica il partizionamento di tabella per mese su una tabella time-series cosi le vecchie partizioni possono essere staccate e archiviate senza riscrivere il padre.',
               context: 'replication',
               difficulty: 'advanced',
-              code: 'CREATE TABLE measurements (...) PARTITION BY RANGE (date);',
+              code: `CREATE TABLE measurements (
+  id SERIAL,
+  ts TIMESTAMPTZ NOT NULL,
+  value DOUBLE PRECISION
+) PARTITION BY RANGE (ts);`,
               tool: 'PostgreSQL',
               task: 'Crea la tabella measurements con PARTITION BY RANGE (date) per dividerla mensilmente e poi archiviare le partizioni vecchie.',
             },
@@ -7292,7 +7933,12 @@ export default {
                 'Define range partitioning with PARTITION BY RANGE (created_at) so each monthly partition holds one slice of data and prunes well. = Definisci range partitioning con PARTITION BY RANGE (created_at) cosi ogni partizione mensile contiene una fetta di dati e fa pruning bene.',
               context: 'replication',
               difficulty: 'advanced',
-              code: 'PARTITION BY RANGE (created_at)',
+              code: `CREATE TABLE orders (
+  id SERIAL, created_at DATE, total DECIMAL
+) PARTITION BY RANGE (created_at);
+CREATE TABLE orders_2026
+  PARTITION OF orders
+  FOR VALUES FROM ('2026-01-01') TO ('2027-01-01');`,
               task: 'Dichiara PARTITION BY RANGE (created_at) sulla tabella padre cosi ogni partizione mensile contenga una fetta temporale netta.',
             },
             {
@@ -7303,7 +7949,12 @@ export default {
               example: `Use list partitioning with PARTITION BY LIST (country) to keep each country's rows in its own partition for regulatory isolation. = Usa list partitioning con PARTITION BY LIST (country) per tenere le righe di ogni paese nella propria partizione per isolamento normativo.`,
               context: 'replication',
               difficulty: 'advanced',
-              code: 'PARTITION BY LIST (country)',
+              code: `CREATE TABLE customers (
+  id SERIAL, name TEXT, country TEXT
+) PARTITION BY LIST (country);
+CREATE TABLE customers_eu
+  PARTITION OF customers
+  FOR VALUES IN ('IT', 'DE', 'FR');`,
               task: 'Adotta PARTITION BY LIST (country) sulla tabella padre per isolare le righe di ogni nazione in una partizione dedicata.',
             },
             {
@@ -7314,7 +7965,12 @@ export default {
               example: `Use hash partitioning with PARTITION BY HASH (user_id) and 16 partitions to spread writes evenly when there is no natural range key. = Usa hash partitioning con PARTITION BY HASH (user_id) e 16 partizioni per distribuire le scritture uniformemente quando non c'è una chiave di range naturale.`,
               context: 'replication',
               difficulty: 'advanced',
-              code: 'PARTITION BY HASH (user_id)',
+              code: `CREATE TABLE sessions (
+  id SERIAL, user_id INT, data JSONB
+) PARTITION BY HASH (user_id);
+CREATE TABLE sessions_p0
+  PARTITION OF sessions
+  FOR VALUES WITH (MODULUS 4, REMAINDER 0);`,
               task: 'Distribuisci le righe con PARTITION BY HASH (user_id) su 16 partizioni quando manca una chiave di range naturale.',
             },
             {
@@ -7378,7 +8034,12 @@ export default {
                 'Archive old data with ALTER TABLE measurements DETACH PARTITION measurements_2024 to remove the partition without scanning the parent. = Archivia vecchi dati con ALTER TABLE measurements DETACH PARTITION measurements_2024 per rimuovere la partizione senza scansionare il padre.',
               context: 'replication',
               difficulty: 'advanced',
-              code: 'ALTER TABLE measurements DETACH PARTITION measurements_2024;',
+              code: `-- Detach old partition for archival
+ALTER TABLE measurements
+  DETACH PARTITION measurements_2024;
+-- Optionally archive the detached table
+ALTER TABLE measurements_2024
+  SET TABLESPACE archive_ts;`,
               tool: 'PostgreSQL',
               task: 'Stacca la partizione del 2024 con ALTER TABLE measurements DETACH PARTITION measurements_2024 per archiviarla senza scansionare il padre.',
             },
@@ -7518,7 +8179,13 @@ export default {
               example: `Store webhook payloads as JSONB so you can index nested fields with a GIN expression on payload->>'event_type'. = Memorizza i payload dei webhook come JSONB per indicizzare i campi annidati con un GIN su payload->>'event_type'.`,
               context: 'sql',
               difficulty: 'advanced',
-              code: 'CREATE TABLE events (data JSONB);',
+              code: `CREATE TABLE events (
+  id SERIAL PRIMARY KEY,
+  data JSONB NOT NULL
+);
+SELECT data->>'name' AS name
+  FROM events
+  WHERE data @> '{"type": "click"}';`,
               tool: 'PostgreSQL',
               task: 'Crea la tabella events con una colonna data di tipo JSONB per memorizzare payload webhook indicizzabili via GIN.',
             },
@@ -7530,7 +8197,13 @@ export default {
               example: `PostgreSQL's array type lets you store tags as text[] and filter with the && overlap operator. = Il tipo array di PostgreSQL permette di memorizzare i tag come text[] e filtrare con l'operatore di overlap &&.`,
               context: 'sql',
               difficulty: 'advanced',
-              code: "tags TEXT[] DEFAULT '{}'",
+              code: `CREATE TABLE articles (
+  id SERIAL PRIMARY KEY,
+  title TEXT,
+  tags TEXT[] DEFAULT '{}'
+);
+SELECT * FROM articles
+  WHERE 'postgres' = ANY(tags);`,
               tool: 'PostgreSQL',
               task: `Dichiara una colonna tags TEXT[] DEFAULT '{}' per salvare un array di etichette filtrabile con l'operatore di overlap &&.`,
             },
@@ -7543,7 +8216,12 @@ export default {
                 'Migrate legacy HSTORE columns to JSONB unless the dataset is flat key-value with no nesting needs. = Migra le colonne HSTORE legacy a JSONB a meno che il dataset sia chiave-valore piatto senza esigenze di annidamento.',
               context: 'sql',
               difficulty: 'advanced',
-              code: 'attributes HSTORE',
+              code: `CREATE EXTENSION IF NOT EXISTS hstore;
+CREATE TABLE products (
+  id SERIAL PRIMARY KEY,
+  attributes HSTORE
+);
+SELECT attributes->'color' FROM products;`,
               tool: 'PostgreSQL',
               task: 'Dichiara una colonna attributes HSTORE quando devi salvare un dizionario chiave-valore piatto senza alcun bisogno di annidamento.',
             },
@@ -7556,7 +8234,12 @@ export default {
                 'Use tstzrange to model reservation windows and add a GiST exclusion constraint to prevent double-booking. = Usa tstzrange per modellare finestre di prenotazione e aggiungi un vincolo di esclusione GiST per evitare doppie prenotazioni.',
               context: 'sql',
               difficulty: 'advanced',
-              code: 'period TSRANGE',
+              code: `CREATE TABLE reservations (
+  id SERIAL PRIMARY KEY,
+  room_id INT,
+  period TSRANGE,
+  EXCLUDE USING gist (room_id WITH =, period WITH &&)
+);`,
               tool: 'PostgreSQL',
               task: 'Modella la colonna period come TSRANGE per rappresentare una finestra temporale e applicarvi un vincolo di esclusione GiST.',
             },
@@ -7568,7 +8251,14 @@ export default {
               example: `Install PostGIS to run ST_DWithin queries that find every store within 5 km of a customer's coordinates. = Installa PostGIS per eseguire query ST_DWithin che trovano ogni negozio entro 5 km dalle coordinate del cliente.`,
               context: 'sql',
               difficulty: 'advanced',
-              code: 'CREATE EXTENSION postgis;',
+              code: `CREATE EXTENSION postgis;
+CREATE TABLE places (
+  id SERIAL PRIMARY KEY,
+  name TEXT,
+  location GEOMETRY(Point, 4326)
+);
+SELECT name FROM places
+  WHERE ST_DWithin(location, ST_MakePoint(12.49, 41.89), 1000);`,
               tool: 'PostgreSQL',
               task: 'Abilita le funzioni spaziali eseguendo CREATE EXTENSION postgis prima di eseguire query ST_DWithin sulle coordinate dei negozi.',
             },
@@ -7581,7 +8271,12 @@ export default {
                 'Run CREATE EXTENSION pg_stat_statements to enable per-query performance tracking after a Postgres upgrade. = Esegui CREATE EXTENSION pg_stat_statements per abilitare il tracciamento delle performance per query dopo un upgrade di Postgres.',
               context: 'sql',
               difficulty: 'advanced',
-              code: 'CREATE EXTENSION pg_trgm;',
+              code: `CREATE EXTENSION IF NOT EXISTS pg_trgm;
+-- Use trigram similarity for fuzzy search
+SELECT word, similarity(word, 'postgre') AS sim
+  FROM words
+  WHERE word % 'postgre'
+  ORDER BY sim DESC;`,
               tool: 'PostgreSQL',
               task: `Installa l'estensione pg_trgm con CREATE EXTENSION pg_trgm per abilitare la ricerca fuzzy via trigrammi sulle colonne testuali.`,
             },
@@ -7594,7 +8289,13 @@ export default {
                 'A postgres_fdw foreign data wrapper lets the reporting cluster query live rows on the production cluster without ETL. = Un foreign data wrapper postgres_fdw consente al cluster di reporting di interrogare righe live sul cluster di produzione senza ETL.',
               context: 'sql',
               difficulty: 'advanced',
-              code: 'CREATE EXTENSION postgres_fdw;',
+              code: `CREATE EXTENSION postgres_fdw;
+CREATE SERVER remote_srv
+  FOREIGN DATA WRAPPER postgres_fdw
+  OPTIONS (host 'remote-host', dbname 'other_db');
+CREATE FOREIGN TABLE remote_users (
+  id INT, name TEXT
+) SERVER remote_srv;`,
               tool: 'PostgreSQL',
               task: 'Attiva CREATE EXTENSION postgres_fdw per interrogare un database Postgres remoto come se fosse locale, senza pipeline ETL.',
             },
@@ -7607,7 +8308,10 @@ export default {
                 'Use Listen/Notify to push cache-invalidation events to Node.js workers without polling the audit table. = Usa Listen/Notify per inviare eventi di invalidazione cache ai worker Node.js senza fare polling sulla tabella di audit.',
               context: 'sql',
               difficulty: 'advanced',
-              code: "NOTIFY channel, 'message';",
+              code: `-- Session A: listen for events
+LISTEN order_events;
+-- Session B: send notification
+NOTIFY order_events, '{"order_id": 42, "status": "shipped"}';`,
               tool: 'PostgreSQL',
               task: `Pubblica un evento di invalidazione cache con NOTIFY channel, 'message' verso i worker in ascolto sul canale.`,
             },
@@ -7631,7 +8335,10 @@ export default {
                 'A PostgreSQL tablespace is created on the NVMe mount so hot indexes can be moved off the spinning disk and query latency drops by half. = Un tablespace PostgreSQL viene creato sul mount NVMe cosi gli indici caldi possono essere spostati dal disco rotante e la latenza delle query si dimezza.',
               context: 'sql',
               difficulty: 'advanced',
-              code: "CREATE TABLESPACE fast LOCATION '/mnt/ssd';",
+              code: `CREATE TABLESPACE fast_storage
+  LOCATION '/mnt/ssd';
+ALTER TABLE hot_data
+  SET TABLESPACE fast_storage;`,
               tool: 'PostgreSQL',
               task: `Definisci un tablespace fast con CREATE TABLESPACE fast LOCATION '/mnt/ssd' per spostare gli indici caldi sul volume NVMe.`,
             },
@@ -7697,7 +8404,11 @@ export default {
                 'Enable the MySQL binary log in ROW format so replicas and CDC pipelines see exact column-level changes. = Abilita il binary log MySQL in formato ROW così repliche e pipeline CDC vedono le modifiche esatte a livello di colonna.',
               context: 'sql',
               difficulty: 'advanced',
-              code: 'log_bin = ON',
+              code: `-- my.cnf: enable binary logging
+[mysqld]
+log_bin = mysql-bin
+binlog_format = ROW
+expire_logs_days = 7`,
               tool: 'MySQL',
               note: 'Abbreviato binlog. Usato per replication e PITR.',
               task: 'Abilita il binary log impostando log_bin = ON in my.cnf per alimentare repliche e pipeline CDC con le modifiche di riga.',
@@ -7711,7 +8422,11 @@ export default {
                 'Switch the cluster to GTID-based replication so a failover does not require manually computing binlog offsets. = Passa il cluster alla replica basata su GTID così un failover non richiede di calcolare manualmente gli offset del binlog.',
               context: 'sql',
               difficulty: 'advanced',
-              code: 'gtid_mode = ON',
+              code: `-- my.cnf: enable GTIDs
+[mysqld]
+gtid_mode = ON
+enforce_gtid_consistency = ON
+log_slave_updates = ON`,
               tool: 'MySQL',
               note: 'Global Transaction IDentifier.',
               task: 'Attiva la replica basata su GTID impostando gtid_mode = ON cosi un failover non richieda di tracciare manualmente gli offset del binlog.',
@@ -7746,7 +8461,10 @@ export default {
                 'Use INFORMATION_SCHEMA.TABLES to list every table over 1 GB across all user schemas in one query. = Usa INFORMATION_SCHEMA.TABLES per elencare in una sola query ogni tabella oltre 1 GB in tutti gli schemi utente.',
               context: 'sql',
               difficulty: 'advanced',
-              code: 'SELECT * FROM information_schema.tables;',
+              code: `SELECT table_name, column_name, data_type
+  FROM information_schema.columns
+  WHERE table_schema = 'public'
+  ORDER BY table_name, ordinal_position;`,
               tool: 'MySQL, PostgreSQL',
               task: 'Interroga information_schema.tables con SELECT * per enumerare ogni tabella del cluster e filtrarla per dimensione.',
             },
@@ -8029,7 +8747,13 @@ export default {
               example: `The fact_orders table stores one row per order line with foreign keys to every relevant dimension. = La tabella fact_orders memorizza una riga per linea d'ordine con foreign key a ogni dimensione rilevante.`,
               context: 'modeling',
               difficulty: 'advanced',
-              code: 'CREATE TABLE fact_sales (id INT, date_id INT, product_id INT, amount DECIMAL);',
+              code: `CREATE TABLE fact_sales (
+  sale_id SERIAL PRIMARY KEY,
+  date_id INT REFERENCES dim_date(id),
+  product_id INT REFERENCES dim_product(id),
+  quantity INT,
+  amount DECIMAL(12,2)
+);`,
               task: 'Crea la fact_sales con id, date_id, product_id e amount DECIMAL per registrare una riga per evento di vendita.',
             },
             {
@@ -8041,7 +8765,13 @@ export default {
                 'Keep the dim_customer table denormalized so analysts can filter by country without joining a region table. = Mantieni la tabella dim_customer denormalizzata così gli analisti filtrano per nazione senza fare join a una tabella regione.',
               context: 'modeling',
               difficulty: 'advanced',
-              code: 'CREATE TABLE dim_product (id INT, name VARCHAR, category VARCHAR);',
+              code: `CREATE TABLE dim_product (
+  id SERIAL PRIMARY KEY,
+  product_code VARCHAR(20),
+  name VARCHAR(200),
+  category VARCHAR(100),
+  subcategory VARCHAR(100)
+);`,
               task: 'Definisci la dimension dim_product con id, name e category denormalizzati cosi gli analisti filtrino senza fare join.',
             },
             {
@@ -8075,7 +8805,12 @@ export default {
                 'Each dimension carries an integer dimensional surrogate key like product_sk so a change of source product_code does not break historical facts. = Ogni dimensione porta una chiave surrogata dimensionale intera come product_sk cosi un cambio di product_code sorgente non rompe i fatti storici.',
               context: 'modeling',
               difficulty: 'advanced',
-              code: 'product_sk INT PRIMARY KEY',
+              code: `CREATE TABLE dim_customer (
+  customer_sk SERIAL PRIMARY KEY,  -- surrogate key
+  customer_id VARCHAR(20),         -- natural key
+  name VARCHAR(200),
+  segment VARCHAR(50)
+);`,
               task: 'Dichiara product_sk INT PRIMARY KEY sulla dimensione cosi un cambio di codice sorgente non infranga i fatti storici.',
             },
             {
@@ -8087,7 +8822,12 @@ export default {
                 'The dim_product table keeps the source product_code as a dimensional natural key alongside the surrogate so analysts can join back to OLTP exports. = La tabella dim_product mantiene il product_code sorgente come chiave naturale dimensionale accanto alla surrogata cosi gli analisti possono fare join con gli export OLTP.',
               context: 'modeling',
               difficulty: 'advanced',
-              code: 'product_code VARCHAR(20)',
+              code: `CREATE TABLE dim_product (
+  product_sk SERIAL PRIMARY KEY,
+  product_code VARCHAR(20) UNIQUE,  -- natural key
+  name VARCHAR(200)
+);
+-- Natural key maps to source system ID`,
               task: 'Aggiungi accanto alla surrogata una colonna product_code VARCHAR(20) come chiave naturale per agganciare gli export OLTP.',
             },
             {
@@ -8177,7 +8917,14 @@ export default {
                 'Filter dim_employee WHERE effective_date <= order_date < end_date to pick the correct historical row. = Filtra dim_employee WHERE effective_date <= order_date < end_date per scegliere la riga storica corretta.',
               context: 'modeling',
               difficulty: 'advanced',
-              code: 'effective_from DATE, effective_to DATE',
+              code: `-- SCD Type 2: track history with date ranges
+CREATE TABLE dim_employee (
+  employee_sk SERIAL PRIMARY KEY,
+  emp_id INT,
+  department VARCHAR(100),
+  effective_from DATE NOT NULL,
+  effective_to DATE DEFAULT '9999-12-31'
+);`,
               task: 'Inserisci effective_from DATE ed effective_to DATE nella dimensione per delimitare la validità temporale di ogni versione.',
             },
             {
@@ -8188,7 +8935,14 @@ export default {
               example: `Add a boolean current_flag column so reports targeting today's data can filter dim_customer WHERE current_flag = true. = Aggiungi una colonna booleana current_flag così i report sui dati odierni filtrano dim_customer WHERE current_flag = true.`,
               context: 'modeling',
               difficulty: 'advanced',
-              code: 'is_current BOOLEAN DEFAULT TRUE',
+              code: `-- SCD Type 2: mark current row
+SELECT emp_id, department
+  FROM dim_employee
+  WHERE is_current = TRUE;
+-- On update: set old row's flag to FALSE
+UPDATE dim_employee
+  SET is_current = FALSE
+  WHERE emp_id = 101 AND is_current = TRUE;`,
               task: 'Aggiungi una colonna is_current BOOLEAN DEFAULT TRUE alla dimensione per filtrare velocemente la versione vigente.',
             },
             {
@@ -8400,7 +9154,14 @@ export default {
               example: `Store a materialized path like '1/4/17' so a single LIKE '1/4/%' query returns every descendant of node 4. = Memorizza un materialized path come '1/4/17' così una singola LIKE '1/4/%' restituisce ogni discendente del nodo 4.`,
               context: 'modeling',
               difficulty: 'advanced',
-              code: "path = '/1/3/7/12/'",
+              code: `CREATE TABLE categories (
+  id SERIAL PRIMARY KEY,
+  name TEXT,
+  path TEXT  -- e.g. '/1/3/7/12/'
+);
+-- Find all descendants of node 3
+SELECT * FROM categories
+  WHERE path LIKE '/1/3/%';`,
               task: `Memorizza un materialized path tipo '/1/3/7/12/' su ogni nodo cosi una sola LIKE recuperi tutti i discendenti.`,
             },
             {
@@ -8412,7 +9173,19 @@ export default {
                 'An adjacency list with a parent_id column is the simplest tree storage, but deep trees need a recursive CTE to walk. = Una adjacency list con colonna parent_id è lo storage di albero più semplice, ma alberi profondi richiedono una CTE ricorsiva per attraversarli.',
               context: 'modeling',
               difficulty: 'advanced',
-              code: 'parent_id INT REFERENCES nodes(id)',
+              code: `CREATE TABLE nodes (
+  id SERIAL PRIMARY KEY,
+  name TEXT,
+  parent_id INT REFERENCES nodes(id)
+);
+-- Recursive query to find all ancestors
+WITH RECURSIVE tree AS (
+  SELECT id, name, parent_id FROM nodes WHERE id = 12
+  UNION ALL
+  SELECT n.id, n.name, n.parent_id
+    FROM nodes n JOIN tree t ON n.id = t.parent_id
+)
+SELECT * FROM tree;`,
               task: `Modella l'albero con parent_id INT REFERENCES nodes(id) e attraversalo poi con una CTE ricorsiva quando serve.`,
             },
             {
@@ -8483,7 +9256,11 @@ export default {
                 'Concatenating user input into a query opens SQL injection, letting an attacker run DROP TABLE users via the search box. = Concatenare input utente in una query apre la porta a SQL injection, lasciando che un attaccante esegua DROP TABLE users dalla search box.',
               context: 'security',
               difficulty: 'advanced',
-              code: "-- BAD: 'SELECT * FROM users WHERE name = ' + input",
+              code: `-- VULNERABLE: string concatenation
+query = 'SELECT * FROM users WHERE name = \\'' + input + '\\'';
+-- SAFE: parameterized query
+query = 'SELECT * FROM users WHERE name = $1';
+db.query(query, [input]);`,
               note: 'Top vulnerabilità OWASP. Sempre prevenire.',
               task: `Ricrea il caso peggiore di SQL injection concatenando l'input in 'SELECT * FROM users WHERE name = ' + input e osservane l'impatto.`,
             },
@@ -8496,7 +9273,11 @@ export default {
                 'Parameterized queries prevent SQL injection. = Le query parametrizzate prevengono SQL injection.',
               context: 'security',
               difficulty: 'advanced',
-              code: 'SELECT * FROM users WHERE name = $1',
+              code: `-- Use placeholders instead of concatenation
+SELECT * FROM users
+  WHERE name = $1
+    AND email = $2;
+-- Bind values: ['alice', 'alice@example.com']`,
               note: 'Mai concatenare input utente nelle query!',
               task: `Riscrivi la query in forma parametrizzata SELECT * FROM users WHERE name = $1 lasciando al driver l'escape del valore.`,
             },
@@ -8508,7 +9289,12 @@ export default {
               example: `Always use a prepared statement with placeholders so the driver, not your code, escapes user values safely. = Usa sempre una prepared statement con placeholder così il driver, non il tuo codice, fa l'escape dei valori utente in sicurezza.`,
               context: 'security',
               difficulty: 'advanced',
-              code: 'PREPARE q AS SELECT * FROM users WHERE id = $1; EXECUTE q(1);',
+              code: `-- Prepare the statement once
+PREPARE find_user (TEXT) AS
+  SELECT id, name, email
+  FROM users WHERE name = $1;
+-- Execute with different values
+EXECUTE find_user('alice');`,
               task: 'Dichiara PREPARE q AS SELECT * FROM users WHERE id = $1 e poi invoca EXECUTE q(1) per riusare il piano in sicurezza.',
             },
             {
@@ -8519,7 +9305,11 @@ export default {
               example: `Pass user input as a bind parameter to PreparedStatement.setString so single quotes stay data, never code. = Passa l'input utente come bind parameter a PreparedStatement.setString così le virgolette restano dato, non codice.`,
               context: 'security',
               difficulty: 'advanced',
-              code: 'cur.execute("... WHERE id = %s", (user_id,))',
+              code: `# Python: bind parameters safely
+cur.execute(
+    "SELECT * FROM orders WHERE user_id = %s AND status = %s",
+    (user_id, 'active')
+)`,
               task: `Passa user_id come bind parameter con cur.execute('... WHERE id = %s', (user_id,)) cosi le virgolette restino dato non codice.`,
             },
             {
@@ -8571,7 +9361,11 @@ export default {
               example: `A time-based injection payload runs SLEEP(5) so the attacker measures the response delay to confirm a bug. = Un payload di time-based injection esegue SLEEP(5) così l'attaccante misura il ritardo della risposta per confermare un bug.`,
               context: 'security',
               difficulty: 'advanced',
-              code: '-- "OR pg_sleep(5)"',
+              code: `-- Attacker payload that delays response
+-- input: ' OR pg_sleep(5) --
+SELECT * FROM users
+  WHERE name = '' OR pg_sleep(5) --';
+-- If response takes 5s, the app is vulnerable`,
               task: `Riproduci un payload time-based del tipo "OR pg_sleep(5)" per misurare il ritardo della risposta e confermare l'iniezione.`,
             },
             {
@@ -8634,7 +9428,12 @@ export default {
                 'Apply column-level encryption to the credit_card field so even DBAs querying the table see ciphertext. = Applica column-level encryption al campo credit_card così anche i DBA che interrogano la tabella vedono ciphertext.',
               context: 'security',
               difficulty: 'advanced',
-              code: "pgcrypto: pgp_sym_encrypt(data, 'key')",
+              code: `-- Encrypt sensitive data per column
+UPDATE users SET ssn_enc =
+  pgp_sym_encrypt(ssn, 'encryption_key');
+-- Decrypt when needed
+SELECT pgp_sym_decrypt(ssn_enc, 'encryption_key')
+  FROM users WHERE id = 1;`,
               tool: 'PostgreSQL',
               task: `Applica pgp_sym_encrypt(data, 'key') di pgcrypto sulla colonna sensibile cosi anche i DBA vedano solo ciphertext.`,
             },
@@ -8646,7 +9445,10 @@ export default {
               example: `Use pgcrypto's crypt() with a per-row salt to hash password resets without leaving plaintext in WAL. = Usa crypt() di pgcrypto con un salt per riga per fare hash dei password reset senza lasciare plaintext nel WAL.`,
               context: 'security',
               difficulty: 'advanced',
-              code: 'CREATE EXTENSION pgcrypto;',
+              code: `CREATE EXTENSION pgcrypto;
+-- Hash a password with bcrypt
+INSERT INTO users (name, password_hash)
+  VALUES ('alice', crypt('secret', gen_salt('bf')));`,
               tool: 'PostgreSQL',
               task: 'Abilita la libreria crittografica con CREATE EXTENSION pgcrypto per usare crypt(), gen_salt() e pgp_sym_encrypt() nelle query.',
             },
@@ -8659,7 +9461,13 @@ export default {
                 'Use bcrypt or argon2 hashing for passwords, never SHA-256, because plain hashes fall to GPU brute force. = Usa hashing bcrypt o argon2 per le password, mai SHA-256, perché gli hash semplici cadono al brute force su GPU.',
               context: 'security',
               difficulty: 'advanced',
-              code: "crypt(password, gen_salt('bf'))",
+              code: `-- Store hashed password
+INSERT INTO users (email, password_hash)
+  VALUES ('a@b.com', crypt('mypassword', gen_salt('bf')));
+-- Verify password
+SELECT id FROM users
+  WHERE email = 'a@b.com'
+    AND password_hash = crypt('mypassword', password_hash);`,
               task: `Esegui l'hash della password chiamando crypt(password, gen_salt('bf')) cosi ogni riga porti un salt bcrypt proprio.`,
             },
             {
@@ -8702,7 +9510,12 @@ export default {
                 'Pin the rds-ca-rsa2048-g1 SSL certificate in the connection string so a MITM swap with a different CA fails. = Pinna il SSL certificate rds-ca-rsa2048-g1 nella stringa di connessione così uno swap MITM con una CA diversa fallisce.',
               context: 'security',
               difficulty: 'advanced',
-              code: 'sslmode=require',
+              code: `-- postgresql.conf: require SSL
+ssl = on
+ssl_cert_file = '/etc/ssl/server.crt'
+ssl_key_file = '/etc/ssl/server.key'
+-- Connection string
+psql "sslmode=verify-full host=db.example.com"`,
               tool: 'PostgreSQL',
               task: 'Imponi al driver sslmode=require nella stringa di connessione per rifiutare qualsiasi tentativo di handshake in chiaro.',
             },
@@ -8782,7 +9595,14 @@ export default {
                 'Apply dynamic data masking so call-center agents see the last 4 digits of a card number instead of the full PAN. = Applica data masking dinamico così gli agenti del call center vedono le ultime 4 cifre della carta invece del PAN completo.',
               context: 'security',
               difficulty: 'advanced',
-              code: "CASE WHEN role='admin' THEN ssn ELSE '***' END",
+              code: `-- Mask sensitive data based on role
+CREATE VIEW users_masked AS
+  SELECT id, name,
+    CASE WHEN current_user = 'admin'
+      THEN ssn
+      ELSE '***-**-' || RIGHT(ssn, 4)
+    END AS ssn
+  FROM users;`,
               task: `Esponi la colonna sensibile come CASE WHEN role='admin' THEN ssn ELSE '***' END per mascherare il dato ai non-amministratori.`,
             },
             {
@@ -8829,7 +9649,10 @@ export default {
               example: `Enable row-level security on tenants so each customer's session sees only rows where tenant_id matches their JWT claim. = Abilita row-level security su tenants così la sessione di ogni cliente vede solo righe dove tenant_id corrisponde al claim JWT.`,
               context: 'security',
               difficulty: 'advanced',
-              code: 'CREATE POLICY user_isolation ON orders USING (user_id = current_user_id());',
+              code: `ALTER TABLE orders ENABLE ROW LEVEL SECURITY;
+CREATE POLICY user_isolation ON orders
+  USING (user_id = current_setting('app.user_id')::INT);
+-- Each user only sees their own orders`,
               tool: 'PostgreSQL',
               task: 'Crea la policy user_isolation su orders con USING (user_id = current_user_id()) per filtrare le righe per sessione.',
             },
@@ -8842,7 +9665,11 @@ export default {
                 'Use column-level security to hide salary from anyone outside HR while still letting them query the employee table. = Usa column-level security per nascondere salary a chi è fuori HR pur lasciandoli interrogare la tabella employee.',
               context: 'security',
               difficulty: 'advanced',
-              code: 'GRANT SELECT (id, name) ON users TO public;',
+              code: `-- Restrict column access per role
+GRANT SELECT (id, name, email)
+  ON users TO app_role;
+REVOKE SELECT (ssn, salary)
+  ON users FROM app_role;`,
               task: 'Limita le colonne leggibili con GRANT SELECT (id, name) ON users TO public lasciando il resto delle colonne fuori portata.',
             },
             {
@@ -8884,7 +9711,14 @@ export default {
               example: `Mark the rotation function as SECURITY DEFINER so app users invoke it with the owner's privileges, not their own. = Segna la funzione di rotazione come SECURITY DEFINER così gli utenti app la invocano con i privilegi del proprietario, non i propri.`,
               context: 'security',
               difficulty: 'advanced',
-              code: 'CREATE FUNCTION ... SECURITY DEFINER',
+              code: `-- Function runs with owner's privileges
+CREATE FUNCTION get_salary(emp_id INT)
+  RETURNS DECIMAL
+  LANGUAGE SQL
+  SECURITY DEFINER
+AS $$
+  SELECT salary FROM employees WHERE id = emp_id;
+$$;`,
               tool: 'PostgreSQL',
               task: `Marca la funzione di rotazione con CREATE FUNCTION ... SECURITY DEFINER cosi l'utente la esegua con i privilegi del proprietario.`,
             },
@@ -8897,7 +9731,12 @@ export default {
                 'Apply view-based security by exposing v_orders_redacted, with the underlying orders table revoked from app roles. = Applica view-based security esponendo v_orders_redacted, con la tabella orders sottostante revocata dai ruoli app.',
               context: 'security',
               difficulty: 'advanced',
-              code: 'CREATE VIEW user_view AS SELECT id, name FROM users;',
+              code: `-- Expose only safe columns via a view
+CREATE VIEW public_users AS
+  SELECT id, name, email
+  FROM users;
+GRANT SELECT ON public_users TO app_role;
+REVOKE ALL ON users FROM app_role;`,
               task: 'Crea CREATE VIEW user_view AS SELECT id, name FROM users e revoca la tabella sottostante ai ruoli applicativi.',
             },
             {
@@ -8908,7 +9747,9 @@ export default {
               example: `Use a Network ACL to deny all inbound traffic to the database subnet except from the application tier's CIDR. = Usa una Network ACL per negare tutto il traffico in ingresso alla subnet del database tranne dal CIDR del tier applicativo.`,
               context: 'security',
               difficulty: 'advanced',
-              code: 'host all all 10.0.0.0/24 md5',
+              code: `# pg_hba.conf: restrict by network
+host  mydb  app_user  10.0.0.0/24   scram-sha-256
+host  all   all       0.0.0.0/0     reject`,
               tool: 'PostgreSQL',
               task: `Restringi l'accesso in pg_hba.conf con host all all 10.0.0.0/24 md5 ammettendo soltanto la subnet applicativa.`,
             },
@@ -9430,7 +10271,12 @@ export default {
               example: `In a property graph, a node represents an entity like a Person, with labels and key-value properties attached. = In un property graph, un node rappresenta un'entità come una Person, con label e proprietà chiave-valore allegate.`,
               context: 'nosql',
               difficulty: 'advanced',
-              code: '(:Person {name: "Marco"})',
+              code: `-- Create a labeled node with properties
+CREATE (:Person {
+  name: 'Marco',
+  age: 30,
+  city: 'Roma'
+});`,
               tool: 'Neo4j',
               task: 'Rappresenta una persona nel property graph come (:Person {name: "Marco"}) assegnandole label e proprietà chiave-valore.',
             },
@@ -9443,7 +10289,10 @@ export default {
                 'Storing a since-timestamp on a property graph edge lets the recommendation query weight recent FOLLOWS connections higher than ancient ones. = Memorizzare un timestamp since su un arco con proprietà permette alla query di raccomandazione di pesare di più le connessioni FOLLOWS recenti rispetto a quelle vecchie.',
               context: 'nosql',
               difficulty: 'advanced',
-              code: '(a)-[:KNOWS]->(b)',
+              code: `-- Create a relationship with properties
+MATCH (a:Person {name: 'Marco'}),
+      (b:Person {name: 'Anna'})
+CREATE (a)-[:KNOWS {since: 2020}]->(b);`,
               tool: 'Neo4j',
               task: `Collega due nodi con (a)-[:KNOWS]->(b) attaccando all'arco proprietà come un timestamp since per pesare la connessione.`,
             },
@@ -9456,7 +10305,11 @@ export default {
                 'Model a PURCHASED relationship from User to Product so recommendation queries traverse purchases in milliseconds. = Modella una relationship PURCHASED da User a Product così le query di raccomandazione attraversano gli acquisti in millisecondi.',
               context: 'nosql',
               difficulty: 'advanced',
-              code: '-[:FRIEND_OF]->',
+              code: `-- Query friends of friends
+MATCH (a:Person {name: 'Marco'})
+      -[:FRIEND_OF]->(friend)
+      -[:FRIEND_OF]->(fof)
+RETURN DISTINCT fof.name;`,
               task: 'Disegna una relationship -[:FRIEND_OF]-> tra due nodi User per attraversare la rete sociale in millisecondi.',
             },
             {
@@ -9488,7 +10341,10 @@ export default {
                 'Each RDF triple holds subject, predicate, and object, like (:Alice, :knows, :Bob), forming a directed labeled edge. = Ogni triple RDF contiene subject, predicate e object, come (:Alice, :knows, :Bob), formando un arco etichettato direzionato.',
               context: 'nosql',
               difficulty: 'advanced',
-              code: '<Marco> <knows> <Anna> .',
+              code: `# RDF triples: subject-predicate-object
+<Marco> <knows> <Anna> .
+<Marco> <livesIn> <Roma> .
+<Anna> <worksAt> <UniRoma> .`,
               task: 'Scrivi un fatto RDF come <Marco> <knows> <Anna> . per registrare un singolo arco etichettato subject-predicate-object.',
             },
             {
@@ -9509,7 +10365,12 @@ export default {
               example: `Run the shortest path algorithm to find the minimum number of FOLLOWS hops between two Twitter accounts. = Esegui l'algoritmo di shortest path per trovare il numero minimo di hop FOLLOWS tra due account Twitter.`,
               context: 'nosql',
               difficulty: 'advanced',
-              code: 'shortestPath((a)-[*]-(b))',
+              code: `MATCH path = shortestPath(
+  (a:Person {name: 'Marco'})
+  -[*..6]-
+  (b:Person {name: 'Luca'})
+)
+RETURN path, length(path);`,
               tool: 'Neo4j',
               task: 'Invoca shortestPath((a)-[*]-(b)) in Cypher per trovare il cammino minimo di hop tra due nodi del grafo.',
             },
@@ -9538,7 +10399,12 @@ export default {
               example: `Neo4j queries are written in Cypher with patterns like (u:User)-[:FOLLOWS]->(p:User) so the read intent looks like the diagram on a whiteboard. = Le query Neo4j si scrivono in Cypher con pattern come (u:User)-[:FOLLOWS]->(p:User) cosi l'intento di lettura assomiglia al diagramma su una lavagna.`,
               context: 'nosql',
               difficulty: 'advanced',
-              code: 'MATCH (n:Person) RETURN n;',
+              code: `-- Cypher: Neo4j's query language
+MATCH (n:Person)
+  WHERE n.age > 25
+RETURN n.name, n.age
+  ORDER BY n.age DESC
+  LIMIT 10;`,
               tool: 'Neo4j',
               task: `Estrai tutti i nodi Person scrivendo la query Cypher MATCH (n:Person) RETURN n per ottenere l'elenco completo.`,
             },
@@ -9551,7 +10417,11 @@ export default {
                 'Use MATCH (m:Movie)<-[:ACTED_IN]-(a:Actor) to retrieve every actor that starred in a given movie node. = Usa MATCH (m:Movie)<-[:ACTED_IN]-(a:Actor) per recuperare ogni attore che ha recitato in un dato nodo Movie.',
               context: 'nosql',
               difficulty: 'advanced',
-              code: 'MATCH (a)-[:FRIEND]->(b)',
+              code: `-- Find friends who share a hobby
+MATCH (a:Person)-[:FRIEND]->(b:Person),
+      (a)-[:LIKES]->(h:Hobby),
+      (b)-[:LIKES]->(h)
+RETURN a.name, b.name, h.name;`,
               tool: 'Neo4j',
               task: 'Aggancia il pattern degli amici diretti con MATCH (a)-[:FRIEND]->(b) per esplorare la rete di amicizie.',
             },
@@ -9564,7 +10434,10 @@ export default {
                 'Run CREATE (u:User {email: $email}) RETURN u to insert a new user node and immediately return it. = Esegui CREATE (u:User {email: $email}) RETURN u per inserire un nuovo nodo User e restituirlo subito.',
               context: 'nosql',
               difficulty: 'advanced',
-              code: 'CREATE (a:Person {name: "Marco"})',
+              code: `CREATE (a:Person {name: 'Marco', age: 30})
+CREATE (b:Person {name: 'Anna', age: 28})
+CREATE (a)-[:KNOWS {since: 2020}]->(b)
+RETURN a, b;`,
               tool: 'Neo4j',
               task: 'Inserisci un nuovo nodo persona con CREATE (a:Person {name: "Marco"}) per popolare il grafo iniziale.',
             },
@@ -9576,7 +10449,11 @@ export default {
               example: `Idempotent ingestion uses MERGE (u:User {id:$id}) ON CREATE SET u.created_at = timestamp() so re-running the load never duplicates a node. = L'ingestione idempotente usa MERGE (u:User {id:$id}) ON CREATE SET u.created_at = timestamp() cosi rieseguire il load non duplica mai un nodo.`,
               context: 'nosql',
               difficulty: 'advanced',
-              code: 'MERGE (a:Person {email: "x@y.com"})',
+              code: `-- Create if not exists, update if exists
+MERGE (a:Person {email: 'x@y.com'})
+  ON CREATE SET a.created = timestamp()
+  ON MATCH SET a.lastSeen = timestamp()
+RETURN a;`,
               tool: 'Neo4j',
               task: `Garantisci l'idempotenza usando MERGE (a:Person {email: "x@y.com"}) cosi rieseguire il load non duplichi nodi.`,
             },
@@ -9588,7 +10465,11 @@ export default {
               example: `End a Cypher query with RETURN u.name, count(f) AS friends to project just the columns the app needs. = Termina una query Cypher con RETURN u.name, count(f) AS friends per proiettare solo le colonne che servono all'app.`,
               context: 'nosql',
               difficulty: 'advanced',
-              code: 'RETURN n.name, n.age',
+              code: `MATCH (n:Person)-[:WORKS_AT]->(c:Company)
+RETURN n.name AS employee,
+       c.name AS company,
+       n.role AS position
+  ORDER BY c.name;`,
               tool: 'Neo4j',
               task: 'Proietta soltanto le colonne utili al chiamante chiudendo la query con RETURN n.name, n.age.',
             },
@@ -9601,7 +10482,10 @@ export default {
                 'A Cypher pattern like (a)-[:WORKS_AT]->(c)<-[:WORKS_AT]-(b) finds colleagues sharing the same company node. = Un pattern Cypher come (a)-[:WORKS_AT]->(c)<-[:WORKS_AT]-(b) trova colleghi che condividono lo stesso nodo company.',
               context: 'nosql',
               difficulty: 'advanced',
-              code: '(a)-[r:KNOWS]->(b)',
+              code: `-- Graph pattern matching
+MATCH (a:Person)-[r:KNOWS]->(b:Person)
+  WHERE r.since > 2020
+RETURN a.name, type(r), b.name;`,
               tool: 'Neo4j',
               task: `Modella un pattern Cypher come (a)-[r:KNOWS]->(b) per matchare due nodi collegati dall'arco KNOWS.`,
             },
@@ -9614,7 +10498,11 @@ export default {
                 'Use a variable length pattern [:FRIEND*1..3] to find every user within 1 to 3 friendship hops. = Usa un pattern variable length [:FRIEND*1..3] per trovare ogni utente entro 1 o 3 hop di amicizia.',
               context: 'nosql',
               difficulty: 'advanced',
-              code: 'MATCH (a)-[:KNOWS*1..3]->(b)',
+              code: `-- Find connections within 1 to 3 hops
+MATCH (a:Person {name: 'Marco'})
+      -[:KNOWS*1..3]->
+      (b:Person)
+RETURN DISTINCT b.name;`,
               tool: 'Neo4j',
               task: 'Cerca utenti entro tre gradi di separazione con MATCH (a)-[:KNOWS*1..3]->(b) usando un pattern di lunghezza variabile.',
             },
@@ -9626,7 +10514,11 @@ export default {
               example: `After MATCH, filter results with WHERE u.signup_date > date('2025-01-01') to limit to recent signups. = Dopo MATCH, filtra i risultati con WHERE u.signup_date > date('2025-01-01') per limitare ai signup recenti.`,
               context: 'nosql',
               difficulty: 'advanced',
-              code: 'MATCH (n) WHERE n.age > 18 RETURN n',
+              code: `MATCH (n:Person)
+  WHERE n.age > 18
+    AND n.city IN ['Roma', 'Milano']
+    AND EXISTS((n)-[:WORKS_AT]->())
+RETURN n.name, n.city;`,
               tool: 'Neo4j',
               task: 'Filtra i nodi adulti aggiungendo WHERE n.age > 18 dopo MATCH (n) per restringere il risultato.',
             },
@@ -9639,7 +10531,12 @@ export default {
                 'A Cypher pipeline uses WITH user, count(p) AS posts WHERE posts > 10 to pipe aggregated results into the next MATCH clause. = Una pipeline Cypher usa WITH user, count(p) AS posts WHERE posts > 10 per inviare risultati aggregati alla prossima clausola MATCH.',
               context: 'nosql',
               difficulty: 'advanced',
-              code: 'MATCH (n) WITH n LIMIT 10 RETURN n',
+              code: `-- WITH pipes results between query parts
+MATCH (n:Person)-[:FRIEND]->(f)
+WITH n, COUNT(f) AS friendCount
+  WHERE friendCount > 5
+RETURN n.name, friendCount
+  ORDER BY friendCount DESC;`,
               tool: 'Neo4j',
               task: 'Concatena due fasi della query usando MATCH (n) WITH n LIMIT 10 RETURN n per passare i primi dieci nodi alla fase successiva.',
             },
@@ -9826,7 +10723,11 @@ export default {
               example: `Traverse a social graph with Gremlin: g.V().has('user','name','Alice').out('follows').values('name'). = Attraversa un grafo sociale con Gremlin: g.V().has('user','name','Alice').out('follows').values('name').`,
               context: 'nosql',
               difficulty: 'advanced',
-              code: "g.V().has('name', 'Marco')",
+              code: `// Gremlin traversal: friends of Marco
+g.V().has('Person', 'name', 'Marco')
+  .out('KNOWS')
+  .values('name')
+  .toList()`,
               tool: 'Apache TinkerPop',
               task: `Attraversa il grafo TinkerPop con g.V().has('name', 'Marco') per recuperare il vertice di Marco e seguire i suoi archi.`,
             },
@@ -9939,7 +10840,10 @@ export default {
                 'In InfluxDB, attach a host=web01 tag to each metric so you can group dashboards by server without scanning every row. = In InfluxDB, allega un tag host=web01 a ogni metrica così puoi raggruppare i dashboard per server senza scansionare ogni riga.',
               context: 'analytics',
               difficulty: 'advanced',
-              code: 'cpu_usage,host=server1,region=eu value=72',
+              code: `-- InfluxDB line protocol: tags index the series
+cpu_usage,host=server1,region=eu value=72 1716000000
+cpu_usage,host=server2,region=us value=55 1716000000
+mem_usage,host=server1,region=eu value=8192 1716000000`,
               tool: 'InfluxDB',
               task: 'Scrivi su InfluxDB una line cpu_usage,host=server1,region=eu value=72 cosi le tag indicizzino host e regione.',
             },
@@ -9983,7 +10887,13 @@ export default {
                 'Group readings into one-minute time buckets to compute average temperature without scanning every raw sample. = Raggruppa le letture in time bucket di un minuto per calcolare la temperatura media senza scansionare ogni campione grezzo.',
               context: 'analytics',
               difficulty: 'advanced',
-              code: "time_bucket('1 hour', ts)",
+              code: `-- TimescaleDB: aggregate into hourly buckets
+SELECT time_bucket('1 hour', ts) AS hour,
+       AVG(value) AS avg_value,
+       MAX(value) AS peak
+  FROM sensor_data
+  GROUP BY hour
+  ORDER BY hour DESC;`,
               tool: 'TimescaleDB',
               task: `Aggrega le letture in finestre orarie con time_bucket('1 hour', ts) per ridurre il volume da scansionare.`,
             },
@@ -10021,7 +10931,12 @@ export default {
                 'Define a retention policy of 30 days for raw metrics and 1 year for hourly aggregates to balance cost and history. = Definisci una politica di retention di 30 giorni per le metriche grezze e 1 anno per gli aggregati orari per bilanciare costo e storico.',
               context: 'analytics',
               difficulty: 'advanced',
-              code: 'CREATE RETENTION POLICY rp1 ON db DURATION 30d REPLICATION 1;',
+              code: `-- InfluxDB: auto-delete data older than 30 days
+CREATE RETENTION POLICY rp_30d
+  ON metrics
+  DURATION 30d
+  REPLICATION 1
+  DEFAULT;`,
               tool: 'InfluxDB',
               task: 'Limita la storicizzazione con CREATE RETENTION POLICY rp1 ON db DURATION 30d REPLICATION 1 per scadere i dati grezzi.',
             },
@@ -10045,7 +10960,14 @@ export default {
                 'A TimescaleDB continuous aggregate keeps an hourly summary up to date automatically as new raw rows arrive. = Un aggregato continuo TimescaleDB mantiene aggiornato un riassunto orario automaticamente man mano che arrivano nuove righe grezze.',
               context: 'analytics',
               difficulty: 'advanced',
-              code: "CREATE MATERIALIZED VIEW hourly WITH (timescaledb.continuous) AS SELECT time_bucket('1 hour', ts), AVG(value) FROM data GROUP BY 1;",
+              code: `-- TimescaleDB: precompute hourly rollups
+CREATE MATERIALIZED VIEW hourly_avg
+  WITH (timescaledb.continuous) AS
+SELECT time_bucket('1 hour', ts) AS bucket,
+       sensor_id,
+       AVG(value) AS avg_val
+  FROM sensor_data
+  GROUP BY bucket, sensor_id;`,
               tool: 'TimescaleDB',
               task: `Costruisci un aggregato continuo con CREATE MATERIALIZED VIEW hourly WITH (timescaledb.continuous) AS SELECT time_bucket('1 hour', ts), AVG(value) FROM data GROUP BY 1 per riassunto orario.`,
             },
@@ -10069,7 +10991,12 @@ export default {
                 'Enable native compression on chunks older than 7 days to cut TimescaleDB storage by up to 95% for typical time-series workloads. = Abilita la compressione nativa sui chunk più vecchi di 7 giorni per ridurre lo storage TimescaleDB fino al 95% per carichi time-series tipici.',
               context: 'analytics',
               difficulty: 'advanced',
-              code: 'ALTER TABLE measurements SET (timescaledb.compress);',
+              code: `-- TimescaleDB: enable compression on old data
+ALTER TABLE measurements
+  SET (timescaledb.compress,
+       timescaledb.compress_segmentby = 'sensor_id');
+SELECT add_compression_policy('measurements',
+  INTERVAL '7 days');`,
               tool: 'TimescaleDB',
               task: 'Attiva la compressione nativa con ALTER TABLE measurements SET (timescaledb.compress) cosi i chunk vecchi occupino una frazione del disco.',
             },
@@ -10082,7 +11009,13 @@ export default {
                 'Convert a regular metrics table into a TimescaleDB hypertable so that inserts are automatically partitioned by time and space. = Converti una tabella metriche regolare in una hypertable TimescaleDB così che gli insert siano partizionati automaticamente per tempo e spazio.',
               context: 'analytics',
               difficulty: 'advanced',
-              code: "SELECT create_hypertable('metrics', 'ts');",
+              code: `-- Convert regular table into a hypertable
+CREATE TABLE metrics (
+  ts TIMESTAMPTZ NOT NULL,
+  sensor_id INT,
+  value DOUBLE PRECISION
+);
+SELECT create_hypertable('metrics', 'ts');`,
               tool: 'TimescaleDB',
               note: 'Tabella partizionata automaticamente per tempo.',
               task: `Trasforma metrics in hypertable invocando SELECT create_hypertable('metrics', 'ts') per partizionare automaticamente per tempo.`,
@@ -10107,7 +11040,13 @@ export default {
                 'Schedule a drop_chunks job nightly to delete metric chunks older than 90 days and reclaim disk space on the analytics node. = Pianifica un job drop_chunks notturno per eliminare i chunk di metriche più vecchi di 90 giorni e recuperare spazio disco sul nodo analytics.',
               context: 'analytics',
               difficulty: 'advanced',
-              code: "SELECT drop_chunks(INTERVAL '30 days', 'metrics');",
+              code: `-- Remove data older than 30 days
+SELECT drop_chunks(
+  older_than => INTERVAL '30 days',
+  table_name => 'metrics'
+);
+-- Automate with a policy
+SELECT add_retention_policy('metrics', INTERVAL '30 days');`,
               tool: 'TimescaleDB',
               task: `Pulisci i dati vecchi chiamando SELECT drop_chunks(INTERVAL '30 days', 'metrics') per recuperare spazio sul nodo analytics.`,
             },
@@ -10161,7 +11100,13 @@ export default {
                 'Run a SQL-like InfluxQL query: SELECT mean(value) FROM cpu WHERE time > now() - 1h GROUP BY time(1m). = Esegui una query InfluxQL in stile SQL: SELECT mean(value) FROM cpu WHERE time > now() - 1h GROUP BY time(1m).',
               context: 'analytics',
               difficulty: 'advanced',
-              code: 'SELECT mean(value) FROM cpu WHERE time > now() - 1h GROUP BY time(5m)',
+              code: `-- InfluxQL: 5-minute averages over the last hour
+SELECT MEAN(value) AS avg_cpu
+  FROM cpu_usage
+  WHERE time > now() - 1h
+    AND host = 'server1'
+  GROUP BY time(5m)
+  FILL(previous)`,
               tool: 'InfluxDB',
               task: 'Calcola la media oraria CPU con SELECT mean(value) FROM cpu WHERE time > now() - 1h GROUP BY time(5m).',
             },
@@ -10209,7 +11154,12 @@ export default {
               example: `Write a PromQL expression like rate(http_requests_total[5m]) to measure per-second request rate over a 5-minute window. = Scrivi un'espressione PromQL come rate(http_requests_total[5m]) per misurare il tasso di richieste al secondo su una finestra di 5 minuti.`,
               context: 'analytics',
               difficulty: 'advanced',
-              code: 'rate(http_requests_total[5m])',
+              code: `# PromQL: request rate per second, last 5 minutes
+rate(http_requests_total[5m])
+# 95th percentile latency by endpoint
+histogram_quantile(0.95,
+  rate(http_duration_seconds_bucket[5m])
+)`,
               tool: 'Prometheus',
               task: `Misura il tasso di richieste al secondo con l'espressione PromQL rate(http_requests_total[5m]) su finestra di 5 minuti.`,
             },
@@ -10656,7 +11606,13 @@ export default {
                 'Set the DAG schedule to 0 2 * * * so the pipeline runs every night at 02:00 UTC, after the OLTP backup completes. = Imposta la pianificazione del DAG a 0 2 * * * così la pipeline gira ogni notte alle 02:00 UTC, dopo che il backup OLTP completa.',
               context: 'analytics',
               difficulty: 'advanced',
-              code: "schedule_interval='@daily'",
+              code: `# Airflow DAG: daily pipeline schedule
+dag = DAG(
+    'etl_pipeline',
+    schedule_interval='@daily',
+    start_date=datetime(2026, 1, 1),
+    catchup=False
+)`,
               tool: 'Airflow',
               task: `Pianifica il DAG con schedule_interval='@daily' per farlo partire una volta al giorno dopo il backup OLTP.`,
             },
@@ -10710,7 +11666,13 @@ export default {
                 'Configure retries for transient failures. = Configura retry per fallimenti transitori.',
               context: 'analytics',
               difficulty: 'advanced',
-              code: 'retries=3',
+              code: `# Airflow task: retry on failure
+task = PythonOperator(
+    task_id='load_data',
+    python_callable=load_fn,
+    retries=3,
+    retry_delay=timedelta(minutes=5)
+)`,
               tool: 'Airflow',
               task: 'Configura retries=3 sul task Airflow cosi un errore transitorio venga ritentato tre volte prima di marcare il run come failed.',
             },
@@ -10766,7 +11728,14 @@ export default {
                 'Add a not_null and unique test on order_id in dbt so the CI pipeline fails before bad data reaches BI dashboards. = Aggiungi un test not_null e unique su order_id in dbt così la pipeline CI fallisce prima che dati cattivi raggiungano i dashboard BI.',
               context: 'analytics',
               difficulty: 'advanced',
-              code: 'dbt test',
+              code: `# dbt: run all tests
+dbt test
+# Test a specific model
+dbt test --select orders
+# Custom test in schema.yml
+# - not_null
+# - unique
+# - accepted_values: ['active', 'inactive']`,
               tool: 'dbt',
               task: 'Esegui le asserzioni di qualità con dbt test per intercettare violazioni di not_null e unique prima che arrivino in BI.',
             },
@@ -10869,7 +11838,15 @@ export default {
                 'Run SELECT FOR UPDATE on the wallet row before debiting it so concurrent transfers serialize instead of double-spending. = Esegui SELECT FOR UPDATE sulla riga wallet prima di addebitarla così trasferimenti concorrenti si serializzano invece di fare double-spending.',
               context: 'transactions',
               difficulty: 'advanced',
-              code: 'SELECT * FROM accounts WHERE id = 1 FOR UPDATE;',
+              code: `-- Lock row for exclusive update
+BEGIN;
+SELECT balance
+  FROM accounts
+  WHERE id = 1
+  FOR UPDATE;
+UPDATE accounts SET balance = balance - 100
+  WHERE id = 1;
+COMMIT;`,
               task: 'Blocca la riga con SELECT * FROM accounts WHERE id = 1 FOR UPDATE prima di addebitarla per serializzare i trasferimenti.',
             },
             {
@@ -10880,7 +11857,15 @@ export default {
               example: `Use SELECT FOR SHARE when reading a referenced parent row that must not be deleted before the child insert commits. = Usa SELECT FOR SHARE quando leggi una riga padre referenziata che non deve essere eliminata prima che l'insert figlio committi.`,
               context: 'transactions',
               difficulty: 'advanced',
-              code: 'SELECT * FROM accounts WHERE id = 1 FOR SHARE;',
+              code: `-- Shared lock: prevent writes, allow reads
+BEGIN;
+SELECT balance
+  FROM accounts
+  WHERE id = 1
+  FOR SHARE;
+-- Other transactions can also FOR SHARE
+-- but cannot UPDATE until we release
+COMMIT;`,
               task: 'Proteggi la riga padre con SELECT * FROM accounts WHERE id = 1 FOR SHARE per impedirne la cancellazione prima del COMMIT.',
             },
             {
@@ -10891,7 +11876,13 @@ export default {
               example: `Append NOWAIT to SELECT FOR UPDATE so the API returns a 409 immediately instead of hanging when the row is already locked. = Aggiungi NOWAIT a SELECT FOR UPDATE così l'API ritorna subito un 409 invece di restare appesa quando la riga è già lockata.`,
               context: 'transactions',
               difficulty: 'advanced',
-              code: 'SELECT * FROM t WHERE id = 1 FOR UPDATE NOWAIT;',
+              code: `-- Fail immediately if row is locked
+BEGIN;
+SELECT * FROM inventory
+  WHERE product_id = 42
+  FOR UPDATE NOWAIT;
+-- Raises error if lock not available
+COMMIT;`,
               task: 'Aggiungi NOWAIT a SELECT * FROM t WHERE id = 1 FOR UPDATE NOWAIT cosi la query fallisca subito invece di restare appesa.',
             },
             {
@@ -10903,7 +11894,15 @@ export default {
                 'Implement a job queue in Postgres using SELECT ... FOR UPDATE SKIP LOCKED so multiple workers pull different rows safely. = Implementa una coda di job in Postgres usando SELECT ... FOR UPDATE SKIP LOCKED così più worker prendono righe diverse in modo sicuro.',
               context: 'transactions',
               difficulty: 'advanced',
-              code: "SELECT * FROM jobs WHERE status = 'pending' FOR UPDATE SKIP LOCKED LIMIT 10;",
+              code: `-- Worker queue: grab unlocked jobs
+BEGIN;
+SELECT * FROM jobs
+  WHERE status = 'pending'
+  FOR UPDATE SKIP LOCKED
+  LIMIT 10;
+UPDATE jobs SET status = 'processing'
+  WHERE id IN (...);
+COMMIT;`,
               note: 'Ottimo per worker queue.',
               task: `Estrai i prossimi dieci job con SELECT * FROM jobs WHERE status = 'pending' FOR UPDATE SKIP LOCKED LIMIT 10 per worker concorrenti.`,
             },
@@ -10916,7 +11915,11 @@ export default {
                 'Take a Postgres advisory lock keyed by tenant_id so only one background job per tenant runs at a time across the fleet. = Prendi un advisory lock Postgres chiavato su tenant_id così solo un job in background per tenant gira alla volta sulla flotta.',
               context: 'transactions',
               difficulty: 'advanced',
-              code: 'SELECT pg_advisory_lock(123);',
+              code: `-- Application-level lock (not tied to a row)
+SELECT pg_advisory_lock(123);
+-- Critical section: only one process at a time
+PERFORM process_batch();
+SELECT pg_advisory_unlock(123);`,
               tool: 'PostgreSQL',
               task: 'Prendi un advisory lock chiamando SELECT pg_advisory_lock(123) cosi solo un processo per tenant esegua il job.',
             },
@@ -10929,7 +11932,13 @@ export default {
                 'Set lock_timeout=5s in Postgres so a runaway transaction cannot block production writes for longer than five seconds. = Imposta lock_timeout=5s in Postgres così una transazione fuori controllo non possa bloccare le scritture di produzione per più di cinque secondi.',
               context: 'transactions',
               difficulty: 'advanced',
-              code: "SET lock_timeout = '5s';",
+              code: `-- Avoid waiting forever for a lock
+SET lock_timeout = '5s';
+BEGIN;
+SELECT * FROM accounts
+  WHERE id = 1 FOR UPDATE;
+-- Raises error after 5 seconds if still waiting
+COMMIT;`,
               tool: 'PostgreSQL',
               task: `Limita l'attesa sui lock con SET lock_timeout = '5s' per evitare che una transazione fuori controllo blocchi le scritture.`,
             },
@@ -10941,7 +11950,11 @@ export default {
               example: `Enable statement_timeout=30s on the analytics user so heavy ad-hoc queries cannot starve OLTP connections indefinitely. = Abilita statement_timeout=30s sull'utente analytics così pesanti query ad-hoc non possano affamare le connessioni OLTP indefinitamente.`,
               context: 'transactions',
               difficulty: 'advanced',
-              code: "SET statement_timeout = '30s';",
+              code: `-- Kill queries that run too long
+SET statement_timeout = '30s';
+SELECT * FROM large_table
+  WHERE unindexed_col = 'x';
+-- Auto-cancelled after 30 seconds`,
               tool: 'PostgreSQL',
               task: `Tappa le query lunghe con SET statement_timeout = '30s' sull'utente analytics per non affamare le connessioni OLTP.`,
             },
@@ -10991,7 +12004,12 @@ export default {
                 'PostgreSQL detects deadlocks automatically. = PostgreSQL rileva deadlock automaticamente.',
               context: 'transactions',
               difficulty: 'advanced',
-              code: 'deadlock_timeout = 1s',
+              code: `-- postgresql.conf: deadlock settings
+deadlock_timeout = '1s'
+log_lock_waits = on
+-- Check for deadlocks in logs
+-- ERROR: deadlock detected
+-- DETAIL: Process 1234 waits for ShareLock...`,
               tool: 'PostgreSQL',
               task: 'Regola la finestra del rilevatore impostando deadlock_timeout = 1s in postgresql.conf per scegliere quando abortire la vittima.',
             },
@@ -11125,7 +12143,13 @@ export default {
                 'The xmin column on a tuple records which transaction created that row version, so MVCC can decide whether each snapshot can see it. = La colonna xmin di una tupla registra quale transazione ha creato quella versione di riga, così MVCC può decidere se ogni snapshot può vederla.',
               context: 'transactions',
               difficulty: 'advanced',
-              code: 'SELECT xmin, xmax, * FROM users;',
+              code: `-- MVCC system columns in PostgreSQL
+SELECT xmin, xmax, ctid,
+       id, name
+  FROM users
+  WHERE id = 1;
+-- xmin = transaction that created this tuple
+-- xmax = transaction that deleted/updated it`,
               tool: 'PostgreSQL',
               task: `Ispeziona la versione MVCC di una riga con SELECT xmin, xmax, * FROM users per vedere quale transazione l'ha creata.`,
             },
@@ -11227,7 +12251,13 @@ export default {
                 'Use version numbers for optimistic locking. = Usa numeri di versione per lock ottimistico.',
               context: 'transactions',
               difficulty: 'advanced',
-              code: 'UPDATE products SET ..., version = version + 1 WHERE id = 1 AND version = 5;',
+              code: `-- Optimistic locking with version column
+UPDATE products
+  SET price = 29.99,
+      version = version + 1
+  WHERE id = 1
+    AND version = 5;
+-- If 0 rows affected, another transaction won`,
               task: 'Implementa il locking ottimistico con UPDATE products SET version = version + 1 WHERE id = 1 AND version = 5.',
             },
             {
@@ -11249,7 +12279,13 @@ export default {
               example: `Use Redis INCR as a single atomic operation to count API hits, since the increment happens under the engine's internal lock. = Usa Redis INCR come singola operazione atomica per contare le hit API, dato che l'incremento avviene sotto il lock interno del motore.`,
               context: 'transactions',
               difficulty: 'advanced',
-              code: 'UPDATE counters SET value = value + 1 WHERE id = 1;',
+              code: `-- Atomic increment: no read-modify-write race
+UPDATE counters
+  SET value = value + 1
+  WHERE name = 'page_views';
+-- Atomic transfer between rows
+UPDATE accounts SET balance = balance - 100 WHERE id = 1;
+UPDATE accounts SET balance = balance + 100 WHERE id = 2;`,
               task: 'Incrementa il contatore atomicamente con UPDATE counters SET value = value + 1 WHERE id = 1 senza letture preventive.',
             },
             {
@@ -11261,7 +12297,12 @@ export default {
                 'Stripe requires an Idempotency-Key header on every POST so a retried payment after a timeout will not charge the customer twice. = Stripe richiede un header Idempotency-Key su ogni POST così un pagamento ritentato dopo un timeout non addebiti due volte il cliente.',
               context: 'transactions',
               difficulty: 'advanced',
-              code: 'INSERT INTO orders (id, ...) VALUES ($1, ...) ON CONFLICT (id) DO NOTHING;',
+              code: `-- Prevent duplicate processing
+INSERT INTO payments (
+  idempotency_key, amount, status
+) VALUES (
+  'pay_abc123', 99.99, 'completed'
+) ON CONFLICT (idempotency_key) DO NOTHING;`,
               task: `Rendi idempotente l'inserimento con INSERT INTO orders (id, ...) VALUES ($1, ...) ON CONFLICT (id) DO NOTHING cosi un retry non duplichi.`,
             },
             {
@@ -11294,7 +12335,12 @@ export default {
                 'A booking platform uses distributed two-phase commit across the seat reservation service and the payments service so a failure on either side rolls everything back. = Una piattaforma di booking usa two-phase commit distribuito tra il servizio di prenotazione posti e il servizio pagamenti cosi un fallimento su uno dei due fa il rollback di tutto.',
               context: 'transactions',
               difficulty: 'advanced',
-              code: "PREPARE TRANSACTION 'tx1'; COMMIT PREPARED 'tx1';",
+              code: `-- Phase 1: prepare on all nodes
+PREPARE TRANSACTION 'tx_order_42';
+-- Phase 2: commit if all nodes prepared
+COMMIT PREPARED 'tx_order_42';
+-- Or rollback if any node failed
+-- ROLLBACK PREPARED 'tx_order_42';`,
               tool: 'PostgreSQL',
               task: `Esegui un two-phase commit con PREPARE TRANSACTION 'tx1' e COMMIT PREPARED 'tx1' per coordinare due servizi distribuiti.`,
             },
@@ -11662,7 +12708,13 @@ export default {
                 'Run VACUUM ANALYZE on the orders table after the nightly backfill so the planner picks fresh statistics for morning reports. = Esegui VACUUM ANALYZE sulla tabella orders dopo il backfill notturno così il planner sceglie statistiche fresche per i report mattutini.',
               context: 'administration',
               difficulty: 'advanced',
-              code: 'VACUUM ANALYZE users;',
+              code: `-- Reclaim dead tuples and update statistics
+VACUUM ANALYZE users;
+-- Check dead tuple count first
+SELECT relname, n_dead_tup
+  FROM pg_stat_user_tables
+  WHERE n_dead_tup > 1000
+  ORDER BY n_dead_tup DESC;`,
               tool: 'PostgreSQL',
               task: 'Lancia VACUUM ANALYZE users dopo un backfill notturno per liberare tuple morte e rinfrescare le statistiche del planner.',
             },
@@ -11685,7 +12737,12 @@ export default {
               example: `Schedule a VACUUM FULL during the maintenance window because it rewrites the entire table and takes an exclusive lock the whole time. = Pianifica un VACUUM FULL durante la finestra di manutenzione perché riscrive l'intera tabella e prende un lock esclusivo per tutto il tempo.`,
               context: 'administration',
               difficulty: 'advanced',
-              code: 'VACUUM FULL VERBOSE users;',
+              code: `-- Reclaim disk space (locks table!)
+VACUUM FULL VERBOSE users;
+-- Check table size before and after
+SELECT pg_size_pretty(
+  pg_total_relation_size('users')
+) AS table_size;`,
               tool: 'PostgreSQL',
               note: 'Bloccante! Da fare in finestre di manutenzione.',
               task: 'Pianifica VACUUM FULL VERBOSE users in finestra di manutenzione perché riscrive la tabella prendendo un lock esclusivo.',
@@ -11755,7 +12812,10 @@ export default {
                 'Schedule a concurrent index rebuild after a large bulk delete reclaims half the leaf pages and inflates B-tree depth. = Pianifica una ricostruzione indici concorrente dopo che una grossa cancellazione massiva libera metà delle leaf page e gonfia la profondità del B-tree.',
               context: 'administration',
               difficulty: 'advanced',
-              code: 'REINDEX INDEX CONCURRENTLY idx_email;',
+              code: `-- Rebuild without blocking reads/writes
+REINDEX INDEX CONCURRENTLY idx_users_email;
+-- Rebuild all indexes on a table
+REINDEX TABLE CONCURRENTLY users;`,
               tool: 'PostgreSQL',
               task: `Ricostruisci l'indice gonfio con REINDEX INDEX CONCURRENTLY idx_email per recuperare leaf page senza fermare le scritture.`,
             },

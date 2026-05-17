@@ -1,0 +1,1924 @@
+{
+  "fixes": [
+    {
+      "level": "6",
+      "lesson": "linux_info",
+      "english": "System",
+      "set": {
+        "code": "HOSTNAME=$(hostname)\nUPTIME=$(uptime -p)\necho \"Host: $HOSTNAME\"\necho \"Uptime: $UPTIME\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_info",
+      "english": "Architecture",
+      "set": {
+        "code": "ARCH=$(uname -m)\nBITS=$(getconf LONG_BIT)\necho \"Architecture: $ARCH ($BITS-bit)\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_info",
+      "english": "CPU",
+      "set": {
+        "code": "CORES=$(nproc)\nMODEL=$(lscpu | grep 'Model name' | cut -d: -f2 | xargs)\necho \"CPU: $MODEL\"\necho \"Cores: $CORES\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_info",
+      "english": "Block Device",
+      "set": {
+        "code": "lsblk -f -o NAME,FSTYPE,SIZE,MOUNTPOINT\necho '---'\nls /dev/sd* 2>/dev/null || echo 'No SCSI disks found'"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_info",
+      "english": "PCI",
+      "set": {
+        "code": "lspci -nnk | head -20\necho '---'\nlspci | grep -i vga"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_info",
+      "english": "USB",
+      "set": {
+        "code": "DEVCOUNT=$(lsusb | wc -l)\nlsusb\necho \"Total USB devices: $DEVCOUNT\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_info",
+      "english": "Hardware",
+      "set": {
+        "code": "sudo lshw -short -class memory\necho '---'\nsudo lshw -short -class processor"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_info",
+      "english": "Release",
+      "set": {
+        "code": "source /etc/os-release\necho \"Name: $NAME\"\necho \"Version: $VERSION\"\necho \"ID: $ID\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_info",
+      "english": "Distribution",
+      "set": {
+        "code": "DISTRO=$(lsb_release -si)\nRELEASE=$(lsb_release -sr)\necho \"Running $DISTRO $RELEASE\"\nlsb_release -a 2>/dev/null"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_info",
+      "english": "Bios",
+      "set": {
+        "code": "sudo dmidecode -t bios | grep -E 'Vendor|Version|Date'\necho '---'\nsudo dmidecode -t system | grep 'Product Name'"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_disks",
+      "english": "Disk",
+      "set": {
+        "code": "sudo fdisk -l /dev/sda 2>/dev/null | head -10\necho '---'\nlsblk -d -o NAME,SIZE,TYPE"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_disks",
+      "english": "Partition",
+      "set": {
+        "code": "sudo parted -l 2>/dev/null | head -15\necho '---'\ncat /proc/partitions"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_disks",
+      "english": "Mount",
+      "set": {
+        "code": "sudo mkdir -p /mnt/data\nsudo mount /dev/sdb1 /mnt/data\nmount | grep /mnt/data\necho 'Partition mounted successfully'"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_disks",
+      "english": "Unmount",
+      "set": {
+        "code": "sync\nsudo umount /mnt/data\nmount | grep /mnt/data || echo '/mnt/data unmounted'"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_disks",
+      "english": "Volume",
+      "set": {
+        "code": "sudo lvs --noheadings -o lv_name,vg_name,lv_size\necho '---'\nsudo vgs --noheadings -o vg_name,vg_size,vg_free"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_disks",
+      "english": "Format",
+      "set": {
+        "code": "sudo mkfs.ext4 -L data /dev/sdb1\nsudo tune2fs -l /dev/sdb1 | grep 'Filesystem volume name'\necho 'Formatting complete'"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_disks",
+      "english": "Space",
+      "set": {
+        "code": "df -h / /home /tmp 2>/dev/null\necho '---'\nROOT_USED=$(df -h / | awk 'NR==2{print $5}')\necho \"Root partition usage: $ROOT_USED\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_disks",
+      "english": "Disk Usage",
+      "set": {
+        "code": "du -sh /var/* 2>/dev/null | sort -rh | head -5\necho '---'\necho \"Total /var: $(du -sh /var 2>/dev/null | cut -f1)\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_disks",
+      "english": "Swap",
+      "set": {
+        "code": "swapon --show\necho '---'\nfree -h | grep Swap\ncat /proc/swaps"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_disks",
+      "english": "Inode",
+      "set": {
+        "code": "df -i / | awk 'NR==2{printf \"Used inodes: %s / %s (%s)\\n\", $3, $2, $5}'\necho '---'\nls -i /etc/passwd /etc/shadow"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_devices",
+      "english": "Device",
+      "set": {
+        "code": "ls -l /dev/sd* /dev/tty0 /dev/null 2>/dev/null\necho '---'\necho \"Block devices: $(ls /dev/sd* 2>/dev/null | wc -l)\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_devices",
+      "english": "Null",
+      "set": {
+        "code": "echo 'This text goes nowhere' > /dev/null\nls /nonexistent 2>/dev/null\necho \"exit code: $? (error was silenced)\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_devices",
+      "english": "Zero",
+      "set": {
+        "code": "dd if=/dev/zero of=/tmp/zeros.bin bs=1K count=4 2>/dev/null\nxxd /tmp/zeros.bin | head -3\nrm /tmp/zeros.bin"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_devices",
+      "english": "Random",
+      "set": {
+        "code": "TOKEN=$(head -c 24 /dev/urandom | base64)\necho \"Random token: $TOKEN\"\necho \"Entropy available: $(cat /proc/sys/kernel/random/entropy_avail)\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_devices",
+      "english": "Device Console",
+      "set": {
+        "code": "ls -l /dev/console /dev/tty0 2>/dev/null\nwho | head -5\necho \"Current TTY: $(tty)\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_devices",
+      "english": "Driver",
+      "set": {
+        "code": "lspci -k | grep -A2 'VGA'\necho '---'\nlspci -k | grep 'Kernel driver' | sort -u"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_devices",
+      "english": "Module",
+      "set": {
+        "code": "lsmod | head -10\nMOD_COUNT=$(lsmod | tail -n +2 | wc -l)\necho \"Loaded modules: $MOD_COUNT\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_devices",
+      "english": "Probe",
+      "set": {
+        "code": "sudo modprobe -n -v e1000e\nlsmod | grep e1000e\nmodinfo e1000e | head -5"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_devices",
+      "english": "Input",
+      "set": {
+        "code": "ls /dev/input/\necho '---'\ncat /proc/bus/input/devices | grep -E '^N:' | head -5"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_devices",
+      "english": "Stdio",
+      "set": {
+        "code": "echo 'stdout message' > /tmp/out.log\necho 'stderr message' >&2 2>> /tmp/err.log\nls -l /proc/self/fd/0 /proc/self/fd/1 /proc/self/fd/2"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_kernel",
+      "english": "Linux Kernel",
+      "set": {
+        "code": "uname -srv\necho \"Kernel release: $(uname -r)\"\necho \"Compiled: $(uname -v)\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_kernel",
+      "english": "Boot",
+      "set": {
+        "code": "systemd-analyze\nsystemd-analyze blame | head -5\necho \"Boot time: $(systemd-analyze | head -1)\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_kernel",
+      "english": "Grub",
+      "set": {
+        "code": "cat /etc/default/grub | grep -v '^#' | grep -v '^$'\necho '---'\nsudo update-grub 2>&1 | tail -3"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_kernel",
+      "english": "Init",
+      "set": {
+        "code": "RUNNING=$(systemctl list-units --type=service --state=running --no-pager | grep -c '.service')\nsystemctl list-units --type=service --state=running --no-pager | head -5\necho \"Running services: $RUNNING\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_kernel",
+      "english": "Panic",
+      "set": {
+        "code": "dmesg --level=emerg,alert,crit 2>/dev/null | tail -5\necho '---'\ncat /proc/sys/kernel/panic"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_kernel",
+      "english": "Boot Log",
+      "set": {
+        "code": "journalctl -b -1 -p err --no-pager 2>/dev/null | head -10\necho '---'\njournalctl --list-boots | tail -3"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_kernel",
+      "english": "Parameters",
+      "set": {
+        "code": "cat /proc/cmdline\necho '---'\nsysctl kernel.hostname kernel.ostype kernel.osrelease"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_kernel",
+      "english": "Update",
+      "set": {
+        "code": "CURRENT=$(uname -r)\napt list --installed 2>/dev/null | grep linux-image | head -3\necho \"Current kernel: $CURRENT\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_kernel",
+      "english": "Kernel Version",
+      "set": {
+        "code": "KVER=$(uname -r)\nMAJOR=$(echo \"$KVER\" | cut -d. -f1)\nMINOR=$(echo \"$KVER\" | cut -d. -f2)\necho \"Kernel $KVER (major=$MAJOR minor=$MINOR)\""
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_kernel",
+      "english": "Source",
+      "set": {
+        "code": "ls /usr/src/linux-headers-$(uname -r)/ 2>/dev/null | head -5\necho \"Headers: /usr/src/linux-headers-$(uname -r)\"\ntest -f /boot/config-$(uname -r) && echo 'Kernel config present'"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_basics",
+      "english": "Shebang",
+      "set": {
+        "code": "#!/usr/bin/env bash\necho \"Running with: $BASH\"\necho \"Bash version: $BASH_VERSION\"\necho \"PID: $$\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_basics",
+      "english": "Script",
+      "set": {
+        "code": "#!/usr/bin/env bash\nset -euo pipefail\necho \"Script: $0\"\necho \"Started at $(date)\"\nexit 0"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_basics",
+      "english": "Variable",
+      "set": {
+        "code": "DB_HOST=\"db.prod.local\"\nDB_PORT=5432\necho \"Connecting to $DB_HOST:$DB_PORT\"\nCONN=\"postgresql://$DB_HOST:$DB_PORT/app\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_basics",
+      "english": "Echo Builtin",
+      "set": {
+        "code": "echo \"User: $(whoami)\"\necho -e \"Line1\\nLine2\\tIndented\"\necho -n 'No newline here: '\necho 'done'"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_basics",
+      "english": "Read Builtin",
+      "set": {
+        "code": "echo 'prod' | read -r ENV\nread -r -t 5 -p 'Enter hostname: ' HOST < /dev/tty || HOST='localhost'\necho \"Deploying to $HOST\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_basics",
+      "english": "Comment",
+      "set": {
+        "code": "#!/usr/bin/env bash\n# Rotate application logs older than 7 days\nLOG_DIR='/var/log/app'\nfind \"$LOG_DIR\" -name '*.log' -mtime +7 -delete"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_basics",
+      "english": "Quote",
+      "set": {
+        "code": "FILE='my report.txt'\nGREETING=\"Hello, $(whoami)\"\nPATTERN='$HOME is not expanded'\necho \"$GREETING\" && echo \"$PATTERN\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_basics",
+      "english": "Exit Code",
+      "set": {
+        "code": "grep -q ERROR /var/log/app.log 2>/dev/null\nRC=$?\nif [ $RC -eq 0 ]; then echo 'Errors found'; else echo 'No errors'; fi\necho \"Exit code was: $RC\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_basics",
+      "english": "Positional Argument",
+      "set": {
+        "code": "#!/usr/bin/env bash\necho \"Script name: $0\"\necho \"First arg: $1, Second arg: $2\"\necho \"All args ($#): $@\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_basics",
+      "english": "Execution",
+      "set": {
+        "code": "chmod +x ./deploy.sh\n./deploy.sh --env staging\necho \"Script exited with code: $?\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_vars",
+      "english": "Environment",
+      "set": {
+        "code": "echo \"User: $USER\"\necho \"Home: $HOME\"\necho \"Shell: $SHELL\"\nprintenv | wc -l"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_vars",
+      "english": "Export",
+      "set": {
+        "code": "export APP_ENV='production'\nexport DEBUG=0\nbash -c 'echo \"Child sees: APP_ENV=$APP_ENV DEBUG=$DEBUG\"'"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_vars",
+      "english": "PATH Variable",
+      "set": {
+        "code": "echo \"Current PATH entries:\"\necho \"$PATH\" | tr ':' '\\n' | head -5\nexport PATH=\"$HOME/.local/bin:$PATH\"\nwhich python3"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_vars",
+      "english": "Substitution",
+      "set": {
+        "code": "BACKUP=\"db-$(date +%Y%m%d-%H%M).sql\"\nFILES=$(ls /etc/*.conf 2>/dev/null | wc -l)\necho \"Backup name: $BACKUP\"\necho \"Config files found: $FILES\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_vars",
+      "english": "Arithmetic",
+      "set": {
+        "code": "USED=80\nTHRESHOLD=75\nFREE=$((100 - USED))\nif (( USED > THRESHOLD )); then echo \"Warning: ${FREE}% free\"; fi"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_vars",
+      "english": "Global",
+      "set": {
+        "code": "COUNTER=0\nincrement() { COUNTER=$((COUNTER + 1)); }\nincrement; increment; increment\necho \"Global counter: $COUNTER\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_vars",
+      "english": "Local",
+      "set": {
+        "code": "process() { local tmp_file=$(mktemp); echo data > \"$tmp_file\"; echo \"$tmp_file\"; }\nRESULT=$(process)\necho \"Created: $RESULT\"\necho \"tmp_file var: ${tmp_file:-not visible}\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_vars",
+      "english": "Alias",
+      "set": {
+        "code": "alias ll='ls -lah --color=auto'\nalias gs='git status'\nalias ports='ss -tulnp'\nll /tmp"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_vars",
+      "english": "Expansion",
+      "set": {
+        "code": "mkdir -p project/{src,test,docs}\necho file{1..5}.txt\ncp config.yml{,.bak}\nls project/"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_vars",
+      "english": "History",
+      "set": {
+        "code": "HISTSIZE=2000\nhistory | tail -n 10\necho \"History file: $HISTFILE\"\necho \"Total entries: $(history | wc -l)\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_control",
+      "english": "If",
+      "set": {
+        "code": "if [ -f /etc/passwd ]; then\n  USERS=$(wc -l < /etc/passwd)\n  echo \"System has $USERS user accounts\"\nfi"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_control",
+      "english": "Else",
+      "set": {
+        "code": "if systemctl is-active --quiet nginx; then\n  echo 'Nginx is running'\nelse\n  echo 'Nginx is DOWN -- restarting'\n  sudo systemctl start nginx\nfi"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_control",
+      "english": "Loop",
+      "set": {
+        "code": "for f in *.log; do\n  SIZE=$(stat -c%s \"$f\" 2>/dev/null || echo 0)\n  echo \"$f: $SIZE bytes\"\ndone"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_control",
+      "english": "For",
+      "set": {
+        "code": "for host in web1 web2 web3; do\n  echo -n \"$host: \"\n  ping -c1 -W1 \"$host\" >/dev/null 2>&1 && echo 'UP' || echo 'DOWN'\ndone"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_control",
+      "english": "While",
+      "set": {
+        "code": "RETRIES=0\nwhile ! curl -fsS http://localhost:8080/health 2>/dev/null; do\n  RETRIES=$((RETRIES + 1))\n  [ $RETRIES -ge 5 ] && break\n  sleep 2\ndone"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_control",
+      "english": "Condition",
+      "set": {
+        "code": "[ -d /var/backups ] && echo 'Backup dir exists' || mkdir -p /var/backups\n[ -w /var/backups ] && echo 'Writable' || echo 'Read-only'\n[ -s /var/backups/latest.tar.gz ] && echo 'Backup present'"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_control",
+      "english": "Case",
+      "set": {
+        "code": "ACTION=\"${1:-help}\"\ncase \"$ACTION\" in\n  start)  echo 'Starting service...';;\n  stop)   echo 'Stopping service...';;\n  *)      echo \"Usage: $0 {start|stop}\";;\nesac"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_control",
+      "english": "Break",
+      "set": {
+        "code": "for host in db1 db2 db3; do\n  if pg_isready -h \"$host\" -q 2>/dev/null; then\n    echo \"Primary found: $host\"\n    break\n  fi\ndone"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_control",
+      "english": "Continue",
+      "set": {
+        "code": "for f in /etc/*; do\n  [ -d \"$f\" ] && continue\n  echo \"File: $(basename \"$f\")\"\ndone | head -10"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_control",
+      "english": "Boolean",
+      "set": {
+        "code": "make build && make test && echo 'Pipeline passed'\ngrep -q ERROR app.log || echo 'No errors found'\n[ -f config.yml ] && source config.yml || echo 'Missing config'"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_funcs",
+      "english": "Function",
+      "set": {
+        "code": "greet() {\n  echo \"Hello, $1! Today is $(date +%A).\"\n}\ngreet 'admin'\ngreet 'developer'"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_funcs",
+      "english": "Define",
+      "set": {
+        "code": "log() {\n  printf '[%s] %s\\n' \"$(date +%T)\" \"$*\"\n}\nlog 'Deploy started'\nlog 'Pulling latest image'"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_funcs",
+      "english": "Call",
+      "set": {
+        "code": "cleanup() { rm -f /tmp/run.lock; echo 'Lock removed'; }\ntrap cleanup EXIT\ntouch /tmp/run.lock\necho 'Working...'"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_funcs",
+      "english": "Return",
+      "set": {
+        "code": "is_port_open() {\n  ss -tln | grep -q \":$1 \" && return 0 || return 1\n}\nis_port_open 22 && echo 'SSH open' || echo 'SSH closed'"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_funcs",
+      "english": "Scope",
+      "set": {
+        "code": "outer() {\n  local secret='hidden'\n  echo \"Inside: $secret\"\n}\nouter\necho \"Outside: ${secret:-not visible}\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_funcs",
+      "english": "Parameter",
+      "set": {
+        "code": "deploy() {\n  local env=\"$1\" tag=\"$2\"\n  echo \"Deploying $tag to $env\"\n}\ndeploy production v2.1.0\ndeploy staging v2.2.0-rc1"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_funcs",
+      "english": "Library",
+      "set": {
+        "code": "#!/usr/bin/env bash\ndie()  { echo \"ERROR: $*\" >&2; exit 1; }\ninfo() { echo \"INFO: $*\"; }\ninfo 'Library loaded'\n[ -f config.yml ] || die 'Missing config'"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_funcs",
+      "english": "Source Builtin",
+      "set": {
+        "code": "echo 'DB_HOST=localhost' > /tmp/env.sh\necho 'DB_PORT=5432' >> /tmp/env.sh\nsource /tmp/env.sh\necho \"Database at $DB_HOST:$DB_PORT\""
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_funcs",
+      "english": "Debug",
+      "set": {
+        "code": "#!/usr/bin/env bash\nset -x\nNAME='test'\necho \"Hello $NAME\"\nset +x\necho 'Debug off now'"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_funcs",
+      "english": "Modular",
+      "set": {
+        "code": "#!/usr/bin/env bash\nsource ./lib/logging.sh\nsource ./lib/database.sh\nlog_info 'Application starting'\ndb_connect \"$DB_HOST\" \"$DB_PORT\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_regex",
+      "english": "Regex",
+      "set": {
+        "code": "LOG='/var/log/syslog'\ngrep -E '^[A-Z]{3}.*error' \"$LOG\" 2>/dev/null | wc -l\necho 'Error lines counted'"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_regex",
+      "english": "Regex Pattern",
+      "set": {
+        "code": "grep -E '^ERROR.*timeout$' /var/log/app.log 2>/dev/null\ngrep -Ec '^(WARN|ERROR)' /var/log/app.log 2>/dev/null\necho 'Pattern search complete'"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_regex",
+      "english": "Anchor",
+      "set": {
+        "code": "echo -e 'START line\\nmiddle START\\nSTART end' > /tmp/test.txt\ngrep '^START' /tmp/test.txt\ngrep 'end$' /tmp/test.txt"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_regex",
+      "english": "Character Class",
+      "set": {
+        "code": "echo -e '192.168.1.1\\nhello\\n10.0.0.255' > /tmp/ips.txt\ngrep -E '[0-9]{1,3}\\.[0-9]{1,3}' /tmp/ips.txt\ngrep -E '^[a-z]+$' /tmp/ips.txt"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_regex",
+      "english": "Quantifier",
+      "set": {
+        "code": "echo -e 'aab\\nab\\naaab\\nb' > /tmp/q.txt\ngrep -E 'a+b' /tmp/q.txt\ngrep -E 'a{2,}b' /tmp/q.txt"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_regex",
+      "english": "Escape",
+      "set": {
+        "code": "echo -e 'file.txt\\nfiletxt\\nfile-txt' > /tmp/esc.txt\ngrep '\\.txt$' /tmp/esc.txt\necho 'Only literal dot matched'"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_regex",
+      "english": "Regex Capture Group",
+      "set": {
+        "code": "echo 'user@example.com' | sed -E 's/([a-z]+)@([a-z.]+)/User: \\1, Domain: \\2/'\necho '2026-05-17' | sed -E 's/([0-9]{4})-([0-9]{2})-([0-9]{2})/\\3\\/\\2\\/\\1/'"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_regex",
+      "english": "Match",
+      "set": {
+        "code": "HITS=$(grep -c 'timeout' /var/log/app.log 2>/dev/null || echo 0)\necho \"Found $HITS timeout occurrences\"\ngrep -n 'timeout' /var/log/app.log 2>/dev/null | head -3"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_regex",
+      "english": "egrep / grep -E",
+      "set": {
+        "code": "grep -E '(error|warn|fatal)' /var/log/syslog 2>/dev/null | tail -5\ngrep -Ec '(error|fatal)' /var/log/syslog 2>/dev/null\necho 'Extended regex search done'"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_regex",
+      "english": "Extended",
+      "set": {
+        "code": "echo -e 'foobar\\nfoofoo\\nbaz' | grep -E '(foo|bar)+'\necho '---'\necho '192.168.1.100' | grep -E '^([0-9]{1,3}\\.){3}[0-9]{1,3}$'"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_encoding",
+      "english": "Encoding",
+      "set": {
+        "code": "file -i /etc/passwd\nfile -i /bin/ls\necho \"Current locale charset: $(locale charmap)\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_encoding",
+      "english": "ASCII",
+      "set": {
+        "code": "echo 'Hello World' | od -c | head -2\nprintf '%d ' $(echo -n 'ABC' | od -An -td1)\necho '(ASCII codes for A, B, C)'"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_encoding",
+      "english": "UTF-8",
+      "set": {
+        "code": "echo 'ciao' | file -\necho -n 'ciao' | wc -c\nlocale charmap"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_encoding",
+      "english": "Binary",
+      "set": {
+        "code": "file /usr/bin/ls\nxxd /usr/bin/ls | head -5\necho \"ELF magic: $(xxd -l4 /usr/bin/ls | awk '{print $2, $3}')\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_encoding",
+      "english": "Convert",
+      "set": {
+        "code": "echo 'hello' > /tmp/sample.txt\niconv -f UTF-8 -t ASCII /tmp/sample.txt -o /tmp/ascii.txt\nfile -i /tmp/ascii.txt"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_encoding",
+      "english": "Base64",
+      "set": {
+        "code": "echo 'secret:password123' | base64\nENCODED=$(echo -n 'admin:hunter2' | base64)\necho \"Authorization: Basic $ENCODED\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_encoding",
+      "english": "Decode",
+      "set": {
+        "code": "ENCODED='SGVsbG8gV29ybGQ='\nDECODED=$(echo \"$ENCODED\" | base64 -d)\necho \"Decoded: $DECODED\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_encoding",
+      "english": "Hex",
+      "set": {
+        "code": "echo 'Hello' | xxd\necho 'Hello' | xxd -p\necho '48656c6c6f' | xxd -r -p"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_encoding",
+      "english": "Charset",
+      "set": {
+        "code": "file -bi /etc/passwd\niconv -l | head -20\necho \"System charset: $(locale charmap)\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_encoding",
+      "english": "Newline",
+      "set": {
+        "code": "printf 'line1\\r\\nline2\\r\\n' > /tmp/win.txt\nfile /tmp/win.txt\ndos2unix /tmp/win.txt 2>&1\nfile /tmp/win.txt"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_streams",
+      "english": "Stream Redirection",
+      "set": {
+        "code": "echo 'stdout' > /tmp/out.log\necho 'stderr' 2> /tmp/err.log\nls /nonexistent /tmp 2>&1 > /tmp/all.log\nwc -l /tmp/out.log /tmp/err.log"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_streams",
+      "english": "Pipe",
+      "set": {
+        "code": "ps aux | grep -v grep | sort -rnk3 | head -5\necho '---'\ncat /etc/passwd | cut -d: -f1 | sort | head -5"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_streams",
+      "english": "Tee",
+      "set": {
+        "code": "echo 'deploy log entry' | tee /tmp/deploy.log\ndate | tee -a /tmp/deploy.log\nwc -l /tmp/deploy.log"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_streams",
+      "english": "Xargs",
+      "set": {
+        "code": "find /tmp -name '*.tmp' -print0 | xargs -0 ls -lh 2>/dev/null\necho '---'\necho 'a b c' | xargs -n1 echo 'item:'"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_streams",
+      "english": "Named Pipe",
+      "set": {
+        "code": "mkfifo /tmp/datapipe\necho 'hello from producer' > /tmp/datapipe &\ncat /tmp/datapipe\nrm /tmp/datapipe"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_streams",
+      "english": "Process Substitution",
+      "set": {
+        "code": "diff <(ls /usr/bin | head -10) <(ls /usr/sbin | head -10)\necho '---'\nwc -l <(cat /etc/passwd)"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_streams",
+      "english": "File Descriptor",
+      "set": {
+        "code": "exec 3> /tmp/fd_out.txt\necho 'Written via fd 3' >&3\nexec 3>&-\ncat /tmp/fd_out.txt"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_streams",
+      "english": "Standard Error",
+      "set": {
+        "code": "ls /nonexistent 2> /tmp/errors.log\necho \"Errors captured: $(cat /tmp/errors.log)\"\nls /nonexistent 2>/dev/null && echo 'ok' || echo 'failed silently'"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_streams",
+      "english": "Here Doc",
+      "set": {
+        "code": "cat <<EOF > /tmp/config.ini\n[database]\nhost=localhost\nport=5432\nEOF\ncat /tmp/config.ini"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_streams",
+      "english": "Delimiter",
+      "set": {
+        "code": "echo 'alice:x:1000:1000:Alice:/home/alice:/bin/bash' | cut -d: -f1,6\necho 'one,two,three' | tr ',' '\\n'\necho 'a::b' | awk -F: '{print NF, \"fields\"}'"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_logs",
+      "english": "Log Entry",
+      "set": {
+        "code": "journalctl -n 10 --no-pager\necho '---'\njournalctl -n 5 -o json-pretty --no-pager | head -20"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_logs",
+      "english": "Syslog",
+      "set": {
+        "code": "tail -20 /var/log/syslog 2>/dev/null || journalctl -n 20 --no-pager\necho '---'\nlogger 'Test syslog message from script'"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_logs",
+      "english": "Journal",
+      "set": {
+        "code": "journalctl -u ssh --since '1 hour ago' --no-pager | tail -10\necho '---'\njournalctl --disk-usage"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_logs",
+      "english": "Rotate",
+      "set": {
+        "code": "cat /etc/logrotate.d/rsyslog 2>/dev/null | head -10\necho '---'\nsudo logrotate -d /etc/logrotate.conf 2>&1 | head -10"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_logs",
+      "english": "Auth",
+      "set": {
+        "code": "sudo grep 'Failed password' /var/log/auth.log 2>/dev/null | tail -5\nFAILS=$(sudo grep -c 'Failed password' /var/log/auth.log 2>/dev/null || echo 0)\necho \"Failed login attempts: $FAILS\""
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_logs",
+      "english": "Kernel Log",
+      "set": {
+        "code": "dmesg | tail -15\necho '---'\ndmesg --level=err,warn | tail -5"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_logs",
+      "english": "Message",
+      "set": {
+        "code": "logger -p user.info 'Deployment completed successfully'\nlogger -p user.err 'Database connection failed'\njournalctl -n 2 --no-pager -t logger"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_logs",
+      "english": "Debug Log",
+      "set": {
+        "code": "journalctl -p debug -u ssh --since today --no-pager | tail -10\necho '---'\nlogger -p user.debug 'Checkpoint reached in backup script'"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_logs",
+      "english": "Audit",
+      "set": {
+        "code": "sudo ausearch -k user_modify -ts today 2>/dev/null | tail -10\necho '---'\nsudo aureport --summary 2>/dev/null | head -5"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_logs",
+      "english": "Log Tail",
+      "set": {
+        "code": "tail -F /var/log/syslog 2>/dev/null &\nTAIL_PID=$!\nsleep 2\nkill $TAIL_PID 2>/dev/null\necho 'Stopped tailing'"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_firewall",
+      "english": "Linux Firewall",
+      "set": {
+        "code": "sudo ufw status verbose\necho '---'\nsudo iptables -L -n --line-numbers | head -15"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_firewall",
+      "english": "Rule",
+      "set": {
+        "code": "sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT\nsudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT\nsudo iptables -L INPUT -n --line-numbers"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_firewall",
+      "english": "Allow",
+      "set": {
+        "code": "sudo ufw allow 443/tcp\nsudo ufw allow from 10.0.0.0/24 to any port 22\nsudo ufw status numbered"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_firewall",
+      "english": "Deny",
+      "set": {
+        "code": "sudo ufw deny 23/tcp\nsudo ufw deny from 192.168.1.100\nsudo ufw status numbered | grep DENY"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_firewall",
+      "english": "Table",
+      "set": {
+        "code": "sudo iptables -t filter -L -n -v | head -15\nsudo iptables -t nat -L -n -v | head -10\necho 'Filter and NAT tables listed'"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_firewall",
+      "english": "Chain",
+      "set": {
+        "code": "sudo iptables -L INPUT -n -v --line-numbers\necho '---'\nsudo iptables -L OUTPUT -n -v --line-numbers | head -5"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_firewall",
+      "english": "Policy",
+      "set": {
+        "code": "sudo iptables -P INPUT DROP\nsudo iptables -P FORWARD DROP\nsudo iptables -P OUTPUT ACCEPT\nsudo iptables -L | grep policy"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_firewall",
+      "english": "Stateful",
+      "set": {
+        "code": "sudo iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT\nsudo iptables -A INPUT -m conntrack --ctstate NEW -p tcp --dport 22 -j ACCEPT\nsudo iptables -L INPUT -n -v | grep conntrack"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_firewall",
+      "english": "Zone",
+      "set": {
+        "code": "sudo firewall-cmd --get-active-zones 2>/dev/null\nsudo firewall-cmd --zone=public --list-all 2>/dev/null\necho 'Zone listing complete'"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_firewall",
+      "english": "Flush",
+      "set": {
+        "code": "sudo iptables -F\nsudo iptables -X\nsudo iptables -Z\necho 'All chains flushed, custom chains deleted, counters zeroed'"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_crypto",
+      "english": "Encrypt",
+      "set": {
+        "code": "tar -czf /tmp/backup.tar.gz /etc/hostname 2>/dev/null\ngpg --batch --yes --symmetric --cipher-algo AES256 --passphrase 'test' /tmp/backup.tar.gz\nls -lh /tmp/backup.tar.gz.gpg"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_crypto",
+      "english": "Decrypt",
+      "set": {
+        "code": "gpg --batch --yes --passphrase 'test' --decrypt /tmp/backup.tar.gz.gpg > /tmp/restored.tar.gz 2>/dev/null\nls -lh /tmp/restored.tar.gz\necho 'Decryption complete'"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_crypto",
+      "english": "Keys",
+      "set": {
+        "code": "ssh-keygen -t ed25519 -C 'deploy@server' -f /tmp/deploy_key -N '' -q\nls -l /tmp/deploy_key /tmp/deploy_key.pub\ncat /tmp/deploy_key.pub"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_crypto",
+      "english": "Hash",
+      "set": {
+        "code": "echo 'important data' > /tmp/data.txt\nsha256sum /tmp/data.txt\nmd5sum /tmp/data.txt\necho 'Checksums generated'"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_crypto",
+      "english": "Signature",
+      "set": {
+        "code": "openssl dgst -sha256 -sign /tmp/private.pem -out /tmp/file.sig /tmp/data.txt 2>/dev/null\nopenssl dgst -sha256 -verify /tmp/public.pem -signature /tmp/file.sig /tmp/data.txt 2>/dev/null\necho 'Signature workflow complete'"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_crypto",
+      "english": "Certificate",
+      "set": {
+        "code": "openssl req -new -x509 -days 365 -nodes \\\n  -subj '/CN=myserver.local' \\\n  -out /tmp/cert.pem -keyout /tmp/key.pem 2>/dev/null\nopenssl x509 -in /tmp/cert.pem -noout -subject -dates"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_crypto",
+      "english": "Cipher",
+      "set": {
+        "code": "openssl ciphers -v 'HIGH:!aNULL:!MD5' | head -10\nCOUNT=$(openssl ciphers 'HIGH:!aNULL' | tr ':' '\\n' | wc -l)\necho \"Strong ciphers available: $COUNT\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_crypto",
+      "english": "Symmetric",
+      "set": {
+        "code": "echo 'secret message' | openssl enc -aes-256-cbc -pbkdf2 -pass pass:mykey -out /tmp/encrypted.bin\nopenssl enc -d -aes-256-cbc -pbkdf2 -pass pass:mykey -in /tmp/encrypted.bin\necho 'Symmetric round-trip done'"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_crypto",
+      "english": "Asymmetric",
+      "set": {
+        "code": "openssl genrsa -out /tmp/priv.pem 2048 2>/dev/null\nopenssl rsa -in /tmp/priv.pem -pubout -out /tmp/pub.pem 2>/dev/null\nls -l /tmp/priv.pem /tmp/pub.pem\necho 'RSA keypair generated'"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_crypto",
+      "english": "Entropy",
+      "set": {
+        "code": "ENTROPY=$(cat /proc/sys/kernel/random/entropy_avail)\necho \"Available entropy: $ENTROPY bits\"\n[ \"$ENTROPY\" -lt 200 ] && echo 'WARNING: low entropy' || echo 'Entropy pool OK'"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_access",
+      "english": "Sudoers",
+      "set": {
+        "code": "sudo grep -v '^#' /etc/sudoers | grep -v '^$' | head -10\necho '---'\nsudo grep -r 'ALL' /etc/sudoers.d/ 2>/dev/null"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_access",
+      "english": "Privilege",
+      "set": {
+        "code": "sudo -l 2>/dev/null | tail -10\necho '---'\nid\ngroups"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_access",
+      "english": "Escalate",
+      "set": {
+        "code": "whoami\nsudo whoami\nsudo -u www-data whoami\necho \"Back to: $(whoami)\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_access",
+      "english": "PAM",
+      "set": {
+        "code": "cat /etc/pam.d/common-auth | grep -v '^#' | head -5\necho '---'\nls /etc/pam.d/ | head -10"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_access",
+      "english": "Chroot",
+      "set": {
+        "code": "sudo mkdir -p /tmp/jail/{bin,lib,lib64}\nsudo cp /bin/bash /tmp/jail/bin/\nldd /bin/bash\necho 'Chroot jail skeleton created at /tmp/jail'"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_access",
+      "english": "Lock",
+      "set": {
+        "code": "sudo passwd -S alice 2>/dev/null\nsudo passwd -l alice 2>/dev/null\nsudo passwd -S alice 2>/dev/null\necho 'Account locked (L status)'"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_access",
+      "english": "Expiration",
+      "set": {
+        "code": "sudo chage -l alice 2>/dev/null | head -5\nsudo chage -M 90 -W 14 alice 2>/dev/null\necho 'Password expires in 90 days, warn at 14'"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_access",
+      "english": "Sudo Audit",
+      "set": {
+        "code": "sudo grep 'COMMAND=' /var/log/auth.log 2>/dev/null | tail -10\nCOUNT=$(sudo grep -c 'COMMAND=' /var/log/auth.log 2>/dev/null || echo 0)\necho \"Total sudo commands today: $COUNT\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_access",
+      "english": "Restricted",
+      "set": {
+        "code": "sudo useradd -s /bin/rbash restricted_user 2>/dev/null\nsudo mkdir -p /home/restricted_user/bin\necho 'Restricted shell assigned -- user cannot cd or modify PATH'"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_access",
+      "english": "Compliance",
+      "set": {
+        "code": "sudo lynis audit system --quick 2>/dev/null | tail -15\necho '---'\nsudo lynis show warnings 2>/dev/null | head -10"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_audit",
+      "english": "Audit Trail",
+      "set": {
+        "code": "sudo ausearch -ts today -m USER_CMD --no-pager 2>/dev/null | tail -15\necho '---'\nsudo aureport --summary 2>/dev/null | head -10"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_audit",
+      "english": "Logwatch",
+      "set": {
+        "code": "sudo logwatch --detail med --range today --service sshd 2>/dev/null | head -20\necho '---'\necho 'Logwatch daily report generated'"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_audit",
+      "english": "Intrusion",
+      "set": {
+        "code": "sudo aide --check 2>/dev/null | head -20\necho '---'\nsudo rkhunter --check --skip-keypress 2>/dev/null | tail -10"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_audit",
+      "english": "Fail2Ban",
+      "set": {
+        "code": "sudo fail2ban-client status sshd 2>/dev/null\necho '---'\nsudo fail2ban-client get sshd bantime 2>/dev/null\nsudo fail2ban-client get sshd maxretry 2>/dev/null"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_audit",
+      "english": "Event",
+      "set": {
+        "code": "sudo ausearch -m USER_LOGIN -ts today --no-pager 2>/dev/null | tail -10\nLOGINS=$(sudo ausearch -m USER_LOGIN -ts today 2>/dev/null | grep -c 'type=USER_LOGIN')\necho \"Login events today: $LOGINS\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_audit",
+      "english": "Alert",
+      "set": {
+        "code": "DISK_USE=$(df / --output=pcent | tail -1 | tr -d ' %')\nif [ \"$DISK_USE\" -gt 85 ]; then\n  logger -p user.crit \"ALERT: disk usage at ${DISK_USE}%\"\nfi\necho \"Current disk usage: ${DISK_USE}%\""
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_audit",
+      "english": "Monitor",
+      "set": {
+        "code": "sudo auditctl -w /etc/passwd -p wa -k passwd_watch\nsudo auditctl -w /etc/shadow -p wa -k shadow_watch\nsudo auditctl -l | grep -E 'passwd|shadow'"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_audit",
+      "english": "Baseline",
+      "set": {
+        "code": "sudo aide --init 2>/dev/null\nsudo mv /var/lib/aide/aide.db.new.gz /var/lib/aide/aide.db.gz 2>/dev/null\necho 'AIDE baseline database initialized'"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_audit",
+      "english": "Forensics",
+      "set": {
+        "code": "sudo dd if=/dev/sda of=/tmp/mbr_backup.img bs=512 count=1 2>/dev/null\nmd5sum /tmp/mbr_backup.img 2>/dev/null\necho 'MBR forensic copy created with hash for chain of custody'"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_audit",
+      "english": "Incident",
+      "set": {
+        "code": "TIMESTAMP=$(date -u +%Y%m%dT%H%M%SZ)\nsudo last -10 | head -5\nsudo grep 'Failed password' /var/log/auth.log 2>/dev/null | tail -3\necho \"Incident review at $TIMESTAMP\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_packages",
+      "english": "Package",
+      "set": {
+        "code": "apt show nginx 2>/dev/null | head -10\necho '---'\ndpkg -l | grep nginx | head -3"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_packages",
+      "english": "Repository",
+      "set": {
+        "code": "cat /etc/apt/sources.list | grep -v '^#' | head -5\necho '---'\nls /etc/apt/sources.list.d/\necho 'Repository sources listed'"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_packages",
+      "english": "Install",
+      "set": {
+        "code": "sudo apt install -y curl jq\ndpkg -s curl | grep -E 'Status|Version'\nwhich curl && curl --version | head -1"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_packages",
+      "english": "Package Index Update",
+      "set": {
+        "code": "sudo apt update 2>&1 | tail -3\necho '---'\napt list --upgradable 2>/dev/null | head -5"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_packages",
+      "english": "Upgrade",
+      "set": {
+        "code": "sudo apt update -qq\nUPGRADES=$(apt list --upgradable 2>/dev/null | tail -n +2 | wc -l)\necho \"Packages to upgrade: $UPGRADES\"\nsudo apt upgrade -y --dry-run 2>&1 | tail -3"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_packages",
+      "english": "Package Removal",
+      "set": {
+        "code": "sudo apt purge -y telnet 2>/dev/null\nsudo apt autoremove -y 2>&1 | tail -3\ndpkg -l | grep telnet || echo 'Package fully removed'"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_packages",
+      "english": "Dependency",
+      "set": {
+        "code": "apt-cache depends nginx 2>/dev/null | head -10\necho '---'\napt-cache rdepends curl 2>/dev/null | head -10"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_packages",
+      "english": "Source Code",
+      "set": {
+        "code": "apt-cache showsrc coreutils 2>/dev/null | grep -E 'Package|Version|Binary' | head -6\necho '---'\napt source --download-only coreutils 2>/dev/null || echo 'Source download attempted'"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_packages",
+      "english": "Binary Package",
+      "set": {
+        "code": "dpkg -l | head -15\nPKG_COUNT=$(dpkg -l | grep '^ii' | wc -l)\necho \"Installed packages: $PKG_COUNT\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_packages",
+      "english": "Mirror",
+      "set": {
+        "code": "grep -h '^deb ' /etc/apt/sources.list 2>/dev/null | head -3\necho '---'\nMIRROR=$(grep -m1 'http' /etc/apt/sources.list 2>/dev/null | awk '{print $2}')\necho \"Current mirror: $MIRROR\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_backup",
+      "english": "Backup",
+      "set": {
+        "code": "STAMP=$(date +%F)\ntar -czf /tmp/etc-backup-$STAMP.tar.gz /etc/hostname /etc/hosts 2>/dev/null\nls -lh /tmp/etc-backup-$STAMP.tar.gz\necho \"Backup created: etc-backup-$STAMP.tar.gz\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_backup",
+      "english": "Restore",
+      "set": {
+        "code": "tar -tzf /tmp/etc-backup-*.tar.gz 2>/dev/null | head -5\nmkdir -p /tmp/restore-test\ntar -xzf /tmp/etc-backup-*.tar.gz -C /tmp/restore-test/ 2>/dev/null\necho 'Archive listed and test restore done'"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_backup",
+      "english": "Sync",
+      "set": {
+        "code": "mkdir -p /tmp/sync-target\nrsync -avz /etc/hostname /tmp/sync-target/\nls -l /tmp/sync-target/\necho 'Sync complete'"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_backup",
+      "english": "Snapshot",
+      "set": {
+        "code": "SNAP=\"snapshot-$(date +%F-%H%M)\"\nsudo btrfs subvolume snapshot -r /mnt/data \"/mnt/data/.snapshots/$SNAP\" 2>/dev/null\necho \"Created read-only snapshot: $SNAP\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_backup",
+      "english": "Incremental",
+      "set": {
+        "code": "YESTERDAY=/backup/$(date -d yesterday +%F)\nTODAY=/backup/$(date +%F)\nrsync -avz --link-dest=\"$YESTERDAY\" /home/ \"$TODAY/\" 2>/dev/null\necho \"Incremental backup using hardlinks from $YESTERDAY\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_backup",
+      "english": "Backup Archive",
+      "set": {
+        "code": "tar -czf - /etc/hosts 2>/dev/null | gpg --batch --yes --symmetric --passphrase 'backup' -o /tmp/hosts.tar.gz.gpg\nls -lh /tmp/hosts.tar.gz.gpg\necho 'Encrypted archive created'"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_backup",
+      "english": "Clone",
+      "set": {
+        "code": "sudo dd if=/dev/sda of=/dev/sdb bs=4M status=progress conv=noerror,sync 2>/dev/null &\nDD_PID=$!\necho \"Disk clone PID: $DD_PID\"\necho 'Send USR1 to check progress: kill -USR1 $DD_PID'"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_backup",
+      "english": "Remote Backup",
+      "set": {
+        "code": "rsync -avz -e 'ssh -p 22' /etc/hostname backup@offsite:/backup/ 2>/dev/null\necho '---'\nscp /tmp/etc-backup-*.tar.gz backup@offsite:/backup/ 2>/dev/null\necho 'Remote backup attempted'"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_backup",
+      "english": "Retention",
+      "set": {
+        "code": "BACKUP_DIR='/backup'\nfind \"$BACKUP_DIR\" -name '*.tar.gz' -mtime +30 -print 2>/dev/null\nfind \"$BACKUP_DIR\" -name '*.tar.gz' -mtime +30 -delete 2>/dev/null\necho 'Backups older than 30 days removed'"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_backup",
+      "english": "Integrity",
+      "set": {
+        "code": "sha256sum /tmp/etc-backup-*.tar.gz > /tmp/SHA256SUMS 2>/dev/null\ncat /tmp/SHA256SUMS\nsha256sum -c /tmp/SHA256SUMS 2>/dev/null\necho 'Integrity verification done'"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_web",
+      "english": "Web Server",
+      "set": {
+        "code": "sudo systemctl status nginx --no-pager 2>/dev/null | head -5\necho '---'\nnginx -v 2>&1\ncurl -sI http://localhost | head -3"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_web",
+      "english": "Request",
+      "set": {
+        "code": "curl -s -o /dev/null -w 'HTTP %{http_code} in %{time_total}s\\n' https://example.com\ncurl -s https://httpbin.org/get | head -5\necho 'Request complete'"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_web",
+      "english": "Response",
+      "set": {
+        "code": "STATUS=$(curl -s -o /dev/null -w '%{http_code}' https://example.com)\nSIZE=$(curl -sI https://example.com | grep -i content-length | awk '{print $2}')\necho \"Status: $STATUS, Size: $SIZE bytes\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_web",
+      "english": "Header",
+      "set": {
+        "code": "curl -sI https://example.com | head -10\necho '---'\ncurl -s -H 'Accept: application/json' -H 'X-Custom: test' https://httpbin.org/headers | head -5"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_web",
+      "english": "Proxy",
+      "set": {
+        "code": "export http_proxy='http://proxy.corp:8080'\nexport https_proxy='http://proxy.corp:8080'\ncurl -v --proxy http://proxy.corp:8080 https://example.com 2>&1 | head -5\necho 'Proxy configuration set'"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_web",
+      "english": "Load Balancing",
+      "set": {
+        "code": "for i in 1 2 3 4 5; do\n  SERVER=$(curl -sI http://lb.local | grep X-Served-By | awk '{print $2}')\n  echo \"Request $i served by: $SERVER\"\ndone"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_web",
+      "english": "Access Log",
+      "set": {
+        "code": "sudo tail -5 /var/log/nginx/access.log 2>/dev/null\necho '---'\nsudo awk '{print $1}' /var/log/nginx/access.log 2>/dev/null | sort | uniq -c | sort -rn | head -5"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_web",
+      "english": "Configuration",
+      "set": {
+        "code": "sudo nginx -t 2>&1\necho '---'\nsudo nginx -T 2>/dev/null | grep -E 'server_name|listen' | head -5\necho 'Config test complete'"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_web",
+      "english": "Virtual Host",
+      "set": {
+        "code": "ls /etc/nginx/sites-enabled/ 2>/dev/null\necho '---'\nsudo grep -r 'server_name' /etc/nginx/sites-enabled/ 2>/dev/null\necho 'Virtual host configurations listed'"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_web",
+      "english": "SSL/TLS",
+      "set": {
+        "code": "sudo certbot certificates 2>/dev/null | head -10\necho '---'\nopenssl s_client -connect example.com:443 </dev/null 2>/dev/null | grep -E 'subject|issuer|dates'"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_db",
+      "english": "Database",
+      "set": {
+        "code": "sudo systemctl status mysql --no-pager 2>/dev/null | head -5\necho '---'\nmysql --version 2>/dev/null || psql --version 2>/dev/null\necho 'Database engine checked'"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_db",
+      "english": "Query",
+      "set": {
+        "code": "mysql -u root -e 'SELECT user, host FROM mysql.user;' 2>/dev/null\necho '---'\nmysql -u root -e 'SHOW DATABASES;' 2>/dev/null\necho 'Query complete'"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_db",
+      "english": "DB Table",
+      "set": {
+        "code": "mysql -u root -e 'USE information_schema; SELECT TABLE_NAME, TABLE_ROWS FROM TABLES WHERE TABLE_SCHEMA=\"appdb\" LIMIT 10;' 2>/dev/null\necho '---'\necho 'Table listing complete'"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_db",
+      "english": "Record",
+      "set": {
+        "code": "mysql -u root -e 'SELECT id, email, created_at FROM appdb.users ORDER BY id DESC LIMIT 5;' 2>/dev/null\nROWS=$(mysql -u root -sNe 'SELECT COUNT(*) FROM appdb.users;' 2>/dev/null || echo 0)\necho \"Total records: $ROWS\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_db",
+      "english": "Client",
+      "set": {
+        "code": "mysql -h localhost -P 3306 -u readonly -e 'SELECT 1;' 2>/dev/null\necho '---'\npsql -h localhost -U readonly -c 'SELECT version();' 2>/dev/null\necho 'Client connection tested'"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_db",
+      "english": "Server",
+      "set": {
+        "code": "sudo systemctl restart mysql 2>/dev/null\nsudo systemctl status mysql --no-pager 2>/dev/null | head -3\nss -tlnp | grep 3306\necho 'DB server restarted'"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_db",
+      "english": "Dump",
+      "set": {
+        "code": "STAMP=$(date +%F)\nmysqldump -u root --single-transaction appdb > \"/backup/appdb-$STAMP.sql\" 2>/dev/null\nls -lh \"/backup/appdb-$STAMP.sql\" 2>/dev/null\necho \"Dump saved: appdb-$STAMP.sql\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_db",
+      "english": "Import",
+      "set": {
+        "code": "mysql -u root -e 'CREATE DATABASE IF NOT EXISTS staging;' 2>/dev/null\nmysql -u root staging < /backup/appdb-latest.sql 2>/dev/null\necho 'Database imported into staging'"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_db",
+      "english": "DB Connection Pool",
+      "set": {
+        "code": "mysql -u root -e \"SHOW STATUS LIKE 'Threads_connected';\" 2>/dev/null\nmysql -u root -e \"SHOW VARIABLES LIKE 'max_connections';\" 2>/dev/null\necho 'Connection pool status checked'"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_db",
+      "english": "Grant",
+      "set": {
+        "code": "mysql -u root -e \"CREATE USER IF NOT EXISTS 'appuser'@'%' IDENTIFIED BY 'securepass';\" 2>/dev/null\nmysql -u root -e \"GRANT SELECT, INSERT ON appdb.* TO 'appuser'@'%';\" 2>/dev/null\nmysql -u root -e \"SHOW GRANTS FOR 'appuser'@'%';\" 2>/dev/null"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_containers",
+      "english": "Container",
+      "set": {
+        "code": "docker run -d --name web -p 8080:80 nginx:alpine\ndocker ps --filter name=web\ncurl -s http://localhost:8080 | head -3\ndocker stop web && docker rm web"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_containers",
+      "english": "Image",
+      "set": {
+        "code": "docker pull alpine:3.19\ndocker image ls alpine\ndocker image inspect alpine:3.19 --format '{{.Size}}' | numfmt --to=iec"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_containers",
+      "english": "Docker",
+      "set": {
+        "code": "docker info --format '{{.ServerVersion}}'\ndocker system df\necho \"Running containers: $(docker ps -q | wc -l)\""
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_containers",
+      "english": "Docker Volume",
+      "set": {
+        "code": "docker volume create appdata\ndocker volume inspect appdata --format '{{.Mountpoint}}'\ndocker run --rm -v appdata:/data alpine sh -c 'echo test > /data/file.txt && cat /data/file.txt'"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_containers",
+      "english": "Network",
+      "set": {
+        "code": "docker network create --driver bridge appnet\ndocker network ls\ndocker network inspect appnet --format '{{.IPAM.Config}}'\ndocker network rm appnet"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_containers",
+      "english": "Orchestration",
+      "set": {
+        "code": "docker compose version\ndocker compose -f docker-compose.yml up -d 2>/dev/null\ndocker compose ps\necho 'Stack orchestrated via compose'"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_containers",
+      "english": "Registry",
+      "set": {
+        "code": "docker tag myapp:latest registry.internal/myapp:1.2.3\ndocker push registry.internal/myapp:1.2.3 2>/dev/null\necho 'Image tagged and pushed to private registry'"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_containers",
+      "english": "Namespace",
+      "set": {
+        "code": "PID=$(docker inspect --format '{{.State.Pid}}' web 2>/dev/null || echo 1)\nsudo lsns -p \"$PID\" 2>/dev/null | head -10\necho 'Container namespaces: pid, net, mnt, uts, ipc, user'"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_containers",
+      "english": "Cgroups",
+      "set": {
+        "code": "docker run -d --name capped --cpus='1.0' --memory='256m' nginx:alpine\ndocker stats capped --no-stream\ndocker rm -f capped"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_containers",
+      "english": "Microservices",
+      "set": {
+        "code": "docker compose ps 2>/dev/null\nfor SVC in api worker db redis; do\n  echo \"$SVC: $(docker inspect --format '{{.State.Status}}' $SVC 2>/dev/null || echo 'not running')\"\ndone"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_virtualization",
+      "english": "Virtual Machine",
+      "set": {
+        "code": "virsh list --all 2>/dev/null\nVMS=$(virsh list --all 2>/dev/null | grep -c running || echo 0)\necho \"Running VMs: $VMS\"\nvirsh dominfo ubuntu24 2>/dev/null | head -5"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_virtualization",
+      "english": "Hypervisor",
+      "set": {
+        "code": "grep -Ec '(vmx|svm)' /proc/cpuinfo\nlsmod | grep kvm\nvirsh version 2>/dev/null | head -3"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_virtualization",
+      "english": "Guest",
+      "set": {
+        "code": "virsh list --all 2>/dev/null\nvirsh dominfo ubuntu24 2>/dev/null | grep -E 'State|CPU|Max memory'\necho 'Guest VM details retrieved'"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_virtualization",
+      "english": "Hypervisor Host",
+      "set": {
+        "code": "virsh nodeinfo 2>/dev/null\necho '---'\nvirsh nodecpumap 2>/dev/null\necho 'Host hypervisor resources listed'"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_virtualization",
+      "english": "VM Snapshot",
+      "set": {
+        "code": "virsh snapshot-create-as --domain ubuntu24 --name pre-upgrade --description 'Before upgrade' 2>/dev/null\nvirsh snapshot-list ubuntu24 2>/dev/null\necho 'VM snapshot created for rollback'"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_virtualization",
+      "english": "Emulation",
+      "set": {
+        "code": "qemu-system-x86_64 --version 2>/dev/null | head -1\nqemu-img info /var/lib/libvirt/images/ubuntu24.qcow2 2>/dev/null | head -5\necho 'QEMU emulator checked'"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_virtualization",
+      "english": "Provisioning",
+      "set": {
+        "code": "virt-install --name testvm --memory 2048 --vcpus 2 \\\n  --disk size=20 --os-variant ubuntu24.04 \\\n  --cdrom /iso/ubuntu-24.04.iso --noautoconsole 2>/dev/null\necho 'VM provisioned with 2 vCPUs, 2GB RAM, 20GB disk'"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_virtualization",
+      "english": "Cloud",
+      "set": {
+        "code": "cloud-init status 2>/dev/null\ncat /run/cloud-init/result.json 2>/dev/null\necho \"Instance ID: $(cloud-init query instance-id 2>/dev/null || echo 'not a cloud instance')\""
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_virtualization",
+      "english": "Passthrough",
+      "set": {
+        "code": "lspci -nnk | grep -A2 'NVIDIA' 2>/dev/null\necho '---'\nvirsh nodedev-list --cap pci 2>/dev/null | head -5\necho 'PCI passthrough devices listed'"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_virtualization",
+      "english": "Migration",
+      "set": {
+        "code": "virsh migrate --live --persistent ubuntu24 qemu+ssh://node2/system 2>/dev/null\necho '---'\nvirsh list --all 2>/dev/null\necho 'Live migration to node2 attempted'"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_performance",
+      "english": "Benchmark",
+      "set": {
+        "code": "CORES=$(nproc)\nsysbench cpu --threads=\"$CORES\" --time=10 run 2>/dev/null | grep 'events per second'\necho \"Benchmark ran on $CORES threads\""
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_performance",
+      "english": "Tuning",
+      "set": {
+        "code": "sysctl net.core.somaxconn\nsudo sysctl -w net.core.somaxconn=4096\nsysctl net.core.somaxconn\necho 'TCP listen backlog tuned'"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_performance",
+      "english": "Performance Profile",
+      "set": {
+        "code": "TARGET=$(pgrep -f nginx | head -1)\nsudo perf record -F 99 -g -p \"$TARGET\" -- sleep 10 2>/dev/null\nsudo perf report --stdio 2>/dev/null | head -20\necho 'CPU profile captured'"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_performance",
+      "english": "Strace Trace",
+      "set": {
+        "code": "strace -c -f ls /etc 2>&1 | tail -15\necho '---'\nstrace -e trace=openat ls /tmp 2>&1 | head -10"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_performance",
+      "english": "P99 Latency",
+      "set": {
+        "code": "for i in $(seq 1 100); do\n  curl -s -o /dev/null -w '%{time_total}\\n' http://localhost:8080\ndone | sort -n | tail -1 | xargs -I{} echo 'P99 latency: {}s'"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_performance",
+      "english": "Throughput",
+      "set": {
+        "code": "dd if=/dev/zero of=/tmp/bench.dat bs=1M count=256 oflag=direct 2>&1 | tail -1\nrm -f /tmp/bench.dat\necho 'Disk throughput measured'"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_performance",
+      "english": "Optimization",
+      "set": {
+        "code": "echo 'deadline' | sudo tee /sys/block/sda/queue/scheduler 2>/dev/null\nsudo sysctl -w vm.swappiness=10\necho \"Swappiness: $(cat /proc/sys/vm/swappiness)\"\necho 'I/O scheduler and swap tuned'"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_performance",
+      "english": "Cache",
+      "set": {
+        "code": "free -h | grep Mem\nsync && echo 3 | sudo tee /proc/sys/vm/drop_caches > /dev/null\nfree -h | grep Mem\necho 'Page cache cleared'"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_performance",
+      "english": "Overhead",
+      "set": {
+        "code": "time ls /etc > /dev/null 2>&1\necho '---'\nvmstat 1 3\necho 'System overhead sampled'"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_performance",
+      "english": "Scalability",
+      "set": {
+        "code": "for T in 1 2 4 8; do\n  echo -n \"Threads=$T: \"\n  sysbench cpu --threads=$T --time=5 run 2>/dev/null | grep 'events per second'\ndone"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_kernel_adv",
+      "english": "Syscall",
+      "set": {
+        "code": "strace -c ls /tmp 2>&1 | tail -15\necho '---'\nstrace -e trace=write echo 'hello' 2>&1 | head -5"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_kernel_adv",
+      "english": "Interrupt",
+      "set": {
+        "code": "cat /proc/interrupts | head -5\nIRQ_TOTAL=$(awk '{s+=$2} END {print s}' /proc/interrupts 2>/dev/null)\necho \"Total IRQs (CPU0): $IRQ_TOTAL\""
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_kernel_adv",
+      "english": "Scheduler",
+      "set": {
+        "code": "cat /proc/1/sched 2>/dev/null | head -5\nchrt -p 1 2>/dev/null\necho \"Available policies: $(chrt -m 2>/dev/null)\""
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_kernel_adv",
+      "english": "Memory Management",
+      "set": {
+        "code": "cat /proc/meminfo | grep -E 'MemTotal|MemFree|Cached|SwapTotal'\necho '---'\nsysctl vm.swappiness vm.dirty_ratio"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_kernel_adv",
+      "english": "VFS Filesystem Layer",
+      "set": {
+        "code": "cat /proc/filesystems | head -10\nmount | awk '{print $5}' | sort -u\necho \"Mounted filesystem types listed\""
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_kernel_adv",
+      "english": "Kernel Driver",
+      "set": {
+        "code": "sudo modprobe dummy\nlsmod | grep dummy\nmodinfo dummy | head -5\nsudo modprobe -r dummy"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_kernel_adv",
+      "english": "Kernel Patch File",
+      "set": {
+        "code": "diff -u old_module.c new_module.c > fix.patch 2>/dev/null\npatch --dry-run -p1 < fix.patch 2>/dev/null\necho 'Patch generated and dry-run tested'"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_kernel_adv",
+      "english": "Mainline",
+      "set": {
+        "code": "KVER=$(uname -r)\necho \"Running kernel: $KVER\"\ncurl -s https://www.kernel.org/ 2>/dev/null | grep -oP 'stable.*?[0-9]+\\.[0-9]+\\.[0-9]+' | head -1\necho 'Checked mainline kernel version'"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_kernel_adv",
+      "english": "LTS",
+      "set": {
+        "code": "uname -r\ncat /etc/os-release | grep -E 'VERSION|SUPPORT'\napt list --installed 2>/dev/null | grep linux-image | head -3\necho 'LTS kernel and support info listed'"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_kernel_adv",
+      "english": "Compile",
+      "set": {
+        "code": "CORES=$(nproc)\necho \"Compiling with $CORES parallel jobs\"\nmake -j\"$CORES\" bzImage 2>/dev/null\nmake -j\"$CORES\" modules 2>/dev/null\necho 'Kernel build complete'"
+      }
+    }
+  ]
+}

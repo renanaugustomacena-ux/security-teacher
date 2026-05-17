@@ -1,0 +1,1204 @@
+{
+  "fixes": [
+    {
+      "level": "0",
+      "lesson": "db_foundations_3",
+      "english": "CHECK Constraint",
+      "set": {
+        "code": "CREATE TABLE products (\n  id SERIAL PRIMARY KEY,\n  price DECIMAL CHECK (price > 0),\n  age INT CHECK (age >= 0)\n);"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_1",
+      "english": "Column",
+      "set": {
+        "code": "ALTER TABLE users\n  ADD COLUMN age INT,\n  ADD COLUMN city VARCHAR(100);"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_3",
+      "english": "Composite Key",
+      "set": {
+        "code": "CREATE TABLE enrollments (\n  student_id INT,\n  course_id INT,\n  PRIMARY KEY (student_id, course_id)\n);"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_1",
+      "english": "Database",
+      "set": {
+        "code": "CREATE DATABASE my_app;\nGRANT ALL PRIVILEGES\n  ON DATABASE my_app TO admin;"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_3",
+      "english": "Default Value",
+      "set": {
+        "code": "CREATE TABLE posts (\n  id SERIAL PRIMARY KEY,\n  status VARCHAR(20) DEFAULT 'draft',\n  created_at TIMESTAMP DEFAULT NOW()\n);"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_3",
+      "english": "Foreign Key",
+      "set": {
+        "code": "CREATE TABLE orders (\n  id INT PRIMARY KEY,\n  user_id INT REFERENCES users(id)\n);"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_4",
+      "english": "Metadata",
+      "set": {
+        "code": "SELECT table_name, column_name\nFROM information_schema.columns\nWHERE table_schema = 'public';"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_3",
+      "english": "NOT NULL",
+      "set": {
+        "code": "CREATE TABLE users (\n  id SERIAL PRIMARY KEY,\n  name VARCHAR(50) NOT NULL,\n  email VARCHAR(255) NOT NULL\n);"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_3",
+      "english": "Primary Key",
+      "set": {
+        "code": "CREATE TABLE products (\n  id INT PRIMARY KEY,\n  name VARCHAR(100)\n);"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_1",
+      "english": "Query",
+      "set": {
+        "code": "SELECT name, email\nFROM users\nWHERE active = true;"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_1",
+      "english": "Result Set",
+      "set": {
+        "code": "SELECT name, email\nFROM users\nWHERE city = 'Roma';\n-- Returns matching rows"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_1",
+      "english": "Row",
+      "set": {
+        "code": "INSERT INTO users (id, name, email)\nVALUES (1, 'Marco', 'marco@email.com');"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_1",
+      "english": "Schema",
+      "set": {
+        "code": "CREATE SCHEMA analytics;\nCREATE TABLE analytics.events (\n  id SERIAL PRIMARY KEY,\n  event_type VARCHAR(50)\n);"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_2",
+      "english": "SQL",
+      "set": {
+        "code": "-- SQL: Structured Query Language\nSELECT name, age\nFROM users\nWHERE age >= 18;"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_1",
+      "english": "Table",
+      "set": {
+        "code": "CREATE TABLE users (\n  id INT PRIMARY KEY,\n  name VARCHAR(50) NOT NULL,\n  email VARCHAR(255) UNIQUE\n);"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_3",
+      "english": "Unique Constraint",
+      "set": {
+        "code": "CREATE TABLE users (\n  id SERIAL PRIMARY KEY,\n  email VARCHAR(255) UNIQUE\n);"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_1",
+      "english": "AND",
+      "set": {
+        "code": "SELECT name, city\nFROM users\nWHERE age > 18\n  AND active = true\n  AND city IS NOT NULL;"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_1",
+      "english": "BETWEEN",
+      "set": {
+        "code": "SELECT name, age\nFROM users\nWHERE age BETWEEN 18 AND 65\nORDER BY age;"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_3",
+      "english": "COALESCE",
+      "set": {
+        "code": "SELECT\n  name,\n  COALESCE(nickname, name) AS display_name\nFROM users;"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_3",
+      "english": "COUNT",
+      "set": {
+        "code": "SELECT COUNT(*) AS total_users\nFROM users\nWHERE active = true;"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_4",
+      "english": "DATE_TRUNC",
+      "set": {
+        "code": "SELECT\n  DATE_TRUNC('month', created_at) AS month,\n  COUNT(*)\nFROM orders\nGROUP BY month;"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_2",
+      "english": "DELETE",
+      "set": {
+        "code": "DELETE FROM users\nWHERE active = false\n  AND last_login < '2024-01-01';"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_3",
+      "english": "DISTINCT",
+      "set": {
+        "code": "SELECT DISTINCT country\nFROM users\nORDER BY country;"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_4",
+      "english": "EXTRACT",
+      "set": {
+        "code": "SELECT\n  EXTRACT(YEAR FROM created_at) AS year,\n  EXTRACT(MONTH FROM created_at) AS month\nFROM orders;"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_1",
+      "english": "IN",
+      "set": {
+        "code": "SELECT name, country\nFROM users\nWHERE country IN ('IT', 'FR', 'DE')\nORDER BY name;"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_2",
+      "english": "INSERT",
+      "set": {
+        "code": "INSERT INTO users (name, email, age)\nVALUES ('Marco', 'marco@email.com', 30);"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_3",
+      "english": "LIKE",
+      "set": {
+        "code": "SELECT name, email\nFROM users\nWHERE name LIKE 'M%'\nORDER BY name;"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_3",
+      "english": "LIMIT",
+      "set": {
+        "code": "SELECT name, email\nFROM users\nORDER BY created_at DESC\nLIMIT 10;"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_3",
+      "english": "OFFSET",
+      "set": {
+        "code": "SELECT name, email\nFROM users\nORDER BY name\nLIMIT 10 OFFSET 20;"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_2",
+      "english": "ON CONFLICT",
+      "set": {
+        "code": "INSERT INTO users (email, name)\nVALUES ('anna@email.com', 'Anna')\nON CONFLICT (email) DO NOTHING;"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_3",
+      "english": "Pagination",
+      "set": {
+        "code": "-- Page 3 (20 items per page)\nSELECT name, email\nFROM users\nORDER BY id\nLIMIT 20 OFFSET 40;"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_2",
+      "english": "RETURNING",
+      "set": {
+        "code": "INSERT INTO users (name, email)\nVALUES ('Eva', 'eva@email.com')\nRETURNING id, created_at;"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_1",
+      "english": "SELECT",
+      "set": {
+        "code": "SELECT name, email, age\nFROM users\nWHERE active = true;"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_2",
+      "english": "SET",
+      "set": {
+        "code": "UPDATE users\nSET name = 'Mario',\n    age = 31,\n    updated_at = NOW()\nWHERE id = 5;"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_2",
+      "english": "TRUNCATE",
+      "set": {
+        "code": "-- Remove all rows instantly\nTRUNCATE TABLE logs;\n-- Unlike DELETE, cannot be rolled back"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_2",
+      "english": "UPDATE",
+      "set": {
+        "code": "UPDATE users\nSET active = false,\n    updated_at = NOW()\nWHERE last_login < '2025-01-01';"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_2",
+      "english": "UPSERT",
+      "set": {
+        "code": "INSERT INTO users (email, name)\nVALUES ('marco@email.com', 'Marco')\nON CONFLICT (email)\nDO UPDATE SET name = EXCLUDED.name;"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_2",
+      "english": "VALUES",
+      "set": {
+        "code": "INSERT INTO users (id, name)\nVALUES\n  (1, 'Anna'),\n  (2, 'Luca'),\n  (3, 'Eva');"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_1",
+      "english": "WHERE",
+      "set": {
+        "code": "SELECT name, email\nFROM users\nWHERE active = true\n  AND age >= 18;"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_6",
+      "english": "Aggregate Function",
+      "set": {
+        "code": "SELECT\n  COUNT(*) AS total,\n  AVG(price) AS avg_price,\n  MAX(price) AS max_price\nFROM products;"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_7",
+      "english": "Alias",
+      "set": {
+        "code": "SELECT u.name AS user_name,\n       o.total AS order_total\nFROM users u\nJOIN orders o ON u.id = o.user_id;"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_8",
+      "english": "CASE",
+      "set": {
+        "code": "SELECT name,\n  CASE\n    WHEN age >= 18 THEN 'adult'\n    ELSE 'minor'\n  END AS category\nFROM users;"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_7",
+      "english": "EXCEPT",
+      "set": {
+        "code": "SELECT id FROM users\nEXCEPT\nSELECT user_id FROM orders;\n-- Users who never ordered"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_5",
+      "english": "FULL OUTER JOIN",
+      "set": {
+        "code": "SELECT a.name, b.name\nFROM employees a\nFULL OUTER JOIN departments b\n  ON a.dept_id = b.id;"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_6",
+      "english": "GROUP BY",
+      "set": {
+        "code": "SELECT country, COUNT(*) AS total\nFROM users\nGROUP BY country\nORDER BY total DESC;"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_6",
+      "english": "HAVING",
+      "set": {
+        "code": "SELECT country, COUNT(*) AS total\nFROM users\nGROUP BY country\nHAVING COUNT(*) > 100;"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_5",
+      "english": "INNER JOIN",
+      "set": {
+        "code": "SELECT u.name, o.total, o.created_at\nFROM users u\nINNER JOIN orders o ON u.id = o.user_id\nWHERE o.total > 100;"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_7",
+      "english": "INTERSECT",
+      "set": {
+        "code": "SELECT email FROM newsletter_subscribers\nINTERSECT\nSELECT email FROM active_users;"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_5",
+      "english": "JOIN",
+      "set": {
+        "code": "SELECT u.name, o.total\nFROM orders o\nJOIN users u ON o.user_id = u.id;"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_5",
+      "english": "LEFT JOIN",
+      "set": {
+        "code": "SELECT u.name, o.total\nFROM users u\nLEFT JOIN orders o ON u.id = o.user_id\nWHERE o.id IS NULL;\n-- Users with no orders"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_7",
+      "english": "ORDER BY",
+      "set": {
+        "code": "SELECT name, created_at\nFROM users\nORDER BY created_at DESC\nLIMIT 20;"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_5",
+      "english": "SELF JOIN",
+      "set": {
+        "code": "SELECT e.name AS employee,\n       m.name AS manager\nFROM employees e\nJOIN employees m ON e.manager_id = m.id;"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_6",
+      "english": "SUM",
+      "set": {
+        "code": "SELECT user_id,\n  SUM(amount) AS total_spent\nFROM orders\nGROUP BY user_id;"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_7",
+      "english": "UNION",
+      "set": {
+        "code": "SELECT name, email FROM users\nUNION\nSELECT name, email FROM customers\nORDER BY name;"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_7",
+      "english": "UNION ALL",
+      "set": {
+        "code": "SELECT name, 'user' AS source FROM users\nUNION ALL\nSELECT name, 'customer' FROM customers;"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_4",
+      "english": "Audit Columns",
+      "set": {
+        "code": "CREATE TABLE posts (\n  id SERIAL PRIMARY KEY,\n  title VARCHAR(200),\n  created_at TIMESTAMP DEFAULT NOW(),\n  updated_at TIMESTAMP DEFAULT NOW(),\n  created_by INT REFERENCES users(id)\n);"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_2",
+      "english": "CASCADE",
+      "set": {
+        "code": "CREATE TABLE orders (\n  id SERIAL PRIMARY KEY,\n  user_id INT REFERENCES users(id)\n    ON DELETE CASCADE\n);"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_2",
+      "english": "Domain Constraint",
+      "set": {
+        "code": "CREATE TABLE orders (\n  id SERIAL PRIMARY KEY,\n  status VARCHAR(20)\n    CHECK (status IN ('pending', 'shipped', 'delivered'))\n);"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_3",
+      "english": "ENUM",
+      "set": {
+        "code": "CREATE TYPE order_status\n  AS ENUM ('pending', 'shipped', 'delivered');\nALTER TABLE orders\n  ADD COLUMN status order_status;"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_3",
+      "english": "JSON",
+      "set": {
+        "code": "CREATE TABLE events (\n  id SERIAL PRIMARY KEY,\n  metadata JSONB NOT NULL DEFAULT '{}'\n);\nCREATE INDEX idx_meta ON events USING gin(metadata);"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_1",
+      "english": "Junction Table",
+      "set": {
+        "code": "CREATE TABLE user_role (\n  user_id INT REFERENCES users(id),\n  role_id INT REFERENCES roles(id),\n  PRIMARY KEY (user_id, role_id)\n);"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_4",
+      "english": "Lookup Table",
+      "set": {
+        "code": "CREATE TABLE countries (\n  code CHAR(2) PRIMARY KEY,\n  name VARCHAR(100) NOT NULL\n);\nINSERT INTO countries VALUES ('IT', 'Italy');"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_1",
+      "english": "Many-to-Many",
+      "set": {
+        "code": "CREATE TABLE student_course (\n  student_id INT REFERENCES students(id),\n  course_id INT REFERENCES courses(id),\n  PRIMARY KEY (student_id, course_id)\n);"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_1",
+      "english": "One-to-Many",
+      "set": {
+        "code": "CREATE TABLE orders (\n  id SERIAL PRIMARY KEY,\n  user_id INT REFERENCES users(id),\n  total DECIMAL(10, 2)\n);\n-- One user has many orders"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_1",
+      "english": "One-to-One",
+      "set": {
+        "code": "CREATE TABLE user_profiles (\n  user_id INT UNIQUE REFERENCES users(id),\n  bio TEXT,\n  avatar_url VARCHAR(500)\n);"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_4",
+      "english": "Polymorphic Association",
+      "set": {
+        "code": "CREATE TABLE comments (\n  id SERIAL PRIMARY KEY,\n  body TEXT,\n  commentable_type VARCHAR(50),\n  commentable_id INT\n);\n-- Can reference posts, photos, etc."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_4",
+      "english": "Soft Delete",
+      "set": {
+        "code": "ALTER TABLE users\n  ADD COLUMN deleted_at TIMESTAMP NULL;\n-- Query active users:\nSELECT * FROM users WHERE deleted_at IS NULL;"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_2",
+      "english": "UUID",
+      "set": {
+        "code": "CREATE TABLE sessions (\n  id UUID DEFAULT gen_random_uuid()\n    PRIMARY KEY,\n  user_id INT REFERENCES users(id)\n);"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "db_normalization_4",
+      "english": "Computed Column",
+      "set": {
+        "code": "CREATE TABLE order_items (\n  id SERIAL PRIMARY KEY,\n  price DECIMAL(10,2),\n  quantity INT,\n  total DECIMAL GENERATED ALWAYS AS\n    (price * quantity) STORED\n);"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "db_normalization_4",
+      "english": "Generated Column",
+      "set": {
+        "code": "CREATE TABLE users (\n  first_name VARCHAR(50),\n  last_name VARCHAR(50),\n  full_name VARCHAR(101) GENERATED ALWAYS AS\n    (first_name || ' ' || last_name) STORED\n);"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "db_normalization_4",
+      "english": "Materialized View",
+      "set": {
+        "code": "CREATE MATERIALIZED VIEW user_stats AS\nSELECT user_id, COUNT(*) AS order_count\nFROM orders\nGROUP BY user_id;\n-- REFRESH MATERIALIZED VIEW user_stats;"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "db_normalization_4",
+      "english": "Pre-aggregation",
+      "set": {
+        "code": "CREATE TABLE daily_sales AS\nSELECT\n  DATE(created_at) AS sale_date,\n  SUM(amount) AS total\nFROM sales\nGROUP BY sale_date;"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_2",
+      "english": "B-tree Index",
+      "set": {
+        "code": "-- B-tree: default, good for = < > BETWEEN\nCREATE INDEX idx_users_age\n  ON users(age) USING btree;"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_2",
+      "english": "Composite Index",
+      "set": {
+        "code": "CREATE INDEX idx_orders_user_date\n  ON orders(user_id, created_at);\n-- Optimizes: WHERE user_id = 1\n--   AND created_at > '2025-01-01'"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_3",
+      "english": "CONCURRENTLY",
+      "set": {
+        "code": "-- Build index without locking writes\nCREATE INDEX CONCURRENTLY\n  idx_users_city\n  ON users(city);"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_2",
+      "english": "Covering Index",
+      "set": {
+        "code": "CREATE INDEX idx_orders_cover\n  ON orders(user_id)\n  INCLUDE (total, status);\n-- Index-only scan, no table lookup"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_1",
+      "english": "CREATE INDEX",
+      "set": {
+        "code": "CREATE INDEX idx_orders_user_id\n  ON orders(user_id);\n-- Speeds up JOIN on user_id"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_2",
+      "english": "Expression Index",
+      "set": {
+        "code": "CREATE INDEX idx_users_email_lower\n  ON users(LOWER(email));\n-- Optimizes: WHERE LOWER(email) = ..."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_4",
+      "english": "Full-Text Index",
+      "set": {
+        "code": "CREATE INDEX idx_docs_search\n  ON docs USING gin(\n    to_tsvector('english', body)\n  );\n-- Query: WHERE to_tsvector('english', body) @@ to_tsquery('database')"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_2",
+      "english": "GIN Index",
+      "set": {
+        "code": "-- GIN: for full-text search\nCREATE INDEX idx_search\n  ON docs USING gin(\n    to_tsvector('english', body)\n  );"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_1",
+      "english": "Index",
+      "set": {
+        "code": "-- Speed up email lookups\nCREATE INDEX idx_users_email\n  ON users(email);"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_4",
+      "english": "JSON Index",
+      "set": {
+        "code": "CREATE INDEX idx_events_payload\n  ON events USING gin(payload);\n-- Query: WHERE payload @> '{\"type\": \"click\"}'"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_2",
+      "english": "Partial Index",
+      "set": {
+        "code": "CREATE INDEX idx_pending_orders\n  ON orders(id)\n  WHERE status = 'pending';\n-- Only indexes pending orders"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_2",
+      "english": "Unique Index",
+      "set": {
+        "code": "CREATE UNIQUE INDEX idx_users_email\n  ON users(email);\n-- Enforces uniqueness via index"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_3",
+      "english": "Unused Index",
+      "set": {
+        "code": "SELECT indexrelname, idx_scan\nFROM pg_stat_user_indexes\nWHERE idx_scan = 0\nORDER BY pg_relation_size(indexrelid) DESC;"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_1",
+      "english": "BEGIN",
+      "set": {
+        "code": "BEGIN;\n-- All statements below are atomic\nINSERT INTO orders (user_id, total)\nVALUES (1, 59.99);"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_1",
+      "english": "COMMIT",
+      "set": {
+        "code": "BEGIN;\nUPDATE inventory SET stock = stock - 1\n  WHERE product_id = 42;\nCOMMIT;\n-- Changes are now permanent"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_4",
+      "english": "Lock",
+      "set": {
+        "code": "BEGIN;\nLOCK TABLE inventory\n  IN EXCLUSIVE MODE;\nUPDATE inventory SET stock = stock - 1;\nCOMMIT;"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_4",
+      "english": "Optimistic Locking",
+      "set": {
+        "code": "UPDATE products\nSET price = 29.99,\n    version = version + 1\nWHERE id = 1 AND version = 5;\n-- Fails if version changed"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_4",
+      "english": "Pessimistic Locking",
+      "set": {
+        "code": "BEGIN;\nSELECT * FROM inventory\nWHERE product_id = 42\nFOR UPDATE;\n-- Lock held until COMMIT"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_1",
+      "english": "ROLLBACK",
+      "set": {
+        "code": "BEGIN;\nDELETE FROM orders WHERE id = 99;\n-- Oops, wrong order!\nROLLBACK;\n-- Nothing was deleted"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_4",
+      "english": "Row Lock",
+      "set": {
+        "code": "BEGIN;\nSELECT * FROM accounts\nWHERE id = 1\nFOR UPDATE;\n-- Row is locked until COMMIT"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_1",
+      "english": "SAVEPOINT",
+      "set": {
+        "code": "BEGIN;\nUPDATE users SET name = 'Mario' WHERE id = 1;\nSAVEPOINT before_delete;\nDELETE FROM orders WHERE user_id = 1;\nROLLBACK TO before_delete;\nCOMMIT;"
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_1",
+      "english": "Transaction",
+      "set": {
+        "code": "BEGIN;\nUPDATE accounts SET balance = balance - 100 WHERE id = 1;\nUPDATE accounts SET balance = balance + 100 WHERE id = 2;\nCOMMIT;"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_9",
+      "english": "ALL",
+      "set": {
+        "code": "SELECT name, price\nFROM products\nWHERE price > ALL (\n  SELECT price FROM products\n  WHERE category = 'books'\n);"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_9",
+      "english": "ANY",
+      "set": {
+        "code": "SELECT name, price\nFROM products\nWHERE price > ANY (\n  SELECT price FROM products\n  WHERE category = 'electronics'\n);"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_9",
+      "english": "Correlated Subquery",
+      "set": {
+        "code": "SELECT u.name, u.email\nFROM users u\nWHERE EXISTS (\n  SELECT 1 FROM orders o\n  WHERE o.user_id = u.id\n    AND o.total > 500\n);"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_10",
+      "english": "CTE",
+      "set": {
+        "code": "WITH active_users AS (\n  SELECT id, name\n  FROM users\n  WHERE active = true\n)\nSELECT * FROM active_users\nORDER BY name;"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_9",
+      "english": "EXISTS",
+      "set": {
+        "code": "SELECT u.name\nFROM users u\nWHERE EXISTS (\n  SELECT 1 FROM orders o\n  WHERE o.user_id = u.id\n);"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_12",
+      "english": "Function",
+      "set": {
+        "code": "CREATE FUNCTION total_orders(uid INT)\nRETURNS DECIMAL AS $$\n  SELECT COALESCE(SUM(total), 0)\n  FROM orders WHERE user_id = uid;\n$$ LANGUAGE SQL;"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_9",
+      "english": "Inline View",
+      "set": {
+        "code": "SELECT sub.user_id, sub.order_count\nFROM (\n  SELECT user_id, COUNT(*) AS order_count\n  FROM orders\n  GROUP BY user_id\n) sub\nWHERE sub.order_count > 5;"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_11",
+      "english": "LAG",
+      "set": {
+        "code": "SELECT date, price,\n  LAG(price, 1) OVER (\n    ORDER BY date\n  ) AS prev_price\nFROM stock_prices;"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_9",
+      "english": "LATERAL JOIN",
+      "set": {
+        "code": "SELECT u.name, recent.total\nFROM users u,\nLATERAL (\n  SELECT total FROM orders\n  WHERE user_id = u.id\n  ORDER BY created_at DESC\n  LIMIT 3\n) recent;"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_11",
+      "english": "LEAD",
+      "set": {
+        "code": "SELECT date, price,\n  LEAD(price, 1) OVER (\n    ORDER BY date\n  ) AS next_price\nFROM stock_prices;"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_10",
+      "english": "Multiple CTEs",
+      "set": {
+        "code": "WITH\n  active AS (SELECT * FROM users WHERE active),\n  totals AS (\n    SELECT user_id, SUM(amount) AS total\n    FROM orders GROUP BY user_id\n  )\nSELECT a.name, t.total\nFROM active a JOIN totals t ON a.id = t.user_id;"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_9",
+      "english": "NOT EXISTS",
+      "set": {
+        "code": "SELECT u.name\nFROM users u\nWHERE NOT EXISTS (\n  SELECT 1 FROM orders o\n  WHERE o.user_id = u.id\n);\n-- Users with no orders"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_11",
+      "english": "OVER",
+      "set": {
+        "code": "SELECT user_id,\n  amount,\n  SUM(amount) OVER (\n    PARTITION BY user_id\n    ORDER BY created_at\n  ) AS running_total\nFROM orders;"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_11",
+      "english": "PARTITION BY",
+      "set": {
+        "code": "SELECT dept, name, salary,\n  RANK() OVER (\n    PARTITION BY dept\n    ORDER BY salary DESC\n  ) AS dept_rank\nFROM employees;"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_11",
+      "english": "RANK",
+      "set": {
+        "code": "SELECT name, score,\n  RANK() OVER (\n    ORDER BY score DESC\n  ) AS position\nFROM players;"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_10",
+      "english": "Recursive CTE",
+      "set": {
+        "code": "WITH RECURSIVE tree AS (\n  SELECT id, name, parent_id, 0 AS depth\n  FROM categories WHERE parent_id IS NULL\n  UNION ALL\n  SELECT c.id, c.name, c.parent_id, t.depth + 1\n  FROM categories c JOIN tree t ON c.parent_id = t.id\n)\nSELECT * FROM tree;"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_11",
+      "english": "ROW_NUMBER",
+      "set": {
+        "code": "SELECT\n  ROW_NUMBER() OVER (\n    ORDER BY created_at DESC\n  ) AS row_num,\n  name, email\nFROM users;"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_9",
+      "english": "Scalar Subquery",
+      "set": {
+        "code": "SELECT name,\n  (SELECT COUNT(*)\n   FROM orders\n   WHERE user_id = u.id) AS order_count\nFROM users u;"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_12",
+      "english": "Stored Procedure",
+      "set": {
+        "code": "CREATE PROCEDURE transfer(\n  p_from INT, p_to INT, p_amount DECIMAL\n)\nLANGUAGE SQL AS $$\n  UPDATE accounts SET balance = balance - p_amount WHERE id = p_from;\n  UPDATE accounts SET balance = balance + p_amount WHERE id = p_to;\n$$;"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_9",
+      "english": "Subquery",
+      "set": {
+        "code": "SELECT name, email\nFROM users\nWHERE id IN (\n  SELECT user_id FROM orders\n  WHERE total > 100\n);"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_12",
+      "english": "Trigger",
+      "set": {
+        "code": "CREATE TRIGGER trg_updated_at\n  BEFORE UPDATE ON users\n  FOR EACH ROW\n  EXECUTE FUNCTION set_updated_at();"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_12",
+      "english": "View",
+      "set": {
+        "code": "CREATE VIEW active_users AS\nSELECT id, name, email\nFROM users\nWHERE active = true\n  AND deleted_at IS NULL;"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_11",
+      "english": "Window Function",
+      "set": {
+        "code": "SELECT name, salary,\n  AVG(salary) OVER (PARTITION BY dept)\n    AS dept_avg\nFROM employees;"
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_10",
+      "english": "WITH",
+      "set": {
+        "code": "WITH recent_orders AS (\n  SELECT * FROM orders\n  WHERE created_at > NOW() - INTERVAL '7 days'\n)\nSELECT user_id, SUM(total)\nFROM recent_orders\nGROUP BY user_id;"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_3",
+      "english": "Document Model",
+      "set": {
+        "code": "{\n  \"name\": \"Marco\",\n  \"email\": \"marco@email.com\",\n  \"addresses\": [\n    { \"city\": \"Roma\", \"zip\": \"00100\" }\n  ]\n}"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_3",
+      "english": "Embedded Document",
+      "set": {
+        "code": "db.users.insertOne({\n  name: \"Marco\",\n  address: {\n    city: \"Roma\",\n    zip: \"00100\"\n  }\n})"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_1",
+      "english": "Key-Value Store",
+      "set": {
+        "code": "SET user:1 '{\"name\":\"Marco\"}'\nSET user:2 '{\"name\":\"Anna\"}'\nGET user:1"
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_4",
+      "english": "Replication Factor",
+      "set": {
+        "code": "CREATE KEYSPACE my_app\nWITH replication = {\n  'class': 'SimpleStrategy',\n  'replication_factor': 3\n};"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_7",
+      "english": "$facet",
+      "set": {
+        "code": "db.products.aggregate([\n  { $facet: {\n    byCategory: [\n      { $group: { _id: \"$category\", count: { $sum: 1 } } }\n    ],\n    totalCount: [\n      { $count: \"total\" }\n    ]\n  }}\n])"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_7",
+      "english": "$group",
+      "set": {
+        "code": "db.orders.aggregate([\n  { $group: {\n    _id: \"$category\",\n    total: { $sum: \"$amount\" },\n    count: { $sum: 1 }\n  }}\n])"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_6",
+      "english": "$in",
+      "set": {
+        "code": "db.users.find({\n  status: { $in: ['active', 'pending'] },\n  country: 'IT'\n})"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_6",
+      "english": "$inc",
+      "set": {
+        "code": "db.articles.updateOne(\n  { _id: articleId },\n  { $inc: { views: 1, shares: 1 } }\n)"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_7",
+      "english": "$lookup",
+      "set": {
+        "code": "db.users.aggregate([\n  { $lookup: {\n    from: \"orders\",\n    localField: \"_id\",\n    foreignField: \"user_id\",\n    as: \"user_orders\"\n  }}\n])"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_7",
+      "english": "$match",
+      "set": {
+        "code": "db.orders.aggregate([\n  { $match: {\n    status: \"active\",\n    created_at: { $gte: ISODate(\"2025-01-01\") }\n  }}\n])"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_7",
+      "english": "$project",
+      "set": {
+        "code": "db.users.aggregate([\n  { $project: {\n    name: 1,\n    email: 1,\n    _id: 0\n  }}\n])"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_6",
+      "english": "$push",
+      "set": {
+        "code": "db.users.updateOne(\n  { _id: userId },\n  { $push: {\n    tags: \"premium\",\n    logins: { date: new Date() }\n  }}\n)"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_6",
+      "english": "$set",
+      "set": {
+        "code": "db.users.updateOne(\n  { email: \"marco@email.com\" },\n  { $set: {\n    name: \"Mario\",\n    updated_at: new Date()\n  }}\n)"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_7",
+      "english": "Aggregation Pipeline",
+      "set": {
+        "code": "db.orders.aggregate([\n  { $match: { status: \"completed\" } },\n  { $group: {\n    _id: \"$user_id\",\n    total: { $sum: \"$amount\" }\n  }},\n  { $sort: { total: -1 } }\n])"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_5",
+      "english": "Collection",
+      "set": {
+        "code": "-- MongoDB collection operations\ndb.users.find()\ndb.users.countDocuments()\ndb.users.drop()"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_5",
+      "english": "find",
+      "set": {
+        "code": "db.users.find(\n  { age: { $gt: 18 }, active: true },\n  { name: 1, email: 1, _id: 0 }\n).sort({ name: 1 })"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_5",
+      "english": "findOne",
+      "set": {
+        "code": "db.users.findOne(\n  { email: \"marco@email.com\" },\n  { name: 1, age: 1 }\n)"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_5",
+      "english": "insertMany",
+      "set": {
+        "code": "db.users.insertMany([\n  { name: \"Anna\", age: 25 },\n  { name: \"Luca\", age: 32 },\n  { name: \"Eva\", age: 28 }\n])"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_5",
+      "english": "insertOne",
+      "set": {
+        "code": "db.users.insertOne({\n  name: \"Eva\",\n  email: \"eva@email.com\",\n  age: 28,\n  active: true\n})"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_8",
+      "english": "MongoDB Shard Key",
+      "set": {
+        "code": "// Enable sharding on database\nsh.enableSharding(\"myapp\")\n// Shard the users collection\nsh.shardCollection(\n  \"myapp.users\",\n  { _id: \"hashed\" }\n)"
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_5",
+      "english": "updateOne",
+      "set": {
+        "code": "db.users.updateOne(\n  { _id: ObjectId(\"507f1f77bcf86cd799439011\") },\n  { $set: { active: true, updated_at: new Date() } }\n)"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_10",
+      "english": "Redis Hash",
+      "set": {
+        "code": "HSET user:1 name \"Marco\" age 30 city \"Roma\"\nHGET user:1 name\nHGETALL user:1"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_10",
+      "english": "Redis List",
+      "set": {
+        "code": "LPUSH queue \"task_3\"\nLPUSH queue \"task_2\"\nLPUSH queue \"task_1\"\nRPOP queue\n-- Returns \"task_3\""
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_9",
+      "english": "Redis SET",
+      "set": {
+        "code": "SET user:1 \"Marco\"\nSET user:1:email \"marco@email.com\"\nGET user:1"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_10",
+      "english": "Redis Set Datatype",
+      "set": {
+        "code": "SADD online_users \"marco\"\nSADD online_users \"anna\"\nSISMEMBER online_users \"marco\"\n-- Returns 1 (true)"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_12",
+      "english": "Redis Streams",
+      "set": {
+        "code": "XADD events * type click page /home\nXADD events * type click page /about\nXLEN events\n-- Returns 2"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_10",
+      "english": "Sorted Set",
+      "set": {
+        "code": "ZADD leaderboard 100 \"marco\"\nZADD leaderboard 95 \"anna\"\nZADD leaderboard 88 \"luca\"\nZRANGE leaderboard 0 -1 WITHSCORES"
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_10",
+      "english": "ZADD",
+      "set": {
+        "code": "ZADD scores 95 \"alice\" 88 \"bob\" 72 \"carol\"\nZRANK scores \"alice\"\nZREVRANGE scores 0 2 WITHSCORES"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_3",
+      "english": "Eager Loading",
+      "set": {
+        "code": "// ORM eager loading (avoids N+1)\nUser.findAll({\n  include: [{ model: Order }],\n  where: { active: true }\n})"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_1",
+      "english": "EXPLAIN",
+      "set": {
+        "code": "EXPLAIN\nSELECT name, email\nFROM users\nWHERE id = 1;"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_1",
+      "english": "EXPLAIN ANALYZE",
+      "set": {
+        "code": "EXPLAIN ANALYZE\nSELECT u.name, COUNT(o.id)\nFROM users u\nJOIN orders o ON u.id = o.user_id\nWHERE u.active = true\nGROUP BY u.name;"
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_3",
+      "english": "pg_stat_statements",
+      "set": {
+        "code": "SELECT query, calls, total_exec_time\nFROM pg_stat_statements\nORDER BY total_exec_time DESC\nLIMIT 10;"
+      }
+    }
+  ]
+}

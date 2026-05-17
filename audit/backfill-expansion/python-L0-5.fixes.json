@@ -1,0 +1,1924 @@
+{
+  "fixes": [
+    {
+      "level": "0",
+      "lesson": "py_basics_1",
+      "english": "Variable",
+      "set": {
+        "command": "python3 -c \"x = 42; print(x)\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_1",
+      "english": "Print",
+      "set": {
+        "command": "python3 -c \"print('Hello, Python!')\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_1",
+      "english": "Input",
+      "set": {
+        "command": "python3 -c \"name = input('Name: '); print('Hi', name)\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_1",
+      "english": "String",
+      "set": {
+        "command": "python3 -c \"s = 'Hello, world'; print(s[:5])\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_1",
+      "english": "Comment",
+      "set": {
+        "command": "python3 -c \"# This is a comment\nprint('Hi')\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_1",
+      "english": "Indentation",
+      "set": {
+        "command": "python3 -c \"if True:\n    print('indented block')\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_1",
+      "english": "Syntax",
+      "set": {
+        "command": "python3 -c \"for i in range(3): print(i)\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_1",
+      "english": "Statement",
+      "set": {
+        "command": "python3 -c \"import json; print(json.dumps({'ok': True}))\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_1",
+      "english": "Expression",
+      "set": {
+        "command": "python3 -c \"price = 100; discount = 0.2; print(price * (1 - discount))\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_1",
+      "english": "Keyword",
+      "set": {
+        "command": "python3 -c \"import keyword; print(keyword.kwlist)\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_2",
+      "english": "Integer",
+      "set": {
+        "command": "python3 -c \"n = 42; print(type(n), n)\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_2",
+      "english": "Float",
+      "set": {
+        "command": "python3 -c \"price = 9.99; tax = 0.22; print(price * (1 + tax))\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_2",
+      "english": "Boolean",
+      "set": {
+        "command": "python3 -c \"a = True; b = False; print(a and not b)\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_2",
+      "english": "Type",
+      "set": {
+        "command": "python3 -c \"print(type(5), type('hi'), type(3.14))\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_2",
+      "english": "Value",
+      "set": {
+        "command": "python3 -c \"def status(): return 'ok'\nprint(status())\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_2",
+      "english": "Literal",
+      "set": {
+        "command": "python3 -c \"MAX = 100; PI = 3.14; print(MAX, PI)\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_2",
+      "english": "Constant",
+      "set": {
+        "command": "python3 -c \"MAX_RETRIES = 3; TIMEOUT = 30; print(MAX_RETRIES, TIMEOUT)\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_2",
+      "english": "None",
+      "set": {
+        "command": "python3 -c \"x = None; print(x is None)\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_2",
+      "english": "Dynamic Typing",
+      "set": {
+        "command": "python3 -c \"v = 42; print(type(v)); v = 'hello'; print(type(v))\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_2",
+      "english": "Casting",
+      "set": {
+        "command": "python3 -c \"print(int('10'), str(5), float('3.14'))\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_3",
+      "english": "Operator",
+      "set": {
+        "command": "python3 -c \"a = 10; b = 3; print(a + b, a - b, a * b)\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_3",
+      "english": "Assignment",
+      "set": {
+        "command": "python3 -c \"x, y = 10, 20; x, y = y, x; print(x, y)\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_3",
+      "english": "Addition",
+      "set": {
+        "command": "python3 -c \"print(10 + 5)\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_3",
+      "english": "Subtraction",
+      "set": {
+        "command": "python3 -c \"print(20 - 7)\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_3",
+      "english": "Multiplication",
+      "set": {
+        "command": "python3 -c \"print('-' * 40)\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_3",
+      "english": "Division",
+      "set": {
+        "command": "python3 -c \"print(7 / 2, 7 // 2)\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_3",
+      "english": "Modulo",
+      "set": {
+        "command": "python3 -c \"for n in range(6): print(n, 'even' if n % 2 == 0 else 'odd')\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_3",
+      "english": "Exponentiation",
+      "set": {
+        "command": "python3 -c \"print(2 ** 10)\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_3",
+      "english": "Comparison",
+      "set": {
+        "command": "python3 -c \"age = 21; print(age >= 18)\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_3",
+      "english": "Logical Operator",
+      "set": {
+        "command": "python3 -c \"a = True; b = False; print(a and b, a or b, not b)\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_4",
+      "english": "IDE (Integrated Development Environment)",
+      "set": {
+        "command": "python3 -c \"import sys; print('Python', sys.version, 'at', sys.executable)\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_4",
+      "english": "Interpreter",
+      "set": {
+        "command": "python3 --version"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_4",
+      "english": "Script",
+      "set": {
+        "command": "python3 -c \"if __name__ == '__main__': print('running as script')\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_4",
+      "english": "Shell (REPL)",
+      "set": {
+        "command": "python3 -c \"print(2 + 3); print('interactive demo')\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_4",
+      "english": "Execution",
+      "set": {
+        "command": "python3 -c \"print('executed successfully')\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_4",
+      "english": "Debugger",
+      "set": {
+        "command": "python3 -c \"import pdb; print('debugger module loaded:', pdb.__name__)\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_4",
+      "english": "Error",
+      "set": {
+        "command": "python3 -c \"try:\n    int('abc')\nexcept ValueError as e:\n    print('Error:', e)\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_4",
+      "english": "Exception",
+      "set": {
+        "command": "python3 -c \"try:\n    1/0\nexcept ZeroDivisionError as e:\n    print('Caught:', e)\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_4",
+      "english": "Traceback",
+      "set": {
+        "command": "python3 -c \"import traceback; traceback.print_stack()\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_4",
+      "english": "Library",
+      "set": {
+        "command": "python3 -c \"import json; print(json.dumps({'key': 'value'}))\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_list",
+      "english": "List",
+      "set": {
+        "command": "python3 -c \"scores = [85, 92, 78]; print(sum(scores) / len(scores))\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_list",
+      "english": "Index",
+      "set": {
+        "command": "python3 -c \"items = ['a', 'b', 'c']; print(items[0], items[-1])\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_list",
+      "english": "Slice",
+      "set": {
+        "command": "python3 -c \"nums = [0,1,2,3,4]; print(nums[1:3])\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_list",
+      "english": "Append",
+      "set": {
+        "command": "python3 -c \"lst = [1, 2]; lst.append(3); print(lst)\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_list",
+      "english": "Remove",
+      "set": {
+        "command": "python3 -c \"lst = ['a', 'b', 'c']; lst.remove('b'); print(lst)\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_list",
+      "english": "Pop",
+      "set": {
+        "command": "python3 -c \"lst = [10, 20, 30]; val = lst.pop(0); print(val, lst)\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_list",
+      "english": "Sort",
+      "set": {
+        "command": "python3 -c \"lst = [3, 1, 2]; lst.sort(); print(lst)\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_list",
+      "english": "Reverse",
+      "set": {
+        "command": "python3 -c \"lst = [1, 2, 3]; lst.reverse(); print(lst)\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_list",
+      "english": "List Comprehension",
+      "set": {
+        "command": "python3 -c \"squares = [x**2 for x in range(6)]; print(squares)\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_list",
+      "english": "Length (len)",
+      "set": {
+        "command": "python3 -c \"items = ['a', 'b', 'c']; print(len(items))\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_dict",
+      "english": "Dictionary",
+      "set": {
+        "command": "python3 -c \"user = {'name': 'Alice', 'role': 'admin'}; print(user['role'])\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_dict",
+      "english": "Key",
+      "set": {
+        "command": "python3 -c \"d = {}; d['name'] = 'Bob'; print('name' in d)\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_dict",
+      "english": "Dictionary Value",
+      "set": {
+        "command": "python3 -c \"cfg = {'timeout': 30}; print(cfg['timeout'])\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_dict",
+      "english": "Item",
+      "set": {
+        "command": "python3 -c \"d = {'a': 1, 'b': 2}; [print(k, v) for k, v in d.items()]\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_dict",
+      "english": "Get",
+      "set": {
+        "command": "python3 -c \"d = {'a': 1}; print(d.get('b', 'default'))\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_dict",
+      "english": "Update",
+      "set": {
+        "command": "python3 -c \"d = {'a': 1}; d.update({'b': 2}); print(d)\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_dict",
+      "english": "Keys",
+      "set": {
+        "command": "python3 -c \"d = {'host': 'localhost', 'port': 8080}; print(list(d.keys()))\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_dict",
+      "english": "Values",
+      "set": {
+        "command": "python3 -c \"d = {'apple': 1.0, 'bread': 2.5}; print(sum(d.values()))\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_dict",
+      "english": "Items",
+      "set": {
+        "command": "python3 -c \"d = {'x': 10, 'y': 20}; print(list(d.items()))\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_dict",
+      "english": "Key-Value Pair",
+      "set": {
+        "command": "python3 -c \"settings = {'debug': True, 'port': 8080}; print(settings)\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_tuple_set",
+      "english": "Tuple",
+      "set": {
+        "command": "python3 -c \"point = (10, 20); x, y = point; print(x, y)\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_tuple_set",
+      "english": "Immutable",
+      "set": {
+        "command": "python3 -c \"t = (1, 2, 3); print(t); print('tuples are immutable')\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_tuple_set",
+      "english": "Unpacking",
+      "set": {
+        "command": "python3 -c \"a, b, c = (1, 2, 3); print(a, b, c)\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_tuple_set",
+      "english": "Set",
+      "set": {
+        "command": "python3 -c \"tags = ['py', 'web', 'py']; print(set(tags))\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_tuple_set",
+      "english": "Unique",
+      "set": {
+        "command": "python3 -c \"lst = [1,2,2,3,3]; print(list(set(lst)))\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_tuple_set",
+      "english": "Intersection",
+      "set": {
+        "command": "python3 -c \"a = {1,2,3}; b = {2,3,4}; print(a & b)\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_tuple_set",
+      "english": "Union",
+      "set": {
+        "command": "python3 -c \"a = {1,2}; b = {2,3}; print(a | b)\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_tuple_set",
+      "english": "Difference",
+      "set": {
+        "command": "python3 -c \"a = {1,2,3}; b = {2,3}; print(a - b)\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_tuple_set",
+      "english": "Symmetric Difference",
+      "set": {
+        "command": "python3 -c \"a = {1,2,3}; b = {2,3,4}; print(a ^ b)\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_tuple_set",
+      "english": "Frozen Set",
+      "set": {
+        "command": "python3 -c \"fs = frozenset({1, 2, 3}); print(fs, type(fs))\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_strings",
+      "english": "Format",
+      "set": {
+        "command": "python3 -c \"print('Hello {}'.format('world'))\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_strings",
+      "english": "F-String",
+      "set": {
+        "command": "python3 -c \"name = 'Alice'; print(f'Hello, {name}!')\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_strings",
+      "english": "Join",
+      "set": {
+        "command": "python3 -c \"tags = ['python', 'web', 'api']; print(', '.join(tags))\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_strings",
+      "english": "Split",
+      "set": {
+        "command": "python3 -c \"print('A,B,C'.split(','))\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_strings",
+      "english": "Strip",
+      "set": {
+        "command": "python3 -c \"s = '  hello  '; print(repr(s.strip()))\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_strings",
+      "english": "Replace",
+      "set": {
+        "command": "python3 -c \"print('Hello'.replace('H', 'J'))\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_strings",
+      "english": "Lower/Upper",
+      "set": {
+        "command": "python3 -c \"s = 'Hello'; print(s.lower(), s.upper())\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_strings",
+      "english": "Find/Index",
+      "set": {
+        "command": "python3 -c \"url = 'https://example.com'; print(url.find('://'))\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_strings",
+      "english": "Escape Character",
+      "set": {
+        "command": "python3 -c \"print('col1\\tcol2\\nval1\\tval2')\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_strings",
+      "english": "Raw String",
+      "set": {
+        "command": "python3 -c \"import re; print(re.findall(r'\\d+', 'abc123def456'))\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_conditions",
+      "english": "If Statement",
+      "set": {
+        "command": "python3 -c \"x = 15; print('big' if x > 10 else 'small')\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_conditions",
+      "english": "Else Clause",
+      "set": {
+        "command": "python3 -c \"n = 4\nif n % 2 == 0:\n    print('even')\nelse:\n    print('odd')\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_conditions",
+      "english": "Elif (Else If)",
+      "set": {
+        "command": "python3 -c \"code = 404\nif code < 300:\n    print('ok')\nelif code < 500:\n    print('client err')\nelse:\n    print('server err')\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_conditions",
+      "english": "Comparison Operator",
+      "set": {
+        "command": "python3 -c \"print(5 > 3, 5 == 5, 5 != 3, 5 <= 5)\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_conditions",
+      "english": "Boolean Expression",
+      "set": {
+        "command": "python3 -c \"a, b = True, False; print(a and b, a or b, not b)\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_conditions",
+      "english": "Nested If",
+      "set": {
+        "command": "python3 -c \"x = 15\nif x > 10:\n    if x > 20:\n        print('very big')\n    else:\n        print('medium')\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_conditions",
+      "english": "Conditional Execution",
+      "set": {
+        "command": "python3 -c \"debug = True\nif debug:\n    print('debug mode on')\nprint('running')\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_conditions",
+      "english": "Membership Operator (in)",
+      "set": {
+        "command": "python3 -c \"fruits = ['apple', 'banana']; print('apple' in fruits)\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_conditions",
+      "english": "Identity Operator (is)",
+      "set": {
+        "command": "python3 -c \"x = None; print(x is None, x is not None)\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_conditions",
+      "english": "Truthiness",
+      "set": {
+        "command": "python3 -c \"print(bool(''), bool('hi'), bool(0), bool(42), bool([]))\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_loops",
+      "english": "For Loop",
+      "set": {
+        "command": "python3 -c \"for fruit in ['apple', 'banana', 'cherry']: print(fruit)\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_loops",
+      "english": "While Loop",
+      "set": {
+        "command": "python3 -c \"n = 3\nwhile n > 0:\n    print(n)\n    n -= 1\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_loops",
+      "english": "Iteration",
+      "set": {
+        "command": "python3 -c \"for ch in 'Python': print(ch, end=' ')\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_loops",
+      "english": "Break Statement",
+      "set": {
+        "command": "python3 -c \"for n in range(10):\n    if n == 5: break\n    print(n)\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_loops",
+      "english": "Continue Statement",
+      "set": {
+        "command": "python3 -c \"for n in range(6):\n    if n % 2 == 0: continue\n    print(n)\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_loops",
+      "english": "Range (function)",
+      "set": {
+        "command": "python3 -c \"print(list(range(1, 6)))\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_loops",
+      "english": "Enumerate",
+      "set": {
+        "command": "python3 -c \"for i, v in enumerate(['a','b','c']): print(i, v)\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_loops",
+      "english": "Infinite Loop",
+      "set": {
+        "command": "python3 -c \"i=0\nwhile True:\n    if i>=3: break\n    print(i); i+=1\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_loops",
+      "english": "Nested Loop",
+      "set": {
+        "command": "python3 -c \"for i in range(3):\n    for j in range(3):\n        print(i, j)\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_loops",
+      "english": "Else in Loops",
+      "set": {
+        "command": "python3 -c \"for n in range(5):\n    if n == 99: break\nelse:\n    print('loop completed')\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_logic",
+      "english": "And Operator",
+      "set": {
+        "command": "python3 -c \"print(True and True, True and False)\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_logic",
+      "english": "Or Operator",
+      "set": {
+        "command": "python3 -c \"name = '' or 'Anonymous'; print(name)\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_logic",
+      "english": "Not Operator",
+      "set": {
+        "command": "python3 -c \"print(not True, not False, not 0)\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_logic",
+      "english": "Short-circuit Evaluation",
+      "set": {
+        "command": "python3 -c \"x = None; print(x and x.upper())\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_logic",
+      "english": "Truth Table",
+      "set": {
+        "command": "python3 -c \"for a in [True,False]:\n    for b in [True,False]:\n        print(f'{a} AND {b} = {a and b}')\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_logic",
+      "english": "Precedence (Logical)",
+      "set": {
+        "command": "python3 -c \"print((True or False) and not False)\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_logic",
+      "english": "Bitwise Operator",
+      "set": {
+        "command": "python3 -c \"R,W,X = 4,2,1; perm = R|W; print(bin(perm), bool(perm & W))\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_logic",
+      "english": "Any (function)",
+      "set": {
+        "command": "python3 -c \"nums = [0, 0, 3, 0]; print(any(n > 0 for n in nums))\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_logic",
+      "english": "All (function)",
+      "set": {
+        "command": "python3 -c \"nums = [1, 2, 3]; print(all(n > 0 for n in nums))\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_logic",
+      "english": "Compound Condition",
+      "set": {
+        "command": "python3 -c \"t, h = 32, 85; print(t > 30 and h > 80)\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_flow_patterns",
+      "english": "Early Return",
+      "set": {
+        "command": "python3 -c \"def div(a,b):\n    if b==0: return None\n    return a/b\nprint(div(10,0), div(10,2))\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_flow_patterns",
+      "english": "Guard Clause",
+      "set": {
+        "command": "python3 -c \"def greet(name):\n    if not name: raise ValueError('empty')\n    print('Hi', name)\ngreet('Alice')\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_flow_patterns",
+      "english": "Flag Variable",
+      "set": {
+        "command": "python3 -c \"found=False\nfor n in [1,2,3]:\n    if n==2: found=True; break\nprint('found:', found)\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_flow_patterns",
+      "english": "Sentinel Value",
+      "set": {
+        "command": "python3 -c \"MISSING=object(); d={'a':1}; v=d.get('b',MISSING); print(v is MISSING)\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_flow_patterns",
+      "english": "Dispatch Table (Dictionary)",
+      "set": {
+        "command": "python3 -c \"ops={'+': lambda a,b: a+b, '*': lambda a,b: a*b}; print(ops['+'](3,4))\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_flow_patterns",
+      "english": "State Machine",
+      "set": {
+        "command": "python3 -c \"state='idle'\nfor ev in ['start','stop']:\n    if state=='idle' and ev=='start': state='running'\n    elif state=='running' and ev=='stop': state='idle'\n    print(ev, '->', state)\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_flow_patterns",
+      "english": "Recursion (Base case)",
+      "set": {
+        "command": "python3 -c \"def fact(n):\n    if n==0: return 1\n    return n*fact(n-1)\nprint(fact(5))\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_flow_patterns",
+      "english": "List Filtering (if in comprehension)",
+      "set": {
+        "command": "python3 -c \"nums = range(10); print([n for n in nums if n % 2 == 0])\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_flow_patterns",
+      "english": "Exception-based Control Flow",
+      "set": {
+        "command": "python3 -c \"d = {'a': 1}\ntry:\n    v = d['b']\nexcept KeyError:\n    v = 'default'\nprint(v)\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_flow_patterns",
+      "english": "Match Case (Structural Pattern Matching)",
+      "set": {
+        "command": "python3 -c \"cmd = 'quit'\nmatch cmd:\n    case 'start': print('starting')\n    case 'quit': print('bye')\n    case _: print('unknown')\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_basics",
+      "english": "Function",
+      "set": {
+        "command": "python3 -c \"def greet(name): return f'Hello, {name}'\nprint(greet('Alice'))\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_basics",
+      "english": "Definition (def)",
+      "set": {
+        "command": "python3 -c \"def add(a, b): return a + b\nprint(add(3, 4))\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_basics",
+      "english": "Return Statement",
+      "set": {
+        "command": "python3 -c \"def double(x): return x * 2\nprint(double(21))\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_basics",
+      "english": "Parameter",
+      "set": {
+        "command": "python3 -c \"def greet(name, greeting='Hello'): print(f'{greeting}, {name}')\ngreet('Bob')\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_basics",
+      "english": "Argument",
+      "set": {
+        "command": "python3 -c \"def add(a, b): return a+b\nprint(add(a=5, b=3))\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_basics",
+      "english": "Call",
+      "set": {
+        "command": "python3 -c \"def say_hi(): print('Hi!')\nsay_hi()\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_basics",
+      "english": "Docstring",
+      "set": {
+        "command": "python3 -c \"def add(a,b):\n    'Return sum of a and b.'\n    return a+b\nprint(add.__doc__)\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_basics",
+      "english": "Built-in Function",
+      "set": {
+        "command": "python3 -c \"print(len('hello'), max(1,5,3), sorted([3,1,2]))\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_basics",
+      "english": "Positional Argument",
+      "set": {
+        "command": "python3 -c \"def sub(a, b): return a - b\nprint(sub(10, 3))\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_basics",
+      "english": "Keyword Argument",
+      "set": {
+        "command": "python3 -c \"def info(name, age): print(name, age)\ninfo(age=30, name='Bob')\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_adv",
+      "english": "*args (Arbitrary Arguments)",
+      "set": {
+        "command": "python3 -c \"def total(*args): return sum(args)\nprint(total(1, 2, 3, 4))\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_adv",
+      "english": "**kwargs (Arbitrary Keyword Arguments)",
+      "set": {
+        "command": "python3 -c \"def show(**kw): print(kw)\nshow(name='Al', age=30)\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_adv",
+      "english": "Lambda Function",
+      "set": {
+        "command": "python3 -c \"double = lambda x: x * 2; print(double(5))\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_adv",
+      "english": "Closure",
+      "set": {
+        "command": "python3 -c \"def make_adder(n):\n    def add(x): return x+n\n    return add\nadd5=make_adder(5); print(add5(10))\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_adv",
+      "english": "Decorator",
+      "set": {
+        "command": "python3 -c \"def loud(fn):\n    def w(*a): print('calling'); return fn(*a)\n    return w\n@loud\ndef hi(): print('hi')\nhi()\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_adv",
+      "english": "Wrapper",
+      "set": {
+        "command": "python3 -c \"import time\ndef timed(fn):\n    def w(*a):\n        t=time.time(); r=fn(*a); print(f'{time.time()-t:.4f}s'); return r\n    return w\n@timed\ndef slow(): time.sleep(0.01)\nslow()\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_adv",
+      "english": "Generator Function",
+      "set": {
+        "command": "python3 -c \"def count_up(n):\n    i=0\n    while i<n: yield i; i+=1\nprint(list(count_up(5)))\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_adv",
+      "english": "Higher-Order Function",
+      "set": {
+        "command": "python3 -c \"def apply(fn, lst): return [fn(x) for x in lst]\nprint(apply(str.upper, ['a','b']))\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_adv",
+      "english": "Inner Function",
+      "set": {
+        "command": "python3 -c \"def outer():\n    def inner(): return 'inside'\n    return inner()\nprint(outer())\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_adv",
+      "english": "Recursion",
+      "set": {
+        "command": "python3 -c \"def fib(n):\n    if n<=1: return n\n    return fib(n-1)+fib(n-2)\nprint([fib(i) for i in range(8)])\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_scope",
+      "english": "Scope",
+      "set": {
+        "command": "python3 -c \"x=10\ndef f(): x=20; print('local', x)\nf(); print('global', x)\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_scope",
+      "english": "Global",
+      "set": {
+        "command": "python3 -c \"CFG = 'production'\ndef show(): print(CFG)\nshow()\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_scope",
+      "english": "Local",
+      "set": {
+        "command": "python3 -c \"def calc():\n    total = 100\n    tax = total * 0.22\n    return total + tax\nprint(calc())\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_scope",
+      "english": "Nonlocal",
+      "set": {
+        "command": "python3 -c \"def counter():\n    n=0\n    def inc():\n        nonlocal n; n+=1; return n\n    return inc\nc=counter(); print(c(), c(), c())\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_scope",
+      "english": "LEGB Rule",
+      "set": {
+        "command": "python3 -c \"x='global'\ndef outer():\n    x='enclosing'\n    def inner():\n        x='local'\n        print(x)\n    inner()\nouter()\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_scope",
+      "english": "Namespace",
+      "set": {
+        "command": "python3 -c \"import math; print(dir(math)[:5])\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_scope",
+      "english": "Shadowing",
+      "set": {
+        "command": "python3 -c \"id = 42; print(id)\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_scope",
+      "english": "Module-level Variable",
+      "set": {
+        "command": "python3 -c \"MAX_RETRIES = 5\ndef fetch(): print('retries:', MAX_RETRIES)\nfetch()\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_scope",
+      "english": "Global Keyword",
+      "set": {
+        "command": "python3 -c \"x=0\ndef inc():\n    global x; x+=1\ninc(); inc(); print(x)\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_scope",
+      "english": "Nonlocal Keyword",
+      "set": {
+        "command": "python3 -c \"def accum():\n    t=0\n    def add(v):\n        nonlocal t; t+=v; return t\n    return add\na=accum(); print(a(5), a(3))\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_patterns",
+      "english": "Callback",
+      "set": {
+        "command": "python3 -c \"def on_done(r): print('done:', r)\ndef run(cb): cb(42)\nrun(on_done)\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_patterns",
+      "english": "Map (function)",
+      "set": {
+        "command": "python3 -c \"print(list(map(lambda x: x*2, [1,2,3])))\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_patterns",
+      "english": "Filter (function)",
+      "set": {
+        "command": "python3 -c \"print(list(filter(lambda x: x>0, [-1, 2, -3, 4])))\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_patterns",
+      "english": "Reduce (function)",
+      "set": {
+        "command": "python3 -c \"from functools import reduce; print(reduce(lambda a,b: a+b, [1,2,3,4]))\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_patterns",
+      "english": "Currying",
+      "set": {
+        "command": "python3 -c \"def mul(a):\n    def inner(b): return a*b\n    return inner\ndouble=mul(2); print(double(5))\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_patterns",
+      "english": "Pure Function",
+      "set": {
+        "command": "python3 -c \"def add(a, b): return a + b\nprint(add(3, 4))\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_patterns",
+      "english": "Side Effect",
+      "set": {
+        "command": "python3 -c \"log=[]\ndef record(msg): log.append(msg)\nrecord('event1'); print(log)\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_patterns",
+      "english": "Immutable Data",
+      "set": {
+        "command": "python3 -c \"t = (1, 2, 3)\ntry:\n    t[0] = 9\nexcept TypeError as e:\n    print(e)\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_patterns",
+      "english": "List/Dict Comprehension",
+      "set": {
+        "command": "python3 -c \"sq = {x: x**2 for x in range(5)}; print(sq)\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_patterns",
+      "english": "Partial Application",
+      "set": {
+        "command": "python3 -c \"from functools import partial; add5=partial(int.__add__, 5); print(add5(3))\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_class_basics",
+      "english": "Class",
+      "set": {
+        "command": "python3 -c \"class Dog:\n    def __init__(self, name): self.name=name\n    def bark(self): print(f'{self.name}: woof!')\nDog('Rex').bark()\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_class_basics",
+      "english": "Object",
+      "set": {
+        "command": "python3 -c \"class Cat: pass\nc = Cat(); print(type(c))\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_class_basics",
+      "english": "Instance",
+      "set": {
+        "command": "python3 -c \"class X: pass\na, b = X(), X(); print(a is b)\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_class_basics",
+      "english": "__init__ (Method)",
+      "set": {
+        "command": "python3 -c \"class Point:\n    def __init__(self, x, y): self.x=x; self.y=y\np=Point(3,4); print(p.x, p.y)\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_class_basics",
+      "english": "self (Parameter)",
+      "set": {
+        "command": "python3 -c \"class Counter:\n    def __init__(self): self.n=0\n    def inc(self): self.n+=1; return self.n\nc=Counter(); print(c.inc(), c.inc())\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_class_basics",
+      "english": "Attribute",
+      "set": {
+        "command": "python3 -c \"class Car:\n    def __init__(self, brand): self.brand=brand; self.speed=0\nc=Car('Fiat'); print(c.brand)\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_class_basics",
+      "english": "Method",
+      "set": {
+        "command": "python3 -c \"class Calc:\n    def add(self, a, b): return a+b\nprint(Calc().add(3,4))\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_class_basics",
+      "english": "Constructor",
+      "set": {
+        "command": "python3 -c \"class Product:\n    def __init__(self, name, price): self.name=name; self.price=price\np=Product('Book', 9.99); print(p.name, p.price)\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_class_basics",
+      "english": "Instance Variable",
+      "set": {
+        "command": "python3 -c \"class Dog:\n    def __init__(self, name): self.name=name\na=Dog('Rex'); b=Dog('Max'); print(a.name, b.name)\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_class_basics",
+      "english": "Class Variable",
+      "set": {
+        "command": "python3 -c \"class Dog:\n    species='Canis'\n    def __init__(self, name): self.name=name\nprint(Dog.species)\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_inheritance",
+      "english": "Inheritance",
+      "set": {
+        "command": "python3 -c \"class Animal:\n    def speak(self): return 'sound'\nclass Dog(Animal):\n    def speak(self): return 'woof'\nprint(Dog().speak())\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_inheritance",
+      "english": "Parent Class (Base Class)",
+      "set": {
+        "command": "python3 -c \"class Base:\n    def hello(self): print('base')\nclass Child(Base): pass\nChild().hello()\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_inheritance",
+      "english": "Child Class (Subclass)",
+      "set": {
+        "command": "python3 -c \"class Vehicle: pass\nclass Car(Vehicle):\n    def honk(self): print('beep')\nCar().honk()\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_inheritance",
+      "english": "Override (Method)",
+      "set": {
+        "command": "python3 -c \"class A:\n    def greet(self): return 'hi'\nclass B(A):\n    def greet(self): return 'hello'\nprint(B().greet())\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_inheritance",
+      "english": "Super (function)",
+      "set": {
+        "command": "python3 -c \"class A:\n    def __init__(self): self.x=1\nclass B(A):\n    def __init__(self): super().__init__(); self.y=2\nb=B(); print(b.x, b.y)\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_inheritance",
+      "english": "Multiple Inheritance",
+      "set": {
+        "command": "python3 -c \"class A:\n    def a(self): return 'A'\nclass B:\n    def b(self): return 'B'\nclass C(A,B): pass\nc=C(); print(c.a(), c.b())\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_inheritance",
+      "english": "Method Resolution Order (MRO)",
+      "set": {
+        "command": "python3 -c \"class A: pass\nclass B(A): pass\nclass C(A): pass\nclass D(B,C): pass\nprint(D.__mro__)\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_inheritance",
+      "english": "Mixin",
+      "set": {
+        "command": "python3 -c \"class JsonMixin:\n    def to_json(self):\n        import json; return json.dumps(self.__dict__)\nclass User(JsonMixin):\n    def __init__(self,n): self.name=n\nprint(User('Al').to_json())\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_inheritance",
+      "english": "Is-a Relationship",
+      "set": {
+        "command": "python3 -c \"class Animal: pass\nclass Dog(Animal): pass\nd=Dog(); print(isinstance(d, Animal))\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_inheritance",
+      "english": "Polymorphism",
+      "set": {
+        "command": "python3 -c \"class Cat:\n    def speak(self): return 'meow'\nclass Dog:\n    def speak(self): return 'woof'\nfor a in [Cat(), Dog()]: print(a.speak())\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_concepts",
+      "english": "Encapsulation",
+      "set": {
+        "command": "python3 -c \"class Acct:\n    def __init__(self): self._bal=0\n    def deposit(self,a): self._bal+=a\n    def bal(self): return self._bal\na=Acct(); a.deposit(100); print(a.bal())\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_concepts",
+      "english": "Abstraction",
+      "set": {
+        "command": "python3 -c \"from abc import ABC, abstractmethod\nclass Shape(ABC):\n    @abstractmethod\n    def area(self): ...\nclass Sq(Shape):\n    def __init__(self,s): self.s=s\n    def area(self): return self.s**2\nprint(Sq(4).area())\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_concepts",
+      "english": "Private Attribute",
+      "set": {
+        "command": "python3 -c \"class C:\n    def __init__(self): self.__secret=42\no=C(); print(o._C__secret)\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_concepts",
+      "english": "Protected Attribute",
+      "set": {
+        "command": "python3 -c \"class C:\n    def __init__(self): self._internal=10\nprint(C()._internal)\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_concepts",
+      "english": "Interface",
+      "set": {
+        "command": "python3 -c \"from abc import ABC, abstractmethod\nclass Serializable(ABC):\n    @abstractmethod\n    def to_dict(self): ...\nclass User(Serializable):\n    def to_dict(self): return {'ok': True}\nprint(User().to_dict())\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_concepts",
+      "english": "Abstract Base Class (ABC)",
+      "set": {
+        "command": "python3 -c \"from abc import ABC, abstractmethod\nclass Shape(ABC):\n    @abstractmethod\n    def draw(self): ...\ntry:\n    Shape()\nexcept TypeError as e:\n    print(e)\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_concepts",
+      "english": "Composition",
+      "set": {
+        "command": "python3 -c \"class Engine:\n    def start(self): return 'vroom'\nclass Car:\n    def __init__(self): self.engine=Engine()\nprint(Car().engine.start())\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_concepts",
+      "english": "Aggregation",
+      "set": {
+        "command": "python3 -c \"class Student:\n    def __init__(self,n): self.name=n\nclass Room:\n    def __init__(self,sts): self.sts=sts\ns=Student('Al'); r=Room([s]); print(r.sts[0].name)\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_concepts",
+      "english": "Method Overloading",
+      "set": {
+        "command": "python3 -c \"class G:\n    def hi(self, name=None): return f'Hello, {name}!' if name else 'Hello!'\ng=G(); print(g.hi(), g.hi('Bob'))\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_concepts",
+      "english": "Duck Typing",
+      "set": {
+        "command": "python3 -c \"class A:\n    def speak(self): return 'A'\nclass B:\n    def speak(self): return 'B'\ndef talk(obj): print(obj.speak())\ntalk(A()); talk(B())\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_advanced",
+      "english": "Property (Decorator)",
+      "set": {
+        "command": "python3 -c \"class C:\n    def __init__(self): self._x=0\n    @property\n    def x(self): return self._x\no=C(); print(o.x)\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_advanced",
+      "english": "Getter",
+      "set": {
+        "command": "python3 -c \"class Acct:\n    def __init__(self,b): self._b=b\n    @property\n    def balance(self): return self._b\nprint(Acct(100).balance)\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_advanced",
+      "english": "Setter",
+      "set": {
+        "command": "python3 -c \"class C:\n    def __init__(self): self._n=''\n    @property\n    def name(self): return self._n\n    @name.setter\n    def name(self,v): self._n=v.strip()\no=C(); o.name=' Al '; print(o.name)\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_advanced",
+      "english": "Classmethod (Decorator)",
+      "set": {
+        "command": "python3 -c \"class User:\n    def __init__(self,n): self.name=n\n    @classmethod\n    def guest(cls): return cls('Guest')\nprint(User.guest().name)\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_advanced",
+      "english": "Staticmethod (Decorator)",
+      "set": {
+        "command": "python3 -c \"class Math:\n    @staticmethod\n    def square(x): return x*x\nprint(Math.square(7))\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_advanced",
+      "english": "Dunder Method (Magic Method)",
+      "set": {
+        "command": "python3 -c \"class Vec:\n    def __init__(self,x,y): self.x=x; self.y=y\n    def __add__(self,o): return Vec(self.x+o.x, self.y+o.y)\n    def __repr__(self): return f'Vec({self.x},{self.y})'\nprint(Vec(1,2)+Vec(3,4))\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_advanced",
+      "english": "__str__ vs __repr__",
+      "set": {
+        "command": "python3 -c \"class P:\n    def __init__(self,x,y): self.x=x; self.y=y\n    def __str__(self): return f'({self.x},{self.y})'\n    def __repr__(self): return f'P({self.x},{self.y})'\np=P(1,2); print(str(p), repr(p))\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_advanced",
+      "english": "Operator Overloading",
+      "set": {
+        "command": "python3 -c \"class Money:\n    def __init__(self,a): self.a=a\n    def __add__(self,o): return Money(self.a+o.a)\n    def __repr__(self): return f'${self.a}'\nprint(Money(10)+Money(20))\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_advanced",
+      "english": "Slots (__slots__)",
+      "set": {
+        "command": "python3 -c \"class P:\n    __slots__=('x','y')\n    def __init__(self,x,y): self.x=x; self.y=y\np=P(1,2); print(p.x, p.y)\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_advanced",
+      "english": "Descriptor",
+      "set": {
+        "command": "python3 -c \"class Pos:\n    def __set_name__(self,o,n): self.n=n\n    def __set__(self,obj,v):\n        if v<0: raise ValueError\n        obj.__dict__[self.n]=v\n    def __get__(self,obj,t): return obj.__dict__.get(self.n,0)\nclass C:\n    x=Pos()\nc=C(); c.x=5; print(c.x)\""
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_modules",
+      "english": "Module",
+      "set": {
+        "command": "python3 -c \"import math; print(math.sqrt(16), math.pi)\""
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_modules",
+      "english": "Package",
+      "set": {
+        "command": "python3 -c \"import json.tool; print(json.tool.__name__)\""
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_modules",
+      "english": "Import Statement",
+      "set": {
+        "command": "python3 -c \"import math; print(math.ceil(4.2))\""
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_modules",
+      "english": "From ... Import",
+      "set": {
+        "command": "python3 -c \"from math import pi, sqrt; print(sqrt(pi))\""
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_modules",
+      "english": "As (Alias)",
+      "set": {
+        "command": "python3 -c \"import collections as col; print(col.Counter('hello'))\""
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_modules",
+      "english": "Standard Library",
+      "set": {
+        "command": "python3 -c \"import os, datetime; print(os.getcwd(), datetime.date.today())\""
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_modules",
+      "english": "Third-party Library",
+      "set": {
+        "command": "pip install --help | head -1"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_modules",
+      "english": "Pip (Package Manager)",
+      "set": {
+        "command": "pip list --format=columns | head -5"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_modules",
+      "english": "PyPI (Python Package Index)",
+      "set": {
+        "command": "pip show pip | head -3"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_modules",
+      "english": "__name__ == \"__main__\"",
+      "set": {
+        "command": "python3 -c \"if __name__ == '__main__': print('running as main')\""
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_files",
+      "english": "File Object",
+      "set": {
+        "command": "python3 -c \"import io; f=io.StringIO('hello'); print(type(f), f.read())\""
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_files",
+      "english": "Open (function)",
+      "set": {
+        "command": "python3 -c \"import tempfile, os; p=os.path.join(tempfile.gettempdir(),'test.txt'); open(p,'w').write('hi'); print(open(p).read())\""
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_files",
+      "english": "Mode",
+      "set": {
+        "command": "python3 -c \"import tempfile, os; p=os.path.join(tempfile.gettempdir(),'m.txt'); open(p,'w').write('line1\\n'); open(p,'a').write('line2\\n'); print(open(p).read())\""
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_files",
+      "english": "Read",
+      "set": {
+        "command": "python3 -c \"import tempfile, os; p=os.path.join(tempfile.gettempdir(),'r.txt'); open(p,'w').write('hello'); print(open(p).read())\""
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_files",
+      "english": "Readline",
+      "set": {
+        "command": "python3 -c \"import io; f=io.StringIO('line1\\nline2\\n'); print(f.readline().strip(), f.readline().strip())\""
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_files",
+      "english": "Write",
+      "set": {
+        "command": "python3 -c \"import tempfile, os; p=os.path.join(tempfile.gettempdir(),'w.txt'); f=open(p,'w'); f.write('data\\n'); f.close(); print(open(p).read())\""
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_files",
+      "english": "Close",
+      "set": {
+        "command": "python3 -c \"import io; f=io.StringIO('hi'); print(f.read()); f.close(); print('closed:', f.closed)\""
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_files",
+      "english": "With Statement (Context Manager)",
+      "set": {
+        "command": "python3 -c \"import tempfile, os; p=os.path.join(tempfile.gettempdir(),'ctx.txt'); open(p,'w').write('hi')\nwith open(p) as f:\n    print(f.read())\""
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_files",
+      "english": "Binary Mode",
+      "set": {
+        "command": "python3 -c \"import tempfile, os; p=os.path.join(tempfile.gettempdir(),'b.bin'); open(p,'wb').write(b'\\x00\\x01\\x02'); print(open(p,'rb').read())\""
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_files",
+      "english": "Seek (method)",
+      "set": {
+        "command": "python3 -c \"import io; f=io.BytesIO(b'ABCDEF'); f.seek(3); print(f.read())\""
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_data_formats",
+      "english": "Serialization",
+      "set": {
+        "command": "python3 -c \"import json; print(json.dumps({'name': 'Alice', 'age': 30}))\""
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_data_formats",
+      "english": "Deserialization",
+      "set": {
+        "command": "python3 -c \"import json; d=json.loads('{\\\"a\\\": 1}'); print(d, type(d))\""
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_data_formats",
+      "english": "JSON (module)",
+      "set": {
+        "command": "python3 -c \"import json; print(json.dumps([1,2,3], indent=2))\""
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_data_formats",
+      "english": "CSV (module)",
+      "set": {
+        "command": "python3 -c \"import csv, io; r=csv.reader(io.StringIO('a,b\\n1,2')); [print(row) for row in r]\""
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_data_formats",
+      "english": "YAML",
+      "set": {
+        "command": "python3 -c \"print('YAML needs: pip install pyyaml'); import importlib; print('yaml' if importlib.util.find_spec('yaml') else 'not installed')\""
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_data_formats",
+      "english": "Pickle (module)",
+      "set": {
+        "command": "python3 -c \"import pickle; data=[1,2,3]; b=pickle.dumps(data); print(pickle.loads(b))\""
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_data_formats",
+      "english": "Parsing",
+      "set": {
+        "command": "python3 -c \"import json; d=json.loads('{\\\"users\\\": [{\\\"id\\\": 1}]}'); print(d['users'][0]['id'])\""
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_data_formats",
+      "english": "Encoding (UTF-8)",
+      "set": {
+        "command": "python3 -c \"s='ciao'; print(s.encode('utf-8'), len(s.encode('utf-8')))\""
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_data_formats",
+      "english": "Load/Dump",
+      "set": {
+        "command": "python3 -c \"import json; s=json.dumps({'a':1}); print(json.loads(s))\""
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_data_formats",
+      "english": "Delimiter",
+      "set": {
+        "command": "python3 -c \"import csv, io; r=csv.reader(io.StringIO('a;b;c'), delimiter=';'); print(next(r))\""
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_venv",
+      "english": "Virtual Environment",
+      "set": {
+        "command": "python3 -m venv --help | head -3"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_venv",
+      "english": "Venv (module)",
+      "set": {
+        "command": "python3 -c \"import venv; print('venv module available:', venv.__name__)\""
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_venv",
+      "english": "Requirements File",
+      "set": {
+        "command": "pip freeze | head -5"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_venv",
+      "english": "Dependency",
+      "set": {
+        "command": "pip show pip | grep -i requires"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_venv",
+      "english": "Environment Variable",
+      "set": {
+        "command": "python3 -c \"import os; print(os.environ.get('HOME', 'not set'))\""
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_venv",
+      "english": "Dotenv (.env)",
+      "set": {
+        "command": "python3 -c \"import os; os.environ['MY_VAR']='hello'; print(os.environ['MY_VAR'])\""
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_venv",
+      "english": "Absolute Import",
+      "set": {
+        "command": "python3 -c \"from os.path import join, exists; print(join('/tmp', 'test'))\""
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_venv",
+      "english": "Circular Import",
+      "set": {
+        "command": "python3 -c \"def use_json():\n    import json\n    return json.dumps({'lazy': True})\nprint(use_json())\""
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_venv",
+      "english": "Search Path (sys.path)",
+      "set": {
+        "command": "python3 -c \"import sys; print('\\n'.join(sys.path[:5]))\""
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_venv",
+      "english": "Package Registry",
+      "set": {
+        "command": "pip config list 2>/dev/null || echo 'default: https://pypi.org/simple/'"
+      }
+    }
+  ]
+}

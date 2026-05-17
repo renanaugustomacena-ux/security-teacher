@@ -1,0 +1,828 @@
+{
+  "fixes": [
+    {
+      "level": "12",
+      "lesson": "db_administration_1",
+      "english": "Backup Schedule",
+      "set": {
+        "code": "# Cron: full backup at 3 AM daily\n0 3 * * * /usr/local/bin/backup.sh --full\n# Incremental backup every 6 hours\n0 */6 * * * /usr/local/bin/backup.sh --incremental"
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_2",
+      "english": "Point-in-Time Recovery",
+      "set": {
+        "code": "-- postgresql.conf: restore to a specific point\nrestore_command = 'cp /archive/%f %p'\nrecovery_target_time = '2026-04-26 14:00:00'\nrecovery_target_action = 'promote'"
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_2",
+      "english": "WAL Archive",
+      "set": {
+        "code": "-- postgresql.conf: enable WAL archiving\nwal_level = replica\narchive_mode = on\narchive_command = 'cp %p /archive/%f'"
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_3",
+      "english": "CREATE USER",
+      "set": {
+        "code": "CREATE USER alice\n  WITH PASSWORD 'secret'\n  VALID UNTIL '2027-01-01'\n  CONNECTION LIMIT 10;"
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_3",
+      "english": "CREATE ROLE",
+      "set": {
+        "code": "CREATE ROLE app_readonly\n  NOSUPERUSER\n  NOCREATEDB\n  NOCREATEROLE\n  INHERIT;"
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_3",
+      "english": "GRANT",
+      "set": {
+        "code": "GRANT SELECT, INSERT\n  ON users, orders\n  TO alice;"
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_3",
+      "english": "REVOKE",
+      "set": {
+        "code": "REVOKE INSERT, UPDATE\n  ON users\n  FROM alice\n  CASCADE;"
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_3",
+      "english": "Privilege",
+      "set": {
+        "code": "-- Common database privileges\nGRANT SELECT, INSERT ON orders TO app_role;\nGRANT UPDATE, DELETE ON orders TO admin_role;\nGRANT USAGE ON SCHEMA public TO app_role;"
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_3",
+      "english": "Role",
+      "set": {
+        "code": "-- Assign role to user\nGRANT app_readonly TO alice;\nGRANT app_readonly TO bob;\nALTER ROLE alice SET search_path = myapp, public;"
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_3",
+      "english": "Superuser",
+      "set": {
+        "code": "-- Grant superuser privileges\nALTER USER admin WITH SUPERUSER;\n-- Verify superuser status\nSELECT usename, usesuper\n  FROM pg_user\n  WHERE usesuper = TRUE;"
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_3",
+      "english": "pg_hba.conf",
+      "set": {
+        "code": "# TYPE  DATABASE  USER  ADDRESS       METHOD\nlocal   all       all                 peer\nhost    all       all   127.0.0.1/32  md5\nhost    all       all   10.0.0.0/24   scram-sha-256"
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_4",
+      "english": "Connection Count",
+      "set": {
+        "code": "SELECT state, COUNT(*) AS connections\n  FROM pg_stat_activity\n  GROUP BY state\n  ORDER BY connections DESC;"
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_4",
+      "english": "Long-Running Query",
+      "set": {
+        "code": "SELECT pid, NOW() - query_start AS duration,\n       state, LEFT(query, 80) AS query\n  FROM pg_stat_activity\n  WHERE state = 'active'\n    AND query_start < NOW() - INTERVAL '5 minutes'\n  ORDER BY duration DESC;"
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_4",
+      "english": "Lock Contention",
+      "set": {
+        "code": "SELECT l.pid, l.locktype, l.mode,\n       a.query\n  FROM pg_locks l\n  JOIN pg_stat_activity a ON l.pid = a.pid\n  WHERE NOT l.granted;"
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_4",
+      "english": "Disk Usage",
+      "set": {
+        "code": "SELECT tablename,\n       pg_size_pretty(pg_total_relation_size(tablename::regclass)) AS total\n  FROM pg_tables\n  WHERE schemaname = 'public'\n  ORDER BY pg_total_relation_size(tablename::regclass) DESC;"
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_4",
+      "english": "Health Check",
+      "set": {
+        "code": "-- Basic health check query\nSELECT 1 AS healthy;\n-- Extended check with uptime\nSELECT pg_postmaster_start_time() AS started,\n       NOW() - pg_postmaster_start_time() AS uptime;"
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_1",
+      "english": "Logical Replication",
+      "set": {
+        "code": "-- On publisher\nCREATE PUBLICATION pub FOR ALL TABLES;\n-- On subscriber\nCREATE SUBSCRIPTION sub\n  CONNECTION 'host=primary dbname=mydb'\n  PUBLICATION pub;"
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_1",
+      "english": "Synchronous Replication",
+      "set": {
+        "code": "-- postgresql.conf on primary\nsynchronous_commit = on\nsynchronous_standby_names = 'replica1, replica2'\nwal_level = replica"
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_1",
+      "english": "Replication Lag",
+      "set": {
+        "code": "SELECT client_addr,\n       state,\n       sent_lsn - replay_lsn AS byte_lag,\n       NOW() - pg_last_xact_replay_timestamp() AS time_lag\n  FROM pg_stat_replication;"
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_5",
+      "english": "Hash Sharding",
+      "set": {
+        "code": "-- Distribute rows across shards by hash\nshard_id = hash(user_id) % num_shards\n-- Example: 4 shards\n-- user_id=42 -> hash(42) % 4 = 2 -> shard_2"
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_7",
+      "english": "Table Partitioning",
+      "set": {
+        "code": "CREATE TABLE measurements (\n  id SERIAL,\n  ts TIMESTAMPTZ NOT NULL,\n  value DOUBLE PRECISION\n) PARTITION BY RANGE (ts);"
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_7",
+      "english": "Range Partitioning",
+      "set": {
+        "code": "CREATE TABLE orders (\n  id SERIAL, created_at DATE, total DECIMAL\n) PARTITION BY RANGE (created_at);\nCREATE TABLE orders_2026\n  PARTITION OF orders\n  FOR VALUES FROM ('2026-01-01') TO ('2027-01-01');"
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_7",
+      "english": "List Partitioning",
+      "set": {
+        "code": "CREATE TABLE customers (\n  id SERIAL, name TEXT, country TEXT\n) PARTITION BY LIST (country);\nCREATE TABLE customers_eu\n  PARTITION OF customers\n  FOR VALUES IN ('IT', 'DE', 'FR');"
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_7",
+      "english": "Hash Partitioning",
+      "set": {
+        "code": "CREATE TABLE sessions (\n  id SERIAL, user_id INT, data JSONB\n) PARTITION BY HASH (user_id);\nCREATE TABLE sessions_p0\n  PARTITION OF sessions\n  FOR VALUES WITH (MODULUS 4, REMAINDER 0);"
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_7",
+      "english": "Detach Partition",
+      "set": {
+        "code": "-- Detach old partition for archival\nALTER TABLE measurements\n  DETACH PARTITION measurements_2024;\n-- Optionally archive the detached table\nALTER TABLE measurements_2024\n  SET TABLESPACE archive_ts;"
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "db_sql_13",
+      "english": "JSONB",
+      "set": {
+        "code": "CREATE TABLE events (\n  id SERIAL PRIMARY KEY,\n  data JSONB NOT NULL\n);\nSELECT data->>'name' AS name\n  FROM events\n  WHERE data @> '{\"type\": \"click\"}';"
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "db_sql_13",
+      "english": "Array Type",
+      "set": {
+        "code": "CREATE TABLE articles (\n  id SERIAL PRIMARY KEY,\n  title TEXT,\n  tags TEXT[] DEFAULT '{}'\n);\nSELECT * FROM articles\n  WHERE 'postgres' = ANY(tags);"
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "db_sql_13",
+      "english": "HSTORE",
+      "set": {
+        "code": "CREATE EXTENSION IF NOT EXISTS hstore;\nCREATE TABLE products (\n  id SERIAL PRIMARY KEY,\n  attributes HSTORE\n);\nSELECT attributes->'color' FROM products;"
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "db_sql_13",
+      "english": "Range Type",
+      "set": {
+        "code": "CREATE TABLE reservations (\n  id SERIAL PRIMARY KEY,\n  room_id INT,\n  period TSRANGE,\n  EXCLUDE USING gist (room_id WITH =, period WITH &&)\n);"
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "db_sql_13",
+      "english": "PostGIS",
+      "set": {
+        "code": "CREATE EXTENSION postgis;\nCREATE TABLE places (\n  id SERIAL PRIMARY KEY,\n  name TEXT,\n  location GEOMETRY(Point, 4326)\n);\nSELECT name FROM places\n  WHERE ST_DWithin(location, ST_MakePoint(12.49, 41.89), 1000);"
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "db_sql_13",
+      "english": "Extension",
+      "set": {
+        "code": "CREATE EXTENSION IF NOT EXISTS pg_trgm;\n-- Use trigram similarity for fuzzy search\nSELECT word, similarity(word, 'postgre') AS sim\n  FROM words\n  WHERE word % 'postgre'\n  ORDER BY sim DESC;"
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "db_sql_13",
+      "english": "Foreign Data Wrapper",
+      "set": {
+        "code": "CREATE EXTENSION postgres_fdw;\nCREATE SERVER remote_srv\n  FOREIGN DATA WRAPPER postgres_fdw\n  OPTIONS (host 'remote-host', dbname 'other_db');\nCREATE FOREIGN TABLE remote_users (\n  id INT, name TEXT\n) SERVER remote_srv;"
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "db_sql_13",
+      "english": "Listen/Notify",
+      "set": {
+        "code": "-- Session A: listen for events\nLISTEN order_events;\n-- Session B: send notification\nNOTIFY order_events, '{\"order_id\": 42, \"status\": \"shipped\"}';"
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "db_sql_13",
+      "english": "PostgreSQL Tablespace",
+      "set": {
+        "code": "CREATE TABLESPACE fast_storage\n  LOCATION '/mnt/ssd';\nALTER TABLE hot_data\n  SET TABLESPACE fast_storage;"
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "db_sql_14",
+      "english": "Binary Log",
+      "set": {
+        "code": "-- my.cnf: enable binary logging\n[mysqld]\nlog_bin = mysql-bin\nbinlog_format = ROW\nexpire_logs_days = 7"
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "db_sql_14",
+      "english": "GTID",
+      "set": {
+        "code": "-- my.cnf: enable GTIDs\n[mysqld]\ngtid_mode = ON\nenforce_gtid_consistency = ON\nlog_slave_updates = ON"
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "db_sql_14",
+      "english": "Information Schema",
+      "set": {
+        "code": "SELECT table_name, column_name, data_type\n  FROM information_schema.columns\n  WHERE table_schema = 'public'\n  ORDER BY table_name, ordinal_position;"
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "db_modeling_1",
+      "english": "Fact Table",
+      "set": {
+        "code": "CREATE TABLE fact_sales (\n  sale_id SERIAL PRIMARY KEY,\n  date_id INT REFERENCES dim_date(id),\n  product_id INT REFERENCES dim_product(id),\n  quantity INT,\n  amount DECIMAL(12,2)\n);"
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "db_modeling_1",
+      "english": "Dimension Table",
+      "set": {
+        "code": "CREATE TABLE dim_product (\n  id SERIAL PRIMARY KEY,\n  product_code VARCHAR(20),\n  name VARCHAR(200),\n  category VARCHAR(100),\n  subcategory VARCHAR(100)\n);"
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "db_modeling_1",
+      "english": "Dimensional Surrogate Key",
+      "set": {
+        "code": "CREATE TABLE dim_customer (\n  customer_sk SERIAL PRIMARY KEY,  -- surrogate key\n  customer_id VARCHAR(20),         -- natural key\n  name VARCHAR(200),\n  segment VARCHAR(50)\n);"
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "db_modeling_1",
+      "english": "Dimensional Natural Key",
+      "set": {
+        "code": "CREATE TABLE dim_product (\n  product_sk SERIAL PRIMARY KEY,\n  product_code VARCHAR(20) UNIQUE,  -- natural key\n  name VARCHAR(200)\n);\n-- Natural key maps to source system ID"
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "db_modeling_2",
+      "english": "Effective Date",
+      "set": {
+        "code": "-- SCD Type 2: track history with date ranges\nCREATE TABLE dim_employee (\n  employee_sk SERIAL PRIMARY KEY,\n  emp_id INT,\n  department VARCHAR(100),\n  effective_from DATE NOT NULL,\n  effective_to DATE DEFAULT '9999-12-31'\n);"
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "db_modeling_2",
+      "english": "Current Flag",
+      "set": {
+        "code": "-- SCD Type 2: mark current row\nSELECT emp_id, department\n  FROM dim_employee\n  WHERE is_current = TRUE;\n-- On update: set old row's flag to FALSE\nUPDATE dim_employee\n  SET is_current = FALSE\n  WHERE emp_id = 101 AND is_current = TRUE;"
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "db_modeling_4",
+      "english": "Materialized Path",
+      "set": {
+        "code": "CREATE TABLE categories (\n  id SERIAL PRIMARY KEY,\n  name TEXT,\n  path TEXT  -- e.g. '/1/3/7/12/'\n);\n-- Find all descendants of node 3\nSELECT * FROM categories\n  WHERE path LIKE '/1/3/%';"
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "db_modeling_4",
+      "english": "Adjacency List",
+      "set": {
+        "code": "CREATE TABLE nodes (\n  id SERIAL PRIMARY KEY,\n  name TEXT,\n  parent_id INT REFERENCES nodes(id)\n);\n-- Recursive query to find all ancestors\nWITH RECURSIVE tree AS (\n  SELECT id, name, parent_id FROM nodes WHERE id = 12\n  UNION ALL\n  SELECT n.id, n.name, n.parent_id\n    FROM nodes n JOIN tree t ON n.id = t.parent_id\n)\nSELECT * FROM tree;"
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "db_security_1",
+      "english": "SQL Injection",
+      "set": {
+        "code": "-- VULNERABLE: string concatenation\nquery = 'SELECT * FROM users WHERE name = \\'' + input + '\\'';\n-- SAFE: parameterized query\nquery = 'SELECT * FROM users WHERE name = $1';\ndb.query(query, [input]);"
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "db_security_1",
+      "english": "Parameterized Query",
+      "set": {
+        "code": "-- Use placeholders instead of concatenation\nSELECT * FROM users\n  WHERE name = $1\n    AND email = $2;\n-- Bind values: ['alice', 'alice@example.com']"
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "db_security_1",
+      "english": "Prepared Statement",
+      "set": {
+        "code": "-- Prepare the statement once\nPREPARE find_user (TEXT) AS\n  SELECT id, name, email\n  FROM users WHERE name = $1;\n-- Execute with different values\nEXECUTE find_user('alice');"
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "db_security_1",
+      "english": "Bind Parameter",
+      "set": {
+        "code": "# Python: bind parameters safely\ncur.execute(\n    \"SELECT * FROM orders WHERE user_id = %s AND status = %s\",\n    (user_id, 'active')\n)"
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "db_security_1",
+      "english": "Time-Based Injection",
+      "set": {
+        "code": "-- Attacker payload that delays response\n-- input: ' OR pg_sleep(5) --\nSELECT * FROM users\n  WHERE name = '' OR pg_sleep(5) --';\n-- If response takes 5s, the app is vulnerable"
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "db_security_2",
+      "english": "Column-Level Encryption",
+      "set": {
+        "code": "-- Encrypt sensitive data per column\nUPDATE users SET ssn_enc =\n  pgp_sym_encrypt(ssn, 'encryption_key');\n-- Decrypt when needed\nSELECT pgp_sym_decrypt(ssn_enc, 'encryption_key')\n  FROM users WHERE id = 1;"
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "db_security_2",
+      "english": "pgcrypto",
+      "set": {
+        "code": "CREATE EXTENSION pgcrypto;\n-- Hash a password with bcrypt\nINSERT INTO users (name, password_hash)\n  VALUES ('alice', crypt('secret', gen_salt('bf')));"
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "db_security_2",
+      "english": "Hashing",
+      "set": {
+        "code": "-- Store hashed password\nINSERT INTO users (email, password_hash)\n  VALUES ('a@b.com', crypt('mypassword', gen_salt('bf')));\n-- Verify password\nSELECT id FROM users\n  WHERE email = 'a@b.com'\n    AND password_hash = crypt('mypassword', password_hash);"
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "db_security_2",
+      "english": "SSL Certificate",
+      "set": {
+        "code": "-- postgresql.conf: require SSL\nssl = on\nssl_cert_file = '/etc/ssl/server.crt'\nssl_key_file = '/etc/ssl/server.key'\n-- Connection string\npsql \"sslmode=verify-full host=db.example.com\""
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "db_security_3",
+      "english": "Data Masking",
+      "set": {
+        "code": "-- Mask sensitive data based on role\nCREATE VIEW users_masked AS\n  SELECT id, name,\n    CASE WHEN current_user = 'admin'\n      THEN ssn\n      ELSE '***-**-' || RIGHT(ssn, 4)\n    END AS ssn\n  FROM users;"
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "db_security_4",
+      "english": "Row-Level Security",
+      "set": {
+        "code": "ALTER TABLE orders ENABLE ROW LEVEL SECURITY;\nCREATE POLICY user_isolation ON orders\n  USING (user_id = current_setting('app.user_id')::INT);\n-- Each user only sees their own orders"
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "db_security_4",
+      "english": "Column-Level Security",
+      "set": {
+        "code": "-- Restrict column access per role\nGRANT SELECT (id, name, email)\n  ON users TO app_role;\nREVOKE SELECT (ssn, salary)\n  ON users FROM app_role;"
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "db_security_4",
+      "english": "SECURITY DEFINER",
+      "set": {
+        "code": "-- Function runs with owner's privileges\nCREATE FUNCTION get_salary(emp_id INT)\n  RETURNS DECIMAL\n  LANGUAGE SQL\n  SECURITY DEFINER\nAS $$\n  SELECT salary FROM employees WHERE id = emp_id;\n$$;"
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "db_security_4",
+      "english": "View-Based Security",
+      "set": {
+        "code": "-- Expose only safe columns via a view\nCREATE VIEW public_users AS\n  SELECT id, name, email\n  FROM users;\nGRANT SELECT ON public_users TO app_role;\nREVOKE ALL ON users FROM app_role;"
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "db_security_4",
+      "english": "Network ACL",
+      "set": {
+        "code": "# pg_hba.conf: restrict by network\nhost  mydb  app_user  10.0.0.0/24   scram-sha-256\nhost  all   all       0.0.0.0/0     reject"
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_13",
+      "english": "Node",
+      "set": {
+        "code": "-- Create a labeled node with properties\nCREATE (:Person {\n  name: 'Marco',\n  age: 30,\n  city: 'Roma'\n});"
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_13",
+      "english": "Property Graph Edge",
+      "set": {
+        "code": "-- Create a relationship with properties\nMATCH (a:Person {name: 'Marco'}),\n      (b:Person {name: 'Anna'})\nCREATE (a)-[:KNOWS {since: 2020}]->(b);"
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_13",
+      "english": "Relationship (Graph)",
+      "set": {
+        "code": "-- Query friends of friends\nMATCH (a:Person {name: 'Marco'})\n      -[:FRIEND_OF]->(friend)\n      -[:FRIEND_OF]->(fof)\nRETURN DISTINCT fof.name;"
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_13",
+      "english": "Triple",
+      "set": {
+        "code": "# RDF triples: subject-predicate-object\n<Marco> <knows> <Anna> .\n<Marco> <livesIn> <Roma> .\n<Anna> <worksAt> <UniRoma> ."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_13",
+      "english": "Shortest Path",
+      "set": {
+        "code": "MATCH path = shortestPath(\n  (a:Person {name: 'Marco'})\n  -[*..6]-\n  (b:Person {name: 'Luca'})\n)\nRETURN path, length(path);"
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_14",
+      "english": "Cypher",
+      "set": {
+        "code": "-- Cypher: Neo4j's query language\nMATCH (n:Person)\n  WHERE n.age > 25\nRETURN n.name, n.age\n  ORDER BY n.age DESC\n  LIMIT 10;"
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_14",
+      "english": "MATCH",
+      "set": {
+        "code": "-- Find friends who share a hobby\nMATCH (a:Person)-[:FRIEND]->(b:Person),\n      (a)-[:LIKES]->(h:Hobby),\n      (b)-[:LIKES]->(h)\nRETURN a.name, b.name, h.name;"
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_14",
+      "english": "CREATE (Cypher)",
+      "set": {
+        "code": "CREATE (a:Person {name: 'Marco', age: 30})\nCREATE (b:Person {name: 'Anna', age: 28})\nCREATE (a)-[:KNOWS {since: 2020}]->(b)\nRETURN a, b;"
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_14",
+      "english": "MERGE",
+      "set": {
+        "code": "-- Create if not exists, update if exists\nMERGE (a:Person {email: 'x@y.com'})\n  ON CREATE SET a.created = timestamp()\n  ON MATCH SET a.lastSeen = timestamp()\nRETURN a;"
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_14",
+      "english": "RETURN",
+      "set": {
+        "code": "MATCH (n:Person)-[:WORKS_AT]->(c:Company)\nRETURN n.name AS employee,\n       c.name AS company,\n       n.role AS position\n  ORDER BY c.name;"
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_14",
+      "english": "Pattern",
+      "set": {
+        "code": "-- Graph pattern matching\nMATCH (a:Person)-[r:KNOWS]->(b:Person)\n  WHERE r.since > 2020\nRETURN a.name, type(r), b.name;"
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_14",
+      "english": "Variable Length",
+      "set": {
+        "code": "-- Find connections within 1 to 3 hops\nMATCH (a:Person {name: 'Marco'})\n      -[:KNOWS*1..3]->\n      (b:Person)\nRETURN DISTINCT b.name;"
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_14",
+      "english": "WHERE (Cypher)",
+      "set": {
+        "code": "MATCH (n:Person)\n  WHERE n.age > 18\n    AND n.city IN ['Roma', 'Milano']\n    AND EXISTS((n)-[:WORKS_AT]->())\nRETURN n.name, n.city;"
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_14",
+      "english": "Cypher WITH",
+      "set": {
+        "code": "-- WITH pipes results between query parts\nMATCH (n:Person)-[:FRIEND]->(f)\nWITH n, COUNT(f) AS friendCount\n  WHERE friendCount > 5\nRETURN n.name, friendCount\n  ORDER BY friendCount DESC;"
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_16",
+      "english": "Gremlin",
+      "set": {
+        "code": "// Gremlin traversal: friends of Marco\ng.V().has('Person', 'name', 'Marco')\n  .out('KNOWS')\n  .values('name')\n  .toList()"
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_1",
+      "english": "Tag",
+      "set": {
+        "code": "-- InfluxDB line protocol: tags index the series\ncpu_usage,host=server1,region=eu value=72 1716000000\ncpu_usage,host=server2,region=us value=55 1716000000\nmem_usage,host=server1,region=eu value=8192 1716000000"
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_1",
+      "english": "Time Bucket",
+      "set": {
+        "code": "-- TimescaleDB: aggregate into hourly buckets\nSELECT time_bucket('1 hour', ts) AS hour,\n       AVG(value) AS avg_value,\n       MAX(value) AS peak\n  FROM sensor_data\n  GROUP BY hour\n  ORDER BY hour DESC;"
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_2",
+      "english": "Retention Policy",
+      "set": {
+        "code": "-- InfluxDB: auto-delete data older than 30 days\nCREATE RETENTION POLICY rp_30d\n  ON metrics\n  DURATION 30d\n  REPLICATION 1\n  DEFAULT;"
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_2",
+      "english": "Continuous Aggregate",
+      "set": {
+        "code": "-- TimescaleDB: precompute hourly rollups\nCREATE MATERIALIZED VIEW hourly_avg\n  WITH (timescaledb.continuous) AS\nSELECT time_bucket('1 hour', ts) AS bucket,\n       sensor_id,\n       AVG(value) AS avg_val\n  FROM sensor_data\n  GROUP BY bucket, sensor_id;"
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_2",
+      "english": "Compression",
+      "set": {
+        "code": "-- TimescaleDB: enable compression on old data\nALTER TABLE measurements\n  SET (timescaledb.compress,\n       timescaledb.compress_segmentby = 'sensor_id');\nSELECT add_compression_policy('measurements',\n  INTERVAL '7 days');"
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_2",
+      "english": "Hypertable",
+      "set": {
+        "code": "-- Convert regular table into a hypertable\nCREATE TABLE metrics (\n  ts TIMESTAMPTZ NOT NULL,\n  sensor_id INT,\n  value DOUBLE PRECISION\n);\nSELECT create_hypertable('metrics', 'ts');"
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_2",
+      "english": "Drop Chunks",
+      "set": {
+        "code": "-- Remove data older than 30 days\nSELECT drop_chunks(\n  older_than => INTERVAL '30 days',\n  table_name => 'metrics'\n);\n-- Automate with a policy\nSELECT add_retention_policy('metrics', INTERVAL '30 days');"
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_3",
+      "english": "InfluxQL",
+      "set": {
+        "code": "-- InfluxQL: 5-minute averages over the last hour\nSELECT MEAN(value) AS avg_cpu\n  FROM cpu_usage\n  WHERE time > now() - 1h\n    AND host = 'server1'\n  GROUP BY time(5m)\n  FILL(previous)"
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_3",
+      "english": "PromQL",
+      "set": {
+        "code": "# PromQL: request rate per second, last 5 minutes\nrate(http_requests_total[5m])\n# 95th percentile latency by endpoint\nhistogram_quantile(0.95,\n  rate(http_duration_seconds_bucket[5m])\n)"
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_7",
+      "english": "Schedule",
+      "set": {
+        "code": "# Airflow DAG: daily pipeline schedule\ndag = DAG(\n    'etl_pipeline',\n    schedule_interval='@daily',\n    start_date=datetime(2026, 1, 1),\n    catchup=False\n)"
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_7",
+      "english": "Retry",
+      "set": {
+        "code": "# Airflow task: retry on failure\ntask = PythonOperator(\n    task_id='load_data',\n    python_callable=load_fn,\n    retries=3,\n    retry_delay=timedelta(minutes=5)\n)"
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_8",
+      "english": "Test",
+      "set": {
+        "code": "# dbt: run all tests\ndbt test\n# Test a specific model\ndbt test --select orders\n# Custom test in schema.yml\n# - not_null\n# - unique\n# - accepted_values: ['active', 'inactive']"
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_5",
+      "english": "SELECT FOR UPDATE",
+      "set": {
+        "code": "-- Lock row for exclusive update\nBEGIN;\nSELECT balance\n  FROM accounts\n  WHERE id = 1\n  FOR UPDATE;\nUPDATE accounts SET balance = balance - 100\n  WHERE id = 1;\nCOMMIT;"
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_5",
+      "english": "SELECT FOR SHARE",
+      "set": {
+        "code": "-- Shared lock: prevent writes, allow reads\nBEGIN;\nSELECT balance\n  FROM accounts\n  WHERE id = 1\n  FOR SHARE;\n-- Other transactions can also FOR SHARE\n-- but cannot UPDATE until we release\nCOMMIT;"
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_5",
+      "english": "NOWAIT",
+      "set": {
+        "code": "-- Fail immediately if row is locked\nBEGIN;\nSELECT * FROM inventory\n  WHERE product_id = 42\n  FOR UPDATE NOWAIT;\n-- Raises error if lock not available\nCOMMIT;"
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_5",
+      "english": "SKIP LOCKED",
+      "set": {
+        "code": "-- Worker queue: grab unlocked jobs\nBEGIN;\nSELECT * FROM jobs\n  WHERE status = 'pending'\n  FOR UPDATE SKIP LOCKED\n  LIMIT 10;\nUPDATE jobs SET status = 'processing'\n  WHERE id IN (...);\nCOMMIT;"
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_5",
+      "english": "Advisory Lock",
+      "set": {
+        "code": "-- Application-level lock (not tied to a row)\nSELECT pg_advisory_lock(123);\n-- Critical section: only one process at a time\nPERFORM process_batch();\nSELECT pg_advisory_unlock(123);"
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_5",
+      "english": "Lock Timeout",
+      "set": {
+        "code": "-- Avoid waiting forever for a lock\nSET lock_timeout = '5s';\nBEGIN;\nSELECT * FROM accounts\n  WHERE id = 1 FOR UPDATE;\n-- Raises error after 5 seconds if still waiting\nCOMMIT;"
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_5",
+      "english": "Statement Timeout",
+      "set": {
+        "code": "-- Kill queries that run too long\nSET statement_timeout = '30s';\nSELECT * FROM large_table\n  WHERE unindexed_col = 'x';\n-- Auto-cancelled after 30 seconds"
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_6",
+      "english": "Deadlock Detection",
+      "set": {
+        "code": "-- postgresql.conf: deadlock settings\ndeadlock_timeout = '1s'\nlog_lock_waits = on\n-- Check for deadlocks in logs\n-- ERROR: deadlock detected\n-- DETAIL: Process 1234 waits for ShareLock..."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_7",
+      "english": "XMIN",
+      "set": {
+        "code": "-- MVCC system columns in PostgreSQL\nSELECT xmin, xmax, ctid,\n       id, name\n  FROM users\n  WHERE id = 1;\n-- xmin = transaction that created this tuple\n-- xmax = transaction that deleted/updated it"
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_8",
+      "english": "Version Number",
+      "set": {
+        "code": "-- Optimistic locking with version column\nUPDATE products\n  SET price = 29.99,\n      version = version + 1\n  WHERE id = 1\n    AND version = 5;\n-- If 0 rows affected, another transaction won"
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_8",
+      "english": "Atomic Operation",
+      "set": {
+        "code": "-- Atomic increment: no read-modify-write race\nUPDATE counters\n  SET value = value + 1\n  WHERE name = 'page_views';\n-- Atomic transfer between rows\nUPDATE accounts SET balance = balance - 100 WHERE id = 1;\nUPDATE accounts SET balance = balance + 100 WHERE id = 2;"
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_8",
+      "english": "Idempotency Key",
+      "set": {
+        "code": "-- Prevent duplicate processing\nINSERT INTO payments (\n  idempotency_key, amount, status\n) VALUES (\n  'pay_abc123', 99.99, 'completed'\n) ON CONFLICT (idempotency_key) DO NOTHING;"
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_8",
+      "english": "Distributed Two-Phase Commit",
+      "set": {
+        "code": "-- Phase 1: prepare on all nodes\nPREPARE TRANSACTION 'tx_order_42';\n-- Phase 2: commit if all nodes prepared\nCOMMIT PREPARED 'tx_order_42';\n-- Or rollback if any node failed\n-- ROLLBACK PREPARED 'tx_order_42';"
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_8",
+      "english": "VACUUM",
+      "set": {
+        "code": "-- Reclaim dead tuples and update statistics\nVACUUM ANALYZE users;\n-- Check dead tuple count first\nSELECT relname, n_dead_tup\n  FROM pg_stat_user_tables\n  WHERE n_dead_tup > 1000\n  ORDER BY n_dead_tup DESC;"
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_8",
+      "english": "VACUUM FULL",
+      "set": {
+        "code": "-- Reclaim disk space (locks table!)\nVACUUM FULL VERBOSE users;\n-- Check table size before and after\nSELECT pg_size_pretty(\n  pg_total_relation_size('users')\n) AS table_size;"
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_8",
+      "english": "Index Rebuild",
+      "set": {
+        "code": "-- Rebuild without blocking reads/writes\nREINDEX INDEX CONCURRENTLY idx_users_email;\n-- Rebuild all indexes on a table\nREINDEX TABLE CONCURRENTLY users;"
+      }
+    }
+  ]
+}

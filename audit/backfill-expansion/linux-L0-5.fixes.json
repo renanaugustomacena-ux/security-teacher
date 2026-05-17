@@ -1,0 +1,1924 @@
+{
+  "fixes": [
+    {
+      "level": "0",
+      "lesson": "linux_basics_1",
+      "english": "Terminal",
+      "set": {
+        "code": "echo 'Current terminal:'\ntty\necho \"Shell: $SHELL\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_1",
+      "english": "Shell",
+      "set": {
+        "code": "echo \"Current shell: $SHELL\"\ncat /etc/shells\necho \"PID: $$\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_1",
+      "english": "Command",
+      "set": {
+        "code": "date\nwhoami\nhostname"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_1",
+      "english": "Prompt",
+      "set": {
+        "code": "echo \"Current prompt: $PS1\"\nexport PS1='\\u@\\h:\\w\\$ '\necho 'Prompt updated'"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_1",
+      "english": "Console",
+      "set": {
+        "code": "tty\nwho am i\necho \"Console type: $TERM\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_1",
+      "english": "Bash",
+      "set": {
+        "code": "bash --version | head -1\necho \"Running PID: $$\"\necho \"Bash options: $BASHOPTS\" | tr ':' '\\n' | head -3"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_1",
+      "english": "CLI",
+      "set": {
+        "code": "echo 'Listing files via CLI:'\nls /tmp\necho \"Logged in as: $(whoami)\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_1",
+      "english": "Argument",
+      "set": {
+        "code": "echo 'First argument:' hello\nls -l /tmp\nhead -n 5 /etc/passwd"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_1",
+      "english": "Option",
+      "set": {
+        "code": "ls -a /home\nls -l /home\nls -al /home"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_1",
+      "english": "Execute",
+      "set": {
+        "code": "chmod +x script.sh\n./script.sh\necho \"Exit code: $?\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_2",
+      "english": "File",
+      "set": {
+        "code": "touch notes.txt\nfile notes.txt\nls -l notes.txt"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_2",
+      "english": "Directory",
+      "set": {
+        "code": "mkdir -p project/src\nls -d project/*/\nfile project"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_2",
+      "english": "Path",
+      "set": {
+        "code": "echo \"Absolute: /home/user/docs\"\necho \"Relative: ../docs\"\npwd"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_2",
+      "english": "Root",
+      "set": {
+        "code": "ls /\necho \"Root directory contains $(ls / | wc -l) entries\"\nls /bin /etc /var | head -5"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_2",
+      "english": "Home",
+      "set": {
+        "code": "echo \"Home: $HOME\"\nls ~\ncd ~ && pwd"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_2",
+      "english": "Parent",
+      "set": {
+        "code": "pwd\ncd ..\npwd"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_2",
+      "english": "Hidden",
+      "set": {
+        "code": "touch .secret\nls -a\nls -la .secret"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_2",
+      "english": "Extension",
+      "set": {
+        "code": "touch report.pdf photo.jpg script.sh\nfile report.pdf\nls *.sh"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_2",
+      "english": "Folder",
+      "set": {
+        "code": "mkdir backups\nls -ld backups\nrmdir backups"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_2",
+      "english": "Filesystem",
+      "set": {
+        "code": "df -h /\ndf -T /\necho \"Filesystem type: $(stat -f -c %T /)\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_3",
+      "english": "User",
+      "set": {
+        "code": "whoami\nid\ngrep \"$(whoami)\" /etc/passwd"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_3",
+      "english": "Permission",
+      "set": {
+        "code": "touch config.yml\nchmod 644 config.yml\nls -l config.yml"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_3",
+      "english": "Group",
+      "set": {
+        "code": "groups\nid -Gn\ncat /etc/group | grep \"$(whoami)\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_3",
+      "english": "Owner",
+      "set": {
+        "code": "touch myfile.txt\nls -l myfile.txt\nstat -c '%U:%G' myfile.txt"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_3",
+      "english": "Sudo",
+      "set": {
+        "code": "sudo whoami\nsudo cat /etc/shadow | head -1\necho \"Returned to: $(whoami)\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_3",
+      "english": "Login",
+      "set": {
+        "code": "last -n 5\nwho\necho \"Last login for $(whoami)\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_3",
+      "english": "Session",
+      "set": {
+        "code": "who -u\nw\necho \"Session type: $XDG_SESSION_TYPE\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_3",
+      "english": "Process",
+      "set": {
+        "code": "ps aux --sort=-%cpu | head -5\necho \"Total processes: $(ps aux | wc -l)\"\necho \"My PID: $$\""
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_3",
+      "english": "Kernel",
+      "set": {
+        "code": "uname -r\nuname -a\ncat /proc/version"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_3",
+      "english": "Distro",
+      "set": {
+        "code": "cat /etc/os-release | head -3\nuname -r\nhostnamectl | grep 'Operating System'"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_4",
+      "english": "Manual",
+      "set": {
+        "code": "man -f ls\nman -k 'copy files'\nwhatis cp"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_4",
+      "english": "Man Page",
+      "set": {
+        "code": "man -k password\nman 5 passwd\nwhatis passwd"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_4",
+      "english": "Help",
+      "set": {
+        "code": "ls --help | head -5\nmkdir --help | head -5\necho 'Use --help for quick reference'"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_4",
+      "english": "Flag",
+      "set": {
+        "code": "ls -l /tmp\nls -a /tmp\nls -la /tmp"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_4",
+      "english": "Usage",
+      "set": {
+        "code": "cp --help 2>&1 | head -3\necho 'Usage: cp [OPTION]... SOURCE DEST'\ncp --version"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_4",
+      "english": "Description",
+      "set": {
+        "code": "whatis ls\nwhatis grep\nwhatis chmod"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_4",
+      "english": "Synopsis",
+      "set": {
+        "code": "man ls 2>/dev/null | head -10\necho 'Synopsis: ls [OPTION]... [FILE]...'\necho 'Brackets mean optional'"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_4",
+      "english": "Verbose",
+      "set": {
+        "code": "cp -v /etc/hostname /tmp/hostname.bak\nmkdir -v /tmp/testdir\nrm -v /tmp/hostname.bak"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_4",
+      "english": "Quiet",
+      "set": {
+        "code": "grep -q 'root' /etc/passwd\necho \"Found root: $?\"\ngrep -q 'nonexistent' /etc/passwd && echo 'found' || echo 'not found'"
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_4",
+      "english": "Version",
+      "set": {
+        "code": "bash --version | head -1\npython3 --version\ngit --version"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_nav",
+      "english": "Change Directory",
+      "set": {
+        "code": "cd /var/log\npwd\nls -la | head -5"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_nav",
+      "english": "List",
+      "set": {
+        "code": "ls -la /etc\nls -lh /var/log/*.log 2>/dev/null | head -5\nls -1 /tmp | wc -l"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_nav",
+      "english": "Print Working Directory",
+      "set": {
+        "code": "cd /var/log\npwd\necho \"You are in: $(pwd)\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_nav",
+      "english": "Current",
+      "set": {
+        "code": "ls -la ./\necho \"Current directory: $(pwd)\"\nfind . -maxdepth 1 -type f | wc -l"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_nav",
+      "english": "Previous",
+      "set": {
+        "code": "cd /var/log\ncd /tmp\ncd - && pwd"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_nav",
+      "english": "Recursive",
+      "set": {
+        "code": "ls -R /etc/apt 2>/dev/null | head -15\nfind /etc/apt -type f | wc -l\necho 'Recursive lists all subdirectories'"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_nav",
+      "english": "Empty",
+      "set": {
+        "code": "mkdir -p /tmp/emptydir\nfind /tmp -maxdepth 1 -type d -empty\nrmdir /tmp/emptydir"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_nav",
+      "english": "Tree",
+      "set": {
+        "code": "mkdir -p /tmp/demo/{src,docs,tests}\ntree -L 1 /tmp/demo\nrm -rf /tmp/demo"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_nav",
+      "english": "Make Directory",
+      "set": {
+        "code": "mkdir -p /tmp/releases/2025/05\nls -d /tmp/releases/2025/*/\nrm -rf /tmp/releases"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_nav",
+      "english": "Remove Directory",
+      "set": {
+        "code": "mkdir -p /tmp/build/tmp\nrmdir /tmp/build/tmp\necho \"Exit: $?\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_file_ops",
+      "english": "Copy",
+      "set": {
+        "code": "cp /etc/hostname /tmp/hostname.bak\nls -l /tmp/hostname.bak\ndiff /etc/hostname /tmp/hostname.bak"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_file_ops",
+      "english": "Move",
+      "set": {
+        "code": "touch /tmp/old_name.txt\nmv /tmp/old_name.txt /tmp/new_name.txt\nls -l /tmp/new_name.txt"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_file_ops",
+      "english": "Remove",
+      "set": {
+        "code": "touch /tmp/tempfile.txt\nrm /tmp/tempfile.txt\nls /tmp/tempfile.txt 2>&1"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_file_ops",
+      "english": "Touch",
+      "set": {
+        "code": "touch /tmp/newfile.txt\nls -l /tmp/newfile.txt\nstat /tmp/newfile.txt | grep Modify"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_file_ops",
+      "english": "Rename",
+      "set": {
+        "code": "touch /tmp/access.log\nmv /tmp/access.log /tmp/access.log.1\nls -l /tmp/access.log.1"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_file_ops",
+      "english": "Delete",
+      "set": {
+        "code": "touch /tmp/old1.gz /tmp/old2.gz\nfind /tmp -name '*.gz' -maxdepth 1 -delete\nls /tmp/*.gz 2>&1"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_file_ops",
+      "english": "Overwrite",
+      "set": {
+        "code": "echo 'original' > /tmp/data.txt\necho 'overwritten' > /tmp/data.txt\ncat /tmp/data.txt"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_file_ops",
+      "english": "Force",
+      "set": {
+        "code": "touch /tmp/lockfile\nrm -f /tmp/lockfile\necho \"Removed without prompting: $?\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_file_ops",
+      "english": "Interactive",
+      "set": {
+        "code": "touch /tmp/important.bak\nls -l /tmp/important.bak\necho 'Use rm -i to get a confirmation prompt'"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_file_ops",
+      "english": "Preserve",
+      "set": {
+        "code": "cp -p /etc/hostname /tmp/hostname.bak\nstat /etc/hostname | grep Modify\nstat /tmp/hostname.bak | grep Modify"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_view",
+      "english": "Cat",
+      "set": {
+        "code": "cat /etc/hostname\ncat -n /etc/shells\ncat /etc/os-release | head -3"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_view",
+      "english": "Less",
+      "set": {
+        "code": "echo 'View large files page by page:'\nwc -l /etc/services\necho 'Use: less /etc/services'"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_view",
+      "english": "Head",
+      "set": {
+        "code": "head -n 5 /etc/passwd\nhead -1 /etc/hostname\necho \"First 5 lines shown\""
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_view",
+      "english": "Tail",
+      "set": {
+        "code": "tail -n 5 /etc/passwd\ntail -1 /etc/shells\necho 'Use tail -f to follow live logs'"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_view",
+      "english": "More",
+      "set": {
+        "code": "wc -l /etc/services\necho 'Paginate with: more /etc/services'\necho 'Press SPACE for next page, q to quit'"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_view",
+      "english": "Scroll",
+      "set": {
+        "code": "echo 'In less/more:'\necho '  SPACE = next page'\necho '  b = previous page'\necho '  /text = search forward'"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_view",
+      "english": "Content",
+      "set": {
+        "code": "cat /etc/hostname\nwc -l /etc/passwd\nfile /etc/passwd"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_view",
+      "english": "Pager",
+      "set": {
+        "code": "echo \"Default pager: $PAGER\"\necho 'less is the most common pager'\nman ls 2>/dev/null | head -3"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_view",
+      "english": "Line Number",
+      "set": {
+        "code": "cat -n /etc/shells\nnl /etc/hostname\ngrep -n 'root' /etc/passwd"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_view",
+      "english": "Follow",
+      "set": {
+        "code": "echo 'test log entry' >> /tmp/app.log\ntail -n 2 /tmp/app.log\necho 'Use tail -f /tmp/app.log to follow live'"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_search",
+      "english": "Find",
+      "set": {
+        "code": "find /etc -name '*.conf' -maxdepth 1 2>/dev/null | head -5\nfind /tmp -type f -mmin -60 | head -5\necho 'find searches by name, type, time...'"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_search",
+      "english": "Locate",
+      "set": {
+        "code": "echo 'locate uses a pre-built index:'\nwhich locate 2>/dev/null && locate --version || echo 'Install: apt install mlocate'\necho 'Update index: sudo updatedb'"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_search",
+      "english": "Which",
+      "set": {
+        "code": "which bash\nwhich python3\nwhich ls"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_search",
+      "english": "Whereis",
+      "set": {
+        "code": "whereis bash\nwhereis ls\necho 'Shows binary, source, and man page paths'"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_search",
+      "english": "Pattern",
+      "set": {
+        "code": "ls /etc/*.conf 2>/dev/null | head -5\ngrep 'root' /etc/passwd\nfind /tmp -name '*.txt' 2>/dev/null | head -3"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_search",
+      "english": "Wildcard",
+      "set": {
+        "code": "ls /etc/host*\nls /etc/pass??\necho 'Use * for any chars, ? for single char'"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_search",
+      "english": "Case Sensitive",
+      "set": {
+        "code": "echo 'ERROR: disk full' > /tmp/test.log\ngrep 'error' /tmp/test.log\ngrep 'ERROR' /tmp/test.log"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_search",
+      "english": "Ignore Case",
+      "set": {
+        "code": "echo 'ERROR: disk full' > /tmp/test.log\ngrep -i 'error' /tmp/test.log\necho 'Flag -i makes search case-insensitive'"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_search",
+      "english": "Type",
+      "set": {
+        "code": "type ls\ntype cd\ntype -a python3 2>/dev/null || echo 'python3 not found'"
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_search",
+      "english": "Size",
+      "set": {
+        "code": "find /var/log -type f -size +1M 2>/dev/null | head -5\ndu -sh /var/log 2>/dev/null\nls -lhS /var/log/*.log 2>/dev/null | head -3"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_editors",
+      "english": "Edit",
+      "set": {
+        "code": "echo 'hello world' > /tmp/demo.txt\ncat /tmp/demo.txt\necho 'Edit with: nano /tmp/demo.txt'"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_editors",
+      "english": "Nano",
+      "set": {
+        "code": "echo 'server_name example.com;' > /tmp/demo.conf\ncat /tmp/demo.conf\necho 'Open with: nano /tmp/demo.conf  (Ctrl+O save, Ctrl+X exit)'"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_editors",
+      "english": "Vim",
+      "set": {
+        "code": "echo 'port 22' > /tmp/demo_sshd.conf\ncat /tmp/demo_sshd.conf\necho 'Open with: vim /tmp/demo_sshd.conf  (i=insert, :wq=save+quit)'"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_editors",
+      "english": "Save",
+      "set": {
+        "code": "echo 'In nano: Ctrl+O then Enter'\necho 'In vim: press Esc, then type :w'\necho 'In vim: :wq saves and quits'"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_editors",
+      "english": "Exit",
+      "set": {
+        "code": "echo 'In nano: Ctrl+X'\necho 'In vim: :q (quit) or :q! (force quit)'\necho 'In vim: :wq (save and quit)'"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_editors",
+      "english": "Insert Mode",
+      "set": {
+        "code": "echo 'Vim insert mode commands:'\necho '  i = insert before cursor'\necho '  a = append after cursor'\necho '  o = open new line below'"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_editors",
+      "english": "Command Mode",
+      "set": {
+        "code": "echo 'Vim command mode (press Esc first):'\necho '  dd  = delete line'\necho '  yy  = copy line'\necho '  :wq = save and quit'"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_editors",
+      "english": "Search",
+      "set": {
+        "code": "grep -n 'root' /etc/passwd | head -3\necho 'In vim: /pattern then n for next'\necho 'In nano: Ctrl+W then type pattern'"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_editors",
+      "english": "Replace",
+      "set": {
+        "code": "echo 'hello world' > /tmp/demo.txt\nsed -i 's/hello/goodbye/' /tmp/demo.txt\ncat /tmp/demo.txt"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_editors",
+      "english": "Buffer",
+      "set": {
+        "code": "echo 'Vim uses named buffers (registers):'\necho '  \"ayy = yank line into register a'\necho '  \"ap  = paste from register a'\necho '  :reg = show all registers'"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_proc",
+      "english": "Grep",
+      "set": {
+        "code": "grep 'root' /etc/passwd\ngrep -c 'bash' /etc/passwd\ngrep -n 'nologin' /etc/passwd | head -3"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_proc",
+      "english": "Pipeline",
+      "set": {
+        "code": "cat /etc/passwd | grep 'bash' | wc -l\nls -la /etc | sort -k5 -n | tail -5\necho 'Pipes connect stdout to stdin'"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_proc",
+      "english": "Redirect",
+      "set": {
+        "code": "date > /tmp/timestamp.txt\ncat /tmp/timestamp.txt\nls /nonexistent 2> /tmp/errors.txt"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_proc",
+      "english": "Append",
+      "set": {
+        "code": "echo 'Line 1' > /tmp/log.txt\necho 'Line 2' >> /tmp/log.txt\ncat /tmp/log.txt"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_proc",
+      "english": "Echo",
+      "set": {
+        "code": "echo \"User: $(whoami)\"\necho \"Date: $(date)\"\necho -e \"Line1\\nLine2\\nLine3\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_proc",
+      "english": "Cut",
+      "set": {
+        "code": "cut -d: -f1 /etc/passwd | head -5\necho 'alice:x:1000' | cut -d: -f1,3\necho 'hello world' | cut -c1-5"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_proc",
+      "english": "Sort",
+      "set": {
+        "code": "cut -d: -f1 /etc/passwd | sort | head -5\ndu -sh /var/log/* 2>/dev/null | sort -h | tail -5\necho 'Use sort -r for reverse order'"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_proc",
+      "english": "Unique",
+      "set": {
+        "code": "echo -e 'apple\\napple\\nbanana\\napple' > /tmp/fruit.txt\nsort /tmp/fruit.txt | uniq -c\necho '3 apple, 1 banana'"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_proc",
+      "english": "Stream",
+      "set": {
+        "code": "cat /etc/passwd | head -3\necho 'stdin=0 stdout=1 stderr=2'\nls /nonexistent 2>/dev/null; echo \"Exit: $?\""
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_proc",
+      "english": "Awk",
+      "set": {
+        "code": "echo -e '80 200\\n443 150\\n22 50' > /tmp/conns.txt\nawk '{sum+=$2} END{print \"Total:\", sum}' /tmp/conns.txt\nawk '$2 > 100 {print $1, $2}' /tmp/conns.txt"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_util",
+      "english": "Word Count",
+      "set": {
+        "code": "wc -l /etc/passwd\nwc -w /etc/hostname\nwc -c /etc/shells"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_util",
+      "english": "Difference",
+      "set": {
+        "code": "echo 'server=old' > /tmp/v1.conf\necho 'server=new' > /tmp/v2.conf\ndiff -u /tmp/v1.conf /tmp/v2.conf"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_util",
+      "english": "Compare",
+      "set": {
+        "code": "echo 'hello' > /tmp/a.bin\necho 'hello' > /tmp/b.bin\ncmp /tmp/a.bin /tmp/b.bin && echo 'Files are identical'"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_util",
+      "english": "Split",
+      "set": {
+        "code": "seq 1 100 > /tmp/bigfile.txt\nsplit -l 25 /tmp/bigfile.txt /tmp/part_\nwc -l /tmp/part_*"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_util",
+      "english": "Paste",
+      "set": {
+        "code": "echo -e 'alice\\nbob' > /tmp/names.txt\necho -e 'alice@co.com\\nbob@co.com' > /tmp/emails.txt\npaste -d, /tmp/names.txt /tmp/emails.txt"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_util",
+      "english": "Translate",
+      "set": {
+        "code": "echo 'Hello World' | tr 'A-Z' 'a-z'\necho 'hello world' | tr ' ' '_'\necho 'user::1000' | tr -d ':'"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_util",
+      "english": "Reverse",
+      "set": {
+        "code": "echo 'hello' | rev\necho '/var/log/syslog' | rev | cut -d/ -f1 | rev\necho '12345' | rev"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_util",
+      "english": "Show Non-printing",
+      "set": {
+        "code": "printf 'line1\\r\\nline2\\n' > /tmp/mixed.txt\ncat -A /tmp/mixed.txt\necho 'Shows ^M for CR, $ for line endings'"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_util",
+      "english": "Patch",
+      "set": {
+        "code": "echo 'old' > /tmp/orig.txt\necho 'new' > /tmp/fixed.txt\ndiff -u /tmp/orig.txt /tmp/fixed.txt > /tmp/fix.patch\necho 'Apply with: patch /tmp/orig.txt /tmp/fix.patch'"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_util",
+      "english": "Checksum",
+      "set": {
+        "code": "echo 'important data' > /tmp/data.txt\nsha256sum /tmp/data.txt\nmd5sum /tmp/data.txt"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_archives",
+      "english": "Archive",
+      "set": {
+        "code": "mkdir -p /tmp/src && touch /tmp/src/{a,b,c}.txt\ntar -cf /tmp/project.tar -C /tmp src/\ntar -tf /tmp/project.tar"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_archives",
+      "english": "Compress",
+      "set": {
+        "code": "echo 'large content' > /tmp/access.log\ngzip -k /tmp/access.log\nls -lh /tmp/access.log /tmp/access.log.gz"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_archives",
+      "english": "Extract",
+      "set": {
+        "code": "mkdir -p /tmp/src && echo 'code' > /tmp/src/app.py\ntar -czf /tmp/release.tar.gz -C /tmp src/\ntar -xzf /tmp/release.tar.gz -C /tmp/extract"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_archives",
+      "english": "Tarball",
+      "set": {
+        "code": "mkdir -p /tmp/proj && touch /tmp/proj/{main,util}.py\ntar -czvf /tmp/proj-1.0.tar.gz -C /tmp proj/\nls -lh /tmp/proj-1.0.tar.gz"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_archives",
+      "english": "Zip",
+      "set": {
+        "code": "mkdir -p /tmp/logs && echo 'log data' > /tmp/logs/app.log\nzip -r /tmp/logs.zip /tmp/logs/\nls -lh /tmp/logs.zip"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_archives",
+      "english": "Unzip",
+      "set": {
+        "code": "echo 'data' > /tmp/readme.txt && zip /tmp/test.zip /tmp/readme.txt\nunzip -l /tmp/test.zip\nunzip -o /tmp/test.zip -d /tmp/unzipped"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_archives",
+      "english": "Gzip",
+      "set": {
+        "code": "echo 'server log data' > /tmp/server.log\ngzip -k /tmp/server.log\nfile /tmp/server.log.gz"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_archives",
+      "english": "Flag z",
+      "set": {
+        "code": "mkdir -p /tmp/backupdata && echo 'cfg' > /tmp/backupdata/app.conf\ntar -czf /tmp/backup.tar.gz -C /tmp backupdata/\nfile /tmp/backup.tar.gz"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_archives",
+      "english": "List Contents",
+      "set": {
+        "code": "mkdir -p /tmp/pkg && touch /tmp/pkg/{a,b}.txt\ntar -czf /tmp/pkg.tar.gz -C /tmp pkg/\ntar -tzf /tmp/pkg.tar.gz"
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_archives",
+      "english": "Verbose Flag",
+      "set": {
+        "code": "mkdir -p /tmp/vdemo && echo 'data' > /tmp/vdemo/file.txt\ntar -czvf /tmp/vdemo.tar.gz -C /tmp vdemo/\ntar -tzvf /tmp/vdemo.tar.gz"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_users",
+      "english": "Root User",
+      "set": {
+        "code": "id root\ngrep '^root:' /etc/passwd\necho 'Root UID is always 0'"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_users",
+      "english": "Add User",
+      "set": {
+        "code": "echo 'sudo adduser alice'\ngetent passwd alice 2>/dev/null || echo 'User alice does not exist'\necho 'adduser creates home dir and sets shell'"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_users",
+      "english": "Delete User",
+      "set": {
+        "code": "echo 'sudo deluser --remove-home alice'\necho 'This removes the user and their home directory'\ngetent passwd alice 2>/dev/null || echo 'User alice not found'"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_users",
+      "english": "Password",
+      "set": {
+        "code": "echo 'sudo passwd alice'\npasswd --status root 2>/dev/null | head -1\necho 'Password hashes stored in /etc/shadow'"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_users",
+      "english": "Switch User",
+      "set": {
+        "code": "echo \"Currently: $(whoami)\"\necho 'Switch with: su - postgres'\necho 'The dash (-) loads the target user environment'"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_users",
+      "english": "UID",
+      "set": {
+        "code": "id -u\nid -u root\nawk -F: '{print $1, $3}' /etc/passwd | head -5"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_users",
+      "english": "GID",
+      "set": {
+        "code": "id -g\nid -g root\nawk -F: '{print $1, $4}' /etc/passwd | head -5"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_users",
+      "english": "Group Add",
+      "set": {
+        "code": "echo 'sudo groupadd developers'\ngetent group developers 2>/dev/null || echo 'Group does not exist yet'\necho 'Then: sudo usermod -aG developers alice'"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_users",
+      "english": "Members",
+      "set": {
+        "code": "getent group sudo\ngetent group root\necho 'Lists group_name:password:GID:members'"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_users",
+      "english": "Profile",
+      "set": {
+        "code": "echo \"Profile files in $HOME:\"\nls -la ~/.bashrc ~/.profile 2>/dev/null\nhead -3 ~/.bashrc 2>/dev/null"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_perms",
+      "english": "Read",
+      "set": {
+        "code": "touch /tmp/app.log\nchmod u+r /tmp/app.log\nls -l /tmp/app.log"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_perms",
+      "english": "Write",
+      "set": {
+        "code": "touch /tmp/config.conf\nchmod a-w /tmp/config.conf\nls -l /tmp/config.conf"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_perms",
+      "english": "Execute Permission",
+      "set": {
+        "code": "echo '#!/bin/bash' > /tmp/deploy.sh\nchmod +x /tmp/deploy.sh\nls -l /tmp/deploy.sh"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_perms",
+      "english": "Change Mode",
+      "set": {
+        "code": "touch /tmp/script.sh\nchmod 755 /tmp/script.sh\nstat -c '%a %n' /tmp/script.sh"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_perms",
+      "english": "Change Owner",
+      "set": {
+        "code": "echo 'sudo chown www-data:www-data /var/www'\nls -ld /var/www 2>/dev/null\nstat -c '%U:%G' /var/www 2>/dev/null || echo '/var/www not found'"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_perms",
+      "english": "Octal",
+      "set": {
+        "code": "touch /tmp/secure.conf\nchmod 644 /tmp/secure.conf\nstat -c 'octal=%a symbolic=%A' /tmp/secure.conf"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_perms",
+      "english": "Symbolic",
+      "set": {
+        "code": "touch /tmp/task.sh\nchmod u+x,g-w,o-rwx /tmp/task.sh\nls -l /tmp/task.sh"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_perms",
+      "english": "User/Group/Others",
+      "set": {
+        "code": "touch /tmp/shared.txt\nchmod 754 /tmp/shared.txt\necho 'u=rwx(7) g=r-x(5) o=r--(4)'\nls -l /tmp/shared.txt"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_perms",
+      "english": "Directory Execute",
+      "set": {
+        "code": "mkdir -p /tmp/private\nchmod 700 /tmp/private\necho 'x on a directory means permission to enter (cd)'\nls -ld /tmp/private"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_perms",
+      "english": "Denied",
+      "set": {
+        "code": "touch /tmp/noaccess.txt\nchmod 000 /tmp/noaccess.txt\ncat /tmp/noaccess.txt 2>&1 || echo 'Permission denied!'\nchmod 644 /tmp/noaccess.txt"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_special_perms",
+      "english": "SetUID",
+      "set": {
+        "code": "ls -l /usr/bin/passwd\necho 'The s in -rwsr-xr-x means setuid is set'\nfind /usr/bin -perm -4000 2>/dev/null | head -3"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_special_perms",
+      "english": "SetGID",
+      "set": {
+        "code": "echo 'sudo chmod g+s /shared/project'\necho 'New files inherit the directory group'\nfind /usr -perm -2000 2>/dev/null | head -3"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_special_perms",
+      "english": "Sticky Bit",
+      "set": {
+        "code": "ls -ld /tmp\necho 'The t in drwxrwxrwt means sticky bit is set'\necho 'Only file owners can delete their own files'"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_special_perms",
+      "english": "Attribute",
+      "set": {
+        "code": "touch /tmp/attrtest.txt\nlsattr /tmp/attrtest.txt\necho 'Attributes are beyond standard rwx permissions'"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_special_perms",
+      "english": "Immutable",
+      "set": {
+        "code": "echo 'sudo chattr +i /etc/resolv.conf'\necho 'Prevents any modification, even by root'\nlsattr /etc/resolv.conf 2>/dev/null || echo 'Check with lsattr'"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_special_perms",
+      "english": "Access Control List",
+      "set": {
+        "code": "echo 'ACLs extend basic Unix permissions'\necho 'setfacl -m u:alice:rx /shared/project'\necho 'getfacl /shared/project'"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_special_perms",
+      "english": "Getfacl",
+      "set": {
+        "code": "touch /tmp/acl_test.txt\ngetfacl /tmp/acl_test.txt 2>/dev/null\necho 'Shows owner, group, and ACL entries'"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_special_perms",
+      "english": "Setfacl",
+      "set": {
+        "code": "touch /tmp/aclfile.txt\nsetfacl -m u:nobody:r /tmp/aclfile.txt 2>/dev/null\ngetfacl /tmp/aclfile.txt 2>/dev/null | head -5"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_special_perms",
+      "english": "Mask",
+      "set": {
+        "code": "umask\numask -S\necho 'umask controls default permissions for new files'"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_special_perms",
+      "english": "Inheritance",
+      "set": {
+        "code": "echo 'sudo setfacl -d -m g:devs:rwx /shared/project'\necho 'Default ACLs are inherited by new files'\necho 'Check with: getfacl /shared/project'"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_identity",
+      "english": "Who Am I",
+      "set": {
+        "code": "whoami\necho \"UID: $(id -u)\"\necho \"Home: $HOME\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_identity",
+      "english": "Identity",
+      "set": {
+        "code": "id\nid -un\nid -Gn"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_identity",
+      "english": "Fingerprint",
+      "set": {
+        "code": "ssh-keygen -lf ~/.ssh/id_ed25519.pub 2>/dev/null || echo 'No SSH key found'\necho 'Fingerprints verify key identity'\necho 'SHA256:... format identifies the key'"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_identity",
+      "english": "Groups",
+      "set": {
+        "code": "groups\ngroups root\nid -Gn"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_identity",
+      "english": "Last",
+      "set": {
+        "code": "last -n 5\nlast reboot | head -3\necho 'Shows recent login history'"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_identity",
+      "english": "Who",
+      "set": {
+        "code": "who\nwho -b\necho \"Currently logged in: $(who | wc -l) users\""
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_identity",
+      "english": "Finger",
+      "set": {
+        "code": "echo 'finger shows user info:'\ngetent passwd root | cut -d: -f1,5\necho 'Install with: apt install finger'"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_identity",
+      "english": "Switch",
+      "set": {
+        "code": "echo \"Current user: $(whoami)\"\necho 'su - alice    # switch to alice'\necho 'sudo -u bob cmd  # run cmd as bob'"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_identity",
+      "english": "Effective",
+      "set": {
+        "code": "id -un\necho \"Effective UID: $(id -u)\"\necho 'Effective ID determines actual access rights'"
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_identity",
+      "english": "Real",
+      "set": {
+        "code": "id -ru\nid -run\necho 'Real UID is the original login user'"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_basics",
+      "english": "IP Address",
+      "set": {
+        "code": "ip addr show | grep 'inet ' | head -3\nhostname -I\necho 'inet = IPv4, inet6 = IPv6'"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_basics",
+      "english": "Protocol",
+      "set": {
+        "code": "cat /etc/protocols | head -10\necho 'Common: TCP=6, UDP=17, ICMP=1'\nss -s"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_basics",
+      "english": "Port",
+      "set": {
+        "code": "grep -E '^(http|ssh|https)' /etc/services\nss -tlnp 2>/dev/null | head -5\necho 'Ports 0-1023 are privileged'"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_basics",
+      "english": "Gateway",
+      "set": {
+        "code": "ip route show default\nip route | grep default\necho 'Gateway is the next hop to the internet'"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_basics",
+      "english": "Subnet Mask",
+      "set": {
+        "code": "ip addr show | grep 'inet ' | head -2\necho '192.168.1.0/24 means 255.255.255.0'\necho '/24 = 256 addresses, /16 = 65536 addresses'"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_basics",
+      "english": "DNS",
+      "set": {
+        "code": "cat /etc/resolv.conf | grep nameserver\nhost google.com 2>/dev/null || echo 'host command not installed'\necho 'DNS translates domain names to IP addresses'"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_basics",
+      "english": "Packet",
+      "set": {
+        "code": "echo 'Capture packets with tcpdump:'\necho 'sudo tcpdump -i eth0 -c 10 tcp port 80'\necho 'Each packet has headers + payload'"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_basics",
+      "english": "Latency",
+      "set": {
+        "code": "ping -c 3 127.0.0.1\necho 'Latency = round-trip time in ms'\necho 'Lower latency = faster response'"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_basics",
+      "english": "Bandwidth",
+      "set": {
+        "code": "cat /sys/class/net/lo/speed 2>/dev/null || echo 'Speed not available'\nip -s link show lo | tail -4\necho 'Bandwidth = max data transfer rate'"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_basics",
+      "english": "Firewall",
+      "set": {
+        "code": "sudo iptables -L -n 2>/dev/null | head -8\necho 'Firewall controls incoming/outgoing traffic'\necho 'Modern alternative: sudo nft list ruleset'"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_config",
+      "english": "Interface",
+      "set": {
+        "code": "ip -br link show\nip -br addr show\necho 'lo=loopback, eth0/enp*=ethernet, wlan0=wifi'"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_config",
+      "english": "Hostname",
+      "set": {
+        "code": "hostname\nhostnamectl | head -3\necho \"FQDN: $(hostname -f 2>/dev/null || hostname)\""
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_config",
+      "english": "Route",
+      "set": {
+        "code": "ip route show\nip route get 8.8.8.8\necho 'Routing table decides where packets go'"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_config",
+      "english": "Static IP",
+      "set": {
+        "code": "echo 'sudo ip addr add 192.168.1.50/24 dev eth0'\nip addr show lo | grep inet\necho 'Static IPs do not change on reboot'"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_config",
+      "english": "Dynamic IP",
+      "set": {
+        "code": "echo 'sudo dhclient -v eth0'\necho 'DHCP assigns IPs automatically'\ncat /var/lib/dhcp/dhclient.leases 2>/dev/null | head -5 || echo 'No DHCP leases found'"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_config",
+      "english": "Network Manager",
+      "set": {
+        "code": "nmcli device status 2>/dev/null || echo 'NetworkManager not installed'\nnmcli connection show 2>/dev/null | head -5\necho 'nmcli manages network connections'"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_config",
+      "english": "Wireless",
+      "set": {
+        "code": "nmcli device wifi list 2>/dev/null | head -5 || echo 'No WiFi device'\necho 'Connect: nmcli device wifi connect SSID password PASS'\niw dev 2>/dev/null | head -5 || echo 'iw not installed'"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_config",
+      "english": "Ethernet",
+      "set": {
+        "code": "ip link show | grep -E 'eth|enp' | head -3\necho 'Check speed: sudo ethtool eth0'\necho 'Ethernet = wired network connection'"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_config",
+      "english": "Localhost",
+      "set": {
+        "code": "ping -c 2 127.0.0.1\ngrep localhost /etc/hosts\necho '127.0.0.1 always refers to this machine'"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_config",
+      "english": "Broadcast",
+      "set": {
+        "code": "ip addr show | grep 'brd' | head -2\necho 'Broadcast address reaches all hosts on subnet'\necho '192.168.1.255 = broadcast for 192.168.1.0/24'"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_remote",
+      "english": "SSH",
+      "set": {
+        "code": "echo 'ssh user@server.example.com'\necho 'ssh -p 2222 admin@10.0.0.5'\nss -tlnp 2>/dev/null | grep ':22' || echo 'SSHD not running locally'"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_remote",
+      "english": "Key",
+      "set": {
+        "code": "ls ~/.ssh/id_* 2>/dev/null || echo 'No SSH keys found'\necho 'Generate: ssh-keygen -t ed25519'\necho 'Keys are stored in ~/.ssh/'"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_remote",
+      "english": "Public Key",
+      "set": {
+        "code": "cat ~/.ssh/id_ed25519.pub 2>/dev/null || echo 'No public key found'\necho 'Copy to server: ssh-copy-id user@server'\necho 'Public key is safe to share'"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_remote",
+      "english": "Private Key",
+      "set": {
+        "code": "ls -l ~/.ssh/id_ed25519 2>/dev/null || echo 'No private key'\necho 'Must be chmod 600 (owner read/write only)'\necho 'NEVER share your private key'"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_remote",
+      "english": "Passphrase",
+      "set": {
+        "code": "echo 'Add passphrase: ssh-keygen -p -f ~/.ssh/id_ed25519'\necho 'Passphrase encrypts the private key on disk'\necho 'Use ssh-agent to avoid retyping it'"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_remote",
+      "english": "SCP",
+      "set": {
+        "code": "echo 'Upload:   scp file.tar.gz user@server:/backups/'\necho 'Download: scp user@server:/var/log/app.log ./'\necho 'Recursive: scp -r ./project user@server:/opt/'"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_remote",
+      "english": "Remote",
+      "set": {
+        "code": "echo 'Run command on remote server:'\necho 'ssh user@server \"df -h && uptime\"'\necho 'This executes the command and returns output'"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_remote",
+      "english": "Connection",
+      "set": {
+        "code": "ss -s\nss -tnp 2>/dev/null | head -5\necho 'ESTAB=active, LISTEN=waiting for connections'"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_remote",
+      "english": "Host",
+      "set": {
+        "code": "hostname\ncat /etc/hosts | head -5\necho 'A host is any device on the network'"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_remote",
+      "english": "Tunnel",
+      "set": {
+        "code": "echo 'Local tunnel (forward local port to remote):'\necho 'ssh -L 8080:localhost:80 user@server'\necho 'Then access http://localhost:8080 locally'"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_diag",
+      "english": "Ping",
+      "set": {
+        "code": "ping -c 3 127.0.0.1\necho \"Packets sent: 3\"\necho 'ping tests if a host is reachable'"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_diag",
+      "english": "Trace",
+      "set": {
+        "code": "echo 'traceroute shows the path to a host:'\ntraceroute -m 5 127.0.0.1 2>/dev/null || echo 'Install: apt install traceroute'\necho 'Each hop is a router along the way'"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_diag",
+      "english": "Lookup",
+      "set": {
+        "code": "nslookup localhost 2>/dev/null || echo 'nslookup not installed'\necho 'Queries DNS for domain name resolution'\ngetent hosts localhost"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_diag",
+      "english": "Listen",
+      "set": {
+        "code": "ss -tlnp 2>/dev/null | head -8\necho 'LISTEN state = port is open and waiting'\necho '-t=TCP -l=listening -n=numeric -p=process'"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_diag",
+      "english": "Scan",
+      "set": {
+        "code": "echo 'Scan open ports on a host:'\necho 'nmap -sV -p 1-1000 192.168.1.10'\nss -tlnp 2>/dev/null | wc -l && echo 'listening ports on this host'"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_diag",
+      "english": "Traffic",
+      "set": {
+        "code": "ip -s link show lo\necho 'RX = received, TX = transmitted'\necho 'Monitor live: sudo iftop -i eth0'"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_diag",
+      "english": "Capture",
+      "set": {
+        "code": "echo 'sudo tcpdump -i eth0 -c 10 -w /tmp/capture.pcap'\necho 'Read capture: tcpdump -r /tmp/capture.pcap'\necho 'Analyze in Wireshark for GUI inspection'"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_diag",
+      "english": "Unreachable",
+      "set": {
+        "code": "ping -c 1 -W 2 192.0.2.1 2>&1 | tail -2\necho 'Unreachable = no route to host or host is down'\necho 'Check: ip route, DNS, firewall rules'"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_diag",
+      "english": "Timeout",
+      "set": {
+        "code": "timeout 2 ping -c 1 192.0.2.1 2>&1 | tail -1\necho \"Exit code: $?\"\necho 'Timeout means no response within time limit'"
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_diag",
+      "english": "Socket",
+      "set": {
+        "code": "ss -tunap 2>/dev/null | head -8\necho 'Socket = IP:port endpoint for communication'\nss -s"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_proc_mgmt",
+      "english": "PID",
+      "set": {
+        "code": "echo \"Shell PID: $$\"\nps -p $$ -o pid,comm\npgrep -a bash | head -3"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_proc_mgmt",
+      "english": "Top",
+      "set": {
+        "code": "ps aux --sort=-%cpu | head -6\necho 'Interactive: top or htop'\necho 'top -bn1 for single snapshot'"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_proc_mgmt",
+      "english": "Kill",
+      "set": {
+        "code": "sleep 300 &\nSLEEP_PID=$!\nkill $SLEEP_PID && echo \"Killed PID $SLEEP_PID\""
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_proc_mgmt",
+      "english": "Signal",
+      "set": {
+        "code": "kill -l | head -3\necho 'SIGTERM (15) = graceful shutdown'\necho 'SIGKILL (9) = forced termination'"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_proc_mgmt",
+      "english": "Priority",
+      "set": {
+        "code": "ps -eo pid,ni,comm --sort=-ni | head -5\necho 'Nice range: -20 (highest) to 19 (lowest)'\necho 'sudo renice -n -5 -p PID'"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_proc_mgmt",
+      "english": "Background",
+      "set": {
+        "code": "sleep 10 &\necho \"Background PID: $!\"\njobs -l"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_proc_mgmt",
+      "english": "Foreground",
+      "set": {
+        "code": "sleep 10 &\njobs\necho 'Bring to foreground: fg %1'"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_proc_mgmt",
+      "english": "Job",
+      "set": {
+        "code": "sleep 30 &\nsleep 60 &\njobs -l"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_proc_mgmt",
+      "english": "Nice",
+      "set": {
+        "code": "nice -n 10 sleep 5 &\nps -o pid,ni,comm -p $!\necho 'nice lowers process priority'"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_proc_mgmt",
+      "english": "Zombie",
+      "set": {
+        "code": "ps -eo pid,ppid,stat,comm | head -5\nps -eo stat | grep -c '^Z' || echo '0 zombies'\necho 'Zombie = finished but parent has not collected exit status'"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_services",
+      "english": "Service",
+      "set": {
+        "code": "systemctl list-units --type=service --state=running | head -8\necho 'Services run in the background (daemons)'\nsystemctl --no-pager status cron 2>/dev/null | head -3"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_services",
+      "english": "Daemon",
+      "set": {
+        "code": "systemctl list-units --type=service --state=running | head -5\necho 'Daemons run continuously in the background'\npgrep -a systemd | head -2"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_services",
+      "english": "Start",
+      "set": {
+        "code": "echo 'sudo systemctl start sshd'\nsystemctl is-active cron 2>/dev/null\necho 'start launches a stopped service'"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_services",
+      "english": "Stop",
+      "set": {
+        "code": "echo 'sudo systemctl stop postgresql'\nsystemctl is-active cron 2>/dev/null\necho 'stop halts a running service'"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_services",
+      "english": "Restart",
+      "set": {
+        "code": "echo 'sudo systemctl restart nginx'\necho 'restart = stop + start'\necho 'Use after changing configuration files'"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_services",
+      "english": "Enable",
+      "set": {
+        "code": "echo 'sudo systemctl enable sshd'\nsystemctl is-enabled cron 2>/dev/null\necho 'enable = start automatically on boot'"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_services",
+      "english": "Disable",
+      "set": {
+        "code": "echo 'sudo systemctl disable bluetooth'\necho 'disable = do not start on boot'\necho 'The service can still be started manually'"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_services",
+      "english": "Status",
+      "set": {
+        "code": "systemctl --no-pager status cron 2>/dev/null | head -5\necho 'Shows: active/inactive, PID, memory, recent logs'\nsystemctl is-active cron 2>/dev/null"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_services",
+      "english": "Reload",
+      "set": {
+        "code": "echo 'sudo systemctl reload nginx'\necho 'reload = re-read config without stopping'\necho 'Faster than restart, no downtime'"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_services",
+      "english": "Log",
+      "set": {
+        "code": "journalctl --no-pager -u cron -n 5 2>/dev/null\necho 'journalctl reads systemd journal logs'\necho 'Use -f to follow in real time'"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_scheduling",
+      "english": "Schedule",
+      "set": {
+        "code": "crontab -l 2>/dev/null || echo 'No crontab set'\necho 'Schedule format: min hour day month weekday command'\necho 'Example: 0 2 * * * /opt/backup.sh'"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_scheduling",
+      "english": "Cron",
+      "set": {
+        "code": "systemctl is-active cron 2>/dev/null || echo 'cron not running'\nls /etc/cron.d/ 2>/dev/null | head -5\necho 'Cron runs scheduled tasks automatically'"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_scheduling",
+      "english": "Crontab",
+      "set": {
+        "code": "crontab -l 2>/dev/null || echo 'No crontab for current user'\necho 'Edit: crontab -e'\necho 'Format: min hour day month weekday command'"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_scheduling",
+      "english": "Minute",
+      "set": {
+        "code": "echo '*/5 * * * * /opt/check_health.sh'\necho 'Runs every 5 minutes'\necho 'First field = minute (0-59)'"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_scheduling",
+      "english": "Hour",
+      "set": {
+        "code": "echo '0 */2 * * * /opt/sync_data.sh'\necho 'Runs every 2 hours at minute 0'\necho 'Second field = hour (0-23)'"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_scheduling",
+      "english": "Daily",
+      "set": {
+        "code": "echo '0 3 * * * /opt/nightly_backup.sh'\necho 'Runs daily at 03:00'\nls /etc/cron.daily/ 2>/dev/null | head -5"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_scheduling",
+      "english": "At",
+      "set": {
+        "code": "echo 'echo \"maintenance done\" | at 03:00 tomorrow'\natq 2>/dev/null || echo 'at not installed'\necho 'at runs a one-time scheduled task'"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_scheduling",
+      "english": "Reboot",
+      "set": {
+        "code": "uptime\nwho -b\necho 'Reboot with: sudo systemctl reboot'"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_scheduling",
+      "english": "Interval",
+      "set": {
+        "code": "echo '*/10 * * * * /opt/monitor.sh'\necho 'Runs every 10 minutes'\necho '*/1 = every minute, */30 = every 30 minutes'"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_scheduling",
+      "english": "Task",
+      "set": {
+        "code": "echo '0 2 * * 0 /opt/weekly_report.sh >> /var/log/report.log 2>&1'\ncrontab -l 2>/dev/null || echo 'No tasks scheduled'\necho 'Redirect output to capture task results'"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_monitoring",
+      "english": "Memory",
+      "set": {
+        "code": "free -h\necho \"Available: $(free -h | awk '/Mem:/{print $7}')\"\nhead -3 /proc/meminfo"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_monitoring",
+      "english": "Load",
+      "set": {
+        "code": "uptime\ncat /proc/loadavg\necho '3 numbers = 1min, 5min, 15min averages'"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_monitoring",
+      "english": "Uptime",
+      "set": {
+        "code": "uptime -p\nuptime -s\necho 'Shows how long the system has been running'"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_monitoring",
+      "english": "CPU Usage",
+      "set": {
+        "code": "ps aux --sort=-%cpu | head -5\nnproc\necho \"CPU cores: $(nproc)\""
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_monitoring",
+      "english": "Stats",
+      "set": {
+        "code": "vmstat 1 3\necho 'r=runnable, b=blocked, si/so=swap in/out'\necho 'Use vmstat to spot CPU/memory bottlenecks'"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_monitoring",
+      "english": "Watch",
+      "set": {
+        "code": "echo 'watch -n 2 df -h'\ndf -h | head -5\necho 'watch repeats a command every N seconds'"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_monitoring",
+      "english": "Real-time",
+      "set": {
+        "code": "echo 'Real-time monitoring tools:'\necho '  htop   - interactive process viewer'\necho '  iotop  - disk I/O monitor'\necho '  iftop  - network traffic monitor'"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_monitoring",
+      "english": "Resource",
+      "set": {
+        "code": "free -h | head -2\ndf -h / | tail -1\necho \"CPU cores: $(nproc), Load: $(cat /proc/loadavg | cut -d' ' -f1-3)\""
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_monitoring",
+      "english": "Bottleneck",
+      "set": {
+        "code": "echo 'Check CPU:' && cat /proc/loadavg\necho 'Check RAM:' && free -h | grep Mem\necho 'Check Disk:' && df -h / | tail -1"
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_monitoring",
+      "english": "Limit",
+      "set": {
+        "code": "ulimit -a 2>/dev/null | head -5\nulimit -n\necho 'ulimit -n shows max open files per process'"
+      }
+    }
+  ]
+}
