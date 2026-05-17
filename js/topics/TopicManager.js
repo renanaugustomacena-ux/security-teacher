@@ -649,6 +649,12 @@ export class TopicManager {
     const hasExample = pool.some((item) => item.example);
     const hasCommand = pool.some((item) => item.command);
     const hasCode = pool.some((item) => item.code);
+    const hasMultiLineCode = pool.some(
+      (item) =>
+        item.code &&
+        item.code.includes('\n') &&
+        item.code.split('\n').filter((l) => l.trim()).length >= 2
+    );
     const hasEnglishItalian = pool.some((item) => item.english && item.italian);
 
     const modes = [
@@ -741,7 +747,7 @@ export class TopicManager {
         name: 'Code Lab',
         desc: 'Completa il codice mancante / Complete the missing code',
         icon: '\u{1F9EA}',
-        enabled: hasCode,
+        enabled: hasMultiLineCode,
       },
       {
         id: 'techtalk',
