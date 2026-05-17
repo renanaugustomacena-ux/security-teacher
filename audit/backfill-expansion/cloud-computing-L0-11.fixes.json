@@ -1,0 +1,886 @@
+{
+  "fixes": [
+    {
+      "level": "1",
+      "lesson": "cloud_compute_1",
+      "english": "EC2",
+      "set": {
+        "command": "aws ec2 describe-instances --filters Name=instance-state-name,Values=running",
+        "task": "Elenca tutte le istanze EC2 in esecuzione nell'account per ispezionare la flotta compute attiva."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cloud_compute_1",
+      "english": "Bastion Host",
+      "set": {
+        "command": "ssh -i bastion.pem -J ec2-user@bastion.example.com ec2-user@10.0.1.20",
+        "task": "Apri una sessione SSH verso una VM in subnet privata utilizzando il bastion host come jump server."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cloud_compute_2",
+      "english": "AMI",
+      "set": {
+        "command": "aws ec2 create-image --instance-id i-0abcd1234 --name golden-app-v1",
+        "task": "Genera una AMI golden a partire da un'istanza EC2 configurata per riutilizzarla come template di lancio."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cloud_compute_2",
+      "english": "Reserved Instance",
+      "set": {
+        "command": "aws ec2 purchase-reserved-instances-offering --reserved-instances-offering-id ri-xyz --instance-count 5",
+        "task": "Acquista 5 reserved instances per impegnarti su un anno e ottenere sconti significativi sul compute baseline."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cloud_compute_2",
+      "english": "GPU Instance",
+      "set": {
+        "command": "aws ec2 run-instances --image-id ami-deep-learning --instance-type p4d.24xlarge",
+        "task": "Avvia un'istanza GPU p4d.24xlarge dall'AMI deep learning per accelerare il training di un modello ML."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cloud_compute_2",
+      "english": "Dedicated Host",
+      "set": {
+        "command": "aws ec2 allocate-hosts --instance-type m5.large --availability-zone eu-west-1a --quantity 1",
+        "task": "Alloca un dedicated host m5.large in eu-west-1a per ospitare workload soggetti a vincoli di licenza."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cloud_compute_3",
+      "english": "Auto Scaling Group",
+      "set": {
+        "command": "aws autoscaling create-auto-scaling-group --auto-scaling-group-name web-asg --min-size 2 --max-size 10 --desired-capacity 3 --launch-template LaunchTemplateName=web-lt",
+        "task": "Provisiona un Auto Scaling Group per la fleet web con minimo 2 nodi, massimo 10 e capacita desiderata 3."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cloud_compute_3",
+      "english": "Scaling Policy",
+      "set": {
+        "command": "aws autoscaling put-scaling-policy --auto-scaling-group-name web-asg --policy-name cpu70 --policy-type TargetTrackingScaling --target-tracking-configuration file://tt.json",
+        "task": "Configura una scaling policy target-tracking sull'ASG web-asg per mantenere la CPU intorno al 70%."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cloud_compute_3",
+      "english": "Launch Template",
+      "set": {
+        "command": "aws ec2 create-launch-template --launch-template-name web-lt --version-description v1 --launch-template-data file://template.json",
+        "task": "Definisci un launch template versionato web-lt per standardizzare la creazione delle istanze EC2 dell'ASG."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cloud_compute_4",
+      "english": "Application Load Balancer",
+      "set": {
+        "command": "aws elbv2 create-load-balancer --name api-alb --type application --subnets subnet-aaa subnet-bbb",
+        "task": "Crea un Application Load Balancer api-alb in due subnet pubbliche per distribuire traffico HTTP/HTTPS verso i target."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cloud_compute_4",
+      "english": "Network Load Balancer",
+      "set": {
+        "command": "aws elbv2 create-load-balancer --name tcp-nlb --type network --subnets subnet-aaa",
+        "task": "Provisiona un Network Load Balancer di tipo TCP per gestire milioni di connessioni a bassa latenza sui backend."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cloud_compute_4",
+      "english": "Target Group",
+      "set": {
+        "command": "aws elbv2 create-target-group --name api-tg --protocol HTTP --port 8080 --vpc-id vpc-1234 --target-type ip",
+        "task": "Definisci un target group api-tg sulla porta 8080 dentro la VPC vpc-1234 per esporre i container come target IP."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cloud_compute_4",
+      "english": "Listener",
+      "set": {
+        "command": "aws elbv2 create-listener --load-balancer-arn arn:aws:elasticloadbalancing:::loadbalancer/api-alb --protocol HTTPS --port 443 --default-actions Type=forward,TargetGroupArn=arn:aws:elasticloadbalancing:::targetgroup/api-tg",
+        "task": "Aggiungi un listener HTTPS sulla porta 443 dell'ALB api-alb che inoltri il traffico al target group api-tg."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cloud_storage_1",
+      "english": "Object",
+      "set": {
+        "command": "aws s3 cp report.pdf s3://my-bucket/reports/2026/report.pdf",
+        "task": "Carica un singolo oggetto report.pdf nel bucket S3 my-bucket sotto il prefix reports/2026."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cloud_storage_1",
+      "english": "Public Access",
+      "set": {
+        "command": "aws s3api put-public-access-block --bucket my-bucket --public-access-block-configuration BlockPublicAcls=true,BlockPublicPolicy=true,IgnorePublicAcls=true,RestrictPublicBuckets=true",
+        "task": "Blocca completamente ogni accesso pubblico al bucket my-bucket per evitare leak accidentali di dati sensibili."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cloud_storage_2",
+      "english": "EBS",
+      "set": {
+        "command": "aws ec2 describe-volumes --filters Name=status,Values=available",
+        "task": "Ispeziona i volumi EBS in stato available per individuare dischi orfani non collegati a nessuna istanza."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cloud_storage_2",
+      "english": "EFS",
+      "set": {
+        "command": "aws efs create-file-system --performance-mode generalPurpose --throughput-mode bursting --encrypted",
+        "task": "Provisiona un file system EFS cifrato con performance general purpose per condividere file tra piu istanze."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cloud_storage_4",
+      "english": "Backup",
+      "set": {
+        "command": "aws backup start-backup-job --backup-vault-name prod-vault --resource-arn arn:aws:rds:eu-west-1:123:db:mydb --iam-role-arn arn:aws:iam::123:role/BackupRole",
+        "task": "Avvia un job di backup on-demand dell'istanza RDS mydb nel vault prod-vault per ottenere uno snapshot consistente."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cloud_storage_4",
+      "english": "Cross-Region Replication",
+      "set": {
+        "code": "{\n  \"Role\": \"arn:aws:iam::123:role/replication\",\n  \"Rules\": [{\n    \"Status\": \"Enabled\",\n    \"Destination\": {\"Bucket\": \"arn:aws:s3:::backup-eu-west-3\"}\n  }]\n}",
+        "task": "Configura una regola di replication S3 cross-region che copi gli oggetti verso il bucket backup-eu-west-3."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cloud_storage_4",
+      "english": "Vault",
+      "set": {
+        "command": "aws backup create-backup-vault --backup-vault-name prod-vault --encryption-key-arn arn:aws:kms:eu-west-1:123:key/abcd",
+        "task": "Crea un backup vault prod-vault cifrato con una chiave KMS dedicata per centralizzare i backup di produzione."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cloud_storage_4",
+      "english": "Object Lock",
+      "set": {
+        "command": "aws s3api put-object-retention --bucket compliance --key invoice.pdf --retention Mode=COMPLIANCE,RetainUntilDate=2030-01-01T00:00:00Z",
+        "task": "Applica un Object Lock in modalita COMPLIANCE sull'oggetto invoice.pdf per bloccare modifiche fino al 2030."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cloud_networking_1",
+      "english": "Subnet",
+      "set": {
+        "command": "aws ec2 create-subnet --vpc-id vpc-1234 --cidr-block 10.0.1.0/24 --availability-zone eu-west-1a",
+        "task": "Crea una subnet 10.0.1.0/24 nella zona eu-west-1a della VPC vpc-1234 per ospitare le istanze applicative."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cloud_networking_1",
+      "english": "Route Table",
+      "set": {
+        "command": "aws ec2 create-route --route-table-id rtb-1234 --destination-cidr-block 0.0.0.0/0 --gateway-id igw-abcd",
+        "task": "Aggiungi una route di default verso l'Internet Gateway igw-abcd nella route table rtb-1234 per permettere l'uscita web."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cloud_networking_1",
+      "english": "Internet Gateway",
+      "set": {
+        "command": "aws ec2 create-internet-gateway && aws ec2 attach-internet-gateway --internet-gateway-id igw-abcd --vpc-id vpc-1234",
+        "task": "Crea un Internet Gateway e collegalo alla VPC vpc-1234 per abilitare la connettivita pubblica."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cloud_networking_1",
+      "english": "NAT Gateway",
+      "set": {
+        "command": "aws ec2 create-nat-gateway --subnet-id subnet-public --allocation-id eipalloc-1234",
+        "task": "Provisiona un NAT Gateway in una subnet pubblica con un Elastic IP per permettere alle subnet private di uscire su internet."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cloud_networking_2",
+      "english": "Network ACL",
+      "set": {
+        "command": "aws ec2 create-network-acl-entry --network-acl-id acl-1234 --rule-number 100 --protocol tcp --rule-action allow --port-range From=443,To=443 --cidr-block 0.0.0.0/0 --egress false",
+        "task": "Definisci una regola NACL inbound 100 che ammetta traffico HTTPS sulla porta 443 da qualsiasi origine."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cloud_networking_2",
+      "english": "Firewall",
+      "set": {
+        "command": "aws network-firewall create-firewall --firewall-name web-fw --vpc-id vpc-1234 --firewall-policy-arn arn:aws:network-firewall:eu-west-1:123:firewall-policy/web-policy",
+        "task": "Distribuisci un AWS Network Firewall sulla VPC vpc-1234 collegando la policy web-policy per ispezionare il traffico inter-subnet."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cloud_networking_3",
+      "english": "Hosted Zone",
+      "set": {
+        "command": "aws route53 create-hosted-zone --name example.com --caller-reference $(date +%s)",
+        "task": "Crea una hosted zone pubblica per il dominio example.com in Route 53 e gestisci da li i record DNS."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cloud_networking_3",
+      "english": "A Record",
+      "set": {
+        "code": "{\n  \"Changes\": [{\n    \"Action\": \"UPSERT\",\n    \"ResourceRecordSet\": {\n      \"Name\": \"api.example.com\",\n      \"Type\": \"A\",\n      \"TTL\": 60,\n      \"ResourceRecords\": [{\"Value\": \"203.0.113.10\"}]\n    }\n  }]\n}",
+        "task": "Imposta un record A per api.example.com che punti all'IP 203.0.113.10 con TTL 60 secondi per facilitare i failover."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cloud_networking_4",
+      "english": "VPN",
+      "set": {
+        "command": "aws ec2 create-vpn-connection --customer-gateway-id cgw-1234 --vpn-gateway-id vgw-abcd --type ipsec.1",
+        "task": "Stabilisci un tunnel VPN IPSec tra il customer gateway cgw-1234 e il VPN gateway AWS vgw-abcd."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cloud_networking_4",
+      "english": "Direct Connect",
+      "set": {
+        "command": "aws directconnect create-connection --location EqDC2 --bandwidth 10Gbps --connection-name corp-dx",
+        "task": "Provisiona una connessione Direct Connect da 10Gbps nella location EqDC2 per collegare in privato il datacenter ad AWS."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cloud_networking_4",
+      "english": "Transit Gateway",
+      "set": {
+        "command": "aws ec2 create-transit-gateway --description hub-tgw --options AmazonSideAsn=64512,AutoAcceptSharedAttachments=enable",
+        "task": "Crea un Transit Gateway hub-tgw per centralizzare il routing tra molteplici VPC e on-prem evitando peering one-to-one."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cloud_networking_4",
+      "english": "Endpoint",
+      "set": {
+        "command": "aws ec2 create-vpc-endpoint --vpc-id vpc-1234 --service-name com.amazonaws.eu-west-1.s3 --route-table-ids rtb-1234",
+        "task": "Crea un VPC endpoint per S3 nella VPC vpc-1234 cosi le istanze private accedano al servizio senza passare da internet."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cloud_iam_1",
+      "english": "Service Account",
+      "set": {
+        "command": "gcloud iam service-accounts create app-runner --display-name=\"App Runner Service Account\"",
+        "task": "Crea un service account GCP app-runner per assegnarlo ai workload che devono autenticarsi alle API Google."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cloud_iam_2",
+      "english": "Trust Policy",
+      "set": {
+        "code": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [{\n    \"Effect\": \"Allow\",\n    \"Principal\": {\"Service\": \"lambda.amazonaws.com\"},\n    \"Action\": \"sts:AssumeRole\"\n  }]\n}",
+        "task": "Definisci una trust policy che autorizzi il servizio Lambda ad assumere il ruolo IAM per eseguire le funzioni."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cloud_iam_3",
+      "english": "Permission Boundary",
+      "set": {
+        "command": "aws iam put-user-permissions-boundary --user-name alice --permissions-boundary arn:aws:iam::123:policy/DevBoundary",
+        "task": "Applica una permission boundary DevBoundary all'utente alice per limitare al massimo i permessi che puo accumulare."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cloud_iam_3",
+      "english": "Service Control Policy",
+      "set": {
+        "code": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [{\n    \"Effect\": \"Deny\",\n    \"Action\": \"s3:DeleteBucket\",\n    \"Resource\": \"*\"\n  }]\n}",
+        "task": "Scrivi una SCP che vieti l'azione s3:DeleteBucket a livello di Organization per proteggere i bucket aziendali."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cloud_iam_4",
+      "english": "MFA",
+      "set": {
+        "command": "aws iam enable-mfa-device --user-name alice --serial-number arn:aws:iam::123:mfa/alice --authentication-code-1 123456 --authentication-code-2 654321",
+        "task": "Abilita un dispositivo MFA virtuale per l'utente IAM alice usando due codici OTP consecutivi per la registrazione."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cloud_iam_4",
+      "english": "Identity Provider",
+      "set": {
+        "command": "aws iam create-saml-provider --saml-metadata-document file://okta-metadata.xml --name Okta",
+        "task": "Registra Okta come identity provider SAML in IAM importando il metadata XML per federare l'autenticazione enterprise."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cloud_serverless_1",
+      "english": "Trigger",
+      "set": {
+        "command": "aws lambda create-event-source-mapping --function-name myFunc --event-source-arn arn:aws:sqs:eu-west-1:123:orders --batch-size 10",
+        "task": "Configura un trigger SQS sulla Lambda myFunc per consumare automaticamente messaggi dalla coda orders a batch da 10."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cloud_serverless_1",
+      "english": "Provisioned Concurrency",
+      "set": {
+        "command": "aws lambda put-provisioned-concurrency-config --function-name myFunc --qualifier prod --provisioned-concurrent-executions 50",
+        "task": "Imposta 50 esecuzioni concorrenti pre-warmate sulla Lambda myFunc per eliminare i cold start durante i picchi di traffico."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cloud_serverless_2",
+      "english": "API Gateway",
+      "set": {
+        "command": "aws apigateway create-rest-api --name orders-api --endpoint-configuration types=REGIONAL",
+        "task": "Provisiona una REST API regionale orders-api su API Gateway come front-end pubblico delle Lambda di ordini."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cloud_serverless_2",
+      "english": "HTTP API",
+      "set": {
+        "command": "aws apigatewayv2 create-api --name webhook-api --protocol-type HTTP --target arn:aws:lambda:eu-west-1:123:function:webhook",
+        "task": "Crea una HTTP API economica webhook-api su API Gateway v2 collegata direttamente alla Lambda webhook."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cloud_serverless_2",
+      "english": "Authorizer",
+      "set": {
+        "command": "aws apigateway create-authorizer --rest-api-id abc123 --name JwtAuth --type TOKEN --authorizer-uri arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:123:function:auth/invocations",
+        "task": "Aggiungi un authorizer Lambda di tipo TOKEN alla REST API abc123 per validare JWT prima di invocare l'integration."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cloud_serverless_2",
+      "english": "Throttling",
+      "set": {
+        "command": "aws apigateway create-usage-plan --name basic --throttle burstLimit=200,rateLimit=100",
+        "task": "Definisci un usage plan basic con throttling a 100 req/sec e burst 200 per limitare l'uso dell'API Gateway."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cloud_serverless_3",
+      "english": "Event Bus",
+      "set": {
+        "command": "aws events create-event-bus --name orders-bus",
+        "task": "Crea un event bus custom orders-bus su EventBridge per disaccoppiare i microservizi tramite eventi di dominio."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cloud_serverless_4",
+      "english": "Step Functions",
+      "set": {
+        "command": "aws stepfunctions create-state-machine --name order-flow --definition file://flow.asl.json --role-arn arn:aws:iam::123:role/StepFnRole",
+        "task": "Distribuisci una state machine order-flow su Step Functions caricando la definizione ASL e collegando il ruolo IAM."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cloud_database_1",
+      "english": "Aurora",
+      "set": {
+        "command": "aws rds create-db-cluster --db-cluster-identifier app-aurora --engine aurora-postgresql --master-username admin --master-user-password SecretPass! --database-name appdb",
+        "task": "Provisiona un cluster Aurora PostgreSQL app-aurora con database iniziale appdb come backend ad alte prestazioni."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cloud_database_1",
+      "english": "Multi-AZ",
+      "set": {
+        "command": "aws rds modify-db-instance --db-instance-identifier mydb --multi-az --apply-immediately",
+        "task": "Converti l'istanza RDS mydb in Multi-AZ con apply immediato per ottenere failover automatico tra zone."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cloud_database_1",
+      "english": "Point-in-Time Recovery",
+      "set": {
+        "command": "aws rds restore-db-instance-to-point-in-time --source-db-instance-identifier mydb --target-db-instance-identifier mydb-restored --restore-time 2026-05-17T10:00:00Z",
+        "task": "Esegui un point-in-time recovery dell'istanza RDS mydb alle 10:00 UTC del 17 maggio dentro mydb-restored."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cloud_database_2",
+      "english": "Cosmos DB",
+      "set": {
+        "command": "az cosmosdb create --name app-cosmos --resource-group rg-data --kind GlobalDocumentDB --locations regionName=westeurope failoverPriority=0",
+        "task": "Crea un account Cosmos DB app-cosmos di tipo Core SQL nella region West Europe come database multi-modello."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cloud_database_2",
+      "english": "Firestore",
+      "set": {
+        "command": "gcloud firestore databases create --location=eur3 --type=firestore-native",
+        "task": "Inizializza un database Firestore native nella region multi-locale eur3 per uno store documentale serverless GCP."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cloud_database_2",
+      "english": "Global Secondary Index",
+      "set": {
+        "command": "aws dynamodb update-table --table-name Orders --attribute-definitions AttributeName=Status,AttributeType=S --global-secondary-index-updates file://gsi.json",
+        "task": "Aggiungi un Global Secondary Index alla tabella DynamoDB Orders per supportare query sull'attributo Status."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cloud_database_3",
+      "english": "ElastiCache",
+      "set": {
+        "command": "aws elasticache create-cache-cluster --cache-cluster-id sessions --engine redis --cache-node-type cache.t3.micro --num-cache-nodes 1",
+        "task": "Provisiona un cluster ElastiCache Redis sessions su node t3.micro per accelerare lo store di sessione."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cloud_database_4",
+      "english": "Search Engine",
+      "set": {
+        "command": "aws opensearch create-domain --domain-name logs-search --engine-version OpenSearch_2.11 --cluster-config InstanceType=r6g.large.search,InstanceCount=3",
+        "task": "Crea un dominio OpenSearch logs-search con 3 nodi r6g.large per indicizzare e cercare log applicativi."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_1",
+      "english": "Image Tag",
+      "set": {
+        "command": "docker tag myapp:latest 123.dkr.ecr.eu-west-1.amazonaws.com/myapp:$(git rev-parse --short HEAD)",
+        "task": "Tagga l'immagine myapp con la short SHA del commit corrente per ottenere un tag immutabile prima del push su ECR."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_2",
+      "english": "GCR",
+      "set": {
+        "command": "gcloud artifacts repositories create myrepo --repository-format=docker --location=europe-west1",
+        "task": "Crea un repository Docker myrepo in Artifact Registry nella region europe-west1 come successore di GCR."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_2",
+      "english": "Image Scanning",
+      "set": {
+        "command": "trivy image --severity HIGH,CRITICAL myregistry/myapp:1.0",
+        "task": "Scansiona l'immagine myregistry/myapp:1.0 con Trivy filtrando solo le vulnerabilita HIGH e CRITICAL prima del deploy."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_2",
+      "english": "Image Signing",
+      "set": {
+        "command": "cosign sign --key cosign.key myregistry/myapp:1.0",
+        "task": "Firma con Cosign l'immagine myregistry/myapp:1.0 usando la chiave privata cosign.key per attestare la provenienza."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_3",
+      "english": "ECS",
+      "set": {
+        "command": "aws ecs run-task --cluster prod --launch-type FARGATE --task-definition myapp:1 --network-configuration awsvpcConfiguration={subnets=[subnet-abc],securityGroups=[sg-def]}",
+        "task": "Esegui un task on-demand della task definition myapp:1 sul cluster ECS prod usando il launch type Fargate."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_3",
+      "english": "Service",
+      "set": {
+        "command": "aws ecs create-service --cluster prod --service-name api --task-definition api:2 --desired-count 3 --launch-type FARGATE",
+        "task": "Crea un service ECS api che mantenga 3 task della definition api:2 sul cluster prod con launch type Fargate."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_3",
+      "english": "Cluster",
+      "set": {
+        "command": "aws ecs create-cluster --cluster-name prod --capacity-providers FARGATE FARGATE_SPOT",
+        "task": "Crea un cluster ECS prod abilitando i capacity provider Fargate e Fargate Spot per mixare costi e affidabilita."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_3",
+      "english": "Fargate",
+      "set": {
+        "code": "{\n  \"family\": \"web\",\n  \"requiresCompatibilities\": [\"FARGATE\"],\n  \"cpu\": \"512\",\n  \"memory\": \"1024\",\n  \"networkMode\": \"awsvpc\"\n}",
+        "task": "Componi una task definition Fargate web da 0.5 vCPU e 1 GB di memoria con network mode awsvpc."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_4",
+      "english": "Node",
+      "set": {
+        "command": "kubectl get nodes -o wide",
+        "task": "Elenca i nodi del cluster Kubernetes con dettagli estesi per verificare versione kubelet, IP interno e zona."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_4",
+      "english": "Karpenter",
+      "set": {
+        "command": "helm install karpenter oci://public.ecr.aws/karpenter/karpenter --namespace karpenter --create-namespace",
+        "task": "Installa Karpenter via Helm chart OCI nel namespace karpenter per autoscalare i nodi EKS in modo nativo."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_1",
+      "english": "GitOps",
+      "set": {
+        "command": "argocd app sync myapp --prune --force",
+        "task": "Sincronizza l'applicazione ArgoCD myapp riconciliando il cluster con la verita dichiarata nel repository Git."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_2",
+      "english": "OpenTofu",
+      "set": {
+        "command": "tofu init && tofu plan -out=plan.tfplan",
+        "task": "Inizializza OpenTofu e produci un piano salvato in plan.tfplan come drop-in sostitutivo di terraform su una codebase esistente."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_4",
+      "english": "Stack Set",
+      "set": {
+        "command": "aws cloudformation create-stack-set --stack-set-name baseline --template-body file://baseline.yaml --permission-model SERVICE_MANAGED --auto-deployment Enabled=true",
+        "task": "Crea uno StackSet baseline gestito dall'Organization per rollare un template comune su tutti gli account in modo automatico."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_4",
+      "english": "Bicep",
+      "set": {
+        "code": "resource sa 'Microsoft.Storage/storageAccounts@2023-01-01' = {\n  name: 'mystorage'\n  location: 'westeurope'\n  sku: { name: 'Standard_LRS' }\n  kind: 'StorageAccount'\n}",
+        "task": "Dichiara in Bicep uno storage account mystorage in West Europe con SKU Standard_LRS per IaC nativa Azure."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_4",
+      "english": "ARM Template",
+      "set": {
+        "command": "az deployment group create --resource-group rg-prod --template-file storage.json --parameters env=prod",
+        "task": "Distribuisci un template ARM storage.json nel resource group rg-prod passando il parametro env a prod."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_4",
+      "english": "Crossplane",
+      "set": {
+        "code": "apiVersion: s3.aws.upbound.io/v1beta1\nkind: Bucket\nmetadata:\n  name: my-crossplane-bucket\nspec:\n  forProvider:\n    region: eu-west-1",
+        "task": "Definisci un manifest Crossplane che provisioni un bucket S3 my-crossplane-bucket in eu-west-1 come risorsa Kubernetes."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cloud_cost_2",
+      "english": "Cost Allocation Tag",
+      "set": {
+        "command": "aws ec2 create-tags --resources i-0abcd1234 --tags Key=CostCenter,Value=Marketing Key=Environment,Value=Prod",
+        "task": "Tagga l'istanza i-0abcd1234 con CostCenter Marketing ed Environment Prod per mappare la spesa al business owner."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cloud_cost_2",
+      "english": "CUR",
+      "set": {
+        "command": "aws cur put-report-definition --report-definition file://cur-config.json",
+        "task": "Configura un Cost and Usage Report dettagliato che scarichi le voci di spesa AWS su un bucket S3 per analisi finanziarie."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cloud_cost_3",
+      "english": "Rightsizing",
+      "set": {
+        "command": "aws compute-optimizer get-ec2-instance-recommendations --instance-arns arn:aws:ec2:eu-west-1:123:instance/i-0abcd1234",
+        "task": "Recupera da Compute Optimizer i suggerimenti di rightsizing per l'istanza i-0abcd1234 e individua un tipo piu economico."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cloud_monitoring_1",
+      "english": "Embedded Metric Format",
+      "set": {
+        "code": "{\n  \"_aws\": {\n    \"Timestamp\": 1700000000000,\n    \"CloudWatchMetrics\": [{\"Namespace\": \"App\", \"Dimensions\": [[\"Service\"]], \"Metrics\": [{\"Name\": \"Latency\", \"Unit\": \"Milliseconds\"}]}]\n  },\n  \"Service\": \"checkout\",\n  \"Latency\": 42\n}",
+        "task": "Emetti un log in formato EMF che registri la metrica Latency di 42ms con dimensione Service=checkout nel namespace App."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cloud_monitoring_2",
+      "english": "Log Retention",
+      "set": {
+        "command": "aws logs put-retention-policy --log-group-name /aws/lambda/myFunc --retention-in-days 30",
+        "task": "Imposta una retention di 30 giorni sul log group della Lambda myFunc per evitare costi di archiviazione indefinita."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cloud_monitoring_2",
+      "english": "Log Subscription",
+      "set": {
+        "command": "aws logs put-subscription-filter --log-group-name /aws/lambda/myFunc --filter-name errors --filter-pattern ERROR --destination-arn arn:aws:lambda:eu-west-1:123:function:log-shipper",
+        "task": "Sottoscrivi una Lambda log-shipper al log group della Lambda myFunc filtrando solo le righe contenenti ERROR."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cloud_monitoring_3",
+      "english": "Composite Alarm",
+      "set": {
+        "command": "aws cloudwatch put-composite-alarm --alarm-name api-critical --alarm-rule \"ALARM(api-5xx) AND ALARM(api-latency)\"",
+        "task": "Crea un composite alarm api-critical che scatti solo quando sia l'alarm sui 5xx sia quello sulla latenza sono in stato ALARM."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cloud_monitoring_3",
+      "english": "SNS Topic",
+      "set": {
+        "command": "aws sns create-topic --name oncall-alerts",
+        "task": "Crea un topic SNS oncall-alerts come fan-out di notifiche per email, PagerDuty e Slack collegati agli alarm critici."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cloud_monitoring_4",
+      "english": "OpenTelemetry",
+      "set": {
+        "code": "const sdk = new NodeSDK({\n  traceExporter: new OTLPTraceExporter({url: \"http://collector:4318/v1/traces\"}),\n  instrumentations: [getNodeAutoInstrumentations()]\n});\nsdk.start();",
+        "task": "Inizializza l'SDK OpenTelemetry in Node.js esportando le tracce verso un collector OTLP locale per strumentare l'app."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cloud_security_1",
+      "english": "KMS",
+      "set": {
+        "command": "aws kms create-key --description \"App data encryption key\" --key-usage ENCRYPT_DECRYPT",
+        "task": "Genera una chiave KMS dedicata per cifrare i dati applicativi separando le responsabilita di gestione dalle chiavi default."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cloud_security_1",
+      "english": "Customer Managed Key",
+      "set": {
+        "command": "aws kms create-key --description \"CMK prod\" --policy file://key-policy.json",
+        "task": "Crea una Customer Managed Key di produzione applicando una key policy custom per controllare chi puo cifrare e decifrare."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cloud_security_1",
+      "english": "Key Rotation",
+      "set": {
+        "command": "aws kms enable-key-rotation --key-id alias/app-key",
+        "task": "Abilita la rotazione automatica annuale della chiave KMS alias/app-key per cambiare il materiale crittografico senza re-encryption."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cloud_security_1",
+      "english": "Key Policy",
+      "set": {
+        "code": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [{\n    \"Effect\": \"Allow\",\n    \"Principal\": {\"AWS\": \"arn:aws:iam::123:role/AppRole\"},\n    \"Action\": [\"kms:Encrypt\", \"kms:Decrypt\"],\n    \"Resource\": \"*\"\n  }]\n}",
+        "task": "Scrivi una key policy che consenta al ruolo AppRole di cifrare e decifrare con la chiave KMS associata."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cloud_security_2",
+      "english": "Parameter Store",
+      "set": {
+        "command": "aws ssm get-parameter --name /app/db/url --with-decryption",
+        "task": "Recupera il parametro SSM /app/db/url decifrandolo con la chiave KMS per ottenere la connection string del database."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cloud_security_2",
+      "english": "Key Vault",
+      "set": {
+        "command": "az keyvault create --name corp-kv --resource-group rg-sec --location westeurope --enable-rbac-authorization true",
+        "task": "Provisiona un Azure Key Vault corp-kv con autorizzazione RBAC nella region westeurope come gestore centrale dei segreti."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cloud_security_2",
+      "english": "HashiCorp Vault",
+      "set": {
+        "command": "vault kv put secret/db password=SuperSecret!",
+        "task": "Salva la password del database nel KV engine di HashiCorp Vault sotto il path secret/db per il consumo dinamico dei client."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cloud_security_2",
+      "english": "Secret Rotation",
+      "set": {
+        "command": "aws secretsmanager rotate-secret --secret-id db-pass --rotation-lambda-arn arn:aws:lambda:eu-west-1:123:function:rotate-db --rotation-rules AutomaticallyAfterDays=30",
+        "task": "Pianifica la rotazione automatica del secret db-pass ogni 30 giorni tramite una Lambda dedicata di rotation."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cloud_security_2",
+      "english": "Sealed Secret",
+      "set": {
+        "command": "kubeseal --controller-name=sealed-secrets --format yaml < secret.yaml > sealed-secret.yaml",
+        "task": "Cifra il manifest secret.yaml con kubeseal per ottenere un Sealed Secret committabile in Git in sicurezza."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cloud_security_2",
+      "english": "SOPS",
+      "set": {
+        "command": "sops --encrypt --kms arn:aws:kms:eu-west-1:123:key/abcd --in-place values.yaml",
+        "task": "Cifra i valori sensibili dentro values.yaml con SOPS usando una chiave KMS preservando le chiavi YAML in chiaro."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cloud_security_3",
+      "english": "WAF",
+      "set": {
+        "command": "aws wafv2 create-web-acl --name api-acl --scope REGIONAL --default-action Allow={} --visibility-config SampledRequestsEnabled=true,CloudWatchMetricsEnabled=true,MetricName=apiAcl --rules file://rules.json",
+        "task": "Distribuisci una Web ACL WAF regionale api-acl con regole gestite per bloccare SQL injection e attacchi OWASP."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cloud_security_3",
+      "english": "GuardDuty",
+      "set": {
+        "command": "aws guardduty create-detector --enable --finding-publishing-frequency FIFTEEN_MINUTES",
+        "task": "Abilita un detector GuardDuty con pubblicazione dei finding ogni 15 minuti per il threat detection continuo dell'account."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cloud_security_3",
+      "english": "Security Hub",
+      "set": {
+        "command": "aws securityhub enable-security-hub --enable-default-standards",
+        "task": "Attiva Security Hub con gli standard di sicurezza di default per centralizzare i finding di GuardDuty, Inspector e Macie."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cloud_security_3",
+      "english": "Macie",
+      "set": {
+        "command": "aws macie2 enable-macie --finding-publishing-frequency FIFTEEN_MINUTES --status ENABLED",
+        "task": "Abilita Macie per scansionare automaticamente i bucket S3 alla ricerca di dati sensibili come carte di credito o PII."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cloud_security_3",
+      "english": "Inspector",
+      "set": {
+        "command": "aws inspector2 enable --resource-types EC2 ECR LAMBDA",
+        "task": "Attiva Amazon Inspector v2 sulle risorse EC2, ECR e Lambda per la scansione continua delle vulnerabilita CVE."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cloud_security_3",
+      "english": "CloudTrail",
+      "set": {
+        "command": "aws cloudtrail create-trail --name audit-trail --s3-bucket-name audit-logs --is-multi-region-trail --enable-log-file-validation",
+        "task": "Provisiona un trail multi-region audit-trail che spedisca i log API a un bucket audit-logs con validazione dei file abilitata."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cloud_security_3",
+      "english": "Config",
+      "set": {
+        "command": "aws configservice put-configuration-recorder --configuration-recorder name=default,roleARN=arn:aws:iam::123:role/ConfigRole --recording-group allSupported=true,includeGlobalResourceTypes=true",
+        "task": "Configura AWS Config per registrare tutte le risorse supportate e tracciare lo stato di compliance continuo."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cloud_security_4",
+      "english": "Vulnerability Scan",
+      "set": {
+        "command": "trivy fs --severity HIGH,CRITICAL --exit-code 1 .",
+        "task": "Esegui una scansione vulnerabilita sul filesystem corrente con Trivy che fallisca la pipeline su CVE HIGH o CRITICAL."
+      }
+    }
+  ]
+}

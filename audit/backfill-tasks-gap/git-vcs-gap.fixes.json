@@ -1,204 +1,1584 @@
 {
   "fixes": [
-    {"level": "0", "lesson": "git_foundations_1", "english": "Repository", "set": {"task": "Inizializza un repository Git nella cartella corrente con `git init` per iniziare a tracciare il progetto."}},
-    {"level": "0", "lesson": "git_foundations_1", "english": "Commit", "set": {"task": "Salva le modifiche in staging come un commit con messaggio 'Add feature' nella storia del progetto."}},
-    {"level": "0", "lesson": "git_foundations_1", "english": "Staging Area", "set": {"task": "Sposta `file.txt` dalla working tree all'area di staging per prepararlo al prossimo commit."}},
-    {"level": "0", "lesson": "git_foundations_1", "english": "HEAD", "set": {"task": "Mostra il log dei commit a partire dal puntatore HEAD per vedere su quale commit sei posizionato."}},
-    {"level": "0", "lesson": "git_foundations_1", "english": ".gitignore", "set": {"task": "Definisci uno `.gitignore` che esclude `node_modules/`, file `*.log` e `.env` dal tracciamento."}},
-    {"level": "0", "lesson": "git_foundations_1", "english": "Tracked File", "set": {"task": "Elenca tutti i file attualmente tracciati dal repository con `git ls-files`."}},
-    {"level": "0", "lesson": "git_foundations_2", "english": "Modified", "set": {"task": "Esegui `git status` per vedere quali file modificati nella working tree devono ancora essere messi in staging."}},
-    {"level": "0", "lesson": "git_foundations_2", "english": "Staged", "set": {"task": "Promuovi `file.txt` allo stato staged con `git add file.txt` affinche` venga incluso nel prossimo commit."}},
-    {"level": "0", "lesson": "git_foundations_2", "english": "Untracked", "set": {"task": "Controlla con `git status` quali file untracked non sono ancora seguiti da Git."}},
-    {"level": "0", "lesson": "git_foundations_2", "english": "Hash", "set": {"task": "Visualizza la cronologia compatta con `git log --oneline` per vedere l'hash SHA-1 abbreviato di ogni commit."}},
-    {"level": "0", "lesson": "git_foundations_2", "english": "Author", "set": {"task": "Filtra il log dei commit per autore con `git log --author=\"Maria\"` per vedere solo i suoi contributi."}},
-    {"level": "0", "lesson": "git_foundations_3", "english": "Install", "set": {"task": "Installa Git su Debian/Ubuntu con `sudo apt install git` tramite il gestore dei pacchetti di sistema."}},
-    {"level": "0", "lesson": "git_foundations_3", "english": "Initialize", "set": {"task": "Inizializza un nuovo repository Git nella cartella corrente eseguendo `git init`."}},
-    {"level": "0", "lesson": "git_foundations_3", "english": "User Name", "set": {"task": "Configura globalmente il tuo nome utente Git come 'Mario Rossi' per attribuire correttamente i commit."}},
-    {"level": "0", "lesson": "git_foundations_3", "english": "User Email", "set": {"task": "Imposta globalmente l'email utente `you@example.com` cosi compare nei metadati di ogni commit."}},
-    {"level": "0", "lesson": "git_foundations_3", "english": "Default Branch", "set": {"task": "Configura `main` come nome del ramo predefinito per ogni nuovo repository inizializzato sulla macchina."}},
-    {"level": "0", "lesson": "git_foundations_3", "english": "Manual Page", "set": {"task": "Apri la pagina di manuale del comando commit con `git help commit` per consultare tutte le opzioni."}},
-    {"level": "0", "lesson": "git_foundations_3", "english": "Version", "set": {"task": "Verifica la versione di Git installata con `git --version` prima di usare comandi recenti."}},
-    {"level": "0", "lesson": "git_foundations_3", "english": "Hidden Folder", "set": {"task": "Elenca anche le cartelle nascoste con `ls -la` per individuare la directory `.git` del repository."}},
-    {"level": "0", "lesson": "git_foundations_4", "english": "History", "set": {"task": "Mostra la cronologia completa dei commit del repository con `git log`."}},
-    {"level": "1", "lesson": "git_basics_1", "english": "git init", "set": {"task": "Inizializza un nuovo repository Git nella cartella corrente eseguendo `git init` una sola volta."}},
-    {"level": "1", "lesson": "git_basics_1", "english": "git add", "set": {"task": "Aggiungi `file.txt` allo staging area in vista del prossimo commit."}},
-    {"level": "1", "lesson": "git_basics_1", "english": "git add .", "set": {"task": "Metti in staging tutte le modifiche della directory corrente con `git add .`, prestando attenzione ai file indesiderati."}},
-    {"level": "1", "lesson": "git_basics_1", "english": "git add -A", "set": {"task": "Stage tutte le modifiche dell'intero repository, incluse cancellazioni e rinomine, con `git add -A`."}},
-    {"level": "1", "lesson": "git_basics_1", "english": "git commit", "set": {"task": "Registra le modifiche staged come commit con messaggio 'Add login form'."}},
-    {"level": "1", "lesson": "git_basics_1", "english": "Commit Message", "set": {"task": "Crea un commit con messaggio chiaro 'Fix login bug' che spieghi il perche` della modifica."}},
-    {"level": "1", "lesson": "git_basics_1", "english": "-m flag", "set": {"task": "Passa direttamente il messaggio 'msg' dalla riga di comando usando il flag `-m` senza aprire l'editor."}},
-    {"level": "1", "lesson": "git_basics_1", "english": "git commit -am", "set": {"task": "Combina stage e commit dei file tracciati in un solo passo con `git commit -am \"Quick fix\"`."}},
-    {"level": "1", "lesson": "git_basics_1", "english": "Empty Commit", "set": {"task": "Crea un commit vuoto con `--allow-empty` per avviare manualmente una pipeline CI senza modifiche al codice."}},
-    {"level": "1", "lesson": "git_basics_2", "english": "git status", "set": {"task": "Mostra lo stato del repository con `git status` per vedere file staged, modificati e non tracciati."}},
-    {"level": "1", "lesson": "git_basics_2", "english": "git status -s", "set": {"task": "Ottieni una panoramica compatta dello stato con `git status -s` usando lettere come M, A e ??."}},
-    {"level": "1", "lesson": "git_basics_2", "english": "git log", "set": {"task": "Visualizza la lista cronologica completa dei commit del progetto eseguendo `git log`."}},
-    {"level": "1", "lesson": "git_basics_2", "english": "git log --oneline", "set": {"task": "Scorri rapidamente i commit recenti con `git log --oneline`, una riga e un hash abbreviato per commit."}},
-    {"level": "1", "lesson": "git_basics_2", "english": "git log --graph", "set": {"task": "Disegna la topologia di tutti i rami con `git log --oneline --graph --all` in modalita` ASCII."}},
-    {"level": "1", "lesson": "git_basics_2", "english": "git diff", "set": {"task": "Confronta le modifiche non staged della working tree rispetto all'ultimo commit con `git diff`."}},
-    {"level": "1", "lesson": "git_basics_2", "english": "git diff --staged", "set": {"task": "Ispeziona con `git diff --staged` esattamente cosa entrera` nel prossimo commit prima di confermarlo."}},
-    {"level": "1", "lesson": "git_basics_2", "english": "git show", "set": {"task": "Mostra messaggio e diff del commit puntato da HEAD con `git show HEAD`."}},
-    {"level": "1", "lesson": "git_basics_2", "english": "Patch", "set": {"task": "Genera file patch per gli ultimi tre commit con `git format-patch HEAD~3` da inviare via email."}},
-    {"level": "1", "lesson": "git_basics_3", "english": "git rm", "set": {"task": "Rimuovi `old.txt` dal disco e mettine la cancellazione in staging in un solo passo con `git rm`."}},
-    {"level": "1", "lesson": "git_basics_3", "english": "git rm --cached", "set": {"task": "Smetti di tracciare `secret.env` mantenendolo su disco con `git rm --cached secret.env`."}},
-    {"level": "1", "lesson": "git_basics_3", "english": "git mv", "set": {"task": "Rinomina `old.txt` in `new.txt` registrando il rename come operazione atomica con `git mv`."}},
-    {"level": "1", "lesson": "git_basics_3", "english": "Rename", "set": {"task": "Segui la storia di `file.txt` attraverso i rename con `git log --follow file.txt`."}},
-    {"level": "1", "lesson": "git_basics_3", "english": "Delete", "set": {"task": "Cancella `file.txt` con `rm` e mettine la rimozione in staging con `git add file.txt`."}},
-    {"level": "1", "lesson": "git_basics_3", "english": "Restore File", "set": {"task": "Ripristina `file.txt` all'ultimo stato committato scartando le modifiche locali con `git restore file.txt`."}},
-    {"level": "1", "lesson": "git_basics_3", "english": "Discard Changes", "set": {"task": "Scarta tutte le modifiche non staged della working tree con `git restore .` per ripartire pulito."}},
-    {"level": "1", "lesson": "git_basics_3", "english": "Pattern", "set": {"task": "Stage tutti i file JavaScript con il pattern glob `git add \"*.js\"` in un solo comando."}},
-    {"level": "1", "lesson": "git_basics_3", "english": "Glob", "set": {"task": "Definisci nel `.gitignore` pattern come `*.log` e `build/`, con eccezione `!important.log` per il file specifico."}},
-    {"level": "1", "lesson": "git_basics_4", "english": "git help", "set": {"task": "Apri il manuale completo del sottocomando status con `git help status` per consultarne tutte le opzioni."}},
-    {"level": "1", "lesson": "git_basics_4", "english": "Quick Start", "set": {"task": "Esegui la sequenza di avvio rapido `git init`, `git add .` e `git commit -m \"first\"` per pubblicare il primo commit."}},
-    {"level": "1", "lesson": "git_basics_4", "english": "First Commit", "set": {"task": "Conferma il primo commit del progetto con messaggio 'Initial commit' dopo aver stage README, .gitignore e LICENSE."}},
-    {"level": "1", "lesson": "git_basics_4", "english": "README", "set": {"task": "Componi un file `README.md` con titolo `# My Project` e una breve descrizione mostrata in homepage del repository."}},
-    {"level": "1", "lesson": "git_basics_4", "english": "Initial Commit", "set": {"task": "Crea il commit iniziale del repository con messaggio convenzionale 'Initial commit'."}},
-    {"level": "2", "lesson": "git_branching_1", "english": "Branch", "set": {"task": "Elenca i branch locali del repository eseguendo `git branch` senza argomenti."}},
-    {"level": "2", "lesson": "git_branching_1", "english": "git branch", "set": {"task": "Visualizza tutti i branch locali correnti con `git branch` per orientarti tra i rami in lavoro."}},
-    {"level": "2", "lesson": "git_branching_1", "english": "Create Branch", "set": {"task": "Crea il nuovo branch `feature-x` senza spostarti su di esso con `git branch feature-x`."}},
-    {"level": "2", "lesson": "git_branching_1", "english": "git checkout", "set": {"task": "Spostati sul branch `main` con `git checkout main` per riprendere il lavoro dalla linea principale."}},
-    {"level": "2", "lesson": "git_branching_1", "english": "git switch", "set": {"task": "Cambia ramo passando a `main` con il moderno comando `git switch main` (Git 2.23+)."}},
-    {"level": "2", "lesson": "git_branching_1", "english": "git checkout -b", "set": {"task": "Crea e spostati subito sul nuovo branch `feature-x` con `git checkout -b feature-x` in un solo passo."}},
-    {"level": "2", "lesson": "git_branching_1", "english": "git switch -c", "set": {"task": "Crea e attiva il branch `feature-x` con la sintassi moderna `git switch -c feature-x`."}},
-    {"level": "2", "lesson": "git_branching_1", "english": "main", "set": {"task": "Passa al branch predefinito `main` con `git switch main` per riprendere la linea principale."}},
-    {"level": "2", "lesson": "git_branching_1", "english": "master", "set": {"task": "Passa al vecchio branch predefinito `master` con `git switch master` nei repository legacy."}},
-    {"level": "2", "lesson": "git_branching_2", "english": "HEAD Pointer", "set": {"task": "Ispeziona il contenuto di `.git/HEAD` con `cat .git/HEAD` per vedere a quale branch punta HEAD."}},
-    {"level": "2", "lesson": "git_branching_2", "english": "Detached HEAD", "set": {"task": "Esci dallo stato detached HEAD creando il branch di salvataggio `rescue` con `git switch -c rescue`."}},
-    {"level": "2", "lesson": "git_branching_2", "english": "Parent Commit", "set": {"task": "Mostra il log dei commit con i loro genitori usando `git log --parents` per rivelare la struttura del DAG."}},
-    {"level": "2", "lesson": "git_branching_2", "english": "Ancestor", "set": {"task": "Trova l'antenato comune tra i branch `main` e `feature` con `git merge-base main feature`."}},
-    {"level": "2", "lesson": "git_branching_2", "english": "Tilde (~)", "set": {"task": "Visualizza il commit tre passi indietro rispetto a HEAD con la notazione tilde `git show HEAD~3`."}},
-    {"level": "2", "lesson": "git_branching_2", "english": "Caret (^)", "set": {"task": "Riferisci il secondo genitore di un merge commit con la notazione caret `git show HEAD^2`."}},
-    {"level": "2", "lesson": "git_branching_2", "english": "Branch Pointer", "set": {"task": "Apri il file `.git/refs/heads/main` per leggere l'hash del commit a cui punta il branch `main`."}},
-    {"level": "2", "lesson": "git_branching_2", "english": "Symbolic Reference", "set": {"task": "Risolvi il riferimento simbolico di HEAD con `git symbolic-ref HEAD` per vedere il branch attivo."}},
-    {"level": "2", "lesson": "git_branching_2", "english": "Current Branch", "set": {"task": "Stampa solo il nome del branch attivo con `git branch --show-current`, utile negli script."}},
-    {"level": "2", "lesson": "git_branching_3", "english": "List Branches", "set": {"task": "Elenca tutti i branch locali e remoti del repository con `git branch -a`."}},
-    {"level": "2", "lesson": "git_branching_3", "english": "Remote Branch", "set": {"task": "Mostra solo i branch di tracking remoti come `origin/main` con `git branch -r`."}},
-    {"level": "2", "lesson": "git_branching_3", "english": "Local Branch", "set": {"task": "Elenca i branch locali presenti sulla tua macchina eseguendo `git branch` senza flag."}},
-    {"level": "2", "lesson": "git_branching_3", "english": "Delete Branch", "set": {"task": "Elimina il branch `feature-x` ormai unito a main con `git branch -d feature-x`."}},
-    {"level": "2", "lesson": "git_branching_3", "english": "Force Delete", "set": {"task": "Forza la cancellazione del branch non ancora unito `feature-x` con `git branch -D feature-x`."}},
-    {"level": "2", "lesson": "git_branching_3", "english": "Rename Branch", "set": {"task": "Rinomina il branch corrente in `new-name` con `git branch -m new-name`."}},
-    {"level": "2", "lesson": "git_branching_3", "english": "Merged Branches", "set": {"task": "Elenca i branch gia` uniti a `main` con `git branch --merged main` per individuare candidati alla cancellazione."}},
-    {"level": "2", "lesson": "git_branching_3", "english": "Unmerged Branches", "set": {"task": "Individua i branch non ancora uniti a `main` con `git branch --no-merged main`."}},
-    {"level": "2", "lesson": "git_branching_3", "english": "Active Branch", "set": {"task": "Ordina i branch per data dell'ultimo commit con `git for-each-ref --sort=-committerdate` per trovare quelli piu` attivi."}},
-    {"level": "2", "lesson": "git_branching_4", "english": "Feature Branch", "set": {"task": "Crea il feature branch `feature/login` con `git switch -c feature/login` per isolare lo sviluppo."}},
-    {"level": "2", "lesson": "git_branching_4", "english": "Diverged", "set": {"task": "Controlla con `git status` se il branch locale e` divergente rispetto al remoto."}},
-    {"level": "2", "lesson": "git_branching_4", "english": "Branch Off", "set": {"task": "Dirama da `main` creando il branch `feature` con `git switch -c feature main`."}},
-    {"level": "2", "lesson": "git_branching_4", "english": "Branch Tracking", "set": {"task": "Imposta `origin/main` come upstream del branch corrente con `git branch -u origin/main`."}},
-    {"level": "2", "lesson": "git_branching_4", "english": "Upstream Branch", "set": {"task": "Mostra ogni branch locale con il proprio upstream tramite `git branch -vv`."}},
-    {"level": "2", "lesson": "git_branching_4", "english": "Default Branch Setting", "set": {"task": "Imposta `main` come nome del ramo predefinito per ogni nuovo repository con `init.defaultBranch`."}},
-    {"level": "3", "lesson": "git_merging_1", "english": "Merge", "set": {"task": "Unisci il branch `feature` nel ramo corrente con `git merge feature`."}},
-    {"level": "3", "lesson": "git_merging_1", "english": "git merge", "set": {"task": "Integra il branch `feature-x` nel ramo attivo eseguendo `git merge feature-x`."}},
-    {"level": "3", "lesson": "git_merging_1", "english": "Fast-Forward", "set": {"task": "Esegui un merge solo se possibile in fast-forward con `git merge --ff-only feature`, senza creare merge commit."}},
-    {"level": "3", "lesson": "git_merging_1", "english": "--no-ff", "set": {"task": "Forza la creazione di un merge commit anche con fast-forward possibile usando `git merge --no-ff feature`."}},
-    {"level": "3", "lesson": "git_merging_1", "english": "Merge Strategy", "set": {"task": "Unisci `feature` selezionando esplicitamente la strategia `ort` con `git merge -s ort feature`."}},
-    {"level": "3", "lesson": "git_merging_1", "english": "Squash Merge", "set": {"task": "Comprimi tutti i commit di `feature` in un singolo commit applicato sul ramo corrente con `git merge --squash feature`."}},
-    {"level": "3", "lesson": "git_merging_1", "english": "git merge --abort", "set": {"task": "Annulla un merge in corso e ritorna allo stato pre-merge con `git merge --abort`."}},
-    {"level": "3", "lesson": "git_merging_2", "english": "Merge Conflict", "set": {"task": "Identifica i file in conflitto durante un merge in corso eseguendo `git status`."}},
-    {"level": "3", "lesson": "git_merging_2", "english": "Conflict Marker", "set": {"task": "Risolvi i conflitti rimuovendo i marker `<<<<<<< HEAD`, `=======` e `>>>>>>> feature` nel file."}},
-    {"level": "3", "lesson": "git_merging_2", "english": "Resolve Conflict", "set": {"task": "Marca `file.txt` come risolto con `git add file.txt` e completa il merge con `git commit`."}},
-    {"level": "3", "lesson": "git_merging_2", "english": "Both Modified", "set": {"task": "Verifica con `git status` quali file sono marcati 'both modified', cioe` toccati su entrambi i lati del merge."}},
-    {"level": "3", "lesson": "git_merging_2", "english": "Mergetool", "set": {"task": "Avvia lo strumento di merge visuale configurato eseguendo `git mergetool` per risolvere i conflitti."}},
-    {"level": "3", "lesson": "git_merging_2", "english": "Accept Ours", "set": {"task": "Mantieni la versione del ramo corrente per `file.txt` scartando la modifica in arrivo con `git checkout --ours file.txt`."}},
-    {"level": "3", "lesson": "git_merging_2", "english": "Accept Theirs", "set": {"task": "Sostituisci `file.txt` con la versione del ramo in arrivo eseguendo `git checkout --theirs file.txt`."}},
-    {"level": "3", "lesson": "git_merging_2", "english": "Mark as Resolved", "set": {"task": "Segna `resolved.txt` come conflitto risolto mettendolo in staging con `git add resolved.txt`."}},
-    {"level": "3", "lesson": "git_merging_2", "english": "Conflict Style", "set": {"task": "Configura lo stile di conflitto `diff3` per mostrare anche la versione di base comune nei marker."}},
-    {"level": "3", "lesson": "git_merging_2", "english": "rerere", "set": {"task": "Attiva il riuso automatico delle risoluzioni di conflitto con `git config rerere.enabled true`."}},
-    {"level": "3", "lesson": "git_merging_3", "english": "Linear History", "set": {"task": "Imponi una storia lineare consentendo solo merge in fast-forward con `git merge --ff-only`."}},
-    {"level": "3", "lesson": "git_merging_3", "english": "Recursive Strategy", "set": {"task": "Unisci `feature` selezionando esplicitamente la strategia classica `recursive` con `git merge -s recursive feature`."}},
-    {"level": "3", "lesson": "git_merging_3", "english": "Octopus Merge", "set": {"task": "Esegui un octopus merge unendo `branch1`, `branch2` e `branch3` nel ramo corrente in un colpo solo."}},
-    {"level": "3", "lesson": "git_merging_3", "english": "Ours Strategy", "set": {"task": "Crea un merge che ignora ogni modifica di `feature` usando la strategia `ours` con `git merge -s ours feature`."}},
-    {"level": "3", "lesson": "git_merging_3", "english": "Subtree Merge", "set": {"task": "Unisci `feature` come sottoalbero con la strategia subtree eseguendo `git merge -s subtree feature`."}},
-    {"level": "3", "lesson": "git_merging_3", "english": "Merge Message", "set": {"task": "Personalizza il messaggio del merge con `-m \"Merge feature/login\"` quando integri il branch `feature`."}},
-    {"level": "3", "lesson": "git_merging_3", "english": "Merge in Progress", "set": {"task": "Verifica con `git status` lo stato MERGING quando un merge e` ancora in corso e attende risoluzione."}},
-    {"level": "3", "lesson": "git_merging_3", "english": "Continue Merge", "set": {"task": "Riprendi e finalizza un merge dopo aver risolto i conflitti eseguendo `git merge --continue`."}},
-    {"level": "3", "lesson": "git_merging_4", "english": "Update Before Merge", "set": {"task": "Aggiorna `main` prima del merge con `git pull --rebase origin main` per evitare conflitti inutili."}},
-    {"level": "3", "lesson": "git_merging_4", "english": "Clean Working Tree", "set": {"task": "Metti da parte le modifiche pendenti con `git stash` per avere una working tree pulita prima del merge."}},
-    {"level": "3", "lesson": "git_merging_4", "english": "Verify Build", "set": {"task": "Verifica che la build passi dopo il merge lanciando la test suite con `npm test`."}},
-    {"level": "3", "lesson": "git_merging_4", "english": "Push After Merge", "set": {"task": "Pubblica sul remoto il risultato del merge con `git push origin main` dopo l'integrazione locale."}},
-    {"level": "3", "lesson": "git_merging_4", "english": "Rollback Merge", "set": {"task": "Annulla un merge appena completato riportando il ramo a `ORIG_HEAD` con `git reset --hard ORIG_HEAD`."}},
-    {"level": "4", "lesson": "git_remote_1", "english": "Remote", "set": {"task": "Elenca i remoti configurati per il repository eseguendo `git remote`."}},
-    {"level": "4", "lesson": "git_remote_1", "english": "origin", "set": {"task": "Mostra il remoto predefinito `origin` con il suo URL usando `git remote -v`."}},
-    {"level": "4", "lesson": "git_remote_1", "english": "git remote add", "set": {"task": "Collega il repository all'URL SSH `git@github.com:user/repo.git` come remoto `origin`."}},
-    {"level": "4", "lesson": "git_remote_1", "english": "git remote -v", "set": {"task": "Elenca tutti i remoti con i rispettivi URL di fetch e push tramite `git remote -v`."}},
-    {"level": "4", "lesson": "git_remote_1", "english": "Remote URL", "set": {"task": "Aggiorna l'URL del remoto `origin` con `git remote set-url origin <new-url>` quando l'indirizzo cambia."}},
-    {"level": "4", "lesson": "git_remote_1", "english": "HTTPS Remote", "set": {"task": "Configura un remoto HTTPS usando un URL come `https://github.com/user/repo.git` con username e token."}},
-    {"level": "4", "lesson": "git_remote_1", "english": "SSH Remote", "set": {"task": "Configura un remoto SSH usando un URL come `git@github.com:user/repo.git` autenticato tramite chiave."}},
-    {"level": "4", "lesson": "git_remote_1", "english": "Remove Remote", "set": {"task": "Rimuovi il remoto `old-origin` dalla configurazione del repository con `git remote remove old-origin`."}},
-    {"level": "4", "lesson": "git_remote_1", "english": "Rename Remote", "set": {"task": "Rinomina il remoto `origin` in `upstream` con `git remote rename origin upstream`."}},
-    {"level": "4", "lesson": "git_remote_1", "english": "Multi-remote", "set": {"task": "Aggiungi un secondo remoto chiamato `backup` puntando a GitLab con `git remote add backup git@gitlab.com:user/repo.git`."}},
-    {"level": "4", "lesson": "git_remote_2", "english": "git clone", "set": {"task": "Clona in locale il repository remoto `https://github.com/user/repo.git` con `git clone`."}},
-    {"level": "4", "lesson": "git_remote_2", "english": "Shallow Clone", "set": {"task": "Esegui un clone shallow limitato all'ultimo commit con `git clone --depth 1 <url>` per scaricare meno dati."}},
-    {"level": "4", "lesson": "git_remote_2", "english": "Bare Repository", "set": {"task": "Crea un repository bare (senza working tree) clonando con `git clone --bare <url>`, utile come server centralizzato."}},
-    {"level": "4", "lesson": "git_remote_2", "english": "Mirror", "set": {"task": "Crea un clone mirror che replica esattamente tutti i ref del remoto con `git clone --mirror <url>`."}},
-    {"level": "4", "lesson": "git_remote_2", "english": "git fetch", "set": {"task": "Scarica i nuovi commit dal remoto `origin` senza fonderli con `git fetch origin`."}},
-    {"level": "4", "lesson": "git_remote_2", "english": "git fetch --all", "set": {"task": "Recupera gli aggiornamenti da tutti i remoti configurati con `git fetch --all`."}},
-    {"level": "4", "lesson": "git_remote_2", "english": "Prune", "set": {"task": "Pota dal repository locale i tracking ref di branch remoti gia` eliminati con `git fetch --prune`."}},
-    {"level": "4", "lesson": "git_remote_2", "english": "Refs/remotes", "set": {"task": "Ispeziona il file `.git/refs/remotes/origin/main` per leggere l'hash del branch tracciato del remoto."}},
-    {"level": "4", "lesson": "git_remote_3", "english": "git push", "set": {"task": "Carica sul remoto `origin` i commit locali del branch `main` con `git push origin main`."}},
-    {"level": "4", "lesson": "git_remote_3", "english": "git pull", "set": {"task": "Scarica e fondi in un colpo solo i commit del branch `main` da `origin` con `git pull origin main`."}},
-    {"level": "4", "lesson": "git_remote_3", "english": "git pull --rebase", "set": {"task": "Aggiorna il branch corrente con `git pull --rebase origin main` riapplicando i tuoi commit sopra quelli remoti."}},
-    {"level": "4", "lesson": "git_remote_3", "english": "set-upstream", "set": {"task": "Pubblica `feature` su `origin` impostando l'upstream con `git push -u origin feature`."}},
-    {"level": "4", "lesson": "git_remote_3", "english": "Force Push", "set": {"task": "Sovrascrivi il branch remoto `feature` con la tua versione locale tramite `git push --force origin feature`."}},
-    {"level": "4", "lesson": "git_remote_3", "english": "--force-with-lease", "set": {"task": "Esegui un force push sicuro con `git push --force-with-lease` che verifica di non sovrascrivere lavoro altrui."}},
-    {"level": "4", "lesson": "git_remote_3", "english": "Non-fast-forward", "set": {"task": "Risolvi un errore non-fast-forward riallineandoti al remoto con `git pull --rebase`."}},
-    {"level": "4", "lesson": "git_remote_3", "english": "Push Tags", "set": {"task": "Pubblica tutti i tag locali sul remoto con `git push --tags`."}},
-    {"level": "4", "lesson": "git_remote_3", "english": "Delete Remote Branch", "set": {"task": "Elimina il branch remoto `feature` da `origin` con `git push origin --delete feature`."}},
-    {"level": "4", "lesson": "git_remote_4", "english": "SSH Key", "set": {"task": "Genera una coppia di chiavi SSH ed25519 collegata a `you@example.com` con `ssh-keygen -t ed25519 -C \"you@example.com\"`."}},
-    {"level": "4", "lesson": "git_remote_4", "english": "Public Key", "set": {"task": "Mostra il contenuto della chiave pubblica con `cat ~/.ssh/id_ed25519.pub` da incollare nelle impostazioni di GitHub."}},
-    {"level": "4", "lesson": "git_remote_4", "english": "ssh-agent", "set": {"task": "Carica la chiave privata `~/.ssh/id_ed25519` nell'ssh-agent con `ssh-add` per evitare di reinserire la passphrase."}},
-    {"level": "4", "lesson": "git_remote_4", "english": "Known Hosts", "set": {"task": "Controlla il file `~/.ssh/known_hosts` per vedere le fingerprint dei server SSH gia` accettati."}},
-    {"level": "4", "lesson": "git_remote_4", "english": "Cache Credentials", "set": {"task": "Abilita il credential helper `cache` globalmente per memorizzare temporaneamente le credenziali HTTPS."}},
-    {"level": "5", "lesson": "git_collaboration_1", "english": "Open PR", "set": {"task": "Apri una pull request dal branch corrente verso il default con `gh pr create`."}},
-    {"level": "5", "lesson": "git_collaboration_1", "english": "Draft PR", "set": {"task": "Apri la pull request come bozza non pronta al merge con `gh pr create --draft`."}},
-    {"level": "5", "lesson": "git_collaboration_1", "english": "Reviewer", "set": {"task": "Assegna `alice` come revisore della pull request corrente con `gh pr edit --add-reviewer alice`."}},
-    {"level": "5", "lesson": "git_collaboration_1", "english": "Approve PR", "set": {"task": "Approva la pull request corrente lasciando una review positiva con `gh pr review --approve`."}},
-    {"level": "5", "lesson": "git_collaboration_1", "english": "Request Changes", "set": {"task": "Richiedi modifiche sulla pull request con `gh pr review --request-changes` quando qualcosa va sistemato."}},
-    {"level": "5", "lesson": "git_collaboration_1", "english": "Merge PR", "set": {"task": "Mergea la pull request approvata schiacciando i commit in uno solo con `gh pr merge --squash`."}},
-    {"level": "5", "lesson": "git_collaboration_1", "english": "Close PR", "set": {"task": "Chiudi la pull request 42 senza fare merge con `gh pr close 42`."}},
-    {"level": "5", "lesson": "git_collaboration_2", "english": "Suggestion", "set": {"task": "Inserisci nella review un blocco ```suggestion con `const x = 5;` per proporre la modifica direttamente applicabile."}},
-    {"level": "5", "lesson": "git_collaboration_2", "english": "Review Checklist", "set": {"task": "Aggiungi alla descrizione della PR una checklist tipo `- [ ] Tests added` e `- [ ] Docs updated` per uniformare la review."}},
-    {"level": "5", "lesson": "git_collaboration_3", "english": "Fork", "set": {"task": "Crea un fork del repository `user/repo` sul tuo account con `gh repo fork user/repo`."}},
-    {"level": "5", "lesson": "git_collaboration_3", "english": "Upstream", "set": {"task": "Aggiungi il repository originale come remoto `upstream` con `git remote add upstream <url>`."}},
-    {"level": "5", "lesson": "git_collaboration_3", "english": "Sync Fork", "set": {"task": "Sincronizza il fork con il repository originale tirando da `upstream main` con `git pull upstream main`."}},
-    {"level": "5", "lesson": "git_collaboration_3", "english": "Contributor Guide", "set": {"task": "Pubblica nella radice del repository un file `CONTRIBUTING.md` con le regole per contribuire."}},
-    {"level": "5", "lesson": "git_collaboration_4", "english": "Issue", "set": {"task": "Apri una nuova issue su GitHub per segnalare un bug eseguendo `gh issue create`."}},
-    {"level": "5", "lesson": "git_collaboration_4", "english": "git blame", "set": {"task": "Mostra autore e commit per ogni riga di `file.txt` con `git blame file.txt`."}},
-    {"level": "5", "lesson": "git_collaboration_4", "english": "git annotate", "set": {"task": "Annota ogni riga di `file.txt` con commit e autore tramite il comando legacy `git annotate file.txt`."}},
-    {"level": "6", "lesson": "git_workflow_1", "english": "develop branch", "set": {"task": "Passa al branch di integrazione `develop` di Git Flow con `git switch develop`."}},
-    {"level": "6", "lesson": "git_workflow_1", "english": "release branch", "set": {"task": "Avvia un release branch per la versione `1.0.0` in Git Flow con `git flow release start 1.0.0`."}},
-    {"level": "6", "lesson": "git_workflow_1", "english": "hotfix branch", "set": {"task": "Apri un hotfix branch per la versione `1.0.1` con `git flow hotfix start 1.0.1` per patchare urgentemente la produzione."}},
-    {"level": "6", "lesson": "git_workflow_1", "english": "git-flow Tool", "set": {"task": "Inizializza la struttura di branch di Git Flow nel repository con `git flow init`."}},
-    {"level": "6", "lesson": "git_workflow_2", "english": "Branch from main", "set": {"task": "Crea un nuovo branch `feature` diramando dall'ultimo `main` con `git switch -c feature main`."}},
-    {"level": "6", "lesson": "git_workflow_2", "english": "Merge to main", "set": {"task": "Integra in `main` la pull request approvata facendo squash merge con `gh pr merge --squash` per avviare il deploy."}},
-    {"level": "6", "lesson": "git_workflow_3", "english": "Feature Flag", "set": {"task": "Avvolgi il codice nuovo dietro un feature flag come `if (flags.NEW_LOGIN) { ... }` per nasconderlo finche` non e` pronto."}},
-    {"level": "6", "lesson": "git_workflow_4", "english": "Naming Convention", "set": {"task": "Adotta una convenzione di nomenclatura per i branch come `feature/123-add-login` con tipo, ticket e descrizione."}},
-    {"level": "7", "lesson": "git_history_1", "english": "Rebase", "set": {"task": "Riapplica i commit del branch corrente sulla cima di `main` eseguendo `git rebase main`."}},
-    {"level": "7", "lesson": "git_history_1", "english": "git rebase", "set": {"task": "Sposta i commit del branch corrente sopra `main` per linearizzare la storia con `git rebase main`."}},
-    {"level": "7", "lesson": "git_history_1", "english": "Linear History Policy", "set": {"task": "Ispeziona la storia con `git log --graph --oneline` per verificare che resti lineare secondo la policy."}},
-    {"level": "7", "lesson": "git_history_1", "english": "Onto Branch", "set": {"task": "Trapianta i commit da `feature-old` a `feature-new` sulla nuova base `main` con `git rebase --onto main feature-old feature-new`."}},
-    {"level": "7", "lesson": "git_history_1", "english": "Rebase Conflict", "set": {"task": "Dopo aver risolto manualmente un conflitto di rebase, prosegui con `git rebase --continue`."}},
-    {"level": "7", "lesson": "git_history_1", "english": "Continue Rebase", "set": {"task": "Riprendi un rebase interrotto da conflitti, dopo aver fatto stage delle correzioni, con `git rebase --continue`."}},
-    {"level": "7", "lesson": "git_history_1", "english": "Abort Rebase", "set": {"task": "Annulla un rebase in corso tornando allo stato iniziale del branch con `git rebase --abort`."}},
-    {"level": "7", "lesson": "git_history_1", "english": "Skip Commit", "set": {"task": "Scarta il commit corrente durante un rebase e passa al successivo con `git rebase --skip`."}},
-    {"level": "7", "lesson": "git_history_2", "english": "Interactive Rebase", "set": {"task": "Apri un rebase interattivo degli ultimi 5 commit con `git rebase -i HEAD~5` per riorganizzarli."}},
-    {"level": "7", "lesson": "git_history_2", "english": "pick", "set": {"task": "Mantieni il commit `a3f5e21` cosi com'e` nel todo del rebase interattivo usando `pick a3f5e21 Add login form`."}},
-    {"level": "7", "lesson": "git_history_2", "english": "reword", "set": {"task": "Cambia solo il messaggio del commit `a3f5e21` nel rebase interattivo con la riga `reword a3f5e21 Old message`."}},
-    {"level": "7", "lesson": "git_history_2", "english": "edit", "set": {"task": "Metti in pausa il rebase sul commit `a3f5e21` per modificarne il contenuto con la riga `edit a3f5e21 Need fixes`."}},
-    {"level": "7", "lesson": "git_history_2", "english": "squash", "set": {"task": "Unisci il commit `b4f6a32` nel precedente combinando i messaggi con la riga `squash b4f6a32 Fix typo`."}},
-    {"level": "7", "lesson": "git_history_2", "english": "fixup", "set": {"task": "Fondi il commit `b4f6a32` nel precedente scartandone il messaggio con la riga `fixup b4f6a32`."}},
-    {"level": "7", "lesson": "git_history_2", "english": "drop", "set": {"task": "Elimina del tutto il commit `c8e9d12` dal rebase interattivo con la riga `drop c8e9d12 Bad commit`."}},
-    {"level": "7", "lesson": "git_history_2", "english": "autosquash", "set": {"task": "Riorganizza automaticamente i commit fixup negli ultimi 5 con `git rebase -i --autosquash HEAD~5`."}},
-    {"level": "7", "lesson": "git_history_3", "english": "Rebase before Push", "set": {"task": "Ribasa la tua branch sopra il remoto prima di pubblicarla con `git pull --rebase`."}},
-    {"level": "7", "lesson": "git_history_3", "english": "pull.rebase", "set": {"task": "Configura globalmente `pull.rebase` a `true` cosi ogni `git pull` esegue rebase invece di merge."}},
-    {"level": "7", "lesson": "git_history_3", "english": "Force Push After Rebase", "set": {"task": "Pubblica la branch riscritta dopo un rebase con il safer `git push --force-with-lease`."}},
-    {"level": "7", "lesson": "git_history_3", "english": "Update Feature", "set": {"task": "Aggiorna la feature riapplicandone i commit sulla cima dell'ultimo `main` con `git rebase main`."}},
-    {"level": "7", "lesson": "git_history_3", "english": "Clean Up History", "set": {"task": "Pulisci la storia degli ultimi 10 commit prima del merge con `git rebase -i HEAD~10`."}},
-    {"level": "7", "lesson": "git_history_3", "english": "fixup commit", "set": {"task": "Crea un fixup commit collegato al commit `a3f5e21` con `git commit --fixup=a3f5e21`."}},
-    {"level": "7", "lesson": "git_history_4", "english": "--onto", "set": {"task": "Trapianta i commit di `feature` da sopra `develop` a sopra `main` con `git rebase --onto main develop feature`."}},
-    {"level": "7", "lesson": "git_history_4", "english": "Range", "set": {"task": "Apri il rebase interattivo limitato all'intervallo `HEAD~5..HEAD` con `git rebase -i HEAD~5..HEAD`."}},
-    {"level": "7", "lesson": "git_history_4", "english": "Root Rebase", "set": {"task": "Riscrivi tutta la storia dal commit iniziale eseguendo `git rebase -i --root`."}},
-    {"level": "7", "lesson": "git_history_4", "english": "Preserve Merges", "set": {"task": "Conserva i merge commit durante un rebase interattivo con il flag `--rebase-merges`."}},
-    {"level": "7", "lesson": "git_history_4", "english": "exec", "set": {"task": "Lancia `npm test` tra i commit del rebase interattivo inserendo la riga `exec npm test` nel todo."}},
-    {"level": "7", "lesson": "git_history_4", "english": "Edit Commit", "set": {"task": "Modifica il commit in pausa nel rebase con `git commit --amend` e poi prosegui con `git rebase --continue`."}},
-    {"level": "7", "lesson": "git_history_4", "english": "Split Commit", "set": {"task": "Annulla l'ultimo commit mantenendone le modifiche con `git reset HEAD^` per dividerlo poi in piu` commit separati."}}
+    {
+      "level": "0",
+      "lesson": "git_foundations_1",
+      "english": "Repository",
+      "set": {
+        "task": "Inizializza un repository Git nella cartella corrente con `git init` per iniziare a tracciare il progetto."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "git_foundations_1",
+      "english": "Commit",
+      "set": {
+        "task": "Salva le modifiche in staging come un commit con messaggio 'Add feature' nella storia del progetto."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "git_foundations_1",
+      "english": "Staging Area",
+      "set": {
+        "task": "Sposta `file.txt` dalla working tree all'area di staging per prepararlo al prossimo commit."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "git_foundations_1",
+      "english": "HEAD",
+      "set": {
+        "task": "Mostra il log dei commit a partire dal puntatore HEAD per vedere su quale commit sei posizionato."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "git_foundations_1",
+      "english": ".gitignore",
+      "set": {
+        "task": "Definisci uno `.gitignore` che esclude `node_modules/`, file `*.log` e `.env` dal tracciamento."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "git_foundations_1",
+      "english": "Tracked File",
+      "set": {
+        "task": "Elenca tutti i file attualmente tracciati dal repository con `git ls-files`."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "git_foundations_2",
+      "english": "Modified",
+      "set": {
+        "task": "Esegui `git status` per vedere quali file modificati nella working tree devono ancora essere messi in staging."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "git_foundations_2",
+      "english": "Staged",
+      "set": {
+        "task": "Promuovi `file.txt` allo stato staged con `git add file.txt` affinche` venga incluso nel prossimo commit."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "git_foundations_2",
+      "english": "Untracked",
+      "set": {
+        "task": "Controlla con `git status` quali file untracked non sono ancora seguiti da Git."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "git_foundations_2",
+      "english": "Hash",
+      "set": {
+        "task": "Visualizza la cronologia compatta con `git log --oneline` per vedere l'hash SHA-1 abbreviato di ogni commit."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "git_foundations_2",
+      "english": "Author",
+      "set": {
+        "task": "Filtra il log dei commit per autore con `git log --author=\"Maria\"` per vedere solo i suoi contributi."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "git_foundations_3",
+      "english": "Install",
+      "set": {
+        "task": "Installa Git su Debian/Ubuntu con `sudo apt install git` tramite il gestore dei pacchetti di sistema."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "git_foundations_3",
+      "english": "Initialize",
+      "set": {
+        "task": "Inizializza un nuovo repository Git nella cartella corrente eseguendo `git init`."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "git_foundations_3",
+      "english": "User Name",
+      "set": {
+        "task": "Configura globalmente il tuo nome utente Git come 'Mario Rossi' per attribuire correttamente i commit."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "git_foundations_3",
+      "english": "User Email",
+      "set": {
+        "task": "Imposta globalmente l'email utente `you@example.com` cosi compare nei metadati di ogni commit."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "git_foundations_3",
+      "english": "Default Branch",
+      "set": {
+        "task": "Configura `main` come nome del ramo predefinito per ogni nuovo repository inizializzato sulla macchina."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "git_foundations_3",
+      "english": "Manual Page",
+      "set": {
+        "task": "Apri la pagina di manuale del comando commit con `git help commit` per consultare tutte le opzioni."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "git_foundations_3",
+      "english": "Version",
+      "set": {
+        "task": "Verifica la versione di Git installata con `git --version` prima di usare comandi recenti."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "git_foundations_3",
+      "english": "Hidden Folder",
+      "set": {
+        "task": "Elenca anche le cartelle nascoste con `ls -la` per individuare la directory `.git` del repository."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "git_foundations_4",
+      "english": "History",
+      "set": { "task": "Mostra la cronologia completa dei commit del repository con `git log`." }
+    },
+    {
+      "level": "1",
+      "lesson": "git_basics_1",
+      "english": "git init",
+      "set": {
+        "task": "Inizializza un nuovo repository Git nella cartella corrente eseguendo `git init` una sola volta."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "git_basics_1",
+      "english": "git add",
+      "set": { "task": "Aggiungi `file.txt` allo staging area in vista del prossimo commit." }
+    },
+    {
+      "level": "1",
+      "lesson": "git_basics_1",
+      "english": "git add .",
+      "set": {
+        "task": "Metti in staging tutte le modifiche della directory corrente con `git add .`, prestando attenzione ai file indesiderati."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "git_basics_1",
+      "english": "git add -A",
+      "set": {
+        "task": "Stage tutte le modifiche dell'intero repository, incluse cancellazioni e rinomine, con `git add -A`."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "git_basics_1",
+      "english": "git commit",
+      "set": { "task": "Registra le modifiche staged come commit con messaggio 'Add login form'." }
+    },
+    {
+      "level": "1",
+      "lesson": "git_basics_1",
+      "english": "Commit Message",
+      "set": {
+        "task": "Crea un commit con messaggio chiaro 'Fix login bug' che spieghi il perche` della modifica."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "git_basics_1",
+      "english": "-m flag",
+      "set": {
+        "task": "Passa direttamente il messaggio 'msg' dalla riga di comando usando il flag `-m` senza aprire l'editor."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "git_basics_1",
+      "english": "git commit -am",
+      "set": {
+        "task": "Combina stage e commit dei file tracciati in un solo passo con `git commit -am \"Quick fix\"`."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "git_basics_1",
+      "english": "Empty Commit",
+      "set": {
+        "task": "Crea un commit vuoto con `--allow-empty` per avviare manualmente una pipeline CI senza modifiche al codice."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "git_basics_2",
+      "english": "git status",
+      "set": {
+        "task": "Mostra lo stato del repository con `git status` per vedere file staged, modificati e non tracciati."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "git_basics_2",
+      "english": "git status -s",
+      "set": {
+        "task": "Ottieni una panoramica compatta dello stato con `git status -s` usando lettere come M, A e ??."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "git_basics_2",
+      "english": "git log",
+      "set": {
+        "task": "Visualizza la lista cronologica completa dei commit del progetto eseguendo `git log`."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "git_basics_2",
+      "english": "git log --oneline",
+      "set": {
+        "task": "Scorri rapidamente i commit recenti con `git log --oneline`, una riga e un hash abbreviato per commit."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "git_basics_2",
+      "english": "git log --graph",
+      "set": {
+        "task": "Disegna la topologia di tutti i rami con `git log --oneline --graph --all` in modalita` ASCII."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "git_basics_2",
+      "english": "git diff",
+      "set": {
+        "task": "Confronta le modifiche non staged della working tree rispetto all'ultimo commit con `git diff`."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "git_basics_2",
+      "english": "git diff --staged",
+      "set": {
+        "task": "Ispeziona con `git diff --staged` esattamente cosa entrera` nel prossimo commit prima di confermarlo."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "git_basics_2",
+      "english": "git show",
+      "set": { "task": "Mostra messaggio e diff del commit puntato da HEAD con `git show HEAD`." }
+    },
+    {
+      "level": "1",
+      "lesson": "git_basics_2",
+      "english": "Patch",
+      "set": {
+        "task": "Genera file patch per gli ultimi tre commit con `git format-patch HEAD~3` da inviare via email."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "git_basics_3",
+      "english": "git rm",
+      "set": {
+        "task": "Rimuovi `old.txt` dal disco e mettine la cancellazione in staging in un solo passo con `git rm`."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "git_basics_3",
+      "english": "git rm --cached",
+      "set": {
+        "task": "Smetti di tracciare `secret.env` mantenendolo su disco con `git rm --cached secret.env`."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "git_basics_3",
+      "english": "git mv",
+      "set": {
+        "task": "Rinomina `old.txt` in `new.txt` registrando il rename come operazione atomica con `git mv`."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "git_basics_3",
+      "english": "Rename",
+      "set": {
+        "task": "Segui la storia di `file.txt` attraverso i rename con `git log --follow file.txt`."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "git_basics_3",
+      "english": "Delete",
+      "set": {
+        "task": "Cancella `file.txt` con `rm` e mettine la rimozione in staging con `git add file.txt`."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "git_basics_3",
+      "english": "Restore File",
+      "set": {
+        "task": "Ripristina `file.txt` all'ultimo stato committato scartando le modifiche locali con `git restore file.txt`."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "git_basics_3",
+      "english": "Discard Changes",
+      "set": {
+        "task": "Scarta tutte le modifiche non staged della working tree con `git restore .` per ripartire pulito."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "git_basics_3",
+      "english": "Pattern",
+      "set": {
+        "task": "Stage tutti i file JavaScript con il pattern glob `git add \"*.js\"` in un solo comando."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "git_basics_3",
+      "english": "Glob",
+      "set": {
+        "task": "Definisci nel `.gitignore` pattern come `*.log` e `build/`, con eccezione `!important.log` per il file specifico."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "git_basics_4",
+      "english": "git help",
+      "set": {
+        "task": "Apri il manuale completo del sottocomando status con `git help status` per consultarne tutte le opzioni."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "git_basics_4",
+      "english": "Quick Start",
+      "set": {
+        "task": "Esegui la sequenza di avvio rapido `git init`, `git add .` e `git commit -m \"first\"` per pubblicare il primo commit."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "git_basics_4",
+      "english": "First Commit",
+      "set": {
+        "task": "Conferma il primo commit del progetto con messaggio 'Initial commit' dopo aver stage README, .gitignore e LICENSE."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "git_basics_4",
+      "english": "README",
+      "set": {
+        "task": "Componi un file `README.md` con titolo `# My Project` e una breve descrizione mostrata in homepage del repository."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "git_basics_4",
+      "english": "Initial Commit",
+      "set": {
+        "task": "Crea il commit iniziale del repository con messaggio convenzionale 'Initial commit'."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "git_branching_1",
+      "english": "Branch",
+      "set": {
+        "task": "Elenca i branch locali del repository eseguendo `git branch` senza argomenti."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "git_branching_1",
+      "english": "git branch",
+      "set": {
+        "task": "Visualizza tutti i branch locali correnti con `git branch` per orientarti tra i rami in lavoro."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "git_branching_1",
+      "english": "Create Branch",
+      "set": {
+        "task": "Crea il nuovo branch `feature-x` senza spostarti su di esso con `git branch feature-x`."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "git_branching_1",
+      "english": "git checkout",
+      "set": {
+        "task": "Spostati sul branch `main` con `git checkout main` per riprendere il lavoro dalla linea principale."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "git_branching_1",
+      "english": "git switch",
+      "set": {
+        "task": "Cambia ramo passando a `main` con il moderno comando `git switch main` (Git 2.23+)."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "git_branching_1",
+      "english": "git checkout -b",
+      "set": {
+        "task": "Crea e spostati subito sul nuovo branch `feature-x` con `git checkout -b feature-x` in un solo passo."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "git_branching_1",
+      "english": "git switch -c",
+      "set": {
+        "task": "Crea e attiva il branch `feature-x` con la sintassi moderna `git switch -c feature-x`."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "git_branching_1",
+      "english": "main",
+      "set": {
+        "task": "Passa al branch predefinito `main` con `git switch main` per riprendere la linea principale."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "git_branching_1",
+      "english": "master",
+      "set": {
+        "task": "Passa al vecchio branch predefinito `master` con `git switch master` nei repository legacy."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "git_branching_2",
+      "english": "HEAD Pointer",
+      "set": {
+        "task": "Ispeziona il contenuto di `.git/HEAD` con `cat .git/HEAD` per vedere a quale branch punta HEAD."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "git_branching_2",
+      "english": "Detached HEAD",
+      "set": {
+        "task": "Esci dallo stato detached HEAD creando il branch di salvataggio `rescue` con `git switch -c rescue`."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "git_branching_2",
+      "english": "Parent Commit",
+      "set": {
+        "task": "Mostra il log dei commit con i loro genitori usando `git log --parents` per rivelare la struttura del DAG."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "git_branching_2",
+      "english": "Ancestor",
+      "set": {
+        "task": "Trova l'antenato comune tra i branch `main` e `feature` con `git merge-base main feature`."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "git_branching_2",
+      "english": "Tilde (~)",
+      "set": {
+        "task": "Visualizza il commit tre passi indietro rispetto a HEAD con la notazione tilde `git show HEAD~3`."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "git_branching_2",
+      "english": "Caret (^)",
+      "set": {
+        "task": "Riferisci il secondo genitore di un merge commit con la notazione caret `git show HEAD^2`."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "git_branching_2",
+      "english": "Branch Pointer",
+      "set": {
+        "task": "Apri il file `.git/refs/heads/main` per leggere l'hash del commit a cui punta il branch `main`."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "git_branching_2",
+      "english": "Symbolic Reference",
+      "set": {
+        "task": "Risolvi il riferimento simbolico di HEAD con `git symbolic-ref HEAD` per vedere il branch attivo."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "git_branching_2",
+      "english": "Current Branch",
+      "set": {
+        "task": "Stampa solo il nome del branch attivo con `git branch --show-current`, utile negli script."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "git_branching_3",
+      "english": "List Branches",
+      "set": { "task": "Elenca tutti i branch locali e remoti del repository con `git branch -a`." }
+    },
+    {
+      "level": "2",
+      "lesson": "git_branching_3",
+      "english": "Remote Branch",
+      "set": {
+        "task": "Mostra solo i branch di tracking remoti come `origin/main` con `git branch -r`."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "git_branching_3",
+      "english": "Local Branch",
+      "set": {
+        "task": "Elenca i branch locali presenti sulla tua macchina eseguendo `git branch` senza flag."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "git_branching_3",
+      "english": "Delete Branch",
+      "set": {
+        "task": "Elimina il branch `feature-x` ormai unito a main con `git branch -d feature-x`."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "git_branching_3",
+      "english": "Force Delete",
+      "set": {
+        "task": "Forza la cancellazione del branch non ancora unito `feature-x` con `git branch -D feature-x`."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "git_branching_3",
+      "english": "Rename Branch",
+      "set": { "task": "Rinomina il branch corrente in `new-name` con `git branch -m new-name`." }
+    },
+    {
+      "level": "2",
+      "lesson": "git_branching_3",
+      "english": "Merged Branches",
+      "set": {
+        "task": "Elenca i branch gia` uniti a `main` con `git branch --merged main` per individuare candidati alla cancellazione."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "git_branching_3",
+      "english": "Unmerged Branches",
+      "set": {
+        "task": "Individua i branch non ancora uniti a `main` con `git branch --no-merged main`."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "git_branching_3",
+      "english": "Active Branch",
+      "set": {
+        "task": "Ordina i branch per data dell'ultimo commit con `git for-each-ref --sort=-committerdate` per trovare quelli piu` attivi."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "git_branching_4",
+      "english": "Feature Branch",
+      "set": {
+        "task": "Crea il feature branch `feature/login` con `git switch -c feature/login` per isolare lo sviluppo."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "git_branching_4",
+      "english": "Diverged",
+      "set": {
+        "task": "Controlla con `git status` se il branch locale e` divergente rispetto al remoto."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "git_branching_4",
+      "english": "Branch Off",
+      "set": {
+        "task": "Dirama da `main` creando il branch `feature` con `git switch -c feature main`."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "git_branching_4",
+      "english": "Branch Tracking",
+      "set": {
+        "task": "Imposta `origin/main` come upstream del branch corrente con `git branch -u origin/main`."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "git_branching_4",
+      "english": "Upstream Branch",
+      "set": {
+        "task": "Mostra ogni branch locale con il proprio upstream tramite `git branch -vv`."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "git_branching_4",
+      "english": "Default Branch Setting",
+      "set": {
+        "task": "Imposta `main` come nome del ramo predefinito per ogni nuovo repository con `init.defaultBranch`."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "git_merging_1",
+      "english": "Merge",
+      "set": { "task": "Unisci il branch `feature` nel ramo corrente con `git merge feature`." }
+    },
+    {
+      "level": "3",
+      "lesson": "git_merging_1",
+      "english": "git merge",
+      "set": {
+        "task": "Integra il branch `feature-x` nel ramo attivo eseguendo `git merge feature-x`."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "git_merging_1",
+      "english": "Fast-Forward",
+      "set": {
+        "task": "Esegui un merge solo se possibile in fast-forward con `git merge --ff-only feature`, senza creare merge commit."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "git_merging_1",
+      "english": "--no-ff",
+      "set": {
+        "task": "Forza la creazione di un merge commit anche con fast-forward possibile usando `git merge --no-ff feature`."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "git_merging_1",
+      "english": "Merge Strategy",
+      "set": {
+        "task": "Unisci `feature` selezionando esplicitamente la strategia `ort` con `git merge -s ort feature`."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "git_merging_1",
+      "english": "Squash Merge",
+      "set": {
+        "task": "Comprimi tutti i commit di `feature` in un singolo commit applicato sul ramo corrente con `git merge --squash feature`."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "git_merging_1",
+      "english": "git merge --abort",
+      "set": {
+        "task": "Annulla un merge in corso e ritorna allo stato pre-merge con `git merge --abort`."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "git_merging_2",
+      "english": "Merge Conflict",
+      "set": {
+        "task": "Identifica i file in conflitto durante un merge in corso eseguendo `git status`."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "git_merging_2",
+      "english": "Conflict Marker",
+      "set": {
+        "task": "Risolvi i conflitti rimuovendo i marker `<<<<<<< HEAD`, `=======` e `>>>>>>> feature` nel file."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "git_merging_2",
+      "english": "Resolve Conflict",
+      "set": {
+        "task": "Marca `file.txt` come risolto con `git add file.txt` e completa il merge con `git commit`."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "git_merging_2",
+      "english": "Both Modified",
+      "set": {
+        "task": "Verifica con `git status` quali file sono marcati 'both modified', cioe` toccati su entrambi i lati del merge."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "git_merging_2",
+      "english": "Mergetool",
+      "set": {
+        "task": "Avvia lo strumento di merge visuale configurato eseguendo `git mergetool` per risolvere i conflitti."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "git_merging_2",
+      "english": "Accept Ours",
+      "set": {
+        "task": "Mantieni la versione del ramo corrente per `file.txt` scartando la modifica in arrivo con `git checkout --ours file.txt`."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "git_merging_2",
+      "english": "Accept Theirs",
+      "set": {
+        "task": "Sostituisci `file.txt` con la versione del ramo in arrivo eseguendo `git checkout --theirs file.txt`."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "git_merging_2",
+      "english": "Mark as Resolved",
+      "set": {
+        "task": "Segna `resolved.txt` come conflitto risolto mettendolo in staging con `git add resolved.txt`."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "git_merging_2",
+      "english": "Conflict Style",
+      "set": {
+        "task": "Configura lo stile di conflitto `diff3` per mostrare anche la versione di base comune nei marker."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "git_merging_2",
+      "english": "rerere",
+      "set": {
+        "task": "Attiva il riuso automatico delle risoluzioni di conflitto con `git config rerere.enabled true`."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "git_merging_3",
+      "english": "Linear History",
+      "set": {
+        "task": "Imponi una storia lineare consentendo solo merge in fast-forward con `git merge --ff-only`."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "git_merging_3",
+      "english": "Recursive Strategy",
+      "set": {
+        "task": "Unisci `feature` selezionando esplicitamente la strategia classica `recursive` con `git merge -s recursive feature`."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "git_merging_3",
+      "english": "Octopus Merge",
+      "set": {
+        "task": "Esegui un octopus merge unendo `branch1`, `branch2` e `branch3` nel ramo corrente in un colpo solo."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "git_merging_3",
+      "english": "Ours Strategy",
+      "set": {
+        "task": "Crea un merge che ignora ogni modifica di `feature` usando la strategia `ours` con `git merge -s ours feature`."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "git_merging_3",
+      "english": "Subtree Merge",
+      "set": {
+        "task": "Unisci `feature` come sottoalbero con la strategia subtree eseguendo `git merge -s subtree feature`."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "git_merging_3",
+      "english": "Merge Message",
+      "set": {
+        "task": "Personalizza il messaggio del merge con `-m \"Merge feature/login\"` quando integri il branch `feature`."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "git_merging_3",
+      "english": "Merge in Progress",
+      "set": {
+        "task": "Verifica con `git status` lo stato MERGING quando un merge e` ancora in corso e attende risoluzione."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "git_merging_3",
+      "english": "Continue Merge",
+      "set": {
+        "task": "Riprendi e finalizza un merge dopo aver risolto i conflitti eseguendo `git merge --continue`."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "git_merging_4",
+      "english": "Update Before Merge",
+      "set": {
+        "task": "Aggiorna `main` prima del merge con `git pull --rebase origin main` per evitare conflitti inutili."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "git_merging_4",
+      "english": "Clean Working Tree",
+      "set": {
+        "task": "Metti da parte le modifiche pendenti con `git stash` per avere una working tree pulita prima del merge."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "git_merging_4",
+      "english": "Verify Build",
+      "set": {
+        "task": "Verifica che la build passi dopo il merge lanciando la test suite con `npm test`."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "git_merging_4",
+      "english": "Push After Merge",
+      "set": {
+        "task": "Pubblica sul remoto il risultato del merge con `git push origin main` dopo l'integrazione locale."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "git_merging_4",
+      "english": "Rollback Merge",
+      "set": {
+        "task": "Annulla un merge appena completato riportando il ramo a `ORIG_HEAD` con `git reset --hard ORIG_HEAD`."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "git_remote_1",
+      "english": "Remote",
+      "set": { "task": "Elenca i remoti configurati per il repository eseguendo `git remote`." }
+    },
+    {
+      "level": "4",
+      "lesson": "git_remote_1",
+      "english": "origin",
+      "set": {
+        "task": "Mostra il remoto predefinito `origin` con il suo URL usando `git remote -v`."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "git_remote_1",
+      "english": "git remote add",
+      "set": {
+        "task": "Collega il repository all'URL SSH `git@github.com:user/repo.git` come remoto `origin`."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "git_remote_1",
+      "english": "git remote -v",
+      "set": {
+        "task": "Elenca tutti i remoti con i rispettivi URL di fetch e push tramite `git remote -v`."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "git_remote_1",
+      "english": "Remote URL",
+      "set": {
+        "task": "Aggiorna l'URL del remoto `origin` con `git remote set-url origin <new-url>` quando l'indirizzo cambia."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "git_remote_1",
+      "english": "HTTPS Remote",
+      "set": {
+        "task": "Configura un remoto HTTPS usando un URL come `https://github.com/user/repo.git` con username e token."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "git_remote_1",
+      "english": "SSH Remote",
+      "set": {
+        "task": "Configura un remoto SSH usando un URL come `git@github.com:user/repo.git` autenticato tramite chiave."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "git_remote_1",
+      "english": "Remove Remote",
+      "set": {
+        "task": "Rimuovi il remoto `old-origin` dalla configurazione del repository con `git remote remove old-origin`."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "git_remote_1",
+      "english": "Rename Remote",
+      "set": {
+        "task": "Rinomina il remoto `origin` in `upstream` con `git remote rename origin upstream`."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "git_remote_1",
+      "english": "Multi-remote",
+      "set": {
+        "task": "Aggiungi un secondo remoto chiamato `backup` puntando a GitLab con `git remote add backup git@gitlab.com:user/repo.git`."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "git_remote_2",
+      "english": "git clone",
+      "set": {
+        "task": "Clona in locale il repository remoto `https://github.com/user/repo.git` con `git clone`."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "git_remote_2",
+      "english": "Shallow Clone",
+      "set": {
+        "task": "Esegui un clone shallow limitato all'ultimo commit con `git clone --depth 1 <url>` per scaricare meno dati."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "git_remote_2",
+      "english": "Bare Repository",
+      "set": {
+        "task": "Crea un repository bare (senza working tree) clonando con `git clone --bare <url>`, utile come server centralizzato."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "git_remote_2",
+      "english": "Mirror",
+      "set": {
+        "task": "Crea un clone mirror che replica esattamente tutti i ref del remoto con `git clone --mirror <url>`."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "git_remote_2",
+      "english": "git fetch",
+      "set": {
+        "task": "Scarica i nuovi commit dal remoto `origin` senza fonderli con `git fetch origin`."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "git_remote_2",
+      "english": "git fetch --all",
+      "set": {
+        "task": "Recupera gli aggiornamenti da tutti i remoti configurati con `git fetch --all`."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "git_remote_2",
+      "english": "Prune",
+      "set": {
+        "task": "Pota dal repository locale i tracking ref di branch remoti gia` eliminati con `git fetch --prune`."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "git_remote_2",
+      "english": "Refs/remotes",
+      "set": {
+        "task": "Ispeziona il file `.git/refs/remotes/origin/main` per leggere l'hash del branch tracciato del remoto."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "git_remote_3",
+      "english": "git push",
+      "set": {
+        "task": "Carica sul remoto `origin` i commit locali del branch `main` con `git push origin main`."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "git_remote_3",
+      "english": "git pull",
+      "set": {
+        "task": "Scarica e fondi in un colpo solo i commit del branch `main` da `origin` con `git pull origin main`."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "git_remote_3",
+      "english": "git pull --rebase",
+      "set": {
+        "task": "Aggiorna il branch corrente con `git pull --rebase origin main` riapplicando i tuoi commit sopra quelli remoti."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "git_remote_3",
+      "english": "set-upstream",
+      "set": {
+        "task": "Pubblica `feature` su `origin` impostando l'upstream con `git push -u origin feature`."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "git_remote_3",
+      "english": "Force Push",
+      "set": {
+        "task": "Sovrascrivi il branch remoto `feature` con la tua versione locale tramite `git push --force origin feature`."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "git_remote_3",
+      "english": "--force-with-lease",
+      "set": {
+        "task": "Esegui un force push sicuro con `git push --force-with-lease` che verifica di non sovrascrivere lavoro altrui."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "git_remote_3",
+      "english": "Non-fast-forward",
+      "set": {
+        "task": "Risolvi un errore non-fast-forward riallineandoti al remoto con `git pull --rebase`."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "git_remote_3",
+      "english": "Push Tags",
+      "set": { "task": "Pubblica tutti i tag locali sul remoto con `git push --tags`." }
+    },
+    {
+      "level": "4",
+      "lesson": "git_remote_3",
+      "english": "Delete Remote Branch",
+      "set": {
+        "task": "Elimina il branch remoto `feature` da `origin` con `git push origin --delete feature`."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "git_remote_4",
+      "english": "SSH Key",
+      "set": {
+        "task": "Genera una coppia di chiavi SSH ed25519 collegata a `you@example.com` con `ssh-keygen -t ed25519 -C \"you@example.com\"`."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "git_remote_4",
+      "english": "Public Key",
+      "set": {
+        "task": "Mostra il contenuto della chiave pubblica con `cat ~/.ssh/id_ed25519.pub` da incollare nelle impostazioni di GitHub."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "git_remote_4",
+      "english": "ssh-agent",
+      "set": {
+        "task": "Carica la chiave privata `~/.ssh/id_ed25519` nell'ssh-agent con `ssh-add` per evitare di reinserire la passphrase."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "git_remote_4",
+      "english": "Known Hosts",
+      "set": {
+        "task": "Controlla il file `~/.ssh/known_hosts` per vedere le fingerprint dei server SSH gia` accettati."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "git_remote_4",
+      "english": "Cache Credentials",
+      "set": {
+        "task": "Abilita il credential helper `cache` globalmente per memorizzare temporaneamente le credenziali HTTPS."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "git_collaboration_1",
+      "english": "Open PR",
+      "set": {
+        "task": "Apri una pull request dal branch corrente verso il default con `gh pr create`."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "git_collaboration_1",
+      "english": "Draft PR",
+      "set": {
+        "task": "Apri la pull request come bozza non pronta al merge con `gh pr create --draft`."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "git_collaboration_1",
+      "english": "Reviewer",
+      "set": {
+        "task": "Assegna `alice` come revisore della pull request corrente con `gh pr edit --add-reviewer alice`."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "git_collaboration_1",
+      "english": "Approve PR",
+      "set": {
+        "task": "Approva la pull request corrente lasciando una review positiva con `gh pr review --approve`."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "git_collaboration_1",
+      "english": "Request Changes",
+      "set": {
+        "task": "Richiedi modifiche sulla pull request con `gh pr review --request-changes` quando qualcosa va sistemato."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "git_collaboration_1",
+      "english": "Merge PR",
+      "set": {
+        "task": "Mergea la pull request approvata schiacciando i commit in uno solo con `gh pr merge --squash`."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "git_collaboration_1",
+      "english": "Close PR",
+      "set": { "task": "Chiudi la pull request 42 senza fare merge con `gh pr close 42`." }
+    },
+    {
+      "level": "5",
+      "lesson": "git_collaboration_2",
+      "english": "Suggestion",
+      "set": {
+        "task": "Inserisci nella review un blocco ```suggestion con `const x = 5;` per proporre la modifica direttamente applicabile."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "git_collaboration_2",
+      "english": "Review Checklist",
+      "set": {
+        "task": "Aggiungi alla descrizione della PR una checklist tipo `- [ ] Tests added` e `- [ ] Docs updated` per uniformare la review."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "git_collaboration_3",
+      "english": "Fork",
+      "set": {
+        "task": "Crea un fork del repository `user/repo` sul tuo account con `gh repo fork user/repo`."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "git_collaboration_3",
+      "english": "Upstream",
+      "set": {
+        "task": "Aggiungi il repository originale come remoto `upstream` con `git remote add upstream <url>`."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "git_collaboration_3",
+      "english": "Sync Fork",
+      "set": {
+        "task": "Sincronizza il fork con il repository originale tirando da `upstream main` con `git pull upstream main`."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "git_collaboration_3",
+      "english": "Contributor Guide",
+      "set": {
+        "task": "Pubblica nella radice del repository un file `CONTRIBUTING.md` con le regole per contribuire."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "git_collaboration_4",
+      "english": "Issue",
+      "set": {
+        "task": "Apri una nuova issue su GitHub per segnalare un bug eseguendo `gh issue create`."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "git_collaboration_4",
+      "english": "git blame",
+      "set": {
+        "task": "Mostra autore e commit per ogni riga di `file.txt` con `git blame file.txt`."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "git_collaboration_4",
+      "english": "git annotate",
+      "set": {
+        "task": "Annota ogni riga di `file.txt` con commit e autore tramite il comando legacy `git annotate file.txt`."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "git_workflow_1",
+      "english": "develop branch",
+      "set": {
+        "task": "Passa al branch di integrazione `develop` di Git Flow con `git switch develop`."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "git_workflow_1",
+      "english": "release branch",
+      "set": {
+        "task": "Avvia un release branch per la versione `1.0.0` in Git Flow con `git flow release start 1.0.0`."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "git_workflow_1",
+      "english": "hotfix branch",
+      "set": {
+        "task": "Apri un hotfix branch per la versione `1.0.1` con `git flow hotfix start 1.0.1` per patchare urgentemente la produzione."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "git_workflow_1",
+      "english": "git-flow Tool",
+      "set": {
+        "task": "Inizializza la struttura di branch di Git Flow nel repository con `git flow init`."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "git_workflow_2",
+      "english": "Branch from main",
+      "set": {
+        "task": "Crea un nuovo branch `feature` diramando dall'ultimo `main` con `git switch -c feature main`."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "git_workflow_2",
+      "english": "Merge to main",
+      "set": {
+        "task": "Integra in `main` la pull request approvata facendo squash merge con `gh pr merge --squash` per avviare il deploy."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "git_workflow_3",
+      "english": "Feature Flag",
+      "set": {
+        "task": "Avvolgi il codice nuovo dietro un feature flag come `if (flags.NEW_LOGIN) { ... }` per nasconderlo finche` non e` pronto."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "git_workflow_4",
+      "english": "Naming Convention",
+      "set": {
+        "task": "Adotta una convenzione di nomenclatura per i branch come `feature/123-add-login` con tipo, ticket e descrizione."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "git_history_1",
+      "english": "Rebase",
+      "set": {
+        "task": "Riapplica i commit del branch corrente sulla cima di `main` eseguendo `git rebase main`."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "git_history_1",
+      "english": "git rebase",
+      "set": {
+        "task": "Sposta i commit del branch corrente sopra `main` per linearizzare la storia con `git rebase main`."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "git_history_1",
+      "english": "Linear History Policy",
+      "set": {
+        "task": "Ispeziona la storia con `git log --graph --oneline` per verificare che resti lineare secondo la policy."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "git_history_1",
+      "english": "Onto Branch",
+      "set": {
+        "task": "Trapianta i commit da `feature-old` a `feature-new` sulla nuova base `main` con `git rebase --onto main feature-old feature-new`."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "git_history_1",
+      "english": "Rebase Conflict",
+      "set": {
+        "task": "Dopo aver risolto manualmente un conflitto di rebase, prosegui con `git rebase --continue`."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "git_history_1",
+      "english": "Continue Rebase",
+      "set": {
+        "task": "Riprendi un rebase interrotto da conflitti, dopo aver fatto stage delle correzioni, con `git rebase --continue`."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "git_history_1",
+      "english": "Abort Rebase",
+      "set": {
+        "task": "Annulla un rebase in corso tornando allo stato iniziale del branch con `git rebase --abort`."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "git_history_1",
+      "english": "Skip Commit",
+      "set": {
+        "task": "Scarta il commit corrente durante un rebase e passa al successivo con `git rebase --skip`."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "git_history_2",
+      "english": "Interactive Rebase",
+      "set": {
+        "task": "Apri un rebase interattivo degli ultimi 5 commit con `git rebase -i HEAD~5` per riorganizzarli."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "git_history_2",
+      "english": "pick",
+      "set": {
+        "task": "Mantieni il commit `a3f5e21` cosi com'e` nel todo del rebase interattivo usando `pick a3f5e21 Add login form`."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "git_history_2",
+      "english": "reword",
+      "set": {
+        "task": "Cambia solo il messaggio del commit `a3f5e21` nel rebase interattivo con la riga `reword a3f5e21 Old message`."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "git_history_2",
+      "english": "edit",
+      "set": {
+        "task": "Metti in pausa il rebase sul commit `a3f5e21` per modificarne il contenuto con la riga `edit a3f5e21 Need fixes`."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "git_history_2",
+      "english": "squash",
+      "set": {
+        "task": "Unisci il commit `b4f6a32` nel precedente combinando i messaggi con la riga `squash b4f6a32 Fix typo`."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "git_history_2",
+      "english": "fixup",
+      "set": {
+        "task": "Fondi il commit `b4f6a32` nel precedente scartandone il messaggio con la riga `fixup b4f6a32`."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "git_history_2",
+      "english": "drop",
+      "set": {
+        "task": "Elimina del tutto il commit `c8e9d12` dal rebase interattivo con la riga `drop c8e9d12 Bad commit`."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "git_history_2",
+      "english": "autosquash",
+      "set": {
+        "task": "Riorganizza automaticamente i commit fixup negli ultimi 5 con `git rebase -i --autosquash HEAD~5`."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "git_history_3",
+      "english": "Rebase before Push",
+      "set": {
+        "task": "Ribasa la tua branch sopra il remoto prima di pubblicarla con `git pull --rebase`."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "git_history_3",
+      "english": "pull.rebase",
+      "set": {
+        "task": "Configura globalmente `pull.rebase` a `true` cosi ogni `git pull` esegue rebase invece di merge."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "git_history_3",
+      "english": "Force Push After Rebase",
+      "set": {
+        "task": "Pubblica la branch riscritta dopo un rebase con il safer `git push --force-with-lease`."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "git_history_3",
+      "english": "Update Feature",
+      "set": {
+        "task": "Aggiorna la feature riapplicandone i commit sulla cima dell'ultimo `main` con `git rebase main`."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "git_history_3",
+      "english": "Clean Up History",
+      "set": {
+        "task": "Pulisci la storia degli ultimi 10 commit prima del merge con `git rebase -i HEAD~10`."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "git_history_3",
+      "english": "fixup commit",
+      "set": {
+        "task": "Crea un fixup commit collegato al commit `a3f5e21` con `git commit --fixup=a3f5e21`."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "git_history_4",
+      "english": "--onto",
+      "set": {
+        "task": "Trapianta i commit di `feature` da sopra `develop` a sopra `main` con `git rebase --onto main develop feature`."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "git_history_4",
+      "english": "Range",
+      "set": {
+        "task": "Apri il rebase interattivo limitato all'intervallo `HEAD~5..HEAD` con `git rebase -i HEAD~5..HEAD`."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "git_history_4",
+      "english": "Root Rebase",
+      "set": {
+        "task": "Riscrivi tutta la storia dal commit iniziale eseguendo `git rebase -i --root`."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "git_history_4",
+      "english": "Preserve Merges",
+      "set": {
+        "task": "Conserva i merge commit durante un rebase interattivo con il flag `--rebase-merges`."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "git_history_4",
+      "english": "exec",
+      "set": {
+        "task": "Lancia `npm test` tra i commit del rebase interattivo inserendo la riga `exec npm test` nel todo."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "git_history_4",
+      "english": "Edit Commit",
+      "set": {
+        "task": "Modifica il commit in pausa nel rebase con `git commit --amend` e poi prosegui con `git rebase --continue`."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "git_history_4",
+      "english": "Split Commit",
+      "set": {
+        "task": "Annulla l'ultimo commit mantenendone le modifiche con `git reset HEAD^` per dividerlo poi in piu` commit separati."
+      }
+    }
   ]
 }

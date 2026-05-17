@@ -1,0 +1,968 @@
+{
+  "fixes": [
+    {
+      "level": "2",
+      "lesson": "dso_sast_2",
+      "english": "CodeQL",
+      "set": {
+        "command": "codeql database analyze db --format=sarif-latest --output=results.sarif javascript-security-and-quality.qls",
+        "task": "Analizza il database CodeQL con il pack javascript-security-and-quality.qls ed esporta i risultati in SARIF."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dso_sast_2",
+      "english": "Checkmarx",
+      "set": {
+        "command": "cx scan create --project-name myapp --scan-types sast --branch main",
+        "task": "Avvia una scansione SAST con il CLI cx Checkmarx sul progetto myapp del branch main."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dso_sast_2",
+      "english": "Fortify",
+      "set": {
+        "command": "sourceanalyzer -b myapp -scan -f results.fpr",
+        "task": "Esegui sourceanalyzer di Fortify sul build myapp ed esporta i risultati nel file results.fpr."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dso_sast_2",
+      "english": "Veracode",
+      "set": {
+        "command": "veracode static scan --source ./app.zip --app-name myapp",
+        "task": "Carica l'archivio app.zip su Veracode tramite il CLI per eseguire la scansione SAST cloud."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dso_sast_2",
+      "english": "SARIF",
+      "set": {
+        "code": "{\n  \"version\": \"2.1.0\",\n  \"runs\": [{\"tool\": {\"driver\": {\"name\": \"semgrep\"}}, \"results\": []}]\n}",
+        "task": "Definisci un report SARIF 2.1.0 con il driver semgrep per pubblicare i finding nella code scanning di GitHub."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dso_sca_2",
+      "english": "Renovate",
+      "set": {
+        "code": "{\n  \"extends\": [\"config:base\"],\n  \"vulnerabilityAlerts\": {\"enabled\": true}\n}",
+        "task": "Configura renovate.json estendendo config:base e attivando le vulnerability alerts automatiche."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dso_sca_2",
+      "english": "OSV",
+      "set": {
+        "command": "osv-scanner -r ./project",
+        "task": "Analizza ricorsivamente la directory project con osv-scanner per cercare CVE nel database OSV."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dso_sca_3",
+      "english": "CycloneDX",
+      "set": {
+        "command": "cyclonedx-py -o sbom.json -r requirements.txt",
+        "task": "Genera l'SBOM CycloneDX dal requirements.txt scrivendo l'output su sbom.json."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dso_sca_3",
+      "english": "SPDX",
+      "set": {
+        "command": "syft myimage:latest -o spdx-json=spdx.json",
+        "task": "Genera con Syft un SBOM in formato SPDX JSON dell'immagine myimage:latest."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dso_sca_4",
+      "english": "Auto-Merge",
+      "set": {
+        "code": "automerge: true\nautomergeType: \"pr\"\nautomergeStrategy: \"squash\"",
+        "task": "Abilita automerge in renovate.json per i bump patch usando la strategia squash."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dso_sca_4",
+      "english": "Private Registry",
+      "set": {
+        "command": "npm config set registry https://nexus.internal/npm/",
+        "task": "Configura npm per usare il registry privato Nexus interno invece del registry pubblico."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dso_secrets_1",
+      "english": "Vault",
+      "set": {
+        "command": "vault kv get -field=password secret/db/prod",
+        "task": "Leggi solo il campo password dal segreto secret/db/prod evitando di stamparlo in chiaro nei log."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dso_secrets_2",
+      "english": "Sealed Secret",
+      "set": {
+        "command": "kubeseal --format=yaml < secret.yaml > sealed.yaml",
+        "task": "Cifra il file secret.yaml con kubeseal per ottenere un SealedSecret committabile in Git."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dso_secrets_2",
+      "english": "External Secrets Operator",
+      "set": {
+        "code": "apiVersion: external-secrets.io/v1beta1\nkind: ExternalSecret\nspec:\n  secretStoreRef:\n    name: aws-store\n  target:\n    name: app-secret",
+        "task": "Definisci un ExternalSecret che sincronizza un segreto da aws-store nel secret Kubernetes app-secret."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dso_secrets_2",
+      "english": "Doppler",
+      "set": {
+        "command": "doppler run --project myapp --config prd -- ./app",
+        "task": "Avvia ./app iniettando i segreti del config prd di Doppler senza scrivere alcun file .env."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dso_secrets_3",
+      "english": "GitHub Secret Scanning",
+      "set": {
+        "code": "name: secret-scan\non: [push, pull_request]\njobs:\n  scan:\n    uses: github/codeql-action/.github/workflows/secret-scanning.yml@v3",
+        "task": "Aggiungi al workflow l'azione di secret scanning di GitHub per bloccare i push contenenti credenziali."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dso_secrets_3",
+      "english": "Push Protection",
+      "set": {
+        "command": "gh api -X PATCH /repos/:owner/:repo --field security_and_analysis[secret_scanning_push_protection][status]=enabled",
+        "task": "Abilita push protection via gh api per rifiutare i push che contengono token riconosciuti."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dso_secrets_3",
+      "english": "Entropy Detection",
+      "set": {
+        "code": "import math\ndef shannon_entropy(s):\n    p = [s.count(c)/len(s) for c in set(s)]\n    return -sum(x*math.log2(x) for x in p)\n# alert when entropy > 4.5",
+        "task": "Implementa shannon_entropy che marca come sospette le stringhe con entropia superiore a 4.5."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dso_secrets_4",
+      "english": "Dynamic Secret",
+      "set": {
+        "command": "vault read database/creds/readonly-role",
+        "task": "Richiedi a Vault una credenziale dinamica del ruolo readonly-role che scade dopo il TTL."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dso_secrets_4",
+      "english": "Workload Identity",
+      "set": {
+        "code": "metadata:\n  annotations:\n    iam.gke.io/gcp-service-account: app-sa@project.iam.gserviceaccount.com",
+        "task": "Annota il ServiceAccount Kubernetes con iam.gke.io/gcp-service-account per attivare Workload Identity su GKE."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dso_secrets_4",
+      "english": "Vault Agent",
+      "set": {
+        "code": "auto_auth {\n  method \"kubernetes\" {\n    config = { role = \"app-role\" }\n  }\n}\ntemplate {\n  source = \"db.tpl\"\n  destination = \"/secrets/db.env\"\n}",
+        "task": "Configura Vault Agent con auto_auth Kubernetes e un template che genera /secrets/db.env."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dso_secrets_4",
+      "english": "Secret Injection",
+      "set": {
+        "code": "metadata:\n  annotations:\n    vault.hashicorp.com/agent-inject: \"true\"\n    vault.hashicorp.com/agent-inject-secret-db: \"database/creds/app\"",
+        "task": "Aggiungi le annotation vault.hashicorp.com/agent-inject al pod per iniettare il segreto database/creds/app."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dso_dast_2",
+      "english": "Burp Suite",
+      "set": {
+        "command": "burpsuite --project-file=scan.burp --config-file=ci.json --unpause-spider-and-scanner",
+        "task": "Lancia Burp Suite in modalita headless usando il progetto scan.burp e la config ci.json per la scansione CI."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dso_dast_2",
+      "english": "Arachni",
+      "set": {
+        "command": "arachni https://target --report-save-path=report.afr",
+        "task": "Avvia arachni contro https://target salvando il report binario su report.afr per il post-processing."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dso_dast_2",
+      "english": "Stackhawk",
+      "set": {
+        "command": "hawk scan stackhawk.yml --severity=high",
+        "task": "Esegui hawk scan con il file di configurazione stackhawk.yml filtrando i finding di severita high."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dso_dast_3",
+      "english": "AFL++",
+      "set": {
+        "command": "afl-fuzz -i corpus/ -o findings/ -- ./target @@",
+        "task": "Lancia afl-fuzz con corpus iniziale corpus/ e output in findings/ contro il binario target."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dso_dast_3",
+      "english": "libFuzzer",
+      "set": {
+        "code": "extern \"C\" int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {\n    parse_json(Data, Size);\n    return 0;\n}",
+        "command": "clang -g -O1 -fsanitize=fuzzer,address harness.c -o harness",
+        "task": "Compila l'harness libFuzzer con clang abilitando i sanitizer fuzzer e address per intercettare crash di memoria."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dso_dast_3",
+      "english": "Sanitizer",
+      "set": {
+        "command": "clang -fsanitize=address,undefined -g -O1 app.c -o app",
+        "task": "Compila app.c con AddressSanitizer e UndefinedBehaviorSanitizer per rilevare errori di memoria a runtime."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dso_dast_4",
+      "english": "Reconnaissance",
+      "set": {
+        "command": "subfinder -d target.com -silent | httpx -title -tech-detect",
+        "task": "Enumera i sottodomini di target.com con subfinder e arricchiscili con httpx per ricognizione passiva."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dso_dast_4",
+      "english": "Bug Bounty",
+      "set": {
+        "code": "{\n  \"program\": \"acme-corp\",\n  \"scope\": [\"*.acme.com\"],\n  \"out_of_scope\": [\"staging.*\"],\n  \"severity_map\": {\"critical\": 10000, \"high\": 3000}\n}",
+        "task": "Definisci un policy.json del bug bounty con scope *.acme.com e payout differenziati per severita."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_1",
+      "english": "Container Image",
+      "set": {
+        "command": "trivy image --severity HIGH,CRITICAL --exit-code 1 myapp:1.0",
+        "task": "Scansiona myapp:1.0 con Trivy facendo fallire la build se contiene CVE HIGH o CRITICAL."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_1",
+      "english": "Image Scanning",
+      "set": {
+        "command": "trivy image --format sarif --output trivy.sarif registry/myapp:latest",
+        "task": "Esporta il report di scansione immagine in SARIF per pubblicarlo nella code scanning di GitHub."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_1",
+      "english": "Clair",
+      "set": {
+        "command": "clairctl report --host http://clair:6060 quay.io/myapp:latest",
+        "task": "Genera con clairctl il report di vulnerabilita di quay.io/myapp:latest interrogando il server Clair."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_1",
+      "english": "Anchore",
+      "set": {
+        "command": "anchore-cli image vuln myimage:latest all",
+        "task": "Mostra con anchore-cli tutte le vulnerabilita di myimage:latest dopo l'analisi del registry interno."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_1",
+      "english": "Container Vulnerability Database",
+      "set": {
+        "command": "trivy --download-db-only --db-repository ghcr.io/aquasecurity/trivy-db",
+        "task": "Aggiorna localmente il database CVE di Trivy scaricando l'ultima versione da ghcr.io."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_2",
+      "english": "Base Image",
+      "set": {
+        "code": "FROM cgr.dev/chainguard/static:latest\nCOPY app /app\nENTRYPOINT [\"/app\"]",
+        "task": "Usa una base image Chainguard static minimale per eliminare shell, libc dinamica e package manager."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_2",
+      "english": "Minimal Image",
+      "set": {
+        "code": "FROM scratch\nCOPY --from=builder /out/app /app\nENTRYPOINT [\"/app\"]",
+        "task": "Costruisci l'immagine finale a partire da scratch copiando solo il binario statico dallo stage builder."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_2",
+      "english": "Wolfi",
+      "set": {
+        "code": "FROM cgr.dev/chainguard/wolfi-base:latest\nRUN apk add --no-cache python3",
+        "task": "Parti da cgr.dev/chainguard/wolfi-base per ottenere una distro container con CVE quasi azzerate."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_3",
+      "english": "Container Registry",
+      "set": {
+        "command": "crane copy myapp:latest registry.internal/myapp:latest",
+        "task": "Copia con crane l'immagine myapp:latest nel registry privato interno preservando il digest."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_3",
+      "english": "Notary",
+      "set": {
+        "command": "notary -s https://notary.docker.io verify docker.io/library/nginx latest",
+        "task": "Verifica con notary che il tag latest di nginx sia firmato dalla trust collection ufficiale."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_3",
+      "english": "Admission Controller",
+      "set": {
+        "code": "apiVersion: admissionregistration.k8s.io/v1\nkind: ValidatingWebhookConfiguration\nwebhooks:\n  - name: image-policy.io\n    rules:\n      - operations: [\"CREATE\"]\n        resources: [\"pods\"]",
+        "task": "Registra un ValidatingWebhookConfiguration che intercetta la creazione di pod per applicare le policy."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_3",
+      "english": "Falco",
+      "set": {
+        "command": "falco -r /etc/falco/rules.d/ -o json_output=true",
+        "task": "Avvia Falco caricando le regole da /etc/falco/rules.d con output JSON per il forwarding al SIEM."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_3",
+      "english": "Privileged Container",
+      "set": {
+        "code": "securityContext:\n  privileged: false\n  allowPrivilegeEscalation: false\n  capabilities:\n    drop: [\"ALL\"]",
+        "task": "Imposta privileged a false e drop di tutte le capability nel securityContext del pod produttivo."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_4",
+      "english": "Build-Time Scan",
+      "set": {
+        "command": "docker build --secret id=trivy,src=$HOME/.trivy . && trivy image --exit-code 1 myapp",
+        "task": "Combina docker build e trivy image in pipeline per bloccare le build con CVE alla creazione dell'immagine."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_4",
+      "english": "Registry Scan",
+      "set": {
+        "command": "trivy image --server http://trivy-server:8080 registry.internal/myapp:latest",
+        "task": "Lancia Trivy in modalita client/server contro il registry interno per scansioni schedulate notturne."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_4",
+      "english": "CIS Docker Benchmark",
+      "set": {
+        "command": "docker run --rm --net host --pid host --cap-add audit_control docker/docker-bench-security",
+        "task": "Esegui docker-bench-security sull'host per valutare la conformita Docker al CIS Benchmark."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dso_iac_security_1",
+      "english": "CloudFormation",
+      "set": {
+        "command": "aws cloudformation deploy --template-file stack.yml --stack-name prod --capabilities CAPABILITY_IAM",
+        "task": "Deploya lo stack stack.yml con AWS CloudFormation autorizzando esplicitamente la creazione di risorse IAM."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dso_iac_security_1",
+      "english": "Pulumi",
+      "set": {
+        "command": "pulumi preview --diff --stack production",
+        "task": "Visualizza con pulumi preview le modifiche allo stack production includendo il diff dettagliato."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dso_iac_security_1",
+      "english": "Bicep",
+      "set": {
+        "command": "bicep build main.bicep --outfile main.json",
+        "task": "Compila main.bicep in template ARM JSON per validarlo con i tool standard di Azure."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dso_iac_security_2",
+      "english": "KICS",
+      "set": {
+        "command": "kics scan -p . --output-path results --severity HIGH",
+        "task": "Esegui kics scan sulla directory corrente filtrando i finding di severita HIGH ed esportando in results."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dso_iac_security_2",
+      "english": "Open Policy Agent",
+      "set": {
+        "command": "opa eval -d policies/ -i input.json \"data.terraform.deny\"",
+        "task": "Valuta con opa eval il pacchetto data.terraform.deny passando le policy in policies/ e l'input input.json."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dso_iac_security_2",
+      "english": "Policy Pack",
+      "set": {
+        "code": "new PolicyPack(\"aws-security\", {\n  policies: [{\n    name: \"no-public-s3\",\n    enforcementLevel: \"mandatory\",\n    validateResource: (r, args) => { /* ... */ }\n  }]\n});",
+        "task": "Definisci un PolicyPack Pulumi con la regola obbligatoria no-public-s3 che blocca i bucket pubblici."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dso_iac_security_4",
+      "english": "Atlantis",
+      "set": {
+        "code": "repos:\n  - id: github.com/org/infra\n    apply_requirements: [approved, mergeable]\n    workflow: secure",
+        "task": "Configura Atlantis con apply_requirements approved e mergeable per la repo infra prima dell'apply."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dso_iac_security_4",
+      "english": "Sentinel",
+      "set": {
+        "code": "import \"tfplan/v2\" as tfplan\n\nmain = rule {\n  all tfplan.resource_changes as _, rc {\n    rc.type is \"aws_s3_bucket\" and rc.change.after.acl is \"private\"\n  }\n}",
+        "task": "Scrivi una policy Sentinel che vincola ogni aws_s3_bucket nel piano Terraform ad avere acl private."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dso_iac_security_4",
+      "english": "Drift Detection",
+      "set": {
+        "command": "driftctl scan --from tfstate://terraform.tfstate --output json://drift.json",
+        "task": "Esegui driftctl scan confrontando lo stato terraform.tfstate con l'infrastruttura reale ed esporta in JSON."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dso_iac_security_4",
+      "english": "Cost Estimation",
+      "set": {
+        "command": "infracost breakdown --path . --format json --out-file infracost.json",
+        "task": "Genera con infracost breakdown il costo stimato del modulo Terraform corrente in formato JSON."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dso_policy_1",
+      "english": "OPA",
+      "set": {
+        "command": "opa eval -d policies/ -i request.json \"data.kubernetes.admission.deny\"",
+        "task": "Interroga OPA con opa eval passando la admission request request.json e le policy in policies/."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dso_policy_1",
+      "english": "Decision",
+      "set": {
+        "code": "package authz\n\ndefault allow := false\nallow if {\n    input.user.role == \"admin\"\n    input.method == \"GET\"\n}",
+        "task": "Definisci la regola allow che ritorna true solo per utenti admin che fanno una richiesta GET."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dso_policy_1",
+      "english": "Bundle",
+      "set": {
+        "code": "services:\n  s3:\n    url: https://bundles.s3.amazonaws.com\nbundles:\n  authz:\n    resource: bundles/authz.tar.gz\n    polling:\n      min_delay_seconds: 30",
+        "task": "Configura OPA per scaricare il bundle authz.tar.gz da S3 con polling minimo di 30 secondi."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dso_policy_1",
+      "english": "Input",
+      "set": {
+        "code": "{\n  \"kind\": \"AdmissionRequest\",\n  \"request\": {\n    \"operation\": \"CREATE\",\n    \"object\": {\"spec\": {\"containers\": [{\"image\": \"nginx:latest\"}]}}\n  }\n}",
+        "task": "Costruisci un input JSON di AdmissionRequest per testare le policy Rego di ammissione dei pod."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dso_policy_2",
+      "english": "Required Label",
+      "set": {
+        "code": "package main\n\nrequired := {\"app\", \"team\", \"env\"}\ndeny[msg] {\n    missing := required - {key | input.metadata.labels[key]}\n    count(missing) > 0\n    msg := sprintf(\"missing labels: %v\", [missing])\n}",
+        "task": "Scrivi una policy Rego che blocca le risorse prive delle label obbligatorie app, team ed env."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dso_policy_2",
+      "english": "Approved Registry",
+      "set": {
+        "code": "package main\n\nallowed := {\"registry.internal.io\", \"gcr.io/myorg\"}\ndeny[msg] {\n    image := input.spec.containers[_].image\n    not startswith(image, allowed[_])\n    msg := sprintf(\"image %v not from approved registry\", [image])\n}",
+        "task": "Definisci una policy Rego che nega i pod con immagini provenienti da registry non approvati."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dso_policy_3",
+      "english": "Policy Admission Controller",
+      "set": {
+        "code": "apiVersion: admissionregistration.k8s.io/v1\nkind: ValidatingWebhookConfiguration\nmetadata:\n  name: opa-validator\nwebhooks:\n  - name: validating.gatekeeper.sh\n    clientConfig:\n      service: {name: gatekeeper-webhook, namespace: gatekeeper-system}",
+        "task": "Registra un ValidatingWebhookConfiguration che inoltra le richieste a Gatekeeper per la validazione."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dso_policy_3",
+      "english": "Validating Webhook",
+      "set": {
+        "code": "rules:\n  - operations: [\"CREATE\", \"UPDATE\"]\n    apiGroups: [\"\"]\n    apiVersions: [\"v1\"]\n    resources: [\"pods\"]\nfailurePolicy: Fail",
+        "task": "Configura il validating webhook per intercettare CREATE e UPDATE dei pod con failurePolicy Fail."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dso_policy_3",
+      "english": "Mutating Webhook",
+      "set": {
+        "code": "apiVersion: admissionregistration.k8s.io/v1\nkind: MutatingWebhookConfiguration\nwebhooks:\n  - name: sidecar-injector.io\n    reinvocationPolicy: IfNeeded",
+        "task": "Definisci un MutatingWebhookConfiguration con reinvocationPolicy IfNeeded per iniettare sidecar nei pod."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dso_policy_3",
+      "english": "OPA Gatekeeper",
+      "set": {
+        "code": "apiVersion: templates.gatekeeper.sh/v1\nkind: ConstraintTemplate\nmetadata:\n  name: k8srequiredlabels\nspec:\n  crd:\n    spec:\n      names: {kind: K8sRequiredLabels}\n  targets:\n    - target: admission.k8s.gatekeeper.sh\n      rego: |\n        package k8srequiredlabels\n        violation[{\"msg\": msg}] { ... }",
+        "task": "Definisci un ConstraintTemplate Gatekeeper k8srequiredlabels che importa una policy Rego di violation."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dso_policy_3",
+      "english": "Constraint",
+      "set": {
+        "code": "apiVersion: constraints.gatekeeper.sh/v1beta1\nkind: K8sRequiredLabels\nmetadata:\n  name: deployment-must-have-owner\nspec:\n  match:\n    kinds: [{apiGroups: [\"apps\"], kinds: [\"Deployment\"]}]\n  parameters:\n    labels: [\"owner\"]",
+        "task": "Istanzia un Constraint K8sRequiredLabels che impone la label owner su tutti i Deployment."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dso_policy_3",
+      "english": "Pod Security Standard",
+      "set": {
+        "code": "apiVersion: v1\nkind: Namespace\nmetadata:\n  name: prod\n  labels:\n    pod-security.kubernetes.io/enforce: restricted\n    pod-security.kubernetes.io/audit: restricted\n    pod-security.kubernetes.io/warn: restricted",
+        "task": "Etichetta il namespace prod con pod-security.kubernetes.io/enforce restricted per applicare lo standard piu rigido."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dso_policy_4",
+      "english": "Pre-Deploy Check",
+      "set": {
+        "command": "conftest test --policy policies/ deployment.yaml",
+        "task": "Lancia conftest test in pipeline pre-deploy per validare deployment.yaml contro le policy Rego."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dso_policy_4",
+      "english": "Drift Policy",
+      "set": {
+        "code": "package drift\n\ndeny[msg] {\n    actual := data.cloud.aws.s3_buckets[_]\n    not actual.tags.managed_by == \"terraform\"\n    msg := sprintf(\"bucket %v not managed by Terraform\", [actual.name])\n}",
+        "task": "Scrivi una policy drift che segnala bucket S3 senza il tag managed_by uguale a terraform."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dso_policy_4",
+      "english": "Score Card",
+      "set": {
+        "command": "scorecard --repo=github.com/myorg/myrepo --format=json",
+        "task": "Lancia OpenSSF Scorecard sulla repo myorg/myrepo esportando il punteggio in JSON per la dashboard."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dso_supply_chain_1",
+      "english": "Provenance",
+      "set": {
+        "command": "cosign attest --predicate provenance.json --type slsaprovenance myimage:latest",
+        "task": "Allega l'attestazione di provenienza SLSA provenance.json all'immagine myimage:latest con cosign attest."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dso_supply_chain_1",
+      "english": "Attestation",
+      "set": {
+        "command": "cosign verify-attestation --type slsaprovenance --certificate-identity-regexp '.*' myimage",
+        "task": "Verifica con cosign verify-attestation che myimage abbia un'attestazione SLSA firmata da identita valide."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dso_supply_chain_1",
+      "english": "Signature",
+      "set": {
+        "command": "cosign sign --yes --output-signature sig.bin myimage:latest",
+        "task": "Firma myimage:latest con cosign esportando la firma binaria nel file sig.bin per archiviazione."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dso_supply_chain_3",
+      "english": "Fulcio",
+      "set": {
+        "command": "cosign sign --fulcio-url=https://fulcio.sigstore.dev myimage",
+        "task": "Firma myimage indicando esplicitamente l'URL Fulcio pubblico per ottenere un certificato effimero."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dso_supply_chain_3",
+      "english": "Rekor",
+      "set": {
+        "command": "rekor-cli search --artifact myimage.tar --rekor_server https://rekor.sigstore.dev",
+        "task": "Cerca con rekor-cli tutte le voci del transparency log relative all'artefatto myimage.tar."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dso_supply_chain_3",
+      "english": "Transparency Log",
+      "set": {
+        "command": "rekor-cli get --uuid=24296fb24b8ad77a --format=json",
+        "task": "Recupera dal log Rekor la voce con UUID specifico in JSON per verifiche audit indipendenti."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dso_supply_chain_3",
+      "english": "in-toto",
+      "set": {
+        "command": "in-toto-run --step-name build --key signer.key -- make build",
+        "task": "Esegui make build sotto in-toto-run firmando i metadati dello step build con la chiave signer.key."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dso_supply_chain_3",
+      "english": "Policy Controller",
+      "set": {
+        "code": "apiVersion: policy.sigstore.dev/v1beta1\nkind: ClusterImagePolicy\nmetadata:\n  name: require-signed\nspec:\n  images:\n    - glob: \"registry.internal/**\"\n  authorities:\n    - keyless:\n        identities:\n          - issuer: https://token.actions.githubusercontent.com",
+        "task": "Definisci una ClusterImagePolicy Sigstore che richiede firma keyless GitHub Actions per il registry interno."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dso_supply_chain_4",
+      "english": "GitHub Provenance",
+      "set": {
+        "code": "jobs:\n  provenance:\n    permissions:\n      id-token: write\n      contents: read\n    uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v2.0.0",
+        "task": "Aggiungi al workflow il generator_generic_slsa3 di slsa-framework per produrre provenance SLSA Level 3."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dso_supply_chain_4",
+      "english": "GPG Key",
+      "set": {
+        "command": "git config --global commit.gpgsign true && git config --global user.signingkey ABCD1234",
+        "task": "Configura git affinche tutti i commit globali siano firmati automaticamente con la chiave GPG ABCD1234."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dso_supply_chain_4",
+      "english": "Lockfile Maintenance",
+      "set": {
+        "command": "npm ci --audit=false && npm audit signatures",
+        "task": "Esegui npm ci seguito da npm audit signatures per verificare l'integrita dei lockfile prima della build."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dso_compliance_as_code_2",
+      "english": "Chef Compliance",
+      "set": {
+        "command": "chef-automate compliance scan --node prod-01 --profile cis-linux",
+        "task": "Lancia chef-automate compliance scan sul nodo prod-01 col profilo cis-linux per audit continuo."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dso_compliance_as_code_2",
+      "english": "Compliance Operator",
+      "set": {
+        "code": "apiVersion: compliance.openshift.io/v1alpha1\nkind: ScanSettingBinding\nmetadata:\n  name: cis-scan\nprofiles:\n  - name: ocp4-cis\n    kind: Profile\n    apiGroup: compliance.openshift.io/v1alpha1",
+        "task": "Crea un ScanSettingBinding cis-scan che attiva il profilo ocp4-cis del Compliance Operator OpenShift."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dso_compliance_as_code_2",
+      "english": "Cloud Custodian",
+      "set": {
+        "command": "custodian run --output-dir=output policies/s3-public.yml",
+        "task": "Esegui custodian run con la policy s3-public.yml per applicare governance ai bucket S3 dell'account."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dso_compliance_as_code_3",
+      "english": "Audit Trail",
+      "set": {
+        "command": "aws cloudtrail lookup-events --lookup-attributes AttributeKey=EventName,AttributeValue=DeleteBucket",
+        "task": "Interroga CloudTrail per recuperare tutti gli eventi DeleteBucket utili a ricostruire l'audit trail."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dso_compliance_as_code_3",
+      "english": "OSCAL",
+      "set": {
+        "code": "{\n  \"system-security-plan\": {\n    \"uuid\": \"a4f3...\",\n    \"metadata\": {\"title\": \"SSP\", \"version\": \"1.0\"},\n    \"control-implementation\": {\"implemented-requirements\": []}\n  }\n}",
+        "task": "Definisci un system-security-plan OSCAL minimale con metadata e control-implementation vuota."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dso_cloud_security_1",
+      "english": "Public Bucket",
+      "set": {
+        "command": "aws s3api put-public-access-block --bucket myapp --public-access-block-configuration \"BlockPublicAcls=true,IgnorePublicAcls=true,BlockPublicPolicy=true,RestrictPublicBuckets=true\"",
+        "task": "Applica il public access block completo al bucket myapp per impedire qualsiasi esposizione pubblica."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dso_cloud_security_1",
+      "english": "Open Port",
+      "set": {
+        "command": "aws ec2 describe-security-groups --filters Name=ip-permission.cidr,Values=0.0.0.0/0",
+        "task": "Elenca con AWS CLI tutti i security group che hanno regole aperte verso 0.0.0.0/0."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dso_cloud_security_1",
+      "english": "Excessive Permission",
+      "set": {
+        "command": "aws iam generate-service-last-accessed-details --arn arn:aws:iam::123:role/AppRole",
+        "task": "Genera con IAM il report di accesso ai servizi del ruolo AppRole per rimuovere i permessi inutilizzati."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dso_cloud_security_1",
+      "english": "Inventory",
+      "set": {
+        "command": "aws resourcegroupstaggingapi get-resources --tag-filters Key=env,Values=prod",
+        "task": "Recupera tramite Resource Groups Tagging API tutte le risorse cloud con il tag env=prod."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dso_cloud_security_2",
+      "english": "AWS Security Hub",
+      "set": {
+        "command": "aws securityhub get-findings --filters '{\"SeverityLabel\":[{\"Value\":\"HIGH\",\"Comparison\":\"EQUALS\"}]}'",
+        "task": "Filtra i finding di Security Hub mantenendo solo quelli con severity HIGH per il triage settimanale."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dso_cloud_security_2",
+      "english": "GCP Security Command Center",
+      "set": {
+        "command": "gcloud scc findings list organizations/123 --filter=\"severity=\\\"HIGH\\\" AND state=\\\"ACTIVE\\\"\"",
+        "task": "Elenca i finding attivi HIGH nel Security Command Center dell'organizzazione 123 con gcloud scc."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dso_cloud_security_2",
+      "english": "Microsoft Defender for Cloud",
+      "set": {
+        "command": "az security alert list --output table --query \"[?properties.severity=='High']\"",
+        "task": "Estrai con az security gli alert di Defender for Cloud filtrando per severity High."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dso_cloud_security_3",
+      "english": "Role",
+      "set": {
+        "code": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [{\n    \"Effect\": \"Allow\",\n    \"Principal\": {\"Service\": \"lambda.amazonaws.com\"},\n    \"Action\": \"sts:AssumeRole\"\n  }]\n}",
+        "task": "Definisci una trust policy che consente solo a lambda.amazonaws.com di assumere il ruolo IAM."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dso_cloud_security_3",
+      "english": "Permission Boundary",
+      "set": {
+        "command": "aws iam put-role-permissions-boundary --role-name DevRole --permissions-boundary arn:aws:iam::aws:policy/PowerUserAccess",
+        "task": "Imposta PowerUserAccess come permission boundary del ruolo DevRole per limitare i privilegi massimi."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dso_cloud_security_3",
+      "english": "Service Control Policy",
+      "set": {
+        "code": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [{\n    \"Effect\": \"Deny\",\n    \"Action\": \"*\",\n    \"Resource\": \"*\",\n    \"Condition\": {\"StringNotEquals\": {\"aws:RequestedRegion\": [\"eu-west-1\"]}}\n  }]\n}",
+        "task": "Scrivi una SCP che nega ogni azione fuori dalla regione eu-west-1 per la sovranita dei dati."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dso_cloud_security_3",
+      "english": "IAM Access Analyzer",
+      "set": {
+        "command": "aws accessanalyzer list-findings --analyzer-arn arn:aws:access-analyzer:us-east-1:123:analyzer/default",
+        "task": "Elenca i finding di IAM Access Analyzer dell'analizzatore default per individuare accessi non intenzionali."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dso_cloud_security_3",
+      "english": "MFA",
+      "set": {
+        "command": "aws iam enable-mfa-device --user-name alice --serial-number arn:aws:iam::123:mfa/alice --authentication-code-1 123456 --authentication-code-2 789012",
+        "task": "Abilita l'MFA virtuale per l'utente alice fornendo i due codici TOTP consecutivi richiesti da IAM."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dso_cloud_security_4",
+      "english": "Encryption at Rest",
+      "set": {
+        "code": "resource \"aws_s3_bucket_server_side_encryption_configuration\" \"main\" {\n  bucket = aws_s3_bucket.main.id\n  rule {\n    apply_server_side_encryption_by_default {\n      sse_algorithm     = \"aws:kms\"\n      kms_master_key_id = aws_kms_key.main.arn\n    }\n  }\n}",
+        "task": "Configura la SSE del bucket S3 usando aws:kms con la KMS key gestita per cifrare i dati a riposo."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dso_cloud_security_4",
+      "english": "Encryption in Transit",
+      "set": {
+        "code": "{\n  \"Effect\": \"Deny\",\n  \"Principal\": \"*\",\n  \"Action\": \"s3:*\",\n  \"Resource\": \"arn:aws:s3:::myapp/*\",\n  \"Condition\": {\"Bool\": {\"aws:SecureTransport\": \"false\"}}\n}",
+        "task": "Aggiungi alla bucket policy una clausola che nega l'accesso S3 quando aws:SecureTransport e false."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dso_cloud_security_4",
+      "english": "VPC Endpoint",
+      "set": {
+        "code": "resource \"aws_vpc_endpoint\" \"s3\" {\n  vpc_id       = aws_vpc.main.id\n  service_name = \"com.amazonaws.eu-west-1.s3\"\n  vpc_endpoint_type = \"Gateway\"\n}",
+        "task": "Crea con Terraform un VPC endpoint gateway per S3 in modo da evitare il transito su internet pubblico."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dso_cloud_security_4",
+      "english": "Bastion Host",
+      "set": {
+        "command": "aws ssm start-session --target i-0abc1234 --document-name AWS-StartPortForwardingSession --parameters '{\"portNumber\":[\"22\"]}'",
+        "task": "Apri un port forwarding SSH verso l'istanza i-0abc1234 tramite Session Manager senza bastion host."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dso_cloud_security_4",
+      "english": "Session Manager",
+      "set": {
+        "command": "aws ssm start-session --target i-0123456789abcdef0",
+        "task": "Apri una shell crittografata sull'istanza EC2 i-0123456789abcdef0 senza esporre la porta SSH."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dso_cloud_security_4",
+      "english": "GuardDuty",
+      "set": {
+        "command": "aws guardduty list-findings --detector-id abc123 --finding-criteria '{\"Criterion\":{\"severity\":{\"Gte\":7}}}'",
+        "task": "Elenca i finding GuardDuty con severity gte 7 sul detector abc123 per il triage degli alert critici."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dso_cloud_security_4",
+      "english": "Logging Centralization",
+      "set": {
+        "code": "resource \"aws_cloudwatch_log_subscription_filter\" \"siem\" {\n  name            = \"to-splunk\"\n  log_group_name  = aws_cloudwatch_log_group.app.name\n  destination_arn = aws_kinesis_firehose_delivery_stream.siem.arn\n  filter_pattern  = \"\"\n}",
+        "task": "Configura un subscription filter CloudWatch che inoltra tutti i log al Firehose verso il SIEM Splunk."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dso_cloud_security_4",
+      "english": "Account Baselining",
+      "set": {
+        "command": "aws controltower enable-control --control-identifier arn:aws:controltower:::control/AWS-GR_RESTRICTED_ROOT_USER --target-identifier arn:aws:organizations::123:ou/o-x/ou-abc",
+        "task": "Abilita con Control Tower il guardrail che blocca l'uso del root user sull'OU di produzione."
+      }
+    }
+  ]
+}

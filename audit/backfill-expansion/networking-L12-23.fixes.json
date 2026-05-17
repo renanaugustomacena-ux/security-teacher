@@ -1,0 +1,2200 @@
+{
+  "fixes": [
+    {
+      "level": "12",
+      "lesson": "net_protocols_email_1",
+      "english": "SMTP",
+      "set": {
+        "command": "openssl s_client -starttls smtp -crlf -connect smtp.example.com:587",
+        "task": "Avvia una sessione SMTP cifrata via STARTTLS sulla porta 587 per testare l'invio mail dal server smtp.example.com."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "net_protocols_email_1",
+      "english": "POP3",
+      "set": {
+        "command": "openssl s_client -connect mail.example.com:995 -crlf",
+        "task": "Apri una connessione POP3 sicura sulla porta 995 per scaricare manualmente i messaggi di una casella di test."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "net_protocols_email_1",
+      "english": "IMAP",
+      "set": {
+        "command": "openssl s_client -connect imap.example.com:993 -crlf",
+        "task": "Connettiti al server IMAPS sulla porta 993 per ispezionare le cartelle remote di una casella senza scaricarle."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "net_protocols_email_1",
+      "english": "SPF",
+      "set": {
+        "command": "dig +short TXT example.com | grep -i spf",
+        "task": "Recupera il record TXT SPF del dominio example.com filtrando la risposta per individuare la policy v=spf1 pubblicata."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "net_protocols_email_1",
+      "english": "DKIM",
+      "set": {
+        "command": "dig +short TXT default._domainkey.example.com",
+        "task": "Interroga il record DKIM del selettore default verificando che la chiave pubblica RSA sia pubblicata correttamente."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "net_protocols_email_1",
+      "english": "DMARC",
+      "set": {
+        "command": "dig +short TXT _dmarc.example.com",
+        "task": "Recupera la policy DMARC pubblicata in TXT su _dmarc.example.com per verificare modalita' reject/quarantine e indirizzi report."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "net_protocols_email_1",
+      "english": "STARTTLS",
+      "set": {
+        "command": "openssl s_client -starttls smtp -connect smtp.example.com:587 -crlf",
+        "task": "Negozia STARTTLS su una sessione SMTP plaintext per promuovere il canale a TLS prima di inviare credenziali."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "net_protocols_file_2",
+      "english": "FTP",
+      "set": {
+        "command": "ftp ftp.example.com",
+        "task": "Apri una sessione FTP interattiva verso il server di test per esercitarti con i comandi ls, get e put."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "net_protocols_file_2",
+      "english": "FTPS",
+      "set": {
+        "command": "lftp -e 'set ftp:ssl-force true' -u alice ftps.example.com",
+        "task": "Connettiti a ftps.example.com via lftp imponendo TLS esplicito per evitare di trasmettere credenziali in chiaro."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "net_protocols_file_2",
+      "english": "TFTP",
+      "set": {
+        "command": "tftp 192.168.1.1 -c get config.bin",
+        "task": "Scarica via TFTP il file di configurazione config.bin dal router di rete senza autenticazione, tipico per il boot."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "net_protocols_file_2",
+      "english": "WebDAV",
+      "set": {
+        "command": "cadaver https://webdav.example.com/share",
+        "task": "Monta interattivamente con cadaver la condivisione WebDAV remota su HTTPS per caricare e scaricare documenti."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "net_protocols_file_2",
+      "english": "SMB",
+      "set": {
+        "command": "smbclient -L //fileserver.local -U alice",
+        "task": "Elenca le share SMB esposte dal file server come utente alice prima di montare una specifica condivisione di rete."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "net_protocols_remote_3",
+      "english": "Telnet",
+      "set": {
+        "command": "telnet smtp.example.com 25",
+        "task": "Apri una sessione telnet verso la porta 25 di smtp.example.com per testare manualmente le risposte del server SMTP."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "net_protocols_remote_3",
+      "english": "RDP",
+      "set": {
+        "command": "xfreerdp /v:winserver.local /u:Administrator +clipboard",
+        "task": "Avvia una sessione RDP verso winserver.local come Administrator con appunti condivisi tra host locale e remoto."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "net_protocols_remote_3",
+      "english": "VNC",
+      "set": {
+        "command": "vncviewer 192.168.1.50:5901",
+        "task": "Connettiti al display VNC :1 di 192.168.1.50 per condividere lo schermo grafico del server remoto."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "net_protocols_remote_3",
+      "english": "Mosh",
+      "set": {
+        "command": "mosh user@server.example.com",
+        "task": "Apri una sessione mosh resiliente verso server.example.com per lavorare anche con connessioni mobile instabili."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "net_protocols_other_4",
+      "english": "OID",
+      "set": {
+        "command": "snmpget -v 2c -c public 192.168.1.1 1.3.6.1.2.1.1.5.0",
+        "task": "Interroga l'OID sysName.0 via SNMPv2c sul router 192.168.1.1 per leggere l'hostname configurato sul dispositivo."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "net_protocols_other_4",
+      "english": "LDAP",
+      "set": {
+        "command": "ldapsearch -x -H ldap://dc.example.com -b 'dc=example,dc=com' '(uid=alice)'",
+        "task": "Cerca anonimamente nell'albero LDAP l'utente alice partendo dalla base dc=example,dc=com sul controller di dominio."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "net_protocols_other_4",
+      "english": "Active Directory",
+      "set": {
+        "command": "ldapsearch -x -H ldap://dc.corp.local -D 'CN=svc,CN=Users,DC=corp,DC=local' -W -b 'DC=corp,DC=local' '(objectClass=user)'",
+        "task": "Enumera tutti gli oggetti utente in Active Directory autenticandoti con l'account di servizio svc sul DC del dominio."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "net_protocols_other_4",
+      "english": "Syslog",
+      "set": {
+        "command": "logger -p local0.info -n 10.0.0.5 -P 514 'test syslog message'",
+        "task": "Inoltra un messaggio syslog di test alla porta UDP 514 del collector centrale 10.0.0.5 usando la facility local0."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_modern_2",
+      "english": "NetworkManager",
+      "set": {
+        "command": "nmcli connection show --active",
+        "task": "Elenca tutte le connessioni di rete attualmente attive gestite da NetworkManager per verificare interfacce e profili in uso."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_modern_2",
+      "english": "systemd-networkd",
+      "set": {
+        "command": "networkctl status eth0",
+        "task": "Mostra lo stato dell'interfaccia eth0 gestita da systemd-networkd, leggendo link, indirizzi e gateway configurati."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_capture_3",
+      "english": "Wireshark",
+      "set": {
+        "command": "wireshark -k -i eth0 -f 'tcp port 443'",
+        "task": "Avvia Wireshark in cattura immediata sull'interfaccia eth0 filtrando solo il traffico TCP sulla porta 443."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_capture_3",
+      "english": "Capture Filter",
+      "set": {
+        "command": "tcpdump -i eth0 -w /tmp/dns.pcap 'udp port 53'",
+        "task": "Cattura solo i pacchetti DNS dall'interfaccia eth0 applicando un capture filter BPF e salvali in un file pcap."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_capture_3",
+      "english": "Promiscuous Mode",
+      "set": {
+        "command": "sudo ip link set eth0 promisc on",
+        "task": "Abilita la modalita' promiscua su eth0 per permettere allo sniffer di catturare tutti i frame visibili sul segmento."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_capture_3",
+      "english": "SPAN Port",
+      "set": {
+        "command": "monitor session 1 source vlan 10 - 20 rx ; monitor session 1 destination interface Gi1/0/24",
+        "task": "Configura una sessione SPAN sullo switch Cisco che specchia il traffico in ingresso delle VLAN 10-20 sulla porta del sensore IDS."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_scan_4",
+      "english": "Port Scan",
+      "set": {
+        "command": "nmap -sV -p 1-65535 192.168.1.0/24",
+        "task": "Esegui un port scan completo con rilevamento versione su tutta la subnet /24 per mappare i servizi in ascolto."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_scan_4",
+      "english": "masscan",
+      "set": {
+        "command": "sudo masscan 10.0.0.0/8 -p80,443 --rate=10000",
+        "task": "Scansiona le porte 80 e 443 dell'intero /8 privato con masscan a 10000 pacchetti al secondo per uno sweep rapido."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_scan_4",
+      "english": "Banner Grabbing",
+      "set": {
+        "command": "nc -nv 192.168.1.10 22",
+        "task": "Connettiti grezzamente alla porta SSH di 192.168.1.10 con netcat per leggere il banner del servizio e identificarne la versione."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "net_troubleshoot_1",
+      "english": "Connectivity Issue",
+      "set": {
+        "command": "mtr -rwc 100 8.8.8.8",
+        "task": "Esegui mtr per 100 cicli verso 8.8.8.8 in modalita' report per diagnosticare un problema di connettivita' end-to-end."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "net_troubleshoot_1",
+      "english": "High Latency",
+      "set": {
+        "command": "ping -c 100 -i 0.2 backend.example.com | tail -5",
+        "task": "Misura la latenza media verso backend.example.com con 100 ping a 200ms di intervallo per quantificare ritardi anomali."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "net_troubleshoot_1",
+      "english": "network jitter",
+      "set": {
+        "command": "iperf3 -c 10.0.0.50 -u -b 1M -t 30 -J",
+        "task": "Misura il jitter UDP verso 10.0.0.50 con iperf3 a 1 Mbps per 30 secondi, salvando il report in JSON per analisi."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "net_troubleshoot_1",
+      "english": "Asymmetric Routing",
+      "set": {
+        "command": "traceroute -n 10.0.0.5 ; ssh 10.0.0.5 traceroute -n $(curl -s ifconfig.me)",
+        "task": "Confronta il traceroute andata e ritorno tra due host per individuare percorsi asimmetrici che rompono firewall stateful."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "net_troubleshoot_1",
+      "english": "Black Hole",
+      "set": {
+        "command": "traceroute -I -m 30 destination.example.com",
+        "task": "Esegui traceroute ICMP fino a 30 hop per individuare il punto in cui i pacchetti vengono silenziosamente scartati."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "net_troubleshoot_1",
+      "english": "Flapping",
+      "set": {
+        "command": "ip -s link show eth0 | grep -i errors",
+        "task": "Ispeziona i contatori di errore e drop sull'interfaccia eth0 per individuare un link instabile che continua a oscillare."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "net_troubleshoot_1",
+      "english": "Microburst",
+      "set": {
+        "command": "show interface Gi1/0/1 counters detail | include drop",
+        "task": "Verifica i drop di buffer in uscita su uno switch Cisco per rivelare microburst che saturano la coda anche con link scarico."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "net_troubleshoot_1",
+      "english": "Duplex Mismatch",
+      "set": {
+        "command": "ethtool eth0 | grep -E 'Speed|Duplex'",
+        "task": "Controlla velocita' e duplex negoziati sull'interfaccia eth0 per confermare l'assenza di mismatch con la porta dello switch."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "net_troubleshoot_2",
+      "english": "Path MTU Discovery",
+      "set": {
+        "command": "tracepath -n 1.1.1.1",
+        "task": "Esegui tracepath verso 1.1.1.1 per scoprire la MTU minima lungo il percorso senza bisogno di privilegi root."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "net_troubleshoot_2",
+      "english": "MSS",
+      "set": {
+        "command": "sudo iptables -t mangle -A FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu",
+        "task": "Applica il clamping MSS al PMTU sui SYN inoltrati per evitare ritrasmissioni quando i tunnel riducono la MTU effettiva."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "net_troubleshoot_2",
+      "english": "IP Fragmentation",
+      "set": {
+        "command": "ping -M do -s 1472 -c 4 8.8.8.8",
+        "task": "Invia ping con bit DF settato e payload di 1472 byte verso 8.8.8.8 per verificare che il percorso supporti MTU 1500."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "net_troubleshoot_2",
+      "english": "Jumbograms",
+      "set": {
+        "command": "sudo ip link set eth0 mtu 9000",
+        "task": "Imposta la MTU di eth0 a 9000 byte per abilitare jumbo frame sulla rete storage e ridurre l'overhead per pacchetto."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "net_troubleshoot_2",
+      "english": "PMTUD Black Hole",
+      "set": {
+        "command": "ping -M do -s 1450 server.example.com",
+        "task": "Invia ping con DF e payload 1450 per individuare un firewall che blocca ICMP Fragmentation Needed e rompe il PMTUD."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "net_troubleshoot_3",
+      "english": "RTT",
+      "set": {
+        "command": "ping -c 10 -q 1.1.1.1",
+        "task": "Calcola il round-trip time medio verso 1.1.1.1 con 10 ping in modalita' silenziosa, riassumendo min/avg/max/mdev."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "net_troubleshoot_3",
+      "english": "Bufferbloat",
+      "set": {
+        "command": "sudo tc qdisc replace dev eth0 root cake bandwidth 100mbit",
+        "task": "Sostituisci la qdisc radice di eth0 con CAKE limitata a 100 Mbps per ridurre il bufferbloat sull'uplink di casa."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "net_troubleshoot_3",
+      "english": "TCP Slow Start",
+      "set": {
+        "command": "ss -ti dst :443",
+        "task": "Ispeziona via ss le metriche TCP delle connessioni HTTPS attive per osservare cwnd e ssthresh durante la fase di slow start."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "net_troubleshoot_3",
+      "english": "Congestion Window",
+      "set": {
+        "command": "ss -tein state established '( dport = :443 )' | grep cwnd",
+        "task": "Estrai il valore cwnd corrente di tutte le connessioni TCP verso la porta 443 per studiare il comportamento di congestione."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "net_troubleshoot_3",
+      "english": "BBR",
+      "set": {
+        "command": "sudo sysctl -w net.ipv4.tcp_congestion_control=bbr",
+        "task": "Attiva l'algoritmo TCP BBR a livello di kernel per migliorare il throughput su link a banda larga e latenza alta."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "net_troubleshoot_3",
+      "english": "Latency Spike",
+      "set": {
+        "command": "ping -c 600 -i 0.1 -O backend.example.com | grep 'no answer'",
+        "task": "Pinga il backend ogni 100ms per un minuto registrando i timeout per individuare picchi di latenza correlati ad altri eventi."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "net_qos_1",
+      "english": "QoS",
+      "set": {
+        "command": "sudo tc qdisc add dev eth0 root handle 1: htb default 30",
+        "task": "Installa una qdisc HTB radice su eth0 con classe di default 30 come base della policy QoS multilivello dell'uplink."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "net_qos_1",
+      "english": "Traffic Policing",
+      "set": {
+        "command": "sudo tc filter add dev eth0 parent 1: protocol ip prio 1 u32 match ip dst 0/0 police rate 1mbit burst 10k drop",
+        "task": "Applica un policer a 1 Mbps con burst 10kB su eth0 che scarta il traffico IP eccedente la rate consentita."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "net_qos_1",
+      "english": "Priority Queuing",
+      "set": {
+        "command": "sudo tc qdisc add dev eth0 root handle 1: prio bands 3",
+        "task": "Installa una qdisc prio a tre bande su eth0 in modo che le bande a priorita' piu' alta vengano servite prima delle altre."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "net_qos_1",
+      "english": "Weighted Fair Queuing",
+      "set": {
+        "command": "sudo tc qdisc add dev eth0 root sfq perturb 10",
+        "task": "Configura una qdisc SFQ su eth0 con riallocazione hash ogni 10s per ottenere una coda equa pesata tra flussi."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "net_qos_1",
+      "english": "CBWFQ",
+      "set": {
+        "command": "policy-map QOS\n class VOICE\n  bandwidth percent 20\n class VIDEO\n  bandwidth percent 30",
+        "task": "Definisci una policy-map Cisco CBWFQ che riserva il 20% di banda alla voce e il 30% al video sull'uplink WAN."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "net_qos_1",
+      "english": "Bandwidth Reservation",
+      "set": {
+        "command": "sudo tc class add dev eth0 parent 1: classid 1:10 htb rate 5mbit ceil 10mbit",
+        "task": "Aggiungi una classe HTB con rate garantita 5 Mbps e ceiling 10 Mbps per riservare banda al traffico business critico."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "net_qos_1",
+      "english": "best-effort class",
+      "set": {
+        "command": "sudo iptables -t mangle -A POSTROUTING -j DSCP --set-dscp 0",
+        "task": "Marca con DSCP 0 (default forwarding) tutto il traffico uscente non gia' classificato, mappandolo sulla classe best-effort."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "net_qos_1",
+      "english": "Voice Traffic",
+      "set": {
+        "command": "sudo iptables -t mangle -A OUTPUT -p udp --dport 5060 -j DSCP --set-dscp-class EF",
+        "task": "Marca con DSCP EF il traffico SIP in uscita sulla porta 5060 per garantire bassa latenza e jitter alle chiamate voce."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "net_qos_dscp_2",
+      "english": "DSCP",
+      "set": {
+        "command": "sudo iptables -t mangle -A OUTPUT -p tcp --dport 443 -j DSCP --set-dscp 26",
+        "task": "Imposta DSCP AF31 sul traffico HTTPS uscente per dargli precedenza sulla classe business critical nella policy di rete."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "net_qos_dscp_2",
+      "english": "EF",
+      "set": {
+        "command": "tcpdump -i eth0 -nn 'ip and ip[1] & 0xfc = 0xb8'",
+        "task": "Cattura su eth0 i pacchetti marcati DSCP EF (46) per verificare che il traffico voce arrivi correttamente prioritizzato."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "net_qos_dscp_2",
+      "english": "AF",
+      "set": {
+        "command": "sudo iptables -t mangle -A OUTPUT -p tcp --dport 80 -j DSCP --set-dscp 10",
+        "task": "Marca il traffico HTTP in uscita con DSCP AF11 per assegnarlo alla classe AF1 con drop precedence bassa."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "net_qos_dscp_2",
+      "english": "CoS",
+      "set": {
+        "command": "sudo vconfig set_egress_map eth0.10 5 6",
+        "task": "Mappa il valore skb priority 5 sul CoS 6 dei frame uscenti dalla VLAN 10 per dare priorita' Layer 2 al traffico voce."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "net_qos_dscp_2",
+      "english": "Marking",
+      "set": {
+        "command": "sudo iptables -t mangle -A PREROUTING -i eth1 -p udp --dport 5004 -j DSCP --set-dscp-class EF",
+        "task": "Marca i pacchetti RTP in ingresso da eth1 con DSCP EF cosi' che il resto della rete riconosca la classe di servizio."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "net_qos_dscp_2",
+      "english": "Re-marking",
+      "set": {
+        "command": "policy-map RE-MARK\n class CLASS-UNTRUSTED\n  set dscp 0",
+        "task": "Definisci una policy che riazzera il DSCP del traffico arrivato da una porta non fidata, eliminando marcature fasulle."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "net_qos_rsvp_3",
+      "english": "RSVP",
+      "set": {
+        "command": "ip rsvp tunnel 1.1.1.1 ; ip rsvp bandwidth 10000 5000",
+        "task": "Abilita RSVP su un'interfaccia Cisco riservando 10 Mbps di banda totale con 5 Mbps massimi per singolo flusso."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "net_qos_rsvp_3",
+      "english": "Token Bucket",
+      "set": {
+        "command": "sudo tc qdisc add dev eth0 root tbf rate 1mbit burst 32kbit latency 400ms",
+        "task": "Applica una qdisc TBF su eth0 con rate 1 Mbps, burst 32kbit e latenza max 400ms per implementare un token bucket classico."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "net_qos_rsvp_3",
+      "english": "Leaky Bucket",
+      "set": {
+        "command": "sudo tc qdisc add dev eth0 root tbf rate 2mbit burst 1k latency 50ms",
+        "task": "Configura TBF su eth0 con burst minimo per emulare un leaky bucket che spiana il traffico bursty a 2 Mbps costanti."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "net_qos_rsvp_3",
+      "english": "WRED",
+      "set": {
+        "command": "random-detect dscp-based\n random-detect dscp 10 20 40 10",
+        "task": "Abilita WRED basato su DSCP su una classe Cisco con soglie min 20, max 40 e probabilita' di drop 1/10 per AF11."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "net_qos_linux_4",
+      "english": "qdisc",
+      "set": {
+        "command": "tc qdisc show dev eth0",
+        "task": "Elenca tutte le qdisc attualmente configurate su eth0 per ispezionare la pipeline di traffic control del kernel Linux."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "net_qos_linux_4",
+      "english": "pfifo_fast",
+      "set": {
+        "command": "sudo tc qdisc replace dev eth0 root pfifo_fast",
+        "task": "Reimposta su eth0 la qdisc legacy pfifo_fast con tre bande prioritarie basate sul campo ToS dell'header IP."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "net_qos_linux_4",
+      "english": "fq_codel",
+      "set": {
+        "command": "sudo tc qdisc replace dev eth0 root fq_codel",
+        "task": "Sostituisci la qdisc radice di eth0 con fq_codel per combattere il bufferbloat e ottenere fairness tra flussi."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "net_qos_linux_4",
+      "english": "CAKE",
+      "set": {
+        "command": "sudo tc qdisc replace dev eth0 root cake bandwidth 200mbit besteffort",
+        "task": "Configura CAKE su eth0 limitando l'uplink a 200 Mbps in modalita' best-effort per QoS integrata domestica."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "net_qos_linux_4",
+      "english": "HTB",
+      "set": {
+        "command": "sudo tc qdisc add dev eth0 root handle 1: htb default 30 ; sudo tc class add dev eth0 parent 1: classid 1:1 htb rate 100mbit",
+        "task": "Crea una gerarchia HTB su eth0 con classe radice da 100 Mbps come base per suddividere la banda tra dipartimenti."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "net_qos_linux_4",
+      "english": "eBPF QoS",
+      "set": {
+        "code": "from bcc import BPF\nb = BPF(text='int xdp_qos(struct xdp_md *ctx) { return XDP_PASS; }')\nb.attach_xdp(dev='eth0', fn=b.load_func('xdp_qos', BPF.XDP))",
+        "task": "Aggancia un programma eBPF/XDP a eth0 come scheletro per implementare politiche QoS custom senza modificare il kernel."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_bgp_1",
+      "english": "BGP",
+      "set": {
+        "command": "router bgp 65000\n neighbor 10.0.0.1 remote-as 65001\n network 192.168.1.0 mask 255.255.255.0",
+        "task": "Configura un router BGP nell'AS 65000 che fa peering con 10.0.0.1 in AS 65001 e annuncia la rete 192.168.1.0/24."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_bgp_1",
+      "english": "Autonomous System",
+      "set": {
+        "command": "whois -h whois.radb.net AS15169",
+        "task": "Interroga il database RADB sul numero di AS 15169 per scoprire titolare, contatti e politiche di routing dichiarate."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_bgp_1",
+      "english": "AS Number",
+      "set": {
+        "command": "whois -h whois.cymru.com ' -v 8.8.8.8'",
+        "task": "Risolvi l'IP 8.8.8.8 al suo AS Number di origine usando il servizio whois di Team Cymru per identificarne l'operatore."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_bgp_1",
+      "english": "eBGP",
+      "set": {
+        "command": "router bgp 65001\n neighbor 192.0.2.1 remote-as 65002\n neighbor 192.0.2.1 ebgp-multihop 2",
+        "task": "Configura un peering eBGP verso 192.0.2.1 in un AS diverso permettendo multihop 2 per attraversare un router intermedio."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_bgp_1",
+      "english": "iBGP",
+      "set": {
+        "command": "router bgp 65000\n neighbor 10.0.0.2 remote-as 65000\n neighbor 10.0.0.2 update-source Loopback0",
+        "task": "Configura una sessione iBGP dentro l'AS 65000 verso 10.0.0.2 usando Loopback0 come sorgente per stabilita' del peer."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_bgp_1",
+      "english": "AS Path",
+      "set": {
+        "command": "show ip bgp 8.8.8.0/24",
+        "task": "Visualizza l'AS Path delle rotte BGP verso il prefisso 8.8.8.0/24 per capire quali AS sono stati attraversati."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_bgp_1",
+      "english": "BGP Peer",
+      "set": {
+        "command": "show bgp summary",
+        "task": "Mostra il sommario delle sessioni BGP per verificare lo stato Established di ogni peer e i contatori di prefissi."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_bgp_1",
+      "english": "Route Reflector",
+      "set": {
+        "command": "router bgp 65000\n neighbor 10.0.0.10 route-reflector-client",
+        "task": "Designa il vicino iBGP 10.0.0.10 come client del route reflector per evitare la mesh completa tra tutti i router."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_bgp_1",
+      "english": "BGP Community",
+      "set": {
+        "command": "route-map TAG permit 10\n set community 65000:100",
+        "task": "Marca le rotte uscenti con la community 65000:100 cosi' che gli upstream applichino la policy concordata su quei prefissi."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_bgp_1",
+      "english": "Route Hijacking",
+      "set": {
+        "command": "bgpq4 -4l AS-EXAMPLE 'as-set:AS-EXAMPLE'",
+        "task": "Genera con bgpq4 le prefix-list IRR di un AS per filtrare annunci illegittimi e prevenire route hijacking sui peering."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_ospf_2",
+      "english": "OSPFv3",
+      "set": {
+        "command": "ipv6 router ospf 1\n interface Gi0/0\n  ipv6 ospf 1 area 0",
+        "task": "Abilita OSPFv3 sull'interfaccia Gi0/0 di un router Cisco assegnandola all'area 0 per il routing IPv6 nel backbone."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_ospf_2",
+      "english": "LSA",
+      "set": {
+        "command": "show ip ospf database",
+        "task": "Visualizza il database OSPF locale per ispezionare tutte le LSA ricevute e ricostruire la topologia del dominio."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_ospf_2",
+      "english": "LSDB",
+      "set": {
+        "command": "show ip ospf database router",
+        "task": "Esamina le Router-LSA presenti nella LSDB di un router OSPF per verificare la coerenza del grafo della topologia."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_ospf_2",
+      "english": "OSPF Area",
+      "set": {
+        "command": "router ospf 1\n network 10.1.0.0 0.0.255.255 area 1",
+        "task": "Configura il router OSPF processo 1 perche' includa la rete 10.1.0.0/16 nell'area 1 separata dal backbone."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_ospf_2",
+      "english": "Backbone Area",
+      "set": {
+        "command": "router ospf 1\n network 10.0.0.0 0.0.0.255 area 0",
+        "task": "Inserisci la rete di transit 10.0.0.0/24 nell'area 0 (backbone) OSPF che dovra' connettere tutte le altre aree."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_ospf_2",
+      "english": "ABR",
+      "set": {
+        "command": "router ospf 1\n area 1 range 10.1.0.0 255.255.0.0",
+        "task": "Configura un ABR perche' sommarizzi le rotte dell'area 1 in un singolo prefisso /16 verso il backbone."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_ospf_2",
+      "english": "ASBR",
+      "set": {
+        "command": "router ospf 1\n redistribute bgp 65000 subnets",
+        "task": "Configura il router come ASBR redistribuendo le rotte BGP dell'AS 65000 dentro OSPF preservando le subnet originali."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_ospf_2",
+      "english": "DR",
+      "set": {
+        "command": "interface Gi0/0\n ip ospf priority 200",
+        "task": "Imposta priority OSPF alta sull'interfaccia Gi0/0 cosi' che il router diventi DR sul segmento multi-access broadcast."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_ospf_2",
+      "english": "BDR",
+      "set": {
+        "command": "show ip ospf neighbor",
+        "task": "Elenca i vicini OSPF mostrando ruoli DR/BDR e stato Full per confermare l'elezione del backup designated router."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_ospf_2",
+      "english": "Stub Area",
+      "set": {
+        "command": "router ospf 1\n area 2 stub",
+        "task": "Configura l'area 2 come stub OSPF cosi' che le LSA esterne vengano sostituite da una sola default-route nei router interni."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_eigrp_3",
+      "english": "EIGRP named mode",
+      "set": {
+        "command": "router eigrp CAMPUS\n address-family ipv4 unicast autonomous-system 100\n  network 10.0.0.0 0.255.255.255",
+        "task": "Configura EIGRP in named mode con istanza CAMPUS e AS 100 raggruppando in un solo blocco gerarchico tutte le impostazioni."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_eigrp_3",
+      "english": "DUAL",
+      "set": {
+        "command": "show ip eigrp topology",
+        "task": "Visualizza la tabella di topologia EIGRP per ispezionare i candidati DUAL e capire come e' stato scelto il successor corrente."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_eigrp_3",
+      "english": "Successor",
+      "set": {
+        "command": "show ip eigrp topology 10.1.1.0/24",
+        "task": "Esamina la rotta verso 10.1.1.0/24 in EIGRP per identificare il successor corrente e la sua feasible distance."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_eigrp_3",
+      "english": "Feasible Successor",
+      "set": {
+        "command": "show ip eigrp topology all-links",
+        "task": "Mostra anche le rotte alternative EIGRP non installate per identificare quali pari soddisfano il feasibility condition."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_eigrp_3",
+      "english": "IS-IS",
+      "set": {
+        "command": "router isis CORE\n net 49.0001.0000.0000.0001.00\n is-type level-2-only",
+        "task": "Configura IS-IS area 49.0001 come router level-2-only nel backbone di un service provider con NET locale .0001.00."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_eigrp_3",
+      "english": "NSSA",
+      "set": {
+        "command": "router ospf 1\n area 3 nssa",
+        "task": "Configura l'area 3 OSPF come NSSA cosi' che un ASBR locale possa importare rotte esterne tramite Type-7 LSA."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_eigrp_3",
+      "english": "Totally Stubby",
+      "set": {
+        "command": "router ospf 1\n area 4 stub no-summary",
+        "task": "Configura l'area 4 come totally stubby Cisco bloccando sia external che inter-area LSA, lasciando solo una default-route."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_eigrp_3",
+      "english": "Virtual Link",
+      "set": {
+        "command": "router ospf 1\n area 1 virtual-link 10.0.0.5",
+        "task": "Stabilisci un virtual link OSPF attraverso l'area 1 verso il router 10.0.0.5 per ricollegare un'area orfana al backbone."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_eigrp_3",
+      "english": "Route Map",
+      "set": {
+        "command": "route-map FILTER permit 10\n match ip address prefix-list PUBLIC\n set local-preference 200",
+        "task": "Definisci una route-map che imposta local-preference 200 sulle rotte che matchano la prefix-list PUBLIC durante l'import BGP."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_mpls_4",
+      "english": "MPLS",
+      "set": {
+        "command": "mpls ip\n interface Gi0/0\n  mpls ip",
+        "task": "Abilita globalmente MPLS e sull'interfaccia core Gi0/0 di un router Cisco per attivare label switching nel backbone."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_mpls_4",
+      "english": "Label",
+      "set": {
+        "command": "show mpls forwarding-table",
+        "task": "Visualizza la tabella di forwarding MPLS locale per vedere quali etichette in ingresso vengono swappate verso quali next-hop."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_mpls_4",
+      "english": "LSP",
+      "set": {
+        "command": "show mpls ldp bindings",
+        "task": "Mostra i binding LDP per ispezionare l'etichetta associata a ciascun prefisso lungo l'LSP nel core MPLS."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_mpls_4",
+      "english": "LDP",
+      "set": {
+        "command": "mpls ldp router-id Loopback0 force\n mpls label protocol ldp",
+        "task": "Configura LDP come protocollo di distribuzione etichette MPLS usando Loopback0 come router-id stabile su un PE."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_mpls_4",
+      "english": "PE Router",
+      "set": {
+        "command": "vrf definition CUSTOMER-A\n rd 65000:1\n address-family ipv4\n  route-target both 65000:1",
+        "task": "Configura una VRF cliente su un PE con route-distinguisher e route-target per separare il routing nel servizio L3VPN."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_mpls_4",
+      "english": "P Router",
+      "set": {
+        "command": "show mpls interfaces",
+        "task": "Verifica su un router P quali interfacce hanno MPLS attivo per confermare che faccia solo label switching nel core."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_mpls_4",
+      "english": "CE Router",
+      "set": {
+        "command": "router bgp 65010\n neighbor 192.0.2.1 remote-as 65000",
+        "task": "Configura sul CE un peering eBGP verso il PE 192.0.2.1 del provider per scambiare le rotte del sito tramite L3VPN."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_mpls_4",
+      "english": "L3VPN",
+      "set": {
+        "command": "show ip route vrf CUSTOMER-A",
+        "task": "Ispeziona la tabella di routing della VRF CUSTOMER-A su un PE per verificare quali rotte L3VPN sono installate."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_mpls_4",
+      "english": "Segment Routing",
+      "set": {
+        "command": "segment-routing mpls\n connected-prefix-sid-map\n  address-family ipv4\n   10.0.0.1/32 index 100",
+        "task": "Abilita Segment Routing MPLS associando alla loopback 10.0.0.1/32 l'indice SID 100 per traffic engineering semplificato."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "net_sdn_1",
+      "english": "OpenFlow",
+      "set": {
+        "command": "sudo ovs-ofctl -O OpenFlow13 dump-flows br0",
+        "task": "Elenca tutti i flussi OpenFlow 1.3 installati sul bridge br0 di Open vSwitch per verificare la programmazione del data plane."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "net_sdn_1",
+      "english": "Flow Table",
+      "set": {
+        "command": "sudo ovs-ofctl add-flow br0 'priority=100,ip,nw_dst=10.0.0.5,actions=output:2'",
+        "task": "Inserisci nella flow table di br0 una regola priorita' 100 che inoltra il traffico IP verso 10.0.0.5 sulla porta 2."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "net_sdn_nfv_2",
+      "english": "VXLAN",
+      "set": {
+        "command": "sudo ip link add vxlan100 type vxlan id 100 dstport 4789 local 10.0.0.1 remote 10.0.0.2",
+        "task": "Crea un'interfaccia VXLAN con VNI 100 tra gli endpoint 10.0.0.1 e 10.0.0.2 sulla porta UDP standard 4789."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "net_sdn_nfv_2",
+      "english": "VNI",
+      "set": {
+        "command": "ip -d link show vxlan100 | grep vxlan",
+        "task": "Visualizza i dettagli dell'interfaccia VXLAN per verificare il VNI configurato e confermare l'isolamento del segmento."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "net_sdn_nfv_2",
+      "english": "VTEP",
+      "set": {
+        "command": "bridge fdb append 00:00:00:00:00:00 dev vxlan100 dst 10.0.0.3",
+        "task": "Aggiungi un VTEP remoto 10.0.0.3 al forwarding database del tunnel VXLAN per attivare la replica BUM verso l'altro endpoint."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "net_sdn_nfv_2",
+      "english": "GRE",
+      "set": {
+        "command": "sudo ip tunnel add gre1 mode gre remote 198.51.100.1 local 203.0.113.1 ttl 255",
+        "task": "Crea un tunnel GRE punto-punto tra 203.0.113.1 e 198.51.100.1 per incapsulare e trasportare protocolli arbitrari."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "net_sdn_nfv_2",
+      "english": "Geneve",
+      "set": {
+        "command": "sudo ip link add gnv0 type geneve id 1000 remote 10.0.0.5",
+        "task": "Configura un'interfaccia Geneve con VNI 1000 verso 10.0.0.5 per un overlay flessibile compatibile con OVN e NSX."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "net_sdn_nfv_2",
+      "english": "EVPN",
+      "set": {
+        "command": "router bgp 65000\n address-family l2vpn evpn\n  neighbor 10.0.0.2 activate",
+        "task": "Attiva la address-family EVPN con il vicino 10.0.0.2 per distribuire MAC e prefissi tenant tramite BGP nel data center."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "net_sdn_p4_3",
+      "english": "P4",
+      "set": {
+        "code": "header ethernet_t {\n    bit<48> dstAddr;\n    bit<48> srcAddr;\n    bit<16> etherType;\n}\nparser MyParser(packet_in p, out headers h) {\n    state start { p.extract(h.ethernet); transition accept; }\n}",
+        "task": "Definisci in P4 un header Ethernet e un parser che estrae i suoi campi come scheletro di un programma per data plane custom."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "net_sdn_p4_3",
+      "english": "Match-Action Pipeline",
+      "set": {
+        "code": "table ipv4_lpm {\n    key = { hdr.ipv4.dstAddr: lpm; }\n    actions = { forward; drop; NoAction; }\n    default_action = NoAction;\n}",
+        "task": "Definisci in P4 una tabella match-action LPM su IPv4 destinazione che instrada o scarta i pacchetti secondo la regola installata."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "net_sdn_p4_3",
+      "english": "Parser",
+      "set": {
+        "code": "parser MyParser(packet_in p, out headers h) {\n    state start { p.extract(h.ethernet); transition select(h.ethernet.etherType) { 0x0800: parse_ipv4; default: accept; } }\n    state parse_ipv4 { p.extract(h.ipv4); transition accept; }\n}",
+        "task": "Scrivi un parser P4 che estrae l'header Ethernet e prosegue su IPv4 quando l'etherType vale 0x0800 a inizio pipeline."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "net_sdn_p4_3",
+      "english": "eBPF",
+      "set": {
+        "command": "sudo bpftool prog show",
+        "task": "Elenca tutti i programmi eBPF caricati nel kernel per verificare quali agganci di rete e tracing sono attualmente attivi."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "net_sdn_p4_3",
+      "english": "XDP",
+      "set": {
+        "command": "sudo ip link set dev eth0 xdp obj filter.o sec xdp",
+        "task": "Carica un programma XDP compilato dall'oggetto filter.o sull'interfaccia eth0 per filtrare pacchetti a livello driver."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "net_sdn_p4_3",
+      "english": "DPDK",
+      "set": {
+        "command": "sudo dpdk-devbind.py --bind=vfio-pci 0000:01:00.0",
+        "task": "Associa la NIC con BDF 01:00.0 al driver vfio-pci per portarla sotto controllo DPDK e ottenere I/O kernel-bypass."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "net_sdn_intent_4",
+      "english": "Network Automation",
+      "set": {
+        "code": "from netmiko import ConnectHandler\ndev = {'device_type': 'cisco_ios', 'host': '10.0.0.1', 'username': 'admin', 'password': 'secret'}\nwith ConnectHandler(**dev) as c:\n    print(c.send_command('show ip interface brief'))",
+        "task": "Automatizza con netmiko la raccolta di 'show ip interface brief' su un router Cisco autenticandoti via SSH come admin."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "net_sdn_intent_4",
+      "english": "Telemetry",
+      "set": {
+        "command": "gnmic -a router.example.com:57400 -u admin --insecure subscribe --path /interfaces/interface/state/counters",
+        "task": "Sottoscrivi via gNMI i contatori delle interfacce del router per ricevere telemetria streaming in tempo reale."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "net_sdn_intent_4",
+      "english": "OVS",
+      "set": {
+        "command": "sudo ovs-vsctl add-br br0 && sudo ovs-vsctl add-port br0 eth1",
+        "task": "Crea un bridge Open vSwitch br0 e aggiungi la porta fisica eth1 per virtualizzare la rete del workload."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "net_security_idsips_1",
+      "english": "Snort",
+      "set": {
+        "command": "sudo snort -A console -q -c /etc/snort/snort.conf -i eth0",
+        "task": "Avvia Snort in modalita' IDS sull'interfaccia eth0 con regole standard, scrivendo gli alert in console quietamente."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "net_security_idsips_1",
+      "english": "Suricata",
+      "set": {
+        "command": "sudo suricata -c /etc/suricata/suricata.yaml -i eth0",
+        "task": "Esegui Suricata sull'interfaccia eth0 con la sua configurazione standard per sfruttare il motore multi-thread di rilevamento."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "net_security_idsips_1",
+      "english": "Signature",
+      "set": {
+        "command": "alert tcp any any -> $HOME_NET 80 (msg:\"Shellshock\"; content:\"() {\"; sid:1000001;)",
+        "task": "Scrivi una signature Snort che fa scattare un alert sul pattern Shellshock '() {' nel traffico HTTP entrante verso la rete interna."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "net_security_dmz_2",
+      "english": "Honeypot",
+      "set": {
+        "command": "docker run -d -p 2222:2222 cowrie/cowrie",
+        "task": "Avvia un container Cowrie come honeypot SSH che simula una shell vulnerabile sulla porta 2222 per registrare gli attacchi."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "net_security_dmz_2",
+      "english": "Tarpit",
+      "set": {
+        "command": "sudo iptables -A INPUT -p tcp --dport 25 -j TARPIT",
+        "task": "Applica iptables TARPIT sulla porta 25 per accettare le connessioni SMTP malevole ma rispondere lentissimo, esaurendo l'attaccante."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "net_security_dmz_2",
+      "english": "IoC",
+      "set": {
+        "command": "grep -F -f iocs.txt /var/log/squid/access.log",
+        "task": "Cerca nei log del proxy gli indicatori di compromissione (IP, domini) elencati nel file iocs.txt forniti dal threat intel feed."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "net_security_zerotrust_3",
+      "english": "Microsegmentation",
+      "set": {
+        "command": "sudo iptables -A INPUT -s 10.0.10.0/24 -d 10.0.20.0/24 -p tcp --dport 5432 -j ACCEPT",
+        "task": "Crea una regola di microsegmentazione che permette solo al segmento app di parlare al DB sulla porta PostgreSQL, bloccando il resto."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "net_security_zerotrust_3",
+      "english": "802.1X",
+      "set": {
+        "command": "interface Gi0/1\n authentication port-control auto\n dot1x pae authenticator",
+        "task": "Configura una porta switch Cisco con 802.1X in modalita' auto per richiedere l'autenticazione del client prima dell'accesso."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "net_security_attacks_4",
+      "english": "DDoS",
+      "set": {
+        "command": "sudo iptables -A INPUT -p tcp --syn -m connlimit --connlimit-above 50 -j DROP",
+        "task": "Limita ogni IP a un massimo di 50 connessioni TCP simultanee in ingresso come prima difesa contro flood DDoS di base."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "net_security_attacks_4",
+      "english": "SYN Flood",
+      "set": {
+        "command": "sudo sysctl -w net.ipv4.tcp_syncookies=1",
+        "task": "Attiva i SYN cookies nel kernel per gestire flood di SYN senza esaurire la coda delle connessioni half-open."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "net_security_attacks_4",
+      "english": "Amplification Attack",
+      "set": {
+        "command": "sudo iptables -A INPUT -p udp --dport 53 ! -s 10.0.0.0/8 -m hashlimit --hashlimit-name dnsamp --hashlimit-above 50/sec -j DROP",
+        "task": "Limita le query DNS UDP esterne a 50/s per IP sul resolver per impedire che venga sfruttato in attacchi di amplificazione."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "net_security_attacks_4",
+      "english": "Spoofing",
+      "set": {
+        "command": "sudo arpspoof -i eth0 -t 192.168.1.10 192.168.1.1",
+        "task": "Simula in laboratorio ARP spoofing tra la vittima 192.168.1.10 e il gateway 192.168.1.1 per testare le difese del segmento."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "net_security_attacks_4",
+      "english": "Sniffing",
+      "set": {
+        "command": "sudo tcpdump -i eth0 -n -w /tmp/capture.pcap",
+        "task": "Cattura tutto il traffico passivamente da eth0 dentro un file pcap per analisi successiva con Wireshark o tshark."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "net_security_attacks_4",
+      "english": "MITM",
+      "set": {
+        "command": "sudo mitmproxy --mode transparent --showhost",
+        "task": "Avvia mitmproxy in modalita' trasparente in laboratorio per intercettare e ispezionare il traffico HTTPS dei client di test."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "net_security_attacks_4",
+      "english": "DNS Spoofing",
+      "set": {
+        "command": "sudo dnsspoof -i eth0 -f hosts.spoof",
+        "task": "Esegui dnsspoof in un lab isolato per dirottare query DNS verso indirizzi controllati e valutare la postura della rete."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "net_cloud_vpc_1",
+      "english": "VPC",
+      "set": {
+        "command": "aws ec2 create-vpc --cidr-block 10.0.0.0/16 --tag-specifications 'ResourceType=vpc,Tags=[{Key=Name,Value=prod}]'",
+        "task": "Crea una VPC su AWS con CIDR 10.0.0.0/16 e tag Name=prod per isolare le risorse di produzione nel proprio cloud privato."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "net_cloud_vpc_1",
+      "english": "VNet",
+      "set": {
+        "command": "az network vnet create -g rg-prod -n vnet-prod --address-prefixes 10.10.0.0/16",
+        "task": "Provisiona una VNet Azure con prefisso 10.10.0.0/16 nel resource group rg-prod come base della rete cloud aziendale."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "net_cloud_vpc_1",
+      "english": "Public Subnet",
+      "set": {
+        "command": "aws ec2 create-subnet --vpc-id vpc-1234 --cidr-block 10.0.1.0/24 --availability-zone eu-west-1a",
+        "task": "Crea una public subnet 10.0.1.0/24 nella VPC vpc-1234 in eu-west-1a destinata a ospitare i web server raggiungibili da Internet."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "net_cloud_vpc_1",
+      "english": "Private Subnet",
+      "set": {
+        "command": "aws ec2 create-subnet --vpc-id vpc-1234 --cidr-block 10.0.2.0/24 --availability-zone eu-west-1a",
+        "task": "Crea una private subnet 10.0.2.0/24 senza route diretta a Internet per ospitare i database isolati dietro NAT Gateway."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "net_cloud_vpc_1",
+      "english": "Internet Gateway",
+      "set": {
+        "command": "aws ec2 create-internet-gateway && aws ec2 attach-internet-gateway --internet-gateway-id igw-abc --vpc-id vpc-1234",
+        "task": "Crea un Internet Gateway su AWS e collegalo alla VPC vpc-1234 per permettere alle public subnet di scambiare traffico con Internet."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "net_cloud_vpc_1",
+      "english": "NAT Gateway",
+      "set": {
+        "command": "aws ec2 create-nat-gateway --subnet-id subnet-pub --allocation-id eipalloc-1",
+        "task": "Provisiona un NAT Gateway nella subnet pubblica usando un EIP allocato cosi' che le private subnet possano fare egress verso Internet."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "net_cloud_vpc_1",
+      "english": "Security Group",
+      "set": {
+        "command": "aws ec2 authorize-security-group-ingress --group-id sg-abc --protocol tcp --port 443 --cidr 0.0.0.0/0",
+        "task": "Autorizza il traffico HTTPS in ingresso da Internet sul security group sg-abc del load balancer pubblico stateful."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "net_cloud_vpc_1",
+      "english": "NACL",
+      "set": {
+        "command": "aws ec2 create-network-acl-entry --network-acl-id acl-abc --rule-number 100 --protocol tcp --port-range From=443,To=443 --cidr-block 0.0.0.0/0 --rule-action allow --ingress",
+        "task": "Aggiungi una regola NACL stateless che permette HTTPS in ingresso sulla subnet, ricordando di consentire anche l'egress di risposta."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "net_cloud_vpc_1",
+      "english": "Availability Zone",
+      "set": {
+        "command": "aws ec2 describe-availability-zones --region eu-west-1",
+        "task": "Elenca le AZ disponibili nella regione eu-west-1 per pianificare la distribuzione multi-AZ delle risorse critiche."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "net_cloud_vpc_1",
+      "english": "Region",
+      "set": {
+        "command": "aws ec2 describe-regions --query 'Regions[].RegionName' --output text",
+        "task": "Elenca tutte le region AWS abilitate sull'account per scegliere quella ottimale in termini di latenza e residenza dei dati."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "net_cloud_peering_2",
+      "english": "VPC Peering",
+      "set": {
+        "command": "aws ec2 create-vpc-peering-connection --vpc-id vpc-A --peer-vpc-id vpc-B",
+        "task": "Avvia una richiesta di VPC peering tra vpc-A e vpc-B per consentire traffico privato bidirezionale fra le due reti AWS."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "net_cloud_peering_2",
+      "english": "Transit Gateway",
+      "set": {
+        "command": "aws ec2 create-transit-gateway --description 'hub-prod'",
+        "task": "Crea un Transit Gateway AWS chiamato hub-prod come hub centrale per collegare molte VPC e VPN aziendali."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "net_cloud_peering_2",
+      "english": "VPC Endpoint",
+      "set": {
+        "command": "aws ec2 create-vpc-endpoint --vpc-id vpc-1234 --service-name com.amazonaws.eu-west-1.s3 --route-table-ids rtb-1",
+        "task": "Crea un Gateway Endpoint S3 sulla VPC vpc-1234 per accedere a S3 senza far passare il traffico per Internet."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "net_cloud_peering_2",
+      "english": "PrivateLink",
+      "set": {
+        "command": "aws ec2 create-vpc-endpoint --vpc-id vpc-1234 --vpc-endpoint-type Interface --service-name com.amazonaws.eu-west-1.secretsmanager",
+        "task": "Esponi Secrets Manager privatamente nella VPC tramite PrivateLink in modo che le istanze non debbano uscire su Internet."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "net_cloud_peering_2",
+      "english": "Direct Connect",
+      "set": {
+        "command": "aws directconnect describe-connections",
+        "task": "Mostra le connessioni Direct Connect attive sull'account per verificare lo stato dei link dedicati tra on-prem e AWS."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "net_cloud_peering_2",
+      "english": "ExpressRoute",
+      "set": {
+        "command": "az network express-route list -o table",
+        "task": "Elenca i circuiti ExpressRoute attivi sulla subscription Azure per verificare provider, banda e stato dei link dedicati."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "net_cloud_peering_2",
+      "english": "Cloud Interconnect",
+      "set": {
+        "command": "gcloud compute interconnects list",
+        "task": "Elenca i Cloud Interconnect attivi sul progetto GCP per controllare i link fisici dedicati verso le VPC del provider."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "net_cloud_peering_2",
+      "english": "Site-to-Cloud VPN",
+      "set": {
+        "command": "aws ec2 create-vpn-connection --customer-gateway-id cgw-1 --vpn-gateway-id vgw-1 --type ipsec.1",
+        "task": "Crea una VPN site-to-cloud IPsec tra il customer gateway on-prem e il VPN gateway della VPC AWS per replicare il database."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "net_cloud_lb_3",
+      "english": "ELB",
+      "set": {
+        "command": "aws elbv2 create-load-balancer --name web-elb --subnets subnet-a subnet-b --scheme internet-facing",
+        "task": "Provisiona un load balancer ELB internet-facing su due subnet AZ-diverse per distribuire il traffico HTTP del frontend."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "net_cloud_lb_3",
+      "english": "ALB",
+      "set": {
+        "command": "aws elbv2 create-load-balancer --name app-alb --type application --subnets subnet-a subnet-b",
+        "task": "Crea un Application Load Balancer L7 su due subnet pubbliche per instradare richieste HTTPS ai microservizi backend."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "net_cloud_lb_3",
+      "english": "NLB",
+      "set": {
+        "command": "aws elbv2 create-load-balancer --name tcp-nlb --type network --subnets subnet-a subnet-b",
+        "task": "Provisiona un Network Load Balancer L4 ad altissima performance per esporre servizi TCP con preservazione dell'IP sorgente."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "net_cloud_lb_3",
+      "english": "Target Group",
+      "set": {
+        "command": "aws elbv2 create-target-group --name api-tg --protocol HTTP --port 8080 --vpc-id vpc-1234 --target-type instance",
+        "task": "Crea un target group HTTP/8080 per registrare le istanze EC2 del servizio API dietro l'Application Load Balancer."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "net_cloud_lb_3",
+      "english": "Listener",
+      "set": {
+        "command": "aws elbv2 create-listener --load-balancer-arn $LB_ARN --protocol HTTPS --port 443 --certificates CertificateArn=$CERT_ARN --default-actions Type=forward,TargetGroupArn=$TG_ARN",
+        "task": "Configura un listener HTTPS sulla porta 443 dell'ALB con certificato ACM che inoltra le richieste al target group api-tg."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "net_cloud_lb_3",
+      "english": "CloudFront",
+      "set": {
+        "command": "aws cloudfront create-distribution --origin-domain-name static.example.com.s3.amazonaws.com",
+        "task": "Crea una distribuzione CloudFront davanti al bucket S3 statico per servire gli asset attraverso la rete edge globale AWS."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "net_cloud_dns_4",
+      "english": "Route 53",
+      "set": {
+        "command": "aws route53 change-resource-record-sets --hosted-zone-id Z123 --change-batch file://record.json",
+        "task": "Aggiorna un record DNS nella hosted zone Z123 di Route 53 applicando il change batch definito in record.json."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "net_cloud_dns_4",
+      "english": "Cloud DNS",
+      "set": {
+        "command": "gcloud dns record-sets create www.example.com. --zone=prod --type=A --ttl=300 --rrdatas=203.0.113.10",
+        "task": "Crea un record A per www.example.com nella zona prod di Cloud DNS con TTL 300 puntando al frontend pubblico."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "net_cloud_dns_4",
+      "english": "Latency-Based Routing",
+      "set": {
+        "command": "aws route53 change-resource-record-sets --hosted-zone-id Z1 --change-batch '{\"Changes\":[{\"Action\":\"CREATE\",\"ResourceRecordSet\":{\"Name\":\"app.example.com\",\"Type\":\"A\",\"SetIdentifier\":\"eu\",\"Region\":\"eu-west-1\",\"TTL\":60,\"ResourceRecords\":[{\"Value\":\"10.0.0.1\"}]}}]}'",
+        "task": "Crea un record A in Route 53 con routing latency-based verso eu-west-1 cosi' che gli utenti raggiungano la region piu' veloce."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "net_cloud_dns_4",
+      "english": "Geolocation Routing",
+      "set": {
+        "command": "aws route53 change-resource-record-sets --hosted-zone-id Z1 --change-batch file://geo.json",
+        "task": "Applica via change batch una politica di geolocation routing su Route 53 per inviare gli utenti europei al server regionale corretto."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "net_cloud_dns_4",
+      "english": "Failover Routing",
+      "set": {
+        "command": "aws route53 change-resource-record-sets --hosted-zone-id Z1 --change-batch file://failover.json",
+        "task": "Configura su Route 53 una coppia di record primary/secondary con failover automatico in caso di health check fallito."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "net_cloud_dns_4",
+      "english": "Hosted Zone",
+      "set": {
+        "command": "aws route53 create-hosted-zone --name example.com --caller-reference $(date +%s)",
+        "task": "Crea una hosted zone pubblica per example.com in Route 53 come base per gestire i record DNS del dominio aziendale."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "net_cloud_dns_4",
+      "english": "Private Hosted Zone",
+      "set": {
+        "command": "aws route53 create-hosted-zone --name internal.corp --vpc VPCRegion=eu-west-1,VPCId=vpc-1234 --caller-reference $(date +%s)",
+        "task": "Crea una private hosted zone internal.corp associata alla VPC vpc-1234 perche' i servizi interni risolvano solo da dentro la rete."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "net_cloud_dns_4",
+      "english": "DNS health check",
+      "set": {
+        "command": "aws route53 create-health-check --caller-reference $(date +%s) --health-check-config Type=HTTPS,FullyQualifiedDomainName=api.example.com,Port=443,RequestInterval=30,FailureThreshold=3",
+        "task": "Crea un DNS health check HTTPS su api.example.com cosi' che Route 53 escluda gli endpoint non sani dal set di risposta."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_tools_1",
+      "english": "Ansible",
+      "set": {
+        "command": "ansible-playbook -i inventory.yml configure_switches.yml",
+        "task": "Esegui un playbook Ansible contro l'inventario di rete per configurare gli switch senza installare alcun agent."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_tools_1",
+      "english": "Inventory",
+      "set": {
+        "code": "[edge_routers]\nrouter-mil ansible_host=10.0.1.1\nrouter-rom ansible_host=10.0.1.2\n\n[core_switches]\ncore-mi-01 ansible_host=10.0.2.1",
+        "task": "Definisci un inventario Ansible che raggruppa router edge e switch core per puntare i playbook solo alla classe corretta di device."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_tools_1",
+      "english": "Module",
+      "set": {
+        "code": "- name: configure interface\n  cisco.ios.ios_l3_interfaces:\n    config:\n      - name: GigabitEthernet0/0\n        ipv4:\n          - address: 10.0.0.1/30",
+        "task": "Usa il modulo ios_l3_interfaces di Ansible per impostare l'IP 10.0.0.1/30 sull'interfaccia Gi0/0 di un router Cisco."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_tools_1",
+      "english": "Salt",
+      "set": {
+        "command": "sudo salt '*' net.cli 'show version'",
+        "task": "Esegui via Salt il comando 'show version' su tutti i minion di rete sfruttando il bus ZeroMQ per applicarli in pochi secondi."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_tools_1",
+      "english": "Puppet",
+      "set": {
+        "code": "node 'router1' {\n  cisco_interface { 'GigabitEthernet0/0':\n    description => 'WAN uplink',\n    shutdown    => false,\n  }\n}",
+        "task": "Definisci con Puppet la configurazione dichiarativa di Gi0/0 sul router1 imponendo descrizione WAN uplink e interfaccia attiva."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_tools_1",
+      "english": "Terraform",
+      "set": {
+        "code": "resource \"aws_vpc\" \"prod\" {\n  cidr_block = \"10.0.0.0/16\"\n  tags = { Name = \"prod\" }\n}",
+        "task": "Definisci con Terraform una VPC AWS chiamata prod con CIDR 10.0.0.0/16 come base infrastructure-as-code della rete di produzione."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_tools_1",
+      "english": "Source of Truth",
+      "set": {
+        "command": "curl -H 'Authorization: Token $NETBOX_TOKEN' https://netbox.example.com/api/dcim/devices/",
+        "task": "Interroga l'API NetBox per recuperare l'elenco dispositivi della source of truth come input degli script di automazione di rete."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_apis_2",
+      "english": "NETCONF",
+      "set": {
+        "code": "from ncclient import manager\nwith manager.connect(host='10.0.0.1', port=830, username='admin', password='secret', hostkey_verify=False) as m:\n    print(m.get_config(source='running'))",
+        "task": "Recupera con ncclient la running-config XML del router via NETCONF sulla porta 830 autenticandoti come admin."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_apis_2",
+      "english": "RESTCONF",
+      "set": {
+        "command": "curl -k -u admin:secret -H 'Accept: application/yang-data+json' https://10.0.0.1/restconf/data/Cisco-IOS-XE-native:native",
+        "task": "Richiedi via RESTCONF la configurazione native YANG del router IOS-XE in formato JSON per integrare un tool di automazione."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_apis_2",
+      "english": "YANG",
+      "set": {
+        "command": "pyang -f tree openconfig-interfaces.yang",
+        "task": "Visualizza in formato albero il modello YANG openconfig-interfaces con pyang per orientarti tra le foglie configurabili."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_apis_2",
+      "english": "gNMI",
+      "set": {
+        "command": "gnmic -a 10.0.0.1:57400 -u admin -p secret --insecure get --path /interfaces/interface",
+        "task": "Recupera via gNMI lo stato di tutte le interfacce del router usando gnmic come client da riga di comando."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_apis_2",
+      "english": "gRPC",
+      "set": {
+        "code": "import grpc\nfrom gnmi import gnmi_pb2_grpc, gnmi_pb2\nchannel = grpc.secure_channel('router:57400', grpc.ssl_channel_credentials())\nstub = gnmi_pb2_grpc.gNMIStub(channel)",
+        "task": "Apri un canale gRPC sicuro verso un router sulla porta gNMI 57400 come base per inviare richieste binarie efficienti."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_apis_2",
+      "english": "OpenConfig",
+      "set": {
+        "command": "gnmic -a router:57400 --insecure -u admin get --path '/openconfig-interfaces:interfaces/interface[name=eth1]/state'",
+        "task": "Recupera via gNMI lo stato di eth1 usando il modello vendor-neutral OpenConfig per un consumo identico tra vendor."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_apis_2",
+      "english": "JSON-RPC",
+      "set": {
+        "command": "curl -u admin:secret -H 'Content-Type: application/json' -d '{\"jsonrpc\":\"2.0\",\"method\":\"cli\",\"params\":{\"cmds\":[\"show version\"]},\"id\":1}' http://10.0.0.1/command-api",
+        "task": "Invia un comando 'show version' a un'eAPI Arista via JSON-RPC su HTTP per orchestrare il dispositivo da uno script."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_apis_2",
+      "english": "CLI Scraping",
+      "set": {
+        "code": "from netmiko import ConnectHandler\nwith ConnectHandler(device_type='cisco_ios', host='10.0.0.1', username='admin', password='secret') as c:\n    output = c.send_command('show interface status')\n    print(output)",
+        "task": "Esegui CLI scraping con netmiko per catturare l'output di 'show interface status' come fallback quando il device non espone API."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_apis_2",
+      "english": "Streaming Telemetry",
+      "set": {
+        "command": "gnmic -a router:57400 --insecure -u admin subscribe --path /interfaces/interface/state/counters --sample-interval 10s",
+        "task": "Sottoscrivi i contatori delle interfacce via gNMI con campionamento a 10s per sostituire il polling SNMP con streaming continuo."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_python_3",
+      "english": "NAPALM",
+      "set": {
+        "code": "from napalm import get_network_driver\ndriver = get_network_driver('ios')\nwith driver('10.0.0.1', 'admin', 'secret') as d:\n    print(d.get_facts())",
+        "task": "Usa NAPALM per recuperare i facts del router Cisco IOS via un'astrazione multivendor uniforme senza scrivere parser custom."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_python_3",
+      "english": "Nornir",
+      "set": {
+        "code": "from nornir import InitNornir\nfrom nornir_netmiko import netmiko_send_command\nnr = InitNornir(config_file='config.yaml')\nresult = nr.run(task=netmiko_send_command, command_string='show version')",
+        "task": "Inizializza Nornir con config.yaml e lancia 'show version' in parallelo su tutti gli host dell'inventario di automazione di rete."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_python_3",
+      "english": "Paramiko",
+      "set": {
+        "code": "import paramiko\nc = paramiko.SSHClient()\nc.set_missing_host_key_policy(paramiko.AutoAddPolicy())\nc.connect('10.0.0.1', username='admin', password='secret')\n_, out, _ = c.exec_command('show ip route')",
+        "task": "Apri via Paramiko una sessione SSH al router e raccogli l'output di 'show ip route' direttamente da uno script Python."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_python_3",
+      "english": "pyATS",
+      "set": {
+        "command": "pyats run job interfaces_test.py --testbed testbed.yaml",
+        "task": "Esegui un job pyATS contro un testbed per validare lo stato delle interfacce dopo un cambio di configurazione di rete."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_python_3",
+      "english": "TextFSM",
+      "set": {
+        "code": "import textfsm\nwith open('cisco_show_ip_int_brief.template') as t:\n    fsm = textfsm.TextFSM(t)\nrows = fsm.ParseText(cli_output)\nprint(fsm.header, rows)",
+        "task": "Parsifica con TextFSM l'output 'show ip interface brief' in righe strutturate riusabili dentro la pipeline di automazione."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_python_3",
+      "english": "Genie",
+      "set": {
+        "code": "from genie.libs.parser.utils import get_parser\nparser = get_parser('show interfaces', device)\nparsed = parser.cli(output=cli_output)\nprint(parsed)",
+        "task": "Usa Cisco Genie per trasformare l'output CLI di 'show interfaces' in un dizionario Python strutturato pronto per le asserzioni."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_python_3",
+      "english": "Jinja2",
+      "set": {
+        "code": "from jinja2 import Template\ntpl = Template('interface {{ name }}\\n description {{ desc }}\\n ip address {{ ip }} {{ mask }}')\nprint(tpl.render(name='Gi0/0', desc='WAN', ip='10.0.0.1', mask='255.255.255.252'))",
+        "task": "Renderizza con Jinja2 una configurazione di interfaccia Cisco partendo da variabili nome/descrizione/IP per generare config riproducibili."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_python_3",
+      "english": "NetBox",
+      "set": {
+        "code": "import pynetbox\nnb = pynetbox.api('https://netbox.example.com', token='$TOKEN')\nfor d in nb.dcim.devices.filter(role='router'):\n    print(d.name, d.primary_ip)",
+        "task": "Interroga NetBox via pynetbox per elencare tutti i router con il loro primary IP come input dell'orchestratore di rete."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_python_3",
+      "english": "Scrapli",
+      "set": {
+        "code": "from scrapli.driver.core import IOSXEDriver\nwith IOSXEDriver(host='10.0.0.1', auth_username='admin', auth_password='secret', auth_strict_key=False) as conn:\n    print(conn.send_command('show version').result)",
+        "task": "Connettiti con Scrapli a un router IOS-XE per eseguire 'show version' sfruttando un driver SSH veloce e moderno."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_cicd_4",
+      "english": "CI/CD Pipeline",
+      "set": {
+        "code": "stages:\n  - lint\n  - test\n  - deploy\nlint_configs:\n  stage: lint\n  script:\n    - ansible-lint playbooks/\ntest_topology:\n  stage: test\n  script:\n    - batfish-check.py",
+        "task": "Definisci una pipeline GitLab CI con lint dei playbook Ansible e test Batfish prima del deploy delle configurazioni di rete."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_cicd_4",
+      "english": "Pre-Change Test",
+      "set": {
+        "command": "batfish-check.py --snapshot proposed --reference baseline --tests reachability.json",
+        "task": "Esegui i test pre-change con Batfish confrontando lo snapshot proposto con la baseline per intercettare regressioni di routing."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_cicd_4",
+      "english": "Post-Change Test",
+      "set": {
+        "command": "pyats run job post_change_validation.py --testbed prod.yaml",
+        "task": "Lancia il job pyATS di validazione post-change contro l'inventario prod per confermare reachability e SLA delle interfacce."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_cicd_4",
+      "english": "Network Lab",
+      "set": {
+        "command": "containerlab deploy -t lab.clab.yaml",
+        "task": "Ricostruisci il network lab definito in lab.clab.yaml con containerlab per riprodurre la topologia di produzione in container."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_cicd_4",
+      "english": "Batfish",
+      "set": {
+        "code": "from pybatfish.client.session import Session\nbf = Session(host='localhost')\nbf.init_snapshot('configs/', name='current', overwrite=True)\nprint(bf.q.routes().answer())",
+        "task": "Carica via pybatfish uno snapshot di configurazioni e interroga le rotte calcolate offline per analisi statica della rete."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_cicd_4",
+      "english": "Network Validation",
+      "set": {
+        "command": "ansible-playbook -i inventory.yml validate_state.yml --check",
+        "task": "Esegui in dry-run il playbook validate_state.yml per validare che la rete sia ancora conforme al modello senza applicare modifiche."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_cicd_4",
+      "english": "Rollback",
+      "set": {
+        "command": "configure replace nvram:startup-config force",
+        "task": "Forza il rollback di un router Cisco rimpiazzando la running con la startup-config quando un cambio appena pushato genera problemi."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_cicd_4",
+      "english": "GitOps",
+      "set": {
+        "command": "git push origin main && argocd app sync network-config",
+        "task": "Pubblica un commit con la nuova config di rete e sincronizza ArgoCD per applicare automaticamente il cambio GitOps al cluster."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_flow_1",
+      "english": "NetFlow",
+      "set": {
+        "command": "ip flow-export destination 10.0.0.5 2055 version 9",
+        "task": "Configura un router Cisco perche' esporti flussi NetFlow v9 verso il collector 10.0.0.5 sulla porta UDP 2055."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_flow_1",
+      "english": "sFlow",
+      "set": {
+        "command": "sflow agent eth0\nsflow collector ip=10.0.0.6 udpport=6343\nsflow sampling 1024",
+        "task": "Abilita sFlow su eth0 con campionamento 1:1024 e collector 10.0.0.6:6343 per monitorare il traffico ad alta velocita'."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_flow_1",
+      "english": "IPFIX",
+      "set": {
+        "command": "flow exporter EXP\n destination 10.0.0.5\n transport udp 4739\n export-protocol ipfix",
+        "task": "Configura un exporter IPFIX (RFC 7011) verso 10.0.0.5:4739 come successore standard di NetFlow per il monitoring di rete."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_flow_1",
+      "english": "Flow Exporter",
+      "set": {
+        "command": "flow monitor MON\n exporter EXP\n record netflow-original",
+        "task": "Crea un flow monitor che usa l'exporter EXP per inviare ai collector tutti i record secondo il template NetFlow originale."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_flow_1",
+      "english": "Flow Collector",
+      "set": {
+        "command": "nfcapd -w -D -p 2055 -l /var/cache/netflow",
+        "task": "Avvia nfcapd come flow collector su UDP 2055 scrivendo i record in /var/cache/netflow per analisi storica con NfSen."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_flow_1",
+      "english": "Sampling Rate",
+      "set": {
+        "command": "sflow sampling 4096",
+        "task": "Imposta il sampling rate sFlow a 1:4096 per ridurre il carico CPU del router sacrificando un po' di accuratezza statistica."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_flow_1",
+      "english": "Top Talkers",
+      "set": {
+        "command": "nfdump -r /var/cache/netflow/nfcapd.* -s ip/bytes -n 10",
+        "task": "Estrai dai dump NetFlow i top 10 talker per byte trasmessi per identificare gli host che consumano piu' banda."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_snmp_2",
+      "english": "SNMP Trap",
+      "set": {
+        "command": "snmp-server host 10.0.0.5 version 2c public",
+        "task": "Configura il router perche' invii SNMP trap al manager 10.0.0.5 con community public per allertare eventi immediati."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_snmp_2",
+      "english": "Community String",
+      "set": {
+        "command": "snmp-server community S3cret-RO RO",
+        "task": "Definisci la community SNMPv2c S3cret-RO in sola lettura sostituendo l'insicura default 'public' sui dispositivi di rete."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_snmp_2",
+      "english": "SNMPv3",
+      "set": {
+        "command": "snmp-server user nms NMS-GROUP v3 auth sha AuthPass priv aes 128 PrivPass",
+        "task": "Crea un utente SNMPv3 'nms' con autenticazione SHA e cifratura AES-128 per leggere metriche in modo sicuro dai device."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_snmp_2",
+      "english": "Counter",
+      "set": {
+        "command": "snmpwalk -v 2c -c public 10.0.0.1 IF-MIB::ifInOctets",
+        "task": "Recupera tutti i contatori SNMP ifInOctets dal router 10.0.0.1 per misurare byte ricevuti su ogni interfaccia."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_snmp_2",
+      "english": "Gauge",
+      "set": {
+        "command": "snmpget -v 2c -c public 10.0.0.1 HOST-RESOURCES-MIB::hrProcessorLoad.1",
+        "task": "Leggi via SNMP il gauge hrProcessorLoad sul router 10.0.0.1 per ottenere il carico CPU corrente come valore istantaneo."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_snmp_2",
+      "english": "Threshold",
+      "set": {
+        "code": "groups:\n  - name: cpu\n    rules:\n      - alert: HighCpu\n        expr: cpu_load > 90\n        for: 5m\n        labels:\n          severity: warning",
+        "task": "Definisci in Prometheus una regola che fa scattare HighCpu se cpu_load supera la soglia 90 per cinque minuti consecutivi."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_snmp_2",
+      "english": "Polling Interval",
+      "set": {
+        "code": "scrape_configs:\n  - job_name: routers\n    scrape_interval: 30s\n    static_configs:\n      - targets: ['10.0.0.1:9116']",
+        "task": "Configura Prometheus per fare polling dei router SNMP exporter ogni 30 secondi, intervallo adatto a metriche CPU e memoria."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_snmp_2",
+      "english": "Bandwidth Utilization",
+      "set": {
+        "command": "snmpdelta -v 2c -c public -Cp 60 10.0.0.1 IF-MIB::ifHCInOctets.1",
+        "task": "Calcola con snmpdelta il delta dei byte in ingresso sull'interfaccia 1 ogni 60s per derivare l'utilizzo di banda."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_npm_3",
+      "english": "Zabbix",
+      "set": {
+        "command": "zabbix_get -s 10.0.0.1 -p 10050 -k 'system.cpu.load[all,avg1]'",
+        "task": "Leggi via zabbix_get il carico medio CPU a 1 minuto dall'agent installato su 10.0.0.1 per testare il monitoring."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_npm_3",
+      "english": "Nagios",
+      "set": {
+        "command": "/usr/lib/nagios/plugins/check_ping -H 8.8.8.8 -w 100,10% -c 200,30%",
+        "task": "Esegui il plugin Nagios check_ping verso 8.8.8.8 con soglie warning 100ms/10% e critical 200ms/30% per validare il monitoring."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_npm_3",
+      "english": "LibreNMS",
+      "set": {
+        "command": "php /opt/librenms/addhost.php 10.0.0.1 v2c public",
+        "task": "Aggiungi il router 10.0.0.1 a LibreNMS via CLI con community SNMP public per attivare l'auto-discovery del dispositivo."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_npm_3",
+      "english": "Grafana",
+      "set": {
+        "command": "docker run -d --name grafana -p 3000:3000 grafana/grafana",
+        "task": "Avvia un container Grafana sulla porta 3000 come base per costruire dashboard di metriche di rete time-series."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_npm_3",
+      "english": "Prometheus",
+      "set": {
+        "code": "global:\n  scrape_interval: 15s\nscrape_configs:\n  - job_name: snmp\n    static_configs:\n      - targets: ['10.0.0.1', '10.0.0.2']\n    metrics_path: /snmp\n    params:\n      module: [if_mib]",
+        "task": "Definisci la configurazione Prometheus che scrapa tramite snmp_exporter le interfacce dei router 10.0.0.1 e 10.0.0.2 ogni 15 secondi."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_npm_3",
+      "english": "SmokePing",
+      "set": {
+        "command": "smokeping --config=/etc/smokeping/config",
+        "task": "Avvia SmokePing con la sua configurazione standard per disegnare grafici di latenza e packet loss verso i target chiave."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_npm_3",
+      "english": "Cacti",
+      "set": {
+        "command": "php /var/www/html/cacti/cli/add_device.php --description='core-01' --ip=10.0.0.1 --template=3",
+        "task": "Aggiungi via CLI il device core-01 a Cacti usando il template Cisco per iniziare a graficare le metriche SNMP."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_npm_3",
+      "english": "ntopng",
+      "set": {
+        "command": "sudo ntopng -i eth0 -P /var/lib/ntopng/ntopng.pid",
+        "task": "Avvia ntopng in ascolto su eth0 per analizzare in tempo reale il traffico, host e applicazioni della rete."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_logs_4",
+      "english": "Syslog Server",
+      "set": {
+        "command": "sudo sed -i 's/^#module(load=\"imudp\")/module(load=\"imudp\")\\ninput(type=\"imudp\" port=\"514\")/' /etc/rsyslog.conf && sudo systemctl restart rsyslog",
+        "task": "Abilita il modulo imudp di rsyslog sulla porta 514 per ricevere log syslog dai dispositivi di rete sul collector centrale."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_logs_4",
+      "english": "Log Aggregation",
+      "set": {
+        "code": "input { syslog { port => 5514 } }\nfilter { grok { match => { 'message' => '%{SYSLOGLINE}' } } }\noutput { elasticsearch { hosts => ['es:9200'] } }",
+        "task": "Definisci una pipeline Logstash che riceve syslog su 5514, parsifica con grok e aggrega tutto in Elasticsearch per la dashboard."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_logs_4",
+      "english": "ELK Stack",
+      "set": {
+        "command": "docker compose -f elk-compose.yml up -d",
+        "task": "Avvia tutto lo stack ELK definito in elk-compose.yml per ingestion Logstash, indicizzazione Elasticsearch e dashboard Kibana."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_logs_4",
+      "english": "Severity Level",
+      "set": {
+        "command": "logging trap warnings",
+        "task": "Configura un router perche' inoltri al syslog server solo i messaggi con severity warning (4) o superiore."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_logs_4",
+      "english": "Alert",
+      "set": {
+        "code": "groups:\n  - name: link\n    rules:\n      - alert: HighLinkUtil\n        expr: rate(ifInOctets[5m]) * 8 / link_speed > 0.85\n        for: 10m",
+        "task": "Definisci in Prometheus una regola Alert che scatta se l'utilizzo del link supera l'85% per dieci minuti consecutivi."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_logs_4",
+      "english": "Alertmanager",
+      "set": {
+        "code": "route:\n  receiver: pagerduty\n  group_by: ['alertname', 'severity']\nreceivers:\n  - name: pagerduty\n    pagerduty_configs:\n      - service_key: $PD_KEY",
+        "task": "Configura Alertmanager perche' instradi gli alert Prometheus raggruppati per nome e severity a PagerDuty tramite il service key."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "net_design_ha_2",
+      "english": "HSRP",
+      "set": {
+        "command": "interface Vlan10\n ip address 10.0.10.2 255.255.255.0\n standby 10 ip 10.0.10.1\n standby 10 priority 110\n standby 10 preempt",
+        "task": "Configura HSRP gruppo 10 sulla VLAN 10 con VIP 10.0.10.1 e priorita' 110 perche' questo switch diventi gateway attivo."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "net_design_ha_2",
+      "english": "VRRP",
+      "set": {
+        "command": "interface Vlan20\n vrrp 20 ip 10.0.20.1\n vrrp 20 priority 120\n vrrp 20 preempt",
+        "task": "Configura VRRP gruppo 20 sulla VLAN 20 con VIP 10.0.20.1 e priorita' 120 come versione standard di HSRP."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "net_design_ha_2",
+      "english": "GLBP",
+      "set": {
+        "command": "interface Vlan30\n glbp 30 ip 10.0.30.1\n glbp 30 load-balancing round-robin",
+        "task": "Configura GLBP gruppo 30 sulla VLAN 30 con VIP 10.0.30.1 in modalita' round-robin per bilanciare il traffico tra piu' gateway attivi."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "net_design_ha_2",
+      "english": "switch stack",
+      "set": {
+        "command": "show switch stack-ports",
+        "task": "Visualizza lo stato delle porte stack di uno switch StackWise per verificare che tutti i membri siano connessi e attivi."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "net_design_ha_2",
+      "english": "VSS",
+      "set": {
+        "command": "switch virtual domain 100\n switch 1 priority 110\n switch 2 priority 100",
+        "task": "Configura VSS dominio 100 su due chassis Catalyst 6500/4500 dichiarando le priorita' relative per combinarli in un unico nodo logico."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "net_design_dcn_3",
+      "english": "Oversubscription",
+      "set": {
+        "command": "show interface counters etherchannel | include rate",
+        "task": "Mostra le rate di tutti gli uplink aggregati di un leaf per calcolare il rapporto di oversubscription rispetto alla capacita' verso server."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "net_design_segment_4",
+      "english": "IPAM",
+      "set": {
+        "command": "curl -H 'Authorization: Token $NETBOX_TOKEN' https://netbox.example.com/api/ipam/prefixes/",
+        "task": "Interroga NetBox via API IPAM per elencare tutti i prefissi allocati prima di assegnare una nuova subnet al progetto."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "net_pro_practice_3",
+      "english": "Configuration Backup",
+      "set": {
+        "code": "- hosts: routers\n  tasks:\n    - name: backup running-config\n      cisco.ios.ios_config:\n        backup: yes\n        backup_options:\n          dir_path: /backups/{{ inventory_hostname }}",
+        "task": "Definisci un task Ansible che fa il backup notturno della running-config di ogni router in /backups per rollback storico via Git."
+      }
+    }
+  ]
+}

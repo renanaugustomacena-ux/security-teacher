@@ -1,0 +1,940 @@
+{
+  "fixes": [
+    {
+      "level": "13",
+      "lesson": "cloud_services_1",
+      "english": "Standard Queue",
+      "set": {
+        "command": "aws sqs create-queue --queue-name orders-std",
+        "task": "Crea una Standard Queue SQS chiamata orders-std accettando throughput illimitato ma possibili duplicati nei messaggi."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cloud_services_1",
+      "english": "FIFO Queue",
+      "set": {
+        "command": "aws sqs create-queue --queue-name orders.fifo --attributes FifoQueue=true",
+        "task": "Provvedi una coda SQS FIFO chiamata orders.fifo per preservare l'ordine stretto dei messaggi per gruppo."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cloud_services_1",
+      "english": "Visibility Timeout",
+      "set": {
+        "command": "aws sqs set-queue-attributes --queue-url $URL --attributes VisibilityTimeout=60",
+        "task": "Porta a 60 secondi il visibility timeout della coda $URL per dare al worker tempo sufficiente di processare il messaggio."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cloud_services_1",
+      "english": "Dead-Letter Queue",
+      "set": {
+        "command": "aws sqs set-queue-attributes --queue-url $URL --cli-input-json file://redrive.json",
+        "task": "Aggiorna la coda $URL applicando la redrive policy descritta in redrive.json per inoltrare i messaggi a una DLQ dopo 5 tentativi."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cloud_services_1",
+      "english": "Long Polling",
+      "set": {
+        "command": "aws sqs receive-message --queue-url $URL --wait-time-seconds 20",
+        "task": "Esegui una receive in long polling sulla coda $URL con attesa di 20 secondi per ridurre le chiamate vuote."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cloud_services_1",
+      "english": "Batch Receive",
+      "set": {
+        "command": "aws sqs receive-message --queue-url $URL --max-number-of-messages 10",
+        "task": "Recupera fino a 10 messaggi in un solo batch dalla coda SQS $URL per ammortizzare i costi API."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cloud_services_1",
+      "english": "Message Retention",
+      "set": {
+        "command": "aws sqs set-queue-attributes --queue-url $URL --attributes MessageRetentionPeriod=1209600",
+        "task": "Imposta la retention della coda $URL a 14 giorni così i messaggi non elaborati sopravvivano a interruzioni prolungate."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cloud_services_2",
+      "english": "Topic",
+      "set": {
+        "command": "aws sns create-topic --name order-events",
+        "task": "Crea un topic SNS chiamato order-events come punto di pubblicazione per gli eventi degli ordini in fan-out."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cloud_services_2",
+      "english": "Push Subscription",
+      "set": {
+        "command": "gcloud pubsub subscriptions create my-sub --topic=orders --push-endpoint=https://api.example.com/hook",
+        "task": "Configura una push subscription su Pub/Sub che inoltri ogni messaggio del topic orders verso un endpoint HTTPS."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cloud_services_2",
+      "english": "Message Filtering",
+      "set": {
+        "command": "aws sns set-subscription-attributes --subscription-arn $ARN --attribute-name FilterPolicy --cli-input-json file://filter.json",
+        "task": "Applica una FilterPolicy sulla subscription SNS $ARN da filter.json per consegnare solo gli ordini sopra i 1000 EUR."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cloud_services_2",
+      "english": "Mobile Push",
+      "set": {
+        "command": "aws sns create-platform-application --name MyApp --platform APNS --attributes PlatformCredential=$CERT",
+        "task": "Registra una platform application APNS chiamata MyApp su SNS per inviare notifiche push native a dispositivi iOS."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cloud_services_3",
+      "english": "EventBridge",
+      "set": {
+        "command": "aws events list-event-buses",
+        "task": "Elenca tutti gli event bus EventBridge presenti nell'account per individuare bus custom e cross-account configurati."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cloud_services_3",
+      "english": "Cross-Account Event Bus",
+      "set": {
+        "command": "aws events put-permission --action events:PutEvents --principal 111122223333 --statement-id CrossAcct",
+        "task": "Concedi all'account 111122223333 il permesso di pubblicare eventi sul bus EventBridge corrente per scenari cross-account."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cloud_services_3",
+      "english": "Rule",
+      "set": {
+        "command": "aws events put-rule --name s3-uploads --event-pattern file://pattern.json",
+        "task": "Definisci una rule EventBridge chiamata s3-uploads usando il pattern in pattern.json per catturare gli eventi aws.s3."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cloud_services_3",
+      "english": "Target",
+      "set": {
+        "command": "aws events put-targets --rule s3-uploads --targets Id=1,Arn=$LAMBDA_ARN",
+        "task": "Aggancia la Lambda $LAMBDA_ARN come target della rule EventBridge s3-uploads per il fan-out degli eventi."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cloud_services_3",
+      "english": "Schema Registry",
+      "set": {
+        "command": "aws schemas list-registries",
+        "task": "Elenca i registry schemi EventBridge disponibili per scoprire i nomi a cui registrare le definizioni degli eventi."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cloud_services_3",
+      "english": "Archive",
+      "set": {
+        "command": "aws events create-archive --archive-name orders-archive --event-source-arn $BUS_ARN --retention-days 90",
+        "task": "Crea un archive EventBridge che conservi 90 giorni di eventi del bus $BUS_ARN per replay successivi."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cloud_services_3",
+      "english": "Replay",
+      "set": {
+        "command": "aws events start-replay --replay-name backfill --event-source-arn $ARCHIVE_ARN --event-start-time 2024-01-01T00:00:00Z --event-end-time 2024-01-02T00:00:00Z --destination Arn=$BUS",
+        "task": "Avvia un replay degli eventi archiviati di un giorno verso il bus $BUS per popolare un nuovo consumer downstream."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cloud_services_4",
+      "english": "Kinesis",
+      "set": {
+        "command": "aws kinesis create-stream --stream-name clicks --shard-count 4",
+        "task": "Provvedi uno stream Kinesis chiamato clicks con 4 shard iniziali per assorbire il traffico di click-stream in arrivo."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cloud_services_4",
+      "english": "Shard",
+      "set": {
+        "command": "aws kinesis split-shard --stream-name clicks --shard-to-split shardId-000000000000 --new-starting-hash-key $KEY",
+        "task": "Splitta lo shard sovraccarico dello stream clicks su una nuova chiave per ribilanciare il throughput tra produttori."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cloud_services_4",
+      "english": "MSK",
+      "set": {
+        "command": "aws kafka create-cluster --cluster-name prod --kafka-version 3.5 --number-of-broker-nodes 3",
+        "task": "Provvedi un cluster MSK gestito chiamato prod su Kafka 3.5 con tre broker per workload di streaming in produzione."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cloud_services_4",
+      "english": "Firehose",
+      "set": {
+        "command": "aws firehose create-delivery-stream --delivery-stream-name logs --s3-destination-configuration RoleARN=$ROLE,BucketARN=$BUCKET",
+        "task": "Crea un delivery stream Firehose chiamato logs che bufferi gli eventi e li scriva sul bucket S3 indicato."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cloud_services_4",
+      "english": "Data Analytics",
+      "set": {
+        "command": "aws kinesisanalyticsv2 list-applications",
+        "task": "Elenca le applicazioni Kinesis Data Analytics presenti nella regione per scoprire le pipeline SQL di streaming attive."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cloud_services_5",
+      "english": "CloudFront",
+      "set": {
+        "command": "aws cloudfront list-distributions",
+        "task": "Elenca tutte le distribution CloudFront attive nell'account per verificare nomi DNS e origin associati alla CDN."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cloud_services_5",
+      "english": "Cloudflare",
+      "set": {
+        "command": "wrangler deploy",
+        "task": "Pubblica il Worker Cloudflare corrente sulla rete edge usando wrangler dalla directory del progetto."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cloud_services_5",
+      "english": "Origin",
+      "set": {
+        "command": "aws cloudfront update-distribution --id $ID --distribution-config file://config.json",
+        "task": "Aggiorna la distribution $ID con il file config.json per modificare l'origin verso un nuovo ALB privato."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cloud_services_5",
+      "english": "Cache TTL",
+      "set": {
+        "command": "aws cloudfront update-cache-policy --id $ID --cache-policy-config file://policy.json",
+        "task": "Aggiorna la cache policy $ID con il file policy.json per ridefinire i TTL minimi, massimi e default."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cloud_services_5",
+      "english": "OAI",
+      "set": {
+        "command": "aws cloudfront create-cloud-front-origin-access-identity --cloud-front-origin-access-identity-config CallerReference=oai-1,Comment=site-oai",
+        "task": "Crea un Origin Access Identity CloudFront per consentire l'accesso al bucket S3 solo tramite la distribution."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cloud_services_6",
+      "english": "Lambda@Edge",
+      "set": {
+        "command": "aws lambda publish-version --function-name edge-fn",
+        "task": "Pubblica una nuova versione della funzione edge-fn così possa essere associata a un trigger CloudFront come Lambda@Edge."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cloud_services_6",
+      "english": "CloudFront Functions",
+      "set": {
+        "code": "function handler(event){\n  var req = event.request;\n  req.headers[\"x-edge\"] = {value: \"true\"};\n  return req;\n}",
+        "task": "Scrivi una CloudFront Function che intercetti il viewer-request e aggiunga un header x-edge personalizzato."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cloud_services_6",
+      "english": "Cloudflare Workers",
+      "set": {
+        "code": "export default {\n  async fetch(req){\n    return new Response(\"hi from edge\");\n  }\n};",
+        "task": "Componi un Worker Cloudflare minimale che risponda hi from edge su ogni richiesta in ingresso al PoP."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cloud_services_6",
+      "english": "Geofencing",
+      "set": {
+        "command": "aws cloudfront update-distribution --id $ID --distribution-config file://restrictions.json",
+        "task": "Aggiorna la distribution $ID applicando una GeoRestriction blacklist per i paesi indicati in restrictions.json."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cloud_services_7",
+      "english": "ETag",
+      "set": {
+        "code": "ETag: \"33a64df551425fcc55e4d42a148795d9f25f89d4\"",
+        "task": "Esponi un header ETag SHA-1 sulla risposta della risorsa per consentire al client di validare la cache via If-None-Match."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cloud_services_7",
+      "english": "Stale-While-Revalidate",
+      "set": {
+        "code": "Cache-Control: max-age=60, stale-while-revalidate=300",
+        "task": "Restituisci un Cache-Control con max-age 60 e stale-while-revalidate di 300 secondi così la CDN serva stale durante l'aggiornamento."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cloud_services_7",
+      "english": "Origin Shield",
+      "set": {
+        "command": "aws cloudfront update-distribution --id $ID --distribution-config file://shield.json",
+        "task": "Abilita Origin Shield sulla distribution $ID con il file shield.json per consolidare i cache miss in un'unica regione."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cloud_services_7",
+      "english": "Purge",
+      "set": {
+        "command": "curl -X POST https://api.cloudflare.com/client/v4/zones/$ZONE/purge_cache -H Authorization:Bearer$TOKEN --data-binary @purge.json",
+        "task": "Lancia un purge totale della cache Cloudflare della zona $ZONE per forzare il refresh di tutti i PoP dopo un hotfix."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cloud_services_8",
+      "english": "Global Accelerator",
+      "set": {
+        "command": "aws globalaccelerator create-accelerator --name prod-ga",
+        "task": "Provvedi un Global Accelerator chiamato prod-ga per ottenere due IP anycast statici instradati sulla backbone AWS."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cloud_services_8",
+      "english": "Front Door",
+      "set": {
+        "command": "az afd profile create --resource-group rg --profile-name prod --sku Standard_AzureFrontDoor",
+        "task": "Crea un profilo Azure Front Door Standard chiamato prod nel resource group rg per il bilanciamento globale del traffico."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cloud_services_8",
+      "english": "Cloud Armor",
+      "set": {
+        "command": "gcloud compute security-policies create deny-bot --description block-bots",
+        "task": "Crea una security policy Cloud Armor chiamata deny-bot da associare al load balancer GCP per bloccare bot noti."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cloud_services_8",
+      "english": "Geographic Routing",
+      "set": {
+        "command": "aws route53 change-resource-record-sets --hosted-zone-id $ZONE --change-batch file://geo.json",
+        "task": "Applica record DNS con geolocation policy nella hosted zone $ZONE usando geo.json per servire utenti UE da una regione locale."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cloud_services_8",
+      "english": "Latency-Based Routing",
+      "set": {
+        "command": "aws route53 change-resource-record-sets --hosted-zone-id $ZONE --change-batch file://latency.json",
+        "task": "Configura record latency-based su Route 53 nella zona $ZONE tramite latency.json per indirizzare al cluster con minor RTT."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cloud_services_8",
+      "english": "HTTP/3",
+      "set": {
+        "command": "aws cloudfront update-distribution --id $ID --distribution-config file://http3.json",
+        "task": "Abilita HTTP/3 sulla distribution $ID applicando il file http3.json per offrire QUIC ai client supportati."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cloud_migration_2",
+      "english": "Migration Hub",
+      "set": {
+        "command": "aws migrationhub describe-application-state --application-id $APP",
+        "task": "Interroga lo stato dell'applicazione $APP in Migration Hub per verificare se la replica verso AWS sia stata completata."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cloud_migration_2",
+      "english": "AWS MGN",
+      "set": {
+        "command": "aws mgn start-replication --source-server-id $ID",
+        "task": "Avvia la replica continua del source server $ID via AWS MGN per preparare il failover verso EC2."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cloud_migration_2",
+      "english": "Azure Migrate",
+      "set": {
+        "command": "az migrate project create --resource-group rg --name myMigration --location eastus",
+        "task": "Crea un progetto Azure Migrate chiamato myMigration nel resource group rg per coordinare assessment e replication."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cloud_migration_2",
+      "english": "DMS",
+      "set": {
+        "command": "aws dms create-replication-task --replication-task-identifier ora-to-aurora --migration-type cdc --source-endpoint-arn $SRC --target-endpoint-arn $TGT --replication-instance-arn $RI --table-mappings file://mappings.json",
+        "task": "Lancia un task DMS in modalità CDC da Oracle ad Aurora usando i mapping di tabelle definiti nel file."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cloud_migration_2",
+      "english": "Snowball",
+      "set": {
+        "command": "aws snowball create-job --job-type IMPORT --resources S3Resources=BucketArn=$ARN --address-id $ADDR --role-arn $ROLE",
+        "task": "Apri un job Snowball di import verso il bucket S3 $ARN per spedire fisicamente archivi legacy senza saturare la WAN."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cloud_migration_2",
+      "english": "DataSync",
+      "set": {
+        "command": "aws datasync start-task-execution --task-arn $TASK",
+        "task": "Esegui il task DataSync $TASK per copiare incrementalmente i file da NFS on-prem al bucket S3 target."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cloud_migration_2",
+      "english": "Storage Gateway",
+      "set": {
+        "command": "aws storagegateway create-nfs-file-share --gateway-arn $GW --location-arn $BUCKET --role $ROLE --client-token tok-1",
+        "task": "Esponi un file share NFS via Storage Gateway che indirizzi le scritture verso il bucket S3 mantenendo il protocollo locale."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cloud_services_9",
+      "english": "CodePipeline",
+      "set": {
+        "command": "aws codepipeline start-pipeline-execution --name app-pipeline",
+        "task": "Avvia manualmente la pipeline app-pipeline in CodePipeline per ridepoyare l'ultima revisione senza attendere un push su main."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cloud_services_9",
+      "english": "CodeBuild",
+      "set": {
+        "command": "aws codebuild start-build --project-name app-build",
+        "task": "Lancia il progetto app-build su CodeBuild per costruire l'immagine e pushare l'artefatto verso ECR."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cloud_services_9",
+      "english": "CodeDeploy",
+      "set": {
+        "command": "aws deploy create-deployment --application-name app --deployment-group-name prod --revision file://revision.json",
+        "task": "Crea un nuovo deployment dell'applicazione app sul gruppo prod usando la revisione descritta nel file revision.json."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cloud_services_9",
+      "english": "CodeCommit",
+      "set": {
+        "command": "aws codecommit create-repository --repository-name app-src",
+        "task": "Provvedi un repo CodeCommit chiamato app-src per ospitare il codice all'interno dell'account regolamentato."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cloud_services_9",
+      "english": "CodeArtifact",
+      "set": {
+        "command": "aws codeartifact create-domain --domain prod",
+        "task": "Crea il domain CodeArtifact chiamato prod come container centrale per i repository di pacchetti interni."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cloud_services_10",
+      "english": "Azure DevOps",
+      "set": {
+        "command": "az devops project create --name MyProject --organization https://dev.azure.com/myorg",
+        "task": "Crea il progetto MyProject nell'organizzazione Azure DevOps per ospitare repo, board e pipeline sotto un solo tenant."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cloud_services_10",
+      "english": "Azure Pipelines",
+      "set": {
+        "command": "az pipelines run --name nightly --branch main",
+        "task": "Esegui manualmente la pipeline nightly sul branch main per ricostruire e pushare l'artefatto fuori dalla finestra schedulata."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cloud_services_10",
+      "english": "Azure Repos",
+      "set": {
+        "command": "az repos create --name app --project MyProject",
+        "task": "Crea il repository Git chiamato app dentro il progetto Azure DevOps MyProject per ospitare il codice sorgente."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cloud_services_10",
+      "english": "Azure Boards",
+      "set": {
+        "command": "az boards work-item create --title Bug-fix --type Bug --project MyProject",
+        "task": "Apri un work item Bug nel progetto MyProject di Azure Boards per tracciare un nuovo difetto rilevato in QA."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cloud_services_10",
+      "english": "Azure Artifacts",
+      "set": {
+        "command": "az artifacts universal publish --organization https://dev.azure.com/myorg --project MyProject --feed shared --name pkg --version 1.0.0 --path ./dist",
+        "task": "Pubblica il pacchetto pkg versione 1.0.0 su Azure Artifacts dal contenuto della cartella ./dist."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cloud_services_11",
+      "english": "Cloud Build",
+      "set": {
+        "command": "gcloud builds submit --config cloudbuild.yaml --substitutions=_REGION=europe-west1",
+        "task": "Sottometti la build descritta in cloudbuild.yaml verso Cloud Build sostituendo la variabile _REGION con europe-west1."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cloud_services_11",
+      "english": "Cloud Source Repositories",
+      "set": {
+        "command": "gcloud source repos create app-src",
+        "task": "Crea il repository Cloud Source app-src per ospitare la storia git all'interno del progetto GCP corrente."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cloud_services_11",
+      "english": "Artifact Registry",
+      "set": {
+        "command": "gcloud artifacts repositories create images --repository-format=docker --location=europe-west1",
+        "task": "Provvedi un repository Artifact Registry Docker chiamato images nella regione europe-west1 per ospitare le immagini OCI."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cloud_services_11",
+      "english": "Cloud Deploy",
+      "set": {
+        "command": "gcloud deploy releases create rel-1 --delivery-pipeline=app-pipeline --region=europe-west1 --source=.",
+        "task": "Genera la release rel-1 nella pipeline Cloud Deploy app-pipeline a partire dalla directory corrente come sorgente."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cloud_services_11",
+      "english": "Container Analysis",
+      "set": {
+        "command": "gcloud artifacts docker images scan europe-west1-docker.pkg.dev/$PROJECT/images/app:latest",
+        "task": "Scansiona l'immagine app:latest con Container Analysis per rilevare CVE prima di promuoverla in produzione."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_13",
+      "english": "Redshift",
+      "set": {
+        "command": "aws redshift create-cluster --cluster-identifier dwh --node-type ra3.xlplus --number-of-nodes 2 --master-username admin --master-user-password $PWD",
+        "task": "Provvedi un cluster Redshift ra3.xlplus a due nodi chiamato dwh per ospitare il data warehouse aziendale."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_13",
+      "english": "Snowflake",
+      "set": {
+        "command": "snowsql -a $ACCOUNT -u $USER -f preview.sql",
+        "task": "Esegui via snowsql lo script preview.sql per validare la connessione al warehouse Snowflake con una query di anteprima."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_13",
+      "english": "Synapse Analytics",
+      "set": {
+        "command": "az synapse workspace create --name analytics --resource-group rg --storage-account stg --file-system fs --sql-admin-login-user admin --sql-admin-login-password $PWD --location eastus",
+        "task": "Provvedi un workspace Synapse Analytics chiamato analytics combinando data lake e SQL pool sotto un unico tenant."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_14",
+      "english": "Lake Formation",
+      "set": {
+        "command": "aws lakeformation grant-permissions --principal DataLakePrincipalIdentifier=$USER --permissions SELECT --cli-input-json file://res.json",
+        "task": "Concedi a $USER il diritto SELECT sulla tabella analytics.orders via Lake Formation senza copiare il dataset."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_14",
+      "english": "Athena",
+      "set": {
+        "command": "aws athena start-query-execution --query-string-from-file query.sql --result-configuration OutputLocation=s3://$BUCKET/athena/",
+        "task": "Lancia una query Athena di conteggio righe sulla tabella logs e salva il risultato nel bucket S3 designato."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_15",
+      "english": "Glue",
+      "set": {
+        "command": "aws glue start-job-run --job-name etl-orders",
+        "task": "Avvia il job Glue etl-orders per pulire gli eventi grezzi su S3 e scriverli in formato Parquet partizionato."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_15",
+      "english": "Glue Crawler",
+      "set": {
+        "command": "aws glue start-crawler --name raw-zone-crawler",
+        "task": "Esegui il crawler raw-zone-crawler per scoprire automaticamente schemi e popolare il Data Catalog Glue."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_15",
+      "english": "Data Catalog",
+      "set": {
+        "command": "aws glue get-databases",
+        "task": "Elenca i database registrati nel Data Catalog Glue per scoprire i namespace condivisi tra Athena, EMR e Redshift Spectrum."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_15",
+      "english": "Dataflow",
+      "set": {
+        "command": "gcloud dataflow jobs run sessions --gcs-location gs://templates/word-count --region europe-west1",
+        "task": "Avvia un job Dataflow chiamato sessions a partire dal template salvato su Cloud Storage per processare lo streaming."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_15",
+      "english": "EMR",
+      "set": {
+        "command": "aws emr create-cluster --name spark --release-label emr-6.15.0 --applications Name=Spark --instance-type m5.xlarge --instance-count 3",
+        "task": "Provvedi un cluster EMR transitorio a tre nodi m5.xlarge con Spark per eseguire un job analytics genomico."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_15",
+      "english": "Dataproc",
+      "set": {
+        "command": "gcloud dataproc clusters create spark-job --region=europe-west1 --num-workers=3",
+        "task": "Crea un cluster Dataproc effimero chiamato spark-job con tre worker per processare un batch Hadoop in 90 secondi."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_17",
+      "english": "SageMaker",
+      "set": {
+        "command": "aws sagemaker list-training-jobs --status-equals InProgress",
+        "task": "Elenca i training job SageMaker attualmente in corso per monitorare il consumo di istanze GPU gestite."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_18",
+      "english": "Vertex AI",
+      "set": {
+        "command": "gcloud ai endpoints list --region=europe-west1",
+        "task": "Elenca gli endpoint Vertex AI attivi nella regione europe-west1 per verificare quali modelli sono attualmente esposti."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_18",
+      "english": "AutoML",
+      "set": {
+        "command": "gcloud ai custom-jobs create --region=europe-west1 --display-name=automl --config=config.yaml",
+        "task": "Sottometti un AutoML training job su Vertex AI usando config.yaml per generare un modello di classificazione tabellare."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_19",
+      "english": "Bedrock",
+      "set": {
+        "command": "aws bedrock-runtime invoke-model --model-id anthropic.claude-3-sonnet --body file://input.json out.json",
+        "task": "Invoca il modello Claude 3 Sonnet via Bedrock leggendo input.json e salvando la risposta in out.json."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_19",
+      "english": "Azure OpenAI",
+      "set": {
+        "command": "az cognitiveservices account deployment create --name openai --resource-group rg --deployment-name gpt4 --model-name gpt-4 --model-format OpenAI --sku-name Standard",
+        "task": "Crea un deployment GPT-4 chiamato gpt4 sul tenant Azure OpenAI per soddisfare requisiti SOC 2 e residency."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_19",
+      "english": "Gemini",
+      "set": {
+        "command": "gcloud ai models list --region=europe-west1",
+        "task": "Elenca i modelli Vertex AI nella regione europe-west1 per individuare le versioni Gemini disponibili al deploy."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_19",
+      "english": "Knowledge Base",
+      "set": {
+        "command": "aws bedrock-agent list-knowledge-bases",
+        "task": "Elenca le knowledge base Bedrock configurate per scoprire quali archivi PDF indicizzati sono disponibili per gli agent."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_19",
+      "english": "Agent",
+      "set": {
+        "command": "aws bedrock-agent invoke-agent --agent-id $ID --agent-alias-id $ALIAS --session-id s1 --input-text hi",
+        "task": "Invoca l'agent Bedrock $ID con un messaggio di test per validare la catena di tool e Lambda configurata."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_20",
+      "english": "Model Monitoring",
+      "set": {
+        "command": "aws sagemaker list-monitoring-schedules",
+        "task": "Elenca le schedule di Model Monitor SageMaker attive per verificare quali endpoint stanno loggando drift e qualità."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_20",
+      "english": "Multi-Model Endpoint",
+      "set": {
+        "command": "aws sagemaker create-endpoint-config --endpoint-config-name mme --production-variants VariantName=AllTraffic,ModelName=$MODEL,InitialInstanceCount=1,InstanceType=ml.m5.large",
+        "task": "Provvedi una endpoint-config SageMaker MME chiamata mme che ospiti più modelli per tenant su una singola istanza."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_20",
+      "english": "Bias Detection",
+      "set": {
+        "command": "aws sagemaker create-processing-job --processing-job-name clarify --app-specification ImageUri=$CLARIFY_IMG --processing-resources file://res.json --processing-inputs file://in.json",
+        "task": "Lancia un processing job SageMaker Clarify per generare un report di bias sui gruppi demografici protetti del modello."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cloud_architecture_9",
+      "english": "Istio Sidecar Injection",
+      "set": {
+        "command": "kubectl label namespace production istio-injection=enabled",
+        "task": "Etichetta il namespace production per attivare l'iniezione automatica del sidecar Istio su tutti i nuovi pod."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cloud_architecture_11",
+      "english": "Chaos Engineering",
+      "set": {
+        "command": "aws fis start-experiment --experiment-template-id $TPL",
+        "task": "Avvia l'experiment FIS $TPL per terminare istanze EC2 casuali in produzione e validare che i servizi si auto-curino."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cloud_security_5",
+      "english": "Compliance Report",
+      "set": {
+        "command": "aws artifact get-report --report-id $ID",
+        "task": "Scarica via AWS Artifact il report di conformità $ID come evidenza durante l'audit SOC 2 o ISO 27001."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cloud_security_7",
+      "english": "AWS Organizations",
+      "set": {
+        "command": "aws organizations list-accounts",
+        "task": "Elenca tutti gli account membri di AWS Organizations per individuare quali rientrano nella landing zone aziendale."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cloud_security_7",
+      "english": "Control Tower",
+      "set": {
+        "command": "aws controltower list-enabled-controls --target-identifier $OU",
+        "task": "Elenca i controlli Control Tower abilitati sulla OU $OU per verificare quali guardrail di baseline sono attivi."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cloud_security_7",
+      "english": "Guardrail",
+      "set": {
+        "command": "aws organizations attach-policy --policy-id $SCP --target-id $OU",
+        "task": "Aggancia la SCP $SCP alla OU $OU come guardrail per negare tipi di istanza costosi indipendentemente dai permessi IAM."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cloud_security_7",
+      "english": "Policy as Code",
+      "set": {
+        "code": "package allow_only_eu\n\ndefault allow = false\n\nallow {\n  input.region == \"eu-west-1\"\n}",
+        "task": "Scrivi una policy OPA Rego che permetta il deploy solo se la regione richiesta è eu-west-1, da applicare in CI."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cloud_security_7",
+      "english": "Continuous Compliance",
+      "set": {
+        "command": "aws configservice describe-compliance-by-config-rule",
+        "task": "Interroga AWS Config per ottenere lo stato di compliance di ogni rule e identificare risorse fuori standard."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cloud_security_7",
+      "english": "Evidence Collection",
+      "set": {
+        "command": "aws auditmanager list-assessments",
+        "task": "Elenca le assessment Audit Manager per scoprire quali framework SOC 2 o ISO 27001 stanno raccogliendo evidenze."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_5",
+      "english": "Mandatory Tag",
+      "set": {
+        "command": "aws organizations attach-policy --policy-id $TAG_POL --target-id $OU",
+        "task": "Aggancia la tag policy $TAG_POL alla OU $OU per richiedere CostCenter su ogni risorsa lanciata dai team."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_5",
+      "english": "Tag Enforcement",
+      "set": {
+        "command": "aws organizations create-policy --name require-costcenter --type SERVICE_CONTROL_POLICY --content file://scp.json --description deny-untagged-launches",
+        "task": "Crea una SCP che neghi i lanci EC2 privi del tag CostCenter bloccando la spesa senza attribuzione all'origine."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_5",
+      "english": "Cost Allocation Report",
+      "set": {
+        "command": "aws ce get-cost-and-usage --time-period Start=2024-01-01,End=2024-02-01 --granularity MONTHLY --metrics UnblendedCost --group-by Type=TAG,Key=CostCenter",
+        "task": "Estrai da Cost Explorer la spesa mensile raggruppata per tag CostCenter per addebitare ogni business unit."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_6",
+      "english": "Budget Alert",
+      "set": {
+        "command": "aws budgets create-budget --account-id $ACC --budget file://budget.json --notifications-with-subscribers file://notif.json",
+        "task": "Configura un budget AWS con notifiche al 50, 80 e 100 percento usando budget.json e notif.json."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_7",
+      "english": "RI Utilization",
+      "set": {
+        "command": "aws ce get-reservation-utilization --time-period Start=2024-01-01,End=2024-02-01 --granularity MONTHLY",
+        "task": "Estrai da Cost Explorer l'utilizzo mensile delle reserved instance per verificare se la copertura supera il 95 percento."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_7",
+      "english": "RI Coverage",
+      "set": {
+        "command": "aws ce get-reservation-coverage --time-period Start=2024-01-01,End=2024-02-01 --granularity MONTHLY --metrics Hour",
+        "task": "Calcola la RI coverage oraria del mese corrente per individuare workload EC2 stabili ancora pagati on-demand."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_7",
+      "english": "Compute Savings Plan",
+      "set": {
+        "command": "aws savingsplans create-savings-plan --savings-plan-offering-id $OFFER --commitment 50",
+        "task": "Acquista un Compute Savings Plan da 50 dollari l'ora sull'offering $OFFER per sbloccare fino al 66 percento di sconto."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_7",
+      "english": "Recommendations",
+      "set": {
+        "command": "aws ce get-rightsizing-recommendation --service AmazonEC2",
+        "task": "Esporta le rightsizing recommendation di Cost Explorer per EC2 per scoprire istanze inattive da dismettere."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cloud_foundations_5",
+      "english": "AWS Skill Builder",
+      "set": {
+        "command": "xdg-open https://skillbuilder.aws/",
+        "task": "Apri AWS Skill Builder nel browser per iscriverti al learning plan ufficiale della certificazione target di questa settimana."
+      }
+    }
+  ]
+}

@@ -1094,6 +1094,9 @@ export default {
               difficulty: 'beginner',
               tool: 'CodeQL',
               note: 'Motore di analisi statica semantica di GitHub: tratta il codice come dati interrogabili con query QL.',
+              command:
+                'codeql database analyze db --format=sarif-latest --output=results.sarif javascript-security-and-quality.qls',
+              task: 'Analizza il database CodeQL con il pack javascript-security-and-quality.qls ed esporta i risultati in SARIF.',
             },
             {
               english: 'Bandit',
@@ -1148,6 +1151,8 @@ export default {
               difficulty: 'beginner',
               tool: 'Checkmarx',
               note: 'Piattaforma SAST commerciale enterprise con supporto a oltre 30 linguaggi.',
+              command: 'cx scan create --project-name myapp --scan-types sast --branch main',
+              task: 'Avvia una scansione SAST con il CLI cx Checkmarx sul progetto myapp del branch main.',
             },
             {
               english: 'Fortify',
@@ -1160,6 +1165,8 @@ export default {
               difficulty: 'beginner',
               tool: 'Fortify',
               note: 'Suite SAST commerciale di OpenText (ex Micro Focus, ex HP).',
+              command: 'sourceanalyzer -b myapp -scan -f results.fpr',
+              task: 'Esegui sourceanalyzer di Fortify sul build myapp ed esporta i risultati nel file results.fpr.',
             },
             {
               english: 'Veracode',
@@ -1172,6 +1179,8 @@ export default {
               difficulty: 'beginner',
               tool: 'Veracode',
               note: `Piattaforma SAST/DAST commerciale erogata in modalita' SaaS.`,
+              command: 'veracode static scan --source ./app.zip --app-name myapp',
+              task: `Carica l'archivio app.zip su Veracode tramite il CLI per eseguire la scansione SAST cloud.`,
             },
             {
               english: 'SARIF',
@@ -1183,6 +1192,11 @@ export default {
               context: 'sast',
               difficulty: 'beginner',
               note: 'Static Analysis Results Interchange Format.',
+              code: `{
+  "version": "2.1.0",
+  "runs": [{"tool": {"driver": {"name": "semgrep"}}, "results": []}]
+}`,
+              task: 'Definisci un report SARIF 2.1.0 con il driver semgrep per pubblicare i finding nella code scanning di GitHub.',
             },
           ],
         },
@@ -1579,6 +1593,11 @@ export default {
               difficulty: 'beginner',
               tool: 'Renovate',
               note: 'Bot open source di aggiornamento dipendenze, altamente configurabile via renovate.json.',
+              code: `{
+  "extends": ["config:base"],
+  "vulnerabilityAlerts": {"enabled": true}
+}`,
+              task: 'Configura renovate.json estendendo config:base e attivando le vulnerability alerts automatiche.',
             },
             {
               english: 'OWASP Dependency-Check',
@@ -1651,6 +1670,8 @@ export default {
               difficulty: 'beginner',
               note: 'Open Source Vulnerabilities.',
               tool: 'osv-scanner',
+              command: 'osv-scanner -r ./project',
+              task: 'Analizza ricorsivamente la directory project con osv-scanner per cercare CVE nel database OSV.',
             },
             {
               english: 'Whitelist Library',
@@ -1690,6 +1711,8 @@ export default {
               context: 'sca',
               difficulty: 'beginner',
               tool: 'CycloneDX',
+              command: 'cyclonedx-py -o sbom.json -r requirements.txt',
+              task: `Genera l'SBOM CycloneDX dal requirements.txt scrivendo l'output su sbom.json.`,
             },
             {
               english: 'SPDX',
@@ -1702,6 +1725,8 @@ export default {
               difficulty: 'beginner',
               tool: 'SPDX',
               note: 'Software Package Data Exchange.',
+              command: 'syft myimage:latest -o spdx-json=spdx.json',
+              task: `Genera con Syft un SBOM in formato SPDX JSON dell'immagine myimage:latest.`,
             },
             {
               english: 'Syft',
@@ -1867,6 +1892,10 @@ export default {
                 "We enabled auto-merge for Dependabot PRs that only bump patch versions and pass all security checks. = Abbiamo abilitato l'auto-merge per le PR di Dependabot che incrementano solo versioni patch e passano tutti i controlli di sicurezza.",
               context: 'ci-cd',
               difficulty: 'beginner',
+              code: `automerge: true
+automergeType: "pr"
+automergeStrategy: "squash"`,
+              task: 'Abilita automerge in renovate.json per i bump patch usando la strategia squash.',
             },
             {
               english: 'Allowlist',
@@ -1888,6 +1917,8 @@ export default {
               context: 'sca',
               difficulty: 'beginner',
               tool: 'JFrog Artifactory, Nexus',
+              command: 'npm config set registry https://nexus.internal/npm/',
+              task: 'Configura npm per usare il registry privato Nexus interno invece del registry pubblico.',
             },
             {
               english: 'Vendor Risk',
@@ -1966,6 +1997,8 @@ export default {
               context: 'secrets',
               difficulty: 'intermediate',
               tool: 'HashiCorp Vault',
+              command: 'vault kv get -field=password secret/db/prod',
+              task: 'Leggi solo il campo password dal segreto secret/db/prod evitando di stamparlo in chiaro nei log.',
             },
             {
               english: 'Encryption Key',
@@ -2105,6 +2138,8 @@ export default {
               context: 'secrets',
               difficulty: 'intermediate',
               tool: 'Bitnami Sealed Secrets',
+              command: 'kubeseal --format=yaml < secret.yaml > sealed.yaml',
+              task: 'Cifra il file secret.yaml con kubeseal per ottenere un SealedSecret committabile in Git.',
             },
             {
               english: 'External Secrets Operator',
@@ -2116,6 +2151,14 @@ export default {
               context: 'secrets',
               difficulty: 'intermediate',
               tool: 'External Secrets Operator',
+              code: `apiVersion: external-secrets.io/v1beta1
+kind: ExternalSecret
+spec:
+  secretStoreRef:
+    name: aws-store
+  target:
+    name: app-secret`,
+              task: 'Definisci un ExternalSecret che sincronizza un segreto da aws-store nel secret Kubernetes app-secret.',
             },
             {
               english: 'Doppler',
@@ -2128,6 +2171,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'Doppler',
               note: 'Piattaforma SaaS per centralizzare e sincronizzare segreti tra ambienti e team.',
+              command: 'doppler run --project myapp --config prd -- ./app',
+              task: 'Avvia ./app iniettando i segreti del config prd di Doppler senza scrivere alcun file .env.',
             },
             {
               english: '1Password CLI',
@@ -2222,6 +2267,12 @@ export default {
               context: 'secrets',
               difficulty: 'intermediate',
               tool: 'GitHub',
+              code: `name: secret-scan
+on: [push, pull_request]
+jobs:
+  scan:
+    uses: github/codeql-action/.github/workflows/secret-scanning.yml@v3`,
+              task: `Aggiungi al workflow l'azione di secret scanning di GitHub per bloccare i push contenenti credenziali.`,
             },
             {
               english: 'Push Protection',
@@ -2232,6 +2283,9 @@ export default {
                 'With push protection enabled, Git rejects the push immediately if the commit contains any recognized secret pattern. = Con la push protection abilitata, Git rifiuta il push immediatamente se il commit contiene qualsiasi pattern di segreto riconosciuto.',
               context: 'secrets',
               difficulty: 'intermediate',
+              command:
+                'gh api -X PATCH /repos/:owner/:repo --field security_and_analysis[secret_scanning_push_protection][status]=enabled',
+              task: 'Abilita push protection via gh api per rifiutare i push che contengono token riconosciuti.',
             },
             {
               english: 'Entropy Detection',
@@ -2242,6 +2296,12 @@ export default {
                 'High entropy detection catches randomly generated strings like API keys that rule-based scanners might miss. = Il rilevamento ad alta entropia intercetta stringhe generate casualmente come chiavi API che gli scanner basati su regole potrebbero non trovare.',
               context: 'secrets',
               difficulty: 'intermediate',
+              code: `import math
+def shannon_entropy(s):
+    p = [s.count(c)/len(s) for c in set(s)]
+    return -sum(x*math.log2(x) for x in p)
+# alert when entropy > 4.5`,
+              task: 'Implementa shannon_entropy che marca come sospette le stringhe con entropia superiore a 4.5.',
             },
             {
               english: 'Regex Pattern',
@@ -2306,6 +2366,8 @@ export default {
               context: 'secrets',
               difficulty: 'intermediate',
               tool: 'Vault dynamic secrets',
+              command: 'vault read database/creds/readonly-role',
+              task: 'Richiedi a Vault una credenziale dinamica del ruolo readonly-role che scade dopo il TTL.',
             },
             {
               english: 'Short-Lived Credential',
@@ -2337,6 +2399,10 @@ export default {
               context: 'secrets',
               difficulty: 'intermediate',
               tool: 'GCP Workload Identity, IRSA',
+              code: `metadata:
+  annotations:
+    iam.gke.io/gcp-service-account: app-sa@project.iam.gserviceaccount.com`,
+              task: 'Annota il ServiceAccount Kubernetes con iam.gke.io/gcp-service-account per attivare Workload Identity su GKE.',
             },
             {
               english: 'IRSA',
@@ -2368,6 +2434,11 @@ export default {
                 "The init container handles secret injection by fetching credentials from Vault and writing them to a shared memory volume. = Il container init gestisce l'iniezione dei segreti recuperando le credenziali da Vault e scrivendole in un volume di memoria condiviso.",
               context: 'secrets',
               difficulty: 'intermediate',
+              code: `metadata:
+  annotations:
+    vault.hashicorp.com/agent-inject: "true"
+    vault.hashicorp.com/agent-inject-secret-db: "database/creds/app"`,
+              task: 'Aggiungi le annotation vault.hashicorp.com/agent-inject al pod per iniettare il segreto database/creds/app.',
             },
             {
               english: 'Vault Agent',
@@ -2379,6 +2450,16 @@ export default {
               context: 'secrets',
               difficulty: 'intermediate',
               tool: 'Vault Agent',
+              code: `auto_auth {
+  method "kubernetes" {
+    config = { role = "app-role" }
+  }
+}
+template {
+  source = "db.tpl"
+  destination = "/secrets/db.env"
+}`,
+              task: 'Configura Vault Agent con auto_auth Kubernetes e un template che genera /secrets/db.env.',
             },
             {
               english: 'Break-Glass Procedure',
@@ -2541,6 +2622,9 @@ export default {
               difficulty: 'intermediate',
               tool: 'Burp Suite',
               note: 'Proxy di test per sicurezza web di PortSwigger, lo standard de facto del web pentesting.',
+              command:
+                'burpsuite --project-file=scan.burp --config-file=ci.json --unpause-spider-and-scanner',
+              task: 'Lancia Burp Suite in modalita headless usando il progetto scan.burp e la config ci.json per la scansione CI.',
             },
             {
               english: 'Nuclei',
@@ -2632,6 +2716,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'Arachni',
               note: `DAST modulare in Ruby, oggi non piu' mantenuto attivamente.`,
+              command: 'arachni https://target --report-save-path=report.afr',
+              task: 'Avvia arachni contro https://target salvando il report binario su report.afr per il post-processing.',
             },
             {
               english: 'Stackhawk',
@@ -2644,6 +2730,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'StackHawk',
               note: 'DAST commerciale pensato per essere lanciato dentro la CI da sviluppatori e team DevOps.',
+              command: 'hawk scan stackhawk.yml --severity=high',
+              task: 'Esegui hawk scan con il file di configurazione stackhawk.yml filtrando i finding di severita high.',
             },
           ],
         },
@@ -2683,6 +2771,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'AFL++',
               note: 'Fork attivo di American Fuzzy Lop con strumentazione evolutiva avanzata per fuzzing di binari.',
+              command: 'afl-fuzz -i corpus/ -o findings/ -- ./target @@',
+              task: 'Lancia afl-fuzz con corpus iniziale corpus/ e output in findings/ contro il binario target.',
             },
             {
               english: 'libFuzzer',
@@ -2695,6 +2785,12 @@ export default {
               difficulty: 'intermediate',
               tool: 'libFuzzer',
               note: 'Fuzzer in-process del progetto LLVM, integrato con sanitizer come ASan e UBSan.',
+              code: `extern "C" int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {
+    parse_json(Data, Size);
+    return 0;
+}`,
+              command: 'clang -g -O1 -fsanitize=fuzzer,address harness.c -o harness',
+              task: `Compila l'harness libFuzzer con clang abilitando i sanitizer fuzzer e address per intercettare crash di memoria.`,
             },
             {
               english: 'go-fuzz',
@@ -2763,6 +2859,8 @@ export default {
               context: 'dast',
               difficulty: 'intermediate',
               tool: 'ASan, MSan, UBSan',
+              command: 'clang -fsanitize=address,undefined -g -O1 app.c -o app',
+              task: 'Compila app.c con AddressSanitizer e UndefinedBehaviorSanitizer per rilevare errori di memoria a runtime.',
             },
           ],
         },
@@ -2800,6 +2898,8 @@ export default {
                 'During the reconnaissance phase, the tester used Shodan to discover forgotten development servers exposed to the internet. = Durante la fase di ricognizione, il tester ha usato Shodan per scoprire server di sviluppo dimenticati esposti su internet.',
               context: 'dast',
               difficulty: 'intermediate',
+              command: 'subfinder -d target.com -silent | httpx -title -tech-detect',
+              task: 'Enumera i sottodomini di target.com con subfinder e arricchiscili con httpx per ricognizione passiva.',
             },
             {
               english: 'Exploitation',
@@ -2841,6 +2941,13 @@ export default {
               context: 'dast',
               difficulty: 'intermediate',
               tool: 'HackerOne, Bugcrowd',
+              code: `{
+  "program": "acme-corp",
+  "scope": ["*.acme.com"],
+  "out_of_scope": ["staging.*"],
+  "severity_map": {"critical": 10000, "high": 3000}
+}`,
+              task: 'Definisci un policy.json del bug bounty con scope *.acme.com e payout differenziati per severita.',
             },
             {
               english: 'Scope',
@@ -2898,6 +3005,8 @@ export default {
                 'Scanning every container image before deployment prevents known-vulnerable packages from reaching production. = Scansionare ogni immagine container prima del deployment impedisce ai pacchetti con vulnerabilità note di raggiungere la produzione.',
               context: 'container-security',
               difficulty: 'intermediate',
+              command: 'trivy image --severity HIGH,CRITICAL --exit-code 1 myapp:1.0',
+              task: 'Scansiona myapp:1.0 con Trivy facendo fallire la build se contiene CVE HIGH o CRITICAL.',
             },
             {
               english: 'Image Scanning',
@@ -2908,6 +3017,8 @@ export default {
                 'Automated image scanning runs on every push to the container registry, flagging any CVE above medium severity. = La scansione automatica delle immagini gira a ogni push nel container registry, segnalando qualsiasi CVE sopra la severità media.',
               context: 'container-security',
               difficulty: 'intermediate',
+              command: 'trivy image --format sarif --output trivy.sarif registry/myapp:latest',
+              task: 'Esporta il report di scansione immagine in SARIF per pubblicarlo nella code scanning di GitHub.',
             },
             {
               english: 'Trivy',
@@ -2948,6 +3059,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'Clair',
               note: 'Scanner di immagini di CoreOS/Red Hat, integrato storicamente nel registry Quay.',
+              command: 'clairctl report --host http://clair:6060 quay.io/myapp:latest',
+              task: 'Genera con clairctl il report di vulnerabilita di quay.io/myapp:latest interrogando il server Clair.',
             },
             {
               english: 'Anchore',
@@ -2960,6 +3073,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'Anchore',
               note: 'Piattaforma commerciale di sicurezza container basata sui suoi progetti open source Syft e Grype.',
+              command: 'anchore-cli image vuln myimage:latest all',
+              task: `Mostra con anchore-cli tutte le vulnerabilita di myimage:latest dopo l'analisi del registry interno.`,
             },
             {
               english: 'Layer',
@@ -2980,6 +3095,8 @@ export default {
               context: 'container-security',
               difficulty: 'intermediate',
               note: 'Tipicamente derivato da NVD/OSV e ottimizzato per immagini OCI.',
+              command: 'trivy --download-db-only --db-repository ghcr.io/aquasecurity/trivy-db',
+              task: `Aggiorna localmente il database CVE di Trivy scaricando l'ultima versione da ghcr.io.`,
             },
             {
               english: 'Severity Threshold',
@@ -3021,6 +3138,10 @@ export default {
                 "Switching to an official hardened base image reduced the total vulnerability count from eighty-seven to four. = Passare a un'immagine base ufficiale rinforzata ha ridotto il conteggio totale delle vulnerabilità da ottantasette a quattro.",
               context: 'container-security',
               difficulty: 'intermediate',
+              code: `FROM cgr.dev/chainguard/static:latest
+COPY app /app
+ENTRYPOINT ["/app"]`,
+              task: 'Usa una base image Chainguard static minimale per eliminare shell, libc dinamica e package manager.',
             },
             {
               english: 'Distroless',
@@ -3116,6 +3237,10 @@ export default {
                 "Trimming unused packages from the minimal image reduced the CVE count from thirty-two to zero critical findings. = Rimuovere i pacchetti inutilizzati dall'immagine minimale ha ridotto il conteggio CVE da trentadue a zero finding critici.",
               context: 'container-security',
               difficulty: 'intermediate',
+              code: `FROM scratch
+COPY --from=builder /out/app /app
+ENTRYPOINT ["/app"]`,
+              task: `Costruisci l'immagine finale a partire da scratch copiando solo il binario statico dallo stage builder.`,
             },
             {
               english: 'Wolfi',
@@ -3127,6 +3252,9 @@ export default {
               context: 'container-security',
               difficulty: 'intermediate',
               tool: 'Chainguard Wolfi',
+              code: `FROM cgr.dev/chainguard/wolfi-base:latest
+RUN apk add --no-cache python3`,
+              task: 'Parti da cgr.dev/chainguard/wolfi-base per ottenere una distro container con CVE quasi azzerate.',
             },
           ],
         },
@@ -3145,6 +3273,8 @@ export default {
               context: 'container-security',
               difficulty: 'intermediate',
               tool: 'Harbor, ECR, Artifactory',
+              command: 'crane copy myapp:latest registry.internal/myapp:latest',
+              task: `Copia con crane l'immagine myapp:latest nel registry privato interno preservando il digest.`,
             },
             {
               english: 'Image Signing',
@@ -3183,6 +3313,8 @@ export default {
               context: 'supply-chain',
               difficulty: 'intermediate',
               tool: 'Notary',
+              command: 'notary -s https://notary.docker.io verify docker.io/library/nginx latest',
+              task: 'Verifica con notary che il tag latest di nginx sia firmato dalla trust collection ufficiale.',
             },
             {
               english: 'Admission Controller',
@@ -3193,6 +3325,14 @@ export default {
                 "The Kubernetes admission controller rejects any pod spec that references an unsigned or unscanned container image. = L'admission controller Kubernetes rifiuta qualsiasi specifica pod che referenzi un'immagine container non firmata o non scansionata.",
               context: 'container-security',
               difficulty: 'intermediate',
+              code: `apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingWebhookConfiguration
+webhooks:
+  - name: image-policy.io
+    rules:
+      - operations: ["CREATE"]
+        resources: ["pods"]`,
+              task: 'Registra un ValidatingWebhookConfiguration che intercetta la creazione di pod per applicare le policy.',
             },
             {
               english: 'Runtime Security',
@@ -3216,6 +3356,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'Falco',
               note: 'Rilevatore di eventi runtime cloud-native (CNCF) basato su regole su syscall ed eventi K8s.',
+              command: 'falco -r /etc/falco/rules.d/ -o json_output=true',
+              task: 'Avvia Falco caricando le regole da /etc/falco/rules.d con output JSON per il forwarding al SIEM.',
             },
             {
               english: 'Container Escape',
@@ -3237,6 +3379,12 @@ export default {
               context: 'container-security',
               difficulty: 'intermediate',
               note: "privileged: true equivale a root sull'host.",
+              code: `securityContext:
+  privileged: false
+  allowPrivilegeEscalation: false
+  capabilities:
+    drop: ["ALL"]`,
+              task: 'Imposta privileged a false e drop di tutte le capability nel securityContext del pod produttivo.',
             },
             {
               english: 'Image Pull Policy',
@@ -3266,6 +3414,9 @@ export default {
                 "Running a build-time scan inside the Dockerfile RUN step catches vulnerabilities before the image even leaves CI. = Eseguire una scansione a tempo di build dentro lo step RUN del Dockerfile intercetta vulnerabilità prima che l'immagine lasci la CI.",
               context: 'container-security',
               difficulty: 'intermediate',
+              command:
+                'docker build --secret id=trivy,src=$HOME/.trivy . && trivy image --exit-code 1 myapp',
+              task: `Combina docker build e trivy image in pipeline per bloccare le build con CVE alla creazione dell'immagine.`,
             },
             {
               english: 'Registry Scan',
@@ -3276,6 +3427,9 @@ export default {
                 'A scheduled registry scan re-evaluates stored images every night against newly published vulnerability databases. = Una scansione del registry pianificata rivaluta le immagini memorizzate ogni notte contro i database di vulnerabilità appena pubblicati.',
               context: 'container-security',
               difficulty: 'intermediate',
+              command:
+                'trivy image --server http://trivy-server:8080 registry.internal/myapp:latest',
+              task: 'Lancia Trivy in modalita client/server contro il registry interno per scansioni schedulate notturne.',
             },
             {
               english: 'Continuous Image Scanning',
@@ -3325,6 +3479,9 @@ export default {
               context: 'container-security',
               difficulty: 'intermediate',
               tool: 'docker-bench-security',
+              command:
+                'docker run --rm --net host --pid host --cap-add audit_control docker/docker-bench-security',
+              task: `Esegui docker-bench-security sull'host per valutare la conformita Docker al CIS Benchmark.`,
             },
             {
               english: 'kube-bench',
@@ -3426,6 +3583,9 @@ export default {
               difficulty: 'intermediate',
               tool: 'AWS CloudFormation',
               note: 'Servizio IaC nativo di AWS basato su template YAML o JSON.',
+              command:
+                'aws cloudformation deploy --template-file stack.yml --stack-name prod --capabilities CAPABILITY_IAM',
+              task: 'Deploya lo stack stack.yml con AWS CloudFormation autorizzando esplicitamente la creazione di risorse IAM.',
             },
             {
               english: 'Pulumi',
@@ -3438,6 +3598,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'Pulumi',
               note: `IaC che permette di descrivere l'infrastruttura in linguaggi general-purpose come TypeScript, Python o Go.`,
+              command: 'pulumi preview --diff --stack production',
+              task: 'Visualizza con pulumi preview le modifiche allo stack production includendo il diff dettagliato.',
             },
             {
               english: 'ARM Template',
@@ -3461,6 +3623,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'Azure Bicep',
               note: `DSL IaC di Microsoft pensato come evoluzione piu' leggibile dei template ARM di Azure.`,
+              command: 'bicep build main.bicep --outfile main.json',
+              task: 'Compila main.bicep in template ARM JSON per validarlo con i tool standard di Azure.',
             },
             {
               english: 'Misconfiguration',
@@ -3566,6 +3730,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'KICS by Checkmarx',
               note: 'Keeping Infrastructure as Code Secure: scanner IaC open source mantenuto da Checkmarx.',
+              command: 'kics scan -p . --output-path results --severity HIGH',
+              task: 'Esegui kics scan sulla directory corrente filtrando i finding di severita HIGH ed esportando in results.',
             },
             {
               english: 'cfn-nag',
@@ -3617,6 +3783,8 @@ export default {
               context: 'policy',
               difficulty: 'intermediate',
               tool: 'OPA',
+              command: 'opa eval -d policies/ -i input.json "data.terraform.deny"',
+              task: `Valuta con opa eval il pacchetto data.terraform.deny passando le policy in policies/ e l'input input.json.`,
             },
             {
               english: 'Plan Output',
@@ -3639,6 +3807,14 @@ export default {
                 'The Pulumi policy pack enforces that no EC2 instance type larger than t3.medium is created without approval. = Il policy pack Pulumi impone che nessun tipo di istanza EC2 più grande di t3.medium venga creato senza approvazione.',
               context: 'policy',
               difficulty: 'intermediate',
+              code: `new PolicyPack("aws-security", {
+  policies: [{
+    name: "no-public-s3",
+    enforcementLevel: "mandatory",
+    validateResource: (r, args) => { /* ... */ }
+  }]
+});`,
+              task: 'Definisci un PolicyPack Pulumi con la regola obbligatoria no-public-s3 che blocca i bucket pubblici.',
             },
           ],
         },
@@ -3783,6 +3959,11 @@ export default {
               difficulty: 'intermediate',
               tool: 'Atlantis',
               note: 'Strumento open source che automatizza terraform plan/apply tramite commenti sulle pull request.',
+              code: `repos:
+  - id: github.com/org/infra
+    apply_requirements: [approved, mergeable]
+    workflow: secure`,
+              task: `Configura Atlantis con apply_requirements approved e mergeable per la repo infra prima dell'apply.`,
             },
             {
               english: 'Terraform Cloud',
@@ -3806,6 +3987,14 @@ export default {
               context: 'policy',
               difficulty: 'intermediate',
               tool: 'HashiCorp Sentinel',
+              code: `import "tfplan/v2" as tfplan
+
+main = rule {
+  all tfplan.resource_changes as _, rc {
+    rc.type is "aws_s3_bucket" and rc.change.after.acl is "private"
+  }
+}`,
+              task: 'Scrivi una policy Sentinel che vincola ogni aws_s3_bucket nel piano Terraform ad avere acl private.',
             },
             {
               english: 'Drift Detection',
@@ -3817,6 +4006,9 @@ export default {
               context: 'iac-security',
               difficulty: 'intermediate',
               tool: 'driftctl',
+              command:
+                'driftctl scan --from tfstate://terraform.tfstate --output json://drift.json',
+              task: `Esegui driftctl scan confrontando lo stato terraform.tfstate con l'infrastruttura reale ed esporta in JSON.`,
             },
             {
               english: 'Modules Registry',
@@ -3871,6 +4063,8 @@ export default {
               context: 'iac-security',
               difficulty: 'intermediate',
               tool: 'Infracost',
+              command: 'infracost breakdown --path . --format json --out-file infracost.json',
+              task: 'Genera con infracost breakdown il costo stimato del modulo Terraform corrente in formato JSON.',
             },
           ],
         },
@@ -3910,6 +4104,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'OPA',
               note: 'Open Policy Agent.',
+              command: 'opa eval -d policies/ -i request.json "data.kubernetes.admission.deny"',
+              task: 'Interroga OPA con opa eval passando la admission request request.json e le policy in policies/.',
             },
             {
               english: 'Rego',
@@ -3932,6 +4128,14 @@ export default {
                 'OPA returns an allow or deny decision within a few milliseconds, so it does not add noticeable latency. = OPA restituisce una decisione di allow o deny in pochi millisecondi, quindi non aggiunge latenza percepibile.',
               context: 'policy',
               difficulty: 'intermediate',
+              code: `package authz
+
+default allow := false
+allow if {
+    input.user.role == "admin"
+    input.method == "GET"
+}`,
+              task: 'Definisci la regola allow che ritorna true solo per utenti admin che fanno una richiesta GET.',
             },
             {
               english: 'Bundle',
@@ -3942,6 +4146,15 @@ export default {
                 "The OPA server downloads the latest policy bundle from S3 every thirty seconds to pick up rule changes. = Il server OPA scarica l'ultimo bundle di policy da S3 ogni trenta secondi per recepire i cambiamenti alle regole.",
               context: 'policy',
               difficulty: 'intermediate',
+              code: `services:
+  s3:
+    url: https://bundles.s3.amazonaws.com
+bundles:
+  authz:
+    resource: bundles/authz.tar.gz
+    polling:
+      min_delay_seconds: 30`,
+              task: 'Configura OPA per scaricare il bundle authz.tar.gz da S3 con polling minimo di 30 secondi.',
             },
             {
               english: 'Allow Rule',
@@ -3976,6 +4189,14 @@ export default {
                 'OPA evaluates the Kubernetes admission request as input and checks every field against the active policy set. = OPA valuta la richiesta di ammissione Kubernetes come input e controlla ogni campo contro il set di policy attivo.',
               context: 'policy',
               difficulty: 'intermediate',
+              code: `{
+  "kind": "AdmissionRequest",
+  "request": {
+    "operation": "CREATE",
+    "object": {"spec": {"containers": [{"image": "nginx:latest"}]}}
+  }
+}`,
+              task: 'Costruisci un input JSON di AdmissionRequest per testare le policy Rego di ammissione dei pod.',
             },
             {
               english: 'Data',
@@ -4062,6 +4283,15 @@ export default {
                 "The admission policy rejects any pod spec missing the required label for cost center and environment designation. = La policy di ammissione rifiuta qualsiasi specifica pod priva del label obbligatorio per centro di costo e designazione dell'ambiente.",
               context: 'policy',
               difficulty: 'intermediate',
+              code: `package main
+
+required := {"app", "team", "env"}
+deny[msg] {
+    missing := required - {key | input.metadata.labels[key]}
+    count(missing) > 0
+    msg := sprintf("missing labels: %v", [missing])
+}`,
+              task: 'Scrivi una policy Rego che blocca le risorse prive delle label obbligatorie app, team ed env.',
             },
             {
               english: 'Approved Registry',
@@ -4072,6 +4302,15 @@ export default {
                 "Only images pulled from the approved registry at registry.internal.io pass the admission controller check. = Solo le immagini scaricate dal registry approvato su registry.internal.io passano il controllo dell'admission controller.",
               context: 'policy',
               difficulty: 'intermediate',
+              code: `package main
+
+allowed := {"registry.internal.io", "gcr.io/myorg"}
+deny[msg] {
+    image := input.spec.containers[_].image
+    not startswith(image, allowed[_])
+    msg := sprintf("image %v not from approved registry", [image])
+}`,
+              task: 'Definisci una policy Rego che nega i pod con immagini provenienti da registry non approvati.',
             },
             {
               english: 'Policy Library',
@@ -4133,6 +4372,15 @@ export default {
               context: 'policy',
               difficulty: 'intermediate',
               note: 'Esempi classici: OPA Gatekeeper e Kyverno. Si distingue dal generico admission controller built-in di K8s.',
+              code: `apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingWebhookConfiguration
+metadata:
+  name: opa-validator
+webhooks:
+  - name: validating.gatekeeper.sh
+    clientConfig:
+      service: {name: gatekeeper-webhook, namespace: gatekeeper-system}`,
+              task: 'Registra un ValidatingWebhookConfiguration che inoltra le richieste a Gatekeeper per la validazione.',
             },
             {
               english: 'Validating Webhook',
@@ -4143,6 +4391,13 @@ export default {
                 'The validating webhook intercepts CREATE and UPDATE requests and rejects pods that violate the security baseline. = Il validating webhook intercetta le richieste CREATE e UPDATE e rifiuta i pod che violano la baseline di sicurezza.',
               context: 'policy',
               difficulty: 'intermediate',
+              code: `rules:
+  - operations: ["CREATE", "UPDATE"]
+    apiGroups: [""]
+    apiVersions: ["v1"]
+    resources: ["pods"]
+failurePolicy: Fail`,
+              task: 'Configura il validating webhook per intercettare CREATE e UPDATE dei pod con failurePolicy Fail.',
             },
             {
               english: 'Mutating Webhook',
@@ -4153,6 +4408,12 @@ export default {
                 'Our mutating webhook automatically injects a sidecar proxy and resource limits into every new pod deployment. = Il nostro mutating webhook inietta automaticamente un proxy sidecar e limiti di risorse in ogni nuovo deployment di pod.',
               context: 'policy',
               difficulty: 'intermediate',
+              code: `apiVersion: admissionregistration.k8s.io/v1
+kind: MutatingWebhookConfiguration
+webhooks:
+  - name: sidecar-injector.io
+    reinvocationPolicy: IfNeeded`,
+              task: 'Definisci un MutatingWebhookConfiguration con reinvocationPolicy IfNeeded per iniettare sidecar nei pod.',
             },
             {
               english: 'Kyverno',
@@ -4178,6 +4439,20 @@ export default {
               context: 'policy',
               difficulty: 'intermediate',
               tool: 'OPA Gatekeeper',
+              code: `apiVersion: templates.gatekeeper.sh/v1
+kind: ConstraintTemplate
+metadata:
+  name: k8srequiredlabels
+spec:
+  crd:
+    spec:
+      names: {kind: K8sRequiredLabels}
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |
+        package k8srequiredlabels
+        violation[{"msg": msg}] { ... }`,
+              task: 'Definisci un ConstraintTemplate Gatekeeper k8srequiredlabels che importa una policy Rego di violation.',
             },
             {
               english: 'Constraint',
@@ -4188,6 +4463,16 @@ export default {
                 "The cluster administrator created a constraint that blocks any deployment without explicit CPU and memory limits. = L'amministratore del cluster ha creato un constraint che blocca qualsiasi deployment senza limiti espliciti di CPU e memoria.",
               context: 'policy',
               difficulty: 'intermediate',
+              code: `apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sRequiredLabels
+metadata:
+  name: deployment-must-have-owner
+spec:
+  match:
+    kinds: [{apiGroups: ["apps"], kinds: ["Deployment"]}]
+  parameters:
+    labels: ["owner"]`,
+              task: 'Istanzia un Constraint K8sRequiredLabels che impone la label owner su tutti i Deployment.',
             },
             {
               english: 'Constraint Template',
@@ -4230,6 +4515,15 @@ export default {
               context: 'policy',
               difficulty: 'intermediate',
               note: 'PSS sostituisce le PSP deprecate.',
+              code: `apiVersion: v1
+kind: Namespace
+metadata:
+  name: prod
+  labels:
+    pod-security.kubernetes.io/enforce: restricted
+    pod-security.kubernetes.io/audit: restricted
+    pod-security.kubernetes.io/warn: restricted`,
+              task: 'Etichetta il namespace prod con pod-security.kubernetes.io/enforce restricted per applicare lo standard piu rigido.',
             },
           ],
         },
@@ -4247,6 +4541,8 @@ export default {
                 'The pre-deploy check validates that all images are signed and all manifests pass OPA policy evaluation. = Il controllo pre-deploy valida che tutte le immagini siano firmate e tutti i manifesti passino la valutazione delle policy OPA.',
               context: 'policy',
               difficulty: 'intermediate',
+              command: 'conftest test --policy policies/ deployment.yaml',
+              task: 'Lancia conftest test in pipeline pre-deploy per validare deployment.yaml contro le policy Rego.',
             },
             {
               english: 'Helm Lint',
@@ -4293,6 +4589,14 @@ export default {
                 'The drift policy alerts when a manually changed resource no longer matches its Terraform-managed definition. = La policy di drift allerta quando una risorsa modificata manualmente non corrisponde più alla sua definizione gestita da Terraform.',
               context: 'policy',
               difficulty: 'intermediate',
+              code: `package drift
+
+deny[msg] {
+    actual := data.cloud.aws.s3_buckets[_]
+    not actual.tags.managed_by == "terraform"
+    msg := sprintf("bucket %v not managed by Terraform", [actual.name])
+}`,
+              task: 'Scrivi una policy drift che segnala bucket S3 senza il tag managed_by uguale a terraform.',
             },
             {
               english: 'Score Card',
@@ -4304,6 +4608,8 @@ export default {
               context: 'policy',
               difficulty: 'intermediate',
               tool: 'OpenSSF Scorecard',
+              command: 'scorecard --repo=github.com/myorg/myrepo --format=json',
+              task: 'Lancia OpenSSF Scorecard sulla repo myorg/myrepo esportando il punteggio in JSON per la dashboard.',
             },
             {
               english: 'Policy Bundle Server',
@@ -4381,6 +4687,9 @@ export default {
                 'Generating build provenance records proves exactly which source commit, builder, and parameters produced a given artifact. = Generare record di provenienza della build dimostra esattamente quale commit sorgente, builder e parametri hanno prodotto un dato artefatto.',
               context: 'supply-chain',
               difficulty: 'intermediate',
+              command:
+                'cosign attest --predicate provenance.json --type slsaprovenance myimage:latest',
+              task: `Allega l'attestazione di provenienza SLSA provenance.json all'immagine myimage:latest con cosign attest.`,
             },
             {
               english: 'Attestation',
@@ -4391,6 +4700,8 @@ export default {
                 "Attaching a signed attestation to the container image proves it passed all required security scans before release. = Allegare un'attestazione firmata all'immagine container dimostra che ha superato tutte le scansioni di sicurezza richieste prima del rilascio.",
               context: 'supply-chain',
               difficulty: 'intermediate',
+              command: `cosign verify-attestation --type slsaprovenance --certificate-identity-regexp '.*' myimage`,
+              task: `Verifica con cosign verify-attestation che myimage abbia un'attestazione SLSA firmata da identita valide.`,
             },
             {
               english: 'Signature',
@@ -4401,6 +4712,8 @@ export default {
                 'Verifying the cryptographic signature on each artifact confirms that it has not been tampered with since the build. = Verificare la firma crittografica su ogni artefatto conferma che non è stato manomesso dal momento della build.',
               context: 'supply-chain',
               difficulty: 'intermediate',
+              command: 'cosign sign --yes --output-signature sig.bin myimage:latest',
+              task: 'Firma myimage:latest con cosign esportando la firma binaria nel file sig.bin per archiviazione.',
             },
             {
               english: 'Verifier',
@@ -4613,6 +4926,8 @@ export default {
               context: 'supply-chain',
               difficulty: 'intermediate',
               tool: 'Fulcio',
+              command: 'cosign sign --fulcio-url=https://fulcio.sigstore.dev myimage',
+              task: `Firma myimage indicando esplicitamente l'URL Fulcio pubblico per ottenere un certificato effimero.`,
             },
             {
               english: 'Rekor',
@@ -4625,6 +4940,9 @@ export default {
               difficulty: 'intermediate',
               tool: 'Rekor',
               note: 'Transparency log immutabile.',
+              command:
+                'rekor-cli search --artifact myimage.tar --rekor_server https://rekor.sigstore.dev',
+              task: `Cerca con rekor-cli tutte le voci del transparency log relative all'artefatto myimage.tar.`,
             },
             {
               english: 'Keyless Signing',
@@ -4647,6 +4965,8 @@ export default {
                 "Publishing every build attestation to a transparency log lets external auditors verify the integrity of released artifacts. = Pubblicare ogni attestazione di build in un log di trasparenza permette agli auditor esterni di verificare l'integrità degli artefatti rilasciati.",
               context: 'supply-chain',
               difficulty: 'intermediate',
+              command: 'rekor-cli get --uuid=24296fb24b8ad77a --format=json',
+              task: 'Recupera dal log Rekor la voce con UUID specifico in JSON per verifiche audit indipendenti.',
             },
             {
               english: 'in-toto',
@@ -4658,6 +4978,8 @@ export default {
               context: 'supply-chain',
               difficulty: 'intermediate',
               tool: 'in-toto',
+              command: 'in-toto-run --step-name build --key signer.key -- make build',
+              task: 'Esegui make build sotto in-toto-run firmando i metadati dello step build con la chiave signer.key.',
             },
             {
               english: 'Provenance Attestation',
@@ -4693,6 +5015,18 @@ export default {
               context: 'supply-chain',
               difficulty: 'intermediate',
               tool: 'Sigstore Policy Controller',
+              code: `apiVersion: policy.sigstore.dev/v1beta1
+kind: ClusterImagePolicy
+metadata:
+  name: require-signed
+spec:
+  images:
+    - glob: "registry.internal/**"
+  authorities:
+    - keyless:
+        identities:
+          - issuer: https://token.actions.githubusercontent.com`,
+              task: 'Definisci una ClusterImagePolicy Sigstore che richiede firma keyless GitHub Actions per il registry interno.',
             },
           ],
         },
@@ -4711,6 +5045,13 @@ export default {
               context: 'supply-chain',
               difficulty: 'intermediate',
               tool: 'slsa-github-generator',
+              code: `jobs:
+  provenance:
+    permissions:
+      id-token: write
+      contents: read
+    uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v2.0.0`,
+              task: 'Aggiungi al workflow il generator_generic_slsa3 di slsa-framework per produrre provenance SLSA Level 3.',
             },
             {
               english: 'Pinned Action',
@@ -4733,6 +5074,8 @@ export default {
                 'Automated lockfile maintenance updates dependency hashes weekly, catching any digest mismatch that could indicate tampering. = La manutenzione automatica del lockfile aggiorna gli hash delle dipendenze settimanalmente, intercettando qualsiasi mismatch di digest che potrebbe indicare manomissione.',
               context: 'supply-chain',
               difficulty: 'intermediate',
+              command: 'npm ci --audit=false && npm audit signatures',
+              task: `Esegui npm ci seguito da npm audit signatures per verificare l'integrita dei lockfile prima della build.`,
             },
             {
               english: 'Mirror Repository',
@@ -4765,6 +5108,9 @@ export default {
                 'Each developer registers a GPG key with GitHub so their commits show a verified badge in the commit log. = Ogni sviluppatore registra una chiave GPG con GitHub così i loro commit mostrano un badge verificato nel log dei commit.',
               context: 'supply-chain',
               difficulty: 'intermediate',
+              command:
+                'git config --global commit.gpgsign true && git config --global user.signingkey ABCD1234',
+              task: 'Configura git affinche tutti i commit globali siano firmati automaticamente con la chiave GPG ABCD1234.',
             },
             {
               english: 'OpenSSF',
@@ -4959,6 +5305,8 @@ export default {
               context: 'compliance-as-code',
               difficulty: 'intermediate',
               tool: 'Chef Compliance',
+              command: 'chef-automate compliance scan --node prod-01 --profile cis-linux',
+              task: 'Lancia chef-automate compliance scan sul nodo prod-01 col profilo cis-linux per audit continuo.',
             },
             {
               english: 'OpenSCAP',
@@ -4984,6 +5332,15 @@ export default {
               context: 'compliance-as-code',
               difficulty: 'intermediate',
               tool: 'OpenShift Compliance Operator',
+              code: `apiVersion: compliance.openshift.io/v1alpha1
+kind: ScanSettingBinding
+metadata:
+  name: cis-scan
+profiles:
+  - name: ocp4-cis
+    kind: Profile
+    apiGroup: compliance.openshift.io/v1alpha1`,
+              task: 'Crea un ScanSettingBinding cis-scan che attiva il profilo ocp4-cis del Compliance Operator OpenShift.',
             },
             {
               english: 'Cloud Custodian',
@@ -4996,6 +5353,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'Cloud Custodian',
               note: 'Motore di governance cloud open source: descrive policy in YAML per AWS, Azure e GCP.',
+              command: 'custodian run --output-dir=output policies/s3-public.yml',
+              task: `Esegui custodian run con la policy s3-public.yml per applicare governance ai bucket S3 dell'account.`,
             },
             {
               english: 'Drata',
@@ -5079,6 +5438,9 @@ export default {
               context: 'compliance-as-code',
               difficulty: 'intermediate',
               tool: 'AWS CloudTrail',
+              command:
+                'aws cloudtrail lookup-events --lookup-attributes AttributeKey=EventName,AttributeValue=DeleteBucket',
+              task: `Interroga CloudTrail per recuperare tutti gli eventi DeleteBucket utili a ricostruire l'audit trail.`,
             },
             {
               english: 'Immutable Logs',
@@ -5140,6 +5502,14 @@ export default {
               context: 'compliance-as-code',
               difficulty: 'intermediate',
               note: 'Open Security Controls Assessment Language.',
+              code: `{
+  "system-security-plan": {
+    "uuid": "a4f3...",
+    "metadata": {"title": "SSP", "version": "1.0"},
+    "control-implementation": {"implemented-requirements": []}
+  }
+}`,
+              task: 'Definisci un system-security-plan OSCAL minimale con metadata e control-implementation vuota.',
             },
             {
               english: 'Continuous Monitoring',
@@ -5328,6 +5698,9 @@ export default {
                 'The automated guardrail immediately reverts any S3 bucket ACL change that would create a public bucket. = Il guardrail automatico reverte immediatamente qualsiasi modifica ACL a un bucket S3 che creerebbe un bucket pubblico.',
               context: 'cloud-security',
               difficulty: 'intermediate',
+              command:
+                'aws s3api put-public-access-block --bucket myapp --public-access-block-configuration "BlockPublicAcls=true,IgnorePublicAcls=true,BlockPublicPolicy=true,RestrictPublicBuckets=true"',
+              task: 'Applica il public access block completo al bucket myapp per impedire qualsiasi esposizione pubblica.',
             },
             {
               english: 'Open Port',
@@ -5338,6 +5711,9 @@ export default {
                 "The CSPM scan flagged an open port on the RDS instance that should only accept connections from the application VPC. = La scansione CSPM ha segnalato una porta aperta sull'istanza RDS che dovrebbe accettare connessioni solo dal VPC dell'applicazione.",
               context: 'cloud-security',
               difficulty: 'intermediate',
+              command:
+                'aws ec2 describe-security-groups --filters Name=ip-permission.cidr,Values=0.0.0.0/0',
+              task: 'Elenca con AWS CLI tutti i security group che hanno regole aperte verso 0.0.0.0/0.',
             },
             {
               english: 'Excessive Permission',
@@ -5348,6 +5724,9 @@ export default {
                 "An IAM analyzer report identified eight roles with excessive permission grants that violated least-privilege policy. = Un report dell'analizzatore IAM ha identificato otto ruoli con concessioni di permessi eccessivi che violavano la policy del privilegio minimo.",
               context: 'cloud-security',
               difficulty: 'intermediate',
+              command:
+                'aws iam generate-service-last-accessed-details --arn arn:aws:iam::123:role/AppRole',
+              task: 'Genera con IAM il report di accesso ai servizi del ruolo AppRole per rimuovere i permessi inutilizzati.',
             },
             {
               english: 'Stale Resource',
@@ -5378,6 +5757,9 @@ export default {
                 'A comprehensive cloud inventory lists every compute instance, database, and storage bucket across all regions. = Un inventario cloud completo elenca ogni istanza di calcolo, database e bucket di storage in tutte le regioni.',
               context: 'cloud-security',
               difficulty: 'intermediate',
+              command:
+                'aws resourcegroupstaggingapi get-resources --tag-filters Key=env,Values=prod',
+              task: 'Recupera tramite Resource Groups Tagging API tutte le risorse cloud con il tag env=prod.',
             },
             {
               english: 'Multi-Cloud',
@@ -5455,6 +5837,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'AWS Security Hub',
               note: 'Servizio AWS che centralizza alert e finding di sicurezza da GuardDuty, Inspector, Macie e tool terzi.',
+              command: `aws securityhub get-findings --filters '{"SeverityLabel":[{"Value":"HIGH","Comparison":"EQUALS"}]}'`,
+              task: 'Filtra i finding di Security Hub mantenendo solo quelli con severity HIGH per il triage settimanale.',
             },
             {
               english: 'GCP Security Command Center',
@@ -5467,6 +5851,9 @@ export default {
               difficulty: 'intermediate',
               tool: 'GCP Security Command Center',
               note: `Centro di comando sicurezza di Google Cloud: aggrega vulnerabilita', misconfig e threat detection.`,
+              command:
+                'gcloud scc findings list organizations/123 --filter="severity=\\"HIGH\\" AND state=\\"ACTIVE\\""',
+              task: `Elenca i finding attivi HIGH nel Security Command Center dell'organizzazione 123 con gcloud scc.`,
             },
             {
               english: 'Microsoft Defender for Cloud',
@@ -5479,6 +5866,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'Microsoft Defender for Cloud',
               note: 'CNAPP di Microsoft per Azure, AWS e GCP, con CSPM e workload protection integrati.',
+              command: `az security alert list --output table --query "[?properties.severity=='High']"`,
+              task: 'Estrai con az security gli alert di Defender for Cloud filtrando per severity High.',
             },
             {
               english: 'Steampipe',
@@ -5549,6 +5938,15 @@ export default {
                 'Creating a dedicated deployment role with only the required permissions prevents developers from exceeding their access. = Creare un ruolo di deployment dedicato con solo i permessi necessari impedisce agli sviluppatori di eccedere il loro accesso.',
               context: 'cloud-security',
               difficulty: 'intermediate',
+              code: `{
+  "Version": "2012-10-17",
+  "Statement": [{
+    "Effect": "Allow",
+    "Principal": {"Service": "lambda.amazonaws.com"},
+    "Action": "sts:AssumeRole"
+  }]
+}`,
+              task: 'Definisci una trust policy che consente solo a lambda.amazonaws.com di assumere il ruolo IAM.',
             },
             {
               english: 'Permission Boundary',
@@ -5559,6 +5957,9 @@ export default {
                 'Attaching a permission boundary to the developer IAM role caps the maximum privileges they can self-assign. = Allegare un permission boundary al ruolo IAM dello sviluppatore limita i privilegi massimi che possono auto-assegnarsi.',
               context: 'cloud-security',
               difficulty: 'intermediate',
+              command:
+                'aws iam put-role-permissions-boundary --role-name DevRole --permissions-boundary arn:aws:iam::aws:policy/PowerUserAccess',
+              task: 'Imposta PowerUserAccess come permission boundary del ruolo DevRole per limitare i privilegi massimi.',
             },
             {
               english: 'Service Control Policy',
@@ -5570,6 +5971,16 @@ export default {
               context: 'cloud-security',
               difficulty: 'intermediate',
               note: 'AWS Organizations SCPs.',
+              code: `{
+  "Version": "2012-10-17",
+  "Statement": [{
+    "Effect": "Deny",
+    "Action": "*",
+    "Resource": "*",
+    "Condition": {"StringNotEquals": {"aws:RequestedRegion": ["eu-west-1"]}}
+  }]
+}`,
+              task: 'Scrivi una SCP che nega ogni azione fuori dalla regione eu-west-1 per la sovranita dei dati.',
             },
             {
               english: 'Just-Enough-Access',
@@ -5591,6 +6002,9 @@ export default {
               context: 'cloud-security',
               difficulty: 'intermediate',
               tool: 'AWS IAM Access Analyzer',
+              command:
+                'aws accessanalyzer list-findings --analyzer-arn arn:aws:access-analyzer:us-east-1:123:analyzer/default',
+              task: `Elenca i finding di IAM Access Analyzer dell'analizzatore default per individuare accessi non intenzionali.`,
             },
             {
               english: 'Privilege Escalation Path',
@@ -5622,6 +6036,9 @@ export default {
               context: 'cloud-security',
               difficulty: 'intermediate',
               note: 'Multi-Factor Authentication.',
+              command:
+                'aws iam enable-mfa-device --user-name alice --serial-number arn:aws:iam::123:mfa/alice --authentication-code-1 123456 --authentication-code-2 789012',
+              task: `Abilita l'MFA virtuale per l'utente alice fornendo i due codici TOTP consecutivi richiesti da IAM.`,
             },
             {
               english: 'PIM',
@@ -5650,6 +6067,16 @@ export default {
                 'Enabling encryption at rest on every database and storage bucket is a mandatory control for PCI-DSS compliance. = Abilitare la crittografia a riposo su ogni database e bucket di storage è un controllo obbligatorio per la compliance PCI-DSS.',
               context: 'cloud-security',
               difficulty: 'intermediate',
+              code: `resource "aws_s3_bucket_server_side_encryption_configuration" "main" {
+  bucket = aws_s3_bucket.main.id
+  rule {
+    apply_server_side_encryption_by_default {
+      sse_algorithm     = "aws:kms"
+      kms_master_key_id = aws_kms_key.main.arn
+    }
+  }
+}`,
+              task: 'Configura la SSE del bucket S3 usando aws:kms con la KMS key gestita per cifrare i dati a riposo.',
             },
             {
               english: 'Encryption in Transit',
@@ -5660,6 +6087,14 @@ export default {
                 'Enforcing TLS 1.3 for all internal service-to-service calls guarantees encryption in transit across the mesh. = Imporre TLS 1.3 per tutte le chiamate interne servizio-a-servizio garantisce la crittografia in transito attraverso la mesh.',
               context: 'cloud-security',
               difficulty: 'intermediate',
+              code: `{
+  "Effect": "Deny",
+  "Principal": "*",
+  "Action": "s3:*",
+  "Resource": "arn:aws:s3:::myapp/*",
+  "Condition": {"Bool": {"aws:SecureTransport": "false"}}
+}`,
+              task: `Aggiungi alla bucket policy una clausola che nega l'accesso S3 quando aws:SecureTransport e false.`,
             },
             {
               english: 'Customer-Managed Key',
@@ -5681,6 +6116,12 @@ export default {
                 "Routing S3 traffic through a VPC endpoint keeps data within the AWS backbone and avoids public internet exposure. = Instradare il traffico S3 attraverso un VPC endpoint mantiene i dati nel backbone AWS ed evita l'esposizione su internet pubblico.",
               context: 'cloud-security',
               difficulty: 'intermediate',
+              code: `resource "aws_vpc_endpoint" "s3" {
+  vpc_id       = aws_vpc.main.id
+  service_name = "com.amazonaws.eu-west-1.s3"
+  vpc_endpoint_type = "Gateway"
+}`,
+              task: 'Crea con Terraform un VPC endpoint gateway per S3 in modo da evitare il transito su internet pubblico.',
             },
             {
               english: 'Private Subnet',
@@ -5701,6 +6142,8 @@ export default {
                 'Replacing the persistent bastion host with Session Manager eliminated the need to manage SSH keys entirely. = Sostituire il bastion host persistente con Session Manager ha eliminato completamente la necessità di gestire le chiavi SSH.',
               context: 'cloud-security',
               difficulty: 'intermediate',
+              command: `aws ssm start-session --target i-0abc1234 --document-name AWS-StartPortForwardingSession --parameters '{"portNumber":["22"]}'`,
+              task: `Apri un port forwarding SSH verso l'istanza i-0abc1234 tramite Session Manager senza bastion host.`,
             },
             {
               english: 'Session Manager',
@@ -5712,6 +6155,8 @@ export default {
               context: 'cloud-security',
               difficulty: 'intermediate',
               tool: 'AWS Systems Manager',
+              command: 'aws ssm start-session --target i-0123456789abcdef0',
+              task: `Apri una shell crittografata sull'istanza EC2 i-0123456789abcdef0 senza esporre la porta SSH.`,
             },
             {
               english: 'GuardDuty',
@@ -5723,6 +6168,8 @@ export default {
               context: 'cloud-security',
               difficulty: 'intermediate',
               tool: 'AWS GuardDuty',
+              command: `aws guardduty list-findings --detector-id abc123 --finding-criteria '{"Criterion":{"severity":{"Gte":7}}}'`,
+              task: 'Elenca i finding GuardDuty con severity gte 7 sul detector abc123 per il triage degli alert critici.',
             },
             {
               english: 'Logging Centralization',
@@ -5733,6 +6180,13 @@ export default {
                 'Shipping all VPC flow logs, CloudTrail events, and application logs to a central SIEM enables cross-service correlation. = Inviare tutti i log dei flussi VPC, gli eventi CloudTrail e i log applicativi a un SIEM centrale abilita la correlazione cross-servizio.',
               context: 'cloud-security',
               difficulty: 'intermediate',
+              code: `resource "aws_cloudwatch_log_subscription_filter" "siem" {
+  name            = "to-splunk"
+  log_group_name  = aws_cloudwatch_log_group.app.name
+  destination_arn = aws_kinesis_firehose_delivery_stream.siem.arn
+  filter_pattern  = ""
+}`,
+              task: 'Configura un subscription filter CloudWatch che inoltra tutti i log al Firehose verso il SIEM Splunk.',
             },
             {
               english: 'Account Baselining',
@@ -5744,6 +6198,9 @@ export default {
               context: 'cloud-security',
               difficulty: 'intermediate',
               tool: 'AWS Control Tower',
+              command:
+                'aws controltower enable-control --control-identifier arn:aws:controltower:::control/AWS-GR_RESTRICTED_ROOT_USER --target-identifier arn:aws:organizations::123:ou/o-x/ou-abc',
+              task: `Abilita con Control Tower il guardrail che blocca l'uso del root user sull'OU di produzione.`,
             },
           ],
         },
@@ -6102,6 +6559,8 @@ export default {
               context: 'shift-left',
               difficulty: 'intermediate',
               tool: 'Microsoft TMT',
+              command: 'ThreatModelingTool.exe --open model.tm7',
+              task: 'Apri il modello model.tm7 con il Microsoft Threat Modeling Tool per generare le minacce STRIDE sui flussi disegnati.',
             },
             {
               english: 'OWASP Threat Dragon',
@@ -6113,6 +6572,8 @@ export default {
               context: 'shift-left',
               difficulty: 'intermediate',
               tool: 'OWASP Threat Dragon',
+              command: 'docker run -p 3000:3000 owasp/threat-dragon',
+              task: 'Avvia OWASP Threat Dragon in container sulla porta 3000 per costruire collaborativamente i diagrammi DFD.',
             },
             {
               english: 'IriusRisk',
@@ -6373,6 +6834,8 @@ export default {
               difficulty: 'advanced',
               tool: 'Tracecat',
               note: 'SOAR open source moderno, pensato come alternativa self-hostable alle soluzioni commerciali.',
+              command: 'docker compose -f tracecat.yml up -d',
+              task: `Solleva Tracecat in modalita' daemon con docker compose per avere un SOAR open source self-hostable.`,
             },
             {
               english: 'Shuffle',
@@ -6385,6 +6848,8 @@ export default {
               difficulty: 'advanced',
               tool: 'Shuffle',
               note: 'SOAR open source con migliaia di app integrate; orientato a security automation generica.',
+              command: 'docker compose -f shuffle-docker.yml up -d',
+              task: 'Distribuisci Shuffle on-premises via docker compose per automatizzare i workflow di incident response.',
             },
             {
               english: 'TheHive',
@@ -6397,6 +6862,8 @@ export default {
               difficulty: 'advanced',
               tool: 'TheHive',
               note: 'Piattaforma open source di case management per team SOC, integrata con Cortex per arricchimento IOC.',
+              command: 'docker run -p 9000:9000 strangebee/thehive5',
+              task: 'Avvia TheHive5 sulla porta 9000 come piattaforma di case management per il SOC.',
             },
             {
               english: 'n8n',
@@ -6409,6 +6876,8 @@ export default {
               difficulty: 'advanced',
               tool: 'n8n',
               note: 'Tool open source di automazione workflow generica, usato anche come SOAR low-cost.',
+              command: 'npx n8n start --tunnel',
+              task: 'Lancia n8n con tunnel pubblico per orchestrare flussi di automazione collegando Jira, Slack e PagerDuty.',
             },
             {
               english: 'Workflow Engine',
@@ -6456,6 +6925,9 @@ export default {
                 'The automated playbook will quarantine a VM by removing its network interfaces and notifying the security team. = Il playbook automatico metterà in quarantena una VM rimuovendo le sue interfacce di rete e notificando il team di sicurezza.',
               context: 'automation',
               difficulty: 'advanced',
+              command:
+                'aws ec2 modify-instance-attribute --instance-id i-abc --groups sg-quarantine',
+              task: `Sposta l'istanza i-abc nel security group sg-quarantine per isolarla a rete dopo una compromissione.`,
             },
             {
               english: 'Revoke Token',
@@ -6476,6 +6948,8 @@ export default {
                 "The compromise playbook can disable a user account in Active Directory within thirty seconds of alert confirmation. = Il playbook di compromissione può disabilitare un account utente in Active Directory entro trenta secondi dalla conferma dell'avviso.",
               context: 'automation',
               difficulty: 'advanced',
+              command: 'az ad user update --id user@corp --account-enabled false',
+              task: `Disabilita l'account user@corp in Entra ID impostando account-enabled a false durante il playbook di compromissione.`,
             },
             {
               english: 'Block IP',
@@ -6486,6 +6960,8 @@ export default {
                 "After enrichment confirms the source is malicious, the playbook calls the firewall API to block the IP immediately. = Dopo che l'arricchimento conferma che la sorgente è malevola, il playbook chiama l'API del firewall per bloccare l'IP immediatamente.",
               context: 'automation',
               difficulty: 'advanced',
+              command: 'sudo iptables -A INPUT -s 203.0.113.5 -j DROP',
+              task: `Aggiungi una regola iptables che droppa il traffico dall'IP malevolo 203.0.113.5 individuato dall'enrichment.`,
             },
             {
               english: 'Force Password Reset',
@@ -6506,6 +6982,8 @@ export default {
                 "Before terminating the compromised instance, the playbook takes a snapshot for forensics so analysts can investigate later. = Prima di terminare l'istanza compromessa, il playbook scatta uno snapshot per la forensica così gli analisti possono investigare dopo.",
               context: 'automation',
               difficulty: 'advanced',
+              command: 'aws ec2 create-snapshot --volume-id vol-abc --description forensics',
+              task: `Crea uno snapshot EBS del volume vol-abc con tag forensics prima di terminare l'istanza compromessa.`,
             },
             {
               english: 'Notify Channel',
@@ -6536,6 +7014,8 @@ export default {
                 'If the canary metrics exceed the error threshold, the automated pipeline will rollback the deployment to the previous version. = Se le metriche canary superano la soglia di errore, la pipeline automatizzata eseguirà il rollback del deployment alla versione precedente.',
               context: 'automation',
               difficulty: 'advanced',
+              command: 'helm rollback myapp 1 --namespace prod',
+              task: 'Riporta il release Helm myapp alla revisione 1 nel namespace prod dopo il superamento delle soglie canary.',
             },
             {
               english: 'Quiet Period',
@@ -6593,6 +7073,15 @@ export default {
                 'When the scanner detects a misconfigured deployment, GitOps remediation opens a pull request with the corrected manifest. = Quando lo scanner rileva un deployment mal configurato, la remediation GitOps apre una pull request con il manifesto corretto.',
               context: 'automation',
               difficulty: 'advanced',
+              code: `name: gitops-remediate
+on: workflow_dispatch
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - run: kustomize edit set image app=$IMG
+      - run: gh pr create -t 'fix: rotate image'`,
+              task: 'Apri automaticamente una PR di remediation che aggiorna il tag immagine via kustomize quando lo scanner rileva un drift.',
             },
             {
               english: 'Canary Deployment',
@@ -6724,6 +7213,13 @@ export default {
                 'Enabling strict schema validation on the gateway rejects any request with unexpected fields or incorrect data types. = Abilitare la validazione schema rigorosa sul gateway rifiuta qualsiasi richiesta con campi inattesi o tipi di dati errati.',
               context: 'tools',
               difficulty: 'advanced',
+              code: `plugins:
+  - name: request-validator
+    config:
+      version: kong
+      body_schema: |
+        {"type":"object","required":["id"]}`,
+              task: 'Configura il plugin request-validator di Kong con uno schema che impone il campo id, rifiutando body inattesi.',
             },
             {
               english: 'OpenAPI Spec',
@@ -6745,6 +7241,10 @@ export default {
                 "Enforcing mutual TLS between the API gateway and backend services prevents unauthorized internal callers. = Imporre il TLS reciproco tra l'API gateway e i servizi backend previene chiamanti interni non autorizzati.",
               context: 'tools',
               difficulty: 'advanced',
+              code: `spec:
+  mtls:
+    mode: STRICT`,
+              task: 'Imposta il mode STRICT nella PeerAuthentication Istio per forzare mTLS su tutto il traffico east-west.',
             },
             {
               english: 'WAF Rule',
@@ -6755,6 +7255,8 @@ export default {
                 'A custom WAF rule blocks requests containing SQL injection patterns in the query string and request body. = Una regola WAF personalizzata blocca le richieste contenenti pattern di SQL injection nella query string e nel corpo della richiesta.',
               context: 'tools',
               difficulty: 'advanced',
+              code: `SecRule ARGS "@detectSQLi" "id:1001,deny,status:403,msg:'SQLi blocked'"`,
+              task: 'Scrivi una SecRule ModSecurity con detectSQLi che blocca con 403 i tentativi di SQL injection negli argomenti.',
             },
             {
               english: 'Request Inspection',
@@ -6814,6 +7316,8 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               note: 'JSON Web Token.',
+              code: `const payload = jwt.verify(token, jwks.getKey(kid), { algorithms: ['RS256'] })`,
+              task: 'Verifica firma e algoritmo RS256 del JWT usando la chiave pubblica dal JWKS prima di accettare la richiesta.',
             },
             {
               english: 'OAuth Access Token',
@@ -6855,6 +7359,9 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               note: 'Proof Key for Code Exchange.',
+              code: `const verifier = crypto.randomBytes(32).toString('base64url')
+const challenge = sha256(verifier).toString('base64url')`,
+              task: 'Genera code_verifier e code_challenge SHA-256 lato client per proteggere il flusso OAuth dei mobile.',
             },
             {
               english: 'Token Introspection',
@@ -6865,6 +7372,8 @@ export default {
                 "Calling the token introspection endpoint on every request ensures revoked tokens are rejected in real time. = Chiamare l'endpoint di token introspection a ogni richiesta assicura che i token revocati vengano rifiutati in tempo reale.",
               context: 'tools',
               difficulty: 'advanced',
+              command: 'curl -X POST -u client:secret -d token=$TOKEN https://idp/oauth/introspect',
+              task: `Interroga l'endpoint /oauth/introspect autenticandoti come client per verificare se $TOKEN e' ancora attivo.`,
             },
             {
               english: 'JWKS',
@@ -6876,6 +7385,8 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               note: 'JSON Web Key Set.',
+              command: 'curl https://idp.example.com/.well-known/jwks.json',
+              task: 'Scarica il JWKS pubblicato dal provider OIDC per validare la firma dei token senza segreti condivisi.',
             },
             {
               english: 'mTLS Auth',
@@ -7039,6 +7550,8 @@ export default {
               difficulty: 'advanced',
               tool: 'Postman',
               note: 'Client API molto diffuso; in ambito security usato per fuzzing manuale e collection di test.',
+              command: 'postman collection run security-suite.json --env prod',
+              task: `Esegui la collection security-suite.json con l'ambiente prod direttamente dalla CLI di Postman.`,
             },
             {
               english: 'Newman',
@@ -7076,6 +7589,8 @@ export default {
                 "Adding API fuzzing to the nightly CI job discovered a crash in the payment endpoint triggered by empty string fields. = Aggiungere il fuzzing API al job CI notturno ha scoperto un crash nell'endpoint di pagamento attivato da campi stringa vuoti.",
               context: 'tools',
               difficulty: 'advanced',
+              command: 'restler fuzz --api_spec openapi.yaml --time_budget 60',
+              task: `Lancia restler in modalita' fuzz sullo spec openapi.yaml con budget di 60 minuti per scovare crash sugli endpoint.`,
             },
             {
               english: 'Contract Test',
@@ -7098,6 +7613,8 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'GraphQL Armor',
+              code: 'const armor = ApolloArmor({ maxDepth: { n: 5 }, costLimit: { maxCost: 5000 } })',
+              task: 'Configura GraphQL Armor con maxDepth 5 e costLimit 5000 per bloccare le query GraphQL ricorsive abusive.',
             },
             {
               english: 'gRPC Security',
@@ -7157,6 +7674,8 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'ModSecurity',
+              command: 'sudo nginx -t && sudo nginx -s reload',
+              task: `Valida la configurazione e ricarica nginx con SecRuleEngine On per attivare ModSecurity in modalita' blocco.`,
             },
             {
               english: 'OWASP CRS',
@@ -7168,6 +7687,9 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               note: 'Core Rule Set.',
+              command:
+                'git clone https://github.com/coreruleset/coreruleset.git /etc/modsecurity/crs',
+              task: `Clona l'OWASP Core Rule Set in /etc/modsecurity/crs per avere la baseline di regole anti-injection aggiornata.`,
             },
             {
               english: 'RASP',
@@ -7275,6 +7797,9 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Cilium Tetragon',
+              command:
+                'kubectl apply -f https://raw.githubusercontent.com/cilium/tetragon/main/install/kubernetes/quick-install.yaml',
+              task: 'Installa Tetragon nel cluster Kubernetes per osservare via eBPF processi e connessioni a livello kernel.',
             },
             {
               english: 'eBPF',
@@ -7328,6 +7853,10 @@ export default {
               difficulty: 'advanced',
               tool: 'AppArmor',
               note: `Linux Security Module a profili che limita capacita', percorsi e syscall per ogni processo.`,
+              code: `metadata:
+  annotations:
+    container.apparmor.security.beta.kubernetes.io/app: localhost/restricted`,
+              task: `Aggiungi l'annotazione AppArmor che carica il profilo localhost/restricted sul container app per limitarne i path.`,
             },
             {
               english: 'SELinux',
@@ -7339,6 +7868,8 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'SELinux',
+              command: 'sudo setenforce 1 && sudo getenforce',
+              task: `Forza SELinux in modalita' Enforcing e verifica con getenforce che le policy MAC siano attive sull'host.`,
             },
             {
               english: 'Seccomp',
@@ -7363,6 +7894,8 @@ export default {
               difficulty: 'advanced',
               tool: 'Cilium',
               note: 'CNI Kubernetes basato su eBPF: fornisce networking, NetworkPolicy avanzate e observability L7.',
+              command: 'cilium install --version 1.16 --set kubeProxyReplacement=true',
+              task: 'Installa Cilium 1.16 con kube-proxy replacement abilitato per ottenere networking eBPF e policy L7.',
             },
           ],
         },
@@ -7404,6 +7937,9 @@ export default {
               difficulty: 'advanced',
               tool: 'CrowdStrike Falcon',
               note: 'Piattaforma EDR commerciale (Falcon) leader di mercato, con telemetry cloud-native.',
+              command:
+                'sudo /opt/CrowdStrike/falconctl -s --cid=$CID && sudo systemctl start falcon-sensor',
+              task: `Registra il sensore CrowdStrike Falcon con il customer ID $CID e avvia il servizio per attivare l'EDR.`,
             },
             {
               english: 'SentinelOne',
@@ -7439,6 +7975,8 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Microsoft Sysmon',
+              command: 'sysmon64.exe -accepteula -i sysmonconfig.xml',
+              task: 'Installa Sysmon su Windows accettando la EULA e caricando la configurazione sysmonconfig.xml di SwiftOnSecurity.',
             },
             {
               english: 'Osquery',
@@ -7465,6 +8003,9 @@ export default {
               difficulty: 'advanced',
               tool: 'Wazuh',
               note: 'Piattaforma open source SIEM/XDR/EDR, fork storico di OSSEC con stack Elastic integrato.',
+              command:
+                'curl -sO https://packages.wazuh.com/4.x/wazuh-install.sh && sudo bash wazuh-install.sh -a',
+              task: `Esegui l'installer all-in-one di Wazuh per deployare manager, indexer e dashboard sulla stessa macchina.`,
             },
             {
               english: 'Threat Hunting',
@@ -7526,6 +8067,8 @@ export default {
               difficulty: 'advanced',
               tool: 'Istio',
               note: 'Service mesh open source basato su sidecar Envoy: gestisce traffico, mTLS e policy L7.',
+              command: 'istioctl install --set profile=default -y',
+              task: `Installa Istio con il profilo default in modalita' non interattiva per ottenere sidecar Envoy e mTLS automatico.`,
             },
             {
               english: 'Linkerd',
@@ -7538,6 +8081,9 @@ export default {
               difficulty: 'advanced',
               tool: 'Linkerd',
               note: `Service mesh CNCF ultra-leggero, scritto in Rust, focalizzato su semplicita' e performance.`,
+              command:
+                'linkerd install --crds | kubectl apply -f - && linkerd install | kubectl apply -f -',
+              task: 'Installa CRD e control-plane di Linkerd nel cluster per avere una service mesh leggera in Rust.',
             },
             {
               english: 'Consul Connect',
@@ -7593,6 +8139,8 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'SPIRE',
+              command: 'kubectl apply -f spire-server.yaml && kubectl apply -f spire-agent.yaml',
+              task: 'Distribuisci server e agent SPIRE per emettere SVID X.509 a breve durata ai workload del cluster.',
             },
             {
               english: 'Authorization Policy',
@@ -7644,6 +8192,9 @@ export default {
               difficulty: 'advanced',
               tool: 'Argo CD',
               note: `Motore GitOps CNCF per Kubernetes: sincronizza manifest da repo Git verso uno o piu' cluster.`,
+              command:
+                'argocd app create myapp --repo https://git/repo --path k8s --dest-namespace prod',
+              task: `Registra l'applicazione myapp in Argo CD puntando alla directory k8s del repo e sincronizzandola sul namespace prod.`,
             },
             {
               english: 'Flux',
@@ -7656,6 +8207,9 @@ export default {
               difficulty: 'advanced',
               tool: 'Flux',
               note: 'Motore GitOps CNCF concorrente di Argo CD, basato su controller modulari e Kustomize/Helm.',
+              command:
+                'flux bootstrap github --owner=acme --repository=fleet --branch=main --path=clusters/prod',
+              task: 'Esegui il bootstrap di Flux sul repo acme/fleet per gestire i manifest del cluster prod via GitOps.',
             },
             {
               english: 'Declarative State',
@@ -7706,6 +8260,11 @@ export default {
                 'Setting the sync policy to auto-prune removes any orphaned Kubernetes resource that no longer exists in the Git repository. = Impostare la sync policy su auto-prune rimuove qualsiasi risorsa Kubernetes orfana che non esiste più nel repository Git.',
               context: 'ci-cd',
               difficulty: 'advanced',
+              code: `syncPolicy:
+  automated:
+    prune: true
+    selfHeal: true`,
+              task: 'Imposta la syncPolicy Argo con prune e selfHeal a true per rimuovere risorse orfane e riconciliare drift.',
             },
             {
               english: 'Environment Branch',
@@ -7973,6 +8532,13 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'Argo CD ApplicationSet',
+              code: `kind: Application
+spec:
+  source:
+    path: apps/
+    directory:
+      recurse: true`,
+              task: `Definisci un'Application Argo con directory recurse che genera figli da apps/ secondo il pattern app of apps.`,
             },
             {
               english: 'Image Updater',
@@ -7995,6 +8561,8 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'Helm',
+              command: 'helm install myapp ./chart --namespace prod --values prod-values.yaml',
+              task: 'Installa il chart locale con valori prod-values.yaml nel namespace prod per parametrizzare il deployment.',
             },
             {
               english: 'Kustomize',
@@ -8006,6 +8574,8 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'Kustomize',
+              command: 'kubectl apply -k overlays/prod',
+              task: `Applica l'overlay prod di Kustomize che patcha la base con valori specifici dell'ambiente di produzione.`,
             },
             {
               english: 'Sealed Secrets in Git',
@@ -8017,6 +8587,8 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'Bitnami Sealed Secrets',
+              command: 'kubeseal --controller-namespace=kube-system < secret.yaml > sealed.yaml',
+              task: 'Cifra il Secret K8s con kubeseal usando la chiave pubblica del cluster per poter committare sealed.yaml in Git.',
             },
             {
               english: 'Pull Request Review Bot',
@@ -8039,6 +8611,12 @@ export default {
               difficulty: 'advanced',
               tool: 'Mergify',
               note: 'Servizio SaaS per automatizzare merge, rebase e backport delle pull request via regole YAML.',
+              code: `queue_rules:
+  - name: default
+    conditions:
+      - check-success=ci
+      - approved-reviews-by>=1`,
+              task: `Definisci una merge queue Mergify che richiede CI verde e almeno una review approvata prima dell'auto-merge.`,
             },
             {
               english: 'Spectral',
@@ -8050,6 +8628,8 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'Stoplight Spectral',
+              command: 'spectral lint openapi.yaml --ruleset spectral.yaml',
+              task: 'Esegui spectral lint sullo spec OpenAPI con il ruleset interno per intercettare schemi di sicurezza mancanti.',
             },
             {
               english: 'Repo Templates',
@@ -8186,6 +8766,12 @@ export default {
                 'The new correlation rule fires an alert when five failed logins from different IPs target the same account within ten minutes. = La nuova regola di correlazione genera un avviso quando cinque login falliti da IP diversi prendono di mira lo stesso account in dieci minuti.',
               context: 'tools',
               difficulty: 'advanced',
+              code: `title: Brute force
+detection:
+  selection:
+    EventID: 4625
+  condition: selection | count() by user > 5`,
+              task: `Scrivi una regola Sigma che genera alert quando lo stesso utente accumula piu' di 5 EventID 4625 di login fallito.`,
             },
             {
               english: 'Alert Fatigue',
@@ -8336,6 +8922,8 @@ export default {
               difficulty: 'advanced',
               tool: 'Grafana Loki',
               note: 'Sistema di log di Grafana Labs ispirato a Prometheus: indicizza solo metadati, non il contenuto.',
+              command: `logcli query '{namespace="prod",app="api"}' --since=1h`,
+              task: 'Interroga Loki via logcli filtrando gli ultimi 60 minuti di log del pod app=api nel namespace prod.',
             },
             {
               english: 'Fluentd',
@@ -8348,6 +8936,12 @@ export default {
               difficulty: 'advanced',
               tool: 'Fluentd',
               note: `Collector di log CNCF unificato, con piu' di mille plugin per input, parser e output.`,
+              code: `<source>
+  @type tail
+  path /var/log/containers/*.log
+  tag k8s.*
+</source>`,
+              task: 'Configura una sorgente tail in Fluentd che ingerisce i log dei container Kubernetes taggandoli come k8s.*',
             },
             {
               english: 'Vector',
@@ -8359,6 +8953,15 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Vector by Datadog',
+              code: `sources:
+  in:
+    type: kubernetes_logs
+sinks:
+  out:
+    type: elasticsearch
+    inputs: [in]
+    endpoint: http://es:9200`,
+              task: 'Definisci una pipeline Vector che legge i log Kubernetes e li scrive su Elasticsearch sulla porta 9200.',
             },
             {
               english: 'Centralized Audit Log',
@@ -8412,6 +9015,9 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               note: 'Personal Identifiable Information.',
+              code: `msg = re.sub(r'\\b\\d{16}\\b', '[REDACTED-CC]', msg)
+msg = re.sub(r'[\\w.+-]+@[\\w-]+\\.[\\w.-]+', '[REDACTED-EMAIL]', msg)`,
+              task: 'Maschera carte di credito ed email nel log con due re.sub prima di inviare il messaggio al SIEM centrale.',
             },
             {
               english: 'Structured Logging',
@@ -8463,6 +9069,15 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Sigma',
+              code: `title: Suspicious curl
+logsource:
+  product: linux
+detection:
+  selection:
+    Image|endswith: '/curl'
+    CommandLine|contains: 'metadata.google'
+  condition: selection`,
+              task: `Scrivi una Sigma rule che innesca quando curl viene eseguito contro l'endpoint metadata.google sul cloud.`,
             },
             {
               english: 'YARA Rule',
@@ -8474,6 +9089,13 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'YARA',
+              code: `rule Cobalt_Strike_Beacon {
+  strings:
+    $a = { 4d 5a 90 00 03 }
+    $b = "beacon.dll" ascii
+  condition: $a at 0 and $b
+}`,
+              task: 'Definisci una YARA rule che identifica payload Cobalt Strike cercando il magic MZ iniziale e la stringa beacon.dll.',
             },
             {
               english: 'Indicator of Compromise',
@@ -8792,6 +9414,14 @@ export default {
                 'The hotfix pipeline skips non-essential tests to deliver critical security patches to production in under thirty minutes. = La pipeline hotfix salta i test non essenziali per consegnare patch di sicurezza critiche in produzione in meno di trenta minuti.',
               context: 'automation',
               difficulty: 'advanced',
+              code: `on:
+  push:
+    branches: [hotfix/*]
+jobs:
+  deploy:
+    if: contains(github.event.head_commit.message,'SECURITY')
+    runs-on: ubuntu-latest`,
+              task: 'Configura un workflow GitHub Actions che si attiva solo sui branch hotfix/* con commit SECURITY per accelerare la patch.',
             },
             {
               english: 'Blue/Green Deploy',
@@ -8802,6 +9432,8 @@ export default {
                 "Using a blue/green deploy strategy lets the team switch traffic to the patched environment instantly and roll back if needed. = Usare una strategia di deploy blue/green permette al team di spostare il traffico sull'ambiente patchato istantaneamente e fare rollback se necessario.",
               context: 'automation',
               difficulty: 'advanced',
+              command: `kubectl patch service api -p '{"spec":{"selector":{"version":"green"}}}'`,
+              task: 'Sposta istantaneamente il traffico del service api dalla versione blue alla green patchando il selector.',
             },
             {
               english: 'Canary Rollback',
@@ -8822,6 +9454,10 @@ export default {
                 'When the vulnerability was confirmed, the team toggled the feature flag kill switch to disable the affected module instantly. = Quando la vulnerabilità è stata confermata, il team ha attivato il kill switch del feature flag per disabilitare il modulo interessato istantaneamente.',
               context: 'automation',
               difficulty: 'advanced',
+              code: `if (await flags.isEnabled('payments.module', { fallback: false })) {
+  await processPayment(order)
+}`,
+              task: `Avvolgi processPayment in un feature flag con fallback false cosi' puoi spegnere il modulo durante un incidente.`,
             },
             {
               english: 'Emergency Change',
@@ -8923,6 +9559,8 @@ export default {
               context: 'automation',
               difficulty: 'advanced',
               tool: 'Volatility',
+              command: 'sudo lime-loader format=lime path=/mnt/evidence/mem.lime',
+              task: `Acquisisci la memoria live dell'host con LiME nel formato lime salvandola su un mount evidence read-only.`,
             },
             {
               english: 'Timeline Analysis',
@@ -8934,6 +9572,9 @@ export default {
               context: 'automation',
               difficulty: 'advanced',
               tool: 'Plaso, log2timeline',
+              command:
+                'log2timeline.py --storage-file plaso.dump image.raw && psort.py -o l2tcsv -w timeline.csv plaso.dump',
+              task: 'Genera il super-timeline forense da image.raw con log2timeline e Plaso, esportandolo in formato l2tcsv.',
             },
             {
               english: 'IOC Sweep',
@@ -9036,6 +9677,14 @@ export default {
                 'A read-only ClusterRole lets the monitoring service list pods and nodes across all namespaces without write access. = Un ClusterRole in sola lettura permette al servizio di monitoraggio di elencare pod e nodi in tutti i namespace senza accesso in scrittura.',
               context: 'container-security',
               difficulty: 'advanced',
+              code: `kind: ClusterRole
+metadata:
+  name: monitor-readonly
+rules:
+- apiGroups: [""]
+  resources: [pods, nodes]
+  verbs: [get, list, watch]`,
+              task: 'Definisci una ClusterRole monitor-readonly che permette get/list/watch su pod e node senza alcun verbo di scrittura.',
             },
             {
               english: 'RoleBinding',
@@ -9046,6 +9695,14 @@ export default {
                 'Creating a RoleBinding ties the developer group to the edit role only in the development namespace. = Creare un RoleBinding lega il gruppo degli sviluppatori al ruolo edit solo nel namespace di sviluppo.',
               context: 'container-security',
               difficulty: 'advanced',
+              code: `kind: RoleBinding
+subjects:
+- kind: Group
+  name: developers
+roleRef:
+  kind: Role
+  name: edit`,
+              task: 'Crea un RoleBinding che lega il gruppo developers al ruolo edit limitato al namespace dove viene applicato.',
             },
             {
               english: 'ServiceAccount',
@@ -9138,6 +9795,13 @@ export default {
                 'Setting default deny on every namespace means all traffic is blocked unless an explicit network policy allows it. = Impostare default deny su ogni namespace significa che tutto il traffico è bloccato a meno che una network policy esplicita lo permetta.',
               context: 'container-security',
               difficulty: 'advanced',
+              code: `kind: NetworkPolicy
+metadata:
+  name: deny-all
+spec:
+  podSelector: {}
+  policyTypes: [Ingress, Egress]`,
+              task: 'Applica una NetworkPolicy deny-all con podSelector vuoto e policyTypes Ingress/Egress per default-deny il namespace.',
             },
             {
               english: 'Egress Policy',
@@ -9148,6 +9812,14 @@ export default {
                 "The egress policy limits outbound traffic from the payment pod to only the bank's API endpoint on port 443. = La policy di egress limita il traffico in uscita dal pod di pagamento solo all'endpoint API della banca sulla porta 443.",
               context: 'container-security',
               difficulty: 'advanced',
+              code: `egress:
+- to:
+  - ipBlock:
+      cidr: 10.0.0.0/8
+  ports:
+  - protocol: TCP
+    port: 443`,
+              task: 'Permetti egress solo verso il CIDR interno 10.0.0.0/8 sulla porta 443 negando tutte le altre destinazioni.',
             },
             {
               english: 'Ingress Policy',
@@ -9190,6 +9862,9 @@ export default {
               difficulty: 'advanced',
               tool: 'Calico',
               note: 'CNI Kubernetes con supporto avanzato a NetworkPolicy L3/L4 e policy globali.',
+              command:
+                'kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.0/manifests/calico.yaml',
+              task: 'Installa Calico v3.28 nel cluster per abilitare NetworkPolicy avanzate con supporto DNS e regole globali.',
             },
             {
               english: 'Cilium NetworkPolicy',
@@ -9201,6 +9876,14 @@ export default {
               context: 'container-security',
               difficulty: 'advanced',
               tool: 'Cilium',
+              code: `kind: CiliumNetworkPolicy
+spec:
+  endpointSelector: {matchLabels: {app: api}}
+  ingress:
+  - toPorts:
+    - rules:
+        http: [{method: GET, path: /v1/.*}]`,
+              task: 'Scrivi una CiliumNetworkPolicy L7 che permette solo GET /v1/* verso i pod con label app=api bloccando il resto.',
             },
             {
               english: 'Service Mesh Policy',
@@ -9280,6 +9963,15 @@ export default {
               difficulty: 'advanced',
               tool: 'OPA Gatekeeper',
               note: `Concentra l'attenzione sui constraint operativi, non sull'installazione dell'engine OPA Gatekeeper (Livello 8).`,
+              code: `kind: K8sRequiredLabels
+metadata:
+  name: ns-owner
+spec:
+  match:
+    kinds: [{apiGroups: [""], kinds: [Namespace]}]
+  parameters:
+    labels: [owner]`,
+              task: 'Istanzia un Constraint Gatekeeper che richiede la label owner su ogni Namespace usando il template K8sRequiredLabels.',
             },
             {
               english: 'Cluster Constraint Template',
@@ -9301,6 +9993,18 @@ export default {
                 'The Kyverno mutation policy automatically adds resource limits to any pod that a developer forgets to specify. = La policy di mutazione Kyverno aggiunge automaticamente limiti di risorse a qualsiasi pod che uno sviluppatore dimentica di specificare.',
               context: 'container-security',
               difficulty: 'advanced',
+              code: `kind: ClusterPolicy
+spec:
+  rules:
+  - name: add-limits
+    mutate:
+      patchStrategicMerge:
+        spec:
+          containers:
+          - (name): "*"
+            resources:
+              limits: {memory: 512Mi}`,
+              task: 'Definisci una mutation Kyverno che aggiunge automaticamente limits.memory 512Mi a ogni container se mancanti.',
             },
             {
               english: 'Audit Mode',
@@ -9334,6 +10038,12 @@ export default {
               context: 'container-security',
               difficulty: 'advanced',
               note: 'Built-in CEL admission control.',
+              code: `kind: ValidatingAdmissionPolicy
+spec:
+  validations:
+  - expression: "object.spec.securityContext.runAsNonRoot == true"
+    message: "Pod must run as non-root"`,
+              task: 'Scrivi una ValidatingAdmissionPolicy CEL nativa che rifiuta i pod senza securityContext runAsNonRoot true.',
             },
           ],
         },
@@ -9373,6 +10083,14 @@ export default {
                 'The Kubernetes audit policy captures all requests to secrets and configmaps at the metadata level for security review. = La policy di audit Kubernetes cattura tutte le richieste a secret e configmap a livello di metadati per la revisione di sicurezza.',
               context: 'container-security',
               difficulty: 'advanced',
+              code: `apiVersion: audit.k8s.io/v1
+kind: Policy
+rules:
+- level: Metadata
+  resources:
+  - group: ""
+    resources: [secrets, configmaps]`,
+              task: 'Definisci una Audit Policy K8s che registra a livello Metadata ogni richiesta su secrets e configmaps.',
             },
             {
               english: 'Node Isolation',
@@ -9406,6 +10124,12 @@ export default {
               context: 'container-security',
               difficulty: 'advanced',
               tool: 'Google gVisor',
+              code: `apiVersion: node.k8s.io/v1
+kind: RuntimeClass
+metadata:
+  name: gvisor
+handler: runsc`,
+              task: `Crea una RuntimeClass gvisor con handler runsc cosi' i pod sensibili possono optare per il sandbox kernel-level.`,
             },
             {
               english: 'Kata Containers',
@@ -9417,6 +10141,12 @@ export default {
               context: 'container-security',
               difficulty: 'advanced',
               tool: 'Kata Containers',
+              code: `apiVersion: node.k8s.io/v1
+kind: RuntimeClass
+metadata:
+  name: kata
+handler: kata-qemu`,
+              task: 'Registra la RuntimeClass kata con handler kata-qemu per dare ai pod isolamento VM-level invece di namespace condivisi.',
             },
             {
               english: 'Trivy K8s',
@@ -9455,6 +10185,8 @@ export default {
               context: 'container-security',
               difficulty: 'advanced',
               tool: 'kube-bench',
+              command: 'kube-bench run --targets master,node --benchmark cis-1.8',
+              task: `Esegui kube-bench contro nodi master e worker col benchmark cis-1.8 per misurare la conformita' del cluster.`,
             },
           ],
         },

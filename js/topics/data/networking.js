@@ -335,6 +335,8 @@ export default {
               difficulty: 'beginner',
               tool: 'iperf3',
               note: 'Diverso dalla bandwidth: è la quantità reale, non teorica.',
+              command: 'iperf3 -c iperf.he.net -t 30',
+              task: 'Misura il throughput effettivo TCP verso il server iperf di Hurricane Electric per 30 secondi.',
             },
             {
               english: 'Jitter',
@@ -346,6 +348,8 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Variazione del ritardo tra pacchetti consecutivi.',
+              command: 'mtr --report --report-cycles 50 8.8.8.8',
+              task: 'Genera un report MTR di 50 cicli verso 8.8.8.8 per misurare jitter, perdita pacchetti e latenza per hop.',
             },
             {
               english: 'Packet Loss',
@@ -420,6 +424,8 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Spesso abbreviato AP.',
+              command: `iw dev wlan0 scan | grep -E 'SSID|signal'`,
+              task: `Scansiona gli access point Wi-Fi rilevati dall'interfaccia wlan0 mostrando SSID e potenza del segnale.`,
             },
             {
               english: 'Network Card',
@@ -792,6 +798,8 @@ export default {
               context: 'osi-model',
               difficulty: 'beginner',
               note: 'FCS = CRC32 calcolato sul frame.',
+              command: 'ethtool -S eth0 | grep -i crc',
+              task: 'Estrai dalle statistiche di eth0 i contatori di errori CRC per individuare frame corrotti in arrivo.',
             },
             {
               english: 'Demultiplexing',
@@ -985,6 +993,8 @@ export default {
               context: 'tcp-ip',
               difficulty: 'beginner',
               note: 'Internet Protocol. Best-effort, non affidabile.',
+              command: 'ip -4 addr show',
+              task: 'Elenca tutti gli indirizzi IPv4 assegnati alle interfacce locali con il loro CIDR e stato operativo.',
             },
             {
               english: 'Port',
@@ -996,6 +1006,8 @@ export default {
               context: 'tcp-ip',
               difficulty: 'beginner',
               note: 'Numero da 0 a 65535 che identifica un processo.',
+              command: 'ss -tlnp',
+              task: 'Mostra tutte le porte TCP in ascolto sulla macchina associandole al processo che le occupa.',
             },
             {
               english: 'Socket',
@@ -1018,6 +1030,8 @@ export default {
                 'Each TCP connection maintains sequence numbers, windows, and timers to track the data flow. = Ogni connessione TCP mantiene numeri di sequenza, finestre e timer per tracciare il flusso dati.',
               context: 'tcp-ip',
               difficulty: 'beginner',
+              command: 'ss -tan state established',
+              task: 'Filtra solo le connessioni TCP nello stato ESTABLISHED per vedere quante sessioni attive ha il sistema.',
             },
             {
               english: 'Connectionless',
@@ -1076,6 +1090,8 @@ export default {
               context: 'tcp-ip',
               difficulty: 'beginner',
               note: 'Sequenza: SYN, SYN-ACK, ACK.',
+              command: `tcpdump -i eth0 -nn 'tcp[tcpflags] & (tcp-syn|tcp-ack) != 0' -c 20`,
+              task: 'Cattura i primi 20 pacchetti TCP con flag SYN o ACK su eth0 per osservare gli handshake in corso.',
             },
             {
               english: 'SYN',
@@ -1087,6 +1103,8 @@ export default {
               context: 'tcp-ip',
               difficulty: 'beginner',
               note: `SYN sta per 'synchronize': è il primo flag del three-way handshake TCP.`,
+              command: `tcpdump -i any -nn 'tcp[tcpflags] == tcp-syn' -c 10`,
+              task: 'Cattura dieci pacchetti SYN puri (senza ACK) per osservare apertura di nuove connessioni TCP.',
             },
             {
               english: 'SYN-ACK',
@@ -1119,6 +1137,8 @@ export default {
               context: 'tcp-ip',
               difficulty: 'beginner',
               note: `FIN sta per 'finish': segnala la chiusura ordinata di una connessione TCP.`,
+              command: `tcpdump -i any -nn 'tcp[tcpflags] & tcp-fin != 0' -c 10`,
+              task: 'Filtra i pacchetti TCP con flag FIN per osservare chiusure ordinate di connessione.',
             },
             {
               english: 'RST',
@@ -1130,6 +1150,8 @@ export default {
               context: 'tcp-ip',
               difficulty: 'beginner',
               note: `RST sta per 'reset': interrompe bruscamente una connessione TCP.`,
+              command: `tcpdump -i any -nn 'tcp[tcpflags] & tcp-rst != 0' -c 10`,
+              task: 'Cattura i pacchetti TCP RST per individuare connessioni interrotte bruscamente dal kernel o da firewall.',
             },
             {
               english: 'Sequence Number',
@@ -1211,6 +1233,8 @@ export default {
                 'Legacy sites still serve unencrypted HTTP on port 80 before redirecting to HTTPS on 443. = I siti legacy servono ancora HTTP non cifrato sulla porta 80 prima di reindirizzare a HTTPS sulla 443.',
               context: 'tcp-ip',
               difficulty: 'beginner',
+              command: 'curl -v http://example.com',
+              task: 'Apri una connessione TCP non cifrata sulla porta 80 verso example.com e mostra lo scambio HTTP completo.',
             },
             {
               english: 'Port 443',
@@ -1221,6 +1245,8 @@ export default {
                 'All modern HTTPS traffic flows through port 443, where TLS-encrypted connections terminate. = Tutto il traffico HTTPS moderno passa attraverso la porta 443, dove terminano le connessioni cifrate con TLS.',
               context: 'tcp-ip',
               difficulty: 'beginner',
+              command: 'openssl s_client -connect example.com:443 -servername example.com',
+              task: 'Apri una sessione TLS sulla porta 443 di example.com per ispezionare il certificato HTTPS presentato.',
             },
             {
               english: 'Port 22',
@@ -1231,6 +1257,8 @@ export default {
                 "Administrators use port 22 to reach servers via SSH for secure remote shell access. = Gli amministratori usano la porta 22 per raggiungere i server via SSH per l'accesso remoto sicuro alla shell.",
               context: 'tcp-ip',
               difficulty: 'beginner',
+              command: 'nc -zv example.com 22',
+              task: `Verifica se la porta 22 di example.com accetta connessioni TCP per stabilire se SSH e' raggiungibile.`,
             },
             {
               english: 'Port 53',
@@ -1241,6 +1269,8 @@ export default {
                 'Every DNS query your browser makes goes to a resolver listening on port 53, usually over UDP. = Ogni query DNS del tuo browser va a un resolver in ascolto sulla porta 53, solitamente su UDP.',
               context: 'tcp-ip',
               difficulty: 'beginner',
+              command: 'dig @8.8.8.8 example.com +short',
+              task: 'Interroga il resolver Google sulla porta 53 per risolvere example.com restituendo solo gli indirizzi finali.',
             },
             {
               english: 'Port 25',
@@ -1251,6 +1281,8 @@ export default {
                 'Mail servers relay email on port 25 via SMTP, though ISPs often block it to reduce spam. = I server di posta inoltrano email sulla porta 25 via SMTP, anche se gli ISP spesso la bloccano per ridurre lo spam.',
               context: 'tcp-ip',
               difficulty: 'beginner',
+              command: 'nc -zv smtp.example.com 25',
+              task: 'Controlla se il mail server smtp.example.com accetta connessioni SMTP sulla porta 25.',
             },
             {
               english: 'Listening Port',
@@ -1274,6 +1306,8 @@ export default {
               context: 'tcp-ip',
               difficulty: 'beginner',
               tool: 'nmap',
+              command: 'nmap -sS -p- --open 192.168.1.1',
+              task: 'Esegui una scansione SYN su tutte le 65535 porte di 192.168.1.1 mostrando solo quelle aperte.',
             },
             {
               english: 'Closed Port',
@@ -1332,6 +1366,8 @@ export default {
               context: 'tcp-ip',
               difficulty: 'beginner',
               note: 'Algoritmi: Cubic, BBR, Reno.',
+              command: 'sysctl net.ipv4.tcp_congestion_control',
+              task: 'Mostra quale algoritmo di controllo congestione TCP il kernel sta usando di default (es. cubic, bbr, reno).',
             },
             {
               english: 'Best-Effort',
@@ -1435,6 +1471,8 @@ export default {
               context: 'addressing',
               difficulty: 'beginner',
               note: 'Esempio: 192.168.1.1. Ne esistono ~4 miliardi.',
+              command: 'ip -4 addr show dev eth0',
+              task: `Visualizza solo gli indirizzi IPv4 configurati sull'interfaccia eth0 con la rispettiva subnet.`,
             },
             {
               english: 'Octet',
@@ -1477,6 +1515,8 @@ export default {
               context: 'addressing',
               difficulty: 'beginner',
               note: 'Range: 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16.',
+              command: `ip -o addr | grep -E '10\\.|172\\.1[6-9]|192\\.168'`,
+              task: 'Filtra dagli indirizzi locali quelli appartenenti ai range privati RFC 1918 (10/8, 172.16/12, 192.168/16).',
             },
             {
               english: 'Loopback',
@@ -1511,6 +1551,8 @@ export default {
               context: 'addressing',
               difficulty: 'beginner',
               note: 'Automatic Private IP Addressing.',
+              command: `ip addr show | grep '169.254'`,
+              task: 'Controlla se una interfaccia ha ricevuto un indirizzo APIPA 169.254.0.0/16 sintomo di un DHCP fallito.',
             },
             {
               english: 'Default Gateway',
@@ -1540,6 +1582,8 @@ export default {
               context: 'addressing',
               difficulty: 'beginner',
               note: 'Definisce parte rete vs parte host.',
+              command: 'ipcalc 192.168.1.0/24',
+              task: 'Calcola con ipcalc rete, broadcast, netmask e numero di host utili della sottorete 192.168.1.0/24.',
             },
             {
               english: 'CIDR',
@@ -1551,6 +1595,8 @@ export default {
               context: 'addressing',
               difficulty: 'beginner',
               note: 'Classless Inter-Domain Routing. Sostituisce le classi A/B/C.',
+              command: 'ipcalc 10.0.0.0/22',
+              task: 'Espandi il prefisso CIDR 10.0.0.0/22 per leggerne range di indirizzi e maschera dotted decimal.',
             },
             {
               english: 'Prefix Length',
@@ -1623,6 +1669,8 @@ export default {
               context: 'addressing',
               difficulty: 'beginner',
               tool: 'ipcalc, sipcalc',
+              command: 'sipcalc -s 24 192.168.0.0/22',
+              task: 'Suddividi 192.168.0.0/22 in quattro sottoreti /24 elencandole tutte con sipcalc.',
             },
             {
               english: 'Address Class',
@@ -1652,6 +1700,8 @@ export default {
               context: 'addressing',
               difficulty: 'beginner',
               note: '~340 undecilioni di indirizzi disponibili.',
+              command: 'ip -6 addr show',
+              task: 'Stampa tutti gli indirizzi IPv6 attivi sulle interfacce locali con il rispettivo scope (link/global).',
             },
             {
               english: 'Hexadecimal',
@@ -1672,6 +1722,8 @@ export default {
                 'IPv6 link-local addresses start with fe80::. = Gli indirizzi link-local IPv6 iniziano con fe80::.',
               context: 'addressing',
               difficulty: 'beginner',
+              command: 'ip -6 addr show scope link',
+              task: 'Filtra gli indirizzi IPv6 con scope link-local per identificare le interfacce abilitate a IPv6.',
             },
             {
               english: 'Global Unicast',
@@ -1713,6 +1765,8 @@ export default {
                 'In networking, Dual Stack supports both IPv4 and IPv6. = Dual stack supporta sia IPv4 che IPv6.',
               context: 'addressing',
               difficulty: 'beginner',
+              command: `ip addr show dev eth0 | grep -E 'inet|inet6'`,
+              task: 'Verifica che eth0 abbia configurati sia un IPv4 sia un IPv6 globali per confermare il dual stack.',
             },
             {
               english: 'Tunneling',
@@ -1764,6 +1818,8 @@ export default {
               context: 'addressing',
               difficulty: 'beginner',
               note: 'Dynamic Host Configuration Protocol.',
+              command: 'dhclient -v eth0',
+              task: `Richiedi un nuovo lease DHCP per l'interfaccia eth0 mostrando ogni passaggio del processo DORA.`,
             },
             {
               english: 'DHCP Lease',
@@ -1774,6 +1830,8 @@ export default {
                 'In networking, DHCP Lease times control IP renewal. = I tempi di lease DHCP controllano il rinnovo IP.',
               context: 'addressing',
               difficulty: 'beginner',
+              command: 'cat /var/lib/dhcp/dhclient.eth0.leases',
+              task: 'Ispeziona il file dei lease DHCP di dhclient per scoprire la durata residua del lease su eth0.',
             },
             {
               english: 'DHCP Discover',
@@ -1785,6 +1843,8 @@ export default {
               context: 'addressing',
               difficulty: 'beginner',
               note: 'Sequenza DORA: Discover, Offer, Request, Ack.',
+              command: 'tcpdump -i eth0 -nn port 67 or port 68',
+              task: 'Cattura il traffico DHCP sulle porte 67/68 per osservare la sequenza Discover/Offer/Request/Ack.',
             },
             {
               english: 'DHCP Server',
@@ -1796,6 +1856,14 @@ export default {
               context: 'addressing',
               difficulty: 'beginner',
               tool: 'isc-dhcp-server, dnsmasq',
+              code: `# /etc/dhcp/dhcpd.conf
+subnet 192.168.1.0 netmask 255.255.255.0 {
+  range 192.168.1.100 192.168.1.200;
+  option routers 192.168.1.1;
+  option domain-name-servers 8.8.8.8;
+  default-lease-time 600;
+}`,
+              task: 'Configura una subnet DHCP servita da isc-dhcp-server distribuendo IP da .100 a .200 con gateway e DNS.',
             },
             {
               english: 'Address Pool',
@@ -1837,6 +1905,8 @@ export default {
               context: 'addressing',
               difficulty: 'beginner',
               note: 'Range IPv4: 224.0.0.0/4.',
+              command: 'ip maddr show',
+              task: 'Elenca i gruppi multicast a cui ogni interfaccia di rete del sistema risulta iscritta.',
             },
             {
               english: 'Broadcast',
@@ -1910,6 +1980,8 @@ export default {
                 'In networking, an Ethernet Frame contains source and destination MAC. = Un frame Ethernet contiene MAC sorgente e destinazione.',
               context: 'switching',
               difficulty: 'intermediate',
+              command: 'tcpdump -i eth0 -e -nn -c 10',
+              task: 'Cattura dieci frame Ethernet su eth0 mostrando gli header L2 con MAC sorgente e destinazione.',
             },
             {
               english: 'Preamble',
@@ -1952,6 +2024,8 @@ export default {
               context: 'switching',
               difficulty: 'intermediate',
               note: 'Utili nei data center per ridurre overhead.',
+              command: 'ip link set eth0 mtu 9000',
+              task: `Imposta la MTU dell'interfaccia eth0 a 9000 byte per abilitare il supporto ai jumbo frame.`,
             },
             {
               english: 'Collision Domain',
@@ -2023,6 +2097,10 @@ export default {
               context: 'switching',
               difficulty: 'intermediate',
               note: 'Content-Addressable Memory.',
+              code: `Switch# show mac address-table dynamic
+Switch# show mac address-table count
+Switch# clear mac address-table dynamic`,
+              task: 'Su Cisco IOS interroga la CAM dinamica, ne conta le entry e la svuota per forzare nuovo apprendimento.',
             },
             {
               english: 'Forwarding',
@@ -2086,6 +2164,10 @@ export default {
               context: 'switching',
               difficulty: 'intermediate',
               note: 'Utile per IP phones, AP Wi-Fi, telecamere.',
+              code: `Switch(config)# interface GigabitEthernet0/1
+Switch(config-if)# power inline auto
+Switch# show power inline`,
+              task: `Abilita PoE in modalita' auto sulla porta Gi0/1 di uno switch Cisco e verifica lo stato di alimentazione.`,
             },
             {
               english: 'Auto-Negotiation',
@@ -2127,6 +2209,10 @@ export default {
                 'The network team assigns VLAN IDs from the valid range of 1 to 4094, reserving VLAN 100 for management traffic. = Il team di rete assegna ID VLAN dal range valido da 1 a 4094, riservando la VLAN 100 al traffico di gestione.',
               context: 'switching',
               difficulty: 'intermediate',
+              code: `Switch(config)# vlan 100
+Switch(config-vlan)# name MANAGEMENT
+Switch(config-vlan)# exit`,
+              task: 'Crea la VLAN 100 con nome MANAGEMENT sulla configurazione globale di uno switch Cisco IOS.',
             },
             {
               english: '802.1Q',
@@ -2138,6 +2224,10 @@ export default {
               context: 'switching',
               difficulty: 'intermediate',
               note: 'Standard IEEE per VLAN tagging.',
+              code: `Switch(config-if)# switchport trunk encapsulation dot1q
+Switch(config-if)# switchport mode trunk
+Switch(config-if)# switchport trunk allowed vlan 10,20,30`,
+              task: `Configura l'incapsulamento 802.1Q sull'interfaccia trunk consentendo solo le VLAN 10, 20 e 30.`,
             },
             {
               english: 'Trunk Port',
@@ -2173,6 +2263,8 @@ export default {
               context: 'switching',
               difficulty: 'intermediate',
               note: 'Default 1, ma è buona pratica cambiarla.',
+              code: 'Switch(config-if)# switchport trunk native vlan 999',
+              task: 'Cambia la native VLAN del trunk dalla 1 alla 999 per mitigare attacchi di VLAN hopping.',
             },
             {
               english: 'VLAN Tagging',
@@ -2194,6 +2286,10 @@ export default {
               context: 'switching',
               difficulty: 'intermediate',
               note: 'Fatto da router o switch L3.',
+              code: `Switch(config)# interface vlan 10
+Switch(config-if)# ip address 10.0.10.1 255.255.255.0
+Switch(config)# ip routing`,
+              task: 'Configura una SVI sulla VLAN 10 con gateway 10.0.10.1/24 e abilita il routing per il traffico inter-VLAN.',
             },
             {
               english: 'Voice VLAN',
@@ -2204,6 +2300,10 @@ export default {
                 'In networking, a Voice VLAN isolates VoIP traffic. = Una VLAN voce isola il traffico VoIP.',
               context: 'switching',
               difficulty: 'intermediate',
+              code: `Switch(config-if)# switchport mode access
+Switch(config-if)# switchport access vlan 10
+Switch(config-if)# switchport voice vlan 20`,
+              task: 'Imposta la porta con VLAN dati 10 e VLAN voce 20 per supportare un IP phone con PC collegato.',
             },
             {
               english: 'Private VLAN',
@@ -2232,6 +2332,9 @@ export default {
               context: 'switching',
               difficulty: 'intermediate',
               note: 'Spanning Tree Protocol. IEEE 802.1D.',
+              code: `Switch# show spanning-tree
+Switch# show spanning-tree vlan 1`,
+              task: 'Visualizza lo stato Spanning Tree per scoprire il root bridge eletto e i ruoli di ogni porta.',
             },
             {
               english: 'BPDU',
@@ -2253,6 +2356,8 @@ export default {
                 'By definition, the Root Bridge is the STP reference point. = Il bridge radice è il punto di riferimento STP.',
               context: 'switching',
               difficulty: 'intermediate',
+              code: 'Switch(config)# spanning-tree vlan 1 priority 4096',
+              task: `Forza lo switch a diventare root bridge della VLAN 1 abbassandone la priorita' STP a 4096.`,
             },
             {
               english: 'RSTP',
@@ -2264,6 +2369,8 @@ export default {
               context: 'switching',
               difficulty: 'intermediate',
               note: 'Rapid Spanning Tree Protocol. IEEE 802.1w.',
+              code: 'Switch(config)# spanning-tree mode rapid-pvst',
+              task: `Attiva la modalita' rapid-pvst su uno switch Cisco per usare RSTP invece dello STP classico.`,
             },
             {
               english: 'BPDU Guard',
@@ -2322,6 +2429,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'arpspoof, ettercap',
               note: 'Mitigato da Dynamic ARP Inspection (DAI).',
+              command: 'arpspoof -i eth0 -t 192.168.1.10 192.168.1.1',
+              task: 'Avvia un attacco ARP spoofing su eth0 facendo credere a 192.168.1.10 che 192.168.1.1 sei tu (solo in lab).',
             },
             {
               english: 'EtherChannel',
@@ -2333,6 +2442,10 @@ export default {
               context: 'switching',
               difficulty: 'intermediate',
               note: 'Standard: LACP (IEEE 802.3ad).',
+              code: `Switch(config-if-range)# channel-group 1 mode active
+Switch(config)# interface Port-channel 1
+Switch(config-if)# switchport mode trunk`,
+              task: 'Crea un EtherChannel LACP attivo aggregando le interfacce in un Port-channel trunk.',
             },
           ],
         },
@@ -2370,6 +2483,8 @@ export default {
                 'In networking, Routing decides the path packets take. = Il routing decide il percorso che fanno i pacchetti.',
               context: 'routing',
               difficulty: 'intermediate',
+              command: 'ip route get 8.8.8.8',
+              task: 'Chiedi al kernel quale rotta verrebbe usata per raggiungere 8.8.8.8 e con quale interfaccia.',
             },
             {
               english: 'Routing Table',
@@ -2488,6 +2603,9 @@ export default {
               context: 'routing',
               difficulty: 'intermediate',
               note: 'Ha AD più alta della rotta primaria.',
+              code: `Router(config)# ip route 10.0.0.0 255.0.0.0 192.168.1.254
+Router(config)# ip route 10.0.0.0 255.0.0.0 192.168.2.254 200`,
+              task: 'Aggiungi una rotta statica galleggiante con AD 200 come backup di quella primaria su Cisco IOS.',
             },
             {
               english: 'Stub Network',
@@ -2600,6 +2718,11 @@ export default {
               context: 'routing',
               difficulty: 'intermediate',
               note: 'RIP (Routing Information Protocol) è un protocollo distance-vector basato sul conteggio degli hop.',
+              code: `Router(config)# router rip
+Router(config-router)# version 2
+Router(config-router)# network 10.0.0.0
+Router(config-router)# no auto-summary`,
+              task: 'Attiva RIPv2 su un router Cisco annunciando la rete 10.0.0.0 senza summary automatico.',
             },
             {
               english: 'Distance Vector',
@@ -2632,6 +2755,10 @@ export default {
               context: 'routing',
               difficulty: 'intermediate',
               note: `OSPF (Open Shortest Path First) è un protocollo link-state che usa l'algoritmo di Dijkstra.`,
+              code: `Router(config)# router ospf 1
+Router(config-router)# router-id 1.1.1.1
+Router(config-router)# network 10.0.0.0 0.0.0.255 area 0`,
+              task: `Configura il processo OSPF 1 con router-id 1.1.1.1 e annuncia la 10.0.0.0/24 nell'area backbone 0.`,
             },
             {
               english: 'EIGRP',
@@ -2643,6 +2770,10 @@ export default {
               context: 'routing',
               difficulty: 'intermediate',
               note: 'Enhanced Interior Gateway Routing Protocol.',
+              code: `Router(config)# router eigrp 100
+Router(config-router)# network 10.0.0.0 0.0.0.255
+Router(config-router)# no auto-summary`,
+              task: `Abilita EIGRP nell'AS 100 e annuncia la rete 10.0.0.0/24 disattivando il summary automatico.`,
             },
             {
               english: 'Hello Packet',
@@ -2653,6 +2784,8 @@ export default {
                 'OSPF sends hello packets to find neighbors. = OSPF invia pacchetti hello per trovare i vicini.',
               context: 'routing',
               difficulty: 'intermediate',
+              command: 'tcpdump -i eth0 -nn proto 89',
+              task: 'Cattura i pacchetti OSPF su eth0 per osservare gli hello scambiati tra router vicini ogni 10 secondi.',
             },
             {
               english: 'Neighbor',
@@ -2702,6 +2835,10 @@ export default {
               example: `On an access switch, a routed port is a physical interface configured for Layer 3 instead of a VLAN, useful for point-to-point uplinks. = Su uno switch di accesso, una porta routed e' un'interfaccia fisica configurata per il Layer 3 invece che per una VLAN, utile per uplink punto-punto.`,
               context: 'routing',
               difficulty: 'intermediate',
+              code: `Switch(config)# interface GigabitEthernet0/1
+Switch(config-if)# no switchport
+Switch(config-if)# ip address 10.0.0.1 255.255.255.252`,
+              task: 'Trasforma la porta Gi0/1 da L2 a routed assegnandole un IP /30 per un uplink punto-punto.',
             },
             {
               english: 'SVI',
@@ -2768,6 +2905,9 @@ export default {
                 "OSPF uses the router ID for identification. = OSPF usa il router ID per l'identificazione.",
               context: 'routing',
               difficulty: 'intermediate',
+              code: `Router(config)# router ospf 1
+Router(config-router)# router-id 10.1.1.1`,
+              task: `Imposta esplicitamente il router-id OSPF a 10.1.1.1 per evitare che cambi al riavvio dell'interfaccia.`,
             },
             {
               english: 'Redistribution',
@@ -2801,6 +2941,9 @@ export default {
               context: 'routing',
               difficulty: 'intermediate',
               note: 'BFD rileva guasti di link in pochi millisecondi, molto più veloce dei timer hello dei protocolli di routing.',
+              code: `Router(config-if)# bfd interval 50 min_rx 50 multiplier 3
+Router(config-router)# bfd all-interfaces`,
+              task: `Abilita BFD sull'interfaccia con timer da 50 ms e moltiplicatore 3 per rilevare guasti di link rapidi.`,
             },
           ],
         },
@@ -2828,6 +2971,8 @@ export default {
               context: 'dns',
               difficulty: 'intermediate',
               note: 'Domain Name System. La "rubrica telefonica" di Internet.',
+              command: 'dig example.com +short',
+              task: 'Risolvi example.com tramite il resolver di sistema mostrando solo gli indirizzi IP finali.',
             },
             {
               english: 'Domain',
@@ -2859,6 +3004,8 @@ export default {
               context: 'dns',
               difficulty: 'intermediate',
               note: 'Top-Level Domain.',
+              command: 'dig com NS +short',
+              task: 'Recupera la lista dei nameserver autoritativi per il TLD .com tramite una query NS.',
             },
             {
               english: 'FQDN',
@@ -2870,6 +3017,8 @@ export default {
               context: 'dns',
               difficulty: 'intermediate',
               note: 'Fully Qualified Domain Name. Termina con punto.',
+              command: 'dig www.example.com. A +short',
+              task: `Risolvi l'FQDN www.example.com. (con punto finale) per ottenerne l'indirizzo IPv4.`,
             },
             {
               english: 'Root Server',
@@ -2881,6 +3030,8 @@ export default {
               context: 'dns',
               difficulty: 'intermediate',
               note: 'Lettere a-m.root-servers.net.',
+              command: 'dig . NS +short',
+              task: 'Interroga i nameserver root del DNS per ottenere la lista dei tredici server radice a-m.root-servers.net.',
             },
             {
               english: 'Authoritative Server',
@@ -2891,6 +3042,8 @@ export default {
                 'By design, the Authoritative Server has the official records. = Il server autoritativo ha i record ufficiali.',
               context: 'dns',
               difficulty: 'intermediate',
+              command: 'dig +trace example.com',
+              task: 'Traccia la risoluzione di example.com a partire dai root fino al server autoritativo finale.',
             },
             {
               english: 'Resolver',
@@ -2991,6 +3144,8 @@ export default {
               context: 'dns',
               difficulty: 'intermediate',
               note: 'Usati per SPF, DKIM, DMARC, verifiche.',
+              command: 'dig example.com TXT +short',
+              task: `Recupera tutti i record TXT di example.com per ispezionare SPF, DKIM e verifiche di proprieta'.`,
             },
             {
               english: 'NS Record',
@@ -3026,6 +3181,8 @@ export default {
               context: 'dns',
               difficulty: 'intermediate',
               note: 'Start Of Authority.',
+              command: 'dig example.com SOA +short',
+              task: 'Estrai il record SOA di example.com per leggere serial, refresh, retry, expire e minimum TTL.',
             },
             {
               english: 'SRV Record',
@@ -3037,6 +3194,8 @@ export default {
               context: 'dns',
               difficulty: 'intermediate',
               note: 'Usati da SIP, XMPP, LDAP.',
+              command: 'dig _ldap._tcp.example.com SRV +short',
+              task: 'Interroga il record SRV LDAP via TCP per scoprire host e porta del servizio per quel dominio.',
             },
             {
               english: 'CAA Record',
@@ -3048,6 +3207,8 @@ export default {
               context: 'dns',
               difficulty: 'intermediate',
               note: 'Certificate Authority Authorization.',
+              command: 'dig example.com CAA +short',
+              task: 'Recupera i record CAA di example.com per vedere quali Certificate Authority sono autorizzate ad emettere cert.',
             },
           ],
         },
@@ -3078,6 +3239,8 @@ export default {
               context: 'dns',
               difficulty: 'intermediate',
               note: `Non confondere con il TTL dell'header IP, che invece limita gli hop di un pacchetto.`,
+              command: 'dig example.com +noall +answer',
+              task: 'Mostra solo la sezione answer di una query A su example.com per leggere il TTL residuo del record.',
             },
             {
               english: 'Zone',
@@ -3099,6 +3262,14 @@ export default {
               context: 'dns',
               difficulty: 'intermediate',
               tool: 'BIND, NSD',
+              code: `$TTL 3600
+@ IN SOA ns1.example.com. admin.example.com. (
+  2026051701 ; serial
+  3600 1800 1209600 86400 )
+@ IN NS ns1.example.com.
+@ IN A 192.0.2.10
+www IN CNAME @`,
+              task: 'Scrivi uno zone file BIND per example.com con record SOA, NS, A radice e CNAME per www.',
             },
             {
               english: 'Zone Transfer',
@@ -3110,6 +3281,8 @@ export default {
               context: 'dns',
               difficulty: 'intermediate',
               note: 'AXFR (full) e IXFR (incremental).',
+              command: 'dig @ns1.example.com example.com AXFR',
+              task: 'Richiedi un trasferimento di zona completo AXFR per example.com al suo nameserver autoritativo ns1.',
             },
             {
               english: 'Glue Record',
@@ -3181,6 +3354,8 @@ export default {
               context: 'dns',
               difficulty: 'intermediate',
               note: 'DNS Security Extensions. Previene cache poisoning.',
+              command: 'dig example.com +dnssec +multi',
+              task: 'Interroga example.com con flag DNSSEC per visualizzare anche i record DS, DNSKEY e RRSIG.',
             },
             {
               english: 'DoT',
@@ -3202,6 +3377,8 @@ export default {
               context: 'dns',
               difficulty: 'intermediate',
               note: 'Usato da Firefox, Chrome.',
+              command: `curl -H 'accept: application/dns-json' 'https://1.1.1.1/dns-query?name=example.com&type=A'`,
+              task: `Risolvi example.com via DNS over HTTPS interrogando l'endpoint JSON di Cloudflare 1.1.1.1.`,
             },
             {
               english: 'DNS Cache Poisoning',
@@ -3234,6 +3411,8 @@ export default {
               context: 'dns',
               difficulty: 'intermediate',
               note: 'Non-eXistent Domain.',
+              command: 'dig nonexistent-name-xyz.example.com',
+              task: 'Forza una risposta NXDOMAIN interrogando un nome chiaramente inesistente per studiare la cache negativa.',
             },
             {
               english: 'Wildcard Record',
@@ -3245,6 +3424,9 @@ export default {
               context: 'dns',
               difficulty: 'intermediate',
               note: 'Esempio: *.example.com.',
+              code: `$ORIGIN example.com.
+*.dev IN A 192.0.2.50`,
+              task: 'Pubblica un record wildcard *.dev.example.com che risolva ogni sottodominio dev verso 192.0.2.50.',
             },
             {
               english: 'Split-Horizon DNS',
@@ -3305,6 +3487,8 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'HyperText Transfer Protocol.',
+              command: 'curl -v http://example.com/',
+              task: 'Effettua una richiesta HTTP non cifrata mostrando in modo verboso headers di richiesta e risposta.',
             },
             {
               english: 'HTTP/1.1',
@@ -3316,6 +3500,8 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'RFC 2616, oggi RFC 7230-7235.',
+              command: 'curl --http1.1 -v https://example.com/',
+              task: 'Forza curl a usare HTTP/1.1 verso example.com per analizzare il comportamento del protocollo legacy.',
             },
             {
               english: 'HTTP/2',
@@ -3327,6 +3513,8 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Basato su SPDY di Google.',
+              command: 'curl --http2 -v https://example.com/',
+              task: 'Esegui una richiesta HTTPS forzando HTTP/2 e osserva il multiplexing nei log verbose di curl.',
             },
             {
               english: 'HTTP/3',
@@ -3338,6 +3526,8 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Standardizzato nel 2022.',
+              command: 'curl --http3 -v https://cloudflare.com/',
+              task: 'Richiedi cloudflare.com via HTTP/3 su QUIC per verificare che il server supporti il nuovo protocollo.',
             },
             {
               english: 'HTTPS',
@@ -3348,6 +3538,8 @@ export default {
                 'For confidentiality, HTTPS encrypts HTTP traffic with TLS. = HTTPS cifra il traffico HTTP con TLS.',
               context: 'protocols',
               difficulty: 'intermediate',
+              command: 'curl -v https://example.com/',
+              task: 'Apri una connessione HTTPS verso example.com per ispezionare handshake TLS e header della risposta.',
             },
             {
               english: 'Persistent Connection',
@@ -3430,6 +3622,8 @@ export default {
                 'The HTTP response includes a status code. = La risposta HTTP include un codice di stato.',
               context: 'protocols',
               difficulty: 'intermediate',
+              command: 'curl -i https://example.com/',
+              task: `Mostra l'intera risposta HTTP di example.com includendo status line, header e body.`,
             },
             {
               english: 'HTTP Header',
@@ -3461,6 +3655,8 @@ export default {
                 'In networking, GET requests should not modify state. = Le richieste GET non dovrebbero modificare stato.',
               context: 'protocols',
               difficulty: 'intermediate',
+              command: 'curl -X GET https://api.example.com/users',
+              task: `Esegui una richiesta GET sull'endpoint /users dell'API d'esempio per recuperare la lista risorse.`,
             },
             {
               english: 'POST',
@@ -3483,6 +3679,8 @@ export default {
                 "After the API processes the POST request successfully, the server returns status code 200 OK along with the response payload. = Dopo che l'API elabora la richiesta POST con successo, il server restituisce il codice di stato 200 OK insieme al payload di risposta.",
               context: 'protocols',
               difficulty: 'intermediate',
+              command: `curl -o /dev/null -s -w '%{http_code}\\n' https://example.com/`,
+              task: 'Recupera solo il codice di stato HTTP della risposta di example.com scartandone il corpo.',
             },
             {
               english: '404 Not Found',
@@ -3492,6 +3690,8 @@ export default {
               example: `Returning 404 Not Found means the URL is valid syntax but the requested resource does not exist on the server. = Restituire 404 Not Found significa che l'URL e' sintatticamente valido ma la risorsa richiesta non esiste sul server.`,
               context: 'protocols',
               difficulty: 'intermediate',
+              command: 'curl -I https://example.com/nonexistent',
+              task: 'Forza una risposta 404 richiedendo una risorsa inesistente e mostra solo gli header HTTP restituiti.',
             },
             {
               english: '500 Internal Server Error',
@@ -3511,6 +3711,8 @@ export default {
                 "The User-Agent header identifies the client. = L'header User-Agent identifica il client.",
               context: 'protocols',
               difficulty: 'intermediate',
+              command: `curl -A 'Mozilla/5.0 (compatible; MyBot/1.0)' https://example.com/`,
+              task: `Invia una richiesta personalizzando l'header User-Agent per simulare un bot specifico verso example.com.`,
             },
           ],
         },
@@ -3529,6 +3731,8 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Successore di SSL.',
+              command: 'openssl s_client -connect example.com:443 -tls1_2',
+              task: 'Apri una connessione TLS 1.2 verso example.com per analizzare versione, cifrari e certificati negoziati.',
             },
             {
               english: 'SSL',
@@ -3550,6 +3754,8 @@ export default {
                 "In networking, the TLS Handshake negotiates encryption. = L'handshake TLS negozia la cifratura.",
               context: 'protocols',
               difficulty: 'intermediate',
+              command: 'openssl s_client -connect example.com:443 -msg',
+              task: `Mostra ogni messaggio dell'handshake TLS con example.com per ispezionare ClientHello, ServerHello e Finished.`,
             },
             {
               english: 'Certificate',
@@ -3595,6 +3801,8 @@ export default {
                 'For flexibility, SNI lets multiple sites share an IP. = SNI permette a più siti di condividere un IP.',
               context: 'protocols',
               difficulty: 'intermediate',
+              command: 'openssl s_client -connect 93.184.216.34:443 -servername example.com',
+              task: `Connettiti via IP all'host indicando esplicitamente example.com come SNI per ottenere il certificato giusto.`,
             },
             {
               english: 'TLS 1.3',
@@ -3606,6 +3814,8 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Standard dal 2018, RFC 8446.',
+              command: 'openssl s_client -connect example.com:443 -tls1_3',
+              task: `Apri una connessione forzando TLS 1.3 per verificare che il server supporti la versione piu' recente.`,
             },
             {
               english: 'Mutual TLS',
@@ -3628,6 +3838,8 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Online Certificate Status Protocol.',
+              command: 'openssl s_client -connect example.com:443 -status',
+              task: 'Richiedi lo stato OCSP del certificato TLS di example.com per verificare che non sia stato revocato.',
             },
           ],
         },
@@ -3645,6 +3857,8 @@ export default {
                 'After login, the server issues a session cookie so the browser can maintain session state across subsequent HTTP requests. = Dopo il login, il server emette un cookie di sessione cosi che il browser possa mantenere lo stato di sessione nelle richieste HTTP successive.',
               context: 'protocols',
               difficulty: 'intermediate',
+              command: 'curl -c cookies.txt -b cookies.txt https://example.com/',
+              task: 'Effettua una richiesta salvando e riutilizzando cookie da un file per simulare una sessione persistente.',
             },
             {
               english: 'Session',
@@ -3686,6 +3900,8 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Inizia con HTTP upgrade.',
+              command: 'websocat wss://echo.websocket.org',
+              task: 'Apri una connessione WebSocket sicura verso il server di echo per scambiare messaggi full-duplex.',
             },
             {
               english: 'REST',
@@ -3738,6 +3954,8 @@ export default {
                 'When migrating from HTTP to HTTPS, administrators configure a 301 redirect so browsers and search engines update their cached URLs permanently. = Durante la migrazione da HTTP a HTTPS, gli amministratori configurano un redirect 301 cosi che browser e motori di ricerca aggiornino permanentemente gli URL in cache.',
               context: 'protocols',
               difficulty: 'intermediate',
+              command: 'curl -L -I http://example.com/',
+              task: 'Segui automaticamente i redirect HTTP fino alla risorsa finale stampando solo gli header di ogni hop.',
             },
           ],
         },
@@ -3765,6 +3983,8 @@ export default {
               context: 'wireless',
               difficulty: 'intermediate',
               note: 'Trademark della Wi-Fi Alliance per IEEE 802.11.',
+              command: 'nmcli device wifi list',
+              task: 'Elenca tutte le reti Wi-Fi rilevate con NetworkManager mostrando SSID, segnale, banda e cifratura.',
             },
             {
               english: 'SSID',
@@ -3776,6 +3996,8 @@ export default {
               context: 'wireless',
               difficulty: 'intermediate',
               note: 'Service Set Identifier. Massimo 32 caratteri.',
+              command: 'nmcli -t -f SSID device wifi list',
+              task: `Estrai solo la lista degli SSID delle reti Wi-Fi visibili usando l'output terse di nmcli.`,
             },
             {
               english: 'BSSID',
@@ -3787,6 +4009,8 @@ export default {
               context: 'wireless',
               difficulty: 'intermediate',
               note: 'Basic SSID.',
+              command: `iw dev wlan0 scan | grep -E 'BSS|SSID'`,
+              task: 'Estrai dalla scansione di wlan0 le coppie BSSID-SSID per identificare singolarmente gli access point vicini.',
             },
             {
               english: 'wireless access point',
@@ -3808,6 +4032,8 @@ export default {
               context: 'wireless',
               difficulty: 'intermediate',
               note: '2.4 GHz: 1, 6, 11 non sovrapposti.',
+              command: 'iw dev wlan0 info',
+              task: `Recupera canale, banda e larghezza correnti dell'interfaccia wlan0 associata a un access point.`,
             },
             {
               english: 'Frequency',
@@ -3818,6 +4044,8 @@ export default {
                 'Wi-Fi operates at 2.4 GHz, 5 GHz and 6 GHz. = Wi-Fi opera a 2.4 GHz, 5 GHz e 6 GHz.',
               context: 'wireless',
               difficulty: 'intermediate',
+              command: 'iwlist wlan0 frequency',
+              task: `Elenca tutte le frequenze 2.4 e 5 GHz supportate dall'interfaccia wireless wlan0.`,
             },
             {
               english: 'Signal Strength',
@@ -4013,6 +4241,8 @@ export default {
               context: 'wireless',
               difficulty: 'intermediate',
               note: 'Standard dal 2004. Vulnerabile a KRACK.',
+              command: `nmcli device wifi connect MySSID password 'mypassword'`,
+              task: 'Connettiti via NetworkManager alla rete MySSID protetta da WPA2 fornendo la passphrase.',
             },
             {
               english: 'WPA3',
@@ -4089,6 +4319,8 @@ export default {
               context: 'wireless',
               difficulty: 'intermediate',
               tool: 'airodump-ng',
+              command: 'airodump-ng --band abg wlan0mon',
+              task: `Avvia airodump-ng su un'interfaccia in monitor mode per individuare access point non autorizzati nelle vicinanze.`,
             },
           ],
         },
@@ -4106,6 +4338,8 @@ export default {
                 'In networking, Roaming switches between APs seamlessly. = Il roaming passa tra AP senza interruzioni.',
               context: 'wireless',
               difficulty: 'intermediate',
+              command: 'iw dev wlan0 link',
+              task: `Mostra a quale BSSID sei attualmente associato per verificare se sei rimasto sull'AP migliore dopo lo spostamento.`,
             },
             {
               english: 'Mesh Wi-Fi',
@@ -4127,6 +4361,8 @@ export default {
               context: 'wireless',
               difficulty: 'intermediate',
               tool: 'NetSpot, Ekahau',
+              command: `iw dev wlan0 scan | grep -E 'SSID|signal|freq'`,
+              task: 'Esegui un mini site survey con iw raccogliendo SSID, frequenza e potenza di tutti gli AP visibili.',
             },
             {
               english: 'Heat Map',
@@ -4249,6 +4485,8 @@ export default {
                 'In networking, Allow rules permit matching traffic. = Le regole allow permettono il traffico corrispondente.',
               context: 'firewalls',
               difficulty: 'intermediate',
+              code: 'iptables -A INPUT -p tcp --dport 443 -j ACCEPT',
+              task: 'Crea una regola allow in INPUT che accetti il traffico TCP destinato alla porta 443 HTTPS.',
             },
             {
               english: 'Deny',
@@ -4260,6 +4498,8 @@ export default {
               context: 'firewalls',
               difficulty: 'intermediate',
               note: 'In iptables: DROP.',
+              code: 'iptables -A INPUT -s 198.51.100.0/24 -j DROP',
+              task: 'Aggiungi una regola di deny silenzioso che scarta tutto il traffico proveniente dalla subnet 198.51.100.0/24.',
             },
             {
               english: 'Reject',
@@ -4271,6 +4511,8 @@ export default {
               context: 'firewalls',
               difficulty: 'intermediate',
               note: 'Diverso da DROP: il client viene avvisato.',
+              code: 'iptables -A INPUT -p tcp --dport 23 -j REJECT --reject-with tcp-reset',
+              task: 'Rifiuta le connessioni Telnet sulla porta 23 inviando un TCP reset al mittente invece di un drop silenzioso.',
             },
             {
               english: 'Default Policy',
@@ -4303,6 +4545,8 @@ export default {
                 'In networking, Ingress filtering blocks incoming malicious traffic. = Il filtraggio in ingresso blocca traffico malevolo.',
               context: 'firewalls',
               difficulty: 'intermediate',
+              code: 'iptables -A INPUT -i eth0 -p tcp --dport 22 -s 10.0.0.0/8 -j ACCEPT',
+              task: 'Applica una regola di ingress filtering che permetta SSH su eth0 solo dalla rete interna 10.0.0.0/8.',
             },
             {
               english: 'Egress',
@@ -4313,6 +4557,8 @@ export default {
                 'In networking, Egress filtering controls outbound traffic. = Il filtraggio in uscita controlla il traffico outbound.',
               context: 'firewalls',
               difficulty: 'intermediate',
+              code: 'iptables -A OUTPUT -p tcp --dport 25 -j DROP',
+              task: 'Blocca in egress il traffico SMTP in uscita sulla porta 25 per impedire spam da host compromessi.',
             },
             {
               english: 'Five-Tuple',
@@ -4396,6 +4642,10 @@ export default {
               context: 'firewalls',
               difficulty: 'intermediate',
               tool: 'ModSecurity, Cloudflare WAF',
+              code: `# /etc/modsecurity/modsecurity.conf
+SecRuleEngine On
+SecRule REQUEST_URI "@contains /admin" "id:1001,phase:1,deny,status:403,log"`,
+              task: `Abilita ModSecurity in modalita' attiva e crea una regola WAF che blocca con 403 ogni richiesta verso /admin.`,
             },
             {
               english: 'NGFW',
@@ -4428,6 +4678,8 @@ export default {
               context: 'firewalls',
               difficulty: 'intermediate',
               tool: 'ufw, firewalld, Windows Defender',
+              command: 'ufw enable && ufw default deny incoming && ufw default allow outgoing',
+              task: 'Attiva ufw impostando una policy host-based deny-incoming/allow-outgoing come base sicura per il server.',
             },
             {
               english: 'Network Firewall',
@@ -4521,6 +4773,9 @@ export default {
                 'Traffic from the Internet hits the inbound ACL before the router even consults the routing table, saving processing time on denied packets. = Il traffico da Internet colpisce la ACL in ingresso prima che il router consulti la tabella di routing, risparmiando tempo di elaborazione sui pacchetti negati.',
               context: 'firewalls',
               difficulty: 'intermediate',
+              code: `Router(config)# interface GigabitEthernet0/0
+Router(config-if)# ip access-group 100 in`,
+              task: `Applica in ingresso sull'interfaccia Gi0/0 l'extended ACL 100 per filtrare il traffico dall'esterno.`,
             },
             {
               english: 'Outbound ACL',
@@ -4531,6 +4786,9 @@ export default {
                 "Applying an outbound ACL on the WAN interface ensures that only approved traffic leaves the corporate network toward the Internet. = Applicare una ACL in uscita sull'interfaccia WAN assicura che solo traffico approvato lasci la rete aziendale verso Internet.",
               context: 'firewalls',
               difficulty: 'intermediate',
+              code: `Router(config)# interface GigabitEthernet0/1
+Router(config-if)# ip access-group BLOCK_GUEST out`,
+              task: `Applica in uscita su Gi0/1 la named ACL BLOCK_GUEST per restringere il traffico verso l'esterno.`,
             },
             {
               english: 'Reflexive ACL',
@@ -4541,6 +4799,11 @@ export default {
                 'When an internal host initiates a connection, a reflexive ACL automatically creates a temporary permit entry for the return traffic. = Quando un host interno avvia una connessione, una ACL riflessiva crea automaticamente una voce di permesso temporanea per il traffico di ritorno.',
               context: 'firewalls',
               difficulty: 'intermediate',
+              code: `Router(config)# ip access-list extended OUTBOUND
+Router(config-ext-nacl)# permit tcp any any reflect TCP_TRAFFIC
+Router(config)# ip access-list extended INBOUND
+Router(config-ext-nacl)# evaluate TCP_TRAFFIC`,
+              task: `Crea una coppia di ACL riflessive per permettere il ritorno automatico delle connessioni TCP iniziate dall'interno.`,
             },
             {
               english: 'Time-Based ACL',
@@ -4551,6 +4814,10 @@ export default {
                 "The administrator configures a time-based ACL that blocks social media access during business hours but allows it after 6 PM. = L'amministratore configura una ACL temporale che blocca l'accesso ai social media durante l'orario lavorativo ma lo permette dopo le 18.",
               context: 'firewalls',
               difficulty: 'intermediate',
+              code: `Router(config)# time-range BUSINESS_HOURS
+Router(config-time-range)# periodic weekdays 9:00 to 18:00
+Router(config)# access-list 101 deny tcp any any eq 443 time-range BUSINESS_HOURS`,
+              task: `Definisci un time-range BUSINESS_HOURS e blocca HTTPS solo durante l'orario lavorativo nei giorni feriali.`,
             },
           ],
         },
@@ -4658,6 +4925,8 @@ export default {
               context: 'firewalls',
               difficulty: 'intermediate',
               tool: 'conntrack-tools',
+              command: 'conntrack -E -e NEW,DESTROY',
+              task: 'Monitora in tempo reale gli eventi conntrack di creazione e distruzione delle connessioni tracciate dal kernel.',
             },
             {
               english: 'Rate Limiting',
@@ -4715,6 +4984,8 @@ export default {
               example: `Modern VPNs use AES-GCM or ChaCha20-Poly1305 encryption to protect tunneled traffic from eavesdropping on the wire. = Le VPN moderne usano cifratura AES-GCM o ChaCha20-Poly1305 per proteggere il traffico nel tunnel dall'intercettazione sulla linea.`,
               context: 'vpn',
               difficulty: 'intermediate',
+              command: `openssl ciphers -v 'TLSv1.3' | head`,
+              task: 'Elenca i cipher TLS 1.3 disponibili nella libreria openssl per scegliere algoritmi di cifratura moderni.',
             },
             {
               english: 'Authentication',
@@ -4806,6 +5077,16 @@ export default {
               context: 'vpn',
               difficulty: 'intermediate',
               note: 'Internet Protocol Security.',
+              code: `# /etc/ipsec.conf
+conn site-to-site
+  left=203.0.113.1
+  right=198.51.100.1
+  leftsubnet=10.0.0.0/24
+  rightsubnet=10.1.0.0/24
+  ike=aes256-sha256-modp2048
+  esp=aes256-sha256
+  auto=start`,
+              task: 'Configura un tunnel IPsec site-to-site su strongSwan tra due gateway con cifrari moderni AES-256/SHA-256.',
             },
             {
               english: 'IKE',
@@ -4816,6 +5097,8 @@ export default {
                 'In networking, IKE negotiates IPsec security associations. = IKE negozia le associazioni di sicurezza IPsec.',
               context: 'vpn',
               difficulty: 'intermediate',
+              command: 'ipsec statusall',
+              task: 'Visualizza lo stato completo di tutte le connessioni IKE/IPsec configurate su strongSwan per il troubleshooting.',
             },
             {
               english: 'IKEv2',
@@ -4878,6 +5161,8 @@ export default {
                 'An SA defines IPsec parameters between peers. = Una SA definisce parametri IPsec tra peer.',
               context: 'vpn',
               difficulty: 'intermediate',
+              command: 'ip xfrm state',
+              task: 'Elenca le Security Association IPsec attive nel kernel mostrando chiavi, SPI e algoritmi negoziati.',
             },
             {
               english: 'Phase 1',
@@ -4929,6 +5214,8 @@ export default {
               context: 'vpn',
               difficulty: 'intermediate',
               note: 'Usa OpenSSL. Porta default UDP/1194.',
+              command: 'openvpn --config client.ovpn',
+              task: 'Avvia un client OpenVPN caricando il profilo client.ovpn per stabilire il tunnel cifrato verso il server.',
             },
             {
               english: 'SSL VPN',
@@ -5012,6 +5299,12 @@ export default {
                 'To standardize communication, AllowedIPs defines which traffic uses the tunnel. = AllowedIPs definisce quale traffico usa il tunnel.',
               context: 'vpn',
               difficulty: 'intermediate',
+              code: `[Peer]
+PublicKey = abc123...
+AllowedIPs = 10.0.0.0/24, 192.168.50.2/32
+Endpoint = vpn.example.com:51820
+PersistentKeepalive = 25`,
+              task: `Definisci un peer WireGuard restringendo AllowedIPs alla subnet 10.0.0.0/24 piu' un singolo host.`,
             },
           ],
         },
@@ -5082,6 +5375,10 @@ export default {
               context: 'vpn',
               difficulty: 'intermediate',
               note: 'Generic Routing Encapsulation. Non cifrato di base.',
+              code: `ip tunnel add gre1 mode gre remote 198.51.100.2 local 203.0.113.5 ttl 255
+ip addr add 10.255.0.1/30 dev gre1
+ip link set gre1 up`,
+              task: 'Crea un tunnel GRE punto-punto tra due router Linux assegnandogli un /30 e portandolo in stato up.',
             },
             {
               english: 'L2TP',
@@ -5125,6 +5422,8 @@ export default {
               context: 'vpn',
               difficulty: 'intermediate',
               tool: 'tailscale',
+              command: 'tailscale up --advertise-routes=10.0.0.0/24 --accept-routes',
+              task: 'Connettiti alla rete Tailscale annunciando la subnet 10.0.0.0/24 e accettando le rotte annunciate dagli altri nodi.',
             },
           ],
         },
@@ -5163,6 +5462,8 @@ export default {
               context: 'services',
               difficulty: 'intermediate',
               note: 'Anche detto NAT overload.',
+              code: 'iptables -t nat -A POSTROUTING -s 192.168.1.0/24 -o eth0 -j MASQUERADE',
+              task: `Configura PAT (NAT overload) mascherando il traffico in uscita della LAN 192.168.1.0/24 dietro l'IP di eth0.`,
             },
             {
               english: 'Static NAT',
@@ -5173,6 +5474,9 @@ export default {
                 'In DNS resolution, Static NAT maps one private to one public IP. = Il NAT statico mappa un IP privato a uno pubblico.',
               context: 'services',
               difficulty: 'intermediate',
+              code: `iptables -t nat -A PREROUTING -d 203.0.113.10 -j DNAT --to-destination 10.0.0.10
+iptables -t nat -A POSTROUTING -s 10.0.0.10 -j SNAT --to-source 203.0.113.10`,
+              task: `Implementa un NAT statico bidirezionale mappando l'IP pubblico 203.0.113.10 sul server interno 10.0.0.10.`,
             },
             {
               english: 'Dynamic NAT',
@@ -5183,6 +5487,8 @@ export default {
                 'In networking, Dynamic NAT picks IPs from a pool. = Il NAT dinamico sceglie IP da un pool.',
               context: 'services',
               difficulty: 'intermediate',
+              code: 'iptables -t nat -A POSTROUTING -s 10.0.0.0/24 -o eth0 -j SNAT --to-source 203.0.113.10-203.0.113.15',
+              task: 'Configura un NAT dinamico assegnando le sorgenti interne 10.0.0.0/24 a un pool di IP pubblici .10-.15.',
             },
             {
               english: 'NAT Overload',
@@ -5251,6 +5557,9 @@ export default {
               context: 'services',
               difficulty: 'intermediate',
               note: 'Anche detto NAT loopback.',
+              code: `iptables -t nat -A PREROUTING -i eth0 -d 203.0.113.10 -p tcp --dport 80 -j DNAT --to 10.0.0.10
+iptables -t nat -A POSTROUTING -s 10.0.0.0/24 -d 10.0.0.10 -j MASQUERADE`,
+              task: `Abilita l'hairpin NAT cosi' che i client interni possano raggiungere il server tramite il suo IP pubblico.`,
             },
           ],
         },
@@ -5279,6 +5588,12 @@ export default {
               context: 'services',
               difficulty: 'intermediate',
               note: 'Esempi: Squid, corporate proxy.',
+              code: `# /etc/squid/squid.conf
+http_port 3128
+acl localnet src 192.168.0.0/16
+http_access allow localnet
+http_access deny all`,
+              task: 'Configura Squid come forward proxy su porta 3128 accettando solo la LAN interna 192.168.0.0/16.',
             },
             {
               english: 'Reverse Proxy',
@@ -5290,6 +5605,16 @@ export default {
               context: 'services',
               difficulty: 'intermediate',
               tool: 'Nginx, HAProxy, Traefik',
+              code: `# /etc/nginx/conf.d/reverse.conf
+server {
+  listen 443 ssl;
+  server_name app.example.com;
+  location / {
+    proxy_pass http://10.0.0.10:8080;
+    proxy_set_header Host $host;
+  }
+}`,
+              task: `Configura Nginx come reverse proxy HTTPS verso il backend interno 10.0.0.10:8080 preservando l'header Host.`,
             },
             {
               english: 'Transparent Proxy',
@@ -5345,6 +5670,11 @@ export default {
               context: 'services',
               difficulty: 'intermediate',
               tool: 'Squid, Varnish',
+              code: `# /etc/squid/squid.conf
+cache_dir ufs /var/spool/squid 10000 16 256
+maximum_object_size 32 MB
+refresh_pattern -i \\.(jpg|png|css|js)$ 10080 90% 43200`,
+              task: 'Abilita la cache su disco di Squid con 10 GB di storage e regole di refresh aggressive per asset statici.',
             },
             {
               english: 'Web Filter',
@@ -5355,6 +5685,10 @@ export default {
                 "The corporate proxy applies a web filter policy that blocks gambling and malware categories while allowing business-related browsing. = Il proxy aziendale applica una policy web filter che blocca le categorie gioco d'azzardo e malware permettendo la navigazione business.",
               context: 'services',
               difficulty: 'intermediate',
+              code: `# /etc/squid/squid.conf
+acl bad_sites dstdomain .gambling.com .malware.net
+http_access deny bad_sites`,
+              task: 'Definisci una ACL Squid che blocchi categorie di siti indesiderati come gambling e malware tramite dstdomain.',
             },
             {
               english: 'Open Proxy',
@@ -5365,6 +5699,8 @@ export default {
               context: 'services',
               difficulty: 'intermediate',
               note: 'Spesso abusati: da non lasciare aperti.',
+              command: 'curl -x http://open-proxy.example.com:8080 -m 5 https://httpbin.org/ip',
+              task: `Testa un proxy aperto verificando in 5 secondi se inoltra correttamente la richiesta mostrando l'IP percepito.`,
             },
           ],
         },
@@ -5383,6 +5719,15 @@ export default {
               context: 'services',
               difficulty: 'intermediate',
               tool: 'HAProxy, Nginx, AWS ELB',
+              code: `# /etc/haproxy/haproxy.cfg
+frontend web
+  bind *:80
+  default_backend webservers
+backend webservers
+  balance roundrobin
+  server web1 10.0.0.1:80 check
+  server web2 10.0.0.2:80 check`,
+              task: 'Configura HAProxy come load balancer HTTP che distribuisce in round robin il traffico tra due web server.',
             },
             {
               english: 'Round Robin',
@@ -5393,6 +5738,12 @@ export default {
                 'During communication, Round Robin sends requests in rotation. = Round robin invia richieste a rotazione.',
               context: 'services',
               difficulty: 'intermediate',
+              code: `backend webservers
+  balance roundrobin
+  server web1 10.0.0.1:80
+  server web2 10.0.0.2:80
+  server web3 10.0.0.3:80`,
+              task: 'Imposta su HAProxy la strategia round robin per ruotare ciclicamente le richieste tra tre server backend.',
             },
             {
               english: 'Least Connections',
@@ -5403,6 +5754,11 @@ export default {
                 'In networking, Least Connections favors less busy servers. = Connessioni minime favorisce server meno occupati.',
               context: 'services',
               difficulty: 'intermediate',
+              code: `backend webservers
+  balance leastconn
+  server web1 10.0.0.1:80 check
+  server web2 10.0.0.2:80 check`,
+              task: 'Configura HAProxy con algoritmo leastconn per inviare ogni nuova richiesta al backend con meno connessioni attive.',
             },
             {
               english: 'Weighted Round Robin',
@@ -5413,6 +5769,11 @@ export default {
                 'In networking, Weighted Round Robin assigns server capacity. = Il round robin pesato assegna capacità ai server.',
               context: 'services',
               difficulty: 'intermediate',
+              code: `backend webservers
+  balance roundrobin
+  server web1 10.0.0.1:80 weight 3
+  server web2 10.0.0.2:80 weight 1`,
+              task: `Configura un weighted round robin su HAProxy assegnando peso 3 al server piu' potente e 1 al piu' debole.`,
             },
             {
               english: 'Health Check',
@@ -5423,6 +5784,11 @@ export default {
                 'Every 10 seconds the load balancer sends a health check to each backend, automatically removing any server that fails to respond within the timeout. = Ogni 10 secondi il bilanciatore invia un health check a ogni backend, rimuovendo automaticamente qualsiasi server che non risponde entro il timeout.',
               context: 'services',
               difficulty: 'intermediate',
+              code: `backend api
+  option httpchk GET /health
+  http-check expect status 200
+  server api1 10.0.0.10:8080 check inter 5s fall 3 rise 2`,
+              task: `Abilita health check HTTP ogni 5 secondi sull'endpoint /health rimuovendo il server dopo 3 fallimenti.`,
             },
             {
               english: 'Sticky Session',
@@ -5434,6 +5800,12 @@ export default {
               context: 'services',
               difficulty: 'intermediate',
               note: 'Anche dette session affinity.',
+              code: `backend webservers
+  balance roundrobin
+  cookie SERVERID insert indirect nocache
+  server web1 10.0.0.1:80 cookie web1 check
+  server web2 10.0.0.2:80 cookie web2 check`,
+              task: 'Configura sticky session su HAProxy inserendo un cookie SERVERID che fissi ogni client al backend iniziale.',
             },
             {
               english: 'Layer 4 Load Balancer',
@@ -5444,6 +5816,16 @@ export default {
                 'A Layer 4 load balancer distributes connections based on IP and port without inspecting the application payload. = Un bilanciatore Layer 4 distribuisce le connessioni in base a IP e porta senza ispezionare il payload applicativo.',
               context: 'services',
               difficulty: 'intermediate',
+              code: `frontend tcp_in
+  bind *:5432
+  mode tcp
+  default_backend db_servers
+backend db_servers
+  mode tcp
+  balance roundrobin
+  server db1 10.0.0.20:5432 check
+  server db2 10.0.0.21:5432 check`,
+              task: `Configura HAProxy in modalita' TCP (L4) per bilanciare le connessioni PostgreSQL sulla porta 5432 fra due nodi.`,
             },
             {
               english: 'Layer 7 Load Balancer',
@@ -5454,6 +5836,12 @@ export default {
                 'L7 load balancers can route by URL or header. = I bilanciatori L7 possono instradare per URL o header.',
               context: 'services',
               difficulty: 'intermediate',
+              code: `frontend http_in
+  bind *:80
+  acl is_api path_beg /api
+  use_backend api_servers if is_api
+  default_backend web_servers`,
+              task: 'Configura un bilanciatore L7 su HAProxy che instradi le richieste /api su un backend dedicato in base al path URL.',
             },
             {
               english: 'Backend',
@@ -5491,6 +5879,9 @@ export default {
                 "In networking, Port Forwarding exposes internal services. = L'inoltro porta espone servizi interni.",
               context: 'services',
               difficulty: 'intermediate',
+              code: `iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 8080 -j DNAT --to-destination 10.0.0.50:80
+iptables -A FORWARD -p tcp -d 10.0.0.50 --dport 80 -j ACCEPT`,
+              task: 'Inoltra le richieste TCP sulla porta pubblica 8080 verso il server interno 10.0.0.50:80 abilitando anche il FORWARD.',
             },
             {
               english: 'UPnP',
@@ -5502,6 +5893,8 @@ export default {
               context: 'services',
               difficulty: 'intermediate',
               note: 'Universal Plug and Play. Spesso disabilitato per sicurezza.',
+              command: 'upnpc -a 192.168.1.10 80 8080 TCP',
+              task: 'Richiedi al router via UPnP di inoltrare la porta pubblica 8080 sul client interno 192.168.1.10:80.',
             },
             {
               english: 'NAT-PMP',
@@ -5547,6 +5940,9 @@ export default {
               context: 'services',
               difficulty: 'intermediate',
               note: 'Sui router consumer è una funzione comoda ma rischiosa.',
+              code: `iptables -A FORWARD -i eth0 -o dmz0 -d 10.10.10.0/24 -j ACCEPT
+iptables -A FORWARD -i dmz0 -o eth1 -j DROP`,
+              task: 'Definisci regole forward per una DMZ 10.10.10.0/24 raggiungibile da Internet ma isolata dalla LAN interna.',
             },
             {
               english: 'Hole Punching',
@@ -5568,6 +5964,8 @@ export default {
               context: 'services',
               difficulty: 'intermediate',
               note: 'Session Traversal Utilities for NAT.',
+              command: 'stunclient stun.l.google.com 19302',
+              task: `Interroga un server STUN pubblico Google per scoprire indirizzo e porta NAT visti dall'esterno.`,
             },
             {
               english: 'TURN',
@@ -5617,6 +6015,8 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Simple Mail Transfer Protocol. Porta 25, 587, 465.',
+              command: 'openssl s_client -starttls smtp -crlf -connect smtp.example.com:587',
+              task: `Avvia una sessione SMTP cifrata via STARTTLS sulla porta 587 per testare l'invio mail dal server smtp.example.com.`,
             },
             {
               english: 'POP3',
@@ -5628,6 +6028,8 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Post Office Protocol. Porta 110, 995 con TLS.',
+              command: 'openssl s_client -connect mail.example.com:995 -crlf',
+              task: 'Apri una connessione POP3 sicura sulla porta 995 per scaricare manualmente i messaggi di una casella di test.',
             },
             {
               english: 'IMAP',
@@ -5639,6 +6041,8 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Internet Message Access Protocol. Porta 143, 993 con TLS.',
+              command: 'openssl s_client -connect imap.example.com:993 -crlf',
+              task: 'Connettiti al server IMAPS sulla porta 993 per ispezionare le cartelle remote di una casella senza scaricarle.',
             },
             {
               english: 'MTA',
@@ -5670,6 +6074,8 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Pubblicato come record TXT.',
+              command: 'dig +short TXT example.com | grep -i spf',
+              task: 'Recupera il record TXT SPF del dominio example.com filtrando la risposta per individuare la policy v=spf1 pubblicata.',
             },
             {
               english: 'DKIM',
@@ -5681,6 +6087,8 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'DomainKeys Identified Mail.',
+              command: 'dig +short TXT default._domainkey.example.com',
+              task: 'Interroga il record DKIM del selettore default verificando che la chiave pubblica RSA sia pubblicata correttamente.',
             },
             {
               english: 'DMARC',
@@ -5692,6 +6100,8 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Domain-based Message Authentication.',
+              command: 'dig +short TXT _dmarc.example.com',
+              task: `Recupera la policy DMARC pubblicata in TXT su _dmarc.example.com per verificare modalita' reject/quarantine e indirizzi report.`,
             },
             {
               english: 'STARTTLS',
@@ -5702,6 +6112,8 @@ export default {
                 'In networking, STARTTLS upgrades plaintext to TLS. = STARTTLS aggiorna il plaintext a TLS.',
               context: 'protocols',
               difficulty: 'intermediate',
+              command: 'openssl s_client -starttls smtp -connect smtp.example.com:587 -crlf',
+              task: 'Negozia STARTTLS su una sessione SMTP plaintext per promuovere il canale a TLS prima di inviare credenziali.',
             },
             {
               english: 'MX Lookup',
@@ -5732,6 +6144,8 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'File Transfer Protocol. Insicuro: usa SFTP/FTPS.',
+              command: 'ftp ftp.example.com',
+              task: 'Apri una sessione FTP interattiva verso il server di test per esercitarti con i comandi ls, get e put.',
             },
             {
               english: 'FTPS',
@@ -5742,6 +6156,8 @@ export default {
                 'When legacy file servers still demand FTP, FTPS adds a TLS layer so credentials and payload never travel in plaintext. = Quando i server di file legacy richiedono ancora FTP, FTPS aggiunge un livello TLS così credenziali e payload non viaggiano mai in chiaro.',
               context: 'protocols',
               difficulty: 'intermediate',
+              command: `lftp -e 'set ftp:ssl-force true' -u alice ftps.example.com`,
+              task: 'Connettiti a ftps.example.com via lftp imponendo TLS esplicito per evitare di trasmettere credenziali in chiaro.',
             },
             {
               english: 'SFTP',
@@ -5777,6 +6193,8 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'UDP/69. Senza autenticazione.',
+              command: 'tftp 192.168.1.1 -c get config.bin',
+              task: 'Scarica via TFTP il file di configurazione config.bin dal router di rete senza autenticazione, tipico per il boot.',
             },
             {
               english: 'Active Mode',
@@ -5819,6 +6237,8 @@ export default {
                 'In networking, WebDAV extends HTTP for file sharing. = WebDAV estende HTTP per la condivisione file.',
               context: 'protocols',
               difficulty: 'intermediate',
+              command: 'cadaver https://webdav.example.com/share',
+              task: 'Monta interattivamente con cadaver la condivisione WebDAV remota su HTTPS per caricare e scaricare documenti.',
             },
             {
               english: 'SMB',
@@ -5830,6 +6250,8 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Linux: usa Samba.',
+              command: 'smbclient -L //fileserver.local -U alice',
+              task: 'Elenca le share SMB esposte dal file server come utente alice prima di montare una specifica condivisione di rete.',
             },
           ],
         },
@@ -5861,6 +6283,8 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Da non usare per amministrazione: tutto in chiaro.',
+              command: 'telnet smtp.example.com 25',
+              task: 'Apri una sessione telnet verso la porta 25 di smtp.example.com per testare manualmente le risposte del server SMTP.',
             },
             {
               english: 'RDP',
@@ -5872,6 +6296,8 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Porta 3389.',
+              command: 'xfreerdp /v:winserver.local /u:Administrator +clipboard',
+              task: 'Avvia una sessione RDP verso winserver.local come Administrator con appunti condivisi tra host locale e remoto.',
             },
             {
               english: 'VNC',
@@ -5883,6 +6309,8 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Porta 5900.',
+              command: 'vncviewer 192.168.1.50:5901',
+              task: 'Connettiti al display VNC :1 di 192.168.1.50 per condividere lo schermo grafico del server remoto.',
             },
             {
               english: 'SSH Key',
@@ -5952,6 +6380,8 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Mobile shell.',
+              command: 'mosh user@server.example.com',
+              task: 'Apri una sessione mosh resiliente verso server.example.com per lavorare anche con connessioni mobile instabili.',
             },
           ],
         },
@@ -5992,6 +6422,8 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Object Identifier.',
+              command: 'snmpget -v 2c -c public 192.168.1.1 1.3.6.1.2.1.1.5.0',
+              task: `Interroga l'OID sysName.0 via SNMPv2c sul router 192.168.1.1 per leggere l'hostname configurato sul dispositivo.`,
             },
             {
               english: 'NTP',
@@ -6027,6 +6459,8 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Porta 389, 636 con TLS.',
+              command: `ldapsearch -x -H ldap://dc.example.com -b 'dc=example,dc=com' '(uid=alice)'`,
+              task: `Cerca anonimamente nell'albero LDAP l'utente alice partendo dalla base dc=example,dc=com sul controller di dominio.`,
             },
             {
               english: 'Active Directory',
@@ -6038,6 +6472,8 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Servizio di directory di Microsoft per gestione di identità, gruppi e policy in ambienti Windows.',
+              command: `ldapsearch -x -H ldap://dc.corp.local -D 'CN=svc,CN=Users,DC=corp,DC=local' -W -b 'DC=corp,DC=local' '(objectClass=user)'`,
+              task: `Enumera tutti gli oggetti utente in Active Directory autenticandoti con l'account di servizio svc sul DC del dominio.`,
             },
             {
               english: 'Syslog',
@@ -6049,6 +6485,8 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Porta UDP 514.',
+              command: `logger -p local0.info -n 10.0.0.5 -P 514 'test syslog message'`,
+              task: 'Inoltra un messaggio syslog di test alla porta UDP 514 del collector centrale 10.0.0.5 usando la facility local0.',
             },
             {
               english: 'RADIUS',
@@ -6282,6 +6720,8 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'NetworkManager',
+              command: 'nmcli connection show --active',
+              task: 'Elenca tutte le connessioni di rete attualmente attive gestite da NetworkManager per verificare interfacce e profili in uso.',
             },
             {
               english: 'systemd-networkd',
@@ -6293,6 +6733,8 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'systemd-networkd',
+              command: 'networkctl status eth0',
+              task: `Mostra lo stato dell'interfaccia eth0 gestita da systemd-networkd, leggendo link, indirizzi e gateway configurati.`,
             },
             {
               english: 'iperf3',
@@ -6373,6 +6815,8 @@ export default {
               difficulty: 'advanced',
               tool: 'Wireshark',
               note: 'Analizzatore di protocollo grafico più diffuso, basato sulla libreria libpcap.',
+              command: `wireshark -k -i eth0 -f 'tcp port 443'`,
+              task: `Avvia Wireshark in cattura immediata sull'interfaccia eth0 filtrando solo il traffico TCP sulla porta 443.`,
             },
             {
               english: 'tshark',
@@ -6419,6 +6863,8 @@ export default {
                 "Before starting a packet trace on a busy server, the analyst sets a capture filter for port 443 to avoid filling the disk with irrelevant traffic. = Prima di avviare un packet trace su un server trafficato, l'analista imposta un filtro di cattura per la porta 443 per evitare di riempire il disco con traffico irrilevante.",
               context: 'tools',
               difficulty: 'advanced',
+              command: `tcpdump -i eth0 -w /tmp/dns.pcap 'udp port 53'`,
+              task: `Cattura solo i pacchetti DNS dall'interfaccia eth0 applicando un capture filter BPF e salvali in un file pcap.`,
             },
             {
               english: 'Display Filter',
@@ -6441,6 +6887,8 @@ export default {
                 'In networking, Promiscuous Mode captures all packets on the wire. = La modalità promiscua cattura tutti i pacchetti sul filo.',
               context: 'tools',
               difficulty: 'advanced',
+              command: 'sudo ip link set eth0 promisc on',
+              task: `Abilita la modalita' promiscua su eth0 per permettere allo sniffer di catturare tutti i frame visibili sul segmento.`,
             },
             {
               english: 'SPAN Port',
@@ -6452,6 +6900,9 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               note: 'Switched Port Analyzer.',
+              command:
+                'monitor session 1 source vlan 10 - 20 rx ; monitor session 1 destination interface Gi1/0/24',
+              task: 'Configura una sessione SPAN sullo switch Cisco che specchia il traffico in ingresso delle VLAN 10-20 sulla porta del sensore IDS.',
             },
             {
               english: 'Tap',
@@ -6492,6 +6943,8 @@ export default {
                 'During the reconnaissance phase, the penetration tester runs a port scan against the target range to map every listening service and its version. = Durante la fase di ricognizione, il penetration tester esegue una scansione porte contro il range target per mappare ogni servizio in ascolto e la sua versione.',
               context: 'tools',
               difficulty: 'advanced',
+              command: 'nmap -sV -p 1-65535 192.168.1.0/24',
+              task: 'Esegui un port scan completo con rilevamento versione su tutta la subnet /24 per mappare i servizi in ascolto.',
             },
             {
               english: 'SYN Scan',
@@ -6516,6 +6969,8 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'masscan',
+              command: 'sudo masscan 10.0.0.0/8 -p80,443 --rate=10000',
+              task: `Scansiona le porte 80 e 443 dell'intero /8 privato con masscan a 10000 pacchetti al secondo per uno sweep rapido.`,
             },
             {
               english: 'fping',
@@ -6561,6 +7016,8 @@ export default {
                 'In networking, Banner Grabbing reads service identification strings. = Il banner grabbing legge stringhe di identificazione servizio.',
               context: 'tools',
               difficulty: 'advanced',
+              command: 'nc -nv 192.168.1.10 22',
+              task: 'Connettiti grezzamente alla porta SSH di 192.168.1.10 con netcat per leggere il banner del servizio e identificarne la versione.',
             },
             {
               english: 'NSE',
@@ -6609,6 +7066,8 @@ export default {
                 'When diagnosing a connectivity issue, the technician starts at Layer 1 checking cables and works up to Layer 7 examining application logs. = Quando si diagnostica un problema di connettivita, il tecnico inizia da Layer 1 controllando i cavi e sale fino a Layer 7 esaminando i log applicativi.',
               context: 'troubleshooting',
               difficulty: 'advanced',
+              command: 'mtr -rwc 100 8.8.8.8',
+              task: `Esegui mtr per 100 cicli verso 8.8.8.8 in modalita' report per diagnosticare un problema di connettivita' end-to-end.`,
             },
             {
               english: 'packet loss rate',
@@ -6632,6 +7091,8 @@ export default {
                 'In networking, High Latency hurts interactive applications. = Una latenza alta danneggia applicazioni interattive.',
               context: 'troubleshooting',
               difficulty: 'advanced',
+              command: 'ping -c 100 -i 0.2 backend.example.com | tail -5',
+              task: 'Misura la latenza media verso backend.example.com con 100 ping a 200ms di intervallo per quantificare ritardi anomali.',
             },
             {
               english: 'network jitter',
@@ -6643,6 +7104,8 @@ export default {
               context: 'troubleshooting',
               difficulty: 'advanced',
               note: 'Misurato come deviazione del ritardo tra pacchetti consecutivi.',
+              command: 'iperf3 -c 10.0.0.50 -u -b 1M -t 30 -J',
+              task: 'Misura il jitter UDP verso 10.0.0.50 con iperf3 a 1 Mbps per 30 secondi, salvando il report in JSON per analisi.',
             },
             {
               english: 'Asymmetric Routing',
@@ -6653,6 +7116,8 @@ export default {
                 'In networking, Asymmetric Routing breaks stateful firewalls. = Il routing asimmetrico rompe firewall stateful.',
               context: 'troubleshooting',
               difficulty: 'advanced',
+              command: 'traceroute -n 10.0.0.5 ; ssh 10.0.0.5 traceroute -n $(curl -s ifconfig.me)',
+              task: 'Confronta il traceroute andata e ritorno tra due host per individuare percorsi asimmetrici che rompono firewall stateful.',
             },
             {
               english: 'Black Hole',
@@ -6663,6 +7128,8 @@ export default {
                 'In networking, a Black Hole silently drops packets. = Un buco nero scarta silenziosamente i pacchetti.',
               context: 'troubleshooting',
               difficulty: 'advanced',
+              command: 'traceroute -I -m 30 destination.example.com',
+              task: 'Esegui traceroute ICMP fino a 30 hop per individuare il punto in cui i pacchetti vengono silenziosamente scartati.',
             },
             {
               english: 'Brownout',
@@ -6683,6 +7150,8 @@ export default {
                 'In networking, a Flapping link goes up and down repeatedly. = Un link flapping va su e giù ripetutamente.',
               context: 'troubleshooting',
               difficulty: 'advanced',
+              command: 'ip -s link show eth0 | grep -i errors',
+              task: `Ispeziona i contatori di errore e drop sull'interfaccia eth0 per individuare un link instabile che continua a oscillare.`,
             },
             {
               english: 'Microburst',
@@ -6693,6 +7162,8 @@ export default {
                 'Even on a lightly loaded link, a sudden microburst of traffic can overflow the switch buffer and cause packet drops within milliseconds. = Anche su un link poco caricato, un microburst improvviso di traffico puo far traboccare il buffer dello switch e causare perdita di pacchetti in millisecondi.',
               context: 'troubleshooting',
               difficulty: 'advanced',
+              command: 'show interface Gi1/0/1 counters detail | include drop',
+              task: 'Verifica i drop di buffer in uscita su uno switch Cisco per rivelare microburst che saturano la coda anche con link scarico.',
             },
             {
               english: 'Duplex Mismatch',
@@ -6703,6 +7174,8 @@ export default {
                 'In networking, Duplex Mismatch causes collisions and slowness. = Un mismatch duplex causa collisioni e lentezza.',
               context: 'troubleshooting',
               difficulty: 'advanced',
+              command: `ethtool eth0 | grep -E 'Speed|Duplex'`,
+              task: `Controlla velocita' e duplex negoziati sull'interfaccia eth0 per confermare l'assenza di mismatch con la porta dello switch.`,
             },
           ],
         },
@@ -6733,6 +7206,8 @@ export default {
               context: 'troubleshooting',
               difficulty: 'advanced',
               note: 'Spesso rotto dai firewall che bloccano ICMP.',
+              command: 'tracepath -n 1.1.1.1',
+              task: 'Esegui tracepath verso 1.1.1.1 per scoprire la MTU minima lungo il percorso senza bisogno di privilegi root.',
             },
             {
               english: 'MSS',
@@ -6743,6 +7218,9 @@ export default {
                 'By definition, MSS is MTU minus IP and TCP headers. = MSS è MTU meno header IP e TCP.',
               context: 'troubleshooting',
               difficulty: 'advanced',
+              command:
+                'sudo iptables -t mangle -A FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu',
+              task: 'Applica il clamping MSS al PMTU sui SYN inoltrati per evitare ritrasmissioni quando i tunnel riducono la MTU effettiva.',
             },
             {
               english: 'MSS Clamping',
@@ -6776,6 +7254,8 @@ export default {
                 'In networking, IP Fragmentation hurts performance. = La frammentazione IP danneggia le prestazioni.',
               context: 'troubleshooting',
               difficulty: 'advanced',
+              command: 'ping -M do -s 1472 -c 4 8.8.8.8',
+              task: 'Invia ping con bit DF settato e payload di 1472 byte verso 8.8.8.8 per verificare che il percorso supporti MTU 1500.',
             },
             {
               english: 'Reassembly',
@@ -6806,6 +7286,8 @@ export default {
               example: `On storage backends, jumbograms with an MTU near 9000 bytes cut per-packet overhead and boost throughput considerably. = Sui backend di storage, i jumbogram con MTU vicino a 9000 byte riducono l'overhead per pacchetto e aumentano notevolmente il throughput.`,
               context: 'troubleshooting',
               difficulty: 'advanced',
+              command: 'sudo ip link set eth0 mtu 9000',
+              task: `Imposta la MTU di eth0 a 9000 byte per abilitare jumbo frame sulla rete storage e ridurre l'overhead per pacchetto.`,
             },
             {
               english: 'PMTUD Black Hole',
@@ -6816,6 +7298,8 @@ export default {
                 'In networking, a PMTUD Black Hole occurs when ICMP is blocked. = Un buco nero PMTUD avviene quando ICMP è bloccato.',
               context: 'troubleshooting',
               difficulty: 'advanced',
+              command: 'ping -M do -s 1450 server.example.com',
+              task: 'Invia ping con DF e payload 1450 per individuare un firewall che blocca ICMP Fragmentation Needed e rompe il PMTUD.',
             },
           ],
         },
@@ -6833,6 +7317,8 @@ export default {
                 'By definition, RTT is the round-trip time. = RTT è il tempo di andata e ritorno.',
               context: 'troubleshooting',
               difficulty: 'advanced',
+              command: 'ping -c 10 -q 1.1.1.1',
+              task: `Calcola il round-trip time medio verso 1.1.1.1 con 10 ping in modalita' silenziosa, riassumendo min/avg/max/mdev.`,
             },
             {
               english: 'Propagation Delay',
@@ -6874,6 +7360,8 @@ export default {
               context: 'troubleshooting',
               difficulty: 'advanced',
               note: 'Mitigato da CoDel, fq_codel, CAKE.',
+              command: 'sudo tc qdisc replace dev eth0 root cake bandwidth 100mbit',
+              task: `Sostituisci la qdisc radice di eth0 con CAKE limitata a 100 Mbps per ridurre il bufferbloat sull'uplink di casa.`,
             },
             {
               english: 'Bandwidth-Delay Product',
@@ -6894,6 +7382,8 @@ export default {
                 'In networking, TCP Slow Start ramps up the window. = TCP slow start aumenta gradualmente la finestra.',
               context: 'troubleshooting',
               difficulty: 'advanced',
+              command: 'ss -ti dst :443',
+              task: 'Ispeziona via ss le metriche TCP delle connessioni HTTPS attive per osservare cwnd e ssthresh durante la fase di slow start.',
             },
             {
               english: 'Congestion Window',
@@ -6904,6 +7394,8 @@ export default {
                 'cwnd grows on success and shrinks on loss. = cwnd cresce in caso di successo e si riduce in perdita.',
               context: 'troubleshooting',
               difficulty: 'advanced',
+              command: `ss -tein state established '( dport = :443 )' | grep cwnd`,
+              task: 'Estrai il valore cwnd corrente di tutte le connessioni TCP verso la porta 443 per studiare il comportamento di congestione.',
             },
             {
               english: 'BBR',
@@ -6915,6 +7407,8 @@ export default {
               context: 'troubleshooting',
               difficulty: 'advanced',
               note: 'Bottleneck Bandwidth and RTT. Sviluppato da Google.',
+              command: 'sudo sysctl -w net.ipv4.tcp_congestion_control=bbr',
+              task: `Attiva l'algoritmo TCP BBR a livello di kernel per migliorare il throughput su link a banda larga e latenza alta.`,
             },
             {
               english: 'Latency Spike',
@@ -6925,6 +7419,8 @@ export default {
                 'The monitoring dashboard flagged repeated latency spikes every hour, which the team traced to a scheduled backup job saturating the WAN link. = La dashboard di monitoraggio ha segnalato ripetuti picchi di latenza ogni ora, che il team ha ricondotto a un job di backup schedulato che saturava il link WAN.',
               context: 'troubleshooting',
               difficulty: 'advanced',
+              command: `ping -c 600 -i 0.1 -O backend.example.com | grep 'no answer'`,
+              task: 'Pinga il backend ogni 100ms per un minuto registrando i timeout per individuare picchi di latenza correlati ad altri eventi.',
             },
           ],
         },
@@ -7058,6 +7554,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               note: 'Quality of Service.',
+              command: 'sudo tc qdisc add dev eth0 root handle 1: htb default 30',
+              task: `Installa una qdisc HTB radice su eth0 con classe di default 30 come base della policy QoS multilivello dell'uplink.`,
             },
             {
               english: 'Traffic Shaping',
@@ -7080,6 +7578,9 @@ export default {
                 'Policing drops traffic exceeding the rate. = Il policing scarta il traffico oltre la rate.',
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'sudo tc filter add dev eth0 parent 1: protocol ip prio 1 u32 match ip dst 0/0 police rate 1mbit burst 10k drop',
+              task: 'Applica un policer a 1 Mbps con burst 10kB su eth0 che scarta il traffico IP eccedente la rate consentita.',
             },
             {
               english: 'Priority Queuing',
@@ -7090,6 +7591,8 @@ export default {
                 'In networking, Priority Queuing always serves high priority first. = La coda prioritaria serve sempre la priorità alta per prima.',
               context: 'services',
               difficulty: 'advanced',
+              command: 'sudo tc qdisc add dev eth0 root handle 1: prio bands 3',
+              task: `Installa una qdisc prio a tre bande su eth0 in modo che le bande a priorita' piu' alta vengano servite prima delle altre.`,
             },
             {
               english: 'Weighted Fair Queuing',
@@ -7100,6 +7603,8 @@ export default {
                 'In a congested link, Weighted Fair Queuing allocates proportional bandwidth to each traffic class based on its assigned weight value. = In un collegamento congestionato, il Weighted Fair Queuing alloca banda proporzionale a ogni classe di traffico basandosi sul valore di peso assegnato.',
               context: 'services',
               difficulty: 'advanced',
+              command: 'sudo tc qdisc add dev eth0 root sfq perturb 10',
+              task: 'Configura una qdisc SFQ su eth0 con riallocazione hash ogni 10s per ottenere una coda equa pesata tra flussi.',
             },
             {
               english: 'CBWFQ',
@@ -7111,6 +7616,12 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               note: 'Class-Based Weighted Fair Queuing.',
+              command: `policy-map QOS
+ class VOICE
+  bandwidth percent 20
+ class VIDEO
+  bandwidth percent 30`,
+              task: `Definisci una policy-map Cisco CBWFQ che riserva il 20% di banda alla voce e il 30% al video sull'uplink WAN.`,
             },
             {
               english: 'Bandwidth Reservation',
@@ -7121,6 +7632,9 @@ export default {
                 'In networking, Bandwidth Reservation guarantees minimum speed. = La prenotazione di banda garantisce velocità minima.',
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'sudo tc class add dev eth0 parent 1: classid 1:10 htb rate 5mbit ceil 10mbit',
+              task: 'Aggiungi una classe HTB con rate garantita 5 Mbps e ceiling 10 Mbps per riservare banda al traffico business critico.',
             },
             {
               english: 'best-effort class',
@@ -7132,6 +7646,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               note: 'Corrisponde al DSCP 0 (default) e ha la priorità più bassa.',
+              command: 'sudo iptables -t mangle -A POSTROUTING -j DSCP --set-dscp 0',
+              task: `Marca con DSCP 0 (default forwarding) tutto il traffico uscente non gia' classificato, mappandolo sulla classe best-effort.`,
             },
             {
               english: 'Voice Traffic',
@@ -7142,6 +7658,9 @@ export default {
                 'In networking, Voice Traffic needs low latency and jitter. = Il traffico voce necessita di bassa latenza e jitter.',
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'sudo iptables -t mangle -A OUTPUT -p udp --dport 5060 -j DSCP --set-dscp-class EF',
+              task: 'Marca con DSCP EF il traffico SIP in uscita sulla porta 5060 per garantire bassa latenza e jitter alle chiamate voce.',
             },
             {
               english: 'Burst Tolerance',
@@ -7170,6 +7689,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               note: "6 bit nell'header IP.",
+              command: 'sudo iptables -t mangle -A OUTPUT -p tcp --dport 443 -j DSCP --set-dscp 26',
+              task: 'Imposta DSCP AF31 sul traffico HTTPS uscente per dargli precedenza sulla classe business critical nella policy di rete.',
             },
             {
               english: 'ToS',
@@ -7191,6 +7712,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               note: 'EF (Expedited Forwarding, DSCP 46) è la classe a priorità più alta, usata per traffico voce.',
+              command: `tcpdump -i eth0 -nn 'ip and ip[1] & 0xfc = 0xb8'`,
+              task: 'Cattura su eth0 i pacchetti marcati DSCP EF (46) per verificare che il traffico voce arrivi correttamente prioritizzato.',
             },
             {
               english: 'AF',
@@ -7202,6 +7725,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               note: 'AF (Assured Forwarding) definisce 4 classi con 3 livelli di drop precedence ciascuna.',
+              command: 'sudo iptables -t mangle -A OUTPUT -p tcp --dport 80 -j DSCP --set-dscp 10',
+              task: 'Marca il traffico HTTP in uscita con DSCP AF11 per assegnarlo alla classe AF1 con drop precedence bassa.',
             },
             {
               english: 'CoS',
@@ -7212,6 +7737,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               note: '3 bit nel tag VLAN 802.1p.',
+              command: 'sudo vconfig set_egress_map eth0.10 5 6',
+              task: `Mappa il valore skb priority 5 sul CoS 6 dei frame uscenti dalla VLAN 10 per dare priorita' Layer 2 al traffico voce.`,
             },
             {
               english: 'Marking',
@@ -7222,6 +7749,9 @@ export default {
                 'In networking, Marking sets QoS values on packets. = La marcatura imposta valori QoS sui pacchetti.',
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'sudo iptables -t mangle -A PREROUTING -i eth1 -p udp --dport 5004 -j DSCP --set-dscp-class EF',
+              task: `Marca i pacchetti RTP in ingresso da eth1 con DSCP EF cosi' che il resto della rete riconosca la classe di servizio.`,
             },
             {
               english: 'Trust Boundary',
@@ -7242,6 +7772,10 @@ export default {
                 'Edge devices may re-mark untrusted traffic. = I dispositivi edge possono re-marcare traffico non fidato.',
               context: 'services',
               difficulty: 'advanced',
+              command: `policy-map RE-MARK
+ class CLASS-UNTRUSTED
+  set dscp 0`,
+              task: 'Definisci una policy che riazzera il DSCP del traffico arrivato da una porta non fidata, eliminando marcature fasulle.',
             },
             {
               english: 'Default Forwarding',
@@ -7279,6 +7813,8 @@ export default {
                 'In networking, RSVP reserves resources along the path. = RSVP prenota risorse lungo il percorso.',
               context: 'services',
               difficulty: 'advanced',
+              command: 'ip rsvp tunnel 1.1.1.1 ; ip rsvp bandwidth 10000 5000',
+              task: `Abilita RSVP su un'interfaccia Cisco riservando 10 Mbps di banda totale con 5 Mbps massimi per singolo flusso.`,
             },
             {
               english: 'IntServ',
@@ -7321,6 +7857,8 @@ export default {
                 'In networking, Token Bucket regulates traffic rate. = Il token bucket regola la rate del traffico.',
               context: 'services',
               difficulty: 'advanced',
+              command: 'sudo tc qdisc add dev eth0 root tbf rate 1mbit burst 32kbit latency 400ms',
+              task: 'Applica una qdisc TBF su eth0 con rate 1 Mbps, burst 32kbit e latenza max 400ms per implementare un token bucket classico.',
             },
             {
               english: 'Leaky Bucket',
@@ -7331,6 +7869,8 @@ export default {
                 'In networking, Leaky Bucket smooths bursty traffic. = Il leaky bucket spiana traffico bursty.',
               context: 'services',
               difficulty: 'advanced',
+              command: 'sudo tc qdisc add dev eth0 root tbf rate 2mbit burst 1k latency 50ms',
+              task: 'Configura TBF su eth0 con burst minimo per emulare un leaky bucket che spiana il traffico bursty a 2 Mbps costanti.',
             },
             {
               english: 'CIR',
@@ -7371,6 +7911,9 @@ export default {
                 'In networking, WRED drops packets early to avoid TCP global sync. = WRED scarta pacchetti in anticipo per evitare global sync TCP.',
               context: 'services',
               difficulty: 'advanced',
+              command: `random-detect dscp-based
+ random-detect dscp 10 20 40 10`,
+              task: `Abilita WRED basato su DSCP su una classe Cisco con soglie min 20, max 40 e probabilita' di drop 1/10 per AF11.`,
             },
           ],
         },
@@ -7400,6 +7943,8 @@ export default {
                 'Linux kernel traffic control relies on qdisc modules to shape, schedule, and prioritize packets on each network interface. = Il controllo del traffico del kernel Linux si affida ai moduli qdisc per modellare, schedulare e dare priorita ai pacchetti su ogni interfaccia di rete.',
               context: 'services',
               difficulty: 'advanced',
+              command: 'tc qdisc show dev eth0',
+              task: 'Elenca tutte le qdisc attualmente configurate su eth0 per ispezionare la pipeline di traffic control del kernel Linux.',
             },
             {
               english: 'pfifo_fast',
@@ -7410,6 +7955,8 @@ export default {
                 'By definition, pfifo_fast is the legacy default qdisc. = pfifo_fast è la vecchia qdisc di default.',
               context: 'services',
               difficulty: 'advanced',
+              command: 'sudo tc qdisc replace dev eth0 root pfifo_fast',
+              task: `Reimposta su eth0 la qdisc legacy pfifo_fast con tre bande prioritarie basate sul campo ToS dell'header IP.`,
             },
             {
               english: 'fq_codel',
@@ -7420,6 +7967,8 @@ export default {
                 'By optimizing traffic, fq_codel reduces bufferbloat by default. = fq_codel riduce il bufferbloat di default.',
               context: 'services',
               difficulty: 'advanced',
+              command: 'sudo tc qdisc replace dev eth0 root fq_codel',
+              task: 'Sostituisci la qdisc radice di eth0 con fq_codel per combattere il bufferbloat e ottenere fairness tra flussi.',
             },
             {
               english: 'CAKE',
@@ -7431,6 +7980,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               note: 'Common Applications Kept Enhanced.',
+              command: 'sudo tc qdisc replace dev eth0 root cake bandwidth 200mbit besteffort',
+              task: `Configura CAKE su eth0 limitando l'uplink a 200 Mbps in modalita' best-effort per QoS integrata domestica.`,
             },
             {
               english: 'HTB',
@@ -7441,6 +7992,9 @@ export default {
                 'For network flexibility, HTB enables hierarchical bandwidth control. = HTB abilita controllo gerarchico della banda.',
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'sudo tc qdisc add dev eth0 root handle 1: htb default 30 ; sudo tc class add dev eth0 parent 1: classid 1:1 htb rate 100mbit',
+              task: 'Crea una gerarchia HTB su eth0 con classe radice da 100 Mbps come base per suddividere la banda tra dipartimenti.',
             },
             {
               english: 'iptables Mark',
@@ -7488,6 +8042,10 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'bpftool',
+              code: `from bcc import BPF
+b = BPF(text='int xdp_qos(struct xdp_md *ctx) { return XDP_PASS; }')
+b.attach_xdp(dev='eth0', fn=b.load_func('xdp_qos', BPF.XDP))`,
+              task: 'Aggancia un programma eBPF/XDP a eth0 come scheletro per implementare politiche QoS custom senza modificare il kernel.',
             },
           ],
         },
@@ -7515,6 +8073,10 @@ export default {
               context: 'routing',
               difficulty: 'advanced',
               note: 'Versione attuale: BGP-4.',
+              command: `router bgp 65000
+ neighbor 10.0.0.1 remote-as 65001
+ network 192.168.1.0 mask 255.255.255.0`,
+              task: `Configura un router BGP nell'AS 65000 che fa peering con 10.0.0.1 in AS 65001 e annuncia la rete 192.168.1.0/24.`,
             },
             {
               english: 'Autonomous System',
@@ -7526,6 +8088,8 @@ export default {
               context: 'routing',
               difficulty: 'advanced',
               note: 'Esempio: AS15169 = Google.',
+              command: 'whois -h whois.radb.net AS15169',
+              task: 'Interroga il database RADB sul numero di AS 15169 per scoprire titolare, contatti e politiche di routing dichiarate.',
             },
             {
               english: 'AS Number',
@@ -7537,6 +8101,8 @@ export default {
               context: 'routing',
               difficulty: 'advanced',
               note: '32-bit ASN dal 2007.',
+              command: `whois -h whois.cymru.com ' -v 8.8.8.8'`,
+              task: `Risolvi l'IP 8.8.8.8 al suo AS Number di origine usando il servizio whois di Team Cymru per identificarne l'operatore.`,
             },
             {
               english: 'eBGP',
@@ -7547,6 +8113,10 @@ export default {
                 'In production environments, eBGP runs between different ASes. = eBGP gira tra AS diversi.',
               context: 'routing',
               difficulty: 'advanced',
+              command: `router bgp 65001
+ neighbor 192.0.2.1 remote-as 65002
+ neighbor 192.0.2.1 ebgp-multihop 2`,
+              task: 'Configura un peering eBGP verso 192.0.2.1 in un AS diverso permettendo multihop 2 per attraversare un router intermedio.',
             },
             {
               english: 'iBGP',
@@ -7557,6 +8127,10 @@ export default {
                 'In production environments, iBGP runs inside the same AS. = iBGP gira dentro lo stesso AS.',
               context: 'routing',
               difficulty: 'advanced',
+              command: `router bgp 65000
+ neighbor 10.0.0.2 remote-as 65000
+ neighbor 10.0.0.2 update-source Loopback0`,
+              task: `Configura una sessione iBGP dentro l'AS 65000 verso 10.0.0.2 usando Loopback0 come sorgente per stabilita' del peer.`,
             },
             {
               english: 'AS Path',
@@ -7568,6 +8142,8 @@ export default {
               context: 'routing',
               difficulty: 'advanced',
               note: 'Usato per rilevare loop e per scelta path.',
+              command: 'show ip bgp 8.8.8.0/24',
+              task: `Visualizza l'AS Path delle rotte BGP verso il prefisso 8.8.8.0/24 per capire quali AS sono stati attraversati.`,
             },
             {
               english: 'BGP Peer',
@@ -7578,6 +8154,8 @@ export default {
                 "Before exchanging routing tables, two BGP peers must successfully establish a TCP session on port 179 and complete the OPEN message handshake. = Prima di scambiare tabelle di routing, due peer BGP devono stabilire con successo una sessione TCP sulla porta 179 e completare l'handshake del messaggio OPEN.",
               context: 'routing',
               difficulty: 'advanced',
+              command: 'show bgp summary',
+              task: 'Mostra il sommario delle sessioni BGP per verificare lo stato Established di ogni peer e i contatori di prefissi.',
             },
             {
               english: 'Route Reflector',
@@ -7588,6 +8166,9 @@ export default {
                 'In a large ISP backbone, deploying a route reflector eliminates the need for a full-mesh iBGP topology among hundreds of routers. = Nel backbone di un grande ISP, implementare un route reflector elimina la necessita di una topologia iBGP full-mesh tra centinaia di router.',
               context: 'routing',
               difficulty: 'advanced',
+              command: `router bgp 65000
+ neighbor 10.0.0.10 route-reflector-client`,
+              task: 'Designa il vicino iBGP 10.0.0.10 come client del route reflector per evitare la mesh completa tra tutti i router.',
             },
             {
               english: 'BGP Community',
@@ -7598,6 +8179,9 @@ export default {
                 'Network operators attach BGP community values to routes so upstream providers can apply agreed-upon policies like local-preference or no-export. = Gli operatori di rete allegano valori di community BGP alle rotte cosi che i provider a monte possano applicare policy concordate come local-preference o no-export.',
               context: 'routing',
               difficulty: 'advanced',
+              command: `route-map TAG permit 10
+ set community 65000:100`,
+              task: `Marca le rotte uscenti con la community 65000:100 cosi' che gli upstream applichino la policy concordata su quei prefissi.`,
             },
             {
               english: 'Route Hijacking',
@@ -7609,6 +8193,8 @@ export default {
               context: 'routing',
               difficulty: 'advanced',
               note: 'Mitigato da RPKI.',
+              command: `bgpq4 -4l AS-EXAMPLE 'as-set:AS-EXAMPLE'`,
+              task: 'Genera con bgpq4 le prefix-list IRR di un AS per filtrare annunci illegittimi e prevenire route hijacking sui peering.',
             },
           ],
         },
@@ -7626,6 +8212,10 @@ export default {
               context: 'routing',
               difficulty: 'advanced',
               note: 'Stesso algoritmo SPF di OSPFv2 ma con LSA ridisegnate per IPv6.',
+              command: `ipv6 router ospf 1
+ interface Gi0/0
+  ipv6 ospf 1 area 0`,
+              task: `Abilita OSPFv3 sull'interfaccia Gi0/0 di un router Cisco assegnandola all'area 0 per il routing IPv6 nel backbone.`,
             },
             {
               english: 'LSA',
@@ -7636,6 +8226,8 @@ export default {
                 'Every OSPF router floods Link-State Advertisements to its neighbors so each device builds an identical map of the network topology. = Ogni router OSPF inonda Link-State Advertisement ai suoi vicini cosi che ogni dispositivo costruisca una mappa identica della topologia di rete.',
               context: 'routing',
               difficulty: 'advanced',
+              command: 'show ip ospf database',
+              task: 'Visualizza il database OSPF locale per ispezionare tutte le LSA ricevute e ricostruire la topologia del dominio.',
             },
             {
               english: 'LSDB',
@@ -7646,6 +8238,8 @@ export default {
                 'For efficiency, the LSDB stores all known LSAs. = La LSDB memorizza tutte le LSA conosciute.',
               context: 'routing',
               difficulty: 'advanced',
+              command: 'show ip ospf database router',
+              task: 'Esamina le Router-LSA presenti nella LSDB di un router OSPF per verificare la coerenza del grafo della topologia.',
             },
             {
               english: 'OSPF Area',
@@ -7657,6 +8251,9 @@ export default {
               context: 'routing',
               difficulty: 'advanced',
               note: 'Area 0 = backbone.',
+              command: `router ospf 1
+ network 10.1.0.0 0.0.255.255 area 1`,
+              task: `Configura il router OSPF processo 1 perche' includa la rete 10.1.0.0/16 nell'area 1 separata dal backbone.`,
             },
             {
               english: 'Backbone Area',
@@ -7667,6 +8264,9 @@ export default {
                 "All inter-area traffic in an OSPF deployment must transit through the backbone area 0, which connects every other area in the network. = Tutto il traffico inter-area in un deployment OSPF deve transitare attraverso l'area backbone 0, che connette ogni altra area nella rete.",
               context: 'routing',
               difficulty: 'advanced',
+              command: `router ospf 1
+ network 10.0.0.0 0.0.0.255 area 0`,
+              task: `Inserisci la rete di transit 10.0.0.0/24 nell'area 0 (backbone) OSPF che dovra' connettere tutte le altre aree.`,
             },
             {
               english: 'ABR',
@@ -7677,6 +8277,9 @@ export default {
                 "An Area Border Router sits between the backbone and a non-backbone area, summarizing routes and reducing the routing table size for both sides. = Un Area Border Router si trova tra il backbone e un'area non-backbone, riassumendo le rotte e riducendo la dimensione della tabella di routing per entrambi i lati.",
               context: 'routing',
               difficulty: 'advanced',
+              command: `router ospf 1
+ area 1 range 10.1.0.0 255.255.0.0`,
+              task: `Configura un ABR perche' sommarizzi le rotte dell'area 1 in un singolo prefisso /16 verso il backbone.`,
             },
             {
               english: 'ASBR',
@@ -7687,6 +8290,9 @@ export default {
                 'At the network boundary, an Autonomous System Boundary Router redistributes external BGP routes into the internal OSPF domain. = Al confine della rete, un Autonomous System Boundary Router ridistribuisce le rotte BGP esterne nel dominio OSPF interno.',
               context: 'routing',
               difficulty: 'advanced',
+              command: `router ospf 1
+ redistribute bgp 65000 subnets`,
+              task: `Configura il router come ASBR redistribuendo le rotte BGP dell'AS 65000 dentro OSPF preservando le subnet originali.`,
             },
             {
               english: 'DR',
@@ -7697,6 +8303,9 @@ export default {
                 'In networking, the DR coordinates OSPF on multi-access networks. = Il DR coordina OSPF su reti multi-access.',
               context: 'routing',
               difficulty: 'advanced',
+              command: `interface Gi0/0
+ ip ospf priority 200`,
+              task: `Imposta priority OSPF alta sull'interfaccia Gi0/0 cosi' che il router diventi DR sul segmento multi-access broadcast.`,
             },
             {
               english: 'BDR',
@@ -7707,6 +8316,8 @@ export default {
                 'In networking, BDR takes over if DR fails. = Il BDR subentra se il DR fallisce.',
               context: 'routing',
               difficulty: 'advanced',
+              command: 'show ip ospf neighbor',
+              task: `Elenca i vicini OSPF mostrando ruoli DR/BDR e stato Full per confermare l'elezione del backup designated router.`,
             },
             {
               english: 'Stub Area',
@@ -7717,6 +8328,9 @@ export default {
                 'Configuring a remote branch as an OSPF stub area blocks external LSAs, replacing them with a single default route to save memory on smaller routers. = Configurare una sede remota come area stub OSPF blocca le LSA esterne, sostituendole con una singola rotta di default per risparmiare memoria sui router piu piccoli.',
               context: 'routing',
               difficulty: 'advanced',
+              command: `router ospf 1
+ area 2 stub`,
+              task: `Configura l'area 2 come stub OSPF cosi' che le LSA esterne vengano sostituite da una sola default-route nei router interni.`,
             },
           ],
         },
@@ -7734,6 +8348,10 @@ export default {
               context: 'routing',
               difficulty: 'advanced',
               note: 'Cisco raccomanda named mode da IOS 15.x in poi, deprecando il classic mode.',
+              command: `router eigrp CAMPUS
+ address-family ipv4 unicast autonomous-system 100
+  network 10.0.0.0 0.255.255.255`,
+              task: 'Configura EIGRP in named mode con istanza CAMPUS e AS 100 raggruppando in un solo blocco gerarchico tutte le impostazioni.',
             },
             {
               english: 'DUAL',
@@ -7745,6 +8363,8 @@ export default {
               context: 'routing',
               difficulty: 'advanced',
               note: 'Diffusing Update Algorithm.',
+              command: 'show ip eigrp topology',
+              task: `Visualizza la tabella di topologia EIGRP per ispezionare i candidati DUAL e capire come e' stato scelto il successor corrente.`,
             },
             {
               english: 'Successor',
@@ -7755,6 +8375,8 @@ export default {
                 'When EIGRP calculates its topology table, it selects the successor route as the best path based on the lowest feasible distance metric. = Quando EIGRP calcola la sua tabella di topologia, seleziona la rotta successore come miglior percorso basandosi sulla metrica di distanza fattibile piu bassa.',
               context: 'routing',
               difficulty: 'advanced',
+              command: 'show ip eigrp topology 10.1.1.0/24',
+              task: 'Esamina la rotta verso 10.1.1.0/24 in EIGRP per identificare il successor corrente e la sua feasible distance.',
             },
             {
               english: 'Feasible Successor',
@@ -7765,6 +8387,8 @@ export default {
                 'By definition, a Feasible Successor is a backup path. = Un successore fattibile è un percorso di backup.',
               context: 'routing',
               difficulty: 'advanced',
+              command: 'show ip eigrp topology all-links',
+              task: 'Mostra anche le rotte alternative EIGRP non installate per identificare quali pari soddisfano il feasibility condition.',
             },
             {
               english: 'IS-IS',
@@ -7776,6 +8400,10 @@ export default {
               context: 'routing',
               difficulty: 'advanced',
               note: 'Intermediate System to Intermediate System.',
+              command: `router isis CORE
+ net 49.0001.0000.0000.0001.00
+ is-type level-2-only`,
+              task: 'Configura IS-IS area 49.0001 come router level-2-only nel backbone di un service provider con NET locale .0001.00.',
             },
             {
               english: 'NSSA',
@@ -7787,6 +8415,9 @@ export default {
               context: 'routing',
               difficulty: 'advanced',
               note: 'Not-So-Stubby Area.',
+              command: `router ospf 1
+ area 3 nssa`,
+              task: `Configura l'area 3 OSPF come NSSA cosi' che un ASBR locale possa importare rotte esterne tramite Type-7 LSA.`,
             },
             {
               english: 'Totally Stubby',
@@ -7798,6 +8429,9 @@ export default {
               context: 'routing',
               difficulty: 'advanced',
               note: 'Estensione Cisco.',
+              command: `router ospf 1
+ area 4 stub no-summary`,
+              task: `Configura l'area 4 come totally stubby Cisco bloccando sia external che inter-area LSA, lasciando solo una default-route.`,
             },
             {
               english: 'Virtual Link',
@@ -7808,6 +8442,9 @@ export default {
                 "When a new OSPF area cannot physically connect to area 0, the engineer creates a virtual link through a transit area to maintain backbone continuity. = Quando una nuova area OSPF non puo connettersi fisicamente all'area 0, l'ingegnere crea un link virtuale attraverso un'area di transito per mantenere la continuita del backbone.",
               context: 'routing',
               difficulty: 'advanced',
+              command: `router ospf 1
+ area 1 virtual-link 10.0.0.5`,
+              task: `Stabilisci un virtual link OSPF attraverso l'area 1 verso il router 10.0.0.5 per ricollegare un'area orfana al backbone.`,
             },
             {
               english: 'Multi-Area OSPF',
@@ -7828,6 +8465,10 @@ export default {
                 "During BGP redistribution, the engineer applies a route map to set the local preference and filter out private address ranges before advertising routes. = Durante la ridistribuzione BGP, l'ingegnere applica una route map per impostare la local preference e filtrare i range di indirizzi privati prima di pubblicare le rotte.",
               context: 'routing',
               difficulty: 'advanced',
+              command: `route-map FILTER permit 10
+ match ip address prefix-list PUBLIC
+ set local-preference 200`,
+              task: `Definisci una route-map che imposta local-preference 200 sulle rotte che matchano la prefix-list PUBLIC durante l'import BGP.`,
             },
           ],
         },
@@ -7845,6 +8486,10 @@ export default {
                 'In the data path, MPLS forwards by labels instead of IP. = MPLS inoltra per etichette invece che per IP.',
               context: 'routing',
               difficulty: 'advanced',
+              command: `mpls ip
+ interface Gi0/0
+  mpls ip`,
+              task: `Abilita globalmente MPLS e sull'interfaccia core Gi0/0 di un router Cisco per attivare label switching nel backbone.`,
             },
             {
               english: 'Label',
@@ -7855,6 +8500,8 @@ export default {
                 'The 20-bit MPLS label field allows over one million unique label values, giving service providers plenty of space for traffic engineering paths. = Il campo etichetta MPLS a 20 bit consente oltre un milione di valori etichetta unici, dando ai service provider ampio spazio per percorsi di traffic engineering.',
               context: 'routing',
               difficulty: 'advanced',
+              command: 'show mpls forwarding-table',
+              task: 'Visualizza la tabella di forwarding MPLS locale per vedere quali etichette in ingresso vengono swappate verso quali next-hop.',
             },
             {
               english: 'LSP',
@@ -7865,6 +8512,8 @@ export default {
                 'By definition, an LSP is the path through MPLS network. = Un LSP è il percorso attraverso una rete MPLS.',
               context: 'routing',
               difficulty: 'advanced',
+              command: 'show mpls ldp bindings',
+              task: `Mostra i binding LDP per ispezionare l'etichetta associata a ciascun prefisso lungo l'LSP nel core MPLS.`,
             },
             {
               english: 'LSR',
@@ -7885,6 +8534,9 @@ export default {
                 'In networking, LDP distributes MPLS labels between LSRs. = LDP distribuisce etichette MPLS tra LSR.',
               context: 'routing',
               difficulty: 'advanced',
+              command: `mpls ldp router-id Loopback0 force
+ mpls label protocol ldp`,
+              task: 'Configura LDP come protocollo di distribuzione etichette MPLS usando Loopback0 come router-id stabile su un PE.',
             },
             {
               english: 'PE Router',
@@ -7896,6 +8548,11 @@ export default {
               context: 'routing',
               difficulty: 'advanced',
               note: 'Provider Edge.',
+              command: `vrf definition CUSTOMER-A
+ rd 65000:1
+ address-family ipv4
+  route-target both 65000:1`,
+              task: 'Configura una VRF cliente su un PE con route-distinguisher e route-target per separare il routing nel servizio L3VPN.',
             },
             {
               english: 'P Router',
@@ -7906,6 +8563,8 @@ export default {
                 'Provider (P) routers in the MPLS core only perform label switching and never see customer IP headers, simplifying their forwarding tables. = I router Provider (P) nel core MPLS eseguono solo label switching e non vedono mai gli header IP del cliente, semplificando le loro tabelle di inoltro.',
               context: 'routing',
               difficulty: 'advanced',
+              command: 'show mpls interfaces',
+              task: 'Verifica su un router P quali interfacce hanno MPLS attivo per confermare che faccia solo label switching nel core.',
             },
             {
               english: 'CE Router',
@@ -7917,6 +8576,9 @@ export default {
               context: 'routing',
               difficulty: 'advanced',
               note: 'Customer Edge.',
+              command: `router bgp 65010
+ neighbor 192.0.2.1 remote-as 65000`,
+              task: 'Configura sul CE un peering eBGP verso il PE 192.0.2.1 del provider per scambiare le rotte del sito tramite L3VPN.',
             },
             {
               english: 'L3VPN',
@@ -7927,6 +8589,8 @@ export default {
                 'MPLS L3VPN provides separate routing per customer. = MPLS L3VPN fornisce routing separato per cliente.',
               context: 'routing',
               difficulty: 'advanced',
+              command: 'show ip route vrf CUSTOMER-A',
+              task: 'Ispeziona la tabella di routing della VRF CUSTOMER-A su un PE per verificare quali rotte L3VPN sono installate.',
             },
             {
               english: 'Segment Routing',
@@ -7938,6 +8602,11 @@ export default {
               context: 'routing',
               difficulty: 'advanced',
               note: 'SR-MPLS o SRv6.',
+              command: `segment-routing mpls
+ connected-prefix-sid-map
+  address-family ipv4
+   10.0.0.1/32 index 100`,
+              task: `Abilita Segment Routing MPLS associando alla loopback 10.0.0.1/32 l'indice SID 100 per traffic engineering semplificato.`,
             },
           ],
         },
@@ -8036,6 +8705,8 @@ export default {
                 'By definition, OpenFlow is a southbound SDN protocol. = OpenFlow è un protocollo SDN southbound.',
               context: 'services',
               difficulty: 'advanced',
+              command: 'sudo ovs-ofctl -O OpenFlow13 dump-flows br0',
+              task: 'Elenca tutti i flussi OpenFlow 1.3 installati sul bridge br0 di Open vSwitch per verificare la programmazione del data plane.',
             },
             {
               english: 'Flow Table',
@@ -8046,6 +8717,8 @@ export default {
                 'OpenFlow installs flow tables in switches. = OpenFlow installa tabelle di flussi negli switch.',
               context: 'services',
               difficulty: 'advanced',
+              command: `sudo ovs-ofctl add-flow br0 'priority=100,ip,nw_dst=10.0.0.5,actions=output:2'`,
+              task: `Inserisci nella flow table di br0 una regola priorita' 100 che inoltra il traffico IP verso 10.0.0.5 sulla porta 2.`,
             },
             {
               english: 'Programmability',
@@ -8113,6 +8786,9 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               note: 'Virtual Extensible LAN. Porta UDP 4789.',
+              command:
+                'sudo ip link add vxlan100 type vxlan id 100 dstport 4789 local 10.0.0.1 remote 10.0.0.2',
+              task: `Crea un'interfaccia VXLAN con VNI 100 tra gli endpoint 10.0.0.1 e 10.0.0.2 sulla porta UDP standard 4789.`,
             },
             {
               english: 'VNI',
@@ -8124,6 +8800,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               note: '24 bit: 16 milioni di segmenti.',
+              command: 'ip -d link show vxlan100 | grep vxlan',
+              task: `Visualizza i dettagli dell'interfaccia VXLAN per verificare il VNI configurato e confermare l'isolamento del segmento.`,
             },
             {
               english: 'VTEP',
@@ -8134,6 +8812,8 @@ export default {
                 'At each end of the overlay tunnel, a VXLAN Tunnel Endpoint wraps and unwraps Layer 2 frames inside UDP packets for transport across the Layer 3 fabric. = A ogni estremita del tunnel overlay, un VXLAN Tunnel Endpoint incapsula e decapsula frame Layer 2 dentro pacchetti UDP per il trasporto attraverso il fabric Layer 3.',
               context: 'services',
               difficulty: 'advanced',
+              command: 'bridge fdb append 00:00:00:00:00:00 dev vxlan100 dst 10.0.0.3',
+              task: `Aggiungi un VTEP remoto 10.0.0.3 al forwarding database del tunnel VXLAN per attivare la replica BUM verso l'altro endpoint.`,
             },
             {
               english: 'GRE',
@@ -8144,6 +8824,9 @@ export default {
                 'In networking, GRE encapsulates many protocols. = GRE incapsula molti protocolli.',
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'sudo ip tunnel add gre1 mode gre remote 198.51.100.1 local 203.0.113.1 ttl 255',
+              task: 'Crea un tunnel GRE punto-punto tra 203.0.113.1 e 198.51.100.1 per incapsulare e trasportare protocolli arbitrari.',
             },
             {
               english: 'Geneve',
@@ -8155,6 +8838,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               note: 'Generic Network Virtualization Encapsulation.',
+              command: 'sudo ip link add gnv0 type geneve id 1000 remote 10.0.0.5',
+              task: `Configura un'interfaccia Geneve con VNI 1000 verso 10.0.0.5 per un overlay flessibile compatibile con OVN e NSX.`,
             },
             {
               english: 'EVPN',
@@ -8166,6 +8851,10 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               note: 'Ethernet VPN. Estensione di BGP.',
+              command: `router bgp 65000
+ address-family l2vpn evpn
+  neighbor 10.0.0.2 activate`,
+              task: 'Attiva la address-family EVPN con il vicino 10.0.0.2 per distribuire MAC e prefissi tenant tramite BGP nel data center.',
             },
           ],
         },
@@ -8184,6 +8873,15 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               note: 'Programming Protocol-independent Packet Processors.',
+              code: `header ethernet_t {
+    bit<48> dstAddr;
+    bit<48> srcAddr;
+    bit<16> etherType;
+}
+parser MyParser(packet_in p, out headers h) {
+    state start { p.extract(h.ethernet); transition accept; }
+}`,
+              task: 'Definisci in P4 un header Ethernet e un parser che estrae i suoi campi come scheletro di un programma per data plane custom.',
             },
             {
               english: 'Programmable Switch',
@@ -8205,6 +8903,12 @@ export default {
                 'Engineers write P4 programs that define a match-action pipeline, specifying exactly which header fields to match and what actions to apply on each packet. = Gli ingegneri scrivono programmi P4 che definiscono una pipeline match-action, specificando esattamente quali campi header confrontare e quali azioni applicare su ogni pacchetto.',
               context: 'services',
               difficulty: 'advanced',
+              code: `table ipv4_lpm {
+    key = { hdr.ipv4.dstAddr: lpm; }
+    actions = { forward; drop; NoAction; }
+    default_action = NoAction;
+}`,
+              task: 'Definisci in P4 una tabella match-action LPM su IPv4 destinazione che instrada o scarta i pacchetti secondo la regola installata.',
             },
             {
               english: 'Parser',
@@ -8215,6 +8919,11 @@ export default {
                 "During packet ingress, the P4 parser walks the protocol headers in order, extracting fields like source IP and VLAN tag for the match-action tables. = Durante l'ingresso del pacchetto, il parser P4 attraversa gli header di protocollo in ordine, estraendo campi come IP sorgente e VLAN tag per le tabelle match-action.",
               context: 'services',
               difficulty: 'advanced',
+              code: `parser MyParser(packet_in p, out headers h) {
+    state start { p.extract(h.ethernet); transition select(h.ethernet.etherType) { 0x0800: parse_ipv4; default: accept; } }
+    state parse_ipv4 { p.extract(h.ipv4); transition accept; }
+}`,
+              task: `Scrivi un parser P4 che estrae l'header Ethernet e prosegue su IPv4 quando l'etherType vale 0x0800 a inizio pipeline.`,
             },
             {
               english: 'eBPF',
@@ -8226,6 +8935,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'bpftool, bcc',
+              command: 'sudo bpftool prog show',
+              task: 'Elenca tutti i programmi eBPF caricati nel kernel per verificare quali agganci di rete e tracing sono attualmente attivi.',
             },
             {
               english: 'XDP',
@@ -8236,6 +8947,8 @@ export default {
                 'In networking, XDP processes packets at the driver level. = XDP processa pacchetti a livello driver.',
               context: 'services',
               difficulty: 'advanced',
+              command: 'sudo ip link set dev eth0 xdp obj filter.o sec xdp',
+              task: `Carica un programma XDP compilato dall'oggetto filter.o sull'interfaccia eth0 per filtrare pacchetti a livello driver.`,
             },
             {
               english: 'DPDK',
@@ -8247,6 +8960,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               note: 'Data Plane Development Kit.',
+              command: 'sudo dpdk-devbind.py --bind=vfio-pci 0000:01:00.0',
+              task: 'Associa la NIC con BDF 01:00.0 al driver vfio-pci per portarla sotto controllo DPDK e ottenere I/O kernel-bypass.',
             },
             {
               english: 'SmartNIC',
@@ -8303,6 +9018,11 @@ export default {
                 "By optimizing traffic, Network Automation reduces human errors. = L'automazione di rete riduce errori umani.",
               context: 'services',
               difficulty: 'advanced',
+              code: `from netmiko import ConnectHandler
+dev = {'device_type': 'cisco_ios', 'host': '10.0.0.1', 'username': 'admin', 'password': 'secret'}
+with ConnectHandler(**dev) as c:
+    print(c.send_command('show ip interface brief'))`,
+              task: `Automatizza con netmiko la raccolta di 'show ip interface brief' su un router Cisco autenticandoti via SSH come admin.`,
             },
             {
               english: 'Closed-Loop',
@@ -8324,6 +9044,9 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               note: 'gNMI è uno standard.',
+              command:
+                'gnmic -a router.example.com:57400 -u admin --insecure subscribe --path /interfaces/interface/state/counters',
+              task: 'Sottoscrivi via gNMI i contatori delle interfacce del router per ricevere telemetria streaming in tempo reale.',
             },
             {
               english: 'Cisco DNA Center',
@@ -8367,6 +9090,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'Open vSwitch',
+              command: 'sudo ovs-vsctl add-br br0 && sudo ovs-vsctl add-port br0 eth1',
+              task: 'Crea un bridge Open vSwitch br0 e aggiungi la porta fisica eth1 per virtualizzare la rete del workload.',
             },
             {
               english: 'Service Mesh',
@@ -8439,6 +9164,8 @@ export default {
               difficulty: 'advanced',
               tool: 'Snort',
               note: 'IDS/IPS open source storico, ora mantenuto da Cisco; usa regole testuali sul traffico.',
+              command: 'sudo snort -A console -q -c /etc/snort/snort.conf -i eth0',
+              task: `Avvia Snort in modalita' IDS sull'interfaccia eth0 con regole standard, scrivendo gli alert in console quietamente.`,
             },
             {
               english: 'Suricata',
@@ -8451,6 +9178,8 @@ export default {
               difficulty: 'advanced',
               tool: 'Suricata',
               note: 'IDS/IPS open source multi-thread, compatibile con le regole Snort ma più moderno e performante.',
+              command: 'sudo suricata -c /etc/suricata/suricata.yaml -i eth0',
+              task: `Esegui Suricata sull'interfaccia eth0 con la sua configurazione standard per sfruttare il motore multi-thread di rilevamento.`,
             },
             {
               english: 'Signature',
@@ -8461,6 +9190,9 @@ export default {
                 'An IDS signature describes a packet pattern that maps to a known exploit, like a specific Shellshock HTTP header. = Una firma IDS descrive un pattern di pacchetto associato a un exploit noto, come uno specifico header HTTP di Shellshock.',
               context: 'firewalls',
               difficulty: 'advanced',
+              command:
+                'alert tcp any any -> $HOME_NET 80 (msg:"Shellshock"; content:"() {"; sid:1000001;)',
+              task: `Scrivi una signature Snort che fa scattare un alert sul pattern Shellshock '() {' nel traffico HTTP entrante verso la rete interna.`,
             },
             {
               english: 'Anomaly Detection',
@@ -8550,6 +9282,8 @@ export default {
               context: 'firewalls',
               difficulty: 'advanced',
               tool: 'Cowrie, Dionaea',
+              command: 'docker run -d -p 2222:2222 cowrie/cowrie',
+              task: 'Avvia un container Cowrie come honeypot SSH che simula una shell vulnerabile sulla porta 2222 per registrare gli attacchi.',
             },
             {
               english: 'Honeynet',
@@ -8570,6 +9304,8 @@ export default {
                 "As a deception technique, the defensive tarpit accepts TCP connections but responds extremely slowly, wasting the attacker's time and resources. = Come tecnica di inganno, il tarpit difensivo accetta connessioni TCP ma risponde estremamente lentamente, sprecando tempo e risorse dell'attaccante.",
               context: 'firewalls',
               difficulty: 'advanced',
+              command: 'sudo iptables -A INPUT -p tcp --dport 25 -j TARPIT',
+              task: `Applica iptables TARPIT sulla porta 25 per accettare le connessioni SMTP malevole ma rispondere lentissimo, esaurendo l'attaccante.`,
             },
             {
               english: 'Threat Intelligence',
@@ -8591,6 +9327,8 @@ export default {
               context: 'firewalls',
               difficulty: 'advanced',
               note: 'Indicator of Compromise.',
+              command: 'grep -F -f iocs.txt /var/log/squid/access.log',
+              task: 'Cerca nei log del proxy gli indicatori di compromissione (IP, domini) elencati nel file iocs.txt forniti dal threat intel feed.',
             },
             {
               english: 'SIEM',
@@ -8651,6 +9389,9 @@ export default {
                 'In networking, Microsegmentation isolates workloads. = La microsegmentazione isola workload.',
               context: 'firewalls',
               difficulty: 'advanced',
+              command:
+                'sudo iptables -A INPUT -s 10.0.10.0/24 -d 10.0.20.0/24 -p tcp --dport 5432 -j ACCEPT',
+              task: 'Crea una regola di microsegmentazione che permette solo al segmento app di parlare al DB sulla porta PostgreSQL, bloccando il resto.',
             },
             {
               english: 'Identity Provider',
@@ -8683,6 +9424,10 @@ export default {
                 "For security, 802.1X authenticates port access. = 802.1X autentica l'accesso alla porta.",
               context: 'firewalls',
               difficulty: 'advanced',
+              command: `interface Gi0/1
+ authentication port-control auto
+ dot1x pae authenticator`,
+              task: `Configura una porta switch Cisco con 802.1X in modalita' auto per richiedere l'autenticazione del client prima dell'accesso.`,
             },
             {
               english: 'Posture Assessment',
@@ -8753,6 +9498,9 @@ export default {
                 'In networking, DDoS attacks overwhelm services. = Gli attacchi DDoS sovraccaricano i servizi.',
               context: 'firewalls',
               difficulty: 'advanced',
+              command:
+                'sudo iptables -A INPUT -p tcp --syn -m connlimit --connlimit-above 50 -j DROP',
+              task: 'Limita ogni IP a un massimo di 50 connessioni TCP simultanee in ingresso come prima difesa contro flood DDoS di base.',
             },
             {
               english: 'SYN Flood',
@@ -8764,6 +9512,8 @@ export default {
               context: 'firewalls',
               difficulty: 'advanced',
               note: 'Mitigato da SYN cookies.',
+              command: 'sudo sysctl -w net.ipv4.tcp_syncookies=1',
+              task: 'Attiva i SYN cookies nel kernel per gestire flood di SYN senza esaurire la coda delle connessioni half-open.',
             },
             {
               english: 'Amplification Attack',
@@ -8774,6 +9524,9 @@ export default {
                 "DNS amplification weaponizes open resolvers. = L'amplificazione DNS arma resolver aperti.",
               context: 'firewalls',
               difficulty: 'advanced',
+              command:
+                'sudo iptables -A INPUT -p udp --dport 53 ! -s 10.0.0.0/8 -m hashlimit --hashlimit-name dnsamp --hashlimit-above 50/sec -j DROP',
+              task: 'Limita le query DNS UDP esterne a 50/s per IP sul resolver per impedire che venga sfruttato in attacchi di amplificazione.',
             },
             {
               english: 'Spoofing',
@@ -8784,6 +9537,8 @@ export default {
                 'ARP spoofing on a switched LAN lets an attacker poison the cache of neighbors and redirect traffic through their host. = Lo spoofing ARP su una LAN switched permette a un attaccante di avvelenare la cache dei vicini e dirottare il traffico sul proprio host.',
               context: 'firewalls',
               difficulty: 'advanced',
+              command: 'sudo arpspoof -i eth0 -t 192.168.1.10 192.168.1.1',
+              task: 'Simula in laboratorio ARP spoofing tra la vittima 192.168.1.10 e il gateway 192.168.1.1 per testare le difese del segmento.',
             },
             {
               english: 'Sniffing',
@@ -8794,6 +9549,8 @@ export default {
                 'In networking, Sniffing captures network traffic passively. = Lo sniffing cattura il traffico di rete passivamente.',
               context: 'firewalls',
               difficulty: 'advanced',
+              command: 'sudo tcpdump -i eth0 -n -w /tmp/capture.pcap',
+              task: 'Cattura tutto il traffico passivamente da eth0 dentro un file pcap per analisi successiva con Wireshark o tshark.',
             },
             {
               english: 'MITM',
@@ -8804,6 +9561,8 @@ export default {
                 'In networking, MITM attacks intercept traffic between parties. = Gli attacchi MITM intercettano il traffico tra le parti.',
               context: 'firewalls',
               difficulty: 'advanced',
+              command: 'sudo mitmproxy --mode transparent --showhost',
+              task: `Avvia mitmproxy in modalita' trasparente in laboratorio per intercettare e ispezionare il traffico HTTPS dei client di test.`,
             },
             {
               english: 'Session Hijacking',
@@ -8824,6 +9583,8 @@ export default {
                 'In networking, DNS Spoofing redirects to fake sites. = Il DNS spoofing reindirizza a siti falsi.',
               context: 'firewalls',
               difficulty: 'advanced',
+              command: 'sudo dnsspoof -i eth0 -f hosts.spoof',
+              task: 'Esegui dnsspoof in un lab isolato per dirottare query DNS verso indirizzi controllati e valutare la postura della rete.',
             },
             {
               english: 'Botnet',
@@ -8871,6 +9632,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               note: 'AWS, GCP. Azure: VNet.',
+              command: `aws ec2 create-vpc --cidr-block 10.0.0.0/16 --tag-specifications 'ResourceType=vpc,Tags=[{Key=Name,Value=prod}]'`,
+              task: 'Crea una VPC su AWS con CIDR 10.0.0.0/16 e tag Name=prod per isolare le risorse di produzione nel proprio cloud privato.',
             },
             {
               english: 'VNet',
@@ -8880,6 +9643,9 @@ export default {
               example: `Each Azure VNet is logically isolated and you peer two VNets together to let workloads talk over the Microsoft backbone. = Ogni VNet Azure e' isolata logicamente e fai il peering di due VNet per far comunicare i workload sulla backbone Microsoft.`,
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'az network vnet create -g rg-prod -n vnet-prod --address-prefixes 10.10.0.0/16',
+              task: 'Provisiona una VNet Azure con prefisso 10.10.0.0/16 nel resource group rg-prod come base della rete cloud aziendale.',
             },
             {
               english: 'Public Subnet',
@@ -8890,6 +9656,9 @@ export default {
                 "Web servers that need to be reachable from outside are placed in a public subnet with a route to the Internet Gateway. = I web server che devono essere raggiungibili dall'esterno vengono collocati in una sottorete pubblica con una rotta verso l'Internet Gateway.",
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'aws ec2 create-subnet --vpc-id vpc-1234 --cidr-block 10.0.1.0/24 --availability-zone eu-west-1a',
+              task: 'Crea una public subnet 10.0.1.0/24 nella VPC vpc-1234 in eu-west-1a destinata a ospitare i web server raggiungibili da Internet.',
             },
             {
               english: 'Private Subnet',
@@ -8900,6 +9669,9 @@ export default {
                 'Database instances in a private subnet can download patches through the NAT Gateway but remain unreachable from the public Internet. = Le istanze database in una sottorete privata possono scaricare patch attraverso il NAT Gateway ma restano irraggiungibili da Internet pubblica.',
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'aws ec2 create-subnet --vpc-id vpc-1234 --cidr-block 10.0.2.0/24 --availability-zone eu-west-1a',
+              task: 'Crea una private subnet 10.0.2.0/24 senza route diretta a Internet per ospitare i database isolati dietro NAT Gateway.',
             },
             {
               english: 'Internet Gateway',
@@ -8910,6 +9682,9 @@ export default {
                 'Without an Internet Gateway attached to the VPC, none of the public-subnet EC2 instances can receive inbound traffic from external users. = Senza un Internet Gateway collegato alla VPC, nessuna delle istanze EC2 nella subnet pubblica puo ricevere traffico in ingresso da utenti esterni.',
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'aws ec2 create-internet-gateway && aws ec2 attach-internet-gateway --internet-gateway-id igw-abc --vpc-id vpc-1234',
+              task: 'Crea un Internet Gateway su AWS e collegalo alla VPC vpc-1234 per permettere alle public subnet di scambiare traffico con Internet.',
             },
             {
               english: 'NAT Gateway',
@@ -8921,6 +9696,9 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               note: 'Costoso: $0.045/h + traffic.',
+              command:
+                'aws ec2 create-nat-gateway --subnet-id subnet-pub --allocation-id eipalloc-1',
+              task: `Provisiona un NAT Gateway nella subnet pubblica usando un EIP allocato cosi' che le private subnet possano fare egress verso Internet.`,
             },
             {
               english: 'Security Group',
@@ -8931,6 +9709,9 @@ export default {
                 'Because AWS security groups are stateful, allowing inbound HTTPS on port 443 automatically permits the corresponding outbound response traffic. = Poiche i security group AWS sono stateful, permettere HTTPS in ingresso sulla porta 443 permette automaticamente il traffico di risposta in uscita corrispondente.',
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'aws ec2 authorize-security-group-ingress --group-id sg-abc --protocol tcp --port 443 --cidr 0.0.0.0/0',
+              task: 'Autorizza il traffico HTTPS in ingresso da Internet sul security group sg-abc del load balancer pubblico stateful.',
             },
             {
               english: 'NACL',
@@ -8941,6 +9722,9 @@ export default {
                 'In AWS, a Network ACL applies stateless rules at the subnet boundary, so you must explicitly allow both inbound and outbound traffic for each flow. = In AWS, una Network ACL applica regole stateless al confine della sottorete, quindi devi esplicitamente permettere sia il traffico in ingresso che in uscita per ogni flusso.',
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'aws ec2 create-network-acl-entry --network-acl-id acl-abc --rule-number 100 --protocol tcp --port-range From=443,To=443 --cidr-block 0.0.0.0/0 --rule-action allow --ingress',
+              task: `Aggiungi una regola NACL stateless che permette HTTPS in ingresso sulla subnet, ricordando di consentire anche l'egress di risposta.`,
             },
             {
               english: 'Availability Zone',
@@ -8951,6 +9735,8 @@ export default {
                 'AZs are isolated data centers in a region. = Le AZ sono data center isolati in una regione.',
               context: 'services',
               difficulty: 'advanced',
+              command: 'aws ec2 describe-availability-zones --region eu-west-1',
+              task: 'Elenca le AZ disponibili nella regione eu-west-1 per pianificare la distribuzione multi-AZ delle risorse critiche.',
             },
             {
               english: 'Region',
@@ -8961,6 +9747,8 @@ export default {
                 'Choosing the right cloud region trades off latency to users, data residency rules and the price per GB of egress. = Scegliere la cloud region giusta bilancia latenza verso gli utenti, regole di residenza dati e prezzo per GB di egress.',
               context: 'services',
               difficulty: 'advanced',
+              command: `aws ec2 describe-regions --query 'Regions[].RegionName' --output text`,
+              task: `Elenca tutte le region AWS abilitate sull'account per scegliere quella ottimale in termini di latenza e residenza dei dati.`,
             },
           ],
         },
@@ -8979,6 +9767,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               note: 'Non transitivo.',
+              command: 'aws ec2 create-vpc-peering-connection --vpc-id vpc-A --peer-vpc-id vpc-B',
+              task: 'Avvia una richiesta di VPC peering tra vpc-A e vpc-B per consentire traffico privato bidirezionale fra le due reti AWS.',
             },
             {
               english: 'Transit Gateway',
@@ -8989,6 +9779,8 @@ export default {
                 'In the network topology, Transit Gateway connects many VPCs in a hub. = Transit Gateway connette molte VPC in un hub.',
               context: 'services',
               difficulty: 'advanced',
+              command: `aws ec2 create-transit-gateway --description 'hub-prod'`,
+              task: 'Crea un Transit Gateway AWS chiamato hub-prod come hub centrale per collegare molte VPC e VPN aziendali.',
             },
             {
               english: 'VPC Endpoint',
@@ -8999,6 +9791,9 @@ export default {
                 'To keep S3 traffic off the public Internet, the team creates a VPC endpoint that provides a private, direct path from the VPC to the storage service. = Per mantenere il traffico S3 fuori da Internet pubblica, il team crea un VPC endpoint che fornisce un percorso privato e diretto dalla VPC al servizio di storage.',
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'aws ec2 create-vpc-endpoint --vpc-id vpc-1234 --service-name com.amazonaws.eu-west-1.s3 --route-table-ids rtb-1',
+              task: 'Crea un Gateway Endpoint S3 sulla VPC vpc-1234 per accedere a S3 senza far passare il traffico per Internet.',
             },
             {
               english: 'PrivateLink',
@@ -9009,6 +9804,9 @@ export default {
                 'In networking, PrivateLink exposes services privately. = PrivateLink espone servizi privatamente.',
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'aws ec2 create-vpc-endpoint --vpc-id vpc-1234 --vpc-endpoint-type Interface --service-name com.amazonaws.eu-west-1.secretsmanager',
+              task: 'Esponi Secrets Manager privatamente nella VPC tramite PrivateLink in modo che le istanze non debbano uscire su Internet.',
             },
             {
               english: 'Direct Connect',
@@ -9019,6 +9817,8 @@ export default {
                 'For network operations, Direct Connect provides dedicated AWS links. = Direct Connect fornisce link dedicati ad AWS.',
               context: 'services',
               difficulty: 'advanced',
+              command: 'aws directconnect describe-connections',
+              task: `Mostra le connessioni Direct Connect attive sull'account per verificare lo stato dei link dedicati tra on-prem e AWS.`,
             },
             {
               english: 'ExpressRoute',
@@ -9029,6 +9829,8 @@ export default {
                 "By definition, ExpressRoute is the Azure equivalent. = ExpressRoute è l'equivalente Azure.",
               context: 'services',
               difficulty: 'advanced',
+              command: 'az network express-route list -o table',
+              task: 'Elenca i circuiti ExpressRoute attivi sulla subscription Azure per verificare provider, banda e stato dei link dedicati.',
             },
             {
               english: 'Cloud Interconnect',
@@ -9039,6 +9841,8 @@ export default {
                 'GCP Cloud Interconnect provides dedicated links. = GCP Cloud Interconnect fornisce link dedicati.',
               context: 'services',
               difficulty: 'advanced',
+              command: 'gcloud compute interconnects list',
+              task: 'Elenca i Cloud Interconnect attivi sul progetto GCP per controllare i link fisici dedicati verso le VPC del provider.',
             },
             {
               english: 'Hybrid Cloud',
@@ -9069,6 +9873,9 @@ export default {
                 "The hybrid architecture uses a site-to-cloud VPN between the on-premises data center and the AWS VPC for secure database replication. = L'architettura ibrida usa una VPN site-to-cloud tra il data center on-premises e la VPC AWS per la replica sicura del database.",
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'aws ec2 create-vpn-connection --customer-gateway-id cgw-1 --vpn-gateway-id vgw-1 --type ipsec.1',
+              task: 'Crea una VPN site-to-cloud IPsec tra il customer gateway on-prem e il VPN gateway della VPC AWS per replicare il database.',
             },
           ],
         },
@@ -9086,6 +9893,9 @@ export default {
                 'An AWS ELB scales automatically with traffic and distributes requests across healthy targets in multiple availability zones. = Un ELB di AWS scala automaticamente con il traffico e distribuisce le richieste tra i target sani in più availability zone.',
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'aws elbv2 create-load-balancer --name web-elb --subnets subnet-a subnet-b --scheme internet-facing',
+              task: 'Provisiona un load balancer ELB internet-facing su due subnet AZ-diverse per distribuire il traffico HTTP del frontend.',
             },
             {
               english: 'ALB',
@@ -9095,6 +9905,9 @@ export default {
               example: 'In the network stack, ALB operates at Layer 7. = ALB opera al Layer 7.',
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'aws elbv2 create-load-balancer --name app-alb --type application --subnets subnet-a subnet-b',
+              task: 'Crea un Application Load Balancer L7 su due subnet pubbliche per instradare richieste HTTPS ai microservizi backend.',
             },
             {
               english: 'NLB',
@@ -9105,6 +9918,9 @@ export default {
                 'In the network stack, NLB operates at Layer 4 with high performance. = NLB opera al Layer 4 con alte prestazioni.',
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'aws elbv2 create-load-balancer --name tcp-nlb --type network --subnets subnet-a subnet-b',
+              task: `Provisiona un Network Load Balancer L4 ad altissima performance per esporre servizi TCP con preservazione dell'IP sorgente.`,
             },
             {
               english: 'Cloud Load Balancer',
@@ -9125,6 +9941,9 @@ export default {
                 "The Application Load Balancer forwards requests to a target group containing three healthy EC2 instances running the API microservice. = L'Application Load Balancer inoltra le richieste a un target group contenente tre istanze EC2 sane che eseguono il microservizio API.",
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'aws elbv2 create-target-group --name api-tg --protocol HTTP --port 8080 --vpc-id vpc-1234 --target-type instance',
+              task: `Crea un target group HTTP/8080 per registrare le istanze EC2 del servizio API dietro l'Application Load Balancer.`,
             },
             {
               english: 'Listener',
@@ -9135,6 +9954,9 @@ export default {
                 "The Application Load Balancer creates a listener on port 443 that accepts incoming HTTPS connections and routes them to registered target groups. = L'Application Load Balancer crea un listener sulla porta 443 che accetta connessioni HTTPS in ingresso e le instrada ai target group registrati.",
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'aws elbv2 create-listener --load-balancer-arn $LB_ARN --protocol HTTPS --port 443 --certificates CertificateArn=$CERT_ARN --default-actions Type=forward,TargetGroupArn=$TG_ARN',
+              task: `Configura un listener HTTPS sulla porta 443 dell'ALB con certificato ACM che inoltra le richieste al target group api-tg.`,
             },
             {
               english: 'Cross-Zone Load Balancing',
@@ -9164,6 +9986,9 @@ export default {
               example: 'By definition, CloudFront is the AWS CDN. = CloudFront è la CDN AWS.',
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'aws cloudfront create-distribution --origin-domain-name static.example.com.s3.amazonaws.com',
+              task: 'Crea una distribuzione CloudFront davanti al bucket S3 statico per servire gli asset attraverso la rete edge globale AWS.',
             },
             {
               english: 'CDN',
@@ -9193,6 +10018,9 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               note: 'Anche fa health checks e routing.',
+              command:
+                'aws route53 change-resource-record-sets --hosted-zone-id Z123 --change-batch file://record.json',
+              task: 'Aggiorna un record DNS nella hosted zone Z123 di Route 53 applicando il change batch definito in record.json.',
             },
             {
               english: 'Cloud DNS',
@@ -9203,6 +10031,9 @@ export default {
                 'GCP Cloud DNS hosts authoritative zones. = GCP Cloud DNS ospita zone autoritative.',
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'gcloud dns record-sets create www.example.com. --zone=prod --type=A --ttl=300 --rrdatas=203.0.113.10',
+              task: 'Crea un record A per www.example.com nella zona prod di Cloud DNS con TTL 300 puntando al frontend pubblico.',
             },
             {
               english: 'Latency-Based Routing',
@@ -9213,6 +10044,8 @@ export default {
                 'In networking, Latency-Based Routing picks the fastest region. = Il routing basato su latenza sceglie la regione più veloce.',
               context: 'services',
               difficulty: 'advanced',
+              command: `aws route53 change-resource-record-sets --hosted-zone-id Z1 --change-batch '{"Changes":[{"Action":"CREATE","ResourceRecordSet":{"Name":"app.example.com","Type":"A","SetIdentifier":"eu","Region":"eu-west-1","TTL":60,"ResourceRecords":[{"Value":"10.0.0.1"}]}}]}'`,
+              task: `Crea un record A in Route 53 con routing latency-based verso eu-west-1 cosi' che gli utenti raggiungano la region piu' veloce.`,
             },
             {
               english: 'Geolocation Routing',
@@ -9223,6 +10056,9 @@ export default {
                 'During communication, Geolocation Routing sends users to local servers. = Il routing per geolocalizzazione manda utenti a server locali.',
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'aws route53 change-resource-record-sets --hosted-zone-id Z1 --change-batch file://geo.json',
+              task: 'Applica via change batch una politica di geolocation routing su Route 53 per inviare gli utenti europei al server regionale corretto.',
             },
             {
               english: 'Failover Routing',
@@ -9233,6 +10069,9 @@ export default {
                 'Under the hood, Failover Routing uses backup endpoints. = Il routing failover usa endpoint di backup.',
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'aws route53 change-resource-record-sets --hosted-zone-id Z1 --change-batch file://failover.json',
+              task: 'Configura su Route 53 una coppia di record primary/secondary con failover automatico in caso di health check fallito.',
             },
             {
               english: 'Hosted Zone',
@@ -9243,6 +10082,9 @@ export default {
                 'After creating a hosted zone for example.com in Route 53, engineers add A, CNAME, and MX records to direct traffic to the right services. = Dopo aver creato una zona ospitata per example.com in Route 53, gli ingegneri aggiungono record A, CNAME e MX per dirigere il traffico ai servizi giusti.',
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'aws route53 create-hosted-zone --name example.com --caller-reference $(date +%s)',
+              task: 'Crea una hosted zone pubblica per example.com in Route 53 come base per gestire i record DNS del dominio aziendale.',
             },
             {
               english: 'Private Hosted Zone',
@@ -9253,6 +10095,9 @@ export default {
                 "Internal microservices use a private hosted zone so that names like api.internal.corp resolve only from within the VPC, not from the public Internet. = I microservizi interni usano una zona ospitata privata cosi che nomi come api.internal.corp risolvano solo dall'interno della VPC, non da Internet pubblica.",
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'aws route53 create-hosted-zone --name internal.corp --vpc VPCRegion=eu-west-1,VPCId=vpc-1234 --caller-reference $(date +%s)',
+              task: `Crea una private hosted zone internal.corp associata alla VPC vpc-1234 perche' i servizi interni risolvano solo da dentro la rete.`,
             },
             {
               english: 'Alias Record',
@@ -9274,6 +10119,9 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               note: 'Combinato con record di failover, abilita disaster recovery DNS-driven.',
+              command:
+                'aws route53 create-health-check --caller-reference $(date +%s) --health-check-config Type=HTTPS,FullyQualifiedDomainName=api.example.com,Port=443,RequestInterval=30,FailureThreshold=3',
+              task: `Crea un DNS health check HTTPS su api.example.com cosi' che Route 53 escluda gli endpoint non sani dal set di risposta.`,
             },
             {
               english: 'Traffic Director',
@@ -9311,6 +10159,8 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Ansible',
+              command: 'ansible-playbook -i inventory.yml configure_switches.yml',
+              task: `Esegui un playbook Ansible contro l'inventario di rete per configurare gli switch senza installare alcun agent.`,
             },
             {
               english: 'Playbook',
@@ -9333,6 +10183,13 @@ export default {
                 'An Ansible inventory file groups hosts by role so a playbook can target only the edge routers or only the core switches. = Un file di inventory Ansible raggruppa gli host per ruolo, così un playbook può colpire solo i router edge o solo i core switch.',
               context: 'tools',
               difficulty: 'advanced',
+              code: `[edge_routers]
+router-mil ansible_host=10.0.1.1
+router-rom ansible_host=10.0.1.2
+
+[core_switches]
+core-mi-01 ansible_host=10.0.2.1`,
+              task: 'Definisci un inventario Ansible che raggruppa router edge e switch core per puntare i playbook solo alla classe corretta di device.',
             },
             {
               english: 'Module',
@@ -9343,6 +10200,13 @@ export default {
                 'Ansible modules handle vendor specifics. = I moduli Ansible gestiscono specifiche del vendor.',
               context: 'tools',
               difficulty: 'advanced',
+              code: `- name: configure interface
+  cisco.ios.ios_l3_interfaces:
+    config:
+      - name: GigabitEthernet0/0
+        ipv4:
+          - address: 10.0.0.1/30`,
+              task: `Usa il modulo ios_l3_interfaces di Ansible per impostare l'IP 10.0.0.1/30 sull'interfaccia Gi0/0 di un router Cisco.`,
             },
             {
               english: 'Salt',
@@ -9354,6 +10218,8 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'SaltStack',
+              command: `sudo salt '*' net.cli 'show version'`,
+              task: `Esegui via Salt il comando 'show version' su tutti i minion di rete sfruttando il bus ZeroMQ per applicarli in pochi secondi.`,
             },
             {
               english: 'Puppet',
@@ -9365,6 +10231,13 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Puppet',
+              code: `node 'router1' {
+  cisco_interface { 'GigabitEthernet0/0':
+    description => 'WAN uplink',
+    shutdown    => false,
+  }
+}`,
+              task: 'Definisci con Puppet la configurazione dichiarativa di Gi0/0 sul router1 imponendo descrizione WAN uplink e interfaccia attiva.',
             },
             {
               english: 'Terraform',
@@ -9376,6 +10249,11 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Terraform',
+              code: `resource "aws_vpc" "prod" {
+  cidr_block = "10.0.0.0/16"
+  tags = { Name = "prod" }
+}`,
+              task: 'Definisci con Terraform una VPC AWS chiamata prod con CIDR 10.0.0.0/16 come base infrastructure-as-code della rete di produzione.',
             },
             {
               english: 'Idempotent',
@@ -9407,6 +10285,8 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               note: 'NetBox è uno strumento popolare.',
+              command: `curl -H 'Authorization: Token $NETBOX_TOKEN' https://netbox.example.com/api/dcim/devices/`,
+              task: `Interroga l'API NetBox per recuperare l'elenco dispositivi della source of truth come input degli script di automazione di rete.`,
             },
           ],
         },
@@ -9425,6 +10305,10 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               note: 'RFC 6241. Porta 830.',
+              code: `from ncclient import manager
+with manager.connect(host='10.0.0.1', port=830, username='admin', password='secret', hostkey_verify=False) as m:
+    print(m.get_config(source='running'))`,
+              task: 'Recupera con ncclient la running-config XML del router via NETCONF sulla porta 830 autenticandoti come admin.',
             },
             {
               english: 'RESTCONF',
@@ -9435,6 +10319,8 @@ export default {
                 'In networking, RESTCONF exposes NETCONF over HTTP. = RESTCONF espone NETCONF su HTTP.',
               context: 'tools',
               difficulty: 'advanced',
+              command: `curl -k -u admin:secret -H 'Accept: application/yang-data+json' https://10.0.0.1/restconf/data/Cisco-IOS-XE-native:native`,
+              task: 'Richiedi via RESTCONF la configurazione native YANG del router IOS-XE in formato JSON per integrare un tool di automazione.',
             },
             {
               english: 'YANG',
@@ -9446,6 +10332,8 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               note: 'Yet Another Next Generation. RFC 7950.',
+              command: 'pyang -f tree openconfig-interfaces.yang',
+              task: 'Visualizza in formato albero il modello YANG openconfig-interfaces con pyang per orientarti tra le foglie configurabili.',
             },
             {
               english: 'gNMI',
@@ -9457,6 +10345,9 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               note: 'gRPC Network Management Interface.',
+              command:
+                'gnmic -a 10.0.0.1:57400 -u admin -p secret --insecure get --path /interfaces/interface',
+              task: 'Recupera via gNMI lo stato di tutte le interfacce del router usando gnmic come client da riga di comando.',
             },
             {
               english: 'gRPC',
@@ -9468,6 +10359,11 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               note: 'Framework RPC ad alte prestazioni di Google, basato su HTTP/2 e Protocol Buffers.',
+              code: `import grpc
+from gnmi import gnmi_pb2_grpc, gnmi_pb2
+channel = grpc.secure_channel('router:57400', grpc.ssl_channel_credentials())
+stub = gnmi_pb2_grpc.gNMIStub(channel)`,
+              task: 'Apri un canale gRPC sicuro verso un router sulla porta gNMI 57400 come base per inviare richieste binarie efficienti.',
             },
             {
               english: 'OpenConfig',
@@ -9478,6 +10374,8 @@ export default {
                 'For network operations, OpenConfig provides vendor-neutral YANG models. = OpenConfig fornisce modelli YANG vendor-neutral.',
               context: 'tools',
               difficulty: 'advanced',
+              command: `gnmic -a router:57400 --insecure -u admin get --path '/openconfig-interfaces:interfaces/interface[name=eth1]/state'`,
+              task: 'Recupera via gNMI lo stato di eth1 usando il modello vendor-neutral OpenConfig per un consumo identico tra vendor.',
             },
             {
               english: 'REST API',
@@ -9500,6 +10398,8 @@ export default {
                 'Some devices use JSON-RPC for management. = Alcuni dispositivi usano JSON-RPC per la gestione.',
               context: 'tools',
               difficulty: 'advanced',
+              command: `curl -u admin:secret -H 'Content-Type: application/json' -d '{"jsonrpc":"2.0","method":"cli","params":{"cmds":["show version"]},"id":1}' http://10.0.0.1/command-api`,
+              task: `Invia un comando 'show version' a un'eAPI Arista via JSON-RPC su HTTP per orchestrare il dispositivo da uno script.`,
             },
             {
               english: 'CLI Scraping',
@@ -9510,6 +10410,11 @@ export default {
                 'By definition, CLI Scraping is fragile but still common. = Il CLI scraping è fragile ma ancora comune.',
               context: 'tools',
               difficulty: 'advanced',
+              code: `from netmiko import ConnectHandler
+with ConnectHandler(device_type='cisco_ios', host='10.0.0.1', username='admin', password='secret') as c:
+    output = c.send_command('show interface status')
+    print(output)`,
+              task: `Esegui CLI scraping con netmiko per catturare l'output di 'show interface status' come fallback quando il device non espone API.`,
             },
             {
               english: 'Streaming Telemetry',
@@ -9520,6 +10425,9 @@ export default {
                 'In networking, Streaming Telemetry replaces SNMP polling. = La telemetria streaming sostituisce il polling SNMP.',
               context: 'tools',
               difficulty: 'advanced',
+              command:
+                'gnmic -a router:57400 --insecure -u admin subscribe --path /interfaces/interface/state/counters --sample-interval 10s',
+              task: 'Sottoscrivi i contatori delle interfacce via gNMI con campionamento a 10s per sostituire il polling SNMP con streaming continuo.',
             },
           ],
         },
@@ -9550,6 +10458,11 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               note: 'Network Automation and Programmability Abstraction Layer with Multivendor support.',
+              code: `from napalm import get_network_driver
+driver = get_network_driver('ios')
+with driver('10.0.0.1', 'admin', 'secret') as d:
+    print(d.get_facts())`,
+              task: `Usa NAPALM per recuperare i facts del router Cisco IOS via un'astrazione multivendor uniforme senza scrivere parser custom.`,
             },
             {
               english: 'Nornir',
@@ -9560,6 +10473,11 @@ export default {
                 'By definition, Nornir is a Python automation framework. = Nornir è un framework di automazione Python.',
               context: 'tools',
               difficulty: 'advanced',
+              code: `from nornir import InitNornir
+from nornir_netmiko import netmiko_send_command
+nr = InitNornir(config_file='config.yaml')
+result = nr.run(task=netmiko_send_command, command_string='show version')`,
+              task: `Inizializza Nornir con config.yaml e lancia 'show version' in parallelo su tutti gli host dell'inventario di automazione di rete.`,
             },
             {
               english: 'Paramiko',
@@ -9570,6 +10488,12 @@ export default {
                 'For network operations, Paramiko provides SSH in Python. = Paramiko fornisce SSH in Python.',
               context: 'tools',
               difficulty: 'advanced',
+              code: `import paramiko
+c = paramiko.SSHClient()
+c.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+c.connect('10.0.0.1', username='admin', password='secret')
+_, out, _ = c.exec_command('show ip route')`,
+              task: `Apri via Paramiko una sessione SSH al router e raccogli l'output di 'show ip route' direttamente da uno script Python.`,
             },
             {
               english: 'pyATS',
@@ -9580,6 +10504,8 @@ export default {
                 "By definition, pyATS is Cisco's testing framework. = pyATS è il framework di testing Cisco.",
               context: 'tools',
               difficulty: 'advanced',
+              command: 'pyats run job interfaces_test.py --testbed testbed.yaml',
+              task: 'Esegui un job pyATS contro un testbed per validare lo stato delle interfacce dopo un cambio di configurazione di rete.',
             },
             {
               english: 'TextFSM',
@@ -9590,6 +10516,12 @@ export default {
                 "In networking, TextFSM parses CLI output into structured data. = TextFSM analizza l'output CLI in dati strutturati.",
               context: 'tools',
               difficulty: 'advanced',
+              code: `import textfsm
+with open('cisco_show_ip_int_brief.template') as t:
+    fsm = textfsm.TextFSM(t)
+rows = fsm.ParseText(cli_output)
+print(fsm.header, rows)`,
+              task: `Parsifica con TextFSM l'output 'show ip interface brief' in righe strutturate riusabili dentro la pipeline di automazione.`,
             },
             {
               english: 'Genie',
@@ -9599,6 +10531,11 @@ export default {
               example: `Cisco Genie parses CLI output into structured Python objects so you can write assertions in a network test suite. = Cisco Genie trasforma l'output CLI in oggetti Python strutturati così puoi scrivere assertion in una suite di test di rete.`,
               context: 'tools',
               difficulty: 'advanced',
+              code: `from genie.libs.parser.utils import get_parser
+parser = get_parser('show interfaces', device)
+parsed = parser.cli(output=cli_output)
+print(parsed)`,
+              task: `Usa Cisco Genie per trasformare l'output CLI di 'show interfaces' in un dizionario Python strutturato pronto per le asserzioni.`,
             },
             {
               english: 'Jinja2',
@@ -9609,6 +10546,10 @@ export default {
                 'In networking, Jinja2 templates generate device configs. = I template Jinja2 generano configurazioni dispositivi.',
               context: 'tools',
               difficulty: 'advanced',
+              code: `from jinja2 import Template
+tpl = Template('interface {{ name }}\\n description {{ desc }}\\n ip address {{ ip }} {{ mask }}')
+print(tpl.render(name='Gi0/0', desc='WAN', ip='10.0.0.1', mask='255.255.255.252'))`,
+              task: 'Renderizza con Jinja2 una configurazione di interfaccia Cisco partendo da variabili nome/descrizione/IP per generare config riproducibili.',
             },
             {
               english: 'NetBox',
@@ -9620,6 +10561,11 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'NetBox',
+              code: `import pynetbox
+nb = pynetbox.api('https://netbox.example.com', token='$TOKEN')
+for d in nb.dcim.devices.filter(role='router'):
+    print(d.name, d.primary_ip)`,
+              task: `Interroga NetBox via pynetbox per elencare tutti i router con il loro primary IP come input dell'orchestratore di rete.`,
             },
             {
               english: 'Scrapli',
@@ -9630,6 +10576,10 @@ export default {
                 'By definition, Scrapli is a fast modern netmiko alternative. = Scrapli è una moderna alternativa veloce a netmiko.',
               context: 'tools',
               difficulty: 'advanced',
+              code: `from scrapli.driver.core import IOSXEDriver
+with IOSXEDriver(host='10.0.0.1', auth_username='admin', auth_password='secret', auth_strict_key=False) as conn:
+    print(conn.send_command('show version').result)`,
+              task: `Connettiti con Scrapli a un router IOS-XE per eseguire 'show version' sfruttando un driver SSH veloce e moderno.`,
             },
           ],
         },
@@ -9667,6 +10617,19 @@ export default {
                 'Before merging a router configuration change, the CI/CD pipeline runs automated syntax checks and topology simulations to catch errors early. = Prima di fare merge di un cambiamento di configurazione del router, la pipeline CI/CD esegue controlli automatici di sintassi e simulazioni di topologia per cogliere errori in anticipo.',
               context: 'tools',
               difficulty: 'advanced',
+              code: `stages:
+  - lint
+  - test
+  - deploy
+lint_configs:
+  stage: lint
+  script:
+    - ansible-lint playbooks/
+test_topology:
+  stage: test
+  script:
+    - batfish-check.py`,
+              task: 'Definisci una pipeline GitLab CI con lint dei playbook Ansible e test Batfish prima del deploy delle configurazioni di rete.',
             },
             {
               english: 'Pre-Change Test',
@@ -9677,6 +10640,9 @@ export default {
                 'Running automated pre-change tests against a lab environment catches misconfigurations before they can impact production traffic. = Eseguire test pre-change automatizzati contro un ambiente lab coglie le misconfigurazioni prima che possano impattare il traffico di produzione.',
               context: 'tools',
               difficulty: 'advanced',
+              command:
+                'batfish-check.py --snapshot proposed --reference baseline --tests reachability.json',
+              task: 'Esegui i test pre-change con Batfish confrontando lo snapshot proposto con la baseline per intercettare regressioni di routing.',
             },
             {
               english: 'Post-Change Test',
@@ -9687,6 +10653,8 @@ export default {
                 'After applying the new firewall rules, automated post-change tests confirm that all critical services remain reachable and latency stays within SLA. = Dopo aver applicato le nuove regole firewall, i test post-change automatizzati confermano che tutti i servizi critici restano raggiungibili e la latenza rimane entro lo SLA.',
               context: 'tools',
               difficulty: 'advanced',
+              command: 'pyats run job post_change_validation.py --testbed prod.yaml',
+              task: `Lancia il job pyATS di validazione post-change contro l'inventario prod per confermare reachability e SLA delle interfacce.`,
             },
             {
               english: 'Network Lab',
@@ -9697,6 +10665,8 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Containerlab, GNS3, EVE-NG',
+              command: 'containerlab deploy -t lab.clab.yaml',
+              task: 'Ricostruisci il network lab definito in lab.clab.yaml con containerlab per riprodurre la topologia di produzione in container.',
             },
             {
               english: 'Batfish',
@@ -9708,6 +10678,11 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Batfish',
+              code: `from pybatfish.client.session import Session
+bf = Session(host='localhost')
+bf.init_snapshot('configs/', name='current', overwrite=True)
+print(bf.q.routes().answer())`,
+              task: 'Carica via pybatfish uno snapshot di configurazioni e interroga le rotte calcolate offline per analisi statica della rete.',
             },
             {
               english: 'Network Validation',
@@ -9718,6 +10693,8 @@ export default {
                 'As a security measure, Network Validation prevents misconfigurations. = La validazione di rete previene errori di configurazione.',
               context: 'tools',
               difficulty: 'advanced',
+              command: 'ansible-playbook -i inventory.yml validate_state.yml --check',
+              task: 'Esegui in dry-run il playbook validate_state.yml per validare che la rete sia ancora conforme al modello senza applicare modifiche.',
             },
             {
               english: 'Rollback',
@@ -9728,6 +10705,8 @@ export default {
                 'Plan a rollback step before pushing a routing change: many automation tools auto-revert if the device loses connectivity. = Pianifica un passo di rollback prima di applicare un cambio di routing: molti tool di automazione fanno revert automatico se il device perde connettività.',
               context: 'tools',
               difficulty: 'advanced',
+              command: 'configure replace nvram:startup-config force',
+              task: 'Forza il rollback di un router Cisco rimpiazzando la running con la startup-config quando un cambio appena pushato genera problemi.',
             },
             {
               english: 'GitOps',
@@ -9738,6 +10717,8 @@ export default {
                 'In networking, GitOps drives changes from Git commits. = GitOps guida i cambiamenti dai commit Git.',
               context: 'tools',
               difficulty: 'advanced',
+              command: 'git push origin main && argocd app sync network-config',
+              task: 'Pubblica un commit con la nuova config di rete e sincronizza ArgoCD per applicare automaticamente il cambio GitOps al cluster.',
             },
           ],
         },
@@ -9765,6 +10746,8 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               note: 'Sviluppato da Cisco. Ora Flexible NetFlow.',
+              command: 'ip flow-export destination 10.0.0.5 2055 version 9',
+              task: `Configura un router Cisco perche' esporti flussi NetFlow v9 verso il collector 10.0.0.5 sulla porta UDP 2055.`,
             },
             {
               english: 'sFlow',
@@ -9776,6 +10759,10 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               note: 'Sampled Flow.',
+              command: `sflow agent eth0
+sflow collector ip=10.0.0.6 udpport=6343
+sflow sampling 1024`,
+              task: `Abilita sFlow su eth0 con campionamento 1:1024 e collector 10.0.0.6:6343 per monitorare il traffico ad alta velocita'.`,
             },
             {
               english: 'IPFIX',
@@ -9787,6 +10774,11 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               note: 'IP Flow Information Export. RFC 7011.',
+              command: `flow exporter EXP
+ destination 10.0.0.5
+ transport udp 4739
+ export-protocol ipfix`,
+              task: 'Configura un exporter IPFIX (RFC 7011) verso 10.0.0.5:4739 come successore standard di NetFlow per il monitoring di rete.',
             },
             {
               english: 'Flow Record',
@@ -9807,6 +10799,10 @@ export default {
                 "Each router runs a flow exporter that summarizes traffic into five-tuple records and sends them to the central collector for analysis. = Ogni router esegue un flow exporter che sintetizza il traffico in record a cinque tuple e li invia al collector centrale per l'analisi.",
               context: 'tools',
               difficulty: 'advanced',
+              command: `flow monitor MON
+ exporter EXP
+ record netflow-original`,
+              task: `Crea un flow monitor che usa l'exporter EXP per inviare ai collector tutti i record secondo il template NetFlow originale.`,
             },
             {
               english: 'Flow Collector',
@@ -9818,6 +10814,8 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'nfdump, ntopng',
+              command: 'nfcapd -w -D -p 2055 -l /var/cache/netflow',
+              task: 'Avvia nfcapd come flow collector su UDP 2055 scrivendo i record in /var/cache/netflow per analisi storica con NfSen.',
             },
             {
               english: 'Sampling Rate',
@@ -9829,6 +10827,8 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               note: 'Esempio: 1:1000 = un pacchetto ogni 1000.',
+              command: 'sflow sampling 4096',
+              task: `Imposta il sampling rate sFlow a 1:4096 per ridurre il carico CPU del router sacrificando un po' di accuratezza statistica.`,
             },
             {
               english: 'Flow Cache',
@@ -9849,6 +10849,8 @@ export default {
                 'In networking, Top Talkers identify heavy bandwidth users. = I top talker identificano utenti con uso pesante di banda.',
               context: 'tools',
               difficulty: 'advanced',
+              command: 'nfdump -r /var/cache/netflow/nfcapd.* -s ip/bytes -n 10',
+              task: `Estrai dai dump NetFlow i top 10 talker per byte trasmessi per identificare gli host che consumano piu' banda.`,
             },
             {
               english: 'Application Visibility',
@@ -9889,6 +10891,8 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               note: 'Inviate dal device al manager.',
+              command: 'snmp-server host 10.0.0.5 version 2c public',
+              task: `Configura il router perche' invii SNMP trap al manager 10.0.0.5 con community public per allertare eventi immediati.`,
             },
             {
               english: 'SNMP Walk',
@@ -9912,6 +10916,8 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               note: 'Default "public" molto rischioso!',
+              command: 'snmp-server community S3cret-RO RO',
+              task: `Definisci la community SNMPv2c S3cret-RO in sola lettura sostituendo l'insicura default 'public' sui dispositivi di rete.`,
             },
             {
               english: 'SNMPv3',
@@ -9922,6 +10928,8 @@ export default {
                 'In networking, SNMPv3 adds authentication and encryption. = SNMPv3 aggiunge autenticazione e cifratura.',
               context: 'tools',
               difficulty: 'advanced',
+              command: 'snmp-server user nms NMS-GROUP v3 auth sha AuthPass priv aes 128 PrivPass',
+              task: `Crea un utente SNMPv3 'nms' con autenticazione SHA e cifratura AES-128 per leggere metriche in modo sicuro dai device.`,
             },
             {
               english: 'Counter',
@@ -9932,6 +10940,8 @@ export default {
                 "SNMP counters track interface byte counts. = I contatori SNMP tracciano i conteggi di byte sull'interfaccia.",
               context: 'tools',
               difficulty: 'advanced',
+              command: 'snmpwalk -v 2c -c public 10.0.0.1 IF-MIB::ifInOctets',
+              task: 'Recupera tutti i contatori SNMP ifInOctets dal router 10.0.0.1 per misurare byte ricevuti su ogni interfaccia.',
             },
             {
               english: 'Gauge',
@@ -9942,6 +10952,8 @@ export default {
                 'In networking, a Gauge measures current value (CPU, RAM). = Un gauge misura il valore corrente (CPU, RAM).',
               context: 'tools',
               difficulty: 'advanced',
+              command: 'snmpget -v 2c -c public 10.0.0.1 HOST-RESOURCES-MIB::hrProcessorLoad.1',
+              task: 'Leggi via SNMP il gauge hrProcessorLoad sul router 10.0.0.1 per ottenere il carico CPU corrente come valore istantaneo.',
             },
             {
               english: 'Threshold',
@@ -9952,6 +10964,15 @@ export default {
                 "When CPU utilization crosses the 90% threshold for five consecutive minutes, the monitoring system triggers an alert and pages the on-call engineer. = Quando l'utilizzo CPU supera la soglia del 90% per cinque minuti consecutivi, il sistema di monitoraggio genera un alert e avvisa l'ingegnere reperibile.",
               context: 'tools',
               difficulty: 'advanced',
+              code: `groups:
+  - name: cpu
+    rules:
+      - alert: HighCpu
+        expr: cpu_load > 90
+        for: 5m
+        labels:
+          severity: warning`,
+              task: 'Definisci in Prometheus una regola che fa scattare HighCpu se cpu_load supera la soglia 90 per cinque minuti consecutivi.',
             },
             {
               english: 'Polling Interval',
@@ -9961,6 +10982,12 @@ export default {
               example: `A 1-minute polling interval is a good default for interface counters, but CPU and memory often need 30 seconds. = Un intervallo di polling di 1 minuto e' un buon default per i counter di interfaccia, ma CPU e memoria richiedono spesso 30 secondi.`,
               context: 'tools',
               difficulty: 'advanced',
+              code: `scrape_configs:
+  - job_name: routers
+    scrape_interval: 30s
+    static_configs:
+      - targets: ['10.0.0.1:9116']`,
+              task: 'Configura Prometheus per fare polling dei router SNMP exporter ogni 30 secondi, intervallo adatto a metriche CPU e memoria.',
             },
             {
               english: 'Bandwidth Utilization',
@@ -9971,6 +10998,8 @@ export default {
                 "By definition, Bandwidth Utilization is calculated from counters. = L'utilizzo di banda è calcolato dai contatori.",
               context: 'tools',
               difficulty: 'advanced',
+              command: 'snmpdelta -v 2c -c public -Cp 60 10.0.0.1 IF-MIB::ifHCInOctets.1',
+              task: `Calcola con snmpdelta il delta dei byte in ingresso sull'interfaccia 1 ogni 60s per derivare l'utilizzo di banda.`,
             },
           ],
         },
@@ -10000,6 +11029,8 @@ export default {
               difficulty: 'advanced',
               tool: 'Zabbix',
               note: 'Sistema open source di monitoring enterprise per metriche di rete, host e applicazioni.',
+              command: `zabbix_get -s 10.0.0.1 -p 10050 -k 'system.cpu.load[all,avg1]'`,
+              task: `Leggi via zabbix_get il carico medio CPU a 1 minuto dall'agent installato su 10.0.0.1 per testare il monitoring.`,
             },
             {
               english: 'PRTG',
@@ -10023,6 +11054,8 @@ export default {
               difficulty: 'advanced',
               tool: 'Nagios',
               note: 'Sistema di monitoring storico per host e servizi, base di molti fork moderni come Icinga.',
+              command: '/usr/lib/nagios/plugins/check_ping -H 8.8.8.8 -w 100,10% -c 200,30%',
+              task: 'Esegui il plugin Nagios check_ping verso 8.8.8.8 con soglie warning 100ms/10% e critical 200ms/30% per validare il monitoring.',
             },
             {
               english: 'LibreNMS',
@@ -10035,6 +11068,8 @@ export default {
               difficulty: 'advanced',
               tool: 'LibreNMS',
               note: 'NMS open source basato su PHP e MySQL, con auto-discovery via SNMP e dashboard integrate.',
+              command: 'php /opt/librenms/addhost.php 10.0.0.1 v2c public',
+              task: `Aggiungi il router 10.0.0.1 a LibreNMS via CLI con community SNMP public per attivare l'auto-discovery del dispositivo.`,
             },
             {
               english: 'Grafana',
@@ -10047,6 +11082,8 @@ export default {
               difficulty: 'advanced',
               tool: 'Grafana',
               note: 'Piattaforma open source di dashboard e visualizzazione per metriche time-series.',
+              command: 'docker run -d --name grafana -p 3000:3000 grafana/grafana',
+              task: 'Avvia un container Grafana sulla porta 3000 come base per costruire dashboard di metriche di rete time-series.',
             },
             {
               english: 'Prometheus',
@@ -10059,6 +11096,16 @@ export default {
               difficulty: 'advanced',
               tool: 'Prometheus',
               note: 'Sistema di monitoring CNCF basato su un database time-series e sul linguaggio di query PromQL.',
+              code: `global:
+  scrape_interval: 15s
+scrape_configs:
+  - job_name: snmp
+    static_configs:
+      - targets: ['10.0.0.1', '10.0.0.2']
+    metrics_path: /snmp
+    params:
+      module: [if_mib]`,
+              task: 'Definisci la configurazione Prometheus che scrapa tramite snmp_exporter le interfacce dei router 10.0.0.1 e 10.0.0.2 ogni 15 secondi.',
             },
             {
               english: 'SmokePing',
@@ -10069,6 +11116,8 @@ export default {
                 'In networking, SmokePing visualizes latency over time. = SmokePing visualizza la latenza nel tempo.',
               context: 'tools',
               difficulty: 'advanced',
+              command: 'smokeping --config=/etc/smokeping/config',
+              task: 'Avvia SmokePing con la sua configurazione standard per disegnare grafici di latenza e packet loss verso i target chiave.',
             },
             {
               english: 'Cacti',
@@ -10079,6 +11128,8 @@ export default {
                 'In networking, Cacti graphs RRD-based metrics. = Cacti grafica metriche basate su RRD.',
               context: 'tools',
               difficulty: 'advanced',
+              command: `php /var/www/html/cacti/cli/add_device.php --description='core-01' --ip=10.0.0.1 --template=3`,
+              task: 'Aggiungi via CLI il device core-01 a Cacti usando il template Cisco per iniziare a graficare le metriche SNMP.',
             },
             {
               english: 'ntopng',
@@ -10090,6 +11141,8 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'ntopng',
+              command: 'sudo ntopng -i eth0 -P /var/lib/ntopng/ntopng.pid',
+              task: 'Avvia ntopng in ascolto su eth0 per analizzare in tempo reale il traffico, host e applicazioni della rete.',
             },
           ],
         },
@@ -10108,6 +11161,8 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'rsyslog, syslog-ng',
+              command: `sudo sed -i 's/^#module(load="imudp")/module(load="imudp")\\ninput(type="imudp" port="514")/' /etc/rsyslog.conf && sudo systemctl restart rsyslog`,
+              task: 'Abilita il modulo imudp di rsyslog sulla porta 514 per ricevere log syslog dai dispositivi di rete sul collector centrale.',
             },
             {
               english: 'Log Aggregation',
@@ -10118,6 +11173,10 @@ export default {
                 "In networking, Log Aggregation collects logs centrally. = L'aggregazione log raccoglie log centralmente.",
               context: 'tools',
               difficulty: 'advanced',
+              code: `input { syslog { port => 5514 } }
+filter { grok { match => { 'message' => '%{SYSLOGLINE}' } } }
+output { elasticsearch { hosts => ['es:9200'] } }`,
+              task: 'Definisci una pipeline Logstash che riceve syslog su 5514, parsifica con grok e aggrega tutto in Elasticsearch per la dashboard.',
             },
             {
               english: 'ELK Stack',
@@ -10128,6 +11187,8 @@ export default {
                 "The ELK Stack combines Elasticsearch for indexing, Logstash for log ingestion, and Kibana for dashboards to give network teams full observability. = Lo stack ELK combina Elasticsearch per l'indicizzazione, Logstash per l'ingestione dei log e Kibana per le dashboard, dando ai team di rete piena osservabilita.",
               context: 'tools',
               difficulty: 'advanced',
+              command: 'docker compose -f elk-compose.yml up -d',
+              task: 'Avvia tutto lo stack ELK definito in elk-compose.yml per ingestion Logstash, indicizzazione Elasticsearch e dashboard Kibana.',
             },
             {
               english: 'Severity Level',
@@ -10139,6 +11200,8 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               note: '0=emergency, 7=debug.',
+              command: 'logging trap warnings',
+              task: `Configura un router perche' inoltri al syslog server solo i messaggi con severity warning (4) o superiore.`,
             },
             {
               english: 'Facility',
@@ -10159,6 +11222,13 @@ export default {
                 "When link utilization exceeds 85%, the monitoring system fires an alert that notifies the on-call network operator via PagerDuty. = Quando l'utilizzo del link supera l'85%, il sistema di monitoraggio genera un avviso che notifica l'operatore di rete reperibile tramite PagerDuty.",
               context: 'tools',
               difficulty: 'advanced',
+              code: `groups:
+  - name: link
+    rules:
+      - alert: HighLinkUtil
+        expr: rate(ifInOctets[5m]) * 8 / link_speed > 0.85
+        for: 10m`,
+              task: `Definisci in Prometheus una regola Alert che scatta se l'utilizzo del link supera l'85% per dieci minuti consecutivi.`,
             },
             {
               english: 'Alertmanager',
@@ -10169,6 +11239,14 @@ export default {
                 'In the forwarding pipeline, Alertmanager routes Prometheus alerts. = Alertmanager instrada gli alert di Prometheus.',
               context: 'tools',
               difficulty: 'advanced',
+              code: `route:
+  receiver: pagerduty
+  group_by: ['alertname', 'severity']
+receivers:
+  - name: pagerduty
+    pagerduty_configs:
+      - service_key: $PD_KEY`,
+              task: `Configura Alertmanager perche' instradi gli alert Prometheus raggruppati per nome e severity a PagerDuty tramite il service key.`,
             },
             {
               english: 'On-Call',
@@ -10368,6 +11446,12 @@ export default {
               context: 'design',
               difficulty: 'advanced',
               note: 'Hot Standby Router Protocol. Cisco.',
+              command: `interface Vlan10
+ ip address 10.0.10.2 255.255.255.0
+ standby 10 ip 10.0.10.1
+ standby 10 priority 110
+ standby 10 preempt`,
+              task: `Configura HSRP gruppo 10 sulla VLAN 10 con VIP 10.0.10.1 e priorita' 110 perche' questo switch diventi gateway attivo.`,
             },
             {
               english: 'VRRP',
@@ -10379,6 +11463,11 @@ export default {
               context: 'design',
               difficulty: 'advanced',
               note: 'Virtual Router Redundancy Protocol.',
+              command: `interface Vlan20
+ vrrp 20 ip 10.0.20.1
+ vrrp 20 priority 120
+ vrrp 20 preempt`,
+              task: `Configura VRRP gruppo 20 sulla VLAN 20 con VIP 10.0.20.1 e priorita' 120 come versione standard di HSRP.`,
             },
             {
               english: 'GLBP',
@@ -10390,6 +11479,10 @@ export default {
               context: 'design',
               difficulty: 'advanced',
               note: 'Gateway Load Balancing Protocol.',
+              command: `interface Vlan30
+ glbp 30 ip 10.0.30.1
+ glbp 30 load-balancing round-robin`,
+              task: `Configura GLBP gruppo 30 sulla VLAN 30 con VIP 10.0.30.1 in modalita' round-robin per bilanciare il traffico tra piu' gateway attivi.`,
             },
             {
               english: 'Active-Passive',
@@ -10421,6 +11514,8 @@ export default {
               context: 'design',
               difficulty: 'advanced',
               note: 'Tecnologie tipiche: Cisco StackWise, Aruba VSF, Juniper Virtual Chassis.',
+              command: 'show switch stack-ports',
+              task: 'Visualizza lo stato delle porte stack di uno switch StackWise per verificare che tutti i membri siano connessi e attivi.',
             },
             {
               english: 'VSS',
@@ -10431,6 +11526,10 @@ export default {
                 'In networking, VSS combines two switches into one. = VSS combina due switch in uno solo.',
               context: 'design',
               difficulty: 'advanced',
+              command: `switch virtual domain 100
+ switch 1 priority 110
+ switch 2 priority 100`,
+              task: `Configura VSS dominio 100 su due chassis Catalyst 6500/4500 dichiarando le priorita' relative per combinarli in un unico nodo logico.`,
             },
           ],
         },
@@ -10489,6 +11588,8 @@ export default {
                 "In networking, Oversubscription ratio measures uplink contention. = Il rapporto di oversubscription misura la contesa sull'uplink.",
               context: 'design',
               difficulty: 'advanced',
+              command: 'show interface counters etherchannel | include rate',
+              task: `Mostra le rate di tutti gli uplink aggregati di un leaf per calcolare il rapporto di oversubscription rispetto alla capacita' verso server.`,
             },
             {
               english: 'Fabric',
@@ -10607,6 +11708,8 @@ export default {
               context: 'design',
               difficulty: 'advanced',
               note: 'IP Address Management.',
+              command: `curl -H 'Authorization: Token $NETBOX_TOKEN' https://netbox.example.com/api/ipam/prefixes/`,
+              task: 'Interroga NetBox via API IPAM per elencare tutti i prefissi allocati prima di assegnare una nuova subnet al progetto.',
             },
             {
               english: 'Network Diagram',
@@ -10929,6 +12032,14 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               tool: 'RANCID, Oxidized',
+              code: `- hosts: routers
+  tasks:
+    - name: backup running-config
+      cisco.ios.ios_config:
+        backup: yes
+        backup_options:
+          dir_path: /backups/{{ inventory_hostname }}`,
+              task: 'Definisci un task Ansible che fa il backup notturno della running-config di ogni router in /backups per rollback storico via Git.',
             },
             {
               english: 'Naming Convention',

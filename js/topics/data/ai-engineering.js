@@ -328,6 +328,8 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               note: "Mai usato durante l'addestramento, solo alla fine.",
+              code: 'X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)',
+              task: 'Separa un test set del 20% dal dataset originale per valutare il modello solo a fine training.',
             },
             {
               english: 'Validation Set',
@@ -339,6 +341,8 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Diverso dal test set: serve per scegliere il modello migliore.',
+              code: 'X_train, X_val, y_train, y_val = train_test_split(X_train, y_train, test_size=0.2)',
+              task: 'Ricava un validation set dal training per scegliere gli iperparametri senza toccare il test set finale.',
             },
             {
               english: 'Deployment',
@@ -350,6 +354,8 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               note: 'In gergo italiano si usa anche "deploy" o "messa in produzione".',
+              code: `joblib.dump(model, 'model.pkl')`,
+              task: 'Serializza il modello allenato su disco come primo passo del processo di deployment in produzione.',
             },
             {
               english: 'Monitoring',
@@ -360,6 +366,8 @@ export default {
                 'Our monitoring dashboard alerts us when prediction drift exceeds 5% from baseline. = La nostra dashboard di monitoraggio ci avvisa quando la deviazione delle predizioni supera il 5% dal riferimento.',
               context: 'foundations',
               difficulty: 'beginner',
+              code: `mlflow.log_metric('accuracy', acc)`,
+              task: 'Registra la metrica di accuratezza su MLflow per monitorare la qualita del modello nel tempo.',
             },
             {
               english: 'Iteration',
@@ -388,6 +396,9 @@ export default {
                 'Spotify Discover Weekly is powered by a recommendation system analyzing listening history. = Discover Weekly di Spotify è alimentato da un sistema di raccomandazione che analizza la cronologia di ascolto.',
               context: 'foundations',
               difficulty: 'beginner',
+              code: `from sklearn.metrics.pairwise import cosine_similarity
+sim = cosine_similarity(user_vectors)`,
+              task: 'Calcola la similarita coseno fra utenti come base di un sistema di raccomandazione collaborativo.',
             },
             {
               english: 'Chatbot',
@@ -399,6 +410,10 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Termine spesso lasciato in inglese.',
+              code: `from openai import OpenAI
+client = OpenAI()
+resp = client.chat.completions.create(model="gpt-4", messages=msgs)`,
+              task: 'Invoca un modello di chat tramite API OpenAI per costruire la risposta del chatbot al messaggio utente.',
             },
             {
               english: 'Speech Recognition',
@@ -410,6 +425,10 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Esempi: Siri, Alexa, dettatura del telefono.',
+              code: `import whisper
+model = whisper.load_model("base")
+result = model.transcribe("audio.mp3")`,
+              task: 'Trascrivi un file audio in testo usando il modello Whisper di OpenAI con qualita base.',
             },
             {
               english: 'Image Recognition',
@@ -420,6 +439,10 @@ export default {
                 'Quality control on factory floors uses image recognition to spot defective parts instantly. = Il controllo qualità in fabbrica usa il riconoscimento immagini per individuare pezzi difettosi.',
               context: 'foundations',
               difficulty: 'beginner',
+              code: `from torchvision.models import resnet50
+model = resnet50(pretrained=True)
+model.eval()`,
+              task: 'Carica una ResNet50 pre-addestrata su ImageNet per riconoscere il contenuto di immagini fotografiche.',
             },
             {
               english: 'Self-Driving Car',
@@ -440,6 +463,9 @@ export default {
                 'Banks process millions of transactions daily, relying on fraud detection to flag suspicious patterns. = Le banche elaborano milioni di transazioni al giorno, usando il rilevamento frodi per segnalare pattern sospetti.',
               context: 'foundations',
               difficulty: 'beginner',
+              code: `from sklearn.ensemble import IsolationForest
+model = IsolationForest(contamination=0.01).fit(transactions)`,
+              task: `Addestra un Isolation Forest sulle transazioni assumendo l'1% di frodi per individuare comportamenti anomali.`,
             },
             {
               english: 'Sentiment Analysis',
@@ -451,6 +477,10 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               note: '"Sentiment" si lascia in inglese; "analisi del sentimento" suona innaturale.',
+              code: `from transformers import pipeline
+sent = pipeline("sentiment-analysis")
+sent("I love this product")`,
+              task: `Usa la pipeline HuggingFace pronta all'uso per classificare il sentimento positivo o negativo di una frase.`,
             },
             {
               english: 'Predictive Analytics',
@@ -461,6 +491,9 @@ export default {
                 "Retailers use predictive analytics to forecast demand and optimize inventory before holidays. = I retailer usano l'analisi predittiva per prevedere la domanda e ottimizzare l'inventario prima delle festività.",
               context: 'foundations',
               difficulty: 'beginner',
+              code: `from sklearn.linear_model import LinearRegression
+future = LinearRegression().fit(X, y).predict(X_future)`,
+              task: 'Stima le vendite future addestrando una regressione lineare sui dati storici e applicandola ai dati prossimi.',
             },
             {
               english: 'Anomaly Detection',
@@ -472,6 +505,9 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Usato per cybersecurity, monitoraggio industriale, fraud detection.',
+              code: `from sklearn.ensemble import IsolationForest
+outliers = IsolationForest().fit_predict(X)`,
+              task: 'Identifica i punti anomali nel dataset etichettandoli come -1 tramite un Isolation Forest non supervisionato.',
             },
             {
               english: 'Personal Assistant',
@@ -534,6 +570,8 @@ export default {
                 'Columns like age, income, and temperature are numerical data that models can use directly. = Colonne come età, reddito e temperatura sono dati numerici che i modelli possono usare direttamente.',
               context: 'data-engineering',
               difficulty: 'beginner',
+              code: 'df.select_dtypes(include="number")',
+              task: 'Filtra solo le colonne numeriche dal DataFrame per poterle usare direttamente in un modello scikit-learn.',
             },
             {
               english: 'Categorical Data',
@@ -545,6 +583,8 @@ export default {
               context: 'data-engineering',
               difficulty: 'beginner',
               note: "Devono essere convertiti in numeri prima dell'addestramento.",
+              code: 'df.select_dtypes(include="object")',
+              task: 'Estrai tutte le colonne categoriche del DataFrame in modo da prepararle per la codifica numerica.',
             },
             {
               english: 'Ordinal Data',
@@ -556,6 +596,9 @@ export default {
               context: 'data-engineering',
               difficulty: 'beginner',
               note: 'Esempi: small/medium/large, low/high.',
+              code: `from sklearn.preprocessing import OrdinalEncoder
+enc = OrdinalEncoder(categories=[["small","medium","large"]])`,
+              task: `Codifica una colonna ordinale rispettando l'ordine small, medium, large tramite OrdinalEncoder di scikit-learn.`,
             },
             {
               english: 'Continuous Variable',
@@ -567,6 +610,8 @@ export default {
               context: 'data-engineering',
               difficulty: 'beginner',
               note: 'Può assumere infiniti valori in un intervallo.',
+              code: 'df["height"].astype(float).describe()',
+              task: 'Converti la colonna height in float e calcola le statistiche descrittive della variabile continua.',
             },
             {
               english: 'Discrete Variable',
@@ -577,6 +622,8 @@ export default {
                 'Counting login attempts gives a discrete variable that only takes non-negative integers. = Contare i tentativi di login dà una variabile discreta che assume solo interi non negativi.',
               context: 'data-engineering',
               difficulty: 'beginner',
+              code: 'df["num_children"].value_counts()',
+              task: 'Conta quanti record ricadono in ciascun valore intero della variabile discreta num_children.',
             },
             {
               english: 'Time Series',
@@ -588,6 +635,9 @@ export default {
               context: 'data-engineering',
               difficulty: 'beginner',
               note: 'Richiede tecniche speciali: ARIMA, Prophet, RNN.',
+              code: `df["date"] = pd.to_datetime(df["date"])
+df = df.set_index("date").sort_index()`,
+              task: 'Converti la colonna date in datetime e usala come indice ordinato per analizzare la serie storica.',
             },
             {
               english: 'Structured Data',
@@ -599,6 +649,8 @@ export default {
               context: 'data-engineering',
               difficulty: 'beginner',
               note: 'Tipicamente in tabelle con righe e colonne.',
+              code: 'df = pd.read_sql("SELECT * FROM customers", conn)',
+              task: 'Carica dati strutturati da una tabella SQL in un DataFrame pandas per analisi tabulari.',
             },
             {
               english: 'Unstructured Data',
@@ -610,6 +662,9 @@ export default {
               context: 'data-engineering',
               difficulty: 'beginner',
               note: "Rappresentano l'80% circa dei dati aziendali.",
+              code: `with open("document.txt") as f:
+    text = f.read()`,
+              task: 'Leggi un documento di testo non strutturato dal disco in una stringa Python pronta per la tokenizzazione.',
             },
           ],
         },
@@ -628,6 +683,8 @@ export default {
               context: 'data-engineering',
               difficulty: 'beginner',
               note: 'Realtà spesso sottostimata dai principianti.',
+              code: 'df = df.drop_duplicates().dropna().reset_index(drop=True)',
+              task: 'Esegui una pulizia base eliminando duplicati e valori mancanti prima di passare alla fase di feature engineering.',
             },
             {
               english: 'Missing Data',
@@ -663,6 +720,9 @@ export default {
               context: 'data-engineering',
               difficulty: 'beginner',
               note: 'Possono essere errori o casi rari ma reali: indagare prima di rimuovere.',
+              code: `q1, q3 = df["price"].quantile([0.25, 0.75])
+mask = df["price"].between(q1 - 1.5*(q3-q1), q3 + 1.5*(q3-q1))`,
+              task: 'Identifica gli outlier della colonna price con il metodo IQR tenendo solo i valori dentro 1.5 volte il range.',
             },
             {
               english: 'Duplicate',
@@ -686,6 +746,9 @@ export default {
               context: 'data-engineering',
               difficulty: 'beginner',
               note: 'Variazioni casuali che il modello non dovrebbe imparare.',
+              code: `import numpy as np
+X_smoothed = X + np.random.normal(0, 0.01, X.shape)`,
+              task: 'Aggiungi rumore gaussiano leggero alle feature per simulare un dataset realistico durante i test.',
             },
             {
               english: 'Inconsistent Data',
@@ -707,6 +770,8 @@ export default {
                 "Our data validation pipeline rejects rows where age is negative or email format is invalid. = La nostra pipeline di validazione dei dati rifiuta le righe dove l'età è negativa o il formato email non è valido.",
               context: 'data-engineering',
               difficulty: 'beginner',
+              code: 'assert df["age"].between(0, 120).all(), "Age fuori range"',
+              task: 'Verifica via assert che tutti i valori della colonna age siano compresi tra 0 e 120 prima di procedere.',
             },
             {
               english: 'Data Profiling',
@@ -718,6 +783,9 @@ export default {
               context: 'data-engineering',
               difficulty: 'beginner',
               tool: 'pandas-profiling, ydata-profiling',
+              code: `from ydata_profiling import ProfileReport
+ProfileReport(df).to_file("report.html")`,
+              task: 'Genera un report HTML di profiling con ydata-profiling per ispezionare distribuzioni e correlazioni del dataset.',
             },
             {
               english: 'Data Transformation',
@@ -728,6 +796,8 @@ export default {
                 "Applying log data transformation to income reduced skewness from 4.2 to 0.3. = Applicare la trasformazione logaritmica dei dati al reddito ha ridotto l'asimmetria da 4.2 a 0.3.",
               context: 'data-engineering',
               difficulty: 'beginner',
+              code: 'df["log_income"] = np.log1p(df["income"])',
+              task: `Trasforma la colonna income con il logaritmo per ridurre l'asimmetria e stabilizzare la varianza.`,
             },
           ],
         },
@@ -831,6 +901,9 @@ export default {
                 "We applied a Box-Cox transformation to revenue, improving R-squared by 8 percentage points. = Abbiamo applicato una trasformazione Box-Cox ai ricavi, migliorando l'R quadrato di 8 punti percentuali.",
               context: 'data-engineering',
               difficulty: 'beginner',
+              code: `from scipy.stats import boxcox
+transformed, lam = boxcox(df["price"] + 1)`,
+              task: 'Applica la trasformazione Box-Cox a una colonna positiva per renderla piu vicina a una distribuzione normale.',
             },
             {
               english: 'Mean',
@@ -912,6 +985,8 @@ export default {
               context: 'data-engineering',
               difficulty: 'beginner',
               note: 'Detta anche mean encoding. Rischia data leakage se non fatta con cura.',
+              code: 'df["city_te"] = df.groupby("city")["target"].transform("mean")',
+              task: 'Sostituisci la colonna categorica city con la media del target per ogni gruppo, usando il target encoding.',
             },
             {
               english: 'Train-Test Split',
@@ -973,6 +1048,9 @@ export default {
               context: 'data-engineering',
               difficulty: 'beginner',
               note: 'Errore comune e insidioso che gonfia i risultati.',
+              code: `scaler.fit(X_train)
+X_test_scaled = scaler.transform(X_test)`,
+              task: 'Adatta lo scaler solo sul training set e applicalo al test set per evitare data leakage dalle statistiche future.',
             },
             {
               english: 'Class Imbalance',
@@ -984,6 +1062,9 @@ export default {
               context: 'data-engineering',
               difficulty: 'beginner',
               note: 'Problema in fraud detection, malattie rare, ecc.',
+              code: `from imblearn.over_sampling import SMOTE
+X_bal, y_bal = SMOTE().fit_resample(X, y)`,
+              task: 'Bilancia un dataset sbilanciato generando esempi sintetici della classe minoritaria con SMOTE.',
             },
           ],
         },
@@ -1023,6 +1104,9 @@ export default {
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'Solo due classi possibili: 0 o 1, spam o non spam.',
+              code: `from sklearn.linear_model import LogisticRegression
+model = LogisticRegression().fit(X_train, y_train)`,
+              task: 'Addestra una regressione logistica per classificare le email come spam o non spam in modo binario.',
             },
             {
               english: 'Multiclass Classification',
@@ -1033,6 +1117,9 @@ export default {
                 'Predicting which of 10 product categories a review belongs to is a multiclass classification problem. = Predire a quale di 10 categorie di prodotto appartiene una recensione è un problema di classificazione multiclasse.',
               context: 'machine-learning',
               difficulty: 'beginner',
+              code: `from sklearn.linear_model import LogisticRegression
+model = LogisticRegression(multi_class="multinomial").fit(X, y)`,
+              task: 'Configura una regressione logistica multinomiale per classificare immagini in piu di due categorie.',
             },
             {
               english: 'Logistic Regression',
@@ -1122,6 +1209,8 @@ export default {
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'Default 0.5 ma spesso va regolato.',
+              code: 'y_pred = (model.predict_proba(X_test)[:, 1] >= 0.7).astype(int)',
+              task: 'Trasforma le probabilita predette in classi alzando la soglia a 0.7 per ridurre i falsi positivi.',
             },
           ],
         },
@@ -1140,6 +1229,9 @@ export default {
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'Esempi: prezzo casa, temperatura, vendite future.',
+              code: `from sklearn.linear_model import LinearRegression
+model = LinearRegression().fit(X_train, y_train)`,
+              task: 'Addestra un modello di regressione lineare per prevedere il prezzo di una casa a partire dalle sue caratteristiche.',
             },
             {
               english: 'Linear Regression',
@@ -1174,6 +1266,9 @@ export default {
                 'Our multiple regression model uses square footage, location, and age to predict apartment prices. = Il nostro modello di regressione multipla usa metratura, posizione ed età per predire i prezzi degli appartamenti.',
               context: 'machine-learning',
               difficulty: 'beginner',
+              code: `X = df[["size", "bedrooms", "age"]]
+model = LinearRegression().fit(X, y)`,
+              task: 'Allena una regressione multipla con piu feature indipendenti per prevedere il prezzo della casa.',
             },
             {
               english: 'Ridge Regression',
@@ -1267,6 +1362,10 @@ export default {
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'Termine spesso lasciato in inglese: "il modello fa overfitting".',
+              code: `train_acc = model.score(X_train, y_train)
+test_acc = model.score(X_test, y_test)
+print(train_acc, test_acc)`,
+              task: `Confronta accuratezza su train e test: un divario forte e' sintomo classico di overfitting.`,
             },
             {
               english: 'Underfitting',
@@ -1331,6 +1430,9 @@ export default {
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'Tecniche comuni: L1 (Lasso), L2 (Ridge), dropout.',
+              code: `from sklearn.linear_model import Ridge
+model = Ridge(alpha=1.0).fit(X_train, y_train)`,
+              task: `Applica regolarizzazione L2 con alpha 1.0 usando Ridge per ridurre l'overfitting del modello lineare.`,
             },
             {
               english: 'Early Stopping',
@@ -1342,6 +1444,9 @@ export default {
               context: 'machine-learning',
               difficulty: 'beginner',
               note: "Tecnica semplice ed efficace contro l'overfitting.",
+              code: `from tensorflow.keras.callbacks import EarlyStopping
+es = EarlyStopping(monitor="val_loss", patience=3)`,
+              task: `Configura un callback di early stopping che fermi l'addestramento dopo 3 epoche senza miglioramento della val_loss.`,
             },
             {
               english: 'Learning Curve',
@@ -1383,6 +1488,9 @@ export default {
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'Termine francese spesso usato in inglese e italiano senza traduzione.',
+              code: `from sklearn.ensemble import VotingClassifier
+vc = VotingClassifier([("lr", lr), ("dt", dt), ("svc", svc)])`,
+              task: 'Combina regressione logistica, albero e SVC in un ensemble con voto a maggioranza per migliorare la robustezza.',
             },
             {
               english: 'Bagging',
@@ -1407,6 +1515,9 @@ export default {
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'Esempi famosi: AdaBoost, XGBoost, LightGBM.',
+              code: `from xgboost import XGBClassifier
+model = XGBClassifier(n_estimators=100).fit(X_train, y_train)`,
+              task: 'Addestra un classificatore XGBoost con 100 stimatori per sfruttare il boosting sequenziale degli errori.',
             },
             {
               english: 'Gradient Boosting',
@@ -1489,6 +1600,8 @@ export default {
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'Tecnica di campionamento alla base del bagging.',
+              code: 'sample = df.sample(n=len(df), replace=True)',
+              task: `Estrai un campione bootstrap della stessa dimensione del dataset originale con rimpiazzo per stimare l'incertezza.`,
             },
           ],
         },
@@ -1516,6 +1629,9 @@ export default {
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'Termine spesso lasciato in inglese.',
+              code: `from sklearn.cluster import KMeans
+clusters = KMeans(n_clusters=3).fit_predict(X)`,
+              task: `Raggruppa i dati in 3 cluster con KMeans e ottieni l'etichetta di appartenenza per ogni punto.`,
             },
             {
               english: 'K-Means',
@@ -1601,6 +1717,9 @@ export default {
                 'The elbow method suggested k=4 as the optimal number of clusters for our market data. = Il metodo del gomito ha suggerito k=4 come numero ottimale di cluster per i nostri dati di mercato.',
               context: 'machine-learning',
               difficulty: 'beginner',
+              code: `inertias = [KMeans(n_clusters=k).fit(X).inertia_ for k in range(1, 11)]
+plt.plot(range(1, 11), inertias)`,
+              task: `Traccia il grafico dell'inerzia al variare di k per identificare il gomito ottimale del numero di cluster.`,
             },
             {
               english: 'Distance Metric',
@@ -1612,6 +1731,9 @@ export default {
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'Altre metriche: Manhattan, coseno, Mahalanobis.',
+              code: `from sklearn.metrics import pairwise_distances
+D = pairwise_distances(X, metric="euclidean")`,
+              task: 'Calcola la matrice delle distanze euclidee tra tutti i punti del dataset come base per algoritmi geometrici.',
             },
             {
               english: 'Cluster',
@@ -1640,6 +1762,9 @@ export default {
                 'Before visualizing 500-feature data, we applied dimensionality reduction to project it to 2D. = Prima di visualizzare dati a 500 feature, abbiamo applicato la riduzione dimensionale per proiettarli in 2D.',
               context: 'machine-learning',
               difficulty: 'beginner',
+              code: `from sklearn.decomposition import PCA
+X_reduced = PCA(n_components=2).fit_transform(X)`,
+              task: 'Riduci le feature a 2 componenti principali con PCA per visualizzare il dataset su un piano cartesiano.',
             },
             {
               english: 'PCA',
@@ -1724,6 +1849,9 @@ export default {
                 'Before training the classifier, feature reduction cut the input space from 1,000 columns to 50. = Prima di addestrare il classificatore, la riduzione delle feature ha tagliato lo spazio di input da 1.000 colonne a 50.',
               context: 'machine-learning',
               difficulty: 'beginner',
+              code: `from sklearn.feature_selection import SelectKBest, f_classif
+X_new = SelectKBest(f_classif, k=10).fit_transform(X, y)`,
+              task: 'Seleziona le 10 feature piu informative tramite test F con SelectKBest di scikit-learn.',
             },
             {
               english: 'Latent Variable',
@@ -1745,6 +1873,9 @@ export default {
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'Termine matematico di topologia applicato al ML.',
+              code: `from sklearn.manifold import TSNE
+X_2d = TSNE(n_components=2, perplexity=30).fit_transform(X)`,
+              task: 'Proietta dati ad alta dimensionalita in 2D con t-SNE per visualizzare cluster non lineari preservando i vicini.',
             },
           ],
         },
@@ -1774,6 +1905,9 @@ export default {
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'Classico per market basket analysis.',
+              code: `from mlxtend.frequent_patterns import apriori
+freq = apriori(transactions, min_support=0.1, use_colnames=True)`,
+              task: `Estrai itemset frequenti dalle transazioni con l'algoritmo Apriori impostando supporto minimo del 10%.`,
             },
             {
               english: 'Frequent Itemset',
@@ -1784,6 +1918,9 @@ export default {
                 "After scanning millions of receipts, the frequent itemset {coffee, milk, sugar} appeared in 15% of baskets. = Dopo aver analizzato milioni di scontrini, l'itemset frequente {caffè, latte, zucchero} appariva nel 15% dei carrelli.",
               context: 'machine-learning',
               difficulty: 'beginner',
+              code: `freq = apriori(df_basket, min_support=0.05, use_colnames=True)
+print(freq.sort_values("support", ascending=False))`,
+              task: 'Ottieni gli itemset frequenti ordinati per supporto decrescente per scoprire i prodotti comprati spesso insieme.',
             },
             {
               english: 'Support',
@@ -1829,6 +1966,9 @@ export default {
                 "Supermarkets use market basket analysis to decide which products to place near each other on shelves. = I supermercati usano l'analisi del carrello per decidere quali prodotti posizionare vicini sugli scaffali.",
               context: 'machine-learning',
               difficulty: 'beginner',
+              code: `from mlxtend.frequent_patterns import association_rules
+rules = association_rules(freq, metric="lift", min_threshold=1.2)`,
+              task: 'Genera regole di associazione dai pattern frequenti con lift minimo 1.2 per studiare il carrello della spesa.',
             },
             {
               english: 'Anomaly',
@@ -1881,6 +2021,9 @@ export default {
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'Alla base di GPT, BERT e altri modelli moderni.',
+              code: `from transformers import AutoTokenizer, AutoModelForMaskedLM
+model = AutoModelForMaskedLM.from_pretrained("bert-base-uncased")`,
+              task: 'Carica un BERT addestrato in modo self-supervised come base per task downstream di NLP.',
             },
             {
               english: 'Semi-Supervised Learning',
@@ -1912,6 +2055,9 @@ export default {
                 'We used pseudo-labeling to let the teacher model generate labels for the unlabeled portion of our dataset. = Abbiamo usato il pseudo-labeling per far generare al modello insegnante etichette per la porzione non etichettata del dataset.',
               context: 'machine-learning',
               difficulty: 'beginner',
+              code: `probs = model.predict_proba(X_unlabeled)
+pseudo = np.where(probs.max(axis=1) > 0.9, probs.argmax(axis=1), -1)`,
+              task: `Assegna pseudo-etichette ai dati non etichettati solo dove il modello e' molto sicuro, oltre il 90% di probabilita.`,
             },
             {
               english: 'Contrastive Learning',
@@ -1923,6 +2069,8 @@ export default {
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'Esempi: SimCLR, CLIP.',
+              code: 'loss = -torch.log(torch.exp(sim_pos / tau) / torch.exp(sim_neg / tau).sum())',
+              task: 'Calcola la loss contrastiva InfoNCE che avvicina coppie positive e allontana quelle negative nello spazio latente.',
             },
             {
               english: 'Masked Language Model',
@@ -1934,6 +2082,10 @@ export default {
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'MLM: il modello impara prevedendo parole nascoste.',
+              code: `from transformers import pipeline
+fill = pipeline("fill-mask", model="bert-base-uncased")
+fill("Paris is the [MASK] of France.")`,
+              task: 'Usa un BERT pre-addestrato per predire la parola mascherata in una frase tramite la pipeline fill-mask.',
             },
             {
               english: 'Autoencoder',
@@ -1945,6 +2097,13 @@ export default {
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'Termine sempre lasciato in inglese.',
+              code: `import torch.nn as nn
+class AE(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.enc = nn.Linear(784, 32)
+        self.dec = nn.Linear(32, 784)`,
+              task: 'Definisci un autoencoder PyTorch con bottleneck a 32 unita per comprimere immagini 28x28 in uno spazio latente.',
             },
             {
               english: 'Bottleneck',
@@ -1966,6 +2125,9 @@ export default {
                 'Instead of hand-crafting features, representation learning lets the network discover useful encodings automatically. = Invece di creare feature a mano, il representation learning lascia che la rete scopra codifiche utili automaticamente.',
               context: 'machine-learning',
               difficulty: 'beginner',
+              code: `embeddings = encoder(images)
+features = embeddings.detach().cpu().numpy()`,
+              task: `Estrai le rappresentazioni latenti dall'encoder pre-addestrato per usarle come feature in un classificatore semplice.`,
             },
             {
               english: 'Pretraining',
@@ -1977,6 +2139,10 @@ export default {
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'Strategia chiave dei moderni LLM.',
+              code: `from transformers import Trainer
+trainer = Trainer(model=mlm_model, args=args, train_dataset=corpus)
+trainer.train()`,
+              task: 'Avvia la fase di pretraining MLM di un transformer su un grande corpus tramite il Trainer di HuggingFace.',
             },
           ],
         },
@@ -2004,6 +2170,8 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Detto anche unit, ispirato al neurone biologico.',
+              code: 'output = activation(np.dot(weights, inputs) + bias)',
+              task: `Calcola l'output di un singolo neurone moltiplicando input per pesi, sommando il bias e applicando l'attivazione.`,
             },
             {
               english: 'Perceptron',
@@ -2015,6 +2183,9 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Inventato nel 1957 da Frank Rosenblatt.',
+              code: `from sklearn.linear_model import Perceptron
+model = Perceptron(max_iter=100).fit(X, y)`,
+              task: `Addestra un Perceptron di scikit-learn su dati linearmente separabili per capire l'algoritmo originale del 1957.`,
             },
             {
               english: 'Layer',
@@ -2038,6 +2209,8 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: '"Nascosti" perché non visibili all\'utente.',
+              code: 'model = nn.Sequential(nn.Linear(784, 128), nn.ReLU(), nn.Linear(128, 10))',
+              task: 'Costruisci una rete con uno strato nascosto da 128 unita e attivazione ReLU tra input e output.',
             },
             {
               english: 'Input Layer',
@@ -2060,6 +2233,9 @@ export default {
                 'For 10-digit classification, the output layer has 10 neurons with softmax activation. = Per la classificazione di 10 cifre, lo strato di output ha 10 neuroni con attivazione softmax.',
               context: 'deep-learning',
               difficulty: 'intermediate',
+              code: `out = nn.Linear(128, 10)
+logits = out(features)`,
+              task: 'Definisci un layer di output con 10 unita per produrre i logit di un classificatore a 10 classi.',
             },
             {
               english: 'Weight',
@@ -2094,6 +2270,8 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Detto anche dense layer.',
+              code: 'fc = nn.Linear(in_features=512, out_features=128)',
+              task: 'Crea un layer fully connected in PyTorch che mappa 512 feature di input in 128 feature di output.',
             },
             {
               english: 'Feedforward',
@@ -2105,6 +2283,10 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: "L'informazione scorre solo in avanti.",
+              code: `class FFN(nn.Module):
+    def forward(self, x):
+        return self.fc2(F.relu(self.fc1(x)))`,
+              task: 'Implementa il forward di una rete feedforward minimale con due layer lineari intervallati da ReLU.',
             },
           ],
         },
@@ -2199,6 +2381,10 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Gaussian Error Linear Unit. Usata in BERT, GPT.',
+              code: `import torch.nn as nn
+act = nn.GELU()
+out = act(x)`,
+              task: `Applica l'attivazione GELU come fanno BERT e GPT, alternativa piu liscia alla ReLU classica.`,
             },
             {
               english: 'Swish',
@@ -2222,6 +2408,9 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Termine sempre lasciato in inglese.',
+              code: `logits = model(x)
+probs = torch.softmax(logits, dim=-1)`,
+              task: `Ottieni i logit dal modello e trasformali in probabilita applicando la softmax sull'ultima dimensione.`,
             },
             {
               english: 'Non-Linearity',
@@ -2251,6 +2440,9 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Algoritmo che ha reso possibile il deep learning moderno.',
+              code: `loss.backward()
+optimizer.step()`,
+              task: `Esegui la backpropagation chiamando backward() sulla loss e poi aggiorna i pesi con l'optimizer.`,
             },
             {
               english: 'Forward Pass',
@@ -2286,6 +2478,9 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'In ML si scende lungo il gradiente (gradient descent).',
+              code: `loss.backward()
+print(model.weight.grad)`,
+              task: 'Calcola e ispeziona il gradiente di un parametro dopo backward per capire come la loss cambia rispetto ai pesi.',
             },
             {
               english: 'Chain Rule',
@@ -2308,6 +2503,9 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Problema storico risolto da ReLU, ResNet e batch norm.',
+              code: `for name, p in model.named_parameters():
+    print(name, p.grad.abs().mean().item())`,
+              task: 'Stampa la magnitudine media dei gradienti per ogni layer e individua dove svaniscono nelle reti profonde.',
             },
             {
               english: 'Exploding Gradient',
@@ -2319,6 +2517,8 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Si mitiga con gradient clipping.',
+              code: 'torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)',
+              task: 'Limita la norma dei gradienti a 1.0 con gradient clipping per evitare aggiornamenti esplosivi dei pesi.',
             },
             {
               english: 'Gradient Clipping',
@@ -2342,6 +2542,11 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Detta anche autograd. Cuore di PyTorch e TensorFlow.',
+              code: `x = torch.tensor([2.0], requires_grad=True)
+y = x**2
+y.backward()
+print(x.grad)`,
+              task: 'Usa autograd di PyTorch per calcolare automaticamente la derivata di y rispetto a x partendo da y = x al quadrato.',
             },
             {
               english: 'Computational Graph',
@@ -2352,6 +2557,9 @@ export default {
                 "The framework builds a computational graph tracking every operation so gradients can flow backward. = Il framework costruisce un grafo computazionale che traccia ogni operazione così i gradienti possono fluire all'indietro.",
               context: 'deep-learning',
               difficulty: 'intermediate',
+              code: `from torchviz import make_dot
+make_dot(loss, params=dict(model.named_parameters())).render("graph")`,
+              task: 'Visualizza il grafo computazionale del modello PyTorch generando un PDF con torchviz a scopo didattico.',
             },
           ],
         },
@@ -2382,6 +2590,8 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Detta anche Glorot initialization.',
+              code: 'nn.init.xavier_uniform_(layer.weight)',
+              task: `Inizializza i pesi di un layer con la distribuzione uniforme di Xavier per stabilizzare l'addestramento.`,
             },
             {
               english: 'He Initialization',
@@ -2393,6 +2603,8 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Dal cognome di Kaiming He, il ricercatore.',
+              code: 'nn.init.kaiming_normal_(layer.weight, nonlinearity="relu")',
+              task: 'Inizializza i pesi con la formula He pensata per layer seguiti da ReLU mantenendo varianza adatta nei gradienti.',
             },
             {
               english: 'Mini-Batch',
@@ -2454,6 +2666,8 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Equivale alla regolarizzazione L2.',
+              code: 'optimizer = torch.optim.AdamW(model.parameters(), lr=1e-3, weight_decay=0.01)',
+              task: 'Configura AdamW con weight decay 0.01 per applicare regolarizzazione disaccoppiata dai gradienti durante il training.',
             },
             {
               english: 'Universal Approximation',
@@ -2505,6 +2719,9 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Abbreviata CNN o ConvNet.',
+              code: `import torch.nn as nn
+model = nn.Sequential(nn.Conv2d(3, 16, 3), nn.ReLU(), nn.MaxPool2d(2))`,
+              task: 'Definisci una CNN minimale con un layer convoluzionale, ReLU e max pooling per partire da feature visive di base.',
             },
             {
               english: 'Convolution',
@@ -2528,6 +2745,8 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Detto anche kernel.',
+              code: 'conv = nn.Conv2d(in_channels=3, out_channels=32, kernel_size=3)',
+              task: `Crea un layer convoluzionale con 32 filtri 3x3 che scansionano un'immagine RGB di input.`,
             },
             {
               english: 'Kernel',
@@ -2539,6 +2758,8 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Termine sempre lasciato in inglese.',
+              code: 'conv = nn.Conv2d(3, 16, kernel_size=5, stride=1, padding=2)',
+              task: `Configura una convoluzione con kernel 5x5 e padding 2 per mantenere la dimensione spaziale dell'input.`,
             },
             {
               english: 'Stride',
@@ -2585,6 +2806,9 @@ export default {
                 "In each 2x2 region, max pooling keeps only the strongest activation, discarding spatial detail. = In ogni regione 2x2, il max pooling mantiene solo l'attivazione più forte, scartando dettagli spaziali.",
               context: 'deep-learning',
               difficulty: 'intermediate',
+              code: `pool = nn.MaxPool2d(kernel_size=2, stride=2)
+x = pool(x)`,
+              task: 'Applica max pooling 2x2 per dimezzare la risoluzione spaziale mantenendo le attivazioni piu forti del feature map.',
             },
             {
               english: 'Feature Map',
@@ -2595,6 +2819,9 @@ export default {
                 'After the first convolutional layer, each feature map highlights a different pattern such as horizontal edges. = Dopo il primo strato convoluzionale, ogni mappa di feature evidenzia un pattern diverso come i bordi orizzontali.',
               context: 'deep-learning',
               difficulty: 'intermediate',
+              code: `feature_maps = conv_layer(image)
+print(feature_maps.shape)`,
+              task: `Passa un'immagine attraverso un layer convoluzionale e ispeziona la forma dei feature map prodotti.`,
             },
             {
               english: 'Receptive Field',
@@ -2624,6 +2851,9 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Abbreviata RNN.',
+              code: `rnn = nn.RNN(input_size=10, hidden_size=20, num_layers=1, batch_first=True)
+out, h = rnn(x)`,
+              task: 'Istanzia una semplice RNN PyTorch con stato nascosto 20 per processare sequenze di vettori da 10 feature.',
             },
             {
               english: 'LSTM',
@@ -2660,6 +2890,9 @@ export default {
                 'At each time step, the hidden state carries a compressed summary of all previously seen inputs. = A ogni passo temporale, lo stato nascosto porta un riassunto compresso di tutti gli input visti in precedenza.',
               context: 'deep-learning',
               difficulty: 'intermediate',
+              code: `out, (h_n, c_n) = lstm(x)
+print(h_n.shape)`,
+              task: `Estrai l'hidden state finale di una LSTM dopo aver processato la sequenza per usarlo in un classificatore.`,
             },
             {
               english: 'Cell State',
@@ -2670,6 +2903,9 @@ export default {
                 "The cell state in LSTM acts as a long-term memory highway that information can flow through unchanged. = Lo stato della cella in LSTM agisce come un'autostrada di memoria a lungo termine attraverso cui le informazioni possono fluire invariate.",
               context: 'deep-learning',
               difficulty: 'intermediate',
+              code: `lstm = nn.LSTM(input_size=10, hidden_size=20)
+out, (h, c) = lstm(x)`,
+              task: 'Recupera il cell state c di una LSTM, la memoria a lungo termine che fluisce con poche modifiche lungo la sequenza.',
             },
             {
               english: 'Forget Gate',
@@ -2691,6 +2927,9 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Abbreviato Seq2Seq.',
+              code: `from transformers import T5ForConditionalGeneration
+model = T5ForConditionalGeneration.from_pretrained("t5-small")`,
+              task: 'Carica T5-small, un modello seq2seq pre-addestrato, per task come traduzione o summarization.',
             },
             {
               english: 'Bidirectional',
@@ -2838,6 +3077,10 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Tecnica di data augmentation moderna.',
+              code: `lam = np.random.beta(0.2, 0.2)
+x_mix = lam * x_a + (1 - lam) * x_b
+y_mix = lam * y_a + (1 - lam) * y_b`,
+              task: 'Applica mixup combinando due esempi e le loro etichette con un coefficiente beta per regolarizzare il training.',
             },
             {
               english: 'Cutout',
@@ -2848,6 +3091,9 @@ export default {
                 "Randomly erasing a square patch from training images via cutout forces the network to use global context. = Cancellare casualmente un'area quadrata dalle immagini di training tramite cutout forza la rete a usare il contesto globale.",
               context: 'deep-learning',
               difficulty: 'intermediate',
+              code: `from torchvision.transforms import RandomErasing
+transform = RandomErasing(p=0.5, scale=(0.02, 0.1))`,
+              task: `Aggiungi RandomErasing al pipeline di trasformazione per cancellare patch casuali dall'immagine come augmentation.`,
             },
           ],
         },
@@ -2866,6 +3112,9 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Residual Network. Sblocca reti con centinaia di strati.',
+              code: `from torchvision.models import resnet50
+model = resnet50(weights="IMAGENET1K_V2")`,
+              task: 'Importa una ResNet50 pre-addestrata con i pesi ImageNet V2 da usare come backbone per task di visione.',
             },
             {
               english: 'Skip Connection',
@@ -2877,6 +3126,11 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Detta anche residual connection.',
+              code: `def forward(self, x):
+    identity = x
+    out = self.conv2(F.relu(self.conv1(x)))
+    return F.relu(out + identity)`,
+              task: `Implementa una skip connection sommando l'input originale all'output convoluzionale prima dell'ultima ReLU.`,
             },
             {
               english: 'VGG',
@@ -2888,6 +3142,9 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Da Visual Geometry Group di Oxford.',
+              code: `from torchvision.models import vgg16
+model = vgg16(weights="IMAGENET1K_V1")`,
+              task: 'Carica una VGG16 pre-addestrata su ImageNet come baseline storica con architettura puramente sequenziale.',
             },
             {
               english: 'Inception',
@@ -2899,6 +3156,9 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Detto anche GoogLeNet.',
+              code: `from torchvision.models import inception_v3
+model = inception_v3(weights="IMAGENET1K_V1")`,
+              task: 'Istanzia una Inception v3 pre-addestrata per riconoscere oggetti sfruttando blocchi paralleli di convoluzioni multi-scala.',
             },
             {
               english: 'EfficientNet',
@@ -2909,6 +3169,9 @@ export default {
                 'By jointly scaling depth, width, and resolution, EfficientNet achieves top accuracy with fewer parameters. = Scalando congiuntamente profondità, larghezza e risoluzione, EfficientNet raggiunge accuratezza massima con meno parametri.',
               context: 'deep-learning',
               difficulty: 'intermediate',
+              code: `from torchvision.models import efficientnet_b0
+model = efficientnet_b0(weights="IMAGENET1K_V1")`,
+              task: 'Carica EfficientNet-B0 pre-addestrata, ottimizzata per il miglior compromesso tra accuratezza e numero di parametri.',
             },
             {
               english: 'DenseNet',
@@ -2919,6 +3182,9 @@ export default {
                 'In DenseNet, each layer receives feature maps from all preceding layers, maximizing feature reuse. = In DenseNet, ogni strato riceve mappe di feature da tutti gli strati precedenti, massimizzando il riuso delle feature.',
               context: 'deep-learning',
               difficulty: 'intermediate',
+              code: `from torchvision.models import densenet121
+model = densenet121(weights="IMAGENET1K_V1")`,
+              task: 'Importa una DenseNet121 che connette ogni layer a tutti i successivi, riusando feature in modo aggressivo.',
             },
             {
               english: 'MobileNet',
@@ -2930,6 +3196,9 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Usa depthwise separable convolutions.',
+              code: `from torchvision.models import mobilenet_v3_small
+model = mobilenet_v3_small(weights="IMAGENET1K_V1")`,
+              task: 'Scarica MobileNetV3-Small, leggera e adatta al deployment su dispositivi mobili con vincoli di memoria.',
             },
             {
               english: 'Vision Transformer',
@@ -2941,6 +3210,9 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Abbreviato ViT.',
+              code: `from torchvision.models import vit_b_16
+model = vit_b_16(weights="IMAGENET1K_V1")`,
+              task: 'Istanzia un Vision Transformer base con patch 16x16 pre-addestrato per applicare i transformer alle immagini.',
             },
             {
               english: 'Capsule Network',
@@ -3002,6 +3274,10 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Termine sempre lasciato in inglese.',
+              code: `from transformers import AutoTokenizer
+tok = AutoTokenizer.from_pretrained("bert-base-uncased")
+tok.tokenize("Hello world")`,
+              task: 'Spezza la frase in token usando il tokenizer di BERT pre-addestrato per vedere il vocabolario reale.',
             },
             {
               english: 'Subword Tokenization',
@@ -3013,6 +3289,9 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Esempi: BPE, WordPiece, SentencePiece.',
+              code: `tokens = tokenizer.tokenize("unbelievable")
+print(tokens)`,
+              task: 'Tokenizza una parola rara in sotto-parole con il tokenizer di un transformer per osservare la suddivisione.',
             },
             {
               english: 'Byte-Pair Encoding',
@@ -3024,6 +3303,10 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Abbreviato BPE.',
+              code: `from tokenizers import Tokenizer
+from tokenizers.models import BPE
+tok = Tokenizer(BPE())`,
+              task: 'Inizializza un tokenizer BPE vuoto con la libreria tokenizers di HuggingFace per addestrarlo su un corpus custom.',
             },
             {
               english: 'Vocabulary',
@@ -3047,6 +3330,9 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Spesso rimosse nei modelli classici, mantenute nei transformer.',
+              code: `from nltk.corpus import stopwords
+words = [w for w in tokens if w.lower() not in stopwords.words("english")]`,
+              task: `Filtra le stop word inglesi dai token usando la lista di NLTK per pulire l'input dei modelli classici.`,
             },
             {
               english: 'Stemming',
@@ -3141,6 +3427,10 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Global Vectors for Word Representation. Da Stanford.',
+              code: `import gensim.downloader as api
+glove = api.load("glove-wiki-gigaword-100")
+print(glove["king"])`,
+              task: `Scarica i vettori GloVe a 100 dimensioni e stampa l'embedding della parola king per verificare il caricamento.`,
             },
             {
               english: 'FastText',
@@ -3152,6 +3442,9 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               tool: 'fasttext',
+              code: `from gensim.models import FastText
+model = FastText(sentences, vector_size=100, min_count=5)`,
+              task: 'Addestra un modello FastText su un corpus di frasi con vettori a 100 dimensioni per ottenere embedding sub-word.',
             },
             {
               english: 'CBOW',
@@ -3163,6 +3456,9 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Continuous Bag-of-Words.',
+              code: `from gensim.models import Word2Vec
+model = Word2Vec(sentences, sg=0, vector_size=100)`,
+              task: 'Addestra un Word2Vec in modalita CBOW impostando sg=0 per predire la parola centrale dal suo contesto.',
             },
             {
               english: 'Skip-Gram',
@@ -3173,6 +3469,9 @@ export default {
                 "Training a skip-gram model on legal documents produced embeddings specialized for contract analysis. = Addestrare un modello skip-gram su documenti legali ha prodotto embedding specializzati per l'analisi dei contratti.",
               context: 'nlp',
               difficulty: 'intermediate',
+              code: `from gensim.models import Word2Vec
+model = Word2Vec(sentences, sg=1, vector_size=100)`,
+              task: 'Addestra un Word2Vec Skip-Gram con sg=1 in modo da predire il contesto a partire dalla parola centrale.',
             },
             {
               english: 'Cosine Similarity',
@@ -3206,6 +3505,9 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               tool: 'sentence-transformers',
+              code: `from sentence_transformers import SentenceTransformer
+emb = SentenceTransformer("all-MiniLM-L6-v2").encode(sentences)`,
+              task: 'Genera embedding di frase con SentenceTransformer MiniLM per ottenere vettori pronti per ricerca semantica.',
             },
             {
               english: 'Contextual Embedding',
@@ -3217,6 +3519,10 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Esempio: BERT, ELMo. Diverso da Word2Vec che è statico.',
+              code: `from transformers import AutoModel, AutoTokenizer
+tok = AutoTokenizer.from_pretrained("bert-base-uncased")
+model = AutoModel.from_pretrained("bert-base-uncased")`,
+              task: 'Carica BERT base per produrre embedding contestuali che variano in base al ruolo della parola nella frase.',
             },
           ],
         },
@@ -3244,6 +3550,9 @@ export default {
                 "A language model assigns probabilities to word sequences, enabling tasks from autocomplete to summarization. = Un modello linguistico assegna probabilità alle sequenze di parole, abilitando compiti dall'autocompletamento al riassunto.",
               context: 'nlp',
               difficulty: 'intermediate',
+              code: `from transformers import AutoModelForCausalLM
+lm = AutoModelForCausalLM.from_pretrained("gpt2")`,
+              task: 'Carica GPT-2 come language model autoregressivo per generare testo a partire da un prompt iniziale.',
             },
             {
               english: 'N-Gram',
@@ -3255,6 +3564,9 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Modello classico precedente alle reti neurali.',
+              code: `from sklearn.feature_extraction.text import CountVectorizer
+vec = CountVectorizer(ngram_range=(1, 3))`,
+              task: 'Configura un CountVectorizer che estragga unigrammi, bigrammi e trigrammi da un corpus per modelli n-gram classici.',
             },
             {
               english: 'Encoder',
@@ -3266,6 +3578,9 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Termine sempre in inglese in italiano tecnico.',
+              code: `encoder = nn.TransformerEncoderLayer(d_model=512, nhead=8)
+out = encoder(src)`,
+              task: `Crea un singolo layer di encoder transformer con dimensione 512 e 8 teste di attenzione per processare l'input.`,
             },
             {
               english: 'Decoder',
@@ -3276,6 +3591,9 @@ export default {
                 "The decoder generates the output sequence one token at a time, conditioned on the encoder representation. = Il decoder genera la sequenza di output un token alla volta, condizionato dalla rappresentazione dell'encoder.",
               context: 'nlp',
               difficulty: 'intermediate',
+              code: `decoder = nn.TransformerDecoderLayer(d_model=512, nhead=8)
+out = decoder(tgt, memory)`,
+              task: `Istanzia un decoder transformer che combina il target parziale con la memoria dell'encoder per generare il token successivo.`,
             },
             {
               english: 'Beam Search',
@@ -3298,6 +3616,8 @@ export default {
                 'Although fast, greedy decoding picks only the most probable token at each step and can miss better sequences. = Sebbene veloce, la decodifica greedy sceglie solo il token più probabile a ogni passo e può mancare sequenze migliori.',
               context: 'nlp',
               difficulty: 'intermediate',
+              code: 'ids = model.generate(input_ids, max_length=50, do_sample=False, num_beams=1)',
+              task: 'Genera testo con decoding greedy disattivando sampling e beam search per scegliere sempre il token piu probabile.',
             },
             {
               english: 'BLEU Score',
@@ -3309,6 +3629,9 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Bilingual Evaluation Understudy.',
+              code: `from nltk.translate.bleu_score import sentence_bleu
+score = sentence_bleu([reference.split()], hypothesis.split())`,
+              task: 'Calcola il BLEU score di una traduzione automatica confrontandola con una traduzione di riferimento.',
             },
             {
               english: 'ROUGE Score',
@@ -3319,6 +3642,10 @@ export default {
                 'We evaluated the summarizer using ROUGE score, which measures n-gram overlap with reference summaries. = Abbiamo valutato il riassuntore usando il punteggio ROUGE, che misura la sovrapposizione di n-grammi con riassunti di riferimento.',
               context: 'nlp',
               difficulty: 'intermediate',
+              code: `from rouge_score import rouge_scorer
+scorer = rouge_scorer.RougeScorer(["rouge1", "rougeL"])
+scores = scorer.score(ref, gen)`,
+              task: 'Valuta una summarization confrontando riassunto generato e riferimento con metriche ROUGE-1 e ROUGE-L.',
             },
             {
               english: 'Perplexity',
@@ -3349,6 +3676,9 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               note: "Concetto rivoluzionario per l'NLP moderno.",
+              code: `attn = nn.MultiheadAttention(embed_dim=512, num_heads=8, batch_first=True)
+out, weights = attn(q, k, v)`,
+              task: 'Costruisci un layer di multi-head attention PyTorch con dimensione 512 e 8 teste, recuperando anche i pesi.',
             },
             {
               english: 'Attention Score',
@@ -3380,6 +3710,10 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'In attention: Query, Key, Value sono i tre tensor.',
+              code: `Q = self.q_proj(x)
+K = self.k_proj(x)
+V = self.v_proj(x)`,
+              task: `Proietta l'input attraverso tre matrici imparate per ottenere i tensor Query, Key e Value della self-attention.`,
             },
             {
               english: 'Key',
@@ -3431,6 +3765,10 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Formula: softmax(QK^T / sqrt(d)) V.',
+              code: `scores = (Q @ K.transpose(-2, -1)) / math.sqrt(d_k)
+attn = F.softmax(scores, dim=-1)
+out = attn @ V`,
+              task: 'Implementa la scaled dot-product attention calcolando QK trasposta, dividendo per sqrt(d_k) e applicando softmax.',
             },
             {
               english: 'Attention Map',
@@ -3469,6 +3807,8 @@ export default {
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Architettura di "Attention Is All You Need".',
+              code: 'model = nn.Transformer(d_model=512, nhead=8, num_encoder_layers=6, num_decoder_layers=6)',
+              task: `Crea l'architettura Transformer completa di PyTorch con 6 layer di encoder e decoder e 8 teste di attenzione.`,
             },
             {
               english: 'Self-Attention',
@@ -3480,6 +3820,9 @@ export default {
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Cuore del transformer.',
+              code: `attn = nn.MultiheadAttention(512, 8, batch_first=True)
+out, _ = attn(x, x, x)`,
+              task: 'Applica self-attention passando lo stesso tensor come query, key e value al layer di multi-head attention.',
             },
             {
               english: 'Multi-Head Attention',
@@ -3503,6 +3846,10 @@ export default {
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Necessaria perché self-attention è permutation-invariant.',
+              code: `pe = torch.zeros(max_len, d_model)
+pe[:, 0::2] = torch.sin(position * div_term)
+pe[:, 1::2] = torch.cos(position * div_term)`,
+              task: 'Costruisci la positional encoding sinusoidale con sin sulle dimensioni pari e cos sulle dispari come nel paper originale.',
             },
             {
               english: 'Encoder-Decoder',
@@ -3536,6 +3883,8 @@ export default {
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Abbreviata FFN. Tipicamente con espansione 4x.',
+              code: 'ffn = nn.Sequential(nn.Linear(512, 2048), nn.GELU(), nn.Linear(2048, 512))',
+              task: 'Definisci la FFN interna a un transformer block con espansione 4x da 512 a 2048 e ritorno a 512.',
             },
             {
               english: 'Causal Mask',
@@ -3547,6 +3896,8 @@ export default {
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Essenziale per modelli generativi come GPT.',
+              code: 'mask = torch.triu(torch.ones(L, L) * float("-inf"), diagonal=1)',
+              task: 'Costruisci una causal mask triangolare superiore con -inf per impedire al modello di vedere token futuri.',
             },
             {
               english: 'Cross-Attention',
@@ -3557,6 +3908,9 @@ export default {
                 "In the decoder, cross-attention lets each output token query the encoder representations for relevant source context. = Nel decoder, la cross-attention permette a ogni token di output di interrogare le rappresentazioni dell'encoder per contesto sorgente rilevante.",
               context: 'architectures',
               difficulty: 'intermediate',
+              code: `cross = nn.MultiheadAttention(512, 8, batch_first=True)
+out, _ = cross(decoder_state, encoder_out, encoder_out)`,
+              task: `Esegui cross-attention nel decoder usando lo stato corrente come query e l'output dell'encoder come key e value.`,
             },
             {
               english: 'Transformer Block',
@@ -3586,6 +3940,9 @@ export default {
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Bidirectional Encoder Representations from Transformers.',
+              code: `from transformers import BertModel, BertTokenizer
+model = BertModel.from_pretrained("bert-base-uncased")`,
+              task: 'Carica il modello BERT base uncased pre-addestrato per ottenere embedding bidirezionali di alta qualita.',
             },
             {
               english: 'CLS Token',
@@ -3597,6 +3954,9 @@ export default {
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Usato per classificazione in BERT.',
+              code: `outputs = model(**inputs)
+cls_embedding = outputs.last_hidden_state[:, 0, :]`,
+              task: `Estrai l'embedding del token CLS in posizione 0 da usare come rappresentazione globale della sequenza per la classificazione.`,
             },
             {
               english: 'SEP Token',
@@ -3618,6 +3978,9 @@ export default {
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Abbreviato MLM.',
+              code: `from transformers import DataCollatorForLanguageModeling
+collator = DataCollatorForLanguageModeling(tokenizer=tok, mlm_probability=0.15)`,
+              task: 'Configura un data collator per MLM con probabilita 15% di mascheramento, come fatto nel pretraining originale di BERT.',
             },
             {
               english: 'Next Sentence Prediction',
@@ -3640,6 +4003,9 @@ export default {
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Robustly Optimized BERT.',
+              code: `from transformers import RobertaModel
+model = RobertaModel.from_pretrained("roberta-base")`,
+              task: 'Carica RoBERTa base, variante ottimizzata di BERT con pretraining piu lungo e senza next sentence prediction.',
             },
             {
               english: 'DistilBERT',
@@ -3651,6 +4017,9 @@ export default {
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Ottenuto via distillazione di conoscenza.',
+              code: `from transformers import DistilBertModel
+model = DistilBertModel.from_pretrained("distilbert-base-uncased")`,
+              task: 'Istanzia DistilBERT base, versione distillata di BERT con meta dei layer e prestazioni comparabili.',
             },
             {
               english: 'ALBERT',
@@ -3662,6 +4031,9 @@ export default {
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'A Lite BERT.',
+              code: `from transformers import AlbertModel
+model = AlbertModel.from_pretrained("albert-base-v2")`,
+              task: 'Carica ALBERT base v2, variante leggera di BERT che condivide parametri tra i layer per ridurre la memoria.',
             },
             {
               english: 'Encoder-Only',
@@ -3703,6 +4075,9 @@ export default {
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Generative Pre-trained Transformer.',
+              code: `from transformers import GPT2LMHeadModel, GPT2Tokenizer
+model = GPT2LMHeadModel.from_pretrained("gpt2")`,
+              task: 'Carica GPT-2 con language modeling head per generare testo autoregressivo da prompt arbitrari.',
             },
             {
               english: 'Autoregressive',
@@ -3713,6 +4088,9 @@ export default {
                 'An autoregressive model generates each token by conditioning on all previously generated tokens. = Un modello autoregressivo genera ogni token condizionandosi su tutti i token precedentemente generati.',
               context: 'architectures',
               difficulty: 'intermediate',
+              code: `out = model.generate(input_ids, max_new_tokens=50)
+print(tokenizer.decode(out[0]))`,
+              task: `Genera 50 nuovi token in modo autoregressivo a partire dall'input e decodifica il risultato in testo leggibile.`,
             },
             {
               english: 'Decoder-Only',
@@ -3734,6 +4112,9 @@ export default {
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Abbreviato LLM. Spesso lasciato in inglese.',
+              code: `from transformers import AutoModelForCausalLM
+llm = AutoModelForCausalLM.from_pretrained("meta-llama/Llama-3.1-8B-Instruct")`,
+              task: 'Scarica un LLM Instruct da 8B parametri di Meta tramite HuggingFace come base per applicazioni conversazionali.',
             },
             {
               english: 'Context Window',
@@ -3804,6 +4185,9 @@ export default {
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Termine sempre lasciato in inglese.',
+              code: `prompt = "Translate to French: Hello, how are you?"
+out = model.generate(tokenizer.encode(prompt, return_tensors="pt"))`,
+              task: 'Tokenizza un prompt di traduzione in inglese e invialo al modello per ottenere la versione francese.',
             },
           ],
         },
@@ -3834,6 +4218,8 @@ export default {
                 'Thanks to transfer learning, a model pre-trained on English Wikipedia can be adapted to classify legal Italian documents. = Grazie al transfer learning, un modello pre-addestrato su Wikipedia inglese può essere adattato per classificare documenti legali italiani.',
               context: 'architectures',
               difficulty: 'intermediate',
+              code: 'model = AutoModelForSequenceClassification.from_pretrained("bert-base-uncased", num_labels=3)',
+              task: 'Carica BERT pre-addestrato aggiungendo una testa di classificazione a 3 classi per fare transfer learning sul tuo task.',
             },
             {
               english: 'LoRA',
@@ -3845,6 +4231,10 @@ export default {
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Low-Rank Adaptation.',
+              code: `from peft import LoraConfig, get_peft_model
+config = LoraConfig(r=8, lora_alpha=16, target_modules=["q_proj","v_proj"])
+model = get_peft_model(base_model, config)`,
+              task: 'Applica LoRA con rango 8 ai layer di attenzione del modello base per fare fine-tuning efficiente in memoria.',
             },
             {
               english: 'PEFT',
@@ -3857,6 +4247,10 @@ export default {
               difficulty: 'intermediate',
               tool: 'peft',
               note: 'Parameter-Efficient Fine-Tuning.',
+              code: `from peft import LoraConfig, get_peft_model, TaskType
+config = LoraConfig(task_type=TaskType.CAUSAL_LM, r=16)
+model = get_peft_model(base, config)`,
+              task: 'Usa la libreria PEFT di HuggingFace per addestrare solo una piccola frazione dei pesi del modello causale.',
             },
             {
               english: 'Adapter',
@@ -3867,6 +4261,9 @@ export default {
                 'Small adapter modules are inserted between frozen layers, letting the model specialize for new tasks efficiently. = Piccoli moduli adapter sono inseriti tra strati congelati, permettendo al modello di specializzarsi in nuovi compiti efficientemente.',
               context: 'architectures',
               difficulty: 'intermediate',
+              code: `from peft import LoraConfig, get_peft_model
+model = get_peft_model(base_model, LoraConfig(r=8))`,
+              task: 'Inserisci adapter LoRA leggeri sopra il modello base congelato per specializzarlo senza modificare i pesi originali.',
             },
             {
               english: 'Frozen Layer',
@@ -3890,6 +4287,9 @@ export default {
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Esempio: trasformare GPT base in ChatGPT.',
+              code: `from trl import SFTTrainer
+trainer = SFTTrainer(model=base, train_dataset=instruct_ds, dataset_text_field="text")`,
+              task: 'Configura un SFTTrainer della libreria TRL per fare instruction tuning supervisionato su un dataset di prompt-risposta.',
             },
             {
               english: 'RLHF',
@@ -3901,6 +4301,9 @@ export default {
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Reinforcement Learning from Human Feedback.',
+              code: `from trl import PPOTrainer, PPOConfig
+ppo = PPOTrainer(PPOConfig(), model=policy, ref_model=ref, reward_model=rm)`,
+              task: 'Imposta un PPOTrainer di TRL per allenare la policy con RLHF usando un reward model di preferenze umane.',
             },
             {
               english: 'DPO',
@@ -3912,6 +4315,9 @@ export default {
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Direct Preference Optimization.',
+              code: `from trl import DPOTrainer
+dpo = DPOTrainer(model=policy, ref_model=ref, train_dataset=preferences, beta=0.1)`,
+              task: 'Allena il modello sulle preferenze umane con DPOTrainer di TRL evitando la complessita di RLHF basato su PPO.',
             },
             {
               english: 'Catastrophic Forgetting',
@@ -3962,6 +4368,9 @@ export default {
               context: 'computer-vision',
               difficulty: 'intermediate',
               note: 'Dataset di riferimento con 1000 classi.',
+              code: `from torchvision.datasets import ImageNet
+ds = ImageNet(root="./data", split="val", transform=transform)`,
+              task: 'Carica lo split di validazione di ImageNet da una cartella locale per valutare un modello classico di visione.',
             },
             {
               english: 'Top-1 Accuracy',
@@ -3972,6 +4381,9 @@ export default {
                 'Our fine-tuned model reached 92% top-1 accuracy on the custom product recognition benchmark. = Il nostro modello fine-tuned ha raggiunto il 92% di accuratezza top-1 sul benchmark personalizzato di riconoscimento prodotti.',
               context: 'computer-vision',
               difficulty: 'intermediate',
+              code: `pred = logits.argmax(dim=1)
+top1 = (pred == labels).float().mean()`,
+              task: `Calcola la top-1 accuracy confrontando la classe con probabilita massima e l'etichetta corretta del batch.`,
             },
             {
               english: 'Top-5 Accuracy',
@@ -3983,6 +4395,9 @@ export default {
               context: 'computer-vision',
               difficulty: 'intermediate',
               note: 'Standard storico per ImageNet.',
+              code: `_, top5 = logits.topk(5, dim=1)
+correct = top5.eq(labels.view(-1, 1)).any(dim=1).float().mean()`,
+              task: `Misura la top-5 accuracy verificando se l'etichetta vera ricade tra le 5 classi piu probabili predette.`,
             },
             {
               english: 'Pixel',
@@ -4004,6 +4419,9 @@ export default {
               context: 'computer-vision',
               difficulty: 'intermediate',
               note: 'Red Green Blue.',
+              code: `from PIL import Image
+img = Image.open("photo.jpg").convert("RGB")`,
+              task: `Apri un'immagine e convertila in modalita RGB con tre canali per renderla compatibile con i modelli di torchvision.`,
             },
             {
               english: 'Grayscale',
@@ -4014,6 +4432,9 @@ export default {
                 "Converting color photos to grayscale reduced input size by 3x and sped up training for simple OCR tasks. = Convertire le foto a colori in scala di grigi ha ridotto la dimensione dell'input di 3 volte e accelerato l'addestramento per compiti OCR semplici.",
               context: 'computer-vision',
               difficulty: 'intermediate',
+              code: `from torchvision.transforms import Grayscale
+gray = Grayscale(num_output_channels=1)(img_rgb)`,
+              task: `Converti un'immagine RGB in scala di grigi a singolo canale tramite la trasformazione Grayscale di torchvision.`,
             },
             {
               english: 'Resolution',
@@ -4024,6 +4445,9 @@ export default {
                 "Increasing image resolution from 224x224 to 384x384 improved small-object detection but doubled training time. = Aumentare la risoluzione dell'immagine da 224x224 a 384x384 ha migliorato il rilevamento di oggetti piccoli ma raddoppiato il tempo di addestramento.",
               context: 'computer-vision',
               difficulty: 'intermediate',
+              code: `from torchvision.transforms import Resize
+resized = Resize((224, 224))(img)`,
+              task: `Ridimensiona l'immagine a 224x224 pixel, risoluzione standard di input per molte CNN come ResNet.`,
             },
             {
               english: 'Image Tensor',
@@ -4063,6 +4487,9 @@ export default {
                 'Real-time object detection on security cameras identifies people, vehicles, and suspicious packages. = Il rilevamento oggetti in tempo reale sulle telecamere di sicurezza identifica persone, veicoli e pacchi sospetti.',
               context: 'computer-vision',
               difficulty: 'intermediate',
+              code: `from torchvision.models.detection import fasterrcnn_resnet50_fpn
+model = fasterrcnn_resnet50_fpn(weights="DEFAULT").eval()`,
+              task: `Carica un Faster R-CNN pre-addestrato di torchvision per rilevare oggetti e relative bounding box su un'immagine.`,
             },
             {
               english: 'Bounding Box',
@@ -4087,6 +4514,10 @@ export default {
               difficulty: 'intermediate',
               tool: 'YOLOv8',
               note: 'You Only Look Once.',
+              code: `from ultralytics import YOLO
+model = YOLO("yolov8n.pt")
+results = model("image.jpg")`,
+              task: `Esegui YOLOv8 nano su un'immagine usando la libreria ultralytics per ottenere bounding box in tempo reale.`,
             },
             {
               english: 'Faster R-CNN',
@@ -4097,6 +4528,9 @@ export default {
                 "For medical image analysis requiring high precision, Faster R-CNN produces more accurate detections than single-shot methods. = Per l'analisi di immagini mediche che richiede alta precisione, Faster R-CNN produce rilevamenti più accurati dei metodi single-shot.",
               context: 'computer-vision',
               difficulty: 'intermediate',
+              code: `from torchvision.models.detection import fasterrcnn_resnet50_fpn
+detector = fasterrcnn_resnet50_fpn(weights="DEFAULT")`,
+              task: 'Carica Faster R-CNN con backbone ResNet50 e FPN per un detector accurato a due stadi addestrato su COCO.',
             },
             {
               english: 'Anchor Box',
@@ -4118,6 +4552,9 @@ export default {
               context: 'computer-vision',
               difficulty: 'intermediate',
               note: 'Intersection over Union.',
+              code: `from torchvision.ops import box_iou
+iou = box_iou(boxes_pred, boxes_gt)`,
+              task: `Calcola l'IoU fra ogni bounding box predetta e quelle ground truth tramite l'utility box_iou di torchvision.`,
             },
             {
               english: 'Non-Maximum Suppression',
@@ -4151,6 +4588,10 @@ export default {
               context: 'computer-vision',
               difficulty: 'intermediate',
               note: 'Abbreviata mAP.',
+              code: `from torchmetrics.detection import MeanAveragePrecision
+metric = MeanAveragePrecision()
+metric.update(preds, targets)`,
+              task: 'Aggiorna la metrica mAP di torchmetrics con predizioni e target di detection per valutare il modello su COCO.',
             },
             {
               english: 'Region Proposal',
@@ -4178,6 +4619,9 @@ export default {
                 'For autonomous driving, pixel-level segmentation separates road, sidewalk, vehicles, and pedestrians. = Per la guida autonoma, la segmentazione a livello di pixel separa strada, marciapiede, veicoli e pedoni.',
               context: 'computer-vision',
               difficulty: 'intermediate',
+              code: `from torchvision.models.segmentation import deeplabv3_resnet50
+model = deeplabv3_resnet50(weights="DEFAULT")`,
+              task: 'Carica DeepLabV3 con backbone ResNet50 pre-addestrato per fare segmentazione semantica per pixel su immagini naturali.',
             },
             {
               english: 'Semantic Segmentation',
@@ -4220,6 +4664,9 @@ export default {
               context: 'computer-vision',
               difficulty: 'intermediate',
               note: 'Architettura a forma di U.',
+              code: `import segmentation_models_pytorch as smp
+model = smp.Unet(encoder_name="resnet34", classes=1)`,
+              task: 'Costruisci un U-Net con encoder ResNet34 e una sola classe di output usando segmentation_models_pytorch.',
             },
             {
               english: 'Mask R-CNN',
@@ -4230,6 +4677,9 @@ export default {
                 'For robotics pick-and-place tasks, Mask R-CNN provides pixel-accurate outlines of each graspable object. = Per compiti robotici di pick-and-place, Mask R-CNN fornisce contorni accurati a livello di pixel di ogni oggetto afferrabile.',
               context: 'computer-vision',
               difficulty: 'intermediate',
+              code: `from torchvision.models.detection import maskrcnn_resnet50_fpn
+model = maskrcnn_resnet50_fpn(weights="DEFAULT").eval()`,
+              task: 'Importa Mask R-CNN pre-addestrato per fare instance segmentation, producendo bounding box e maschere per ogni oggetto.',
             },
             {
               english: 'Mask',
@@ -4240,6 +4690,9 @@ export default {
                 "Each predicted mask is a binary overlay showing exactly which pixels belong to the detected object. = Ogni maschera predetta è una sovrapposizione binaria che mostra esattamente quali pixel appartengono all'oggetto rilevato.",
               context: 'computer-vision',
               difficulty: 'intermediate',
+              code: `masks = outputs[0]["masks"]
+binary_masks = (masks > 0.5).squeeze(1)`,
+              task: 'Estrai le maschere predette dal modello di segmentazione e binarizzale con soglia 0.5 per ogni istanza.',
             },
             {
               english: 'Encoder-Decoder Architecture',
@@ -4261,6 +4714,9 @@ export default {
               context: 'computer-vision',
               difficulty: 'intermediate',
               note: 'Simile a F1, va da 0 a 1.',
+              code: `intersection = (pred * target).sum()
+dice = (2 * intersection) / (pred.sum() + target.sum() + 1e-6)`,
+              task: 'Calcola il coefficiente Dice fra maschera predetta e ground truth come metrica robusta per segmentazione medica.',
             },
             {
               english: 'SAM',
@@ -4273,6 +4729,9 @@ export default {
               difficulty: 'intermediate',
               tool: 'segment-anything',
               note: 'Segment Anything Model di Meta.',
+              code: `from segment_anything import SamPredictor, sam_model_registry
+sam = sam_model_registry["vit_h"](checkpoint="sam_vit_h.pth")`,
+              task: 'Carica Segment Anything Model di Meta con backbone ViT-Huge per segmentazione promptable su immagini arbitrarie.',
             },
           ],
         },
@@ -4290,6 +4749,9 @@ export default {
                 'Airport security systems use face recognition to match travelers against passport photos in under one second. = I sistemi di sicurezza aeroportuali usano il riconoscimento facciale per abbinare viaggiatori alle foto del passaporto in meno di un secondo.',
               context: 'computer-vision',
               difficulty: 'intermediate',
+              code: `import face_recognition
+encoding = face_recognition.face_encodings(image)[0]`,
+              task: `Estrai un embedding da un volto in un'immagine con la libreria face_recognition per identificarlo successivamente.`,
             },
             {
               english: 'Pose Estimation',
@@ -4301,6 +4763,10 @@ export default {
               context: 'computer-vision',
               difficulty: 'intermediate',
               tool: 'OpenPose, MediaPipe',
+              code: `import mediapipe as mp
+pose = mp.solutions.pose.Pose()
+result = pose.process(image_rgb)`,
+              task: `Stima i keypoint della posa umana in un'immagine usando il modulo Pose di MediaPipe di Google.`,
             },
             {
               english: 'Optical Flow',
@@ -4311,6 +4777,9 @@ export default {
                 'Video stabilization algorithms compute optical flow between consecutive frames to compensate for camera shake. = Gli algoritmi di stabilizzazione video calcolano il flusso ottico tra frame consecutivi per compensare il tremolio della camera.',
               context: 'computer-vision',
               difficulty: 'intermediate',
+              code: `import cv2
+flow = cv2.calcOpticalFlowFarneback(prev_gray, next_gray, None, 0.5, 3, 15, 3, 5, 1.2, 0)`,
+              task: `Calcola l'optical flow denso di Farneback tra due frame in scala di grigi per stimare il movimento dei pixel.`,
             },
             {
               english: 'OCR',
@@ -4323,6 +4792,9 @@ export default {
               difficulty: 'intermediate',
               tool: 'Tesseract, EasyOCR',
               note: 'Optical Character Recognition.',
+              code: `import pytesseract
+text = pytesseract.image_to_string(image, lang="eng")`,
+              task: `Estrai testo da un'immagine con Tesseract OCR via pytesseract specificando l'inglese come lingua di riconoscimento.`,
             },
             {
               english: 'Image Captioning',
@@ -4333,6 +4805,10 @@ export default {
                 'Our image captioning model generates accurate descriptions of product photos for visually impaired shoppers. = Il nostro modello di image captioning genera descrizioni accurate delle foto prodotto per acquirenti con disabilità visive.',
               context: 'computer-vision',
               difficulty: 'intermediate',
+              code: `from transformers import pipeline
+cap = pipeline("image-to-text", model="nlpconnect/vit-gpt2-image-captioning")
+cap("photo.jpg")`,
+              task: `Genera una didascalia di un'immagine usando una pipeline image-to-text basata su ViT e GPT2 di HuggingFace.`,
             },
             {
               english: 'Visual Question Answering',
@@ -4344,6 +4820,10 @@ export default {
               context: 'computer-vision',
               difficulty: 'intermediate',
               note: 'Abbreviato VQA. Compito multimodale.',
+              code: `from transformers import pipeline
+vqa = pipeline("visual-question-answering")
+vqa(image=img, question="How many people?")`,
+              task: 'Crea una pipeline VQA e domanda quante persone ci sono in una foto al modello multimodale di default.',
             },
             {
               english: 'Depth Estimation',
@@ -4354,6 +4834,10 @@ export default {
                 'AR applications use monocular depth estimation to place virtual objects convincingly in real-world scenes. = Le applicazioni AR usano la stima di profondità monoculare per posizionare oggetti virtuali in modo convincente in scene del mondo reale.',
               context: 'computer-vision',
               difficulty: 'intermediate',
+              code: `from transformers import pipeline
+depth = pipeline("depth-estimation", model="Intel/dpt-large")
+result = depth("photo.jpg")`,
+              task: `Stima la mappa di profondita di un'immagine usando il modello DPT-Large di Intel via HuggingFace pipeline.`,
             },
             {
               english: 'Super-Resolution',
@@ -4364,6 +4848,10 @@ export default {
                 'Security teams enhance blurry surveillance footage using super-resolution to identify license plates. = I team di sicurezza migliorano filmati di sorveglianza sfocati usando la super-risoluzione per identificare targhe.',
               context: 'computer-vision',
               difficulty: 'intermediate',
+              code: `from transformers import pipeline
+sr = pipeline("image-to-image", model="caidas/swin2SR-classical-sr-x2-64")
+sr(image)`,
+              task: `Aumenta la risoluzione di un'immagine 2x sfruttando Swin2SR via la pipeline image-to-image di HuggingFace.`,
             },
             {
               english: 'Image Inpainting',
@@ -4374,6 +4862,9 @@ export default {
                 "After removing watermarks, image inpainting reconstructs the missing regions based on surrounding context. = Dopo aver rimosso i watermark, l'inpainting ricostruisce le regioni mancanti basandosi sul contesto circostante.",
               context: 'computer-vision',
               difficulty: 'intermediate',
+              code: `from diffusers import StableDiffusionInpaintPipeline
+pipe = StableDiffusionInpaintPipeline.from_pretrained("runwayml/stable-diffusion-inpainting")`,
+              task: `Carica la pipeline Stable Diffusion Inpainting per riempire regioni mascherate di un'immagine con contenuto coerente.`,
             },
             {
               english: 'Style Transfer',
@@ -4385,6 +4876,9 @@ export default {
               context: 'computer-vision',
               difficulty: 'intermediate',
               note: 'Esempio: foto resa come dipinto di Van Gogh.',
+              code: `from torchvision.models import vgg19
+vgg = vgg19(weights="IMAGENET1K_V1").features.eval()`,
+              task: 'Carica le feature di VGG19 in modalita eval come backbone per implementare neural style transfer alla Gatys.',
             },
           ],
         },
@@ -4433,6 +4927,9 @@ export default {
                 'A well-structured user prompt includes context, task description, and desired output format. = Un prompt utente ben strutturato include contesto, descrizione del compito e formato di output desiderato.',
               context: 'nlp',
               difficulty: 'intermediate',
+              code: `messages = [{"role": "user", "content": "Explain backpropagation"}]
+resp = client.chat.completions.create(model="gpt-4", messages=messages)`,
+              task: `Crea il messaggio dell'utente nella struttura messages dell'API OpenAI e invialo a un modello chat.`,
             },
             {
               english: 'Instruction',
@@ -4443,6 +4940,8 @@ export default {
                 "Adding a clear instruction like 'Respond in JSON' eliminates the need to parse free-form text output. = Aggiungere un'istruzione chiara come 'Rispondi in JSON' elimina la necessità di analizzare output in testo libero.",
               context: 'nlp',
               difficulty: 'intermediate',
+              code: 'prompt = "Riassumi il seguente testo in 3 punti chiave:\\n" + article',
+              task: `Costruisci un prompt con istruzione esplicita seguita dal testo da elaborare per guidare l'LLM verso un riassunto strutturato.`,
             },
             {
               english: 'Context',
@@ -4453,6 +4952,8 @@ export default {
                 "Providing relevant context about the user's industry helps the model give domain-appropriate answers. = Fornire contesto rilevante sull'industria dell'utente aiuta il modello a dare risposte appropriate al dominio.",
               context: 'nlp',
               difficulty: 'intermediate',
+              code: 'messages = [{"role": "system", "content": "You are a Python expert."}, {"role": "user", "content": q}]',
+              task: `Aggiungi un messaggio di sistema che fornisce contesto e ruolo al modello prima della domanda dell'utente.`,
             },
             {
               english: 'Role Prompting',
@@ -4464,6 +4965,9 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Esempio: "You are a senior Python developer".',
+              code: `system = {"role": "system", "content": "You are a senior security auditor."}
+messages = [system, user_msg]`,
+              task: 'Definisci nel system message il ruolo che il modello deve interpretare per orientare lo stile e il dominio delle risposte.',
             },
             {
               english: 'Delimiter',
@@ -4486,6 +4990,8 @@ export default {
                 'Specifying the output format as a markdown table ensures consistent, parseable responses across requests. = Specificare il formato di output come tabella markdown assicura risposte consistenti e analizzabili tra le richieste.',
               context: 'nlp',
               difficulty: 'intermediate',
+              code: 'resp = client.chat.completions.create(model="gpt-4o", messages=msgs, response_format={"type": "json_object"})',
+              task: 'Forza il modello OpenAI a restituire un oggetto JSON ben formato impostando response_format nella chiamata.',
             },
             {
               english: 'Constraint',
@@ -4526,6 +5032,8 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Termine sempre lasciato in inglese.',
+              code: 'prompt = "Classify this review as positive or negative: Loved it!"',
+              task: 'Chiedi al modello di classificare il sentiment di una review senza fornire alcun esempio, sfruttando il caso zero-shot.',
             },
             {
               english: 'Few-Shot',
@@ -4537,6 +5045,8 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Tipicamente da 1 a 5 esempi.',
+              code: 'prompt = "Q: 1+1\\nA: 2\\nQ: 2+3\\nA: 5\\nQ: 4+4\\nA:"',
+              task: `Fornisci due o tre esempi di coppie domanda-risposta prima della domanda reale per attivare l'apprendimento few-shot.`,
             },
             {
               english: 'One-Shot',
@@ -4547,6 +5057,8 @@ export default {
                 "For simple formatting tasks, a single one-shot example is often enough to guide the model's output. = Per compiti di formattazione semplici, un singolo esempio one-shot è spesso sufficiente per guidare l'output del modello.",
               context: 'nlp',
               difficulty: 'intermediate',
+              code: 'prompt = "Esempio: input=cane, output=Cane.\\nNuovo: input=gatto, output="',
+              task: 'Mostra un singolo esempio prima della richiesta perche il modello generalizzi il pattern in modalita one-shot.',
             },
             {
               english: 'Chain-of-Thought',
@@ -4558,6 +5070,8 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Abbreviata CoT. Trigger: "Let\'s think step by step".',
+              code: 'prompt = question + "\\nThink step by step, then answer."',
+              task: 'Aggiungi la frase think step by step al prompt per attivare il ragionamento Chain-of-Thought esplicito del modello.',
             },
             {
               english: 'Self-Consistency',
@@ -4568,6 +5082,9 @@ export default {
                 'With self-consistency, we sample five reasoning paths and take the majority vote as the final answer. = Con la self-consistency, campioniamo cinque percorsi di ragionamento e prendiamo il voto di maggioranza come risposta finale.',
               context: 'nlp',
               difficulty: 'intermediate',
+              code: `answers = [llm(prompt, temperature=0.7) for _ in range(5)]
+final = max(set(answers), key=answers.count)`,
+              task: 'Genera 5 risposte indipendenti dallo stesso prompt e scegli la piu frequente con voto a maggioranza.',
             },
             {
               english: 'Tree of Thoughts',
@@ -4590,6 +5107,9 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Reasoning + Acting.',
+              code: `from langchain.agents import create_react_agent
+agent = create_react_agent(llm, tools, prompt)`,
+              task: 'Costruisci un agente ReAct con LangChain che alterna ragionamento e chiamate a strumenti per risolvere il task.',
             },
             {
               english: 'Self-Refine',
@@ -4610,6 +5130,9 @@ export default {
                 "Complex document analysis uses prompt chaining: first extract entities, then summarize, then generate a report. = L'analisi di documenti complessi usa il prompt chaining: prima estrarre entità, poi riassumere, poi generare un report.",
               context: 'nlp',
               difficulty: 'intermediate',
+              code: `from langchain.chains import SequentialChain
+chain = SequentialChain(chains=[summarize, translate])`,
+              task: 'Concatena una chain di riassunto e una di traduzione con LangChain per dividere il task in passi successivi.',
             },
             {
               english: 'Meta-Prompt',
@@ -4638,6 +5161,9 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Retrieval-Augmented Generation.',
+              code: `from langchain.chains import RetrievalQA
+qa = RetrievalQA.from_chain_type(llm=llm, retriever=vector_store.as_retriever())`,
+              task: 'Configura una chain di Retrieval-Augmented Generation con LangChain combinando un retriever vettoriale e un LLM.',
             },
             {
               english: 'Vector Database',
@@ -4649,6 +5175,9 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               tool: 'Pinecone, Weaviate, Qdrant, Chroma',
+              code: `from langchain.vectorstores import Chroma
+vdb = Chroma.from_documents(docs, embeddings)`,
+              task: 'Inizializza un vector database Chroma a partire da documenti e relativi embedding per abilitare ricerca semantica.',
             },
             {
               english: 'Semantic Search',
@@ -4659,6 +5188,8 @@ export default {
                 "Unlike keyword matching, semantic search finds documents about 'machine learning' even when the query says 'AI training'. = A differenza della corrispondenza per parole chiave, la ricerca semantica trova documenti su 'machine learning' anche quando la query dice 'AI training'.",
               context: 'nlp',
               difficulty: 'intermediate',
+              code: 'results = vector_store.similarity_search(query, k=5)',
+              task: 'Cerca i 5 documenti piu simili semanticamente alla query nel vector store per costruire la base di una risposta RAG.',
             },
             {
               english: 'Chunking',
@@ -4670,6 +5201,9 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Cruciale per RAG: chunk troppo grandi o piccoli degradano i risultati.',
+              code: `from langchain.text_splitter import RecursiveCharacterTextSplitter
+splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)`,
+              task: 'Spezza un documento lungo in chunk da 500 caratteri con overlap di 50 per indicizzarli singolarmente.',
             },
             {
               english: 'Retrieval',
@@ -4680,6 +5214,9 @@ export default {
                 "The retrieval step fetches the five most relevant chunks from the knowledge base before the LLM generates a response. = Il passo di retrieval recupera i cinque chunk più rilevanti dalla knowledge base prima che l'LLM generi una risposta.",
               context: 'nlp',
               difficulty: 'intermediate',
+              code: `retriever = vector_store.as_retriever(search_kwargs={"k": 3})
+docs = retriever.invoke(query)`,
+              task: `Configura un retriever che restituisce i 3 documenti piu rilevanti per la query prima di passarli all'LLM.`,
             },
             {
               english: 'Hybrid Search',
@@ -4701,6 +5238,10 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               tool: 'cohere-rerank',
+              code: `from sentence_transformers import CrossEncoder
+reranker = CrossEncoder("cross-encoder/ms-marco-MiniLM-L-6-v2")
+scores = reranker.predict([(query, d) for d in candidates])`,
+              task: 'Riordina i documenti recuperati assegnando uno score di rilevanza con un cross-encoder pre-addestrato.',
             },
             {
               english: 'Embedding Model',
@@ -4712,6 +5253,10 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               tool: 'text-embedding-3-small',
+              code: `from sentence_transformers import SentenceTransformer
+emb_model = SentenceTransformer("all-MiniLM-L6-v2")
+vectors = emb_model.encode(texts)`,
+              task: 'Trasforma una lista di testi in vettori densi con SentenceTransformer MiniLM da usare per ricerca o clustering.',
             },
             {
               english: 'Knowledge Base',
@@ -4799,6 +5344,8 @@ export default {
                 'Raising the presence penalty encourages the model to introduce new topics rather than dwelling on familiar ones. = Alzare la penalità di presenza incoraggia il modello a introdurre nuovi argomenti piuttosto che soffermarsi su quelli familiari.',
               context: 'nlp',
               difficulty: 'intermediate',
+              code: 'resp = client.chat.completions.create(model="gpt-4", messages=m, presence_penalty=0.6)',
+              task: 'Imposta presence_penalty a 0.6 nella chiamata OpenAI per scoraggiare la ripetizione di token gia comparsi.',
             },
             {
               english: 'Streaming',
@@ -4822,6 +5369,9 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Problema comune degli LLM. RAG aiuta a mitigarlo.',
+              code: `from langchain.evaluation import load_evaluator
+ev = load_evaluator("labeled_score_string", criteria="factuality")`,
+              task: 'Carica un evaluator di LangChain che assegna un punteggio di factuality per individuare risposte allucinate.',
             },
             {
               english: 'Function Calling',
@@ -4857,6 +5407,10 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               tool: 'guardrails-ai, NeMo Guardrails',
+              code: `from guardrails import Guard
+guard = Guard.from_pydantic(output_class=SafeResponse)
+result = guard(llm, prompt)`,
+              task: `Avvolgi la chiamata LLM con la libreria Guardrails per validare l'output rispetto a uno schema Pydantic.`,
             },
           ],
         },
@@ -4884,6 +5438,9 @@ export default {
               context: 'model-training',
               difficulty: 'intermediate',
               note: 'Diverso dai parametri appresi (pesi).',
+              code: `from sklearn.model_selection import GridSearchCV
+search = GridSearchCV(model, {"C": [0.1, 1, 10]}, cv=5)`,
+              task: `Esplora tre valori dell'iperparametro C di una SVM con grid search e cross-validation a 5 fold.`,
             },
             {
               english: 'Learning Rate',
@@ -4931,6 +5488,9 @@ export default {
               context: 'model-training',
               difficulty: 'intermediate',
               note: 'Comune nei transformer e nei modelli con learning rate scheduler.',
+              code: `from transformers import get_linear_schedule_with_warmup
+sched = get_linear_schedule_with_warmup(optim, num_warmup_steps=500, num_training_steps=10000)`,
+              task: `Configura uno scheduler lineare con 500 warmup step su 10000 totali per stabilizzare l'inizio del training di un transformer.`,
             },
             {
               english: 'Hyperparameter Tuning',
@@ -4942,6 +5502,10 @@ export default {
               context: 'model-training',
               difficulty: 'intermediate',
               tool: 'Optuna, Ray Tune',
+              code: `import optuna
+study = optuna.create_study(direction="maximize")
+study.optimize(objective, n_trials=50)`,
+              task: 'Avvia uno studio Optuna con 50 trial per cercare gli iperparametri che massimizzano la metrica obiettivo.',
             },
             {
               english: 'Grid Search',
@@ -4977,6 +5541,9 @@ export default {
               context: 'model-training',
               difficulty: 'intermediate',
               tool: 'Optuna, Hyperopt',
+              code: `from skopt import gp_minimize
+result = gp_minimize(objective, dimensions=space, n_calls=30)`,
+              task: `Esegui un'ottimizzazione bayesiana con gp_minimize di scikit-optimize chiamando l'obiettivo 30 volte.`,
             },
             {
               english: 'Schedule',
@@ -5007,6 +5574,9 @@ export default {
               context: 'model-training',
               difficulty: 'intermediate',
               note: 'Detta anche cost function o objective function.',
+              code: `criterion = nn.CrossEntropyLoss()
+loss = criterion(logits, labels)`,
+              task: 'Definisci una loss CrossEntropy per classificazione multiclasse e calcola il valore di loss su un batch.',
             },
             {
               english: 'Cross-Entropy Loss',
@@ -5054,6 +5624,9 @@ export default {
                 'Support vector machines optimize hinge loss, which only penalizes predictions that fall within the margin boundary. = Le macchine a vettori di supporto ottimizzano la hinge loss, che penalizza solo le predizioni che cadono entro il confine del margine.',
               context: 'model-training',
               difficulty: 'intermediate',
+              code: `from sklearn.linear_model import SGDClassifier
+svm = SGDClassifier(loss="hinge").fit(X, y)`,
+              task: 'Addestra un classificatore SGD con hinge loss, equivalente a una SVM lineare allenata via gradient descent.',
             },
             {
               english: 'Focal Loss',
@@ -5065,6 +5638,9 @@ export default {
               context: 'model-training',
               difficulty: 'intermediate',
               note: 'Utile per dataset sbilanciati.',
+              code: `from torchvision.ops import sigmoid_focal_loss
+loss = sigmoid_focal_loss(logits, targets, alpha=0.25, gamma=2.0)`,
+              task: 'Applica la focal loss di torchvision con alpha 0.25 e gamma 2 per gestire dataset fortemente sbilanciati.',
             },
             {
               english: 'Triplet Loss',
@@ -5076,6 +5652,9 @@ export default {
               context: 'model-training',
               difficulty: 'intermediate',
               note: 'Usata per face recognition e metric learning.',
+              code: `criterion = nn.TripletMarginLoss(margin=1.0)
+loss = criterion(anchor, positive, negative)`,
+              task: 'Definisci una triplet loss con margine 1 per allenare embedding che separino ancora, esempio positivo e negativo.',
             },
             {
               english: 'KL Divergence',
@@ -5087,6 +5666,9 @@ export default {
               context: 'model-training',
               difficulty: 'intermediate',
               note: 'Kullback-Leibler divergence.',
+              code: `kl = nn.KLDivLoss(reduction="batchmean")
+loss = kl(F.log_softmax(student, dim=-1), F.softmax(teacher, dim=-1))`,
+              task: 'Calcola la KL divergence fra distribuzione del modello studente e quella del teacher per knowledge distillation.',
             },
             {
               english: 'Loss Curve',
@@ -5109,6 +5691,10 @@ export default {
                 'We wrote a custom loss combining cross-entropy with a domain-specific penalty for clinically dangerous misclassifications. = Abbiamo scritto una loss personalizzata che combina cross-entropy con una penalità specifica di dominio per misclassificazioni clinicamente pericolose.',
               context: 'model-training',
               difficulty: 'intermediate',
+              code: `class MSEPlusL1(nn.Module):
+    def forward(self, pred, target):
+        return F.mse_loss(pred, target) + 0.1 * F.l1_loss(pred, target)`,
+              task: 'Implementa una loss custom in PyTorch combinando MSE e L1 con un peso per regolarizzare la stima.',
             },
           ],
         },
@@ -5127,6 +5713,9 @@ export default {
               context: 'model-training',
               difficulty: 'intermediate',
               note: "Algoritmo base dell'ottimizzazione ML.",
+              code: `optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
+optimizer.step()`,
+              task: 'Configura un optimizer SGD vanilla con learning rate 0.01 e applica un passo di gradient descent sul modello.',
             },
             {
               english: 'Optimizer',
@@ -5187,6 +5776,8 @@ export default {
               context: 'model-training',
               difficulty: 'intermediate',
               note: 'Standard per addestrare transformer da zero.',
+              code: 'scheduler = get_linear_schedule_with_warmup(optimizer, num_warmup_steps=1000, num_training_steps=total)',
+              task: 'Aggiungi una fase di warmup di 1000 step durante cui il learning rate cresce linearmente da zero al valore target.',
             },
             {
               english: 'Cosine Annealing',
@@ -5230,6 +5821,10 @@ export default {
                 'We declared convergence when the validation loss improved by less than 0.001 for five consecutive epochs. = Abbiamo dichiarato la convergenza quando la loss di validazione è migliorata di meno di 0.001 per cinque epoche consecutive.',
               context: 'model-training',
               difficulty: 'intermediate',
+              code: `if abs(loss_prev - loss) < 1e-4:
+    print("Converged")
+    break`,
+              task: 'Interrompi il loop di training quando la variazione della loss tra due epoche scende sotto una tolleranza minima.',
             },
           ],
         },
@@ -5248,6 +5843,9 @@ export default {
               context: 'model-training',
               difficulty: 'intermediate',
               note: 'Graphics Processing Unit. Cuore del deep learning moderno.',
+              code: `device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+model = model.to(device)`,
+              task: `Sposta il modello sulla GPU se disponibile, altrimenti rimani su CPU, per accelerare l'addestramento.`,
             },
             {
               english: 'TPU',
@@ -5270,6 +5868,9 @@ export default {
               context: 'model-training',
               difficulty: 'intermediate',
               tool: 'NVIDIA CUDA Toolkit',
+              code: `x = x.cuda()
+print(torch.cuda.memory_allocated() / 1e9, "GB")`,
+              task: 'Sposta un tensor su CUDA e stampa la memoria GPU allocata in GB per verificare lo stato del device.',
             },
             {
               english: 'Mixed Precision',
@@ -5293,6 +5894,9 @@ export default {
               context: 'model-training',
               difficulty: 'intermediate',
               tool: 'DeepSpeed, FairScale, FSDP',
+              code: `import torch.distributed as dist
+dist.init_process_group(backend="nccl")`,
+              task: 'Inizializza il gruppo di processi distribuiti con backend NCCL come passo iniziale del training multi-GPU.',
             },
             {
               english: 'Data Parallelism',
@@ -5303,6 +5907,9 @@ export default {
                 "With data parallelism, each GPU processes a different mini-batch and gradients are averaged before the weight update. = Con il parallelismo dati, ogni GPU elabora un mini-batch diverso e i gradienti vengono mediati prima dell'aggiornamento dei pesi.",
               context: 'model-training',
               difficulty: 'intermediate',
+              code: `from torch.nn.parallel import DistributedDataParallel as DDP
+model = DDP(model, device_ids=[local_rank])`,
+              task: 'Avvolgi il modello con DistributedDataParallel per replicarlo su piu GPU e sincronizzare i gradienti automaticamente.',
             },
             {
               english: 'Model Parallelism',
@@ -5314,6 +5921,9 @@ export default {
               context: 'model-training',
               difficulty: 'intermediate',
               note: 'Necessario per modelli troppo grandi per una sola GPU.',
+              code: `self.layer1 = nn.Linear(1024, 1024).to("cuda:0")
+self.layer2 = nn.Linear(1024, 10).to("cuda:1")`,
+              task: 'Distribuisci layer diversi del modello su GPU diverse implementando il model parallelism manuale tra cuda:0 e cuda:1.',
             },
             {
               english: 'Gradient Accumulation',
@@ -5348,6 +5958,9 @@ export default {
                 "By recomputing activations during the backward pass, gradient checkpointing trades 30% more compute for 60% less memory. = Ricalcolando le attivazioni durante il passaggio all'indietro, il gradient checkpointing scambia il 30% di calcolo in più per il 60% di memoria in meno.",
               context: 'model-training',
               difficulty: 'intermediate',
+              code: `from torch.utils.checkpoint import checkpoint
+out = checkpoint(self.block, x)`,
+              task: 'Avvolgi un blocco del modello con checkpoint per ricalcolare le attivazioni a backward riducendo la memoria GPU.',
             },
           ],
         },
@@ -5438,6 +6051,9 @@ export default {
               context: 'evaluation',
               difficulty: 'intermediate',
               note: 'Abbreviato TP.',
+              code: `from sklearn.metrics import confusion_matrix
+tn, fp, fn, tp = confusion_matrix(y_true, y_pred).ravel()`,
+              task: 'Calcola i quattro componenti della matrice di confusione binaria estraendo TP, FP, FN e TN con scikit-learn.',
             },
             {
               english: 'False Positive',
@@ -5449,6 +6065,9 @@ export default {
               context: 'evaluation',
               difficulty: 'intermediate',
               note: 'Abbreviato FP. Detto anche errore di tipo I.',
+              code: `fp_rate = fp / (fp + tn)
+print(fp_rate)`,
+              task: 'Calcola il false positive rate dividendo i falsi positivi per la somma di FP e veri negativi della matrice.',
             },
             {
               english: 'False Negative',
@@ -5460,6 +6079,9 @@ export default {
               context: 'evaluation',
               difficulty: 'intermediate',
               note: 'Abbreviato FN. Spesso più costoso del FP in medicina.',
+              code: `fn_rate = fn / (fn + tp)
+print("FNR:", fn_rate)`,
+              task: 'Calcola il false negative rate per quantificare quanti positivi reali sono stati mancati dal classificatore.',
             },
             {
               english: 'Specificity',
@@ -5470,6 +6092,8 @@ export default {
                 'A test with 99% specificity correctly identifies 99 out of 100 healthy patients as disease-free. = Un test con il 99% di specificità identifica correttamente 99 pazienti sani su 100 come esenti da malattia.',
               context: 'evaluation',
               difficulty: 'intermediate',
+              code: 'specificity = tn / (tn + fp)',
+              task: 'Calcola la specificity come rapporto fra veri negativi e tutti i negativi reali della matrice di confusione.',
             },
             {
               english: 'Balanced Accuracy',
@@ -5500,6 +6124,9 @@ export default {
               context: 'evaluation',
               difficulty: 'intermediate',
               note: 'Receiver Operating Characteristic.',
+              code: `from sklearn.metrics import roc_curve
+fpr, tpr, thr = roc_curve(y_true, y_score)`,
+              task: 'Costruisci la curva ROC del classificatore ottenendo i tassi di falsi positivi, veri positivi e soglie.',
             },
             {
               english: 'AUC',
@@ -5523,6 +6150,9 @@ export default {
                 'For rare disease detection, the precision-recall curve is more informative than ROC because it ignores true negatives. = Per il rilevamento di malattie rare, la curva precisione-richiamo è più informativa della ROC perché ignora i veri negativi.',
               context: 'evaluation',
               difficulty: 'intermediate',
+              code: `from sklearn.metrics import precision_recall_curve
+prec, rec, thr = precision_recall_curve(y_true, y_score)`,
+              task: 'Calcola la curva precision-recall del modello, particolarmente utile su dataset fortemente sbilanciati.',
             },
             {
               english: 'Average Precision',
@@ -5545,6 +6175,9 @@ export default {
                 'Moving the decision threshold from 0.5 to 0.3 improved recall from 75% to 92% at the cost of more false positives. = Spostare la soglia decisionale da 0.5 a 0.3 ha migliorato il richiamo dal 75% al 92% al costo di più falsi positivi.',
               context: 'evaluation',
               difficulty: 'intermediate',
+              code: `best_thr = thresholds[np.argmax(tpr - fpr)]
+y_pred = (scores >= best_thr).astype(int)`,
+              task: 'Scegli la soglia ottimale massimizzando la differenza tra TPR e FPR sulla curva ROC e applicala ai punteggi.',
             },
             {
               english: 'Calibration',
@@ -5556,6 +6189,9 @@ export default {
               context: 'evaluation',
               difficulty: 'intermediate',
               tool: 'CalibratedClassifierCV',
+              code: `from sklearn.calibration import CalibratedClassifierCV
+cal = CalibratedClassifierCV(base_estimator=model, method="isotonic").fit(X, y)`,
+              task: 'Calibra le probabilita predette dal modello base con isotonic regression usando CalibratedClassifierCV.',
             },
             {
               english: 'Brier Score',
@@ -5566,6 +6202,9 @@ export default {
                 'A Brier score of 0.05 indicates that our probability forecasts are well-calibrated and close to reality. = Un Brier score di 0.05 indica che le nostre previsioni di probabilità sono ben calibrate e vicine alla realtà.',
               context: 'evaluation',
               difficulty: 'intermediate',
+              code: `from sklearn.metrics import brier_score_loss
+bs = brier_score_loss(y_true, y_prob)`,
+              task: 'Calcola il Brier score per misurare quanto bene le probabilita predette aderiscono ai valori binari reali.',
             },
             {
               english: 'Cohen Kappa',
@@ -5658,6 +6297,9 @@ export default {
                 "Unlike raw R-squared, adjusted R-squared penalizes adding features that do not genuinely improve prediction quality. = A differenza dell'R quadrato grezzo, l'R quadrato corretto penalizza l'aggiunta di feature che non migliorano genuinamente la qualità della predizione.",
               context: 'evaluation',
               difficulty: 'intermediate',
+              code: `n, p = X.shape
+adj_r2 = 1 - (1 - r2) * (n - 1) / (n - p - 1)`,
+              task: `Calcola l'R quadro corretto partendo dall'R2 grezzo, penalizzando l'aggiunta di feature non utili al modello.`,
             },
             {
               english: 'Median Absolute Error',
@@ -5681,6 +6323,9 @@ export default {
               context: 'evaluation',
               difficulty: 'intermediate',
               note: 'Idealmente i punti si dispongono lungo la diagonale y=x.',
+              code: `plt.scatter(y_true, y_pred)
+plt.plot([y_true.min(), y_true.max()], [y_true.min(), y_true.max()], "r--")`,
+              task: 'Disegna lo scatter dei valori predetti contro quelli reali aggiungendo la diagonale ideale come riferimento.',
             },
             {
               english: 'Residual Plot',
@@ -5691,6 +6336,10 @@ export default {
                 'The U-shaped residual plot revealed a nonlinear pattern the linear regression model was failing to capture. = Il grafico dei residui a forma di U ha rivelato un pattern non lineare che il modello di regressione lineare non riusciva a catturare.',
               context: 'evaluation',
               difficulty: 'intermediate',
+              code: `residuals = y_true - y_pred
+plt.scatter(y_pred, residuals)
+plt.axhline(0, color="red")`,
+              task: 'Visualizza i residui contro le predizioni per individuare pattern non catturati dal modello di regressione.',
             },
             {
               english: 'Q-Q Plot',
@@ -5701,6 +6350,9 @@ export default {
                 'The Q-Q plot showed residuals deviating from the diagonal, indicating non-normal error distribution. = Il grafico Q-Q ha mostrato residui che deviavano dalla diagonale, indicando una distribuzione degli errori non normale.',
               context: 'evaluation',
               difficulty: 'intermediate',
+              code: `import statsmodels.api as sm
+sm.qqplot(residuals, line="45")`,
+              task: `Disegna un Q-Q plot dei residui con la linea a 45 gradi per verificare l'assunzione di normalita degli errori.`,
             },
             {
               english: 'Heteroscedasticity',
@@ -5712,6 +6364,9 @@ export default {
               context: 'evaluation',
               difficulty: 'intermediate',
               note: 'Variabilità non costante dei residui.',
+              code: `from statsmodels.stats.diagnostic import het_breuschpagan
+lm, lm_p, f, f_p = het_breuschpagan(residuals, X)`,
+              task: `Esegui il test di Breusch-Pagan sui residui per verificare formalmente l'assenza di eteroschedasticita.`,
             },
             {
               english: 'Forecast Bias',
@@ -5722,6 +6377,9 @@ export default {
                 'Our demand model consistently under-predicted holiday sales, revealing a seasonal forecast bias we needed to correct. = Il nostro modello di domanda sotto-prediceva costantemente le vendite festive, rivelando un bias di previsione stagionale da correggere.',
               context: 'evaluation',
               difficulty: 'intermediate',
+              code: `bias = (y_pred - y_true).mean()
+print("Forecast bias:", bias)`,
+              task: 'Stima il bias di previsione come differenza media fra predetto e reale per capire se il modello sovra o sottostima.',
             },
           ],
         },
@@ -5739,6 +6397,8 @@ export default {
                 'We kept a 20% holdout set completely untouched during development and used it only for final evaluation. = Abbiamo tenuto un set holdout del 20% completamente intatto durante lo sviluppo e lo abbiamo usato solo per la valutazione finale.',
               context: 'evaluation',
               difficulty: 'intermediate',
+              code: 'X_train, X_holdout, y_train, y_holdout = train_test_split(X, y, test_size=0.2, random_state=42)',
+              task: 'Crea un holdout set del 20% con seed fisso per valutare il modello una sola volta a fine pipeline.',
             },
             {
               english: 'Stratified K-Fold',
@@ -5787,6 +6447,9 @@ export default {
                 'To avoid optimistic bias, nested cross-validation runs hyperparameter search in the inner loop and evaluation in the outer. = Per evitare bias ottimistico, la convalida incrociata nidificata esegue la ricerca iperparametri nel ciclo interno e la valutazione nel ciclo esterno.',
               context: 'evaluation',
               difficulty: 'intermediate',
+              code: `from sklearn.model_selection import GridSearchCV, cross_val_score
+outer = cross_val_score(GridSearchCV(model, grid, cv=3), X, y, cv=5)`,
+              task: `Annida una grid search a 3 fold dentro un cross-validation esterno a 5 fold per stimare l'errore in modo non distorto.`,
             },
             {
               english: 'Group K-Fold',
@@ -5798,6 +6461,11 @@ export default {
               context: 'evaluation',
               difficulty: 'intermediate',
               note: 'Esempio: pazienti diversi non devono mischiarsi tra train e test.',
+              code: `from sklearn.model_selection import GroupKFold
+gkf = GroupKFold(n_splits=5)
+for tr, te in gkf.split(X, y, groups):
+    pass`,
+              task: `Itera sui fold di GroupKFold passando l'array di gruppi affinche pazienti diversi non finiscano sia in train che in test.`,
             },
             {
               english: 'Ablation Study',
@@ -5808,6 +6476,10 @@ export default {
                 'The ablation study revealed that removing positional encoding had a catastrophic effect on long-range dependencies. = Lo studio di ablazione ha rivelato che rimuovere la codifica posizionale ha avuto un effetto catastrofico sulle dipendenze a lungo raggio.',
               context: 'evaluation',
               difficulty: 'intermediate',
+              code: `results = {}
+for feat in ["fA", "fB", "fC"]:
+    results[feat] = model.fit(X.drop(feat, axis=1), y).score(X_test.drop(feat, axis=1), y_test)`,
+              task: 'Esegui un ablation study rimuovendo una feature alla volta e misurando il calo di performance per stimarne il contributo.',
             },
             {
               english: 'Statistical Significance',
@@ -5818,6 +6490,9 @@ export default {
                 'A p-value of 0.003 confirmed that the improvement from the new model was beyond statistical significance thresholds. = Un p-value di 0.003 ha confermato che il miglioramento dal nuovo modello era oltre le soglie di significatività statistica.',
               context: 'evaluation',
               difficulty: 'intermediate',
+              code: `from scipy.stats import ttest_rel
+t, p = ttest_rel(scores_model_a, scores_model_b)`,
+              task: `Confronta gli score dei due modelli con un t-test appaiato per verificare se la differenza e' statisticamente significativa.`,
             },
             {
               english: 'McNemar Test',
@@ -5828,6 +6503,9 @@ export default {
                 'We used the McNemar test to determine if two classifiers make significantly different errors on the same test set. = Abbiamo usato il test di McNemar per determinare se due classificatori fanno errori significativamente diversi sullo stesso set di test.',
               context: 'evaluation',
               difficulty: 'intermediate',
+              code: `from statsmodels.stats.contingency_tables import mcnemar
+result = mcnemar([[a, b], [c, d]], exact=True)`,
+              task: 'Esegui il test di McNemar sulla tabella di contingenza per confrontare due classificatori sullo stesso test set.',
             },
             {
               english: 'Test Harness',
@@ -5928,6 +6606,8 @@ export default {
               context: 'tools',
               difficulty: 'intermediate',
               note: 'Default in TensorFlow 2.x.',
+              code: 'tf.config.run_functions_eagerly(True)',
+              task: `Abilita l'esecuzione eager di TensorFlow per debuggare le funzioni riga per riga.`,
             },
             {
               english: 'Graph Mode',
@@ -6081,6 +6761,9 @@ export default {
               context: 'tools',
               difficulty: 'intermediate',
               tool: 'pytorch-lightning',
+              code: `trainer = pl.Trainer(max_epochs=10)
+trainer.fit(model, dataloader)`,
+              task: `Istanzia un Trainer di PyTorch Lightning con 10 epoche e avvia l'addestramento sul modello.`,
             },
             {
               english: 'TorchScript',
@@ -6251,6 +6934,8 @@ export default {
               context: 'tools',
               difficulty: 'intermediate',
               tool: 'Hugging Face Hub',
+              command: 'huggingface-cli login',
+              task: `Autenticati sull'hub di Hugging Face dalla CLI per scaricare modelli privati.`,
             },
             {
               english: 'Transformers Library',
@@ -6357,6 +7042,8 @@ export default {
               context: 'tools',
               difficulty: 'intermediate',
               tool: 'accelerate',
+              command: 'accelerate launch train.py',
+              task: `Lancia lo script train.py tramite accelerate per distribuire l'addestramento su piu GPU.`,
             },
           ],
         },
@@ -6552,6 +7239,8 @@ export default {
               context: 'data-engineering',
               difficulty: 'advanced',
               note: 'Esempio: latitudine x longitudine.',
+              code: 'df["city_x_product"] = df["city"] + "_" + df["product"]',
+              task: `Crea l'incrocio city_x_product concatenando le colonne city e product per catturare interazioni.`,
             },
             {
               english: 'Date Features',
@@ -6643,6 +7332,9 @@ export default {
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'category_encoders.HashingEncoder',
+              code: `encoder = HashingEncoder(n_components=256)
+X_hashed = encoder.fit_transform(X)`,
+              task: 'Codifica le feature categoriche di X su 256 bin con HashingEncoder di category_encoders.',
             },
             {
               english: 'Binary Encoding',
@@ -6665,6 +7357,9 @@ export default {
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'category_encoders.LeaveOneOutEncoder',
+              code: `encoder = LeaveOneOutEncoder()
+X_enc = encoder.fit_transform(X, y)`,
+              task: 'Applica LeaveOneOutEncoder a X usando il target y per evitare fuga di informazione.',
             },
             {
               english: 'CatBoost Encoder',
@@ -6790,6 +7485,8 @@ export default {
                 "Extracting the geospatial feature of distance-to-nearest-hospital improved our property valuation model. = Estrarre la feature geospaziale di distanza dall'ospedale più vicino ha migliorato il nostro modello di valutazione immobiliare.",
               context: 'data-engineering',
               difficulty: 'advanced',
+              code: 'df["dist_km"] = haversine(df["lat"], df["lon"], hosp_lat, hosp_lon)',
+              task: `Calcola la distanza in chilometri da ogni punto all'ospedale piu vicino con la formula haversine.`,
             },
             {
               english: 'Text Features',
@@ -6800,6 +7497,8 @@ export default {
                 'We derived text features like word count, sentiment score, and readability index from customer reviews. = Abbiamo derivato feature testuali come conteggio parole, punteggio di sentiment e indice di leggibilità dalle recensioni dei clienti.',
               context: 'data-engineering',
               difficulty: 'advanced',
+              code: 'df["word_count"] = df["text"].str.split().str.len()',
+              task: 'Estrai il numero di parole dalla colonna text salvandolo nella nuova colonna word_count.',
             },
             {
               english: 'Image Features',
@@ -6833,6 +7532,8 @@ export default {
                 'Multiplying bedrooms by bathrooms to create an interaction term captured the luxury-apartment pricing pattern. = Moltiplicare camere per bagni per creare un termine di interazione ha catturato il pattern di prezzo degli appartamenti di lusso.',
               context: 'data-engineering',
               difficulty: 'advanced',
+              code: 'df["bed_x_bath"] = df["bedrooms"] * df["bathrooms"]',
+              task: 'Costruisci il termine di interazione moltiplicando le colonne bedrooms e bathrooms.',
             },
             {
               english: 'Auto Feature Engineering',
@@ -6844,6 +7545,8 @@ export default {
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'Featuretools, tsfresh',
+              code: 'features, _ = ft.dfs(entityset=es, target_dataframe_name="customers")',
+              task: `Genera automaticamente feature relazionali con Featuretools usando deep feature synthesis sull'entityset es.`,
             },
           ],
         },
@@ -6963,6 +7666,9 @@ export default {
                 'A higher inception score indicates that generated images are both sharp and diverse across categories. = Un punteggio inception più alto indica che le immagini generate sono sia nitide che diverse tra le categorie.',
               context: 'architectures',
               difficulty: 'advanced',
+              code: `from torchmetrics.image.inception import InceptionScore
+is_metric = InceptionScore()`,
+              task: 'Inizializza il metric InceptionScore di torchmetrics per valutare le immagini generate dalla GAN.',
             },
           ],
         },
@@ -7012,6 +7718,8 @@ export default {
               context: 'architectures',
               difficulty: 'advanced',
               note: 'Z = mu + sigma * epsilon.',
+              code: 'z = mu + sigma * torch.randn_like(sigma)',
+              task: 'Implementa il trucco di riparametrizzazione campionando z come mu piu sigma per rumore gaussiano.',
             },
             {
               english: 'KL Divergence Loss',
@@ -7022,6 +7730,8 @@ export default {
                 'Balancing reconstruction quality against KL divergence loss controls how closely the latent space matches a Gaussian prior. = Bilanciare la qualità di ricostruzione con la loss di divergenza KL controlla quanto lo spazio latente corrisponde a un prior gaussiano.',
               context: 'architectures',
               difficulty: 'advanced',
+              code: 'kl = -0.5 * torch.sum(1 + log_var - mu.pow(2) - log_var.exp())',
+              task: 'Calcola la KL divergence loss del VAE a partire da media mu e varianza logaritmica log_var.',
             },
             {
               english: 'Reconstruction Loss',
@@ -7032,6 +7742,8 @@ export default {
                 "A high reconstruction loss means the decoder is failing to reproduce the original input from its latent code. = Una loss di ricostruzione alta significa che il decoder non riesce a riprodurre l'input originale dal suo codice latente.",
               context: 'architectures',
               difficulty: 'advanced',
+              code: 'recon_loss = F.mse_loss(recon_x, x)',
+              task: `Misura la loss di ricostruzione tra l'input originale x e l'output del decoder recon_x con MSE.`,
             },
             {
               english: 'Latent Interpolation',
@@ -7042,6 +7754,8 @@ export default {
                 "By performing latent interpolation between two face embeddings, we generated a smooth morphing animation. = Eseguendo l'interpolazione latente tra due embedding di volti, abbiamo generato un'animazione di morphing fluida.",
               context: 'architectures',
               difficulty: 'advanced',
+              code: 'z_interp = z1 * (1 - t) + z2 * t',
+              task: 'Interpola linearmente tra i due vettori latenti z1 e z2 al parametro t per generare transizioni fluide.',
             },
             {
               english: 'Beta-VAE',
@@ -7122,6 +7836,9 @@ export default {
               context: 'architectures',
               difficulty: 'advanced',
               tool: 'diffusers',
+              code: `from diffusers import StableDiffusionPipeline
+pipe = StableDiffusionPipeline.from_pretrained("runwayml/stable-diffusion-v1-5")`,
+              task: 'Carica la pipeline di Stable Diffusion v1.5 dal repository diffusers per generare immagini da prompt.',
             },
             {
               english: 'DALL-E',
@@ -7133,6 +7850,8 @@ export default {
               context: 'architectures',
               difficulty: 'advanced',
               tool: 'OpenAI DALL-E',
+              code: 'client.images.generate(model="dall-e-3", prompt="a cat in space", n=1)',
+              task: `Richiama il modello dall-e-3 di OpenAI per generare un'immagine a partire da un prompt testuale.`,
             },
             {
               english: 'Midjourney',
@@ -7165,6 +7884,8 @@ export default {
               context: 'architectures',
               difficulty: 'advanced',
               note: 'Tipicamente 20-50 passi.',
+              code: 'image = pipe(prompt, num_inference_steps=25).images[0]',
+              task: `Genera l'immagine con la pipeline di diffusione impostando num_inference_steps a 25 passi.`,
             },
             {
               english: 'Classifier-Free Guidance',
@@ -7187,6 +7908,8 @@ export default {
                 'With ControlNet, artists can guide image generation using edge maps, depth maps, or pose skeletons as spatial constraints. = Con ControlNet, gli artisti possono guidare la generazione di immagini usando mappe di bordi, mappe di profondità o scheletri di posa come vincoli spaziali.',
               context: 'architectures',
               difficulty: 'advanced',
+              code: 'controlnet = ControlNetModel.from_pretrained("lllyasviel/sd-controlnet-canny")',
+              task: 'Carica un ControlNet preaddestrato sul rilevamento dei bordi Canny per guidare la generazione.',
             },
           ],
         },
@@ -7361,6 +8084,8 @@ export default {
               difficulty: 'advanced',
               tool: 'wandb',
               note: 'Abbreviato W&B.',
+              code: 'wandb.init(project="churn-model", config=hparams)',
+              task: 'Inizializza un run di Weights & Biases nel progetto churn-model passando gli iperparametri hparams.',
             },
             {
               english: 'Run',
@@ -7405,6 +8130,8 @@ export default {
                 'Thanks to hyperparameter logging, we traced a regression to a learning rate change made three weeks earlier. = Grazie al logging degli iperparametri, abbiamo tracciato una regressione a un cambio di learning rate fatto tre settimane prima.',
               context: 'mlops',
               difficulty: 'advanced',
+              code: 'wandb.config.update({"lr": 1e-4, "batch_size": 32})',
+              task: 'Registra learning rate e batch size come configurazione del run W&B con wandb.config.update.',
             },
             {
               english: 'Reproducibility',
@@ -7446,6 +8173,8 @@ export default {
               context: 'mlops',
               difficulty: 'advanced',
               tool: 'MLflow Registry, Sagemaker Registry',
+              code: 'mlflow.register_model("runs:/<run_id>/model", "ChurnModel")',
+              task: 'Registra il modello del run corrente nel Model Registry MLflow con il nome ChurnModel.',
             },
             {
               english: 'Model Version',
@@ -7467,6 +8196,8 @@ export default {
               context: 'mlops',
               difficulty: 'advanced',
               note: 'Stadi tipici: None, Staging, Production, Archived.',
+              code: 'client.transition_model_version_stage("ChurnModel", 3, "Production")',
+              task: 'Promuovi la versione 3 di ChurnModel allo stadio Production usando il client MLflow.',
             },
             {
               english: 'Model Lineage',
@@ -7511,6 +8242,8 @@ export default {
               difficulty: 'advanced',
               tool: 'DVC',
               note: 'Data Version Control.',
+              command: 'dvc add data/train.csv',
+              task: 'Versiona il file data/train.csv con DVC per tracciarlo separatamente dal repository Git.',
             },
             {
               english: 'Git LFS',
@@ -7523,6 +8256,8 @@ export default {
               difficulty: 'advanced',
               tool: 'git-lfs',
               note: 'Large File Storage.',
+              command: 'git lfs track "*.bin"',
+              task: 'Configura Git LFS per tracciare tutti i file binari .bin evitando di appesantire il repository.',
             },
             {
               english: 'Model Promotion',
@@ -7582,6 +8317,9 @@ export default {
               context: 'mlops',
               difficulty: 'advanced',
               tool: 'Apache Airflow',
+              code: `with DAG("ml_pipeline", schedule="@daily") as dag:
+    train = PythonOperator(task_id="train", python_callable=train_fn)`,
+              task: 'Definisci un DAG Airflow giornaliero ml_pipeline con un task di addestramento PythonOperator.',
             },
             {
               english: 'DAG',
@@ -7604,6 +8342,8 @@ export default {
               context: 'mlops',
               difficulty: 'advanced',
               tool: 'Kubeflow Pipelines',
+              code: 'kfp.Client().create_run_from_pipeline_func(my_pipeline, arguments={})',
+              task: 'Esegui la pipeline my_pipeline su Kubeflow lanciando un run tramite il client kfp.',
             },
             {
               english: 'Pipeline Component',
@@ -7674,6 +8414,9 @@ export default {
               context: 'mlops',
               difficulty: 'advanced',
               tool: 'Evidently, Whylogs',
+              code: `from evidently.report import Report
+report = Report(metrics=[DataDriftPreset()])`,
+              task: 'Crea un report di monitoraggio Evidently con il preset DataDriftPreset per sorvegliare il modello.',
             },
             {
               english: 'Data Drift',
@@ -7828,6 +8571,9 @@ export default {
                 'Internal services call the model via gRPC because it offers 3x lower latency than REST for binary payloads. = I servizi interni chiamano il modello tramite gRPC perché offre latenza 3 volte inferiore a REST per payload binari.',
               context: 'deployment',
               difficulty: 'advanced',
+              code: `channel = grpc.insecure_channel("localhost:50051")
+stub = PredictStub(channel)`,
+              task: 'Apri un canale gRPC verso il server di inferenza locale e costruisci uno stub per chiamare predict.',
             },
             {
               english: 'Latency',
@@ -7917,6 +8663,8 @@ export default {
                 "Structured pruning removed 40% of the network's channels while maintaining 98% of the original accuracy. = Il pruning strutturato ha rimosso il 40% dei canali della rete mantenendo il 98% dell'accuratezza originale.",
               context: 'deployment',
               difficulty: 'advanced',
+              code: 'prune.l1_unstructured(model.fc, name="weight", amount=0.3)',
+              task: 'Applica il pruning L1 non strutturato per rimuovere il 30% dei pesi dal layer fc del modello.',
             },
             {
               english: 'Knowledge Distillation',
@@ -7940,6 +8688,8 @@ export default {
               difficulty: 'advanced',
               tool: 'onnx',
               note: 'Open Neural Network Exchange.',
+              code: 'torch.onnx.export(model, dummy_input, "model.onnx", opset_version=17)',
+              task: 'Esporta il modello PyTorch nel formato ONNX usando opset 17 per il deploy multi-runtime.',
             },
             {
               english: 'TensorRT',
@@ -7951,6 +8701,8 @@ export default {
               context: 'deployment',
               difficulty: 'advanced',
               tool: 'NVIDIA TensorRT',
+              command: 'trtexec --onnx=model.onnx --saveEngine=model.trt --fp16',
+              task: `Compila l'engine TensorRT FP16 a partire da model.onnx con il tool trtexec di NVIDIA.`,
             },
             {
               english: 'OpenVINO',
@@ -7961,6 +8713,9 @@ export default {
                 'For Intel CPU deployment, OpenVINO optimizations brought inference latency down from 200ms to 45ms. = Per il deploy su CPU Intel, le ottimizzazioni OpenVINO hanno ridotto la latenza di inferenza da 200ms a 45ms.',
               context: 'deployment',
               difficulty: 'advanced',
+              code: `from openvino.runtime import Core
+compiled = Core().compile_model("model.xml", "CPU")`,
+              task: 'Compila il modello OpenVINO model.xml sul dispositivo CPU per inferenza ottimizzata Intel.',
             },
             {
               english: 'Model Compression',
@@ -7992,6 +8747,9 @@ export default {
               context: 'deployment',
               difficulty: 'advanced',
               note: 'Half precision floating point.',
+              code: `with torch.cuda.amp.autocast(dtype=torch.float16):
+    output = model(x)`,
+              task: `Esegui il forward in precisione FP16 con autocast per ridurre l'uso di memoria GPU.`,
             },
             {
               english: 'Edge Deployment',
@@ -8045,6 +8803,8 @@ export default {
               difficulty: 'advanced',
               tool: 'kubectl',
               note: 'Spesso abbreviato k8s.',
+              command: 'kubectl apply -f deployment.yaml',
+              task: 'Applica il manifesto deployment.yaml al cluster Kubernetes per deployare il servizio di inferenza.',
             },
             {
               english: 'Auto-Scaling',
@@ -8076,6 +8836,9 @@ export default {
               context: 'deployment',
               difficulty: 'advanced',
               tool: 'AWS SageMaker',
+              code: `estimator = sagemaker.estimator.Estimator(image_uri, role, instance_count=1)
+estimator.fit({"train": s3_path})`,
+              task: `Costruisci uno Estimator SageMaker e avvia l'addestramento usando i dati su S3.`,
             },
             {
               english: 'Vertex AI',
@@ -8087,6 +8850,9 @@ export default {
               context: 'deployment',
               difficulty: 'advanced',
               tool: 'Google Vertex AI',
+              code: `job = aiplatform.CustomTrainingJob(display_name="train", script_path="train.py")
+job.run()`,
+              task: 'Crea un CustomTrainingJob su Vertex AI passando lo script train.py e avvialo con run().',
             },
             {
               english: 'Azure ML',
@@ -8098,6 +8864,8 @@ export default {
               context: 'deployment',
               difficulty: 'advanced',
               tool: 'Azure Machine Learning',
+              code: 'ml_client = MLClient(DefaultAzureCredential(), sub_id, rg, "ws")',
+              task: 'Connettiti al workspace Azure ML costruendo un MLClient con DefaultAzureCredential.',
             },
             {
               english: 'Serverless',
@@ -8148,6 +8916,8 @@ export default {
                 'A rolling update replaces model pods one at a time, ensuring zero downtime during version transitions. = Un rolling update sostituisce i pod del modello uno alla volta, assicurando zero downtime durante le transizioni di versione.',
               context: 'deployment',
               difficulty: 'advanced',
+              command: 'kubectl rollout restart deployment/my-model',
+              task: 'Lancia un rolling restart del deployment my-model per sostituire progressivamente i pod.',
             },
             {
               english: 'Blue-Green Deployment',
@@ -8189,6 +8959,8 @@ export default {
               context: 'deployment',
               difficulty: 'advanced',
               tool: 'Redis, Memcached',
+              code: 'redis_client.setex(f"pred:{key}", 3600, prediction)',
+              task: `Memorizza la predizione su Redis con chiave pred:<key> e TTL di un'ora con setex.`,
             },
             {
               english: 'Logging',
@@ -8223,6 +8995,9 @@ export default {
               context: 'deployment',
               difficulty: 'advanced',
               tool: 'Feast, Tecton',
+              code: `from feast import FeatureStore
+store = FeatureStore(repo_path="./feature_repo")`,
+              task: 'Inizializza un FeatureStore di Feast puntando alla directory del repository di feature.',
             },
             {
               english: 'Rollback',
@@ -8343,6 +9118,9 @@ export default {
               context: 'ethics',
               difficulty: 'advanced',
               tool: 'Fairlearn, AIF360',
+              code: `from fairlearn.reductions import ExponentiatedGradient, DemographicParity
+mitigator = ExponentiatedGradient(estimator, DemographicParity())`,
+              task: 'Mitiga il bias con ExponentiatedGradient di Fairlearn vincolando il modello a rispettare la parita demografica.',
             },
             {
               english: 'Reweighting',
@@ -8407,6 +9185,9 @@ export default {
               difficulty: 'advanced',
               tool: 'lime',
               note: 'Local Interpretable Model-agnostic Explanations.',
+              code: `explainer = LimeTabularExplainer(X_train.values)
+exp = explainer.explain_instance(x, model.predict_proba)`,
+              task: 'Spiega una predizione con LimeTabularExplainer addestrato sui dati di training X_train.',
             },
             {
               english: 'Counterfactual',
@@ -8680,6 +9461,10 @@ export default {
               context: 'ethics',
               difficulty: 'advanced',
               tool: 'CodeCarbon',
+              code: `from codecarbon import EmissionsTracker
+with EmissionsTracker() as tracker:
+    train(model)`,
+              task: `Traccia le emissioni di CO2 dell'addestramento racchiudendolo in un blocco EmissionsTracker di CodeCarbon.`,
             },
             {
               english: 'Responsible Disclosure',
@@ -8727,6 +9512,9 @@ export default {
               context: 'machine-learning',
               difficulty: 'advanced',
               tool: 'Gymnasium, OpenAI Gym',
+              code: `env = gym.make("CartPole-v1")
+obs, info = env.reset()`,
+              task: `Istanzia l'ambiente CartPole-v1 di Gymnasium e resetta lo stato iniziale prima dell'episodio.`,
             },
             {
               english: 'State',
@@ -9031,6 +9819,9 @@ export default {
               context: 'machine-learning',
               difficulty: 'advanced',
               tool: 'stable-baselines3',
+              code: `model = PPO("MlpPolicy", env, verbose=1)
+model.learn(total_timesteps=10_000)`,
+              task: `Addestra un agente PPO di Stable-Baselines3 sull'ambiente env per 10.000 timestep.`,
             },
           ],
         },
@@ -9287,6 +10078,9 @@ export default {
               context: 'architectures',
               difficulty: 'advanced',
               tool: 'flash-attn',
+              code: `from flash_attn import flash_attn_func
+out = flash_attn_func(q, k, v, causal=True)`,
+              task: `Calcola l'attenzione causale efficiente in memoria con flash_attn_func su query, key e value.`,
             },
             {
               english: 'Sparse Attention',
@@ -9399,6 +10193,9 @@ export default {
               context: 'architectures',
               difficulty: 'advanced',
               note: 'Contrastive Language-Image Pretraining.',
+              code: `import clip
+model, preprocess = clip.load("ViT-B/32", device="cuda")`,
+              task: 'Carica il modello CLIP ViT-B/32 di OpenAI con il preprocessor su GPU per zero-shot classification.',
             },
             {
               english: 'GPT-4V',
@@ -9539,6 +10336,9 @@ export default {
               context: 'architectures',
               difficulty: 'advanced',
               tool: 'langchain',
+              code: `from langchain.chains import LLMChain
+chain = LLMChain(llm=llm, prompt=prompt_template)`,
+              task: 'Componi una LLMChain di LangChain collegando un modello llm a un template di prompt.',
             },
             {
               english: 'LlamaIndex',
@@ -9550,6 +10350,9 @@ export default {
               context: 'architectures',
               difficulty: 'advanced',
               tool: 'llama-index',
+              code: `from llama_index.core import VectorStoreIndex
+index = VectorStoreIndex.from_documents(docs)`,
+              task: 'Indicizza i documenti docs in un VectorStoreIndex di LlamaIndex per abilitare query RAG.',
             },
             {
               english: 'Tool Calling',
@@ -9670,6 +10473,9 @@ export default {
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'PySpark',
+              code: `spark = SparkSession.builder.appName("ml-features").getOrCreate()
+df = spark.read.parquet("s3://data/")`,
+              task: 'Avvia una SparkSession e leggi i file Parquet da S3 per processare le feature in modo distribuito.',
             },
             {
               english: 'Dask',
@@ -9681,6 +10487,9 @@ export default {
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'dask',
+              code: `import dask.dataframe as dd
+df = dd.read_parquet("data/*.parquet")`,
+              task: 'Carica i file Parquet come DataFrame Dask distribuito per superare i limiti di memoria di pandas.',
             },
             {
               english: 'Apache Beam',
@@ -9692,6 +10501,9 @@ export default {
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'Apache Beam',
+              code: `with beam.Pipeline() as p:
+    p | beam.io.ReadFromText("input.txt") | beam.Map(parse)`,
+              task: 'Costruisci una pipeline Apache Beam che legge input.txt e applica la funzione parse a ogni riga.',
             },
             {
               english: 'Data Versioning',
@@ -9776,6 +10588,8 @@ export default {
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'Delta Lake',
+              code: 'df.write.format("delta").mode("append").save("/tmp/delta/events")',
+              task: 'Salva il dataframe in formato Delta Lake con modalita append nella tabella /tmp/delta/events.',
             },
             {
               english: 'Apache Iceberg',
@@ -9787,6 +10601,8 @@ export default {
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'Apache Iceberg',
+              code: 'spark.read.format("iceberg").load("warehouse.db.events")',
+              task: 'Leggi la tabella Iceberg warehouse.db.events con Spark per query time-travel su grandi volumi.',
             },
             {
               english: 'Object Storage',
@@ -9993,6 +10809,9 @@ export default {
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'Apache Kafka',
+              code: `producer = KafkaProducer(bootstrap_servers="localhost:9092")
+producer.send("events", b"new feature")`,
+              task: 'Pubblica il messaggio new feature sul topic Kafka events tramite un KafkaProducer locale.',
             },
             {
               english: 'Flink',
@@ -10004,6 +10823,9 @@ export default {
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'Apache Flink',
+              code: `env = StreamExecutionEnvironment.get_execution_environment()
+env.from_source(kafka_source).map(parse_event)`,
+              task: 'Configura un job Flink che legge eventi da una source Kafka e li trasforma con la funzione parse_event.',
             },
             {
               english: 'Airflow DAG',
@@ -10028,6 +10850,8 @@ export default {
               difficulty: 'advanced',
               tool: 'dbt',
               note: 'Data Build Tool.',
+              command: 'dbt run --select customer_features',
+              task: 'Esegui il modello dbt customer_features per materializzare la tabella di feature nel warehouse.',
             },
             {
               english: 'Snowflake',
@@ -10039,6 +10863,9 @@ export default {
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'Snowflake',
+              code: `conn = snowflake.connector.connect(user="u", password="p", account="acc")
+df = pd.read_sql("SELECT * FROM features", conn)`,
+              task: 'Connettiti a Snowflake e carica la tabella features in un DataFrame pandas via read_sql.',
             },
             {
               english: 'BigQuery',
@@ -10050,6 +10877,9 @@ export default {
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'Google BigQuery',
+              code: `from google.cloud import bigquery
+df = bigquery.Client().query("SELECT * FROM dataset.features").to_dataframe()`,
+              task: 'Interroga la tabella dataset.features di BigQuery e materializza il risultato in un DataFrame.',
             },
             {
               english: 'Databricks',
@@ -10061,6 +10891,8 @@ export default {
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'Databricks',
+              command: 'databricks jobs run-now --job-id 1234',
+              task: 'Lancia il job Databricks con id 1234 tramite la CLI per eseguire la pipeline di training.',
             },
           ],
         },
@@ -10108,6 +10940,10 @@ export default {
               context: 'ethics',
               difficulty: 'advanced',
               note: 'Fast Gradient Sign Method.',
+              code: `from art.attacks.evasion import FastGradientMethod
+attack = FastGradientMethod(classifier, eps=0.1)
+X_adv = attack.generate(X)`,
+              task: 'Genera esempi avversari con FGSM impostando epsilon a 0.1 sul classifier addestrato.',
             },
             {
               english: 'PGD Attack',
@@ -10119,6 +10955,9 @@ export default {
               context: 'ethics',
               difficulty: 'advanced',
               note: 'Projected Gradient Descent.',
+              code: `attack = ProjectedGradientDescent(classifier, eps=0.1, eps_step=0.01, max_iter=40)
+X_adv = attack.generate(X)`,
+              task: 'Costruisci un attacco PGD iterativo con 40 step e generaci sopra esempi avversari da X.',
             },
             {
               english: 'Defensive Distillation',

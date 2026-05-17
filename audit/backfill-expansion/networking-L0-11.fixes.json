@@ -1,0 +1,1255 @@
+{
+  "fixes": [
+    {
+      "level": "0",
+      "lesson": "net_foundations_3",
+      "english": "Throughput",
+      "set": {
+        "command": "iperf3 -c iperf.he.net -t 30",
+        "task": "Misura il throughput effettivo TCP verso il server iperf di Hurricane Electric per 30 secondi."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "net_foundations_3",
+      "english": "Jitter",
+      "set": {
+        "command": "mtr --report --report-cycles 50 8.8.8.8",
+        "task": "Genera un report MTR di 50 cicli verso 8.8.8.8 per misurare jitter, perdita pacchetti e latenza per hop."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "net_foundations_4",
+      "english": "Access Point",
+      "set": {
+        "command": "iw dev wlan0 scan | grep -E 'SSID|signal'",
+        "task": "Scansiona gli access point Wi-Fi rilevati dall'interfaccia wlan0 mostrando SSID e potenza del segnale."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "net_osi_3",
+      "english": "Frame Check Sequence",
+      "set": {
+        "command": "ethtool -S eth0 | grep -i crc",
+        "task": "Estrai dalle statistiche di eth0 i contatori di errori CRC per individuare frame corrotti in arrivo."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "net_tcpip_1",
+      "english": "IP",
+      "set": {
+        "command": "ip -4 addr show",
+        "task": "Elenca tutti gli indirizzi IPv4 assegnati alle interfacce locali con il loro CIDR e stato operativo."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "net_tcpip_1",
+      "english": "Port",
+      "set": {
+        "command": "ss -tlnp",
+        "task": "Mostra tutte le porte TCP in ascolto sulla macchina associandole al processo che le occupa."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "net_tcpip_1",
+      "english": "Connection",
+      "set": {
+        "command": "ss -tan state established",
+        "task": "Filtra solo le connessioni TCP nello stato ESTABLISHED per vedere quante sessioni attive ha il sistema."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "net_tcpip_2",
+      "english": "Three-Way Handshake",
+      "set": {
+        "command": "tcpdump -i eth0 -nn 'tcp[tcpflags] & (tcp-syn|tcp-ack) != 0' -c 20",
+        "task": "Cattura i primi 20 pacchetti TCP con flag SYN o ACK su eth0 per osservare gli handshake in corso."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "net_tcpip_2",
+      "english": "SYN",
+      "set": {
+        "command": "tcpdump -i any -nn 'tcp[tcpflags] == tcp-syn' -c 10",
+        "task": "Cattura dieci pacchetti SYN puri (senza ACK) per osservare apertura di nuove connessioni TCP."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "net_tcpip_2",
+      "english": "FIN",
+      "set": {
+        "command": "tcpdump -i any -nn 'tcp[tcpflags] & tcp-fin != 0' -c 10",
+        "task": "Filtra i pacchetti TCP con flag FIN per osservare chiusure ordinate di connessione."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "net_tcpip_2",
+      "english": "RST",
+      "set": {
+        "command": "tcpdump -i any -nn 'tcp[tcpflags] & tcp-rst != 0' -c 10",
+        "task": "Cattura i pacchetti TCP RST per individuare connessioni interrotte bruscamente dal kernel o da firewall."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "net_tcpip_3",
+      "english": "Port 80",
+      "set": {
+        "command": "curl -v http://example.com",
+        "task": "Apri una connessione TCP non cifrata sulla porta 80 verso example.com e mostra lo scambio HTTP completo."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "net_tcpip_3",
+      "english": "Port 443",
+      "set": {
+        "command": "openssl s_client -connect example.com:443 -servername example.com",
+        "task": "Apri una sessione TLS sulla porta 443 di example.com per ispezionare il certificato HTTPS presentato."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "net_tcpip_3",
+      "english": "Port 22",
+      "set": {
+        "command": "nc -zv example.com 22",
+        "task": "Verifica se la porta 22 di example.com accetta connessioni TCP per stabilire se SSH e' raggiungibile."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "net_tcpip_3",
+      "english": "Port 53",
+      "set": {
+        "command": "dig @8.8.8.8 example.com +short",
+        "task": "Interroga il resolver Google sulla porta 53 per risolvere example.com restituendo solo gli indirizzi finali."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "net_tcpip_3",
+      "english": "Port 25",
+      "set": {
+        "command": "nc -zv smtp.example.com 25",
+        "task": "Controlla se il mail server smtp.example.com accetta connessioni SMTP sulla porta 25."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "net_tcpip_3",
+      "english": "Open Port",
+      "set": {
+        "command": "nmap -sS -p- --open 192.168.1.1",
+        "task": "Esegui una scansione SYN su tutte le 65535 porte di 192.168.1.1 mostrando solo quelle aperte."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "net_tcpip_4",
+      "english": "Congestion Control",
+      "set": {
+        "command": "sysctl net.ipv4.tcp_congestion_control",
+        "task": "Mostra quale algoritmo di controllo congestione TCP il kernel sta usando di default (es. cubic, bbr, reno)."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_addressing_1",
+      "english": "IPv4",
+      "set": {
+        "command": "ip -4 addr show dev eth0",
+        "task": "Visualizza solo gli indirizzi IPv4 configurati sull'interfaccia eth0 con la rispettiva subnet."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_addressing_1",
+      "english": "Private IP",
+      "set": {
+        "command": "ip -o addr | grep -E '10\\.|172\\.1[6-9]|192\\.168'",
+        "task": "Filtra dagli indirizzi locali quelli appartenenti ai range privati RFC 1918 (10/8, 172.16/12, 192.168/16)."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_addressing_1",
+      "english": "APIPA",
+      "set": {
+        "command": "ip addr show | grep '169.254'",
+        "task": "Controlla se una interfaccia ha ricevuto un indirizzo APIPA 169.254.0.0/16 sintomo di un DHCP fallito."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_addressing_2",
+      "english": "Subnet Mask",
+      "set": {
+        "command": "ipcalc 192.168.1.0/24",
+        "task": "Calcola con ipcalc rete, broadcast, netmask e numero di host utili della sottorete 192.168.1.0/24."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_addressing_2",
+      "english": "CIDR",
+      "set": {
+        "command": "ipcalc 10.0.0.0/22",
+        "task": "Espandi il prefisso CIDR 10.0.0.0/22 per leggerne range di indirizzi e maschera dotted decimal."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_addressing_2",
+      "english": "Subnet Calculator",
+      "set": {
+        "command": "sipcalc -s 24 192.168.0.0/22",
+        "task": "Suddividi 192.168.0.0/22 in quattro sottoreti /24 elencandole tutte con sipcalc."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_addressing_3",
+      "english": "IPv6",
+      "set": {
+        "command": "ip -6 addr show",
+        "task": "Stampa tutti gli indirizzi IPv6 attivi sulle interfacce locali con il rispettivo scope (link/global)."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_addressing_3",
+      "english": "Link-Local Address",
+      "set": {
+        "command": "ip -6 addr show scope link",
+        "task": "Filtra gli indirizzi IPv6 con scope link-local per identificare le interfacce abilitate a IPv6."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_addressing_3",
+      "english": "Dual Stack",
+      "set": {
+        "command": "ip addr show dev eth0 | grep -E 'inet|inet6'",
+        "task": "Verifica che eth0 abbia configurati sia un IPv4 sia un IPv6 globali per confermare il dual stack."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_addressing_4",
+      "english": "DHCP",
+      "set": {
+        "command": "dhclient -v eth0",
+        "task": "Richiedi un nuovo lease DHCP per l'interfaccia eth0 mostrando ogni passaggio del processo DORA."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_addressing_4",
+      "english": "DHCP Lease",
+      "set": {
+        "command": "cat /var/lib/dhcp/dhclient.eth0.leases",
+        "task": "Ispeziona il file dei lease DHCP di dhclient per scoprire la durata residua del lease su eth0."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_addressing_4",
+      "english": "DHCP Discover",
+      "set": {
+        "command": "tcpdump -i eth0 -nn port 67 or port 68",
+        "task": "Cattura il traffico DHCP sulle porte 67/68 per osservare la sequenza Discover/Offer/Request/Ack."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_addressing_4",
+      "english": "DHCP Server",
+      "set": {
+        "code": "# /etc/dhcp/dhcpd.conf\nsubnet 192.168.1.0 netmask 255.255.255.0 {\n  range 192.168.1.100 192.168.1.200;\n  option routers 192.168.1.1;\n  option domain-name-servers 8.8.8.8;\n  default-lease-time 600;\n}",
+        "task": "Configura una subnet DHCP servita da isc-dhcp-server distribuendo IP da .100 a .200 con gateway e DNS."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_addressing_4",
+      "english": "Multicast",
+      "set": {
+        "command": "ip maddr show",
+        "task": "Elenca i gruppi multicast a cui ogni interfaccia di rete del sistema risulta iscritta."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "net_switching_1",
+      "english": "Ethernet Frame",
+      "set": {
+        "command": "tcpdump -i eth0 -e -nn -c 10",
+        "task": "Cattura dieci frame Ethernet su eth0 mostrando gli header L2 con MAC sorgente e destinazione."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "net_switching_1",
+      "english": "Jumbo Frame",
+      "set": {
+        "command": "ip link set eth0 mtu 9000",
+        "task": "Imposta la MTU dell'interfaccia eth0 a 9000 byte per abilitare il supporto ai jumbo frame."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "net_switching_2",
+      "english": "CAM Table",
+      "set": {
+        "code": "Switch# show mac address-table dynamic\nSwitch# show mac address-table count\nSwitch# clear mac address-table dynamic",
+        "task": "Su Cisco IOS interroga la CAM dinamica, ne conta le entry e la svuota per forzare nuovo apprendimento."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "net_switching_2",
+      "english": "PoE",
+      "set": {
+        "code": "Switch(config)# interface GigabitEthernet0/1\nSwitch(config-if)# power inline auto\nSwitch# show power inline",
+        "task": "Abilita PoE in modalita' auto sulla porta Gi0/1 di uno switch Cisco e verifica lo stato di alimentazione."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "net_switching_3",
+      "english": "VLAN ID",
+      "set": {
+        "code": "Switch(config)# vlan 100\nSwitch(config-vlan)# name MANAGEMENT\nSwitch(config-vlan)# exit",
+        "task": "Crea la VLAN 100 con nome MANAGEMENT sulla configurazione globale di uno switch Cisco IOS."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "net_switching_3",
+      "english": "802.1Q",
+      "set": {
+        "code": "Switch(config-if)# switchport trunk encapsulation dot1q\nSwitch(config-if)# switchport mode trunk\nSwitch(config-if)# switchport trunk allowed vlan 10,20,30",
+        "task": "Configura l'incapsulamento 802.1Q sull'interfaccia trunk consentendo solo le VLAN 10, 20 e 30."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "net_switching_3",
+      "english": "Native VLAN",
+      "set": {
+        "code": "Switch(config-if)# switchport trunk native vlan 999",
+        "task": "Cambia la native VLAN del trunk dalla 1 alla 999 per mitigare attacchi di VLAN hopping."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "net_switching_3",
+      "english": "Inter-VLAN Routing",
+      "set": {
+        "code": "Switch(config)# interface vlan 10\nSwitch(config-if)# ip address 10.0.10.1 255.255.255.0\nSwitch(config)# ip routing",
+        "task": "Configura una SVI sulla VLAN 10 con gateway 10.0.10.1/24 e abilita il routing per il traffico inter-VLAN."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "net_switching_3",
+      "english": "Voice VLAN",
+      "set": {
+        "code": "Switch(config-if)# switchport mode access\nSwitch(config-if)# switchport access vlan 10\nSwitch(config-if)# switchport voice vlan 20",
+        "task": "Imposta la porta con VLAN dati 10 e VLAN voce 20 per supportare un IP phone con PC collegato."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "net_switching_4",
+      "english": "STP",
+      "set": {
+        "code": "Switch# show spanning-tree\nSwitch# show spanning-tree vlan 1",
+        "task": "Visualizza lo stato Spanning Tree per scoprire il root bridge eletto e i ruoli di ogni porta."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "net_switching_4",
+      "english": "Root Bridge",
+      "set": {
+        "code": "Switch(config)# spanning-tree vlan 1 priority 4096",
+        "task": "Forza lo switch a diventare root bridge della VLAN 1 abbassandone la priorita' STP a 4096."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "net_switching_4",
+      "english": "RSTP",
+      "set": {
+        "code": "Switch(config)# spanning-tree mode rapid-pvst",
+        "task": "Attiva la modalita' rapid-pvst su uno switch Cisco per usare RSTP invece dello STP classico."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "net_switching_4",
+      "english": "ARP Spoofing",
+      "set": {
+        "command": "arpspoof -i eth0 -t 192.168.1.10 192.168.1.1",
+        "task": "Avvia un attacco ARP spoofing su eth0 facendo credere a 192.168.1.10 che 192.168.1.1 sei tu (solo in lab)."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "net_switching_4",
+      "english": "EtherChannel",
+      "set": {
+        "code": "Switch(config-if-range)# channel-group 1 mode active\nSwitch(config)# interface Port-channel 1\nSwitch(config-if)# switchport mode trunk",
+        "task": "Crea un EtherChannel LACP attivo aggregando le interfacce in un Port-channel trunk."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "net_routing_1",
+      "english": "Routing",
+      "set": {
+        "command": "ip route get 8.8.8.8",
+        "task": "Chiedi al kernel quale rotta verrebbe usata per raggiungere 8.8.8.8 e con quale interfaccia."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "net_routing_2",
+      "english": "Floating Static Route",
+      "set": {
+        "code": "Router(config)# ip route 10.0.0.0 255.0.0.0 192.168.1.254\nRouter(config)# ip route 10.0.0.0 255.0.0.0 192.168.2.254 200",
+        "task": "Aggiungi una rotta statica galleggiante con AD 200 come backup di quella primaria su Cisco IOS."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "net_routing_3",
+      "english": "RIP",
+      "set": {
+        "code": "Router(config)# router rip\nRouter(config-router)# version 2\nRouter(config-router)# network 10.0.0.0\nRouter(config-router)# no auto-summary",
+        "task": "Attiva RIPv2 su un router Cisco annunciando la rete 10.0.0.0 senza summary automatico."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "net_routing_3",
+      "english": "OSPF",
+      "set": {
+        "code": "Router(config)# router ospf 1\nRouter(config-router)# router-id 1.1.1.1\nRouter(config-router)# network 10.0.0.0 0.0.0.255 area 0",
+        "task": "Configura il processo OSPF 1 con router-id 1.1.1.1 e annuncia la 10.0.0.0/24 nell'area backbone 0."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "net_routing_3",
+      "english": "EIGRP",
+      "set": {
+        "code": "Router(config)# router eigrp 100\nRouter(config-router)# network 10.0.0.0 0.0.0.255\nRouter(config-router)# no auto-summary",
+        "task": "Abilita EIGRP nell'AS 100 e annuncia la rete 10.0.0.0/24 disattivando il summary automatico."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "net_routing_3",
+      "english": "Hello Packet",
+      "set": {
+        "command": "tcpdump -i eth0 -nn proto 89",
+        "task": "Cattura i pacchetti OSPF su eth0 per osservare gli hello scambiati tra router vicini ogni 10 secondi."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "net_routing_4",
+      "english": "Routed Port",
+      "set": {
+        "code": "Switch(config)# interface GigabitEthernet0/1\nSwitch(config-if)# no switchport\nSwitch(config-if)# ip address 10.0.0.1 255.255.255.252",
+        "task": "Trasforma la porta Gi0/1 da L2 a routed assegnandole un IP /30 per un uplink punto-punto."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "net_routing_4",
+      "english": "Router ID",
+      "set": {
+        "code": "Router(config)# router ospf 1\nRouter(config-router)# router-id 10.1.1.1",
+        "task": "Imposta esplicitamente il router-id OSPF a 10.1.1.1 per evitare che cambi al riavvio dell'interfaccia."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "net_routing_4",
+      "english": "Bidirectional Forwarding Detection",
+      "set": {
+        "code": "Router(config-if)# bfd interval 50 min_rx 50 multiplier 3\nRouter(config-router)# bfd all-interfaces",
+        "task": "Abilita BFD sull'interfaccia con timer da 50 ms e moltiplicatore 3 per rilevare guasti di link rapidi."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "net_dns_1",
+      "english": "DNS",
+      "set": {
+        "command": "dig example.com +short",
+        "task": "Risolvi example.com tramite il resolver di sistema mostrando solo gli indirizzi IP finali."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "net_dns_1",
+      "english": "TLD",
+      "set": {
+        "command": "dig com NS +short",
+        "task": "Recupera la lista dei nameserver autoritativi per il TLD .com tramite una query NS."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "net_dns_1",
+      "english": "FQDN",
+      "set": {
+        "command": "dig www.example.com. A +short",
+        "task": "Risolvi l'FQDN www.example.com. (con punto finale) per ottenerne l'indirizzo IPv4."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "net_dns_1",
+      "english": "Root Server",
+      "set": {
+        "command": "dig . NS +short",
+        "task": "Interroga i nameserver root del DNS per ottenere la lista dei tredici server radice a-m.root-servers.net."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "net_dns_1",
+      "english": "Authoritative Server",
+      "set": {
+        "command": "dig +trace example.com",
+        "task": "Traccia la risoluzione di example.com a partire dai root fino al server autoritativo finale."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "net_dns_2",
+      "english": "TXT Record",
+      "set": {
+        "command": "dig example.com TXT +short",
+        "task": "Recupera tutti i record TXT di example.com per ispezionare SPF, DKIM e verifiche di proprieta'."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "net_dns_2",
+      "english": "SOA Record",
+      "set": {
+        "command": "dig example.com SOA +short",
+        "task": "Estrai il record SOA di example.com per leggere serial, refresh, retry, expire e minimum TTL."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "net_dns_2",
+      "english": "SRV Record",
+      "set": {
+        "command": "dig _ldap._tcp.example.com SRV +short",
+        "task": "Interroga il record SRV LDAP via TCP per scoprire host e porta del servizio per quel dominio."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "net_dns_2",
+      "english": "CAA Record",
+      "set": {
+        "command": "dig example.com CAA +short",
+        "task": "Recupera i record CAA di example.com per vedere quali Certificate Authority sono autorizzate ad emettere cert."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "net_dns_3",
+      "english": "DNS TTL",
+      "set": {
+        "command": "dig example.com +noall +answer",
+        "task": "Mostra solo la sezione answer di una query A su example.com per leggere il TTL residuo del record."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "net_dns_3",
+      "english": "Zone File",
+      "set": {
+        "code": "$TTL 3600\n@ IN SOA ns1.example.com. admin.example.com. (\n  2026051701 ; serial\n  3600 1800 1209600 86400 )\n@ IN NS ns1.example.com.\n@ IN A 192.0.2.10\nwww IN CNAME @",
+        "task": "Scrivi uno zone file BIND per example.com con record SOA, NS, A radice e CNAME per www."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "net_dns_3",
+      "english": "Zone Transfer",
+      "set": {
+        "command": "dig @ns1.example.com example.com AXFR",
+        "task": "Richiedi un trasferimento di zona completo AXFR per example.com al suo nameserver autoritativo ns1."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "net_dns_4",
+      "english": "DNSSEC",
+      "set": {
+        "command": "dig example.com +dnssec +multi",
+        "task": "Interroga example.com con flag DNSSEC per visualizzare anche i record DS, DNSKEY e RRSIG."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "net_dns_4",
+      "english": "DoH",
+      "set": {
+        "command": "curl -H 'accept: application/dns-json' 'https://1.1.1.1/dns-query?name=example.com&type=A'",
+        "task": "Risolvi example.com via DNS over HTTPS interrogando l'endpoint JSON di Cloudflare 1.1.1.1."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "net_dns_4",
+      "english": "NXDOMAIN",
+      "set": {
+        "command": "dig nonexistent-name-xyz.example.com",
+        "task": "Forza una risposta NXDOMAIN interrogando un nome chiaramente inesistente per studiare la cache negativa."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "net_dns_4",
+      "english": "Wildcard Record",
+      "set": {
+        "code": "$ORIGIN example.com.\n*.dev IN A 192.0.2.50",
+        "task": "Pubblica un record wildcard *.dev.example.com che risolva ogni sottodominio dev verso 192.0.2.50."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "net_protocols_1",
+      "english": "HTTP",
+      "set": {
+        "command": "curl -v http://example.com/",
+        "task": "Effettua una richiesta HTTP non cifrata mostrando in modo verboso headers di richiesta e risposta."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "net_protocols_1",
+      "english": "HTTP/1.1",
+      "set": {
+        "command": "curl --http1.1 -v https://example.com/",
+        "task": "Forza curl a usare HTTP/1.1 verso example.com per analizzare il comportamento del protocollo legacy."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "net_protocols_1",
+      "english": "HTTP/2",
+      "set": {
+        "command": "curl --http2 -v https://example.com/",
+        "task": "Esegui una richiesta HTTPS forzando HTTP/2 e osserva il multiplexing nei log verbose di curl."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "net_protocols_1",
+      "english": "HTTP/3",
+      "set": {
+        "command": "curl --http3 -v https://cloudflare.com/",
+        "task": "Richiedi cloudflare.com via HTTP/3 su QUIC per verificare che il server supporti il nuovo protocollo."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "net_protocols_1",
+      "english": "HTTPS",
+      "set": {
+        "command": "curl -v https://example.com/",
+        "task": "Apri una connessione HTTPS verso example.com per ispezionare handshake TLS e header della risposta."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "net_protocols_2",
+      "english": "Response",
+      "set": {
+        "command": "curl -i https://example.com/",
+        "task": "Mostra l'intera risposta HTTP di example.com includendo status line, header e body."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "net_protocols_2",
+      "english": "GET",
+      "set": {
+        "command": "curl -X GET https://api.example.com/users",
+        "task": "Esegui una richiesta GET sull'endpoint /users dell'API d'esempio per recuperare la lista risorse."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "net_protocols_2",
+      "english": "Status Code",
+      "set": {
+        "command": "curl -o /dev/null -s -w '%{http_code}\\n' https://example.com/",
+        "task": "Recupera solo il codice di stato HTTP della risposta di example.com scartandone il corpo."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "net_protocols_2",
+      "english": "404 Not Found",
+      "set": {
+        "command": "curl -I https://example.com/nonexistent",
+        "task": "Forza una risposta 404 richiedendo una risorsa inesistente e mostra solo gli header HTTP restituiti."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "net_protocols_2",
+      "english": "User Agent",
+      "set": {
+        "command": "curl -A 'Mozilla/5.0 (compatible; MyBot/1.0)' https://example.com/",
+        "task": "Invia una richiesta personalizzando l'header User-Agent per simulare un bot specifico verso example.com."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "net_protocols_3",
+      "english": "TLS",
+      "set": {
+        "command": "openssl s_client -connect example.com:443 -tls1_2",
+        "task": "Apri una connessione TLS 1.2 verso example.com per analizzare versione, cifrari e certificati negoziati."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "net_protocols_3",
+      "english": "TLS Handshake",
+      "set": {
+        "command": "openssl s_client -connect example.com:443 -msg",
+        "task": "Mostra ogni messaggio dell'handshake TLS con example.com per ispezionare ClientHello, ServerHello e Finished."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "net_protocols_3",
+      "english": "SNI",
+      "set": {
+        "command": "openssl s_client -connect 93.184.216.34:443 -servername example.com",
+        "task": "Connettiti via IP all'host indicando esplicitamente example.com come SNI per ottenere il certificato giusto."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "net_protocols_3",
+      "english": "TLS 1.3",
+      "set": {
+        "command": "openssl s_client -connect example.com:443 -tls1_3",
+        "task": "Apri una connessione forzando TLS 1.3 per verificare che il server supporti la versione piu' recente."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "net_protocols_3",
+      "english": "OCSP",
+      "set": {
+        "command": "openssl s_client -connect example.com:443 -status",
+        "task": "Richiedi lo stato OCSP del certificato TLS di example.com per verificare che non sia stato revocato."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "net_protocols_4",
+      "english": "Cookie",
+      "set": {
+        "command": "curl -c cookies.txt -b cookies.txt https://example.com/",
+        "task": "Effettua una richiesta salvando e riutilizzando cookie da un file per simulare una sessione persistente."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "net_protocols_4",
+      "english": "WebSocket",
+      "set": {
+        "command": "websocat wss://echo.websocket.org",
+        "task": "Apri una connessione WebSocket sicura verso il server di echo per scambiare messaggi full-duplex."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "net_protocols_4",
+      "english": "Redirect",
+      "set": {
+        "command": "curl -L -I http://example.com/",
+        "task": "Segui automaticamente i redirect HTTP fino alla risorsa finale stampando solo gli header di ogni hop."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "net_wireless_1",
+      "english": "Wi-Fi",
+      "set": {
+        "command": "nmcli device wifi list",
+        "task": "Elenca tutte le reti Wi-Fi rilevate con NetworkManager mostrando SSID, segnale, banda e cifratura."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "net_wireless_1",
+      "english": "SSID",
+      "set": {
+        "command": "nmcli -t -f SSID device wifi list",
+        "task": "Estrai solo la lista degli SSID delle reti Wi-Fi visibili usando l'output terse di nmcli."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "net_wireless_1",
+      "english": "BSSID",
+      "set": {
+        "command": "iw dev wlan0 scan | grep -E 'BSS|SSID'",
+        "task": "Estrai dalla scansione di wlan0 le coppie BSSID-SSID per identificare singolarmente gli access point vicini."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "net_wireless_1",
+      "english": "Channel",
+      "set": {
+        "command": "iw dev wlan0 info",
+        "task": "Recupera canale, banda e larghezza correnti dell'interfaccia wlan0 associata a un access point."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "net_wireless_1",
+      "english": "Frequency",
+      "set": {
+        "command": "iwlist wlan0 frequency",
+        "task": "Elenca tutte le frequenze 2.4 e 5 GHz supportate dall'interfaccia wireless wlan0."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "net_wireless_3",
+      "english": "WPA2",
+      "set": {
+        "command": "nmcli device wifi connect MySSID password 'mypassword'",
+        "task": "Connettiti via NetworkManager alla rete MySSID protetta da WPA2 fornendo la passphrase."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "net_wireless_3",
+      "english": "Rogue AP",
+      "set": {
+        "command": "airodump-ng --band abg wlan0mon",
+        "task": "Avvia airodump-ng su un'interfaccia in monitor mode per individuare access point non autorizzati nelle vicinanze."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "net_wireless_4",
+      "english": "Roaming",
+      "set": {
+        "command": "iw dev wlan0 link",
+        "task": "Mostra a quale BSSID sei attualmente associato per verificare se sei rimasto sull'AP migliore dopo lo spostamento."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "net_wireless_4",
+      "english": "Site Survey",
+      "set": {
+        "command": "iw dev wlan0 scan | grep -E 'SSID|signal|freq'",
+        "task": "Esegui un mini site survey con iw raccogliendo SSID, frequenza e potenza di tutti gli AP visibili."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "net_firewalls_1",
+      "english": "Allow",
+      "set": {
+        "code": "iptables -A INPUT -p tcp --dport 443 -j ACCEPT",
+        "task": "Crea una regola allow in INPUT che accetti il traffico TCP destinato alla porta 443 HTTPS."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "net_firewalls_1",
+      "english": "Deny",
+      "set": {
+        "code": "iptables -A INPUT -s 198.51.100.0/24 -j DROP",
+        "task": "Aggiungi una regola di deny silenzioso che scarta tutto il traffico proveniente dalla subnet 198.51.100.0/24."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "net_firewalls_1",
+      "english": "Reject",
+      "set": {
+        "code": "iptables -A INPUT -p tcp --dport 23 -j REJECT --reject-with tcp-reset",
+        "task": "Rifiuta le connessioni Telnet sulla porta 23 inviando un TCP reset al mittente invece di un drop silenzioso."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "net_firewalls_1",
+      "english": "Ingress",
+      "set": {
+        "code": "iptables -A INPUT -i eth0 -p tcp --dport 22 -s 10.0.0.0/8 -j ACCEPT",
+        "task": "Applica una regola di ingress filtering che permetta SSH su eth0 solo dalla rete interna 10.0.0.0/8."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "net_firewalls_1",
+      "english": "Egress",
+      "set": {
+        "code": "iptables -A OUTPUT -p tcp --dport 25 -j DROP",
+        "task": "Blocca in egress il traffico SMTP in uscita sulla porta 25 per impedire spam da host compromessi."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "net_firewalls_2",
+      "english": "WAF",
+      "set": {
+        "code": "# /etc/modsecurity/modsecurity.conf\nSecRuleEngine On\nSecRule REQUEST_URI \"@contains /admin\" \"id:1001,phase:1,deny,status:403,log\"",
+        "task": "Abilita ModSecurity in modalita' attiva e crea una regola WAF che blocca con 403 ogni richiesta verso /admin."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "net_firewalls_2",
+      "english": "Host-Based Firewall",
+      "set": {
+        "command": "ufw enable && ufw default deny incoming && ufw default allow outgoing",
+        "task": "Attiva ufw impostando una policy host-based deny-incoming/allow-outgoing come base sicura per il server."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "net_firewalls_3",
+      "english": "Inbound ACL",
+      "set": {
+        "code": "Router(config)# interface GigabitEthernet0/0\nRouter(config-if)# ip access-group 100 in",
+        "task": "Applica in ingresso sull'interfaccia Gi0/0 l'extended ACL 100 per filtrare il traffico dall'esterno."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "net_firewalls_3",
+      "english": "Outbound ACL",
+      "set": {
+        "code": "Router(config)# interface GigabitEthernet0/1\nRouter(config-if)# ip access-group BLOCK_GUEST out",
+        "task": "Applica in uscita su Gi0/1 la named ACL BLOCK_GUEST per restringere il traffico verso l'esterno."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "net_firewalls_3",
+      "english": "Reflexive ACL",
+      "set": {
+        "code": "Router(config)# ip access-list extended OUTBOUND\nRouter(config-ext-nacl)# permit tcp any any reflect TCP_TRAFFIC\nRouter(config)# ip access-list extended INBOUND\nRouter(config-ext-nacl)# evaluate TCP_TRAFFIC",
+        "task": "Crea una coppia di ACL riflessive per permettere il ritorno automatico delle connessioni TCP iniziate dall'interno."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "net_firewalls_3",
+      "english": "Time-Based ACL",
+      "set": {
+        "code": "Router(config)# time-range BUSINESS_HOURS\nRouter(config-time-range)# periodic weekdays 9:00 to 18:00\nRouter(config)# access-list 101 deny tcp any any eq 443 time-range BUSINESS_HOURS",
+        "task": "Definisci un time-range BUSINESS_HOURS e blocca HTTPS solo durante l'orario lavorativo nei giorni feriali."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "net_firewalls_4",
+      "english": "Connection Tracking",
+      "set": {
+        "command": "conntrack -E -e NEW,DESTROY",
+        "task": "Monitora in tempo reale gli eventi conntrack di creazione e distruzione delle connessioni tracciate dal kernel."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "net_vpn_1",
+      "english": "Encryption",
+      "set": {
+        "command": "openssl ciphers -v 'TLSv1.3' | head",
+        "task": "Elenca i cipher TLS 1.3 disponibili nella libreria openssl per scegliere algoritmi di cifratura moderni."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "net_vpn_2",
+      "english": "IPsec",
+      "set": {
+        "code": "# /etc/ipsec.conf\nconn site-to-site\n  left=203.0.113.1\n  right=198.51.100.1\n  leftsubnet=10.0.0.0/24\n  rightsubnet=10.1.0.0/24\n  ike=aes256-sha256-modp2048\n  esp=aes256-sha256\n  auto=start",
+        "task": "Configura un tunnel IPsec site-to-site su strongSwan tra due gateway con cifrari moderni AES-256/SHA-256."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "net_vpn_2",
+      "english": "IKE",
+      "set": {
+        "command": "ipsec statusall",
+        "task": "Visualizza lo stato completo di tutte le connessioni IKE/IPsec configurate su strongSwan per il troubleshooting."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "net_vpn_2",
+      "english": "Security Association",
+      "set": {
+        "command": "ip xfrm state",
+        "task": "Elenca le Security Association IPsec attive nel kernel mostrando chiavi, SPI e algoritmi negoziati."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "net_vpn_3",
+      "english": "OpenVPN",
+      "set": {
+        "command": "openvpn --config client.ovpn",
+        "task": "Avvia un client OpenVPN caricando il profilo client.ovpn per stabilire il tunnel cifrato verso il server."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "net_vpn_3",
+      "english": "AllowedIPs",
+      "set": {
+        "code": "[Peer]\nPublicKey = abc123...\nAllowedIPs = 10.0.0.0/24, 192.168.50.2/32\nEndpoint = vpn.example.com:51820\nPersistentKeepalive = 25",
+        "task": "Definisci un peer WireGuard restringendo AllowedIPs alla subnet 10.0.0.0/24 piu' un singolo host."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "net_vpn_4",
+      "english": "GRE Tunnel",
+      "set": {
+        "code": "ip tunnel add gre1 mode gre remote 198.51.100.2 local 203.0.113.5 ttl 255\nip addr add 10.255.0.1/30 dev gre1\nip link set gre1 up",
+        "task": "Crea un tunnel GRE punto-punto tra due router Linux assegnandogli un /30 e portandolo in stato up."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "net_vpn_4",
+      "english": "Tailscale",
+      "set": {
+        "command": "tailscale up --advertise-routes=10.0.0.0/24 --accept-routes",
+        "task": "Connettiti alla rete Tailscale annunciando la subnet 10.0.0.0/24 e accettando le rotte annunciate dagli altri nodi."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "net_services_nat_1",
+      "english": "PAT",
+      "set": {
+        "code": "iptables -t nat -A POSTROUTING -s 192.168.1.0/24 -o eth0 -j MASQUERADE",
+        "task": "Configura PAT (NAT overload) mascherando il traffico in uscita della LAN 192.168.1.0/24 dietro l'IP di eth0."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "net_services_nat_1",
+      "english": "Static NAT",
+      "set": {
+        "code": "iptables -t nat -A PREROUTING -d 203.0.113.10 -j DNAT --to-destination 10.0.0.10\niptables -t nat -A POSTROUTING -s 10.0.0.10 -j SNAT --to-source 203.0.113.10",
+        "task": "Implementa un NAT statico bidirezionale mappando l'IP pubblico 203.0.113.10 sul server interno 10.0.0.10."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "net_services_nat_1",
+      "english": "Dynamic NAT",
+      "set": {
+        "code": "iptables -t nat -A POSTROUTING -s 10.0.0.0/24 -o eth0 -j SNAT --to-source 203.0.113.10-203.0.113.15",
+        "task": "Configura un NAT dinamico assegnando le sorgenti interne 10.0.0.0/24 a un pool di IP pubblici .10-.15."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "net_services_nat_1",
+      "english": "Hairpin NAT",
+      "set": {
+        "code": "iptables -t nat -A PREROUTING -i eth0 -d 203.0.113.10 -p tcp --dport 80 -j DNAT --to 10.0.0.10\niptables -t nat -A POSTROUTING -s 10.0.0.0/24 -d 10.0.0.10 -j MASQUERADE",
+        "task": "Abilita l'hairpin NAT cosi' che i client interni possano raggiungere il server tramite il suo IP pubblico."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "net_services_proxy_2",
+      "english": "Forward Proxy",
+      "set": {
+        "code": "# /etc/squid/squid.conf\nhttp_port 3128\nacl localnet src 192.168.0.0/16\nhttp_access allow localnet\nhttp_access deny all",
+        "task": "Configura Squid come forward proxy su porta 3128 accettando solo la LAN interna 192.168.0.0/16."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "net_services_proxy_2",
+      "english": "Reverse Proxy",
+      "set": {
+        "code": "# /etc/nginx/conf.d/reverse.conf\nserver {\n  listen 443 ssl;\n  server_name app.example.com;\n  location / {\n    proxy_pass http://10.0.0.10:8080;\n    proxy_set_header Host $host;\n  }\n}",
+        "task": "Configura Nginx come reverse proxy HTTPS verso il backend interno 10.0.0.10:8080 preservando l'header Host."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "net_services_proxy_2",
+      "english": "Caching Proxy",
+      "set": {
+        "code": "# /etc/squid/squid.conf\ncache_dir ufs /var/spool/squid 10000 16 256\nmaximum_object_size 32 MB\nrefresh_pattern -i \\.(jpg|png|css|js)$ 10080 90% 43200",
+        "task": "Abilita la cache su disco di Squid con 10 GB di storage e regole di refresh aggressive per asset statici."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "net_services_proxy_2",
+      "english": "Web Filter",
+      "set": {
+        "code": "# /etc/squid/squid.conf\nacl bad_sites dstdomain .gambling.com .malware.net\nhttp_access deny bad_sites",
+        "task": "Definisci una ACL Squid che blocchi categorie di siti indesiderati come gambling e malware tramite dstdomain."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "net_services_proxy_2",
+      "english": "Open Proxy",
+      "set": {
+        "command": "curl -x http://open-proxy.example.com:8080 -m 5 https://httpbin.org/ip",
+        "task": "Testa un proxy aperto verificando in 5 secondi se inoltra correttamente la richiesta mostrando l'IP percepito."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "net_services_lb_3",
+      "english": "Load Balancer",
+      "set": {
+        "code": "# /etc/haproxy/haproxy.cfg\nfrontend web\n  bind *:80\n  default_backend webservers\nbackend webservers\n  balance roundrobin\n  server web1 10.0.0.1:80 check\n  server web2 10.0.0.2:80 check",
+        "task": "Configura HAProxy come load balancer HTTP che distribuisce in round robin il traffico tra due web server."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "net_services_lb_3",
+      "english": "Round Robin",
+      "set": {
+        "code": "backend webservers\n  balance roundrobin\n  server web1 10.0.0.1:80\n  server web2 10.0.0.2:80\n  server web3 10.0.0.3:80",
+        "task": "Imposta su HAProxy la strategia round robin per ruotare ciclicamente le richieste tra tre server backend."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "net_services_lb_3",
+      "english": "Least Connections",
+      "set": {
+        "code": "backend webservers\n  balance leastconn\n  server web1 10.0.0.1:80 check\n  server web2 10.0.0.2:80 check",
+        "task": "Configura HAProxy con algoritmo leastconn per inviare ogni nuova richiesta al backend con meno connessioni attive."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "net_services_lb_3",
+      "english": "Weighted Round Robin",
+      "set": {
+        "code": "backend webservers\n  balance roundrobin\n  server web1 10.0.0.1:80 weight 3\n  server web2 10.0.0.2:80 weight 1",
+        "task": "Configura un weighted round robin su HAProxy assegnando peso 3 al server piu' potente e 1 al piu' debole."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "net_services_lb_3",
+      "english": "Health Check",
+      "set": {
+        "code": "backend api\n  option httpchk GET /health\n  http-check expect status 200\n  server api1 10.0.0.10:8080 check inter 5s fall 3 rise 2",
+        "task": "Abilita health check HTTP ogni 5 secondi sull'endpoint /health rimuovendo il server dopo 3 fallimenti."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "net_services_lb_3",
+      "english": "Sticky Session",
+      "set": {
+        "code": "backend webservers\n  balance roundrobin\n  cookie SERVERID insert indirect nocache\n  server web1 10.0.0.1:80 cookie web1 check\n  server web2 10.0.0.2:80 cookie web2 check",
+        "task": "Configura sticky session su HAProxy inserendo un cookie SERVERID che fissi ogni client al backend iniziale."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "net_services_lb_3",
+      "english": "Layer 4 Load Balancer",
+      "set": {
+        "code": "frontend tcp_in\n  bind *:5432\n  mode tcp\n  default_backend db_servers\nbackend db_servers\n  mode tcp\n  balance roundrobin\n  server db1 10.0.0.20:5432 check\n  server db2 10.0.0.21:5432 check",
+        "task": "Configura HAProxy in modalita' TCP (L4) per bilanciare le connessioni PostgreSQL sulla porta 5432 fra due nodi."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "net_services_lb_3",
+      "english": "Layer 7 Load Balancer",
+      "set": {
+        "code": "frontend http_in\n  bind *:80\n  acl is_api path_beg /api\n  use_backend api_servers if is_api\n  default_backend web_servers",
+        "task": "Configura un bilanciatore L7 su HAProxy che instradi le richieste /api su un backend dedicato in base al path URL."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "net_services_pf_4",
+      "english": "Port Forwarding",
+      "set": {
+        "code": "iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 8080 -j DNAT --to-destination 10.0.0.50:80\niptables -A FORWARD -p tcp -d 10.0.0.50 --dport 80 -j ACCEPT",
+        "task": "Inoltra le richieste TCP sulla porta pubblica 8080 verso il server interno 10.0.0.50:80 abilitando anche il FORWARD."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "net_services_pf_4",
+      "english": "UPnP",
+      "set": {
+        "command": "upnpc -a 192.168.1.10 80 8080 TCP",
+        "task": "Richiedi al router via UPnP di inoltrare la porta pubblica 8080 sul client interno 192.168.1.10:80."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "net_services_pf_4",
+      "english": "DMZ",
+      "set": {
+        "code": "iptables -A FORWARD -i eth0 -o dmz0 -d 10.10.10.0/24 -j ACCEPT\niptables -A FORWARD -i dmz0 -o eth1 -j DROP",
+        "task": "Definisci regole forward per una DMZ 10.10.10.0/24 raggiungibile da Internet ma isolata dalla LAN interna."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "net_services_pf_4",
+      "english": "STUN",
+      "set": {
+        "command": "stunclient stun.l.google.com 19302",
+        "task": "Interroga un server STUN pubblico Google per scoprire indirizzo e porta NAT visti dall'esterno."
+      }
+    }
+  ]
+}

@@ -1,0 +1,580 @@
+{
+  "fixes": [
+    {
+      "level": "12",
+      "lesson": "ai_frameworks_1",
+      "english": "Eager Execution",
+      "set": {
+        "code": "tf.config.run_functions_eagerly(True)",
+        "task": "Abilita l'esecuzione eager di TensorFlow per debuggare le funzioni riga per riga."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ai_frameworks_2",
+      "english": "PyTorch Lightning",
+      "set": {
+        "code": "trainer = pl.Trainer(max_epochs=10)\ntrainer.fit(model, dataloader)",
+        "task": "Istanzia un Trainer di PyTorch Lightning con 10 epoche e avvia l'addestramento sul modello."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ai_frameworks_4",
+      "english": "Hugging Face",
+      "set": {
+        "command": "huggingface-cli login",
+        "task": "Autenticati sull'hub di Hugging Face dalla CLI per scaricare modelli privati."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ai_frameworks_4",
+      "english": "Accelerate",
+      "set": {
+        "command": "accelerate launch train.py",
+        "task": "Lancia lo script train.py tramite accelerate per distribuire l'addestramento su piu GPU."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ai_features_2",
+      "english": "Feature Crossing",
+      "set": {
+        "code": "df[\"city_x_product\"] = df[\"city\"] + \"_\" + df[\"product\"]",
+        "task": "Crea l'incrocio city_x_product concatenando le colonne city e product per catturare interazioni."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ai_features_3",
+      "english": "Hash Encoding",
+      "set": {
+        "code": "encoder = HashingEncoder(n_components=256)\nX_hashed = encoder.fit_transform(X)",
+        "task": "Codifica le feature categoriche di X su 256 bin con HashingEncoder di category_encoders."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ai_features_3",
+      "english": "Leave-One-Out Encoding",
+      "set": {
+        "code": "encoder = LeaveOneOutEncoder()\nX_enc = encoder.fit_transform(X, y)",
+        "task": "Applica LeaveOneOutEncoder a X usando il target y per evitare fuga di informazione."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ai_features_4",
+      "english": "Geospatial Feature",
+      "set": {
+        "code": "df[\"dist_km\"] = haversine(df[\"lat\"], df[\"lon\"], hosp_lat, hosp_lon)",
+        "task": "Calcola la distanza in chilometri da ogni punto all'ospedale piu vicino con la formula haversine."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ai_features_4",
+      "english": "Text Features",
+      "set": {
+        "code": "df[\"word_count\"] = df[\"text\"].str.split().str.len()",
+        "task": "Estrai il numero di parole dalla colonna text salvandolo nella nuova colonna word_count."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ai_features_4",
+      "english": "Interaction Term",
+      "set": {
+        "code": "df[\"bed_x_bath\"] = df[\"bedrooms\"] * df[\"bathrooms\"]",
+        "task": "Costruisci il termine di interazione moltiplicando le colonne bedrooms e bathrooms."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ai_features_4",
+      "english": "Auto Feature Engineering",
+      "set": {
+        "code": "features, _ = ft.dfs(entityset=es, target_dataframe_name=\"customers\")",
+        "task": "Genera automaticamente feature relazionali con Featuretools usando deep feature synthesis sull'entityset es."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ai_generative_1",
+      "english": "Inception Score",
+      "set": {
+        "code": "from torchmetrics.image.inception import InceptionScore\nis_metric = InceptionScore()",
+        "task": "Inizializza il metric InceptionScore di torchmetrics per valutare le immagini generate dalla GAN."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ai_generative_2",
+      "english": "Reparameterization Trick",
+      "set": {
+        "code": "z = mu + sigma * torch.randn_like(sigma)",
+        "task": "Implementa il trucco di riparametrizzazione campionando z come mu piu sigma per rumore gaussiano."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ai_generative_2",
+      "english": "KL Divergence Loss",
+      "set": {
+        "code": "kl = -0.5 * torch.sum(1 + log_var - mu.pow(2) - log_var.exp())",
+        "task": "Calcola la KL divergence loss del VAE a partire da media mu e varianza logaritmica log_var."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ai_generative_2",
+      "english": "Reconstruction Loss",
+      "set": {
+        "code": "recon_loss = F.mse_loss(recon_x, x)",
+        "task": "Misura la loss di ricostruzione tra l'input originale x e l'output del decoder recon_x con MSE."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ai_generative_2",
+      "english": "Latent Interpolation",
+      "set": {
+        "code": "z_interp = z1 * (1 - t) + z2 * t",
+        "task": "Interpola linearmente tra i due vettori latenti z1 e z2 al parametro t per generare transizioni fluide."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ai_generative_3",
+      "english": "Stable Diffusion",
+      "set": {
+        "code": "from diffusers import StableDiffusionPipeline\npipe = StableDiffusionPipeline.from_pretrained(\"runwayml/stable-diffusion-v1-5\")",
+        "task": "Carica la pipeline di Stable Diffusion v1.5 dal repository diffusers per generare immagini da prompt."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ai_generative_3",
+      "english": "DALL-E",
+      "set": {
+        "code": "client.images.generate(model=\"dall-e-3\", prompt=\"a cat in space\", n=1)",
+        "task": "Richiama il modello dall-e-3 di OpenAI per generare un'immagine a partire da un prompt testuale."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ai_generative_3",
+      "english": "Sampling Steps",
+      "set": {
+        "code": "image = pipe(prompt, num_inference_steps=25).images[0]",
+        "task": "Genera l'immagine con la pipeline di diffusione impostando num_inference_steps a 25 passi."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ai_generative_3",
+      "english": "ControlNet",
+      "set": {
+        "code": "controlnet = ControlNetModel.from_pretrained(\"lllyasviel/sd-controlnet-canny\")",
+        "task": "Carica un ControlNet preaddestrato sul rilevamento dei bordi Canny per guidare la generazione."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ai_mlops_1",
+      "english": "Weights and Biases",
+      "set": {
+        "code": "wandb.init(project=\"churn-model\", config=hparams)",
+        "task": "Inizializza un run di Weights & Biases nel progetto churn-model passando gli iperparametri hparams."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ai_mlops_1",
+      "english": "Hyperparameter Logging",
+      "set": {
+        "code": "wandb.config.update({\"lr\": 1e-4, \"batch_size\": 32})",
+        "task": "Registra learning rate e batch size come configurazione del run W&B con wandb.config.update."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ai_mlops_2",
+      "english": "Model Registry",
+      "set": {
+        "code": "mlflow.register_model(\"runs:/<run_id>/model\", \"ChurnModel\")",
+        "task": "Registra il modello del run corrente nel Model Registry MLflow con il nome ChurnModel."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ai_mlops_2",
+      "english": "Model Stage",
+      "set": {
+        "code": "client.transition_model_version_stage(\"ChurnModel\", 3, \"Production\")",
+        "task": "Promuovi la versione 3 di ChurnModel allo stadio Production usando il client MLflow."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ai_mlops_2",
+      "english": "DVC",
+      "set": {
+        "command": "dvc add data/train.csv",
+        "task": "Versiona il file data/train.csv con DVC per tracciarlo separatamente dal repository Git."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ai_mlops_2",
+      "english": "Git LFS",
+      "set": {
+        "command": "git lfs track \"*.bin\"",
+        "task": "Configura Git LFS per tracciare tutti i file binari .bin evitando di appesantire il repository."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ai_mlops_3",
+      "english": "Airflow",
+      "set": {
+        "code": "with DAG(\"ml_pipeline\", schedule=\"@daily\") as dag:\n    train = PythonOperator(task_id=\"train\", python_callable=train_fn)",
+        "task": "Definisci un DAG Airflow giornaliero ml_pipeline con un task di addestramento PythonOperator."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ai_mlops_3",
+      "english": "Kubeflow",
+      "set": {
+        "code": "kfp.Client().create_run_from_pipeline_func(my_pipeline, arguments={})",
+        "task": "Esegui la pipeline my_pipeline su Kubeflow lanciando un run tramite il client kfp."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ai_mlops_4",
+      "english": "Model Monitoring",
+      "set": {
+        "code": "from evidently.report import Report\nreport = Report(metrics=[DataDriftPreset()])",
+        "task": "Crea un report di monitoraggio Evidently con il preset DataDriftPreset per sorvegliare il modello."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ai_deployment_1",
+      "english": "gRPC",
+      "set": {
+        "code": "channel = grpc.insecure_channel(\"localhost:50051\")\nstub = PredictStub(channel)",
+        "task": "Apri un canale gRPC verso il server di inferenza locale e costruisci uno stub per chiamare predict."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ai_deployment_2",
+      "english": "Pruning",
+      "set": {
+        "code": "prune.l1_unstructured(model.fc, name=\"weight\", amount=0.3)",
+        "task": "Applica il pruning L1 non strutturato per rimuovere il 30% dei pesi dal layer fc del modello."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ai_deployment_2",
+      "english": "ONNX",
+      "set": {
+        "code": "torch.onnx.export(model, dummy_input, \"model.onnx\", opset_version=17)",
+        "task": "Esporta il modello PyTorch nel formato ONNX usando opset 17 per il deploy multi-runtime."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ai_deployment_2",
+      "english": "TensorRT",
+      "set": {
+        "command": "trtexec --onnx=model.onnx --saveEngine=model.trt --fp16",
+        "task": "Compila l'engine TensorRT FP16 a partire da model.onnx con il tool trtexec di NVIDIA."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ai_deployment_2",
+      "english": "OpenVINO",
+      "set": {
+        "code": "from openvino.runtime import Core\ncompiled = Core().compile_model(\"model.xml\", \"CPU\")",
+        "task": "Compila il modello OpenVINO model.xml sul dispositivo CPU per inferenza ottimizzata Intel."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ai_deployment_2",
+      "english": "FP16",
+      "set": {
+        "code": "with torch.cuda.amp.autocast(dtype=torch.float16):\n    output = model(x)",
+        "task": "Esegui il forward in precisione FP16 con autocast per ridurre l'uso di memoria GPU."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ai_deployment_3",
+      "english": "Kubernetes",
+      "set": {
+        "command": "kubectl apply -f deployment.yaml",
+        "task": "Applica il manifesto deployment.yaml al cluster Kubernetes per deployare il servizio di inferenza."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ai_deployment_3",
+      "english": "SageMaker",
+      "set": {
+        "code": "estimator = sagemaker.estimator.Estimator(image_uri, role, instance_count=1)\nestimator.fit({\"train\": s3_path})",
+        "task": "Costruisci uno Estimator SageMaker e avvia l'addestramento usando i dati su S3."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ai_deployment_3",
+      "english": "Vertex AI",
+      "set": {
+        "code": "job = aiplatform.CustomTrainingJob(display_name=\"train\", script_path=\"train.py\")\njob.run()",
+        "task": "Crea un CustomTrainingJob su Vertex AI passando lo script train.py e avvialo con run()."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ai_deployment_3",
+      "english": "Azure ML",
+      "set": {
+        "code": "ml_client = MLClient(DefaultAzureCredential(), sub_id, rg, \"ws\")",
+        "task": "Connettiti al workspace Azure ML costruendo un MLClient con DefaultAzureCredential."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ai_deployment_4",
+      "english": "Rolling Update",
+      "set": {
+        "command": "kubectl rollout restart deployment/my-model",
+        "task": "Lancia un rolling restart del deployment my-model per sostituire progressivamente i pod."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ai_deployment_4",
+      "english": "Caching",
+      "set": {
+        "code": "redis_client.setex(f\"pred:{key}\", 3600, prediction)",
+        "task": "Memorizza la predizione su Redis con chiave pred:<key> e TTL di un'ora con setex."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ai_deployment_4",
+      "english": "Feature Store",
+      "set": {
+        "code": "from feast import FeatureStore\nstore = FeatureStore(repo_path=\"./feature_repo\")",
+        "task": "Inizializza un FeatureStore di Feast puntando alla directory del repository di feature."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ai_responsible_1",
+      "english": "Bias Mitigation",
+      "set": {
+        "code": "from fairlearn.reductions import ExponentiatedGradient, DemographicParity\nmitigator = ExponentiatedGradient(estimator, DemographicParity())",
+        "task": "Mitiga il bias con ExponentiatedGradient di Fairlearn vincolando il modello a rispettare la parita demografica."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ai_responsible_2",
+      "english": "LIME",
+      "set": {
+        "code": "explainer = LimeTabularExplainer(X_train.values)\nexp = explainer.explain_instance(x, model.predict_proba)",
+        "task": "Spiega una predizione con LimeTabularExplainer addestrato sui dati di training X_train."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ai_responsible_4",
+      "english": "Carbon Footprint",
+      "set": {
+        "code": "from codecarbon import EmissionsTracker\nwith EmissionsTracker() as tracker:\n    train(model)",
+        "task": "Traccia le emissioni di CO2 dell'addestramento racchiudendolo in un blocco EmissionsTracker di CodeCarbon."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ai_rl_1",
+      "english": "Environment",
+      "set": {
+        "code": "env = gym.make(\"CartPole-v1\")\nobs, info = env.reset()",
+        "task": "Istanzia l'ambiente CartPole-v1 di Gymnasium e resetta lo stato iniziale prima dell'episodio."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ai_rl_3",
+      "english": "Stable Baselines",
+      "set": {
+        "code": "model = PPO(\"MlpPolicy\", env, verbose=1)\nmodel.learn(total_timesteps=10_000)",
+        "task": "Addestra un agente PPO di Stable-Baselines3 sull'ambiente env per 10.000 timestep."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ai_advanced_2",
+      "english": "Flash Attention",
+      "set": {
+        "code": "from flash_attn import flash_attn_func\nout = flash_attn_func(q, k, v, causal=True)",
+        "task": "Calcola l'attenzione causale efficiente in memoria con flash_attn_func su query, key e value."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ai_advanced_3",
+      "english": "CLIP",
+      "set": {
+        "code": "import clip\nmodel, preprocess = clip.load(\"ViT-B/32\", device=\"cuda\")",
+        "task": "Carica il modello CLIP ViT-B/32 di OpenAI con il preprocessor su GPU per zero-shot classification."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ai_advanced_4",
+      "english": "LangChain",
+      "set": {
+        "code": "from langchain.chains import LLMChain\nchain = LLMChain(llm=llm, prompt=prompt_template)",
+        "task": "Componi una LLMChain di LangChain collegando un modello llm a un template di prompt."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ai_advanced_4",
+      "english": "LlamaIndex",
+      "set": {
+        "code": "from llama_index.core import VectorStoreIndex\nindex = VectorStoreIndex.from_documents(docs)",
+        "task": "Indicizza i documenti docs in un VectorStoreIndex di LlamaIndex per abilitare query RAG."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "ai_scale_1",
+      "english": "Apache Spark",
+      "set": {
+        "code": "spark = SparkSession.builder.appName(\"ml-features\").getOrCreate()\ndf = spark.read.parquet(\"s3://data/\")",
+        "task": "Avvia una SparkSession e leggi i file Parquet da S3 per processare le feature in modo distribuito."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "ai_scale_1",
+      "english": "Dask",
+      "set": {
+        "code": "import dask.dataframe as dd\ndf = dd.read_parquet(\"data/*.parquet\")",
+        "task": "Carica i file Parquet come DataFrame Dask distribuito per superare i limiti di memoria di pandas."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "ai_scale_1",
+      "english": "Apache Beam",
+      "set": {
+        "code": "with beam.Pipeline() as p:\n    p | beam.io.ReadFromText(\"input.txt\") | beam.Map(parse)",
+        "task": "Costruisci una pipeline Apache Beam che legge input.txt e applica la funzione parse a ogni riga."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "ai_scale_2",
+      "english": "Delta Lake",
+      "set": {
+        "code": "df.write.format(\"delta\").mode(\"append\").save(\"/tmp/delta/events\")",
+        "task": "Salva il dataframe in formato Delta Lake con modalita append nella tabella /tmp/delta/events."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "ai_scale_2",
+      "english": "Apache Iceberg",
+      "set": {
+        "code": "spark.read.format(\"iceberg\").load(\"warehouse.db.events\")",
+        "task": "Leggi la tabella Iceberg warehouse.db.events con Spark per query time-travel su grandi volumi."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "ai_scale_4",
+      "english": "Kafka",
+      "set": {
+        "code": "producer = KafkaProducer(bootstrap_servers=\"localhost:9092\")\nproducer.send(\"events\", b\"new feature\")",
+        "task": "Pubblica il messaggio new feature sul topic Kafka events tramite un KafkaProducer locale."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "ai_scale_4",
+      "english": "Flink",
+      "set": {
+        "code": "env = StreamExecutionEnvironment.get_execution_environment()\nenv.from_source(kafka_source).map(parse_event)",
+        "task": "Configura un job Flink che legge eventi da una source Kafka e li trasforma con la funzione parse_event."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "ai_scale_4",
+      "english": "dbt",
+      "set": {
+        "command": "dbt run --select customer_features",
+        "task": "Esegui il modello dbt customer_features per materializzare la tabella di feature nel warehouse."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "ai_scale_4",
+      "english": "Snowflake",
+      "set": {
+        "code": "conn = snowflake.connector.connect(user=\"u\", password=\"p\", account=\"acc\")\ndf = pd.read_sql(\"SELECT * FROM features\", conn)",
+        "task": "Connettiti a Snowflake e carica la tabella features in un DataFrame pandas via read_sql."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "ai_scale_4",
+      "english": "BigQuery",
+      "set": {
+        "code": "from google.cloud import bigquery\ndf = bigquery.Client().query(\"SELECT * FROM dataset.features\").to_dataframe()",
+        "task": "Interroga la tabella dataset.features di BigQuery e materializza il risultato in un DataFrame."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "ai_scale_4",
+      "english": "Databricks",
+      "set": {
+        "command": "databricks jobs run-now --job-id 1234",
+        "task": "Lancia il job Databricks con id 1234 tramite la CLI per eseguire la pipeline di training."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "ai_security_1",
+      "english": "FGSM",
+      "set": {
+        "code": "from art.attacks.evasion import FastGradientMethod\nattack = FastGradientMethod(classifier, eps=0.1)\nX_adv = attack.generate(X)",
+        "task": "Genera esempi avversari con FGSM impostando epsilon a 0.1 sul classifier addestrato."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "ai_security_1",
+      "english": "PGD Attack",
+      "set": {
+        "code": "attack = ProjectedGradientDescent(classifier, eps=0.1, eps_step=0.01, max_iter=40)\nX_adv = attack.generate(X)",
+        "task": "Costruisci un attacco PGD iterativo con 40 step e generaci sopra esempi avversari da X."
+      }
+    }
+  ]
+}

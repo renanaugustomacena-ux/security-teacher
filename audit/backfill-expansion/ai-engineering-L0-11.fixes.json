@@ -1,0 +1,2029 @@
+{
+  "fixes": [
+    {
+      "level": "0",
+      "lesson": "ai_foundations_3",
+      "english": "Test Set",
+      "set": {
+        "code": "X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)",
+        "task": "Separa un test set del 20% dal dataset originale per valutare il modello solo a fine training."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "ai_foundations_3",
+      "english": "Validation Set",
+      "set": {
+        "code": "X_train, X_val, y_train, y_val = train_test_split(X_train, y_train, test_size=0.2)",
+        "task": "Ricava un validation set dal training per scegliere gli iperparametri senza toccare il test set finale."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "ai_foundations_3",
+      "english": "Deployment",
+      "set": {
+        "code": "joblib.dump(model, 'model.pkl')",
+        "task": "Serializza il modello allenato su disco come primo passo del processo di deployment in produzione."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "ai_foundations_3",
+      "english": "Monitoring",
+      "set": {
+        "code": "mlflow.log_metric('accuracy', acc)",
+        "task": "Registra la metrica di accuratezza su MLflow per monitorare la qualita del modello nel tempo."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "ai_foundations_4",
+      "english": "Recommendation System",
+      "set": {
+        "code": "from sklearn.metrics.pairwise import cosine_similarity\nsim = cosine_similarity(user_vectors)",
+        "task": "Calcola la similarita coseno fra utenti come base di un sistema di raccomandazione collaborativo."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "ai_foundations_4",
+      "english": "Chatbot",
+      "set": {
+        "code": "from openai import OpenAI\nclient = OpenAI()\nresp = client.chat.completions.create(model=\"gpt-4\", messages=msgs)",
+        "task": "Invoca un modello di chat tramite API OpenAI per costruire la risposta del chatbot al messaggio utente."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "ai_foundations_4",
+      "english": "Speech Recognition",
+      "set": {
+        "code": "import whisper\nmodel = whisper.load_model(\"base\")\nresult = model.transcribe(\"audio.mp3\")",
+        "task": "Trascrivi un file audio in testo usando il modello Whisper di OpenAI con qualita base."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "ai_foundations_4",
+      "english": "Image Recognition",
+      "set": {
+        "code": "from torchvision.models import resnet50\nmodel = resnet50(pretrained=True)\nmodel.eval()",
+        "task": "Carica una ResNet50 pre-addestrata su ImageNet per riconoscere il contenuto di immagini fotografiche."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "ai_foundations_4",
+      "english": "Fraud Detection",
+      "set": {
+        "code": "from sklearn.ensemble import IsolationForest\nmodel = IsolationForest(contamination=0.01).fit(transactions)",
+        "task": "Addestra un Isolation Forest sulle transazioni assumendo l'1% di frodi per individuare comportamenti anomali."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "ai_foundations_4",
+      "english": "Sentiment Analysis",
+      "set": {
+        "code": "from transformers import pipeline\nsent = pipeline(\"sentiment-analysis\")\nsent(\"I love this product\")",
+        "task": "Usa la pipeline HuggingFace pronta all'uso per classificare il sentimento positivo o negativo di una frase."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "ai_foundations_4",
+      "english": "Anomaly Detection",
+      "set": {
+        "code": "from sklearn.ensemble import IsolationForest\noutliers = IsolationForest().fit_predict(X)",
+        "task": "Identifica i punti anomali nel dataset etichettandoli come -1 tramite un Isolation Forest non supervisionato."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "ai_foundations_4",
+      "english": "Predictive Analytics",
+      "set": {
+        "code": "from sklearn.linear_model import LinearRegression\nfuture = LinearRegression().fit(X, y).predict(X_future)",
+        "task": "Stima le vendite future addestrando una regressione lineare sui dati storici e applicandola ai dati prossimi."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_1",
+      "english": "Numerical Data",
+      "set": {
+        "code": "df.select_dtypes(include=\"number\")",
+        "task": "Filtra solo le colonne numeriche dal DataFrame per poterle usare direttamente in un modello scikit-learn."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_1",
+      "english": "Categorical Data",
+      "set": {
+        "code": "df.select_dtypes(include=\"object\")",
+        "task": "Estrai tutte le colonne categoriche del DataFrame in modo da prepararle per la codifica numerica."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_1",
+      "english": "Ordinal Data",
+      "set": {
+        "code": "from sklearn.preprocessing import OrdinalEncoder\nenc = OrdinalEncoder(categories=[[\"small\",\"medium\",\"large\"]])",
+        "task": "Codifica una colonna ordinale rispettando l'ordine small, medium, large tramite OrdinalEncoder di scikit-learn."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_1",
+      "english": "Continuous Variable",
+      "set": {
+        "code": "df[\"height\"].astype(float).describe()",
+        "task": "Converti la colonna height in float e calcola le statistiche descrittive della variabile continua."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_1",
+      "english": "Discrete Variable",
+      "set": {
+        "code": "df[\"num_children\"].value_counts()",
+        "task": "Conta quanti record ricadono in ciascun valore intero della variabile discreta num_children."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_1",
+      "english": "Time Series",
+      "set": {
+        "code": "df[\"date\"] = pd.to_datetime(df[\"date\"])\ndf = df.set_index(\"date\").sort_index()",
+        "task": "Converti la colonna date in datetime e usala come indice ordinato per analizzare la serie storica."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_1",
+      "english": "Structured Data",
+      "set": {
+        "code": "df = pd.read_sql(\"SELECT * FROM customers\", conn)",
+        "task": "Carica dati strutturati da una tabella SQL in un DataFrame pandas per analisi tabulari."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_1",
+      "english": "Unstructured Data",
+      "set": {
+        "code": "with open(\"document.txt\") as f:\n    text = f.read()",
+        "task": "Leggi un documento di testo non strutturato dal disco in una stringa Python pronta per la tokenizzazione."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_2",
+      "english": "Data Cleaning",
+      "set": {
+        "code": "df = df.drop_duplicates().dropna().reset_index(drop=True)",
+        "task": "Esegui una pulizia base eliminando duplicati e valori mancanti prima di passare alla fase di feature engineering."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_2",
+      "english": "Outlier",
+      "set": {
+        "code": "q1, q3 = df[\"price\"].quantile([0.25, 0.75])\nmask = df[\"price\"].between(q1 - 1.5*(q3-q1), q3 + 1.5*(q3-q1))",
+        "task": "Identifica gli outlier della colonna price con il metodo IQR tenendo solo i valori dentro 1.5 volte il range."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_2",
+      "english": "Noise",
+      "set": {
+        "code": "import numpy as np\nX_smoothed = X + np.random.normal(0, 0.01, X.shape)",
+        "task": "Aggiungi rumore gaussiano leggero alle feature per simulare un dataset realistico durante i test."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_2",
+      "english": "Data Validation",
+      "set": {
+        "code": "assert df[\"age\"].between(0, 120).all(), \"Age fuori range\"",
+        "task": "Verifica via assert che tutti i valori della colonna age siano compresi tra 0 e 120 prima di procedere."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_2",
+      "english": "Data Profiling",
+      "set": {
+        "code": "from ydata_profiling import ProfileReport\nProfileReport(df).to_file(\"report.html\")",
+        "task": "Genera un report HTML di profiling con ydata-profiling per ispezionare distribuzioni e correlazioni del dataset."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_2",
+      "english": "Data Transformation",
+      "set": {
+        "code": "df[\"log_income\"] = np.log1p(df[\"income\"])",
+        "task": "Trasforma la colonna income con il logaritmo per ridurre l'asimmetria e stabilizzare la varianza."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_3",
+      "english": "Box-Cox Transformation",
+      "set": {
+        "code": "from scipy.stats import boxcox\ntransformed, lam = boxcox(df[\"price\"] + 1)",
+        "task": "Applica la trasformazione Box-Cox a una colonna positiva per renderla piu vicina a una distribuzione normale."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_4",
+      "english": "Target Encoding",
+      "set": {
+        "code": "df[\"city_te\"] = df.groupby(\"city\")[\"target\"].transform(\"mean\")",
+        "task": "Sostituisci la colonna categorica city con la media del target per ogni gruppo, usando il target encoding."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_4",
+      "english": "Data Leakage",
+      "set": {
+        "code": "scaler.fit(X_train)\nX_test_scaled = scaler.transform(X_test)",
+        "task": "Adatta lo scaler solo sul training set e applicalo al test set per evitare data leakage dalle statistiche future."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_4",
+      "english": "Class Imbalance",
+      "set": {
+        "code": "from imblearn.over_sampling import SMOTE\nX_bal, y_bal = SMOTE().fit_resample(X, y)",
+        "task": "Bilancia un dataset sbilanciato generando esempi sintetici della classe minoritaria con SMOTE."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "ai_supervised_1",
+      "english": "Binary Classification",
+      "set": {
+        "code": "from sklearn.linear_model import LogisticRegression\nmodel = LogisticRegression().fit(X_train, y_train)",
+        "task": "Addestra una regressione logistica per classificare le email come spam o non spam in modo binario."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "ai_supervised_1",
+      "english": "Multiclass Classification",
+      "set": {
+        "code": "from sklearn.linear_model import LogisticRegression\nmodel = LogisticRegression(multi_class=\"multinomial\").fit(X, y)",
+        "task": "Configura una regressione logistica multinomiale per classificare immagini in piu di due categorie."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "ai_supervised_1",
+      "english": "Probability Threshold",
+      "set": {
+        "code": "y_pred = (model.predict_proba(X_test)[:, 1] >= 0.7).astype(int)",
+        "task": "Trasforma le probabilita predette in classi alzando la soglia a 0.7 per ridurre i falsi positivi."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "ai_supervised_2",
+      "english": "Regression",
+      "set": {
+        "code": "from sklearn.linear_model import LinearRegression\nmodel = LinearRegression().fit(X_train, y_train)",
+        "task": "Addestra un modello di regressione lineare per prevedere il prezzo di una casa a partire dalle sue caratteristiche."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "ai_supervised_2",
+      "english": "Multiple Regression",
+      "set": {
+        "code": "X = df[[\"size\", \"bedrooms\", \"age\"]]\nmodel = LinearRegression().fit(X, y)",
+        "task": "Allena una regressione multipla con piu feature indipendenti per prevedere il prezzo della casa."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "ai_supervised_3",
+      "english": "Overfitting",
+      "set": {
+        "code": "train_acc = model.score(X_train, y_train)\ntest_acc = model.score(X_test, y_test)\nprint(train_acc, test_acc)",
+        "task": "Confronta accuratezza su train e test: un divario forte e' sintomo classico di overfitting."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "ai_supervised_3",
+      "english": "Regularization",
+      "set": {
+        "code": "from sklearn.linear_model import Ridge\nmodel = Ridge(alpha=1.0).fit(X_train, y_train)",
+        "task": "Applica regolarizzazione L2 con alpha 1.0 usando Ridge per ridurre l'overfitting del modello lineare."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "ai_supervised_3",
+      "english": "Early Stopping",
+      "set": {
+        "code": "from tensorflow.keras.callbacks import EarlyStopping\nes = EarlyStopping(monitor=\"val_loss\", patience=3)",
+        "task": "Configura un callback di early stopping che fermi l'addestramento dopo 3 epoche senza miglioramento della val_loss."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "ai_supervised_4",
+      "english": "Ensemble",
+      "set": {
+        "code": "from sklearn.ensemble import VotingClassifier\nvc = VotingClassifier([(\"lr\", lr), (\"dt\", dt), (\"svc\", svc)])",
+        "task": "Combina regressione logistica, albero e SVC in un ensemble con voto a maggioranza per migliorare la robustezza."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "ai_supervised_4",
+      "english": "Boosting",
+      "set": {
+        "code": "from xgboost import XGBClassifier\nmodel = XGBClassifier(n_estimators=100).fit(X_train, y_train)",
+        "task": "Addestra un classificatore XGBoost con 100 stimatori per sfruttare il boosting sequenziale degli errori."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "ai_supervised_4",
+      "english": "Bootstrap",
+      "set": {
+        "code": "sample = df.sample(n=len(df), replace=True)",
+        "task": "Estrai un campione bootstrap della stessa dimensione del dataset originale con rimpiazzo per stimare l'incertezza."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ai_unsupervised_1",
+      "english": "Clustering",
+      "set": {
+        "code": "from sklearn.cluster import KMeans\nclusters = KMeans(n_clusters=3).fit_predict(X)",
+        "task": "Raggruppa i dati in 3 cluster con KMeans e ottieni l'etichetta di appartenenza per ogni punto."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ai_unsupervised_1",
+      "english": "Elbow Method",
+      "set": {
+        "code": "inertias = [KMeans(n_clusters=k).fit(X).inertia_ for k in range(1, 11)]\nplt.plot(range(1, 11), inertias)",
+        "task": "Traccia il grafico dell'inerzia al variare di k per identificare il gomito ottimale del numero di cluster."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ai_unsupervised_1",
+      "english": "Distance Metric",
+      "set": {
+        "code": "from sklearn.metrics import pairwise_distances\nD = pairwise_distances(X, metric=\"euclidean\")",
+        "task": "Calcola la matrice delle distanze euclidee tra tutti i punti del dataset come base per algoritmi geometrici."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ai_unsupervised_2",
+      "english": "Dimensionality Reduction",
+      "set": {
+        "code": "from sklearn.decomposition import PCA\nX_reduced = PCA(n_components=2).fit_transform(X)",
+        "task": "Riduci le feature a 2 componenti principali con PCA per visualizzare il dataset su un piano cartesiano."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ai_unsupervised_2",
+      "english": "Feature Reduction",
+      "set": {
+        "code": "from sklearn.feature_selection import SelectKBest, f_classif\nX_new = SelectKBest(f_classif, k=10).fit_transform(X, y)",
+        "task": "Seleziona le 10 feature piu informative tramite test F con SelectKBest di scikit-learn."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ai_unsupervised_2",
+      "english": "Manifold Learning",
+      "set": {
+        "code": "from sklearn.manifold import TSNE\nX_2d = TSNE(n_components=2, perplexity=30).fit_transform(X)",
+        "task": "Proietta dati ad alta dimensionalita in 2D con t-SNE per visualizzare cluster non lineari preservando i vicini."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ai_unsupervised_3",
+      "english": "Apriori Algorithm",
+      "set": {
+        "code": "from mlxtend.frequent_patterns import apriori\nfreq = apriori(transactions, min_support=0.1, use_colnames=True)",
+        "task": "Estrai itemset frequenti dalle transazioni con l'algoritmo Apriori impostando supporto minimo del 10%."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ai_unsupervised_3",
+      "english": "Frequent Itemset",
+      "set": {
+        "code": "freq = apriori(df_basket, min_support=0.05, use_colnames=True)\nprint(freq.sort_values(\"support\", ascending=False))",
+        "task": "Ottieni gli itemset frequenti ordinati per supporto decrescente per scoprire i prodotti comprati spesso insieme."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ai_unsupervised_3",
+      "english": "Market Basket Analysis",
+      "set": {
+        "code": "from mlxtend.frequent_patterns import association_rules\nrules = association_rules(freq, metric=\"lift\", min_threshold=1.2)",
+        "task": "Genera regole di associazione dai pattern frequenti con lift minimo 1.2 per studiare il carrello della spesa."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ai_unsupervised_4",
+      "english": "Self-Supervised Learning",
+      "set": {
+        "code": "from transformers import AutoTokenizer, AutoModelForMaskedLM\nmodel = AutoModelForMaskedLM.from_pretrained(\"bert-base-uncased\")",
+        "task": "Carica un BERT addestrato in modo self-supervised come base per task downstream di NLP."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ai_unsupervised_4",
+      "english": "Pseudo-Labeling",
+      "set": {
+        "code": "probs = model.predict_proba(X_unlabeled)\npseudo = np.where(probs.max(axis=1) > 0.9, probs.argmax(axis=1), -1)",
+        "task": "Assegna pseudo-etichette ai dati non etichettati solo dove il modello e' molto sicuro, oltre il 90% di probabilita."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ai_unsupervised_4",
+      "english": "Contrastive Learning",
+      "set": {
+        "code": "loss = -torch.log(torch.exp(sim_pos / tau) / torch.exp(sim_neg / tau).sum())",
+        "task": "Calcola la loss contrastiva InfoNCE che avvicina coppie positive e allontana quelle negative nello spazio latente."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ai_unsupervised_4",
+      "english": "Masked Language Model",
+      "set": {
+        "code": "from transformers import pipeline\nfill = pipeline(\"fill-mask\", model=\"bert-base-uncased\")\nfill(\"Paris is the [MASK] of France.\")",
+        "task": "Usa un BERT pre-addestrato per predire la parola mascherata in una frase tramite la pipeline fill-mask."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ai_unsupervised_4",
+      "english": "Autoencoder",
+      "set": {
+        "code": "import torch.nn as nn\nclass AE(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.enc = nn.Linear(784, 32)\n        self.dec = nn.Linear(32, 784)",
+        "task": "Definisci un autoencoder PyTorch con bottleneck a 32 unita per comprimere immagini 28x28 in uno spazio latente."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ai_unsupervised_4",
+      "english": "Representation Learning",
+      "set": {
+        "code": "embeddings = encoder(images)\nfeatures = embeddings.detach().cpu().numpy()",
+        "task": "Estrai le rappresentazioni latenti dall'encoder pre-addestrato per usarle come feature in un classificatore semplice."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ai_unsupervised_4",
+      "english": "Pretraining",
+      "set": {
+        "code": "from transformers import Trainer\ntrainer = Trainer(model=mlm_model, args=args, train_dataset=corpus)\ntrainer.train()",
+        "task": "Avvia la fase di pretraining MLM di un transformer su un grande corpus tramite il Trainer di HuggingFace."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ai_neural_1",
+      "english": "Neuron",
+      "set": {
+        "code": "output = activation(np.dot(weights, inputs) + bias)",
+        "task": "Calcola l'output di un singolo neurone moltiplicando input per pesi, sommando il bias e applicando l'attivazione."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ai_neural_1",
+      "english": "Perceptron",
+      "set": {
+        "code": "from sklearn.linear_model import Perceptron\nmodel = Perceptron(max_iter=100).fit(X, y)",
+        "task": "Addestra un Perceptron di scikit-learn su dati linearmente separabili per capire l'algoritmo originale del 1957."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ai_neural_1",
+      "english": "Hidden Layer",
+      "set": {
+        "code": "model = nn.Sequential(nn.Linear(784, 128), nn.ReLU(), nn.Linear(128, 10))",
+        "task": "Costruisci una rete con uno strato nascosto da 128 unita e attivazione ReLU tra input e output."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ai_neural_1",
+      "english": "Output Layer",
+      "set": {
+        "code": "out = nn.Linear(128, 10)\nlogits = out(features)",
+        "task": "Definisci un layer di output con 10 unita per produrre i logit di un classificatore a 10 classi."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ai_neural_1",
+      "english": "Fully Connected",
+      "set": {
+        "code": "fc = nn.Linear(in_features=512, out_features=128)",
+        "task": "Crea un layer fully connected in PyTorch che mappa 512 feature di input in 128 feature di output."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ai_neural_1",
+      "english": "Feedforward",
+      "set": {
+        "code": "class FFN(nn.Module):\n    def forward(self, x):\n        return self.fc2(F.relu(self.fc1(x)))",
+        "task": "Implementa il forward di una rete feedforward minimale con due layer lineari intervallati da ReLU."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ai_neural_2",
+      "english": "GELU",
+      "set": {
+        "code": "import torch.nn as nn\nact = nn.GELU()\nout = act(x)",
+        "task": "Applica l'attivazione GELU come fanno BERT e GPT, alternativa piu liscia alla ReLU classica."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ai_neural_2",
+      "english": "Logit",
+      "set": {
+        "code": "logits = model(x)\nprobs = torch.softmax(logits, dim=-1)",
+        "task": "Ottieni i logit dal modello e trasformali in probabilita applicando la softmax sull'ultima dimensione."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ai_neural_3",
+      "english": "Backpropagation",
+      "set": {
+        "code": "loss.backward()\noptimizer.step()",
+        "task": "Esegui la backpropagation chiamando backward() sulla loss e poi aggiorna i pesi con l'optimizer."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ai_neural_3",
+      "english": "Gradient",
+      "set": {
+        "code": "loss.backward()\nprint(model.weight.grad)",
+        "task": "Calcola e ispeziona il gradiente di un parametro dopo backward per capire come la loss cambia rispetto ai pesi."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ai_neural_3",
+      "english": "Vanishing Gradient",
+      "set": {
+        "code": "for name, p in model.named_parameters():\n    print(name, p.grad.abs().mean().item())",
+        "task": "Stampa la magnitudine media dei gradienti per ogni layer e individua dove svaniscono nelle reti profonde."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ai_neural_3",
+      "english": "Exploding Gradient",
+      "set": {
+        "code": "torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)",
+        "task": "Limita la norma dei gradienti a 1.0 con gradient clipping per evitare aggiornamenti esplosivi dei pesi."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ai_neural_3",
+      "english": "Automatic Differentiation",
+      "set": {
+        "code": "x = torch.tensor([2.0], requires_grad=True)\ny = x**2\ny.backward()\nprint(x.grad)",
+        "task": "Usa autograd di PyTorch per calcolare automaticamente la derivata di y rispetto a x partendo da y = x al quadrato."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ai_neural_3",
+      "english": "Computational Graph",
+      "set": {
+        "code": "from torchviz import make_dot\nmake_dot(loss, params=dict(model.named_parameters())).render(\"graph\")",
+        "task": "Visualizza il grafo computazionale del modello PyTorch generando un PDF con torchviz a scopo didattico."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ai_neural_4",
+      "english": "Xavier Initialization",
+      "set": {
+        "code": "nn.init.xavier_uniform_(layer.weight)",
+        "task": "Inizializza i pesi di un layer con la distribuzione uniforme di Xavier per stabilizzare l'addestramento."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ai_neural_4",
+      "english": "He Initialization",
+      "set": {
+        "code": "nn.init.kaiming_normal_(layer.weight, nonlinearity=\"relu\")",
+        "task": "Inizializza i pesi con la formula He pensata per layer seguiti da ReLU mantenendo varianza adatta nei gradienti."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ai_neural_4",
+      "english": "Weight Decay",
+      "set": {
+        "code": "optimizer = torch.optim.AdamW(model.parameters(), lr=1e-3, weight_decay=0.01)",
+        "task": "Configura AdamW con weight decay 0.01 per applicare regolarizzazione disaccoppiata dai gradienti durante il training."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ai_dl_1",
+      "english": "Convolutional Neural Network",
+      "set": {
+        "code": "import torch.nn as nn\nmodel = nn.Sequential(nn.Conv2d(3, 16, 3), nn.ReLU(), nn.MaxPool2d(2))",
+        "task": "Definisci una CNN minimale con un layer convoluzionale, ReLU e max pooling per partire da feature visive di base."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ai_dl_1",
+      "english": "Filter",
+      "set": {
+        "code": "conv = nn.Conv2d(in_channels=3, out_channels=32, kernel_size=3)",
+        "task": "Crea un layer convoluzionale con 32 filtri 3x3 che scansionano un'immagine RGB di input."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ai_dl_1",
+      "english": "Kernel",
+      "set": {
+        "code": "conv = nn.Conv2d(3, 16, kernel_size=5, stride=1, padding=2)",
+        "task": "Configura una convoluzione con kernel 5x5 e padding 2 per mantenere la dimensione spaziale dell'input."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ai_dl_1",
+      "english": "Max Pooling",
+      "set": {
+        "code": "pool = nn.MaxPool2d(kernel_size=2, stride=2)\nx = pool(x)",
+        "task": "Applica max pooling 2x2 per dimezzare la risoluzione spaziale mantenendo le attivazioni piu forti del feature map."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ai_dl_1",
+      "english": "Feature Map",
+      "set": {
+        "code": "feature_maps = conv_layer(image)\nprint(feature_maps.shape)",
+        "task": "Passa un'immagine attraverso un layer convoluzionale e ispeziona la forma dei feature map prodotti."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ai_dl_2",
+      "english": "Recurrent Neural Network",
+      "set": {
+        "code": "rnn = nn.RNN(input_size=10, hidden_size=20, num_layers=1, batch_first=True)\nout, h = rnn(x)",
+        "task": "Istanzia una semplice RNN PyTorch con stato nascosto 20 per processare sequenze di vettori da 10 feature."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ai_dl_2",
+      "english": "Hidden State",
+      "set": {
+        "code": "out, (h_n, c_n) = lstm(x)\nprint(h_n.shape)",
+        "task": "Estrai l'hidden state finale di una LSTM dopo aver processato la sequenza per usarlo in un classificatore."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ai_dl_2",
+      "english": "Cell State",
+      "set": {
+        "code": "lstm = nn.LSTM(input_size=10, hidden_size=20)\nout, (h, c) = lstm(x)",
+        "task": "Recupera il cell state c di una LSTM, la memoria a lungo termine che fluisce con poche modifiche lungo la sequenza."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ai_dl_2",
+      "english": "Sequence-to-Sequence",
+      "set": {
+        "code": "from transformers import T5ForConditionalGeneration\nmodel = T5ForConditionalGeneration.from_pretrained(\"t5-small\")",
+        "task": "Carica T5-small, un modello seq2seq pre-addestrato, per task come traduzione o summarization."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ai_dl_3",
+      "english": "Mixup",
+      "set": {
+        "code": "lam = np.random.beta(0.2, 0.2)\nx_mix = lam * x_a + (1 - lam) * x_b\ny_mix = lam * y_a + (1 - lam) * y_b",
+        "task": "Applica mixup combinando due esempi e le loro etichette con un coefficiente beta per regolarizzare il training."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ai_dl_3",
+      "english": "Cutout",
+      "set": {
+        "code": "from torchvision.transforms import RandomErasing\ntransform = RandomErasing(p=0.5, scale=(0.02, 0.1))",
+        "task": "Aggiungi RandomErasing al pipeline di trasformazione per cancellare patch casuali dall'immagine come augmentation."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ai_dl_4",
+      "english": "ResNet",
+      "set": {
+        "code": "from torchvision.models import resnet50\nmodel = resnet50(weights=\"IMAGENET1K_V2\")",
+        "task": "Importa una ResNet50 pre-addestrata con i pesi ImageNet V2 da usare come backbone per task di visione."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ai_dl_4",
+      "english": "Skip Connection",
+      "set": {
+        "code": "def forward(self, x):\n    identity = x\n    out = self.conv2(F.relu(self.conv1(x)))\n    return F.relu(out + identity)",
+        "task": "Implementa una skip connection sommando l'input originale all'output convoluzionale prima dell'ultima ReLU."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ai_dl_4",
+      "english": "VGG",
+      "set": {
+        "code": "from torchvision.models import vgg16\nmodel = vgg16(weights=\"IMAGENET1K_V1\")",
+        "task": "Carica una VGG16 pre-addestrata su ImageNet come baseline storica con architettura puramente sequenziale."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ai_dl_4",
+      "english": "Inception",
+      "set": {
+        "code": "from torchvision.models import inception_v3\nmodel = inception_v3(weights=\"IMAGENET1K_V1\")",
+        "task": "Istanzia una Inception v3 pre-addestrata per riconoscere oggetti sfruttando blocchi paralleli di convoluzioni multi-scala."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ai_dl_4",
+      "english": "EfficientNet",
+      "set": {
+        "code": "from torchvision.models import efficientnet_b0\nmodel = efficientnet_b0(weights=\"IMAGENET1K_V1\")",
+        "task": "Carica EfficientNet-B0 pre-addestrata, ottimizzata per il miglior compromesso tra accuratezza e numero di parametri."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ai_dl_4",
+      "english": "DenseNet",
+      "set": {
+        "code": "from torchvision.models import densenet121\nmodel = densenet121(weights=\"IMAGENET1K_V1\")",
+        "task": "Importa una DenseNet121 che connette ogni layer a tutti i successivi, riusando feature in modo aggressivo."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ai_dl_4",
+      "english": "MobileNet",
+      "set": {
+        "code": "from torchvision.models import mobilenet_v3_small\nmodel = mobilenet_v3_small(weights=\"IMAGENET1K_V1\")",
+        "task": "Scarica MobileNetV3-Small, leggera e adatta al deployment su dispositivi mobili con vincoli di memoria."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ai_dl_4",
+      "english": "Vision Transformer",
+      "set": {
+        "code": "from torchvision.models import vit_b_16\nmodel = vit_b_16(weights=\"IMAGENET1K_V1\")",
+        "task": "Istanzia un Vision Transformer base con patch 16x16 pre-addestrato per applicare i transformer alle immagini."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ai_nlp_1",
+      "english": "Token",
+      "set": {
+        "code": "from transformers import AutoTokenizer\ntok = AutoTokenizer.from_pretrained(\"bert-base-uncased\")\ntok.tokenize(\"Hello world\")",
+        "task": "Spezza la frase in token usando il tokenizer di BERT pre-addestrato per vedere il vocabolario reale."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ai_nlp_1",
+      "english": "Subword Tokenization",
+      "set": {
+        "code": "tokens = tokenizer.tokenize(\"unbelievable\")\nprint(tokens)",
+        "task": "Tokenizza una parola rara in sotto-parole con il tokenizer di un transformer per osservare la suddivisione."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ai_nlp_1",
+      "english": "Byte-Pair Encoding",
+      "set": {
+        "code": "from tokenizers import Tokenizer\nfrom tokenizers.models import BPE\ntok = Tokenizer(BPE())",
+        "task": "Inizializza un tokenizer BPE vuoto con la libreria tokenizers di HuggingFace per addestrarlo su un corpus custom."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ai_nlp_1",
+      "english": "Stop Word",
+      "set": {
+        "code": "from nltk.corpus import stopwords\nwords = [w for w in tokens if w.lower() not in stopwords.words(\"english\")]",
+        "task": "Filtra le stop word inglesi dai token usando la lista di NLTK per pulire l'input dei modelli classici."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ai_nlp_2",
+      "english": "GloVe",
+      "set": {
+        "code": "import gensim.downloader as api\nglove = api.load(\"glove-wiki-gigaword-100\")\nprint(glove[\"king\"])",
+        "task": "Scarica i vettori GloVe a 100 dimensioni e stampa l'embedding della parola king per verificare il caricamento."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ai_nlp_2",
+      "english": "FastText",
+      "set": {
+        "code": "from gensim.models import FastText\nmodel = FastText(sentences, vector_size=100, min_count=5)",
+        "task": "Addestra un modello FastText su un corpus di frasi con vettori a 100 dimensioni per ottenere embedding sub-word."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ai_nlp_2",
+      "english": "CBOW",
+      "set": {
+        "code": "from gensim.models import Word2Vec\nmodel = Word2Vec(sentences, sg=0, vector_size=100)",
+        "task": "Addestra un Word2Vec in modalita CBOW impostando sg=0 per predire la parola centrale dal suo contesto."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ai_nlp_2",
+      "english": "Skip-Gram",
+      "set": {
+        "code": "from gensim.models import Word2Vec\nmodel = Word2Vec(sentences, sg=1, vector_size=100)",
+        "task": "Addestra un Word2Vec Skip-Gram con sg=1 in modo da predire il contesto a partire dalla parola centrale."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ai_nlp_2",
+      "english": "Sentence Embedding",
+      "set": {
+        "code": "from sentence_transformers import SentenceTransformer\nemb = SentenceTransformer(\"all-MiniLM-L6-v2\").encode(sentences)",
+        "task": "Genera embedding di frase con SentenceTransformer MiniLM per ottenere vettori pronti per ricerca semantica."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ai_nlp_2",
+      "english": "Contextual Embedding",
+      "set": {
+        "code": "from transformers import AutoModel, AutoTokenizer\ntok = AutoTokenizer.from_pretrained(\"bert-base-uncased\")\nmodel = AutoModel.from_pretrained(\"bert-base-uncased\")",
+        "task": "Carica BERT base per produrre embedding contestuali che variano in base al ruolo della parola nella frase."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ai_nlp_3",
+      "english": "Language Model",
+      "set": {
+        "code": "from transformers import AutoModelForCausalLM\nlm = AutoModelForCausalLM.from_pretrained(\"gpt2\")",
+        "task": "Carica GPT-2 come language model autoregressivo per generare testo a partire da un prompt iniziale."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ai_nlp_3",
+      "english": "N-Gram",
+      "set": {
+        "code": "from sklearn.feature_extraction.text import CountVectorizer\nvec = CountVectorizer(ngram_range=(1, 3))",
+        "task": "Configura un CountVectorizer che estragga unigrammi, bigrammi e trigrammi da un corpus per modelli n-gram classici."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ai_nlp_3",
+      "english": "Encoder",
+      "set": {
+        "code": "encoder = nn.TransformerEncoderLayer(d_model=512, nhead=8)\nout = encoder(src)",
+        "task": "Crea un singolo layer di encoder transformer con dimensione 512 e 8 teste di attenzione per processare l'input."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ai_nlp_3",
+      "english": "Decoder",
+      "set": {
+        "code": "decoder = nn.TransformerDecoderLayer(d_model=512, nhead=8)\nout = decoder(tgt, memory)",
+        "task": "Istanzia un decoder transformer che combina il target parziale con la memoria dell'encoder per generare il token successivo."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ai_nlp_3",
+      "english": "Greedy Decoding",
+      "set": {
+        "code": "ids = model.generate(input_ids, max_length=50, do_sample=False, num_beams=1)",
+        "task": "Genera testo con decoding greedy disattivando sampling e beam search per scegliere sempre il token piu probabile."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ai_nlp_3",
+      "english": "BLEU Score",
+      "set": {
+        "code": "from nltk.translate.bleu_score import sentence_bleu\nscore = sentence_bleu([reference.split()], hypothesis.split())",
+        "task": "Calcola il BLEU score di una traduzione automatica confrontandola con una traduzione di riferimento."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ai_nlp_3",
+      "english": "ROUGE Score",
+      "set": {
+        "code": "from rouge_score import rouge_scorer\nscorer = rouge_scorer.RougeScorer([\"rouge1\", \"rougeL\"])\nscores = scorer.score(ref, gen)",
+        "task": "Valuta una summarization confrontando riassunto generato e riferimento con metriche ROUGE-1 e ROUGE-L."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ai_nlp_4",
+      "english": "Attention",
+      "set": {
+        "code": "attn = nn.MultiheadAttention(embed_dim=512, num_heads=8, batch_first=True)\nout, weights = attn(q, k, v)",
+        "task": "Costruisci un layer di multi-head attention PyTorch con dimensione 512 e 8 teste, recuperando anche i pesi."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ai_nlp_4",
+      "english": "Query",
+      "set": {
+        "code": "Q = self.q_proj(x)\nK = self.k_proj(x)\nV = self.v_proj(x)",
+        "task": "Proietta l'input attraverso tre matrici imparate per ottenere i tensor Query, Key e Value della self-attention."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ai_nlp_4",
+      "english": "Scaled Dot-Product",
+      "set": {
+        "code": "scores = (Q @ K.transpose(-2, -1)) / math.sqrt(d_k)\nattn = F.softmax(scores, dim=-1)\nout = attn @ V",
+        "task": "Implementa la scaled dot-product attention calcolando QK trasposta, dividendo per sqrt(d_k) e applicando softmax."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ai_transformers_1",
+      "english": "Transformer",
+      "set": {
+        "code": "model = nn.Transformer(d_model=512, nhead=8, num_encoder_layers=6, num_decoder_layers=6)",
+        "task": "Crea l'architettura Transformer completa di PyTorch con 6 layer di encoder e decoder e 8 teste di attenzione."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ai_transformers_1",
+      "english": "Self-Attention",
+      "set": {
+        "code": "attn = nn.MultiheadAttention(512, 8, batch_first=True)\nout, _ = attn(x, x, x)",
+        "task": "Applica self-attention passando lo stesso tensor come query, key e value al layer di multi-head attention."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ai_transformers_1",
+      "english": "Positional Encoding",
+      "set": {
+        "code": "pe = torch.zeros(max_len, d_model)\npe[:, 0::2] = torch.sin(position * div_term)\npe[:, 1::2] = torch.cos(position * div_term)",
+        "task": "Costruisci la positional encoding sinusoidale con sin sulle dimensioni pari e cos sulle dispari come nel paper originale."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ai_transformers_1",
+      "english": "Feed-Forward Network",
+      "set": {
+        "code": "ffn = nn.Sequential(nn.Linear(512, 2048), nn.GELU(), nn.Linear(2048, 512))",
+        "task": "Definisci la FFN interna a un transformer block con espansione 4x da 512 a 2048 e ritorno a 512."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ai_transformers_1",
+      "english": "Causal Mask",
+      "set": {
+        "code": "mask = torch.triu(torch.ones(L, L) * float(\"-inf\"), diagonal=1)",
+        "task": "Costruisci una causal mask triangolare superiore con -inf per impedire al modello di vedere token futuri."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ai_transformers_1",
+      "english": "Cross-Attention",
+      "set": {
+        "code": "cross = nn.MultiheadAttention(512, 8, batch_first=True)\nout, _ = cross(decoder_state, encoder_out, encoder_out)",
+        "task": "Esegui cross-attention nel decoder usando lo stato corrente come query e l'output dell'encoder come key e value."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ai_transformers_2",
+      "english": "BERT",
+      "set": {
+        "code": "from transformers import BertModel, BertTokenizer\nmodel = BertModel.from_pretrained(\"bert-base-uncased\")",
+        "task": "Carica il modello BERT base uncased pre-addestrato per ottenere embedding bidirezionali di alta qualita."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ai_transformers_2",
+      "english": "CLS Token",
+      "set": {
+        "code": "outputs = model(**inputs)\ncls_embedding = outputs.last_hidden_state[:, 0, :]",
+        "task": "Estrai l'embedding del token CLS in posizione 0 da usare come rappresentazione globale della sequenza per la classificazione."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ai_transformers_2",
+      "english": "Masked Language Modeling",
+      "set": {
+        "code": "from transformers import DataCollatorForLanguageModeling\ncollator = DataCollatorForLanguageModeling(tokenizer=tok, mlm_probability=0.15)",
+        "task": "Configura un data collator per MLM con probabilita 15% di mascheramento, come fatto nel pretraining originale di BERT."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ai_transformers_2",
+      "english": "RoBERTa",
+      "set": {
+        "code": "from transformers import RobertaModel\nmodel = RobertaModel.from_pretrained(\"roberta-base\")",
+        "task": "Carica RoBERTa base, variante ottimizzata di BERT con pretraining piu lungo e senza next sentence prediction."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ai_transformers_2",
+      "english": "DistilBERT",
+      "set": {
+        "code": "from transformers import DistilBertModel\nmodel = DistilBertModel.from_pretrained(\"distilbert-base-uncased\")",
+        "task": "Istanzia DistilBERT base, versione distillata di BERT con meta dei layer e prestazioni comparabili."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ai_transformers_2",
+      "english": "ALBERT",
+      "set": {
+        "code": "from transformers import AlbertModel\nmodel = AlbertModel.from_pretrained(\"albert-base-v2\")",
+        "task": "Carica ALBERT base v2, variante leggera di BERT che condivide parametri tra i layer per ridurre la memoria."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ai_transformers_3",
+      "english": "GPT",
+      "set": {
+        "code": "from transformers import GPT2LMHeadModel, GPT2Tokenizer\nmodel = GPT2LMHeadModel.from_pretrained(\"gpt2\")",
+        "task": "Carica GPT-2 con language modeling head per generare testo autoregressivo da prompt arbitrari."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ai_transformers_3",
+      "english": "Autoregressive",
+      "set": {
+        "code": "out = model.generate(input_ids, max_new_tokens=50)\nprint(tokenizer.decode(out[0]))",
+        "task": "Genera 50 nuovi token in modo autoregressivo a partire dall'input e decodifica il risultato in testo leggibile."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ai_transformers_3",
+      "english": "Large Language Model",
+      "set": {
+        "code": "from transformers import AutoModelForCausalLM\nllm = AutoModelForCausalLM.from_pretrained(\"meta-llama/Llama-3.1-8B-Instruct\")",
+        "task": "Scarica un LLM Instruct da 8B parametri di Meta tramite HuggingFace come base per applicazioni conversazionali."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ai_transformers_3",
+      "english": "Prompt",
+      "set": {
+        "code": "prompt = \"Translate to French: Hello, how are you?\"\nout = model.generate(tokenizer.encode(prompt, return_tensors=\"pt\"))",
+        "task": "Tokenizza un prompt di traduzione in inglese e invialo al modello per ottenere la versione francese."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ai_transformers_4",
+      "english": "Transfer Learning",
+      "set": {
+        "code": "model = AutoModelForSequenceClassification.from_pretrained(\"bert-base-uncased\", num_labels=3)",
+        "task": "Carica BERT pre-addestrato aggiungendo una testa di classificazione a 3 classi per fare transfer learning sul tuo task."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ai_transformers_4",
+      "english": "LoRA",
+      "set": {
+        "code": "from peft import LoraConfig, get_peft_model\nconfig = LoraConfig(r=8, lora_alpha=16, target_modules=[\"q_proj\",\"v_proj\"])\nmodel = get_peft_model(base_model, config)",
+        "task": "Applica LoRA con rango 8 ai layer di attenzione del modello base per fare fine-tuning efficiente in memoria."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ai_transformers_4",
+      "english": "PEFT",
+      "set": {
+        "code": "from peft import LoraConfig, get_peft_model, TaskType\nconfig = LoraConfig(task_type=TaskType.CAUSAL_LM, r=16)\nmodel = get_peft_model(base, config)",
+        "task": "Usa la libreria PEFT di HuggingFace per addestrare solo una piccola frazione dei pesi del modello causale."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ai_transformers_4",
+      "english": "Adapter",
+      "set": {
+        "code": "from peft import LoraConfig, get_peft_model\nmodel = get_peft_model(base_model, LoraConfig(r=8))",
+        "task": "Inserisci adapter LoRA leggeri sopra il modello base congelato per specializzarlo senza modificare i pesi originali."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ai_transformers_4",
+      "english": "Instruction Tuning",
+      "set": {
+        "code": "from trl import SFTTrainer\ntrainer = SFTTrainer(model=base, train_dataset=instruct_ds, dataset_text_field=\"text\")",
+        "task": "Configura un SFTTrainer della libreria TRL per fare instruction tuning supervisionato su un dataset di prompt-risposta."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ai_transformers_4",
+      "english": "RLHF",
+      "set": {
+        "code": "from trl import PPOTrainer, PPOConfig\nppo = PPOTrainer(PPOConfig(), model=policy, ref_model=ref, reward_model=rm)",
+        "task": "Imposta un PPOTrainer di TRL per allenare la policy con RLHF usando un reward model di preferenze umane."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ai_transformers_4",
+      "english": "DPO",
+      "set": {
+        "code": "from trl import DPOTrainer\ndpo = DPOTrainer(model=policy, ref_model=ref, train_dataset=preferences, beta=0.1)",
+        "task": "Allena il modello sulle preferenze umane con DPOTrainer di TRL evitando la complessita di RLHF basato su PPO."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ai_vision_1",
+      "english": "ImageNet",
+      "set": {
+        "code": "from torchvision.datasets import ImageNet\nds = ImageNet(root=\"./data\", split=\"val\", transform=transform)",
+        "task": "Carica lo split di validazione di ImageNet da una cartella locale per valutare un modello classico di visione."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ai_vision_1",
+      "english": "Top-1 Accuracy",
+      "set": {
+        "code": "pred = logits.argmax(dim=1)\ntop1 = (pred == labels).float().mean()",
+        "task": "Calcola la top-1 accuracy confrontando la classe con probabilita massima e l'etichetta corretta del batch."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ai_vision_1",
+      "english": "Top-5 Accuracy",
+      "set": {
+        "code": "_, top5 = logits.topk(5, dim=1)\ncorrect = top5.eq(labels.view(-1, 1)).any(dim=1).float().mean()",
+        "task": "Misura la top-5 accuracy verificando se l'etichetta vera ricade tra le 5 classi piu probabili predette."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ai_vision_1",
+      "english": "RGB",
+      "set": {
+        "code": "from PIL import Image\nimg = Image.open(\"photo.jpg\").convert(\"RGB\")",
+        "task": "Apri un'immagine e convertila in modalita RGB con tre canali per renderla compatibile con i modelli di torchvision."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ai_vision_1",
+      "english": "Grayscale",
+      "set": {
+        "code": "from torchvision.transforms import Grayscale\ngray = Grayscale(num_output_channels=1)(img_rgb)",
+        "task": "Converti un'immagine RGB in scala di grigi a singolo canale tramite la trasformazione Grayscale di torchvision."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ai_vision_1",
+      "english": "Resolution",
+      "set": {
+        "code": "from torchvision.transforms import Resize\nresized = Resize((224, 224))(img)",
+        "task": "Ridimensiona l'immagine a 224x224 pixel, risoluzione standard di input per molte CNN come ResNet."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ai_vision_2",
+      "english": "Object Detection",
+      "set": {
+        "code": "from torchvision.models.detection import fasterrcnn_resnet50_fpn\nmodel = fasterrcnn_resnet50_fpn(weights=\"DEFAULT\").eval()",
+        "task": "Carica un Faster R-CNN pre-addestrato di torchvision per rilevare oggetti e relative bounding box su un'immagine."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ai_vision_2",
+      "english": "YOLO",
+      "set": {
+        "code": "from ultralytics import YOLO\nmodel = YOLO(\"yolov8n.pt\")\nresults = model(\"image.jpg\")",
+        "task": "Esegui YOLOv8 nano su un'immagine usando la libreria ultralytics per ottenere bounding box in tempo reale."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ai_vision_2",
+      "english": "Faster R-CNN",
+      "set": {
+        "code": "from torchvision.models.detection import fasterrcnn_resnet50_fpn\ndetector = fasterrcnn_resnet50_fpn(weights=\"DEFAULT\")",
+        "task": "Carica Faster R-CNN con backbone ResNet50 e FPN per un detector accurato a due stadi addestrato su COCO."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ai_vision_2",
+      "english": "IoU",
+      "set": {
+        "code": "from torchvision.ops import box_iou\niou = box_iou(boxes_pred, boxes_gt)",
+        "task": "Calcola l'IoU fra ogni bounding box predetta e quelle ground truth tramite l'utility box_iou di torchvision."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ai_vision_2",
+      "english": "Mean Average Precision",
+      "set": {
+        "code": "from torchmetrics.detection import MeanAveragePrecision\nmetric = MeanAveragePrecision()\nmetric.update(preds, targets)",
+        "task": "Aggiorna la metrica mAP di torchmetrics con predizioni e target di detection per valutare il modello su COCO."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ai_vision_3",
+      "english": "Segmentation",
+      "set": {
+        "code": "from torchvision.models.segmentation import deeplabv3_resnet50\nmodel = deeplabv3_resnet50(weights=\"DEFAULT\")",
+        "task": "Carica DeepLabV3 con backbone ResNet50 pre-addestrato per fare segmentazione semantica per pixel su immagini naturali."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ai_vision_3",
+      "english": "U-Net",
+      "set": {
+        "code": "import segmentation_models_pytorch as smp\nmodel = smp.Unet(encoder_name=\"resnet34\", classes=1)",
+        "task": "Costruisci un U-Net con encoder ResNet34 e una sola classe di output usando segmentation_models_pytorch."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ai_vision_3",
+      "english": "Mask R-CNN",
+      "set": {
+        "code": "from torchvision.models.detection import maskrcnn_resnet50_fpn\nmodel = maskrcnn_resnet50_fpn(weights=\"DEFAULT\").eval()",
+        "task": "Importa Mask R-CNN pre-addestrato per fare instance segmentation, producendo bounding box e maschere per ogni oggetto."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ai_vision_3",
+      "english": "Mask",
+      "set": {
+        "code": "masks = outputs[0][\"masks\"]\nbinary_masks = (masks > 0.5).squeeze(1)",
+        "task": "Estrai le maschere predette dal modello di segmentazione e binarizzale con soglia 0.5 per ogni istanza."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ai_vision_3",
+      "english": "Dice Coefficient",
+      "set": {
+        "code": "intersection = (pred * target).sum()\ndice = (2 * intersection) / (pred.sum() + target.sum() + 1e-6)",
+        "task": "Calcola il coefficiente Dice fra maschera predetta e ground truth come metrica robusta per segmentazione medica."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ai_vision_3",
+      "english": "SAM",
+      "set": {
+        "code": "from segment_anything import SamPredictor, sam_model_registry\nsam = sam_model_registry[\"vit_h\"](checkpoint=\"sam_vit_h.pth\")",
+        "task": "Carica Segment Anything Model di Meta con backbone ViT-Huge per segmentazione promptable su immagini arbitrarie."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ai_vision_4",
+      "english": "Face Recognition",
+      "set": {
+        "code": "import face_recognition\nencoding = face_recognition.face_encodings(image)[0]",
+        "task": "Estrai un embedding da un volto in un'immagine con la libreria face_recognition per identificarlo successivamente."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ai_vision_4",
+      "english": "Pose Estimation",
+      "set": {
+        "code": "import mediapipe as mp\npose = mp.solutions.pose.Pose()\nresult = pose.process(image_rgb)",
+        "task": "Stima i keypoint della posa umana in un'immagine usando il modulo Pose di MediaPipe di Google."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ai_vision_4",
+      "english": "Optical Flow",
+      "set": {
+        "code": "import cv2\nflow = cv2.calcOpticalFlowFarneback(prev_gray, next_gray, None, 0.5, 3, 15, 3, 5, 1.2, 0)",
+        "task": "Calcola l'optical flow denso di Farneback tra due frame in scala di grigi per stimare il movimento dei pixel."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ai_vision_4",
+      "english": "OCR",
+      "set": {
+        "code": "import pytesseract\ntext = pytesseract.image_to_string(image, lang=\"eng\")",
+        "task": "Estrai testo da un'immagine con Tesseract OCR via pytesseract specificando l'inglese come lingua di riconoscimento."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ai_vision_4",
+      "english": "Image Captioning",
+      "set": {
+        "code": "from transformers import pipeline\ncap = pipeline(\"image-to-text\", model=\"nlpconnect/vit-gpt2-image-captioning\")\ncap(\"photo.jpg\")",
+        "task": "Genera una didascalia di un'immagine usando una pipeline image-to-text basata su ViT e GPT2 di HuggingFace."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ai_vision_4",
+      "english": "Visual Question Answering",
+      "set": {
+        "code": "from transformers import pipeline\nvqa = pipeline(\"visual-question-answering\")\nvqa(image=img, question=\"How many people?\")",
+        "task": "Crea una pipeline VQA e domanda quante persone ci sono in una foto al modello multimodale di default."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ai_vision_4",
+      "english": "Depth Estimation",
+      "set": {
+        "code": "from transformers import pipeline\ndepth = pipeline(\"depth-estimation\", model=\"Intel/dpt-large\")\nresult = depth(\"photo.jpg\")",
+        "task": "Stima la mappa di profondita di un'immagine usando il modello DPT-Large di Intel via HuggingFace pipeline."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ai_vision_4",
+      "english": "Super-Resolution",
+      "set": {
+        "code": "from transformers import pipeline\nsr = pipeline(\"image-to-image\", model=\"caidas/swin2SR-classical-sr-x2-64\")\nsr(image)",
+        "task": "Aumenta la risoluzione di un'immagine 2x sfruttando Swin2SR via la pipeline image-to-image di HuggingFace."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ai_vision_4",
+      "english": "Image Inpainting",
+      "set": {
+        "code": "from diffusers import StableDiffusionInpaintPipeline\npipe = StableDiffusionInpaintPipeline.from_pretrained(\"runwayml/stable-diffusion-inpainting\")",
+        "task": "Carica la pipeline Stable Diffusion Inpainting per riempire regioni mascherate di un'immagine con contenuto coerente."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ai_vision_4",
+      "english": "Style Transfer",
+      "set": {
+        "code": "from torchvision.models import vgg19\nvgg = vgg19(weights=\"IMAGENET1K_V1\").features.eval()",
+        "task": "Carica le feature di VGG19 in modalita eval come backbone per implementare neural style transfer alla Gatys."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ai_prompt_1",
+      "english": "User Prompt",
+      "set": {
+        "code": "messages = [{\"role\": \"user\", \"content\": \"Explain backpropagation\"}]\nresp = client.chat.completions.create(model=\"gpt-4\", messages=messages)",
+        "task": "Crea il messaggio dell'utente nella struttura messages dell'API OpenAI e invialo a un modello chat."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ai_prompt_1",
+      "english": "Instruction",
+      "set": {
+        "code": "prompt = \"Riassumi il seguente testo in 3 punti chiave:\\n\" + article",
+        "task": "Costruisci un prompt con istruzione esplicita seguita dal testo da elaborare per guidare l'LLM verso un riassunto strutturato."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ai_prompt_1",
+      "english": "Context",
+      "set": {
+        "code": "messages = [{\"role\": \"system\", \"content\": \"You are a Python expert.\"}, {\"role\": \"user\", \"content\": q}]",
+        "task": "Aggiungi un messaggio di sistema che fornisce contesto e ruolo al modello prima della domanda dell'utente."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ai_prompt_1",
+      "english": "Role Prompting",
+      "set": {
+        "code": "system = {\"role\": \"system\", \"content\": \"You are a senior security auditor.\"}\nmessages = [system, user_msg]",
+        "task": "Definisci nel system message il ruolo che il modello deve interpretare per orientare lo stile e il dominio delle risposte."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ai_prompt_1",
+      "english": "Output Format",
+      "set": {
+        "code": "resp = client.chat.completions.create(model=\"gpt-4o\", messages=msgs, response_format={\"type\": \"json_object\"})",
+        "task": "Forza il modello OpenAI a restituire un oggetto JSON ben formato impostando response_format nella chiamata."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ai_prompt_2",
+      "english": "Zero-Shot",
+      "set": {
+        "code": "prompt = \"Classify this review as positive or negative: Loved it!\"",
+        "task": "Chiedi al modello di classificare il sentiment di una review senza fornire alcun esempio, sfruttando il caso zero-shot."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ai_prompt_2",
+      "english": "Few-Shot",
+      "set": {
+        "code": "prompt = \"Q: 1+1\\nA: 2\\nQ: 2+3\\nA: 5\\nQ: 4+4\\nA:\"",
+        "task": "Fornisci due o tre esempi di coppie domanda-risposta prima della domanda reale per attivare l'apprendimento few-shot."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ai_prompt_2",
+      "english": "One-Shot",
+      "set": {
+        "code": "prompt = \"Esempio: input=cane, output=Cane.\\nNuovo: input=gatto, output=\"",
+        "task": "Mostra un singolo esempio prima della richiesta perche il modello generalizzi il pattern in modalita one-shot."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ai_prompt_2",
+      "english": "Chain-of-Thought",
+      "set": {
+        "code": "prompt = question + \"\\nThink step by step, then answer.\"",
+        "task": "Aggiungi la frase think step by step al prompt per attivare il ragionamento Chain-of-Thought esplicito del modello."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ai_prompt_2",
+      "english": "Self-Consistency",
+      "set": {
+        "code": "answers = [llm(prompt, temperature=0.7) for _ in range(5)]\nfinal = max(set(answers), key=answers.count)",
+        "task": "Genera 5 risposte indipendenti dallo stesso prompt e scegli la piu frequente con voto a maggioranza."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ai_prompt_2",
+      "english": "ReAct",
+      "set": {
+        "code": "from langchain.agents import create_react_agent\nagent = create_react_agent(llm, tools, prompt)",
+        "task": "Costruisci un agente ReAct con LangChain che alterna ragionamento e chiamate a strumenti per risolvere il task."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ai_prompt_2",
+      "english": "Prompt Chaining",
+      "set": {
+        "code": "from langchain.chains import SequentialChain\nchain = SequentialChain(chains=[summarize, translate])",
+        "task": "Concatena una chain di riassunto e una di traduzione con LangChain per dividere il task in passi successivi."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ai_prompt_3",
+      "english": "RAG",
+      "set": {
+        "code": "from langchain.chains import RetrievalQA\nqa = RetrievalQA.from_chain_type(llm=llm, retriever=vector_store.as_retriever())",
+        "task": "Configura una chain di Retrieval-Augmented Generation con LangChain combinando un retriever vettoriale e un LLM."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ai_prompt_3",
+      "english": "Vector Database",
+      "set": {
+        "code": "from langchain.vectorstores import Chroma\nvdb = Chroma.from_documents(docs, embeddings)",
+        "task": "Inizializza un vector database Chroma a partire da documenti e relativi embedding per abilitare ricerca semantica."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ai_prompt_3",
+      "english": "Semantic Search",
+      "set": {
+        "code": "results = vector_store.similarity_search(query, k=5)",
+        "task": "Cerca i 5 documenti piu simili semanticamente alla query nel vector store per costruire la base di una risposta RAG."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ai_prompt_3",
+      "english": "Chunking",
+      "set": {
+        "code": "from langchain.text_splitter import RecursiveCharacterTextSplitter\nsplitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)",
+        "task": "Spezza un documento lungo in chunk da 500 caratteri con overlap di 50 per indicizzarli singolarmente."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ai_prompt_3",
+      "english": "Retrieval",
+      "set": {
+        "code": "retriever = vector_store.as_retriever(search_kwargs={\"k\": 3})\ndocs = retriever.invoke(query)",
+        "task": "Configura un retriever che restituisce i 3 documenti piu rilevanti per la query prima di passarli all'LLM."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ai_prompt_3",
+      "english": "Reranking",
+      "set": {
+        "code": "from sentence_transformers import CrossEncoder\nreranker = CrossEncoder(\"cross-encoder/ms-marco-MiniLM-L-6-v2\")\nscores = reranker.predict([(query, d) for d in candidates])",
+        "task": "Riordina i documenti recuperati assegnando uno score di rilevanza con un cross-encoder pre-addestrato."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ai_prompt_3",
+      "english": "Embedding Model",
+      "set": {
+        "code": "from sentence_transformers import SentenceTransformer\nemb_model = SentenceTransformer(\"all-MiniLM-L6-v2\")\nvectors = emb_model.encode(texts)",
+        "task": "Trasforma una lista di testi in vettori densi con SentenceTransformer MiniLM da usare per ricerca o clustering."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ai_prompt_4",
+      "english": "Presence Penalty",
+      "set": {
+        "code": "resp = client.chat.completions.create(model=\"gpt-4\", messages=m, presence_penalty=0.6)",
+        "task": "Imposta presence_penalty a 0.6 nella chiamata OpenAI per scoraggiare la ripetizione di token gia comparsi."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ai_prompt_4",
+      "english": "Hallucination",
+      "set": {
+        "code": "from langchain.evaluation import load_evaluator\nev = load_evaluator(\"labeled_score_string\", criteria=\"factuality\")",
+        "task": "Carica un evaluator di LangChain che assegna un punteggio di factuality per individuare risposte allucinate."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ai_prompt_4",
+      "english": "Guardrails",
+      "set": {
+        "code": "from guardrails import Guard\nguard = Guard.from_pydantic(output_class=SafeResponse)\nresult = guard(llm, prompt)",
+        "task": "Avvolgi la chiamata LLM con la libreria Guardrails per validare l'output rispetto a uno schema Pydantic."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_1",
+      "english": "Hyperparameter",
+      "set": {
+        "code": "from sklearn.model_selection import GridSearchCV\nsearch = GridSearchCV(model, {\"C\": [0.1, 1, 10]}, cv=5)",
+        "task": "Esplora tre valori dell'iperparametro C di una SVM con grid search e cross-validation a 5 fold."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_1",
+      "english": "Warmup Steps",
+      "set": {
+        "code": "from transformers import get_linear_schedule_with_warmup\nsched = get_linear_schedule_with_warmup(optim, num_warmup_steps=500, num_training_steps=10000)",
+        "task": "Configura uno scheduler lineare con 500 warmup step su 10000 totali per stabilizzare l'inizio del training di un transformer."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_1",
+      "english": "Hyperparameter Tuning",
+      "set": {
+        "code": "import optuna\nstudy = optuna.create_study(direction=\"maximize\")\nstudy.optimize(objective, n_trials=50)",
+        "task": "Avvia uno studio Optuna con 50 trial per cercare gli iperparametri che massimizzano la metrica obiettivo."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_1",
+      "english": "Bayesian Optimization",
+      "set": {
+        "code": "from skopt import gp_minimize\nresult = gp_minimize(objective, dimensions=space, n_calls=30)",
+        "task": "Esegui un'ottimizzazione bayesiana con gp_minimize di scikit-optimize chiamando l'obiettivo 30 volte."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_2",
+      "english": "Loss Function",
+      "set": {
+        "code": "criterion = nn.CrossEntropyLoss()\nloss = criterion(logits, labels)",
+        "task": "Definisci una loss CrossEntropy per classificazione multiclasse e calcola il valore di loss su un batch."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_2",
+      "english": "Hinge Loss",
+      "set": {
+        "code": "from sklearn.linear_model import SGDClassifier\nsvm = SGDClassifier(loss=\"hinge\").fit(X, y)",
+        "task": "Addestra un classificatore SGD con hinge loss, equivalente a una SVM lineare allenata via gradient descent."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_2",
+      "english": "Focal Loss",
+      "set": {
+        "code": "from torchvision.ops import sigmoid_focal_loss\nloss = sigmoid_focal_loss(logits, targets, alpha=0.25, gamma=2.0)",
+        "task": "Applica la focal loss di torchvision con alpha 0.25 e gamma 2 per gestire dataset fortemente sbilanciati."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_2",
+      "english": "Triplet Loss",
+      "set": {
+        "code": "criterion = nn.TripletMarginLoss(margin=1.0)\nloss = criterion(anchor, positive, negative)",
+        "task": "Definisci una triplet loss con margine 1 per allenare embedding che separino ancora, esempio positivo e negativo."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_2",
+      "english": "KL Divergence",
+      "set": {
+        "code": "kl = nn.KLDivLoss(reduction=\"batchmean\")\nloss = kl(F.log_softmax(student, dim=-1), F.softmax(teacher, dim=-1))",
+        "task": "Calcola la KL divergence fra distribuzione del modello studente e quella del teacher per knowledge distillation."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_2",
+      "english": "Custom Loss",
+      "set": {
+        "code": "class MSEPlusL1(nn.Module):\n    def forward(self, pred, target):\n        return F.mse_loss(pred, target) + 0.1 * F.l1_loss(pred, target)",
+        "task": "Implementa una loss custom in PyTorch combinando MSE e L1 con un peso per regolarizzare la stima."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_3",
+      "english": "Gradient Descent",
+      "set": {
+        "code": "optimizer = torch.optim.SGD(model.parameters(), lr=0.01)\noptimizer.step()",
+        "task": "Configura un optimizer SGD vanilla con learning rate 0.01 e applica un passo di gradient descent sul modello."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_3",
+      "english": "Learning Rate Warmup",
+      "set": {
+        "code": "scheduler = get_linear_schedule_with_warmup(optimizer, num_warmup_steps=1000, num_training_steps=total)",
+        "task": "Aggiungi una fase di warmup di 1000 step durante cui il learning rate cresce linearmente da zero al valore target."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_3",
+      "english": "Convergence",
+      "set": {
+        "code": "if abs(loss_prev - loss) < 1e-4:\n    print(\"Converged\")\n    break",
+        "task": "Interrompi il loop di training quando la variazione della loss tra due epoche scende sotto una tolleranza minima."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_4",
+      "english": "GPU",
+      "set": {
+        "code": "device = torch.device(\"cuda\" if torch.cuda.is_available() else \"cpu\")\nmodel = model.to(device)",
+        "task": "Sposta il modello sulla GPU se disponibile, altrimenti rimani su CPU, per accelerare l'addestramento."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_4",
+      "english": "CUDA",
+      "set": {
+        "code": "x = x.cuda()\nprint(torch.cuda.memory_allocated() / 1e9, \"GB\")",
+        "task": "Sposta un tensor su CUDA e stampa la memoria GPU allocata in GB per verificare lo stato del device."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_4",
+      "english": "Distributed Training",
+      "set": {
+        "code": "import torch.distributed as dist\ndist.init_process_group(backend=\"nccl\")",
+        "task": "Inizializza il gruppo di processi distribuiti con backend NCCL come passo iniziale del training multi-GPU."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_4",
+      "english": "Data Parallelism",
+      "set": {
+        "code": "from torch.nn.parallel import DistributedDataParallel as DDP\nmodel = DDP(model, device_ids=[local_rank])",
+        "task": "Avvolgi il modello con DistributedDataParallel per replicarlo su piu GPU e sincronizzare i gradienti automaticamente."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_4",
+      "english": "Model Parallelism",
+      "set": {
+        "code": "self.layer1 = nn.Linear(1024, 1024).to(\"cuda:0\")\nself.layer2 = nn.Linear(1024, 10).to(\"cuda:1\")",
+        "task": "Distribuisci layer diversi del modello su GPU diverse implementando il model parallelism manuale tra cuda:0 e cuda:1."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_4",
+      "english": "Gradient Checkpointing",
+      "set": {
+        "code": "from torch.utils.checkpoint import checkpoint\nout = checkpoint(self.block, x)",
+        "task": "Avvolgi un blocco del modello con checkpoint per ricalcolare le attivazioni a backward riducendo la memoria GPU."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_1",
+      "english": "True Positive",
+      "set": {
+        "code": "from sklearn.metrics import confusion_matrix\ntn, fp, fn, tp = confusion_matrix(y_true, y_pred).ravel()",
+        "task": "Calcola i quattro componenti della matrice di confusione binaria estraendo TP, FP, FN e TN con scikit-learn."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_1",
+      "english": "False Positive",
+      "set": {
+        "code": "fp_rate = fp / (fp + tn)\nprint(fp_rate)",
+        "task": "Calcola il false positive rate dividendo i falsi positivi per la somma di FP e veri negativi della matrice."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_1",
+      "english": "False Negative",
+      "set": {
+        "code": "fn_rate = fn / (fn + tp)\nprint(\"FNR:\", fn_rate)",
+        "task": "Calcola il false negative rate per quantificare quanti positivi reali sono stati mancati dal classificatore."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_1",
+      "english": "Specificity",
+      "set": {
+        "code": "specificity = tn / (tn + fp)",
+        "task": "Calcola la specificity come rapporto fra veri negativi e tutti i negativi reali della matrice di confusione."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_2",
+      "english": "ROC Curve",
+      "set": {
+        "code": "from sklearn.metrics import roc_curve\nfpr, tpr, thr = roc_curve(y_true, y_score)",
+        "task": "Costruisci la curva ROC del classificatore ottenendo i tassi di falsi positivi, veri positivi e soglie."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_2",
+      "english": "Precision-Recall Curve",
+      "set": {
+        "code": "from sklearn.metrics import precision_recall_curve\nprec, rec, thr = precision_recall_curve(y_true, y_score)",
+        "task": "Calcola la curva precision-recall del modello, particolarmente utile su dataset fortemente sbilanciati."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_2",
+      "english": "Threshold Tuning",
+      "set": {
+        "code": "best_thr = thresholds[np.argmax(tpr - fpr)]\ny_pred = (scores >= best_thr).astype(int)",
+        "task": "Scegli la soglia ottimale massimizzando la differenza tra TPR e FPR sulla curva ROC e applicala ai punteggi."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_2",
+      "english": "Calibration",
+      "set": {
+        "code": "from sklearn.calibration import CalibratedClassifierCV\ncal = CalibratedClassifierCV(base_estimator=model, method=\"isotonic\").fit(X, y)",
+        "task": "Calibra le probabilita predette dal modello base con isotonic regression usando CalibratedClassifierCV."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_2",
+      "english": "Brier Score",
+      "set": {
+        "code": "from sklearn.metrics import brier_score_loss\nbs = brier_score_loss(y_true, y_prob)",
+        "task": "Calcola il Brier score per misurare quanto bene le probabilita predette aderiscono ai valori binari reali."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_3",
+      "english": "Adjusted R-Squared",
+      "set": {
+        "code": "n, p = X.shape\nadj_r2 = 1 - (1 - r2) * (n - 1) / (n - p - 1)",
+        "task": "Calcola l'R quadro corretto partendo dall'R2 grezzo, penalizzando l'aggiunta di feature non utili al modello."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_3",
+      "english": "Predicted vs Actual Plot",
+      "set": {
+        "code": "plt.scatter(y_true, y_pred)\nplt.plot([y_true.min(), y_true.max()], [y_true.min(), y_true.max()], \"r--\")",
+        "task": "Disegna lo scatter dei valori predetti contro quelli reali aggiungendo la diagonale ideale come riferimento."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_3",
+      "english": "Residual Plot",
+      "set": {
+        "code": "residuals = y_true - y_pred\nplt.scatter(y_pred, residuals)\nplt.axhline(0, color=\"red\")",
+        "task": "Visualizza i residui contro le predizioni per individuare pattern non catturati dal modello di regressione."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_3",
+      "english": "Q-Q Plot",
+      "set": {
+        "code": "import statsmodels.api as sm\nsm.qqplot(residuals, line=\"45\")",
+        "task": "Disegna un Q-Q plot dei residui con la linea a 45 gradi per verificare l'assunzione di normalita degli errori."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_3",
+      "english": "Heteroscedasticity",
+      "set": {
+        "code": "from statsmodels.stats.diagnostic import het_breuschpagan\nlm, lm_p, f, f_p = het_breuschpagan(residuals, X)",
+        "task": "Esegui il test di Breusch-Pagan sui residui per verificare formalmente l'assenza di eteroschedasticita."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_3",
+      "english": "Forecast Bias",
+      "set": {
+        "code": "bias = (y_pred - y_true).mean()\nprint(\"Forecast bias:\", bias)",
+        "task": "Stima il bias di previsione come differenza media fra predetto e reale per capire se il modello sovra o sottostima."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_4",
+      "english": "Holdout",
+      "set": {
+        "code": "X_train, X_holdout, y_train, y_holdout = train_test_split(X, y, test_size=0.2, random_state=42)",
+        "task": "Crea un holdout set del 20% con seed fisso per valutare il modello una sola volta a fine pipeline."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_4",
+      "english": "Nested Cross-Validation",
+      "set": {
+        "code": "from sklearn.model_selection import GridSearchCV, cross_val_score\nouter = cross_val_score(GridSearchCV(model, grid, cv=3), X, y, cv=5)",
+        "task": "Annida una grid search a 3 fold dentro un cross-validation esterno a 5 fold per stimare l'errore in modo non distorto."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_4",
+      "english": "Group K-Fold",
+      "set": {
+        "code": "from sklearn.model_selection import GroupKFold\ngkf = GroupKFold(n_splits=5)\nfor tr, te in gkf.split(X, y, groups):\n    pass",
+        "task": "Itera sui fold di GroupKFold passando l'array di gruppi affinche pazienti diversi non finiscano sia in train che in test."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_4",
+      "english": "Ablation Study",
+      "set": {
+        "code": "results = {}\nfor feat in [\"fA\", \"fB\", \"fC\"]:\n    results[feat] = model.fit(X.drop(feat, axis=1), y).score(X_test.drop(feat, axis=1), y_test)",
+        "task": "Esegui un ablation study rimuovendo una feature alla volta e misurando il calo di performance per stimarne il contributo."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_4",
+      "english": "Statistical Significance",
+      "set": {
+        "code": "from scipy.stats import ttest_rel\nt, p = ttest_rel(scores_model_a, scores_model_b)",
+        "task": "Confronta gli score dei due modelli con un t-test appaiato per verificare se la differenza e' statisticamente significativa."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_4",
+      "english": "McNemar Test",
+      "set": {
+        "code": "from statsmodels.stats.contingency_tables import mcnemar\nresult = mcnemar([[a, b], [c, d]], exact=True)",
+        "task": "Esegui il test di McNemar sulla tabella di contingenza per confrontare due classificatori sullo stesso test set."
+      }
+    }
+  ]
+}

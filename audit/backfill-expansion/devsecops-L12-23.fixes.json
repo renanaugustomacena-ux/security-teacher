@@ -1,0 +1,616 @@
+{
+  "fixes": [
+    {
+      "level": "12",
+      "lesson": "dso_threat_modeling_4",
+      "english": "Microsoft Threat Modeling Tool",
+      "set": {
+        "command": "ThreatModelingTool.exe --open model.tm7",
+        "task": "Apri il modello model.tm7 con il Microsoft Threat Modeling Tool per generare le minacce STRIDE sui flussi disegnati."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "dso_threat_modeling_4",
+      "english": "OWASP Threat Dragon",
+      "set": {
+        "command": "docker run -p 3000:3000 owasp/threat-dragon",
+        "task": "Avvia OWASP Threat Dragon in container sulla porta 3000 per costruire collaborativamente i diagrammi DFD."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dso_automation_2",
+      "english": "Tracecat",
+      "set": {
+        "command": "docker compose -f tracecat.yml up -d",
+        "task": "Solleva Tracecat in modalita' daemon con docker compose per avere un SOAR open source self-hostable."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dso_automation_2",
+      "english": "Shuffle",
+      "set": {
+        "command": "docker compose -f shuffle-docker.yml up -d",
+        "task": "Distribuisci Shuffle on-premises via docker compose per automatizzare i workflow di incident response."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dso_automation_2",
+      "english": "TheHive",
+      "set": {
+        "command": "docker run -p 9000:9000 strangebee/thehive5",
+        "task": "Avvia TheHive5 sulla porta 9000 come piattaforma di case management per il SOC."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dso_automation_2",
+      "english": "n8n",
+      "set": {
+        "command": "npx n8n start --tunnel",
+        "task": "Lancia n8n con tunnel pubblico per orchestrare flussi di automazione collegando Jira, Slack e PagerDuty."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dso_automation_3",
+      "english": "Quarantine VM",
+      "set": {
+        "command": "aws ec2 modify-instance-attribute --instance-id i-abc --groups sg-quarantine",
+        "task": "Sposta l'istanza i-abc nel security group sg-quarantine per isolarla a rete dopo una compromissione."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dso_automation_3",
+      "english": "Block IP",
+      "set": {
+        "command": "sudo iptables -A INPUT -s 203.0.113.5 -j DROP",
+        "task": "Aggiungi una regola iptables che droppa il traffico dall'IP malevolo 203.0.113.5 individuato dall'enrichment."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dso_automation_3",
+      "english": "Disable User",
+      "set": {
+        "command": "az ad user update --id user@corp --account-enabled false",
+        "task": "Disabilita l'account user@corp in Entra ID impostando account-enabled a false durante il playbook di compromissione."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dso_automation_3",
+      "english": "Snapshot for Forensics",
+      "set": {
+        "command": "aws ec2 create-snapshot --volume-id vol-abc --description forensics",
+        "task": "Crea uno snapshot EBS del volume vol-abc con tag forensics prima di terminare l'istanza compromessa."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dso_automation_3",
+      "english": "Rollback Deployment",
+      "set": {
+        "command": "helm rollback myapp 1 --namespace prod",
+        "task": "Riporta il release Helm myapp alla revisione 1 nel namespace prod dopo il superamento delle soglie canary."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dso_automation_4",
+      "english": "GitOps Remediation",
+      "set": {
+        "code": "name: gitops-remediate\non: workflow_dispatch\njobs:\n  fix:\n    runs-on: ubuntu-latest\n    steps:\n      - run: kustomize edit set image app=$IMG\n      - run: gh pr create -t 'fix: rotate image'",
+        "task": "Apri automaticamente una PR di remediation che aggiorna il tag immagine via kustomize quando lo scanner rileva un drift."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dso_tools_api_1",
+      "english": "Schema Validation",
+      "set": {
+        "code": "plugins:\n  - name: request-validator\n    config:\n      version: kong\n      body_schema: |\n        {\"type\":\"object\",\"required\":[\"id\"]}",
+        "task": "Configura il plugin request-validator di Kong con uno schema che impone il campo id, rifiutando body inattesi."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dso_tools_api_1",
+      "english": "Mutual TLS",
+      "set": {
+        "code": "spec:\n  mtls:\n    mode: STRICT",
+        "task": "Imposta il mode STRICT nella PeerAuthentication Istio per forzare mTLS su tutto il traffico east-west."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dso_tools_api_1",
+      "english": "WAF Rule",
+      "set": {
+        "code": "SecRule ARGS \"@detectSQLi\" \"id:1001,deny,status:403,msg:'SQLi blocked'\"",
+        "task": "Scrivi una SecRule ModSecurity con detectSQLi che blocca con 403 i tentativi di SQL injection negli argomenti."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dso_tools_api_2",
+      "english": "JWT",
+      "set": {
+        "code": "const payload = jwt.verify(token, jwks.getKey(kid), { algorithms: ['RS256'] })",
+        "task": "Verifica firma e algoritmo RS256 del JWT usando la chiave pubblica dal JWKS prima di accettare la richiesta."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dso_tools_api_2",
+      "english": "PKCE",
+      "set": {
+        "code": "const verifier = crypto.randomBytes(32).toString('base64url')\nconst challenge = sha256(verifier).toString('base64url')",
+        "task": "Genera code_verifier e code_challenge SHA-256 lato client per proteggere il flusso OAuth dei mobile."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dso_tools_api_2",
+      "english": "Token Introspection",
+      "set": {
+        "command": "curl -X POST -u client:secret -d token=$TOKEN https://idp/oauth/introspect",
+        "task": "Interroga l'endpoint /oauth/introspect autenticandoti come client per verificare se $TOKEN e' ancora attivo."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dso_tools_api_2",
+      "english": "JWKS",
+      "set": {
+        "command": "curl https://idp.example.com/.well-known/jwks.json",
+        "task": "Scarica il JWKS pubblicato dal provider OIDC per validare la firma dei token senza segreti condivisi."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dso_tools_api_4",
+      "english": "Postman",
+      "set": {
+        "command": "postman collection run security-suite.json --env prod",
+        "task": "Esegui la collection security-suite.json con l'ambiente prod direttamente dalla CLI di Postman."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dso_tools_api_4",
+      "english": "API Fuzzing",
+      "set": {
+        "command": "restler fuzz --api_spec openapi.yaml --time_budget 60",
+        "task": "Lancia restler in modalita' fuzz sullo spec openapi.yaml con budget di 60 minuti per scovare crash sugli endpoint."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dso_tools_api_4",
+      "english": "GraphQL Security",
+      "set": {
+        "code": "const armor = ApolloArmor({ maxDepth: { n: 5 }, costLimit: { maxCost: 5000 } })",
+        "task": "Configura GraphQL Armor con maxDepth 5 e costLimit 5000 per bloccare le query GraphQL ricorsive abusive."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dso_tools_runtime_1",
+      "english": "ModSecurity",
+      "set": {
+        "command": "sudo nginx -t && sudo nginx -s reload",
+        "task": "Valida la configurazione e ricarica nginx con SecRuleEngine On per attivare ModSecurity in modalita' blocco."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dso_tools_runtime_1",
+      "english": "OWASP CRS",
+      "set": {
+        "command": "git clone https://github.com/coreruleset/coreruleset.git /etc/modsecurity/crs",
+        "task": "Clona l'OWASP Core Rule Set in /etc/modsecurity/crs per avere la baseline di regole anti-injection aggiornata."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dso_tools_runtime_2",
+      "english": "Tetragon",
+      "set": {
+        "command": "kubectl apply -f https://raw.githubusercontent.com/cilium/tetragon/main/install/kubernetes/quick-install.yaml",
+        "task": "Installa Tetragon nel cluster Kubernetes per osservare via eBPF processi e connessioni a livello kernel."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dso_tools_runtime_2",
+      "english": "AppArmor",
+      "set": {
+        "code": "metadata:\n  annotations:\n    container.apparmor.security.beta.kubernetes.io/app: localhost/restricted",
+        "task": "Aggiungi l'annotazione AppArmor che carica il profilo localhost/restricted sul container app per limitarne i path."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dso_tools_runtime_2",
+      "english": "SELinux",
+      "set": {
+        "command": "sudo setenforce 1 && sudo getenforce",
+        "task": "Forza SELinux in modalita' Enforcing e verifica con getenforce che le policy MAC siano attive sull'host."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dso_tools_runtime_2",
+      "english": "Cilium",
+      "set": {
+        "command": "cilium install --version 1.16 --set kubeProxyReplacement=true",
+        "task": "Installa Cilium 1.16 con kube-proxy replacement abilitato per ottenere networking eBPF e policy L7."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dso_tools_runtime_3",
+      "english": "CrowdStrike",
+      "set": {
+        "command": "sudo /opt/CrowdStrike/falconctl -s --cid=$CID && sudo systemctl start falcon-sensor",
+        "task": "Registra il sensore CrowdStrike Falcon con il customer ID $CID e avvia il servizio per attivare l'EDR."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dso_tools_runtime_3",
+      "english": "Sysmon",
+      "set": {
+        "command": "sysmon64.exe -accepteula -i sysmonconfig.xml",
+        "task": "Installa Sysmon su Windows accettando la EULA e caricando la configurazione sysmonconfig.xml di SwiftOnSecurity."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dso_tools_runtime_3",
+      "english": "Wazuh",
+      "set": {
+        "command": "curl -sO https://packages.wazuh.com/4.x/wazuh-install.sh && sudo bash wazuh-install.sh -a",
+        "task": "Esegui l'installer all-in-one di Wazuh per deployare manager, indexer e dashboard sulla stessa macchina."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dso_tools_runtime_4",
+      "english": "Istio",
+      "set": {
+        "command": "istioctl install --set profile=default -y",
+        "task": "Installa Istio con il profilo default in modalita' non interattiva per ottenere sidecar Envoy e mTLS automatico."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dso_tools_runtime_4",
+      "english": "Linkerd",
+      "set": {
+        "command": "linkerd install --crds | kubectl apply -f - && linkerd install | kubectl apply -f -",
+        "task": "Installa CRD e control-plane di Linkerd nel cluster per avere una service mesh leggera in Rust."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dso_tools_runtime_4",
+      "english": "SPIRE",
+      "set": {
+        "command": "kubectl apply -f spire-server.yaml && kubectl apply -f spire-agent.yaml",
+        "task": "Distribuisci server e agent SPIRE per emettere SVID X.509 a breve durata ai workload del cluster."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dso_ci_cd_gitops_1",
+      "english": "Argo CD",
+      "set": {
+        "command": "argocd app create myapp --repo https://git/repo --path k8s --dest-namespace prod",
+        "task": "Registra l'applicazione myapp in Argo CD puntando alla directory k8s del repo e sincronizzandola sul namespace prod."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dso_ci_cd_gitops_1",
+      "english": "Flux",
+      "set": {
+        "command": "flux bootstrap github --owner=acme --repository=fleet --branch=main --path=clusters/prod",
+        "task": "Esegui il bootstrap di Flux sul repo acme/fleet per gestire i manifest del cluster prod via GitOps."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dso_ci_cd_gitops_1",
+      "english": "Sync Policy",
+      "set": {
+        "code": "syncPolicy:\n  automated:\n    prune: true\n    selfHeal: true",
+        "task": "Imposta la syncPolicy Argo con prune e selfHeal a true per rimuovere risorse orfane e riconciliare drift."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dso_ci_cd_gitops_4",
+      "english": "App of Apps",
+      "set": {
+        "code": "kind: Application\nspec:\n  source:\n    path: apps/\n    directory:\n      recurse: true",
+        "task": "Definisci un'Application Argo con directory recurse che genera figli da apps/ secondo il pattern app of apps."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dso_ci_cd_gitops_4",
+      "english": "Helm Chart",
+      "set": {
+        "command": "helm install myapp ./chart --namespace prod --values prod-values.yaml",
+        "task": "Installa il chart locale con valori prod-values.yaml nel namespace prod per parametrizzare il deployment."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dso_ci_cd_gitops_4",
+      "english": "Kustomize",
+      "set": {
+        "command": "kubectl apply -k overlays/prod",
+        "task": "Applica l'overlay prod di Kustomize che patcha la base con valori specifici dell'ambiente di produzione."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dso_ci_cd_gitops_4",
+      "english": "Sealed Secrets in Git",
+      "set": {
+        "command": "kubeseal --controller-namespace=kube-system < secret.yaml > sealed.yaml",
+        "task": "Cifra il Secret K8s con kubeseal usando la chiave pubblica del cluster per poter committare sealed.yaml in Git."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dso_ci_cd_gitops_4",
+      "english": "Mergify",
+      "set": {
+        "code": "queue_rules:\n  - name: default\n    conditions:\n      - check-success=ci\n      - approved-reviews-by>=1",
+        "task": "Definisci una merge queue Mergify che richiede CI verde e almeno una review approvata prima dell'auto-merge."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dso_ci_cd_gitops_4",
+      "english": "Spectral",
+      "set": {
+        "command": "spectral lint openapi.yaml --ruleset spectral.yaml",
+        "task": "Esegui spectral lint sullo spec OpenAPI con il ruleset interno per intercettare schemi di sicurezza mancanti."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dso_tools_monitoring_1",
+      "english": "Correlation Rule",
+      "set": {
+        "code": "title: Brute force\ndetection:\n  selection:\n    EventID: 4625\n  condition: selection | count() by user > 5",
+        "task": "Scrivi una regola Sigma che genera alert quando lo stesso utente accumula piu' di 5 EventID 4625 di login fallito."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dso_tools_monitoring_3",
+      "english": "Loki",
+      "set": {
+        "command": "logcli query '{namespace=\"prod\",app=\"api\"}' --since=1h",
+        "task": "Interroga Loki via logcli filtrando gli ultimi 60 minuti di log del pod app=api nel namespace prod."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dso_tools_monitoring_3",
+      "english": "Fluentd",
+      "set": {
+        "code": "<source>\n  @type tail\n  path /var/log/containers/*.log\n  tag k8s.*\n</source>",
+        "task": "Configura una sorgente tail in Fluentd che ingerisce i log dei container Kubernetes taggandoli come k8s.*"
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dso_tools_monitoring_3",
+      "english": "Vector",
+      "set": {
+        "code": "sources:\n  in:\n    type: kubernetes_logs\nsinks:\n  out:\n    type: elasticsearch\n    inputs: [in]\n    endpoint: http://es:9200",
+        "task": "Definisci una pipeline Vector che legge i log Kubernetes e li scrive su Elasticsearch sulla porta 9200."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dso_tools_monitoring_3",
+      "english": "PII Redaction",
+      "set": {
+        "code": "msg = re.sub(r'\\b\\d{16}\\b', '[REDACTED-CC]', msg)\nmsg = re.sub(r'[\\w.+-]+@[\\w-]+\\.[\\w.-]+', '[REDACTED-EMAIL]', msg)",
+        "task": "Maschera carte di credito ed email nel log con due re.sub prima di inviare il messaggio al SIEM centrale."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dso_tools_monitoring_4",
+      "english": "Sigma Rule",
+      "set": {
+        "code": "title: Suspicious curl\nlogsource:\n  product: linux\ndetection:\n  selection:\n    Image|endswith: '/curl'\n    CommandLine|contains: 'metadata.google'\n  condition: selection",
+        "task": "Scrivi una Sigma rule che innesca quando curl viene eseguito contro l'endpoint metadata.google sul cloud."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dso_tools_monitoring_4",
+      "english": "YARA Rule",
+      "set": {
+        "code": "rule Cobalt_Strike_Beacon {\n  strings:\n    $a = { 4d 5a 90 00 03 }\n    $b = \"beacon.dll\" ascii\n  condition: $a at 0 and $b\n}",
+        "task": "Definisci una YARA rule che identifica payload Cobalt Strike cercando il magic MZ iniziale e la stringa beacon.dll."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dso_automation_incident_3",
+      "english": "Hotfix Pipeline",
+      "set": {
+        "code": "on:\n  push:\n    branches: [hotfix/*]\njobs:\n  deploy:\n    if: contains(github.event.head_commit.message,'SECURITY')\n    runs-on: ubuntu-latest",
+        "task": "Configura un workflow GitHub Actions che si attiva solo sui branch hotfix/* con commit SECURITY per accelerare la patch."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dso_automation_incident_3",
+      "english": "Blue/Green Deploy",
+      "set": {
+        "command": "kubectl patch service api -p '{\"spec\":{\"selector\":{\"version\":\"green\"}}}'",
+        "task": "Sposta istantaneamente il traffico del service api dalla versione blue alla green patchando il selector."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dso_automation_incident_3",
+      "english": "Feature Flag Kill Switch",
+      "set": {
+        "code": "if (await flags.isEnabled('payments.module', { fallback: false })) {\n  await processPayment(order)\n}",
+        "task": "Avvolgi processPayment in un feature flag con fallback false cosi' puoi spegnere il modulo durante un incidente."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dso_automation_incident_4",
+      "english": "Memory Dump",
+      "set": {
+        "command": "sudo lime-loader format=lime path=/mnt/evidence/mem.lime",
+        "task": "Acquisisci la memoria live dell'host con LiME nel formato lime salvandola su un mount evidence read-only."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dso_automation_incident_4",
+      "english": "Timeline Analysis",
+      "set": {
+        "command": "log2timeline.py --storage-file plaso.dump image.raw && psort.py -o l2tcsv -w timeline.csv plaso.dump",
+        "task": "Genera il super-timeline forense da image.raw con log2timeline e Plaso, esportandolo in formato l2tcsv."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dso_container_security_k8s_1",
+      "english": "ClusterRole",
+      "set": {
+        "code": "kind: ClusterRole\nmetadata:\n  name: monitor-readonly\nrules:\n- apiGroups: [\"\"]\n  resources: [pods, nodes]\n  verbs: [get, list, watch]",
+        "task": "Definisci una ClusterRole monitor-readonly che permette get/list/watch su pod e node senza alcun verbo di scrittura."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dso_container_security_k8s_1",
+      "english": "RoleBinding",
+      "set": {
+        "code": "kind: RoleBinding\nsubjects:\n- kind: Group\n  name: developers\nroleRef:\n  kind: Role\n  name: edit",
+        "task": "Crea un RoleBinding che lega il gruppo developers al ruolo edit limitato al namespace dove viene applicato."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dso_container_security_k8s_2",
+      "english": "Default Deny",
+      "set": {
+        "code": "kind: NetworkPolicy\nmetadata:\n  name: deny-all\nspec:\n  podSelector: {}\n  policyTypes: [Ingress, Egress]",
+        "task": "Applica una NetworkPolicy deny-all con podSelector vuoto e policyTypes Ingress/Egress per default-deny il namespace."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dso_container_security_k8s_2",
+      "english": "Egress Policy",
+      "set": {
+        "code": "egress:\n- to:\n  - ipBlock:\n      cidr: 10.0.0.0/8\n  ports:\n  - protocol: TCP\n    port: 443",
+        "task": "Permetti egress solo verso il CIDR interno 10.0.0.0/8 sulla porta 443 negando tutte le altre destinazioni."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dso_container_security_k8s_2",
+      "english": "Calico",
+      "set": {
+        "command": "kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.0/manifests/calico.yaml",
+        "task": "Installa Calico v3.28 nel cluster per abilitare NetworkPolicy avanzate con supporto DNS e regole globali."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dso_container_security_k8s_2",
+      "english": "Cilium NetworkPolicy",
+      "set": {
+        "code": "kind: CiliumNetworkPolicy\nspec:\n  endpointSelector: {matchLabels: {app: api}}\n  ingress:\n  - toPorts:\n    - rules:\n        http: [{method: GET, path: /v1/.*}]",
+        "task": "Scrivi una CiliumNetworkPolicy L7 che permette solo GET /v1/* verso i pod con label app=api bloccando il resto."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dso_container_security_k8s_3",
+      "english": "Gatekeeper Constraints",
+      "set": {
+        "code": "kind: K8sRequiredLabels\nmetadata:\n  name: ns-owner\nspec:\n  match:\n    kinds: [{apiGroups: [\"\"], kinds: [Namespace]}]\n  parameters:\n    labels: [owner]",
+        "task": "Istanzia un Constraint Gatekeeper che richiede la label owner su ogni Namespace usando il template K8sRequiredLabels."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dso_container_security_k8s_3",
+      "english": "Mutation",
+      "set": {
+        "code": "kind: ClusterPolicy\nspec:\n  rules:\n  - name: add-limits\n    mutate:\n      patchStrategicMerge:\n        spec:\n          containers:\n          - (name): \"*\"\n            resources:\n              limits: {memory: 512Mi}",
+        "task": "Definisci una mutation Kyverno che aggiunge automaticamente limits.memory 512Mi a ogni container se mancanti."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dso_container_security_k8s_3",
+      "english": "Validating Admission Policy",
+      "set": {
+        "code": "kind: ValidatingAdmissionPolicy\nspec:\n  validations:\n  - expression: \"object.spec.securityContext.runAsNonRoot == true\"\n    message: \"Pod must run as non-root\"",
+        "task": "Scrivi una ValidatingAdmissionPolicy CEL nativa che rifiuta i pod senza securityContext runAsNonRoot true."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dso_container_security_k8s_4",
+      "english": "Audit Policy",
+      "set": {
+        "code": "apiVersion: audit.k8s.io/v1\nkind: Policy\nrules:\n- level: Metadata\n  resources:\n  - group: \"\"\n    resources: [secrets, configmaps]",
+        "task": "Definisci una Audit Policy K8s che registra a livello Metadata ogni richiesta su secrets e configmaps."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dso_container_security_k8s_4",
+      "english": "GVisor",
+      "set": {
+        "code": "apiVersion: node.k8s.io/v1\nkind: RuntimeClass\nmetadata:\n  name: gvisor\nhandler: runsc",
+        "task": "Crea una RuntimeClass gvisor con handler runsc cosi' i pod sensibili possono optare per il sandbox kernel-level."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dso_container_security_k8s_4",
+      "english": "Kata Containers",
+      "set": {
+        "code": "apiVersion: node.k8s.io/v1\nkind: RuntimeClass\nmetadata:\n  name: kata\nhandler: kata-qemu",
+        "task": "Registra la RuntimeClass kata con handler kata-qemu per dare ai pod isolamento VM-level invece di namespace condivisi."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dso_container_security_k8s_4",
+      "english": "CIS K8s Benchmark",
+      "set": {
+        "command": "kube-bench run --targets master,node --benchmark cis-1.8",
+        "task": "Esegui kube-bench contro nodi master e worker col benchmark cis-1.8 per misurare la conformita' del cluster."
+      }
+    }
+  ]
+}

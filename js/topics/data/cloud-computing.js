@@ -521,6 +521,9 @@ export default {
               difficulty: 'beginner',
               tool: 'AWS EC2',
               note: 'EC2 = Elastic Compute Cloud; servizio AWS di macchine virtuali on-demand.',
+              command:
+                'aws ec2 describe-instances --filters Name=instance-state-name,Values=running',
+              task: `Elenca tutte le istanze EC2 in esecuzione nell'account per ispezionare la flotta compute attiva.`,
             },
             {
               english: 'Hypervisor',
@@ -585,6 +588,8 @@ export default {
               context: 'compute',
               difficulty: 'beginner',
               note: 'Server di accesso per la rete privata. Sostituito spesso da Session Manager.',
+              command: 'ssh -i bastion.pem -J ec2-user@bastion.example.com ec2-user@10.0.1.20',
+              task: 'Apri una sessione SSH verso una VM in subnet privata utilizzando il bastion host come jump server.',
             },
             {
               english: 'Compute Engine',
@@ -627,6 +632,8 @@ export default {
               difficulty: 'beginner',
               tool: 'AWS AMI',
               note: `AMI = Amazon Machine Image; template che descrive il sistema operativo e il software preinstallato per avviare un'istanza EC2.`,
+              command: 'aws ec2 create-image --instance-id i-0abcd1234 --name golden-app-v1',
+              task: `Genera una AMI golden a partire da un'istanza EC2 configurata per riutilizzarla come template di lancio.`,
             },
             {
               english: 'vCPU',
@@ -669,6 +676,9 @@ export default {
               example: `Buying a 3-year reserved instance for the always-on Postgres node cut its compute bill by 62% versus on-demand. = Comprare una reserved instance triennale per il nodo Postgres sempre acceso ha tagliato del 62% la bolletta di compute rispetto all'on-demand.`,
               context: 'compute',
               difficulty: 'beginner',
+              command:
+                'aws ec2 purchase-reserved-instances-offering --reserved-instances-offering-id ri-xyz --instance-count 5',
+              task: 'Acquista 5 reserved instances per impegnarti su un anno e ottenere sconti significativi sul compute baseline.',
             },
             {
               english: 'Burstable Instance',
@@ -691,6 +701,9 @@ export default {
               context: 'compute',
               difficulty: 'beginner',
               note: 'In AWS: famiglie p3, p4, g4. Costose ma necessarie per ML.',
+              command:
+                'aws ec2 run-instances --image-id ami-deep-learning --instance-type p4d.24xlarge',
+              task: `Avvia un'istanza GPU p4d.24xlarge dall'AMI deep learning per accelerare il training di un modello ML.`,
             },
             {
               english: 'Dedicated Host',
@@ -701,6 +714,9 @@ export default {
                 'Use dedicated hosts for licensing compliance. = Usa host dedicati per la conformità delle licenze.',
               context: 'compute',
               difficulty: 'beginner',
+              command:
+                'aws ec2 allocate-hosts --instance-type m5.large --availability-zone eu-west-1a --quantity 1',
+              task: 'Alloca un dedicated host m5.large in eu-west-1a per ospitare workload soggetti a vincoli di licenza.',
             },
             {
               english: 'Image',
@@ -740,6 +756,9 @@ export default {
               context: 'compute',
               difficulty: 'beginner',
               note: 'Abbreviato "ASG". Definisce min, max, e desired capacity.',
+              command:
+                'aws autoscaling create-auto-scaling-group --auto-scaling-group-name web-asg --min-size 2 --max-size 10 --desired-capacity 3 --launch-template LaunchTemplateName=web-lt',
+              task: 'Provisiona un Auto Scaling Group per la fleet web con minimo 2 nodi, massimo 10 e capacita desiderata 3.',
             },
             {
               english: 'Scale Up',
@@ -772,6 +791,9 @@ export default {
                 'A scaling policy that adds two nodes when CPU stays above 70% for five minutes smooths out the 9am login surge. = Una scaling policy che aggiunge due nodi se la CPU resta sopra il 70% per cinque minuti smorza il picco di login delle 9 del mattino.',
               context: 'compute',
               difficulty: 'beginner',
+              command:
+                'aws autoscaling put-scaling-policy --auto-scaling-group-name web-asg --policy-name cpu70 --policy-type TargetTrackingScaling --target-tracking-configuration file://tt.json',
+              task: `Configura una scaling policy target-tracking sull'ASG web-asg per mantenere la CPU intorno al 70%.`,
             },
             {
               english: 'Target Tracking',
@@ -802,6 +824,9 @@ export default {
                 "A launch template defines instance settings. = Un template di lancio definisce le impostazioni dell'istanza.",
               context: 'compute',
               difficulty: 'beginner',
+              command:
+                'aws ec2 create-launch-template --launch-template-name web-lt --version-description v1 --launch-template-data file://template.json',
+              task: `Definisci un launch template versionato web-lt per standardizzare la creazione delle istanze EC2 dell'ASG.`,
             },
             {
               english: 'Capacity',
@@ -850,6 +875,9 @@ export default {
               context: 'compute',
               difficulty: 'beginner',
               note: 'Abbreviato "ALB". Lavora a livello 7 (HTTP/HTTPS).',
+              command:
+                'aws elbv2 create-load-balancer --name api-alb --type application --subnets subnet-aaa subnet-bbb',
+              task: 'Crea un Application Load Balancer api-alb in due subnet pubbliche per distribuire traffico HTTP/HTTPS verso i target.',
             },
             {
               english: 'Network Load Balancer',
@@ -861,6 +889,9 @@ export default {
               context: 'compute',
               difficulty: 'beginner',
               note: 'Abbreviato "NLB". Lavora a livello 4 (TCP/UDP).',
+              command:
+                'aws elbv2 create-load-balancer --name tcp-nlb --type network --subnets subnet-aaa',
+              task: 'Provisiona un Network Load Balancer di tipo TCP per gestire milioni di connessioni a bassa latenza sui backend.',
             },
             {
               english: 'Round Robin',
@@ -889,6 +920,9 @@ export default {
               example: `The ALB routes /api/* traffic to the orders target group and everything else to the storefront target group. = L'ALB inoltra il traffico /api/* al target group degli ordini e tutto il resto al target group dello storefront.`,
               context: 'compute',
               difficulty: 'beginner',
+              command:
+                'aws elbv2 create-target-group --name api-tg --protocol HTTP --port 8080 --vpc-id vpc-1234 --target-type ip',
+              task: 'Definisci un target group api-tg sulla porta 8080 dentro la VPC vpc-1234 per esporre i container come target IP.',
             },
             {
               english: 'Listener',
@@ -899,6 +933,9 @@ export default {
                 'A listener accepts connections on port 443. = Un listener accetta connessioni sulla porta 443.',
               context: 'compute',
               difficulty: 'beginner',
+              command:
+                'aws elbv2 create-listener --load-balancer-arn arn:aws:elasticloadbalancing:::loadbalancer/api-alb --protocol HTTPS --port 443 --default-actions Type=forward,TargetGroupArn=arn:aws:elasticloadbalancing:::targetgroup/api-tg',
+              task: `Aggiungi un listener HTTPS sulla porta 443 dell'ALB api-alb che inoltri il traffico al target group api-tg.`,
             },
             {
               english: 'Backend Pool',
@@ -995,6 +1032,8 @@ export default {
                 'Each uploaded receipt is stored as an immutable object keyed by date and customer ID for quick lookup. = Ogni ricevuta caricata viene salvata come oggetto immutabile, indicizzato per data e ID cliente per ricerche veloci.',
               context: 'storage',
               difficulty: 'beginner',
+              command: 'aws s3 cp report.pdf s3://my-bucket/reports/2026/report.pdf',
+              task: 'Carica un singolo oggetto report.pdf nel bucket S3 my-bucket sotto il prefix reports/2026.',
             },
             {
               english: 'Key',
@@ -1062,6 +1101,9 @@ export default {
               context: 'storage',
               difficulty: 'beginner',
               note: 'Bucket pubblici sono spesso fonte di data leak. Disattivare di default!',
+              command:
+                'aws s3api put-public-access-block --bucket my-bucket --public-access-block-configuration BlockPublicAcls=true,BlockPublicPolicy=true,IgnorePublicAcls=true,RestrictPublicBuckets=true',
+              task: 'Blocca completamente ogni accesso pubblico al bucket my-bucket per evitare leak accidentali di dati sensibili.',
             },
           ],
         },
@@ -1091,6 +1133,8 @@ export default {
               difficulty: 'beginner',
               tool: 'AWS EBS',
               note: `EBS = Elastic Block Store; block storage AWS persistente da agganciare a un'istanza EC2 come un disco.`,
+              command: 'aws ec2 describe-volumes --filters Name=status,Values=available',
+              task: 'Ispeziona i volumi EBS in stato available per individuare dischi orfani non collegati a nessuna istanza.',
             },
             {
               english: 'Volume',
@@ -1146,6 +1190,9 @@ export default {
               difficulty: 'beginner',
               tool: 'AWS EFS',
               note: 'EFS = Elastic File System; file system NFS gestito AWS, condivisibile tra più istanze.',
+              command:
+                'aws efs create-file-system --performance-mode generalPurpose --throughput-mode bursting --encrypted',
+              task: 'Provisiona un file system EFS cifrato con performance general purpose per condividere file tra piu istanze.',
             },
             {
               english: 'NFS',
@@ -1312,6 +1359,9 @@ export default {
               context: 'storage',
               difficulty: 'beginner',
               tool: 'AWS Backup, Azure Backup',
+              command:
+                'aws backup start-backup-job --backup-vault-name prod-vault --resource-arn arn:aws:rds:eu-west-1:123:db:mydb --iam-role-arn arn:aws:iam::123:role/BackupRole',
+              task: `Avvia un job di backup on-demand dell'istanza RDS mydb nel vault prod-vault per ottenere uno snapshot consistente.`,
             },
             {
               english: 'Replication',
@@ -1333,6 +1383,14 @@ export default {
               context: 'storage',
               difficulty: 'beginner',
               note: 'Abbreviato "CRR".',
+              code: `{
+  "Role": "arn:aws:iam::123:role/replication",
+  "Rules": [{
+    "Status": "Enabled",
+    "Destination": {"Bucket": "arn:aws:s3:::backup-eu-west-3"}
+  }]
+}`,
+              task: 'Configura una regola di replication S3 cross-region che copi gli oggetti verso il bucket backup-eu-west-3.',
             },
             {
               english: 'Durability',
@@ -1385,6 +1443,9 @@ export default {
               context: 'storage',
               difficulty: 'beginner',
               tool: 'AWS Backup Vault, Azure Recovery Vault',
+              command:
+                'aws backup create-backup-vault --backup-vault-name prod-vault --encryption-key-arn arn:aws:kms:eu-west-1:123:key/abcd',
+              task: 'Crea un backup vault prod-vault cifrato con una chiave KMS dedicata per centralizzare i backup di produzione.',
             },
             {
               english: 'Retention Policy',
@@ -1407,6 +1468,9 @@ export default {
               context: 'storage',
               difficulty: 'beginner',
               note: 'WORM (Write Once Read Many). Protezione contro ransomware.',
+              command:
+                'aws s3api put-object-retention --bucket compliance --key invoice.pdf --retention Mode=COMPLIANCE,RetainUntilDate=2030-01-01T00:00:00Z',
+              task: `Applica un Object Lock in modalita COMPLIANCE sull'oggetto invoice.pdf per bloccare modifiche fino al 2030.`,
             },
           ],
         },
@@ -1462,6 +1526,9 @@ export default {
               context: 'networking',
               difficulty: 'beginner',
               note: 'In italiano spesso si dice "subnet" non tradotto.',
+              command:
+                'aws ec2 create-subnet --vpc-id vpc-1234 --cidr-block 10.0.1.0/24 --availability-zone eu-west-1a',
+              task: 'Crea una subnet 10.0.1.0/24 nella zona eu-west-1a della VPC vpc-1234 per ospitare le istanze applicative.',
             },
             {
               english: 'Public Subnet',
@@ -1502,6 +1569,9 @@ export default {
               example: `The private route table sends 0.0.0.0/0 through the NAT gateway, while the public one targets the internet gateway directly. = La route table privata manda 0.0.0.0/0 attraverso il NAT gateway, mentre quella pubblica punta direttamente all'internet gateway.`,
               context: 'networking',
               difficulty: 'beginner',
+              command:
+                'aws ec2 create-route --route-table-id rtb-1234 --destination-cidr-block 0.0.0.0/0 --gateway-id igw-abcd',
+              task: `Aggiungi una route di default verso l'Internet Gateway igw-abcd nella route table rtb-1234 per permettere l'uscita web.`,
             },
             {
               english: 'Internet Gateway',
@@ -1513,6 +1583,9 @@ export default {
               context: 'networking',
               difficulty: 'beginner',
               note: 'Abbreviato "IGW". Necessario per traffico in/out internet.',
+              command:
+                'aws ec2 create-internet-gateway && aws ec2 attach-internet-gateway --internet-gateway-id igw-abcd --vpc-id vpc-1234',
+              task: 'Crea un Internet Gateway e collegalo alla VPC vpc-1234 per abilitare la connettivita pubblica.',
             },
             {
               english: 'NAT Gateway',
@@ -1524,6 +1597,9 @@ export default {
               context: 'networking',
               difficulty: 'beginner',
               note: 'Costoso: ~$32/mese + traffico. Spesso usato come bouncer dal privato verso internet.',
+              command:
+                'aws ec2 create-nat-gateway --subnet-id subnet-public --allocation-id eipalloc-1234',
+              task: 'Provisiona un NAT Gateway in una subnet pubblica con un Elastic IP per permettere alle subnet private di uscire su internet.',
             },
             {
               english: 'Egress',
@@ -1566,6 +1642,9 @@ export default {
               context: 'networking',
               difficulty: 'beginner',
               note: 'Pronuncia "NAK-ol". Stateless: regole separate per inbound/outbound.',
+              command:
+                'aws ec2 create-network-acl-entry --network-acl-id acl-1234 --rule-number 100 --protocol tcp --rule-action allow --port-range From=443,To=443 --cidr-block 0.0.0.0/0 --egress false',
+              task: 'Definisci una regola NACL inbound 100 che ammetta traffico HTTPS sulla porta 443 da qualsiasi origine.',
             },
             {
               english: 'Inbound Rule',
@@ -1596,6 +1675,9 @@ export default {
               context: 'networking',
               difficulty: 'beginner',
               tool: 'AWS Network Firewall, Azure Firewall',
+              command:
+                'aws network-firewall create-firewall --firewall-name web-fw --vpc-id vpc-1234 --firewall-policy-arn arn:aws:network-firewall:eu-west-1:123:firewall-policy/web-policy',
+              task: 'Distribuisci un AWS Network Firewall sulla VPC vpc-1234 collegando la policy web-policy per ispezionare il traffico inter-subnet.',
             },
             {
               english: 'Allow List',
@@ -1687,6 +1769,9 @@ export default {
                 'Creating a private hosted zone for internal.example.com lets workloads resolve service names without exposing them publicly. = Creare una hosted zone privata per internal.example.com permette ai workload di risolvere i nomi dei servizi senza esporli pubblicamente.',
               context: 'networking',
               difficulty: 'beginner',
+              command:
+                'aws route53 create-hosted-zone --name example.com --caller-reference $(date +%s)',
+              task: 'Crea una hosted zone pubblica per il dominio example.com in Route 53 e gestisci da li i record DNS.',
             },
             {
               english: 'A Record',
@@ -1696,6 +1781,18 @@ export default {
               example: `Updating the A record for api.example.com to the new ALB IP rolled the traffic over without code changes. = Aggiornare il record A di api.example.com con il nuovo IP dell'ALB ha spostato il traffico senza modifiche al codice.`,
               context: 'networking',
               difficulty: 'beginner',
+              code: `{
+  "Changes": [{
+    "Action": "UPSERT",
+    "ResourceRecordSet": {
+      "Name": "api.example.com",
+      "Type": "A",
+      "TTL": 60,
+      "ResourceRecords": [{"Value": "203.0.113.10"}]
+    }
+  }]
+}`,
+              task: `Imposta un record A per api.example.com che punti all'IP 203.0.113.10 con TTL 60 secondi per facilitare i failover.`,
             },
             {
               english: 'CNAME',
@@ -1776,6 +1873,9 @@ export default {
               difficulty: 'beginner',
               tool: 'AWS Site-to-Site VPN',
               note: 'VPN = Virtual Private Network; tunnel cifrato tra due reti o tra client e rete su trasporto pubblico.',
+              command:
+                'aws ec2 create-vpn-connection --customer-gateway-id cgw-1234 --vpn-gateway-id vgw-abcd --type ipsec.1',
+              task: 'Stabilisci un tunnel VPN IPSec tra il customer gateway cgw-1234 e il VPN gateway AWS vgw-abcd.',
             },
             {
               english: 'Direct Connect',
@@ -1788,6 +1888,9 @@ export default {
               difficulty: 'beginner',
               tool: 'AWS Direct Connect',
               note: 'Equivalente Azure: ExpressRoute. Equivalente GCP: Cloud Interconnect.',
+              command:
+                'aws directconnect create-connection --location EqDC2 --bandwidth 10Gbps --connection-name corp-dx',
+              task: 'Provisiona una connessione Direct Connect da 10Gbps nella location EqDC2 per collegare in privato il datacenter ad AWS.',
             },
             {
               english: 'ExpressRoute',
@@ -1822,6 +1925,9 @@ export default {
               context: 'networking',
               difficulty: 'beginner',
               tool: 'AWS Transit Gateway',
+              command:
+                'aws ec2 create-transit-gateway --description hub-tgw --options AmazonSideAsn=64512,AutoAcceptSharedAttachments=enable',
+              task: 'Crea un Transit Gateway hub-tgw per centralizzare il routing tra molteplici VPC e on-prem evitando peering one-to-one.',
             },
             {
               english: 'Site-to-Site',
@@ -1864,6 +1970,9 @@ export default {
               context: 'networking',
               difficulty: 'beginner',
               tool: 'VPC Endpoint, PrivateLink',
+              command:
+                'aws ec2 create-vpc-endpoint --vpc-id vpc-1234 --service-name com.amazonaws.eu-west-1.s3 --route-table-ids rtb-1234',
+              task: 'Crea un VPC endpoint per S3 nella VPC vpc-1234 cosi le istanze private accedano al servizio senza passare da internet.',
             },
             {
               english: 'PrivateLink',
@@ -1949,6 +2058,9 @@ export default {
               context: 'iam',
               difficulty: 'intermediate',
               tool: 'GCP Service Accounts',
+              command:
+                'gcloud iam service-accounts create app-runner --display-name="App Runner Service Account"',
+              task: 'Crea un service account GCP app-runner per assegnarlo ai workload che devono autenticarsi alle API Google.',
             },
             {
               english: 'Principal',
@@ -2146,6 +2258,9 @@ export default {
               context: 'iam',
               difficulty: 'intermediate',
               note: 'Anche se la policy concede di più, il boundary vince.',
+              command:
+                'aws iam put-user-permissions-boundary --user-name alice --permissions-boundary arn:aws:iam::123:policy/DevBoundary',
+              task: `Applica una permission boundary DevBoundary all'utente alice per limitare al massimo i permessi che puo accumulare.`,
             },
             {
               english: 'Service Control Policy',
@@ -2157,6 +2272,15 @@ export default {
               context: 'iam',
               difficulty: 'intermediate',
               note: 'Abbreviato "SCP". Limite massimo per tutti gli account dell\'org.',
+              code: `{
+  "Version": "2012-10-17",
+  "Statement": [{
+    "Effect": "Deny",
+    "Action": "s3:DeleteBucket",
+    "Resource": "*"
+  }]
+}`,
+              task: `Scrivi una SCP che vieti l'azione s3:DeleteBucket a livello di Organization per proteggere i bucket aziendali.`,
             },
             {
               english: 'Privilege Escalation',
@@ -2187,6 +2311,15 @@ export default {
                 'A trust policy says who can assume the role. = Una policy di trust dice chi può assumere il ruolo.',
               context: 'iam',
               difficulty: 'intermediate',
+              code: `{
+  "Version": "2012-10-17",
+  "Statement": [{
+    "Effect": "Allow",
+    "Principal": {"Service": "lambda.amazonaws.com"},
+    "Action": "sts:AssumeRole"
+  }]
+}`,
+              task: 'Definisci una trust policy che autorizzi il servizio Lambda ad assumere il ruolo IAM per eseguire le funzioni.',
             },
             {
               english: 'Assume Role',
@@ -2249,6 +2382,9 @@ export default {
               context: 'iam',
               difficulty: 'intermediate',
               note: 'MFA = Multi-Factor Authentication; richiede due o più fattori (knowledge, possession, inherence) per autenticarsi.',
+              command:
+                'aws iam enable-mfa-device --user-name alice --serial-number arn:aws:iam::123:mfa/alice --authentication-code-1 123456 --authentication-code-2 654321',
+              task: `Abilita un dispositivo MFA virtuale per l'utente IAM alice usando due codici OTP consecutivi per la registrazione.`,
             },
             {
               english: 'Two-Factor Authentication',
@@ -2321,6 +2457,9 @@ export default {
               context: 'iam',
               difficulty: 'intermediate',
               note: 'Abbreviato "IdP".',
+              command:
+                'aws iam create-saml-provider --saml-metadata-document file://okta-metadata.xml --name Okta',
+              task: `Registra Okta come identity provider SAML in IAM importando il metadata XML per federare l'autenticazione enterprise.`,
             },
             {
               english: 'Hardware Token',
@@ -2425,6 +2564,9 @@ export default {
                 'Wiring a cron trigger every 5 minutes turned the report-generation Lambda into a hands-off scheduler. = Cablare un trigger cron ogni 5 minuti ha trasformato la Lambda di generazione report in uno scheduler hands-off.',
               context: 'serverless',
               difficulty: 'intermediate',
+              command:
+                'aws lambda create-event-source-mapping --function-name myFunc --event-source-arn arn:aws:sqs:eu-west-1:123:orders --batch-size 10',
+              task: 'Configura un trigger SQS sulla Lambda myFunc per consumare automaticamente messaggi dalla coda orders a batch da 10.',
             },
             {
               english: 'Cold Start',
@@ -2457,6 +2599,9 @@ export default {
               context: 'serverless',
               difficulty: 'intermediate',
               note: 'Costa di più ma garantisce risposta istantanea.',
+              command:
+                'aws lambda put-provisioned-concurrency-config --function-name myFunc --qualifier prod --provisioned-concurrent-executions 50',
+              task: 'Imposta 50 esecuzioni concorrenti pre-warmate sulla Lambda myFunc per eliminare i cold start durante i picchi di traffico.',
             },
             {
               english: 'Runtime',
@@ -2485,6 +2630,9 @@ export default {
               context: 'serverless',
               difficulty: 'intermediate',
               tool: 'AWS API Gateway, Azure API Management',
+              command:
+                'aws apigateway create-rest-api --name orders-api --endpoint-configuration types=REGIONAL',
+              task: 'Provisiona una REST API regionale orders-api su API Gateway come front-end pubblico delle Lambda di ordini.',
             },
             {
               english: 'REST API',
@@ -2505,6 +2653,9 @@ export default {
               context: 'serverless',
               difficulty: 'intermediate',
               note: 'Su AWS, HTTP APIs costano ~70% in meno delle REST APIs.',
+              command:
+                'aws apigatewayv2 create-api --name webhook-api --protocol-type HTTP --target arn:aws:lambda:eu-west-1:123:function:webhook',
+              task: 'Crea una HTTP API economica webhook-api su API Gateway v2 collegata direttamente alla Lambda webhook.',
             },
             {
               english: 'API Gateway Endpoint',
@@ -2555,6 +2706,9 @@ export default {
               context: 'serverless',
               difficulty: 'intermediate',
               note: 'Funzione Lambda usata per autenticare richieste API.',
+              command:
+                'aws apigateway create-authorizer --rest-api-id abc123 --name JwtAuth --type TOKEN --authorizer-uri arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:123:function:auth/invocations',
+              task: `Aggiungi un authorizer Lambda di tipo TOKEN alla REST API abc123 per validare JWT prima di invocare l'integration.`,
             },
             {
               english: 'Throttling',
@@ -2565,6 +2719,9 @@ export default {
                 "Setting throttling to 100 requests per second on the API prevents a single client from overwhelming the backend. = Impostare il throttling a 100 richieste al secondo sull'API impedisce a un singolo client di sovraccaricare il backend.",
               context: 'serverless',
               difficulty: 'intermediate',
+              command:
+                'aws apigateway create-usage-plan --name basic --throttle burstLimit=200,rateLimit=100',
+              task: `Definisci un usage plan basic con throttling a 100 req/sec e burst 200 per limitare l'uso dell'API Gateway.`,
             },
             {
               english: 'Stage',
@@ -2613,6 +2770,8 @@ export default {
               context: 'serverless',
               difficulty: 'intermediate',
               tool: 'AWS EventBridge',
+              command: 'aws events create-event-bus --name orders-bus',
+              task: 'Crea un event bus custom orders-bus su EventBridge per disaccoppiare i microservizi tramite eventi di dominio.',
             },
             {
               english: 'Pattern Matching',
@@ -2703,6 +2862,9 @@ export default {
               context: 'serverless',
               difficulty: 'intermediate',
               tool: 'AWS Step Functions',
+              command:
+                'aws stepfunctions create-state-machine --name order-flow --definition file://flow.asl.json --role-arn arn:aws:iam::123:role/StepFnRole',
+              task: 'Distribuisci una state machine order-flow su Step Functions caricando la definizione ASL e collegando il ruolo IAM.',
             },
             {
               english: 'State Machine',
@@ -2840,6 +3002,9 @@ export default {
               difficulty: 'intermediate',
               tool: 'AWS Aurora',
               note: 'Compatibile MySQL/PostgreSQL ma con storage distribuito.',
+              command:
+                'aws rds create-db-cluster --db-cluster-identifier app-aurora --engine aurora-postgresql --master-username admin --master-user-password SecretPass! --database-name appdb',
+              task: 'Provisiona un cluster Aurora PostgreSQL app-aurora con database iniziale appdb come backend ad alte prestazioni.',
             },
             {
               english: 'Managed Database',
@@ -2883,6 +3048,9 @@ export default {
               context: 'database',
               difficulty: 'intermediate',
               note: 'Pronuncia AmE: "EI-ZI". Replica sincrona in altra zona.',
+              command:
+                'aws rds modify-db-instance --db-instance-identifier mydb --multi-az --apply-immediately',
+              task: `Converti l'istanza RDS mydb in Multi-AZ con apply immediato per ottenere failover automatico tra zone.`,
             },
             {
               english: 'Standby Replica',
@@ -2925,6 +3093,9 @@ export default {
               context: 'database',
               difficulty: 'intermediate',
               note: 'Abbreviato "PITR".',
+              command:
+                'aws rds restore-db-instance-to-point-in-time --source-db-instance-identifier mydb --target-db-instance-identifier mydb-restored --restore-time 2026-05-17T10:00:00Z',
+              task: `Esegui un point-in-time recovery dell'istanza RDS mydb alle 10:00 UTC del 17 maggio dentro mydb-restored.`,
             },
           ],
         },
@@ -2956,6 +3127,9 @@ export default {
               context: 'database',
               difficulty: 'intermediate',
               tool: 'Azure Cosmos DB',
+              command:
+                'az cosmosdb create --name app-cosmos --resource-group rg-data --kind GlobalDocumentDB --locations regionName=westeurope failoverPriority=0',
+              task: 'Crea un account Cosmos DB app-cosmos di tipo Core SQL nella region West Europe come database multi-modello.',
             },
             {
               english: 'Firestore',
@@ -2967,6 +3141,8 @@ export default {
               context: 'database',
               difficulty: 'intermediate',
               tool: 'GCP Firestore',
+              command: 'gcloud firestore databases create --location=eur3 --type=firestore-native',
+              task: 'Inizializza un database Firestore native nella region multi-locale eur3 per uno store documentale serverless GCP.',
             },
             {
               english: 'Partition Key',
@@ -3020,6 +3196,9 @@ export default {
               context: 'database',
               difficulty: 'intermediate',
               note: 'Abbreviato "GSI".',
+              command:
+                'aws dynamodb update-table --table-name Orders --attribute-definitions AttributeName=Status,AttributeType=S --global-secondary-index-updates file://gsi.json',
+              task: `Aggiungi un Global Secondary Index alla tabella DynamoDB Orders per supportare query sull'attributo Status.`,
             },
             {
               english: 'On-Demand Mode',
@@ -3058,6 +3237,9 @@ export default {
               context: 'database',
               difficulty: 'intermediate',
               tool: 'AWS ElastiCache',
+              command:
+                'aws elasticache create-cache-cluster --cache-cluster-id sessions --engine redis --cache-node-type cache.t3.micro --num-cache-nodes 1',
+              task: 'Provisiona un cluster ElastiCache Redis sessions su node t3.micro per accelerare lo store di sessione.',
             },
             {
               english: 'Redis',
@@ -3213,6 +3395,9 @@ export default {
               context: 'database',
               difficulty: 'intermediate',
               tool: 'AWS OpenSearch, Elasticsearch',
+              command:
+                'aws opensearch create-domain --domain-name logs-search --engine-version OpenSearch_2.11 --cluster-config InstanceType=r6g.large.search,InstanceCount=3',
+              task: 'Crea un dominio OpenSearch logs-search con 3 nodi r6g.large per indicizzare e cercare log applicativi.',
             },
             {
               english: 'Ledger Database',
@@ -3353,6 +3538,9 @@ export default {
               context: 'containers',
               difficulty: 'intermediate',
               note: 'Evitare "latest" in produzione: non è immutabile.',
+              command:
+                'docker tag myapp:latest 123.dkr.ecr.eu-west-1.amazonaws.com/myapp:$(git rev-parse --short HEAD)',
+              task: `Tagga l'immagine myapp con la short SHA del commit corrente per ottenere un tag immutabile prima del push su ECR.`,
             },
             {
               english: 'Container Runtime',
@@ -3450,6 +3638,9 @@ export default {
               difficulty: 'intermediate',
               tool: 'GCP GCR, Artifact Registry',
               note: 'GCR = Google Container Registry; registry container originario di GCP, ora superato da Artifact Registry per i nuovi progetti.',
+              command:
+                'gcloud artifacts repositories create myrepo --repository-format=docker --location=europe-west1',
+              task: 'Crea un repository Docker myrepo in Artifact Registry nella region europe-west1 come successore di GCR.',
             },
             {
               english: 'Push',
@@ -3484,6 +3675,8 @@ export default {
               context: 'containers',
               difficulty: 'intermediate',
               tool: 'AWS Inspector, Trivy, Snyk',
+              command: 'trivy image --severity HIGH,CRITICAL myregistry/myapp:1.0',
+              task: `Scansiona l'immagine myregistry/myapp:1.0 con Trivy filtrando solo le vulnerabilita HIGH e CRITICAL prima del deploy.`,
             },
             {
               english: 'Image Signing',
@@ -3495,6 +3688,8 @@ export default {
               context: 'containers',
               difficulty: 'intermediate',
               tool: 'Cosign, Notary',
+              command: 'cosign sign --key cosign.key myregistry/myapp:1.0',
+              task: `Firma con Cosign l'immagine myregistry/myapp:1.0 usando la chiave privata cosign.key per attestare la provenienza.`,
             },
             {
               english: 'Repository',
@@ -3533,6 +3728,9 @@ export default {
               difficulty: 'intermediate',
               tool: 'AWS ECS',
               note: 'ECS = Elastic Container Service; orchestratore container AWS-native con backend EC2 o Fargate.',
+              command:
+                'aws ecs run-task --cluster prod --launch-type FARGATE --task-definition myapp:1 --network-configuration awsvpcConfiguration={subnets=[subnet-abc],securityGroups=[sg-def]}',
+              task: 'Esegui un task on-demand della task definition myapp:1 sul cluster ECS prod usando il launch type Fargate.',
             },
             {
               english: 'Task Definition',
@@ -3565,6 +3763,9 @@ export default {
                 'A service maintains a desired count of tasks. = Un servizio mantiene un numero desiderato di task.',
               context: 'containers',
               difficulty: 'intermediate',
+              command:
+                'aws ecs create-service --cluster prod --service-name api --task-definition api:2 --desired-count 3 --launch-type FARGATE',
+              task: 'Crea un service ECS api che mantenga 3 task della definition api:2 sul cluster prod con launch type Fargate.',
             },
             {
               english: 'Cluster',
@@ -3575,6 +3776,9 @@ export default {
                 'An ECS cluster groups EC2 or Fargate capacity. = Un cluster ECS raggruppa capacità EC2 o Fargate.',
               context: 'containers',
               difficulty: 'intermediate',
+              command:
+                'aws ecs create-cluster --cluster-name prod --capacity-providers FARGATE FARGATE_SPOT',
+              task: 'Crea un cluster ECS prod abilitando i capacity provider Fargate e Fargate Spot per mixare costi e affidabilita.',
             },
             {
               english: 'Fargate',
@@ -3586,6 +3790,14 @@ export default {
               difficulty: 'intermediate',
               tool: 'AWS Fargate',
               note: 'Serverless per container. Paghi solo il tempo di esecuzione.',
+              code: `{
+  "family": "web",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "512",
+  "memory": "1024",
+  "networkMode": "awsvpc"
+}`,
+              task: 'Componi una task definition Fargate web da 0.5 vCPU e 1 GB di memoria con network mode awsvpc.',
             },
             {
               english: 'Launch Type',
@@ -3708,6 +3920,8 @@ export default {
                 'Draining the node before patching the kernel forces the scheduler to reschedule pods elsewhere without dropping traffic. = Drenare il nodo prima di patchare il kernel costringe lo scheduler a rischedulare i pod altrove senza droppare traffico.',
               context: 'containers',
               difficulty: 'intermediate',
+              command: 'kubectl get nodes -o wide',
+              task: 'Elenca i nodi del cluster Kubernetes con dettagli estesi per verificare versione kubelet, IP interno e zona.',
             },
             {
               english: 'Node Pool',
@@ -3750,6 +3964,9 @@ export default {
               difficulty: 'intermediate',
               tool: 'AWS Karpenter',
               note: 'Alternativa moderna al Cluster Autoscaler.',
+              command:
+                'helm install karpenter oci://public.ecr.aws/karpenter/karpenter --namespace karpenter --create-namespace',
+              task: 'Installa Karpenter via Helm chart OCI nel namespace karpenter per autoscalare i nodi EKS in modo nativo.',
             },
           ],
         },
@@ -3874,6 +4091,8 @@ export default {
               context: 'iac',
               difficulty: 'intermediate',
               tool: 'ArgoCD, Flux',
+              command: 'argocd app sync myapp --prune --force',
+              task: `Sincronizza l'applicazione ArgoCD myapp riconciliando il cluster con la verita dichiarata nel repository Git.`,
             },
           ],
         },
@@ -3906,6 +4125,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'OpenTofu',
               note: 'Fork creato dopo il cambio licenza di Terraform nel 2023.',
+              command: 'tofu init && tofu plan -out=plan.tfplan',
+              task: 'Inizializza OpenTofu e produci un piano salvato in plan.tfplan come drop-in sostitutivo di terraform su una codebase esistente.',
             },
             {
               english: 'HCL',
@@ -4161,6 +4382,9 @@ export default {
               example: `A single StackSet rolled the new IAM password policy out to all 23 accounts in the organisation in one click. = Un singolo StackSet ha rollato la nuova IAM password policy su tutti i 23 account dell'organizzazione in un click.`,
               context: 'iac',
               difficulty: 'intermediate',
+              command:
+                'aws cloudformation create-stack-set --stack-set-name baseline --template-body file://baseline.yaml --permission-model SERVICE_MANAGED --auto-deployment Enabled=true',
+              task: `Crea uno StackSet baseline gestito dall'Organization per rollare un template comune su tutti gli account in modo automatico.`,
             },
             {
               english: 'Template',
@@ -4220,6 +4444,13 @@ export default {
               difficulty: 'intermediate',
               tool: 'Azure Bicep',
               note: 'Sintassi più pulita di ARM templates.',
+              code: `resource sa 'Microsoft.Storage/storageAccounts@2023-01-01' = {
+  name: 'mystorage'
+  location: 'westeurope'
+  sku: { name: 'Standard_LRS' }
+  kind: 'StorageAccount'
+}`,
+              task: 'Dichiara in Bicep uno storage account mystorage in West Europe con SKU Standard_LRS per IaC nativa Azure.',
             },
             {
               english: 'ARM Template',
@@ -4231,6 +4462,9 @@ export default {
               context: 'iac',
               difficulty: 'intermediate',
               tool: 'Azure Resource Manager',
+              command:
+                'az deployment group create --resource-group rg-prod --template-file storage.json --parameters env=prod',
+              task: 'Distribuisci un template ARM storage.json nel resource group rg-prod passando il parametro env a prod.',
             },
             {
               english: 'Crossplane',
@@ -4242,6 +4476,14 @@ export default {
               context: 'iac',
               difficulty: 'intermediate',
               tool: 'Crossplane',
+              code: `apiVersion: s3.aws.upbound.io/v1beta1
+kind: Bucket
+metadata:
+  name: my-crossplane-bucket
+spec:
+  forProvider:
+    region: eu-west-1`,
+              task: 'Definisci un manifest Crossplane che provisioni un bucket S3 my-crossplane-bucket in eu-west-1 come risorsa Kubernetes.',
             },
           ],
         },
@@ -4411,6 +4653,9 @@ export default {
               context: 'cost',
               difficulty: 'intermediate',
               note: 'Es: Environment=Prod, Team=Backend, Project=ECommerce.',
+              command:
+                'aws ec2 create-tags --resources i-0abcd1234 --tags Key=CostCenter,Value=Marketing Key=Environment,Value=Prod',
+              task: `Tagga l'istanza i-0abcd1234 con CostCenter Marketing ed Environment Prod per mappare la spesa al business owner.`,
             },
             {
               english: 'Showback',
@@ -4465,6 +4710,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'AWS CUR',
               note: 'CUR = Cost and Usage Report; report dettagliato AWS scritto in S3, base per analisi finanziarie avanzate.',
+              command: 'aws cur put-report-definition --report-definition file://cur-config.json',
+              task: 'Configura un Cost and Usage Report dettagliato che scarichi le voci di spesa AWS su un bucket S3 per analisi finanziarie.',
             },
             {
               english: 'Tag Policy',
@@ -4493,6 +4740,9 @@ export default {
               context: 'cost',
               difficulty: 'intermediate',
               note: 'Trovare la giusta dimensione di istanza, né troppo grande né piccola.',
+              command:
+                'aws compute-optimizer get-ec2-instance-recommendations --instance-arns arn:aws:ec2:eu-west-1:123:instance/i-0abcd1234',
+              task: `Recupera da Compute Optimizer i suggerimenti di rightsizing per l'istanza i-0abcd1234 e individua un tipo piu economico.`,
             },
             {
               english: 'Idle Resource',
@@ -4811,6 +5061,15 @@ export default {
               context: 'monitoring',
               difficulty: 'intermediate',
               note: 'Abbreviato "EMF". Standard CloudWatch per metriche da log.',
+              code: `{
+  "_aws": {
+    "Timestamp": 1700000000000,
+    "CloudWatchMetrics": [{"Namespace": "App", "Dimensions": [["Service"]], "Metrics": [{"Name": "Latency", "Unit": "Milliseconds"}]}]
+  },
+  "Service": "checkout",
+  "Latency": 42
+}`,
+              task: 'Emetti un log in formato EMF che registri la metrica Latency di 42ms con dimensione Service=checkout nel namespace App.',
             },
           ],
         },
@@ -4850,6 +5109,9 @@ export default {
               context: 'monitoring',
               difficulty: 'intermediate',
               note: 'Default è "Never expire". COSTI ALTI! Imposta sempre 30/90 giorni.',
+              command:
+                'aws logs put-retention-policy --log-group-name /aws/lambda/myFunc --retention-in-days 30',
+              task: 'Imposta una retention di 30 giorni sul log group della Lambda myFunc per evitare costi di archiviazione indefinita.',
             },
             {
               english: 'Logs Insights',
@@ -4884,6 +5146,9 @@ export default {
                 'Stream logs to a Lambda via subscription. = Stream dei log a una Lambda via sottoscrizione.',
               context: 'monitoring',
               difficulty: 'intermediate',
+              command:
+                'aws logs put-subscription-filter --log-group-name /aws/lambda/myFunc --filter-name errors --filter-pattern ERROR --destination-arn arn:aws:lambda:eu-west-1:123:function:log-shipper',
+              task: 'Sottoscrivi una Lambda log-shipper al log group della Lambda myFunc filtrando solo le righe contenenti ERROR.',
             },
             {
               english: 'Log Aggregation',
@@ -5011,6 +5276,8 @@ export default {
               context: 'monitoring',
               difficulty: 'intermediate',
               tool: 'AWS SNS',
+              command: 'aws sns create-topic --name oncall-alerts',
+              task: 'Crea un topic SNS oncall-alerts come fan-out di notifiche per email, PagerDuty e Slack collegati agli alarm critici.',
             },
             {
               english: 'Runbook',
@@ -5101,6 +5368,12 @@ export default {
               difficulty: 'intermediate',
               tool: 'OpenTelemetry',
               note: 'Spesso abbreviato "OTel".',
+              code: `const sdk = new NodeSDK({
+  traceExporter: new OTLPTraceExporter({url: "http://collector:4318/v1/traces"}),
+  instrumentations: [getNodeAutoInstrumentations()]
+});
+sdk.start();`,
+              task: `Inizializza l'SDK OpenTelemetry in Node.js esportando le tracce verso un collector OTLP locale per strumentare l'app.`,
             },
             {
               english: 'Sampling',
@@ -5201,6 +5474,9 @@ export default {
               context: 'security',
               difficulty: 'intermediate',
               tool: 'AWS KMS, Azure Key Vault, GCP KMS',
+              command:
+                'aws kms create-key --description "App data encryption key" --key-usage ENCRYPT_DECRYPT',
+              task: 'Genera una chiave KMS dedicata per cifrare i dati applicativi separando le responsabilita di gestione dalle chiavi default.',
             },
             {
               english: 'Customer Managed Key',
@@ -5212,6 +5488,9 @@ export default {
               context: 'security',
               difficulty: 'intermediate',
               note: 'Abbreviato "CMK". Tu gestisci la rotazione, non AWS.',
+              command:
+                'aws kms create-key --description "CMK prod" --policy file://key-policy.json',
+              task: 'Crea una Customer Managed Key di produzione applicando una key policy custom per controllare chi puo cifrare e decifrare.',
             },
             {
               english: 'Envelope Encryption',
@@ -5241,6 +5520,8 @@ export default {
                 'Enable automatic annual Key Rotation on KMS keys so old ciphertext stays readable while new writes use the fresh key. = Abilita la Rotazione chiavi annuale automatica sulle chiavi KMS così il vecchio ciphertext resta leggibile mentre le nuove scritture usano la chiave fresca.',
               context: 'security',
               difficulty: 'intermediate',
+              command: 'aws kms enable-key-rotation --key-id alias/app-key',
+              task: 'Abilita la rotazione automatica annuale della chiave KMS alias/app-key per cambiare il materiale crittografico senza re-encryption.',
             },
             {
               english: 'Key Policy',
@@ -5251,6 +5532,16 @@ export default {
                 'A key policy controls who can use the KMS key. = Una key policy controlla chi può usare la chiave KMS.',
               context: 'security',
               difficulty: 'intermediate',
+              code: `{
+  "Version": "2012-10-17",
+  "Statement": [{
+    "Effect": "Allow",
+    "Principal": {"AWS": "arn:aws:iam::123:role/AppRole"},
+    "Action": ["kms:Encrypt", "kms:Decrypt"],
+    "Resource": "*"
+  }]
+}`,
+              task: 'Scrivi una key policy che consenta al ruolo AppRole di cifrare e decifrare con la chiave KMS associata.',
             },
             {
               english: 'HSM',
@@ -5293,6 +5584,8 @@ export default {
               difficulty: 'intermediate',
               tool: 'AWS SSM Parameter Store',
               note: 'Più economico di Secrets Manager ma senza rotazione automatica.',
+              command: 'aws ssm get-parameter --name /app/db/url --with-decryption',
+              task: 'Recupera il parametro SSM /app/db/url decifrandolo con la chiave KMS per ottenere la connection string del database.',
             },
             {
               english: 'Key Vault',
@@ -5304,6 +5597,9 @@ export default {
               context: 'security',
               difficulty: 'intermediate',
               tool: 'Azure Key Vault',
+              command:
+                'az keyvault create --name corp-kv --resource-group rg-sec --location westeurope --enable-rbac-authorization true',
+              task: 'Provisiona un Azure Key Vault corp-kv con autorizzazione RBAC nella region westeurope come gestore centrale dei segreti.',
             },
             {
               english: 'HashiCorp Vault',
@@ -5314,6 +5610,8 @@ export default {
               context: 'security',
               difficulty: 'intermediate',
               tool: 'HashiCorp Vault',
+              command: 'vault kv put secret/db password=SuperSecret!',
+              task: 'Salva la password del database nel KV engine di HashiCorp Vault sotto il path secret/db per il consumo dinamico dei client.',
             },
             {
               english: 'Secret Rotation',
@@ -5324,6 +5622,9 @@ export default {
                 'Secrets Manager auto-rotates RDS passwords. = Secrets Manager ruota automaticamente le password RDS.',
               context: 'security',
               difficulty: 'intermediate',
+              command:
+                'aws secretsmanager rotate-secret --secret-id db-pass --rotation-lambda-arn arn:aws:lambda:eu-west-1:123:function:rotate-db --rotation-rules AutomaticallyAfterDays=30',
+              task: 'Pianifica la rotazione automatica del secret db-pass ogni 30 giorni tramite una Lambda dedicata di rotation.',
             },
             {
               english: 'Hardcoded Secret',
@@ -5365,6 +5666,9 @@ export default {
               context: 'security',
               difficulty: 'intermediate',
               tool: 'Sealed Secrets (Bitnami)',
+              command:
+                'kubeseal --controller-name=sealed-secrets --format yaml < secret.yaml > sealed-secret.yaml',
+              task: 'Cifra il manifest secret.yaml con kubeseal per ottenere un Sealed Secret committabile in Git in sicurezza.',
             },
             {
               english: 'SOPS',
@@ -5376,6 +5680,9 @@ export default {
               context: 'security',
               difficulty: 'intermediate',
               tool: 'Mozilla SOPS',
+              command:
+                'sops --encrypt --kms arn:aws:kms:eu-west-1:123:key/abcd --in-place values.yaml',
+              task: 'Cifra i valori sensibili dentro values.yaml con SOPS usando una chiave KMS preservando le chiavi YAML in chiaro.',
             },
           ],
         },
@@ -5394,6 +5701,9 @@ export default {
               context: 'security',
               difficulty: 'intermediate',
               tool: 'AWS WAF, Cloudflare, Azure WAF',
+              command:
+                'aws wafv2 create-web-acl --name api-acl --scope REGIONAL --default-action Allow={} --visibility-config SampledRequestsEnabled=true,CloudWatchMetricsEnabled=true,MetricName=apiAcl --rules file://rules.json',
+              task: 'Distribuisci una Web ACL WAF regionale api-acl con regole gestite per bloccare SQL injection e attacchi OWASP.',
             },
             {
               english: 'Shield',
@@ -5435,6 +5745,9 @@ export default {
               context: 'security',
               difficulty: 'intermediate',
               tool: 'AWS GuardDuty',
+              command:
+                'aws guardduty create-detector --enable --finding-publishing-frequency FIFTEEN_MINUTES',
+              task: `Abilita un detector GuardDuty con pubblicazione dei finding ogni 15 minuti per il threat detection continuo dell'account.`,
             },
             {
               english: 'Security Hub',
@@ -5446,6 +5759,8 @@ export default {
               context: 'security',
               difficulty: 'intermediate',
               tool: 'AWS Security Hub',
+              command: 'aws securityhub enable-security-hub --enable-default-standards',
+              task: 'Attiva Security Hub con gli standard di sicurezza di default per centralizzare i finding di GuardDuty, Inspector e Macie.',
             },
             {
               english: 'Macie',
@@ -5457,6 +5772,9 @@ export default {
               difficulty: 'intermediate',
               tool: 'AWS Macie',
               note: 'Importante per GDPR: trova dati personali archiviati per errore.',
+              command:
+                'aws macie2 enable-macie --finding-publishing-frequency FIFTEEN_MINUTES --status ENABLED',
+              task: 'Abilita Macie per scansionare automaticamente i bucket S3 alla ricerca di dati sensibili come carte di credito o PII.',
             },
             {
               english: 'Inspector',
@@ -5468,6 +5786,8 @@ export default {
               context: 'security',
               difficulty: 'intermediate',
               tool: 'AWS Inspector',
+              command: 'aws inspector2 enable --resource-types EC2 ECR LAMBDA',
+              task: 'Attiva Amazon Inspector v2 sulle risorse EC2, ECR e Lambda per la scansione continua delle vulnerabilita CVE.',
             },
             {
               english: 'CloudTrail',
@@ -5480,6 +5800,9 @@ export default {
               difficulty: 'intermediate',
               tool: 'AWS CloudTrail',
               note: 'Audit log fondamentale. Sempre attivare in tutte le regioni.',
+              command:
+                'aws cloudtrail create-trail --name audit-trail --s3-bucket-name audit-logs --is-multi-region-trail --enable-log-file-validation',
+              task: 'Provisiona un trail multi-region audit-trail che spedisca i log API a un bucket audit-logs con validazione dei file abilitata.',
             },
             {
               english: 'Config',
@@ -5491,6 +5814,9 @@ export default {
               context: 'security',
               difficulty: 'intermediate',
               tool: 'AWS Config',
+              command:
+                'aws configservice put-configuration-recorder --configuration-recorder name=default,roleARN=arn:aws:iam::123:role/ConfigRole --recording-group allSupported=true,includeGlobalResourceTypes=true',
+              task: 'Configura AWS Config per registrare tutte le risorse supportate e tracciare lo stato di compliance continuo.',
             },
           ],
         },
@@ -5547,6 +5873,8 @@ export default {
                 'A nightly Vulnerability Scan with Trivy on every container image blocks the deploy pipeline on critical CVEs. = Una Scansione vulnerabilità notturna con Trivy su ogni immagine container blocca la pipeline di deploy su CVE critiche.',
               context: 'security',
               difficulty: 'intermediate',
+              command: 'trivy fs --severity HIGH,CRITICAL --exit-code 1 .',
+              task: 'Esegui una scansione vulnerabilita sul filesystem corrente con Trivy che fallisca la pipeline su CVE HIGH o CRITICAL.',
             },
             {
               english: 'Penetration Test',
@@ -6083,6 +6411,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               note: 'Throughput illimitato ma duplicati possibili.',
+              command: 'aws sqs create-queue --queue-name orders-std',
+              task: 'Crea una Standard Queue SQS chiamata orders-std accettando throughput illimitato ma possibili duplicati nei messaggi.',
             },
             {
               english: 'FIFO Queue',
@@ -6093,6 +6423,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               note: 'Pronuncia "FAI-fou". "First In, First Out".',
+              command: 'aws sqs create-queue --queue-name orders.fifo --attributes FifoQueue=true',
+              task: `Provvedi una coda SQS FIFO chiamata orders.fifo per preservare l'ordine stretto dei messaggi per gruppo.`,
             },
             {
               english: 'Visibility Timeout',
@@ -6104,6 +6436,9 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               note: 'Tempo per processare il messaggio prima che riappaia in coda.',
+              command:
+                'aws sqs set-queue-attributes --queue-url $URL --attributes VisibilityTimeout=60',
+              task: 'Porta a 60 secondi il visibility timeout della coda $URL per dare al worker tempo sufficiente di processare il messaggio.',
             },
             {
               english: 'Dead-Letter Queue',
@@ -6115,6 +6450,9 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               note: 'Abbreviato "DLQ". Per messaggi che falliscono troppe volte.',
+              command:
+                'aws sqs set-queue-attributes --queue-url $URL --cli-input-json file://redrive.json',
+              task: 'Aggiorna la coda $URL applicando la redrive policy descritta in redrive.json per inoltrare i messaggi a una DLQ dopo 5 tentativi.',
             },
             {
               english: 'Long Polling',
@@ -6125,6 +6463,8 @@ export default {
                 'Setting WaitTimeSeconds=20 to enable Long Polling cut empty SQS receive calls by 95% and visibly trimmed the API charge on the next invoice. = Impostare WaitTimeSeconds=20 per abilitare Long Polling ha tagliato le receive SQS vuote del 95% e ha visibilmente ridotto il costo API sulla bolletta successiva.',
               context: 'services',
               difficulty: 'advanced',
+              command: 'aws sqs receive-message --queue-url $URL --wait-time-seconds 20',
+              task: 'Esegui una receive in long polling sulla coda $URL con attesa di 20 secondi per ridurre le chiamate vuote.',
             },
             {
               english: 'Batch Receive',
@@ -6135,6 +6475,8 @@ export default {
                 'A Batch Receive of up to 10 SQS messages per call amortizes API costs and improves consumer throughput tenfold. = Un Batch Receive fino a 10 messaggi SQS per chiamata ammortizza i costi API e migliora il throughput del consumer dieci volte.',
               context: 'services',
               difficulty: 'advanced',
+              command: 'aws sqs receive-message --queue-url $URL --max-number-of-messages 10',
+              task: 'Recupera fino a 10 messaggi in un solo batch dalla coda SQS $URL per ammortizzare i costi API.',
             },
             {
               english: 'Message Retention',
@@ -6145,6 +6487,9 @@ export default {
                 'Set Message Retention to 14 days on SQS so unprocessed messages survive a multi-day worker outage without loss. = Imposta la Retention messaggi a 14 giorni su SQS così messaggi non elaborati sopravvivono a interruzioni del worker di più giorni senza perdita.',
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'aws sqs set-queue-attributes --queue-url $URL --attributes MessageRetentionPeriod=1209600',
+              task: 'Imposta la retention della coda $URL a 14 giorni così i messaggi non elaborati sopravvivano a interruzioni prolungate.',
             },
             {
               english: 'Throughput (queue)',
@@ -6196,6 +6541,8 @@ export default {
                 'The order-events Topic has 12 SQS subscribers, each filtered to receive only the message types they care about. = Il Topic order-events ha 12 sottoscrittori SQS, ognuno filtrato per ricevere solo i tipi di messaggio di interesse.',
               context: 'services',
               difficulty: 'advanced',
+              command: 'aws sns create-topic --name order-events',
+              task: 'Crea un topic SNS chiamato order-events come punto di pubblicazione per gli eventi degli ordini in fan-out.',
             },
             {
               english: 'Push Subscription',
@@ -6207,6 +6554,9 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               note: 'Variante di subscription in sistemi di messaging come GCP Pub/Sub: push vs pull.',
+              command:
+                'gcloud pubsub subscriptions create my-sub --topic=orders --push-endpoint=https://api.example.com/hook',
+              task: 'Configura una push subscription su Pub/Sub che inoltri ogni messaggio del topic orders verso un endpoint HTTPS.',
             },
             {
               english: 'Publisher',
@@ -6237,6 +6587,9 @@ export default {
                 'Applying Message Filtering on the SNS subscription means only orders above 1000 EUR fan out to the fraud-review Lambda, leaving small purchases alone. = Applicare il Filtro messaggi sulla subscription SNS fa sì che solo gli ordini sopra i 1000 EUR vengano inoltrati alla Lambda di fraud-review, lasciando in pace gli acquisti piccoli.',
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'aws sns set-subscription-attributes --subscription-arn $ARN --attribute-name FilterPolicy --cli-input-json file://filter.json',
+              task: 'Applica una FilterPolicy sulla subscription SNS $ARN da filter.json per consegnare solo gli ordini sopra i 1000 EUR.',
             },
             {
               english: 'Fan-out Pattern',
@@ -6268,6 +6621,9 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'AWS SNS Mobile Push',
+              command:
+                'aws sns create-platform-application --name MyApp --platform APNS --attributes PlatformCredential=$CERT',
+              task: 'Registra una platform application APNS chiamata MyApp su SNS per inviare notifiche push native a dispositivi iOS.',
             },
           ],
         },
@@ -6286,6 +6642,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'AWS EventBridge',
+              command: 'aws events list-event-buses',
+              task: `Elenca tutti gli event bus EventBridge presenti nell'account per individuare bus custom e cross-account configurati.`,
             },
             {
               english: 'Cross-Account Event Bus',
@@ -6296,6 +6654,9 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               note: 'Configurazione specifica di event bus EventBridge per condividere eventi tra account AWS.',
+              command:
+                'aws events put-permission --action events:PutEvents --principal 111122223333 --statement-id CrossAcct',
+              task: `Concedi all'account 111122223333 il permesso di pubblicare eventi sul bus EventBridge corrente per scenari cross-account.`,
             },
             {
               english: 'Rule',
@@ -6306,6 +6667,8 @@ export default {
                 'An EventBridge Rule matches every S3 ObjectCreated event on the uploads bucket and triggers the thumbnail Lambda. = Una Regola EventBridge cattura ogni evento S3 ObjectCreated sul bucket uploads e attiva la Lambda thumbnail.',
               context: 'services',
               difficulty: 'advanced',
+              command: 'aws events put-rule --name s3-uploads --event-pattern file://pattern.json',
+              task: 'Definisci una rule EventBridge chiamata s3-uploads usando il pattern in pattern.json per catturare gli eventi aws.s3.',
             },
             {
               english: 'Target',
@@ -6316,6 +6679,8 @@ export default {
                 'An EventBridge rule can have up to five Target destinations, fanning the same event to Lambda, SQS, and Step Functions. = Una regola EventBridge può avere fino a cinque destinazioni Target, distribuendo lo stesso evento a Lambda, SQS e Step Functions.',
               context: 'services',
               difficulty: 'advanced',
+              command: 'aws events put-targets --rule s3-uploads --targets Id=1,Arn=$LAMBDA_ARN',
+              task: 'Aggancia la Lambda $LAMBDA_ARN come target della rule EventBridge s3-uploads per il fan-out degli eventi.',
             },
             {
               english: 'Schema Registry',
@@ -6326,6 +6691,8 @@ export default {
                 'The Schema Registry auto-discovers event shapes from EventBridge traffic and generates typed Java classes for consumers. = Lo Schema Registry scopre automaticamente le forme degli eventi dal traffico EventBridge e genera classi Java tipizzate per i consumer.',
               context: 'services',
               difficulty: 'advanced',
+              command: 'aws schemas list-registries',
+              task: 'Elenca i registry schemi EventBridge disponibili per scoprire i nomi a cui registrare le definizioni degli eventi.',
             },
             {
               english: 'Archive',
@@ -6336,6 +6703,9 @@ export default {
                 'An EventBridge Archive retains 90 days of order events so we can replay them into a new analytics service. = Un Archive EventBridge mantiene 90 giorni di eventi ordine così possiamo riprodurli in un nuovo servizio di analytics.',
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'aws events create-archive --archive-name orders-archive --event-source-arn $BUS_ARN --retention-days 90',
+              task: 'Crea un archive EventBridge che conservi 90 giorni di eventi del bus $BUS_ARN per replay successivi.',
             },
             {
               english: 'Replay',
@@ -6345,6 +6715,9 @@ export default {
               example: `We triggered a Replay of yesterday's archived events to backfill the new fraud detection consumer with realistic data. = Abbiamo lanciato un Replay degli eventi archiviati di ieri per popolare il nuovo consumer di fraud detection con dati realistici.`,
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'aws events start-replay --replay-name backfill --event-source-arn $ARCHIVE_ARN --event-start-time 2024-01-01T00:00:00Z --event-end-time 2024-01-02T00:00:00Z --destination Arn=$BUS',
+              task: 'Avvia un replay degli eventi archiviati di un giorno verso il bus $BUS per popolare un nuovo consumer downstream.',
             },
             {
               english: 'Partner Event Source',
@@ -6393,6 +6766,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'AWS Kinesis',
+              command: 'aws kinesis create-stream --stream-name clicks --shard-count 4',
+              task: 'Provvedi uno stream Kinesis chiamato clicks con 4 shard iniziali per assorbire il traffico di click-stream in arrivo.',
             },
             {
               english: 'Stream',
@@ -6413,6 +6788,9 @@ export default {
                 'Each Kinesis Shard supports 1 MB/s ingest and 2 MB/s read; we scale by splitting hot Shards on partition key skew. = Ogni Shard Kinesis supporta 1 MB/s ingest e 2 MB/s lettura; scaliamo splittando Shard caldi su skew di partition key.',
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'aws kinesis split-shard --stream-name clicks --shard-to-split shardId-000000000000 --new-starting-hash-key $KEY',
+              task: 'Splitta lo shard sovraccarico dello stream clicks su una nuova chiave per ribilanciare il throughput tra produttori.',
             },
             {
               english: 'Producer',
@@ -6454,6 +6832,9 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'AWS MSK',
+              command:
+                'aws kafka create-cluster --cluster-name prod --kafka-version 3.5 --number-of-broker-nodes 3',
+              task: 'Provvedi un cluster MSK gestito chiamato prod su Kafka 3.5 con tre broker per workload di streaming in produzione.',
             },
             {
               english: 'Firehose',
@@ -6465,6 +6846,9 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'AWS Kinesis Firehose',
+              command:
+                'aws firehose create-delivery-stream --delivery-stream-name logs --s3-destination-configuration RoleARN=$ROLE,BucketARN=$BUCKET',
+              task: 'Crea un delivery stream Firehose chiamato logs che bufferi gli eventi e li scriva sul bucket S3 indicato.',
             },
             {
               english: 'Data Analytics',
@@ -6476,6 +6860,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'AWS Kinesis Data Analytics',
+              command: 'aws kinesisanalyticsv2 list-applications',
+              task: 'Elenca le applicazioni Kinesis Data Analytics presenti nella regione per scoprire le pipeline SQL di streaming attive.',
             },
             {
               english: 'Checkpoint',
@@ -6523,6 +6909,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'AWS CloudFront',
+              command: 'aws cloudfront list-distributions',
+              task: `Elenca tutte le distribution CloudFront attive nell'account per verificare nomi DNS e origin associati alla CDN.`,
             },
             {
               english: 'Cloudflare',
@@ -6533,6 +6921,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'Cloudflare',
+              command: 'wrangler deploy',
+              task: 'Pubblica il Worker Cloudflare corrente sulla rete edge usando wrangler dalla directory del progetto.',
             },
             {
               english: 'Edge Location (CDN)',
@@ -6552,6 +6942,9 @@ export default {
               example: `The CloudFront Origin is the private ALB; CloudFront fetches and caches its responses, never exposing the ALB directly. = L'Origin CloudFront è l'ALB privato; CloudFront recupera e cacha le sue risposte, senza mai esporre l'ALB direttamente.`,
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'aws cloudfront update-distribution --id $ID --distribution-config file://config.json',
+              task: `Aggiorna la distribution $ID con il file config.json per modificare l'origin verso un nuovo ALB privato.`,
             },
             {
               english: 'Distribution',
@@ -6596,6 +6989,9 @@ export default {
                 'Set cache TTL based on content freshness. = Imposta il TTL della cache in base alla freschezza del contenuto.',
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'aws cloudfront update-cache-policy --id $ID --cache-policy-config file://policy.json',
+              task: 'Aggiorna la cache policy $ID con il file policy.json per ridefinire i TTL minimi, massimi e default.',
             },
             {
               english: 'OAI',
@@ -6607,6 +7003,9 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               note: 'Sostituito da OAC (Origin Access Control) in nuovi deployment.',
+              command:
+                'aws cloudfront create-cloud-front-origin-access-identity --cloud-front-origin-access-identity-config CallerReference=oai-1,Comment=site-oai',
+              task: `Crea un Origin Access Identity CloudFront per consentire l'accesso al bucket S3 solo tramite la distribution.`,
             },
           ],
         },
@@ -6624,6 +7023,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'AWS Lambda@Edge',
+              command: 'aws lambda publish-version --function-name edge-fn',
+              task: 'Pubblica una nuova versione della funzione edge-fn così possa essere associata a un trigger CloudFront come Lambda@Edge.',
             },
             {
               english: 'CloudFront Functions',
@@ -6636,6 +7037,12 @@ export default {
               difficulty: 'advanced',
               tool: 'AWS CloudFront Functions',
               note: 'Limitato a JavaScript ed esecuzione brevissima (<1ms).',
+              code: `function handler(event){
+  var req = event.request;
+  req.headers["x-edge"] = {value: "true"};
+  return req;
+}`,
+              task: 'Scrivi una CloudFront Function che intercetti il viewer-request e aggiunga un header x-edge personalizzato.',
             },
             {
               english: 'Edge Function',
@@ -6656,6 +7063,12 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'Cloudflare Workers',
+              code: `export default {
+  async fetch(req){
+    return new Response("hi from edge");
+  }
+};`,
+              task: 'Componi un Worker Cloudflare minimale che risponda hi from edge su ogni richiesta in ingresso al PoP.',
             },
             {
               english: 'Viewer Request',
@@ -6704,6 +7117,9 @@ export default {
                 'Block traffic from certain countries with geofencing. = Blocca traffico da certi paesi con geofencing.',
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'aws cloudfront update-distribution --id $ID --distribution-config file://restrictions.json',
+              task: 'Aggiorna la distribution $ID applicando una GeoRestriction blacklist per i paesi indicati in restrictions.json.',
             },
             {
               english: 'Personalization',
@@ -6752,6 +7168,8 @@ export default {
                 'The browser sends the previous ETag in If-None-Match and the CDN returns 304 Not Modified, saving the body bytes. = Il browser invia il precedente ETag in If-None-Match e la CDN restituisce 304 Not Modified, risparmiando i byte del body.',
               context: 'services',
               difficulty: 'advanced',
+              code: 'ETag: "33a64df551425fcc55e4d42a148795d9f25f89d4"',
+              task: 'Esponi un header ETag SHA-1 sulla risposta della risorsa per consentire al client di validare la cache via If-None-Match.',
             },
             {
               english: 'Stale-While-Revalidate',
@@ -6763,6 +7181,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               note: 'Header HTTP utile: serve stale per max-age secondi mentre aggiorna in background.',
+              code: 'Cache-Control: max-age=60, stale-while-revalidate=300',
+              task: `Restituisci un Cache-Control con max-age 60 e stale-while-revalidate di 300 secondi così la CDN serva stale durante l'aggiornamento.`,
             },
             {
               english: 'Cache Key',
@@ -6783,6 +7203,9 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'AWS CloudFront Origin Shield',
+              command:
+                'aws cloudfront update-distribution --id $ID --distribution-config file://shield.json',
+              task: `Abilita Origin Shield sulla distribution $ID con il file shield.json per consolidare i cache miss in un'unica regione.`,
             },
             {
               english: 'Tiered Caching',
@@ -6802,6 +7225,9 @@ export default {
               example: `After publishing a hotfix article we issue a CDN Purge on its URL so all PoPs evict the stale cached HTML immediately. = Dopo aver pubblicato un articolo hotfix emettiamo un Purge CDN sulla sua URL così tutti i PoP rimuovono l'HTML cachato stantio immediatamente.`,
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'curl -X POST https://api.cloudflare.com/client/v4/zones/$ZONE/purge_cache -H Authorization:Bearer$TOKEN --data-binary @purge.json',
+              task: 'Lancia un purge totale della cache Cloudflare della zona $ZONE per forzare il refresh di tutti i PoP dopo un hotfix.',
             },
             {
               english: 'Bypass Cache',
@@ -6849,6 +7275,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'AWS Global Accelerator',
+              command: 'aws globalaccelerator create-accelerator --name prod-ga',
+              task: 'Provvedi un Global Accelerator chiamato prod-ga per ottenere due IP anycast statici instradati sulla backbone AWS.',
             },
             {
               english: 'Front Door',
@@ -6860,6 +7288,9 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'Azure Front Door',
+              command:
+                'az afd profile create --resource-group rg --profile-name prod --sku Standard_AzureFrontDoor',
+              task: 'Crea un profilo Azure Front Door Standard chiamato prod nel resource group rg per il bilanciamento globale del traffico.',
             },
             {
               english: 'Cloud Armor',
@@ -6871,6 +7302,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'GCP Cloud Armor',
+              command: 'gcloud compute security-policies create deny-bot --description block-bots',
+              task: 'Crea una security policy Cloud Armor chiamata deny-bot da associare al load balancer GCP per bloccare bot noti.',
             },
             {
               english: 'Geographic Routing',
@@ -6881,6 +7314,9 @@ export default {
                 'Route 53 Geographic Routing sends EU users to the eu-west-1 stack to satisfy GDPR data residency requirements. = Route 53 Geographic Routing invia utenti UE allo stack eu-west-1 per soddisfare i requisiti GDPR di residenza dei dati.',
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'aws route53 change-resource-record-sets --hosted-zone-id $ZONE --change-batch file://geo.json',
+              task: 'Applica record DNS con geolocation policy nella hosted zone $ZONE usando geo.json per servire utenti UE da una regione locale.',
             },
             {
               english: 'Latency-Based Routing',
@@ -6891,6 +7327,9 @@ export default {
                 'Route 53 supports latency-based routing. = Route 53 supporta routing basato su latenza.',
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'aws route53 change-resource-record-sets --hosted-zone-id $ZONE --change-batch file://latency.json',
+              task: 'Configura record latency-based su Route 53 nella zona $ZONE tramite latency.json per indirizzare al cluster con minor RTT.',
             },
             {
               english: 'TCP Acceleration',
@@ -6909,6 +7348,9 @@ export default {
               example: `Enable HTTP/3 on CloudFront so mobile users on lossy networks benefit from QUIC's faster handshake and connection migration. = Abilita HTTP/3 su CloudFront così utenti mobile su reti con perdite beneficiano dell'handshake più veloce di QUIC e della migrazione di connessione.`,
               context: 'services',
               difficulty: 'advanced',
+              command:
+                'aws cloudfront update-distribution --id $ID --distribution-config file://http3.json',
+              task: 'Abilita HTTP/3 sulla distribution $ID applicando il file http3.json per offrire QUIC ai client supportati.',
             },
             {
               english: 'QUIC',
@@ -7063,6 +7505,8 @@ export default {
               context: 'migration',
               difficulty: 'advanced',
               tool: 'AWS Migration Hub',
+              command: 'aws migrationhub describe-application-state --application-id $APP',
+              task: `Interroga lo stato dell'applicazione $APP in Migration Hub per verificare se la replica verso AWS sia stata completata.`,
             },
             {
               english: 'AWS MGN',
@@ -7074,6 +7518,8 @@ export default {
               context: 'migration',
               difficulty: 'advanced',
               tool: 'AWS MGN',
+              command: 'aws mgn start-replication --source-server-id $ID',
+              task: 'Avvia la replica continua del source server $ID via AWS MGN per preparare il failover verso EC2.',
             },
             {
               english: 'Azure Migrate',
@@ -7084,6 +7530,9 @@ export default {
               context: 'migration',
               difficulty: 'advanced',
               tool: 'Azure Migrate',
+              command:
+                'az migrate project create --resource-group rg --name myMigration --location eastus',
+              task: 'Crea un progetto Azure Migrate chiamato myMigration nel resource group rg per coordinare assessment e replication.',
             },
             {
               english: 'GCP Migrate for Compute Engine',
@@ -7105,6 +7554,9 @@ export default {
               context: 'migration',
               difficulty: 'advanced',
               tool: 'AWS DMS',
+              command:
+                'aws dms create-replication-task --replication-task-identifier ora-to-aurora --migration-type cdc --source-endpoint-arn $SRC --target-endpoint-arn $TGT --replication-instance-arn $RI --table-mappings file://mappings.json',
+              task: 'Lancia un task DMS in modalità CDC da Oracle ad Aurora usando i mapping di tabelle definiti nel file.',
             },
             {
               english: 'Schema Conversion Tool',
@@ -7127,6 +7579,9 @@ export default {
               difficulty: 'advanced',
               tool: 'AWS Snowball',
               note: 'Per terabyte/petabyte di dati. Più veloce della rete!',
+              command:
+                'aws snowball create-job --job-type IMPORT --resources S3Resources=BucketArn=$ARN --address-id $ADDR --role-arn $ROLE',
+              task: 'Apri un job Snowball di import verso il bucket S3 $ARN per spedire fisicamente archivi legacy senza saturare la WAN.',
             },
             {
               english: 'DataSync',
@@ -7138,6 +7593,8 @@ export default {
               context: 'migration',
               difficulty: 'advanced',
               tool: 'AWS DataSync',
+              command: 'aws datasync start-task-execution --task-arn $TASK',
+              task: 'Esegui il task DataSync $TASK per copiare incrementalmente i file da NFS on-prem al bucket S3 target.',
             },
             {
               english: 'Storage Gateway',
@@ -7149,6 +7606,9 @@ export default {
               context: 'migration',
               difficulty: 'advanced',
               tool: 'AWS Storage Gateway',
+              command:
+                'aws storagegateway create-nfs-file-share --gateway-arn $GW --location-arn $BUCKET --role $ROLE --client-token tok-1',
+              task: 'Esponi un file share NFS via Storage Gateway che indirizzi le scritture verso il bucket S3 mantenendo il protocollo locale.',
             },
             {
               english: 'CloudEndure',
@@ -7846,6 +8306,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'AWS CodePipeline',
+              command: 'aws codepipeline start-pipeline-execution --name app-pipeline',
+              task: `Avvia manualmente la pipeline app-pipeline in CodePipeline per ridepoyare l'ultima revisione senza attendere un push su main.`,
             },
             {
               english: 'CodeBuild',
@@ -7856,6 +8318,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'AWS CodeBuild',
+              command: 'aws codebuild start-build --project-name app-build',
+              task: `Lancia il progetto app-build su CodeBuild per costruire l'immagine e pushare l'artefatto verso ECR.`,
             },
             {
               english: 'CodeDeploy',
@@ -7867,6 +8331,9 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'AWS CodeDeploy',
+              command:
+                'aws deploy create-deployment --application-name app --deployment-group-name prod --revision file://revision.json',
+              task: `Crea un nuovo deployment dell'applicazione app sul gruppo prod usando la revisione descritta nel file revision.json.`,
             },
             {
               english: 'CodeCommit',
@@ -7878,6 +8345,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'AWS CodeCommit',
+              command: 'aws codecommit create-repository --repository-name app-src',
+              task: `Provvedi un repo CodeCommit chiamato app-src per ospitare il codice all'interno dell'account regolamentato.`,
             },
             {
               english: 'CodeArtifact',
@@ -7889,6 +8358,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'AWS CodeArtifact',
+              command: 'aws codeartifact create-domain --domain prod',
+              task: 'Crea il domain CodeArtifact chiamato prod come container centrale per i repository di pacchetti interni.',
             },
             {
               english: 'CodeStar',
@@ -7958,6 +8429,9 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'Azure DevOps',
+              command:
+                'az devops project create --name MyProject --organization https://dev.azure.com/myorg',
+              task: `Crea il progetto MyProject nell'organizzazione Azure DevOps per ospitare repo, board e pipeline sotto un solo tenant.`,
             },
             {
               english: 'Azure Pipelines',
@@ -7969,6 +8443,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'Azure Pipelines',
+              command: 'az pipelines run --name nightly --branch main',
+              task: `Esegui manualmente la pipeline nightly sul branch main per ricostruire e pushare l'artefatto fuori dalla finestra schedulata.`,
             },
             {
               english: 'Azure Repos',
@@ -7980,6 +8456,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'Azure Repos',
+              command: 'az repos create --name app --project MyProject',
+              task: 'Crea il repository Git chiamato app dentro il progetto Azure DevOps MyProject per ospitare il codice sorgente.',
             },
             {
               english: 'Azure Boards',
@@ -7991,6 +8469,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'Azure Boards',
+              command: 'az boards work-item create --title Bug-fix --type Bug --project MyProject',
+              task: 'Apri un work item Bug nel progetto MyProject di Azure Boards per tracciare un nuovo difetto rilevato in QA.',
             },
             {
               english: 'Azure Artifacts',
@@ -8002,6 +8482,9 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'Azure Artifacts',
+              command:
+                'az artifacts universal publish --organization https://dev.azure.com/myorg --project MyProject --feed shared --name pkg --version 1.0.0 --path ./dist',
+              task: 'Pubblica il pacchetto pkg versione 1.0.0 su Azure Artifacts dal contenuto della cartella ./dist.',
             },
             {
               english: 'Service Connection',
@@ -8072,6 +8555,9 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'GCP Cloud Build',
+              command:
+                'gcloud builds submit --config cloudbuild.yaml --substitutions=_REGION=europe-west1',
+              task: 'Sottometti la build descritta in cloudbuild.yaml verso Cloud Build sostituendo la variabile _REGION con europe-west1.',
             },
             {
               english: 'Cloud Source Repositories',
@@ -8083,6 +8569,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'GCP Cloud Source Repositories',
+              command: 'gcloud source repos create app-src',
+              task: `Crea il repository Cloud Source app-src per ospitare la storia git all'interno del progetto GCP corrente.`,
             },
             {
               english: 'Artifact Registry',
@@ -8094,6 +8582,9 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'GCP Artifact Registry',
+              command:
+                'gcloud artifacts repositories create images --repository-format=docker --location=europe-west1',
+              task: 'Provvedi un repository Artifact Registry Docker chiamato images nella regione europe-west1 per ospitare le immagini OCI.',
             },
             {
               english: 'Cloud Deploy',
@@ -8105,6 +8596,9 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'GCP Cloud Deploy',
+              command:
+                'gcloud deploy releases create rel-1 --delivery-pipeline=app-pipeline --region=europe-west1 --source=.',
+              task: 'Genera la release rel-1 nella pipeline Cloud Deploy app-pipeline a partire dalla directory corrente come sorgente.',
             },
             {
               english: 'cloudbuild.yaml',
@@ -8166,6 +8660,9 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'GCP Container Analysis',
+              command:
+                'gcloud artifacts docker images scan europe-west1-docker.pkg.dev/$PROJECT/images/app:latest',
+              task: `Scansiona l'immagine app:latest con Container Analysis per rilevare CVE prima di promuoverla in produzione.`,
             },
           ],
         },
@@ -8311,6 +8808,9 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'AWS Redshift',
+              command:
+                'aws redshift create-cluster --cluster-identifier dwh --node-type ra3.xlplus --number-of-nodes 2 --master-username admin --master-user-password $PWD',
+              task: 'Provvedi un cluster Redshift ra3.xlplus a due nodi chiamato dwh per ospitare il data warehouse aziendale.',
             },
             {
               english: 'BigQuery',
@@ -8334,6 +8834,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'Snowflake',
+              command: 'snowsql -a $ACCOUNT -u $USER -f preview.sql',
+              task: 'Esegui via snowsql lo script preview.sql per validare la connessione al warehouse Snowflake con una query di anteprima.',
             },
             {
               english: 'Synapse Analytics',
@@ -8345,6 +8847,9 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'Azure Synapse Analytics',
+              command:
+                'az synapse workspace create --name analytics --resource-group rg --storage-account stg --file-system fs --sql-admin-login-user admin --sql-admin-login-password $PWD --location eastus',
+              task: 'Provvedi un workspace Synapse Analytics chiamato analytics combinando data lake e SQL pool sotto un unico tenant.',
             },
             {
               english: 'Columnar Storage',
@@ -8422,6 +8927,9 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'AWS Lake Formation',
+              command:
+                'aws lakeformation grant-permissions --principal DataLakePrincipalIdentifier=$USER --permissions SELECT --cli-input-json file://res.json',
+              task: 'Concedi a $USER il diritto SELECT sulla tabella analytics.orders via Lake Formation senza copiare il dataset.',
             },
             {
               english: 'Parquet',
@@ -8493,6 +9001,9 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'AWS Athena',
+              command:
+                'aws athena start-query-execution --query-string-from-file query.sql --result-configuration OutputLocation=s3://$BUCKET/athena/',
+              task: 'Lancia una query Athena di conteggio righe sulla tabella logs e salva il risultato nel bucket S3 designato.',
             },
             {
               english: 'Lakehouse',
@@ -8541,6 +9052,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'AWS Glue',
+              command: 'aws glue start-job-run --job-name etl-orders',
+              task: 'Avvia il job Glue etl-orders per pulire gli eventi grezzi su S3 e scriverli in formato Parquet partizionato.',
             },
             {
               english: 'Glue Crawler',
@@ -8551,6 +9064,8 @@ export default {
                 'Pointing an AWS Glue Crawler at the raw zone auto-discovers schemas and registers tables in the Data Catalog for Athena. = Puntare un AWS Glue Crawler alla raw zone scopre automaticamente gli schemi e registra le tabelle nel Data Catalog per Athena.',
               context: 'services',
               difficulty: 'advanced',
+              command: 'aws glue start-crawler --name raw-zone-crawler',
+              task: 'Esegui il crawler raw-zone-crawler per scoprire automaticamente schemi e popolare il Data Catalog Glue.',
             },
             {
               english: 'Data Catalog',
@@ -8561,6 +9076,8 @@ export default {
                 'Centralizing tables in AWS Glue Data Catalog lets Athena, EMR, and Redshift Spectrum share schemas without each maintaining its own metadata. = Centralizzare le tabelle nel Data Catalog di AWS Glue consente ad Athena, EMR e Redshift Spectrum di condividere gli schemi senza che ognuno mantenga i propri metadati.',
               context: 'services',
               difficulty: 'advanced',
+              command: 'aws glue get-databases',
+              task: 'Elenca i database registrati nel Data Catalog Glue per scoprire i namespace condivisi tra Athena, EMR e Redshift Spectrum.',
             },
             {
               english: 'Dataflow',
@@ -8572,6 +9089,9 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'GCP Dataflow',
+              command:
+                'gcloud dataflow jobs run sessions --gcs-location gs://templates/word-count --region europe-west1',
+              task: 'Avvia un job Dataflow chiamato sessions a partire dal template salvato su Cloud Storage per processare lo streaming.',
             },
             {
               english: 'Apache Beam',
@@ -8594,6 +9114,9 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'AWS EMR',
+              command:
+                'aws emr create-cluster --name spark --release-label emr-6.15.0 --applications Name=Spark --instance-type m5.xlarge --instance-count 3',
+              task: 'Provvedi un cluster EMR transitorio a tre nodi m5.xlarge con Spark per eseguire un job analytics genomico.',
             },
             {
               english: 'Dataproc',
@@ -8605,6 +9128,9 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'GCP Dataproc',
+              command:
+                'gcloud dataproc clusters create spark-job --region=europe-west1 --num-workers=3',
+              task: 'Crea un cluster Dataproc effimero chiamato spark-job con tre worker per processare un batch Hadoop in 90 secondi.',
             },
             {
               english: 'Spark',
@@ -8745,6 +9271,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'AWS SageMaker',
+              command: 'aws sagemaker list-training-jobs --status-equals InProgress',
+              task: 'Elenca i training job SageMaker attualmente in corso per monitorare il consumo di istanze GPU gestite.',
             },
             {
               english: 'Notebook Instance',
@@ -8855,6 +9383,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'GCP Vertex AI',
+              command: 'gcloud ai endpoints list --region=europe-west1',
+              task: 'Elenca gli endpoint Vertex AI attivi nella regione europe-west1 per verificare quali modelli sono attualmente esposti.',
             },
             {
               english: 'AutoML',
@@ -8865,6 +9395,9 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'GCP AutoML',
+              command:
+                'gcloud ai custom-jobs create --region=europe-west1 --display-name=automl --config=config.yaml',
+              task: 'Sottometti un AutoML training job su Vertex AI usando config.yaml per generare un modello di classificazione tabellare.',
             },
             {
               english: 'Pipelines',
@@ -8960,6 +9493,9 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'AWS Bedrock',
+              command:
+                'aws bedrock-runtime invoke-model --model-id anthropic.claude-3-sonnet --body file://input.json out.json',
+              task: 'Invoca il modello Claude 3 Sonnet via Bedrock leggendo input.json e salvando la risposta in out.json.',
             },
             {
               english: 'Foundation Model',
@@ -8981,6 +9517,9 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'Azure OpenAI',
+              command:
+                'az cognitiveservices account deployment create --name openai --resource-group rg --deployment-name gpt4 --model-name gpt-4 --model-format OpenAI --sku-name Standard',
+              task: 'Crea un deployment GPT-4 chiamato gpt4 sul tenant Azure OpenAI per soddisfare requisiti SOC 2 e residency.',
             },
             {
               english: 'Gemini',
@@ -8992,6 +9531,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'GCP Gemini',
+              command: 'gcloud ai models list --region=europe-west1',
+              task: 'Elenca i modelli Vertex AI nella regione europe-west1 per individuare le versioni Gemini disponibili al deploy.',
             },
             {
               english: 'Pre-trained Model',
@@ -9031,6 +9572,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'AWS Bedrock Knowledge Bases',
+              command: 'aws bedrock-agent list-knowledge-bases',
+              task: 'Elenca le knowledge base Bedrock configurate per scoprire quali archivi PDF indicizzati sono disponibili per gli agent.',
             },
             {
               english: 'Agent',
@@ -9041,6 +9584,9 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'Bedrock Agents',
+              command:
+                'aws bedrock-agent invoke-agent --agent-id $ID --agent-alias-id $ALIAS --session-id s1 --input-text hi',
+              task: `Invoca l'agent Bedrock $ID con un messaggio di test per validare la catena di tool e Lambda configurata.`,
             },
             {
               english: 'Embedding',
@@ -9086,6 +9632,8 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'SageMaker Model Monitor',
+              command: 'aws sagemaker list-monitoring-schedules',
+              task: 'Elenca le schedule di Model Monitor SageMaker attive per verificare quali endpoint stanno loggando drift e qualità.',
             },
             {
               english: 'A/B Test Models',
@@ -9145,6 +9693,9 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'SageMaker MME',
+              command:
+                'aws sagemaker create-endpoint-config --endpoint-config-name mme --production-variants VariantName=AllTraffic,ModelName=$MODEL,InitialInstanceCount=1,InstanceType=ml.m5.large',
+              task: 'Provvedi una endpoint-config SageMaker MME chiamata mme che ospiti più modelli per tenant su una singola istanza.',
             },
             {
               english: 'Bias Detection',
@@ -9156,6 +9707,9 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               tool: 'SageMaker Clarify',
+              command:
+                'aws sagemaker create-processing-job --processing-job-name clarify --app-specification ImageUri=$CLARIFY_IMG --processing-resources file://res.json --processing-inputs file://in.json',
+              task: 'Lancia un processing job SageMaker Clarify per generare un report di bias sui gruppi demografici protetti del modello.',
             },
           ],
         },
@@ -9234,6 +9788,8 @@ export default {
               difficulty: 'advanced',
               tool: 'Istio, Linkerd, AWS App Mesh',
               note: 'Pattern caratteristico di service mesh come Istio o Linkerd: il sidecar intercetta tutto il traffico pod.',
+              command: 'kubectl label namespace production istio-injection=enabled',
+              task: `Etichetta il namespace production per attivare l'iniezione automatica del sidecar Istio su tutti i nuovi pod.`,
             },
             {
               english: 'Sidecar Pattern',
@@ -9493,6 +10049,8 @@ export default {
               context: 'architecture',
               difficulty: 'advanced',
               tool: 'AWS FIS, Chaos Monkey, Gremlin',
+              command: 'aws fis start-experiment --experiment-template-id $TPL',
+              task: `Avvia l'experiment FIS $TPL per terminare istanze EC2 casuali in produzione e validare che i servizi si auto-curino.`,
             },
           ],
         },
@@ -9713,6 +10271,8 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               tool: 'AWS Artifact',
+              command: 'aws artifact get-report --report-id $ID',
+              task: `Scarica via AWS Artifact il report di conformità $ID come evidenza durante l'audit SOC 2 o ISO 27001.`,
             },
           ],
         },
@@ -9868,6 +10428,8 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               tool: 'AWS Organizations',
+              command: 'aws organizations list-accounts',
+              task: 'Elenca tutti gli account membri di AWS Organizations per individuare quali rientrano nella landing zone aziendale.',
             },
             {
               english: 'Control Tower',
@@ -9879,6 +10441,8 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               tool: 'AWS Control Tower',
+              command: 'aws controltower list-enabled-controls --target-identifier $OU',
+              task: 'Elenca i controlli Control Tower abilitati sulla OU $OU per verificare quali guardrail di baseline sono attivi.',
             },
             {
               english: 'Landing Zone',
@@ -9898,6 +10462,8 @@ export default {
               example: `An SCP guardrail in AWS Organizations denies the use of expensive instance types outside the data science account regardless of IAM permissions. = Un guardrail SCP in AWS Organizations nega l'uso di istanze costose fuori dall'account di data science indipendentemente dai permessi IAM.`,
               context: 'security',
               difficulty: 'advanced',
+              command: 'aws organizations attach-policy --policy-id $SCP --target-id $OU',
+              task: 'Aggancia la SCP $SCP alla OU $OU come guardrail per negare tipi di istanza costosi indipendentemente dai permessi IAM.',
             },
             {
               english: 'Policy as Code',
@@ -9909,6 +10475,14 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               tool: 'OPA, Sentinel, Cloud Custodian',
+              code: `package allow_only_eu
+
+default allow = false
+
+allow {
+  input.region == "eu-west-1"
+}`,
+              task: 'Scrivi una policy OPA Rego che permetta il deploy solo se la regione richiesta è eu-west-1, da applicare in CI.',
             },
             {
               english: 'Continuous Compliance',
@@ -9919,6 +10493,8 @@ export default {
                 'AWS Config enables continuous compliance checks. = AWS Config abilita check di conformità continui.',
               context: 'security',
               difficulty: 'advanced',
+              command: 'aws configservice describe-compliance-by-config-rule',
+              task: 'Interroga AWS Config per ottenere lo stato di compliance di ogni rule e identificare risorse fuori standard.',
             },
             {
               english: 'Evidence Collection',
@@ -9930,6 +10506,8 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               tool: 'AWS Audit Manager',
+              command: 'aws auditmanager list-assessments',
+              task: 'Elenca le assessment Audit Manager per scoprire quali framework SOC 2 o ISO 27001 stanno raccogliendo evidenze.',
             },
           ],
         },
@@ -10075,6 +10653,8 @@ export default {
               example: `FinOps teams enforce a mandatory tag policy via AWS Config so any EC2 instance launched without CostCenter is flagged for the owning team. = I team FinOps impongono una policy di mandatory tag tramite AWS Config cosi' ogni istanza EC2 lanciata senza CostCenter viene segnalata al team proprietario.`,
               context: 'cost',
               difficulty: 'advanced',
+              command: 'aws organizations attach-policy --policy-id $TAG_POL --target-id $OU',
+              task: 'Aggancia la tag policy $TAG_POL alla OU $OU per richiedere CostCenter su ogni risorsa lanciata dai team.',
             },
             {
               english: 'Tag Standardization',
@@ -10093,6 +10673,9 @@ export default {
               example: `Automated tag enforcement via Service Control Policies denies EC2 launches missing the CostCenter tag, blocking untagged spend at the source. = L'automatica tag enforcement tramite Service Control Policy nega i lanci EC2 privi del tag CostCenter, bloccando la spesa senza tag all'origine.`,
               context: 'cost',
               difficulty: 'advanced',
+              command:
+                'aws organizations create-policy --name require-costcenter --type SERVICE_CONTROL_POLICY --content file://scp.json --description deny-untagged-launches',
+              task: `Crea una SCP che neghi i lanci EC2 privi del tag CostCenter bloccando la spesa senza attribuzione all'origine.`,
             },
             {
               english: 'Tag Editor',
@@ -10151,6 +10734,9 @@ export default {
                 'Finance pulls the monthly cost allocation report from Cost Explorer broken down by CostCenter tag to charge each business unit accurately. = Finance estrae mensilmente il cost allocation report da Cost Explorer suddiviso per tag CostCenter per addebitare accuratamente ogni business unit.',
               context: 'cost',
               difficulty: 'advanced',
+              command:
+                'aws ce get-cost-and-usage --time-period Start=2024-01-01,End=2024-02-01 --granularity MONTHLY --metrics UnblendedCost --group-by Type=TAG,Key=CostCenter',
+              task: 'Estrai da Cost Explorer la spesa mensile raggruppata per tag CostCenter per addebitare ogni business unit.',
             },
           ],
         },
@@ -10227,6 +10813,9 @@ export default {
                 'Configure budget alerts at 50%, 80%, 100%. = Configura avvisi di budget al 50%, 80%, 100%.',
               context: 'cost',
               difficulty: 'advanced',
+              command:
+                'aws budgets create-budget --account-id $ACC --budget file://budget.json --notifications-with-subscribers file://notif.json',
+              task: 'Configura un budget AWS con notifiche al 50, 80 e 100 percento usando budget.json e notif.json.',
             },
             {
               english: 'KPI',
@@ -10272,6 +10861,9 @@ export default {
               example: `Monthly FinOps reviews target above 95% RI utilization so reserved instance commitments are not wasted on idle or oversized capacity. = Le revisioni mensili FinOps mirano sopra il 95% di RI utilization cosi' gli impegni di reserved instance non sono sprecati su capacita' inattiva o sovradimensionata.`,
               context: 'cost',
               difficulty: 'advanced',
+              command:
+                'aws ce get-reservation-utilization --time-period Start=2024-01-01,End=2024-02-01 --granularity MONTHLY',
+              task: `Estrai da Cost Explorer l'utilizzo mensile delle reserved instance per verificare se la copertura supera il 95 percento.`,
             },
             {
               english: 'RI Coverage',
@@ -10281,6 +10873,9 @@ export default {
               example: `Treating 80% steady-state EC2 hours under RI coverage cuts compute spend by roughly 30% versus on-demand pricing for the same instances. = Coprire l'80% delle ore EC2 stabili con RI coverage taglia la spesa compute di circa il 30% rispetto al prezzo on-demand per le stesse istanze.`,
               context: 'cost',
               difficulty: 'advanced',
+              command:
+                'aws ce get-reservation-coverage --time-period Start=2024-01-01,End=2024-02-01 --granularity MONTHLY --metrics Hour',
+              task: 'Calcola la RI coverage oraria del mese corrente per individuare workload EC2 stabili ancora pagati on-demand.',
             },
             {
               english: 'Compute Savings Plan',
@@ -10292,6 +10887,9 @@ export default {
               context: 'cost',
               difficulty: 'advanced',
               note: "Più flessibile dell'EC2 Instance Savings Plan.",
+              command:
+                'aws savingsplans create-savings-plan --savings-plan-offering-id $OFFER --commitment 50',
+              task: `Acquista un Compute Savings Plan da 50 dollari l'ora sull'offering $OFFER per sbloccare fino al 66 percento di sconto.`,
             },
             {
               english: 'EC2 Instance Savings Plan',
@@ -10330,6 +10928,8 @@ export default {
                 'AWS Cost Explorer recommendations suggest rightsizing 50 idle EC2 instances per month, saving the platform team approximately $12K annually. = Le recommendations di AWS Cost Explorer suggeriscono rightsizing di 50 istanze EC2 inattive al mese, facendo risparmiare al team piattaforma circa 12K dollari annui.',
               context: 'cost',
               difficulty: 'advanced',
+              command: 'aws ce get-rightsizing-recommendation --service AmazonEC2',
+              task: 'Esporta le rightsizing recommendation di Cost Explorer per EC2 per scoprire istanze inattive da dismettere.',
             },
             {
               english: 'Commitment Discount',
@@ -10572,6 +11172,8 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               tool: 'AWS Skill Builder',
+              command: 'xdg-open https://skillbuilder.aws/',
+              task: 'Apri AWS Skill Builder nel browser per iscriverti al learning plan ufficiale della certificazione target di questa settimana.',
             },
             {
               english: 'Practice Exam',
