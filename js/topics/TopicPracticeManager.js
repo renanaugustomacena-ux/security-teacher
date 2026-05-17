@@ -25,6 +25,9 @@
 
 import { ttsService } from '../services/TTSService.js';
 import { sfxService } from '../services/SfxService.js';
+import { analyticsService } from '../services/AnalyticsService.js';
+// eslint-disable-next-line no-unused-vars
+import { masteryService } from '../services/MasteryService.js';
 import { practiceHUD } from '../PracticeHUD.js';
 import { nearMiss } from '../utils/StringDistance.js';
 import { TopicVelocita } from './TopicVelocita.js';
@@ -1648,6 +1651,8 @@ export class TopicPracticeManager {
     const responseTime = this.getResponseTimeSeconds();
     this.totalResponseTime += responseTime;
 
+    this._recordAnalytics(isCorrect, correct, responseTime);
+
     let xpEarned = 0;
     if (isCorrect) {
       this.score++;
@@ -1674,6 +1679,25 @@ export class TopicPracticeManager {
     practiceHUD.onAnswerResult({ correct: isCorrect, streak: this.consecutiveCorrect });
 
     this.showFeedback(isCorrect, correct, xpEarned, accentHint);
+  }
+
+  _recordAnalytics(isCorrect, expectedAnswer, responseTimeSec) {
+    const q = this.questions[this.currentQuestionIndex];
+    if (!q || !this.currentTopicId) return;
+    const english = q.english || q.item?.english || '';
+    if (!english) return;
+    const context = q.context || q.item?.context || 'general';
+    const itemKey = `${this.currentTopicId}:${this.currentLevel}:${context}:${english}`;
+    analyticsService.recordResponse({
+      itemKey,
+      timestamp: new Date().toISOString(),
+      exerciseMode: this.currentMode,
+      correct: isCorrect,
+      responseTimeMs: Math.round(responseTimeSec * 1000),
+      userAnswer: expectedAnswer || '',
+      expectedAnswer: expectedAnswer || '',
+      streakAtTime: this.consecutiveCorrect,
+    });
   }
 
   _hapticTap(ms) {

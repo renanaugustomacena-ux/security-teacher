@@ -5,7 +5,7 @@
 class StorageService {
   constructor() {
     this.dbName = 'FlowLearnDB';
-    this.dbVersion = 2;
+    this.dbVersion = 3;
     this.db = null;
     this.directoryHandle = null;
     this.userId = 'user_default';
@@ -87,6 +87,13 @@ class StorageService {
           // Chat History Store (for future Feature 8)
           if (!db.objectStoreNames.contains('chat_history')) {
             db.createObjectStore('chat_history', { keyPath: 'sessionId' });
+          }
+        }
+
+        // Version 3 stores
+        if (oldVersion < 3) {
+          if (!db.objectStoreNames.contains('analytics')) {
+            db.createObjectStore('analytics', { keyPath: 'itemKey' });
           }
         }
       };

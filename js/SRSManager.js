@@ -1,19 +1,62 @@
-/**
- * SRS (Spaced Repetition System) Manager - Knowledge AIO
- * =======================================================
- *
- * Implements the SM-2 algorithm for spaced repetition.
- * Cards are ingested from lessons, topics, and songs,
- * then reviewed using a flashcard interface.
- */
-
 import { storageService } from './services/StorageService.js';
+
+const DECAY = -0.5;
+const FACTOR = 19 / 81;
+const DESIRED_RETENTION = 0.9;
+const W = [
+  0.40255, 1.18385, 3.173, 15.69105, 7.1949, 0.5345, 1.4604, 0.0046, 1.54575, 0.1192, 1.01925,
+  1.9395, 0.11, 0.29605, 2.2698, 0.2315, 2.9898, 0.51655, 0.6621,
+];
+
+function clamp(val, min, max) {
+  return Math.min(max, Math.max(min, val));
+}
+
+function retrievability(elapsedDays, stability) {
+  return (1 + (FACTOR * elapsedDays) / stability) ** DECAY;
+}
+
+function nextInterval(stability) {
+  return Math.max(1, Math.round((stability / FACTOR) * (DESIRED_RETENTION ** (1 / DECAY) - 1)));
+}
+
+function initialStability(rating) {
+  return W[rating - 1];
+}
+
+function initialDifficulty(rating) {
+  return clamp(W[4] - Math.exp(W[5] * (rating - 3)) + 1, 1, 10);
+}
+
+function updateDifficulty(d, rating) {
+  const meanReversion = W[7] * initialDifficulty(4) + (1 - W[7]) * (d - W[6] * (rating - 3));
+  return clamp(meanReversion, 1, 10);
+}
+
+function recallStability(d, s, r, rating) {
+  const hardPenalty = rating === 2 ? W[11] : 1;
+  const easyBonus = rating === 4 ? W[12] : 1;
+  return (
+    s *
+    (1 +
+      Math.exp(W[8]) *
+        (11 - d) *
+        s ** -W[9] *
+        (Math.exp((1 - r) * W[10]) - 1) *
+        hardPenalty *
+        easyBonus)
+  );
+}
+
+function forgetStability(d, s, r) {
+  return Math.max(0.1, W[13] * d ** -W[14] * (s + 1) ** W[15] * Math.exp((1 - r) * W[16]));
+}
 
 export class SRSManager {
   constructor(progressManager, storageServiceRef) {
     this.progressManager = progressManager;
     this.storage = storageServiceRef || storageService;
-    this.cards = new Map(); // wordKey -> card object
+    this.cards = new Map();
   }
 
   async init() {
@@ -21,6 +64,10 @@ export class SRSManager {
       const allCards = await this.storage.loadAll('srs');
       if (allCards && allCards.length) {
         for (const card of allCards) {
+          if (card.easeFactor !== undefined && card.stability === undefined) {
+            this._migrateCard(card);
+            await this.storage.save('srs', card);
+          }
           this.cards.set(card.wordKey, card);
         }
       }
@@ -30,23 +77,34 @@ export class SRSManager {
     }
   }
 
-  // ─── CARD MANAGEMENT ─────────────────────────
+  _migrateCard(card) {
+    card._legacySM2 = {
+      interval: card.interval,
+      easeFactor: card.easeFactor,
+      repetitions: card.repetitions,
+      nextReview: card.nextReview,
+    };
+    card.difficulty = clamp(10 - ((card.easeFactor - 1.3) / 3.7) * 9, 1, 10);
+    card.stability = Math.max(0.1, card.interval);
+    card.state = card.repetitions === 0 ? 'new' : 'review';
+    card.reps = card.repetitions;
+    card.lapses = 0;
+    card.due = card.nextReview;
+    card.reviewLog = [];
+    delete card.interval;
+    delete card.easeFactor;
+    delete card.repetitions;
+    delete card.nextReview;
+  }
 
-  /**
-   * Add words to the SRS deck.
-   * @param {Array} words - Array of word objects with english, italian, pronunciation, example
-   * @param {string} source - Source identifier (e.g. 'lesson-0-greetings', 'song-happy')
-   */
   addWords(words, source) {
     if (!words || !words.length) return;
-
     const now = new Date().toISOString();
 
     for (const word of words) {
       if (!word.english) continue;
-
       const wordKey = word.english.toLowerCase().trim();
-      if (this.cards.has(wordKey)) continue; // skip duplicates
+      if (this.cards.has(wordKey)) continue;
 
       const card = {
         wordKey,
@@ -55,12 +113,15 @@ export class SRSManager {
         pronunciation: word.pronunciation || '',
         example: word.example || '',
         source: source || 'unknown',
-        interval: 1,
-        easeFactor: 2.5,
-        repetitions: 0,
-        nextReview: now,
+        difficulty: 0,
+        stability: 0,
+        state: 'new',
+        reps: 0,
+        lapses: 0,
+        due: now,
         lastReview: null,
         created: now,
+        reviewLog: [],
       };
 
       this.cards.set(wordKey, card);
@@ -68,90 +129,81 @@ export class SRSManager {
         console.error('Failed to save SRS card:', err);
       });
     }
-
     this.updateDueBadge();
   }
 
-  // ─── RETRIEVAL ────────────────────────────────
-
-  /**
-   * Returns all cards where nextReview <= today, sorted most overdue first.
-   */
   getDueCards() {
     const now = new Date();
     const todayEnd = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
     const due = [];
 
     for (const card of this.cards.values()) {
-      if (new Date(card.nextReview) <= todayEnd) {
+      if (new Date(card.due) <= todayEnd) {
         due.push(card);
       }
     }
-
-    // Sort by most overdue first (oldest nextReview first)
-    due.sort((a, b) => new Date(a.nextReview) - new Date(b.nextReview));
-
+    due.sort((a, b) => new Date(a.due) - new Date(b.due));
     return due;
   }
 
-  /**
-   * Returns count of due cards.
-   */
   getDueCount() {
     return this.getDueCards().length;
   }
 
-  // ─── SM-2 ALGORITHM ──────────────────────────
+  _schedule(card, rating) {
+    const now = new Date();
+    let d = card.difficulty;
+    let s = card.stability;
+    let interval;
 
-  /**
-   * Review a card with the SM-2 algorithm.
-   * @param {string} wordKey
-   * @param {number} quality - 0-5 rating
-   */
-  async reviewCard(wordKey, quality) {
+    if (card.state === 'new') {
+      s = initialStability(rating);
+      d = initialDifficulty(rating);
+      interval = nextInterval(s);
+    } else {
+      const elapsed = card.lastReview
+        ? (now - new Date(card.lastReview)) / (1000 * 60 * 60 * 24)
+        : 0;
+      const r = s > 0 ? retrievability(elapsed, s) : 0;
+      d = updateDifficulty(d, rating);
+
+      if (rating === 1) {
+        s = forgetStability(d, s, r);
+      } else {
+        s = recallStability(d, s, r, rating);
+      }
+      interval = nextInterval(s);
+    }
+
+    return { difficulty: d, stability: s, interval };
+  }
+
+  async reviewCard(wordKey, rating) {
     const card = this.cards.get(wordKey);
     if (!card) return;
 
     const now = new Date();
+    const { difficulty, stability, interval } = this._schedule(card, rating);
 
-    // Update ease factor: EF' = EF + (0.1 - (5 - q) * (0.08 + (5 - q) * 0.02))
-    const q = quality;
-    card.easeFactor += 0.1 - (5 - q) * (0.08 + (5 - q) * 0.02);
-    if (card.easeFactor < 1.3) card.easeFactor = 1.3;
+    card.difficulty = difficulty;
+    card.stability = stability;
 
-    if (q < 3) {
-      // Fail: reset
-      card.interval = 1;
-      card.repetitions = 0;
-    } else if (q === 3) {
-      // Hard: interval stays, repetitions += 1
-      card.repetitions += 1;
-    } else if (q === 4) {
-      // Good
-      if (card.repetitions === 0) {
-        card.interval = 1;
-      } else if (card.repetitions === 1) {
-        card.interval = 6;
-      } else {
-        card.interval = Math.ceil(card.interval * card.easeFactor);
-      }
-      card.repetitions += 1;
-    } else if (q === 5) {
-      // Easy
-      if (card.repetitions === 0) {
-        card.interval = 1;
-      } else if (card.repetitions === 1) {
-        card.interval = 6;
-      } else {
-        card.interval = Math.ceil(card.interval * card.easeFactor * 1.3);
-      }
-      card.repetitions += 1;
+    if (rating === 1) {
+      card.lapses++;
+      card.state = card.state === 'new' ? 'learning' : 'relearning';
+    } else {
+      card.reps++;
+      card.state = 'review';
     }
 
     card.lastReview = now.toISOString();
     const nextDate = new Date(now);
-    nextDate.setDate(nextDate.getDate() + card.interval);
-    card.nextReview = nextDate.toISOString();
+    nextDate.setDate(nextDate.getDate() + interval);
+    card.due = nextDate.toISOString();
+
+    if (!card.reviewLog) card.reviewLog = [];
+    card.reviewLog.push({ rating, date: card.lastReview, elapsed: interval });
+    if (card.reviewLog.length > 20) card.reviewLog.shift();
 
     this.cards.set(wordKey, card);
 
@@ -160,15 +212,16 @@ export class SRSManager {
     } catch (err) {
       console.error('Failed to save reviewed card:', err);
     }
-
     this.updateDueBadge();
   }
 
-  // ─── REVIEW UI ────────────────────────────────
+  _formatInterval(days) {
+    if (days < 1) return '<1d';
+    if (days < 30) return `${days}d`;
+    if (days < 365) return `${Math.round(days / 30)}mo`;
+    return `${(days / 365).toFixed(1)}y`;
+  }
 
-  /**
-   * Render the flashcard review session in the practice container.
-   */
   renderReviewSession() {
     const container = document.getElementById('practice-content');
     const practiceContainer = document.getElementById('practice-container');
@@ -176,16 +229,12 @@ export class SRSManager {
 
     if (!container || !practiceContainer) return;
 
-    // Hide the practice grid, show the practice container
     if (practiceGrid) practiceGrid.classList.add('hidden');
     practiceContainer.classList.remove('hidden');
 
-    // Update header
-    const progressEl = document.getElementById('practice-progress');
     const timerEl = document.getElementById('practice-timer');
     const streakEl = document.getElementById('practice-streak');
     const xpEl = document.getElementById('practice-xp');
-
     if (timerEl) timerEl.textContent = '';
     if (streakEl) streakEl.textContent = '';
     if (xpEl) xpEl.textContent = '';
@@ -193,6 +242,7 @@ export class SRSManager {
     const dueCards = this.getDueCards();
 
     if (dueCards.length === 0) {
+      const progressEl = document.getElementById('practice-progress');
       if (progressEl) progressEl.textContent = '';
       const progressFill = document.getElementById('practice-progress-fill');
       if (progressFill) progressFill.style.width = '100%';
@@ -208,19 +258,17 @@ export class SRSManager {
           </button>
         </div>
       `;
-
       container.querySelector('[data-action="srs-close"]')?.addEventListener('click', () => {
         this.closeReview();
       });
       return;
     }
 
-    // Session state
     this._session = {
       cards: dueCards,
       currentIndex: 0,
       totalCards: dueCards.length,
-      results: [], // { wordKey, quality }
+      results: [],
       showingAnswer: false,
     };
 
@@ -234,7 +282,6 @@ export class SRSManager {
     const { cards, currentIndex, totalCards } = this._session;
     const card = cards[currentIndex];
 
-    // Update progress
     const progressEl = document.getElementById('practice-progress');
     if (progressEl) progressEl.textContent = `${currentIndex + 1}/${totalCards}`;
 
@@ -276,6 +323,8 @@ export class SRSManager {
     const card = cards[currentIndex];
     this._session.showingAnswer = true;
 
+    const intervals = [1, 2, 3, 4].map((r) => this._schedule(card, r).interval);
+
     container.innerHTML = `
       <div class="srs-flashcard srs-flashcard-revealed">
         <div class="srs-front">
@@ -290,17 +339,17 @@ export class SRSManager {
           ${card.example ? `<div class="srs-card-example">"${this._escapeHtml(card.example)}"</div>` : ''}
         </div>
         <div class="srs-rating-btns">
-          <button class="btn srs-btn-again" data-quality="0">
-            Ancora / Again
+          <button class="btn srs-btn-again" data-rating="1">
+            Ancora / Again<span class="srs-interval">${this._formatInterval(intervals[0])}</span>
           </button>
-          <button class="btn srs-btn-hard" data-quality="3">
-            Difficile / Hard
+          <button class="btn srs-btn-hard" data-rating="2">
+            Difficile / Hard<span class="srs-interval">${this._formatInterval(intervals[1])}</span>
           </button>
-          <button class="btn srs-btn-good" data-quality="4">
-            Bene / Good
+          <button class="btn srs-btn-good" data-rating="3">
+            Bene / Good<span class="srs-interval">${this._formatInterval(intervals[2])}</span>
           </button>
-          <button class="btn srs-btn-easy" data-quality="5">
-            Facile / Easy
+          <button class="btn srs-btn-easy" data-rating="4">
+            Facile / Easy<span class="srs-interval">${this._formatInterval(intervals[3])}</span>
           </button>
         </div>
       </div>
@@ -309,29 +358,24 @@ export class SRSManager {
       </div>
     `;
 
-    container.querySelectorAll('[data-quality]').forEach((btn) => {
+    container.querySelectorAll('[data-rating]').forEach((btn) => {
       btn.addEventListener('click', (e) => {
-        const quality = parseInt(e.target.dataset.quality, 10);
-        this._rateCard(quality);
+        const rating = parseInt(e.currentTarget.dataset.rating, 10);
+        this._rateCard(rating);
       });
     });
   }
 
-  async _rateCard(quality) {
+  async _rateCard(rating) {
     if (!this._session) return;
 
     const { cards, currentIndex } = this._session;
     const card = cards[currentIndex];
 
-    // Record result
-    this._session.results.push({ wordKey: card.wordKey, quality });
+    this._session.results.push({ wordKey: card.wordKey, rating });
+    await this.reviewCard(card.wordKey, rating);
 
-    // Apply SM-2 algorithm
-    await this.reviewCard(card.wordKey, quality);
-
-    // Move to next card or show summary
     this._session.currentIndex++;
-
     if (this._session.currentIndex >= this._session.totalCards) {
       this._renderSummary();
     } else {
@@ -344,20 +388,18 @@ export class SRSManager {
     if (!container || !this._session) return;
 
     const { results, totalCards } = this._session;
-    const correct = results.filter((r) => r.quality >= 3).length;
+    const correct = results.filter((r) => r.rating >= 2).length;
     const accuracy = totalCards > 0 ? Math.round((correct / totalCards) * 100) : 0;
 
     const progressEl = document.getElementById('practice-progress');
     if (progressEl) progressEl.textContent = `${totalCards}/${totalCards}`;
-
     const progressFill = document.getElementById('practice-progress-fill');
     if (progressFill) progressFill.style.width = '100%';
 
-    // Count by quality
-    const again = results.filter((r) => r.quality < 3).length;
-    const hard = results.filter((r) => r.quality === 3).length;
-    const good = results.filter((r) => r.quality === 4).length;
-    const easy = results.filter((r) => r.quality === 5).length;
+    const again = results.filter((r) => r.rating === 1).length;
+    const hard = results.filter((r) => r.rating === 2).length;
+    const good = results.filter((r) => r.rating === 3).length;
+    const easy = results.filter((r) => r.rating === 4).length;
 
     container.innerHTML = `
       <div class="srs-summary">
@@ -404,8 +446,6 @@ export class SRSManager {
     this.updateDueBadge();
   }
 
-  // ─── BADGE ────────────────────────────────────
-
   updateDueBadge() {
     const badge = document.getElementById('srs-due-badge');
     if (!badge) return;
@@ -418,8 +458,6 @@ export class SRSManager {
       badge.classList.add('hidden');
     }
   }
-
-  // ─── UTILITY ──────────────────────────────────
 
   _escapeHtml(str) {
     if (!str) return '';

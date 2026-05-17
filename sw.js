@@ -49,6 +49,8 @@ const STATIC_ASSETS = [
   './js/services/LyricsService.js',
   './js/services/SfxService.js',
   './js/services/StorageService.js',
+  './js/services/AnalyticsService.js',
+  './js/services/MasteryService.js',
   './js/services/TTSService.js',
   './js/store/index.js',
   './js/utils/DateUtils.js',

@@ -12,6 +12,8 @@
  */
 import { store } from './store/index.js';
 import { storageService } from './services/StorageService.js';
+import { analyticsService } from './services/AnalyticsService.js';
+import { masteryService } from './services/MasteryService.js';
 import { lyricsService } from './services/LyricsService.js';
 import { MusicManager } from './music.js';
 import { ProgressManager } from './progress.js';
@@ -123,6 +125,14 @@ class App {
       await this.progressManager.init();
     } catch (err) {
       console.error('ProgressManager failed:', err);
+    }
+
+    // 2.1 Analytics & Mastery services (depend on storage + progress)
+    try {
+      await analyticsService.init();
+      await masteryService.init();
+    } catch (err) {
+      console.warn('[pedagogy] analytics/mastery init failed:', err);
     }
 
     // 2a. React to sign-in / sign-out after the first load
