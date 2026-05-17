@@ -1065,19 +1065,27 @@ export class TopicLessonEngine {
   }
 
   /**
-   * Get distractor options from the full item pool
+   * Get distractor options, preferring items from the target's context group
+   * (more plausible neighbors) and falling back to the wider lesson pool.
    */
   _getDistractors(targetItem, allItems, field, count) {
-    const candidates = allItems
-      .filter((it) => it !== targetItem && it[field] !== targetItem[field])
-      .map((it) => it[field]);
+    const targetCtx = targetItem.context;
+    const isPlausible = (it) => it !== targetItem && it[field] && it[field] !== targetItem[field];
 
-    // Deduplicate
-    const unique = [...new Set(candidates)];
+    const sameCtx = allItems.filter((it) => isPlausible(it) && it.context === targetCtx);
+    const otherCtx = allItems.filter((it) => isPlausible(it) && it.context !== targetCtx);
 
-    // Shuffle and take count
-    const shuffled = this._shuffle(unique);
-    return shuffled.slice(0, count);
+    const seen = new Set();
+    const pick = (pool) => {
+      for (const val of this._shuffle(pool).map((it) => it[field])) {
+        if (seen.size >= count) break;
+        if (val && !seen.has(val)) seen.add(val);
+      }
+    };
+    pick(sameCtx);
+    if (seen.size < count) pick(otherCtx);
+
+    return Array.from(seen).slice(0, count);
   }
 
   /**

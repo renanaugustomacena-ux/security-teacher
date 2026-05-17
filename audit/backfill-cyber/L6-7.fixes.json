@@ -1,0 +1,400 @@
+{
+  "fixes": [
+    {
+      "level": "6",
+      "lesson": "sys_access",
+      "english": "Access Control",
+      "set": {
+        "command": "setfacl -m u:alice:rw /etc/secret.conf",
+        "task": "Aggiungi una ACL POSIX che concede all'utente alice i permessi di lettura e scrittura sul file di configurazione segreto."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "sys_access",
+      "english": "Role-Based Access Control (RBAC)",
+      "set": {
+        "command": "kubectl create rolebinding dev-reader --role=pod-reader --user=alice -n staging",
+        "task": "Lega il ruolo pod-reader all'utente alice nel namespace staging per applicare un modello RBAC in Kubernetes."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "sys_access",
+      "english": "Privilege Escalation",
+      "set": {
+        "command": "sudo -l -U www-data",
+        "task": "Elenca i comandi che l'utente www-data puo' eseguire via sudo per individuare possibili vettori di privilege escalation."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "sys_hardening",
+      "english": "System Hardening",
+      "set": {
+        "command": "sudo lynis audit system --quick",
+        "task": "Avvia un audit veloce di hardening con Lynis e raccogli un punteggio di partenza prima di applicare le baseline CIS."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "sys_hardening",
+      "english": "Attack Surface",
+      "set": {
+        "command": "sudo ss -tulnp",
+        "task": "Elenca tutte le porte TCP e UDP in ascolto con il processo proprietario per mappare la superficie di attacco del server."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "sys_hardening",
+      "english": "Attack Surface Reduction",
+      "set": {
+        "command": "sudo systemctl disable --now avahi-daemon cups bluetooth",
+        "task": "Disabilita e ferma servizi non necessari su un server di produzione per ridurre la superficie di attacco."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "sys_hardening",
+      "english": "Baseline Configuration",
+      "set": {
+        "command": "sudo openscap-scanner --profile xccdf_org.ssgproject.content_profile_cis /usr/share/xml/scap/ssg/content/ssg-rhel9-ds.xml",
+        "task": "Confronta la configurazione del sistema con la baseline CIS per RHEL 9 usando OpenSCAP e produci un report di conformita'."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "sys_hardening",
+      "english": "Service Disabling",
+      "set": {
+        "command": "sudo systemctl mask telnet.socket",
+        "task": "Maschera definitivamente il socket telnet in modo che non possa essere riattivato da nessuna dipendenza systemd."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "sys_hardening",
+      "english": "Unused Port",
+      "set": {
+        "command": "sudo ufw deny 23/tcp",
+        "task": "Blocca con UFW la porta 23 (Telnet) inutilizzata sul firewall locale per impedire connessioni in chiaro."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "sys_hardening",
+      "english": "Security Benchmarks (CIS)",
+      "set": {
+        "command": "sudo bash cis-cat.sh -b benchmarks/CIS_Ubuntu_Linux_22.04_LTS_Benchmark_v1.0.0-xccdf.xml -r reports/",
+        "task": "Esegui il CIS-CAT contro la baseline Ubuntu 22.04 e salva il report XCCDF nella cartella reports per la revisione."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "sys_hardening",
+      "english": "Vulnerability Scanning",
+      "set": {
+        "command": "sudo nmap -sV --script vuln 10.0.0.0/24 -oA scans/weekly",
+        "task": "Avvia una scansione delle vulnerabilita' sulla rete /24 con rilevamento delle versioni e salva i risultati in formato Nmap, gnmap e XML."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "sys_hardening",
+      "english": "Trusted Platform Module (TPM)",
+      "set": {
+        "command": "sudo tpm2_pcrread sha256:0,7",
+        "task": "Leggi i PCR 0 e 7 dal TPM 2.0 per verificare che la misurazione del boot non sia cambiata dopo un aggiornamento del firmware."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "sys_monitoring",
+      "english": "Audit Trail",
+      "set": {
+        "command": "sudo auditctl -w /etc/passwd -p wa -k passwd_changes",
+        "task": "Aggiungi una regola auditd che traccia ogni scrittura o modifica degli attributi su /etc/passwd con il tag passwd_changes."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "sys_monitoring",
+      "english": "Log Correlation",
+      "set": {
+        "code": "# Splunk SPL: VPN login fail correlato a admin DB\nindex=auth source=vpn \"authentication failed\"\n| rename user as src_user\n| join src_user [\n    search index=db source=mysql action=admin earliest=-15m\n  ]\n| stats count by src_user, src_ip, _time",
+        "task": "Scrivi una regola SIEM Splunk che correla i login VPN falliti con azioni admin sul database eseguite dallo stesso utente entro 15 minuti."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "sys_monitoring",
+      "english": "Anomaly Detection",
+      "set": {
+        "code": "import pandas as pd\nfrom sklearn.ensemble import IsolationForest\n\ndf = pd.read_csv('/var/log/netflow.csv')\nX = df[['bytes_out', 'flow_duration', 'dst_port']]\nmodel = IsolationForest(contamination=0.01, random_state=42)\ndf['anomaly'] = model.fit_predict(X)\nprint(df[df['anomaly'] == -1])",
+        "task": "Addestra un Isolation Forest sui flussi NetFlow e stampa le righe classificate come anomale per identificare possibili esfiltrazioni di dati."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "sys_monitoring",
+      "english": "Behavioral Analysis",
+      "set": {
+        "code": "# Sigma rule: PowerShell encoded command\ntitle: Suspicious PowerShell EncodedCommand\nlogsource:\n  product: windows\n  service: powershell\ndetection:\n  selection:\n    EventID: 4104\n    ScriptBlockText|contains:\n      - '-EncodedCommand'\n      - 'FromBase64String'\n  condition: selection\nlevel: high",
+        "task": "Scrivi una regola Sigma che intercetta l'esecuzione di PowerShell con comandi codificati in Base64, un comportamento tipico del malware fileless."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "sys_monitoring",
+      "english": "File Integrity Monitoring (FIM)",
+      "set": {
+        "command": "sudo aide --check --config=/etc/aide/aide.conf",
+        "task": "Confronta lo stato corrente dei file critici con il database AIDE per rilevare modifiche non autorizzate ai binari di sistema."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "sys_monitoring",
+      "english": "HIDS (Host-based IDS)",
+      "set": {
+        "command": "sudo /var/ossec/bin/ossec-control status",
+        "task": "Verifica lo stato dei processi del HIDS Wazuh/OSSEC sull'host per confermare che l'agente stia inviando eventi al manager."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "sys_monitoring",
+      "english": "Event ID",
+      "set": {
+        "command": "wevtutil qe Security /q:\"*[System[(EventID=4625)]]\" /c:20 /rd:true /f:text",
+        "task": "Estrai gli ultimi 20 eventi Windows con Event ID 4625 (login fallito) dal log Security per indagare un possibile attacco di brute force."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "sys_monitoring",
+      "english": "Real-time Alerting",
+      "set": {
+        "code": "# Splunk SPL: alert real-time su brute force SSH\nindex=linux sourcetype=auth \"Failed password\"\n| bin _time span=5m\n| stats dc(src_ip) as ips count as attempts by host, _time\n| where attempts > 50\n| eval severity=\"high\"",
+        "task": "Definisci una regola SIEM che genera un alert in tempo reale quando un host registra piu' di 50 tentativi di login SSH falliti in una finestra di 5 minuti."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "sys_config",
+      "english": "Secure Configuration",
+      "set": {
+        "command": "sudo openscap-scanner --profile xccdf_org.ssgproject.content_profile_stig --results scan-results.xml /usr/share/xml/scap/ssg/content/ssg-rhel9-ds.xml",
+        "task": "Verifica la configurazione sicura del sistema contro il profilo STIG con OpenSCAP e produci un report XML per l'audit di conformita'."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "sys_config",
+      "english": "Configuration Drift",
+      "set": {
+        "command": "sudo ansible-playbook --check --diff site.yml -i inventory/prod",
+        "task": "Avvia Ansible in modalita' dry-run con diff per rilevare la deriva della configurazione fra lo stato desiderato e i server di produzione."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "sys_config",
+      "english": "Automated Provisioning",
+      "set": {
+        "command": "terraform apply -auto-approve -var-file=prod.tfvars",
+        "task": "Esegui il provisioning automatizzato dell'infrastruttura applicando il piano Terraform con le variabili di produzione."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "sys_config",
+      "english": "Infrastructure as Code (IaC) Security",
+      "set": {
+        "command": "checkov -d ./terraform --framework terraform --output cli --soft-fail",
+        "task": "Scansiona i file Terraform con Checkov per individuare misconfigurazioni IaC (bucket S3 pubblici, security group permissivi) prima del deploy."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "sys_config",
+      "english": "Group Policy Object (GPO)",
+      "set": {
+        "command": "Get-GPOReport -All -ReportType HTML -Path C:\\reports\\gpo-inventory.html",
+        "task": "Esporta un inventario HTML di tutte le GPO del dominio Active Directory per documentare le impostazioni di sicurezza vigenti."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "sys_config",
+      "english": "SELinux (Security-Enhanced Linux)",
+      "set": {
+        "command": "sudo sestatus && sudo ausearch -m AVC -ts recent",
+        "task": "Verifica lo stato di SELinux e cerca nei log audit i recenti AVC denial per diagnosticare politiche troppo restrittive su un servizio."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "sys_config",
+      "english": "AppArmor",
+      "set": {
+        "command": "sudo aa-status && sudo aa-enforce /etc/apparmor.d/usr.bin.firefox",
+        "task": "Controlla lo stato di AppArmor e forza in modalita' enforce il profilo di Firefox per confinarne le capacita' sul filesystem."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "sys_config",
+      "english": "Sandboxing",
+      "set": {
+        "command": "firejail --net=none --private --seccomp /opt/suspicious/sample.bin",
+        "task": "Esegui un binario sospetto in una sandbox firejail senza rete, con filesystem privato e seccomp attivo per limitare i danni."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ir_process",
+      "english": "Containment",
+      "set": {
+        "command": "sudo iptables -I INPUT 1 -s 10.0.5.42 -j DROP && sudo iptables -I OUTPUT 1 -d 10.0.5.42 -j DROP",
+        "task": "Isola immediatamente l'host compromesso bloccando il traffico in ingresso e uscita verso il suo IP per contenere la propagazione laterale."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ir_process",
+      "english": "Eradication",
+      "set": {
+        "command": "sudo rkhunter --check --skip-keypress --report-warnings-only",
+        "task": "Avvia una scansione rootkit con rkhunter sull'host compromesso durante la fase di eradicazione per individuare e rimuovere artefatti persistenti."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ir_forensics",
+      "english": "Evidence Acquisition",
+      "set": {
+        "command": "sudo dcfldd if=/dev/sdb hash=sha256 hashlog=/evidence/sdb.sha256 of=/evidence/sdb.dd bs=4M conv=noerror,sync",
+        "task": "Acquisisci un'immagine bit a bit del disco sospetto calcolando contestualmente l'hash SHA256 per garantire l'integrita' della prova."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ir_forensics",
+      "english": "Volatile Data (RAM)",
+      "set": {
+        "command": "sudo ./avml --compress /evidence/memory.lime",
+        "task": "Cattura un dump compresso della memoria volatile del sistema Linux compromesso prima dello spegnimento per preservare processi e chiavi in RAM."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ir_forensics",
+      "english": "Disk Image",
+      "set": {
+        "command": "mmls /evidence/sdb.dd && fls -r -m / /evidence/sdb.dd > /evidence/sdb.fls.body",
+        "task": "Lista le partizioni dell'immagine del disco e produci un file body in formato MAC con The Sleuth Kit per costruire la timeline forense."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ir_forensics",
+      "english": "Slack Space",
+      "set": {
+        "command": "sudo blkls -s /evidence/sdb.dd > /evidence/sdb.slack.raw",
+        "task": "Estrai lo slack space dall'immagine forense con The Sleuth Kit per cercare frammenti di file cancellati o dati nascosti."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ir_forensics",
+      "english": "Metadata Analysis",
+      "set": {
+        "command": "exiftool -r -a -ee /evidence/exfiltrated_docs/",
+        "task": "Estrai ricorsivamente tutti i metadati EXIF dai documenti esfiltrati per rivelare autori, GPS, software e timestamp utili all'indagine."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ir_forensics",
+      "english": "Steganography",
+      "set": {
+        "command": "steghide extract -sf suspicious.jpg -p \"$PASSPHRASE\" -xf hidden.bin",
+        "task": "Tenta di estrarre con steghide il payload nascosto in un'immagine JPEG sospetta usando la passphrase recuperata durante l'indagine."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ir_threat_intel",
+      "english": "Indicator of Compromise (IOC)",
+      "set": {
+        "command": "yara -r rules/apt29.yar /opt/quarantine/ > matches.txt",
+        "task": "Cerca l'IOC nei sample messi in quarantena applicando ricorsivamente le regole YARA per il gruppo APT29 e salva i match in un file."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ir_threat_intel",
+      "english": "STIX (Structured Threat Information eXpression)",
+      "set": {
+        "code": "import json\nfrom stix2 import Indicator, Bundle\n\nioc = Indicator(\n    name='APT29 C2 domain',\n    pattern=\"[domain-name:value = 'evil-c2.example']\",\n    pattern_type='stix',\n    valid_from='2026-05-17T00:00:00Z',\n    labels=['malicious-activity'],\n)\nbundle = Bundle(objects=[ioc])\nprint(bundle.serialize(pretty=True))",
+        "task": "Genera un bundle STIX 2.1 in Python contenente un indicatore di compromissione di tipo domain-name pronto per essere condiviso via TAXII."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ir_threat_intel",
+      "english": "TAXII (Trusted Automated eXchange of Indicator Information)",
+      "set": {
+        "code": "import os\nfrom taxii2client.v21 import Server\n\nserver = Server('https://taxii.example.com/taxii2/', user='analyst', password=os.environ['TAXII_PWD'])\napi_root = server.api_roots[0]\ncollection = api_root.collections[0]\nfor obj in collection.get_objects().get('objects', []):\n    print(obj['type'], obj.get('pattern', obj.get('name')))",
+        "task": "Connettiti a un server TAXII 2.1 e itera sulla prima collection per stampare gli oggetti STIX ricevuti dal feed di threat intelligence."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ir_threat_intel",
+      "english": "MITRE ATT&CK Framework",
+      "set": {
+        "command": "curl -s https://raw.githubusercontent.com/mitre/cti/master/enterprise-attack/enterprise-attack.json | jq '.objects[] | select(.type==\"attack-pattern\" and .name==\"Credential Dumping\")'",
+        "task": "Recupera dal repository MITRE ATT&CK il JSON enterprise e filtra con jq la tecnica Credential Dumping per mappare le sotto-tecniche associate."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ir_threat_intel",
+      "english": "OSINT (Open Source Intelligence)",
+      "set": {
+        "command": "theHarvester -d target.com -b bing,crtsh,duckduckgo -l 500 -f /reports/target_osint.html",
+        "task": "Raccogli passivamente email, sottodomini e host pubblici di un dominio target con theHarvester e produci un report HTML."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ir_threat_intel",
+      "english": "Dark Web Monitoring",
+      "set": {
+        "command": "curl -s --socks5-hostname 127.0.0.1:9050 'http://breachforums.onion/search?q=acme.corp'",
+        "task": "Interroga via Tor un forum nel dark web per cercare menzioni del dominio aziendale e individuare credenziali trafugate."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ir_recovery",
+      "english": "Failover",
+      "set": {
+        "command": "sudo pcs cluster standby web01 && sudo pcs status",
+        "task": "Forza il failover del cluster Pacemaker mettendo il nodo web01 in standby e verifica che le risorse migrino sul nodo secondario."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ir_recovery",
+      "english": "Failback",
+      "set": {
+        "command": "sudo pcs cluster unstandby web01 && sudo pcs resource move webserver web01",
+        "task": "Esegui il failback riportando il nodo web01 attivo e spostando manualmente la risorsa webserver sul sito primario riparato."
+      }
+    }
+  ]
+}

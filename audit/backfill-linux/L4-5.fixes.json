@@ -1,0 +1,571 @@
+{
+  "fixes": [
+    {
+      "level": "4",
+      "lesson": "linux_net_basics",
+      "english": "IP Address",
+      "set": {
+        "command": "ip addr show eth0",
+        "task": "Mostra l'indirizzo IP assegnato all'interfaccia eth0 insieme alla maschera di sottorete."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_basics",
+      "english": "Gateway",
+      "set": {
+        "command": "ip route show default",
+        "task": "Visualizza il gateway predefinito attualmente usato dalla macchina per uscire dalla rete locale."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_basics",
+      "english": "DNS",
+      "set": {
+        "command": "dig +short google.com",
+        "task": "Risolvi il nome di dominio google.com tramite DNS e stampa solo l'indirizzo IP restituito."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_basics",
+      "english": "Packet",
+      "set": {
+        "command": "sudo tcpdump -i eth0 -c 100 'tcp port 80'",
+        "task": "Cattura 100 pacchetti TCP destinati alla porta 80 sull'interfaccia eth0 per ispezionare il traffico HTTP."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_basics",
+      "english": "Latency",
+      "set": {
+        "command": "ping -c 10 8.8.8.8",
+        "task": "Misura la latenza verso 8.8.8.8 inviando 10 pacchetti ICMP e calcolando il tempo medio di andata e ritorno."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_basics",
+      "english": "Bandwidth",
+      "set": {
+        "command": "sudo iftop -i eth0",
+        "task": "Monitora in tempo reale la larghezza di banda consumata da ogni connessione attiva sull'interfaccia eth0."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_basics",
+      "english": "Firewall",
+      "set": {
+        "command": "sudo iptables -L -n -v",
+        "task": "Elenca tutte le regole del firewall caricate nel kernel, mostrando contatori di pacchetti e indirizzi numerici."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_config",
+      "english": "Interface",
+      "set": {
+        "command": "ip -br link show",
+        "task": "Elenca tutte le interfacce di rete del sistema in formato compatto con il loro stato operativo."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_config",
+      "english": "Hostname",
+      "set": {
+        "command": "sudo hostnamectl set-hostname web01.example.com",
+        "task": "Imposta in modo permanente il nome host della macchina a web01.example.com aggiornando i file di sistema."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_config",
+      "english": "Route",
+      "set": {
+        "command": "ip route show",
+        "task": "Stampa la tabella di routing del kernel per verificare quali rotte sono configurate sul sistema."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_config",
+      "english": "Static IP",
+      "set": {
+        "command": "sudo ip addr add 192.168.1.50/24 dev eth0",
+        "task": "Assegna in modo statico l'indirizzo 192.168.1.50 con maschera /24 all'interfaccia eth0."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_config",
+      "english": "Dynamic IP",
+      "set": {
+        "command": "sudo dhclient -v eth0",
+        "task": "Richiedi un IP dinamico al server DHCP per l'interfaccia eth0 mostrando i dettagli della negoziazione."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_config",
+      "english": "Network Manager",
+      "set": {
+        "command": "nmcli device status",
+        "task": "Consulta lo stato di tutte le interfacce gestite da NetworkManager e le connessioni attualmente attive."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_config",
+      "english": "Wireless",
+      "set": {
+        "command": "nmcli device wifi connect MyHomeWiFi password segret123",
+        "task": "Connetti l'adattatore wireless alla rete Wi-Fi chiamata MyHomeWiFi usando la passphrase indicata."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_config",
+      "english": "Ethernet",
+      "set": {
+        "command": "sudo ethtool eth0",
+        "task": "Ispeziona velocita, duplex e stato del link della scheda ethernet eth0 per diagnosticare problemi fisici."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_config",
+      "english": "Localhost",
+      "set": {
+        "command": "ping -c 4 127.0.0.1",
+        "task": "Verifica che lo stack TCP/IP locale risponda inviando quattro pacchetti all'indirizzo di loopback."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_remote",
+      "english": "SSH",
+      "set": {
+        "command": "ssh -p 2222 admin@server.example.com",
+        "task": "Apri una sessione SSH come utente admin verso server.example.com utilizzando la porta non standard 2222."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_remote",
+      "english": "Key",
+      "set": {
+        "command": "ssh-keygen -t ed25519 -C 'admin@laptop'",
+        "task": "Genera una nuova coppia di chiavi SSH di tipo ed25519 e marcala con un commento identificativo."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_remote",
+      "english": "Public Key",
+      "set": {
+        "command": "ssh-copy-id -i ~/.ssh/id_ed25519.pub user@server.example.com",
+        "task": "Installa la chiave pubblica nel file authorized_keys del server remoto per abilitare il login senza password."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_remote",
+      "english": "Private Key",
+      "set": {
+        "command": "chmod 600 ~/.ssh/id_ed25519",
+        "task": "Restringi i permessi della chiave privata in modo che solo il proprietario possa leggerla, requisito di OpenSSH."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_remote",
+      "english": "Passphrase",
+      "set": {
+        "command": "ssh-keygen -p -f ~/.ssh/id_ed25519",
+        "task": "Cambia o aggiungi la passphrase a una chiave SSH esistente senza rigenerare la coppia di chiavi."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_remote",
+      "english": "SCP",
+      "set": {
+        "command": "scp -P 22 ./backup.tar.gz user@server.example.com:/var/backups/",
+        "task": "Trasferisci il file backup.tar.gz nella directory /var/backups del server remoto tramite canale cifrato."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_remote",
+      "english": "Tunnel",
+      "set": {
+        "command": "ssh -L 5432:localhost:5432 user@db.example.com",
+        "task": "Apri un tunnel SSH che inoltra la porta locale 5432 al database PostgreSQL del server remoto."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_diag",
+      "english": "Ping",
+      "set": {
+        "command": "ping -c 4 google.com",
+        "task": "Verifica la raggiungibilita del server google.com inviando 4 pacchetti ICMP e attendendo le risposte."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_diag",
+      "english": "Trace",
+      "set": {
+        "command": "traceroute 8.8.8.8",
+        "task": "Traccia il percorso dei pacchetti hop per hop fino a 8.8.8.8 per individuare dove si introduce la latenza."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_diag",
+      "english": "Lookup",
+      "set": {
+        "command": "nslookup example.com 8.8.8.8",
+        "task": "Interroga il server DNS 8.8.8.8 per ottenere i record associati al dominio example.com."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_diag",
+      "english": "Listen",
+      "set": {
+        "command": "sudo ss -tlnp",
+        "task": "Elenca tutte le porte TCP in ascolto mostrando il PID e il nome del processo che le ha aperte."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_diag",
+      "english": "Scan",
+      "set": {
+        "command": "nmap -sV -p 1-1000 192.168.1.10",
+        "task": "Scansiona le prime 1000 porte dell'host 192.168.1.10 cercando di identificare versione e tipo di servizio."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_diag",
+      "english": "Traffic",
+      "set": {
+        "command": "sudo iftop -i eth0 -n",
+        "task": "Osserva il traffico di rete in tempo reale sull'interfaccia eth0 senza risolvere gli host in nomi DNS."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_diag",
+      "english": "Capture",
+      "set": {
+        "command": "sudo tcpdump -i eth0 -w capture.pcap host 10.0.0.5",
+        "task": "Cattura su file capture.pcap tutto il traffico da e verso l'host 10.0.0.5 per un'analisi successiva con Wireshark."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_diag",
+      "english": "Socket",
+      "set": {
+        "command": "ss -tunap",
+        "task": "Elenca tutti i socket TCP e UDP, sia in ascolto che connessi, mostrando il processo proprietario di ciascuno."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_proc_mgmt",
+      "english": "PID",
+      "set": {
+        "command": "pgrep -fa nginx",
+        "task": "Trova il PID e la riga di comando completa di ogni processo nginx in esecuzione sul sistema."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_proc_mgmt",
+      "english": "Top",
+      "set": {
+        "command": "top -o %CPU",
+        "task": "Avvia top ordinando i processi per utilizzo CPU decrescente, cosi i piu pesanti compaiono in cima."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_proc_mgmt",
+      "english": "Kill",
+      "set": {
+        "command": "kill -9 1234",
+        "task": "Termina forzatamente il processo con PID 1234 inviandogli il segnale SIGKILL non intercettabile."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_proc_mgmt",
+      "english": "Signal",
+      "set": {
+        "command": "kill -SIGTERM 1234",
+        "task": "Invia il segnale SIGTERM al processo 1234 chiedendogli di chiudersi in modo pulito liberando le risorse."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_proc_mgmt",
+      "english": "Priority",
+      "set": {
+        "command": "sudo renice -n -5 -p 1234",
+        "task": "Alza la priorita di scheduling del processo 1234 portando il suo valore nice a -5."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_proc_mgmt",
+      "english": "Background",
+      "set": {
+        "command": "./long_build.sh &",
+        "task": "Lancia lo script long_build.sh in background per liberare subito il terminale per altri comandi."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_proc_mgmt",
+      "english": "Foreground",
+      "set": {
+        "command": "fg %1",
+        "task": "Riporta in primo piano il job numero 1 sospeso o in background per interagirvi nuovamente."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_proc_mgmt",
+      "english": "Job",
+      "set": {
+        "command": "jobs -l",
+        "task": "Elenca tutti i job attivi nella shell corrente mostrando anche il PID di ciascuno."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_proc_mgmt",
+      "english": "Nice",
+      "set": {
+        "command": "nice -n 19 make -j8",
+        "task": "Avvia una compilazione parallela a priorita minima cosi cede CPU ai carichi interattivi quando ce ne bisogno."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_proc_mgmt",
+      "english": "Zombie",
+      "set": {
+        "command": "ps -eo pid,ppid,stat,comm | awk '$3 ~ /^Z/'",
+        "task": "Individua tutti i processi zombie ancora presenti nella tabella dei processi insieme al loro processo padre."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_services",
+      "english": "Service",
+      "set": {
+        "command": "sudo systemctl restart nginx",
+        "task": "Riavvia il servizio nginx per applicare le modifiche alla configurazione appena salvate."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_services",
+      "english": "Daemon",
+      "set": {
+        "command": "systemctl list-units --type=service --state=running",
+        "task": "Elenca tutti i demoni gestiti da systemd attualmente in esecuzione sulla macchina."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_services",
+      "english": "Start",
+      "set": {
+        "command": "sudo systemctl start sshd",
+        "task": "Avvia immediatamente il demone SSH senza attendere il prossimo riavvio del sistema."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_services",
+      "english": "Stop",
+      "set": {
+        "command": "sudo systemctl stop postgresql",
+        "task": "Ferma il servizio PostgreSQL prima di eseguire un upgrade del motore del database."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_services",
+      "english": "Restart",
+      "set": {
+        "command": "sudo systemctl restart nginx",
+        "task": "Forza il riavvio completo di nginx interrompendo le connessioni attive e ripartendo da zero."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_services",
+      "english": "Enable",
+      "set": {
+        "command": "sudo systemctl enable --now sshd",
+        "task": "Abilita il demone SSH all'avvio automatico al boot e attivalo immediatamente nella sessione corrente."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_services",
+      "english": "Disable",
+      "set": {
+        "command": "sudo systemctl disable --now bluetooth",
+        "task": "Disattiva il servizio bluetooth ora e impedisci che venga avviato al prossimo boot del sistema."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_services",
+      "english": "Status",
+      "set": {
+        "command": "systemctl status nginx",
+        "task": "Verifica lo stato corrente di nginx mostrando se e attivo, il PID principale e le ultime righe di log."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_services",
+      "english": "Reload",
+      "set": {
+        "command": "sudo systemctl reload nginx",
+        "task": "Ricarica la configurazione di nginx senza interrompere le connessioni client gia stabilite."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_services",
+      "english": "Log",
+      "set": {
+        "command": "journalctl -u nginx -f --since '10 min ago'",
+        "task": "Segui in tempo reale gli ultimi 10 minuti di log generati dal servizio nginx tramite journalctl."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_scheduling",
+      "english": "Cron",
+      "set": {
+        "command": "systemctl status cron",
+        "task": "Controlla se il demone cron e attivo e sta accettando le pianificazioni configurate dagli utenti."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_scheduling",
+      "english": "Crontab",
+      "set": {
+        "command": "crontab -e",
+        "task": "Apri nell'editor predefinito la crontab personale dell'utente corrente per aggiungere o modificare i job pianificati."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_scheduling",
+      "english": "At",
+      "set": {
+        "command": "echo 'sudo reboot' | at 03:00 tomorrow",
+        "task": "Pianifica un riavvio one-shot alle 03:00 di domani notte usando il comando at per non disturbare gli utenti."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_scheduling",
+      "english": "Reboot",
+      "set": {
+        "command": "sudo systemctl reboot",
+        "task": "Riavvia il sistema in modo pulito chiudendo prima tutti i servizi gestiti da systemd."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_monitoring",
+      "english": "Memory",
+      "set": {
+        "command": "free -h",
+        "task": "Mostra l'utilizzo di memoria RAM e swap in formato leggibile dall'uomo con unita Mi/Gi."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_monitoring",
+      "english": "Load",
+      "set": {
+        "command": "uptime",
+        "task": "Leggi il load average a 1, 5 e 15 minuti per capire se il sistema e sotto pressione sostenuta."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_monitoring",
+      "english": "Uptime",
+      "set": {
+        "command": "uptime -p",
+        "task": "Stampa da quanto tempo il sistema e acceso in formato discorsivo, ad esempio 'up 3 weeks, 2 days'."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_monitoring",
+      "english": "CPU Usage",
+      "set": {
+        "command": "top -o %CPU",
+        "task": "Apri top ordinato per utilizzo CPU per identificare al volo il worker che divora cicli durante un picco di latenza."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_monitoring",
+      "english": "Stats",
+      "set": {
+        "command": "vmstat 1 10",
+        "task": "Campiona ogni secondo per 10 volte le statistiche di CPU, memoria, swap e I/O del sistema."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_monitoring",
+      "english": "Watch",
+      "set": {
+        "command": "watch -n2 df -h",
+        "task": "Aggiorna ogni 2 secondi l'output di df -h per monitorare in tempo reale un filesystem che si sta riempiendo."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_monitoring",
+      "english": "Real-time",
+      "set": {
+        "command": "htop",
+        "task": "Avvia htop per esplorare in tempo reale processi e thread con interfaccia interattiva a colori."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_monitoring",
+      "english": "Limit",
+      "set": {
+        "command": "ulimit -n 65536",
+        "task": "Alza a 65536 il numero massimo di file descriptor apribili dai processi della shell corrente."
+      }
+    }
+  ]
+}

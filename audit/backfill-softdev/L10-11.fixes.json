@@ -1,0 +1,247 @@
+{
+  "fixes": [
+    {
+      "level": "10",
+      "lesson": "dev_perf_basics",
+      "english": "Latency",
+      "set": {
+        "command": "ab -n 1000 -c 10 https://api.example.com/health",
+        "task": "Misura la latenza dell'endpoint di health inviando 1000 richieste con 10 client concorrenti per vedere il tempo medio di risposta."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dev_perf_basics",
+      "english": "Throughput",
+      "set": {
+        "command": "k6 run --vus 100 --duration 30s loadtest.js",
+        "task": "Esegui un load test con 100 utenti virtuali per 30 secondi per misurare il throughput in richieste al secondo dell'API."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dev_perf_basics",
+      "english": "Response Time",
+      "set": {
+        "command": "curl -o /dev/null -s -w 'time_total: %{time_total}s\\n' https://api.example.com/users",
+        "task": "Misura il tempo di risposta totale dell'endpoint /users senza scaricare il body, mostrando solo la metrica time_total."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dev_perf_basics",
+      "english": "Profiling",
+      "set": {
+        "command": "node --prof app.js && node --prof-process isolate-*.log > profile.txt",
+        "task": "Avvia l'app Node.js con il profiler V8 attivo e poi processa il log generato per ottenere un report leggibile delle funzioni piu' costose."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dev_perf_basics",
+      "english": "Benchmark",
+      "set": {
+        "command": "ab -n 5000 -c 50 -k https://api.example.com/products",
+        "task": "Esegui un benchmark con 5000 richieste totali e 50 connessioni keep-alive concorrenti sull'endpoint /products per confrontare due versioni del backend."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dev_perf_caching",
+      "english": "Cache",
+      "set": {
+        "code": "async function getUser(id) {\n  let user = await cache.get(`user:${id}`);\n  if (!user) {\n    user = await db.users.findById(id);\n    await cache.set(`user:${id}`, user, { ttl: 3600 });\n  }\n  return user;\n}",
+        "task": "Implementa il pattern cache-aside che prima cerca l'utente in cache, e in caso di miss lo carica dal DB salvandolo con TTL di un'ora."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dev_perf_caching",
+      "english": "Redis",
+      "set": {
+        "command": "redis-cli -h cache.internal -p 6379 GET user:1234",
+        "task": "Connettiti al Redis interno sulla porta 6379 e leggi il valore associato alla chiave user:1234 per verificare se la sessione e' ancora in cache."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dev_perf_caching",
+      "english": "Cache Invalidation",
+      "set": {
+        "command": "redis-cli -h cache.internal DEL user:1234 product:42",
+        "task": "Invalida manualmente la cache dell'utente 1234 e del prodotto 42 dopo un aggiornamento del DB, per evitare che i client leggano dati stantii."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dev_perf_caching",
+      "english": "Cache Hit",
+      "set": {
+        "command": "redis-cli INFO stats | grep -E 'keyspace_hits|keyspace_misses'",
+        "task": "Estrai dalle statistiche di Redis i contatori di cache hit e cache miss per calcolare il tasso di hit ratio del cluster."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dev_perf_caching",
+      "english": "Cache Miss",
+      "set": {
+        "command": "redis-cli INFO stats | grep keyspace_misses",
+        "task": "Monitora il numero totale di cache miss su Redis per capire se la TTL impostata e' troppo aggressiva e va alzata."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dev_perf_caching",
+      "english": "Time To Live (TTL)",
+      "set": {
+        "command": "redis-cli SET session:abc123 '{\"userId\":42}' EX 1800",
+        "task": "Salva una sessione utente in Redis impostando un TTL di 1800 secondi (30 minuti) dopo i quali la chiave scade automaticamente."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dev_perf_caching",
+      "english": "Write-through Cache",
+      "set": {
+        "code": "async function updateUser(id, data) {\n  await db.users.update(id, data);\n  await cache.set(`user:${id}`, data, { ttl: 3600 });\n  return data;\n}",
+        "task": "Implementa una scrittura write-through che aggiorna prima il database e poi sincronizza la cache con gli stessi dati, garantendo coerenza tra i due."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dev_perf_caching",
+      "english": "Browser Caching",
+      "set": {
+        "code": "app.use('/static', express.static('public', {\n  maxAge: '1y',\n  immutable: true,\n  etag: true\n}));",
+        "task": "Configura Express per servire gli asset statici con un header Cache-Control di un anno e flag immutable, cosi' il browser non li riscarica fino al deploy successivo."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dev_perf_scaling",
+      "english": "Read Replica",
+      "set": {
+        "code": "const writeDb = new Pool({ host: 'db-primary.internal' });\nconst readDb = new Pool({ host: 'db-replica.internal' });\n\nasync function listProducts() {\n  return readDb.query('SELECT * FROM products LIMIT 100');\n}",
+        "task": "Separa le connessioni in due pool distinti per primario e replica e instrada le query di lettura sulla read replica per alleggerire il master."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dev_perf_scaling",
+      "english": "Auto-scaling",
+      "set": {
+        "command": "kubectl autoscale deployment api --cpu-percent=70 --min=3 --max=20",
+        "task": "Configura un Horizontal Pod Autoscaler sul deployment api che mantiene da 3 a 20 repliche puntando a un utilizzo CPU medio del 70 percento."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dev_perf_scaling",
+      "english": "Partitioning",
+      "set": {
+        "code": "CREATE TABLE orders (\n  id BIGSERIAL,\n  user_id INT NOT NULL,\n  created_at TIMESTAMP NOT NULL\n) PARTITION BY RANGE (created_at);\n\nCREATE TABLE orders_2026_q1 PARTITION OF orders\n  FOR VALUES FROM ('2026-01-01') TO ('2026-04-01');",
+        "task": "Crea una tabella orders partizionata per range di data, e definisci la partizione del primo trimestre 2026 per accelerare le query temporali."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dev_perf_optimize",
+      "english": "performance bottleneck",
+      "set": {
+        "command": "py-spy record -o profile.svg --duration 60 --pid $(pgrep -f myapp)",
+        "task": "Registra un flame graph del processo Python in produzione per 60 secondi cosi' da individuare la funzione che sta creando il collo di bottiglia."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dev_perf_optimize",
+      "english": "Memoization",
+      "set": {
+        "code": "const memoizedFn = useMemo(() => computeExpensive(data), [data]);",
+        "task": "Applica useMemo per memoizzare il risultato di computeExpensive in un componente React, evitando di ricalcolarlo a ogni render se data non cambia."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dev_perf_optimize",
+      "english": "Memory Leak",
+      "set": {
+        "command": "node --inspect=0.0.0.0:9229 app.js",
+        "task": "Avvia l'app Node.js con l'inspector remoto in ascolto sulla porta 9229 cosi' da collegare Chrome DevTools e catturare due heap snapshot da confrontare per individuare il memory leak."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dev_perf_optimize",
+      "english": "Lazy Loading",
+      "set": {
+        "code": "const HeavyChart = lazy(() => import('./HeavyChart'));\n\nfunction Dashboard() {\n  return (\n    <Suspense fallback={<Spinner />}>\n      <HeavyChart />\n    </Suspense>\n  );\n}",
+        "task": "Importa HeavyChart con React.lazy e avvolgilo in un Suspense con spinner, cosi' il bundle del grafico viene scaricato solo quando serve."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dev_perf_optimize",
+      "english": "Prefetching",
+      "set": {
+        "code": "<link rel=\"prefetch\" href=\"/checkout.js\" as=\"script\">\n<link rel=\"preconnect\" href=\"https://api.payments.example.com\">",
+        "task": "Aggiungi nell'head della pagina un hint di prefetch per lo script del checkout e un preconnect verso il gateway di pagamento, cosi' la navigazione successiva risulta istantanea."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dev_perf_optimize",
+      "english": "Indexing",
+      "set": {
+        "code": "CREATE INDEX CONCURRENTLY idx_orders_user_status ON orders(user_id, status) WHERE status IN ('pending', 'paid');",
+        "task": "Crea un indice parziale composto su user_id e status filtrato sugli ordini pending e paid, senza bloccare le scritture grazie a CONCURRENTLY."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dev_career_docs",
+      "english": "Diagramming",
+      "set": {
+        "code": "```mermaid\nsequenceDiagram\n  Client->>API: POST /login\n  API->>DB: SELECT user\n  DB-->>API: row\n  API-->>Client: 200 + JWT\n```",
+        "task": "Scrivi un sequence diagram Mermaid che documenta il flusso di login fra client, API e database, da incollare direttamente nella RFC."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dev_career_docs",
+      "english": "API Documentation",
+      "set": {
+        "code": "/**\n * @openapi\n * /users/{id}:\n *   get:\n *     summary: Get user by id\n *     parameters:\n *       - in: path\n *         name: id\n *         required: true\n *         schema: { type: integer }\n *     responses:\n *       200:\n *         description: User found\n */",
+        "task": "Annota l'endpoint GET /users/{id} con un blocco OpenAPI in formato JSDoc cosi' che Swagger generi automaticamente la documentazione interattiva."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dev_career_docs",
+      "english": "Changelog",
+      "set": {
+        "code": "## [1.4.0] - 2026-05-17\n### Added\n- Endpoint /users/{id}/avatar per upload immagine profilo.\n### Fixed\n- Race condition nel rinnovo del JWT (#482).\n### Deprecated\n- Header X-Api-Token, usare Authorization: Bearer.",
+        "task": "Aggiungi al CHANGELOG.md una nuova entry per la versione 1.4.0 seguendo il formato Keep a Changelog con sezioni Added, Fixed e Deprecated."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dev_career_docs",
+      "english": "Self-documenting Code",
+      "set": {
+        "code": "// Prima: cosa fa questo numero?\nif (user.failedAttempts > 5) lock(user);\n\n// Dopo: il codice si spiega da solo.\nconst MAX_LOGIN_ATTEMPTS = 5;\nif (user.failedAttempts > MAX_LOGIN_ATTEMPTS) lockAccount(user);",
+        "task": "Refattorizza il controllo dei tentativi di login estraendo il magic number in una costante MAX_LOGIN_ATTEMPTS e rinominando lock in lockAccount, cosi' il codice si auto-documenta."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dev_career_docs",
+      "english": "README.md",
+      "set": {
+        "code": "# my-app\n\nBackend Node.js per la gestione ordini.\n\n## Quick start\n\n```bash\nnpm install\ncp .env.example .env\nnpm run dev\n```\n\n## Test\n\n```bash\nnpm test\n```",
+        "task": "Scrivi un README.md minimale con titolo, una riga di descrizione, una sezione Quick start con i comandi per installare e avviare l'app in dev, e una sezione Test."
+      }
+    }
+  ]
+}

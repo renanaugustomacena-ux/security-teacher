@@ -1,0 +1,616 @@
+{
+  "fixes": [
+    {
+      "level": "2",
+      "lesson": "py_conditions",
+      "english": "If Statement",
+      "set": {
+        "code": "if order.total > 100:\n    apply_discount(order, percent=10)\nelse:\n    order.shipping_fee = 5.99",
+        "task": "Applica uno sconto del 10% agli ordini sopra i 100 euro e altrimenti aggiungi le spese di spedizione."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_conditions",
+      "english": "Else Clause",
+      "set": {
+        "code": "if user.is_authenticated:\n    return render_dashboard(user)\nelse:\n    return redirect('/login')",
+        "task": "Mostra la dashboard agli utenti autenticati e, nel ramo else, reindirizza al login."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_conditions",
+      "english": "Elif (Else If)",
+      "set": {
+        "code": "if status_code < 300:\n    log.info(\"ok\")\nelif status_code < 500:\n    log.warning(\"client error\")\nelse:\n    log.error(\"server error\")",
+        "task": "Usa una catena elif per classificare i codici di stato HTTP in ok, errore client e errore server."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_conditions",
+      "english": "Comparison Operator",
+      "set": {
+        "code": "expired = token.expires_at <= datetime.utcnow()\nif expired or token.revoked:\n    raise AuthError(\"token invalid\")",
+        "task": "Confronta la scadenza del token con l'orario corrente usando l'operatore <= e solleva un errore se e' scaduto."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_conditions",
+      "english": "Boolean Expression",
+      "set": {
+        "code": "can_checkout = cart.items and user.has_payment_method and not cart.is_locked\nif can_checkout:\n    process_order(cart, user)",
+        "task": "Costruisci un'espressione booleana che combini carrello non vuoto, metodo di pagamento e flag di blocco prima del checkout."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_conditions",
+      "english": "Nested If",
+      "set": {
+        "code": "if user.is_active:\n    if user.role == \"admin\":\n        grant_full_access(user)\n    else:\n        grant_read_access(user)",
+        "task": "Annida un if interno sul ruolo dentro un if esterno sullo stato attivo dell'utente per assegnare i permessi."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_conditions",
+      "english": "Conditional Execution",
+      "set": {
+        "code": "if settings.DEBUG:\n    enable_sql_echo(engine)\nrun_migrations(engine)",
+        "task": "Esegui codice in modo condizionale: attiva il logging SQL solo se la modalita' debug e' abilitata."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_conditions",
+      "english": "Membership Operator (in)",
+      "set": {
+        "code": "ALLOWED_ROLES = {\"admin\", \"editor\", \"viewer\"}\nif user.role in ALLOWED_ROLES:\n    grant_access(user)",
+        "task": "Verifica con l'operatore in se il ruolo dell'utente appartiene al set dei ruoli consentiti."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_conditions",
+      "english": "Identity Operator (is)",
+      "set": {
+        "code": "result = cache.get(key)\nif result is None:\n    result = fetch_from_db(key)\n    cache.set(key, result)",
+        "task": "Usa l'operatore di identita' is per controllare se il valore in cache e' esattamente None prima di interrogare il database."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_conditions",
+      "english": "Truthiness",
+      "set": {
+        "code": "errors = validate(form_data)\nif errors:\n    return render(\"form.html\", errors=errors)\nsave(form_data)",
+        "task": "Sfrutta la truthiness della lista di errori per decidere se mostrare di nuovo il form o salvare i dati."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_loops",
+      "english": "For Loop",
+      "set": {
+        "code": "for user in db.query(User).filter_by(active=True):\n    user.send_email(\"Weekly newsletter\")",
+        "task": "Itera con un ciclo for sugli utenti attivi del database e invia a ciascuno la newsletter settimanale."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_loops",
+      "english": "While Loop",
+      "set": {
+        "code": "attempts = 0\nwhile attempts < 3 and not connected:\n    connected = try_connect(host)\n    attempts += 1",
+        "task": "Usa un ciclo while per ritentare la connessione fino a tre volte o fino al successo."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_loops",
+      "english": "Iteration",
+      "set": {
+        "code": "for row in csv_reader:\n    if row[\"status\"] == \"paid\":\n        total += float(row[\"amount\"])",
+        "task": "Ad ogni iterazione del CSV somma l'importo solo se la riga ha lo stato pagato."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_loops",
+      "english": "Break Statement",
+      "set": {
+        "code": "for user in users:\n    if user.email == target_email:\n        found = user\n        break",
+        "task": "Termina il ciclo con break appena trovi l'utente con l'email cercata, evitando iterazioni inutili."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_loops",
+      "english": "Continue Statement",
+      "set": {
+        "code": "for path in files:\n    if path.name.startswith(\".\"):\n        continue\n    process(path)",
+        "task": "Salta con continue i file nascosti e processa solo i rimanenti dentro il ciclo."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_loops",
+      "english": "Range (function)",
+      "set": {
+        "code": "for page in range(1, total_pages + 1):\n    items.extend(api.fetch_page(page))",
+        "task": "Usa range per iterare sui numeri di pagina e accumulare i risultati di un'API paginata."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_loops",
+      "english": "Infinite Loop",
+      "set": {
+        "code": "while True:\n    message = queue.get()\n    handler.process(message)\n    queue.task_done()",
+        "task": "Costruisci un ciclo infinito che consumi messaggi da una coda di lavoro finche' il servizio resta attivo."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_loops",
+      "english": "Nested Loop",
+      "set": {
+        "code": "for row in matrix:\n    for value in row:\n        if value < 0:\n            negatives += 1",
+        "task": "Usa un ciclo annidato su righe e colonne di una matrice per contare i valori negativi."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_loops",
+      "english": "Else in Loops",
+      "set": {
+        "code": "for item in inventory:\n    if item.sku == sku:\n        break\nelse:\n    raise ItemNotFound(sku)",
+        "task": "Aggiungi un blocco else al ciclo for che venga eseguito solo se nessuna iterazione ha invocato break."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_logic",
+      "english": "And Operator",
+      "set": {
+        "code": "if user.is_authenticated and user.has_permission(\"edit\"):\n    show_edit_button()",
+        "task": "Combina con l'operatore and l'autenticazione e il permesso di modifica prima di mostrare il pulsante."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_logic",
+      "english": "Or Operator",
+      "set": {
+        "code": "display_name = profile.nickname or profile.email or \"Anonymous\"",
+        "task": "Usa l'operatore or in catena per scegliere il primo nome non vuoto da nickname, email o un default."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_logic",
+      "english": "Not Operator",
+      "set": {
+        "code": "if not response.ok:\n    raise APIError(response.status_code)",
+        "task": "Inverti con l'operatore not il flag di successo della risposta HTTP per sollevare un errore."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_logic",
+      "english": "Short-circuit Evaluation",
+      "set": {
+        "code": "if user is not None and user.is_admin:\n    show_admin_panel()",
+        "task": "Sfrutta la valutazione a corto circuito per proteggerti da user None prima di leggere l'attributo is_admin."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_logic",
+      "english": "Precedence (Logical)",
+      "set": {
+        "code": "if (is_admin or is_owner) and not is_banned:\n    allow_action()",
+        "task": "Usa le parentesi per controllare la precedenza logica tra or, and e not nella regola di autorizzazione."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_logic",
+      "english": "Bitwise Operator",
+      "set": {
+        "code": "READ, WRITE, EXEC = 0b100, 0b010, 0b001\npermissions = READ | WRITE\nif permissions & WRITE:\n    file.write(data)",
+        "task": "Combina i flag dei permessi con l'operatore bit a bit | e verifica un singolo bit con &."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_logic",
+      "english": "Any (function)",
+      "set": {
+        "code": "if any(order.is_overdue for order in orders):\n    notify_collections_team()",
+        "task": "Usa la funzione any con un'espressione generatore per rilevare se almeno un ordine e' in ritardo."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_logic",
+      "english": "All (function)",
+      "set": {
+        "code": "if all(field.is_valid for field in form.fields):\n    form.save()",
+        "task": "Usa la funzione all per salvare il form solo quando ogni campo passa la validazione."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_logic",
+      "english": "Compound Condition",
+      "set": {
+        "code": "if temperature > 30 and humidity > 80 and not ventilation_on:\n    alerts.send(\"climate risk\")",
+        "task": "Crea una condizione composta che attivi un allarme solo se temperatura, umidita' e ventilazione coincidono."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_flow_patterns",
+      "english": "Early Return",
+      "set": {
+        "code": "def charge(user, amount):\n    if amount <= 0:\n        return False\n    if not user.payment_method:\n        return False\n    return gateway.charge(user, amount)",
+        "task": "Applica il pattern early return per gestire i casi limite all'inizio della funzione e mantenere piatto il flusso principale."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_flow_patterns",
+      "english": "Guard Clause",
+      "set": {
+        "code": "def delete_post(user, post):\n    if not user:\n        raise Unauthorized()\n    if post.author_id != user.id:\n        raise Forbidden()\n    post.delete()",
+        "task": "Inserisci clausole di guardia in testa alla funzione per validare utente e proprieta' prima di cancellare il post."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_flow_patterns",
+      "english": "Flag Variable",
+      "set": {
+        "code": "found = False\nfor row in rows:\n    if row.id == target_id:\n        found = True\n        break\nif not found:\n    raise NotFound(target_id)",
+        "task": "Usa una variabile flag found per ricordare se la ricerca nella lista ha avuto successo."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_flow_patterns",
+      "english": "Sentinel Value",
+      "set": {
+        "code": "SENTINEL = object()\nvalue = cache.get(key, SENTINEL)\nif value is SENTINEL:\n    value = compute_and_cache(key)",
+        "task": "Definisci un valore sentinella per distinguere una chiave mancante in cache da un None salvato esplicitamente."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_flow_patterns",
+      "english": "Dispatch Table (Dictionary)",
+      "set": {
+        "code": "handlers = {\n    \"GET\": handle_get,\n    \"POST\": handle_post,\n    \"DELETE\": handle_delete,\n}\nresponse = handlers[request.method](request)",
+        "task": "Sostituisci una catena if-elif con una tabella di dispatch che mappi il metodo HTTP alla funzione handler."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_flow_patterns",
+      "english": "Recursion (Base case)",
+      "set": {
+        "code": "def factorial(n):\n    if n == 0:\n        return 1\n    return n * factorial(n - 1)",
+        "task": "Definisci il caso base n == 0 in factorial per fermare la chiamata ricorsiva ed evitare il RecursionError."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_flow_patterns",
+      "english": "List Filtering (if in comprehension)",
+      "set": {
+        "code": "active_users = [u for u in users if u.is_active and not u.is_banned]",
+        "task": "Filtra gli utenti dentro una list comprehension tenendo solo quelli attivi e non bannati."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_flow_patterns",
+      "english": "Exception-based Control Flow",
+      "set": {
+        "code": "try:\n    value = config[\"timeout\"]\nexcept KeyError:\n    value = DEFAULT_TIMEOUT",
+        "task": "Adotta lo stile EAFP: tenta l'accesso alla chiave e gestisci l'eccezione KeyError invece di controllare prima."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_flow_patterns",
+      "english": "Match Case (Structural Pattern Matching)",
+      "set": {
+        "code": "match event:\n    case {\"type\": \"login\", \"user\": user}:\n        log_login(user)\n    case {\"type\": \"logout\", \"user\": user}:\n        log_logout(user)\n    case _:\n        log.warning(\"unknown event\")",
+        "task": "Usa match case per distinguere tipi di evento in un dizionario e instradare ciascuno al suo handler."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_basics",
+      "english": "Function",
+      "set": {
+        "code": "def calculate_discount(price, percent):\n    return price * (1 - percent / 100)",
+        "task": "Definisci una funzione che calcoli il prezzo scontato a partire da prezzo e percentuale."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_basics",
+      "english": "Return Statement",
+      "set": {
+        "code": "def find_user(email):\n    for user in users:\n        if user.email == email:\n            return user\n    return None",
+        "task": "Usa l'istruzione return per uscire subito dalla funzione appena trovi l'utente corrispondente."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_basics",
+      "english": "Parameter",
+      "set": {
+        "code": "def send_invoice(customer_id, amount, currency=\"EUR\"):\n    invoice = build_invoice(customer_id, amount, currency)\n    mailer.send(invoice)",
+        "task": "Dichiara i parametri customer_id, amount e currency con un valore di default nella firma della funzione."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_basics",
+      "english": "Argument",
+      "set": {
+        "code": "send_invoice(customer_id=42, amount=199.99, currency=\"USD\")",
+        "task": "Chiama send_invoice passando gli argomenti per nome in modo da rendere esplicito il significato di ogni valore."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_basics",
+      "english": "Docstring",
+      "set": {
+        "code": "def normalize_email(email):\n    \"\"\"Return the email lowercased and stripped of whitespace.\"\"\"\n    return email.strip().lower()",
+        "task": "Aggiungi una docstring tra tripli apici subito sotto la firma della funzione per descrivere il contratto."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_basics",
+      "english": "Built-in Function",
+      "set": {
+        "code": "names = [user.full_name for user in users]\nsorted_names = sorted(names, key=len)\nlongest_count = len(max(names, key=len))",
+        "task": "Combina le funzioni integrate sorted, len e max per ordinare e misurare i nomi degli utenti."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_basics",
+      "english": "Positional Argument",
+      "set": {
+        "code": "def connect(host, port, timeout):\n    ...\n\nconnect(\"db.internal\", 5432, 30)",
+        "task": "Chiama connect passando host, porta e timeout come argomenti posizionali nell'ordine della firma."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_adv",
+      "english": "*args (Arbitrary Arguments)",
+      "set": {
+        "code": "def log_event(level, *messages):\n    for msg in messages:\n        log.write(f\"[{level}] {msg}\")",
+        "task": "Dichiara *messages come parametro variadico per accettare un numero arbitrario di stringhe nel logger."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_adv",
+      "english": "**kwargs (Arbitrary Keyword Arguments)",
+      "set": {
+        "code": "def make_request(url, **headers):\n    return requests.get(url, headers=headers)\n\nmake_request(\"/api/users\", Authorization=\"Bearer abc\", Accept=\"application/json\")",
+        "task": "Usa **kwargs per raccogliere gli header HTTP come dizionario e inoltrarli alla chiamata requests.get."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_adv",
+      "english": "Closure",
+      "set": {
+        "code": "def make_multiplier(factor):\n    def multiply(x):\n        return x * factor\n    return multiply\n\ndouble = make_multiplier(2)",
+        "task": "Crea una chiusura che catturi il parametro factor della funzione esterna e lo riusi a ogni chiamata interna."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_adv",
+      "english": "Wrapper",
+      "set": {
+        "code": "def timed(fn):\n    def wrapper(*args, **kwargs):\n        start = time.time()\n        result = fn(*args, **kwargs)\n        log.info(f\"{fn.__name__} took {time.time() - start:.2f}s\")\n        return result\n    return wrapper",
+        "task": "Definisci una funzione wrapper che misuri il tempo di esecuzione della funzione originale e poi inoltri il risultato."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_adv",
+      "english": "Generator Function",
+      "set": {
+        "code": "def read_lines(path):\n    with open(path) as f:\n        for line in f:\n            yield line.rstrip()",
+        "task": "Trasforma la lettura del file in una funzione generatore con yield per scorrere le righe senza caricarle tutte in memoria."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_adv",
+      "english": "Higher-Order Function",
+      "set": {
+        "code": "def apply_to_all(fn, items):\n    return [fn(item) for item in items]\n\nuppercased = apply_to_all(str.upper, names)",
+        "task": "Scrivi una funzione di ordine superiore che accetti un'altra funzione come argomento e la applichi a una lista."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_adv",
+      "english": "Inner Function",
+      "set": {
+        "code": "def parse_request(raw):\n    def clean(value):\n        return value.strip().lower()\n    return {clean(k): clean(v) for k, v in raw.items()}",
+        "task": "Definisci una funzione interna clean dentro parse_request per riusare la pulizia delle stringhe solo localmente."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_adv",
+      "english": "Recursion",
+      "set": {
+        "code": "def walk(node):\n    yield node\n    for child in node.children:\n        yield from walk(child)",
+        "task": "Implementa con la ricorsione una visita ad albero che produca ciascun nodo e poi richiami se stessa sui figli."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_scope",
+      "english": "Scope",
+      "set": {
+        "code": "counter = 0\n\ndef increment():\n    counter = 1\n    return counter\n\nincrement()\nprint(counter)",
+        "task": "Mostra la differenza di scope creando una variabile locale che oscura quella di modulo senza modificarla."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_scope",
+      "english": "Global",
+      "set": {
+        "code": "CONFIG = load_config(\"app.yaml\")\n\ndef get_database_url():\n    return CONFIG[\"database\"][\"url\"]",
+        "task": "Definisci la costante CONFIG a livello globale del modulo e leggila dalla funzione interna."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_scope",
+      "english": "Local",
+      "set": {
+        "code": "def total(items):\n    subtotal = sum(item.price for item in items)\n    tax = subtotal * 0.22\n    return subtotal + tax",
+        "task": "Crea le variabili locali subtotal e tax dentro la funzione: spariscono al termine della chiamata."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_scope",
+      "english": "Nonlocal",
+      "set": {
+        "code": "def counter():\n    n = 0\n    def increment():\n        nonlocal n\n        n += 1\n        return n\n    return increment",
+        "task": "Usa la parola chiave nonlocal nella funzione interna per modificare la variabile n del closure esterno."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_scope",
+      "english": "Namespace",
+      "set": {
+        "code": "import math\nimport statistics\n\nresult = math.sqrt(statistics.mean(values))",
+        "task": "Usa due namespace distinti, math e statistics, qualificando ogni funzione con il nome del modulo."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_scope",
+      "english": "Shadowing",
+      "set": {
+        "code": "id = 42\n\ndef process(item):\n    id = item.identifier\n    return id",
+        "task": "Mostra lo shadowing: la variabile locale id dentro la funzione nasconde la built-in id per tutto lo scope locale."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_scope",
+      "english": "Module-level Variable",
+      "set": {
+        "code": "MAX_RETRIES = 5\nDEFAULT_TIMEOUT = 30\n\ndef fetch(url):\n    return http.get(url, retries=MAX_RETRIES, timeout=DEFAULT_TIMEOUT)",
+        "task": "Dichiara le costanti MAX_RETRIES e DEFAULT_TIMEOUT a livello modulo e riusale dalle funzioni del file."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_scope",
+      "english": "Nonlocal Keyword",
+      "set": {
+        "code": "def make_accumulator():\n    total = 0\n    def add(value):\n        nonlocal total\n        total += value\n        return total\n    return add",
+        "task": "Applica la keyword nonlocal alla variabile total per permettere alla funzione interna add di aggiornarla."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_patterns",
+      "english": "Callback",
+      "set": {
+        "code": "def on_complete(result):\n    log.info(f\"job done: {result}\")\n\nworker.submit(task, callback=on_complete)",
+        "task": "Passa la funzione on_complete come callback al worker, che la richiamera' al termine dell'elaborazione."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_patterns",
+      "english": "Reduce (function)",
+      "set": {
+        "code": "from functools import reduce\n\ntotal = reduce(lambda acc, order: acc + order.amount, orders, 0)",
+        "task": "Usa reduce di functools per accumulare l'importo totale degli ordini partendo da zero."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_patterns",
+      "english": "Currying",
+      "set": {
+        "code": "def add(a):\n    def inner(b):\n        return a + b\n    return inner\n\nadd_tax = add(0.22)\nprice_with_tax = add_tax(100)",
+        "task": "Trasforma una somma a due argomenti in funzioni curried che accettino un argomento alla volta."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_patterns",
+      "english": "Pure Function",
+      "set": {
+        "code": "def apply_discount(price, percent):\n    return price * (1 - percent / 100)",
+        "task": "Scrivi una funzione pura che restituisca sempre lo stesso output a parita' di input e non muti nulla all'esterno."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_patterns",
+      "english": "Side Effect",
+      "set": {
+        "code": "metrics_count = 0\n\ndef record_event(name):\n    global metrics_count\n    metrics_count += 1\n    log.info(name)",
+        "task": "Evidenzia gli effetti collaterali della funzione: modifica una variabile globale e scrive su un logger esterno."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_patterns",
+      "english": "Immutable Data",
+      "set": {
+        "code": "from dataclasses import dataclass\n\n@dataclass(frozen=True)\nclass Money:\n    amount: int\n    currency: str",
+        "task": "Definisci una dataclass frozen Money per rendere immutabili i dati monetari e prevenire mutazioni accidentali."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_patterns",
+      "english": "List/Dict Comprehension",
+      "set": {
+        "code": "emails_by_id = {user.id: user.email for user in users if user.is_active}",
+        "task": "Usa una dict comprehension per creare una mappa id->email considerando solo gli utenti attivi."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_patterns",
+      "english": "Partial Application",
+      "set": {
+        "code": "from functools import partial\n\nlog_error = partial(log.write, level=\"ERROR\")\nlog_error(\"db connection lost\")",
+        "task": "Applica functools.partial per pre-impostare il parametro level e ottenere una versione specializzata della funzione di log."
+      }
+    }
+  ]
+}

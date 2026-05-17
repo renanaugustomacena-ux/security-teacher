@@ -1,0 +1,463 @@
+{
+  "fixes": [
+    {
+      "level": "0",
+      "lesson": "linux_basics_1",
+      "english": "Bash",
+      "set": {
+        "command": "bash --version",
+        "task": "Verifica quale versione di bash gira sulla macchina prima di adattare uno script al suo dialetto."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_3",
+      "english": "User",
+      "set": {
+        "command": "id -u alice",
+        "task": "Recupera lo UID numerico di un utente specifico per controlli di proprieta' sui file."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_3",
+      "english": "Permission",
+      "set": {
+        "command": "chmod 644 config.yml",
+        "task": "Imposta permessi di lettura per tutti e scrittura solo per il proprietario su un file di configurazione."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_3",
+      "english": "Group",
+      "set": {
+        "command": "chgrp -R developers /srv/app",
+        "task": "Riassegna ricorsivamente la proprieta' di gruppo della directory di un'applicazione al team di sviluppo."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_3",
+      "english": "Owner",
+      "set": {
+        "command": "chown www-data:www-data /var/www/html",
+        "task": "Cambia proprietario e gruppo della document root affinche' nginx possa servirla correttamente."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_3",
+      "english": "Sudo",
+      "set": {
+        "command": "sudo systemctl restart nginx",
+        "task": "Riavvia un servizio di sistema usando privilegi amministrativi temporanei."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_3",
+      "english": "Login",
+      "set": {
+        "command": "last -n 20",
+        "task": "Ispeziona gli ultimi venti accessi al sistema per individuare login sospetti."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_3",
+      "english": "Session",
+      "set": {
+        "command": "who -u",
+        "task": "Elenca gli utenti attualmente loggati con l'orario di inizio sessione e il terminale associato."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_3",
+      "english": "Process",
+      "set": {
+        "command": "ps aux --sort=-%cpu | head",
+        "task": "Identifica i processi che consumano piu' CPU durante l'analisi di un incidente di performance."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_3",
+      "english": "Kernel",
+      "set": {
+        "command": "uname -r",
+        "task": "Stampa la versione del kernel in esecuzione prima di applicare patch di sicurezza."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_3",
+      "english": "Distro",
+      "set": {
+        "command": "lsb_release -a",
+        "task": "Rileva nome e versione della distribuzione per scegliere il package manager corretto."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_4",
+      "english": "Manual",
+      "set": {
+        "command": "man 5 sshd_config",
+        "task": "Consulta la pagina di manuale della sezione 5 per i dettagli sul formato del file di configurazione SSH."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_4",
+      "english": "Man Page",
+      "set": {
+        "command": "man iptables",
+        "task": "Apri la man page di iptables per studiare catene, target ed estensioni di matching."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_4",
+      "english": "Help",
+      "set": {
+        "command": "rsync --help",
+        "task": "Stampa il riepilogo rapido delle opzioni di un comando senza aprire il manuale completo."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_4",
+      "english": "Verbose",
+      "set": {
+        "command": "cp -v src/ dest/",
+        "task": "Esegui una copia mostrando ogni file processato per diagnosticare trasferimenti incompleti."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_4",
+      "english": "Quiet",
+      "set": {
+        "command": "grep -q ERROR /var/log/syslog",
+        "task": "Cerca un pattern nei log restituendo solo lo stato di uscita, ideale per condizioni in script cron."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_4",
+      "english": "Version",
+      "set": {
+        "command": "python3 --version",
+        "task": "Conferma quale versione di un interprete e' installata prima di lanciare il deploy."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_nav",
+      "english": "Change Directory",
+      "set": {
+        "command": "cd /var/log/nginx",
+        "task": "Spostati nella directory dei log di nginx prima di analizzarne il contenuto."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_nav",
+      "english": "List",
+      "set": {
+        "command": "ls -la",
+        "task": "Elenca tutti i file della directory corrente, inclusi quelli nascosti, con permessi e dimensioni."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_nav",
+      "english": "Print Working Directory",
+      "set": {
+        "command": "pwd",
+        "task": "Conferma il percorso assoluto della directory attuale dentro uno script di build."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_nav",
+      "english": "Current",
+      "set": {
+        "command": "ls -la ./",
+        "task": "Mostra il contenuto della directory corrente usando il riferimento esplicito al punto singolo."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_nav",
+      "english": "Previous",
+      "set": {
+        "command": "cd -",
+        "task": "Torna rapidamente alla directory precedente senza ridigitarne il percorso."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_nav",
+      "english": "Recursive",
+      "set": {
+        "command": "ls -R /etc",
+        "task": "Visualizza ricorsivamente tutti i file annidati sotto una directory di configurazione."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_nav",
+      "english": "Empty",
+      "set": {
+        "command": "find . -type d -empty",
+        "task": "Individua tutte le directory vuote da pulire prima di un archivio del progetto."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_nav",
+      "english": "Tree",
+      "set": {
+        "command": "tree -L 2 /home/user/project",
+        "task": "Disegna la struttura ad albero di un progetto limitando la profondita' a due livelli."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_nav",
+      "english": "Make Directory",
+      "set": {
+        "command": "mkdir -p releases/2025/05",
+        "task": "Crea l'intera catena di directory di rilascio in una sola chiamata, senza errori se i livelli esistono gia'."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_nav",
+      "english": "Remove Directory",
+      "set": {
+        "command": "rmdir build/tmp",
+        "task": "Rimuovi in sicurezza una directory di lavoro solo se e' gia' completamente vuota."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_file_ops",
+      "english": "Copy",
+      "set": {
+        "command": "cp -a /etc/nginx/ /backup/nginx/",
+        "task": "Duplica una directory di configurazione preservando timestamp, permessi e symlink per un backup fedele."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_file_ops",
+      "english": "Move",
+      "set": {
+        "command": "mv build/ /var/www/releases/v2/",
+        "task": "Sposta atomicamente la cartella di build appena prodotta sotto la directory dei rilasci."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_file_ops",
+      "english": "Remove",
+      "set": {
+        "command": "rm -rf node_modules/",
+        "task": "Cancella ricorsivamente una pesante cartella di dipendenze prima di reinstallarla da zero."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_file_ops",
+      "english": "Touch",
+      "set": {
+        "command": "touch src/components/.gitkeep",
+        "task": "Crea un file segnaposto vuoto cosi' git puo' tracciare una directory altrimenti vuota."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_file_ops",
+      "english": "Rename",
+      "set": {
+        "command": "mv access.log access.log.1",
+        "task": "Rinomina il log corrente prima di richiedere al demone un reload per la rotazione."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_file_ops",
+      "english": "Delete",
+      "set": {
+        "command": "find /var/log -name '*.gz' -mtime +30 -delete",
+        "task": "Cancella automaticamente gli archivi di log compressi piu' vecchi di trenta giorni per liberare spazio."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_file_ops",
+      "english": "Force",
+      "set": {
+        "command": "rm -f /tmp/lockfile",
+        "task": "Forza la rimozione di un file di lock senza richieste di conferma all'interno di uno script."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_file_ops",
+      "english": "Interactive",
+      "set": {
+        "command": "rm -i *.bak",
+        "task": "Cancella file di backup chiedendo conferma per ciascuno, utile durante pulizie manuali."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_file_ops",
+      "english": "Preserve",
+      "set": {
+        "command": "cp -p httpd.conf httpd.conf.bak",
+        "task": "Copia un file di configurazione mantenendo proprietario, gruppo e timestamp originali."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_view",
+      "english": "Cat",
+      "set": {
+        "command": "cat /etc/passwd | grep alice",
+        "task": "Concatena un file di sistema in pipeline per filtrarne le righe relative a un utente specifico."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_view",
+      "english": "Less",
+      "set": {
+        "command": "journalctl -u sshd | less",
+        "task": "Sfoglia un journal di systemd in un pager interattivo per scorrere e cercare senza saturare il terminale."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_view",
+      "english": "Head",
+      "set": {
+        "command": "head -n 20 large.csv",
+        "task": "Anteprima delle prime venti righe di un CSV pesante senza caricarne l'intero contenuto."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_view",
+      "english": "Tail",
+      "set": {
+        "command": "tail -f /var/log/nginx/error.log",
+        "task": "Monitora in tempo reale le nuove righe scritte nel log degli errori di nginx."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_view",
+      "english": "More",
+      "set": {
+        "command": "dmesg | more",
+        "task": "Sfoglia pagina per pagina i messaggi del kernel su una shell di ripristino dove less non e' disponibile."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_view",
+      "english": "Line Number",
+      "set": {
+        "command": "cat -n script.sh",
+        "task": "Stampa il contenuto di uno script numerando ogni riga per facilitarne la revisione."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_view",
+      "english": "Follow",
+      "set": {
+        "command": "tail -f application.log",
+        "task": "Segui dal vivo la crescita di un file di log man mano che l'applicazione scrive nuove voci."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_search",
+      "english": "Find",
+      "set": {
+        "command": "find /var/log -mtime +30 -name '*.log'",
+        "task": "Cerca nel filesystem i file di log piu' vecchi di trenta giorni durante una pulizia del disco."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_search",
+      "english": "Locate",
+      "set": {
+        "command": "locate sshd_config",
+        "task": "Trova istantaneamente il percorso di un file consultando il database mlocate pregenerato."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_search",
+      "english": "Which",
+      "set": {
+        "command": "which python3",
+        "task": "Scopri quale eseguibile del PATH verra' invocato per un dato comando prima di cablarlo in un cron job."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_search",
+      "english": "Whereis",
+      "set": {
+        "command": "whereis nginx",
+        "task": "Localizza in un'unica chiamata binario, sorgenti e pagine di manuale di un pacchetto."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_search",
+      "english": "Wildcard",
+      "set": {
+        "command": "ls *.log",
+        "task": "Espandi un asterisco per elencare tutti i file con una determinata estensione nella directory corrente."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_search",
+      "english": "Ignore Case",
+      "set": {
+        "command": "grep -i 'error' /var/log/syslog",
+        "task": "Filtra un log per una parola chiave catturando sia varianti maiuscole che minuscole."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_search",
+      "english": "Type",
+      "set": {
+        "command": "type -a cd",
+        "task": "Verifica se un nome corrisponde a un builtin, un alias o un eseguibile esterno prima di indagare un comportamento inatteso."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_search",
+      "english": "Size",
+      "set": {
+        "command": "find . -type f -size +10M",
+        "task": "Individua i file regolari piu' grandi di dieci megabyte per ottimizzare lo spazio su disco."
+      }
+    }
+  ]
+}

@@ -1,0 +1,391 @@
+{
+  "fixes": [
+    {
+      "level": "8",
+      "lesson": "dev_pattern_creational",
+      "english": "Singleton",
+      "set": {
+        "code": "class Logger {\n  private static instance: Logger;\n  private constructor() {}\n  static getInstance(): Logger {\n    return Logger.instance ??= new Logger();\n  }\n  log(message: string): void {\n    console.log(`[${new Date().toISOString()}] ${message}`);\n  }\n}",
+        "task": "Implementa il pattern Singleton per il Logger usando un metodo statico getInstance che restituisce sempre la stessa istanza condivisa."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_creational",
+      "english": "Factory Method",
+      "set": {
+        "code": "abstract class Document {\n  abstract export(): Buffer;\n}\nclass PdfDocument extends Document { export() { return Buffer.from('pdf'); } }\nclass DocxDocument extends Document { export() { return Buffer.from('docx'); } }\n\nclass DocumentFactory {\n  static create(type: 'pdf' | 'docx'): Document {\n    return type === 'pdf' ? new PdfDocument() : new DocxDocument();\n  }\n}",
+        "task": "Implementa un Factory Method che decide quale sottoclasse di Document istanziare in base al tipo richiesto, senza esporre i costruttori concreti al client."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_creational",
+      "english": "Abstract Factory",
+      "set": {
+        "code": "interface Button { render(): string }\ninterface Checkbox { render(): string }\n\ninterface UIFactory {\n  createButton(): Button;\n  createCheckbox(): Checkbox;\n}\n\nclass MacFactory implements UIFactory {\n  createButton() { return { render: () => '<MacButton/>' }; }\n  createCheckbox() { return { render: () => '<MacCheckbox/>' }; }\n}\nclass WinFactory implements UIFactory {\n  createButton() { return { render: () => '<WinButton/>' }; }\n  createCheckbox() { return { render: () => '<WinCheckbox/>' }; }\n}",
+        "task": "Costruisci una Abstract Factory che produca famiglie di componenti UI coerenti (Button e Checkbox) per piattaforme diverse senza che il client conosca le classi concrete."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_creational",
+      "english": "Builder",
+      "set": {
+        "code": "class HttpRequestBuilder {\n  private url = '';\n  private method = 'GET';\n  private headers: Record<string, string> = {};\n  private body?: string;\n\n  setUrl(url: string) { this.url = url; return this; }\n  setMethod(m: string) { this.method = m; return this; }\n  addHeader(k: string, v: string) { this.headers[k] = v; return this; }\n  setBody(b: string) { this.body = b; return this; }\n  build() { return { url: this.url, method: this.method, headers: this.headers, body: this.body }; }\n}\n\nconst req = new HttpRequestBuilder()\n  .setUrl('/api/users')\n  .setMethod('POST')\n  .addHeader('Authorization', 'Bearer abc')\n  .setBody('{\"name\":\"Marco\"}')\n  .build();",
+        "task": "Implementa il pattern Builder per costruire una richiesta HTTP passo dopo passo con metodi a catena, separando la costruzione dalla rappresentazione finale."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_creational",
+      "english": "Prototype",
+      "set": {
+        "code": "interface Cloneable<T> {\n  clone(): T;\n}\n\nclass Shape implements Cloneable<Shape> {\n  constructor(public x: number, public y: number, public color: string) {}\n  clone(): Shape {\n    return new Shape(this.x, this.y, this.color);\n  }\n}\n\nconst original = new Shape(10, 20, 'red');\nconst copy = original.clone();\ncopy.color = 'blue';",
+        "task": "Implementa il pattern Prototype tramite un metodo clone che produca una copia indipendente dell'oggetto senza ricorrere al costruttore originale."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_creational",
+      "english": "Object Pool",
+      "set": {
+        "code": "class ConnectionPool {\n  private available: DbConnection[] = [];\n  private inUse = new Set<DbConnection>();\n\n  constructor(private size: number) {\n    for (let i = 0; i < size; i++) this.available.push(new DbConnection());\n  }\n\n  acquire(): DbConnection {\n    const conn = this.available.pop() ?? new DbConnection();\n    this.inUse.add(conn);\n    return conn;\n  }\n\n  release(conn: DbConnection): void {\n    this.inUse.delete(conn);\n    this.available.push(conn);\n  }\n}",
+        "task": "Crea un Object Pool di connessioni al database con metodi acquire e release, in modo che le connessioni vengano riutilizzate invece di essere ricreate ogni volta."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_creational",
+      "english": "Dependency Injection",
+      "set": {
+        "code": "interface EmailSender {\n  send(to: string, body: string): Promise<void>;\n}\n\nclass NotificationService {\n  constructor(private readonly sender: EmailSender) {}\n\n  async notify(user: User, message: string) {\n    await this.sender.send(user.email, message);\n  }\n}\n\n// Iniezione tramite costruttore\nconst service = new NotificationService(new SmtpEmailSender());",
+        "task": "Applica la dependency injection passando l'EmailSender al costruttore del NotificationService invece di istanziarlo internamente, cosi' la dipendenza puo' essere sostituita nei test."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_creational",
+      "english": "Lazy Initialization",
+      "set": {
+        "code": "class ReportGenerator {\n  private _heavyClient?: AnalyticsClient;\n\n  private get client(): AnalyticsClient {\n    if (!this._heavyClient) {\n      this._heavyClient = new AnalyticsClient();\n    }\n    return this._heavyClient;\n  }\n\n  async build(): Promise<Report> {\n    return this.client.fetchAndRender();\n  }\n}",
+        "task": "Implementa l'inizializzazione lazy del client di analytics tramite un getter che lo crea solo alla prima chiamata, evitando di pagare il costo se il report non viene mai generato."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_creational",
+      "english": "Static Factory",
+      "set": {
+        "code": "class Color {\n  private constructor(public r: number, public g: number, public b: number) {}\n\n  static fromHex(hex: string): Color {\n    const n = parseInt(hex.replace('#', ''), 16);\n    return new Color((n >> 16) & 0xff, (n >> 8) & 0xff, n & 0xff);\n  }\n\n  static rgb(r: number, g: number, b: number): Color {\n    return new Color(r, g, b);\n  }\n}\n\nconst red = Color.fromHex('#ff0000');",
+        "task": "Sostituisci i costruttori pubblici della classe Color con metodi factory statici come fromHex e rgb, in modo che il nome del metodo chiarisca quale formato di input viene usato."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_structural",
+      "english": "Adapter",
+      "set": {
+        "code": "// Interfaccia attesa dal client\ninterface PaymentGateway {\n  charge(amountCents: number): Promise<string>;\n}\n\n// Libreria legacy incompatibile\nclass LegacyStripeClient {\n  pay(amountInEuro: number, currency: string) { return Promise.resolve('txn_123'); }\n}\n\n// Adapter\nclass StripeAdapter implements PaymentGateway {\n  constructor(private legacy: LegacyStripeClient) {}\n  charge(amountCents: number) {\n    return this.legacy.pay(amountCents / 100, 'EUR');\n  }\n}",
+        "task": "Implementa un Adapter che esponga l'interfaccia PaymentGateway attesa dal client e traduca le chiamate verso un client legacy con firma incompatibile."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_structural",
+      "english": "Bridge",
+      "set": {
+        "code": "// Implementazione (motore di rendering)\ninterface Renderer {\n  drawCircle(x: number, y: number, r: number): void;\n}\nclass SvgRenderer implements Renderer { drawCircle() {/* ... */} }\nclass CanvasRenderer implements Renderer { drawCircle() {/* ... */} }\n\n// Astrazione (forma)\nabstract class Shape {\n  constructor(protected renderer: Renderer) {}\n  abstract draw(): void;\n}\nclass Circle extends Shape {\n  constructor(renderer: Renderer, private radius: number) { super(renderer); }\n  draw() { this.renderer.drawCircle(0, 0, this.radius); }\n}",
+        "task": "Separa la gerarchia delle forme dal motore di rendering con il pattern Bridge, cosi' che entrambi possano evolvere indipendentemente."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_structural",
+      "english": "Composite",
+      "set": {
+        "code": "interface FileNode {\n  size(): number;\n}\n\nclass File implements FileNode {\n  constructor(private bytes: number) {}\n  size() { return this.bytes; }\n}\n\nclass Directory implements FileNode {\n  private children: FileNode[] = [];\n  add(node: FileNode) { this.children.push(node); }\n  size() { return this.children.reduce((sum, c) => sum + c.size(), 0); }\n}",
+        "task": "Modella un file system con il pattern Composite dove File e Directory implementano la stessa interfaccia FileNode, cosi' che size() funzioni allo stesso modo su una foglia o su un intero ramo."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_structural",
+      "english": "Decorator",
+      "set": {
+        "code": "interface DataStream {\n  write(data: Buffer): void;\n}\n\nclass FileStream implements DataStream {\n  write(data: Buffer) { /* scrive su file */ }\n}\n\nclass CompressingStream implements DataStream {\n  constructor(private inner: DataStream) {}\n  write(data: Buffer) { this.inner.write(compress(data)); }\n}\n\nclass EncryptingStream implements DataStream {\n  constructor(private inner: DataStream) {}\n  write(data: Buffer) { this.inner.write(encrypt(data)); }\n}\n\nconst stream = new EncryptingStream(new CompressingStream(new FileStream()));",
+        "task": "Impila piu' decoratori sullo stesso DataStream per aggiungere compressione e crittografia senza modificare la classe FileStream originale."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_structural",
+      "english": "Facade",
+      "set": {
+        "code": "// Sottosistemi complessi\nclass VideoDecoder { decode(file: string) { /* ... */ } }\nclass AudioMixer { mix(track: any) { /* ... */ } }\nclass SubtitleLoader { load(lang: string) { /* ... */ } }\n\n// Facade: una singola interfaccia semplice\nclass MediaPlayer {\n  private decoder = new VideoDecoder();\n  private mixer = new AudioMixer();\n  private subs = new SubtitleLoader();\n\n  play(file: string, lang: string): void {\n    this.decoder.decode(file);\n    this.mixer.mix(file);\n    this.subs.load(lang);\n  }\n}",
+        "task": "Crea una Facade MediaPlayer che esponga un singolo metodo play e nasconda al client la complessita' della coordinazione tra decoder, mixer e caricatore di sottotitoli."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_structural",
+      "english": "Flyweight",
+      "set": {
+        "code": "// Stato intrinseco condiviso\nclass CharStyle {\n  constructor(public font: string, public size: number, public color: string) {}\n}\n\nclass StyleFactory {\n  private cache = new Map<string, CharStyle>();\n  get(font: string, size: number, color: string): CharStyle {\n    const key = `${font}|${size}|${color}`;\n    let style = this.cache.get(key);\n    if (!style) {\n      style = new CharStyle(font, size, color);\n      this.cache.set(key, style);\n    }\n    return style;\n  }\n}",
+        "task": "Implementa il pattern Flyweight con una StyleFactory che condivide gli oggetti CharStyle identici tra migliaia di caratteri di un editor di testo per risparmiare memoria."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_structural",
+      "english": "Proxy",
+      "set": {
+        "code": "interface ImageLoader {\n  load(): Buffer;\n}\n\nclass RealImage implements ImageLoader {\n  constructor(private path: string) { /* carica subito dal disco */ }\n  load() { return readFileSync(this.path); }\n}\n\nclass ImageProxy implements ImageLoader {\n  private real?: RealImage;\n  constructor(private path: string) {}\n  load(): Buffer {\n    this.real ??= new RealImage(this.path);\n    return this.real.load();\n  }\n}",
+        "task": "Implementa un Proxy per ImageLoader che ritarda il caricamento del file da disco finche' load() non viene effettivamente chiamato, gestendo il lazy loading."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_structural",
+      "english": "Private Class Data",
+      "set": {
+        "code": "class CircleData {\n  constructor(\n    public readonly radius: number,\n    public readonly x: number,\n    public readonly y: number,\n  ) {}\n}\n\nclass Circle {\n  private readonly data: CircleData;\n  constructor(radius: number, x: number, y: number) {\n    this.data = new CircleData(radius, x, y);\n  }\n  area(): number {\n    return Math.PI * this.data.radius ** 2;\n  }\n}",
+        "task": "Applica il pattern Private Class Data: incapsula i campi del Cerchio in un oggetto CircleData di sola lettura cosi' che non possano essere modificati dopo la costruzione."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_structural",
+      "english": "Wrapper",
+      "set": {
+        "code": "// Wrapper sopra la libreria di terze parti axios\nimport axios from 'axios';\n\nexport class HttpClient {\n  async get<T>(url: string): Promise<T> {\n    const res = await axios.get<T>(url);\n    return res.data;\n  }\n\n  async post<T>(url: string, body: unknown): Promise<T> {\n    const res = await axios.post<T>(url, body);\n    return res.data;\n  }\n}",
+        "task": "Incapsula la libreria axios in una classe wrapper HttpClient, cosi' che un'eventuale sostituzione con fetch o un altro client richieda di modificare un solo file."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_behavioral",
+      "english": "Chain of Responsibility",
+      "set": {
+        "code": "abstract class Handler {\n  protected next?: Handler;\n  setNext(h: Handler): Handler { this.next = h; return h; }\n  handle(req: Request): Response | undefined {\n    return this.next?.handle(req);\n  }\n}\n\nclass AuthHandler extends Handler {\n  handle(req: Request) {\n    if (!req.token) return { status: 401 };\n    return super.handle(req);\n  }\n}\nclass LoggingHandler extends Handler {\n  handle(req: Request) {\n    console.log(req.path);\n    return super.handle(req);\n  }\n}\n\nconst chain = new AuthHandler();\nchain.setNext(new LoggingHandler());",
+        "task": "Costruisci una Chain of Responsibility in cui ogni handler (autenticazione, logging, validazione) decide se gestire la richiesta o passarla al successivo nella catena."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_behavioral",
+      "english": "Command",
+      "set": {
+        "code": "interface Command {\n  execute(): void;\n  undo(): void;\n}\n\nclass AddTextCommand implements Command {\n  constructor(private editor: Editor, private text: string) {}\n  execute() { this.editor.append(this.text); }\n  undo() { this.editor.removeLast(this.text.length); }\n}\n\nclass CommandHistory {\n  private stack: Command[] = [];\n  run(cmd: Command) { cmd.execute(); this.stack.push(cmd); }\n  undo() { this.stack.pop()?.undo(); }\n}",
+        "task": "Applica il pattern Command incapsulando ogni azione dell'editor in un oggetto con execute e undo, cosi' che lo stack della cronologia possa annullare le operazioni in ordine inverso."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_behavioral",
+      "english": "Iterator",
+      "set": {
+        "code": "class TreeNode<T> {\n  constructor(public value: T, public children: TreeNode<T>[] = []) {}\n\n  *[Symbol.iterator](): IterableIterator<T> {\n    yield this.value;\n    for (const child of this.children) {\n      yield* child;\n    }\n  }\n}\n\nconst root = new TreeNode(1, [new TreeNode(2), new TreeNode(3)]);\nfor (const value of root) {\n  console.log(value);\n}",
+        "task": "Implementa il pattern Iterator su un TreeNode tramite Symbol.iterator, cosi' che il client possa attraversare l'albero con un normale for-of senza conoscere la struttura interna."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_behavioral",
+      "english": "Mediator",
+      "set": {
+        "code": "class ChatRoom {\n  private users = new Map<string, User>();\n\n  register(user: User) {\n    this.users.set(user.name, user);\n    user.mediator = this;\n  }\n\n  send(from: string, to: string, message: string) {\n    this.users.get(to)?.receive(from, message);\n  }\n}\n\nclass User {\n  mediator?: ChatRoom;\n  constructor(public name: string) {}\n  send(to: string, message: string) { this.mediator?.send(this.name, to, message); }\n  receive(from: string, message: string) { console.log(`${from} -> ${this.name}: ${message}`); }\n}",
+        "task": "Implementa una ChatRoom come Mediator: gli utenti comunicano solo attraverso di essa, riducendo le dipendenze dirette a stella tra ogni coppia di partecipanti."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_behavioral",
+      "english": "Memento",
+      "set": {
+        "code": "class EditorMemento {\n  constructor(public readonly content: string) {}\n}\n\nclass TextEditor {\n  private content = '';\n  type(text: string) { this.content += text; }\n  save(): EditorMemento { return new EditorMemento(this.content); }\n  restore(m: EditorMemento) { this.content = m.content; }\n}\n\nconst editor = new TextEditor();\neditor.type('Ciao');\nconst snapshot = editor.save();\neditor.type(' mondo');\neditor.restore(snapshot); // torna a 'Ciao'",
+        "task": "Implementa il pattern Memento per un TextEditor: salva istantanee del contenuto in oggetti EditorMemento e ripristinale per supportare l'undo."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_behavioral",
+      "english": "Observer",
+      "set": {
+        "code": "type Listener<T> = (data: T) => void;\n\nclass EventBus<T> {\n  private listeners = new Map<string, Listener<T>[]>();\n\n  subscribe(event: string, fn: Listener<T>): () => void {\n    const arr = this.listeners.get(event) ?? [];\n    arr.push(fn);\n    this.listeners.set(event, arr);\n    return () => this.listeners.set(event, arr.filter(l => l !== fn));\n  }\n\n  emit(event: string, data: T): void {\n    this.listeners.get(event)?.forEach(fn => fn(data));\n  }\n}",
+        "task": "Implementa il pattern Observer con un EventBus tipizzato: i subscriber si registrano a un evento e ricevono una notifica ogni volta che emit viene chiamato."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_behavioral",
+      "english": "State",
+      "set": {
+        "code": "interface DocumentState {\n  publish(doc: Document): void;\n}\n\nclass DraftState implements DocumentState {\n  publish(doc: Document) { doc.setState(new ReviewState()); }\n}\nclass ReviewState implements DocumentState {\n  publish(doc: Document) { doc.setState(new PublishedState()); }\n}\nclass PublishedState implements DocumentState {\n  publish() { /* gia' pubblicato, no-op */ }\n}\n\nclass Document {\n  private state: DocumentState = new DraftState();\n  setState(s: DocumentState) { this.state = s; }\n  publish() { this.state.publish(this); }\n}",
+        "task": "Applica il pattern State a un Document che passa da Draft a Review a Published, sostituendo lunghe catene di if-else con classi di stato dedicate."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_behavioral",
+      "english": "Strategy",
+      "set": {
+        "code": "interface PaymentStrategy {\n  pay(amount: number): Promise<string>;\n}\n\nclass CreditCardStrategy implements PaymentStrategy {\n  pay(amount: number) { /* chiama gateway carta */ return Promise.resolve('cc_ok'); }\n}\nclass PaypalStrategy implements PaymentStrategy {\n  pay(amount: number) { /* chiama API PayPal */ return Promise.resolve('pp_ok'); }\n}\nclass CryptoStrategy implements PaymentStrategy {\n  pay(amount: number) { /* invia transazione on-chain */ return Promise.resolve('btc_ok'); }\n}\n\nclass Checkout {\n  constructor(private strategy: PaymentStrategy) {}\n  process(amount: number) { return this.strategy.pay(amount); }\n}",
+        "task": "Implementa il pattern Strategy in modo che il Checkout possa scambiare a runtime tra CreditCardStrategy, PaypalStrategy e CryptoStrategy senza if/else interni."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_behavioral",
+      "english": "Template Method",
+      "set": {
+        "code": "abstract class ReportGenerator {\n  // Template method: definisce la ricetta\n  generate(): string {\n    const data = this.fetchData();\n    const formatted = this.format(data);\n    return this.wrap(formatted);\n  }\n\n  protected abstract fetchData(): unknown;\n  protected abstract format(data: unknown): string;\n\n  // Step comune con default\n  protected wrap(content: string): string {\n    return `<html><body>${content}</body></html>`;\n  }\n}\n\nclass SalesReport extends ReportGenerator {\n  protected fetchData() { return [/* righe vendite */]; }\n  protected format(rows: unknown) { return '<table>...</table>'; }\n}",
+        "task": "Implementa il pattern Template Method: la classe base ReportGenerator definisce l'ordine dei passi in generate() mentre le sottoclassi sovrascrivono solo fetchData e format."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_other",
+      "english": "Unit of Work",
+      "set": {
+        "code": "class UnitOfWork {\n  private newEntities: Entity[] = [];\n  private dirtyEntities: Entity[] = [];\n  private removedEntities: Entity[] = [];\n\n  registerNew(e: Entity) { this.newEntities.push(e); }\n  registerDirty(e: Entity) { this.dirtyEntities.push(e); }\n  registerRemoved(e: Entity) { this.removedEntities.push(e); }\n\n  async commit(db: Db): Promise<void> {\n    await db.transaction(async (tx) => {\n      for (const e of this.newEntities) await tx.insert(e);\n      for (const e of this.dirtyEntities) await tx.update(e);\n      for (const e of this.removedEntities) await tx.delete(e);\n    });\n  }\n}",
+        "task": "Implementa il pattern Unit of Work che tiene traccia di entita' nuove, modificate ed eliminate e le persiste tutte insieme in un'unica transazione atomica."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_other",
+      "english": "generic repository pattern",
+      "set": {
+        "code": "interface Repository<T extends { id: string }> {\n  findById(id: string): Promise<T | null>;\n  findAll(): Promise<T[]>;\n  save(entity: T): Promise<void>;\n  delete(id: string): Promise<void>;\n}\n\nclass InMemoryRepository<T extends { id: string }> implements Repository<T> {\n  private store = new Map<string, T>();\n  async findById(id: string) { return this.store.get(id) ?? null; }\n  async findAll() { return [...this.store.values()]; }\n  async save(entity: T) { this.store.set(entity.id, entity); }\n  async delete(id: string) { this.store.delete(id); }\n}",
+        "task": "Implementa un generic repository pattern tipizzato che esponga findById, findAll, save e delete riusabili su qualsiasi entita' con un campo id."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_other",
+      "english": "Data Transfer Object (DTO)",
+      "set": {
+        "code": "// Entita' di dominio ricca di logica\nclass User {\n  constructor(\n    public id: string,\n    public email: string,\n    public passwordHash: string,\n    public role: 'admin' | 'user',\n  ) {}\n  isAdmin() { return this.role === 'admin'; }\n}\n\n// DTO: solo dati esposti via API\ninterface UserDto {\n  id: string;\n  email: string;\n  role: 'admin' | 'user';\n}\n\nfunction toDto(u: User): UserDto {\n  return { id: u.id, email: u.email, role: u.role };\n}",
+        "task": "Definisci un DTO UserDto privo di logica di business e una funzione toDto che converta l'entita' User omettendo i campi sensibili come passwordHash."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_other",
+      "english": "Data Access Object (DAO)",
+      "set": {
+        "code": "interface UserDao {\n  findById(id: string): Promise<User | null>;\n  insert(user: User): Promise<void>;\n  update(user: User): Promise<void>;\n}\n\nclass PostgresUserDao implements UserDao {\n  constructor(private db: PgClient) {}\n  async findById(id: string) {\n    const r = await this.db.query('SELECT * FROM users WHERE id = $1', [id]);\n    return r.rows[0] ?? null;\n  }\n  async insert(u: User) { await this.db.query('INSERT INTO users ...', [u.id, u.email]); }\n  async update(u: User) { await this.db.query('UPDATE users SET ... WHERE id = $1', [u.id]); }\n}",
+        "task": "Definisci un'interfaccia UserDao e un'implementazione PostgresUserDao che fornisca al resto dell'applicazione un'astrazione del database, isolando l'SQL in un solo livello."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_other",
+      "english": "Active Record",
+      "set": {
+        "code": "abstract class ActiveRecord {\n  static async find<T extends ActiveRecord>(this: new () => T, id: string): Promise<T> {\n    const row = await db.query('SELECT * FROM ' + (this as any).table + ' WHERE id = ?', [id]);\n    return Object.assign(new this(), row);\n  }\n\n  async save(): Promise<void> {\n    const table = (this.constructor as any).table;\n    await db.query(`INSERT INTO ${table} ... ON CONFLICT (id) DO UPDATE ...`, this);\n  }\n}\n\nclass User extends ActiveRecord {\n  static table = 'users';\n  id!: string;\n  email!: string;\n}\n\nconst user = await User.find('u_1');\nuser.email = 'new@example.com';\nawait user.save();",
+        "task": "Implementa il pattern Active Record in cui ogni istanza di User espone direttamente save() e i metodi statici di lookup, mescolando dati e persistenza nello stesso oggetto."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_other",
+      "english": "Visitor",
+      "set": {
+        "code": "interface DocumentVisitor {\n  visitText(node: TextNode): void;\n  visitImage(node: ImageNode): void;\n}\n\ninterface DocumentNode {\n  accept(v: DocumentVisitor): void;\n}\n\nclass TextNode implements DocumentNode {\n  constructor(public content: string) {}\n  accept(v: DocumentVisitor) { v.visitText(this); }\n}\nclass ImageNode implements DocumentNode {\n  constructor(public src: string) {}\n  accept(v: DocumentVisitor) { v.visitImage(this); }\n}\n\nclass PdfExportVisitor implements DocumentVisitor {\n  visitText(n: TextNode) { /* scrivi testo nel PDF */ }\n  visitImage(n: ImageNode) { /* embed immagine nel PDF */ }\n}",
+        "task": "Applica il pattern Visitor per aggiungere un'operazione di esportazione in PDF ai nodi del documento senza modificare le classi TextNode e ImageNode esistenti."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_other",
+      "english": "Event Aggregator",
+      "set": {
+        "code": "type Handler<T = unknown> = (payload: T) => void;\n\nclass EventAggregator {\n  private subs = new Map<string, Handler[]>();\n\n  publish<T>(topic: string, payload: T): void {\n    this.subs.get(topic)?.forEach(h => h(payload));\n  }\n\n  subscribe<T>(topic: string, handler: Handler<T>): () => void {\n    const arr = this.subs.get(topic) ?? [];\n    arr.push(handler as Handler);\n    this.subs.set(topic, arr);\n    return () => this.subs.set(topic, arr.filter(h => h !== handler));\n  }\n}",
+        "task": "Implementa un Event Aggregator centrale con publish e subscribe, cosi' che publisher e subscriber comunichino tramite topic senza riferimenti diretti tra loro."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_other",
+      "english": "Service Locator",
+      "set": {
+        "code": "class ServiceLocator {\n  private static services = new Map<string, unknown>();\n\n  static register<T>(key: string, instance: T): void {\n    this.services.set(key, instance);\n  }\n\n  static resolve<T>(key: string): T {\n    const svc = this.services.get(key);\n    if (!svc) throw new Error(`Service ${key} not registered`);\n    return svc as T;\n  }\n}\n\n// Registrazione all'avvio\nServiceLocator.register('logger', new ConsoleLogger());\n// Recupero on demand\nconst logger = ServiceLocator.resolve<Logger>('logger');",
+        "task": "Implementa un Service Locator come registro globale con register e resolve tipizzati, ricordando che rende le dipendenze meno esplicite rispetto alla dependency injection."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_other",
+      "english": "Pub/Sub",
+      "set": {
+        "code": "// Publisher: il servizio ordini\nclass OrderService {\n  constructor(private bus: MessageBus) {}\n  async place(order: Order) {\n    await this.save(order);\n    this.bus.publish('order.placed', { orderId: order.id, email: order.email });\n  }\n  private save(o: Order) { /* ... */ }\n}\n\n// Subscriber: il servizio email, completamente disaccoppiato\nclass EmailService {\n  constructor(bus: MessageBus) {\n    bus.subscribe('order.placed', (evt) => this.sendConfirmation(evt.email));\n  }\n  sendConfirmation(email: string) { /* invia email */ }\n}",
+        "task": "Modella un flusso pub/sub in cui OrderService pubblica un evento order.placed sul bus e EmailService si iscrive per inviare la conferma, senza che i due servizi si conoscano direttamente."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_other",
+      "english": "Interceptors",
+      "set": {
+        "code": "type Interceptor = (req: Request, next: () => Promise<Response>) => Promise<Response>;\n\nclass HttpPipeline {\n  private interceptors: Interceptor[] = [];\n\n  use(i: Interceptor): void { this.interceptors.push(i); }\n\n  async send(req: Request): Promise<Response> {\n    const chain = this.interceptors.reduceRight<() => Promise<Response>>(\n      (next, i) => () => i(req, next),\n      () => fetch(req),\n    );\n    return chain();\n  }\n}\n\n// Intercettatore che aggiunge l'header Authorization a ogni richiesta\nconst authInterceptor: Interceptor = (req, next) => {\n  req.headers.set('Authorization', `Bearer ${getToken()}`);\n  return next();\n};",
+        "task": "Costruisci una pipeline di intercettatori HTTP che permetta di iniettare automaticamente l'header Authorization in ogni richiesta in uscita componendo middleware in catena."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dev_agile",
+      "english": "Velocity (Agile)",
+      "set": {
+        "code": "-- Velocita' media del team negli ultimi 5 sprint\nSELECT\n  sprint_id,\n  SUM(story_points) AS completed_points\nFROM issues\nWHERE status = 'done'\n  AND sprint_id IN (\n    SELECT id FROM sprints\n    ORDER BY end_date DESC\n    LIMIT 5\n  )\nGROUP BY sprint_id\nORDER BY sprint_id;",
+        "task": "Scrivi una query SQL che calcoli la velocita' (story points completati) per ogni sprint negli ultimi cinque sprint chiusi, partendo dalla tabella issues di un tracker."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dev_agile",
+      "english": "Burn-down Chart",
+      "set": {
+        "code": "// Calcolo dei punti rimanenti giorno per giorno per un burn-down chart\nfunction burndown(sprint: Sprint, issues: Issue[]): { day: string; remaining: number }[] {\n  const start = sprint.startDate;\n  const days = Math.ceil((+sprint.endDate - +start) / 86_400_000);\n  const total = issues.reduce((s, i) => s + i.points, 0);\n\n  return Array.from({ length: days + 1 }, (_, d) => {\n    const date = new Date(+start + d * 86_400_000);\n    const done = issues\n      .filter(i => i.completedAt && i.completedAt <= date)\n      .reduce((s, i) => s + i.points, 0);\n    return { day: date.toISOString().slice(0, 10), remaining: total - done };\n  });\n}",
+        "task": "Calcola i dati per un burn-down chart: per ogni giorno dello sprint somma i punti delle issue ancora aperte cosi' da visualizzare il lavoro residuo nel tempo."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dev_kanban",
+      "english": "WIP Limit (Work In Progress)",
+      "set": {
+        "code": "// Hook che blocca il passaggio in 'In Progress' se il WIP limit e' raggiunto\nasync function moveToInProgress(issueId: string, column: Column): Promise<void> {\n  const wip = await db.count('issues', { column_id: column.id, status: 'in_progress' });\n  if (wip >= column.wipLimit) {\n    throw new Error(\n      `WIP limit raggiunto: ${wip}/${column.wipLimit}. Completa un task prima di iniziarne uno nuovo.`,\n    );\n  }\n  await db.update('issues', issueId, { status: 'in_progress' });\n}",
+        "task": "Applica il limite WIP della colonna Kanban: prima di spostare una issue in 'In Progress' verifica quanti task sono gia' in corso e blocca l'operazione se si supera la soglia."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dev_kanban",
+      "english": "Lead Time",
+      "set": {
+        "code": "-- Lead time medio: dal momento in cui l'issue viene creata a quando viene chiusa\nSELECT\n  AVG(EXTRACT(EPOCH FROM (closed_at - created_at)) / 86400) AS avg_lead_time_days,\n  PERCENTILE_CONT(0.95) WITHIN GROUP (ORDER BY closed_at - created_at) AS p95_lead_time\nFROM issues\nWHERE closed_at IS NOT NULL\n  AND closed_at >= NOW() - INTERVAL '90 days';",
+        "task": "Scrivi una query che calcoli il lead time medio e il 95esimo percentile dalla creazione alla chiusura delle issue negli ultimi 90 giorni."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dev_kanban",
+      "english": "Cycle Time",
+      "set": {
+        "code": "-- Cycle time: dal momento in cui il lavoro inizia (in_progress) a quando viene chiuso\nSELECT\n  i.id,\n  i.title,\n  EXTRACT(EPOCH FROM (i.closed_at - t.started_at)) / 3600 AS cycle_time_hours\nFROM issues i\nJOIN (\n  SELECT issue_id, MIN(changed_at) AS started_at\n  FROM issue_status_changes\n  WHERE new_status = 'in_progress'\n  GROUP BY issue_id\n) t ON t.issue_id = i.id\nWHERE i.closed_at IS NOT NULL;",
+        "task": "Calcola il cycle time di ogni issue prendendo come inizio il primo passaggio in 'in_progress' e come fine la data di chiusura, esprimendolo in ore."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dev_pm",
+      "english": "Estimation (Story Points)",
+      "set": {
+        "code": "-- Punti stimati vs completati per sprint, utile per calibrare le stime future\nSELECT\n  s.name AS sprint,\n  SUM(i.story_points) FILTER (WHERE i.status = 'done')      AS completed_points,\n  SUM(i.story_points)                                        AS planned_points,\n  ROUND(\n    100.0 * SUM(i.story_points) FILTER (WHERE i.status = 'done')\n          / NULLIF(SUM(i.story_points), 0),\n    1\n  ) AS completion_pct\nFROM sprints s\nJOIN issues i ON i.sprint_id = s.id\nGROUP BY s.name\nORDER BY s.start_date DESC;",
+        "task": "Confronta story points pianificati e completati per ogni sprint con una query SQL, cosi' da capire quanto le stime del team si discostano dalla realta'."
+      }
+    }
+  ]
+}

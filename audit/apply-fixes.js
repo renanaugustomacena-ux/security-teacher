@@ -47,7 +47,10 @@ const lines = src.split('\n');
 
 function encodeValue(val) {
   if (typeof val !== 'string') return JSON.stringify(val);
-  const needsTemplate = /['`]/.test(val);
+  // Use template literals for any value that contains apostrophes, backticks,
+  // OR newlines. Single-quoted JS string literals can't span lines, so a
+  // multi-line `command:` or `code:` value would otherwise produce invalid JS.
+  const needsTemplate = /['`\n]/.test(val);
   if (needsTemplate) {
     return `\`${val.replace(/\\/g, '\\\\').replace(/`/g, '\\`').replace(/\$\{/g, '\\${')}\``;
   }

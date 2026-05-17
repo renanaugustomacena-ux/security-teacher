@@ -1,0 +1,319 @@
+{
+  "fixes": [
+    {
+      "level": "4",
+      "lesson": "dev_arch_basics",
+      "english": "Component",
+      "set": {
+        "code": "interface ButtonProps {\n  label: string;\n  onClick: () => void;\n}\n\nfunction Button({ label, onClick }: ButtonProps) {\n  return <button onClick={onClick}>{label}</button>;\n}",
+        "task": "Definisci un componente Button con una responsabilita' chiara, props tipizzate e un handler onClick passato dall'esterno."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dev_arch_basics",
+      "english": "Module",
+      "set": {
+        "code": "// src/payments/index.ts\nexport { processPayment } from './processPayment';\nexport { refund } from './refund';\nexport type { PaymentResult } from './types';\n// dettagli interni come 'validateCard' restano privati al modulo",
+        "task": "Esponi solo le funzioni pubbliche del modulo payments tramite il file index e mantieni privati i dettagli implementativi."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dev_arch_basics",
+      "english": "Interface (Architectural)",
+      "set": {
+        "code": "interface UserService {\n  findById(id: string): Promise<User | null>;\n  create(data: NewUser): Promise<User>;\n  delete(id: string): Promise<void>;\n}",
+        "task": "Definisci un'interfaccia UserService che dichiari il contratto pubblico, lasciando libere le implementazioni concrete (in-memory, SQL, HTTP)."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dev_arch_patterns",
+      "english": "MVC (Model-View-Controller)",
+      "set": {
+        "code": "// Model\nclass UserModel {\n  async getAll() { return db.query('SELECT * FROM users'); }\n}\n\n// Controller\nclass UserController {\n  constructor(private model: UserModel, private view: UserView) {}\n  async index() {\n    const users = await this.model.getAll();\n    return this.view.render(users);\n  }\n}",
+        "task": "Implementa il pattern MVC separando il model che parla col database, il controller che orchestra e la view che si occupa solo del rendering."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dev_arch_patterns",
+      "english": "Message Queue",
+      "set": {
+        "code": "import { Queue } from 'bullmq';\n\nconst emailQueue = new Queue('emails', { connection: { host: 'redis', port: 6379 } });\n\nawait emailQueue.add('welcome', {\n  to: 'alice@example.com',\n  template: 'welcome',\n});",
+        "task": "Pubblica un job di invio email su una coda BullMQ in modo che il processo HTTP non debba aspettare l'invio sincrono."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dev_arch_patterns",
+      "english": "Pub/Sub (Publisher-Subscriber)",
+      "set": {
+        "code": "import { EventEmitter } from 'node:events';\n\nconst bus = new EventEmitter();\n\nbus.on('user.registered', (user) => sendWelcomeEmail(user));\nbus.on('user.registered', (user) => trackAnalytics(user));\n\nbus.emit('user.registered', { id: '42', email: 'bob@example.com' });",
+        "task": "Implementa il pattern pub/sub con un EventEmitter che pubblica l'evento user.registered e disaccoppia invio email e analytics."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dev_arch_api",
+      "english": "Stateless",
+      "set": {
+        "code": "// Handler stateless: tutta l'identita' arriva nel JWT, niente sessione in memoria\nfunction getProfile(req: Request, res: Response) {\n  const userId = verifyJwt(req.headers.authorization).sub;\n  return res.json(userRepo.findById(userId));\n}",
+        "task": "Scrivi un handler stateless che ricostruisce l'identita' utente da un JWT a ogni richiesta, senza appoggiarsi a sessioni server-side."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dev_arch_api",
+      "english": "gRPC",
+      "set": {
+        "code": "// user.proto\nsyntax = \"proto3\";\n\nservice UserService {\n  rpc GetUser (GetUserRequest) returns (User);\n}\n\nmessage GetUserRequest { string id = 1; }\nmessage User { string id = 1; string email = 2; }",
+        "task": "Definisci il contratto gRPC per il servizio UserService dichiarando l'RPC GetUser con il suo request e response in protobuf."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dev_arch_ddd",
+      "english": "Entity",
+      "set": {
+        "code": "class User {\n  constructor(\n    public readonly id: string,\n    private email: string,\n  ) {}\n\n  equals(other: User): boolean {\n    return this.id === other.id;\n  }\n\n  changeEmail(newEmail: string): void {\n    this.email = newEmail;\n  }\n}",
+        "task": "Modella l'entita' User con un'identita' immutabile basata su id e un metodo equals che confronta per identita', non per attributi."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dev_arch_ddd",
+      "english": "Value Object",
+      "set": {
+        "code": "class Money {\n  constructor(\n    public readonly amount: number,\n    public readonly currency: string,\n  ) {\n    if (amount < 0) throw new Error('Money non puo essere negativo');\n  }\n\n  equals(other: Money): boolean {\n    return this.amount === other.amount && this.currency === other.currency;\n  }\n}",
+        "task": "Definisci il value object Money come immutabile, identificato solo dai suoi attributi e con un'invariante che impedisca importi negativi."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dev_arch_ddd",
+      "english": "Aggregate",
+      "set": {
+        "code": "class Order {\n  private items: OrderLine[] = [];\n\n  constructor(public readonly id: string, public readonly customerId: string) {}\n\n  addLine(line: OrderLine): void {\n    if (this.items.length >= 50) throw new Error('Troppe righe');\n    this.items.push(line);\n  }\n\n  total(): Money {\n    return this.items.reduce((acc, l) => acc.add(l.subtotal()), Money.zero('EUR'));\n  }\n}",
+        "task": "Costruisci l'aggregato Order che incapsula le sue OrderLine e protegge l'invariante 'massimo 50 righe' tramite il metodo addLine."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dev_arch_ddd",
+      "english": "Aggregate Root",
+      "set": {
+        "code": "class Cart {\n  private items: CartItem[] = [];\n\n  // Unico punto di ingresso: nessuno modifica CartItem direttamente.\n  addProduct(product: Product, qty: number): void {\n    const existing = this.items.find((i) => i.productId === product.id);\n    if (existing) existing.increase(qty);\n    else this.items.push(new CartItem(product.id, qty));\n  }\n\n  snapshot(): readonly CartItem[] {\n    return Object.freeze([...this.items]);\n  }\n}",
+        "task": "Implementa Cart come radice dell'aggregato: i CartItem interni non sono modificabili dall'esterno e ogni cambiamento passa per addProduct."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dev_arch_ddd",
+      "english": "Repository Pattern",
+      "set": {
+        "code": "interface UserRepository {\n  findById(id: string): Promise<User | null>;\n  save(user: User): Promise<void>;\n}\n\nclass PostgresUserRepository implements UserRepository {\n  async findById(id: string): Promise<User | null> {\n    const row = await db.users.findOne({ id });\n    return row ? new User(row.id, row.email) : null;\n  }\n\n  async save(user: User): Promise<void> {\n    await db.users.upsert(user);\n  }\n}",
+        "task": "Definisci l'interfaccia UserRepository nel dominio e l'implementazione Postgres separata, in modo che il dominio non conosca SQL."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dev_arch_ddd",
+      "english": "Domain Service",
+      "set": {
+        "code": "class TransferService {\n  // Logica che non appartiene ne' a un singolo Account, ne' a un Transaction.\n  transfer(from: Account, to: Account, amount: Money): void {\n    if (from.id === to.id) throw new Error('Stesso conto');\n    from.debit(amount);\n    to.credit(amount);\n  }\n}",
+        "task": "Modella il TransferService come servizio di dominio che coordina due Account, dato che il bonifico non e' responsabilita' di una singola entita'."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dev_arch_ddd",
+      "english": "Anti-Corruption Layer (ACL)",
+      "set": {
+        "code": "// Il nostro dominio parla di Customer; l'ERP legacy espone 'CUST_RECORD'.\nclass LegacyCustomerAdapter {\n  constructor(private legacyApi: LegacyErpClient) {}\n\n  async getCustomer(id: string): Promise<Customer> {\n    const raw = await this.legacyApi.fetchCustRecord(id);\n    return new Customer(raw.CUST_ID, raw.CUST_NAME, raw.CUST_EMAIL);\n  }\n}",
+        "task": "Scrivi un adattatore che traduce il modello CUST_RECORD dell'ERP legacy nell'entita' Customer del tuo dominio, evitando contaminazioni."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dev_test_unit",
+      "english": "Unit Test",
+      "set": {
+        "code": "import { describe, it, expect } from 'vitest';\nimport { add } from './math';\n\ndescribe('add', () => {\n  it('somma due numeri positivi', () => {\n    expect(add(2, 3)).toBe(5);\n  });\n});",
+        "task": "Scrivi un unit test isolato per la funzione add che gira in millisecondi e fallisce solo se la logica di somma si rompe."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dev_test_unit",
+      "english": "Test Case",
+      "set": {
+        "code": "test('restituisce l\\'utente quando esiste', async () => {\n  const user = await repo.findById('abc');\n  expect(user?.name).toBe('Alice');\n});\n\ntest('restituisce null se l\\'utente non esiste', async () => {\n  const user = await repo.findById('zzz');\n  expect(user).toBeNull();\n});",
+        "task": "Definisci due casi di test per findById: uno per l'utente esistente che torna l'oggetto, l'altro per l'id sconosciuto che torna null."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dev_test_unit",
+      "english": "Assertion",
+      "set": {
+        "code": "const result = calculateTax(100, 0.22);\n\nexpect(result).toBe(22);\nexpect(result).toBeGreaterThan(0);\nexpect(typeof result).toBe('number');",
+        "task": "Scrivi tre asserzioni che verifichino il valore esatto, un vincolo numerico e il tipo del risultato di calculateTax."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dev_test_unit",
+      "english": "Test Suite",
+      "set": {
+        "code": "describe('UserService', () => {\n  describe('register', () => {\n    it('crea un nuovo utente', () => { /* ... */ });\n    it('rifiuta email duplicate', () => { /* ... */ });\n  });\n  describe('delete', () => {\n    it('rimuove l\\'utente esistente', () => { /* ... */ });\n  });\n});",
+        "task": "Organizza la suite di test di UserService raggruppando register e delete in describe annidati per leggere il report come una specifica."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dev_test_unit",
+      "english": "Fixture",
+      "set": {
+        "code": "// fixtures/users.ts\nexport const aliceFixture = {\n  id: 'user-1',\n  email: 'alice@example.com',\n  role: 'admin',\n} as const;\n\n// nel test\nimport { aliceFixture } from './fixtures/users';\n\nit('admin puo eliminare utenti', () => {\n  expect(canDelete(aliceFixture)).toBe(true);\n});",
+        "task": "Centralizza una fixture aliceFixture riutilizzabile e usala nei test al posto di duplicare i dati di setup in ogni it."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dev_test_unit",
+      "english": "Setup / Teardown",
+      "set": {
+        "code": "let db: Database;\n\nbeforeEach(async () => {\n  db = await Database.connect(':memory:');\n  await db.migrate();\n});\n\nafterEach(async () => {\n  await db.close();\n});",
+        "task": "Configura beforeEach e afterEach per aprire un database in-memory pulito prima di ogni test e chiuderlo correttamente dopo."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dev_test_unit",
+      "english": "Code Coverage",
+      "set": {
+        "command": "npx jest --coverage --coverageReporters=text-summary --coverageReporters=html",
+        "task": "Esegui la suite Jest generando un report di coverage sia testuale che HTML per individuare i rami di codice non testati."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dev_test_integration",
+      "english": "End-to-End (E2E) Testing",
+      "set": {
+        "command": "npx playwright test --project=chromium --reporter=html",
+        "task": "Esegui la suite end-to-end con Playwright su Chromium e genera un report HTML navigabile con screenshot dei fallimenti."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dev_test_integration",
+      "english": "Smoke Test",
+      "set": {
+        "command": "curl -fsS https://app.example.com/healthz && curl -fsS https://app.example.com/api/version",
+        "task": "Esegui uno smoke test post-deploy che fallisce subito se l'endpoint di health o quello di version non rispondono 2xx."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dev_test_techniques",
+      "english": "Mock",
+      "set": {
+        "code": "import { vi } from 'vitest';\n\nconst mockDb = {\n  findOne: vi.fn().mockResolvedValue({ id: 'abc', name: 'Alice' }),\n};\n\nconst service = new UserService(mockDb);\nawait service.getName('abc');\n\nexpect(mockDb.findOne).toHaveBeenCalledWith({ id: 'abc' });",
+        "task": "Crea un mock di db.findOne con vi.fn(), iniettalo in UserService e verifica che il servizio chiami il metodo con l'id giusto."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dev_test_techniques",
+      "english": "Stub",
+      "set": {
+        "code": "// Stub: ritorna sempre la stessa risposta predefinita, senza logica.\nconst paymentGatewayStub = {\n  charge: async (_amount: number) => ({ status: 'approved', txId: 'stub-1' }),\n};\n\nconst checkout = new CheckoutService(paymentGatewayStub);\nawait checkout.pay(100);",
+        "task": "Sostituisci il gateway di pagamento con uno stub che restituisce sempre 'approved' cosi' il test del checkout resta deterministico."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dev_test_techniques",
+      "english": "Spy",
+      "set": {
+        "code": "import { vi } from 'vitest';\n\nconst logger = { warn: () => {} };\nconst warnSpy = vi.spyOn(logger, 'warn');\n\nvalidate({ email: '' }, logger);\n\nexpect(warnSpy).toHaveBeenCalledWith('email mancante');",
+        "task": "Aggancia uno spy a logger.warn e verifica che validate produca esattamente il messaggio 'email mancante' quando l'email e' vuota."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dev_test_techniques",
+      "english": "Mutation Testing",
+      "set": {
+        "command": "npx stryker run --concurrency 4 --reporters html,clear-text",
+        "task": "Esegui Stryker per generare mutanti del codice e scopri quali mutazioni la tua suite non riesce a uccidere."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dev_test_techniques",
+      "english": "Static Analysis",
+      "set": {
+        "command": "npx eslint 'src/**/*.{ts,tsx}' --max-warnings 0 --report-unused-disable-directives",
+        "task": "Esegui ESLint sul sorgente TypeScript trattando ogni warning come errore e segnalando le direttive di disable inutilizzate."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dev_test_techniques",
+      "english": "Fuzz Testing (Fuzzing)",
+      "set": {
+        "command": "npx jazzer parser.test.js -- -max_total_time=60",
+        "task": "Lancia Jazzer.js sul parser per 60 secondi cosi' che generi input casuali e malformati alla ricerca di crash."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dev_test_techniques",
+      "english": "Fake (Object)",
+      "set": {
+        "code": "// Fake: implementazione reale ma semplificata, non production-ready.\nclass InMemoryUserRepository implements UserRepository {\n  private users = new Map<string, User>();\n  async findById(id: string) { return this.users.get(id) ?? null; }\n  async save(user: User) { this.users.set(user.id, user); }\n}",
+        "task": "Implementa un fake InMemoryUserRepository con Map per i test, evitando di toccare il database vero pur mantenendo la semantica."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dev_test_techniques",
+      "english": "Property-based Testing",
+      "set": {
+        "code": "import fc from 'fast-check';\n\ntest('reverse di reverse e\\' identita\\'', () => {\n  fc.assert(\n    fc.property(fc.array(fc.integer()), (arr) => {\n      expect(reverse(reverse(arr))).toEqual(arr);\n    }),\n  );\n});",
+        "task": "Scrivi un test property-based con fast-check che verifichi su array casuali di interi l'invariante reverse(reverse(arr)) === arr."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dev_test_quality",
+      "english": "Load Testing",
+      "set": {
+        "command": "k6 run --vus 500 --duration 5m loadtest.js",
+        "task": "Esegui un test di carico con k6 simulando 500 utenti virtuali per 5 minuti e misura latenza e tasso di errore."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dev_test_quality",
+      "english": "Stress Testing",
+      "set": {
+        "command": "k6 run --stage 2m:200,5m:2000,2m:0 stress.js",
+        "task": "Lancia uno stress test che rampa fino a 2000 utenti concorrenti per individuare il punto di rottura del sistema."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dev_test_quality",
+      "english": "Accessibility Testing (a11y)",
+      "set": {
+        "command": "npx pa11y-ci --sitemap https://app.example.com/sitemap.xml --reporter json",
+        "task": "Scansiona tutte le pagine elencate nella sitemap con pa11y-ci ed emetti un report JSON delle violazioni WCAG."
+      }
+    }
+  ]
+}

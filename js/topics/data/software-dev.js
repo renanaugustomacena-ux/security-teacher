@@ -41,6 +41,11 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Una sequenza di istruzioni che il computer pu\u00F2 eseguire.',
+              code: `function greet(name: string): void {
+  console.log(\`Hello, \${name}!\`);
+}
+greet('world');`,
+              task: `Scrivi un programma che definisca una funzione di saluto e la invochi passando 'world'.`,
             },
             {
               english: 'Software',
@@ -63,6 +68,16 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Una procedura passo-passo per risolvere un problema.',
+              code: `function binarySearch(arr: number[], target: number): number {
+  let lo = 0, hi = arr.length - 1;
+  while (lo <= hi) {
+    const mid = (lo + hi) >> 1;
+    if (arr[mid] === target) return mid;
+    arr[mid] < target ? lo = mid + 1 : hi = mid - 1;
+  }
+  return -1;
+}`,
+              task: `Implementa l'algoritmo di ricerca binaria su un array ordinato, ritornando l'indice trovato oppure -1.`,
             },
             {
               english: 'Data',
@@ -73,6 +88,12 @@ export default {
                 'Modern applications collect huge amounts of data that must be processed into useful information for users. = Le applicazioni moderne raccolgono enormi quantità di dati che devono essere elaborati in informazioni utili per gli utenti.',
               context: 'foundations',
               difficulty: 'beginner',
+              code: `const user: { id: number; email: string; active: boolean } = {
+  id: 42,
+  email: 'alice@example.com',
+  active: true,
+};`,
+              task: 'Modella i dati di un utente con id numerico, email e stato attivo usando un oggetto tipizzato.',
             },
             {
               english: 'Logic',
@@ -164,6 +185,8 @@ export default {
               context: 'tools',
               difficulty: 'intermediate',
               note: "Traduce tutto il codice in un colpo solo prima dell'esecuzione (es. C, C++, Java).",
+              command: 'tsc --strict --target ES2022 src/index.ts',
+              task: 'Compila il sorgente TypeScript con modalita strict e target ES2022 usando il compilatore.',
             },
             {
               english: 'Interpreter',
@@ -175,6 +198,8 @@ export default {
               context: 'tools',
               difficulty: 'intermediate',
               note: 'Esegue il codice riga per riga (es. Python, JavaScript).',
+              command: 'node --experimental-vm-modules scripts/run.js',
+              task: `Avvia l'interprete Node con i moduli VM sperimentali per eseguire lo script di avvio.`,
             },
             {
               english: 'Debugger',
@@ -185,6 +210,12 @@ export default {
                 'Attach the debugger to the running process to inspect variables, set breakpoints, and step through the failing function. = Collega il debugger al processo in esecuzione per ispezionare le variabili, mettere breakpoint e scorrere passo passo la funzione che fallisce.',
               context: 'tools',
               difficulty: 'intermediate',
+              command: 'node --inspect-brk=9229 dist/server.js',
+              code: `function processOrder(id: number) {
+  debugger;
+  return fetchOrder(id);
+}`,
+              task: 'Lancia il debugger sulla porta 9229 fermandoti alla prima riga, e usa la parola chiave debugger nel codice come breakpoint.',
             },
             {
               english: 'Terminal (CLI)',
@@ -194,6 +225,8 @@ export default {
               example: `Power users prefer the terminal because chaining commands with pipes is faster than clicking through a graphical interface. = Gli utenti esperti preferiscono il terminale perché concatenare comandi con le pipe è più veloce che cliccare in un'interfaccia grafica.`,
               context: 'tools',
               difficulty: 'beginner',
+              command: `ls -la | grep '.env' | wc -l`,
+              task: 'Concatena tre comandi nel terminale per contare quanti file .env sono presenti nella directory corrente.',
             },
             {
               english: 'Build',
@@ -205,6 +238,8 @@ export default {
               context: 'tools',
               difficulty: 'intermediate',
               note: 'Processo di trasformazione del codice sorgente in un prodotto finito.',
+              command: 'npm run build -- --mode production',
+              task: 'Esegui la build di produzione del progetto invocando lo script npm con il flag mode.',
             },
             {
               english: 'Version Control',
@@ -215,6 +250,8 @@ export default {
                 "Without version control, teams overwrite each other's changes. = Senza il controllo versione, i team sovrascrivono le modifiche degli altri.",
               context: 'tools',
               difficulty: 'intermediate',
+              command: `git init && git add . && git commit -m 'chore: initial commit'`,
+              task: 'Inizializza il controllo versione nel progetto creando il primo commit con tutti i file correnti.',
             },
             {
               english: 'Plugin / Extension',
@@ -225,6 +262,8 @@ export default {
                 'Install a plugin to add features to your IDE. = Installa un plugin per aggiungere funzioni al tuo IDE.',
               context: 'tools',
               difficulty: 'beginner',
+              command: 'code --install-extension dbaeumer.vscode-eslint',
+              task: `Installa l'estensione ESLint per VS Code via riga di comando per abilitare il linting nel tuo editor.`,
             },
             {
               english: 'Framework',
@@ -265,6 +304,8 @@ export default {
               context: 'errors',
               difficulty: 'beginner',
               note: 'Il processo di ricerca e risoluzione dei bug.',
+              command: 'node --inspect-brk -r ts-node/register src/index.ts',
+              task: 'Avvia una sessione di debugging su un file TypeScript usando ts-node con breakpoint iniziale.',
             },
             {
               english: 'Crash',
@@ -306,6 +347,11 @@ export default {
                 'A runtime error occurred during calculations. = Un errore runtime \u00E8 avvenuto durante i calcoli.',
               context: 'errors',
               difficulty: 'intermediate',
+              code: `function divide(a: number, b: number): number {
+  if (b === 0) throw new RangeError('Division by zero');
+  return a / b;
+}`,
+              task: 'Scrivi una funzione che sollevi un errore runtime di tipo RangeError quando il divisore e zero.',
             },
             {
               english: 'Compile-time Error',
@@ -336,6 +382,12 @@ export default {
                 'We added structured log entries with timestamps so production issues are easier to trace. = Abbiamo aggiunto voci di log strutturate con timestamp così i problemi in produzione sono più facili da tracciare.',
               context: 'errors',
               difficulty: 'beginner',
+              code: `const logger = {
+  info: (msg: string, meta?: object) =>
+    console.log(JSON.stringify({ level: 'info', msg, ...meta, ts: Date.now() })),
+};
+logger.info('user.login', { userId: 42 });`,
+              task: 'Crea un logger strutturato in JSON che includa livello, messaggio, metadati e timestamp.',
             },
             {
               english: 'Breakpoint',
@@ -345,6 +397,11 @@ export default {
               example: `Place a conditional breakpoint that triggers only when the user ID equals 42 to avoid stopping on every iteration. = Metti un breakpoint condizionale che si attiva solo quando l'ID utente è uguale a 42 per evitare di fermarsi a ogni iterazione.`,
               context: 'tools',
               difficulty: 'intermediate',
+              code: `function checkout(cart: Cart) {
+  debugger;
+  return processPayment(cart.total);
+}`,
+              task: `Inserisci un breakpoint inline tramite la parola chiave debugger prima dell'elaborazione del pagamento.`,
             },
           ],
         },
@@ -383,6 +440,10 @@ export default {
                 'Write a comment to explain the why behind a tricky algorithm, not to repeat what the code already says clearly. = Scrivi un commento per spiegare il perché dietro un algoritmo complicato, non per ripetere ciò che il codice già dice chiaramente.',
               context: 'foundations',
               difficulty: 'beginner',
+              code: `// FIXME: race condition when two requests arrive within 5ms
+// see RFC-0042 for the proposed fix using a mutex
+await acquireLock(resourceId);`,
+              task: 'Aggiungi un commento che spieghi una race condition e referenzi il documento RFC con la soluzione proposta.',
             },
             {
               english: 'Variable Name',
@@ -393,6 +454,10 @@ export default {
                 'A descriptive variable name like userEmail beats a cryptic single letter when someone else needs to read the code months later. = Un nome di variabile descrittivo come userEmail batte una singola lettera criptica quando qualcun altro deve leggere il codice mesi dopo.',
               context: 'foundations',
               difficulty: 'beginner',
+              code: `const isAuthenticated: boolean = checkSession();
+const maxRetryAttempts: number = 3;
+let currentUserId: string | null = null;`,
+              task: 'Dichiara tre variabili con nomi descrittivi per stato di autenticazione, numero massimo di tentativi e ID utente corrente.',
             },
             {
               english: 'Naming Convention',
@@ -403,6 +468,13 @@ export default {
                 'Following a consistent naming convention like camelCase or snake_case prevents subtle bugs when modules from different teams interact. = Seguire una convenzione di nomi coerente come camelCase o snake_case previene bug sottili quando moduli di team diversi interagiscono.',
               context: 'foundations',
               difficulty: 'intermediate',
+              code: `// camelCase for variables/functions
+const userEmail = 'a@b.com';
+// PascalCase for classes/types
+class UserAccount {}
+// SCREAMING_SNAKE_CASE for constants
+const MAX_LOGIN_ATTEMPTS = 5;`,
+              task: 'Mostra le convenzioni sui nomi in JavaScript usando camelCase per variabili, PascalCase per classi e SCREAMING_SNAKE_CASE per costanti.',
             },
             {
               english: 'Versioning',
@@ -413,6 +485,8 @@ export default {
                 'Semantic versioning communicates breaking changes through the major number so consumers know when an upgrade requires code changes. = Il versionamento semantico comunica i cambiamenti incompatibili attraverso il numero major così i consumatori sanno quando un aggiornamento richiede modifiche al codice.',
               context: 'management',
               difficulty: 'intermediate',
+              command: `npm version minor -m 'release: bump to %s with new auth feature'`,
+              task: 'Incrementa la versione minor del pacchetto npm aggiungendo un messaggio di commit personalizzato per il versionamento.',
             },
             {
               english: 'Manual',
@@ -423,6 +497,8 @@ export default {
                 'Reading the manual before configuring a complex tool saves hours of trial-and-error troubleshooting later. = Leggere il manuale prima di configurare uno strumento complesso fa risparmiare ore di problem solving a tentativi più tardi.',
               context: 'foundations',
               difficulty: 'beginner',
+              command: 'git help commit | less',
+              task: 'Apri il manuale ufficiale del comando git commit usando il sistema di help integrato.',
             },
             {
               english: 'Specification',
@@ -476,6 +552,8 @@ export default {
               context: 'git',
               difficulty: 'beginner',
               note: 'Spesso abbreviato in "repo". Il contenitore del progetto e della sua storia.',
+              command: 'git clone --depth 1 git@github.com:acme/payments-api.git',
+              task: 'Clona la repository remota tramite SSH con profondita di un solo commit per risparmiare banda.',
             },
             {
               english: 'Commit',
@@ -487,6 +565,8 @@ export default {
               context: 'git',
               difficulty: 'beginner',
               note: 'Un salvataggio dello stato del progetto (uno "snapshot").',
+              command: 'git commit -m "feat(auth): add SSO login flow"',
+              task: `Registra le modifiche staged con un commit convenzionale che descrive l'aggiunta del flusso SSO.`,
             },
             {
               english: 'Push',
@@ -497,6 +577,8 @@ export default {
                 'Always pull before you push to avoid rejected updates. = Fai sempre pull prima di push per evitare aggiornamenti rifiutati.',
               context: 'git',
               difficulty: 'beginner',
+              command: 'git push -u origin feature/user-profile',
+              task: 'Esegui il push del branch locale sul remoto origin impostando il tracking upstream.',
             },
             {
               english: 'Pull',
@@ -508,6 +590,8 @@ export default {
               context: 'git',
               difficulty: 'beginner',
               note: 'Scarica le modifiche dal server e le unisce al tuo codice.',
+              command: 'git pull --rebase origin main',
+              task: 'Scarica le ultime modifiche da main e applica i tuoi commit in cima tramite rebase invece del merge.',
             },
             {
               english: 'Clone',
@@ -518,6 +602,8 @@ export default {
                 'New developers clone the repo on their first day to get the full project history. = I nuovi sviluppatori clonano la repo il primo giorno per ottenere tutta la storia del progetto.',
               context: 'git',
               difficulty: 'beginner',
+              command: 'git clone --recurse-submodules git@github.com:acme/monorepo.git',
+              task: 'Clona la repository remota includendo automaticamente tutti i sottomoduli.',
             },
             {
               english: 'Add / Stage',
@@ -529,6 +615,8 @@ export default {
               context: 'git',
               difficulty: 'beginner',
               note: 'Lo "staging" \u00E8 la fase intermedia prima del commit.',
+              command: 'git add -p src/auth.ts',
+              task: 'Metti in stage solo alcune porzioni del file di autenticazione in modo interattivo per dividere il commit.',
             },
             {
               english: 'Status',
@@ -539,6 +627,8 @@ export default {
                 'Before committing, always run git status to see which files have been changed. = Prima di fare commit, esegui sempre git status per vedere quali file sono stati modificati.',
               context: 'git',
               difficulty: 'beginner',
+              command: 'git status --short --branch',
+              task: 'Mostra lo stato del repository in formato compatto con il nome del branch corrente.',
             },
             {
               english: 'Diff',
@@ -549,6 +639,8 @@ export default {
                 'Reading the diff before pushing helps you catch debug print statements or commented-out code that should never reach production. = Leggere la diff prima di fare push ti aiuta a individuare print di debug o codice commentato che non dovrebbero mai arrivare in produzione.',
               context: 'git',
               difficulty: 'intermediate',
+              command: 'git diff --staged --stat',
+              task: 'Mostra la diff delle sole modifiche staged con riassunto statistico per file.',
             },
             {
               english: 'Remote',
@@ -559,6 +651,8 @@ export default {
                 'You can add multiple remote repositories to push your code to different servers. = Puoi aggiungere pi\u00F9 repository remoti per inviare il codice a server diversi.',
               context: 'git',
               difficulty: 'intermediate',
+              command: 'git remote add upstream git@github.com:acme/main-repo.git',
+              task: 'Aggiungi il repository originale come remoto upstream per poter sincronizzare il tuo fork.',
             },
             {
               english: 'Head',
@@ -569,6 +663,8 @@ export default {
               context: 'git',
               difficulty: 'advanced',
               note: "Puntatore all'ultimo commit effettuato nel branch attuale.",
+              command: 'git log HEAD~5..HEAD --oneline',
+              task: `Visualizza gli ultimi cinque commit raggiungibili dall'HEAD in formato compatto.`,
             },
           ],
         },
@@ -587,6 +683,8 @@ export default {
               context: 'git',
               difficulty: 'beginner',
               note: 'Una linea di sviluppo separata dal "main".',
+              command: 'git checkout -b feature/user-profile',
+              task: 'Crea un nuovo branch per la funzionalita del profilo utente e spostati subito su di esso.',
             },
             {
               english: 'Checkout / Switch',
@@ -598,6 +696,8 @@ export default {
               context: 'git',
               difficulty: 'beginner',
               note: 'Usato per cambiare il branch corrente.',
+              command: 'git switch feature/user-profile',
+              task: 'Spostati sul branch feature/user-profile usando il comando moderno e piu sicuro di checkout.',
             },
             {
               english: 'Merge',
@@ -609,6 +709,8 @@ export default {
               context: 'git',
               difficulty: 'intermediate',
               note: 'Combina le modifiche di due branch diversi.',
+              command: 'git merge --no-ff feature/user-profile',
+              task: 'Unisci il branch feature/user-profile nel corrente forzando il commit di merge per preservare la storia del branch.',
             },
             {
               english: 'Conflict',
@@ -620,6 +722,8 @@ export default {
               context: 'git',
               difficulty: 'intermediate',
               note: 'Succede quando due persone modificano la stessa riga dello stesso file.',
+              command: 'git diff --name-only --diff-filter=U',
+              task: 'Elenca solo i file in conflitto durante il merge per sapere quali aprire e risolvere.',
             },
             {
               english: 'Rebase',
@@ -631,6 +735,8 @@ export default {
               context: 'git',
               difficulty: 'advanced',
               note: "Alternativa al merge: sposta il punto d'inizio del tuo branch.",
+              command: 'git rebase -i HEAD~3',
+              task: 'Avvia un rebase interattivo degli ultimi tre commit per riordinarli, schiacciarli o riformularli.',
             },
             {
               english: 'Fetch',
@@ -642,6 +748,8 @@ export default {
               context: 'git',
               difficulty: 'intermediate',
               note: 'Scarica info ma non le unisce al tuo codice (a differenza del pull).',
+              command: 'git fetch --all --prune',
+              task: 'Recupera gli aggiornamenti da tutti i remoti rimuovendo i riferimenti ai branch eliminati upstream.',
             },
             {
               english: 'git log --oneline',
@@ -653,6 +761,8 @@ export default {
               context: 'git',
               difficulty: 'beginner',
               note: 'Variante compatta del comando git log, utile per overview rapide della cronologia.',
+              command: 'git log --oneline --graph --decorate -n 20',
+              task: 'Mostra gli ultimi venti commit in formato compatto con grafo dei branch e decorazioni.',
             },
             {
               english: 'Tag',
@@ -664,6 +774,8 @@ export default {
               context: 'git',
               difficulty: 'intermediate',
               note: 'Un nome fisso dato a un commit specifico (es. per i rilasci).',
+              command: 'git tag -a v1.2.0 -m "release: v1.2.0 with new SSO support"',
+              task: 'Crea un tag annotato v1.2.0 con un messaggio descrittivo del rilascio.',
             },
             {
               english: 'Stash',
@@ -675,6 +787,8 @@ export default {
               context: 'git',
               difficulty: 'intermediate',
               note: 'Salva temporaneamente le modifiche senza fare un commit.',
+              command: 'git stash push -m "WIP: refactoring auth middleware" -u',
+              task: 'Metti da parte temporaneamente le modifiche in corso, inclusi i file non tracciati, con un messaggio descrittivo.',
             },
             {
               english: 'Blame',
@@ -686,6 +800,8 @@ export default {
               context: 'git',
               difficulty: 'advanced',
               note: "Mostra l'autore e il commit per ogni riga di un file.",
+              command: 'git blame -L 42,80 src/auth/login.ts',
+              task: `Identifica l'autore e il commit di ogni riga tra la 42 e la 80 del file di login.`,
             },
           ],
         },
@@ -704,6 +820,8 @@ export default {
               context: 'collaboration',
               difficulty: 'beginner',
               note: 'Copia completa di un progetto pubblico sul proprio profilo.',
+              command: 'gh repo fork acme/payments-api --clone --remote',
+              task: 'Crea un fork della repository remota, clonalo localmente e configura il remoto upstream automaticamente.',
             },
             {
               english: 'Pull Request (PR)',
@@ -715,6 +833,9 @@ export default {
               context: 'collaboration',
               difficulty: 'beginner',
               note: 'Proposta formale di unire il tuo codice a un progetto.',
+              command:
+                'gh pr create --title "feat(auth): add SSO login" --body "Closes #42" --reviewer @team/backend',
+              task: 'Apri una pull request con titolo convenzionale, riferimento alla issue chiusa e revisore assegnato.',
             },
             {
               english: 'Code Review',
@@ -746,6 +867,9 @@ export default {
               context: 'collaboration',
               difficulty: 'advanced',
               note: 'Indica il repository originale da cui si \u00E8 fatto il fork.',
+              command:
+                'git remote add upstream git@github.com:acme/main-repo.git && git fetch upstream',
+              task: 'Aggiungi il repository originale come remoto upstream e scarica subito i suoi riferimenti.',
             },
             {
               english: 'Issue',
@@ -757,6 +881,9 @@ export default {
               context: 'collaboration',
               difficulty: 'beginner',
               note: 'Segnalazione di un bug o richiesta di una funzionalit\u00E0.',
+              command:
+                'gh issue create --title "bug: login fails with empty password" --label bug,priority:high',
+              task: 'Apri una nuova issue su GitHub con titolo descrittivo ed etichette di bug e priorita alta.',
             },
             {
               english: 'Milestone',
@@ -766,6 +893,8 @@ export default {
               example: `Group related issues under a milestone like 'v2.0' so contributors can see exactly which tasks block the next release. = Raggruppa le issue collegate sotto una milestone come 'v2.0' così i contributori possono vedere esattamente quali task bloccano il prossimo rilascio.`,
               context: 'management',
               difficulty: 'intermediate',
+              command: 'gh issue list --milestone "v2.0" --state open',
+              task: 'Elenca tutte le issue aperte associate alla milestone v2.0 per vedere cosa blocca il rilascio.',
             },
             {
               english: 'Wiki',
@@ -816,6 +945,8 @@ export default {
               context: 'git',
               difficulty: 'advanced',
               note: 'Permette di prendere un singolo commit da un branch e applicarlo a un altro.',
+              command: 'git cherry-pick -x a1b2c3d4',
+              task: 'Applica selettivamente il commit a1b2c3d4 sul branch corrente aggiungendo una nota di provenienza.',
             },
             {
               english: 'Squash',
@@ -827,6 +958,9 @@ export default {
               context: 'git',
               difficulty: 'advanced',
               note: 'Pulisce la storia del branch unendo tanti piccoli commit in uno unico.',
+              command:
+                'git merge --squash feature/user-profile && git commit -m "feat(profile): add user profile page"',
+              task: 'Unisci tutti i commit del branch feature/user-profile in un singolo commit con messaggio convenzionale.',
             },
             {
               english: 'Revert',
@@ -838,6 +972,8 @@ export default {
               context: 'git',
               difficulty: 'intermediate',
               note: 'Crea un nuovo commit che annulla le modifiche di uno precedente (sicuro per la storia condivisa).',
+              command: 'git revert --no-edit HEAD',
+              task: `Annulla l'ultimo commit creando un nuovo commit di revert senza aprire l'editor del messaggio.`,
             },
             {
               english: 'Reset (Soft/Hard)',
@@ -849,6 +985,8 @@ export default {
               context: 'git',
               difficulty: 'advanced',
               note: 'Sposta il branch a un commit precedente. "Hard" cancella tutto, "Soft" mantiene i file modificati.',
+              command: 'git reset --soft HEAD~1',
+              task: `Sposta l'HEAD indietro di un commit mantenendo le modifiche nell'area di stage pronte per essere ricommittate.`,
             },
             {
               english: 'Reflog',
@@ -859,6 +997,8 @@ export default {
               context: 'git',
               difficulty: 'expert',
               note: 'Il "salvagente" di Git: registra ogni spostamento dell\'HEAD.',
+              command: 'git reflog --date=iso | head -20',
+              task: 'Consulta il reflog con date in formato ISO per ritrovare commit persi dopo un reset accidentale.',
             },
             {
               english: 'Patch',
@@ -869,6 +1009,8 @@ export default {
                 'The Linux kernel community still reviews contributions submitted as patch files via email. = La comunità del kernel Linux rivede ancora i contributi inviati come file di patch via email.',
               context: 'git',
               difficulty: 'intermediate',
+              command: 'git format-patch -1 HEAD --output-directory ./patches',
+              task: `Genera un file di patch per l'ultimo commit salvandolo nella cartella ./patches per la condivisione via email.`,
             },
             {
               english: 'Bisect',
@@ -880,6 +1022,8 @@ export default {
               context: 'git',
               difficulty: 'expert',
               note: 'Trova il commit che ha introdotto un bug tramite ricerca binaria.',
+              command: 'git bisect start HEAD v1.0.0',
+              task: 'Avvia una sessione di bisect dichiarando HEAD come commit difettoso e v1.0.0 come commit sicuramente funzionante.',
             },
             {
               english: 'Submodule',
@@ -890,6 +1034,8 @@ export default {
                 'We use a Git submodule to embed the shared library without duplicating its code. = Usiamo un sottomodulo Git per includere la libreria condivisa senza duplicarne il codice.',
               context: 'git',
               difficulty: 'advanced',
+              command: 'git submodule add git@github.com:acme/shared-utils.git libs/shared',
+              task: 'Aggiungi la libreria condivisa come sottomodulo Git nella cartella libs/shared.',
             },
             {
               english: 'Gitignore',
@@ -911,6 +1057,8 @@ export default {
                 'When you clone a repo, Git automatically names the source remote "origin". = Quando cloni una repo, Git nomina automaticamente il remoto sorgente "origin".',
               context: 'git',
               difficulty: 'beginner',
+              command: 'git remote set-url origin git@github.com:acme/payments-api.git',
+              task: `Aggiorna l'URL del remoto origin per puntare al nuovo repository SSH dell'organizzazione.`,
             },
           ],
         },
@@ -934,6 +1082,13 @@ export default {
                 'Semantic HTML tags like header, nav, and article help screen readers and search engines understand page structure. = I tag HTML semantici come header, nav e article aiutano gli screen reader e i motori di ricerca a capire la struttura della pagina.',
               context: 'frontend',
               difficulty: 'beginner',
+              code: `<article>
+  <header>
+    <h1>Articolo</h1>
+  </header>
+  <p>Contenuto principale dell'articolo.</p>
+</article>`,
+              task: 'Scrivi un frammento HTML semantico che usa article, header e h1 per descrivere un articolo con titolo e corpo.',
             },
             {
               english: 'CSS (Cascading Style Sheets)',
@@ -944,6 +1099,13 @@ export default {
                 'Modern CSS supports flexbox and grid layouts, eliminating the float-based hacks that web developers used a decade ago. = Il CSS moderno supporta i layout flexbox e grid, eliminando gli hack basati su float che gli sviluppatori web usavano un decennio fa.',
               context: 'frontend',
               difficulty: 'beginner',
+              code: `.card {
+  display: flex;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}`,
+              task: 'Definisci una regola CSS per la classe card che usa flexbox, padding e un bordo arrotondato.',
             },
             {
               english: 'JavaScript',
@@ -954,6 +1116,10 @@ export default {
                 'Modern web apps rely on JavaScript for dynamic content, form validation, and real-time updates. = Le web app moderne si affidano a JavaScript per contenuti dinamici, validazione form e aggiornamenti in tempo reale.',
               context: 'frontend',
               difficulty: 'beginner',
+              code: `const items = [1, 2, 3, 4];
+const total = items.reduce((sum, n) => sum + n, 0);
+console.log(total);`,
+              task: 'Scrivi uno snippet JavaScript che usa reduce per sommare i numeri di un array e ne stampa il totale.',
             },
             {
               english: 'DOM (Document Object Model)',
@@ -965,6 +1131,10 @@ export default {
               context: 'frontend',
               difficulty: 'intermediate',
               note: 'La rappresentazione strutturata della pagina web accessibile dal codice.',
+              code: `const btn = document.querySelector('#save');
+btn.textContent = 'Salvato';
+btn.classList.add('disabled');`,
+              task: 'Seleziona il pulsante con id save dal DOM, cambia il suo testo e aggiungi la classe disabled.',
             },
             {
               english: 'Selector',
@@ -975,6 +1145,9 @@ export default {
                 'A CSS selector targets specific elements. = Un selettore CSS punta a elementi specifici.',
               context: 'frontend',
               difficulty: 'beginner',
+              code: `const rows = document.querySelectorAll('table.users tr[data-active="true"]');
+rows.forEach((row) => row.classList.add('highlight'));`,
+              task: 'Usa un selettore CSS composto per recuperare tutte le righe attive della tabella users ed evidenziale via DOM.',
             },
             {
               english: 'HTML tag',
@@ -986,6 +1159,11 @@ export default {
               context: 'frontend',
               difficulty: 'beginner',
               note: 'Distinto dai tag Git, che etichettano commit specifici per i rilasci.',
+              code: `<nav>
+  <a href="/home">Home</a>
+  <a href="/about">Chi siamo</a>
+</nav>`,
+              task: 'Usa il tag HTML nav per racchiudere la navigazione principale del sito con due link verso home e about.',
             },
             {
               english: 'Attribute',
@@ -996,6 +1174,10 @@ export default {
                 'Use the data-* attribute prefix to attach custom values to HTML elements without breaking the standard validators. = Usa il prefisso data-* per gli attributi per allegare valori personalizzati agli elementi HTML senza rompere i validatori standard.',
               context: 'frontend',
               difficulty: 'beginner',
+              code: `<button type="submit" data-action="save" aria-label="Salva modulo">
+  Salva
+</button>`,
+              task: `Aggiungi al pulsante l'attributo type, un attributo data-action personalizzato e un aria-label per l'accessibilita.`,
             },
             {
               english: 'Event Listener',
@@ -1006,6 +1188,12 @@ export default {
                 'Remember to remove every event listener you add inside a React component, otherwise memory leaks accumulate on each remount. = Ricorda di rimuovere ogni event listener che aggiungi dentro un componente React, altrimenti i memory leak si accumulano a ogni remount.',
               context: 'frontend',
               difficulty: 'intermediate',
+              code: `const form = document.querySelector('#login');
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  console.log('invio bloccato');
+});`,
+              task: 'Registra un event listener sul submit del form login che blocca il comportamento di default e logga un messaggio.',
             },
             {
               english: 'Responsive Design',
@@ -1016,6 +1204,15 @@ export default {
                 'With responsive design, a single layout adapts to phones, tablets, and desktops using media queries. = Con il design responsive, un singolo layout si adatta a telefoni, tablet e desktop usando le media query.',
               context: 'design',
               difficulty: 'intermediate',
+              code: `@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+  .content {
+    width: 100%;
+  }
+}`,
+              task: 'Scrivi una media query CSS che nasconde la sidebar e fa occupare al contenuto tutta la larghezza sotto i 768px.',
             },
             {
               english: 'Single Page Application (SPA)',
@@ -1044,6 +1241,11 @@ export default {
                 'A production web server typically runs behind a reverse proxy that handles TLS termination and request rate limiting. = Un web server di produzione tipicamente gira dietro un reverse proxy che gestisce la terminazione TLS e il rate limiting delle richieste.',
               context: 'backend',
               difficulty: 'beginner',
+              code: `import express from 'express';
+const app = express();
+app.get('/health', (req, res) => res.send('ok'));
+app.listen(3000, () => console.log('server in ascolto su 3000'));`,
+              task: 'Avvia un server Express che espone una rotta /health e resta in ascolto sulla porta 3000.',
             },
             {
               english: 'Client',
@@ -1054,6 +1256,10 @@ export default {
                 "In web architecture, the client sends requests to the server and displays the response to the user. = Nell'architettura web, il client invia richieste al server e mostra la risposta all'utente.",
               context: 'foundations',
               difficulty: 'beginner',
+              code: `const res = await fetch('https://api.example.com/users');
+const users = await res.json();
+console.log(users);`,
+              task: `Scrivi un client JavaScript che invoca via fetch l'endpoint /users e stampa la risposta JSON.`,
             },
             {
               english: 'Database',
@@ -1075,6 +1281,12 @@ export default {
               context: 'backend',
               difficulty: 'intermediate',
               note: 'Codice che gira tra la richiesta e la risposta finale.',
+              code: `function logger(req, res, next) {
+  console.log(\`\${req.method} \${req.url}\`);
+  next();
+}
+app.use(logger);`,
+              task: 'Definisci un middleware Express che logga metodo e URL di ogni richiesta prima di passare al prossimo handler.',
             },
             {
               english: 'Authentication',
@@ -1085,6 +1297,15 @@ export default {
                 "Multi-factor authentication requires both a password and a one-time code from your phone. = L'autenticazione a più fattori richiede sia una password che un codice monouso dal telefono.",
               context: 'security',
               difficulty: 'beginner',
+              code: `app.post('/login', async (req, res) => {
+  const { email, password } = req.body;
+  const user = await db.users.findOne({ email });
+  if (!user || !(await bcrypt.compare(password, user.hash))) {
+    return res.status(401).json({ error: 'credenziali non valide' });
+  }
+  res.json({ token: jwt.sign({ id: user.id }, process.env.JWT_SECRET) });
+});`,
+              task: `Implementa l'endpoint /login che verifica email e password con bcrypt e restituisce un JWT in caso di successo.`,
             },
             {
               english: 'Authorization',
@@ -1095,6 +1316,16 @@ export default {
               context: 'security',
               difficulty: 'intermediate',
               note: "Decidere cosa l'utente pu\u00F2 fare (una volta autenticato).",
+              code: `function requireRole(role) {
+  return (req, res, next) => {
+    if (req.user?.role !== role) {
+      return res.status(403).json({ error: 'accesso negato' });
+    }
+    next();
+  };
+}
+app.delete('/users/:id', requireRole('admin'), deleteUser);`,
+              task: 'Scrivi un middleware di autorizzazione requireRole che blocca con 403 le richieste fatte da utenti senza il ruolo richiesto.',
             },
             {
               english: 'Routing',
@@ -1105,6 +1336,13 @@ export default {
                 'Define routing rules that map each HTTP path to a specific controller function, keeping URL design separate from business logic. = Definisci regole di routing che mappano ogni path HTTP a una specifica funzione del controller, tenendo il design degli URL separato dalla logica di business.',
               context: 'backend',
               difficulty: 'intermediate',
+              code: `import { Router } from 'express';
+const router = Router();
+router.get('/orders', listOrders);
+router.post('/orders', createOrder);
+router.get('/orders/:id', getOrder);
+app.use('/api', router);`,
+              task: 'Configura un Router Express che mappa GET, POST e GET con parametro :id sotto il prefisso /api/orders.',
             },
             {
               english: 'Environment Variable',
@@ -1115,6 +1353,10 @@ export default {
                 "Store the DB password in an env variable. = Salva la password del DB in una variabile d'ambiente.",
               context: 'backend',
               difficulty: 'intermediate',
+              code: `import 'dotenv/config';
+const dbUrl = process.env.DATABASE_URL;
+if (!dbUrl) throw new Error('DATABASE_URL mancante');`,
+              task: `Carica le variabili d'ambiente da .env e leggi DATABASE_URL da process.env, fallendo subito se manca.`,
             },
             {
               english: 'Server-side Rendering (SSR)',
@@ -1127,6 +1369,12 @@ export default {
               context: 'backend',
               difficulty: 'advanced',
               note: "Il server genera l'HTML finale invece di farlo fare al browser.",
+              code: `export async function getServerSideProps(context) {
+  const res = await fetch(\`https://api.example.com/posts/\${context.params.id}\`);
+  const post = await res.json();
+  return { props: { post } };
+}`,
+              task: 'Definisci getServerSideProps di Next.js per caricare un post via API a ogni richiesta e renderizzarlo lato server.',
             },
             {
               english: 'Microservices',
@@ -1175,6 +1423,12 @@ export default {
               context: 'backend',
               difficulty: 'intermediate',
               note: 'Esempi: GET (leggere), POST (creare), PUT/PATCH (modificare), DELETE (cancellare).',
+              command: `curl -X POST https://api.example.com/users -H "Content-Type: application/json" -d '{"name":"Anna"}'`,
+              code: `app.post('/users', async (req, res) => {
+  const created = await db.users.insert(req.body);
+  res.status(201).json(created);
+});`,
+              task: `Invia una richiesta POST con body JSON all'endpoint /users via curl e definisci la rotta Express che la gestisce.`,
             },
             {
               english: 'Endpoint',
@@ -1186,6 +1440,12 @@ export default {
               context: 'backend',
               difficulty: 'beginner',
               note: "L'indirizzo specifico (URL) di una funzione API.",
+              code: `app.get('/users/:id', async (req, res) => {
+  const user = await db.users.findById(req.params.id);
+  if (!user) return res.status(404).json({ error: 'utente non trovato' });
+  res.json(user);
+});`,
+              task: `Definisci l'endpoint GET /users/:id che cerca l'utente per id e restituisce 404 se non esiste.`,
             },
             {
               english: 'Request',
@@ -1196,6 +1456,13 @@ export default {
                 'Inspect a failing HTTP request in the network tab to verify the headers, body, and target URL match what the backend expects. = Ispeziona una richiesta HTTP fallita nella scheda network per verificare che header, body e URL di destinazione corrispondano a ciò che il backend si aspetta.',
               context: 'foundations',
               difficulty: 'beginner',
+              command:
+                'curl -X GET https://api.example.com/orders -H "Authorization: Bearer $TOKEN"',
+              code: `const response = await fetch('/api/orders', {
+  method: 'GET',
+  headers: { Authorization: \`Bearer \${token}\` },
+});`,
+              task: 'Costruisci una richiesta HTTP autenticata verso /api/orders sia da terminale con curl sia da JavaScript con fetch.',
             },
             {
               english: 'Response',
@@ -1206,6 +1473,10 @@ export default {
                 'A well-designed API response includes a status code, a body in JSON, and headers that describe caching policy and content type. = Una risposta API ben progettata include un codice di stato, un body in JSON e header che descrivono la politica di caching e il tipo di contenuto.',
               context: 'foundations',
               difficulty: 'beginner',
+              code: `res.status(200)
+  .set('Cache-Control', 'public, max-age=60')
+  .json({ data: orders });`,
+              task: 'Costruisci una risposta HTTP che ritorna status 200, imposta un header Cache-Control e serializza il body in JSON.',
             },
             {
               english: 'Status Code (200, 404, ...)',
@@ -1216,6 +1487,10 @@ export default {
                 'Returning the correct HTTP status code lets clients tell apart a missing resource (404) from a server failure (500) without parsing the body. = Restituire il codice di stato HTTP corretto permette ai client di distinguere una risorsa mancante (404) da un fallimento del server (500) senza parsare il body.',
               context: 'backend',
               difficulty: 'intermediate',
+              code: `if (!user) return res.status(404).json({ error: 'not found' });
+if (!user.canAccess(resource)) return res.status(403).json({ error: 'forbidden' });
+return res.status(200).json(resource);`,
+              task: `Restituisci il codice di stato HTTP corretto in tre rami: 404 quando manca la risorsa, 403 se l'utente non ha accesso, 200 in caso di successo.`,
             },
             {
               english: 'JSON (JavaScript Object Notation)',
@@ -1226,6 +1501,10 @@ export default {
               context: 'data',
               difficulty: 'beginner',
               note: 'Il formato pi\u00F9 usato oggi per lo scambio di dati sul web.',
+              code: `const payload = { id: 42, name: 'Anna', roles: ['admin', 'editor'] };
+const body = JSON.stringify(payload);
+const parsed = JSON.parse(body);`,
+              task: 'Serializza un oggetto JavaScript in stringa JSON e poi riparsalo, verificando il round-trip dei dati.',
             },
             {
               english: 'Payload',
@@ -1237,6 +1516,13 @@ export default {
               context: 'backend',
               difficulty: 'intermediate',
               note: 'Il contenuto informativo (dati) inviato in una richiesta o risposta.',
+              command: `curl -X PUT https://api.example.com/users/42 -H "Content-Type: application/json" -d '{"name":"Anna","email":"anna@example.com"}'`,
+              code: `app.put('/users/:id', async (req, res) => {
+  const payload = req.body;
+  const updated = await db.users.update(req.params.id, payload);
+  res.json(updated);
+});`,
+              task: `Invia un payload JSON via PUT a /users/:id con curl e leggi il body nella rotta Express per aggiornare l'utente.`,
             },
             {
               english: 'GraphQL',
@@ -1248,6 +1534,16 @@ export default {
               context: 'backend',
               difficulty: 'advanced',
               note: 'Alternativa moderna al REST, creata da Facebook.',
+              code: `query GetUser($id: ID!) {
+  user(id: $id) {
+    id
+    name
+    posts {
+      title
+    }
+  }
+}`,
+              task: 'Scrivi una query GraphQL che richiede un utente per id e restituisce solo i campi id, name e i titoli dei suoi post.',
             },
           ],
         },
@@ -1285,6 +1581,8 @@ export default {
                 'Run npm audit periodically because npm packages can introduce vulnerabilities long after they were first installed in the project. = Esegui npm audit periodicamente perché i pacchetti npm possono introdurre vulnerabilità molto dopo essere stati installati per la prima volta nel progetto.',
               context: 'tools',
               difficulty: 'intermediate',
+              command: 'npm install --save-dev jest @types/jest',
+              task: 'Installa jest e i suoi tipi TypeScript come dipendenze di sviluppo del progetto.',
             },
             {
               english: 'Bundler (Vite / Webpack)',
@@ -1295,6 +1593,8 @@ export default {
                 'A modern bundler like Vite uses native ES modules in development for near-instant reloads, then produces an optimised build for production. = Un bundler moderno come Vite usa moduli ES nativi in sviluppo per reload quasi istantanei, poi produce una build ottimizzata per la produzione.',
               context: 'tools',
               difficulty: 'intermediate',
+              command: 'npx vite build --mode production',
+              task: 'Esegui il bundler Vite in modalita production per generare gli asset ottimizzati da pubblicare in deploy.',
             },
             {
               english: 'Postman',
@@ -1316,6 +1616,13 @@ export default {
               context: 'frontend',
               difficulty: 'intermediate',
               note: "Piccoli file salvati dal browser per ricordare info dell'utente.",
+              code: `res.cookie('session', token, {
+  httpOnly: true,
+  secure: true,
+  sameSite: 'strict',
+  maxAge: 1000 * 60 * 60 * 24,
+});`,
+              task: 'Imposta un cookie di sessione lato server con i flag HttpOnly, Secure e SameSite strict e una durata di 24 ore.',
             },
             {
               english: 'Local Storage',
@@ -1326,6 +1633,10 @@ export default {
               context: 'frontend',
               difficulty: 'intermediate',
               note: 'Permette di salvare dati nel browser in modo persistente (pi\u00F9 capiente dei cookie).',
+              code: `localStorage.setItem('theme', 'dark');
+const theme = localStorage.getItem('theme') ?? 'light';
+document.documentElement.dataset.theme = theme;`,
+              task: `Salva la preferenza del tema nel local storage e rileggila al caricamento per applicarla all'elemento root del documento.`,
             },
             {
               english: 'CORS (Cross-Origin Resource Sharing)',
@@ -1336,6 +1647,12 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               note: 'Meccanismo di sicurezza che limita quali siti possono chiamare la tua API.',
+              code: `import cors from 'cors';
+app.use(cors({
+  origin: ['https://app.example.com'],
+  credentials: true,
+}));`,
+              task: 'Configura il middleware cors su Express per consentire le richieste solo da app.example.com e con credenziali.',
             },
             {
               english: 'HTTPS (Secure)',
@@ -1346,6 +1663,9 @@ export default {
                 'Modern browsers warn users when a site does not use HTTPS, which makes TLS effectively mandatory for any public web service. = I browser moderni avvertono gli utenti quando un sito non usa HTTPS, il che rende il TLS di fatto obbligatorio per qualsiasi servizio web pubblico.',
               context: 'security',
               difficulty: 'beginner',
+              command:
+                'curl -v https://api.example.com/health --resolve api.example.com:443:127.0.0.1',
+              task: 'Esegui una chiamata HTTPS verbosa verso /health forzando la risoluzione DNS per validare il certificato TLS in staging.',
             },
             {
               english: 'Lighthouse',
@@ -1356,6 +1676,9 @@ export default {
                 'Run Lighthouse against your production URL to get a scored report covering performance, accessibility, SEO, and best practices. = Esegui Lighthouse sul tuo URL di produzione per ottenere un report con punteggi che copre performance, accessibilità, SEO e best practice.',
               context: 'tools',
               difficulty: 'intermediate',
+              command:
+                'npx lighthouse https://www.example.com --output=html --output-path=./report.html',
+              task: 'Esegui Lighthouse contro la home di produzione e salva il report HTML con i punteggi di performance, SEO e accessibilita.',
             },
           ],
         },
@@ -1389,6 +1712,12 @@ export default {
                 'Design each table around a single entity such as users or orders, and use foreign keys to model the relationships between them. = Progetta ogni tabella attorno a una singola entità come users o orders, e usa le chiavi esterne per modellare le relazioni tra di esse.',
               context: 'database',
               difficulty: 'beginner',
+              code: `CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  email VARCHAR(255) UNIQUE NOT NULL,
+  created_at TIMESTAMP DEFAULT NOW()
+);`,
+              task: `Crea la tabella users con una chiave primaria seriale, un'email unica obbligatoria e un timestamp di creazione di default.`,
             },
             {
               english: 'Query',
@@ -1398,6 +1727,13 @@ export default {
               example: `Prefer parameterised queries over string concatenation, otherwise user input can be interpreted as SQL and open the door to injection. = Preferisci query parametrizzate alla concatenazione di stringhe, altrimenti l'input dell'utente può essere interpretato come SQL e aprire la porta all'injection.`,
               context: 'database',
               difficulty: 'beginner',
+              command:
+                'psql -h localhost -U admin -d shop -c "SELECT id, name FROM products WHERE price > 100;"',
+              code: `SELECT id, name
+FROM products
+WHERE price > 100
+ORDER BY name;`,
+              task: 'Scrivi una query parametrizzabile che recupera id e nome dei prodotti con prezzo superiore a 100 ed eseguila via psql.',
             },
             {
               english: 'Row (Record)',
@@ -1407,6 +1743,10 @@ export default {
               example: `Each row in the users table stores one person's data, with the primary key guaranteeing that no two rows describe the same user. = Ogni riga nella tabella users memorizza i dati di una persona, con la chiave primaria che garantisce che due righe non descrivano lo stesso utente.`,
               context: 'database',
               difficulty: 'beginner',
+              code: `INSERT INTO users (email, name)
+VALUES ('anna@example.com', 'Anna')
+RETURNING id, created_at;`,
+              task: 'Inserisci una nuova riga nella tabella users e usa RETURNING per recuperare id e timestamp generati dal database.',
             },
             {
               english: 'Column (Field)',
@@ -1417,6 +1757,9 @@ export default {
                 'The "email" column stores email addresses. = La colonna "email" salva gli indirizzi email.',
               context: 'database',
               difficulty: 'beginner',
+              code: `ALTER TABLE users
+ADD COLUMN last_login_at TIMESTAMP;`,
+              task: 'Aggiungi una nuova colonna last_login_at di tipo TIMESTAMP alla tabella users senza valore di default.',
             },
             {
               english: 'SELECT Statement',
@@ -1427,6 +1770,12 @@ export default {
                 'Avoid SELECT * in production code: list the columns explicitly so adding new fields to the table does not break clients. = Evita SELECT * nel codice di produzione: elenca le colonne esplicitamente così aggiungere nuovi campi alla tabella non rompe i client.',
               context: 'sql',
               difficulty: 'beginner',
+              code: `SELECT id, email, created_at
+FROM users
+WHERE active = true
+ORDER BY created_at DESC
+LIMIT 20;`,
+              task: `Scrivi un'istruzione SELECT che elenca le 20 email piu recenti degli utenti attivi, ordinate per data di creazione.`,
             },
             {
               english: 'WHERE Clause',
@@ -1437,6 +1786,11 @@ export default {
                 'A WHERE clause on an indexed column lets the database skip most rows, turning a sequential scan into a fast lookup. = Una clausola WHERE su una colonna indicizzata permette al database di saltare la maggior parte delle righe, trasformando una scansione sequenziale in una ricerca veloce.',
               context: 'sql',
               difficulty: 'beginner',
+              code: `SELECT id, total
+FROM orders
+WHERE status = 'paid'
+  AND created_at >= NOW() - INTERVAL '7 days';`,
+              task: 'Filtra con una clausola WHERE gli ordini pagati negli ultimi sette giorni, combinando piu condizioni con AND.',
             },
             {
               english: 'JOIN',
@@ -1448,6 +1802,12 @@ export default {
               context: 'sql',
               difficulty: 'intermediate',
               note: 'Esempi: INNER JOIN, LEFT JOIN, RIGHT JOIN.',
+              code: `SELECT u.name, COUNT(o.id) AS orders
+FROM users u
+LEFT JOIN orders o ON o.user_id = u.id
+GROUP BY u.id, u.name
+HAVING COUNT(o.id) > 5;`,
+              task: 'Componi un LEFT JOIN tra users e orders, raggruppa per utente e tieni solo quelli con piu di cinque ordini.',
             },
             {
               english: 'Data Manipulation Language (DML)',
@@ -1458,6 +1818,10 @@ export default {
                 'INSERT, UPDATE, and DELETE are DML commands. = INSERT, UPDATE e DELETE sono comandi DML.',
               context: 'sql',
               difficulty: 'intermediate',
+              code: `INSERT INTO products (sku, price) VALUES ('SKU-1', 19.90);
+UPDATE products SET price = price * 1.1 WHERE sku = 'SKU-1';
+DELETE FROM products WHERE sku = 'SKU-1';`,
+              task: 'Esegui in sequenza le tre operazioni DML principali (INSERT, UPDATE, DELETE) sulla tabella products.',
             },
             {
               english: 'DBMS (Database Management System)',
@@ -1485,6 +1849,14 @@ export default {
                 'The database schema defines the structure. = Lo schema del database definisce la struttura.',
               context: 'database',
               difficulty: 'intermediate',
+              command:
+                'psql -h localhost -U admin -d production -c "CREATE SCHEMA reporting AUTHORIZATION analytics;"',
+              code: `CREATE SCHEMA reporting AUTHORIZATION analytics;
+CREATE TABLE reporting.daily_sales (
+  day DATE PRIMARY KEY,
+  total NUMERIC(12,2) NOT NULL
+);`,
+              task: 'Crea uno schema reporting separato di proprieta del ruolo analytics e definiscici dentro la tabella daily_sales.',
             },
             {
               english: 'Normalization',
@@ -1506,6 +1878,9 @@ export default {
                 'Add an index on columns used in WHERE or JOIN clauses, but remember each extra index slows down writes and consumes disk space. = Aggiungi un indice sulle colonne usate in WHERE o JOIN, ma ricorda che ogni indice extra rallenta le scritture e consuma spazio su disco.',
               context: 'performance',
               difficulty: 'intermediate',
+              code: `CREATE INDEX idx_orders_user_created
+ON orders (user_id, created_at DESC);`,
+              task: 'Crea un indice composito su orders per accelerare le query che filtrano per user_id e ordinano per created_at.',
             },
             {
               english: 'Primary Key',
@@ -1517,6 +1892,11 @@ export default {
               context: 'database',
               difficulty: 'beginner',
               note: 'Identificatore unico per ogni riga di una tabella.',
+              code: `CREATE TABLE invoices (
+  id BIGSERIAL PRIMARY KEY,
+  number VARCHAR(20) NOT NULL
+);`,
+              task: 'Definisci la tabella invoices con una chiave primaria BIGSERIAL auto-incrementante e una colonna number obbligatoria.',
             },
             {
               english: 'Foreign Key',
@@ -1527,6 +1907,14 @@ export default {
                 'A foreign key links two tables together. = Una chiave esterna collega due tabelle tra loro.',
               context: 'database',
               difficulty: 'intermediate',
+              code: `CREATE TABLE orders (
+  id SERIAL PRIMARY KEY,
+  user_id INT NOT NULL,
+  CONSTRAINT fk_orders_user
+    FOREIGN KEY (user_id) REFERENCES users (id)
+    ON DELETE CASCADE
+);`,
+              task: 'Aggiungi una chiave esterna user_id sulla tabella orders che referenzia users.id con cancellazione a cascata.',
             },
             {
               english: 'Relationship',
@@ -1537,6 +1925,16 @@ export default {
                 'A one-to-many relationship between authors and books is modelled by adding an author_id column to the books table. = Una relazione uno-a-molti tra autori e libri viene modellata aggiungendo una colonna author_id nella tabella books.',
               context: 'design',
               difficulty: 'intermediate',
+              code: `CREATE TABLE authors (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(120) NOT NULL
+);
+CREATE TABLE books (
+  id SERIAL PRIMARY KEY,
+  title VARCHAR(200) NOT NULL,
+  author_id INT REFERENCES authors (id)
+);`,
+              task: 'Modella una relazione uno-a-molti tra authors e books aggiungendo author_id come chiave esterna sulla tabella books.',
             },
             {
               english: 'Entity-Relationship Diagram (ERD)',
@@ -1567,6 +1965,11 @@ export default {
                 'Adding a UNIQUE constraint on the email column prevents duplicate accounts in the database. = Aggiungere un vincolo UNIQUE sulla colonna email previene account duplicati nel database.',
               context: 'sql',
               difficulty: 'intermediate',
+              code: `ALTER TABLE users
+ADD CONSTRAINT users_email_unique UNIQUE (email);
+ALTER TABLE users
+ADD CONSTRAINT users_age_check CHECK (age >= 18);`,
+              task: `Aggiungi alla tabella users un vincolo UNIQUE sull'email e un CHECK che impone almeno 18 anni di eta.`,
             },
             {
               english: 'Stored Procedure',
@@ -1577,6 +1980,15 @@ export default {
                 'Business logic can be put in a stored procedure. = La logica di business pu\u00F2 essere messa in una stored procedure.',
               context: 'advanced',
               difficulty: 'advanced',
+              code: `CREATE OR REPLACE PROCEDURE archive_old_orders(cutoff DATE)
+LANGUAGE plpgsql
+AS $$
+BEGIN
+  INSERT INTO orders_archive SELECT * FROM orders WHERE created_at < cutoff;
+  DELETE FROM orders WHERE created_at < cutoff;
+END;
+$$;`,
+              task: 'Definisci una stored procedure PL/pgSQL che archivia gli ordini piu vecchi della data passata come parametro.',
             },
           ],
         },
@@ -1604,6 +2016,13 @@ export default {
                 'In a document store, each record is a self-contained JSON-like object with flexible fields. = In un archivio documentale, ogni record \u00E8 un oggetto simile a JSON con campi flessibili.',
               context: 'nosql',
               difficulty: 'intermediate',
+              code: `db.users.insertOne({
+  email: 'anna@example.com',
+  profile: { name: 'Anna', city: 'Milano' },
+  roles: ['admin', 'editor'],
+  created_at: new Date()
+});`,
+              task: 'Inserisci in un archivio documentale un singolo documento utente con campi annidati e un array di ruoli.',
             },
             {
               english: 'Key-Value Store',
@@ -1614,6 +2033,10 @@ export default {
                 'A key-value store maps simple keys to values, making lookups extremely fast for caching and sessions. = Un archivio chiave-valore mappa chiavi semplici a valori, rendendo le ricerche estremamente veloci per cache e sessioni.',
               context: 'nosql',
               difficulty: 'intermediate',
+              command: `redis-cli SET session:abc123 '{"user_id":42}' EX 3600`,
+              code: `await redis.set('session:abc123', JSON.stringify({ userId: 42 }), 'EX', 3600);
+const raw = await redis.get('session:abc123');`,
+              task: `Salva nella key-value store Redis una sessione con TTL di un'ora e poi rileggila per ricostruire l'utente.`,
             },
             {
               english: 'Graph Database',
@@ -1634,6 +2057,9 @@ export default {
                 'In MongoDB, you insert documents into a collection the way you insert rows into a SQL table. = In MongoDB, inserisci documenti in una collezione come inseriresti righe in una tabella SQL.',
               context: 'nosql',
               difficulty: 'beginner',
+              command: `mongosh "mongodb://localhost:27017/myapp" --eval "db.createCollection('orders')"`,
+              code: `db.orders.insertOne({ user_id: 42, total: 99.9, status: 'paid' });`,
+              task: 'Crea la collezione orders su MongoDB da shell e inserisci al suo interno un primo documento di ordine pagato.',
             },
             {
               english: 'Document',
@@ -1644,6 +2070,10 @@ export default {
                 'Each document in a NoSQL database can have a different structure, unlike rows in a relational table. = Ogni documento in un database NoSQL può avere una struttura diversa, a differenza delle righe in una tabella relazionale.',
               context: 'nosql',
               difficulty: 'beginner',
+              code: `db.users.find({ active: true, role: 'admin' })
+  .sort({ created_at: -1 })
+  .limit(10);`,
+              task: 'Recupera dalla collezione users i 10 documenti piu recenti dove active e true e role e admin.',
             },
             {
               english: 'Scalability (Horizontal)',
@@ -1665,6 +2095,12 @@ export default {
                 'A schema-less database lets you add new fields to documents without altering any table definition. = Un database senza schema ti permette di aggiungere nuovi campi ai documenti senza alterare la definizione della tabella.',
               context: 'nosql',
               difficulty: 'intermediate',
+              code: `db.products.insertMany([
+  { name: 'Sedia', price: 49 },
+  { name: 'Tavolo', price: 199, dimensions: { w: 80, h: 75, d: 80 } },
+  { name: 'Lampada', price: 25, tags: ['design', 'led'] }
+]);`,
+              task: 'Inserisci nella collezione products tre documenti con strutture diverse per dimostrare la natura schema-less del database.',
             },
             {
               english: 'Eventually Consistent',
@@ -1704,6 +2140,11 @@ export default {
                 "A bank transfer uses a transaction so the debit and credit either both succeed or both roll back. = Un bonifico usa una transazione cos\u00EC l'addebito e l'accredito o riescono entrambi o vengono entrambi annullati.",
               context: 'database',
               difficulty: 'intermediate',
+              code: `BEGIN;
+UPDATE accounts SET balance = balance - 100 WHERE id = 1;
+UPDATE accounts SET balance = balance + 100 WHERE id = 2;
+COMMIT;`,
+              task: 'Avvolgi un trasferimento di 100 tra due conti in una transazione SQL con BEGIN, le due UPDATE e COMMIT finale.',
             },
             {
               english: 'ACID',
@@ -1726,6 +2167,18 @@ export default {
               context: 'backend',
               difficulty: 'intermediate',
               note: 'Codice che applica cambiamenti strutturali al database in modo controllato.',
+              command: 'npx knex migrate:latest --env production',
+              code: `export async function up(knex) {
+  await knex.schema.createTable('posts', (t) => {
+    t.increments('id');
+    t.string('title').notNullable();
+    t.timestamps(true, true);
+  });
+}
+export async function down(knex) {
+  await knex.schema.dropTable('posts');
+}`,
+              task: 'Scrivi una migration Knex reversibile che crea la tabella posts ed eseguila in produzione con migrate:latest.',
             },
             {
               english: 'ORM (Object-Relational Mapping)',
@@ -1737,6 +2190,11 @@ export default {
               context: 'backend',
               difficulty: 'intermediate',
               note: 'Esempi: Hibernate (Java), Entity Framework (C#), SQLAlchemy (Python).',
+              code: `const user = await prisma.user.findUnique({
+  where: { email: 'anna@example.com' },
+  include: { orders: true },
+});`,
+              task: 'Usa Prisma come ORM per recuperare un utente per email caricando in eager loading anche i suoi ordini.',
             },
             {
               english: 'Backup',
@@ -1747,6 +2205,9 @@ export default {
                 'Always perform regular database backups. = Esegui sempre backup regolari del database.',
               context: 'management',
               difficulty: 'beginner',
+              command:
+                'pg_dump -h localhost -U admin -F c -f /backups/prod-$(date +%Y%m%d).dump production',
+              task: 'Esegui un backup compresso del database production con pg_dump nominandolo con la data corrente.',
             },
             {
               english: 'Replication',
@@ -1758,6 +2219,9 @@ export default {
               context: 'architecture',
               difficulty: 'advanced',
               note: 'Copiare i dati su pi\u00F9 server sincronizzati.',
+              command:
+                'pg_basebackup -h primary.example.com -U replicator -D /var/lib/postgresql/replica -X stream -P',
+              task: 'Inizializza una replica streaming PostgreSQL clonando i dati dal nodo primario con pg_basebackup.',
             },
             {
               english: 'Sharding',
@@ -1789,6 +2253,15 @@ export default {
                 'Analyze the execution plan to optimize the query. = Analizza il piano di esecuzione per ottimizzare la query.',
               context: 'performance',
               difficulty: 'expert',
+              command:
+                'psql -d shop -c "EXPLAIN ANALYZE SELECT * FROM orders WHERE user_id = 42 ORDER BY created_at DESC LIMIT 10;"',
+              code: `EXPLAIN ANALYZE
+SELECT *
+FROM orders
+WHERE user_id = 42
+ORDER BY created_at DESC
+LIMIT 10;`,
+              task: 'Stampa il piano di esecuzione reale di una query sugli ordini di un utente per individuare scansioni sequenziali da ottimizzare.',
             },
             {
               english: 'Connection Pool',
@@ -1799,6 +2272,14 @@ export default {
                 'A connection pool reuses existing DB connections. = Un connection pool riutilizza le connessioni al DB esistenti.',
               context: 'performance',
               difficulty: 'advanced',
+              code: `import { Pool } from 'pg';
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  max: 20,
+  idleTimeoutMillis: 30000,
+});
+const { rows } = await pool.query('SELECT NOW()');`,
+              task: 'Configura un connection pool PostgreSQL con un massimo di 20 connessioni e un idle timeout di 30 secondi.',
             },
           ],
         },
@@ -1894,6 +2375,15 @@ export default {
                 'Each component in the system has a single responsibility and communicates through well-defined interfaces. = Ogni componente nel sistema ha una singola responsabilit\u00E0 e comunica attraverso interfacce ben definite.',
               context: 'architecture',
               difficulty: 'beginner',
+              code: `interface ButtonProps {
+  label: string;
+  onClick: () => void;
+}
+
+function Button({ label, onClick }: ButtonProps) {
+  return <button onClick={onClick}>{label}</button>;
+}`,
+              task: `Definisci un componente Button con una responsabilita' chiara, props tipizzate e un handler onClick passato dall'esterno.`,
             },
             {
               english: 'Module',
@@ -1903,6 +2393,12 @@ export default {
               example: `Split the application into modules with clear public interfaces, so each one can be developed and tested in isolation. = Dividi l'applicazione in moduli con interfacce pubbliche chiare, così ciascuno può essere sviluppato e testato in isolamento.`,
               context: 'architecture',
               difficulty: 'beginner',
+              code: `// src/payments/index.ts
+export { processPayment } from './processPayment';
+export { refund } from './refund';
+export type { PaymentResult } from './types';
+// dettagli interni come 'validateCard' restano privati al modulo`,
+              task: 'Esponi solo le funzioni pubbliche del modulo payments tramite il file index e mantieni privati i dettagli implementativi.',
             },
             {
               english: 'Interface (Architectural)',
@@ -1913,6 +2409,12 @@ export default {
                 "The interface defines how components interact. = L'interfaccia definisce come i componenti interagiscono.",
               context: 'architecture',
               difficulty: 'intermediate',
+              code: `interface UserService {
+  findById(id: string): Promise<User | null>;
+  create(data: NewUser): Promise<User>;
+  delete(id: string): Promise<void>;
+}`,
+              task: `Definisci un'interfaccia UserService che dichiari il contratto pubblico, lasciando libere le implementazioni concrete (in-memory, SQL, HTTP).`,
             },
           ],
         },
@@ -1930,6 +2432,20 @@ export default {
                 "MVC separates data from the user interface. = L'MVC separa i dati dall'interfaccia utente.",
               context: 'architecture-patterns',
               difficulty: 'intermediate',
+              code: `// Model
+class UserModel {
+  async getAll() { return db.query('SELECT * FROM users'); }
+}
+
+// Controller
+class UserController {
+  constructor(private model: UserModel, private view: UserView) {}
+  async index() {
+    const users = await this.model.getAll();
+    return this.view.render(users);
+  }
+}`,
+              task: 'Implementa il pattern MVC separando il model che parla col database, il controller che orchestra e la view che si occupa solo del rendering.',
             },
             {
               english: 'MVVM (Model-View-ViewModel)',
@@ -1962,6 +2478,15 @@ export default {
               context: 'architecture',
               difficulty: 'intermediate',
               note: 'Esempi: RabbitMQ, Apache Kafka.',
+              code: `import { Queue } from 'bullmq';
+
+const emailQueue = new Queue('emails', { connection: { host: 'redis', port: 6379 } });
+
+await emailQueue.add('welcome', {
+  to: 'alice@example.com',
+  template: 'welcome',
+});`,
+              task: `Pubblica un job di invio email su una coda BullMQ in modo che il processo HTTP non debba aspettare l'invio sincrono.`,
             },
             {
               english: 'Pub/Sub (Publisher-Subscriber)',
@@ -1972,6 +2497,15 @@ export default {
                 'The pub/sub pattern decouples components. = Il pattern pub/sub disaccoppia i componenti.',
               context: 'architecture-patterns',
               difficulty: 'advanced',
+              code: `import { EventEmitter } from 'node:events';
+
+const bus = new EventEmitter();
+
+bus.on('user.registered', (user) => sendWelcomeEmail(user));
+bus.on('user.registered', (user) => trackAnalytics(user));
+
+bus.emit('user.registered', { id: '42', email: 'bob@example.com' });`,
+              task: `Implementa il pattern pub/sub con un EventEmitter che pubblica l'evento user.registered e disaccoppia invio email e analytics.`,
             },
             {
               english: 'Service-Oriented Architecture (SOA)',
@@ -2083,6 +2617,12 @@ export default {
               context: 'architecture',
               difficulty: 'advanced',
               note: "Il server non salva nessuna informazione sull'utente tra una richiesta e l'altra.",
+              code: `// Handler stateless: tutta l'identita' arriva nel JWT, niente sessione in memoria
+function getProfile(req: Request, res: Response) {
+  const userId = verifyJwt(req.headers.authorization).sub;
+  return res.json(userRepo.findById(userId));
+}`,
+              task: `Scrivi un handler stateless che ricostruisce l'identita' utente da un JWT a ogni richiesta, senza appoggiarsi a sessioni server-side.`,
             },
             {
               english: 'Stateful',
@@ -2126,6 +2666,16 @@ export default {
               context: 'architecture',
               difficulty: 'advanced',
               note: 'Framework RPC creato da Google, molto veloce.',
+              code: `// user.proto
+syntax = "proto3";
+
+service UserService {
+  rpc GetUser (GetUserRequest) returns (User);
+}
+
+message GetUserRequest { string id = 1; }
+message User { string id = 1; string email = 2; }`,
+              task: `Definisci il contratto gRPC per il servizio UserService dichiarando l'RPC GetUser con il suo request e response in protobuf.`,
             },
             {
               english: 'Versioning Strategy',
@@ -2187,6 +2737,21 @@ export default {
                 "An entity has a unique identity that persists over time. = Un'entit\u00E0 ha un'identit\u00E0 unica che persiste nel tempo.",
               context: 'ddd',
               difficulty: 'intermediate',
+              code: `class User {
+  constructor(
+    public readonly id: string,
+    private email: string,
+  ) {}
+
+  equals(other: User): boolean {
+    return this.id === other.id;
+  }
+
+  changeEmail(newEmail: string): void {
+    this.email = newEmail;
+  }
+}`,
+              task: `Modella l'entita' User con un'identita' immutabile basata su id e un metodo equals che confronta per identita', non per attributi.`,
             },
             {
               english: 'Value Object',
@@ -2198,6 +2763,19 @@ export default {
               context: 'ddd',
               difficulty: 'advanced',
               note: 'Es: Un indirizzo o un importo in denaro.',
+              code: `class Money {
+  constructor(
+    public readonly amount: number,
+    public readonly currency: string,
+  ) {
+    if (amount < 0) throw new Error('Money non puo essere negativo');
+  }
+
+  equals(other: Money): boolean {
+    return this.amount === other.amount && this.currency === other.currency;
+  }
+}`,
+              task: `Definisci il value object Money come immutabile, identificato solo dai suoi attributi e con un'invariante che impedisca importi negativi.`,
             },
             {
               english: 'Aggregate',
@@ -2208,6 +2786,21 @@ export default {
                 "In an e-commerce system, an Order aggregate groups together the order itself, its line items, and the shipping address. = In un sistema e-commerce, un aggregato Order raggruppa l'ordine stesso, le sue righe e l'indirizzo di spedizione.",
               context: 'ddd',
               difficulty: 'expert',
+              code: `class Order {
+  private items: OrderLine[] = [];
+
+  constructor(public readonly id: string, public readonly customerId: string) {}
+
+  addLine(line: OrderLine): void {
+    if (this.items.length >= 50) throw new Error('Troppe righe');
+    this.items.push(line);
+  }
+
+  total(): Money {
+    return this.items.reduce((acc, l) => acc.add(l.subtotal()), Money.zero('EUR'));
+  }
+}`,
+              task: `Costruisci l'aggregato Order che incapsula le sue OrderLine e protegge l'invariante 'massimo 50 righe' tramite il metodo addLine.`,
             },
             {
               english: 'Aggregate Root',
@@ -2218,6 +2811,21 @@ export default {
                 "The aggregate root is the only entry point to the aggregate. = La radice \u00E8 l'unico punto di ingresso all'aggregato.",
               context: 'ddd',
               difficulty: 'expert',
+              code: `class Cart {
+  private items: CartItem[] = [];
+
+  // Unico punto di ingresso: nessuno modifica CartItem direttamente.
+  addProduct(product: Product, qty: number): void {
+    const existing = this.items.find((i) => i.productId === product.id);
+    if (existing) existing.increase(qty);
+    else this.items.push(new CartItem(product.id, qty));
+  }
+
+  snapshot(): readonly CartItem[] {
+    return Object.freeze([...this.items]);
+  }
+}`,
+              task: `Implementa Cart come radice dell'aggregato: i CartItem interni non sono modificabili dall'esterno e ogni cambiamento passa per addProduct.`,
             },
             {
               english: 'Repository Pattern',
@@ -2228,6 +2836,22 @@ export default {
                 'A repository mediates between domain and data mapping layers. = Un repository media tra il dominio e il layer di mappatura dati.',
               context: 'architecture-patterns',
               difficulty: 'intermediate',
+              code: `interface UserRepository {
+  findById(id: string): Promise<User | null>;
+  save(user: User): Promise<void>;
+}
+
+class PostgresUserRepository implements UserRepository {
+  async findById(id: string): Promise<User | null> {
+    const row = await db.users.findOne({ id });
+    return row ? new User(row.id, row.email) : null;
+  }
+
+  async save(user: User): Promise<void> {
+    await db.users.upsert(user);
+  }
+}`,
+              task: `Definisci l'interfaccia UserRepository nel dominio e l'implementazione Postgres separata, in modo che il dominio non conosca SQL.`,
             },
             {
               english: 'Domain Service',
@@ -2238,6 +2862,15 @@ export default {
                 "Use a domain service for logic that doesn't fit in an entity. = Usa un servizio di dominio per logiche che non stanno bene in un'entit\u00E0.",
               context: 'ddd',
               difficulty: 'advanced',
+              code: `class TransferService {
+  // Logica che non appartiene ne' a un singolo Account, ne' a un Transaction.
+  transfer(from: Account, to: Account, amount: Money): void {
+    if (from.id === to.id) throw new Error('Stesso conto');
+    from.debit(amount);
+    to.credit(amount);
+  }
+}`,
+              task: `Modella il TransferService come servizio di dominio che coordina due Account, dato che il bonifico non e' responsabilita' di una singola entita'.`,
             },
             {
               english: 'Anti-Corruption Layer (ACL)',
@@ -2249,6 +2882,16 @@ export default {
                 "An ACL protects your domain from external system changes. = Un'ACL protegge il tuo dominio dai cambiamenti dei sistemi esterni.",
               context: 'ddd',
               difficulty: 'expert',
+              code: `// Il nostro dominio parla di Customer; l'ERP legacy espone 'CUST_RECORD'.
+class LegacyCustomerAdapter {
+  constructor(private legacyApi: LegacyErpClient) {}
+
+  async getCustomer(id: string): Promise<Customer> {
+    const raw = await this.legacyApi.fetchCustRecord(id);
+    return new Customer(raw.CUST_ID, raw.CUST_NAME, raw.CUST_EMAIL);
+  }
+}`,
+              task: `Scrivi un adattatore che traduce il modello CUST_RECORD dell'ERP legacy nell'entita' Customer del tuo dominio, evitando contaminazioni.`,
             },
           ],
         },
@@ -2272,6 +2915,15 @@ export default {
                 'A good unit test runs in milliseconds, exercises a single function, and fails for exactly one reason when the logic breaks. = Un buon unit test gira in millisecondi, esercita una singola funzione e fallisce per esattamente un motivo quando la logica si rompe.',
               context: 'testing',
               difficulty: 'beginner',
+              code: `import { describe, it, expect } from 'vitest';
+import { add } from './math';
+
+describe('add', () => {
+  it('somma due numeri positivi', () => {
+    expect(add(2, 3)).toBe(5);
+  });
+});`,
+              task: 'Scrivi un unit test isolato per la funzione add che gira in millisecondi e fallisce solo se la logica di somma si rompe.',
             },
             {
               english: 'Test Case',
@@ -2282,6 +2934,16 @@ export default {
                 'Define multiple test cases for each feature. = Definisci diversi casi di test per ogni feature.',
               context: 'testing',
               difficulty: 'beginner',
+              code: `test('restituisce l\\'utente quando esiste', async () => {
+  const user = await repo.findById('abc');
+  expect(user?.name).toBe('Alice');
+});
+
+test('restituisce null se l\\'utente non esiste', async () => {
+  const user = await repo.findById('zzz');
+  expect(user).toBeNull();
+});`,
+              task: `Definisci due casi di test per findById: uno per l'utente esistente che torna l'oggetto, l'altro per l'id sconosciuto che torna null.`,
             },
             {
               english: 'Assertion',
@@ -2293,6 +2955,12 @@ export default {
               context: 'testing',
               difficulty: 'intermediate',
               note: "Se l'asserzione fallisce, il test fallisce.",
+              code: `const result = calculateTax(100, 0.22);
+
+expect(result).toBe(22);
+expect(result).toBeGreaterThan(0);
+expect(typeof result).toBe('number');`,
+              task: 'Scrivi tre asserzioni che verifichino il valore esatto, un vincolo numerico e il tipo del risultato di calculateTax.',
             },
             {
               english: 'Test Suite',
@@ -2304,6 +2972,16 @@ export default {
               context: 'testing',
               difficulty: 'intermediate',
               note: 'Una collezione di test correlati.',
+              code: `describe('UserService', () => {
+  describe('register', () => {
+    it('crea un nuovo utente', () => { /* ... */ });
+    it('rifiuta email duplicate', () => { /* ... */ });
+  });
+  describe('delete', () => {
+    it('rimuove l\\'utente esistente', () => { /* ... */ });
+  });
+});`,
+              task: 'Organizza la suite di test di UserService raggruppando register e delete in describe annidati per leggere il report come una specifica.',
             },
             {
               english: 'Fixture',
@@ -2315,6 +2993,20 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               note: `Loanword: in italiano tecnico si lascia spesso 'fixture'.`,
+              code: `// fixtures/users.ts
+export const aliceFixture = {
+  id: 'user-1',
+  email: 'alice@example.com',
+  role: 'admin',
+} as const;
+
+// nel test
+import { aliceFixture } from './fixtures/users';
+
+it('admin puo eliminare utenti', () => {
+  expect(canDelete(aliceFixture)).toBe(true);
+});`,
+              task: 'Centralizza una fixture aliceFixture riutilizzabile e usala nei test al posto di duplicare i dati di setup in ogni it.',
             },
             {
               english: 'Setup / Teardown',
@@ -2325,6 +3017,17 @@ export default {
                 'Use setup to initialize data before each test. = Usa il setup per inizializzare i dati prima di ogni test.',
               context: 'testing',
               difficulty: 'intermediate',
+              code: `let db: Database;
+
+beforeEach(async () => {
+  db = await Database.connect(':memory:');
+  await db.migrate();
+});
+
+afterEach(async () => {
+  await db.close();
+});`,
+              task: 'Configura beforeEach e afterEach per aprire un database in-memory pulito prima di ogni test e chiuderlo correttamente dopo.',
             },
             {
               english: 'Test-Driven Development (TDD)',
@@ -2347,6 +3050,9 @@ export default {
               context: 'testing',
               difficulty: 'intermediate',
               note: 'Percentuale di codice sorgente eseguita durante i test.',
+              command:
+                'npx jest --coverage --coverageReporters=text-summary --coverageReporters=html',
+              task: 'Esegui la suite Jest generando un report di coverage sia testuale che HTML per individuare i rami di codice non testati.',
             },
             {
               english: 'False Positive',
@@ -2396,6 +3102,8 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               note: "Verifica l'intero flusso dell'applicazione, dall'inizio alla fine.",
+              command: 'npx playwright test --project=chromium --reporter=html',
+              task: 'Esegui la suite end-to-end con Playwright su Chromium e genera un report HTML navigabile con screenshot dei fallimenti.',
             },
             {
               english: 'Smoke Test',
@@ -2407,6 +3115,9 @@ export default {
               context: 'testing',
               difficulty: 'intermediate',
               note: 'Test veloci per vedere se le funzioni base girano senza "fare fumo" (crashare).',
+              command:
+                'curl -fsS https://app.example.com/healthz && curl -fsS https://app.example.com/api/version',
+              task: `Esegui uno smoke test post-deploy che fallisce subito se l'endpoint di health o quello di version non rispondono 2xx.`,
             },
             {
               english: 'Regression Testing',
@@ -2499,6 +3210,17 @@ export default {
               context: 'testing',
               difficulty: 'intermediate',
               note: 'Un oggetto finto che simula il comportamento di uno reale per isolare il test.',
+              code: `import { vi } from 'vitest';
+
+const mockDb = {
+  findOne: vi.fn().mockResolvedValue({ id: 'abc', name: 'Alice' }),
+};
+
+const service = new UserService(mockDb);
+await service.getName('abc');
+
+expect(mockDb.findOne).toHaveBeenCalledWith({ id: 'abc' });`,
+              task: `Crea un mock di db.findOne con vi.fn(), iniettalo in UserService e verifica che il servizio chiami il metodo con l'id giusto.`,
             },
             {
               english: 'Stub',
@@ -2509,6 +3231,14 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               note: 'Loanword: stub si lascia in inglese in italiano tecnico.',
+              code: `// Stub: ritorna sempre la stessa risposta predefinita, senza logica.
+const paymentGatewayStub = {
+  charge: async (_amount: number) => ({ status: 'approved', txId: 'stub-1' }),
+};
+
+const checkout = new CheckoutService(paymentGatewayStub);
+await checkout.pay(100);`,
+              task: `Sostituisci il gateway di pagamento con uno stub che restituisce sempre 'approved' cosi' il test del checkout resta deterministico.`,
             },
             {
               english: 'Spy',
@@ -2519,6 +3249,15 @@ export default {
                 'Use a spy to verify if a function was called. = Usa una spia per verificare se una funzione \u00E8 stata chiamata.',
               context: 'testing',
               difficulty: 'advanced',
+              code: `import { vi } from 'vitest';
+
+const logger = { warn: () => {} };
+const warnSpy = vi.spyOn(logger, 'warn');
+
+validate({ email: '' }, logger);
+
+expect(warnSpy).toHaveBeenCalledWith('email mancante');`,
+              task: `Aggancia uno spy a logger.warn e verifica che validate produca esattamente il messaggio 'email mancante' quando l'email e' vuota.`,
             },
             {
               english: 'Behavior-Driven Development (BDD)',
@@ -2542,6 +3281,8 @@ export default {
               context: 'testing',
               difficulty: 'expert',
               note: 'Modifica casualmente il codice per vedere se i test falliscono (se non falliscono, i test sono deboli).',
+              command: 'npx stryker run --concurrency 4 --reporters html,clear-text',
+              task: 'Esegui Stryker per generare mutanti del codice e scopri quali mutazioni la tua suite non riesce a uccidere.',
             },
             {
               english: 'Static Analysis',
@@ -2553,6 +3294,8 @@ export default {
               context: 'tools',
               difficulty: 'intermediate',
               note: 'Es: ESLint, Pylint, SonarQube.',
+              command: `npx eslint 'src/**/*.{ts,tsx}' --max-warnings 0 --report-unused-disable-directives`,
+              task: 'Esegui ESLint sul sorgente TypeScript trattando ogni warning come errore e segnalando le direttive di disable inutilizzate.',
             },
             {
               english: 'Fuzz Testing (Fuzzing)',
@@ -2564,6 +3307,8 @@ export default {
               context: 'security-testing',
               difficulty: 'advanced',
               note: 'Inviare grandi quantit\u00E0 di dati casuali o malformati per far crashare il sistema.',
+              command: 'npx jazzer parser.test.js -- -max_total_time=60',
+              task: `Lancia Jazzer.js sul parser per 60 secondi cosi' che generi input casuali e malformati alla ricerca di crash.`,
             },
             {
               english: 'Fake (Object)',
@@ -2575,6 +3320,13 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               note: "Ha un'implementazione reale ma semplificata (non adatta alla produzione).",
+              code: `// Fake: implementazione reale ma semplificata, non production-ready.
+class InMemoryUserRepository implements UserRepository {
+  private users = new Map<string, User>();
+  async findById(id: string) { return this.users.get(id) ?? null; }
+  async save(user: User) { this.users.set(user.id, user); }
+}`,
+              task: 'Implementa un fake InMemoryUserRepository con Map per i test, evitando di toccare il database vero pur mantenendo la semantica.',
             },
             {
               english: 'Property-based Testing',
@@ -2585,6 +3337,16 @@ export default {
                 'Use property-based testing to check invariants. = Usa il test basato sulle propriet\u00E0 per controllare gli invarianti.',
               context: 'testing',
               difficulty: 'expert',
+              code: `import fc from 'fast-check';
+
+test('reverse di reverse e\\' identita\\'', () => {
+  fc.assert(
+    fc.property(fc.array(fc.integer()), (arr) => {
+      expect(reverse(reverse(arr))).toEqual(arr);
+    }),
+  );
+});`,
+              task: `Scrivi un test property-based con fast-check che verifichi su array casuali di interi l'invariante reverse(reverse(arr)) === arr.`,
             },
             {
               english: 'Cyclomatic Complexity',
@@ -2644,6 +3406,8 @@ export default {
                 'Before Black Friday, the team ran load testing to simulate 10,000 concurrent users and find bottlenecks. = Prima del Black Friday, il team ha eseguito test di carico per simulare 10.000 utenti concorrenti e trovare colli di bottiglia.',
               context: 'performance',
               difficulty: 'intermediate',
+              command: 'k6 run --vus 500 --duration 5m loadtest.js',
+              task: 'Esegui un test di carico con k6 simulando 500 utenti virtuali per 5 minuti e misura latenza e tasso di errore.',
             },
             {
               english: 'Stress Testing',
@@ -2654,6 +3418,8 @@ export default {
                 'During stress testing, we pushed traffic far beyond normal levels until the server ran out of memory. = Durante lo stress test, abbiamo spinto il traffico ben oltre i livelli normali finché il server non ha esaurito la memoria.',
               context: 'performance',
               difficulty: 'advanced',
+              command: 'k6 run --stage 2m:200,5m:2000,2m:0 stress.js',
+              task: 'Lancia uno stress test che rampa fino a 2000 utenti concorrenti per individuare il punto di rottura del sistema.',
             },
             {
               english: 'Usability Testing',
@@ -2675,6 +3441,8 @@ export default {
                 'Accessibility testing ensures everyone can use the site. = Il test di accessibilit\u00E0 garantisce che tutti possano usare il sito.',
               context: 'ux',
               difficulty: 'advanced',
+              command: 'npx pa11y-ci --sitemap https://app.example.com/sitemap.xml --reporter json',
+              task: 'Scansiona tutte le pagine elencate nella sitemap con pa11y-ci ed emetti un report JSON delle violazioni WCAG.',
             },
             {
               english: 'Bug Report',
@@ -2741,6 +3509,24 @@ export default {
               context: 'devops',
               difficulty: 'intermediate',
               note: 'Esegue build e test automatici ad ogni commit.',
+              code: `# .github/workflows/ci.yml
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test`,
+              task: 'Definisci una pipeline di CI su GitHub Actions che a ogni push su main installi le dipendenze, lanci il lint ed esegua i test.',
             },
             {
               english: 'CD (Continuous Delivery)',
@@ -2751,6 +3537,25 @@ export default {
                 'Continuous delivery ensures the code is always ready for release. = La consegna continua garantisce che il codice sia sempre pronto al rilascio.',
               context: 'devops',
               difficulty: 'intermediate',
+              code: `# .github/workflows/cd.yml
+name: CD
+on:
+  push:
+    tags: ['v*']
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm ci && npm run build
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-bundle
+          path: dist/
+      - name: Notify release manager
+        run: echo 'Build pronta per approvazione manuale'`,
+              task: `Configura una pipeline di Continuous Delivery che a ogni tag costruisca l'artefatto e lo renda disponibile per l'approvazione manuale prima del rilascio in produzione.`,
             },
             {
               english: 'Continuous Deployment',
@@ -2763,6 +3568,22 @@ export default {
               context: 'devops',
               difficulty: 'advanced',
               note: 'A differenza del Delivery, qui il rilascio in produzione non richiede intervento umano.',
+              code: `# .github/workflows/deploy.yml
+name: Continuous Deployment
+on:
+  push:
+    branches: [main]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm ci && npm test
+      - name: Deploy to production
+        run: |
+          kubectl set image deployment/api api=ghcr.io/acme/api:\${{ github.sha }} -n production
+          kubectl rollout status deployment/api -n production`,
+              task: 'Imposta un deploy continuo in cui ogni commit su main che passa i test va automaticamente in produzione, senza approvazioni manuali.',
             },
             {
               english: 'Pipeline',
@@ -2774,6 +3595,21 @@ export default {
               context: 'devops',
               difficulty: 'beginner',
               note: 'Serie di processi automatizzati per costruire, testare e distribuire il software.',
+              code: `# .gitlab-ci.yml
+stages: [build, test, deploy]
+build:
+  stage: build
+  script: npm run build
+  artifacts:
+    paths: [dist/]
+test:
+  stage: test
+  script: npm test
+deploy:
+  stage: deploy
+  script: kubectl apply -f k8s/
+  only: [main]`,
+              task: 'Crea una pipeline CI/CD a tre stadi (build, test, deploy) su GitLab che produca un artefatto e lo distribuisca su Kubernetes solo dal branch main.',
             },
             {
               english: 'SCM (Source Code Management)',
@@ -2784,6 +3620,8 @@ export default {
                 "A reliable SCM tracks every change, supports branching, and lets teams collaborate without overwriting each other's work. = Un SCM affidabile traccia ogni modifica, supporta il branching e permette ai team di collaborare senza sovrascrivere il lavoro altrui.",
               context: 'tools',
               difficulty: 'beginner',
+              command: 'git clone --branch develop --depth 1 git@github.com:acme/api.git',
+              task: `Clona il branch develop del repository dell'API facendo uno shallow clone (solo l'ultimo commit) per velocizzare il setup della CI.`,
             },
             {
               english: 'Build Automation',
@@ -2794,6 +3632,8 @@ export default {
                 "With build automation, a single command compiles the code, runs tests, and packages the artifact. = Con l'automazione della build, un singolo comando compila il codice, esegue i test e impacchetta l'artefatto.",
               context: 'devops',
               difficulty: 'intermediate',
+              command: 'npm run build && npm test && docker build -t myapp:v1.2.0 .',
+              task: `Automatizza l'intera build del progetto: compila il codice, lancia i test e impacchetta il risultato in un'immagine Docker taggata con la versione 1.2.0.`,
             },
             {
               english: 'Artifact',
@@ -2805,6 +3645,8 @@ export default {
               context: 'devops',
               difficulty: 'intermediate',
               note: "Il risultato finale del processo di build (es. un file .jar, .exe o un'immagine Docker).",
+              command: 'docker push registry.acme.io/api:1.2.0',
+              task: `Pubblica l'artefatto della build (un'immagine Docker taggata 1.2.0) nel registry aziendale così che gli ambienti di staging e produzione possano scaricarla.`,
             },
             {
               english: 'Artifact Repository',
@@ -2816,6 +3658,9 @@ export default {
                 'The pipeline stores every versioned build in the artifact repository so any release can be reproduced. = La pipeline salva ogni build versionata nel repository degli artefatti cos\u00EC ogni rilascio pu\u00F2 essere riprodotto.',
               context: 'tools',
               difficulty: 'advanced',
+              command:
+                'mvn deploy -DaltDeploymentRepository=nexus::default::https://nexus.acme.io/repository/releases',
+              task: `Deposita il JAR appena costruito nel repository degli artefatti Nexus aziendale, sull'instanza releases, per renderlo disponibile come dipendenza versionata.`,
             },
             {
               english: 'Feedback Loop',
@@ -2843,6 +3688,8 @@ export default {
               context: 'devops',
               difficulty: 'beginner',
               note: 'Il processo di installazione e attivazione del software in un ambiente specifico.',
+              command: 'kubectl apply -f deployment.yaml -n production',
+              task: `Esegui il deploy dell'applicazione nel namespace production di Kubernetes applicando il manifest deployment.yaml.`,
             },
             {
               english: 'Staging Environment',
@@ -2855,6 +3702,9 @@ export default {
               context: 'devops',
               difficulty: 'intermediate',
               note: 'Un ambiente quasi identico alla produzione per il test finale.',
+              command:
+                'kubectl apply -f k8s/ -n staging && kubectl rollout status deployment/api -n staging',
+              task: `Distribuisci la nuova versione nell'ambiente di staging e attendi che il rollout sia completato prima di promuoverla in produzione.`,
             },
             {
               english: 'Production (Prod)',
@@ -2866,6 +3716,8 @@ export default {
               context: 'devops',
               difficulty: 'beginner',
               note: "L'ambiente reale dove gli utenti finali usano l'applicazione.",
+              command: 'kubectl apply -f k8s/ -n production --record',
+              task: 'Esegui il deploy in produzione registrando il comando nella history del rollout, così da poter risalire a chi ha rilasciato cosa.',
             },
             {
               english: 'Blue-Green Deployment',
@@ -2877,6 +3729,19 @@ export default {
               context: 'deployment-strategies',
               difficulty: 'advanced',
               note: 'Due ambienti identici: uno live (Blue) e uno per il nuovo codice (Green). Si scambia il traffico.',
+              code: `# k8s/service.yaml — switch traffic by changing the selector
+apiVersion: v1
+kind: Service
+metadata:
+  name: api
+spec:
+  selector:
+    app: api
+    version: green  # was 'blue', now points to the new release
+  ports:
+    - port: 80
+      targetPort: 8080`,
+              task: `Configura un deploy blue-green su Kubernetes in cui il Service indirizza il traffico al pool 'green' modificando il selector senza interrompere il servizio.`,
             },
             {
               english: 'Canary Release',
@@ -2888,6 +3753,21 @@ export default {
               context: 'deployment-strategies',
               difficulty: 'advanced',
               note: 'Rilasciare il nuovo codice solo a una piccola parte di utenti per testarne la stabilit\u00E0.',
+              code: `# Argo Rollouts canary strategy
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: api
+spec:
+  strategy:
+    canary:
+      steps:
+        - setWeight: 5
+        - pause: { duration: 10m }
+        - setWeight: 25
+        - pause: { duration: 10m }
+        - setWeight: 100`,
+              task: 'Definisci una strategia di rilascio canary che mandi prima il 5% del traffico alla nuova versione, poi il 25%, e infine il 100% se non emergono errori.',
             },
             {
               english: 'Rolling Update',
@@ -2899,6 +3779,9 @@ export default {
               context: 'deployment-strategies',
               difficulty: 'intermediate',
               note: 'Aggiornare i server uno alla volta per non interrompere il servizio.',
+              command:
+                'kubectl set image deployment/api api=acme/api:v2.0.0 -n production && kubectl rollout status deployment/api -n production',
+              task: 'Esegui un aggiornamento progressivo del deployment api alla versione v2.0.0 e segui lo stato del rollout fino al completamento di tutti i pod.',
             },
             {
               english: 'Zero-downtime Deployment',
@@ -2910,6 +3793,26 @@ export default {
                 'Achieve zero-downtime deployment with load balancers. = Ottieni deploy a tempo zero con i bilanciatori di carico.',
               context: 'devops',
               difficulty: 'advanced',
+              code: `# Deployment strategy for zero downtime
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api
+spec:
+  replicas: 4
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    spec:
+      containers:
+        - name: api
+          image: acme/api:v2.0.0
+          readinessProbe:
+            httpGet: { path: /health, port: 8080 }`,
+              task: 'Configura il deployment perché aggiorni i pod uno alla volta senza mai scendere sotto la capacità minima, garantendo zero downtime durante il rilascio.',
             },
             {
               english: 'Rollback',
@@ -2921,6 +3824,8 @@ export default {
               context: 'devops',
               difficulty: 'intermediate',
               note: 'Tornare velocemente alla versione precedente del software in caso di errori.',
+              command: 'kubectl rollout undo deployment/api -n production --to-revision=3',
+              task: 'Effettua un rollback del deployment api in produzione alla revisione 3, ripristinando la versione precedente dopo aver rilevato un errore critico.',
             },
             {
               english: 'Feature Flag / Toggle',
@@ -2932,6 +3837,13 @@ export default {
               context: 'development',
               difficulty: 'advanced',
               note: 'Permette di attivare o disattivare funzioni senza fare un nuovo deploy.',
+              code: `import { LDClient } from 'launchdarkly-node-server-sdk';
+const client = LDClient.init(process.env.LD_SDK_KEY);
+async function handler(req, res) {
+  const showNewUI = await client.variation('new-checkout-ui', { key: req.user.id }, false);
+  return showNewUI ? renderNewCheckout(res) : renderLegacyCheckout(res);
+}`,
+              task: 'Implementa un feature flag che attivi la nuova UI di checkout solo per gli utenti selezionati dalla console di LaunchDarkly, senza bisogno di un nuovo deploy.',
             },
             {
               english: 'Environment Drift',
@@ -2960,6 +3872,21 @@ export default {
               context: 'devops',
               difficulty: 'intermediate',
               note: 'Gestire server e reti tramite file di configurazione invece di processi manuali.',
+              code: `# main.tf — provision an EC2 instance
+provider "aws" {
+  region = "eu-west-1"
+}
+resource "aws_instance" "web" {
+  ami           = "ami-0abcdef1234567890"
+  instance_type = "t3.micro"
+  tags = {
+    Name = "web-prod"
+    Env  = "production"
+  }
+}`,
+              command:
+                'terraform init && terraform apply -var-file=production.tfvars -auto-approve',
+              task: 'Definisci in Terraform una istanza EC2 di produzione nella regione eu-west-1 e applicala usando il file di variabili production.tfvars senza chiedere conferma.',
             },
             {
               english: 'Container',
@@ -2971,6 +3898,8 @@ export default {
               context: 'infrastructure',
               difficulty: 'beginner',
               note: 'Pacchetto leggero che include il codice e tutte le dipendenze per girare ovunque.',
+              command: 'docker run -d --name api -p 8080:8080 --env-file .env.prod acme/api:v1.2.0',
+              task: `Avvia un container dell'applicazione api in modalità detached esponendo la porta 8080 e caricando le variabili d'ambiente dal file .env.prod.`,
             },
             {
               english: 'Docker',
@@ -2981,6 +3910,8 @@ export default {
                 'Thanks to Docker, developers can package their app with all dependencies and ship it to any server reliably. = Grazie a Docker, gli sviluppatori possono impacchettare la loro app con tutte le dipendenze e distribuirla su qualsiasi server in modo affidabile.',
               context: 'infrastructure',
               difficulty: 'beginner',
+              command: 'docker build -t myapp:v1.2.0 --build-arg NODE_ENV=production .',
+              task: `Costruisci un'immagine Docker del progetto taggandola con la versione 1.2.0 e passando NODE_ENV=production come build argument.`,
             },
             {
               english: 'Orchestration',
@@ -2991,6 +3922,8 @@ export default {
                 "Container orchestration manages thousands of containers. = L'orchestrazione gestisce migliaia di container.",
               context: 'infrastructure',
               difficulty: 'advanced',
+              command: 'kubectl get pods -A -o wide --sort-by=.spec.nodeName',
+              task: 'Mostra tutti i pod orchestrati dal cluster Kubernetes, raggruppati per nodo, per verificare come è distribuito il carico tra le macchine.',
             },
             {
               english: 'Kubernetes (K8s)',
@@ -3001,6 +3934,9 @@ export default {
                 'Most cloud providers offer managed Kubernetes clusters so teams can orchestrate containers without managing the control plane. = La maggior parte dei cloud provider offre cluster Kubernetes gestiti cos\u00EC i team possono orchestrare i container senza gestire il control plane.',
               context: 'infrastructure',
               difficulty: 'advanced',
+              command:
+                'kubectl apply -f deployment.yaml -n production && kubectl get pods -n production -w',
+              task: 'Applica il manifest del deployment al cluster Kubernetes nel namespace production e osserva in tempo reale come vengono creati i pod.',
             },
             {
               english: 'Virtual Machine (VM)',
@@ -3011,6 +3947,8 @@ export default {
                 'A virtual machine emulates an entire operating system, which gives strong isolation but uses much more RAM than a container. = Una virtual machine emula un intero sistema operativo, il che dà un forte isolamento ma usa molta più RAM di un container.',
               context: 'infrastructure',
               difficulty: 'beginner',
+              command: 'virsh list --all && virsh start web-vm',
+              task: `Elenca tutte le macchine virtuali gestite da libvirt sull'host, poi avvia quella chiamata web-vm.`,
             },
             {
               english: 'Service Discovery',
@@ -3021,6 +3959,20 @@ export default {
                 'When a new instance spins up, service discovery registers it so other services can route traffic to it automatically. = Quando una nuova istanza viene avviata, la service discovery la registra così gli altri servizi possono instradare il traffico verso di essa automaticamente.',
               context: 'architecture',
               difficulty: 'advanced',
+              code: `# k8s/service.yaml — DNS-based service discovery
+apiVersion: v1
+kind: Service
+metadata:
+  name: payments
+  namespace: prod
+spec:
+  selector:
+    app: payments
+  ports:
+    - port: 80
+      targetPort: 8080
+# Other services reach it at: payments.prod.svc.cluster.local`,
+              task: 'Esponi il microservizio payments come Service Kubernetes così che gli altri servizi possano trovarlo automaticamente tramite il nome DNS payments.prod.svc.cluster.local.',
             },
             {
               english: 'Provisioning',
@@ -3032,6 +3984,8 @@ export default {
               context: 'infrastructure',
               difficulty: 'intermediate',
               note: "Il processo di preparazione e configurazione dell'infrastruttura IT.",
+              command: 'terraform apply -var-file=production.tfvars -auto-approve',
+              task: `Esegui il provisioning dell'infrastruttura di produzione applicando il piano Terraform con le variabili dell'ambiente di produzione.`,
             },
             {
               english: 'Immutable Infrastructure',
@@ -3043,6 +3997,8 @@ export default {
                 "In immutable infrastructure, we replace servers instead of updating them. = Nell'infrastruttura immutabile, sostituiamo i server invece di aggiornarli.",
               context: 'devops',
               difficulty: 'expert',
+              command: `packer build -var 'version=1.2.0' webapp.pkr.hcl`,
+              task: 'Costruisci con Packer una nuova immagine macchina immutabile versione 1.2.0 da usare per sostituire interamente le istanze invece di aggiornarle in-place.',
             },
             {
               english: 'Config Management',
@@ -3054,6 +4010,8 @@ export default {
                 'With config management tools like Ansible, you define the desired state and the tool enforces it across all servers. = Con strumenti di gestione della configurazione come Ansible, definisci lo stato desiderato e lo strumento lo applica su tutti i server.',
               context: 'tools',
               difficulty: 'intermediate',
+              command: 'ansible-playbook -i inventory/production webservers.yml --limit web-prod',
+              task: `Lancia il playbook Ansible che configura i server web in produzione, limitando l'esecuzione al gruppo di host web-prod.`,
             },
           ],
         },
@@ -3071,6 +4029,17 @@ export default {
                 'Setup monitoring to track server health. = Configura il monitoraggio per tracciare la salute del server.',
               context: 'operations',
               difficulty: 'beginner',
+              code: `# prometheus.yml — scrape app metrics every 15s
+global:
+  scrape_interval: 15s
+scrape_configs:
+  - job_name: 'api'
+    static_configs:
+      - targets: ['api.prod.svc.cluster.local:9090']
+  - job_name: 'node-exporter'
+    static_configs:
+      - targets: ['node1:9100', 'node2:9100']`,
+              task: `Configura Prometheus per raccogliere le metriche dell'API e dei node exporter ogni 15 secondi, così da poter monitorare in tempo reale lo stato dei server.`,
             },
             {
               english: 'Alerting',
@@ -3081,6 +4050,17 @@ export default {
                 "Proper alerting wakes up the on-call engineer within minutes when a critical service goes down. = Un alerting adeguato sveglia l'ingegnere reperibile in pochi minuti quando un servizio critico va gi\u00F9.",
               context: 'operations',
               difficulty: 'intermediate',
+              code: `# alertmanager rules
+groups:
+  - name: api-alerts
+    rules:
+      - alert: HighErrorRate
+        expr: sum(rate(http_requests_total{status=~"5.."}[5m])) / sum(rate(http_requests_total[5m])) > 0.05
+        for: 10m
+        labels: { severity: critical }
+        annotations:
+          summary: 'API error rate sopra il 5% per 10 minuti'`,
+              task: `Definisci una regola di alerting che notifichi il team di reperibilità quando il tasso di errori 5xx dell'API supera il 5% per più di 10 minuti.`,
             },
             {
               english: 'Logging',
@@ -3091,6 +4071,14 @@ export default {
                 'Structured logging with correlation IDs lets you trace a single request across dozens of microservices. = Il logging strutturato con ID di correlazione permette di tracciare una singola richiesta attraverso decine di microservizi.',
               context: 'operations',
               difficulty: 'beginner',
+              code: `import pino from 'pino';
+const logger = pino({ level: 'info' });
+app.use((req, res, next) => {
+  req.log = logger.child({ requestId: req.headers['x-request-id'] });
+  req.log.info({ method: req.method, url: req.url }, 'incoming request');
+  next();
+});`,
+              task: 'Aggiungi un middleware Express che produca log strutturati in JSON associando a ogni richiesta un request-id, così da poter tracciare ogni chiamata nei microservizi.',
             },
             {
               english: 'SRE (Site Reliability Engineering)',
@@ -3112,6 +4100,19 @@ export default {
                 "Collect metrics like CPU usage and response time. = Raccogli metriche come l'uso della CPU e il tempo di risposta.",
               context: 'operations',
               difficulty: 'intermediate',
+              code: `import client from 'prom-client';
+const httpDuration = new client.Histogram({
+  name: 'http_request_duration_seconds',
+  help: 'Durata delle richieste HTTP in secondi',
+  labelNames: ['method', 'route', 'status'],
+  buckets: [0.05, 0.1, 0.3, 0.5, 1, 2, 5],
+});
+app.use((req, res, next) => {
+  const end = httpDuration.startTimer();
+  res.on('finish', () => end({ method: req.method, route: req.route?.path, status: res.statusCode }));
+  next();
+});`,
+              task: 'Esponi una metrica Prometheus che misuri la durata delle richieste HTTP per metodo, rotta e status code, così da poter calcolare le percentili di latenza.',
             },
             {
               english: 'Observability',
@@ -3123,6 +4124,15 @@ export default {
               context: 'operations',
               difficulty: 'advanced',
               note: 'Capacit\u00E0 di capire lo stato interno di un sistema basandosi solo sui dati esterni (log, metriche, tracce).',
+              code: `import { NodeSDK } from '@opentelemetry/sdk-node';
+import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-http';
+import { getNodeAutoInstrumentations } from '@opentelemetry/auto-instrumentations-node';
+const sdk = new NodeSDK({
+  traceExporter: new OTLPTraceExporter({ url: 'http://collector:4318/v1/traces' }),
+  instrumentations: [getNodeAutoInstrumentations()],
+});
+sdk.start();`,
+              task: `Strumenta l'applicazione Node con OpenTelemetry per inviare automaticamente trace, log e metriche al collector centrale e diagnosticare anche problemi non previsti.`,
             },
             {
               english: 'Distributed Tracing',
@@ -3134,6 +4144,21 @@ export default {
                 'Use distributed tracing to follow a request through microservices. = Usa il tracciamento distribuito per seguire una richiesta tra i microservizi.',
               context: 'architecture',
               difficulty: 'expert',
+              code: `import { trace, context } from '@opentelemetry/api';
+const tracer = trace.getTracer('payments-service');
+async function processPayment(order) {
+  return tracer.startActiveSpan('processPayment', async (span) => {
+    span.setAttribute('order.id', order.id);
+    try {
+      const result = await chargeCard(order);
+      span.setStatus({ code: 1 });
+      return result;
+    } finally {
+      span.end();
+    }
+  });
+}`,
+              task: `Avvolgi la funzione processPayment in uno span OpenTelemetry così che la richiesta venga tracciata da un microservizio all'altro e si possa ricostruire l'intero percorso.`,
             },
             {
               english: 'Health Check',
@@ -3144,6 +4169,16 @@ export default {
                 'The load balancer uses a health check to skip dead nodes. = Il bilanciatore usa un health check per saltare i nodi morti.',
               context: 'infrastructure',
               difficulty: 'intermediate',
+              code: `app.get('/health', async (req, res) => {
+  try {
+    await db.query('SELECT 1');
+    await redis.ping();
+    res.status(200).json({ status: 'healthy', uptime: process.uptime() });
+  } catch (err) {
+    res.status(503).json({ status: 'unhealthy', error: err.message });
+  }
+});`,
+              task: 'Esponi un endpoint /health che verifichi la connettività al database e a Redis, rispondendo 503 se una delle dipendenze critiche è giù così che il load balancer possa escludere il nodo.',
             },
             {
               english: 'SLO (Service Level Objective)',
@@ -3154,6 +4189,18 @@ export default {
                 'Set an SLO of 99.9 percent availability and let the error budget tell you when to slow down feature work to invest in reliability. = Imposta un SLO del 99,9 percento di disponibilità e lascia che il budget degli errori ti dica quando rallentare il lavoro sulle feature per investire in affidabilità.',
               context: 'management',
               difficulty: 'advanced',
+              code: `# Sloth SLO definition
+version: prometheus/v1
+service: api
+slos:
+  - name: availability
+    objective: 99.9
+    description: 'Il 99.9% delle richieste deve avere successo nei 30 giorni'
+    sli:
+      events:
+        error_query: sum(rate(http_requests_total{status=~"5.."}[{{.window}}]))
+        total_query: sum(rate(http_requests_total[{{.window}}]))`,
+              task: `Definisci un SLO di disponibilità al 99.9% per l'API misurato sul rapporto tra errori 5xx e richieste totali, su una finestra mobile di 30 giorni.`,
             },
             {
               english: 'Error Budget',
@@ -3165,6 +4212,20 @@ export default {
               context: 'operations',
               difficulty: 'expert',
               note: 'Concetto SRE: se hai ancora budget, puoi fare nuovi deploy; se \u00E8 finito, devi fermarti e stabilizzare.',
+              code: `# Prometheus alert when error budget is burning too fast
+groups:
+  - name: slo-burn
+    rules:
+      - alert: ErrorBudgetBurnFast
+        expr: |
+          (
+            sum(rate(http_requests_total{status=~"5.."}[1h]))
+            / sum(rate(http_requests_total[1h]))
+          ) > (14.4 * 0.001)
+        for: 5m
+        annotations:
+          summary: 'Il budget di errori del mese verrà bruciato in 2 giorni'`,
+              task: `Configura un alert di burn-rate che avvisi quando l'errore istantaneo brucerebbe l'intero budget mensile dell'SLO 99.9% in meno di due giorni.`,
             },
           ],
         },
@@ -3221,6 +4282,8 @@ export default {
               context: 'standards',
               difficulty: 'intermediate',
               note: 'Un identificatore unico per ogni vulnerabilit\u00E0 nota (es. CVE-2023-1234).',
+              command: 'grype dir:. --fail-on high',
+              task: 'Scansiona la directory corrente alla ricerca di CVE note nelle dipendenze e fai fallire il comando se viene trovata almeno una vulnerabilità di severità alta.',
             },
             {
               english: 'CVSS (Common Vulnerability Scoring System)',
@@ -3243,6 +4306,18 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               note: 'Succede quando si scrivono pi\u00F9 dati di quanti un buffer possa contenere.',
+              code: `// VULNERABILE: strcpy non controlla i limiti
+void bad(const char *input) {
+  char buf[16];
+  strcpy(buf, input); // overflow se input > 15 byte
+}
+// SICURO: usa strncpy e termina sempre la stringa
+void good(const char *input) {
+  char buf[16];
+  strncpy(buf, input, sizeof(buf) - 1);
+  buf[sizeof(buf) - 1] = '\\0';
+}`,
+              task: 'Sostituisci la chiamata vulnerabile a strcpy con strncpy limitando la copia alla dimensione del buffer di destinazione e garantendo la terminazione della stringa, per prevenire il buffer overflow.',
             },
             {
               english: 'Race Condition',
@@ -3254,6 +4329,16 @@ export default {
               context: 'development',
               difficulty: 'advanced',
               note: "Vulnerabilit\u00E0 che avviene quando l'esito dipende dall'ordine non sincronizzato di esecuzione.",
+              code: `import { Mutex } from 'async-mutex';
+const mutex = new Mutex();
+async function withdraw(accountId, amount) {
+  return mutex.runExclusive(async () => {
+    const balance = await db.getBalance(accountId);
+    if (balance < amount) throw new Error('Saldo insufficiente');
+    await db.setBalance(accountId, balance - amount);
+  });
+}`,
+              task: 'Proteggi la funzione di prelievo con un mutex così che due richieste concorrenti non possano leggere lo stesso saldo e prelevare due volte (race condition TOCTOU).',
             },
             {
               english: 'Logical Vulnerability',
@@ -3286,6 +4371,14 @@ export default {
                 "Using parameterized queries prevents injection attacks where malicious SQL is embedded in user input. = L'uso di query parametrizzate previene attacchi di injection in cui SQL malevolo \u00E8 incorporato nell'input utente.",
               context: 'security',
               difficulty: 'beginner',
+              code: `// VULNERABILE: concatenazione di stringhe nella query
+const q = \`SELECT * FROM users WHERE email = '\${email}'\`;
+// SICURO: query parametrizzata
+const { rows } = await db.query(
+  'SELECT id, email FROM users WHERE email = $1',
+  [email],
+);`,
+              task: `Sostituisci la concatenazione di stringhe nella query SQL con una query parametrizzata che passi l'email come parametro $1, eliminando il rischio di SQL injection.`,
             },
           ],
         },
@@ -3303,6 +4396,17 @@ export default {
                 "Implement RBAC to manage user permissions efficiently. = Implementa l'RBAC per gestire i permessi utente in modo efficiente.",
               context: 'security',
               difficulty: 'intermediate',
+              code: `function requireRole(...allowed) {
+  return (req, res, next) => {
+    if (!req.user) return res.status(401).end();
+    if (!allowed.includes(req.user.role)) {
+      return res.status(403).json({ error: 'Permessi insufficienti' });
+    }
+    next();
+  };
+}
+app.delete('/users/:id', requireRole('admin'), deleteUser);`,
+              task: 'Crea un middleware RBAC che blocchi con 403 chi non possiede uno dei ruoli abilitati e applicalo alla rotta di cancellazione utenti consentendola solo agli admin.',
             },
             {
               english: 'ABAC (Attribute-Based Access Control)',
@@ -3312,6 +4416,16 @@ export default {
               example: `ABAC evaluates rules over user attributes, resource tags, and request context, so policies can express conditions like 'only during work hours from the corporate network'. = ABAC valuta regole su attributi utente, tag della risorsa e contesto della richiesta, così le policy possono esprimere condizioni come 'solo durante l'orario di lavoro dalla rete aziendale'.`,
               context: 'security',
               difficulty: 'advanced',
+              code: `# policy.rego — OPA Rego ABAC policy
+package authz
+default allow = false
+allow {
+  input.user.department == input.resource.department
+  time.weekday(time.now_ns()) >= 1
+  time.weekday(time.now_ns()) <= 5
+  net.cidr_contains("10.0.0.0/8", input.request.source_ip)
+}`,
+              task: `Scrivi una policy Rego ABAC che permetta l'accesso solo se l'utente appartiene allo stesso dipartimento della risorsa, dal lunedì al venerdì, e solo da IP della rete aziendale.`,
             },
             {
               english: 'Stateless Authentication',
@@ -3324,6 +4438,24 @@ export default {
               context: 'backend',
               difficulty: 'advanced',
               note: 'Il server non salva sessioni; tutte le info sono nel token inviato dal client.',
+              code: `import jwt from 'jsonwebtoken';
+function issueToken(user) {
+  return jwt.sign(
+    { sub: user.id, role: user.role },
+    process.env.JWT_SECRET,
+    { expiresIn: '15m', issuer: 'api.acme.io' },
+  );
+}
+function authenticate(req, res, next) {
+  const token = req.headers.authorization?.split(' ')[1];
+  try {
+    req.user = jwt.verify(token, process.env.JWT_SECRET, { issuer: 'api.acme.io' });
+    next();
+  } catch {
+    res.status(401).end();
+  }
+}`,
+              task: 'Implementa autenticazione stateless emettendo un JWT firmato con scadenza 15 minuti e validandolo a ogni richiesta senza salvare alcuna sessione lato server.',
             },
             {
               english: 'Bcrypt / Argon2',
@@ -3335,6 +4467,19 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               note: 'Algoritmi progettati per essere lenti e resistere ad attacchi di forza bruta.',
+              code: `import argon2 from 'argon2';
+async function hashPassword(plain) {
+  return argon2.hash(plain, {
+    type: argon2.argon2id,
+    memoryCost: 19456, // 19 MiB
+    timeCost: 2,
+    parallelism: 1,
+  });
+}
+async function verifyPassword(plain, hash) {
+  return argon2.verify(hash, plain);
+}`,
+              task: `Calcola l'hash della password dell'utente con Argon2id usando 19 MiB di memoria e 2 iterazioni, e fornisci la funzione di verifica corrispondente al login.`,
             },
             {
               english: 'Salt (Password Salting)',
@@ -3345,6 +4490,14 @@ export default {
                 'A unique salt prevents rainbow table attacks. = Un salt unico previene gli attacchi con rainbow table.',
               context: 'security',
               difficulty: 'intermediate',
+              code: `import bcrypt from 'bcrypt';
+const SALT_ROUNDS = 12;
+async function register(email, plainPassword) {
+  // bcrypt genera automaticamente un salt unico e lo include nell'hash
+  const hash = await bcrypt.hash(plainPassword, SALT_ROUNDS);
+  await db.users.insert({ email, password_hash: hash });
+}`,
+              task: `Esegui l'hash della password al momento della registrazione con bcrypt a 12 round, sfruttando il salt unico generato automaticamente per neutralizzare attacchi con rainbow table.`,
             },
             {
               english: 'Secret Management',
@@ -3356,6 +4509,8 @@ export default {
               context: 'devops',
               difficulty: 'advanced',
               note: 'Gestire chiavi API, password e certificati in modo sicuro e centralizzato.',
+              command: 'vault kv get -field=password secret/prod/db',
+              task: `Recupera in modo sicuro la password del database di produzione da HashiCorp Vault, evitando di salvarla nel codice o nelle variabili d'ambiente del repository.`,
             },
             {
               english: 'CSRF (Cross-Site Request Forgery)',
@@ -3366,6 +4521,14 @@ export default {
                 'CSRF tricks a user into performing unwanted actions. = La CSRF inganna un utente facendogli compiere azioni non volute.',
               context: 'security',
               difficulty: 'intermediate',
+              code: `import csurf from 'csurf';
+const csrfProtection = csurf({ cookie: { httpOnly: true, sameSite: 'strict' } });
+app.use(csrfProtection);
+app.get('/form', (req, res) => {
+  res.render('form', { csrfToken: req.csrfToken() });
+});
+app.post('/transfer', csrfProtection, transferMoney);`,
+              task: 'Aggiungi protezione CSRF a Express usando un cookie httpOnly con SameSite strict, e includi il token nei form della pagina così che le richieste cross-site vengano rifiutate.',
             },
             {
               english: 'Defence in Depth',
@@ -3396,6 +4559,16 @@ export default {
                 'A system built with fail-safe defaults blocks all access when the authentication service is unreachable, rather than allowing everyone in. = Un sistema costruito con fallimento sicuro blocca tutti gli accessi quando il servizio di autenticazione non è raggiungibile, anziché far entrare tutti.',
               context: 'security',
               difficulty: 'advanced',
+              code: `async function isAuthorized(user, action) {
+  try {
+    const decision = await authService.check(user, action);
+    return decision.allow === true;
+  } catch (err) {
+    logger.error({ err }, 'auth service unreachable');
+    return false; // fail-safe: in caso di errore, NEGA l'accesso
+  }
+}`,
+              task: `Implementa la funzione di autorizzazione con un default fail-safe: se il servizio di auth non risponde, nega l'accesso invece di concederlo, applicando il principio del fallimento sicuro.`,
             },
           ],
         },
@@ -3414,6 +4587,8 @@ export default {
               context: 'security-tools',
               difficulty: 'intermediate',
               note: 'Analizza il codice senza eseguirlo (white-box).',
+              command: 'semgrep --config=p/owasp-top-ten --error --severity=ERROR src/',
+              task: 'Esegui una scansione SAST con Semgrep sulla directory src/ usando il ruleset OWASP Top Ten e fai fallire il comando se viene trovata una vulnerabilità di severità ERROR.',
             },
             {
               english: 'DAST (Dynamic Application Security Testing)',
@@ -3425,6 +4600,9 @@ export default {
               context: 'security-tools',
               difficulty: 'intermediate',
               note: "Analizza l'app dall'esterno mentre gira (black-box).",
+              command:
+                'docker run -t owasp/zap2docker-stable zap-baseline.py -t https://staging.acme.io -r zap-report.html',
+              task: `Lancia una scansione DAST con OWASP ZAP in modalità baseline contro l'ambiente di staging e salva il report HTML con le vulnerabilità trovate sull'applicazione in esecuzione.`,
             },
             {
               english: 'SCA (Software Composition Analysis)',
@@ -3435,6 +4613,8 @@ export default {
                 'SCA tools identify vulnerable open-source libraries. = Gli strumenti SCA identificano librerie open-source vulnerabili.',
               context: 'security-tools',
               difficulty: 'intermediate',
+              command: 'snyk test --severity-threshold=high --all-projects',
+              task: `Esegui un'analisi SCA con Snyk su tutti i progetti della repository segnalando solo le vulnerabilità di severità alta o critica nelle librerie open-source usate.`,
             },
             {
               english: 'Dependency Scanning',
@@ -3445,6 +4625,8 @@ export default {
                 'Github provides automatic dependency scanning. = Github fornisce la scansione automatica delle dipendenze.',
               context: 'security-tools',
               difficulty: 'beginner',
+              command: 'npm audit --audit-level=high --production',
+              task: `Lancia npm audit limitando l'output alle vulnerabilità di severità alta nelle sole dipendenze di produzione, da integrare nella pipeline CI.`,
             },
             {
               english: 'Secret Scanning',
@@ -3455,6 +4637,9 @@ export default {
                 'Automated secret scanning caught a developer who accidentally committed an AWS access key to a public repo. = La scansione automatica dei segreti ha intercettato uno sviluppatore che aveva accidentalmente committato una chiave di accesso AWS in una repo pubblica.',
               context: 'security-tools',
               difficulty: 'beginner',
+              command:
+                'gitleaks detect --source . --report-format sarif --report-path gitleaks.sarif',
+              task: 'Scansiona la repository alla ricerca di segreti committati per errore (chiavi API, token, password) generando un report SARIF da caricare nella dashboard di sicurezza.',
             },
             {
               english: 'Penetration Testing (Pen Test)',
@@ -3466,6 +4651,8 @@ export default {
               context: 'security-services',
               difficulty: 'intermediate',
               note: 'Un attacco simulato autorizzato per trovare debolezze.',
+              command: 'nmap -sV -sC -p- --open -oN pentest-recon.txt target.acme.io',
+              task: 'Avvia la fase di ricognizione di un penetration test eseguendo una scansione Nmap di tutte le porte aperte del target con identificazione di versione dei servizi e script di default.',
             },
             {
               english: 'Bug Bounty',
@@ -3508,6 +4695,8 @@ export default {
                 'Use a fuzzing tool to find crashes in your API. = Usa uno strumento di fuzzing per trovare crash nelle tue API.',
               context: 'security-tools',
               difficulty: 'advanced',
+              command: 'afl-fuzz -i tests/seeds -o tests/findings -- ./parser @@',
+              task: 'Lancia AFL++ contro il binario parser usando i file di seed come input iniziali e salva crash e hang trovati nella directory tests/findings.',
             },
           ],
         },
@@ -3536,6 +4725,19 @@ export default {
                 "Always perform input validation on the server side. = Esegui sempre la validazione dell'input lato server.",
               context: 'security',
               difficulty: 'beginner',
+              code: `import { z } from 'zod';
+const userSchema = z.object({
+  email: z.string().email(),
+  age: z.number().int().min(18).max(120),
+  role: z.enum(['user', 'admin']),
+});
+app.post('/users', (req, res) => {
+  const result = userSchema.safeParse(req.body);
+  if (!result.success) return res.status(400).json(result.error.flatten());
+  createUser(result.data);
+  res.status(201).end();
+});`,
+              task: 'Valida ogni richiesta POST /users contro uno schema Zod che imponga email valida, età tra 18 e 120 e ruolo tra valori consentiti, restituendo 400 se i dati non rispettano il contratto.',
             },
             {
               english: 'Output Encoding',
@@ -3546,6 +4748,13 @@ export default {
                 "Applying output encoding before rendering user content in HTML prevents cross-site scripting attacks. = Applicare la codifica dell'output prima di mostrare contenuto utente nell'HTML previene attacchi di cross-site scripting.",
               context: 'security',
               difficulty: 'intermediate',
+              code: `import escapeHtml from 'escape-html';
+function renderComment(comment) {
+  // PERICOLOSO: \`<div>\${comment.text}</div>\` permette XSS
+  // SICURO: codifica l'output prima di iniettarlo nell'HTML
+  return \`<div class="comment">\${escapeHtml(comment.text)}</div>\`;
+}`,
+              task: 'Codifica il testo del commento utente con escape-html prima di iniettarlo nella pagina, neutralizzando i caratteri speciali e prevenendo attacchi XSS riflessi e persistenti.',
             },
             {
               english: 'Secure SDLC',
@@ -3588,6 +4797,8 @@ export default {
                 "Before installing the update, the OS verifies the code signing certificate to ensure the binary was not tampered with. = Prima di installare l'aggiornamento, il sistema operativo verifica il certificato di firma del codice per assicurarsi che il binario non sia stato manomesso.",
               context: 'security',
               difficulty: 'intermediate',
+              command: 'cosign sign --key cosign.key registry.acme.io/api:1.2.0',
+              task: `Firma digitalmente l'immagine Docker 1.2.0 del servizio api con cosign usando la chiave privata aziendale, così che il cluster possa verificarne l'origine prima del deploy.`,
             },
             {
               english: 'Least Privilege (Dev)',
@@ -3598,6 +4809,16 @@ export default {
                 "The app should run with the least privilege necessary. = L'app dovrebbe girare con il minimo privilegio necessario.",
               context: 'security',
               difficulty: 'beginner',
+              code: `# Dockerfile — run as a non-root user
+FROM node:20-alpine
+RUN addgroup -S app && adduser -S app -G app
+WORKDIR /app
+COPY --chown=app:app package*.json ./
+RUN npm ci --omit=dev
+COPY --chown=app:app . .
+USER app
+CMD ["node", "server.js"]`,
+              task: `Modifica il Dockerfile per creare un utente non privilegiato 'app' e farlo girare il container con quell'utente, applicando il principio del minimo privilegio anche dentro il container.`,
             },
             {
               english: 'Secret Masking',
@@ -3608,6 +4829,18 @@ export default {
                 'Enable secret masking in your CI pipeline so that passwords and tokens are replaced with asterisks in build logs. = Abilita il mascheramento dei segreti nella pipeline CI così che password e token vengano sostituiti con asterischi nei log di build.',
               context: 'security',
               difficulty: 'intermediate',
+              code: `# .github/workflows/deploy.yml
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mask custom token
+        run: echo "::add-mask::\${{ secrets.DEPLOY_TOKEN }}"
+      - name: Deploy
+        env:
+          DEPLOY_TOKEN: \${{ secrets.DEPLOY_TOKEN }}
+        run: ./deploy.sh`,
+              task: 'Aggiungi nel workflow di deploy un comando add-mask che istruisca GitHub Actions a sostituire con asterischi qualsiasi occorrenza del token nei log della build.',
             },
             {
               english: 'Hardened Pipeline',
@@ -3618,6 +4851,26 @@ export default {
                 'A hardened pipeline protects the software supply chain. = Una pipeline hardened protegge la catena di approvvigionamento del software.',
               context: 'devops',
               difficulty: 'advanced',
+              code: `# .github/workflows/release.yml — hardened CI/CD
+permissions:
+  contents: read
+  id-token: write  # per OIDC verso il cloud
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: step-security/harden-runner@v2
+        with:
+          egress-policy: block
+          allowed-endpoints: registry.npmjs.org github.com
+      - run: npm ci --ignore-scripts
+      - run: npm test
+      - uses: sigstore/cosign-installer@v3
+      - run: cosign sign --yes ghcr.io/acme/api:\${{ github.sha }}`,
+              task: `Rendi una pipeline GitHub Actions hardened riducendo i permessi al minimo, bloccando il traffico in uscita non autorizzato, disattivando gli script delle dipendenze e firmando l'artefatto con cosign.`,
             },
           ],
         },
@@ -3651,6 +4904,17 @@ export default {
                 'The Singleton pattern restricts a class to a single instance. = Il pattern Singleton limita una classe a una sola istanza.',
               context: 'design-patterns',
               difficulty: 'intermediate',
+              code: `class Logger {
+  private static instance: Logger;
+  private constructor() {}
+  static getInstance(): Logger {
+    return Logger.instance ??= new Logger();
+  }
+  log(message: string): void {
+    console.log(\`[\${new Date().toISOString()}] \${message}\`);
+  }
+}`,
+              task: 'Implementa il pattern Singleton per il Logger usando un metodo statico getInstance che restituisce sempre la stessa istanza condivisa.',
             },
             {
               english: 'Factory Method',
@@ -3661,6 +4925,18 @@ export default {
                 'Instead of calling constructors directly, use a factory method to let subclasses decide which class to instantiate. = Invece di chiamare i costruttori direttamente, usa un metodo factory per lasciare alle sottoclassi la scelta della classe da istanziare.',
               context: 'design-patterns',
               difficulty: 'advanced',
+              code: `abstract class Document {
+  abstract export(): Buffer;
+}
+class PdfDocument extends Document { export() { return Buffer.from('pdf'); } }
+class DocxDocument extends Document { export() { return Buffer.from('docx'); } }
+
+class DocumentFactory {
+  static create(type: 'pdf' | 'docx'): Document {
+    return type === 'pdf' ? new PdfDocument() : new DocxDocument();
+  }
+}`,
+              task: 'Implementa un Factory Method che decide quale sottoclasse di Document istanziare in base al tipo richiesto, senza esporre i costruttori concreti al client.',
             },
             {
               english: 'Abstract Factory',
@@ -3671,6 +4947,23 @@ export default {
                 'An abstract factory lets you create platform-specific UI elements without coupling the client code to concrete classes. = Una abstract factory ti permette di creare elementi UI specifici per piattaforma senza accoppiare il codice client a classi concrete.',
               context: 'design-patterns',
               difficulty: 'expert',
+              code: `interface Button { render(): string }
+interface Checkbox { render(): string }
+
+interface UIFactory {
+  createButton(): Button;
+  createCheckbox(): Checkbox;
+}
+
+class MacFactory implements UIFactory {
+  createButton() { return { render: () => '<MacButton/>' }; }
+  createCheckbox() { return { render: () => '<MacCheckbox/>' }; }
+}
+class WinFactory implements UIFactory {
+  createButton() { return { render: () => '<WinButton/>' }; }
+  createCheckbox() { return { render: () => '<WinCheckbox/>' }; }
+}`,
+              task: 'Costruisci una Abstract Factory che produca famiglie di componenti UI coerenti (Button e Checkbox) per piattaforme diverse senza che il client conosca le classi concrete.',
             },
             {
               english: 'Builder',
@@ -3682,6 +4975,26 @@ export default {
               context: 'design-patterns',
               difficulty: 'advanced',
               note: 'Ideale per creare oggetti complessi con molti parametri opzionali.',
+              code: `class HttpRequestBuilder {
+  private url = '';
+  private method = 'GET';
+  private headers: Record<string, string> = {};
+  private body?: string;
+
+  setUrl(url: string) { this.url = url; return this; }
+  setMethod(m: string) { this.method = m; return this; }
+  addHeader(k: string, v: string) { this.headers[k] = v; return this; }
+  setBody(b: string) { this.body = b; return this; }
+  build() { return { url: this.url, method: this.method, headers: this.headers, body: this.body }; }
+}
+
+const req = new HttpRequestBuilder()
+  .setUrl('/api/users')
+  .setMethod('POST')
+  .addHeader('Authorization', 'Bearer abc')
+  .setBody('{"name":"Marco"}')
+  .build();`,
+              task: 'Implementa il pattern Builder per costruire una richiesta HTTP passo dopo passo con metodi a catena, separando la costruzione dalla rappresentazione finale.',
             },
             {
               english: 'Prototype',
@@ -3692,6 +5005,21 @@ export default {
                 "When creating an object is expensive, the prototype pattern clones an existing instance instead. = Quando creare un oggetto è costoso, il pattern prototype clona un'istanza esistente invece.",
               context: 'design-patterns',
               difficulty: 'advanced',
+              code: `interface Cloneable<T> {
+  clone(): T;
+}
+
+class Shape implements Cloneable<Shape> {
+  constructor(public x: number, public y: number, public color: string) {}
+  clone(): Shape {
+    return new Shape(this.x, this.y, this.color);
+  }
+}
+
+const original = new Shape(10, 20, 'red');
+const copy = original.clone();
+copy.color = 'blue';`,
+              task: `Implementa il pattern Prototype tramite un metodo clone che produca una copia indipendente dell'oggetto senza ricorrere al costruttore originale.`,
             },
             {
               english: 'Object Pool',
@@ -3703,6 +5031,26 @@ export default {
               context: 'design-patterns',
               difficulty: 'expert',
               note: 'Usato per migliorare le prestazioni quando creare un oggetto \u00E8 costoso (es. thread, connessioni DB).',
+              code: `class ConnectionPool {
+  private available: DbConnection[] = [];
+  private inUse = new Set<DbConnection>();
+
+  constructor(private size: number) {
+    for (let i = 0; i < size; i++) this.available.push(new DbConnection());
+  }
+
+  acquire(): DbConnection {
+    const conn = this.available.pop() ?? new DbConnection();
+    this.inUse.add(conn);
+    return conn;
+  }
+
+  release(conn: DbConnection): void {
+    this.inUse.delete(conn);
+    this.available.push(conn);
+  }
+}`,
+              task: 'Crea un Object Pool di connessioni al database con metodi acquire e release, in modo che le connessioni vengano riutilizzate invece di essere ricreate ogni volta.',
             },
             {
               english: 'Dependency Injection',
@@ -3714,6 +5062,21 @@ export default {
                 "With dependency injection, the class receives its collaborators from the outside instead of creating them internally. = Con la dependency injection, la classe riceve i suoi collaboratori dall'esterno invece di crearli internamente.",
               context: 'design-patterns',
               difficulty: 'advanced',
+              code: `interface EmailSender {
+  send(to: string, body: string): Promise<void>;
+}
+
+class NotificationService {
+  constructor(private readonly sender: EmailSender) {}
+
+  async notify(user: User, message: string) {
+    await this.sender.send(user.email, message);
+  }
+}
+
+// Iniezione tramite costruttore
+const service = new NotificationService(new SmtpEmailSender());`,
+              task: `Applica la dependency injection passando l'EmailSender al costruttore del NotificationService invece di istanziarlo internamente, cosi' la dipendenza puo' essere sostituita nei test.`,
             },
             {
               english: 'Lazy Initialization',
@@ -3725,6 +5088,21 @@ export default {
                 "With lazy initialization, the database connection is created only when the first query is executed. = Con l'inizializzazione lazy, la connessione al database viene creata solo quando viene eseguita la prima query.",
               context: 'design-patterns',
               difficulty: 'advanced',
+              code: `class ReportGenerator {
+  private _heavyClient?: AnalyticsClient;
+
+  private get client(): AnalyticsClient {
+    if (!this._heavyClient) {
+      this._heavyClient = new AnalyticsClient();
+    }
+    return this._heavyClient;
+  }
+
+  async build(): Promise<Report> {
+    return this.client.fetchAndRender();
+  }
+}`,
+              task: `Implementa l'inizializzazione lazy del client di analytics tramite un getter che lo crea solo alla prima chiamata, evitando di pagare il costo se il report non viene mai generato.`,
             },
             {
               english: 'Static Factory',
@@ -3735,6 +5113,21 @@ export default {
                 "A static factory method is a static method that returns a class instance. = Un metodo factory statico restituisce un'istanza della classe.",
               context: 'design-patterns',
               difficulty: 'intermediate',
+              code: `class Color {
+  private constructor(public r: number, public g: number, public b: number) {}
+
+  static fromHex(hex: string): Color {
+    const n = parseInt(hex.replace('#', ''), 16);
+    return new Color((n >> 16) & 0xff, (n >> 8) & 0xff, n & 0xff);
+  }
+
+  static rgb(r: number, g: number, b: number): Color {
+    return new Color(r, g, b);
+  }
+}
+
+const red = Color.fromHex('#ff0000');`,
+              task: 'Sostituisci i costruttori pubblici della classe Color con metodi factory statici come fromHex e rgb, in modo che il nome del metodo chiarisca quale formato di input viene usato.',
             },
           ],
         },
@@ -3762,6 +5155,24 @@ export default {
                 'The Adapter pattern allows incompatible interfaces to work together. = Il pattern Adapter permette a interfacce incompatibili di lavorare insieme.',
               context: 'design-patterns',
               difficulty: 'intermediate',
+              code: `// Interfaccia attesa dal client
+interface PaymentGateway {
+  charge(amountCents: number): Promise<string>;
+}
+
+// Libreria legacy incompatibile
+class LegacyStripeClient {
+  pay(amountInEuro: number, currency: string) { return Promise.resolve('txn_123'); }
+}
+
+// Adapter
+class StripeAdapter implements PaymentGateway {
+  constructor(private legacy: LegacyStripeClient) {}
+  charge(amountCents: number) {
+    return this.legacy.pay(amountCents / 100, 'EUR');
+  }
+}`,
+              task: `Implementa un Adapter che esponga l'interfaccia PaymentGateway attesa dal client e traduca le chiamate verso un client legacy con firma incompatibile.`,
             },
             {
               english: 'Bridge',
@@ -3772,6 +5183,23 @@ export default {
                 'Using the bridge pattern, you can change the rendering engine without modifying the shape hierarchy. = Usando il pattern bridge, puoi cambiare il motore di rendering senza modificare la gerarchia delle forme.',
               context: 'design-patterns',
               difficulty: 'expert',
+              code: `// Implementazione (motore di rendering)
+interface Renderer {
+  drawCircle(x: number, y: number, r: number): void;
+}
+class SvgRenderer implements Renderer { drawCircle() {/* ... */} }
+class CanvasRenderer implements Renderer { drawCircle() {/* ... */} }
+
+// Astrazione (forma)
+abstract class Shape {
+  constructor(protected renderer: Renderer) {}
+  abstract draw(): void;
+}
+class Circle extends Shape {
+  constructor(renderer: Renderer, private radius: number) { super(renderer); }
+  draw() { this.renderer.drawCircle(0, 0, this.radius); }
+}`,
+              task: `Separa la gerarchia delle forme dal motore di rendering con il pattern Bridge, cosi' che entrambi possano evolvere indipendentemente.`,
             },
             {
               english: 'Composite',
@@ -3783,6 +5211,21 @@ export default {
               context: 'design-patterns',
               difficulty: 'advanced',
               note: 'Permette di creare strutture ad albero.',
+              code: `interface FileNode {
+  size(): number;
+}
+
+class File implements FileNode {
+  constructor(private bytes: number) {}
+  size() { return this.bytes; }
+}
+
+class Directory implements FileNode {
+  private children: FileNode[] = [];
+  add(node: FileNode) { this.children.push(node); }
+  size() { return this.children.reduce((sum, c) => sum + c.size(), 0); }
+}`,
+              task: `Modella un file system con il pattern Composite dove File e Directory implementano la stessa interfaccia FileNode, cosi' che size() funzioni allo stesso modo su una foglia o su un intero ramo.`,
             },
             {
               english: 'Decorator',
@@ -3793,6 +5236,26 @@ export default {
                 'You can stack multiple decorators -- like compression, encryption, and logging -- on a data stream without changing the original class. = Puoi impilare più decorator -- come compressione, crittografia e logging -- su uno stream di dati senza cambiare la classe originale.',
               context: 'design-patterns',
               difficulty: 'intermediate',
+              code: `interface DataStream {
+  write(data: Buffer): void;
+}
+
+class FileStream implements DataStream {
+  write(data: Buffer) { /* scrive su file */ }
+}
+
+class CompressingStream implements DataStream {
+  constructor(private inner: DataStream) {}
+  write(data: Buffer) { this.inner.write(compress(data)); }
+}
+
+class EncryptingStream implements DataStream {
+  constructor(private inner: DataStream) {}
+  write(data: Buffer) { this.inner.write(encrypt(data)); }
+}
+
+const stream = new EncryptingStream(new CompressingStream(new FileStream()));`,
+              task: `Impila piu' decoratori sullo stesso DataStream per aggiungere compressione e crittografia senza modificare la classe FileStream originale.`,
             },
             {
               english: 'Facade',
@@ -3803,6 +5266,24 @@ export default {
                 "A facade hides the complexity of multiple subsystems behind a single, easy-to-use interface. = Una facade nasconde la complessità di più sottosistemi dietro un'interfaccia singola e facile da usare.",
               context: 'design-patterns',
               difficulty: 'intermediate',
+              code: `// Sottosistemi complessi
+class VideoDecoder { decode(file: string) { /* ... */ } }
+class AudioMixer { mix(track: any) { /* ... */ } }
+class SubtitleLoader { load(lang: string) { /* ... */ } }
+
+// Facade: una singola interfaccia semplice
+class MediaPlayer {
+  private decoder = new VideoDecoder();
+  private mixer = new AudioMixer();
+  private subs = new SubtitleLoader();
+
+  play(file: string, lang: string): void {
+    this.decoder.decode(file);
+    this.mixer.mix(file);
+    this.subs.load(lang);
+  }
+}`,
+              task: `Crea una Facade MediaPlayer che esponga un singolo metodo play e nasconda al client la complessita' della coordinazione tra decoder, mixer e caricatore di sottotitoli.`,
             },
             {
               english: 'Flyweight',
@@ -3814,6 +5295,24 @@ export default {
               context: 'design-patterns',
               difficulty: 'expert',
               note: 'Utile per gestire migliaia di piccoli oggetti simili.',
+              code: `// Stato intrinseco condiviso
+class CharStyle {
+  constructor(public font: string, public size: number, public color: string) {}
+}
+
+class StyleFactory {
+  private cache = new Map<string, CharStyle>();
+  get(font: string, size: number, color: string): CharStyle {
+    const key = \`\${font}|\${size}|\${color}\`;
+    let style = this.cache.get(key);
+    if (!style) {
+      style = new CharStyle(font, size, color);
+      this.cache.set(key, style);
+    }
+    return style;
+  }
+}`,
+              task: 'Implementa il pattern Flyweight con una StyleFactory che condivide gli oggetti CharStyle identici tra migliaia di caratteri di un editor di testo per risparmiare memoria.',
             },
             {
               english: 'Proxy',
@@ -3825,6 +5324,24 @@ export default {
               context: 'design-patterns',
               difficulty: 'intermediate',
               note: 'Pu\u00F2 essere usato per il controllo accessi, caching o lazy loading.',
+              code: `interface ImageLoader {
+  load(): Buffer;
+}
+
+class RealImage implements ImageLoader {
+  constructor(private path: string) { /* carica subito dal disco */ }
+  load() { return readFileSync(this.path); }
+}
+
+class ImageProxy implements ImageLoader {
+  private real?: RealImage;
+  constructor(private path: string) {}
+  load(): Buffer {
+    this.real ??= new RealImage(this.path);
+    return this.real.load();
+  }
+}`,
+              task: `Implementa un Proxy per ImageLoader che ritarda il caricamento del file da disco finche' load() non viene effettivamente chiamato, gestendo il lazy loading.`,
             },
             {
               english: 'Private Class Data',
@@ -3835,6 +5352,24 @@ export default {
                 'The private class data pattern wraps fields in a read-only object so they cannot be changed after construction. = Il pattern private class data racchiude i campi in un oggetto di sola lettura così non possono essere modificati dopo la costruzione.',
               context: 'design-patterns',
               difficulty: 'advanced',
+              code: `class CircleData {
+  constructor(
+    public readonly radius: number,
+    public readonly x: number,
+    public readonly y: number,
+  ) {}
+}
+
+class Circle {
+  private readonly data: CircleData;
+  constructor(radius: number, x: number, y: number) {
+    this.data = new CircleData(radius, x, y);
+  }
+  area(): number {
+    return Math.PI * this.data.radius ** 2;
+  }
+}`,
+              task: `Applica il pattern Private Class Data: incapsula i campi del Cerchio in un oggetto CircleData di sola lettura cosi' che non possano essere modificati dopo la costruzione.`,
             },
             {
               english: 'Wrapper',
@@ -3845,6 +5380,21 @@ export default {
                 'A wrapper class encapsulates a third-party library so that replacing it later requires changing only one file. = Una classe wrapper incapsula una libreria di terze parti cos\u00EC sostituirla in futuro richiede di modificare un solo file.',
               context: 'design-patterns',
               difficulty: 'intermediate',
+              code: `// Wrapper sopra la libreria di terze parti axios
+import axios from 'axios';
+
+export class HttpClient {
+  async get<T>(url: string): Promise<T> {
+    const res = await axios.get<T>(url);
+    return res.data;
+  }
+
+  async post<T>(url: string, body: unknown): Promise<T> {
+    const res = await axios.post<T>(url, body);
+    return res.data;
+  }
+}`,
+              task: `Incapsula la libreria axios in una classe wrapper HttpClient, cosi' che un'eventuale sostituzione con fetch o un altro client richieda di modificare un solo file.`,
             },
           ],
         },
@@ -3873,6 +5423,30 @@ export default {
                 'In a chain of responsibility, an authentication handler checks the token, then a logging handler records the request, and finally a validation handler checks the payload. = In una catena di responsabilit\u00E0, un gestore di autenticazione verifica il token, poi un gestore di logging registra la richiesta, e infine un gestore di validazione controlla il payload.',
               context: 'design-patterns',
               difficulty: 'advanced',
+              code: `abstract class Handler {
+  protected next?: Handler;
+  setNext(h: Handler): Handler { this.next = h; return h; }
+  handle(req: Request): Response | undefined {
+    return this.next?.handle(req);
+  }
+}
+
+class AuthHandler extends Handler {
+  handle(req: Request) {
+    if (!req.token) return { status: 401 };
+    return super.handle(req);
+  }
+}
+class LoggingHandler extends Handler {
+  handle(req: Request) {
+    console.log(req.path);
+    return super.handle(req);
+  }
+}
+
+const chain = new AuthHandler();
+chain.setNext(new LoggingHandler());`,
+              task: 'Costruisci una Chain of Responsibility in cui ogni handler (autenticazione, logging, validazione) decide se gestire la richiesta o passarla al successivo nella catena.',
             },
             {
               english: 'Command',
@@ -3884,6 +5458,23 @@ export default {
               context: 'design-patterns',
               difficulty: 'intermediate',
               note: 'Permette di implementare funzioni come Undo/Redo.',
+              code: `interface Command {
+  execute(): void;
+  undo(): void;
+}
+
+class AddTextCommand implements Command {
+  constructor(private editor: Editor, private text: string) {}
+  execute() { this.editor.append(this.text); }
+  undo() { this.editor.removeLast(this.text.length); }
+}
+
+class CommandHistory {
+  private stack: Command[] = [];
+  run(cmd: Command) { cmd.execute(); this.stack.push(cmd); }
+  undo() { this.stack.pop()?.undo(); }
+}`,
+              task: `Applica il pattern Command incapsulando ogni azione dell'editor in un oggetto con execute e undo, cosi' che lo stack della cronologia possa annullare le operazioni in ordine inverso.`,
             },
             {
               english: 'Iterator',
@@ -3894,6 +5485,22 @@ export default {
                 'An iterator lets you loop through a tree, a list, or a graph using the same for-each syntax. = Un iteratore ti permette di scorrere un albero, una lista o un grafo usando la stessa sintassi for-each.',
               context: 'design-patterns',
               difficulty: 'intermediate',
+              code: `class TreeNode<T> {
+  constructor(public value: T, public children: TreeNode<T>[] = []) {}
+
+  *[Symbol.iterator](): IterableIterator<T> {
+    yield this.value;
+    for (const child of this.children) {
+      yield* child;
+    }
+  }
+}
+
+const root = new TreeNode(1, [new TreeNode(2), new TreeNode(3)]);
+for (const value of root) {
+  console.log(value);
+}`,
+              task: `Implementa il pattern Iterator su un TreeNode tramite Symbol.iterator, cosi' che il client possa attraversare l'albero con un normale for-of senza conoscere la struttura interna.`,
             },
             {
               english: 'Mediator',
@@ -3904,6 +5511,26 @@ export default {
                 'The Mediator pattern reduces chaotic dependencies between objects. = Il pattern Mediator riduce le dipendenze caotiche tra gli oggetti.',
               context: 'design-patterns',
               difficulty: 'advanced',
+              code: `class ChatRoom {
+  private users = new Map<string, User>();
+
+  register(user: User) {
+    this.users.set(user.name, user);
+    user.mediator = this;
+  }
+
+  send(from: string, to: string, message: string) {
+    this.users.get(to)?.receive(from, message);
+  }
+}
+
+class User {
+  mediator?: ChatRoom;
+  constructor(public name: string) {}
+  send(to: string, message: string) { this.mediator?.send(this.name, to, message); }
+  receive(from: string, message: string) { console.log(\`\${from} -> \${this.name}: \${message}\`); }
+}`,
+              task: 'Implementa una ChatRoom come Mediator: gli utenti comunicano solo attraverso di essa, riducendo le dipendenze dirette a stella tra ogni coppia di partecipanti.',
             },
             {
               english: 'Memento',
@@ -3914,6 +5541,23 @@ export default {
                 'A text editor uses the memento pattern to take snapshots of the document so users can undo changes. = Un editor di testo usa il pattern memento per salvare istantanee del documento così gli utenti possono annullare le modifiche.',
               context: 'design-patterns',
               difficulty: 'advanced',
+              code: `class EditorMemento {
+  constructor(public readonly content: string) {}
+}
+
+class TextEditor {
+  private content = '';
+  type(text: string) { this.content += text; }
+  save(): EditorMemento { return new EditorMemento(this.content); }
+  restore(m: EditorMemento) { this.content = m.content; }
+}
+
+const editor = new TextEditor();
+editor.type('Ciao');
+const snapshot = editor.save();
+editor.type(' mondo');
+editor.restore(snapshot); // torna a 'Ciao'`,
+              task: `Implementa il pattern Memento per un TextEditor: salva istantanee del contenuto in oggetti EditorMemento e ripristinale per supportare l'undo.`,
             },
             {
               english: 'Observer',
@@ -3924,6 +5568,23 @@ export default {
                 'When data changes, the observer pattern automatically notifies every subscriber -- like a newsletter for objects. = Quando i dati cambiano, il pattern observer notifica automaticamente ogni abbonato -- come una newsletter per oggetti.',
               context: 'design-patterns',
               difficulty: 'intermediate',
+              code: `type Listener<T> = (data: T) => void;
+
+class EventBus<T> {
+  private listeners = new Map<string, Listener<T>[]>();
+
+  subscribe(event: string, fn: Listener<T>): () => void {
+    const arr = this.listeners.get(event) ?? [];
+    arr.push(fn);
+    this.listeners.set(event, arr);
+    return () => this.listeners.set(event, arr.filter(l => l !== fn));
+  }
+
+  emit(event: string, data: T): void {
+    this.listeners.get(event)?.forEach(fn => fn(data));
+  }
+}`,
+              task: 'Implementa il pattern Observer con un EventBus tipizzato: i subscriber si registrano a un evento e ricevono una notifica ogni volta che emit viene chiamato.',
             },
             {
               english: 'State',
@@ -3934,6 +5595,26 @@ export default {
                 'Using the state pattern, a document object behaves differently in Draft, Review, and Published states without giant if-else chains. = Usando il pattern state, un oggetto documento si comporta diversamente negli stati Draft, Review e Published senza enormi catene if-else.',
               context: 'design-patterns',
               difficulty: 'advanced',
+              code: `interface DocumentState {
+  publish(doc: Document): void;
+}
+
+class DraftState implements DocumentState {
+  publish(doc: Document) { doc.setState(new ReviewState()); }
+}
+class ReviewState implements DocumentState {
+  publish(doc: Document) { doc.setState(new PublishedState()); }
+}
+class PublishedState implements DocumentState {
+  publish() { /* gia' pubblicato, no-op */ }
+}
+
+class Document {
+  private state: DocumentState = new DraftState();
+  setState(s: DocumentState) { this.state = s; }
+  publish() { this.state.publish(this); }
+}`,
+              task: 'Applica il pattern State a un Document che passa da Draft a Review a Published, sostituendo lunghe catene di if-else con classi di stato dedicate.',
             },
             {
               english: 'Strategy',
@@ -3944,6 +5625,25 @@ export default {
                 'The strategy pattern lets the payment module switch between credit card, PayPal, or crypto at runtime. = Il pattern strategy permette al modulo di pagamento di passare tra carta di credito, PayPal o crypto a runtime.',
               context: 'design-patterns',
               difficulty: 'intermediate',
+              code: `interface PaymentStrategy {
+  pay(amount: number): Promise<string>;
+}
+
+class CreditCardStrategy implements PaymentStrategy {
+  pay(amount: number) { /* chiama gateway carta */ return Promise.resolve('cc_ok'); }
+}
+class PaypalStrategy implements PaymentStrategy {
+  pay(amount: number) { /* chiama API PayPal */ return Promise.resolve('pp_ok'); }
+}
+class CryptoStrategy implements PaymentStrategy {
+  pay(amount: number) { /* invia transazione on-chain */ return Promise.resolve('btc_ok'); }
+}
+
+class Checkout {
+  constructor(private strategy: PaymentStrategy) {}
+  process(amount: number) { return this.strategy.pay(amount); }
+}`,
+              task: 'Implementa il pattern Strategy in modo che il Checkout possa scambiare a runtime tra CreditCardStrategy, PaypalStrategy e CryptoStrategy senza if/else interni.',
             },
             {
               english: 'Template Method',
@@ -3954,6 +5654,28 @@ export default {
                 'The template method defines the overall recipe -- subclasses only override the specific steps they need to customise. = Il template method definisce la ricetta complessiva -- le sottoclassi sovrascrivono solo i passi specifici che devono personalizzare.',
               context: 'design-patterns',
               difficulty: 'advanced',
+              code: `abstract class ReportGenerator {
+  // Template method: definisce la ricetta
+  generate(): string {
+    const data = this.fetchData();
+    const formatted = this.format(data);
+    return this.wrap(formatted);
+  }
+
+  protected abstract fetchData(): unknown;
+  protected abstract format(data: unknown): string;
+
+  // Step comune con default
+  protected wrap(content: string): string {
+    return \`<html><body>\${content}</body></html>\`;
+  }
+}
+
+class SalesReport extends ReportGenerator {
+  protected fetchData() { return [/* righe vendite */]; }
+  protected format(rows: unknown) { return '<table>...</table>'; }
+}`,
+              task: `Implementa il pattern Template Method: la classe base ReportGenerator definisce l'ordine dei passi in generate() mentre le sottoclassi sovrascrivono solo fetchData e format.`,
             },
           ],
         },
@@ -3972,6 +5694,24 @@ export default {
               context: 'data-patterns',
               difficulty: 'advanced',
               note: 'Garantisce che tutte le operazioni in una transazione siano completate con successo o nessuna.',
+              code: `class UnitOfWork {
+  private newEntities: Entity[] = [];
+  private dirtyEntities: Entity[] = [];
+  private removedEntities: Entity[] = [];
+
+  registerNew(e: Entity) { this.newEntities.push(e); }
+  registerDirty(e: Entity) { this.dirtyEntities.push(e); }
+  registerRemoved(e: Entity) { this.removedEntities.push(e); }
+
+  async commit(db: Db): Promise<void> {
+    await db.transaction(async (tx) => {
+      for (const e of this.newEntities) await tx.insert(e);
+      for (const e of this.dirtyEntities) await tx.update(e);
+      for (const e of this.removedEntities) await tx.delete(e);
+    });
+  }
+}`,
+              task: `Implementa il pattern Unit of Work che tiene traccia di entita' nuove, modificate ed eliminate e le persiste tutte insieme in un'unica transazione atomica.`,
             },
             {
               english: 'generic repository pattern',
@@ -3983,6 +5723,21 @@ export default {
               context: 'data-patterns',
               difficulty: 'intermediate',
               note: 'Variante semplificata del Repository Pattern del DDD (level 4), riusabile su qualsiasi entità.',
+              code: `interface Repository<T extends { id: string }> {
+  findById(id: string): Promise<T | null>;
+  findAll(): Promise<T[]>;
+  save(entity: T): Promise<void>;
+  delete(id: string): Promise<void>;
+}
+
+class InMemoryRepository<T extends { id: string }> implements Repository<T> {
+  private store = new Map<string, T>();
+  async findById(id: string) { return this.store.get(id) ?? null; }
+  async findAll() { return [...this.store.values()]; }
+  async save(entity: T) { this.store.set(entity.id, entity); }
+  async delete(id: string) { this.store.delete(id); }
+}`,
+              task: `Implementa un generic repository pattern tipizzato che esponga findById, findAll, save e delete riusabili su qualsiasi entita' con un campo id.`,
             },
             {
               english: 'Data Transfer Object (DTO)',
@@ -3994,6 +5749,28 @@ export default {
               context: 'data-patterns',
               difficulty: 'intermediate',
               note: 'Un oggetto semplice che serve solo a trasportare dati, senza logica di business.',
+              code: `// Entita' di dominio ricca di logica
+class User {
+  constructor(
+    public id: string,
+    public email: string,
+    public passwordHash: string,
+    public role: 'admin' | 'user',
+  ) {}
+  isAdmin() { return this.role === 'admin'; }
+}
+
+// DTO: solo dati esposti via API
+interface UserDto {
+  id: string;
+  email: string;
+  role: 'admin' | 'user';
+}
+
+function toDto(u: User): UserDto {
+  return { id: u.id, email: u.email, role: u.role };
+}`,
+              task: `Definisci un DTO UserDto privo di logica di business e una funzione toDto che converta l'entita' User omettendo i campi sensibili come passwordHash.`,
             },
             {
               english: 'Data Access Object (DAO)',
@@ -4004,6 +5781,22 @@ export default {
                 "DAO provides an abstract interface to some type of database. = Il DAO fornisce un'interfaccia astratta a un tipo di database.",
               context: 'data-patterns',
               difficulty: 'intermediate',
+              code: `interface UserDao {
+  findById(id: string): Promise<User | null>;
+  insert(user: User): Promise<void>;
+  update(user: User): Promise<void>;
+}
+
+class PostgresUserDao implements UserDao {
+  constructor(private db: PgClient) {}
+  async findById(id: string) {
+    const r = await this.db.query('SELECT * FROM users WHERE id = $1', [id]);
+    return r.rows[0] ?? null;
+  }
+  async insert(u: User) { await this.db.query('INSERT INTO users ...', [u.id, u.email]); }
+  async update(u: User) { await this.db.query('UPDATE users SET ... WHERE id = $1', [u.id]); }
+}`,
+              task: `Definisci un'interfaccia UserDao e un'implementazione PostgresUserDao che fornisca al resto dell'applicazione un'astrazione del database, isolando l'SQL in un solo livello.`,
             },
             {
               english: 'Active Record',
@@ -4015,6 +5808,28 @@ export default {
               context: 'data-patterns',
               difficulty: 'advanced',
               note: "L'oggetto contiene sia i dati che i metodi per salvarli (es. user.save()).",
+              code: `abstract class ActiveRecord {
+  static async find<T extends ActiveRecord>(this: new () => T, id: string): Promise<T> {
+    const row = await db.query('SELECT * FROM ' + (this as any).table + ' WHERE id = ?', [id]);
+    return Object.assign(new this(), row);
+  }
+
+  async save(): Promise<void> {
+    const table = (this.constructor as any).table;
+    await db.query(\`INSERT INTO \${table} ... ON CONFLICT (id) DO UPDATE ...\`, this);
+  }
+}
+
+class User extends ActiveRecord {
+  static table = 'users';
+  id!: string;
+  email!: string;
+}
+
+const user = await User.find('u_1');
+user.email = 'new@example.com';
+await user.save();`,
+              task: 'Implementa il pattern Active Record in cui ogni istanza di User espone direttamente save() e i metodi statici di lookup, mescolando dati e persistenza nello stesso oggetto.',
             },
             {
               english: 'Visitor',
@@ -4025,6 +5840,29 @@ export default {
                 "Using the visitor pattern, you can add an export-to-PDF operation to every document type without touching their classes. = Usando il pattern visitor, puoi aggiungere un'operazione di esportazione in PDF a ogni tipo di documento senza toccare le loro classi.",
               context: 'design-patterns',
               difficulty: 'expert',
+              code: `interface DocumentVisitor {
+  visitText(node: TextNode): void;
+  visitImage(node: ImageNode): void;
+}
+
+interface DocumentNode {
+  accept(v: DocumentVisitor): void;
+}
+
+class TextNode implements DocumentNode {
+  constructor(public content: string) {}
+  accept(v: DocumentVisitor) { v.visitText(this); }
+}
+class ImageNode implements DocumentNode {
+  constructor(public src: string) {}
+  accept(v: DocumentVisitor) { v.visitImage(this); }
+}
+
+class PdfExportVisitor implements DocumentVisitor {
+  visitText(n: TextNode) { /* scrivi testo nel PDF */ }
+  visitImage(n: ImageNode) { /* embed immagine nel PDF */ }
+}`,
+              task: `Applica il pattern Visitor per aggiungere un'operazione di esportazione in PDF ai nodi del documento senza modificare le classi TextNode e ImageNode esistenti.`,
             },
             {
               english: 'Event Aggregator',
@@ -4036,6 +5874,23 @@ export default {
                 'An event aggregator acts as a central hub where publishers and subscribers meet without knowing about each other. = Un aggregatore di eventi funge da hub centrale dove publisher e subscriber si incontrano senza conoscersi.',
               context: 'architecture-patterns',
               difficulty: 'advanced',
+              code: `type Handler<T = unknown> = (payload: T) => void;
+
+class EventAggregator {
+  private subs = new Map<string, Handler[]>();
+
+  publish<T>(topic: string, payload: T): void {
+    this.subs.get(topic)?.forEach(h => h(payload));
+  }
+
+  subscribe<T>(topic: string, handler: Handler<T>): () => void {
+    const arr = this.subs.get(topic) ?? [];
+    arr.push(handler as Handler);
+    this.subs.set(topic, arr);
+    return () => this.subs.set(topic, arr.filter(h => h !== handler));
+  }
+}`,
+              task: `Implementa un Event Aggregator centrale con publish e subscribe, cosi' che publisher e subscriber comunichino tramite topic senza riferimenti diretti tra loro.`,
             },
             {
               english: 'Service Locator',
@@ -4046,6 +5901,25 @@ export default {
                 'A service locator provides a global registry of services, but many developers prefer dependency injection because it makes dependencies explicit. = Un service locator fornisce un registro globale dei servizi, ma molti sviluppatori preferiscono la dependency injection perch\u00E9 rende le dipendenze esplicite.',
               context: 'patterns',
               difficulty: 'expert',
+              code: `class ServiceLocator {
+  private static services = new Map<string, unknown>();
+
+  static register<T>(key: string, instance: T): void {
+    this.services.set(key, instance);
+  }
+
+  static resolve<T>(key: string): T {
+    const svc = this.services.get(key);
+    if (!svc) throw new Error(\`Service \${key} not registered\`);
+    return svc as T;
+  }
+}
+
+// Registrazione all'avvio
+ServiceLocator.register('logger', new ConsoleLogger());
+// Recupero on demand
+const logger = ServiceLocator.resolve<Logger>('logger');`,
+              task: 'Implementa un Service Locator come registro globale con register e resolve tipizzati, ricordando che rende le dipendenze meno esplicite rispetto alla dependency injection.',
             },
             {
               english: 'Pub/Sub',
@@ -4056,6 +5930,24 @@ export default {
                 'In a pub/sub system, the order service publishes an event and the email service subscribes to it without them knowing about each other. = In un sistema pub/sub, il servizio ordini pubblica un evento e il servizio email si iscrive senza che si conoscano.',
               context: 'architecture-patterns',
               difficulty: 'intermediate',
+              code: `// Publisher: il servizio ordini
+class OrderService {
+  constructor(private bus: MessageBus) {}
+  async place(order: Order) {
+    await this.save(order);
+    this.bus.publish('order.placed', { orderId: order.id, email: order.email });
+  }
+  private save(o: Order) { /* ... */ }
+}
+
+// Subscriber: il servizio email, completamente disaccoppiato
+class EmailService {
+  constructor(bus: MessageBus) {
+    bus.subscribe('order.placed', (evt) => this.sendConfirmation(evt.email));
+  }
+  sendConfirmation(email: string) { /* invia email */ }
+}`,
+              task: 'Modella un flusso pub/sub in cui OrderService pubblica un evento order.placed sul bus e EmailService si iscrive per inviare la conferma, senza che i due servizi si conoscano direttamente.',
             },
             {
               english: 'Interceptors',
@@ -4066,6 +5958,28 @@ export default {
                 'HTTP interceptors can add an authorization header to every outgoing request automatically. = Gli intercettatori HTTP possono aggiungere un header di autorizzazione a ogni richiesta in uscita automaticamente.',
               context: 'architecture-patterns',
               difficulty: 'advanced',
+              code: `type Interceptor = (req: Request, next: () => Promise<Response>) => Promise<Response>;
+
+class HttpPipeline {
+  private interceptors: Interceptor[] = [];
+
+  use(i: Interceptor): void { this.interceptors.push(i); }
+
+  async send(req: Request): Promise<Response> {
+    const chain = this.interceptors.reduceRight<() => Promise<Response>>(
+      (next, i) => () => i(req, next),
+      () => fetch(req),
+    );
+    return chain();
+  }
+}
+
+// Intercettatore che aggiunge l'header Authorization a ogni richiesta
+const authInterceptor: Interceptor = (req, next) => {
+  req.headers.set('Authorization', \`Bearer \${getToken()}\`);
+  return next();
+};`,
+              task: `Costruisci una pipeline di intercettatori HTTP che permetta di iniettare automaticamente l'header Authorization in ogni richiesta in uscita componendo middleware in catena.`,
             },
           ],
         },
@@ -4121,6 +6035,20 @@ export default {
               context: 'metrics',
               difficulty: 'intermediate',
               note: 'La quantit\u00E0 di lavoro (story points) che un team completa in uno sprint.',
+              code: `-- Velocita' media del team negli ultimi 5 sprint
+SELECT
+  sprint_id,
+  SUM(story_points) AS completed_points
+FROM issues
+WHERE status = 'done'
+  AND sprint_id IN (
+    SELECT id FROM sprints
+    ORDER BY end_date DESC
+    LIMIT 5
+  )
+GROUP BY sprint_id
+ORDER BY sprint_id;`,
+              task: `Scrivi una query SQL che calcoli la velocita' (story points completati) per ogni sprint negli ultimi cinque sprint chiusi, partendo dalla tabella issues di un tracker.`,
             },
             {
               english: 'Burn-down Chart',
@@ -4131,6 +6059,21 @@ export default {
                 'A burn-down chart shows how much work is left. = Un grafico burn-down mostra quanto lavoro rimane.',
               context: 'metrics',
               difficulty: 'intermediate',
+              code: `// Calcolo dei punti rimanenti giorno per giorno per un burn-down chart
+function burndown(sprint: Sprint, issues: Issue[]): { day: string; remaining: number }[] {
+  const start = sprint.startDate;
+  const days = Math.ceil((+sprint.endDate - +start) / 86_400_000);
+  const total = issues.reduce((s, i) => s + i.points, 0);
+
+  return Array.from({ length: days + 1 }, (_, d) => {
+    const date = new Date(+start + d * 86_400_000);
+    const done = issues
+      .filter(i => i.completedAt && i.completedAt <= date)
+      .reduce((s, i) => s + i.points, 0);
+    return { day: date.toISOString().slice(0, 10), remaining: total - done };
+  });
+}`,
+              task: `Calcola i dati per un burn-down chart: per ogni giorno dello sprint somma i punti delle issue ancora aperte cosi' da visualizzare il lavoro residuo nel tempo.`,
             },
             {
               english: 'Definition of Done (DoD)',
@@ -4322,6 +6265,17 @@ export default {
               context: 'kanban',
               difficulty: 'intermediate',
               note: 'Numero massimo di compiti che possono essere in una certa fase contemporaneamente.',
+              code: `// Hook che blocca il passaggio in 'In Progress' se il WIP limit e' raggiunto
+async function moveToInProgress(issueId: string, column: Column): Promise<void> {
+  const wip = await db.count('issues', { column_id: column.id, status: 'in_progress' });
+  if (wip >= column.wipLimit) {
+    throw new Error(
+      \`WIP limit raggiunto: \${wip}/\${column.wipLimit}. Completa un task prima di iniziarne uno nuovo.\`,
+    );
+  }
+  await db.update('issues', issueId, { status: 'in_progress' });
+}`,
+              task: `Applica il limite WIP della colonna Kanban: prima di spostare una issue in 'In Progress' verifica quanti task sono gia' in corso e blocca l'operazione se si supera la soglia.`,
             },
             {
               english: 'Kanban Board',
@@ -4342,6 +6296,14 @@ export default {
                 'Reducing lead time from 30 days to 5 means users get features six times faster. = Ridurre il lead time da 30 giorni a 5 significa che gli utenti ricevono le funzionalità sei volte più velocemente.',
               context: 'metrics',
               difficulty: 'advanced',
+              code: `-- Lead time medio: dal momento in cui l'issue viene creata a quando viene chiusa
+SELECT
+  AVG(EXTRACT(EPOCH FROM (closed_at - created_at)) / 86400) AS avg_lead_time_days,
+  PERCENTILE_CONT(0.95) WITHIN GROUP (ORDER BY closed_at - created_at) AS p95_lead_time
+FROM issues
+WHERE closed_at IS NOT NULL
+  AND closed_at >= NOW() - INTERVAL '90 days';`,
+              task: 'Scrivi una query che calcoli il lead time medio e il 95esimo percentile dalla creazione alla chiusura delle issue negli ultimi 90 giorni.',
             },
             {
               english: 'Cycle Time',
@@ -4352,6 +6314,20 @@ export default {
                 'Tracking cycle time reveals that our tasks spend three days in code review but only one day in development. = Monitorare il cycle time rivela che i nostri task trascorrono tre giorni in code review ma solo un giorno in sviluppo.',
               context: 'metrics',
               difficulty: 'advanced',
+              code: `-- Cycle time: dal momento in cui il lavoro inizia (in_progress) a quando viene chiuso
+SELECT
+  i.id,
+  i.title,
+  EXTRACT(EPOCH FROM (i.closed_at - t.started_at)) / 3600 AS cycle_time_hours
+FROM issues i
+JOIN (
+  SELECT issue_id, MIN(changed_at) AS started_at
+  FROM issue_status_changes
+  WHERE new_status = 'in_progress'
+  GROUP BY issue_id
+) t ON t.issue_id = i.id
+WHERE i.closed_at IS NOT NULL;`,
+              task: `Calcola il cycle time di ogni issue prendendo come inizio il primo passaggio in 'in_progress' e come fine la data di chiusura, esprimendolo in ore.`,
             },
             {
               english: 'Lean Software Development',
@@ -4442,6 +6418,21 @@ export default {
               context: 'management',
               difficulty: 'intermediate',
               note: 'Usare punti invece di ore per misurare la complessit\u00E0.',
+              code: `-- Punti stimati vs completati per sprint, utile per calibrare le stime future
+SELECT
+  s.name AS sprint,
+  SUM(i.story_points) FILTER (WHERE i.status = 'done')      AS completed_points,
+  SUM(i.story_points)                                        AS planned_points,
+  ROUND(
+    100.0 * SUM(i.story_points) FILTER (WHERE i.status = 'done')
+          / NULLIF(SUM(i.story_points), 0),
+    1
+  ) AS completion_pct
+FROM sprints s
+JOIN issues i ON i.sprint_id = s.id
+GROUP BY s.name
+ORDER BY s.start_date DESC;`,
+              task: `Confronta story points pianificati e completati per ogni sprint con una query SQL, cosi' da capire quanto le stime del team si discostano dalla realta'.`,
             },
             {
               english: 'Planning Poker',
@@ -4539,6 +6530,8 @@ export default {
               context: 'performance',
               difficulty: 'beginner',
               note: "Il tempo che intercorre tra una richiesta e l'inizio della risposta.",
+              command: 'ab -n 1000 -c 10 https://api.example.com/health',
+              task: `Misura la latenza dell'endpoint di health inviando 1000 richieste con 10 client concorrenti per vedere il tempo medio di risposta.`,
             },
             {
               english: 'Throughput',
@@ -4550,6 +6543,8 @@ export default {
               context: 'performance',
               difficulty: 'intermediate',
               note: 'La quantit\u00E0 di lavoro completata in un dato tempo.',
+              command: 'k6 run --vus 100 --duration 30s loadtest.js',
+              task: `Esegui un load test con 100 utenti virtuali per 30 secondi per misurare il throughput in richieste al secondo dell'API.`,
             },
             {
               english: 'Response Time',
@@ -4560,6 +6555,8 @@ export default {
                 'A low response time is essential for a good user experience. = Un basso tempo di risposta \u00E8 essenziale per una buona UX.',
               context: 'performance',
               difficulty: 'beginner',
+              command: `curl -o /dev/null -s -w 'time_total: %{time_total}s\\n' https://api.example.com/users`,
+              task: `Misura il tempo di risposta totale dell'endpoint /users senza scaricare il body, mostrando solo la metrica time_total.`,
             },
             {
               english: 'Efficiency',
@@ -4601,6 +6598,8 @@ export default {
                 'Use profiling to find the slow parts of your code. = Usa il profiling per trovare le parti lente del codice.',
               context: 'tools',
               difficulty: 'advanced',
+              command: 'node --prof app.js && node --prof-process isolate-*.log > profile.txt',
+              task: `Avvia l'app Node.js con il profiler V8 attivo e poi processa il log generato per ottenere un report leggibile delle funzioni piu' costose.`,
             },
             {
               english: 'Benchmark',
@@ -4611,6 +6610,8 @@ export default {
                 'Run a benchmark to compare different servers. = Esegui un benchmark per confrontare server diversi.',
               context: 'performance',
               difficulty: 'intermediate',
+              command: 'ab -n 5000 -c 50 -k https://api.example.com/products',
+              task: `Esegui un benchmark con 5000 richieste totali e 50 connessioni keep-alive concorrenti sull'endpoint /products per confrontare due versioni del backend.`,
             },
             {
               english: 'Vertical Scaling',
@@ -4650,6 +6651,15 @@ export default {
                 'A cache stores temporary data for quick access. = Una cache salva dati temporanei per un accesso rapido.',
               context: 'performance',
               difficulty: 'beginner',
+              code: `async function getUser(id) {
+  let user = await cache.get(\`user:\${id}\`);
+  if (!user) {
+    user = await db.users.findById(id);
+    await cache.set(\`user:\${id}\`, user, { ttl: 3600 });
+  }
+  return user;
+}`,
+              task: `Implementa il pattern cache-aside che prima cerca l'utente in cache, e in caso di miss lo carica dal DB salvandolo con TTL di un'ora.`,
             },
             {
               english: 'CDN (Content Delivery Network)',
@@ -4670,6 +6680,8 @@ export default {
                 'Storing user sessions in Redis reduced our database load by 70 percent. = Salvare le sessioni utente in Redis ha ridotto il carico del nostro database del 70 percento.',
               context: 'tools',
               difficulty: 'intermediate',
+              command: 'redis-cli -h cache.internal -p 6379 GET user:1234',
+              task: `Connettiti al Redis interno sulla porta 6379 e leggi il valore associato alla chiave user:1234 per verificare se la sessione e' ancora in cache.`,
             },
             {
               english: 'Cache Invalidation',
@@ -4682,6 +6694,8 @@ export default {
               context: 'performance',
               difficulty: 'advanced',
               note: 'Rimuovere dati vecchi o errati dalla cache quando i dati originali cambiano.',
+              command: 'redis-cli -h cache.internal DEL user:1234 product:42',
+              task: `Invalida manualmente la cache dell'utente 1234 e del prodotto 42 dopo un aggiornamento del DB, per evitare che i client leggano dati stantii.`,
             },
             {
               english: 'Cache Hit',
@@ -4692,6 +6706,8 @@ export default {
                 'A cache hit means the data was found in the cache. = Un cache hit significa che il dato \u00E8 stato trovato nella cache.',
               context: 'performance',
               difficulty: 'beginner',
+              command: `redis-cli INFO stats | grep -E 'keyspace_hits|keyspace_misses'`,
+              task: 'Estrai dalle statistiche di Redis i contatori di cache hit e cache miss per calcolare il tasso di hit ratio del cluster.',
             },
             {
               english: 'Cache Miss',
@@ -4702,6 +6718,8 @@ export default {
                 'A cache miss requires fetching data from the slower source. = Un cache miss richiede il recupero dati dalla fonte pi\u00F9 lenta.',
               context: 'performance',
               difficulty: 'beginner',
+              command: 'redis-cli INFO stats | grep keyspace_misses',
+              task: `Monitora il numero totale di cache miss su Redis per capire se la TTL impostata e' troppo aggressiva e va alzata.`,
             },
             {
               english: 'Time To Live (TTL)',
@@ -4713,6 +6731,8 @@ export default {
               context: 'performance',
               difficulty: 'intermediate',
               note: 'Il tempo dopo il quale il dato in cache viene considerato scaduto.',
+              command: `redis-cli SET session:abc123 '{"userId":42}' EX 1800`,
+              task: 'Salva una sessione utente in Redis impostando un TTL di 1800 secondi (30 minuti) dopo i quali la chiave scade automaticamente.',
             },
             {
               english: 'Least Recently Used (LRU)',
@@ -4733,6 +6753,12 @@ export default {
                 'A write-through cache updates the DB and cache simultaneously. = Una cache write-through aggiorna DB e cache contemporaneamente.',
               context: 'performance',
               difficulty: 'advanced',
+              code: `async function updateUser(id, data) {
+  await db.users.update(id, data);
+  await cache.set(\`user:\${id}\`, data, { ttl: 3600 });
+  return data;
+}`,
+              task: 'Implementa una scrittura write-through che aggiorna prima il database e poi sincronizza la cache con gli stessi dati, garantendo coerenza tra i due.',
             },
             {
               english: 'Browser Caching',
@@ -4743,6 +6769,12 @@ export default {
                 'Setting proper browser caching headers means returning visitors download only the files that actually changed. = Impostare correttamente gli header di caching del browser significa che i visitatori di ritorno scaricano solo i file effettivamente modificati.',
               context: 'frontend',
               difficulty: 'beginner',
+              code: `app.use('/static', express.static('public', {
+  maxAge: '1y',
+  immutable: true,
+  etag: true
+}));`,
+              task: `Configura Express per servire gli asset statici con un header Cache-Control di un anno e flag immutable, cosi' il browser non li riscarica fino al deploy successivo.`,
             },
           ],
         },
@@ -4760,6 +6792,13 @@ export default {
                 'Use read replicas to scale your database read traffic. = Usa le repliche di lettura per scalare il traffico di lettura del DB.',
               context: 'architecture',
               difficulty: 'advanced',
+              code: `const writeDb = new Pool({ host: 'db-primary.internal' });
+const readDb = new Pool({ host: 'db-replica.internal' });
+
+async function listProducts() {
+  return readDb.query('SELECT * FROM products LIMIT 100');
+}`,
+              task: 'Separa le connessioni in due pool distinti per primario e replica e instrada le query di lettura sulla read replica per alleggerire il master.',
             },
             {
               english: 'Statelessness',
@@ -4780,6 +6819,8 @@ export default {
                 "During a flash sale, auto-scaling spun up ten extra servers within minutes and scaled back down when traffic dropped. = Durante una flash sale, l'auto-scaling ha avviato dieci server extra in pochi minuti e li ha ridimensionati quando il traffico è calato.",
               context: 'infrastructure',
               difficulty: 'intermediate',
+              command: 'kubectl autoscale deployment api --cpu-percent=70 --min=3 --max=20',
+              task: 'Configura un Horizontal Pod Autoscaler sul deployment api che mantiene da 3 a 20 repliche puntando a un utilizzo CPU medio del 70 percento.',
             },
             {
               english: 'Elasticity',
@@ -4821,6 +6862,15 @@ export default {
                 'Database partitioning improves performance for large tables. = Il partizionamento del DB migliora le prestazioni per tabelle grandi.',
               context: 'database',
               difficulty: 'advanced',
+              code: `CREATE TABLE orders (
+  id BIGSERIAL,
+  user_id INT NOT NULL,
+  created_at TIMESTAMP NOT NULL
+) PARTITION BY RANGE (created_at);
+
+CREATE TABLE orders_2026_q1 PARTITION OF orders
+  FOR VALUES FROM ('2026-01-01') TO ('2026-04-01');`,
+              task: 'Crea una tabella orders partizionata per range di data, e definisci la partizione del primo trimestre 2026 per accelerare le query temporali.',
             },
             {
               english: 'Vertical Scaling (Scaling Up)',
@@ -4869,6 +6919,8 @@ export default {
               context: 'performance',
               difficulty: 'intermediate',
               note: 'Distinto dal bottleneck Kanban (level 9), che riguarda il flusso di lavoro del team.',
+              command: 'py-spy record -o profile.svg --duration 60 --pid $(pgrep -f myapp)',
+              task: `Registra un flame graph del processo Python in produzione per 60 secondi cosi' da individuare la funzione che sta creando il collo di bottiglia.`,
             },
             {
               english: 'Big O Notation',
@@ -4890,6 +6942,8 @@ export default {
                 'Applying memoization to the Fibonacci function reduces its time complexity from exponential to linear. = Applicare la memoizzazione alla funzione di Fibonacci riduce la complessità temporale da esponenziale a lineare.',
               context: 'performance',
               difficulty: 'advanced',
+              code: 'const memoizedFn = useMemo(() => computeExpensive(data), [data]);',
+              task: 'Applica useMemo per memoizzare il risultato di computeExpensive in un componente React, evitando di ricalcolarlo a ogni render se data non cambia.',
             },
             {
               english: 'Memory Leak',
@@ -4901,6 +6955,8 @@ export default {
               context: 'errors',
               difficulty: 'intermediate',
               note: 'Quando il programma occupa RAM e non la rilascia pi\u00F9.',
+              command: 'node --inspect=0.0.0.0:9229 app.js',
+              task: `Avvia l'app Node.js con l'inspector remoto in ascolto sulla porta 9229 cosi' da collegare Chrome DevTools e catturare due heap snapshot da confrontare per individuare il memory leak.`,
             },
             {
               english: 'Garbage Collection (GC)',
@@ -4922,6 +6978,16 @@ export default {
                 'Use lazy loading for images to speed up initial page load. = Usa il lazy loading per le immagini per velocizzare il caricamento iniziale.',
               context: 'performance',
               difficulty: 'beginner',
+              code: `const HeavyChart = lazy(() => import('./HeavyChart'));
+
+function Dashboard() {
+  return (
+    <Suspense fallback={<Spinner />}>
+      <HeavyChart />
+    </Suspense>
+  );
+}`,
+              task: `Importa HeavyChart con React.lazy e avvolgilo in un Suspense con spinner, cosi' il bundle del grafico viene scaricato solo quando serve.`,
             },
             {
               english: 'Prefetching',
@@ -4932,6 +6998,9 @@ export default {
                 "By prefetching the next page while the user reads the current one, navigation feels instantaneous. = Con il prefetching della pagina successiva mentre l'utente legge quella corrente, la navigazione sembra istantanea.",
               context: 'performance',
               difficulty: 'advanced',
+              code: `<link rel="prefetch" href="/checkout.js" as="script">
+<link rel="preconnect" href="https://api.payments.example.com">`,
+              task: `Aggiungi nell'head della pagina un hint di prefetch per lo script del checkout e un preconnect verso il gateway di pagamento, cosi' la navigazione successiva risulta istantanea.`,
             },
             {
               english: 'Algorithmic Complexity',
@@ -4965,6 +7034,8 @@ export default {
                 'Adding proper indexing to the users table reduced the query time from 3 seconds to 10 milliseconds. = Aggiungere una corretta indicizzazione alla tabella utenti ha ridotto il tempo della query da 3 secondi a 10 millisecondi.',
               context: 'database',
               difficulty: 'intermediate',
+              code: `CREATE INDEX CONCURRENTLY idx_orders_user_status ON orders(user_id, status) WHERE status IN ('pending', 'paid');`,
+              task: 'Crea un indice parziale composto su user_id e status filtrato sugli ordini pending e paid, senza bloccare le scritture grazie a CONCURRENTLY.',
             },
           ],
         },
@@ -5248,6 +7319,14 @@ export default {
                 'Use Mermaid or PlantUML for automated diagramming. = Usa Mermaid o PlantUML per la diagrammazione automatica.',
               context: 'documentation',
               difficulty: 'intermediate',
+              code: `\`\`\`mermaid
+sequenceDiagram
+  Client->>API: POST /login
+  API->>DB: SELECT user
+  DB-->>API: row
+  API-->>Client: 200 + JWT
+\`\`\``,
+              task: 'Scrivi un sequence diagram Mermaid che documenta il flusso di login fra client, API e database, da incollare direttamente nella RFC.',
             },
             {
               english: 'API Documentation',
@@ -5259,6 +7338,21 @@ export default {
                 'Swagger provides interactive API documentation. = Swagger fornisce una documentazione API interattiva.',
               context: 'documentation',
               difficulty: 'beginner',
+              code: `/**
+ * @openapi
+ * /users/{id}:
+ *   get:
+ *     summary: Get user by id
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema: { type: integer }
+ *     responses:
+ *       200:
+ *         description: User found
+ */`,
+              task: `Annota l'endpoint GET /users/{id} con un blocco OpenAPI in formato JSDoc cosi' che Swagger generi automaticamente la documentazione interattiva.`,
             },
             {
               english: 'Changelog',
@@ -5269,6 +7363,14 @@ export default {
                 'Keep a changelog to track version updates. = Tieni un changelog per tracciare gli aggiornamenti di versione.',
               context: 'documentation',
               difficulty: 'beginner',
+              code: `## [1.4.0] - 2026-05-17
+### Added
+- Endpoint /users/{id}/avatar per upload immagine profilo.
+### Fixed
+- Race condition nel rinnovo del JWT (#482).
+### Deprecated
+- Header X-Api-Token, usare Authorization: Bearer.`,
+              task: 'Aggiungi al CHANGELOG.md una nuova entry per la versione 1.4.0 seguendo il formato Keep a Changelog con sezioni Added, Fixed e Deprecated.',
             },
             {
               english: 'Developer Guide',
@@ -5290,6 +7392,13 @@ export default {
               context: 'development',
               difficulty: 'intermediate',
               note: 'Codice cos\u00EC pulito e chiaro che non ha bisogno di molti commenti.',
+              code: `// Prima: cosa fa questo numero?
+if (user.failedAttempts > 5) lock(user);
+
+// Dopo: il codice si spiega da solo.
+const MAX_LOGIN_ATTEMPTS = 5;
+if (user.failedAttempts > MAX_LOGIN_ATTEMPTS) lockAccount(user);`,
+              task: `Refattorizza il controllo dei tentativi di login estraendo il magic number in una costante MAX_LOGIN_ATTEMPTS e rinominando lock in lockAccount, cosi' il codice si auto-documenta.`,
             },
             {
               english: 'README.md',
@@ -5300,6 +7409,24 @@ export default {
                 "The README.md is the entry point of your documentation. = Il README.md \u00E8 il punto d'ingresso della documentazione.",
               context: 'documentation',
               difficulty: 'beginner',
+              code: `# my-app
+
+Backend Node.js per la gestione ordini.
+
+## Quick start
+
+\`\`\`bash
+npm install
+cp .env.example .env
+npm run dev
+\`\`\`
+
+## Test
+
+\`\`\`bash
+npm test
+\`\`\``,
+              task: `Scrivi un README.md minimale con titolo, una riga di descrizione, una sezione Quick start con i comandi per installare e avviare l'app in dev, e una sezione Test.`,
             },
           ],
         },

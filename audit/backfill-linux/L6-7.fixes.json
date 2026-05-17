@@ -1,0 +1,652 @@
+{
+  "fixes": [
+    {
+      "level": "6",
+      "lesson": "linux_info",
+      "english": "Architecture",
+      "set": {
+        "command": "uname -m",
+        "task": "Stampa l'architettura della macchina (es. x86_64, aarch64) per scegliere il pacchetto giusto da scaricare."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_info",
+      "english": "CPU",
+      "set": {
+        "command": "lscpu",
+        "task": "Mostra il numero di core, i thread per core e il modello della CPU per dimensionare i worker dell'applicazione."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_info",
+      "english": "Block Device",
+      "set": {
+        "command": "lsblk -f",
+        "task": "Elenca tutti i dispositivi a blocchi con il loro tipo di filesystem, UUID e mount point prima di partizionare un nuovo disco."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_info",
+      "english": "PCI",
+      "set": {
+        "command": "lspci -nnk",
+        "task": "Elenca tutti i dispositivi PCI con i loro vendor/device ID e il driver del kernel attualmente in uso."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_info",
+      "english": "USB",
+      "set": {
+        "command": "lsusb -v",
+        "task": "Elenca i dispositivi USB collegati con dettagli verbosi per diagnosticare periferiche non riconosciute."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_info",
+      "english": "Hardware",
+      "set": {
+        "command": "sudo lshw -short",
+        "task": "Mostra un riepilogo compatto dell'hardware (CPU, RAM, dischi, rete) prima di ordinare ricambi compatibili."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_info",
+      "english": "Release",
+      "set": {
+        "command": "cat /etc/os-release",
+        "task": "Visualizza nome, versione e ID della distribuzione per script di automazione che devono scegliere il package manager corretto."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_info",
+      "english": "Distribution",
+      "set": {
+        "command": "lsb_release -a",
+        "task": "Mostra distribuzione, release e codename in modo portabile tra distribuzioni che supportano LSB."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_info",
+      "english": "Bios",
+      "set": {
+        "command": "sudo dmidecode -t bios",
+        "task": "Stampa vendor, versione e data del BIOS dalle tabelle DMI per verificare l'applicazione di patch firmware."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_disks",
+      "english": "Disk",
+      "set": {
+        "command": "sudo fdisk -l",
+        "task": "Elenca tutti i dischi presenti nel sistema con le rispettive tabelle delle partizioni e dimensioni."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_disks",
+      "english": "Partition",
+      "set": {
+        "command": "sudo parted -l",
+        "task": "Mostra lo schema di partizionamento (GPT/MBR) di ciascun disco prima di creare o ridimensionare una partizione."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_disks",
+      "english": "Mount",
+      "set": {
+        "command": "sudo mount /dev/sdb1 /mnt/data",
+        "task": "Monta una partizione esistente su /mnt/data per renderla accessibile come parte del filesystem."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_disks",
+      "english": "Unmount",
+      "set": {
+        "command": "sudo umount /mnt/data",
+        "task": "Smonta in modo pulito la partizione montata su /mnt/data prima di scollegare il dispositivo fisico."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_disks",
+      "english": "Volume",
+      "set": {
+        "command": "sudo lvs",
+        "task": "Elenca tutti i volumi logici LVM con il loro volume group e la dimensione attuale."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_disks",
+      "english": "Format",
+      "set": {
+        "command": "sudo mkfs.ext4 -L data /dev/sdb1",
+        "task": "Formatta la partizione /dev/sdb1 con filesystem ext4 e assegna l'etichetta 'data' per identificarla via UUID/LABEL."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_disks",
+      "english": "Space",
+      "set": {
+        "command": "df -h",
+        "task": "Mostra lo spazio libero e usato su tutti i filesystem montati in formato leggibile (GB/MB)."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_disks",
+      "english": "Disk Usage",
+      "set": {
+        "command": "du -sh /var/* | sort -h",
+        "task": "Calcola l'occupazione di ciascuna sottodirectory di /var ordinata dalla più piccola alla più grande per individuare cosa riempie il disco."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_disks",
+      "english": "Swap",
+      "set": {
+        "command": "swapon --show",
+        "task": "Elenca le aree di swap attive con dimensione, tipo (file o partizione) e priorità."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_disks",
+      "english": "Inode",
+      "set": {
+        "command": "df -i",
+        "task": "Mostra l'utilizzo degli inode su ogni filesystem per diagnosticare errori 'No space left on device' quando il disco appare libero."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_devices",
+      "english": "Device",
+      "set": {
+        "command": "ls -l /dev",
+        "task": "Elenca i device file in /dev mostrando il tipo (carattere/blocco) e i major/minor number assegnati dal kernel."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_devices",
+      "english": "Null",
+      "set": {
+        "command": "noisy_command > /dev/null 2>&1",
+        "task": "Esegui un comando rumoroso scartando completamente stdout e stderr redirezionandoli su /dev/null."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_devices",
+      "english": "Zero",
+      "set": {
+        "command": "sudo dd if=/dev/zero of=/dev/sdb bs=1M count=100 status=progress",
+        "task": "Sovrascrivi i primi 100 MB di /dev/sdb con byte zero, mostrando il progresso, per cancellare in sicurezza il superblocco."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_devices",
+      "english": "Random",
+      "set": {
+        "command": "head -c 32 /dev/urandom | base64",
+        "task": "Genera 32 byte casuali crittograficamente forti e codificali in base64 per creare una chiave o un token sicuro."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_devices",
+      "english": "Driver",
+      "set": {
+        "command": "lspci -k",
+        "task": "Mostra per ogni dispositivo PCI il modulo del kernel (driver) attualmente in uso e quelli disponibili."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_devices",
+      "english": "Module",
+      "set": {
+        "command": "lsmod",
+        "task": "Elenca i moduli del kernel attualmente caricati con la loro dimensione e le dipendenze tra moduli."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_devices",
+      "english": "Probe",
+      "set": {
+        "command": "sudo modprobe e1000e",
+        "task": "Carica il modulo del kernel 'e1000e' risolvendo automaticamente le dipendenze per attivare il driver di rete."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_devices",
+      "english": "Input",
+      "set": {
+        "command": "ls /dev/input/",
+        "task": "Elenca i device file degli input (tastiera, mouse, joystick) per verificare che il kernel rilevi la periferica collegata."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_devices",
+      "english": "Stdio",
+      "set": {
+        "command": "mycmd > out.log 2>&1",
+        "task": "Reindirizza sia stdout sia stderr nello stesso file out.log per catturare tutto l'output di un comando in un unico log."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_kernel",
+      "english": "Linux Kernel",
+      "set": {
+        "command": "uname -srv",
+        "task": "Stampa nome del kernel, release e versione completa di build per documentare l'ambiente di un server."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_kernel",
+      "english": "Boot",
+      "set": {
+        "command": "systemd-analyze blame",
+        "task": "Mostra quanto tempo ha impiegato ogni unit systemd all'avvio, ordinato dalla più lenta, per ottimizzare la sequenza di boot."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_kernel",
+      "english": "Grub",
+      "set": {
+        "command": "sudo update-grub",
+        "task": "Rigenera il file di configurazione di GRUB scansionando i kernel installati e i sistemi operativi presenti."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_kernel",
+      "english": "Init",
+      "set": {
+        "command": "systemctl list-units --type=service --state=running",
+        "task": "Elenca tutti i servizi gestiti da systemd attualmente in esecuzione per ispezionare lo stato dell'init system."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_kernel",
+      "english": "Panic",
+      "set": {
+        "command": "dmesg --level=emerg,alert,crit | grep -i panic",
+        "task": "Cerca messaggi di kernel panic nel ring buffer del kernel filtrando solo i livelli più critici."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_kernel",
+      "english": "Boot Log",
+      "set": {
+        "command": "journalctl -b -1 -p err",
+        "task": "Mostra solo gli errori registrati durante il boot precedente per individuare cosa ha bloccato l'avvio del sistema."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_kernel",
+      "english": "Parameters",
+      "set": {
+        "command": "cat /proc/cmdline",
+        "task": "Visualizza i parametri con cui il kernel attualmente in esecuzione è stato avviato (es. root=, ro, quiet)."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_kernel",
+      "english": "Kernel Version",
+      "set": {
+        "command": "uname -r",
+        "task": "Stampa solo la release del kernel in esecuzione per decidere se una patch CVE specifica si applica al sistema."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_basics",
+      "english": "Shebang",
+      "set": {
+        "command": "printf '#!/usr/bin/env bash\\necho hello\\n' > hello.sh && chmod +x hello.sh && ./hello.sh",
+        "task": "Crea uno script con shebang portabile, rendilo eseguibile ed eseguilo direttamente per verificare che l'interprete venga scelto correttamente."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_basics",
+      "english": "Script",
+      "set": {
+        "command": "chmod +x deploy.sh && ./deploy.sh",
+        "task": "Rendi eseguibile lo script deploy.sh ed esegui il file locale anziche' un comando di sistema con lo stesso nome."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_basics",
+      "english": "Variable",
+      "set": {
+        "command": "DB_HOST=\"db.prod.local\"; echo \"Connecting to $DB_HOST\"",
+        "task": "Definisci una variabile con il nome dell'host del database e stampala tra virgolette doppie per gestire eventuali spazi."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_basics",
+      "english": "Echo Builtin",
+      "set": {
+        "command": "echo -e \"line1\\nline2\\tindented\"",
+        "task": "Stampa un messaggio diagnostico multiriga usando -e per interpretare le sequenze di escape come \\n e \\t."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_basics",
+      "english": "Read Builtin",
+      "set": {
+        "command": "read -r -p \"Continue? [y/N] \" answer && echo \"You said: $answer\"",
+        "task": "Chiedi all'utente conferma con un prompt interattivo prima di eseguire un'operazione distruttiva e leggi la risposta in una variabile."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_basics",
+      "english": "Quote",
+      "set": {
+        "command": "file=\"my report.txt\"; ls -l \"$file\"",
+        "task": "Cita la variabile con virgolette doppie per evitare il word splitting quando il nome del file contiene spazi."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_basics",
+      "english": "Exit Code",
+      "set": {
+        "command": "grep -q ERROR app.log; echo \"exit code: $?\"",
+        "task": "Esegui un comando silenzioso e stampa il suo exit code letto da $? per decidere il prossimo passo nello script."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_basics",
+      "english": "Positional Argument",
+      "set": {
+        "command": "set -- alpha beta gamma; echo \"first=$1 second=$2 all=$@\"",
+        "task": "Mostra come accedere ai primi due argomenti posizionali e all'elenco completo $@ passati a uno script bash."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_basics",
+      "english": "Execution",
+      "set": {
+        "command": "chmod +x ./deploy.sh && ./deploy.sh",
+        "task": "Aggiungi il permesso di esecuzione e lancia lo script locale tramite ./ per evitare ambiguita' con comandi di sistema omonimi."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_vars",
+      "english": "Environment",
+      "set": {
+        "command": "printenv | sort",
+        "task": "Stampa tutte le variabili d'ambiente in ordine alfabetico per diagnosticare configurazioni errate lette da un'applicazione."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_vars",
+      "english": "Export",
+      "set": {
+        "command": "export DEBUG=1; bash -c 'echo \"DEBUG=$DEBUG\"'",
+        "task": "Esporta una variabile nella shell corrente cosi' ogni processo figlio la eredita per abilitare il logging verboso."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_vars",
+      "english": "PATH Variable",
+      "set": {
+        "command": "export PATH=\"$HOME/.local/bin:$PATH\"; echo \"$PATH\"",
+        "task": "Anteponi ~/.local/bin alla variabile PATH cosi' gli script personali abbiano priorita' sui comandi di sistema."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_vars",
+      "english": "Substitution",
+      "set": {
+        "command": "backup=\"db-$(date +%Y%m%d-%H%M).sql\"; echo \"$backup\"",
+        "task": "Usa la sostituzione di comando per inserire data e ora nel nome del file di backup generando un timestamp univoco."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_vars",
+      "english": "Arithmetic",
+      "set": {
+        "command": "used=80; threshold=75; if (( used > threshold )); then echo \"warn\"; fi",
+        "task": "Confronta una percentuale di utilizzo disco con una soglia usando l'espansione aritmetica per generare un avviso senza tool esterni."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_vars",
+      "english": "Local",
+      "set": {
+        "command": "demo() { local name=\"$1\"; echo \"hi $name\"; }; demo alice; echo \"after: ${name:-unset}\"",
+        "task": "Dichiara una variabile come local dentro una funzione per evitare di sovrascrivere accidentalmente una variabile globale omonima."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_vars",
+      "english": "Alias",
+      "set": {
+        "command": "alias ll='ls -lah --color=auto'; ll",
+        "task": "Definisci un alias per il comando 'ls' usato piu' spesso cosi' da risparmiare battute e ridurre gli errori di digitazione."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_vars",
+      "english": "Expansion",
+      "set": {
+        "command": "mkdir -p project/{src,test,docs}",
+        "task": "Crea piu' directory in un singolo comando sfruttando l'espansione a graffe per impostare lo scheletro di un progetto."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_vars",
+      "english": "History",
+      "set": {
+        "command": "history | tail -n 20",
+        "task": "Mostra gli ultimi venti comandi eseguiti nella shell corrente per rivedere rapidamente cosa e' stato fatto."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_control",
+      "english": "If",
+      "set": {
+        "command": "if [ -f /etc/passwd ]; then echo \"found\"; fi",
+        "task": "Verifica con un blocco if che un file di configurazione esista prima di leggerlo per evitare errori 'No such file'."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_control",
+      "english": "Else",
+      "set": {
+        "command": "if systemctl is-active --quiet nginx; then echo \"ok\"; else echo \"DOWN\"; fi",
+        "task": "Controlla se il servizio nginx e' attivo e usa un ramo else per stampare un avviso quando non risponde."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_control",
+      "english": "Loop",
+      "set": {
+        "command": "for f in *.log; do gzip \"$f\"; done",
+        "task": "Itera su tutti i file di log nella directory corrente e comprimili uno per uno per liberare spazio su disco."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_control",
+      "english": "For",
+      "set": {
+        "command": "for cfg in /etc/nginx/conf.d/*.conf; do echo \"checking $cfg\"; nginx -t -c \"$cfg\"; done",
+        "task": "Usa un ciclo for per validare ogni file di configurazione nginx nella directory garantendo impostazioni coerenti."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_control",
+      "english": "While",
+      "set": {
+        "command": "until curl -fsS http://localhost:8080/health; do echo \"waiting...\"; sleep 5; done",
+        "task": "Interroga in loop l'endpoint di health finche' il servizio non risponde, attendendo cinque secondi tra un tentativo e l'altro."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_control",
+      "english": "Condition",
+      "set": {
+        "command": "[ -d /var/backups ] && echo \"backup dir ok\" || mkdir -p /var/backups",
+        "task": "Verifica la condizione che la directory di backup esista e, in caso contrario, creala prima di scriverci dentro."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_control",
+      "english": "Case",
+      "set": {
+        "command": "case \"${1:-help}\" in start) echo go;; stop) echo halt;; *) echo \"usage: $0 start|stop\";; esac",
+        "task": "Dispaccia diverse azioni di controllo servizio in base al primo argomento usando un costrutto case con ramo di default."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_control",
+      "english": "Break",
+      "set": {
+        "command": "for host in db1 db2 db3; do if ping -c1 -W1 \"$host\" >/dev/null; then echo \"$host up\"; break; fi; done",
+        "task": "Cicla su una lista di host fermandoti con break al primo che risponde al ping per evitare tentativi inutili."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_control",
+      "english": "Continue",
+      "set": {
+        "command": "for f in *; do [ \"${f##*.}\" = \"log\" ] || continue; echo \"processing $f\"; done",
+        "task": "Scorri tutti i file della directory saltando con continue quelli che non hanno estensione .log senza fermare il ciclo."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_control",
+      "english": "Boolean",
+      "set": {
+        "command": "make build && make test || echo \"pipeline failed\"",
+        "task": "Concatena build e test con && e usa || per stampare un messaggio di fallimento solo se uno dei due passi non riesce."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_funcs",
+      "english": "Function",
+      "set": {
+        "command": "greet() { echo \"Hi $1\"; }; greet world",
+        "task": "Incapsula una saluto parametrizzato in una funzione e chiamala passando un argomento per riutilizzarla piu' volte."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_funcs",
+      "english": "Define",
+      "set": {
+        "command": "log() { printf '[%s] %s\\n' \"$(date +%T)\" \"$*\"; }; log \"deploy started\"",
+        "task": "Definisci all'inizio dello script una funzione di logging riutilizzabile che antepone il timestamp a ogni messaggio."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_funcs",
+      "english": "Call",
+      "set": {
+        "command": "cleanup() { rm -f /tmp/run.lock; }; trap cleanup EXIT; cleanup",
+        "task": "Definisci una funzione di pulizia e chiamala sia manualmente sia tramite trap EXIT cosi' venga eseguita anche in caso di errore."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_funcs",
+      "english": "Return",
+      "set": {
+        "command": "is_ready() { [ -f /tmp/ready ] && return 0 || return 1; }; is_ready && echo \"ok\" || echo \"not yet\"",
+        "task": "Termina una funzione con return 0 o 1 per segnalare successo o fallimento cosi' il chiamante puo' decidere come ramificare."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_funcs",
+      "english": "Scope",
+      "set": {
+        "command": "outer() { local secret=\"hidden\"; echo \"in: $secret\"; }; outer; echo \"out: ${secret:-unset}\"",
+        "task": "Mostra come una variabile dichiarata local resta confinata allo scope della funzione e non e' visibile fuori."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_funcs",
+      "english": "Parameter",
+      "set": {
+        "command": "deploy() { echo \"deploying to $1 with tag $2\"; }; deploy prod v1.4.2",
+        "task": "Definisci una funzione che riceve due parametri (host e versione) e chiamala passando i valori sulla riga di comando."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_funcs",
+      "english": "Source Builtin",
+      "set": {
+        "command": "echo 'hello() { echo hi; }' > /tmp/lib.sh && source /tmp/lib.sh && hello",
+        "task": "Carica un file di libreria nella shell corrente con il builtin source cosi' le funzioni definite restino disponibili dopo."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_funcs",
+      "english": "Debug",
+      "set": {
+        "command": "bash -x script.sh",
+        "task": "Esegui uno script bash in modalita' di trace stampando ogni comando prima della sua esecuzione per individuare errori logici."
+      }
+    }
+  ]
+}

@@ -1,0 +1,616 @@
+{
+  "fixes": [
+    {
+      "level": "8",
+      "lesson": "py_decorators",
+      "english": "Decorator Factory",
+      "set": {
+        "code": "def retry(times):\n    def decorator(f):\n        def wrapper(*args, **kwargs):\n            for _ in range(times):\n                try:\n                    return f(*args, **kwargs)\n                except Exception:\n                    pass\n        return wrapper\n    return decorator",
+        "task": "Definisci una fabbrica di decoratori @retry(times=3) che riprova fino a tre volte una funzione che solleva eccezioni."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_decorators",
+      "english": "Wrapper Function",
+      "set": {
+        "code": "def timing(f):\n    def wrapper(*args, **kwargs):\n        start = time.time()\n        result = f(*args, **kwargs)\n        print(time.time() - start)\n        return result\n    return wrapper",
+        "task": "Scrivi una funzione wrapper interna a un decoratore che misura e stampa il tempo di esecuzione della funzione originale."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_decorators",
+      "english": "@wraps Usage",
+      "set": {
+        "code": "from functools import wraps\ndef log_call(f):\n    @wraps(f)\n    def wrapper(*args, **kwargs):\n        print(f'Calling {f.__name__}')\n        return f(*args, **kwargs)\n    return wrapper",
+        "task": "Applica @wraps(f) al wrapper interno del decoratore per preservare nome, docstring e firma della funzione originale."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_decorators",
+      "english": "Class Decorator",
+      "set": {
+        "code": "from dataclasses import dataclass\n\n@dataclass\nclass User:\n    name: str\n    age: int",
+        "task": "Applica il decoratore di classe @dataclass alla classe User per generare automaticamente __init__, __repr__ ed __eq__."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_decorators",
+      "english": "Method Decorator",
+      "set": {
+        "code": "class Circle:\n    def __init__(self, r):\n        self._r = r\n    @property\n    def area(self):\n        return 3.14 * self._r ** 2",
+        "task": "Usa il decoratore di metodo @property per esporre area come attributo calcolato di sola lettura della classe Circle."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_decorators",
+      "english": "Chaining Decorators",
+      "set": {
+        "code": "@log_call\n@cache\ndef fibonacci(n):\n    return n if n < 2 else fibonacci(n-1) + fibonacci(n-2)",
+        "task": "Concatena due decoratori @log_call e @cache sulla funzione fibonacci, ricordando che si applicano dal basso verso l'alto."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_decorators",
+      "english": "Stateful Decorator",
+      "set": {
+        "code": "def counter(f):\n    def wrapper(*args, **kwargs):\n        wrapper.calls += 1\n        return f(*args, **kwargs)\n    wrapper.calls = 0\n    return wrapper",
+        "task": "Costruisci un decoratore con stato che mantiene un contatore wrapper.calls per registrare quante volte la funzione e' stata chiamata."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_decorators",
+      "english": "Monkey Patching",
+      "set": {
+        "code": "import requests\ndef fake_get(url):\n    return {'status': 200}\nrequests.get = fake_get",
+        "task": "Esegui un monkey patching su requests.get sostituendolo con fake_get per evitare chiamate di rete reali durante i test."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_metaclass",
+      "english": "Metaclass",
+      "set": {
+        "code": "class Meta(type):\n    def __new__(mcs, name, bases, namespace):\n        print(f'Creating {name}')\n        return super().__new__(mcs, name, bases, namespace)\n\nclass MyClass(metaclass=Meta):\n    pass",
+        "task": "Definisci una metaclasse Meta che stampa un messaggio quando viene creata una nuova classe che la usa come metaclass."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_metaclass",
+      "english": "Type (as Metaclass)",
+      "set": {
+        "code": "Dog = type('Dog', (object,), {'bark': lambda self: 'Woof'})\nprint(type(Dog))",
+        "task": "Usa type() come metaclasse per costruire dinamicamente la classe Dog con un metodo bark, senza una definizione class esplicita."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_metaclass",
+      "english": "__new__ (Method)",
+      "set": {
+        "code": "class Point:\n    def __new__(cls, x, y):\n        instance = super().__new__(cls)\n        instance.x, instance.y = x, y\n        return instance",
+        "task": "Sovrascrivi il metodo __new__ in Point per creare e configurare l'istanza prima che __init__ venga eseguito."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_metaclass",
+      "english": "Class Factory",
+      "set": {
+        "code": "def make_enum(name, values):\n    return type(name, (object,), {v: i for i, v in enumerate(values)})\n\nColor = make_enum('Color', ['RED', 'GREEN', 'BLUE'])",
+        "task": "Implementa una fabbrica di classi make_enum(name, values) che costruisce a runtime una classe con un attributo numerico per ogni valore."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_metaclass",
+      "english": "Introspection",
+      "set": {
+        "code": "class User:\n    name = 'Mario'\n\nprint(hasattr(User, 'name'))\nprint(getattr(User, 'name'))\nprint(dir(User))",
+        "task": "Utilizza hasattr, getattr e dir() per ispezionare gli attributi della classe User tramite introspezione a runtime."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_metaclass",
+      "english": "Singleton Pattern (via Metaclass)",
+      "set": {
+        "code": "class Singleton(type):\n    _instances = {}\n    def __call__(cls, *args, **kwargs):\n        if cls not in cls._instances:\n            cls._instances[cls] = super().__call__(*args, **kwargs)\n        return cls._instances[cls]",
+        "task": "Implementa il pattern Singleton tramite una metaclasse che cachea l'istanza nel dizionario _instances al primo __call__."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_metaclass",
+      "english": "Registration Pattern",
+      "set": {
+        "code": "class PluginRegistry(type):\n    plugins = []\n    def __init__(cls, name, bases, namespace):\n        super().__init__(name, bases, namespace)\n        PluginRegistry.plugins.append(cls)",
+        "task": "Crea una metaclasse PluginRegistry che registra automaticamente ogni classe figlia nella lista condivisa plugins."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_metaclass",
+      "english": "Attribute Validation (Class level)",
+      "set": {
+        "code": "class Validated(type):\n    def __new__(mcs, name, bases, namespace):\n        if 'id' not in namespace:\n            raise TypeError(f'{name} must define id')\n        return super().__new__(mcs, name, bases, namespace)",
+        "task": "Scrivi una metaclasse Validated che solleva TypeError se la classe creata non definisce un attributo id."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_metaclass",
+      "english": "Custom Type",
+      "set": {
+        "code": "class StrictType(type):\n    def __setattr__(cls, key, value):\n        raise AttributeError('Immutable class')\n\nclass Config(metaclass=StrictType):\n    HOST = 'localhost'",
+        "task": "Definisci un tipo personalizzato StrictType ereditando da type per impedire la modifica degli attributi della classe Config."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_typing",
+      "english": "Typing (module)",
+      "set": {
+        "code": "from typing import List, Dict\n\ndef users_by_id(users: List[Dict[str, int]]) -> Dict[int, str]:\n    return {u['id']: u['name'] for u in users}",
+        "task": "Importa List e Dict dal modulo typing e annota la funzione users_by_id con tipi composti complessi."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_typing",
+      "english": "Mypy",
+      "set": {
+        "code": "def add(a: int, b: int) -> int:\n    return a + b\n\nresult: str = add(1, 2)",
+        "task": "Esegui mypy script.py per scoprire l'errore di tipo sull'assegnazione di un int a una variabile annotata come str."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_typing",
+      "english": "Optional Type",
+      "set": {
+        "code": "from typing import Optional\n\ndef find_user(uid: int) -> Optional[str]:\n    return None",
+        "task": "Annota il tipo di ritorno di find_user con Optional[str] per indicare che la funzione puo' restituire una stringa o None."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_typing",
+      "english": "Union Type",
+      "set": {
+        "code": "from typing import Union\n\ndef stringify(x: Union[int, str]) -> str:\n    return str(x)",
+        "task": "Usa il tipo unione Union[int, str] per dichiarare che il parametro x della funzione stringify accetta interi o stringhe."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_typing",
+      "english": "Any Type",
+      "set": {
+        "code": "from typing import Any\n\ndef dump(value: Any) -> None:\n    print(value)",
+        "task": "Annota il parametro value della funzione dump con il tipo Any per disabilitare il controllo statico su quel valore."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_typing",
+      "english": "Protocol",
+      "set": {
+        "code": "from typing import Protocol\n\nclass Readable(Protocol):\n    def read(self) -> str: ...\n\ndef ingest(src: Readable) -> str:\n    return src.read()",
+        "task": "Definisci un Protocol Readable con un metodo read() e usalo come annotazione per accettare qualsiasi classe con quel metodo."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_typing",
+      "english": "Callable",
+      "set": {
+        "code": "from typing import Callable\n\ndef apply(op: Callable[[int, int], int], a: int, b: int) -> int:\n    return op(a, b)",
+        "task": "Annota il parametro op con Callable[[int, int], int] per richiedere una funzione che riceve due int e ne restituisce uno."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_patterns",
+      "english": "Singleton",
+      "set": {
+        "code": "class Logger:\n    _instance = None\n    def __new__(cls):\n        if cls._instance is None:\n            cls._instance = super().__new__(cls)\n        return cls._instance",
+        "task": "Implementa il pattern Singleton nella classe Logger sovrascrivendo __new__ per garantire una sola istanza condivisa."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_patterns",
+      "english": "Factory Pattern",
+      "set": {
+        "code": "def shape_factory(kind):\n    if kind == 'circle':\n        return Circle()\n    if kind == 'square':\n        return Square()\n    raise ValueError(kind)",
+        "task": "Implementa una funzione shape_factory che restituisce l'istanza giusta di Circle o Square senza esporre le classi al chiamante."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_patterns",
+      "english": "Strategy Pattern",
+      "set": {
+        "code": "def sort_with(strategy, data):\n    return strategy(data)\n\nsort_with(sorted, [3, 1, 2])\nsort_with(lambda d: list(reversed(sorted(d))), [3, 1, 2])",
+        "task": "Realizza il pattern Strategy passando la funzione di ordinamento come parametro strategy per scegliere l'algoritmo a runtime."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_patterns",
+      "english": "Observer Pattern",
+      "set": {
+        "code": "class Event:\n    def __init__(self):\n        self.subs = []\n    def subscribe(self, fn):\n        self.subs.append(fn)\n    def fire(self, data):\n        for fn in self.subs:\n            fn(data)",
+        "task": "Implementa la classe Event del pattern Observer con un metodo subscribe(fn) e un fire(data) che notifica tutti gli osservatori."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_patterns",
+      "english": "Dependency Injection",
+      "set": {
+        "code": "class UserService:\n    def __init__(self, repo):\n        self.repo = repo\n    def get(self, uid):\n        return self.repo.find(uid)\n\nservice = UserService(repo=FakeRepo())",
+        "task": "Applica l'iniezione delle dipendenze passando il repo al costruttore di UserService cosi' da poter usare un FakeRepo nei test."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_patterns",
+      "english": "Adapter Pattern",
+      "set": {
+        "code": "class XmlClient:\n    def fetch_xml(self):\n        return '<x/>'\n\nclass JsonAdapter:\n    def __init__(self, xml_client):\n        self.client = xml_client\n    def fetch_json(self):\n        return xml_to_json(self.client.fetch_xml())",
+        "task": "Crea un adattatore JsonAdapter che incapsula XmlClient ed espone fetch_json convertendo internamente l'output XML in JSON."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_patterns",
+      "english": "Proxy Pattern",
+      "set": {
+        "code": "class ImageProxy:\n    def __init__(self, path):\n        self.path = path\n        self._real = None\n    def display(self):\n        if self._real is None:\n            self._real = HeavyImage(self.path)\n        self._real.display()",
+        "task": "Implementa un Proxy ImageProxy che istanzia HeavyImage in modo pigro solo alla prima chiamata di display()."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_patterns",
+      "english": "Composition over Inheritance",
+      "set": {
+        "code": "class Engine:\n    def start(self):\n        print('vroom')\n\nclass Car:\n    def __init__(self):\n        self.engine = Engine()\n    def start(self):\n        self.engine.start()",
+        "task": "Modella Car favorendo la composizione: invece di ereditare da Engine, istanzialo come attributo e delega start()."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_threading",
+      "english": "Thread",
+      "set": {
+        "code": "import threading\n\ndef worker():\n    print('hello')\n\nt = threading.Thread(target=worker)\nt.start()\nt.join()",
+        "task": "Avvia un thread tramite threading.Thread(target=worker) e attendi la sua terminazione con t.join() prima di proseguire."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_threading",
+      "english": "Multi-threading",
+      "set": {
+        "code": "import threading\n\nthreads = [threading.Thread(target=download, args=(u,)) for u in urls]\nfor t in threads: t.start()\nfor t in threads: t.join()",
+        "task": "Scarica una lista di URL in multithreading creando un thread per ogni elemento e aspettando il completamento di tutti."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_threading",
+      "english": "Lock (Mutex)",
+      "set": {
+        "code": "import threading\n\nlock = threading.Lock()\ncounter = 0\nwith lock:\n    counter += 1",
+        "task": "Proteggi l'incremento della variabile condivisa counter con un threading.Lock() usando il blocco `with lock` per garantire l'esclusione reciproca."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_threading",
+      "english": "Thread Safety",
+      "set": {
+        "code": "import threading\n\nlock = threading.Lock()\nbalance = 0\n\ndef deposit(amount):\n    global balance\n    with lock:\n        balance += amount",
+        "task": "Rendi thread-safe la funzione deposit avvolgendo l'aggiornamento di balance in un blocco `with lock` su un Lock globale."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_threading",
+      "english": "Semaphore",
+      "set": {
+        "code": "import threading\n\nsem = threading.Semaphore(3)\n\ndef download(url):\n    with sem:\n        fetch(url)",
+        "task": "Limita a tre i download paralleli usando un threading.Semaphore(3) come context manager attorno alla chiamata di rete."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_threading",
+      "english": "Race Condition",
+      "set": {
+        "code": "counter = 0\n\ndef increment():\n    global counter\n    for _ in range(100000):\n        counter += 1\n\nthreads = [threading.Thread(target=increment) for _ in range(10)]",
+        "task": "Riproduci una race condition lanciando dieci thread che incrementano counter senza lock e osserva come il valore finale risulti errato."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_threading",
+      "english": "ThreadPoolExecutor",
+      "set": {
+        "code": "from concurrent.futures import ThreadPoolExecutor\n\nwith ThreadPoolExecutor(max_workers=10) as pool:\n    results = list(pool.map(fetch, urls))",
+        "task": "Esegui in parallelo le chiamate HTTP usando un ThreadPoolExecutor con dieci worker e raccogli i risultati con pool.map(fetch, urls)."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_threading",
+      "english": "Daemon Thread",
+      "set": {
+        "code": "import threading\n\nt = threading.Thread(target=heartbeat, daemon=True)\nt.start()",
+        "task": "Avvia un thread demone passando daemon=True al costruttore cosi' che si chiuda automaticamente alla fine del programma principale."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_async",
+      "english": "Asynchronous Programming",
+      "set": {
+        "code": "import asyncio\n\nasync def main():\n    await asyncio.sleep(1)\n    print('done')\n\nasyncio.run(main())",
+        "task": "Scrivi un programma asincrono che definisce la coroutine main, attende asyncio.sleep(1) e la avvia con asyncio.run(main())."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_async",
+      "english": "Coroutine",
+      "set": {
+        "code": "import asyncio\n\nasync def fetch(url):\n    await asyncio.sleep(0.1)\n    return url\n\nasyncio.run(fetch('https://example.com'))",
+        "task": "Dichiara la coroutine fetch con async def, simula un I/O non bloccante con await asyncio.sleep e poi avviala tramite asyncio.run."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_async",
+      "english": "Await (Keyword)",
+      "set": {
+        "code": "async def total():\n    a = await fetch_a()\n    b = await fetch_b()\n    return a + b",
+        "task": "Usa la parola chiave await dentro la coroutine total per attendere in sequenza i risultati di fetch_a() e fetch_b()."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_async",
+      "english": "Event Loop",
+      "set": {
+        "code": "import asyncio\n\nloop = asyncio.new_event_loop()\nasyncio.set_event_loop(loop)\nloop.run_until_complete(main())\nloop.close()",
+        "task": "Crea manualmente un event loop con asyncio.new_event_loop() ed esegui la coroutine main con loop.run_until_complete prima di chiuderlo."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_async",
+      "english": "Asyncio (module)",
+      "set": {
+        "code": "import asyncio\n\nasync def fetch_all(urls):\n    return await asyncio.gather(*[fetch(u) for u in urls])",
+        "task": "Usa asyncio.gather per eseguire in parallelo tutte le coroutine fetch(u) di una lista di URL e raccoglierne i risultati."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_async",
+      "english": "Future",
+      "set": {
+        "code": "import asyncio\n\nloop = asyncio.get_event_loop()\nfut = loop.create_future()\nloop.call_later(1, fut.set_result, 42)\nresult = loop.run_until_complete(fut)",
+        "task": "Crea una Future con loop.create_future() e programma con call_later la chiamata di fut.set_result(42) dopo un secondo."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_async",
+      "english": "Task",
+      "set": {
+        "code": "import asyncio\n\nasync def main():\n    task = asyncio.create_task(fetch('url'))\n    result = await task",
+        "task": "Avvolgi la coroutine fetch in un task con asyncio.create_task() per schedularla in concorrenza e poi attendi il risultato con await."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_async",
+      "english": "Non-blocking I/O",
+      "set": {
+        "code": "import aiohttp, asyncio\n\nasync def fetch(url):\n    async with aiohttp.ClientSession() as s:\n        async with s.get(url) as resp:\n            return await resp.text()",
+        "task": "Implementa una fetch con I/O non bloccante usando aiohttp.ClientSession dentro un async with per non fermare l'event loop."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_async",
+      "english": "Async Context Manager",
+      "set": {
+        "code": "import aiohttp\n\nasync def get(url):\n    async with aiohttp.ClientSession() as session:\n        async with session.get(url) as resp:\n            return await resp.text()",
+        "task": "Apri una ClientSession con un async with cosi' che il gestore di contesto asincrono chiuda la sessione anche in caso di eccezione."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_async",
+      "english": "Async Iterator",
+      "set": {
+        "code": "async def stream_lines(url):\n    async for line in fetch_lines(url):\n        print(line)",
+        "task": "Itera su uno stream di righe con un async for cosi' che ogni elemento venga atteso senza bloccare l'event loop."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_multiproc",
+      "english": "Process",
+      "set": {
+        "code": "from multiprocessing import Process\n\ndef work(n):\n    print(n * n)\n\np = Process(target=work, args=(10,))\np.start()\np.join()",
+        "task": "Avvia un nuovo processo con multiprocessing.Process(target=work, args=(10,)) e attendi la sua conclusione con p.join()."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_multiproc",
+      "english": "Multiprocessing",
+      "set": {
+        "code": "from multiprocessing import Pool\n\nwith Pool(4) as pool:\n    results = pool.map(heavy_compute, dataset)",
+        "task": "Sfrutta il multiprocessing per distribuire heavy_compute su quattro processi paralleli tramite Pool.map sull'intero dataset."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_multiproc",
+      "english": "Process Pool",
+      "set": {
+        "code": "from concurrent.futures import ProcessPoolExecutor\n\nwith ProcessPoolExecutor(max_workers=8) as pool:\n    for r in pool.map(crunch, chunks):\n        print(r)",
+        "task": "Costruisci un pool di otto processi con ProcessPoolExecutor e applica la funzione crunch a tutti i chunk in parallelo."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_multiproc",
+      "english": "IPC (Inter-Process Communication)",
+      "set": {
+        "code": "from multiprocessing import Process, Queue\n\nq = Queue()\nProcess(target=producer, args=(q,)).start()\nProcess(target=consumer, args=(q,)).start()",
+        "task": "Realizza la comunicazione IPC tra due processi condividendo una Queue passata come argomento al producer e al consumer."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_multiproc",
+      "english": "Queue (Multiprocessing)",
+      "set": {
+        "code": "from multiprocessing import Queue, Process\n\nq = Queue()\nq.put('msg')\nvalue = q.get()",
+        "task": "Trasferisci dati tra processi in modo sicuro usando multiprocessing.Queue: chiama q.put('msg') nel produttore e q.get() nel consumatore."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_multiproc",
+      "english": "Pipe (Multiprocessing)",
+      "set": {
+        "code": "from multiprocessing import Pipe, Process\n\nparent, child = Pipe()\nProcess(target=worker, args=(child,)).start()\nparent.send('ping')\nprint(parent.recv())",
+        "task": "Crea una pipe bidirezionale con multiprocessing.Pipe() e usa send/recv per scambiare messaggi tra il processo padre e il worker."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_multiproc",
+      "english": "Shared Memory",
+      "set": {
+        "code": "from multiprocessing import shared_memory\nimport numpy as np\n\nshm = shared_memory.SharedMemory(create=True, size=1024)\narr = np.ndarray((128,), dtype='int64', buffer=shm.buf)",
+        "task": "Alloca un blocco di shared_memory.SharedMemory di 1024 byte e mappalo su un array NumPy per evitare il costo di serializzazione tra processi."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_multiproc",
+      "english": "CPU-bound",
+      "set": {
+        "code": "from multiprocessing import Pool\n\ndef is_prime(n):\n    return all(n % i for i in range(2, int(n**0.5) + 1))\n\nwith Pool() as p:\n    p.map(is_prime, range(10**6))",
+        "task": "Distribuisci il calcolo CPU-bound is_prime su tutti i core disponibili tramite multiprocessing.Pool().map per aggirare il GIL."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_multiproc",
+      "english": "I/O-bound",
+      "set": {
+        "code": "import asyncio, aiohttp\n\nasync def fetch_all(urls):\n    async with aiohttp.ClientSession() as s:\n        return await asyncio.gather(*[s.get(u) for u in urls])",
+        "task": "Affronta un carico I/O-bound di download multipli con asyncio e aiohttp invece di creare processi: il GIL non e' il collo di bottiglia."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_multiproc",
+      "english": "Parallelism",
+      "set": {
+        "code": "from multiprocessing import Pool\n\nwith Pool(processes=4) as pool:\n    pool.map(cpu_heavy, dataset)",
+        "task": "Ottieni vero parallelismo eseguendo cpu_heavy su quattro processi separati con multiprocessing.Pool, aggirando il limite del GIL."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_concurrency_patterns",
+      "english": "Producer-Consumer",
+      "set": {
+        "code": "import queue, threading\n\nq = queue.Queue()\n\ndef producer():\n    q.put('item')\n\ndef consumer():\n    item = q.get()\n    q.task_done()",
+        "task": "Implementa il pattern produttore-consumatore con queue.Queue: il producer chiama q.put('item') e il consumer q.get() seguito da task_done()."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_concurrency_patterns",
+      "english": "Worker Pool",
+      "set": {
+        "code": "from concurrent.futures import ThreadPoolExecutor\n\nwith ThreadPoolExecutor(max_workers=5) as pool:\n    futures = [pool.submit(handle, task) for task in tasks]",
+        "task": "Costruisci un worker pool di cinque thread con ThreadPoolExecutor e invia con pool.submit ogni task da elaborare."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_concurrency_patterns",
+      "english": "Barrier",
+      "set": {
+        "code": "import threading\n\nbarrier = threading.Barrier(3)\n\ndef phase():\n    prepare()\n    barrier.wait()\n    run()",
+        "task": "Sincronizza tre thread con threading.Barrier(3): ogni thread chiami barrier.wait() per attendere gli altri prima di iniziare la fase successiva."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_concurrency_patterns",
+      "english": "Condition Variable",
+      "set": {
+        "code": "import threading\n\ncv = threading.Condition()\nready = False\n\ndef consumer():\n    with cv:\n        cv.wait_for(lambda: ready)\n        process()",
+        "task": "Usa una threading.Condition: il consumatore chiama cv.wait_for(lambda: ready) finche' il produttore non imposta ready=True e chiama cv.notify()."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_concurrency_patterns",
+      "english": "Atomic Operation",
+      "set": {
+        "code": "import threading\n\nlock = threading.Lock()\ncounter = 0\n\ndef inc():\n    global counter\n    with lock:\n        counter += 1",
+        "task": "Trasforma l'incremento di counter in un'operazione atomica avvolgendolo in un blocco `with lock` su un Lock condiviso."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_concurrency_patterns",
+      "english": "Event (Synchronization)",
+      "set": {
+        "code": "import threading\n\nready = threading.Event()\n\ndef waiter():\n    ready.wait()\n    print('go')\n\ndef setter():\n    ready.set()",
+        "task": "Coordina due thread con threading.Event: il waiter blocca su ready.wait() finche' il setter non chiama ready.set()."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_concurrency_patterns",
+      "english": "Coroutine Chaining",
+      "set": {
+        "code": "async def pipeline(url):\n    raw = await fetch(url)\n    parsed = await parse(raw)\n    return await store(parsed)",
+        "task": "Concatena tre coroutine fetch, parse e store dentro pipeline awaitando ciascuna in sequenza per costruire un flusso asincrono."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_concurrency_patterns",
+      "english": "Task Cancellation",
+      "set": {
+        "code": "import asyncio\n\nasync def main():\n    task = asyncio.create_task(long_running())\n    await asyncio.sleep(1)\n    task.cancel()\n    try:\n        await task\n    except asyncio.CancelledError:\n        pass",
+        "task": "Gestisci la cancellazione di un task chiamando task.cancel() e intercettando asyncio.CancelledError in un blocco try/except per liberare le risorse."
+      }
+    }
+  ]
+}

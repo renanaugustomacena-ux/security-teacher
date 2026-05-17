@@ -486,7 +486,10 @@ export class TopicPracticeManager {
     } else if (mode === 'codeoutput') {
       pool = pool.filter((item) => item.code);
     } else if (mode === 'codechallenge') {
-      pool = pool.filter((item) => item.command || item.code);
+      // Single-line input — exclude multi-line code so the user is not asked
+      // to type 5 lines of a decorator into a one-line text box. Multi-line
+      // code is still exercised through codelab and codeoutput.
+      pool = pool.filter((item) => item.command || (item.code && !item.code.includes('\n')));
     } else if (mode === 'comprehension') {
       pool = pool.filter((item) => item.example);
     } else if (mode === 'scenario') {
@@ -516,16 +519,26 @@ export class TopicPracticeManager {
     const contexts = Array.from(groups.keys());
     const shuffledContexts = this.shuffleArray(contexts);
 
+    // Prefer items that have a concrete real-world `task` description.
+    // Without one, the step prompt collapses to the term translation, which is
+    // what made terminal mode feel like a vocab quiz instead of practice.
+    const buildStep = (item) => ({
+      description: item.task || item.italian || item.english,
+      descriptionEn: item.taskEn || item.english || '',
+      hasRealTask: Boolean(item.task),
+      expectedCommand: item.command,
+      item,
+    });
+
     for (const ctx of shuffledContexts) {
       if (questions.length >= 5) break;
-      const items = this.shuffleArray(groups.get(ctx));
-      const chainSize = Math.min(items.length, Math.floor(Math.random() * 2) + 2); // 2-3 items
-      const steps = items.slice(0, chainSize).map((item) => ({
-        description: item.italian || item.english,
-        descriptionEn: item.english || '',
-        expectedCommand: item.command,
-        item,
-      }));
+      // Bias toward items with `task:` so chains have meaningful prompts.
+      const groupItems = groups.get(ctx);
+      const withTask = groupItems.filter((it) => it.task);
+      const withoutTask = groupItems.filter((it) => !it.task);
+      const ordered = [...this.shuffleArray(withTask), ...this.shuffleArray(withoutTask)];
+      const chainSize = Math.min(ordered.length, Math.floor(Math.random() * 2) + 2); // 2-3 items
+      const steps = ordered.slice(0, chainSize).map(buildStep);
       questions.push({
         type: 'terminal',
         context: ctx,
@@ -539,12 +552,7 @@ export class TopicPracticeManager {
     if (questions.length < 3) {
       const remaining = this.shuffleArray(commandItems);
       for (let i = 0; i < remaining.length && questions.length < 5; i += 2) {
-        const steps = remaining.slice(i, i + 2).map((item) => ({
-          description: item.italian || item.english,
-          descriptionEn: item.english || '',
-          expectedCommand: item.command,
-          item,
-        }));
+        const steps = remaining.slice(i, i + 2).map(buildStep);
         if (steps.length > 0) {
           questions.push({
             type: 'terminal',
@@ -576,18 +584,28 @@ export class TopicPracticeManager {
       const lines = item.code.split('\n').filter((l) => l.trim().length > 0);
       if (lines.length < 2) continue;
 
-      // Pick a meaningful line to blank out (not a comment, not empty)
+      // Pick a meaningful line: skip comments, braces, and trivial tokens.
       const candidates = lines
         .map((line, idx) => ({ line, idx }))
-        .filter(
-          (c) =>
-            !c.line.trim().startsWith('#') &&
-            !c.line.trim().startsWith('//') &&
-            c.line.trim().length > 3
-        );
+        .filter((c) => {
+          const trimmed = c.line.trim();
+          if (trimmed.length < 6) return false;
+          if (trimmed.startsWith('#') || trimmed.startsWith('//')) return false;
+          // Skip pure structural lines that aren't teaching content.
+          if (/^[{}[\]();]+$/.test(trimmed)) return false;
+          return true;
+        });
 
       if (candidates.length === 0) continue;
-      const chosen = candidates[Math.floor(Math.random() * candidates.length)];
+
+      // Prefer lines that contain the target term — those are pedagogically
+      // tied to what's being taught. Fall back to any candidate.
+      const termLower = (item.english || '').toLowerCase();
+      const preferred = termLower
+        ? candidates.filter((c) => c.line.toLowerCase().includes(termLower))
+        : [];
+      const linePool = preferred.length > 0 ? preferred : candidates;
+      const chosen = linePool[Math.floor(Math.random() * linePool.length)];
 
       questions.push({
         type: 'codelab',
@@ -771,6 +789,21 @@ export class TopicPracticeManager {
     return !ENGLISH_FUNCTION_WORDS.has(cleaned) && !ITALIAN_FUNCTION_WORDS.has(cleaned);
   }
 
+  // Replace whole-word occurrences of `term` (and its lowercase form) in
+  // `text` with a "___" placeholder. Used to keep the answer from showing up
+  // in code/description hints. Multi-word terms (containing spaces) are
+  // skipped because they rarely appear literally in code.
+  maskTermInText(text, term) {
+    if (!text || !term || term.length < 3 || /\s/.test(term)) return text;
+    const safe = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const placeholder = '_'.repeat(Math.max(3, term.length));
+    try {
+      return text.replace(new RegExp(`\\b${safe}\\b`, 'gi'), placeholder);
+    } catch (_e) {
+      return text;
+    }
+  }
+
   pickBestBlankIndex(words, targetWord) {
     if (targetWord) {
       const targetLower = targetWord.toLowerCase();
@@ -922,18 +955,28 @@ export class TopicPracticeManager {
       }
 
       case 'sentence': {
-        const sentence = q.example.split(' = ')[0];
-        const words = this.shuffleArray(sentence.split(' '));
+        // Sentence translation (was word-reorder, which leaked every word).
+        // Now: show Italian sentence, user types English. Partial-credit check
+        // remains in checkSentenceAnswer.
+        const parts = (q.example || '').split(' = ');
+        const englishSentence = (parts[0] || '').trim();
+        const italianSentence = (parts[1] || '').trim();
+        const sentenceTtsBtn =
+          italianSentence && ttsService.isSupported
+            ? ttsService.speakerButtonHTML(italianSentence, 'it-IT')
+            : '';
+        const targetHint = q.english
+          ? `<div class="exercise-vocab-hint">Vocab: <strong>${this.escapeHtml(q.english)}</strong>${q.pronunciation ? ` <span class="exercise-pronunciation-inline">${this.escapeHtml(q.pronunciation)}</span>` : ''}</div>`
+          : '';
 
         html = `
           <div class="exercise-card">
-            <div class="exercise-instruction">Ricostruisci la frase (Inglese):</div>
-            <div class="scrambled-words">
-              ${words.map((w) => `<span class="word-chip">${this.escapeHtml(w)}</span>`).join(' ')}
-            </div>
-            <input type="text" id="topic-writing-input" class="practice-input" placeholder="Scrivi la frase completa..." autofocus>
+            <div class="exercise-instruction">Traduci in inglese:</div>
+            <div class="exercise-target">${this.escapeHtml(italianSentence)} ${sentenceTtsBtn}</div>
+            ${targetHint}
+            <input type="text" id="topic-writing-input" class="practice-input" placeholder="Type the English sentence..." autofocus>
             <button class="btn btn-primary" style="margin-top: 1rem;"
-              data-action="topicPractice.checkSentence" data-correct="${escapeForAttr(sentence)}">
+              data-action="topicPractice.checkSentence" data-correct="${escapeForAttr(englishSentence)}">
               Invia / Submit
             </button>
           </div>
@@ -942,11 +985,18 @@ export class TopicPracticeManager {
       }
 
       case 'command': {
+        // Prompt with the concrete `task:` when available (e.g.
+        // "Mostra le porte TCP in ascolto"). Falls back to the term translation,
+        // which is a noun and doesn't tell the user what to accomplish.
+        // When prompting with a task, show the underlying vocab term as a small
+        // hint so the learner can connect the task to what they just studied.
+        const taskText = q.task || q.italian || '';
+        const showVocabHint = Boolean(q.task) && Boolean(q.english);
         html = `
           <div class="exercise-card">
             <div class="exercise-instruction">Scrivi il comando Linux per:</div>
-            <div class="exercise-target">${this.escapeHtml(q.italian)}</div>
-            <p class="translation-hint">${this.escapeHtml(q.english)}</p>
+            <div class="exercise-target">${this.escapeHtml(taskText)}</div>
+            ${showVocabHint ? `<p class="translation-hint">Vocab: ${this.escapeHtml(q.english)}</p>` : ''}
             <input type="text" id="topic-writing-input" class="practice-input practice-input-mono" placeholder="$ " autofocus>
             <button class="btn btn-primary" style="margin-top: 1rem;"
               data-action="topicPractice.checkCommand" data-correct="${escapeForAttr(q.command)}">
@@ -959,11 +1009,14 @@ export class TopicPracticeManager {
 
       case 'codeoutput': {
         const options = this.generateOptions(q.english);
+        // Hide the term in code so the answer is not handed to the user as a
+        // literal identifier (e.g. `print("hi")` for term "Print").
+        const maskedCode = this.maskTermInText(q.code, q.english);
         html = `
           <div class="exercise-card">
             <div class="exercise-instruction">Che concetto dimostra questo codice?</div>
             <div class="tech-code-exercise">
-              <pre><code>${this.escapeHtml(q.code)}</code></pre>
+              <pre><code>${this.escapeHtml(maskedCode)}</code></pre>
             </div>
             <div class="options-grid">
               ${options
@@ -1010,26 +1063,67 @@ export class TopicPracticeManager {
       }
 
       case 'comprehension': {
-        const allWithExamples = this.fullPool.filter((item) => item.example);
-        const paragraphSentences = this.buildComprehensionParagraph(
-          allWithExamples,
-          this.currentQuestionIndex
-        );
-        const paragraph = `${paragraphSentences.join('. ')}.`;
-        const correctStatement = (q.example || '').split(' = ')[0];
+        // Bilingual reading comprehension:
+        //  - Paragraph: 5-6 English example sentences from same-context items.
+        //  - Target: one of those items (rotates each question).
+        //  - Options: 4 Italian "rules" (note or Italian half of example).
+        //  - User must read the English paragraph, locate the sentence about
+        //    the target term, then pick the Italian description that matches.
+        const ctx = q.context || 'general';
+        const pickRule = (item) => {
+          if (item.note && item.note.length > 15) return item.note.trim();
+          const it = (item.example || '').split(' = ')[1];
+          if (it && it.trim().length > 15) return it.trim();
+          return item.italian || item.english;
+        };
+        const ruleAvailable = (item) =>
+          item.example &&
+          (item.note || ((item.example || '').split(' = ')[1] || '').trim().length > 15);
 
-        const wrongOptions = this.generateComprehensionDistractors(
-          correctStatement,
-          paragraphSentences,
-          allWithExamples
-        );
-        const allOptions = this.shuffleArray([correctStatement, ...wrongOptions]);
+        const fullCandidates = this.fullPool.filter(ruleAvailable);
+        const sameCtxCandidates = fullCandidates.filter((it) => it.context === ctx);
+        const paragraphPool = sameCtxCandidates.length >= 4 ? sameCtxCandidates : fullCandidates;
+
+        const paragraphItems = this.shuffleArray(paragraphPool).slice(0, 6);
+        const target = paragraphItems[this.currentQuestionIndex % paragraphItems.length] || q;
+
+        const paragraph = paragraphItems
+          .map((it) => ((it.example || '').split(' = ')[0] || '').trim())
+          .filter((s) => s.length > 10)
+          .join(' ');
+
+        const correctStatement = pickRule(target);
+        const distractors = [];
+        const seen = new Set([correctStatement]);
+        const addDistractor = (rule) => {
+          if (rule && !seen.has(rule)) {
+            distractors.push(rule);
+            seen.add(rule);
+          }
+        };
+        for (const it of this.shuffleArray(
+          paragraphItems.filter((p) => p.english !== target.english)
+        )) {
+          if (distractors.length >= 3) break;
+          addDistractor(pickRule(it));
+        }
+        if (distractors.length < 3) {
+          const inParagraph = new Set(paragraphItems.map((p) => p.english));
+          const fallback = fullCandidates.filter((it) => !inParagraph.has(it.english));
+          for (const it of this.shuffleArray(fallback)) {
+            if (distractors.length >= 3) break;
+            addDistractor(pickRule(it));
+          }
+        }
+
+        const allOptions = this.shuffleArray([correctStatement, ...distractors.slice(0, 3)]);
+        const targetLabel = this.escapeHtml(target.english || '');
 
         html = `
           <div class="exercise-card">
-            <div class="exercise-instruction">Leggi il paragrafo e scegli l'affermazione corretta:</div>
+            <div class="exercise-instruction">Leggi il paragrafo:</div>
             <div class="exercise-paragraph">${this.escapeHtml(paragraph)}</div>
-            <div class="exercise-comprehension-question">Quale affermazione è vera in base al testo? / Which statement is true?</div>
+            <div class="exercise-comprehension-question">In base al testo, quale descrizione si applica a <strong>${targetLabel}</strong>?</div>
             <div class="options-grid">
               ${allOptions
                 .map(
@@ -1087,15 +1181,17 @@ export class TopicPracticeManager {
       }
 
       case 'codechallenge': {
-        const instruction = q.italian || q.english;
+        // Prefer real task description; fall back to italian term name.
+        // Mask the target term in the note to avoid handing the answer over.
+        const instruction = q.task || q.italian || q.english;
         const correctCode = q.command || q.code;
-        const note = q.note || '';
+        const maskedNote = q.note ? this.maskTermInText(q.note, q.english) : '';
 
         html = `
           <div class="exercise-card">
             <div class="exercise-instruction">Code Challenge:</div>
             <div class="exercise-target">${this.escapeHtml(instruction)}</div>
-            ${note ? `<p class="translation-hint">${this.escapeHtml(note)}</p>` : ''}
+            ${maskedNote ? `<p class="translation-hint">${this.escapeHtml(maskedNote)}</p>` : ''}
             <input type="text" id="topic-writing-input" class="practice-input practice-input-mono" placeholder="Scrivi il codice/comando..." autofocus>
             <button class="btn btn-primary" style="margin-top: 1rem;"
               data-action="topicPractice.checkCodeChallenge" data-correct="${escapeForAttr(correctCode)}">
@@ -1265,84 +1361,6 @@ export class TopicPracticeManager {
     }
 
     return this.shuffleArray([correct, ...Array.from(distractors).slice(0, 3)]);
-  }
-
-  /**
-   * Build a comprehension paragraph with 5-7 sentences
-   */
-  buildComprehensionParagraph(allWithExamples, currentIdx) {
-    const sentences = [];
-    const used = new Set();
-    const targetCount = 6;
-
-    const currentQ = this.questions[currentIdx];
-    if (currentQ && currentQ.example) {
-      const sent = currentQ.example.split(' = ')[0];
-      if (sent) {
-        sentences.push(sent);
-        used.add((currentQ.english || '').toLowerCase());
-      }
-    }
-
-    for (let r = 1; sentences.length < targetCount && r < this.questions.length; r++) {
-      for (const offset of [-r, r]) {
-        const idx = currentIdx + offset;
-        if (
-          idx >= 0 &&
-          idx < this.questions.length &&
-          !used.has((this.questions[idx]?.english || '').toLowerCase())
-        ) {
-          const item = this.questions[idx];
-          if (item && item.example) {
-            const sent = item.example.split(' = ')[0];
-            if (sent && sent.length > 10) {
-              sentences.push(sent);
-              used.add((item.english || '').toLowerCase());
-            }
-          }
-        }
-        if (sentences.length >= targetCount) break;
-      }
-    }
-
-    if (sentences.length < targetCount) {
-      const extras = this.shuffleArray(allWithExamples).filter(
-        (item) => !used.has((item.english || '').toLowerCase()) && item.example
-      );
-      for (const item of extras) {
-        if (sentences.length >= targetCount) break;
-        const sent = item.example.split(' = ')[0];
-        if (sent && sent.length > 10) {
-          sentences.push(sent);
-          used.add((item.english || '').toLowerCase());
-        }
-      }
-    }
-
-    return sentences;
-  }
-
-  /**
-   * Generate comprehension distractors from sentences NOT in the paragraph
-   */
-  generateComprehensionDistractors(correctSentence, paragraphSentences, allWithExamples) {
-    const paragraphSet = new Set(paragraphSentences);
-    const distractors = [];
-
-    const candidates = allWithExamples
-      .map((item) => item.example.split(' = ')[0])
-      .filter((s) => s && !paragraphSet.has(s) && s !== correctSentence && s.length > 10);
-
-    const shuffled = this.shuffleArray(candidates);
-    for (const s of shuffled) {
-      if (distractors.length >= 3) break;
-      if (!distractors.includes(s)) distractors.push(s);
-    }
-
-    while (distractors.length < 3) {
-      distractors.push(`Not in the text ${distractors.length + 1}`);
-    }
-    return distractors;
   }
 
   // ─── TIMER & XP ──────────────────────────────
@@ -1915,8 +1933,13 @@ export class TopicPracticeManager {
         </div>
         <div class="terminal-body">
           <div class="terminal-scenario">
-            ${this.escapeHtml(step.description)}
-            ${step.descriptionEn ? ` / ${this.escapeHtml(step.descriptionEn)}` : ''}
+            ${step.hasRealTask ? '<div class="terminal-task-label">Task</div>' : ''}
+            <div class="terminal-task-text">${this.escapeHtml(step.description)}</div>
+            ${
+              step.descriptionEn && step.descriptionEn !== step.description
+                ? `<div class="terminal-task-text-en">${this.escapeHtml(step.descriptionEn)}</div>`
+                : ''
+            }
           </div>
           <div class="terminal-step-info">Step ${q.currentStep + 1}/${q.steps.length}</div>
           <div class="terminal-history">${historyHtml}</div>
@@ -2038,11 +2061,25 @@ export class TopicPracticeManager {
       })
       .join('');
 
-    const descriptionText = q.item.example || q.item.english || 'Complete the missing line';
+    // Description: use the example sentence (or note as fallback), but mask
+    // the target term so the answer's keyword isn't handed to the user.
+    // Also strip the blanked line itself if it accidentally appears in the
+    // example text (rare, but happens).
+    const rawDescription =
+      q.item.example || q.item.note || q.item.english || 'Complete the missing line';
+    let descriptionText = this.maskTermInText(rawDescription, q.item.english);
+    if (q.blankedLine) {
+      descriptionText = descriptionText.split(q.blankedLine).join('___');
+    }
+    const langLabel = q.item.command ? 'Bash' : 'Code';
+    const targetTagHtml = q.item.english
+      ? `<div class="codelab-target">${this.escapeHtml(langLabel)} · vocab: <strong>${this.escapeHtml(q.item.english)}</strong></div>`
+      : '';
 
     container.innerHTML = `
       <div class="codelab">
         <div class="codelab-header">Code Lab</div>
+        ${targetTagHtml}
         <div class="codelab-description">${this.escapeHtml(descriptionText)}</div>
         <pre class="codelab-code">${linesHtml}</pre>
         <div class="codelab-actions">

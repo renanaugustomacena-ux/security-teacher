@@ -1,0 +1,634 @@
+{
+  "fixes": [
+    {
+      "level": "4",
+      "lesson": "py_class_basics",
+      "english": "Class",
+      "set": {
+        "code": "class User:\n    def __init__(self, name):\n        self.name = name",
+        "task": "Definisci una classe User con un costruttore che riceve il nome e lo memorizza come attributo di istanza."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_class_basics",
+      "english": "Object",
+      "set": {
+        "code": "user = User('Marco')\nprint(type(user))",
+        "task": "Crea un oggetto della classe User passando il nome e stampa il suo tipo per verificare che sia un'istanza."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_class_basics",
+      "english": "Instance",
+      "set": {
+        "code": "alice = User('Alice')\nbob = User('Bob')\nprint(alice is bob)",
+        "task": "Crea due istanze distinte della classe User e verifica che siano oggetti separati con identita' diversa."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_class_basics",
+      "english": "__init__ (Method)",
+      "set": {
+        "code": "class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y",
+        "task": "Implementa il metodo __init__ della classe Point per inizializzare le coordinate x e y all'atto della creazione."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_class_basics",
+      "english": "self (Parameter)",
+      "set": {
+        "code": "class Counter:\n    def __init__(self):\n        self.count = 0\n    def increment(self):\n        self.count += 1",
+        "task": "Definisci una classe Counter che usa self per accedere e modificare l'attributo count nel metodo increment."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_class_basics",
+      "english": "Attribute",
+      "set": {
+        "code": "class Car:\n    def __init__(self, brand):\n        self.brand = brand\n        self.speed = 0",
+        "task": "Definisci una classe Car con un attributo brand passato al costruttore e un attributo speed inizializzato a zero."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_class_basics",
+      "english": "Method",
+      "set": {
+        "code": "class Account:\n    def __init__(self, balance=0):\n        self.balance = balance\n    def deposit(self, amount):\n        self.balance += amount",
+        "task": "Aggiungi alla classe Account un metodo deposit che incrementa il saldo dell'importo passato come argomento."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_class_basics",
+      "english": "Constructor",
+      "set": {
+        "code": "class Product:\n    def __init__(self, name, price):\n        self.name = name\n        self.price = price",
+        "task": "Scrivi il costruttore della classe Product che riceve name e price e li assegna agli attributi dell'istanza."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_class_basics",
+      "english": "Instance Variable",
+      "set": {
+        "code": "class Dog:\n    def __init__(self, name):\n        self.name = name  # variabile di istanza",
+        "task": "Definisci una variabile di istanza name nella classe Dog assegnandola a self dentro __init__."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_class_basics",
+      "english": "Class Variable",
+      "set": {
+        "code": "class Dog:\n    species = 'Canis familiaris'  # variabile di classe\n    def __init__(self, name):\n        self.name = name",
+        "task": "Aggiungi alla classe Dog una variabile di classe species condivisa da tutte le istanze."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_inheritance",
+      "english": "Inheritance",
+      "set": {
+        "code": "class Animal:\n    def eat(self):\n        print('eating')\n\nclass Dog(Animal):\n    pass",
+        "task": "Definisci una classe Dog che eredita da Animal in modo da riusare automaticamente il metodo eat."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_inheritance",
+      "english": "Parent Class (Base Class)",
+      "set": {
+        "code": "class Employee:\n    def __init__(self, name):\n        self.name = name\n\nclass Manager(Employee):\n    pass",
+        "task": "Definisci la classe genitore Employee con un attributo name e una classe figlia Manager che la estende."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_inheritance",
+      "english": "Child Class (Subclass)",
+      "set": {
+        "code": "class Vehicle:\n    pass\n\nclass Car(Vehicle):\n    def honk(self):\n        print('beep')",
+        "task": "Crea una sottoclasse Car che eredita da Vehicle e aggiunge un nuovo metodo honk specifico per le auto."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_inheritance",
+      "english": "Override (Method)",
+      "set": {
+        "code": "class Animal:\n    def speak(self):\n        print('sound')\n\nclass Dog(Animal):\n    def speak(self):\n        print('woof')",
+        "task": "Sovrascrivi il metodo speak nella sottoclasse Dog per stampare 'woof' invece del comportamento ereditato da Animal."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_inheritance",
+      "english": "Multiple Inheritance",
+      "set": {
+        "code": "class Swimmer:\n    def swim(self): pass\n\nclass Flyer:\n    def fly(self): pass\n\nclass Duck(Swimmer, Flyer):\n    pass",
+        "task": "Definisci la classe Duck che eredita contemporaneamente da Swimmer e Flyer applicando l'ereditarieta' multipla."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_inheritance",
+      "english": "Method Resolution Order (MRO)",
+      "set": {
+        "code": "class A: pass\nclass B(A): pass\nclass C(A): pass\nclass D(B, C): pass\nprint(D.__mro__)",
+        "task": "Stampa l'attributo __mro__ della classe D per ispezionare l'ordine di risoluzione dei metodi calcolato dall'algoritmo C3."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_inheritance",
+      "english": "Mixin",
+      "set": {
+        "code": "class JSONMixin:\n    def to_json(self):\n        import json\n        return json.dumps(self.__dict__)\n\nclass User(JSONMixin):\n    def __init__(self, name):\n        self.name = name",
+        "task": "Definisci un mixin JSONMixin che aggiunge il metodo to_json e applicalo alla classe User tramite ereditarieta'."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_inheritance",
+      "english": "Polymorphism",
+      "set": {
+        "code": "class Circle:\n    def area(self): return 3.14 * self.r ** 2\nclass Square:\n    def area(self): return self.side ** 2\n\nfor shape in shapes:\n    print(shape.area())",
+        "task": "Sfrutta il polimorfismo iterando una lista di forme e chiamando area() su ciascuna senza sapere il tipo concreto."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_concepts",
+      "english": "Encapsulation",
+      "set": {
+        "code": "class BankAccount:\n    def __init__(self):\n        self._balance = 0\n    def deposit(self, amount):\n        if amount > 0:\n            self._balance += amount",
+        "task": "Incapsula il saldo della classe BankAccount esponendolo solo tramite un metodo deposit che valida l'importo."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_concepts",
+      "english": "Abstraction",
+      "set": {
+        "code": "from abc import ABC, abstractmethod\n\nclass Storage(ABC):\n    @abstractmethod\n    def save(self, data): ...",
+        "task": "Astrai i dettagli di salvataggio definendo una classe Storage con un metodo astratto save che le sottoclassi devono implementare."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_concepts",
+      "english": "Interface",
+      "set": {
+        "code": "from abc import ABC, abstractmethod\n\nclass Serializable(ABC):\n    @abstractmethod\n    def to_dict(self) -> dict: ...",
+        "task": "Definisci un'interfaccia Serializable tramite ABC che obbliga le sottoclassi a fornire un metodo to_dict."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_concepts",
+      "english": "Abstract Base Class (ABC)",
+      "set": {
+        "code": "from abc import ABC, abstractmethod\n\nclass Shape(ABC):\n    @abstractmethod\n    def draw(self):\n        pass",
+        "task": "Crea una Abstract Base Class Shape con un metodo astratto draw che obbliga ogni sottoclasse a fornire la propria implementazione."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_concepts",
+      "english": "Composition",
+      "set": {
+        "code": "class Engine:\n    def start(self): pass\n\nclass Car:\n    def __init__(self):\n        self.engine = Engine()",
+        "task": "Usa la composizione facendo in modo che la classe Car contenga al suo interno un'istanza di Engine come attributo."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_concepts",
+      "english": "Aggregation",
+      "set": {
+        "code": "class Student:\n    def __init__(self, name):\n        self.name = name\n\nclass Classroom:\n    def __init__(self, students):\n        self.students = students  # esistono fuori da Classroom",
+        "task": "Modella un'aggregazione passando una lista di Student gia' esistenti al costruttore di Classroom invece di crearli internamente."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_concepts",
+      "english": "Method Overloading",
+      "set": {
+        "code": "class Greeter:\n    def hello(self, name=None):\n        if name is None:\n            return 'Hello!'\n        return f'Hello, {name}!'",
+        "task": "Simula il sovraccarico dei metodi in Python usando un argomento di default che cambia il comportamento del metodo hello."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_concepts",
+      "english": "Duck Typing",
+      "set": {
+        "code": "def quack_it(thing):\n    thing.quack()  # non importa il tipo, basta che abbia .quack()",
+        "task": "Sfrutta il duck typing in una funzione quack_it che invoca .quack() su qualsiasi oggetto senza controllarne il tipo."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_advanced",
+      "english": "Getter",
+      "set": {
+        "code": "class Account:\n    def __init__(self, balance):\n        self._balance = balance\n    @property\n    def balance(self):\n        return self._balance",
+        "task": "Definisci un getter per l'attributo balance della classe Account usando il decoratore @property."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_advanced",
+      "english": "Staticmethod (Decorator)",
+      "set": {
+        "code": "class Math:\n    @staticmethod\n    def square(x):\n        return x * x",
+        "task": "Definisci un metodo statico square nella classe Math che eleva al quadrato un numero senza ricevere ne' self ne' cls."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_advanced",
+      "english": "Dunder Method (Magic Method)",
+      "set": {
+        "code": "class Vector:\n    def __init__(self, x, y):\n        self.x, self.y = x, y\n    def __add__(self, other):\n        return Vector(self.x + other.x, self.y + other.y)",
+        "task": "Implementa il metodo dunder __add__ nella classe Vector per supportare l'operatore + tra due vettori."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_advanced",
+      "english": "__str__ vs __repr__",
+      "set": {
+        "code": "class Point:\n    def __init__(self, x, y):\n        self.x, self.y = x, y\n    def __str__(self):\n        return f'({self.x}, {self.y})'\n    def __repr__(self):\n        return f'Point(x={self.x}, y={self.y})'",
+        "task": "Implementa sia __str__ (per l'utente) sia __repr__ (per lo sviluppatore) nella classe Point con due rappresentazioni diverse."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_advanced",
+      "english": "Operator Overloading",
+      "set": {
+        "code": "class Money:\n    def __init__(self, amount):\n        self.amount = amount\n    def __add__(self, other):\n        return Money(self.amount + other.amount)",
+        "task": "Sovraccarica l'operatore + nella classe Money implementando __add__ per sommare due importi e restituire un nuovo Money."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_advanced",
+      "english": "Slots (__slots__)",
+      "set": {
+        "code": "class Point:\n    __slots__ = ('x', 'y')\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y",
+        "task": "Ottimizza la memoria della classe Point dichiarando __slots__ per impedire la creazione del dizionario __dict__."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_advanced",
+      "english": "Descriptor",
+      "set": {
+        "code": "class Positive:\n    def __set_name__(self, owner, name):\n        self.name = name\n    def __set__(self, instance, value):\n        if value < 0:\n            raise ValueError('must be positive')\n        instance.__dict__[self.name] = value",
+        "task": "Definisci un descrittore Positive che intercetta __set__ per impedire l'assegnamento di valori negativi a un attributo."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_modules",
+      "english": "Module",
+      "set": {
+        "code": "# in mymodule.py\ndef greet(name):\n    return f'Hello, {name}'\n\n# in main.py\nimport mymodule\nprint(mymodule.greet('Anna'))",
+        "task": "Crea il modulo mymodule.py con la funzione greet e importalo da un altro file per richiamarla."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_modules",
+      "english": "Package",
+      "set": {
+        "code": "# struttura: mypackage/__init__.py, mypackage/utils.py\nfrom mypackage import utils\nutils.helper()",
+        "task": "Organizza il codice in un package mypackage con __init__.py e importa la sottomodulo utils dal package."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_modules",
+      "english": "From ... Import",
+      "set": {
+        "code": "from math import pi, sqrt\nprint(sqrt(pi))",
+        "task": "Usa la sintassi from ... import per portare nel namespace corrente solo pi e sqrt dal modulo math."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_modules",
+      "english": "As (Alias)",
+      "set": {
+        "code": "import numpy as np\nimport pandas as pd\narr = np.array([1, 2, 3])",
+        "task": "Importa numpy con l'alias np usando la parola chiave as e crea un array di tre elementi."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_modules",
+      "english": "Standard Library",
+      "set": {
+        "code": "import os\nimport datetime\nprint(os.getcwd(), datetime.date.today())",
+        "task": "Sfrutta la libreria standard importando os e datetime per stampare la directory corrente e la data di oggi."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_modules",
+      "english": "Third-party Library",
+      "set": {
+        "code": "import requests\nresponse = requests.get('https://api.example.com/users')\nprint(response.status_code)",
+        "task": "Usa la libreria di terze parti requests per eseguire una richiesta GET e stampare lo status code della risposta."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_modules",
+      "english": "Pip (Package Manager)",
+      "set": {
+        "code": "# da shell\npip install requests==2.31.0\npip install -r requirements.txt",
+        "task": "Installa requests in versione 2.31.0 con pip e poi installa tutte le dipendenze elencate in requirements.txt."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_modules",
+      "english": "PyPI (Python Package Index)",
+      "set": {
+        "code": "# pubblicazione su PyPI\npython -m build\npython -m twine upload dist/*",
+        "task": "Pubblica il pacchetto su PyPI costruendo la distribuzione con build e caricandola con twine."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_modules",
+      "english": "__name__ == \"__main__\"",
+      "set": {
+        "code": "def main():\n    print('eseguito direttamente')\n\nif __name__ == '__main__':\n    main()",
+        "task": "Aggiungi il blocco if __name__ == '__main__' per eseguire la funzione main solo quando il file viene lanciato direttamente."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_files",
+      "english": "File Object",
+      "set": {
+        "code": "with open('data.txt', 'r') as f:\n    content = f.read()\n    print(type(f))",
+        "task": "Apri data.txt con un context manager e stampa il tipo dell'oggetto file ottenuto per ispezionarne la natura."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_files",
+      "english": "Open (function)",
+      "set": {
+        "code": "with open('notes.txt', 'r', encoding='utf-8') as f:\n    text = f.read()",
+        "task": "Apri il file notes.txt in lettura con codifica UTF-8 dentro un blocco with per leggerne il contenuto."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_files",
+      "english": "Mode",
+      "set": {
+        "code": "with open('log.txt', 'a') as f:\n    f.write('nuova riga\\n')",
+        "task": "Apri log.txt in modalita' append ('a') e scrivi una nuova riga in coda al contenuto esistente."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_files",
+      "english": "Read",
+      "set": {
+        "code": "with open('report.txt') as f:\n    content = f.read()\nprint(len(content))",
+        "task": "Leggi l'intero contenuto di report.txt con read() e stampa la lunghezza in caratteri della stringa risultante."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_files",
+      "english": "Readline",
+      "set": {
+        "code": "with open('app.log') as f:\n    line = f.readline()\n    while line:\n        process(line)\n        line = f.readline()",
+        "task": "Itera il file app.log una riga alla volta con readline() per processarlo senza caricarlo tutto in memoria."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_files",
+      "english": "Write",
+      "set": {
+        "code": "with open('output.txt', 'w') as f:\n    f.write('prima riga\\n')\n    f.write('seconda riga\\n')",
+        "task": "Apri output.txt in scrittura e usa il metodo write() per inserire due righe terminate da \\n."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_files",
+      "english": "Close",
+      "set": {
+        "code": "f = open('data.txt')\ntry:\n    data = f.read()\nfinally:\n    f.close()",
+        "task": "Chiudi esplicitamente l'oggetto file dentro un blocco finally per liberare il descrittore anche in caso di eccezione."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_files",
+      "english": "Binary Mode",
+      "set": {
+        "code": "with open('image.png', 'rb') as f:\n    raw_bytes = f.read()",
+        "task": "Apri image.png in modalita' binaria ('rb') per leggere i byte grezzi senza decodifica come testo."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_files",
+      "english": "Seek (method)",
+      "set": {
+        "code": "with open('data.bin', 'rb') as f:\n    f.seek(0)  # torna all'inizio\n    header = f.read(16)",
+        "task": "Sposta il cursore all'inizio di data.bin con seek(0) e leggi i primi 16 byte come header."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_data_formats",
+      "english": "Serialization",
+      "set": {
+        "code": "import json\ndata = {'name': 'Alice', 'age': 30}\npayload = json.dumps(data)",
+        "task": "Serializza il dizionario data in una stringa JSON usando json.dumps prima di inviarlo in rete."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_data_formats",
+      "english": "Deserialization",
+      "set": {
+        "code": "import json\npayload = '{\"name\": \"Alice\", \"age\": 30}'\ndata = json.loads(payload)",
+        "task": "Deserializza la stringa JSON payload con json.loads ricostruendo un dizionario Python nativo."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_data_formats",
+      "english": "CSV (module)",
+      "set": {
+        "code": "import csv\nwith open('users.csv') as f:\n    reader = csv.DictReader(f)\n    for row in reader:\n        print(row['name'])",
+        "task": "Leggi users.csv con csv.DictReader e stampa il campo name di ogni riga indicizzandolo come chiave del dizionario."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_data_formats",
+      "english": "YAML",
+      "set": {
+        "code": "import yaml\nwith open('config.yaml') as f:\n    config = yaml.safe_load(f)\nprint(config['database']['host'])",
+        "task": "Carica config.yaml con yaml.safe_load e accedi al campo database.host per leggere la configurazione."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_data_formats",
+      "english": "Pickle (module)",
+      "set": {
+        "code": "import pickle\nwith open('model.pkl', 'wb') as f:\n    pickle.dump(model, f)\nwith open('model.pkl', 'rb') as f:\n    loaded = pickle.load(f)",
+        "task": "Serializza l'oggetto model con pickle.dump in modalita' binaria e poi ricaricalo da disco con pickle.load."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_data_formats",
+      "english": "Parsing",
+      "set": {
+        "code": "import json\nraw = '{\"users\": [{\"id\": 1}, {\"id\": 2}]}'\nparsed = json.loads(raw)\nprint(parsed['users'][0]['id'])",
+        "task": "Effettua il parsing della stringa JSON raw con json.loads e accedi all'id del primo utente dell'array users."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_data_formats",
+      "english": "Encoding (UTF-8)",
+      "set": {
+        "code": "with open('articolo.txt', 'r', encoding='utf-8') as f:\n    testo = f.read()",
+        "task": "Apri articolo.txt specificando encoding='utf-8' per leggere correttamente caratteri accentati ed emoji."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_data_formats",
+      "english": "Load/Dump",
+      "set": {
+        "code": "import json\nwith open('users.json', 'w') as f:\n    json.dump(users, f)  # su file\nstring = json.dumps(users)  # su stringa",
+        "task": "Salva il dizionario users su file con json.dump e produci anche la versione stringa con json.dumps."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_data_formats",
+      "english": "Delimiter",
+      "set": {
+        "code": "import csv\nwith open('data.csv') as f:\n    reader = csv.reader(f, delimiter=';')\n    for row in reader:\n        print(row)",
+        "task": "Leggi data.csv usando il punto e virgola come delimitatore passando delimiter=';' a csv.reader."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_venv",
+      "english": "Virtual Environment",
+      "set": {
+        "code": "# da shell\npython -m venv .venv\nsource .venv/bin/activate\npip install requests",
+        "task": "Crea un ambiente virtuale nella cartella .venv, attivalo e installa requests in isolamento dal sistema."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_venv",
+      "english": "Venv (module)",
+      "set": {
+        "code": "# da shell\npython -m venv myenv\nsource myenv/bin/activate",
+        "task": "Usa il modulo venv per creare l'ambiente myenv e attivalo prima di installare le dipendenze del progetto."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_venv",
+      "english": "Requirements File",
+      "set": {
+        "code": "# requirements.txt\nrequests==2.31.0\nflask==3.0.0\n\n# da shell\npip install -r requirements.txt",
+        "task": "Elenca le dipendenze con versioni esatte in requirements.txt e installale tutte insieme con pip install -r."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_venv",
+      "english": "Dependency",
+      "set": {
+        "code": "# requirements.txt fissa una dipendenza\nrequests==2.31.0\nnumpy>=1.24,<2.0",
+        "task": "Blocca la dipendenza requests a una versione esatta e numpy a un intervallo di versioni in requirements.txt."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_venv",
+      "english": "Environment Variable",
+      "set": {
+        "code": "import os\napi_key = os.environ['API_KEY']\ndebug = os.environ.get('DEBUG', 'false')",
+        "task": "Leggi la variabile d'ambiente API_KEY con os.environ e DEBUG con un valore di default tramite get()."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_venv",
+      "english": "Dotenv (.env)",
+      "set": {
+        "code": "from dotenv import load_dotenv\nimport os\nload_dotenv()\nsecret = os.environ['SECRET_KEY']",
+        "task": "Carica le variabili dal file .env con load_dotenv() e accedi a SECRET_KEY tramite os.environ."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_venv",
+      "english": "Absolute Import",
+      "set": {
+        "code": "from myapp.utils.helpers import format_date\nfrom myapp.models import User",
+        "task": "Usa import assoluti come from myapp.utils.helpers import format_date per rendere le importazioni robuste agli spostamenti."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_venv",
+      "english": "Circular Import",
+      "set": {
+        "code": "# evita il ciclo importando localmente\ndef use_b():\n    from module_b import helper  # import dentro la funzione\n    helper()",
+        "task": "Risolvi un import circolare spostando l'import di module_b dentro la funzione invece di tenerlo a livello top."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_venv",
+      "english": "Search Path (sys.path)",
+      "set": {
+        "code": "import sys\nsys.path.append('/opt/mylibs')\nprint(sys.path)",
+        "task": "Aggiungi /opt/mylibs al percorso di ricerca di Python tramite sys.path.append e stampa la lista aggiornata."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_venv",
+      "english": "Package Registry",
+      "set": {
+        "code": "# da shell\npip install --index-url https://pypi.org/simple/ requests\npip config set global.index-url https://my-private-registry.com/simple/",
+        "task": "Installa requests dal registro pacchetti PyPI ufficiale e poi configura pip per usare un registro privato come default."
+      }
+    }
+  ]
+}

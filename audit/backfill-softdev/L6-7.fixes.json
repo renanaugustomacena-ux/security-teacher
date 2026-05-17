@@ -1,0 +1,554 @@
+{
+  "fixes": [
+    {
+      "level": "6",
+      "lesson": "dev_devops_basics",
+      "english": "CI (Continuous Integration)",
+      "set": {
+        "code": "# .github/workflows/ci.yml\nname: CI\non:\n  push:\n    branches: [main]\n  pull_request:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-node@v4\n        with:\n          node-version: '20'\n      - run: npm ci\n      - run: npm run lint\n      - run: npm test",
+        "task": "Definisci una pipeline di CI su GitHub Actions che a ogni push su main installi le dipendenze, lanci il lint ed esegua i test."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_basics",
+      "english": "CD (Continuous Delivery)",
+      "set": {
+        "code": "# .github/workflows/cd.yml\nname: CD\non:\n  push:\n    tags: ['v*']\njobs:\n  release:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - run: npm ci && npm run build\n      - name: Upload artifact\n        uses: actions/upload-artifact@v4\n        with:\n          name: app-bundle\n          path: dist/\n      - name: Notify release manager\n        run: echo 'Build pronta per approvazione manuale'",
+        "task": "Configura una pipeline di Continuous Delivery che a ogni tag costruisca l'artefatto e lo renda disponibile per l'approvazione manuale prima del rilascio in produzione."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_basics",
+      "english": "Continuous Deployment",
+      "set": {
+        "code": "# .github/workflows/deploy.yml\nname: Continuous Deployment\non:\n  push:\n    branches: [main]\njobs:\n  deploy:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - run: npm ci && npm test\n      - name: Deploy to production\n        run: |\n          kubectl set image deployment/api api=ghcr.io/acme/api:${{ github.sha }} -n production\n          kubectl rollout status deployment/api -n production",
+        "task": "Imposta un deploy continuo in cui ogni commit su main che passa i test va automaticamente in produzione, senza approvazioni manuali."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_basics",
+      "english": "Pipeline",
+      "set": {
+        "code": "# .gitlab-ci.yml\nstages: [build, test, deploy]\nbuild:\n  stage: build\n  script: npm run build\n  artifacts:\n    paths: [dist/]\ntest:\n  stage: test\n  script: npm test\ndeploy:\n  stage: deploy\n  script: kubectl apply -f k8s/\n  only: [main]",
+        "task": "Crea una pipeline CI/CD a tre stadi (build, test, deploy) su GitLab che produca un artefatto e lo distribuisca su Kubernetes solo dal branch main."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_basics",
+      "english": "SCM (Source Code Management)",
+      "set": {
+        "command": "git clone --branch develop --depth 1 git@github.com:acme/api.git",
+        "task": "Clona il branch develop del repository dell'API facendo uno shallow clone (solo l'ultimo commit) per velocizzare il setup della CI."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_basics",
+      "english": "Build Automation",
+      "set": {
+        "command": "npm run build && npm test && docker build -t myapp:v1.2.0 .",
+        "task": "Automatizza l'intera build del progetto: compila il codice, lancia i test e impacchetta il risultato in un'immagine Docker taggata con la versione 1.2.0."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_basics",
+      "english": "Artifact",
+      "set": {
+        "command": "docker push registry.acme.io/api:1.2.0",
+        "task": "Pubblica l'artefatto della build (un'immagine Docker taggata 1.2.0) nel registry aziendale così che gli ambienti di staging e produzione possano scaricarla."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_basics",
+      "english": "Artifact Repository",
+      "set": {
+        "command": "mvn deploy -DaltDeploymentRepository=nexus::default::https://nexus.acme.io/repository/releases",
+        "task": "Deposita il JAR appena costruito nel repository degli artefatti Nexus aziendale, sull'instanza releases, per renderlo disponibile come dipendenza versionata."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_deploy",
+      "english": "Deployment",
+      "set": {
+        "command": "kubectl apply -f deployment.yaml -n production",
+        "task": "Esegui il deploy dell'applicazione nel namespace production di Kubernetes applicando il manifest deployment.yaml."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_deploy",
+      "english": "Staging Environment",
+      "set": {
+        "command": "kubectl apply -f k8s/ -n staging && kubectl rollout status deployment/api -n staging",
+        "task": "Distribuisci la nuova versione nell'ambiente di staging e attendi che il rollout sia completato prima di promuoverla in produzione."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_deploy",
+      "english": "Production (Prod)",
+      "set": {
+        "command": "kubectl apply -f k8s/ -n production --record",
+        "task": "Esegui il deploy in produzione registrando il comando nella history del rollout, così da poter risalire a chi ha rilasciato cosa."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_deploy",
+      "english": "Blue-Green Deployment",
+      "set": {
+        "code": "# k8s/service.yaml — switch traffic by changing the selector\napiVersion: v1\nkind: Service\nmetadata:\n  name: api\nspec:\n  selector:\n    app: api\n    version: green  # was 'blue', now points to the new release\n  ports:\n    - port: 80\n      targetPort: 8080",
+        "task": "Configura un deploy blue-green su Kubernetes in cui il Service indirizza il traffico al pool 'green' modificando il selector senza interrompere il servizio."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_deploy",
+      "english": "Canary Release",
+      "set": {
+        "code": "# Argo Rollouts canary strategy\napiVersion: argoproj.io/v1alpha1\nkind: Rollout\nmetadata:\n  name: api\nspec:\n  strategy:\n    canary:\n      steps:\n        - setWeight: 5\n        - pause: { duration: 10m }\n        - setWeight: 25\n        - pause: { duration: 10m }\n        - setWeight: 100",
+        "task": "Definisci una strategia di rilascio canary che mandi prima il 5% del traffico alla nuova versione, poi il 25%, e infine il 100% se non emergono errori."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_deploy",
+      "english": "Rolling Update",
+      "set": {
+        "command": "kubectl set image deployment/api api=acme/api:v2.0.0 -n production && kubectl rollout status deployment/api -n production",
+        "task": "Esegui un aggiornamento progressivo del deployment api alla versione v2.0.0 e segui lo stato del rollout fino al completamento di tutti i pod."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_deploy",
+      "english": "Zero-downtime Deployment",
+      "set": {
+        "code": "# Deployment strategy for zero downtime\napiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: api\nspec:\n  replicas: 4\n  strategy:\n    type: RollingUpdate\n    rollingUpdate:\n      maxSurge: 1\n      maxUnavailable: 0\n  template:\n    spec:\n      containers:\n        - name: api\n          image: acme/api:v2.0.0\n          readinessProbe:\n            httpGet: { path: /health, port: 8080 }",
+        "task": "Configura il deployment perché aggiorni i pod uno alla volta senza mai scendere sotto la capacità minima, garantendo zero downtime durante il rilascio."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_deploy",
+      "english": "Rollback",
+      "set": {
+        "command": "kubectl rollout undo deployment/api -n production --to-revision=3",
+        "task": "Effettua un rollback del deployment api in produzione alla revisione 3, ripristinando la versione precedente dopo aver rilevato un errore critico."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_deploy",
+      "english": "Feature Flag / Toggle",
+      "set": {
+        "code": "import { LDClient } from 'launchdarkly-node-server-sdk';\nconst client = LDClient.init(process.env.LD_SDK_KEY);\nasync function handler(req, res) {\n  const showNewUI = await client.variation('new-checkout-ui', { key: req.user.id }, false);\n  return showNewUI ? renderNewCheckout(res) : renderLegacyCheckout(res);\n}",
+        "task": "Implementa un feature flag che attivi la nuova UI di checkout solo per gli utenti selezionati dalla console di LaunchDarkly, senza bisogno di un nuovo deploy."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_infra",
+      "english": "Infrastructure as Code (IaC)",
+      "set": {
+        "code": "# main.tf — provision an EC2 instance\nprovider \"aws\" {\n  region = \"eu-west-1\"\n}\nresource \"aws_instance\" \"web\" {\n  ami           = \"ami-0abcdef1234567890\"\n  instance_type = \"t3.micro\"\n  tags = {\n    Name = \"web-prod\"\n    Env  = \"production\"\n  }\n}",
+        "command": "terraform init && terraform apply -var-file=production.tfvars -auto-approve",
+        "task": "Definisci in Terraform una istanza EC2 di produzione nella regione eu-west-1 e applicala usando il file di variabili production.tfvars senza chiedere conferma."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_infra",
+      "english": "Container",
+      "set": {
+        "command": "docker run -d --name api -p 8080:8080 --env-file .env.prod acme/api:v1.2.0",
+        "task": "Avvia un container dell'applicazione api in modalità detached esponendo la porta 8080 e caricando le variabili d'ambiente dal file .env.prod."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_infra",
+      "english": "Docker",
+      "set": {
+        "command": "docker build -t myapp:v1.2.0 --build-arg NODE_ENV=production .",
+        "task": "Costruisci un'immagine Docker del progetto taggandola con la versione 1.2.0 e passando NODE_ENV=production come build argument."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_infra",
+      "english": "Orchestration",
+      "set": {
+        "command": "kubectl get pods -A -o wide --sort-by=.spec.nodeName",
+        "task": "Mostra tutti i pod orchestrati dal cluster Kubernetes, raggruppati per nodo, per verificare come è distribuito il carico tra le macchine."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_infra",
+      "english": "Kubernetes (K8s)",
+      "set": {
+        "command": "kubectl apply -f deployment.yaml -n production && kubectl get pods -n production -w",
+        "task": "Applica il manifest del deployment al cluster Kubernetes nel namespace production e osserva in tempo reale come vengono creati i pod."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_infra",
+      "english": "Virtual Machine (VM)",
+      "set": {
+        "command": "virsh list --all && virsh start web-vm",
+        "task": "Elenca tutte le macchine virtuali gestite da libvirt sull'host, poi avvia quella chiamata web-vm."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_infra",
+      "english": "Service Discovery",
+      "set": {
+        "code": "# k8s/service.yaml — DNS-based service discovery\napiVersion: v1\nkind: Service\nmetadata:\n  name: payments\n  namespace: prod\nspec:\n  selector:\n    app: payments\n  ports:\n    - port: 80\n      targetPort: 8080\n# Other services reach it at: payments.prod.svc.cluster.local",
+        "task": "Esponi il microservizio payments come Service Kubernetes così che gli altri servizi possano trovarlo automaticamente tramite il nome DNS payments.prod.svc.cluster.local."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_infra",
+      "english": "Provisioning",
+      "set": {
+        "command": "terraform apply -var-file=production.tfvars -auto-approve",
+        "task": "Esegui il provisioning dell'infrastruttura di produzione applicando il piano Terraform con le variabili dell'ambiente di produzione."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_infra",
+      "english": "Immutable Infrastructure",
+      "set": {
+        "command": "packer build -var 'version=1.2.0' webapp.pkr.hcl",
+        "task": "Costruisci con Packer una nuova immagine macchina immutabile versione 1.2.0 da usare per sostituire interamente le istanze invece di aggiornarle in-place."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_infra",
+      "english": "Config Management",
+      "set": {
+        "command": "ansible-playbook -i inventory/production webservers.yml --limit web-prod",
+        "task": "Lancia il playbook Ansible che configura i server web in produzione, limitando l'esecuzione al gruppo di host web-prod."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_monitor",
+      "english": "Monitoring",
+      "set": {
+        "code": "# prometheus.yml — scrape app metrics every 15s\nglobal:\n  scrape_interval: 15s\nscrape_configs:\n  - job_name: 'api'\n    static_configs:\n      - targets: ['api.prod.svc.cluster.local:9090']\n  - job_name: 'node-exporter'\n    static_configs:\n      - targets: ['node1:9100', 'node2:9100']",
+        "task": "Configura Prometheus per raccogliere le metriche dell'API e dei node exporter ogni 15 secondi, così da poter monitorare in tempo reale lo stato dei server."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_monitor",
+      "english": "Alerting",
+      "set": {
+        "code": "# alertmanager rules\ngroups:\n  - name: api-alerts\n    rules:\n      - alert: HighErrorRate\n        expr: sum(rate(http_requests_total{status=~\"5..\"}[5m])) / sum(rate(http_requests_total[5m])) > 0.05\n        for: 10m\n        labels: { severity: critical }\n        annotations:\n          summary: 'API error rate sopra il 5% per 10 minuti'",
+        "task": "Definisci una regola di alerting che notifichi il team di reperibilità quando il tasso di errori 5xx dell'API supera il 5% per più di 10 minuti."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_monitor",
+      "english": "Logging",
+      "set": {
+        "code": "import pino from 'pino';\nconst logger = pino({ level: 'info' });\napp.use((req, res, next) => {\n  req.log = logger.child({ requestId: req.headers['x-request-id'] });\n  req.log.info({ method: req.method, url: req.url }, 'incoming request');\n  next();\n});",
+        "task": "Aggiungi un middleware Express che produca log strutturati in JSON associando a ogni richiesta un request-id, così da poter tracciare ogni chiamata nei microservizi."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_monitor",
+      "english": "Metrics (KPI)",
+      "set": {
+        "code": "import client from 'prom-client';\nconst httpDuration = new client.Histogram({\n  name: 'http_request_duration_seconds',\n  help: 'Durata delle richieste HTTP in secondi',\n  labelNames: ['method', 'route', 'status'],\n  buckets: [0.05, 0.1, 0.3, 0.5, 1, 2, 5],\n});\napp.use((req, res, next) => {\n  const end = httpDuration.startTimer();\n  res.on('finish', () => end({ method: req.method, route: req.route?.path, status: res.statusCode }));\n  next();\n});",
+        "task": "Esponi una metrica Prometheus che misuri la durata delle richieste HTTP per metodo, rotta e status code, così da poter calcolare le percentili di latenza."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_monitor",
+      "english": "Observability",
+      "set": {
+        "code": "import { NodeSDK } from '@opentelemetry/sdk-node';\nimport { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-http';\nimport { getNodeAutoInstrumentations } from '@opentelemetry/auto-instrumentations-node';\nconst sdk = new NodeSDK({\n  traceExporter: new OTLPTraceExporter({ url: 'http://collector:4318/v1/traces' }),\n  instrumentations: [getNodeAutoInstrumentations()],\n});\nsdk.start();",
+        "task": "Strumenta l'applicazione Node con OpenTelemetry per inviare automaticamente trace, log e metriche al collector centrale e diagnosticare anche problemi non previsti."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_monitor",
+      "english": "Distributed Tracing",
+      "set": {
+        "code": "import { trace, context } from '@opentelemetry/api';\nconst tracer = trace.getTracer('payments-service');\nasync function processPayment(order) {\n  return tracer.startActiveSpan('processPayment', async (span) => {\n    span.setAttribute('order.id', order.id);\n    try {\n      const result = await chargeCard(order);\n      span.setStatus({ code: 1 });\n      return result;\n    } finally {\n      span.end();\n    }\n  });\n}",
+        "task": "Avvolgi la funzione processPayment in uno span OpenTelemetry così che la richiesta venga tracciata da un microservizio all'altro e si possa ricostruire l'intero percorso."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_monitor",
+      "english": "Health Check",
+      "set": {
+        "code": "app.get('/health', async (req, res) => {\n  try {\n    await db.query('SELECT 1');\n    await redis.ping();\n    res.status(200).json({ status: 'healthy', uptime: process.uptime() });\n  } catch (err) {\n    res.status(503).json({ status: 'unhealthy', error: err.message });\n  }\n});",
+        "task": "Esponi un endpoint /health che verifichi la connettività al database e a Redis, rispondendo 503 se una delle dipendenze critiche è giù così che il load balancer possa escludere il nodo."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_monitor",
+      "english": "SLO (Service Level Objective)",
+      "set": {
+        "code": "# Sloth SLO definition\nversion: prometheus/v1\nservice: api\nslos:\n  - name: availability\n    objective: 99.9\n    description: 'Il 99.9% delle richieste deve avere successo nei 30 giorni'\n    sli:\n      events:\n        error_query: sum(rate(http_requests_total{status=~\"5..\"}[{{.window}}]))\n        total_query: sum(rate(http_requests_total[{{.window}}]))",
+        "task": "Definisci un SLO di disponibilità al 99.9% per l'API misurato sul rapporto tra errori 5xx e richieste totali, su una finestra mobile di 30 giorni."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_monitor",
+      "english": "Error Budget",
+      "set": {
+        "code": "# Prometheus alert when error budget is burning too fast\ngroups:\n  - name: slo-burn\n    rules:\n      - alert: ErrorBudgetBurnFast\n        expr: |\n          (\n            sum(rate(http_requests_total{status=~\"5..\"}[1h]))\n            / sum(rate(http_requests_total[1h]))\n          ) > (14.4 * 0.001)\n        for: 5m\n        annotations:\n          summary: 'Il budget di errori del mese verrà bruciato in 2 giorni'",
+        "task": "Configura un alert di burn-rate che avvisi quando l'errore istantaneo brucerebbe l'intero budget mensile dell'SLO 99.9% in meno di due giorni."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dev_sec_vulns",
+      "english": "CVE (Common Vulnerabilities and Exposures)",
+      "set": {
+        "command": "grype dir:. --fail-on high",
+        "task": "Scansiona la directory corrente alla ricerca di CVE note nelle dipendenze e fai fallire il comando se viene trovata almeno una vulnerabilità di severità alta."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dev_sec_vulns",
+      "english": "Buffer Overflow",
+      "set": {
+        "code": "// VULNERABILE: strcpy non controlla i limiti\nvoid bad(const char *input) {\n  char buf[16];\n  strcpy(buf, input); // overflow se input > 15 byte\n}\n// SICURO: usa strncpy e termina sempre la stringa\nvoid good(const char *input) {\n  char buf[16];\n  strncpy(buf, input, sizeof(buf) - 1);\n  buf[sizeof(buf) - 1] = '\\0';\n}",
+        "task": "Sostituisci la chiamata vulnerabile a strcpy con strncpy limitando la copia alla dimensione del buffer di destinazione e garantendo la terminazione della stringa, per prevenire il buffer overflow."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dev_sec_vulns",
+      "english": "Race Condition",
+      "set": {
+        "code": "import { Mutex } from 'async-mutex';\nconst mutex = new Mutex();\nasync function withdraw(accountId, amount) {\n  return mutex.runExclusive(async () => {\n    const balance = await db.getBalance(accountId);\n    if (balance < amount) throw new Error('Saldo insufficiente');\n    await db.setBalance(accountId, balance - amount);\n  });\n}",
+        "task": "Proteggi la funzione di prelievo con un mutex così che due richieste concorrenti non possano leggere lo stesso saldo e prelevare due volte (race condition TOCTOU)."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dev_sec_vulns",
+      "english": "Injection",
+      "set": {
+        "code": "// VULNERABILE: concatenazione di stringhe nella query\nconst q = `SELECT * FROM users WHERE email = '${email}'`;\n// SICURO: query parametrizzata\nconst { rows } = await db.query(\n  'SELECT id, email FROM users WHERE email = $1',\n  [email],\n);",
+        "task": "Sostituisci la concatenazione di stringhe nella query SQL con una query parametrizzata che passi l'email come parametro $1, eliminando il rischio di SQL injection."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dev_sec_auth",
+      "english": "RBAC (Role-Based Access Control)",
+      "set": {
+        "code": "function requireRole(...allowed) {\n  return (req, res, next) => {\n    if (!req.user) return res.status(401).end();\n    if (!allowed.includes(req.user.role)) {\n      return res.status(403).json({ error: 'Permessi insufficienti' });\n    }\n    next();\n  };\n}\napp.delete('/users/:id', requireRole('admin'), deleteUser);",
+        "task": "Crea un middleware RBAC che blocchi con 403 chi non possiede uno dei ruoli abilitati e applicalo alla rotta di cancellazione utenti consentendola solo agli admin."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dev_sec_auth",
+      "english": "ABAC (Attribute-Based Access Control)",
+      "set": {
+        "code": "# policy.rego — OPA Rego ABAC policy\npackage authz\ndefault allow = false\nallow {\n  input.user.department == input.resource.department\n  time.weekday(time.now_ns()) >= 1\n  time.weekday(time.now_ns()) <= 5\n  net.cidr_contains(\"10.0.0.0/8\", input.request.source_ip)\n}",
+        "task": "Scrivi una policy Rego ABAC che permetta l'accesso solo se l'utente appartiene allo stesso dipartimento della risorsa, dal lunedì al venerdì, e solo da IP della rete aziendale."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dev_sec_auth",
+      "english": "Stateless Authentication",
+      "set": {
+        "code": "import jwt from 'jsonwebtoken';\nfunction issueToken(user) {\n  return jwt.sign(\n    { sub: user.id, role: user.role },\n    process.env.JWT_SECRET,\n    { expiresIn: '15m', issuer: 'api.acme.io' },\n  );\n}\nfunction authenticate(req, res, next) {\n  const token = req.headers.authorization?.split(' ')[1];\n  try {\n    req.user = jwt.verify(token, process.env.JWT_SECRET, { issuer: 'api.acme.io' });\n    next();\n  } catch {\n    res.status(401).end();\n  }\n}",
+        "task": "Implementa autenticazione stateless emettendo un JWT firmato con scadenza 15 minuti e validandolo a ogni richiesta senza salvare alcuna sessione lato server."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dev_sec_auth",
+      "english": "Bcrypt / Argon2",
+      "set": {
+        "code": "import argon2 from 'argon2';\nasync function hashPassword(plain) {\n  return argon2.hash(plain, {\n    type: argon2.argon2id,\n    memoryCost: 19456, // 19 MiB\n    timeCost: 2,\n    parallelism: 1,\n  });\n}\nasync function verifyPassword(plain, hash) {\n  return argon2.verify(hash, plain);\n}",
+        "task": "Calcola l'hash della password dell'utente con Argon2id usando 19 MiB di memoria e 2 iterazioni, e fornisci la funzione di verifica corrispondente al login."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dev_sec_auth",
+      "english": "Salt (Password Salting)",
+      "set": {
+        "code": "import bcrypt from 'bcrypt';\nconst SALT_ROUNDS = 12;\nasync function register(email, plainPassword) {\n  // bcrypt genera automaticamente un salt unico e lo include nell'hash\n  const hash = await bcrypt.hash(plainPassword, SALT_ROUNDS);\n  await db.users.insert({ email, password_hash: hash });\n}",
+        "task": "Esegui l'hash della password al momento della registrazione con bcrypt a 12 round, sfruttando il salt unico generato automaticamente per neutralizzare attacchi con rainbow table."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dev_sec_auth",
+      "english": "Secret Management",
+      "set": {
+        "command": "vault kv get -field=password secret/prod/db",
+        "task": "Recupera in modo sicuro la password del database di produzione da HashiCorp Vault, evitando di salvarla nel codice o nelle variabili d'ambiente del repository."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dev_sec_auth",
+      "english": "CSRF (Cross-Site Request Forgery)",
+      "set": {
+        "code": "import csurf from 'csurf';\nconst csrfProtection = csurf({ cookie: { httpOnly: true, sameSite: 'strict' } });\napp.use(csrfProtection);\napp.get('/form', (req, res) => {\n  res.render('form', { csrfToken: req.csrfToken() });\n});\napp.post('/transfer', csrfProtection, transferMoney);",
+        "task": "Aggiungi protezione CSRF a Express usando un cookie httpOnly con SameSite strict, e includi il token nei form della pagina così che le richieste cross-site vengano rifiutate."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dev_sec_auth",
+      "english": "Fail-Safe Defaults",
+      "set": {
+        "code": "async function isAuthorized(user, action) {\n  try {\n    const decision = await authService.check(user, action);\n    return decision.allow === true;\n  } catch (err) {\n    logger.error({ err }, 'auth service unreachable');\n    return false; // fail-safe: in caso di errore, NEGA l'accesso\n  }\n}",
+        "task": "Implementa la funzione di autorizzazione con un default fail-safe: se il servizio di auth non risponde, nega l'accesso invece di concederlo, applicando il principio del fallimento sicuro."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dev_sec_tools",
+      "english": "SAST (Static Application Security Testing)",
+      "set": {
+        "command": "semgrep --config=p/owasp-top-ten --error --severity=ERROR src/",
+        "task": "Esegui una scansione SAST con Semgrep sulla directory src/ usando il ruleset OWASP Top Ten e fai fallire il comando se viene trovata una vulnerabilità di severità ERROR."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dev_sec_tools",
+      "english": "DAST (Dynamic Application Security Testing)",
+      "set": {
+        "command": "docker run -t owasp/zap2docker-stable zap-baseline.py -t https://staging.acme.io -r zap-report.html",
+        "task": "Lancia una scansione DAST con OWASP ZAP in modalità baseline contro l'ambiente di staging e salva il report HTML con le vulnerabilità trovate sull'applicazione in esecuzione."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dev_sec_tools",
+      "english": "SCA (Software Composition Analysis)",
+      "set": {
+        "command": "snyk test --severity-threshold=high --all-projects",
+        "task": "Esegui un'analisi SCA con Snyk su tutti i progetti della repository segnalando solo le vulnerabilità di severità alta o critica nelle librerie open-source usate."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dev_sec_tools",
+      "english": "Dependency Scanning",
+      "set": {
+        "command": "npm audit --audit-level=high --production",
+        "task": "Lancia npm audit limitando l'output alle vulnerabilità di severità alta nelle sole dipendenze di produzione, da integrare nella pipeline CI."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dev_sec_tools",
+      "english": "Secret Scanning",
+      "set": {
+        "command": "gitleaks detect --source . --report-format sarif --report-path gitleaks.sarif",
+        "task": "Scansiona la repository alla ricerca di segreti committati per errore (chiavi API, token, password) generando un report SARIF da caricare nella dashboard di sicurezza."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dev_sec_tools",
+      "english": "Penetration Testing (Pen Test)",
+      "set": {
+        "command": "nmap -sV -sC -p- --open -oN pentest-recon.txt target.acme.io",
+        "task": "Avvia la fase di ricognizione di un penetration test eseguendo una scansione Nmap di tutte le porte aperte del target con identificazione di versione dei servizi e script di default."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dev_sec_tools",
+      "english": "Fuzzing Tool",
+      "set": {
+        "command": "afl-fuzz -i tests/seeds -o tests/findings -- ./parser @@",
+        "task": "Lancia AFL++ contro il binario parser usando i file di seed come input iniziali e salva crash e hang trovati nella directory tests/findings."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dev_sec_practices",
+      "english": "Input Validation",
+      "set": {
+        "code": "import { z } from 'zod';\nconst userSchema = z.object({\n  email: z.string().email(),\n  age: z.number().int().min(18).max(120),\n  role: z.enum(['user', 'admin']),\n});\napp.post('/users', (req, res) => {\n  const result = userSchema.safeParse(req.body);\n  if (!result.success) return res.status(400).json(result.error.flatten());\n  createUser(result.data);\n  res.status(201).end();\n});",
+        "task": "Valida ogni richiesta POST /users contro uno schema Zod che imponga email valida, età tra 18 e 120 e ruolo tra valori consentiti, restituendo 400 se i dati non rispettano il contratto."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dev_sec_practices",
+      "english": "Output Encoding",
+      "set": {
+        "code": "import escapeHtml from 'escape-html';\nfunction renderComment(comment) {\n  // PERICOLOSO: `<div>${comment.text}</div>` permette XSS\n  // SICURO: codifica l'output prima di iniettarlo nell'HTML\n  return `<div class=\"comment\">${escapeHtml(comment.text)}</div>`;\n}",
+        "task": "Codifica il testo del commento utente con escape-html prima di iniettarlo nella pagina, neutralizzando i caratteri speciali e prevenendo attacchi XSS riflessi e persistenti."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dev_sec_practices",
+      "english": "Code Signing",
+      "set": {
+        "command": "cosign sign --key cosign.key registry.acme.io/api:1.2.0",
+        "task": "Firma digitalmente l'immagine Docker 1.2.0 del servizio api con cosign usando la chiave privata aziendale, così che il cluster possa verificarne l'origine prima del deploy."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dev_sec_practices",
+      "english": "Least Privilege (Dev)",
+      "set": {
+        "code": "# Dockerfile — run as a non-root user\nFROM node:20-alpine\nRUN addgroup -S app && adduser -S app -G app\nWORKDIR /app\nCOPY --chown=app:app package*.json ./\nRUN npm ci --omit=dev\nCOPY --chown=app:app . .\nUSER app\nCMD [\"node\", \"server.js\"]",
+        "task": "Modifica il Dockerfile per creare un utente non privilegiato 'app' e farlo girare il container con quell'utente, applicando il principio del minimo privilegio anche dentro il container."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dev_sec_practices",
+      "english": "Secret Masking",
+      "set": {
+        "code": "# .github/workflows/deploy.yml\njobs:\n  deploy:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Mask custom token\n        run: echo \"::add-mask::${{ secrets.DEPLOY_TOKEN }}\"\n      - name: Deploy\n        env:\n          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}\n        run: ./deploy.sh",
+        "task": "Aggiungi nel workflow di deploy un comando add-mask che istruisca GitHub Actions a sostituire con asterischi qualsiasi occorrenza del token nei log della build."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dev_sec_practices",
+      "english": "Hardened Pipeline",
+      "set": {
+        "code": "# .github/workflows/release.yml — hardened CI/CD\npermissions:\n  contents: read\n  id-token: write  # per OIDC verso il cloud\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n        with:\n          persist-credentials: false\n      - uses: step-security/harden-runner@v2\n        with:\n          egress-policy: block\n          allowed-endpoints: registry.npmjs.org github.com\n      - run: npm ci --ignore-scripts\n      - run: npm test\n      - uses: sigstore/cosign-installer@v3\n      - run: cosign sign --yes ghcr.io/acme/api:${{ github.sha }}",
+        "task": "Rendi una pipeline GitHub Actions hardened riducendo i permessi al minimo, bloccando il traffico in uscita non autorizzato, disattivando gli script delle dipendenze e firmando l'artefatto con cosign."
+      }
+    }
+  ]
+}

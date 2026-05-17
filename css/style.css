@@ -2157,6 +2157,24 @@ h3 {
   margin-bottom: var(--space-md);
 }
 
+.exercise-pronunciation-inline {
+  font-size: 0.8rem;
+  color: var(--text-muted, #94a3b8);
+  font-style: italic;
+}
+
+.exercise-vocab-hint {
+  font-size: 0.85rem;
+  color: var(--text-muted, #94a3b8);
+  margin-top: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.exercise-vocab-hint strong {
+  color: var(--text-primary, #e6edf3);
+  font-weight: 600;
+}
+
 /* ==========================================
    COMPLETION OVERLAY (Practice & Lessons)
    ========================================== */
@@ -6598,6 +6616,32 @@ button:not(.tts-btn):not(.mobile-menu-btn) {
   line-height: 1.5;
 }
 
+.terminal-task-label {
+  display: inline-block;
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #58a6ff;
+  background: rgba(88, 166, 255, 0.12);
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: var(--space-xs);
+  font-style: normal;
+}
+
+.terminal-task-text {
+  color: #c9d1d9;
+  font-style: normal;
+  line-height: 1.6;
+}
+
+.terminal-task-text-en {
+  color: #6e7681;
+  font-size: var(--font-size-xs);
+  margin-top: 4px;
+}
+
 .terminal-step-info {
   color: #58a6ff;
   font-size: var(--font-size-xs);
@@ -6686,6 +6730,17 @@ button:not(.tts-btn):not(.mobile-menu-btn) {
   font-size: var(--font-size-sm);
   line-height: 1.5;
   border-bottom: 1px solid #21262d;
+}
+
+.codelab-target {
+  padding: var(--space-sm) var(--space-lg);
+  color: #58a6ff;
+  font-size: var(--font-size-xs);
+  border-bottom: 1px solid #21262d;
+}
+
+.codelab-target strong {
+  color: #c9d1d9;
 }
 
 .codelab-code {

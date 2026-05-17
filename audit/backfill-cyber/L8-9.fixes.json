@@ -1,0 +1,401 @@
+{
+  "fixes": [
+    {
+      "level": "8",
+      "lesson": "cloud_iam",
+      "english": "IAM (Identity and Access Management)",
+      "set": {
+        "command": "aws iam list-users --query 'Users[*].[UserName,CreateDate]' --output table",
+        "task": "Elenca tutti gli utenti IAM dell'account AWS con la data di creazione per fare l'inventario delle identita' configurate."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iam",
+      "english": "cloud identity provider",
+      "set": {
+        "command": "aws iam create-saml-provider --saml-metadata-document file://metadata.xml --name OktaProvider",
+        "task": "Registra Okta come identity provider SAML nell'account AWS per delegare l'autenticazione degli utenti aziendali."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iam",
+      "english": "Service Account",
+      "set": {
+        "command": "gcloud iam service-accounts create deploy-bot --display-name='CI/CD Deploy Bot'",
+        "task": "Crea un service account dedicato alla pipeline CI/CD su GCP per evitare di usare credenziali personali nei deploy automatici."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iam",
+      "english": "Role-based Access (Cloud)",
+      "set": {
+        "command": "aws iam attach-role-policy --role-name DeveloperRole --policy-arn arn:aws:iam::aws:policy/ReadOnlyAccess",
+        "task": "Assegna al ruolo DeveloperRole la policy gestita ReadOnlyAccess per concedere solo permessi di lettura sull'infrastruttura."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iam",
+      "english": "IAM Policy",
+      "set": {
+        "code": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Effect\": \"Allow\",\n      \"Action\": [\"s3:GetObject\", \"s3:ListBucket\"],\n      \"Resource\": [\"arn:aws:s3:::reports-bucket\", \"arn:aws:s3:::reports-bucket/*\"]\n    }\n  ]\n}",
+        "task": "Definisci una policy IAM in formato JSON che concede l'accesso in sola lettura al bucket S3 reports-bucket e ai suoi oggetti."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iam",
+      "english": "Principal",
+      "set": {
+        "code": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Effect\": \"Allow\",\n      \"Principal\": {\"AWS\": \"arn:aws:iam::123456789012:user/alice\"},\n      \"Action\": \"s3:GetObject\",\n      \"Resource\": \"arn:aws:s3:::shared-bucket/*\"\n    }\n  ]\n}",
+        "task": "Configura un Principal specifico in una bucket policy per autorizzare solo l'utente alice di un account esterno a leggere gli oggetti."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iam",
+      "english": "Resource-based Policy",
+      "set": {
+        "command": "aws s3api put-bucket-policy --bucket shared-data --policy file://bucket-policy.json",
+        "code": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Effect\": \"Allow\",\n      \"Principal\": {\"AWS\": \"arn:aws:iam::987654321098:root\"},\n      \"Action\": \"s3:GetObject\",\n      \"Resource\": \"arn:aws:s3:::shared-data/*\"\n    }\n  ]\n}",
+        "task": "Applica una policy resource-based al bucket S3 shared-data per consentire l'accesso in lettura a un account AWS esterno."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iam",
+      "english": "Federated Identity",
+      "set": {
+        "command": "aws sts assume-role-with-saml --role-arn arn:aws:iam::123456789012:role/SAMLRole --principal-arn arn:aws:iam::123456789012:saml-provider/Okta --saml-assertion file://assertion.b64",
+        "task": "Scambia l'assertion SAML emessa dall'identity provider per credenziali temporanee AWS abilitando la federazione delle identita'."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iam",
+      "english": "Conditional Access",
+      "set": {
+        "code": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Effect\": \"Deny\",\n      \"Action\": \"*\",\n      \"Resource\": \"*\",\n      \"Condition\": {\n        \"BoolIfExists\": {\"aws:MultiFactorAuthPresent\": \"false\"}\n      }\n    }\n  ]\n}",
+        "task": "Aggiungi una condizione alla policy IAM per negare ogni azione quando l'utente non ha completato l'autenticazione MFA."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iam",
+      "english": "Privileged Identity Management (PIM)",
+      "set": {
+        "command": "az role assignment create --assignee admin@contoso.com --role 'Owner' --scope /subscriptions/<sub-id> --condition-version '2.0'",
+        "task": "Concedi il ruolo Owner just-in-time tramite PIM in Azure con scadenza automatica per evitare permessi amministrativi permanenti."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_data",
+      "english": "Encryption at Rest",
+      "set": {
+        "command": "aws s3api put-bucket-encryption --bucket myapp-data --server-side-encryption-configuration '{\"Rules\":[{\"ApplyServerSideEncryptionByDefault\":{\"SSEAlgorithm\":\"AES256\"}}]}'",
+        "task": "Abilita la cifratura server-side AES-256 sul bucket S3 myapp-data per proteggere i dati a riposo da accessi non autorizzati al disco."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_data",
+      "english": "Encryption in Transit",
+      "set": {
+        "code": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Effect\": \"Deny\",\n      \"Principal\": \"*\",\n      \"Action\": \"s3:*\",\n      \"Resource\": [\"arn:aws:s3:::myapp-data/*\", \"arn:aws:s3:::myapp-data\"],\n      \"Condition\": {\"Bool\": {\"aws:SecureTransport\": \"false\"}}\n    }\n  ]\n}",
+        "task": "Imposta una bucket policy che nega ogni richiesta non TLS al bucket myapp-data per forzare la cifratura in transito."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_data",
+      "english": "Client-side Encryption",
+      "set": {
+        "code": "from boto3 import client\nfrom cryptography.fernet import Fernet\n\nkey = Fernet.generate_key()\nfernet = Fernet(key)\nciphertext = fernet.encrypt(b'sensitive payload')\ns3 = client('s3')\ns3.put_object(Bucket='vault', Key='secret.bin', Body=ciphertext)",
+        "task": "Cifra i dati sensibili sul client con Fernet prima di caricarli su S3 cosi' che il provider veda solo ciphertext opaco."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_data",
+      "english": "Server-side Encryption (SSE)",
+      "set": {
+        "command": "aws s3 cp report.csv s3://reports-bucket/ --sse aws:kms --sse-kms-key-id alias/reports-key",
+        "task": "Carica il file report.csv su S3 con SSE-KMS usando la chiave aliasata reports-key per cifrare l'oggetto lato server."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_data",
+      "english": "Key Management Service (KMS)",
+      "set": {
+        "command": "aws kms create-key --description 'Production database encryption key' --key-usage ENCRYPT_DECRYPT",
+        "task": "Crea una nuova chiave KMS dedicata alla cifratura del database di produzione per mantenere separato il materiale crittografico."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_data",
+      "english": "Data Residency",
+      "set": {
+        "command": "aws s3api create-bucket --bucket eu-customer-data --region eu-west-1 --create-bucket-configuration LocationConstraint=eu-west-1",
+        "task": "Crea il bucket eu-customer-data nella regione eu-west-1 per rispettare i requisiti GDPR di residenza dei dati dei clienti UE."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_data",
+      "english": "Object Storage Security",
+      "set": {
+        "command": "aws s3api put-public-access-block --bucket myapp-data --public-access-block-configuration BlockPublicAcls=true,IgnorePublicAcls=true,BlockPublicPolicy=true,RestrictPublicAccess=true",
+        "task": "Blocca completamente l'accesso pubblico al bucket S3 myapp-data per prevenire data leak da configurazioni accidentali."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_data",
+      "english": "Snapshot Backup",
+      "set": {
+        "command": "aws ec2 create-snapshot --volume-id vol-0a1b2c3d4e5f --description 'Pre-upgrade backup'",
+        "task": "Crea uno snapshot del volume EBS prima di un upgrade del sistema per poter ripristinare lo stato in caso di problemi."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_data",
+      "english": "Data Masking",
+      "set": {
+        "code": "def mask_card(card_number: str) -> str:\n    if len(card_number) < 4:\n        return '****'\n    return '*' * (len(card_number) - 4) + card_number[-4:]\n\n# 4111111111111234 -> ************1234",
+        "task": "Implementa una funzione di mascheramento che mostra solo le ultime quattro cifre del numero di carta nei report per gli analisti."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_compliance",
+      "english": "Cloud Audit",
+      "set": {
+        "command": "aws cloudtrail create-trail --name org-audit-trail --s3-bucket-name audit-logs-bucket --is-multi-region-trail --enable-log-file-validation",
+        "task": "Configura un trail CloudTrail multi-regione che salva i log su S3 con validazione dell'integrita' per supportare l'audit del cloud."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mobile_threats",
+      "english": "Jailbreaking",
+      "set": {
+        "command": "ideviceinfo -k DeviceClass && ideviceinstaller -l | grep -i cydia",
+        "task": "Verifica se il dispositivo iOS connesso ha installato Cydia, segnale tipico di un jailbreak avvenuto."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mobile_threats",
+      "english": "Rooting",
+      "set": {
+        "command": "adb shell 'which su || echo not_rooted'",
+        "task": "Esegui un controllo via ADB per verificare se il binario su e' presente sul dispositivo Android, indizio di rooting."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mobile_threats",
+      "english": "Sideloading",
+      "set": {
+        "command": "adb install -r downloaded-app.apk",
+        "task": "Installa via ADB un APK scaricato manualmente sul dispositivo Android per simulare uno scenario di sideloading."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mobile_threats",
+      "english": "Reverse Engineering (Mobile)",
+      "set": {
+        "command": "apktool d target-app.apk -o reversed/ && jadx -d sources/ target-app.apk",
+        "task": "Decompila l'APK target-app.apk con apktool e jadx per analizzare il codice smali e Java durante il reverse engineering."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mobile_mgmt",
+      "english": "MDM (Mobile Device Management)",
+      "set": {
+        "command": "curl -X POST 'https://api.intune.microsoft.com/v1.0/deviceManagement/managedDevices' -H 'Authorization: Bearer $TOKEN' -d @device-config.json",
+        "task": "Pubblica una nuova configurazione di sicurezza per i dispositivi gestiti tramite l'API Intune dell'MDM aziendale."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mobile_mgmt",
+      "english": "Remote Wipe",
+      "set": {
+        "command": "curl -X POST 'https://graph.microsoft.com/v1.0/deviceManagement/managedDevices/{id}/wipe' -H 'Authorization: Bearer $TOKEN' -d '{\"keepEnrollmentData\":false,\"keepUserData\":false}'",
+        "task": "Invia un comando di cancellazione remota completa al dispositivo smarrito tramite l'API Microsoft Graph dell'MDM."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mobile_mgmt",
+      "english": "Geofencing",
+      "set": {
+        "code": "import CoreLocation\n\nlet office = CLCircularRegion(\n    center: CLLocationCoordinate2D(latitude: 45.4642, longitude: 9.1900),\n    radius: 200,\n    identifier: \"office-perimeter\"\n)\noffice.notifyOnEntry = true\noffice.notifyOnExit = true\nlocationManager.startMonitoring(for: office)",
+        "task": "Definisci una regione circolare di geofencing attorno alla sede aziendale che notifichi l'app quando l'utente entra o esce."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mobile_mgmt",
+      "english": "Device Attestation",
+      "set": {
+        "code": "// Android Play Integrity API client-side request\nval integrityManager = IntegrityManagerFactory.create(context)\nval tokenRequest = IntegrityTokenRequest.builder()\n    .setNonce(serverNonce)\n    .build()\nintegrityManager.requestIntegrityToken(tokenRequest)\n    .addOnSuccessListener { response -> sendToServer(response.token()) }",
+        "task": "Richiedi un token Play Integrity sul client Android e invialo al server per verificare l'attestazione del dispositivo prima del login."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mobile_mgmt",
+      "english": "Containerization (Mobile)",
+      "set": {
+        "command": "adb shell pm create-user --profileOf 0 --managed 'Work Profile'",
+        "task": "Crea un work profile gestito su Android per isolare le app aziendali dai dati personali tramite containerizzazione."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mobile_mgmt",
+      "english": "Enrollment",
+      "set": {
+        "command": "profiles install -type configuration -path /tmp/mdm-enrollment.mobileconfig",
+        "task": "Installa il profilo di configurazione MDM su un dispositivo iOS aziendale per completare la fase di enrollment."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mobile_mgmt",
+      "english": "Policy Enforcement",
+      "set": {
+        "code": "{\n  \"policyName\": \"corporate-baseline\",\n  \"passwordRequirements\": {\n    \"passwordMinimumLength\": 8,\n    \"passwordQuality\": \"COMPLEX\"\n  },\n  \"encryptionPolicy\": \"ENABLED_WITHOUT_PASSWORD\",\n  \"cameraDisabled\": true\n}",
+        "task": "Definisci una policy Android Enterprise che impone password complesse, cifratura del device e fotocamera disabilitata sui dispositivi gestiti."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mobile_app",
+      "english": "Certificate Pinning",
+      "set": {
+        "code": "// Android OkHttp certificate pinning\nval pinner = CertificatePinner.Builder()\n    .add(\"api.bank.com\", \"sha256/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=\")\n    .build()\nval client = OkHttpClient.Builder()\n    .certificatePinner(pinner)\n    .build()",
+        "task": "Configura il certificate pinning con OkHttp sull'app Android per agganciare le chiamate verso api.bank.com a una sola chiave pubblica attesa."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mobile_app",
+      "english": "Code Obfuscation",
+      "set": {
+        "command": "java -jar proguard.jar @proguard-rules.pro -injars app.jar -outjars app-obfuscated.jar",
+        "task": "Esegui ProGuard sul JAR dell'app Android per rinominare classi e metodi e rendere piu' difficile l'analisi del codice compilato."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mobile_app",
+      "english": "Root Detection",
+      "set": {
+        "code": "fun isDeviceRooted(): Boolean {\n    val suPaths = arrayOf(\n        \"/system/bin/su\", \"/system/xbin/su\",\n        \"/sbin/su\", \"/system/app/Superuser.apk\"\n    )\n    return suPaths.any { File(it).exists() } ||\n           Build.TAGS?.contains(\"test-keys\") == true\n}",
+        "task": "Implementa un controllo di root detection in Kotlin che verifica la presenza del binario su e dei tag di build di test sui dispositivi Android."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mobile_app",
+      "english": "Tapjacking",
+      "set": {
+        "code": "<!-- AndroidManifest / layout protection against tapjacking -->\n<Button\n    android:id=\"@+id/confirm_payment\"\n    android:text=\"Confirm\"\n    android:filterTouchesWhenObscured=\"true\" />",
+        "task": "Imposta l'attributo filterTouchesWhenObscured sul bottone di conferma pagamento per bloccare i tap quando un overlay nasconde la view."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mobile_app",
+      "english": "Intent Injection",
+      "set": {
+        "code": "// Vulnerable receiver (DO NOT do this)\n<receiver android:name=\".AdminReceiver\" android:exported=\"true\" />\n\n// Hardened: mark non-exported and require permission\n<receiver\n    android:name=\".AdminReceiver\"\n    android:exported=\"false\"\n    android:permission=\"com.app.PRIVATE\" />",
+        "task": "Marca i receiver sensibili come non esportati e protetti da un permesso custom per prevenire l'iniezione di intent da app malevole."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mobile_app",
+      "english": "Data Leakage (App)",
+      "set": {
+        "command": "adb shell run-as com.target.app ls -la /data/data/com.target.app/cache",
+        "task": "Ispeziona la cache interna dell'app target via ADB per verificare se sta salvando dati sensibili che potrebbero essere esfiltrati."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mobile_app",
+      "english": "App Wrapping",
+      "set": {
+        "command": "intune-app-wrapping-tool-android -i original.apk -o wrapped.apk -k release.keystore",
+        "task": "Avvolgi l'APK originale con il tool di Intune per applicare le policy MDM aziendali su un'app di terze parti non modificata."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mobile_app",
+      "english": "Biometric Unlock",
+      "set": {
+        "code": "val promptInfo = BiometricPrompt.PromptInfo.Builder()\n    .setTitle(\"Authenticate to open the vault\")\n    .setNegativeButtonText(\"Use password\")\n    .setAllowedAuthenticators(BiometricManager.Authenticators.BIOMETRIC_STRONG)\n    .build()\nbiometricPrompt.authenticate(promptInfo)",
+        "task": "Configura BiometricPrompt sull'app Android per richiedere l'impronta digitale all'apertura del vault delle credenziali."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mobile_network",
+      "english": "Mobile VPN",
+      "set": {
+        "command": "sudo wg-quick up corp-vpn && curl --interface wg0 https://api.internal.corp/health",
+        "task": "Attiva la VPN aziendale WireGuard sul dispositivo mobile e verifica che il traffico verso le API interne passi attraverso il tunnel."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mobile_network",
+      "english": "Bluetooth Low Energy (BLE) Security",
+      "set": {
+        "command": "sudo hcitool lescan --duplicates && sudo bluetoothctl pair AA:BB:CC:DD:EE:FF",
+        "task": "Scansiona i dispositivi BLE in broadcast nelle vicinanze e prova un pairing autenticato per verificare la sicurezza dell'accoppiamento."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mobile_network",
+      "english": "NFC Security",
+      "set": {
+        "code": "<!-- Limit which app handles NFC intents -->\n<intent-filter>\n    <action android:name=\"android.nfc.action.NDEF_DISCOVERED\" />\n    <data android:mimeType=\"application/vnd.bank.payment\" />\n    <category android:name=\"android.intent.category.DEFAULT\" />\n</intent-filter>",
+        "task": "Limita l'intent filter NFC dell'app di pagamento a un mime-type proprietario per evitare che app malevole intercettino le transazioni."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mobile_network",
+      "english": "Wi-Fi Direct Security",
+      "set": {
+        "command": "adb shell cmd wifip2p list-peers && adb shell settings put global wifi_p2p_pending_factory_reset 1",
+        "task": "Elenca i peer Wi-Fi Direct visibili dal dispositivo Android e resetta lo stato P2P per ripulire connessioni precedenti non fidate."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mobile_network",
+      "english": "Tethering Risks",
+      "set": {
+        "command": "adb shell svc wifi disable && adb shell cmd wifi set-wifi-enabled enabled && adb shell settings put global tether_dun_required 0",
+        "task": "Disabilita il tethering Wi-Fi sul dispositivo Android per ridurre il rischio che terzi si colleghino al tuo hotspot personale."
+      }
+    }
+  ]
+}

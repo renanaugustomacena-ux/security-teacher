@@ -1,0 +1,481 @@
+{
+  "fixes": [
+    {
+      "level": "10",
+      "lesson": "linux_packages",
+      "english": "Package",
+      "set": {
+        "command": "apt show nginx",
+        "task": "Visualizza i metadati del pacchetto nginx, comprese versione, dipendenze e descrizione, prima di installarlo."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_packages",
+      "english": "Repository",
+      "set": {
+        "command": "sudo add-apt-repository ppa:deadsnakes/ppa && sudo apt update",
+        "task": "Aggiungi un repository PPA al sistema e rinfresca subito l'indice dei pacchetti per renderlo utilizzabile."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_packages",
+      "english": "Install",
+      "set": {
+        "command": "sudo apt install -y nginx build-essential",
+        "task": "Installa nginx insieme alla toolchain di compilazione, accettando in automatico tutte le dipendenze proposte."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_packages",
+      "english": "Package Index Update",
+      "set": {
+        "command": "sudo apt update",
+        "task": "Aggiorna l'indice dei pacchetti scaricando i metadati piu' recenti da tutti i repository configurati."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_packages",
+      "english": "Upgrade",
+      "set": {
+        "command": "sudo apt update && sudo apt upgrade -y",
+        "task": "Aggiorna l'indice e applica tutti gli upgrade di sicurezza disponibili senza chiedere conferma interattiva."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_packages",
+      "english": "Package Removal",
+      "set": {
+        "command": "sudo apt purge -y nginx && sudo apt autoremove -y",
+        "task": "Rimuovi nginx insieme ai suoi file di configurazione e ripulisci le dipendenze rimaste orfane."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_packages",
+      "english": "Dependency",
+      "set": {
+        "command": "apt-cache depends nginx",
+        "task": "Elenca tutte le dipendenze dichiarate dal pacchetto nginx per capire cosa verra' tirato dentro al momento dell'installazione."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_packages",
+      "english": "Source Code",
+      "set": {
+        "command": "apt source nginx",
+        "task": "Scarica il codice sorgente del pacchetto nginx nella directory corrente per poterlo ispezionare e ricompilare."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_packages",
+      "english": "Binary Package",
+      "set": {
+        "command": "sudo dpkg -i ./app_1.2.3_amd64.deb",
+        "task": "Installa direttamente un pacchetto binario .deb scaricato a mano, bypassando i repository configurati."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_backup",
+      "english": "Backup",
+      "set": {
+        "command": "tar -czf /backup/home-$(date +%F).tar.gz /home/user",
+        "task": "Crea un backup compresso della home dell'utente includendo la data corrente nel nome del file."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_backup",
+      "english": "Restore",
+      "set": {
+        "command": "tar -xzf /backup/home-2026-05-17.tar.gz -C /",
+        "task": "Ripristina un archivio di backup tar.gz nella radice del filesystem mantenendo i permessi originali."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_backup",
+      "english": "Sync",
+      "set": {
+        "command": "rsync -avz --delete /home/user/projects/ user@nas:/backup/projects/",
+        "task": "Sincronizza la cartella progetti su un NAS remoto eliminando dal NAS i file che non esistono piu' in locale."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_backup",
+      "english": "Snapshot",
+      "set": {
+        "command": "sudo btrfs subvolume snapshot -r /mnt/data /mnt/data/.snapshots/$(date +%F)",
+        "task": "Crea uno snapshot Btrfs in sola lettura del subvolume dati prima di un aggiornamento rischioso."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_backup",
+      "english": "Incremental",
+      "set": {
+        "command": "rsync -avz --link-dest=/backup/yesterday/ /home/ /backup/today/",
+        "task": "Esegui un backup incrementale che condivide via hardlink i file invariati rispetto a quello del giorno precedente."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_backup",
+      "english": "Backup Archive",
+      "set": {
+        "command": "tar -czf - /var/www | gpg -c -o /backup/www-$(date +%F).tar.gz.gpg",
+        "task": "Costruisci un archivio di backup compresso e cifralo con GPG in un solo passaggio, evitando file temporanei in chiaro."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_backup",
+      "english": "Clone",
+      "set": {
+        "command": "sudo dd if=/dev/sda of=/dev/sdb bs=4M status=progress conv=noerror,sync",
+        "task": "Clona blocco per blocco un disco difettoso su un drive sano mostrando l'avanzamento e tollerando errori di lettura."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_backup",
+      "english": "Remote Backup",
+      "set": {
+        "command": "rsync -avz -e 'ssh -p 22' /var/data/ backup@offsite.example.com:/backup/data/",
+        "task": "Spedisci un backup remoto via SSH verso uno storage off-site, comprimendo i dati durante il trasferimento."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_backup",
+      "english": "Integrity",
+      "set": {
+        "command": "sha256sum /backup/*.tar.gz > /backup/SHA256SUMS && sha256sum -c /backup/SHA256SUMS",
+        "task": "Genera i checksum SHA-256 di tutti gli archivi di backup e verifica subito che siano leggibili senza corruzione."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_web",
+      "english": "Web Server",
+      "set": {
+        "command": "sudo systemctl status nginx",
+        "task": "Controlla lo stato del web server nginx per verificare se e' attivo e quante richieste sta servendo."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_web",
+      "english": "Request",
+      "set": {
+        "command": "curl -v -X GET https://example.com/api/users",
+        "task": "Invia una richiesta HTTP GET mostrando in dettaglio header, metodo e handshake TLS della connessione."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_web",
+      "english": "Header",
+      "set": {
+        "command": "curl -I -H 'User-Agent: test' https://example.com",
+        "task": "Recupera solo gli header HTTP di risposta passando uno User-Agent personalizzato per simulare un client specifico."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_web",
+      "english": "Access Log",
+      "set": {
+        "command": "sudo tail -f /var/log/nginx/access.log | grep -v '200'",
+        "task": "Segui in tempo reale il log di accesso di nginx filtrando via le richieste andate a buon fine per evidenziare gli errori."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_web",
+      "english": "Configuration",
+      "set": {
+        "command": "sudo nginx -t && sudo systemctl reload nginx",
+        "task": "Valida la configurazione di nginx e ricaricala a caldo solo se il test passa, evitando di interrompere il servizio."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_web",
+      "english": "SSL/TLS",
+      "set": {
+        "command": "sudo certbot --nginx -d example.com -d www.example.com",
+        "task": "Ottieni e installa automaticamente un certificato SSL/TLS Let's Encrypt configurando nginx per i due domini."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_db",
+      "english": "Query",
+      "set": {
+        "command": "mysql -u root -p -e \"SELECT id, email FROM users WHERE active=1 LIMIT 10;\" appdb",
+        "task": "Esegui una query SQL contro il database appdb passando direttamente l'istruzione da riga di comando."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_db",
+      "english": "Client",
+      "set": {
+        "command": "mysql -h db.internal -P 3306 -u readonly -p reports",
+        "task": "Avvia il client mysql per collegarti al database reports su un host remoto usando un utente in sola lettura."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_db",
+      "english": "Server",
+      "set": {
+        "command": "sudo systemctl restart mysql && sudo systemctl status mysql",
+        "task": "Riavvia il server MySQL e verifica subito che sia tornato a rispondere correttamente alle connessioni."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_db",
+      "english": "Dump",
+      "set": {
+        "command": "mysqldump -u root -p --single-transaction --routines appdb > appdb-$(date +%F).sql",
+        "task": "Esporta un dump SQL consistente del database appdb includendo le stored procedure, senza bloccare le scritture."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_db",
+      "english": "Import",
+      "set": {
+        "command": "mysql -u root -p staging < appdb-2026-05-17.sql",
+        "task": "Importa un dump SQL nel database staging per riprodurre localmente lo stato di produzione."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_containers",
+      "english": "Container",
+      "set": {
+        "command": "docker run -d --name web -p 8080:80 --restart unless-stopped nginx:alpine",
+        "task": "Avvia un container nginx in background pubblicando la porta 8080 e con riavvio automatico salvo arresto manuale."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_containers",
+      "english": "Image",
+      "set": {
+        "command": "docker pull nginx:1.27-alpine && docker image inspect nginx:1.27-alpine",
+        "task": "Scarica una specifica versione dell'immagine nginx e ispezionane i metadati come layer, comando di entrypoint e variabili."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_containers",
+      "english": "Docker",
+      "set": {
+        "command": "docker run --rm -it -v $(pwd):/work -w /work alpine sh",
+        "task": "Avvia una shell Alpine usa-e-getta montando la directory corrente come spazio di lavoro dentro al container."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_containers",
+      "english": "Docker Volume",
+      "set": {
+        "command": "docker volume create pgdata && docker run -d -v pgdata:/var/lib/postgresql/data postgres:16",
+        "task": "Crea un volume Docker nominato e montalo come storage persistente per i dati di PostgreSQL."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_containers",
+      "english": "Network",
+      "set": {
+        "command": "docker network create --driver bridge appnet && docker run -d --network appnet --name api myapp:latest",
+        "task": "Crea una rete bridge dedicata e aggancia il container dell'applicazione affinche' possa parlare con gli altri servizi sulla stessa rete."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_containers",
+      "english": "Registry",
+      "set": {
+        "command": "docker login registry.internal && docker push registry.internal/app:1.2.3",
+        "task": "Autenticati al registry privato e carica una nuova versione taggata dell'immagine prima del rollout in produzione."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_containers",
+      "english": "Namespace",
+      "set": {
+        "command": "sudo lsns -t pid,net,mnt -p $(pgrep -f nginx | head -1)",
+        "task": "Elenca i namespace pid, net e mnt utilizzati dal processo nginx per capire l'isolamento applicato al container."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_containers",
+      "english": "Cgroups",
+      "set": {
+        "command": "docker run -d --cpus='1.5' --memory='512m' --name capped nginx",
+        "task": "Avvia un container con limiti via cgroups di una CPU e mezzo e 512 MB di memoria per evitare che affami l'host."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_virtualization",
+      "english": "Virtual Machine",
+      "set": {
+        "command": "virt-install --name ubuntu24 --memory 4096 --vcpus 2 --disk size=40 --cdrom ubuntu-24.04.iso --os-variant ubuntu24.04",
+        "task": "Crea una nuova macchina virtuale Ubuntu con 4 GB di RAM, 2 vCPU e disco da 40 GB partendo da una ISO."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_virtualization",
+      "english": "VM Snapshot",
+      "set": {
+        "command": "virsh snapshot-create-as --domain ubuntu24 --name pre-upgrade --description 'Before kernel 6.7 upgrade'",
+        "task": "Crea uno snapshot della VM ubuntu24 prima di un upgrade del kernel cosi' da poter ripristinare lo stato in caso di problemi."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_virtualization",
+      "english": "Emulation",
+      "set": {
+        "command": "qemu-system-aarch64 -M virt -cpu cortex-a72 -m 2G -drive file=arm.qcow2,if=virtio -nographic",
+        "task": "Avvia in emulazione completa una macchina virtuale ARM su un host x86 per testare un binario per architettura diversa."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_virtualization",
+      "english": "Migration",
+      "set": {
+        "command": "virsh migrate --live --persistent --undefinesource ubuntu24 qemu+ssh://node2/system",
+        "task": "Migra a caldo la VM ubuntu24 verso un altro host hypervisor senza interrompere le connessioni attive."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_performance",
+      "english": "Benchmark",
+      "set": {
+        "command": "sysbench cpu --threads=$(nproc) --time=60 run",
+        "task": "Esegui un benchmark CPU della durata di un minuto usando tutti i core disponibili per confrontare due configurazioni hardware."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_performance",
+      "english": "Tuning",
+      "set": {
+        "command": "sudo sysctl -w net.core.somaxconn=4096 net.ipv4.tcp_max_syn_backlog=8192",
+        "task": "Applica un tuning di rete aumentando la coda di accettazione e il backlog SYN per assorbire picchi di connessioni in arrivo."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_performance",
+      "english": "Performance Profile",
+      "set": {
+        "command": "sudo perf record -F 99 -g -p $(pgrep nginx | head -1) -- sleep 30 && sudo perf report",
+        "task": "Cattura un profilo prestazionale di nginx per 30 secondi a 99 Hz con stack trace, poi apri il report interattivo."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_performance",
+      "english": "Strace Trace",
+      "set": {
+        "command": "sudo strace -f -p $(pgrep nginx | head -1) -e trace=openat,read,write -o nginx.strace",
+        "task": "Aggancia strace al processo nginx tracciando solo i syscall di I/O su file e salvando l'output per analisi successiva."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_performance",
+      "english": "Cache",
+      "set": {
+        "command": "sync && echo 3 | sudo tee /proc/sys/vm/drop_caches",
+        "task": "Forza il flush della cache delle pagine del kernel prima di misurare le prestazioni di lettura a freddo del disco."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_kernel_adv",
+      "english": "Syscall",
+      "set": {
+        "command": "strace -c -f -- ls -la /etc",
+        "task": "Conta e profila quali syscall vengono invocate da un semplice ls per capire dove il programma spende davvero il tempo."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_kernel_adv",
+      "english": "Interrupt",
+      "set": {
+        "command": "watch -n 1 'cat /proc/interrupts | head -20'",
+        "task": "Monitora ogni secondo i conteggi delle interrupt per CPU per verificare che le IRQ della NIC siano distribuite tra i core."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_kernel_adv",
+      "english": "Scheduler",
+      "set": {
+        "command": "sudo chrt -f -p 80 $(pgrep -f audio-engine)",
+        "task": "Promuovi il processo dell'engine audio alla policy SCHED_FIFO con priorita' 80 per garantire latenze deterministiche."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_kernel_adv",
+      "english": "Memory Management",
+      "set": {
+        "command": "sudo sysctl -w vm.swappiness=10 vm.dirty_ratio=15",
+        "task": "Regola la gestione memoria del kernel riducendo la propensione allo swap e abbassando la soglia di pagine sporche."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_kernel_adv",
+      "english": "Kernel Driver",
+      "set": {
+        "command": "sudo modprobe nvidia && lsmod | grep nvidia",
+        "task": "Carica dinamicamente il driver del kernel NVIDIA e verifica subito che il modulo risulti caricato e attivo."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_kernel_adv",
+      "english": "Kernel Patch File",
+      "set": {
+        "command": "cd linux-6.6 && patch -p1 < ../linux-6.6-security.diff",
+        "task": "Applica una patch di sicurezza all'albero dei sorgenti del kernel prima di lanciare make oldconfig."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_kernel_adv",
+      "english": "Compile",
+      "set": {
+        "command": "make -j$(nproc) bzImage modules && sudo make modules_install install",
+        "task": "Compila il kernel personalizzato sfruttando tutti i core e installa subito kernel e moduli nel sistema."
+      }
+    }
+  ]
+}

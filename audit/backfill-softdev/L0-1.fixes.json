@@ -1,0 +1,482 @@
+{
+  "fixes": [
+    {
+      "level": "0",
+      "lesson": "dev_basics_1",
+      "english": "Program",
+      "set": {
+        "code": "function greet(name: string): void {\n  console.log(`Hello, ${name}!`);\n}\ngreet('world');",
+        "task": "Scrivi un programma che definisca una funzione di saluto e la invochi passando 'world'."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dev_basics_1",
+      "english": "Algorithm",
+      "set": {
+        "code": "function binarySearch(arr: number[], target: number): number {\n  let lo = 0, hi = arr.length - 1;\n  while (lo <= hi) {\n    const mid = (lo + hi) >> 1;\n    if (arr[mid] === target) return mid;\n    arr[mid] < target ? lo = mid + 1 : hi = mid - 1;\n  }\n  return -1;\n}",
+        "task": "Implementa l'algoritmo di ricerca binaria su un array ordinato, ritornando l'indice trovato oppure -1."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dev_basics_1",
+      "english": "Data",
+      "set": {
+        "code": "const user: { id: number; email: string; active: boolean } = {\n  id: 42,\n  email: 'alice@example.com',\n  active: true,\n};",
+        "task": "Modella i dati di un utente con id numerico, email e stato attivo usando un oggetto tipizzato."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dev_basics_2",
+      "english": "Compiler",
+      "set": {
+        "command": "tsc --strict --target ES2022 src/index.ts",
+        "task": "Compila il sorgente TypeScript con modalita strict e target ES2022 usando il compilatore."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dev_basics_2",
+      "english": "Interpreter",
+      "set": {
+        "command": "node --experimental-vm-modules scripts/run.js",
+        "task": "Avvia l'interprete Node con i moduli VM sperimentali per eseguire lo script di avvio."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dev_basics_2",
+      "english": "Debugger",
+      "set": {
+        "command": "node --inspect-brk=9229 dist/server.js",
+        "code": "function processOrder(id: number) {\n  debugger;\n  return fetchOrder(id);\n}",
+        "task": "Lancia il debugger sulla porta 9229 fermandoti alla prima riga, e usa la parola chiave debugger nel codice come breakpoint."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dev_basics_2",
+      "english": "Terminal (CLI)",
+      "set": {
+        "command": "ls -la | grep '.env' | wc -l",
+        "task": "Concatena tre comandi nel terminale per contare quanti file .env sono presenti nella directory corrente."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dev_basics_2",
+      "english": "Build",
+      "set": {
+        "command": "npm run build -- --mode production",
+        "task": "Esegui la build di produzione del progetto invocando lo script npm con il flag mode."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dev_basics_2",
+      "english": "Version Control",
+      "set": {
+        "command": "git init && git add . && git commit -m 'chore: initial commit'",
+        "task": "Inizializza il controllo versione nel progetto creando il primo commit con tutti i file correnti."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dev_basics_2",
+      "english": "Plugin / Extension",
+      "set": {
+        "command": "code --install-extension dbaeumer.vscode-eslint",
+        "task": "Installa l'estensione ESLint per VS Code via riga di comando per abilitare il linting nel tuo editor."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dev_basics_3",
+      "english": "Debugging",
+      "set": {
+        "command": "node --inspect-brk -r ts-node/register src/index.ts",
+        "task": "Avvia una sessione di debugging su un file TypeScript usando ts-node con breakpoint iniziale."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dev_basics_3",
+      "english": "Runtime Error",
+      "set": {
+        "code": "function divide(a: number, b: number): number {\n  if (b === 0) throw new RangeError('Division by zero');\n  return a / b;\n}",
+        "task": "Scrivi una funzione che sollevi un errore runtime di tipo RangeError quando il divisore e zero."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dev_basics_3",
+      "english": "Log",
+      "set": {
+        "code": "const logger = {\n  info: (msg: string, meta?: object) =>\n    console.log(JSON.stringify({ level: 'info', msg, ...meta, ts: Date.now() })),\n};\nlogger.info('user.login', { userId: 42 });",
+        "task": "Crea un logger strutturato in JSON che includa livello, messaggio, metadati e timestamp."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dev_basics_3",
+      "english": "Breakpoint",
+      "set": {
+        "code": "function checkout(cart: Cart) {\n  debugger;\n  return processPayment(cart.total);\n}",
+        "task": "Inserisci un breakpoint inline tramite la parola chiave debugger prima dell'elaborazione del pagamento."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dev_basics_4",
+      "english": "Comment",
+      "set": {
+        "code": "// FIXME: race condition when two requests arrive within 5ms\n// see RFC-0042 for the proposed fix using a mutex\nawait acquireLock(resourceId);",
+        "task": "Aggiungi un commento che spieghi una race condition e referenzi il documento RFC con la soluzione proposta."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dev_basics_4",
+      "english": "Variable Name",
+      "set": {
+        "code": "const isAuthenticated: boolean = checkSession();\nconst maxRetryAttempts: number = 3;\nlet currentUserId: string | null = null;",
+        "task": "Dichiara tre variabili con nomi descrittivi per stato di autenticazione, numero massimo di tentativi e ID utente corrente."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dev_basics_4",
+      "english": "Naming Convention",
+      "set": {
+        "code": "// camelCase for variables/functions\nconst userEmail = 'a@b.com';\n// PascalCase for classes/types\nclass UserAccount {}\n// SCREAMING_SNAKE_CASE for constants\nconst MAX_LOGIN_ATTEMPTS = 5;",
+        "task": "Mostra le convenzioni sui nomi in JavaScript usando camelCase per variabili, PascalCase per classi e SCREAMING_SNAKE_CASE per costanti."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dev_basics_4",
+      "english": "Versioning",
+      "set": {
+        "command": "npm version minor -m 'release: bump to %s with new auth feature'",
+        "task": "Incrementa la versione minor del pacchetto npm aggiungendo un messaggio di commit personalizzato per il versionamento."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dev_basics_4",
+      "english": "Manual",
+      "set": {
+        "command": "git help commit | less",
+        "task": "Apri il manuale ufficiale del comando git commit usando il sistema di help integrato."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_basics",
+      "english": "Repository",
+      "set": {
+        "command": "git clone --depth 1 git@github.com:acme/payments-api.git",
+        "task": "Clona la repository remota tramite SSH con profondita di un solo commit per risparmiare banda."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_basics",
+      "english": "Commit",
+      "set": {
+        "command": "git commit -m \"feat(auth): add SSO login flow\"",
+        "task": "Registra le modifiche staged con un commit convenzionale che descrive l'aggiunta del flusso SSO."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_basics",
+      "english": "Push",
+      "set": {
+        "command": "git push -u origin feature/user-profile",
+        "task": "Esegui il push del branch locale sul remoto origin impostando il tracking upstream."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_basics",
+      "english": "Pull",
+      "set": {
+        "command": "git pull --rebase origin main",
+        "task": "Scarica le ultime modifiche da main e applica i tuoi commit in cima tramite rebase invece del merge."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_basics",
+      "english": "Clone",
+      "set": {
+        "command": "git clone --recurse-submodules git@github.com:acme/monorepo.git",
+        "task": "Clona la repository remota includendo automaticamente tutti i sottomoduli."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_basics",
+      "english": "Add / Stage",
+      "set": {
+        "command": "git add -p src/auth.ts",
+        "task": "Metti in stage solo alcune porzioni del file di autenticazione in modo interattivo per dividere il commit."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_basics",
+      "english": "Status",
+      "set": {
+        "command": "git status --short --branch",
+        "task": "Mostra lo stato del repository in formato compatto con il nome del branch corrente."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_basics",
+      "english": "Diff",
+      "set": {
+        "command": "git diff --staged --stat",
+        "task": "Mostra la diff delle sole modifiche staged con riassunto statistico per file."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_basics",
+      "english": "Remote",
+      "set": {
+        "command": "git remote add upstream git@github.com:acme/main-repo.git",
+        "task": "Aggiungi il repository originale come remoto upstream per poter sincronizzare il tuo fork."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_basics",
+      "english": "Head",
+      "set": {
+        "command": "git log HEAD~5..HEAD --oneline",
+        "task": "Visualizza gli ultimi cinque commit raggiungibili dall'HEAD in formato compatto."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_branch",
+      "english": "Branch",
+      "set": {
+        "command": "git checkout -b feature/user-profile",
+        "task": "Crea un nuovo branch per la funzionalita del profilo utente e spostati subito su di esso."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_branch",
+      "english": "Checkout / Switch",
+      "set": {
+        "command": "git switch feature/user-profile",
+        "task": "Spostati sul branch feature/user-profile usando il comando moderno e piu sicuro di checkout."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_branch",
+      "english": "Merge",
+      "set": {
+        "command": "git merge --no-ff feature/user-profile",
+        "task": "Unisci il branch feature/user-profile nel corrente forzando il commit di merge per preservare la storia del branch."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_branch",
+      "english": "Conflict",
+      "set": {
+        "command": "git diff --name-only --diff-filter=U",
+        "task": "Elenca solo i file in conflitto durante il merge per sapere quali aprire e risolvere."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_branch",
+      "english": "Rebase",
+      "set": {
+        "command": "git rebase -i HEAD~3",
+        "task": "Avvia un rebase interattivo degli ultimi tre commit per riordinarli, schiacciarli o riformularli."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_branch",
+      "english": "Fetch",
+      "set": {
+        "command": "git fetch --all --prune",
+        "task": "Recupera gli aggiornamenti da tutti i remoti rimuovendo i riferimenti ai branch eliminati upstream."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_branch",
+      "english": "git log --oneline",
+      "set": {
+        "command": "git log --oneline --graph --decorate -n 20",
+        "task": "Mostra gli ultimi venti commit in formato compatto con grafo dei branch e decorazioni."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_branch",
+      "english": "Tag",
+      "set": {
+        "command": "git tag -a v1.2.0 -m \"release: v1.2.0 with new SSO support\"",
+        "task": "Crea un tag annotato v1.2.0 con un messaggio descrittivo del rilascio."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_branch",
+      "english": "Stash",
+      "set": {
+        "command": "git stash push -m \"WIP: refactoring auth middleware\" -u",
+        "task": "Metti da parte temporaneamente le modifiche in corso, inclusi i file non tracciati, con un messaggio descrittivo."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_branch",
+      "english": "Blame",
+      "set": {
+        "command": "git blame -L 42,80 src/auth/login.ts",
+        "task": "Identifica l'autore e il commit di ogni riga tra la 42 e la 80 del file di login."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_collab",
+      "english": "Fork",
+      "set": {
+        "command": "gh repo fork acme/payments-api --clone --remote",
+        "task": "Crea un fork della repository remota, clonalo localmente e configura il remoto upstream automaticamente."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_collab",
+      "english": "Pull Request (PR)",
+      "set": {
+        "command": "gh pr create --title \"feat(auth): add SSO login\" --body \"Closes #42\" --reviewer @team/backend",
+        "task": "Apri una pull request con titolo convenzionale, riferimento alla issue chiusa e revisore assegnato."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_collab",
+      "english": "Upstream",
+      "set": {
+        "command": "git remote add upstream git@github.com:acme/main-repo.git && git fetch upstream",
+        "task": "Aggiungi il repository originale come remoto upstream e scarica subito i suoi riferimenti."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_collab",
+      "english": "Issue",
+      "set": {
+        "command": "gh issue create --title \"bug: login fails with empty password\" --label bug,priority:high",
+        "task": "Apri una nuova issue su GitHub con titolo descrittivo ed etichette di bug e priorita alta."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_collab",
+      "english": "Milestone",
+      "set": {
+        "command": "gh issue list --milestone \"v2.0\" --state open",
+        "task": "Elenca tutte le issue aperte associate alla milestone v2.0 per vedere cosa blocca il rilascio."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_workflow",
+      "english": "Cherry-pick",
+      "set": {
+        "command": "git cherry-pick -x a1b2c3d4",
+        "task": "Applica selettivamente il commit a1b2c3d4 sul branch corrente aggiungendo una nota di provenienza."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_workflow",
+      "english": "Squash",
+      "set": {
+        "command": "git merge --squash feature/user-profile && git commit -m \"feat(profile): add user profile page\"",
+        "task": "Unisci tutti i commit del branch feature/user-profile in un singolo commit con messaggio convenzionale."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_workflow",
+      "english": "Revert",
+      "set": {
+        "command": "git revert --no-edit HEAD",
+        "task": "Annulla l'ultimo commit creando un nuovo commit di revert senza aprire l'editor del messaggio."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_workflow",
+      "english": "Reset (Soft/Hard)",
+      "set": {
+        "command": "git reset --soft HEAD~1",
+        "task": "Sposta l'HEAD indietro di un commit mantenendo le modifiche nell'area di stage pronte per essere ricommittate."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_workflow",
+      "english": "Reflog",
+      "set": {
+        "command": "git reflog --date=iso | head -20",
+        "task": "Consulta il reflog con date in formato ISO per ritrovare commit persi dopo un reset accidentale."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_workflow",
+      "english": "Patch",
+      "set": {
+        "command": "git format-patch -1 HEAD --output-directory ./patches",
+        "task": "Genera un file di patch per l'ultimo commit salvandolo nella cartella ./patches per la condivisione via email."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_workflow",
+      "english": "Bisect",
+      "set": {
+        "command": "git bisect start HEAD v1.0.0",
+        "task": "Avvia una sessione di bisect dichiarando HEAD come commit difettoso e v1.0.0 come commit sicuramente funzionante."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_workflow",
+      "english": "Submodule",
+      "set": {
+        "command": "git submodule add git@github.com:acme/shared-utils.git libs/shared",
+        "task": "Aggiungi la libreria condivisa come sottomodulo Git nella cartella libs/shared."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_workflow",
+      "english": "Origin",
+      "set": {
+        "command": "git remote set-url origin git@github.com:acme/payments-api.git",
+        "task": "Aggiorna l'URL del remoto origin per puntare al nuovo repository SSH dell'organizzazione."
+      }
+    }
+  ]
+}

@@ -1,0 +1,544 @@
+{
+  "fixes": [
+    {
+      "level": "6",
+      "lesson": "py_comprehension",
+      "english": "Nested List Comprehension",
+      "set": {
+        "code": "flat = [c for row in matrix for c in row]",
+        "task": "Appiattisci una matrice 2D in una sola lista con una comprehension annidata, senza scrivere due cicli for espliciti."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_comprehension",
+      "english": "Set Comprehension",
+      "set": {
+        "code": "unique = {ch.lower() for ch in text if ch.isalpha()}",
+        "task": "Costruisci un insieme di caratteri alfabetici unici da una stringa usando una set comprehension con filtro."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_comprehension",
+      "english": "Generator Expression",
+      "set": {
+        "code": "total = sum(x * x for x in range(1_000_000))",
+        "task": "Calcola la somma dei quadrati del primo milione di interi con un'espressione generatore, evitando di materializzare la lista in memoria."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_comprehension",
+      "english": "Nested Comprehension",
+      "set": {
+        "code": "transposed = [[row[i] for row in matrix] for i in range(len(matrix[0]))]",
+        "task": "Traspone una matrice quadrata usando una comprehension annidata, scambiando righe e colonne."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_comprehension",
+      "english": "Filtering (in Comprehension)",
+      "set": {
+        "code": "evens = [x for x in numbers if x % 2 == 0]",
+        "task": "Filtra solo i numeri pari da una lista usando la clausola if di una list comprehension."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_comprehension",
+      "english": "Conditional Expression",
+      "set": {
+        "code": "labels = ['even' if x % 2 == 0 else 'odd' for x in nums]",
+        "task": "Etichetta ogni numero come 'even' o 'odd' usando un'espressione condizionale ternaria dentro una comprehension."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_comprehension",
+      "english": "Inline For-Loop",
+      "set": {
+        "code": "squares = [x * x for x in range(10)]",
+        "task": "Genera la lista dei quadrati da 0 a 9 con un ciclo for in linea, senza usare append in un ciclo esplicito."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_generators",
+      "english": "Generator",
+      "set": {
+        "code": "def read_lines(path):\n    with open(path) as f:\n        for line in f:\n            yield line.rstrip()",
+        "task": "Definisci un generatore che legge un file riga per riga, evitando di caricare l'intero contenuto in memoria."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_generators",
+      "english": "Yield (Keyword)",
+      "set": {
+        "code": "def countdown(n):\n    while n > 0:\n        yield n\n        n -= 1",
+        "task": "Definisci una funzione generatrice che usa yield per emettere un conto alla rovescia mantenendo lo stato tra una chiamata e l'altra."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_generators",
+      "english": "Iterator",
+      "set": {
+        "code": "it = iter([10, 20, 30])\nprint(next(it))\nprint(next(it))",
+        "task": "Ottieni l'iteratore di una lista con iter() e avanza manualmente con next() per consumare un elemento alla volta."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_generators",
+      "english": "Iterable",
+      "set": {
+        "code": "class Counter:\n    def __init__(self, n): self.n = n\n    def __iter__(self):\n        for i in range(self.n): yield i",
+        "task": "Rendi una classe personalizzata iterabile implementando __iter__ in modo da poterla usare in un ciclo for."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_generators",
+      "english": "Next (function)",
+      "set": {
+        "code": "first_match = next((u for u in users if u.is_admin), None)",
+        "task": "Recupera il primo elemento che soddisfa una condizione da un generatore usando next() con un valore di default per evitare StopIteration."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_generators",
+      "english": "StopIteration",
+      "set": {
+        "code": "it = iter([1, 2])\ntry:\n    while True: print(next(it))\nexcept StopIteration:\n    pass",
+        "task": "Itera manualmente con next() e cattura StopIteration per terminare il ciclo quando l'iteratore è esaurito."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_generators",
+      "english": "Lazy Evaluation",
+      "set": {
+        "code": "squares = (x * x for x in range(10**9))\nfirst_ten = [next(squares) for _ in range(10)]",
+        "task": "Sfrutta la valutazione pigra di un'espressione generatore per estrarre solo i primi dieci quadrati da un range enorme, senza calcolare il resto."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_generators",
+      "english": "State Retention",
+      "set": {
+        "code": "def running_total():\n    total = 0\n    while True:\n        x = yield total\n        total += x",
+        "task": "Definisci un generatore che mantiene lo stato (somma corrente) tra una yield e l'altra ricevendo nuovi valori tramite send()."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_functional",
+      "english": "Itertools (module)",
+      "set": {
+        "code": "import itertools\nfor i, val in enumerate(itertools.count(10, 2)):\n    if i == 5: break\n    print(val)",
+        "task": "Importa itertools e usa count() per generare una sequenza infinita di numeri pari a partire da 10, interrompendoti dopo cinque elementi."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_functional",
+      "english": "Operator (module)",
+      "set": {
+        "code": "from operator import itemgetter\nsorted_users = sorted(users, key=itemgetter('age'))",
+        "task": "Ordina una lista di dizionari per una chiave usando operator.itemgetter, evitando di scrivere una lambda manuale."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_functional",
+      "english": "Itertools.chain",
+      "set": {
+        "code": "from itertools import chain\nall_items = list(chain(list_a, list_b, list_c))",
+        "task": "Concatena tre liste in un unico iterabile con itertools.chain, senza creare copie intermedie con l'operatore +."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_functional",
+      "english": "Itertools.cycle",
+      "set": {
+        "code": "from itertools import cycle\ncolors = cycle(['red', 'green', 'blue'])\nrow_colors = [next(colors) for _ in rows]",
+        "task": "Assegna a ogni riga di una tabella un colore alternato in modo ciclico usando itertools.cycle per ruotare tra tre valori."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_functional",
+      "english": "Itertools.groupby",
+      "set": {
+        "code": "from itertools import groupby\ndata.sort(key=lambda r: r['city'])\nfor city, rows in groupby(data, key=lambda r: r['city']):\n    print(city, list(rows))",
+        "task": "Raggruppa righe per città con itertools.groupby, ricordando di ordinare prima i dati perché groupby raggruppa solo elementi consecutivi."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_functional",
+      "english": "Functools.wraps",
+      "set": {
+        "code": "from functools import wraps\ndef log(fn):\n    @wraps(fn)\n    def wrapper(*a, **kw): return fn(*a, **kw)\n    return wrapper",
+        "task": "Scrivi un decoratore che usa functools.wraps per preservare nome e docstring della funzione originale, mantenendo introspezione corretta."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_functional",
+      "english": "Itertools.product",
+      "set": {
+        "code": "from itertools import product\ngrid = list(product(range(3), repeat=2))",
+        "task": "Genera tutte le coordinate di una griglia 3x3 con itertools.product, evitando due cicli for annidati."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_collections",
+      "english": "Collections (module)",
+      "set": {
+        "code": "from collections import Counter, defaultdict, namedtuple",
+        "task": "Importa dal modulo collections i contenitori specializzati (Counter, defaultdict, namedtuple) che useremo per modellare i dati."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_collections",
+      "english": "Defaultdict",
+      "set": {
+        "code": "from collections import defaultdict\ngroups = defaultdict(list)\nfor name, team in pairs:\n    groups[team].append(name)",
+        "task": "Raggruppa nomi per squadra con un defaultdict(list), evitando di controllare ogni volta se la chiave esiste prima di fare append."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_collections",
+      "english": "Deque (Double-ended queue)",
+      "set": {
+        "code": "from collections import deque\nrecent = deque(maxlen=5)\nfor event in stream:\n    recent.append(event)",
+        "task": "Mantieni una finestra scorrevole degli ultimi cinque eventi con una deque a lunghezza massima, sfruttando l'append O(1) a entrambi i lati."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_collections",
+      "english": "OrderedDict",
+      "set": {
+        "code": "from collections import OrderedDict\ncache = OrderedDict()\ncache['a'] = 1\ncache.move_to_end('a')",
+        "task": "Usa un OrderedDict per implementare una cache LRU sfruttando move_to_end per portare in coda la chiave appena acceduta."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_collections",
+      "english": "ChainMap",
+      "set": {
+        "code": "from collections import ChainMap\nsettings = ChainMap(cli_args, env_vars, defaults)\nprint(settings['debug'])",
+        "task": "Componi una configurazione a strati (CLI, environment, default) con ChainMap, lasciando che la priorità venga risolta dall'ordine delle mappe."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_collections",
+      "english": "UserDict / UserList",
+      "set": {
+        "code": "from collections import UserDict\nclass LowercaseDict(UserDict):\n    def __setitem__(self, key, value):\n        super().__setitem__(key.lower(), value)",
+        "task": "Crea un dizionario personalizzato che normalizza le chiavi in minuscolo ereditando da UserDict invece di sottoclassare direttamente dict."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_collections",
+      "english": "MappingProxyType",
+      "set": {
+        "code": "from types import MappingProxyType\nCONFIG = MappingProxyType({'debug': False, 'host': 'localhost'})",
+        "task": "Esponi un dizionario di configurazione come vista read-only con MappingProxyType, per impedire modifiche accidentali da altre parti del codice."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_collections",
+      "english": "Container Types",
+      "set": {
+        "code": "from collections.abc import Mapping, Sequence\ndef summarize(data):\n    if isinstance(data, Mapping): return len(data.keys())\n    if isinstance(data, Sequence): return len(data)",
+        "task": "Distingui tra mapping e sequence con isinstance() sulle ABC di collections.abc, invece di controllare tipi concreti come dict o list."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_exceptions",
+      "english": "Built-in Exception",
+      "set": {
+        "code": "try:\n    n = int(user_input)\nexcept ValueError:\n    n = 0",
+        "task": "Cattura l'eccezione integrata ValueError quando converti un input utente in intero, restituendo zero come fallback sicuro."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_exceptions",
+      "english": "Try Block",
+      "set": {
+        "code": "try:\n    data = json.loads(payload)\nexcept json.JSONDecodeError:\n    data = {}",
+        "task": "Avvolgi in un blocco try la decodifica di un payload JSON, così un input malformato non manda in crash l'intero programma."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_exceptions",
+      "english": "Except Clause",
+      "set": {
+        "code": "try:\n    config = open('config.yml')\nexcept FileNotFoundError:\n    config = open('default.yml')",
+        "task": "Cattura specificamente FileNotFoundError con una clausola except per ricadere su un file di configurazione di default."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_exceptions",
+      "english": "Finally Clause",
+      "set": {
+        "code": "conn = db.connect()\ntry:\n    conn.execute(query)\nfinally:\n    conn.close()",
+        "task": "Garantisci la chiusura della connessione al database in un blocco finally, indipendentemente dal successo o fallimento della query."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_exceptions",
+      "english": "Else Clause (try)",
+      "set": {
+        "code": "try:\n    user = repo.get(user_id)\nexcept NotFound:\n    logger.warning('missing')\nelse:\n    audit.log(user)",
+        "task": "Esegui l'auditing del recupero utente nella clausola else del try, in modo che venga loggato solo quando non è stata sollevata alcuna eccezione."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_exceptions",
+      "english": "ValueError",
+      "set": {
+        "code": "def set_age(value):\n    if value < 0:\n        raise ValueError('age must be non-negative')",
+        "task": "Solleva ValueError quando un argomento ha il valore semanticamente sbagliato, come un'età negativa, segnalando chiaramente il problema al chiamante."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_exceptions",
+      "english": "TypeError",
+      "set": {
+        "code": "def add(a, b):\n    if not isinstance(a, (int, float)):\n        raise TypeError('a must be numeric')\n    return a + b",
+        "task": "Solleva TypeError quando un argomento ha il tipo sbagliato, in modo che il chiamante capisca subito che il problema è di tipo e non di valore."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_exceptions",
+      "english": "Catch-all Exception",
+      "set": {
+        "code": "try:\n    do_work()\nexcept (ValueError, KeyError) as e:\n    logger.warning('expected error: %s', e)\nexcept Exception:\n    logger.exception('unexpected')\n    raise",
+        "task": "Cattura prima le eccezioni specifiche e solo dopo Exception come ultima rete, rilanciandola per non nascondere i bug imprevisti."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_exceptions",
+      "english": "Exception Instance",
+      "set": {
+        "code": "try:\n    parse(payload)\nexcept ValueError as e:\n    logger.error('parse failed: %s', e)",
+        "task": "Lega l'istanza dell'eccezione a una variabile con 'as e' per poter loggare il messaggio originale dell'errore."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_custom_exc",
+      "english": "Custom Exception",
+      "set": {
+        "code": "class PaymentDeclined(Exception):\n    pass",
+        "task": "Definisci un'eccezione personalizzata per un errore di dominio (pagamento rifiutato) ereditando direttamente da Exception."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_custom_exc",
+      "english": "Exception Hierarchy",
+      "set": {
+        "code": "class AppError(Exception): pass\nclass DBError(AppError): pass\nclass NotFound(DBError): pass",
+        "task": "Costruisci una gerarchia di eccezioni con una classe base di applicazione e sotto-classi più specifiche, così i chiamanti possono catturare al livello che preferiscono."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_custom_exc",
+      "english": "Raising Custom Exceptions",
+      "set": {
+        "code": "if balance < amount:\n    raise InsufficientFunds(f'need {amount}, have {balance}')",
+        "task": "Solleva un'eccezione custom con un messaggio descrittivo che mostra i valori reali, in modo che il chiamante capisca esattamente cosa è andato storto."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_custom_exc",
+      "english": "__str__ (in Exceptions)",
+      "set": {
+        "code": "class HttpError(Exception):\n    def __init__(self, status, url):\n        self.status, self.url = status, url\n    def __str__(self):\n        return f'HTTP {self.status} on {self.url}'",
+        "task": "Sovrascrivi __str__ in un'eccezione custom per produrre un messaggio di errore leggibile che combina stato HTTP e URL."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_custom_exc",
+      "english": "Specificity",
+      "set": {
+        "code": "try:\n    parse(payload)\nexcept ValueError:\n    handle_bad_input()\nexcept Exception:\n    handle_unknown()",
+        "task": "Cattura prima l'eccezione più specifica (ValueError) e solo dopo quella generica, altrimenti il blocco specifico non verrà mai eseguito."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_custom_exc",
+      "english": "Grouping Exceptions",
+      "set": {
+        "code": "try:\n    load_config()\nexcept (FileNotFoundError, PermissionError, IsADirectoryError):\n    config = DEFAULTS",
+        "task": "Raggruppa eccezioni correlate in una sola clausola except usando una tupla, evitando di duplicare la stessa logica di recupero."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_custom_exc",
+      "english": "User-defined Error",
+      "set": {
+        "code": "class DomainError(Exception): pass\nclass UserError(DomainError): pass\nclass OrderError(DomainError): pass",
+        "task": "Crea una gerarchia di errori definiti dall'utente per il tuo dominio, così diversi livelli dell'applicazione possono gestirli con precisione."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_custom_exc",
+      "english": "Assertions (vs Exceptions)",
+      "set": {
+        "code": "def average(values):\n    assert len(values) > 0, 'internal: empty list not expected here'\n    return sum(values) / len(values)",
+        "task": "Usa un'asserzione per un invariante interno della funzione, non per validare input utente, sapendo che con il flag -O verrà rimossa."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_logging",
+      "english": "Logging (module)",
+      "set": {
+        "code": "import logging\nlogging.basicConfig(level=logging.INFO)\nlogging.info('app started')",
+        "task": "Configura il modulo logging con basicConfig e registra un messaggio INFO, sostituendo print() per output adatto alla produzione."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_logging",
+      "english": "Log Level",
+      "set": {
+        "code": "logger.setLevel(logging.WARNING)\nlogger.debug('ignored')\nlogger.warning('shown')",
+        "task": "Imposta il livello di log a WARNING in modo che i messaggi DEBUG vengano filtrati e solo gli avvisi e gli errori arrivino all'output."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_logging",
+      "english": "Handler (Logging)",
+      "set": {
+        "code": "import logging\nfh = logging.FileHandler('app.log')\nfh.setLevel(logging.ERROR)\nlogging.getLogger().addHandler(fh)",
+        "task": "Aggiungi un FileHandler al root logger così tutti gli errori vengano scritti su file, senza dover modificare le chiamate di log esistenti."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_logging",
+      "english": "Formatter (Logging)",
+      "set": {
+        "code": "import logging\nfmt = logging.Formatter('%(asctime)s [%(levelname)s] %(name)s: %(message)s')\nhandler.setFormatter(fmt)",
+        "task": "Configura un Formatter che includa timestamp, livello e nome del logger nel messaggio, per rendere i log più leggibili in produzione."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_logging",
+      "english": "Breakpoint",
+      "set": {
+        "code": "def process(order):\n    total = compute(order)\n    breakpoint()\n    return total",
+        "task": "Inserisci una chiamata a breakpoint() prima del return per fermare l'esecuzione e ispezionare le variabili locali nel debugger."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_logging",
+      "english": "Assert Statement",
+      "set": {
+        "code": "def divide(a, b):\n    assert b != 0, 'divisor must be non-zero'\n    return a / b",
+        "task": "Aggiungi un'istruzione assert per individuare precocemente errori logici durante lo sviluppo, ricordando che viene rimossa con il flag -O."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_logging",
+      "english": "Traceback (module)",
+      "set": {
+        "code": "import traceback\ntry:\n    risky()\nexcept Exception:\n    logger.error('failure:\\n%s', traceback.format_exc())",
+        "task": "Cattura il traceback completo come stringa con traceback.format_exc() e inviarlo al logger, invece di lasciarlo stampare a stderr."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_context",
+      "english": "Context Manager",
+      "set": {
+        "code": "with open('data.csv') as f:\n    rows = list(csv.reader(f))",
+        "task": "Apri un file dentro un context manager con 'with' così la chiusura della risorsa avviene automaticamente anche in caso di errore."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_context",
+      "english": "With Statement",
+      "set": {
+        "code": "with open('out.txt', 'w') as f:\n    f.write('hello')",
+        "task": "Scrivi su un file usando un'istruzione with, lasciando che il blocco gestisca apertura, eccezioni e chiusura della risorsa."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_context",
+      "english": "__enter__ (Method)",
+      "set": {
+        "code": "class Timer:\n    def __enter__(self):\n        self.start = time.time()\n        return self\n    def __exit__(self, *exc):\n        self.elapsed = time.time() - self.start",
+        "task": "Implementa il metodo __enter__ di un context manager che cronometra un blocco di codice, restituendo self per essere usato dopo 'as'."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_context",
+      "english": "__exit__ (Method)",
+      "set": {
+        "code": "class Transaction:\n    def __enter__(self): return self\n    def __exit__(self, exc_type, exc, tb):\n        if exc_type: self.rollback()\n        else: self.commit()",
+        "task": "Implementa __exit__ in modo che esegua commit in uscita normale e rollback se è stata sollevata un'eccezione, ricevuta tramite exc_type."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_context",
+      "english": "Contextlib (module)",
+      "set": {
+        "code": "from contextlib import suppress\nwith suppress(FileNotFoundError):\n    os.remove('tmp.log')",
+        "task": "Usa contextlib.suppress per ignorare un'eccezione specifica durante una cancellazione opportunistica, senza un try/except vuoto esplicito."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_context",
+      "english": "Contextlib.closing",
+      "set": {
+        "code": "from contextlib import closing\nfrom urllib.request import urlopen\nwith closing(urlopen('http://example.com')) as page:\n    body = page.read()",
+        "task": "Avvolgi un oggetto che ha solo close() ma non supporta nativamente il protocollo with usando contextlib.closing, per ottenere chiusura automatica."
+      }
+    }
+  ]
+}

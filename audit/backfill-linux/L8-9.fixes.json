@@ -1,0 +1,688 @@
+{
+  "fixes": [
+    {
+      "level": "8",
+      "lesson": "linux_regex",
+      "english": "Regex",
+      "set": {
+        "command": "grep -E \"^[a-z]+@[a-z]+\\.com$\" emails.txt",
+        "task": "Filtra il file degli indirizzi e mostra solo le righe che contengono email valide in formato letterealfanumerico@dominio.com."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_regex",
+      "english": "Regex Pattern",
+      "set": {
+        "command": "grep -E '^ERROR.*timeout$' /var/log/app.log",
+        "task": "Estrai dal log dell'applicazione tutte le righe che iniziano con ERROR e terminano con timeout per individuare i fallimenti di connessione."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_regex",
+      "english": "Anchor",
+      "set": {
+        "command": "grep -E '^WARN' /var/log/syslog",
+        "task": "Mostra solo le righe del syslog che iniziano esattamente con la parola WARN usando un'ancora di inizio riga."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_regex",
+      "english": "Character Class",
+      "set": {
+        "command": "grep -E '[0-9]{3}' access.log",
+        "task": "Isola dal log di accesso le righe che contengono almeno tre cifre consecutive sfruttando una classe di caratteri."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_regex",
+      "english": "Quantifier",
+      "set": {
+        "command": "grep -E 'a.*b' notes.txt",
+        "task": "Trova le righe di notes.txt che contengono una 'a' seguita prima o poi da una 'b' usando il quantificatore greedy '.*'."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_regex",
+      "english": "Escape",
+      "set": {
+        "command": "grep '\\.txt$' filelist.txt",
+        "task": "Elenca solo i nomi di file che terminano con l'estensione .txt facendo l'escape del punto per evitare di interpretarlo come metacarattere."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_regex",
+      "english": "Regex Capture Group",
+      "set": {
+        "command": "sed -E 's/([a-z]+)@([a-z.]+)/\\1 at \\2/g' emails.txt",
+        "task": "Riscrivi ogni email del file in forma 'utente at dominio' catturando in due gruppi la parte locale e quella del dominio."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_regex",
+      "english": "Match",
+      "set": {
+        "command": "grep -c 'timeout' /var/log/app.log",
+        "task": "Conta quante corrispondenze della parola timeout sono presenti nel log dell'applicazione per stimare la frequenza degli errori."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_regex",
+      "english": "egrep / grep -E",
+      "set": {
+        "command": "egrep '(error|warn|fatal)' /var/log/syslog",
+        "task": "Filtra dal syslog tutte le righe che contengono almeno una tra error, warn o fatal usando l'alternanza in regex estesa."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_regex",
+      "english": "Extended",
+      "set": {
+        "command": "grep -E '(foo|bar)+' file.txt",
+        "task": "Attiva la modalita' regex estesa per cercare in file.txt sequenze ripetute di 'foo' o 'bar' senza dover fare escape della pipe."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_encoding",
+      "english": "Encoding",
+      "set": {
+        "command": "file -i report.csv",
+        "task": "Verifica la codifica del file report.csv prima di importarlo nel database per evitare caratteri illeggibili."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_encoding",
+      "english": "ASCII",
+      "set": {
+        "command": "iconv -f UTF-8 -t ASCII//TRANSLIT -o ascii.txt utf8.txt",
+        "task": "Converti il file utf8.txt in puro ASCII traslitterando i caratteri accentati per renderlo compatibile con un sistema legacy."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_encoding",
+      "english": "UTF-8",
+      "set": {
+        "command": "iconv -f ISO-8859-1 -t UTF-8 legacy.csv -o utf8.csv",
+        "task": "Trasforma legacy.csv da ISO-8859-1 a UTF-8 prima di darlo in pasto al pipeline di analisi dati."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_encoding",
+      "english": "Binary",
+      "set": {
+        "command": "file /usr/bin/ls && xxd /usr/bin/ls | head -20",
+        "task": "Verifica che /usr/bin/ls sia un eseguibile binario ELF e ispeziona i primi byte in esadecimale per controllarne l'header."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_encoding",
+      "english": "Convert",
+      "set": {
+        "command": "iconv -f ISO-8859-1 -t UTF-8 input.csv -o output.csv",
+        "task": "Converti il CSV proveniente da un sistema legacy in UTF-8 cosi' le accentate restino leggibili negli strumenti moderni."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_encoding",
+      "english": "Base64",
+      "set": {
+        "command": "base64 image.png > image.b64",
+        "task": "Codifica in base64 l'immagine image.png cosi' la puoi includere come stringa di testo in un payload JSON."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_encoding",
+      "english": "Decode",
+      "set": {
+        "command": "echo \"$TOKEN\" | base64 -d",
+        "task": "Decodifica il token base64 contenuto nella variabile d'ambiente per ispezionarne il contenuto originale durante il debug."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_encoding",
+      "english": "Hex",
+      "set": {
+        "command": "xxd suspicious.bin | head -40",
+        "task": "Mostra in formato esadecimale i primi byte di suspicious.bin per identificare il magic number e i caratteri di controllo nascosti."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_encoding",
+      "english": "Charset",
+      "set": {
+        "command": "file -bi document.txt",
+        "task": "Stampa il MIME type e il charset del file document.txt per scoprire quale set di caratteri usa davvero."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_encoding",
+      "english": "Newline",
+      "set": {
+        "command": "dos2unix script.sh",
+        "task": "Normalizza i fine riga di script.sh da formato Windows (CRLF) a formato Unix (LF) per evitare errori di esecuzione su Linux."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_streams",
+      "english": "Stream Redirection",
+      "set": {
+        "command": "./long_job.sh > job.log 2>&1",
+        "task": "Avvia long_job.sh redirigendo sia stdout sia stderr in un unico file job.log per conservare l'intero output del processo."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_streams",
+      "english": "Pipe",
+      "set": {
+        "command": "ps aux | grep nginx | awk '{print $2}'",
+        "task": "Estrai i PID di tutti i processi nginx in esecuzione concatenando ps, grep e awk via pipe."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_streams",
+      "english": "Tee",
+      "set": {
+        "command": "make 2>&1 | tee build.log",
+        "task": "Esegui make mostrando l'output a schermo e salvandolo contemporaneamente in build.log per una revisione successiva."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_streams",
+      "english": "Xargs",
+      "set": {
+        "command": "find . -name '*.tmp' -print0 | xargs -0 rm -v",
+        "task": "Trova tutti i file temporanei .tmp sotto la directory corrente e cancellali in blocco usando xargs per superare il limite di lunghezza argomenti."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_streams",
+      "english": "Named Pipe",
+      "set": {
+        "command": "mkfifo /tmp/datapipe && cat /tmp/datapipe &",
+        "task": "Crea una pipe nominata in /tmp/datapipe per permettere a due processi indipendenti di scambiarsi dati senza file temporanei."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_streams",
+      "english": "Process Substitution",
+      "set": {
+        "command": "diff <(ls /etc) <(ls /etc.bak)",
+        "task": "Confronta al volo il contenuto di due directory tramite sostituzione di processo, senza creare file temporanei intermedi."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_streams",
+      "english": "File Descriptor",
+      "set": {
+        "command": "exec 3< /etc/hosts && read -u 3 line && echo \"$line\"",
+        "task": "Apri /etc/hosts su un descrittore di file dedicato (il numero 3) e leggi la prima riga da quel canale per gestire piu' flussi in parallelo."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_streams",
+      "english": "Standard Error",
+      "set": {
+        "command": "./deploy.sh 2> errors.log",
+        "task": "Esegui lo script di deploy separando lo standard error in errors.log cosi' i messaggi di errore restano isolati dall'output normale."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_streams",
+      "english": "Here Doc",
+      "set": {
+        "command": "mysql -u admin -p mydb <<EOF\nSELECT count(*) FROM users;\nEOF",
+        "task": "Lancia una query SQL multi-riga su MySQL incorporandola in uno here document direttamente nello script bash."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_logs",
+      "english": "Log Entry",
+      "set": {
+        "command": "journalctl -n 50 --no-pager",
+        "task": "Mostra le ultime cinquanta voci di log del journal di sistema per avere un colpo d'occhio rapido sugli eventi recenti."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_logs",
+      "english": "Syslog",
+      "set": {
+        "command": "sudo tail -f /var/log/syslog",
+        "task": "Segui in tempo reale il flusso del syslog per osservare gli eventi di sistema mentre stai diagnosticando un problema."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_logs",
+      "english": "Journal",
+      "set": {
+        "command": "journalctl -u nginx --since today",
+        "task": "Estrai dal journal di systemd tutti gli eventi del servizio nginx generati oggi per triare un'interruzione del giorno."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_logs",
+      "english": "Rotate",
+      "set": {
+        "command": "sudo logrotate -d /etc/logrotate.conf",
+        "task": "Esegui logrotate in modalita' dry-run per verificare quali file di log verrebbero ruotati senza applicare modifiche."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_logs",
+      "english": "Auth",
+      "set": {
+        "command": "sudo tail -f /var/log/auth.log",
+        "task": "Monitora in tempo reale il log di autenticazione per individuare tentativi di login sospetti mentre stanno avvenendo."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_logs",
+      "english": "Kernel Log",
+      "set": {
+        "command": "sudo dmesg -wH",
+        "task": "Segui in modalita' human-readable il log del kernel per intercettare in diretta eventi hardware come collegamenti USB o OOM kill."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_logs",
+      "english": "Debug Log",
+      "set": {
+        "command": "journalctl -p debug -u myservice --since today",
+        "task": "Aumenta il livello di dettaglio dei log a debug per il servizio myservice e analizza tutti gli eventi diagnostici di oggi."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_logs",
+      "english": "Audit",
+      "set": {
+        "command": "sudo ausearch -k user_modify -ts today",
+        "task": "Interroga il registro di audit per estrarre tutti gli eventi etichettati come user_modify avvenuti nella giornata corrente."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_logs",
+      "english": "Log Tail",
+      "set": {
+        "command": "tail -F /var/log/syslog",
+        "task": "Tieni aperto il tail del syslog seguendolo anche dopo la rotazione dei file cosi' non perdi nessun evento in arrivo."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_firewall",
+      "english": "Linux Firewall",
+      "set": {
+        "command": "sudo ufw status verbose",
+        "task": "Mostra lo stato dettagliato del firewall ufw per verificare quali porte sono aperte e qual e' la policy predefinita."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_firewall",
+      "english": "Rule",
+      "set": {
+        "command": "sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT",
+        "task": "Aggiungi una regola iptables che accetti il traffico TCP in ingresso sulla porta 22 per consentire le connessioni SSH."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_firewall",
+      "english": "Allow",
+      "set": {
+        "command": "sudo ufw allow 443/tcp",
+        "task": "Apri la porta 443 in TCP nel firewall ufw per consentire il traffico HTTPS in ingresso verso il web server."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_firewall",
+      "english": "Deny",
+      "set": {
+        "command": "sudo ufw deny 23/tcp",
+        "task": "Blocca esplicitamente la porta 23 del telnet con ufw per impedire connessioni in chiaro non sicure verso il server."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_firewall",
+      "english": "Table",
+      "set": {
+        "command": "sudo iptables -t nat -L -n -v",
+        "task": "Elenca tutte le regole della tabella nat di iptables con statistiche numeriche per analizzare il NAT attivo sul server."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_firewall",
+      "english": "Chain",
+      "set": {
+        "command": "sudo iptables -L INPUT -n -v --line-numbers",
+        "task": "Stampa numerate tutte le regole della catena INPUT cosi' puoi individuare facilmente la regola da rimuovere o riordinare."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_firewall",
+      "english": "Policy",
+      "set": {
+        "command": "sudo iptables -P INPUT DROP",
+        "task": "Imposta la policy predefinita della catena INPUT su DROP per scartare ogni traffico non esplicitamente consentito."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_firewall",
+      "english": "Stateful",
+      "set": {
+        "command": "sudo iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT",
+        "task": "Configura una regola stateful che accetti automaticamente i pacchetti delle connessioni gia' stabilite o ad esse correlate."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_firewall",
+      "english": "Zone",
+      "set": {
+        "command": "sudo firewall-cmd --get-active-zones",
+        "task": "Mostra le zone firewalld attive e le interfacce associate per capire come il traffico viene segregato a livello di rete."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_firewall",
+      "english": "Flush",
+      "set": {
+        "command": "sudo iptables -F && sudo iptables -X",
+        "task": "Svuota tutte le regole di iptables e cancella le catene utente per ripartire da uno stato pulito prima di caricare un nuovo ruleset."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_crypto",
+      "english": "Encrypt",
+      "set": {
+        "command": "gpg --symmetric --cipher-algo AES256 backup.tar.gz",
+        "task": "Cifra il backup backup.tar.gz con AES-256 prima di caricarlo sullo storage cloud per proteggere i dati sensibili dei clienti."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_crypto",
+      "english": "Decrypt",
+      "set": {
+        "command": "gpg --decrypt backup.tar.gz.gpg > backup.tar.gz",
+        "task": "Decifra l'archivio backup.tar.gz.gpg usando la tua chiave privata per ripristinare il contenuto originale del backup."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_crypto",
+      "english": "Keys",
+      "set": {
+        "command": "ssh-keygen -t ed25519 -C \"user@server\" -f ~/.ssh/id_ed25519",
+        "task": "Genera una coppia di chiavi SSH ed25519 etichettata con il tuo identificativo da usare per l'autenticazione senza password."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_crypto",
+      "english": "Hash",
+      "set": {
+        "command": "sha256sum ubuntu.iso",
+        "task": "Calcola l'hash SHA-256 dell'immagine ISO scaricata e confrontalo con il checksum pubblicato per verificarne l'integrita'."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_crypto",
+      "english": "Signature",
+      "set": {
+        "command": "gpg --verify package.tar.gz.sig package.tar.gz",
+        "task": "Verifica la firma digitale di package.tar.gz contro il file .sig per assicurarti che provenga da una fonte fidata e non sia stato manomesso."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_crypto",
+      "english": "Certificate",
+      "set": {
+        "command": "openssl req -new -x509 -days 365 -nodes -out cert.pem -keyout key.pem",
+        "task": "Genera un certificato X.509 autofirmato valido un anno insieme alla relativa chiave privata per uso interno di sviluppo."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_crypto",
+      "english": "Cipher",
+      "set": {
+        "command": "openssl ciphers -v 'HIGH:!aNULL:!MD5'",
+        "task": "Elenca con dettagli tutte le suite di cifrari forti supportate da OpenSSL escludendo quelle senza autenticazione e quelle con MD5."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_crypto",
+      "english": "Symmetric",
+      "set": {
+        "command": "openssl enc -aes-256-cbc -salt -in plain.txt -out plain.enc",
+        "task": "Cifra plain.txt in modo simmetrico con AES-256-CBC e un sale casuale, usando la stessa passphrase per cifrare e decifrare."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_crypto",
+      "english": "Asymmetric",
+      "set": {
+        "command": "openssl genrsa -out private.pem 4096 && openssl rsa -in private.pem -pubout -out public.pem",
+        "task": "Genera una coppia RSA asimmetrica a 4096 bit, salvando la chiave privata e derivando quella pubblica per cifratura e firma."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_crypto",
+      "english": "Entropy",
+      "set": {
+        "command": "cat /proc/sys/kernel/random/entropy_avail",
+        "task": "Controlla quanti bit di entropia sono disponibili nel pool del kernel prima di generare chiavi crittografiche su un server appena avviato."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_access",
+      "english": "Sudoers",
+      "set": {
+        "command": "sudo visudo",
+        "task": "Modifica il file /etc/sudoers tramite visudo, che valida la sintassi prima di salvare per evitare di bloccarti fuori dal sistema."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_access",
+      "english": "Privilege",
+      "set": {
+        "command": "sudo -l -U alice",
+        "task": "Elenca i comandi privilegiati che l'utente alice puo' eseguire via sudo per verificare il rispetto del principio del minimo privilegio."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_access",
+      "english": "Escalate",
+      "set": {
+        "command": "sudo -i",
+        "task": "Effettua un'escalation a una shell di root con ambiente di login completo per eseguire una serie di operazioni amministrative."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_access",
+      "english": "PAM",
+      "set": {
+        "command": "sudo cat /etc/pam.d/sshd",
+        "task": "Ispeziona la pila di moduli PAM configurata per il servizio sshd per capire come viene autenticato l'accesso SSH."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_access",
+      "english": "Chroot",
+      "set": {
+        "command": "sudo chroot /mnt/recovery /bin/bash",
+        "task": "Entra in una jail chroot sulla partizione di ripristino per riparare un sistema rotto senza esporre il filesystem dell'host."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_access",
+      "english": "Lock",
+      "set": {
+        "command": "sudo passwd -l alice",
+        "task": "Blocca l'account dell'utente alice subito dopo le sue dimissioni per impedire qualsiasi futuro accesso al sistema."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_access",
+      "english": "Expiration",
+      "set": {
+        "command": "sudo chage -M 90 -W 7 alice",
+        "task": "Imposta la scadenza della password di alice a novanta giorni con avviso una settimana prima per forzare un cambio periodico."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_access",
+      "english": "Sudo Audit",
+      "set": {
+        "command": "sudo grep 'COMMAND=' /var/log/auth.log | tail -50",
+        "task": "Esegui un audit di sudo estraendo dal log di auth gli ultimi cinquanta comandi privilegiati eseguiti dagli utenti."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_access",
+      "english": "Restricted",
+      "set": {
+        "command": "sudo usermod -s /bin/rbash alice",
+        "task": "Assegna ad alice una shell ristretta rbash per impedirle di eseguire comandi arbitrari pur lasciandole accesso al sistema."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_access",
+      "english": "Compliance",
+      "set": {
+        "command": "sudo lynis audit system",
+        "task": "Lancia una scansione di compliance con Lynis per confrontare la configurazione del sistema contro i benchmark di sicurezza."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_audit",
+      "english": "Audit Trail",
+      "set": {
+        "command": "sudo ausearch -ts today -m USER_CMD",
+        "task": "Ricostruisci la traccia di audit della giornata interrogando auditd per tutti gli eventi di tipo USER_CMD eseguiti dagli utenti."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_audit",
+      "english": "Logwatch",
+      "set": {
+        "command": "sudo logwatch --detail high --range today --service all",
+        "task": "Genera un report Logwatch ad alto dettaglio per tutti i servizi della giornata corrente per riassumere gli eventi rilevanti."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_audit",
+      "english": "Intrusion",
+      "set": {
+        "command": "sudo aide --check",
+        "task": "Esegui un controllo di rilevamento intrusioni con AIDE per scoprire modifiche non autorizzate ai binari critici del sistema."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_audit",
+      "english": "Fail2Ban",
+      "set": {
+        "command": "sudo fail2ban-client status sshd",
+        "task": "Mostra lo stato della jail sshd di Fail2Ban per vedere quanti IP sono stati bannati di recente per tentativi di login falliti."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_audit",
+      "english": "Event",
+      "set": {
+        "command": "sudo ausearch -m USER_LOGIN -ts today",
+        "task": "Estrai dal registro di audit tutti gli eventi di USER_LOGIN della giornata per ricostruire chi e' entrato sul server."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_audit",
+      "english": "Monitor",
+      "set": {
+        "command": "sudo auditctl -w /etc/passwd -p wa -k passwd_changes",
+        "task": "Configura una regola di auditd per monitorare scritture e cambi attributo sul file /etc/passwd ed etichetta gli eventi come passwd_changes."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_audit",
+      "english": "Baseline",
+      "set": {
+        "command": "sudo aide --init && sudo mv /var/lib/aide/aide.db.new.gz /var/lib/aide/aide.db.gz",
+        "task": "Cattura una baseline integrale del filesystem con AIDE subito dopo l'installazione cosi' le scansioni future segnaleranno qualsiasi deriva."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_audit",
+      "english": "Forensics",
+      "set": {
+        "command": "sudo dd if=/dev/sda of=/mnt/evidence/disk.img bs=4M status=progress conv=noerror,sync",
+        "task": "Acquisisci un'immagine forense bit a bit del disco /dev/sda su storage esterno con dd per analizzarla in seguito in sola lettura."
+      }
+    }
+  ]
+}

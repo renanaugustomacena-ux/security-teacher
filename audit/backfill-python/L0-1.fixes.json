@@ -1,0 +1,517 @@
+{
+  "fixes": [
+    {
+      "level": "0",
+      "lesson": "py_basics_1",
+      "english": "Variable",
+      "set": {
+        "code": "user_name = 'alice'\nage = 25\nprint(user_name, age)",
+        "task": "Definisci due variabili che rappresentano nome ed eta di un utente e stampale insieme sulla console."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_1",
+      "english": "String",
+      "set": {
+        "code": "greeting = 'Hello, world'\nfirst_word = greeting[:5]",
+        "task": "Estrai i primi cinque caratteri da una stringa di saluto usando lo slicing."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_1",
+      "english": "Indentation",
+      "set": {
+        "code": "if user.is_active:\n    send_email(user)\n    log('email sent')",
+        "task": "Costruisci un blocco condizionale indentato che invia una mail e registra l'azione solo per utenti attivi."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_1",
+      "english": "Syntax",
+      "set": {
+        "code": "for item in cart:\n    total += item.price",
+        "task": "Scrivi un ciclo for sintatticamente corretto che somma i prezzi degli articoli in un carrello."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_1",
+      "english": "Statement",
+      "set": {
+        "code": "import json\nconfig = load_config()\nreturn config",
+        "task": "Scrivi tre istruzioni consecutive che importano un modulo, caricano la configurazione e la restituiscono."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_1",
+      "english": "Expression",
+      "set": {
+        "code": "discounted = price * (1 - discount_rate)",
+        "task": "Calcola il prezzo scontato di un prodotto usando un'espressione aritmetica con due variabili."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_1",
+      "english": "Keyword",
+      "set": {
+        "code": "import keyword\nprint(keyword.kwlist)",
+        "task": "Stampa l'elenco di tutte le parole chiave riservate di Python usando il modulo keyword."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_2",
+      "english": "Integer",
+      "set": {
+        "code": "retry_count = 3\ntimeout_seconds = 30",
+        "task": "Definisci due variabili intere che rappresentano il numero di tentativi e il timeout in secondi."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_2",
+      "english": "Float",
+      "set": {
+        "code": "price = 9.99\ntax_rate = 0.22\ntotal = price * (1 + tax_rate)",
+        "task": "Calcola il prezzo totale con IVA partendo da due variabili float per il prezzo e l'aliquota."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_2",
+      "english": "Boolean",
+      "set": {
+        "code": "is_admin = True\nhas_access = is_admin and user.verified",
+        "task": "Determina se un utente puo' accedere combinando un flag amministratore con la verifica dell'account."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_2",
+      "english": "Value",
+      "set": {
+        "code": "def get_status():\n    return 'ok'\n\nstatus = get_status()",
+        "task": "Definisci una funzione che restituisce un valore di stato e assegnalo a una variabile."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_2",
+      "english": "Literal",
+      "set": {
+        "code": "MAX_USERS = 100\nGREETING = 'Welcome'\nPI = 3.14",
+        "task": "Assegna a tre costanti rispettivamente un letterale intero, uno stringa e uno float."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_2",
+      "english": "Constant",
+      "set": {
+        "code": "MAX_RETRIES = 3\nTIMEOUT = 30\nAPI_URL = 'https://api.example.com'",
+        "task": "Dichiara tre costanti a livello di modulo per i tentativi massimi, il timeout e l'URL dell'API."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_2",
+      "english": "None",
+      "set": {
+        "code": "result = cache.get('user_42')\nif result is None:\n    result = fetch_user(42)",
+        "task": "Verifica con il confronto is None se la cache ha restituito un valore prima di chiamare il backend."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_2",
+      "english": "Dynamic Typing",
+      "set": {
+        "code": "value = 42\nvalue = 'forty-two'\nvalue = [1, 2, 3]",
+        "task": "Riassegna la stessa variabile a tre oggetti di tipo diverso per illustrare la tipizzazione dinamica."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_3",
+      "english": "Operator",
+      "set": {
+        "code": "total = subtotal + shipping\nis_free = shipping == 0",
+        "task": "Combina un operatore aritmetico e uno di confronto per calcolare il totale e verificare se la spedizione e' gratuita."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_3",
+      "english": "Assignment",
+      "set": {
+        "code": "x, y = 10, 20\nx, y = y, x",
+        "task": "Scambia il valore di due variabili in una singola riga sfruttando l'assegnamento multiplo."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_3",
+      "english": "Subtraction",
+      "set": {
+        "code": "import time\nstart = time.time()\nrun_job()\nelapsed = time.time() - start",
+        "task": "Calcola la durata di esecuzione di un'operazione sottraendo il timestamp iniziale da quello finale."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_3",
+      "english": "Multiplication",
+      "set": {
+        "code": "separator = '-' * 40\nprint(separator)",
+        "task": "Costruisci una riga separatrice di 40 trattini ripetendo un carattere con l'operatore di moltiplicazione."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_3",
+      "english": "Division",
+      "set": {
+        "code": "average = total_score / num_students\npages = total_items // page_size",
+        "task": "Calcola la media dei punteggi con la divisione decimale e il numero di pagine con la divisione intera."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_3",
+      "english": "Modulo",
+      "set": {
+        "code": "for n in range(10):\n    if n % 2 == 0:\n        print(n, 'is even')",
+        "task": "Itera sui numeri da zero a nove e stampa solo quelli pari sfruttando l'operatore modulo."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_3",
+      "english": "Comparison",
+      "set": {
+        "code": "if user.age >= 18:\n    allow_purchase()",
+        "task": "Verifica con un operatore di confronto se l'utente e' maggiorenne prima di consentire l'acquisto."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_3",
+      "english": "Logical Operator",
+      "set": {
+        "code": "if user.is_active and not user.is_banned:\n    grant_access(user)",
+        "task": "Combina due condizioni con gli operatori logici and e not per concedere l'accesso solo agli utenti attivi e non bannati."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_4",
+      "english": "Interpreter",
+      "set": {
+        "code": "import sys\nprint(sys.version)\nprint(sys.executable)",
+        "task": "Stampa la versione dell'interprete Python in uso e il percorso del suo eseguibile."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_4",
+      "english": "Script",
+      "set": {
+        "code": "def main():\n    print('running')\n\nif __name__ == '__main__':\n    main()",
+        "task": "Struttura uno script Python con una funzione main eseguita solo quando il file viene lanciato direttamente."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_4",
+      "english": "Shell (REPL)",
+      "set": {
+        "code": ">>> 2 + 3\n5\n>>> name = 'Alice'\n>>> print(name)\nAlice",
+        "task": "Sperimenta nella shell interattiva calcolando una somma e definendo una variabile da stampare subito dopo."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_4",
+      "english": "Debugger",
+      "set": {
+        "code": "import pdb\n\ndef calculate(data):\n    pdb.set_trace()\n    return sum(data)",
+        "task": "Inserisci un breakpoint con pdb dentro una funzione per ispezionarne lo stato durante il debug."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_4",
+      "english": "Error",
+      "set": {
+        "code": "try:\n    value = int(user_input)\nexcept ValueError as err:\n    print('Invalid number:', err)",
+        "task": "Cattura l'errore di conversione quando l'input dell'utente non e' un numero valido e mostra un messaggio chiaro."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_4",
+      "english": "Exception",
+      "set": {
+        "code": "try:\n    response = api.get_user(user_id)\nexcept ConnectionError:\n    response = cache.get(user_id)",
+        "task": "Gestisci l'eccezione di connessione ricadendo sui dati in cache quando la chiamata API fallisce."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_4",
+      "english": "Library",
+      "set": {
+        "code": "import json\n\nwith open('config.json') as f:\n    config = json.load(f)",
+        "task": "Carica un file di configurazione JSON sfruttando la libreria standard senza installare dipendenze esterne."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_list",
+      "english": "List",
+      "set": {
+        "code": "scores = [85, 92, 78, 90]\naverage = sum(scores) / len(scores)",
+        "task": "Calcola la media dei punteggi memorizzati in una lista usando le funzioni sum e len."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_list",
+      "english": "Index",
+      "set": {
+        "code": "items = ['apple', 'banana', 'cherry']\nfirst = items[0]\nlast = items[-1]",
+        "task": "Estrai il primo e l'ultimo elemento di una lista usando un indice positivo e uno negativo."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_list",
+      "english": "Remove",
+      "set": {
+        "code": "users = ['alice', 'bob', 'eve']\nusers.remove('eve')",
+        "task": "Rimuovi un utente specifico dalla lista degli utenti attivi senza conoscerne l'indice."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_list",
+      "english": "Pop",
+      "set": {
+        "code": "queue = ['task1', 'task2', 'task3']\nnext_task = queue.pop(0)",
+        "task": "Estrai e rimuovi il prossimo task in testa alla coda per processarlo immediatamente."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_list",
+      "english": "Sort",
+      "set": {
+        "code": "users.sort(key=lambda u: u.created_at, reverse=True)",
+        "task": "Ordina una lista di utenti per data di creazione dal piu' recente al piu' vecchio."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_list",
+      "english": "Reverse",
+      "set": {
+        "code": "history = [10, 20, 30, 40]\nhistory.reverse()",
+        "task": "Inverti l'ordine degli elementi di una lista di storico in modo che il piu' recente venga prima."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_list",
+      "english": "List Comprehension",
+      "set": {
+        "code": "active_names = [u.name for u in users if u.is_active]",
+        "task": "Filtra dalla lista degli utenti solo quelli attivi e raccogli i loro nomi in una nuova lista."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_list",
+      "english": "Length (len)",
+      "set": {
+        "code": "items = cart.get_items()\nif len(items) == 0:\n    print('Cart is empty')",
+        "task": "Verifica con la funzione len se il carrello e' vuoto prima di mostrare il riepilogo."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_dict",
+      "english": "Dictionary",
+      "set": {
+        "code": "user = {'id': 42, 'name': 'Alice', 'role': 'admin'}\nprint(user['role'])",
+        "task": "Costruisci un dizionario che descrive un utente con id, nome e ruolo, poi stampa il ruolo."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_dict",
+      "english": "Key",
+      "set": {
+        "code": "scores = {}\nscores['alice'] = 95\nif 'bob' in scores:\n    print(scores['bob'])",
+        "task": "Aggiungi una chiave a un dizionario di punteggi e verifica se un'altra chiave esiste prima di leggerla."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_dict",
+      "english": "Dictionary Value",
+      "set": {
+        "code": "config = {'timeout': 30, 'retries': 3}\ntimeout = config['timeout']",
+        "task": "Recupera il valore associato alla chiave timeout in un dizionario di configurazione."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_dict",
+      "english": "Item",
+      "set": {
+        "code": "for key, value in settings.items():\n    print(f'{key}: {value}')",
+        "task": "Itera su tutti gli elementi di un dizionario di impostazioni e stampa ciascuna coppia chiave-valore."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_dict",
+      "english": "Keys",
+      "set": {
+        "code": "config = {'host': 'localhost', 'port': 8080}\nfor key in config.keys():\n    print(key)",
+        "task": "Itera su tutte le chiavi di un dizionario di configurazione e stampale una per riga."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_dict",
+      "english": "Values",
+      "set": {
+        "code": "prices = {'apple': 1.0, 'bread': 2.5}\ntotal = sum(prices.values())",
+        "task": "Calcola la somma totale di tutti i valori contenuti in un dizionario di prezzi."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_dict",
+      "english": "Items",
+      "set": {
+        "code": "inventory = {'apple': 10, 'bread': 5}\nfor name, qty in inventory.items():\n    print(name, qty)",
+        "task": "Spacchetta nome e quantita' di ogni prodotto di un inventario iterando sugli items del dizionario."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_dict",
+      "english": "Key-Value Pair",
+      "set": {
+        "code": "settings = {'debug': True, 'log_level': 'INFO', 'port': 8080}",
+        "task": "Costruisci un dizionario di impostazioni dell'applicazione con tre coppie chiave-valore eterogenee."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_tuple_set",
+      "english": "Tuple",
+      "set": {
+        "code": "def get_point():\n    return (10, 20)\n\nx, y = get_point()",
+        "task": "Definisci una funzione che restituisce una tupla con le coordinate di un punto e spacchettala nella chiamata."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_tuple_set",
+      "english": "Immutable",
+      "set": {
+        "code": "point = (10, 20)\n# point[0] = 5  # TypeError: tuple is immutable\nnew_point = (5, point[1])",
+        "task": "Crea una nuova tupla derivata da una esistente invece di modificarla, poiche' le tuple sono immutabili."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_tuple_set",
+      "english": "Set",
+      "set": {
+        "code": "tags = ['python', 'web', 'python', 'api']\nunique_tags = set(tags)",
+        "task": "Rimuovi i tag duplicati da una lista convertendola in un set."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_tuple_set",
+      "english": "Unique",
+      "set": {
+        "code": "emails = [u.email for u in users]\nif len(set(emails)) != len(emails):\n    raise ValueError('Duplicate emails')",
+        "task": "Verifica che tutti gli indirizzi email di una lista di utenti siano unici sollevando un errore in caso contrario."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_tuple_set",
+      "english": "Frozen Set",
+      "set": {
+        "code": "ADMIN_ROLES = frozenset({'admin', 'superuser', 'root'})\nif user.role in ADMIN_ROLES:\n    grant_full_access()",
+        "task": "Definisci un insieme immutabile di ruoli amministrativi e verifica se il ruolo di un utente vi appartiene."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_strings",
+      "english": "Join",
+      "set": {
+        "code": "tags = ['python', 'web', 'api']\nlabel = ', '.join(tags)",
+        "task": "Unisci una lista di tag in una singola stringa separata da virgole, pronta per essere stampata."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_strings",
+      "english": "Strip",
+      "set": {
+        "code": "raw = input('Email: ')\nemail = raw.strip().lower()",
+        "task": "Pulisci l'input dell'utente rimuovendo spazi iniziali e finali e convertendolo in minuscolo."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_strings",
+      "english": "Lower/Upper",
+      "set": {
+        "code": "username = 'Alice'\nif username.lower() == stored_user.lower():\n    print('match')",
+        "task": "Confronta due nomi utente in modo case-insensitive convertendo entrambi in minuscolo prima del confronto."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_strings",
+      "english": "Find/Index",
+      "set": {
+        "code": "url = 'https://example.com/path'\npos = url.find('://')\nscheme = url[:pos]",
+        "task": "Trova la posizione del delimitatore :// in un URL ed estrai lo schema che lo precede."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_strings",
+      "english": "Escape Character",
+      "set": {
+        "code": "row = 'name\\tage\\tcity'\nlines = 'line1\\nline2'",
+        "task": "Costruisci una riga in formato TSV separata da tabulazioni e una stringa multiriga separata da newline usando i caratteri di escape."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_strings",
+      "english": "Raw String",
+      "set": {
+        "code": "import re\npattern = re.compile(r'\\d{3}-\\d{4}')\nmatch = pattern.search(text)",
+        "task": "Compila una regex per un numero di telefono usando una stringa grezza per evitare il doppio escape dei backslash."
+      }
+    }
+  ]
+}

@@ -1,0 +1,548 @@
+{
+  "fixes": [
+    {
+      "level": "2",
+      "lesson": "defense_tools",
+      "english": "IDS (Intrusion Detection System)",
+      "set": {
+        "command": "sudo snort -A console -q -c /etc/snort/snort.conf -i eth0",
+        "task": "Avvia l'IDS Snort sull'interfaccia eth0 con output a console per monitorare in tempo reale gli alert durante il turno del SOC."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "defense_tools",
+      "english": "IPS (Intrusion Prevention System)",
+      "set": {
+        "command": "sudo suricata -c /etc/suricata/suricata.yaml -i eth0 --runmode autofp",
+        "task": "Esegui Suricata in modalita IPS in linea su eth0 per droppare automaticamente i pacchetti che corrispondono alle regole emerging-threats."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "defense_tools",
+      "english": "WAF (Web Application Firewall)",
+      "set": {
+        "command": "sudo modsecurity-ctl --enable && sudo nginx -t && sudo systemctl reload nginx",
+        "task": "Abilita il WAF ModSecurity davanti a nginx, valida la configurazione e ricarica il servizio per filtrare SQL injection sull'API in produzione."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "defense_tools",
+      "english": "SIEM (Security Information and Event Management)",
+      "set": {
+        "code": "import requests\nq = {'query': {'match': {'event.action': 'failed_login'}}}\nr = requests.post('https://siem.local:9200/winlog-*/_search', json=q, auth=('analyst','***'))\nprint(r.json()['hits']['total'])",
+        "task": "Interroga il SIEM via API Elasticsearch per contare i tentativi di login falliti delle ultime 24 ore nei log di Windows."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "defense_tools",
+      "english": "Honeypot",
+      "set": {
+        "command": "sudo docker run -d -p 2222:2222 -p 2223:2223 --name cowrie cowrie/cowrie:latest",
+        "task": "Distribuisci l'honeypot Cowrie in container per catturare i tentativi di login SSH degli attaccanti e analizzare i comandi che eseguono."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "defense_tools",
+      "english": "Sandbox",
+      "set": {
+        "command": "firejail --net=none --private --seccomp ./sample.exe",
+        "task": "Esegui il sample sospetto in una sandbox Firejail senza rete e con seccomp attivo per osservarne il comportamento senza rischi per il sistema."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "defense_tools",
+      "english": "Proxy",
+      "set": {
+        "command": "curl -x http://proxy.corp.local:3128 -L https://example.com -o /tmp/page.html",
+        "task": "Inoltra la richiesta HTTPS attraverso il proxy aziendale per verificare che il filtraggio dei contenuti permetta l'accesso al dominio approvato."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "defense_tools",
+      "english": "VPN (Virtual Private Network)",
+      "set": {
+        "command": "sudo openvpn --config /etc/openvpn/client/corporate.ovpn --daemon --log /var/log/openvpn.log",
+        "task": "Stabilisci la VPN aziendale OpenVPN in background per accedere in modo cifrato alle risorse interne durante lo smart working."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "defense_auth",
+      "english": "Two-Factor Authentication (2FA)",
+      "set": {
+        "code": "import pyotp\nsecret = pyotp.random_base32()\ntotp = pyotp.TOTP(secret)\nuri = totp.provisioning_uri(name='alice@corp', issuer_name='VPN')\nprint(uri)",
+        "task": "Genera un segreto TOTP e l'URI di provisioning per registrare la 2FA dell'utente nell'app Google Authenticator."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "defense_auth",
+      "english": "Multi-Factor Authentication (MFA)",
+      "set": {
+        "code": "import pyotp\ndef verify_mfa(secret, code):\n    totp = pyotp.TOTP(secret)\n    return totp.verify(code, valid_window=1)\nprint(verify_mfa('JBSWY3DPEHPK3PXP', '492039'))",
+        "task": "Verifica il codice MFA fornito dall'utente con una finestra di tolleranza di 30 secondi prima di concedere l'accesso al portale admin."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "defense_auth",
+      "english": "Token",
+      "set": {
+        "code": "import secrets, hashlib\nraw = secrets.token_urlsafe(32)\nhashed = hashlib.sha256(raw.encode()).hexdigest()\nprint('token:', raw)\nprint('store:', hashed)",
+        "task": "Genera un token API casuale di 32 byte e salvane solo l'hash SHA-256 sul database per ridurre l'impatto in caso di leak."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "defense_auth",
+      "english": "client certificate",
+      "set": {
+        "command": "openssl req -new -newkey rsa:4096 -nodes -keyout client.key -out client.csr -subj '/CN=alice@corp/O=Acme'",
+        "task": "Genera la chiave RSA e la CSR per il certificato client di Alice da inviare alla CA aziendale per l'autenticazione mutual TLS."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "defense_auth",
+      "english": "One-Time Password (OTP)",
+      "set": {
+        "code": "import pyotp, time\nhotp = pyotp.HOTP('JBSWY3DPEHPK3PXP')\nfor counter in range(3):\n    print(counter, hotp.at(counter))",
+        "task": "Stampa tre OTP HOTP consecutive partendo dal contatore zero per inizializzare il token hardware del nuovo dipendente."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "defense_auth",
+      "english": "Session",
+      "set": {
+        "code": "from flask import Flask, session\napp = Flask(__name__)\napp.config['SESSION_COOKIE_SECURE'] = True\napp.config['SESSION_COOKIE_HTTPONLY'] = True\napp.config['PERMANENT_SESSION_LIFETIME'] = 1800",
+        "task": "Configura la sessione Flask con cookie Secure, HttpOnly e scadenza a 30 minuti per limitare il furto di sessione via XSS."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "defense_endpoint",
+      "english": "next-generation antivirus",
+      "set": {
+        "command": "sudo clamscan -r --infected --remove=no --log=/var/log/clamav-scan.log /home /var/www",
+        "task": "Scansiona ricorsivamente le home e le webroot con ClamAV registrando solo i file infetti in un log da allegare al report SOC."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "defense_endpoint",
+      "english": "Disk Encryption",
+      "set": {
+        "command": "sudo cryptsetup luksFormat --type luks2 --cipher aes-xts-plain64 --key-size 512 /dev/sdb1",
+        "task": "Inizializza la crittografia LUKS2 con AES-XTS a 512 bit sul disco esterno prima di consegnarlo al collega in trasferta."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "defense_endpoint",
+      "english": "Patch Management",
+      "set": {
+        "command": "sudo apt update && sudo apt -y --only-upgrade install $(apt list --upgradable 2>/dev/null | grep -i security | cut -d/ -f1)",
+        "task": "Aggiorna solo i pacchetti che pubblicano fix di sicurezza per applicare il patch tuesday senza toccare le versioni applicative in produzione."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "defense_endpoint",
+      "english": "Whitelist",
+      "set": {
+        "command": "sudo iptables -A INPUT -p tcp --dport 22 -s 10.0.0.0/24 -j ACCEPT && sudo iptables -A INPUT -p tcp --dport 22 -j DROP",
+        "task": "Inserisci nella whitelist solo la subnet amministrativa per SSH e blocca esplicitamente tutti gli altri sorgenti sulla porta 22."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "defense_endpoint",
+      "english": "Blacklist",
+      "set": {
+        "command": "sudo iptables -A INPUT -s 185.220.101.42 -j DROP && sudo iptables -A INPUT -s 91.243.59.0/24 -j DROP",
+        "task": "Aggiungi alla blacklist del firewall l'IP del nodo Tor e la subnet segnalata dal feed di threat intelligence per bloccare le scansioni automatiche."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "defense_endpoint",
+      "english": "Host Firewall",
+      "set": {
+        "command": "sudo ufw default deny incoming && sudo ufw allow from 10.0.0.0/24 to any port 22 && sudo ufw enable",
+        "task": "Configura il firewall locale UFW con deny di default in ingresso e permetti SSH solo dalla LAN amministrativa prima di esporre il server."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "defense_endpoint",
+      "english": "Hardening",
+      "set": {
+        "command": "sudo lynis audit system --quick --report-file /tmp/lynis-baseline.txt",
+        "task": "Esegui un audit di hardening con Lynis sul server appena installato per generare la baseline di sicurezza da inviare al cliente."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "defense_crypto_basics",
+      "english": "TLS (Transport Layer Security)",
+      "set": {
+        "command": "openssl s_client -connect www.example.com:443 -servername www.example.com -tls1_3 -showcerts < /dev/null",
+        "task": "Negozia una connessione TLS 1.3 verso il sito target e stampa la catena di certificati per verificare quale CA ha emesso il certificato server."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "defense_crypto_basics",
+      "english": "HTTPS strict transport",
+      "set": {
+        "command": "curl -sI https://www.example.com | grep -i 'strict-transport-security'",
+        "code": "from flask import Flask, make_response\napp = Flask(__name__)\n@app.after_request\ndef hsts(resp):\n    resp.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains; preload'\n    return resp",
+        "task": "Aggiungi il middleware Flask che imposta l'header HSTS con max-age di un anno e preload per impedire ai browser di tornare al testo in chiaro."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "defense_crypto_basics",
+      "english": "Digital Certificate",
+      "set": {
+        "command": "openssl x509 -in /etc/letsencrypt/live/example.com/fullchain.pem -noout -text -dates -issuer",
+        "code": "from cryptography import x509\nfrom cryptography.hazmat.backends import default_backend\ndata = open('cert.pem','rb').read()\ncert = x509.load_pem_x509_certificate(data, default_backend())\nprint(cert.subject, cert.not_valid_after)",
+        "task": "Ispeziona il certificato digitale Let's Encrypt per estrarre data di scadenza ed emittente prima di automatizzare il rinnovo."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "defense_crypto_basics",
+      "english": "Public Key",
+      "set": {
+        "command": "ssh-keygen -t ed25519 -C 'alice@corp' -f ~/.ssh/id_ed25519 && ssh-copy-id -i ~/.ssh/id_ed25519.pub admin@bastion.example.com",
+        "code": "from cryptography.hazmat.primitives.asymmetric import rsa\nfrom cryptography.hazmat.primitives import serialization\nkey = rsa.generate_private_key(public_exponent=65537, key_size=4096)\npub = key.public_key().public_bytes(serialization.Encoding.OpenSSH, serialization.PublicFormat.OpenSSH)\nprint(pub.decode())",
+        "task": "Genera una coppia di chiavi Ed25519 e installa la chiave pubblica sul bastion host per autenticare Alice senza password."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "defense_crypto_basics",
+      "english": "Private Key",
+      "set": {
+        "command": "openssl genpkey -algorithm RSA -out private.key -pkeyopt rsa_keygen_bits:4096 -aes-256-cbc && chmod 600 private.key",
+        "code": "from cryptography.hazmat.primitives import serialization\nwith open('private.key','rb') as f:\n    key = serialization.load_pem_private_key(f.read(), password=b'passphrase')\nsig = key.sign(b'payload')",
+        "task": "Genera la chiave privata RSA a 4096 bit cifrata con passphrase e imposta i permessi a 600 affinche solo il proprietario possa leggerla."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "defense_crypto_basics",
+      "english": "end-to-end encryption",
+      "set": {
+        "command": "gpg --encrypt --armor --recipient bob@example.com message.txt",
+        "code": "from nacl.public import PrivateKey, Box\nalice = PrivateKey.generate()\nbob = PrivateKey.generate()\nbox = Box(alice, bob.public_key)\ncipher = box.encrypt(b'segreto end-to-end')\nprint(cipher.hex())",
+        "task": "Cifra end-to-end il messaggio per Bob usando la sua chiave pubblica GPG cosi che neppure il server di transito possa leggerlo."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "defense_crypto_basics",
+      "english": "Decryption",
+      "set": {
+        "command": "openssl enc -aes-256-cbc -d -pbkdf2 -in backup.enc -out backup.tar -pass file:/etc/keys/backup.key",
+        "code": "from cryptography.fernet import Fernet\nf = Fernet(open('master.key','rb').read())\nplaintext = f.decrypt(open('secret.enc','rb').read())\nprint(plaintext.decode())",
+        "task": "Decifra il backup AES-256 con la chiave conservata nel vault per ripristinare i dati dopo il disaster recovery test."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "defense_crypto_basics",
+      "english": "Hash",
+      "set": {
+        "command": "sha256sum ubuntu-22.04.iso && shasum -a 256 -c SHA256SUMS",
+        "code": "import bcrypt\npwd = b'CorrectHorseBatteryStaple'\nhashed = bcrypt.hashpw(pwd, bcrypt.gensalt(rounds=12))\nprint(bcrypt.checkpw(pwd, hashed))",
+        "task": "Verifica l'hash SHA-256 dell'immagine ISO scaricata contro il file ufficiale prima di distribuirla agli utenti."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "defense_crypto_basics",
+      "english": "Digital Signature",
+      "set": {
+        "command": "gpg --detach-sign --armor --local-user release@corp.com release-v1.2.0.tar.gz",
+        "code": "from cryptography.hazmat.primitives.asymmetric import padding\nfrom cryptography.hazmat.primitives import hashes\nsig = key.sign(payload, padding.PSS(mgf=padding.MGF1(hashes.SHA256()), salt_length=padding.PSS.MAX_LENGTH), hashes.SHA256())\npub.verify(sig, payload, padding.PSS(mgf=padding.MGF1(hashes.SHA256()), salt_length=padding.PSS.MAX_LENGTH), hashes.SHA256())",
+        "task": "Firma digitalmente il tarball della release con la chiave GPG del team per dimostrare agli utenti l'autenticita del file scaricato."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_basics",
+      "english": "MAC Address",
+      "set": {
+        "command": "ip link show eth0 | awk '/ether/ {print $2}'",
+        "task": "Estrai l'indirizzo MAC dell'interfaccia eth0 per registrarlo nella lista di port security dello switch di piano."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_basics",
+      "english": "Network Interface Card (NIC)",
+      "set": {
+        "command": "ip -brief link show && ethtool eth0",
+        "task": "Ispeziona stato e capacita della NIC eth0 per verificare se la negoziazione del link e a 1 Gbps full-duplex."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_basics",
+      "english": "VLAN (Virtual Local Area Network)",
+      "set": {
+        "command": "sudo ip link add link eth0 name eth0.100 type vlan id 100 && sudo ip addr add 10.0.100.2/24 dev eth0.100 && sudo ip link set eth0.100 up",
+        "task": "Crea la sotto-interfaccia tagged sulla VLAN 100 per separare il traffico amministrativo dal traffico utenti sullo stesso uplink fisico."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_basics",
+      "english": "Subnetting",
+      "set": {
+        "command": "ipcalc 192.168.10.0/22 --split 26 26 26 26",
+        "code": "import ipaddress\nnet = ipaddress.ip_network('10.50.0.0/22')\nfor sub in net.subnets(new_prefix=26):\n    print(sub, sub.broadcast_address, sub.num_addresses)",
+        "task": "Suddividi la rete /22 in quattro sotto-reti /26 per assegnare un blocco distinto a ciascun dipartimento dell'azienda."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_basics",
+      "english": "Default Gateway",
+      "set": {
+        "command": "ip route show default && sudo ip route replace default via 192.168.1.1 dev eth0 metric 100",
+        "task": "Sostituisci il default gateway con il nuovo router perimetrale e assegna una metrica bassa per renderlo prioritario sulle rotte alternative."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_protocols",
+      "english": "TCP (Transmission Control Protocol)",
+      "set": {
+        "command": "nc -zv -w 2 db.internal.corp 5432",
+        "code": "import socket\ns = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\ns.settimeout(3)\ns.connect(('api.example.com', 443))\nprint('handshake completato:', s.getpeername())\ns.close()",
+        "task": "Verifica che il three-way handshake TCP verso PostgreSQL sulla porta 5432 si chiuda correttamente prima di migrare l'applicazione."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_protocols",
+      "english": "UDP (User Datagram Protocol)",
+      "set": {
+        "command": "nc -u -w 1 ntp.corp.local 123 < /dev/null",
+        "code": "import socket\ns = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)\ns.sendto(b'\\x1b' + 47 * b'\\0', ('pool.ntp.org', 123))\ndata, addr = s.recvfrom(1024)\nprint('NTP risp', len(data), 'byte da', addr)",
+        "task": "Invia un pacchetto UDP NTP al server di tempo per verificare che la porta 123 sia raggiungibile attraverso il firewall."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_protocols",
+      "english": "ICMP (Internet Control Message Protocol)",
+      "set": {
+        "command": "ping -c 4 -W 2 -i 0.5 8.8.8.8",
+        "task": "Lancia quattro ping ICMP verso il DNS pubblico di Google per misurare la latenza media e individuare eventuali perdite di pacchetti."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_protocols",
+      "english": "DNS (Domain Name System)",
+      "set": {
+        "command": "dig +short @1.1.1.1 example.com A AAAA && dig +trace example.com",
+        "code": "import dns.resolver\nresolver = dns.resolver.Resolver()\nresolver.nameservers = ['1.1.1.1']\nfor r in resolver.resolve('example.com','MX'):\n    print(r.preference, r.exchange)",
+        "task": "Risolvi i record A, AAAA e MX di example.com contro il resolver Cloudflare per diagnosticare un problema di consegna email."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_protocols",
+      "english": "DHCP (Dynamic Host Configuration Protocol)",
+      "set": {
+        "command": "sudo dhclient -v -r eth0 && sudo dhclient -v eth0",
+        "task": "Rilascia il lease DHCP corrente sull'interfaccia eth0 e richiedine uno nuovo per applicare la modifica al pool di indirizzi."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_protocols",
+      "english": "SNMP (Simple Network Management Protocol)",
+      "set": {
+        "command": "snmpwalk -v 2c -c public 192.168.1.1 1.3.6.1.2.1.2.2.1.10",
+        "task": "Interroga via SNMP v2c i contatori di byte in ingresso sulle interfacce del router per costruire il grafico di traffico in Grafana."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_protocols",
+      "english": "ARP (Address Resolution Protocol)",
+      "set": {
+        "command": "ip neigh show && sudo arping -c 3 -I eth0 192.168.1.1",
+        "task": "Ispeziona la cache ARP e verifica con arping che il default gateway risponda alla risoluzione MAC sulla LAN."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_protocols",
+      "english": "SFTP (Secure File Transfer Protocol)",
+      "set": {
+        "command": "sftp -i ~/.ssh/deploy_ed25519 -P 2222 deploy@backup.corp.local <<< 'put release.tar.gz /uploads/'",
+        "task": "Carica il tarball della release sul server di backup via SFTP autenticandoti con la chiave privata dedicata al deploy."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_protocols",
+      "english": "SSH (Secure Shell)",
+      "set": {
+        "command": "ssh -i ~/.ssh/admin_ed25519 -p 2222 -o StrictHostKeyChecking=yes admin@bastion.example.com",
+        "task": "Apri una sessione SSH amministrativa sul bastion verificando l'host key per rilevare eventuali MITM sulla porta non standard."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_protocols",
+      "english": "SMTP (Simple Mail Transfer Protocol)",
+      "set": {
+        "command": "swaks --to alerts@corp.com --from soc@corp.com --server smtp.corp.local:587 --tls --auth-user soc --header 'Subject: Test SOC'",
+        "code": "import smtplib, ssl\nctx = ssl.create_default_context()\nwith smtplib.SMTP('smtp.corp.local', 587) as s:\n    s.starttls(context=ctx)\n    s.login('soc','***')\n    s.sendmail('soc@corp.com', ['alerts@corp.com'], 'Subject: Alert\\n\\nrun-book')",
+        "task": "Invia una mail di test SMTP con STARTTLS al gruppo alert per validare che il relay autenticato dal SOC funzioni dopo la migrazione."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_security",
+      "english": "Port Mirroring",
+      "set": {
+        "command": "sudo tc qdisc add dev eth0 ingress && sudo tc filter add dev eth0 parent ffff: matchall action mirred egress mirror dev eth1",
+        "task": "Configura il mirroring di eth0 verso eth1 con tc affinche l'IDS sulla seconda NIC veda una copia di ogni pacchetto in ingresso."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_security",
+      "english": "Access Control List (ACL)",
+      "set": {
+        "command": "sudo iptables -A FORWARD -s 10.0.0.0/8 -d 192.168.10.0/24 -p tcp --dport 3306 -j DROP",
+        "task": "Aggiungi una ACL al firewall che vieta a tutta la rete utente di raggiungere MySQL sulla sottorete dei database in produzione."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_security",
+      "english": "NAT (Network Address Translation)",
+      "set": {
+        "command": "sudo iptables -t nat -A POSTROUTING -s 10.0.0.0/24 -o eth0 -j MASQUERADE",
+        "task": "Configura il NAT masquerade in uscita su eth0 per permettere alla LAN privata 10.0.0.0/24 di navigare in Internet con l'IP pubblico del router."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_security",
+      "english": "Packet Filtering",
+      "set": {
+        "command": "sudo iptables -A INPUT -p tcp --syn --dport 80 -m connlimit --connlimit-above 50 -j REJECT",
+        "task": "Filtra i pacchetti SYN in ingresso sulla porta 80 limitando a 50 connessioni concorrenti per IP per mitigare un SYN flood leggero."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_security",
+      "english": "Stateful Inspection",
+      "set": {
+        "command": "sudo iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT && sudo iptables -A INPUT -m conntrack --ctstate INVALID -j DROP",
+        "task": "Abilita l'ispezione stateful permettendo solo i pacchetti delle connessioni gia stabilite e droppando quelli classificati come INVALID."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_security",
+      "english": "Proxy Server",
+      "set": {
+        "command": "sudo squid -k parse && sudo systemctl reload squid && tail -f /var/log/squid/access.log",
+        "task": "Valida la configurazione di Squid, ricarica il proxy server e segui in tempo reale gli access log per verificare che il caching funzioni."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_wireless",
+      "english": "SSID (Service Set Identifier)",
+      "set": {
+        "command": "sudo iwlist wlan0 scan | grep -E 'ESSID|Quality|Encryption' | head -30",
+        "task": "Scansiona gli SSID visibili dall'interfaccia wlan0 mostrando qualita del segnale e cifratura per individuare reti non autorizzate in azienda."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_wireless",
+      "english": "WEP (Wired Equivalent Privacy)",
+      "set": {
+        "command": "sudo aircrack-ng -b 00:11:22:33:44:55 -n 64 captures/wep-cap-01.cap",
+        "task": "Forza la chiave WEP a 64 bit dall'handshake catturato per dimostrare al cliente quanto sia banale violare questo protocollo legacy."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_wireless",
+      "english": "WPA3 (Wi-Fi Protected Access 3)",
+      "set": {
+        "command": "sudo wpa_supplicant -i wlan0 -c /etc/wpa_supplicant/wpa3-corp.conf -B && wpa_cli -i wlan0 status",
+        "task": "Connetti il laptop alla rete aziendale WPA3-SAE in background e verifica lo stato dell'associazione tramite wpa_cli."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_wireless",
+      "english": "WPS (Wi-Fi Protected Setup)",
+      "set": {
+        "command": "sudo reaver -i wlan0mon -b AA:BB:CC:DD:EE:FF -vv -K 1",
+        "task": "Avvia reaver in modalita pixie-dust contro l'access point target per dimostrare al cliente la vulnerabilita del PIN WPS a 8 cifre."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_wireless",
+      "english": "Rogue Access Point",
+      "set": {
+        "command": "sudo kismet -c wlan0mon --no-ncurses-wrapper --tcp-port 2501",
+        "task": "Avvia Kismet sull'interfaccia in monitor mode per scoprire eventuali access point canaglia connessi alla LAN aziendale."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_wireless",
+      "english": "Evil Twin",
+      "set": {
+        "command": "sudo airbase-ng -e 'CorpGuest' -c 6 -P -C 30 wlan0mon",
+        "task": "Crea un access point evil twin che cloni l'SSID CorpGuest durante l'esercizio red team per misurare quanti utenti si connettono spontaneamente."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_wireless",
+      "english": "Wardriving",
+      "set": {
+        "command": "sudo kismet -c wlan0mon --gps-host localhost:2947 --log-types kismet,pcapng",
+        "task": "Esegui wardriving georeferenziato con Kismet collegato al daemon GPSD per mappare le reti wireless non protette del quartiere industriale."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_wireless",
+      "english": "Deauthentication Attack",
+      "set": {
+        "command": "sudo aireplay-ng --deauth 25 -a AA:BB:CC:DD:EE:FF -c 11:22:33:44:55:66 wlan0mon",
+        "task": "Invia 25 pacchetti di deautenticazione al client target per forzarlo a riassociarsi e catturare l'handshake WPA durante il pentest autorizzato."
+      }
+    }
+  ]
+}

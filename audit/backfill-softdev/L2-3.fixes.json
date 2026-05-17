@@ -1,0 +1,544 @@
+{
+  "fixes": [
+    {
+      "level": "2",
+      "lesson": "dev_web_front",
+      "english": "HTML (HyperText Markup Language)",
+      "set": {
+        "code": "<article>\n  <header>\n    <h1>Articolo</h1>\n  </header>\n  <p>Contenuto principale dell'articolo.</p>\n</article>",
+        "task": "Scrivi un frammento HTML semantico che usa article, header e h1 per descrivere un articolo con titolo e corpo."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_front",
+      "english": "CSS (Cascading Style Sheets)",
+      "set": {
+        "code": ".card {\n  display: flex;\n  padding: 1rem;\n  border: 1px solid #ddd;\n  border-radius: 8px;\n}",
+        "task": "Definisci una regola CSS per la classe card che usa flexbox, padding e un bordo arrotondato."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_front",
+      "english": "JavaScript",
+      "set": {
+        "code": "const items = [1, 2, 3, 4];\nconst total = items.reduce((sum, n) => sum + n, 0);\nconsole.log(total);",
+        "task": "Scrivi uno snippet JavaScript che usa reduce per sommare i numeri di un array e ne stampa il totale."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_front",
+      "english": "DOM (Document Object Model)",
+      "set": {
+        "code": "const btn = document.querySelector('#save');\nbtn.textContent = 'Salvato';\nbtn.classList.add('disabled');",
+        "task": "Seleziona il pulsante con id save dal DOM, cambia il suo testo e aggiungi la classe disabled."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_front",
+      "english": "Selector",
+      "set": {
+        "code": "const rows = document.querySelectorAll('table.users tr[data-active=\"true\"]');\nrows.forEach((row) => row.classList.add('highlight'));",
+        "task": "Usa un selettore CSS composto per recuperare tutte le righe attive della tabella users ed evidenziale via DOM."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_front",
+      "english": "HTML tag",
+      "set": {
+        "code": "<nav>\n  <a href=\"/home\">Home</a>\n  <a href=\"/about\">Chi siamo</a>\n</nav>",
+        "task": "Usa il tag HTML nav per racchiudere la navigazione principale del sito con due link verso home e about."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_front",
+      "english": "Attribute",
+      "set": {
+        "code": "<button type=\"submit\" data-action=\"save\" aria-label=\"Salva modulo\">\n  Salva\n</button>",
+        "task": "Aggiungi al pulsante l'attributo type, un attributo data-action personalizzato e un aria-label per l'accessibilita."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_front",
+      "english": "Event Listener",
+      "set": {
+        "code": "const form = document.querySelector('#login');\nform.addEventListener('submit', (event) => {\n  event.preventDefault();\n  console.log('invio bloccato');\n});",
+        "task": "Registra un event listener sul submit del form login che blocca il comportamento di default e logga un messaggio."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_front",
+      "english": "Responsive Design",
+      "set": {
+        "code": "@media (max-width: 768px) {\n  .sidebar {\n    display: none;\n  }\n  .content {\n    width: 100%;\n  }\n}",
+        "task": "Scrivi una media query CSS che nasconde la sidebar e fa occupare al contenuto tutta la larghezza sotto i 768px."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_back",
+      "english": "Server",
+      "set": {
+        "code": "import express from 'express';\nconst app = express();\napp.get('/health', (req, res) => res.send('ok'));\napp.listen(3000, () => console.log('server in ascolto su 3000'));",
+        "task": "Avvia un server Express che espone una rotta /health e resta in ascolto sulla porta 3000."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_back",
+      "english": "Client",
+      "set": {
+        "code": "const res = await fetch('https://api.example.com/users');\nconst users = await res.json();\nconsole.log(users);",
+        "task": "Scrivi un client JavaScript che invoca via fetch l'endpoint /users e stampa la risposta JSON."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_back",
+      "english": "Middleware",
+      "set": {
+        "code": "function logger(req, res, next) {\n  console.log(`${req.method} ${req.url}`);\n  next();\n}\napp.use(logger);",
+        "task": "Definisci un middleware Express che logga metodo e URL di ogni richiesta prima di passare al prossimo handler."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_back",
+      "english": "Authentication",
+      "set": {
+        "code": "app.post('/login', async (req, res) => {\n  const { email, password } = req.body;\n  const user = await db.users.findOne({ email });\n  if (!user || !(await bcrypt.compare(password, user.hash))) {\n    return res.status(401).json({ error: 'credenziali non valide' });\n  }\n  res.json({ token: jwt.sign({ id: user.id }, process.env.JWT_SECRET) });\n});",
+        "task": "Implementa l'endpoint /login che verifica email e password con bcrypt e restituisce un JWT in caso di successo."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_back",
+      "english": "Authorization",
+      "set": {
+        "code": "function requireRole(role) {\n  return (req, res, next) => {\n    if (req.user?.role !== role) {\n      return res.status(403).json({ error: 'accesso negato' });\n    }\n    next();\n  };\n}\napp.delete('/users/:id', requireRole('admin'), deleteUser);",
+        "task": "Scrivi un middleware di autorizzazione requireRole che blocca con 403 le richieste fatte da utenti senza il ruolo richiesto."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_back",
+      "english": "Routing",
+      "set": {
+        "code": "import { Router } from 'express';\nconst router = Router();\nrouter.get('/orders', listOrders);\nrouter.post('/orders', createOrder);\nrouter.get('/orders/:id', getOrder);\napp.use('/api', router);",
+        "task": "Configura un Router Express che mappa GET, POST e GET con parametro :id sotto il prefisso /api/orders."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_back",
+      "english": "Environment Variable",
+      "set": {
+        "code": "import 'dotenv/config';\nconst dbUrl = process.env.DATABASE_URL;\nif (!dbUrl) throw new Error('DATABASE_URL mancante');",
+        "task": "Carica le variabili d'ambiente da .env e leggi DATABASE_URL da process.env, fallendo subito se manca."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_back",
+      "english": "Server-side Rendering (SSR)",
+      "set": {
+        "code": "export async function getServerSideProps(context) {\n  const res = await fetch(`https://api.example.com/posts/${context.params.id}`);\n  const post = await res.json();\n  return { props: { post } };\n}",
+        "task": "Definisci getServerSideProps di Next.js per caricare un post via API a ogni richiesta e renderizzarlo lato server."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_api",
+      "english": "HTTP Method (GET, POST, ...)",
+      "set": {
+        "command": "curl -X POST https://api.example.com/users -H \"Content-Type: application/json\" -d '{\"name\":\"Anna\"}'",
+        "code": "app.post('/users', async (req, res) => {\n  const created = await db.users.insert(req.body);\n  res.status(201).json(created);\n});",
+        "task": "Invia una richiesta POST con body JSON all'endpoint /users via curl e definisci la rotta Express che la gestisce."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_api",
+      "english": "Endpoint",
+      "set": {
+        "code": "app.get('/users/:id', async (req, res) => {\n  const user = await db.users.findById(req.params.id);\n  if (!user) return res.status(404).json({ error: 'utente non trovato' });\n  res.json(user);\n});",
+        "task": "Definisci l'endpoint GET /users/:id che cerca l'utente per id e restituisce 404 se non esiste."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_api",
+      "english": "Request",
+      "set": {
+        "command": "curl -X GET https://api.example.com/orders -H \"Authorization: Bearer $TOKEN\"",
+        "code": "const response = await fetch('/api/orders', {\n  method: 'GET',\n  headers: { Authorization: `Bearer ${token}` },\n});",
+        "task": "Costruisci una richiesta HTTP autenticata verso /api/orders sia da terminale con curl sia da JavaScript con fetch."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_api",
+      "english": "Response",
+      "set": {
+        "code": "res.status(200)\n  .set('Cache-Control', 'public, max-age=60')\n  .json({ data: orders });",
+        "task": "Costruisci una risposta HTTP che ritorna status 200, imposta un header Cache-Control e serializza il body in JSON."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_api",
+      "english": "Status Code (200, 404, ...)",
+      "set": {
+        "code": "if (!user) return res.status(404).json({ error: 'not found' });\nif (!user.canAccess(resource)) return res.status(403).json({ error: 'forbidden' });\nreturn res.status(200).json(resource);",
+        "task": "Restituisci il codice di stato HTTP corretto in tre rami: 404 quando manca la risorsa, 403 se l'utente non ha accesso, 200 in caso di successo."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_api",
+      "english": "JSON (JavaScript Object Notation)",
+      "set": {
+        "code": "const payload = { id: 42, name: 'Anna', roles: ['admin', 'editor'] };\nconst body = JSON.stringify(payload);\nconst parsed = JSON.parse(body);",
+        "task": "Serializza un oggetto JavaScript in stringa JSON e poi riparsalo, verificando il round-trip dei dati."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_api",
+      "english": "Payload",
+      "set": {
+        "command": "curl -X PUT https://api.example.com/users/42 -H \"Content-Type: application/json\" -d '{\"name\":\"Anna\",\"email\":\"anna@example.com\"}'",
+        "code": "app.put('/users/:id', async (req, res) => {\n  const payload = req.body;\n  const updated = await db.users.update(req.params.id, payload);\n  res.json(updated);\n});",
+        "task": "Invia un payload JSON via PUT a /users/:id con curl e leggi il body nella rotta Express per aggiornare l'utente."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_api",
+      "english": "GraphQL",
+      "set": {
+        "code": "query GetUser($id: ID!) {\n  user(id: $id) {\n    id\n    name\n    posts {\n      title\n    }\n  }\n}",
+        "task": "Scrivi una query GraphQL che richiede un utente per id e restituisce solo i campi id, name e i titoli dei suoi post."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_tools",
+      "english": "NPM (Node Package Manager)",
+      "set": {
+        "command": "npm install --save-dev jest @types/jest",
+        "task": "Installa jest e i suoi tipi TypeScript come dipendenze di sviluppo del progetto."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_tools",
+      "english": "Bundler (Vite / Webpack)",
+      "set": {
+        "command": "npx vite build --mode production",
+        "task": "Esegui il bundler Vite in modalita production per generare gli asset ottimizzati da pubblicare in deploy."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_tools",
+      "english": "Cookies",
+      "set": {
+        "code": "res.cookie('session', token, {\n  httpOnly: true,\n  secure: true,\n  sameSite: 'strict',\n  maxAge: 1000 * 60 * 60 * 24,\n});",
+        "task": "Imposta un cookie di sessione lato server con i flag HttpOnly, Secure e SameSite strict e una durata di 24 ore."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_tools",
+      "english": "Local Storage",
+      "set": {
+        "code": "localStorage.setItem('theme', 'dark');\nconst theme = localStorage.getItem('theme') ?? 'light';\ndocument.documentElement.dataset.theme = theme;",
+        "task": "Salva la preferenza del tema nel local storage e rileggila al caricamento per applicarla all'elemento root del documento."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_tools",
+      "english": "CORS (Cross-Origin Resource Sharing)",
+      "set": {
+        "code": "import cors from 'cors';\napp.use(cors({\n  origin: ['https://app.example.com'],\n  credentials: true,\n}));",
+        "task": "Configura il middleware cors su Express per consentire le richieste solo da app.example.com e con credenziali."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_tools",
+      "english": "HTTPS (Secure)",
+      "set": {
+        "command": "curl -v https://api.example.com/health --resolve api.example.com:443:127.0.0.1",
+        "task": "Esegui una chiamata HTTPS verbosa verso /health forzando la risoluzione DNS per validare il certificato TLS in staging."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_tools",
+      "english": "Lighthouse",
+      "set": {
+        "command": "npx lighthouse https://www.example.com --output=html --output-path=./report.html",
+        "task": "Esegui Lighthouse contro la home di produzione e salva il report HTML con i punteggi di performance, SEO e accessibilita."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_sql",
+      "english": "Table",
+      "set": {
+        "code": "CREATE TABLE users (\n  id SERIAL PRIMARY KEY,\n  email VARCHAR(255) UNIQUE NOT NULL,\n  created_at TIMESTAMP DEFAULT NOW()\n);",
+        "task": "Crea la tabella users con una chiave primaria seriale, un'email unica obbligatoria e un timestamp di creazione di default."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_sql",
+      "english": "Query",
+      "set": {
+        "command": "psql -h localhost -U admin -d shop -c \"SELECT id, name FROM products WHERE price > 100;\"",
+        "code": "SELECT id, name\nFROM products\nWHERE price > 100\nORDER BY name;",
+        "task": "Scrivi una query parametrizzabile che recupera id e nome dei prodotti con prezzo superiore a 100 ed eseguila via psql."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_sql",
+      "english": "Row (Record)",
+      "set": {
+        "code": "INSERT INTO users (email, name)\nVALUES ('anna@example.com', 'Anna')\nRETURNING id, created_at;",
+        "task": "Inserisci una nuova riga nella tabella users e usa RETURNING per recuperare id e timestamp generati dal database."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_sql",
+      "english": "Column (Field)",
+      "set": {
+        "code": "ALTER TABLE users\nADD COLUMN last_login_at TIMESTAMP;",
+        "task": "Aggiungi una nuova colonna last_login_at di tipo TIMESTAMP alla tabella users senza valore di default."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_sql",
+      "english": "SELECT Statement",
+      "set": {
+        "code": "SELECT id, email, created_at\nFROM users\nWHERE active = true\nORDER BY created_at DESC\nLIMIT 20;",
+        "task": "Scrivi un'istruzione SELECT che elenca le 20 email piu recenti degli utenti attivi, ordinate per data di creazione."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_sql",
+      "english": "WHERE Clause",
+      "set": {
+        "code": "SELECT id, total\nFROM orders\nWHERE status = 'paid'\n  AND created_at >= NOW() - INTERVAL '7 days';",
+        "task": "Filtra con una clausola WHERE gli ordini pagati negli ultimi sette giorni, combinando piu condizioni con AND."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_sql",
+      "english": "JOIN",
+      "set": {
+        "code": "SELECT u.name, COUNT(o.id) AS orders\nFROM users u\nLEFT JOIN orders o ON o.user_id = u.id\nGROUP BY u.id, u.name\nHAVING COUNT(o.id) > 5;",
+        "task": "Componi un LEFT JOIN tra users e orders, raggruppa per utente e tieni solo quelli con piu di cinque ordini."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_sql",
+      "english": "Data Manipulation Language (DML)",
+      "set": {
+        "code": "INSERT INTO products (sku, price) VALUES ('SKU-1', 19.90);\nUPDATE products SET price = price * 1.1 WHERE sku = 'SKU-1';\nDELETE FROM products WHERE sku = 'SKU-1';",
+        "task": "Esegui in sequenza le tre operazioni DML principali (INSERT, UPDATE, DELETE) sulla tabella products."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_design",
+      "english": "Schema",
+      "set": {
+        "command": "psql -h localhost -U admin -d production -c \"CREATE SCHEMA reporting AUTHORIZATION analytics;\"",
+        "code": "CREATE SCHEMA reporting AUTHORIZATION analytics;\nCREATE TABLE reporting.daily_sales (\n  day DATE PRIMARY KEY,\n  total NUMERIC(12,2) NOT NULL\n);",
+        "task": "Crea uno schema reporting separato di proprieta del ruolo analytics e definiscici dentro la tabella daily_sales."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_design",
+      "english": "Index",
+      "set": {
+        "code": "CREATE INDEX idx_orders_user_created\nON orders (user_id, created_at DESC);",
+        "task": "Crea un indice composito su orders per accelerare le query che filtrano per user_id e ordinano per created_at."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_design",
+      "english": "Primary Key",
+      "set": {
+        "code": "CREATE TABLE invoices (\n  id BIGSERIAL PRIMARY KEY,\n  number VARCHAR(20) NOT NULL\n);",
+        "task": "Definisci la tabella invoices con una chiave primaria BIGSERIAL auto-incrementante e una colonna number obbligatoria."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_design",
+      "english": "Foreign Key",
+      "set": {
+        "code": "CREATE TABLE orders (\n  id SERIAL PRIMARY KEY,\n  user_id INT NOT NULL,\n  CONSTRAINT fk_orders_user\n    FOREIGN KEY (user_id) REFERENCES users (id)\n    ON DELETE CASCADE\n);",
+        "task": "Aggiungi una chiave esterna user_id sulla tabella orders che referenzia users.id con cancellazione a cascata."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_design",
+      "english": "Relationship",
+      "set": {
+        "code": "CREATE TABLE authors (\n  id SERIAL PRIMARY KEY,\n  name VARCHAR(120) NOT NULL\n);\nCREATE TABLE books (\n  id SERIAL PRIMARY KEY,\n  title VARCHAR(200) NOT NULL,\n  author_id INT REFERENCES authors (id)\n);",
+        "task": "Modella una relazione uno-a-molti tra authors e books aggiungendo author_id come chiave esterna sulla tabella books."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_design",
+      "english": "Constraint",
+      "set": {
+        "code": "ALTER TABLE users\nADD CONSTRAINT users_email_unique UNIQUE (email);\nALTER TABLE users\nADD CONSTRAINT users_age_check CHECK (age >= 18);",
+        "task": "Aggiungi alla tabella users un vincolo UNIQUE sull'email e un CHECK che impone almeno 18 anni di eta."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_design",
+      "english": "Stored Procedure",
+      "set": {
+        "code": "CREATE OR REPLACE PROCEDURE archive_old_orders(cutoff DATE)\nLANGUAGE plpgsql\nAS $$\nBEGIN\n  INSERT INTO orders_archive SELECT * FROM orders WHERE created_at < cutoff;\n  DELETE FROM orders WHERE created_at < cutoff;\nEND;\n$$;",
+        "task": "Definisci una stored procedure PL/pgSQL che archivia gli ordini piu vecchi della data passata come parametro."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_nosql",
+      "english": "Document Store",
+      "set": {
+        "code": "db.users.insertOne({\n  email: 'anna@example.com',\n  profile: { name: 'Anna', city: 'Milano' },\n  roles: ['admin', 'editor'],\n  created_at: new Date()\n});",
+        "task": "Inserisci in un archivio documentale un singolo documento utente con campi annidati e un array di ruoli."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_nosql",
+      "english": "Key-Value Store",
+      "set": {
+        "command": "redis-cli SET session:abc123 '{\"user_id\":42}' EX 3600",
+        "code": "await redis.set('session:abc123', JSON.stringify({ userId: 42 }), 'EX', 3600);\nconst raw = await redis.get('session:abc123');",
+        "task": "Salva nella key-value store Redis una sessione con TTL di un'ora e poi rileggila per ricostruire l'utente."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_nosql",
+      "english": "Collection",
+      "set": {
+        "command": "mongosh \"mongodb://localhost:27017/myapp\" --eval \"db.createCollection('orders')\"",
+        "code": "db.orders.insertOne({ user_id: 42, total: 99.9, status: 'paid' });",
+        "task": "Crea la collezione orders su MongoDB da shell e inserisci al suo interno un primo documento di ordine pagato."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_nosql",
+      "english": "Document",
+      "set": {
+        "code": "db.users.find({ active: true, role: 'admin' })\n  .sort({ created_at: -1 })\n  .limit(10);",
+        "task": "Recupera dalla collezione users i 10 documenti piu recenti dove active e true e role e admin."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_nosql",
+      "english": "Schema-less",
+      "set": {
+        "code": "db.products.insertMany([\n  { name: 'Sedia', price: 49 },\n  { name: 'Tavolo', price: 199, dimensions: { w: 80, h: 75, d: 80 } },\n  { name: 'Lampada', price: 25, tags: ['design', 'led'] }\n]);",
+        "task": "Inserisci nella collezione products tre documenti con strutture diverse per dimostrare la natura schema-less del database."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_ops",
+      "english": "Transaction",
+      "set": {
+        "code": "BEGIN;\nUPDATE accounts SET balance = balance - 100 WHERE id = 1;\nUPDATE accounts SET balance = balance + 100 WHERE id = 2;\nCOMMIT;",
+        "task": "Avvolgi un trasferimento di 100 tra due conti in una transazione SQL con BEGIN, le due UPDATE e COMMIT finale."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_ops",
+      "english": "Migration",
+      "set": {
+        "command": "npx knex migrate:latest --env production",
+        "code": "export async function up(knex) {\n  await knex.schema.createTable('posts', (t) => {\n    t.increments('id');\n    t.string('title').notNullable();\n    t.timestamps(true, true);\n  });\n}\nexport async function down(knex) {\n  await knex.schema.dropTable('posts');\n}",
+        "task": "Scrivi una migration Knex reversibile che crea la tabella posts ed eseguila in produzione con migrate:latest."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_ops",
+      "english": "ORM (Object-Relational Mapping)",
+      "set": {
+        "code": "const user = await prisma.user.findUnique({\n  where: { email: 'anna@example.com' },\n  include: { orders: true },\n});",
+        "task": "Usa Prisma come ORM per recuperare un utente per email caricando in eager loading anche i suoi ordini."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_ops",
+      "english": "Backup",
+      "set": {
+        "command": "pg_dump -h localhost -U admin -F c -f /backups/prod-$(date +%Y%m%d).dump production",
+        "task": "Esegui un backup compresso del database production con pg_dump nominandolo con la data corrente."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_ops",
+      "english": "Replication",
+      "set": {
+        "command": "pg_basebackup -h primary.example.com -U replicator -D /var/lib/postgresql/replica -X stream -P",
+        "task": "Inizializza una replica streaming PostgreSQL clonando i dati dal nodo primario con pg_basebackup."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_ops",
+      "english": "Execution Plan",
+      "set": {
+        "command": "psql -d shop -c \"EXPLAIN ANALYZE SELECT * FROM orders WHERE user_id = 42 ORDER BY created_at DESC LIMIT 10;\"",
+        "code": "EXPLAIN ANALYZE\nSELECT *\nFROM orders\nWHERE user_id = 42\nORDER BY created_at DESC\nLIMIT 10;",
+        "task": "Stampa il piano di esecuzione reale di una query sugli ordini di un utente per individuare scansioni sequenziali da ottimizzare."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_ops",
+      "english": "Connection Pool",
+      "set": {
+        "code": "import { Pool } from 'pg';\nconst pool = new Pool({\n  connectionString: process.env.DATABASE_URL,\n  max: 20,\n  idleTimeoutMillis: 30000,\n});\nconst { rows } = await pool.query('SELECT NOW()');",
+        "task": "Configura un connection pool PostgreSQL con un massimo di 20 connessioni e un idle timeout di 30 secondi."
+      }
+    }
+  ]
+}

@@ -1,0 +1,544 @@
+{
+  "fixes": [
+    {
+      "level": "2",
+      "lesson": "linux_editors",
+      "english": "Nano",
+      "set": {
+        "command": "nano /etc/nginx/nginx.conf",
+        "task": "Apri il file di configurazione di nginx in nano per correggere al volo un valore prima del reload del servizio."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_editors",
+      "english": "Vim",
+      "set": {
+        "command": "vim /etc/ssh/sshd_config",
+        "task": "Modifica la configurazione del demone SSH con vim per disabilitare il login di root prima del prossimo reboot."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_proc",
+      "english": "Grep",
+      "set": {
+        "command": "grep -i 'failed password' /var/log/auth.log",
+        "task": "Filtra dal log di autenticazione tutti i tentativi di login falliti durante l'indagine su un attacco brute-force SSH."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_proc",
+      "english": "Redirect",
+      "set": {
+        "command": "dmesg > /tmp/kernel-boot.log",
+        "task": "Salva l'output dei messaggi del kernel in un file di log per allegarlo al ticket di supporto hardware."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_proc",
+      "english": "Append",
+      "set": {
+        "command": "echo \"$(date -Iseconds) deploy completato\" >> /var/log/deploy.log",
+        "task": "Aggiungi una riga di tracciamento al log di deploy senza sovrascrivere lo storico delle release precedenti."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_proc",
+      "english": "Echo",
+      "set": {
+        "command": "echo \"Avvio del backup notturno...\"",
+        "task": "Stampa a video un messaggio di stato dentro lo script di backup per far sapere all'operatore quale fase è in corso."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_proc",
+      "english": "Cut",
+      "set": {
+        "command": "cut -d: -f1 /etc/passwd",
+        "task": "Estrai solo i nomi utente da /etc/passwd per generare l'inventario degli account locali del server."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_proc",
+      "english": "Sort",
+      "set": {
+        "command": "sort -u access.log",
+        "task": "Ordina le voci del log di accesso ed elimina i duplicati prima di passarle al report di analisi."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_proc",
+      "english": "Unique",
+      "set": {
+        "command": "sort access.log | uniq -c | sort -rn",
+        "task": "Conta quante richieste ha fatto ogni indirizzo IP nel log di accesso e ordinale dalla più frequente."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_proc",
+      "english": "Awk",
+      "set": {
+        "command": "awk '{s+=$3} END{print s}' access.log",
+        "task": "Somma i byte serviti nel log di accesso per stimare il traffico totale generato dal sito durante la giornata."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_util",
+      "english": "Word Count",
+      "set": {
+        "command": "wc -l /etc/nginx/nginx.conf",
+        "task": "Conta quante righe ha il file di configurazione di nginx prima di iniziare il refactoring del blocco monolitico."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_util",
+      "english": "Difference",
+      "set": {
+        "command": "diff -u /etc/nginx/nginx.conf.bak /etc/nginx/nginx.conf",
+        "task": "Confronta riga per riga la configurazione di nginx con il backup per capire cosa è cambiato prima del rollback."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_util",
+      "english": "Compare",
+      "set": {
+        "command": "cmp firmware-v1.bin firmware-v2.bin",
+        "task": "Verifica byte per byte se due immagini firmware sono identiche e individua l'offset esatto della prima differenza."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_util",
+      "english": "Split",
+      "set": {
+        "command": "split -b 100M database.sql backup_part_",
+        "task": "Spezza un dump SQL pesante in chunk da 100 MB per superare il limite di upload del servizio cloud."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_util",
+      "english": "Paste",
+      "set": {
+        "command": "paste -d, usernames.txt emails.txt > users.csv",
+        "task": "Unisci la lista dei nomi utente con quella delle email in un unico CSV pronto per l'importazione."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_util",
+      "english": "Translate",
+      "set": {
+        "command": "tr 'A-Z' 'a-z' < input.txt > input.lower.txt",
+        "task": "Normalizza un file di testo trasformando tutte le maiuscole in minuscole prima del confronto case-insensitive."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_util",
+      "english": "Reverse",
+      "set": {
+        "command": "rev urls.txt | cut -d/ -f1 | rev",
+        "task": "Estrai l'ultimo segmento di ogni URL invertendo la stringa, prendendo il primo campo e re-invertendola."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_util",
+      "english": "Show Non-printing",
+      "set": {
+        "command": "cat -A deploy.sh",
+        "task": "Mostra i caratteri non stampabili dello script per scovare i ritorni a capo Windows che lo fanno fallire silenziosamente."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_util",
+      "english": "Patch",
+      "set": {
+        "command": "patch -p1 < cve-2024-1234.diff",
+        "task": "Applica la patch di sicurezza del vendor all'albero dei sorgenti prima di ricompilare il pacchetto."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_util",
+      "english": "Checksum",
+      "set": {
+        "command": "sha256sum ubuntu-22.04.iso",
+        "task": "Calcola il checksum SHA-256 dell'immagine ISO appena scaricata e confrontalo con quello pubblicato dal vendor."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_archives",
+      "english": "Archive",
+      "set": {
+        "command": "tar -cf project.tar src/",
+        "task": "Raggruppa l'intera cartella sorgente in un unico archivio tar prima di trasferirla via scp sul server remoto."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_archives",
+      "english": "Compress",
+      "set": {
+        "command": "gzip -9 access.log",
+        "task": "Comprimi al massimo livello il log di accesso ruotato per liberare spazio nella partizione /var."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_archives",
+      "english": "Extract",
+      "set": {
+        "command": "tar -xzf release-1.2.0.tar.gz -C /opt/app",
+        "task": "Estrai il tarball della nuova release direttamente nella directory di deploy senza scompattarla prima altrove."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_archives",
+      "english": "Tarball",
+      "set": {
+        "command": "tar -czvf project-1.0.tar.gz project/",
+        "task": "Crea un tarball compresso del progetto pronto per la pubblicazione sul mirror di download."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_archives",
+      "english": "Zip",
+      "set": {
+        "command": "zip -r logs.zip /var/log/myapp/",
+        "task": "Impacchetta ricorsivamente i log dell'applicazione in un archivio zip da inviare al team di assistenza."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_archives",
+      "english": "Unzip",
+      "set": {
+        "command": "unzip artifact.zip -d /opt/release",
+        "task": "Decomprimi il pacchetto di artefatti della CI nella directory di release per verificarne il contenuto."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_archives",
+      "english": "Gzip",
+      "set": {
+        "command": "gzip -k large.csv",
+        "task": "Comprimi il CSV mantenendo l'originale così puoi caricare la versione gzip senza perdere la sorgente."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_archives",
+      "english": "Flag z",
+      "set": {
+        "command": "tar -czf backup.tar.gz /home/user",
+        "task": "Comprimi la home directory in un archivio tar gzip in un solo passaggio per il backup notturno."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_archives",
+      "english": "List Contents",
+      "set": {
+        "command": "tar -tzf release.tar.gz",
+        "task": "Elenca i percorsi contenuti nel tarball di release per verificare che la struttura sia quella attesa prima dell'estrazione."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_archives",
+      "english": "Verbose Flag",
+      "set": {
+        "command": "tar -xvzf release.tar.gz",
+        "task": "Estrai il tarball stampando a video ogni file scompattato per avere visibilità sul progresso dell'operazione."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_users",
+      "english": "Add User",
+      "set": {
+        "command": "adduser alice",
+        "task": "Crea in modo interattivo l'account locale per una nuova collega impostando home directory, shell e password."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_users",
+      "english": "Delete User",
+      "set": {
+        "command": "deluser --remove-home alice",
+        "task": "Rimuovi l'account di un ex dipendente cancellando anche la sua home directory durante l'offboarding."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_users",
+      "english": "Password",
+      "set": {
+        "command": "passwd alice",
+        "task": "Imposta una nuova password per l'utente alice dopo che ha dimenticato quella corrente."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_users",
+      "english": "Switch User",
+      "set": {
+        "command": "su - postgres",
+        "task": "Passa all'account di servizio postgres con ambiente di login completo per eseguire manutenzione sul database."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_users",
+      "english": "UID",
+      "set": {
+        "command": "id -u alice",
+        "task": "Recupera l'identificatore numerico dell'utente alice da usare nel mapping dei permessi di un container."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_users",
+      "english": "GID",
+      "set": {
+        "command": "id -g alice",
+        "task": "Ottieni l'ID numerico del gruppo primario di alice per allineare i permessi sulla share NFS condivisa."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_users",
+      "english": "Group Add",
+      "set": {
+        "command": "groupadd developers",
+        "task": "Crea il gruppo developers prima di assegnarci i membri che dovranno accedere alla directory di progetto."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_users",
+      "english": "Members",
+      "set": {
+        "command": "getent group sudo",
+        "task": "Elenca i membri del gruppo sudo durante l'audit degli accessi privilegiati sul server di produzione."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_perms",
+      "english": "Read",
+      "set": {
+        "command": "chmod u+r /var/log/app.log",
+        "task": "Concedi al proprietario il permesso di lettura sul file di log così può consultarlo senza usare sudo."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_perms",
+      "english": "Write",
+      "set": {
+        "command": "chmod a-w /etc/nginx/nginx.conf",
+        "task": "Togli a tutti il permesso di scrittura sulla configurazione di nginx per evitare modifiche accidentali in produzione."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_perms",
+      "english": "Execute Permission",
+      "set": {
+        "command": "chmod +x deploy.sh",
+        "task": "Rendi eseguibile lo script di deploy così puoi invocarlo direttamente con ./deploy.sh."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_perms",
+      "english": "Change Mode",
+      "set": {
+        "command": "chmod 755 deploy.sh",
+        "task": "Imposta i permessi dello script di deploy in modo che tutti possano eseguirlo ma solo il proprietario possa modificarlo."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_perms",
+      "english": "Change Owner",
+      "set": {
+        "command": "chown -R www-data:www-data /var/www",
+        "task": "Riassegna ricorsivamente la proprietà della document root all'utente del server web dopo il restore da backup."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_perms",
+      "english": "Octal",
+      "set": {
+        "command": "chmod 644 /etc/ssh/sshd_config",
+        "task": "Applica in notazione ottale i permessi standard alla configurazione di SSH: lettura/scrittura per root e sola lettura per gli altri."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_perms",
+      "english": "Symbolic",
+      "set": {
+        "command": "chmod u+x,g-w,o-rwx script.sh",
+        "task": "Aggiusta i permessi dello script in notazione simbolica concedendo l'esecuzione al proprietario e bloccando l'accesso agli altri."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_perms",
+      "english": "Directory Execute",
+      "set": {
+        "command": "chmod +x /var/www/private",
+        "task": "Abilita il bit di esecuzione sulla directory così gli utenti autorizzati possono entrarci e attraversarla."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_special_perms",
+      "english": "SetUID",
+      "set": {
+        "command": "chmod u+s /usr/local/bin/myutil",
+        "task": "Imposta il bit setUID sul binario così gli utenti normali lo eseguono con i privilegi del proprietario."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_special_perms",
+      "english": "SetGID",
+      "set": {
+        "command": "chmod g+s /shared/project",
+        "task": "Attiva il bit setGID sulla directory condivisa così tutti i nuovi file ereditano automaticamente il gruppo del team."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_special_perms",
+      "english": "Sticky Bit",
+      "set": {
+        "command": "chmod +t /tmp",
+        "task": "Attiva il bit di persistenza sulla directory temporanea così ogni utente può eliminare solo i propri file."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_special_perms",
+      "english": "Attribute",
+      "set": {
+        "command": "lsattr /etc/resolv.conf",
+        "task": "Mostra gli attributi estesi del file di risoluzione DNS per verificare se è stato bloccato come immutabile."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_special_perms",
+      "english": "Immutable",
+      "set": {
+        "command": "chattr +i /etc/resolv.conf",
+        "task": "Blocca il file resolv.conf come immutabile così nemmeno root può modificarlo per sbaglio dopo un riavvio del network manager."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_special_perms",
+      "english": "Getfacl",
+      "set": {
+        "command": "getfacl /shared/project",
+        "task": "Leggi le ACL della cartella di progetto condivisa per scoprire quali utenti hanno accesso extra oltre ai permessi UNIX standard."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_special_perms",
+      "english": "Setfacl",
+      "set": {
+        "command": "setfacl -m u:alice:rx /shared/project",
+        "task": "Concedi all'utente alice accesso in lettura ed esecuzione sulla cartella di progetto senza modificarne il gruppo proprietario."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_special_perms",
+      "english": "Inheritance",
+      "set": {
+        "command": "setfacl -d -m g:devs:rwx /shared/project",
+        "task": "Imposta l'ACL di default sulla cartella così tutti i nuovi file creati al suo interno ereditano i permessi del gruppo devs."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_identity",
+      "english": "Who Am I",
+      "set": {
+        "command": "whoami",
+        "task": "Verifica dentro lo script con quale utente sta girando il processo prima di eseguire l'operazione privilegiata."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_identity",
+      "english": "Identity",
+      "set": {
+        "command": "id alice",
+        "task": "Mostra UID, GID e gruppi secondari dell'utente alice per diagnosticare un problema di permessi sulla share."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_identity",
+      "english": "Groups",
+      "set": {
+        "command": "groups alice",
+        "task": "Elenca tutti i gruppi di cui alice fa parte per confermare che l'aggiunta al team di sviluppo sia andata a buon fine."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_identity",
+      "english": "Last",
+      "set": {
+        "command": "last -n 20",
+        "task": "Mostra gli ultimi venti accessi al server per individuare login sospetti durante l'analisi post-incidente."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_identity",
+      "english": "Who",
+      "set": {
+        "command": "who",
+        "task": "Controlla chi è collegato in questo momento al server prima di lanciare il reboot programmato."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_identity",
+      "english": "Finger",
+      "set": {
+        "command": "finger alice",
+        "task": "Interroga il demone finger di un sistema legacy per ottenere orario di login, shell e info di progetto dell'utente alice."
+      }
+    }
+  ]
+}
