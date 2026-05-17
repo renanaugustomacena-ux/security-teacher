@@ -30,6 +30,7 @@ import { masteryService } from '../services/MasteryService.js';
 import { questService } from '../services/QuestService.js';
 import { currencyService } from '../services/CurrencyService.js';
 import { hintService } from '../services/HintService.js';
+import { smartScoreService } from '../services/SmartScoreService.js';
 import { practiceHUD } from '../PracticeHUD.js';
 import { nearMiss } from '../utils/StringDistance.js';
 import { TopicVelocita } from './TopicVelocita.js';
@@ -1701,6 +1702,10 @@ export class TopicPracticeManager {
       expectedAnswer: expectedAnswer || '',
       streakAtTime: this.consecutiveCorrect,
     });
+
+    if (this.currentTopicId && this.currentLevel != null) {
+      smartScoreService.updateScore(this.currentTopicId, this.currentLevel, isCorrect);
+    }
   }
 
   _updateMasteryBatch() {

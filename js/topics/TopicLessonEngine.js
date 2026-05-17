@@ -11,6 +11,7 @@
  */
 
 import { ttsService } from '../services/TTSService.js';
+import { masteryService } from '../services/MasteryService.js';
 import { getTopicMeta } from './registry.js';
 import { registerAction } from '../utils/EventDispatch.js';
 
@@ -581,6 +582,13 @@ export class TopicLessonEngine {
 
     const meta = getTopicMeta(this.topicId);
     const topicColor = meta ? meta.color : 'var(--accent-primary)';
+
+    // Mark items as INTRODUCED (first stage of mastery model)
+    for (const item of group.items) {
+      const ctx = item.context || group.context || 'general';
+      const key = `${this.topicId}:${this.levelNum}:${ctx}:${item.english}`;
+      masteryService.markIntroduced(key);
+    }
 
     // Update header progress
     const progressEl = document.getElementById('topic-lesson-progress');
