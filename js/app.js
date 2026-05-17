@@ -14,6 +14,8 @@ import { store } from './store/index.js';
 import { storageService } from './services/StorageService.js';
 import { analyticsService } from './services/AnalyticsService.js';
 import { masteryService } from './services/MasteryService.js';
+import { questService } from './services/QuestService.js';
+import { currencyService } from './services/CurrencyService.js';
 import { lyricsService } from './services/LyricsService.js';
 import { MusicManager } from './music.js';
 import { ProgressManager } from './progress.js';
@@ -131,8 +133,10 @@ class App {
     try {
       await analyticsService.init();
       await masteryService.init();
+      await questService.init();
+      await currencyService.init();
     } catch (err) {
-      console.warn('[pedagogy] analytics/mastery init failed:', err);
+      console.warn('[pedagogy] analytics/mastery/quest/currency init failed:', err);
     }
 
     // 2a. React to sign-in / sign-out after the first load
