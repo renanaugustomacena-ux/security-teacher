@@ -5867,6 +5867,7 @@ export default {
               difficulty: 'intermediate',
               code: 'import tensorflow as tf',
               tool: 'TensorFlow',
+              task: 'Importa la libreria TensorFlow con alias tf per costruire il modello di deep learning.',
             },
             {
               english: 'Keras',
@@ -5879,6 +5880,7 @@ export default {
               difficulty: 'intermediate',
               code: 'from tensorflow import keras',
               tool: 'Keras',
+              task: 'Carica Keras da TensorFlow per costruire reti neurali con API ad alto livello.',
             },
             {
               english: 'Sequential Model',
@@ -5890,6 +5892,7 @@ export default {
               context: 'tools',
               difficulty: 'intermediate',
               code: 'model = keras.Sequential([Dense(64), Dense(10)])',
+              task: 'Definisci un modello sequenziale Keras con due strati densi da 64 e 10 unita.',
             },
             {
               english: 'Functional API',
@@ -5901,6 +5904,7 @@ export default {
               context: 'tools',
               difficulty: 'intermediate',
               code: 'inputs = Input(...); x = Dense(64)(inputs)',
+              task: 'Costruisci il modello con la Functional API collegando un layer Dense da 64 unita ai tensori di input.',
             },
             {
               english: 'Tensor',
@@ -5912,6 +5916,7 @@ export default {
               context: 'tools',
               difficulty: 'intermediate',
               code: 'tf.constant([[1, 2], [3, 4]])',
+              task: 'Crea un tensore costante TensorFlow 2x2 contenente i valori da 1 a 4.',
             },
             {
               english: 'Eager Execution',
@@ -5934,6 +5939,7 @@ export default {
               context: 'tools',
               difficulty: 'intermediate',
               code: '@tf.function',
+              task: 'Decora la funzione con @tf.function per compilarla in modalita grafo statico.',
             },
             {
               english: 'Callback',
@@ -5945,6 +5951,7 @@ export default {
               context: 'tools',
               difficulty: 'intermediate',
               code: 'EarlyStopping(patience=3)',
+              task: 'Configura una callback EarlyStopping che ferma il training dopo 3 epoche senza miglioramenti.',
             },
             {
               english: 'TensorBoard',
@@ -5957,6 +5964,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'TensorBoard',
               command: 'tensorboard --logdir logs/',
+              task: 'Avvia TensorBoard puntando alla directory logs/ per visualizzare le metriche di training.',
             },
             {
               english: 'tf.data',
@@ -5968,6 +5976,7 @@ export default {
               context: 'tools',
               difficulty: 'intermediate',
               code: 'tf.data.Dataset.from_tensor_slices(X)',
+              task: 'Crea un Dataset tf.data a partire dagli slice del tensore X per alimentare il modello.',
             },
           ],
         },
@@ -5987,6 +5996,7 @@ export default {
               difficulty: 'intermediate',
               code: 'import torch',
               tool: 'PyTorch',
+              task: 'Includi la libreria torch per definire e addestrare reti neurali con PyTorch.',
             },
             {
               english: 'nn.Module',
@@ -5998,6 +6008,7 @@ export default {
               context: 'tools',
               difficulty: 'intermediate',
               code: 'class Net(nn.Module):',
+              task: 'Definisci la classe Net che eredita da nn.Module per costruire un modulo PyTorch custom.',
             },
             {
               english: 'Autograd',
@@ -6009,6 +6020,7 @@ export default {
               context: 'tools',
               difficulty: 'intermediate',
               code: 'loss.backward()',
+              task: 'Esegui il backward sulla loss per calcolare i gradienti automaticamente con autograd.',
             },
             {
               english: 'DataLoader',
@@ -6020,6 +6032,7 @@ export default {
               context: 'tools',
               difficulty: 'intermediate',
               code: 'DataLoader(dataset, batch_size=32, shuffle=True)',
+              task: 'Costruisci un DataLoader dal dataset con batch da 32 campioni e shuffle abilitato.',
             },
             {
               english: 'Collate Function',
@@ -6032,6 +6045,7 @@ export default {
               difficulty: 'intermediate',
               code: 'class MyData(Dataset):',
               note: `Si passa al DataLoader tramite l'argomento collate_fn.`,
+              task: 'Definisci la classe MyData che estende Dataset per implementare la logica di collazione.',
             },
             {
               english: 'Tensor (PyTorch)',
@@ -6043,6 +6057,7 @@ export default {
               context: 'tools',
               difficulty: 'intermediate',
               code: 'x = torch.randn(2, 3).cuda()',
+              task: 'Genera un tensore PyTorch 2x3 di valori normali e spostalo sulla GPU con .cuda().',
             },
             {
               english: 'Optimizer Step',
@@ -6054,6 +6069,7 @@ export default {
               context: 'tools',
               difficulty: 'intermediate',
               code: 'optimizer.step()',
+              task: 'Invoca optimizer.step() per aggiornare i pesi del modello con i gradienti calcolati.',
             },
             {
               english: 'PyTorch Lightning',
@@ -6076,6 +6092,7 @@ export default {
               context: 'tools',
               difficulty: 'intermediate',
               code: 'torch.jit.script(model)',
+              task: 'Converti il modello in TorchScript con torch.jit.script per il deploy in produzione.',
             },
             {
               english: 'torch.compile',
@@ -6087,6 +6104,7 @@ export default {
               context: 'tools',
               difficulty: 'intermediate',
               code: 'model = torch.compile(model)',
+              task: `Compila il modello con torch.compile per accelerare l'inferenza tramite ottimizzazione JIT.`,
             },
           ],
         },
@@ -6106,6 +6124,7 @@ export default {
               difficulty: 'intermediate',
               code: 'from sklearn import datasets',
               tool: 'scikit-learn',
+              task: 'Richiama il modulo datasets di sklearn per caricare dataset di esempio.',
             },
             {
               english: 'Pipeline',
@@ -6117,6 +6136,7 @@ export default {
               context: 'tools',
               difficulty: 'intermediate',
               code: 'Pipeline([("scaler", StandardScaler()), ("model", SVC())])',
+              task: 'Componi una Pipeline sklearn che applica StandardScaler e poi SVC al dataset.',
             },
             {
               english: 'Estimator',
@@ -6149,6 +6169,7 @@ export default {
               context: 'tools',
               difficulty: 'intermediate',
               code: 'model.fit(X_train, y_train)',
+              task: 'Addestra il modello chiamando fit sui dati di training X_train e y_train.',
             },
             {
               english: 'predict',
@@ -6160,6 +6181,7 @@ export default {
               context: 'tools',
               difficulty: 'intermediate',
               code: 'y_pred = model.predict(X_test)',
+              task: 'Genera le predizioni y_pred invocando predict sul set di test X_test.',
             },
             {
               english: 'predict_proba',
@@ -6171,6 +6193,7 @@ export default {
               context: 'tools',
               difficulty: 'intermediate',
               code: 'probs = model.predict_proba(X_test)',
+              task: 'Ottieni le probabilita di classe per X_test usando il metodo predict_proba.',
             },
             {
               english: 'NumPy',
@@ -6183,6 +6206,7 @@ export default {
               difficulty: 'intermediate',
               code: 'import numpy as np',
               tool: 'NumPy',
+              task: 'Carica NumPy con alias np per operare su array numerici multidimensionali.',
             },
             {
               english: 'pandas',
@@ -6195,6 +6219,7 @@ export default {
               difficulty: 'intermediate',
               code: 'import pandas as pd',
               tool: 'pandas',
+              task: 'Includi pandas con alias pd per manipolare dataframe e dataset tabellari.',
             },
             {
               english: 'JAX',
@@ -6207,6 +6232,7 @@ export default {
               difficulty: 'intermediate',
               code: 'import jax.numpy as jnp',
               tool: 'JAX',
+              task: 'Carica jax.numpy come jnp per operazioni array accelerate da XLA e autodiff.',
             },
           ],
         },
@@ -6237,6 +6263,7 @@ export default {
               difficulty: 'intermediate',
               code: 'from transformers import AutoModel',
               tool: 'transformers',
+              task: 'Recupera AutoModel dalla libreria transformers di Hugging Face per caricare modelli pre-addestrati.',
             },
             {
               english: 'AutoModel',
@@ -6248,6 +6275,7 @@ export default {
               context: 'tools',
               difficulty: 'intermediate',
               code: 'AutoModel.from_pretrained("bert-base-uncased")',
+              task: 'Carica il modello pre-addestrato bert-base-uncased tramite AutoModel.from_pretrained.',
             },
             {
               english: 'Tokenizer',
@@ -6259,6 +6287,7 @@ export default {
               context: 'tools',
               difficulty: 'intermediate',
               code: 'AutoTokenizer.from_pretrained("gpt2")',
+              task: 'Istanzia il tokenizer di gpt2 con AutoTokenizer.from_pretrained per preparare gli input testuali.',
             },
             {
               english: 'Pipeline (HF)',
@@ -6270,6 +6299,7 @@ export default {
               context: 'tools',
               difficulty: 'intermediate',
               code: 'pipeline("sentiment-analysis")(text)',
+              task: 'Esegui la pipeline Hugging Face di sentiment-analysis passando il testo come input.',
             },
             {
               english: 'Datasets Library',
@@ -6282,6 +6312,7 @@ export default {
               difficulty: 'intermediate',
               code: 'from datasets import load_dataset',
               tool: 'datasets',
+              task: 'Includi load_dataset dalla libreria datasets per scaricare dataset pubblici Hugging Face.',
             },
             {
               english: 'Model Hub',
@@ -6303,6 +6334,7 @@ export default {
               context: 'tools',
               difficulty: 'intermediate',
               code: 'trainer = Trainer(model, args, train_dataset)',
+              task: 'Costruisci il Trainer Hugging Face passando modello, argomenti e dataset di training.',
             },
             {
               english: 'Spaces',
@@ -6362,6 +6394,7 @@ export default {
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'SelectKBest(score_func=f_classif, k=10)',
+              task: 'Seleziona le 10 feature migliori con SelectKBest e score function f_classif.',
             },
             {
               english: 'Wrapper Method',
@@ -6396,6 +6429,7 @@ export default {
               difficulty: 'advanced',
               code: 'RFE(estimator, n_features_to_select=10)',
               note: 'Abbreviata RFE.',
+              task: `Applica RFE all'estimatore per selezionare ricorsivamente 10 feature ottimali.`,
             },
             {
               english: 'Mutual Information',
@@ -6407,6 +6441,7 @@ export default {
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'mutual_info_classif(X, y)',
+              task: `Calcola l'informazione mutua tra ogni feature di X e il target y con mutual_info_classif.`,
             },
             {
               english: 'Chi-Squared Test',
@@ -6418,6 +6453,7 @@ export default {
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'chi2(X, y)',
+              task: 'Valuta la dipendenza tra le feature X e il target y con il test chi quadro chi2.',
             },
             {
               english: 'Feature Importance',
@@ -6429,6 +6465,7 @@ export default {
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'model.feature_importances_',
+              task: `Estrai l'attributo feature_importances_ dal modello addestrato per ispezionare le feature piu rilevanti.`,
             },
             {
               english: 'Permutation Importance',
@@ -6440,6 +6477,7 @@ export default {
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'permutation_importance(model, X, y)',
+              task: `Calcola la permutation importance del modello su X e y per misurare l'impatto di ogni feature.`,
             },
             {
               english: 'Variance Threshold',
@@ -6451,6 +6489,7 @@ export default {
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'VarianceThreshold(threshold=0.0)',
+              task: 'Rimuovi le feature a varianza nulla con VarianceThreshold impostato a soglia 0.0.',
             },
           ],
         },
@@ -6479,6 +6518,7 @@ export default {
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'PolynomialFeatures(degree=2, interaction_only=True)',
+              task: 'Genera feature polinomiali di grado 2 con solo termini di interazione tramite PolynomialFeatures.',
             },
             {
               english: 'Binning',
@@ -6490,6 +6530,7 @@ export default {
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'KBinsDiscretizer(n_bins=5)',
+              task: 'Discretizza le feature continue in 5 bin usando KBinsDiscretizer.',
             },
             {
               english: 'Discretization',
@@ -6522,6 +6563,7 @@ export default {
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'df["weekday"] = df["date"].dt.weekday',
+              task: 'Estrai il giorno della settimana dalla colonna date e salvalo nella nuova colonna weekday.',
             },
             {
               english: 'Cyclic Encoding',
@@ -6533,6 +6575,7 @@ export default {
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'sin_hour = np.sin(2*np.pi*hour/24)',
+              task: `Codifica l'ora con la trasformazione seno per preservare la natura ciclica delle 24 ore.`,
             },
             {
               english: 'Aggregation',
@@ -6544,6 +6587,7 @@ export default {
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'df.groupby("user").agg({"price": "mean"})',
+              task: 'Aggrega il dataframe per user calcolando il prezzo medio con groupby e agg.',
             },
             {
               english: 'Lag Feature',
@@ -6556,6 +6600,7 @@ export default {
               difficulty: 'advanced',
               code: 'df["lag1"] = df["value"].shift(1)',
               note: 'Standard nelle serie temporali.',
+              task: 'Crea la feature lag1 spostando i valori della colonna value di una posizione con shift(1).',
             },
             {
               english: 'Rolling Window',
@@ -6567,6 +6612,7 @@ export default {
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'df["rolling_mean"] = df["value"].rolling(7).mean()',
+              task: 'Calcola la media mobile a 7 giorni sulla colonna value con rolling(7).mean().',
             },
           ],
         },
@@ -6585,6 +6631,7 @@ export default {
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'df["cat_freq"] = df["cat"].map(df["cat"].value_counts())',
+              task: 'Codifica la categoria cat sostituendo ogni valore con la sua frequenza tramite value_counts.',
             },
             {
               english: 'Hash Encoding',
@@ -6660,6 +6707,7 @@ export default {
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'Embedding(input_dim=1000, output_dim=32)',
+              task: 'Definisci un Embedding layer con vocabolario di 1000 token e dimensione 32.',
             },
             {
               english: 'Rare Category Grouping',
@@ -6719,6 +6767,7 @@ export default {
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'df["price_per_sqm"] = df["price"] / df["sqm"]',
+              task: 'Costruisci la feature price_per_sqm dividendo il prezzo per i metri quadri.',
             },
             {
               english: 'Difference Feature',
@@ -6730,6 +6779,7 @@ export default {
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'df["delta"] = df["t1"] - df["t0"]',
+              task: 'Calcola la feature delta come differenza tra le colonne t1 e t0.',
             },
             {
               english: 'Geospatial Feature',
@@ -6761,6 +6811,7 @@ export default {
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'features = resnet50(img)',
+              task: `Estrai feature dall'immagine img passandola attraverso una rete ResNet50 pre-addestrata.`,
             },
             {
               english: 'Statistical Feature',
@@ -7125,6 +7176,7 @@ export default {
               context: 'architectures',
               difficulty: 'advanced',
               code: 'guidance_scale=7.5',
+              task: 'Imposta guidance_scale=7.5 per bilanciare aderenza al prompt e diversita nella generazione.',
             },
             {
               english: 'ControlNet',
@@ -7296,6 +7348,7 @@ export default {
               difficulty: 'advanced',
               code: 'mlflow.log_metric("accuracy", 0.95)',
               tool: 'MLflow',
+              task: 'Registra la metrica accuracy con valore 0.95 nel run MLflow corrente.',
             },
             {
               english: 'Weights and Biases',
@@ -7319,6 +7372,7 @@ export default {
               context: 'mlops',
               difficulty: 'advanced',
               code: 'with mlflow.start_run():',
+              task: `Apri un nuovo run MLflow con mlflow.start_run come context manager per tracciare l'esperimento.`,
             },
             {
               english: 'Artifact',
@@ -7340,6 +7394,7 @@ export default {
               context: 'mlops',
               difficulty: 'advanced',
               code: 'wandb.log({"loss": loss, "acc": acc})',
+              task: 'Logga le metriche loss e acc del training su Weights & Biases tramite wandb.log.',
             },
             {
               english: 'Hyperparameter Logging',
@@ -7372,6 +7427,7 @@ export default {
               context: 'mlops',
               difficulty: 'advanced',
               code: 'wandb.agent(sweep_id, train_func)',
+              task: 'Lancia un agente wandb sullo sweep_id per esplorare iperparametri eseguendo train_func.',
             },
           ],
         },
@@ -7761,6 +7817,7 @@ export default {
               context: 'deployment',
               difficulty: 'advanced',
               code: '@app.post("/predict")',
+              task: `Definisci l'endpoint POST /predict con il decoratore FastAPI per esporre il modello via REST.`,
             },
             {
               english: 'gRPC',
@@ -7849,6 +7906,7 @@ export default {
               context: 'deployment',
               difficulty: 'advanced',
               code: 'quantize_dynamic(model, dtype=torch.qint8)',
+              task: 'Quantizza dinamicamente il modello a interi 8 bit con quantize_dynamic e dtype torch.qint8.',
             },
             {
               english: 'Pruning',
@@ -7974,6 +8032,7 @@ export default {
               context: 'deployment',
               difficulty: 'advanced',
               code: 'FROM pytorch/pytorch',
+              task: `Inizia il Dockerfile dall'immagine base pytorch/pytorch per impacchettare il servizio di inferenza.`,
             },
             {
               english: 'Kubernetes',
@@ -8078,6 +8137,7 @@ export default {
               context: 'deployment',
               difficulty: 'advanced',
               code: '@app.get("/health")',
+              task: `Esponi l'endpoint GET /health con FastAPI per il controllo di stato del servizio.`,
             },
             {
               english: 'Rolling Update',
@@ -8140,6 +8200,7 @@ export default {
               context: 'deployment',
               difficulty: 'advanced',
               code: 'logger.info("prediction made", extra={...})',
+              task: `Registra l'evento prediction made con logger.info e campi strutturati nel parametro extra.`,
             },
             {
               english: 'Observability',
@@ -8173,6 +8234,7 @@ export default {
               context: 'deployment',
               difficulty: 'advanced',
               command: 'kubectl rollout undo deployment/my-model',
+              task: 'Esegui il rollback del deployment my-model con kubectl rollout undo alla revisione precedente.',
             },
           ],
         },
@@ -8332,6 +8394,7 @@ export default {
               code: 'shap.TreeExplainer(model)',
               tool: 'shap',
               note: 'SHapley Additive exPlanations.',
+              task: 'Istanzia un TreeExplainer SHAP sul modello per calcolare i valori di Shapley delle feature.',
             },
             {
               english: 'LIME',
@@ -9701,6 +9764,7 @@ export default {
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'df.to_parquet("data.parquet")',
+              task: 'Serializza il dataframe nel formato colonnare Parquet salvandolo in data.parquet.',
             },
             {
               english: 'Delta Lake',
@@ -9951,6 +10015,7 @@ export default {
               context: 'data-engineering',
               difficulty: 'advanced',
               code: '@dag(schedule="@daily")',
+              task: 'Definisci un DAG Airflow con il decoratore @dag e schedule giornaliera @daily.',
             },
             {
               english: 'dbt',
@@ -10733,6 +10798,7 @@ export default {
               context: 'research',
               difficulty: 'advanced',
               code: 'torch.manual_seed(42)',
+              task: 'Fissa il seed PyTorch a 42 con torch.manual_seed per garantire riproducibilita degli esperimenti.',
             },
             {
               english: 'Confidence Interval',

@@ -33,6 +33,7 @@ export default {
               difficulty: 'beginner',
               code: 'node app.js',
               note: 'Creato da Ryan Dahl nel 2009. Il punto è opzionale: si scrive Node.js o NodeJS.',
+              task: 'Avvia uno script JavaScript lato server passando il file app.js al runtime Node.',
             },
             {
               english: 'Runtime',
@@ -99,6 +100,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'fs.readFile(path, callback);',
+              task: `Leggi un file con fs.readFile passando un callback che riceve i dati senza bloccare l'event loop.`,
             },
             {
               english: 'Cross-Platform',
@@ -132,6 +134,7 @@ export default {
               difficulty: 'beginner',
               command: 'node',
               note: 'Read-Eval-Print Loop. Si avvia digitando solo "node" nel terminale.',
+              task: 'Apri il REPL interattivo di Node digitando solo node nel terminale per testare espressioni al volo.',
             },
           ],
         },
@@ -184,6 +187,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'setTimeout(() => {}, 1000);',
+              task: `Pianifica un callback con setTimeout dopo 1000 millisecondi delegando l'attesa all'event loop.`,
             },
             {
               english: 'Synchronous',
@@ -196,6 +200,7 @@ export default {
               difficulty: 'beginner',
               code: 'const data = fs.readFileSync(path);',
               note: 'Le funzioni sincrone in Node hanno spesso il suffisso Sync.',
+              task: `Leggi sincronicamente il contenuto di un file con fs.readFileSync, bloccando il thread fino alla fine dell'I/O.`,
             },
             {
               english: 'Concurrency',
@@ -268,6 +273,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: "const fs = require('fs');",
+              task: 'Importa il modulo core fs assegnandolo alla costante fs tramite require().',
             },
             {
               english: 'Require',
@@ -280,6 +286,7 @@ export default {
               difficulty: 'beginner',
               code: "const path = require('path');",
               note: 'Sintassi tradizionale di Node. ES Modules usa import.',
+              task: 'Carica il modulo path con require in stile CommonJS prima di usare le sue utilita di percorso.',
             },
             {
               english: 'Built-in Module',
@@ -292,6 +299,7 @@ export default {
               difficulty: 'beginner',
               code: "const os = require('os');",
               note: 'Detti anche moduli core. Non serve installarli.',
+              task: 'Importa il modulo integrato os via require senza installare nulla dal registro npm.',
             },
             {
               english: 'Core Module',
@@ -304,6 +312,7 @@ export default {
               difficulty: 'beginner',
               code: "require('node:fs');",
               note: 'Si possono importare con il prefisso node: per chiarezza.',
+              task: 'Risolvi un modulo core usando il prefisso esplicito node: come node:fs per evitare conflitti di nome.',
             },
             {
               english: 'Global Object',
@@ -316,6 +325,7 @@ export default {
               difficulty: 'beginner',
               code: 'global.myVar = 42;',
               note: "Equivale a window nel browser. Da Node 12 c'è anche globalThis.",
+              task: `Assegna 42 a una proprieta myVar sull'oggetto globale global, accessibile da qualsiasi modulo del processo.`,
             },
             {
               english: 'Process',
@@ -327,6 +337,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'console.log(process.version);',
+              task: `Stampa la versione corrente del runtime leggendo process.version sull'oggetto process.`,
             },
             {
               english: 'Console',
@@ -338,6 +349,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: "console.log('Hello, Node!');",
+              task: `Scrivi la stringa 'Hello, Node!' sullo stdout invocando console.log.`,
             },
             {
               english: '__dirname',
@@ -350,6 +362,7 @@ export default {
               difficulty: 'beginner',
               code: 'console.log(__dirname);',
               note: 'Solo in CommonJS. In ES Modules si usa import.meta.url.',
+              task: 'Stampa il percorso assoluto della directory contenente il modulo corrente leggendo la variabile __dirname.',
             },
             {
               english: '__filename',
@@ -361,6 +374,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'console.log(__filename);',
+              task: 'Logga il percorso completo del file sorgente in esecuzione tramite __filename per facilitare il debug.',
             },
             {
               english: 'Exports',
@@ -372,6 +386,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'module.exports = { greet };',
+              task: 'Esporta la funzione greet come API pubblica del modulo assegnandola a module.exports in un oggetto.',
             },
           ],
         },
@@ -391,6 +406,7 @@ export default {
               difficulty: 'beginner',
               command: 'brew install node',
               english_new: 'npm install',
+              task: 'Installa Node sul Mac usando Homebrew con il comando brew install node.',
             },
             {
               english: 'LTS',
@@ -424,6 +440,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               command: 'node -v',
+              task: 'Verifica la versione di Node installata localmente eseguendo node -v dal terminale.',
             },
             {
               english: 'NVM',
@@ -437,6 +454,7 @@ export default {
               tool: 'NVM',
               command: 'nvm install 20',
               note: 'Node Version Manager. Indispensabile per gestire più progetti.',
+              task: 'Scarica e installa Node 20 tramite nvm con il comando nvm install 20.',
             },
             {
               english: 'Executable',
@@ -448,6 +466,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               command: 'which node',
+              task: `Mostra il percorso dell'eseguibile node attualmente nel PATH con il comando which node.`,
             },
             {
               english: 'Script',
@@ -459,6 +478,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               command: 'node app.js',
+              task: 'Esegui lo script app.js invocando il runtime Node dalla shell.',
             },
             {
               english: 'Argument',
@@ -470,6 +490,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'console.log(process.argv);',
+              task: `Stampa l'array completo degli argomenti CLI accedendo a process.argv.`,
             },
             {
               english: 'Environment',
@@ -481,6 +502,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'process.env.NODE_ENV',
+              task: `Leggi la variabile d'ambiente NODE_ENV tramite process.env per distinguere development da production.`,
             },
             {
               english: 'Shebang',
@@ -493,6 +515,7 @@ export default {
               difficulty: 'beginner',
               code: '#!/usr/bin/env node',
               note: 'Prima riga di un CLI Node. Permette di eseguire ./script.js direttamente.',
+              task: 'Aggiungi la riga shebang #!/usr/bin/env node in cima allo script per renderlo eseguibile direttamente.',
             },
           ],
         },
@@ -521,6 +544,7 @@ export default {
               difficulty: 'beginner',
               code: "const lib = require('lib');",
               note: 'Spesso abbreviato CJS. Usa require/module.exports.',
+              task: 'Importa la libreria lib in stile CommonJS assegnando il risultato di require a una costante.',
             },
             {
               english: 'module.exports',
@@ -532,6 +556,7 @@ export default {
               context: 'modules',
               difficulty: 'beginner',
               code: 'module.exports = function() {};',
+              task: 'Esporta una funzione anonima come default del modulo assegnandola a module.exports.',
             },
             {
               english: 'Default Export',
@@ -543,6 +568,7 @@ export default {
               context: 'modules',
               difficulty: 'beginner',
               code: 'module.exports = MyClass;',
+              task: 'Pubblica MyClass come singola esportazione predefinita del modulo via module.exports.',
             },
             {
               english: 'Named Export',
@@ -554,6 +580,7 @@ export default {
               context: 'modules',
               difficulty: 'beginner',
               code: 'module.exports = { foo, bar };',
+              task: 'Esponi due simboli foo e bar come esportazioni con nome incapsulati in un oggetto su module.exports.',
             },
             {
               english: 'Module Wrapper',
@@ -577,6 +604,7 @@ export default {
               difficulty: 'beginner',
               code: 'require.cache',
               note: 'Per questo i moduli sono singleton di default.',
+              task: `Ispeziona la cache dei moduli di Node accedendo all'oggetto require.cache per debug e invalidazioni.`,
             },
             {
               english: 'Circular Dependency',
@@ -599,6 +627,7 @@ export default {
               context: 'modules',
               difficulty: 'beginner',
               code: "require('./utils');",
+              task: `Risolvi e carica il file utils relativo alla cartella corrente passando './utils' a require.`,
             },
             {
               english: 'Folder Module',
@@ -610,6 +639,7 @@ export default {
               context: 'modules',
               difficulty: 'beginner',
               code: "require('./mylib');",
+              task: 'Importa la cartella mylib lasciando che Node trovi automaticamente il suo index.js come entry point.',
             },
             {
               english: 'Resolution',
@@ -640,6 +670,7 @@ export default {
               difficulty: 'beginner',
               code: "import fs from 'fs';",
               note: 'Abbreviato ESM. Standard ufficiale JavaScript.',
+              task: `Importa il modulo core fs con la sintassi ESM import fs from 'fs'.`,
             },
             {
               english: 'Import',
@@ -651,6 +682,7 @@ export default {
               context: 'modules',
               difficulty: 'beginner',
               code: "import { readFile } from 'fs/promises';",
+              task: 'Estrai la funzione readFile dal sotto-modulo fs/promises usando un import con nome.',
             },
             {
               english: 'Export',
@@ -662,6 +694,7 @@ export default {
               context: 'modules',
               difficulty: 'beginner',
               code: 'export function greet() {}',
+              task: `Pubblica la funzione greet con la parola chiave export cosi' altri moduli possono importarla per nome.`,
             },
             {
               english: 'Default Import',
@@ -673,6 +706,7 @@ export default {
               context: 'modules',
               difficulty: 'beginner',
               code: "import express from 'express';",
+              task: 'Importa il pacchetto express con un import predefinito scegliendo il nome locale che preferisci.',
             },
             {
               english: 'Named Import',
@@ -684,6 +718,7 @@ export default {
               context: 'modules',
               difficulty: 'beginner',
               code: "import { useState } from 'react';",
+              task: 'Estrai il simbolo useState dal pacchetto react usando un import con nome tra parentesi graffe.',
             },
             {
               english: 'Dynamic Import',
@@ -696,6 +731,7 @@ export default {
               difficulty: 'intermediate',
               code: "const lib = await import('./lib.js');",
               note: 'Utile per code splitting e caricamento condizionale.',
+              task: 'Carica un modulo a runtime con import() dinamico e attendi la promise per ottenere i suoi export.',
             },
             {
               english: '.mjs Extension',
@@ -707,6 +743,7 @@ export default {
               context: 'modules',
               difficulty: 'beginner',
               code: 'node app.mjs',
+              task: `Esegui un file con estensione .mjs cosi' Node lo tratta come modulo ES indipendentemente da package.json.`,
             },
             {
               english: '"type": "module"',
@@ -719,6 +756,7 @@ export default {
               difficulty: 'intermediate',
               code: '{ "type": "module" }',
               note: 'In package.json fa sì che i file .js siano trattati come ESM.',
+              task: `Imposta il campo type su 'module' in package.json per far interpretare tutti i .js come ESM.`,
             },
             {
               english: 'Top-Level Await',
@@ -730,6 +768,7 @@ export default {
               context: 'modules',
               difficulty: 'intermediate',
               code: 'const data = await fetchData();',
+              task: 'Attendi una promise direttamente al livello superiore di un modulo ESM senza avvolgerla in una funzione async.',
             },
             {
               english: 'Static Analysis',
@@ -761,6 +800,7 @@ export default {
               tool: 'npm',
               command: 'npm --version',
               note: 'Node Package Manager. Installato automaticamente con Node.',
+              task: 'Verifica la versione di npm installata sul sistema con il comando npm --version.',
             },
             {
               english: 'Package',
@@ -772,6 +812,7 @@ export default {
               context: 'modules',
               difficulty: 'beginner',
               command: 'npm install lodash',
+              task: 'Scarica il pacchetto lodash dal registro npm aggiungendolo come dipendenza del progetto.',
             },
             {
               english: 'Package Registry',
@@ -795,6 +836,7 @@ export default {
               difficulty: 'beginner',
               command: 'npm install express',
               note: `Abbreviato npm i. Distinto dal verbo Install gia' presente al livello 0.`,
+              task: 'Installa Express come dipendenza di produzione e aggiornalo automaticamente nel package.json.',
             },
             {
               english: 'Uninstall',
@@ -806,6 +848,7 @@ export default {
               context: 'modules',
               difficulty: 'beginner',
               command: 'npm uninstall express',
+              task: 'Rimuovi express dalle dipendenze del progetto eseguendo npm uninstall express.',
             },
             {
               english: 'Update',
@@ -818,6 +861,7 @@ export default {
               difficulty: 'beginner',
               command: 'npm update',
               english_new: 'Package Update',
+              task: 'Aggiorna tutte le dipendenze del progetto alle ultime versioni compatibili con i range in package.json.',
             },
             {
               english: 'Init',
@@ -830,6 +874,7 @@ export default {
               difficulty: 'beginner',
               command: 'npm init -y',
               note: 'Il flag -y accetta tutte le opzioni di default.',
+              task: 'Genera un package.json predefinito senza domande interattive usando il flag -y di npm init.',
             },
             {
               english: 'NPX',
@@ -843,6 +888,7 @@ export default {
               tool: 'npx',
               command: 'npx create-react-app my-app',
               note: 'Utile per CLI usate raramente o per la versione più recente.',
+              task: `Esegui create-react-app via npx per generare un'app React senza installare lo strumento globalmente.`,
             },
             {
               english: 'Global Install',
@@ -854,6 +900,7 @@ export default {
               context: 'modules',
               difficulty: 'beginner',
               command: 'npm install -g typescript',
+              task: `Installa TypeScript globalmente con il flag -g cosi' il binario tsc e' nel PATH ovunque.`,
             },
             {
               english: 'Local Install',
@@ -865,6 +912,7 @@ export default {
               context: 'modules',
               difficulty: 'beginner',
               command: 'npm install axios',
+              task: `Aggiungi axios come dipendenza locale del progetto cosi' resta isolata in node_modules.`,
             },
           ],
         },
@@ -884,6 +932,7 @@ export default {
               difficulty: 'beginner',
               code: '{ "name": "my-app", "version": "1.0.0" }',
               note: 'File centrale di ogni progetto Node.',
+              task: `Inizializza un package.json minimo con i campi name 'my-app' e version '1.0.0' come metadati del progetto.`,
             },
             {
               english: 'package-lock.json',
@@ -906,6 +955,7 @@ export default {
               context: 'modules',
               difficulty: 'beginner',
               code: '"dependencies": { "express": "^4.0.0" }',
+              task: 'Dichiara express con range ^4.0.0 dentro la sezione dependencies del package.json.',
             },
             {
               english: 'Dev Dependency',
@@ -918,6 +968,7 @@ export default {
               difficulty: 'beginner',
               command: 'npm install --save-dev jest',
               note: 'Tipicamente test framework, linter, build tool.',
+              task: `Aggiungi jest come dipendenza di sviluppo usando il flag --save-dev cosi' non finisce in produzione.`,
             },
             {
               english: 'Peer Dependency',
@@ -951,6 +1002,7 @@ export default {
               difficulty: 'beginner',
               code: '"^1.2.3"',
               note: 'Esempio: 1.2.3 = major.minor.patch.',
+              task: 'Specifica il range semver ^1.2.3 per accettare aggiornamenti minor e patch ma non breaking changes.',
             },
             {
               english: 'Caret Range',
@@ -963,6 +1015,7 @@ export default {
               difficulty: 'beginner',
               code: '"^4.18.0"',
               note: 'Più comune in package.json. Si scrive ^.',
+              task: 'Usa il caret ^4.18.0 per consentire qualsiasi versione dalla 4.18.0 fino a sotto la 5.0.0.',
             },
             {
               english: 'Tilde Range',
@@ -975,6 +1028,7 @@ export default {
               difficulty: 'beginner',
               code: '"~4.18.0"',
               note: 'Più conservativo del caret.',
+              task: 'Limita gli aggiornamenti automatici alle sole patch impostando il range ~4.18.0 in package.json.',
             },
             {
               english: 'NPM Script',
@@ -987,6 +1041,7 @@ export default {
               difficulty: 'beginner',
               code: '"scripts": { "start": "node index.js" }',
               command: 'npm run start',
+              task: 'Registra uno script npm chiamato start che esegue node index.js, poi lancialo con npm run start.',
             },
           ],
         },
@@ -1014,6 +1069,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'function sum(a, b) { return a + b; }',
+              task: 'Dichiara una funzione classica sum che riceve due parametri a e b e restituisce la loro somma.',
             },
             {
               english: 'Function Expression',
@@ -1025,6 +1081,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'const sum = function(a, b) { return a + b; };',
+              task: `Assegna un'espressione di funzione anonima a una const sum per evitare riassegnazioni accidentali del riferimento.`,
             },
             {
               english: 'Arrow Function',
@@ -1037,6 +1094,7 @@ export default {
               difficulty: 'beginner',
               code: 'const sum = (a, b) => a + b;',
               note: 'Non hanno il proprio this. Molto usate in callback.',
+              task: 'Definisci una arrow function sum che somma a e b in una sola espressione concisa.',
             },
             {
               english: 'Parameter',
@@ -1048,6 +1106,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'function greet(name) {}',
+              task: 'Dichiara una funzione greet con un singolo parametro nominale name come input.',
             },
             {
               english: 'Default Parameter',
@@ -1059,6 +1118,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: "function greet(name = 'World') {}",
+              task: `Imposta 'World' come valore predefinito del parametro name di greet per gestire chiamate senza argomenti.`,
             },
             {
               english: 'Rest Parameter',
@@ -1070,6 +1130,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'function sum(...nums) {}',
+              task: `Raccogli tutti gli argomenti residui di sum in un array nums usando l'operatore rest ...nums.`,
             },
             {
               english: 'Higher-Order Function',
@@ -1081,6 +1142,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'arr.map(x => x * 2);',
+              task: 'Trasforma ogni elemento di arr moltiplicandolo per due passando una arrow function a map.',
             },
             {
               english: 'Closure',
@@ -1093,6 +1155,7 @@ export default {
               difficulty: 'intermediate',
               code: 'function counter() { let n = 0; return () => ++n; }',
               note: 'Concetto fondamentale di JavaScript funzionale.',
+              task: 'Costruisci un counter che cattura la variabile interna n tramite closure e la incrementa a ogni invocazione.',
             },
             {
               english: 'IIFE',
@@ -1105,6 +1168,7 @@ export default {
               difficulty: 'intermediate',
               code: "(function() { console.log('hi'); })();",
               note: 'Immediately Invoked Function Expression.',
+              task: `Esegui immediatamente una funzione anonima che stampa 'hi' avvolgendola in parentesi e invocandola sul posto.`,
             },
             {
               english: 'this Keyword',
@@ -1117,6 +1181,7 @@ export default {
               difficulty: 'intermediate',
               code: 'this.name',
               note: 'Le arrow function ereditano il this dal contesto esterno.',
+              task: `Accedi alla proprieta name dell'istanza corrente tramite la parola chiave this dentro un metodo di classe.`,
             },
           ],
         },
@@ -1135,6 +1200,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'const { name, age } = user;',
+              task: `Estrai i campi name e age dall'oggetto user con la destrutturazione in un'unica dichiarazione const.`,
             },
             {
               english: 'Object Destructuring',
@@ -1146,6 +1212,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'const { id, ...rest } = data;',
+              task: `Separa il campo id dall'oggetto data raccogliendo il resto delle proprieta in una variabile rest tramite spread.`,
             },
             {
               english: 'Array Destructuring',
@@ -1157,6 +1224,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'const [first, second] = arr;',
+              task: 'Estrai i primi due elementi di arr in due variabili first e second con la destrutturazione array.',
             },
             {
               english: 'Renaming',
@@ -1168,6 +1236,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'const { name: userName } = user;',
+              task: `Rinomina il campo name in userName durante la destrutturazione dell'oggetto user per evitare collisioni.`,
             },
             {
               english: 'Spread Operator',
@@ -1179,6 +1248,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'const merged = [...a, ...b];',
+              task: `Concatena gli array a e b producendo un nuovo array merged tramite l'operatore spread.`,
             },
             {
               english: 'Object Spread',
@@ -1191,6 +1261,7 @@ export default {
               difficulty: 'beginner',
               code: 'const clone = { ...original };',
               note: 'Crea una shallow copy.',
+              task: `Clona superficialmente l'oggetto original in una nuova costante clone usando lo spread di oggetti.`,
             },
             {
               english: 'Template Literal',
@@ -1202,6 +1273,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: '`Hello, ${name}!`',
+              task: `Costruisci la stringa 'Hello, \${name}!' interpolando la variabile name dentro un letterale template.`,
             },
             {
               english: 'Tagged Template',
@@ -1213,6 +1285,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'sql`SELECT * FROM users WHERE id = ${id}`',
+              task: 'Invoca la funzione sql come tag di un template che interpola id in una query SQL parametrizzata.',
             },
             {
               english: 'Optional Chaining',
@@ -1224,6 +1297,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'user?.address?.city',
+              task: `Naviga in sicurezza la catena user.address.city con ?. cosi' un null intermedio restituisce undefined senza errore.`,
             },
             {
               english: 'Nullish Coalescing',
@@ -1235,6 +1309,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'const port = process.env.PORT ?? 3000;',
+              task: `Imposta port leggendo process.env.PORT e cadendo su 3000 solo se il valore e' null o undefined.`,
             },
           ],
         },
@@ -1253,6 +1328,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'let count = 0;',
+              task: 'Dichiara una variabile mutabile count inizializzata a 0 con la parola chiave let.',
             },
             {
               english: 'let',
@@ -1264,6 +1340,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'let total = 0;',
+              task: 'Crea la variabile total a scope di blocco inizializzandola a 0 tramite let.',
             },
             {
               english: 'const',
@@ -1276,6 +1353,7 @@ export default {
               difficulty: 'beginner',
               code: 'const PI = 3.14;',
               note: 'Il legame è costante, ma gli oggetti restano mutabili.',
+              task: 'Dichiara la costante PI con valore 3.14 usando const per impedirne la riassegnazione.',
             },
             {
               english: 'var',
@@ -1288,6 +1366,7 @@ export default {
               difficulty: 'beginner',
               code: 'var x = 1;',
               note: 'Sconsigliato nel codice moderno: usa let o const.',
+              task: `Dichiara la variabile x con var assegnandole 1, anche se nei progetti moderni e' meglio usare let o const.`,
             },
             {
               english: 'Scope',
@@ -1310,6 +1389,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'if (true) { let x = 1; }',
+              task: `Confina la variabile let x dentro il blocco if cosi' non e' visibile al codice esterno.`,
             },
             {
               english: 'Hoisting',
@@ -1343,6 +1423,7 @@ export default {
               code: "'use strict';",
               note: 'Attiva di default nei moduli ES.',
               english_new: 'JavaScript Strict Mode',
+              task: `Abilita la modalita strict del modulo aggiungendo la direttiva 'use strict' come prima istruzione.`,
             },
             {
               english: 'Immutable',
@@ -1354,6 +1435,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'const cfg = Object.freeze({ port: 3000 });',
+              task: `Congela l'oggetto di configurazione con Object.freeze cosi' la proprieta port: 3000 resta immutabile a runtime.`,
             },
           ],
         },
@@ -1372,6 +1454,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'class User { constructor(name) { this.name = name; } }',
+              task: `Definisci la classe User con un constructor che riceve name e lo memorizza come proprieta dell'istanza.`,
             },
             {
               english: 'Constructor',
@@ -1383,6 +1466,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'constructor(id) { this.id = id; }',
+              task: 'Implementa un constructor che riceve id e lo assegna a this.id per inizializzare le istanze.',
             },
             {
               english: 'Instance',
@@ -1394,6 +1478,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: "const u = new User('Mario');",
+              task: `Istanzia un nuovo User chiamato 'Mario' con l'operatore new e memorizzalo nella costante u.`,
             },
             {
               english: 'Method',
@@ -1405,6 +1490,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: "greet() { return 'hi'; }",
+              task: `Definisci un metodo greet sulla classe che restituisce la stringa 'hi' quando invocato sull'istanza.`,
             },
             {
               english: 'Property',
@@ -1416,6 +1502,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: "this.name = 'Mario';",
+              task: `Assegna 'Mario' alla proprieta name dell'istanza corrente tramite this dentro un metodo della classe.`,
             },
             {
               english: 'Inheritance',
@@ -1427,6 +1514,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'class Admin extends User {}',
+              task: 'Estendi la classe base User dichiarando Admin con extends per ereditare proprieta e metodi.',
             },
             {
               english: 'Static Method',
@@ -1438,6 +1526,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'static fromJson(json) {}',
+              task: 'Dichiara il metodo statico fromJson sulla classe per costruire istanze partendo da un oggetto JSON.',
             },
             {
               english: 'Getter/Setter',
@@ -1449,6 +1538,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: "get fullName() { return this.first + ' ' + this.last; }",
+              task: 'Esponi una proprieta calcolata fullName tramite un getter che concatena first e last separati da spazio.',
             },
             {
               english: 'Object Literal',
@@ -1460,6 +1550,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'const obj = { x: 1, y: 2 };',
+              task: `Crea l'oggetto letterale obj con proprieta x: 1 e y: 2 in una sola espressione.`,
             },
             {
               english: 'JSON',
@@ -1472,6 +1563,7 @@ export default {
               difficulty: 'beginner',
               code: 'JSON.stringify(obj);',
               note: 'Formato di interscambio dati universale.',
+              task: `Serializza l'oggetto obj in una stringa JSON invocando JSON.stringify.`,
             },
           ],
         },
@@ -1499,6 +1591,7 @@ export default {
               context: 'async',
               difficulty: 'beginner',
               code: "fs.readFile('a.txt', (err, data) => {});",
+              task: 'Leggi il file a.txt asincronicamente passando un callback con i parametri err e data come secondo argomento.',
             },
             {
               english: 'Error-First Callback',
@@ -1511,6 +1604,7 @@ export default {
               difficulty: 'beginner',
               code: 'function cb(err, result) {}',
               note: "Il primo argomento è sempre l'errore (o null se ok).",
+              task: 'Definisci una callback cb con la convenzione error-first che riceve err come primo parametro e result come secondo.',
             },
             {
               english: 'Callback Hell',
@@ -1533,6 +1627,7 @@ export default {
               context: 'async',
               difficulty: 'beginner',
               code: '[1,2,3].map(n => n * 2);',
+              task: `Trasforma sincronicamente l'array [1,2,3] raddoppiando ogni elemento con un callback passato a map.`,
             },
             {
               english: 'Asynchronous Callback',
@@ -1544,6 +1639,7 @@ export default {
               context: 'async',
               difficulty: 'beginner',
               code: 'setTimeout(cb, 1000);',
+              task: `Pianifica l'esecuzione differita del callback cb dopo 1000 ms invocando setTimeout.`,
             },
             {
               english: 'setTimeout',
@@ -1555,6 +1651,7 @@ export default {
               context: 'async',
               difficulty: 'beginner',
               code: 'setTimeout(() => {}, 1000);',
+              task: 'Schedula una arrow function vuota per essere eseguita una sola volta dopo 1000 ms tramite setTimeout.',
             },
             {
               english: 'setInterval',
@@ -1566,6 +1663,7 @@ export default {
               context: 'async',
               difficulty: 'beginner',
               code: 'setInterval(tick, 1000);',
+              task: 'Avvia un timer ricorrente che invoca tick ogni 1000 ms tramite setInterval.',
             },
             {
               english: 'clearTimeout',
@@ -1577,6 +1675,7 @@ export default {
               context: 'async',
               difficulty: 'beginner',
               code: 'clearTimeout(id);',
+              task: 'Annulla un timer pendente passando il suo handle id a clearTimeout prima che scada.',
             },
             {
               english: 'Continuation',
@@ -1617,6 +1716,7 @@ export default {
               context: 'async',
               difficulty: 'beginner',
               code: 'const p = new Promise((res, rej) => {});',
+              task: `Crea una nuova Promise con l'executor che riceve i callback res e rej per risolverla o rifiutarla.`,
             },
             {
               english: 'Resolve',
@@ -1628,6 +1728,7 @@ export default {
               context: 'async',
               difficulty: 'beginner',
               code: 'resolve(data);',
+              task: `Risolvi la promise corrente passando il valore data al callback resolve dell'executor.`,
             },
             {
               english: 'Reject',
@@ -1639,6 +1740,7 @@ export default {
               context: 'async',
               difficulty: 'beginner',
               code: "reject(new Error('fail'));",
+              task: `Rigetta la promise corrente lanciando un nuovo Error con messaggio 'fail' tramite reject.`,
             },
             {
               english: 'then',
@@ -1650,6 +1752,7 @@ export default {
               context: 'async',
               difficulty: 'beginner',
               code: 'fetch(url).then(res => res.json());',
+              task: 'Concatena un then alla promise di fetch(url) trasformando la response in JSON con res.json().',
             },
             {
               english: 'catch',
@@ -1661,6 +1764,7 @@ export default {
               context: 'async',
               difficulty: 'beginner',
               code: 'fetch(url).catch(err => console.error(err));',
+              task: 'Aggancia un handler catch alla catena fetch(url) per loggare con console.error eventuali errori di rete.',
             },
             {
               english: 'finally',
@@ -1672,6 +1776,7 @@ export default {
               difficulty: 'beginner',
               code: '.finally(() => { spinner.stop(); });',
               english_new: 'Promise finally',
+              task: `Esegui spinner.stop() in un blocco finally cosi' lo stop avviene sia in caso di successo che di errore.`,
             },
             {
               english: 'Pending',
@@ -1714,6 +1819,7 @@ export default {
               context: 'async',
               difficulty: 'beginner',
               code: '.then(a).then(b).then(c)',
+              task: `Concatena tre then consecutivi passando le funzioni a, b, c cosi' ciascuna riceve il risultato della precedente.`,
             },
           ],
         },
@@ -1732,6 +1838,7 @@ export default {
               context: 'async',
               difficulty: 'beginner',
               code: 'async function load() { return data; }',
+              task: 'Dichiara una funzione async load che ritorna data avvolgendo automaticamente il valore in una Promise.',
             },
             {
               english: 'await',
@@ -1743,6 +1850,7 @@ export default {
               difficulty: 'beginner',
               code: 'const data = await fetch(url);',
               note: 'Si può usare solo dentro funzioni async (o top-level in ESM).',
+              task: 'Attendi la risposta di fetch(url) con await assegnando il risultato risolto alla costante data.',
             },
             {
               english: 'try/catch',
@@ -1755,6 +1863,7 @@ export default {
               difficulty: 'beginner',
               code: 'try { await fn(); } catch (e) {}',
               english_new: 'async/await try/catch',
+              task: 'Cattura le eccezioni di await fn() avvolgendo la chiamata in un blocco try/catch per gestirle.',
             },
             {
               english: 'Sequential',
@@ -1766,6 +1875,7 @@ export default {
               context: 'async',
               difficulty: 'beginner',
               code: 'const a = await f(); const b = await g();',
+              task: `Esegui sequenzialmente f() e g() con due await consecutivi cosi' g attende il risultato di f.`,
             },
             {
               english: 'Parallel',
@@ -1777,6 +1887,7 @@ export default {
               context: 'async',
               difficulty: 'intermediate',
               code: 'await Promise.all([f(), g()]);',
+              task: 'Lancia f() e g() in parallelo combinando le loro promise con Promise.all e attendile insieme con await.',
             },
             {
               english: 'Promise.all',
@@ -1789,6 +1900,7 @@ export default {
               difficulty: 'intermediate',
               code: 'const [a, b] = await Promise.all([p1, p2]);',
               note: 'Fallisce subito se una promise viene rifiutata.',
+              task: 'Combina le promise p1 e p2 con Promise.all e destruttura i risultati risolti nelle variabili a e b.',
             },
             {
               english: 'Promise.allSettled',
@@ -1801,6 +1913,7 @@ export default {
               difficulty: 'intermediate',
               code: 'await Promise.allSettled(promises);',
               note: 'Non rifiuta mai: ritorna risultati per ogni promise.',
+              task: `Attendi tutte le promise dell'array con Promise.allSettled per ottenere lo stato di ciascuna anche se alcune falliscono.`,
             },
             {
               english: 'Promise.race',
@@ -1812,6 +1925,7 @@ export default {
               context: 'async',
               difficulty: 'intermediate',
               code: 'await Promise.race([req, timeout]);',
+              task: 'Corri req contro un timeout con Promise.race risolvendo o rigettando appena la prima delle due si completa.',
             },
             {
               english: 'Promisification',
@@ -1823,6 +1937,7 @@ export default {
               context: 'async',
               difficulty: 'intermediate',
               code: 'const readFile = util.promisify(fs.readFile);',
+              task: 'Promisifica la funzione legacy fs.readFile con util.promisify ottenendo una versione che restituisce una promise.',
             },
             {
               english: 'util.promisify',
@@ -1834,6 +1949,7 @@ export default {
               context: 'async',
               difficulty: 'intermediate',
               code: 'const sleep = util.promisify(setTimeout);',
+              task: 'Trasforma setTimeout in una versione awaitable con util.promisify per costruire un helper sleep asincrono.',
             },
           ],
         },
@@ -1884,6 +2000,7 @@ export default {
               difficulty: 'intermediate',
               code: 'process.nextTick(() => {});',
               note: "Esegue prima della prossima iterazione dell'event loop.",
+              task: `Pianifica un callback da eseguire al termine dell'operazione corrente con process.nextTick prima della prossima fase dell'event loop.`,
             },
             {
               english: 'setImmediate',
@@ -1896,6 +2013,7 @@ export default {
               difficulty: 'intermediate',
               code: 'setImmediate(() => {});',
               note: 'Specifico di Node.js, non standard del browser.',
+              task: `Schedula un callback per essere eseguito nella fase check dell'event loop tramite setImmediate.`,
             },
             {
               english: 'Timers Phase',
@@ -1975,6 +2093,7 @@ export default {
               context: 'runtime',
               difficulty: 'beginner',
               code: "const fs = require('fs');",
+              task: 'Carica il modulo core fs con require per accedere alle API del file system di Node.',
             },
             {
               english: 'readFile',
@@ -1986,6 +2105,7 @@ export default {
               context: 'runtime',
               difficulty: 'beginner',
               code: 'fs.readFile(path, (err, data) => {});',
+              task: 'Leggi asincronicamente il contenuto di path passando un callback (err, data) a fs.readFile.',
             },
             {
               english: 'writeFile',
@@ -1997,6 +2117,7 @@ export default {
               context: 'runtime',
               difficulty: 'beginner',
               code: 'fs.writeFile(path, data, cb);',
+              task: 'Sovrascrivi il contenuto del file path con data passando un callback cb finale a fs.writeFile.',
             },
             {
               english: 'appendFile',
@@ -2008,6 +2129,7 @@ export default {
               context: 'runtime',
               difficulty: 'beginner',
               code: "fs.appendFile('log.txt', line, cb);",
+              task: 'Aggiungi line in coda al file log.txt con fs.appendFile preservando il contenuto esistente.',
             },
             {
               english: 'unlink',
@@ -2020,6 +2142,7 @@ export default {
               difficulty: 'beginner',
               code: 'fs.unlink(path, cb);',
               note: 'Termine UNIX storico per "rimuovere link".',
+              task: `Cancella il file all'indirizzo path dal disco invocando fs.unlink con un callback cb di completamento.`,
             },
             {
               english: 'mkdir',
@@ -2031,6 +2154,7 @@ export default {
               context: 'runtime',
               difficulty: 'beginner',
               code: 'fs.mkdir(path, { recursive: true }, cb);',
+              task: `Crea la cartella path includendo tutte le directory intermedie passando l'opzione recursive: true a fs.mkdir.`,
             },
             {
               english: 'readdir',
@@ -2042,6 +2166,7 @@ export default {
               context: 'runtime',
               difficulty: 'beginner',
               code: "fs.readdir('./src', cb);",
+              task: `Elenca i nomi dei file dentro ./src passando un callback a fs.readdir per ricevere l'array dei risultati.`,
             },
             {
               english: 'stat',
@@ -2053,6 +2178,7 @@ export default {
               context: 'runtime',
               difficulty: 'beginner',
               code: 'fs.stat(path, (err, stats) => {});',
+              task: `Recupera i metadati del percorso path con fs.stat ricevendo l'oggetto stats nel callback (err, stats).`,
             },
             {
               english: 'exists',
@@ -2065,6 +2191,7 @@ export default {
               difficulty: 'beginner',
               code: 'fs.existsSync(path);',
               note: 'fs.exists è deprecato, usa fs.access.',
+              task: 'Verifica sincronicamente se path esiste sul filesystem con fs.existsSync restituendo true o false.',
             },
             {
               english: 'Sync API',
@@ -2077,6 +2204,7 @@ export default {
               difficulty: 'beginner',
               code: "const data = fs.readFileSync(path, 'utf8');",
               note: "Usare solo all'avvio o in script CLI.",
+              task: `Leggi sincronicamente il file path come stringa UTF-8 con fs.readFileSync, accettabile solo all'avvio dell'app.`,
             },
           ],
         },
@@ -2095,6 +2223,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: "const fs = require('fs/promises');",
+              task: `Importa la variante promise-based del modulo fs tramite require('fs/promises') per usare await invece di callback.`,
             },
             {
               english: 'await readFile',
@@ -2106,6 +2235,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: "const data = await fs.readFile(path, 'utf8');",
+              task: 'Attendi la lettura UTF-8 di path con await fs.readFile evitando la callback hell.',
             },
             {
               english: 'Encoding',
@@ -2119,6 +2249,7 @@ export default {
               code: "fs.readFile(p, 'utf8');",
               note: 'Senza codifica si riceve un Buffer.',
               english_new: 'File Encoding',
+              task: `Specifica 'utf8' come encoding a fs.readFile cosi' ricevi una stringa decodificata invece di un Buffer grezzo.`,
             },
             {
               english: 'File Handle',
@@ -2130,6 +2261,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: "const fh = await fs.open(path, 'r');",
+              task: 'Apri path in modalita lettura con fs.open e attendi il FileHandle fh per operazioni mirate sul descrittore.',
             },
             {
               english: 'Open',
@@ -2140,6 +2272,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: "fs.open(path, 'w');",
+              task: `Apri il file all'indirizzo path in modalita scrittura 'w' con fs.open per ottenere un handle riutilizzabile.`,
             },
             {
               english: 'Close',
@@ -2151,6 +2284,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'await fh.close();',
+              task: 'Rilascia le risorse del descrittore fh chiudendo il file handle con await fh.close().',
             },
             {
               english: 'Truncate',
@@ -2162,6 +2296,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'await fs.truncate(path, 0);',
+              task: 'Tronca il file path a zero byte con await fs.truncate svuotandone il contenuto senza ricrearlo.',
             },
             {
               english: 'Copy File',
@@ -2173,6 +2308,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'await fs.copyFile(src, dst);',
+              task: 'Copia il file da src a dst sul filesystem con await fs.copyFile evitando di rileggere e riscrivere manualmente.',
             },
             {
               english: 'Rename',
@@ -2184,6 +2320,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'await fs.rename(old, new);',
+              task: 'Rinomina o sposta il file dal percorso old al percorso new con await fs.rename in modo atomico.',
             },
             {
               english: 'Permissions',
@@ -2195,6 +2332,7 @@ export default {
               difficulty: 'intermediate',
               code: 'await fs.chmod(path, 0o755);',
               english_new: 'File Permissions',
+              task: 'Modifica i permessi di path a 0o755 con await fs.chmod rendendo il file eseguibile da owner e gruppo.',
             },
           ],
         },
@@ -2213,6 +2351,7 @@ export default {
               context: 'runtime',
               difficulty: 'beginner',
               code: "const path = require('path');",
+              task: 'Importa il modulo core path con require per manipolare i percorsi del filesystem in modo cross-platform.',
             },
             {
               english: 'path.join',
@@ -2225,6 +2364,7 @@ export default {
               difficulty: 'beginner',
               code: "path.join(__dirname, 'data', 'file.txt');",
               note: 'Gestisce automaticamente i separatori di sistema.',
+              task: `Unisci __dirname con 'data' e 'file.txt' tramite path.join inserendo il separatore corretto per il sistema operativo.`,
             },
             {
               english: 'path.resolve',
@@ -2236,6 +2376,7 @@ export default {
               context: 'runtime',
               difficulty: 'beginner',
               code: "path.resolve('./src');",
+              task: `Risolvi il percorso relativo './src' in un percorso assoluto tramite path.resolve partendo dalla cwd.`,
             },
             {
               english: 'path.dirname',
@@ -2247,6 +2388,7 @@ export default {
               context: 'runtime',
               difficulty: 'beginner',
               code: "path.dirname('/a/b/c.txt');",
+              task: `Estrai la directory contenitrice del percorso '/a/b/c.txt' invocando path.dirname che restituisce '/a/b'.`,
             },
             {
               english: 'path.basename',
@@ -2258,6 +2400,7 @@ export default {
               context: 'runtime',
               difficulty: 'beginner',
               code: "path.basename('/a/b.txt');",
+              task: `Ottieni il nome file 'b.txt' dal percorso '/a/b.txt' usando path.basename per scartare la directory.`,
             },
             {
               english: 'path.extname',
@@ -2269,6 +2412,7 @@ export default {
               context: 'runtime',
               difficulty: 'beginner',
               code: "path.extname('app.js');",
+              task: `Estrai l'estensione '.js' dal nome file 'app.js' con path.extname per smistare i file per tipo.`,
             },
             {
               english: 'path.parse',
@@ -2280,6 +2424,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: "path.parse('/a/b.txt');",
+              task: `Scomponi il percorso '/a/b.txt' nei componenti root, dir, base, name ed ext invocando path.parse.`,
             },
             {
               english: 'path.sep',
@@ -2291,6 +2436,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: "path.sep // '/' on Linux, '\\' on Windows",
+              task: `Leggi il separatore di percorso del sistema corrente tramite path.sep, '/' su Linux o '\\\\' su Windows.`,
             },
             {
               english: 'Absolute Path',
@@ -2302,6 +2448,7 @@ export default {
               context: 'runtime',
               difficulty: 'beginner',
               code: '/usr/local/bin',
+              task: 'Indirizza una risorsa con il percorso assoluto /usr/local/bin partendo dalla radice del filesystem.',
             },
             {
               english: 'Relative Path',
@@ -2313,6 +2460,7 @@ export default {
               context: 'runtime',
               difficulty: 'beginner',
               code: './data/file.txt',
+              task: 'Riferisci la risorsa con il percorso relativo ./data/file.txt rispetto alla directory di lavoro corrente.',
             },
           ],
         },
@@ -2331,6 +2479,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: "fs.watch('./src', (event, name) => {});",
+              task: 'Monitora le modifiche dentro ./src con fs.watch passando un callback che riceve event e nome del file modificato.',
             },
             {
               english: 'Watcher',
@@ -2354,6 +2503,7 @@ export default {
               tool: 'Chokidar',
               command: 'npm install chokidar',
               note: 'Usato da nodemon e da molti tool di build.',
+              task: `Installa il pacchetto chokidar via npm per ottenere un watcher di filesystem piu' affidabile di fs.watch.`,
             },
             {
               english: 'Glob Pattern',
@@ -2365,6 +2515,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: '**/*.js',
+              task: 'Espandi il pattern glob **/*.js per matchare ricorsivamente tutti i file .js dentro qualsiasi sottocartella.',
             },
             {
               english: 'Recursive',
@@ -2376,6 +2527,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'fs.mkdir(p, { recursive: true });',
+              task: 'Crea la directory p insieme a tutti i suoi antenati mancanti passando { recursive: true } a fs.mkdir.',
             },
             {
               english: 'Symlink',
@@ -2387,6 +2539,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'fs.symlink(target, link);',
+              task: 'Crea un collegamento simbolico link che punta a target tramite fs.symlink senza duplicare i contenuti.',
             },
             {
               english: 'Realpath',
@@ -2398,6 +2551,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'await fs.realpath(p);',
+              task: 'Risolvi tutti i link simbolici lungo p ottenendo il percorso canonico assoluto con await fs.realpath.',
             },
             {
               english: 'Temp Directory',
@@ -2409,6 +2563,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'os.tmpdir();',
+              task: 'Recupera il percorso della directory temporanea del sistema tramite os.tmpdir() per file effimeri.',
             },
             {
               english: 'cwd',
@@ -2421,6 +2576,7 @@ export default {
               difficulty: 'beginner',
               code: 'process.cwd();',
               note: 'Current Working Directory.',
+              task: 'Leggi la directory di lavoro corrente del processo Node invocando process.cwd().',
             },
             {
               english: 'os Module',
@@ -2432,6 +2588,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'os.platform(); os.cpus();',
+              task: 'Interroga la piattaforma e i core della CPU con os.platform() e os.cpus() del modulo os.',
             },
           ],
         },
@@ -2459,6 +2616,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: "const http = require('http');",
+              task: 'Carica il modulo core http via require per costruire server e client HTTP senza framework esterni.',
             },
             {
               english: 'createServer',
@@ -2470,6 +2628,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'http.createServer((req, res) => {});',
+              task: 'Istanzia un server HTTP con http.createServer passando un handler che riceve req e res per ogni richiesta.',
             },
             {
               english: 'listen',
@@ -2481,6 +2640,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'server.listen(3000);',
+              task: 'Vincola il server alla porta 3000 invocando server.listen e inizia ad accettare connessioni TCP in arrivo.',
             },
             {
               english: 'Port',
@@ -2503,6 +2663,7 @@ export default {
               context: 'runtime',
               difficulty: 'beginner',
               code: "server.listen(3000, 'localhost');",
+              task: `Lega il server alla porta 3000 sull'host 'localhost' cosi' accetta solo connessioni dall'interfaccia locale.`,
             },
             {
               english: 'Request',
@@ -2514,6 +2675,7 @@ export default {
               context: 'runtime',
               difficulty: 'beginner',
               code: 'req.url, req.method, req.headers',
+              task: `Ispeziona la richiesta entrante leggendo url, method e headers dall'oggetto req dentro l'handler.`,
             },
             {
               english: 'Response',
@@ -2525,6 +2687,7 @@ export default {
               context: 'runtime',
               difficulty: 'beginner',
               code: "res.end('Hello');",
+              task: `Concludi la risposta HTTP inviando il body 'Hello' al client invocando res.end.`,
             },
             {
               english: 'IncomingMessage',
@@ -2574,6 +2737,7 @@ export default {
               context: 'runtime',
               difficulty: 'beginner',
               code: 'req.method',
+              task: 'Leggi il verbo HTTP della richiesta corrente accedendo a req.method per smistare GET, POST e altri.',
             },
             {
               english: 'GET',
@@ -2647,6 +2811,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: "const u = new URL(req.url, 'http://host');",
+              task: `Costruisci un oggetto URL parsato da req.url usando 'http://host' come base con la WHATWG URL API.`,
             },
             {
               english: 'Query String',
@@ -2658,6 +2823,7 @@ export default {
               context: 'runtime',
               difficulty: 'beginner',
               code: '?name=mario&age=30',
+              task: `Estrai i parametri name e age dalla query string '?name=mario&age=30' di una URL.`,
             },
             {
               english: 'URL Parameters',
@@ -2669,6 +2835,7 @@ export default {
               context: 'runtime',
               difficulty: 'beginner',
               code: '/users/:id',
+              task: `Definisci un pattern di rotta /users/:id dove :id e' un parametro dinamico catturato dal router.`,
             },
           ],
         },
@@ -2688,6 +2855,7 @@ export default {
               difficulty: 'beginner',
               code: 'res.statusCode = 200;',
               english_new: 'HTTP Status Code',
+              task: 'Imposta lo status code 200 sulla risposta assegnandolo a res.statusCode prima di scrivere il body.',
             },
             {
               english: '200 OK',
@@ -2770,6 +2938,7 @@ export default {
               context: 'runtime',
               difficulty: 'beginner',
               code: "res.setHeader('Content-Type', 'application/json');",
+              task: `Setta l'header Content-Type su 'application/json' tramite res.setHeader prima di inviare il payload.`,
             },
             {
               english: 'Content-Type',
@@ -2781,6 +2950,7 @@ export default {
               context: 'runtime',
               difficulty: 'beginner',
               code: 'application/json',
+              task: `Dichiara application/json come Content-Type della risposta per segnalare al client che il body e' JSON.`,
             },
           ],
         },
@@ -2799,6 +2969,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'http.request(opts, cb);',
+              task: `Inoltra una richiesta HTTP outbound passando l'oggetto opts e un callback cb a http.request.`,
             },
             {
               english: 'http.get',
@@ -2810,6 +2981,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'http.get(url, res => {});',
+              task: `Esegui una richiesta GET verso url con http.get passando un callback che riceve l'oggetto response.`,
             },
             {
               english: 'fetch',
@@ -2822,6 +2994,7 @@ export default {
               difficulty: 'intermediate',
               code: 'const res = await fetch(url);',
               note: 'Disponibile globalmente da Node 18.',
+              task: 'Recupera il contenuto di url con la fetch globale di Node 18+ e attendi la response con await.',
             },
             {
               english: 'axios',
@@ -2834,6 +3007,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'Axios',
               command: 'npm install axios',
+              task: `Installa il client HTTP axios via npm per ottenere un'API basata su promise con timeout e interceptor.`,
             },
             {
               english: 'undici',
@@ -2857,6 +3031,7 @@ export default {
               context: 'runtime',
               difficulty: 'beginner',
               code: 'await res.json();',
+              task: `Leggi e parsa il body JSON della response invocando await res.json() sull'oggetto Response.`,
             },
             {
               english: 'JSON Response',
@@ -2868,6 +3043,7 @@ export default {
               context: 'runtime',
               difficulty: 'beginner',
               code: 'const data = await res.json();',
+              task: 'Decodifica il corpo della risposta come JSON con await res.json() e assegnalo alla costante data.',
             },
             {
               english: 'Timeout',
@@ -2879,6 +3055,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: '{ timeout: 5000 }',
+              task: `Configura un timeout di 5000 ms sulla richiesta HTTP passando l'opzione { timeout: 5000 } al client.`,
             },
             {
               english: 'AbortController',
@@ -2890,6 +3067,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'const ctrl = new AbortController();',
+              task: 'Istanzia un AbortController per poter cancellare una richiesta fetch passando il suo signal alle opzioni.',
             },
             {
               english: 'HTTPS',
@@ -2901,6 +3079,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: "const https = require('https');",
+              task: 'Importa il modulo core https con require per emettere richieste cifrate TLS o servire un server HTTPS.',
             },
           ],
         },
@@ -2929,6 +3108,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'Express',
               command: 'npm install express',
+              task: 'Installa il framework web Express come dipendenza del progetto tramite npm install express.',
             },
             {
               english: 'Application',
@@ -2940,6 +3120,7 @@ export default {
               context: 'express',
               difficulty: 'intermediate',
               code: 'const app = express();',
+              task: `Crea l'istanza dell'applicazione Express invocando express() e assegnala alla costante app.`,
             },
             {
               english: 'Listen Method',
@@ -2951,6 +3132,7 @@ export default {
               context: 'express',
               difficulty: 'intermediate',
               code: 'app.listen(3000);',
+              task: 'Avvia il server Express in ascolto sulla porta 3000 invocando app.listen.',
             },
             {
               english: 'Web Framework',
@@ -2972,6 +3154,7 @@ export default {
               context: 'express',
               difficulty: 'intermediate',
               code: "app.get('/', (req, res) => res.send('Hello!'));",
+              task: `Registra una rotta GET su '/' che risponde con 'Hello!' tramite res.send per il classico smoke test.`,
             },
             {
               english: 'Generator',
@@ -2983,6 +3166,7 @@ export default {
               context: 'express',
               difficulty: 'intermediate',
               command: 'npx express-generator',
+              task: 'Genera lo scaffold di un progetto Express con cartelle e middleware preconfigurati lanciando npx express-generator.',
             },
             {
               english: 'Fastify',
@@ -3027,6 +3211,7 @@ export default {
               context: 'express',
               difficulty: 'intermediate',
               code: "res.send('OK');",
+              task: `Restituisci 'OK' come corpo della risposta tramite res.send lasciando a Express il Content-Type automatico.`,
             },
           ],
         },
@@ -3045,6 +3230,7 @@ export default {
               context: 'express',
               difficulty: 'intermediate',
               code: "app.get('/users', handler);",
+              task: `Registra una rotta GET sull'URL '/users' associandola alla funzione handler dichiarata.`,
             },
             {
               english: 'app.get',
@@ -3056,6 +3242,7 @@ export default {
               context: 'express',
               difficulty: 'intermediate',
               code: "app.get('/users', (req, res) => res.json(users));",
+              task: `Esponi GET /users con app.get che risponde restituendo l'array users serializzato come JSON.`,
             },
             {
               english: 'app.post',
@@ -3067,6 +3254,7 @@ export default {
               context: 'express',
               difficulty: 'intermediate',
               code: "app.post('/users', createUser);",
+              task: 'Mappa POST /users sulla funzione createUser per gestire la creazione di nuovi utenti.',
             },
             {
               english: 'app.put',
@@ -3078,6 +3266,7 @@ export default {
               context: 'express',
               difficulty: 'intermediate',
               code: "app.put('/users/:id', updateUser);",
+              task: 'Associa PUT /users/:id alla funzione updateUser per sostituire integralmente la risorsa identificata.',
             },
             {
               english: 'app.delete',
@@ -3089,6 +3278,7 @@ export default {
               context: 'express',
               difficulty: 'intermediate',
               code: "app.delete('/users/:id', deleteUser);",
+              task: `Collega DELETE /users/:id al gestore deleteUser per rimuovere l'utente identificato dall'id.`,
             },
             {
               english: 'Route Parameters',
@@ -3100,6 +3290,7 @@ export default {
               context: 'express',
               difficulty: 'intermediate',
               code: '/users/:id',
+              task: `Definisci il template di rotta /users/:id dove :id e' un parametro dinamico estraibile da req.params.`,
             },
             {
               english: 'Wildcard Route',
@@ -3111,6 +3302,7 @@ export default {
               context: 'express',
               difficulty: 'intermediate',
               code: "app.get('*', notFoundHandler);",
+              task: `Registra una rotta wildcard '*' che cattura ogni URL non gestito invocando notFoundHandler.`,
             },
             {
               english: 'Route Chaining',
@@ -3122,6 +3314,7 @@ export default {
               context: 'express',
               difficulty: 'intermediate',
               code: "app.route('/users').get(...).post(...);",
+              task: 'Concatena GET e POST sulla stessa rotta /users usando app.route per evitare la duplicazione del percorso.',
             },
             {
               english: 'Endpoint',
@@ -3143,6 +3336,7 @@ export default {
               context: 'express',
               difficulty: 'intermediate',
               code: 'function handler(req, res) {}',
+              task: 'Definisci una funzione handler che riceve req e res come parametri standard di Express.',
             },
           ],
         },
@@ -3161,6 +3355,7 @@ export default {
               context: 'express',
               difficulty: 'intermediate',
               code: 'req.params, req.query, req.body',
+              task: 'Esamina la richiesta corrente leggendo req.params, req.query e req.body per estrarre input del client.',
             },
             {
               english: 'res',
@@ -3172,6 +3367,7 @@ export default {
               context: 'express',
               difficulty: 'intermediate',
               code: 'res.status(200).json(data);',
+              task: `Invia una risposta JSON con status 200 concatenando res.status(200).json(data) in un'unica espressione.`,
             },
             {
               english: 'req.params',
@@ -3183,6 +3379,7 @@ export default {
               context: 'express',
               difficulty: 'intermediate',
               code: 'req.params.id',
+              task: `Recupera l'id della risorsa dai parametri di rotta accedendo a req.params.id dentro l'handler.`,
             },
             {
               english: 'req.query',
@@ -3194,6 +3391,7 @@ export default {
               context: 'express',
               difficulty: 'intermediate',
               code: 'req.query.page',
+              task: 'Leggi il parametro di paginazione page dalla query string tramite req.query.page.',
             },
             {
               english: 'req.body',
@@ -3206,6 +3404,7 @@ export default {
               difficulty: 'intermediate',
               code: 'req.body.email',
               note: 'Richiede express.json() o body-parser.',
+              task: 'Accedi al campo email del payload JSON tramite req.body.email dopo aver montato express.json().',
             },
             {
               english: 'res.json',
@@ -3217,6 +3416,7 @@ export default {
               context: 'express',
               difficulty: 'intermediate',
               code: 'res.json({ ok: true });',
+              task: 'Restituisci un oggetto { ok: true } come risposta JSON invocando res.json() che serializza e setta il Content-Type.',
             },
             {
               english: 'res.status',
@@ -3228,6 +3428,7 @@ export default {
               context: 'express',
               difficulty: 'intermediate',
               code: "res.status(404).send('Not Found');",
+              task: `Imposta lo status 404 e concatena send('Not Found') per restituire una risposta di risorsa non trovata.`,
             },
             {
               english: 'res.redirect',
@@ -3239,6 +3440,7 @@ export default {
               context: 'express',
               difficulty: 'intermediate',
               code: "res.redirect('/login');",
+              task: `Reindirizza il client verso '/login' con res.redirect emettendo uno status 302.`,
             },
             {
               english: 'res.cookie',
@@ -3250,6 +3452,7 @@ export default {
               context: 'express',
               difficulty: 'intermediate',
               code: "res.cookie('token', t, { httpOnly: true });",
+              task: `Setta un cookie token sulla risposta marcandolo httpOnly cosi' il client JavaScript non puo' leggerlo.`,
             },
             {
               english: 'res.sendFile',
@@ -3261,6 +3464,7 @@ export default {
               context: 'express',
               difficulty: 'intermediate',
               code: 'res.sendFile(path);',
+              task: `Servi al client il file all'indirizzo path tramite res.sendFile gestendo automaticamente Content-Type e stream.`,
             },
           ],
         },
@@ -3279,6 +3483,7 @@ export default {
               context: 'express',
               difficulty: 'intermediate',
               code: 'const r = express.Router();',
+              task: 'Crea un router modulare invocando express.Router() per raggruppare rotte correlate in un file separato.',
             },
             {
               english: 'Mount',
@@ -3289,6 +3494,7 @@ export default {
               context: 'express',
               difficulty: 'intermediate',
               code: "app.use('/api', router);",
+              task: `Monta il router sotto il prefisso '/api' con app.use cosi' tutte le sue rotte ereditano quel base path.`,
             },
             {
               english: 'app.use',
@@ -3300,6 +3506,7 @@ export default {
               context: 'express',
               difficulty: 'intermediate',
               code: 'app.use(express.json());',
+              task: `Registra express.json() come middleware globale tramite app.use cosi' req.body viene popolato dal body JSON.`,
             },
             {
               english: 'Static Files',
@@ -3311,6 +3518,7 @@ export default {
               context: 'express',
               difficulty: 'intermediate',
               code: "app.use(express.static('public'));",
+              task: `Servi i file statici dalla cartella 'public' montando express.static() come middleware.`,
             },
             {
               english: 'Public Folder',
@@ -3333,6 +3541,7 @@ export default {
               context: 'express',
               difficulty: 'intermediate',
               code: "require('./routes/users');",
+              task: 'Importa il router dedicato agli utenti da ./routes/users con require per mantenere le rotte ben separate.',
             },
             {
               english: 'View Engine',
@@ -3344,6 +3553,7 @@ export default {
               context: 'express',
               difficulty: 'intermediate',
               code: "app.set('view engine', 'pug');",
+              task: `Configura Pug come motore di template di Express impostando app.set('view engine', 'pug').`,
             },
             {
               english: 'Pug',
@@ -3379,6 +3589,7 @@ export default {
               context: 'express',
               difficulty: 'intermediate',
               code: "res.render('index', { user });",
+              task: `Renderizza la vista 'index' passandole il contesto { user } tramite res.render per generare HTML lato server.`,
             },
           ],
         },
@@ -3491,6 +3702,7 @@ export default {
               context: 'api',
               difficulty: 'intermediate',
               code: '/api/v1/users',
+              task: `Prefissa le rotte dell'API con /api/v1/users per supportare il versionamento e migrare i client gradualmente.`,
             },
             {
               english: 'Resource Naming',
@@ -3530,6 +3742,7 @@ export default {
               context: 'api',
               difficulty: 'intermediate',
               code: 'POST /users',
+              task: 'Esponi un endpoint POST /users per creare una nuova risorsa utente dal body della richiesta.',
             },
             {
               english: 'Read',
@@ -3541,6 +3754,7 @@ export default {
               context: 'api',
               difficulty: 'intermediate',
               code: 'GET /users/:id',
+              task: `Recupera una singola risorsa utente con GET /users/:id leggendo l'id dai parametri di rotta.`,
             },
             {
               english: 'PATCH Update',
@@ -3552,6 +3766,7 @@ export default {
               difficulty: 'intermediate',
               code: 'PUT /users/:id',
               english_new: 'REST Update',
+              task: 'Sostituisci integralmente la risorsa con PUT /users/:id richiedendo tutti i campi nel body.',
             },
             {
               english: 'Soft Delete',
@@ -3564,6 +3779,7 @@ export default {
               difficulty: 'intermediate',
               code: 'DELETE /users/:id',
               english_new: 'REST Delete Endpoint',
+              task: `Rimuovi l'utente identificato dall'id mappando l'endpoint DELETE /users/:id.`,
             },
             {
               english: 'Collection',
@@ -3576,6 +3792,7 @@ export default {
               difficulty: 'intermediate',
               code: 'GET /products',
               english_new: 'REST Collection',
+              task: `Restituisci l'intera collezione di prodotti tramite GET /products con paginazione opzionale.`,
             },
             {
               english: 'Pagination',
@@ -3587,6 +3804,7 @@ export default {
               context: 'api',
               difficulty: 'intermediate',
               code: '?page=2&limit=20',
+              task: 'Implementa la paginazione accettando i parametri di query ?page=2&limit=20 per richieste su collezioni grandi.',
             },
             {
               english: 'Filtering',
@@ -3598,6 +3816,7 @@ export default {
               context: 'api',
               difficulty: 'intermediate',
               code: '?status=active',
+              task: 'Filtra la collezione lato server leggendo il parametro di query ?status=active dalla richiesta.',
             },
             {
               english: 'Sorting',
@@ -3609,6 +3828,7 @@ export default {
               context: 'api',
               difficulty: 'intermediate',
               code: '?sort=-createdAt',
+              task: `Ordina i risultati in modo decrescente sulla data passando il parametro ?sort=-createdAt all'endpoint.`,
             },
             {
               english: 'Field Selection',
@@ -3620,6 +3840,7 @@ export default {
               context: 'api',
               difficulty: 'intermediate',
               code: '?fields=id,name',
+              task: 'Restituisci solo i campi id e name della risorsa interpretando il parametro ?fields=id,name della query.',
             },
           ],
         },
@@ -3638,6 +3859,7 @@ export default {
               context: 'api',
               difficulty: 'intermediate',
               code: 'exports.getUsers = async (req, res) => {};',
+              task: 'Definisci il controller getUsers come funzione async esportata che riceve req e res per gestire la richiesta.',
             },
             {
               english: 'Service Layer',
@@ -3701,6 +3923,7 @@ export default {
               difficulty: 'intermediate',
               code: 'const userSchema = z.object({ name: z.string() });',
               english_new: 'Request Schema',
+              task: 'Costruisci uno schema Zod userSchema che valida un oggetto con campo name di tipo string.',
             },
             {
               english: 'Joi',
@@ -3713,6 +3936,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'Joi',
               command: 'npm install joi',
+              task: 'Installa la libreria di validazione Joi da npm per definire schemi descrittivi di richieste e payload.',
             },
             {
               english: 'Zod',
@@ -3725,6 +3949,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'Zod',
               command: 'npm install zod',
+              task: 'Aggiungi Zod come dipendenza tramite npm install zod per validare input con inferenza TypeScript automatica.',
             },
             {
               english: 'OpenAPI',
@@ -3817,6 +4042,7 @@ export default {
               context: 'api',
               difficulty: 'intermediate',
               code: '{ error: { code, message } }',
+              task: `Restituisci gli errori dell'API con la struttura { error: { code, message } } per dare un formato uniforme al client.`,
             },
             {
               english: 'Hypermedia',
@@ -3828,6 +4054,7 @@ export default {
               context: 'api',
               difficulty: 'advanced',
               code: "{ _links: { self: '/users/1' } }",
+              task: `Inserisci nella risposta un campo _links contenente self: '/users/1' per offrire navigabilita ipermediale in stile HATEOAS.`,
             },
             {
               english: 'Idempotency Key',
@@ -7784,6 +8011,7 @@ export default {
               difficulty: 'advanced',
               tool: 'ws',
               command: 'npm install ws',
+              task: 'Installa la libreria ws di basso livello per gestire i WebSocket in Node.',
             },
             {
               english: 'Frame',
@@ -7824,6 +8052,7 @@ export default {
               context: 'api',
               difficulty: 'advanced',
               code: 'wss://example.com/socket',
+              task: 'Apri una connessione WebSocket sicura su TLS verso example.com/socket usando lo schema wss.',
             },
             {
               english: 'Reconnection',
@@ -7863,6 +8092,7 @@ export default {
               difficulty: 'advanced',
               tool: 'Socket.io',
               command: 'npm install socket.io',
+              task: 'Installa la libreria socket.io per realizzare comunicazione real-time bidirezionale tra server e client.',
             },
             {
               english: 'Server Instance',
@@ -7874,6 +8104,7 @@ export default {
               context: 'api',
               difficulty: 'advanced',
               code: 'const io = new Server(httpServer);',
+              task: `Crea l'istanza io di Socket.io agganciandola al server HTTP esistente httpServer.`,
             },
             {
               english: 'Connection Event',
@@ -7885,6 +8116,7 @@ export default {
               context: 'api',
               difficulty: 'advanced',
               code: "io.on('connection', socket => {});",
+              task: `Registra un handler sull'evento connection per ricevere ogni nuovo socket connesso.`,
             },
             {
               english: 'Socket',
@@ -7896,6 +8128,7 @@ export default {
               context: 'api',
               difficulty: 'advanced',
               code: "socket.emit('message', data);",
+              task: `Invia l'evento message con il payload data al singolo socket connesso.`,
             },
             {
               english: 'Room',
@@ -7907,6 +8140,7 @@ export default {
               context: 'api',
               difficulty: 'advanced',
               code: "socket.join('chat-1');",
+              task: 'Iscrivi il socket alla room chat-1 per ricevere i messaggi diretti a quel gruppo.',
             },
             {
               english: 'Namespace',
@@ -7918,6 +8152,7 @@ export default {
               context: 'api',
               difficulty: 'advanced',
               code: "const chat = io.of('/chat');",
+              task: 'Crea il namespace /chat per isolare logicamente questo canale dagli altri socket.',
             },
             {
               english: 'Broadcasting',
@@ -7928,6 +8163,7 @@ export default {
               context: 'api',
               difficulty: 'advanced',
               code: "io.emit('announce', msg);",
+              task: `Trasmetti l'evento announce con il messaggio msg a tutti i client connessi.`,
             },
             {
               english: 'Acknowledgement',
@@ -7939,6 +8175,7 @@ export default {
               context: 'api',
               difficulty: 'advanced',
               code: "socket.emit('evt', data, ack => {});",
+              task: `Emetti l'evento evt fornendo la callback ack che il client invocherà come conferma di ricezione.`,
             },
             {
               english: 'Adapter',
@@ -8202,6 +8439,7 @@ export default {
               context: 'runtime',
               difficulty: 'advanced',
               code: "const { Worker } = require('worker_threads');",
+              task: 'Importa la classe Worker dal modulo worker_threads per parallelizzare lavoro CPU-bound.',
             },
             {
               english: 'Main Thread',
@@ -8213,6 +8451,7 @@ export default {
               context: 'runtime',
               difficulty: 'advanced',
               code: 'isMainThread',
+              task: 'Verifica il flag isMainThread per distinguere il thread principale dai worker thread.',
             },
             {
               english: 'parentPort',
@@ -8224,6 +8463,7 @@ export default {
               context: 'runtime',
               difficulty: 'advanced',
               code: 'parentPort.postMessage(result);',
+              task: 'Invia il valore result al thread genitore tramite parentPort.postMessage.',
             },
             {
               english: 'postMessage',
@@ -8244,6 +8484,7 @@ export default {
               context: 'runtime',
               difficulty: 'advanced',
               code: "new Worker('./w.js', { workerData });",
+              task: 'Avvia il worker ./w.js passando workerData come dati iniziali clonati strutturalmente.',
             },
             {
               english: 'SharedArrayBuffer',
@@ -8296,6 +8537,7 @@ export default {
               difficulty: 'advanced',
               tool: 'piscina',
               command: 'npm install piscina',
+              task: 'Installa Piscina per gestire un pool di worker thread riusabili.',
             },
           ],
         },
@@ -8314,6 +8556,7 @@ export default {
               context: 'runtime',
               difficulty: 'advanced',
               code: "const { spawn } = require('child_process');",
+              task: 'Importa spawn dal modulo child_process per lanciare processi figli.',
             },
             {
               english: 'spawn',
@@ -8324,6 +8567,7 @@ export default {
               context: 'runtime',
               difficulty: 'advanced',
               code: "spawn('ls', ['-la']);",
+              task: `Spawna il comando ls con l'argomento -la in un nuovo processo figlio.`,
             },
             {
               english: 'exec',
@@ -8335,6 +8579,7 @@ export default {
               difficulty: 'advanced',
               code: "exec('ls -la', cb);",
               note: 'Pericoloso con input utente: rischio injection.',
+              task: 'Esegui la stringa shell ls -la e ricevi stdout completo nella callback cb.',
             },
             {
               english: 'execFile',
@@ -8346,6 +8591,7 @@ export default {
               context: 'runtime',
               difficulty: 'advanced',
               code: "execFile('/usr/bin/git', ['log']);",
+              task: `Lancia l'eseguibile /usr/bin/git con l'argomento log evitando l'interpretazione della shell.`,
             },
             {
               english: 'fork',
@@ -8357,6 +8603,7 @@ export default {
               context: 'runtime',
               difficulty: 'advanced',
               code: "const child = fork('./worker.js');",
+              task: 'Forka un nuovo processo Node che esegue ./worker.js con canale IPC integrato.',
             },
             {
               english: 'IPC',
@@ -8367,6 +8614,7 @@ export default {
               context: 'runtime',
               difficulty: 'advanced',
               code: 'child.send({ task });',
+              task: `Spedisci l'oggetto task al processo figlio attraverso il canale IPC.`,
             },
             {
               english: 'stdio',
@@ -8377,6 +8625,7 @@ export default {
               context: 'runtime',
               difficulty: 'advanced',
               code: "{ stdio: 'inherit' }",
+              task: `Imposta stdio su 'inherit' affinché il figlio condivida gli stream del processo padre.`,
             },
             {
               english: 'Exit Code',
@@ -8387,6 +8636,7 @@ export default {
               context: 'runtime',
               difficulty: 'advanced',
               code: "child.on('exit', code => {});",
+              task: `Registra un listener sull'evento exit del figlio per leggere il codice di uscita code.`,
             },
             {
               english: 'Kill',
@@ -8397,6 +8647,7 @@ export default {
               context: 'runtime',
               difficulty: 'advanced',
               code: "child.kill('SIGTERM');",
+              task: 'Termina il processo figlio inviandogli il segnale SIGTERM.',
             },
             {
               english: 'Signal',
@@ -8425,6 +8676,7 @@ export default {
               context: 'runtime',
               difficulty: 'advanced',
               code: "const cluster = require('cluster');",
+              task: 'Importa il modulo cluster per replicare il server su più processi worker.',
             },
             {
               english: 'Master',
@@ -8436,6 +8688,7 @@ export default {
               context: 'runtime',
               difficulty: 'advanced',
               code: 'if (cluster.isPrimary) {}',
+              task: 'Verifica cluster.isPrimary per eseguire codice solo nel processo primario.',
             },
             {
               english: 'Primary Process',
@@ -8476,6 +8729,7 @@ export default {
               context: 'runtime',
               difficulty: 'advanced',
               code: 'os.cpus().length',
+              task: 'Conta il numero di core CPU disponibili leggendo la lunghezza di os.cpus().',
             },
             {
               english: 'Zero-Downtime Reload',
@@ -8507,6 +8761,7 @@ export default {
               context: 'runtime',
               difficulty: 'advanced',
               code: "cluster.on('exit', () => cluster.fork());",
+              task: 'Riavvia automaticamente un worker forkando un sostituto quando il cluster emette exit.',
             },
             {
               english: 'Shared State',
@@ -8579,6 +8834,7 @@ export default {
               difficulty: 'advanced',
               tool: 'p-limit',
               code: 'const limit = pLimit(5);',
+              task: 'Configura un limitatore di concorrenza che permette al massimo 5 promise in parallelo.',
             },
             {
               english: 'Queue',
@@ -8657,6 +8913,7 @@ export default {
               difficulty: 'advanced',
               tool: 'TypeScript',
               command: 'npm install --save-dev typescript',
+              task: 'Installa TypeScript come dipendenza di sviluppo del progetto.',
             },
             {
               english: 'tsc',
@@ -8668,6 +8925,7 @@ export default {
               context: 'typescript',
               difficulty: 'advanced',
               command: 'npx tsc',
+              task: 'Compila il progetto invocando il compilatore tsc tramite npx.',
             },
             {
               english: 'tsconfig.json',
@@ -8679,6 +8937,7 @@ export default {
               context: 'typescript',
               difficulty: 'advanced',
               command: 'npx tsc --init',
+              task: 'Genera un file tsconfig.json di default eseguendo tsc --init.',
             },
             {
               english: 'ts-node',
@@ -8691,6 +8950,7 @@ export default {
               difficulty: 'advanced',
               tool: 'ts-node',
               command: 'npx ts-node app.ts',
+              task: 'Esegui direttamente app.ts senza compilazione esplicita tramite ts-node.',
             },
             {
               english: 'tsx',
@@ -8703,6 +8963,7 @@ export default {
               difficulty: 'advanced',
               tool: 'tsx',
               command: 'npx tsx app.ts',
+              task: 'Avvia app.ts usando tsx, un runner TypeScript più veloce basato su esbuild.',
             },
             {
               english: 'Strict Mode (tsconfig)',
@@ -8714,6 +8975,7 @@ export default {
               context: 'typescript',
               difficulty: 'advanced',
               code: '"strict": true',
+              task: `Attiva l'opzione strict in tsconfig.json per abilitare tutti i controlli rigorosi del compilatore.`,
             },
             {
               english: 'Target',
@@ -8725,6 +8987,7 @@ export default {
               context: 'typescript',
               difficulty: 'advanced',
               code: '"target": "ES2022"',
+              task: 'Imposta la versione JavaScript di destinazione su ES2022 nel tsconfig.',
             },
             {
               english: 'Module Resolution',
@@ -8736,6 +8999,7 @@ export default {
               context: 'typescript',
               difficulty: 'advanced',
               code: '"moduleResolution": "node"',
+              task: 'Configura moduleResolution su node per replicare la strategia di risoluzione dei moduli di Node.',
             },
             {
               english: 'Type Definitions',
@@ -8747,6 +9011,7 @@ export default {
               context: 'typescript',
               difficulty: 'advanced',
               command: 'npm install --save-dev @types/node',
+              task: 'Aggiungi le definizioni di tipo per le API di Node installando @types/node come devDependency.',
             },
             {
               english: 'DefinitelyTyped',
@@ -8775,6 +9040,7 @@ export default {
               context: 'typescript',
               difficulty: 'advanced',
               code: 'let count: number = 0;',
+              task: 'Dichiara la variabile count annotandola con il tipo number e inizializzandola a 0.',
             },
             {
               english: 'Primitive Type',
@@ -8795,6 +9061,7 @@ export default {
               difficulty: 'advanced',
               code: 'let x: any;',
               note: 'Da evitare: vanifica i benefici di TypeScript.',
+              task: 'Dichiara la variabile x con tipo any disabilitando ogni controllo statico su di essa.',
             },
             {
               english: 'unknown',
@@ -8806,6 +9073,7 @@ export default {
               context: 'typescript',
               difficulty: 'advanced',
               code: 'let x: unknown;',
+              task: `Dichiara la variabile x con tipo unknown obbligando un narrowing prima dell'uso.`,
             },
             {
               english: 'never',
@@ -8827,6 +9095,7 @@ export default {
               context: 'typescript',
               difficulty: 'advanced',
               code: 'function log(): void {}',
+              task: `Annota il valore di ritorno della funzione log come void per indicare l'assenza di ritorno significativo.`,
             },
             {
               english: 'Literal Type',
@@ -8837,6 +9106,7 @@ export default {
               context: 'typescript',
               difficulty: 'advanced',
               code: "let dir: 'left' | 'right';",
+              task: `Restringi la variabile dir ai soli valori letterali 'left' o 'right'.`,
             },
             {
               english: 'Union Type',
@@ -8848,6 +9118,7 @@ export default {
               context: 'typescript',
               difficulty: 'advanced',
               code: 'string | number',
+              task: 'Componi un tipo unione che accetta sia string sia number.',
             },
             {
               english: 'Intersection Type',
@@ -8859,6 +9130,7 @@ export default {
               context: 'typescript',
               difficulty: 'advanced',
               code: 'A & B',
+              task: `Combina i tipi A e B in un'intersezione che eredita simultaneamente le proprietà di entrambi.`,
             },
             {
               english: 'Type Inference',
@@ -8887,6 +9159,7 @@ export default {
               context: 'typescript',
               difficulty: 'advanced',
               code: 'interface User { id: number; name: string; }',
+              task: `Definisci l'interface User con un id numerico e un name di tipo stringa.`,
             },
             {
               english: 'type Alias',
@@ -8898,6 +9171,7 @@ export default {
               context: 'typescript',
               difficulty: 'advanced',
               code: 'type ID = string | number;',
+              task: `Crea un alias di tipo ID equivalente all'unione string | number.`,
             },
             {
               english: 'Optional Property',
@@ -8909,6 +9183,7 @@ export default {
               context: 'typescript',
               difficulty: 'advanced',
               code: 'name?: string',
+              task: 'Marca la proprietà name come opzionale aggiungendo il punto interrogativo.',
             },
             {
               english: 'readonly',
@@ -8919,6 +9194,7 @@ export default {
               context: 'typescript',
               difficulty: 'advanced',
               code: 'readonly id: number',
+              task: `Rendi la proprietà id immutabile dopo l'inizializzazione con il modificatore readonly.`,
             },
             {
               english: 'Index Signature',
@@ -8929,6 +9205,7 @@ export default {
               context: 'typescript',
               difficulty: 'advanced',
               code: '[key: string]: number',
+              task: 'Permetti chiavi stringa arbitrarie mappate a number tramite una index signature.',
             },
             {
               english: 'Generic',
@@ -8940,6 +9217,7 @@ export default {
               context: 'typescript',
               difficulty: 'advanced',
               code: 'function id<T>(x: T): T { return x; }',
+              task: `Realizza una funzione identità id parametrica sul tipo T che restituisce l'argomento ricevuto.`,
             },
             {
               english: 'Type Parameter',
@@ -8951,6 +9229,7 @@ export default {
               context: 'typescript',
               difficulty: 'advanced',
               code: '<T extends object>',
+              task: 'Vincola il parametro generico T affinché estenda object.',
             },
             {
               english: 'Enum',
@@ -8962,6 +9241,7 @@ export default {
               context: 'typescript',
               difficulty: 'advanced',
               code: 'enum Role { Admin, User }',
+              task: 'Definisci un enum Role con i due membri Admin e User.',
             },
             {
               english: 'Tuple',
@@ -8972,6 +9252,7 @@ export default {
               context: 'typescript',
               difficulty: 'advanced',
               code: 'let pair: [string, number];',
+              task: 'Dichiara la tupla pair con esattamente due elementi: una stringa seguita da un numero.',
             },
             {
               english: 'Record',
@@ -8983,6 +9264,7 @@ export default {
               context: 'typescript',
               difficulty: 'advanced',
               code: 'Record<string, number>',
+              task: 'Costruisci un Record con chiavi stringa e valori numerici.',
             },
           ],
         },
@@ -9011,6 +9293,7 @@ export default {
               context: 'typescript',
               difficulty: 'advanced',
               code: 'Partial<User>',
+              task: 'Genera una versione di User con tutte le proprietà opzionali usando Partial.',
             },
             {
               english: 'Pick',
@@ -9021,6 +9304,7 @@ export default {
               context: 'typescript',
               difficulty: 'advanced',
               code: "Pick<User, 'id' | 'name'>",
+              task: 'Estrai da User le sole proprietà id e name tramite il tipo utility Pick.',
             },
             {
               english: 'Omit',
@@ -9031,6 +9315,7 @@ export default {
               context: 'typescript',
               difficulty: 'advanced',
               code: "Omit<User, 'password'>",
+              task: 'Rimuovi la proprietà password da User costruendo il tipo derivato con Omit.',
             },
             {
               english: 'Type Guard',
@@ -9042,6 +9327,7 @@ export default {
               context: 'typescript',
               difficulty: 'advanced',
               code: 'function isUser(x): x is User {}',
+              task: 'Scrivi un predicato isUser che restringe x al tipo User tramite la sintassi x is User.',
             },
             {
               english: 'Type Assertion',
@@ -9053,6 +9339,7 @@ export default {
               context: 'typescript',
               difficulty: 'advanced',
               code: 'value as User',
+              task: 'Forza il compilatore a trattare value come User tramite asserzione di tipo.',
             },
             {
               english: 'Mapped Type',
@@ -9064,6 +9351,7 @@ export default {
               context: 'typescript',
               difficulty: 'advanced',
               code: '{ [K in keyof T]: T[K] }',
+              task: 'Crea un mapped type che itera su keyof T preservando i tipi delle proprietà originali.',
             },
             {
               english: 'Conditional Type',
@@ -9075,6 +9363,7 @@ export default {
               context: 'typescript',
               difficulty: 'advanced',
               code: 'T extends U ? X : Y',
+              task: 'Componi un tipo condizionale che restituisce X se T estende U, altrimenti Y.',
             },
             {
               english: 'Decorator',
@@ -9087,6 +9376,7 @@ export default {
               difficulty: 'advanced',
               code: '@injectable()',
               note: 'Usato in NestJS, TypeORM.',
+              task: 'Applica il decoratore @injectable() per renderlo iniettabile dal container DI.',
             },
             {
               english: 'Declaration File',
@@ -9098,6 +9388,7 @@ export default {
               context: 'typescript',
               difficulty: 'advanced',
               code: 'types.d.ts',
+              task: 'Esponi tipi globali o di modulo in un file di dichiarazione types.d.ts.',
             },
           ],
         },
@@ -9251,6 +9542,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               code: 'constructor(private repo: Repo) {}',
+              task: 'Inietta la dipendenza repo nel costruttore dichiarandola come parametro privato.',
             },
             {
               english: 'DI Container',
@@ -9295,6 +9587,7 @@ export default {
               difficulty: 'advanced',
               tool: 'NestJS',
               command: 'npx @nestjs/cli new my-app',
+              task: 'Genera un nuovo progetto NestJS chiamato my-app tramite la CLI ufficiale.',
             },
             {
               english: 'Provider',
@@ -9306,6 +9599,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               code: '@Injectable()',
+              task: 'Marca la classe con @Injectable() per registrarla come provider nel container di Nest.',
             },
             {
               english: 'Module (Nest)',
@@ -9317,6 +9611,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               code: '@Module({ providers: [] })',
+              task: `Definisci un modulo Nest con il decoratore @Module dichiarando l'array dei providers.`,
             },
             {
               english: 'Singleton',
@@ -9461,6 +9756,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               code: 'src/index.ts',
+              task: 'Colloca il punto di ingresso index.ts dentro la cartella sorgente src/.',
             },
             {
               english: 'dist',
@@ -9503,6 +9799,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               code: "index.ts: export * from './user';",
+              task: 'Riesporta tutto il contenuto del modulo ./user dal barrel file index.ts.',
             },
             {
               english: 'Layer',
@@ -9544,6 +9841,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               command: 'npx eslint .',
+              task: `Esegui ESLint sull'intera cartella corrente per analizzare lo stile del codice.`,
             },
           ],
         },
@@ -9571,6 +9869,7 @@ export default {
               context: 'performance',
               difficulty: 'advanced',
               command: 'node --prof app.js',
+              task: 'Avvia app.js con il flag --prof per generare un file di profilazione V8.',
             },
             {
               english: 'Bottleneck',
@@ -9603,6 +9902,7 @@ export default {
               difficulty: 'advanced',
               tool: '0x',
               command: 'npx 0x app.js',
+              task: 'Profila app.js con 0x per ottenere un flamegraph interattivo della CPU.',
             },
             {
               english: 'clinic.js',
@@ -9614,6 +9914,7 @@ export default {
               difficulty: 'advanced',
               tool: 'clinic.js',
               command: 'npx clinic doctor -- node app.js',
+              task: 'Lancia clinic doctor su app.js per diagnosticare problemi di event loop e memoria.',
             },
             {
               english: 'CPU Profile',
@@ -9645,6 +9946,7 @@ export default {
               context: 'performance',
               difficulty: 'advanced',
               code: 'performance.now()',
+              task: 'Misura un timestamp ad alta risoluzione tramite performance.now().',
             },
             {
               english: 'Benchmark',
@@ -9668,6 +9970,7 @@ export default {
               difficulty: 'advanced',
               tool: 'Autocannon',
               command: 'npx autocannon -c 100 http://localhost:3000',
+              task: 'Sottoponi http://localhost:3000 a un test di carico con 100 connessioni concorrenti via autocannon.',
             },
           ],
         },
@@ -9756,6 +10059,7 @@ export default {
               context: 'performance',
               difficulty: 'advanced',
               command: 'node --max-old-space-size=4096 app.js',
+              task: `Aumenta il limite della old-space dell'heap V8 a 4096 MB per app.js.`,
             },
             {
               english: 'OOM',
@@ -9777,6 +10081,7 @@ export default {
               context: 'performance',
               difficulty: 'advanced',
               code: 'console.log(process.memoryUsage());',
+              task: `Stampa il report sull'uso di memoria del processo Node corrente.`,
             },
           ],
         },
@@ -9806,6 +10111,7 @@ export default {
               difficulty: 'advanced',
               tool: 'Redis',
               command: 'npm install ioredis',
+              task: 'Installa ioredis come client Redis ad alte prestazioni per Node.',
             },
             {
               english: 'ioredis',
@@ -9839,6 +10145,7 @@ export default {
               context: 'performance',
               difficulty: 'advanced',
               code: "redis.set('key', val, 'EX', 60);",
+              task: 'Salva la coppia key/val in Redis con un TTL di scadenza di 60 secondi.',
             },
             {
               english: 'Eviction',
@@ -10035,6 +10342,7 @@ export default {
               difficulty: 'advanced',
               tool: 'PM2',
               command: 'npm install -g pm2',
+              task: 'Installa globalmente il process manager PM2 tramite npm.',
             },
             {
               english: 'pm2 start',
@@ -10046,6 +10354,7 @@ export default {
               context: 'deployment',
               difficulty: 'advanced',
               command: 'pm2 start app.js -i max',
+              task: `Avvia app.js con PM2 forkando un'istanza per ogni core CPU disponibile.`,
             },
             {
               english: 'Cluster Mode',
@@ -10056,6 +10365,7 @@ export default {
               context: 'deployment',
               difficulty: 'advanced',
               command: 'pm2 start app.js -i max',
+              task: 'Attiva la cluster mode di PM2 con -i max per scalare app.js su tutti i core.',
             },
             {
               english: 'Ecosystem File',
@@ -10066,6 +10376,7 @@ export default {
               context: 'deployment',
               difficulty: 'advanced',
               code: 'module.exports = { apps: [...] };',
+              task: `Esporta la configurazione di PM2 con la lista delle app dall'ecosystem file.`,
             },
             {
               english: 'pm2 logs',
@@ -10076,6 +10387,7 @@ export default {
               context: 'deployment',
               difficulty: 'advanced',
               command: 'pm2 logs',
+              task: 'Visualizza in tempo reale gli stream stdout e stderr di tutte le app gestite da PM2.',
             },
             {
               english: 'Auto Restart',
@@ -10096,6 +10408,7 @@ export default {
               context: 'deployment',
               difficulty: 'advanced',
               code: "max_memory_restart: '500M'",
+              task: `Imposta max_memory_restart a 500M per fare riavviare l'app da PM2 oltre quella soglia.`,
             },
             {
               english: 'pm2 monit',
@@ -10107,6 +10420,7 @@ export default {
               context: 'deployment',
               difficulty: 'advanced',
               command: 'pm2 monit',
+              task: 'Apri il dashboard testuale di PM2 per monitorare CPU e memoria di ogni processo.',
             },
             {
               english: 'pm2 startup',
@@ -10117,6 +10431,7 @@ export default {
               context: 'deployment',
               difficulty: 'advanced',
               command: 'pm2 startup && pm2 save',
+              task: `Genera lo script di systemd per PM2 e salva l'elenco dei processi correnti.`,
             },
           ],
         },
@@ -10145,6 +10460,7 @@ export default {
               context: 'deployment',
               difficulty: 'advanced',
               code: 'FROM node:20-alpine',
+              task: `Parti dall'immagine ufficiale node:20-alpine nel Dockerfile per un container leggero.`,
             },
             {
               english: 'Multi-Stage Build',
@@ -10155,6 +10471,7 @@ export default {
               context: 'deployment',
               difficulty: 'advanced',
               code: 'FROM node:20 AS builder',
+              task: `Apri lo stage builder basato su node:20 per compilare l'app prima di copiarla nello stage finale.`,
             },
             {
               english: 'Alpine Image',
@@ -10166,6 +10483,7 @@ export default {
               difficulty: 'advanced',
               code: 'FROM node:20-alpine',
               note: 'Basate su Alpine Linux, molto piccole.',
+              task: 'Scegli node:20-alpine come immagine base per beneficiare delle dimensioni ridotte di Alpine.',
             },
             {
               english: '.dockerignore',
@@ -10177,6 +10495,7 @@ export default {
               context: 'deployment',
               difficulty: 'advanced',
               code: 'node_modules\n.git',
+              task: 'Escludi node_modules e la cartella .git dal contesto di build tramite il file .dockerignore.',
             },
             {
               english: 'Layer Caching',
@@ -10197,6 +10516,7 @@ export default {
               context: 'deployment',
               difficulty: 'advanced',
               command: 'docker compose up -d',
+              task: 'Avvia tutti i servizi definiti nel docker-compose.yml in modalità detached.',
             },
             {
               english: 'Volume',
@@ -10226,6 +10546,7 @@ export default {
               context: 'deployment',
               difficulty: 'advanced',
               command: 'docker build -t myapp .',
+              task: `Costruisci l'immagine Docker dal contesto corrente etichettandola come myapp.`,
             },
           ],
         },
@@ -10243,6 +10564,7 @@ export default {
               context: 'deployment',
               difficulty: 'advanced',
               code: 'process.env.PORT',
+              task: `Leggi la variabile d'ambiente PORT dal process.env del processo Node.`,
             },
             {
               english: 'NODE_ENV',
@@ -10253,6 +10575,7 @@ export default {
               context: 'deployment',
               difficulty: 'advanced',
               command: 'NODE_ENV=production node app.js',
+              task: 'Avvia app.js impostando NODE_ENV su production per disattivare ottimizzazioni di sviluppo.',
             },
             {
               english: '.env File',
@@ -10265,6 +10588,7 @@ export default {
               difficulty: 'advanced',
               code: 'PORT=3000\nDB_URL=...',
               note: 'Mai committare .env: aggiungere a .gitignore.',
+              task: `Centralizza variabili come PORT e DB_URL in un file .env caricato all'avvio.`,
             },
             {
               english: 'dotenv',
@@ -10276,6 +10600,7 @@ export default {
               difficulty: 'advanced',
               tool: 'dotenv',
               command: 'npm install dotenv',
+              task: 'Installa dotenv per caricare automaticamente le variabili del file .env in process.env.',
             },
             {
               english: 'Twelve-Factor',
@@ -10354,6 +10679,7 @@ export default {
               context: 'deployment',
               difficulty: 'advanced',
               code: "app.get('/health', (req, res) => res.send('OK'));",
+              task: 'Esponi un endpoint GET /health che risponde con OK per il probe di liveness.',
             },
             {
               english: 'Liveness Probe',
@@ -10385,6 +10711,7 @@ export default {
               context: 'deployment',
               difficulty: 'advanced',
               code: "process.on('SIGTERM', shutdown);",
+              task: `Registra l'handler shutdown sul segnale SIGTERM per terminare l'app in modo pulito.`,
             },
             {
               english: 'SIGTERM',
@@ -10407,6 +10734,7 @@ export default {
               context: 'deployment',
               difficulty: 'advanced',
               code: 'server.close();',
+              task: 'Chiudi il server impedendo nuove connessioni mentre quelle in corso terminano.',
             },
             {
               english: 'Zero Downtime',
@@ -10593,6 +10921,7 @@ export default {
               difficulty: 'advanced',
               tool: 'amqplib',
               command: 'npm install amqplib',
+              task: 'Installa amqplib, il client Node ufficiale per parlare con un broker RabbitMQ.',
             },
             {
               english: 'Kafka',
@@ -10616,6 +10945,7 @@ export default {
               difficulty: 'advanced',
               tool: 'BullMQ',
               command: 'npm install bullmq',
+              task: 'Installa BullMQ per gestire code di job durature appoggiate su Redis.',
             },
             {
               english: 'Producer',
@@ -10677,6 +11007,7 @@ export default {
               context: 'api',
               difficulty: 'advanced',
               code: "queue.add('send-email', data);",
+              task: 'Accoda un job send-email con il payload data sulla coda BullMQ.',
             },
           ],
         },
@@ -10727,6 +11058,7 @@ export default {
               context: 'api',
               difficulty: 'advanced',
               code: 'service Greeter { rpc SayHi (...) }',
+              task: 'Definisci nel file .proto il servizio Greeter con la rpc SayHi per gRPC.',
             },
             {
               english: 'Streaming RPC',
@@ -10937,6 +11269,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               code: '"workspaces": ["packages/*"]',
+              task: `Dichiara nel package.json l'array workspaces che include tutte le cartelle sotto packages/.`,
             },
             {
               english: 'pnpm',
@@ -10949,6 +11282,7 @@ export default {
               difficulty: 'advanced',
               tool: 'pnpm',
               command: 'pnpm install',
+              task: 'Installa tutte le dipendenze del monorepo usando pnpm, il package manager con store condiviso.',
             },
             {
               english: 'Yarn Workspaces',
@@ -10971,6 +11305,7 @@ export default {
               difficulty: 'advanced',
               tool: 'Nx',
               command: 'npx nx run app:build',
+              task: 'Esegui il target build sul progetto app del monorepo gestito da Nx.',
             },
             {
               english: 'Turborepo',
@@ -11015,6 +11350,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               code: '"references": [{ "path": "../core" }]',
+              task: 'Collega il pacchetto ../core come project reference TypeScript nel tsconfig.',
             },
             {
               english: 'Shared Library',
@@ -11042,6 +11378,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               command: 'npm publish',
+              task: 'Pubblica il pacchetto corrente sul registro npm con il comando standard di publish.',
             },
             {
               english: 'Public Package',
@@ -11053,6 +11390,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               command: 'npm publish --access public',
+              task: 'Pubblica il pacchetto come pubblico passando --access public, obbligatorio per gli scoped.',
             },
             {
               english: 'Scoped Package',
@@ -11063,6 +11401,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               code: '@my-org/my-lib',
+              task: `Prefissa il nome del pacchetto con lo scope @my-org per raggrupparlo sotto l'organizzazione.`,
             },
             {
               english: 'Private Package',
@@ -11074,6 +11413,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               code: '"private": true',
+              task: 'Imposta private a true nel package.json per impedire la pubblicazione accidentale su npm.',
             },
             {
               english: 'Version Bump',
@@ -11085,6 +11425,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               command: 'npm version patch',
+              task: 'Incrementa il numero di patch nel package.json eseguendo npm version patch.',
             },
             {
               english: 'Changelog',
@@ -11116,6 +11457,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               code: 'feat: add login\nfix: handle null',
+              task: 'Annota i commit con prefissi semantici come feat e fix per supportare il versionamento automatico.',
             },
             {
               english: 'npm Tag',
@@ -11126,6 +11468,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               command: 'npm publish --tag beta',
+              task: 'Pubblica una pre-release etichettandola con il dist-tag beta invece del default latest.',
             },
             {
               english: 'Deprecate',
@@ -11136,6 +11479,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               command: 'npm deprecate pkg@1.x "use 2.x"',
+              task: `Marca come deprecate tutte le versioni 1.x del pacchetto suggerendo l'aggiornamento a 2.x.`,
             },
           ],
         },
@@ -11198,6 +11542,7 @@ export default {
               difficulty: 'advanced',
               tool: 'ESLint',
               command: 'npx eslint .',
+              task: `Analizza l'intera cartella corrente con ESLint per individuare violazioni delle regole.`,
             },
             {
               english: 'Prettier',
@@ -11209,6 +11554,7 @@ export default {
               difficulty: 'advanced',
               tool: 'Prettier',
               command: 'npx prettier --write .',
+              task: 'Formatta in place tutti i file del progetto con Prettier.',
             },
             {
               english: 'Husky',
@@ -11221,6 +11567,7 @@ export default {
               difficulty: 'advanced',
               tool: 'Husky',
               command: 'npx husky init',
+              task: 'Inizializza Husky nel repository per gestire hook git come pre-commit.',
             },
             {
               english: 'lint-staged',

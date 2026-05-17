@@ -33,6 +33,7 @@ export default {
               difficulty: 'beginner',
               code: 'int x = 5;',
               note: 'In C bisogna dichiarare il tipo della variabile prima di usarla.',
+              task: `Dichiara una variabile intera x e assegnale il valore 5 in un'unica istruzione, mostrando la sintassi base.`,
             },
             {
               english: 'Function',
@@ -43,6 +44,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'void greet() { printf("Hello"); }',
+              task: 'Definisci la funzione greet senza parametri che stampa Hello su stdout tramite printf.',
             },
             {
               english: 'Main Function',
@@ -55,6 +57,7 @@ export default {
               difficulty: 'beginner',
               code: 'int main(void) { return 0; }',
               note: 'Il punto di ingresso di ogni programma C.',
+              task: 'Scrivi il punto di ingresso main che accetta void come argomento e ritorna 0 al sistema operativo.',
             },
             {
               english: 'Return Value',
@@ -66,6 +69,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'return 0;',
+              task: 'Restituisci 0 dal main come codice di uscita, segnalando al sistema operativo che il programma ha avuto successo.',
             },
             {
               english: 'printf',
@@ -78,6 +82,7 @@ export default {
               difficulty: 'beginner',
               code: 'printf("Hello, World!\\n");',
               note: 'Abbreviazione di "print formatted". La f sta per "formatted".',
+              task: 'Stampa la stringa Hello, World! seguita da newline sullo stdout invocando printf da stdio.h.',
             },
             {
               english: 'scanf',
@@ -89,6 +94,7 @@ export default {
               difficulty: 'beginner',
               code: 'scanf("%d", &x);',
               note: 'Termine italiano: scanf (funzione standard di libreria C, non si traduce).',
+              task: 'Leggi un intero dallo standard input nella variabile x passando il suo indirizzo &x e il format %d a scanf.',
             },
             {
               english: 'Header File',
@@ -100,6 +106,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: '#include <stdio.h>',
+              task: `Includi l'header standard stdio.h per rendere disponibili printf, scanf e le altre funzioni di I/O.`,
             },
             {
               english: 'Compiler',
@@ -172,6 +179,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: '/* This is a comment */',
+              task: 'Inserisci un commento multilinea in stile C usando le sequenze /* e */ attorno al testo This is a comment.',
             },
             {
               english: 'Single-Line Comment',
@@ -184,6 +192,7 @@ export default {
               difficulty: 'beginner',
               code: '// this is a comment',
               note: 'Disponibile da C99 in poi. In C89 solo /* */.',
+              task: 'Aggiungi un commento su singola riga col prefisso // disponibile dal C99 in poi.',
             },
             {
               english: 'Format Specifier',
@@ -195,6 +204,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'printf("%d", x);',
+              task: 'Stampa la variabile intera x indicando il segnaposto %d nella stringa di formato passata a printf.',
             },
             {
               english: 'Newline Character',
@@ -206,6 +216,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'printf("Hello\\n");',
+              task: 'Termina la stringa Hello con la sequenza di escape \\n per andare a capo dopo la stampa.',
             },
             {
               english: 'Escape Sequence',
@@ -217,6 +228,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: '\\n \\t \\\\ \\0',
+              task: 'Riconosci le principali sequenze di escape \\n, \\t, \\\\ e \\0 usate dentro le stringhe C.',
             },
             {
               english: 'Semicolon',
@@ -239,6 +251,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'if (x > 0) { ... }',
+              task: 'Racchiudi il corpo del blocco condizionale if (x > 0) tra parentesi graffe per delimitare le istruzioni.',
             },
             {
               english: 'Syntax',
@@ -267,6 +280,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               command: 'gcc main.c -o main',
+              task: `Compila il sorgente main.c con gcc producendo l'eseguibile chiamato main tramite il flag -o.`,
             },
             {
               english: 'Executable',
@@ -278,6 +292,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               command: './main',
+              task: 'Lancia il binario main appena compilato dalla directory corrente con il prefisso ./ per indicarne il path.',
             },
             {
               english: 'Syntax Error',
@@ -300,6 +315,7 @@ export default {
               difficulty: 'beginner',
               command: 'gcc -Wall main.c',
               note: '-Wall abilita tutti i warning comuni.',
+              task: `Attiva l'insieme di warning base passando -Wall a gcc su main.c per intercettare errori comuni a tempo di compilazione.`,
             },
             {
               english: 'Linking',
@@ -321,6 +337,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: '#include <stdio.h>',
+              task: 'Istruisci il preprocessore a includere stdio.h tramite la direttiva #include prima della compilazione vera e propria.',
             },
             {
               english: 'Object File',
@@ -332,6 +349,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               command: 'gcc -c main.c',
+              task: 'Genera solo il file oggetto main.o da main.c usando il flag -c di gcc, saltando la fase di link.',
             },
             {
               english: 'Runtime Error',
@@ -383,6 +401,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int x;',
+              task: 'Dichiara una variabile intera x senza assegnarle alcun valore iniziale, lasciandone il contenuto indeterminato.',
             },
             {
               english: 'Definition',
@@ -395,6 +414,7 @@ export default {
               difficulty: 'beginner',
               code: 'int x = 10;',
               note: 'In C la dichiarazione dice "esiste", la definizione dice "esiste e ha questo valore".',
+              task: 'Definisci la variabile intera x assegnandole subito il valore 10 in fase di definizione.',
             },
             {
               english: 'Initialization',
@@ -406,6 +426,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int count = 0;',
+              task: 'Inizializza il contatore count a zero al momento della dichiarazione per evitare valori spazzatura sullo stack.',
             },
             {
               english: 'Assignment',
@@ -416,6 +437,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'x = 42;',
+              task: `Assegna il valore 42 alla variabile x gia' dichiarata in precedenza usando l'operatore =.`,
             },
             {
               english: 'Constant',
@@ -427,6 +449,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'const int MAX = 100;',
+              task: 'Definisci la costante intera MAX con valore 100 usando il qualificatore const per impedirne la modifica.',
             },
             {
               english: 'Identifier',
@@ -460,6 +483,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: '{ int x = 1; printf("%d", x); }',
+              task: `Apri un blocco di scope locale con graffe in cui dichiari x = 1 e lo stampi, limitando la visibilita' di x.`,
             },
             {
               english: 'Scope',
@@ -482,6 +506,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int, float, char, double',
+              task: 'Conosci i tipi fondamentali int, float, char e double su cui si basano tutte le dichiarazioni in C.',
             },
           ],
         },
@@ -509,6 +534,7 @@ export default {
               context: 'types',
               difficulty: 'beginner',
               code: 'int age = 25;',
+              task: 'Dichiara una variabile age di tipo int e inizializzala a 25 per rappresentare un numero intero.',
             },
             {
               english: 'Short',
@@ -521,6 +547,7 @@ export default {
               difficulty: 'beginner',
               code: 'short s = 100;',
               note: 'Almeno 16 bit, utile quando la memoria è limitata.',
+              task: 'Crea una variabile s di tipo short con valore 100 quando ti basta un intero a 16 bit per risparmiare memoria.',
             },
             {
               english: 'Long',
@@ -532,6 +559,7 @@ export default {
               context: 'types',
               difficulty: 'beginner',
               code: 'long big = 1000000L;',
+              task: 'Inizializza la variabile big di tipo long col letterale 1000000L, dove la L impone il suffisso long al numero.',
             },
             {
               english: 'Unsigned',
@@ -544,6 +572,7 @@ export default {
               difficulty: 'beginner',
               code: 'unsigned int count = 0;',
               note: 'Raddoppia il valore massimo positivo eliminando i negativi.',
+              task: 'Dichiara count come unsigned int inizializzato a zero per rappresentare solo valori positivi raddoppiando il range massimo.',
             },
             {
               english: 'Signed',
@@ -577,6 +606,7 @@ export default {
               context: 'types',
               difficulty: 'beginner',
               code: 'printf("%zu", sizeof(int));',
+              task: 'Stampa la dimensione in byte del tipo int chiamando sizeof(int) e usando il format specifier %zu adatto a size_t.',
             },
             {
               english: 'Byte',
@@ -627,6 +657,7 @@ export default {
               difficulty: 'beginner',
               code: 'float pi = 3.14f;',
               note: 'La f finale indica al compilatore che è un float, non un double.',
+              task: `Inizializza la variabile pi come float col letterale 3.14f, dove il suffisso f forza la precisione singola anziche' double.`,
             },
             {
               english: 'Double',
@@ -638,6 +669,7 @@ export default {
               context: 'types',
               difficulty: 'beginner',
               code: 'double pi = 3.14159265358979;',
+              task: 'Dichiara pi come double e assegnale 3.14159265358979 sfruttando la maggior precisione del tipo a 64 bit.',
             },
             {
               english: 'Character',
@@ -650,6 +682,7 @@ export default {
               difficulty: 'beginner',
               code: "char letter = 'A';",
               note: 'I caratteri si racchiudono tra apici singoli, non doppi.',
+              task: `Memorizza il carattere 'A' nella variabile letter di tipo char, ricordando che gli apici singoli delimitano un singolo char.`,
             },
             {
               english: 'ASCII',
@@ -673,6 +706,7 @@ export default {
               difficulty: 'beginner',
               code: '#include <stdbool.h>\nbool flag = true;',
               note: 'In C89 non esiste bool: si usa int con 0 e 1.',
+              task: 'Includi stdbool.h e dichiara flag come bool inizializzato a true, sfruttando il tipo booleano introdotto in C99.',
             },
             {
               english: 'Void',
@@ -684,6 +718,7 @@ export default {
               context: 'types',
               difficulty: 'beginner',
               code: 'void sayHello() { printf("Hi"); }',
+              task: 'Definisci la funzione sayHello con tipo di ritorno void per indicare che non restituisce alcun valore.',
             },
             {
               english: 'Type Casting',
@@ -695,6 +730,7 @@ export default {
               context: 'types',
               difficulty: 'beginner',
               code: 'int x = (int)3.14;',
+              task: 'Esegui un cast esplicito di 3.14 a int forzando la troncatura della parte decimale e ottenendo 3 nella variabile x.',
             },
             {
               english: 'Implicit Conversion',
@@ -727,6 +763,7 @@ export default {
               context: 'types',
               difficulty: 'beginner',
               code: 'typedef unsigned int uint;',
+              task: `Crea l'alias uint per unsigned int tramite typedef, semplificando la scrittura di tipi numerici ricorrenti.`,
             },
           ],
         },
@@ -755,6 +792,7 @@ export default {
               difficulty: 'beginner',
               code: 'long long big = 9223372036854775807LL;',
               note: 'Almeno 64 bit, introdotto in C99.',
+              task: `Dichiara big come long long col letterale 9223372036854775807LL, sfruttando l'intero a 64 bit minimo previsto da C99.`,
             },
             {
               english: 'Enumeration',
@@ -766,6 +804,7 @@ export default {
               context: 'types',
               difficulty: 'beginner',
               code: 'enum Color { RED, GREEN, BLUE };',
+              task: `Definisci l'enum Color con i valori RED, GREEN e BLUE che assumeranno automaticamente costanti intere 0, 1 e 2.`,
             },
             {
               english: 'Literal',
@@ -776,6 +815,7 @@ export default {
               context: 'types',
               difficulty: 'beginner',
               code: `42, 3.14, 'A', "hello"`,
+              task: `Riconosci i diversi letterali del linguaggio C: interi come 42, float come 3.14, char come 'A' e stringhe come "hello".`,
             },
             {
               english: 'Hexadecimal',
@@ -787,6 +827,7 @@ export default {
               context: 'types',
               difficulty: 'beginner',
               code: 'int hex = 0xFF;',
+              task: 'Inizializza la variabile hex con la costante esadecimale 0xFF, equivalente a 255 in base dieci.',
             },
             {
               english: 'Octal',
@@ -799,6 +840,7 @@ export default {
               difficulty: 'beginner',
               code: 'int oct = 077;',
               note: 'Attenzione: 010 non è 10 ma 8 in C!',
+              task: 'Assegna a oct il letterale ottale 077 facendo attenzione che lo zero iniziale lo interpreta in base otto.',
             },
             {
               english: 'size_t',
@@ -810,6 +852,7 @@ export default {
               context: 'types',
               difficulty: 'beginner',
               code: 'size_t len = strlen(str);',
+              task: 'Salva in len di tipo size_t la lunghezza della stringa str ottenuta tramite strlen, usando il tipo adatto a dimensioni.',
             },
             {
               english: 'Truncation',
@@ -860,6 +903,7 @@ export default {
               context: 'types',
               difficulty: 'beginner',
               code: '#define MAX_SIZE 100',
+              task: `Definisci la macro MAX_SIZE con valore 100 tramite #define, che il preprocessore sostituira' testualmente nel sorgente.`,
             },
             {
               english: 'INT_MAX',
@@ -871,6 +915,7 @@ export default {
               context: 'types',
               difficulty: 'beginner',
               code: '#include <limits.h>',
+              task: 'Includi limits.h per ottenere accesso alle macro INT_MAX e INT_MIN che descrivono i limiti del tipo int.',
             },
             {
               english: 'INT_MIN',
@@ -882,6 +927,7 @@ export default {
               context: 'types',
               difficulty: 'beginner',
               code: 'printf("%d", INT_MIN);',
+              task: 'Stampa il valore minimo rappresentabile da un int passando INT_MIN a printf col format %d, dopo aver incluso limits.h.',
             },
             {
               english: 'FLT_MAX',
@@ -893,6 +939,7 @@ export default {
               context: 'types',
               difficulty: 'beginner',
               code: '#include <float.h>',
+              task: 'Includi float.h per accedere a FLT_MAX e altre macro che descrivono i limiti della rappresentazione a virgola mobile.',
             },
             {
               english: 'Type Qualifier',
@@ -913,6 +960,7 @@ export default {
               difficulty: 'beginner',
               code: 'const int MAX = 100;',
               note: 'Termine italiano: const (parola chiave del linguaggio C, non si traduce).',
+              task: 'Marca la variabile intera MAX come const e impostala a 100 per impedire al compilatore qualsiasi modifica successiva.',
             },
             {
               english: 'volatile',
@@ -935,6 +983,7 @@ export default {
               context: 'types',
               difficulty: 'beginner',
               code: 'auto, static, extern, register',
+              task: 'Distingui le quattro classi di memorizzazione del C: auto, static, extern e register, ciascuna con scope e durata diversi.',
             },
             {
               english: 'static',
@@ -946,6 +995,7 @@ export default {
               context: 'types',
               difficulty: 'beginner',
               code: 'static int count = 0;',
+              task: 'Dichiara la variabile count come static inizializzata a zero, preservandone il valore tra chiamate successive della funzione.',
             },
             {
               english: 'extern',
@@ -957,6 +1007,7 @@ export default {
               context: 'types',
               difficulty: 'beginner',
               code: 'extern int globalVar;',
+              task: `Indica al compilatore con extern che globalVar e' una variabile intera definita in un altro file di traduzione.`,
             },
           ],
         },
@@ -984,6 +1035,7 @@ export default {
               context: 'syntax',
               difficulty: 'beginner',
               code: '+ - * / %',
+              task: 'Identifica i cinque operatori aritmetici di base del C: +, -, *, / e %, applicabili a tipi numerici.',
             },
             {
               english: 'Modulus Operator',
@@ -996,6 +1048,7 @@ export default {
               difficulty: 'beginner',
               code: 'int r = 10 % 3; // r = 1',
               note: 'Utile per verificare se un numero è pari: n % 2 == 0.',
+              task: `Calcola il resto della divisione di 10 per 3 tramite l'operatore %, ottenendo 1 da memorizzare nella variabile r.`,
             },
             {
               english: 'Increment',
@@ -1007,6 +1060,7 @@ export default {
               context: 'syntax',
               difficulty: 'beginner',
               code: 'i++; // or ++i;',
+              task: `Incrementa la variabile i di uno tramite l'operatore ++, scegliendo tra post-incremento i++ o pre-incremento ++i.`,
             },
             {
               english: 'Decrement',
@@ -1018,6 +1072,7 @@ export default {
               context: 'syntax',
               difficulty: 'beginner',
               code: 'i--;',
+              task: `Decrementa la variabile i di uno tramite l'operatore --, utile dentro cicli che eseguono conto alla rovescia.`,
             },
             {
               english: 'Comparison Operator',
@@ -1028,6 +1083,7 @@ export default {
               context: 'syntax',
               difficulty: 'beginner',
               code: '== != < > <= >=',
+              task: 'Memorizza i sei operatori di confronto del C ==, !=, <, >, <= e >= per costruire condizioni booleane.',
             },
             {
               english: 'Equality Operator',
@@ -1039,6 +1095,7 @@ export default {
               difficulty: 'beginner',
               code: 'if (x == 5)',
               note: 'Errore classico: usare = (assegnamento) invece di == (confronto).',
+              task: `Verifica se x e' uguale a 5 nella condizione if usando == per il confronto, distinto dall'assegnamento singolo =.`,
             },
             {
               english: 'Logical Operator',
@@ -1049,6 +1106,7 @@ export default {
               context: 'syntax',
               difficulty: 'beginner',
               code: '&& || !',
+              task: 'Riconosci i tre operatori logici && (AND), || (OR) e ! (NOT) usati per combinare espressioni booleane in C.',
             },
             {
               english: 'Logical AND',
@@ -1060,6 +1118,7 @@ export default {
               context: 'syntax',
               difficulty: 'beginner',
               code: 'if (x > 0 && x < 100)',
+              task: `Combina due condizioni con && richiedendo che x sia maggiore di 0 e minore di 100 per entrare nell'if.`,
             },
             {
               english: 'Logical OR',
@@ -1071,6 +1130,7 @@ export default {
               context: 'syntax',
               difficulty: 'beginner',
               code: 'if (x == 0 || x == 1)',
+              task: `Costruisci una condizione con || che entra nell'if se x vale 0 oppure 1, accettando entrambe le alternative.`,
             },
             {
               english: 'Negation',
@@ -1082,6 +1142,7 @@ export default {
               context: 'syntax',
               difficulty: 'beginner',
               code: 'if (!done)',
+              task: `Inverti il valore booleano della variabile done col prefisso ! per entrare nell'if quando done e' falsa.`,
             },
           ],
         },
@@ -1100,6 +1161,7 @@ export default {
               context: 'syntax',
               difficulty: 'beginner',
               code: 'if (x > 0) { printf("positive"); }',
+              task: `Esegui il blocco printf("positive") solo quando x e' maggiore di zero tramite un costrutto if base.`,
             },
             {
               english: 'Else Clause',
@@ -1111,6 +1173,7 @@ export default {
               context: 'syntax',
               difficulty: 'beginner',
               code: 'if (x > 0) { ... } else { ... }',
+              task: `Aggiungi una clausola else all'if (x > 0) per gestire anche il ramo alternativo quando x non e' positivo.`,
             },
             {
               english: 'Else If',
@@ -1122,6 +1185,7 @@ export default {
               context: 'syntax',
               difficulty: 'beginner',
               code: 'if (x > 0) { ... } else if (x == 0) { ... }',
+              task: `Concatena un else if (x == 0) all'if (x > 0) per coprire un terzo caso distinto dal positivo e dall'else finale.`,
             },
             {
               english: 'Conditional Expression',
@@ -1143,6 +1207,7 @@ export default {
               context: 'syntax',
               difficulty: 'beginner',
               code: 'int max = (a > b) ? a : b;',
+              task: `Calcola il massimo tra a e b in una sola espressione tramite l'operatore ternario (a > b) ? a : b.`,
             },
             {
               english: 'Switch Statement',
@@ -1154,6 +1219,7 @@ export default {
               context: 'syntax',
               difficulty: 'beginner',
               code: 'switch (x) { case 1: ... break; }',
+              task: 'Diramati sul valore di x tramite uno switch, gestendo il case 1 seguito da break per evitare il fall-through.',
             },
             {
               english: 'Case Label',
@@ -1165,6 +1231,7 @@ export default {
               context: 'syntax',
               difficulty: 'beginner',
               code: 'case 1: printf("one"); break;',
+              task: `Marca con l'etichetta case 1 il ramo dello switch che stampa one e termina con break prima del case successivo.`,
             },
             {
               english: 'Default Case',
@@ -1176,6 +1243,7 @@ export default {
               context: 'syntax',
               difficulty: 'beginner',
               code: 'default: printf("other"); break;',
+              task: 'Aggiungi un ramo default allo switch che stampa other per coprire ogni valore non gestito dai case espliciti.',
             },
             {
               english: 'Break Statement',
@@ -1187,6 +1255,7 @@ export default {
               difficulty: 'beginner',
               code: 'break;',
               note: 'Senza break, l\'esecuzione "cade" nel case successivo (fall-through).',
+              task: 'Interrompi il flusso del case o del ciclo corrente tramite break, evitando la caduta nel case successivo.',
             },
             {
               english: 'Fall-Through',
@@ -1216,6 +1285,7 @@ export default {
               context: 'syntax',
               difficulty: 'beginner',
               code: 'for (int i = 0; i < 10; i++)',
+              task: 'Itera la variabile i da 0 a 9 con un ciclo for tradizionale a tre parti: init, condizione e post-incremento.',
             },
             {
               english: 'While Loop',
@@ -1227,6 +1297,7 @@ export default {
               context: 'syntax',
               difficulty: 'beginner',
               code: 'while (x > 0) { x--; }',
+              task: `Esegui un ciclo while che decrementa x finche' resta positivo, terminando appena raggiunge zero.`,
             },
             {
               english: 'Do-While Loop',
@@ -1238,6 +1309,7 @@ export default {
               difficulty: 'beginner',
               code: 'do { ... } while (x > 0);',
               note: "La condizione viene verificata alla fine, non all'inizio.",
+              task: `Esegui un ciclo do-while almeno una volta e ripetilo finche' la condizione x > 0 resta vera al fondo.`,
             },
             {
               english: 'Loop Counter',
@@ -1249,6 +1321,7 @@ export default {
               context: 'syntax',
               difficulty: 'beginner',
               code: 'for (int i = 0; ...)',
+              task: `Dichiara un contatore intero i dentro l'intestazione del for per usarlo come indice locale al ciclo.`,
             },
             {
               english: 'Iteration',
@@ -1271,6 +1344,7 @@ export default {
               difficulty: 'beginner',
               code: 'while (1) { ... }',
               note: 'while(1) o for(;;) sono modi comuni per scrivere cicli infiniti in C.',
+              task: 'Costruisci un ciclo infinito con while(1), tipico dei loop principali di firmware embedded o di event loop.',
             },
             {
               english: 'Continue Statement',
@@ -1281,6 +1355,7 @@ export default {
               context: 'syntax',
               difficulty: 'beginner',
               code: 'if (i == 5) continue;',
+              task: `Salta direttamente all'iterazione successiva del ciclo invocando continue quando i vale 5.`,
             },
             {
               english: 'Nested Loop',
@@ -1292,6 +1367,7 @@ export default {
               context: 'syntax',
               difficulty: 'beginner',
               code: 'for (int i = 0; ...) { for (int j = 0; ...) { } }',
+              task: 'Annida un for interno con indice j dentro un for esterno con indice i, utile per scorrere matrici due-dimensionali.',
             },
             {
               english: 'Loop Body',
@@ -1330,6 +1406,7 @@ export default {
               context: 'syntax',
               difficulty: 'beginner',
               code: 'int result = a & b;',
+              task: `Combina i bit di a e b tramite l'operatore & e salva il risultato in result, accendendo solo i bit comuni.`,
             },
             {
               english: 'Bitwise OR',
@@ -1341,6 +1418,7 @@ export default {
               context: 'syntax',
               difficulty: 'beginner',
               code: 'int result = a | b;',
+              task: `Unisci i bit di a e b tramite l'operatore | salvando il risultato in result, accendendo i bit settati in almeno un operando.`,
             },
             {
               english: 'Bitwise XOR',
@@ -1352,6 +1430,7 @@ export default {
               context: 'syntax',
               difficulty: 'beginner',
               code: 'int result = a ^ b;',
+              task: `Esegui XOR bit a bit tra a e b tramite l'operatore ^, ottenendo bit accesi solo dove i due operandi differiscono.`,
             },
             {
               english: 'Bit Shift',
@@ -1363,6 +1442,7 @@ export default {
               difficulty: 'beginner',
               code: 'int x = 1 << 3; // 8',
               note: `Su CPU moderne il compilatore ottimizza gia' queste sostituzioni; lo shift manuale serve soprattutto per leggibilita' o flag.`,
+              task: 'Sposta a sinistra di tre posizioni il bit acceso in 1 tramite 1 << 3, ottenendo il valore 8 nella variabile x.',
             },
             {
               english: 'Complement',
@@ -1373,6 +1453,7 @@ export default {
               context: 'syntax',
               difficulty: 'beginner',
               code: 'int y = ~x;',
+              task: 'Inverti tutti i bit di x col complemento a uno ~x e salva il risultato in y, trasformando ogni 0 in 1.',
             },
             {
               english: 'Compound Assignment',
@@ -1384,6 +1465,7 @@ export default {
               context: 'syntax',
               difficulty: 'beginner',
               code: 'x += 5; // same as x = x + 5',
+              task: `Aggiungi 5 a x usando la forma compatta x += 5, equivalente alla scrittura piu' verbosa x = x + 5.`,
             },
             {
               english: 'Operator Precedence',
@@ -1406,6 +1488,7 @@ export default {
               context: 'syntax',
               difficulty: 'beginner',
               code: 'int x = (1, 2); // x = 2',
+              task: `Valuta le due espressioni 1 e 2 con l'operatore virgola e assegna a x il valore dell'ultima, ottenendo x = 2.`,
             },
             {
               english: 'sizeof Operator',
@@ -1417,6 +1500,7 @@ export default {
               context: 'syntax',
               difficulty: 'beginner',
               code: 'printf("%zu", sizeof(double)); // 8',
+              task: 'Stampa la dimensione in byte del tipo double via sizeof(double) col format %zu, ottenendo tipicamente 8 byte.',
             },
             {
               english: 'Type Promotion',
@@ -1456,6 +1540,7 @@ export default {
               difficulty: 'beginner',
               code: 'int add(int a, int b);',
               note: 'Anche chiamata "prototipo" (prototype).',
+              task: 'Scrivi il prototipo della funzione add che riceve due int a e b e ritorna un int, da inserire prima del main.',
             },
             {
               english: 'Function Definition',
@@ -1467,6 +1552,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int add(int a, int b) { return a + b; }',
+              task: 'Implementa la funzione add che somma i parametri a e b e ne restituisce il risultato come int al chiamante.',
             },
             {
               english: 'Function Prototype',
@@ -1489,6 +1575,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'void greet(char *name)',
+              task: 'Dichiara la funzione greet con un parametro formale name di tipo char *, da usare nel corpo per stampare un saluto.',
             },
             {
               english: 'Argument',
@@ -1501,6 +1588,7 @@ export default {
               difficulty: 'beginner',
               code: 'greet("Alice");',
               note: 'Parametro = nella definizione. Argomento = nella chiamata.',
+              task: 'Invoca greet passando il letterale stringa "Alice" come argomento concreto al parametro formale name.',
             },
             {
               english: 'Return Statement',
@@ -1512,6 +1600,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'return result;',
+              task: `Restituisci il valore della variabile result dalla funzione tramite return, chiudendo l'esecuzione corrente.`,
             },
             {
               english: 'Function Call',
@@ -1523,6 +1612,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int sum = add(3, 5);',
+              task: 'Invoca add con argomenti 3 e 5, salvando il valore restituito 8 nella variabile sum dichiarata int.',
             },
             {
               english: 'Void Function',
@@ -1534,6 +1624,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'void printHello() { printf("Hello"); }',
+              task: 'Definisci printHello con tipo di ritorno void che esegue solo printf("Hello") senza ritornare alcun valore.',
             },
             {
               english: 'Return Type',
@@ -1545,6 +1636,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int add(int a, int b)',
+              task: 'Specifica int come tipo di ritorno della funzione add prima del nome, indicando che restituisce un intero.',
             },
             {
               english: 'Function Signature',
@@ -1615,6 +1707,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int fact(int n) { return n <= 1 ? 1 : n * fact(n-1); }',
+              task: 'Implementa il fattoriale fact tramite ricorsione: caso base n <= 1 ritorna 1, altrimenti n moltiplica fact(n-1).',
             },
             {
               english: 'Base Case',
@@ -1669,6 +1762,7 @@ export default {
               difficulty: 'beginner',
               code: 'int printf(const char *fmt, ...);',
               note: 'I tre puntini ... indicano argomenti variabili.',
+              task: 'Riconosci il prototipo variadic di printf che dichiara un format obbligatorio const char *fmt e un numero variabile di argomenti con ...',
             },
           ],
         },
@@ -1717,6 +1811,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'static int count = 0; count++;',
+              task: 'Dichiara count come static int inizializzato a zero dentro la funzione e incrementalo ad ogni chiamata, mantenendo lo stato.',
             },
             {
               english: 'Automatic Variable',
@@ -1740,6 +1835,7 @@ export default {
               difficulty: 'beginner',
               code: 'register int i;',
               note: 'Il compilatore moderno ignora spesso questo suggerimento.',
+              task: 'Suggerisci al compilatore di tenere i in un registro CPU col qualificatore register, oggi spesso ignorato dai compilatori moderni.',
             },
             {
               english: 'Shadowing',
@@ -1770,6 +1866,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'static void helper() { ... }',
+              task: `Marca helper come static per limitarne il linkage al file corrente, nascondendo la funzione ad altre unita' di traduzione.`,
             },
             {
               english: 'Translation Unit',
@@ -1799,6 +1896,7 @@ export default {
               difficulty: 'beginner',
               code: 'puts("Hello World");',
               note: 'Più semplice di printf quando non servono formattazioni.',
+              task: 'Stampa la stringa Hello World su stdout aggiungendo automaticamente un newline finale tramite la funzione puts.',
             },
             {
               english: 'getchar',
@@ -1810,6 +1908,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'char c = getchar();',
+              task: 'Leggi un singolo carattere dallo standard input chiamando getchar e salvalo nella variabile c di tipo char.',
             },
             {
               english: 'putchar',
@@ -1821,6 +1920,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: "putchar('A');",
+              task: `Scrivi il singolo carattere 'A' sullo stdout invocando putchar, controparte di getchar per l'output.`,
             },
             {
               english: 'atoi',
@@ -1833,6 +1933,7 @@ export default {
               difficulty: 'beginner',
               code: 'int n = atoi("42");',
               note: 'ASCII to Integer. Preferire strtol per gestione errori.',
+              task: 'Trasforma la stringa "42" nel corrispondente intero tramite atoi, salvando il valore nella variabile n di tipo int.',
             },
             {
               english: 'exit',
@@ -1844,6 +1945,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'exit(EXIT_SUCCESS);',
+              task: 'Termina immediatamente il processo invocando exit(EXIT_SUCCESS), saltando il resto del main e segnalando successo al sistema.',
             },
             {
               english: 'abs',
@@ -1855,6 +1957,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int n = abs(-5); // 5',
+              task: 'Ottieni il valore assoluto di -5 tramite abs, ricavando 5 da memorizzare nella variabile n di tipo int.',
             },
             {
               english: 'rand',
@@ -1867,6 +1970,7 @@ export default {
               difficulty: 'beginner',
               code: 'int r = rand() % 100;',
               note: 'Chiamare srand(time(NULL)) prima per inizializzare il seme.',
+              task: 'Genera un intero pseudocasuale fra 0 e 99 con rand() % 100, dopo aver inizializzato il seme tramite srand.',
             },
             {
               english: 'srand',
@@ -1878,6 +1982,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'srand(time(NULL));',
+              task: 'Inizializza il generatore pseudocasuale chiamando srand(time(NULL)) per ottenere sequenze diverse ad ogni esecuzione.',
             },
             {
               english: 'sprintf',
@@ -1890,6 +1995,7 @@ export default {
               difficulty: 'beginner',
               code: 'char buf[50]; sprintf(buf, "Age: %d", 25);',
               note: 'Preferire snprintf per evitare buffer overflow.',
+              task: 'Componi nella buffer buf di 50 byte la stringa formattata Age: 25 invocando sprintf col format "Age: %d".',
             },
             {
               english: 'sscanf',
@@ -1901,6 +2007,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int n; sscanf("42", "%d", &n);',
+              task: 'Estrai un intero dalla stringa "42" tramite sscanf col format "%d", salvandolo nella variabile n passata per indirizzo.',
             },
           ],
         },
@@ -1928,6 +2035,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'int nums[5] = {1, 2, 3, 4, 5};',
+              task: `Dichiara l'array nums di 5 interi e inizializzalo con la lista di valori {1, 2, 3, 4, 5} fra graffe.`,
             },
             {
               english: 'Array Index',
@@ -1940,6 +2048,7 @@ export default {
               difficulty: 'intermediate',
               code: 'int first = nums[0];',
               note: "Errore comune: accedere a nums[5] quando l'array ha 5 elementi (0-4).",
+              task: `Accedi al primo elemento dell'array nums tramite l'indice 0, salvandolo nella variabile first di tipo int.`,
             },
             {
               english: 'Array Declaration',
@@ -1951,6 +2060,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'int scores[100];',
+              task: 'Riserva sullo stack un array scores di 100 interi non inizializzati, pronto per essere riempito a runtime.',
             },
             {
               english: 'Array Initialization',
@@ -1962,6 +2072,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'int a[] = {10, 20, 30};',
+              task: 'Lascia che il compilatore deduca la dimensione di a inizializzandolo con la lista {10, 20, 30}, ottenendo tre elementi.',
             },
             {
               english: 'Array Size',
@@ -1973,6 +2084,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'int len = sizeof(a) / sizeof(a[0]);',
+              task: `Calcola il numero di elementi dell'array a dividendo sizeof(a) per sizeof(a[0]), utile finche' a non degrada a puntatore.`,
             },
             {
               english: 'Out of Bounds',
@@ -2041,6 +2153,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'int matrix[3][4];',
+              task: 'Dichiara la matrice statica matrix da 3 righe e 4 colonne di interi, riservando 12 celle contigue sullo stack.',
             },
             {
               english: 'Row',
@@ -2051,6 +2164,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'matrix[0][j]',
+              task: `Accedi alla riga zero della matrice matrix variando j sulla colonna tramite l'espressione matrix[0][j].`,
             },
             {
               english: 'Column',
@@ -2072,6 +2186,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'int m[3][3] = {{1,0,0},{0,1,0},{0,0,1}};',
+              task: `Inizializza la matrice identita' m 3x3 con la lista nidificata {{1,0,0},{0,1,0},{0,0,1}}, accendendo solo la diagonale.`,
             },
             {
               english: 'Row-Major Order',
@@ -2094,6 +2209,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'int cube[3][3][3];',
+              task: 'Dichiara cube come array tridimensionale 3x3x3 di interi, riservando 27 celle contigue per modellare un volume.',
             },
             {
               english: 'Array of Strings',
@@ -2105,6 +2221,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'char names[3][20] = {"Alice", "Bob", "Eve"};',
+              task: 'Definisci names come array 3x20 di char inizializzato con i nomi "Alice", "Bob" ed "Eve" su righe successive.',
             },
             {
               english: 'Array Decay',
@@ -2127,6 +2244,7 @@ export default {
               difficulty: 'intermediate',
               code: 'int n = 10; int arr[n];',
               note: 'Allocati sullo stack. Opzionali in C11, evitati in molti progetti.',
+              task: 'Dichiara un array arr di dimensione n nota solo a runtime, sfruttando la VLA opzionale dello stack introdotta in C99.',
             },
             {
               english: 'Designated Initializer',
@@ -2138,6 +2256,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'int a[5] = {[2] = 10, [4] = 20};',
+              task: `Inizializza solo gli indici 2 e 4 dell'array a di 5 elementi coi valori 10 e 20, sfruttando la sintassi C99 [n] = val.`,
             },
           ],
         },
@@ -2156,6 +2275,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'for (int i = 0; i < n; i++) printf("%d ", a[i]);',
+              task: `Scorri tutti gli n elementi dell'array a con un ciclo for crescente, stampando ciascun valore col format %d.`,
             },
             {
               english: 'Linear Search',
@@ -2198,6 +2318,7 @@ export default {
               context: 'algorithms',
               difficulty: 'intermediate',
               code: 'int tmp = a; a = b; b = tmp;',
+              task: 'Scambia i valori delle variabili a e b appoggiandoti su una temporanea tmp, evitando di perdere uno dei due valori.',
             },
             {
               english: 'Array Copy',
@@ -2209,6 +2330,7 @@ export default {
               difficulty: 'intermediate',
               code: 'memcpy(dest, src, sizeof(src));',
               note: 'Usa memcpy o un ciclo for per copiare array.',
+              task: `Duplica il contenuto di src in dest tramite memcpy passando sizeof(src) come quantita' di byte da copiare.`,
             },
             {
               english: 'Array as Parameter',
@@ -2220,6 +2342,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'void fill(int arr[], int size)',
+              task: `Dichiara la funzione fill che riceve un array arr e la sua dimensione size, dato che l'array degrada a puntatore.`,
             },
             {
               english: 'Buffer',
@@ -2231,6 +2354,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'char buffer[1024];',
+              task: 'Riserva sullo stack un buffer di 1024 byte tipo char, utile per accumulare dati di I/O o stringhe temporanee.',
             },
             {
               english: 'Boundary Check',
@@ -2271,6 +2395,7 @@ export default {
               context: 'strings',
               difficulty: 'intermediate',
               code: 'char name[] = "Alice";',
+              task: `Inizializza l'array name col letterale "Alice", lasciando al compilatore aggiungere il terminatore nullo finale.`,
             },
             {
               english: 'Null Terminator',
@@ -2283,6 +2408,7 @@ export default {
               difficulty: 'intermediate',
               code: "'\\0'",
               note: 'Ecco perché char name[5] = "Alice" è sbagliato: servono 6 byte.',
+              task: `Ricorda che ogni stringa C termina col byte '\\0' a indicarne la fine, da contare quando dimensioni il buffer.`,
             },
             {
               english: 'String Literal',
@@ -2294,6 +2420,7 @@ export default {
               context: 'strings',
               difficulty: 'intermediate',
               code: '"Hello, World!"',
+              task: 'Riconosci il letterale stringa "Hello, World!" come array statico di char a sola lettura nella memoria del programma.',
             },
             {
               english: 'Character Array',
@@ -2305,6 +2432,7 @@ export default {
               context: 'strings',
               difficulty: 'intermediate',
               code: `char s[] = "hello"; s[0] = 'H';`,
+              task: `Dichiara s come array di char inizializzato a "hello" e poi modifica s[0] in 'H', ottenendo una versione capitalizzata.`,
             },
             {
               english: 'strlen',
@@ -2317,6 +2445,7 @@ export default {
               difficulty: 'intermediate',
               code: 'size_t len = strlen("hello"); // 5',
               note: 'Non include il terminatore nullo nel conteggio.',
+              task: 'Misura quanti byte ha la stringa "hello" chiamando strlen, ottenendo 5 senza contare il terminatore nullo.',
             },
             {
               english: 'strcpy',
@@ -2329,6 +2458,7 @@ export default {
               difficulty: 'intermediate',
               code: 'strcpy(dest, src);',
               note: 'Pericoloso senza controllo dimensione. Preferire strncpy.',
+              task: 'Copia la stringa src dentro dest tramite strcpy, dopo aver verificato manualmente che dest sia abbastanza ampio.',
             },
             {
               english: 'strcmp',
@@ -2341,6 +2471,7 @@ export default {
               difficulty: 'intermediate',
               code: 'if (strcmp(a, b) == 0) // equal',
               note: 'Restituisce 0 se uguali, non true! Attenzione alla logica.',
+              task: `Confronta le stringhe a e b con strcmp ed entra nell'if quando il risultato e' 0, indicatore di uguaglianza esatta.`,
             },
             {
               english: 'strcat',
@@ -2352,6 +2483,7 @@ export default {
               context: 'strings',
               difficulty: 'intermediate',
               code: 'strcat(dest, " World");',
+              task: 'Concatena il letterale " World" al contenuto attuale di dest tramite strcat, prolungando la stringa originale.',
             },
             {
               english: 'String Pointer',
@@ -2364,6 +2496,7 @@ export default {
               difficulty: 'intermediate',
               code: 'const char *msg = "Hello";',
               note: 'Non modificabile: il letterale è in memoria di sola lettura.',
+              task: 'Punta msg al letterale "Hello" tramite const char *, segnalando al compilatore che il contenuto non va modificato.',
             },
             {
               english: 'Buffer Overflow',
@@ -2402,6 +2535,7 @@ export default {
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'int *ptr;',
+              task: 'Dichiara ptr come puntatore a int senza inizializzarlo, lasciandolo per ora in uno stato indeterminato pericoloso.',
             },
             {
               english: 'Address',
@@ -2413,6 +2547,7 @@ export default {
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'printf("%p", &x);',
+              task: `Stampa l'indirizzo di memoria della variabile x passando &x a printf col format specifier %p per i puntatori.`,
             },
             {
               english: 'Address-of Operator',
@@ -2424,6 +2559,7 @@ export default {
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'int *p = &x;',
+              task: `Inizializza il puntatore p con l'indirizzo della variabile x ottenuto tramite l'operatore unario &.`,
             },
             {
               english: 'Dereference',
@@ -2436,6 +2572,7 @@ export default {
               difficulty: 'intermediate',
               code: 'int value = *ptr;',
               note: "L'asterisco * ha due significati: dichiarazione del puntatore e dereferenziazione.",
+              task: `Leggi il valore puntato da ptr tramite l'operatore *, salvandolo nella variabile value di tipo int.`,
             },
             {
               english: 'NULL Pointer',
@@ -2448,6 +2585,7 @@ export default {
               difficulty: 'intermediate',
               code: 'int *ptr = NULL;',
               note: 'Sempre inizializzare i puntatori a NULL se non hanno un valore.',
+              task: 'Inizializza ptr a NULL alla dichiarazione, segnalando esplicitamente che non punta ancora ad alcun oggetto valido.',
             },
             {
               english: 'Pointer Arithmetic',
@@ -2459,6 +2597,7 @@ export default {
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'ptr++; // moves by sizeof(*ptr) bytes',
+              task: `Avanza ptr di un elemento con ptr++, scalando l'indirizzo di sizeof(*ptr) byte indipendentemente dal tipo puntato.`,
             },
             {
               english: 'Dangling Pointer',
@@ -2491,6 +2630,7 @@ export default {
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'float *fp; int *ip;',
+              task: 'Distingui i puntatori a tipi diversi dichiarando fp come float * e ip come int * nella stessa funzione.',
             },
             {
               english: 'Pointer to Array',
@@ -2502,6 +2642,7 @@ export default {
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'int a[] = {1,2,3}; int *p = a;',
+              task: `Punta p al primo elemento dell'array a={1,2,3} sfruttando il decadimento implicito del nome dell'array a int *.`,
             },
           ],
         },
@@ -2520,6 +2661,7 @@ export default {
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'int a[5]; // a == &a[0]',
+              task: `Considera il nome a dell'array come puntatore costante al primo elemento, equivalente a &a[0] nelle espressioni.`,
             },
             {
               english: 'Pointer Offset',
@@ -2531,6 +2673,7 @@ export default {
               context: 'pointers',
               difficulty: 'intermediate',
               code: '*(ptr + 2) // same as ptr[2]',
+              task: 'Accedi al terzo elemento puntato da ptr tramite *(ptr + 2), forma equivalente alla notazione a indice ptr[2].',
             },
             {
               english: 'Subscript Notation',
@@ -2541,6 +2684,7 @@ export default {
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'a[i] == *(a + i)',
+              task: `Ricorda che a[i] e' equivalente a *(a + i), mostrando come la notazione a indice sia zucchero sintattico sui puntatori.`,
             },
             {
               english: 'Pointer Comparison',
@@ -2552,6 +2696,7 @@ export default {
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'if (ptr1 < ptr2)',
+              task: `Confronta due puntatori ptr1 e ptr2 con l'operatore <, valido solo quando entrambi puntano dentro allo stesso array.`,
             },
             {
               english: 'Pointer Difference',
@@ -2563,6 +2708,7 @@ export default {
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'ptrdiff_t d = ptr2 - ptr1;',
+              task: 'Calcola la distanza in elementi fra ptr2 e ptr1 sottraendoli, salvando il risultato in una variabile di tipo ptrdiff_t.',
             },
             {
               english: 'Pass by Reference',
@@ -2575,6 +2721,7 @@ export default {
               difficulty: 'intermediate',
               code: 'void swap(int *a, int *b)',
               note: "Tecnicamente C passa sempre per valore, ma passando l'indirizzo si ottiene lo stesso effetto.",
+              task: 'Definisci swap che riceve due puntatori a int permettendo di modificare i valori chiamanti tramite dereferenziazione.',
             },
             {
               english: 'Pointer Parameter',
@@ -2586,6 +2733,7 @@ export default {
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'void increment(int *val) { (*val)++; }',
+              task: 'Implementa increment che riceve un puntatore int *val e incrementa di uno il valore puntato tramite (*val)++.',
             },
             {
               english: 'const Pointer',
@@ -2598,6 +2746,7 @@ export default {
               difficulty: 'intermediate',
               code: 'int *const ptr = &x;',
               note: 'Diverso da const int *ptr che impedisce di modificare il valore puntato.',
+              task: 'Dichiara ptr come puntatore costante a int con int *const ptr = &x, impedendo di rebindarlo ma non di modificarne il valore puntato.',
             },
             {
               english: 'Pointer to const',
@@ -2609,6 +2758,7 @@ export default {
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'const int *ptr = &x;',
+              task: 'Dichiara ptr come puntatore a int costante con const int *ptr = &x, bloccando la scrittura attraverso il puntatore.',
             },
             {
               english: 'Segmentation Fault',
@@ -2638,6 +2788,7 @@ export default {
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'int **pp = &ptr;',
+              task: `Dichiara pp come puntatore a puntatore a int e inizializzalo all'indirizzo di ptr, ottenendo due livelli di indirezione.`,
             },
             {
               english: 'Indirection',
@@ -2650,6 +2801,7 @@ export default {
               difficulty: 'intermediate',
               code: 'int ***ppp;',
               note: 'Evitare più di due livelli di indirezione per leggibilità.',
+              task: 'Dichiara ppp con tripla indirezione come int *** per puntare a un puntatore a puntatore a int, costrutto raramente leggibile.',
             },
             {
               english: 'Dynamic Array',
@@ -2661,6 +2813,7 @@ export default {
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'int *arr = malloc(n * sizeof(int));',
+              task: `Alloca sull'heap un array di n interi chiamando malloc(n * sizeof(int)) e assegna il risultato al puntatore arr.`,
             },
             {
               english: 'Memory Address',
@@ -2681,6 +2834,7 @@ export default {
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'void *p = malloc(10); int *ip = (int *)p;',
+              task: 'Ottieni 10 byte non tipizzati con malloc, poi convertili in int * tramite cast esplicito (int *) per usarli come array di interi.',
             },
             {
               english: 'Generic Pointer',
@@ -2693,6 +2847,7 @@ export default {
               difficulty: 'intermediate',
               code: 'void *ptr;',
               note: 'Non può essere dereferenziato direttamente: serve un cast.',
+              task: `Dichiara ptr come void *, puntatore generico che non puo' essere dereferenziato direttamente senza un cast esplicito.`,
             },
             {
               english: 'Null Check',
@@ -2704,6 +2859,7 @@ export default {
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'if (ptr != NULL) { *ptr = 5; }',
+              task: 'Verifica che ptr non sia NULL prima di scriverci 5 attraverso *ptr, evitando un segfault da dereferenziazione di puntatore nullo.',
             },
             {
               english: 'Pointer Assignment',
@@ -2714,6 +2870,7 @@ export default {
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'int *q = p; // both point to same memory',
+              task: `Copia l'indirizzo contenuto in p nel nuovo puntatore q tramite assegnamento, facendo puntare entrambi alla stessa memoria.`,
             },
             {
               english: 'Aliasing',
@@ -2736,6 +2893,7 @@ export default {
               difficulty: 'intermediate',
               code: 'void copy(int *restrict dst, const int *restrict src, int n)',
               note: 'Permette al compilatore ottimizzazioni più aggressive.',
+              task: 'Marca i parametri dst e src della funzione copy con restrict per garantire al compilatore che non si sovrappongono.',
             },
           ],
         },
@@ -2754,6 +2912,7 @@ export default {
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'int (*fp)(int, int) = &add;',
+              task: `Dichiara fp come puntatore a funzione che accetta due int e ritorna int, inizializzandolo all'indirizzo della funzione add.`,
             },
             {
               english: 'Callback',
@@ -2776,6 +2935,7 @@ export default {
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'qsort(arr, n, sizeof(int), compare);',
+              task: `Ordina sul posto i primi n elementi dell'array arr di int chiamando qsort col sizeof e la funzione compare di confronto.`,
             },
             {
               english: 'Comparison Function',
@@ -2786,6 +2946,7 @@ export default {
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'int cmp(const void *a, const void *b)',
+              task: 'Scrivi cmp con firma standard per qsort che riceve due const void * e ritorna int negativo, zero o positivo.',
             },
             {
               english: 'typedef with Function Pointer',
@@ -2797,6 +2958,7 @@ export default {
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'typedef int (*Operation)(int, int);',
+              task: `Crea l'alias Operation per il tipo puntatore a funzione int (*)(int, int) tramite typedef, semplificando dichiarazioni successive.`,
             },
             {
               english: 'Dispatch Table',
@@ -2808,6 +2970,7 @@ export default {
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'Operation ops[] = {add, sub, mul};',
+              task: 'Costruisci la tabella ops di tipo Operation contenente i puntatori a funzione add, sub e mul per la dispatch dinamica.',
             },
             {
               english: 'void Pointer',
@@ -2819,6 +2982,7 @@ export default {
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'void *ptr = &x;',
+              task: `Salva l'indirizzo della variabile x in ptr di tipo void *, costrutto adatto a contenere puntatori a qualsiasi tipo.`,
             },
             {
               english: 'Array of Pointers',
@@ -2830,6 +2994,7 @@ export default {
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'char *names[] = {"Alice", "Bob"};',
+              task: 'Dichiara names come array di char * inizializzato coi letterali "Alice" e "Bob", utile per liste di stringhe immutabili.',
             },
             {
               english: 'Opaque Pointer',
@@ -2879,6 +3044,7 @@ export default {
               difficulty: 'intermediate',
               code: 'int **pp;',
               note: 'Rinominato per distinguere il concetto di variabile dal pattern di parametro a doppio puntatore.',
+              task: `Dichiara la variabile pp con doppia indirezione come int ** per memorizzare l'indirizzo di un puntatore a int.`,
             },
             {
               english: 'Double Pointer',
@@ -2890,6 +3056,7 @@ export default {
               difficulty: 'intermediate',
               code: 'void alloc(int **pp) { *pp = malloc(sizeof(int)); }',
               note: `Rinominato per distinguerlo dall'item 'Pointer to Pointer' del modulo puntatori base.`,
+              task: `Implementa alloc(int **pp) che alloca sull'heap un int tramite malloc e ne scrive l'indirizzo dentro *pp.`,
             },
             {
               english: 'Array of Strings Pattern',
@@ -2901,6 +3068,7 @@ export default {
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'int main(int argc, char **argv)',
+              task: `Dichiara main col pattern standard (int argc, char **argv) per ricevere il numero e l'array degli argomenti da riga di comando.`,
             },
             {
               english: 'argc',
@@ -2923,6 +3091,7 @@ export default {
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'printf("%s", argv[0]); // program name',
+              task: `Stampa il nome con cui e' stato invocato il programma accedendo a argv[0] col format %s di printf.`,
             },
             {
               english: 'Linked List Node',
@@ -2934,6 +3103,7 @@ export default {
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'struct Node { int data; struct Node *next; };',
+              task: 'Definisci la struct Node con un campo intero data e un puntatore next allo stesso tipo, mattone delle liste concatenate.',
             },
             {
               english: 'Self-Referential Structure',
@@ -2994,6 +3164,7 @@ export default {
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'int (*ops[])(int,int) = {add, sub, mul, div_fn};',
+              task: 'Definisci ops come array di puntatori a funzione int (*)(int,int), inizializzato con add, sub, mul e div_fn per dispatch.',
             },
             {
               english: 'State Machine',
@@ -3025,6 +3196,7 @@ export default {
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'void registerCallback(void (*cb)(int event))',
+              task: 'Dichiara registerCallback che riceve un puntatore a funzione cb prendente un int event, classico pattern di callback.',
             },
             {
               english: 'Signal Handler',
@@ -3036,6 +3208,7 @@ export default {
               context: 'systems',
               difficulty: 'intermediate',
               code: 'signal(SIGINT, handler);',
+              task: `Registra il gestore handler per il segnale SIGINT invocando signal, cosi' da intercettare Ctrl+C senza terminare bruscamente.`,
             },
             {
               english: 'bsearch',
@@ -3047,6 +3220,7 @@ export default {
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'void *result = bsearch(&key, arr, n, sizeof(int), cmp);',
+              task: 'Cerca la chiave key fra gli n elementi di arr precedentemente ordinati invocando bsearch con la funzione di confronto cmp.',
             },
             {
               english: 'atexit',
@@ -3058,6 +3232,7 @@ export default {
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'atexit(cleanup);',
+              task: `Registra la funzione cleanup tramite atexit affinche' venga invocata automaticamente al termine normale del processo.`,
             },
             {
               english: 'Closure Simulation',
@@ -3109,6 +3284,7 @@ export default {
               difficulty: 'intermediate',
               code: 'void *generic = &x;',
               note: `Rinominato per distinguerlo dall'item 'void Pointer' del modulo puntatori base.`,
+              task: `Salva l'indirizzo di x dentro generic di tipo void *, contenitore agnostico rispetto al tipo dell'oggetto puntato.`,
             },
             {
               english: 'Type Erasure',
@@ -3130,6 +3306,7 @@ export default {
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'int *ip = (int *)generic;',
+              task: `Converti il puntatore generic in int * tramite cast esplicito (int *), preparandolo all'accesso col tipo concreto.`,
             },
             {
               english: 'Generic Data Structure',
@@ -3141,6 +3318,7 @@ export default {
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'struct Node { void *data; struct Node *next; };',
+              task: 'Definisci una struct Node con campo data di tipo void * e puntatore next, ottenendo un nodo agnostico al tipo del payload.',
             },
             {
               english: 'memcpy',
@@ -3152,6 +3330,7 @@ export default {
               context: 'memory',
               difficulty: 'intermediate',
               code: 'memcpy(dest, src, n);',
+              task: 'Copia n byte dalla regione src alla regione dest tramite memcpy, presupponendo che le aree non si sovrappongano.',
             },
             {
               english: 'memset',
@@ -3163,6 +3342,7 @@ export default {
               context: 'memory',
               difficulty: 'intermediate',
               code: 'memset(buf, 0, sizeof(buf));',
+              task: `Azzera l'intero buffer buf riempiendolo col byte 0 per la sua intera lunghezza sizeof(buf) tramite memset.`,
             },
             {
               english: 'memcmp',
@@ -3174,6 +3354,7 @@ export default {
               context: 'memory',
               difficulty: 'intermediate',
               code: 'if (memcmp(a, b, n) == 0)',
+              task: `Confronta byte a byte le aree a e b per n byte tramite memcmp ed entra nell'if quando il risultato vale 0.`,
             },
             {
               english: 'Strict Aliasing',
@@ -3236,6 +3417,7 @@ export default {
               context: 'memory',
               difficulty: 'intermediate',
               code: 'free(ptr); free(ptr); // BUG!',
+              task: `Riconosci il bug di liberare ptr due volte chiamando free(ptr) consecutivamente, errore che corrompe l'allocatore.`,
             },
             {
               english: 'Memory Leak',
@@ -3280,6 +3462,7 @@ export default {
               difficulty: 'intermediate',
               command: 'gcc -fsanitize=address main.c',
               tool: 'ASan',
+              task: 'Compila main.c con gcc abilitando -fsanitize=address per intercettare a runtime use-after-free e buffer overflow.',
             },
             {
               english: 'Returning Local Address',
@@ -3302,6 +3485,7 @@ export default {
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'printf("%zu", sizeof(int *)); // 8 on 64-bit',
+              task: 'Stampa col format %zu la dimensione in byte di un int *, tipicamente 8 byte su architetture a 64 bit.',
             },
             {
               english: 'Endianness',
@@ -3352,6 +3536,7 @@ export default {
               difficulty: 'intermediate',
               code: 'strncpy(dest, src, sizeof(dest) - 1);',
               note: 'Più sicuro di strcpy ma non garantisce il terminatore nullo!',
+              task: 'Copia src in dest specificando sizeof(dest) - 1 come limite a strncpy per riservare un byte al terminatore.',
             },
             {
               english: 'strncat',
@@ -3363,6 +3548,7 @@ export default {
               context: 'strings',
               difficulty: 'intermediate',
               code: 'strncat(dest, src, sizeof(dest) - strlen(dest) - 1);',
+              task: 'Appendi src a dest col limite sizeof(dest) - strlen(dest) - 1 passato a strncat, evitando di sforare il buffer.',
             },
             {
               english: 'strncmp',
@@ -3374,6 +3560,7 @@ export default {
               context: 'strings',
               difficulty: 'intermediate',
               code: 'if (strncmp(cmd, "quit", 4) == 0)',
+              task: `Confronta i primi 4 caratteri di cmd con il letterale "quit" tramite strncmp ed entra nell'if quando il risultato e' 0.`,
             },
             {
               english: 'strchr',
@@ -3385,6 +3572,7 @@ export default {
               context: 'strings',
               difficulty: 'intermediate',
               code: "char *p = strchr(str, '@');",
+              task: `Cerca la prima occorrenza del carattere '@' nella stringa str tramite strchr, ottenendo un puntatore alla posizione trovata.`,
             },
             {
               english: 'strrchr',
@@ -3396,6 +3584,7 @@ export default {
               context: 'strings',
               difficulty: 'intermediate',
               code: "char *ext = strrchr(filename, '.');",
+              task: `Localizza l'ultimo '.' in filename tramite strrchr, utile per isolare l'estensione di un file dal nome.`,
             },
             {
               english: 'strstr',
@@ -3407,6 +3596,7 @@ export default {
               context: 'strings',
               difficulty: 'intermediate',
               code: 'char *found = strstr(text, "hello");',
+              task: `Cerca la sottostringa "hello" all'interno di text tramite strstr, ottenendo in found il puntatore al match o NULL.`,
             },
             {
               english: 'strtok',
@@ -3419,6 +3609,7 @@ export default {
               difficulty: 'intermediate',
               code: 'char *tok = strtok(str, ",");',
               note: 'Modifica la stringa originale! Non thread-safe. Usare strtok_r.',
+              task: 'Suddividi la stringa str sulle virgole invocando strtok(str, ","), che modifica str inserendo terminatori nulli al volo.',
             },
             {
               english: 'strtol',
@@ -3431,6 +3622,7 @@ export default {
               difficulty: 'intermediate',
               code: 'long val = strtol("42", NULL, 10);',
               note: 'Molto più sicuro di atoi: gestisce gli errori.',
+              task: 'Trasforma "42" in long in base 10 tramite strtol, alternativa robusta ad atoi che permette di rilevare errori di parsing.',
             },
             {
               english: 'snprintf',
@@ -3443,6 +3635,7 @@ export default {
               difficulty: 'intermediate',
               code: 'snprintf(buf, sizeof(buf), "Value: %d", x);',
               note: 'Sempre preferire snprintf a sprintf.',
+              task: 'Formatta dentro buf rispettandone la dimensione sizeof(buf) la stringa "Value: %d" col valore di x, evitando overflow.',
             },
             {
               english: 'String Duplication',
@@ -3454,6 +3647,7 @@ export default {
               difficulty: 'intermediate',
               code: 'char *copy = strdup(original);',
               note: 'Non è nello standard C89 ma è POSIX. Ricordati di fare free().',
+              task: `Duplica la stringa original allocando una nuova copia sull'heap tramite strdup, ricordando di liberarla con free.`,
             },
           ],
         },
@@ -3511,6 +3705,7 @@ export default {
               context: 'strings',
               difficulty: 'intermediate',
               code: "char upper = toupper('a'); // 'A'",
+              task: `Converti il carattere 'a' nel suo equivalente maiuscolo 'A' invocando toupper, funzione di ctype.h.`,
             },
             {
               english: 'Character Classification',
@@ -3522,6 +3717,7 @@ export default {
               context: 'strings',
               difficulty: 'intermediate',
               code: 'isalpha(c), isdigit(c), isspace(c)',
+              task: 'Classifica il carattere c invocando le macro di ctype.h isalpha, isdigit e isspace per riconoscerne la categoria.',
             },
             {
               english: 'Wide Character',
@@ -3532,6 +3728,7 @@ export default {
               context: 'strings',
               difficulty: 'intermediate',
               code: "wchar_t wc = L'é';",
+              task: `Dichiara wc come wchar_t inizializzato col letterale wide L'e per rappresentare caratteri al di fuori dell'ASCII.`,
             },
             {
               english: 'Multibyte String',
@@ -3599,6 +3796,7 @@ export default {
               context: 'strings',
               difficulty: 'intermediate',
               code: 'strtok(str, ",;:")',
+              task: 'Passa a strtok come secondo argomento la stringa ",;:" che elenca i tre delimitatori accettati per dividere str.',
             },
             {
               english: 'Format String',
@@ -3610,6 +3808,7 @@ export default {
               context: 'strings',
               difficulty: 'intermediate',
               code: 'printf("%s is %d years old", name, age);',
+              task: `Stampa il nome e l'eta' con printf usando la stringa di formato "%s is %d years old" e gli argomenti name e age.`,
             },
             {
               english: 'String to Number',
@@ -3631,6 +3830,7 @@ export default {
               context: 'strings',
               difficulty: 'intermediate',
               code: 'snprintf(buf, 32, "%d", number);',
+              task: 'Trasforma il valore numerico number nella sua rappresentazione decimale dentro buf da 32 byte tramite snprintf col format %d.',
             },
             {
               english: 'Regular Expression',
@@ -3643,6 +3843,7 @@ export default {
               difficulty: 'intermediate',
               code: '#include <regex.h>',
               note: 'POSIX regex. Non disponibile su Windows senza librerie esterne.',
+              task: `Includi l'header regex.h per accedere all'API POSIX di espressioni regolari, non disponibile nativamente su Windows.`,
             },
             {
               english: 'String Builder',
@@ -3674,6 +3875,7 @@ export default {
               context: 'strings',
               difficulty: 'intermediate',
               code: `char s[] = "";  // s[0] == '\\0'`,
+              task: 'Dichiara s come array di char inizializzato col letterale vuoto "" che contiene solo il terminatore nullo in s[0].',
             },
           ],
         },
@@ -3702,6 +3904,7 @@ export default {
               context: 'strings',
               difficulty: 'intermediate',
               code: 'printf(userInput); // DANGER!\nprintf("%s", userInput); // SAFE',
+              task: 'Confronta la chiamata vulnerabile printf(userInput) con la versione sicura printf("%s", userInput) che fissa il format.',
             },
             {
               english: 'Bounds Checking',
@@ -3764,6 +3967,7 @@ export default {
               difficulty: 'intermediate',
               code: '// Use fgets(buf, sizeof(buf), stdin) instead',
               note: 'Rimosso da C11. Uno dei bug più pericolosi nella storia di C.',
+              task: `Sostituisci gets, rimossa da C11 perche' insicura, con fgets passando buf, sizeof(buf) e stdin per limitare i byte letti.`,
             },
             {
               english: 'fgets',
@@ -3775,6 +3979,7 @@ export default {
               context: 'strings',
               difficulty: 'intermediate',
               code: 'fgets(buf, sizeof(buf), stdin);',
+              task: 'Leggi al massimo sizeof(buf) byte dallo stdin nel buffer buf tramite fgets, alternativa sicura a gets.',
             },
             {
               english: 'String Sanitization',

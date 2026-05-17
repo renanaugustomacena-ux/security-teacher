@@ -374,6 +374,7 @@ export default {
               difficulty: 'beginner',
               command: 'aws ec2 describe-regions',
               note: "Ogni regione è un'area geografica separata. Es: eu-west-1 (Irlanda), eu-south-1 (Milano).",
+              task: 'Elenca tutte le region AWS disponibili per scegliere dove deployare il workload con la latenza piu bassa.',
             },
             {
               english: 'Availability Zone',
@@ -507,6 +508,7 @@ export default {
               context: 'compute',
               difficulty: 'beginner',
               command: 'aws ec2 run-instances --image-id ami-12345',
+              task: `Avvia una nuova istanza EC2 a partire dall'AMI ami-12345 per ospitare il backend dell'applicazione.`,
             },
             {
               english: 'EC2',
@@ -560,6 +562,7 @@ export default {
               context: 'compute',
               difficulty: 'beginner',
               command: 'aws ec2 create-snapshot --volume-id vol-1234',
+              task: `Crea uno snapshot del volume EBS vol-1234 come backup point-in-time prima dell'aggiornamento del sistema.`,
             },
             {
               english: 'Provisioning',
@@ -594,6 +597,7 @@ export default {
               difficulty: 'beginner',
               tool: 'GCP Compute Engine',
               command: 'gcloud compute instances list',
+              task: `Mostra l'elenco di tutte le VM Compute Engine nel progetto GCP corrente per verificare quali sono attive.`,
             },
           ],
         },
@@ -655,6 +659,7 @@ export default {
               difficulty: 'beginner',
               command: 'aws ec2 request-spot-instances',
               note: 'Capacità inutilizzata venduta a sconto. Possono essere terminate con 2 minuti di preavviso.',
+              task: `Richiedi un'istanza spot EC2 per ridurre i costi sui workload batch tolleranti all'interruzione.`,
             },
             {
               english: 'Reserved Instance',
@@ -966,6 +971,7 @@ export default {
               command: 'aws s3 ls',
               tool: 'AWS S3',
               note: 'S3 = Simple Storage Service; object storage AWS scalabile, durabile (11 nove) e accessibile via API HTTPS.',
+              task: `Elenca tutti i bucket S3 dell'account per ottenere un quadro complessivo dello storage object.`,
             },
             {
               english: 'Bucket',
@@ -978,6 +984,7 @@ export default {
               difficulty: 'beginner',
               command: 'aws s3 mb s3://my-bucket',
               note: 'Letteralmente "secchio". Mai tradotto in italiano in contesto cloud.',
+              task: 'Crea il bucket S3 my-bucket per iniziare a caricare gli oggetti del nuovo progetto.',
             },
             {
               english: 'Object',
@@ -1031,6 +1038,7 @@ export default {
               context: 'storage',
               difficulty: 'beginner',
               command: 'aws s3api put-bucket-versioning',
+              task: 'Attiva il versioning sul bucket S3 per conservare ogni versione storica degli oggetti caricati.',
             },
             {
               english: 'Pre-signed URL',
@@ -1042,6 +1050,7 @@ export default {
               context: 'storage',
               difficulty: 'beginner',
               command: 'aws s3 presign s3://bucket/key',
+              task: `Genera un pre-signed URL per l'oggetto s3://bucket/key e condividilo temporaneamente senza esporre le credenziali.`,
             },
             {
               english: 'Public Access',
@@ -1092,6 +1101,7 @@ export default {
               context: 'storage',
               difficulty: 'beginner',
               command: 'aws ec2 create-volume --size 100',
+              task: `Crea un volume EBS da 100 GB pronto per essere attaccato a un'istanza EC2 come disco aggiuntivo.`,
             },
             {
               english: 'IOPS',
@@ -1168,6 +1178,7 @@ export default {
               context: 'storage',
               difficulty: 'beginner',
               command: 'mount -t nfs efs.amazonaws.com:/ /mnt/efs',
+              task: 'Monta il filesystem EFS via NFS sul mount point locale /mnt/efs per condividere file tra istanze.',
             },
           ],
         },
@@ -1240,6 +1251,7 @@ export default {
               context: 'storage',
               difficulty: 'beginner',
               code: '{\n  "Rules": [{\n    "Status": "Enabled",\n    "Transitions": [{\n      "Days": 90,\n      "StorageClass": "GLACIER"\n    }]\n  }]\n}',
+              task: 'Definisci una lifecycle policy che dopo 90 giorni transiti gli oggetti S3 verso la classe GLACIER per risparmiare.',
             },
             {
               english: 'Retrieval',
@@ -1424,6 +1436,7 @@ export default {
               tool: 'AWS VPC',
               command: 'aws ec2 create-vpc --cidr-block 10.0.0.0/16',
               note: 'VPC = Virtual Private Cloud; rete virtuale isolata in AWS, configurabile con subnet, route table e security group.',
+              task: 'Crea una nuova VPC con il CIDR block 10.0.0.0/16 come rete isolata per le risorse cloud del progetto.',
             },
             {
               english: 'VNet',
@@ -1437,6 +1450,7 @@ export default {
               tool: 'Azure VNet',
               command: 'az network vnet create',
               note: 'VNet = Virtual Network; equivalente Azure della VPC AWS.',
+              task: 'Provisiona una VNet Azure come rete privata virtuale dentro cui collocare VM, subnet e load balancer.',
             },
             {
               english: 'Subnet',
@@ -1540,6 +1554,7 @@ export default {
               difficulty: 'beginner',
               command: 'aws ec2 create-security-group',
               note: 'Stateful: il traffico di risposta è automaticamente permesso.',
+              task: 'Crea un security group da associare alle istanze EC2 per controllare il traffico inbound e outbound.',
             },
             {
               english: 'Network ACL',
@@ -1795,6 +1810,7 @@ export default {
               context: 'networking',
               difficulty: 'beginner',
               command: 'aws ec2 create-vpc-peering-connection',
+              task: 'Stabilisci un VPC peering tra due VPC per consentire il routing privato tra le loro risorse.',
             },
             {
               english: 'Transit Gateway',
@@ -1897,6 +1913,7 @@ export default {
               context: 'iam',
               difficulty: 'intermediate',
               command: 'aws iam create-user --user-name alice',
+              task: `Crea l'utente IAM alice come identita dedicata a una persona reale che accede all'account AWS.`,
             },
             {
               english: 'Group',
@@ -1908,6 +1925,7 @@ export default {
               context: 'iam',
               difficulty: 'intermediate',
               command: 'aws iam add-user-to-group',
+              task: 'Aggiungi un utente IAM a un gruppo per ereditare automaticamente le policy condivise dal team.',
             },
             {
               english: 'Role',
@@ -1919,6 +1937,7 @@ export default {
               difficulty: 'intermediate',
               command: 'aws iam create-role',
               note: 'Diverso da user: i ruoli si "assumono", non hanno credenziali fisse.',
+              task: 'Crea un ruolo IAM assumibile da servizi o utenti che necessitano di credenziali temporanee.',
             },
             {
               english: 'Service Account',
@@ -1962,6 +1981,7 @@ export default {
               difficulty: 'intermediate',
               command: 'aws iam create-access-key',
               note: 'Composto da Access Key ID + Secret. NEVER committarle in git.',
+              task: 'Genera una nuova access key per un utente IAM da usare nelle chiamate programmaticate alle API AWS.',
             },
             {
               english: 'Secret Key',
@@ -1983,6 +2003,7 @@ export default {
               difficulty: 'intermediate',
               code: 'arn:aws:iam::123456789012:user/alice',
               note: 'ARN = Amazon Resource Name; identificatore globalmente unico di una risorsa AWS, nel formato arn:partition:service:region:account:resource.',
+              task: `Costruisci l'ARN dell'utente alice nell'account 123456789012 per referenziarlo univocamente in una policy.`,
             },
           ],
         },
@@ -2001,6 +2022,7 @@ export default {
               context: 'iam',
               difficulty: 'intermediate',
               code: '{"Version":"2012-10-17","Statement":[{"Effect":"Allow","Action":"s3:GetObject","Resource":"*"}]}',
+              task: `Scrivi una policy IAM che conceda l'azione s3:GetObject su qualsiasi resource per leggere oggetti dai bucket.`,
             },
             {
               english: 'Permission',
@@ -2061,6 +2083,7 @@ export default {
               context: 'iam',
               difficulty: 'intermediate',
               code: '"Condition": {"IpAddress": {"aws:SourceIp": "10.0.0.0/8"}}',
+              task: `Aggiungi una condition alla policy che limiti l'accesso solo alle richieste provenienti dal range 10.0.0.0/8.`,
             },
             {
               english: 'Managed Policy',
@@ -2175,6 +2198,7 @@ export default {
               context: 'iam',
               difficulty: 'intermediate',
               command: 'aws sts assume-role --role-arn arn:aws:iam::123:role/MyRole',
+              task: `Assumi il ruolo MyRole nell'account 123 per ottenere credenziali temporanee STS e operare con la sua identita.`,
             },
             {
               english: 'Federation',
@@ -2347,6 +2371,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'AWS Lambda',
               command: 'aws lambda invoke --function-name myFunc out.json',
+              task: `Invoca la funzione Lambda myFunc e salva l'output della risposta nel file locale out.json.`,
             },
             {
               english: 'Function',
@@ -2358,6 +2383,7 @@ export default {
               context: 'serverless',
               difficulty: 'intermediate',
               code: 'exports.handler = async (event) => {\n  return { statusCode: 200 };\n};',
+              task: 'Definisci una function Lambda Node.js che ritorni un oggetto con statusCode 200 ad ogni invocazione.',
             },
             {
               english: 'Handler',
@@ -2369,6 +2395,7 @@ export default {
               context: 'serverless',
               difficulty: 'intermediate',
               code: 'def lambda_handler(event, context):\n    return {"statusCode": 200}',
+              task: `Implementa l'handler Python lambda_handler che riceve event e context e ritorna un body con statusCode 200.`,
             },
             {
               english: 'Event',
@@ -2597,6 +2624,7 @@ export default {
               context: 'serverless',
               difficulty: 'intermediate',
               code: '{"source": ["aws.s3"], "detail-type": ["Object Created"]}',
+              task: 'Componi un pattern matching EventBridge che intercetti solo gli eventi Object Created provenienti da aws.s3.',
             },
             {
               english: 'Webhook',
@@ -2747,6 +2775,7 @@ export default {
               difficulty: 'intermediate',
               code: '{"StartAt": "Hello", "States": {"Hello": {"Type": "Pass", "End": true}}}',
               note: 'ASL = Amazon States Language; DSL JSON usato per descrivere le state machine di AWS Step Functions.',
+              task: 'Scrivi una definizione ASL minima per Step Functions con un singolo stato Hello di tipo Pass come End.',
             },
             {
               english: 'Express Workflow',
@@ -2798,6 +2827,7 @@ export default {
               tool: 'AWS RDS',
               command: 'aws rds create-db-instance',
               note: 'RDS = Relational Database Service; servizio gestito AWS per database relazionali (Postgres, MySQL, MariaDB, Oracle, SQL Server).',
+              task: 'Crea una nuova istanza RDS gestita per delegare ad AWS il backup, il patching e la high availability del database.',
             },
             {
               english: 'Aurora',
@@ -2841,6 +2871,7 @@ export default {
               context: 'database',
               difficulty: 'intermediate',
               command: 'aws rds create-db-instance-read-replica',
+              task: `Provisiona una read replica dell'istanza RDS per distribuire il carico delle query di sola lettura.`,
             },
             {
               english: 'Multi-AZ',
@@ -2913,6 +2944,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'AWS DynamoDB',
               command: 'aws dynamodb scan --table-name Users',
+              task: 'Esegui uno scan completo della tabella DynamoDB Users per ispezionare tutti gli item presenti.',
             },
             {
               english: 'Cosmos DB',
@@ -3037,6 +3069,7 @@ export default {
               context: 'database',
               difficulty: 'intermediate',
               command: 'redis-cli ping',
+              task: 'Verifica con un ping che il server Redis sia raggiungibile e risponda PONG sulla connessione corrente.',
             },
             {
               english: 'Memcached',
@@ -3275,6 +3308,7 @@ export default {
               context: 'containers',
               difficulty: 'intermediate',
               command: 'docker build -t myapp:1.0 .',
+              task: `Builda una container image dell'app taggata myapp:1.0 a partire dal Dockerfile nella directory corrente.`,
             },
             {
               english: 'Dockerfile',
@@ -3286,6 +3320,7 @@ export default {
               context: 'containers',
               difficulty: 'intermediate',
               code: 'FROM node:20\nCOPY . /app\nRUN npm install\nCMD ["node", "app.js"]',
+              task: 'Scrivi un Dockerfile basato su node:20 che copi il codice, esegua npm install e lanci app.js come entrypoint.',
             },
             {
               english: 'Layer',
@@ -3306,6 +3341,7 @@ export default {
               context: 'containers',
               difficulty: 'intermediate',
               code: 'FROM node:20 AS builder\nRUN npm run build\nFROM nginx\nCOPY --from=builder /dist /usr/share/nginx/html',
+              task: `Imposta una multi-stage build che compili in uno stage builder node:20 e copi il dist dentro un'immagine nginx finale.`,
             },
             {
               english: 'Image Tag',
@@ -3388,6 +3424,7 @@ export default {
               tool: 'AWS ECR',
               command: 'aws ecr get-login-password',
               note: 'ECR = Elastic Container Registry; registry container privato gestito AWS, integrato con IAM e KMS.',
+              task: 'Recupera la password temporanea di login a ECR per autenticare docker contro il registry privato AWS.',
             },
             {
               english: 'ACR',
@@ -3400,6 +3437,7 @@ export default {
               tool: 'Azure ACR',
               command: 'az acr login --name myregistry',
               note: 'ACR = Azure Container Registry; registry container privato gestito da Azure, con replica geografica integrata.',
+              task: 'Effettua il login al registry ACR myregistry per poter pushare e pullare immagini sul container registry Azure.',
             },
             {
               english: 'GCR',
@@ -3422,6 +3460,7 @@ export default {
               context: 'containers',
               difficulty: 'intermediate',
               command: 'docker push myregistry/app:1.0',
+              task: `Pusha l'immagine app:1.0 sul registry myregistry per renderla disponibile al deploy in produzione.`,
             },
             {
               english: 'Pull',
@@ -3433,6 +3472,7 @@ export default {
               context: 'containers',
               difficulty: 'intermediate',
               command: 'docker pull node:20',
+              task: `Scarica in locale l'immagine ufficiale node:20 dal Docker Hub per usarla come base in una build successiva.`,
             },
             {
               english: 'Image Scanning',
@@ -3504,6 +3544,7 @@ export default {
               context: 'containers',
               difficulty: 'intermediate',
               code: '{"family": "myapp", "containerDefinitions": [{"name": "web", "image": "nginx"}]}',
+              task: `Definisci una task definition ECS chiamata myapp con un container web basato sull'immagine nginx.`,
             },
             {
               english: 'Task',
@@ -3617,6 +3658,7 @@ export default {
               tool: 'AWS EKS',
               command: 'aws eks update-kubeconfig --name my-cluster',
               note: 'EKS = Elastic Kubernetes Service; Kubernetes gestito AWS con control plane SLA 99,95%.',
+              task: 'Aggiorna il kubeconfig locale per puntare al cluster EKS my-cluster e iniziare a usare kubectl contro di lui.',
             },
             {
               english: 'AKS',
@@ -3629,6 +3671,7 @@ export default {
               tool: 'Azure AKS',
               command: 'az aks get-credentials',
               note: 'AKS = Azure Kubernetes Service; Kubernetes gestito Azure, con control plane gratuito ma nodi a pagamento.',
+              task: 'Recupera le credenziali kubeconfig del cluster AKS Azure per autenticarti come amministratore via kubectl.',
             },
             {
               english: 'GKE',
@@ -3642,6 +3685,7 @@ export default {
               tool: 'GCP GKE',
               command: 'gcloud container clusters get-credentials',
               note: 'GKE = Google Kubernetes Engine; Kubernetes gestito GCP, disponibile in modalità Standard e Autopilot.',
+              task: 'Ottieni le credenziali per il cluster GKE corrente in modo da poter usare kubectl sul Kubernetes managed di Google.',
             },
             {
               english: 'Pod',
@@ -3653,6 +3697,7 @@ export default {
               context: 'containers',
               difficulty: 'intermediate',
               command: 'kubectl get pods',
+              task: 'Elenca tutti i pod presenti nel namespace attivo per verificare quali workload girano sul cluster Kubernetes.',
             },
             {
               english: 'Node',
@@ -3796,6 +3841,7 @@ export default {
               difficulty: 'intermediate',
               command: 'terraform plan -refresh-only',
               note: 'Quando il vero stato si scosta da quello dichiarato nel codice.',
+              task: 'Lancia un terraform plan in modalita refresh-only per rilevare drift tra lo stato reale e quello dichiarato.',
             },
             {
               english: 'Pet vs Cattle',
@@ -3847,6 +3893,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'HashiCorp Terraform',
               command: 'terraform init',
+              task: 'Inizializza la working directory Terraform per scaricare i provider necessari e preparare il backend.',
             },
             {
               english: 'OpenTofu',
@@ -3871,6 +3918,7 @@ export default {
               difficulty: 'intermediate',
               code: 'resource "aws_instance" "web" {\n  ami = "ami-12345"\n  instance_type = "t3.micro"\n}',
               note: 'HCL = HashiCorp Configuration Language; DSL dichiarativo usato da Terraform, Vault, Nomad e altri tool HashiCorp.',
+              task: 'Dichiara in HCL una resource aws_instance chiamata web basata su ami-12345 e di tipo t3.micro.',
             },
             {
               english: 'Terraform Provider',
@@ -3881,6 +3929,7 @@ export default {
               context: 'iac',
               difficulty: 'intermediate',
               code: 'provider "aws" {\n  region = "eu-west-1"\n}',
+              task: 'Configura il provider aws di Terraform impostando come region di default eu-west-1.',
             },
             {
               english: 'Terraform Resource',
@@ -3902,6 +3951,7 @@ export default {
               context: 'iac',
               difficulty: 'intermediate',
               code: 'data "aws_ami" "ubuntu" { most_recent = true }',
+              task: `Definisci un data source aws_ami chiamato ubuntu con most_recent attivo per recuperare l'AMI piu recente.`,
             },
             {
               english: 'Variable',
@@ -3912,6 +3962,7 @@ export default {
               context: 'iac',
               difficulty: 'intermediate',
               code: 'variable "region" {\n  default = "eu-south-1"\n}',
+              task: 'Dichiara una variable region in Terraform con valore di default eu-south-1 per parametrizzare il modulo.',
             },
             {
               english: 'Output',
@@ -3922,6 +3973,7 @@ export default {
               context: 'iac',
               difficulty: 'intermediate',
               code: 'output "instance_ip" {\n  value = aws_instance.web.public_ip\n}',
+              task: `Esponi come output Terraform instance_ip il public_ip dell'aws_instance web cosi da consumarlo a valle.`,
             },
             {
               english: 'Module',
@@ -3932,6 +3984,7 @@ export default {
               context: 'iac',
               difficulty: 'intermediate',
               code: 'module "vpc" {\n  source = "./modules/vpc"\n}',
+              task: 'Istanzia un module Terraform chiamato vpc che punti alla directory locale ./modules/vpc per riusare la configurazione.',
             },
             {
               english: 'Workspace',
@@ -3943,6 +3996,7 @@ export default {
               context: 'iac',
               difficulty: 'intermediate',
               command: 'terraform workspace new dev',
+              task: `Crea un nuovo workspace Terraform chiamato dev per isolare lo state dell'ambiente di sviluppo da quello prod.`,
             },
           ],
         },
@@ -3972,6 +4026,7 @@ export default {
               context: 'iac',
               difficulty: 'intermediate',
               code: 'terraform {\n  backend "s3" {\n    bucket = "my-tfstate"\n    key    = "prod/terraform.tfstate"\n  }\n}',
+              task: 'Configura un backend S3 di remote state che salvi il file prod/terraform.tfstate dentro il bucket my-tfstate.',
             },
             {
               english: 'State Lock',
@@ -3993,6 +4048,7 @@ export default {
               context: 'iac',
               difficulty: 'intermediate',
               command: 'terraform plan -out=tfplan',
+              task: 'Genera un piano Terraform salvato nel file tfplan per ispezionare le modifiche prima di applicarle davvero.',
             },
             {
               english: 'Apply',
@@ -4004,6 +4060,7 @@ export default {
               context: 'iac',
               difficulty: 'intermediate',
               command: 'terraform apply tfplan',
+              task: 'Applica il piano Terraform salvato in tfplan per provisionare effettivamente le risorse sul cloud.',
             },
             {
               english: 'Destroy',
@@ -4016,6 +4073,7 @@ export default {
               difficulty: 'intermediate',
               command: 'terraform destroy',
               note: 'Mai eseguire in produzione senza review!',
+              task: `Distruggi tutte le risorse gestite dal modulo Terraform corrente per smantellare l'ambiente effimero.`,
             },
             {
               english: 'Refresh',
@@ -4026,6 +4084,7 @@ export default {
               context: 'iac',
               difficulty: 'intermediate',
               command: 'terraform refresh',
+              task: 'Aggiorna lo state Terraform interrogando i provider per riallineare i dati locali a quelli reali del cloud.',
             },
             {
               english: 'Import',
@@ -4037,6 +4096,7 @@ export default {
               context: 'iac',
               difficulty: 'intermediate',
               command: 'terraform import aws_instance.web i-1234567890',
+              task: `Importa l'istanza EC2 i-1234567890 dentro la resource Terraform aws_instance.web senza ricrearla.`,
             },
             {
               english: 'Lifecycle Block',
@@ -4048,6 +4108,7 @@ export default {
               context: 'iac',
               difficulty: 'intermediate',
               code: 'lifecycle {\n  prevent_destroy = true\n}',
+              task: 'Aggiungi un lifecycle block con prevent_destroy a true per proteggere la resource Terraform da distruzioni accidentali.',
             },
             {
               english: 'Tainting',
@@ -4059,6 +4120,7 @@ export default {
               context: 'iac',
               difficulty: 'intermediate',
               command: 'terraform taint aws_instance.web',
+              task: 'Marca come tainted la resource aws_instance.web per forzare Terraform a ricrearla al prossimo apply.',
             },
           ],
         },
@@ -4078,6 +4140,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'AWS CloudFormation',
               code: 'AWSTemplateFormatVersion: "2010-09-09"\nResources:\n  MyBucket:\n    Type: AWS::S3::Bucket',
+              task: 'Scrivi un template CloudFormation in formato 2010-09-09 con una sola resource MyBucket di tipo AWS::S3::Bucket.',
             },
             {
               english: 'Stack',
@@ -4088,6 +4151,7 @@ export default {
               context: 'iac',
               difficulty: 'intermediate',
               command: 'aws cloudformation create-stack --stack-name myapp',
+              task: `Crea uno stack CloudFormation chiamato myapp per provisionare l'intero set di risorse descritte dal template.`,
             },
             {
               english: 'Stack Set',
@@ -4129,6 +4193,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'Pulumi',
               code: 'const bucket = new aws.s3.Bucket("mybucket");',
+              task: 'Dichiara con Pulumi in TypeScript un bucket S3 chiamato mybucket usando la classe aws.s3.Bucket.',
             },
             {
               english: 'CDK',
@@ -4142,6 +4207,7 @@ export default {
               tool: 'AWS CDK',
               code: 'new s3.Bucket(this, "MyBucket");',
               note: 'CDK = Cloud Development Kit; framework AWS che traspila codice TypeScript/Python in template CloudFormation.',
+              task: 'Crea con AWS CDK un construct s3.Bucket chiamato MyBucket dentro lo stack corrente.',
             },
             {
               english: 'Bicep',
@@ -4334,6 +4400,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'AWS Budgets',
               command: 'aws budgets create-budget',
+              task: 'Crea un budget AWS per impostare una soglia di spesa mensile e ricevere notifiche al superamento.',
             },
             {
               english: 'Cost Allocation Tag',
@@ -4661,6 +4728,7 @@ export default {
               context: 'monitoring',
               difficulty: 'intermediate',
               command: 'aws cloudwatch get-metric-statistics',
+              task: `Recupera le statistiche storiche di una metrica CloudWatch per analizzare l'andamento del workload nel tempo.`,
             },
             {
               english: 'Custom Metric',
@@ -4671,6 +4739,7 @@ export default {
               context: 'monitoring',
               difficulty: 'intermediate',
               command: 'aws cloudwatch put-metric-data',
+              task: 'Pubblica una custom metric su CloudWatch per tracciare un indicatore applicativo non esposto di default.',
             },
             {
               english: 'Namespace',
@@ -4759,6 +4828,7 @@ export default {
               context: 'monitoring',
               difficulty: 'intermediate',
               command: 'aws logs describe-log-groups',
+              task: `Elenca tutti i log group CloudWatch dell'account per individuare dove finiscono i log di servizi e funzioni.`,
             },
             {
               english: 'Log Stream',
@@ -4791,6 +4861,7 @@ export default {
               context: 'monitoring',
               difficulty: 'intermediate',
               code: 'fields @timestamp, @message\n| filter @message like /ERROR/\n| sort @timestamp desc',
+              task: 'Componi una query CloudWatch Logs Insights che filtri i messaggi contenenti ERROR e li ordini per timestamp.',
             },
             {
               english: 'Structured Logging',
@@ -4802,6 +4873,7 @@ export default {
               context: 'monitoring',
               difficulty: 'intermediate',
               code: 'logger.info("user_login", {user_id: 123, ip: "1.2.3.4"})',
+              task: 'Emetti un log strutturato user_login con campi user_id 123 e ip 1.2.3.4 per facilitare le query downstream.',
             },
             {
               english: 'Log Subscription',
@@ -4869,6 +4941,7 @@ export default {
               context: 'monitoring',
               difficulty: 'intermediate',
               command: 'aws cloudwatch put-metric-alarm',
+              task: 'Configura un alarm CloudWatch su una metric per ricevere una notifica quando supera la soglia critica.',
             },
             {
               english: 'Threshold',
@@ -5207,6 +5280,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'AWS Secrets Manager',
               command: 'aws secretsmanager get-secret-value --secret-id db-pass',
+              task: 'Recupera il valore corrente del secret db-pass da Secrets Manager per usarlo come password nella connessione DB.',
             },
             {
               english: 'Parameter Store',

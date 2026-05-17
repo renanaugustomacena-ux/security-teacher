@@ -1,0 +1,1820 @@
+{
+  "fixes": [
+    {
+      "level": "0",
+      "lesson": "node_foundations_1",
+      "english": "Node.js",
+      "set": {
+        "task": "Avvia uno script JavaScript lato server passando il file app.js al runtime Node."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "node_foundations_1",
+      "english": "Non-Blocking",
+      "set": {
+        "task": "Leggi un file con fs.readFile passando un callback che riceve i dati senza bloccare l'event loop."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "node_foundations_1",
+      "english": "REPL",
+      "set": {
+        "task": "Apri il REPL interattivo di Node digitando solo node nel terminale per testare espressioni al volo."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "node_foundations_2",
+      "english": "Asynchronous",
+      "set": {
+        "task": "Pianifica un callback con setTimeout dopo 1000 millisecondi delegando l'attesa all'event loop."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "node_foundations_2",
+      "english": "Synchronous",
+      "set": {
+        "task": "Leggi sincronicamente il contenuto di un file con fs.readFileSync, bloccando il thread fino alla fine dell'I/O."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "node_foundations_3",
+      "english": "Module",
+      "set": {
+        "task": "Importa il modulo core fs assegnandolo alla costante fs tramite require()."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "node_foundations_3",
+      "english": "Require",
+      "set": {
+        "task": "Carica il modulo path con require in stile CommonJS prima di usare le sue utilita di percorso."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "node_foundations_3",
+      "english": "Built-in Module",
+      "set": {
+        "task": "Importa il modulo integrato os via require senza installare nulla dal registro npm."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "node_foundations_3",
+      "english": "Core Module",
+      "set": {
+        "task": "Risolvi un modulo core usando il prefisso esplicito node: come node:fs per evitare conflitti di nome."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "node_foundations_3",
+      "english": "Global Object",
+      "set": {
+        "task": "Assegna 42 a una proprieta myVar sull'oggetto globale global, accessibile da qualsiasi modulo del processo."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "node_foundations_3",
+      "english": "Process",
+      "set": {
+        "task": "Stampa la versione corrente del runtime leggendo process.version sull'oggetto process."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "node_foundations_3",
+      "english": "Console",
+      "set": {
+        "task": "Scrivi la stringa 'Hello, Node!' sullo stdout invocando console.log."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "node_foundations_3",
+      "english": "__dirname",
+      "set": {
+        "task": "Stampa il percorso assoluto della directory contenente il modulo corrente leggendo la variabile __dirname."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "node_foundations_3",
+      "english": "__filename",
+      "set": {
+        "task": "Logga il percorso completo del file sorgente in esecuzione tramite __filename per facilitare il debug."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "node_foundations_3",
+      "english": "Exports",
+      "set": {
+        "task": "Esporta la funzione greet come API pubblica del modulo assegnandola a module.exports in un oggetto."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "node_foundations_4",
+      "english": "Install",
+      "set": {
+        "task": "Installa Node sul Mac usando Homebrew con il comando brew install node."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "node_foundations_4",
+      "english": "Version",
+      "set": {
+        "task": "Verifica la versione di Node installata localmente eseguendo node -v dal terminale."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "node_foundations_4",
+      "english": "NVM",
+      "set": {
+        "task": "Scarica e installa Node 20 tramite nvm con il comando nvm install 20."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "node_foundations_4",
+      "english": "Executable",
+      "set": {
+        "task": "Mostra il percorso dell'eseguibile node attualmente nel PATH con il comando which node."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "node_foundations_4",
+      "english": "Script",
+      "set": {
+        "task": "Esegui lo script app.js invocando il runtime Node dalla shell."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "node_foundations_4",
+      "english": "Argument",
+      "set": {
+        "task": "Stampa l'array completo degli argomenti CLI accedendo a process.argv."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "node_foundations_4",
+      "english": "Environment",
+      "set": {
+        "task": "Leggi la variabile d'ambiente NODE_ENV tramite process.env per distinguere development da production."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "node_foundations_4",
+      "english": "Shebang",
+      "set": {
+        "task": "Aggiungi la riga shebang #!/usr/bin/env node in cima allo script per renderlo eseguibile direttamente."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "node_modules_1",
+      "english": "CommonJS",
+      "set": {
+        "task": "Importa la libreria lib in stile CommonJS assegnando il risultato di require a una costante."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "node_modules_1",
+      "english": "module.exports",
+      "set": {
+        "task": "Esporta una funzione anonima come default del modulo assegnandola a module.exports."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "node_modules_1",
+      "english": "Default Export",
+      "set": {
+        "task": "Pubblica MyClass come singola esportazione predefinita del modulo via module.exports."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "node_modules_1",
+      "english": "Named Export",
+      "set": {
+        "task": "Esponi due simboli foo e bar come esportazioni con nome incapsulati in un oggetto su module.exports."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "node_modules_1",
+      "english": "Module Cache",
+      "set": {
+        "task": "Ispeziona la cache dei moduli di Node accedendo all'oggetto require.cache per debug e invalidazioni."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "node_modules_1",
+      "english": "File Module",
+      "set": {
+        "task": "Risolvi e carica il file utils relativo alla cartella corrente passando './utils' a require."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "node_modules_1",
+      "english": "Folder Module",
+      "set": {
+        "task": "Importa la cartella mylib lasciando che Node trovi automaticamente il suo index.js come entry point."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "node_modules_2",
+      "english": "ES Modules",
+      "set": {
+        "task": "Importa il modulo core fs con la sintassi ESM import fs from 'fs'."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "node_modules_2",
+      "english": "Import",
+      "set": {
+        "task": "Estrai la funzione readFile dal sotto-modulo fs/promises usando un import con nome."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "node_modules_2",
+      "english": "Export",
+      "set": {
+        "task": "Pubblica la funzione greet con la parola chiave export cosi' altri moduli possono importarla per nome."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "node_modules_2",
+      "english": "Default Import",
+      "set": {
+        "task": "Importa il pacchetto express con un import predefinito scegliendo il nome locale che preferisci."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "node_modules_2",
+      "english": "Named Import",
+      "set": {
+        "task": "Estrai il simbolo useState dal pacchetto react usando un import con nome tra parentesi graffe."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "node_modules_2",
+      "english": "Dynamic Import",
+      "set": {
+        "task": "Carica un modulo a runtime con import() dinamico e attendi la promise per ottenere i suoi export."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "node_modules_2",
+      "english": ".mjs Extension",
+      "set": {
+        "task": "Esegui un file con estensione .mjs cosi' Node lo tratta come modulo ES indipendentemente da package.json."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "node_modules_2",
+      "english": "\"type\": \"module\"",
+      "set": {
+        "task": "Imposta il campo type su 'module' in package.json per far interpretare tutti i .js come ESM."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "node_modules_2",
+      "english": "Top-Level Await",
+      "set": {
+        "task": "Attendi una promise direttamente al livello superiore di un modulo ESM senza avvolgerla in una funzione async."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "node_modules_3",
+      "english": "NPM",
+      "set": {
+        "task": "Verifica la versione di npm installata sul sistema con il comando npm --version."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "node_modules_3",
+      "english": "Package",
+      "set": {
+        "task": "Scarica il pacchetto lodash dal registro npm aggiungendolo come dipendenza del progetto."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "node_modules_3",
+      "english": "npm install",
+      "set": {
+        "task": "Installa Express come dipendenza di produzione e aggiornalo automaticamente nel package.json."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "node_modules_3",
+      "english": "Uninstall",
+      "set": {
+        "task": "Rimuovi express dalle dipendenze del progetto eseguendo npm uninstall express."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "node_modules_3",
+      "english": "Update",
+      "set": {
+        "task": "Aggiorna tutte le dipendenze del progetto alle ultime versioni compatibili con i range in package.json."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "node_modules_3",
+      "english": "Init",
+      "set": {
+        "task": "Genera un package.json predefinito senza domande interattive usando il flag -y di npm init."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "node_modules_3",
+      "english": "NPX",
+      "set": {
+        "task": "Esegui create-react-app via npx per generare un'app React senza installare lo strumento globalmente."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "node_modules_3",
+      "english": "Global Install",
+      "set": {
+        "task": "Installa TypeScript globalmente con il flag -g cosi' il binario tsc e' nel PATH ovunque."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "node_modules_3",
+      "english": "Local Install",
+      "set": {
+        "task": "Aggiungi axios come dipendenza locale del progetto cosi' resta isolata in node_modules."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "node_modules_4",
+      "english": "package.json",
+      "set": {
+        "task": "Inizializza un package.json minimo con i campi name 'my-app' e version '1.0.0' come metadati del progetto."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "node_modules_4",
+      "english": "Dependency",
+      "set": {
+        "task": "Dichiara express con range ^4.0.0 dentro la sezione dependencies del package.json."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "node_modules_4",
+      "english": "Dev Dependency",
+      "set": {
+        "task": "Aggiungi jest come dipendenza di sviluppo usando il flag --save-dev cosi' non finisce in produzione."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "node_modules_4",
+      "english": "Semver",
+      "set": {
+        "task": "Specifica il range semver ^1.2.3 per accettare aggiornamenti minor e patch ma non breaking changes."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "node_modules_4",
+      "english": "Caret Range",
+      "set": {
+        "task": "Usa il caret ^4.18.0 per consentire qualsiasi versione dalla 4.18.0 fino a sotto la 5.0.0."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "node_modules_4",
+      "english": "Tilde Range",
+      "set": {
+        "task": "Limita gli aggiornamenti automatici alle sole patch impostando il range ~4.18.0 in package.json."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "node_modules_4",
+      "english": "NPM Script",
+      "set": {
+        "task": "Registra uno script npm chiamato start che esegue node index.js, poi lancialo con npm run start."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_5",
+      "english": "Function Declaration",
+      "set": {
+        "task": "Dichiara una funzione classica sum che riceve due parametri a e b e restituisce la loro somma."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_5",
+      "english": "Function Expression",
+      "set": {
+        "task": "Assegna un'espressione di funzione anonima a una const sum per evitare riassegnazioni accidentali del riferimento."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_5",
+      "english": "Arrow Function",
+      "set": {
+        "task": "Definisci una arrow function sum che somma a e b in una sola espressione concisa."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_5",
+      "english": "Parameter",
+      "set": {
+        "task": "Dichiara una funzione greet con un singolo parametro nominale name come input."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_5",
+      "english": "Default Parameter",
+      "set": {
+        "task": "Imposta 'World' come valore predefinito del parametro name di greet per gestire chiamate senza argomenti."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_5",
+      "english": "Rest Parameter",
+      "set": {
+        "task": "Raccogli tutti gli argomenti residui di sum in un array nums usando l'operatore rest ...nums."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_5",
+      "english": "Higher-Order Function",
+      "set": {
+        "task": "Trasforma ogni elemento di arr moltiplicandolo per due passando una arrow function a map."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_5",
+      "english": "Closure",
+      "set": {
+        "task": "Costruisci un counter che cattura la variabile interna n tramite closure e la incrementa a ogni invocazione."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_5",
+      "english": "IIFE",
+      "set": {
+        "task": "Esegui immediatamente una funzione anonima che stampa 'hi' avvolgendola in parentesi e invocandola sul posto."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_5",
+      "english": "this Keyword",
+      "set": {
+        "task": "Accedi alla proprieta name dell'istanza corrente tramite la parola chiave this dentro un metodo di classe."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_6",
+      "english": "Destructuring",
+      "set": {
+        "task": "Estrai i campi name e age dall'oggetto user con la destrutturazione in un'unica dichiarazione const."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_6",
+      "english": "Object Destructuring",
+      "set": {
+        "task": "Separa il campo id dall'oggetto data raccogliendo il resto delle proprieta in una variabile rest tramite spread."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_6",
+      "english": "Array Destructuring",
+      "set": {
+        "task": "Estrai i primi due elementi di arr in due variabili first e second con la destrutturazione array."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_6",
+      "english": "Renaming",
+      "set": {
+        "task": "Rinomina il campo name in userName durante la destrutturazione dell'oggetto user per evitare collisioni."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_6",
+      "english": "Spread Operator",
+      "set": {
+        "task": "Concatena gli array a e b producendo un nuovo array merged tramite l'operatore spread."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_6",
+      "english": "Object Spread",
+      "set": {
+        "task": "Clona superficialmente l'oggetto original in una nuova costante clone usando lo spread di oggetti."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_6",
+      "english": "Template Literal",
+      "set": {
+        "task": "Costruisci la stringa 'Hello, ${name}!' interpolando la variabile name dentro un letterale template."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_6",
+      "english": "Tagged Template",
+      "set": {
+        "task": "Invoca la funzione sql come tag di un template che interpola id in una query SQL parametrizzata."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_6",
+      "english": "Optional Chaining",
+      "set": {
+        "task": "Naviga in sicurezza la catena user.address.city con ?. cosi' un null intermedio restituisce undefined senza errore."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_6",
+      "english": "Nullish Coalescing",
+      "set": {
+        "task": "Imposta port leggendo process.env.PORT e cadendo su 3000 solo se il valore e' null o undefined."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_7",
+      "english": "Variable",
+      "set": {
+        "task": "Dichiara una variabile mutabile count inizializzata a 0 con la parola chiave let."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_7",
+      "english": "let",
+      "set": {
+        "task": "Crea la variabile total a scope di blocco inizializzandola a 0 tramite let."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_7",
+      "english": "const",
+      "set": {
+        "task": "Dichiara la costante PI con valore 3.14 usando const per impedirne la riassegnazione."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_7",
+      "english": "var",
+      "set": {
+        "task": "Dichiara la variabile x con var assegnandole 1, anche se nei progetti moderni e' meglio usare let o const."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_7",
+      "english": "Block Scope",
+      "set": {
+        "task": "Confina la variabile let x dentro il blocco if cosi' non e' visibile al codice esterno."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_7",
+      "english": "Strict Mode",
+      "set": {
+        "task": "Abilita la modalita strict del modulo aggiungendo la direttiva 'use strict' come prima istruzione."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_7",
+      "english": "Immutable",
+      "set": {
+        "task": "Congela l'oggetto di configurazione con Object.freeze cosi' la proprieta port: 3000 resta immutabile a runtime."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_8",
+      "english": "Class",
+      "set": {
+        "task": "Definisci la classe User con un constructor che riceve name e lo memorizza come proprieta dell'istanza."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_8",
+      "english": "Constructor",
+      "set": {
+        "task": "Implementa un constructor che riceve id e lo assegna a this.id per inizializzare le istanze."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_8",
+      "english": "Instance",
+      "set": {
+        "task": "Istanzia un nuovo User chiamato 'Mario' con l'operatore new e memorizzalo nella costante u."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_8",
+      "english": "Method",
+      "set": {
+        "task": "Definisci un metodo greet sulla classe che restituisce la stringa 'hi' quando invocato sull'istanza."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_8",
+      "english": "Property",
+      "set": {
+        "task": "Assegna 'Mario' alla proprieta name dell'istanza corrente tramite this dentro un metodo della classe."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_8",
+      "english": "Inheritance",
+      "set": {
+        "task": "Estendi la classe base User dichiarando Admin con extends per ereditare proprieta e metodi."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_8",
+      "english": "Static Method",
+      "set": {
+        "task": "Dichiara il metodo statico fromJson sulla classe per costruire istanze partendo da un oggetto JSON."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_8",
+      "english": "Getter/Setter",
+      "set": {
+        "task": "Esponi una proprieta calcolata fullName tramite un getter che concatena first e last separati da spazio."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_8",
+      "english": "Object Literal",
+      "set": {
+        "task": "Crea l'oggetto letterale obj con proprieta x: 1 e y: 2 in una sola espressione."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_8",
+      "english": "JSON",
+      "set": {
+        "task": "Serializza l'oggetto obj in una stringa JSON invocando JSON.stringify."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "node_async_1",
+      "english": "Callback",
+      "set": {
+        "task": "Leggi il file a.txt asincronicamente passando un callback con i parametri err e data come secondo argomento."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "node_async_1",
+      "english": "Error-First Callback",
+      "set": {
+        "task": "Definisci una callback cb con la convenzione error-first che riceve err come primo parametro e result come secondo."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "node_async_1",
+      "english": "Synchronous Callback",
+      "set": {
+        "task": "Trasforma sincronicamente l'array [1,2,3] raddoppiando ogni elemento con un callback passato a map."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "node_async_1",
+      "english": "Asynchronous Callback",
+      "set": {
+        "task": "Pianifica l'esecuzione differita del callback cb dopo 1000 ms invocando setTimeout."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "node_async_1",
+      "english": "setTimeout",
+      "set": {
+        "task": "Schedula una arrow function vuota per essere eseguita una sola volta dopo 1000 ms tramite setTimeout."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "node_async_1",
+      "english": "setInterval",
+      "set": {
+        "task": "Avvia un timer ricorrente che invoca tick ogni 1000 ms tramite setInterval."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "node_async_1",
+      "english": "clearTimeout",
+      "set": {
+        "task": "Annulla un timer pendente passando il suo handle id a clearTimeout prima che scada."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "node_async_2",
+      "english": "Promise",
+      "set": {
+        "task": "Crea una nuova Promise con l'executor che riceve i callback res e rej per risolverla o rifiutarla."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "node_async_2",
+      "english": "Resolve",
+      "set": {
+        "task": "Risolvi la promise corrente passando il valore data al callback resolve dell'executor."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "node_async_2",
+      "english": "Reject",
+      "set": {
+        "task": "Rigetta la promise corrente lanciando un nuovo Error con messaggio 'fail' tramite reject."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "node_async_2",
+      "english": "then",
+      "set": {
+        "task": "Concatena un then alla promise di fetch(url) trasformando la response in JSON con res.json()."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "node_async_2",
+      "english": "catch",
+      "set": {
+        "task": "Aggancia un handler catch alla catena fetch(url) per loggare con console.error eventuali errori di rete."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "node_async_2",
+      "english": "finally",
+      "set": {
+        "task": "Esegui spinner.stop() in un blocco finally cosi' lo stop avviene sia in caso di successo che di errore."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "node_async_2",
+      "english": "Promise Chain",
+      "set": {
+        "task": "Concatena tre then consecutivi passando le funzioni a, b, c cosi' ciascuna riceve il risultato della precedente."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "node_async_3",
+      "english": "async",
+      "set": {
+        "task": "Dichiara una funzione async load che ritorna data avvolgendo automaticamente il valore in una Promise."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "node_async_3",
+      "english": "await",
+      "set": {
+        "task": "Attendi la risposta di fetch(url) con await assegnando il risultato risolto alla costante data."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "node_async_3",
+      "english": "try/catch",
+      "set": {
+        "task": "Cattura le eccezioni di await fn() avvolgendo la chiamata in un blocco try/catch per gestirle."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "node_async_3",
+      "english": "Sequential",
+      "set": {
+        "task": "Esegui sequenzialmente f() e g() con due await consecutivi cosi' g attende il risultato di f."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "node_async_3",
+      "english": "Parallel",
+      "set": {
+        "task": "Lancia f() e g() in parallelo combinando le loro promise con Promise.all e attendile insieme con await."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "node_async_3",
+      "english": "Promise.all",
+      "set": {
+        "task": "Combina le promise p1 e p2 con Promise.all e destruttura i risultati risolti nelle variabili a e b."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "node_async_3",
+      "english": "Promise.allSettled",
+      "set": {
+        "task": "Attendi tutte le promise dell'array con Promise.allSettled per ottenere lo stato di ciascuna anche se alcune falliscono."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "node_async_3",
+      "english": "Promise.race",
+      "set": {
+        "task": "Corri req contro un timeout con Promise.race risolvendo o rigettando appena la prima delle due si completa."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "node_async_3",
+      "english": "Promisification",
+      "set": {
+        "task": "Promisifica la funzione legacy fs.readFile con util.promisify ottenendo una versione che restituisce una promise."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "node_async_3",
+      "english": "util.promisify",
+      "set": {
+        "task": "Trasforma setTimeout in una versione awaitable con util.promisify per costruire un helper sleep asincrono."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "node_async_4",
+      "english": "process.nextTick",
+      "set": {
+        "task": "Pianifica un callback da eseguire al termine dell'operazione corrente con process.nextTick prima della prossima fase dell'event loop."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "node_async_4",
+      "english": "setImmediate",
+      "set": {
+        "task": "Schedula un callback per essere eseguito nella fase check dell'event loop tramite setImmediate."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_1",
+      "english": "File System",
+      "set": {
+        "task": "Carica il modulo core fs con require per accedere alle API del file system di Node."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_1",
+      "english": "readFile",
+      "set": {
+        "task": "Leggi asincronicamente il contenuto di path passando un callback (err, data) a fs.readFile."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_1",
+      "english": "writeFile",
+      "set": {
+        "task": "Sovrascrivi il contenuto del file path con data passando un callback cb finale a fs.writeFile."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_1",
+      "english": "appendFile",
+      "set": {
+        "task": "Aggiungi line in coda al file log.txt con fs.appendFile preservando il contenuto esistente."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_1",
+      "english": "unlink",
+      "set": {
+        "task": "Cancella il file all'indirizzo path dal disco invocando fs.unlink con un callback cb di completamento."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_1",
+      "english": "mkdir",
+      "set": {
+        "task": "Crea la cartella path includendo tutte le directory intermedie passando l'opzione recursive: true a fs.mkdir."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_1",
+      "english": "readdir",
+      "set": {
+        "task": "Elenca i nomi dei file dentro ./src passando un callback a fs.readdir per ricevere l'array dei risultati."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_1",
+      "english": "stat",
+      "set": {
+        "task": "Recupera i metadati del percorso path con fs.stat ricevendo l'oggetto stats nel callback (err, stats)."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_1",
+      "english": "exists",
+      "set": {
+        "task": "Verifica sincronicamente se path esiste sul filesystem con fs.existsSync restituendo true o false."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_1",
+      "english": "Sync API",
+      "set": {
+        "task": "Leggi sincronicamente il file path come stringa UTF-8 con fs.readFileSync, accettabile solo all'avvio dell'app."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_2",
+      "english": "fs.promises",
+      "set": {
+        "task": "Importa la variante promise-based del modulo fs tramite require('fs/promises') per usare await invece di callback."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_2",
+      "english": "await readFile",
+      "set": {
+        "task": "Attendi la lettura UTF-8 di path con await fs.readFile evitando la callback hell."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_2",
+      "english": "Encoding",
+      "set": {
+        "task": "Specifica 'utf8' come encoding a fs.readFile cosi' ricevi una stringa decodificata invece di un Buffer grezzo."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_2",
+      "english": "File Handle",
+      "set": {
+        "task": "Apri path in modalita lettura con fs.open e attendi il FileHandle fh per operazioni mirate sul descrittore."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_2",
+      "english": "Open",
+      "set": {
+        "task": "Apri il file all'indirizzo path in modalita scrittura 'w' con fs.open per ottenere un handle riutilizzabile."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_2",
+      "english": "Close",
+      "set": {
+        "task": "Rilascia le risorse del descrittore fh chiudendo il file handle con await fh.close()."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_2",
+      "english": "Truncate",
+      "set": {
+        "task": "Tronca il file path a zero byte con await fs.truncate svuotandone il contenuto senza ricrearlo."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_2",
+      "english": "Copy File",
+      "set": {
+        "task": "Copia il file da src a dst sul filesystem con await fs.copyFile evitando di rileggere e riscrivere manualmente."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_2",
+      "english": "Rename",
+      "set": {
+        "task": "Rinomina o sposta il file dal percorso old al percorso new con await fs.rename in modo atomico."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_2",
+      "english": "Permissions",
+      "set": {
+        "task": "Modifica i permessi di path a 0o755 con await fs.chmod rendendo il file eseguibile da owner e gruppo."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_3",
+      "english": "path",
+      "set": {
+        "task": "Importa il modulo core path con require per manipolare i percorsi del filesystem in modo cross-platform."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_3",
+      "english": "path.join",
+      "set": {
+        "task": "Unisci __dirname con 'data' e 'file.txt' tramite path.join inserendo il separatore corretto per il sistema operativo."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_3",
+      "english": "path.resolve",
+      "set": {
+        "task": "Risolvi il percorso relativo './src' in un percorso assoluto tramite path.resolve partendo dalla cwd."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_3",
+      "english": "path.dirname",
+      "set": {
+        "task": "Estrai la directory contenitrice del percorso '/a/b/c.txt' invocando path.dirname che restituisce '/a/b'."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_3",
+      "english": "path.basename",
+      "set": {
+        "task": "Ottieni il nome file 'b.txt' dal percorso '/a/b.txt' usando path.basename per scartare la directory."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_3",
+      "english": "path.extname",
+      "set": {
+        "task": "Estrai l'estensione '.js' dal nome file 'app.js' con path.extname per smistare i file per tipo."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_3",
+      "english": "path.parse",
+      "set": {
+        "task": "Scomponi il percorso '/a/b.txt' nei componenti root, dir, base, name ed ext invocando path.parse."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_3",
+      "english": "path.sep",
+      "set": {
+        "task": "Leggi il separatore di percorso del sistema corrente tramite path.sep, '/' su Linux o '\\\\' su Windows."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_3",
+      "english": "Absolute Path",
+      "set": {
+        "task": "Indirizza una risorsa con il percorso assoluto /usr/local/bin partendo dalla radice del filesystem."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_3",
+      "english": "Relative Path",
+      "set": {
+        "task": "Riferisci la risorsa con il percorso relativo ./data/file.txt rispetto alla directory di lavoro corrente."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_4",
+      "english": "fs.watch",
+      "set": {
+        "task": "Monitora le modifiche dentro ./src con fs.watch passando un callback che riceve event e nome del file modificato."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_4",
+      "english": "Chokidar",
+      "set": {
+        "task": "Installa il pacchetto chokidar via npm per ottenere un watcher di filesystem piu' affidabile di fs.watch."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_4",
+      "english": "Glob Pattern",
+      "set": {
+        "task": "Espandi il pattern glob **/*.js per matchare ricorsivamente tutti i file .js dentro qualsiasi sottocartella."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_4",
+      "english": "Recursive",
+      "set": {
+        "task": "Crea la directory p insieme a tutti i suoi antenati mancanti passando { recursive: true } a fs.mkdir."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_4",
+      "english": "Symlink",
+      "set": {
+        "task": "Crea un collegamento simbolico link che punta a target tramite fs.symlink senza duplicare i contenuti."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_4",
+      "english": "Realpath",
+      "set": {
+        "task": "Risolvi tutti i link simbolici lungo p ottenendo il percorso canonico assoluto con await fs.realpath."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_4",
+      "english": "Temp Directory",
+      "set": {
+        "task": "Recupera il percorso della directory temporanea del sistema tramite os.tmpdir() per file effimeri."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_4",
+      "english": "cwd",
+      "set": {
+        "task": "Leggi la directory di lavoro corrente del processo Node invocando process.cwd()."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_4",
+      "english": "os Module",
+      "set": {
+        "task": "Interroga la piattaforma e i core della CPU con os.platform() e os.cpus() del modulo os."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "node_runtime_5",
+      "english": "http Module",
+      "set": {
+        "task": "Carica il modulo core http via require per costruire server e client HTTP senza framework esterni."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "node_runtime_5",
+      "english": "createServer",
+      "set": {
+        "task": "Istanzia un server HTTP con http.createServer passando un handler che riceve req e res per ogni richiesta."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "node_runtime_5",
+      "english": "listen",
+      "set": {
+        "task": "Vincola il server alla porta 3000 invocando server.listen e inizia ad accettare connessioni TCP in arrivo."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "node_runtime_5",
+      "english": "Host",
+      "set": {
+        "task": "Lega il server alla porta 3000 sull'host 'localhost' cosi' accetta solo connessioni dall'interfaccia locale."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "node_runtime_5",
+      "english": "Request",
+      "set": {
+        "task": "Ispeziona la richiesta entrante leggendo url, method e headers dall'oggetto req dentro l'handler."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "node_runtime_5",
+      "english": "Response",
+      "set": {
+        "task": "Concludi la risposta HTTP inviando il body 'Hello' al client invocando res.end."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "node_runtime_6",
+      "english": "HTTP Method",
+      "set": {
+        "task": "Leggi il verbo HTTP della richiesta corrente accedendo a req.method per smistare GET, POST e altri."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "node_runtime_6",
+      "english": "URL Module",
+      "set": {
+        "task": "Costruisci un oggetto URL parsato da req.url usando 'http://host' come base con la WHATWG URL API."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "node_runtime_6",
+      "english": "Query String",
+      "set": {
+        "task": "Estrai i parametri name e age dalla query string '?name=mario&age=30' di una URL."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "node_runtime_6",
+      "english": "URL Parameters",
+      "set": {
+        "task": "Definisci un pattern di rotta /users/:id dove :id e' un parametro dinamico catturato dal router."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "node_runtime_7",
+      "english": "Status Code",
+      "set": {
+        "task": "Imposta lo status code 200 sulla risposta assegnandolo a res.statusCode prima di scrivere il body."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "node_runtime_7",
+      "english": "Headers",
+      "set": {
+        "task": "Setta l'header Content-Type su 'application/json' tramite res.setHeader prima di inviare il payload."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "node_runtime_7",
+      "english": "Content-Type",
+      "set": {
+        "task": "Dichiara application/json come Content-Type della risposta per segnalare al client che il body e' JSON."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "node_runtime_8",
+      "english": "http.request",
+      "set": {
+        "task": "Inoltra una richiesta HTTP outbound passando l'oggetto opts e un callback cb a http.request."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "node_runtime_8",
+      "english": "http.get",
+      "set": {
+        "task": "Esegui una richiesta GET verso url con http.get passando un callback che riceve l'oggetto response."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "node_runtime_8",
+      "english": "fetch",
+      "set": {
+        "task": "Recupera il contenuto di url con la fetch globale di Node 18+ e attendi la response con await."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "node_runtime_8",
+      "english": "axios",
+      "set": {
+        "task": "Installa il client HTTP axios via npm per ottenere un'API basata su promise con timeout e interceptor."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "node_runtime_8",
+      "english": "Body",
+      "set": {
+        "task": "Leggi e parsa il body JSON della response invocando await res.json() sull'oggetto Response."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "node_runtime_8",
+      "english": "JSON Response",
+      "set": {
+        "task": "Decodifica il corpo della risposta come JSON con await res.json() e assegnalo alla costante data."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "node_runtime_8",
+      "english": "Timeout",
+      "set": {
+        "task": "Configura un timeout di 5000 ms sulla richiesta HTTP passando l'opzione { timeout: 5000 } al client."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "node_runtime_8",
+      "english": "AbortController",
+      "set": {
+        "task": "Istanzia un AbortController per poter cancellare una richiesta fetch passando il suo signal alle opzioni."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "node_runtime_8",
+      "english": "HTTPS",
+      "set": {
+        "task": "Importa il modulo core https con require per emettere richieste cifrate TLS o servire un server HTTPS."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "node_express_1",
+      "english": "Express",
+      "set": {
+        "task": "Installa il framework web Express come dipendenza del progetto tramite npm install express."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "node_express_1",
+      "english": "Application",
+      "set": {
+        "task": "Crea l'istanza dell'applicazione Express invocando express() e assegnala alla costante app."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "node_express_1",
+      "english": "Listen Method",
+      "set": {
+        "task": "Avvia il server Express in ascolto sulla porta 3000 invocando app.listen."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "node_express_1",
+      "english": "Hello World",
+      "set": {
+        "task": "Registra una rotta GET su '/' che risponde con 'Hello!' tramite res.send per il classico smoke test."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "node_express_1",
+      "english": "Generator",
+      "set": {
+        "task": "Genera lo scaffold di un progetto Express con cartelle e middleware preconfigurati lanciando npx express-generator."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "node_express_1",
+      "english": "Send Method",
+      "set": {
+        "task": "Restituisci 'OK' come corpo della risposta tramite res.send lasciando a Express il Content-Type automatico."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "node_express_2",
+      "english": "Route",
+      "set": {
+        "task": "Registra una rotta GET sull'URL '/users' associandola alla funzione handler dichiarata."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "node_express_2",
+      "english": "app.get",
+      "set": {
+        "task": "Esponi GET /users con app.get che risponde restituendo l'array users serializzato come JSON."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "node_express_2",
+      "english": "app.post",
+      "set": {
+        "task": "Mappa POST /users sulla funzione createUser per gestire la creazione di nuovi utenti."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "node_express_2",
+      "english": "app.put",
+      "set": {
+        "task": "Associa PUT /users/:id alla funzione updateUser per sostituire integralmente la risorsa identificata."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "node_express_2",
+      "english": "app.delete",
+      "set": {
+        "task": "Collega DELETE /users/:id al gestore deleteUser per rimuovere l'utente identificato dall'id."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "node_express_2",
+      "english": "Route Parameters",
+      "set": {
+        "task": "Definisci il template di rotta /users/:id dove :id e' un parametro dinamico estraibile da req.params."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "node_express_2",
+      "english": "Wildcard Route",
+      "set": {
+        "task": "Registra una rotta wildcard '*' che cattura ogni URL non gestito invocando notFoundHandler."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "node_express_2",
+      "english": "Route Chaining",
+      "set": {
+        "task": "Concatena GET e POST sulla stessa rotta /users usando app.route per evitare la duplicazione del percorso."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "node_express_2",
+      "english": "Handler",
+      "set": {
+        "task": "Definisci una funzione handler che riceve req e res come parametri standard di Express."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "node_express_3",
+      "english": "req",
+      "set": {
+        "task": "Esamina la richiesta corrente leggendo req.params, req.query e req.body per estrarre input del client."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "node_express_3",
+      "english": "res",
+      "set": {
+        "task": "Invia una risposta JSON con status 200 concatenando res.status(200).json(data) in un'unica espressione."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "node_express_3",
+      "english": "req.params",
+      "set": {
+        "task": "Recupera l'id della risorsa dai parametri di rotta accedendo a req.params.id dentro l'handler."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "node_express_3",
+      "english": "req.query",
+      "set": {
+        "task": "Leggi il parametro di paginazione page dalla query string tramite req.query.page."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "node_express_3",
+      "english": "req.body",
+      "set": {
+        "task": "Accedi al campo email del payload JSON tramite req.body.email dopo aver montato express.json()."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "node_express_3",
+      "english": "res.json",
+      "set": {
+        "task": "Restituisci un oggetto { ok: true } come risposta JSON invocando res.json() che serializza e setta il Content-Type."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "node_express_3",
+      "english": "res.status",
+      "set": {
+        "task": "Imposta lo status 404 e concatena send('Not Found') per restituire una risposta di risorsa non trovata."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "node_express_3",
+      "english": "res.redirect",
+      "set": {
+        "task": "Reindirizza il client verso '/login' con res.redirect emettendo uno status 302."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "node_express_3",
+      "english": "res.cookie",
+      "set": {
+        "task": "Setta un cookie token sulla risposta marcandolo httpOnly cosi' il client JavaScript non puo' leggerlo."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "node_express_3",
+      "english": "res.sendFile",
+      "set": {
+        "task": "Servi al client il file all'indirizzo path tramite res.sendFile gestendo automaticamente Content-Type e stream."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "node_express_4",
+      "english": "Router",
+      "set": {
+        "task": "Crea un router modulare invocando express.Router() per raggruppare rotte correlate in un file separato."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "node_express_4",
+      "english": "Mount",
+      "set": {
+        "task": "Monta il router sotto il prefisso '/api' con app.use cosi' tutte le sue rotte ereditano quel base path."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "node_express_4",
+      "english": "app.use",
+      "set": {
+        "task": "Registra express.json() come middleware globale tramite app.use cosi' req.body viene popolato dal body JSON."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "node_express_4",
+      "english": "Static Files",
+      "set": {
+        "task": "Servi i file statici dalla cartella 'public' montando express.static() come middleware."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "node_express_4",
+      "english": "Route Module",
+      "set": {
+        "task": "Importa il router dedicato agli utenti da ./routes/users con require per mantenere le rotte ben separate."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "node_express_4",
+      "english": "View Engine",
+      "set": {
+        "task": "Configura Pug come motore di template di Express impostando app.set('view engine', 'pug')."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "node_express_4",
+      "english": "Render",
+      "set": {
+        "task": "Renderizza la vista 'index' passandole il contesto { user } tramite res.render per generare HTML lato server."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "node_api_1",
+      "english": "Versioning",
+      "set": {
+        "task": "Prefissa le rotte dell'API con /api/v1/users per supportare il versionamento e migrare i client gradualmente."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "node_api_2",
+      "english": "Create",
+      "set": {
+        "task": "Esponi un endpoint POST /users per creare una nuova risorsa utente dal body della richiesta."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "node_api_2",
+      "english": "Read",
+      "set": {
+        "task": "Recupera una singola risorsa utente con GET /users/:id leggendo l'id dai parametri di rotta."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "node_api_2",
+      "english": "PATCH Update",
+      "set": {
+        "task": "Sostituisci integralmente la risorsa con PUT /users/:id richiedendo tutti i campi nel body."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "node_api_2",
+      "english": "Soft Delete",
+      "set": {
+        "task": "Rimuovi l'utente identificato dall'id mappando l'endpoint DELETE /users/:id."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "node_api_2",
+      "english": "Collection",
+      "set": {
+        "task": "Restituisci l'intera collezione di prodotti tramite GET /products con paginazione opzionale."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "node_api_2",
+      "english": "Pagination",
+      "set": {
+        "task": "Implementa la paginazione accettando i parametri di query ?page=2&limit=20 per richieste su collezioni grandi."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "node_api_2",
+      "english": "Filtering",
+      "set": {
+        "task": "Filtra la collezione lato server leggendo il parametro di query ?status=active dalla richiesta."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "node_api_2",
+      "english": "Sorting",
+      "set": {
+        "task": "Ordina i risultati in modo decrescente sulla data passando il parametro ?sort=-createdAt all'endpoint."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "node_api_2",
+      "english": "Field Selection",
+      "set": {
+        "task": "Restituisci solo i campi id e name della risorsa interpretando il parametro ?fields=id,name della query."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "node_api_3",
+      "english": "Controller",
+      "set": {
+        "task": "Definisci il controller getUsers come funzione async esportata che riceve req e res per gestire la richiesta."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "node_api_3",
+      "english": "Schema",
+      "set": {
+        "task": "Costruisci uno schema Zod userSchema che valida un oggetto con campo name di tipo string."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "node_api_3",
+      "english": "Joi",
+      "set": {
+        "task": "Installa la libreria di validazione Joi da npm per definire schemi descrittivi di richieste e payload."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "node_api_3",
+      "english": "Zod",
+      "set": {
+        "task": "Aggiungi Zod come dipendenza tramite npm install zod per validare input con inferenza TypeScript automatica."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "node_api_4",
+      "english": "Error Response",
+      "set": {
+        "task": "Restituisci gli errori dell'API con la struttura { error: { code, message } } per dare un formato uniforme al client."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "node_api_4",
+      "english": "Hypermedia",
+      "set": {
+        "task": "Inserisci nella risposta un campo _links contenente self: '/users/1' per offrire navigabilita ipermediale in stile HATEOAS."
+      }
+    }
+  ]
+}

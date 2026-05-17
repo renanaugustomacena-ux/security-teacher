@@ -1,0 +1,964 @@
+{
+  "fixes": [
+    {
+      "level": "16",
+      "lesson": "node_api_5",
+      "english": "ws Library",
+      "set": {
+        "task": "Installa la libreria ws di basso livello per gestire i WebSocket in Node."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_5",
+      "english": "wss",
+      "set": {
+        "task": "Apri una connessione WebSocket sicura su TLS verso example.com/socket usando lo schema wss."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_6",
+      "english": "Socket.io",
+      "set": {
+        "task": "Installa la libreria socket.io per realizzare comunicazione real-time bidirezionale tra server e client."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_6",
+      "english": "Server Instance",
+      "set": {
+        "task": "Crea l'istanza io di Socket.io agganciandola al server HTTP esistente httpServer."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_6",
+      "english": "Connection Event",
+      "set": {
+        "task": "Registra un handler sull'evento connection per ricevere ogni nuovo socket connesso."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_6",
+      "english": "Socket",
+      "set": {
+        "task": "Invia l'evento message con il payload data al singolo socket connesso."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_6",
+      "english": "Room",
+      "set": {
+        "task": "Iscrivi il socket alla room chat-1 per ricevere i messaggi diretti a quel gruppo."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_6",
+      "english": "Namespace",
+      "set": {
+        "task": "Crea il namespace /chat per isolare logicamente questo canale dagli altri socket."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_6",
+      "english": "Broadcasting",
+      "set": {
+        "task": "Trasmetti l'evento announce con il messaggio msg a tutti i client connessi."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_6",
+      "english": "Acknowledgement",
+      "set": {
+        "task": "Emetti l'evento evt fornendo la callback ack che il client invocherà come conferma di ricezione."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_13",
+      "english": "Worker Thread",
+      "set": {
+        "task": "Importa la classe Worker dal modulo worker_threads per parallelizzare lavoro CPU-bound."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_13",
+      "english": "Main Thread",
+      "set": {
+        "task": "Verifica il flag isMainThread per distinguere il thread principale dai worker thread."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_13",
+      "english": "parentPort",
+      "set": {
+        "task": "Invia il valore result al thread genitore tramite parentPort.postMessage."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_13",
+      "english": "workerData",
+      "set": {
+        "task": "Avvia il worker ./w.js passando workerData come dati iniziali clonati strutturalmente."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_13",
+      "english": "Piscina",
+      "set": {
+        "task": "Installa Piscina per gestire un pool di worker thread riusabili."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_14",
+      "english": "child_process",
+      "set": {
+        "task": "Importa spawn dal modulo child_process per lanciare processi figli."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_14",
+      "english": "spawn",
+      "set": {
+        "task": "Spawna il comando ls con l'argomento -la in un nuovo processo figlio."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_14",
+      "english": "exec",
+      "set": {
+        "task": "Esegui la stringa shell ls -la e ricevi stdout completo nella callback cb."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_14",
+      "english": "execFile",
+      "set": {
+        "task": "Lancia l'eseguibile /usr/bin/git con l'argomento log evitando l'interpretazione della shell."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_14",
+      "english": "fork",
+      "set": {
+        "task": "Forka un nuovo processo Node che esegue ./worker.js con canale IPC integrato."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_14",
+      "english": "IPC",
+      "set": {
+        "task": "Spedisci l'oggetto task al processo figlio attraverso il canale IPC."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_14",
+      "english": "stdio",
+      "set": {
+        "task": "Imposta stdio su 'inherit' affinché il figlio condivida gli stream del processo padre."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_14",
+      "english": "Exit Code",
+      "set": {
+        "task": "Registra un listener sull'evento exit del figlio per leggere il codice di uscita code."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_14",
+      "english": "Kill",
+      "set": {
+        "task": "Termina il processo figlio inviandogli il segnale SIGTERM."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_15",
+      "english": "Cluster",
+      "set": {
+        "task": "Importa il modulo cluster per replicare il server su più processi worker."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_15",
+      "english": "Master",
+      "set": {
+        "task": "Verifica cluster.isPrimary per eseguire codice solo nel processo primario."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_15",
+      "english": "CPU Cores",
+      "set": {
+        "task": "Conta il numero di core CPU disponibili leggendo la lunghezza di os.cpus()."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_15",
+      "english": "Worker Crash",
+      "set": {
+        "task": "Riavvia automaticamente un worker forkando un sostituto quando il cluster emette exit."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_16",
+      "english": "p-limit",
+      "set": {
+        "task": "Configura un limitatore di concorrenza che permette al massimo 5 promise in parallelo."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_1",
+      "english": "TypeScript",
+      "set": {
+        "task": "Installa TypeScript come dipendenza di sviluppo del progetto."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_1",
+      "english": "tsc",
+      "set": {
+        "task": "Compila il progetto invocando il compilatore tsc tramite npx."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_1",
+      "english": "tsconfig.json",
+      "set": {
+        "task": "Genera un file tsconfig.json di default eseguendo tsc --init."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_1",
+      "english": "ts-node",
+      "set": {
+        "task": "Esegui direttamente app.ts senza compilazione esplicita tramite ts-node."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_1",
+      "english": "tsx",
+      "set": {
+        "task": "Avvia app.ts usando tsx, un runner TypeScript più veloce basato su esbuild."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_1",
+      "english": "Strict Mode (tsconfig)",
+      "set": {
+        "task": "Attiva l'opzione strict in tsconfig.json per abilitare tutti i controlli rigorosi del compilatore."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_1",
+      "english": "Target",
+      "set": {
+        "task": "Imposta la versione JavaScript di destinazione su ES2022 nel tsconfig."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_1",
+      "english": "Module Resolution",
+      "set": {
+        "task": "Configura moduleResolution su node per replicare la strategia di risoluzione dei moduli di Node."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_1",
+      "english": "Type Definitions",
+      "set": {
+        "task": "Aggiungi le definizioni di tipo per le API di Node installando @types/node come devDependency."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_2",
+      "english": "Type Annotation",
+      "set": {
+        "task": "Dichiara la variabile count annotandola con il tipo number e inizializzandola a 0."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_2",
+      "english": "any",
+      "set": {
+        "task": "Dichiara la variabile x con tipo any disabilitando ogni controllo statico su di essa."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_2",
+      "english": "unknown",
+      "set": {
+        "task": "Dichiara la variabile x con tipo unknown obbligando un narrowing prima dell'uso."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_2",
+      "english": "void",
+      "set": {
+        "task": "Annota il valore di ritorno della funzione log come void per indicare l'assenza di ritorno significativo."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_2",
+      "english": "Literal Type",
+      "set": {
+        "task": "Restringi la variabile dir ai soli valori letterali 'left' o 'right'."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_2",
+      "english": "Union Type",
+      "set": {
+        "task": "Componi un tipo unione che accetta sia string sia number."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_2",
+      "english": "Intersection Type",
+      "set": {
+        "task": "Combina i tipi A e B in un'intersezione che eredita simultaneamente le proprietà di entrambi."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_3",
+      "english": "Interface",
+      "set": {
+        "task": "Definisci l'interface User con un id numerico e un name di tipo stringa."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_3",
+      "english": "type Alias",
+      "set": {
+        "task": "Crea un alias di tipo ID equivalente all'unione string | number."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_3",
+      "english": "Optional Property",
+      "set": {
+        "task": "Marca la proprietà name come opzionale aggiungendo il punto interrogativo."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_3",
+      "english": "readonly",
+      "set": {
+        "task": "Rendi la proprietà id immutabile dopo l'inizializzazione con il modificatore readonly."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_3",
+      "english": "Index Signature",
+      "set": {
+        "task": "Permetti chiavi stringa arbitrarie mappate a number tramite una index signature."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_3",
+      "english": "Generic",
+      "set": {
+        "task": "Realizza una funzione identità id parametrica sul tipo T che restituisce l'argomento ricevuto."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_3",
+      "english": "Type Parameter",
+      "set": {
+        "task": "Vincola il parametro generico T affinché estenda object."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_3",
+      "english": "Enum",
+      "set": {
+        "task": "Definisci un enum Role con i due membri Admin e User."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_3",
+      "english": "Tuple",
+      "set": {
+        "task": "Dichiara la tupla pair con esattamente due elementi: una stringa seguita da un numero."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_3",
+      "english": "Record",
+      "set": {
+        "task": "Costruisci un Record con chiavi stringa e valori numerici."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_4",
+      "english": "Partial",
+      "set": {
+        "task": "Genera una versione di User con tutte le proprietà opzionali usando Partial."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_4",
+      "english": "Pick",
+      "set": {
+        "task": "Estrai da User le sole proprietà id e name tramite il tipo utility Pick."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_4",
+      "english": "Omit",
+      "set": {
+        "task": "Rimuovi la proprietà password da User costruendo il tipo derivato con Omit."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_4",
+      "english": "Type Guard",
+      "set": {
+        "task": "Scrivi un predicato isUser che restringe x al tipo User tramite la sintassi x is User."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_4",
+      "english": "Type Assertion",
+      "set": {
+        "task": "Forza il compilatore a trattare value come User tramite asserzione di tipo."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_4",
+      "english": "Mapped Type",
+      "set": {
+        "task": "Crea un mapped type che itera su keyof T preservando i tipi delle proprietà originali."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_4",
+      "english": "Conditional Type",
+      "set": {
+        "task": "Componi un tipo condizionale che restituisce X se T estende U, altrimenti Y."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_4",
+      "english": "Decorator",
+      "set": {
+        "task": "Applica il decoratore @injectable() per renderlo iniettabile dal container DI."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_4",
+      "english": "Declaration File",
+      "set": {
+        "task": "Esponi tipi globali o di modulo in un file di dichiarazione types.d.ts."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_10",
+      "english": "Constructor Injection",
+      "set": {
+        "task": "Inietta la dipendenza repo nel costruttore dichiarandola come parametro privato."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_10",
+      "english": "NestJS",
+      "set": {
+        "task": "Genera un nuovo progetto NestJS chiamato my-app tramite la CLI ufficiale."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_10",
+      "english": "Provider",
+      "set": {
+        "task": "Marca la classe con @Injectable() per registrarla come provider nel container di Nest."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_10",
+      "english": "Module (Nest)",
+      "set": {
+        "task": "Definisci un modulo Nest con il decoratore @Module dichiarando l'array dei providers."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_12",
+      "english": "src",
+      "set": {
+        "task": "Colloca il punto di ingresso index.ts dentro la cartella sorgente src/."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_12",
+      "english": "Barrel File",
+      "set": {
+        "task": "Riesporta tutto il contenuto del modulo ./user dal barrel file index.ts."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_12",
+      "english": "Linting",
+      "set": {
+        "task": "Esegui ESLint sull'intera cartella corrente per analizzare lo stile del codice."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_1",
+      "english": "Profiling",
+      "set": {
+        "task": "Avvia app.js con il flag --prof per generare un file di profilazione V8."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_1",
+      "english": "0x",
+      "set": {
+        "task": "Profila app.js con 0x per ottenere un flamegraph interattivo della CPU."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_1",
+      "english": "clinic.js",
+      "set": {
+        "task": "Lancia clinic doctor su app.js per diagnosticare problemi di event loop e memoria."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_1",
+      "english": "Performance API",
+      "set": {
+        "task": "Misura un timestamp ad alta risoluzione tramite performance.now()."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_1",
+      "english": "Autocannon",
+      "set": {
+        "task": "Sottoponi http://localhost:3000 a un test di carico con 100 connessioni concorrenti via autocannon."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_2",
+      "english": "Heap Limit",
+      "set": {
+        "task": "Aumenta il limite della old-space dell'heap V8 a 4096 MB per app.js."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_2",
+      "english": "process.memoryUsage",
+      "set": {
+        "task": "Stampa il report sull'uso di memoria del processo Node corrente."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_3",
+      "english": "Redis",
+      "set": {
+        "task": "Installa ioredis come client Redis ad alte prestazioni per Node."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_3",
+      "english": "TTL",
+      "set": {
+        "task": "Salva la coppia key/val in Redis con un TTL di scadenza di 60 secondi."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_1",
+      "english": "PM2",
+      "set": {
+        "task": "Installa globalmente il process manager PM2 tramite npm."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_1",
+      "english": "pm2 start",
+      "set": {
+        "task": "Avvia app.js con PM2 forkando un'istanza per ogni core CPU disponibile."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_1",
+      "english": "Cluster Mode",
+      "set": {
+        "task": "Attiva la cluster mode di PM2 con -i max per scalare app.js su tutti i core."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_1",
+      "english": "Ecosystem File",
+      "set": {
+        "task": "Esporta la configurazione di PM2 con la lista delle app dall'ecosystem file."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_1",
+      "english": "pm2 logs",
+      "set": {
+        "task": "Visualizza in tempo reale gli stream stdout e stderr di tutte le app gestite da PM2."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_1",
+      "english": "Memory Limit",
+      "set": {
+        "task": "Imposta max_memory_restart a 500M per fare riavviare l'app da PM2 oltre quella soglia."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_1",
+      "english": "pm2 monit",
+      "set": {
+        "task": "Apri il dashboard testuale di PM2 per monitorare CPU e memoria di ogni processo."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_1",
+      "english": "pm2 startup",
+      "set": {
+        "task": "Genera lo script di systemd per PM2 e salva l'elenco dei processi correnti."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_2",
+      "english": "Dockerfile",
+      "set": {
+        "task": "Parti dall'immagine ufficiale node:20-alpine nel Dockerfile per un container leggero."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_2",
+      "english": "Multi-Stage Build",
+      "set": {
+        "task": "Apri lo stage builder basato su node:20 per compilare l'app prima di copiarla nello stage finale."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_2",
+      "english": "Alpine Image",
+      "set": {
+        "task": "Scegli node:20-alpine come immagine base per beneficiare delle dimensioni ridotte di Alpine."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_2",
+      "english": ".dockerignore",
+      "set": {
+        "task": "Escludi node_modules e la cartella .git dal contesto di build tramite il file .dockerignore."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_2",
+      "english": "docker-compose",
+      "set": {
+        "task": "Avvia tutti i servizi definiti nel docker-compose.yml in modalità detached."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_2",
+      "english": "docker build",
+      "set": {
+        "task": "Costruisci l'immagine Docker dal contesto corrente etichettandola come myapp."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_3",
+      "english": "Environment Variable",
+      "set": {
+        "task": "Leggi la variabile d'ambiente PORT dal process.env del processo Node."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_3",
+      "english": "NODE_ENV",
+      "set": {
+        "task": "Avvia app.js impostando NODE_ENV su production per disattivare ottimizzazioni di sviluppo."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_3",
+      "english": ".env File",
+      "set": {
+        "task": "Centralizza variabili come PORT e DB_URL in un file .env caricato all'avvio."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_3",
+      "english": "dotenv",
+      "set": {
+        "task": "Installa dotenv per caricare automaticamente le variabili del file .env in process.env."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_4",
+      "english": "Health Check",
+      "set": {
+        "task": "Esponi un endpoint GET /health che risponde con OK per il probe di liveness."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_4",
+      "english": "Graceful Shutdown",
+      "set": {
+        "task": "Registra l'handler shutdown sul segnale SIGTERM per terminare l'app in modo pulito."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_4",
+      "english": "Drain Connections",
+      "set": {
+        "task": "Chiudi il server impedendo nuove connessioni mentre quelle in corso terminano."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "node_api_10",
+      "english": "RabbitMQ",
+      "set": {
+        "task": "Installa amqplib, il client Node ufficiale per parlare con un broker RabbitMQ."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "node_api_10",
+      "english": "BullMQ",
+      "set": {
+        "task": "Installa BullMQ per gestire code di job durature appoggiate su Redis."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "node_api_10",
+      "english": "Job",
+      "set": {
+        "task": "Accoda un job send-email con il payload data sulla coda BullMQ."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "node_api_11",
+      "english": ".proto File",
+      "set": {
+        "task": "Definisci nel file .proto il servizio Greeter con la rpc SayHi per gRPC."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_13",
+      "english": "Workspace",
+      "set": {
+        "task": "Dichiara nel package.json l'array workspaces che include tutte le cartelle sotto packages/."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_13",
+      "english": "pnpm",
+      "set": {
+        "task": "Installa tutte le dipendenze del monorepo usando pnpm, il package manager con store condiviso."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_13",
+      "english": "Nx",
+      "set": {
+        "task": "Esegui il target build sul progetto app del monorepo gestito da Nx."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_13",
+      "english": "Project Reference",
+      "set": {
+        "task": "Collega il pacchetto ../core come project reference TypeScript nel tsconfig."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_14",
+      "english": "npm publish",
+      "set": {
+        "task": "Pubblica il pacchetto corrente sul registro npm con il comando standard di publish."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_14",
+      "english": "Public Package",
+      "set": {
+        "task": "Pubblica il pacchetto come pubblico passando --access public, obbligatorio per gli scoped."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_14",
+      "english": "Scoped Package",
+      "set": {
+        "task": "Prefissa il nome del pacchetto con lo scope @my-org per raggrupparlo sotto l'organizzazione."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_14",
+      "english": "Private Package",
+      "set": {
+        "task": "Imposta private a true nel package.json per impedire la pubblicazione accidentale su npm."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_14",
+      "english": "Version Bump",
+      "set": {
+        "task": "Incrementa il numero di patch nel package.json eseguendo npm version patch."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_14",
+      "english": "Conventional Commits",
+      "set": {
+        "task": "Annota i commit con prefissi semantici come feat e fix per supportare il versionamento automatico."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_14",
+      "english": "npm Tag",
+      "set": {
+        "task": "Pubblica una pre-release etichettandola con il dist-tag beta invece del default latest."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_14",
+      "english": "Deprecate",
+      "set": {
+        "task": "Marca come deprecate tutte le versioni 1.x del pacchetto suggerendo l'aggiornamento a 2.x."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_15",
+      "english": "ESLint",
+      "set": {
+        "task": "Analizza l'intera cartella corrente con ESLint per individuare violazioni delle regole."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_15",
+      "english": "Prettier",
+      "set": {
+        "task": "Formatta in place tutti i file del progetto con Prettier."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_15",
+      "english": "Husky",
+      "set": {
+        "task": "Inizializza Husky nel repository per gestire hook git come pre-commit."
+      }
+    }
+  ]
+}

@@ -1,207 +1,1644 @@
-{"fixes":[
-{"level":"0","lesson":"Variables & Main / Variabili e Main","english":"Variable","set":{"task":"Dichiara una variabile intera x e assegnale il valore 5, specificando esplicitamente il tipo come richiede il C."}},
-{"level":"0","lesson":"Variables & Main / Variabili e Main","english":"Function","set":{"task":"Definisci una funzione greet senza parametri ne' valore di ritorno che stampa \"Hello\" usando printf."}},
-{"level":"0","lesson":"Variables & Main / Variabili e Main","english":"Main Function","set":{"task":"Scrivi la funzione main come punto di ingresso del programma restituendo 0 per segnalare terminazione corretta al sistema operativo."}},
-{"level":"0","lesson":"Variables & Main / Variabili e Main","english":"Return Value","set":{"task":"Restituisci 0 da main per indicare al sistema operativo che il programma e' terminato senza errori."}},
-{"level":"0","lesson":"Variables & Main / Variabili e Main","english":"printf","set":{"task":"Stampa la stringa \"Hello, World!\" seguita da un newline usando printf, la funzione standard di output formattato."}},
-{"level":"0","lesson":"Variables & Main / Variabili e Main","english":"scanf","set":{"task":"Leggi un intero dall'utente con scanf usando il format \"%d\" e l'operatore indirizzo-di per popolare x."}},
-{"level":"0","lesson":"Variables & Main / Variabili e Main","english":"Header File","set":{"task":"Includi il file di intestazione stdio.h per accedere alle funzioni di I/O standard come printf e scanf."}},
-{"level":"0","lesson":"Basic I/O & Comments / I/O di Base e Commenti","english":"Comment","set":{"task":"Aggiungi un commento multi-riga delimitato da /* e */ per documentare il codice senza influenzare la compilazione."}},
-{"level":"0","lesson":"Basic I/O & Comments / I/O di Base e Commenti","english":"Single-Line Comment","set":{"task":"Inserisci un commento su singola riga con // per annotare il codice fino alla fine della riga."}},
-{"level":"0","lesson":"Basic I/O & Comments / I/O di Base e Commenti","english":"Format Specifier","set":{"task":"Usa lo specificatore di formato %d in printf per stampare il valore di una variabile intera x."}},
-{"level":"0","lesson":"Basic I/O & Comments / I/O di Base e Commenti","english":"Newline Character","set":{"task":"Aggiungi il carattere di nuova riga \\n alla fine della stringa per portare il cursore sulla riga successiva."}},
-{"level":"0","lesson":"Basic I/O & Comments / I/O di Base e Commenti","english":"Escape Sequence","set":{"task":"Riconosci le sequenze di escape come \\n, \\t, \\\\ e \\0 che rappresentano caratteri speciali nelle stringhe C."}},
-{"level":"0","lesson":"Basic I/O & Comments / I/O di Base e Commenti","english":"Curly Braces","set":{"task":"Delimita il corpo di un blocco if con parentesi graffe per raggruppare piu' istruzioni eseguite condizionalmente."}},
-{"level":"0","lesson":"Compilation & Execution / Compilazione ed Esecuzione","english":"Compilation","set":{"task":"Compila main.c con gcc producendo l'eseguibile main tramite l'opzione -o che specifica il nome del file di output."}},
-{"level":"0","lesson":"Compilation & Execution / Compilazione ed Esecuzione","english":"Executable","set":{"task":"Esegui l'eseguibile main dalla directory corrente con ./main per lanciare il programma compilato."}},
-{"level":"0","lesson":"Compilation & Execution / Compilazione ed Esecuzione","english":"Warning","set":{"task":"Compila main.c attivando i warning con -Wall per scoprire pratiche di codice rischiose prima dell'esecuzione."}},
-{"level":"0","lesson":"Compilation & Execution / Compilazione ed Esecuzione","english":"Preprocessor","set":{"task":"Usa la direttiva preprocessore #include per importare stdio.h prima della fase di compilazione vera e propria."}},
-{"level":"0","lesson":"Compilation & Execution / Compilazione ed Esecuzione","english":"Object File","set":{"task":"Compila main.c in file oggetto con il flag -c senza creare l'eseguibile finale, utile per build multi-modulo."}},
-{"level":"0","lesson":"Program Structure / Struttura del Programma","english":"Declaration","set":{"task":"Dichiara la variabile intera x senza inizializzarla, riservando lo spazio in memoria ma lasciando il contenuto indefinito."}},
-{"level":"0","lesson":"Program Structure / Struttura del Programma","english":"Definition","set":{"task":"Definisci la variabile x come intero allocando memoria e assegnando contemporaneamente il valore iniziale 10."}},
-{"level":"0","lesson":"Program Structure / Struttura del Programma","english":"Initialization","set":{"task":"Inizializza count a 0 al momento della dichiarazione per evitare di leggere un valore indeterminato dalla memoria."}},
-{"level":"0","lesson":"Program Structure / Struttura del Programma","english":"Assignment","set":{"task":"Assegna il valore 42 alla variabile x gia' dichiarata usando l'operatore di assegnamento ="}},
-{"level":"0","lesson":"Program Structure / Struttura del Programma","english":"Constant","set":{"task":"Definisci una costante intera MAX di valore 100 con il qualificatore const per impedirne modifiche successive."}},
-{"level":"0","lesson":"Program Structure / Struttura del Programma","english":"Block","set":{"task":"Racchiudi una dichiarazione locale di x e la sua stampa in un blocco con parentesi graffe per limitarne lo scope."}},
-{"level":"0","lesson":"Program Structure / Struttura del Programma","english":"Data Type","set":{"task":"Riconosci i tipi di dato fondamentali del C come int, float, char e double per scegliere quello adatto al dominio."}},
-{"level":"1","lesson":"Integer Types / Tipi Interi","english":"Integer","set":{"task":"Dichiara una variabile intera age inizializzata a 25 usando il tipo int, l'intero standard del C."}},
-{"level":"1","lesson":"Integer Types / Tipi Interi","english":"Short","set":{"task":"Usa il tipo short per dichiarare s a 100 quando vuoi risparmiare memoria rispetto a un int classico."}},
-{"level":"1","lesson":"Integer Types / Tipi Interi","english":"Long","set":{"task":"Dichiara la variabile long big con il letterale 1000000L per rappresentare interi di grande ampiezza."}},
-{"level":"1","lesson":"Integer Types / Tipi Interi","english":"Unsigned","set":{"task":"Dichiara count come unsigned int inizializzato a 0 quando il valore non puo' mai essere negativo."}},
-{"level":"1","lesson":"Integer Types / Tipi Interi","english":"sizeof","set":{"task":"Stampa con %zu la dimensione in byte del tipo int restituita dall'operatore sizeof per ispezionare l'architettura."}},
-{"level":"1","lesson":"Floating Point & Char / Virgola Mobile e Caratteri","english":"Float","set":{"task":"Dichiara la variabile pi come float inizializzata a 3.14f, usando il suffisso f per evitare la promozione a double."}},
-{"level":"1","lesson":"Floating Point & Char / Virgola Mobile e Caratteri","english":"Double","set":{"task":"Dichiara pi come double con maggiore precisione assegnando 3.14159265358979 quando serve accuratezza nei calcoli."}},
-{"level":"1","lesson":"Floating Point & Char / Virgola Mobile e Caratteri","english":"Character","set":{"task":"Dichiara letter come char inizializzato al carattere 'A' fra apici singoli, che corrisponde al codice ASCII 65."}},
-{"level":"1","lesson":"Floating Point & Char / Virgola Mobile e Caratteri","english":"Boolean","set":{"task":"Includi stdbool.h e dichiara flag come bool inizializzato a true per usare booleani semantici invece di interi."}},
-{"level":"1","lesson":"Floating Point & Char / Virgola Mobile e Caratteri","english":"Void","set":{"task":"Definisci sayHello come funzione void che stampa \"Hi\" senza restituire alcun valore al chiamante."}},
-{"level":"1","lesson":"Floating Point & Char / Virgola Mobile e Caratteri","english":"Type Casting","set":{"task":"Converti esplicitamente il valore 3.14 a int con un cast, troncando la parte frazionaria e ottenendo 3."}},
-{"level":"1","lesson":"Floating Point & Char / Virgola Mobile e Caratteri","english":"typedef","set":{"task":"Crea un alias di tipo uint per unsigned int con typedef per migliorare la leggibilita' delle dichiarazioni."}},
-{"level":"1","lesson":"Type Modifiers / Modificatori di Tipo","english":"long long","set":{"task":"Dichiara big come long long con il valore massimo a 64 bit usando il letterale 9223372036854775807LL."}},
-{"level":"1","lesson":"Type Modifiers / Modificatori di Tipo","english":"Enumeration","set":{"task":"Definisci un tipo enumerato Color con i valori RED, GREEN e BLUE per rappresentare costanti simboliche."}},
-{"level":"1","lesson":"Type Modifiers / Modificatori di Tipo","english":"Literal","set":{"task":"Riconosci i letterali costanti come 42, 3.14, 'A' e \"hello\" che rappresentano valori fissi nel codice sorgente."}},
-{"level":"1","lesson":"Type Modifiers / Modificatori di Tipo","english":"Hexadecimal","set":{"task":"Dichiara hex come int inizializzato al letterale esadecimale 0xFF, ovvero 255 in decimale e 11111111 in binario."}},
-{"level":"1","lesson":"Type Modifiers / Modificatori di Tipo","english":"Octal","set":{"task":"Dichiara oct con il letterale ottale 077 dove lo zero iniziale segnala base 8 al compilatore, valore decimale 63."}},
-{"level":"1","lesson":"Type Modifiers / Modificatori di Tipo","english":"size_t","set":{"task":"Usa il tipo size_t per la variabile len che conserva il risultato di strlen, idoneo a contenere qualsiasi dimensione."}},
-{"level":"1","lesson":"Constants & Limits / Costanti e Limiti","english":"Macro Constant","set":{"task":"Definisci la costante macro MAX_SIZE pari a 100 con #define affinche' il preprocessore la sostituisca prima della compilazione."}},
-{"level":"1","lesson":"Constants & Limits / Costanti e Limiti","english":"INT_MAX","set":{"task":"Includi limits.h per accedere a INT_MAX che rappresenta il massimo valore rappresentabile da un int sulla tua piattaforma."}},
-{"level":"1","lesson":"Constants & Limits / Costanti e Limiti","english":"INT_MIN","set":{"task":"Stampa con %d il valore di INT_MIN per ispezionare il minimo intero rappresentabile sul sistema corrente."}},
-{"level":"1","lesson":"Constants & Limits / Costanti e Limiti","english":"FLT_MAX","set":{"task":"Includi float.h per ottenere costanti come FLT_MAX che indicano i limiti dei tipi in virgola mobile."}},
-{"level":"1","lesson":"Constants & Limits / Costanti e Limiti","english":"const","set":{"task":"Qualifica la variabile MAX con const e valore 100 per renderne immutabile il contenuto dopo l'inizializzazione."}},
-{"level":"1","lesson":"Constants & Limits / Costanti e Limiti","english":"Storage Class","set":{"task":"Distingui le classi di memorizzazione auto, static, extern e register che controllano durata e visibilita' delle variabili."}},
-{"level":"1","lesson":"Constants & Limits / Costanti e Limiti","english":"static","set":{"task":"Dichiara count come static int inizializzato a 0 per conservarne il valore tra chiamate successive della funzione."}},
-{"level":"1","lesson":"Constants & Limits / Costanti e Limiti","english":"extern","set":{"task":"Dichiara extern int globalVar per riferirti a una variabile globale definita in un altro file sorgente."}},
-{"level":"2","lesson":"Arithmetic & Comparison / Aritmetica e Confronto","english":"Arithmetic Operator","set":{"task":"Utilizza gli operatori aritmetici +, -, *, / e % per somma, sottrazione, moltiplicazione, divisione e resto tra valori."}},
-{"level":"2","lesson":"Arithmetic & Comparison / Aritmetica e Confronto","english":"Modulus Operator","set":{"task":"Calcola con l'operatore modulo % il resto della divisione intera 10 / 3, ottenendo 1 nella variabile r."}},
-{"level":"2","lesson":"Arithmetic & Comparison / Aritmetica e Confronto","english":"Increment","set":{"task":"Incrementa la variabile i di 1 con i++ o ++i, scegliendo la forma postfissa o prefissa secondo il timing voluto."}},
-{"level":"2","lesson":"Arithmetic & Comparison / Aritmetica e Confronto","english":"Decrement","set":{"task":"Decrementa il valore di i di 1 con l'operatore -- nella forma postfissa per ridurlo dopo averlo letto."}},
-{"level":"2","lesson":"Arithmetic & Comparison / Aritmetica e Confronto","english":"Comparison Operator","set":{"task":"Combina i sei operatori di confronto ==, !=, <, >, <= e >= per costruire condizioni booleane in espressioni di test."}},
-{"level":"2","lesson":"Arithmetic & Comparison / Aritmetica e Confronto","english":"Equality Operator","set":{"task":"Verifica con l'operatore di uguaglianza == se la variabile x vale 5, ricordando che = farebbe invece assegnamento."}},
-{"level":"2","lesson":"Arithmetic & Comparison / Aritmetica e Confronto","english":"Logical Operator","set":{"task":"Usa gli operatori logici &&, || e ! per combinare e negare condizioni booleane all'interno di if e while."}},
-{"level":"2","lesson":"Arithmetic & Comparison / Aritmetica e Confronto","english":"Logical AND","set":{"task":"Verifica con && che x sia compreso tra 0 e 100 escluso, requisito tipico per validare un range in input."}},
-{"level":"2","lesson":"Arithmetic & Comparison / Aritmetica e Confronto","english":"Logical OR","set":{"task":"Verifica con l'operatore OR logico || se x vale 0 oppure 1, classico filtro per opzioni booleane."}},
-{"level":"2","lesson":"Arithmetic & Comparison / Aritmetica e Confronto","english":"Negation","set":{"task":"Nega con l'operatore ! la variabile booleana done per entrare nel ramo if quando il flag non e' ancora attivo."}},
-{"level":"2","lesson":"If & Switch / If e Switch","english":"If Statement","set":{"task":"Costruisci un'istruzione if che stampi \"positive\" quando la variabile x e' strettamente maggiore di 0."}},
-{"level":"2","lesson":"If & Switch / If e Switch","english":"Else Clause","set":{"task":"Aggiungi una clausola else a un if su x>0 per eseguire un blocco alternativo quando la condizione e' falsa."}},
-{"level":"2","lesson":"If & Switch / If e Switch","english":"Else If","set":{"task":"Concatena else if dopo l'if iniziale per distinguere il caso x>0 dal caso x==0 con un'unica scala condizionale."}},
-{"level":"2","lesson":"If & Switch / If e Switch","english":"Ternary Operator","set":{"task":"Calcola il massimo tra a e b con l'operatore ternario ? : per assegnare in una sola espressione il risultato a max."}},
-{"level":"2","lesson":"If & Switch / If e Switch","english":"Switch Statement","set":{"task":"Implementa uno switch sulla variabile x con un case per il valore 1, terminando il ramo con break per evitare fall-through."}},
-{"level":"2","lesson":"If & Switch / If e Switch","english":"Case Label","set":{"task":"Aggiungi un'etichetta case 1 in uno switch che stampi \"one\" e termini con break per uscire dal blocco."}},
-{"level":"2","lesson":"If & Switch / If e Switch","english":"Default Case","set":{"task":"Aggiungi un caso default in uno switch per gestire tutti i valori non coperti dai case espliciti, stampando \"other\"."}},
-{"level":"2","lesson":"If & Switch / If e Switch","english":"Break Statement","set":{"task":"Utilizza l'istruzione break per uscire immediatamente dal ciclo o dal blocco switch corrente."}},
-{"level":"2","lesson":"Loops / Cicli","english":"For Loop","set":{"task":"Scrivi un ciclo for che inizializzi i a 0, iteri finche' i<10 e incrementi i di 1 ad ogni passaggio."}},
-{"level":"2","lesson":"Loops / Cicli","english":"While Loop","set":{"task":"Crea un ciclo while che continui a decrementare x di 1 finche' la variabile resta positiva."}},
-{"level":"2","lesson":"Loops / Cicli","english":"Do-While Loop","set":{"task":"Scrivi un ciclo do-while che esegua il corpo almeno una volta e poi continui finche' x e' maggiore di 0."}},
-{"level":"2","lesson":"Loops / Cicli","english":"Loop Counter","set":{"task":"Dichiara il contatore i come int locale all'interno della clausola di inizializzazione del for per limitarne lo scope."}},
-{"level":"2","lesson":"Loops / Cicli","english":"Infinite Loop","set":{"task":"Costruisci un ciclo infinito con while(1) per attendere eventi, prevedendo un'uscita interna con break o return."}},
-{"level":"2","lesson":"Loops / Cicli","english":"Continue Statement","set":{"task":"Usa continue quando i vale 5 per saltare il resto dell'iterazione corrente e passare direttamente alla successiva."}},
-{"level":"2","lesson":"Loops / Cicli","english":"Nested Loop","set":{"task":"Annida un ciclo for su j dentro uno esterno su i per percorrere ogni cella di una matrice bidimensionale."}},
-{"level":"2","lesson":"Bitwise & Assignment / Bit a Bit e Assegnamento","english":"Bitwise AND","set":{"task":"Calcola l'AND bit a bit tra a e b con l'operatore & per mantenere accesi solo i bit comuni dei due operandi."}},
-{"level":"2","lesson":"Bitwise & Assignment / Bit a Bit e Assegnamento","english":"Bitwise OR","set":{"task":"Combina i bit di a e b con l'operatore | per ottenere un risultato con tutti i bit attivi in almeno uno dei due."}},
-{"level":"2","lesson":"Bitwise & Assignment / Bit a Bit e Assegnamento","english":"Bitwise XOR","set":{"task":"Calcola lo XOR bit a bit di a e b con l'operatore ^ per ottenere i bit attivi in esattamente uno dei due operandi."}},
-{"level":"2","lesson":"Bitwise & Assignment / Bit a Bit e Assegnamento","english":"Bit Shift","set":{"task":"Esegui uno shift a sinistra di 1 di tre posizioni con << 3 ottenendo 8, una moltiplicazione veloce per 2^3."}},
-{"level":"2","lesson":"Bitwise & Assignment / Bit a Bit e Assegnamento","english":"Complement","set":{"task":"Calcola il complemento a uno di x con l'operatore ~ per invertire ogni singolo bit della rappresentazione binaria."}},
-{"level":"2","lesson":"Bitwise & Assignment / Bit a Bit e Assegnamento","english":"Compound Assignment","set":{"task":"Aggiungi 5 a x con l'assegnamento composto += come forma compatta equivalente a x = x + 5."}},
-{"level":"2","lesson":"Bitwise & Assignment / Bit a Bit e Assegnamento","english":"Comma Operator","set":{"task":"Valuta l'espressione (1, 2) con l'operatore virgola: vengono eseguite entrambe ma x riceve solo l'ultima, cioe' 2."}},
-{"level":"2","lesson":"Bitwise & Assignment / Bit a Bit e Assegnamento","english":"sizeof Operator","set":{"task":"Stampa con %zu la dimensione in byte di double restituita da sizeof, tipicamente 8 byte sui sistemi moderni."}},
-{"level":"3","lesson":"Function Basics / Basi delle Funzioni","english":"Function Declaration","set":{"task":"Dichiara il prototipo della funzione add che accetta due int e restituisce un int, senza ancora fornirne il corpo."}},
-{"level":"3","lesson":"Function Basics / Basi delle Funzioni","english":"Function Definition","set":{"task":"Definisci la funzione add che riceve a e b come int e restituisce la loro somma con return a + b."}},
-{"level":"3","lesson":"Function Basics / Basi delle Funzioni","english":"Parameter","set":{"task":"Dichiara greet con un parametro name di tipo char* per accettare una stringa passata dal chiamante."}},
-{"level":"3","lesson":"Function Basics / Basi delle Funzioni","english":"Argument","set":{"task":"Invoca la funzione greet passando il letterale \"Alice\" come argomento effettivo al parametro name."}},
-{"level":"3","lesson":"Function Basics / Basi delle Funzioni","english":"Return Statement","set":{"task":"Termina la funzione con return result restituendo al chiamante il valore calcolato e abbandonando il body."}},
-{"level":"3","lesson":"Function Basics / Basi delle Funzioni","english":"Function Call","set":{"task":"Chiama la funzione add con gli argomenti 3 e 5 assegnando il risultato della somma a sum."}},
-{"level":"3","lesson":"Function Basics / Basi delle Funzioni","english":"Void Function","set":{"task":"Definisci printHello come funzione void senza parametri che stampa \"Hello\" e non restituisce nulla."}},
-{"level":"3","lesson":"Function Basics / Basi delle Funzioni","english":"Return Type","set":{"task":"Specifica int come tipo di ritorno della funzione add che riceve due int e produce un nuovo intero."}},
-{"level":"3","lesson":"Pass by Value / Passaggio per Valore","english":"Recursion","set":{"task":"Implementa fact in modo ricorsivo: restituisci 1 per n <= 1 altrimenti n moltiplicato per fact(n-1)."}},
-{"level":"3","lesson":"Pass by Value / Passaggio per Valore","english":"Variadic Function","set":{"task":"Dichiara una funzione variadic come printf usando const char* per il formato e ... per il numero variabile di argomenti."}},
-{"level":"3","lesson":"Scope & Lifetime / Ambito e Durata","english":"Static Variable","set":{"task":"Dichiara count come static int inizializzato a 0 e incrementalo per conservare lo stato fra chiamate successive."}},
-{"level":"3","lesson":"Scope & Lifetime / Ambito e Durata","english":"Register Variable","set":{"task":"Suggerisci al compilatore di tenere i in un registro CPU con register int i, anche se le scelte moderne lo ignorano."}},
-{"level":"3","lesson":"Scope & Lifetime / Ambito e Durata","english":"Internal Linkage","set":{"task":"Marca la funzione helper come static per darle collegamento interno e renderla invisibile fuori dal file sorgente."}},
-{"level":"3","lesson":"Standard Functions / Funzioni Standard","english":"puts","set":{"task":"Stampa la stringa \"Hello World\" con puts, che aggiunge automaticamente un newline al termine."}},
-{"level":"3","lesson":"Standard Functions / Funzioni Standard","english":"getchar","set":{"task":"Leggi un singolo carattere dallo standard input nella variabile c usando getchar dalla libreria standard."}},
-{"level":"3","lesson":"Standard Functions / Funzioni Standard","english":"putchar","set":{"task":"Stampa il singolo carattere 'A' sullo standard output con putchar, complemento di getchar."}},
-{"level":"3","lesson":"Standard Functions / Funzioni Standard","english":"atoi","set":{"task":"Converti la stringa \"42\" in intero con atoi, assegnando il risultato 42 a n senza segnalazione di errore."}},
-{"level":"3","lesson":"Standard Functions / Funzioni Standard","english":"exit","set":{"task":"Termina immediatamente il programma con exit(EXIT_SUCCESS) restituendo successo al sistema operativo."}},
-{"level":"3","lesson":"Standard Functions / Funzioni Standard","english":"abs","set":{"task":"Calcola il valore assoluto di -5 con abs ottenendo 5, utile per eliminare il segno da grandezze numeriche."}},
-{"level":"3","lesson":"Standard Functions / Funzioni Standard","english":"rand","set":{"task":"Genera un intero pseudo-casuale tra 0 e 99 calcolando rand() % 100 dopo aver impostato il seme."}},
-{"level":"3","lesson":"Standard Functions / Funzioni Standard","english":"srand","set":{"task":"Imposta il seme di rand passando time(NULL) a srand per ottenere sequenze diverse ad ogni esecuzione."}},
-{"level":"3","lesson":"Standard Functions / Funzioni Standard","english":"sprintf","set":{"task":"Costruisci con sprintf nel buffer buf da 50 byte la stringa \"Age: 25\" sostituendo %d con il valore numerico."}},
-{"level":"3","lesson":"Standard Functions / Funzioni Standard","english":"sscanf","set":{"task":"Estrai un intero dalla stringa \"42\" con sscanf usando il format \"%d\" e l'indirizzo di n come destinazione."}},
-{"level":"4","lesson":"Array Basics / Basi degli Array","english":"Array","set":{"task":"Dichiara nums come array di 5 int inizializzando esplicitamente ogni cella con i valori 1, 2, 3, 4 e 5."}},
-{"level":"4","lesson":"Array Basics / Basi degli Array","english":"Array Index","set":{"task":"Estrai il primo elemento dell'array nums accedendo all'indice 0, ricordando che in C gli indici partono da zero."}},
-{"level":"4","lesson":"Array Basics / Basi degli Array","english":"Array Declaration","set":{"task":"Dichiara un array scores di 100 int senza inizializzarlo, riservando spazio sufficiente sullo stack."}},
-{"level":"4","lesson":"Array Basics / Basi degli Array","english":"Array Initialization","set":{"task":"Inizializza l'array a senza specificare la dimensione: il compilatore deduce la lunghezza dai tre valori 10, 20, 30."}},
-{"level":"4","lesson":"Array Basics / Basi degli Array","english":"Array Size","set":{"task":"Calcola la lunghezza dell'array a in elementi dividendo sizeof(a) per sizeof(a[0]) evitando hard-coded magic numbers."}},
-{"level":"4","lesson":"Multidimensional Arrays / Array Multidimensionali","english":"Two-Dimensional Array","set":{"task":"Dichiara matrix come array bidimensionale 3x4 di int per rappresentare una griglia con 3 righe e 4 colonne."}},
-{"level":"4","lesson":"Multidimensional Arrays / Array Multidimensionali","english":"Row","set":{"task":"Accedi alla prima riga di matrix indicizzando con matrix[0][j] per scorrere le colonne della riga zero."}},
-{"level":"4","lesson":"Multidimensional Arrays / Array Multidimensionali","english":"Matrix","set":{"task":"Inizializza m come matrice identita' 3x3 di int specificando esplicitamente ogni riga con valori binari diagonali."}},
-{"level":"4","lesson":"Multidimensional Arrays / Array Multidimensionali","english":"Multidimensional Array","set":{"task":"Dichiara cube come array tridimensionale 3x3x3 di int per modellare una struttura volumetrica come un voxel grid."}},
-{"level":"4","lesson":"Multidimensional Arrays / Array Multidimensionali","english":"Array of Strings","set":{"task":"Dichiara names come array di 3 stringhe da 20 caratteri ciascuna, popolato con \"Alice\", \"Bob\" ed \"Eve\"."}},
-{"level":"4","lesson":"Multidimensional Arrays / Array Multidimensionali","english":"Variable-Length Array","set":{"task":"Dichiara un array a lunghezza variabile arr di n=10 int sullo stack, usando una feature di C99 da evitare in produzione."}},
-{"level":"4","lesson":"Multidimensional Arrays / Array Multidimensionali","english":"Designated Initializer","set":{"task":"Usa inizializzatori designati per dare 10 alla posizione 2 e 20 alla posizione 4 dell'array a, lasciando il resto a zero."}},
-{"level":"4","lesson":"Array Operations / Operazioni su Array","english":"Traversal","set":{"task":"Attraversa l'array a con un ciclo for da 0 a n-1 stampando ogni elemento separato da spazio con %d."}},
-{"level":"4","lesson":"Array Operations / Operazioni su Array","english":"Swap","set":{"task":"Scambia i valori di a e b usando la variabile temporanea tmp per evitare la perdita del valore originale."}},
-{"level":"4","lesson":"Array Operations / Operazioni su Array","english":"Array Copy","set":{"task":"Copia tutti i byte di src in dest con memcpy passando sizeof(src) come lunghezza, attento agli array non sovrapposti."}},
-{"level":"4","lesson":"Array Operations / Operazioni su Array","english":"Array as Parameter","set":{"task":"Definisci fill che riceve un array arr e la sua dimensione size, ricordando che il primo decade a puntatore."}},
-{"level":"4","lesson":"Array Operations / Operazioni su Array","english":"Buffer","set":{"task":"Alloca sullo stack un buffer di 1024 caratteri come area temporanea per lettura o composizione di dati."}},
-{"level":"4","lesson":"Strings as Arrays / Stringhe come Array","english":"String","set":{"task":"Dichiara name come array di char inizializzato con il letterale \"Alice\", che include automaticamente il terminatore nullo."}},
-{"level":"4","lesson":"Strings as Arrays / Stringhe come Array","english":"Null Terminator","set":{"task":"Riconosci il terminatore nullo '\\0' che marca la fine di ogni stringa C consentendo a strlen di calcolarne la lunghezza."}},
-{"level":"4","lesson":"Strings as Arrays / Stringhe come Array","english":"String Literal","set":{"task":"Usa il letterale stringa \"Hello, World!\" che il compilatore alloca in memoria di sola lettura terminandolo con \\0."}},
-{"level":"4","lesson":"Strings as Arrays / Stringhe come Array","english":"Character Array","set":{"task":"Dichiara s come array di char inizializzato con \"hello\" e poi sostituisci s[0] con 'H' per dimostrare la mutabilita'."}},
-{"level":"4","lesson":"Strings as Arrays / Stringhe come Array","english":"strlen","set":{"task":"Misura la lunghezza della stringa \"hello\" con strlen ottenendo 5, escluso il terminatore nullo finale."}},
-{"level":"4","lesson":"Strings as Arrays / Stringhe come Array","english":"strcpy","set":{"task":"Copia il contenuto di src in dest con strcpy, assicurandoti preventivamente che dest abbia spazio sufficiente."}},
-{"level":"4","lesson":"Strings as Arrays / Stringhe come Array","english":"strcmp","set":{"task":"Verifica con strcmp se le stringhe a e b sono uguali controllando che il risultato sia 0."}},
-{"level":"4","lesson":"Strings as Arrays / Stringhe come Array","english":"strcat","set":{"task":"Appendi \" World\" alla stringa dest con strcat, garantendo che dest disponga di spazio per i caratteri aggiuntivi."}},
-{"level":"4","lesson":"Strings as Arrays / Stringhe come Array","english":"String Pointer","set":{"task":"Dichiara msg come puntatore a const char inizializzato con \"Hello\" per referenziare il letterale senza copiarlo."}},
-{"level":"5","lesson":"Pointer Basics / Basi dei Puntatori","english":"Pointer","set":{"task":"Dichiara ptr come puntatore a int usando l'asterisco prima del nome, senza ancora assegnargli alcun indirizzo."}},
-{"level":"5","lesson":"Pointer Basics / Basi dei Puntatori","english":"Address","set":{"task":"Stampa con %p l'indirizzo di memoria di x ottenuto applicando l'operatore & per ispezionare la sua locazione."}},
-{"level":"5","lesson":"Pointer Basics / Basi dei Puntatori","english":"Address-of Operator","set":{"task":"Inizializza il puntatore p facendolo puntare a x tramite l'operatore indirizzo-di & posto davanti alla variabile."}},
-{"level":"5","lesson":"Pointer Basics / Basi dei Puntatori","english":"Dereference","set":{"task":"Leggi il valore puntato da ptr con l'operatore di dereferenziazione * salvandolo nella variabile value."}},
-{"level":"5","lesson":"Pointer Basics / Basi dei Puntatori","english":"NULL Pointer","set":{"task":"Inizializza ptr a NULL come indicazione esplicita che non punta ad alcuna locazione valida, evitando puntatori penzolanti."}},
-{"level":"5","lesson":"Pointer Basics / Basi dei Puntatori","english":"Pointer Arithmetic","set":{"task":"Avanza ptr di una posizione con ptr++ che incrementa l'indirizzo di sizeof(*ptr) byte secondo il tipo puntato."}},
-{"level":"5","lesson":"Pointer Basics / Basi dei Puntatori","english":"Pointer Type","set":{"task":"Distingui i puntatori per tipo dichiarando fp come float* e ip come int*, poiche' aritmetica e dereferenza dipendono da esso."}},
-{"level":"5","lesson":"Pointer Basics / Basi dei Puntatori","english":"Pointer to Array","set":{"task":"Inizializza p con il nome dell'array a, sfruttando il decadimento implicito di un array nel puntatore al primo elemento."}},
-{"level":"5","lesson":"Pointers & Arrays / Puntatori e Array","english":"Array Name as Pointer","set":{"task":"Ricorda che il nome dell'array a equivale a &a[0]: usalo come puntatore al primo elemento nella maggior parte dei contesti."}},
-{"level":"5","lesson":"Pointers & Arrays / Puntatori e Array","english":"Pointer Offset","set":{"task":"Accedi al terzo elemento puntato da ptr tramite *(ptr+2), forma equivalente a ptr[2] in notazione a indice."}},
-{"level":"5","lesson":"Pointers & Arrays / Puntatori e Array","english":"Subscript Notation","set":{"task":"Verifica che la notazione a indice a[i] sia equivalente a *(a+i), espressione dimostrabile a partire dall'aritmetica dei puntatori."}},
-{"level":"5","lesson":"Pointers & Arrays / Puntatori e Array","english":"Pointer Comparison","set":{"task":"Confronta ptr1 e ptr2 con l'operatore < per verificare quale dei due punta a un indirizzo precedente in memoria."}},
-{"level":"5","lesson":"Pointers & Arrays / Puntatori e Array","english":"Pointer Difference","set":{"task":"Calcola la differenza tra ptr2 e ptr1 in ptrdiff_t per ottenere il numero di elementi che separano i due puntatori."}},
-{"level":"5","lesson":"Pointers & Arrays / Puntatori e Array","english":"Pass by Reference","set":{"task":"Definisci swap che riceve a e b come puntatori a int per modificare le variabili originali tramite dereferenziazione."}},
-{"level":"5","lesson":"Pointers & Arrays / Puntatori e Array","english":"Pointer Parameter","set":{"task":"Definisci increment che riceve val come int* e incrementa il valore puntato con (*val)++, modificando il chiamante."}},
-{"level":"5","lesson":"Pointers & Arrays / Puntatori e Array","english":"const Pointer","set":{"task":"Dichiara ptr come puntatore costante a int rendendo immutabile l'indirizzo ma permettendo di modificare il valore puntato."}},
-{"level":"5","lesson":"Pointers & Arrays / Puntatori e Array","english":"Pointer to const","set":{"task":"Dichiara ptr come puntatore a const int impedendo di modificare il valore puntato pur potendo cambiare a chi punti."}},
-{"level":"5","lesson":"Pointer Patterns / Pattern con Puntatori","english":"Pointer to Pointer","set":{"task":"Dichiara pp come puntatore a puntatore a int e inizializzalo all'indirizzo di ptr per gestire indirezione a due livelli."}},
-{"level":"5","lesson":"Pointer Patterns / Pattern con Puntatori","english":"Indirection","set":{"task":"Dichiara ppp come puntatore a puntatore a puntatore di int per modellare livelli di indirezione tipici nelle strutture dati."}},
-{"level":"5","lesson":"Pointer Patterns / Pattern con Puntatori","english":"Dynamic Array","set":{"task":"Alloca dinamicamente un array di n interi sull'heap con malloc, calcolando la dimensione totale come n*sizeof(int)."}},
-{"level":"5","lesson":"Pointer Patterns / Pattern con Puntatori","english":"Pointer Casting","set":{"task":"Alloca 10 byte con malloc ottenendo un void* e convertilo esplicitamente a int* per usarlo come array tipizzato."}},
-{"level":"5","lesson":"Pointer Patterns / Pattern con Puntatori","english":"Generic Pointer","set":{"task":"Dichiara ptr come void* per ottenere un puntatore generico utilizzabile come parametro polimorfico in API standard."}},
-{"level":"5","lesson":"Pointer Patterns / Pattern con Puntatori","english":"Null Check","set":{"task":"Verifica che ptr non sia NULL prima di dereferenziarlo per assegnare 5, evitando segfault da puntatore nullo."}},
-{"level":"5","lesson":"Pointer Patterns / Pattern con Puntatori","english":"Pointer Assignment","set":{"task":"Assegna a q il puntatore p facendo riferire entrambi alla stessa locazione di memoria senza copiarne il contenuto."}},
-{"level":"5","lesson":"Pointer Patterns / Pattern con Puntatori","english":"restrict","set":{"task":"Marca dst e src come restrict in copy per garantire al compilatore che le aree puntate non si sovrappongono, abilitando ottimizzazioni."}},
-{"level":"5","lesson":"Function Pointers / Puntatori a Funzione","english":"Function Pointer","set":{"task":"Dichiara fp come puntatore a funzione che riceve due int e ritorna un int, inizializzandolo con l'indirizzo di add."}},
-{"level":"5","lesson":"Function Pointers / Puntatori a Funzione","english":"qsort","set":{"task":"Ordina arr di n elementi int con qsort passando sizeof(int) come dimensione di ogni elemento e compare come comparatore."}},
-{"level":"5","lesson":"Function Pointers / Puntatori a Funzione","english":"Comparison Function","set":{"task":"Definisci cmp con la firma standard per qsort che accetta due void* e restituisce un int negativo, zero o positivo."}},
-{"level":"5","lesson":"Function Pointers / Puntatori a Funzione","english":"typedef with Function Pointer","set":{"task":"Crea un alias Operation con typedef per un puntatore a funzione (int,int)->int, semplificando dichiarazioni successive."}},
-{"level":"5","lesson":"Function Pointers / Puntatori a Funzione","english":"Dispatch Table","set":{"task":"Costruisci una tabella di dispatch ops contenente i puntatori alle funzioni add, sub e mul per selezionarle a runtime."}},
-{"level":"5","lesson":"Function Pointers / Puntatori a Funzione","english":"void Pointer","set":{"task":"Dichiara ptr come void* puntando a x per ottenere un riferimento generico senza tipo, da castare prima della dereferenza."}},
-{"level":"5","lesson":"Function Pointers / Puntatori a Funzione","english":"Array of Pointers","set":{"task":"Dichiara names come array di char* inizializzato con \"Alice\" e \"Bob\", evitando di duplicare lo storage delle stringhe."}},
-{"level":"6","lesson":"Double Pointers / Doppi Puntatori","english":"Pointer-to-Pointer Variable","set":{"task":"Dichiara pp come variabile di tipo int** che potra' contenere l'indirizzo di un puntatore a int."}},
-{"level":"6","lesson":"Double Pointers / Doppi Puntatori","english":"Double Pointer","set":{"task":"Definisci alloc che accetta un int** pp e alloca con malloc un int, scrivendo l'indirizzo restituito tramite *pp."}},
-{"level":"6","lesson":"Double Pointers / Doppi Puntatori","english":"Array of Strings Pattern","set":{"task":"Dichiara main con la firma estesa (int argc, char **argv) per accedere agli argomenti da riga di comando come array di stringhe."}},
-{"level":"6","lesson":"Double Pointers / Doppi Puntatori","english":"argv","set":{"task":"Stampa con %s il primo elemento di argv, ovvero il nome del programma cosi' come e' stato invocato dalla shell."}},
-{"level":"6","lesson":"Double Pointers / Doppi Puntatori","english":"Linked List Node","set":{"task":"Definisci la struct Node con un campo data int e un puntatore next a Node per costruire una lista concatenata."}},
-{"level":"6","lesson":"Function Pointers Advanced / Puntatori a Funzione Avanzati","english":"Function Pointer Array","set":{"task":"Definisci ops come array di puntatori a funzione (int,int)->int popolato con add, sub, mul e div_fn per dispatching numerico."}},
-{"level":"6","lesson":"Function Pointers Advanced / Puntatori a Funzione Avanzati","english":"Callback Function","set":{"task":"Dichiara registerCallback che accetta un puntatore a funzione cb di tipo (int)->void per essere invocato al verificarsi di un evento."}},
-{"level":"6","lesson":"Function Pointers Advanced / Puntatori a Funzione Avanzati","english":"Signal Handler","set":{"task":"Registra handler come gestore del segnale SIGINT con signal per intercettare Ctrl+C invece di terminare bruscamente."}},
-{"level":"6","lesson":"Function Pointers Advanced / Puntatori a Funzione Avanzati","english":"bsearch","set":{"task":"Cerca con bsearch la chiave key in un array arr di n int gia' ordinato, passando sizeof(int) e il comparatore cmp."}},
-{"level":"6","lesson":"Function Pointers Advanced / Puntatori a Funzione Avanzati","english":"atexit","set":{"task":"Registra la funzione cleanup con atexit affinche' venga invocata automaticamente alla terminazione normale del programma."}},
-{"level":"6","lesson":"Void Pointer & Casting / Puntatore Void e Cast","english":"Generic Void Pointer","set":{"task":"Dichiara generic come void* puntante a x per ottenere un riferimento privo di tipo, utile in API generiche."}},
-{"level":"6","lesson":"Void Pointer & Casting / Puntatore Void e Cast","english":"Explicit Cast","set":{"task":"Converti esplicitamente generic da void* a int* con un cast prima di dereferenziarlo per accedere all'intero puntato."}},
-{"level":"6","lesson":"Void Pointer & Casting / Puntatore Void e Cast","english":"Generic Data Structure","set":{"task":"Definisci una struct Node con campo data di tipo void* e next a Node per realizzare una lista concatenata generica."}},
-{"level":"6","lesson":"Void Pointer & Casting / Puntatore Void e Cast","english":"memcpy","set":{"task":"Copia n byte da src a dest con memcpy, assicurandoti che i blocchi sorgente e destinazione non si sovrappongano."}},
-{"level":"6","lesson":"Void Pointer & Casting / Puntatore Void e Cast","english":"memset","set":{"task":"Azzera l'intero buffer buf scrivendo 0 in tutti i suoi sizeof(buf) byte con memset prima di riusarlo."}},
-{"level":"6","lesson":"Void Pointer & Casting / Puntatore Void e Cast","english":"memcmp","set":{"task":"Confronta byte per byte i blocchi a e b di n byte con memcmp e verifica l'uguaglianza testando il risultato uguale a 0."}},
-{"level":"6","lesson":"Common Pointer Bugs / Bug Comuni con Puntatori","english":"Double Free","set":{"task":"Evita il double free: chiamare free(ptr) due volte sullo stesso puntatore provoca corruzione dell'heap e undefined behavior."}},
-{"level":"6","lesson":"Common Pointer Bugs / Bug Comuni con Puntatori","english":"Address Sanitizer","set":{"task":"Compila main.c con gcc abilitando AddressSanitizer tramite -fsanitize=address per intercettare a runtime use-after-free e overflow."}},
-{"level":"6","lesson":"Common Pointer Bugs / Bug Comuni con Puntatori","english":"Pointer Size","set":{"task":"Stampa con %zu la dimensione di un int* tramite sizeof, tipicamente 8 byte sulle architetture a 64 bit."}},
-{"level":"7","lesson":"String Functions / Funzioni per Stringhe","english":"strncpy","set":{"task":"Copia src in dest con strncpy passando sizeof(dest)-1 come limite per riservare un byte al terminatore nullo finale."}},
-{"level":"7","lesson":"String Functions / Funzioni per Stringhe","english":"strncat","set":{"task":"Appendi src a dest con strncat calcolando lo spazio residuo come sizeof(dest)-strlen(dest)-1 per evitare overflow."}},
-{"level":"7","lesson":"String Functions / Funzioni per Stringhe","english":"strncmp","set":{"task":"Verifica con strncmp se i primi 4 caratteri di cmd corrispondono a \"quit\" controllando che il risultato sia 0."}},
-{"level":"7","lesson":"String Functions / Funzioni per Stringhe","english":"strchr","set":{"task":"Cerca con strchr la prima occorrenza del carattere '@' in str, salvando il puntatore restituito in p o NULL se assente."}},
-{"level":"7","lesson":"String Functions / Funzioni per Stringhe","english":"strrchr","set":{"task":"Trova con strrchr l'ultimo punto in filename per individuare l'inizio dell'estensione del nome di file."}},
-{"level":"7","lesson":"String Functions / Funzioni per Stringhe","english":"strstr","set":{"task":"Cerca con strstr la sottostringa \"hello\" all'interno di text salvando il puntatore alla prima occorrenza in found."}},
-{"level":"7","lesson":"String Functions / Funzioni per Stringhe","english":"strtok","set":{"task":"Suddividi str in token separati da virgole con strtok ottenendo il primo token in tok, ricordando lo stato statico interno."}},
-{"level":"7","lesson":"String Functions / Funzioni per Stringhe","english":"strtol","set":{"task":"Converti la stringa \"42\" in long con strtol in base 10, preferibile ad atoi perche' consente di rilevare errori."}},
-{"level":"7","lesson":"String Functions / Funzioni per Stringhe","english":"snprintf","set":{"task":"Formatta in buf con snprintf la stringa \"Value: x\" passando sizeof(buf) come limite per impedire buffer overflow."}},
-{"level":"7","lesson":"String Functions / Funzioni per Stringhe","english":"String Duplication","set":{"task":"Duplica la stringa original con strdup ottenendo un nuovo buffer allocato sull'heap che dovrai liberare con free."}},
-{"level":"7","lesson":"String Manipulation / Manipolazione Stringhe","english":"Case Conversion","set":{"task":"Converti il carattere 'a' in 'A' con toupper della libreria ctype.h per uniformare l'input in maiuscolo."}},
-{"level":"7","lesson":"String Manipulation / Manipolazione Stringhe","english":"Character Classification","set":{"task":"Classifica il carattere c con isalpha, isdigit e isspace per distinguere lettere, cifre e spazi durante il parsing."}},
-{"level":"7","lesson":"String Manipulation / Manipolazione Stringhe","english":"Wide Character","set":{"task":"Dichiara wc come wchar_t inizializzato col letterale L'e' per gestire caratteri Unicode oltre la tabella ASCII."}},
-{"level":"7","lesson":"String Parsing / Analisi di Stringhe","english":"Delimiter","set":{"task":"Suddividi str con strtok usando \",;:\" come insieme di delimitatori per spezzare stringhe a piu' separatori."}},
-{"level":"7","lesson":"String Parsing / Analisi di Stringhe","english":"Format String","set":{"task":"Componi con printf la frase \"%s is %d years old\" inserendo name e age al posto degli specificatori di formato."}},
-{"level":"7","lesson":"String Parsing / Analisi di Stringhe","english":"Number to String","set":{"task":"Converti il numero intero in stringa scrivendolo in buf da 32 byte con snprintf e il format \"%d\"."}},
-{"level":"7","lesson":"String Parsing / Analisi di Stringhe","english":"Regular Expression","set":{"task":"Includi regex.h per accedere alle API POSIX di espressioni regolari come regcomp e regexec disponibili in C."}},
-{"level":"7","lesson":"String Parsing / Analisi di Stringhe","english":"Empty String","set":{"task":"Dichiara s come array di char inizializzato con \"\" cosi' che s[0] sia '\\0', rappresentando una stringa vuota."}},
-{"level":"7","lesson":"String Security / Sicurezza delle Stringhe","english":"Format String Vulnerability","set":{"task":"Evita printf(userInput) perche' espone una format string vulnerability, preferendo sempre printf(\"%s\", userInput) per disinnescare i format specifier."}},
-{"level":"7","lesson":"String Security / Sicurezza delle Stringhe","english":"gets (deprecated)","set":{"task":"Sostituisci la deprecata gets con fgets(buf, sizeof(buf), stdin) che limita la lettura ai byte disponibili nel buffer."}},
-{"level":"7","lesson":"String Security / Sicurezza delle Stringhe","english":"fgets","set":{"task":"Leggi una riga da stdin in buf con fgets passando sizeof(buf) come limite per prevenire buffer overflow."}}
-]}
+{
+  "fixes": [
+    {
+      "level": "0",
+      "lesson": "Variables & Main / Variabili e Main",
+      "english": "Variable",
+      "set": {
+        "task": "Dichiara una variabile intera x e assegnale il valore 5, specificando esplicitamente il tipo come richiede il C."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "Variables & Main / Variabili e Main",
+      "english": "Function",
+      "set": {
+        "task": "Definisci una funzione greet senza parametri ne' valore di ritorno che stampa \"Hello\" usando printf."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "Variables & Main / Variabili e Main",
+      "english": "Main Function",
+      "set": {
+        "task": "Scrivi la funzione main come punto di ingresso del programma restituendo 0 per segnalare terminazione corretta al sistema operativo."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "Variables & Main / Variabili e Main",
+      "english": "Return Value",
+      "set": {
+        "task": "Restituisci 0 da main per indicare al sistema operativo che il programma e' terminato senza errori."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "Variables & Main / Variabili e Main",
+      "english": "printf",
+      "set": {
+        "task": "Stampa la stringa \"Hello, World!\" seguita da un newline usando printf, la funzione standard di output formattato."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "Variables & Main / Variabili e Main",
+      "english": "scanf",
+      "set": {
+        "task": "Leggi un intero dall'utente con scanf usando il format \"%d\" e l'operatore indirizzo-di per popolare x."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "Variables & Main / Variabili e Main",
+      "english": "Header File",
+      "set": {
+        "task": "Includi il file di intestazione stdio.h per accedere alle funzioni di I/O standard come printf e scanf."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "Basic I/O & Comments / I/O di Base e Commenti",
+      "english": "Comment",
+      "set": {
+        "task": "Aggiungi un commento multi-riga delimitato da /* e */ per documentare il codice senza influenzare la compilazione."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "Basic I/O & Comments / I/O di Base e Commenti",
+      "english": "Single-Line Comment",
+      "set": {
+        "task": "Inserisci un commento su singola riga con // per annotare il codice fino alla fine della riga."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "Basic I/O & Comments / I/O di Base e Commenti",
+      "english": "Format Specifier",
+      "set": {
+        "task": "Usa lo specificatore di formato %d in printf per stampare il valore di una variabile intera x."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "Basic I/O & Comments / I/O di Base e Commenti",
+      "english": "Newline Character",
+      "set": {
+        "task": "Aggiungi il carattere di nuova riga \\n alla fine della stringa per portare il cursore sulla riga successiva."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "Basic I/O & Comments / I/O di Base e Commenti",
+      "english": "Escape Sequence",
+      "set": {
+        "task": "Riconosci le sequenze di escape come \\n, \\t, \\\\ e \\0 che rappresentano caratteri speciali nelle stringhe C."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "Basic I/O & Comments / I/O di Base e Commenti",
+      "english": "Curly Braces",
+      "set": {
+        "task": "Delimita il corpo di un blocco if con parentesi graffe per raggruppare piu' istruzioni eseguite condizionalmente."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "Compilation & Execution / Compilazione ed Esecuzione",
+      "english": "Compilation",
+      "set": {
+        "task": "Compila main.c con gcc producendo l'eseguibile main tramite l'opzione -o che specifica il nome del file di output."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "Compilation & Execution / Compilazione ed Esecuzione",
+      "english": "Executable",
+      "set": {
+        "task": "Esegui l'eseguibile main dalla directory corrente con ./main per lanciare il programma compilato."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "Compilation & Execution / Compilazione ed Esecuzione",
+      "english": "Warning",
+      "set": {
+        "task": "Compila main.c attivando i warning con -Wall per scoprire pratiche di codice rischiose prima dell'esecuzione."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "Compilation & Execution / Compilazione ed Esecuzione",
+      "english": "Preprocessor",
+      "set": {
+        "task": "Usa la direttiva preprocessore #include per importare stdio.h prima della fase di compilazione vera e propria."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "Compilation & Execution / Compilazione ed Esecuzione",
+      "english": "Object File",
+      "set": {
+        "task": "Compila main.c in file oggetto con il flag -c senza creare l'eseguibile finale, utile per build multi-modulo."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "Program Structure / Struttura del Programma",
+      "english": "Declaration",
+      "set": {
+        "task": "Dichiara la variabile intera x senza inizializzarla, riservando lo spazio in memoria ma lasciando il contenuto indefinito."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "Program Structure / Struttura del Programma",
+      "english": "Definition",
+      "set": {
+        "task": "Definisci la variabile x come intero allocando memoria e assegnando contemporaneamente il valore iniziale 10."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "Program Structure / Struttura del Programma",
+      "english": "Initialization",
+      "set": {
+        "task": "Inizializza count a 0 al momento della dichiarazione per evitare di leggere un valore indeterminato dalla memoria."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "Program Structure / Struttura del Programma",
+      "english": "Assignment",
+      "set": {
+        "task": "Assegna il valore 42 alla variabile x gia' dichiarata usando l'operatore di assegnamento ="
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "Program Structure / Struttura del Programma",
+      "english": "Constant",
+      "set": {
+        "task": "Definisci una costante intera MAX di valore 100 con il qualificatore const per impedirne modifiche successive."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "Program Structure / Struttura del Programma",
+      "english": "Block",
+      "set": {
+        "task": "Racchiudi una dichiarazione locale di x e la sua stampa in un blocco con parentesi graffe per limitarne lo scope."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "Program Structure / Struttura del Programma",
+      "english": "Data Type",
+      "set": {
+        "task": "Riconosci i tipi di dato fondamentali del C come int, float, char e double per scegliere quello adatto al dominio."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "Integer Types / Tipi Interi",
+      "english": "Integer",
+      "set": {
+        "task": "Dichiara una variabile intera age inizializzata a 25 usando il tipo int, l'intero standard del C."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "Integer Types / Tipi Interi",
+      "english": "Short",
+      "set": {
+        "task": "Usa il tipo short per dichiarare s a 100 quando vuoi risparmiare memoria rispetto a un int classico."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "Integer Types / Tipi Interi",
+      "english": "Long",
+      "set": {
+        "task": "Dichiara la variabile long big con il letterale 1000000L per rappresentare interi di grande ampiezza."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "Integer Types / Tipi Interi",
+      "english": "Unsigned",
+      "set": {
+        "task": "Dichiara count come unsigned int inizializzato a 0 quando il valore non puo' mai essere negativo."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "Integer Types / Tipi Interi",
+      "english": "sizeof",
+      "set": {
+        "task": "Stampa con %zu la dimensione in byte del tipo int restituita dall'operatore sizeof per ispezionare l'architettura."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "Floating Point & Char / Virgola Mobile e Caratteri",
+      "english": "Float",
+      "set": {
+        "task": "Dichiara la variabile pi come float inizializzata a 3.14f, usando il suffisso f per evitare la promozione a double."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "Floating Point & Char / Virgola Mobile e Caratteri",
+      "english": "Double",
+      "set": {
+        "task": "Dichiara pi come double con maggiore precisione assegnando 3.14159265358979 quando serve accuratezza nei calcoli."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "Floating Point & Char / Virgola Mobile e Caratteri",
+      "english": "Character",
+      "set": {
+        "task": "Dichiara letter come char inizializzato al carattere 'A' fra apici singoli, che corrisponde al codice ASCII 65."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "Floating Point & Char / Virgola Mobile e Caratteri",
+      "english": "Boolean",
+      "set": {
+        "task": "Includi stdbool.h e dichiara flag come bool inizializzato a true per usare booleani semantici invece di interi."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "Floating Point & Char / Virgola Mobile e Caratteri",
+      "english": "Void",
+      "set": {
+        "task": "Definisci sayHello come funzione void che stampa \"Hi\" senza restituire alcun valore al chiamante."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "Floating Point & Char / Virgola Mobile e Caratteri",
+      "english": "Type Casting",
+      "set": {
+        "task": "Converti esplicitamente il valore 3.14 a int con un cast, troncando la parte frazionaria e ottenendo 3."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "Floating Point & Char / Virgola Mobile e Caratteri",
+      "english": "typedef",
+      "set": {
+        "task": "Crea un alias di tipo uint per unsigned int con typedef per migliorare la leggibilita' delle dichiarazioni."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "Type Modifiers / Modificatori di Tipo",
+      "english": "long long",
+      "set": {
+        "task": "Dichiara big come long long con il valore massimo a 64 bit usando il letterale 9223372036854775807LL."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "Type Modifiers / Modificatori di Tipo",
+      "english": "Enumeration",
+      "set": {
+        "task": "Definisci un tipo enumerato Color con i valori RED, GREEN e BLUE per rappresentare costanti simboliche."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "Type Modifiers / Modificatori di Tipo",
+      "english": "Literal",
+      "set": {
+        "task": "Riconosci i letterali costanti come 42, 3.14, 'A' e \"hello\" che rappresentano valori fissi nel codice sorgente."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "Type Modifiers / Modificatori di Tipo",
+      "english": "Hexadecimal",
+      "set": {
+        "task": "Dichiara hex come int inizializzato al letterale esadecimale 0xFF, ovvero 255 in decimale e 11111111 in binario."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "Type Modifiers / Modificatori di Tipo",
+      "english": "Octal",
+      "set": {
+        "task": "Dichiara oct con il letterale ottale 077 dove lo zero iniziale segnala base 8 al compilatore, valore decimale 63."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "Type Modifiers / Modificatori di Tipo",
+      "english": "size_t",
+      "set": {
+        "task": "Usa il tipo size_t per la variabile len che conserva il risultato di strlen, idoneo a contenere qualsiasi dimensione."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "Constants & Limits / Costanti e Limiti",
+      "english": "Macro Constant",
+      "set": {
+        "task": "Definisci la costante macro MAX_SIZE pari a 100 con #define affinche' il preprocessore la sostituisca prima della compilazione."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "Constants & Limits / Costanti e Limiti",
+      "english": "INT_MAX",
+      "set": {
+        "task": "Includi limits.h per accedere a INT_MAX che rappresenta il massimo valore rappresentabile da un int sulla tua piattaforma."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "Constants & Limits / Costanti e Limiti",
+      "english": "INT_MIN",
+      "set": {
+        "task": "Stampa con %d il valore di INT_MIN per ispezionare il minimo intero rappresentabile sul sistema corrente."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "Constants & Limits / Costanti e Limiti",
+      "english": "FLT_MAX",
+      "set": {
+        "task": "Includi float.h per ottenere costanti come FLT_MAX che indicano i limiti dei tipi in virgola mobile."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "Constants & Limits / Costanti e Limiti",
+      "english": "const",
+      "set": {
+        "task": "Qualifica la variabile MAX con const e valore 100 per renderne immutabile il contenuto dopo l'inizializzazione."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "Constants & Limits / Costanti e Limiti",
+      "english": "Storage Class",
+      "set": {
+        "task": "Distingui le classi di memorizzazione auto, static, extern e register che controllano durata e visibilita' delle variabili."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "Constants & Limits / Costanti e Limiti",
+      "english": "static",
+      "set": {
+        "task": "Dichiara count come static int inizializzato a 0 per conservarne il valore tra chiamate successive della funzione."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "Constants & Limits / Costanti e Limiti",
+      "english": "extern",
+      "set": {
+        "task": "Dichiara extern int globalVar per riferirti a una variabile globale definita in un altro file sorgente."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "Arithmetic & Comparison / Aritmetica e Confronto",
+      "english": "Arithmetic Operator",
+      "set": {
+        "task": "Utilizza gli operatori aritmetici +, -, *, / e % per somma, sottrazione, moltiplicazione, divisione e resto tra valori."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "Arithmetic & Comparison / Aritmetica e Confronto",
+      "english": "Modulus Operator",
+      "set": {
+        "task": "Calcola con l'operatore modulo % il resto della divisione intera 10 / 3, ottenendo 1 nella variabile r."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "Arithmetic & Comparison / Aritmetica e Confronto",
+      "english": "Increment",
+      "set": {
+        "task": "Incrementa la variabile i di 1 con i++ o ++i, scegliendo la forma postfissa o prefissa secondo il timing voluto."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "Arithmetic & Comparison / Aritmetica e Confronto",
+      "english": "Decrement",
+      "set": {
+        "task": "Decrementa il valore di i di 1 con l'operatore -- nella forma postfissa per ridurlo dopo averlo letto."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "Arithmetic & Comparison / Aritmetica e Confronto",
+      "english": "Comparison Operator",
+      "set": {
+        "task": "Combina i sei operatori di confronto ==, !=, <, >, <= e >= per costruire condizioni booleane in espressioni di test."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "Arithmetic & Comparison / Aritmetica e Confronto",
+      "english": "Equality Operator",
+      "set": {
+        "task": "Verifica con l'operatore di uguaglianza == se la variabile x vale 5, ricordando che = farebbe invece assegnamento."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "Arithmetic & Comparison / Aritmetica e Confronto",
+      "english": "Logical Operator",
+      "set": {
+        "task": "Usa gli operatori logici &&, || e ! per combinare e negare condizioni booleane all'interno di if e while."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "Arithmetic & Comparison / Aritmetica e Confronto",
+      "english": "Logical AND",
+      "set": {
+        "task": "Verifica con && che x sia compreso tra 0 e 100 escluso, requisito tipico per validare un range in input."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "Arithmetic & Comparison / Aritmetica e Confronto",
+      "english": "Logical OR",
+      "set": {
+        "task": "Verifica con l'operatore OR logico || se x vale 0 oppure 1, classico filtro per opzioni booleane."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "Arithmetic & Comparison / Aritmetica e Confronto",
+      "english": "Negation",
+      "set": {
+        "task": "Nega con l'operatore ! la variabile booleana done per entrare nel ramo if quando il flag non e' ancora attivo."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "If & Switch / If e Switch",
+      "english": "If Statement",
+      "set": {
+        "task": "Costruisci un'istruzione if che stampi \"positive\" quando la variabile x e' strettamente maggiore di 0."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "If & Switch / If e Switch",
+      "english": "Else Clause",
+      "set": {
+        "task": "Aggiungi una clausola else a un if su x>0 per eseguire un blocco alternativo quando la condizione e' falsa."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "If & Switch / If e Switch",
+      "english": "Else If",
+      "set": {
+        "task": "Concatena else if dopo l'if iniziale per distinguere il caso x>0 dal caso x==0 con un'unica scala condizionale."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "If & Switch / If e Switch",
+      "english": "Ternary Operator",
+      "set": {
+        "task": "Calcola il massimo tra a e b con l'operatore ternario ? : per assegnare in una sola espressione il risultato a max."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "If & Switch / If e Switch",
+      "english": "Switch Statement",
+      "set": {
+        "task": "Implementa uno switch sulla variabile x con un case per il valore 1, terminando il ramo con break per evitare fall-through."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "If & Switch / If e Switch",
+      "english": "Case Label",
+      "set": {
+        "task": "Aggiungi un'etichetta case 1 in uno switch che stampi \"one\" e termini con break per uscire dal blocco."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "If & Switch / If e Switch",
+      "english": "Default Case",
+      "set": {
+        "task": "Aggiungi un caso default in uno switch per gestire tutti i valori non coperti dai case espliciti, stampando \"other\"."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "If & Switch / If e Switch",
+      "english": "Break Statement",
+      "set": {
+        "task": "Utilizza l'istruzione break per uscire immediatamente dal ciclo o dal blocco switch corrente."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "Loops / Cicli",
+      "english": "For Loop",
+      "set": {
+        "task": "Scrivi un ciclo for che inizializzi i a 0, iteri finche' i<10 e incrementi i di 1 ad ogni passaggio."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "Loops / Cicli",
+      "english": "While Loop",
+      "set": {
+        "task": "Crea un ciclo while che continui a decrementare x di 1 finche' la variabile resta positiva."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "Loops / Cicli",
+      "english": "Do-While Loop",
+      "set": {
+        "task": "Scrivi un ciclo do-while che esegua il corpo almeno una volta e poi continui finche' x e' maggiore di 0."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "Loops / Cicli",
+      "english": "Loop Counter",
+      "set": {
+        "task": "Dichiara il contatore i come int locale all'interno della clausola di inizializzazione del for per limitarne lo scope."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "Loops / Cicli",
+      "english": "Infinite Loop",
+      "set": {
+        "task": "Costruisci un ciclo infinito con while(1) per attendere eventi, prevedendo un'uscita interna con break o return."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "Loops / Cicli",
+      "english": "Continue Statement",
+      "set": {
+        "task": "Usa continue quando i vale 5 per saltare il resto dell'iterazione corrente e passare direttamente alla successiva."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "Loops / Cicli",
+      "english": "Nested Loop",
+      "set": {
+        "task": "Annida un ciclo for su j dentro uno esterno su i per percorrere ogni cella di una matrice bidimensionale."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "Bitwise & Assignment / Bit a Bit e Assegnamento",
+      "english": "Bitwise AND",
+      "set": {
+        "task": "Calcola l'AND bit a bit tra a e b con l'operatore & per mantenere accesi solo i bit comuni dei due operandi."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "Bitwise & Assignment / Bit a Bit e Assegnamento",
+      "english": "Bitwise OR",
+      "set": {
+        "task": "Combina i bit di a e b con l'operatore | per ottenere un risultato con tutti i bit attivi in almeno uno dei due."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "Bitwise & Assignment / Bit a Bit e Assegnamento",
+      "english": "Bitwise XOR",
+      "set": {
+        "task": "Calcola lo XOR bit a bit di a e b con l'operatore ^ per ottenere i bit attivi in esattamente uno dei due operandi."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "Bitwise & Assignment / Bit a Bit e Assegnamento",
+      "english": "Bit Shift",
+      "set": {
+        "task": "Esegui uno shift a sinistra di 1 di tre posizioni con << 3 ottenendo 8, una moltiplicazione veloce per 2^3."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "Bitwise & Assignment / Bit a Bit e Assegnamento",
+      "english": "Complement",
+      "set": {
+        "task": "Calcola il complemento a uno di x con l'operatore ~ per invertire ogni singolo bit della rappresentazione binaria."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "Bitwise & Assignment / Bit a Bit e Assegnamento",
+      "english": "Compound Assignment",
+      "set": {
+        "task": "Aggiungi 5 a x con l'assegnamento composto += come forma compatta equivalente a x = x + 5."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "Bitwise & Assignment / Bit a Bit e Assegnamento",
+      "english": "Comma Operator",
+      "set": {
+        "task": "Valuta l'espressione (1, 2) con l'operatore virgola: vengono eseguite entrambe ma x riceve solo l'ultima, cioe' 2."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "Bitwise & Assignment / Bit a Bit e Assegnamento",
+      "english": "sizeof Operator",
+      "set": {
+        "task": "Stampa con %zu la dimensione in byte di double restituita da sizeof, tipicamente 8 byte sui sistemi moderni."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "Function Basics / Basi delle Funzioni",
+      "english": "Function Declaration",
+      "set": {
+        "task": "Dichiara il prototipo della funzione add che accetta due int e restituisce un int, senza ancora fornirne il corpo."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "Function Basics / Basi delle Funzioni",
+      "english": "Function Definition",
+      "set": {
+        "task": "Definisci la funzione add che riceve a e b come int e restituisce la loro somma con return a + b."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "Function Basics / Basi delle Funzioni",
+      "english": "Parameter",
+      "set": {
+        "task": "Dichiara greet con un parametro name di tipo char* per accettare una stringa passata dal chiamante."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "Function Basics / Basi delle Funzioni",
+      "english": "Argument",
+      "set": {
+        "task": "Invoca la funzione greet passando il letterale \"Alice\" come argomento effettivo al parametro name."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "Function Basics / Basi delle Funzioni",
+      "english": "Return Statement",
+      "set": {
+        "task": "Termina la funzione con return result restituendo al chiamante il valore calcolato e abbandonando il body."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "Function Basics / Basi delle Funzioni",
+      "english": "Function Call",
+      "set": {
+        "task": "Chiama la funzione add con gli argomenti 3 e 5 assegnando il risultato della somma a sum."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "Function Basics / Basi delle Funzioni",
+      "english": "Void Function",
+      "set": {
+        "task": "Definisci printHello come funzione void senza parametri che stampa \"Hello\" e non restituisce nulla."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "Function Basics / Basi delle Funzioni",
+      "english": "Return Type",
+      "set": {
+        "task": "Specifica int come tipo di ritorno della funzione add che riceve due int e produce un nuovo intero."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "Pass by Value / Passaggio per Valore",
+      "english": "Recursion",
+      "set": {
+        "task": "Implementa fact in modo ricorsivo: restituisci 1 per n <= 1 altrimenti n moltiplicato per fact(n-1)."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "Pass by Value / Passaggio per Valore",
+      "english": "Variadic Function",
+      "set": {
+        "task": "Dichiara una funzione variadic come printf usando const char* per il formato e ... per il numero variabile di argomenti."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "Scope & Lifetime / Ambito e Durata",
+      "english": "Static Variable",
+      "set": {
+        "task": "Dichiara count come static int inizializzato a 0 e incrementalo per conservare lo stato fra chiamate successive."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "Scope & Lifetime / Ambito e Durata",
+      "english": "Register Variable",
+      "set": {
+        "task": "Suggerisci al compilatore di tenere i in un registro CPU con register int i, anche se le scelte moderne lo ignorano."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "Scope & Lifetime / Ambito e Durata",
+      "english": "Internal Linkage",
+      "set": {
+        "task": "Marca la funzione helper come static per darle collegamento interno e renderla invisibile fuori dal file sorgente."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "Standard Functions / Funzioni Standard",
+      "english": "puts",
+      "set": {
+        "task": "Stampa la stringa \"Hello World\" con puts, che aggiunge automaticamente un newline al termine."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "Standard Functions / Funzioni Standard",
+      "english": "getchar",
+      "set": {
+        "task": "Leggi un singolo carattere dallo standard input nella variabile c usando getchar dalla libreria standard."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "Standard Functions / Funzioni Standard",
+      "english": "putchar",
+      "set": {
+        "task": "Stampa il singolo carattere 'A' sullo standard output con putchar, complemento di getchar."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "Standard Functions / Funzioni Standard",
+      "english": "atoi",
+      "set": {
+        "task": "Converti la stringa \"42\" in intero con atoi, assegnando il risultato 42 a n senza segnalazione di errore."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "Standard Functions / Funzioni Standard",
+      "english": "exit",
+      "set": {
+        "task": "Termina immediatamente il programma con exit(EXIT_SUCCESS) restituendo successo al sistema operativo."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "Standard Functions / Funzioni Standard",
+      "english": "abs",
+      "set": {
+        "task": "Calcola il valore assoluto di -5 con abs ottenendo 5, utile per eliminare il segno da grandezze numeriche."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "Standard Functions / Funzioni Standard",
+      "english": "rand",
+      "set": {
+        "task": "Genera un intero pseudo-casuale tra 0 e 99 calcolando rand() % 100 dopo aver impostato il seme."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "Standard Functions / Funzioni Standard",
+      "english": "srand",
+      "set": {
+        "task": "Imposta il seme di rand passando time(NULL) a srand per ottenere sequenze diverse ad ogni esecuzione."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "Standard Functions / Funzioni Standard",
+      "english": "sprintf",
+      "set": {
+        "task": "Costruisci con sprintf nel buffer buf da 50 byte la stringa \"Age: 25\" sostituendo %d con il valore numerico."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "Standard Functions / Funzioni Standard",
+      "english": "sscanf",
+      "set": {
+        "task": "Estrai un intero dalla stringa \"42\" con sscanf usando il format \"%d\" e l'indirizzo di n come destinazione."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "Array Basics / Basi degli Array",
+      "english": "Array",
+      "set": {
+        "task": "Dichiara nums come array di 5 int inizializzando esplicitamente ogni cella con i valori 1, 2, 3, 4 e 5."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "Array Basics / Basi degli Array",
+      "english": "Array Index",
+      "set": {
+        "task": "Estrai il primo elemento dell'array nums accedendo all'indice 0, ricordando che in C gli indici partono da zero."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "Array Basics / Basi degli Array",
+      "english": "Array Declaration",
+      "set": {
+        "task": "Dichiara un array scores di 100 int senza inizializzarlo, riservando spazio sufficiente sullo stack."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "Array Basics / Basi degli Array",
+      "english": "Array Initialization",
+      "set": {
+        "task": "Inizializza l'array a senza specificare la dimensione: il compilatore deduce la lunghezza dai tre valori 10, 20, 30."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "Array Basics / Basi degli Array",
+      "english": "Array Size",
+      "set": {
+        "task": "Calcola la lunghezza dell'array a in elementi dividendo sizeof(a) per sizeof(a[0]) evitando hard-coded magic numbers."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "Multidimensional Arrays / Array Multidimensionali",
+      "english": "Two-Dimensional Array",
+      "set": {
+        "task": "Dichiara matrix come array bidimensionale 3x4 di int per rappresentare una griglia con 3 righe e 4 colonne."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "Multidimensional Arrays / Array Multidimensionali",
+      "english": "Row",
+      "set": {
+        "task": "Accedi alla prima riga di matrix indicizzando con matrix[0][j] per scorrere le colonne della riga zero."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "Multidimensional Arrays / Array Multidimensionali",
+      "english": "Matrix",
+      "set": {
+        "task": "Inizializza m come matrice identita' 3x3 di int specificando esplicitamente ogni riga con valori binari diagonali."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "Multidimensional Arrays / Array Multidimensionali",
+      "english": "Multidimensional Array",
+      "set": {
+        "task": "Dichiara cube come array tridimensionale 3x3x3 di int per modellare una struttura volumetrica come un voxel grid."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "Multidimensional Arrays / Array Multidimensionali",
+      "english": "Array of Strings",
+      "set": {
+        "task": "Dichiara names come array di 3 stringhe da 20 caratteri ciascuna, popolato con \"Alice\", \"Bob\" ed \"Eve\"."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "Multidimensional Arrays / Array Multidimensionali",
+      "english": "Variable-Length Array",
+      "set": {
+        "task": "Dichiara un array a lunghezza variabile arr di n=10 int sullo stack, usando una feature di C99 da evitare in produzione."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "Multidimensional Arrays / Array Multidimensionali",
+      "english": "Designated Initializer",
+      "set": {
+        "task": "Usa inizializzatori designati per dare 10 alla posizione 2 e 20 alla posizione 4 dell'array a, lasciando il resto a zero."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "Array Operations / Operazioni su Array",
+      "english": "Traversal",
+      "set": {
+        "task": "Attraversa l'array a con un ciclo for da 0 a n-1 stampando ogni elemento separato da spazio con %d."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "Array Operations / Operazioni su Array",
+      "english": "Swap",
+      "set": {
+        "task": "Scambia i valori di a e b usando la variabile temporanea tmp per evitare la perdita del valore originale."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "Array Operations / Operazioni su Array",
+      "english": "Array Copy",
+      "set": {
+        "task": "Copia tutti i byte di src in dest con memcpy passando sizeof(src) come lunghezza, attento agli array non sovrapposti."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "Array Operations / Operazioni su Array",
+      "english": "Array as Parameter",
+      "set": {
+        "task": "Definisci fill che riceve un array arr e la sua dimensione size, ricordando che il primo decade a puntatore."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "Array Operations / Operazioni su Array",
+      "english": "Buffer",
+      "set": {
+        "task": "Alloca sullo stack un buffer di 1024 caratteri come area temporanea per lettura o composizione di dati."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "Strings as Arrays / Stringhe come Array",
+      "english": "String",
+      "set": {
+        "task": "Dichiara name come array di char inizializzato con il letterale \"Alice\", che include automaticamente il terminatore nullo."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "Strings as Arrays / Stringhe come Array",
+      "english": "Null Terminator",
+      "set": {
+        "task": "Riconosci il terminatore nullo '\\0' che marca la fine di ogni stringa C consentendo a strlen di calcolarne la lunghezza."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "Strings as Arrays / Stringhe come Array",
+      "english": "String Literal",
+      "set": {
+        "task": "Usa il letterale stringa \"Hello, World!\" che il compilatore alloca in memoria di sola lettura terminandolo con \\0."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "Strings as Arrays / Stringhe come Array",
+      "english": "Character Array",
+      "set": {
+        "task": "Dichiara s come array di char inizializzato con \"hello\" e poi sostituisci s[0] con 'H' per dimostrare la mutabilita'."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "Strings as Arrays / Stringhe come Array",
+      "english": "strlen",
+      "set": {
+        "task": "Misura la lunghezza della stringa \"hello\" con strlen ottenendo 5, escluso il terminatore nullo finale."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "Strings as Arrays / Stringhe come Array",
+      "english": "strcpy",
+      "set": {
+        "task": "Copia il contenuto di src in dest con strcpy, assicurandoti preventivamente che dest abbia spazio sufficiente."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "Strings as Arrays / Stringhe come Array",
+      "english": "strcmp",
+      "set": {
+        "task": "Verifica con strcmp se le stringhe a e b sono uguali controllando che il risultato sia 0."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "Strings as Arrays / Stringhe come Array",
+      "english": "strcat",
+      "set": {
+        "task": "Appendi \" World\" alla stringa dest con strcat, garantendo che dest disponga di spazio per i caratteri aggiuntivi."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "Strings as Arrays / Stringhe come Array",
+      "english": "String Pointer",
+      "set": {
+        "task": "Dichiara msg come puntatore a const char inizializzato con \"Hello\" per referenziare il letterale senza copiarlo."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "Pointer Basics / Basi dei Puntatori",
+      "english": "Pointer",
+      "set": {
+        "task": "Dichiara ptr come puntatore a int usando l'asterisco prima del nome, senza ancora assegnargli alcun indirizzo."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "Pointer Basics / Basi dei Puntatori",
+      "english": "Address",
+      "set": {
+        "task": "Stampa con %p l'indirizzo di memoria di x ottenuto applicando l'operatore & per ispezionare la sua locazione."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "Pointer Basics / Basi dei Puntatori",
+      "english": "Address-of Operator",
+      "set": {
+        "task": "Inizializza il puntatore p facendolo puntare a x tramite l'operatore indirizzo-di & posto davanti alla variabile."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "Pointer Basics / Basi dei Puntatori",
+      "english": "Dereference",
+      "set": {
+        "task": "Leggi il valore puntato da ptr con l'operatore di dereferenziazione * salvandolo nella variabile value."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "Pointer Basics / Basi dei Puntatori",
+      "english": "NULL Pointer",
+      "set": {
+        "task": "Inizializza ptr a NULL come indicazione esplicita che non punta ad alcuna locazione valida, evitando puntatori penzolanti."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "Pointer Basics / Basi dei Puntatori",
+      "english": "Pointer Arithmetic",
+      "set": {
+        "task": "Avanza ptr di una posizione con ptr++ che incrementa l'indirizzo di sizeof(*ptr) byte secondo il tipo puntato."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "Pointer Basics / Basi dei Puntatori",
+      "english": "Pointer Type",
+      "set": {
+        "task": "Distingui i puntatori per tipo dichiarando fp come float* e ip come int*, poiche' aritmetica e dereferenza dipendono da esso."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "Pointer Basics / Basi dei Puntatori",
+      "english": "Pointer to Array",
+      "set": {
+        "task": "Inizializza p con il nome dell'array a, sfruttando il decadimento implicito di un array nel puntatore al primo elemento."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "Pointers & Arrays / Puntatori e Array",
+      "english": "Array Name as Pointer",
+      "set": {
+        "task": "Ricorda che il nome dell'array a equivale a &a[0]: usalo come puntatore al primo elemento nella maggior parte dei contesti."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "Pointers & Arrays / Puntatori e Array",
+      "english": "Pointer Offset",
+      "set": {
+        "task": "Accedi al terzo elemento puntato da ptr tramite *(ptr+2), forma equivalente a ptr[2] in notazione a indice."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "Pointers & Arrays / Puntatori e Array",
+      "english": "Subscript Notation",
+      "set": {
+        "task": "Verifica che la notazione a indice a[i] sia equivalente a *(a+i), espressione dimostrabile a partire dall'aritmetica dei puntatori."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "Pointers & Arrays / Puntatori e Array",
+      "english": "Pointer Comparison",
+      "set": {
+        "task": "Confronta ptr1 e ptr2 con l'operatore < per verificare quale dei due punta a un indirizzo precedente in memoria."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "Pointers & Arrays / Puntatori e Array",
+      "english": "Pointer Difference",
+      "set": {
+        "task": "Calcola la differenza tra ptr2 e ptr1 in ptrdiff_t per ottenere il numero di elementi che separano i due puntatori."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "Pointers & Arrays / Puntatori e Array",
+      "english": "Pass by Reference",
+      "set": {
+        "task": "Definisci swap che riceve a e b come puntatori a int per modificare le variabili originali tramite dereferenziazione."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "Pointers & Arrays / Puntatori e Array",
+      "english": "Pointer Parameter",
+      "set": {
+        "task": "Definisci increment che riceve val come int* e incrementa il valore puntato con (*val)++, modificando il chiamante."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "Pointers & Arrays / Puntatori e Array",
+      "english": "const Pointer",
+      "set": {
+        "task": "Dichiara ptr come puntatore costante a int rendendo immutabile l'indirizzo ma permettendo di modificare il valore puntato."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "Pointers & Arrays / Puntatori e Array",
+      "english": "Pointer to const",
+      "set": {
+        "task": "Dichiara ptr come puntatore a const int impedendo di modificare il valore puntato pur potendo cambiare a chi punti."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "Pointer Patterns / Pattern con Puntatori",
+      "english": "Pointer to Pointer",
+      "set": {
+        "task": "Dichiara pp come puntatore a puntatore a int e inizializzalo all'indirizzo di ptr per gestire indirezione a due livelli."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "Pointer Patterns / Pattern con Puntatori",
+      "english": "Indirection",
+      "set": {
+        "task": "Dichiara ppp come puntatore a puntatore a puntatore di int per modellare livelli di indirezione tipici nelle strutture dati."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "Pointer Patterns / Pattern con Puntatori",
+      "english": "Dynamic Array",
+      "set": {
+        "task": "Alloca dinamicamente un array di n interi sull'heap con malloc, calcolando la dimensione totale come n*sizeof(int)."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "Pointer Patterns / Pattern con Puntatori",
+      "english": "Pointer Casting",
+      "set": {
+        "task": "Alloca 10 byte con malloc ottenendo un void* e convertilo esplicitamente a int* per usarlo come array tipizzato."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "Pointer Patterns / Pattern con Puntatori",
+      "english": "Generic Pointer",
+      "set": {
+        "task": "Dichiara ptr come void* per ottenere un puntatore generico utilizzabile come parametro polimorfico in API standard."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "Pointer Patterns / Pattern con Puntatori",
+      "english": "Null Check",
+      "set": {
+        "task": "Verifica che ptr non sia NULL prima di dereferenziarlo per assegnare 5, evitando segfault da puntatore nullo."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "Pointer Patterns / Pattern con Puntatori",
+      "english": "Pointer Assignment",
+      "set": {
+        "task": "Assegna a q il puntatore p facendo riferire entrambi alla stessa locazione di memoria senza copiarne il contenuto."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "Pointer Patterns / Pattern con Puntatori",
+      "english": "restrict",
+      "set": {
+        "task": "Marca dst e src come restrict in copy per garantire al compilatore che le aree puntate non si sovrappongono, abilitando ottimizzazioni."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "Function Pointers / Puntatori a Funzione",
+      "english": "Function Pointer",
+      "set": {
+        "task": "Dichiara fp come puntatore a funzione che riceve due int e ritorna un int, inizializzandolo con l'indirizzo di add."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "Function Pointers / Puntatori a Funzione",
+      "english": "qsort",
+      "set": {
+        "task": "Ordina arr di n elementi int con qsort passando sizeof(int) come dimensione di ogni elemento e compare come comparatore."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "Function Pointers / Puntatori a Funzione",
+      "english": "Comparison Function",
+      "set": {
+        "task": "Definisci cmp con la firma standard per qsort che accetta due void* e restituisce un int negativo, zero o positivo."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "Function Pointers / Puntatori a Funzione",
+      "english": "typedef with Function Pointer",
+      "set": {
+        "task": "Crea un alias Operation con typedef per un puntatore a funzione (int,int)->int, semplificando dichiarazioni successive."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "Function Pointers / Puntatori a Funzione",
+      "english": "Dispatch Table",
+      "set": {
+        "task": "Costruisci una tabella di dispatch ops contenente i puntatori alle funzioni add, sub e mul per selezionarle a runtime."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "Function Pointers / Puntatori a Funzione",
+      "english": "void Pointer",
+      "set": {
+        "task": "Dichiara ptr come void* puntando a x per ottenere un riferimento generico senza tipo, da castare prima della dereferenza."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "Function Pointers / Puntatori a Funzione",
+      "english": "Array of Pointers",
+      "set": {
+        "task": "Dichiara names come array di char* inizializzato con \"Alice\" e \"Bob\", evitando di duplicare lo storage delle stringhe."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "Double Pointers / Doppi Puntatori",
+      "english": "Pointer-to-Pointer Variable",
+      "set": {
+        "task": "Dichiara pp come variabile di tipo int** che potra' contenere l'indirizzo di un puntatore a int."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "Double Pointers / Doppi Puntatori",
+      "english": "Double Pointer",
+      "set": {
+        "task": "Definisci alloc che accetta un int** pp e alloca con malloc un int, scrivendo l'indirizzo restituito tramite *pp."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "Double Pointers / Doppi Puntatori",
+      "english": "Array of Strings Pattern",
+      "set": {
+        "task": "Dichiara main con la firma estesa (int argc, char **argv) per accedere agli argomenti da riga di comando come array di stringhe."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "Double Pointers / Doppi Puntatori",
+      "english": "argv",
+      "set": {
+        "task": "Stampa con %s il primo elemento di argv, ovvero il nome del programma cosi' come e' stato invocato dalla shell."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "Double Pointers / Doppi Puntatori",
+      "english": "Linked List Node",
+      "set": {
+        "task": "Definisci la struct Node con un campo data int e un puntatore next a Node per costruire una lista concatenata."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "Function Pointers Advanced / Puntatori a Funzione Avanzati",
+      "english": "Function Pointer Array",
+      "set": {
+        "task": "Definisci ops come array di puntatori a funzione (int,int)->int popolato con add, sub, mul e div_fn per dispatching numerico."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "Function Pointers Advanced / Puntatori a Funzione Avanzati",
+      "english": "Callback Function",
+      "set": {
+        "task": "Dichiara registerCallback che accetta un puntatore a funzione cb di tipo (int)->void per essere invocato al verificarsi di un evento."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "Function Pointers Advanced / Puntatori a Funzione Avanzati",
+      "english": "Signal Handler",
+      "set": {
+        "task": "Registra handler come gestore del segnale SIGINT con signal per intercettare Ctrl+C invece di terminare bruscamente."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "Function Pointers Advanced / Puntatori a Funzione Avanzati",
+      "english": "bsearch",
+      "set": {
+        "task": "Cerca con bsearch la chiave key in un array arr di n int gia' ordinato, passando sizeof(int) e il comparatore cmp."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "Function Pointers Advanced / Puntatori a Funzione Avanzati",
+      "english": "atexit",
+      "set": {
+        "task": "Registra la funzione cleanup con atexit affinche' venga invocata automaticamente alla terminazione normale del programma."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "Void Pointer & Casting / Puntatore Void e Cast",
+      "english": "Generic Void Pointer",
+      "set": {
+        "task": "Dichiara generic come void* puntante a x per ottenere un riferimento privo di tipo, utile in API generiche."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "Void Pointer & Casting / Puntatore Void e Cast",
+      "english": "Explicit Cast",
+      "set": {
+        "task": "Converti esplicitamente generic da void* a int* con un cast prima di dereferenziarlo per accedere all'intero puntato."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "Void Pointer & Casting / Puntatore Void e Cast",
+      "english": "Generic Data Structure",
+      "set": {
+        "task": "Definisci una struct Node con campo data di tipo void* e next a Node per realizzare una lista concatenata generica."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "Void Pointer & Casting / Puntatore Void e Cast",
+      "english": "memcpy",
+      "set": {
+        "task": "Copia n byte da src a dest con memcpy, assicurandoti che i blocchi sorgente e destinazione non si sovrappongano."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "Void Pointer & Casting / Puntatore Void e Cast",
+      "english": "memset",
+      "set": {
+        "task": "Azzera l'intero buffer buf scrivendo 0 in tutti i suoi sizeof(buf) byte con memset prima di riusarlo."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "Void Pointer & Casting / Puntatore Void e Cast",
+      "english": "memcmp",
+      "set": {
+        "task": "Confronta byte per byte i blocchi a e b di n byte con memcmp e verifica l'uguaglianza testando il risultato uguale a 0."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "Common Pointer Bugs / Bug Comuni con Puntatori",
+      "english": "Double Free",
+      "set": {
+        "task": "Evita il double free: chiamare free(ptr) due volte sullo stesso puntatore provoca corruzione dell'heap e undefined behavior."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "Common Pointer Bugs / Bug Comuni con Puntatori",
+      "english": "Address Sanitizer",
+      "set": {
+        "task": "Compila main.c con gcc abilitando AddressSanitizer tramite -fsanitize=address per intercettare a runtime use-after-free e overflow."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "Common Pointer Bugs / Bug Comuni con Puntatori",
+      "english": "Pointer Size",
+      "set": {
+        "task": "Stampa con %zu la dimensione di un int* tramite sizeof, tipicamente 8 byte sulle architetture a 64 bit."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "String Functions / Funzioni per Stringhe",
+      "english": "strncpy",
+      "set": {
+        "task": "Copia src in dest con strncpy passando sizeof(dest)-1 come limite per riservare un byte al terminatore nullo finale."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "String Functions / Funzioni per Stringhe",
+      "english": "strncat",
+      "set": {
+        "task": "Appendi src a dest con strncat calcolando lo spazio residuo come sizeof(dest)-strlen(dest)-1 per evitare overflow."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "String Functions / Funzioni per Stringhe",
+      "english": "strncmp",
+      "set": {
+        "task": "Verifica con strncmp se i primi 4 caratteri di cmd corrispondono a \"quit\" controllando che il risultato sia 0."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "String Functions / Funzioni per Stringhe",
+      "english": "strchr",
+      "set": {
+        "task": "Cerca con strchr la prima occorrenza del carattere '@' in str, salvando il puntatore restituito in p o NULL se assente."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "String Functions / Funzioni per Stringhe",
+      "english": "strrchr",
+      "set": {
+        "task": "Trova con strrchr l'ultimo punto in filename per individuare l'inizio dell'estensione del nome di file."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "String Functions / Funzioni per Stringhe",
+      "english": "strstr",
+      "set": {
+        "task": "Cerca con strstr la sottostringa \"hello\" all'interno di text salvando il puntatore alla prima occorrenza in found."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "String Functions / Funzioni per Stringhe",
+      "english": "strtok",
+      "set": {
+        "task": "Suddividi str in token separati da virgole con strtok ottenendo il primo token in tok, ricordando lo stato statico interno."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "String Functions / Funzioni per Stringhe",
+      "english": "strtol",
+      "set": {
+        "task": "Converti la stringa \"42\" in long con strtol in base 10, preferibile ad atoi perche' consente di rilevare errori."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "String Functions / Funzioni per Stringhe",
+      "english": "snprintf",
+      "set": {
+        "task": "Formatta in buf con snprintf la stringa \"Value: x\" passando sizeof(buf) come limite per impedire buffer overflow."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "String Functions / Funzioni per Stringhe",
+      "english": "String Duplication",
+      "set": {
+        "task": "Duplica la stringa original con strdup ottenendo un nuovo buffer allocato sull'heap che dovrai liberare con free."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "String Manipulation / Manipolazione Stringhe",
+      "english": "Case Conversion",
+      "set": {
+        "task": "Converti il carattere 'a' in 'A' con toupper della libreria ctype.h per uniformare l'input in maiuscolo."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "String Manipulation / Manipolazione Stringhe",
+      "english": "Character Classification",
+      "set": {
+        "task": "Classifica il carattere c con isalpha, isdigit e isspace per distinguere lettere, cifre e spazi durante il parsing."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "String Manipulation / Manipolazione Stringhe",
+      "english": "Wide Character",
+      "set": {
+        "task": "Dichiara wc come wchar_t inizializzato col letterale L'e' per gestire caratteri Unicode oltre la tabella ASCII."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "String Parsing / Analisi di Stringhe",
+      "english": "Delimiter",
+      "set": {
+        "task": "Suddividi str con strtok usando \",;:\" come insieme di delimitatori per spezzare stringhe a piu' separatori."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "String Parsing / Analisi di Stringhe",
+      "english": "Format String",
+      "set": {
+        "task": "Componi con printf la frase \"%s is %d years old\" inserendo name e age al posto degli specificatori di formato."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "String Parsing / Analisi di Stringhe",
+      "english": "Number to String",
+      "set": {
+        "task": "Converti il numero intero in stringa scrivendolo in buf da 32 byte con snprintf e il format \"%d\"."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "String Parsing / Analisi di Stringhe",
+      "english": "Regular Expression",
+      "set": {
+        "task": "Includi regex.h per accedere alle API POSIX di espressioni regolari come regcomp e regexec disponibili in C."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "String Parsing / Analisi di Stringhe",
+      "english": "Empty String",
+      "set": {
+        "task": "Dichiara s come array di char inizializzato con \"\" cosi' che s[0] sia '\\0', rappresentando una stringa vuota."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "String Security / Sicurezza delle Stringhe",
+      "english": "Format String Vulnerability",
+      "set": {
+        "task": "Evita printf(userInput) perche' espone una format string vulnerability, preferendo sempre printf(\"%s\", userInput) per disinnescare i format specifier."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "String Security / Sicurezza delle Stringhe",
+      "english": "gets (deprecated)",
+      "set": {
+        "task": "Sostituisci la deprecata gets con fgets(buf, sizeof(buf), stdin) che limita la lettura ai byte disponibili nel buffer."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "String Security / Sicurezza delle Stringhe",
+      "english": "fgets",
+      "set": {
+        "task": "Leggi una riga da stdin in buf con fgets passando sizeof(buf) come limite per prevenire buffer overflow."
+      }
+    }
+  ]
+}

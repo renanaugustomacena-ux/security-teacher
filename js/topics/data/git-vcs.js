@@ -44,6 +44,7 @@ export default {
               difficulty: 'beginner',
               command: 'git init',
               note: 'Abbreviato spesso "repo". Contiene la cartella .git con tutti i dati.',
+              task: `Inizializza un repository Git nella cartella corrente con \`git init\` per iniziare a tracciare il progetto.`,
             },
             {
               english: 'Commit',
@@ -56,6 +57,7 @@ export default {
               difficulty: 'beginner',
               command: 'git commit -m "Add feature"',
               note: 'In italiano si lascia "commit". Pronuncia con la C dura.',
+              task: `Salva le modifiche in staging come un commit con messaggio 'Add feature' nella storia del progetto.`,
             },
             {
               english: 'Working Tree',
@@ -79,6 +81,7 @@ export default {
               difficulty: 'beginner',
               command: 'git add file.txt',
               note: 'Detta anche "index". È un\'anteprima del prossimo commit.',
+              task: `Sposta \`file.txt\` dalla working tree all'area di staging per prepararlo al prossimo commit.`,
             },
             {
               english: 'Index',
@@ -102,6 +105,7 @@ export default {
               difficulty: 'beginner',
               command: 'git log HEAD',
               note: 'Tipicamente HEAD punta al ramo corrente, non direttamente a un commit.',
+              task: 'Mostra il log dei commit a partire dal puntatore HEAD per vedere su quale commit sei posizionato.',
             },
             {
               english: '.gitignore',
@@ -114,6 +118,7 @@ export default {
               difficulty: 'beginner',
               code: 'node_modules/\n*.log\n.env',
               note: 'I pattern funzionano come glob shell. Esistono template su github/gitignore.',
+              task: `Definisci uno \`.gitignore\` che esclude \`node_modules/\`, file \`*.log\` e \`.env\` dal tracciamento.`,
             },
             {
               english: 'Snapshot',
@@ -137,6 +142,7 @@ export default {
               difficulty: 'beginner',
               command: 'git ls-files',
               note: 'Opposto: untracked. I nuovi file sono untracked finché non fai add.',
+              task: `Elenca tutti i file attualmente tracciati dal repository con \`git ls-files\`.`,
             },
           ],
         },
@@ -156,6 +162,7 @@ export default {
               difficulty: 'beginner',
               command: 'git status',
               note: 'Primo dei tre stati di Git: modified, staged, committed.',
+              task: `Esegui \`git status\` per vedere quali file modificati nella working tree devono ancora essere messi in staging.`,
             },
             {
               english: 'Staged',
@@ -167,6 +174,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git add file.txt',
+              task: `Promuovi \`file.txt\` allo stato staged con \`git add file.txt\` affinche\` venga incluso nel prossimo commit.`,
             },
             {
               english: 'Committed',
@@ -190,6 +198,7 @@ export default {
               difficulty: 'beginner',
               command: 'git status',
               note: 'Git non sa nulla di questi file. Compaiono in rosso in git status.',
+              task: `Controlla con \`git status\` quali file untracked non sono ancora seguiti da Git.`,
             },
             {
               english: 'Local Repository',
@@ -224,6 +233,7 @@ export default {
               difficulty: 'beginner',
               command: 'git log --oneline',
               note: 'Spesso si usa solo i primi 7 caratteri (es. a3f5e21).',
+              task: `Visualizza la cronologia compatta con \`git log --oneline\` per vedere l'hash SHA-1 abbreviato di ogni commit.`,
             },
             {
               english: 'Object',
@@ -258,6 +268,7 @@ export default {
               difficulty: 'beginner',
               command: 'git log --author="Maria"',
               note: 'Distinto dal "committer" in caso di rebase o cherry-pick.',
+              task: `Filtra il log dei commit per autore con \`git log --author="Maria"\` per vedere solo i suoi contributi.`,
             },
           ],
         },
@@ -276,6 +287,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               command: 'sudo apt install git',
+              task: `Installa Git su Debian/Ubuntu con \`sudo apt install git\` tramite il gestore dei pacchetti di sistema.`,
             },
             {
               english: 'Initialize',
@@ -288,6 +300,7 @@ export default {
               difficulty: 'beginner',
               command: 'git init',
               note: 'Crea la cartella nascosta .git nella directory corrente.',
+              task: `Inizializza un nuovo repository Git nella cartella corrente eseguendo \`git init\`.`,
             },
             {
               english: 'User Name',
@@ -299,6 +312,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git config --global user.name "Mario Rossi"',
+              task: `Configura globalmente il tuo nome utente Git come 'Mario Rossi' per attribuire correttamente i commit.`,
             },
             {
               english: 'User Email',
@@ -311,6 +325,7 @@ export default {
               difficulty: 'beginner',
               command: 'git config --global user.email "you@example.com"',
               note: "Usa l'email no-reply di GitHub per privacy.",
+              task: `Imposta globalmente l'email utente \`you@example.com\` cosi compare nei metadati di ogni commit.`,
             },
             {
               english: 'Default Branch',
@@ -323,6 +338,7 @@ export default {
               difficulty: 'beginner',
               command: 'git config --global init.defaultBranch main',
               note: 'Storicamente era "master", ora "main" su GitHub.',
+              task: `Configura \`main\` come nome del ramo predefinito per ogni nuovo repository inizializzato sulla macchina.`,
             },
             {
               english: 'Git Bash',
@@ -358,6 +374,7 @@ export default {
               difficulty: 'beginner',
               command: 'git help commit',
               note: 'Equivalente: git commit --help oppure man git-commit.',
+              task: `Apri la pagina di manuale del comando commit con \`git help commit\` per consultare tutte le opzioni.`,
             },
             {
               english: 'Version',
@@ -369,6 +386,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git --version',
+              task: `Verifica la versione di Git installata con \`git --version\` prima di usare comandi recenti.`,
             },
             {
               english: 'Hidden Folder',
@@ -381,6 +399,7 @@ export default {
               difficulty: 'beginner',
               command: 'ls -la',
               note: 'Le cartelle che iniziano con un punto sono nascoste su Unix.',
+              task: `Elenca anche le cartelle nascoste con \`ls -la\` per individuare la directory \`.git\` del repository.`,
             },
           ],
         },
@@ -399,6 +418,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git log',
+              task: `Mostra la cronologia completa dei commit del repository con \`git log\`.`,
             },
             {
               english: 'Backup',
@@ -527,6 +547,7 @@ export default {
               difficulty: 'beginner',
               command: 'git init',
               note: 'Crea .git/. Esegui solo una volta per progetto.',
+              task: `Inizializza un nuovo repository Git nella cartella corrente eseguendo \`git init\` una sola volta.`,
             },
             {
               english: 'git add',
@@ -538,6 +559,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git add file.txt',
+              task: `Aggiungi \`file.txt\` allo staging area in vista del prossimo commit.`,
             },
             {
               english: 'git add .',
@@ -550,6 +572,7 @@ export default {
               difficulty: 'beginner',
               command: 'git add .',
               note: 'Attenzione: include anche file nuovi. Verifica con git status prima.',
+              task: `Metti in staging tutte le modifiche della directory corrente con \`git add .\`, prestando attenzione ai file indesiderati.`,
             },
             {
               english: 'git add -A',
@@ -561,6 +584,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git add -A',
+              task: `Stage tutte le modifiche dell'intero repository, incluse cancellazioni e rinomine, con \`git add -A\`.`,
             },
             {
               english: 'git commit',
@@ -572,6 +596,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git commit -m "Add login form"',
+              task: `Registra le modifiche staged come commit con messaggio 'Add login form'.`,
             },
             {
               english: 'Commit Message',
@@ -584,6 +609,7 @@ export default {
               difficulty: 'beginner',
               command: 'git commit -m "Fix login bug"',
               note: 'Convenzione: prima riga max 50 caratteri, modo imperativo.',
+              task: `Crea un commit con messaggio chiaro 'Fix login bug' che spieghi il perche\` della modifica.`,
             },
             {
               english: '-m flag',
@@ -596,6 +622,7 @@ export default {
               difficulty: 'beginner',
               command: 'git commit -m "msg"',
               note: "Senza -m si apre l'editor configurato.",
+              task: `Passa direttamente il messaggio 'msg' dalla riga di comando usando il flag \`-m\` senza aprire l'editor.`,
             },
             {
               english: 'git commit -am',
@@ -608,6 +635,7 @@ export default {
               difficulty: 'beginner',
               command: 'git commit -am "Quick fix"',
               note: 'Solo file già tracciati. I nuovi file vanno aggiunti con git add.',
+              task: `Combina stage e commit dei file tracciati in un solo passo con \`git commit -am "Quick fix"\`.`,
             },
             {
               english: 'Empty Commit',
@@ -619,6 +647,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git commit --allow-empty -m "trigger"',
+              task: `Crea un commit vuoto con \`--allow-empty\` per avviare manualmente una pipeline CI senza modifiche al codice.`,
             },
             {
               english: 'Atomic Commit',
@@ -649,6 +678,7 @@ export default {
               difficulty: 'beginner',
               command: 'git status',
               note: 'Il comando più usato. Esegui spesso per orientarti.',
+              task: `Mostra lo stato del repository con \`git status\` per vedere file staged, modificati e non tracciati.`,
             },
             {
               english: 'git status -s',
@@ -661,6 +691,7 @@ export default {
               difficulty: 'beginner',
               command: 'git status -s',
               note: 'Output compatto: M = modified, A = added, ?? = untracked.',
+              task: `Ottieni una panoramica compatta dello stato con \`git status -s\` usando lettere come M, A e ??.`,
             },
             {
               english: 'git log',
@@ -673,6 +704,7 @@ export default {
               difficulty: 'beginner',
               command: 'git log',
               note: 'Premi q per uscire dal pager.',
+              task: `Visualizza la lista cronologica completa dei commit del progetto eseguendo \`git log\`.`,
             },
             {
               english: 'git log --oneline',
@@ -684,6 +716,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git log --oneline',
+              task: `Scorri rapidamente i commit recenti con \`git log --oneline\`, una riga e un hash abbreviato per commit.`,
             },
             {
               english: 'git log --graph',
@@ -696,6 +729,7 @@ export default {
               difficulty: 'beginner',
               command: 'git log --oneline --graph --all',
               note: 'Combinazione classica per visualizzare la topologia.',
+              task: `Disegna la topologia di tutti i rami con \`git log --oneline --graph --all\` in modalita\` ASCII.`,
             },
             {
               english: 'git diff',
@@ -707,6 +741,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git diff',
+              task: `Confronta le modifiche non staged della working tree rispetto all'ultimo commit con \`git diff\`.`,
             },
             {
               english: 'git diff --staged',
@@ -719,6 +754,7 @@ export default {
               difficulty: 'beginner',
               command: 'git diff --staged',
               note: 'Equivalente a git diff --cached.',
+              task: `Ispeziona con \`git diff --staged\` esattamente cosa entrera\` nel prossimo commit prima di confermarlo.`,
             },
             {
               english: 'git show',
@@ -730,6 +766,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git show HEAD',
+              task: `Mostra messaggio e diff del commit puntato da HEAD con \`git show HEAD\`.`,
             },
             {
               english: 'Hunk',
@@ -753,6 +790,7 @@ export default {
               difficulty: 'beginner',
               command: 'git format-patch HEAD~3',
               note: 'Estensione tipica .patch o .diff.',
+              task: `Genera file patch per gli ultimi tre commit con \`git format-patch HEAD~3\` da inviare via email.`,
             },
           ],
         },
@@ -771,6 +809,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git rm old.txt',
+              task: `Rimuovi \`old.txt\` dal disco e mettine la cancellazione in staging in un solo passo con \`git rm\`.`,
             },
             {
               english: 'git rm --cached',
@@ -783,6 +822,7 @@ export default {
               difficulty: 'beginner',
               command: 'git rm --cached secret.env',
               note: 'Usato spesso quando si dimentica di aggiungere un file a .gitignore.',
+              task: `Smetti di tracciare \`secret.env\` mantenendolo su disco con \`git rm --cached secret.env\`.`,
             },
             {
               english: 'git mv',
@@ -795,6 +835,7 @@ export default {
               difficulty: 'beginner',
               command: 'git mv old.txt new.txt',
               note: 'Equivalente a mv + git add + git rm sui due nomi.',
+              task: `Rinomina \`old.txt\` in \`new.txt\` registrando il rename come operazione atomica con \`git mv\`.`,
             },
             {
               english: 'Rename',
@@ -807,6 +848,7 @@ export default {
               difficulty: 'beginner',
               command: 'git log --follow file.txt',
               note: 'Usa --follow per seguire un file attraverso i rename.',
+              task: `Segui la storia di \`file.txt\` attraverso i rename con \`git log --follow file.txt\`.`,
             },
             {
               english: 'Delete',
@@ -818,6 +860,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               command: 'rm file.txt && git add file.txt',
+              task: `Cancella \`file.txt\` con \`rm\` e mettine la rimozione in staging con \`git add file.txt\`.`,
             },
             {
               english: 'Restore File',
@@ -830,6 +873,7 @@ export default {
               difficulty: 'beginner',
               command: 'git restore file.txt',
               note: 'Sostituisce il vecchio "git checkout -- file" da Git 2.23.',
+              task: `Ripristina \`file.txt\` all'ultimo stato committato scartando le modifiche locali con \`git restore file.txt\`.`,
             },
             {
               english: 'Discard Changes',
@@ -842,6 +886,7 @@ export default {
               difficulty: 'beginner',
               command: 'git restore .',
               note: 'Attenzione: distrugge il lavoro non committato.',
+              task: `Scarta tutte le modifiche non staged della working tree con \`git restore .\` per ripartire pulito.`,
             },
             {
               english: 'Pattern',
@@ -854,6 +899,7 @@ export default {
               difficulty: 'beginner',
               command: 'git add "*.js"',
               note: "Mettere tra virgolette per evitare l'espansione della shell.",
+              task: `Stage tutti i file JavaScript con il pattern glob \`git add "*.js"\` in un solo comando.`,
             },
             {
               english: 'Glob',
@@ -865,6 +911,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: '*.log\nbuild/\n!important.log',
+              task: `Definisci nel \`.gitignore\` pattern come \`*.log\` e \`build/\`, con eccezione \`!important.log\` per il file specifico.`,
             },
             {
               english: 'Wildcard',
@@ -893,6 +940,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git help status',
+              task: `Apri il manuale completo del sottocomando status con \`git help status\` per consultarne tutte le opzioni.`,
             },
             {
               english: 'Documentation',
@@ -915,6 +963,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'git init\ngit add .\ngit commit -m "first"',
+              task: `Esegui la sequenza di avvio rapido \`git init\`, \`git add .\` e \`git commit -m "first"\` per pubblicare il primo commit.`,
             },
             {
               english: 'First Commit',
@@ -926,6 +975,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git commit -m "Initial commit"',
+              task: `Conferma il primo commit del progetto con messaggio 'Initial commit' dopo aver stage README, .gitignore e LICENSE.`,
             },
             {
               english: 'README',
@@ -938,6 +988,7 @@ export default {
               difficulty: 'beginner',
               code: '# My Project\nDescription here.',
               note: 'GitHub mostra README.md sulla home della repo.',
+              task: `Componi un file \`README.md\` con titolo \`# My Project\` e una breve descrizione mostrata in homepage del repository.`,
             },
             {
               english: 'License File',
@@ -960,6 +1011,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git commit -m "Initial commit"',
+              task: `Crea il commit iniziale del repository con messaggio convenzionale 'Initial commit'.`,
             },
             {
               english: 'Workflow',
@@ -1019,6 +1071,7 @@ export default {
               difficulty: 'beginner',
               command: 'git branch',
               note: 'In Git i branch sono leggerissimi: solo un file con un hash dentro.',
+              task: `Elenca i branch locali del repository eseguendo \`git branch\` senza argomenti.`,
             },
             {
               english: 'git branch',
@@ -1030,6 +1083,7 @@ export default {
               context: 'branching',
               difficulty: 'beginner',
               command: 'git branch',
+              task: `Visualizza tutti i branch locali correnti con \`git branch\` per orientarti tra i rami in lavoro.`,
             },
             {
               english: 'Create Branch',
@@ -1041,6 +1095,7 @@ export default {
               context: 'branching',
               difficulty: 'beginner',
               command: 'git branch feature-x',
+              task: `Crea il nuovo branch \`feature-x\` senza spostarti su di esso con \`git branch feature-x\`.`,
             },
             {
               english: 'git checkout',
@@ -1053,6 +1108,7 @@ export default {
               difficulty: 'beginner',
               command: 'git checkout main',
               note: 'Comando storico, ora si preferisce git switch per chiarezza.',
+              task: `Spostati sul branch \`main\` con \`git checkout main\` per riprendere il lavoro dalla linea principale.`,
             },
             {
               english: 'git switch',
@@ -1065,6 +1121,7 @@ export default {
               difficulty: 'beginner',
               command: 'git switch main',
               note: 'Introdotto in Git 2.23 per sostituire alcuni usi di checkout.',
+              task: `Cambia ramo passando a \`main\` con il moderno comando \`git switch main\` (Git 2.23+).`,
             },
             {
               english: 'git checkout -b',
@@ -1076,6 +1133,7 @@ export default {
               context: 'branching',
               difficulty: 'beginner',
               command: 'git checkout -b feature-x',
+              task: `Crea e spostati subito sul nuovo branch \`feature-x\` con \`git checkout -b feature-x\` in un solo passo.`,
             },
             {
               english: 'git switch -c',
@@ -1087,6 +1145,7 @@ export default {
               context: 'branching',
               difficulty: 'beginner',
               command: 'git switch -c feature-x',
+              task: `Crea e attiva il branch \`feature-x\` con la sintassi moderna \`git switch -c feature-x\`.`,
             },
             {
               english: 'Branch Name',
@@ -1110,6 +1169,7 @@ export default {
               difficulty: 'beginner',
               command: 'git switch main',
               note: 'Ha sostituito "master" come default dal 2020.',
+              task: `Passa al branch predefinito \`main\` con \`git switch main\` per riprendere la linea principale.`,
             },
             {
               english: 'master',
@@ -1122,6 +1182,7 @@ export default {
               difficulty: 'beginner',
               command: 'git switch master',
               note: 'Considerato legacy. Verifica sempre il nome del ramo principale.',
+              task: `Passa al vecchio branch predefinito \`master\` con \`git switch master\` nei repository legacy.`,
             },
           ],
         },
@@ -1140,6 +1201,7 @@ export default {
               context: 'branching',
               difficulty: 'beginner',
               command: 'cat .git/HEAD',
+              task: `Ispeziona il contenuto di \`.git/HEAD\` con \`cat .git/HEAD\` per vedere a quale branch punta HEAD.`,
             },
             {
               english: 'Detached HEAD',
@@ -1152,6 +1214,7 @@ export default {
               difficulty: 'beginner',
               command: 'git switch -c rescue',
               note: 'Stato pericoloso: nuovi commit andranno persi se non crei un ramo.',
+              task: `Esci dallo stato detached HEAD creando il branch di salvataggio \`rescue\` con \`git switch -c rescue\`.`,
             },
             {
               english: 'Tip of Branch',
@@ -1175,6 +1238,7 @@ export default {
               difficulty: 'beginner',
               command: 'git log --parents',
               note: 'I merge commit hanno due o più genitori.',
+              task: `Mostra il log dei commit con i loro genitori usando \`git log --parents\` per rivelare la struttura del DAG.`,
             },
             {
               english: 'Ancestor',
@@ -1186,6 +1250,7 @@ export default {
               context: 'branching',
               difficulty: 'beginner',
               command: 'git merge-base main feature',
+              task: `Trova l'antenato comune tra i branch \`main\` e \`feature\` con \`git merge-base main feature\`.`,
             },
             {
               english: 'Tilde (~)',
@@ -1198,6 +1263,7 @@ export default {
               difficulty: 'beginner',
               command: 'git show HEAD~3',
               note: 'HEAD~n risale di n generazioni sul primo genitore.',
+              task: `Visualizza il commit tre passi indietro rispetto a HEAD con la notazione tilde \`git show HEAD~3\`.`,
             },
             {
               english: 'Caret (^)',
@@ -1210,6 +1276,7 @@ export default {
               difficulty: 'beginner',
               command: 'git show HEAD^2',
               note: 'Diverso da ~. Usato soprattutto su merge commit.',
+              task: `Riferisci il secondo genitore di un merge commit con la notazione caret \`git show HEAD^2\`.`,
             },
             {
               english: 'Branch Pointer',
@@ -1221,6 +1288,7 @@ export default {
               context: 'branching',
               difficulty: 'beginner',
               code: '.git/refs/heads/main',
+              task: `Apri il file \`.git/refs/heads/main\` per leggere l'hash del commit a cui punta il branch \`main\`.`,
             },
             {
               english: 'Symbolic Reference',
@@ -1232,6 +1300,7 @@ export default {
               context: 'branching',
               difficulty: 'beginner',
               command: 'git symbolic-ref HEAD',
+              task: `Risolvi il riferimento simbolico di HEAD con \`git symbolic-ref HEAD\` per vedere il branch attivo.`,
             },
             {
               english: 'Current Branch',
@@ -1243,6 +1312,7 @@ export default {
               context: 'branching',
               difficulty: 'beginner',
               command: 'git branch --show-current',
+              task: `Stampa solo il nome del branch attivo con \`git branch --show-current\`, utile negli script.`,
             },
           ],
         },
@@ -1261,6 +1331,7 @@ export default {
               context: 'branching',
               difficulty: 'beginner',
               command: 'git branch -a',
+              task: `Elenca tutti i branch locali e remoti del repository con \`git branch -a\`.`,
             },
             {
               english: 'Remote Branch',
@@ -1272,6 +1343,7 @@ export default {
               context: 'branching',
               difficulty: 'beginner',
               command: 'git branch -r',
+              task: `Mostra solo i branch di tracking remoti come \`origin/main\` con \`git branch -r\`.`,
             },
             {
               english: 'Local Branch',
@@ -1283,6 +1355,7 @@ export default {
               context: 'branching',
               difficulty: 'beginner',
               command: 'git branch',
+              task: `Elenca i branch locali presenti sulla tua macchina eseguendo \`git branch\` senza flag.`,
             },
             {
               english: 'Delete Branch',
@@ -1294,6 +1367,7 @@ export default {
               context: 'branching',
               difficulty: 'beginner',
               command: 'git branch -d feature-x',
+              task: `Elimina il branch \`feature-x\` ormai unito a main con \`git branch -d feature-x\`.`,
             },
             {
               english: 'Force Delete',
@@ -1306,6 +1380,7 @@ export default {
               difficulty: 'beginner',
               command: 'git branch -D feature-x',
               note: 'Attenzione: distrugge commit non integrati altrove.',
+              task: `Forza la cancellazione del branch non ancora unito \`feature-x\` con \`git branch -D feature-x\`.`,
             },
             {
               english: 'Rename Branch',
@@ -1317,6 +1392,7 @@ export default {
               context: 'branching',
               difficulty: 'beginner',
               command: 'git branch -m new-name',
+              task: `Rinomina il branch corrente in \`new-name\` con \`git branch -m new-name\`.`,
             },
             {
               english: 'Merged Branches',
@@ -1328,6 +1404,7 @@ export default {
               context: 'branching',
               difficulty: 'beginner',
               command: 'git branch --merged main',
+              task: `Elenca i branch gia\` uniti a \`main\` con \`git branch --merged main\` per individuare candidati alla cancellazione.`,
             },
             {
               english: 'Unmerged Branches',
@@ -1339,6 +1416,7 @@ export default {
               context: 'branching',
               difficulty: 'beginner',
               command: 'git branch --no-merged main',
+              task: `Individua i branch non ancora uniti a \`main\` con \`git branch --no-merged main\`.`,
             },
             {
               english: 'Stale Branch',
@@ -1361,6 +1439,7 @@ export default {
               context: 'branching',
               difficulty: 'beginner',
               command: 'git for-each-ref --sort=-committerdate',
+              task: `Ordina i branch per data dell'ultimo commit con \`git for-each-ref --sort=-committerdate\` per trovare quelli piu\` attivi.`,
             },
           ],
         },
@@ -1379,6 +1458,7 @@ export default {
               context: 'branching',
               difficulty: 'beginner',
               command: 'git switch -c feature/login',
+              task: `Crea il feature branch \`feature/login\` con \`git switch -c feature/login\` per isolare lo sviluppo.`,
             },
             {
               english: 'Topic Branch',
@@ -1423,6 +1503,7 @@ export default {
               context: 'branching',
               difficulty: 'beginner',
               command: 'git status',
+              task: `Controlla con \`git status\` se il branch locale e\` divergente rispetto al remoto.`,
             },
             {
               english: 'Branch Off',
@@ -1434,6 +1515,7 @@ export default {
               context: 'branching',
               difficulty: 'beginner',
               command: 'git switch -c feature main',
+              task: `Dirama da \`main\` creando il branch \`feature\` con \`git switch -c feature main\`.`,
             },
             {
               english: 'Branch Tracking',
@@ -1445,6 +1527,7 @@ export default {
               context: 'branching',
               difficulty: 'beginner',
               command: 'git branch -u origin/main',
+              task: `Imposta \`origin/main\` come upstream del branch corrente con \`git branch -u origin/main\`.`,
             },
             {
               english: 'Upstream Branch',
@@ -1456,6 +1539,7 @@ export default {
               context: 'branching',
               difficulty: 'beginner',
               command: 'git branch -vv',
+              task: `Mostra ogni branch locale con il proprio upstream tramite \`git branch -vv\`.`,
             },
             {
               english: 'Branch Protection',
@@ -1478,6 +1562,7 @@ export default {
               context: 'branching',
               difficulty: 'beginner',
               command: 'git config --global init.defaultBranch main',
+              task: `Imposta \`main\` come nome del ramo predefinito per ogni nuovo repository con \`init.defaultBranch\`.`,
             },
           ],
         },
@@ -1506,6 +1591,7 @@ export default {
               difficulty: 'beginner',
               command: 'git merge feature',
               note: 'Pronuncia: la "g" finale è dolce, come in "judge".',
+              task: `Unisci il branch \`feature\` nel ramo corrente con \`git merge feature\`.`,
             },
             {
               english: 'git merge',
@@ -1517,6 +1603,7 @@ export default {
               context: 'merging',
               difficulty: 'beginner',
               command: 'git merge feature-x',
+              task: `Integra il branch \`feature-x\` nel ramo attivo eseguendo \`git merge feature-x\`.`,
             },
             {
               english: 'Fast-Forward',
@@ -1529,6 +1616,7 @@ export default {
               difficulty: 'beginner',
               command: 'git merge --ff-only feature',
               note: 'Possibile solo se il ramo target non ha nuovi commit.',
+              task: `Esegui un merge solo se possibile in fast-forward con \`git merge --ff-only feature\`, senza creare merge commit.`,
             },
             {
               english: '--no-ff',
@@ -1541,6 +1629,7 @@ export default {
               difficulty: 'beginner',
               command: 'git merge --no-ff feature',
               note: 'Usato per preservare la storia delle feature.',
+              task: `Forza la creazione di un merge commit anche con fast-forward possibile usando \`git merge --no-ff feature\`.`,
             },
             {
               english: 'Merge Commit',
@@ -1575,6 +1664,7 @@ export default {
               difficulty: 'beginner',
               command: 'git merge -s ort feature',
               note: 'Strategie: ort, recursive, octopus, ours, theirs.',
+              task: `Unisci \`feature\` selezionando esplicitamente la strategia \`ort\` con \`git merge -s ort feature\`.`,
             },
             {
               english: 'Squash Merge',
@@ -1587,6 +1677,7 @@ export default {
               difficulty: 'beginner',
               command: 'git merge --squash feature',
               note: 'Crea un solo commit dalla feature, perdendo i singoli commit.',
+              task: `Comprimi tutti i commit di \`feature\` in un singolo commit applicato sul ramo corrente con \`git merge --squash feature\`.`,
             },
             {
               english: 'git merge --abort',
@@ -1598,6 +1689,7 @@ export default {
               context: 'merging',
               difficulty: 'beginner',
               command: 'git merge --abort',
+              task: `Annulla un merge in corso e ritorna allo stato pre-merge con \`git merge --abort\`.`,
             },
             {
               english: 'Already Up to Date',
@@ -1628,6 +1720,7 @@ export default {
               difficulty: 'beginner',
               command: 'git status',
               note: 'Git non può decidere autonomamente: tocca a te scegliere.',
+              task: `Identifica i file in conflitto durante un merge in corso eseguendo \`git status\`.`,
             },
             {
               english: 'Conflict Marker',
@@ -1639,6 +1732,7 @@ export default {
               context: 'merging',
               difficulty: 'beginner',
               code: '<<<<<<< HEAD\nmy version\n=======\ntheir version\n>>>>>>> feature',
+              task: `Risolvi i conflitti rimuovendo i marker \`<<<<<<< HEAD\`, \`=======\` e \`>>>>>>> feature\` nel file.`,
             },
             {
               english: 'Resolve Conflict',
@@ -1650,6 +1744,7 @@ export default {
               context: 'merging',
               difficulty: 'beginner',
               command: 'git add file.txt && git commit',
+              task: `Marca \`file.txt\` come risolto con \`git add file.txt\` e completa il merge con \`git commit\`.`,
             },
             {
               english: 'Both Modified',
@@ -1661,6 +1756,7 @@ export default {
               context: 'merging',
               difficulty: 'beginner',
               command: 'git status',
+              task: `Verifica con \`git status\` quali file sono marcati 'both modified', cioe\` toccati su entrambi i lati del merge.`,
             },
             {
               english: 'Mergetool',
@@ -1673,6 +1769,7 @@ export default {
               difficulty: 'beginner',
               command: 'git mergetool',
               tool: 'meld, kdiff3, vimdiff',
+              task: `Avvia lo strumento di merge visuale configurato eseguendo \`git mergetool\` per risolvere i conflitti.`,
             },
             {
               english: 'Accept Ours',
@@ -1684,6 +1781,7 @@ export default {
               context: 'merging',
               difficulty: 'beginner',
               command: 'git checkout --ours file.txt',
+              task: `Mantieni la versione del ramo corrente per \`file.txt\` scartando la modifica in arrivo con \`git checkout --ours file.txt\`.`,
             },
             {
               english: 'Accept Theirs',
@@ -1695,6 +1793,7 @@ export default {
               context: 'merging',
               difficulty: 'beginner',
               command: 'git checkout --theirs file.txt',
+              task: `Sostituisci \`file.txt\` con la versione del ramo in arrivo eseguendo \`git checkout --theirs file.txt\`.`,
             },
             {
               english: 'Mark as Resolved',
@@ -1706,6 +1805,7 @@ export default {
               context: 'merging',
               difficulty: 'beginner',
               command: 'git add resolved.txt',
+              task: `Segna \`resolved.txt\` come conflitto risolto mettendolo in staging con \`git add resolved.txt\`.`,
             },
             {
               english: 'Conflict Style',
@@ -1718,6 +1818,7 @@ export default {
               difficulty: 'beginner',
               command: 'git config merge.conflictstyle diff3',
               note: 'diff3 mostra anche la versione antenata, utile per capire il conflitto.',
+              task: `Configura lo stile di conflitto \`diff3\` per mostrare anche la versione di base comune nei marker.`,
             },
             {
               english: 'rerere',
@@ -1730,6 +1831,7 @@ export default {
               difficulty: 'beginner',
               command: 'git config rerere.enabled true',
               note: 'Reuse Recorded Resolution: utile in rebase ripetuti.',
+              task: `Attiva il riuso automatico delle risoluzioni di conflitto con \`git config rerere.enabled true\`.`,
             },
           ],
         },
@@ -1748,6 +1850,7 @@ export default {
               context: 'merging',
               difficulty: 'beginner',
               command: 'git merge --ff-only',
+              task: `Imponi una storia lineare consentendo solo merge in fast-forward con \`git merge --ff-only\`.`,
             },
             {
               english: 'Non-Linear History',
@@ -1770,6 +1873,7 @@ export default {
               difficulty: 'beginner',
               command: 'git merge -s recursive feature',
               note: 'Sostituita da "ort" come default da Git 2.34.',
+              task: `Unisci \`feature\` selezionando esplicitamente la strategia classica \`recursive\` con \`git merge -s recursive feature\`.`,
             },
             {
               english: 'Octopus Merge',
@@ -1782,6 +1886,7 @@ export default {
               difficulty: 'beginner',
               command: 'git merge branch1 branch2 branch3',
               note: 'Raro. Usato in casi speciali, non gestisce conflitti.',
+              task: `Esegui un octopus merge unendo \`branch1\`, \`branch2\` e \`branch3\` nel ramo corrente in un colpo solo.`,
             },
             {
               english: 'Ours Strategy',
@@ -1793,6 +1898,7 @@ export default {
               context: 'merging',
               difficulty: 'beginner',
               command: 'git merge -s ours feature',
+              task: `Crea un merge che ignora ogni modifica di \`feature\` usando la strategia \`ours\` con \`git merge -s ours feature\`.`,
             },
             {
               english: 'Subtree Merge',
@@ -1804,6 +1910,7 @@ export default {
               context: 'merging',
               difficulty: 'beginner',
               command: 'git merge -s subtree feature',
+              task: `Unisci \`feature\` come sottoalbero con la strategia subtree eseguendo \`git merge -s subtree feature\`.`,
             },
             {
               english: 'Merge Message',
@@ -1815,6 +1922,7 @@ export default {
               context: 'merging',
               difficulty: 'beginner',
               command: 'git merge -m "Merge feature/login" feature',
+              task: `Personalizza il messaggio del merge con \`-m "Merge feature/login"\` quando integri il branch \`feature\`.`,
             },
             {
               english: 'Merge Editor',
@@ -1837,6 +1945,7 @@ export default {
               context: 'merging',
               difficulty: 'beginner',
               command: 'git status',
+              task: `Verifica con \`git status\` lo stato MERGING quando un merge e\` ancora in corso e attende risoluzione.`,
             },
             {
               english: 'Continue Merge',
@@ -1848,6 +1957,7 @@ export default {
               context: 'merging',
               difficulty: 'beginner',
               command: 'git merge --continue',
+              task: `Riprendi e finalizza un merge dopo aver risolto i conflitti eseguendo \`git merge --continue\`.`,
             },
           ],
         },
@@ -1866,6 +1976,7 @@ export default {
               context: 'merging',
               difficulty: 'beginner',
               command: 'git pull --rebase origin main',
+              task: `Aggiorna \`main\` prima del merge con \`git pull --rebase origin main\` per evitare conflitti inutili.`,
             },
             {
               english: 'Test Before Merge',
@@ -1888,6 +1999,7 @@ export default {
               context: 'merging',
               difficulty: 'beginner',
               command: 'git stash',
+              task: `Metti da parte le modifiche pendenti con \`git stash\` per avere una working tree pulita prima del merge.`,
             },
             {
               english: 'Small Merges',
@@ -1939,6 +2051,7 @@ export default {
               context: 'merging',
               difficulty: 'beginner',
               command: 'npm test',
+              task: `Verifica che la build passi dopo il merge lanciando la test suite con \`npm test\`.`,
             },
             {
               english: 'Push After Merge',
@@ -1950,6 +2063,7 @@ export default {
               context: 'merging',
               difficulty: 'beginner',
               command: 'git push origin main',
+              task: `Pubblica sul remoto il risultato del merge con \`git push origin main\` dopo l'integrazione locale.`,
             },
             {
               english: 'Rollback Merge',
@@ -1962,6 +2076,7 @@ export default {
               difficulty: 'beginner',
               command: 'git reset --hard ORIG_HEAD',
               note: 'ORIG_HEAD memorizza HEAD precedente al merge.',
+              task: `Annulla un merge appena completato riportando il ramo a \`ORIG_HEAD\` con \`git reset --hard ORIG_HEAD\`.`,
             },
           ],
         },
@@ -1989,6 +2104,7 @@ export default {
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git remote',
+              task: `Elenca i remoti configurati per il repository eseguendo \`git remote\`.`,
             },
             {
               english: 'origin',
@@ -2001,6 +2117,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git remote -v',
               note: 'Convenzione, non regola: puoi rinominarlo.',
+              task: `Mostra il remoto predefinito \`origin\` con il suo URL usando \`git remote -v\`.`,
             },
             {
               english: 'git remote add',
@@ -2012,6 +2129,7 @@ export default {
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git remote add origin git@github.com:user/repo.git',
+              task: `Collega il repository all'URL SSH \`git@github.com:user/repo.git\` come remoto \`origin\`.`,
             },
             {
               english: 'git remote -v',
@@ -2023,6 +2141,7 @@ export default {
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git remote -v',
+              task: `Elenca tutti i remoti con i rispettivi URL di fetch e push tramite \`git remote -v\`.`,
             },
             {
               english: 'Remote URL',
@@ -2034,6 +2153,7 @@ export default {
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git remote set-url origin <new-url>',
+              task: `Aggiorna l'URL del remoto \`origin\` con \`git remote set-url origin <new-url>\` quando l'indirizzo cambia.`,
             },
             {
               english: 'HTTPS Remote',
@@ -2045,6 +2165,7 @@ export default {
               context: 'remote',
               difficulty: 'intermediate',
               code: 'https://github.com/user/repo.git',
+              task: `Configura un remoto HTTPS usando un URL come \`https://github.com/user/repo.git\` con username e token.`,
             },
             {
               english: 'SSH Remote',
@@ -2057,6 +2178,7 @@ export default {
               difficulty: 'intermediate',
               code: 'git@github.com:user/repo.git',
               note: 'Più sicuro e veloce di HTTPS per uso quotidiano.',
+              task: `Configura un remoto SSH usando un URL come \`git@github.com:user/repo.git\` autenticato tramite chiave.`,
             },
             {
               english: 'Remove Remote',
@@ -2068,6 +2190,7 @@ export default {
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git remote remove old-origin',
+              task: `Rimuovi il remoto \`old-origin\` dalla configurazione del repository con \`git remote remove old-origin\`.`,
             },
             {
               english: 'Rename Remote',
@@ -2079,6 +2202,7 @@ export default {
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git remote rename origin upstream',
+              task: `Rinomina il remoto \`origin\` in \`upstream\` con \`git remote rename origin upstream\`.`,
             },
             {
               english: 'Multi-remote',
@@ -2091,6 +2215,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git remote add backup git@gitlab.com:user/repo.git',
               note: 'Tipico in fork: origin = tuo fork, upstream = repo originale.',
+              task: `Aggiungi un secondo remoto chiamato \`backup\` puntando a GitLab con \`git remote add backup git@gitlab.com:user/repo.git\`.`,
             },
           ],
         },
@@ -2109,6 +2234,7 @@ export default {
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git clone https://github.com/user/repo.git',
+              task: `Clona in locale il repository remoto \`https://github.com/user/repo.git\` con \`git clone\`.`,
             },
             {
               english: 'Clone URL',
@@ -2131,6 +2257,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git clone --depth 1 <url>',
               note: 'Utile per CI o repo enormi quando non serve la storia.',
+              task: `Esegui un clone shallow limitato all'ultimo commit con \`git clone --depth 1 <url>\` per scaricare meno dati.`,
             },
             {
               english: 'Bare Repository',
@@ -2143,6 +2270,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git clone --bare <url>',
               note: 'Estensione classica .git/. Usato dai server.',
+              task: `Crea un repository bare (senza working tree) clonando con \`git clone --bare <url>\`, utile come server centralizzato.`,
             },
             {
               english: 'Mirror',
@@ -2154,6 +2282,7 @@ export default {
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git clone --mirror <url>',
+              task: `Crea un clone mirror che replica esattamente tutti i ref del remoto con \`git clone --mirror <url>\`.`,
             },
             {
               english: 'git fetch',
@@ -2166,6 +2295,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git fetch origin',
               note: 'Sicuro: aggiorna i ref remoti ma non tocca il working tree.',
+              task: `Scarica i nuovi commit dal remoto \`origin\` senza fonderli con \`git fetch origin\`.`,
             },
             {
               english: 'git fetch --all',
@@ -2177,6 +2307,7 @@ export default {
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git fetch --all',
+              task: `Recupera gli aggiornamenti da tutti i remoti configurati con \`git fetch --all\`.`,
             },
             {
               english: 'Prune',
@@ -2189,6 +2320,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git fetch --prune',
               note: 'Configurabile: git config remote.origin.prune true.',
+              task: `Pota dal repository locale i tracking ref di branch remoti gia\` eliminati con \`git fetch --prune\`.`,
             },
             {
               english: 'Remote-tracking Branch',
@@ -2211,6 +2343,7 @@ export default {
               context: 'remote',
               difficulty: 'intermediate',
               code: '.git/refs/remotes/origin/main',
+              task: `Ispeziona il file \`.git/refs/remotes/origin/main\` per leggere l'hash del branch tracciato del remoto.`,
             },
           ],
         },
@@ -2229,6 +2362,7 @@ export default {
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git push origin main',
+              task: `Carica sul remoto \`origin\` i commit locali del branch \`main\` con \`git push origin main\`.`,
             },
             {
               english: 'git pull',
@@ -2241,6 +2375,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git pull origin main',
               note: 'Equivalente a: git fetch + git merge.',
+              task: `Scarica e fondi in un colpo solo i commit del branch \`main\` da \`origin\` con \`git pull origin main\`.`,
             },
             {
               english: 'git pull --rebase',
@@ -2253,6 +2388,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git pull --rebase origin main',
               note: 'Più pulito di un merge automatico.',
+              task: `Aggiorna il branch corrente con \`git pull --rebase origin main\` riapplicando i tuoi commit sopra quelli remoti.`,
             },
             {
               english: 'set-upstream',
@@ -2265,6 +2401,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git push -u origin feature',
               note: `Una volta impostato l'upstream con -u, i futuri git push e git pull funzionano senza specificare il remote.`,
+              task: `Pubblica \`feature\` su \`origin\` impostando l'upstream con \`git push -u origin feature\`.`,
             },
             {
               english: 'Force Push',
@@ -2277,6 +2414,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git push --force origin feature',
               note: 'Pericoloso. Mai su rami condivisi senza accordo.',
+              task: `Sovrascrivi il branch remoto \`feature\` con la tua versione locale tramite \`git push --force origin feature\`.`,
             },
             {
               english: '--force-with-lease',
@@ -2289,6 +2427,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git push --force-with-lease',
               note: "Fallisce se il remoto è cambiato dall'ultimo fetch.",
+              task: `Esegui un force push sicuro con \`git push --force-with-lease\` che verifica di non sovrascrivere lavoro altrui.`,
             },
             {
               english: 'Rejected Push',
@@ -2311,6 +2450,7 @@ export default {
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git pull --rebase',
+              task: `Risolvi un errore non-fast-forward riallineandoti al remoto con \`git pull --rebase\`.`,
             },
             {
               english: 'Push Tags',
@@ -2322,6 +2462,7 @@ export default {
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git push --tags',
+              task: `Pubblica tutti i tag locali sul remoto con \`git push --tags\`.`,
             },
             {
               english: 'Delete Remote Branch',
@@ -2333,6 +2474,7 @@ export default {
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git push origin --delete feature',
+              task: `Elimina il branch remoto \`feature\` da \`origin\` con \`git push origin --delete feature\`.`,
             },
           ],
         },
@@ -2373,6 +2515,7 @@ export default {
               difficulty: 'intermediate',
               command: 'ssh-keygen -t ed25519 -C "you@example.com"',
               note: 'ed25519 è preferito a RSA per sicurezza e velocità.',
+              task: `Genera una coppia di chiavi SSH ed25519 collegata a \`you@example.com\` con \`ssh-keygen -t ed25519 -C "you@example.com"\`.`,
             },
             {
               english: 'Public Key',
@@ -2384,6 +2527,7 @@ export default {
               context: 'remote',
               difficulty: 'intermediate',
               command: 'cat ~/.ssh/id_ed25519.pub',
+              task: `Mostra il contenuto della chiave pubblica con \`cat ~/.ssh/id_ed25519.pub\` da incollare nelle impostazioni di GitHub.`,
             },
             {
               english: 'Private Key',
@@ -2406,6 +2550,7 @@ export default {
               context: 'remote',
               difficulty: 'intermediate',
               command: 'ssh-add ~/.ssh/id_ed25519',
+              task: `Carica la chiave privata \`~/.ssh/id_ed25519\` nell'ssh-agent con \`ssh-add\` per evitare di reinserire la passphrase.`,
             },
             {
               english: 'Known Hosts',
@@ -2417,6 +2562,7 @@ export default {
               context: 'remote',
               difficulty: 'intermediate',
               code: '~/.ssh/known_hosts',
+              task: `Controlla il file \`~/.ssh/known_hosts\` per vedere le fingerprint dei server SSH gia\` accettati.`,
             },
             {
               english: 'Two-Factor Auth',
@@ -2450,6 +2596,7 @@ export default {
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git config --global credential.helper cache',
+              task: `Abilita il credential helper \`cache\` globalmente per memorizzare temporaneamente le credenziali HTTPS.`,
             },
           ],
         },
@@ -2502,6 +2649,7 @@ export default {
               difficulty: 'intermediate',
               command: 'gh pr create',
               tool: 'GitHub CLI',
+              task: `Apri una pull request dal branch corrente verso il default con \`gh pr create\`.`,
             },
             {
               english: 'PR Description',
@@ -2523,6 +2671,7 @@ export default {
               context: 'collaboration',
               difficulty: 'intermediate',
               command: 'gh pr create --draft',
+              task: `Apri la pull request come bozza non pronta al merge con \`gh pr create --draft\`.`,
             },
             {
               english: 'Reviewer',
@@ -2534,6 +2683,7 @@ export default {
               context: 'collaboration',
               difficulty: 'intermediate',
               command: 'gh pr edit --add-reviewer alice',
+              task: `Assegna \`alice\` come revisore della pull request corrente con \`gh pr edit --add-reviewer alice\`.`,
             },
             {
               english: 'Approve PR',
@@ -2545,6 +2695,7 @@ export default {
               context: 'collaboration',
               difficulty: 'intermediate',
               command: 'gh pr review --approve',
+              task: `Approva la pull request corrente lasciando una review positiva con \`gh pr review --approve\`.`,
             },
             {
               english: 'Request Changes',
@@ -2556,6 +2707,7 @@ export default {
               context: 'collaboration',
               difficulty: 'intermediate',
               command: 'gh pr review --request-changes',
+              task: `Richiedi modifiche sulla pull request con \`gh pr review --request-changes\` quando qualcosa va sistemato.`,
             },
             {
               english: 'Merge PR',
@@ -2567,6 +2719,7 @@ export default {
               context: 'collaboration',
               difficulty: 'intermediate',
               command: 'gh pr merge --squash',
+              task: `Mergea la pull request approvata schiacciando i commit in uno solo con \`gh pr merge --squash\`.`,
             },
             {
               english: 'Close PR',
@@ -2578,6 +2731,7 @@ export default {
               context: 'collaboration',
               difficulty: 'intermediate',
               command: 'gh pr close 42',
+              task: `Chiudi la pull request 42 senza fare merge con \`gh pr close 42\`.`,
             },
           ],
         },
@@ -2629,6 +2783,7 @@ export default {
               difficulty: 'intermediate',
               code: '```suggestion\nconst x = 5;\n```',
               note: 'Su GitHub puoi accettare il suggerimento con un click.',
+              task: `Inserisci nella review un blocco \`\`\`suggestion con \`const x = 5;\` per proporre la modifica direttamente applicabile.`,
             },
             {
               english: 'Resolved Conversation',
@@ -2682,6 +2837,7 @@ export default {
               context: 'collaboration',
               difficulty: 'intermediate',
               code: '- [ ] Tests added\n- [ ] Docs updated',
+              task: `Aggiungi alla descrizione della PR una checklist tipo \`- [ ] Tests added\` e \`- [ ] Docs updated\` per uniformare la review.`,
             },
             {
               english: 'Pair Review',
@@ -2711,6 +2867,7 @@ export default {
               difficulty: 'intermediate',
               command: 'gh repo fork user/repo',
               note: 'Tipico in open source: fork → branch → PR.',
+              task: `Crea un fork del repository \`user/repo\` sul tuo account con \`gh repo fork user/repo\`.`,
             },
             {
               english: 'Upstream',
@@ -2722,6 +2879,7 @@ export default {
               context: 'collaboration',
               difficulty: 'intermediate',
               command: 'git remote add upstream <url>',
+              task: `Aggiungi il repository originale come remoto \`upstream\` con \`git remote add upstream <url>\`.`,
             },
             {
               english: 'Sync Fork',
@@ -2733,6 +2891,7 @@ export default {
               context: 'collaboration',
               difficulty: 'intermediate',
               command: 'git pull upstream main',
+              task: `Sincronizza il fork con il repository originale tirando da \`upstream main\` con \`git pull upstream main\`.`,
             },
             {
               english: 'Triangular Workflow',
@@ -2785,6 +2944,7 @@ export default {
               context: 'collaboration',
               difficulty: 'intermediate',
               code: 'CONTRIBUTING.md',
+              task: `Pubblica nella radice del repository un file \`CONTRIBUTING.md\` con le regole per contribuire.`,
             },
             {
               english: 'CLA',
@@ -2826,6 +2986,7 @@ export default {
               difficulty: 'intermediate',
               command: 'gh issue create',
               tool: 'GitHub Issues',
+              task: `Apri una nuova issue su GitHub per segnalare un bug eseguendo \`gh issue create\`.`,
             },
             {
               english: 'Bug Report',
@@ -2888,6 +3049,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git blame file.txt',
               note: 'Letteralmente "incolpare" — utile per capire il contesto, non per puntare il dito.',
+              task: `Mostra autore e commit per ogni riga di \`file.txt\` con \`git blame file.txt\`.`,
             },
             {
               english: 'git annotate',
@@ -2899,6 +3061,7 @@ export default {
               context: 'collaboration',
               difficulty: 'intermediate',
               command: 'git annotate file.txt',
+              task: `Annota ogni riga di \`file.txt\` con commit e autore tramite il comando legacy \`git annotate file.txt\`.`,
             },
             {
               english: 'GitHub',
@@ -2961,6 +3124,7 @@ export default {
               context: 'workflow',
               difficulty: 'intermediate',
               command: 'git switch develop',
+              task: `Passa al branch di integrazione \`develop\` di Git Flow con \`git switch develop\`.`,
             },
             {
               english: 'release branch',
@@ -2972,6 +3136,7 @@ export default {
               context: 'workflow',
               difficulty: 'intermediate',
               command: 'git flow release start 1.0.0',
+              task: `Avvia un release branch per la versione \`1.0.0\` in Git Flow con \`git flow release start 1.0.0\`.`,
             },
             {
               english: 'hotfix branch',
@@ -2984,6 +3149,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git flow hotfix start 1.0.1',
               note: 'Parte da main, viene mergiato in main e develop.',
+              task: `Apri un hotfix branch per la versione \`1.0.1\` con \`git flow hotfix start 1.0.1\` per patchare urgentemente la produzione.`,
             },
             {
               english: 'support branch',
@@ -3036,6 +3202,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git flow init',
               tool: 'git-flow',
+              task: `Inizializza la struttura di branch di Git Flow nel repository con \`git flow init\`.`,
             },
             {
               english: 'Driessen Model',
@@ -3076,6 +3243,7 @@ export default {
               context: 'workflow',
               difficulty: 'intermediate',
               command: 'git switch -c feature main',
+              task: `Crea un nuovo branch \`feature\` diramando dall'ultimo \`main\` con \`git switch -c feature main\`.`,
             },
             {
               english: 'Continuous Deployment',
@@ -3108,6 +3276,7 @@ export default {
               context: 'workflow',
               difficulty: 'intermediate',
               command: 'gh pr merge --squash',
+              task: `Integra in \`main\` la pull request approvata facendo squash merge con \`gh pr merge --squash\` per avviare il deploy.`,
             },
             {
               english: 'Single Branch',
@@ -3221,6 +3390,7 @@ export default {
               difficulty: 'intermediate',
               code: 'if (flags.NEW_LOGIN) { ... }',
               tool: 'LaunchDarkly, Unleash',
+              task: `Avvolgi il codice nuovo dietro un feature flag come \`if (flags.NEW_LOGIN) { ... }\` per nasconderlo finche\` non e\` pronto.`,
             },
             {
               english: 'Branch by Abstraction',
@@ -3372,6 +3542,7 @@ export default {
               context: 'workflow',
               difficulty: 'intermediate',
               code: 'feature/123-add-login',
+              task: `Adotta una convenzione di nomenclatura per i branch come \`feature/123-add-login\` con tipo, ticket e descrizione.`,
             },
             {
               english: 'Workflow Doc',
@@ -3410,6 +3581,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git rebase main',
               note: 'Pronuncia: RI-BEIS. Riscrive la storia.',
+              task: `Riapplica i commit del branch corrente sulla cima di \`main\` eseguendo \`git rebase main\`.`,
             },
             {
               english: 'git rebase',
@@ -3421,6 +3593,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git rebase main',
+              task: `Sposta i commit del branch corrente sopra \`main\` per linearizzare la storia con \`git rebase main\`.`,
             },
             {
               english: 'Linear History Policy',
@@ -3433,6 +3606,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git log --graph --oneline',
               note: 'GitHub e GitLab offrono questa opzione tra le branch protection rules.',
+              task: `Ispeziona la storia con \`git log --graph --oneline\` per verificare che resti lineare secondo la policy.`,
             },
             {
               english: 'Replay Commits',
@@ -3454,6 +3628,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git rebase --onto main feature-old feature-new',
+              task: `Trapianta i commit da \`feature-old\` a \`feature-new\` sulla nuova base \`main\` con \`git rebase --onto main feature-old feature-new\`.`,
             },
             {
               english: 'Rebase Conflict',
@@ -3465,6 +3640,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git rebase --continue',
+              task: `Dopo aver risolto manualmente un conflitto di rebase, prosegui con \`git rebase --continue\`.`,
             },
             {
               english: 'Continue Rebase',
@@ -3476,6 +3652,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git rebase --continue',
+              task: `Riprendi un rebase interrotto da conflitti, dopo aver fatto stage delle correzioni, con \`git rebase --continue\`.`,
             },
             {
               english: 'Abort Rebase',
@@ -3487,6 +3664,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git rebase --abort',
+              task: `Annulla un rebase in corso tornando allo stato iniziale del branch con \`git rebase --abort\`.`,
             },
             {
               english: 'Skip Commit',
@@ -3498,6 +3676,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git rebase --skip',
+              task: `Scarta il commit corrente durante un rebase e passa al successivo con \`git rebase --skip\`.`,
             },
             {
               english: 'Rewrite History',
@@ -3527,6 +3706,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git rebase -i HEAD~5',
+              task: `Apri un rebase interattivo degli ultimi 5 commit con \`git rebase -i HEAD~5\` per riorganizzarli.`,
             },
             {
               english: 'pick',
@@ -3538,6 +3718,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               code: 'pick a3f5e21 Add login form',
+              task: `Mantieni il commit \`a3f5e21\` cosi com'e\` nel todo del rebase interattivo usando \`pick a3f5e21 Add login form\`.`,
             },
             {
               english: 'reword',
@@ -3549,6 +3730,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               code: 'reword a3f5e21 Old message',
+              task: `Cambia solo il messaggio del commit \`a3f5e21\` nel rebase interattivo con la riga \`reword a3f5e21 Old message\`.`,
             },
             {
               english: 'edit',
@@ -3560,6 +3742,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               code: 'edit a3f5e21 Need fixes',
+              task: `Metti in pausa il rebase sul commit \`a3f5e21\` per modificarne il contenuto con la riga \`edit a3f5e21 Need fixes\`.`,
             },
             {
               english: 'squash',
@@ -3571,6 +3754,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               code: 'squash b4f6a32 Fix typo',
+              task: `Unisci il commit \`b4f6a32\` nel precedente combinando i messaggi con la riga \`squash b4f6a32 Fix typo\`.`,
             },
             {
               english: 'fixup',
@@ -3583,6 +3767,7 @@ export default {
               difficulty: 'intermediate',
               code: 'fixup b4f6a32',
               note: 'Utile per piccoli commit di correzione.',
+              task: `Fondi il commit \`b4f6a32\` nel precedente scartandone il messaggio con la riga \`fixup b4f6a32\`.`,
             },
             {
               english: 'drop',
@@ -3594,6 +3779,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               code: 'drop c8e9d12 Bad commit',
+              task: `Elimina del tutto il commit \`c8e9d12\` dal rebase interattivo con la riga \`drop c8e9d12 Bad commit\`.`,
             },
             {
               english: 'Reorder Commits',
@@ -3615,6 +3801,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git rebase -i --autosquash HEAD~5',
+              task: `Riorganizza automaticamente i commit fixup negli ultimi 5 con \`git rebase -i --autosquash HEAD~5\`.`,
             },
             {
               english: 'TODO List',
@@ -3644,6 +3831,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git pull --rebase',
+              task: `Ribasa la tua branch sopra il remoto prima di pubblicarla con \`git pull --rebase\`.`,
             },
             {
               english: 'pull.rebase',
@@ -3655,6 +3843,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git config --global pull.rebase true',
+              task: `Configura globalmente \`pull.rebase\` a \`true\` cosi ogni \`git pull\` esegue rebase invece di merge.`,
             },
             {
               english: 'Rebase vs Merge',
@@ -3687,6 +3876,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git push --force-with-lease',
+              task: `Pubblica la branch riscritta dopo un rebase con il safer \`git push --force-with-lease\`.`,
             },
             {
               english: 'Update Feature',
@@ -3698,6 +3888,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git rebase main',
+              task: `Aggiorna la feature riapplicandone i commit sulla cima dell'ultimo \`main\` con \`git rebase main\`.`,
             },
             {
               english: 'Clean Up History',
@@ -3709,6 +3900,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git rebase -i HEAD~10',
+              task: `Pulisci la storia degli ultimi 10 commit prima del merge con \`git rebase -i HEAD~10\`.`,
             },
             {
               english: 'Squash Before Merge',
@@ -3741,6 +3933,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git commit --fixup=a3f5e21',
+              task: `Crea un fixup commit collegato al commit \`a3f5e21\` con \`git commit --fixup=a3f5e21\`.`,
             },
           ],
         },
@@ -3759,6 +3952,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git rebase --onto main develop feature',
+              task: `Trapianta i commit di \`feature\` da sopra \`develop\` a sopra \`main\` con \`git rebase --onto main develop feature\`.`,
             },
             {
               english: 'Range',
@@ -3770,6 +3964,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git rebase -i HEAD~5..HEAD',
+              task: `Apri il rebase interattivo limitato all'intervallo \`HEAD~5..HEAD\` con \`git rebase -i HEAD~5..HEAD\`.`,
             },
             {
               english: 'Root Rebase',
@@ -3781,6 +3976,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git rebase -i --root',
+              task: `Riscrivi tutta la storia dal commit iniziale eseguendo \`git rebase -i --root\`.`,
             },
             {
               english: 'Preserve Merges',
@@ -3792,6 +3988,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git rebase -i --rebase-merges',
+              task: `Conserva i merge commit durante un rebase interattivo con il flag \`--rebase-merges\`.`,
             },
             {
               english: 'exec',
@@ -3803,6 +4000,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               code: 'exec npm test',
+              task: `Lancia \`npm test\` tra i commit del rebase interattivo inserendo la riga \`exec npm test\` nel todo.`,
             },
             {
               english: 'break',
@@ -3844,6 +4042,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git commit --amend && git rebase --continue',
+              task: `Modifica il commit in pausa nel rebase con \`git commit --amend\` e poi prosegui con \`git rebase --continue\`.`,
             },
             {
               english: 'Split Commit',
@@ -3856,6 +4055,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git reset HEAD^ && ...',
               note: 'Usa edit, fai reset HEAD^, poi committa pezzo per pezzo.',
+              task: `Annulla l'ultimo commit mantenendone le modifiche con \`git reset HEAD^\` per dividerlo poi in piu\` commit separati.`,
             },
           ],
         },

@@ -1,0 +1,596 @@
+{
+  "fixes": [
+    {
+      "level": "0",
+      "lesson": "cloud_foundations_4",
+      "english": "Region",
+      "set": {
+        "task": "Elenca tutte le region AWS disponibili per scegliere dove deployare il workload con la latenza piu bassa."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cloud_compute_1",
+      "english": "Instance",
+      "set": {
+        "task": "Avvia una nuova istanza EC2 a partire dall'AMI ami-12345 per ospitare il backend dell'applicazione."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cloud_compute_1",
+      "english": "Snapshot",
+      "set": {
+        "task": "Crea uno snapshot del volume EBS vol-1234 come backup point-in-time prima dell'aggiornamento del sistema."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cloud_compute_1",
+      "english": "Compute Engine",
+      "set": {
+        "task": "Mostra l'elenco di tutte le VM Compute Engine nel progetto GCP corrente per verificare quali sono attive."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cloud_compute_2",
+      "english": "Spot Instance",
+      "set": {
+        "task": "Richiedi un'istanza spot EC2 per ridurre i costi sui workload batch tolleranti all'interruzione."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cloud_storage_1",
+      "english": "S3",
+      "set": {
+        "task": "Elenca tutti i bucket S3 dell'account per ottenere un quadro complessivo dello storage object."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cloud_storage_1",
+      "english": "Bucket",
+      "set": {
+        "task": "Crea il bucket S3 my-bucket per iniziare a caricare gli oggetti del nuovo progetto."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cloud_storage_1",
+      "english": "Versioning",
+      "set": {
+        "task": "Attiva il versioning sul bucket S3 per conservare ogni versione storica degli oggetti caricati."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cloud_storage_1",
+      "english": "Pre-signed URL",
+      "set": {
+        "task": "Genera un pre-signed URL per l'oggetto s3://bucket/key e condividilo temporaneamente senza esporre le credenziali."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cloud_storage_2",
+      "english": "Volume",
+      "set": {
+        "task": "Crea un volume EBS da 100 GB pronto per essere attaccato a un'istanza EC2 come disco aggiuntivo."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cloud_storage_2",
+      "english": "Mount Point",
+      "set": {
+        "task": "Monta il filesystem EFS via NFS sul mount point locale /mnt/efs per condividere file tra istanze."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cloud_storage_3",
+      "english": "Lifecycle Policy",
+      "set": {
+        "task": "Definisci una lifecycle policy che dopo 90 giorni transiti gli oggetti S3 verso la classe GLACIER per risparmiare."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cloud_networking_1",
+      "english": "VPC",
+      "set": {
+        "task": "Crea una nuova VPC con il CIDR block 10.0.0.0/16 come rete isolata per le risorse cloud del progetto."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cloud_networking_1",
+      "english": "VNet",
+      "set": {
+        "task": "Provisiona una VNet Azure come rete privata virtuale dentro cui collocare VM, subnet e load balancer."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cloud_networking_2",
+      "english": "Security Group",
+      "set": {
+        "task": "Crea un security group da associare alle istanze EC2 per controllare il traffico inbound e outbound."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cloud_networking_4",
+      "english": "VPC Peering",
+      "set": {
+        "task": "Stabilisci un VPC peering tra due VPC per consentire il routing privato tra le loro risorse."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cloud_iam_1",
+      "english": "User",
+      "set": {
+        "task": "Crea l'utente IAM alice come identita dedicata a una persona reale che accede all'account AWS."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cloud_iam_1",
+      "english": "Group",
+      "set": {
+        "task": "Aggiungi un utente IAM a un gruppo per ereditare automaticamente le policy condivise dal team."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cloud_iam_1",
+      "english": "Role",
+      "set": {
+        "task": "Crea un ruolo IAM assumibile da servizi o utenti che necessitano di credenziali temporanee."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cloud_iam_1",
+      "english": "Access Key",
+      "set": {
+        "task": "Genera una nuova access key per un utente IAM da usare nelle chiamate programmaticate alle API AWS."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cloud_iam_1",
+      "english": "ARN",
+      "set": {
+        "task": "Costruisci l'ARN dell'utente alice nell'account 123456789012 per referenziarlo univocamente in una policy."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cloud_iam_2",
+      "english": "Policy",
+      "set": {
+        "task": "Scrivi una policy IAM che conceda l'azione s3:GetObject su qualsiasi resource per leggere oggetti dai bucket."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cloud_iam_2",
+      "english": "Condition",
+      "set": {
+        "task": "Aggiungi una condition alla policy che limiti l'accesso solo alle richieste provenienti dal range 10.0.0.0/8."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cloud_iam_3",
+      "english": "Assume Role",
+      "set": {
+        "task": "Assumi il ruolo MyRole nell'account 123 per ottenere credenziali temporanee STS e operare con la sua identita."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cloud_serverless_1",
+      "english": "Lambda",
+      "set": {
+        "task": "Invoca la funzione Lambda myFunc e salva l'output della risposta nel file locale out.json."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cloud_serverless_1",
+      "english": "Function",
+      "set": {
+        "task": "Definisci una function Lambda Node.js che ritorni un oggetto con statusCode 200 ad ogni invocazione."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cloud_serverless_1",
+      "english": "Handler",
+      "set": {
+        "task": "Implementa l'handler Python lambda_handler che riceve event e context e ritorna un body con statusCode 200."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cloud_serverless_3",
+      "english": "Pattern Matching",
+      "set": {
+        "task": "Componi un pattern matching EventBridge che intercetti solo gli eventi Object Created provenienti da aws.s3."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cloud_serverless_4",
+      "english": "ASL",
+      "set": {
+        "task": "Scrivi una definizione ASL minima per Step Functions con un singolo stato Hello di tipo Pass come End."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cloud_database_1",
+      "english": "RDS",
+      "set": {
+        "task": "Crea una nuova istanza RDS gestita per delegare ad AWS il backup, il patching e la high availability del database."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cloud_database_1",
+      "english": "Read Replica",
+      "set": {
+        "task": "Provisiona una read replica dell'istanza RDS per distribuire il carico delle query di sola lettura."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cloud_database_2",
+      "english": "DynamoDB",
+      "set": {
+        "task": "Esegui uno scan completo della tabella DynamoDB Users per ispezionare tutti gli item presenti."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cloud_database_3",
+      "english": "Redis",
+      "set": {
+        "task": "Verifica con un ping che il server Redis sia raggiungibile e risponda PONG sulla connessione corrente."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_1",
+      "english": "Container Image",
+      "set": {
+        "task": "Builda una container image dell'app taggata myapp:1.0 a partire dal Dockerfile nella directory corrente."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_1",
+      "english": "Dockerfile",
+      "set": {
+        "task": "Scrivi un Dockerfile basato su node:20 che copi il codice, esegua npm install e lanci app.js come entrypoint."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_1",
+      "english": "Multi-Stage Build",
+      "set": {
+        "task": "Imposta una multi-stage build che compili in uno stage builder node:20 e copi il dist dentro un'immagine nginx finale."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_2",
+      "english": "ECR",
+      "set": {
+        "task": "Recupera la password temporanea di login a ECR per autenticare docker contro il registry privato AWS."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_2",
+      "english": "ACR",
+      "set": {
+        "task": "Effettua il login al registry ACR myregistry per poter pushare e pullare immagini sul container registry Azure."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_2",
+      "english": "Push",
+      "set": {
+        "task": "Pusha l'immagine app:1.0 sul registry myregistry per renderla disponibile al deploy in produzione."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_2",
+      "english": "Pull",
+      "set": {
+        "task": "Scarica in locale l'immagine ufficiale node:20 dal Docker Hub per usarla come base in una build successiva."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_3",
+      "english": "Task Definition",
+      "set": {
+        "task": "Definisci una task definition ECS chiamata myapp con un container web basato sull'immagine nginx."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_4",
+      "english": "EKS",
+      "set": {
+        "task": "Aggiorna il kubeconfig locale per puntare al cluster EKS my-cluster e iniziare a usare kubectl contro di lui."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_4",
+      "english": "AKS",
+      "set": {
+        "task": "Recupera le credenziali kubeconfig del cluster AKS Azure per autenticarti come amministratore via kubectl."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_4",
+      "english": "GKE",
+      "set": {
+        "task": "Ottieni le credenziali per il cluster GKE corrente in modo da poter usare kubectl sul Kubernetes managed di Google."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_4",
+      "english": "Pod",
+      "set": {
+        "task": "Elenca tutti i pod presenti nel namespace attivo per verificare quali workload girano sul cluster Kubernetes."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_1",
+      "english": "Drift",
+      "set": {
+        "task": "Lancia un terraform plan in modalita refresh-only per rilevare drift tra lo stato reale e quello dichiarato."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_2",
+      "english": "Terraform",
+      "set": {
+        "task": "Inizializza la working directory Terraform per scaricare i provider necessari e preparare il backend."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_2",
+      "english": "HCL",
+      "set": {
+        "task": "Dichiara in HCL una resource aws_instance chiamata web basata su ami-12345 e di tipo t3.micro."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_2",
+      "english": "Terraform Provider",
+      "set": {
+        "task": "Configura il provider aws di Terraform impostando come region di default eu-west-1."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_2",
+      "english": "Data Source",
+      "set": {
+        "task": "Definisci un data source aws_ami chiamato ubuntu con most_recent attivo per recuperare l'AMI piu recente."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_2",
+      "english": "Variable",
+      "set": {
+        "task": "Dichiara una variable region in Terraform con valore di default eu-south-1 per parametrizzare il modulo."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_2",
+      "english": "Output",
+      "set": {
+        "task": "Esponi come output Terraform instance_ip il public_ip dell'aws_instance web cosi da consumarlo a valle."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_2",
+      "english": "Module",
+      "set": {
+        "task": "Istanzia un module Terraform chiamato vpc che punti alla directory locale ./modules/vpc per riusare la configurazione."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_2",
+      "english": "Workspace",
+      "set": {
+        "task": "Crea un nuovo workspace Terraform chiamato dev per isolare lo state dell'ambiente di sviluppo da quello prod."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_3",
+      "english": "Remote State",
+      "set": {
+        "task": "Configura un backend S3 di remote state che salvi il file prod/terraform.tfstate dentro il bucket my-tfstate."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_3",
+      "english": "Plan",
+      "set": {
+        "task": "Genera un piano Terraform salvato nel file tfplan per ispezionare le modifiche prima di applicarle davvero."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_3",
+      "english": "Apply",
+      "set": {
+        "task": "Applica il piano Terraform salvato in tfplan per provisionare effettivamente le risorse sul cloud."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_3",
+      "english": "Destroy",
+      "set": {
+        "task": "Distruggi tutte le risorse gestite dal modulo Terraform corrente per smantellare l'ambiente effimero."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_3",
+      "english": "Refresh",
+      "set": {
+        "task": "Aggiorna lo state Terraform interrogando i provider per riallineare i dati locali a quelli reali del cloud."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_3",
+      "english": "Import",
+      "set": {
+        "task": "Importa l'istanza EC2 i-1234567890 dentro la resource Terraform aws_instance.web senza ricrearla."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_3",
+      "english": "Lifecycle Block",
+      "set": {
+        "task": "Aggiungi un lifecycle block con prevent_destroy a true per proteggere la resource Terraform da distruzioni accidentali."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_3",
+      "english": "Tainting",
+      "set": {
+        "task": "Marca come tainted la resource aws_instance.web per forzare Terraform a ricrearla al prossimo apply."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_4",
+      "english": "CloudFormation",
+      "set": {
+        "task": "Scrivi un template CloudFormation in formato 2010-09-09 con una sola resource MyBucket di tipo AWS::S3::Bucket."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_4",
+      "english": "Stack",
+      "set": {
+        "task": "Crea uno stack CloudFormation chiamato myapp per provisionare l'intero set di risorse descritte dal template."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_4",
+      "english": "Pulumi",
+      "set": {
+        "task": "Dichiara con Pulumi in TypeScript un bucket S3 chiamato mybucket usando la classe aws.s3.Bucket."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_4",
+      "english": "CDK",
+      "set": {
+        "task": "Crea con AWS CDK un construct s3.Bucket chiamato MyBucket dentro lo stack corrente."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cloud_cost_2",
+      "english": "Budget",
+      "set": {
+        "task": "Crea un budget AWS per impostare una soglia di spesa mensile e ricevere notifiche al superamento."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cloud_monitoring_1",
+      "english": "Metric",
+      "set": {
+        "task": "Recupera le statistiche storiche di una metrica CloudWatch per analizzare l'andamento del workload nel tempo."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cloud_monitoring_1",
+      "english": "Custom Metric",
+      "set": {
+        "task": "Pubblica una custom metric su CloudWatch per tracciare un indicatore applicativo non esposto di default."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cloud_monitoring_2",
+      "english": "Log Group",
+      "set": {
+        "task": "Elenca tutti i log group CloudWatch dell'account per individuare dove finiscono i log di servizi e funzioni."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cloud_monitoring_2",
+      "english": "Logs Insights",
+      "set": {
+        "task": "Componi una query CloudWatch Logs Insights che filtri i messaggi contenenti ERROR e li ordini per timestamp."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cloud_monitoring_2",
+      "english": "Structured Logging",
+      "set": {
+        "task": "Emetti un log strutturato user_login con campi user_id 123 e ip 1.2.3.4 per facilitare le query downstream."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cloud_monitoring_3",
+      "english": "Alarm",
+      "set": {
+        "task": "Configura un alarm CloudWatch su una metric per ricevere una notifica quando supera la soglia critica."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cloud_security_2",
+      "english": "Secrets Manager",
+      "set": {
+        "task": "Recupera il valore corrente del secret db-pass da Secrets Manager per usarlo come password nella connessione DB."
+      }
+    }
+  ]
+}

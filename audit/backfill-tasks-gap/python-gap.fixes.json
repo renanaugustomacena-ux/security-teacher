@@ -1,0 +1,476 @@
+{
+  "fixes": [
+    {
+      "level": "0",
+      "lesson": "py_basics_1",
+      "english": "Print",
+      "set": {
+        "task": "Mostra il messaggio 'Hello, Python!' sulla console usando la funzione print."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_1",
+      "english": "Input",
+      "set": {
+        "task": "Chiedi all'utente di inserire il proprio nome e salva la risposta nella variabile name."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_1",
+      "english": "Comment",
+      "set": {
+        "task": "Aggiungi una riga di commento sopra una chiamata a print che mostra 'Hi'."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_2",
+      "english": "Type",
+      "set": {
+        "task": "Verifica il tipo del valore 5 usando la funzione type, che restituira int."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_2",
+      "english": "Casting",
+      "set": {
+        "task": "Converti la stringa '10' in intero e il numero 5 in stringa usando int e str."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_3",
+      "english": "Addition",
+      "set": {
+        "task": "Somma 10 e 5 e assegna il risultato 15 alla variabile x."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_3",
+      "english": "Exponentiation",
+      "set": {
+        "task": "Calcola 2 elevato alla 10 con l'operatore ** e salva il risultato 1024 in x."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_list",
+      "english": "Slice",
+      "set": {
+        "task": "Estrai una porzione della lista contenente gli elementi dall'indice 1 al 2 incluso."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_list",
+      "english": "Append",
+      "set": {
+        "task": "Aggiungi la stringa 'new_item' in coda a una lista esistente con il metodo append."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_dict",
+      "english": "Get",
+      "set": {
+        "task": "Recupera dal dizionario il valore associato a 'key' restituendo 'default_value' se manca."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_dict",
+      "english": "Update",
+      "set": {
+        "task": "Aggiungi al dizionario la coppia 'new_key'/'new_value' usando il metodo update."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_tuple_set",
+      "english": "Unpacking",
+      "set": {
+        "task": "Spacchetta la tupla (10, 20) nelle variabili x e y in una sola riga."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_tuple_set",
+      "english": "Intersection",
+      "set": {
+        "task": "Calcola l'intersezione tra set1 e set2 ottenendo gli elementi comuni con l'operatore &."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_tuple_set",
+      "english": "Union",
+      "set": {
+        "task": "Unisci set1 e set2 ottenendo un nuovo insieme con tutti gli elementi tramite l'operatore |."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_tuple_set",
+      "english": "Difference",
+      "set": {
+        "task": "Ottieni gli elementi presenti in set1 ma non in set2 usando l'operatore di sottrazione."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_tuple_set",
+      "english": "Symmetric Difference",
+      "set": {
+        "task": "Trova gli elementi presenti in set1 o set2 ma non in entrambi con l'operatore ^."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_strings",
+      "english": "Format",
+      "set": {
+        "task": "Inserisci il valore della variabile name nella stringa 'Hello {}' usando il metodo format."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_strings",
+      "english": "F-String",
+      "set": {
+        "task": "Costruisci una stringa che mostra 'Name:' seguito dal valore di name usando una f-string."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_strings",
+      "english": "Split",
+      "set": {
+        "task": "Dividi la stringa 'A,B,C' usando la virgola come separatore per ottenere la lista ['A', 'B', 'C']."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_strings",
+      "english": "Replace",
+      "set": {
+        "task": "Sostituisci la lettera 'H' con 'J' nella stringa 'Hello' ottenendo 'Jello'."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_loops",
+      "english": "Enumerate",
+      "set": {
+        "task": "Itera sulla lista ottenendo a ogni passaggio l'indice i e il valore val tramite enumerate."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_basics",
+      "english": "Definition (def)",
+      "set": {
+        "task": "Dichiara una funzione chiamata my_function senza parametri usando la parola chiave def."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_basics",
+      "english": "Call",
+      "set": {
+        "task": "Invoca la funzione my_function aggiungendo le parentesi tonde dopo il nome."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_basics",
+      "english": "Keyword Argument",
+      "set": {
+        "task": "Chiama func passando name uguale a 'John' ed age uguale a 30 come argomenti nominati."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_adv",
+      "english": "Lambda Function",
+      "set": {
+        "task": "Crea una funzione anonima inline che riceve x e restituisce il suo doppio."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_adv",
+      "english": "Decorator",
+      "set": {
+        "task": "Applica il decoratore my_decorator alla funzione func usando la sintassi con @."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_scope",
+      "english": "Global Keyword",
+      "set": {
+        "task": "Dichiara x come variabile globale all'interno di una funzione e assegnale il valore 10."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_patterns",
+      "english": "Map (function)",
+      "set": {
+        "task": "Applica una lambda che raddoppia ogni elemento di my_list usando la funzione map."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_patterns",
+      "english": "Filter (function)",
+      "set": {
+        "task": "Filtra da my_list i soli elementi maggiori di zero usando filter con una lambda."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_inheritance",
+      "english": "Super (function)",
+      "set": {
+        "task": "Richiama il costruttore della classe genitore dall'interno della sottoclasse con super."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_concepts",
+      "english": "Private Attribute",
+      "set": {
+        "task": "Definisci un attributo privato __secret con valore 123 usando il doppio underscore."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_concepts",
+      "english": "Protected Attribute",
+      "set": {
+        "task": "Crea un attributo protetto _internal_value impostato a 10 con la convenzione del singolo underscore."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_advanced",
+      "english": "Property (Decorator)",
+      "set": {
+        "task": "Trasforma il metodo name in un getter di proprieta' applicando il decoratore @property."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_advanced",
+      "english": "Setter",
+      "set": {
+        "task": "Definisci il setter della proprieta' name che riceve value usando il decoratore @name.setter."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_advanced",
+      "english": "Classmethod (Decorator)",
+      "set": {
+        "task": "Dichiara un metodo di classe func che riceve cls come primo parametro tramite @classmethod."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_modules",
+      "english": "Import Statement",
+      "set": {
+        "task": "Importa il modulo math della libreria standard per accedere alle funzioni matematiche."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_files",
+      "english": "With Statement (Context Manager)",
+      "set": {
+        "task": "Apri il file 'file.txt' come f con un context manager che lo chiude automaticamente."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_data_formats",
+      "english": "JSON (module)",
+      "set": {
+        "task": "Importa il modulo json e converti la stringa in un oggetto Python tramite json.loads."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_comprehension",
+      "english": "Dictionary Comprehension",
+      "set": {
+        "task": "Costruisci un dizionario da list_of_tuples assegnando k come chiave e v come valore."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_generators",
+      "english": "Yield from",
+      "set": {
+        "task": "Delega a un generatore range(10) restituendone i valori uno a uno con yield from."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_functional",
+      "english": "Functools.partial",
+      "set": {
+        "task": "Crea la funzione half che applica multiply fissando il primo argomento a 0.5 con partial."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_functional",
+      "english": "Zip",
+      "set": {
+        "task": "Accoppia le liste [1, 2] e ['a', 'b'] con zip generando le coppie (1, 'a') e (2, 'b')."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_collections",
+      "english": "Namedtuple",
+      "set": {
+        "task": "Definisci una namedtuple Point con i campi x e y usando il modulo collections."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_collections",
+      "english": "Counter",
+      "set": {
+        "task": "Conta le occorrenze dei caratteri nella stringa 'abcab' ottenendo {'a': 2, 'b': 2, 'c': 1}."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_exceptions",
+      "english": "Raise Statement",
+      "set": {
+        "task": "Solleva manualmente una ValueError con il messaggio 'Invalid value' tramite raise."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_custom_exc",
+      "english": "Exception Class (Inheritance)",
+      "set": {
+        "task": "Definisci una classe di eccezione personalizzata MyError che eredita da Exception."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_custom_exc",
+      "english": "Chaining Exceptions",
+      "set": {
+        "task": "Solleva una NewError concatenandola a old_error con la clausola from per preservare il contesto."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_logging",
+      "english": "Logger",
+      "set": {
+        "task": "Ottieni un logger nominato con __name__ chiamando logging.getLogger nel modulo corrente."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_logging",
+      "english": "PDB (Python Debugger)",
+      "set": {
+        "task": "Importa pdb e imposta un breakpoint interattivo nel codice con pdb.set_trace."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_context",
+      "english": "@contextmanager (Decorator)",
+      "set": {
+        "task": "Trasforma la funzione my_manager in un context manager usando il decoratore di contextlib."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_context",
+      "english": "Nested Context Managers",
+      "set": {
+        "task": "Apri contemporaneamente 'a.txt' come a e 'b.txt' come b in un unico blocco with."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_decorators",
+      "english": "Decorator with Arguments",
+      "set": {
+        "task": "Applica il decoratore parametrico repeat con argomento 3 alla funzione my_func."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_typing",
+      "english": "Type Hints",
+      "set": {
+        "task": "Annota la funzione greet dichiarando che name e' una stringa e il ritorno e' una stringa."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_typing",
+      "english": "Generic Type",
+      "set": {
+        "task": "Indica una lista parametrizzata sul tipo generico T scrivendo List[T] nelle annotazioni."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_typing",
+      "english": "Type Alias",
+      "set": {
+        "task": "Crea un alias di tipo UserID equivalente a int per rendere piu' chiare le annotazioni."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_patterns",
+      "english": "Dataclass (module)",
+      "set": {
+        "task": "Trasforma la classe User in una dataclass applicando il decoratore @dataclass."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_unittest",
+      "english": "Expected Failure",
+      "set": {
+        "task": "Marca un test come fallimento previsto applicando il decoratore @pytest.mark.xfail."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_unittest",
+      "english": "Skipping Tests",
+      "set": {
+        "task": "Salta un test senza eseguirlo applicando il decoratore @pytest.mark.skip."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_mocking",
+      "english": "Patch (Decorator)",
+      "set": {
+        "task": "Sostituisci ClassName del modulo module con un mock applicando @patch al test."
+      }
+    }
+  ]
+}

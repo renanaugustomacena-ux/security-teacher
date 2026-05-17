@@ -1,0 +1,1900 @@
+{
+  "fixes": [
+    {
+      "level": "8",
+      "lesson": "rust_collections_1",
+      "english": "Vec",
+      "set": {
+        "task": "Crea un Vec<i32> vuoto chiamando Vec::new e annotando esplicitamente il tipo dell'elemento contenuto."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_1",
+      "english": "Vec Macro",
+      "set": {
+        "task": "Inizializza un vettore con i valori 1, 2 e 3 usando la macro vec invece di push ripetuti."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_1",
+      "english": "Push",
+      "set": {
+        "task": "Aggiungi il valore 42 in coda al vettore v sfruttando il metodo push che ammortizza le riallocazioni."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_1",
+      "english": "Pop",
+      "set": {
+        "task": "Rimuovi l'ultimo elemento del vettore v con pop e lega il risultato Option<T> alla variabile last."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_1",
+      "english": "Index",
+      "set": {
+        "task": "Accedi al primo elemento del vettore v tramite indicizzazione diretta v[0], ricordando che esce di range causa panic."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_1",
+      "english": "Get",
+      "set": {
+        "task": "Recupera in modo sicuro l'elemento in posizione 0 del vettore v tramite get, ottenendo un Option<&T>."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_1",
+      "english": "Length",
+      "set": {
+        "task": "Ottieni la lunghezza corrente del vettore v invocando il metodo len e legala alla variabile n."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_1",
+      "english": "Capacity",
+      "set": {
+        "task": "Leggi la capacita allocata del vettore v con capacity, distinguendola dalla lunghezza effettiva."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_1",
+      "english": "With Capacity",
+      "set": {
+        "task": "Costruisci un Vec pre-allocato per 100 elementi con Vec::with_capacity per evitare riallocazioni successive."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_1",
+      "english": "Iterate",
+      "set": {
+        "task": "Itera sugli elementi del vettore v usando un ciclo for combinato con il metodo iter che produce riferimenti condivisi."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_2",
+      "english": "HashMap",
+      "set": {
+        "task": "Importa il tipo HashMap dal modulo std::collections per usare la mappa hash della libreria standard."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_2",
+      "english": "Insert",
+      "set": {
+        "task": "Inserisci la coppia chiave \"key\" con valore 42 nella mappa tramite il metodo insert."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_2",
+      "english": "Get From Map",
+      "set": {
+        "task": "Recupera dalla mappa il valore associato alla chiave \"key\" usando get, ottenendo un Option<&V>."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_2",
+      "english": "Remove",
+      "set": {
+        "task": "Rimuovi dalla mappa l'entry con chiave \"key\" chiamando remove e restituendo il valore owned se presente."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_2",
+      "english": "Contains Key",
+      "set": {
+        "task": "Verifica con contains_key se la chiave \"k\" e presente nella mappa prima di eseguire il blocco condizionale."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_2",
+      "english": "Entry API",
+      "set": {
+        "task": "Usa l'API entry per ottenere l'entry della chiave k e inserire il valore 0 se assente con or_insert."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_2",
+      "english": "HashSet",
+      "set": {
+        "task": "Porta in scope il tipo HashSet dal modulo std::collections per gestire insiemi unici senza duplicati."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_2",
+      "english": "BTreeMap",
+      "set": {
+        "task": "Importa BTreeMap da std::collections per usare una mappa ordinata basata su B-tree con chiavi sempre sortate."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_2",
+      "english": "VecDeque",
+      "set": {
+        "task": "Importa VecDeque da std::collections per ottenere una coda double-ended con push e pop efficienti a entrambe le estremita."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_2",
+      "english": "BinaryHeap",
+      "set": {
+        "task": "Importa BinaryHeap da std::collections per costruire una coda di priorita che estrae sempre l'elemento massimo."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_3",
+      "english": "Iterator Trait",
+      "set": {
+        "task": "Definisci la firma del trait Iterator con il tipo associato Item e il metodo next che produce ogni elemento."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_3",
+      "english": "Iter",
+      "set": {
+        "task": "Ottieni dal vettore v un iteratore di riferimenti condivisi chiamando il metodo iter senza consumare la collezione."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_3",
+      "english": "Iter Mut",
+      "set": {
+        "task": "Ricava dal vettore v un iteratore di riferimenti mutabili invocando iter_mut per modificare gli elementi sul posto."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_3",
+      "english": "Into Iter",
+      "set": {
+        "task": "Consuma il vettore v con into_iter spostando ogni elemento fuori per cederne l'ownership al codice a valle."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_3",
+      "english": "Map Iter",
+      "set": {
+        "task": "Applica una trasformazione che raddoppia ogni elemento del vettore v concatenando iter e map con una closure."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_3",
+      "english": "Filter",
+      "set": {
+        "task": "Filtra dal vettore v solo gli elementi positivi concatenando iter e filter con la closure |&&x| x > 0."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_3",
+      "english": "Collect",
+      "set": {
+        "task": "Materializza l'iteratore lazy iter in un Vec posseduto invocando collect e annotando il tipo target."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_3",
+      "english": "Sum",
+      "set": {
+        "task": "Calcola la somma degli interi del vettore v annotando il tipo i32 e concatenando iter con sum."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_3",
+      "english": "Count",
+      "set": {
+        "task": "Conta gli elementi rimasti nell'iteratore iter consumandolo interamente con il metodo count."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_4",
+      "english": "String Push Char",
+      "set": {
+        "task": "Aggiungi il carattere ! in coda alla String s usando push, che lavora carattere per carattere."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_4",
+      "english": "String Split",
+      "set": {
+        "task": "Separa la stringa s sui caratteri virgola usando split per ottenere un iteratore di slice senza copie."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_4",
+      "english": "String Trim",
+      "set": {
+        "task": "Rimuovi gli spazi iniziali e finali della stringa s con trim e lega il risultato a t."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_4",
+      "english": "String Replace",
+      "set": {
+        "task": "Sostituisci tutte le occorrenze di \"foo\" con \"bar\" nella stringa s tramite il metodo replace."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_4",
+      "english": "To Lowercase",
+      "set": {
+        "task": "Converti la stringa s in una nuova String tutta minuscola usando to_lowercase senza mutare l'originale."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_4",
+      "english": "To Uppercase",
+      "set": {
+        "task": "Trasforma la stringa s in una versione tutta maiuscola chiamando to_uppercase per normalizzare i confronti."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_4",
+      "english": "String Contains",
+      "set": {
+        "task": "Verifica se la stringa s contiene la sottostringa \"hello\" sfruttando il metodo contains che ritorna un bool."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_4",
+      "english": "String Starts With",
+      "set": {
+        "task": "Controlla se la stringa s inizia col prefisso \"http\" tramite starts_with per filtrare URL all'origine."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_4",
+      "english": "Parse",
+      "set": {
+        "task": "Converti la stringa \"42\" in un i32 chiamando parse e propagando l'errore di conversione con l'operatore ?."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "rust_collections_4",
+      "english": "String Format",
+      "set": {
+        "task": "Componi una nuova String interpolando i valori a e b con la macro format e il template \"{}-{}\"."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "rust_traits_1",
+      "english": "Trait",
+      "set": {
+        "task": "Definisci il trait Greet che richiede un metodo hello con argomento &self e nessun valore di ritorno."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "rust_traits_1",
+      "english": "Trait Implementation",
+      "set": {
+        "task": "Implementa il trait Greet per il tipo User fornendo il corpo del metodo hello dentro un blocco impl."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "rust_traits_1",
+      "english": "Trait Method",
+      "set": {
+        "task": "Dichiara nel trait il metodo area con firma &self -> f64 senza fornire un corpo, obbligando gli implementatori."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "rust_traits_1",
+      "english": "Default Implementation",
+      "set": {
+        "task": "Fornisci nel trait una default implementation del metodo name che restituisce il letterale \"default\"."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "rust_traits_1",
+      "english": "Trait Bound",
+      "set": {
+        "task": "Aggiungi alla funzione print il trait bound T: Display vincolando T a tipi formattabili in output utente."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "rust_traits_1",
+      "english": "Multiple Bounds",
+      "set": {
+        "task": "Vincola il generico T della funzione f a soddisfare sia Clone sia Debug combinando i due trait bound con +."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "rust_traits_1",
+      "english": "Where Clause",
+      "set": {
+        "task": "Sposta i bound di T nella clausola where in coda alla firma di f per mantenere leggibile la lista dei generici."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "rust_traits_1",
+      "english": "Impl Trait",
+      "set": {
+        "task": "Restituisci dalla funzione make_iter un tipo opaco impl Iterator<Item=i32> senza esporre il tipo concreto."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "rust_traits_1",
+      "english": "Trait Function",
+      "set": {
+        "task": "Dichiara nel trait una funzione associata create senza self che restituisce un valore di tipo Self."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "rust_traits_1",
+      "english": "Associated Constant",
+      "set": {
+        "task": "Dichiara nel trait la costante associata MAX di tipo u32 senza fornirne il valore predefinito."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "rust_traits_2",
+      "english": "Display",
+      "set": {
+        "task": "Implementa il trait Display per il tipo X fornendo il metodo fmt che scrive nel formatter user-facing."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "rust_traits_2",
+      "english": "Debug",
+      "set": {
+        "task": "Stampa l'espressione x con la formattazione di debug {:?} tramite la macro println e il trait Debug."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "rust_traits_2",
+      "english": "Explicit Clone Trait",
+      "set": {
+        "task": "Duplica esplicitamente il valore x invocando il metodo clone fornito dal trait Clone e lega il risultato a y."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "rust_traits_2",
+      "english": "Marker Copy Trait",
+      "set": {
+        "task": "Deriva il marker trait Copy insieme a Clone sul tipo per permettere la duplicazione implicita dei valori."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "rust_traits_2",
+      "english": "Std Iterator Trait",
+      "set": {
+        "task": "Implementa il metodo next con firma &mut self -> Option<Self::Item> per soddisfare il trait Iterator della stdlib."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "rust_traits_2",
+      "english": "IntoIterator",
+      "set": {
+        "task": "Itera direttamente sulla collezione con un ciclo for, sfruttando l'implementazione automatica di IntoIterator."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "rust_traits_2",
+      "english": "PartialOrd",
+      "set": {
+        "task": "Deriva il trait PartialOrd sulla struct con un attributo derive per abilitare gli operatori di confronto <, > e <=."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "rust_traits_2",
+      "english": "AsRef",
+      "set": {
+        "task": "Scrivi una funzione read generica su P: AsRef<Path> in modo da accettare sia &str sia PathBuf come argomento."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "rust_traits_2",
+      "english": "From",
+      "set": {
+        "task": "Implementa il trait From<&str> per il tipo String per definire una conversione infallibile dallo slice di stringa."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "rust_traits_2",
+      "english": "Into",
+      "set": {
+        "task": "Converti il letterale \"hi\" in una String tramite il metodo into, sfruttando l'implementazione gratuita derivata da From."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "rust_traits_3",
+      "english": "Boxed Trait Object",
+      "set": {
+        "task": "Lega alla variabile s un Box<dyn Shape> per ospitare un valore eterogeneo sull'heap dietro una vtable."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "rust_traits_3",
+      "english": "Dyn Keyword",
+      "set": {
+        "task": "Scrivi la funzione render che accetta un riferimento &dyn Shape, optando per il dispatch dinamico tramite la parola chiave dyn."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "rust_traits_3",
+      "english": "Boxed Trait",
+      "set": {
+        "task": "Costruisci un Box<dyn Shape> avvolgendo un valore Circle con Box::new per memorizzare un trait object sull'heap."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "rust_traits_3",
+      "english": "Trait Reference",
+      "set": {
+        "task": "Definisci la funzione print che prende un trait reference &dyn Display senza possedere il valore concreto."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "rust_traits_3",
+      "english": "Trait Vec",
+      "set": {
+        "task": "Inizializza un vettore vuoto di tipo Vec<Box<dyn Shape>> per contenere implementazioni eterogenee del trait."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "rust_traits_4",
+      "english": "Supertrait",
+      "set": {
+        "task": "Dichiara il trait Animal che ha Display come supertrait, obbligando ogni implementatore di Animal a implementare anche Display."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "rust_traits_4",
+      "english": "Blanket Implementation",
+      "set": {
+        "task": "Scrivi una blanket implementation che implementi ToString per ogni T che soddisfa Display tramite un singolo impl generico."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "rust_traits_4",
+      "english": "Marker Trait",
+      "set": {
+        "task": "Dichiara un marker trait Send privo di metodi che etichetti i tipi semanticamente sicuri tra thread."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "rust_traits_4",
+      "english": "Negative Impl",
+      "set": {
+        "task": "Aggiungi un'implementazione negativa impl !Send for X per impedire al compilatore di trasferire X tra thread."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "rust_traits_4",
+      "english": "Trait Aliasing",
+      "set": {
+        "task": "Definisci un trait alias MyBounds equivalente a Display + Clone per accorciare liste di bound ricorrenti."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "rust_generics_1",
+      "english": "Generic Function",
+      "set": {
+        "task": "Scrivi la funzione identita id parametrizzata sul tipo generico T che accetta x: T e lo restituisce inalterato."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "rust_generics_1",
+      "english": "Type Parameter",
+      "set": {
+        "task": "Dichiara la funzione f con un type parameter T che compare sia come tipo dell'argomento x sia del valore di ritorno."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "rust_generics_1",
+      "english": "Type Argument",
+      "set": {
+        "task": "Specifica esplicitamente il type argument i32 nella chiamata a parse usando la sintassi turbofish ::<i32> sul letterale \"42\"."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "rust_generics_1",
+      "english": "Turbofish",
+      "set": {
+        "task": "Annota esplicitamente il tipo target Vec<_> nella chiamata a collect usando la sintassi turbofish ::<>."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "rust_generics_1",
+      "english": "Generic Type",
+      "set": {
+        "task": "Istanzia il tipo generico Vec specializzandolo con il parametro concreto i32 nella sua forma Vec<i32>."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "rust_generics_1",
+      "english": "Type Constraint",
+      "set": {
+        "task": "Aggiungi al type parameter T della funzione f il vincolo Display per restringere i tipi accettati a quelli formattabili."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "rust_generics_1",
+      "english": "Multiple Type Parameters",
+      "set": {
+        "task": "Dichiara la funzione pair con due type parameter distinti A e B per accettare argomenti di tipi differenti."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "rust_generics_1",
+      "english": "Default Type Parameter",
+      "set": {
+        "task": "Definisci la struct Counter parametrizzata su T con un valore predefinito u32, permettendo ai chiamanti di omettere il tipo."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "rust_generics_1",
+      "english": "Const Generic",
+      "set": {
+        "task": "Dichiara la funzione arr parametrizzata su un const generic N di tipo usize che restituisce un array [u32; N]."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "rust_generics_1",
+      "english": "Generic Constraint Inference",
+      "set": {
+        "task": "Lascia che il compilatore inferisca il tipo Vec<i32> per la variabile v inizializzata con la macro vec."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "rust_generics_2",
+      "english": "Generic Struct",
+      "set": {
+        "task": "Definisci la struct Point parametrizzata su T con due campi x e y che condividono lo stesso tipo generico."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "rust_generics_2",
+      "english": "Generic Enum",
+      "set": {
+        "task": "Definisci l'enum Option parametrizzato su T con la variante Some che porta un payload e la variante None vuota."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "rust_generics_2",
+      "english": "Generic Impl",
+      "set": {
+        "task": "Scrivi un impl generico su T per Point che aggiunga un metodo x con ritorno &T riferito al campo omonimo."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "rust_generics_2",
+      "english": "Conditional Impl",
+      "set": {
+        "task": "Aggiungi un impl condizionale per Point<T> attivo solo quando T soddisfa Display, esponendo il metodo show."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "rust_generics_2",
+      "english": "Generic Method",
+      "set": {
+        "task": "Definisci il metodo generico convert su Self che introduce un nuovo parametro U vincolato da T: Into<U> nella clausola where."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "rust_generics_2",
+      "english": "Generic Trait",
+      "set": {
+        "task": "Dichiara il trait Container parametrizzato su T con un metodo add che inserisce un elemento di tipo T."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "rust_generics_2",
+      "english": "Phantom Type",
+      "set": {
+        "task": "Dichiara un campo PhantomData<T> in una struct per portare il parametro T senza memorizzarne alcun valore."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "rust_generics_2",
+      "english": "Generic Type Alias",
+      "set": {
+        "task": "Definisci un alias di tipo Result<T> equivalente a std::result::Result<T, MyError> per nascondere il parametro errore."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "rust_generics_2",
+      "english": "Generic Container",
+      "set": {
+        "task": "Istanzia il container generico Vec specializzandolo con il parametro String nella forma Vec<String>."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "rust_generics_3",
+      "english": "Inlining",
+      "set": {
+        "task": "Annota una funzione helper con l'attributo #[inline] suggerendo al compilatore l'espansione inline al call site."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "rust_generics_4",
+      "english": "Where Clause (generic context)",
+      "set": {
+        "task": "Sposta i bound di T e U nella clausola where della funzione f per separare la firma dai vincoli."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "rust_generics_4",
+      "english": "Higher-Ranked Trait Bound",
+      "set": {
+        "task": "Vincola il parametro F con un higher-ranked trait bound for<'a> Fn(&'a str) accettando closure valide per ogni lifetime."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "rust_generics_4",
+      "english": "Closure Bound",
+      "set": {
+        "task": "Dichiara la funzione apply con F: Fn(i32) -> i32 come closure bound per accettare qualunque chiusura compatibile."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "rust_generics_4",
+      "english": "Type State Pattern",
+      "set": {
+        "task": "Implementa il type state pattern con una struct Conn<S> che usa PhantomData per codificare lo stato nel tipo."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "rust_generics_4",
+      "english": "Generic Constants",
+      "set": {
+        "task": "Dichiara la funzione arr parametrizzata sulla costante generica N di tipo usize che restituisce un array [u32; N]."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "rust_generics_4",
+      "english": "Sized Trait",
+      "set": {
+        "task": "Rilassa il vincolo Sized predefinito sul parametro T della funzione f scrivendo ?Sized per accettare slice e trait object."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "rust_generics_4",
+      "english": "Trait Inheritance (generic bounds)",
+      "set": {
+        "task": "Dichiara il trait Animal con Display come supertrait per imporre ai tipi animali anche la formattazione user-facing."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "rust_generics_4",
+      "english": "Generic Lifetime",
+      "set": {
+        "task": "Dichiara la funzione longest parametrizzata sulla lifetime generica 'a che lega input e output al medesimo borrow."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "rust_lifetimes_1",
+      "english": "Lifetime Annotation",
+      "set": {
+        "task": "Annota nella funzione f la lifetime 'a sul riferimento di input x: &'a str per renderla esplicita."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "rust_lifetimes_1",
+      "english": "Lifetime Parameter",
+      "set": {
+        "task": "Introduci il lifetime parameter 'a nella firma di f legandolo al riferimento &'a i32 passato come argomento."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "rust_lifetimes_1",
+      "english": "Static Lifetime Bound",
+      "set": {
+        "task": "Annota lo slice s con il vincolo di lifetime 'static legandolo al letterale \"hello\" che dura per tutta l'esecuzione."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "rust_lifetimes_1",
+      "english": "Lifetime Elision",
+      "set": {
+        "task": "Lascia che le regole di lifetime elision inferiscano la lifetime per la funzione f con un solo input e output &str."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "rust_lifetimes_1",
+      "english": "Lifetime Bound",
+      "set": {
+        "task": "Aggiungi il lifetime bound T: 'a alla firma di f per garantire che T non contenga riferimenti piu corti di 'a."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "rust_lifetimes_1",
+      "english": "Outlives",
+      "set": {
+        "task": "Dichiara nella funzione f il vincolo outlives 'b: 'a stabilendo che 'b vive almeno quanto 'a."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "rust_lifetimes_1",
+      "english": "Anonymous Lifetime",
+      "set": {
+        "task": "Usa la lifetime anonima '_ nella firma f(x: &'_ str) per chiedere al compilatore di inferirne il nome."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "rust_lifetimes_2",
+      "english": "Function Lifetime",
+      "set": {
+        "task": "Dichiara la funzione longest parametrizzata sulla lifetime 'a per legare entrambi i borrow di input al ritorno."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "rust_lifetimes_2",
+      "english": "Struct Lifetime",
+      "set": {
+        "task": "Definisci la struct Wrapper parametrizzata sulla lifetime 'a per memorizzare un riferimento &'a str."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "rust_lifetimes_2",
+      "english": "Impl Lifetime",
+      "set": {
+        "task": "Apri un blocco impl<'a> per Wrapper<'a> propagando la lifetime alle implementazioni del tipo borrowed."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "rust_lifetimes_2",
+      "english": "Method Lifetime",
+      "set": {
+        "task": "Aggiungi al metodo extend la lifetime locale 'b sull'argomento other, separandola da quella di self."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "rust_lifetimes_2",
+      "english": "Multiple Lifetimes",
+      "set": {
+        "task": "Dichiara la funzione f con due lifetime distinte 'a e 'b applicate rispettivamente agli argomenti x e y."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "rust_lifetimes_3",
+      "english": "Two Phase Borrow",
+      "set": {
+        "task": "Usa un two-phase borrow chiamando v.push(v.len()) in una sola espressione: prima si legge len, poi push muta v."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "rust_lifetimes_3",
+      "english": "Lifetime Reborrow",
+      "set": {
+        "task": "Esegui un reborrow di r1 scrivendo &mut *r1 per ottenere un nuovo prestito mutabile con scope piu corto."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "rust_lifetimes_4",
+      "english": "Generic Lifetime (advanced)",
+      "set": {
+        "task": "Dichiara la funzione longest con la lifetime generica 'a comune ai due input &'a str e al riferimento restituito."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "rust_lifetimes_4",
+      "english": "HRTB",
+      "set": {
+        "task": "Specifica il bound HRTB for<'a> Fn(&'a str) sulla closure F per accettare chiusure valide per ogni lifetime."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "rust_lifetimes_4",
+      "english": "Pin",
+      "set": {
+        "task": "Dichiara un argomento Pin<&mut Future> per garantire che il future non venga spostato durante l'esecuzione asincrona."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "rust_lifetimes_4",
+      "english": "Lifetime Bound on Generic",
+      "set": {
+        "task": "Aggiungi il bound T: 'a sul parametro generico di f per garantire che T non contenga riferimenti piu corti di 'a."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "rust_lifetimes_4",
+      "english": "Static Bound",
+      "set": {
+        "task": "Vincola il parametro generico F con il bound 'static nella funzione spawn per accettare solo valori senza prestiti volatili."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "rust_lifetimes_4",
+      "english": "Lifetime in Traits",
+      "set": {
+        "task": "Definisci il trait Iter parametrizzato sulla lifetime 'a con tipo associato Item legato anch'esso a 'a."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "rust_lifetimes_4",
+      "english": "Move Closure",
+      "set": {
+        "task": "Lancia un thread con thread::spawn passando una closure move che trasferisce ownership delle variabili catturate."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "rust_foundations_9",
+      "english": "Module",
+      "set": {
+        "task": "Dichiara un modulo network con un blocco mod inline per raggruppare item correlati dietro un namespace."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "rust_foundations_9",
+      "english": "Mod Keyword",
+      "set": {
+        "task": "Carica il modulo utils dal file fratello utils.rs scrivendo la dichiarazione mod utils con la parola chiave mod."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "rust_foundations_9",
+      "english": "Use Statement",
+      "set": {
+        "task": "Porta in scope il tipo HashMap di std::collections con una use statement per accorciarne il path."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "rust_foundations_9",
+      "english": "Path",
+      "set": {
+        "task": "Riferisciti tramite il path assoluto crate::utils::helper alla funzione helper definita nel modulo utils del crate corrente."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "rust_foundations_9",
+      "english": "Pub Keyword",
+      "set": {
+        "task": "Marca la funzione greet con la parola chiave pub per renderla visibile oltre il modulo che la definisce."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "rust_foundations_9",
+      "english": "Crate Root",
+      "set": {
+        "task": "Crea il file src/lib.rs come crate root della libreria per ancorare tutti i path assoluti del progetto."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "rust_foundations_9",
+      "english": "Crate Keyword",
+      "set": {
+        "task": "Importa il modulo utils a partire dalla crate root con la parola chiave crate scrivendo use crate::utils."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "rust_foundations_9",
+      "english": "Super Path",
+      "set": {
+        "task": "Importa il tipo Helper dal modulo padre tramite il super path use super::Helper invece di scrivere il path assoluto."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "rust_foundations_9",
+      "english": "Self Path",
+      "set": {
+        "task": "Importa il modulo utils figlio del corrente tramite il self path use self::utils per chiarezza nei moduli annidati."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "rust_foundations_9",
+      "english": "Module File",
+      "set": {
+        "task": "Aggiungi un commento che indichi src/network.rs come module file ospitante il modulo network del crate."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "rust_foundations_10",
+      "english": "Workspace",
+      "set": {
+        "task": "Dichiara nel Cargo.toml la sezione [workspace] elencando i membri \"app\" e \"lib\" per condividere un solo Cargo.lock."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "rust_foundations_10",
+      "english": "Path Dependency",
+      "set": {
+        "task": "Definisci la dipendenza helpers come path dependency puntando a \"../helpers\" anziche a un crate pubblicato su crates.io."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "rust_foundations_10",
+      "english": "Dependency",
+      "set": {
+        "task": "Aggiungi serde versione \"1.0\" alla sezione [dependencies] del Cargo.toml per dichiarare la dipendenza al build."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "rust_foundations_10",
+      "english": "Dev Dependency",
+      "set": {
+        "task": "Inserisci proptest \"1\" sotto [dev-dependencies] perche venga compilato solo durante cargo test e cargo bench."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "rust_foundations_10",
+      "english": "Build Dependency",
+      "set": {
+        "task": "Apri la sezione [build-dependencies] del Cargo.toml per dichiarare i crate consumati esclusivamente da build.rs."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "rust_foundations_10",
+      "english": "Feature Flag",
+      "set": {
+        "task": "Definisci un feature flag async che attiva la dipendenza tokio dichiarandolo nella sezione [features] del Cargo.toml."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "rust_foundations_10",
+      "english": "Version Specifier",
+      "set": {
+        "task": "Indica per serde il version specifier \"^1.0\" per permettere a Cargo di aggiornare lungo la linea minore compatibile."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "rust_foundations_11",
+      "english": "Public",
+      "set": {
+        "task": "Marca la funzione api come pubblica con la parola chiave pub per esporla agli utenti esterni del modulo."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "rust_foundations_11",
+      "english": "Pub Crate",
+      "set": {
+        "task": "Restringi la visibilita della funzione internal al solo crate corrente usando il qualificatore pub(crate)."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "rust_foundations_11",
+      "english": "Pub Super",
+      "set": {
+        "task": "Limita la visibilita della funzione shared al modulo padre dichiarandola con pub(super) per esposizioni mirate."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "rust_foundations_11",
+      "english": "Pub Use",
+      "set": {
+        "task": "Ri-esporta l'item Helper di crate::utils al livello corrente con pub use per appiattire l'API pubblica."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "rust_foundations_11",
+      "english": "Private Module",
+      "set": {
+        "task": "Dichiara il modulo internal come privato omettendo pub e aggiungi un commento che ne chiarisca la visibilita."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "rust_foundations_11",
+      "english": "Glob Import",
+      "set": {
+        "task": "Esegui un glob import di std::prelude con use std::prelude::* per portare in scope tutti gli item ri-esportati."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "rust_foundations_11",
+      "english": "Re-Export",
+      "set": {
+        "task": "Ri-esporta il tipo Connection del modulo network alla root del crate corrente tramite pub use."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "rust_foundations_12",
+      "english": "Cargo Test",
+      "set": {
+        "task": "Esegui la suite di test del crate corrente lanciando il comando cargo test dal terminale."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "rust_foundations_12",
+      "english": "Cargo Doc",
+      "set": {
+        "task": "Genera e apri nel browser la documentazione HTML del crate lanciando cargo doc --open."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "rust_foundations_12",
+      "english": "Cargo Update",
+      "set": {
+        "task": "Aggiorna le dipendenze risolte nel Cargo.lock al loro semver massimo compatibile con il comando cargo update."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "rust_foundations_12",
+      "english": "Cargo Add",
+      "set": {
+        "task": "Aggiungi serde come dipendenza al Cargo.toml senza editarlo a mano lanciando cargo add serde."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "rust_foundations_12",
+      "english": "Cargo Remove",
+      "set": {
+        "task": "Rimuovi serde dalle dipendenze del Cargo.toml tramite il comando cargo remove serde in un'unica azione tracciata."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "rust_foundations_12",
+      "english": "Cargo Publish",
+      "set": {
+        "task": "Pubblica il crate corrente sul registry crates.io con il comando cargo publish dopo aver bumpato la versione."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "rust_foundations_12",
+      "english": "Cargo Bench",
+      "set": {
+        "task": "Lancia i target di benchmark del crate in modalita release tramite il comando cargo bench."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "rust_foundations_12",
+      "english": "Cargo Tree",
+      "set": {
+        "task": "Stampa l'albero delle dipendenze risolte del workspace con il comando cargo tree per scovare duplicati."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "rust_foundations_12",
+      "english": "Cargo Audit",
+      "set": {
+        "task": "Verifica che nessuna dipendenza presenti CVE note lanciando il comando cargo audit dalla CI o in locale."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "rust_foundations_12",
+      "english": "Cargo Expand",
+      "set": {
+        "task": "Espandi le macro del crate corrente per ispezionarne l'output generato eseguendo il comando cargo expand."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_5",
+      "english": "Closure",
+      "set": {
+        "task": "Definisci una closure add che riceve x e y con la sintassi pipe e restituisce la loro somma."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_5",
+      "english": "Pipe Syntax",
+      "set": {
+        "task": "Scrivi una closure che raddoppia x dichiarando il parametro tra barre verticali con la sintassi |x| x * 2."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_5",
+      "english": "Capture",
+      "set": {
+        "task": "Definisci una closure add_n che cattura la variabile n dall'ambiente circostante e la somma al parametro x."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_5",
+      "english": "Iterator Move Closure",
+      "set": {
+        "task": "Lancia thread::spawn passando una closure move che cattura data per ownership invece che per borrow."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_5",
+      "english": "Fn Trait",
+      "set": {
+        "task": "Dichiara la funzione apply parametrizzata su F: Fn(i32) -> i32 per accettare closure invocabili piu volte."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_5",
+      "english": "FnMut Trait",
+      "set": {
+        "task": "Definisci la funzione run con F: FnMut() per accettare una closure che muta lo stato catturato a ogni invocazione."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_5",
+      "english": "FnOnce Trait",
+      "set": {
+        "task": "Dichiara la funzione run con il bound F: FnOnce() per ricevere una closure consumabile una sola volta."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_5",
+      "english": "Type Inference Closure",
+      "set": {
+        "task": "Lascia che il compilatore inferisca i tipi della closure |x| x + 1 dai chiamanti che la invocano."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_6",
+      "english": "Iterator Adaptor",
+      "set": {
+        "task": "Concatena map e filter sull'iteratore iter per costruire una pipeline lazy di adattatori in stile builder."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_6",
+      "english": "Map Adaptor",
+      "set": {
+        "task": "Applica il map adaptor sull'iteratore di v per raddoppiare lazy ogni elemento con la closure |x| x * 2."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_6",
+      "english": "Filter Adaptor",
+      "set": {
+        "task": "Mantieni dal vettore v solo gli elementi positivi concatenando iter e filter con la closure |&&x| x > 0."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_6",
+      "english": "Iterator Take",
+      "set": {
+        "task": "Limita un iteratore ai primi 5 elementi invocando il metodo take per ottenere una sequenza finita."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_6",
+      "english": "Skip",
+      "set": {
+        "task": "Scarta i primi 3 elementi dell'iteratore iter chiamando skip per saltare un header o un prefisso."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_6",
+      "english": "Zip",
+      "set": {
+        "task": "Abbina elemento per elemento gli iteratori di a e b chiamando zip per produrre tuple (a, b)."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_6",
+      "english": "Chain",
+      "set": {
+        "task": "Concatena gli iteratori di a e b in un'unica sequenza virtuale invocando chain."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_6",
+      "english": "Enumerate",
+      "set": {
+        "task": "Itera sugli elementi del vettore v abbinandoli al loro indice zero-based usando enumerate dentro un ciclo for."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_6",
+      "english": "Flat Map",
+      "set": {
+        "task": "Appiattisci una sequenza annidata applicando flat_map sull'iteratore con la closure |x| vec![x, x]."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_6",
+      "english": "Peekable",
+      "set": {
+        "task": "Avvolgi l'iteratore di v con peekable per consentire al parser di consultare il prossimo elemento senza consumarlo."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_7",
+      "english": "Collect (terminal)",
+      "set": {
+        "task": "Materializza l'iteratore lazy iter in un Vec posseduto invocando collect come operazione terminale."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_7",
+      "english": "Fold",
+      "set": {
+        "task": "Riduci l'iteratore iter in un singolo totale chiamando fold con accumulatore iniziale 0 e somma |acc, x| acc + x."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_7",
+      "english": "Reduce",
+      "set": {
+        "task": "Riduci l'iteratore iter senza valore iniziale invocando reduce, ottenendo un Option<T> che e None su iteratore vuoto."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_7",
+      "english": "Sum (terminal)",
+      "set": {
+        "task": "Calcola la somma totale degli interi del vettore v annotando il tipo i32 e chiamando iter().sum."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_7",
+      "english": "Product",
+      "set": {
+        "task": "Calcola il prodotto degli interi del vettore v chiamando iter().product e annotando il tipo i32."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_7",
+      "english": "Max",
+      "set": {
+        "task": "Estrai il massimo dal vettore v invocando iter().max che restituisce Option<&T> per gestire l'iteratore vuoto."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_7",
+      "english": "Min",
+      "set": {
+        "task": "Estrai il minimo dal vettore v invocando iter().min che restituisce Option<&T> con None su input vuoto."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_7",
+      "english": "Find",
+      "set": {
+        "task": "Cerca nel vettore v il primo elemento maggiore di 10 chiamando find con la closure |&&x| x > 10."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_7",
+      "english": "Any",
+      "set": {
+        "task": "Verifica se almeno un elemento del vettore v e positivo chiamando any con la closure |&x| x > 0."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_7",
+      "english": "All",
+      "set": {
+        "task": "Verifica che tutti gli elementi del vettore v siano positivi chiamando all con la closure |&x| x > 0."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_8",
+      "english": "Custom Iterator",
+      "set": {
+        "task": "Implementa il trait Iterator per la struct Counter fornendo un metodo next dentro un blocco impl personalizzato."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_8",
+      "english": "Next Method",
+      "set": {
+        "task": "Dichiara il metodo next con firma &mut self -> Option<Self::Item> per soddisfare il contratto del trait Iterator."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_8",
+      "english": "Item Type",
+      "set": {
+        "task": "Imposta il tipo associato Item dell'Iterator a u32 dentro l'implementazione del trait per la tua collezione."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_8",
+      "english": "Double Ended",
+      "set": {
+        "task": "Itera dal fondo della sequenza chiamando next_back, disponibile sui tipi che implementano DoubleEndedIterator."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_8",
+      "english": "Exact Size",
+      "set": {
+        "task": "Ottieni la dimensione esatta dell'iteratore invocando len, disponibile sui tipi che implementano ExactSizeIterator."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_8",
+      "english": "Infinite Iterator",
+      "set": {
+        "task": "Costruisci un iteratore infinito con il range (0..) limitandolo ai primi 10 elementi tramite take."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_8",
+      "english": "Iterator Composition",
+      "set": {
+        "task": "Componi una pipeline iteratore concatenando map, filter e collect in un'unica espressione lazy materializzata in fondo."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_8",
+      "english": "Itertools",
+      "set": {
+        "task": "Porta in scope il trait Itertools dal crate omonimo con use itertools::Itertools per accedere a combinatori extra."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_9",
+      "english": "Box Smart Pointer",
+      "set": {
+        "task": "Alloca il valore 5 sull'heap costruendo uno smart pointer Box::new(5) e legandolo alla variabile b."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_9",
+      "english": "Box New",
+      "set": {
+        "task": "Sposta value sull'heap chiamando Box::new(value) per ottenere uno smart pointer Box<T> che ne possiede l'allocazione."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_9",
+      "english": "Recursive Type",
+      "set": {
+        "task": "Definisci l'enum ricorsivo List con varianti Cons che contiene Box<List> e Nil per chiudere la lista linkata."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_9",
+      "english": "Trait Object Box",
+      "set": {
+        "task": "Annota un argomento come Box<dyn Display> per accettare un trait object boxed su heap con dispatch dinamico."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_9",
+      "english": "Box Leak",
+      "set": {
+        "task": "Trasforma il Box b in un riferimento &'static str invocando Box::leak per cedere l'allocazione al programma intero."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_9",
+      "english": "Deref",
+      "set": {
+        "task": "Dereferenzia esplicitamente lo smart pointer b con l'operatore * per ottenere il valore interno per copia o move."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_9",
+      "english": "Unboxing",
+      "set": {
+        "task": "Estrai il valore interno dello smart pointer b con l'espressione *b per consumare il Box in un'unica istruzione."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_10",
+      "english": "Rc",
+      "set": {
+        "task": "Crea uno smart pointer Rc avvolgendo il valore 5 con Rc::new per condividerlo tra piu proprietari sullo stesso thread."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_10",
+      "english": "Arc",
+      "set": {
+        "task": "Avvolgi value in uno smart pointer atomico Arc::new per consentirne la condivisione thread-safe tra worker concorrenti."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_10",
+      "english": "Strong Count",
+      "set": {
+        "task": "Leggi il numero di proprietari forti dello smart pointer rc invocando la funzione associata Rc::strong_count."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_10",
+      "english": "Weak Reference",
+      "set": {
+        "task": "Crea un riferimento debole dal pointer rc invocando Rc::downgrade per evitare cicli di reference counting."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_10",
+      "english": "Clone Rc",
+      "set": {
+        "task": "Clona lo smart pointer rc con Rc::clone, incrementando solo il contatore di riferimenti senza duplicare il valore."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_11",
+      "english": "RefCell",
+      "set": {
+        "task": "Avvolgi il valore 5 in una RefCell::new per spostare i controlli di borrow al runtime invece che al compilatore."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_11",
+      "english": "Borrow Method",
+      "set": {
+        "task": "Acquisisci dalla RefCell cell un borrow immutabile invocando il metodo borrow e legandolo a r come guardia Ref."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_11",
+      "english": "Borrow Mut",
+      "set": {
+        "task": "Acquisisci dalla RefCell cell un borrow mutabile esclusivo invocando borrow_mut, sapendo che fa panic se altri borrow sono attivi."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_11",
+      "english": "Mutex",
+      "set": {
+        "task": "Avvolgi il valore 0 in un Mutex::new per consentirne l'accesso mutabile a un solo thread alla volta."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_11",
+      "english": "Lock",
+      "set": {
+        "task": "Acquisisci esclusivamente il Mutex m chiamando lock seguito da unwrap, ottenendo la guardia con lo stato condiviso."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_11",
+      "english": "RwLock",
+      "set": {
+        "task": "Costruisci un RwLock avvolgendo value per separare lock di lettura concorrenti e lock di scrittura esclusivi."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_12",
+      "english": "Deref Trait",
+      "set": {
+        "task": "Implementa il trait Deref per il tipo X dichiarando il tipo associato Target e il metodo deref per simulare un riferimento."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_12",
+      "english": "DerefMut",
+      "set": {
+        "task": "Implementa il trait DerefMut per il tipo X estendendo Deref con un riferimento mutabile al target sottostante."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_12",
+      "english": "Drop Method",
+      "set": {
+        "task": "Implementa il metodo drop con firma &mut self per eseguire cleanup deterministico quando il valore esce di scope."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_12",
+      "english": "Smart Pointer Auto Deref",
+      "set": {
+        "task": "Invoca un metodo direttamente sul Box scrivendo box.method() sfruttando la deref coercion automatica del compilatore."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_12",
+      "english": "Cell",
+      "set": {
+        "task": "Costruisci una Cell::new(5) per fornire interior mutability single-threaded sui valori che implementano Copy."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_12",
+      "english": "Cow",
+      "set": {
+        "task": "Annota un campo come Cow<'a, str> per posporre la clonazione fino a quando una modifica diventa indispensabile."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_12",
+      "english": "OnceCell",
+      "set": {
+        "task": "Crea un OnceCell::new come slot di inizializzazione singola per configurazioni globali calcolate al primo accesso."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_12",
+      "english": "LazyCell",
+      "set": {
+        "task": "Costruisci un LazyCell::new fornendo la closure compute che produrra il valore al primo accesso lazy."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_1",
+      "english": "Thread",
+      "set": {
+        "task": "Porta in scope il modulo std::thread con una use statement per accedere alle primitive di esecuzione concorrente."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_1",
+      "english": "Thread Spawn",
+      "set": {
+        "task": "Lancia un nuovo thread di esecuzione chiamando thread::spawn con una closure che ne contiene il lavoro."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_1",
+      "english": "Join Handle",
+      "set": {
+        "task": "Conserva nel JoinHandle h il risultato di thread::spawn per poter recuperare in seguito il valore 42 prodotto."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_1",
+      "english": "Join",
+      "set": {
+        "task": "Attendi la terminazione del thread legato a h chiamando join seguito da unwrap per propagare eventuali panic."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_1",
+      "english": "Thread Move Closure",
+      "set": {
+        "task": "Lancia un thread con thread::spawn passando una closure move che trasferisce ownership di data dentro il nuovo thread."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_1",
+      "english": "Thread Local",
+      "set": {
+        "task": "Dichiara la variabile thread-locale X di tipo u32 inizializzata a 0 con la macro thread_local."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_1",
+      "english": "Sleep",
+      "set": {
+        "task": "Sospendi il thread corrente per un secondo passando Duration::from_secs(1) a thread::sleep."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_1",
+      "english": "Park",
+      "set": {
+        "task": "Parcheggia il thread corrente chiamando thread::park finche un altro thread non chiama unpark sull'handle."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_2",
+      "english": "Channel",
+      "set": {
+        "task": "Porta in scope il modulo std::sync::mpsc con una use statement per costruire canali di comunicazione tra thread."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_2",
+      "english": "MPSC",
+      "set": {
+        "task": "Costruisci una coppia (tx, rx) di canale mpsc invocando mpsc::channel per collegare piu producer a un singolo consumer."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_2",
+      "english": "Sender",
+      "set": {
+        "task": "Invia value sul canale tramite il Sender tx chiamando send seguito da unwrap per ignorare l'errore di canale chiuso."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_2",
+      "english": "Receiver",
+      "set": {
+        "task": "Ricevi bloccante un messaggio dal Receiver rx chiamando recv seguito da unwrap, ottenendo il valore inviato."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_2",
+      "english": "Sync Channel",
+      "set": {
+        "task": "Costruisci un canale sincrono bounded con capacita 10 invocando mpsc::sync_channel per applicare back-pressure ai producer."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_2",
+      "english": "Try Recv",
+      "set": {
+        "task": "Tenta una ricezione non bloccante dal Receiver rx con try_recv e gestisci il risultato tramite un match."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_3",
+      "english": "Atomic Type",
+      "set": {
+        "task": "Porta in scope il tipo AtomicI32 da std::sync::atomic per eseguire operazioni atomiche su intero a 32 bit."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_3",
+      "english": "Memory Ordering",
+      "set": {
+        "task": "Passa il valore Ordering::SeqCst alle operazioni atomiche per imporre l'ordinamento di memoria sequenzialmente consistente."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_3",
+      "english": "Compare and Swap",
+      "set": {
+        "task": "Esegui sull'atomic una compare-and-swap invocando compare_exchange per aggiornare il valore solo se corrisponde all'atteso."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_4",
+      "english": "Std Mutex",
+      "set": {
+        "task": "Annota il tipo condiviso Arc<Mutex<T>> per combinare ownership condivisa e mutua esclusione tra thread."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_4",
+      "english": "Std RwLock",
+      "set": {
+        "task": "Acquisisci un lock di lettura sul RwLock rwlock chiamando read seguito da unwrap per consentire letture concorrenti."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_4",
+      "english": "Barrier",
+      "set": {
+        "task": "Costruisci una Barrier::new(n) per sincronizzare n thread che devono ritrovarsi tutti prima di proseguire."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_4",
+      "english": "Condvar",
+      "set": {
+        "task": "Crea una Condvar::new per consentire ai thread di attendere e segnalare condizioni associate a un Mutex."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_4",
+      "english": "Once",
+      "set": {
+        "task": "Dichiara la static INIT di tipo Once con Once::new per garantire un blocco di inizializzazione globale eseguito una sola volta."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_4",
+      "english": "Rayon",
+      "set": {
+        "task": "Parallelizza la pipeline di v invocando par_iter seguito da map, sfruttando rayon per distribuire il lavoro sui core."
+      }
+    }
+  ]
+}

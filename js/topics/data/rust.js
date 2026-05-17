@@ -4160,6 +4160,7 @@ export default {
               difficulty: 'intermediate',
               code: 'let v: Vec<i32> = Vec::new();',
               note: 'Equivalente a std::vector di C++ o ArrayList di Java.',
+              task: `Crea un Vec<i32> vuoto chiamando Vec::new e annotando esplicitamente il tipo dell'elemento contenuto.`,
             },
             {
               english: 'Vec Macro',
@@ -4171,6 +4172,7 @@ export default {
               context: 'collections',
               difficulty: 'intermediate',
               code: 'let v = vec![1, 2, 3];',
+              task: 'Inizializza un vettore con i valori 1, 2 e 3 usando la macro vec invece di push ripetuti.',
             },
             {
               english: 'Push',
@@ -4182,6 +4184,7 @@ export default {
               context: 'collections',
               difficulty: 'intermediate',
               code: 'v.push(42);',
+              task: 'Aggiungi il valore 42 in coda al vettore v sfruttando il metodo push che ammortizza le riallocazioni.',
             },
             {
               english: 'Pop',
@@ -4193,6 +4196,7 @@ export default {
               difficulty: 'intermediate',
               code: 'let last = v.pop();',
               note: 'Restituisce Option<T> perché il Vec potrebbe essere vuoto.',
+              task: `Rimuovi l'ultimo elemento del vettore v con pop e lega il risultato Option<T> alla variabile last.`,
             },
             {
               english: 'Index',
@@ -4204,6 +4208,7 @@ export default {
               difficulty: 'intermediate',
               code: 'let first = v[0];',
               note: 'Out-of-bounds causa panic. Per accesso sicuro usare get().',
+              task: 'Accedi al primo elemento del vettore v tramite indicizzazione diretta v[0], ricordando che esce di range causa panic.',
             },
             {
               english: 'Get',
@@ -4214,6 +4219,7 @@ export default {
               context: 'collections',
               difficulty: 'intermediate',
               code: 'let maybe = v.get(0);',
+              task: `Recupera in modo sicuro l'elemento in posizione 0 del vettore v tramite get, ottenendo un Option<&T>.`,
             },
             {
               english: 'Length',
@@ -4225,6 +4231,7 @@ export default {
               context: 'collections',
               difficulty: 'intermediate',
               code: 'let n = v.len();',
+              task: 'Ottieni la lunghezza corrente del vettore v invocando il metodo len e legala alla variabile n.',
             },
             {
               english: 'Capacity',
@@ -4237,6 +4244,7 @@ export default {
               difficulty: 'intermediate',
               code: 'let c = v.capacity();',
               note: 'Capacity >= len. Cresce automaticamente quando push richiede spazio.',
+              task: 'Leggi la capacita allocata del vettore v con capacity, distinguendola dalla lunghezza effettiva.',
             },
             {
               english: 'With Capacity',
@@ -4248,6 +4256,7 @@ export default {
               context: 'collections',
               difficulty: 'intermediate',
               code: 'let v = Vec::with_capacity(100);',
+              task: 'Costruisci un Vec pre-allocato per 100 elementi con Vec::with_capacity per evitare riallocazioni successive.',
             },
             {
               english: 'Iterate',
@@ -4259,6 +4268,7 @@ export default {
               context: 'collections',
               difficulty: 'intermediate',
               code: 'for x in v.iter() { ... }',
+              task: 'Itera sugli elementi del vettore v usando un ciclo for combinato con il metodo iter che produce riferimenti condivisi.',
             },
           ],
         },
@@ -4277,6 +4287,7 @@ export default {
               difficulty: 'intermediate',
               code: 'use std::collections::HashMap;',
               note: 'Equivalente a HashMap di Java o dict di Python.',
+              task: 'Importa il tipo HashMap dal modulo std::collections per usare la mappa hash della libreria standard.',
             },
             {
               english: 'Insert',
@@ -4288,6 +4299,7 @@ export default {
               context: 'collections',
               difficulty: 'intermediate',
               code: 'map.insert("key", 42);',
+              task: 'Inserisci la coppia chiave "key" con valore 42 nella mappa tramite il metodo insert.',
             },
             {
               english: 'Get From Map',
@@ -4299,6 +4311,7 @@ export default {
               context: 'collections',
               difficulty: 'intermediate',
               code: 'let v = map.get("key");',
+              task: 'Recupera dalla mappa il valore associato alla chiave "key" usando get, ottenendo un Option<&V>.',
             },
             {
               english: 'Remove',
@@ -4309,6 +4322,7 @@ export default {
               context: 'collections',
               difficulty: 'intermediate',
               code: 'map.remove("key");',
+              task: `Rimuovi dalla mappa l'entry con chiave "key" chiamando remove e restituendo il valore owned se presente.`,
             },
             {
               english: 'Contains Key',
@@ -4319,6 +4333,7 @@ export default {
               context: 'collections',
               difficulty: 'intermediate',
               code: 'if map.contains_key("k") { ... }',
+              task: 'Verifica con contains_key se la chiave "k" e presente nella mappa prima di eseguire il blocco condizionale.',
             },
             {
               english: 'Entry API',
@@ -4331,6 +4346,7 @@ export default {
               difficulty: 'intermediate',
               code: 'map.entry(k).or_insert(0);',
               note: 'Pattern molto idiomatico per gestire chiavi mancanti.',
+              task: `Usa l'API entry per ottenere l'entry della chiave k e inserire il valore 0 se assente con or_insert.`,
             },
             {
               english: 'HashSet',
@@ -4341,6 +4357,7 @@ export default {
               context: 'collections',
               difficulty: 'intermediate',
               code: 'use std::collections::HashSet;',
+              task: 'Porta in scope il tipo HashSet dal modulo std::collections per gestire insiemi unici senza duplicati.',
             },
             {
               english: 'BTreeMap',
@@ -4353,6 +4370,7 @@ export default {
               difficulty: 'intermediate',
               code: 'use std::collections::BTreeMap;',
               note: 'Più lento di HashMap ma con ordinamento garantito.',
+              task: 'Importa BTreeMap da std::collections per usare una mappa ordinata basata su B-tree con chiavi sempre sortate.',
             },
             {
               english: 'VecDeque',
@@ -4364,6 +4382,7 @@ export default {
               context: 'collections',
               difficulty: 'intermediate',
               code: 'use std::collections::VecDeque;',
+              task: 'Importa VecDeque da std::collections per ottenere una coda double-ended con push e pop efficienti a entrambe le estremita.',
             },
             {
               english: 'BinaryHeap',
@@ -4375,6 +4394,7 @@ export default {
               context: 'collections',
               difficulty: 'intermediate',
               code: 'use std::collections::BinaryHeap;',
+              task: `Importa BinaryHeap da std::collections per costruire una coda di priorita che estrae sempre l'elemento massimo.`,
             },
           ],
         },
@@ -4392,6 +4412,7 @@ export default {
               context: 'collections',
               difficulty: 'intermediate',
               code: 'trait Iterator { type Item; fn next() }',
+              task: 'Definisci la firma del trait Iterator con il tipo associato Item e il metodo next che produce ogni elemento.',
             },
             {
               english: 'Iter',
@@ -4403,6 +4424,7 @@ export default {
               context: 'collections',
               difficulty: 'intermediate',
               code: 'v.iter()',
+              task: 'Ottieni dal vettore v un iteratore di riferimenti condivisi chiamando il metodo iter senza consumare la collezione.',
             },
             {
               english: 'Iter Mut',
@@ -4413,6 +4435,7 @@ export default {
               context: 'collections',
               difficulty: 'intermediate',
               code: 'v.iter_mut()',
+              task: 'Ricava dal vettore v un iteratore di riferimenti mutabili invocando iter_mut per modificare gli elementi sul posto.',
             },
             {
               english: 'Into Iter',
@@ -4425,6 +4448,7 @@ export default {
               difficulty: 'intermediate',
               code: 'v.into_iter()',
               note: 'Restituisce valori per valore, non per riferimento.',
+              task: `Consuma il vettore v con into_iter spostando ogni elemento fuori per cederne l'ownership al codice a valle.`,
             },
             {
               english: 'Map Iter',
@@ -4436,6 +4460,7 @@ export default {
               context: 'collections',
               difficulty: 'intermediate',
               code: 'v.iter().map(|x| x * 2)',
+              task: 'Applica una trasformazione che raddoppia ogni elemento del vettore v concatenando iter e map con una closure.',
             },
             {
               english: 'Filter',
@@ -4447,6 +4472,7 @@ export default {
               context: 'collections',
               difficulty: 'intermediate',
               code: 'v.iter().filter(|&&x| x > 0)',
+              task: 'Filtra dal vettore v solo gli elementi positivi concatenando iter e filter con la closure |&&x| x > 0.',
             },
             {
               english: 'Collect',
@@ -4458,6 +4484,7 @@ export default {
               context: 'collections',
               difficulty: 'intermediate',
               code: 'let v: Vec<_> = iter.collect();',
+              task: `Materializza l'iteratore lazy iter in un Vec posseduto invocando collect e annotando il tipo target.`,
             },
             {
               english: 'Sum',
@@ -4468,6 +4495,7 @@ export default {
               context: 'collections',
               difficulty: 'intermediate',
               code: 'let s: i32 = v.iter().sum();',
+              task: 'Calcola la somma degli interi del vettore v annotando il tipo i32 e concatenando iter con sum.',
             },
             {
               english: 'Count',
@@ -4479,6 +4507,7 @@ export default {
               context: 'collections',
               difficulty: 'intermediate',
               code: 'let n = iter.count();',
+              task: `Conta gli elementi rimasti nell'iteratore iter consumandolo interamente con il metodo count.`,
             },
             {
               english: 'Lazy Evaluation',
@@ -4507,6 +4536,7 @@ export default {
               context: 'collections',
               difficulty: 'intermediate',
               code: "s.push('!');",
+              task: 'Aggiungi il carattere ! in coda alla String s usando push, che lavora carattere per carattere.',
             },
             {
               english: 'String Split',
@@ -4517,6 +4547,7 @@ export default {
               context: 'collections',
               difficulty: 'intermediate',
               code: "s.split(',')",
+              task: 'Separa la stringa s sui caratteri virgola usando split per ottenere un iteratore di slice senza copie.',
             },
             {
               english: 'String Trim',
@@ -4528,6 +4559,7 @@ export default {
               context: 'collections',
               difficulty: 'intermediate',
               code: 'let t = s.trim();',
+              task: 'Rimuovi gli spazi iniziali e finali della stringa s con trim e lega il risultato a t.',
             },
             {
               english: 'String Replace',
@@ -4539,6 +4571,7 @@ export default {
               context: 'collections',
               difficulty: 'intermediate',
               code: 's.replace("foo", "bar")',
+              task: 'Sostituisci tutte le occorrenze di "foo" con "bar" nella stringa s tramite il metodo replace.',
             },
             {
               english: 'To Lowercase',
@@ -4551,6 +4584,7 @@ export default {
               difficulty: 'intermediate',
               code: 's.to_lowercase()',
               note: "Restituisce una nuova String, non modifica l'originale.",
+              task: `Converti la stringa s in una nuova String tutta minuscola usando to_lowercase senza mutare l'originale.`,
             },
             {
               english: 'To Uppercase',
@@ -4562,6 +4596,7 @@ export default {
               context: 'collections',
               difficulty: 'intermediate',
               code: 's.to_uppercase()',
+              task: 'Trasforma la stringa s in una versione tutta maiuscola chiamando to_uppercase per normalizzare i confronti.',
             },
             {
               english: 'String Contains',
@@ -4573,6 +4608,7 @@ export default {
               context: 'collections',
               difficulty: 'intermediate',
               code: 's.contains("hello")',
+              task: 'Verifica se la stringa s contiene la sottostringa "hello" sfruttando il metodo contains che ritorna un bool.',
             },
             {
               english: 'String Starts With',
@@ -4584,6 +4620,7 @@ export default {
               context: 'collections',
               difficulty: 'intermediate',
               code: 's.starts_with("http")',
+              task: `Controlla se la stringa s inizia col prefisso "http" tramite starts_with per filtrare URL all'origine.`,
             },
             {
               english: 'Parse',
@@ -4595,6 +4632,7 @@ export default {
               context: 'collections',
               difficulty: 'intermediate',
               code: 'let n: i32 = "42".parse()?;',
+              task: `Converti la stringa "42" in un i32 chiamando parse e propagando l'errore di conversione con l'operatore ?.`,
             },
             {
               english: 'String Format',
@@ -4606,6 +4644,7 @@ export default {
               context: 'collections',
               difficulty: 'intermediate',
               code: 'format!("{}-{}", a, b)',
+              task: 'Componi una nuova String interpolando i valori a e b con la macro format e il template "{}-{}".',
             },
           ],
         },
@@ -4634,6 +4673,7 @@ export default {
               difficulty: 'intermediate',
               code: 'trait Greet { fn hello(&self); }',
               note: 'Simile alle interfacce di Java/Go ma più potente.',
+              task: 'Definisci il trait Greet che richiede un metodo hello con argomento &self e nessun valore di ritorno.',
             },
             {
               english: 'Trait Implementation',
@@ -4645,6 +4685,7 @@ export default {
               context: 'traits',
               difficulty: 'intermediate',
               code: 'impl Greet for User { fn hello(&self) { ... } }',
+              task: 'Implementa il trait Greet per il tipo User fornendo il corpo del metodo hello dentro un blocco impl.',
             },
             {
               english: 'Trait Method',
@@ -4656,6 +4697,7 @@ export default {
               context: 'traits',
               difficulty: 'intermediate',
               code: 'fn area(&self) -> f64;',
+              task: 'Dichiara nel trait il metodo area con firma &self -> f64 senza fornire un corpo, obbligando gli implementatori.',
             },
             {
               english: 'Default Implementation',
@@ -4667,6 +4709,7 @@ export default {
               context: 'traits',
               difficulty: 'intermediate',
               code: 'fn name() -> &str { "default" }',
+              task: 'Fornisci nel trait una default implementation del metodo name che restituisce il letterale "default".',
             },
             {
               english: 'Trait Bound',
@@ -4678,6 +4721,7 @@ export default {
               context: 'traits',
               difficulty: 'intermediate',
               code: 'fn print<T: Display>(x: T)',
+              task: 'Aggiungi alla funzione print il trait bound T: Display vincolando T a tipi formattabili in output utente.',
             },
             {
               english: 'Multiple Bounds',
@@ -4689,6 +4733,7 @@ export default {
               context: 'traits',
               difficulty: 'intermediate',
               code: 'fn f<T: Clone + Debug>(x: T)',
+              task: 'Vincola il generico T della funzione f a soddisfare sia Clone sia Debug combinando i due trait bound con +.',
             },
             {
               english: 'Where Clause',
@@ -4700,6 +4745,7 @@ export default {
               context: 'traits',
               difficulty: 'intermediate',
               code: 'fn f<T>(x: T) where T: Clone + Debug',
+              task: 'Sposta i bound di T nella clausola where in coda alla firma di f per mantenere leggibile la lista dei generici.',
             },
             {
               english: 'Impl Trait',
@@ -4711,6 +4757,7 @@ export default {
               context: 'traits',
               difficulty: 'intermediate',
               code: 'fn make_iter() -> impl Iterator<Item=i32>',
+              task: 'Restituisci dalla funzione make_iter un tipo opaco impl Iterator<Item=i32> senza esporre il tipo concreto.',
             },
             {
               english: 'Trait Function',
@@ -4722,6 +4769,7 @@ export default {
               context: 'traits',
               difficulty: 'intermediate',
               code: 'fn create() -> Self;',
+              task: 'Dichiara nel trait una funzione associata create senza self che restituisce un valore di tipo Self.',
             },
             {
               english: 'Associated Constant',
@@ -4733,6 +4781,7 @@ export default {
               context: 'traits',
               difficulty: 'intermediate',
               code: 'const MAX: u32;',
+              task: 'Dichiara nel trait la costante associata MAX di tipo u32 senza fornirne il valore predefinito.',
             },
           ],
         },
@@ -4751,6 +4800,7 @@ export default {
               context: 'traits',
               difficulty: 'intermediate',
               code: 'impl Display for X { fn fmt(&self, f: ...) { ... } }',
+              task: 'Implementa il trait Display per il tipo X fornendo il metodo fmt che scrive nel formatter user-facing.',
             },
             {
               english: 'Debug',
@@ -4762,6 +4812,7 @@ export default {
               context: 'traits',
               difficulty: 'intermediate',
               code: 'println!("{:?}", x);',
+              task: `Stampa l'espressione x con la formattazione di debug {:?} tramite la macro println e il trait Debug.`,
             },
             {
               english: 'Explicit Clone Trait',
@@ -4772,6 +4823,7 @@ export default {
               context: 'traits',
               difficulty: 'intermediate',
               code: 'let y = x.clone();',
+              task: 'Duplica esplicitamente il valore x invocando il metodo clone fornito dal trait Clone e lega il risultato a y.',
             },
             {
               english: 'Marker Copy Trait',
@@ -4782,6 +4834,7 @@ export default {
               context: 'traits',
               difficulty: 'intermediate',
               code: '#[derive(Copy, Clone)]',
+              task: 'Deriva il marker trait Copy insieme a Clone sul tipo per permettere la duplicazione implicita dei valori.',
             },
             {
               english: 'Std Iterator Trait',
@@ -4792,6 +4845,7 @@ export default {
               context: 'traits',
               difficulty: 'intermediate',
               code: 'fn next(&mut self) -> Option<Self::Item>',
+              task: 'Implementa il metodo next con firma &mut self -> Option<Self::Item> per soddisfare il trait Iterator della stdlib.',
             },
             {
               english: 'IntoIterator',
@@ -4803,6 +4857,7 @@ export default {
               context: 'traits',
               difficulty: 'intermediate',
               code: 'for x in collection { ... }',
+              task: `Itera direttamente sulla collezione con un ciclo for, sfruttando l'implementazione automatica di IntoIterator.`,
             },
             {
               english: 'PartialOrd',
@@ -4814,6 +4869,7 @@ export default {
               context: 'traits',
               difficulty: 'intermediate',
               code: '#[derive(PartialOrd)]',
+              task: 'Deriva il trait PartialOrd sulla struct con un attributo derive per abilitare gli operatori di confronto <, > e <=.',
             },
             {
               english: 'AsRef',
@@ -4825,6 +4881,7 @@ export default {
               context: 'traits',
               difficulty: 'intermediate',
               code: 'fn read<P: AsRef<Path>>(path: P)',
+              task: 'Scrivi una funzione read generica su P: AsRef<Path> in modo da accettare sia &str sia PathBuf come argomento.',
             },
             {
               english: 'From',
@@ -4836,6 +4893,7 @@ export default {
               context: 'traits',
               difficulty: 'intermediate',
               code: 'impl From<&str> for String',
+              task: 'Implementa il trait From<&str> per il tipo String per definire una conversione infallibile dallo slice di stringa.',
             },
             {
               english: 'Into',
@@ -4848,6 +4906,7 @@ export default {
               difficulty: 'intermediate',
               code: 'let s: String = "hi".into();',
               note: 'Implementare From dà gratis Into.',
+              task: `Converti il letterale "hi" in una String tramite il metodo into, sfruttando l'implementazione gratuita derivata da From.`,
             },
           ],
         },
@@ -4865,6 +4924,7 @@ export default {
               context: 'traits',
               difficulty: 'intermediate',
               code: 'let s: Box<dyn Shape> = ...;',
+              task: `Lega alla variabile s un Box<dyn Shape> per ospitare un valore eterogeneo sull'heap dietro una vtable.`,
             },
             {
               english: 'Dyn Keyword',
@@ -4876,6 +4936,7 @@ export default {
               context: 'traits',
               difficulty: 'intermediate',
               code: 'fn render(s: &dyn Shape)',
+              task: 'Scrivi la funzione render che accetta un riferimento &dyn Shape, optando per il dispatch dinamico tramite la parola chiave dyn.',
             },
             {
               english: 'Dynamic Dispatch (trait object)',
@@ -4930,6 +4991,7 @@ export default {
               context: 'traits',
               difficulty: 'intermediate',
               code: 'let s: Box<dyn Shape> = Box::new(Circle);',
+              task: `Costruisci un Box<dyn Shape> avvolgendo un valore Circle con Box::new per memorizzare un trait object sull'heap.`,
             },
             {
               english: 'Trait Reference',
@@ -4941,6 +5003,7 @@ export default {
               context: 'traits',
               difficulty: 'intermediate',
               code: 'fn print(s: &dyn Display)',
+              task: 'Definisci la funzione print che prende un trait reference &dyn Display senza possedere il valore concreto.',
             },
             {
               english: 'Trait Vec',
@@ -4952,6 +5015,7 @@ export default {
               context: 'traits',
               difficulty: 'intermediate',
               code: 'let v: Vec<Box<dyn Shape>> = vec![];',
+              task: 'Inizializza un vettore vuoto di tipo Vec<Box<dyn Shape>> per contenere implementazioni eterogenee del trait.',
             },
             {
               english: 'Erased Type (object safety)',
@@ -4982,6 +5046,7 @@ export default {
               difficulty: 'intermediate',
               code: 'trait Animal: Display { ... }',
               note: 'Per implementare Animal devi prima implementare Display.',
+              task: 'Dichiara il trait Animal che ha Display come supertrait, obbligando ogni implementatore di Animal a implementare anche Display.',
             },
             {
               english: 'Blanket Implementation',
@@ -4994,6 +5059,7 @@ export default {
               difficulty: 'intermediate',
               code: 'impl<T: Display> ToString for T { ... }',
               note: 'Pattern potente: implementa un trait per tutti i tipi che soddisfano un altro trait.',
+              task: 'Scrivi una blanket implementation che implementi ToString per ogni T che soddisfa Display tramite un singolo impl generico.',
             },
             {
               english: 'Orphan Rule',
@@ -5028,6 +5094,7 @@ export default {
               difficulty: 'intermediate',
               code: 'trait Send {} // marker',
               note: 'Esempi: Send, Sync, Copy. Marcano proprietà semantiche.',
+              task: 'Dichiara un marker trait Send privo di metodi che etichetti i tipi semanticamente sicuri tra thread.',
             },
             {
               english: 'Auto Trait',
@@ -5050,6 +5117,7 @@ export default {
               context: 'traits',
               difficulty: 'intermediate',
               code: 'impl !Send for X {}',
+              task: `Aggiungi un'implementazione negativa impl !Send for X per impedire al compilatore di trasferire X tra thread.`,
             },
             {
               english: 'Trait Inheritance',
@@ -5083,6 +5151,7 @@ export default {
               difficulty: 'intermediate',
               code: 'trait MyBounds = Display + Clone;',
               note: 'Ancora unstable, richiede nightly.',
+              task: 'Definisci un trait alias MyBounds equivalente a Display + Clone per accorciare liste di bound ricorrenti.',
             },
           ],
         },
@@ -5110,6 +5179,7 @@ export default {
               context: 'generics',
               difficulty: 'intermediate',
               code: 'fn id<T>(x: T) -> T { x }',
+              task: 'Scrivi la funzione identita id parametrizzata sul tipo generico T che accetta x: T e lo restituisce inalterato.',
             },
             {
               english: 'Type Parameter',
@@ -5121,6 +5191,7 @@ export default {
               context: 'generics',
               difficulty: 'intermediate',
               code: 'fn f<T>(x: T) -> T',
+              task: `Dichiara la funzione f con un type parameter T che compare sia come tipo dell'argomento x sia del valore di ritorno.`,
             },
             {
               english: 'Type Argument',
@@ -5131,6 +5202,7 @@ export default {
               context: 'generics',
               difficulty: 'intermediate',
               code: 'parse::<i32>("42")',
+              task: 'Specifica esplicitamente il type argument i32 nella chiamata a parse usando la sintassi turbofish ::<i32> sul letterale "42".',
             },
             {
               english: 'Turbofish',
@@ -5143,6 +5215,7 @@ export default {
               difficulty: 'intermediate',
               code: 'collect::<Vec<_>>()',
               note: 'Soprannome iconico per la sintassi ::<> in Rust.',
+              task: 'Annota esplicitamente il tipo target Vec<_> nella chiamata a collect usando la sintassi turbofish ::<>.',
             },
             {
               english: 'Generic Type',
@@ -5153,6 +5226,7 @@ export default {
               context: 'generics',
               difficulty: 'intermediate',
               code: 'Vec<i32>',
+              task: 'Istanzia il tipo generico Vec specializzandolo con il parametro concreto i32 nella sua forma Vec<i32>.',
             },
             {
               english: 'Type Constraint',
@@ -5164,6 +5238,7 @@ export default {
               context: 'generics',
               difficulty: 'intermediate',
               code: 'fn f<T: Display>(x: T)',
+              task: 'Aggiungi al type parameter T della funzione f il vincolo Display per restringere i tipi accettati a quelli formattabili.',
             },
             {
               english: 'Multiple Type Parameters',
@@ -5175,6 +5250,7 @@ export default {
               context: 'generics',
               difficulty: 'intermediate',
               code: 'fn pair<A, B>(a: A, b: B)',
+              task: 'Dichiara la funzione pair con due type parameter distinti A e B per accettare argomenti di tipi differenti.',
             },
             {
               english: 'Default Type Parameter',
@@ -5185,6 +5261,7 @@ export default {
               context: 'generics',
               difficulty: 'intermediate',
               code: 'struct Counter<T = u32> { ... }',
+              task: 'Definisci la struct Counter parametrizzata su T con un valore predefinito u32, permettendo ai chiamanti di omettere il tipo.',
             },
             {
               english: 'Const Generic',
@@ -5196,6 +5273,7 @@ export default {
               context: 'generics',
               difficulty: 'intermediate',
               code: 'fn arr<const N: usize>() -> [u32; N]',
+              task: 'Dichiara la funzione arr parametrizzata su un const generic N di tipo usize che restituisce un array [u32; N].',
             },
             {
               english: 'Generic Constraint Inference',
@@ -5207,6 +5285,7 @@ export default {
               context: 'generics',
               difficulty: 'intermediate',
               code: 'let v = vec![1, 2, 3]; // Vec<i32>',
+              task: 'Lascia che il compilatore inferisca il tipo Vec<i32> per la variabile v inizializzata con la macro vec.',
             },
           ],
         },
@@ -5225,6 +5304,7 @@ export default {
               context: 'generics',
               difficulty: 'intermediate',
               code: 'struct Point<T> { x: T, y: T }',
+              task: 'Definisci la struct Point parametrizzata su T con due campi x e y che condividono lo stesso tipo generico.',
             },
             {
               english: 'Generic Enum',
@@ -5236,6 +5316,7 @@ export default {
               context: 'generics',
               difficulty: 'intermediate',
               code: 'enum Option<T> { Some(T), None }',
+              task: `Definisci l'enum Option parametrizzato su T con la variante Some che porta un payload e la variante None vuota.`,
             },
             {
               english: 'Generic Impl',
@@ -5247,6 +5328,7 @@ export default {
               context: 'generics',
               difficulty: 'intermediate',
               code: 'impl<T> Point<T> { fn x(&self) -> &T { &self.x } }',
+              task: 'Scrivi un impl generico su T per Point che aggiunga un metodo x con ritorno &T riferito al campo omonimo.',
             },
             {
               english: 'Conditional Impl',
@@ -5259,6 +5341,7 @@ export default {
               difficulty: 'intermediate',
               code: 'impl<T: Display> Point<T> { fn show(&self) }',
               note: 'I metodi sono disponibili solo se T soddisfa i vincoli.',
+              task: 'Aggiungi un impl condizionale per Point<T> attivo solo quando T soddisfa Display, esponendo il metodo show.',
             },
             {
               english: 'Generic Method',
@@ -5270,6 +5353,7 @@ export default {
               context: 'generics',
               difficulty: 'intermediate',
               code: 'fn convert<U>(self) -> U where T: Into<U>',
+              task: 'Definisci il metodo generico convert su Self che introduce un nuovo parametro U vincolato da T: Into<U> nella clausola where.',
             },
             {
               english: 'Generic Trait',
@@ -5281,6 +5365,7 @@ export default {
               context: 'generics',
               difficulty: 'intermediate',
               code: 'trait Container<T> { fn add(&mut self, x: T); }',
+              task: 'Dichiara il trait Container parametrizzato su T con un metodo add che inserisce un elemento di tipo T.',
             },
             {
               english: 'Phantom Type',
@@ -5292,6 +5377,7 @@ export default {
               context: 'generics',
               difficulty: 'intermediate',
               code: 'PhantomData<T>',
+              task: 'Dichiara un campo PhantomData<T> in una struct per portare il parametro T senza memorizzarne alcun valore.',
             },
             {
               english: 'Generic Type Alias',
@@ -5303,6 +5389,7 @@ export default {
               context: 'generics',
               difficulty: 'intermediate',
               code: 'type Result<T> = std::result::Result<T, MyError>;',
+              task: 'Definisci un alias di tipo Result<T> equivalente a std::result::Result<T, MyError> per nascondere il parametro errore.',
             },
             {
               english: 'Higher-Kinded Type',
@@ -5325,6 +5412,7 @@ export default {
               context: 'generics',
               difficulty: 'intermediate',
               code: 'Vec<String>',
+              task: 'Istanzia il container generico Vec specializzandolo con il parametro String nella forma Vec<String>.',
             },
           ],
         },
@@ -5406,6 +5494,7 @@ export default {
               context: 'generics',
               difficulty: 'intermediate',
               code: '#[inline]',
+              task: `Annota una funzione helper con l'attributo #[inline] suggerendo al compilatore l'espansione inline al call site.`,
             },
             {
               english: 'Specialization',
@@ -5455,6 +5544,7 @@ export default {
               context: 'generics',
               difficulty: 'intermediate',
               code: 'fn f<T, U>(t: T, u: U) where T: Display, U: Debug',
+              task: 'Sposta i bound di T e U nella clausola where della funzione f per separare la firma dai vincoli.',
             },
             {
               english: 'Bound Inheritance',
@@ -5475,6 +5565,7 @@ export default {
               context: 'generics',
               difficulty: 'intermediate',
               code: "fn f<F>(f: F) where F: for<'a> Fn(&'a str)",
+              task: `Vincola il parametro F con un higher-ranked trait bound for<'a> Fn(&'a str) accettando closure valide per ogni lifetime.`,
             },
             {
               english: 'Closure Bound',
@@ -5486,6 +5577,7 @@ export default {
               context: 'generics',
               difficulty: 'intermediate',
               code: 'fn apply<F: Fn(i32) -> i32>(f: F)',
+              task: 'Dichiara la funzione apply con F: Fn(i32) -> i32 come closure bound per accettare qualunque chiusura compatibile.',
             },
             {
               english: 'Type State Pattern',
@@ -5497,6 +5589,7 @@ export default {
               context: 'generics',
               difficulty: 'intermediate',
               code: 'struct Conn<S> { _state: PhantomData<S> }',
+              task: 'Implementa il type state pattern con una struct Conn<S> che usa PhantomData per codificare lo stato nel tipo.',
             },
             {
               english: 'Generic Constants',
@@ -5508,6 +5601,7 @@ export default {
               context: 'generics',
               difficulty: 'intermediate',
               code: 'fn arr<const N: usize>() -> [u32; N]',
+              task: 'Dichiara la funzione arr parametrizzata sulla costante generica N di tipo usize che restituisce un array [u32; N].',
             },
             {
               english: 'Sized Trait',
@@ -5520,6 +5614,7 @@ export default {
               difficulty: 'intermediate',
               code: 'fn f<T: ?Sized>(x: &T)',
               note: 'Per default tutti i T richiedono Sized. ?Sized rilassa il vincolo.',
+              task: 'Rilassa il vincolo Sized predefinito sul parametro T della funzione f scrivendo ?Sized per accettare slice e trait object.',
             },
             {
               english: 'Unsized Type',
@@ -5540,6 +5635,7 @@ export default {
               context: 'generics',
               difficulty: 'intermediate',
               code: 'trait Animal: Display',
+              task: 'Dichiara il trait Animal con Display come supertrait per imporre ai tipi animali anche la formattazione user-facing.',
             },
             {
               english: 'Generic Lifetime',
@@ -5550,6 +5646,7 @@ export default {
               context: 'generics',
               difficulty: 'intermediate',
               code: "fn longest<'a>(x: &'a str) -> &'a str",
+              task: `Dichiara la funzione longest parametrizzata sulla lifetime generica 'a che lega input e output al medesimo borrow.`,
             },
           ],
         },
@@ -5587,6 +5684,7 @@ export default {
               context: 'lifetimes',
               difficulty: 'intermediate',
               code: "fn f<'a>(x: &'a str)",
+              task: `Annota nella funzione f la lifetime 'a sul riferimento di input x: &'a str per renderla esplicita.`,
             },
             {
               english: 'Lifetime Parameter',
@@ -5597,6 +5695,7 @@ export default {
               context: 'lifetimes',
               difficulty: 'intermediate',
               code: "fn f<'a>(x: &'a i32)",
+              task: `Introduci il lifetime parameter 'a nella firma di f legandolo al riferimento &'a i32 passato come argomento.`,
             },
             {
               english: 'Static Lifetime Bound',
@@ -5608,6 +5707,7 @@ export default {
               difficulty: 'intermediate',
               code: `let s: &'static str = "hello";`,
               note: 'Letterali stringa hanno automaticamente lifetime static.',
+              task: `Annota lo slice s con il vincolo di lifetime 'static legandolo al letterale "hello" che dura per tutta l'esecuzione.`,
             },
             {
               english: 'Lifetime Elision',
@@ -5620,6 +5720,7 @@ export default {
               difficulty: 'intermediate',
               code: 'fn f(x: &str) -> &str { x }',
               note: 'In molti casi il compilatore può inferire le lifetime da regole semplici.',
+              task: 'Lascia che le regole di lifetime elision inferiscano la lifetime per la funzione f con un solo input e output &str.',
             },
             {
               english: 'Lifetime Bound',
@@ -5630,6 +5731,7 @@ export default {
               context: 'lifetimes',
               difficulty: 'intermediate',
               code: "fn f<'a, T: 'a>(x: &'a T)",
+              task: `Aggiungi il lifetime bound T: 'a alla firma di f per garantire che T non contenga riferimenti piu corti di 'a.`,
             },
             {
               english: 'Outlives',
@@ -5640,6 +5742,7 @@ export default {
               context: 'lifetimes',
               difficulty: 'intermediate',
               code: "fn f<'a, 'b: 'a>(x: &'a str, y: &'b str)",
+              task: `Dichiara nella funzione f il vincolo outlives 'b: 'a stabilendo che 'b vive almeno quanto 'a.`,
             },
             {
               english: 'Explicit Borrow Lifetime',
@@ -5659,6 +5762,7 @@ export default {
               context: 'lifetimes',
               difficulty: 'intermediate',
               code: "fn f(x: &'_ str)",
+              task: `Usa la lifetime anonima '_ nella firma f(x: &'_ str) per chiedere al compilatore di inferirne il nome.`,
             },
             {
               english: 'Lifetime Variance',
@@ -5688,6 +5792,7 @@ export default {
               context: 'lifetimes',
               difficulty: 'intermediate',
               code: "fn longest<'a>(a: &'a str, b: &'a str) -> &'a str",
+              task: `Dichiara la funzione longest parametrizzata sulla lifetime 'a per legare entrambi i borrow di input al ritorno.`,
             },
             {
               english: 'Struct Lifetime',
@@ -5699,6 +5804,7 @@ export default {
               context: 'lifetimes',
               difficulty: 'intermediate',
               code: "struct Wrapper<'a> { data: &'a str }",
+              task: `Definisci la struct Wrapper parametrizzata sulla lifetime 'a per memorizzare un riferimento &'a str.`,
             },
             {
               english: 'Impl Lifetime',
@@ -5710,6 +5816,7 @@ export default {
               context: 'lifetimes',
               difficulty: 'intermediate',
               code: "impl<'a> Wrapper<'a> { ... }",
+              task: `Apri un blocco impl<'a> per Wrapper<'a> propagando la lifetime alle implementazioni del tipo borrowed.`,
             },
             {
               english: 'Method Lifetime',
@@ -5720,6 +5827,7 @@ export default {
               context: 'lifetimes',
               difficulty: 'intermediate',
               code: "fn extend<'b>(&self, other: &'b Self)",
+              task: `Aggiungi al metodo extend la lifetime locale 'b sull'argomento other, separandola da quella di self.`,
             },
             {
               english: 'Lifetime Subtyping',
@@ -5742,6 +5850,7 @@ export default {
               context: 'lifetimes',
               difficulty: 'intermediate',
               code: "fn f<'a, 'b>(x: &'a str, y: &'b str)",
+              task: `Dichiara la funzione f con due lifetime distinte 'a e 'b applicate rispettivamente agli argomenti x e y.`,
             },
             {
               english: 'Elision Rule 1',
@@ -5852,6 +5961,7 @@ export default {
               context: 'lifetimes',
               difficulty: 'intermediate',
               code: 'v.push(v.len()); // works',
+              task: 'Usa un two-phase borrow chiamando v.push(v.len()) in una sola espressione: prima si legge len, poi push muta v.',
             },
             {
               english: 'Lifetime Reborrow',
@@ -5863,6 +5973,7 @@ export default {
               context: 'lifetimes',
               difficulty: 'intermediate',
               code: 'let r2 = &mut *r1;',
+              task: 'Esegui un reborrow di r1 scrivendo &mut *r1 per ottenere un nuovo prestito mutabile con scope piu corto.',
             },
             {
               english: 'Subtyping Lifetime Variance',
@@ -5908,6 +6019,7 @@ export default {
               context: 'lifetimes',
               difficulty: 'intermediate',
               code: "fn longest<'a>(x: &'a str, y: &'a str)",
+              task: `Dichiara la funzione longest con la lifetime generica 'a comune ai due input &'a str e al riferimento restituito.`,
             },
             {
               english: 'HRTB',
@@ -5918,6 +6030,7 @@ export default {
               context: 'lifetimes',
               difficulty: 'intermediate',
               code: "F: for<'a> Fn(&'a str)",
+              task: `Specifica il bound HRTB for<'a> Fn(&'a str) sulla closure F per accettare chiusure valide per ogni lifetime.`,
             },
             {
               english: 'Self-Referential',
@@ -5941,6 +6054,7 @@ export default {
               difficulty: 'intermediate',
               code: 'Pin<&mut Future>',
               note: 'Critico per implementare correttamente Future.',
+              task: `Dichiara un argomento Pin<&mut Future> per garantire che il future non venga spostato durante l'esecuzione asincrona.`,
             },
             {
               english: 'Lifetime Bound on Generic',
@@ -5952,6 +6066,7 @@ export default {
               context: 'lifetimes',
               difficulty: 'intermediate',
               code: "fn f<'a, T: 'a>(x: &'a T)",
+              task: `Aggiungi il bound T: 'a sul parametro generico di f per garantire che T non contenga riferimenti piu corti di 'a.`,
             },
             {
               english: 'Static Bound',
@@ -5964,6 +6079,7 @@ export default {
               difficulty: 'intermediate',
               code: "fn spawn<F: 'static>(f: F)",
               note: 'Comune per thread::spawn e codice async.',
+              task: `Vincola il parametro generico F con il bound 'static nella funzione spawn per accettare solo valori senza prestiti volatili.`,
             },
             {
               english: 'Lifetime in Traits',
@@ -5974,6 +6090,7 @@ export default {
               context: 'lifetimes',
               difficulty: 'intermediate',
               code: "trait Iter<'a> { type Item: 'a; }",
+              task: `Definisci il trait Iter parametrizzato sulla lifetime 'a con tipo associato Item legato anch'esso a 'a.`,
             },
             {
               english: 'Lifetime in Closures',
@@ -5995,6 +6112,7 @@ export default {
               context: 'lifetimes',
               difficulty: 'intermediate',
               code: 'thread::spawn(move || { ... })',
+              task: 'Lancia un thread con thread::spawn passando una closure move che trasferisce ownership delle variabili catturate.',
             },
             {
               english: 'Lifetime Coercion',
@@ -6031,6 +6149,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'mod network { ... }',
+              task: 'Dichiara un modulo network con un blocco mod inline per raggruppare item correlati dietro un namespace.',
             },
             {
               english: 'Mod Keyword',
@@ -6042,6 +6161,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'mod utils;',
+              task: 'Carica il modulo utils dal file fratello utils.rs scrivendo la dichiarazione mod utils con la parola chiave mod.',
             },
             {
               english: 'Use Statement',
@@ -6053,6 +6173,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'use std::collections::HashMap;',
+              task: 'Porta in scope il tipo HashMap di std::collections con una use statement per accorciarne il path.',
             },
             {
               english: 'Path',
@@ -6064,6 +6185,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'crate::utils::helper',
+              task: 'Riferisciti tramite il path assoluto crate::utils::helper alla funzione helper definita nel modulo utils del crate corrente.',
             },
             {
               english: 'Pub Keyword',
@@ -6075,6 +6197,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'pub fn greet() { ... }',
+              task: 'Marca la funzione greet con la parola chiave pub per renderla visibile oltre il modulo che la definisce.',
             },
             {
               english: 'Crate Root',
@@ -6086,6 +6209,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'src/lib.rs',
+              task: 'Crea il file src/lib.rs come crate root della libreria per ancorare tutti i path assoluti del progetto.',
             },
             {
               english: 'Crate Keyword',
@@ -6097,6 +6221,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'use crate::utils;',
+              task: 'Importa il modulo utils a partire dalla crate root con la parola chiave crate scrivendo use crate::utils.',
             },
             {
               english: 'Super Path',
@@ -6108,6 +6233,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'use super::Helper;',
+              task: 'Importa il tipo Helper dal modulo padre tramite il super path use super::Helper invece di scrivere il path assoluto.',
             },
             {
               english: 'Self Path',
@@ -6119,6 +6245,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'use self::utils;',
+              task: 'Importa il modulo utils figlio del corrente tramite il self path use self::utils per chiarezza nei moduli annidati.',
             },
             {
               english: 'Module File',
@@ -6130,6 +6257,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: '// src/network.rs',
+              task: 'Aggiungi un commento che indichi src/network.rs come module file ospitante il modulo network del crate.',
             },
           ],
         },
@@ -6148,6 +6276,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: '[workspace]\nmembers = ["app", "lib"]',
+              task: 'Dichiara nel Cargo.toml la sezione [workspace] elencando i membri "app" e "lib" per condividere un solo Cargo.lock.',
             },
             {
               english: 'Workspace Member',
@@ -6169,6 +6298,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'helpers = { path = "../helpers" }',
+              task: 'Definisci la dipendenza helpers come path dependency puntando a "../helpers" anziche a un crate pubblicato su crates.io.',
             },
             {
               english: 'Crates.io',
@@ -6191,6 +6321,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: '[dependencies]\nserde = "1.0"',
+              task: 'Aggiungi serde versione "1.0" alla sezione [dependencies] del Cargo.toml per dichiarare la dipendenza al build.',
             },
             {
               english: 'Dev Dependency',
@@ -6202,6 +6333,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: '[dev-dependencies]\nproptest = "1"',
+              task: 'Inserisci proptest "1" sotto [dev-dependencies] perche venga compilato solo durante cargo test e cargo bench.',
             },
             {
               english: 'Build Dependency',
@@ -6213,6 +6345,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: '[build-dependencies]',
+              task: 'Apri la sezione [build-dependencies] del Cargo.toml per dichiarare i crate consumati esclusivamente da build.rs.',
             },
             {
               english: 'Feature Flag',
@@ -6224,6 +6357,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: '[features]\nasync = ["tokio"]',
+              task: 'Definisci un feature flag async che attiva la dipendenza tokio dichiarandolo nella sezione [features] del Cargo.toml.',
             },
             {
               english: 'Semver',
@@ -6246,6 +6380,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'serde = "^1.0"',
+              task: 'Indica per serde il version specifier "^1.0" per permettere a Cargo di aggiornare lungo la linea minore compatibile.',
             },
           ],
         },
@@ -6274,6 +6409,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'pub fn api() { ... }',
+              task: 'Marca la funzione api come pubblica con la parola chiave pub per esporla agli utenti esterni del modulo.',
             },
             {
               english: 'Pub Crate',
@@ -6285,6 +6421,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'pub(crate) fn internal() { ... }',
+              task: 'Restringi la visibilita della funzione internal al solo crate corrente usando il qualificatore pub(crate).',
             },
             {
               english: 'Pub Super',
@@ -6296,6 +6433,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'pub(super) fn shared() { ... }',
+              task: 'Limita la visibilita della funzione shared al modulo padre dichiarandola con pub(super) per esposizioni mirate.',
             },
             {
               english: 'Pub Use',
@@ -6308,6 +6446,7 @@ export default {
               difficulty: 'intermediate',
               code: 'pub use crate::utils::Helper;',
               note: "Pattern molto utile per fare flat l'API pubblica.",
+              task: `Ri-esporta l'item Helper di crate::utils al livello corrente con pub use per appiattire l'API pubblica.`,
             },
             {
               english: 'API Surface',
@@ -6328,6 +6467,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'mod internal; // private',
+              task: 'Dichiara il modulo internal come privato omettendo pub e aggiungi un commento che ne chiarisca la visibilita.',
             },
             {
               english: 'Glob Import',
@@ -6339,6 +6479,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'use std::prelude::*;',
+              task: 'Esegui un glob import di std::prelude con use std::prelude::* per portare in scope tutti gli item ri-esportati.',
             },
             {
               english: 'Prelude',
@@ -6360,6 +6501,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'pub use crate::network::Connection;',
+              task: 'Ri-esporta il tipo Connection del modulo network alla root del crate corrente tramite pub use.',
             },
           ],
         },
@@ -6378,6 +6520,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               command: 'cargo test',
+              task: 'Esegui la suite di test del crate corrente lanciando il comando cargo test dal terminale.',
             },
             {
               english: 'Cargo Doc',
@@ -6389,6 +6532,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               command: 'cargo doc --open',
+              task: 'Genera e apri nel browser la documentazione HTML del crate lanciando cargo doc --open.',
             },
             {
               english: 'Cargo Update',
@@ -6399,6 +6543,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               command: 'cargo update',
+              task: 'Aggiorna le dipendenze risolte nel Cargo.lock al loro semver massimo compatibile con il comando cargo update.',
             },
             {
               english: 'Cargo Add',
@@ -6410,6 +6555,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               command: 'cargo add serde',
+              task: 'Aggiungi serde come dipendenza al Cargo.toml senza editarlo a mano lanciando cargo add serde.',
             },
             {
               english: 'Cargo Remove',
@@ -6420,6 +6566,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               command: 'cargo remove serde',
+              task: `Rimuovi serde dalle dipendenze del Cargo.toml tramite il comando cargo remove serde in un'unica azione tracciata.`,
             },
             {
               english: 'Cargo Publish',
@@ -6431,6 +6578,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               command: 'cargo publish',
+              task: 'Pubblica il crate corrente sul registry crates.io con il comando cargo publish dopo aver bumpato la versione.',
             },
             {
               english: 'Cargo Bench',
@@ -6443,6 +6591,7 @@ export default {
               difficulty: 'intermediate',
               command: 'cargo bench',
               note: 'Stabile solo su nightly per benchmark integrati. Per stable usare criterion.',
+              task: 'Lancia i target di benchmark del crate in modalita release tramite il comando cargo bench.',
             },
             {
               english: 'Cargo Tree',
@@ -6454,6 +6603,7 @@ export default {
               context: 'foundations',
               difficulty: 'intermediate',
               command: 'cargo tree',
+              task: `Stampa l'albero delle dipendenze risolte del workspace con il comando cargo tree per scovare duplicati.`,
             },
             {
               english: 'Cargo Audit',
@@ -6466,6 +6616,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'cargo-audit',
               command: 'cargo audit',
+              task: 'Verifica che nessuna dipendenza presenti CVE note lanciando il comando cargo audit dalla CI o in locale.',
             },
             {
               english: 'Cargo Expand',
@@ -6477,6 +6628,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'cargo-expand',
               command: 'cargo expand',
+              task: `Espandi le macro del crate corrente per ispezionarne l'output generato eseguendo il comando cargo expand.`,
             },
           ],
         },
@@ -6504,6 +6656,7 @@ export default {
               context: 'collections',
               difficulty: 'advanced',
               code: 'let add = |x, y| x + y;',
+              task: 'Definisci una closure add che riceve x e y con la sintassi pipe e restituisce la loro somma.',
             },
             {
               english: 'Pipe Syntax',
@@ -6515,6 +6668,7 @@ export default {
               difficulty: 'advanced',
               code: '|x| x * 2',
               note: 'Diverso dalla sintassi (x) => x * 2 di JavaScript.',
+              task: 'Scrivi una closure che raddoppia x dichiarando il parametro tra barre verticali con la sintassi |x| x * 2.',
             },
             {
               english: 'Capture',
@@ -6526,6 +6680,7 @@ export default {
               context: 'collections',
               difficulty: 'advanced',
               code: 'let add_n = |x| x + n;',
+              task: `Definisci una closure add_n che cattura la variabile n dall'ambiente circostante e la somma al parametro x.`,
             },
             {
               english: 'Iterator Move Closure',
@@ -6537,6 +6692,7 @@ export default {
               context: 'collections',
               difficulty: 'advanced',
               code: 'thread::spawn(move || work(data))',
+              task: 'Lancia thread::spawn passando una closure move che cattura data per ownership invece che per borrow.',
             },
             {
               english: 'Fn Trait',
@@ -6548,6 +6704,7 @@ export default {
               context: 'collections',
               difficulty: 'advanced',
               code: 'fn apply<F: Fn(i32) -> i32>(f: F)',
+              task: 'Dichiara la funzione apply parametrizzata su F: Fn(i32) -> i32 per accettare closure invocabili piu volte.',
             },
             {
               english: 'FnMut Trait',
@@ -6559,6 +6716,7 @@ export default {
               context: 'collections',
               difficulty: 'advanced',
               code: 'fn run<F: FnMut()>(mut f: F)',
+              task: 'Definisci la funzione run con F: FnMut() per accettare una closure che muta lo stato catturato a ogni invocazione.',
             },
             {
               english: 'FnOnce Trait',
@@ -6570,6 +6728,7 @@ export default {
               context: 'collections',
               difficulty: 'advanced',
               code: 'fn run<F: FnOnce()>(f: F)',
+              task: 'Dichiara la funzione run con il bound F: FnOnce() per ricevere una closure consumabile una sola volta.',
             },
             {
               english: 'Anonymous Function',
@@ -6591,6 +6750,7 @@ export default {
               context: 'collections',
               difficulty: 'advanced',
               code: '|x| x + 1',
+              task: 'Lascia che il compilatore inferisca i tipi della closure |x| x + 1 dai chiamanti che la invocano.',
             },
             {
               english: 'Higher-Order Function',
@@ -6617,6 +6777,7 @@ export default {
               context: 'collections',
               difficulty: 'advanced',
               code: 'iter.map(...).filter(...)',
+              task: `Concatena map e filter sull'iteratore iter per costruire una pipeline lazy di adattatori in stile builder.`,
             },
             {
               english: 'Map Adaptor',
@@ -6628,6 +6789,7 @@ export default {
               context: 'collections',
               difficulty: 'advanced',
               code: 'v.iter().map(|x| x * 2)',
+              task: `Applica il map adaptor sull'iteratore di v per raddoppiare lazy ogni elemento con la closure |x| x * 2.`,
             },
             {
               english: 'Filter Adaptor',
@@ -6639,6 +6801,7 @@ export default {
               context: 'collections',
               difficulty: 'advanced',
               code: 'v.iter().filter(|&&x| x > 0)',
+              task: 'Mantieni dal vettore v solo gli elementi positivi concatenando iter e filter con la closure |&&x| x > 0.',
             },
             {
               english: 'Iterator Take',
@@ -6650,6 +6813,7 @@ export default {
               context: 'collections',
               difficulty: 'advanced',
               code: 'iter.take(5)',
+              task: 'Limita un iteratore ai primi 5 elementi invocando il metodo take per ottenere una sequenza finita.',
             },
             {
               english: 'Skip',
@@ -6660,6 +6824,7 @@ export default {
               context: 'collections',
               difficulty: 'advanced',
               code: 'iter.skip(3)',
+              task: `Scarta i primi 3 elementi dell'iteratore iter chiamando skip per saltare un header o un prefisso.`,
             },
             {
               english: 'Zip',
@@ -6671,6 +6836,7 @@ export default {
               context: 'collections',
               difficulty: 'advanced',
               code: 'a.iter().zip(b.iter())',
+              task: 'Abbina elemento per elemento gli iteratori di a e b chiamando zip per produrre tuple (a, b).',
             },
             {
               english: 'Chain',
@@ -6682,6 +6848,7 @@ export default {
               context: 'collections',
               difficulty: 'advanced',
               code: 'a.iter().chain(b.iter())',
+              task: `Concatena gli iteratori di a e b in un'unica sequenza virtuale invocando chain.`,
             },
             {
               english: 'Enumerate',
@@ -6693,6 +6860,7 @@ export default {
               context: 'collections',
               difficulty: 'advanced',
               code: 'for (i, x) in v.iter().enumerate()',
+              task: 'Itera sugli elementi del vettore v abbinandoli al loro indice zero-based usando enumerate dentro un ciclo for.',
             },
             {
               english: 'Flat Map',
@@ -6704,6 +6872,7 @@ export default {
               context: 'collections',
               difficulty: 'advanced',
               code: 'iter.flat_map(|x| vec![x, x])',
+              task: `Appiattisci una sequenza annidata applicando flat_map sull'iteratore con la closure |x| vec![x, x].`,
             },
             {
               english: 'Peekable',
@@ -6715,6 +6884,7 @@ export default {
               context: 'collections',
               difficulty: 'advanced',
               code: 'let mut it = v.iter().peekable();',
+              task: `Avvolgi l'iteratore di v con peekable per consentire al parser di consultare il prossimo elemento senza consumarlo.`,
             },
           ],
         },
@@ -6733,6 +6903,7 @@ export default {
               context: 'collections',
               difficulty: 'advanced',
               code: 'let v: Vec<_> = iter.collect();',
+              task: `Materializza l'iteratore lazy iter in un Vec posseduto invocando collect come operazione terminale.`,
             },
             {
               english: 'Fold',
@@ -6745,6 +6916,7 @@ export default {
               difficulty: 'advanced',
               code: 'iter.fold(0, |acc, x| acc + x)',
               note: 'Equivalente a reduce in altri linguaggi.',
+              task: `Riduci l'iteratore iter in un singolo totale chiamando fold con accumulatore iniziale 0 e somma |acc, x| acc + x.`,
             },
             {
               english: 'Reduce',
@@ -6756,6 +6928,7 @@ export default {
               context: 'collections',
               difficulty: 'advanced',
               code: 'iter.reduce(|acc, x| acc + x)',
+              task: `Riduci l'iteratore iter senza valore iniziale invocando reduce, ottenendo un Option<T> che e None su iteratore vuoto.`,
             },
             {
               english: 'Sum (terminal)',
@@ -6766,6 +6939,7 @@ export default {
               context: 'collections',
               difficulty: 'advanced',
               code: 'let total: i32 = v.iter().sum();',
+              task: 'Calcola la somma totale degli interi del vettore v annotando il tipo i32 e chiamando iter().sum.',
             },
             {
               english: 'Product',
@@ -6777,6 +6951,7 @@ export default {
               context: 'collections',
               difficulty: 'advanced',
               code: 'let p: i32 = v.iter().product();',
+              task: 'Calcola il prodotto degli interi del vettore v chiamando iter().product e annotando il tipo i32.',
             },
             {
               english: 'Max',
@@ -6787,6 +6962,7 @@ export default {
               context: 'collections',
               difficulty: 'advanced',
               code: 'v.iter().max()',
+              task: `Estrai il massimo dal vettore v invocando iter().max che restituisce Option<&T> per gestire l'iteratore vuoto.`,
             },
             {
               english: 'Min',
@@ -6798,6 +6974,7 @@ export default {
               context: 'collections',
               difficulty: 'advanced',
               code: 'v.iter().min()',
+              task: 'Estrai il minimo dal vettore v invocando iter().min che restituisce Option<&T> con None su input vuoto.',
             },
             {
               english: 'Find',
@@ -6809,6 +6986,7 @@ export default {
               context: 'collections',
               difficulty: 'advanced',
               code: 'v.iter().find(|&&x| x > 10)',
+              task: 'Cerca nel vettore v il primo elemento maggiore di 10 chiamando find con la closure |&&x| x > 10.',
             },
             {
               english: 'Any',
@@ -6820,6 +6998,7 @@ export default {
               context: 'collections',
               difficulty: 'advanced',
               code: 'v.iter().any(|&x| x > 0)',
+              task: 'Verifica se almeno un elemento del vettore v e positivo chiamando any con la closure |&x| x > 0.',
             },
             {
               english: 'All',
@@ -6830,6 +7009,7 @@ export default {
               context: 'collections',
               difficulty: 'advanced',
               code: 'v.iter().all(|&x| x > 0)',
+              task: 'Verifica che tutti gli elementi del vettore v siano positivi chiamando all con la closure |&x| x > 0.',
             },
           ],
         },
@@ -6847,6 +7027,7 @@ export default {
               context: 'collections',
               difficulty: 'advanced',
               code: 'impl Iterator for Counter { ... }',
+              task: 'Implementa il trait Iterator per la struct Counter fornendo un metodo next dentro un blocco impl personalizzato.',
             },
             {
               english: 'Next Method',
@@ -6858,6 +7039,7 @@ export default {
               context: 'collections',
               difficulty: 'advanced',
               code: 'fn next(&mut self) -> Option<Self::Item>',
+              task: 'Dichiara il metodo next con firma &mut self -> Option<Self::Item> per soddisfare il contratto del trait Iterator.',
             },
             {
               english: 'Item Type',
@@ -6869,6 +7051,7 @@ export default {
               context: 'collections',
               difficulty: 'advanced',
               code: 'type Item = u32;',
+              task: `Imposta il tipo associato Item dell'Iterator a u32 dentro l'implementazione del trait per la tua collezione.`,
             },
             {
               english: 'Double Ended',
@@ -6880,6 +7063,7 @@ export default {
               context: 'collections',
               difficulty: 'advanced',
               code: 'iter.next_back()',
+              task: 'Itera dal fondo della sequenza chiamando next_back, disponibile sui tipi che implementano DoubleEndedIterator.',
             },
             {
               english: 'Exact Size',
@@ -6891,6 +7075,7 @@ export default {
               context: 'collections',
               difficulty: 'advanced',
               code: 'iter.len()',
+              task: `Ottieni la dimensione esatta dell'iteratore invocando len, disponibile sui tipi che implementano ExactSizeIterator.`,
             },
             {
               english: 'Lazy Iterator',
@@ -6922,6 +7107,7 @@ export default {
               context: 'collections',
               difficulty: 'advanced',
               code: '(0..).take(10)',
+              task: 'Costruisci un iteratore infinito con il range (0..) limitandolo ai primi 10 elementi tramite take.',
             },
             {
               english: 'Iterator Composition',
@@ -6933,6 +7119,7 @@ export default {
               context: 'collections',
               difficulty: 'advanced',
               code: 'iter.map(...).filter(...).collect()',
+              task: `Componi una pipeline iteratore concatenando map, filter e collect in un'unica espressione lazy materializzata in fondo.`,
             },
             {
               english: 'Itertools',
@@ -6945,6 +7132,7 @@ export default {
               difficulty: 'advanced',
               tool: 'itertools',
               code: 'use itertools::Itertools;',
+              task: 'Porta in scope il trait Itertools dal crate omonimo con use itertools::Itertools per accedere a combinatori extra.',
             },
           ],
         },
@@ -6973,6 +7161,7 @@ export default {
               difficulty: 'advanced',
               code: 'let b = Box::new(5);',
               note: "Smart pointer più semplice: ownership di un valore sull'heap.",
+              task: `Alloca il valore 5 sull'heap costruendo uno smart pointer Box::new(5) e legandolo alla variabile b.`,
             },
             {
               english: 'Box New',
@@ -6983,6 +7172,7 @@ export default {
               context: 'ownership',
               difficulty: 'advanced',
               code: 'Box::new(value)',
+              task: `Sposta value sull'heap chiamando Box::new(value) per ottenere uno smart pointer Box<T> che ne possiede l'allocazione.`,
             },
             {
               english: 'Heap Pointer',
@@ -7003,6 +7193,7 @@ export default {
               context: 'ownership',
               difficulty: 'advanced',
               code: 'enum List { Cons(i32, Box<List>), Nil }',
+              task: `Definisci l'enum ricorsivo List con varianti Cons che contiene Box<List> e Nil per chiudere la lista linkata.`,
             },
             {
               english: 'Trait Object Box',
@@ -7014,6 +7205,7 @@ export default {
               context: 'ownership',
               difficulty: 'advanced',
               code: 'Box<dyn Display>',
+              task: 'Annota un argomento come Box<dyn Display> per accettare un trait object boxed su heap con dispatch dinamico.',
             },
             {
               english: 'Box Leak',
@@ -7026,6 +7218,7 @@ export default {
               difficulty: 'advanced',
               code: "let s: &'static str = Box::leak(b);",
               note: 'Cede ownership permanentemente: la memoria non viene mai liberata.',
+              task: `Trasforma il Box b in un riferimento &'static str invocando Box::leak per cedere l'allocazione al programma intero.`,
             },
             {
               english: 'Deref',
@@ -7037,6 +7230,7 @@ export default {
               context: 'ownership',
               difficulty: 'advanced',
               code: 'let val = *b;',
+              task: `Dereferenzia esplicitamente lo smart pointer b con l'operatore * per ottenere il valore interno per copia o move.`,
             },
             {
               english: 'Single Ownership',
@@ -7067,6 +7261,7 @@ export default {
               context: 'ownership',
               difficulty: 'advanced',
               code: 'let val = *b;',
+              task: `Estrai il valore interno dello smart pointer b con l'espressione *b per consumare il Box in un'unica istruzione.`,
             },
           ],
         },
@@ -7086,6 +7281,7 @@ export default {
               difficulty: 'advanced',
               code: 'let rc = Rc::new(5);',
               note: 'Reference Counted: incrementa il contatore a ogni clone.',
+              task: 'Crea uno smart pointer Rc avvolgendo il valore 5 con Rc::new per condividerlo tra piu proprietari sullo stesso thread.',
             },
             {
               english: 'Arc',
@@ -7098,6 +7294,7 @@ export default {
               difficulty: 'advanced',
               code: 'let arc = Arc::new(value);',
               note: 'Atomic Reference Counted: usa atomic per il contatore.',
+              task: 'Avvolgi value in uno smart pointer atomico Arc::new per consentirne la condivisione thread-safe tra worker concorrenti.',
             },
             {
               english: 'Reference Counting',
@@ -7118,6 +7315,7 @@ export default {
               context: 'ownership',
               difficulty: 'advanced',
               code: 'Rc::strong_count(&rc)',
+              task: 'Leggi il numero di proprietari forti dello smart pointer rc invocando la funzione associata Rc::strong_count.',
             },
             {
               english: 'Weak Reference',
@@ -7128,6 +7326,7 @@ export default {
               context: 'ownership',
               difficulty: 'advanced',
               code: 'Rc::downgrade(&rc)',
+              task: 'Crea un riferimento debole dal pointer rc invocando Rc::downgrade per evitare cicli di reference counting.',
             },
             {
               english: 'Reference Cycle',
@@ -7150,6 +7349,7 @@ export default {
               context: 'ownership',
               difficulty: 'advanced',
               code: 'let rc2 = Rc::clone(&rc);',
+              task: 'Clona lo smart pointer rc con Rc::clone, incrementando solo il contatore di riferimenti senza duplicare il valore.',
             },
             {
               english: 'Send Trait',
@@ -7200,6 +7400,7 @@ export default {
               difficulty: 'advanced',
               code: 'let cell = RefCell::new(5);',
               note: 'Sposta il borrow checking a runtime: fallisce con panic.',
+              task: 'Avvolgi il valore 5 in una RefCell::new per spostare i controlli di borrow al runtime invece che al compilatore.',
             },
             {
               english: 'Interior Mutability',
@@ -7222,6 +7423,7 @@ export default {
               context: 'ownership',
               difficulty: 'advanced',
               code: 'let r = cell.borrow();',
+              task: 'Acquisisci dalla RefCell cell un borrow immutabile invocando il metodo borrow e legandolo a r come guardia Ref.',
             },
             {
               english: 'Borrow Mut',
@@ -7233,6 +7435,7 @@ export default {
               context: 'ownership',
               difficulty: 'advanced',
               code: 'let mut r = cell.borrow_mut();',
+              task: 'Acquisisci dalla RefCell cell un borrow mutabile esclusivo invocando borrow_mut, sapendo che fa panic se altri borrow sono attivi.',
             },
             {
               english: 'Runtime Borrow Check',
@@ -7254,6 +7457,7 @@ export default {
               context: 'ownership',
               difficulty: 'advanced',
               code: 'let m = Mutex::new(0);',
+              task: `Avvolgi il valore 0 in un Mutex::new per consentirne l'accesso mutabile a un solo thread alla volta.`,
             },
             {
               english: 'Lock',
@@ -7265,6 +7469,7 @@ export default {
               context: 'ownership',
               difficulty: 'advanced',
               code: 'let mut guard = m.lock().unwrap();',
+              task: 'Acquisisci esclusivamente il Mutex m chiamando lock seguito da unwrap, ottenendo la guardia con lo stato condiviso.',
             },
             {
               english: 'Mutex Guard',
@@ -7298,6 +7503,7 @@ export default {
               context: 'ownership',
               difficulty: 'advanced',
               code: 'RwLock::new(value)',
+              task: 'Costruisci un RwLock avvolgendo value per separare lock di lettura concorrenti e lock di scrittura esclusivi.',
             },
           ],
         },
@@ -7316,6 +7522,7 @@ export default {
               context: 'ownership',
               difficulty: 'advanced',
               code: 'impl Deref for X { type Target = ...; }',
+              task: 'Implementa il trait Deref per il tipo X dichiarando il tipo associato Target e il metodo deref per simulare un riferimento.',
             },
             {
               english: 'Deref Coercion',
@@ -7338,6 +7545,7 @@ export default {
               context: 'ownership',
               difficulty: 'advanced',
               code: 'impl DerefMut for X { ... }',
+              task: 'Implementa il trait DerefMut per il tipo X estendendo Deref con un riferimento mutabile al target sottostante.',
             },
             {
               english: 'Drop Method',
@@ -7348,6 +7556,7 @@ export default {
               context: 'ownership',
               difficulty: 'advanced',
               code: 'fn drop(&mut self) { /* cleanup */ }',
+              task: 'Implementa il metodo drop con firma &mut self per eseguire cleanup deterministico quando il valore esce di scope.',
             },
             {
               english: 'Smart Pointer Auto Deref',
@@ -7358,6 +7567,7 @@ export default {
               context: 'ownership',
               difficulty: 'advanced',
               code: 'box.method() // works',
+              task: 'Invoca un metodo direttamente sul Box scrivendo box.method() sfruttando la deref coercion automatica del compilatore.',
             },
             {
               english: 'Custom Smart Pointer',
@@ -7379,6 +7589,7 @@ export default {
               context: 'ownership',
               difficulty: 'advanced',
               code: 'Cell::new(5)',
+              task: 'Costruisci una Cell::new(5) per fornire interior mutability single-threaded sui valori che implementano Copy.',
             },
             {
               english: 'Cow',
@@ -7391,6 +7602,7 @@ export default {
               difficulty: 'advanced',
               code: "Cow<'a, str>",
               note: 'Usa il tipo Owned o Borrowed dinamicamente, copia solo se necessario.',
+              task: `Annota un campo come Cow<'a, str> per posporre la clonazione fino a quando una modifica diventa indispensabile.`,
             },
             {
               english: 'OnceCell',
@@ -7402,6 +7614,7 @@ export default {
               context: 'ownership',
               difficulty: 'advanced',
               code: 'OnceCell::new()',
+              task: 'Crea un OnceCell::new come slot di inizializzazione singola per configurazioni globali calcolate al primo accesso.',
             },
             {
               english: 'LazyCell',
@@ -7413,6 +7626,7 @@ export default {
               context: 'ownership',
               difficulty: 'advanced',
               code: 'LazyCell::new(|| compute())',
+              task: 'Costruisci un LazyCell::new fornendo la closure compute che produrra il valore al primo accesso lazy.',
             },
           ],
         },
@@ -7440,6 +7654,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'use std::thread;',
+              task: 'Porta in scope il modulo std::thread con una use statement per accedere alle primitive di esecuzione concorrente.',
             },
             {
               english: 'Thread Spawn',
@@ -7451,6 +7666,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'thread::spawn(|| { /* work */ });',
+              task: 'Lancia un nuovo thread di esecuzione chiamando thread::spawn con una closure che ne contiene il lavoro.',
             },
             {
               english: 'Join Handle',
@@ -7461,6 +7677,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'let h = thread::spawn(|| 42);',
+              task: 'Conserva nel JoinHandle h il risultato di thread::spawn per poter recuperare in seguito il valore 42 prodotto.',
             },
             {
               english: 'Join',
@@ -7472,6 +7689,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'h.join().unwrap();',
+              task: 'Attendi la terminazione del thread legato a h chiamando join seguito da unwrap per propagare eventuali panic.',
             },
             {
               english: 'Thread Move Closure',
@@ -7482,6 +7700,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'thread::spawn(move || { use(data); })',
+              task: 'Lancia un thread con thread::spawn passando una closure move che trasferisce ownership di data dentro il nuovo thread.',
             },
             {
               english: 'OS Thread',
@@ -7504,6 +7723,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'thread_local! { static X: u32 = 0; }',
+              task: 'Dichiara la variabile thread-locale X di tipo u32 inizializzata a 0 con la macro thread_local.',
             },
             {
               english: 'Sleep',
@@ -7515,6 +7735,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'thread::sleep(Duration::from_secs(1));',
+              task: 'Sospendi il thread corrente per un secondo passando Duration::from_secs(1) a thread::sleep.',
             },
             {
               english: 'Park',
@@ -7526,6 +7747,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'thread::park();',
+              task: `Parcheggia il thread corrente chiamando thread::park finche un altro thread non chiama unpark sull'handle.`,
             },
             {
               english: 'Spawn Result',
@@ -7554,6 +7776,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'use std::sync::mpsc;',
+              task: 'Porta in scope il modulo std::sync::mpsc con una use statement per costruire canali di comunicazione tra thread.',
             },
             {
               english: 'MPSC',
@@ -7565,6 +7788,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'let (tx, rx) = mpsc::channel();',
+              task: 'Costruisci una coppia (tx, rx) di canale mpsc invocando mpsc::channel per collegare piu producer a un singolo consumer.',
             },
             {
               english: 'Sender',
@@ -7576,6 +7800,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'tx.send(value).unwrap();',
+              task: `Invia value sul canale tramite il Sender tx chiamando send seguito da unwrap per ignorare l'errore di canale chiuso.`,
             },
             {
               english: 'Receiver',
@@ -7587,6 +7812,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'let val = rx.recv().unwrap();',
+              task: 'Ricevi bloccante un messaggio dal Receiver rx chiamando recv seguito da unwrap, ottenendo il valore inviato.',
             },
             {
               english: 'Sync Channel',
@@ -7598,6 +7824,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'mpsc::sync_channel(10)',
+              task: 'Costruisci un canale sincrono bounded con capacita 10 invocando mpsc::sync_channel per applicare back-pressure ai producer.',
             },
             {
               english: 'Crossbeam',
@@ -7641,6 +7868,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'match rx.try_recv() { ... }',
+              task: 'Tenta una ricezione non bloccante dal Receiver rx con try_recv e gestisci il risultato tramite un match.',
             },
             {
               english: 'Drop Sender',
@@ -7733,6 +7961,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'use std::sync::atomic::AtomicI32;',
+              task: 'Porta in scope il tipo AtomicI32 da std::sync::atomic per eseguire operazioni atomiche su intero a 32 bit.',
             },
             {
               english: 'Memory Ordering',
@@ -7744,6 +7973,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'Ordering::SeqCst',
+              task: `Passa il valore Ordering::SeqCst alle operazioni atomiche per imporre l'ordinamento di memoria sequenzialmente consistente.`,
             },
             {
               english: 'Compare and Swap',
@@ -7755,6 +7985,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'atomic.compare_exchange(...)',
+              task: `Esegui sull'atomic una compare-and-swap invocando compare_exchange per aggiornare il valore solo se corrisponde all'atteso.`,
             },
             {
               english: 'Lock-Free',
@@ -7783,6 +8014,7 @@ export default {
               difficulty: 'advanced',
               code: 'Arc<Mutex<T>>',
               note: 'Pattern comune: Arc per ownership condivisa, Mutex per mutabilità.',
+              task: 'Annota il tipo condiviso Arc<Mutex<T>> per combinare ownership condivisa e mutua esclusione tra thread.',
             },
             {
               english: 'Std RwLock',
@@ -7793,6 +8025,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'rwlock.read().unwrap()',
+              task: 'Acquisisci un lock di lettura sul RwLock rwlock chiamando read seguito da unwrap per consentire letture concorrenti.',
             },
             {
               english: 'Barrier',
@@ -7804,6 +8037,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'Barrier::new(n)',
+              task: 'Costruisci una Barrier::new(n) per sincronizzare n thread che devono ritrovarsi tutti prima di proseguire.',
             },
             {
               english: 'Condvar',
@@ -7815,6 +8049,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'Condvar::new()',
+              task: 'Crea una Condvar::new per consentire ai thread di attendere e segnalare condizioni associate a un Mutex.',
             },
             {
               english: 'Once',
@@ -7826,6 +8061,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'static INIT: Once = Once::new();',
+              task: 'Dichiara la static INIT di tipo Once con Once::new per garantire un blocco di inizializzazione globale eseguito una sola volta.',
             },
             {
               english: 'Semaphore',
@@ -7881,6 +8117,7 @@ export default {
               tool: 'rayon',
               code: 'v.par_iter().map(...)',
               note: 'Conversione facile da iter a par_iter per parallelizzare.',
+              task: 'Parallelizza la pipeline di v invocando par_iter seguito da map, sfruttando rayon per distribuire il lavoro sui core.',
             },
           ],
         },

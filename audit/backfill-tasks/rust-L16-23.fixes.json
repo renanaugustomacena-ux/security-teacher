@@ -1,170 +1,1346 @@
-{"fixes":[
-{"level":"16","lesson":"rust_async_1","english":"Async Function","set":{"task":"Definisci una funzione async fetch() che restituisce una String per essere usata con il runtime tokio."}},
-{"level":"16","lesson":"rust_async_1","english":"Await","set":{"task":"Sospendi il future con .await e assegna il valore risolto alla variabile val."}},
-{"level":"16","lesson":"rust_async_1","english":"Future","set":{"task":"Implementa il trait Future per la struct X dichiarando il tipo Output e il metodo poll."}},
-{"level":"16","lesson":"rust_async_1","english":"Poll","set":{"task":"Scrivi la firma del metodo poll che riceve Pin<&mut Self> e un Context mutabile per pilotare il future."}},
-{"level":"16","lesson":"rust_async_1","english":"Pending","set":{"task":"Restituisci Poll::Pending dal metodo poll quando il future non ha ancora un risultato pronto."}},
-{"level":"16","lesson":"rust_async_1","english":"Ready","set":{"task":"Restituisci Poll::Ready(value) da poll quando il future ha completato il lavoro con il valore finale."}},
-{"level":"16","lesson":"rust_async_1","english":"Async Block","set":{"task":"Crea un blocco async inline che restituisce 42 e assegnalo alla variabile f come future."}},
-{"level":"16","lesson":"rust_async_1","english":"Async Move","set":{"task":"Usa async move per catturare data per valore e passarne l'ownership al future spawnato."}},
-{"level":"16","lesson":"rust_async_2","english":"Tokio","set":{"task":"Annota fn main con #[tokio::main] cosi' il runtime parte prima del corpo async."}},
-{"level":"16","lesson":"rust_async_2","english":"Spawn Task","set":{"task":"Lancia un task concorrente con tokio::spawn passando un blocco async che chiama work().await."}},
-{"level":"16","lesson":"rust_async_2","english":"Block On","set":{"task":"Pilota un future fino al completamento da codice sincrono chiamando rt.block_on(future)."}},
-{"level":"16","lesson":"rust_async_2","english":"Multi Thread Runtime","set":{"task":"Configura il runtime tokio multi-thread annotando main con flavor = \"multi_thread\"."}},
-{"level":"16","lesson":"rust_async_3","english":"Async Join","set":{"task":"Esegui due future concorrentemente con tokio::join!(f1, f2) attendendo entrambi."}},
-{"level":"16","lesson":"rust_async_3","english":"Select","set":{"task":"Metti in gara due future con tokio::select! e ramifica sul primo che si completa."}},
-{"level":"16","lesson":"rust_async_3","english":"Try Join","set":{"task":"Attendi entrambi i future con tokio::try_join!(f1, f2) fallendo subito al primo errore."}},
-{"level":"16","lesson":"rust_async_3","english":"Async Trait","set":{"task":"Annota un trait con #[async_trait] per dichiarare metodi async in versioni Rust precedenti alla 1.75."}},
-{"level":"16","lesson":"rust_async_3","english":"Boxed Future","set":{"task":"Dichiara un tipo Pin<Box<dyn Future<Output = T>>> per memorizzare un future eterogeneo sull'heap."}},
-{"level":"16","lesson":"rust_async_3","english":"Stream","set":{"task":"Importa il trait Stream da futures per consumare valori asincroni in modo pigro."}},
-{"level":"16","lesson":"rust_async_3","english":"Async Iter","set":{"task":"Itera uno stream con while let Some(x) = stream.next().await consumando un valore alla volta."}},
-{"level":"16","lesson":"rust_async_3","english":"Async Pin","set":{"task":"Dichiara il parametro come Pin<&mut Future> per garantire che il future non venga mosso in memoria."}},
-{"level":"16","lesson":"rust_async_3","english":"Timeout","set":{"task":"Limita la durata di un future a cinque secondi con timeout(Duration::from_secs(5), f).await."}},
-{"level":"16","lesson":"rust_async_4","english":"AsyncRead","set":{"task":"Importa tokio::io::AsyncReadExt per abilitare letture asincrone non bloccanti su file e socket."}},
-{"level":"16","lesson":"rust_async_4","english":"AsyncWrite","set":{"task":"Importa tokio::io::AsyncWriteExt per scrivere asincronicamente su socket e file senza bloccare il runtime."}},
-{"level":"16","lesson":"rust_async_4","english":"Tcp Listener","set":{"task":"Fai bind di un TcpListener su 0.0.0.0:8080 e attendi la connessione in arrivo con .await."}},
-{"level":"16","lesson":"rust_async_4","english":"Tcp Stream","set":{"task":"Dichiara il tipo tokio::net::TcpStream per rappresentare una connessione TCP asincrona."}},
-{"level":"16","lesson":"rust_async_4","english":"Async Channel","set":{"task":"Crea un canale async multi-producer con tokio::sync::mpsc::channel(100) e capacita' di cento messaggi."}},
-{"level":"16","lesson":"rust_async_4","english":"Async Mutex","set":{"task":"Costruisci un tokio::sync::Mutex::new(value) per proteggere una sezione critica che contiene punti await."}},
-{"level":"16","lesson":"rust_async_4","english":"Notify","set":{"task":"Importa tokio::sync::Notify per risvegliare task in attesa quando un dato e' pronto."}},
-{"level":"16","lesson":"rust_async_4","english":"Oneshot","set":{"task":"Crea un canale a singolo invio con tokio::sync::oneshot::channel() per restituire un risultato unico."}},
-{"level":"16","lesson":"rust_async_4","english":"Broadcast Channel","set":{"task":"Apri un canale broadcast con tokio::sync::broadcast::channel(100) per fare fan-out a piu' subscriber."}},
-{"level":"17","lesson":"rust_macros_1","english":"Macro Rules","set":{"task":"Definisci una macro dichiarativa say con macro_rules! che espande in println!(\"hi\")."}},
-{"level":"17","lesson":"rust_macros_1","english":"Macro Pattern","set":{"task":"Scrivi un pattern di macro ($x:expr) che cattura un'espressione e la usa nel corpo della macro."}},
-{"level":"17","lesson":"rust_macros_1","english":"Macro Fragment","set":{"task":"Combina frammenti di macro come $x:expr, $i:ident e $t:ty per accettare espressioni, identificatori e tipi."}},
-{"level":"17","lesson":"rust_macros_1","english":"Macro Repetition","set":{"task":"Costruisci una ripetizione $($x:expr),* per accettare una lista di espressioni separate da virgola."}},
-{"level":"17","lesson":"rust_macros_1","english":"Macro Invocation","set":{"task":"Invoca la macro println! passando la stringa \"hello\" come unico argomento."}},
-{"level":"17","lesson":"rust_macros_1","english":"Vec Macro Repeat","set":{"task":"Inizializza un Vec con tre elementi usando vec![1, 2, 3] al posto di push ripetuti."}},
-{"level":"17","lesson":"rust_macros_1","english":"Println Format Macro","set":{"task":"Stampa il valore di x su stdout con println!(\"{}\", x) usando la format string controllata a compile-time."}},
-{"level":"17","lesson":"rust_macros_1","english":"Format Args","set":{"task":"Costruisci una struct Arguments senza allocazione con format_args!(\"{}\", x)."}},
-{"level":"17","lesson":"rust_macros_2","english":"Procedural Macro","set":{"task":"Annota una funzione con #[proc_macro] che riceve un TokenStream come input per definire una macro procedurale."}},
-{"level":"17","lesson":"rust_macros_2","english":"Token Stream","set":{"task":"Importa il tipo TokenStream da proc_macro per ricevere e produrre flussi di token nelle proc macro."}},
-{"level":"17","lesson":"rust_macros_2","english":"Derive Macro","set":{"task":"Annota la funzione con #[proc_macro_derive(MyTrait)] per definire una macro derive personalizzata."}},
-{"level":"17","lesson":"rust_macros_2","english":"Attribute Macro","set":{"task":"Annota la funzione con #[proc_macro_attribute] per creare una macro che riscrive l'item annotato."}},
-{"level":"17","lesson":"rust_macros_2","english":"Function Like Macro","set":{"task":"Invoca una function-like proc macro come sql!(SELECT * FROM users) per embeddare un DSL nel sorgente."}},
-{"level":"17","lesson":"rust_macros_2","english":"Quote","set":{"task":"Genera codice Rust con quote! { fn #name() { ... } } interpolando il nome catturato nella proc macro."}},
-{"level":"17","lesson":"rust_macros_2","english":"Proc Macro Crate","set":{"task":"Marca il crate come proc-macro impostando proc-macro = true nella sezione [lib] di Cargo.toml."}},
-{"level":"17","lesson":"rust_macros_2","english":"Custom Derive Helper Attribute","set":{"task":"Annota una struct con #[derive(Serialize)] per attivare la macro derive che legge gli helper attribute serde."}},
-{"level":"17","lesson":"rust_macros_3","english":"Print Macro","set":{"task":"Scrivi su stdout senza newline finale invocando print!(\"hello\")."}},
-{"level":"17","lesson":"rust_macros_3","english":"Eprintln","set":{"task":"Stampa il messaggio di errore su stderr con eprintln!(\"error: {}\", e) cosi' che le diagnostiche siano filtrabili."}},
-{"level":"17","lesson":"rust_macros_3","english":"Write Macro","set":{"task":"Formatta il valore di x nel formatter f chiamando write!(f, \"{}\", x) dentro un impl di Display."}},
-{"level":"17","lesson":"rust_macros_3","english":"Dbg Macro","set":{"task":"Avvolgi l'espressione x * 2 con dbg! e assegna il risultato a y per stampare file, riga e valore su stderr."}},
-{"level":"17","lesson":"rust_macros_3","english":"Assert Macros","set":{"task":"Verifica con assert!(x > 0) che la variabile x sia positiva facendo panic in caso contrario."}},
-{"level":"17","lesson":"rust_macros_3","english":"Panic Macro Formatting","set":{"task":"Interrompi l'esecuzione invocando panic!(\"error\") con il messaggio diagnostico fisso."}},
-{"level":"17","lesson":"rust_macros_3","english":"Unimplemented","set":{"task":"Stub di un metodo trait con unimplemented!() in modo che il codice compili ma fallisca a runtime."}},
-{"level":"17","lesson":"rust_macros_3","english":"Concat Macro","set":{"task":"Concatena tre stringhe letterali a compile-time con concat!(\"a\", \"b\", \"c\") in un singolo &'static str."}},
-{"level":"17","lesson":"rust_macros_3","english":"Stringify","set":{"task":"Converti il letterale let x = 5 nel suo testo sorgente con stringify!(let x = 5) per il debug."}},
-{"level":"17","lesson":"rust_macros_3","english":"Include Bytes","set":{"task":"Embedda l'asset binario icon.png nel binario dichiarando una const ICON come slice di byte con include_bytes!."}},
-{"level":"17","lesson":"rust_macros_4","english":"Macro Documentation","set":{"task":"Documenta una macro con il commento /// Example: my_macro!() cosi' rustdoc renderizza l'uso su docs.rs."}},
-{"level":"17","lesson":"rust_macros_4","english":"Macro Export","set":{"task":"Aggiungi #[macro_export] sopra macro_rules! my cosi' i crate downstream possono invocarla."}},
-{"level":"17","lesson":"rust_macros_4","english":"Macro Path","set":{"task":"Usa il percorso $crate::path::Item dentro una macro esportata per riferirti agli item del crate definente."}},
-{"level":"17","lesson":"rust_macros_4","english":"Macro Debugging","set":{"task":"Esegui cargo expand per vedere il codice generato da una macro prima della compilazione completa."}},
-{"level":"18","lesson":"rust_unsafe_1","english":"Unsafe Block","set":{"task":"Confina la dereferenza di raw_ptr dentro un blocco unsafe per scrivere il valore 5 nella memoria."}},
-{"level":"18","lesson":"rust_unsafe_1","english":"Unsafe Function","set":{"task":"Dichiara una funzione unsafe fn dangerous() che richiede invarianti non verificabili dal compilatore."}},
-{"level":"18","lesson":"rust_unsafe_1","english":"Unsafe Trait","set":{"task":"Marca il trait Send come unsafe per imporre che gli implementatori garantiscano la safety del trasferimento tra thread."}},
-{"level":"18","lesson":"rust_unsafe_1","english":"Raw Pointer","set":{"task":"Costruisci un raw pointer *const i32 da un riferimento &x per interfacciarti con codice C."}},
-{"level":"18","lesson":"rust_unsafe_1","english":"Const Pointer","set":{"task":"Dichiara il tipo *const i32 per un puntatore non mutabile da passare oltre il confine FFI."}},
-{"level":"18","lesson":"rust_unsafe_1","english":"Mut Pointer","set":{"task":"Dichiara il tipo *mut i32 quando devi modificare la memoria puntata tramite ptr::write."}},
-{"level":"18","lesson":"rust_unsafe_1","english":"Pointer Dereference","set":{"task":"Dereferenzia il raw pointer p dentro un blocco unsafe { *p } per leggere il valore puntato."}},
-{"level":"18","lesson":"rust_unsafe_1","english":"Safety Comment","set":{"task":"Documenta l'invariante con un commento // SAFETY: ptr is valid here sopra ogni blocco unsafe."}},
-{"level":"18","lesson":"rust_unsafe_2","english":"Extern Block","set":{"task":"Dichiara la funzione C abs dentro un extern \"C\" block per chiamarla dal codice Rust tramite il linker."}},
-{"level":"18","lesson":"rust_unsafe_2","english":"Extern C","set":{"task":"Definisci extern \"C\" fn callback() per esporre una funzione Rust con la calling convention C."}},
-{"level":"18","lesson":"rust_unsafe_2","english":"FFI Repr C","set":{"task":"Annota struct Point con #[repr(C)] e due campi f64 per garantire layout compatibile con il C."}},
-{"level":"18","lesson":"rust_unsafe_2","english":"C String","set":{"task":"Costruisci una CString null-terminata dalla stringa \"hello\" gestendo l'errore con l'operatore ?."}},
-{"level":"18","lesson":"rust_unsafe_2","english":"C Str","set":{"task":"Crea una vista &CStr da un raw pointer chiamando CStr::from_ptr(ptr) per leggere una stringa C-terminata da NUL."}},
-{"level":"18","lesson":"rust_unsafe_2","english":"No Mangle","set":{"task":"Annota pub extern \"C\" fn my_fn con #[no_mangle] cosi' il linker conserva il nome del simbolo."}},
-{"level":"18","lesson":"rust_unsafe_2","english":"Library Linking","set":{"task":"Specifica la libreria nativa da linkare con #[link(name = \"ssl\")] sopra l'extern block."}},
-{"level":"18","lesson":"rust_unsafe_3","english":"Transmute","set":{"task":"Reinterpreta i bit di un f32 come u32 con std::mem::transmute::<f32, u32>(x) dopo aver verificato la dimensione."}},
-{"level":"18","lesson":"rust_unsafe_3","english":"Static Mut","set":{"task":"Dichiara una variabile globale mutabile static mut COUNTER: u32 = 0 a cui accederai solo in blocchi unsafe."}},
-{"level":"18","lesson":"rust_unsafe_3","english":"Union","set":{"task":"Definisci union U { i: i32, f: f32 } per sovrapporre la rappresentazione in memoria di un intero e di un float."}},
-{"level":"18","lesson":"rust_unsafe_3","english":"Pointer Offset","set":{"task":"Avanza il puntatore p di una posizione con p.offset(1) per scorrere un array C contiguo."}},
-{"level":"18","lesson":"rust_unsafe_3","english":"Read Volatile","set":{"task":"Leggi il valore puntato in modo non ottimizzabile con std::ptr::read_volatile(p) per registri memory-mapped."}},
-{"level":"18","lesson":"rust_unsafe_3","english":"Manually Drop","set":{"task":"Avvolgi value in ManuallyDrop::new(value) per disabilitare il drop automatico quando trasferisci l'ownership via FFI."}},
-{"level":"18","lesson":"rust_unsafe_3","english":"Maybe Uninit","set":{"task":"Crea uno spazio non inizializzato di tipo T con MaybeUninit::<T>::uninit() per inizializzarlo successivamente."}},
-{"level":"18","lesson":"rust_unsafe_3","english":"Inline Assembly","set":{"task":"Emetti un'istruzione nop con unsafe { asm!(\"nop\") } per inserire assembly inline nel binario."}},
-{"level":"18","lesson":"rust_unsafe_3","english":"Pointer Cast","set":{"task":"Esegui un cast tra puntatori scrivendo let p2 = p as *const u8 per reinterpretarne il tipo."}},
-{"level":"18","lesson":"rust_unsafe_3","english":"Null Pointer","set":{"task":"Ottieni un raw pointer nullo per i32 chiamando std::ptr::null::<i32>() come valore sentinella."}},
-{"level":"18","lesson":"rust_unsafe_4","english":"Miri","set":{"task":"Verifica l'assenza di undefined behavior eseguendo cargo miri test sul tuo codice unsafe."}},
-{"level":"18","lesson":"rust_unsafe_4","english":"Unsafe Cell","set":{"task":"Costruisci un UnsafeCell::new(value) come base per implementare un tipo a mutabilita' interna sicura."}},
-{"level":"18","lesson":"rust_unsafe_4","english":"No Std","set":{"task":"Marca la crate come no_std aggiungendo l'attributo a livello modulo #![no_std] per ambienti embedded."}},
-{"level":"18","lesson":"rust_unsafe_4","english":"Core Library","set":{"task":"Importa il modulo mem dalla core library con use core::mem per usarlo in un crate no_std."}},
-{"level":"19","lesson":"rust_traits_5","english":"Associated Type","set":{"task":"Definisci un trait Iter con un tipo associato Item che ogni implementatore fissera' al proprio tipo elemento."}},
-{"level":"19","lesson":"rust_traits_5","english":"Type Projection","set":{"task":"Riferisciti al tipo elemento di T scrivendo la proiezione <T as Iter>::Item in una signature generica."}},
-{"level":"19","lesson":"rust_traits_5","english":"GAT","set":{"task":"Dichiara un generic associated type type Item<'a>: 'a per parametrizzare un tipo associato con una lifetime."}},
-{"level":"19","lesson":"rust_traits_5","english":"Trait Object","set":{"task":"Memorizza un trait object eterogeneo dichiarando Box<dyn Display> come tipo del campo."}},
-{"level":"19","lesson":"rust_traits_5","english":"Sized Bound","set":{"task":"Rilassa il vincolo Sized di default scrivendo fn f<T: ?Sized>(x: &T) per accettare anche dynamically sized types."}},
-{"level":"19","lesson":"rust_traits_5","english":"Self Sized","set":{"task":"Aggiungi where Self: Sized al metodo new() -> Self cosi' resta utilizzabile solo per tipi di dimensione nota."}},
-{"level":"19","lesson":"rust_traits_5","english":"Trait Alias","set":{"task":"Definisci un trait alias trait Stringy = Display + Clone per raggruppare i due bound sotto un solo nome."}},
-{"level":"19","lesson":"rust_traits_6","english":"Trait Dynamic Dispatch","set":{"task":"Invoca un metodo via dispatch dinamico chiamando trait_obj.method() sul trait object."}},
-{"level":"19","lesson":"rust_traits_6","english":"Downcast","set":{"task":"Tenta il downcast di un &dyn Any a MyType chiamando any.downcast_ref::<MyType>() e gestendo l'Option."}},
-{"level":"19","lesson":"rust_traits_6","english":"Any Trait","set":{"task":"Importa il trait di identificazione runtime con use std::any::Any per abilitare il downcasting dinamico."}},
-{"level":"19","lesson":"rust_traits_6","english":"Type Id","set":{"task":"Ottieni l'identificatore univoco del tipo T a runtime chiamando TypeId::of::<T>()."}},
-{"level":"19","lesson":"rust_traits_6","english":"Multi Trait","set":{"task":"Dichiara un trait object combinato Box<dyn Display + Send> per richiedere entrambi i trait sullo stesso valore."}},
-{"level":"19","lesson":"rust_traits_7","english":"Trait Supertrait Bound","set":{"task":"Definisci trait Cat: Animal per imporre che ogni implementatore di Cat implementi prima Animal."}},
-{"level":"19","lesson":"rust_traits_7","english":"Blanket Impl","set":{"task":"Scrivi una blanket impl<T: Display> ToString for T per fornire automaticamente ToString a ogni tipo con Display."}},
-{"level":"19","lesson":"rust_traits_7","english":"Trait Newtype Wrapper","set":{"task":"Avvolgi Vec<i32> in struct Wrapper(Vec<i32>) per aggirare la orphan rule e implementare un trait esterno."}},
-{"level":"19","lesson":"rust_traits_7","english":"Negative Bound","set":{"task":"Dichiara impl !Send for X {} per opt-out esplicito dal trait Send sul tipo X."}},
-{"level":"19","lesson":"rust_traits_8","english":"Builder Pattern","set":{"task":"Costruisci la configurazione con il pattern builder Config::new().host(...).port(...).build() in modo fluente."}},
-{"level":"19","lesson":"rust_traits_8","english":"Extension Trait","set":{"task":"Definisci un extension trait MyExt con un metodo extra(&self) per arricchire un tipo esistente."}},
-{"level":"19","lesson":"rust_traits_8","english":"Typestate Phantom Type","set":{"task":"Aggiungi un campo PhantomData<T> alla struct per tracciare il typestate senza occupare memoria a runtime."}},
-{"level":"20","lesson":"rust_testing_1","english":"Test Attribute","set":{"task":"Annota la funzione it_works con #[test] cosi' cargo test la raccoglie come unit test."}},
-{"level":"20","lesson":"rust_testing_1","english":"Test Module","set":{"task":"Definisci un modulo tests annotato con #[cfg(test)] per escluderlo dalle build release."}},
-{"level":"20","lesson":"rust_testing_1","english":"Cargo Test Filter","set":{"task":"Esegui cargo test per lanciare la suite completa di unit e integration test del workspace."}},
-{"level":"20","lesson":"rust_testing_1","english":"Should Panic","set":{"task":"Annota il test con #[should_panic(expected = \"msg\")] per richiedere un panic con messaggio specifico."}},
-{"level":"20","lesson":"rust_testing_1","english":"Ignore Attribute","set":{"task":"Aggiungi #[ignore] sopra un #[test] lento cosi' viene saltato di default e gira solo con --ignored."}},
-{"level":"20","lesson":"rust_testing_1","english":"Test Filter","set":{"task":"Filtra l'esecuzione ai soli test il cui nome contiene add lanciando cargo test add."}},
-{"level":"20","lesson":"rust_testing_1","english":"Test Assert Eq","set":{"task":"Confronta actual ed expected dentro un test con assert_eq!(actual, expected) per fallire stampando entrambi i valori."}},
-{"level":"20","lesson":"rust_testing_1","english":"Assert Ne","set":{"task":"Verifica che a e b siano diversi con assert_ne!(a, b) per controlli di regressione su trasformazioni."}},
-{"level":"20","lesson":"rust_testing_1","english":"Test Output","set":{"task":"Esegui cargo test -- --nocapture per vedere l'output di println! anche per i test che passano."}},
-{"level":"20","lesson":"rust_testing_1","english":"Test Threading","set":{"task":"Forza l'esecuzione sequenziale dei test con cargo test -- --test-threads=1 quando condividono risorse globali."}},
-{"level":"20","lesson":"rust_testing_2","english":"Integration Test","set":{"task":"Crea un integration test nel file tests/integration.rs per esercitare solo l'API pubblica del crate."}},
-{"level":"20","lesson":"rust_testing_2","english":"Doc Test","set":{"task":"Aggiungi un doc test in un blocco /// ``` con assert_eq!(2 + 2, 4) cosi' la documentazione viene compilata."}},
-{"level":"20","lesson":"rust_testing_3","english":"Fuzzing","set":{"task":"Avvia il fuzzer su un target specifico con cargo fuzz run target per scoprire crash da input casuali."}},
-{"level":"20","lesson":"rust_testing_4","english":"Benchmark","set":{"task":"Misura le performance dei benchmark in modalita' release lanciando cargo bench."}},
-{"level":"20","lesson":"rust_testing_4","english":"Black Box","set":{"task":"Avvolgi value con black_box(value) per impedire al compilatore di ottimizzare via il calcolo nel benchmark."}},
-{"level":"21","lesson":"rust_io_1","english":"Read File","set":{"task":"Carica l'intero contenuto di file.txt in una String con fs::read_to_string(\"file.txt\")?."}},
-{"level":"21","lesson":"rust_io_1","english":"Write File","set":{"task":"Scrivi atomicamente data nel file file.txt con fs::write(\"file.txt\", data)? in una sola syscall."}},
-{"level":"21","lesson":"rust_io_1","english":"File Open","set":{"task":"Apri il file data.txt in sola lettura legando l'handle a f con let f = File::open(\"data.txt\")?."}},
-{"level":"21","lesson":"rust_io_1","english":"Buf Reader","set":{"task":"Avvolgi un File in un BufReader::new(file) per ridurre il numero di syscall di lettura."}},
-{"level":"21","lesson":"rust_io_1","english":"Buf Writer","set":{"task":"Avvolgi un File in un BufWriter::new(file) per accumulare le scritture in un buffer."}},
-{"level":"21","lesson":"rust_io_1","english":"Read Line","set":{"task":"Itera le righe del reader con for line in r.lines() per processare un log file una riga alla volta."}},
-{"level":"21","lesson":"rust_io_1","english":"Stdin","set":{"task":"Leggi una riga dall'input standard nella stringa s con std::io::stdin().read_line(&mut s)?."}},
-{"level":"21","lesson":"rust_io_1","english":"Stdout","set":{"task":"Scrivi i byte b\"hi\" sull'output standard con stdout().write_all(b\"hi\")? gestendo l'errore."}},
-{"level":"21","lesson":"rust_io_1","english":"Filesystem Path","set":{"task":"Porta in scope il tipo std::path::Path con use std::path::Path per manipolare percorsi di filesystem."}},
-{"level":"21","lesson":"rust_io_1","english":"PathBuf","set":{"task":"Crea un PathBuf proprietario dal letterale /etc/hosts chiamando PathBuf::from(\"/etc/hosts\")."}},
-{"level":"21","lesson":"rust_io_2","english":"Blocking TCP Listener","set":{"task":"Fai bind di un TcpListener sincrono su 0.0.0.0:8080 per accettare connessioni TCP bloccanti."}},
-{"level":"21","lesson":"rust_io_2","english":"Blocking TCP Stream","set":{"task":"Apri una connessione TCP sincrona a 127.0.0.1:8080 con TcpStream::connect e gestisci l'errore."}},
-{"level":"21","lesson":"rust_io_2","english":"UDP Socket","set":{"task":"Crea un socket UDP in ascolto su 0.0.0.0:5000 chiamando UdpSocket::bind(\"0.0.0.0:5000\")?."}},
-{"level":"21","lesson":"rust_io_2","english":"Socket Address","set":{"task":"Importa il tipo std::net::SocketAddr per rappresentare in modo tipato un indirizzo IP con porta."}},
-{"level":"21","lesson":"rust_io_2","english":"Reqwest","set":{"task":"Recupera il corpo testuale di una URL via reqwest::get(url).await?.text().await? in un'unica catena async."}},
-{"level":"21","lesson":"rust_io_3","english":"Serde","set":{"task":"Porta in scope i trait Serialize e Deserialize di serde con use serde::{Serialize, Deserialize}."}},
-{"level":"21","lesson":"rust_io_3","english":"Serialize","set":{"task":"Annota la struct con #[derive(Serialize)] per generare automaticamente il codice di serializzazione serde."}},
-{"level":"21","lesson":"rust_io_3","english":"Deserialize","set":{"task":"Annota la struct con #[derive(Deserialize)] per generare il parser dai formati supportati da serde."}},
-{"level":"21","lesson":"rust_io_3","english":"Serde JSON","set":{"task":"Converti la struct user in una stringa JSON con serde_json::to_string(&user)? gestendo l'errore."}},
-{"level":"21","lesson":"rust_io_3","english":"Toml","set":{"task":"Deserializza una stringa TOML in una struct Config con toml::from_str::<Config>(s)?."}},
-{"level":"21","lesson":"rust_io_3","english":"Skip Field","set":{"task":"Esegui lo skip del campo password aggiungendo #[serde(skip)] sopra la sua dichiarazione."}},
-{"level":"21","lesson":"rust_io_3","english":"Rename Field","set":{"task":"Rinomina la chiave esterna del campo a user_name con #[serde(rename = \"user_name\")] sopra la dichiarazione."}},
-{"level":"21","lesson":"rust_io_4","english":"Tokio Fs","set":{"task":"Leggi asincronamente il file f in una String con tokio::fs::read_to_string(\"f\").await? sotto il runtime tokio."}},
-{"level":"21","lesson":"rust_io_4","english":"Tokio Net","set":{"task":"Usa il tipo tokio::net::TcpStream per gestire connessioni TCP asincrone non bloccanti."}},
-{"level":"21","lesson":"rust_io_4","english":"Async Read Ext","set":{"task":"Importa il trait di estensione asincrona con use tokio::io::AsyncReadExt per usare read_to_end sui socket."}},
-{"level":"21","lesson":"rust_io_4","english":"Async Write Ext","set":{"task":"Importa use tokio::io::AsyncWriteExt per chiamare write_all su un TcpStream asincrono."}},
-{"level":"21","lesson":"rust_io_4","english":"Tokio Spawn","set":{"task":"Lancia un task indipendente sul runtime tokio con tokio::spawn(async { ... }) passando un blocco async."}},
-{"level":"21","lesson":"rust_io_4","english":"Tokio Mpsc","set":{"task":"Crea un canale async multi-producer con tokio::sync::mpsc::channel(100) di capacita' cento per fare fan-in."}},
-{"level":"22","lesson":"rust_ecosystem_3","english":"Clap","set":{"task":"Deriva il parser CLI annotando la struct di configurazione con #[derive(Parser)] di clap."}},
-{"level":"23","lesson":"rust_foundations_13","english":"Clippy Lints","set":{"task":"Esegui cargo clippy -- -D warnings in CI per trattare ogni lint Clippy come errore bloccante."}},
-{"level":"23","lesson":"rust_foundations_13","english":"Cargo Fmt","set":{"task":"Verifica la formattazione senza modificare i file con cargo fmt --check da agganciare a un hook pre-commit."}},
-{"level":"23","lesson":"rust_foundations_13","english":"Newtype Idiom","set":{"task":"Avvolgi una String in struct Username(String) per dare semantica forte al tipo username."}},
-{"level":"23","lesson":"rust_foundations_14","english":"Release Mode","set":{"task":"Compila il binario con tutte le ottimizzazioni eseguendo cargo build --release."}},
-{"level":"23","lesson":"rust_foundations_14","english":"Profile","set":{"task":"Personalizza il profilo release in Cargo.toml impostando opt-level = 3 sotto [profile.release]."}},
-{"level":"23","lesson":"rust_foundations_14","english":"LTO","set":{"task":"Abilita la link-time optimization fat impostando lto = \"fat\" nel profilo release di Cargo.toml."}},
-{"level":"23","lesson":"rust_foundations_14","english":"Inline","set":{"task":"Suggerisci l'inlining della funzione fast annotandola con #[inline] sopra la firma fn fast()."}},
-{"level":"23","lesson":"rust_foundations_14","english":"Const Fn","set":{"task":"Dichiara const fn double(x: u32) -> u32 { x * 2 } cosi' la funzione e' valutabile a compile-time."}},
-{"level":"23","lesson":"rust_foundations_15","english":"Embedded No Std","set":{"task":"Marca la crate embedded come no_std aggiungendo l'attributo #![no_std] in cima al lib.rs."}},
-{"level":"23","lesson":"rust_foundations_15","english":"No Main","set":{"task":"Abilita #![no_main] nel bootloader per delegare il punto d'ingresso al linker invece di main()."}},
-{"level":"23","lesson":"rust_foundations_15","english":"Panic Handler","set":{"task":"Annota una funzione con #[panic_handler] per definire la gestione panic in una crate no_std."}},
-{"level":"23","lesson":"rust_foundations_15","english":"Cross Compilation","set":{"task":"Esegui cargo build --target thumbv7m-none-eabi per cross-compilare il firmware verso un Cortex-M."}},
-{"level":"23","lesson":"rust_foundations_16","english":"Rust Edition","set":{"task":"Imposta edition = \"2024\" in Cargo.toml per attivare la sintassi e i lint dell'edizione 2024."}},
-{"level":"23","lesson":"rust_foundations_16","english":"Beta Channel","set":{"task":"Cambia il toolchain default al canale beta con rustup default beta per testare la prossima release stabile."}},
-{"level":"23","lesson":"rust_foundations_16","english":"Nightly Channel","set":{"task":"Passa al toolchain nightly con rustup default nightly per accedere alle feature instabili del compilatore."}},
-{"level":"23","lesson":"rust_foundations_16","english":"Crate Author","set":{"task":"Pubblica la tua crate sul registry ufficiale eseguendo cargo publish dal workspace."}}
-]}
+{
+  "fixes": [
+    {
+      "level": "16",
+      "lesson": "rust_async_1",
+      "english": "Async Function",
+      "set": {
+        "task": "Definisci una funzione async fetch() che restituisce una String per essere usata con il runtime tokio."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_1",
+      "english": "Await",
+      "set": {
+        "task": "Sospendi il future con .await e assegna il valore risolto alla variabile val."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_1",
+      "english": "Future",
+      "set": {
+        "task": "Implementa il trait Future per la struct X dichiarando il tipo Output e il metodo poll."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_1",
+      "english": "Poll",
+      "set": {
+        "task": "Scrivi la firma del metodo poll che riceve Pin<&mut Self> e un Context mutabile per pilotare il future."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_1",
+      "english": "Pending",
+      "set": {
+        "task": "Restituisci Poll::Pending dal metodo poll quando il future non ha ancora un risultato pronto."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_1",
+      "english": "Ready",
+      "set": {
+        "task": "Restituisci Poll::Ready(value) da poll quando il future ha completato il lavoro con il valore finale."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_1",
+      "english": "Async Block",
+      "set": {
+        "task": "Crea un blocco async inline che restituisce 42 e assegnalo alla variabile f come future."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_1",
+      "english": "Async Move",
+      "set": {
+        "task": "Usa async move per catturare data per valore e passarne l'ownership al future spawnato."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_2",
+      "english": "Tokio",
+      "set": {
+        "task": "Annota fn main con #[tokio::main] cosi' il runtime parte prima del corpo async."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_2",
+      "english": "Spawn Task",
+      "set": {
+        "task": "Lancia un task concorrente con tokio::spawn passando un blocco async che chiama work().await."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_2",
+      "english": "Block On",
+      "set": {
+        "task": "Pilota un future fino al completamento da codice sincrono chiamando rt.block_on(future)."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_2",
+      "english": "Multi Thread Runtime",
+      "set": {
+        "task": "Configura il runtime tokio multi-thread annotando main con flavor = \"multi_thread\"."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_3",
+      "english": "Async Join",
+      "set": {
+        "task": "Esegui due future concorrentemente con tokio::join!(f1, f2) attendendo entrambi."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_3",
+      "english": "Select",
+      "set": {
+        "task": "Metti in gara due future con tokio::select! e ramifica sul primo che si completa."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_3",
+      "english": "Try Join",
+      "set": {
+        "task": "Attendi entrambi i future con tokio::try_join!(f1, f2) fallendo subito al primo errore."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_3",
+      "english": "Async Trait",
+      "set": {
+        "task": "Annota un trait con #[async_trait] per dichiarare metodi async in versioni Rust precedenti alla 1.75."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_3",
+      "english": "Boxed Future",
+      "set": {
+        "task": "Dichiara un tipo Pin<Box<dyn Future<Output = T>>> per memorizzare un future eterogeneo sull'heap."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_3",
+      "english": "Stream",
+      "set": {
+        "task": "Importa il trait Stream da futures per consumare valori asincroni in modo pigro."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_3",
+      "english": "Async Iter",
+      "set": {
+        "task": "Itera uno stream con while let Some(x) = stream.next().await consumando un valore alla volta."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_3",
+      "english": "Async Pin",
+      "set": {
+        "task": "Dichiara il parametro come Pin<&mut Future> per garantire che il future non venga mosso in memoria."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_3",
+      "english": "Timeout",
+      "set": {
+        "task": "Limita la durata di un future a cinque secondi con timeout(Duration::from_secs(5), f).await."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_4",
+      "english": "AsyncRead",
+      "set": {
+        "task": "Importa tokio::io::AsyncReadExt per abilitare letture asincrone non bloccanti su file e socket."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_4",
+      "english": "AsyncWrite",
+      "set": {
+        "task": "Importa tokio::io::AsyncWriteExt per scrivere asincronicamente su socket e file senza bloccare il runtime."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_4",
+      "english": "Tcp Listener",
+      "set": {
+        "task": "Fai bind di un TcpListener su 0.0.0.0:8080 e attendi la connessione in arrivo con .await."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_4",
+      "english": "Tcp Stream",
+      "set": {
+        "task": "Dichiara il tipo tokio::net::TcpStream per rappresentare una connessione TCP asincrona."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_4",
+      "english": "Async Channel",
+      "set": {
+        "task": "Crea un canale async multi-producer con tokio::sync::mpsc::channel(100) e capacita' di cento messaggi."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_4",
+      "english": "Async Mutex",
+      "set": {
+        "task": "Costruisci un tokio::sync::Mutex::new(value) per proteggere una sezione critica che contiene punti await."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_4",
+      "english": "Notify",
+      "set": {
+        "task": "Importa tokio::sync::Notify per risvegliare task in attesa quando un dato e' pronto."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_4",
+      "english": "Oneshot",
+      "set": {
+        "task": "Crea un canale a singolo invio con tokio::sync::oneshot::channel() per restituire un risultato unico."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_4",
+      "english": "Broadcast Channel",
+      "set": {
+        "task": "Apri un canale broadcast con tokio::sync::broadcast::channel(100) per fare fan-out a piu' subscriber."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_1",
+      "english": "Macro Rules",
+      "set": {
+        "task": "Definisci una macro dichiarativa say con macro_rules! che espande in println!(\"hi\")."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_1",
+      "english": "Macro Pattern",
+      "set": {
+        "task": "Scrivi un pattern di macro ($x:expr) che cattura un'espressione e la usa nel corpo della macro."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_1",
+      "english": "Macro Fragment",
+      "set": {
+        "task": "Combina frammenti di macro come $x:expr, $i:ident e $t:ty per accettare espressioni, identificatori e tipi."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_1",
+      "english": "Macro Repetition",
+      "set": {
+        "task": "Costruisci una ripetizione $($x:expr),* per accettare una lista di espressioni separate da virgola."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_1",
+      "english": "Macro Invocation",
+      "set": {
+        "task": "Invoca la macro println! passando la stringa \"hello\" come unico argomento."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_1",
+      "english": "Vec Macro Repeat",
+      "set": {
+        "task": "Inizializza un Vec con tre elementi usando vec![1, 2, 3] al posto di push ripetuti."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_1",
+      "english": "Println Format Macro",
+      "set": {
+        "task": "Stampa il valore di x su stdout con println!(\"{}\", x) usando la format string controllata a compile-time."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_1",
+      "english": "Format Args",
+      "set": {
+        "task": "Costruisci una struct Arguments senza allocazione con format_args!(\"{}\", x)."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_2",
+      "english": "Procedural Macro",
+      "set": {
+        "task": "Annota una funzione con #[proc_macro] che riceve un TokenStream come input per definire una macro procedurale."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_2",
+      "english": "Token Stream",
+      "set": {
+        "task": "Importa il tipo TokenStream da proc_macro per ricevere e produrre flussi di token nelle proc macro."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_2",
+      "english": "Derive Macro",
+      "set": {
+        "task": "Annota la funzione con #[proc_macro_derive(MyTrait)] per definire una macro derive personalizzata."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_2",
+      "english": "Attribute Macro",
+      "set": {
+        "task": "Annota la funzione con #[proc_macro_attribute] per creare una macro che riscrive l'item annotato."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_2",
+      "english": "Function Like Macro",
+      "set": {
+        "task": "Invoca una function-like proc macro come sql!(SELECT * FROM users) per embeddare un DSL nel sorgente."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_2",
+      "english": "Quote",
+      "set": {
+        "task": "Genera codice Rust con quote! { fn #name() { ... } } interpolando il nome catturato nella proc macro."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_2",
+      "english": "Proc Macro Crate",
+      "set": {
+        "task": "Marca il crate come proc-macro impostando proc-macro = true nella sezione [lib] di Cargo.toml."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_2",
+      "english": "Custom Derive Helper Attribute",
+      "set": {
+        "task": "Annota una struct con #[derive(Serialize)] per attivare la macro derive che legge gli helper attribute serde."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_3",
+      "english": "Print Macro",
+      "set": { "task": "Scrivi su stdout senza newline finale invocando print!(\"hello\")." }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_3",
+      "english": "Eprintln",
+      "set": {
+        "task": "Stampa il messaggio di errore su stderr con eprintln!(\"error: {}\", e) cosi' che le diagnostiche siano filtrabili."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_3",
+      "english": "Write Macro",
+      "set": {
+        "task": "Formatta il valore di x nel formatter f chiamando write!(f, \"{}\", x) dentro un impl di Display."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_3",
+      "english": "Dbg Macro",
+      "set": {
+        "task": "Avvolgi l'espressione x * 2 con dbg! e assegna il risultato a y per stampare file, riga e valore su stderr."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_3",
+      "english": "Assert Macros",
+      "set": {
+        "task": "Verifica con assert!(x > 0) che la variabile x sia positiva facendo panic in caso contrario."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_3",
+      "english": "Panic Macro Formatting",
+      "set": {
+        "task": "Interrompi l'esecuzione invocando panic!(\"error\") con il messaggio diagnostico fisso."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_3",
+      "english": "Unimplemented",
+      "set": {
+        "task": "Stub di un metodo trait con unimplemented!() in modo che il codice compili ma fallisca a runtime."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_3",
+      "english": "Concat Macro",
+      "set": {
+        "task": "Concatena tre stringhe letterali a compile-time con concat!(\"a\", \"b\", \"c\") in un singolo &'static str."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_3",
+      "english": "Stringify",
+      "set": {
+        "task": "Converti il letterale let x = 5 nel suo testo sorgente con stringify!(let x = 5) per il debug."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_3",
+      "english": "Include Bytes",
+      "set": {
+        "task": "Embedda l'asset binario icon.png nel binario dichiarando una const ICON come slice di byte con include_bytes!."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_4",
+      "english": "Macro Documentation",
+      "set": {
+        "task": "Documenta una macro con il commento /// Example: my_macro!() cosi' rustdoc renderizza l'uso su docs.rs."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_4",
+      "english": "Macro Export",
+      "set": {
+        "task": "Aggiungi #[macro_export] sopra macro_rules! my cosi' i crate downstream possono invocarla."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_4",
+      "english": "Macro Path",
+      "set": {
+        "task": "Usa il percorso $crate::path::Item dentro una macro esportata per riferirti agli item del crate definente."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_4",
+      "english": "Macro Debugging",
+      "set": {
+        "task": "Esegui cargo expand per vedere il codice generato da una macro prima della compilazione completa."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_1",
+      "english": "Unsafe Block",
+      "set": {
+        "task": "Confina la dereferenza di raw_ptr dentro un blocco unsafe per scrivere il valore 5 nella memoria."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_1",
+      "english": "Unsafe Function",
+      "set": {
+        "task": "Dichiara una funzione unsafe fn dangerous() che richiede invarianti non verificabili dal compilatore."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_1",
+      "english": "Unsafe Trait",
+      "set": {
+        "task": "Marca il trait Send come unsafe per imporre che gli implementatori garantiscano la safety del trasferimento tra thread."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_1",
+      "english": "Raw Pointer",
+      "set": {
+        "task": "Costruisci un raw pointer *const i32 da un riferimento &x per interfacciarti con codice C."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_1",
+      "english": "Const Pointer",
+      "set": {
+        "task": "Dichiara il tipo *const i32 per un puntatore non mutabile da passare oltre il confine FFI."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_1",
+      "english": "Mut Pointer",
+      "set": {
+        "task": "Dichiara il tipo *mut i32 quando devi modificare la memoria puntata tramite ptr::write."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_1",
+      "english": "Pointer Dereference",
+      "set": {
+        "task": "Dereferenzia il raw pointer p dentro un blocco unsafe { *p } per leggere il valore puntato."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_1",
+      "english": "Safety Comment",
+      "set": {
+        "task": "Documenta l'invariante con un commento // SAFETY: ptr is valid here sopra ogni blocco unsafe."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_2",
+      "english": "Extern Block",
+      "set": {
+        "task": "Dichiara la funzione C abs dentro un extern \"C\" block per chiamarla dal codice Rust tramite il linker."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_2",
+      "english": "Extern C",
+      "set": {
+        "task": "Definisci extern \"C\" fn callback() per esporre una funzione Rust con la calling convention C."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_2",
+      "english": "FFI Repr C",
+      "set": {
+        "task": "Annota struct Point con #[repr(C)] e due campi f64 per garantire layout compatibile con il C."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_2",
+      "english": "C String",
+      "set": {
+        "task": "Costruisci una CString null-terminata dalla stringa \"hello\" gestendo l'errore con l'operatore ?."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_2",
+      "english": "C Str",
+      "set": {
+        "task": "Crea una vista &CStr da un raw pointer chiamando CStr::from_ptr(ptr) per leggere una stringa C-terminata da NUL."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_2",
+      "english": "No Mangle",
+      "set": {
+        "task": "Annota pub extern \"C\" fn my_fn con #[no_mangle] cosi' il linker conserva il nome del simbolo."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_2",
+      "english": "Library Linking",
+      "set": {
+        "task": "Specifica la libreria nativa da linkare con #[link(name = \"ssl\")] sopra l'extern block."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_3",
+      "english": "Transmute",
+      "set": {
+        "task": "Reinterpreta i bit di un f32 come u32 con std::mem::transmute::<f32, u32>(x) dopo aver verificato la dimensione."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_3",
+      "english": "Static Mut",
+      "set": {
+        "task": "Dichiara una variabile globale mutabile static mut COUNTER: u32 = 0 a cui accederai solo in blocchi unsafe."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_3",
+      "english": "Union",
+      "set": {
+        "task": "Definisci union U { i: i32, f: f32 } per sovrapporre la rappresentazione in memoria di un intero e di un float."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_3",
+      "english": "Pointer Offset",
+      "set": {
+        "task": "Avanza il puntatore p di una posizione con p.offset(1) per scorrere un array C contiguo."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_3",
+      "english": "Read Volatile",
+      "set": {
+        "task": "Leggi il valore puntato in modo non ottimizzabile con std::ptr::read_volatile(p) per registri memory-mapped."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_3",
+      "english": "Manually Drop",
+      "set": {
+        "task": "Avvolgi value in ManuallyDrop::new(value) per disabilitare il drop automatico quando trasferisci l'ownership via FFI."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_3",
+      "english": "Maybe Uninit",
+      "set": {
+        "task": "Crea uno spazio non inizializzato di tipo T con MaybeUninit::<T>::uninit() per inizializzarlo successivamente."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_3",
+      "english": "Inline Assembly",
+      "set": {
+        "task": "Emetti un'istruzione nop con unsafe { asm!(\"nop\") } per inserire assembly inline nel binario."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_3",
+      "english": "Pointer Cast",
+      "set": {
+        "task": "Esegui un cast tra puntatori scrivendo let p2 = p as *const u8 per reinterpretarne il tipo."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_3",
+      "english": "Null Pointer",
+      "set": {
+        "task": "Ottieni un raw pointer nullo per i32 chiamando std::ptr::null::<i32>() come valore sentinella."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_4",
+      "english": "Miri",
+      "set": {
+        "task": "Verifica l'assenza di undefined behavior eseguendo cargo miri test sul tuo codice unsafe."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_4",
+      "english": "Unsafe Cell",
+      "set": {
+        "task": "Costruisci un UnsafeCell::new(value) come base per implementare un tipo a mutabilita' interna sicura."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_4",
+      "english": "No Std",
+      "set": {
+        "task": "Marca la crate come no_std aggiungendo l'attributo a livello modulo #![no_std] per ambienti embedded."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_4",
+      "english": "Core Library",
+      "set": {
+        "task": "Importa il modulo mem dalla core library con use core::mem per usarlo in un crate no_std."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_5",
+      "english": "Associated Type",
+      "set": {
+        "task": "Definisci un trait Iter con un tipo associato Item che ogni implementatore fissera' al proprio tipo elemento."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_5",
+      "english": "Type Projection",
+      "set": {
+        "task": "Riferisciti al tipo elemento di T scrivendo la proiezione <T as Iter>::Item in una signature generica."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_5",
+      "english": "GAT",
+      "set": {
+        "task": "Dichiara un generic associated type type Item<'a>: 'a per parametrizzare un tipo associato con una lifetime."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_5",
+      "english": "Trait Object",
+      "set": {
+        "task": "Memorizza un trait object eterogeneo dichiarando Box<dyn Display> come tipo del campo."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_5",
+      "english": "Sized Bound",
+      "set": {
+        "task": "Rilassa il vincolo Sized di default scrivendo fn f<T: ?Sized>(x: &T) per accettare anche dynamically sized types."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_5",
+      "english": "Self Sized",
+      "set": {
+        "task": "Aggiungi where Self: Sized al metodo new() -> Self cosi' resta utilizzabile solo per tipi di dimensione nota."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_5",
+      "english": "Trait Alias",
+      "set": {
+        "task": "Definisci un trait alias trait Stringy = Display + Clone per raggruppare i due bound sotto un solo nome."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_6",
+      "english": "Trait Dynamic Dispatch",
+      "set": {
+        "task": "Invoca un metodo via dispatch dinamico chiamando trait_obj.method() sul trait object."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_6",
+      "english": "Downcast",
+      "set": {
+        "task": "Tenta il downcast di un &dyn Any a MyType chiamando any.downcast_ref::<MyType>() e gestendo l'Option."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_6",
+      "english": "Any Trait",
+      "set": {
+        "task": "Importa il trait di identificazione runtime con use std::any::Any per abilitare il downcasting dinamico."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_6",
+      "english": "Type Id",
+      "set": {
+        "task": "Ottieni l'identificatore univoco del tipo T a runtime chiamando TypeId::of::<T>()."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_6",
+      "english": "Multi Trait",
+      "set": {
+        "task": "Dichiara un trait object combinato Box<dyn Display + Send> per richiedere entrambi i trait sullo stesso valore."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_7",
+      "english": "Trait Supertrait Bound",
+      "set": {
+        "task": "Definisci trait Cat: Animal per imporre che ogni implementatore di Cat implementi prima Animal."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_7",
+      "english": "Blanket Impl",
+      "set": {
+        "task": "Scrivi una blanket impl<T: Display> ToString for T per fornire automaticamente ToString a ogni tipo con Display."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_7",
+      "english": "Trait Newtype Wrapper",
+      "set": {
+        "task": "Avvolgi Vec<i32> in struct Wrapper(Vec<i32>) per aggirare la orphan rule e implementare un trait esterno."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_7",
+      "english": "Negative Bound",
+      "set": {
+        "task": "Dichiara impl !Send for X {} per opt-out esplicito dal trait Send sul tipo X."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_8",
+      "english": "Builder Pattern",
+      "set": {
+        "task": "Costruisci la configurazione con il pattern builder Config::new().host(...).port(...).build() in modo fluente."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_8",
+      "english": "Extension Trait",
+      "set": {
+        "task": "Definisci un extension trait MyExt con un metodo extra(&self) per arricchire un tipo esistente."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_8",
+      "english": "Typestate Phantom Type",
+      "set": {
+        "task": "Aggiungi un campo PhantomData<T> alla struct per tracciare il typestate senza occupare memoria a runtime."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_1",
+      "english": "Test Attribute",
+      "set": {
+        "task": "Annota la funzione it_works con #[test] cosi' cargo test la raccoglie come unit test."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_1",
+      "english": "Test Module",
+      "set": {
+        "task": "Definisci un modulo tests annotato con #[cfg(test)] per escluderlo dalle build release."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_1",
+      "english": "Cargo Test Filter",
+      "set": {
+        "task": "Esegui cargo test per lanciare la suite completa di unit e integration test del workspace."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_1",
+      "english": "Should Panic",
+      "set": {
+        "task": "Annota il test con #[should_panic(expected = \"msg\")] per richiedere un panic con messaggio specifico."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_1",
+      "english": "Ignore Attribute",
+      "set": {
+        "task": "Aggiungi #[ignore] sopra un #[test] lento cosi' viene saltato di default e gira solo con --ignored."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_1",
+      "english": "Test Filter",
+      "set": {
+        "task": "Filtra l'esecuzione ai soli test il cui nome contiene add lanciando cargo test add."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_1",
+      "english": "Test Assert Eq",
+      "set": {
+        "task": "Confronta actual ed expected dentro un test con assert_eq!(actual, expected) per fallire stampando entrambi i valori."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_1",
+      "english": "Assert Ne",
+      "set": {
+        "task": "Verifica che a e b siano diversi con assert_ne!(a, b) per controlli di regressione su trasformazioni."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_1",
+      "english": "Test Output",
+      "set": {
+        "task": "Esegui cargo test -- --nocapture per vedere l'output di println! anche per i test che passano."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_1",
+      "english": "Test Threading",
+      "set": {
+        "task": "Forza l'esecuzione sequenziale dei test con cargo test -- --test-threads=1 quando condividono risorse globali."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_2",
+      "english": "Integration Test",
+      "set": {
+        "task": "Crea un integration test nel file tests/integration.rs per esercitare solo l'API pubblica del crate."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_2",
+      "english": "Doc Test",
+      "set": {
+        "task": "Aggiungi un doc test in un blocco /// ``` con assert_eq!(2 + 2, 4) cosi' la documentazione viene compilata."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_3",
+      "english": "Fuzzing",
+      "set": {
+        "task": "Avvia il fuzzer su un target specifico con cargo fuzz run target per scoprire crash da input casuali."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_4",
+      "english": "Benchmark",
+      "set": {
+        "task": "Misura le performance dei benchmark in modalita' release lanciando cargo bench."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_4",
+      "english": "Black Box",
+      "set": {
+        "task": "Avvolgi value con black_box(value) per impedire al compilatore di ottimizzare via il calcolo nel benchmark."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_1",
+      "english": "Read File",
+      "set": {
+        "task": "Carica l'intero contenuto di file.txt in una String con fs::read_to_string(\"file.txt\")?."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_1",
+      "english": "Write File",
+      "set": {
+        "task": "Scrivi atomicamente data nel file file.txt con fs::write(\"file.txt\", data)? in una sola syscall."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_1",
+      "english": "File Open",
+      "set": {
+        "task": "Apri il file data.txt in sola lettura legando l'handle a f con let f = File::open(\"data.txt\")?."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_1",
+      "english": "Buf Reader",
+      "set": {
+        "task": "Avvolgi un File in un BufReader::new(file) per ridurre il numero di syscall di lettura."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_1",
+      "english": "Buf Writer",
+      "set": {
+        "task": "Avvolgi un File in un BufWriter::new(file) per accumulare le scritture in un buffer."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_1",
+      "english": "Read Line",
+      "set": {
+        "task": "Itera le righe del reader con for line in r.lines() per processare un log file una riga alla volta."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_1",
+      "english": "Stdin",
+      "set": {
+        "task": "Leggi una riga dall'input standard nella stringa s con std::io::stdin().read_line(&mut s)?."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_1",
+      "english": "Stdout",
+      "set": {
+        "task": "Scrivi i byte b\"hi\" sull'output standard con stdout().write_all(b\"hi\")? gestendo l'errore."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_1",
+      "english": "Filesystem Path",
+      "set": {
+        "task": "Porta in scope il tipo std::path::Path con use std::path::Path per manipolare percorsi di filesystem."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_1",
+      "english": "PathBuf",
+      "set": {
+        "task": "Crea un PathBuf proprietario dal letterale /etc/hosts chiamando PathBuf::from(\"/etc/hosts\")."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_2",
+      "english": "Blocking TCP Listener",
+      "set": {
+        "task": "Fai bind di un TcpListener sincrono su 0.0.0.0:8080 per accettare connessioni TCP bloccanti."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_2",
+      "english": "Blocking TCP Stream",
+      "set": {
+        "task": "Apri una connessione TCP sincrona a 127.0.0.1:8080 con TcpStream::connect e gestisci l'errore."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_2",
+      "english": "UDP Socket",
+      "set": {
+        "task": "Crea un socket UDP in ascolto su 0.0.0.0:5000 chiamando UdpSocket::bind(\"0.0.0.0:5000\")?."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_2",
+      "english": "Socket Address",
+      "set": {
+        "task": "Importa il tipo std::net::SocketAddr per rappresentare in modo tipato un indirizzo IP con porta."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_2",
+      "english": "Reqwest",
+      "set": {
+        "task": "Recupera il corpo testuale di una URL via reqwest::get(url).await?.text().await? in un'unica catena async."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_3",
+      "english": "Serde",
+      "set": {
+        "task": "Porta in scope i trait Serialize e Deserialize di serde con use serde::{Serialize, Deserialize}."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_3",
+      "english": "Serialize",
+      "set": {
+        "task": "Annota la struct con #[derive(Serialize)] per generare automaticamente il codice di serializzazione serde."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_3",
+      "english": "Deserialize",
+      "set": {
+        "task": "Annota la struct con #[derive(Deserialize)] per generare il parser dai formati supportati da serde."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_3",
+      "english": "Serde JSON",
+      "set": {
+        "task": "Converti la struct user in una stringa JSON con serde_json::to_string(&user)? gestendo l'errore."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_3",
+      "english": "Toml",
+      "set": {
+        "task": "Deserializza una stringa TOML in una struct Config con toml::from_str::<Config>(s)?."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_3",
+      "english": "Skip Field",
+      "set": {
+        "task": "Esegui lo skip del campo password aggiungendo #[serde(skip)] sopra la sua dichiarazione."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_3",
+      "english": "Rename Field",
+      "set": {
+        "task": "Rinomina la chiave esterna del campo a user_name con #[serde(rename = \"user_name\")] sopra la dichiarazione."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_4",
+      "english": "Tokio Fs",
+      "set": {
+        "task": "Leggi asincronamente il file f in una String con tokio::fs::read_to_string(\"f\").await? sotto il runtime tokio."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_4",
+      "english": "Tokio Net",
+      "set": {
+        "task": "Usa il tipo tokio::net::TcpStream per gestire connessioni TCP asincrone non bloccanti."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_4",
+      "english": "Async Read Ext",
+      "set": {
+        "task": "Importa il trait di estensione asincrona con use tokio::io::AsyncReadExt per usare read_to_end sui socket."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_4",
+      "english": "Async Write Ext",
+      "set": {
+        "task": "Importa use tokio::io::AsyncWriteExt per chiamare write_all su un TcpStream asincrono."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_4",
+      "english": "Tokio Spawn",
+      "set": {
+        "task": "Lancia un task indipendente sul runtime tokio con tokio::spawn(async { ... }) passando un blocco async."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_4",
+      "english": "Tokio Mpsc",
+      "set": {
+        "task": "Crea un canale async multi-producer con tokio::sync::mpsc::channel(100) di capacita' cento per fare fan-in."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_3",
+      "english": "Clap",
+      "set": {
+        "task": "Deriva il parser CLI annotando la struct di configurazione con #[derive(Parser)] di clap."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_13",
+      "english": "Clippy Lints",
+      "set": {
+        "task": "Esegui cargo clippy -- -D warnings in CI per trattare ogni lint Clippy come errore bloccante."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_13",
+      "english": "Cargo Fmt",
+      "set": {
+        "task": "Verifica la formattazione senza modificare i file con cargo fmt --check da agganciare a un hook pre-commit."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_13",
+      "english": "Newtype Idiom",
+      "set": {
+        "task": "Avvolgi una String in struct Username(String) per dare semantica forte al tipo username."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_14",
+      "english": "Release Mode",
+      "set": {
+        "task": "Compila il binario con tutte le ottimizzazioni eseguendo cargo build --release."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_14",
+      "english": "Profile",
+      "set": {
+        "task": "Personalizza il profilo release in Cargo.toml impostando opt-level = 3 sotto [profile.release]."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_14",
+      "english": "LTO",
+      "set": {
+        "task": "Abilita la link-time optimization fat impostando lto = \"fat\" nel profilo release di Cargo.toml."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_14",
+      "english": "Inline",
+      "set": {
+        "task": "Suggerisci l'inlining della funzione fast annotandola con #[inline] sopra la firma fn fast()."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_14",
+      "english": "Const Fn",
+      "set": {
+        "task": "Dichiara const fn double(x: u32) -> u32 { x * 2 } cosi' la funzione e' valutabile a compile-time."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_15",
+      "english": "Embedded No Std",
+      "set": {
+        "task": "Marca la crate embedded come no_std aggiungendo l'attributo #![no_std] in cima al lib.rs."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_15",
+      "english": "No Main",
+      "set": {
+        "task": "Abilita #![no_main] nel bootloader per delegare il punto d'ingresso al linker invece di main()."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_15",
+      "english": "Panic Handler",
+      "set": {
+        "task": "Annota una funzione con #[panic_handler] per definire la gestione panic in una crate no_std."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_15",
+      "english": "Cross Compilation",
+      "set": {
+        "task": "Esegui cargo build --target thumbv7m-none-eabi per cross-compilare il firmware verso un Cortex-M."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_16",
+      "english": "Rust Edition",
+      "set": {
+        "task": "Imposta edition = \"2024\" in Cargo.toml per attivare la sintassi e i lint dell'edizione 2024."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_16",
+      "english": "Beta Channel",
+      "set": {
+        "task": "Cambia il toolchain default al canale beta con rustup default beta per testare la prossima release stabile."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_16",
+      "english": "Nightly Channel",
+      "set": {
+        "task": "Passa al toolchain nightly con rustup default nightly per accedere alle feature instabili del compilatore."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_16",
+      "english": "Crate Author",
+      "set": {
+        "task": "Pubblica la tua crate sul registry ufficiale eseguendo cargo publish dal workspace."
+      }
+    }
+  ]
+}
