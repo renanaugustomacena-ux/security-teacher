@@ -1,0 +1,92 @@
+{
+  "fixes": [
+    {
+      "level": "13",
+      "lesson": "cloud_services_1",
+      "english": "SQS",
+      "set": {
+        "task": "Pubblica un messaggio di test con corpo 'hi' sulla coda SQS puntata da $URL per verificare che il consumer la stia leggendo."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cloud_services_2",
+      "english": "SNS",
+      "set": {
+        "task": "Invia il messaggio 'hi' al topic SNS identificato da $ARN per innescare il fan-out verso email e code SQS."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cloud_services_3",
+      "english": "Event Pattern",
+      "set": {
+        "task": "Scrivi un event pattern EventBridge che catturi solo eventi UserSignup provenienti dalla sorgente custom.app."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cloud_services_5",
+      "english": "Distribution",
+      "set": {
+        "task": "Crea una nuova distribution CloudFront per servire il sito statico dietro la rete edge globale del provider."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cloud_services_5",
+      "english": "Cache Invalidation",
+      "set": {
+        "task": "Invalida l'intera cache della distribution CloudFront con il path /* subito dopo il deploy del nuovo bundle."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cloud_services_7",
+      "english": "Cache-Control",
+      "set": {
+        "task": "Imposta l'header Cache-Control public con max-age di 31536000 e flag immutable sugli asset fingerprinted."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cloud_services_9",
+      "english": "buildspec.yml",
+      "set": {
+        "task": "Definisci un buildspec.yml versione 0.2 con una fase build che lanci npm test come unico comando del job CodeBuild."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cloud_services_10",
+      "english": "YAML Pipeline",
+      "set": {
+        "task": "Componi una YAML Pipeline Azure DevOps che parta dal trigger sul branch main ed esegua npm install seguito da npm test."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cloud_services_11",
+      "english": "cloudbuild.yaml",
+      "set": {
+        "task": "Configura uno step in cloudbuild.yaml che usi gcr.io/cloud-builders/docker per buildare l'immagine taggata gcr.io/$PROJECT_ID/app."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_13",
+      "english": "BigQuery",
+      "set": {
+        "task": "Lancia una query interattiva su BigQuery con bq query selezionando tutte le colonne da dataset.table senza gestire alcun cluster."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_17",
+      "english": "Training Job",
+      "set": {
+        "task": "Avvia un training job SageMaker per addestrare il modello su istanze GPU senza gestire l'infrastruttura sottostante."
+      }
+    }
+  ]
+}

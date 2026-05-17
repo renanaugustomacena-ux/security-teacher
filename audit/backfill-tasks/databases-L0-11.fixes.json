@@ -1,0 +1,2388 @@
+{
+  "fixes": [
+    {
+      "level": "0",
+      "lesson": "db_foundations_1",
+      "english": "Database",
+      "set": {
+        "task": "Crea un nuovo database chiamato my_app per ospitare i dati dell'applicazione."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_1",
+      "english": "Table",
+      "set": {
+        "task": "Definisci una tabella users con due colonne, un identificatore intero e un nome di al massimo 50 caratteri."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_1",
+      "english": "Row",
+      "set": {
+        "task": "Inserisci una nuova riga nella tabella users con id 1 e nome Marco."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_1",
+      "english": "Column",
+      "set": {
+        "task": "Aggiungi alla tabella users una nuova colonna age di tipo intero tramite ALTER TABLE."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_1",
+      "english": "Schema",
+      "set": {
+        "task": "Crea uno schema dedicato chiamato analytics per isolare gli oggetti di reportistica."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_1",
+      "english": "Record",
+      "set": {
+        "task": "Aggiungi un commento SQL che ricordi al team che un record corrisponde a una riga della tabella."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_1",
+      "english": "Field",
+      "set": {
+        "task": "Dichiara il campo email come stringa di 255 caratteri con vincolo di unicità."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_1",
+      "english": "Data Type",
+      "set": {
+        "task": "Specifica i tipi di dato delle colonne age come intero e name come stringa fino a 50 caratteri."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_1",
+      "english": "Query",
+      "set": {
+        "task": "Scrivi una query semplice che recuperi tutte le colonne e tutte le righe della tabella users."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_1",
+      "english": "Result Set",
+      "set": {
+        "task": "Esegui una query sulla tabella users che restituisca solo la colonna name come result set."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_2",
+      "english": "SQL",
+      "set": {
+        "task": "Lancia un comando SQL standard che estragga tutti i record dalla tabella users."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_2",
+      "english": "PostgreSQL",
+      "set": {
+        "task": "Apri una sessione interattiva di psql collegandoti come utente postgres."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_2",
+      "english": "MySQL",
+      "set": {
+        "task": "Avvia il client MySQL come utente root richiedendo la password al prompt."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_2",
+      "english": "SQLite",
+      "set": {
+        "task": "Apri il file mydb.db con il client a riga di comando di SQLite per ispezionare il contenuto."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_2",
+      "english": "Connection",
+      "set": {
+        "task": "Stabilisci una connessione al database mydb in ascolto su localhost tramite psql."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_2",
+      "english": "Server",
+      "set": {
+        "task": "Avvia il server PostgreSQL locale invocando pg_ctl con il sottocomando start."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_3",
+      "english": "Primary Key",
+      "set": {
+        "task": "Dichiara la colonna id come chiave primaria di tipo intero per identificare univocamente le righe."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_3",
+      "english": "Foreign Key",
+      "set": {
+        "task": "Definisci la colonna user_id come chiave esterna che referenzia la colonna id della tabella users."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_3",
+      "english": "Unique Constraint",
+      "set": {
+        "task": "Imponi un vincolo di unicità sulla colonna email per evitare duplicati negli account utente."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_3",
+      "english": "NOT NULL",
+      "set": {
+        "task": "Definisci la colonna name come VARCHAR(50) con vincolo NOT NULL per rendere il valore obbligatorio."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_3",
+      "english": "Default Value",
+      "set": {
+        "task": "Imposta NOW() come valore predefinito della colonna created_at affinché venga popolata automaticamente."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_3",
+      "english": "Auto Increment",
+      "set": {
+        "task": "Definisci la colonna id come intero con auto increment e chiave primaria per generare ID progressivi."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_3",
+      "english": "SERIAL",
+      "set": {
+        "task": "Dichiara la colonna id come SERIAL e chiave primaria sfruttando la sequenza automatica di Postgres."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_3",
+      "english": "CHECK Constraint",
+      "set": {
+        "task": "Aggiungi un vincolo CHECK sulla colonna age che impedisca l'inserimento di valori negativi."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_3",
+      "english": "NULL",
+      "set": {
+        "task": "Filtra le righe della tabella per ottenere solo gli utenti il cui numero di telefono è NULL."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_3",
+      "english": "Composite Key",
+      "set": {
+        "task": "Definisci una chiave primaria composta dalle colonne user_id e role_id per la tabella di associazione."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_4",
+      "english": "Metadata",
+      "set": {
+        "task": "Interroga information_schema.tables per leggere i metadati relativi a tutte le tabelle del database."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "db_foundations_4",
+      "english": "Tablespace",
+      "set": {
+        "task": "Crea un tablespace fast_ssd che mappi i dati sulla directory /mnt/ssd per sfruttare il disco veloce."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_1",
+      "english": "SELECT",
+      "set": {
+        "task": "Recupera solo la colonna name dalla tabella users tramite una semplice SELECT."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_1",
+      "english": "FROM",
+      "set": {
+        "task": "Specifica la tabella users come sorgente della query usando la clausola FROM."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_1",
+      "english": "Asterisk",
+      "set": {
+        "task": "Estrai tutte le colonne della tabella users sfruttando l'asterisco come scorciatoia."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_1",
+      "english": "WHERE",
+      "set": {
+        "task": "Filtra la tabella users con una clausola WHERE per ottenere solo gli account attivi."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_1",
+      "english": "Equality Operator",
+      "set": {
+        "task": "Imposta nella clausola WHERE l'operatore di uguaglianza per selezionare solo gli utenti di trent'anni."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_1",
+      "english": "AND",
+      "set": {
+        "task": "Combina con AND due condizioni nella clausola WHERE per ottenere gli utenti maggiorenni e attivi."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_1",
+      "english": "OR",
+      "set": {
+        "task": "Estrai con OR gli utenti residenti a Roma oppure a Milano tramite la clausola WHERE."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_1",
+      "english": "NOT",
+      "set": {
+        "task": "Filtra la tabella escludendo con NOT le righe contrassegnate come cancellate."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_1",
+      "english": "IN",
+      "set": {
+        "task": "Seleziona gli utenti il cui country compare nell'insieme IT, FR e DE usando l'operatore IN."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_1",
+      "english": "BETWEEN",
+      "set": {
+        "task": "Filtra con BETWEEN gli utenti la cui età è compresa nell'intervallo 18-65 anni."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_2",
+      "english": "INSERT",
+      "set": {
+        "task": "Inserisci nella tabella users una nuova riga con nome Marco e età 30."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_2",
+      "english": "INTO",
+      "set": {
+        "task": "Specifica con la clausola INTO che la tabella users è il bersaglio dell'inserimento."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_2",
+      "english": "VALUES",
+      "set": {
+        "task": "Inserisci due righe in un solo statement passando le coppie (1, 'Anna') e (2, 'Luca') alla clausola VALUES."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_2",
+      "english": "UPDATE",
+      "set": {
+        "task": "Disattiva l'utente con id 5 impostando il flag active a false tramite un UPDATE mirato."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_2",
+      "english": "SET",
+      "set": {
+        "task": "Aggiorna in un solo passaggio i campi name e age con la clausola SET indicando i nuovi valori."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_2",
+      "english": "DELETE",
+      "set": {
+        "task": "Rimuovi dalla tabella users la riga corrispondente all'utente con id 5."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_2",
+      "english": "TRUNCATE",
+      "set": {
+        "task": "Svuota completamente la tabella logs con TRUNCATE per liberare spazio mantenendo lo schema."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_2",
+      "english": "RETURNING",
+      "set": {
+        "task": "Inserisci un nuovo utente Eva facendoti restituire dall'INSERT l'id appena generato tramite RETURNING."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_2",
+      "english": "UPSERT",
+      "set": {
+        "task": "Esegui un upsert che inserisca una nuova riga nella tabella users oppure aggiorni quella esistente in caso di conflitto sull'id."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_2",
+      "english": "ON CONFLICT",
+      "set": {
+        "task": "Aggiungi la clausola ON CONFLICT (email) DO NOTHING per ignorare silenziosamente eventuali duplicati."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_3",
+      "english": "DISTINCT",
+      "set": {
+        "task": "Estrai l'elenco dei paesi distinti presenti nella tabella users eliminando i duplicati con DISTINCT."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_3",
+      "english": "LIMIT",
+      "set": {
+        "task": "Recupera i primi 10 record della tabella users limitando il risultato con LIMIT."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_3",
+      "english": "OFFSET",
+      "set": {
+        "task": "Salta i primi 20 utenti e recupera i successivi 10 combinando LIMIT e OFFSET."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_3",
+      "english": "Pagination",
+      "set": {
+        "task": "Implementa la terza pagina della lista con 20 record per pagina usando LIMIT 20 e OFFSET 40."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_3",
+      "english": "COUNT",
+      "set": {
+        "task": "Conta tutte le righe della tabella users restituendo il totale con COUNT(*)."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_3",
+      "english": "LIKE",
+      "set": {
+        "task": "Trova con LIKE tutti gli utenti il cui nome inizia con la lettera M."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_3",
+      "english": "Wildcard",
+      "set": {
+        "task": "Cerca con il carattere jolly tutti gli indirizzi email che terminano con @gmail.com."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_3",
+      "english": "ILIKE",
+      "set": {
+        "task": "Trova con ILIKE tutti i nomi che contengono la sottostringa marco ignorando maiuscole e minuscole."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_3",
+      "english": "IS NULL",
+      "set": {
+        "task": "Filtra con IS NULL le righe in cui il numero di telefono non è stato registrato."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_3",
+      "english": "COALESCE",
+      "set": {
+        "task": "Restituisci il nickname dell'utente oppure, se assente, ripiega sul nome usando COALESCE."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_4",
+      "english": "CONCAT",
+      "set": {
+        "task": "Componi il nome completo dell'utente concatenando first_name, uno spazio e last_name con CONCAT."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_4",
+      "english": "UPPER",
+      "set": {
+        "task": "Converti il campo name in lettere maiuscole applicando la funzione UPPER nella SELECT."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_4",
+      "english": "LOWER",
+      "set": {
+        "task": "Filtra le email rendendole minuscole con LOWER per ottenere un confronto case-insensitive con foo@bar.com."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_4",
+      "english": "LENGTH",
+      "set": {
+        "task": "Calcola con LENGTH la lunghezza in caratteri del nome di ciascun utente."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_4",
+      "english": "SUBSTRING",
+      "set": {
+        "task": "Estrai con SUBSTRING le prime tre lettere del campo name di ciascun utente."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_4",
+      "english": "TRIM",
+      "set": {
+        "task": "Rimuovi gli spazi iniziali e finali dal campo name applicando la funzione TRIM."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_4",
+      "english": "NOW",
+      "set": {
+        "task": "Ottieni la data e l'ora correnti del server invocando la funzione NOW()."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_4",
+      "english": "CURRENT_DATE",
+      "set": {
+        "task": "Recupera la data odierna del database tramite la costante CURRENT_DATE."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_4",
+      "english": "EXTRACT",
+      "set": {
+        "task": "Estrai con EXTRACT l'anno dal campo created_at di ciascuna riga."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "db_sql_4",
+      "english": "DATE_TRUNC",
+      "set": {
+        "task": "Tronca con DATE_TRUNC il campo created_at al mese per raggruppare gli eventi su base mensile."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_5",
+      "english": "JOIN",
+      "set": {
+        "task": "Combina le tabelle orders e users con un JOIN sulla relazione user_id per arricchire ogni ordine con i dati utente."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_5",
+      "english": "INNER JOIN",
+      "set": {
+        "task": "Recupera nome utente e totale ordine con un INNER JOIN tra users e orders sul campo id."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_5",
+      "english": "LEFT JOIN",
+      "set": {
+        "task": "Recupera tutti gli utenti con i relativi ordini, includendo anche chi non ne ha effettuati, tramite LEFT JOIN."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_5",
+      "english": "RIGHT JOIN",
+      "set": {
+        "task": "Recupera tutti gli utenti includendo gli ordini correlati usando un RIGHT JOIN dalla tabella orders."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_5",
+      "english": "FULL OUTER JOIN",
+      "set": {
+        "task": "Unisci le tabelle a e b con FULL OUTER JOIN per ottenere tutte le righe da entrambi i lati, anche quelle senza corrispondenza."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_5",
+      "english": "CROSS JOIN",
+      "set": {
+        "task": "Genera tutte le combinazioni possibili tra colors e sizes effettuando un CROSS JOIN tra le due tabelle."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_5",
+      "english": "SELF JOIN",
+      "set": {
+        "task": "Affianca a ogni dipendente il nome del proprio manager facendo un self join sulla tabella employees tramite manager_id."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_5",
+      "english": "ON",
+      "set": {
+        "task": "Specifica con la clausola ON la condizione di join tra users.id e orders.user_id."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_5",
+      "english": "USING",
+      "set": {
+        "task": "Esegui il join tra le tabelle a e b sfruttando la clausola USING (id) quando la colonna ha lo stesso nome."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_5",
+      "english": "Cartesian Product",
+      "set": {
+        "task": "Annota in un commento che dimenticare la clausola ON nel JOIN produce un prodotto cartesiano indesiderato."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_6",
+      "english": "GROUP BY",
+      "set": {
+        "task": "Conta gli utenti per ogni paese raggruppando le righe della tabella users con GROUP BY country."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_6",
+      "english": "HAVING",
+      "set": {
+        "task": "Filtra con HAVING i gruppi di country mostrando solo quelli con più di 100 utenti."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_6",
+      "english": "Aggregate Function",
+      "set": {
+        "task": "Calcola il prezzo medio dei prodotti tramite la funzione di aggregazione AVG su products."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_6",
+      "english": "SUM",
+      "set": {
+        "task": "Calcola con SUM il totale degli importi presenti nella tabella orders."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_6",
+      "english": "AVG",
+      "set": {
+        "task": "Calcola con AVG il prezzo medio dei prodotti nella tabella products."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_6",
+      "english": "MIN",
+      "set": {
+        "task": "Determina con MIN il prezzo più basso presente nella tabella products."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_6",
+      "english": "MAX",
+      "set": {
+        "task": "Trova con MAX il prezzo più alto tra quelli registrati nella tabella products."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_6",
+      "english": "GROUPING",
+      "set": {
+        "task": "Raggruppa i record per le colonne category e year ottenendo un'aggregazione multidimensionale."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_6",
+      "english": "ROLLUP",
+      "set": {
+        "task": "Calcola con GROUP BY ROLLUP(year, month) subtotali per anno e mese oltre al totale generale."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_6",
+      "english": "CUBE",
+      "set": {
+        "task": "Genera tutte le combinazioni di aggregazione su country e product utilizzando GROUP BY CUBE."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_7",
+      "english": "ORDER BY",
+      "set": {
+        "task": "Ordina gli utenti dal più recente al più vecchio applicando ORDER BY created_at DESC."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_7",
+      "english": "ASC",
+      "set": {
+        "task": "Ordina le righe alfabeticamente per nome in modo ascendente con ORDER BY name ASC."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_7",
+      "english": "DESC",
+      "set": {
+        "task": "Ordina i record dal più recente al più vecchio con ORDER BY created_at DESC."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_7",
+      "english": "UNION",
+      "set": {
+        "task": "Unisci con UNION i nomi presenti nelle tabelle users e customers eliminando i duplicati."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_7",
+      "english": "UNION ALL",
+      "set": {
+        "task": "Concatena con UNION ALL i record delle tabelle a e b conservando tutti i duplicati."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_7",
+      "english": "INTERSECT",
+      "set": {
+        "task": "Calcola con INTERSECT gli id presenti in entrambe le tabelle a e b."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_7",
+      "english": "EXCEPT",
+      "set": {
+        "task": "Trova con EXCEPT gli utenti che non hanno mai effettuato ordini sottraendo gli user_id di orders dagli id di users."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_7",
+      "english": "Alias",
+      "set": {
+        "task": "Rinomina con AS la colonna name in user_name e abbrevia la tabella users con l'alias u."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_7",
+      "english": "AS",
+      "set": {
+        "task": "Rinomina con AS la colonna total della tabella orders facendola apparire nel risultato come amount."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_7",
+      "english": "NULLS FIRST",
+      "set": {
+        "task": "Ordina i record per priorità decrescente posizionando con NULLS LAST i valori nulli in fondo al risultato."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_8",
+      "english": "CASE",
+      "set": {
+        "task": "Classifica le righe come 'adult' o 'minor' in base all'età usando un'espressione CASE WHEN."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_8",
+      "english": "WHEN",
+      "set": {
+        "task": "Mappa con la clausola WHEN lo status 'active' al valore numerico 1 dentro un blocco CASE."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_8",
+      "english": "THEN",
+      "set": {
+        "task": "Restituisci con THEN il valore 'positive' quando la condizione x > 0 risulta vera dentro un CASE."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_8",
+      "english": "ELSE",
+      "set": {
+        "task": "Specifica con ELSE 'unknown' il valore di default quando nessuna delle clausole WHEN del CASE è soddisfatta."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_8",
+      "english": "END",
+      "set": {
+        "task": "Chiudi l'espressione CASE con END e assegna il risultato alla colonna status tramite alias."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_8",
+      "english": "NULLIF",
+      "set": {
+        "task": "Trasforma con NULLIF il valore in NULL quando coincide con zero per evitare divisioni per zero."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_8",
+      "english": "GREATEST",
+      "set": {
+        "task": "Restituisci con GREATEST il valore massimo tra le colonne a, b e c riga per riga."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_8",
+      "english": "LEAST",
+      "set": {
+        "task": "Restituisci con LEAST il valore minimo tra le colonne a, b e c riga per riga."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_8",
+      "english": "CAST",
+      "set": {
+        "task": "Converti con CAST la stringa '123' nel tipo intero per poter eseguire operazioni numeriche."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_8",
+      "english": "Type Casting",
+      "set": {
+        "task": "Effettua il type casting della stringa '123' a INTEGER sfruttando la sintassi abbreviata :: di Postgres."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_1",
+      "english": "One-to-One",
+      "set": {
+        "task": "Modella una relazione uno a uno definendo user_id come chiave esterna UNIQUE verso users(id)."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_1",
+      "english": "One-to-Many",
+      "set": {
+        "task": "Imposta la relazione uno a molti facendo riferire orders.user_id a users(id) come chiave esterna."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_1",
+      "english": "Many-to-Many",
+      "set": {
+        "task": "Crea la tabella ponte student_course con due colonne intere per gestire la relazione molti a molti."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_1",
+      "english": "Junction Table",
+      "set": {
+        "task": "Definisci la tabella di giunzione user_role con chiave primaria composta da user_id e role_id."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_1",
+      "english": "Identifier",
+      "set": {
+        "task": "Definisci la colonna id di tipo UUID come chiave primaria per identificare in modo univoco le righe."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_2",
+      "english": "Constraint",
+      "set": {
+        "task": "Aggiungi alla tabella users un vincolo nominato email_unique che imponga l'unicità della colonna email."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_2",
+      "english": "CASCADE",
+      "set": {
+        "task": "Configura la chiave esterna user_id con ON DELETE CASCADE per propagare le cancellazioni alle righe figlie."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_2",
+      "english": "ON DELETE",
+      "set": {
+        "task": "Imposta ON DELETE SET NULL così la cancellazione del padre azzeri la chiave esterna nelle righe figlie."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_2",
+      "english": "ON UPDATE",
+      "set": {
+        "task": "Configura ON UPDATE CASCADE per propagare le modifiche della chiave referenziata alle righe collegate."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_2",
+      "english": "RESTRICT",
+      "set": {
+        "task": "Imposta ON DELETE RESTRICT per bloccare la cancellazione del padre se esistono righe figlie collegate."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_2",
+      "english": "Domain Constraint",
+      "set": {
+        "task": "Limita con un vincolo CHECK i valori di status all'insieme 'active' e 'inactive' definendo un dominio chiuso."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_2",
+      "english": "Surrogate Key",
+      "set": {
+        "task": "Adotta una chiave surrogata definendo id come SERIAL PRIMARY KEY indipendente dai dati di business."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_2",
+      "english": "Natural Key",
+      "set": {
+        "task": "Promuovi la colonna email a chiave naturale dichiarandola come PRIMARY KEY della tabella."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_2",
+      "english": "UUID",
+      "set": {
+        "task": "Definisci la colonna id di tipo UUID con valore predefinito gen_random_uuid() come chiave primaria."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_3",
+      "english": "INTEGER",
+      "set": {
+        "task": "Dichiara la colonna age con il tipo INTEGER per memorizzare numeri interi senza decimali."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_3",
+      "english": "BIGINT",
+      "set": {
+        "task": "Usa il tipo BIGINT per la colonna population in modo da gestire valori che superano i limiti di INTEGER."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_3",
+      "english": "VARCHAR",
+      "set": {
+        "task": "Dichiara la colonna name come VARCHAR(100) per memorizzare stringhe di lunghezza variabile fino a 100 caratteri."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_3",
+      "english": "TEXT",
+      "set": {
+        "task": "Definisci la colonna description con il tipo TEXT per memorizzare testi lunghi senza limite predefinito."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_3",
+      "english": "BOOLEAN",
+      "set": {
+        "task": "Definisci la colonna is_active come BOOLEAN con valore predefinito TRUE per nuovi record."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_3",
+      "english": "DATE",
+      "set": {
+        "task": "Dichiara la colonna birth_date di tipo DATE per memorizzare la data di nascita senza orario."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_3",
+      "english": "TIMESTAMP",
+      "set": {
+        "task": "Dichiara la colonna created_at di tipo TIMESTAMP con valore predefinito NOW() per registrare il momento di creazione."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_3",
+      "english": "DECIMAL",
+      "set": {
+        "task": "Definisci la colonna price come DECIMAL(10, 2) per gestire prezzi monetari con due decimali esatti."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_3",
+      "english": "JSON",
+      "set": {
+        "task": "Memorizza dati semi-strutturati nella colonna metadata sfruttando il tipo binario JSONB."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_3",
+      "english": "ENUM",
+      "set": {
+        "task": "Crea un tipo ENUM chiamato status con i valori 'active' e 'inactive' per vincolare i campi di stato."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_4",
+      "english": "snake_case",
+      "set": {
+        "task": "Rinomina i campi seguendo la convenzione snake_case con esempi come created_at, user_id e order_total."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_4",
+      "english": "Plural Naming",
+      "set": {
+        "task": "Adotta la convenzione di nominare le tabelle al plurale, ad esempio users invece di user."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_4",
+      "english": "Soft Delete",
+      "set": {
+        "task": "Aggiungi alla tabella la colonna deleted_at di tipo TIMESTAMP nullable per implementare la cancellazione logica."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_4",
+      "english": "Audit Columns",
+      "set": {
+        "task": "Aggiungi alla tabella le colonne di audit created_at, updated_at e created_by per tracciare ogni modifica."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_4",
+      "english": "Created At",
+      "set": {
+        "task": "Definisci la colonna created_at di tipo TIMESTAMP con default NOW() per registrare quando la riga viene creata."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_4",
+      "english": "Updated At",
+      "set": {
+        "task": "Definisci la colonna updated_at di tipo TIMESTAMP con default NOW() da aggiornare a ogni modifica della riga."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_4",
+      "english": "Lookup Table",
+      "set": {
+        "task": "Crea la tabella di lookup countries con codice ISO a due caratteri come chiave primaria e una colonna name."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_4",
+      "english": "Polymorphic Association",
+      "set": {
+        "task": "Modella un'associazione polimorfica con commentable_type e commentable_id per collegare il commento a entità diverse."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "db_normalization_1",
+      "english": "First Normal Form",
+      "set": {
+        "task": "Annota come anti-pattern di prima forma normale una colonna phones di tipo VARCHAR che concatena più numeri."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "db_normalization_1",
+      "english": "Repeating Group",
+      "set": {
+        "task": "Segnala come gruppo ripetuto le colonne phone1, phone2 e phone3 che andrebbero spostate in una tabella separata."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "db_normalization_2",
+      "english": "Functional Dependency",
+      "set": {
+        "task": "Documenta la dipendenza funzionale A → B per indicare che il valore di A determina univocamente quello di B."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "db_normalization_2",
+      "english": "Multi-valued Dependency",
+      "set": {
+        "task": "Documenta la dipendenza multi-valore A →→ B usando la freccia doppia per evidenziare la quarta forma normale."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "db_normalization_2",
+      "english": "Closure",
+      "set": {
+        "task": "Annota la chiusura A+ = {A, B, C, ...} per indicare tutti gli attributi derivabili da A."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "db_normalization_4",
+      "english": "Materialized View",
+      "set": {
+        "task": "Crea una vista materializzata user_stats che precalcoli per ogni user_id il numero di ordini effettuati."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "db_normalization_4",
+      "english": "Pre-aggregation",
+      "set": {
+        "task": "Pre-aggrega le vendite per data creando la tabella daily_sales con la somma giornaliera degli importi."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "db_normalization_4",
+      "english": "Computed Column",
+      "set": {
+        "task": "Aggiungi una colonna calcolata total di tipo DECIMAL generata sempre come prodotto di price e quantity, salvata su disco."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "db_normalization_4",
+      "english": "Generated Column",
+      "set": {
+        "task": "Definisci la colonna generata full_name come concatenazione di first_name e last_name memorizzata sul disco."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "db_normalization_4",
+      "english": "Counter Cache",
+      "set": {
+        "task": "Aggiungi alla tabella padre la colonna comments_count INT DEFAULT 0 come counter cache per evitare COUNT costosi."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_1",
+      "english": "Index",
+      "set": {
+        "task": "Crea un indice idx_users_email sulla colonna email della tabella users per velocizzare le ricerche per email."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_1",
+      "english": "CREATE INDEX",
+      "set": {
+        "task": "Crea con CREATE INDEX un indice idx_orders_user_id sulla colonna user_id della tabella orders."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_1",
+      "english": "DROP INDEX",
+      "set": {
+        "task": "Elimina con DROP INDEX l'indice idx_orders_user_id quando non è più necessario."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_1",
+      "english": "Index Bloat",
+      "set": {
+        "task": "Ricostruisci con REINDEX TABLE tutti gli indici della tabella users per rimuovere il bloat accumulato."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_2",
+      "english": "B-tree Index",
+      "set": {
+        "task": "Crea un indice B-tree sulla colonna c della tabella t per supportare confronti e range scan."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_2",
+      "english": "Hash Index",
+      "set": {
+        "task": "Crea un indice di tipo hash sulla colonna c della tabella t per ricerche di uguaglianza puntuali."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_2",
+      "english": "GIN Index",
+      "set": {
+        "task": "Crea un indice GIN su to_tsvector('english', text) della tabella docs per abilitare la ricerca full-text."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_2",
+      "english": "BRIN Index",
+      "set": {
+        "task": "Crea un indice BRIN sulla colonna created_at della tabella logs per coprire grandi range temporali con poco spazio."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_2",
+      "english": "Composite Index",
+      "set": {
+        "task": "Crea un indice composito sulle colonne user_id e created_at della tabella orders per query filtrate e ordinate."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_2",
+      "english": "Covering Index",
+      "set": {
+        "task": "Crea un indice di copertura sulla colonna user_id includendo total per soddisfare la query senza accessi alla tabella."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_2",
+      "english": "Partial Index",
+      "set": {
+        "task": "Crea un indice parziale sulla colonna id di orders limitato alle righe con status uguale a 'pending'."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_2",
+      "english": "Unique Index",
+      "set": {
+        "task": "Crea un indice univoco sulla colonna email della tabella users per garantire l'unicità degli indirizzi."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_2",
+      "english": "Expression Index",
+      "set": {
+        "task": "Crea un indice su espressione applicando LOWER(email) per supportare ricerche case-insensitive."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_3",
+      "english": "Leftmost Prefix",
+      "set": {
+        "task": "Documenta che un indice composito (a, b, c) supporta filtri su a o su a e b ma non sulla sola colonna b."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_3",
+      "english": "Unused Index",
+      "set": {
+        "task": "Identifica gli indici inutilizzati interrogando pg_stat_user_indexes con il filtro idx_scan = 0."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_3",
+      "english": "CONCURRENTLY",
+      "set": {
+        "task": "Crea un indice in modo concorrente con CONCURRENTLY sulla huge_table per evitare lock di scrittura."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_3",
+      "english": "Reindex",
+      "set": {
+        "task": "Ricostruisci con REINDEX INDEX l'indice idx_name per rimuovere frammentazione e bloat."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_4",
+      "english": "Full-Text Index",
+      "set": {
+        "task": "Crea un indice full-text GIN sulla colonna body della tabella docs usando to_tsvector con lingua inglese."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_4",
+      "english": "JSON Index",
+      "set": {
+        "task": "Crea un indice GIN sulla colonna payload della tabella events per velocizzare le query su documenti JSON."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_1",
+      "english": "Transaction",
+      "set": {
+        "task": "Apri una transazione con BEGIN, esegui due UPDATE correlati e conferma le modifiche con COMMIT."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_1",
+      "english": "BEGIN",
+      "set": {
+        "task": "Avvia una transazione esplicita inviando il comando BEGIN al database."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_1",
+      "english": "COMMIT",
+      "set": {
+        "task": "Conferma in modo permanente le modifiche della transazione corrente inviando COMMIT."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_1",
+      "english": "ROLLBACK",
+      "set": {
+        "task": "Annulla tutte le modifiche della transazione in corso con il comando ROLLBACK."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_1",
+      "english": "SAVEPOINT",
+      "set": {
+        "task": "Definisci il savepoint before_update e successivamente effettua un ROLLBACK fino a quel punto della transazione."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_1",
+      "english": "Auto-commit",
+      "set": {
+        "task": "Disabilita la modalità auto-commit impostando AUTOCOMMIT a OFF per controllare manualmente le transazioni."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_1",
+      "english": "Explicit Transaction",
+      "set": {
+        "task": "Racchiudi le istruzioni in una transazione esplicita delimitata da BEGIN e COMMIT."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_2",
+      "english": "Checkpoint",
+      "set": {
+        "task": "Forza un checkpoint immediato del WAL inviando il comando CHECKPOINT al server."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_3",
+      "english": "Isolation Level",
+      "set": {
+        "task": "Imposta il livello di isolamento della transazione corrente a SERIALIZABLE per la massima coerenza."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_4",
+      "english": "Lock",
+      "set": {
+        "task": "Acquisisci un lock esclusivo sulla tabella users con LOCK TABLE per bloccare scritture concorrenti."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_4",
+      "english": "Row Lock",
+      "set": {
+        "task": "Blocca la riga utente con id 1 acquisendo un row lock tramite SELECT ... FOR UPDATE."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_4",
+      "english": "Optimistic Locking",
+      "set": {
+        "task": "Implementa il lock ottimistico aggiornando il prodotto solo se la versione corrente è ancora 5 e incrementandola."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_4",
+      "english": "Pessimistic Locking",
+      "set": {
+        "task": "Applica il lock pessimistico bloccando le righe selezionate con la clausola FOR UPDATE prima di modificarle."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_9",
+      "english": "Subquery",
+      "set": {
+        "task": "Recupera gli utenti che hanno effettuato almeno un ordine usando una sottoquery con IN su orders.user_id."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_9",
+      "english": "Correlated Subquery",
+      "set": {
+        "task": "Filtra con una sottoquery correlata gli utenti per cui esiste almeno un ordine collegato tramite EXISTS."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_9",
+      "english": "EXISTS",
+      "set": {
+        "task": "Verifica con EXISTS l'esistenza di almeno un ordine collegato a ciascun utente nella tabella users."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_9",
+      "english": "NOT EXISTS",
+      "set": {
+        "task": "Filtra con NOT EXISTS le righe per cui la sottoquery non restituisce alcun risultato."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_9",
+      "english": "Scalar Subquery",
+      "set": {
+        "task": "Affianca a ogni utente il numero di ordini effettuati tramite una sottoquery scalare con COUNT(*) correlata."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_9",
+      "english": "Inline View",
+      "set": {
+        "task": "Usa una vista inline che pre-aggrega gli ordini per user_id e poi seleziona tutto dal risultato."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_9",
+      "english": "ANY",
+      "set": {
+        "task": "Filtra i prodotti il cui prezzo è maggiore di almeno uno dei prezzi della categoria A usando l'operatore ANY."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_9",
+      "english": "ALL",
+      "set": {
+        "task": "Filtra i prodotti il cui prezzo supera quello di tutti i record restituiti dalla sottoquery con ALL."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_9",
+      "english": "LATERAL JOIN",
+      "set": {
+        "task": "Recupera per ogni utente i suoi cinque ordini più recenti utilizzando un LATERAL JOIN con LIMIT 5."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_10",
+      "english": "CTE",
+      "set": {
+        "task": "Definisci una CTE active_users che isoli gli utenti attivi e poi selezionala con una query principale."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_10",
+      "english": "WITH",
+      "set": {
+        "task": "Introduci una CTE con la clausola WITH cte AS (...) e poi consultala con una semplice SELECT * FROM cte."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_10",
+      "english": "Recursive CTE",
+      "set": {
+        "task": "Costruisci con WITH RECURSIVE una CTE tree che percorra la gerarchia di nodes partendo dalle radici con parent NULL."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_10",
+      "english": "Multiple CTEs",
+      "set": {
+        "task": "Concatena due CTE nominate a e b separate da virgola, dove b filtra ulteriormente i dati prodotti da a."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_10",
+      "english": "CTE Materialization",
+      "set": {
+        "task": "Forza la materializzazione della CTE x con la clausola AS MATERIALIZED per evitare l'inline da parte del planner."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_11",
+      "english": "Window Function",
+      "set": {
+        "task": "Affianca a ogni dipendente lo stipendio medio del suo dipartimento usando AVG con OVER e PARTITION BY dept."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_11",
+      "english": "OVER",
+      "set": {
+        "task": "Calcola con SUM(amount) OVER (PARTITION BY user_id) la somma cumulata per ciascun utente come funzione finestra."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_11",
+      "english": "PARTITION BY",
+      "set": {
+        "task": "Suddividi la finestra per dipartimento con PARTITION BY dept e calcola la media salariale all'interno di ogni gruppo."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_11",
+      "english": "ROW_NUMBER",
+      "set": {
+        "task": "Assegna a ciascuna riga un numero progressivo ordinato per created_at usando ROW_NUMBER() OVER."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_11",
+      "english": "RANK",
+      "set": {
+        "task": "Assegna con RANK() OVER (ORDER BY score DESC) un ranking ai record dal punteggio più alto al più basso."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_11",
+      "english": "DENSE_RANK",
+      "set": {
+        "task": "Classifica le righe con DENSE_RANK ordinandole per score decrescente senza lasciare buchi tra i ranghi."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_11",
+      "english": "LAG",
+      "set": {
+        "task": "Recupera con LAG il prezzo della riga precedente ordinata per data per confrontarlo con quello corrente."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_11",
+      "english": "LEAD",
+      "set": {
+        "task": "Recupera con LEAD il prezzo della riga successiva ordinata per data per analizzare l'andamento."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_11",
+      "english": "NTILE",
+      "set": {
+        "task": "Suddividi i dipendenti in quartili sullo stipendio con NTILE(4) OVER ordinato per salary."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_11",
+      "english": "Frame Clause",
+      "set": {
+        "task": "Definisci la finestra mobile con ROWS BETWEEN 3 PRECEDING AND CURRENT ROW per calcolare medie su quattro righe."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_12",
+      "english": "Stored Procedure",
+      "set": {
+        "task": "Crea una stored procedure update_balance che accetti id e importo come parametri e modifichi il saldo."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_12",
+      "english": "Function",
+      "set": {
+        "task": "Definisci la funzione SQL square che riceve un intero n e ne restituisce il quadrato."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_12",
+      "english": "Trigger",
+      "set": {
+        "task": "Crea un trigger trg_audit che prima di ogni UPDATE su users invochi la funzione audit_fn per ogni riga."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_12",
+      "english": "BEFORE Trigger",
+      "set": {
+        "task": "Definisci un trigger BEFORE INSERT che si attivi prima dell'inserimento per validare o trasformare i dati."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_12",
+      "english": "AFTER Trigger",
+      "set": {
+        "task": "Definisci un trigger AFTER UPDATE che si attivi dopo la modifica per registrare l'evento o aggiornare cache."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_12",
+      "english": "PL/pgSQL",
+      "set": {
+        "task": "Indica con LANGUAGE plpgsql che il corpo della funzione è scritto nel linguaggio procedurale di PostgreSQL."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_12",
+      "english": "View",
+      "set": {
+        "task": "Crea la vista active_users che esponga solo gli utenti con il flag active uguale a vero."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_12",
+      "english": "EXEC",
+      "set": {
+        "task": "Esegui con EXEC la stored procedure update_balance passando id 1 e importo 100.00."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_12",
+      "english": "CALL",
+      "set": {
+        "task": "Invoca con CALL la stored procedure update_balance con id 1 e importo 100.00."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_1",
+      "english": "Key-Value Store",
+      "set": {
+        "task": "Memorizza in uno store chiave-valore la chiave user:1 associata al documento JSON che descrive l'utente Marco."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_3",
+      "english": "Document Model",
+      "set": {
+        "task": "Modella l'utente come documento che annida un array di addresses senza ricorrere a tabelle separate."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_3",
+      "english": "JSON Document",
+      "set": {
+        "task": "Rappresenta un documento JSON con id numerico e l'array di tag a e b come esempio di struttura semi-strutturata."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_3",
+      "english": "Embedded Document",
+      "set": {
+        "task": "Incorpora nel documento utente un sotto-documento address con la città Roma come documento embedded."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_3",
+      "english": "Reference",
+      "set": {
+        "task": "Inserisci un campo user_id di tipo ObjectId che funga da riferimento al documento utente collegato."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_3",
+      "english": "Property",
+      "set": {
+        "task": "Crea un nodo Cypher di etichetta Person con le proprietà name Marco ed età 30."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_4",
+      "english": "Replication Factor",
+      "set": {
+        "task": "Configura il keyspace Cassandra con SimpleStrategy e replication factor 3 per mantenere tre copie dei dati."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_5",
+      "english": "MongoDB",
+      "set": {
+        "task": "Apri la shell mongo per interagire con l'istanza MongoDB locale."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_5",
+      "english": "Collection",
+      "set": {
+        "task": "Recupera con find tutti i documenti contenuti nella collezione users del database corrente."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_5",
+      "english": "Document",
+      "set": {
+        "task": "Modella un documento MongoDB con _id generato come ObjectId, nome Marco ed età 30."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_5",
+      "english": "ObjectId",
+      "set": {
+        "task": "Costruisci un valore ObjectId a partire dall'esadecimale 507f1f77bcf86cd799439011 per fare riferimento a un documento esistente."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_5",
+      "english": "find",
+      "set": {
+        "task": "Trova con find tutti i documenti della collezione users in cui age è maggiore di 18."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_5",
+      "english": "findOne",
+      "set": {
+        "task": "Recupera con findOne il primo documento utente la cui email coincide con a@b.com."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_5",
+      "english": "insertOne",
+      "set": {
+        "task": "Inserisci con insertOne un singolo nuovo documento utente di nome Eva nella collezione users."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_5",
+      "english": "insertMany",
+      "set": {
+        "task": "Inserisci in blocco più documenti nella collezione users tramite insertMany passando un array."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_5",
+      "english": "updateOne",
+      "set": {
+        "task": "Aggiorna con updateOne il documento con _id 1 impostando il flag active a true tramite $set."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_5",
+      "english": "deleteOne",
+      "set": {
+        "task": "Rimuovi con deleteOne il documento utente identificato da _id 1 dalla collezione users."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_6",
+      "english": "$gt",
+      "set": {
+        "task": "Filtra con l'operatore $gt i documenti la cui età è maggiore di 18 anni."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_6",
+      "english": "$lt",
+      "set": {
+        "task": "Filtra con l'operatore $lt i documenti il cui price è minore di 100."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_6",
+      "english": "$in",
+      "set": {
+        "task": "Filtra con $in i documenti il cui status è uno tra 'active' e 'pending'."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_6",
+      "english": "$nin",
+      "set": {
+        "task": "Escludi con $nin i documenti il cui status è 'banned'."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_6",
+      "english": "$set",
+      "set": {
+        "task": "Aggiorna il campo name del documento al valore Mario usando l'operatore $set."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_6",
+      "english": "$unset",
+      "set": {
+        "task": "Rimuovi il campo temp dal documento usando l'operatore $unset con stringa vuota come valore."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_6",
+      "english": "$inc",
+      "set": {
+        "task": "Incrementa di uno il contatore views del documento tramite l'operatore $inc."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_6",
+      "english": "$push",
+      "set": {
+        "task": "Aggiungi con $push il valore 'new' in coda all'array tags del documento."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_6",
+      "english": "$pull",
+      "set": {
+        "task": "Rimuovi con $pull il valore 'old' dall'array tags del documento."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_6",
+      "english": "$exists",
+      "set": {
+        "task": "Filtra con $exists i documenti in cui il campo phone è presente."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_7",
+      "english": "Aggregation Pipeline",
+      "set": {
+        "task": "Costruisci sulla collezione orders una pipeline di aggregazione che concateni uno stage $match e uno stage $group."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_7",
+      "english": "$match",
+      "set": {
+        "task": "Aggiungi alla pipeline uno stage $match che selezioni solo i documenti con status uguale a 'active'."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_7",
+      "english": "$group",
+      "set": {
+        "task": "Raggruppa con $group i documenti per user calcolando il totale come somma del campo amount."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_7",
+      "english": "$project",
+      "set": {
+        "task": "Riformatta i documenti con $project mostrando solo il campo name e nascondendo _id."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_7",
+      "english": "$sort",
+      "set": {
+        "task": "Ordina i documenti con $sort per created_at in ordine decrescente."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_7",
+      "english": "$lookup",
+      "set": {
+        "task": "Unisci con $lookup la collezione orders accostando a ogni utente l'array dei suoi ordini sul campo user_id."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_7",
+      "english": "$unwind",
+      "set": {
+        "task": "Espandi con $unwind l'array tags trasformando ogni elemento in un documento separato."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_7",
+      "english": "$limit",
+      "set": {
+        "task": "Limita con $limit l'output della pipeline ai primi 10 documenti."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_7",
+      "english": "$facet",
+      "set": {
+        "task": "Esegui con $facet più sotto-pipeline in parallelo, una byCategory e una total, restituendo tutti i risultati insieme."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_8",
+      "english": "Replica Set",
+      "set": {
+        "task": "Inizializza il replica set MongoDB invocando rs.initiate() dal nodo primario."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_8",
+      "english": "MongoDB Shard Key",
+      "set": {
+        "task": "Configura lo sharding della collezione db.users definendo come shard key _id in modalità hashed."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_8",
+      "english": "Mongos",
+      "set": {
+        "task": "Avvia il router mongos collegandolo ai config server tramite l'opzione --configdb."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_9",
+      "english": "Redis",
+      "set": {
+        "task": "Apri il client interattivo redis-cli per inviare comandi all'istanza Redis."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_9",
+      "english": "GET",
+      "set": {
+        "task": "Leggi con GET il valore associato alla chiave user:1 nello store Redis."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_9",
+      "english": "Redis SET",
+      "set": {
+        "task": "Memorizza con SET la stringa Marco sotto la chiave user:1 in Redis."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_9",
+      "english": "DEL",
+      "set": {
+        "task": "Elimina la chiave user:1 dallo store Redis con il comando DEL."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_9",
+      "english": "Redis EXISTS",
+      "set": {
+        "task": "Verifica con EXISTS se la chiave user:1 è presente nello store Redis."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_9",
+      "english": "KEYS",
+      "set": {
+        "task": "Elenca con KEYS user:* tutte le chiavi che iniziano con il prefisso user: (usare con cautela in produzione)."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_9",
+      "english": "SCAN",
+      "set": {
+        "task": "Itera in modo non bloccante con SCAN 0 MATCH user:* COUNT 100 attraverso le chiavi che iniziano per user:."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_9",
+      "english": "INCR",
+      "set": {
+        "task": "Incrementa atomicamente con INCR il contatore page:views in Redis."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_9",
+      "english": "DECR",
+      "set": {
+        "task": "Decrementa con DECR lo stock relativo all'articolo 42 nella chiave stock:item:42."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_9",
+      "english": "FLUSHDB",
+      "set": {
+        "task": "Svuota completamente il database Redis corrente con il comando FLUSHDB."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_10",
+      "english": "Redis List",
+      "set": {
+        "task": "Aggiungi un task in testa alla lista Redis queue tramite il comando LPUSH."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_10",
+      "english": "LPUSH",
+      "set": {
+        "task": "Inserisci con LPUSH il task send_email in testa alla lista tasks."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_10",
+      "english": "RPUSH",
+      "set": {
+        "task": "Aggiungi con RPUSH la voce entry in coda alla lista log."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_10",
+      "english": "LPOP",
+      "set": {
+        "task": "Estrai con LPOP il primo elemento dalla lista tasks consumandolo dalla testa."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_10",
+      "english": "Redis Set Datatype",
+      "set": {
+        "task": "Aggiungi con SADD l'elemento marco al set Redis users di tipo Set."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_10",
+      "english": "SADD",
+      "set": {
+        "task": "Aggiungi al set tags:1 con SADD gli elementi ssr e node in un'unica operazione."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_10",
+      "english": "Redis Hash",
+      "set": {
+        "task": "Memorizza con HSET sotto la chiave hash user:1 i campi name uguale a Marco e age uguale a 30."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_10",
+      "english": "HGET",
+      "set": {
+        "task": "Leggi con HGET il valore del campo name dall'hash user:1."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_10",
+      "english": "Sorted Set",
+      "set": {
+        "task": "Inserisci con ZADD l'utente marco nel sorted set leaderboard assegnandogli il punteggio 100."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_10",
+      "english": "ZADD",
+      "set": {
+        "task": "Aggiungi al sorted set scores con ZADD i punteggi 95 di alice e 88 di bob in un solo comando."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_11",
+      "english": "TTL",
+      "set": {
+        "task": "Imposta con EXPIRE un TTL di 3600 secondi sulla chiave session:abc per farla scadere dopo un'ora."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_11",
+      "english": "EXPIRE",
+      "set": {
+        "task": "Applica con EXPIRE una scadenza di 60 secondi sulla chiave user:1."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_11",
+      "english": "PERSIST",
+      "set": {
+        "task": "Rimuovi con PERSIST il TTL dalla chiave session:abc rendendola persistente."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_11",
+      "english": "Eviction Policy",
+      "set": {
+        "task": "Configura la politica di sfratto Redis impostando maxmemory-policy a allkeys-lru per liberare memoria."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_12",
+      "english": "PUBLISH",
+      "set": {
+        "task": "Pubblica con PUBLISH il messaggio hello sul canale news per notificare i subscriber."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_12",
+      "english": "SUBSCRIBE",
+      "set": {
+        "task": "Sottoscrivi il canale news con SUBSCRIBE per ricevere in tempo reale i messaggi pubblicati."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_12",
+      "english": "Redis Streams",
+      "set": {
+        "task": "Aggiungi allo stream events un evento con campi type e user usando XADD con id automatico."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_12",
+      "english": "XADD",
+      "set": {
+        "task": "Inserisci con XADD una nuova entry nello stream mystream con field1 uguale a value1."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_12",
+      "english": "XREAD",
+      "set": {
+        "task": "Leggi con XREAD le prime 10 entry dello stream mystream a partire dall'id 0."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_12",
+      "english": "Consumer Group",
+      "set": {
+        "task": "Crea con XGROUP CREATE il consumer group workers sullo stream mystream a partire dalle nuove entry."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_12",
+      "english": "AOF",
+      "set": {
+        "task": "Abilita la persistenza AOF di Redis impostando appendonly a yes nel file di configurazione."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_1",
+      "english": "EXPLAIN",
+      "set": {
+        "task": "Analizza con EXPLAIN il piano di esecuzione della SELECT che cerca l'utente con id 1."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_1",
+      "english": "EXPLAIN ANALYZE",
+      "set": {
+        "task": "Esegui realmente la query e misura tempi e righe con EXPLAIN ANALYZE sulla SELECT degli utenti attivi."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_1",
+      "english": "Cost",
+      "set": {
+        "task": "Interpreta nel piano di EXPLAIN il costo stimato cost=0.00..15.50 e le 100 righe attese."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_1",
+      "english": "Sequential Scan",
+      "set": {
+        "task": "Identifica nel piano la riga Seq Scan on users come indicatore di scansione sequenziale sulla tabella."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_1",
+      "english": "Buffers",
+      "set": {
+        "task": "Esegui EXPLAIN con le opzioni ANALYZE e BUFFERS per osservare l'utilizzo della cache durante la query."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_2",
+      "english": "Statistics",
+      "set": {
+        "task": "Aggiorna le statistiche della tabella users eseguendo il comando ANALYZE."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_2",
+      "english": "ANALYZE",
+      "set": {
+        "task": "Aggiorna in modalità verbose le statistiche della tabella users con il comando ANALYZE VERBOSE."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_2",
+      "english": "Sample Size",
+      "set": {
+        "task": "Aumenta la dimensione del campione per la colonna id della tabella users impostando STATISTICS a 1000."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_3",
+      "english": "Slow Query Log",
+      "set": {
+        "task": "Abilita il log delle query lente impostando log_min_duration_statement a 1000 millisecondi."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_3",
+      "english": "pg_stat_statements",
+      "set": {
+        "task": "Identifica le query più costose interrogando pg_stat_statements ordinate per total_time decrescente."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_3",
+      "english": "Eager Loading",
+      "set": {
+        "task": "Carica gli utenti con i relativi ordini in un'unica chiamata applicando l'eager loading tramite include su Order."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_3",
+      "english": "Query Hint",
+      "set": {
+        "task": "Suggerisci all'ottimizzatore di usare l'indice idx_email sulla tabella users tramite un query hint in commento."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_4",
+      "english": "Shared Buffers",
+      "set": {
+        "task": "Configura shared_buffers a 4GB per dedicare memoria sufficiente alla cache delle pagine di PostgreSQL."
+      }
+    }
+  ]
+}

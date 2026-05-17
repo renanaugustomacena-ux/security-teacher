@@ -1,0 +1,844 @@
+{
+  "fixes": [
+    {
+      "level": "1",
+      "lesson": "dso_ci_cd_1",
+      "english": "Job",
+      "set": {
+        "task": "Definisci un job di build chiamato build che gira su ubuntu-latest dentro il workflow di CI."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dso_ci_cd_1",
+      "english": "Workflow",
+      "set": {
+        "task": "Configura il trigger del workflow per eseguirsi automaticamente a ogni push sul branch main."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dso_ci_cd_3",
+      "english": "Action",
+      "set": {
+        "task": "Includi l'action ufficiale di checkout alla versione v4 come primo step della pipeline."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dso_ci_cd_3",
+      "english": "Workflow File",
+      "set": {
+        "task": "Crea il file di workflow sotto .github/workflows/ci.yml per definire la pipeline di GitHub Actions."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dso_ci_cd_3",
+      "english": "Matrix Build",
+      "set": {
+        "task": "Imposta una matrix build che esegua i test in parallelo su Node 18, 20 e 22."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dso_ci_cd_3",
+      "english": "Environment",
+      "set": {
+        "task": "Associa il job all'environment production per attivare approval gate e segreti dedicati."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dso_ci_cd_3",
+      "english": "Secret Variable",
+      "set": {
+        "task": "Inietta il segreto API_TOKEN dal vault di GitHub senza mai stamparlo nei log."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dso_ci_cd_3",
+      "english": "Workflow Permission",
+      "set": {
+        "task": "Restringi i permessi del workflow al solo accesso in lettura sui contenuti per ridurre il blast radius."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dso_ci_cd_4",
+      "english": "Conditional Step",
+      "set": {
+        "task": "Esegui lo step di deploy solo quando il ref corrisponde a refs/heads/main."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dso_ci_cd_4",
+      "english": "Reusable Workflow",
+      "set": {
+        "task": "Richiama il workflow riutilizzabile sec.yml versione v1 dalla repo centrale di security."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dso_ci_cd_4",
+      "english": "Build Cache",
+      "set": {
+        "task": "Aggiungi actions/cache@v4 per memorizzare le dipendenze e velocizzare le build successive."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dso_sast_2",
+      "english": "SonarQube",
+      "set": {
+        "task": "Lancia sonar-scanner specificando la projectKey app per analizzare la qualita e la sicurezza del codice."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dso_sast_2",
+      "english": "Semgrep",
+      "set": {
+        "task": "Avvia la scansione SAST con Semgrep usando la configurazione auto sulla directory corrente."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dso_sast_2",
+      "english": "Bandit",
+      "set": {
+        "task": "Analizza ricorsivamente il pacchetto myproject con Bandit per individuare pattern Python insicuri."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dso_sast_2",
+      "english": "gosec",
+      "set": {
+        "task": "Esegui gosec su tutti i package Go per rilevare bug di sicurezza tipici del linguaggio."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dso_sast_2",
+      "english": "Brakeman",
+      "set": {
+        "task": "Lancia Brakeman in modalita full sul progetto Rails per intercettare vulnerabilita comuni."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dso_sast_3",
+      "english": "SQL Injection",
+      "set": {
+        "task": "Riscrivi la query usando parametri preparati invece di concatenare l'input direttamente nella SELECT."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dso_sast_3",
+      "english": "Path Traversal",
+      "set": {
+        "task": "Valida e normalizza il percorso prima di aprire il file per bloccare attacchi tipo ../../etc/passwd."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dso_sast_4",
+      "english": "Code Owner",
+      "set": {
+        "task": "Definisci nel file CODEOWNERS i revisori obbligatori per ogni area sensibile della codebase."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dso_sca_1",
+      "english": "CVE",
+      "set": {
+        "task": "Verifica se le dipendenze del progetto sono vulnerabili alla CVE-2021-44228 nota come Log4Shell."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dso_sca_1",
+      "english": "Lock File",
+      "set": {
+        "task": "Committa i lock file package-lock.json, poetry.lock e Cargo.lock per ricostruire build deterministiche."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dso_sca_1",
+      "english": "Manifest",
+      "set": {
+        "task": "Dichiara le dipendenze dirette del progetto nel manifest package.json o pyproject.toml."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dso_sca_2",
+      "english": "Snyk",
+      "set": {
+        "task": "Esegui snyk test per analizzare le dipendenze del progetto e ottenere il report delle vulnerabilita note."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dso_sca_2",
+      "english": "Dependabot",
+      "set": {
+        "task": "Attiva gli aggiornamenti automatici di Dependabot per l'ecosistema npm tramite il file di configurazione."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dso_sca_2",
+      "english": "OWASP Dependency-Check",
+      "set": {
+        "task": "Lancia dependency-check.sh sulla directory corrente per individuare CVE nelle dipendenze Java e Node."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dso_sca_2",
+      "english": "npm audit",
+      "set": {
+        "task": "Esegui npm audit limitato alle dipendenze di produzione per ignorare le dev-dependency."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dso_sca_2",
+      "english": "pip-audit",
+      "set": {
+        "task": "Scansiona le dipendenze elencate in requirements.txt con pip-audit per identificare CVE Python."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dso_sca_2",
+      "english": "cargo-audit",
+      "set": {
+        "task": "Avvia cargo audit sul progetto Rust per controllare le vulnerabilita nel database RustSec."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dso_sca_3",
+      "english": "Syft",
+      "set": {
+        "task": "Genera un SBOM in formato CycloneDX dall'immagine myimage:latest usando Syft."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dso_sca_3",
+      "english": "Grype",
+      "set": {
+        "task": "Passa l'SBOM sbom.json a Grype per ottenere il report delle vulnerabilita senza scansionare di nuovo l'immagine."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dso_sca_3",
+      "english": "PURL",
+      "set": {
+        "task": "Identifica univocamente la dipendenza lodash 4.17.21 tramite il Package URL pkg:npm/lodash@4.17.21."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dso_sca_4",
+      "english": "Semver",
+      "set": {
+        "task": "Vincola la dipendenza alla versione ^1.2.3 per accettare patch e minor compatibili semver."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dso_sca_4",
+      "english": "Bundle Audit",
+      "set": {
+        "task": "Esegui bundle audit check sulla Gemfile per individuare gem Ruby con vulnerabilita note."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dso_secrets_2",
+      "english": "HashiCorp Vault",
+      "set": {
+        "task": "Recupera la credenziale secret/db da Vault tramite il comando vault kv get senza esporla in chiaro."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dso_secrets_2",
+      "english": "AWS Secrets Manager",
+      "set": {
+        "task": "Recupera il valore del segreto db da AWS Secrets Manager con l'AWS CLI per iniettarlo nell'app."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dso_secrets_2",
+      "english": "AWS Parameter Store",
+      "set": {
+        "task": "Leggi il parametro /app/db da SSM Parameter Store con --with-decryption per ottenere il valore in chiaro."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dso_secrets_2",
+      "english": "Azure Key Vault",
+      "set": {
+        "task": "Ottieni il valore del segreto api dal Key Vault kv tramite il comando az keyvault secret show."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dso_secrets_2",
+      "english": "GCP Secret Manager",
+      "set": {
+        "task": "Accedi all'ultima versione del segreto db su GCP Secret Manager con gcloud secrets versions access latest."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dso_secrets_2",
+      "english": "1Password CLI",
+      "set": {
+        "task": "Lancia l'applicazione tramite op run per iniettare i segreti di 1Password come variabili d'ambiente."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dso_secrets_3",
+      "english": "Gitleaks",
+      "set": {
+        "task": "Esegui gitleaks detect sulla repository corrente per scoprire segreti committati nella storia git."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dso_secrets_3",
+      "english": "TruffleHog",
+      "set": {
+        "task": "Scansiona il filesystem locale con trufflehog per intercettare segreti e verificare se sono ancora attivi."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dso_secrets_3",
+      "english": "detect-secrets",
+      "set": {
+        "task": "Lancia detect-secrets scan per generare la baseline dei segreti gia presenti e bloccare i nuovi."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dso_secrets_3",
+      "english": "Regex Pattern",
+      "set": {
+        "task": "Definisci la regex /AKIA[0-9A-Z]{16}/ per individuare AWS Access Key ID nei file della repo."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dso_secrets_3",
+      "english": "BFG Repo-Cleaner",
+      "set": {
+        "task": "Usa BFG con --delete-files secrets.txt per rimuovere il file di segreti da tutta la storia git."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dso_dast_2",
+      "english": "OWASP ZAP",
+      "set": {
+        "task": "Lancia zap-baseline.py contro https://target per una scansione DAST passiva in pochi minuti."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dso_dast_2",
+      "english": "Nuclei",
+      "set": {
+        "task": "Esegui nuclei contro https://target con i template cves per individuare CVE note esposte."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dso_dast_2",
+      "english": "Nikto",
+      "set": {
+        "task": "Avvia nikto contro l'host target per rilevare versioni vulnerabili del web server e configurazioni a rischio."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dso_dast_2",
+      "english": "Wapiti",
+      "set": {
+        "task": "Esegui wapiti su https://target per fuzzare i parametri HTTP e scoprire vulnerabilita applicative."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dso_dast_2",
+      "english": "sqlmap",
+      "set": {
+        "task": "Testa il parametro id di https://target con sqlmap per verificare la presenza di SQL injection sfruttabili."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dso_dast_3",
+      "english": "go-fuzz",
+      "set": {
+        "task": "Avvia il fuzzing nativo di Go con go test -fuzz=Fuzz per scovare crash su input inattesi."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_1",
+      "english": "Trivy",
+      "set": {
+        "task": "Scansiona l'immagine nginx:latest con Trivy per ottenere il report di vulnerabilita di pacchetti OS e librerie."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_1",
+      "english": "Grype image scan",
+      "set": {
+        "task": "Esegui grype sull'immagine docker.io/myapp:1.0 per rilevare CVE nei layer del container."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_1",
+      "english": "Severity Threshold",
+      "set": {
+        "task": "Fai fallire la pipeline con Trivy se l'immagine app contiene vulnerabilita HIGH o CRITICAL."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_1",
+      "english": "Image Digest",
+      "set": {
+        "task": "Referenzia l'immagine tramite il digest nginx@sha256:abc123 per pinnare il contenuto in modo immutabile."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_2",
+      "english": "Distroless",
+      "set": {
+        "task": "Parti da gcr.io/distroless/static come base image per eliminare shell e package manager dal container."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_2",
+      "english": "Alpine",
+      "set": {
+        "task": "Usa FROM alpine:3.20 come base image minimale per ridurre la superficie di attacco del container."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_2",
+      "english": "Multi-Stage Build",
+      "set": {
+        "task": "Struttura il Dockerfile con uno stage builder in golang e uno stage runtime in alpine per immagini piu leggere."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_2",
+      "english": "Non-Root User",
+      "set": {
+        "task": "Aggiungi la direttiva USER 1001 nel Dockerfile per evitare di eseguire il container come root."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_2",
+      "english": "Read-Only Root FS",
+      "set": {
+        "task": "Imposta readOnlyRootFilesystem a true nel SecurityContext del pod per bloccare scritture sul filesystem."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_2",
+      "english": "Drop Capabilities",
+      "set": {
+        "task": "Configura capabilities.drop a ALL nel pod spec per rimuovere tutti i privilegi Linux non necessari."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_2",
+      "english": "No New Privileges",
+      "set": {
+        "task": "Imposta allowPrivilegeEscalation a false nel pod per impedire ai processi figli di ottenere nuovi privilegi."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_3",
+      "english": "Image Signing",
+      "set": {
+        "task": "Firma l'immagine myregistry/app:1.0 con cosign sign per garantire integrita e provenienza."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_3",
+      "english": "Cosign",
+      "set": {
+        "task": "Verifica la firma di myimage usando la chiave pubblica cosign.pub prima del deploy in cluster."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_3",
+      "english": "Image Pull Policy",
+      "set": {
+        "task": "Imposta imagePullPolicy a Always per forzare il kubelet a recuperare sempre il digest piu recente dal registry."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_4",
+      "english": "Hadolint",
+      "set": {
+        "task": "Lancia hadolint sul Dockerfile per segnalare anti-pattern di build e issue di sicurezza."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_4",
+      "english": "Dockle",
+      "set": {
+        "task": "Analizza myimage:latest con dockle per verificare la conformita al CIS Docker Benchmark."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_4",
+      "english": "kube-bench",
+      "set": {
+        "task": "Esegui kube-bench con target node per valutare la conformita del nodo Kubernetes al CIS Benchmark."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dso_iac_security_1",
+      "english": "Terraform",
+      "set": {
+        "task": "Lancia terraform plan per visualizzare le modifiche che verrebbero applicate all'infrastruttura cloud."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dso_iac_security_1",
+      "english": "Terraform Plan",
+      "set": {
+        "task": "Salva il piano binario su plan.tfplan per poterlo analizzare e applicare in modo deterministico."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dso_iac_security_2",
+      "english": "Checkov",
+      "set": {
+        "task": "Esegui checkov sulla directory IaC corrente per scansionare Terraform e Kubernetes contro centinaia di policy."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dso_iac_security_2",
+      "english": "tfsec",
+      "set": {
+        "task": "Lancia tfsec sulla directory corrente per individuare misconfiguration di sicurezza nei moduli Terraform."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dso_iac_security_2",
+      "english": "Terrascan",
+      "set": {
+        "task": "Avvia terrascan scan con target aws per analizzare i moduli Terraform contro le policy Rego predefinite."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dso_iac_security_2",
+      "english": "cfn-nag",
+      "set": {
+        "task": "Lancia cfn_nag_scan sul template CloudFormation template.yaml per segnalare risorse insicure."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dso_iac_security_2",
+      "english": "Snyk IaC",
+      "set": {
+        "task": "Esegui snyk iac test sul file main.tf per rilevare misconfiguration nelle risorse Terraform."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dso_iac_security_2",
+      "english": "Trivy Config",
+      "set": {
+        "task": "Lancia trivy config sulla directory corrente per analizzare Terraform, Kubernetes e Dockerfile in un solo passaggio."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dso_iac_security_2",
+      "english": "Plan Output",
+      "set": {
+        "task": "Esporta il piano binario in JSON con terraform show -json plan.tfplan per analizzarlo con strumenti di policy."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dso_iac_security_3",
+      "english": "Public S3 Bucket",
+      "set": {
+        "task": "Imposta block_public_acls a true sul bucket S3 per impedire ACL pubbliche e prevenire data leak."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dso_iac_security_3",
+      "english": "Open Security Group",
+      "set": {
+        "task": "Restringi cidr_blocks alla rete privata 10.0.0.0/16 invece di lasciare il security group aperto a 0.0.0.0/0."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dso_iac_security_3",
+      "english": "Unencrypted Volume",
+      "set": {
+        "task": "Imposta encrypted a true sul volume EBS per garantire la cifratura at-rest dei dati."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dso_iac_security_3",
+      "english": "Wildcard IAM",
+      "set": {
+        "task": "Sostituisci Resource: \"*\" con ARN specifici nella policy IAM per applicare il principio di least privilege."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dso_iac_security_4",
+      "english": "OPA Conftest",
+      "set": {
+        "task": "Lancia conftest test sul file main.tf per valutare le policy Rego sulla configurazione Terraform."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dso_policy_1",
+      "english": "Rego",
+      "set": {
+        "task": "Scrivi una policy Rego nel package main che nega tutti gli input con kind Pod."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dso_policy_1",
+      "english": "Allow Rule",
+      "set": {
+        "task": "Definisci una regola allow che concede l'accesso solo quando input.user.role corrisponde ad admin."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dso_policy_1",
+      "english": "Deny Rule",
+      "set": {
+        "task": "Scrivi una regola deny che blocca la risorsa quando il campo tls non e impostato."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dso_policy_1",
+      "english": "Unit Test for Policy",
+      "set": {
+        "task": "Esegui opa test in modalita verbose sulla directory policy/ per validare ogni regola Rego."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dso_policy_2",
+      "english": "Conftest",
+      "set": {
+        "task": "Lancia conftest test sul deployment.yaml per validare il manifest Kubernetes contro le policy Rego."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dso_policy_2",
+      "english": "Dockerfile Policy",
+      "set": {
+        "task": "Scrivi una regola deny in Rego che blocca i Dockerfile con base image taggata latest."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dso_policy_2",
+      "english": "Resource Limit",
+      "set": {
+        "task": "Definisci una policy deny che blocca i pod senza spec.resources.limits per evitare workload senza tetto."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dso_policy_2",
+      "english": "Warning Rule",
+      "set": {
+        "task": "Scrivi una regola warn che segnala i deployment senza replicas configurate ma non blocca il deploy."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dso_policy_2",
+      "english": "Policy Test Coverage",
+      "set": {
+        "task": "Lancia opa test --coverage per misurare la percentuale di regole Rego coperte dalle suite di test."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dso_policy_3",
+      "english": "Kyverno",
+      "set": {
+        "task": "Definisci una ClusterPolicy Kyverno in YAML usando apiVersion kyverno.io/v1 per applicare regole cluster-wide."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dso_policy_4",
+      "english": "Helm Lint",
+      "set": {
+        "task": "Esegui helm lint sulla cartella ./mychart per verificare la correttezza del chart prima della release."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dso_policy_4",
+      "english": "Kubeconform",
+      "set": {
+        "task": "Valida il manifest deploy.yaml con kubeconform contro gli OpenAPI schema ufficiali di Kubernetes."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dso_supply_chain_3",
+      "english": "Cosign keyless signing",
+      "set": {
+        "task": "Firma myimage con cosign sign passando cosign.key per garantire integrita e provenienza nell'OCI registry."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dso_supply_chain_3",
+      "english": "Keyless Signing",
+      "set": {
+        "task": "Firma myimage in modalita keyless di Cosign sfruttando l'identita OIDC del CI invece di chiavi long-lived."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dso_supply_chain_3",
+      "english": "Provenance Attestation",
+      "set": {
+        "task": "Genera un'attestazione di provenance allegando il predicate prov.json all'immagine con cosign attest."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dso_supply_chain_3",
+      "english": "Verify Signature",
+      "set": {
+        "task": "Verifica la firma dell'immagine con cosign verify validando la certificate-identity rilasciata da Fulcio."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dso_supply_chain_4",
+      "english": "Pinned Action",
+      "set": {
+        "task": "Pinna actions/checkout al SHA completo 8f4b7f8 invece che al tag mutabile per bloccare attacchi alla supply chain."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dso_supply_chain_4",
+      "english": "Signed Commit",
+      "set": {
+        "task": "Esegui git commit -S per firmare il commit con la tua chiave GPG e dimostrare l'autenticita dell'autore."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dso_supply_chain_4",
+      "english": "Scorecard",
+      "set": {
+        "task": "Lancia OpenSSF Scorecard sulla repo github.com/foo/bar per ottenere un voto sulle pratiche di sicurezza."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dso_compliance_as_code_2",
+      "english": "InSpec",
+      "set": {
+        "task": "Esegui inspec exec sul profilo my-profile per valutare i controlli di compliance contro l'host target."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dso_compliance_as_code_2",
+      "english": "OpenSCAP",
+      "set": {
+        "task": "Valuta il sistema contro il profilo cis con oscap xccdf eval per generare un report di compliance SCAP."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dso_cloud_security_2",
+      "english": "Steampipe",
+      "set": {
+        "task": "Interroga i bucket S3 dell'account AWS con la query SQL select * from aws_s3_bucket di Steampipe."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dso_cloud_security_2",
+      "english": "Prowler",
+      "set": {
+        "task": "Avvia prowler aws filtrando per severity HIGH per audit di sicurezza mirato sull'account AWS."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dso_cloud_security_2",
+      "english": "ScoutSuite",
+      "set": {
+        "task": "Esegui scout aws per generare il report HTML di audit multi-servizio delle configurazioni cloud."
+      }
+    }
+  ]
+}

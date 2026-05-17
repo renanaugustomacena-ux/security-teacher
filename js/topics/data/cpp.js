@@ -33,6 +33,7 @@ export default {
               difficulty: 'beginner',
               code: 'class Dog { /* ... */ };',
               note: 'In C++ una classe combina dati e funzioni in un unico tipo.',
+              task: 'Definisci una classe Dog che racchiuda stato e comportamento di un cane in un unico tipo.',
             },
             {
               english: 'Object',
@@ -44,6 +45,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'Dog rex;',
+              task: 'Istanzia sullo stack un oggetto rex di tipo Dog usando il costruttore di default.',
             },
             {
               english: 'Namespace',
@@ -56,6 +58,7 @@ export default {
               difficulty: 'beginner',
               code: 'namespace app { int x = 1; }',
               note: 'std è il namespace della libreria standard.',
+              task: 'Racchiudi una variabile globale x in un namespace app per evitare collisioni di nomi con altre librerie.',
             },
             {
               english: 'std::cout',
@@ -68,6 +71,7 @@ export default {
               difficulty: 'beginner',
               code: 'std::cout << "Hello\\n";',
               note: 'cout sta per "character output". Sostituisce printf in C++.',
+              task: 'Stampa la stringa Hello seguita da un newline sullo standard output usando std::cout.',
             },
             {
               english: 'std::cin',
@@ -79,6 +83,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int n; std::cin >> n;',
+              task: `Leggi un intero dalla console nella variabile n usando std::cin e l'operatore di estrazione.`,
             },
             {
               english: 'Stream Insertion',
@@ -90,6 +95,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'std::cout << x << "\\n";',
+              task: `Concatena in una singola istruzione il valore di x e un newline sullo stream di output con l'operatore <<.`,
             },
             {
               english: 'Stream Extraction',
@@ -101,6 +107,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'std::cin >> x;',
+              task: `Estrai un valore dallo standard input nella variabile x utilizzando l'operatore >>.`,
             },
             {
               english: 'Header',
@@ -113,6 +120,7 @@ export default {
               difficulty: 'beginner',
               code: '#include <iostream>',
               note: 'Gli header standard C++ non hanno estensione .h.',
+              task: `Includi l'header standard iostream per poter usare gli stream di input e output.`,
             },
             {
               english: 'Main Function',
@@ -124,6 +132,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int main() { return 0; }',
+              task: 'Scrivi la funzione main che restituisce 0 al sistema operativo come codice di uscita di successo.',
             },
             {
               english: 'Endline',
@@ -136,6 +145,7 @@ export default {
               difficulty: 'beginner',
               code: 'std::cout << "hi" << std::endl;',
               note: 'Spesso "\\n" è preferibile per evitare flush non necessari.',
+              task: 'Stampa la stringa hi seguita da std::endl per andare a capo e svuotare il buffer di output.',
             },
           ],
         },
@@ -155,6 +165,7 @@ export default {
               difficulty: 'beginner',
               code: 'int* p = new int(5);',
               note: 'In C++ moderno è preferibile usare smart pointer.',
+              task: `Alloca dinamicamente un singolo intero inizializzato a 5 sull'heap con l'operatore new.`,
             },
             {
               english: 'Delete Operator',
@@ -167,6 +178,7 @@ export default {
               difficulty: 'beginner',
               code: 'delete p;',
               note: 'Per ogni new ci deve essere un delete corrispondente.',
+              task: 'Libera la memoria puntata da p chiamando delete per evitare un memory leak.',
             },
             {
               english: 'Heap',
@@ -189,6 +201,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int x = 5; // sullo stack',
+              task: 'Dichiara una variabile locale x con valore 5 allocata automaticamente sullo stack.',
             },
             {
               english: 'Pointer',
@@ -200,6 +213,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int* p = &x;',
+              task: `Crea un puntatore p a intero e fallo puntare all'indirizzo della variabile x.`,
             },
             {
               english: 'Dereference',
@@ -211,6 +225,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int v = *p;',
+              task: `Leggi il valore puntato dal puntatore p applicando l'operatore di dereferenziazione * e copialo in v.`,
             },
             {
               english: 'Address-of',
@@ -222,6 +237,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int* p = &x;',
+              task: `Ottieni l'indirizzo di memoria della variabile x con l'operatore & e salvalo in un puntatore p.`,
             },
             {
               english: 'Null Pointer',
@@ -234,6 +250,7 @@ export default {
               difficulty: 'beginner',
               code: 'int* p = nullptr;',
               note: 'In C++ moderno usa nullptr al posto di NULL o 0.',
+              task: 'Inizializza un puntatore p a nullptr per indicare esplicitamente che non punta a nulla.',
             },
             {
               english: 'Array New',
@@ -245,6 +262,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int* arr = new int[10];',
+              task: `Alloca dinamicamente sull'heap un array di 10 interi con la sintassi new int[10].`,
             },
             {
               english: 'Array Delete',
@@ -257,6 +275,7 @@ export default {
               difficulty: 'beginner',
               code: 'delete[] arr;',
               note: 'Mismatch tra new/new[] e delete/delete[] è undefined behavior.',
+              task: 'Dealloca un array dinamico arr con delete[] per invocare il distruttore di ogni elemento.',
             },
           ],
         },
@@ -276,6 +295,7 @@ export default {
               difficulty: 'beginner',
               command: 'g++ main.cpp -o main',
               tool: 'g++, clang++, MSVC',
+              task: 'Compila main.cpp con g++ producendo un eseguibile chiamato main.',
             },
             {
               english: 'Standard Version',
@@ -288,6 +308,7 @@ export default {
               difficulty: 'beginner',
               command: 'g++ -std=c++20 main.cpp',
               note: 'Comuni: c++11, c++14, c++17, c++20, c++23.',
+              task: 'Compila main.cpp imponendo lo standard C++20 con il flag -std=c++20.',
             },
             {
               english: 'Source File',
@@ -310,6 +331,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: '#include "myclass.h"',
+              task: 'Includi il file di intestazione locale myclass.h con virgolette doppie per cercare prima nella directory corrente.',
             },
             {
               english: 'Object File',
@@ -321,6 +343,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               command: 'g++ -c main.cpp',
+              task: 'Genera il file oggetto di main.cpp con il flag -c senza linkare per accelerare le ricompilazioni successive.',
             },
             {
               english: 'Linker',
@@ -344,6 +367,7 @@ export default {
               difficulty: 'beginner',
               command: 'g++ -Wall -Wextra -Wpedantic',
               note: 'I warning sono spesso bug nascosti.',
+              task: 'Abilita i flag di avviso -Wall -Wextra -Wpedantic per intercettare il maggior numero di bug a tempo di compilazione.',
             },
             {
               english: 'Optimization Level',
@@ -356,6 +380,7 @@ export default {
               difficulty: 'beginner',
               command: 'g++ -O2 main.cpp',
               note: '-O0 (debug), -O2 (release tipico), -O3 (aggressivo).',
+              task: 'Compila main.cpp con livello di ottimizzazione -O2 per generare una build release performante.',
             },
             {
               english: 'Debug Symbols',
@@ -367,6 +392,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               command: 'g++ -g main.cpp',
+              task: 'Aggiungi i simboli di debug a main.cpp con il flag -g per poter ispezionare variabili in GDB.',
             },
             {
               english: 'Executable',
@@ -378,6 +404,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               command: 'g++ -o app main.cpp',
+              task: `Compila main.cpp specificando con -o app il nome dell'eseguibile finale prodotto dal linker.`,
             },
           ],
         },
@@ -396,6 +423,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int x = 42;',
+              task: 'Dichiara una variabile intera x inizializzata al valore 42 da usare come contatore.',
             },
             {
               english: 'Floating Point',
@@ -407,6 +435,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'double pi = 3.14159;',
+              task: 'Dichiara una variabile a virgola mobile di tipo double chiamata pi e inizializzala con il valore 3.14159.',
             },
             {
               english: 'Character',
@@ -418,6 +447,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: "char c = 'A';",
+              task: `Dichiara una variabile di tipo char chiamata c e inizializzala con il letterale 'A'.`,
             },
             {
               english: 'Boolean',
@@ -430,6 +460,7 @@ export default {
               difficulty: 'beginner',
               code: 'bool ready = true;',
               note: 'In C++ esiste nativamente, in C serve <stdbool.h>.',
+              task: 'Dichiara un flag booleano ready inizializzato a true per indicare uno stato attivo.',
             },
             {
               english: 'Void',
@@ -441,6 +472,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'void log() { /* ... */ }',
+              task: 'Dichiara una funzione log che restituisce void perché non ha bisogno di restituire alcun valore.',
             },
             {
               english: 'Auto Type',
@@ -453,6 +485,7 @@ export default {
               difficulty: 'beginner',
               code: 'auto x = 42; // int',
               note: 'Disponibile da C++11.',
+              task: 'Sfrutta auto per dichiarare una variabile x inizializzata a 42 lasciando dedurre il tipo al compilatore.',
             },
             {
               english: 'Const Qualifier',
@@ -464,6 +497,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'const int MAX = 100;',
+              task: 'Definisci una costante intera MAX con valore 100 usando il qualificatore const per impedirne la modifica.',
             },
             {
               english: 'Size Type',
@@ -475,6 +509,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'std::size_t n = v.size();',
+              task: 'Memorizza la dimensione del container v in una variabile di tipo std::size_t per evitare warning di confronto.',
             },
             {
               english: 'Type Cast',
@@ -487,6 +522,7 @@ export default {
               difficulty: 'beginner',
               code: 'int x = static_cast<int>(3.14);',
               note: 'In C++ moderno evita i C-style cast.',
+              task: 'Converti il letterale 3.14 in int usando static_cast e troncando esplicitamente la parte frazionaria.',
             },
             {
               english: 'Initialization',
@@ -499,6 +535,7 @@ export default {
               difficulty: 'beginner',
               code: 'int x{5};',
               note: 'Detta uniform initialization, vieta narrowing conversions.',
+              task: 'Inizializza un intero x al valore 5 con la sintassi a graffe per attivare il controllo contro le narrowing conversion.',
             },
           ],
         },
@@ -527,6 +564,7 @@ export default {
               difficulty: 'beginner',
               code: 'int& r = x;',
               note: 'A differenza dei puntatori, un riferimento non può essere null o riassegnato.',
+              task: 'Crea un riferimento r legato alla variabile esistente x in modo che entrambi i nomi identifichino la stessa cella di memoria.',
             },
             {
               english: 'Lvalue Reference',
@@ -538,6 +576,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int& ref = x;',
+              task: 'Dichiara un riferimento lvalue ref alla variabile con nome x per poterla manipolare senza copie.',
             },
             {
               english: 'Const Reference',
@@ -550,6 +589,7 @@ export default {
               difficulty: 'beginner',
               code: 'void f(const std::string& s);',
               note: 'Il modo standard per passare oggetti grandi senza copiarli.',
+              task: 'Dichiara una funzione f che accetta una std::string per riferimento const per evitare copie e proibire modifiche.',
             },
             {
               english: 'Pass by Reference',
@@ -561,6 +601,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'void inc(int& n) { ++n; }',
+              task: 'Definisci la funzione inc che riceve un intero per riferimento e ne incrementa il valore originale di uno.',
             },
             {
               english: 'Pass by Value',
@@ -572,6 +613,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'void f(int n);',
+              task: 'Dichiara una funzione f che riceve un intero n per valore producendo una copia locale del parametro.',
             },
             {
               english: 'Return by Reference',
@@ -584,6 +626,7 @@ export default {
               difficulty: 'beginner',
               code: 'int& at(std::vector<int>& v, int i);',
               note: 'Mai restituire un riferimento a una variabile locale.',
+              task: `Dichiara la funzione at che restituisce per riferimento l'elemento i-esimo di un std::vector<int> per permettere modifiche in-place.`,
             },
             {
               english: 'Dangling Reference',
@@ -618,6 +661,7 @@ export default {
               difficulty: 'beginner',
               code: 'for (auto& x : vec) { /* ... */ }',
               note: 'Disponibile da C++11.',
+              task: 'Itera tutti gli elementi del container vec con un ciclo range-based for usando auto& per evitare copie.',
             },
             {
               english: 'Auto Reference',
@@ -629,6 +673,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'for (auto& item : vec) { /* ... */ }',
+              task: 'Scorri vec catturando ogni elemento come auto& item per modificarlo in-place senza specificare il tipo esplicito.',
             },
           ],
         },
@@ -648,6 +693,7 @@ export default {
               difficulty: 'beginner',
               code: 'int add(int,int); double add(double,double);',
               note: 'Non disponibile in C standard.',
+              task: 'Dichiara due overload della funzione add: uno per coppie di int e uno per coppie di double.',
             },
             {
               english: 'Function Signature',
@@ -671,6 +717,7 @@ export default {
               difficulty: 'beginner',
               code: 'void f(int x = 0);',
               note: 'I default si specificano solo nella dichiarazione.',
+              task: 'Dichiara la funzione f con un argomento di default x pari a 0 per permettere chiamate senza argomenti.',
             },
             {
               english: 'Inline Function',
@@ -683,6 +730,7 @@ export default {
               difficulty: 'beginner',
               code: 'inline int sq(int x) { return x*x; }',
               note: 'Oggi serve più per linkage che per ottimizzazione.',
+              task: 'Definisci una funzione inline sq che restituisce il quadrato di un intero suggerendo al compilatore di espanderla.',
             },
             {
               english: 'Const Method',
@@ -694,6 +742,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int size() const;',
+              task: `Dichiara un metodo size marcato const che restituisce un intero senza modificare lo stato dell'oggetto.`,
             },
             {
               english: 'String Object',
@@ -706,6 +755,7 @@ export default {
               difficulty: 'beginner',
               code: 'std::string s = "hello";',
               note: 'Sostituisce char* con gestione automatica della memoria.',
+              task: 'Crea un oggetto std::string chiamato s inizializzato con il letterale hello e dotato di gestione automatica della memoria.',
             },
             {
               english: 'String Concatenation',
@@ -717,6 +767,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'std::string s = a + b;',
+              task: `Concatena due std::string a e b con l'operatore + e salva il risultato in una nuova stringa s.`,
             },
             {
               english: 'String Length',
@@ -728,6 +779,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'auto n = s.size();',
+              task: 'Ricava la lunghezza della stringa s invocando il metodo size() e salvala in una variabile auto.',
             },
             {
               english: 'String Literal',
@@ -739,6 +791,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'auto s = "hello"s; // C++14',
+              task: 'Crea una std::string s dal letterale hello usando il suffisso s introdotto in C++14.',
             },
             {
               english: 'C-Style String',
@@ -750,6 +803,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'const char* s = "hi";',
+              task: 'Dichiara una stringa stile C come puntatore const char* inizializzato con il letterale hi terminato da null.',
             },
           ],
         },
@@ -768,6 +822,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'bool ok = true;',
+              task: `Assegna il letterale booleano true al flag ok per indicare che un'operazione è andata a buon fine.`,
             },
             {
               english: 'Logical Operator',
@@ -778,6 +833,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'if (a && b) { /* ... */ }',
+              task: `Combina due condizioni a e b con l'operatore logico && in un if per eseguire un blocco solo se entrambe sono vere.`,
             },
             {
               english: 'Short Circuit',
@@ -800,6 +856,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'enum Color { RED, GREEN, BLUE };',
+              task: `Definisci un'enumerazione Color con i tre valori RED, GREEN e BLUE per rappresentare i canali base.`,
             },
             {
               english: 'Enum Class',
@@ -812,6 +869,7 @@ export default {
               difficulty: 'beginner',
               code: 'enum class Color { Red, Green };',
               note: 'Termine C++: enum class (parola chiave del linguaggio, non si traduce).',
+              task: 'Dichiara un enum class Color con i valori Red e Green per ottenere costanti con scope forte e tipizzate.',
             },
             {
               english: 'Scoped Enum',
@@ -823,6 +881,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'Color c = Color::Red;',
+              task: 'Assegna il valore Color::Red alla variabile c sfruttando uno scoped enum per evitare collisioni di nomi.',
             },
             {
               english: 'Underlying Type',
@@ -834,6 +893,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'enum class Code : uint8_t { A, B };',
+              task: `Definisci un enum class Code con tipo sottostante uint8_t per limitarne l'occupazione di memoria a un byte.`,
             },
             {
               english: 'Switch Statement',
@@ -845,6 +905,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'switch(c) { case Color::Red: ... }',
+              task: `Scrivi un'istruzione switch su una variabile c di tipo Color con un case dedicato a Color::Red.`,
             },
             {
               english: 'Case Label',
@@ -856,6 +917,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'case 1: doSomething(); break;',
+              task: `Aggiungi un'etichetta case 1 in uno switch che chiama doSomething() e termina con break per evitare il fall-through.`,
             },
             {
               english: 'Constexpr',
@@ -868,6 +930,7 @@ export default {
               difficulty: 'beginner',
               code: 'constexpr int sq(int x) { return x*x; }',
               note: 'Termine C++: constexpr (parola chiave del linguaggio, non si traduce).',
+              task: 'Marca la funzione sq come constexpr in modo che il compilatore possa valutarla a tempo di compilazione.',
             },
           ],
         },
@@ -886,6 +949,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: '#include <iostream>',
+              task: `Includi l'header iostream per abilitare gli stream standard di input e output nel tuo file.`,
             },
             {
               english: 'std::cerr',
@@ -897,6 +961,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'std::cerr << "Error\\n";',
+              task: 'Scrivi il messaggio Error sullo standard error con std::cerr per garantire la stampa anche dopo un crash.',
             },
             {
               english: 'std::clog',
@@ -908,6 +973,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'std::clog << "info\\n";',
+              task: 'Scrivi un messaggio info sul log standard std::clog sfruttandone il buffering per ridurre il costo di I/O.',
             },
             {
               english: 'Stream Manipulator',
@@ -920,6 +986,7 @@ export default {
               difficulty: 'beginner',
               code: 'std::cout << std::setw(5) << x;',
               note: 'Richiede <iomanip>.',
+              task: `Applica il manipolatore di stream std::setw(5) prima di stampare x per allineare l'output su 5 colonne.`,
             },
             {
               english: 'File Stream',
@@ -931,6 +998,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'std::ifstream f("data.txt");',
+              task: 'Apri il file data.txt in lettura tramite uno stream std::ifstream chiamato f.',
             },
             {
               english: 'Output File Stream',
@@ -942,6 +1010,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'std::ofstream out("log.txt");',
+              task: 'Apri il file log.txt in scrittura attraverso uno stream di output std::ofstream chiamato out.',
             },
             {
               english: 'GetLine',
@@ -954,6 +1023,7 @@ export default {
               difficulty: 'beginner',
               code: 'std::getline(std::cin, line);',
               note: 'Necessario perché >> si ferma agli spazi bianchi.',
+              task: `Leggi un'intera riga di testo dallo standard input nella variabile line con std::getline preservando gli spazi.`,
             },
             {
               english: 'Buffer Flush',
@@ -965,6 +1035,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'std::cout << "x" << std::flush;',
+              task: 'Forza lo svuotamento del buffer di std::cout dopo aver stampato la lettera x usando std::flush.',
             },
             {
               english: 'Stream State',
@@ -976,6 +1047,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'if (in.good()) { /* ... */ }',
+              task: 'Verifica con il metodo good() che lo stream in sia in stato valido prima di leggere ulteriori dati.',
             },
             {
               english: 'EOF',
@@ -988,6 +1060,7 @@ export default {
               difficulty: 'beginner',
               code: 'while (!in.eof()) { /* ... */ }',
               note: 'Spesso meglio controllare il risultato della lettura.',
+              task: 'Itera lo stream di input in finché eof() non segnala il raggiungimento della fine del file.',
             },
           ],
         },
@@ -1016,6 +1089,7 @@ export default {
               difficulty: 'beginner',
               code: 'class A { int x; };',
               note: 'Detta anche field o data member.',
+              task: 'Definisci una classe A con una variabile membro intera x che ne rappresenta lo stato interno.',
             },
             {
               english: 'Member Function',
@@ -1028,6 +1102,7 @@ export default {
               difficulty: 'beginner',
               code: 'class A { void run(); };',
               note: 'Detta anche metodo.',
+              task: `Aggiungi alla classe A una funzione membro run che agisce sui dati membro dell'oggetto.`,
             },
             {
               english: 'Constructor',
@@ -1039,6 +1114,7 @@ export default {
               context: 'oop',
               difficulty: 'beginner',
               code: 'class A { A() {} };',
+              task: `Aggiungi un costruttore di default alla classe A che inizializza l'oggetto al momento della creazione.`,
             },
             {
               english: 'Destructor',
@@ -1051,6 +1127,7 @@ export default {
               difficulty: 'beginner',
               code: 'class A { ~A() {} };',
               note: 'La tilde ~ identifica il distruttore.',
+              task: 'Dichiara un distruttore ~A() vuoto sulla classe A per rilasciare automaticamente le risorse a fine vita.',
             },
             {
               english: 'This Pointer',
@@ -1062,6 +1139,7 @@ export default {
               context: 'oop',
               difficulty: 'beginner',
               code: 'this->x = 5;',
+              task: `Assegna il valore 5 alla variabile membro x tramite il puntatore this all'interno di un metodo.`,
             },
             {
               english: 'Object Instance',
@@ -1073,6 +1151,7 @@ export default {
               context: 'oop',
               difficulty: 'beginner',
               code: 'A a1, a2;',
+              task: 'Crea due istanze indipendenti a1 e a2 della classe A sullo stack con una sola dichiarazione.',
             },
             {
               english: 'Class Definition',
@@ -1085,6 +1164,7 @@ export default {
               difficulty: 'beginner',
               code: 'class Box { /* ... */ };',
               note: 'Termina sempre con un punto e virgola.',
+              task: 'Scrivi la definizione di una classe Box terminandola correttamente con il punto e virgola finale.',
             },
             {
               english: 'Struct',
@@ -1097,6 +1177,7 @@ export default {
               difficulty: 'beginner',
               code: 'struct Point { int x, y; };',
               note: 'Convenzionalmente usata per dati puri.',
+              task: 'Definisci una struct Point con due campi interi pubblici x e y per rappresentare una coordinata 2D.',
             },
             {
               english: 'Class Member',
@@ -1119,6 +1200,7 @@ export default {
               difficulty: 'beginner',
               code: 'A() : x(0), y(0) {}',
               note: 'Più efficiente che assegnare nel corpo del costruttore.',
+              task: 'Scrivi un costruttore A che inizializza i membri x e y a zero tramite la lista di inizializzazione.',
             },
           ],
         },
@@ -1147,6 +1229,7 @@ export default {
               difficulty: 'beginner',
               code: 'public: int getValue();',
               note: 'Termine C++: public (parola chiave del linguaggio, non si traduce).',
+              task: `Marca il metodo getValue come public esponendolo come parte ufficiale dell'API della classe.`,
             },
             {
               english: 'Private',
@@ -1159,6 +1242,7 @@ export default {
               difficulty: 'beginner',
               code: 'private: int balance;',
               note: 'Termine C++: private (parola chiave del linguaggio, non si traduce).',
+              task: `Dichiara come private il campo balance per impedire l'accesso diretto dall'esterno della classe.`,
             },
             {
               english: 'Protected',
@@ -1171,6 +1255,7 @@ export default {
               difficulty: 'beginner',
               code: 'protected: int counter;',
               note: 'Termine C++: protected (parola chiave del linguaggio, non si traduce).',
+              task: 'Marca il contatore counter come protected per renderlo visibile solo alle classi derivate.',
             },
             {
               english: 'Encapsulation',
@@ -1193,6 +1278,7 @@ export default {
               context: 'oop',
               difficulty: 'beginner',
               code: 'int getX() const { return x; }',
+              task: 'Definisci un getter getX const che restituisce il valore della variabile membro x senza modificarla.',
             },
             {
               english: 'Setter',
@@ -1204,6 +1290,7 @@ export default {
               context: 'oop',
               difficulty: 'beginner',
               code: 'void setX(int v) { x = v; }',
+              task: 'Scrivi un setter setX che riceve un intero v e lo assegna al campo membro x.',
             },
             {
               english: 'Friend',
@@ -1216,6 +1303,7 @@ export default {
               difficulty: 'beginner',
               code: 'friend class Bar;',
               note: "Da usare con parsimonia, rompe l'incapsulamento.",
+              task: `Dichiara la classe Bar come friend per concederle accesso ai membri privati dell'attuale classe.`,
             },
             {
               english: 'Class Invariant',
@@ -1253,6 +1341,7 @@ export default {
               context: 'oop',
               difficulty: 'beginner',
               code: 'A() = default;',
+              task: 'Forza la generazione del costruttore di default sulla classe A con la sintassi = default.',
             },
             {
               english: 'Copy Constructor',
@@ -1264,6 +1353,7 @@ export default {
               context: 'oop',
               difficulty: 'beginner',
               code: 'A(const A& other);',
+              task: 'Dichiara il costruttore di copia di A che accetta un riferimento const al sorgente other.',
             },
             {
               english: 'Copy Assignment',
@@ -1275,6 +1365,7 @@ export default {
               context: 'oop',
               difficulty: 'beginner',
               code: 'A& operator=(const A& other);',
+              task: `Dichiara l'operatore di assegnazione di copia di A che restituisce un riferimento al destinatario.`,
             },
             {
               english: 'Move Constructor',
@@ -1287,6 +1378,7 @@ export default {
               difficulty: 'beginner',
               code: 'A(A&& other) noexcept;',
               note: 'Disponibile da C++11.',
+              task: 'Dichiara un costruttore di spostamento noexcept per la classe A che trasferisce le risorse da un rvalue.',
             },
             {
               english: 'Move Assignment',
@@ -1297,6 +1389,7 @@ export default {
               context: 'oop',
               difficulty: 'beginner',
               code: 'A& operator=(A&& other) noexcept;',
+              task: 'Dichiara per A un operator= di move noexcept che restituisce un riferimento e accetta un rvalue.',
             },
             {
               english: 'Explicit Constructor',
@@ -1309,6 +1402,7 @@ export default {
               difficulty: 'beginner',
               code: 'explicit A(int x);',
               note: 'Buona pratica per costruttori a un argomento.',
+              task: 'Marca con explicit il costruttore A(int) per impedire conversioni implicite da int a A.',
             },
             {
               english: 'Delegating Constructor',
@@ -1320,6 +1414,7 @@ export default {
               context: 'oop',
               difficulty: 'beginner',
               code: 'A() : A(0) {}',
+              task: 'Implementa il costruttore di default di A in modo che deleghi al costruttore A(int) passando 0.',
             },
             {
               english: 'Defaulted Function',
@@ -1330,6 +1425,7 @@ export default {
               context: 'oop',
               difficulty: 'beginner',
               code: 'A() = default;',
+              task: `Genera automaticamente il costruttore di default di A con la sintassi = default lasciando l'implementazione al compilatore.`,
             },
             {
               english: 'Deleted Function',
@@ -1342,6 +1438,7 @@ export default {
               difficulty: 'beginner',
               code: 'A(const A&) = delete;',
               note: 'Tipico per disabilitare la copia.',
+              task: `Disabilita esplicitamente il costruttore di copia di A marcandolo come = delete per impedirne l'uso.`,
             },
             {
               english: 'Rule of Three',
@@ -1371,6 +1468,7 @@ export default {
               context: 'oop',
               difficulty: 'beginner',
               code: 'class A { static int count; };',
+              task: 'Aggiungi alla classe A un membro statico count condiviso da tutte le istanze della classe.',
             },
             {
               english: 'Static Function',
@@ -1382,6 +1480,7 @@ export default {
               context: 'oop',
               difficulty: 'beginner',
               code: 'static int total();',
+              task: `Dichiara una funzione statica total che opera a livello di classe senza richiedere un'istanza.`,
             },
             {
               english: 'Class Method',
@@ -1404,6 +1503,7 @@ export default {
               difficulty: 'beginner',
               code: 'int A::count = 0;',
               note: 'In C++17 puoi inizializzare inline.',
+              task: 'Definisci fuori dalla classe il membro statico A::count inizializzandolo a zero per fornirne lo storage.',
             },
             {
               english: 'Inline Variable',
@@ -1416,6 +1516,7 @@ export default {
               difficulty: 'beginner',
               code: 'inline static int count = 0;',
               note: 'Disponibile da C++17.',
+              task: 'Dichiara una variabile inline static count inizializzata a zero per poterla definire direttamente in un header.',
             },
             {
               english: 'Singleton',
@@ -1427,6 +1528,7 @@ export default {
               context: 'oop',
               difficulty: 'beginner',
               code: 'static A& instance();',
+              task: `Dichiara il metodo statico instance che restituisce un riferimento all'unica istanza A del singleton.`,
             },
             {
               english: 'Class Constant',
@@ -1438,6 +1540,7 @@ export default {
               context: 'oop',
               difficulty: 'beginner',
               code: 'static constexpr int MAX = 100;',
+              task: 'Definisci una costante di classe MAX come static constexpr int con valore 100 condivisa e immutabile.',
             },
             {
               english: 'Counter Pattern',
@@ -1459,6 +1562,7 @@ export default {
               context: 'oop',
               difficulty: 'beginner',
               code: 'int A::*ptr = &A::x;',
+              task: 'Dichiara un puntatore a membro ptr che riferisce il campo x della classe A.',
             },
             {
               english: 'Nested Class',
@@ -1470,6 +1574,7 @@ export default {
               context: 'oop',
               difficulty: 'beginner',
               code: 'class A { class B {}; };',
+              task: 'Inserisci dentro la classe A una classe annidata B che ne ridefinisce lo scope di visibilità.',
             },
           ],
         },
@@ -1497,6 +1602,7 @@ export default {
               context: 'oop',
               difficulty: 'beginner',
               code: 'class Animal { /* ... */ };',
+              task: 'Definisci una classe base Animal che farà da genitore in una gerarchia di ereditarietà.',
             },
             {
               english: 'Derived Class',
@@ -1508,6 +1614,7 @@ export default {
               context: 'oop',
               difficulty: 'beginner',
               code: 'class Dog : public Animal {};',
+              task: 'Crea la classe derivata Dog che eredita pubblicamente dalla classe Animal.',
             },
             {
               english: 'Public Inheritance',
@@ -1520,6 +1627,7 @@ export default {
               difficulty: 'beginner',
               code: 'class Cat : public Animal {};',
               note: 'Default per struct ma non per class.',
+              task: 'Dichiara la classe Cat come derivata di Animal tramite ereditarietà pubblica per modellare una relazione is-a.',
             },
             {
               english: 'Private Inheritance',
@@ -1531,6 +1639,7 @@ export default {
               context: 'oop',
               difficulty: 'beginner',
               code: 'class A : private B {};',
+              task: `Fai ereditare la classe A da B tramite ereditarietà privata per riusarne l'implementazione senza esporne l'interfaccia.`,
             },
             {
               english: 'Inheritance',
@@ -1583,6 +1692,7 @@ export default {
               context: 'oop',
               difficulty: 'beginner',
               code: 'Dog() : Animal("dog") {}',
+              task: 'Implementa il costruttore di Dog in modo che concateni al costruttore di Animal passando la stringa dog.',
             },
             {
               english: 'Slicing',
@@ -1612,6 +1722,7 @@ export default {
               context: 'oop',
               difficulty: 'beginner',
               code: 'virtual void speak();',
+              task: 'Dichiara nella classe base una funzione virtuale speak per abilitare il dispatch dinamico nelle classi derivate.',
             },
             {
               english: 'Override Keyword',
@@ -1624,6 +1735,7 @@ export default {
               difficulty: 'beginner',
               code: 'void speak() override;',
               note: 'Aiuta a catturare errori a tempo di compilazione (C++11).',
+              task: 'Sovrascrivi nella classe derivata la funzione speak marcando esplicitamente la dichiarazione con override.',
             },
             {
               english: 'Final Keyword',
@@ -1635,6 +1747,7 @@ export default {
               context: 'oop',
               difficulty: 'beginner',
               code: 'void speak() final;',
+              task: 'Marca la funzione speak come final per impedire a ulteriori classi derivate di sovrascriverla.',
             },
             {
               english: 'Virtual Destructor',
@@ -1647,6 +1760,7 @@ export default {
               difficulty: 'beginner',
               code: 'virtual ~Base() = default;',
               note: 'Senza, delete su pointer base perde memoria.',
+              task: 'Aggiungi alla classe Base un distruttore virtuale di default per consentire delete sicuri attraverso puntatore alla base.',
             },
             {
               english: 'Override',
@@ -1669,6 +1783,7 @@ export default {
               difficulty: 'beginner',
               code: 'class C : public A, public B {};',
               note: 'Da usare con attenzione, può creare ambiguità.',
+              task: `Definisci la classe C che eredita pubblicamente sia da A che da B sfruttando l'ereditarietà multipla.`,
             },
             {
               english: 'Diamond Problem',
@@ -1691,6 +1806,7 @@ export default {
               context: 'oop',
               difficulty: 'beginner',
               code: 'class B : virtual public A {};',
+              task: 'Fai ereditare la classe B da A in modo virtuale per evitare duplicazioni del sottooggetto in gerarchie a diamante.',
             },
             {
               english: 'Method Hiding',
@@ -1713,6 +1829,7 @@ export default {
               context: 'oop',
               difficulty: 'beginner',
               code: 'using Base::method;',
+              task: 'Inserisci nella classe derivata una dichiarazione using Base::method per rendere visibili gli overload nascosti dalla base.',
             },
           ],
         },
@@ -1731,6 +1848,7 @@ export default {
               context: 'oop',
               difficulty: 'beginner',
               code: 'class Shape { virtual void draw() = 0; };',
+              task: 'Trasforma Shape in classe astratta dichiarando draw come funzione virtuale pura uguagliata a zero.',
             },
             {
               english: 'Pure Virtual',
@@ -1743,6 +1861,7 @@ export default {
               difficulty: 'beginner',
               code: 'virtual void f() = 0;',
               note: 'Il = 0 la rende pura virtuale.',
+              task: 'Dichiara la funzione f come puramente virtuale aggiungendo = 0 per obbligare le sottoclassi a implementarla.',
             },
             {
               english: 'Interface Class',
@@ -1896,6 +2015,7 @@ export default {
               context: 'oop',
               difficulty: 'beginner',
               code: 'std::vector<std::unique_ptr<Animal>> zoo;',
+              task: 'Costruisci un vettore zoo di std::unique_ptr<Animal> in grado di contenere sottotipi diversi gestiti polimorficamente.',
             },
             {
               english: 'Up-Cast',
@@ -1907,6 +2027,7 @@ export default {
               context: 'oop',
               difficulty: 'beginner',
               code: 'Animal* a = new Dog();',
+              task: 'Esegui un up-cast implicito assegnando un puntatore Dog appena creato a un puntatore Animal.',
             },
             {
               english: 'Down-Cast',
@@ -1919,6 +2040,7 @@ export default {
               difficulty: 'beginner',
               code: 'Dog* d = dynamic_cast<Dog*>(a);',
               note: 'Sintomo di design da rivedere.',
+              task: `Effettua un down-cast sicuro da Animal* a Dog* utilizzando dynamic_cast e controllando l'eventuale nullptr.`,
             },
             {
               english: 'Empty Base Optimization',
@@ -2050,6 +2172,7 @@ export default {
               context: 'oop',
               difficulty: 'intermediate',
               code: 'auto& info = typeid(*p);',
+              task: `Ricava informazioni sul tipo dinamico puntato da p invocando typeid sull'oggetto dereferenziato e salvando la reference.`,
             },
             {
               english: 'Dynamic Cast',
@@ -2062,6 +2185,7 @@ export default {
               difficulty: 'intermediate',
               code: 'Dog* d = dynamic_cast<Dog*>(a);',
               note: 'Restituisce nullptr se il cast fallisce.',
+              task: 'Converti il puntatore polimorfico a in un Dog* con dynamic_cast e gestisci esplicitamente il caso di fallimento.',
             },
           ],
         },
@@ -2080,6 +2204,7 @@ export default {
               context: 'oop',
               difficulty: 'intermediate',
               code: 'virtual void draw() = 0;',
+              task: 'Dichiara la funzione virtuale draw come pura assegnandole = 0 per rendere astratta la classe contenitore.',
             },
             {
               english: 'Strategy Pattern',
@@ -2131,6 +2256,7 @@ export default {
               context: 'oop',
               difficulty: 'intermediate',
               code: 'class Foo final { /* ... */ };',
+              task: 'Marca la classe Foo come final per sigillarla e impedire qualsiasi ulteriore ereditarietà.',
             },
             {
               english: 'Covariant Return Type',
@@ -2200,6 +2326,7 @@ export default {
               context: 'oop',
               difficulty: 'intermediate',
               code: 'assert(p != nullptr);',
+              task: 'Verifica con assert che il puntatore p non sia nullptr come precondizione prima di procedere con la sua dereferenziazione.',
             },
             {
               english: 'Postcondition',
@@ -2339,6 +2466,7 @@ export default {
               context: 'oop',
               difficulty: 'intermediate',
               code: 'std::variant<Cat, Dog> animal;',
+              task: 'Dichiara una variabile animal di tipo std::variant<Cat, Dog> per modellare polimorficamente uno tra Cat e Dog.',
             },
             {
               english: 'CRTP',
@@ -2351,6 +2479,7 @@ export default {
               difficulty: 'intermediate',
               code: 'template<class T> struct Base {};',
               note: 'Curiously Recurring Template Pattern.',
+              task: 'Dichiara un template Base parametrizzato su T come scheletro del pattern CRTP per condividere funzionalità senza virtual.',
             },
             {
               english: 'Concept Polymorphism',
@@ -2419,6 +2548,7 @@ export default {
               context: 'oop',
               difficulty: 'intermediate',
               code: 'Vec operator+(const Vec& a, const Vec& b);',
+              task: `Sovraccarica l'operatore + per la classe Vec come funzione libera che riceve due Vec per riferimento const.`,
             },
             {
               english: 'Operator Plus',
@@ -2430,6 +2560,7 @@ export default {
               context: 'oop',
               difficulty: 'intermediate',
               code: 'Vec operator+(const Vec& o);',
+              task: `Dichiara dentro Vec l'operator+ membro che riceve un altro Vec per riferimento const e restituisce la somma.`,
             },
             {
               english: 'Operator Minus',
@@ -2441,6 +2572,7 @@ export default {
               context: 'oop',
               difficulty: 'intermediate',
               code: 'Vec operator-(const Vec& o);',
+              task: `Definisci l'operator- per Vec che sottrae componente a componente un altro Vec passato per riferimento const.`,
             },
             {
               english: 'Compound Assignment',
@@ -2452,6 +2584,7 @@ export default {
               context: 'oop',
               difficulty: 'intermediate',
               code: 'Vec& operator+=(const Vec& o);',
+              task: `Implementa l'operatore di assegnazione composta += per Vec che accumula in-place e restituisce un riferimento all'oggetto.`,
             },
             {
               english: 'Member Operator',
@@ -2484,6 +2617,7 @@ export default {
               context: 'oop',
               difficulty: 'intermediate',
               code: 'Vec operator-() const;',
+              task: 'Definisci un operatore unario - su Vec marcato const che restituisce un nuovo Vec con segno opposto.',
             },
             {
               english: 'Binary Operator',
@@ -2506,6 +2640,7 @@ export default {
               difficulty: 'intermediate',
               code: 'A& operator++();',
               note: 'Pre-increment restituisce reference, post-increment restituisce per valore.',
+              task: `Sovraccarica il pre-incremento ++ sulla classe A restituendo un riferimento all'oggetto dopo l'aggiornamento.`,
             },
             {
               english: 'Decrement Operator',
@@ -2517,6 +2652,7 @@ export default {
               context: 'oop',
               difficulty: 'intermediate',
               code: 'A& operator--();',
+              task: `Sovraccarica il pre-decremento -- sulla classe A restituendo un riferimento all'oggetto dopo la diminuzione.`,
             },
           ],
         },
@@ -2535,6 +2671,7 @@ export default {
               context: 'oop',
               difficulty: 'intermediate',
               code: 'bool operator==(const A& o) const;',
+              task: `Definisci l'operatore di uguaglianza operator== const su A che confronta i membri di due oggetti.`,
             },
             {
               english: 'Inequality Operator',
@@ -2546,6 +2683,7 @@ export default {
               context: 'oop',
               difficulty: 'intermediate',
               code: 'bool operator!=(const A& o) const;',
+              task: `Implementa l'operatore di disuguaglianza operator!= const su A coerentemente con la definizione di operator==.`,
             },
             {
               english: 'Less Than',
@@ -2557,6 +2695,7 @@ export default {
               context: 'oop',
               difficulty: 'intermediate',
               code: 'bool operator<(const A& o) const;',
+              task: `Dichiara su A l'operatore minore-di operator< const per renderla ordinabile da std::sort.`,
             },
             {
               english: 'Spaceship Operator',
@@ -2569,6 +2708,7 @@ export default {
               difficulty: 'intermediate',
               code: 'auto operator<=>(const A&) const = default;',
               note: 'Disponibile da C++20.',
+              task: 'Aggiungi su A un operatore spaceship <=> messo a default per generare automaticamente tutti gli operatori di confronto.',
             },
             {
               english: 'Strong Ordering',
@@ -2601,6 +2741,7 @@ export default {
               context: 'oop',
               difficulty: 'intermediate',
               code: 'bool operator==(const A&) const = default;',
+              task: 'Lascia che il compilatore generi il confronto di uguaglianza membro per membro dichiarando operator== const = default.',
             },
             {
               english: 'Logical Not',
@@ -2623,6 +2764,7 @@ export default {
               difficulty: 'intermediate',
               code: 'explicit operator bool() const;',
               note: 'Marcalo explicit per evitare conversioni implicite.',
+              task: `Definisci un operatore di conversione a bool marcato explicit per consentire l'uso dell'oggetto in condizioni if.`,
             },
             {
               english: 'Comparison Chain',
@@ -2651,6 +2793,7 @@ export default {
               context: 'oop',
               difficulty: 'intermediate',
               code: 'std::ostream& operator<<(std::ostream&, const A&);',
+              task: `Dichiara come funzione libera l'operator<< che inserisce un oggetto A in un std::ostream e ne restituisce il riferimento.`,
             },
             {
               english: 'Subscript Operator',
@@ -2662,6 +2805,7 @@ export default {
               context: 'oop',
               difficulty: 'intermediate',
               code: 'T& operator[](size_t i);',
+              task: `Sovraccarica l'operatore di indicizzazione [] su una classe restituendo per riferimento l'elemento all'indice i.`,
             },
             {
               english: 'Function Call Operator',
@@ -2674,6 +2818,7 @@ export default {
               difficulty: 'intermediate',
               code: 'int operator()(int x) const;',
               note: 'Crea functor / oggetti funzione.',
+              task: `Implementa l'operator() const sulla classe per trasformarla in un functor invocabile come una funzione su un intero.`,
             },
             {
               english: 'Conversion Operator',
@@ -2685,6 +2830,7 @@ export default {
               context: 'oop',
               difficulty: 'intermediate',
               code: 'operator double() const;',
+              task: `Definisci un operatore di conversione const verso double che restituisce una rappresentazione numerica dell'oggetto.`,
             },
             {
               english: 'Friend Function',
@@ -2696,6 +2842,7 @@ export default {
               context: 'oop',
               difficulty: 'intermediate',
               code: 'friend std::ostream& operator<<(std::ostream&, const A&);',
+              task: `Dichiara come funzione amica l'operator<< per std::ostream e A in modo che possa accedere ai membri privati.`,
             },
             {
               english: 'Arrow Operator',
@@ -2707,6 +2854,7 @@ export default {
               context: 'oop',
               difficulty: 'intermediate',
               code: 'T* operator->();',
+              task: `Sovraccarica l'operatore freccia -> in modo che restituisca un puntatore al tipo T da rivelare al chiamante.`,
             },
             {
               english: 'Address-of Operator',
@@ -2740,6 +2888,7 @@ export default {
               difficulty: 'intermediate',
               code: 'void* operator new(size_t);',
               note: 'Utile per pool allocator personalizzati.',
+              task: 'Sovraccarica operator new accettando un size_t per instradare le allocazioni della classe verso un allocatore custom.',
             },
             {
               english: 'Operator Symmetry',
@@ -2790,6 +2939,7 @@ export default {
               difficulty: 'intermediate',
               code: 'auto t = 10_km;',
               note: 'Disponibile da C++11.',
+              task: `Crea un letterale definito dall'utente _km e usalo per esprimere 10 chilometri come 10_km.`,
             },
             {
               english: 'Operator Function',
@@ -2820,6 +2970,7 @@ export default {
               context: 'oop',
               difficulty: 'intermediate',
               code: 'if (this == &other) return *this;',
+              task: `Proteggi l'operator= controllando l'auto-assegnazione con un confronto tra this e l'indirizzo di other prima della logica di copia.`,
             },
             {
               english: 'Copy and Swap',
@@ -2888,6 +3039,7 @@ export default {
               difficulty: 'intermediate',
               code: 'std::vector<int> v = {1, 2, 3};',
               note: 'Il container più usato. Memoria contigua.',
+              task: 'Costruisci un std::vector<int> chiamato v inizializzato con i tre valori 1, 2 e 3 tramite brace initialization.',
             },
             {
               english: 'List',
@@ -2899,6 +3051,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::list<int> l;',
+              task: 'Dichiara una std::list<int> vuota chiamata l da popolare in seguito sfruttando il doppio collegamento dei nodi.',
             },
             {
               english: 'Forward List',
@@ -2910,6 +3063,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::forward_list<int> fl;',
+              task: 'Dichiara una std::forward_list<int> fl che usa una lista a collegamento singolo per ridurre overhead di memoria.',
             },
             {
               english: 'Deque',
@@ -2922,6 +3076,7 @@ export default {
               difficulty: 'intermediate',
               code: 'std::deque<int> dq;',
               note: 'Double-ended queue.',
+              task: 'Crea una std::deque<int> dq per gestire inserimenti e rimozioni in O(1) sia in testa sia in coda.',
             },
             {
               english: 'Array',
@@ -2933,6 +3088,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::array<int, 5> a;',
+              task: 'Dichiara un std::array di 5 interi chiamato a per ottenere un array a dimensione fissa con interfaccia STL.',
             },
             {
               english: 'Span',
@@ -2945,6 +3101,7 @@ export default {
               difficulty: 'intermediate',
               code: 'std::span<int> view = vec;',
               note: 'Disponibile da C++20.',
+              task: 'Costruisci una std::span<int> view che riferisce gli elementi di vec senza copiarne i dati.',
             },
             {
               english: 'Capacity',
@@ -2956,6 +3113,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'v.capacity();',
+              task: 'Recupera la capacità allocata del vettore v richiamando il metodo capacity() per controllare lo spazio riservato.',
             },
             {
               english: 'Reserve',
@@ -2968,6 +3126,7 @@ export default {
               difficulty: 'intermediate',
               code: 'v.reserve(1000);',
               note: 'Evita riallocazioni in cicli.',
+              task: `Riserva preventivamente spazio per 1000 elementi nel vettore v con reserve(1000) per evitare riallocazioni durante l'inserimento.`,
             },
             {
               english: 'Push Back',
@@ -2979,6 +3138,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'v.push_back(42);',
+              task: 'Aggiungi il valore 42 in coda al vettore v invocando il metodo push_back.',
             },
             {
               english: 'Emplace Back',
@@ -2991,6 +3151,7 @@ export default {
               difficulty: 'intermediate',
               code: 'v.emplace_back(1, 2);',
               note: 'Più efficiente di push_back per oggetti complessi.',
+              task: 'Costruisci in coda al vettore v un nuovo elemento passando direttamente gli argomenti 1 e 2 a emplace_back.',
             },
           ],
         },
@@ -3010,6 +3171,7 @@ export default {
               difficulty: 'intermediate',
               code: 'std::map<std::string, int> m;',
               note: 'Implementato come red-black tree.',
+              task: 'Dichiara una std::map che associa chiavi std::string a valori int mantenendole ordinate alfabeticamente.',
             },
             {
               english: 'Set',
@@ -3021,6 +3183,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::set<int> s;',
+              task: 'Crea un std::set<int> chiamato s per memorizzare interi unici e mantenerli automaticamente ordinati.',
             },
             {
               english: 'Multimap',
@@ -3032,6 +3195,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::multimap<int, std::string> mm;',
+              task: 'Dichiara una std::multimap<int, std::string> mm capace di contenere più valori associati alla stessa chiave numerica.',
             },
             {
               english: 'Multiset',
@@ -3044,6 +3208,7 @@ export default {
               difficulty: 'intermediate',
               code: 'std::multiset<int> ms;',
               note: 'Termine C++: std::multiset (contenitore standard, non si traduce).',
+              task: 'Dichiara un std::multiset<int> chiamato ms per mantenere ordinati anche valori duplicati.',
             },
             {
               english: 'Unordered Map',
@@ -3055,6 +3220,7 @@ export default {
               difficulty: 'intermediate',
               code: 'std::unordered_map<std::string, int> um;',
               note: 'Termine C++: std::unordered_map (contenitore standard, non si traduce).',
+              task: 'Crea un std::unordered_map che mappa std::string a int sfruttando una tabella hash per lookup medi in O(1).',
             },
             {
               english: 'Unordered Set',
@@ -3066,6 +3232,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::unordered_set<int> us;',
+              task: 'Crea un std::unordered_set<int> chiamato us basato su hash per garantire test di appartenenza in tempo costante medio.',
             },
             {
               english: 'Hash Function',
@@ -3077,6 +3244,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::hash<std::string>{}(s);',
+              task: 'Invoca std::hash<std::string> sulla stringa s ricavandone il valore hash da usare come identificatore.',
             },
             {
               english: 'Bucket',
@@ -3098,6 +3266,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto [it, ok] = m.insert({k, v});',
+              task: `Inserisci nella mappa m la coppia chiave-valore (k, v) catturando con destructuring l'iteratore e il flag di successo.`,
             },
             {
               english: 'Find',
@@ -3109,6 +3278,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto it = m.find(key);',
+              task: `Cerca la chiave key nella mappa m con il metodo find e conserva l'iteratore restituito in it.`,
             },
           ],
         },
@@ -3127,6 +3297,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::stack<int> st;',
+              task: 'Dichiara un std::stack<int> chiamato st come adattatore LIFO sopra un container sottostante predefinito.',
             },
             {
               english: 'Queue Adapter',
@@ -3138,6 +3309,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::queue<int> q;',
+              task: 'Dichiara una std::queue<int> q come adattatore FIFO per gestire elementi in ordine di arrivo.',
             },
             {
               english: 'Priority Queue',
@@ -3150,6 +3322,7 @@ export default {
               difficulty: 'intermediate',
               code: 'std::priority_queue<int> pq;',
               note: 'Implementato come heap.',
+              task: `Crea una std::priority_queue<int> pq che restituisce sempre da top() l'elemento con priorità più alta.`,
             },
             {
               english: 'Top',
@@ -3161,6 +3334,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto v = st.top();',
+              task: `Recupera in v l'elemento attualmente in cima allo stack st chiamando il metodo top() senza rimuoverlo.`,
             },
             {
               english: 'Pop',
@@ -3173,6 +3347,7 @@ export default {
               difficulty: 'intermediate',
               code: 'st.pop();',
               note: 'Non restituisce valore, devi chiamare top() prima.',
+              task: `Rimuovi l'elemento in cima allo stack st invocando pop() dopo averne letto il valore con top().`,
             },
             {
               english: 'Front',
@@ -3184,6 +3359,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto v = q.front();',
+              task: `Ottieni l'elemento in testa alla queue q tramite il metodo front() e salvalo nella variabile v.`,
             },
             {
               english: 'Back',
@@ -3195,6 +3371,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto v = q.back();',
+              task: `Recupera con back() l'ultimo elemento inserito nella queue q senza rimuoverlo dalla coda.`,
             },
             {
               english: 'Underlying Container',
@@ -3226,6 +3403,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'if (v.empty()) { /* ... */ }',
+              task: 'Verifica con il metodo empty() che il container v non sia vuoto prima di accedere ai suoi elementi.',
             },
           ],
         },
@@ -3244,6 +3422,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto it = v.begin();',
+              task: `Ottieni l'iteratore al primo elemento del vettore v invocando il metodo begin() e salvalo in it.`,
             },
             {
               english: 'Begin',
@@ -3255,6 +3434,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto it = v.begin();',
+              task: 'Recupera con begin() un iteratore al primo elemento del container v come punto di partenza della traversata.',
             },
             {
               english: 'End',
@@ -3266,6 +3446,7 @@ export default {
               difficulty: 'intermediate',
               code: 'auto it = v.end();',
               note: 'Non dereferenziare end()!',
+              task: `Ottieni con end() l'iteratore sentinella appena oltre l'ultimo elemento del container v senza dereferenziarlo.`,
             },
             {
               english: 'Const Iterator',
@@ -3277,6 +3458,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto it = v.cbegin();',
+              task: `Richiedi un iteratore const al container v invocando cbegin() per garantire l'immutabilità degli elementi visitati.`,
             },
             {
               english: 'Reverse Iterator',
@@ -3288,6 +3470,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'for (auto it = v.rbegin(); it != v.rend(); ++it);',
+              task: `Scorri il container v dall'ultimo al primo elemento usando un iteratore inverso ottenuto con rbegin() e rend().`,
             },
             {
               english: 'Random Access Iterator',
@@ -3338,6 +3521,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::copy(a.begin(), a.end(), std::back_inserter(b));',
+              task: `Copia tutti gli elementi di a nel container b passando a std::copy l'adattatore di iteratori std::back_inserter.`,
             },
           ],
         },
@@ -3366,6 +3550,7 @@ export default {
               difficulty: 'intermediate',
               code: 'std::sort(v.begin(), v.end());',
               note: 'Tipicamente introsort, complessità O(n log n).',
+              task: `Ordina in-place il vettore v in ordine crescente chiamando std::sort sull'intervallo begin/end.`,
             },
             {
               english: 'Stable Sort',
@@ -3377,6 +3562,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::stable_sort(v.begin(), v.end());',
+              task: `Ordina il vettore v con std::stable_sort per preservare l'ordine relativo degli elementi considerati uguali.`,
             },
             {
               english: 'Std Find Algorithm',
@@ -3388,6 +3574,7 @@ export default {
               difficulty: 'intermediate',
               code: 'auto it = std::find(v.begin(), v.end(), x);',
               note: `Rinominato per distinguerlo dall'item 'Find' come membro di mappe/set di cpp_stl_2.`,
+              task: `Cerca il valore x nel vettore v con l'algoritmo std::find sull'intervallo begin/end e conserva l'iteratore risultante.`,
             },
             {
               english: 'Find If',
@@ -3399,6 +3586,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto it = std::find_if(v.begin(), v.end(), pred);',
+              task: 'Individua nel vettore v il primo elemento che soddisfa il predicato pred utilizzando std::find_if.',
             },
             {
               english: 'Binary Search',
@@ -3410,6 +3598,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'bool found = std::binary_search(v.begin(), v.end(), x);',
+              task: 'Verifica con std::binary_search se il valore x è presente nel vettore ordinato v in tempo logaritmico.',
             },
             {
               english: 'Lower Bound',
@@ -3421,6 +3610,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto it = std::lower_bound(v.begin(), v.end(), x);',
+              task: 'Trova con std::lower_bound il primo iteratore in v il cui valore non sia minore di x.',
             },
             {
               english: 'Upper Bound',
@@ -3432,6 +3622,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto it = std::upper_bound(v.begin(), v.end(), x);',
+              task: 'Trova con std::upper_bound il primo iteratore in v il cui valore sia strettamente maggiore di x.',
             },
             {
               english: 'Min Element',
@@ -3443,6 +3634,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto it = std::min_element(v.begin(), v.end());',
+              task: `Individua l'elemento minimo nel vettore v invocando std::min_element sull'intervallo begin/end.`,
             },
             {
               english: 'Max Element',
@@ -3454,6 +3646,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto it = std::max_element(v.begin(), v.end());',
+              task: `Recupera con std::max_element l'iteratore al valore massimo presente nel vettore v.`,
             },
             {
               english: 'Comparator',
@@ -3465,6 +3658,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::sort(v.begin(), v.end(), std::greater<>{});',
+              task: 'Ordina il vettore v in modo decrescente passando std::greater<>{} come comparatore a std::sort.',
             },
           ],
         },
@@ -3483,6 +3677,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::transform(a.begin(), a.end(), b.begin(), f);',
+              task: `Applica la funzione f a ogni elemento di a scrivendo il risultato in b tramite l'algoritmo std::transform.`,
             },
             {
               english: 'Copy',
@@ -3494,6 +3689,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::copy(a.begin(), a.end(), b.begin());',
+              task: 'Copia con std::copy gli elementi di a nel container b a partire dal suo iteratore di inizio.',
             },
             {
               english: 'Move',
@@ -3505,6 +3701,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::move(a.begin(), a.end(), b.begin());',
+              task: 'Sposta tutti gli elementi da a verso b con std::move trasferendone la proprietà senza copie profonde.',
             },
             {
               english: 'Fill',
@@ -3516,6 +3713,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::fill(v.begin(), v.end(), 0);',
+              task: `Riempi il vettore v con il valore 0 attraverso std::fill applicato all'intervallo begin/end.`,
             },
             {
               english: 'Generate',
@@ -3527,6 +3725,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::generate(v.begin(), v.end(), rng);',
+              task: 'Popola il vettore v invocando std::generate con un generatore rng che produce ogni nuovo valore.',
             },
             {
               english: 'Replace',
@@ -3538,6 +3737,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::replace(v.begin(), v.end(), 0, 1);',
+              task: `Sostituisci nel vettore v ogni occorrenza di 0 con 1 utilizzando l'algoritmo std::replace.`,
             },
             {
               english: 'Remove',
@@ -3550,6 +3750,7 @@ export default {
               difficulty: 'intermediate',
               code: 'auto it = std::remove(v.begin(), v.end(), 0);',
               note: 'Va seguito da v.erase(it, v.end()) (erase-remove idiom).',
+              task: `Sposta in fondo a v tutte le occorrenze di 0 con std::remove e conserva l'iteratore al nuovo end logico.`,
             },
             {
               english: 'Erase Remove Idiom',
@@ -3562,6 +3763,7 @@ export default {
               difficulty: 'intermediate',
               code: 'v.erase(std::remove(v.begin(), v.end(), 0), v.end());',
               note: 'In C++20 puoi usare std::erase direttamente.',
+              task: `Elimina fisicamente tutte le occorrenze di 0 da v applicando l'idioma erase-remove con std::remove ed erase.`,
             },
             {
               english: 'Unique',
@@ -3573,6 +3775,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto it = std::unique(v.begin(), v.end());',
+              task: `Comprimi i duplicati consecutivi nel vettore v invocando std::unique e conservando l'iteratore al nuovo end logico.`,
             },
             {
               english: 'Reverse',
@@ -3584,6 +3787,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::reverse(v.begin(), v.end());',
+              task: `Inverti in-place l'ordine degli elementi nel vettore v applicando std::reverse sull'intervallo begin/end.`,
             },
           ],
         },
@@ -3603,6 +3807,7 @@ export default {
               difficulty: 'intermediate',
               code: 'auto sum = std::accumulate(v.begin(), v.end(), 0);',
               note: 'Richiede <numeric>.',
+              task: `Calcola la somma di tutti gli elementi di v partendo da 0 invocando std::accumulate dall'header numeric.`,
             },
             {
               english: 'Reduce',
@@ -3615,6 +3820,7 @@ export default {
               difficulty: 'intermediate',
               code: 'auto sum = std::reduce(v.begin(), v.end());',
               note: 'Disponibile da C++17.',
+              task: 'Aggrega gli elementi di v con std::reduce sfruttando la potenziale esecuzione parallela introdotta in C++17.',
             },
             {
               english: 'Inner Product',
@@ -3626,6 +3832,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto dp = std::inner_product(a.begin(), a.end(), b.begin(), 0);',
+              task: `Calcola con std::inner_product il prodotto scalare tra i vettori a e b partendo dall'accumulatore 0.`,
             },
             {
               english: 'Partial Sum',
@@ -3637,6 +3844,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::partial_sum(a.begin(), a.end(), b.begin());',
+              task: 'Genera nel vettore b le somme parziali progressive dei valori di a invocando std::partial_sum.',
             },
             {
               english: 'Adjacent Difference',
@@ -3648,6 +3856,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::adjacent_difference(a.begin(), a.end(), b.begin());',
+              task: 'Scrivi in b le differenze tra elementi consecutivi di a applicando std::adjacent_difference.',
             },
             {
               english: 'Iota',
@@ -3660,6 +3869,7 @@ export default {
               difficulty: 'intermediate',
               code: 'std::iota(v.begin(), v.end(), 0);',
               note: 'Genera 0, 1, 2, 3, ...',
+              task: 'Riempi il vettore v con la sequenza 0, 1, 2, ... usando std::iota a partire dal valore iniziale 0.',
             },
             {
               english: 'Count',
@@ -3671,6 +3881,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto n = std::count(v.begin(), v.end(), 1);',
+              task: `Conta con std::count quante volte il valore 1 compare nel vettore v lungo l'intervallo begin/end.`,
             },
             {
               english: 'Count If',
@@ -3682,6 +3893,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto n = std::count_if(v.begin(), v.end(), pred);',
+              task: 'Conta con std::count_if quanti elementi di v soddisfano il predicato pred passato come terzo argomento.',
             },
             {
               english: 'All Of',
@@ -3693,6 +3905,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'bool ok = std::all_of(v.begin(), v.end(), pred);',
+              task: 'Verifica con std::all_of che tutti gli elementi di v rispettino la condizione descritta dal predicato pred.',
             },
             {
               english: 'Any Of',
@@ -3704,6 +3917,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'bool found = std::any_of(v.begin(), v.end(), pred);',
+              task: `Verifica con std::any_of se almeno un elemento di v soddisfa il predicato pred passato all'algoritmo.`,
             },
           ],
         },
@@ -3723,6 +3937,7 @@ export default {
               difficulty: 'intermediate',
               code: '#include <ranges>',
               note: 'Disponibile da C++20.',
+              task: `Includi l'header <ranges> per abilitare la libreria ranges di C++20 con i suoi algoritmi e adattatori.`,
             },
             {
               english: 'Range',
@@ -3734,6 +3949,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::ranges::sort(v);',
+              task: 'Ordina il container v in-place passandolo direttamente come range a std::ranges::sort senza iteratori espliciti.',
             },
             {
               english: 'View',
@@ -3745,6 +3961,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto v = std::views::iota(0, 10);',
+              task: 'Costruisci una view lazy degli interi da 0 a 9 utilizzando std::views::iota e salvala in v.',
             },
             {
               english: 'Filter View',
@@ -3756,6 +3973,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto evens = v | std::views::filter(is_even);',
+              task: 'Crea una vista filtro evens che lascia passare solo gli elementi pari del vettore v tramite std::views::filter.',
             },
             {
               english: 'Transform View',
@@ -3767,6 +3985,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto sq = v | std::views::transform([](int x){return x*x;});',
+              task: 'Crea una vista sq che eleva al quadrato ogni elemento di v tramite std::views::transform con una lambda.',
             },
             {
               english: 'Take View',
@@ -3778,6 +3997,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto first3 = v | std::views::take(3);',
+              task: 'Costruisci una vista first3 con std::views::take che restituisce solo i primi tre elementi del range v.',
             },
             {
               english: 'Drop View',
@@ -3789,6 +4009,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto rest = v | std::views::drop(3);',
+              task: 'Costruisci una vista rest con std::views::drop che salta i primi tre elementi del range v.',
             },
             {
               english: 'Pipe Operator',
@@ -3800,6 +4021,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'v | views::filter(p) | views::transform(f);',
+              task: `Concatena con l'operatore pipe la view filter(p) e transform(f) sul range v per comporre una pipeline lazy.`,
             },
             {
               english: 'Lazy Evaluation',
@@ -3822,6 +4044,7 @@ export default {
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto it = std::ranges::find(v, x);',
+              task: `Cerca il valore x nel container v con l'algoritmo su range std::ranges::find passando direttamente v come argomento.`,
             },
           ],
         },
@@ -3849,6 +4072,7 @@ export default {
               context: 'templates',
               difficulty: 'intermediate',
               code: 'template <typename T> T add(T a, T b);',
+              task: 'Dichiara un template di funzione add che somma due valori dello stesso tipo T deducendolo dagli argomenti.',
             },
             {
               english: 'Function Template',
@@ -3860,6 +4084,7 @@ export default {
               context: 'templates',
               difficulty: 'intermediate',
               code: 'template<class T> T max(T a, T b);',
+              task: 'Scrivi un function template max<T> che restituisce il maggiore fra due valori dello stesso tipo T.',
             },
             {
               english: 'Type Parameter',
@@ -3871,6 +4096,7 @@ export default {
               context: 'templates',
               difficulty: 'intermediate',
               code: 'template <typename T>',
+              task: 'Introduci un type parameter T usando template<typename T> per parametrizzare la funzione sul tipo degli argomenti.',
             },
             {
               english: 'Typename Keyword',
@@ -3893,6 +4119,7 @@ export default {
               context: 'templates',
               difficulty: 'intermediate',
               code: 'template <class T>',
+              task: 'Usa la parola chiave class al posto di typename per dichiarare il parametro di tipo T del template.',
             },
             {
               english: 'Template Argument',
@@ -3904,6 +4131,7 @@ export default {
               context: 'templates',
               difficulty: 'intermediate',
               code: 'add<int>(1, 2);',
+              task: `Chiama add specificando esplicitamente l'argomento di template int con la sintassi add<int>(1, 2).`,
             },
             {
               english: 'Template Instantiation',
@@ -3925,6 +4153,7 @@ export default {
               context: 'templates',
               difficulty: 'intermediate',
               code: 'add(1, 2); // T deduced as int',
+              task: 'Invoca add(1, 2) lasciando che il compilatore deduca T come int senza parentesi angolari esplicite.',
             },
             {
               english: 'Generic Function',
@@ -3964,6 +4193,7 @@ export default {
               context: 'templates',
               difficulty: 'intermediate',
               code: 'template<class T> class Box { T value; };',
+              task: 'Definisci una class template Box<T> con un singolo membro value di tipo T per incapsulare un valore generico.',
             },
             {
               english: 'Generic Container',
@@ -4007,6 +4237,7 @@ export default {
               difficulty: 'intermediate',
               code: 'std::pair p{1, 2.0}; // pair<int,double>',
               note: 'Disponibile da C++17.',
+              task: 'Costruisci std::pair p{1, 2.0} sfruttando CTAD perché il compilatore deduca pair<int,double> automaticamente.',
             },
             {
               english: 'Deduction Guide',
@@ -4018,6 +4249,7 @@ export default {
               context: 'templates',
               difficulty: 'intermediate',
               code: 'template<class T> Box(T) -> Box<T>;',
+              task: 'Aggiungi una deduction guide template<class T> Box(T) -> Box<T> per consentire la deduzione del tipo dal costruttore.',
             },
             {
               english: 'Specialization',
@@ -4029,6 +4261,7 @@ export default {
               context: 'templates',
               difficulty: 'intermediate',
               code: 'template<> class Box<bool> { /* ... */ };',
+              task: 'Fornisci una specializzazione completa di Box per il tipo bool con template<> class Box<bool>.',
             },
             {
               english: 'Partial Specialization',
@@ -4041,6 +4274,7 @@ export default {
               difficulty: 'intermediate',
               code: 'template<class T> class Box<T*> {};',
               note: 'Disponibile solo per template di classe.',
+              task: 'Crea una specializzazione parziale di Box per puntatori usando template<class T> class Box<T*>.',
             },
             {
               english: 'Full Specialization',
@@ -4052,6 +4286,7 @@ export default {
               context: 'templates',
               difficulty: 'intermediate',
               code: 'template<> class Box<int> {};',
+              task: 'Specializza completamente Box per int scrivendo template<> class Box<int> con una sintassi diversa dal template generico.',
             },
             {
               english: 'Generic Programming',
@@ -4080,6 +4315,7 @@ export default {
               context: 'templates',
               difficulty: 'intermediate',
               code: 'template<int N> class Buffer {};',
+              task: 'Parametrizza la classe Buffer su un valore int N invece che su un tipo con template<int N>.',
             },
             {
               english: 'Integer Parameter',
@@ -4091,6 +4327,7 @@ export default {
               context: 'templates',
               difficulty: 'intermediate',
               code: 'std::array<int, 10> a;',
+              task: 'Istanzia std::array<int, 10> passando 10 come parametro intero non di tipo che fissa la dimensione.',
             },
             {
               english: 'Pointer Parameter',
@@ -4113,6 +4350,7 @@ export default {
               difficulty: 'intermediate',
               code: 'template<auto N> /* ... */',
               note: 'Disponibile da C++17.',
+              task: 'Usa template<auto N> per accettare un valore costante non di tipo lasciando dedurre il tipo al compilatore.',
             },
             {
               english: 'Template Default Argument',
@@ -4125,6 +4363,7 @@ export default {
               difficulty: 'intermediate',
               code: 'template<class T = int> class A {};',
               note: `Rinominato per distinguerlo dall'item 'Default Argument' delle funzioni di cpp_foundations_6.`,
+              task: 'Imposta un argomento template di default scrivendo template<class T = int> class A perché T sia int se omesso.',
             },
             {
               english: 'Template Template',
@@ -4136,6 +4375,7 @@ export default {
               context: 'templates',
               difficulty: 'intermediate',
               code: 'template<template<class> class C>',
+              task: 'Dichiara un parametro template di template con template<template<class> class C> per accettare un container generico.',
             },
             {
               english: 'Type Alias Template',
@@ -4148,6 +4388,7 @@ export default {
               difficulty: 'intermediate',
               code: 'template<class T> using Vec = std::vector<T>;',
               note: 'Disponibile da C++11.',
+              task: 'Definisci un alias template Vec<T> equivalente a std::vector<T> usando template<class T> using.',
             },
             {
               english: 'Variable Template',
@@ -4160,6 +4401,7 @@ export default {
               difficulty: 'intermediate',
               code: 'template<class T> constexpr T pi = T(3.14);',
               note: 'Disponibile da C++14.',
+              task: 'Crea una variabile template pi<T> di valore T(3.14) parametrizzata sul tipo numerico con constexpr.',
             },
             {
               english: 'Compile Time Constant',
@@ -4230,6 +4472,7 @@ export default {
               context: 'templates',
               difficulty: 'intermediate',
               code: 'typename T::value_type x;',
+              task: 'Disambigua T::value_type come tipo dipendente anteponendo typename nella dichiarazione typename T::value_type x.',
             },
             {
               english: 'Template Disambiguation',
@@ -4241,6 +4484,7 @@ export default {
               context: 'templates',
               difficulty: 'intermediate',
               code: 'p.template foo<int>();',
+              task: 'Inserisci la parola chiave template in p.template foo<int>() per disambiguare la chiamata a un membro template.',
             },
             {
               english: 'Concept Error',
@@ -4273,6 +4517,7 @@ export default {
               context: 'templates',
               difficulty: 'intermediate',
               code: 'static_assert(sizeof(int) >= 4, "min");',
+              task: 'Aggiungi static_assert(sizeof(int) >= 4, "min") per verificare a tempo di compilazione il vincolo sulla dimensione di int.',
             },
             {
               english: 'Template Bloat',
@@ -4295,6 +4540,7 @@ export default {
               context: 'templates',
               difficulty: 'intermediate',
               code: 'template class Box<int>;',
+              task: `Forza l'istanziazione esplicita del template di classe per int scrivendo template class Box<int> in un .cpp.`,
             },
           ],
         },
@@ -4334,6 +4580,7 @@ export default {
               difficulty: 'intermediate',
               code: 'std::unique_ptr<T> p;',
               note: 'Non è copiabile, solo movibile.',
+              task: 'Dichiara uno std::unique_ptr<T> p che gestisca in proprietà esclusiva una risorsa allocata dinamicamente.',
             },
             {
               english: 'Make Unique',
@@ -4346,6 +4593,7 @@ export default {
               difficulty: 'intermediate',
               code: 'auto p = std::make_unique<Foo>(1, 2);',
               note: 'Preferisci make_unique a new.',
+              task: 'Crea un unique_ptr a Foo passando 1 e 2 al costruttore tramite std::make_unique<Foo>(1, 2).',
             },
             {
               english: 'Ownership',
@@ -4367,6 +4615,7 @@ export default {
               context: 'memory',
               difficulty: 'intermediate',
               code: 'auto q = std::move(p);',
+              task: 'Trasferisci la proprietà del unique_ptr p al nuovo puntatore q con auto q = std::move(p).',
             },
             {
               english: 'Reset',
@@ -4378,6 +4627,7 @@ export default {
               context: 'memory',
               difficulty: 'intermediate',
               code: 'p.reset();',
+              task: `Azzera il unique_ptr p chiamando p.reset() per distruggere l'oggetto posseduto e lasciare il puntatore vuoto.`,
             },
             {
               english: 'Release',
@@ -4390,6 +4640,7 @@ export default {
               difficulty: 'intermediate',
               code: 'auto raw = p.release();',
               note: 'Dopo release, devi liberare manualmente.',
+              task: 'Cedi la proprietà del unique_ptr p con p.release(), salvando il puntatore raw da liberare manualmente.',
             },
             {
               english: 'Get Method',
@@ -4401,6 +4652,7 @@ export default {
               context: 'memory',
               difficulty: 'intermediate',
               code: 'T* raw = p.get();',
+              task: 'Ottieni il puntatore grezzo posseduto dal unique_ptr p chiamando p.get() senza trasferire la proprietà.',
             },
             {
               english: 'Custom Deleter',
@@ -4412,6 +4664,7 @@ export default {
               context: 'memory',
               difficulty: 'intermediate',
               code: 'std::unique_ptr<FILE, decltype(&fclose)> f(p, &fclose);',
+              task: 'Costruisci uno unique_ptr<FILE> con deleter personalizzato &fclose per chiudere automaticamente il file.',
             },
             {
               english: 'Array Unique Ptr',
@@ -4423,6 +4676,7 @@ export default {
               context: 'memory',
               difficulty: 'intermediate',
               code: 'auto arr = std::make_unique<int[]>(10);',
+              task: 'Alloca un array di 10 int gestito da unique_ptr con std::make_unique<int[]>(10).',
             },
           ],
         },
@@ -4441,6 +4695,7 @@ export default {
               context: 'memory',
               difficulty: 'intermediate',
               code: 'std::shared_ptr<T> p;',
+              task: 'Dichiara uno std::shared_ptr<T> p per gestire la condivisione di proprietà tramite reference counting.',
             },
             {
               english: 'Make Shared',
@@ -4453,6 +4708,7 @@ export default {
               difficulty: 'intermediate',
               code: 'auto p = std::make_shared<Foo>(1, 2);',
               note: 'Singola allocazione per oggetto e control block.',
+              task: 'Costruisci uno shared_ptr<Foo> con std::make_shared<Foo>(1, 2) usando una sola allocazione per oggetto e control block.',
             },
             {
               english: 'Reference Count',
@@ -4464,6 +4720,7 @@ export default {
               context: 'memory',
               difficulty: 'intermediate',
               code: 'p.use_count();',
+              task: 'Interroga il numero di owner condivisi del shared_ptr p chiamando p.use_count().',
             },
             {
               english: 'Control Block',
@@ -4507,6 +4764,7 @@ export default {
               context: 'memory',
               difficulty: 'intermediate',
               code: 'std::shared_ptr<int> q(p, &p->member);',
+              task: 'Usa il costruttore di aliasing per ottenere uno shared_ptr a p->member che condivide il control block di p.',
             },
             {
               english: 'Cyclic Reference',
@@ -4529,6 +4787,7 @@ export default {
               context: 'memory',
               difficulty: 'intermediate',
               code: 'auto n = p.use_count();',
+              task: 'Salva in n il conteggio dei riferimenti attivi sullo shared_ptr p con auto n = p.use_count().',
             },
             {
               english: 'Enable Shared From This',
@@ -4540,6 +4799,7 @@ export default {
               context: 'memory',
               difficulty: 'intermediate',
               code: 'class A : public std::enable_shared_from_this<A> {};',
+              task: 'Fai ereditare la classe A da std::enable_shared_from_this<A> per ottenere uno shared_ptr a se stessa con shared_from_this.',
             },
           ],
         },
@@ -4559,6 +4819,7 @@ export default {
               difficulty: 'intermediate',
               code: 'std::weak_ptr<T> w = sp;',
               note: 'Termine C++: std::weak_ptr (smart pointer standard, non si traduce).',
+              task: 'Costruisci uno std::weak_ptr<T> w a partire da uno shared_ptr sp per osservare senza trattenere la risorsa.',
             },
             {
               english: 'Lock',
@@ -4569,6 +4830,7 @@ export default {
               context: 'memory',
               difficulty: 'intermediate',
               code: 'if (auto sp = w.lock()) { /* use */ }',
+              task: 'Promuovi il weak_ptr w a shared_ptr con w.lock() e usalo solo se la risorsa è ancora viva.',
             },
             {
               english: 'Expired',
@@ -4580,6 +4842,7 @@ export default {
               context: 'memory',
               difficulty: 'intermediate',
               code: 'if (w.expired()) { /* ... */ }',
+              task: 'Verifica se la risorsa puntata dal weak_ptr w è stata distrutta con w.expired() prima di usarla.',
             },
             {
               english: 'Observer Pattern',
@@ -4728,6 +4991,7 @@ export default {
               difficulty: 'intermediate',
               code: 'std::lock_guard lk(m);',
               note: 'Termine C++: std::lock_guard (classe RAII standard, non si traduce).',
+              task: 'Proteggi la sezione critica acquisendo il mutex m tramite uno std::lock_guard lk con stile RAII.',
             },
             {
               english: 'File Guard',
@@ -4784,6 +5048,7 @@ export default {
               context: 'exceptions',
               difficulty: 'intermediate',
               code: 'throw std::runtime_error("boom");',
+              task: `Solleva un'eccezione di tipo std::runtime_error con il messaggio "boom" per segnalare un errore non recuperabile.`,
             },
             {
               english: 'Try Block',
@@ -4794,6 +5059,7 @@ export default {
               context: 'exceptions',
               difficulty: 'intermediate',
               code: 'try { /* ... */ }',
+              task: 'Racchiudi il codice potenzialmente eccezionale in un blocco try per consentirne la gestione successiva.',
             },
             {
               english: 'Catch Block',
@@ -4805,6 +5071,7 @@ export default {
               context: 'exceptions',
               difficulty: 'intermediate',
               code: 'catch (const std::exception& e) {}',
+              task: 'Aggiungi un blocco catch (const std::exception& e) per intercettare per riferimento qualsiasi eccezione standard.',
             },
             {
               english: 'Throw',
@@ -4816,6 +5083,7 @@ export default {
               context: 'exceptions',
               difficulty: 'intermediate',
               code: 'throw 42;',
+              task: `Lancia il valore intero 42 con l'istruzione throw 42 mostrando il throw nella forma più essenziale.`,
             },
             {
               english: 'Rethrow',
@@ -4827,6 +5095,7 @@ export default {
               context: 'exceptions',
               difficulty: 'intermediate',
               code: 'catch (...) { /* log */ throw; }',
+              task: `Dentro un catch (...) logga l'errore e poi rilancia l'eccezione corrente con un throw senza argomenti.`,
             },
             {
               english: 'Catch All',
@@ -4838,6 +5107,7 @@ export default {
               difficulty: 'intermediate',
               code: 'catch (...) {}',
               note: 'Ultimo recurso, perdi le informazioni.',
+              task: 'Aggiungi un catch (...) come ultima risorsa per intercettare qualunque eccezione, pur perdendone le informazioni.',
             },
             {
               english: 'Stack Unwinding',
@@ -4869,6 +5139,7 @@ export default {
               difficulty: 'intermediate',
               code: 'catch (const std::exception& e)',
               note: 'Evita lo slicing.',
+              task: 'Cattura sempre per riferimento con catch (const std::exception& e) per evitare slicing e copie inutili.',
             },
             {
               english: 'Uncaught Exception',
@@ -4897,6 +5168,7 @@ export default {
               context: 'exceptions',
               difficulty: 'intermediate',
               code: 'class MyEx : public std::exception {};',
+              task: 'Definisci MyEx come classe derivata da std::exception per integrarla nella gerarchia standard delle eccezioni.',
             },
             {
               english: 'Runtime Error',
@@ -4908,6 +5180,7 @@ export default {
               context: 'exceptions',
               difficulty: 'intermediate',
               code: 'throw std::runtime_error("oops");',
+              task: 'Solleva uno std::runtime_error("oops") per segnalare un errore rilevabile solo a runtime.',
             },
             {
               english: 'Logic Error',
@@ -4919,6 +5192,7 @@ export default {
               context: 'exceptions',
               difficulty: 'intermediate',
               code: 'throw std::logic_error("bad arg");',
+              task: 'Lancia uno std::logic_error("bad arg") per indicare una violazione di precondizione del codice chiamante.',
             },
             {
               english: 'Out of Range',
@@ -4930,6 +5204,7 @@ export default {
               context: 'exceptions',
               difficulty: 'intermediate',
               code: 'v.at(i); // throws out_of_range',
+              task: 'Accedi al vettore v con v.at(i) per ottenere il controllo dei limiti e un eventuale std::out_of_range.',
             },
             {
               english: 'Invalid Argument',
@@ -4970,6 +5245,7 @@ export default {
               context: 'exceptions',
               difficulty: 'intermediate',
               code: 'std::cerr << e.what();',
+              task: `Stampa il messaggio descrittivo dell'eccezione e su std::cerr richiamando e.what().`,
             },
             {
               english: 'Custom Exception',
@@ -4981,6 +5257,7 @@ export default {
               context: 'exceptions',
               difficulty: 'intermediate',
               code: 'class NetworkErr : public std::runtime_error {};',
+              task: 'Crea una classe NetworkErr che eredita da std::runtime_error per modellare errori di rete specifici.',
             },
             {
               english: 'Exception Specification',
@@ -5010,6 +5287,7 @@ export default {
               difficulty: 'intermediate',
               code: 'void swap(A&, A&) noexcept;',
               note: 'Termine C++: noexcept (parola chiave del linguaggio, non si traduce).',
+              task: 'Marca void swap(A&, A&) noexcept per garantire al compilatore che la funzione non solleva eccezioni.',
             },
             {
               english: 'Noexcept Query Operator',
@@ -5021,6 +5299,7 @@ export default {
               difficulty: 'intermediate',
               code: 'static_assert(noexcept(swap(a, b)));',
               note: `Rinominato per distinguerlo dall'item 'Noexcept Operator' come specificatore in cpp_oop_16.`,
+              task: 'Usa static_assert(noexcept(swap(a, b))) per verificare a tempo di compilazione che swap sia dichiarato noexcept.',
             },
             {
               english: 'Conditional Noexcept',
@@ -5031,6 +5310,7 @@ export default {
               context: 'exceptions',
               difficulty: 'intermediate',
               code: 'void f() noexcept(noexcept(g()));',
+              task: 'Dichiara f() noexcept(noexcept(g())) per propagare condizionalmente la garanzia di non-throw da g.',
             },
             {
               english: 'Strong Guarantee',
@@ -5073,6 +5353,7 @@ export default {
               difficulty: 'intermediate',
               code: 'A(A&&) noexcept;',
               note: 'Permette ottimizzazioni nei container STL.',
+              task: 'Marca il costruttore di move A(A&&) noexcept per abilitare le ottimizzazioni di crescita nei container STL.',
             },
             {
               english: 'Throw From Destructor',
@@ -5094,6 +5375,7 @@ export default {
               difficulty: 'intermediate',
               code: 'std::terminate();',
               note: 'Termine C++: std::terminate (funzione standard, non si traduce).',
+              task: `Forza l'interruzione immediata del programma chiamando std::terminate() nella condizione di errore irrecuperabile.`,
             },
             {
               english: 'Set Terminate',
@@ -5105,6 +5387,7 @@ export default {
               context: 'exceptions',
               difficulty: 'intermediate',
               code: 'std::set_terminate(my_handler);',
+              task: 'Registra my_handler come handler di terminazione con std::set_terminate(my_handler).',
             },
           ],
         },
@@ -5124,6 +5407,7 @@ export default {
               difficulty: 'intermediate',
               code: 'std::optional<int> n;',
               note: 'Disponibile da C++17.',
+              task: 'Dichiara uno std::optional<int> n per rappresentare un intero che può anche essere assente.',
             },
             {
               english: 'Expected',
@@ -5136,6 +5420,7 @@ export default {
               difficulty: 'intermediate',
               code: 'std::expected<int, Error> r;',
               note: 'Termine C++: std::expected (tipo standard C++23, non si traduce).',
+              task: 'Dichiara uno std::expected<int, Error> r per restituire un intero in caso di successo o un Error in caso di fallimento.',
             },
             {
               english: 'Error Code',
@@ -5178,6 +5463,7 @@ export default {
               difficulty: 'intermediate',
               code: 'assert(p != nullptr);',
               note: 'Disabilitate con NDEBUG.',
+              task: 'Inserisci assert(p != nullptr) per verificare in debug che il puntatore p non sia nullo.',
             },
             {
               english: 'Contract Check',
@@ -5243,6 +5529,7 @@ export default {
               difficulty: 'intermediate',
               code: 'auto f = [](int x) { return x*2; };',
               note: 'Disponibile da C++11.',
+              task: 'Crea una lambda f che riceve un int x e restituisce x*2, salvandola in una variabile auto.',
             },
             {
               english: 'Capture List',
@@ -5254,6 +5541,7 @@ export default {
               context: 'lambdas',
               difficulty: 'intermediate',
               code: '[x, &y]() { /* ... */ }',
+              task: 'Specifica nella capture list [x, &y] di catturare x per valore e y per riferimento dalla closure circostante.',
             },
             {
               english: 'Capture By Value',
@@ -5265,6 +5553,7 @@ export default {
               context: 'lambdas',
               difficulty: 'intermediate',
               code: '[x]() { return x; }',
+              task: 'Cattura x per valore con [x] in modo che la lambda lavori su una copia indipendente.',
             },
             {
               english: 'Capture By Reference',
@@ -5277,6 +5566,7 @@ export default {
               difficulty: 'intermediate',
               code: '[&x]() { ++x; }',
               note: 'Attenzione alla durata della variabile catturata.',
+              task: 'Cattura x per riferimento con [&x] e incrementalo nel corpo della lambda con ++x.',
             },
             {
               english: 'Default Capture',
@@ -5289,6 +5579,7 @@ export default {
               difficulty: 'intermediate',
               code: '[=]() { /* ... */ }',
               note: 'Sconsigliato dalle Core Guidelines.',
+              task: 'Usa la cattura di default per valore [=] per catturare implicitamente tutte le variabili utilizzate nella lambda.',
             },
             {
               english: 'Init Capture',
@@ -5300,6 +5591,7 @@ export default {
               difficulty: 'intermediate',
               code: '[p = std::move(ptr)]() { /* ... */ }',
               note: 'Disponibile da C++14.',
+              task: 'Sposta ptr nella closure con la init capture [p = std::move(ptr)] per dare alla lambda la proprietà della risorsa.',
             },
             {
               english: 'Mutable Lambda',
@@ -5311,6 +5603,7 @@ export default {
               context: 'lambdas',
               difficulty: 'intermediate',
               code: '[x]() mutable { ++x; }',
+              task: 'Marca la lambda come mutable in modo da poter modificare la copia di x catturata per valore con ++x.',
             },
             {
               english: 'Closure',
@@ -5341,6 +5634,7 @@ export default {
               context: 'lambdas',
               difficulty: 'intermediate',
               code: '[]() -> double { return 1.0; }',
+              task: 'Specifica un trailing return type -> double sulla lambda che ritorna 1.0 per forzare il tipo di ritorno.',
             },
           ],
         },
@@ -5359,6 +5653,7 @@ export default {
               context: 'lambdas',
               difficulty: 'intermediate',
               code: 'std::function<int(int)> f = [](int x){return x+1;};',
+              task: 'Avvolgi una lambda che incrementa di uno in uno std::function<int(int)> per memorizzarla type-erased.',
             },
             {
               english: 'Callable',
@@ -5380,6 +5675,7 @@ export default {
               context: 'lambdas',
               difficulty: 'intermediate',
               code: 'int (*fp)(int) = &add;',
+              task: `Dichiara un puntatore a funzione int (*fp)(int) e assegnagli l'indirizzo della funzione add.`,
             },
             {
               english: 'Functor',
@@ -5390,6 +5686,7 @@ export default {
               context: 'lambdas',
               difficulty: 'intermediate',
               code: 'struct F { int operator()(int x); };',
+              task: 'Definisci uno struct F con operator()(int x) per ottenere un funtore richiamabile come una funzione.',
             },
             {
               english: 'Bind',
@@ -5401,6 +5698,7 @@ export default {
               difficulty: 'intermediate',
               code: 'auto g = std::bind(f, 1, std::placeholders::_1);',
               note: 'Termine C++: std::bind (funzione standard, non si traduce). Spesso preferibile una lambda.',
+              task: 'Crea g legando il primo argomento di f a 1 con std::bind(f, 1, std::placeholders::_1).',
             },
             {
               english: 'Higher Order Function',
@@ -5453,6 +5751,7 @@ export default {
               difficulty: 'intermediate',
               code: 'std::invoke(f, args);',
               note: 'Termine C++: std::invoke (funzione standard, non si traduce).',
+              task: 'Invoca uniformemente il callable f con i suoi argomenti tramite std::invoke(f, args).',
             },
           ],
         },
@@ -5471,6 +5770,7 @@ export default {
               difficulty: 'intermediate',
               code: 'auto f = [](auto x) { return x + 1; };',
               note: 'Disponibile da C++14.',
+              task: 'Scrivi una lambda generica con parametro auto x che restituisce x + 1 indipendentemente dal tipo.',
             },
             {
               english: 'Template Lambda',
@@ -5482,6 +5782,7 @@ export default {
               context: 'lambdas',
               difficulty: 'intermediate',
               code: '[]<typename T>(T x) { /* ... */ }',
+              task: 'Dichiara una lambda template C++20 con []<typename T>(T x) per accedere esplicitamente al parametro T.',
             },
             {
               english: 'Variadic Lambda',
@@ -5493,6 +5794,7 @@ export default {
               context: 'lambdas',
               difficulty: 'intermediate',
               code: '[](auto&&... args) { /* ... */ }',
+              task: 'Crea una lambda variadica [](auto&&... args) che accetta un numero arbitrario di argomenti con forwarding.',
             },
             {
               english: 'Constexpr Lambda',
@@ -5505,6 +5807,7 @@ export default {
               difficulty: 'intermediate',
               code: 'auto sq = [](int x) constexpr { return x*x; };',
               note: 'Disponibile da C++17.',
+              task: 'Definisci una lambda constexpr sq che calcola x*x ed è invocabile a tempo di compilazione.',
             },
             {
               english: 'Stateless Lambda',
@@ -5537,6 +5840,7 @@ export default {
               context: 'lambdas',
               difficulty: 'intermediate',
               code: 'std::function<int(int)> fact = [&](int n){ return n<=1?1:n*fact(n-1); };',
+              task: 'Implementa il fattoriale come lambda ricorsiva salvata in std::function<int(int)> con cattura per riferimento.',
             },
             {
               english: 'Y Combinator',
@@ -5557,6 +5861,7 @@ export default {
               context: 'lambdas',
               difficulty: 'intermediate',
               code: 'auto x = [](){ return 42; }();',
+              task: 'Inizializza x invocando immediatamente una lambda che ritorna 42 con la sintassi [](){...}().',
             },
             {
               english: 'Lambda Overload',
@@ -5584,6 +5889,7 @@ export default {
               context: 'lambdas',
               difficulty: 'intermediate',
               code: '#include <functional>',
+              task: 'Includi #include <functional> per accedere a std::function, std::bind e ai funtori della libreria standard.',
             },
             {
               english: 'Greater Functor',
@@ -5594,6 +5900,7 @@ export default {
               context: 'lambdas',
               difficulty: 'intermediate',
               code: 'std::sort(v.begin(), v.end(), std::greater<>{});',
+              task: 'Ordina il vettore v in modo decrescente passando std::greater<>{} a std::sort come comparatore.',
             },
             {
               english: 'Less Functor',
@@ -5604,6 +5911,7 @@ export default {
               context: 'lambdas',
               difficulty: 'intermediate',
               code: 'std::set<int, std::less<>> s;',
+              task: 'Dichiara uno std::set<int, std::less<>> per ordinare gli elementi in ordine crescente con il funtore less.',
             },
             {
               english: 'Plus Functor',
@@ -5614,6 +5922,7 @@ export default {
               context: 'lambdas',
               difficulty: 'intermediate',
               code: 'std::accumulate(v.begin(), v.end(), 0, std::plus<>{});',
+              task: 'Somma gli elementi di v partendo da 0 chiamando std::accumulate con il funtore std::plus<>{}.',
             },
             {
               english: 'Reference Wrapper',
@@ -5624,6 +5933,7 @@ export default {
               context: 'lambdas',
               difficulty: 'intermediate',
               code: 'auto rw = std::ref(x);',
+              task: 'Crea un reference wrapper a x usando std::ref(x) per trasportare un riferimento dentro un container o thread.',
             },
             {
               english: 'Memoization',
@@ -5656,6 +5966,7 @@ export default {
               difficulty: 'intermediate',
               code: 'auto add5 = std::bind_front(add, 5);',
               note: 'std::bind_front da C++20.',
+              task: `Costruisci add5 applicando parzialmente l'argomento 5 a add con std::bind_front(add, 5).`,
             },
             {
               english: 'Pipeline',
@@ -5704,6 +6015,7 @@ export default {
               difficulty: 'intermediate',
               code: 'auto x = 42; // int',
               note: 'Disponibile da C++11.',
+              task: 'Dichiara x con auto x = 42 lasciando dedurre il tipo int al compilatore.',
             },
             {
               english: 'Decltype',
@@ -5716,6 +6028,7 @@ export default {
               difficulty: 'intermediate',
               code: 'decltype(x) y = x;',
               note: 'Termine C++: decltype (parola chiave del linguaggio, non si traduce).',
+              task: 'Dichiara y con decltype(x) y = x per assegnargli esattamente lo stesso tipo di x.',
             },
             {
               english: 'Auto Return',
@@ -5727,6 +6040,7 @@ export default {
               context: 'modern-cpp',
               difficulty: 'intermediate',
               code: 'auto add(int a, int b) { return a + b; }',
+              task: 'Definisci add(int a, int b) con tipo di ritorno auto lasciando dedurre il tipo dal corpo della funzione.',
             },
             {
               english: 'Decltype Auto',
@@ -5738,6 +6052,7 @@ export default {
               difficulty: 'intermediate',
               code: 'decltype(auto) f() { return x; }',
               note: 'Termine C++: decltype(auto) (sintassi del linguaggio, non si traduce).',
+              task: 'Usa decltype(auto) come tipo di ritorno di f() per preservare esattamente value-category e cv di x.',
             },
             {
               english: 'Nullptr',
@@ -5750,6 +6065,7 @@ export default {
               difficulty: 'intermediate',
               code: 'int* p = nullptr;',
               note: 'Termine C++: nullptr (parola chiave del linguaggio, non si traduce).',
+              task: `Inizializza il puntatore int* p a nullptr per indicare in modo type-safe l'assenza di un indirizzo valido.`,
             },
             {
               english: 'Range For',
@@ -5761,6 +6077,7 @@ export default {
               context: 'modern-cpp',
               difficulty: 'intermediate',
               code: 'for (auto& x : v) { /* ... */ }',
+              task: 'Itera sul vettore v con un range-for for (auto& x : v) per accedere agli elementi per riferimento.',
             },
             {
               english: 'Brace Initialization',
@@ -5771,6 +6088,7 @@ export default {
               context: 'modern-cpp',
               difficulty: 'intermediate',
               code: 'int x{42};',
+              task: `Inizializza l'intero x con la sintassi a graffe int x{42} per attivare i controlli di narrowing.`,
             },
             {
               english: 'Initializer List',
@@ -5782,6 +6100,7 @@ export default {
               context: 'modern-cpp',
               difficulty: 'intermediate',
               code: 'std::vector<int> v = {1, 2, 3};',
+              task: 'Inizializza std::vector<int> v dalla lista di inizializzazione {1, 2, 3} con i valori esatti.',
             },
             {
               english: 'Uniform Initialization',
@@ -5829,6 +6148,7 @@ export default {
               context: 'modern-cpp',
               difficulty: 'intermediate',
               code: 'void f(T&& x);',
+              task: 'Dichiara f(T&& x) con un rvalue reference per ricevere valori temporanei e abilitare le move semantics.',
             },
             {
               english: 'Std Move',
@@ -5841,6 +6161,7 @@ export default {
               difficulty: 'intermediate',
               code: 'auto y = std::move(x);',
               note: 'Termine C++: std::move (funzione standard, non si traduce).',
+              task: 'Trasforma x in un xvalue con auto y = std::move(x) per consentire il furto delle risorse a y.',
             },
             {
               english: 'Lvalue',
@@ -5894,6 +6215,7 @@ export default {
               difficulty: 'intermediate',
               code: 'A(A&& other) noexcept;',
               note: 'Rinominato per disambiguare dal Move Constructor di livello 2.',
+              task: 'Definisci il costruttore di move A(A&& other) noexcept per trasferire le risorse da other senza eccezioni.',
             },
             {
               english: 'Rvalue Move Assignment',
@@ -5906,6 +6228,7 @@ export default {
               difficulty: 'intermediate',
               code: 'A& operator=(A&& other) noexcept;',
               note: 'Rinominato per disambiguare dal Move Assignment di livello 2.',
+              task: `Implementa l'operatore di assegnazione di move A& operator=(A&& other) noexcept per riassegnare riusando le risorse.`,
             },
             {
               english: 'Moved-From State',
@@ -5934,6 +6257,7 @@ export default {
               context: 'modern-cpp',
               difficulty: 'intermediate',
               code: 'A() = default;',
+              task: 'Richiedi al compilatore di generare il costruttore di default scrivendo A() = default.',
             },
             {
               english: 'Modern Deleted Function',
@@ -5945,6 +6269,7 @@ export default {
               difficulty: 'intermediate',
               code: 'A(const A&) = delete;',
               note: 'Rinominato per disambiguare dal Deleted Function di livello 2.',
+              task: 'Disabilita esplicitamente la copia della classe A con A(const A&) = delete.',
             },
             {
               english: 'Override Specifier',
@@ -5956,6 +6281,7 @@ export default {
               context: 'modern-cpp',
               difficulty: 'intermediate',
               code: 'void f() override;',
+              task: 'Marca la funzione virtuale ridefinita con il suffisso override perché il compilatore verifichi la firma della base.',
             },
             {
               english: 'Final Specifier',
@@ -5967,6 +6293,7 @@ export default {
               context: 'modern-cpp',
               difficulty: 'intermediate',
               code: 'class A final {};',
+              task: 'Impedisci ulteriori derivazioni della classe A marcandola con il qualificatore final.',
             },
             {
               english: 'Constexpr Function Modern',
@@ -5978,6 +6305,7 @@ export default {
               difficulty: 'intermediate',
               code: 'constexpr int sq(int x){return x*x;}',
               note: 'Rinominato per disambiguare dal Constexpr di livello 1.',
+              task: 'Definisci constexpr int sq(int x) che restituisce x*x ed è valutabile a tempo di compilazione.',
             },
             {
               english: 'Strongly Typed Enum',
@@ -5989,6 +6317,7 @@ export default {
               context: 'modern-cpp',
               difficulty: 'intermediate',
               code: 'enum class Color { Red, Green };',
+              task: `Sostituisci l'enum tradizionale con enum class Color { Red, Green } per ottenere uno scope dedicato e nessuna conversione implicita.`,
             },
             {
               english: 'Modern Static Assert',
@@ -6001,6 +6330,7 @@ export default {
               difficulty: 'intermediate',
               code: 'static_assert(sizeof(int) == 4);',
               note: 'Rinominato per disambiguare dal Static Assert di livello 8 (cpp_templates_4).',
+              task: 'Aggiungi static_assert(sizeof(int) == 4) per imporre a tempo di compilazione che int sia di 4 byte.',
             },
             {
               english: 'Raw String Literal',
@@ -6012,6 +6342,7 @@ export default {
               context: 'modern-cpp',
               difficulty: 'intermediate',
               code: 'auto s = R"(C:\\path)";',
+              task: 'Salva il percorso C:\\path in s come raw string literal R"(C:\\path)" per evitare di escapare i backslash.',
             },
             {
               english: 'Right Angle Brackets',
@@ -6023,6 +6354,7 @@ export default {
               difficulty: 'intermediate',
               code: 'std::vector<std::vector<int>>',
               note: 'Prima di C++11 serviva uno spazio: > >.',
+              task: 'Dichiara std::vector<std::vector<int>> con due >> consecutivi senza inserire spazi grazie al parsing post-C++11.',
             },
             {
               english: 'Modern User-Defined Literal',
@@ -6035,6 +6367,7 @@ export default {
               difficulty: 'intermediate',
               code: 'using namespace std::chrono_literals;',
               note: 'Rinominato per disambiguare dal User-Defined Literal di livello 5 (cpp_oop_16).',
+              task: 'Importa con using namespace std::chrono_literals per abilitare suffissi user-defined come 1s e 100ms.',
             },
           ],
         },
@@ -6054,6 +6387,7 @@ export default {
               difficulty: 'intermediate',
               code: 'std::tuple<int, std::string> t{1, "hi"};',
               note: 'Termine C++: std::tuple (template standard, non si traduce).',
+              task: 'Crea uno std::tuple<int, std::string> t inizializzato con {1, "hi"} per raggruppare valori eterogenei.',
             },
             {
               english: 'Pair',
@@ -6064,6 +6398,7 @@ export default {
               context: 'modern-cpp',
               difficulty: 'intermediate',
               code: 'std::pair<int, std::string> p{1, "hi"};',
+              task: 'Istanzia uno std::pair<int, std::string> p con {1, "hi"} per accoppiare un intero e una stringa.',
             },
             {
               english: 'Modern Array',
@@ -6076,6 +6411,7 @@ export default {
               difficulty: 'intermediate',
               code: 'std::array<int, 5> a;',
               note: `Rinominato per disambiguare dall'Array di livello 6 (cpp_stl_1).`,
+              task: 'Dichiara uno std::array<int, 5> a per ottenere un array a dimensione fissa con semantica di container STL.',
             },
             {
               english: 'Chrono',
@@ -6087,6 +6423,7 @@ export default {
               context: 'modern-cpp',
               difficulty: 'intermediate',
               code: 'std::this_thread::sleep_for(1s);',
+              task: 'Sospendi il thread corrente per un secondo chiamando std::this_thread::sleep_for(1s) dalla libreria chrono.',
             },
             {
               english: 'Random',
@@ -6099,6 +6436,7 @@ export default {
               difficulty: 'intermediate',
               code: 'std::mt19937 gen{42};',
               note: 'Termine C++: libreria std::random (libreria standard, non si traduce).',
+              task: 'Costruisci un generatore Mersenne Twister std::mt19937 gen{42} con seme deterministico 42.',
             },
             {
               english: 'Regex',
@@ -6110,6 +6448,7 @@ export default {
               context: 'modern-cpp',
               difficulty: 'intermediate',
               code: 'std::regex re(R"(\\d+)");',
+              task: 'Compila una std::regex re che riconosce una sequenza di cifre con il pattern raw R"(\\d+)".',
             },
             {
               english: 'Thread',
@@ -6121,6 +6460,7 @@ export default {
               difficulty: 'intermediate',
               code: 'std::thread t(work);',
               note: 'Termine C++: std::thread (classe standard, non si traduce).',
+              task: 'Avvia uno std::thread t che esegue la funzione work in parallelo al thread principale.',
             },
             {
               english: 'Atomic',
@@ -6132,6 +6472,7 @@ export default {
               context: 'modern-cpp',
               difficulty: 'intermediate',
               code: 'std::atomic<int> n{0};',
+              task: 'Dichiara uno std::atomic<int> n inizializzato a 0 per supportare letture e scritture concorrenti senza data race.',
             },
             {
               english: 'Type Traits',
@@ -6142,6 +6483,7 @@ export default {
               context: 'modern-cpp',
               difficulty: 'intermediate',
               code: 'std::is_integral_v<int>',
+              task: 'Usa std::is_integral_v<int> per ottenere a tempo di compilazione il bool che indica se int è un tipo integrale.',
             },
             {
               english: 'Modern Make Shared',
@@ -6153,6 +6495,7 @@ export default {
               difficulty: 'intermediate',
               code: 'auto p = std::make_shared<Foo>();',
               note: 'Rinominato per disambiguare dal Make Shared di livello 9 (cpp_memory_2).',
+              task: 'Costruisci uno shared_ptr<Foo> default-inizializzato con auto p = std::make_shared<Foo>().',
             },
           ],
         },
@@ -6180,6 +6523,7 @@ export default {
               difficulty: 'advanced',
               code: 'auto [a, b] = std::make_pair(1, 2);',
               note: 'Disponibile da C++17.',
+              task: 'Decomponi la coppia restituita da std::make_pair(1, 2) nelle variabili a e b con auto [a, b].',
             },
             {
               english: 'If Init',
@@ -6191,6 +6535,7 @@ export default {
               context: 'modern-cpp',
               difficulty: 'advanced',
               code: 'if (auto it = m.find(k); it != m.end()) {}',
+              task: `Combina inizializzazione e condizione con if (auto it = m.find(k); it != m.end()) limitando it allo scope dell'if.`,
             },
             {
               english: 'Constexpr If',
@@ -6202,6 +6547,7 @@ export default {
               context: 'modern-cpp',
               difficulty: 'advanced',
               code: 'if constexpr (std::is_integral_v<T>) {}',
+              task: 'Discrimina a tempo di compilazione i tipi integrali con if constexpr (std::is_integral_v<T>).',
             },
             {
               english: 'Header Inline Variable',
@@ -6213,6 +6559,7 @@ export default {
               difficulty: 'advanced',
               code: 'inline constexpr int N = 10;',
               note: `Rinominato per disambiguare dall'Inline Variable di livello 2 (cpp_oop_4).`,
+              task: `Definisci nell'header inline constexpr int N = 10 per avere un'unica istanza fra le translation unit.`,
             },
             {
               english: 'Std Optional',
@@ -6224,6 +6571,7 @@ export default {
               difficulty: 'advanced',
               code: 'std::optional<int> n = 5;',
               note: 'Termine C++: std::optional (template standard, non si traduce).',
+              task: 'Dichiara std::optional<int> n = 5 per rappresentare un intero opzionale inizialmente presente con valore 5.',
             },
             {
               english: 'Std Variant',
@@ -6236,6 +6584,7 @@ export default {
               difficulty: 'advanced',
               code: 'std::variant<int, std::string> v;',
               note: 'Termine C++: std::variant (template standard, non si traduce).',
+              task: 'Dichiara uno std::variant<int, std::string> v per una variabile type-safe che può contenere int o string.',
             },
             {
               english: 'Std Any',
@@ -6248,6 +6597,7 @@ export default {
               difficulty: 'advanced',
               code: 'std::any a = 42;',
               note: 'Termine C++: std::any (template standard, non si traduce).',
+              task: 'Salva il valore 42 dentro uno std::any a per memorizzare type-erased un singolo oggetto di qualunque tipo.',
             },
             {
               english: 'Std String View',
@@ -6259,6 +6609,7 @@ export default {
               difficulty: 'advanced',
               code: 'std::string_view sv = "hi";',
               note: 'Termine C++: std::string_view (classe standard, non si traduce).',
+              task: 'Dichiara uno std::string_view sv su "hi" per ottenere una vista non posseduta della stringa.',
             },
             {
               english: 'Std Filesystem',
@@ -6270,6 +6621,7 @@ export default {
               context: 'modern-cpp',
               difficulty: 'advanced',
               code: 'std::filesystem::path p = "/tmp";',
+              task: 'Crea un std::filesystem::path p impostato a "/tmp" per manipolare percorsi in modo portabile.',
             },
             {
               english: 'Std Visit',
@@ -6281,6 +6633,7 @@ export default {
               context: 'modern-cpp',
               difficulty: 'advanced',
               code: 'std::visit(visitor, v);',
+              task: 'Applica al variant v il visitor visitor invocando std::visit(visitor, v) per gestire tutte le alternative.',
             },
           ],
         },
@@ -6300,6 +6653,7 @@ export default {
               difficulty: 'advanced',
               code: 'template<class T> concept Number = std::integral<T>;',
               note: 'Disponibile da C++20.',
+              task: 'Definisci il concept Number<T> come std::integral<T> per accettare solo tipi interi nei template.',
             },
             {
               english: 'Requires Clause',
@@ -6310,6 +6664,7 @@ export default {
               context: 'modern-cpp',
               difficulty: 'advanced',
               code: 'template<class T> requires Number<T>',
+              task: 'Vincola un template con requires Number<T> dopo template<class T> per accettare solo i tipi che soddisfano il concept.',
             },
             {
               english: 'Requires Expression',
@@ -6321,6 +6676,7 @@ export default {
               context: 'modern-cpp',
               difficulty: 'advanced',
               code: 'requires(T t) { t + t; }',
+              task: 'Costruisci una requires expression requires(T t) { t + t; } che verifica se t supporta la somma.',
             },
             {
               english: 'Constraint',
@@ -6342,6 +6698,7 @@ export default {
               context: 'modern-cpp',
               difficulty: 'advanced',
               code: 'void f(Number auto x);',
+              task: 'Dichiara f con parametro Number auto x usando la sintassi abbreviata del concept con auto.',
             },
             {
               english: 'Std Integral',
@@ -6353,6 +6710,7 @@ export default {
               context: 'modern-cpp',
               difficulty: 'advanced',
               code: 'template<std::integral T>',
+              task: 'Vincola un template a soli tipi interi con template<std::integral T> sfruttando il concept della libreria standard.',
             },
             {
               english: 'Std Floating Point',
@@ -6422,6 +6780,7 @@ export default {
               context: 'modern-cpp',
               difficulty: 'advanced',
               code: 'auto x = co_await task;',
+              task: 'Sospendi la coroutine attendendo il completamento di task con auto x = co_await task.',
             },
             {
               english: 'Co Yield',
@@ -6433,6 +6792,7 @@ export default {
               context: 'modern-cpp',
               difficulty: 'advanced',
               code: 'co_yield 42;',
+              task: 'Produci il valore 42 dalla coroutine con co_yield 42 e sospendi finché il chiamante non riprende.',
             },
             {
               english: 'Co Return',
@@ -6444,6 +6804,7 @@ export default {
               context: 'modern-cpp',
               difficulty: 'advanced',
               code: 'co_return value;',
+              task: `Termina la coroutine restituendo value al chiamante con l'istruzione co_return value.`,
             },
             {
               english: 'Promise Type',
@@ -6465,6 +6826,7 @@ export default {
               context: 'modern-cpp',
               difficulty: 'advanced',
               code: 'std::coroutine_handle<> h;',
+              task: 'Dichiara uno std::coroutine_handle<> h come handle generico per controllare lo stato di una coroutine.',
             },
             {
               english: 'Generator',
@@ -6524,6 +6886,7 @@ export default {
               difficulty: 'advanced',
               code: 'export module my_mod;',
               note: 'I moduli sostituiscono il vecchio modello a header negli stili moderni.',
+              task: 'Dichiara un modulo C++20 con export module my_mod per sostituire il classico modello a header.',
             },
             {
               english: 'Export',
@@ -6534,6 +6897,7 @@ export default {
               context: 'modern-cpp',
               difficulty: 'advanced',
               code: 'export int add(int, int);',
+              task: 'Esporta la dichiarazione di add dal modulo con export int add(int, int) per renderla visibile fuori.',
             },
             {
               english: 'Import',
@@ -6545,6 +6909,7 @@ export default {
               context: 'modern-cpp',
               difficulty: 'advanced',
               code: 'import my_mod;',
+              task: 'Importa nel translation unit le entità esportate da my_mod scrivendo import my_mod.',
             },
             {
               english: 'Module Interface',
@@ -6576,6 +6941,7 @@ export default {
               context: 'modern-cpp',
               difficulty: 'advanced',
               code: 'std::format("{} = {}", k, v);',
+              task: 'Formatta una coppia chiave-valore con std::format("{} = {}", k, v) per produrre una stringa type-safe.',
             },
             {
               english: 'Std Print',
@@ -6588,6 +6954,7 @@ export default {
               difficulty: 'advanced',
               code: 'std::print("hi {}\\n", name);',
               note: 'Disponibile da C++23.',
+              task: 'Stampa su stdout il messaggio formattato "hi {}" sostituendo name tramite std::print di C++23.',
             },
             {
               english: 'Format Spec',
@@ -6599,6 +6966,7 @@ export default {
               context: 'modern-cpp',
               difficulty: 'advanced',
               code: 'std::format("{:.2f}", 3.14);',
+              task: 'Formatta 3.14 con due cifre decimali usando la specifica di format {:.2f} dentro std::format.',
             },
             {
               english: 'Three Way Comparison',
@@ -6610,6 +6978,7 @@ export default {
               context: 'modern-cpp',
               difficulty: 'advanced',
               code: 'auto operator<=>(const A&) const = default;',
+              task: 'Genera tutti gli operatori di confronto della classe A dichiarando auto operator<=>(const A&) const = default.',
             },
             {
               english: 'Designated Initializer',
@@ -6622,6 +6991,7 @@ export default {
               difficulty: 'advanced',
               code: 'Point p{.x = 1, .y = 2};',
               note: 'Disponibile da C++20.',
+              task: 'Inizializza Point p con i designated initializer {.x = 1, .y = 2} per assegnare esplicitamente i campi.',
             },
           ],
         },
@@ -6649,6 +7019,7 @@ export default {
               context: 'templates',
               difficulty: 'advanced',
               code: 'template<class... Args> void f(Args...);',
+              task: 'Dichiara una funzione f come template variadico con template<class... Args> void f(Args...).',
             },
             {
               english: 'Parameter Pack',
@@ -6660,6 +7031,7 @@ export default {
               context: 'templates',
               difficulty: 'advanced',
               code: 'template<class... Ts>',
+              task: 'Introduci un parameter pack di tipi Ts con template<class... Ts> per accettare un numero arbitrario di tipi.',
             },
             {
               english: 'Pack Expansion',
@@ -6671,6 +7043,7 @@ export default {
               context: 'templates',
               difficulty: 'advanced',
               code: 'f(args...);',
+              task: 'Espandi il pack args nella chiamata f(args...) inoltrando ogni elemento come argomento separato.',
             },
             {
               english: 'Sizeof Pack',
@@ -6682,6 +7055,7 @@ export default {
               context: 'templates',
               difficulty: 'advanced',
               code: 'sizeof...(Args)',
+              task: `Ottieni a tempo di compilazione il numero di elementi del pack Args con l'operatore sizeof...(Args).`,
             },
             {
               english: 'Fold Expression',
@@ -6694,6 +7068,7 @@ export default {
               difficulty: 'advanced',
               code: '(... + args)',
               note: 'Disponibile da C++17.',
+              task: 'Somma tutti gli argomenti del pack args con la fold expression unaria (... + args).',
             },
             {
               english: 'Left Fold',
@@ -6704,6 +7079,7 @@ export default {
               context: 'templates',
               difficulty: 'advanced',
               code: '(... + args)',
+              task: `Applica un left fold sull'operatore + scrivendo (... + args) per piegare il pack da sinistra a destra.`,
             },
             {
               english: 'Right Fold',
@@ -6714,6 +7090,7 @@ export default {
               context: 'templates',
               difficulty: 'advanced',
               code: '(args + ...)',
+              task: `Applica un right fold sull'operatore + scrivendo (args + ...) per piegare il pack da destra a sinistra.`,
             },
             {
               english: 'Recursive Variadic',
@@ -6734,6 +7111,7 @@ export default {
               context: 'templates',
               difficulty: 'advanced',
               code: 'std::get<0>(t);',
+              task: `Accedi al primo elemento del tuple t con std::get<0>(t) usando l'indice noto a tempo di compilazione.`,
             },
             {
               english: 'Apply',
@@ -6745,6 +7123,7 @@ export default {
               context: 'templates',
               difficulty: 'advanced',
               code: 'std::apply(f, t);',
+              task: 'Chiama la funzione f passandole come argomenti i campi del tuple t tramite std::apply(f, t).',
             },
           ],
         },
@@ -6774,6 +7153,7 @@ export default {
               context: 'templates',
               difficulty: 'advanced',
               code: 'std::enable_if_t<cond, T>',
+              task: 'Vincola un template via SFINAE scrivendo std::enable_if_t<cond, T> per abilitarlo solo quando cond è vera.',
             },
             {
               english: 'Iterator Tag Dispatch',
@@ -6795,6 +7175,7 @@ export default {
               context: 'templates',
               difficulty: 'advanced',
               code: 'std::void_t<decltype(t.foo())>',
+              task: 'Rileva se T offre il metodo foo() con std::void_t<decltype(t.foo())> come trick di detection.',
             },
             {
               english: 'Detection Idiom',
@@ -6845,6 +7226,7 @@ export default {
               context: 'templates',
               difficulty: 'advanced',
               code: 'if constexpr (cond) {} else {}',
+              task: 'Seleziona un ramo a tempo di compilazione con if constexpr (cond) else evitando overhead a runtime.',
             },
             {
               english: 'Constraint Subsumption',
@@ -6874,6 +7256,7 @@ export default {
               difficulty: 'advanced',
               code: '#include <type_traits>',
               note: 'Header <type_traits> raccoglie metafunzioni per introspezione di tipi.',
+              task: 'Includi #include <type_traits> per accedere alle metafunzioni di introspezione di tipo della libreria standard.',
             },
             {
               english: 'Is Same',
@@ -6885,6 +7268,7 @@ export default {
               context: 'templates',
               difficulty: 'advanced',
               code: 'std::is_same_v<int, T>',
+              task: 'Verifica se T coincide con int usando std::is_same_v<int, T> a tempo di compilazione.',
             },
             {
               english: 'Is Pointer',
@@ -6896,6 +7280,7 @@ export default {
               context: 'templates',
               difficulty: 'advanced',
               code: 'std::is_pointer_v<T>',
+              task: 'Controlla se T è un tipo puntatore con il type trait std::is_pointer_v<T>.',
             },
             {
               english: 'Remove Reference',
@@ -6907,6 +7292,7 @@ export default {
               context: 'templates',
               difficulty: 'advanced',
               code: 'std::remove_reference_t<T>',
+              task: 'Ottieni il tipo T senza riferimento applicando il type trait std::remove_reference_t<T>.',
             },
             {
               english: 'Remove Const',
@@ -6918,6 +7304,7 @@ export default {
               context: 'templates',
               difficulty: 'advanced',
               code: 'std::remove_const_t<T>',
+              task: 'Rimuovi il qualificatore const dal tipo T usando std::remove_const_t<T>.',
             },
             {
               english: 'Decay',
@@ -6929,6 +7316,7 @@ export default {
               context: 'templates',
               difficulty: 'advanced',
               code: 'std::decay_t<T>',
+              task: 'Applica std::decay_t<T> per ottenere il tipo "decayed" di T eliminando riferimenti, cv e array-to-pointer.',
             },
             {
               english: 'Conditional',
@@ -6940,6 +7328,7 @@ export default {
               context: 'templates',
               difficulty: 'advanced',
               code: 'std::conditional_t<b, T, U>',
+              task: `Scegli a tempo di compilazione tra T e U in base a b usando l'alias std::conditional_t<b, T, U>.`,
             },
             {
               english: 'Common Type',
@@ -6951,6 +7340,7 @@ export default {
               context: 'templates',
               difficulty: 'advanced',
               code: 'std::common_type_t<T, U>',
+              task: 'Calcola il tipo comune fra T e U con std::common_type_t<T, U> per la promozione condivisa.',
             },
             {
               english: 'Integral Constant',
@@ -6962,6 +7352,7 @@ export default {
               context: 'templates',
               difficulty: 'advanced',
               code: 'std::integral_constant<int, 5>',
+              task: 'Avvolgi la costante 5 in un tipo con std::integral_constant<int, 5> per trasportarla come tipo template.',
             },
             {
               english: 'True Type',
@@ -6990,6 +7381,7 @@ export default {
               context: 'templates',
               difficulty: 'advanced',
               code: 'constexpr int sq(int x){return x*x;}',
+              task: 'Definisci constexpr int sq(int x) che ritorna x*x e può essere valutata in contesti costanti.',
             },
             {
               english: 'Consteval',
@@ -7002,6 +7394,7 @@ export default {
               difficulty: 'advanced',
               code: 'consteval int f(){return 42;}',
               note: 'Disponibile da C++20.',
+              task: 'Marca la funzione f come consteval int f() in modo che venga sempre valutata a tempo di compilazione.',
             },
             {
               english: 'Constinit',
@@ -7013,6 +7406,7 @@ export default {
               context: 'templates',
               difficulty: 'advanced',
               code: 'constinit int x = 5;',
+              task: `Forza l'inizializzazione costante della variabile globale x dichiarandola constinit int x = 5.`,
             },
             {
               english: 'Compile Time Computation',
@@ -7108,6 +7502,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'std::thread t(work);',
+              task: 'Avvia un thread di lavoro std::thread t passando la funzione work da eseguire in parallelo.',
             },
             {
               english: 'Join',
@@ -7119,6 +7514,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 't.join();',
+              task: 'Attendi la terminazione del thread t chiamando t.join() prima che esca dallo scope.',
             },
             {
               english: 'Detach',
@@ -7131,6 +7527,7 @@ export default {
               difficulty: 'advanced',
               code: 't.detach();',
               note: 'Sconsigliato, perdi il controllo.',
+              task: 'Scollega il thread t dal proprietario chiamando t.detach() e lascialo eseguire in background.',
             },
             {
               english: 'Joinable',
@@ -7142,6 +7539,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'if (t.joinable()) t.join();',
+              task: `Verifica con t.joinable() che il thread sia ancora associato a un'esecuzione prima di chiamare t.join().`,
             },
             {
               english: 'Hardware Concurrency',
@@ -7153,6 +7551,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'auto n = std::thread::hardware_concurrency();',
+              task: `Ottieni il numero suggerito di thread paralleli supportati dall'hardware con std::thread::hardware_concurrency().`,
             },
             {
               english: 'Thread ID',
@@ -7164,6 +7563,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'auto id = std::this_thread::get_id();',
+              task: `Recupera l'identificatore univoco del thread corrente con std::this_thread::get_id().`,
             },
             {
               english: 'Sleep For',
@@ -7174,6 +7574,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'std::this_thread::sleep_for(1s);',
+              task: 'Sospendi il thread corrente per un secondo invocando std::this_thread::sleep_for(1s).',
             },
             {
               english: 'Yield',
@@ -7184,6 +7585,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'std::this_thread::yield();',
+              task: 'Cedi volontariamente il time-slice del thread corrente allo scheduler chiamando std::this_thread::yield().',
             },
             {
               english: 'Jthread',
@@ -7196,6 +7598,7 @@ export default {
               difficulty: 'advanced',
               code: 'std::jthread t(work);',
               note: 'Disponibile da C++20.',
+              task: 'Avvia uno std::jthread t passando work per ottenere un thread auto-joinante allo scope exit.',
             },
             {
               english: 'Stop Token',
@@ -7207,6 +7610,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'std::stop_token st;',
+              task: 'Dichiara uno std::stop_token st per supportare la richiesta cooperativa di stop in un jthread.',
             },
           ],
         },
@@ -7225,6 +7629,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'std::mutex m;',
+              task: 'Dichiara uno std::mutex m da usare come primitiva di mutua esclusione fra thread.',
             },
             {
               english: 'Scoped Lock Guard',
@@ -7236,6 +7641,7 @@ export default {
               difficulty: 'advanced',
               code: 'std::lock_guard lk(m);',
               note: 'RAII pattern.',
+              task: 'Proteggi la sezione critica acquisendo il mutex m con std::lock_guard lk in stile RAII.',
             },
             {
               english: 'Unique Lock',
@@ -7247,6 +7653,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'std::unique_lock lk(m);',
+              task: 'Acquisisci m con std::unique_lock lk per ottenere un lock RAII flessibile, che supporta rilascio e re-lock.',
             },
             {
               english: 'Scoped Lock',
@@ -7259,6 +7666,7 @@ export default {
               difficulty: 'advanced',
               code: 'std::scoped_lock lk(m1, m2);',
               note: 'Disponibile da C++17.',
+              task: 'Blocca contemporaneamente m1 e m2 senza deadlock con std::scoped_lock lk(m1, m2).',
             },
             {
               english: 'Recursive Mutex',
@@ -7271,6 +7679,7 @@ export default {
               difficulty: 'advanced',
               code: 'std::recursive_mutex m;',
               note: 'Spesso indica un design da rivedere.',
+              task: 'Dichiara uno std::recursive_mutex m per consentire allo stesso thread di acquisirlo più volte.',
             },
             {
               english: 'Shared Mutex',
@@ -7282,6 +7691,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'std::shared_mutex m;',
+              task: 'Dichiara uno std::shared_mutex m per supportare letture multiple condivise e scritture esclusive.',
             },
             {
               english: 'Try Lock',
@@ -7293,6 +7703,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'if (m.try_lock()) {}',
+              task: 'Tenta di acquisire m senza bloccarti con if (m.try_lock()) e procedi solo se il lock è disponibile.',
             },
             {
               english: 'Deadlock',
@@ -7341,6 +7752,7 @@ export default {
               difficulty: 'advanced',
               code: 'std::atomic<int> n{0};',
               note: `Rinominato per distinguerlo dall'item 'Atomic' come tipo std::atomic in cpp_modern_cpp_4.`,
+              task: 'Dichiara uno std::atomic<int> n inizializzato a 0 per supportare letture e scritture atomiche concorrenti.',
             },
             {
               english: 'Atomic Flag',
@@ -7352,6 +7764,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'std::atomic_flag f;',
+              task: 'Dichiara uno std::atomic_flag f come flag lock-free per implementare uno spinlock minimale.',
             },
             {
               english: 'Compare Exchange',
@@ -7363,6 +7776,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'n.compare_exchange_strong(exp, val);',
+              task: 'Aggiorna n da exp a val in modo atomico chiamando n.compare_exchange_strong(exp, val).',
             },
             {
               english: 'Memory Order',
@@ -7383,6 +7797,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'n.load(std::memory_order_relaxed);',
+              task: 'Leggi n senza vincoli di sincronizzazione con n.load(std::memory_order_relaxed) per ottenere massima permissività.',
             },
             {
               english: 'Memory Order Acquire',
@@ -7424,6 +7839,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'std::atomic_thread_fence(std::memory_order_acquire);',
+              task: 'Inserisci una barriera acquire con std::atomic_thread_fence(std::memory_order_acquire) per ordinare le letture successive.',
             },
             {
               english: 'Data Race',
@@ -7453,6 +7869,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'std::future<int> f = std::async(work);',
+              task: 'Ottieni uno std::future<int> f lanciando work in modo asincrono con std::async.',
             },
             {
               english: 'Promise',
@@ -7464,6 +7881,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'std::promise<int> p;',
+              task: 'Dichiara uno std::promise<int> p per produrre da un thread il valore consumato altrove da un future.',
             },
             {
               english: 'Async',
@@ -7475,6 +7893,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'auto f = std::async(work);',
+              task: 'Lancia work in modo asincrono ottenendo un future con auto f = std::async(work).',
             },
             {
               english: 'Get Future Value',
@@ -7486,6 +7905,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'int v = f.get();',
+              task: 'Recupera il risultato del future f bloccandoti se necessario con int v = f.get().',
             },
             {
               english: 'Wait For',
@@ -7497,6 +7917,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'auto status = f.wait_for(1s);',
+              task: 'Attendi al massimo un secondo il completamento di f con auto status = f.wait_for(1s).',
             },
             {
               english: 'Packaged Task',
@@ -7508,6 +7929,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'std::packaged_task<int(int)> task(work);',
+              task: 'Avvolgi work in uno std::packaged_task<int(int)> task per ottenere un callable con future associata.',
             },
             {
               english: 'Shared Future',
@@ -7519,6 +7941,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'std::shared_future<int> sf = f.share();',
+              task: 'Converti il future f in std::shared_future<int> sf con f.share() per consentire più consumer.',
             },
             {
               english: 'Condition Variable',
@@ -7530,6 +7953,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'cv.notify_one();',
+              task: 'Risveglia un solo thread in attesa sulla condition variable cv chiamando cv.notify_one().',
             },
             {
               english: 'Notify All',
@@ -7541,6 +7965,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'cv.notify_all();',
+              task: 'Risveglia tutti i thread in attesa sulla condition variable cv invocando cv.notify_all().',
             },
             {
               english: 'Wait Predicate',
@@ -7552,6 +7977,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'cv.wait(lk, []{return ready;});',
+              task: 'Attendi sulla cv con cv.wait(lk, []{return ready;}) per gestire automaticamente i spurious wakeup.',
             },
           ],
         },
@@ -7578,6 +8004,7 @@ export default {
               context: 'memory',
               difficulty: 'advanced',
               code: 'A(A&& o) noexcept : data(o.data) { o.data = nullptr; }',
+              task: `Scrivi il move constructor di una classe A che ruba il puntatore data dall'oggetto sorgente e lo resetta a nullptr.`,
             },
             {
               english: 'Resource Steal',
@@ -7609,6 +8036,7 @@ export default {
               difficulty: 'advanced',
               code: 'A(A&&) noexcept = default;',
               note: 'Permette al compilatore di scegliere move su copy.',
+              task: 'Marca il move constructor di A come noexcept = default così std::vector lo preferisce alla copia durante le riallocazioni.',
             },
             {
               english: 'Move And Swap',
@@ -7662,6 +8090,7 @@ export default {
               context: 'memory',
               difficulty: 'advanced',
               code: 'std::move_iterator(it);',
+              task: 'Avvolgi un iteratore in std::move_iterator per trasformare un std::copy in un trasferimento basato su move.',
             },
             {
               english: 'Self Move',
@@ -7673,6 +8102,7 @@ export default {
               context: 'memory',
               difficulty: 'advanced',
               code: 'if (this == &other) return *this;',
+              task: 'Inserisci la guardia if (this == &other) return *this; in operator= per difenderti da un self-move che distruggerebbe lo stato.',
             },
           ],
         },
@@ -7692,6 +8122,7 @@ export default {
               difficulty: 'advanced',
               code: 'template<class T> void f(T&& x);',
               note: 'Detto anche forwarding reference.',
+              task: 'Dichiara una template<class T> void f(T&& x); per ottenere un riferimento universale che deduce lvalue o rvalue.',
             },
             {
               english: 'Forwarding Reference',
@@ -7713,6 +8144,7 @@ export default {
               context: 'memory',
               difficulty: 'advanced',
               code: 'std::forward<T>(arg);',
+              task: 'Inoltra il parametro arg con std::forward<T>(arg) dentro un wrapper per preservare la value category originale.',
             },
             {
               english: 'Reference Collapsing',
@@ -7734,6 +8166,7 @@ export default {
               context: 'memory',
               difficulty: 'advanced',
               code: 'template<class T> void f(T&& a) { g(std::forward<T>(a)); }',
+              task: 'Implementa template<class T> void f(T&& a) { g(std::forward<T>(a)); } per ottenere perfect forwarding verso g.',
             },
             {
               english: 'Make Unique Forwarding',
@@ -7745,6 +8178,7 @@ export default {
               context: 'memory',
               difficulty: 'advanced',
               code: 'std::make_unique<Foo>(args...);',
+              task: 'Costruisci uno std::unique_ptr<Foo> con std::make_unique<Foo>(args...) sfruttando il forwarding perfetto degli argomenti.',
             },
             {
               english: 'Emplace Forwarding',
@@ -7755,6 +8189,7 @@ export default {
               context: 'memory',
               difficulty: 'advanced',
               code: 'v.emplace_back(args...);',
+              task: 'Inserisci un elemento in un std::vector con v.emplace_back(args...) per costruirlo in loco senza copie temporanee.',
             },
             {
               english: 'Forwarding Constructor',
@@ -7897,6 +8332,7 @@ export default {
               context: 'memory',
               difficulty: 'advanced',
               code: 'void store(std::string s);',
+              task: 'Definisci void store(std::string s); accettando il parametro per valore così il chiamante decide se fare move o copia.',
             },
           ],
         },
@@ -7951,6 +8387,7 @@ export default {
               context: 'memory',
               difficulty: 'advanced',
               code: 'thread_local int counter;',
+              task: 'Dichiara thread_local int counter; così ogni thread mantiene la propria copia senza bisogno di sincronizzazione.',
             },
             {
               english: 'Dangling Pointer',
@@ -7970,6 +8407,7 @@ export default {
               context: 'memory',
               difficulty: 'advanced',
               code: 'const std::string& s = makeStr();',
+              task: `Lega il temporary restituito da makeStr() a const std::string& s per estenderne la lifetime oltre l'espressione.`,
             },
             {
               english: 'Aliasing',
@@ -8028,6 +8466,7 @@ export default {
               difficulty: 'advanced',
               code: 'static A& instance() { static A a; return a; }',
               note: `Rinominato per distinguerlo dall'item 'Singleton' introduttivo in cpp_oop_4.`,
+              task: `Esponi un'unica istanza A tramite static A& instance() { static A a; return a; } applicando il pattern singleton.`,
             },
             {
               english: 'Factory',
@@ -8039,6 +8478,7 @@ export default {
               context: 'patterns',
               difficulty: 'advanced',
               code: 'std::unique_ptr<Animal> make(Type t);',
+              task: 'Definisci std::unique_ptr<Animal> make(Type t); come factory che restituisce la giusta sottoclasse concreta in base al tag.',
             },
             {
               english: 'Abstract Factory',
@@ -8070,6 +8510,7 @@ export default {
               context: 'patterns',
               difficulty: 'advanced',
               code: 'virtual std::unique_ptr<A> clone() const;',
+              task: 'Aggiungi virtual std::unique_ptr<A> clone() const; alla base per permettere la duplicazione di un prototipo a runtime.',
             },
             {
               english: 'Object Pool',
@@ -8100,6 +8541,7 @@ export default {
               context: 'patterns',
               difficulty: 'advanced',
               code: 'static A make(...);',
+              task: 'Sostituisci un costruttore complesso con una static A make(...); per centralizzare la logica di costruzione.',
             },
             {
               english: 'Named Constructor',
@@ -8110,6 +8552,7 @@ export default {
               context: 'patterns',
               difficulty: 'advanced',
               code: 'static A from_string(std::string);',
+              task: `Esponi static A from_string(std::string); come named constructor per chiarire l'intento al call site.`,
             },
             {
               english: 'Registry',
@@ -8139,6 +8582,7 @@ export default {
               difficulty: 'advanced',
               code: 'template<class D> struct Base { /* ... */ };',
               note: `Rinominato per distinguerlo dall'item 'CRTP' introduttivo in cpp_oop_12.`,
+              task: 'Definisci template<class D> struct Base{} per applicare il pattern CRTP e iniettare metodi specializzati senza dispatch virtuale.',
             },
             {
               english: 'Pimpl Idiom',
@@ -8151,6 +8595,7 @@ export default {
               difficulty: 'advanced',
               code: 'class A { class Impl; std::unique_ptr<Impl> p; };',
               note: 'Pointer to Implementation.',
+              task: `Nascondi i membri privati di A dietro class Impl; std::unique_ptr<Impl> p; applicando l'idioma pimpl.`,
             },
             {
               english: 'Adapter',
@@ -8279,6 +8724,7 @@ export default {
               context: 'patterns',
               difficulty: 'advanced',
               code: 'std::visit(visitor, variant);',
+              task: 'Percorri un std::variant chiamando std::visit(visitor, variant); per applicare logica diversa a ogni alternativa.',
             },
             {
               english: 'Command',
@@ -8386,6 +8832,7 @@ export default {
               context: 'patterns',
               difficulty: 'advanced',
               code: 'struct UserId { int v; };',
+              task: 'Avvolgi un int in struct UserId { int v; }; come strong typedef per impedire al compilatore di mescolarlo con altri ID.',
             },
             {
               english: 'Tag Type',
@@ -8397,6 +8844,7 @@ export default {
               context: 'patterns',
               difficulty: 'advanced',
               code: 'struct InPlace_t {};',
+              task: 'Dichiara struct InPlace_t {}; come tipo tag vuoto per disambiguare overload o trasportare informazione compile-time.',
             },
             {
               english: 'Phantom Type',
@@ -8484,6 +8932,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'std::cout << std::setw(10) << x;',
+              task: 'Allinea una colonna larga 10 caratteri inserendo std::setw(10) prima del valore x nello std::cout.',
             },
             {
               english: 'Setprecision',
@@ -8495,6 +8944,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'std::cout << std::setprecision(2) << pi;',
+              task: 'Limita la stampa di pi greco a 2 cifre significative inserendo std::setprecision(2) nello std::cout.',
             },
             {
               english: 'Hex',
@@ -8506,6 +8956,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'std::cout << std::hex << 255;',
+              task: 'Stampa il valore 255 in esadecimale inserendo std::hex nel std::cout prima di scrivere il numero.',
             },
             {
               english: 'Fixed',
@@ -8517,6 +8968,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'std::cout << std::fixed << 3.14;',
+              task: 'Forza il valore 3.14 in notazione a virgola fissa inserendo std::fixed nello std::cout invece della notazione scientifica.',
             },
             {
               english: 'Scientific',
@@ -8528,6 +8980,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'std::cout << std::scientific;',
+              task: `Cambia il formato di std::cout in notazione scientifica inserendo std::scientific per quantita' molto piccole o grandi.`,
             },
             {
               english: 'Fill Character',
@@ -8538,6 +8991,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: "std::cout << std::setfill('0');",
+              task: `Imposta lo zero come carattere di riempimento applicando std::setfill('0') prima di un setw per padding numerico.`,
             },
             {
               english: 'Boolalpha',
@@ -8548,6 +9002,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'std::cout << std::boolalpha << true;',
+              task: `Attiva std::boolalpha su std::cout per stampare true al posto di 1 in log destinati all'utente.`,
             },
             {
               english: 'Stream Iterator',
@@ -8559,6 +9014,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'std::ostream_iterator<int>(cout, " ");',
+              task: 'Crea uno std::ostream_iterator<int>(cout, " ") per scrivere interi separati da spazio direttamente dallo std::copy.',
             },
             {
               english: 'Stream Locale',
@@ -8570,6 +9026,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'cout.imbue(std::locale("it_IT"));',
+              task: 'Imbui lo std::cout con std::locale("it_IT") per formattare i numeri secondo le convenzioni italiane di separatori.',
             },
           ],
         },
@@ -8588,6 +9045,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'std::fstream f("data");',
+              task: 'Apri il file data come std::fstream f("data"); per leggere e scrivere sullo stesso handle bidirezionale.',
             },
             {
               english: 'Open Mode',
@@ -8599,6 +9057,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'std::ofstream f("log", std::ios::app);',
+              task: `Apri il file log in modalita' append usando std::ofstream f("log", std::ios::app); senza troncare i contenuti esistenti.`,
             },
             {
               english: 'Binary Mode',
@@ -8610,6 +9069,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'std::ifstream f("img", std::ios::binary);',
+              task: `Leggi un'immagine PNG con std::ifstream f("img", std::ios::binary); per evitare traduzioni CRLF su Windows.`,
             },
             {
               english: 'Read',
@@ -8621,6 +9081,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'f.read(buf, n);',
+              task: 'Estrai un blocco di n byte da uno stream binario invocando f.read(buf, n); e controlla quanti sono davvero arrivati.',
             },
             {
               english: 'Write',
@@ -8632,6 +9093,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'f.write(buf, n);',
+              task: 'Persisti n byte raw su disco invocando f.write(buf, n); per salvare un record binario in formato packed.',
             },
             {
               english: 'Tellg',
@@ -8642,6 +9104,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'auto pos = f.tellg();',
+              task: `Memorizza l'offset di lettura corrente con auto pos = f.tellg(); per poter tornare allo stesso punto piu' tardi.`,
             },
             {
               english: 'Seekg',
@@ -8652,6 +9115,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'f.seekg(0, std::ios::beg);',
+              task: `Riposiziona la lettura all'inizio del file con f.seekg(0, std::ios::beg); dopo aver sondato l'header.`,
             },
             {
               english: 'Eof Bit',
@@ -8698,6 +9162,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'std::stringstream ss(s);',
+              task: 'Costruisci uno std::stringstream ss(s); per parsare o comporre testo in memoria senza toccare il filesystem.',
             },
             {
               english: 'OStringStream',
@@ -8709,6 +9174,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'std::ostringstream oss;',
+              task: 'Componi una riga di log in uno std::ostringstream oss; prima di recuperare il buffer finale con .str().',
             },
             {
               english: 'IStringStream',
@@ -8720,6 +9186,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'std::istringstream iss(s);',
+              task: 'Parsa un record separato da spazi avvolgendo la riga s in uno std::istringstream iss(s); ed estraendo i campi.',
             },
             {
               english: 'Str Method',
@@ -8731,6 +9198,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'auto s = oss.str();',
+              task: 'Recupera il contenuto accumulato da uno std::ostringstream con auto s = oss.str(); pronto per la spedizione.',
             },
             {
               english: 'Tokenize',
@@ -8763,6 +9231,7 @@ export default {
               difficulty: 'advanced',
               code: 'int n = std::stoi("42");',
               note: 'Anche stol, stoll, stof, stod.',
+              task: `Converti la stringa "42" in intero con int n = std::stoi("42"); gestendo l'eccezione su input malformati.`,
             },
             {
               english: 'From Chars',
@@ -8775,6 +9244,7 @@ export default {
               difficulty: 'advanced',
               code: 'std::from_chars(p, end, n);',
               note: 'Disponibile da C++17.',
+              task: 'Parsa rapidamente un numero da un buffer con std::from_chars(p, end, n); evitando la gestione del locale.',
             },
             {
               english: 'To Chars',
@@ -8786,6 +9256,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'std::to_chars(p, end, n);',
+              task: 'Formatta un intero n in un buffer raw con std::to_chars(p, end, n); per conversioni veloci locale-free.',
             },
             {
               english: 'Locale Independent',
@@ -8936,6 +9407,7 @@ export default {
               difficulty: 'advanced',
               command: 'cmake -S . -B build',
               tool: 'CMake',
+              task: 'Configura un progetto CMake eseguendo cmake -S . -B build per generare la cartella di build dal sorgente corrente.',
             },
             {
               english: 'CMakeLists',
@@ -8947,6 +9419,7 @@ export default {
               context: 'build',
               difficulty: 'advanced',
               code: 'project(app CXX)',
+              task: 'Apri il file CMakeLists.txt con project(app CXX) per dichiarare un progetto C++ chiamato app.',
             },
             {
               english: 'Add Executable',
@@ -8958,6 +9431,7 @@ export default {
               context: 'build',
               difficulty: 'advanced',
               code: 'add_executable(app main.cpp)',
+              task: 'Registra un target eseguibile dentro CMakeLists scrivendo add_executable(app main.cpp) collegato al sorgente principale.',
             },
             {
               english: 'Add Library',
@@ -8969,6 +9443,7 @@ export default {
               context: 'build',
               difficulty: 'advanced',
               code: 'add_library(mylib src.cpp)',
+              task: `Dichiara una libreria mylib con add_library(mylib src.cpp) cosi' altri target la possono linkare in seguito.`,
             },
             {
               english: 'Target Link Libraries',
@@ -8980,6 +9455,7 @@ export default {
               context: 'build',
               difficulty: 'advanced',
               code: 'target_link_libraries(app PRIVATE mylib)',
+              task: 'Collega la libreria mylib al target app con target_link_libraries(app PRIVATE mylib) come dipendenza privata.',
             },
             {
               english: 'Find Package',
@@ -8991,6 +9467,7 @@ export default {
               context: 'build',
               difficulty: 'advanced',
               code: 'find_package(Boost REQUIRED)',
+              task: 'Localizza Boost installato sul sistema invocando find_package(Boost REQUIRED) dentro CMakeLists per poterla linkare.',
             },
             {
               english: 'Target Include Directories',
@@ -9002,6 +9479,7 @@ export default {
               context: 'build',
               difficulty: 'advanced',
               code: 'target_include_directories(app PUBLIC inc)',
+              task: 'Estendi i percorsi di include del target app con target_include_directories(app PUBLIC inc) per esporre header pubblici.',
             },
             {
               english: 'CMake Build',
@@ -9013,6 +9491,7 @@ export default {
               context: 'build',
               difficulty: 'advanced',
               command: 'cmake --build build',
+              task: 'Compila il progetto configurato lanciando cmake --build build per costruire i target nella cartella build.',
             },
             {
               english: 'CMake Install',
@@ -9024,6 +9503,7 @@ export default {
               context: 'build',
               difficulty: 'advanced',
               command: 'cmake --install build',
+              task: 'Installa binari e header generati nella destinazione di sistema eseguendo cmake --install build dopo la build.',
             },
             {
               english: 'CTest',
@@ -9036,6 +9516,7 @@ export default {
               difficulty: 'advanced',
               command: 'ctest --test-dir build',
               tool: 'CTest',
+              task: 'Esegui la suite di test registrata in CMake invocando ctest --test-dir build dopo la fase di compilazione.',
             },
           ],
         },
@@ -9055,6 +9536,7 @@ export default {
               difficulty: 'advanced',
               command: 'conan install . --build=missing',
               tool: 'Conan',
+              task: 'Risolvi le dipendenze del progetto con conan install . --build=missing scaricando o compilando le librerie mancanti.',
             },
             {
               english: 'Vcpkg',
@@ -9067,6 +9549,7 @@ export default {
               difficulty: 'advanced',
               command: 'vcpkg install boost',
               tool: 'vcpkg',
+              task: `Installa la libreria boost tramite vcpkg eseguendo vcpkg install boost cosi' CMake la trova automaticamente.`,
             },
             {
               english: 'Conanfile',
@@ -9108,6 +9591,7 @@ export default {
               context: 'build',
               difficulty: 'advanced',
               command: 'conan profile detect',
+              task: 'Genera il profilo Conan della macchina corrente con conan profile detect per fissare compilatore e ABI.',
             },
             {
               english: 'Triplet',
@@ -9173,6 +9657,7 @@ export default {
               context: 'build',
               difficulty: 'advanced',
               command: 'g++ -E main.cpp',
+              task: `Ispeziona l'output del preprocessore lanciando g++ -E main.cpp per vedere il sorgente dopo espansione include e macro.`,
             },
             {
               english: 'ODR',
@@ -9204,6 +9689,7 @@ export default {
               context: 'build',
               difficulty: 'advanced',
               code: 'static int x = 5;',
+              task: 'Marca la variabile con static int x = 5; per darle linkage interno ed evitare conflitti tra translation unit.',
             },
             {
               english: 'External Linkage',
@@ -9214,6 +9700,7 @@ export default {
               context: 'build',
               difficulty: 'advanced',
               code: 'extern int counter;',
+              task: 'Dichiara extern int counter; in un header per esporre una variabile a linkage esterno definita altrove.',
             },
             {
               english: 'Inline Linkage',
@@ -9271,6 +9758,7 @@ export default {
               context: 'build',
               difficulty: 'advanced',
               command: 'g++ -include pch.h main.cpp',
+              task: `Forza l'inclusione di un header precompilato con g++ -include pch.h main.cpp per accelerare i rebuild incrementali.`,
             },
             {
               english: 'Unity Build',
@@ -9291,6 +9779,7 @@ export default {
               context: 'build',
               difficulty: 'advanced',
               code: 'class Foo;',
+              task: 'Sostituisci un #include pesante con una forward declaration class Foo; quando ti basta solo il puntatore.',
             },
             {
               english: 'Include Guard',
@@ -9302,6 +9791,7 @@ export default {
               context: 'build',
               difficulty: 'advanced',
               code: '#ifndef X_H\\n#define X_H',
+              task: 'Proteggi un header dalla doppia inclusione avvolgendolo in #ifndef X_H / #define X_H prima delle dichiarazioni.',
             },
             {
               english: 'Pragma Once',
@@ -9314,6 +9804,7 @@ export default {
               difficulty: 'advanced',
               code: '#pragma once',
               note: 'Supportato da quasi tutti i compilatori.',
+              task: `Sostituisci la classica include guard mettendo #pragma once in cima all'header come direttiva singola.`,
             },
             {
               english: 'CCache',
@@ -9349,6 +9840,7 @@ export default {
               difficulty: 'advanced',
               command: 'g++ -flto',
               note: 'Link-Time Optimization.',
+              task: 'Abilita la link-time optimization compilando con g++ -flto per permettere al linker di inlinare tra translation unit.',
             },
             {
               english: 'Ninja',
@@ -9361,6 +9853,7 @@ export default {
               difficulty: 'advanced',
               command: 'cmake -G Ninja',
               tool: 'Ninja',
+              task: 'Genera la build con il generatore Ninja eseguendo cmake -G Ninja per accelerare i rebuild incrementali.',
             },
             {
               english: 'Module Build',
@@ -9474,6 +9967,7 @@ export default {
               context: 'performance',
               difficulty: 'advanced',
               code: '__builtin_prefetch(p);',
+              task: 'Inserisci __builtin_prefetch(p); prima del loop interno per pre-caricare in cache L1 il prossimo blocco di dati.',
             },
             {
               english: 'Padding',
@@ -9554,6 +10048,7 @@ export default {
               difficulty: 'advanced',
               command: 'valgrind --tool=callgrind ./app',
               tool: 'Valgrind',
+              task: `Profila il binario sotto Valgrind invocando valgrind --tool=callgrind ./app per misurare le funzioni piu' chiamate.`,
             },
             {
               english: 'Perf',
@@ -9567,6 +10062,7 @@ export default {
               command: 'perf record ./app',
               tool: 'perf',
               note: 'Termine italiano: perf (nome del profiler Linux, non si traduce).',
+              task: 'Cattura il profilo di esecuzione con perf record ./app per identificare le hot function senza ricompilare.',
             },
             {
               english: 'Perf Counter',
@@ -9599,6 +10095,7 @@ export default {
               difficulty: 'advanced',
               code: 'BENCHMARK(BM_func);',
               tool: 'Google Benchmark',
+              task: 'Registra una funzione da misurare con la macro BENCHMARK(BM_func); della Google Benchmark Library.',
             },
           ],
         },
@@ -9638,6 +10135,7 @@ export default {
               context: 'performance',
               difficulty: 'advanced',
               command: 'g++ -mavx2',
+              task: 'Compila con g++ -mavx2 per sbloccare istruzioni AVX2 e vettorizzare il kernel di calcolo matriciale.',
             },
             {
               english: 'Intrinsics',
@@ -9649,6 +10147,7 @@ export default {
               context: 'performance',
               difficulty: 'advanced',
               code: '_mm256_add_ps(a, b);',
+              task: `Somma due vettori SIMD chiamando l'intrinseca _mm256_add_ps(a, b); invece di scrivere assembly inline.`,
             },
             {
               english: 'Parallel STL',
@@ -9661,6 +10160,7 @@ export default {
               difficulty: 'advanced',
               code: 'std::sort(std::execution::par, v.begin(), v.end());',
               note: 'Disponibile da C++17.',
+              task: 'Ordina un vettore in parallelo con std::sort(std::execution::par, v.begin(), v.end()); sfruttando la STL parallela.',
             },
             {
               english: 'OpenMP',
@@ -9673,6 +10173,7 @@ export default {
               difficulty: 'advanced',
               code: '#pragma omp parallel for',
               tool: 'OpenMP',
+              task: `Distribuisci le iterazioni di un loop su piu' core annotandolo con #pragma omp parallel for di OpenMP.`,
             },
             {
               english: 'TBB',
@@ -9712,6 +10213,7 @@ export default {
               context: 'performance',
               difficulty: 'advanced',
               code: 'std::execution::par_unseq',
+              task: 'Scegli la policy std::execution::par_unseq per autorizzare esecuzione parallela e vettorizzazione di un algoritmo STL.',
             },
           ],
         },
@@ -9730,6 +10232,7 @@ export default {
               difficulty: 'advanced',
               code: 'if (x) [[likely]] {}',
               note: 'Disponibile da C++20.',
+              task: 'Annota il ramo comune con if (x) [[likely]] {} per dare al compilatore un hint di branch prediction.',
             },
             {
               english: 'Hot Path',
@@ -9779,6 +10282,7 @@ export default {
               context: 'performance',
               difficulty: 'advanced',
               code: 'void f(int* __restrict a);',
+              task: `Promuovi la vettorizzazione dichiarando void f(int* __restrict a); per garantire al compilatore l'assenza di aliasing.`,
             },
             {
               english: 'Profile Guided',
@@ -9790,6 +10294,7 @@ export default {
               difficulty: 'advanced',
               command: 'g++ -fprofile-use',
               note: 'Profile-Guided Optimization.',
+              task: 'Riusa i contatori del run precedente compilando con g++ -fprofile-use per abilitare la profile-guided optimization.',
             },
             {
               english: 'Small Buffer Optimization',
@@ -9820,6 +10325,7 @@ export default {
               context: 'performance',
               difficulty: 'advanced',
               code: '[[nodiscard]] int compute();',
+              task: 'Annota la funzione con [[nodiscard]] int compute(); per far avvisare il compilatore quando il chiamante ignora il risultato.',
             },
           ],
         },
@@ -9858,6 +10364,7 @@ export default {
               context: 'metaprogramming',
               difficulty: 'advanced',
               code: 'template<class T> struct add_const;',
+              task: 'Dichiara una metafunzione template<class T> struct add_const; che mappa un tipo a una sua versione const a compile time.',
             },
             {
               english: 'Type List',
@@ -9869,6 +10376,7 @@ export default {
               context: 'metaprogramming',
               difficulty: 'advanced',
               code: 'template<class... Ts> struct list {};',
+              task: 'Costruisci una lista di tipi vuota con template<class... Ts> struct list {}; come contenitore variadico per metaprogrammazione.',
             },
             {
               english: 'Compile Time Algorithm',
@@ -9930,6 +10438,7 @@ export default {
               context: 'metaprogramming',
               difficulty: 'advanced',
               code: 'std::get<0>(t);',
+              task: `Estrai il primo elemento da una tupla t con std::get<0>(t); usando l'indicizzazione compile-time.`,
             },
             {
               english: 'Index Sequence',
@@ -9941,6 +10450,7 @@ export default {
               context: 'metaprogramming',
               difficulty: 'advanced',
               code: 'std::make_index_sequence<5>',
+              task: 'Genera una sequenza di indici 0..4 con std::make_index_sequence<5> per spacchettare una tupla in una chiamata.',
             },
           ],
         },
@@ -9960,6 +10470,7 @@ export default {
               difficulty: 'advanced',
               code: 'constexpr int n = factorial(5);',
               note: `Rinominato per distinguerlo dall'item 'Compile Time Computation' introduttivo in cpp_templates_8.`,
+              task: 'Calcola fattoriale di 5 a compile time con constexpr int n = factorial(5); incorporando la costante direttamente nel binario.',
             },
             {
               english: 'Constexpr Variable',
@@ -9971,6 +10482,7 @@ export default {
               context: 'metaprogramming',
               difficulty: 'advanced',
               code: 'constexpr int N = 10;',
+              task: 'Definisci una costante compile-time con constexpr int N = 10; utilizzabile come dimensione di array statici.',
             },
             {
               english: 'Compile Time If Branch',
@@ -9983,6 +10495,7 @@ export default {
               difficulty: 'advanced',
               code: 'if constexpr (sizeof(T) == 4) {}',
               note: `Rinominato per distinguerlo dall'item 'Constexpr If' introduttivo in cpp_modern_cpp_5.`,
+              task: 'Discrimina un branch a compile time con if constexpr (sizeof(T) == 4) {} per evitare istanziazione del ramo rifiutato.',
             },
             {
               english: 'Constexpr Metaprogramming Function',
@@ -10072,6 +10585,7 @@ export default {
               context: 'metaprogramming',
               difficulty: 'advanced',
               code: 'std::is_constructible_v<T, int>',
+              task: 'Verifica a compile time se T accetta un int come argomento con std::is_constructible_v<T, int> prima di istanziare la factory.',
             },
             {
               english: 'Is Trivial',
@@ -10082,6 +10596,7 @@ export default {
               context: 'metaprogramming',
               difficulty: 'advanced',
               code: 'std::is_trivial_v<T>',
+              task: `Proteggi un fast path memcpy con std::is_trivial_v<T> per usarlo solo quando la copia bit a bit e' lecita.`,
             },
             {
               english: 'Is Standard Layout',
@@ -10093,6 +10608,7 @@ export default {
               context: 'metaprogramming',
               difficulty: 'advanced',
               code: 'std::is_standard_layout_v<T>',
+              task: `Documenta il contratto ABI di una struct asserendo std::is_standard_layout_v<T> per garantire compatibilita' con consumatori C.`,
             },
             {
               english: 'Is Polymorphic',
@@ -10134,6 +10650,7 @@ export default {
               context: 'metaprogramming',
               difficulty: 'advanced',
               code: 'std::conjunction_v<A, B>',
+              task: 'Combina due tratti in AND logico con std::conjunction_v<A, B> per costruire predicati compositi a compile time.',
             },
             {
               english: 'Disjunction',
@@ -10180,6 +10697,7 @@ export default {
               context: 'metaprogramming',
               difficulty: 'advanced',
               code: 'template<class T> concept Sortable = requires(T t) { std::sort(t.begin(), t.end()); };',
+              task: 'Definisci un concept personalizzato template<class T> concept Sortable = requires(T t) { std::sort(t.begin(), t.end()); };',
             },
             {
               english: 'Compound Requirement',
@@ -10191,6 +10709,7 @@ export default {
               context: 'metaprogramming',
               difficulty: 'advanced',
               code: 'requires { { f() } -> std::integral; }',
+              task: 'Imponi che f() ritorni un tipo integrale con il requisito composto requires { { f() } -> std::integral; }.',
             },
             {
               english: 'Nested Requirement',
@@ -10202,6 +10721,7 @@ export default {
               context: 'metaprogramming',
               difficulty: 'advanced',
               code: 'requires { requires sizeof(T) == 4; }',
+              task: 'Aggiungi un requisito annidato requires { requires sizeof(T) == 4; } per esigere un tipo di esattamente 4 byte.',
             },
             {
               english: 'Type Requirement',
@@ -10212,6 +10732,7 @@ export default {
               context: 'metaprogramming',
               difficulty: 'advanced',
               code: 'requires { typename T::value_type; }',
+              task: 'Esigi che T esponga un alias value_type con il requisito di tipo requires { typename T::value_type; }.',
             },
             {
               english: 'Mp Eleven',
@@ -10244,6 +10765,7 @@ export default {
               difficulty: 'advanced',
               code: 'auto sq = [](int x) constexpr { return x*x; };',
               note: `Rinominato per distinguerlo dall'item 'Constexpr Lambda' introduttivo in cpp_lambdas_3.`,
+              task: 'Crea una lambda compile-time con auto sq = [](int x) constexpr { return x*x; }; utilizzabile in contesti constexpr.',
             },
             {
               english: 'Concepts Library',
@@ -10254,6 +10776,7 @@ export default {
               context: 'metaprogramming',
               difficulty: 'advanced',
               code: '#include <concepts>',
+              task: 'Importa la libreria di concept standard con #include <concepts> per riusare std::regular, std::invocable e gli altri.',
             },
             {
               english: 'Auto Deduction',
@@ -10274,6 +10797,7 @@ export default {
               context: 'metaprogramming',
               difficulty: 'advanced',
               code: 'void f(T x) requires Number<T>;',
+              task: 'Applica un vincolo dopo la firma con void f(T x) requires Number<T>; per riusare i nomi dei parametri.',
             },
           ],
         },
@@ -10312,6 +10836,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               code: 'TEST(MathTest, AddsTwo) { /* ... */ }',
+              task: 'Registra un test GoogleTest con TEST(MathTest, AddsTwo) { /* ... */ } generando una classe e collegandola al runner.',
             },
             {
               english: 'Expect',
@@ -10322,6 +10847,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               code: 'EXPECT_EQ(add(1,2), 3);',
+              task: 'Verifica che add(1,2) restituisca 3 con EXPECT_EQ(add(1,2), 3); senza interrompere il test al fallimento.',
             },
             {
               english: 'Assert',
@@ -10332,6 +10858,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               code: 'ASSERT_NE(p, nullptr);',
+              task: 'Blocca subito il test su precondizione critica con ASSERT_NE(p, nullptr); per evitare dereferenze pericolose successive.',
             },
             {
               english: 'Test Fixture',
@@ -10343,6 +10870,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               code: 'class MyTest : public ::testing::Test {};',
+              task: 'Crea una fixture GoogleTest ereditando con class MyTest : public ::testing::Test {}; per condividere setup tra casi correlati.',
             },
             {
               english: 'Setup',
@@ -10373,6 +10901,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               code: 'INSTANTIATE_TEST_SUITE_P(...)',
+              task: 'Itera su una serie di input con INSTANTIATE_TEST_SUITE_P(...) per generare un test parametrizzato da una sola dichiarazione.',
             },
             {
               english: 'Test Suite',
@@ -10394,6 +10923,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               code: 'EXPECT_DEATH(f(), "regex");',
+              task: 'Verifica che f() abortisca con il messaggio atteso scrivendo EXPECT_DEATH(f(), "regex"); come death test GoogleTest.',
             },
           ],
         },
@@ -10434,6 +10964,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               code: 'TEST_CASE("adds two") { /* ... */ }',
+              task: 'Dichiara un caso di test Catch2 con TEST_CASE("adds two") { /* ... */ } per descriverne uno scenario isolato.',
             },
             {
               english: 'Section',
@@ -10445,6 +10976,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               code: 'SECTION("with zero") {}',
+              task: 'Suddividi le varianti di uno scenario Catch2 in SECTION("with zero") {} per riusare il setup circostante.',
             },
             {
               english: 'Require',
@@ -10456,6 +10988,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               code: 'REQUIRE(x == 5);',
+              task: 'Affidati a REQUIRE(x == 5); come asserzione critica Catch2 che aborta immediatamente il caso al fallimento.',
             },
             {
               english: 'Check',
@@ -10467,6 +11000,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               code: 'CHECK(x == 5);',
+              task: `Continua dopo un fallimento usando CHECK(x == 5); come asserzione Catch2 non fatale per raccogliere piu' errori.`,
             },
             {
               english: 'Approx',
@@ -10478,6 +11012,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               code: 'REQUIRE(x == Approx(3.14));',
+              task: 'Tollera arrotondamenti in virgola mobile confrontando con REQUIRE(x == Approx(3.14)); nello scenario Catch2.',
             },
             {
               english: 'Tag',
@@ -10488,6 +11023,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               code: 'TEST_CASE("foo", "[fast]")',
+              task: 'Etichetta uno scenario Catch2 con TEST_CASE("foo", "[fast]") per filtrarlo poi tramite tag in CI.',
             },
             {
               english: 'BDD Style',
@@ -10499,6 +11035,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               code: 'GIVEN("..."); WHEN("..."); THEN("...");',
+              task: 'Scrivi uno scenario Catch2 in stile BDD con GIVEN("..."); WHEN("..."); THEN("..."); leggibile anche da non ingegneri.',
             },
             {
               english: 'Header Only',
@@ -10537,6 +11074,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               code: 'class MockDb : public Db { MOCK_METHOD(...); };',
+              task: 'Genera una classe mock con class MockDb : public Db { MOCK_METHOD(...); }; per iniettarla al posto della dipendenza reale.',
             },
             {
               english: 'Mock Method',
@@ -10548,6 +11086,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               code: 'MOCK_METHOD(int, get, (), (override));',
+              task: 'Dichiara un metodo mock overridabile con MOCK_METHOD(int, get, (), (override)); per registrare chiamate e ritornare valori scriptati.',
             },
             {
               english: 'Expectation',
@@ -10558,6 +11097,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               code: 'EXPECT_CALL(db, get()).WillOnce(Return(5));',
+              task: `Imposta un'aspettativa GoogleMock con EXPECT_CALL(db, get()).WillOnce(Return(5)); per scriptare il valore di ritorno.`,
             },
             {
               english: 'Stub',
@@ -10601,6 +11141,7 @@ export default {
               command: 'clang++ -fsanitize=fuzzer',
               tool: 'libFuzzer',
               note: 'Termine italiano: libFuzzer (nome del fuzzer in-process di LLVM, non si traduce).',
+              task: 'Compila un entry point fuzz-friendly con clang++ -fsanitize=fuzzer per integrarlo con libFuzzer di LLVM.',
             },
             {
               english: 'AFL',
@@ -10652,6 +11193,7 @@ export default {
               command: 'gcov main.cpp',
               tool: 'gcov',
               note: 'Termine italiano: gcov (nome del tool di copertura di GCC, non si traduce).',
+              task: 'Genera il report di copertura per riga eseguendo gcov main.cpp sui file .gcda prodotti da una build instrumentata.',
             },
             {
               english: 'Lcov',
@@ -10772,6 +11314,7 @@ export default {
               difficulty: 'advanced',
               code: 'gsl::span<int> s;',
               tool: 'Microsoft GSL',
+              task: 'Sostituisci un puntatore raw con una vista sicura gsl::span<int> s; dalla Guidelines Support Library.',
             },
             {
               english: 'Resource Pointer',
@@ -10783,6 +11326,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               code: 'gsl::owner<T*> p;',
+              task: `Annota un puntatore proprietario con gsl::owner<T*> p; per dichiarare chi e' responsabile della liberazione.`,
             },
             {
               english: 'Not Null',
@@ -10794,6 +11338,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               code: 'gsl::not_null<T*> p;',
+              task: 'Promuovi un puntatore a non nullo con gsl::not_null<T*> p; per spostare il controllo a costruzione.',
             },
             {
               english: 'Narrow Cast',
@@ -10805,6 +11350,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               code: 'auto i = gsl::narrow<int>(big);',
+              task: 'Rendi esplicita una conversione restringente con auto i = gsl::narrow<int>(big); lanciando se perde informazione.',
             },
             {
               english: 'Final Action',
@@ -10815,6 +11361,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               code: 'auto cleanup = gsl::finally([&]{ /* ... */ });',
+              task: `Aggancia un'azione di cleanup con auto cleanup = gsl::finally([&]{ /* ... */ }); che parte anche se eccezione.`,
             },
             {
               english: 'Compile Time Constants',
@@ -10871,6 +11418,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               command: 'g++ -fsanitize=address',
+              task: 'Strumenta il binario di test con g++ -fsanitize=address per intercettare bug di memoria al primo accesso illegale.',
             },
             {
               english: 'Address Sanitizer',
@@ -10882,6 +11430,7 @@ export default {
               difficulty: 'advanced',
               command: '-fsanitize=address',
               tool: 'AddressSanitizer (ASan)',
+              task: 'Attiva AddressSanitizer passando -fsanitize=address al compilatore per catturare overflow di heap e use-after-free.',
             },
             {
               english: 'Undefined Behavior Sanitizer',
@@ -10893,6 +11442,7 @@ export default {
               difficulty: 'advanced',
               command: '-fsanitize=undefined',
               tool: 'UBSan',
+              task: 'Accendi UBSan passando -fsanitize=undefined al compilatore per segnalare overflow signed e load disallineati a runtime.',
             },
             {
               english: 'Thread Sanitizer',
@@ -10905,6 +11455,7 @@ export default {
               difficulty: 'advanced',
               command: '-fsanitize=thread',
               tool: 'ThreadSanitizer (TSan)',
+              task: 'Rileva data race tra thread compilando con -fsanitize=thread per attivare ThreadSanitizer durante lo smoke test.',
             },
             {
               english: 'Memory Sanitizer',
@@ -10917,6 +11468,7 @@ export default {
               difficulty: 'advanced',
               command: '-fsanitize=memory',
               tool: 'MemorySanitizer (MSan)',
+              task: 'Traccia letture di byte non inizializzati compilando con -fsanitize=memory per accendere MemorySanitizer in debug.',
             },
             {
               english: 'Leak Sanitizer',
@@ -10928,6 +11480,7 @@ export default {
               difficulty: 'advanced',
               command: '-fsanitize=leak',
               tool: 'LeakSanitizer (LSan)',
+              task: 'Abilita LeakSanitizer aggiungendo -fsanitize=leak alla compilazione per stampare stack trace delle allocazioni mai liberate.',
             },
             {
               english: 'Static Analyzer',
@@ -10951,6 +11504,7 @@ export default {
               difficulty: 'advanced',
               command: 'clang-tidy main.cpp',
               tool: 'Clang-Tidy',
+              task: 'Analizza main.cpp eseguendo clang-tidy main.cpp per ottenere suggerimenti di modernizzazione e check sui pattern legacy.',
             },
             {
               english: 'Cppcheck',
@@ -10963,6 +11517,7 @@ export default {
               command: 'cppcheck main.cpp',
               tool: 'Cppcheck',
               note: `Termine italiano: cppcheck (nome dell'analizzatore statico, non si traduce).`,
+              task: `Sottoponi main.cpp all'analisi statica eseguendo cppcheck main.cpp per scoprire variabili non inizializzate e codice morto.`,
             },
             {
               english: 'Compiler Warning',
@@ -10974,6 +11529,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               command: 'g++ -Werror',
+              task: `Promuovi ogni warning a errore compilando con g++ -Werror per impedire l'accumulo di avvisi nel codice.`,
             },
           ],
         },
@@ -11001,6 +11557,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               command: 'clang-tidy --checks=modernize-*',
+              task: 'Aggiorna codice legacy lanciando clang-tidy --checks=modernize-* per applicare auto, nullptr e range-for in massa.',
             },
             {
               english: 'Replace Auto Ptr',
@@ -11040,6 +11597,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               code: 'static_cast<int>(x);',
+              task: `Rimpiazza un cast stile C con static_cast<int>(x); per rendere esplicito l'intento e facilitare la ricerca.`,
             },
             {
               english: 'Use Auto',
@@ -11070,6 +11628,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               code: 'using IntList = std::vector<int>;',
+              task: `Sostituisci un typedef vecchio con using IntList = std::vector<int>; per abilitare alias templatizzati piu' espressivi.`,
             },
             {
               english: 'Replace Enum',
@@ -11137,6 +11696,7 @@ export default {
               difficulty: 'advanced',
               command: 'clang-format -i main.cpp',
               tool: 'clang-format',
+              task: 'Forza la formattazione del sorgente eseguendo clang-format -i main.cpp per riallinearlo allo stile .clang-format del progetto.',
             },
             {
               english: 'Lint',

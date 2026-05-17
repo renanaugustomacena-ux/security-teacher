@@ -1,0 +1,1116 @@
+{
+  "fixes": [
+    {
+      "level": "2",
+      "lesson": "ethack_passive_recon_2",
+      "english": "WHOIS Lookup",
+      "set": {
+        "task": "Interroga il database WHOIS per documentare registrar e contatti del dominio prima di pianificare un assessment autorizzato."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "ethack_passive_recon_2",
+      "english": "Zone Transfer",
+      "set": {
+        "task": "Verifica in laboratorio se il name server consente un trasferimento di zona AXFR, indizio di una misconfigurazione DNS da correggere."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "ethack_passive_recon_3",
+      "english": "theHarvester",
+      "set": {
+        "task": "Raccogli passivamente email e sottodomini esposti tramite motori di ricerca per stimare la superficie OSINT del dominio interno."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "ethack_passive_recon_4",
+      "english": "Traceroute",
+      "set": {
+        "task": "Traccia il percorso IP verso un host noto del laboratorio per mappare gli hop intermedi e individuare eventuali apparati di transito."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ethack_active_recon_1",
+      "english": "SYN Scan",
+      "set": {
+        "task": "Avvia una scansione SYN autorizzata contro il target di laboratorio per inventariare le porte TCP aperte senza completare il three-way handshake."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ethack_active_recon_1",
+      "english": "TCP Connect Scan",
+      "set": {
+        "task": "Esegui una scansione TCP connect completa sul server di test quando l'utente che lancia lo scan non possiede privilegi raw socket."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ethack_active_recon_1",
+      "english": "UDP Scan",
+      "set": {
+        "task": "Mappa i servizi UDP esposti dall'host di laboratorio per individuare servizi come DNS, SNMP o NTP non documentati nell'inventario."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ethack_active_recon_1",
+      "english": "Service Detection",
+      "set": {
+        "task": "Identifica versioni e banner dei servizi sulle porte aperte del target per associarli rapidamente alle CVE applicabili."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ethack_active_recon_1",
+      "english": "Operating System Detection",
+      "set": {
+        "task": "Tenta il fingerprinting del sistema operativo sul nodo di laboratorio analizzando le caratteristiche dello stack TCP/IP."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ethack_active_recon_2",
+      "english": "Banner Grabbing",
+      "set": {
+        "task": "Apri una connessione verbose al server HTTP del lab per leggere il banner restituito e confermare il software in esecuzione."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ethack_active_recon_2",
+      "english": "SNMP Enumeration",
+      "set": {
+        "task": "Interroga un agente SNMP di test con community pubblica per verificare quali informazioni di gestione resterebbero esposte a un attaccante interno."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ethack_active_recon_2",
+      "english": "NFS Enumeration",
+      "set": {
+        "task": "Elenca le esportazioni NFS condivise dal server di laboratorio per confermare che nessuna directory sensibile sia leggibile senza restrizioni."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ethack_active_recon_2",
+      "english": "RPC Enumeration",
+      "set": {
+        "task": "Stabilisci una sessione nulla RPC verso il server Windows di test per documentare informazioni di dominio raggiungibili senza credenziali."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ethack_active_recon_2",
+      "english": "Network Sweep",
+      "set": {
+        "task": "Esegui un ping sweep della sottorete di laboratorio per individuare host attivi prima di restringere le scansioni successive."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ethack_active_recon_3",
+      "english": "NSE Script",
+      "set": {
+        "task": "Lancia gli script vuln di Nmap contro il target autorizzato per correlare velocemente i servizi rilevati a controlli noti."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ethack_active_recon_3",
+      "english": "Aggressive Scan",
+      "set": {
+        "task": "Avvia una scansione aggressiva sul nodo di laboratorio combinando rilevamento di OS, versioni, script e traceroute in un unico passaggio."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ethack_active_recon_3",
+      "english": "Timing Template",
+      "set": {
+        "task": "Imposta il template di timing T4 di Nmap per accelerare la scansione del laboratorio mantenendo affidabili i risultati."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ethack_active_recon_3",
+      "english": "Decoy Scan",
+      "set": {
+        "task": "Genera scansioni con dieci IP esca casuali contro il target di laboratorio per testare la capacita' del SOC di filtrare il rumore."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ethack_active_recon_3",
+      "english": "Idle Scan",
+      "set": {
+        "task": "Verifica l'efficacia di una idle scan tramite un host zombie di laboratorio per studiare come il monitoraggio rileva sorgenti indirette."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ethack_active_recon_3",
+      "english": "Fragmentation",
+      "set": {
+        "task": "Frammenta i pacchetti di scansione contro il target di laboratorio per valutare la robustezza del riassemblaggio dell'IDS in linea."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ethack_active_recon_3",
+      "english": "FIN Scan",
+      "set": {
+        "task": "Sperimenta una FIN scan contro il target di test per capire come l'IDS classifica pacchetti TCP fuori sequenza."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ethack_active_recon_3",
+      "english": "XMAS Scan",
+      "set": {
+        "task": "Lancia una XMAS scan in laboratorio impostando i flag FIN, PSH e URG per verificare la copertura delle firme dell'IDS."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ethack_active_recon_3",
+      "english": "Source Port Manipulation",
+      "set": {
+        "task": "Forza il source port 53 nella scansione per confermare che il firewall del lab non si fidi ciecamente del traffico apparentemente DNS."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ethack_active_recon_3",
+      "english": "Output Format",
+      "set": {
+        "task": "Salva il report Nmap in tutti i formati disponibili per archiviare evidenze coerenti del pentest nel sistema di ticketing."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ethack_vuln_scanning_1",
+      "english": "OpenVAS",
+      "set": {
+        "task": "Avvia il framework Greenbone in laboratorio per pianificare scansioni di vulnerabilita' ricorrenti sull'inventario interno."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ethack_vuln_scanning_1",
+      "english": "Nikto",
+      "set": {
+        "task": "Sottoponi il web server di staging a Nikto per individuare configurazioni note vulnerabili prima del rilascio in produzione."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ethack_vuln_scanning_2",
+      "english": "CVSS Vector",
+      "set": {
+        "task": "Interpreta un vettore CVSS 3.1 critico per spiegare al team perche' la vulnerabilita' meriti remediation immediata."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ethack_vuln_scanning_3",
+      "english": "Exploit Database",
+      "set": {
+        "task": "Consulta Exploit-DB tramite searchsploit per associare le versioni Apache rilevate dal vulnerability scanner alle prove di concetto pubbliche."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ethack_vuln_scanning_3",
+      "english": "Searchsploit",
+      "set": {
+        "task": "Scarica localmente un PoC archiviato in Exploit-DB per studiarne il funzionamento in un ambiente isolato prima della validazione."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ethack_exploitation_1",
+      "english": "Reverse Shell",
+      "set": {
+        "task": "Configura un listener netcat nel laboratorio per ricevere e analizzare le reverse shell generate dagli esercizi controllati."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ethack_exploitation_1",
+      "english": "Bind Shell",
+      "set": {
+        "task": "Collegati al target di laboratorio che espone una bind shell per illustrare al team perche' questa configurazione vada bloccata in produzione."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ethack_exploitation_1",
+      "english": "msfvenom",
+      "set": {
+        "task": "Genera un payload Meterpreter di laboratorio con msfvenom da fornire al team di detection come campione di test controllato."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ethack_exploitation_2",
+      "english": "Shellcode",
+      "set": {
+        "task": "Analizza la sequenza di shellcode in un debugger isolato per riconoscere le syscall coinvolte e arricchire la knowledge base di detection."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ethack_exploitation_2",
+      "english": "NOP Sled",
+      "set": {
+        "task": "Riconosci una NOP sled nelle catture pcap di laboratorio aggiungendo la firma corrispondente al motore di intrusion detection."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ethack_exploitation_3",
+      "english": "Pattern Create",
+      "set": {
+        "task": "Produci un pattern ciclico di mille byte da iniettare nel binario vulnerabile di laboratorio per individuare l'offset di overflow."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ethack_exploitation_3",
+      "english": "Pattern Offset",
+      "set": {
+        "task": "Calcola in quale posizione del pattern ciclico il registro EIP viene sovrascritto durante l'analisi del crash nel debugger."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ethack_exploitation_3",
+      "english": "JMP ESP",
+      "set": {
+        "task": "Studia in laboratorio come l'istruzione jmp esp viene utilizzata nelle catene di exploit per giustificare l'adozione di mitigazioni come ASLR e DEP."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ethack_exploitation_3",
+      "english": "Encoder",
+      "set": {
+        "task": "Codifica cinque volte il payload con shikata_ga_nai per testare la capacita' degli antivirus aziendali di riconoscere payload offuscati."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ethack_exploitation_3",
+      "english": "mona.py",
+      "set": {
+        "task": "Carica mona in WinDbg in laboratorio per generare pattern ciclici durante l'analisi guidata di una vulnerabilita' di stack overflow."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ethack_exploitation_4",
+      "english": "PIE",
+      "set": {
+        "task": "Ricompila l'eseguibile con supporto PIE per verificare che ASLR randomizzi correttamente il segmento codice in laboratorio."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ethack_exploitation_4",
+      "english": "checksec",
+      "set": {
+        "task": "Esegui checksec sul binario di produzione per confermare che siano attive NX, stack canary, PIE e RELRO completo."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_1",
+      "english": "SQL Injection",
+      "set": {
+        "task": "Riproduci il payload OR 1=1 contro il modulo di login in sandbox per verificare che il WAF lo blocchi prima del back-end."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_1",
+      "english": "Error-Based SQLi",
+      "set": {
+        "task": "Studia il payload extractvalue su un'applicazione vulnerabile DVWA per scrivere una regola di detection sui messaggi di errore del database."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_1",
+      "english": "UNION-Based SQLi",
+      "set": {
+        "task": "Documenta una UNION SELECT classica nel laboratorio di formazione per spiegare al team perche' serva prepared statement parametrizzato."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_1",
+      "english": "Boolean-Based Blind SQLi",
+      "set": {
+        "task": "Modella una SQLi blind di tipo booleano sull'applicazione di test per misurare la sensibilita' del WAF a estrazioni carattere per carattere."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_1",
+      "english": "Time-Based Blind SQLi",
+      "set": {
+        "task": "Verifica in sandbox come una SQLi time-based introduca ritardi di cinque secondi per costruire una firma comportamentale lato WAF."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_1",
+      "english": "sqlmap",
+      "set": {
+        "task": "Lancia sqlmap contro l'applicazione di test autorizzata per confermare l'efficacia delle prepared statement appena introdotte."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_1",
+      "english": "Stacked Queries",
+      "set": {
+        "task": "Riproduci in sandbox una query concatenata maligna per documentare l'esigenza di bloccare i punti e virgola nei filtri di input."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_1",
+      "english": "NoSQL Injection",
+      "set": {
+        "task": "Mostra ai colleghi come MongoDB interpreta l'operatore $ne durante un'esercitazione di laboratorio sulla sanitizzazione degli input JSON."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_2",
+      "english": "XSS",
+      "set": {
+        "task": "Inserisci il payload alert(1) in un campo del laboratorio per verificare che la nuova policy CSP blocchi l'esecuzione di script inline."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_2",
+      "english": "Reflected XSS",
+      "set": {
+        "task": "Costruisci un URL di prova con script nel parametro di ricerca per controllare che l'output venga correttamente codificato lato server."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_2",
+      "english": "DOM XSS",
+      "set": {
+        "task": "Analizza nel laboratorio come location.hash finisca in document.write per giustificare l'adozione di sink sicuri lato client."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_2",
+      "english": "XSS Payload",
+      "set": {
+        "task": "Riproduci l'evento onerror nelle pagine di test per validare che gli attributi pericolosi vengano filtrati dal sanitizer HTML."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_2",
+      "english": "Cookie Stealing",
+      "set": {
+        "task": "Dimostra in sandbox perche' i cookie marcati HttpOnly resistano a uno script che tenta di esfiltrarli verso un dominio controllato."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_2",
+      "english": "XSS Filter Bypass",
+      "set": {
+        "task": "Testa il payload svg onload contro il filtro antiXSS di laboratorio per aggiornare la blacklist di tag pericolosi gestita dal team."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_3",
+      "english": "Directory Traversal",
+      "set": {
+        "task": "Verifica in sandbox come ../../../../etc/passwd venga normalizzato dalla nuova libreria di path sanitization."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_3",
+      "english": "Local File Inclusion",
+      "set": {
+        "task": "Riproduci una LFI in laboratorio per confermare che la whitelist dei file inclusi rifiuti percorsi relativi sospetti."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_3",
+      "english": "Remote File Inclusion",
+      "set": {
+        "task": "Simula una RFI con allow_url_include attivo in laboratorio per spiegare al team perche' la direttiva debba restare disabilitata in produzione."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_3",
+      "english": "Null Byte Injection",
+      "set": {
+        "task": "Studia in sandbox come un null byte tronchi il path per verificare che la nuova versione PHP non sia vulnerabile alla tecnica storica."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_3",
+      "english": "PHP Wrapper",
+      "set": {
+        "task": "Esamina come php://filter restituisca il sorgente codificato base64 per istruire gli sviluppatori a non passare input utente alle funzioni include."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_3",
+      "english": "Command Injection",
+      "set": {
+        "task": "Inserisci un metacarattere shell in un campo del laboratorio per confermare che la nuova API usi subprocess senza shell=True."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_4",
+      "english": "ffuf",
+      "set": {
+        "task": "Esegui ffuf sul dominio di laboratorio per scoprire endpoint nascosti che vanno rimossi o protetti prima del rilascio."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_4",
+      "english": "gobuster",
+      "set": {
+        "task": "Avvia gobuster contro l'ambiente di staging per inventariare le directory esposte e segnalare eventuali percorsi di amministrazione dimenticati."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_4",
+      "english": "WPScan",
+      "set": {
+        "task": "Sottoponi il sito WordPress di staging a WPScan per identificare plugin obsoleti da aggiornare prima della pubblicazione."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ethack_advanced_web_1",
+      "english": "SSRF",
+      "set": {
+        "task": "Riproduci nel lab una richiesta SSRF verso un endpoint interno per confermare che il proxy aziendale blocchi indirizzi di metadata cloud."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ethack_advanced_web_1",
+      "english": "Cloud Metadata SSRF",
+      "set": {
+        "task": "Verifica in laboratorio che IMDSv2 imponga il token di sessione bloccando le richieste verso 169.254.169.254 senza header valido."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ethack_advanced_web_1",
+      "english": "XXE",
+      "set": {
+        "task": "Sottoponi un payload XXE classico al parser XML di laboratorio per confermare che la disabilitazione delle entita' esterne sia efficace."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ethack_advanced_web_1",
+      "english": "Blind XXE",
+      "set": {
+        "task": "Modella una XXE out-of-band contro il servizio di test per validare la regola DLP che blocca callback verso domini non whitelistati."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ethack_advanced_web_1",
+      "english": "XInclude",
+      "set": {
+        "task": "Riproduci la direttiva xi:include sul parser di laboratorio per verificare che la nuova configurazione disabiliti l'inclusione di file locali."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ethack_advanced_web_1",
+      "english": "SSRF Bypass",
+      "set": {
+        "task": "Testa rappresentazioni alternative dell'indirizzo loopback contro il filtro SSRF per confermare che la normalizzazione canonica blocchi tutte le varianti."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ethack_advanced_web_2",
+      "english": "ysoserial",
+      "set": {
+        "task": "Genera un payload di test con ysoserial in laboratorio per stressare il filtro di deserializzazione Java introdotto di recente."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ethack_advanced_web_2",
+      "english": "Pickle Deserialization",
+      "set": {
+        "task": "Mostra in sandbox come pickle.loads su input utente porti a esecuzione di codice per giustificare la migrazione a JSON sicuro."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ethack_advanced_web_2",
+      "english": "IDOR",
+      "set": {
+        "task": "Verifica nel laboratorio API che cambiando l'identificativo numerico l'utente non possa accedere ai dati di un altro account."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ethack_advanced_web_2",
+      "english": "Mass Assignment",
+      "set": {
+        "task": "Invia un body JSON con il flag isAdmin all'API di test per assicurarti che il serializer ignori i campi non whitelistati."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ethack_advanced_web_3",
+      "english": "Prototype Pollution",
+      "set": {
+        "task": "Riproduci la pollution di Object.prototype nel laboratorio Node per verificare l'efficacia delle nuove guardie contro le proprieta' pericolose."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ethack_advanced_web_3",
+      "english": "__proto__",
+      "set": {
+        "task": "Invia un payload con chiave __proto__ all'endpoint di test per confermare che il middleware filtri le chiavi riservate del prototipo."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ethack_advanced_web_3",
+      "english": "JWT",
+      "set": {
+        "task": "Decodifica un JWT del laboratorio per documentare nei runbook i claim attesi e gli scenari di rotazione delle chiavi."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ethack_advanced_web_3",
+      "english": "JWT None Algorithm",
+      "set": {
+        "task": "Sottoponi un token con alg none alla libreria JWT in uso per assicurarti che venga rifiutato dalle nuove regole di validazione."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ethack_advanced_web_3",
+      "english": "JWT Brute Force",
+      "set": {
+        "task": "Sottoponi a hashcat il JWT estratto dal laboratorio per stimare quanto sarebbe rapido un brute force con la chiave HMAC corrente."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ethack_advanced_web_3",
+      "english": "jwt_tool",
+      "set": {
+        "task": "Utilizza jwt_tool sul token di test per verificare la robustezza dell'API contro manipolazioni di header e signature."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ethack_advanced_web_4",
+      "english": "GraphQL Introspection",
+      "set": {
+        "task": "Interroga lo schema GraphQL del laboratorio per confermare che l'introspezione sia stata disabilitata sull'endpoint di produzione."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ethack_network_hacking_1",
+      "english": "ARP Spoofing",
+      "set": {
+        "task": "Riproduci un ARP poisoning controllato nel laboratorio per validare l'efficacia del DAI sugli switch di accesso."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ethack_network_hacking_1",
+      "english": "mitmproxy",
+      "set": {
+        "task": "Avvia mitmproxy sul gateway di laboratorio per ispezionare il traffico TLS terminato durante un audit della VPN aziendale."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ethack_network_hacking_1",
+      "english": "Packet Sniffing",
+      "set": {
+        "task": "Cattura il traffico su eth0 con tcpdump per analizzare offline una sessione sospetta segnalata dal SIEM."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ethack_network_hacking_1",
+      "english": "Promiscuous Mode",
+      "set": {
+        "task": "Attiva la modalita' promiscua sull'interfaccia di test per registrare tutto il traffico osservabile dalla SPAN port di laboratorio."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ethack_network_hacking_1",
+      "english": "Monitor Mode",
+      "set": {
+        "task": "Metti la scheda wireless di laboratorio in modalita' monitor per analizzare i frame 802.11 durante un'esercitazione di rilevamento rogue AP."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ethack_network_hacking_1",
+      "english": "MAC Spoofing",
+      "set": {
+        "task": "Cambia temporaneamente il MAC dell'interfaccia di test per verificare che il NAC del laboratorio rilevi e blocchi l'indirizzo non autorizzato."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ethack_network_hacking_2",
+      "english": "Responder",
+      "set": {
+        "task": "Esegui Responder nel laboratorio segregato per misurare quanti client emettono ancora richieste LLMNR e NBT-NS broadcast."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ethack_network_hacking_3",
+      "english": "macof",
+      "set": {
+        "task": "Stressa la CAM table dello switch di laboratorio con macof per confermare che la port security limiti il numero di MAC consentiti."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ethack_network_hacking_3",
+      "english": "Bettercap",
+      "set": {
+        "task": "Lancia Bettercap nel laboratorio chiuso per orchestrare un audit MITM completo e raccogliere telemetria per l'IDS interno."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ethack_network_hacking_4",
+      "english": "SSH Tunneling",
+      "set": {
+        "task": "Stabilisci un tunnel SSH locale verso il server interno del laboratorio per ispezionare l'applicazione web senza esporre la porta in rete."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ethack_network_hacking_4",
+      "english": "Local Port Forwarding",
+      "set": {
+        "task": "Inoltra la porta 3306 del database di laboratorio sulla workstation per eseguire query diagnostiche tramite un jump host autorizzato."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ethack_network_hacking_4",
+      "english": "Remote Port Forwarding",
+      "set": {
+        "task": "Configura un remote forward dal jump host al laboratorio interno per esporre temporaneamente una macchina di test al team di response."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ethack_network_hacking_4",
+      "english": "Dynamic Port Forwarding",
+      "set": {
+        "task": "Imposta un proxy SOCKS dinamico sul jump host per navigare la rete del laboratorio dalla workstation di audit."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ethack_network_hacking_4",
+      "english": "Chisel",
+      "set": {
+        "task": "Avvia Chisel in modalita' reverse sul server di laboratorio per riprodurre uno scenario di tunneling C2 e arricchire il playbook di detection."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ethack_network_hacking_4",
+      "english": "proxychains",
+      "set": {
+        "task": "Inoltra una scansione Nmap autorizzata attraverso proxychains per raggiungere segmenti di laboratorio non instradabili direttamente."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ethack_network_hacking_4",
+      "english": "sshuttle",
+      "set": {
+        "task": "Attiva sshuttle verso il jump host del laboratorio per ottenere un transparent proxy verso la sottorete interna durante l'assessment."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ethack_wireless_1",
+      "english": "WPA Cracking",
+      "set": {
+        "task": "Sottoponi la cattura WPA del laboratorio ad aircrack-ng per dimostrare al management l'importanza di passphrase lunghe e casuali."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ethack_wireless_1",
+      "english": "WPS",
+      "set": {
+        "task": "Verifica con Reaver che gli access point di laboratorio abbiano disattivato WPS, eliminando un vettore noto di compromissione."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ethack_wireless_2",
+      "english": "airodump-ng",
+      "set": {
+        "task": "Monitora i canali Wi-Fi del laboratorio con airodump-ng per inventariare access point legittimi e individuare eventuali rogue."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ethack_wireless_2",
+      "english": "aireplay-ng",
+      "set": {
+        "task": "Invia cinque pacchetti di deautenticazione mirati nel laboratorio chiuso per validare la rilevazione del modulo wireless IDS."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ethack_wireless_2",
+      "english": "Wifite",
+      "set": {
+        "task": "Lancia Wifite nell'ambiente isolato per automatizzare un audit completo della rete Wi-Fi di laboratorio."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ethack_wireless_2",
+      "english": "Hashcat",
+      "set": {
+        "task": "Sottoponi l'handshake WPA2 di laboratorio a Hashcat per misurare la resistenza delle passphrase aziendali contro una wordlist mirata."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ethack_wireless_2",
+      "english": "hcxdumptool",
+      "set": {
+        "task": "Cattura i frame PMKID con hcxdumptool nel laboratorio per analizzare la robustezza degli access point contro l'attacco senza handshake."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ethack_wireless_3",
+      "english": "Deauthentication Attack",
+      "set": {
+        "task": "Invia frame di deautenticazione mirati nel laboratorio Wi-Fi per misurare quanto rapidamente il modulo wIDS allerta il SOC."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ethack_wireless_3",
+      "english": "Beacon Flood",
+      "set": {
+        "task": "Genera un flood di beacon nel laboratorio isolato per valutare la capacita' del sistema di rogue detection di filtrare SSID falsi."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ethack_wireless_3",
+      "english": "Pixie Dust Attack",
+      "set": {
+        "task": "Esegui un Pixie Dust sull'access point di laboratorio vulnerabile per confermare che il firmware aggiornato non sia piu' suscettibile."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ethack_wireless_4",
+      "english": "Evil Twin Enterprise",
+      "set": {
+        "task": "Allestisci un evil twin enterprise nel range del laboratorio per verificare che i client validino correttamente il certificato del RADIUS."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_1",
+      "english": "Hybrid Attack",
+      "set": {
+        "task": "Combina la wordlist con suffissi numerici in hashcat per stimare quanto rapidamente le password aziendali cadrebbero in un audit interno."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_1",
+      "english": "Mask Attack",
+      "set": {
+        "task": "Costruisci una maschera con un pattern aziendale ricorrente per verificare se gli hash del red team test cadono in poche ore."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_1",
+      "english": "Rule-Based Attack",
+      "set": {
+        "task": "Applica le regole best64 alla wordlist rockyou contro gli hash di laboratorio per quantificare il rischio di password con piccole varianti."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_1",
+      "english": "Online Attack",
+      "set": {
+        "task": "Esegui Hydra contro il servizio SSH di test per verificare che il rate limiting e il fail2ban blocchino i tentativi ripetuti."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_2",
+      "english": "hashcat -O Optimized Mode",
+      "set": {
+        "task": "Cracca hash NTLM del laboratorio con hashcat in modalita' ottimizzata per misurare i tempi di esposizione delle credenziali dump."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_2",
+      "english": "John the Ripper",
+      "set": {
+        "task": "Lancia John the Ripper sugli hash estratti dal laboratorio per confrontare la sua efficacia con hashcat in scenari single-CPU."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_2",
+      "english": "Hydra",
+      "set": {
+        "task": "Esegui Hydra contro un server FTP di test per validare le soglie di blocco account configurate dal team di sicurezza."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_2",
+      "english": "CeWL",
+      "set": {
+        "task": "Genera una wordlist personalizzata con CeWL partendo dal sito di laboratorio per valutare l'efficacia delle password contestuali."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_2",
+      "english": "crunch",
+      "set": {
+        "task": "Crea con crunch una wordlist mirata di laboratorio per stimare la dimensione dello spazio dei pattern aziendali piu' comuni."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_3",
+      "english": "MD5",
+      "set": {
+        "task": "Riconosci un hash MD5 tipico in un dump di laboratorio per giustificare la migrazione verso algoritmi di hashing moderni."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_3",
+      "english": "Bcrypt",
+      "set": {
+        "task": "Verifica che le password salvate nel database di staging usino il prefisso bcrypt con cost adeguato durante l'audit periodico."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_4",
+      "english": "shadow file",
+      "set": {
+        "task": "Controlla i permessi di /etc/shadow nel laboratorio per assicurarti che sia leggibile solo da root dopo l'hardening del server."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_4",
+      "english": "unshadow",
+      "set": {
+        "task": "Combina passwd e shadow del laboratorio con unshadow per preparare gli hash a John durante un assessment autorizzato."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_4",
+      "english": "secretsdump",
+      "set": {
+        "task": "Estrai gli hash NTDS dal domain controller di laboratorio con secretsdump per verificare l'efficacia delle policy di password aziendali."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_4",
+      "english": "Mimikatz",
+      "set": {
+        "task": "Esegui logonpasswords in un host di test isolato per confermare che la Credential Guard impedisca l'estrazione dei segreti LSASS."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_4",
+      "english": "Pass the Hash",
+      "set": {
+        "task": "Riproduci un pass-the-hash con CrackMapExec nel laboratorio AD per validare le restrizioni di logon e i tier amministrativi."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_4",
+      "english": "LSASS Dump",
+      "set": {
+        "task": "Genera un dump di lsass nel laboratorio per esercitare il team forense nell'estrazione e analisi controllata dei segreti."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_1",
+      "english": "SUID Binary",
+      "set": {
+        "task": "Cerca binari con bit SUID sul server di laboratorio per documentare quelli legittimi e segnalare le installazioni sospette al team."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_1",
+      "english": "sudo -l",
+      "set": {
+        "task": "Esegui sudo -l sull'account di servizio per inventariare i comandi consentiti senza password e verificare il principio del minimo privilegio."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_2",
+      "english": "Cron Job",
+      "set": {
+        "task": "Ispeziona le crontab degli utenti sul server di laboratorio per individuare job sospetti che eseguono script da directory temporanee."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_2",
+      "english": "Scheduled Task",
+      "set": {
+        "task": "Pianifica una scheduled task nel laboratorio Windows per generare telemetria nota e calibrare le regole di detection del SIEM."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_2",
+      "english": "Run Key",
+      "set": {
+        "task": "Monitora la chiave Run del registro di laboratorio con Sysmon per allertare il SOC su nuove voci di autostart non autorizzate."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_2",
+      "english": "Service Persistence",
+      "set": {
+        "task": "Verifica nel laboratorio Windows che le ACL del Service Control Manager impediscano la creazione di servizi arbitrari da utenti non privilegiati."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_2",
+      "english": "Systemd Service",
+      "set": {
+        "task": "Controlla i file di unit systemd attivi sul server di laboratorio per individuare servizi sospetti aggiunti fuori dal processo di change management."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_2",
+      "english": "SSH Key",
+      "set": {
+        "task": "Audita i file authorized_keys del laboratorio per assicurarti che ogni chiave SSH abbia un proprietario documentato e una data di scadenza."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_3",
+      "english": "WinRM",
+      "set": {
+        "task": "Esegui un test di accesso WinRM nel laboratorio per confermare che solo gli host whitelistati possano avviare sessioni amministrative remote."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_3",
+      "english": "CrackMapExec",
+      "set": {
+        "task": "Lancia CrackMapExec contro la sottorete di laboratorio per verificare velocemente quali host accettano ancora autenticazione SMB legacy."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_4",
+      "english": "Kerberoasting",
+      "set": {
+        "task": "Richiedi i ticket di servizio nel laboratorio AD per individuare account SPN con password deboli e segnalarli al team di identita'."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_4",
+      "english": "AS-REP Roasting",
+      "set": {
+        "task": "Cerca utenti con preautenticazione Kerberos disabilitata nel laboratorio per emettere raccomandazioni di hardening prima del rollout aziendale."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_4",
+      "english": "Golden Ticket",
+      "set": {
+        "task": "Simula un golden ticket nel laboratorio AD isolato per affinare le regole di detection basate su anomalie nei TGT emessi."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_4",
+      "english": "DCSync",
+      "set": {
+        "task": "Riproduci un DCSync controllato verso il domain controller di laboratorio per validare gli alert legati a richieste di replica non autorizzate."
+      }
+    }
+  ]
+}

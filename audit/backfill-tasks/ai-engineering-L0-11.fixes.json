@@ -1,0 +1,1332 @@
+{
+  "fixes": [
+    {
+      "level": "0",
+      "lesson": "ai_foundations_1",
+      "english": "Dataset",
+      "set": {
+        "task": "Carica un dataset da un file CSV in un DataFrame pandas pronto per l'analisi."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "ai_foundations_1",
+      "english": "Model",
+      "set": {
+        "task": "Istanzia un modello di regressione lineare di scikit-learn da addestrare sui dati."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "ai_foundations_1",
+      "english": "Training",
+      "set": {
+        "task": "Avvia l'addestramento del modello sui dati di training X_train e sulle etichette y_train."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "ai_foundations_1",
+      "english": "Inference",
+      "set": {
+        "task": "Esegui l'inferenza del modello su dati nuovi mai visti durante l'addestramento."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "ai_foundations_1",
+      "english": "Prediction",
+      "set": {
+        "task": "Genera le predizioni del modello sul test set per poi confrontarle con i valori reali."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "ai_foundations_3",
+      "english": "Exploratory Data Analysis",
+      "set": {
+        "task": "Calcola statistiche descrittive su ogni colonna numerica del DataFrame per orientare l'analisi esplorativa."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "ai_foundations_3",
+      "english": "Training Set",
+      "set": {
+        "task": "Suddividi le feature in training set e test set usando l'utility di scikit-learn."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_1",
+      "english": "Feature",
+      "set": {
+        "task": "Seleziona le colonne age, income e city dal DataFrame per costruire la matrice di feature X."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_1",
+      "english": "Label",
+      "set": {
+        "task": "Estrai la colonna target dal DataFrame come vettore di etichette per l'addestramento supervisionato."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_2",
+      "english": "Missing Data",
+      "set": {
+        "task": "Conta quanti valori mancanti sono presenti in ogni colonna del DataFrame."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_2",
+      "english": "Imputation",
+      "set": {
+        "task": "Sostituisci i valori mancanti del DataFrame con la media di ogni colonna numerica."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_2",
+      "english": "Duplicate",
+      "set": {
+        "task": "Rimuovi le righe duplicate dal DataFrame per evitare bias durante l'addestramento."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_3",
+      "english": "Normalization",
+      "set": {
+        "task": "Importa lo scaler MinMaxScaler di scikit-learn per riportare le feature nell'intervallo [0, 1]."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_3",
+      "english": "Standardization",
+      "set": {
+        "task": "Standardizza le feature X portandole a media zero e deviazione standard unitaria."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_3",
+      "english": "Min-Max Scaling",
+      "set": {
+        "task": "Riscala manualmente una feature nell'intervallo [0, 1] usando minimo e massimo del campione."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_3",
+      "english": "Z-Score",
+      "set": {
+        "task": "Trasforma una variabile nel suo z-score sottraendo la media e dividendo per la deviazione standard."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_3",
+      "english": "Robust Scaling",
+      "set": {
+        "task": "Applica il RobustScaler per scalare le feature usando mediana e IQR, resistendo agli outlier."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_3",
+      "english": "Log Transformation",
+      "set": {
+        "task": "Applica la trasformazione log(1 + x) per comprimere code lunghe in una distribuzione skewed."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_3",
+      "english": "Power Transformation",
+      "set": {
+        "task": "Applica una trasformazione di potenza per rendere le feature piu' gaussiane prima dell'addestramento."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_3",
+      "english": "Mean",
+      "set": {
+        "task": "Calcola la media aritmetica del vettore X con NumPy per ottenere una statistica di sintesi."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_3",
+      "english": "Standard Deviation",
+      "set": {
+        "task": "Misura la deviazione standard di X per quantificare la dispersione dei valori intorno alla media."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_4",
+      "english": "One-Hot Encoding",
+      "set": {
+        "task": "Converti la colonna categorica color in variabili dummy binarie con pandas."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_4",
+      "english": "Label Encoding",
+      "set": {
+        "task": "Trasforma le etichette categoriche y in interi consecutivi usando LabelEncoder."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_4",
+      "english": "Ordinal Encoding",
+      "set": {
+        "task": "Codifica le feature categoriche ordinate in interi che ne preservano la relazione di ordine."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_4",
+      "english": "Train-Test Split",
+      "set": {
+        "task": "Suddividi i dati riservando il 20 percento al test set e l'80 percento al training set."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_4",
+      "english": "Stratified Sampling",
+      "set": {
+        "task": "Esegui uno split stratificato sulle etichette y per preservare le proporzioni delle classi in entrambi gli insiemi."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_4",
+      "english": "Cross-Validation",
+      "set": {
+        "task": "Valuta il modello tramite cross-validation a 5 fold per stimare le sue prestazioni medie."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "ai_data_4",
+      "english": "K-Fold",
+      "set": {
+        "task": "Configura una k-fold con 5 partizioni per dividere il dataset in train e validation a rotazione."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "ai_supervised_1",
+      "english": "Classification",
+      "set": {
+        "task": "Classifica gli esempi del test set assegnando a ciascuno una classe predetta dal modello."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "ai_supervised_1",
+      "english": "Logistic Regression",
+      "set": {
+        "task": "Addestra un classificatore di regressione logistica sui dati X con etichette binarie y."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "ai_supervised_1",
+      "english": "Decision Tree",
+      "set": {
+        "task": "Costruisci un albero di decisione sui dati X e y per ottenere un modello interpretabile."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "ai_supervised_1",
+      "english": "Random Forest",
+      "set": {
+        "task": "Configura un random forest con 100 alberi per migliorare l'accuratezza rispetto a un singolo decision tree."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "ai_supervised_1",
+      "english": "Support Vector Machine",
+      "set": {
+        "task": "Addestra un classificatore SVM con kernel RBF per separare classi non linearmente separabili."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "ai_supervised_1",
+      "english": "K-Nearest Neighbors",
+      "set": {
+        "task": "Configura un classificatore KNN che assegna ogni punto in base ai 5 vicini piu' simili."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "ai_supervised_1",
+      "english": "Naive Bayes",
+      "set": {
+        "task": "Addestra un classificatore Naive Bayes gaussiano sulle feature X e sulle etichette y."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "ai_supervised_2",
+      "english": "Linear Regression",
+      "set": {
+        "task": "Adatta una regressione lineare alle feature X per predire un target continuo y."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "ai_supervised_2",
+      "english": "Polynomial Regression",
+      "set": {
+        "task": "Genera feature polinomiali di secondo grado per catturare relazioni non lineari con una regressione lineare."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "ai_supervised_2",
+      "english": "Ridge Regression",
+      "set": {
+        "task": "Addestra una ridge regression con alpha 1.0 per ridurre l'overfitting tramite regolarizzazione L2."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "ai_supervised_2",
+      "english": "Lasso Regression",
+      "set": {
+        "task": "Addestra una lasso regression con alpha 0.1 per ottenere coefficienti sparsi tramite regolarizzazione L1."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "ai_supervised_2",
+      "english": "Coefficient",
+      "set": {
+        "task": "Ispeziona i coefficienti del modello addestrato per capire il peso di ogni feature."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "ai_supervised_2",
+      "english": "Intercept",
+      "set": {
+        "task": "Recupera l'intercetta del modello, ovvero il valore predetto quando tutte le feature sono nulle."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "ai_supervised_2",
+      "english": "Residual",
+      "set": {
+        "task": "Calcola i residui sottraendo le predizioni dai valori reali per diagnosticare la qualita' del fit."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "ai_supervised_2",
+      "english": "R-Squared",
+      "set": {
+        "task": "Calcola il coefficiente di determinazione R-squared sul test set per misurare la bonta' del modello."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "ai_supervised_3",
+      "english": "Learning Curve",
+      "set": {
+        "task": "Disegna la learning curve del modello al variare della dimensione del training set per diagnosticare bias e varianza."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "ai_supervised_4",
+      "english": "Bagging",
+      "set": {
+        "task": "Addestra un ensemble bagging di 10 alberi per ridurre la varianza del classificatore base."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "ai_supervised_4",
+      "english": "Gradient Boosting",
+      "set": {
+        "task": "Costruisci un classificatore gradient boosting che aggiunge alberi correggendo gli errori dei precedenti."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "ai_supervised_4",
+      "english": "XGBoost",
+      "set": {
+        "task": "Importa la libreria XGBoost per accedere a un'implementazione veloce e regolarizzata di gradient boosting."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "ai_supervised_4",
+      "english": "Stacking",
+      "set": {
+        "task": "Combina piu' modelli base in uno stacking classifier con un meta-modello finale che pesa le predizioni."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "ai_supervised_4",
+      "english": "Voting",
+      "set": {
+        "task": "Aggrega le predizioni di piu' classificatori tramite voto di maggioranza usando un VotingClassifier."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ai_unsupervised_1",
+      "english": "K-Means",
+      "set": {
+        "task": "Esegui il clustering k-means con 3 cluster sulle feature X per scoprire gruppi naturali nei dati."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ai_unsupervised_1",
+      "english": "Centroid",
+      "set": {
+        "task": "Estrai le coordinate dei centroidi calcolati da k-means per rappresentare il centro di ogni cluster."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ai_unsupervised_1",
+      "english": "Hierarchical Clustering",
+      "set": {
+        "task": "Applica un clustering gerarchico agglomerativo per ottenere 3 cluster fondendo iterativamente i piu' vicini."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ai_unsupervised_1",
+      "english": "Dendrogram",
+      "set": {
+        "task": "Importa la funzione dendrogram di SciPy per visualizzare la gerarchia dei cluster prodotti."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ai_unsupervised_1",
+      "english": "DBSCAN",
+      "set": {
+        "task": "Esegui DBSCAN con eps 0.3 e min_samples 10 per individuare cluster a densita' variabile e outlier."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ai_unsupervised_1",
+      "english": "Silhouette Score",
+      "set": {
+        "task": "Calcola il silhouette score dei cluster ottenuti per valutare quanto sono ben separati."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ai_unsupervised_2",
+      "english": "PCA",
+      "set": {
+        "task": "Riduci le feature a 2 componenti principali tramite PCA per visualizzare i dati su un piano."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ai_unsupervised_2",
+      "english": "Principal Component",
+      "set": {
+        "task": "Ispeziona i vettori delle componenti principali calcolate da PCA per capire le direzioni di massima varianza."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ai_unsupervised_2",
+      "english": "Explained Variance",
+      "set": {
+        "task": "Mostra la frazione di varianza spiegata da ogni componente principale per decidere quante mantenerne."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ai_unsupervised_2",
+      "english": "t-SNE",
+      "set": {
+        "task": "Proietta i dati ad alta dimensione in 2D con t-SNE per visualizzare cluster nascosti."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ai_unsupervised_2",
+      "english": "UMAP",
+      "set": {
+        "task": "Riduci la dimensionalita' delle feature con UMAP preservando la struttura locale e globale dei dati."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ai_unsupervised_3",
+      "english": "Support",
+      "set": {
+        "task": "Calcola il supporto di un itemset come la sua frequenza relativa nel totale delle transazioni."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ai_unsupervised_3",
+      "english": "Confidence",
+      "set": {
+        "task": "Calcola la confidenza di una regola di associazione come probabilita' condizionata di Y dato X."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ai_unsupervised_3",
+      "english": "Isolation Forest",
+      "set": {
+        "task": "Addestra un isolation forest con contaminazione del 10 percento per individuare anomalie nei dati."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "ai_unsupervised_3",
+      "english": "One-Class SVM",
+      "set": {
+        "task": "Configura una One-Class SVM con nu 0.05 per modellare la regione di normalita' e isolare gli outlier."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ai_neural_1",
+      "english": "Layer",
+      "set": {
+        "task": "Crea un layer fully-connected con 64 neuroni da inserire nella rete neurale."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ai_neural_1",
+      "english": "Input Layer",
+      "set": {
+        "task": "Definisci l'input layer della rete con shape 784 per ricevere immagini MNIST appiattite."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ai_neural_1",
+      "english": "Weight",
+      "set": {
+        "task": "Accedi all'elenco dei pesi apprendibili del modello per ispezionarne i valori o salvarli."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ai_neural_2",
+      "english": "Activation Function",
+      "set": {
+        "task": "Aggiungi un Dense layer con 64 neuroni e attivazione ReLU per introdurre non linearita'."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ai_neural_2",
+      "english": "Sigmoid",
+      "set": {
+        "task": "Implementa manualmente la funzione sigmoid per mappare un valore reale nell'intervallo (0, 1)."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ai_neural_2",
+      "english": "Tanh",
+      "set": {
+        "task": "Applica la funzione di attivazione tanh per mappare gli input nell'intervallo (-1, 1)."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ai_neural_2",
+      "english": "ReLU",
+      "set": {
+        "task": "Implementa la ReLU restituendo il massimo tra zero e l'input per azzerare i valori negativi."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ai_neural_2",
+      "english": "Leaky ReLU",
+      "set": {
+        "task": "Usa una Leaky ReLU con alpha 0.01 per evitare il problema dei neuroni morti tipico della ReLU."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ai_neural_2",
+      "english": "Softmax",
+      "set": {
+        "task": "Aggiungi un layer di output con 10 neuroni e softmax per ottenere una distribuzione di probabilita' sulle classi."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ai_neural_2",
+      "english": "Swish",
+      "set": {
+        "task": "Implementa la funzione di attivazione Swish moltiplicando l'input per la sua sigmoide."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ai_neural_3",
+      "english": "Forward Pass",
+      "set": {
+        "task": "Esegui il forward pass passando l'input nel modello per ottenere l'output predetto."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ai_neural_3",
+      "english": "Backward Pass",
+      "set": {
+        "task": "Calcola i gradienti della loss rispetto ai parametri tramite backpropagation in PyTorch."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ai_neural_3",
+      "english": "Gradient Clipping",
+      "set": {
+        "task": "Limita la norma globale dei gradienti a 1.0 per stabilizzare l'addestramento e prevenire esplosioni numeriche."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ai_neural_4",
+      "english": "Initialization",
+      "set": {
+        "task": "Inizializza i pesi del layer con lo schema He normal, indicato per attivazioni ReLU."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ai_neural_4",
+      "english": "Mini-Batch",
+      "set": {
+        "task": "Imposta un batch size di 32 per dividere l'addestramento in mini-batch piu' efficienti."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ai_neural_4",
+      "english": "Stochastic Gradient Descent",
+      "set": {
+        "task": "Configura un ottimizzatore SGD con learning rate 0.01 per aggiornare i pesi sulla base di mini-batch."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ai_neural_4",
+      "english": "Adam Optimizer",
+      "set": {
+        "task": "Imposta l'ottimizzatore Adam con learning rate 0.001 per un addestramento adattivo e robusto."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ai_neural_4",
+      "english": "Momentum",
+      "set": {
+        "task": "Aggiungi un termine di momentum 0.9 a SGD per accelerare la convergenza lungo le direzioni consistenti."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ai_neural_4",
+      "english": "Multilayer Perceptron",
+      "set": {
+        "task": "Costruisci un MLP con due hidden layer da 64 e 32 neuroni per un task di classificazione."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ai_dl_1",
+      "english": "Convolution",
+      "set": {
+        "task": "Aggiungi un layer convoluzionale con 32 filtri di dimensione 3x3 per estrarre feature spaziali dalle immagini."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ai_dl_1",
+      "english": "Stride",
+      "set": {
+        "task": "Configura una convoluzione con stride 2 per dimezzare la risoluzione della feature map ad ogni passaggio."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ai_dl_1",
+      "english": "Padding",
+      "set": {
+        "task": "Applica un padding same alla convoluzione per mantenere invariate le dimensioni spaziali dell'output."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ai_dl_1",
+      "english": "Pooling",
+      "set": {
+        "task": "Inserisci un max pooling 2x2 per ridurre le dimensioni della feature map mantenendo le attivazioni piu' forti."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ai_dl_2",
+      "english": "LSTM",
+      "set": {
+        "task": "Aggiungi un layer LSTM con 128 unita' per modellare dipendenze a lungo termine in una sequenza."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ai_dl_2",
+      "english": "GRU",
+      "set": {
+        "task": "Usa un layer GRU con 64 unita' come alternativa piu' leggera all'LSTM per dati sequenziali."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ai_dl_2",
+      "english": "Bidirectional",
+      "set": {
+        "task": "Avvolgi un LSTM da 64 unita' in un layer bidirezionale per leggere la sequenza in entrambe le direzioni."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ai_dl_3",
+      "english": "Dropout",
+      "set": {
+        "task": "Inserisci un layer di dropout con probabilita' 0.5 per ridurre l'overfitting disattivando neuroni casualmente."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ai_dl_3",
+      "english": "Batch Normalization",
+      "set": {
+        "task": "Aggiungi un layer di batch normalization per stabilizzare l'addestramento normalizzando le attivazioni del mini-batch."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ai_dl_3",
+      "english": "Layer Normalization",
+      "set": {
+        "task": "Applica la layer normalization per normalizzare le attivazioni lungo la dimensione delle feature di ogni esempio."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ai_dl_3",
+      "english": "L1 Regularization",
+      "set": {
+        "task": "Aggiungi una regolarizzazione L1 con coefficiente 0.01 sul kernel per favorire pesi sparsi."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ai_dl_3",
+      "english": "L2 Regularization",
+      "set": {
+        "task": "Applica una regolarizzazione L2 con coefficiente 0.001 sul kernel per penalizzare pesi grandi."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ai_dl_3",
+      "english": "Data Augmentation",
+      "set": {
+        "task": "Configura una data augmentation che ruota le immagini fino a 20 gradi per ampliare il training set."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ai_dl_3",
+      "english": "Label Smoothing",
+      "set": {
+        "task": "Imposta un label smoothing 0.1 nella cross-entropy per evitare che il modello diventi troppo sicuro."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ai_nlp_1",
+      "english": "Tokenization",
+      "set": {
+        "task": "Tokenizza la frase Hello world spezzandola nei singoli token che il modello accetta in ingresso."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ai_nlp_1",
+      "english": "Vocabulary",
+      "set": {
+        "task": "Conta quante voci compongono il vocabolario del tokenizer per dimensionare l'embedding layer."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ai_nlp_1",
+      "english": "Stemming",
+      "set": {
+        "task": "Riduci la parola running alla sua radice con il PorterStemmer per normalizzare il testo."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ai_nlp_1",
+      "english": "Lemmatization",
+      "set": {
+        "task": "Lemmatizza la parola running riportandola alla forma base del lemma."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ai_nlp_1",
+      "english": "Bag of Words",
+      "set": {
+        "task": "Trasforma il corpus in una matrice bag-of-words contando le occorrenze di ogni parola."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ai_nlp_1",
+      "english": "TF-IDF",
+      "set": {
+        "task": "Costruisci la rappresentazione TF-IDF del corpus per pesare le parole rare piu' delle comuni."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ai_nlp_2",
+      "english": "Embedding",
+      "set": {
+        "task": "Definisci un embedding layer che mappa il vocabolario in vettori densi di dimensione 128."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ai_nlp_2",
+      "english": "Word2Vec",
+      "set": {
+        "task": "Addestra un modello Word2Vec sulle frasi del corpus producendo vettori di parole da 100 dimensioni."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ai_nlp_2",
+      "english": "Cosine Similarity",
+      "set": {
+        "task": "Calcola la similarita' coseno tra due vettori per misurare quanto sono allineati semanticamente."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ai_nlp_3",
+      "english": "Beam Search",
+      "set": {
+        "task": "Genera testo con beam search a 5 raggi per esplorare piu' ipotesi prima di scegliere la migliore."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ai_nlp_3",
+      "english": "Perplexity",
+      "set": {
+        "task": "Calcola la perplexity del modello linguistico come esponenziale della loss media sul test set."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ai_transformers_1",
+      "english": "Multi-Head Attention",
+      "set": {
+        "task": "Aggiungi un layer di multi-head attention con 8 teste per catturare relazioni diverse tra i token."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ai_transformers_1",
+      "english": "Residual Connection",
+      "set": {
+        "task": "Aggiungi una connessione residua sommando l'input al risultato del sublayer per favorire il gradient flow."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ai_transformers_2",
+      "english": "Pre-Trained Model",
+      "set": {
+        "task": "Carica il modello pre-addestrato bert-base dall'hub di Hugging Face come punto di partenza."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ai_transformers_3",
+      "english": "Generation",
+      "set": {
+        "task": "Genera testo dal modello fino a un massimo di 100 token a partire dagli input_ids forniti."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ai_transformers_3",
+      "english": "Top-K Sampling",
+      "set": {
+        "task": "Configura una generazione con top-k sampling a 50 per limitare il campionamento ai token piu' probabili."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ai_transformers_3",
+      "english": "Top-P Sampling",
+      "set": {
+        "task": "Usa top-p sampling con soglia 0.9 per campionare dai token che coprono il 90 percento della massa di probabilita'."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ai_transformers_4",
+      "english": "Fine-Tuning",
+      "set": {
+        "task": "Avvia il fine-tuning del modello pre-addestrato sui dati specifici del task tramite il Trainer di Hugging Face."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ai_transformers_4",
+      "english": "Frozen Layer",
+      "set": {
+        "task": "Congela il layer impostando trainable a False per escluderlo dall'aggiornamento durante il fine-tuning."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ai_vision_1",
+      "english": "Image Classification",
+      "set": {
+        "task": "Classifica un'immagine passandola al modello di visione per ottenere la classe predetta."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ai_vision_1",
+      "english": "Image Tensor",
+      "set": {
+        "task": "Verifica che il tensore immagine abbia shape (224, 224, 3) prima di passarlo alla rete."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ai_vision_2",
+      "english": "Bounding Box",
+      "set": {
+        "task": "Definisci una bounding box tramite i quattro vertici x_min, y_min, x_max, y_max per localizzare un oggetto."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ai_vision_2",
+      "english": "Non-Maximum Suppression",
+      "set": {
+        "task": "Applica la non-maximum suppression di OpenCV per scartare bounding box sovrapposte sopra una soglia IoU di 0.4."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ai_prompt_1",
+      "english": "System Prompt",
+      "set": {
+        "task": "Costruisci il messaggio di system prompt che definisce il ruolo e il comportamento dell'assistente."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ai_prompt_1",
+      "english": "Delimiter",
+      "set": {
+        "task": "Racchiudi una porzione di testo tra delimitatori tripli backtick per separarla chiaramente dal resto del prompt."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ai_prompt_1",
+      "english": "Prompt Template",
+      "set": {
+        "task": "Definisci un PromptTemplate con il placeholder question per riutilizzare lo stesso schema su input diversi."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ai_prompt_4",
+      "english": "Temperature",
+      "set": {
+        "task": "Imposta una temperature di 0.7 nella generazione per bilanciare creativita' e coerenza dell'output."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ai_prompt_4",
+      "english": "Max Tokens",
+      "set": {
+        "task": "Limita la risposta del modello a 500 token per controllare il costo e la lunghezza dell'output."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ai_prompt_4",
+      "english": "Stop Sequence",
+      "set": {
+        "task": "Imposta come stop sequence una doppia newline o la stringa User: per troncare la generazione al punto giusto."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ai_prompt_4",
+      "english": "Frequency Penalty",
+      "set": {
+        "task": "Applica una frequency penalty di 0.5 per scoraggiare la ripetizione dei token gia' usati."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ai_prompt_4",
+      "english": "Streaming",
+      "set": {
+        "task": "Abilita lo streaming nella chiamata API per ricevere la risposta token per token man mano che viene generata."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ai_prompt_4",
+      "english": "Function Calling",
+      "set": {
+        "task": "Dichiara nello schema tools una funzione che il modello puo' invocare per eseguire azioni esterne."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ai_prompt_4",
+      "english": "JSON Mode",
+      "set": {
+        "task": "Forza il modello a rispondere in JSON valido impostando response_format al tipo json_object."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_1",
+      "english": "Learning Rate",
+      "set": {
+        "task": "Imposta un learning rate di 0.001 nell'ottimizzatore Adam per controllare l'ampiezza degli aggiornamenti."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_1",
+      "english": "Batch Size",
+      "set": {
+        "task": "Addestra il modello con batch size 64 per bilanciare velocita' di calcolo e stabilita' dei gradienti."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_1",
+      "english": "Epoch",
+      "set": {
+        "task": "Addestra il modello per 10 epoche complete sul training set."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_1",
+      "english": "Grid Search",
+      "set": {
+        "task": "Esegui una grid search esaustiva sugli iperparametri elencati in param_grid per trovare la combinazione migliore."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_1",
+      "english": "Random Search",
+      "set": {
+        "task": "Esplora lo spazio degli iperparametri con randomized search campionando da param_dist."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_1",
+      "english": "Schedule",
+      "set": {
+        "task": "Configura uno scheduler che riduce il learning rate dopo 3 epoche senza miglioramenti sulla validation loss."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_2",
+      "english": "Cross-Entropy Loss",
+      "set": {
+        "task": "Istanzia la cross-entropy loss come criterio di ottimizzazione per un task di classificazione."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_2",
+      "english": "Mean Squared Error",
+      "set": {
+        "task": "Imposta la MSE loss come criterio per un task di regressione che penalizza gli errori grandi quadraticamente."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_2",
+      "english": "Mean Absolute Error",
+      "set": {
+        "task": "Usa la L1 loss come metrica robusta agli outlier per task di regressione."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_2",
+      "english": "Loss Curve",
+      "set": {
+        "task": "Disegna la loss curve estratta dallo storico dell'addestramento per diagnosticare convergenza e overfitting."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_3",
+      "english": "Optimizer",
+      "set": {
+        "task": "Compila il modello specificando adam come ottimizzatore degli aggiornamenti dei pesi."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_3",
+      "english": "AdamW",
+      "set": {
+        "task": "Configura AdamW con learning rate 1e-4 per applicare correttamente il weight decay disaccoppiato."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_3",
+      "english": "RMSProp",
+      "set": {
+        "task": "Imposta RMSProp con learning rate 0.001 come ottimizzatore adattivo per dati non stazionari."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_3",
+      "english": "Nesterov Momentum",
+      "set": {
+        "task": "Attiva il Nesterov momentum in SGD con coefficiente 0.9 per anticipare il passo successivo."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_3",
+      "english": "Cosine Annealing",
+      "set": {
+        "task": "Configura uno scheduler di cosine annealing su 10 epoche per decrescere il learning rate gradualmente."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_4",
+      "english": "Mixed Precision",
+      "set": {
+        "task": "Avvolgi il forward pass in un blocco autocast di PyTorch per abilitare il mixed precision su GPU."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_4",
+      "english": "Gradient Accumulation",
+      "set": {
+        "task": "Accumula i gradienti per 4 step prima di aggiornare i pesi, simulando un batch piu' grande."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_4",
+      "english": "Checkpointing",
+      "set": {
+        "task": "Salva su disco lo state_dict del modello nel file ckpt.pt per ripartire da un checkpoint."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_1",
+      "english": "Accuracy",
+      "set": {
+        "task": "Calcola l'accuracy del classificatore confrontando etichette vere e predette."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_1",
+      "english": "Precision",
+      "set": {
+        "task": "Calcola la precision del classificatore per misurare quanti dei positivi predetti sono effettivamente positivi."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_1",
+      "english": "Recall",
+      "set": {
+        "task": "Calcola la recall del classificatore per misurare quanti dei positivi reali sono stati identificati."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_1",
+      "english": "F1 Score",
+      "set": {
+        "task": "Calcola l'F1 score come media armonica tra precision e recall del classificatore."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_1",
+      "english": "Confusion Matrix",
+      "set": {
+        "task": "Costruisci la confusion matrix per analizzare la distribuzione di veri positivi, falsi positivi e falsi negativi."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_1",
+      "english": "Balanced Accuracy",
+      "set": {
+        "task": "Calcola la balanced accuracy per ottenere una metrica robusta in presenza di classi sbilanciate."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_2",
+      "english": "AUC",
+      "set": {
+        "task": "Calcola l'area sotto la curva ROC per valutare la capacita' discriminativa del classificatore probabilistico."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_2",
+      "english": "Average Precision",
+      "set": {
+        "task": "Calcola l'average precision dai punteggi predetti per riassumere la curva precision-recall in un singolo valore."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_2",
+      "english": "Cohen Kappa",
+      "set": {
+        "task": "Calcola il Cohen kappa per misurare l'accordo tra etichette vere e predette al netto del caso."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_2",
+      "english": "Matthews Correlation",
+      "set": {
+        "task": "Calcola il coefficiente di correlazione di Matthews come metrica robusta su classi sbilanciate."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_2",
+      "english": "Log Loss",
+      "set": {
+        "task": "Calcola la log loss confrontando le probabilita' predette con le etichette reali per penalizzare predizioni sbagliate e sicure."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_3",
+      "english": "RMSE",
+      "set": {
+        "task": "Calcola l'RMSE chiamando mean_squared_error con squared False per ottenere l'errore in unita' del target."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_3",
+      "english": "MAPE",
+      "set": {
+        "task": "Calcola il MAPE per esprimere l'errore medio del modello in termini percentuali rispetto ai valori reali."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_3",
+      "english": "Pseudo R-Squared",
+      "set": {
+        "task": "Calcola l'R-squared sui valori predetti per misurare la quota di varianza spiegata dal modello di regressione."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_3",
+      "english": "Median Absolute Error",
+      "set": {
+        "task": "Calcola la mediana degli errori assoluti come metrica robusta agli outlier per la regressione."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_4",
+      "english": "Stratified K-Fold",
+      "set": {
+        "task": "Configura una stratified k-fold a 5 partizioni per preservare le proporzioni delle classi in ogni fold."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_4",
+      "english": "Leave-One-Out",
+      "set": {
+        "task": "Imposta una cross-validation leave-one-out per addestrare il modello su tutti gli esempi tranne uno alla volta."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_4",
+      "english": "Time Series Split",
+      "set": {
+        "task": "Configura un TimeSeriesSplit a 5 partizioni per validare modelli su serie temporali senza fuga dal futuro."
+      }
+    }
+  ]
+}

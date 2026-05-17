@@ -322,6 +322,7 @@ export default {
               difficulty: 'beginner',
               command: 'ping 8.8.8.8',
               note: 'Tempo che impiega un pacchetto a viaggiare. Misurata in ms.',
+              task: 'Misura il tempo di andata e ritorno verso il resolver pubblico di Google inviando un ping di prova.',
             },
             {
               english: 'Throughput',
@@ -356,6 +357,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               command: 'ping -c 100 example.com',
+              task: 'Invia 100 pacchetti ICMP verso example.com per calcolare la percentuale di pacchetti persi sul percorso.',
             },
           ],
         },
@@ -441,6 +443,7 @@ export default {
               difficulty: 'beginner',
               command: 'ip link show',
               note: 'Network Interface Card / Controller.',
+              task: 'Elenca tutte le schede di rete fisiche e virtuali presenti sul sistema con il loro stato operativo.',
             },
             {
               english: 'Cable',
@@ -811,6 +814,7 @@ export default {
               difficulty: 'beginner',
               command: 'ip link show eth0',
               note: 'Maximum Transmission Unit.',
+              task: `Controlla il valore MTU configurato sull'interfaccia eth0 per individuare eventuali problemi di frammentazione.`,
             },
             {
               english: 'Fragmentation',
@@ -1003,6 +1007,7 @@ export default {
               context: 'tcp-ip',
               difficulty: 'beginner',
               code: 'socket(AF_INET, SOCK_STREAM, 0);',
+              task: 'Crea un socket TCP IPv4 invocando la system call socket() con famiglia AF_INET e tipo SOCK_STREAM.',
             },
             {
               english: 'Connection',
@@ -1257,6 +1262,7 @@ export default {
               context: 'tcp-ip',
               difficulty: 'beginner',
               command: 'ss -tuln',
+              task: 'Mostra tutte le porte TCP e UDP in ascolto sulla macchina senza risolvere i nomi dei servizi.',
             },
             {
               english: 'Open Port',
@@ -1390,6 +1396,7 @@ export default {
               difficulty: 'beginner',
               command: 'ss -tan state time-wait',
               note: 'Tipicamente dura 2 MSL (~60s).',
+              task: 'Filtra le sole connessioni TCP nello stato TIME_WAIT per stimare quante chiusure recenti il kernel sta ancora tracciando.',
             },
           ],
         },
@@ -1416,6 +1423,7 @@ export default {
               context: 'addressing',
               difficulty: 'beginner',
               command: 'ip addr show',
+              task: 'Visualizza tutti gli indirizzi IPv4 e IPv6 assegnati alle interfacce di rete locali.',
             },
             {
               english: 'IPv4',
@@ -1491,6 +1499,7 @@ export default {
               context: 'addressing',
               difficulty: 'beginner',
               command: 'ping localhost',
+              task: `Esegui il ping verso l'indirizzo di loopback per confermare che lo stack TCP/IP locale risponda correttamente.`,
             },
             {
               english: 'APIPA',
@@ -1513,6 +1522,7 @@ export default {
               context: 'addressing',
               difficulty: 'beginner',
               command: 'ip route show default',
+              task: `Mostra la rotta predefinita attualmente in uso per identificare l'indirizzo del gateway di uscita.`,
             },
           ],
         },
@@ -1850,6 +1860,7 @@ export default {
               difficulty: 'beginner',
               command: 'ping -t 64 example.com',
               note: 'Decrementato di 1 ad ogni hop.',
+              task: 'Invia un ping verso example.com forzando un TTL iniziale di 64 hop per osservare il decremento lungo il percorso.',
             },
           ],
         },
@@ -1878,6 +1889,7 @@ export default {
               difficulty: 'intermediate',
               command: 'ip link show',
               note: 'Media Access Control. Esempio: 00:1A:2B:3C:4D:5E.',
+              task: 'Elenca le interfacce di rete del sistema per leggere il MAC address assegnato a ciascuna scheda.',
             },
             {
               english: 'OUI',
@@ -1999,6 +2011,7 @@ export default {
               context: 'switching',
               difficulty: 'intermediate',
               command: 'show mac address-table',
+              task: 'Mostra la tabella MAC dello switch per individuare su quale porta sia appreso ogni indirizzo.',
             },
             {
               english: 'CAM Table',
@@ -2061,6 +2074,7 @@ export default {
               context: 'switching',
               difficulty: 'intermediate',
               code: 'switchport port-security maximum 2',
+              task: `Configura la port-security sull'interfaccia limitando a due il numero massimo di MAC consentiti.`,
             },
             {
               english: 'PoE',
@@ -2102,6 +2116,7 @@ export default {
               difficulty: 'intermediate',
               code: 'switchport access vlan 10',
               note: 'Virtual LAN.',
+              task: `Assegna la porta alla VLAN 10 in modalita' access per separarla dal traffico delle altre VLAN.`,
             },
             {
               english: 'VLAN ID',
@@ -2134,6 +2149,7 @@ export default {
               context: 'switching',
               difficulty: 'intermediate',
               code: 'switchport mode trunk',
+              task: `Configura l'interfaccia in modalita' trunk per trasportare il traffico di piu' VLAN verso un altro switch.`,
             },
             {
               english: 'Access Port',
@@ -2145,6 +2161,7 @@ export default {
               context: 'switching',
               difficulty: 'intermediate',
               code: 'switchport mode access',
+              task: `Imposta la porta in modalita' access per collegarvi un singolo dispositivo end-user appartenente a una VLAN.`,
             },
             {
               english: 'Native VLAN',
@@ -2258,6 +2275,7 @@ export default {
               context: 'switching',
               difficulty: 'intermediate',
               code: 'spanning-tree bpduguard enable',
+              task: 'Attiva BPDU Guard sulla porta in modo da disattivarla automaticamente se riceve un BPDU inatteso.',
             },
             {
               english: 'ARP',
@@ -2269,6 +2287,7 @@ export default {
               context: 'switching',
               difficulty: 'intermediate',
               command: 'arp -a',
+              task: 'Mostra la cache ARP locale per vedere la corrispondenza tra indirizzi IP e MAC dei vicini di rete.',
             },
             {
               english: 'ARP Cache',
@@ -2280,6 +2299,7 @@ export default {
               context: 'switching',
               difficulty: 'intermediate',
               command: 'ip neigh show',
+              task: 'Interroga la tabella dei vicini del kernel per ispezionare lo stato delle entry ARP risolte.',
             },
             {
               english: 'Gratuitous ARP',
@@ -2361,6 +2381,7 @@ export default {
               context: 'routing',
               difficulty: 'intermediate',
               command: 'ip route show',
+              task: 'Stampa la tabella di routing IPv4 del kernel per verificare quali reti sono raggiungibili e tramite quale next-hop.',
             },
             {
               english: 'Next Hop',
@@ -2382,6 +2403,7 @@ export default {
               context: 'routing',
               difficulty: 'intermediate',
               command: 'traceroute google.com',
+              task: 'Traccia il percorso verso google.com elencando ogni hop intermedio attraversato e la sua latenza.',
             },
             {
               english: 'Route Metric',
@@ -2424,6 +2446,7 @@ export default {
               context: 'routing',
               difficulty: 'intermediate',
               command: 'ip route add default via 192.168.1.1',
+              task: 'Aggiungi una rotta predefinita che instradi tutto il traffico sconosciuto verso il gateway 192.168.1.1.',
             },
             {
               english: 'Longest Prefix Match',
@@ -2453,6 +2476,7 @@ export default {
               context: 'routing',
               difficulty: 'intermediate',
               code: 'ip route 10.0.0.0 255.0.0.0 192.168.1.254',
+              task: 'Dichiara una rotta statica per la rete 10.0.0.0/8 con next-hop 192.168.1.254 sulla configurazione del router Cisco.',
             },
             {
               english: 'Floating Static Route',
@@ -2526,6 +2550,7 @@ export default {
               context: 'routing',
               difficulty: 'intermediate',
               code: 'ip route add blackhole 1.2.3.0/24',
+              task: 'Crea una rotta blackhole per il prefisso 1.2.3.0/24 in modo da scartare silenziosamente il traffico diretto a quella subnet.',
             },
             {
               english: 'Policy-Based Routing',
@@ -2639,6 +2664,7 @@ export default {
               context: 'routing',
               difficulty: 'intermediate',
               command: 'show ip ospf neighbor',
+              task: `Visualizza la tabella dei vicini OSPF per verificare quali router hanno stabilito un'adiacenza FULL.`,
             },
             {
               english: 'Route Advertisement',
@@ -2687,6 +2713,7 @@ export default {
               context: 'routing',
               difficulty: 'intermediate',
               code: 'interface vlan 10\\n ip address 10.0.0.1 255.255.255.0',
+              task: `Definisci l'interfaccia VLAN 10 assegnandole l'indirizzo 10.0.0.1/24 per fungere da gateway dei client di quella VLAN.`,
             },
             {
               english: 'Routing Loop',
@@ -2730,6 +2757,7 @@ export default {
               context: 'routing',
               difficulty: 'intermediate',
               code: 'interface loopback 0\\n ip address 1.1.1.1 255.255.255.255',
+              task: `Configura un'interfaccia loopback con indirizzo 1.1.1.1/32 da usare come router-id stabile nei protocolli di routing.`,
             },
             {
               english: 'Router ID',
@@ -2751,6 +2779,7 @@ export default {
               context: 'routing',
               difficulty: 'intermediate',
               code: 'router ospf 1\\n redistribute static',
+              task: `Ridistribuisci le rotte statiche dentro il processo OSPF 1 per propagarle al resto dell'area.`,
             },
             {
               english: 'Summarization',
@@ -2873,6 +2902,7 @@ export default {
               context: 'dns',
               difficulty: 'intermediate',
               command: 'cat /etc/resolv.conf',
+              task: 'Ispeziona il file resolv.conf per scoprire quali server DNS il sistema interroga di default.',
             },
             {
               english: 'Recursive Query',
@@ -2911,6 +2941,7 @@ export default {
               context: 'dns',
               difficulty: 'intermediate',
               command: 'dig example.com A',
+              task: `Interroga il record A di example.com per ottenere l'indirizzo IPv4 associato al dominio.`,
             },
             {
               english: 'AAAA Record',
@@ -2923,6 +2954,7 @@ export default {
               difficulty: 'intermediate',
               command: 'dig example.com AAAA',
               note: 'Letto "quad-A".',
+              task: `Recupera il record AAAA di example.com per scoprire l'indirizzo IPv6 pubblicato per quel dominio.`,
             },
             {
               english: 'CNAME',
@@ -2934,6 +2966,7 @@ export default {
               context: 'dns',
               difficulty: 'intermediate',
               command: 'dig www.example.com CNAME',
+              task: `Interroga il record CNAME di www.example.com per identificare il nome canonico verso cui punta l'alias.`,
             },
             {
               english: 'MX Record',
@@ -2946,6 +2979,7 @@ export default {
               difficulty: 'intermediate',
               command: 'dig example.com MX',
               note: 'Mail eXchanger. Hanno priorità.',
+              task: 'Estrai i record MX di example.com per capire quali mail server accettano la posta per quel dominio.',
             },
             {
               english: 'TXT Record',
@@ -2968,6 +3002,7 @@ export default {
               context: 'dns',
               difficulty: 'intermediate',
               command: 'dig example.com NS',
+              task: 'Recupera i record NS di example.com per scoprire quali server DNS sono autoritativi per la zona.',
             },
             {
               english: 'PTR Record',
@@ -2979,6 +3014,7 @@ export default {
               context: 'dns',
               difficulty: 'intermediate',
               command: 'dig -x 8.8.8.8',
+              task: `Effettua una reverse lookup sull'indirizzo 8.8.8.8 per ottenere il nome PTR associato.`,
             },
             {
               english: 'SOA Record',
@@ -3030,6 +3066,7 @@ export default {
               context: 'dns',
               difficulty: 'intermediate',
               command: 'systemd-resolve --statistics',
+              task: 'Stampa le statistiche del resolver di systemd per vedere quante query sono state servite dalla cache.',
             },
             {
               english: 'DNS TTL',
@@ -3094,6 +3131,7 @@ export default {
               context: 'dns',
               difficulty: 'intermediate',
               command: 'host 8.8.8.8',
+              task: `Risolvi 8.8.8.8 al contrario con host per ottenere il record PTR pubblicato per quell'indirizzo.`,
             },
             {
               english: 'Round Robin DNS',
@@ -3381,6 +3419,7 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               command: 'curl https://example.com',
+              task: 'Effettua una richiesta HTTP GET verso example.com per scaricarne il corpo della risposta in HTTPS.',
             },
             {
               english: 'Response',
@@ -3401,6 +3440,7 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               command: 'curl -I https://example.com',
+              task: 'Recupera solo gli header della risposta di example.com senza scaricarne il body per ispezionare i metadati.',
             },
             {
               english: 'Request Method',
@@ -3432,6 +3472,7 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               command: 'curl -X POST -d "x=1" https://api.example.com',
+              task: `Invia una richiesta POST con il campo x=1 verso l'API HTTPS di esempio per testare un endpoint di scrittura.`,
             },
             {
               english: 'Status Code',
@@ -3520,6 +3561,7 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               command: 'openssl s_client -connect example.com:443',
+              task: 'Apri una connessione TLS verso example.com sulla porta 443 per ispezionare il certificato server presentato.',
             },
             {
               english: 'Certificate Authority',
@@ -3542,6 +3584,7 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               code: 'TLS_AES_256_GCM_SHA384',
+              task: 'Identifica la cipher suite TLS_AES_256_GCM_SHA384 negoziata da TLS 1.3 e analizzane gli algoritmi componenti.',
             },
             {
               english: 'SNI',
@@ -3787,6 +3830,7 @@ export default {
               difficulty: 'intermediate',
               command: 'iwconfig',
               note: '-50 dBm = ottimo, -90 dBm = scarso.',
+              task: `Avvia iwconfig per leggere il livello di segnale e la qualita' del link Wi-Fi attualmente associato.`,
             },
             {
               english: 'Beacon',
@@ -4194,6 +4238,7 @@ export default {
               context: 'firewalls',
               difficulty: 'intermediate',
               command: 'iptables -L -n',
+              task: 'Elenca tutte le regole iptables correnti in formato numerico senza risolvere porte e indirizzi.',
             },
             {
               english: 'Allow',
@@ -4237,6 +4282,7 @@ export default {
               context: 'firewalls',
               difficulty: 'intermediate',
               code: 'iptables -P INPUT DROP',
+              task: 'Imposta la policy di default della catena INPUT su DROP per bloccare tutto il traffico non esplicitamente permesso.',
             },
             {
               english: 'Implicit Deny',
@@ -4306,6 +4352,7 @@ export default {
               context: 'firewalls',
               difficulty: 'intermediate',
               code: 'iptables -A INPUT -m state --state ESTABLISHED -j ACCEPT',
+              task: `Consenti in INPUT i pacchetti appartenenti a connessioni gia' ESTABLISHED per abilitare il filtraggio stateful.`,
             },
             {
               english: 'Stateless Firewall',
@@ -4327,6 +4374,7 @@ export default {
               context: 'firewalls',
               difficulty: 'intermediate',
               command: 'conntrack -L',
+              task: 'Lista tutte le connessioni tracciate da conntrack per ispezionare lo stato attuale del firewall stateful.',
             },
             {
               english: 'Application Firewall',
@@ -4419,6 +4467,7 @@ export default {
               context: 'firewalls',
               difficulty: 'intermediate',
               code: 'access-list 10 permit 192.168.1.0 0.0.0.255',
+              task: 'Definisci la standard ACL numero 10 per autorizzare il traffico proveniente dalla subnet 192.168.1.0/24.',
             },
             {
               english: 'Extended ACL',
@@ -4430,6 +4479,7 @@ export default {
               context: 'firewalls',
               difficulty: 'intermediate',
               code: 'access-list 100 permit tcp any any eq 80',
+              task: `Crea l'extended ACL 100 per permettere il traffico TCP verso la porta 80 da qualsiasi sorgente.`,
             },
             {
               english: 'Named ACL',
@@ -4441,6 +4491,7 @@ export default {
               context: 'firewalls',
               difficulty: 'intermediate',
               code: 'ip access-list extended WEB_TRAFFIC',
+              task: 'Apri una named ACL estesa chiamata WEB_TRAFFIC per raggruppare le regole relative ai servizi HTTP e HTTPS.',
             },
             {
               english: 'Wildcard Mask',
@@ -4518,6 +4569,7 @@ export default {
               context: 'firewalls',
               difficulty: 'intermediate',
               command: 'iptables -A INPUT -p tcp --dport 22 -j ACCEPT',
+              task: 'Aggiungi una regola iptables che consenta in INPUT il traffico TCP destinato alla porta 22 per abilitare SSH.',
             },
             {
               english: 'nftables',
@@ -4529,6 +4581,7 @@ export default {
               context: 'firewalls',
               difficulty: 'intermediate',
               command: 'nft list ruleset',
+              task: `Dump l'intero ruleset nftables per verificare tabelle, catene e regole attualmente caricate nel kernel.`,
             },
             {
               english: 'ufw',
@@ -4541,6 +4594,7 @@ export default {
               difficulty: 'intermediate',
               command: 'ufw allow 22/tcp',
               note: 'Uncomplicated FireWall. Default su Ubuntu.',
+              task: 'Apri la porta TCP 22 con ufw per abilitare le connessioni SSH in arrivo sul server.',
             },
             {
               english: 'firewalld',
@@ -4553,6 +4607,7 @@ export default {
               difficulty: 'intermediate',
               command: 'firewall-cmd --list-all',
               note: 'Default su RHEL/Fedora.',
+              task: 'Mostra la configurazione completa della zona attiva di firewalld per controllare servizi, porte e regole effettive.',
             },
             {
               english: 'Chain',
@@ -4614,6 +4669,7 @@ export default {
               context: 'firewalls',
               difficulty: 'intermediate',
               code: 'iptables -A INPUT -p tcp --dport 22 -m limit --limit 3/min -j ACCEPT',
+              task: 'Limita a tre tentativi al minuto le connessioni SSH in ingresso per mitigare attacchi di forza bruta sulla porta 22.',
             },
           ],
         },
@@ -4721,6 +4777,7 @@ export default {
               context: 'vpn',
               difficulty: 'intermediate',
               command: 'ping -M do -s 1472 8.8.8.8',
+              task: `Invia un ping con bit don't-fragment e payload di 1472 byte verso 8.8.8.8 per individuare l'MTU effettivo del percorso VPN.`,
             },
             {
               english: 'Kill Switch',
@@ -4860,6 +4917,7 @@ export default {
               difficulty: 'intermediate',
               command: 'wg show',
               note: 'Integrato nel kernel Linux dal 5.6.',
+              task: 'Mostra lo stato delle interfacce WireGuard attive per controllare peer connessi, handshake e contatori di traffico.',
             },
             {
               english: 'OpenVPN',
@@ -4932,6 +4990,7 @@ export default {
               context: 'vpn',
               difficulty: 'intermediate',
               code: '[Peer]\\nPublicKey = abc...\\nAllowedIPs = 10.0.0.2/32',
+              task: 'Dichiara una sezione [Peer] WireGuard con la chiave pubblica del remoto e AllowedIPs 10.0.0.2/32.',
             },
             {
               english: 'Public Key',
@@ -4942,6 +5001,7 @@ export default {
               context: 'vpn',
               difficulty: 'intermediate',
               command: 'wg genkey | tee privkey | wg pubkey',
+              task: `Genera una chiave privata WireGuard e ne ricava la corrispondente chiave pubblica in un'unica pipeline.`,
             },
             {
               english: 'AllowedIPs',
@@ -5144,6 +5204,7 @@ export default {
               context: 'services',
               difficulty: 'intermediate',
               code: 'iptables -t nat -A POSTROUTING -j MASQUERADE',
+              task: `Abilita il source NAT mascherando in POSTROUTING l'indirizzo sorgente del traffico in uscita verso Internet.`,
             },
             {
               english: 'Destination NAT',
@@ -5155,6 +5216,7 @@ export default {
               context: 'services',
               difficulty: 'intermediate',
               code: 'iptables -t nat -A PREROUTING -p tcp --dport 80 -j DNAT --to 10.0.0.2',
+              task: 'Inoltra in PREROUTING le connessioni TCP destinate alla porta 80 verso il server interno 10.0.0.2.',
             },
             {
               english: 'NAT Table',
@@ -5166,6 +5228,7 @@ export default {
               context: 'services',
               difficulty: 'intermediate',
               command: 'conntrack -L',
+              task: 'Esplora le entry della tabella conntrack per osservare quali traduzioni NAT sono attive in questo momento.',
             },
             {
               english: 'CGNAT',
@@ -5248,6 +5311,7 @@ export default {
               context: 'services',
               difficulty: 'intermediate',
               command: 'ssh -D 1080 user@server',
+              task: 'Stabilisci un tunnel SSH dinamico esponendo localmente un proxy SOCKS sulla porta 1080 tramite il server remoto.',
             },
             {
               english: 'HTTP Proxy',
@@ -5259,6 +5323,7 @@ export default {
               context: 'services',
               difficulty: 'intermediate',
               command: 'curl -x http://proxy:3128 https://example.com',
+              task: 'Effettua una richiesta HTTPS verso example.com instradandola attraverso il proxy HTTP in ascolto su 3128.',
             },
             {
               english: 'CONNECT Method',
@@ -5458,6 +5523,7 @@ export default {
               context: 'services',
               difficulty: 'intermediate',
               command: 'ssh -L 8080:localhost:80 user@host',
+              task: `Inoltra la porta locale 8080 verso la porta 80 dell'host remoto tramite un tunnel SSH di tipo local forward.`,
             },
             {
               english: 'Remote Forward',
@@ -5469,6 +5535,7 @@ export default {
               context: 'services',
               difficulty: 'intermediate',
               command: 'ssh -R 8080:localhost:80 user@host',
+              task: `Esponi sulla porta 8080 dell'host remoto il servizio in ascolto sulla porta 80 locale tramite un remote forward.`,
             },
             {
               english: 'DMZ',
@@ -5646,6 +5713,7 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               command: 'dig +short example.com MX',
+              task: 'Interroga i record MX di example.com per scoprire quali server SMTP gestiscono la posta del dominio.',
             },
           ],
         },
@@ -5685,6 +5753,7 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               command: 'sftp user@server',
+              task: 'Apri una sessione SFTP cifrata verso server come user, trasferendo file via SSH sulla porta 22.',
             },
             {
               english: 'SCP',
@@ -5696,6 +5765,7 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               command: 'scp file.txt user@server:/tmp/',
+              task: 'Copia file.txt sul server remoto dentro /tmp/ usando il protocollo SCP sopra SSH.',
             },
             {
               english: 'TFTP',
@@ -5738,6 +5808,7 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               command: 'rsync -avz src/ user@host:/dst/',
+              task: 'Sincronizza la directory src/ verso /dst/ sul server remoto con rsync, attivando archivio, verbose e compressione.',
             },
             {
               english: 'WebDAV',
@@ -5778,6 +5849,7 @@ export default {
               difficulty: 'intermediate',
               command: 'ssh user@server',
               note: 'Porta 22 di default.',
+              task: 'Avvia una shell remota cifrata verso server autenticandoti come user tramite SSH sulla porta 22.',
             },
             {
               english: 'Telnet',
@@ -5822,6 +5894,7 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               command: 'ssh-keygen -t ed25519',
+              task: `Genera una coppia di chiavi SSH ed25519 da usare per l'autenticazione passwordless sui server.`,
             },
             {
               english: 'Public Key Authentication',
@@ -5843,6 +5916,7 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               code: '~/.ssh/known_hosts',
+              task: 'Consulta ~/.ssh/known_hosts per verificare le fingerprint dei server già visitati e prevenire attacchi MITM.',
             },
             {
               english: 'SSH Agent',
@@ -5854,6 +5928,7 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               command: 'ssh-add ~/.ssh/id_ed25519',
+              task: 'Carica la chiave privata id_ed25519 dentro ssh-agent per evitare di sbloccarla a ogni connessione.',
             },
             {
               english: 'Jump Host',
@@ -5865,6 +5940,7 @@ export default {
               context: 'protocols',
               difficulty: 'intermediate',
               command: 'ssh -J jump@bastion user@internal',
+              task: `Collegati al server interno passando per il bastion host jump usando l'opzione -J di SSH.`,
             },
             {
               english: 'Mosh',
@@ -5895,6 +5971,7 @@ export default {
               difficulty: 'intermediate',
               command: 'snmpwalk -v 2c -c public 192.168.1.1',
               note: 'Porta UDP 161/162.',
+              task: 'Esegui un walk SNMPv2c con community public sul dispositivo 192.168.1.1 per enumerare le OID disponibili.',
             },
             {
               english: 'MIB',
@@ -5927,6 +6004,7 @@ export default {
               difficulty: 'intermediate',
               command: 'timedatectl status',
               note: 'Porta UDP 123.',
+              task: `Verifica lo stato della sincronizzazione NTP del sistema con timedatectl, controllando se l'orologio è allineato.`,
             },
             {
               english: 'Stratum',
@@ -6021,6 +6099,7 @@ export default {
               difficulty: 'advanced',
               command: 'ping -c 4 8.8.8.8',
               note: 'Usa pacchetti ICMP echo.',
+              task: 'Invia 4 pacchetti ICMP echo a 8.8.8.8 per testare la raggiungibilità del resolver pubblico di Google.',
             },
             {
               english: 'traceroute',
@@ -6033,6 +6112,7 @@ export default {
               difficulty: 'advanced',
               command: 'traceroute google.com',
               note: 'Su Windows: tracert.',
+              task: 'Traccia gli hop intermedi verso google.com per individuare in che punto il routing introduce latenza.',
             },
             {
               english: 'mtr',
@@ -6045,6 +6125,7 @@ export default {
               difficulty: 'advanced',
               command: 'mtr google.com',
               tool: 'mtr',
+              task: 'Combina ping e traceroute verso google.com con mtr per monitorare in tempo reale perdita pacchetti e latenza per hop.',
             },
             {
               english: 'hostname',
@@ -6056,6 +6137,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               command: 'hostname -f',
+              task: `Mostra l'FQDN completo della macchina locale con hostname -f, includendo dominio DNS.`,
             },
             {
               english: 'nslookup',
@@ -6067,6 +6149,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               command: 'nslookup example.com',
+              task: 'Risolvi il record A di example.com con nslookup interrogando il resolver DNS configurato.',
             },
             {
               english: 'dig',
@@ -6079,6 +6162,7 @@ export default {
               difficulty: 'advanced',
               command: 'dig +trace example.com',
               note: 'Domain Information Groper.',
+              task: 'Esegui un trace iterativo dei delegati DNS per example.com partendo dai root server con dig +trace.',
             },
             {
               english: 'host command',
@@ -6090,6 +6174,7 @@ export default {
               difficulty: 'advanced',
               command: 'host example.com',
               note: 'Su Linux moderno è spesso un alias di bind-utils ed è più sintetico di dig.',
+              task: 'Risolvi il nome example.com con il comando host, ottenendo record A, AAAA e MX in output compatto.',
             },
             {
               english: 'whois',
@@ -6101,6 +6186,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               command: 'whois example.com',
+              task: 'Interroga i registri whois per example.com per scoprire registrant, registrar e date di scadenza del dominio.',
             },
             {
               english: 'arp command',
@@ -6113,6 +6199,7 @@ export default {
               difficulty: 'advanced',
               command: 'arp -n',
               note: `Sui sistemi moderni è spesso sostituito da 'ip neigh', che fa lo stesso ed è più consistente.`,
+              task: 'Mostra la tabella ARP locale in forma numerica con arp -n per mappare IP a indirizzi MAC.',
             },
             {
               english: 'ifconfig',
@@ -6125,6 +6212,7 @@ export default {
               difficulty: 'advanced',
               command: 'ifconfig -a',
               note: 'Deprecato su Linux moderno: usa ip.',
+              task: 'Elenca tutte le interfacce di rete del sistema, incluse quelle down, con ifconfig -a.',
             },
           ],
         },
@@ -6144,6 +6232,7 @@ export default {
               difficulty: 'advanced',
               command: 'ip addr show',
               note: `Sintassi tipica: ip <oggetto> <azione>, es. 'ip addr add', 'ip route show'.`,
+              task: 'Visualizza gli indirizzi IPv4 e IPv6 assegnati a ogni interfaccia con il moderno comando ip addr show.',
             },
             {
               english: 'ss',
@@ -6156,6 +6245,7 @@ export default {
               difficulty: 'advanced',
               command: 'ss -tulnp',
               note: 'Socket Statistics.',
+              task: 'Elenca con ss tutti i socket TCP e UDP in ascolto, mostrando i processi che li tengono aperti.',
             },
             {
               english: 'netstat',
@@ -6168,6 +6258,7 @@ export default {
               difficulty: 'advanced',
               command: 'netstat -tulnp',
               note: 'Deprecato: preferire ss.',
+              task: 'Mostra con netstat le porte TCP e UDP in listen e i processi associati, in modo numerico.',
             },
             {
               english: 'nmcli',
@@ -6179,6 +6270,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               command: 'nmcli connection show',
+              task: `Visualizza con nmcli l'elenco delle connessioni di rete gestite da NetworkManager con i loro stati.`,
             },
             {
               english: 'NetworkManager',
@@ -6212,6 +6304,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               command: 'iperf3 -c server.example.com',
+              task: 'Misura la banda passante TCP verso il server iperf3 collegandoti come client a server.example.com.',
             },
             {
               english: 'ethtool',
@@ -6223,6 +6316,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               command: 'ethtool eth0',
+              task: `Interroga con ethtool i parametri fisici dell'interfaccia eth0 come velocità, duplex e auto-negoziazione.`,
             },
             {
               english: 'iw',
@@ -6234,6 +6328,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               command: 'iw dev wlan0 link',
+              task: `Mostra con iw lo stato del link wireless dell'interfaccia wlan0, includendo SSID, frequenza e potenza segnale.`,
             },
             {
               english: 'route',
@@ -6246,6 +6341,7 @@ export default {
               difficulty: 'advanced',
               command: 'route -n',
               note: 'Su Linux moderno usa: ip route.',
+              task: 'Elenca la tabella di routing IPv4 in forma numerica con route -n, evitando la risoluzione DNS dei gateway.',
             },
           ],
         },
@@ -6264,6 +6360,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               command: 'tcpdump -i eth0 -n port 80',
+              task: `Cattura con tcpdump il traffico HTTP sulla porta 80 dell'interfaccia eth0 senza risolvere i nomi DNS.`,
             },
             {
               english: 'Wireshark',
@@ -6287,6 +6384,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               command: 'tshark -i eth0',
+              task: `Avvia una cattura pacchetti in tempo reale sull'interfaccia eth0 con tshark, la versione CLI di Wireshark.`,
             },
             {
               english: 'pcap',
@@ -6298,6 +6396,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               command: 'tcpdump -w capture.pcap',
+              task: 'Salva con tcpdump tutto il traffico catturato nel file capture.pcap per analizzarlo poi con Wireshark.',
             },
             {
               english: 'BPF',
@@ -6309,6 +6408,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               code: 'host 1.2.3.4 and port 443',
+              task: 'Filtra in cattura solo i pacchetti destinati a 1.2.3.4 sulla porta 443 usando una espressione BPF.',
             },
             {
               english: 'Capture Filter',
@@ -6330,6 +6430,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               code: 'tcp.port == 443',
+              task: 'Filtra in Wireshark solo i pacchetti TCP sulla porta 443 applicando il display filter tcp.port == 443.',
             },
             {
               english: 'Promiscuous Mode',
@@ -6380,6 +6481,7 @@ export default {
               difficulty: 'advanced',
               command: 'nmap -sV -p 1-1000 192.168.1.0/24',
               note: 'Network Mapper.',
+              task: 'Esegui con nmap una scansione delle porte 1-1000 sulla subnet 192.168.1.0/24 rilevando anche le versioni dei servizi.',
             },
             {
               english: 'Port Scan',
@@ -6402,6 +6504,7 @@ export default {
               difficulty: 'advanced',
               command: 'nmap -sS target',
               note: 'Half-open scan.',
+              task: 'Lancia con nmap una SYN scan stealth contro il target inviando solo SYN senza completare il three-way handshake.',
             },
             {
               english: 'masscan',
@@ -6424,6 +6527,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               command: 'fping -g 192.168.1.0/24',
+              task: 'Pinga in parallelo tutti gli host della subnet 192.168.1.0/24 con fping per identificare velocemente quelli attivi.',
             },
             {
               english: 'Service Detection',
@@ -6435,6 +6539,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               command: 'nmap -sV target',
+              task: 'Identifica con nmap -sV le versioni dei servizi in ascolto sul target interrogandoli con probe specifici.',
             },
             {
               english: 'OS Detection',
@@ -6445,6 +6550,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               command: 'nmap -O target',
+              task: 'Rileva con nmap -O il sistema operativo del target analizzando il fingerprint dello stack TCP/IP.',
             },
             {
               english: 'Banner Grabbing',
@@ -6466,6 +6572,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               command: 'nmap --script vuln target',
+              task: 'Esegui sul target gli script NSE della categoria vuln per cercare vulnerabilità note nei servizi esposti.',
             },
             {
               english: 'Zenmap',
@@ -6514,6 +6621,7 @@ export default {
               difficulty: 'advanced',
               command: 'mtr -r -c 100 google.com',
               note: 'Su WAN/Internet anche valori bassi (>1%) collassano la finestra di congestione TCP.',
+              task: 'Misura con mtr il tasso di perdita pacchetti verso google.com facendo 100 cicli in modalità report.',
             },
             {
               english: 'High Latency',
@@ -6613,6 +6721,7 @@ export default {
               difficulty: 'advanced',
               command: 'ip link set dev eth0 mtu 1500',
               note: `Scoperto dinamicamente con Path MTU Discovery via ICMP 'Fragmentation Needed'.`,
+              task: `Imposta l'MTU dell'interfaccia eth0 al valore standard Ethernet di 1500 byte per evitare la frammentazione.`,
             },
             {
               english: 'Path MTU Discovery',
@@ -6645,6 +6754,7 @@ export default {
               context: 'troubleshooting',
               difficulty: 'advanced',
               code: 'iptables -A FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu',
+              task: `Applica MSS clamping con iptables sui SYN forwardati per agganciare l'MSS al PMTU del path ed evitare blackhole.`,
             },
             {
               english: "Don't Fragment",
@@ -6655,6 +6765,7 @@ export default {
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'ping -M do -s 1472 google.com',
+              task: `Verifica il path MTU verso google.com inviando ping da 1472 byte con flag Don't Fragment attivo.`,
             },
             {
               english: 'IP Fragmentation',
@@ -6958,6 +7069,7 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               command: 'tc qdisc add dev eth0 root tbf rate 1mbit burst 32kbit latency 400ms',
+              task: 'Limita il traffico in uscita di eth0 a 1 Mbit/s con tc tbf, impostando burst da 32 kbit e latenza 400 ms.',
             },
             {
               english: 'Traffic Policing',
@@ -7277,6 +7389,7 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               command: 'tc qdisc show dev eth0',
+              task: `Visualizza con tc le qdisc attive sull'interfaccia eth0 per ispezionare le code di traffico configurate.`,
             },
             {
               english: 'qdisc',
@@ -7339,6 +7452,7 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               code: 'iptables -t mangle -A POSTROUTING -p tcp --dport 22 -j MARK --set-mark 1',
+              task: 'Marca con iptables a 1 i pacchetti SSH in uscita per poi instradarli o limitarli tramite tc.',
             },
             {
               english: 'Class',
@@ -7350,6 +7464,7 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               command: 'tc class show dev eth0',
+              task: `Elenca con tc le classi di traffico configurate sull'interfaccia eth0 sotto le qdisc gerarchiche come HTB.`,
             },
             {
               english: 'Filter',
@@ -7361,6 +7476,7 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               command: 'tc filter show dev eth0',
+              task: 'Mostra con tc i filtri di classificazione applicati a eth0 che assegnano i flussi alle relative classi.',
             },
             {
               english: 'eBPF QoS',
@@ -9206,6 +9322,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               code: '- name: Configure interface\\n  cisco.ios.ios_interface:\\n    name: GigabitEthernet1\\n    enabled: true',
+              task: 'Scrivi un playbook Ansible che usa il modulo cisco.ios.ios_interface per abilitare la GigabitEthernet1.',
             },
             {
               english: 'Inventory',
@@ -9372,6 +9489,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               command: 'curl -X GET https://device/api/v1/interfaces',
+              task: 'Interroga con curl la REST API del dispositivo facendo GET su /api/v1/interfaces per leggere lo stato delle porte.',
             },
             {
               english: 'JSON-RPC',
@@ -9420,6 +9538,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               code: 'from netmiko import ConnectHandler',
+              task: 'Importa ConnectHandler dalla libreria Netmiko per aprire una sessione SSH programmatica verso dispositivi di rete multi-vendor.',
             },
             {
               english: 'NAPALM',
@@ -9758,6 +9877,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               command: 'snmpget -v 2c -c public 192.168.1.1 sysUpTime.0',
+              task: `Recupera con snmpget il valore dell'OID sysUpTime.0 da 192.168.1.1 via SNMPv2c con community public.`,
             },
             {
               english: 'SNMP Trap',
@@ -9780,6 +9900,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               command: 'snmpwalk -v 2c -c public 192.168.1.1 1.3.6.1.2.1',
+              task: `Esegui un walk SNMP partendo dalla OID 1.3.6.1.2.1 per enumerare l'intero ramo MIB-2 del dispositivo.`,
             },
             {
               english: 'Community String',

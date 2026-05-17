@@ -1,0 +1,1492 @@
+{
+  "fixes": [
+    {
+      "level": "0",
+      "lesson": "mon_observability_1",
+      "english": "Metric",
+      "set": {
+        "task": "Esponi una metrica di utilizzo CPU per l'host web-1 con valore 0.72."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "mon_observability_1",
+      "english": "Log",
+      "set": {
+        "task": "Segui in tempo reale gli eventi che si accodano al file /var/log/syslog del sistema."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "mon_observability_2",
+      "english": "Uptime",
+      "set": {
+        "task": "Mostra da quanto tempo il sistema e' acceso insieme al carico medio attuale."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "mon_observability_3",
+      "english": "Health Check",
+      "set": {
+        "task": "Esegui un controllo di salute sull'endpoint /health del servizio in ascolto sulla porta 8080."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "mon_observability_3",
+      "english": "Endpoint",
+      "set": {
+        "task": "Interroga l'endpoint /metrics in GET per recuperare i dati esposti dal servizio."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "mon_observability_4",
+      "english": "Timestamp",
+      "set": {
+        "task": "Rappresenta l'istante temporale 1717840800 come Unix timestamp in formato epoch."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "mon_observability_4",
+      "english": "Scrape Interval",
+      "set": {
+        "task": "Configura Prometheus per fare scraping dei target ogni 15 secondi."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "mon_observability_4",
+      "english": "Retention",
+      "set": {
+        "task": "Avvia Prometheus con una retention dei dati TSDB di 30 giorni."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "mon_observability_4",
+      "english": "Aggregation",
+      "set": {
+        "task": "Aggrega con sum() il rate delle richieste HTTP totali su una finestra di 5 minuti."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_1",
+      "english": "CPU Usage",
+      "set": {
+        "task": "Visualizza i processi piu' affamati di CPU con top o calcola l'uso non idle tramite rate() su 5 minuti."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_1",
+      "english": "Load Average",
+      "set": {
+        "task": "Mostra il carico medio del sistema su 1, 5 e 15 minuti tramite uptime."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_1",
+      "english": "Memory Usage",
+      "set": {
+        "task": "Mostra l'utilizzo della memoria in formato leggibile con unita' di misura compatte."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_1",
+      "english": "Swap",
+      "set": {
+        "task": "Elenca i dispositivi di swap attivi con la rispettiva dimensione e utilizzo."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_1",
+      "english": "Page Fault",
+      "set": {
+        "task": "Campiona statistiche di memoria virtuale e page fault ogni secondo con vmstat."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_1",
+      "english": "Cache Hit Ratio",
+      "set": {
+        "task": "Calcola il rapporto di hit dividendo cache_hits per la somma di hit e miss."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_1",
+      "english": "Context Switch",
+      "set": {
+        "task": "Mostra il numero di context switch volontari e involontari per processo con pidstat -w."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_1",
+      "english": "CPU Throttling",
+      "set": {
+        "task": "Monitora i secondi di CPU sottratti ai container per throttling tramite container_cpu_cfs_throttled_seconds_total."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_2",
+      "english": "Disk Usage",
+      "set": {
+        "task": "Mostra spazio occupato e libero per ogni filesystem montato con valori in formato leggibile."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_2",
+      "english": "Disk I/O",
+      "set": {
+        "task": "Campiona ogni secondo le statistiche estese di I/O dei dischi con iostat -x."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_2",
+      "english": "Inode",
+      "set": {
+        "task": "Visualizza l'utilizzo degli inode su ogni filesystem per evitare esaurimenti silenziosi."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_2",
+      "english": "Disk Saturation",
+      "set": {
+        "task": "Identifica la saturazione del disco controllando la colonna %util con iostat -x 1."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_2",
+      "english": "Filesystem",
+      "set": {
+        "task": "Filtra i filesystem rimontati in sola lettura cercando il flag ro nell'elenco mount."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_2",
+      "english": "Disk Free",
+      "set": {
+        "task": "Allerta quando lo spazio libero scende sotto il 10% confrontando free_bytes con size_bytes."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_3",
+      "english": "Network Throughput",
+      "set": {
+        "task": "Mostra il throughput di rete in tempo reale per interfaccia con iftop."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_3",
+      "english": "Latency",
+      "set": {
+        "task": "Misura la latenza ICMP inviando pacchetti ping verso il dominio example.com."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_3",
+      "english": "Packet Loss",
+      "set": {
+        "task": "Diagnostica la perdita di pacchetti hop per hop verso example.com con mtr."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_3",
+      "english": "Connections",
+      "set": {
+        "task": "Mostra il riepilogo statistico delle connessioni e dei socket aperti con ss -s."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_3",
+      "english": "Errors per Second",
+      "set": {
+        "task": "Calcola al secondo gli errori HTTP 5xx tramite rate() su una finestra di 5 minuti."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_3",
+      "english": "TCP Retransmit",
+      "set": {
+        "task": "Estrai i contatori di ritrasmissione TCP dalle statistiche di rete con netstat -s."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_3",
+      "english": "Socket",
+      "set": {
+        "task": "Elenca i socket TCP e UDP in ascolto sul sistema senza risolvere i nomi."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_4",
+      "english": "Request Rate",
+      "set": {
+        "task": "Calcola il numero di richieste HTTP al secondo con rate() su una finestra di 5 minuti."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_4",
+      "english": "Error Rate",
+      "set": {
+        "task": "Determina la frazione di richieste 5xx sul totale come tasso di errore in PromQL."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_4",
+      "english": "Percentile",
+      "set": {
+        "task": "Stima il percentile P99 della latenza delle richieste a partire dai bucket dell'istogramma."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "mon_logs_1",
+      "english": "Log Level",
+      "set": {
+        "task": "Imposta il livello di log del logger a DEBUG per emettere ogni messaggio diagnostico."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "mon_logs_1",
+      "english": "Debug",
+      "set": {
+        "task": "Emetti un messaggio di debug quando il flusso entra nella funzione corrente."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "mon_logs_1",
+      "english": "Info",
+      "set": {
+        "task": "Registra un evento informativo per documentare il login di un utente."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "mon_logs_1",
+      "english": "Warning",
+      "set": {
+        "task": "Emetti un warning quando il client effettua un retry su una richiesta fallita."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "mon_logs_1",
+      "english": "Error",
+      "set": {
+        "task": "Loga come error il fallimento della connessione al database per attivare l'investigazione."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "mon_logs_1",
+      "english": "Critical",
+      "set": {
+        "task": "Marca come critical una condizione di sistema non recuperabile che richiede pager immediato."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "mon_logs_2",
+      "english": "Structured Logging",
+      "set": {
+        "task": "Scrivi una riga di log strutturato in JSON con livello info, evento login e user_id 42."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "mon_logs_2",
+      "english": "Correlation ID",
+      "set": {
+        "task": "Propaga l'ID di correlazione 7f3c... nell'header X-Request-ID per tracciare la richiesta tra servizi."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "mon_logs_2",
+      "english": "Logger",
+      "set": {
+        "task": "Ottieni un'istanza di logger nominata sul modulo corrente tramite __name__."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "mon_logs_2",
+      "english": "Handler",
+      "set": {
+        "task": "Configura un FileHandler che scriva i log nel file /var/log/app.log."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "mon_logs_3",
+      "english": "Logrotate",
+      "set": {
+        "task": "Forza l'esecuzione della rotazione log usando la configurazione /etc/logrotate.conf."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "mon_logs_3",
+      "english": "Compression",
+      "set": {
+        "task": "Comprimi il file di log gia' ruotato /var/log/app.log.1 con gzip per ridurne la dimensione."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "mon_logs_3",
+      "english": "Syslog",
+      "set": {
+        "task": "Invia un messaggio di prova a syslog con facility local0 e priorita' info."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "mon_logs_3",
+      "english": "Journald",
+      "set": {
+        "task": "Segui in tempo reale i log della unit systemd nginx tramite journalctl."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "mon_logs_3",
+      "english": "Log File",
+      "set": {
+        "task": "Visualizza in tempo reale le ultime righe scritte sul file /var/log/app.log."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "mon_logs_4",
+      "english": "Grep",
+      "set": {
+        "task": "Cerca senza distinzione di maiuscole il pattern error all'interno del file /var/log/app.log."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "mon_logs_4",
+      "english": "Tail",
+      "set": {
+        "task": "Segui le ultime righe del file /var/log/syslog stampando ogni nuova voce in tempo reale."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "mon_logs_4",
+      "english": "Awk",
+      "set": {
+        "task": "Estrai la nona colonna da access.log con awk per leggere lo status code di ogni richiesta."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "mon_logs_4",
+      "english": "Verbose",
+      "set": {
+        "task": "Esegui curl con output verboso verso example.com per ispezionare header e handshake TLS."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "mon_logs_tools_1",
+      "english": "Elasticsearch",
+      "set": {
+        "task": "Interroga l'API _cat/indices di Elasticsearch sulla porta 9200 per elencare gli indici esistenti."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "mon_logs_tools_1",
+      "english": "Filebeat",
+      "set": {
+        "task": "Configura Filebeat per seguire tutti i file con estensione .log presenti in /var/log."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "mon_logs_tools_1",
+      "english": "Index",
+      "set": {
+        "task": "Nomina l'indice giornaliero come logs-app-2026.04.26 per separare i documenti per data."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "mon_logs_tools_1",
+      "english": "Pipeline",
+      "set": {
+        "task": "Definisci una pipeline Logstash con input beats, blocco filter e output verso Elasticsearch."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "mon_logs_tools_1",
+      "english": "KQL",
+      "set": {
+        "task": "Filtra in Kibana i documenti con status_code 500 sull'host web-1 usando KQL."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "mon_logs_tools_2",
+      "english": "LogQL",
+      "set": {
+        "task": "Filtra in LogQL i log della job nginx selezionando le righe che contengono la stringa error."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "mon_logs_tools_2",
+      "english": "Label",
+      "set": {
+        "task": "Seleziona in Loki le serie con etichette app=api ed env=prod per restringere il set."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "mon_logs_tools_2",
+      "english": "Line Filter",
+      "set": {
+        "task": "Filtra le righe che contengono panic e poi applica un match regex su error: \\d+."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "mon_logs_tools_2",
+      "english": "Tenant",
+      "set": {
+        "task": "Identifica il tenant team-a in Loki valorizzando l'header X-Scope-OrgID nella richiesta."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "mon_logs_tools_3",
+      "english": "Source",
+      "set": {
+        "task": "Definisci in Fluentd una source di tipo tail che legga tutti i file .log sotto /var/log."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "mon_logs_tools_3",
+      "english": "Match",
+      "set": {
+        "task": "Instrada con un blocco match Fluentd gli eventi nginx.** verso il plugin di output elasticsearch."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "mon_logs_tools_3",
+      "english": "Filter",
+      "set": {
+        "task": "Applica un filtro record_transformer agli eventi app.** per arricchirne o trasformarne i campi."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "mon_logs_tools_3",
+      "english": "Tag",
+      "set": {
+        "task": "Marca gli eventi Fluentd in ingresso con il tag nginx.access per indirizzarli ai match successivi."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "mon_logs_tools_3",
+      "english": "Plugin",
+      "set": {
+        "task": "Installa il plugin fluent-plugin-s3 per inoltrare i log da Fluentd verso S3."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "mon_logs_tools_4",
+      "english": "CloudWatch Logs",
+      "set": {
+        "task": "Segui in tempo reale il gruppo di log Lambda /aws/lambda/my-fn tramite la CLI AWS."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "mon_logs_tools_4",
+      "english": "Logs Insights",
+      "set": {
+        "task": "Costruisci una query Logs Insights con @timestamp e @message ordinati per timestamp decrescente."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "mon_logs_tools_4",
+      "english": "Cloud Logging",
+      "set": {
+        "task": "Estrai da GCP Cloud Logging tutte le voci con severity maggiore o uguale a ERROR."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "mon_alerting_1",
+      "english": "Alert Rule",
+      "set": {
+        "task": "Definisci una regola di alert che scatti quando l'uso medio della CPU supera il 90%."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "mon_alerting_1",
+      "english": "For Clause",
+      "set": {
+        "task": "Stabilizza l'alert con una clausola for di 5 minuti per evitare flapping su picchi brevi."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "mon_alerting_1",
+      "english": "Severity Level",
+      "set": {
+        "task": "Imposta sulla regola di alert la label severity al valore critical per attivare l'on-call."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "mon_alerting_1",
+      "english": "Annotation",
+      "set": {
+        "task": "Aggiungi all'alert l'annotazione summary con il testo DB latency high per il routing in PagerDuty."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "mon_alerting_3",
+      "english": "Slack Webhook",
+      "set": {
+        "task": "Invia gli alert con una POST verso l'URL del webhook Slack su hooks.slack.com/services/..."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "mon_alerting_4",
+      "english": "Runbook Link",
+      "set": {
+        "task": "Aggiungi all'annotazione runbook_url il link alla pagina di runbook per il database."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_1",
+      "english": "Scraping",
+      "set": {
+        "task": "Verifica l'endpoint /metrics esposto da Prometheus sulla porta 9090 con una richiesta curl."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_1",
+      "english": "Target",
+      "set": {
+        "task": "Configura un target statico Prometheus che punti all'host app sulla porta 8080."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_1",
+      "english": "Job",
+      "set": {
+        "task": "Crea un job Prometheus chiamato node con configurazione static_configs per i target."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_1",
+      "english": "Push Gateway",
+      "set": {
+        "task": "Invia la metrica my_metric con valore 42 al Push Gateway sulla porta 9091 per la job batch."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_1",
+      "english": "Federation",
+      "set": {
+        "task": "Estrai via federation tutte le serie con label job=api da un Prometheus regionale."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_2",
+      "english": "Node Exporter",
+      "set": {
+        "task": "Interroga l'endpoint /metrics del Node Exporter in ascolto sulla porta 9100."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_2",
+      "english": "Blackbox Exporter",
+      "set": {
+        "task": "Definisci un modulo http_2xx con prober http per le sonde Blackbox Exporter."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_2",
+      "english": "Custom Exporter",
+      "set": {
+        "task": "Costruisci un esportatore custom importando start_http_server e Gauge da prometheus_client."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_2",
+      "english": "Instrumentation",
+      "set": {
+        "task": "Incrementa il contatore http_requests_total etichettato con il metodo HTTP GET."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_2",
+      "english": "Client Library",
+      "set": {
+        "task": "Installa la libreria client Prometheus per Python tramite pip install prometheus_client."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_2",
+      "english": "Metric Endpoint",
+      "set": {
+        "task": "Esponi l'endpoint /metrics in GET da cui Prometheus scarichera' i campioni."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_2",
+      "english": "Exposition Format",
+      "set": {
+        "task": "Dichiara con HELP e TYPE la metrica counter http_requests e annota il sample con code=200."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_3",
+      "english": "Counter",
+      "set": {
+        "task": "Modella le richieste HTTP con codice 200 come metrica counter http_requests_total."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_3",
+      "english": "Gauge",
+      "set": {
+        "task": "Rappresenta la memoria usata in byte come metrica gauge memory_used_bytes."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_3",
+      "english": "Histogram",
+      "set": {
+        "task": "Definisci un bucket di istogramma per la durata delle richieste HTTP con soglia le=0.5."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_3",
+      "english": "Summary",
+      "set": {
+        "task": "Esponi la durata delle richieste HTTP come summary con quantile 0.99."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_3",
+      "english": "Bucket",
+      "set": {
+        "task": "Definisci il bucket finale di istogramma con label le=+Inf per catturare tutti i valori."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_3",
+      "english": "Quantile",
+      "set": {
+        "task": "Calcola il quantile 0.99 della latenza usando histogram_quantile sul bucket dell'istogramma."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_3",
+      "english": "Label Cardinality",
+      "set": {
+        "task": "Limita la cardinalita' delle label di http_requests_total a code e method per contenere la memoria."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_3",
+      "english": "Naming Convention",
+      "set": {
+        "task": "Segui la convenzione di naming Prometheus nominando il contatore http_requests_total con suffisso _total."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_3",
+      "english": "Help Text",
+      "set": {
+        "task": "Documenta il counter http_requests_total con il testo HELP Total HTTP requests."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_4",
+      "english": "Recording Rule",
+      "set": {
+        "task": "Pre-calcola con una recording rule il valore aggregato job:http_inprogress_requests:sum."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_4",
+      "english": "Alerting Rule",
+      "set": {
+        "task": "Definisci una alerting rule HighErrorRate che resti vera per 5 minuti prima di scattare."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_4",
+      "english": "Group",
+      "set": {
+        "task": "Raggruppa sotto il nome http un insieme di regole Prometheus da valutare insieme."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_4",
+      "english": "Evaluation Interval",
+      "set": {
+        "task": "Imposta l'intervallo di valutazione globale delle regole Prometheus a 30 secondi."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_4",
+      "english": "Remote Write",
+      "set": {
+        "task": "Configura il remote write di Prometheus verso Thanos all'URL /api/v1/write."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_4",
+      "english": "Promtool",
+      "set": {
+        "task": "Valida la sintassi delle regole di alert nel file /etc/prometheus/rules.yml con promtool."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_1",
+      "english": "Instant Vector",
+      "set": {
+        "task": "Recupera un instant vector per la metrica http_requests_total senza specificare una finestra."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_1",
+      "english": "Range Vector",
+      "set": {
+        "task": "Seleziona un range vector di http_requests_total sugli ultimi 5 minuti come input per rate()."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_1",
+      "english": "Selector",
+      "set": {
+        "task": "Restringi la metrica up con un selettore PromQL alla sola job api."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_1",
+      "english": "Label Matcher",
+      "set": {
+        "task": "Filtra le serie con un matcher di label regex sui codici di stato 5xx tramite code=~5.."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_1",
+      "english": "Equality Match",
+      "set": {
+        "task": "Seleziona con un match di uguaglianza le serie della job prometheus tramite job=prometheus."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_1",
+      "english": "Regex Match",
+      "set": {
+        "task": "Filtra con un match regex tutti gli instance il cui nome inizia per web- tramite =~web-.*."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_1",
+      "english": "Negative Match",
+      "set": {
+        "task": "Escludi con un match negativo tutte le serie in modalita' idle tramite mode!=idle."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_1",
+      "english": "Offset",
+      "set": {
+        "task": "Sposta indietro nel tempo la query http_requests_total di 1 ora con il modificatore offset."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_1",
+      "english": "At Modifier",
+      "set": {
+        "task": "Ancora la valutazione di http_requests_total al timestamp Unix 1717000000 con il modificatore @."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_2",
+      "english": "rate()",
+      "set": {
+        "task": "Calcola il rate medio al secondo di http_requests_total su una finestra mobile di 5 minuti."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_2",
+      "english": "irate()",
+      "set": {
+        "task": "Calcola con irate() il tasso istantaneo di http_requests_total usando gli ultimi due campioni."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_2",
+      "english": "increase()",
+      "set": {
+        "task": "Calcola con increase() l'incremento totale di http_requests_total nell'arco di un'ora."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_2",
+      "english": "sum()",
+      "set": {
+        "task": "Aggrega con sum() il rate di http_requests_total su 5 minuti in un singolo valore globale."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_2",
+      "english": "avg()",
+      "set": {
+        "task": "Calcola la media di node_cpu_seconds_total raggruppando per label instance con la clausola by."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_2",
+      "english": "max()",
+      "set": {
+        "task": "Trova con max() il valore massimo di memory_used_bytes per ciascuna istanza."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_2",
+      "english": "min()",
+      "set": {
+        "task": "Identifica con min() il nodo con il minimo spazio libero su filesystem per istanza."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_2",
+      "english": "count()",
+      "set": {
+        "task": "Conta con count() quanti target Prometheus risultano attualmente up uguale a 1."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_2",
+      "english": "topk()",
+      "set": {
+        "task": "Estrai con topk() le prime cinque serie per rate di http_requests_total su 5 minuti."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_2",
+      "english": "histogram_quantile()",
+      "set": {
+        "task": "Calcola il quantile 0.99 della latenza aggregando latency_bucket per la label le su 5 minuti."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_3",
+      "english": "by Clause",
+      "set": {
+        "task": "Conserva il dettaglio per instance aggregando il rate di http_requests_total con sum by(instance)."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_3",
+      "english": "without Clause",
+      "set": {
+        "task": "Rimuovi la label pod dall'aggregazione di http_requests_total con la clausola without."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_3",
+      "english": "on Clause",
+      "set": {
+        "task": "Abbina due metriche a e b nella divisione utilizzando solo la label instance con on(instance)."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_3",
+      "english": "ignoring Clause",
+      "set": {
+        "task": "Dividi due metriche ignorando la label pod nell'abbinamento delle serie con ignoring(pod)."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_3",
+      "english": "group_left",
+      "set": {
+        "task": "Arricchisci una metrica a con label di b tramite many-to-one usando on(job) group_left."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_3",
+      "english": "Binary Operator",
+      "set": {
+        "task": "Costruisci un rapporto percentuale tra due metriche con l'operatore binario a / b * 100."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_3",
+      "english": "Comparison Operator",
+      "set": {
+        "task": "Filtra con l'operatore di confronto > 0.8 le serie con memory_usage oltre la soglia dell'80%."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_3",
+      "english": "Logical Operator",
+      "set": {
+        "task": "Combina up==0 con unless on(instance) under_maintenance per escludere il downtime pianificato."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_4",
+      "english": "Request Rate Query",
+      "set": {
+        "task": "Aggrega il rate di http_requests_total su 5 minuti con sum by(status) per ottenere il tasso per codice."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_4",
+      "english": "Error Rate Query",
+      "set": {
+        "task": "Calcola il tasso di errore dividendo il rate dei 5xx per il rate totale su una finestra di 5 minuti."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_4",
+      "english": "P99 Latency",
+      "set": {
+        "task": "Determina la latenza P99 con histogram_quantile(0.99) sul bucket aggregato per label le su 5 minuti."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_4",
+      "english": "Up Metric",
+      "set": {
+        "task": "Allerta quando la metrica up della job api vale 0 indicando uno scrape fallito."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_4",
+      "english": "Saturation Query",
+      "set": {
+        "task": "Calcola la saturazione di memoria dividendo MemTotal meno MemAvailable per MemTotal."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_4",
+      "english": "Disk Free Query",
+      "set": {
+        "task": "Filtra i filesystem con avail_bytes su size_bytes sotto il 10% per allertare sullo spazio in esaurimento."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_4",
+      "english": "CPU Usage Query",
+      "set": {
+        "task": "Calcola la CPU usata sottraendo da 1 la media del rate del mode idle aggregata per instance."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_4",
+      "english": "Apdex",
+      "set": {
+        "task": "Calcola l'Apdex come (satisfied + tolerating/2) / total a partire dai conteggi delle richieste."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_4",
+      "english": "Burn Rate",
+      "set": {
+        "task": "Determina il burn rate del budget di errore dividendo error_rate per (1 - slo)."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "mon_grafana_3",
+      "english": "Variable",
+      "set": {
+        "task": "Riferisci nella query del pannello la variabile dashboard $instance per filtrare per host."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "mon_grafana_3",
+      "english": "Query Variable",
+      "set": {
+        "task": "Popola una variabile da query con label_values(up, instance) per elencare gli instance Prometheus."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "mon_grafana_3",
+      "english": "Regex Filter",
+      "set": {
+        "task": "Applica alla variabile un filtro regex /^web-.*/ per mostrare solo gli host con prefisso web-."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "mon_grafana_3",
+      "english": "Chained Variable",
+      "set": {
+        "task": "Definisci una variabile concatenata che restituisca le job filtrate dall'instance selezionato."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "mon_grafana_3",
+      "english": "Interval Variable",
+      "set": {
+        "task": "Esponi nel dashboard la variabile $interval per controllare la risoluzione temporale dei pannelli."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "mon_dashboards_1",
+      "english": "All Option",
+      "set": {
+        "task": "Mappa l'opzione All della variabile sulla regex .* per aggregare su tutti i valori disponibili."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "mon_dashboards_1",
+      "english": "Selected Value",
+      "set": {
+        "task": "Condividi il dashboard con var-instance=web-1 in querystring per fissare il valore selezionato."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "mon_dashboards_3",
+      "english": "Provisioning",
+      "set": {
+        "task": "Dichiara il file di provisioning Grafana con apiVersion 1 e la sezione providers."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "mon_dashboards_3",
+      "english": "Dashboard JSON",
+      "set": {
+        "task": "Definisci il JSON del dashboard impostando il campo title su API e l'array panels."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "mon_dashboards_3",
+      "english": "Datasource Provisioning",
+      "set": {
+        "task": "Provisiona via YAML un datasource Prometheus chiamato Prometheus all'URL http://prom:9090."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "mon_dashboards_3",
+      "english": "Reload",
+      "set": {
+        "task": "Ricarica i dashboard provisionati richiamando in POST l'endpoint /api/admin/provisioning/dashboards/reload."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "mon_dashboards_4",
+      "english": "Datasource Plugin",
+      "set": {
+        "task": "Installa con grafana-cli il plugin di datasource grafana-piechart-panel sull'istanza Grafana."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mon_traces_1",
+      "english": "Span",
+      "set": {
+        "task": "Apri uno span chiamato db_query tramite il tracer per misurare la durata della query al database."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mon_traces_1",
+      "english": "Trace ID",
+      "set": {
+        "task": "Identifica una traccia distribuita con un trace ID esadecimale a 128 bit come 7f3c1bc0e4a..."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mon_traces_1",
+      "english": "Span Tag",
+      "set": {
+        "task": "Aggiungi allo span il tag user.id con valore 42 per filtrare le tracce per utente."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mon_traces_2",
+      "english": "Probabilistic Sampling",
+      "set": {
+        "task": "Configura il sampler probabilistico con parametro 0.01 per registrare una traccia ogni cento."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mon_traces_3",
+      "english": "B3 Header",
+      "set": {
+        "task": "Propaga la traccia tra servizi legacy con gli header X-B3-TraceId e X-B3-SpanId."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mon_traces_3",
+      "english": "TraceQL",
+      "set": {
+        "task": "Filtra in TraceQL su Tempo tutte le tracce con duration maggiore di 5 secondi."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mon_traces_4",
+      "english": "Span Event",
+      "set": {
+        "task": "Aggiungi allo span un evento cache.miss per marcare l'istante esatto del miss della cache."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mon_traces_4",
+      "english": "Status Code",
+      "set": {
+        "task": "Imposta sullo span lo status code ERROR per evidenziare un'operazione fallita nelle UI di tracing."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "mon_apm_1",
+      "english": "CPU Profiling",
+      "set": {
+        "task": "Acquisisci un profilo CPU tramite go tool pprof contro l'endpoint /debug/pprof/profile."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "mon_apm_2",
+      "english": "NRQL",
+      "set": {
+        "task": "Conta in NRQL il numero totale di eventi nella tabella Transaction con SELECT count(*)."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "mon_apm_2",
+      "english": "APM Agent",
+      "set": {
+        "task": "Installa l'agent APM newrelic per Python tramite pip per strumentare l'applicazione."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "mon_apm_3",
+      "english": "Datadog Agent",
+      "set": {
+        "task": "Distribuisci l'agent Datadog sul cluster Kubernetes installando la chart helm datadog/datadog."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "mon_apm_3",
+      "english": "Custom Metric",
+      "set": {
+        "task": "Emetti via DogStatsD una metrica gauge orders.queue con valore 42."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "mon_apm_4",
+      "english": "Auto-Instrumentation",
+      "set": {
+        "task": "Avvia l'app Python con il wrapper opentelemetry-instrument per generare span automaticamente."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "mon_apm_4",
+      "english": "Manual Instrumentation",
+      "set": {
+        "task": "Apri manualmente uno span chiamato checkout con tracer.start_as_current_span come context manager."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "mon_apm_4",
+      "english": "Sampling Rate",
+      "set": {
+        "task": "Imposta il sampling rate delle tracce all'1% via OTEL_TRACES_SAMPLER_ARG=0.01."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "mon_apm_4",
+      "english": "Environment Tag",
+      "set": {
+        "task": "Etichetta le metriche con il tag env: production per distinguere gli ambienti di deploy."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "mon_apm_4",
+      "english": "Version Tag",
+      "set": {
+        "task": "Marca le metriche con il tag version: v1.4.2 per separare gli error rate tra release."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_1",
+      "english": "Node Exporter Textfile",
+      "set": {
+        "task": "Verifica l'endpoint /metrics di Node Exporter sulla porta 9100 dove confluiscono anche i textfile."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_1",
+      "english": "Collector Module",
+      "set": {
+        "task": "Abilita in Node Exporter il modulo collector --collector.systemd per esporre lo stato delle unit."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_1",
+      "english": "Textfile Collector",
+      "set": {
+        "task": "Punta il textfile collector alla directory /var/lib/node_exporter/textfile_collector dei file .prom."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_1",
+      "english": "systemd Metrics",
+      "set": {
+        "task": "Allerta quando node_systemd_unit_state per nginx.service nello stato active vale 0."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_1",
+      "english": "Hardware Sensor",
+      "set": {
+        "task": "Leggi temperature, voltaggi e velocita' delle ventole dai sensori hardware con sensors."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_2",
+      "english": "OID",
+      "set": {
+        "task": "Interroga via SNMP l'OID 1.3.6.1.2.1.1.5.0 per leggere lo sysName del dispositivo."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_2",
+      "english": "Blackbox Probe",
+      "set": {
+        "task": "Definisci una sonda blackbox http_2xx con prober http per verificare risposte 2xx."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_2",
+      "english": "ICMP Probe",
+      "set": {
+        "task": "Esegui una sonda ICMP inviando quattro pacchetti ping verso example.com."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_2",
+      "english": "TLS Expiry",
+      "set": {
+        "task": "Allerta quando probe_ssl_earliest_cert_expiry meno time() scende sotto 14 giorni in secondi."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_2",
+      "english": "DNS Probe",
+      "set": {
+        "task": "Esegui una sonda DNS risolvendo example.com con dig +short per ottenere solo gli IP."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_3",
+      "english": "Container Metric",
+      "set": {
+        "task": "Monitora il consumo di memoria dei container tramite la metrica container_memory_usage_bytes."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_3",
+      "english": "Restart Count",
+      "set": {
+        "task": "Allerta sul numero di restart dei container tramite kube_pod_container_status_restarts_total."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_3",
+      "english": "OOM Kill",
+      "set": {
+        "task": "Cerca nel buffer del kernel gli eventi di OOM kill filtrando dmesg per la parola oom."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_3",
+      "english": "Resource Request",
+      "set": {
+        "task": "Dichiara per il container una requests.cpu pari a 100m per guidare lo scheduler Kubernetes."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_3",
+      "english": "Resource Limit",
+      "set": {
+        "task": "Imposta sul container un limits.memory di 512Mi per evitare che saturi il nodo."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_4",
+      "english": "Slow Query Log",
+      "set": {
+        "task": "Attiva su MySQL lo slow query log impostando long_query_time a 1 secondo."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_4",
+      "english": "Replication Lag",
+      "set": {
+        "task": "Monitora il ritardo della replica PostgreSQL tramite la metrica pg_replication_lag_seconds."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_4",
+      "english": "Query Plan",
+      "set": {
+        "task": "Ottieni il piano di esecuzione effettivo di una SELECT con EXPLAIN ANALYZE per ottimizzarla."
+      }
+    }
+  ]
+}

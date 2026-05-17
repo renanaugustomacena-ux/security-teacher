@@ -43,6 +43,7 @@ export default {
               context: 'containers',
               difficulty: 'beginner',
               command: 'docker images',
+              task: 'Elenca tutte le immagini Docker presenti localmente sulla macchina.',
             },
             {
               english: 'Containerization',
@@ -334,6 +335,7 @@ export default {
               context: 'containers',
               difficulty: 'beginner',
               code: '{"schemaVersion": 2, "mediaType": "...", "layers": [...]}',
+              task: `Definisci un manifest OCI con schemaVersion 2 e l'elenco dei layer che compongono l'immagine.`,
             },
             {
               english: 'Image Index',
@@ -408,6 +410,7 @@ export default {
               difficulty: 'beginner',
               tool: 'Skopeo',
               command: 'skopeo copy docker://nginx:latest docker://myregistry/nginx:latest',
+              task: `Copia l'immagine nginx:latest da Docker Hub al registry myregistry usando Skopeo senza scaricarla localmente.`,
             },
             {
               english: 'LXC',
@@ -503,6 +506,7 @@ export default {
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker run nginx',
+              task: `Avvia un container basato sull'immagine nginx con la configurazione di default.`,
             },
             {
               english: 'Detached Mode',
@@ -514,6 +518,7 @@ export default {
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker run -d nginx',
+              task: 'Avvia il container nginx in modalità detached così continua a girare in background.',
             },
             {
               english: 'Interactive Mode',
@@ -526,6 +531,7 @@ export default {
               difficulty: 'beginner',
               command: 'docker run -it ubuntu bash',
               note: 'Combinazione di --interactive e --tty.',
+              task: `Apri una shell bash interattiva all'interno di un container Ubuntu collegando il terminale.`,
             },
             {
               english: 'Container Name',
@@ -537,6 +543,7 @@ export default {
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker run --name myapp nginx',
+              task: `Esegui un container nginx assegnandogli il nome 'myapp' per referenziarlo facilmente.`,
             },
             {
               english: 'Port Mapping',
@@ -549,6 +556,7 @@ export default {
               difficulty: 'beginner',
               command: 'docker run -p 8080:80 nginx',
               note: 'Sintassi: -p host_port:container_port.',
+              task: `Pubblica la porta 80 del container nginx sulla porta 8080 dell'host.`,
             },
             {
               english: 'Environment Variable',
@@ -560,6 +568,7 @@ export default {
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker run -e DB_HOST=localhost myapp',
+              task: `Avvia il container myapp iniettando la variabile d'ambiente DB_HOST con valore localhost.`,
             },
             {
               english: 'Restart Policy',
@@ -572,6 +581,7 @@ export default {
               difficulty: 'beginner',
               command: 'docker run --restart unless-stopped nginx',
               note: 'Valori: no, on-failure, always, unless-stopped.',
+              task: 'Esegui nginx impostando la politica di riavvio su unless-stopped per ripartire automaticamente dopo i crash.',
             },
             {
               english: 'Auto-Remove',
@@ -584,6 +594,7 @@ export default {
               difficulty: 'beginner',
               command: 'docker run --rm alpine echo hello',
               note: 'Utile per container temporanei di test.',
+              task: `Lancia un container Alpine usa-e-getta che stampa 'hello' e viene rimosso automaticamente alla terminazione.`,
             },
             {
               english: 'Resource Limits',
@@ -595,6 +606,7 @@ export default {
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker run -m 512m --cpus 1.5 nginx',
+              task: 'Avvia un container nginx limitando il consumo a 512 MB di memoria e 1.5 CPU.',
             },
             {
               english: 'Background Process',
@@ -623,6 +635,7 @@ export default {
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker ps',
+              task: `Mostra l'elenco dei container attualmente in esecuzione.`,
             },
             {
               english: 'docker ps -a',
@@ -634,6 +647,7 @@ export default {
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker ps -a',
+              task: `Elenca tutti i container presenti sull'host, inclusi quelli fermati o usciti.`,
             },
             {
               english: 'docker stop',
@@ -645,6 +659,7 @@ export default {
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker stop myapp',
+              task: 'Ferma in modo ordinato il container chiamato myapp inviandogli SIGTERM.',
             },
             {
               english: 'docker kill',
@@ -657,6 +672,7 @@ export default {
               difficulty: 'beginner',
               command: 'docker kill myapp',
               note: 'A differenza di stop, non aspetta una chiusura ordinata.',
+              task: 'Termina forzatamente il container myapp inviando SIGKILL senza attendere uno spegnimento pulito.',
             },
             {
               english: 'docker rm',
@@ -668,6 +684,7 @@ export default {
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker rm myapp',
+              task: 'Rimuovi dal sistema il container fermato chiamato myapp liberandone lo spazio.',
             },
             {
               english: 'Force Remove',
@@ -679,6 +696,7 @@ export default {
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker rm -f myapp',
+              task: 'Forza la rimozione del container myapp anche se è ancora in esecuzione.',
             },
             {
               english: 'docker start',
@@ -690,6 +708,7 @@ export default {
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker start myapp',
+              task: 'Riavvia il container myapp precedentemente fermato senza ricrearlo.',
             },
             {
               english: 'docker restart',
@@ -701,6 +720,7 @@ export default {
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker restart myapp',
+              task: 'Riavvia il container myapp fermandolo e rimettendolo subito in esecuzione.',
             },
             {
               english: 'docker pause',
@@ -713,6 +733,7 @@ export default {
               difficulty: 'beginner',
               command: 'docker pause myapp',
               note: 'Usa il cgroup freezer per congelare i processi.',
+              task: 'Sospendi tutti i processi del container myapp usando il cgroup freezer.',
             },
             {
               english: 'docker rename',
@@ -724,6 +745,7 @@ export default {
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker rename old new',
+              task: `Cambia il nome del container da 'old' a 'new' senza ricrearlo.`,
             },
           ],
         },
@@ -742,6 +764,7 @@ export default {
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker pull nginx:1.25',
+              task: `Scarica dal registry la versione 1.25 dell'immagine nginx.`,
             },
             {
               english: 'docker push',
@@ -753,6 +776,7 @@ export default {
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker push myuser/myapp:1.0',
+              task: `Carica l'immagine taggata myuser/myapp:1.0 sul registry remoto.`,
             },
             {
               english: 'docker images',
@@ -764,6 +788,7 @@ export default {
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker images',
+              task: `Mostra l'elenco delle immagini Docker presenti localmente.`,
             },
             {
               english: 'docker rmi',
@@ -775,6 +800,7 @@ export default {
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker rmi nginx:1.25',
+              task: `Elimina dalla cache locale l'immagine nginx:1.25 per liberare spazio disco.`,
             },
             {
               english: 'docker tag',
@@ -786,6 +812,7 @@ export default {
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker tag myapp:latest myapp:1.0',
+              task: `Crea il nuovo tag myapp:1.0 puntandolo all'immagine myapp:latest.`,
             },
             {
               english: 'docker pull --all-tags',
@@ -797,6 +824,7 @@ export default {
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker pull --all-tags nginx',
+              task: `Scarica tutti i tag dell'immagine nginx disponibili sul registry.`,
             },
             {
               english: 'docker save',
@@ -808,6 +836,7 @@ export default {
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker save -o nginx.tar nginx:latest',
+              task: `Esporta l'immagine nginx:latest in un archivio tar chiamato nginx.tar.`,
             },
             {
               english: 'docker load',
@@ -819,6 +848,7 @@ export default {
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker load -i nginx.tar',
+              task: `Carica nel motore Docker locale l'immagine contenuta nell'archivio nginx.tar.`,
             },
             {
               english: 'docker pull --platform',
@@ -830,6 +860,7 @@ export default {
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker pull --platform linux/arm64 nginx',
+              task: `Scarica la variante linux/arm64 dell'immagine nginx ignorando l'architettura corrente.`,
             },
             {
               english: 'Image ID',
@@ -859,6 +890,7 @@ export default {
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker logs myapp',
+              task: 'Visualizza i log generati dal container myapp.',
             },
             {
               english: 'docker logs -f',
@@ -871,6 +903,7 @@ export default {
               difficulty: 'beginner',
               command: 'docker logs -f myapp',
               note: 'Equivale a tail -f sui log del container.',
+              task: 'Segui in tempo reale i log del container myapp via tail.',
             },
             {
               english: 'docker exec',
@@ -882,6 +915,7 @@ export default {
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker exec -it myapp bash',
+              task: 'Apri una shell bash interattiva dentro il container myapp in esecuzione.',
             },
             {
               english: 'docker inspect',
@@ -894,6 +928,7 @@ export default {
               difficulty: 'beginner',
               command: 'docker inspect myapp',
               note: 'Output in formato JSON.',
+              task: 'Mostra i metadati completi del container myapp in formato JSON.',
             },
             {
               english: 'docker stats',
@@ -905,6 +940,7 @@ export default {
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker stats',
+              task: 'Visualizza in tempo reale le statistiche di CPU, memoria e I/O dei container attivi.',
             },
             {
               english: 'docker top',
@@ -916,6 +952,7 @@ export default {
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker top myapp',
+              task: 'Elenca i processi in esecuzione dentro il container myapp.',
             },
             {
               english: 'docker port',
@@ -927,6 +964,7 @@ export default {
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker port myapp',
+              task: 'Mostra le mappature di porte attive per il container myapp.',
             },
             {
               english: 'docker cp',
@@ -938,6 +976,7 @@ export default {
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker cp file.txt myapp:/app/',
+              task: `Copia il file file.txt dall'host alla directory /app/ all'interno del container myapp.`,
             },
             {
               english: 'docker diff',
@@ -949,6 +988,7 @@ export default {
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker diff myapp',
+              task: `Mostra le modifiche al filesystem del container myapp rispetto all'immagine di base.`,
             },
             {
               english: 'docker events',
@@ -960,6 +1000,7 @@ export default {
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker events',
+              task: 'Mostra in tempo reale lo stream degli eventi emessi dal Docker daemon.',
             },
           ],
         },
@@ -999,6 +1040,7 @@ export default {
               difficulty: 'beginner',
               code: 'FROM ubuntu:22.04',
               note: 'Deve essere la prima istruzione (o dopo ARG).',
+              task: `Dichiara nel Dockerfile l'immagine base ubuntu:22.04 da cui partire.`,
             },
             {
               english: 'RUN',
@@ -1010,6 +1052,7 @@ export default {
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'RUN apt-get update && apt-get install -y curl',
+              task: `Aggiungi al Dockerfile un'istruzione RUN che aggiorna apt e installa il pacchetto curl.`,
             },
             {
               english: 'COPY',
@@ -1021,6 +1064,7 @@ export default {
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'COPY src/ /app/src/',
+              task: `Copia nel Dockerfile il contenuto della cartella src/ del contesto dentro /app/src/ dell'immagine.`,
             },
             {
               english: 'ADD',
@@ -1033,6 +1077,7 @@ export default {
               difficulty: 'beginner',
               code: 'ADD https://example.com/file.tar.gz /tmp/',
               note: 'Preferire COPY per chiarezza, salvo casi specifici.',
+              task: `Scarica nell'immagine l'archivio file.tar.gz da example.com posizionandolo in /tmp/.`,
             },
             {
               english: 'WORKDIR',
@@ -1044,6 +1089,7 @@ export default {
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'WORKDIR /app',
+              task: 'Imposta /app come directory di lavoro per le istruzioni successive del Dockerfile.',
             },
             {
               english: 'EXPOSE',
@@ -1056,6 +1102,7 @@ export default {
               difficulty: 'beginner',
               code: 'EXPOSE 8080',
               note: 'Solo documentazione, non apre la porta automaticamente.',
+              task: 'Dichiara nel Dockerfile che il container ascolterà sulla porta 8080 a scopo documentale.',
             },
             {
               english: 'CMD',
@@ -1067,6 +1114,7 @@ export default {
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'CMD ["nginx", "-g", "daemon off;"]',
+              task: `Specifica come comando di default del container l'esecuzione di nginx in foreground in forma exec.`,
             },
             {
               english: 'LABEL',
@@ -1078,6 +1126,7 @@ export default {
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'LABEL maintainer="dev@example.com"',
+              task: `Aggiungi all'immagine la label maintainer con l'email dev@example.com.`,
             },
             {
               english: 'docker build',
@@ -1089,6 +1138,7 @@ export default {
               context: 'dockerfile',
               difficulty: 'beginner',
               command: 'docker build -t myapp:1.0 .',
+              task: `Costruisci un'immagine dal Dockerfile nella directory corrente taggandola come myapp:1.0.`,
             },
           ],
         },
@@ -1118,6 +1168,7 @@ export default {
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'node_modules\n.git\n*.log',
+              task: 'Crea un file .dockerignore che escluda dal contesto di build node_modules, .git e i file .log.',
             },
             {
               english: 'Layer',
@@ -1162,6 +1213,7 @@ export default {
               difficulty: 'beginner',
               code: 'ARG VERSION=1.0',
               command: 'docker build --build-arg VERSION=2.0 .',
+              task: `Costruisci l'immagine passando il build-arg VERSION=2.0 al Dockerfile.`,
             },
             {
               english: 'Image Tag',
@@ -1173,6 +1225,7 @@ export default {
               context: 'dockerfile',
               difficulty: 'beginner',
               command: 'docker build -t myorg/myapp:1.0 .',
+              task: `Costruisci l'immagine taggandola come myorg/myapp:1.0 dal contesto corrente.`,
             },
             {
               english: 'Build Cache',
@@ -1184,6 +1237,7 @@ export default {
               context: 'dockerfile',
               difficulty: 'beginner',
               command: 'docker build --no-cache -t myapp .',
+              task: `Forza la ricostruzione completa dell'immagine myapp ignorando la cache dei layer.`,
             },
             {
               english: 'BuildKit',
@@ -1207,6 +1261,7 @@ export default {
               context: 'dockerfile',
               difficulty: 'beginner',
               command: 'docker build --squash -t myapp .',
+              task: `Costruisci l'immagine myapp compattando tutti i layer intermedi in uno solo.`,
             },
           ],
         },
@@ -1236,6 +1291,7 @@ export default {
               difficulty: 'beginner',
               code: 'FROM alpine:3.19',
               note: 'Usa musl invece di glibc, attenzione ai problemi di compatibilità.',
+              task: `Usa nel Dockerfile l'immagine base alpine:3.19 per ottenere un'immagine finale leggera.`,
             },
             {
               english: 'Distroless',
@@ -1248,6 +1304,7 @@ export default {
               difficulty: 'beginner',
               code: 'FROM gcr.io/distroless/static',
               note: 'Niente shell, niente package manager: più sicure.',
+              task: `Parti dall'immagine distroless gcr.io/distroless/static per eliminare shell e package manager dal container.`,
             },
             {
               english: 'Combine RUN',
@@ -1259,6 +1316,7 @@ export default {
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*',
+              task: `Unisci aggiornamento apt, installazione di curl e pulizia delle liste in un'unica istruzione RUN.`,
             },
             {
               english: 'Apt Clean',
@@ -1270,6 +1328,7 @@ export default {
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'RUN apt-get clean && rm -rf /var/lib/apt/lists/*',
+              task: `Aggiungi un RUN che esegue apt-get clean e rimuove /var/lib/apt/lists/* per ridurre l'immagine.`,
             },
             {
               english: 'Image Layers',
@@ -1281,6 +1340,7 @@ export default {
               context: 'dockerfile',
               difficulty: 'beginner',
               command: 'docker history myapp:1.0',
+              task: `Mostra la cronologia dei layer dell'immagine myapp:1.0 con le dimensioni di ognuno.`,
             },
             {
               english: 'Dive',
@@ -1314,6 +1374,7 @@ export default {
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'FROM debian:bookworm-slim',
+              task: `Parti nel Dockerfile dall'immagine debian:bookworm-slim per ridurre la dimensione finale.`,
             },
             {
               english: 'Volume',
@@ -1325,6 +1386,7 @@ export default {
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'VOLUME /data',
+              task: 'Dichiara nel Dockerfile un volume sul percorso /data per persistere i dati del container.',
             },
           ],
         },
@@ -1365,6 +1427,7 @@ export default {
               difficulty: 'beginner',
               code: 'docker tag myapp:1.2.3',
               note: 'Formato MAJOR.MINOR.PATCH (es. 1.2.3).',
+              task: `Tagga l'immagine myapp con la versione semantica 1.2.3 nel formato MAJOR.MINOR.PATCH.`,
             },
             {
               english: 'Digest',
@@ -1377,6 +1440,7 @@ export default {
               difficulty: 'beginner',
               command: 'docker pull nginx@sha256:abc123...',
               note: "Hash crittografico univoco dell'immagine.",
+              task: `Scarica nginx riferendo l'immagine tramite il suo digest SHA256 anziché il tag.`,
             },
             {
               english: 'Pinning',
@@ -1409,6 +1473,7 @@ export default {
               context: 'dockerfile',
               difficulty: 'beginner',
               command: 'docker push registry.example.com/myapp:1.0',
+              task: `Pubblica l'immagine myapp:1.0 sul registry privato registry.example.com.`,
             },
             {
               english: 'Image Annotation',
@@ -1420,6 +1485,7 @@ export default {
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'LABEL org.opencontainers.image.source="https://github.com/me/repo"',
+              task: `Annota l'immagine con la label OCI image.source che punta al repository github.com/me/repo.`,
             },
             {
               english: 'Reproducible Build',
@@ -1441,6 +1507,7 @@ export default {
               context: 'dockerfile',
               difficulty: 'beginner',
               command: 'docker image inspect nginx:latest',
+              task: `Ispeziona l'immagine nginx:latest per vedere variabili, porte ed entrypoint configurati.`,
             },
           ],
         },
@@ -1468,6 +1535,7 @@ export default {
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'FROM golang:1.21 AS builder\nRUN go build\nFROM alpine\nCOPY --from=builder /app /app',
+              task: `Crea un Dockerfile multi-stage che compila in uno stage golang:1.21 chiamato builder e copia il binario in un'immagine Alpine finale.`,
             },
             {
               english: 'AS Stage',
@@ -1479,6 +1547,7 @@ export default {
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'FROM node:20 AS build',
+              task: `Nomina lo stage di build come 'build' partendo dall'immagine node:20 per poterlo referenziare in seguito.`,
             },
             {
               english: 'COPY --from',
@@ -1490,6 +1559,7 @@ export default {
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'COPY --from=build /app/dist /usr/share/nginx/html',
+              task: `Copia dalla stage 'build' la cartella /app/dist verso /usr/share/nginx/html nell'immagine finale.`,
             },
             {
               english: 'Build Stage',
@@ -1521,6 +1591,7 @@ export default {
               context: 'dockerfile',
               difficulty: 'beginner',
               command: 'docker build --target build -t myapp:dev .',
+              task: `Costruisci solo lo stage 'build' del Dockerfile taggando il risultato come myapp:dev.`,
             },
             {
               english: 'Cross-Stage Copy',
@@ -1579,6 +1650,7 @@ export default {
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'ENTRYPOINT ["/app/server"]',
+              task: `Imposta nel Dockerfile l'ENTRYPOINT in forma exec sul binario /app/server.`,
             },
             {
               english: 'CMD as Args',
@@ -1590,6 +1662,7 @@ export default {
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'ENTRYPOINT ["nginx"]\nCMD ["-g", "daemon off;"]',
+              task: `Configura ENTRYPOINT su nginx e CMD con i flag '-g daemon off;' come argomenti di default sovrascrivibili.`,
             },
             {
               english: 'Exec Form',
@@ -1602,6 +1675,7 @@ export default {
               difficulty: 'beginner',
               code: 'CMD ["echo", "hello"]',
               note: 'Forma preferita: non passa attraverso /bin/sh.',
+              task: `Specifica CMD in forma exec come array JSON con echo e l'argomento 'hello' senza passare da /bin/sh.`,
             },
             {
               english: 'Shell Form',
@@ -1614,6 +1688,7 @@ export default {
               difficulty: 'beginner',
               code: 'CMD echo hello',
               note: 'Espande variabili ma non passa segnali correttamente.',
+              task: 'Scrivi un CMD in forma shell che esegue echo hello passando per /bin/sh -c.',
             },
             {
               english: 'Signal Handling',
@@ -1648,6 +1723,7 @@ export default {
               difficulty: 'beginner',
               tool: 'tini',
               command: 'docker run --init myapp',
+              task: 'Esegui il container myapp avvolgendolo con tini tramite il flag --init per gestire correttamente i segnali.',
             },
             {
               english: 'Override CMD',
@@ -1659,6 +1735,7 @@ export default {
               context: 'dockerfile',
               difficulty: 'beginner',
               command: 'docker run myapp custom-arg',
+              task: `Avvia il container myapp sovrascrivendo il CMD predefinito con 'custom-arg'.`,
             },
             {
               english: 'Default Command',
@@ -1680,6 +1757,7 @@ export default {
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'ENTRYPOINT ["/entrypoint.sh"]',
+              task: 'Configura come ENTRYPOINT lo script /entrypoint.sh che eseguirà inizializzazioni prima del processo principale.',
             },
           ],
         },
@@ -1698,6 +1776,7 @@ export default {
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'ARG NODE_VERSION=20',
+              task: `Dichiara nel Dockerfile l'argomento di build NODE_VERSION con valore predefinito 20.`,
             },
             {
               english: 'ENV',
@@ -1709,6 +1788,7 @@ export default {
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'ENV NODE_ENV=production',
+              task: `Imposta nel Dockerfile la variabile d'ambiente NODE_ENV a 'production' nell'immagine.`,
             },
             {
               english: 'ARG vs ENV',
@@ -1732,6 +1812,7 @@ export default {
               difficulty: 'beginner',
               code: 'USER appuser',
               note: 'Best practice: non eseguire come root.',
+              task: `Cambia l'utente che esegue i comandi successivi nel Dockerfile a 'appuser' per non girare come root.`,
             },
             {
               english: 'Non-Root User',
@@ -1743,6 +1824,7 @@ export default {
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'RUN useradd -u 1000 appuser\nUSER appuser',
+              task: `Crea l'utente appuser con UID 1000 nel Dockerfile e imposta USER appuser per le istruzioni successive.`,
             },
             {
               english: 'WORKDIR advanced usage',
@@ -1754,6 +1836,7 @@ export default {
               difficulty: 'beginner',
               code: 'WORKDIR /app',
               note: `Rinominato per distinguerlo dalla direttiva base 'WORKDIR' di dk_dockerfile_1.`,
+              task: 'Imposta /app come WORKDIR nello stage corrente del Dockerfile multi-stage.',
             },
             {
               english: 'SHELL',
@@ -1765,6 +1848,7 @@ export default {
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'SHELL ["/bin/bash", "-c"]',
+              task: 'Cambia la shell predefinita per le istruzioni RUN del Dockerfile a /bin/bash -c.',
             },
             {
               english: 'STOPSIGNAL',
@@ -1776,6 +1860,7 @@ export default {
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'STOPSIGNAL SIGINT',
+              task: 'Configura SIGINT come segnale di stop predefinito del container nel Dockerfile.',
             },
             {
               english: 'ONBUILD',
@@ -1788,6 +1873,7 @@ export default {
               difficulty: 'beginner',
               code: 'ONBUILD COPY . /app',
               note: 'Raramente usata: complica il debugging.',
+              task: `Definisci un trigger ONBUILD che copierà il contesto corrente in /app quando l'immagine sarà usata come base.`,
             },
             {
               english: 'Default ARG',
@@ -1799,6 +1885,7 @@ export default {
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'ARG VERSION=1.0',
+              task: `Dichiara nel Dockerfile l'argomento di build VERSION con valore predefinito 1.0.`,
             },
           ],
         },
@@ -1817,6 +1904,7 @@ export default {
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'HEALTHCHECK CMD curl -f http://localhost/ || exit 1',
+              task: 'Aggiungi al Dockerfile un HEALTHCHECK che usa curl su localhost ed esce con 1 in caso di fallimento.',
             },
             {
               english: 'Health Status',
@@ -1828,6 +1916,7 @@ export default {
               context: 'dockerfile',
               difficulty: 'beginner',
               command: "docker inspect --format '{{.State.Health.Status}}' myapp",
+              task: 'Estrai dal container myapp il solo campo State.Health.Status usando un template Go di docker inspect.',
             },
             {
               english: 'Probe Interval',
@@ -1839,6 +1928,7 @@ export default {
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'HEALTHCHECK --interval=30s --timeout=3s CMD curl -f http://localhost/',
+              task: 'Configura un HEALTHCHECK con intervallo di 30s e timeout di 3s che esegue curl su localhost.',
             },
             {
               english: 'Best Practice',
@@ -1861,6 +1951,7 @@ export default {
               difficulty: 'beginner',
               tool: 'hadolint',
               command: 'hadolint Dockerfile',
+              task: 'Esegui hadolint sul Dockerfile della directory corrente per individuare problemi di linting.',
             },
             {
               english: 'Minimal Privileges',
@@ -1883,6 +1974,7 @@ export default {
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'RUN apt-get install -y curl=7.88.1-10',
+              task: 'Installa con apt-get la versione specifica 7.88.1-10 di curl per garantire build riproducibili.',
             },
             {
               english: 'Reproducibility',
@@ -1914,6 +2006,7 @@ export default {
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'COPY --chown=appuser:appuser . /app',
+              task: 'Copia il contesto in /app assegnando in un solo layer la proprietà a appuser:appuser.',
             },
           ],
         },
@@ -1942,6 +2035,7 @@ export default {
               difficulty: 'intermediate',
               command: 'docker network create --driver bridge mynet',
               note: "Crea una rete privata sull'host.",
+              task: `Crea una rete Docker chiamata 'mynet' con driver bridge per isolare un gruppo di container.`,
             },
             {
               english: 'Host Network',
@@ -1954,6 +2048,7 @@ export default {
               difficulty: 'intermediate',
               command: 'docker run --network host nginx',
               note: 'Più veloce ma meno isolato.',
+              task: `Avvia nginx condividendo direttamente lo stack di rete dell'host invece di usare una rete bridge.`,
             },
             {
               english: 'Overlay Network',
@@ -1976,6 +2071,7 @@ export default {
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker run --network none alpine',
+              task: `Esegui un container Alpine completamente isolato a livello di rete usando il driver 'none'.`,
             },
             {
               english: 'Macvlan',
@@ -2019,6 +2115,7 @@ export default {
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker network create app-network',
+              task: `Crea la rete bridge personalizzata 'app-network' per permettere la risoluzione DNS tra i container.`,
             },
             {
               english: 'Network Driver',
@@ -2057,6 +2154,7 @@ export default {
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker run -p 8080:80 nginx',
+              task: `Pubblica la porta 80 del container nginx sulla porta 8080 dell'host.`,
             },
             {
               english: 'Random Port',
@@ -2068,6 +2166,7 @@ export default {
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker run -P nginx',
+              task: `Avvia nginx pubblicando automaticamente tutte le porte EXPOSE su porte casuali dell'host.`,
             },
             {
               english: 'Bind to Interface',
@@ -2080,6 +2179,7 @@ export default {
               difficulty: 'intermediate',
               command: 'docker run -p 127.0.0.1:8080:80 nginx',
               note: "Limita l'accesso solo a localhost.",
+              task: `Esegui nginx vincolando la pubblicazione della porta 80 alla sola interfaccia 127.0.0.1:8080 dell'host.`,
             },
             {
               english: 'UDP Port',
@@ -2091,6 +2191,7 @@ export default {
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker run -p 53:53/udp dns-server',
+              task: `Pubblica la porta 53 in UDP del container dns-server mappandola sulla 53 dell'host.`,
             },
             {
               english: 'Port Range',
@@ -2102,6 +2203,7 @@ export default {
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker run -p 8000-8010:8000-8010 myapp',
+              task: `Pubblica l'intervallo di porte 8000-8010 del container myapp sullo stesso range dell'host.`,
             },
             {
               english: 'NAT',
@@ -2134,6 +2236,7 @@ export default {
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker run -p 127.0.0.1:5432:5432 postgres',
+              task: 'Avvia PostgreSQL vincolando la porta 5432 a 127.0.0.1 per impedire accessi da altre macchine.',
             },
             {
               english: 'Host Port',
@@ -2172,6 +2275,7 @@ export default {
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker network create app-network',
+              task: `Crea una rete Docker chiamata 'app-network' per isolare i container applicativi.`,
             },
             {
               english: 'docker network ls',
@@ -2183,6 +2287,7 @@ export default {
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker network ls',
+              task: `Elenca tutte le reti Docker configurate sull'host.`,
             },
             {
               english: 'docker network inspect',
@@ -2194,6 +2299,7 @@ export default {
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker network inspect app-network',
+              task: `Ispeziona la rete 'app-network' per vedere container connessi e IP assegnati.`,
             },
             {
               english: 'docker network connect',
@@ -2205,6 +2311,7 @@ export default {
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker network connect app-network myapp',
+              task: `Collega il container myapp in esecuzione alla rete 'app-network' senza riavviarlo.`,
             },
             {
               english: 'docker network disconnect',
@@ -2216,6 +2323,7 @@ export default {
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker network disconnect app-network myapp',
+              task: `Scollega il container myapp dalla rete 'app-network' per isolarlo.`,
             },
             {
               english: 'Embedded DNS',
@@ -2249,6 +2357,7 @@ export default {
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker run --network-alias db postgres',
+              task: `Avvia un container PostgreSQL assegnandogli l'alias di rete 'db' per la service discovery.`,
             },
             {
               english: 'Subnet',
@@ -2260,6 +2369,7 @@ export default {
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker network create --subnet=192.168.1.0/24 mynet',
+              task: `Crea la rete 'mynet' con sottorete personalizzata 192.168.1.0/24 per evitare conflitti IP.`,
             },
             {
               english: 'Gateway',
@@ -2271,6 +2381,7 @@ export default {
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker network create --gateway=192.168.1.1 mynet',
+              task: `Crea la rete 'mynet' impostando 192.168.1.1 come gateway predefinito per i container.`,
             },
           ],
         },
@@ -2299,6 +2410,7 @@ export default {
               context: 'networking',
               difficulty: 'intermediate',
               command: "docker inspect -f '{{.NetworkSettings.IPAddress}}' myapp",
+              task: `Estrai l'indirizzo IP del container myapp usando un template Go su docker inspect.`,
             },
             {
               english: 'Hostname',
@@ -2310,6 +2422,7 @@ export default {
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker run --hostname myapp nginx',
+              task: `Avvia nginx impostando 'myapp' come hostname interno del container.`,
             },
             {
               english: 'Link (legacy)',
@@ -2322,6 +2435,7 @@ export default {
               difficulty: 'intermediate',
               command: 'docker run --link db:db myapp',
               note: 'Sostituiti dalle reti user-defined.',
+              task: `Avvia myapp creando un link legacy verso il container 'db' (approccio deprecato).`,
             },
             {
               english: 'DNS Round Robin',
@@ -2344,6 +2458,7 @@ export default {
               difficulty: 'intermediate',
               code: 'postgresql://db:5432',
               note: 'In Compose, il nome del servizio è risolvibile via DNS.',
+              task: `Usa nella stringa di connessione il service name 'db' come hostname per raggiungere PostgreSQL sulla porta 5432.`,
             },
             {
               english: 'Internal Network',
@@ -2355,6 +2470,7 @@ export default {
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker network create --internal backend',
+              task: `Crea la rete interna 'backend' che non espone i container all'esterno dell'host.`,
             },
             {
               english: 'DNS Resolution',
@@ -2376,6 +2492,7 @@ export default {
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker run --dns 8.8.8.8 nginx',
+              task: 'Avvia nginx configurando 8.8.8.8 come server DNS personalizzato del container.',
             },
             {
               english: 'Container-to-Container',
@@ -2413,6 +2530,7 @@ export default {
               context: 'volumes',
               difficulty: 'intermediate',
               command: 'docker volume create mydata',
+              task: `Crea il volume Docker con nome 'mydata' per persistere dati indipendentemente dal container.`,
             },
             {
               english: 'Bind Mount',
@@ -2424,6 +2542,7 @@ export default {
               context: 'volumes',
               difficulty: 'intermediate',
               command: 'docker run -v /host/path:/container/path nginx',
+              task: `Avvia nginx montando in bind la directory /host/path dell'host sul percorso /container/path del container.`,
             },
             {
               english: 'tmpfs Mount',
@@ -2436,6 +2555,7 @@ export default {
               difficulty: 'intermediate',
               command: 'docker run --tmpfs /tmp:rw,size=100m nginx',
               note: "Volatile: i dati vanno persi all'arresto.",
+              task: 'Esegui nginx montando un filesystem tmpfs in /tmp di 100 MB in lettura-scrittura.',
             },
             {
               english: 'Data Persistence',
@@ -2477,6 +2597,7 @@ export default {
               context: 'volumes',
               difficulty: 'intermediate',
               command: 'docker run -v /data nginx',
+              task: 'Avvia nginx dichiarando un volume anonimo sul percorso /data del container.',
             },
             {
               english: 'Mount Point',
@@ -2498,6 +2619,7 @@ export default {
               context: 'volumes',
               difficulty: 'intermediate',
               command: 'docker run -v config:/app/config:ro nginx',
+              task: `Esegui nginx montando il volume 'config' in /app/config in sola lettura.`,
             },
             {
               english: 'Volume Lifecycle',
@@ -2527,6 +2649,7 @@ export default {
               context: 'volumes',
               difficulty: 'intermediate',
               command: 'docker volume create db-data',
+              task: `Crea il volume Docker con nome 'db-data' destinato al database.`,
             },
             {
               english: 'docker volume ls',
@@ -2538,6 +2661,7 @@ export default {
               context: 'volumes',
               difficulty: 'intermediate',
               command: 'docker volume ls',
+              task: `Elenca tutti i volumi Docker presenti sull'host.`,
             },
             {
               english: 'docker volume inspect',
@@ -2549,6 +2673,7 @@ export default {
               context: 'volumes',
               difficulty: 'intermediate',
               command: 'docker volume inspect db-data',
+              task: `Mostra i dettagli del volume 'db-data' incluso il mountpoint sull'host.`,
             },
             {
               english: 'docker volume rm',
@@ -2560,6 +2685,7 @@ export default {
               context: 'volumes',
               difficulty: 'intermediate',
               command: 'docker volume rm db-data',
+              task: `Elimina il volume 'db-data' non più collegato ad alcun container.`,
             },
             {
               english: 'docker volume prune',
@@ -2572,6 +2698,7 @@ export default {
               difficulty: 'intermediate',
               command: 'docker volume prune',
               note: 'Attenzione: i dati saranno persi.',
+              task: 'Rimuovi tutti i volumi Docker inutilizzati per recuperare spazio disco.',
             },
             {
               english: '--mount Flag',
@@ -2583,6 +2710,7 @@ export default {
               context: 'volumes',
               difficulty: 'intermediate',
               command: 'docker run --mount type=volume,source=mydata,target=/data nginx',
+              task: `Avvia nginx montando il volume 'mydata' su /data tramite la sintassi esplicita --mount.`,
             },
             {
               english: '-v Flag',
@@ -2594,6 +2722,7 @@ export default {
               context: 'volumes',
               difficulty: 'intermediate',
               command: 'docker run -v mydata:/data nginx',
+              task: `Esegui nginx montando il volume 'mydata' su /data con la sintassi breve -v.`,
             },
             {
               english: 'Volume Backup',
@@ -2606,6 +2735,7 @@ export default {
               difficulty: 'intermediate',
               command:
                 'docker run --rm -v mydata:/data -v $(pwd):/backup alpine tar czf /backup/backup.tar.gz /data',
+              task: `Esegui un backup del volume 'mydata' in backup.tar.gz lanciando un container Alpine temporaneo che lo archivi.`,
             },
             {
               english: 'Volume Restore',
@@ -2618,6 +2748,7 @@ export default {
               difficulty: 'intermediate',
               command:
                 'docker run --rm -v mydata:/data -v $(pwd):/backup alpine tar xzf /backup/backup.tar.gz -C /',
+              task: `Ripristina il contenuto di backup.tar.gz nel volume 'mydata' usando un container Alpine temporaneo.`,
             },
             {
               english: 'Volume Label',
@@ -2629,6 +2760,7 @@ export default {
               context: 'volumes',
               difficulty: 'intermediate',
               command: 'docker volume create --label env=prod mydata',
+              task: `Crea il volume 'mydata' applicandogli la label env=prod per filtrarlo per ambiente.`,
             },
           ],
         },
@@ -2667,6 +2799,7 @@ export default {
               context: 'volumes',
               difficulty: 'intermediate',
               command: 'docker run -v $(pwd):/app -p 3000:3000 myapp',
+              task: `Avvia il container myapp montando in bind la directory corrente su /app e pubblicando la porta 3000 per l'hot reload.`,
             },
             {
               english: 'Working Directory',
@@ -2689,6 +2822,7 @@ export default {
               difficulty: 'intermediate',
               command: 'docker run -v /data:/data:Z nginx',
               note: 'Necessario su sistemi RHEL/CentOS con SELinux attivo.',
+              task: `Monta /data del container nginx come bind mount aggiungendo l'etichetta SELinux :Z su sistemi RHEL.`,
             },
             {
               english: 'Mount Propagation',
@@ -2711,6 +2845,7 @@ export default {
               context: 'volumes',
               difficulty: 'intermediate',
               command: 'docker run -v /data:/data:rw nginx',
+              task: 'Esegui nginx montando /data in modalità esplicita di lettura-scrittura.',
             },
             {
               english: 'Path Resolution',
@@ -2761,6 +2896,7 @@ export default {
               context: 'volumes',
               difficulty: 'intermediate',
               command: 'docker volume create --driver nfs mydata',
+              task: `Crea il volume 'mydata' usando il driver NFS invece del driver local predefinito.`,
             },
             {
               english: 'Local Driver',
@@ -2784,6 +2920,7 @@ export default {
               difficulty: 'intermediate',
               command:
                 'docker volume create --driver local --opt type=nfs --opt device=:/path mydata',
+              task: `Crea un volume 'mydata' con driver local di tipo NFS che punta al device remoto :/path.`,
             },
             {
               english: 'CIFS/SMB',
@@ -2815,6 +2952,7 @@ export default {
               context: 'volumes',
               difficulty: 'intermediate',
               command: 'docker plugin install rexray/ebs',
+              task: 'Installa il plugin Docker rexray/ebs per provisionare volumi AWS EBS dinamicamente.',
             },
             {
               english: 'Distributed Storage',
@@ -2906,6 +3044,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'services:\n  web:\n    image: nginx',
+              task: `Dichiara nel compose.yaml il servizio 'web' che usa l'immagine nginx.`,
             },
             {
               english: 'docker compose up',
@@ -2917,6 +3056,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               command: 'docker compose up -d',
+              task: 'Avvia in background tutti i servizi definiti nel compose.yaml della directory corrente.',
             },
             {
               english: 'docker compose down',
@@ -2928,6 +3068,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               command: 'docker compose down',
+              task: 'Ferma e rimuovi container, reti e risorse create da docker compose up.',
             },
             {
               english: 'docker compose logs',
@@ -2939,6 +3080,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               command: 'docker compose logs -f',
+              task: 'Segui in tempo reale i log aggregati di tutti i servizi gestiti da Compose.',
             },
             {
               english: 'docker compose ps',
@@ -2950,6 +3092,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               command: 'docker compose ps',
+              task: 'Elenca i container avviati dal progetto Compose corrente con il loro stato.',
             },
             {
               english: 'Project Name',
@@ -2961,6 +3104,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               command: 'docker compose -p myapp up',
+              task: `Avvia lo stack Compose usando 'myapp' come nome del progetto per separare risorse.`,
             },
             {
               english: 'YAML',
@@ -3001,6 +3145,7 @@ export default {
               difficulty: 'intermediate',
               code: 'services:\n  db:\n    image: postgres:16',
               note: `Rinominato per distinguerlo dal generico 'Image' di dk_containers_1.`,
+              task: `Definisci il servizio 'db' nel compose.yaml usando l'immagine postgres:16 dal registry.`,
             },
             {
               english: 'build',
@@ -3012,6 +3157,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'services:\n  web:\n    build:\n      context: .\n      dockerfile: Dockerfile',
+              task: `Configura il servizio 'web' affinché Compose costruisca l'immagine dal Dockerfile nella directory corrente.`,
             },
             {
               english: 'depends_on',
@@ -3023,6 +3169,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'web:\n  depends_on:\n    - db',
+              task: `Dichiara che il servizio 'web' dipende dal servizio 'db' nel compose.yaml.`,
             },
             {
               english: 'environment',
@@ -3034,6 +3181,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'environment:\n  - DATABASE_URL=postgres://db',
+              task: `Imposta nel servizio la variabile d'ambiente DATABASE_URL con valore postgres://db.`,
             },
             {
               english: 'env_file',
@@ -3045,6 +3193,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'env_file:\n  - .env.production',
+              task: 'Configura il servizio per caricare le variabili dal file .env.production via env_file.',
             },
             {
               english: 'ports',
@@ -3056,6 +3205,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'ports:\n  - "8080:80"',
+              task: `Mappa nel campo ports la porta 80 del container sulla porta 8080 dell'host.`,
             },
             {
               english: 'volumes',
@@ -3067,6 +3217,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'volumes:\n  - db-data:/var/lib/postgresql/data',
+              task: `Monta il volume con nome 'db-data' nel servizio sul percorso /var/lib/postgresql/data.`,
             },
             {
               english: 'networks',
@@ -3078,6 +3229,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'networks:\n  - backend',
+              task: `Collega il servizio alla rete 'backend' definita nel compose.yaml.`,
             },
             {
               english: 'command',
@@ -3088,6 +3240,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'command: ["npm", "start"]',
+              task: `Sovrascrivi il CMD dell'immagine impostando come comando del servizio l'esecuzione di npm start.`,
             },
             {
               english: 'restart',
@@ -3099,6 +3252,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'restart: unless-stopped',
+              task: `Configura il servizio con politica di restart 'unless-stopped' per rilanciarlo dopo i crash.`,
             },
           ],
         },
@@ -3117,6 +3271,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'networks:\n  backend:\n    driver: bridge',
+              task: `Dichiara al livello principale del compose.yaml la rete 'backend' con driver bridge.`,
             },
             {
               english: 'Top-Level Volumes',
@@ -3128,6 +3283,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'volumes:\n  db-data:\n    driver: local',
+              task: `Dichiara al livello principale del compose.yaml il volume 'db-data' con driver local.`,
             },
             {
               english: 'External Network',
@@ -3139,6 +3295,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'networks:\n  shared:\n    external: true',
+              task: `Dichiara la rete 'shared' come esterna nel compose.yaml per riusarla tra più stack.`,
             },
             {
               english: 'External Volume',
@@ -3150,6 +3307,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'volumes:\n  shared-data:\n    external: true',
+              task: `Dichiara il volume 'shared-data' come esterno nel compose.yaml per condividerlo tra progetti.`,
             },
             {
               english: 'Compose network alias',
@@ -3161,6 +3319,7 @@ export default {
               difficulty: 'intermediate',
               code: 'networks:\n  backend:\n    aliases:\n      - db',
               note: `Rinominato per distinguerlo dall'item 'Network Alias' di dk_network_3 (Docker engine).`,
+              task: `Assegna al servizio l'alias 'db' nella rete 'backend' affinché altri container lo risolvano con questo nome DNS.`,
             },
             {
               english: 'Default Network',
@@ -3193,6 +3352,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'networks:\n  backend:\n    enable_ipv6: true',
+              task: `Abilita IPv6 sulla rete 'backend' del compose.yaml per supportare client dual-stack.`,
             },
             {
               english: 'Subnet Configuration',
@@ -3204,6 +3364,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'networks:\n  backend:\n    ipam:\n      config:\n        - subnet: 172.20.0.0/16',
+              task: `Configura la rete 'backend' usando IPAM con sottorete 172.20.0.0/16.`,
             },
             {
               english: 'Volume Mount Path',
@@ -3232,6 +3393,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'services:\n  debug:\n    profiles: ["dev"]',
+              task: `Assegna al servizio 'debug' il profilo 'dev' per attivarlo solo in sviluppo.`,
             },
             {
               english: '--profile',
@@ -3243,6 +3405,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               command: 'docker compose --profile dev up',
+              task: `Avvia lo stack Compose attivando il profilo 'dev' per includere i servizi di sviluppo.`,
             },
             {
               english: 'Override File',
@@ -3265,6 +3428,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               command: 'docker compose -f base.yaml -f prod.yaml up',
+              task: 'Avvia lo stack combinando i file base.yaml e prod.yaml in sequenza tramite il flag -f.',
             },
             {
               english: 'Extension Field',
@@ -3276,6 +3440,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'x-defaults: &defaults\n  restart: always',
+              task: `Definisci nel compose.yaml l'estensione 'x-defaults' con restart: always da riusare con ancore YAML.`,
             },
             {
               english: 'YAML Anchor',
@@ -3287,6 +3452,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'x-base: &base\n  restart: always\nweb:\n  <<: *base',
+              task: `Definisci l'ancora YAML 'base' con restart: always e fondila nel servizio 'web' tramite <<: *base.`,
             },
             {
               english: 'Variable Interpolation',
@@ -3298,6 +3464,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'image: nginx:${TAG:-latest}',
+              task: `Imposta image: nginx:\${TAG:-latest} nel compose.yaml per interpolare la variabile TAG con fallback a 'latest'.`,
             },
             {
               english: '.env File',
@@ -3309,6 +3476,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'TAG=1.2.3\nDB_PASSWORD=secret',
+              task: 'Crea un file .env con TAG=1.2.3 e DB_PASSWORD=secret per fornire variabili a Compose.',
             },
             {
               english: 'Default Value',
@@ -3320,6 +3488,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: '${PORT:-8080}',
+              task: 'Configura la variabile PORT nel compose.yaml con valore di default 8080 quando non definita.',
             },
             {
               english: 'Compose Convert',
@@ -3331,6 +3500,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               command: 'docker compose config',
+              task: 'Stampa la configurazione Compose effettiva dopo merge e interpolazione delle variabili.',
             },
           ],
         },
@@ -3358,6 +3528,7 @@ export default {
               difficulty: 'intermediate',
               code: 'healthcheck:\n  test: ["CMD", "curl", "-f", "http://localhost"]\n  interval: 30s',
               note: `Rinominato per distinguerlo dalla direttiva 'HEALTHCHECK' del Dockerfile in dk_dockerfile_adv_4.`,
+              task: 'Aggiungi al servizio un healthcheck Compose che esegue curl -f http://localhost ogni 30 secondi.',
             },
             {
               english: 'Compose health status',
@@ -3380,6 +3551,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'depends_on:\n  db:\n    condition: service_healthy',
+              task: `Imposta che il servizio dipenda da 'db' solo quando questo risulta service_healthy.`,
             },
             {
               english: 'Healthcheck Test',
@@ -3391,6 +3563,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'test: ["CMD-SHELL", "pg_isready -U postgres"]',
+              task: 'Configura il test del healthcheck con CMD-SHELL per eseguire pg_isready -U postgres.',
             },
             {
               english: 'start_period',
@@ -3402,6 +3575,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'healthcheck:\n  start_period: 40s',
+              task: 'Imposta start_period a 40s nel healthcheck per dare tempo al servizio di inizializzarsi.',
             },
             {
               english: 'retries',
@@ -3413,6 +3587,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'healthcheck:\n  retries: 3',
+              task: 'Configura il healthcheck con retries: 3 prima di considerare il servizio unhealthy.',
             },
             {
               english: 'timeout',
@@ -3424,6 +3599,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'healthcheck:\n  timeout: 10s',
+              task: 'Imposta un timeout di 10s sul healthcheck del servizio.',
             },
             {
               english: 'interval',
@@ -3435,6 +3611,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'healthcheck:\n  interval: 30s',
+              task: 'Configura un intervallo di 30s tra le esecuzioni del healthcheck.',
             },
             {
               english: 'service_started',
@@ -3457,6 +3634,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'depends_on:\n  init:\n    condition: service_completed_successfully',
+              task: `Fai dipendere il servizio dal completamento riuscito del servizio 'init' tramite service_completed_successfully.`,
             },
           ],
         },
@@ -3475,6 +3653,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'deploy:\n  resources:\n    limits:\n      cpus: "0.5"\n      memory: 512M',
+              task: 'Imposta nel deploy del servizio limiti di 0.5 CPU e 512M di memoria.',
             },
             {
               english: 'CPU Limit',
@@ -3486,6 +3665,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'cpus: "0.5"',
+              task: 'Limita il consumo di CPU del servizio a 0.5 nel campo cpus.',
             },
             {
               english: 'Memory Limit',
@@ -3497,6 +3677,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'memory: 512M',
+              task: 'Imposta un limite di memoria pari a 512M sul servizio.',
             },
             {
               english: 'Reservations',
@@ -3508,6 +3689,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'reservations:\n  cpus: "0.25"\n  memory: 256M',
+              task: 'Riserva al servizio almeno 0.25 CPU e 256M di memoria come base garantita.',
             },
             {
               english: 'OOM Killer',
@@ -3531,6 +3713,7 @@ export default {
               difficulty: 'intermediate',
               code: 'mem_limit: 512m',
               note: 'Compose v1: oggi si preferisce deploy.resources.',
+              task: 'Limita la memoria del servizio a 512m usando il campo mem_limit legacy di Compose v1.',
             },
             {
               english: 'cpu_shares',
@@ -3542,6 +3725,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'cpu_shares: 1024',
+              task: 'Assegna al servizio 1024 cpu_shares per regolarne il peso in caso di contesa CPU.',
             },
             {
               english: 'pids_limit',
@@ -3553,6 +3737,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'pids_limit: 100',
+              task: 'Imposta pids_limit a 100 sul servizio per prevenire fork bomb.',
             },
             {
               english: 'shm_size',
@@ -3564,6 +3749,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'shm_size: 256m',
+              task: 'Aumenta shm_size del servizio a 256m per database che usano memoria condivisa.',
             },
             {
               english: 'ulimits',
@@ -3575,6 +3761,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'ulimits:\n  nofile:\n    soft: 1024\n    hard: 4096',
+              task: 'Configura sul servizio ulimits nofile con soft 1024 e hard 4096.',
             },
           ],
         },
@@ -3593,6 +3780,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'secrets:\n  db_password:\n    file: ./db_password.txt',
+              task: `Dichiara il secret 'db_password' caricandolo dal file locale ./db_password.txt.`,
             },
             {
               english: 'Config',
@@ -3604,6 +3792,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'configs:\n  app_config:\n    file: ./config.yaml',
+              task: `Dichiara la config 'app_config' caricandola dal file ./config.yaml.`,
             },
             {
               english: 'External Secret',
@@ -3615,6 +3804,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'secrets:\n  db_password:\n    external: true',
+              task: `Marca il secret 'db_password' come external nel compose.yaml perché creato fuori da Compose.`,
             },
             {
               english: 'Mount Secret',
@@ -3627,6 +3817,7 @@ export default {
               difficulty: 'intermediate',
               code: 'services:\n  app:\n    secrets:\n      - db_password',
               note: 'Disponibile in /run/secrets/db_password.',
+              task: `Collega il secret 'db_password' al servizio 'app' affinché sia disponibile in /run/secrets/.`,
             },
             {
               english: 'Secret Target',
@@ -3638,6 +3829,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'secrets:\n  - source: db_password\n    target: /etc/db_pass',
+              task: `Monta il secret 'db_password' nel container al percorso personalizzato /etc/db_pass.`,
             },
             {
               english: 'Vault Integration',
@@ -3707,6 +3899,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               command: 'docker compose up --scale web=3',
+              task: `Avvia lo stack Compose scalando il servizio 'web' a 3 istanze concorrenti.`,
             },
             {
               english: 'replicas',
@@ -3718,6 +3911,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'deploy:\n  replicas: 3',
+              task: 'Configura il deploy del servizio per mantenere costantemente 3 repliche attive.',
             },
             {
               english: 'Load Distribution',
@@ -3759,6 +3953,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'deploy:\n  update_config:\n    parallelism: 2\n    delay: 10s',
+              task: 'Configura update_config con parallelism 2 e delay 10s per rolling update controllato.',
             },
             {
               english: 'Rollback',
@@ -3770,6 +3965,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'deploy:\n  rollback_config:\n    parallelism: 1',
+              task: 'Configura rollback_config con parallelism 1 per ripristinare la versione precedente una replica alla volta.',
             },
             {
               english: 'Restart Condition',
@@ -3781,6 +3977,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'deploy:\n  restart_policy:\n    condition: on-failure',
+              task: `Imposta la condizione di riavvio del servizio su 'on-failure' nel deploy.restart_policy.`,
             },
             {
               english: 'Placement',
@@ -3792,6 +3989,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'deploy:\n  placement:\n    constraints:\n      - node.role == worker',
+              task: 'Limita il posizionamento del servizio ai nodi con role worker tramite placement.constraints.',
             },
             {
               english: 'Mode (replicated/global)',
@@ -3803,6 +4001,7 @@ export default {
               context: 'compose',
               difficulty: 'intermediate',
               code: 'deploy:\n  mode: global',
+              task: `Configura il deploy in modalità 'global' affinché il servizio giri su ogni nodo del cluster.`,
             },
           ],
         },
@@ -3851,6 +4050,7 @@ export default {
               context: 'registry',
               difficulty: 'intermediate',
               command: 'docker run -d -p 5000:5000 registry:2',
+              task: `Avvia in background un registry Docker privato sulla porta 5000 usando l'immagine registry:2.`,
             },
             {
               english: 'docker login',
@@ -3862,6 +4062,7 @@ export default {
               context: 'registry',
               difficulty: 'intermediate',
               command: 'docker login registry.example.com',
+              task: 'Autentica il client Docker contro il registry registry.example.com.',
             },
             {
               english: 'docker logout',
@@ -3873,6 +4074,7 @@ export default {
               context: 'registry',
               difficulty: 'intermediate',
               command: 'docker logout registry.example.com',
+              task: 'Rimuovi le credenziali memorizzate per il registry registry.example.com.',
             },
             {
               english: 'GitHub Container Registry',
@@ -3948,6 +4150,7 @@ export default {
               context: 'registry',
               difficulty: 'intermediate',
               command: 'docker tag myapp myorg/myapp:1.2.3',
+              task: `Crea il tag myorg/myapp:1.2.3 a partire dall'immagine locale myapp seguendo SemVer.`,
             },
             {
               english: 'Git SHA Tag',
@@ -3959,6 +4162,7 @@ export default {
               context: 'registry',
               difficulty: 'intermediate',
               command: 'docker build -t myapp:$(git rev-parse --short HEAD) .',
+              task: `Costruisci l'immagine myapp taggandola con lo SHA git corto del commit corrente.`,
             },
             {
               english: 'Branch Tag',
@@ -3970,6 +4174,7 @@ export default {
               context: 'registry',
               difficulty: 'intermediate',
               code: 'docker build -t myapp:feature-login .',
+              task: `Costruisci l'immagine myapp taggandola con il nome del branch 'feature-login'.`,
             },
             {
               english: 'Major Tag',
@@ -3991,6 +4196,7 @@ export default {
               context: 'registry',
               difficulty: 'intermediate',
               command: 'docker buildx build --platform linux/amd64,linux/arm64 -t myapp .',
+              task: `Costruisci con Buildx l'immagine myapp per le piattaforme linux/amd64 e linux/arm64.`,
             },
             {
               english: 'Buildx',
@@ -4003,6 +4209,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'Docker Buildx',
               command: 'docker buildx create --use',
+              task: 'Crea e attiva un nuovo builder Buildx per build multi-piattaforma.',
             },
             {
               english: 'Manifest List',
@@ -4014,6 +4221,7 @@ export default {
               context: 'registry',
               difficulty: 'intermediate',
               command: 'docker manifest create myapp:1.0 myapp:1.0-amd64 myapp:1.0-arm64',
+              task: 'Combina le immagini myapp:1.0-amd64 e myapp:1.0-arm64 in una manifest list pubblicabile come myapp:1.0.',
             },
             {
               english: 'Immutable Tag',
@@ -4075,6 +4283,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'Cosign',
               command: 'cosign sign --key cosign.key myimage:1.0',
+              task: `Firma l'immagine myimage:1.0 con Cosign usando la chiave cosign.key.`,
             },
             {
               english: 'Sigstore',
@@ -4108,6 +4317,7 @@ export default {
               context: 'registry',
               difficulty: 'intermediate',
               command: 'export DOCKER_CONTENT_TRUST=1',
+              task: 'Abilita Docker Content Trust esportando DOCKER_CONTENT_TRUST=1 per accettare solo immagini firmate.',
             },
             {
               english: 'SBOM',
@@ -4119,6 +4329,7 @@ export default {
               context: 'registry',
               difficulty: 'intermediate',
               command: 'syft myimage:1.0 -o spdx-json > sbom.json',
+              task: `Genera con Syft l'SBOM dell'immagine myimage:1.0 in formato SPDX JSON salvandolo in sbom.json.`,
             },
             {
               english: 'Provenance',
@@ -4141,6 +4352,7 @@ export default {
               context: 'registry',
               difficulty: 'intermediate',
               command: 'cosign verify --key cosign.pub myimage:1.0',
+              task: `Verifica con Cosign la firma dell'immagine myimage:1.0 usando la chiave pubblica cosign.pub.`,
             },
             {
               english: 'Public Key',
@@ -4191,6 +4403,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'GitHub Actions',
               code: 'uses: docker/build-push-action@v5',
+              task: 'Aggiungi al workflow GitHub Actions lo step uses: docker/build-push-action@v5 per build e push.',
             },
             {
               english: 'GitLab CI',
@@ -4244,6 +4457,7 @@ export default {
               context: 'registry',
               difficulty: 'intermediate',
               command: 'docker buildx build --cache-from type=gha --cache-to type=gha .',
+              task: `Costruisci con Buildx l'immagine sfruttando la cache GitHub Actions tramite cache-from e cache-to type=gha.`,
             },
             {
               english: 'CI/CD Image Promotion',
@@ -4302,6 +4516,7 @@ export default {
               context: 'security',
               difficulty: 'intermediate',
               command: 'dockerd-rootless.sh',
+              task: 'Avvia il daemon Docker in modalità rootless eseguendo lo script dockerd-rootless.sh.',
             },
             {
               english: 'Privileged Container',
@@ -4314,6 +4529,7 @@ export default {
               difficulty: 'intermediate',
               command: 'docker run --privileged ubuntu',
               note: 'Da evitare: bypass di gran parte delle protezioni.',
+              task: `Avvia un container Ubuntu in modalità privilegiata con accesso completo all'host.`,
             },
             {
               english: '--cap-add',
@@ -4325,6 +4541,7 @@ export default {
               context: 'security',
               difficulty: 'intermediate',
               command: 'docker run --cap-add NET_ADMIN nginx',
+              task: 'Esegui nginx aggiungendo solo la capability NET_ADMIN al set di default.',
             },
             {
               english: '--cap-drop',
@@ -4336,6 +4553,7 @@ export default {
               context: 'security',
               difficulty: 'intermediate',
               command: 'docker run --cap-drop ALL --cap-add NET_BIND_SERVICE nginx',
+              task: 'Avvia nginx eliminando tutte le capability e riabilitando soltanto NET_BIND_SERVICE.',
             },
             {
               english: 'Linux Capabilities',
@@ -4358,6 +4576,7 @@ export default {
               context: 'security',
               difficulty: 'intermediate',
               command: 'docker run --security-opt no-new-privileges nginx',
+              task: `Avvia nginx con l'opzione di sicurezza no-new-privileges per bloccare l'escalation via setuid.`,
             },
             {
               english: 'User Namespace',
@@ -4390,6 +4609,7 @@ export default {
               context: 'security',
               difficulty: 'intermediate',
               command: 'docker run --read-only nginx',
+              task: 'Esegui nginx con filesystem in sola lettura tramite il flag --read-only.',
             },
             {
               english: 'Least Privilege',
@@ -4418,6 +4638,7 @@ export default {
               context: 'security',
               difficulty: 'intermediate',
               command: 'docker run --security-opt seccomp=profile.json nginx',
+              task: 'Avvia nginx applicando il profilo seccomp personalizzato profile.json per filtrare le syscall.',
             },
             {
               english: 'Seccomp Profile',
@@ -4441,6 +4662,7 @@ export default {
               difficulty: 'intermediate',
               command: 'docker run --security-opt apparmor=docker-default nginx',
               tool: 'AppArmor',
+              task: 'Esegui nginx applicando il profilo AppArmor docker-default come security-opt.',
             },
             {
               english: 'SELinux',
@@ -4484,6 +4706,7 @@ export default {
               difficulty: 'intermediate',
               command: 'docker run --security-opt seccomp=unconfined nginx',
               note: 'Usare solo per debug.',
+              task: 'Avvia nginx disattivando il filtro seccomp impostando il profilo unconfined (solo per debug).',
             },
             {
               english: 'Default Profile',
@@ -4543,6 +4766,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'Trivy',
               command: 'trivy image myapp:1.0',
+              task: `Scansiona con Trivy l'immagine myapp:1.0 per individuare vulnerabilità note.`,
             },
             {
               english: 'Snyk',
@@ -4555,6 +4779,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'Snyk',
               command: 'snyk container test myapp:1.0',
+              task: `Esegui snyk container test sull'immagine myapp:1.0 per analizzare le dipendenze vulnerabili.`,
             },
             {
               english: 'Grype',
@@ -4566,6 +4791,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'Grype',
               command: 'grype myapp:1.0',
+              task: `Scansiona l'immagine myapp:1.0 con Grype per rilevare CVE nei pacchetti installati.`,
             },
             {
               english: 'CVE',
@@ -4588,6 +4814,7 @@ export default {
               context: 'security',
               difficulty: 'intermediate',
               command: 'trivy image --severity HIGH,CRITICAL myapp',
+              task: `Filtra la scansione Trivy dell'immagine myapp mostrando solo i livelli di severità HIGH e CRITICAL.`,
             },
             {
               english: 'Base Image Vulnerabilities',
@@ -4799,6 +5026,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'intermediate',
               command: 'kubectl get nodes',
+              task: 'Elenca con kubectl tutti i nodi che compongono il cluster Kubernetes.',
             },
             {
               english: 'Control Plane',
@@ -5033,6 +5261,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'intermediate',
               command: 'kubectl get pods',
+              task: `Mostra l'elenco dei pod presenti nel namespace corrente del cluster.`,
             },
             {
               english: 'Node Status',
@@ -5044,6 +5273,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'intermediate',
               command: 'kubectl describe node my-node',
+              task: `Visualizza la descrizione dettagliata del nodo 'my-node' inclusi condizioni e capacità.`,
             },
             {
               english: 'NodePort Range',
@@ -5065,6 +5295,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'intermediate',
               command: 'kubectl cordon my-node',
+              task: `Marca il nodo 'my-node' come non schedulabile per impedire nuovi pod durante la manutenzione.`,
             },
             {
               english: 'Drain',
@@ -5075,6 +5306,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'intermediate',
               command: 'kubectl drain my-node --ignore-daemonsets',
+              task: `Evacua tutti i pod dal nodo 'my-node' ignorando i DaemonSet prima di un intervento.`,
             },
             {
               english: 'Uncordon',
@@ -5086,6 +5318,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'intermediate',
               command: 'kubectl uncordon my-node',
+              task: `Riabilita il nodo 'my-node' alla schedulazione di nuovi pod dopo la manutenzione.`,
             },
           ],
         },
@@ -5116,6 +5349,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'intermediate',
               command: 'kubectl get pods -A',
+              task: 'Elenca tutti i pod presenti in ogni namespace del cluster.',
             },
             {
               english: 'kubectl describe',
@@ -5127,6 +5361,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'intermediate',
               command: 'kubectl describe pod my-pod',
+              task: `Mostra i dettagli e gli eventi del pod 'my-pod' per diagnosticarne lo stato.`,
             },
             {
               english: 'kubectl apply',
@@ -5138,6 +5373,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'intermediate',
               command: 'kubectl apply -f deployment.yaml',
+              task: 'Applica al cluster il manifest deployment.yaml creando o aggiornando le risorse dichiarate.',
             },
             {
               english: 'kubectl delete',
@@ -5149,6 +5385,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'intermediate',
               command: 'kubectl delete pod my-pod',
+              task: `Elimina dal cluster il pod chiamato 'my-pod'.`,
             },
             {
               english: 'kubectl logs',
@@ -5160,6 +5397,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'intermediate',
               command: 'kubectl logs -f my-pod',
+              task: `Segui in tempo reale i log del pod 'my-pod'.`,
             },
             {
               english: 'kubectl exec',
@@ -5171,6 +5409,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'intermediate',
               command: 'kubectl exec -it my-pod -- bash',
+              task: `Apri una shell bash interattiva all'interno del pod 'my-pod'.`,
             },
             {
               english: 'kubeconfig',
@@ -5193,6 +5432,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'intermediate',
               command: 'kubectl config use-context prod',
+              task: `Cambia il contesto attivo di kubectl impostandolo a 'prod' per puntare al cluster di produzione.`,
             },
             {
               english: 'Kubernetes Namespace',
@@ -5204,6 +5444,7 @@ export default {
               difficulty: 'intermediate',
               command: 'kubectl get pods -n kube-system',
               note: `Rinominato per distinguerlo dal generico 'Namespace' (Linux) di dk_containers_1.`,
+              task: `Elenca i pod presenti nel namespace di sistema 'kube-system' del cluster.`,
             },
           ],
         },
@@ -5231,6 +5472,7 @@ export default {
               difficulty: 'intermediate',
               code: 'apiVersion: v1\nkind: Pod\nmetadata:\n  name: nginx\nspec:\n  containers:\n  - name: nginx\n    image: nginx',
               note: `Rinominato per distinguerlo dal concetto 'Pod' introdotto in dk_k8s_intro_3.`,
+              task: `Definisci un manifest Pod chiamato 'nginx' con un container basato sull'immagine nginx.`,
             },
             {
               english: 'Pod Spec',
@@ -5342,6 +5584,7 @@ export default {
               context: 'pods',
               difficulty: 'intermediate',
               code: 'spec:\n  initContainers:\n  - name: setup\n    image: busybox\n    command: ["sh","-c","echo init"]',
+              task: `Aggiungi al pod un initContainer 'setup' basato su busybox che esegua un semplice echo prima dei container principali.`,
             },
             {
               english: 'Sidecar',
@@ -5415,6 +5658,7 @@ export default {
               context: 'pods',
               difficulty: 'intermediate',
               code: 'restartPolicy: Always',
+              task: `Configura l'init container con restartPolicy: Always per farlo girare come sidecar nativo K8s 1.28+.`,
             },
             {
               english: 'Container Order',
@@ -5436,6 +5680,7 @@ export default {
               context: 'pods',
               difficulty: 'intermediate',
               code: 'lifecycle:\n  preStop:\n    exec:\n      command: ["sh","-c","sleep 10"]',
+              task: 'Aggiungi al container un preStop hook che esegua sleep 10 prima dello shutdown per drenare le connessioni.',
             },
           ],
         },
@@ -5454,6 +5699,7 @@ export default {
               context: 'pods',
               difficulty: 'intermediate',
               code: 'resources:\n  requests:\n    cpu: 100m\n    memory: 128Mi',
+              task: 'Imposta sul container resources.requests con 100m di CPU e 128Mi di memoria per guidare lo scheduler.',
             },
             {
               english: 'Resource Limit',
@@ -5465,6 +5711,7 @@ export default {
               context: 'pods',
               difficulty: 'intermediate',
               code: 'resources:\n  limits:\n    cpu: 500m\n    memory: 512Mi',
+              task: 'Imposta sul container resources.limits con 500m di CPU e 512Mi di memoria come tetto massimo.',
             },
             {
               english: 'CPU millicore',
@@ -5569,6 +5816,7 @@ export default {
               difficulty: 'intermediate',
               code: 'livenessProbe:\n  httpGet:\n    path: /healthz\n    port: 8080',
               note: 'Se fallisce, K8s riavvia il container.',
+              task: 'Configura una livenessProbe HTTP che chiami il path /healthz sulla porta 8080 del container.',
             },
             {
               english: 'Readiness Probe',
@@ -5581,6 +5829,7 @@ export default {
               difficulty: 'intermediate',
               code: 'readinessProbe:\n  httpGet:\n    path: /ready\n    port: 8080',
               note: 'Se fallisce, K8s rimuove il pod dal Service.',
+              task: 'Configura una readinessProbe HTTP che chiami /ready sulla porta 8080 per gestire il traffico verso il pod.',
             },
             {
               english: 'Startup Probe',
@@ -5592,6 +5841,7 @@ export default {
               context: 'pods',
               difficulty: 'intermediate',
               code: 'startupProbe:\n  httpGet:\n    path: /startup\n    port: 8080\n  failureThreshold: 30',
+              task: `Configura una startupProbe HTTP su /startup porta 8080 con failureThreshold 30 per app lente all'avvio.`,
             },
             {
               english: 'HTTP Probe',
@@ -5613,6 +5863,7 @@ export default {
               context: 'pods',
               difficulty: 'intermediate',
               code: 'livenessProbe:\n  tcpSocket:\n    port: 5432',
+              task: 'Imposta una livenessProbe TCP sulla porta 5432 per verificare che il database accetti connessioni.',
             },
             {
               english: 'Exec Probe',
@@ -5624,6 +5875,7 @@ export default {
               context: 'pods',
               difficulty: 'intermediate',
               code: 'livenessProbe:\n  exec:\n    command: ["cat","/tmp/healthy"]',
+              task: 'Configura una livenessProbe exec che verifichi la presenza del file /tmp/healthy nel container.',
             },
             {
               english: 'gRPC Probe',
@@ -5635,6 +5887,7 @@ export default {
               context: 'pods',
               difficulty: 'intermediate',
               code: 'livenessProbe:\n  grpc:\n    port: 9000',
+              task: 'Aggiungi una livenessProbe gRPC sulla porta 9000 per sondare nativamente i microservizi gRPC.',
             },
             {
               english: 'initialDelaySeconds',
@@ -5646,6 +5899,7 @@ export default {
               context: 'pods',
               difficulty: 'intermediate',
               code: 'initialDelaySeconds: 30',
+              task: 'Imposta initialDelaySeconds a 30 sulla probe per dare tempo al container di avviarsi prima dei controlli.',
             },
             {
               english: 'failureThreshold',
@@ -5657,6 +5911,7 @@ export default {
               context: 'pods',
               difficulty: 'intermediate',
               code: 'failureThreshold: 3',
+              task: 'Configura failureThreshold a 3 sulla probe per tollerare brevi instabilità prima del fallimento.',
             },
             {
               english: 'periodSeconds',
@@ -5668,6 +5923,7 @@ export default {
               context: 'pods',
               difficulty: 'intermediate',
               code: 'periodSeconds: 10',
+              task: 'Imposta periodSeconds a 10 sulla probe per controllare il container ogni 10 secondi.',
             },
           ],
         },
@@ -5695,6 +5951,7 @@ export default {
               context: 'deployments',
               difficulty: 'intermediate',
               code: 'apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: nginx',
+              task: `Definisci un Deployment chiamato nginx con apiVersion apps/v1 per gestire i pod replicati dell'applicazione.`,
             },
             {
               english: 'ReplicaSet',
@@ -5717,6 +5974,7 @@ export default {
               context: 'deployments',
               difficulty: 'intermediate',
               code: 'spec:\n  replicas: 3',
+              task: 'Imposta il numero di repliche a 3 nello spec del Deployment per garantire alta disponibilità.',
             },
             {
               english: 'Rolling Update',
@@ -5728,6 +5986,7 @@ export default {
               context: 'deployments',
               difficulty: 'intermediate',
               code: 'strategy:\n  type: RollingUpdate\n  rollingUpdate:\n    maxSurge: 25%\n    maxUnavailable: 25%',
+              task: 'Configura la strategy RollingUpdate del Deployment con maxSurge e maxUnavailable al 25% per un rollout graduale.',
             },
             {
               english: 'Recreate Strategy',
@@ -5740,6 +5999,7 @@ export default {
               difficulty: 'intermediate',
               code: 'strategy:\n  type: Recreate',
               note: 'Comporta downtime, ma è semplice.',
+              task: `Applica la strategy Recreate al Deployment quando due versioni dell'applicazione non possono coesistere.`,
             },
             {
               english: 'maxSurge',
@@ -5771,6 +6031,7 @@ export default {
               context: 'deployments',
               difficulty: 'intermediate',
               command: 'kubectl rollout status deployment/nginx',
+              task: `Monitora in tempo reale lo stato del rollout del deployment nginx per verificare l'avanzamento dell'aggiornamento.`,
             },
             {
               english: 'Deployment Rollback',
@@ -5783,6 +6044,7 @@ export default {
               difficulty: 'intermediate',
               command: 'kubectl rollout undo deployment/nginx',
               note: `Rinominato per distinguerlo dall'item 'Rollback' di dk_compose_adv_4 (lato Compose).`,
+              task: 'Esegui il rollback del deployment nginx alla revisione precedente dopo un aggiornamento problematico.',
             },
             {
               english: 'Revision History',
@@ -5794,6 +6056,7 @@ export default {
               context: 'deployments',
               difficulty: 'intermediate',
               command: 'kubectl rollout history deployment/nginx',
+              task: 'Consulta lo storico delle revisioni del deployment nginx per identificare a quale versione tornare.',
             },
           ],
         },
@@ -5812,6 +6075,7 @@ export default {
               context: 'deployments',
               difficulty: 'intermediate',
               code: 'apiVersion: apps/v1\nkind: StatefulSet\nmetadata:\n  name: postgres',
+              task: 'Crea uno StatefulSet chiamato postgres con apiVersion apps/v1 per gestire pod con identità stabile.',
             },
             {
               english: 'Stable Identity',
@@ -5854,6 +6118,7 @@ export default {
               context: 'deployments',
               difficulty: 'intermediate',
               code: 'spec:\n  clusterIP: None',
+              task: 'Configura un Service headless impostando clusterIP a None per esporre singolarmente ogni pod dello StatefulSet.',
             },
             {
               english: 'volumeClaimTemplates',
@@ -5865,6 +6130,7 @@ export default {
               context: 'deployments',
               difficulty: 'intermediate',
               code: 'volumeClaimTemplates:\n  - metadata:\n      name: data\n    spec:\n      accessModes: ["ReadWriteOnce"]',
+              task: 'Definisci un volumeClaimTemplate denominato data con accessModes ReadWriteOnce per provisionare volumi per ciascun pod.',
             },
             {
               english: 'Ordered Deployment',
@@ -5886,6 +6152,7 @@ export default {
               context: 'deployments',
               difficulty: 'intermediate',
               code: 'podManagementPolicy: Parallel',
+              task: 'Imposta podManagementPolicy a Parallel per avviare simultaneamente tutti i pod dello StatefulSet.',
             },
             {
               english: 'StatefulSet Use Cases',
@@ -5907,6 +6174,7 @@ export default {
               context: 'deployments',
               difficulty: 'intermediate',
               code: 'spec:\n  serviceName: postgres',
+              task: 'Collega lo StatefulSet al Service headless postgres tramite il campo serviceName per abilitare la risoluzione DNS dei pod.',
             },
           ],
         },
@@ -5925,6 +6193,7 @@ export default {
               context: 'deployments',
               difficulty: 'intermediate',
               code: 'apiVersion: apps/v1\nkind: DaemonSet',
+              task: 'Definisci un DaemonSet con apiVersion apps/v1 per eseguire un pod agente su ogni nodo del cluster.',
             },
             {
               english: 'Node Selector',
@@ -5936,6 +6205,7 @@ export default {
               context: 'deployments',
               difficulty: 'intermediate',
               code: 'nodeSelector:\n  disktype: ssd',
+              task: 'Aggiungi un nodeSelector con disktype: ssd per schedulare il workload solo sui nodi dotati di storage SSD.',
             },
             {
               english: 'DaemonSet Use Cases',
@@ -5978,6 +6248,7 @@ export default {
               context: 'deployments',
               difficulty: 'intermediate',
               code: 'tolerations:\n  - operator: Exists',
+              task: 'Imposta una toleration con operator Exists per consentire la schedulazione su nodi con qualsiasi taint.',
             },
             {
               english: 'Update Strategy',
@@ -6008,6 +6279,7 @@ export default {
               context: 'deployments',
               difficulty: 'intermediate',
               code: 'spec:\n  hostNetwork: true',
+              task: 'Abilita hostNetwork: true nello spec per far condividere al pod il namespace di rete del nodo host.',
             },
             {
               english: 'Privileged DaemonSet',
@@ -6036,6 +6308,7 @@ export default {
               context: 'deployments',
               difficulty: 'intermediate',
               code: 'apiVersion: batch/v1\nkind: Job',
+              task: `Definisci un Job con apiVersion batch/v1 per eseguire un'operazione batch una tantum nel cluster.`,
             },
             {
               english: 'CronJob',
@@ -6046,6 +6319,7 @@ export default {
               context: 'deployments',
               difficulty: 'intermediate',
               code: 'spec:\n  schedule: "0 2 * * *"',
+              task: `Pianifica un CronJob con schedule '0 2 * * *' per eseguire il backup notturno alle 2 di mattina.`,
             },
             {
               english: 'Cron Expression',
@@ -6067,6 +6341,7 @@ export default {
               context: 'deployments',
               difficulty: 'intermediate',
               code: 'spec:\n  completions: 5',
+              task: 'Imposta completions a 5 nello spec del Job affinché il controller esegua cinque completamenti riusciti.',
             },
             {
               english: 'parallelism',
@@ -6078,6 +6353,7 @@ export default {
               context: 'deployments',
               difficulty: 'intermediate',
               code: 'spec:\n  parallelism: 3',
+              task: 'Configura parallelism a 3 nel Job per eseguire tre pod in parallelo e accelerare il batch processing.',
             },
             {
               english: 'backoffLimit',
@@ -6089,6 +6365,7 @@ export default {
               context: 'deployments',
               difficulty: 'intermediate',
               code: 'spec:\n  backoffLimit: 4',
+              task: 'Imposta backoffLimit a 4 nel Job per tollerare fino a quattro retry prima di marcarlo come Failed.',
             },
             {
               english: 'activeDeadlineSeconds',
@@ -6099,6 +6376,7 @@ export default {
               context: 'deployments',
               difficulty: 'intermediate',
               code: 'spec:\n  activeDeadlineSeconds: 600',
+              task: `Definisci activeDeadlineSeconds a 600 nel Job per terminare l'esecuzione dopo 10 minuti.`,
             },
             {
               english: 'concurrencyPolicy',
@@ -6110,6 +6388,7 @@ export default {
               context: 'deployments',
               difficulty: 'intermediate',
               code: 'concurrencyPolicy: Forbid',
+              task: `Imposta concurrencyPolicy a Forbid nel CronJob per impedire l'esecuzione simultanea di più istanze.`,
             },
             {
               english: 'startingDeadlineSeconds',
@@ -6121,6 +6400,7 @@ export default {
               context: 'deployments',
               difficulty: 'intermediate',
               code: 'startingDeadlineSeconds: 200',
+              task: 'Configura startingDeadlineSeconds a 200 nel CronJob per saltare i job che non partono entro la finestra.',
             },
             {
               english: 'successfulJobsHistoryLimit',
@@ -6132,6 +6412,7 @@ export default {
               context: 'deployments',
               difficulty: 'intermediate',
               code: 'successfulJobsHistoryLimit: 3',
+              task: `Riduci successfulJobsHistoryLimit a 3 nel CronJob per limitare l'accumulo di pod completati in etcd.`,
             },
           ],
         },
@@ -6159,6 +6440,7 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               code: 'apiVersion: v1\nkind: Service',
+              task: 'Definisci un Service Kubernetes con apiVersion v1 per fornire un IP virtuale stabile e DNS a un gruppo di pod.',
             },
             {
               english: 'ClusterIP',
@@ -6171,6 +6453,7 @@ export default {
               difficulty: 'advanced',
               code: 'spec:\n  type: ClusterIP',
               note: 'Tipo di default. Solo IP interno.',
+              task: `Imposta il type del Service a ClusterIP per esporre l'applicazione esclusivamente all'interno del cluster.`,
             },
             {
               english: 'NodePort',
@@ -6181,6 +6464,7 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               code: 'spec:\n  type: NodePort\n  ports:\n  - nodePort: 30080',
+              task: `Configura un Service NodePort sulla porta 30080 per esporre l'applicazione tramite ogni nodo del cluster.`,
             },
             {
               english: 'LoadBalancer',
@@ -6193,6 +6477,7 @@ export default {
               difficulty: 'advanced',
               code: 'spec:\n  type: LoadBalancer',
               note: 'Funziona su cloud (AWS ELB, GCP, Azure).',
+              task: 'Imposta il type del Service a LoadBalancer per ottenere un load balancer cloud esterno gestito automaticamente.',
             },
             {
               english: 'ExternalName',
@@ -6204,6 +6489,7 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               code: 'spec:\n  type: ExternalName\n  externalName: api.example.com',
+              task: 'Crea un Service di tipo ExternalName che alias api.example.com per integrare un servizio esterno tramite DNS.',
             },
             {
               english: 'Kubernetes Headless Service',
@@ -6216,6 +6502,7 @@ export default {
               difficulty: 'advanced',
               code: 'spec:\n  clusterIP: None',
               note: 'Restituiscono direttamente gli IP dei pod via DNS.',
+              task: 'Imposta clusterIP a None per creare un Service headless che esponga direttamente gli IP dei singoli pod.',
             },
             {
               english: 'Selector',
@@ -6226,6 +6513,7 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               code: 'spec:\n  selector:\n    app: nginx',
+              task: 'Configura il selector del Service con label app: nginx per indirizzare il traffico ai pod corrispondenti.',
             },
             {
               english: 'Endpoints',
@@ -6236,6 +6524,7 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               command: 'kubectl get endpoints my-service',
+              task: 'Elenca gli endpoint del service my-service per verificare quali pod sono effettivamente collegati al Service.',
             },
             {
               english: 'EndpointSlice',
@@ -6257,6 +6546,7 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               code: 'spec:\n  sessionAffinity: ClientIP',
+              task: 'Attiva sessionAffinity: ClientIP nel Service per garantire che lo stesso client raggiunga sempre lo stesso pod.',
             },
           ],
         },
@@ -6275,6 +6565,7 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               code: 'apiVersion: networking.k8s.io/v1\nkind: Ingress',
+              task: 'Definisci una risorsa Ingress con apiVersion networking.k8s.io/v1 per esporre servizi HTTP esterni al cluster.',
             },
             {
               english: 'Ingress Controller',
@@ -6317,6 +6608,7 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               code: 'spec:\n  ingressClassName: nginx',
+              task: `Specifica ingressClassName: nginx nello spec dell'Ingress per indicare quale controller deve gestirlo.`,
             },
             {
               english: 'Path-Based Routing',
@@ -6328,6 +6620,7 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               code: 'paths:\n  - path: /api\n    pathType: Prefix',
+              task: `Configura il path /api con pathType Prefix nell'Ingress per instradare le richieste dell'API verso il backend dedicato.`,
             },
             {
               english: 'Host-Based Routing',
@@ -6338,6 +6631,7 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               code: 'rules:\n  - host: api.example.com',
+              task: `Aggiungi una rule con host api.example.com all'Ingress per instradare il traffico in base al nome di dominio.`,
             },
             {
               english: 'TLS Termination',
@@ -6349,6 +6643,7 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               code: 'tls:\n  - hosts:\n    - api.example.com\n    secretName: tls-cert',
+              task: `Configura la sezione tls dell'Ingress con il secret tls-cert per terminare HTTPS sull'host api.example.com.`,
             },
             {
               english: 'cert-manager',
@@ -6370,6 +6665,7 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               code: 'annotations:\n  nginx.ingress.kubernetes.io/rewrite-target: /',
+              task: `Aggiungi l'annotation nginx.ingress.kubernetes.io/rewrite-target: / per riscrivere il path prima di raggiungere il backend.`,
             },
           ],
         },
@@ -6500,6 +6796,7 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               code: 'apiVersion: gateway.networking.k8s.io/v1',
+              task: `Adotta la Gateway API con apiVersion gateway.networking.k8s.io/v1 come alternativa moderna all'Ingress tradizionale.`,
             },
             {
               english: 'GatewayClass',
@@ -6520,6 +6817,7 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               code: 'kind: HTTPRoute',
+              task: 'Definisci una risorsa di tipo HTTPRoute per configurare regole di routing HTTP tramite la Gateway API.',
             },
             {
               english: 'TCPRoute',
@@ -6560,6 +6858,7 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               code: 'backendRefs:\n  - name: my-service\n    port: 80',
+              task: `Configura backendRefs con il service my-service sulla porta 80 per indirizzare il traffico all'applicazione di destinazione.`,
             },
             {
               english: 'Cross-Namespace Reference',
@@ -6580,6 +6879,7 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               code: 'backendRefs:\n  - name: v1\n    weight: 90\n  - name: v2\n    weight: 10',
+              task: 'Distribuisci il traffico tra v1 e v2 con weight 90 e 10 per implementare un canary rollout progressivo.',
             },
             {
               english: 'Header-Based Match',
@@ -6591,6 +6891,7 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               code: 'matches:\n  - headers:\n    - name: x-version\n      value: v2',
+              task: `Aggiungi un match basato sull'header x-version: v2 per instradare condizionalmente il traffico verso una versione specifica.`,
             },
           ],
         },
@@ -6617,6 +6918,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'advanced',
               code: 'apiVersion: v1\nkind: ConfigMap\nmetadata:\n  name: app-config',
+              task: `Definisci un ConfigMap chiamato app-config con apiVersion v1 per esternalizzare la configurazione dell'applicazione.`,
             },
             {
               english: 'kubectl create configmap',
@@ -6628,6 +6930,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'advanced',
               command: 'kubectl create configmap app-config --from-literal=KEY=value',
+              task: 'Crea il ConfigMap app-config da riga di comando con --from-literal=KEY=value per definire chiavi al volo.',
             },
             {
               english: 'From File',
@@ -6639,6 +6942,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'advanced',
               command: 'kubectl create configmap app-config --from-file=config.yaml',
+              task: 'Genera il ConfigMap app-config a partire dal file config.yaml usando --from-file per importarne il contenuto.',
             },
             {
               english: 'data Field',
@@ -6650,6 +6954,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'advanced',
               code: 'data:\n  log-level: debug\n  database-url: postgres://db',
+              task: 'Popola il campo data del ConfigMap con log-level: debug e database-url per esporre la configurazione ai pod.',
             },
             {
               english: 'binaryData',
@@ -6671,6 +6976,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'advanced',
               code: 'envFrom:\n  - configMapRef:\n      name: app-config',
+              task: `Inietta tutte le chiavi del ConfigMap app-config come variabili d'ambiente del container tramite envFrom.`,
             },
             {
               english: 'configMapRef',
@@ -6691,6 +6997,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'advanced',
               code: 'volumes:\n  - name: config\n    configMap:\n      name: app-config',
+              task: 'Monta il ConfigMap app-config come volume nel pod per esporre le chiavi come file nel filesystem.',
             },
             {
               english: 'ConfigMap Hot Reload',
@@ -6712,6 +7019,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'advanced',
               code: 'immutable: true',
+              task: 'Marca il ConfigMap come immutable: true per impedire modifiche accidentali e migliorare le performance.',
             },
           ],
         },
@@ -6730,6 +7038,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'advanced',
               code: 'apiVersion: v1\nkind: Secret\ntype: Opaque',
+              task: 'Definisci un Secret di tipo Opaque con apiVersion v1 per memorizzare dati sensibili come password e token.',
             },
             {
               english: 'Opaque Secret',
@@ -6762,6 +7071,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'advanced',
               command: 'kubectl create secret tls my-tls --cert=cert.crt --key=key.key',
+              task: 'Crea un Secret TLS chiamato my-tls a partire dai file cert.crt e key.key per servire HTTPS dal cluster.',
             },
             {
               english: 'docker-registry Secret',
@@ -6773,6 +7083,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'advanced',
               command: 'kubectl create secret docker-registry regcred --docker-server=...',
+              task: 'Genera il Secret docker-registry regcred con le credenziali del registry privato per il pull delle immagini.',
             },
             {
               english: 'imagePullSecrets',
@@ -6784,6 +7095,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'advanced',
               code: 'spec:\n  imagePullSecrets:\n  - name: regcred',
+              task: 'Configura imagePullSecrets con regcred nel pod per autenticare il pull delle immagini dal registry privato.',
             },
             {
               english: 'Encryption at Rest',
@@ -6843,6 +7155,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'advanced',
               code: 'env:\n  - name: LOG_LEVEL\n    value: info',
+              task: `Definisci la variabile d'ambiente LOG_LEVEL con value info nel campo env del container.`,
             },
             {
               english: 'valueFrom',
@@ -6854,6 +7167,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'advanced',
               code: 'valueFrom:\n  configMapKeyRef:\n    name: app-config\n    key: log-level',
+              task: 'Imposta una variabile con valueFrom che referenzi la chiave log-level del configMap app-config.',
             },
             {
               english: 'configMapKeyRef',
@@ -6874,6 +7188,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'advanced',
               code: 'valueFrom:\n  secretKeyRef:\n    name: db\n    key: password',
+              task: 'Inietta la password del database recuperandola dalla chiave password del secret db tramite secretKeyRef.',
             },
             {
               english: 'fieldRef',
@@ -6884,6 +7199,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'advanced',
               code: 'valueFrom:\n  fieldRef:\n    fieldPath: metadata.name',
+              task: `Usa fieldRef con fieldPath metadata.name per esporre al container il nome del pod come variabile d'ambiente.`,
             },
             {
               english: 'resourceFieldRef',
@@ -6903,6 +7219,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'advanced',
               code: 'value: $(POD_NAME)-suffix',
+              task: `Costruisci value: $(POD_NAME)-suffix per espandere dinamicamente il nome del pod all'interno di un'altra variabile.`,
             },
             {
               english: 'POD_NAME',
@@ -6913,6 +7230,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'advanced',
               code: 'env:\n  - name: POD_NAME\n    valueFrom:\n      fieldRef:\n        fieldPath: metadata.name',
+              task: `Esponi POD_NAME come variabile d'ambiente del container leggendo metadata.name dalla Downward API.`,
             },
             {
               english: 'POD_IP',
@@ -6923,6 +7241,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'advanced',
               code: 'fieldRef:\n  fieldPath: status.podIP',
+              task: `Recupera l'IP del pod tramite fieldRef con fieldPath status.podIP per usarlo nella configurazione applicativa.`,
             },
             {
               english: 'NODE_NAME',
@@ -6933,6 +7252,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'advanced',
               code: 'fieldRef:\n  fieldPath: spec.nodeName',
+              task: 'Inietta il nome del nodo ospitante leggendo spec.nodeName tramite fieldRef della Downward API.',
             },
           ],
         },
@@ -6960,6 +7280,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'advanced',
               code: 'downwardAPI:\n  items:\n    - path: labels\n      fieldRef:\n        fieldPath: metadata.labels',
+              task: 'Esponi le label del pod come file labels nel volume downwardAPI per renderle leggibili dal container.',
             },
             {
               english: 'metadata.annotations',
@@ -6990,6 +7311,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'advanced',
               code: 'resourceFieldRef:\n  resource: limits.memory',
+              task: 'Usa resourceFieldRef con resource limits.memory per esporre al container il proprio limite di memoria configurato.',
             },
             {
               english: 'Volume Projection',
@@ -7001,6 +7323,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'advanced',
               code: 'projected:\n  sources:\n  - configMap: ...\n  - secret: ...',
+              task: 'Combina configMap e secret in un singolo volume projected per montare più source sotto lo stesso mountPath.',
             },
             {
               english: 'Service Account Token',
@@ -7011,6 +7334,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'advanced',
               code: 'projected:\n  sources:\n  - serviceAccountToken:\n      path: token',
+              task: 'Proietta il token del service account come file token tramite serviceAccountToken nel volume projected.',
             },
             {
               english: 'Bound Service Account',
@@ -7033,6 +7357,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'advanced',
               code: 'volumeMounts:\n  - name: config\n    mountPath: /etc/app.conf\n    subPath: app.conf',
+              task: 'Monta solo il file app.conf del configMap config sulla path /etc/app.conf usando subPath per isolare il file.',
             },
             {
               english: 'defaultMode',
@@ -7044,6 +7369,7 @@ export default {
               context: 'kubernetes',
               difficulty: 'advanced',
               code: 'defaultMode: 0400',
+              task: 'Imposta defaultMode 0400 nel volume per montare i file in sola lettura accessibili solo al proprietario.',
             },
           ],
         },
@@ -7072,6 +7398,7 @@ export default {
               difficulty: 'advanced',
               code: 'apiVersion: v1\nkind: PersistentVolume',
               note: 'Abbreviato PV.',
+              task: 'Definisci un PersistentVolume con apiVersion v1 per esporre storage durevole utilizzabile dai pod del cluster.',
             },
             {
               english: 'PV',
@@ -7092,6 +7419,7 @@ export default {
               context: 'volumes',
               difficulty: 'advanced',
               code: 'capacity:\n  storage: 10Gi',
+              task: 'Imposta capacity storage 10Gi nel PersistentVolume per dichiarare la dimensione disponibile alle PVC.',
             },
             {
               english: 'Access Mode',
@@ -7112,6 +7440,7 @@ export default {
               context: 'volumes',
               difficulty: 'advanced',
               code: 'accessModes:\n  - ReadWriteOnce',
+              task: 'Configura accessModes ReadWriteOnce nel PersistentVolume per consentire il mount in lettura/scrittura da un singolo nodo.',
             },
             {
               english: 'ReadWriteMany',
@@ -7144,6 +7473,7 @@ export default {
               context: 'volumes',
               difficulty: 'advanced',
               code: 'persistentVolumeReclaimPolicy: Retain',
+              task: `Imposta persistentVolumeReclaimPolicy a Retain per preservare i dati anche dopo l'eliminazione della PVC.`,
             },
             {
               english: 'Volume Mode',
@@ -7155,6 +7485,7 @@ export default {
               context: 'volumes',
               difficulty: 'advanced',
               code: 'volumeMode: Filesystem',
+              task: 'Specifica volumeMode Filesystem nel PersistentVolume per esporre lo storage come filesystem montabile.',
             },
             {
               english: 'PV Status',
@@ -7184,6 +7515,7 @@ export default {
               difficulty: 'advanced',
               code: 'apiVersion: v1\nkind: PersistentVolumeClaim',
               note: 'Abbreviato PVC.',
+              task: 'Definisci una PersistentVolumeClaim con apiVersion v1 per richiedere storage durevole dal cluster.',
             },
             {
               english: 'PVC',
@@ -7205,6 +7537,7 @@ export default {
               context: 'volumes',
               difficulty: 'advanced',
               code: 'spec:\n  resources:\n    requests:\n      storage: 5Gi',
+              task: 'Richiedi 5Gi di storage nella PVC tramite resources.requests.storage per dimensionare correttamente il volume.',
             },
             {
               english: 'Bound',
@@ -7236,6 +7569,7 @@ export default {
               context: 'volumes',
               difficulty: 'advanced',
               code: 'volumeBindingMode: WaitForFirstConsumer',
+              task: 'Imposta volumeBindingMode WaitForFirstConsumer nello StorageClass per provisionare il volume solo dopo lo scheduling del pod.',
             },
             {
               english: 'WaitForFirstConsumer',
@@ -7258,6 +7592,7 @@ export default {
               context: 'volumes',
               difficulty: 'advanced',
               code: 'volumes:\n  - name: data\n    persistentVolumeClaim:\n      claimName: my-pvc',
+              task: 'Monta la PVC my-pvc nel pod tramite il volume data per accedere allo storage persistente richiesto.',
             },
             {
               english: 'PVC Resize',
@@ -7298,6 +7633,7 @@ export default {
               context: 'volumes',
               difficulty: 'advanced',
               code: 'apiVersion: storage.k8s.io/v1\nkind: StorageClass',
+              task: 'Definisci uno StorageClass con apiVersion storage.k8s.io/v1 per provisionare dinamicamente volumi su richiesta.',
             },
             {
               english: 'Provisioner',
@@ -7309,6 +7645,7 @@ export default {
               context: 'volumes',
               difficulty: 'advanced',
               code: 'provisioner: kubernetes.io/aws-ebs',
+              task: 'Imposta provisioner kubernetes.io/aws-ebs nello StorageClass per allocare automaticamente volumi EBS su AWS.',
             },
             {
               english: 'Dynamic Provisioning',
@@ -7329,6 +7666,7 @@ export default {
               context: 'volumes',
               difficulty: 'advanced',
               code: 'annotations:\n  storageclass.kubernetes.io/is-default-class: "true"',
+              task: `Marca lo StorageClass come default tramite l'annotation storageclass.kubernetes.io/is-default-class: true.`,
             },
             {
               english: 'AWS EBS',
@@ -7371,6 +7709,7 @@ export default {
               context: 'volumes',
               difficulty: 'advanced',
               code: 'parameters:\n  type: gp3\n  iops: "3000"',
+              task: 'Definisci i parametri type gp3 e iops 3000 nello StorageClass per provisionare volumi EBS gp3 ad alte prestazioni.',
             },
             {
               english: 'allowVolumeExpansion',
@@ -7382,6 +7721,7 @@ export default {
               context: 'volumes',
               difficulty: 'advanced',
               code: 'allowVolumeExpansion: true',
+              task: `Abilita allowVolumeExpansion: true nello StorageClass per consentire l'espansione dei volumi senza ricreare la PVC.`,
             },
             {
               english: 'reclaimPolicy',
@@ -7393,6 +7733,7 @@ export default {
               context: 'volumes',
               difficulty: 'advanced',
               code: 'reclaimPolicy: Delete',
+              task: 'Imposta reclaimPolicy a Delete nello StorageClass per eliminare automaticamente il PV quando la PVC viene cancellata.',
             },
           ],
         },
@@ -7420,6 +7761,7 @@ export default {
               context: 'volumes',
               difficulty: 'advanced',
               code: 'kind: CSIDriver',
+              task: `Registra un CSIDriver nel cluster per integrare uno storage backend tramite l'interfaccia standard CSI.`,
             },
             {
               english: 'Volume Snapshot',
@@ -7431,6 +7773,7 @@ export default {
               context: 'volumes',
               difficulty: 'advanced',
               code: 'kind: VolumeSnapshot',
+              task: 'Crea una risorsa VolumeSnapshot per catturare uno snapshot point-in-time di un PersistentVolume tramite CSI.',
             },
             {
               english: 'VolumeSnapshotClass',
@@ -7452,6 +7795,7 @@ export default {
               context: 'volumes',
               difficulty: 'advanced',
               code: 'dataSource:\n  kind: PersistentVolumeClaim\n  name: source-pvc',
+              task: 'Configura dataSource che referenzi la PVC source-pvc per clonare un volume esistente in una nuova PVC.',
             },
             {
               english: 'Topology Aware',
@@ -7504,6 +7848,7 @@ export default {
               context: 'volumes',
               difficulty: 'advanced',
               code: 'volumes:\n  - name: scratch\n    ephemeral:\n      volumeClaimTemplate: ...',
+              task: 'Definisci un volume ephemeral scratch tramite volumeClaimTemplate per ottenere storage temporaneo legato al ciclo di vita del pod.',
             },
           ],
         },
@@ -7584,6 +7929,7 @@ export default {
               context: 'networking',
               difficulty: 'advanced',
               code: '--pod-network-cidr=10.244.0.0/16',
+              task: 'Inizializza il cluster con --pod-network-cidr=10.244.0.0/16 per riservare il range di IP destinato ai pod.',
             },
             {
               english: 'Service CIDR',
@@ -7594,6 +7940,7 @@ export default {
               context: 'networking',
               difficulty: 'advanced',
               code: '--service-cidr=10.96.0.0/12',
+              task: 'Configura --service-cidr=10.96.0.0/12 in kubeadm per definire il range di IP virtuali assegnati ai Service ClusterIP.',
             },
             {
               english: 'BGP',
@@ -7641,6 +7988,7 @@ export default {
               context: 'networking',
               difficulty: 'advanced',
               code: 'apiVersion: networking.k8s.io/v1\nkind: NetworkPolicy',
+              task: 'Definisci una NetworkPolicy con apiVersion networking.k8s.io/v1 per controllare il traffico in ingresso e uscita dei pod.',
             },
             {
               english: 'Ingress Rules',
@@ -7652,6 +8000,7 @@ export default {
               context: 'networking',
               difficulty: 'advanced',
               code: 'ingress:\n  - from:\n    - podSelector:\n        matchLabels:\n          role: frontend',
+              task: 'Configura ingress rules che consentano solo ai pod con label role: frontend di raggiungere il backend.',
             },
             {
               english: 'Egress Rules',
@@ -7662,6 +8011,7 @@ export default {
               context: 'networking',
               difficulty: 'advanced',
               code: 'egress:\n  - to:\n    - ipBlock:\n        cidr: 10.0.0.0/24',
+              task: `Limita l'egress dei pod permettendo solo connessioni verso il CIDR 10.0.0.0/24 tramite ipBlock.`,
             },
             {
               english: 'podSelector',
@@ -7673,6 +8023,7 @@ export default {
               context: 'networking',
               difficulty: 'advanced',
               code: 'podSelector:\n  matchLabels:\n    app: api',
+              task: 'Applica un podSelector con label app: api per stabilire a quali pod si applica la NetworkPolicy.',
             },
             {
               english: 'namespaceSelector',
@@ -7694,6 +8045,7 @@ export default {
               context: 'networking',
               difficulty: 'advanced',
               code: 'ipBlock:\n  cidr: 172.17.0.0/16\n  except:\n    - 172.17.1.0/24',
+              task: 'Definisci un ipBlock 172.17.0.0/16 escludendo 172.17.1.0/24 per consentire il traffico verso una rete con eccezioni.',
             },
             {
               english: 'Default Deny',
@@ -7793,6 +8145,7 @@ export default {
               context: 'networking',
               difficulty: 'advanced',
               code: 'dnsPolicy: ClusterFirst',
+              task: 'Imposta dnsPolicy ClusterFirst nel pod per risolvere prima i nomi tramite CoreDNS del cluster.',
             },
             {
               english: 'Corefile',
@@ -7804,6 +8157,7 @@ export default {
               context: 'networking',
               difficulty: 'advanced',
               code: '.:53 {\n  kubernetes cluster.local\n  forward . /etc/resolv.conf\n}',
+              task: 'Configura il Corefile di CoreDNS con il plugin kubernetes per cluster.local e forward verso il resolver di sistema.',
             },
             {
               english: 'Upstream DNS',
@@ -7913,6 +8267,7 @@ export default {
               context: 'networking',
               difficulty: 'advanced',
               code: 'spec:\n  externalTrafficPolicy: Local',
+              task: `Imposta externalTrafficPolicy Local nel Service per preservare l'IP del client e instradare al pod sullo stesso nodo.`,
             },
             {
               english: 'internalTrafficPolicy',
@@ -7990,6 +8345,7 @@ export default {
               context: 'helm',
               difficulty: 'advanced',
               command: 'helm install myrelease ./mychart',
+              task: `Installa il chart locale ./mychart come release myrelease per distribuire l'applicazione tramite Helm.`,
             },
             {
               english: 'Release',
@@ -8011,6 +8367,7 @@ export default {
               context: 'helm',
               difficulty: 'advanced',
               command: 'helm repo add bitnami https://charts.bitnami.com/bitnami',
+              task: `Aggiungi il repository bitnami all'indice locale di Helm per scaricarne i chart pubblicati.`,
             },
             {
               english: 'helm install',
@@ -8021,6 +8378,7 @@ export default {
               context: 'helm',
               difficulty: 'advanced',
               command: 'helm install myapp bitnami/postgresql',
+              task: 'Installa il chart bitnami/postgresql come release myapp per provisionare un database PostgreSQL nel cluster.',
             },
             {
               english: 'helm upgrade',
@@ -8032,6 +8390,7 @@ export default {
               context: 'helm',
               difficulty: 'advanced',
               command: 'helm upgrade myapp ./mychart',
+              task: 'Aggiorna la release myapp con la versione modificata del chart locale ./mychart tramite helm upgrade.',
             },
             {
               english: 'helm uninstall',
@@ -8043,6 +8402,7 @@ export default {
               context: 'helm',
               difficulty: 'advanced',
               command: 'helm uninstall myapp',
+              task: 'Disinstalla la release myapp dal cluster rimuovendo tutte le risorse Kubernetes associate.',
             },
             {
               english: 'helm list',
@@ -8054,6 +8414,7 @@ export default {
               context: 'helm',
               difficulty: 'advanced',
               command: 'helm list -A',
+              task: 'Elenca tutte le release Helm installate in ogni namespace del cluster tramite il flag -A.',
             },
             {
               english: 'helm rollback',
@@ -8065,6 +8426,7 @@ export default {
               context: 'helm',
               difficulty: 'advanced',
               command: 'helm rollback myapp 1',
+              task: 'Esegui il rollback della release myapp alla revisione 1 dopo un upgrade problematico.',
             },
             {
               english: 'helm search',
@@ -8076,6 +8438,7 @@ export default {
               context: 'helm',
               difficulty: 'advanced',
               command: 'helm search repo nginx',
+              task: 'Cerca chart contenenti nginx nei repository configurati per individuare il pacchetto più adatto.',
             },
           ],
         },
@@ -8094,6 +8457,7 @@ export default {
               context: 'helm',
               difficulty: 'advanced',
               code: 'apiVersion: v2\nname: myapp\nversion: 1.0.0',
+              task: 'Compila Chart.yaml con apiVersion v2, name myapp e version 1.0.0 come metadati identificativi del chart.',
             },
             {
               english: 'values.yaml',
@@ -8105,6 +8469,7 @@ export default {
               context: 'helm',
               difficulty: 'advanced',
               code: 'replicaCount: 3\nimage:\n  repository: nginx\n  tag: 1.25',
+              task: 'Imposta replicaCount 3 e image.repository nginx con tag 1.25 in values.yaml come default override-abili.',
             },
             {
               english: 'templates/',
@@ -8145,6 +8510,7 @@ export default {
               context: 'helm',
               difficulty: 'advanced',
               code: '{{- define "myapp.fullname" -}}\n{{ .Release.Name }}-{{ .Chart.Name }}\n{{- end -}}',
+              task: 'Definisci il template myapp.fullname in _helpers.tpl per generare nomi consistenti da .Release.Name e .Chart.Name.',
             },
             {
               english: 'apiVersion',
@@ -8166,6 +8532,7 @@ export default {
               context: 'helm',
               difficulty: 'advanced',
               code: 'version: 1.0.0',
+              task: 'Aggiorna il campo version a 1.0.0 in Chart.yaml seguendo il versioning semver del chart Helm.',
             },
             {
               english: 'appVersion',
@@ -8176,6 +8543,7 @@ export default {
               context: 'helm',
               difficulty: 'advanced',
               code: 'appVersion: "1.16.0"',
+              task: `Imposta appVersion: 1.16.0 in Chart.yaml per dichiarare la versione dell'applicazione distribuita.`,
             },
             {
               english: 'Dependencies',
@@ -8187,6 +8555,7 @@ export default {
               context: 'helm',
               difficulty: 'advanced',
               code: 'dependencies:\n  - name: postgresql\n    version: 12.x.x\n    repository: https://charts.bitnami.com/bitnami',
+              task: 'Dichiara la dipendenza postgresql 12.x.x dal repo bitnami nel campo dependencies di Chart.yaml.',
             },
           ],
         },
@@ -8205,6 +8574,7 @@ export default {
               context: 'helm',
               difficulty: 'advanced',
               code: '{{ .Values.image.repository }}',
+              task: `Inserisci .Values.image.repository in un template Go per rendere parametrizzabile l'immagine del container.`,
             },
             {
               english: '.Values',
@@ -8215,6 +8585,7 @@ export default {
               context: 'helm',
               difficulty: 'advanced',
               code: '{{ .Values.replicaCount }}',
+              task: 'Referenzia .Values.replicaCount nel template per leggere il numero di repliche da values.yaml.',
             },
             {
               english: '.Release',
@@ -8226,6 +8597,7 @@ export default {
               context: 'helm',
               difficulty: 'advanced',
               code: '{{ .Release.Name }}',
+              task: 'Usa .Release.Name nel template per generare nomi risorse coerenti con la release Helm in uso.',
             },
             {
               english: '.Chart',
@@ -8236,6 +8608,7 @@ export default {
               context: 'helm',
               difficulty: 'advanced',
               code: '{{ .Chart.Name }}-{{ .Chart.Version }}',
+              task: 'Concatena .Chart.Name e .Chart.Version nel template per inserire metadati identificativi del chart nelle label.',
             },
             {
               english: 'Pipeline',
@@ -8246,6 +8619,7 @@ export default {
               context: 'helm',
               difficulty: 'advanced',
               code: '{{ .Values.image.tag | default "latest" | quote }}',
+              task: `Applica una pipeline che usi default latest e quote sul tag dell'immagine per garantire un valore quotato sempre presente.`,
             },
             {
               english: 'if/else',
@@ -8256,6 +8630,7 @@ export default {
               context: 'helm',
               difficulty: 'advanced',
               code: '{{- if .Values.ingress.enabled }}\n# ingress yaml\n{{- end }}',
+              task: `Avvolgi il manifest dell'ingress in un blocco if .Values.ingress.enabled per renderlo opzionale tramite values.yaml.`,
             },
             {
               english: 'range',
@@ -8267,6 +8642,7 @@ export default {
               context: 'helm',
               difficulty: 'advanced',
               code: '{{- range .Values.servers }}\n- {{ . }}\n{{- end }}',
+              task: 'Itera con range su .Values.servers nel template per generare dinamicamente una voce per ciascun server.',
             },
             {
               english: 'with',
@@ -8278,6 +8654,7 @@ export default {
               context: 'helm',
               difficulty: 'advanced',
               code: '{{- with .Values.image }}\n  repository: {{ .repository }}\n{{- end }}',
+              task: 'Usa with .Values.image per restringere il contesto e referenziare .repository senza il prefisso completo.',
             },
             {
               english: 'include',
@@ -8289,6 +8666,7 @@ export default {
               context: 'helm',
               difficulty: 'advanced',
               code: '{{ include "myapp.labels" . | nindent 4 }}',
+              task: 'Includi il named template myapp.labels con indentazione 4 spazi tramite include e nindent.',
             },
             {
               english: 'tpl Function',
@@ -8299,6 +8677,7 @@ export default {
               context: 'helm',
               difficulty: 'advanced',
               code: '{{ tpl .Values.someTemplate . }}',
+              task: 'Applica la funzione tpl a .Values.someTemplate per renderizzare a runtime una stringa che contiene direttive Go template.',
             },
           ],
         },
@@ -8317,6 +8696,7 @@ export default {
               context: 'helm',
               difficulty: 'advanced',
               code: 'annotations:\n  "helm.sh/hook": pre-install',
+              task: `Annota la risorsa con helm.sh/hook: pre-install per eseguirla prima dell'installazione effettiva della release.`,
             },
             {
               english: 'pre-install',
@@ -8367,6 +8747,7 @@ export default {
               context: 'helm',
               difficulty: 'advanced',
               code: 'annotations:\n  "helm.sh/hook-weight": "0"',
+              task: `Imposta helm.sh/hook-weight a 0 per controllare l'ordine di esecuzione degli hook all'interno della stessa fase.`,
             },
             {
               english: 'Sub-chart',
@@ -8388,6 +8769,7 @@ export default {
               context: 'helm',
               difficulty: 'advanced',
               command: 'helm dependency update',
+              task: 'Esegui helm dependency update per scaricare e aggiornare le dipendenze dichiarate in Chart.yaml.',
             },
             {
               english: 'Library Chart',
@@ -8399,6 +8781,7 @@ export default {
               context: 'helm',
               difficulty: 'advanced',
               code: 'type: library',
+              task: 'Dichiara type: library in Chart.yaml per creare un chart riusabile che fornisce solo template helper.',
             },
             {
               english: 'helm package',
@@ -8410,6 +8793,7 @@ export default {
               context: 'helm',
               difficulty: 'advanced',
               command: 'helm package ./mychart',
+              task: `Esegui helm package ./mychart per generare l'archivio .tgz pronto per essere pubblicato sul repository.`,
             },
           ],
         },
@@ -8446,6 +8830,7 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               code: 'kind: Role\nrules:\n  - apiGroups: [""]\n    resources: ["pods"]\n    verbs: ["get","list"]',
+              task: `Definisci un Role che conceda i verbi get e list sulle risorse pods nell'apiGroup core.`,
             },
             {
               english: 'ClusterRole',
@@ -8466,6 +8851,7 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               code: 'kind: RoleBinding\nsubjects:\n  - kind: User\n    name: alice\nroleRef:\n  kind: Role\n  name: pod-reader',
+              task: `Crea un RoleBinding che leghi l'utente alice al Role pod-reader per concedergli i permessi definiti.`,
             },
             {
               english: 'ClusterRoleBinding',
@@ -8506,6 +8892,7 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               code: 'apiGroups: ["apps"]',
+              task: 'Specifica apiGroups: [apps] nelle regole RBAC per concedere permessi sulle risorse del gruppo apps come i Deployment.',
             },
             {
               english: 'kubectl auth can-i',
@@ -8517,6 +8904,7 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               command: 'kubectl auth can-i create pods',
+              task: `Verifica se l'utente corrente può creare pod tramite kubectl auth can-i prima di tentare l'operazione.`,
             },
             {
               english: 'Aggregated Role',
@@ -8528,6 +8916,7 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               code: 'aggregationRule:\n  clusterRoleSelectors:\n    - matchLabels:\n        rbac.example.com/aggregate: "true"',
+              task: 'Configura aggregationRule con matchLabels rbac.example.com/aggregate per aggregare permessi da più ClusterRole.',
             },
           ],
         },
@@ -8545,6 +8934,7 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               code: 'apiVersion: v1\nkind: ServiceAccount\nmetadata:\n  name: my-sa',
+              task: `Definisci un ServiceAccount chiamato my-sa con apiVersion v1 per fornire un'identità ai pod del namespace.`,
             },
             {
               english: 'default ServiceAccount',
@@ -8575,6 +8965,7 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               code: 'spec:\n  automountServiceAccountToken: false',
+              task: 'Disabilita automountServiceAccountToken nel pod per impedire il mount automatico del token del service account.',
             },
             {
               english: 'IRSA',
@@ -8705,6 +9096,7 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               code: 'securityContext:\n  runAsNonRoot: true\n  readOnlyRootFilesystem: true',
+              task: 'Imposta securityContext con runAsNonRoot true e readOnlyRootFilesystem true per hardenizzare il container.',
             },
             {
               english: 'runAsNonRoot',
@@ -8724,6 +9116,7 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               code: 'runAsUser: 1000',
+              task: 'Configura runAsUser: 1000 nel securityContext per eseguire il processo del container con uno UID non privilegiato.',
             },
             {
               english: 'fsGroup',
@@ -8735,6 +9128,7 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               code: 'fsGroup: 2000',
+              task: 'Imposta fsGroup: 2000 nel pod per assegnare il gruppo proprietario ai file dei volumi montati.',
             },
             {
               english: 'seccompProfile',
@@ -8745,6 +9139,7 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               code: 'seccompProfile:\n  type: RuntimeDefault',
+              task: 'Applica seccompProfile di tipo RuntimeDefault per restringere le syscall consentite al container.',
             },
           ],
         },
@@ -8784,6 +9179,7 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               code: 'package k8srequiredlabels\nviolation[{"msg": msg}] {...}',
+              task: 'Scrivi una policy Rego nel package k8srequiredlabels che produca una violation quando mancano le label richieste.',
             },
             {
               english: 'ConstraintTemplate',
@@ -8855,6 +9251,7 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               code: 'enforcementAction: dryrun',
+              task: 'Imposta enforcementAction: dryrun sul constraint per valutare le violazioni senza bloccare effettivamente le richieste.',
             },
           ],
         },
@@ -8882,6 +9279,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               code: 'apiVersion: autoscaling/v2\nkind: HorizontalPodAutoscaler',
+              task: 'Definisci un HorizontalPodAutoscaler con apiVersion autoscaling/v2 per scalare automaticamente le repliche del deployment.',
             },
             {
               english: 'Target Utilization',
@@ -8892,6 +9290,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               code: 'metrics:\n  - type: Resource\n    resource:\n      name: cpu\n      target:\n        averageUtilization: 70',
+              task: `Configura una metrica Resource cpu con averageUtilization 70 nell'HPA per scalare al raggiungimento del 70% di CPU.`,
             },
             {
               english: 'minReplicas',
@@ -8903,6 +9302,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               code: 'minReplicas: 2',
+              task: `Imposta minReplicas: 2 nell'HPA per mantenere sempre almeno due pod attivi anche con carico minimo.`,
             },
             {
               english: 'maxReplicas',
@@ -8914,6 +9314,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               code: 'maxReplicas: 10',
+              task: `Imposta maxReplicas: 10 nell'HPA per limitare la scalabilità massima e proteggere il cluster dal sovraccarico.`,
             },
             {
               english: 'Custom Metric',
@@ -8924,6 +9325,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               code: 'metrics:\n  - type: Pods\n    pods:\n      metric:\n        name: requests_per_second',
+              task: `Configura una metrica Pods chiamata requests_per_second per scalare l'applicazione in base al traffico applicativo.`,
             },
             {
               english: 'External Metric',
@@ -8956,6 +9358,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               code: 'behavior:\n  scaleDown:\n    stabilizationWindowSeconds: 300',
+              task: `Imposta scaleDown con stabilizationWindowSeconds 300 nell'HPA per evitare downscaling oscillanti.`,
             },
             {
               english: 'Stabilization Window',
@@ -8992,6 +9395,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               code: 'kind: VerticalPodAutoscaler',
+              task: 'Definisci un VerticalPodAutoscaler per regolare automaticamente le request di CPU e memoria dei pod.',
             },
             {
               english: 'Auto Mode',
@@ -9003,6 +9407,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               code: 'updatePolicy:\n  updateMode: Auto',
+              task: 'Imposta updateMode Auto nel VPA per applicare automaticamente le raccomandazioni di risorse ricreando i pod.',
             },
             {
               english: 'Recommendation Mode',
@@ -9014,6 +9419,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               code: 'updateMode: Off',
+              task: 'Configura updateMode Off nel VPA per generare solo raccomandazioni senza modificare i pod in esecuzione.',
             },
             {
               english: 'Cluster Autoscaler',
@@ -9103,6 +9509,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               code: 'kind: PodDisruptionBudget\nspec:\n  minAvailable: 2\n  selector:\n    matchLabels:\n      app: web',
+              task: 'Definisci un PodDisruptionBudget con minAvailable 2 che selezioni i pod con label app: web.',
             },
             {
               english: 'PDB',
@@ -9123,6 +9530,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               code: 'minAvailable: 80%',
+              task: `Imposta minAvailable: 80% nel PDB per garantire che almeno l'80% dei pod resti attivo durante le disruption.`,
             },
             {
               english: 'maxUnavailable (PDB)',
@@ -9134,6 +9542,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               code: 'maxUnavailable: 1',
+              task: 'Configura maxUnavailable: 1 nel PDB per limitare a un solo pod indisponibile durante un drain del nodo.',
             },
             {
               english: 'Voluntary Disruption',
@@ -9182,6 +9591,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               code: 'terminationGracePeriodSeconds: 30',
+              task: `Imposta terminationGracePeriodSeconds: 30 nel pod per dare 30 secondi all'applicazione per chiudersi correttamente.`,
             },
             {
               english: 'Pod Priority',
@@ -9192,6 +9602,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               code: 'priorityClassName: high-priority',
+              task: 'Assegna priorityClassName high-priority al pod per garantirne la schedulazione prioritaria in caso di pressione.',
             },
           ],
         },
@@ -9221,6 +9632,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               code: 'kind: ScaledObject\nspec:\n  scaleTargetRef:\n    name: my-deployment',
+              task: 'Definisci un ScaledObject KEDA con scaleTargetRef my-deployment per scalare in base a metriche esterne.',
             },
             {
               english: 'Scaler',
@@ -9243,6 +9655,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               code: 'triggers:\n  - type: kafka\n    metadata:\n      topic: orders',
+              task: 'Configura un trigger kafka con metadata topic: orders per scalare il deployment in base alla coda di messaggi.',
             },
             {
               english: 'Scale to Zero',
@@ -9274,6 +9687,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               code: 'pollingInterval: 30',
+              task: 'Imposta pollingInterval: 30 nel ScaledObject per far interrogare a KEDA le metriche ogni 30 secondi.',
             },
             {
               english: 'Cooldown',
@@ -9285,6 +9699,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               code: 'cooldownPeriod: 300',
+              task: `Configura cooldownPeriod: 300 nel ScaledObject per attendere 5 minuti prima di scalare a zero dopo l'inattività.`,
             },
             {
               english: 'TriggerAuthentication',
@@ -9305,6 +9720,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               code: 'kind: ScaledJob',
+              task: 'Definisci una risorsa ScaledJob in KEDA per avviare Job batch on-demand in base agli eventi della coda.',
             },
           ],
         },
@@ -9332,6 +9748,7 @@ export default {
               difficulty: 'advanced',
               tool: 'metrics-server',
               command: 'kubectl top nodes',
+              task: 'Esegui kubectl top nodes per leggere CPU e memoria dei nodi tramite il Metrics Server installato.',
             },
             {
               english: 'kubectl top',
@@ -9343,6 +9760,7 @@ export default {
               context: 'monitoring',
               difficulty: 'advanced',
               command: 'kubectl top pod -n default',
+              task: 'Lancia kubectl top pod -n default per visualizzare il consumo di CPU e memoria dei pod nel namespace default.',
             },
             {
               english: 'Prometheus',
@@ -9365,6 +9783,7 @@ export default {
               context: 'monitoring',
               difficulty: 'advanced',
               code: 'rate(http_requests_total[5m])',
+              task: 'Scrivi la query PromQL rate(http_requests_total[5m]) per calcolare le richieste HTTP al secondo sugli ultimi 5 minuti.',
             },
             {
               english: 'ServiceMonitor',
@@ -9376,6 +9795,7 @@ export default {
               context: 'monitoring',
               difficulty: 'advanced',
               code: 'kind: ServiceMonitor',
+              task: 'Crea una risorsa ServiceMonitor del Prometheus Operator per dichiarare quali Service devono essere scrapeati.',
             },
             {
               english: 'PodMonitor',
@@ -9418,6 +9838,7 @@ export default {
               context: 'monitoring',
               difficulty: 'advanced',
               code: 'scrape_interval: 15s',
+              task: 'Imposta scrape_interval a 15s nella configurazione di Prometheus per raccogliere metriche ogni 15 secondi.',
             },
             {
               english: 'Time Series',
@@ -9444,6 +9865,7 @@ export default {
               context: 'monitoring',
               difficulty: 'advanced',
               code: 'livenessProbe:\n  httpGet:\n    path: /healthz',
+              task: 'Configura una livenessProbe HTTP sul path /healthz per consentire al kubelet di rilevare pod bloccati.',
             },
             {
               english: 'Readiness Endpoint',
@@ -9454,6 +9876,7 @@ export default {
               context: 'monitoring',
               difficulty: 'advanced',
               code: 'readinessProbe:\n  httpGet:\n    path: /ready',
+              task: 'Definisci una readinessProbe HTTP sul path /ready per controllare quando il pod è pronto a ricevere traffico.',
             },
             {
               english: 'Health Check',
@@ -9597,6 +10020,7 @@ export default {
               context: 'monitoring',
               difficulty: 'advanced',
               code: '{"level":"info","msg":"request","status":200}',
+              task: `Emetti log strutturati in JSON con campi level, msg e status per facilitare l'ingestion in stack ELK o Loki.`,
             },
             {
               english: 'Log Rotation',
@@ -9878,6 +10302,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               code: 'apiVersion: argoproj.io/v1alpha1\nkind: Application',
+              task: `Definisci una risorsa Application di ArgoCD con apiVersion argoproj.io/v1alpha1 per gestire un'app GitOps.`,
             },
             {
               english: 'Source',
@@ -9888,6 +10313,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               code: 'spec:\n  source:\n    repoURL: https://github.com/me/repo\n    path: manifests',
+              task: `Configura la source dell'Application ArgoCD con repoURL del repo GitHub e path manifests da sincronizzare.`,
             },
             {
               english: 'Destination',
@@ -9898,6 +10324,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               code: 'destination:\n  server: https://kubernetes.default.svc\n  namespace: production',
+              task: `Imposta destination con server in-cluster e namespace production come target di deploy dell'Application ArgoCD.`,
             },
             {
               english: 'Sync',
@@ -9908,6 +10335,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               command: 'argocd app sync myapp',
+              task: 'Lancia argocd app sync myapp per allineare manualmente lo stato del cluster al manifest del repo Git.',
             },
             {
               english: 'Auto Sync',
@@ -9918,6 +10346,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               code: 'syncPolicy:\n  automated:\n    prune: true\n    selfHeal: true',
+              task: `Abilita syncPolicy automated con prune e selfHeal nell'Application per mantenere il cluster sempre allineato a Git.`,
             },
             {
               english: 'Self Heal',
@@ -9946,6 +10375,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               code: 'annotations:\n  argocd.argoproj.io/sync-wave: "1"',
+              task: `Aggiungi l'annotation argocd.argoproj.io/sync-wave: 1 alla risorsa per controllarne l'ordine di sync.`,
             },
             {
               english: 'AppProject',
@@ -9982,6 +10412,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               code: 'kind: GitRepository\nspec:\n  url: https://github.com/me/repo',
+              task: 'Definisci una risorsa GitRepository di Flux con url del repo GitHub come sorgente dei manifest.',
             },
             {
               english: 'Kustomization',
@@ -9992,6 +10423,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               code: 'kind: Kustomization',
+              task: 'Crea una Kustomization di Flux per applicare automaticamente i manifest del GitRepository al cluster.',
             },
             {
               english: 'HelmRelease',
@@ -10187,6 +10619,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               code: 'apiVersion: apiextensions.k8s.io/v1\nkind: CustomResourceDefinition',
+              task: `Definisci una CustomResourceDefinition con apiVersion apiextensions.k8s.io/v1 per estendere l'API di Kubernetes.`,
             },
             {
               english: 'Custom Resource',
@@ -10207,6 +10640,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               code: 'schema:\n  openAPIV3Schema:\n    type: object',
+              task: 'Specifica uno schema openAPIV3Schema di tipo object nel CRD per validare i campi delle custom resource.',
             },
             {
               english: 'Validation',
@@ -10235,6 +10669,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               code: 'subresources:\n  status: {}',
+              task: 'Abilita la subresource status nel CRD per separare la gestione di spec e status delle custom resource.',
             },
             {
               english: 'Finalizer',
@@ -10245,6 +10680,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               code: 'metadata:\n  finalizers:\n    - mycontroller.example.com/cleanup',
+              task: `Aggiungi il finalizer mycontroller.example.com/cleanup ai metadata per consentire al controller di gestire l'eliminazione.`,
             },
             {
               english: 'Print Column',
@@ -10266,6 +10702,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               code: 'scope: Namespaced',
+              task: 'Imposta scope: Namespaced nel CRD per rendere la custom resource limitata al namespace di creazione.',
             },
             {
               english: 'Short Name',
@@ -10276,6 +10713,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               code: 'shortNames:\n  - mr',
+              task: `Aggiungi shortNames: [mr] al CRD per consentire l'uso di un alias breve nei comandi kubectl.`,
             },
           ],
         },
@@ -10396,6 +10834,7 @@ export default {
               difficulty: 'advanced',
               tool: 'Operator SDK',
               command: 'operator-sdk init --domain example.com',
+              task: 'Inizializza un nuovo operator con operator-sdk init --domain example.com come scaffolding di partenza.',
             },
             {
               english: 'Kubebuilder',
@@ -10407,6 +10846,7 @@ export default {
               difficulty: 'advanced',
               tool: 'Kubebuilder',
               command: 'kubebuilder init --domain example.com',
+              task: 'Scaffolda un progetto operator con kubebuilder init --domain example.com per generarne struttura e Makefile.',
             },
             {
               english: 'controller-runtime',
@@ -10454,6 +10894,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               code: 'func (r *MyReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {...}',
+              task: 'Implementa la funzione Reconcile del controller per riconciliare lo stato corrente con lo spec della custom resource.',
             },
             {
               english: 'Bundle',
@@ -10672,6 +11113,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               command: 'kubectl run nginx --image=nginx --port=80',
+              task: 'Avvia rapidamente un pod nginx esponendo la porta 80 tramite kubectl run nello stile imperativo CKAD.',
             },
             {
               english: '--dry-run',
@@ -10682,6 +11124,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               command: 'kubectl run nginx --image=nginx --dry-run=client -o yaml',
+              task: 'Genera lo YAML del pod nginx con --dry-run=client -o yaml senza creare effettivamente la risorsa nel cluster.',
             },
             {
               english: 'kubectl Alias',
@@ -10692,6 +11135,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               command: 'alias k=kubectl',
+              task: `Crea l'alias k=kubectl nella shell per velocizzare la digitazione durante gli esami CKA e CKAD.`,
             },
             {
               english: 'kubectl-debug',
@@ -10703,6 +11147,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               command: 'kubectl debug -it pod/myapp --image=busybox',
+              task: 'Avvia una sessione di debug interattiva nel pod myapp usando un container busybox per ispezionare i problemi.',
             },
             {
               english: 'Vim Skills',
@@ -10760,6 +11205,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               code: 'topologySpreadConstraints:\n  - maxSkew: 1\n    topologyKey: topology.kubernetes.io/zone',
+              task: 'Configura un topologySpreadConstraint con maxSkew 1 sulla topologyKey zone per distribuire equamente i pod tra zone.',
             },
             {
               english: 'Anti-Affinity',
@@ -10770,6 +11216,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               code: 'podAntiAffinity:\n  requiredDuringSchedulingIgnoredDuringExecution: ...',
+              task: `Imposta podAntiAffinity required durante lo scheduling per evitare che due repliche dell'applicazione finiscano sullo stesso nodo.`,
             },
             {
               english: 'Affinity',
@@ -10789,6 +11236,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               command: 'kubectl taint nodes node1 key=value:NoSchedule',
+              task: 'Applica il taint key=value:NoSchedule al nodo node1 per impedire la schedulazione di pod privi della relativa toleration.',
             },
             {
               english: 'Pod Toleration',
@@ -10800,6 +11248,7 @@ export default {
               difficulty: 'advanced',
               code: 'tolerations:\n  - key: "key"\n    operator: "Equal"\n    value: "value"\n    effect: "NoSchedule"',
               note: `Rinominato per distinguerlo dal generico 'Toleration' di dk_workloads_3.`,
+              task: 'Aggiungi una toleration con key, operator Equal, value e effect NoSchedule per consentire la schedulazione sul nodo taintato.',
             },
             {
               english: 'Cluster Node Selector',
@@ -10811,6 +11260,7 @@ export default {
               difficulty: 'advanced',
               code: 'nodeSelector:\n  disktype: ssd',
               note: `Rinominato per distinguerlo dal generico 'Node Selector' di dk_workloads_3.`,
+              task: 'Usa nodeSelector disktype: ssd nel pod per vincolarne la schedulazione sui soli nodi con storage SSD.',
             },
             {
               english: 'Bootstrap',
@@ -10822,6 +11272,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               command: 'kubeadm init --pod-network-cidr=10.244.0.0/16',
+              task: 'Inizializza il control plane con kubeadm init --pod-network-cidr=10.244.0.0/16 per il bootstrap del cluster.',
             },
           ],
         },
@@ -10869,6 +11320,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               command: 'ETCDCTL_API=3 etcdctl snapshot save backup.db',
+              task: 'Salva uno snapshot di etcd in backup.db con etcdctl per garantire un punto di ripristino del cluster.',
             },
             {
               english: 'Velero Backup',
@@ -10879,6 +11331,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               command: 'velero backup create my-backup --include-namespaces=production',
+              task: 'Esegui velero backup create my-backup includendo il namespace production per proteggerne le risorse e i volumi.',
             },
             {
               english: 'Restore Test',
@@ -11014,6 +11467,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               code: 'kind: ResourceQuota\nspec:\n  hard:\n    requests.cpu: "10"\n    requests.memory: 20Gi',
+              task: 'Definisci una ResourceQuota con requests.cpu 10 e requests.memory 20Gi per limitare il consumo del namespace.',
             },
             {
               english: 'LimitRange',
@@ -11024,6 +11478,7 @@ export default {
               context: 'orchestration',
               difficulty: 'advanced',
               code: 'kind: LimitRange\nspec:\n  limits:\n    - default:\n        cpu: 500m',
+              task: 'Imposta un LimitRange con default cpu 500m per assegnare limiti predefiniti ai container privi di esplicita configurazione.',
             },
             {
               english: 'Spot Savings',

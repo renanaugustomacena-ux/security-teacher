@@ -5997,6 +5997,7 @@ export default {
               difficulty: 'advanced',
               tool: 'AWS SQS',
               command: 'aws sqs send-message --queue-url $URL --message-body "hi"',
+              task: `Pubblica un messaggio di test con corpo 'hi' sulla coda SQS puntata da $URL per verificare che il consumer la stia leggendo.`,
             },
             {
               english: 'Standard Queue',
@@ -6110,6 +6111,7 @@ export default {
               difficulty: 'advanced',
               tool: 'AWS SNS',
               command: 'aws sns publish --topic-arn $ARN --message "hi"',
+              task: `Invia il messaggio 'hi' al topic SNS identificato da $ARN per innescare il fan-out verso email e code SQS.`,
             },
             {
               english: 'Topic',
@@ -6299,6 +6301,7 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               code: '{"source": ["custom.app"], "detail-type": ["UserSignup"]}',
+              task: 'Scrivi un event pattern EventBridge che catturi solo eventi UserSignup provenienti dalla sorgente custom.app.',
             },
           ],
         },
@@ -6486,6 +6489,7 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               command: 'aws cloudfront create-distribution',
+              task: 'Crea una nuova distribution CloudFront per servire il sito statico dietro la rete edge globale del provider.',
             },
             {
               english: 'Cache Behavior',
@@ -6507,6 +6511,7 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               command: 'aws cloudfront create-invalidation --paths "/*"',
+              task: `Invalida l'intera cache della distribution CloudFront con il path /* subito dopo il deploy del nuovo bundle.`,
             },
             {
               english: 'Cache TTL',
@@ -6662,6 +6667,7 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               code: 'Cache-Control: public, max-age=31536000, immutable',
+              task: `Imposta l'header Cache-Control public con max-age di 31536000 e flag immutable sugli asset fingerprinted.`,
             },
             {
               english: 'ETag',
@@ -7840,6 +7846,7 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               code: 'version: 0.2\nphases:\n  build:\n    commands:\n      - npm test',
+              task: 'Definisci un buildspec.yml versione 0.2 con una fase build che lanci npm test come unico comando del job CodeBuild.',
             },
             {
               english: 'Pipeline Stage',
@@ -7962,6 +7969,7 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               code: 'trigger:\n  - main\nsteps:\n  - script: npm install\n  - script: npm test',
+              task: 'Componi una YAML Pipeline Azure DevOps che parta dal trigger sul branch main ed esegua npm install seguito da npm test.',
             },
             {
               english: 'Multi-Stage Pipeline',
@@ -8034,6 +8042,7 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               code: 'steps:\n  - name: gcr.io/cloud-builders/docker\n    args: [build, -t, gcr.io/$PROJECT_ID/app, .]',
+              task: `Configura uno step in cloudbuild.yaml che usi gcr.io/cloud-builders/docker per buildare l'immagine taggata gcr.io/$PROJECT_ID/app.`,
             },
             {
               english: 'Builder Image',
@@ -8240,6 +8249,7 @@ export default {
               difficulty: 'advanced',
               tool: 'GCP BigQuery',
               command: 'bq query "SELECT * FROM dataset.table"',
+              task: 'Lancia una query interattiva su BigQuery con bq query selezionando tutte le colonne da dataset.table senza gestire alcun cluster.',
             },
             {
               english: 'Snowflake',
@@ -8692,6 +8702,7 @@ export default {
               context: 'services',
               difficulty: 'advanced',
               command: 'aws sagemaker create-training-job',
+              task: `Avvia un training job SageMaker per addestrare il modello su istanze GPU senza gestire l'infrastruttura sottostante.`,
             },
             {
               english: 'Async Inference Endpoint',

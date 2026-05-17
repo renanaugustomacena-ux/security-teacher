@@ -1,0 +1,2116 @@
+{
+  "fixes": [
+    {
+      "level": "0",
+      "lesson": "rust_foundations_1",
+      "english": "Variable",
+      "set": {
+        "task": "Dichiara una variabile immutabile chiamata x legata al valore 5 usando la parola chiave let."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_1",
+      "english": "Let Binding",
+      "set": {
+        "task": "Crea un let binding che lega il nome name al letterale stringa Alice in una singola istruzione."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_1",
+      "english": "Mutable",
+      "set": {
+        "task": "Definisci una variabile mutabile inizializzata a 5 e poi riassegnale 10 sfruttando la parola chiave mut."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_1",
+      "english": "Immutable",
+      "set": {
+        "task": "Lega il valore 5 a una variabile immutabile e aggiungi un commento che ne segnali l'impossibilita di modifica."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_1",
+      "english": "Function",
+      "set": {
+        "task": "Scrivi una funzione greet senza argomenti che stampa il saluto Hello tramite la macro println."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_1",
+      "english": "Main Function",
+      "set": {
+        "task": "Implementa la funzione main come punto di ingresso del binario e fai stampare il messaggio Hello a console."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_1",
+      "english": "Println Macro",
+      "set": {
+        "task": "Stampa la frase Hello, World seguita da un newline sullo standard output usando la macro println."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_1",
+      "english": "Expression",
+      "set": {
+        "task": "Assegna a y il valore prodotto da un blocco-espressione che dichiara x uguale a 3 e restituisce x + 1."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_1",
+      "english": "Statement",
+      "set": {
+        "task": "Componi un'istruzione che lega il numero 5 a una variabile x senza restituire alcun valore."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_1",
+      "english": "Semicolon",
+      "set": {
+        "task": "Trasforma l'espressione x + 1 in una statement aggiungendo il punto e virgola finale che ne scarta il risultato."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_2",
+      "english": "Cargo New",
+      "set": {
+        "task": "Genera un nuovo progetto Rust chiamato my_project tramite cargo new completo di Cargo.toml e src/main.rs."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_2",
+      "english": "Cargo Build",
+      "set": {
+        "task": "Compila il progetto corrente in modalita debug invocando cargo build e producendo un binario in target/debug."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_2",
+      "english": "Cargo Run",
+      "set": {
+        "task": "Compila ed esegui il binario del progetto in un solo passaggio sfruttando il comando cargo run."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_2",
+      "english": "Cargo.toml",
+      "set": {
+        "task": "Configura la sezione [package] del file Cargo.toml impostando il campo name del crate sul valore myapp."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_2",
+      "english": "Rustc",
+      "set": {
+        "task": "Invoca direttamente il compilatore Rust rustc sul file main.rs senza passare attraverso cargo."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_2",
+      "english": "Rustup",
+      "set": {
+        "task": "Aggiorna il canale stable della toolchain Rust all'ultima release disponibile tramite rustup update."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_2",
+      "english": "Edition",
+      "set": {
+        "task": "Imposta in Cargo.toml il campo edition al valore 2021 cosi il compilatore usa la sintassi piu recente."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_3",
+      "english": "Compilation",
+      "set": {
+        "task": "Avvia la compilazione del crate con cargo build ottenendo un binario nativo senza overhead a runtime."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_3",
+      "english": "Warning",
+      "set": {
+        "task": "Sopprimi il warning di variabile non usata anteponendo un underscore al nome della variabile, come in _unused."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_3",
+      "english": "Release Build",
+      "set": {
+        "task": "Produci una build ottimizzata del progetto eseguendo cargo build con il flag --release per la distribuzione finale."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_3",
+      "english": "Debug Build",
+      "set": {
+        "task": "Genera una build di debug con cargo build per disporre di simboli e controlli runtime durante lo sviluppo."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_3",
+      "english": "Target Directory",
+      "set": {
+        "task": "Localizza i binari compilati nelle sottocartelle target/debug e target/release create automaticamente da cargo."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_3",
+      "english": "Cargo Check",
+      "set": {
+        "task": "Verifica rapidamente che il codice superi il typecheck senza produrre un binario invocando cargo check."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_3",
+      "english": "Cargo Clean",
+      "set": {
+        "task": "Rimuovi tutti gli artefatti di build accumulati nella cartella target/ eseguendo cargo clean per liberare spazio."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_3",
+      "english": "Binary Crate",
+      "set": {
+        "task": "Configura un binary crate dichiarando il punto di ingresso obbligatorio in src/main.rs per produrre un eseguibile."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_3",
+      "english": "Library Crate",
+      "set": {
+        "task": "Struttura un library crate riutilizzabile partendo dal file src/lib.rs come root della libreria."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_4",
+      "english": "Comment",
+      "set": {
+        "task": "Inserisci un commento a riga singola con la sintassi // per documentare brevemente l'intento di una sezione di codice."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_4",
+      "english": "Block Comment",
+      "set": {
+        "task": "Avvolgi una spiegazione su piu righe dentro un block comment delimitato da /* e */ per documentare un'intera sezione."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_4",
+      "english": "Doc Comment",
+      "set": {
+        "task": "Anteponi a una funzione un doc comment con tre slash /// che descrive che somma due numeri per la documentazione."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_4",
+      "english": "Snake Case",
+      "set": {
+        "task": "Dichiara una variabile user_name secondo la convenzione snake_case standard di Rust per identificatori."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_4",
+      "english": "Pascal Case",
+      "set": {
+        "task": "Definisci una struct chiamata UserProfile applicando la convenzione PascalCase tipica dei tipi in Rust."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_4",
+      "english": "Screaming Snake Case",
+      "set": {
+        "task": "Dichiara una costante MAX_SIZE di tipo u32 fissata a 100 seguendo lo screaming snake case per le costanti."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_4",
+      "english": "Rustfmt",
+      "set": {
+        "task": "Formatta tutti i file sorgente del progetto secondo lo stile ufficiale eseguendo cargo fmt che invoca rustfmt."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_4",
+      "english": "Clippy",
+      "set": {
+        "task": "Esegui cargo clippy sul crate per individuare anti-pattern e suggerimenti idiomatici prima di committare."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_4",
+      "english": "Curly Braces",
+      "set": {
+        "task": "Delimita il corpo della funzione main con parentesi graffe lasciando il commento /* body */ all'interno."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_1",
+      "english": "i32",
+      "set": {
+        "task": "Annota esplicitamente una variabile x come i32 inizializzandola al valore 42 con la sintassi let x: i32."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_1",
+      "english": "u32",
+      "set": {
+        "task": "Crea una variabile x di tipo u32 con valore 100, indicando che non potra mai essere negativa."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_1",
+      "english": "i64",
+      "set": {
+        "task": "Memorizza il numero nove miliardi in una variabile annotata come i64 per evitare overflow su i32."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_1",
+      "english": "u64",
+      "set": {
+        "task": "Lega un contatore di valore 18 miliardi a una variabile annotata u64 per supportare grandi quantita non negative."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_1",
+      "english": "i8",
+      "set": {
+        "task": "Dichiara una variabile small di tipo i8 contenente -50, sfruttando il range ridotto da -128 a 127."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_1",
+      "english": "u8",
+      "set": {
+        "task": "Assegna il valore massimo 255 a una variabile byte tipata u8 per rappresentare un singolo byte."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_1",
+      "english": "isize",
+      "set": {
+        "task": "Dichiara una variabile idx di tipo isize con valore -1 sfruttando la larghezza che corrisponde al puntatore."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_1",
+      "english": "usize",
+      "set": {
+        "task": "Salva la lunghezza di un Vec in una variabile len di tipo usize, il tipo standard per dimensioni e indici."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_1",
+      "english": "Integer Overflow",
+      "set": {
+        "task": "Provoca volutamente un integer overflow sommando 1 a un u8 inizializzato a 255 e osserva il panic in debug."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_1",
+      "english": "Numeric Literal",
+      "set": {
+        "task": "Scrivi il letterale numerico un milione usando gli underscore come separatori delle migliaia per migliorare la leggibilita."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_2",
+      "english": "f32",
+      "set": {
+        "task": "Lega 3.14 a una variabile pi annotata f32 per risparmiare memoria quando l'alta precisione non serve."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_2",
+      "english": "f64",
+      "set": {
+        "task": "Assegna alla costante matematica e il valore 2.71828 lasciando inferire il tipo predefinito f64."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_2",
+      "english": "Bool",
+      "set": {
+        "task": "Dichiara una variabile is_ready di tipo bool impostandola sul valore true per indicare lo stato pronto."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_2",
+      "english": "Char",
+      "set": {
+        "task": "Lega il singolo carattere maiuscolo A a una variabile letter di tipo char usando gli apici singoli."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_2",
+      "english": "Unicode Scalar",
+      "set": {
+        "task": "Definisci un char chiamato heart usando l'escape Unicode \\u{2764} per rappresentare il simbolo del cuore."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_2",
+      "english": "Numeric Suffix",
+      "set": {
+        "task": "Forza il tipo del letterale 42 a i64 aggiungendo direttamente il suffisso numerico i64 al valore."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_2",
+      "english": "Type Annotation",
+      "set": {
+        "task": "Annota esplicitamente come u32 una variabile x inizializzata a 5 quando l'inferenza non basta."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_2",
+      "english": "Type Inference",
+      "set": {
+        "task": "Lascia che il compilatore inferisca il tipo i32 per una variabile x legata a 5 senza annotazione esplicita."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_2",
+      "english": "Type Cast",
+      "set": {
+        "task": "Converti 256 in u8 usando l'operatore as e osserva il wrapping che riduce il valore al modulo 256."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_2",
+      "english": "Unit Type",
+      "set": {
+        "task": "Scrivi una funzione nothing che restituisce esplicitamente il tipo unit () e ha corpo vuoto."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_3",
+      "english": "Tuple",
+      "set": {
+        "task": "Crea una tupla t con tipi misti (i32, f64, char) contenente i valori 1, 2.0 e 'a'."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_3",
+      "english": "Tuple Indexing",
+      "set": {
+        "task": "Estrai il primo elemento di una tupla t accedendovi con la notazione a punto t.0."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_3",
+      "english": "Tuple Destructuring",
+      "set": {
+        "task": "Destruttura la tupla (1, 2, 3) in tre variabili separate x, y e z con un singolo let."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_3",
+      "english": "Array",
+      "set": {
+        "task": "Inizializza un array di cinque i32 contenente i valori da 1 a 5 dichiarato con tipo [i32; 5]."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_3",
+      "english": "Array Length",
+      "set": {
+        "task": "Ottieni il numero di elementi di un array chiamando il metodo len e salvalo nella variabile n."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_3",
+      "english": "Array Indexing",
+      "set": {
+        "task": "Leggi il primo elemento di un array indicizzandolo con la notazione a parentesi quadre arr[0]."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_3",
+      "english": "Array Initializer",
+      "set": {
+        "task": "Crea un array di cento zeri sfruttando la sintassi abbreviata [0; 100] dell'array initializer."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_3",
+      "english": "Slice",
+      "set": {
+        "task": "Ricava una slice immutabile &[i32] che copre gli indici da 1 a 3 di un array preesistente."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_3",
+      "english": "Range Expression",
+      "set": {
+        "task": "Itera con un ciclo for sui dieci interi da 0 a 9 generati dalla range expression 0..10."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_3",
+      "english": "Inclusive Range",
+      "set": {
+        "task": "Cicla con for sui valori da 0 a 10 inclusi usando l'inclusive range 0..=10."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_4",
+      "english": "String",
+      "set": {
+        "task": "Costruisci una String owned sull'heap partendo dal letterale hello tramite la funzione String::from."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_4",
+      "english": "String Slice",
+      "set": {
+        "task": "Lega il letterale hello a una variabile s tipata &str cosi da ottenere una string slice presa in prestito."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_4",
+      "english": "String Literal",
+      "set": {
+        "task": "Memorizza la frase Hello, World! in una variabile greeting come letterale stringa con lifetime 'static."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_4",
+      "english": "String Concatenation",
+      "set": {
+        "task": "Concatena due String s1 e s2 con l'operatore + ricordando di prendere in prestito la seconda con &."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_4",
+      "english": "Format Macro",
+      "set": {
+        "task": "Costruisci una String formattata con due segnaposto separati da trattino usando la macro format e i valori a e b."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_4",
+      "english": "String Push",
+      "set": {
+        "task": "Aggiungi in coda alla String s la stringa  world mutandola in place tramite il metodo push_str."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_4",
+      "english": "String Length",
+      "set": {
+        "task": "Salva la lunghezza in byte di una String chiamando il metodo len sulla variabile s."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_4",
+      "english": "String Bytes",
+      "set": {
+        "task": "Itera con un ciclo for sui singoli byte di una stringa ottenuti dal metodo bytes della String."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_4",
+      "english": "String Chars",
+      "set": {
+        "task": "Scorri tutti i caratteri Unicode di una stringa usando il metodo chars in un ciclo for su c."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_5",
+      "english": "If Expression",
+      "set": {
+        "task": "Assegna a x il valore restituito da un'espressione if che torna 1 quando cond e vero e 2 altrimenti."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_5",
+      "english": "Else Branch",
+      "set": {
+        "task": "Costruisci un if che esegue blocchi differenti a seconda che x sia maggiore di 0 o no usando il ramo else."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_5",
+      "english": "Else If",
+      "set": {
+        "task": "Concatena condizioni alternative con else if per gestire i tre rami in funzione di booleani a e b."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_5",
+      "english": "Boolean Condition",
+      "set": {
+        "task": "Scrivi un if con condizione booleana esplicita x > 0 ricordando che Rust non accetta valori truthy."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_5",
+      "english": "Comparison Operator",
+      "set": {
+        "task": "Verifica con l'operatore di uguaglianza == se x e y coincidono dentro la condizione di un if."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_5",
+      "english": "Logical AND",
+      "set": {
+        "task": "Combina due booleani a e b con l'operatore && per entrare nel blocco solo quando entrambi sono veri."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_5",
+      "english": "Logical OR",
+      "set": {
+        "task": "Unisci due condizioni booleane a e b con l'operatore || sfruttando la valutazione a corto circuito."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_5",
+      "english": "Logical NOT",
+      "set": {
+        "task": "Inverti il valore booleano is_ready anteponendo l'operatore ! dentro la condizione di un if."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_5",
+      "english": "Ternary Alternative",
+      "set": {
+        "task": "Assegna a max il maggiore tra a e b usando un'espressione if al posto del ternario assente in Rust."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_5",
+      "english": "Branch",
+      "set": {
+        "task": "Definisci due rami if/else che restituiscono entrambi un i32, scegliendo 1 o 2 in base al booleano c."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_6",
+      "english": "Loop",
+      "set": {
+        "task": "Avvia un ciclo infinito con la parola chiave loop che stampa la stringa forever ad ogni iterazione."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_6",
+      "english": "While Loop",
+      "set": {
+        "task": "Itera con un while finche x resta minore di 10 incrementandola di uno ad ogni passaggio."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_6",
+      "english": "For Loop",
+      "set": {
+        "task": "Stampa i numeri da 0 a 9 con un for che itera sulla range 0..10 e usa println per ogni i."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_6",
+      "english": "Break",
+      "set": {
+        "task": "Esci anticipatamente dal loop corrente con l'istruzione break quando il flag done risulta vero."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_6",
+      "english": "Break With Value",
+      "set": {
+        "task": "Ottieni 42 come valore di un loop usando break 42 per restituirlo direttamente al binding r."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_6",
+      "english": "Continue",
+      "set": {
+        "task": "Salta l'iterazione corrente con continue quando il flag skip risulta vero dentro un ciclo."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_6",
+      "english": "Loop Label",
+      "set": {
+        "task": "Etichetta un loop esterno con 'outer e usa break 'outer per uscirne da un loop annidato interno."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_6",
+      "english": "Iterator",
+      "set": {
+        "task": "Scorri con un for ogni elemento x di un Vec ottenendo l'iteratore tramite il metodo iter."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_6",
+      "english": "Range",
+      "set": {
+        "task": "Itera con for sull'intervallo numerico 0..n generando esattamente n valori interi consecutivi da 0."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_6",
+      "english": "Reverse Iteration",
+      "set": {
+        "task": "Percorri al contrario gli interi da 0 a 9 applicando il metodo rev all'iteratore della range."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_7",
+      "english": "Match",
+      "set": {
+        "task": "Discrimina con match il valore x restituendo one quando vale 1 e other per qualunque altro caso."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_7",
+      "english": "Match Arm",
+      "set": {
+        "task": "Scrivi un braccio match con sintassi pattern => expression seguito dalla virgola separatrice."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_7",
+      "english": "Wildcard Pattern",
+      "set": {
+        "task": "Aggiungi un ramo di match con il pattern jolly underscore che cattura anything e rende esaustivo il match."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_7",
+      "english": "Pattern Matching",
+      "set": {
+        "task": "Esegui pattern matching su una coppia (i32, i32) restituendo una stringa quando il primo elemento e zero."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_7",
+      "english": "Match Guard",
+      "set": {
+        "task": "Aggiungi una match guard if n > 0 a un ramo che lega n cosi da restituire positive solo nei casi positivi."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_7",
+      "english": "Or Pattern",
+      "set": {
+        "task": "Raggruppa con un or pattern i valori 1, 2 e 3 in un unico ramo match che restituisce small."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_7",
+      "english": "Range Pattern",
+      "set": {
+        "task": "Cattura tutti gli interi tra 1 e 9 inclusi con il range pattern 1..=9 in un ramo single digit."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_7",
+      "english": "Binding",
+      "set": {
+        "task": "Lega con l'operatore @ il valore matchato a una variabile n quando ricade nel range 1..=5."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_7",
+      "english": "If Let",
+      "set": {
+        "task": "Estrai il valore interno di un Option con if let Some(x) ignorando completamente il caso None."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_8",
+      "english": "Function Parameter",
+      "set": {
+        "task": "Definisci una funzione add che accetta due parametri a e b di tipo i32 e ne restituisce la somma."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_8",
+      "english": "Return Type",
+      "set": {
+        "task": "Dichiara la funzione double che dopo la freccia indica i32 come tipo di ritorno e raddoppia x."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_8",
+      "english": "Implicit Return",
+      "set": {
+        "task": "Sfrutta il ritorno implicito facendo terminare add con l'espressione a + b senza punto e virgola."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_8",
+      "english": "Explicit Return",
+      "set": {
+        "task": "Esci subito da una funzione con return 0 dentro un if che controlla la condizione cond."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_8",
+      "english": "Function Body",
+      "set": {
+        "task": "Definisci la struttura minima di una funzione name con corpo racchiuso tra parentesi graffe vuote."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_8",
+      "english": "Function Signature",
+      "set": {
+        "task": "Scrivi la firma fn add(a: i32, b: i32) -> i32 dichiarando nome, parametri e tipo di ritorno."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_8",
+      "english": "Diverging Function",
+      "set": {
+        "task": "Definisci una funzione divergente fail che restituisce il never type ! invocando la macro panic."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_8",
+      "english": "Function Pointer",
+      "set": {
+        "task": "Lega il nome della funzione double a una variabile f tipata come function pointer fn(i32) -> i32."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_8",
+      "english": "Recursive Function",
+      "set": {
+        "task": "Implementa una funzione fact ricorsiva su u64 che restituisce 1 per n<=1 e n*fact(n-1) altrimenti."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_8",
+      "english": "Constant",
+      "set": {
+        "task": "Dichiara una costante MAX di tipo u32 con valore 100 utilizzando la parola chiave const."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_1",
+      "english": "Owner",
+      "set": {
+        "task": "Crea una String owned legandola alla variabile s che diventa l'unico proprietario del dato sull'heap."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_1",
+      "english": "Move Semantics",
+      "set": {
+        "task": "Trasferisci l'ownership di s1 a s2 tramite assegnamento, rendendo s1 inutilizzabile per move semantics."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_1",
+      "english": "Scope",
+      "set": {
+        "task": "Limita la vita di x dentro un blocco { let x = 5; } cosi viene droppato all'uscita dello scope."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_1",
+      "english": "Drop",
+      "set": {
+        "task": "Forza il rilascio anticipato della variabile s invocando la funzione drop(s) prima della fine dello scope."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_2",
+      "english": "Move",
+      "set": {
+        "task": "Sposta il contenuto di s1 in s2 con un semplice assegnamento attivando le move semantics di Rust."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_2",
+      "english": "Copy",
+      "set": {
+        "task": "Duplica il valore intero x in y con un assegnamento, sfruttando il trait Copy implementato dai primitivi."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_2",
+      "english": "Copy Trait",
+      "set": {
+        "task": "Deriva i trait Copy e Clone su un tipo aggiungendo l'attributo #[derive(Copy, Clone)] sopra la definizione."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_2",
+      "english": "Clone",
+      "set": {
+        "task": "Crea una copia profonda di s1 chiamando il metodo clone e legandola a una nuova variabile s2."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_2",
+      "english": "Clone Trait",
+      "set": {
+        "task": "Abilita la duplicazione esplicita di una struct annotandola con l'attributo #[derive(Clone)] sulla definizione."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_2",
+      "english": "Deep Copy",
+      "set": {
+        "task": "Ottieni una copia profonda di un Vec v1 chiamando v1.clone e legando il risultato a v2."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_2",
+      "english": "Function Argument",
+      "set": {
+        "task": "Definisci la funzione take che riceve una String per valore, prendendone l'ownership al momento della chiamata."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_2",
+      "english": "Return Ownership",
+      "set": {
+        "task": "Scrivi la funzione give che restituisce una nuova String hi trasferendone l'ownership al chiamante."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_3",
+      "english": "Drop Trait",
+      "set": {
+        "task": "Implementa il Drop trait sulla struct Foo definendo il metodo drop con riferimento mutabile a self."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_3",
+      "english": "Forget",
+      "set": {
+        "task": "Sopprimi l'esecuzione del destructor di value invocando std::mem::forget per cedere la pulizia al chiamante FFI."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_3",
+      "english": "Replace",
+      "set": {
+        "task": "Sostituisci il contenuto di x con new memorizzando il valore precedente in old tramite std::mem::replace."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_3",
+      "english": "Swap",
+      "set": {
+        "task": "Scambia i contenuti delle variabili a e b chiamando std::mem::swap con due riferimenti mutabili."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_3",
+      "english": "Take",
+      "set": {
+        "task": "Estrai il valore corrente di opt sostituendolo con il suo Default usando std::mem::take e legalo a v."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_4",
+      "english": "String Conversion",
+      "set": {
+        "task": "Trasforma il letterale hello da &str in una String owned applicando il metodo to_string."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_4",
+      "english": "Box",
+      "set": {
+        "task": "Sposta il valore intero 5 sull'heap incapsulandolo in un Box tramite la funzione Box::new."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_4",
+      "english": "Heap Allocation",
+      "set": {
+        "task": "Alloca un valore generico sull'heap chiamando Box::new(value) cosi da ottenere un handle pointer-sized sullo stack."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_5",
+      "english": "Reference",
+      "set": {
+        "task": "Prendi in prestito s in sola lettura creando un reference &String e legandolo alla variabile r."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_5",
+      "english": "Borrow",
+      "set": {
+        "task": "Dichiara una funzione read che fa borrow di una String tramite il parametro &String senza prenderne ownership."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_5",
+      "english": "Immutable Reference",
+      "set": {
+        "task": "Crea un riferimento immutabile a s legandolo a r cosi da poter leggere il valore senza poterlo modificare."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_5",
+      "english": "Reference Operator",
+      "set": {
+        "task": "Ottieni un reference condiviso a value applicando l'operatore & davanti al nome della variabile."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_5",
+      "english": "Dereference",
+      "set": {
+        "task": "Accedi al valore puntato da reference applicando l'operatore di dereferenziazione * e salvalo in val."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_5",
+      "english": "Auto Deref",
+      "set": {
+        "task": "Invoca s.len su una String dietro Box affidandoti all'auto-deref che inserisce automaticamente l'asterisco."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_5",
+      "english": "Multiple Borrows",
+      "set": {
+        "task": "Crea contemporaneamente due reference immutabili r1 e r2 a s sfruttando la regola dei borrow multipli condivisi."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_5",
+      "english": "Pass By Reference",
+      "set": {
+        "task": "Definisci una funzione print che riceve la stringa per riferimento come &str e la stampa con println."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_6",
+      "english": "Mutable Reference",
+      "set": {
+        "task": "Costruisci un riferimento mutabile a s con &mut s legandolo a r per poter modificare la String."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_6",
+      "english": "Mut Keyword",
+      "set": {
+        "task": "Prefigura un borrow mutabile applicando &mut davanti a value cosi da poter modificare il dato attraverso il riferimento."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_6",
+      "english": "Reborrow",
+      "set": {
+        "task": "Genera un nuovo borrow mutabile r2 partendo da r1 con la sintassi &mut *r1 per eseguire un reborrow."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_6",
+      "english": "Mutate Through Reference",
+      "set": {
+        "task": "Modifica il valore puntato da r assegnandogli 10 tramite la dereferenziazione *r = 10."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_6",
+      "english": "Method Receiver",
+      "set": {
+        "task": "Definisci il metodo push che riceve self per riferimento mutabile e accetta un nuovo elemento x di tipo T."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_6",
+      "english": "Self Reference",
+      "set": {
+        "task": "Definisci il metodo len che prende &self come riferimento immutabile e restituisce un usize."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_7",
+      "english": "Borrow Conflict",
+      "set": {
+        "task": "Provoca volutamente un borrow conflict creando due reference mutabili contemporanei a s per osservare l'errore del compilatore."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_7",
+      "english": "Static Lifetime",
+      "set": {
+        "task": "Lega il letterale hello a una variabile s annotandone esplicitamente la static lifetime con il tipo &'static str."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_8",
+      "english": "Borrowed String Slice",
+      "set": {
+        "task": "Estrai i primi cinque byte di s come slice presa in prestito di tipo &str con &s[0..5]."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_8",
+      "english": "Array Slice",
+      "set": {
+        "task": "Ricava una slice da un array arr che copre gli indici 1, 2 e 3 con la sintassi &arr[1..4]."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_8",
+      "english": "Mutable Slice",
+      "set": {
+        "task": "Costruisci una slice mutabile &mut [i32] su tutto l'array arr per poter modificare gli elementi sottostanti."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_8",
+      "english": "Slice Length",
+      "set": {
+        "task": "Ottieni il numero di elementi di una slice s chiamando il metodo len senza argomenti."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_8",
+      "english": "Empty Slice",
+      "set": {
+        "task": "Definisci una slice vuota di interi con tipo &[i32] inizializzata letteralmente a &[]."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_8",
+      "english": "Slice From Vec",
+      "set": {
+        "task": "Costruisci una slice &[i32] che copre tutti gli elementi di un Vec v con la sintassi &v[..]."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_8",
+      "english": "Slice Indexing",
+      "set": {
+        "task": "Estrai dalla slice s gli elementi dagli indici 2 a 4 con il subslice &s[2..5] legandolo a part."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_8",
+      "english": "Owned String Conversion",
+      "set": {
+        "task": "Riconverti la String s in una slice &str ottenendone un riferimento condiviso con &s."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_1",
+      "english": "Struct",
+      "set": {
+        "task": "Dichiara una struct User che aggrega due campi: name di tipo String e age di tipo u32."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_1",
+      "english": "Field",
+      "set": {
+        "task": "Definisci all'interno di una struct un campo name di tipo String terminato dalla virgola separatrice."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_1",
+      "english": "Field Access",
+      "set": {
+        "task": "Estrai il campo name dalla variabile user tramite la notazione punto user.name salvandolo in n."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_1",
+      "english": "Struct Instantiation",
+      "set": {
+        "task": "Istanzia una User assegnando il campo name a String::from(\"A\") e age a 30 con sintassi a graffe."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_1",
+      "english": "Field Init Shorthand",
+      "set": {
+        "task": "Sfrutta la field init shorthand creando una User con le variabili name e age omettendo le ripetizioni esplicite."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_1",
+      "english": "Struct Update",
+      "set": {
+        "task": "Costruisci una nuova User cambiando solo il campo name in new_name e copiando il resto da base con ..base."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_1",
+      "english": "Tuple Struct",
+      "set": {
+        "task": "Definisci una tuple struct Point con due campi posizionali i32 accessibili come .0 e .1."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_1",
+      "english": "Unit Struct",
+      "set": {
+        "task": "Dichiara una unit struct Marker senza campi terminandola con il punto e virgola per usarla come tag."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_1",
+      "english": "Pub Field",
+      "set": {
+        "task": "Esponi pubblicamente il campo name di una struct User marcandolo con pub all'interno di una pub struct."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_2",
+      "english": "Impl Block",
+      "set": {
+        "task": "Apri un blocco impl per User definendo al suo interno il metodo name che restituisce uno slice &str."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_2",
+      "english": "Method",
+      "set": {
+        "task": "Definisci il metodo area che prende &self e restituisce un f64 calcolato a partire dai campi della struct."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_2",
+      "english": "Self Parameter",
+      "set": {
+        "task": "Dichiara il metodo name con il parametro self in modalita borrow immutabile come &self che restituisce &str."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_2",
+      "english": "Associated Function",
+      "set": {
+        "task": "Crea la funzione associata new senza self che restituisce un'istanza Self del tipo costruita ex novo."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_2",
+      "english": "Constructor",
+      "set": {
+        "task": "Implementa il costruttore convenzionale new su User dentro un impl block che restituisce Self."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_2",
+      "english": "Self Type",
+      "set": {
+        "task": "Definisci il costruttore new il cui tipo di ritorno e Self, riferendosi al tipo dell'impl block."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_2",
+      "english": "Method Chain",
+      "set": {
+        "task": "Concatena le chiamate add(1) e add(2) seguite da build su builder per costruire un valore in fluent style."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_2",
+      "english": "Struct Builder Pattern",
+      "set": {
+        "task": "Costruisci una Config con il builder pattern concatenando host, port e build per impostare solo i campi necessari."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_2",
+      "english": "Owned Method",
+      "set": {
+        "task": "Definisci un metodo into_inner che consuma l'istanza prendendo self per valore e restituisce il campo .0."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_2",
+      "english": "Mutable Method",
+      "set": {
+        "task": "Definisci il metodo push che riceve &mut self e aggiunge l'argomento x di tipo T modificando l'istanza."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_3",
+      "english": "Derive Attribute",
+      "set": {
+        "task": "Annota una struct con #[derive(Debug, Clone)] cosi il compilatore implementa entrambi i trait automaticamente."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_3",
+      "english": "Debug Trait",
+      "set": {
+        "task": "Deriva il trait Debug sulla struct con #[derive(Debug)] per stamparla usando il format specifier {:?}."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_3",
+      "english": "Display Trait",
+      "set": {
+        "task": "Implementa manualmente Display per il tipo X scrivendo il metodo fmt che produce l'output user-facing."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_3",
+      "english": "PartialEq",
+      "set": {
+        "task": "Aggiungi #[derive(PartialEq)] sulla struct cosi le istanze diventano confrontabili con l'operatore ==."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_3",
+      "english": "Eq Trait",
+      "set": {
+        "task": "Deriva sia Eq che PartialEq sulla struct con #[derive(Eq, PartialEq)] per uguaglianza totale e riflessiva."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_3",
+      "english": "Hash Trait",
+      "set": {
+        "task": "Annota la struct con #[derive(Hash)] cosi le istanze possono essere usate come chiavi in una HashMap."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_3",
+      "english": "Default Trait",
+      "set": {
+        "task": "Ottieni un'istanza User con valori predefiniti chiamando la funzione associata User::default fornita dal trait."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_3",
+      "english": "Clone Derive",
+      "set": {
+        "task": "Aggiungi #[derive(Clone)] alla struct per generare automaticamente il metodo clone che copia ogni campo."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_3",
+      "english": "Ord Trait",
+      "set": {
+        "task": "Deriva i trait Ord, PartialOrd, Eq e PartialEq in un unico attributo per rendere il tipo ordinabile."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_3",
+      "english": "Custom Derive",
+      "set": {
+        "task": "Applica i derive custom Serialize e Deserialize di serde sulla struct con #[derive(Serialize, Deserialize)]."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_4",
+      "english": "Public Struct",
+      "set": {
+        "task": "Esponi pubblicamente la struct Point fuori dal modulo anteponendo la parola chiave pub alla definizione."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_4",
+      "english": "Crate Visibility",
+      "set": {
+        "task": "Limita la struct Internal al crate corrente usando il modificatore di visibilita pub(crate) prima di struct."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_4",
+      "english": "Module Visibility",
+      "set": {
+        "task": "Rendi la funzione helper visibile solo al modulo padre usando il modificatore di visibilita pub(super)."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_4",
+      "english": "Newtype Pattern",
+      "set": {
+        "task": "Definisci un newtype UserId che incapsula un u64 in una tuple struct per distinguere semanticamente l'id."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_4",
+      "english": "Phantom Data",
+      "set": {
+        "task": "Definisci una struct generica Wrap<T> che contiene un campo PhantomData<T> per tracciare T senza memorizzarlo."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_4",
+      "english": "Repr C",
+      "set": {
+        "task": "Annota la struct Point con #[repr(C)] cosi il suo layout di memoria diventa compatibile con il codice C."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_4",
+      "english": "Size Of",
+      "set": {
+        "task": "Calcola la dimensione in byte del tipo User invocando std::mem::size_of con la turbofish ::<User>."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_1",
+      "english": "Enum",
+      "set": {
+        "task": "Dichiara un enum Direction con le quattro varianti North, South, East e West come tipo somma."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_1",
+      "english": "Variant",
+      "set": {
+        "task": "Riferisciti alla variante North dell'enum Direction usando la sintassi qualificata Direction::North."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_1",
+      "english": "Variant With Data",
+      "set": {
+        "task": "Definisci un enum Shape con due varianti che trasportano un f64 di payload: Circle e Square."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_1",
+      "english": "Struct-Like Variant",
+      "set": {
+        "task": "Dichiara nell'enum Msg una variante struct-like Move con i campi nominati x e y di tipo i32."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_1",
+      "english": "Enum Method",
+      "set": {
+        "task": "Aggiungi a Direction un blocco impl con il metodo rotate che prende &self per applicare una rotazione."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_1",
+      "english": "Discriminant",
+      "set": {
+        "task": "Definisci un enum E con due varianti A e B assegnando esplicitamente i discriminanti interi 1 e 2."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_1",
+      "english": "C-Like Enum",
+      "set": {
+        "task": "Dichiara un C-like enum Status con varianti Active = 0 e Pending = 1 mappate a interi espliciti."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_1",
+      "english": "Repr U8",
+      "set": {
+        "task": "Forza il discriminante di un enum Code a un singolo byte annotandolo con #[repr(u8)] per il protocollo binario."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_1",
+      "english": "Empty Enum",
+      "set": {
+        "task": "Definisci un enum Never senza alcuna variante per modellare un tipo che non puo mai avere istanze."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_2",
+      "english": "Option Type",
+      "set": {
+        "task": "Lega Some(5) a una variabile x annotata Option<i32> per rappresentare un valore opzionale presente."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_2",
+      "english": "Some",
+      "set": {
+        "task": "Costruisci la variante Some di Option avvolgendo il numero 42 e legalo alla variabile x."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_2",
+      "english": "None",
+      "set": {
+        "task": "Inizializza una variabile x di tipo Option<i32> con la variante None per segnalare assenza di valore."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_2",
+      "english": "Unwrap",
+      "set": {
+        "task": "Estrai il valore interno di opt chiamando unwrap, accettando il panic in caso di None a runtime."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_2",
+      "english": "Unwrap Or",
+      "set": {
+        "task": "Estrai il valore di opt fornendo 0 come fallback sicuro tramite unwrap_or quando l'Option e None."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_2",
+      "english": "Map",
+      "set": {
+        "task": "Trasforma il valore interno di opt raddoppiandolo con una closure |x| x * 2 passata al metodo map."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_2",
+      "english": "And Then",
+      "set": {
+        "task": "Concatena su opt una closure che restituisce Some(x) per x positivi e None altrimenti, sfruttando and_then."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_2",
+      "english": "Is Some",
+      "set": {
+        "task": "Verifica con is_some se opt contiene un valore prima di entrare nel ramo if che lo usa."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_2",
+      "english": "Is None",
+      "set": {
+        "task": "Controlla con il metodo is_none se l'Option opt non contiene alcun valore senza consumarla."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_2",
+      "english": "Option::take",
+      "set": {
+        "task": "Sostituisci opt con None e ricevi il valore originale chiamando il metodo take su un riferimento mutabile."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_3",
+      "english": "Variant Pattern",
+      "set": {
+        "task": "Discrimina con match la variante di s estraendo x dalla forma Some e restituendo 0 per None."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_3",
+      "english": "Struct Pattern",
+      "set": {
+        "task": "Destruttura la variabile p della struct Point in un ramo match estraendo i campi x e y per nome."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_3",
+      "english": "Tuple Pattern",
+      "set": {
+        "task": "Discrimina con match la coppia (x, y) catturando i casi (0, _) e (_, 0) come pattern di tupla."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_3",
+      "english": "Reference Pattern",
+      "set": {
+        "task": "Lega un reference dentro un pattern match con la parola chiave ref applicata a x preso per riferimento."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_3",
+      "english": "If Let Else Chain",
+      "set": {
+        "task": "Estrai il valore di opt con if let Some(x) e utilizza la closure use(x) solo quando la variante e Some."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_3",
+      "english": "While Let",
+      "set": {
+        "task": "Svuota uno stack iterando con while let Some(x) = stack.pop finche pop restituisce una variante popolata."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_3",
+      "english": "Let Else",
+      "set": {
+        "task": "Usa let-else per estrarre Some(x) da opt e fai return dalla funzione nel caso il pattern fallisca."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_3",
+      "english": "Nested Pattern",
+      "set": {
+        "task": "Discrimina con un pattern annidato il caso Some(Some(x)) di una variabile v di tipo Option<Option<T>>."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_3",
+      "english": "Rest Pattern",
+      "set": {
+        "task": "Cattura primo e ultimo elemento di una slice con il rest pattern [first, .., last] ignorando il resto."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_4",
+      "english": "State Machine",
+      "set": {
+        "task": "Modella una connessione come state machine definendo un enum Conn con varianti Idle, Connected e Closed."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_4",
+      "english": "Error Variant",
+      "set": {
+        "task": "Definisci un enum AppError con le varianti NotFound, Forbidden e Internal per discriminare le cause di errore."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_4",
+      "english": "Recursive Enum",
+      "set": {
+        "task": "Dichiara un enum List ricorsivo con varianti Cons(i32, Box<List>) e Nil per modellare una lista concatenata."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_4",
+      "english": "Variant Constructor",
+      "set": {
+        "task": "Costruisci un iteratore di Option avvolgendo i numeri 1 e 2 con map(Some) come variant constructor."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_4",
+      "english": "Marker Variant",
+      "set": {
+        "task": "Definisci un enum Tag con due marker variant Active e Inactive senza dati associati per segnalare lo stato."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_1",
+      "english": "Result Type",
+      "set": {
+        "task": "Dichiara la funzione divide che accetta due i32 e restituisce Result<i32, String> per modellare il fallimento."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_1",
+      "english": "Ok Variant",
+      "set": {
+        "task": "Costruisci la variante Ok di Result avvolgendo il valore di successo 42 come payload del caso positivo."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_1",
+      "english": "Err Variant",
+      "set": {
+        "task": "Costruisci la variante Err di Result avvolgendo la String not found come messaggio di fallimento."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_1",
+      "english": "Result Unwrap",
+      "set": {
+        "task": "Estrai il valore di successo da result chiamando unwrap, accettando il panic in caso di Err."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_1",
+      "english": "Expect",
+      "set": {
+        "task": "Estrai il valore di result con expect fornendo il messaggio expected value che apparira in caso di panic."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_1",
+      "english": "Question Mark",
+      "set": {
+        "task": "Propaga automaticamente l'errore di some_op al chiamante applicando l'operatore ? subito dopo la chiamata."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_1",
+      "english": "Error Propagation",
+      "set": {
+        "task": "Apri il file x e propaga eventuali io::Error con l'operatore ? legando il risultato alla variabile f."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_1",
+      "english": "Match Result",
+      "set": {
+        "task": "Discrimina r con match gestendo entrambi i rami Ok(v) ed Err(e) in maniera esaustiva ed esplicita."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_1",
+      "english": "Is Ok",
+      "set": {
+        "task": "Verifica con il metodo is_ok se r contiene il caso di successo prima di proseguire nel ramo if."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_1",
+      "english": "Is Err",
+      "set": {
+        "task": "Controlla con is_err se il Result r e nella variante di errore senza consumarlo per decidere il flusso."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_2",
+      "english": "Panic",
+      "set": {
+        "task": "Forza l'arresto del thread invocando la macro panic con il messaggio unrecoverable error per bug irrecuperabili."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_2",
+      "english": "Panic Macro",
+      "set": {
+        "task": "Genera un panic formattato passando alla macro panic la stringa invalid value: {} e la variabile x."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_2",
+      "english": "Panic Abort",
+      "set": {
+        "task": "Configura nel profilo [profile.release] il campo panic uguale a \"abort\" per disabilitare lo srotolamento dello stack."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_2",
+      "english": "Catch Unwind",
+      "set": {
+        "task": "Cattura un eventuale panic eseguendo una closure rischiosa dentro la chiamata std::panic::catch_unwind."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_2",
+      "english": "Assert Macro",
+      "set": {
+        "task": "Valida l'invariante x > 0 con la macro assert facendo fallire subito il programma se la condizione non vale."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_2",
+      "english": "Assert Eq",
+      "set": {
+        "task": "Confronta i valori a e b con la macro assert_eq facendo fallire il test se non risultano uguali."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_2",
+      "english": "Debug Assert",
+      "set": {
+        "task": "Inserisci un debug_assert sull'espressione invariant cosi la verifica avviene solo nelle build di debug."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_2",
+      "english": "Unreachable",
+      "set": {
+        "task": "Marca un ramo logicamente irraggiungibile chiamando la macro unreachable senza argomenti dopo un match esaustivo."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_2",
+      "english": "Todo Macro",
+      "set": {
+        "task": "Lascia un segnaposto in una funzione non implementata invocando la macro todo che fa panic a runtime."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_3",
+      "english": "Error Trait",
+      "set": {
+        "task": "Implementa il trait std::error::Error per il tipo MyErr fornendo un'impl vuota integrabile nei Result."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_3",
+      "english": "From Trait",
+      "set": {
+        "task": "Implementa From<io::Error> per MyError cosi l'operatore ? puo convertire automaticamente gli errori di I/O."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_3",
+      "english": "Box Dyn Error",
+      "set": {
+        "task": "Dichiara la funzione run che restituisce Result<(), Box<dyn Error>> per propagare qualunque tipo di errore."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_3",
+      "english": "Error Enum",
+      "set": {
+        "task": "Definisci un enum AppError con varianti NotFound e Invalid per centralizzare gli errori della libreria."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_3",
+      "english": "Thiserror",
+      "set": {
+        "task": "Annota il tipo di errore con #[derive(thiserror::Error, Debug)] per generare Display, Error e From automaticamente."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_3",
+      "english": "Anyhow",
+      "set": {
+        "task": "Importa l'alias Result di anyhow con use anyhow::Result per gestire errori boxed con contesto ricco."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_3",
+      "english": "Error Source",
+      "set": {
+        "task": "Implementa il metodo source che restituisce Option<&(dyn Error + 'static)> per esporre l'errore radice."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_3",
+      "english": "Error Context",
+      "set": {
+        "task": "Aggiungi contesto a un'operazione fallibile chiamando context(\"failed loading config\") prima dell'operatore ?."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_3",
+      "english": "Result Type Alias",
+      "set": {
+        "task": "Definisci type Result<T> come alias di std::result::Result<T, MyError> per ridurre la verbosita."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_4",
+      "english": "Result Map",
+      "set": {
+        "task": "Trasforma il payload Ok di r raddoppiandolo con la closure |v| v * 2 passata al metodo map."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_4",
+      "english": "Map Err",
+      "set": {
+        "task": "Converti l'errore di r in una String formattata con map_err sfruttando la closure |e| format!(\"{}\", e)."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_4",
+      "english": "Result And Then",
+      "set": {
+        "task": "Concatena su r una closure di validazione che restituisce un Result usando il combinator and_then."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_4",
+      "english": "Or Else",
+      "set": {
+        "task": "Recupera dal fallimento di r invocando or_else con una closure che ignora l'errore e chiama fallback."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_4",
+      "english": "Result Unwrap Or",
+      "set": {
+        "task": "Estrai il valore di r oppure ricadi sul fallback 0 chiamando unwrap_or senza generare panic."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_4",
+      "english": "Unwrap Or Else",
+      "set": {
+        "task": "Calcola il fallback in modo lazy con unwrap_or_else passando una closure |e| compute(e) che usa l'errore."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_4",
+      "english": "Ok Method",
+      "set": {
+        "task": "Converti r in Option<T> scartando completamente l'errore chiamando il metodo ok sul Result."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_4",
+      "english": "Collect Result",
+      "set": {
+        "task": "Raccogli un iteratore di Result in Vec con collect::<Result<Vec<_>, _>>()? fermandoti al primo errore."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_4",
+      "english": "Try From",
+      "set": {
+        "task": "Converti 255 da i32 a u8 con la conversione fallibile u8::try_from propagando l'errore con ?."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_4",
+      "english": "Default Error",
+      "set": {
+        "task": "Trasforma una Option opt in Result fornendo l'errore di default missing tramite ok_or e poi propagalo con ?."
+      }
+    }
+  ]
+}

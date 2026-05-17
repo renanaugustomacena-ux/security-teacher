@@ -33,6 +33,7 @@ export default {
               difficulty: 'beginner',
               code: 'CREATE DATABASE my_app;',
               note: 'In italiano si usa quasi sempre "database" anche se "base di dati" è la traduzione formale.',
+              task: `Crea un nuovo database chiamato my_app per ospitare i dati dell'applicazione.`,
             },
             {
               english: 'Table',
@@ -45,6 +46,7 @@ export default {
               difficulty: 'beginner',
               code: 'CREATE TABLE users (id INT, name VARCHAR(50));',
               tool: 'PostgreSQL, MySQL',
+              task: 'Definisci una tabella users con due colonne, un identificatore intero e un nome di al massimo 50 caratteri.',
             },
             {
               english: 'Row',
@@ -57,6 +59,7 @@ export default {
               difficulty: 'beginner',
               code: "INSERT INTO users VALUES (1, 'Marco');",
               note: 'In teoria relazionale si chiama "tupla". Nel linguaggio quotidiano: "riga" o "record".',
+              task: 'Inserisci una nuova riga nella tabella users con id 1 e nome Marco.',
             },
             {
               english: 'Column',
@@ -69,6 +72,7 @@ export default {
               difficulty: 'beginner',
               code: 'ALTER TABLE users ADD COLUMN age INT;',
               note: 'La l finale di "column" non si pronuncia: KO-lom, non KO-lumn.',
+              task: 'Aggiungi alla tabella users una nuova colonna age di tipo intero tramite ALTER TABLE.',
             },
             {
               english: 'Schema',
@@ -81,6 +85,7 @@ export default {
               difficulty: 'beginner',
               code: 'CREATE SCHEMA analytics;',
               note: 'In inglese si pronuncia con la K dura (SKII-ma), non come in italiano.',
+              task: 'Crea uno schema dedicato chiamato analytics per isolare gli oggetti di reportistica.',
             },
             {
               english: 'Record',
@@ -92,6 +97,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: '-- A record is a row',
+              task: 'Aggiungi un commento SQL che ricordi al team che un record corrisponde a una riga della tabella.',
             },
             {
               english: 'Field',
@@ -104,6 +110,7 @@ export default {
               difficulty: 'beginner',
               code: 'email VARCHAR(255) UNIQUE',
               note: '"Field" è sinonimo informale di "column".',
+              task: 'Dichiara il campo email come stringa di 255 caratteri con vincolo di unicità.',
             },
             {
               english: 'Data Type',
@@ -116,6 +123,7 @@ export default {
               difficulty: 'beginner',
               code: 'age INT, name VARCHAR(50)',
               tool: 'SQL',
+              task: 'Specifica i tipi di dato delle colonne age come intero e name come stringa fino a 50 caratteri.',
             },
             {
               english: 'Query',
@@ -128,6 +136,7 @@ export default {
               difficulty: 'beginner',
               code: 'SELECT * FROM users;',
               note: 'In italiano si dice "query" (con pronuncia inglese), raramente "interrogazione".',
+              task: 'Scrivi una query semplice che recuperi tutte le colonne e tutte le righe della tabella users.',
             },
             {
               english: 'Result Set',
@@ -139,6 +148,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'SELECT name FROM users; -- returns rows',
+              task: 'Esegui una query sulla tabella users che restituisca solo la colonna name come result set.',
             },
           ],
         },
@@ -192,6 +202,7 @@ export default {
               difficulty: 'beginner',
               code: 'SELECT * FROM users;',
               note: 'Si pronuncia "ES-KIU-EL" o "SI-kuel" (più informale). In Italia di solito ES-KIU-EL.',
+              task: 'Lancia un comando SQL standard che estragga tutti i record dalla tabella users.',
             },
             {
               english: 'NoSQL',
@@ -217,6 +228,7 @@ export default {
               command: 'psql -U postgres',
               tool: 'PostgreSQL',
               note: 'Spesso abbreviato "Postgres". Si pronuncia POST-gres-KIU-EL.',
+              task: 'Apri una sessione interattiva di psql collegandoti come utente postgres.',
             },
             {
               english: 'MySQL',
@@ -229,6 +241,7 @@ export default {
               difficulty: 'beginner',
               command: 'mysql -u root -p',
               tool: 'MySQL',
+              task: 'Avvia il client MySQL come utente root richiedendo la password al prompt.',
             },
             {
               english: 'SQLite',
@@ -242,6 +255,7 @@ export default {
               command: 'sqlite3 mydb.db',
               tool: 'SQLite',
               note: 'Embedded, senza server. Ottimo per app mobile e prototipi.',
+              task: 'Apri il file mydb.db con il client a riga di comando di SQLite per ispezionare il contenuto.',
             },
             {
               english: 'Connection',
@@ -253,6 +267,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'psql -h localhost -d mydb',
+              task: 'Stabilisci una connessione al database mydb in ascolto su localhost tramite psql.',
             },
             {
               english: 'Server',
@@ -265,6 +280,7 @@ export default {
               difficulty: 'beginner',
               command: 'pg_ctl start',
               tool: 'PostgreSQL',
+              task: 'Avvia il server PostgreSQL locale invocando pg_ctl con il sottocomando start.',
             },
           ],
         },
@@ -284,6 +300,7 @@ export default {
               difficulty: 'beginner',
               code: 'id INT PRIMARY KEY',
               note: 'Identifica univocamente ogni riga. Spesso si abbrevia PK.',
+              task: 'Dichiara la colonna id come chiave primaria di tipo intero per identificare univocamente le righe.',
             },
             {
               english: 'Foreign Key',
@@ -296,6 +313,7 @@ export default {
               difficulty: 'beginner',
               code: 'user_id INT REFERENCES users(id)',
               note: 'Si abbrevia FK. In italiano spesso "chiave foreign" o "FK".',
+              task: 'Definisci la colonna user_id come chiave esterna che referenzia la colonna id della tabella users.',
             },
             {
               english: 'Unique Constraint',
@@ -307,6 +325,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'email VARCHAR(255) UNIQUE',
+              task: 'Imponi un vincolo di unicità sulla colonna email per evitare duplicati negli account utente.',
             },
             {
               english: 'NOT NULL',
@@ -318,6 +337,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'name VARCHAR(50) NOT NULL',
+              task: 'Definisci la colonna name come VARCHAR(50) con vincolo NOT NULL per rendere il valore obbligatorio.',
             },
             {
               english: 'Default Value',
@@ -329,6 +349,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'created_at TIMESTAMP DEFAULT NOW()',
+              task: 'Imposta NOW() come valore predefinito della colonna created_at affinché venga popolata automaticamente.',
             },
             {
               english: 'Auto Increment',
@@ -342,6 +363,7 @@ export default {
               code: 'id INT AUTO_INCREMENT PRIMARY KEY',
               tool: 'MySQL',
               note: 'In PostgreSQL si usa SERIAL o IDENTITY.',
+              task: 'Definisci la colonna id come intero con auto increment e chiave primaria per generare ID progressivi.',
             },
             {
               english: 'SERIAL',
@@ -354,6 +376,7 @@ export default {
               difficulty: 'beginner',
               code: 'id SERIAL PRIMARY KEY',
               tool: 'PostgreSQL',
+              task: 'Dichiara la colonna id come SERIAL e chiave primaria sfruttando la sequenza automatica di Postgres.',
             },
             {
               english: 'CHECK Constraint',
@@ -365,6 +388,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'age INT CHECK (age >= 0)',
+              task: `Aggiungi un vincolo CHECK sulla colonna age che impedisca l'inserimento di valori negativi.`,
             },
             {
               english: 'NULL',
@@ -377,6 +401,7 @@ export default {
               difficulty: 'beginner',
               code: 'WHERE phone IS NULL',
               note: 'NULL non è uguale a 0 o stringa vuota. Si confronta con IS NULL, non = NULL.',
+              task: 'Filtra le righe della tabella per ottenere solo gli utenti il cui numero di telefono è NULL.',
             },
             {
               english: 'Composite Key',
@@ -388,6 +413,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'PRIMARY KEY (user_id, role_id)',
+              task: 'Definisci una chiave primaria composta dalle colonne user_id e role_id per la tabella di associazione.',
             },
           ],
         },
@@ -470,6 +496,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'SELECT * FROM information_schema.tables;',
+              task: 'Interroga information_schema.tables per leggere i metadati relativi a tutte le tabelle del database.',
             },
             {
               english: 'Catalog',
@@ -493,6 +520,7 @@ export default {
               difficulty: 'beginner',
               code: "CREATE TABLESPACE fast_ssd LOCATION '/mnt/ssd';",
               tool: 'PostgreSQL, Oracle',
+              task: 'Crea un tablespace fast_ssd che mappi i dati sulla directory /mnt/ssd per sfruttare il disco veloce.',
             },
             {
               english: 'Database Instance',
@@ -531,6 +559,7 @@ export default {
               difficulty: 'beginner',
               code: 'SELECT name FROM users;',
               note: 'Il comando più usato in SQL.',
+              task: 'Recupera solo la colonna name dalla tabella users tramite una semplice SELECT.',
             },
             {
               english: 'FROM',
@@ -542,6 +571,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT * FROM users;',
+              task: 'Specifica la tabella users come sorgente della query usando la clausola FROM.',
             },
             {
               english: 'Asterisk',
@@ -554,6 +584,7 @@ export default {
               difficulty: 'beginner',
               code: 'SELECT * FROM users;',
               note: 'Evitare SELECT * in produzione: troppo dati e fragile a modifiche di schema.',
+              task: `Estrai tutte le colonne della tabella users sfruttando l'asterisco come scorciatoia.`,
             },
             {
               english: 'WHERE',
@@ -565,6 +596,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT * FROM users WHERE active = true;',
+              task: 'Filtra la tabella users con una clausola WHERE per ottenere solo gli account attivi.',
             },
             {
               english: 'Equality Operator',
@@ -577,6 +609,7 @@ export default {
               difficulty: 'beginner',
               code: 'WHERE age = 30',
               note: 'In SQL si usa un singolo "=", non "==" come in molti linguaggi.',
+              task: `Imposta nella clausola WHERE l'operatore di uguaglianza per selezionare solo gli utenti di trent'anni.`,
             },
             {
               english: 'AND',
@@ -588,6 +621,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: 'WHERE age > 18 AND active = true',
+              task: 'Combina con AND due condizioni nella clausola WHERE per ottenere gli utenti maggiorenni e attivi.',
             },
             {
               english: 'OR',
@@ -599,6 +633,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: "WHERE city = 'Roma' OR city = 'Milano'",
+              task: 'Estrai con OR gli utenti residenti a Roma oppure a Milano tramite la clausola WHERE.',
             },
             {
               english: 'NOT',
@@ -610,6 +645,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: 'WHERE NOT deleted',
+              task: 'Filtra la tabella escludendo con NOT le righe contrassegnate come cancellate.',
             },
             {
               english: 'IN',
@@ -621,6 +657,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: "WHERE country IN ('IT', 'FR', 'DE')",
+              task: `Seleziona gli utenti il cui country compare nell'insieme IT, FR e DE usando l'operatore IN.`,
             },
             {
               english: 'BETWEEN',
@@ -633,6 +670,7 @@ export default {
               difficulty: 'beginner',
               code: 'WHERE age BETWEEN 18 AND 65',
               note: 'Inclusivo di entrambi gli estremi.',
+              task: `Filtra con BETWEEN gli utenti la cui età è compresa nell'intervallo 18-65 anni.`,
             },
           ],
         },
@@ -651,6 +689,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: "INSERT INTO users (name, age) VALUES ('Marco', 30);",
+              task: 'Inserisci nella tabella users una nuova riga con nome Marco e età 30.',
             },
             {
               english: 'INTO',
@@ -662,6 +701,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: 'INSERT INTO users VALUES (...);',
+              task: `Specifica con la clausola INTO che la tabella users è il bersaglio dell'inserimento.`,
             },
             {
               english: 'VALUES',
@@ -674,6 +714,7 @@ export default {
               difficulty: 'beginner',
               code: "VALUES (1, 'Anna'), (2, 'Luca');",
               note: 'Si possono inserire più righe contemporaneamente con virgole.',
+              task: `Inserisci due righe in un solo statement passando le coppie (1, 'Anna') e (2, 'Luca') alla clausola VALUES.`,
             },
             {
               english: 'UPDATE',
@@ -686,6 +727,7 @@ export default {
               difficulty: 'beginner',
               code: 'UPDATE users SET active = false WHERE id = 5;',
               note: 'SEMPRE specificare WHERE, altrimenti aggiorna tutte le righe!',
+              task: `Disattiva l'utente con id 5 impostando il flag active a false tramite un UPDATE mirato.`,
             },
             {
               english: 'SET',
@@ -697,6 +739,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: "SET name = 'Mario', age = 31",
+              task: 'Aggiorna in un solo passaggio i campi name e age con la clausola SET indicando i nuovi valori.',
             },
             {
               english: 'DELETE',
@@ -709,6 +752,7 @@ export default {
               difficulty: 'beginner',
               code: 'DELETE FROM users WHERE id = 5;',
               note: 'Senza WHERE cancella tutto! Usare con attenzione.',
+              task: `Rimuovi dalla tabella users la riga corrispondente all'utente con id 5.`,
             },
             {
               english: 'TRUNCATE',
@@ -721,6 +765,7 @@ export default {
               difficulty: 'beginner',
               code: 'TRUNCATE TABLE logs;',
               note: 'Più veloce di DELETE ma non genera log per riga e non si può usare con WHERE.',
+              task: 'Svuota completamente la tabella logs con TRUNCATE per liberare spazio mantenendo lo schema.',
             },
             {
               english: 'RETURNING',
@@ -733,6 +778,7 @@ export default {
               difficulty: 'beginner',
               code: "INSERT INTO users (name) VALUES ('Eva') RETURNING id;",
               tool: 'PostgreSQL',
+              task: `Inserisci un nuovo utente Eva facendoti restituire dall'INSERT l'id appena generato tramite RETURNING.`,
             },
             {
               english: 'UPSERT',
@@ -745,6 +791,7 @@ export default {
               difficulty: 'beginner',
               code: 'INSERT INTO users ... ON CONFLICT (id) DO UPDATE SET ...;',
               note: 'Combinazione di UPdate + inSERT. In PostgreSQL: ON CONFLICT.',
+              task: `Esegui un upsert che inserisca una nuova riga nella tabella users oppure aggiorni quella esistente in caso di conflitto sull'id.`,
             },
             {
               english: 'ON CONFLICT',
@@ -757,6 +804,7 @@ export default {
               difficulty: 'beginner',
               code: 'ON CONFLICT (email) DO NOTHING',
               tool: 'PostgreSQL',
+              task: 'Aggiungi la clausola ON CONFLICT (email) DO NOTHING per ignorare silenziosamente eventuali duplicati.',
             },
           ],
         },
@@ -775,6 +823,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT DISTINCT country FROM users;',
+              task: `Estrai l'elenco dei paesi distinti presenti nella tabella users eliminando i duplicati con DISTINCT.`,
             },
             {
               english: 'LIMIT',
@@ -787,6 +836,7 @@ export default {
               difficulty: 'beginner',
               code: 'SELECT * FROM users LIMIT 10;',
               note: 'In SQL Server si usa TOP, in Oracle ROWNUM o FETCH FIRST.',
+              task: 'Recupera i primi 10 record della tabella users limitando il risultato con LIMIT.',
             },
             {
               english: 'OFFSET',
@@ -799,6 +849,7 @@ export default {
               difficulty: 'beginner',
               code: 'SELECT * FROM users LIMIT 10 OFFSET 20;',
               note: 'Utile per la paginazione.',
+              task: 'Salta i primi 20 utenti e recupera i successivi 10 combinando LIMIT e OFFSET.',
             },
             {
               english: 'Pagination',
@@ -810,6 +861,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: 'LIMIT 20 OFFSET 40 -- page 3',
+              task: 'Implementa la terza pagina della lista con 20 record per pagina usando LIMIT 20 e OFFSET 40.',
             },
             {
               english: 'COUNT',
@@ -821,6 +873,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT COUNT(*) FROM users;',
+              task: 'Conta tutte le righe della tabella users restituendo il totale con COUNT(*).',
             },
             {
               english: 'LIKE',
@@ -833,6 +886,7 @@ export default {
               difficulty: 'beginner',
               code: "WHERE name LIKE 'M%'",
               note: '% per qualsiasi sequenza, _ per un singolo carattere.',
+              task: 'Trova con LIKE tutti gli utenti il cui nome inizia con la lettera M.',
             },
             {
               english: 'Wildcard',
@@ -844,6 +898,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: "WHERE email LIKE '%@gmail.com'",
+              task: 'Cerca con il carattere jolly tutti gli indirizzi email che terminano con @gmail.com.',
             },
             {
               english: 'ILIKE',
@@ -856,6 +911,7 @@ export default {
               difficulty: 'beginner',
               code: "WHERE name ILIKE '%marco%'",
               tool: 'PostgreSQL',
+              task: 'Trova con ILIKE tutti i nomi che contengono la sottostringa marco ignorando maiuscole e minuscole.',
             },
             {
               english: 'IS NULL',
@@ -868,6 +924,7 @@ export default {
               difficulty: 'beginner',
               code: 'WHERE phone IS NULL',
               note: 'Mai usare = NULL: NULL non è uguale a niente, nemmeno a sé stesso.',
+              task: 'Filtra con IS NULL le righe in cui il numero di telefono non è stato registrato.',
             },
             {
               english: 'COALESCE',
@@ -879,6 +936,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT COALESCE(nickname, name) FROM users;',
+              task: `Restituisci il nickname dell'utente oppure, se assente, ripiega sul nome usando COALESCE.`,
             },
           ],
         },
@@ -897,6 +955,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: "SELECT CONCAT(first_name, ' ', last_name) FROM users;",
+              task: `Componi il nome completo dell'utente concatenando first_name, uno spazio e last_name con CONCAT.`,
             },
             {
               english: 'UPPER',
@@ -908,6 +967,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT UPPER(name) FROM users;',
+              task: 'Converti il campo name in lettere maiuscole applicando la funzione UPPER nella SELECT.',
             },
             {
               english: 'LOWER',
@@ -919,6 +979,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: "WHERE LOWER(email) = 'foo@bar.com'",
+              task: 'Filtra le email rendendole minuscole con LOWER per ottenere un confronto case-insensitive con foo@bar.com.',
             },
             {
               english: 'LENGTH',
@@ -930,6 +991,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT LENGTH(name) FROM users;',
+              task: 'Calcola con LENGTH la lunghezza in caratteri del nome di ciascun utente.',
             },
             {
               english: 'SUBSTRING',
@@ -941,6 +1003,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT SUBSTRING(name, 1, 3) FROM users;',
+              task: 'Estrai con SUBSTRING le prime tre lettere del campo name di ciascun utente.',
             },
             {
               english: 'TRIM',
@@ -952,6 +1015,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT TRIM(name) FROM users;',
+              task: 'Rimuovi gli spazi iniziali e finali dal campo name applicando la funzione TRIM.',
             },
             {
               english: 'NOW',
@@ -964,6 +1028,7 @@ export default {
               difficulty: 'beginner',
               code: 'SELECT NOW();',
               tool: 'PostgreSQL, MySQL',
+              task: `Ottieni la data e l'ora correnti del server invocando la funzione NOW().`,
             },
             {
               english: 'CURRENT_DATE',
@@ -975,6 +1040,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT CURRENT_DATE;',
+              task: 'Recupera la data odierna del database tramite la costante CURRENT_DATE.',
             },
             {
               english: 'EXTRACT',
@@ -986,6 +1052,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT EXTRACT(YEAR FROM created_at);',
+              task: `Estrai con EXTRACT l'anno dal campo created_at di ciascuna riga.`,
             },
             {
               english: 'DATE_TRUNC',
@@ -998,6 +1065,7 @@ export default {
               difficulty: 'beginner',
               code: "SELECT DATE_TRUNC('month', created_at);",
               tool: 'PostgreSQL',
+              task: 'Tronca con DATE_TRUNC il campo created_at al mese per raggruppare gli eventi su base mensile.',
             },
           ],
         },
@@ -1025,6 +1093,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT * FROM orders JOIN users ON orders.user_id = users.id;',
+              task: 'Combina le tabelle orders e users con un JOIN sulla relazione user_id per arricchire ogni ordine con i dati utente.',
             },
             {
               english: 'INNER JOIN',
@@ -1037,6 +1106,7 @@ export default {
               difficulty: 'beginner',
               code: 'SELECT u.name, o.total FROM users u INNER JOIN orders o ON u.id = o.user_id;',
               note: 'JOIN da solo è equivalente a INNER JOIN.',
+              task: 'Recupera nome utente e totale ordine con un INNER JOIN tra users e orders sul campo id.',
             },
             {
               english: 'LEFT JOIN',
@@ -1049,6 +1119,7 @@ export default {
               difficulty: 'beginner',
               code: 'SELECT * FROM users u LEFT JOIN orders o ON u.id = o.user_id;',
               note: 'Le righe della tabella sinistra senza match avranno NULL nelle colonne di destra.',
+              task: 'Recupera tutti gli utenti con i relativi ordini, includendo anche chi non ne ha effettuati, tramite LEFT JOIN.',
             },
             {
               english: 'RIGHT JOIN',
@@ -1061,6 +1132,7 @@ export default {
               difficulty: 'beginner',
               code: 'SELECT * FROM orders o RIGHT JOIN users u ON o.user_id = u.id;',
               note: 'Raramente usato: meglio invertire le tabelle e usare LEFT JOIN.',
+              task: 'Recupera tutti gli utenti includendo gli ordini correlati usando un RIGHT JOIN dalla tabella orders.',
             },
             {
               english: 'FULL OUTER JOIN',
@@ -1073,6 +1145,7 @@ export default {
               difficulty: 'beginner',
               code: 'SELECT * FROM a FULL OUTER JOIN b ON a.id = b.a_id;',
               note: 'Non supportato in MySQL: serve UNION di LEFT e RIGHT JOIN.',
+              task: 'Unisci le tabelle a e b con FULL OUTER JOIN per ottenere tutte le righe da entrambi i lati, anche quelle senza corrispondenza.',
             },
             {
               english: 'CROSS JOIN',
@@ -1085,6 +1158,7 @@ export default {
               difficulty: 'beginner',
               code: 'SELECT * FROM colors CROSS JOIN sizes;',
               note: 'Genera tutte le combinazioni possibili. Attenzione: può produrre tabelle enormi.',
+              task: 'Genera tutte le combinazioni possibili tra colors e sizes effettuando un CROSS JOIN tra le due tabelle.',
             },
             {
               english: 'SELF JOIN',
@@ -1096,6 +1170,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT e.name, m.name FROM employees e JOIN employees m ON e.manager_id = m.id;',
+              task: 'Affianca a ogni dipendente il nome del proprio manager facendo un self join sulla tabella employees tramite manager_id.',
             },
             {
               english: 'ON',
@@ -1107,6 +1182,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: 'JOIN orders ON users.id = orders.user_id',
+              task: 'Specifica con la clausola ON la condizione di join tra users.id e orders.user_id.',
             },
             {
               english: 'USING',
@@ -1118,6 +1194,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT * FROM a JOIN b USING (id);',
+              task: 'Esegui il join tra le tabelle a e b sfruttando la clausola USING (id) quando la colonna ha lo stesso nome.',
             },
             {
               english: 'Cartesian Product',
@@ -1130,6 +1207,7 @@ export default {
               difficulty: 'beginner',
               code: '-- Missing ON clause produces a Cartesian product',
               note: 'Errore comune: scordarsi la clausola ON.',
+              task: 'Annota in un commento che dimenticare la clausola ON nel JOIN produce un prodotto cartesiano indesiderato.',
             },
           ],
         },
@@ -1148,6 +1226,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT country, COUNT(*) FROM users GROUP BY country;',
+              task: 'Conta gli utenti per ogni paese raggruppando le righe della tabella users con GROUP BY country.',
             },
             {
               english: 'HAVING',
@@ -1160,6 +1239,7 @@ export default {
               difficulty: 'beginner',
               code: 'GROUP BY country HAVING COUNT(*) > 100',
               note: 'WHERE filtra prima del GROUP BY, HAVING dopo.',
+              task: 'Filtra con HAVING i gruppi di country mostrando solo quelli con più di 100 utenti.',
             },
             {
               english: 'Aggregate Function',
@@ -1171,6 +1251,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT AVG(price) FROM products;',
+              task: 'Calcola il prezzo medio dei prodotti tramite la funzione di aggregazione AVG su products.',
             },
             {
               english: 'SUM',
@@ -1182,6 +1263,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT SUM(amount) FROM orders;',
+              task: 'Calcola con SUM il totale degli importi presenti nella tabella orders.',
             },
             {
               english: 'AVG',
@@ -1193,6 +1275,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT AVG(price) FROM products;',
+              task: 'Calcola con AVG il prezzo medio dei prodotti nella tabella products.',
             },
             {
               english: 'MIN',
@@ -1204,6 +1287,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT MIN(price) FROM products;',
+              task: 'Determina con MIN il prezzo più basso presente nella tabella products.',
             },
             {
               english: 'MAX',
@@ -1215,6 +1299,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT MAX(price) FROM products;',
+              task: 'Trova con MAX il prezzo più alto tra quelli registrati nella tabella products.',
             },
             {
               english: 'GROUPING',
@@ -1225,6 +1310,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: 'GROUP BY category, year',
+              task: `Raggruppa i record per le colonne category e year ottenendo un'aggregazione multidimensionale.`,
             },
             {
               english: 'ROLLUP',
@@ -1236,6 +1322,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: 'GROUP BY ROLLUP(year, month)',
+              task: 'Calcola con GROUP BY ROLLUP(year, month) subtotali per anno e mese oltre al totale generale.',
             },
             {
               english: 'CUBE',
@@ -1247,6 +1334,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: 'GROUP BY CUBE(country, product)',
+              task: 'Genera tutte le combinazioni di aggregazione su country e product utilizzando GROUP BY CUBE.',
             },
           ],
         },
@@ -1265,6 +1353,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT * FROM users ORDER BY created_at DESC;',
+              task: 'Ordina gli utenti dal più recente al più vecchio applicando ORDER BY created_at DESC.',
             },
             {
               english: 'ASC',
@@ -1277,6 +1366,7 @@ export default {
               difficulty: 'beginner',
               code: 'ORDER BY name ASC',
               note: 'ASC è il default. Si può omettere.',
+              task: 'Ordina le righe alfabeticamente per nome in modo ascendente con ORDER BY name ASC.',
             },
             {
               english: 'DESC',
@@ -1288,6 +1378,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: 'ORDER BY created_at DESC',
+              task: 'Ordina i record dal più recente al più vecchio con ORDER BY created_at DESC.',
             },
             {
               english: 'UNION',
@@ -1300,6 +1391,7 @@ export default {
               difficulty: 'beginner',
               code: 'SELECT name FROM users UNION SELECT name FROM customers;',
               note: 'UNION rimuove duplicati. Usa UNION ALL per mantenerli.',
+              task: 'Unisci con UNION i nomi presenti nelle tabelle users e customers eliminando i duplicati.',
             },
             {
               english: 'UNION ALL',
@@ -1312,6 +1404,7 @@ export default {
               difficulty: 'beginner',
               code: 'SELECT * FROM a UNION ALL SELECT * FROM b;',
               note: 'Più veloce di UNION perché non deduplica.',
+              task: 'Concatena con UNION ALL i record delle tabelle a e b conservando tutti i duplicati.',
             },
             {
               english: 'INTERSECT',
@@ -1323,6 +1416,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT id FROM a INTERSECT SELECT id FROM b;',
+              task: 'Calcola con INTERSECT gli id presenti in entrambe le tabelle a e b.',
             },
             {
               english: 'EXCEPT',
@@ -1335,6 +1429,7 @@ export default {
               difficulty: 'beginner',
               code: 'SELECT id FROM users EXCEPT SELECT user_id FROM orders;',
               note: 'In Oracle si chiama MINUS.',
+              task: 'Trova con EXCEPT gli utenti che non hanno mai effettuato ordini sottraendo gli user_id di orders dagli id di users.',
             },
             {
               english: 'Alias',
@@ -1347,6 +1442,7 @@ export default {
               difficulty: 'beginner',
               code: 'SELECT u.name AS user_name FROM users u;',
               note: 'Le keyword AS sono opzionali ma rendono il codice più leggibile.',
+              task: `Rinomina con AS la colonna name in user_name e abbrevia la tabella users con l'alias u.`,
             },
             {
               english: 'AS',
@@ -1358,6 +1454,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT total AS amount FROM orders;',
+              task: 'Rinomina con AS la colonna total della tabella orders facendola apparire nel risultato come amount.',
             },
             {
               english: 'NULLS FIRST',
@@ -1370,6 +1467,7 @@ export default {
               difficulty: 'beginner',
               code: 'ORDER BY priority DESC NULLS LAST',
               tool: 'PostgreSQL',
+              task: 'Ordina i record per priorità decrescente posizionando con NULLS LAST i valori nulli in fondo al risultato.',
             },
           ],
         },
@@ -1388,6 +1486,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: "CASE WHEN age >= 18 THEN 'adult' ELSE 'minor' END",
+              task: `Classifica le righe come 'adult' o 'minor' in base all'età usando un'espressione CASE WHEN.`,
             },
             {
               english: 'WHEN',
@@ -1399,6 +1498,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: "WHEN status = 'active' THEN 1",
+              task: `Mappa con la clausola WHEN lo status 'active' al valore numerico 1 dentro un blocco CASE.`,
             },
             {
               english: 'THEN',
@@ -1410,6 +1510,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: "WHEN x > 0 THEN 'positive'",
+              task: `Restituisci con THEN il valore 'positive' quando la condizione x > 0 risulta vera dentro un CASE.`,
             },
             {
               english: 'ELSE',
@@ -1421,6 +1522,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: "ELSE 'unknown' END",
+              task: `Specifica con ELSE 'unknown' il valore di default quando nessuna delle clausole WHEN del CASE è soddisfatta.`,
             },
             {
               english: 'END',
@@ -1432,6 +1534,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: 'CASE ... END AS status',
+              task: `Chiudi l'espressione CASE con END e assegna il risultato alla colonna status tramite alias.`,
             },
             {
               english: 'NULLIF',
@@ -1444,6 +1547,7 @@ export default {
               difficulty: 'beginner',
               code: 'SELECT NULLIF(value, 0) FROM data;',
               note: 'Utile per evitare divisioni per zero.',
+              task: 'Trasforma con NULLIF il valore in NULL quando coincide con zero per evitare divisioni per zero.',
             },
             {
               english: 'GREATEST',
@@ -1455,6 +1559,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT GREATEST(a, b, c) FROM data;',
+              task: 'Restituisci con GREATEST il valore massimo tra le colonne a, b e c riga per riga.',
             },
             {
               english: 'LEAST',
@@ -1466,6 +1571,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT LEAST(a, b, c) FROM data;',
+              task: 'Restituisci con LEAST il valore minimo tra le colonne a, b e c riga per riga.',
             },
             {
               english: 'CAST',
@@ -1477,6 +1583,7 @@ export default {
               context: 'sql',
               difficulty: 'beginner',
               code: "SELECT CAST('123' AS INTEGER);",
+              task: `Converti con CAST la stringa '123' nel tipo intero per poter eseguire operazioni numeriche.`,
             },
             {
               english: 'Type Casting',
@@ -1489,6 +1596,7 @@ export default {
               difficulty: 'beginner',
               code: "SELECT '123'::INTEGER;",
               tool: 'PostgreSQL',
+              task: `Effettua il type casting della stringa '123' a INTEGER sfruttando la sintassi abbreviata :: di Postgres.`,
             },
           ],
         },
@@ -1560,6 +1668,7 @@ export default {
               context: 'design',
               difficulty: 'beginner',
               code: 'user_id INT UNIQUE REFERENCES users(id)',
+              task: 'Modella una relazione uno a uno definendo user_id come chiave esterna UNIQUE verso users(id).',
             },
             {
               english: 'One-to-Many',
@@ -1572,6 +1681,7 @@ export default {
               difficulty: 'beginner',
               code: 'orders.user_id REFERENCES users(id)',
               note: 'Il caso più comune. La FK sta nel lato "molti".',
+              task: 'Imposta la relazione uno a molti facendo riferire orders.user_id a users(id) come chiave esterna.',
             },
             {
               english: 'Many-to-Many',
@@ -1584,6 +1694,7 @@ export default {
               difficulty: 'beginner',
               code: 'CREATE TABLE student_course (student_id INT, course_id INT);',
               note: 'Richiede una tabella di giunzione (join table).',
+              task: 'Crea la tabella ponte student_course con due colonne intere per gestire la relazione molti a molti.',
             },
             {
               english: 'Junction Table',
@@ -1596,6 +1707,7 @@ export default {
               difficulty: 'beginner',
               code: 'CREATE TABLE user_role (user_id INT, role_id INT, PRIMARY KEY(user_id, role_id));',
               note: 'Detta anche "associative table" o "linking table".',
+              task: 'Definisci la tabella di giunzione user_role con chiave primaria composta da user_id e role_id.',
             },
             {
               english: 'Attribute',
@@ -1617,6 +1729,7 @@ export default {
               context: 'design',
               difficulty: 'beginner',
               code: 'id UUID PRIMARY KEY',
+              task: 'Definisci la colonna id di tipo UUID come chiave primaria per identificare in modo univoco le righe.',
             },
           ],
         },
@@ -1635,6 +1748,7 @@ export default {
               context: 'design',
               difficulty: 'beginner',
               code: 'ALTER TABLE users ADD CONSTRAINT email_unique UNIQUE (email);',
+              task: `Aggiungi alla tabella users un vincolo nominato email_unique che imponga l'unicità della colonna email.`,
             },
             {
               english: 'Referential Integrity',
@@ -1658,6 +1772,7 @@ export default {
               difficulty: 'beginner',
               code: 'FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE',
               note: 'Attenzione: può cancellare molti dati a catena!',
+              task: 'Configura la chiave esterna user_id con ON DELETE CASCADE per propagare le cancellazioni alle righe figlie.',
             },
             {
               english: 'ON DELETE',
@@ -1669,6 +1784,7 @@ export default {
               context: 'design',
               difficulty: 'beginner',
               code: 'ON DELETE SET NULL',
+              task: 'Imposta ON DELETE SET NULL così la cancellazione del padre azzeri la chiave esterna nelle righe figlie.',
             },
             {
               english: 'ON UPDATE',
@@ -1680,6 +1796,7 @@ export default {
               context: 'design',
               difficulty: 'beginner',
               code: 'ON UPDATE CASCADE',
+              task: 'Configura ON UPDATE CASCADE per propagare le modifiche della chiave referenziata alle righe collegate.',
             },
             {
               english: 'RESTRICT',
@@ -1691,6 +1808,7 @@ export default {
               context: 'design',
               difficulty: 'beginner',
               code: 'ON DELETE RESTRICT',
+              task: 'Imposta ON DELETE RESTRICT per bloccare la cancellazione del padre se esistono righe figlie collegate.',
             },
             {
               english: 'Domain Constraint',
@@ -1702,6 +1820,7 @@ export default {
               context: 'design',
               difficulty: 'beginner',
               code: "CHECK (status IN ('active', 'inactive'))",
+              task: `Limita con un vincolo CHECK i valori di status all'insieme 'active' e 'inactive' definendo un dominio chiuso.`,
             },
             {
               english: 'Surrogate Key',
@@ -1714,6 +1833,7 @@ export default {
               difficulty: 'beginner',
               code: 'id SERIAL PRIMARY KEY',
               note: 'Es. ID auto-incrementale o UUID. Più stabile delle natural key.',
+              task: 'Adotta una chiave surrogata definendo id come SERIAL PRIMARY KEY indipendente dai dati di business.',
             },
             {
               english: 'Natural Key',
@@ -1726,6 +1846,7 @@ export default {
               difficulty: 'beginner',
               code: 'PRIMARY KEY (email)',
               note: 'Es. codice fiscale. Rischiosa se può cambiare.',
+              task: 'Promuovi la colonna email a chiave naturale dichiarandola come PRIMARY KEY della tabella.',
             },
             {
               english: 'UUID',
@@ -1739,6 +1860,7 @@ export default {
               code: 'id UUID DEFAULT gen_random_uuid() PRIMARY KEY',
               tool: 'PostgreSQL',
               note: 'Universally Unique IDentifier. 128 bit, virtualmente unici.',
+              task: 'Definisci la colonna id di tipo UUID con valore predefinito gen_random_uuid() come chiave primaria.',
             },
           ],
         },
@@ -1758,6 +1880,7 @@ export default {
               difficulty: 'beginner',
               code: 'age INTEGER',
               note: 'Abbreviato INT. Da -2.1 miliardi a 2.1 miliardi (32 bit).',
+              task: 'Dichiara la colonna age con il tipo INTEGER per memorizzare numeri interi senza decimali.',
             },
             {
               english: 'BIGINT',
@@ -1770,6 +1893,7 @@ export default {
               difficulty: 'beginner',
               code: 'population BIGINT',
               note: '64 bit. Per IDs in tabelle giganti, valori monetari in cents, etc.',
+              task: 'Usa il tipo BIGINT per la colonna population in modo da gestire valori che superano i limiti di INTEGER.',
             },
             {
               english: 'VARCHAR',
@@ -1782,6 +1906,7 @@ export default {
               difficulty: 'beginner',
               code: 'name VARCHAR(100)',
               note: 'VARiable CHARacter. La lunghezza è il massimo, non lo storage effettivo.',
+              task: 'Dichiara la colonna name come VARCHAR(100) per memorizzare stringhe di lunghezza variabile fino a 100 caratteri.',
             },
             {
               english: 'TEXT',
@@ -1794,6 +1919,7 @@ export default {
               difficulty: 'beginner',
               code: 'description TEXT',
               note: 'In PostgreSQL TEXT è equivalente a VARCHAR senza limite.',
+              task: 'Definisci la colonna description con il tipo TEXT per memorizzare testi lunghi senza limite predefinito.',
             },
             {
               english: 'BOOLEAN',
@@ -1805,6 +1931,7 @@ export default {
               context: 'design',
               difficulty: 'beginner',
               code: 'is_active BOOLEAN DEFAULT TRUE',
+              task: 'Definisci la colonna is_active come BOOLEAN con valore predefinito TRUE per nuovi record.',
             },
             {
               english: 'DATE',
@@ -1816,6 +1943,7 @@ export default {
               context: 'design',
               difficulty: 'beginner',
               code: 'birth_date DATE',
+              task: 'Dichiara la colonna birth_date di tipo DATE per memorizzare la data di nascita senza orario.',
             },
             {
               english: 'TIMESTAMP',
@@ -1827,6 +1955,7 @@ export default {
               context: 'design',
               difficulty: 'beginner',
               code: 'created_at TIMESTAMP DEFAULT NOW()',
+              task: 'Dichiara la colonna created_at di tipo TIMESTAMP con valore predefinito NOW() per registrare il momento di creazione.',
             },
             {
               english: 'DECIMAL',
@@ -1839,6 +1968,7 @@ export default {
               difficulty: 'beginner',
               code: 'price DECIMAL(10, 2)',
               note: 'Precisione esatta. Mai FLOAT per i soldi!',
+              task: 'Definisci la colonna price come DECIMAL(10, 2) per gestire prezzi monetari con due decimali esatti.',
             },
             {
               english: 'JSON',
@@ -1852,6 +1982,7 @@ export default {
               code: 'metadata JSONB',
               tool: 'PostgreSQL',
               note: 'In PostgreSQL preferire JSONB (binary) per performance.',
+              task: 'Memorizza dati semi-strutturati nella colonna metadata sfruttando il tipo binario JSONB.',
             },
             {
               english: 'ENUM',
@@ -1864,6 +1995,7 @@ export default {
               difficulty: 'beginner',
               code: "CREATE TYPE status AS ENUM ('active', 'inactive');",
               tool: 'PostgreSQL, MySQL',
+              task: `Crea un tipo ENUM chiamato status con i valori 'active' e 'inactive' per vincolare i campi di stato.`,
             },
           ],
         },
@@ -1903,6 +2035,7 @@ export default {
               context: 'design',
               difficulty: 'beginner',
               code: 'created_at, user_id, order_total',
+              task: 'Rinomina i campi seguendo la convenzione snake_case con esempi come created_at, user_id e order_total.',
             },
             {
               english: 'Plural Naming',
@@ -1915,6 +2048,7 @@ export default {
               difficulty: 'beginner',
               code: 'CREATE TABLE users (...); -- not "user"',
               note: 'Convenzione comune ma non universale. Rails usa plurale, alcuni team singolare.',
+              task: 'Adotta la convenzione di nominare le tabelle al plurale, ad esempio users invece di user.',
             },
             {
               english: 'Soft Delete',
@@ -1927,6 +2061,7 @@ export default {
               difficulty: 'beginner',
               code: 'deleted_at TIMESTAMP NULL',
               note: 'Invece di DELETE, si imposta una colonna deleted_at.',
+              task: 'Aggiungi alla tabella la colonna deleted_at di tipo TIMESTAMP nullable per implementare la cancellazione logica.',
             },
             {
               english: 'Audit Columns',
@@ -1938,6 +2073,7 @@ export default {
               context: 'design',
               difficulty: 'beginner',
               code: 'created_at TIMESTAMP, updated_at TIMESTAMP, created_by INT',
+              task: 'Aggiungi alla tabella le colonne di audit created_at, updated_at e created_by per tracciare ogni modifica.',
             },
             {
               english: 'Created At',
@@ -1949,6 +2085,7 @@ export default {
               context: 'design',
               difficulty: 'beginner',
               code: 'created_at TIMESTAMP DEFAULT NOW()',
+              task: 'Definisci la colonna created_at di tipo TIMESTAMP con default NOW() per registrare quando la riga viene creata.',
             },
             {
               english: 'Updated At',
@@ -1960,6 +2097,7 @@ export default {
               context: 'design',
               difficulty: 'beginner',
               code: 'updated_at TIMESTAMP DEFAULT NOW()',
+              task: 'Definisci la colonna updated_at di tipo TIMESTAMP con default NOW() da aggiornare a ogni modifica della riga.',
             },
             {
               english: 'Lookup Table',
@@ -1971,6 +2109,7 @@ export default {
               context: 'design',
               difficulty: 'beginner',
               code: 'CREATE TABLE countries (code CHAR(2) PRIMARY KEY, name VARCHAR(100));',
+              task: 'Crea la tabella di lookup countries con codice ISO a due caratteri come chiave primaria e una colonna name.',
             },
             {
               english: 'Polymorphic Association',
@@ -1982,6 +2121,7 @@ export default {
               difficulty: 'beginner',
               code: 'commentable_type VARCHAR, commentable_id INT',
               note: "Comune in ORM ma rompe l'integrità referenziale.",
+              task: `Modella un'associazione polimorfica con commentable_type e commentable_id per collegare il commento a entità diverse.`,
             },
           ],
         },
@@ -2021,6 +2161,7 @@ export default {
               difficulty: 'intermediate',
               code: '-- Bad: phones VARCHAR -- "123, 456"',
               note: 'Abbreviato 1NF. No valori multipli in una cella.',
+              task: 'Annota come anti-pattern di prima forma normale una colonna phones di tipo VARCHAR che concatena più numeri.',
             },
             {
               english: 'Second Normal Form',
@@ -2097,6 +2238,7 @@ export default {
               context: 'normalization',
               difficulty: 'intermediate',
               code: '-- Bad: phone1, phone2, phone3',
+              task: 'Segnala come gruppo ripetuto le colonne phone1, phone2 e phone3 che andrebbero spostate in una tabella separata.',
             },
             {
               english: 'Decomposition',
@@ -2127,6 +2269,7 @@ export default {
               difficulty: 'intermediate',
               code: 'A → B',
               note: 'Se conosci A, conosci B. Es. SSN → name.',
+              task: 'Documenta la dipendenza funzionale A → B per indicare che il valore di A determina univocamente quello di B.',
             },
             {
               english: 'Partial Dependency',
@@ -2160,6 +2303,7 @@ export default {
               context: 'normalization',
               difficulty: 'intermediate',
               code: 'A →→ B',
+              task: 'Documenta la dipendenza multi-valore A →→ B usando la freccia doppia per evidenziare la quarta forma normale.',
             },
             {
               english: 'Determinant',
@@ -2215,6 +2359,7 @@ export default {
               difficulty: 'intermediate',
               code: 'A+ = {A, B, C, ...}',
               note: 'Indicato con A+. Insieme degli attributi che si possono derivare da A.',
+              task: 'Annota la chiusura A+ = {A, B, C, ...} per indicare tutti gli attributi derivabili da A.',
             },
             {
               english: 'Armstrong Axioms',
@@ -2367,6 +2512,7 @@ export default {
               difficulty: 'intermediate',
               code: 'CREATE MATERIALIZED VIEW user_stats AS SELECT user_id, COUNT(*) FROM orders GROUP BY user_id;',
               tool: 'PostgreSQL',
+              task: 'Crea una vista materializzata user_stats che precalcoli per ogni user_id il numero di ordini effettuati.',
             },
             {
               english: 'Read Performance',
@@ -2398,6 +2544,7 @@ export default {
               context: 'normalization',
               difficulty: 'intermediate',
               code: 'CREATE TABLE daily_sales AS SELECT date, SUM(amount) FROM sales GROUP BY date;',
+              task: 'Pre-aggrega le vendite per data creando la tabella daily_sales con la somma giornaliera degli importi.',
             },
             {
               english: 'Computed Column',
@@ -2410,6 +2557,7 @@ export default {
               difficulty: 'intermediate',
               code: 'total DECIMAL GENERATED ALWAYS AS (price * quantity) STORED',
               tool: 'PostgreSQL',
+              task: 'Aggiungi una colonna calcolata total di tipo DECIMAL generata sempre come prodotto di price e quantity, salvata su disco.',
             },
             {
               english: 'Generated Column',
@@ -2421,6 +2569,7 @@ export default {
               context: 'normalization',
               difficulty: 'intermediate',
               code: "full_name VARCHAR GENERATED ALWAYS AS (first_name || ' ' || last_name) STORED",
+              task: 'Definisci la colonna generata full_name come concatenazione di first_name e last_name memorizzata sul disco.',
             },
             {
               english: 'Counter Cache',
@@ -2433,6 +2582,7 @@ export default {
               difficulty: 'intermediate',
               code: 'comments_count INT DEFAULT 0',
               note: 'Pattern comune in Rails per evitare COUNT(*) ripetuti.',
+              task: 'Aggiungi alla tabella padre la colonna comments_count INT DEFAULT 0 come counter cache per evitare COUNT costosi.',
             },
             {
               english: 'Star Schema',
@@ -2483,6 +2633,7 @@ export default {
               difficulty: 'intermediate',
               code: 'CREATE INDEX idx_users_email ON users(email);',
               note: 'Plurale: "indexes" o "indices". Entrambi corretti.',
+              task: 'Crea un indice idx_users_email sulla colonna email della tabella users per velocizzare le ricerche per email.',
             },
             {
               english: 'CREATE INDEX',
@@ -2494,6 +2645,7 @@ export default {
               context: 'indexing',
               difficulty: 'intermediate',
               code: 'CREATE INDEX idx_orders_user_id ON orders(user_id);',
+              task: 'Crea con CREATE INDEX un indice idx_orders_user_id sulla colonna user_id della tabella orders.',
             },
             {
               english: 'DROP INDEX',
@@ -2505,6 +2657,7 @@ export default {
               context: 'indexing',
               difficulty: 'intermediate',
               code: 'DROP INDEX idx_orders_user_id;',
+              task: `Elimina con DROP INDEX l'indice idx_orders_user_id quando non è più necessario.`,
             },
             {
               english: 'Index Lookup',
@@ -2576,6 +2729,7 @@ export default {
               difficulty: 'intermediate',
               code: 'REINDEX TABLE users;',
               tool: 'PostgreSQL',
+              task: 'Ricostruisci con REINDEX TABLE tutti gli indici della tabella users per rimuovere il bloat accumulato.',
             },
           ],
         },
@@ -2595,6 +2749,7 @@ export default {
               difficulty: 'intermediate',
               code: 'CREATE INDEX idx ON t(c) USING btree;',
               note: 'Albero bilanciato. Ottimo per range queries e ordinamento.',
+              task: 'Crea un indice B-tree sulla colonna c della tabella t per supportare confronti e range scan.',
             },
             {
               english: 'Hash Index',
@@ -2607,6 +2762,7 @@ export default {
               difficulty: 'intermediate',
               code: 'CREATE INDEX idx ON t(c) USING hash;',
               note: 'Non supportano range queries (>, <).',
+              task: 'Crea un indice di tipo hash sulla colonna c della tabella t per ricerche di uguaglianza puntuali.',
             },
             {
               english: 'GIN Index',
@@ -2620,6 +2776,7 @@ export default {
               code: "CREATE INDEX idx_search ON docs USING gin(to_tsvector('english', text));",
               tool: 'PostgreSQL',
               note: 'Generalized Inverted Index. Ottimo per array, JSONB, full-text.',
+              task: `Crea un indice GIN su to_tsvector('english', text) della tabella docs per abilitare la ricerca full-text.`,
             },
             {
               english: 'GiST Index',
@@ -2643,6 +2800,7 @@ export default {
               code: 'CREATE INDEX idx ON logs USING brin(created_at);',
               tool: 'PostgreSQL',
               note: 'Block Range Index. Compattissimi, per time series.',
+              task: 'Crea un indice BRIN sulla colonna created_at della tabella logs per coprire grandi range temporali con poco spazio.',
             },
             {
               english: 'Composite Index',
@@ -2655,6 +2813,7 @@ export default {
               difficulty: 'intermediate',
               code: 'CREATE INDEX idx ON orders(user_id, created_at);',
               note: "L'ordine delle colonne conta! Si chiama anche multicolumn.",
+              task: 'Crea un indice composito sulle colonne user_id e created_at della tabella orders per query filtrate e ordinate.',
             },
             {
               english: 'Covering Index',
@@ -2667,6 +2826,7 @@ export default {
               difficulty: 'intermediate',
               code: 'CREATE INDEX idx ON orders(user_id) INCLUDE (total);',
               note: "La query è risolta solo dall'indice, senza accesso alla tabella.",
+              task: 'Crea un indice di copertura sulla colonna user_id includendo total per soddisfare la query senza accessi alla tabella.',
             },
             {
               english: 'Partial Index',
@@ -2679,6 +2839,7 @@ export default {
               difficulty: 'intermediate',
               code: "CREATE INDEX idx ON orders(id) WHERE status = 'pending';",
               tool: 'PostgreSQL',
+              task: `Crea un indice parziale sulla colonna id di orders limitato alle righe con status uguale a 'pending'.`,
             },
             {
               english: 'Unique Index',
@@ -2690,6 +2851,7 @@ export default {
               context: 'indexing',
               difficulty: 'intermediate',
               code: 'CREATE UNIQUE INDEX idx ON users(email);',
+              task: `Crea un indice univoco sulla colonna email della tabella users per garantire l'unicità degli indirizzi.`,
             },
             {
               english: 'Expression Index',
@@ -2702,6 +2864,7 @@ export default {
               difficulty: 'intermediate',
               code: 'CREATE INDEX idx ON users(LOWER(email));',
               tool: 'PostgreSQL',
+              task: 'Crea un indice su espressione applicando LOWER(email) per supportare ricerche case-insensitive.',
             },
           ],
         },
@@ -2730,6 +2893,7 @@ export default {
               context: 'indexing',
               difficulty: 'intermediate',
               code: 'INDEX(a, b, c) supports WHERE a, WHERE a AND b, but not WHERE b alone',
+              task: 'Documenta che un indice composito (a, b, c) supporta filtri su a o su a e b ma non sulla sola colonna b.',
             },
             {
               english: 'Index-Only Scan',
@@ -2793,6 +2957,7 @@ export default {
               difficulty: 'intermediate',
               code: 'SELECT * FROM pg_stat_user_indexes WHERE idx_scan = 0;',
               tool: 'PostgreSQL',
+              task: 'Identifica gli indici inutilizzati interrogando pg_stat_user_indexes con il filtro idx_scan = 0.',
             },
             {
               english: 'CONCURRENTLY',
@@ -2806,6 +2971,7 @@ export default {
               code: 'CREATE INDEX CONCURRENTLY idx ON huge_table(col);',
               tool: 'PostgreSQL',
               note: 'Più lento ma non blocca scritture in produzione.',
+              task: 'Crea un indice in modo concorrente con CONCURRENTLY sulla huge_table per evitare lock di scrittura.',
             },
             {
               english: 'Reindex',
@@ -2818,6 +2984,7 @@ export default {
               difficulty: 'intermediate',
               code: 'REINDEX INDEX idx_name;',
               tool: 'PostgreSQL',
+              task: `Ricostruisci con REINDEX INDEX l'indice idx_name per rimuovere frammentazione e bloat.`,
             },
           ],
         },
@@ -2837,6 +3004,7 @@ export default {
               difficulty: 'intermediate',
               code: "CREATE INDEX idx ON docs USING gin(to_tsvector('english', body));",
               tool: 'PostgreSQL',
+              task: 'Crea un indice full-text GIN sulla colonna body della tabella docs usando to_tsvector con lingua inglese.',
             },
             {
               english: 'Spatial Index',
@@ -2859,6 +3027,7 @@ export default {
               difficulty: 'intermediate',
               code: 'CREATE INDEX idx ON events USING gin(payload);',
               tool: 'PostgreSQL',
+              task: 'Crea un indice GIN sulla colonna payload della tabella events per velocizzare le query su documenti JSON.',
             },
             {
               english: 'Inverted Index',
@@ -2963,6 +3132,7 @@ export default {
               difficulty: 'intermediate',
               code: 'BEGIN; UPDATE ...; UPDATE ...; COMMIT;',
               note: 'Tutto o niente: o tutte le operazioni passano, o nessuna.',
+              task: 'Apri una transazione con BEGIN, esegui due UPDATE correlati e conferma le modifiche con COMMIT.',
             },
             {
               english: 'BEGIN',
@@ -2974,6 +3144,7 @@ export default {
               difficulty: 'intermediate',
               code: 'BEGIN;',
               note: 'In SQL Server: BEGIN TRANSACTION. In Postgres: BEGIN o START TRANSACTION.',
+              task: 'Avvia una transazione esplicita inviando il comando BEGIN al database.',
             },
             {
               english: 'COMMIT',
@@ -2985,6 +3156,7 @@ export default {
               difficulty: 'intermediate',
               code: 'COMMIT;',
               note: 'Rende effettive le modifiche e le rende visibili agli altri.',
+              task: 'Conferma in modo permanente le modifiche della transazione corrente inviando COMMIT.',
             },
             {
               english: 'ROLLBACK',
@@ -2995,6 +3167,7 @@ export default {
               context: 'transactions',
               difficulty: 'intermediate',
               code: 'ROLLBACK;',
+              task: 'Annulla tutte le modifiche della transazione in corso con il comando ROLLBACK.',
             },
             {
               english: 'SAVEPOINT',
@@ -3005,6 +3178,7 @@ export default {
               context: 'transactions',
               difficulty: 'intermediate',
               code: 'SAVEPOINT before_update; ROLLBACK TO before_update;',
+              task: 'Definisci il savepoint before_update e successivamente effettua un ROLLBACK fino a quel punto della transazione.',
             },
             {
               english: 'Auto-commit',
@@ -3016,6 +3190,7 @@ export default {
               context: 'transactions',
               difficulty: 'intermediate',
               code: 'SET AUTOCOMMIT = OFF;',
+              task: 'Disabilita la modalità auto-commit impostando AUTOCOMMIT a OFF per controllare manualmente le transazioni.',
             },
             {
               english: 'Implicit Transaction',
@@ -3037,6 +3212,7 @@ export default {
               context: 'transactions',
               difficulty: 'intermediate',
               code: 'BEGIN; ...; COMMIT;',
+              task: 'Racchiudi le istruzioni in una transazione esplicita delimitata da BEGIN e COMMIT.',
             },
             {
               english: 'Distributed Transaction',
@@ -3171,6 +3347,7 @@ export default {
               difficulty: 'intermediate',
               code: 'CHECKPOINT;',
               tool: 'PostgreSQL',
+              task: 'Forza un checkpoint immediato del WAL inviando il comando CHECKPOINT al server.',
             },
           ],
         },
@@ -3188,6 +3365,7 @@ export default {
               context: 'transactions',
               difficulty: 'intermediate',
               code: 'SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;',
+              task: 'Imposta il livello di isolamento della transazione corrente a SERIALIZABLE per la massima coerenza.',
             },
             {
               english: 'Read Uncommitted',
@@ -3305,6 +3483,7 @@ export default {
               context: 'transactions',
               difficulty: 'intermediate',
               code: 'LOCK TABLE users IN EXCLUSIVE MODE;',
+              task: 'Acquisisci un lock esclusivo sulla tabella users con LOCK TABLE per bloccare scritture concorrenti.',
             },
             {
               english: 'Shared Lock',
@@ -3335,6 +3514,7 @@ export default {
               context: 'transactions',
               difficulty: 'intermediate',
               code: 'SELECT * FROM users WHERE id = 1 FOR UPDATE;',
+              task: 'Blocca la riga utente con id 1 acquisendo un row lock tramite SELECT ... FOR UPDATE.',
             },
             {
               english: 'Table Lock',
@@ -3377,6 +3557,7 @@ export default {
               context: 'transactions',
               difficulty: 'intermediate',
               code: 'UPDATE products SET ..., version = version + 1 WHERE id = 1 AND version = 5;',
+              task: 'Implementa il lock ottimistico aggiornando il prodotto solo se la versione corrente è ancora 5 e incrementandola.',
             },
             {
               english: 'Pessimistic Locking',
@@ -3387,6 +3568,7 @@ export default {
               context: 'transactions',
               difficulty: 'intermediate',
               code: 'SELECT ... FOR UPDATE;',
+              task: 'Applica il lock pessimistico bloccando le righe selezionate con la clausola FOR UPDATE prima di modificarle.',
             },
           ],
         },
@@ -3413,6 +3595,7 @@ export default {
               context: 'sql',
               difficulty: 'intermediate',
               code: 'SELECT * FROM users WHERE id IN (SELECT user_id FROM orders);',
+              task: 'Recupera gli utenti che hanno effettuato almeno un ordine usando una sottoquery con IN su orders.user_id.',
             },
             {
               english: 'Correlated Subquery',
@@ -3425,6 +3608,7 @@ export default {
               difficulty: 'intermediate',
               code: 'SELECT * FROM users u WHERE EXISTS (SELECT 1 FROM orders o WHERE o.user_id = u.id);',
               note: 'Eseguita per ogni riga della query esterna. Spesso lenta.',
+              task: 'Filtra con una sottoquery correlata gli utenti per cui esiste almeno un ordine collegato tramite EXISTS.',
             },
             {
               english: 'EXISTS',
@@ -3437,6 +3621,7 @@ export default {
               difficulty: 'intermediate',
               code: 'WHERE EXISTS (SELECT 1 FROM orders WHERE user_id = users.id)',
               note: 'Spesso più veloce di IN per controlli di esistenza.',
+              task: `Verifica con EXISTS l'esistenza di almeno un ordine collegato a ciascun utente nella tabella users.`,
             },
             {
               english: 'NOT EXISTS',
@@ -3448,6 +3633,7 @@ export default {
               context: 'sql',
               difficulty: 'intermediate',
               code: 'WHERE NOT EXISTS (SELECT 1 FROM ...)',
+              task: 'Filtra con NOT EXISTS le righe per cui la sottoquery non restituisce alcun risultato.',
             },
             {
               english: 'Scalar Subquery',
@@ -3458,6 +3644,7 @@ export default {
               context: 'sql',
               difficulty: 'intermediate',
               code: 'SELECT name, (SELECT COUNT(*) FROM orders WHERE user_id = u.id) FROM users u;',
+              task: 'Affianca a ogni utente il numero di ordini effettuati tramite una sottoquery scalare con COUNT(*) correlata.',
             },
             {
               english: 'Inline View',
@@ -3469,6 +3656,7 @@ export default {
               difficulty: 'intermediate',
               code: 'SELECT * FROM (SELECT user_id, COUNT(*) c FROM orders GROUP BY user_id) sub;',
               note: 'Detta anche "derived table".',
+              task: 'Usa una vista inline che pre-aggrega gli ordini per user_id e poi seleziona tutto dal risultato.',
             },
             {
               english: 'ANY',
@@ -3479,6 +3667,7 @@ export default {
               context: 'sql',
               difficulty: 'intermediate',
               code: "WHERE price > ANY (SELECT price FROM products WHERE category = 'A')",
+              task: `Filtra i prodotti il cui prezzo è maggiore di almeno uno dei prezzi della categoria A usando l'operatore ANY.`,
             },
             {
               english: 'ALL',
@@ -3490,6 +3679,7 @@ export default {
               context: 'sql',
               difficulty: 'intermediate',
               code: 'WHERE price > ALL (SELECT price FROM ...)',
+              task: 'Filtra i prodotti il cui prezzo supera quello di tutti i record restituiti dalla sottoquery con ALL.',
             },
             {
               english: 'LATERAL JOIN',
@@ -3501,6 +3691,7 @@ export default {
               difficulty: 'intermediate',
               code: 'SELECT * FROM users u, LATERAL (SELECT * FROM orders WHERE user_id = u.id LIMIT 5) o;',
               tool: 'PostgreSQL',
+              task: 'Recupera per ogni utente i suoi cinque ordini più recenti utilizzando un LATERAL JOIN con LIMIT 5.',
             },
             {
               english: 'Subquery Optimization',
@@ -3529,6 +3720,7 @@ export default {
               difficulty: 'intermediate',
               code: 'WITH active_users AS (SELECT * FROM users WHERE active) SELECT * FROM active_users;',
               note: 'Common Table Expression.',
+              task: 'Definisci una CTE active_users che isoli gli utenti attivi e poi selezionala con una query principale.',
             },
             {
               english: 'WITH',
@@ -3540,6 +3732,7 @@ export default {
               context: 'sql',
               difficulty: 'intermediate',
               code: 'WITH cte AS (...) SELECT * FROM cte;',
+              task: 'Introduci una CTE con la clausola WITH cte AS (...) e poi consultala con una semplice SELECT * FROM cte.',
             },
             {
               english: 'Recursive CTE',
@@ -3551,6 +3744,7 @@ export default {
               context: 'sql',
               difficulty: 'intermediate',
               code: 'WITH RECURSIVE tree AS (SELECT * FROM nodes WHERE parent IS NULL UNION ALL SELECT n.* FROM nodes n JOIN tree t ON n.parent = t.id) SELECT * FROM tree;',
+              task: 'Costruisci con WITH RECURSIVE una CTE tree che percorra la gerarchia di nodes partendo dalle radici con parent NULL.',
             },
             {
               english: 'Anchor Member',
@@ -3593,6 +3787,7 @@ export default {
               context: 'sql',
               difficulty: 'intermediate',
               code: 'WITH a AS (...), b AS (SELECT * FROM a WHERE ...) SELECT * FROM b;',
+              task: 'Concatena due CTE nominate a e b separate da virgola, dove b filtra ulteriormente i dati prodotti da a.',
             },
             {
               english: 'CTE Materialization',
@@ -3606,6 +3801,7 @@ export default {
               code: 'WITH x AS MATERIALIZED (...)',
               tool: 'PostgreSQL',
               note: 'In PG 12+ si può forzare con MATERIALIZED o NOT MATERIALIZED.',
+              task: `Forza la materializzazione della CTE x con la clausola AS MATERIALIZED per evitare l'inline da parte del planner.`,
             },
             {
               english: 'Hierarchical Query',
@@ -3644,6 +3840,7 @@ export default {
               context: 'sql',
               difficulty: 'intermediate',
               code: 'SELECT name, salary, AVG(salary) OVER (PARTITION BY dept) FROM employees;',
+              task: 'Affianca a ogni dipendente lo stipendio medio del suo dipartimento usando AVG con OVER e PARTITION BY dept.',
             },
             {
               english: 'OVER',
@@ -3654,6 +3851,7 @@ export default {
               context: 'sql',
               difficulty: 'intermediate',
               code: 'SUM(amount) OVER (PARTITION BY user_id)',
+              task: 'Calcola con SUM(amount) OVER (PARTITION BY user_id) la somma cumulata per ciascun utente come funzione finestra.',
             },
             {
               english: 'PARTITION BY',
@@ -3665,6 +3863,7 @@ export default {
               difficulty: 'intermediate',
               code: 'AVG(salary) OVER (PARTITION BY dept)',
               note: 'Come GROUP BY ma senza collassare le righe.',
+              task: `Suddividi la finestra per dipartimento con PARTITION BY dept e calcola la media salariale all'interno di ogni gruppo.`,
             },
             {
               english: 'ROW_NUMBER',
@@ -3676,6 +3875,7 @@ export default {
               context: 'sql',
               difficulty: 'intermediate',
               code: 'ROW_NUMBER() OVER (ORDER BY created_at)',
+              task: 'Assegna a ciascuna riga un numero progressivo ordinato per created_at usando ROW_NUMBER() OVER.',
             },
             {
               english: 'RANK',
@@ -3688,6 +3888,7 @@ export default {
               difficulty: 'intermediate',
               code: 'RANK() OVER (ORDER BY score DESC)',
               note: 'Pareggi: 1, 2, 2, 4.',
+              task: 'Assegna con RANK() OVER (ORDER BY score DESC) un ranking ai record dal punteggio più alto al più basso.',
             },
             {
               english: 'DENSE_RANK',
@@ -3700,6 +3901,7 @@ export default {
               difficulty: 'intermediate',
               code: 'DENSE_RANK() OVER (ORDER BY score DESC)',
               note: 'Pareggi: 1, 2, 2, 3.',
+              task: 'Classifica le righe con DENSE_RANK ordinandole per score decrescente senza lasciare buchi tra i ranghi.',
             },
             {
               english: 'LAG',
@@ -3710,6 +3912,7 @@ export default {
               context: 'sql',
               difficulty: 'intermediate',
               code: 'LAG(price, 1) OVER (ORDER BY date)',
+              task: 'Recupera con LAG il prezzo della riga precedente ordinata per data per confrontarlo con quello corrente.',
             },
             {
               english: 'LEAD',
@@ -3721,6 +3924,7 @@ export default {
               context: 'sql',
               difficulty: 'intermediate',
               code: 'LEAD(price, 1) OVER (ORDER BY date)',
+              task: `Recupera con LEAD il prezzo della riga successiva ordinata per data per analizzare l'andamento.`,
             },
             {
               english: 'NTILE',
@@ -3731,6 +3935,7 @@ export default {
               context: 'sql',
               difficulty: 'intermediate',
               code: 'NTILE(4) OVER (ORDER BY salary) AS quartile',
+              task: 'Suddividi i dipendenti in quartili sullo stipendio con NTILE(4) OVER ordinato per salary.',
             },
             {
               english: 'Frame Clause',
@@ -3742,6 +3947,7 @@ export default {
               context: 'sql',
               difficulty: 'intermediate',
               code: 'ROWS BETWEEN 3 PRECEDING AND CURRENT ROW',
+              task: 'Definisci la finestra mobile con ROWS BETWEEN 3 PRECEDING AND CURRENT ROW per calcolare medie su quattro righe.',
             },
           ],
         },
@@ -3760,6 +3966,7 @@ export default {
               context: 'sql',
               difficulty: 'intermediate',
               code: 'CREATE PROCEDURE update_balance(p_id INT, p_amt DECIMAL) ...',
+              task: 'Crea una stored procedure update_balance che accetti id e importo come parametri e modifichi il saldo.',
             },
             {
               english: 'Function',
@@ -3770,6 +3977,7 @@ export default {
               context: 'sql',
               difficulty: 'intermediate',
               code: 'CREATE FUNCTION square(n INT) RETURNS INT AS $$ SELECT n * n; $$ LANGUAGE SQL;',
+              task: 'Definisci la funzione SQL square che riceve un intero n e ne restituisce il quadrato.',
             },
             {
               english: 'Trigger',
@@ -3780,6 +3988,7 @@ export default {
               context: 'sql',
               difficulty: 'intermediate',
               code: 'CREATE TRIGGER trg_audit BEFORE UPDATE ON users FOR EACH ROW EXECUTE FUNCTION audit_fn();',
+              task: 'Crea un trigger trg_audit che prima di ogni UPDATE su users invochi la funzione audit_fn per ogni riga.',
             },
             {
               english: 'BEFORE Trigger',
@@ -3791,6 +4000,7 @@ export default {
               context: 'sql',
               difficulty: 'intermediate',
               code: 'CREATE TRIGGER ... BEFORE INSERT ...',
+              task: `Definisci un trigger BEFORE INSERT che si attivi prima dell'inserimento per validare o trasformare i dati.`,
             },
             {
               english: 'AFTER Trigger',
@@ -3802,6 +4012,7 @@ export default {
               context: 'sql',
               difficulty: 'intermediate',
               code: 'CREATE TRIGGER ... AFTER UPDATE ...',
+              task: `Definisci un trigger AFTER UPDATE che si attivi dopo la modifica per registrare l'evento o aggiornare cache.`,
             },
             {
               english: 'PL/pgSQL',
@@ -3813,6 +4024,7 @@ export default {
               difficulty: 'intermediate',
               code: 'LANGUAGE plpgsql',
               tool: 'PostgreSQL',
+              task: 'Indica con LANGUAGE plpgsql che il corpo della funzione è scritto nel linguaggio procedurale di PostgreSQL.',
             },
             {
               english: 'PL/SQL',
@@ -3834,6 +4046,7 @@ export default {
               context: 'sql',
               difficulty: 'intermediate',
               code: 'CREATE VIEW active_users AS SELECT * FROM users WHERE active;',
+              task: 'Crea la vista active_users che esponga solo gli utenti con il flag active uguale a vero.',
             },
             {
               english: 'EXEC',
@@ -3845,6 +4058,7 @@ export default {
               context: 'sql',
               difficulty: 'intermediate',
               code: 'EXEC update_balance(1, 100.00);',
+              task: 'Esegui con EXEC la stored procedure update_balance passando id 1 e importo 100.00.',
             },
             {
               english: 'CALL',
@@ -3856,6 +4070,7 @@ export default {
               context: 'sql',
               difficulty: 'intermediate',
               code: 'CALL update_balance(1, 100.00);',
+              task: 'Invoca con CALL la stored procedure update_balance con id 1 e importo 100.00.',
             },
           ],
         },
@@ -3895,6 +4110,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'Redis, DynamoDB',
               code: `SET user:1 '{"name":"Marco"}'`,
+              task: `Memorizza in uno store chiave-valore la chiave user:1 associata al documento JSON che descrive l'utente Marco.`,
             },
             {
               english: 'Column-Family Store',
@@ -4108,6 +4324,7 @@ export default {
               context: 'nosql',
               difficulty: 'intermediate',
               code: '{ "name": "Marco", "addresses": [...] }',
+              task: `Modella l'utente come documento che annida un array di addresses senza ricorrere a tabelle separate.`,
             },
             {
               english: 'JSON Document',
@@ -4119,6 +4336,7 @@ export default {
               context: 'nosql',
               difficulty: 'intermediate',
               code: '{ "id": 1, "tags": ["a","b"] }',
+              task: `Rappresenta un documento JSON con id numerico e l'array di tag a e b come esempio di struttura semi-strutturata.`,
             },
             {
               english: 'BSON',
@@ -4140,6 +4358,7 @@ export default {
               context: 'nosql',
               difficulty: 'intermediate',
               code: '{ user: { name: "Marco", address: { city: "Roma" } } }',
+              task: 'Incorpora nel documento utente un sotto-documento address con la città Roma come documento embedded.',
             },
             {
               english: 'Reference',
@@ -4150,6 +4369,7 @@ export default {
               context: 'nosql',
               difficulty: 'intermediate',
               code: '{ user_id: ObjectId("...") }',
+              task: 'Inserisci un campo user_id di tipo ObjectId che funga da riferimento al documento utente collegato.',
             },
             {
               english: 'Wide Row',
@@ -4194,6 +4414,7 @@ export default {
               difficulty: 'intermediate',
               code: '(:Person {name: "Marco", age: 30})',
               tool: 'Neo4j',
+              task: 'Crea un nodo Cypher di etichetta Person con le proprietà name Marco ed età 30.',
             },
             {
               english: 'Schemaless Document',
@@ -4285,6 +4506,7 @@ export default {
               difficulty: 'intermediate',
               code: "WITH replication = { 'class': 'SimpleStrategy', 'replication_factor': 3 }",
               tool: 'Cassandra',
+              task: 'Configura il keyspace Cassandra con SimpleStrategy e replication factor 3 per mantenere tre copie dei dati.',
             },
             {
               english: 'Hinted Handoff',
@@ -4344,6 +4566,7 @@ export default {
               command: 'mongo',
               tool: 'MongoDB',
               note: 'Si pronuncia MON-go (dal "humongous" = enorme).',
+              task: `Apri la shell mongo per interagire con l'istanza MongoDB locale.`,
             },
             {
               english: 'Collection',
@@ -4357,6 +4580,7 @@ export default {
               code: 'db.users.find()',
               tool: 'MongoDB',
               note: 'Equivalente di una tabella in SQL.',
+              task: 'Recupera con find tutti i documenti contenuti nella collezione users del database corrente.',
             },
             {
               english: 'Document',
@@ -4368,6 +4592,7 @@ export default {
               difficulty: 'intermediate',
               code: '{ _id: ObjectId(), name: "Marco", age: 30 }',
               tool: 'MongoDB',
+              task: 'Modella un documento MongoDB con _id generato come ObjectId, nome Marco ed età 30.',
             },
             {
               english: 'ObjectId',
@@ -4380,6 +4605,7 @@ export default {
               code: 'ObjectId("507f1f77bcf86cd799439011")',
               tool: 'MongoDB',
               note: '12 byte: timestamp + machine + counter.',
+              task: `Costruisci un valore ObjectId a partire dall'esadecimale 507f1f77bcf86cd799439011 per fare riferimento a un documento esistente.`,
             },
             {
               english: 'find',
@@ -4391,6 +4617,7 @@ export default {
               difficulty: 'intermediate',
               code: 'db.users.find({ age: { $gt: 18 } })',
               tool: 'MongoDB',
+              task: 'Trova con find tutti i documenti della collezione users in cui age è maggiore di 18.',
             },
             {
               english: 'findOne',
@@ -4402,6 +4629,7 @@ export default {
               difficulty: 'intermediate',
               code: 'db.users.findOne({ email: "a@b.com" })',
               tool: 'MongoDB',
+              task: 'Recupera con findOne il primo documento utente la cui email coincide con a@b.com.',
             },
             {
               english: 'insertOne',
@@ -4413,6 +4641,7 @@ export default {
               difficulty: 'intermediate',
               code: 'db.users.insertOne({ name: "Eva" })',
               tool: 'MongoDB',
+              task: 'Inserisci con insertOne un singolo nuovo documento utente di nome Eva nella collezione users.',
             },
             {
               english: 'insertMany',
@@ -4424,6 +4653,7 @@ export default {
               difficulty: 'intermediate',
               code: 'db.users.insertMany([{...},{...}])',
               tool: 'MongoDB',
+              task: 'Inserisci in blocco più documenti nella collezione users tramite insertMany passando un array.',
             },
             {
               english: 'updateOne',
@@ -4436,6 +4666,7 @@ export default {
               difficulty: 'intermediate',
               code: 'db.users.updateOne({ _id: 1 }, { $set: { active: true } })',
               tool: 'MongoDB',
+              task: 'Aggiorna con updateOne il documento con _id 1 impostando il flag active a true tramite $set.',
             },
             {
               english: 'deleteOne',
@@ -4448,6 +4679,7 @@ export default {
               difficulty: 'intermediate',
               code: 'db.users.deleteOne({ _id: 1 })',
               tool: 'MongoDB',
+              task: 'Rimuovi con deleteOne il documento utente identificato da _id 1 dalla collezione users.',
             },
           ],
         },
@@ -4466,6 +4698,7 @@ export default {
               difficulty: 'intermediate',
               code: '{ age: { $gt: 18 } }',
               tool: 'MongoDB',
+              task: `Filtra con l'operatore $gt i documenti la cui età è maggiore di 18 anni.`,
             },
             {
               english: '$lt',
@@ -4477,6 +4710,7 @@ export default {
               difficulty: 'intermediate',
               code: '{ price: { $lt: 100 } }',
               tool: 'MongoDB',
+              task: `Filtra con l'operatore $lt i documenti il cui price è minore di 100.`,
             },
             {
               english: '$in',
@@ -4489,6 +4723,7 @@ export default {
               difficulty: 'intermediate',
               code: "{ status: { $in: ['active', 'pending'] } }",
               tool: 'MongoDB',
+              task: `Filtra con $in i documenti il cui status è uno tra 'active' e 'pending'.`,
             },
             {
               english: '$nin',
@@ -4500,6 +4735,7 @@ export default {
               difficulty: 'intermediate',
               code: "{ status: { $nin: ['banned'] } }",
               tool: 'MongoDB',
+              task: `Escludi con $nin i documenti il cui status è 'banned'.`,
             },
             {
               english: '$set',
@@ -4512,6 +4748,7 @@ export default {
               difficulty: 'intermediate',
               code: '{ $set: { name: "Mario" } }',
               tool: 'MongoDB',
+              task: `Aggiorna il campo name del documento al valore Mario usando l'operatore $set.`,
             },
             {
               english: '$unset',
@@ -4524,6 +4761,7 @@ export default {
               difficulty: 'intermediate',
               code: '{ $unset: { temp: "" } }',
               tool: 'MongoDB',
+              task: `Rimuovi il campo temp dal documento usando l'operatore $unset con stringa vuota come valore.`,
             },
             {
               english: '$inc',
@@ -4536,6 +4774,7 @@ export default {
               difficulty: 'intermediate',
               code: '{ $inc: { views: 1 } }',
               tool: 'MongoDB',
+              task: `Incrementa di uno il contatore views del documento tramite l'operatore $inc.`,
             },
             {
               english: '$push',
@@ -4547,6 +4786,7 @@ export default {
               difficulty: 'intermediate',
               code: '{ $push: { tags: "new" } }',
               tool: 'MongoDB',
+              task: `Aggiungi con $push il valore 'new' in coda all'array tags del documento.`,
             },
             {
               english: '$pull',
@@ -4558,6 +4798,7 @@ export default {
               difficulty: 'intermediate',
               code: '{ $pull: { tags: "old" } }',
               tool: 'MongoDB',
+              task: `Rimuovi con $pull il valore 'old' dall'array tags del documento.`,
             },
             {
               english: '$exists',
@@ -4570,6 +4811,7 @@ export default {
               difficulty: 'intermediate',
               code: '{ phone: { $exists: true } }',
               tool: 'MongoDB',
+              task: 'Filtra con $exists i documenti in cui il campo phone è presente.',
             },
           ],
         },
@@ -4589,6 +4831,7 @@ export default {
               difficulty: 'intermediate',
               code: 'db.orders.aggregate([{$match:{...}}, {$group:{...}}])',
               tool: 'MongoDB',
+              task: 'Costruisci sulla collezione orders una pipeline di aggregazione che concateni uno stage $match e uno stage $group.',
             },
             {
               english: '$match',
@@ -4600,6 +4843,7 @@ export default {
               difficulty: 'intermediate',
               code: '{ $match: { status: "active" } }',
               tool: 'MongoDB',
+              task: `Aggiungi alla pipeline uno stage $match che selezioni solo i documenti con status uguale a 'active'.`,
             },
             {
               english: '$group',
@@ -4612,6 +4856,7 @@ export default {
               difficulty: 'intermediate',
               code: '{ $group: { _id: "$user", total: { $sum: "$amount" } } }',
               tool: 'MongoDB',
+              task: 'Raggruppa con $group i documenti per user calcolando il totale come somma del campo amount.',
             },
             {
               english: '$project',
@@ -4623,6 +4868,7 @@ export default {
               difficulty: 'intermediate',
               code: '{ $project: { name: 1, _id: 0 } }',
               tool: 'MongoDB',
+              task: 'Riformatta i documenti con $project mostrando solo il campo name e nascondendo _id.',
             },
             {
               english: '$sort',
@@ -4634,6 +4880,7 @@ export default {
               difficulty: 'intermediate',
               code: '{ $sort: { created_at: -1 } }',
               tool: 'MongoDB',
+              task: 'Ordina i documenti con $sort per created_at in ordine decrescente.',
             },
             {
               english: '$lookup',
@@ -4645,6 +4892,7 @@ export default {
               difficulty: 'intermediate',
               code: '{ $lookup: { from: "orders", localField: "_id", foreignField: "user_id", as: "orders" } }',
               tool: 'MongoDB',
+              task: `Unisci con $lookup la collezione orders accostando a ogni utente l'array dei suoi ordini sul campo user_id.`,
             },
             {
               english: '$unwind',
@@ -4656,6 +4904,7 @@ export default {
               difficulty: 'intermediate',
               code: '{ $unwind: "$tags" }',
               tool: 'MongoDB',
+              task: `Espandi con $unwind l'array tags trasformando ogni elemento in un documento separato.`,
             },
             {
               english: '$limit',
@@ -4667,6 +4916,7 @@ export default {
               difficulty: 'intermediate',
               code: '{ $limit: 10 }',
               tool: 'MongoDB',
+              task: `Limita con $limit l'output della pipeline ai primi 10 documenti.`,
             },
             {
               english: 'Pipeline Stage',
@@ -4689,6 +4939,7 @@ export default {
               difficulty: 'intermediate',
               code: '{ $facet: { byCategory: [...], total: [...] } }',
               tool: 'MongoDB',
+              task: 'Esegui con $facet più sotto-pipeline in parallelo, una byCategory e una total, restituendo tutti i risultati insieme.',
             },
           ],
         },
@@ -4708,6 +4959,7 @@ export default {
               difficulty: 'intermediate',
               command: 'rs.initiate()',
               tool: 'MongoDB',
+              task: 'Inizializza il replica set MongoDB invocando rs.initiate() dal nodo primario.',
             },
             {
               english: 'Replica Set Primary',
@@ -4783,6 +5035,7 @@ export default {
               difficulty: 'intermediate',
               code: 'sh.shardCollection("db.users", { _id: "hashed" })',
               tool: 'MongoDB',
+              task: 'Configura lo sharding della collezione db.users definendo come shard key _id in modalità hashed.',
             },
             {
               english: 'Mongos',
@@ -4795,6 +5048,7 @@ export default {
               difficulty: 'intermediate',
               command: 'mongos --configdb ...',
               tool: 'MongoDB',
+              task: `Avvia il router mongos collegandolo ai config server tramite l'opzione --configdb.`,
             },
             {
               english: 'Config Server',
@@ -4834,6 +5088,7 @@ export default {
               command: 'redis-cli',
               tool: 'Redis',
               note: 'REmote DIctionary Server.',
+              task: `Apri il client interattivo redis-cli per inviare comandi all'istanza Redis.`,
             },
             {
               english: 'GET',
@@ -4846,6 +5101,7 @@ export default {
               difficulty: 'intermediate',
               code: 'GET user:1',
               tool: 'Redis',
+              task: 'Leggi con GET il valore associato alla chiave user:1 nello store Redis.',
             },
             {
               english: 'Redis SET',
@@ -4858,6 +5114,7 @@ export default {
               difficulty: 'intermediate',
               code: 'SET user:1 "Marco"',
               tool: 'Redis',
+              task: 'Memorizza con SET la stringa Marco sotto la chiave user:1 in Redis.',
             },
             {
               english: 'DEL',
@@ -4870,6 +5127,7 @@ export default {
               difficulty: 'intermediate',
               code: 'DEL user:1',
               tool: 'Redis',
+              task: 'Elimina la chiave user:1 dallo store Redis con il comando DEL.',
             },
             {
               english: 'Redis EXISTS',
@@ -4881,6 +5139,7 @@ export default {
               difficulty: 'intermediate',
               code: 'EXISTS user:1',
               tool: 'Redis',
+              task: 'Verifica con EXISTS se la chiave user:1 è presente nello store Redis.',
             },
             {
               english: 'KEYS',
@@ -4893,6 +5152,7 @@ export default {
               code: 'KEYS user:*',
               tool: 'Redis',
               note: 'Da evitare in produzione: blocca il server. Usa SCAN.',
+              task: 'Elenca con KEYS user:* tutte le chiavi che iniziano con il prefisso user: (usare con cautela in produzione).',
             },
             {
               english: 'SCAN',
@@ -4905,6 +5165,7 @@ export default {
               difficulty: 'intermediate',
               code: 'SCAN 0 MATCH user:* COUNT 100',
               tool: 'Redis',
+              task: 'Itera in modo non bloccante con SCAN 0 MATCH user:* COUNT 100 attraverso le chiavi che iniziano per user:.',
             },
             {
               english: 'INCR',
@@ -4917,6 +5178,7 @@ export default {
               difficulty: 'intermediate',
               code: 'INCR page:views',
               tool: 'Redis',
+              task: 'Incrementa atomicamente con INCR il contatore page:views in Redis.',
             },
             {
               english: 'DECR',
@@ -4929,6 +5191,7 @@ export default {
               difficulty: 'intermediate',
               code: 'DECR stock:item:42',
               tool: 'Redis',
+              task: `Decrementa con DECR lo stock relativo all'articolo 42 nella chiave stock:item:42.`,
             },
             {
               english: 'FLUSHDB',
@@ -4942,6 +5205,7 @@ export default {
               code: 'FLUSHDB',
               tool: 'Redis',
               note: 'Pericoloso! Cancella tutto. In produzione disabilitato.',
+              task: 'Svuota completamente il database Redis corrente con il comando FLUSHDB.',
             },
           ],
         },
@@ -4961,6 +5225,7 @@ export default {
               difficulty: 'intermediate',
               code: 'LPUSH queue task1',
               tool: 'Redis',
+              task: 'Aggiungi un task in testa alla lista Redis queue tramite il comando LPUSH.',
             },
             {
               english: 'LPUSH',
@@ -4972,6 +5237,7 @@ export default {
               difficulty: 'intermediate',
               code: 'LPUSH tasks "send_email"',
               tool: 'Redis',
+              task: 'Inserisci con LPUSH il task send_email in testa alla lista tasks.',
             },
             {
               english: 'RPUSH',
@@ -4983,6 +5249,7 @@ export default {
               difficulty: 'intermediate',
               code: 'RPUSH log entry',
               tool: 'Redis',
+              task: 'Aggiungi con RPUSH la voce entry in coda alla lista log.',
             },
             {
               english: 'LPOP',
@@ -4995,6 +5262,7 @@ export default {
               difficulty: 'intermediate',
               code: 'LPOP tasks',
               tool: 'Redis',
+              task: 'Estrai con LPOP il primo elemento dalla lista tasks consumandolo dalla testa.',
             },
             {
               english: 'Redis Set Datatype',
@@ -5007,6 +5275,7 @@ export default {
               difficulty: 'intermediate',
               code: 'SADD users "marco"',
               tool: 'Redis',
+              task: `Aggiungi con SADD l'elemento marco al set Redis users di tipo Set.`,
             },
             {
               english: 'SADD',
@@ -5019,6 +5288,7 @@ export default {
               difficulty: 'intermediate',
               code: 'SADD tags:1 "ssr" "node"',
               tool: 'Redis',
+              task: `Aggiungi al set tags:1 con SADD gli elementi ssr e node in un'unica operazione.`,
             },
             {
               english: 'Redis Hash',
@@ -5031,6 +5301,7 @@ export default {
               difficulty: 'intermediate',
               code: 'HSET user:1 name Marco age 30',
               tool: 'Redis',
+              task: 'Memorizza con HSET sotto la chiave hash user:1 i campi name uguale a Marco e age uguale a 30.',
             },
             {
               english: 'HGET',
@@ -5042,6 +5313,7 @@ export default {
               difficulty: 'intermediate',
               code: 'HGET user:1 name',
               tool: 'Redis',
+              task: `Leggi con HGET il valore del campo name dall'hash user:1.`,
             },
             {
               english: 'Sorted Set',
@@ -5054,6 +5326,7 @@ export default {
               difficulty: 'intermediate',
               code: 'ZADD leaderboard 100 marco',
               tool: 'Redis',
+              task: `Inserisci con ZADD l'utente marco nel sorted set leaderboard assegnandogli il punteggio 100.`,
             },
             {
               english: 'ZADD',
@@ -5066,6 +5339,7 @@ export default {
               difficulty: 'intermediate',
               code: 'ZADD scores 95 alice 88 bob',
               tool: 'Redis',
+              task: 'Aggiungi al sorted set scores con ZADD i punteggi 95 di alice e 88 di bob in un solo comando.',
             },
           ],
         },
@@ -5086,6 +5360,7 @@ export default {
               code: 'EXPIRE session:abc 3600',
               tool: 'Redis',
               note: 'Time To Live.',
+              task: `Imposta con EXPIRE un TTL di 3600 secondi sulla chiave session:abc per farla scadere dopo un'ora.`,
             },
             {
               english: 'EXPIRE',
@@ -5098,6 +5373,7 @@ export default {
               difficulty: 'intermediate',
               code: 'EXPIRE user:1 60',
               tool: 'Redis',
+              task: 'Applica con EXPIRE una scadenza di 60 secondi sulla chiave user:1.',
             },
             {
               english: 'PERSIST',
@@ -5110,6 +5386,7 @@ export default {
               difficulty: 'intermediate',
               code: 'PERSIST session:abc',
               tool: 'Redis',
+              task: 'Rimuovi con PERSIST il TTL dalla chiave session:abc rendendola persistente.',
             },
             {
               english: 'Cache',
@@ -5181,6 +5458,7 @@ export default {
               difficulty: 'intermediate',
               code: 'maxmemory-policy allkeys-lru',
               tool: 'Redis',
+              task: 'Configura la politica di sfratto Redis impostando maxmemory-policy a allkeys-lru per liberare memoria.',
             },
           ],
         },
@@ -5212,6 +5490,7 @@ export default {
               difficulty: 'intermediate',
               code: 'PUBLISH news "hello"',
               tool: 'Redis',
+              task: 'Pubblica con PUBLISH il messaggio hello sul canale news per notificare i subscriber.',
             },
             {
               english: 'SUBSCRIBE',
@@ -5224,6 +5503,7 @@ export default {
               difficulty: 'intermediate',
               code: 'SUBSCRIBE news',
               tool: 'Redis',
+              task: 'Sottoscrivi il canale news con SUBSCRIBE per ricevere in tempo reale i messaggi pubblicati.',
             },
             {
               english: 'Channel',
@@ -5247,6 +5527,7 @@ export default {
               difficulty: 'intermediate',
               code: 'XADD events * type click user 1',
               tool: 'Redis',
+              task: 'Aggiungi allo stream events un evento con campi type e user usando XADD con id automatico.',
             },
             {
               english: 'XADD',
@@ -5258,6 +5539,7 @@ export default {
               difficulty: 'intermediate',
               code: 'XADD mystream * field1 value1',
               tool: 'Redis',
+              task: 'Inserisci con XADD una nuova entry nello stream mystream con field1 uguale a value1.',
             },
             {
               english: 'XREAD',
@@ -5270,6 +5552,7 @@ export default {
               difficulty: 'intermediate',
               code: 'XREAD COUNT 10 STREAMS mystream 0',
               tool: 'Redis',
+              task: `Leggi con XREAD le prime 10 entry dello stream mystream a partire dall'id 0.`,
             },
             {
               english: 'Consumer Group',
@@ -5282,6 +5565,7 @@ export default {
               difficulty: 'intermediate',
               code: 'XGROUP CREATE mystream workers $',
               tool: 'Redis',
+              task: 'Crea con XGROUP CREATE il consumer group workers sullo stream mystream a partire dalle nuove entry.',
             },
             {
               english: 'Redis Persistence',
@@ -5305,6 +5589,7 @@ export default {
               code: 'appendonly yes',
               tool: 'Redis',
               note: 'Append Only File: log persistente delle scritture Redis.',
+              task: 'Abilita la persistenza AOF di Redis impostando appendonly a yes nel file di configurazione.',
             },
           ],
         },
@@ -5332,6 +5617,7 @@ export default {
               context: 'optimization',
               difficulty: 'intermediate',
               code: 'EXPLAIN SELECT * FROM users WHERE id = 1;',
+              task: `Analizza con EXPLAIN il piano di esecuzione della SELECT che cerca l'utente con id 1.`,
             },
             {
               english: 'Execution Plan',
@@ -5354,6 +5640,7 @@ export default {
               code: 'EXPLAIN ANALYZE SELECT * FROM users WHERE active;',
               tool: 'PostgreSQL',
               note: 'Mostra tempi reali, non solo stime.',
+              task: 'Esegui realmente la query e misura tempi e righe con EXPLAIN ANALYZE sulla SELECT degli utenti attivi.',
             },
             {
               english: 'Cost',
@@ -5365,6 +5652,7 @@ export default {
               context: 'optimization',
               difficulty: 'intermediate',
               code: 'cost=0.00..15.50 rows=100',
+              task: 'Interpreta nel piano di EXPLAIN il costo stimato cost=0.00..15.50 e le 100 righe attese.',
             },
             {
               english: 'Sequential Scan',
@@ -5377,6 +5665,7 @@ export default {
               difficulty: 'intermediate',
               code: 'Seq Scan on users',
               tool: 'PostgreSQL',
+              task: 'Identifica nel piano la riga Seq Scan on users come indicatore di scansione sequenziale sulla tabella.',
             },
             {
               english: 'Nested Loop',
@@ -5421,6 +5710,7 @@ export default {
               difficulty: 'intermediate',
               code: 'EXPLAIN (ANALYZE, BUFFERS) SELECT ...',
               tool: 'PostgreSQL',
+              task: `Esegui EXPLAIN con le opzioni ANALYZE e BUFFERS per osservare l'utilizzo della cache durante la query.`,
             },
             {
               english: 'Estimated vs Actual',
@@ -5450,6 +5740,7 @@ export default {
               context: 'optimization',
               difficulty: 'intermediate',
               code: 'ANALYZE users;',
+              task: 'Aggiorna le statistiche della tabella users eseguendo il comando ANALYZE.',
             },
             {
               english: 'ANALYZE',
@@ -5462,6 +5753,7 @@ export default {
               difficulty: 'intermediate',
               code: 'ANALYZE VERBOSE users;',
               tool: 'PostgreSQL',
+              task: 'Aggiorna in modalità verbose le statistiche della tabella users con il comando ANALYZE VERBOSE.',
             },
             {
               english: 'Histogram',
@@ -5544,6 +5836,7 @@ export default {
               difficulty: 'intermediate',
               code: 'ALTER TABLE users ALTER COLUMN id SET STATISTICS 1000;',
               tool: 'PostgreSQL',
+              task: 'Aumenta la dimensione del campione per la colonna id della tabella users impostando STATISTICS a 1000.',
             },
           ],
         },
@@ -5573,6 +5866,7 @@ export default {
               difficulty: 'intermediate',
               code: 'log_min_duration_statement = 1000',
               tool: 'PostgreSQL, MySQL',
+              task: 'Abilita il log delle query lente impostando log_min_duration_statement a 1000 millisecondi.',
             },
             {
               english: 'pg_stat_statements',
@@ -5586,6 +5880,7 @@ export default {
               code: 'SELECT * FROM pg_stat_statements ORDER BY total_time DESC;',
               tool: 'PostgreSQL',
               note: 'Estensione PostgreSQL che registra statistiche di esecuzione per ogni query.',
+              task: 'Identifica le query più costose interrogando pg_stat_statements ordinate per total_time decrescente.',
             },
             {
               english: 'N+1 Problem',
@@ -5607,6 +5902,7 @@ export default {
               difficulty: 'intermediate',
               code: 'User.findAll({ include: [Order] })',
               note: 'Risolve il problema N+1.',
+              task: `Carica gli utenti con i relativi ordini in un'unica chiamata applicando l'eager loading tramite include su Order.`,
             },
             {
               english: 'Lazy Loading',
@@ -5659,6 +5955,7 @@ export default {
               difficulty: 'intermediate',
               code: '/*+ INDEX(users idx_email) */',
               tool: 'Oracle, MySQL',
+              task: `Suggerisci all'ottimizzatore di usare l'indice idx_email sulla tabella users tramite un query hint in commento.`,
             },
           ],
         },
@@ -5759,6 +6056,7 @@ export default {
               difficulty: 'intermediate',
               code: 'shared_buffers = 4GB',
               tool: 'PostgreSQL',
+              task: 'Configura shared_buffers a 4GB per dedicare memoria sufficiente alla cache delle pagine di PostgreSQL.',
             },
             {
               english: 'Hot Path',
@@ -5794,6 +6092,7 @@ export default {
               context: 'administration',
               difficulty: 'intermediate',
               command: 'pg_dump mydb > backup.sql',
+              task: `Esegui un backup logico di mydb redirigendo l'output di pg_dump in backup.sql per archiviarlo su S3.`,
             },
             {
               english: 'Full Backup',
@@ -5825,6 +6124,7 @@ export default {
               command: 'pg_dump -U postgres mydb -F c -f backup.dump',
               tool: 'PostgreSQL',
               note: 'Utility a riga di comando di PostgreSQL per backup logici.',
+              task: 'Esporta mydb come dump in formato custom con pg_dump -U postgres -F c -f backup.dump per restore selettivo per tabella.',
             },
             {
               english: 'mysqldump',
@@ -5838,6 +6138,7 @@ export default {
               command: 'mysqldump -u root -p mydb > backup.sql',
               tool: 'MySQL',
               note: 'Utility a riga di comando di MySQL/MariaDB per backup logici.',
+              task: 'Lancia mysqldump come root salvando mydb in backup.sql, usando --single-transaction per evitare lock sulle tabelle InnoDB.',
             },
             {
               english: 'Logical Backup',
@@ -5890,6 +6191,7 @@ export default {
               context: 'administration',
               difficulty: 'intermediate',
               code: '0 3 * * * /usr/local/bin/backup.sh',
+              task: 'Schedula in cron una riga 0 3 * * * che invoca /usr/local/bin/backup.sh ogni notte alle 3 del mattino.',
             },
           ],
         },
@@ -5907,6 +6209,7 @@ export default {
               context: 'administration',
               difficulty: 'intermediate',
               command: 'pg_restore -d mydb backup.dump',
+              task: 'Ripristina mydb dal file backup.dump con pg_restore -d, poi verifica i conteggi di riga sulle tabelle critiche.',
             },
             {
               english: 'pg_restore',
@@ -5920,6 +6223,7 @@ export default {
               command: 'pg_restore -U postgres -d mydb backup.dump',
               tool: 'PostgreSQL',
               note: 'Utility a riga di comando di PostgreSQL per ripristinare dump in formato custom o directory.',
+              task: 'Lancia pg_restore -U postgres -d mydb backup.dump aggiungendo -j 4 per parallelizzare il restore con quattro worker.',
             },
             {
               english: 'Point-in-Time Recovery',
@@ -5932,6 +6236,7 @@ export default {
               code: "recovery_target_time = '2026-04-26 14:00:00'",
               tool: 'PostgreSQL',
               note: 'Abbreviato PITR.',
+              task: `Imposta recovery_target_time a '2026-04-26 14:00:00' nel recovery.conf per fare PITR fino a quel preciso istante.`,
             },
             {
               english: 'Disaster Recovery',
@@ -5974,6 +6279,7 @@ export default {
               difficulty: 'intermediate',
               code: "archive_command = 'cp %p /archive/%f'",
               tool: 'PostgreSQL',
+              task: `Configura archive_command come 'cp %p /archive/%f' in postgresql.conf per archiviare ogni segmento WAL chiuso.`,
             },
             {
               english: 'Standby',
@@ -6031,6 +6337,7 @@ export default {
               context: 'administration',
               difficulty: 'intermediate',
               code: "CREATE USER alice WITH PASSWORD 'secret';",
+              task: `Crea l'utente alice con password 'secret' tramite CREATE USER WITH PASSWORD per dargli accesso al cluster.`,
             },
             {
               english: 'CREATE ROLE',
@@ -6043,6 +6350,7 @@ export default {
               difficulty: 'intermediate',
               code: 'CREATE ROLE app_readonly;',
               tool: 'PostgreSQL',
+              task: 'Definisci un ruolo di gruppo app_readonly con CREATE ROLE per concentrare poi i grant in sola lettura su un unico contenitore.',
             },
             {
               english: 'GRANT',
@@ -6054,6 +6362,7 @@ export default {
               context: 'administration',
               difficulty: 'intermediate',
               code: 'GRANT SELECT ON users TO alice;',
+              task: 'Concedi ad alice il privilegio SELECT sulla tabella users tramite GRANT SELECT ON users TO alice.',
             },
             {
               english: 'REVOKE',
@@ -6065,6 +6374,7 @@ export default {
               context: 'administration',
               difficulty: 'intermediate',
               code: 'REVOKE INSERT ON users FROM alice;',
+              task: 'Revoca ad alice il privilegio INSERT sulla tabella users con REVOKE INSERT ON users FROM alice.',
             },
             {
               english: 'Privilege',
@@ -6076,6 +6386,7 @@ export default {
               context: 'administration',
               difficulty: 'intermediate',
               code: 'SELECT, INSERT, UPDATE, DELETE',
+              task: 'Assegna i quattro privilegi SELECT, INSERT, UPDATE, DELETE separatamente al ruolo applicativo per consentire la CRUD completa.',
             },
             {
               english: 'Role',
@@ -6088,6 +6399,7 @@ export default {
               difficulty: 'intermediate',
               code: 'GRANT app_readonly TO alice;',
               tool: 'PostgreSQL',
+              task: `Assegna il ruolo app_readonly all'utente alice con GRANT app_readonly TO alice invece di permessi per singola tabella.`,
             },
             {
               english: 'Superuser',
@@ -6099,6 +6411,7 @@ export default {
               context: 'administration',
               difficulty: 'intermediate',
               code: 'ALTER USER admin WITH SUPERUSER;',
+              task: `Promuovi l'account admin a superuser con ALTER USER admin WITH SUPERUSER, riservandolo a procedure break-glass.`,
             },
             {
               english: 'Least Privilege',
@@ -6123,6 +6436,7 @@ export default {
               code: 'host all all 0.0.0.0/0 md5',
               tool: 'PostgreSQL',
               note: 'File di configurazione PostgreSQL per Host-Based Authentication.',
+              task: `Aggiungi a pg_hba.conf la riga host all all 0.0.0.0/0 md5 e ricarica PostgreSQL per applicare l'host-based authentication.`,
             },
           ],
         },
@@ -6160,6 +6474,7 @@ export default {
               difficulty: 'intermediate',
               code: 'SELECT COUNT(*) FROM pg_stat_activity;',
               tool: 'PostgreSQL',
+              task: 'Interroga pg_stat_activity con SELECT COUNT(*) per misurare le connessioni attive e confrontarle con max_connections.',
             },
             {
               english: 'Cache Hit Ratio',
@@ -6183,6 +6498,7 @@ export default {
               difficulty: 'intermediate',
               code: "SELECT * FROM pg_stat_activity WHERE state = 'active' AND query_start < NOW() - INTERVAL '5 minutes';",
               tool: 'PostgreSQL',
+              task: `Filtra pg_stat_activity per state='active' e query_start anteriore a NOW() - INTERVAL '5 minutes' per stanare le query incagliate.`,
             },
             {
               english: 'Lock Contention',
@@ -6195,6 +6511,7 @@ export default {
               difficulty: 'intermediate',
               code: 'SELECT * FROM pg_locks WHERE NOT granted;',
               tool: 'PostgreSQL',
+              task: 'Interroga pg_locks filtrando WHERE NOT granted per individuare la contesa di lock e capire chi sta bloccando chi.',
             },
             {
               english: 'Disk Usage',
@@ -6207,6 +6524,7 @@ export default {
               difficulty: 'intermediate',
               code: "SELECT pg_size_pretty(pg_database_size('mydb'));",
               tool: 'PostgreSQL',
+              task: `Stima lo spazio occupato da mydb chiamando pg_size_pretty(pg_database_size('mydb')) per intercettare in tempo la saturazione del volume.`,
             },
             {
               english: 'Alert',
@@ -6238,6 +6556,7 @@ export default {
               context: 'administration',
               difficulty: 'intermediate',
               code: 'SELECT 1;',
+              task: 'Esponi un /healthz che esegue SELECT 1 sul database per dare al load balancer un segnale di vita immediato.',
             },
           ],
         },
@@ -6308,6 +6627,7 @@ export default {
               difficulty: 'advanced',
               code: 'CREATE PUBLICATION pub FOR ALL TABLES;',
               tool: 'PostgreSQL',
+              task: 'Pubblica tutte le tabelle al subscriber con CREATE PUBLICATION pub FOR ALL TABLES per impostare la replica logica tra due major version.',
             },
             {
               english: 'Physical Replication',
@@ -6339,6 +6659,7 @@ export default {
               difficulty: 'advanced',
               code: 'synchronous_commit = on',
               tool: 'PostgreSQL',
+              task: 'Imposta synchronous_commit = on in postgresql.conf affinché ogni COMMIT attenda la conferma dalla replica sincrona.',
             },
             {
               english: 'Semi-Synchronous',
@@ -6362,6 +6683,7 @@ export default {
               difficulty: 'advanced',
               code: 'SELECT NOW() - pg_last_xact_replay_timestamp();',
               tool: 'PostgreSQL',
+              task: 'Calcola il lag della replica con SELECT NOW() - pg_last_xact_replay_timestamp() e configura un alert oltre i 5 secondi.',
             },
           ],
         },
@@ -6615,6 +6937,7 @@ export default {
               command: 'pg_basebackup -h primary -D /data -U replicator',
               tool: 'PostgreSQL',
               note: 'Utility PostgreSQL per creare backup fisici a livello di file.',
+              task: 'Inizializza una nuova replica con pg_basebackup -h primary -D /data -U replicator copiando la directory dati dal primario.',
             },
             {
               english: 'PgBouncer',
@@ -6800,6 +7123,7 @@ export default {
               context: 'replication',
               difficulty: 'advanced',
               code: 'shard = hash(key) % num_shards',
+              task: 'Calcola lo shard di destinazione con shard = hash(key) % num_shards per distribuire uniformemente le chiavi sui nodi.',
             },
             {
               english: 'Directory-Based Sharding',
@@ -6957,6 +7281,7 @@ export default {
               difficulty: 'advanced',
               code: 'CREATE TABLE measurements (...) PARTITION BY RANGE (date);',
               tool: 'PostgreSQL',
+              task: 'Crea la tabella measurements con PARTITION BY RANGE (date) per dividerla mensilmente e poi archiviare le partizioni vecchie.',
             },
             {
               english: 'Range Partitioning',
@@ -6968,6 +7293,7 @@ export default {
               context: 'replication',
               difficulty: 'advanced',
               code: 'PARTITION BY RANGE (created_at)',
+              task: 'Dichiara PARTITION BY RANGE (created_at) sulla tabella padre cosi ogni partizione mensile contenga una fetta temporale netta.',
             },
             {
               english: 'List Partitioning',
@@ -6978,6 +7304,7 @@ export default {
               context: 'replication',
               difficulty: 'advanced',
               code: 'PARTITION BY LIST (country)',
+              task: 'Adotta PARTITION BY LIST (country) sulla tabella padre per isolare le righe di ogni nazione in una partizione dedicata.',
             },
             {
               english: 'Hash Partitioning',
@@ -6988,6 +7315,7 @@ export default {
               context: 'replication',
               difficulty: 'advanced',
               code: 'PARTITION BY HASH (user_id)',
+              task: 'Distribuisci le righe con PARTITION BY HASH (user_id) su 16 partizioni quando manca una chiave di range naturale.',
             },
             {
               english: 'Partition Pruning',
@@ -7052,6 +7380,7 @@ export default {
               difficulty: 'advanced',
               code: 'ALTER TABLE measurements DETACH PARTITION measurements_2024;',
               tool: 'PostgreSQL',
+              task: 'Stacca la partizione del 2024 con ALTER TABLE measurements DETACH PARTITION measurements_2024 per archiviarla senza scansionare il padre.',
             },
           ],
         },
@@ -7191,6 +7520,7 @@ export default {
               difficulty: 'advanced',
               code: 'CREATE TABLE events (data JSONB);',
               tool: 'PostgreSQL',
+              task: 'Crea la tabella events con una colonna data di tipo JSONB per memorizzare payload webhook indicizzabili via GIN.',
             },
             {
               english: 'Array Type',
@@ -7202,6 +7532,7 @@ export default {
               difficulty: 'advanced',
               code: "tags TEXT[] DEFAULT '{}'",
               tool: 'PostgreSQL',
+              task: `Dichiara una colonna tags TEXT[] DEFAULT '{}' per salvare un array di etichette filtrabile con l'operatore di overlap &&.`,
             },
             {
               english: 'HSTORE',
@@ -7214,6 +7545,7 @@ export default {
               difficulty: 'advanced',
               code: 'attributes HSTORE',
               tool: 'PostgreSQL',
+              task: 'Dichiara una colonna attributes HSTORE quando devi salvare un dizionario chiave-valore piatto senza alcun bisogno di annidamento.',
             },
             {
               english: 'Range Type',
@@ -7226,6 +7558,7 @@ export default {
               difficulty: 'advanced',
               code: 'period TSRANGE',
               tool: 'PostgreSQL',
+              task: 'Modella la colonna period come TSRANGE per rappresentare una finestra temporale e applicarvi un vincolo di esclusione GiST.',
             },
             {
               english: 'PostGIS',
@@ -7237,6 +7570,7 @@ export default {
               difficulty: 'advanced',
               code: 'CREATE EXTENSION postgis;',
               tool: 'PostgreSQL',
+              task: 'Abilita le funzioni spaziali eseguendo CREATE EXTENSION postgis prima di eseguire query ST_DWithin sulle coordinate dei negozi.',
             },
             {
               english: 'Extension',
@@ -7249,6 +7583,7 @@ export default {
               difficulty: 'advanced',
               code: 'CREATE EXTENSION pg_trgm;',
               tool: 'PostgreSQL',
+              task: `Installa l'estensione pg_trgm con CREATE EXTENSION pg_trgm per abilitare la ricerca fuzzy via trigrammi sulle colonne testuali.`,
             },
             {
               english: 'Foreign Data Wrapper',
@@ -7261,6 +7596,7 @@ export default {
               difficulty: 'advanced',
               code: 'CREATE EXTENSION postgres_fdw;',
               tool: 'PostgreSQL',
+              task: 'Attiva CREATE EXTENSION postgres_fdw per interrogare un database Postgres remoto come se fosse locale, senza pipeline ETL.',
             },
             {
               english: 'Listen/Notify',
@@ -7273,6 +7609,7 @@ export default {
               difficulty: 'advanced',
               code: "NOTIFY channel, 'message';",
               tool: 'PostgreSQL',
+              task: `Pubblica un evento di invalidazione cache con NOTIFY channel, 'message' verso i worker in ascolto sul canale.`,
             },
             {
               english: 'Logical Decoding',
@@ -7296,6 +7633,7 @@ export default {
               difficulty: 'advanced',
               code: "CREATE TABLESPACE fast LOCATION '/mnt/ssd';",
               tool: 'PostgreSQL',
+              task: `Definisci un tablespace fast con CREATE TABLESPACE fast LOCATION '/mnt/ssd' per spostare gli indici caldi sul volume NVMe.`,
             },
           ],
         },
@@ -7362,6 +7700,7 @@ export default {
               code: 'log_bin = ON',
               tool: 'MySQL',
               note: 'Abbreviato binlog. Usato per replication e PITR.',
+              task: 'Abilita il binary log impostando log_bin = ON in my.cnf per alimentare repliche e pipeline CDC con le modifiche di riga.',
             },
             {
               english: 'GTID',
@@ -7375,6 +7714,7 @@ export default {
               code: 'gtid_mode = ON',
               tool: 'MySQL',
               note: 'Global Transaction IDentifier.',
+              task: 'Attiva la replica basata su GTID impostando gtid_mode = ON cosi un failover non richieda di tracciare manualmente gli offset del binlog.',
             },
             {
               english: 'Group Replication',
@@ -7408,6 +7748,7 @@ export default {
               difficulty: 'advanced',
               code: 'SELECT * FROM information_schema.tables;',
               tool: 'MySQL, PostgreSQL',
+              task: 'Interroga information_schema.tables con SELECT * per enumerare ogni tabella del cluster e filtrarla per dimensione.',
             },
             {
               english: 'mysqlbinlog',
@@ -7420,6 +7761,7 @@ export default {
               difficulty: 'advanced',
               command: 'mysqlbinlog binlog.000001',
               tool: 'MySQL',
+              task: 'Decodifica gli eventi di binlog.000001 lanciando mysqlbinlog per ricostruire gli statement eseguiti nella finestra incidentale.',
             },
           ],
         },
@@ -7439,6 +7781,7 @@ export default {
               difficulty: 'advanced',
               command: 'sqlplus / as sysdba',
               tool: 'Oracle',
+              task: 'Apri una sessione amministrativa locale su Oracle eseguendo sqlplus / as sysdba per gestire tablespace e parametri.',
             },
             {
               english: 'SQL Server',
@@ -7474,6 +7817,7 @@ export default {
               difficulty: 'advanced',
               command: 'sqlcmd -S server -d mydb',
               tool: 'SQL Server',
+              task: `Connettiti all'istanza SQL Server con sqlcmd -S server -d mydb per applicare uno script di migrazione di schema.`,
             },
             {
               english: 'Tablespace (Oracle)',
@@ -7686,6 +8030,7 @@ export default {
               context: 'modeling',
               difficulty: 'advanced',
               code: 'CREATE TABLE fact_sales (id INT, date_id INT, product_id INT, amount DECIMAL);',
+              task: 'Crea la fact_sales con id, date_id, product_id e amount DECIMAL per registrare una riga per evento di vendita.',
             },
             {
               english: 'Dimension Table',
@@ -7697,6 +8042,7 @@ export default {
               context: 'modeling',
               difficulty: 'advanced',
               code: 'CREATE TABLE dim_product (id INT, name VARCHAR, category VARCHAR);',
+              task: 'Definisci la dimension dim_product con id, name e category denormalizzati cosi gli analisti filtrino senza fare join.',
             },
             {
               english: 'Snowflake Schema',
@@ -7730,6 +8076,7 @@ export default {
               context: 'modeling',
               difficulty: 'advanced',
               code: 'product_sk INT PRIMARY KEY',
+              task: 'Dichiara product_sk INT PRIMARY KEY sulla dimensione cosi un cambio di codice sorgente non infranga i fatti storici.',
             },
             {
               english: 'Dimensional Natural Key',
@@ -7741,6 +8088,7 @@ export default {
               context: 'modeling',
               difficulty: 'advanced',
               code: 'product_code VARCHAR(20)',
+              task: 'Aggiungi accanto alla surrogata una colonna product_code VARCHAR(20) come chiave naturale per agganciare gli export OLTP.',
             },
             {
               english: 'Grain',
@@ -7830,6 +8178,7 @@ export default {
               context: 'modeling',
               difficulty: 'advanced',
               code: 'effective_from DATE, effective_to DATE',
+              task: 'Inserisci effective_from DATE ed effective_to DATE nella dimensione per delimitare la validità temporale di ogni versione.',
             },
             {
               english: 'Current Flag',
@@ -7840,6 +8189,7 @@ export default {
               context: 'modeling',
               difficulty: 'advanced',
               code: 'is_current BOOLEAN DEFAULT TRUE',
+              task: 'Aggiungi una colonna is_current BOOLEAN DEFAULT TRUE alla dimensione per filtrare velocemente la versione vigente.',
             },
             {
               english: 'Bitemporal',
@@ -8051,6 +8401,7 @@ export default {
               context: 'modeling',
               difficulty: 'advanced',
               code: "path = '/1/3/7/12/'",
+              task: `Memorizza un materialized path tipo '/1/3/7/12/' su ogni nodo cosi una sola LIKE recuperi tutti i discendenti.`,
             },
             {
               english: 'Adjacency List',
@@ -8062,6 +8413,7 @@ export default {
               context: 'modeling',
               difficulty: 'advanced',
               code: 'parent_id INT REFERENCES nodes(id)',
+              task: `Modella l'albero con parent_id INT REFERENCES nodes(id) e attraversalo poi con una CTE ricorsiva quando serve.`,
             },
             {
               english: 'Nested Set',
@@ -8133,6 +8485,7 @@ export default {
               difficulty: 'advanced',
               code: "-- BAD: 'SELECT * FROM users WHERE name = ' + input",
               note: 'Top vulnerabilità OWASP. Sempre prevenire.',
+              task: `Ricrea il caso peggiore di SQL injection concatenando l'input in 'SELECT * FROM users WHERE name = ' + input e osservane l'impatto.`,
             },
             {
               english: 'Parameterized Query',
@@ -8145,6 +8498,7 @@ export default {
               difficulty: 'advanced',
               code: 'SELECT * FROM users WHERE name = $1',
               note: 'Mai concatenare input utente nelle query!',
+              task: `Riscrivi la query in forma parametrizzata SELECT * FROM users WHERE name = $1 lasciando al driver l'escape del valore.`,
             },
             {
               english: 'Prepared Statement',
@@ -8155,6 +8509,7 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               code: 'PREPARE q AS SELECT * FROM users WHERE id = $1; EXECUTE q(1);',
+              task: 'Dichiara PREPARE q AS SELECT * FROM users WHERE id = $1 e poi invoca EXECUTE q(1) per riusare il piano in sicurezza.',
             },
             {
               english: 'Bind Parameter',
@@ -8165,6 +8520,7 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               code: 'cur.execute("... WHERE id = %s", (user_id,))',
+              task: `Passa user_id come bind parameter con cur.execute('... WHERE id = %s', (user_id,)) cosi le virgolette restino dato non codice.`,
             },
             {
               english: 'Escape',
@@ -8216,6 +8572,7 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               code: '-- "OR pg_sleep(5)"',
+              task: `Riproduci un payload time-based del tipo "OR pg_sleep(5)" per misurare il ritardo della risposta e confermare l'iniezione.`,
             },
             {
               english: 'sqlmap',
@@ -8228,6 +8585,7 @@ export default {
               difficulty: 'advanced',
               command: 'sqlmap -u "http://target/page?id=1"',
               tool: 'sqlmap',
+              task: 'Avvia sqlmap -u "http://target/page?id=1" contro uno staging per verificare se il parametro id è realmente sfruttabile.',
             },
           ],
         },
@@ -8278,6 +8636,7 @@ export default {
               difficulty: 'advanced',
               code: "pgcrypto: pgp_sym_encrypt(data, 'key')",
               tool: 'PostgreSQL',
+              task: `Applica pgp_sym_encrypt(data, 'key') di pgcrypto sulla colonna sensibile cosi anche i DBA vedano solo ciphertext.`,
             },
             {
               english: 'pgcrypto',
@@ -8289,6 +8648,7 @@ export default {
               difficulty: 'advanced',
               code: 'CREATE EXTENSION pgcrypto;',
               tool: 'PostgreSQL',
+              task: 'Abilita la libreria crittografica con CREATE EXTENSION pgcrypto per usare crypt(), gen_salt() e pgp_sym_encrypt() nelle query.',
             },
             {
               english: 'Hashing',
@@ -8300,6 +8660,7 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               code: "crypt(password, gen_salt('bf'))",
+              task: `Esegui l'hash della password chiamando crypt(password, gen_salt('bf')) cosi ogni riga porti un salt bcrypt proprio.`,
             },
             {
               english: 'Salt',
@@ -8343,6 +8704,7 @@ export default {
               difficulty: 'advanced',
               code: 'sslmode=require',
               tool: 'PostgreSQL',
+              task: 'Imponi al driver sslmode=require nella stringa di connessione per rifiutare qualsiasi tentativo di handshake in chiaro.',
             },
           ],
         },
@@ -8421,6 +8783,7 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               code: "CASE WHEN role='admin' THEN ssn ELSE '***' END",
+              task: `Esponi la colonna sensibile come CASE WHEN role='admin' THEN ssn ELSE '***' END per mascherare il dato ai non-amministratori.`,
             },
             {
               english: 'Anonymization',
@@ -8468,6 +8831,7 @@ export default {
               difficulty: 'advanced',
               code: 'CREATE POLICY user_isolation ON orders USING (user_id = current_user_id());',
               tool: 'PostgreSQL',
+              task: 'Crea la policy user_isolation su orders con USING (user_id = current_user_id()) per filtrare le righe per sessione.',
             },
             {
               english: 'Column-Level Security',
@@ -8479,6 +8843,7 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               code: 'GRANT SELECT (id, name) ON users TO public;',
+              task: 'Limita le colonne leggibili con GRANT SELECT (id, name) ON users TO public lasciando il resto delle colonne fuori portata.',
             },
             {
               english: 'RBAC',
@@ -8521,6 +8886,7 @@ export default {
               difficulty: 'advanced',
               code: 'CREATE FUNCTION ... SECURITY DEFINER',
               tool: 'PostgreSQL',
+              task: `Marca la funzione di rotazione con CREATE FUNCTION ... SECURITY DEFINER cosi l'utente la esegua con i privilegi del proprietario.`,
             },
             {
               english: 'View-Based Security',
@@ -8532,6 +8898,7 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               code: 'CREATE VIEW user_view AS SELECT id, name FROM users;',
+              task: 'Crea CREATE VIEW user_view AS SELECT id, name FROM users e revoca la tabella sottostante ai ruoli applicativi.',
             },
             {
               english: 'Network ACL',
@@ -8543,6 +8910,7 @@ export default {
               difficulty: 'advanced',
               code: 'host all all 10.0.0.0/24 md5',
               tool: 'PostgreSQL',
+              task: `Restringi l'accesso in pg_hba.conf con host all all 10.0.0.0/24 md5 ammettendo soltanto la subnet applicativa.`,
             },
             {
               english: 'Service Account',
@@ -9064,6 +9432,7 @@ export default {
               difficulty: 'advanced',
               code: '(:Person {name: "Marco"})',
               tool: 'Neo4j',
+              task: 'Rappresenta una persona nel property graph come (:Person {name: "Marco"}) assegnandole label e proprietà chiave-valore.',
             },
             {
               english: 'Property Graph Edge',
@@ -9076,6 +9445,7 @@ export default {
               difficulty: 'advanced',
               code: '(a)-[:KNOWS]->(b)',
               tool: 'Neo4j',
+              task: `Collega due nodi con (a)-[:KNOWS]->(b) attaccando all'arco proprietà come un timestamp since per pesare la connessione.`,
             },
             {
               english: 'Relationship (Graph)',
@@ -9087,6 +9457,7 @@ export default {
               context: 'nosql',
               difficulty: 'advanced',
               code: '-[:FRIEND_OF]->',
+              task: 'Disegna una relationship -[:FRIEND_OF]-> tra due nodi User per attraversare la rete sociale in millisecondi.',
             },
             {
               english: 'Property Graph',
@@ -9118,6 +9489,7 @@ export default {
               context: 'nosql',
               difficulty: 'advanced',
               code: '<Marco> <knows> <Anna> .',
+              task: 'Scrivi un fatto RDF come <Marco> <knows> <Anna> . per registrare un singolo arco etichettato subject-predicate-object.',
             },
             {
               english: 'Traversal',
@@ -9139,6 +9511,7 @@ export default {
               difficulty: 'advanced',
               code: 'shortestPath((a)-[*]-(b))',
               tool: 'Neo4j',
+              task: 'Invoca shortestPath((a)-[*]-(b)) in Cypher per trovare il cammino minimo di hop tra due nodi del grafo.',
             },
             {
               english: 'Adjacency',
@@ -9167,6 +9540,7 @@ export default {
               difficulty: 'advanced',
               code: 'MATCH (n:Person) RETURN n;',
               tool: 'Neo4j',
+              task: `Estrai tutti i nodi Person scrivendo la query Cypher MATCH (n:Person) RETURN n per ottenere l'elenco completo.`,
             },
             {
               english: 'MATCH',
@@ -9179,6 +9553,7 @@ export default {
               difficulty: 'advanced',
               code: 'MATCH (a)-[:FRIEND]->(b)',
               tool: 'Neo4j',
+              task: 'Aggancia il pattern degli amici diretti con MATCH (a)-[:FRIEND]->(b) per esplorare la rete di amicizie.',
             },
             {
               english: 'CREATE (Cypher)',
@@ -9191,6 +9566,7 @@ export default {
               difficulty: 'advanced',
               code: 'CREATE (a:Person {name: "Marco"})',
               tool: 'Neo4j',
+              task: 'Inserisci un nuovo nodo persona con CREATE (a:Person {name: "Marco"}) per popolare il grafo iniziale.',
             },
             {
               english: 'MERGE',
@@ -9202,6 +9578,7 @@ export default {
               difficulty: 'advanced',
               code: 'MERGE (a:Person {email: "x@y.com"})',
               tool: 'Neo4j',
+              task: `Garantisci l'idempotenza usando MERGE (a:Person {email: "x@y.com"}) cosi rieseguire il load non duplichi nodi.`,
             },
             {
               english: 'RETURN',
@@ -9213,6 +9590,7 @@ export default {
               difficulty: 'advanced',
               code: 'RETURN n.name, n.age',
               tool: 'Neo4j',
+              task: 'Proietta soltanto le colonne utili al chiamante chiudendo la query con RETURN n.name, n.age.',
             },
             {
               english: 'Pattern',
@@ -9225,6 +9603,7 @@ export default {
               difficulty: 'advanced',
               code: '(a)-[r:KNOWS]->(b)',
               tool: 'Neo4j',
+              task: `Modella un pattern Cypher come (a)-[r:KNOWS]->(b) per matchare due nodi collegati dall'arco KNOWS.`,
             },
             {
               english: 'Variable Length',
@@ -9237,6 +9616,7 @@ export default {
               difficulty: 'advanced',
               code: 'MATCH (a)-[:KNOWS*1..3]->(b)',
               tool: 'Neo4j',
+              task: 'Cerca utenti entro tre gradi di separazione con MATCH (a)-[:KNOWS*1..3]->(b) usando un pattern di lunghezza variabile.',
             },
             {
               english: 'WHERE (Cypher)',
@@ -9248,6 +9628,7 @@ export default {
               difficulty: 'advanced',
               code: 'MATCH (n) WHERE n.age > 18 RETURN n',
               tool: 'Neo4j',
+              task: 'Filtra i nodi adulti aggiungendo WHERE n.age > 18 dopo MATCH (n) per restringere il risultato.',
             },
             {
               english: 'Cypher WITH',
@@ -9260,6 +9641,7 @@ export default {
               difficulty: 'advanced',
               code: 'MATCH (n) WITH n LIMIT 10 RETURN n',
               tool: 'Neo4j',
+              task: 'Concatena due fasi della query usando MATCH (n) WITH n LIMIT 10 RETURN n per passare i primi dieci nodi alla fase successiva.',
             },
             {
               english: 'APOC',
@@ -9402,6 +9784,7 @@ export default {
               difficulty: 'advanced',
               command: 'cypher-shell',
               tool: 'Neo4j',
+              task: `Apri una sessione interattiva contro l'istanza Neo4j eseguendo cypher-shell e lanciando le tue prime query MATCH.`,
             },
             {
               english: 'ArangoDB',
@@ -9445,6 +9828,7 @@ export default {
               difficulty: 'advanced',
               code: "g.V().has('name', 'Marco')",
               tool: 'Apache TinkerPop',
+              task: `Attraversa il grafo TinkerPop con g.V().has('name', 'Marco') per recuperare il vertice di Marco e seguire i suoi archi.`,
             },
             {
               english: 'TinkerPop',
@@ -9557,6 +9941,7 @@ export default {
               difficulty: 'advanced',
               code: 'cpu_usage,host=server1,region=eu value=72',
               tool: 'InfluxDB',
+              task: 'Scrivi su InfluxDB una line cpu_usage,host=server1,region=eu value=72 cosi le tag indicizzino host e regione.',
             },
             {
               english: 'Time-Series Field',
@@ -9600,6 +9985,7 @@ export default {
               difficulty: 'advanced',
               code: "time_bucket('1 hour', ts)",
               tool: 'TimescaleDB',
+              task: `Aggrega le letture in finestre orarie con time_bucket('1 hour', ts) per ridurre il volume da scansionare.`,
             },
             {
               english: 'Window Aggregate',
@@ -9637,6 +10023,7 @@ export default {
               difficulty: 'advanced',
               code: 'CREATE RETENTION POLICY rp1 ON db DURATION 30d REPLICATION 1;',
               tool: 'InfluxDB',
+              task: 'Limita la storicizzazione con CREATE RETENTION POLICY rp1 ON db DURATION 30d REPLICATION 1 per scadere i dati grezzi.',
             },
             {
               english: 'Downsampling',
@@ -9660,6 +10047,7 @@ export default {
               difficulty: 'advanced',
               code: "CREATE MATERIALIZED VIEW hourly WITH (timescaledb.continuous) AS SELECT time_bucket('1 hour', ts), AVG(value) FROM data GROUP BY 1;",
               tool: 'TimescaleDB',
+              task: `Costruisci un aggregato continuo con CREATE MATERIALIZED VIEW hourly WITH (timescaledb.continuous) AS SELECT time_bucket('1 hour', ts), AVG(value) FROM data GROUP BY 1 per riassunto orario.`,
             },
             {
               english: 'Continuous Query',
@@ -9683,6 +10071,7 @@ export default {
               difficulty: 'advanced',
               code: 'ALTER TABLE measurements SET (timescaledb.compress);',
               tool: 'TimescaleDB',
+              task: 'Attiva la compressione nativa con ALTER TABLE measurements SET (timescaledb.compress) cosi i chunk vecchi occupino una frazione del disco.',
             },
             {
               english: 'Hypertable',
@@ -9696,6 +10085,7 @@ export default {
               code: "SELECT create_hypertable('metrics', 'ts');",
               tool: 'TimescaleDB',
               note: 'Tabella partizionata automaticamente per tempo.',
+              task: `Trasforma metrics in hypertable invocando SELECT create_hypertable('metrics', 'ts') per partizionare automaticamente per tempo.`,
             },
             {
               english: 'Chunk',
@@ -9719,6 +10109,7 @@ export default {
               difficulty: 'advanced',
               code: "SELECT drop_chunks(INTERVAL '30 days', 'metrics');",
               tool: 'TimescaleDB',
+              task: `Pulisci i dati vecchi chiamando SELECT drop_chunks(INTERVAL '30 days', 'metrics') per recuperare spazio sul nodo analytics.`,
             },
             {
               english: 'TTL (TSDB)',
@@ -9759,6 +10150,7 @@ export default {
               difficulty: 'advanced',
               command: 'influx',
               tool: 'InfluxDB',
+              task: 'Avvia la CLI di InfluxDB lanciando influx per interrogare le serie temporali e gestire database e retention.',
             },
             {
               english: 'InfluxQL',
@@ -9771,6 +10163,7 @@ export default {
               difficulty: 'advanced',
               code: 'SELECT mean(value) FROM cpu WHERE time > now() - 1h GROUP BY time(5m)',
               tool: 'InfluxDB',
+              task: 'Calcola la media oraria CPU con SELECT mean(value) FROM cpu WHERE time > now() - 1h GROUP BY time(5m).',
             },
             {
               english: 'Flux',
@@ -9794,6 +10187,7 @@ export default {
               difficulty: 'advanced',
               command: 'psql',
               tool: 'TimescaleDB',
+              task: 'Collegati a TimescaleDB usando il client psql come per qualsiasi cluster Postgres tradizionale.',
             },
             {
               english: 'Prometheus',
@@ -9817,6 +10211,7 @@ export default {
               difficulty: 'advanced',
               code: 'rate(http_requests_total[5m])',
               tool: 'Prometheus',
+              task: `Misura il tasso di richieste al secondo con l'espressione PromQL rate(http_requests_total[5m]) su finestra di 5 minuti.`,
             },
             {
               english: 'Graphite',
@@ -10263,6 +10658,7 @@ export default {
               difficulty: 'advanced',
               code: "schedule_interval='@daily'",
               tool: 'Airflow',
+              task: `Pianifica il DAG con schedule_interval='@daily' per farlo partire una volta al giorno dopo il backup OLTP.`,
             },
             {
               english: 'Dagster',
@@ -10316,6 +10712,7 @@ export default {
               difficulty: 'advanced',
               code: 'retries=3',
               tool: 'Airflow',
+              task: 'Configura retries=3 sul task Airflow cosi un errore transitorio venga ritentato tre volte prima di marcare il run come failed.',
             },
           ],
         },
@@ -10336,6 +10733,7 @@ export default {
               command: 'dbt run',
               tool: 'dbt',
               note: 'Data Build Tool.',
+              task: 'Compila ed esegui tutti i modelli del progetto lanciando dbt run per materializzare la DAG di trasformazioni.',
             },
             {
               english: 'Model',
@@ -10370,6 +10768,7 @@ export default {
               difficulty: 'advanced',
               code: 'dbt test',
               tool: 'dbt',
+              task: 'Esegui le asserzioni di qualità con dbt test per intercettare violazioni di not_null e unique prima che arrivino in BI.',
             },
             {
               english: 'Schema Drift',
@@ -10471,6 +10870,7 @@ export default {
               context: 'transactions',
               difficulty: 'advanced',
               code: 'SELECT * FROM accounts WHERE id = 1 FOR UPDATE;',
+              task: 'Blocca la riga con SELECT * FROM accounts WHERE id = 1 FOR UPDATE prima di addebitarla per serializzare i trasferimenti.',
             },
             {
               english: 'SELECT FOR SHARE',
@@ -10481,6 +10881,7 @@ export default {
               context: 'transactions',
               difficulty: 'advanced',
               code: 'SELECT * FROM accounts WHERE id = 1 FOR SHARE;',
+              task: 'Proteggi la riga padre con SELECT * FROM accounts WHERE id = 1 FOR SHARE per impedirne la cancellazione prima del COMMIT.',
             },
             {
               english: 'NOWAIT',
@@ -10491,6 +10892,7 @@ export default {
               context: 'transactions',
               difficulty: 'advanced',
               code: 'SELECT * FROM t WHERE id = 1 FOR UPDATE NOWAIT;',
+              task: 'Aggiungi NOWAIT a SELECT * FROM t WHERE id = 1 FOR UPDATE NOWAIT cosi la query fallisca subito invece di restare appesa.',
             },
             {
               english: 'SKIP LOCKED',
@@ -10503,6 +10905,7 @@ export default {
               difficulty: 'advanced',
               code: "SELECT * FROM jobs WHERE status = 'pending' FOR UPDATE SKIP LOCKED LIMIT 10;",
               note: 'Ottimo per worker queue.',
+              task: `Estrai i prossimi dieci job con SELECT * FROM jobs WHERE status = 'pending' FOR UPDATE SKIP LOCKED LIMIT 10 per worker concorrenti.`,
             },
             {
               english: 'Advisory Lock',
@@ -10515,6 +10918,7 @@ export default {
               difficulty: 'advanced',
               code: 'SELECT pg_advisory_lock(123);',
               tool: 'PostgreSQL',
+              task: 'Prendi un advisory lock chiamando SELECT pg_advisory_lock(123) cosi solo un processo per tenant esegua il job.',
             },
             {
               english: 'Lock Timeout',
@@ -10527,6 +10931,7 @@ export default {
               difficulty: 'advanced',
               code: "SET lock_timeout = '5s';",
               tool: 'PostgreSQL',
+              task: `Limita l'attesa sui lock con SET lock_timeout = '5s' per evitare che una transazione fuori controllo blocchi le scritture.`,
             },
             {
               english: 'Statement Timeout',
@@ -10538,6 +10943,7 @@ export default {
               difficulty: 'advanced',
               code: "SET statement_timeout = '30s';",
               tool: 'PostgreSQL',
+              task: `Tappa le query lunghe con SET statement_timeout = '30s' sull'utente analytics per non affamare le connessioni OLTP.`,
             },
             {
               english: 'Lock Mode',
@@ -10587,6 +10993,7 @@ export default {
               difficulty: 'advanced',
               code: 'deadlock_timeout = 1s',
               tool: 'PostgreSQL',
+              task: 'Regola la finestra del rilevatore impostando deadlock_timeout = 1s in postgresql.conf per scegliere quando abortire la vittima.',
             },
             {
               english: 'Wait-For Graph',
@@ -10720,6 +11127,7 @@ export default {
               difficulty: 'advanced',
               code: 'SELECT xmin, xmax, * FROM users;',
               tool: 'PostgreSQL',
+              task: `Ispeziona la versione MVCC di una riga con SELECT xmin, xmax, * FROM users per vedere quale transazione l'ha creata.`,
             },
             {
               english: 'XMAX',
@@ -10820,6 +11228,7 @@ export default {
               context: 'transactions',
               difficulty: 'advanced',
               code: 'UPDATE products SET ..., version = version + 1 WHERE id = 1 AND version = 5;',
+              task: 'Implementa il locking ottimistico con UPDATE products SET version = version + 1 WHERE id = 1 AND version = 5.',
             },
             {
               english: 'Compare-and-Set',
@@ -10841,6 +11250,7 @@ export default {
               context: 'transactions',
               difficulty: 'advanced',
               code: 'UPDATE counters SET value = value + 1 WHERE id = 1;',
+              task: 'Incrementa il contatore atomicamente con UPDATE counters SET value = value + 1 WHERE id = 1 senza letture preventive.',
             },
             {
               english: 'Idempotency Key',
@@ -10852,6 +11262,7 @@ export default {
               context: 'transactions',
               difficulty: 'advanced',
               code: 'INSERT INTO orders (id, ...) VALUES ($1, ...) ON CONFLICT (id) DO NOTHING;',
+              task: `Rendi idempotente l'inserimento con INSERT INTO orders (id, ...) VALUES ($1, ...) ON CONFLICT (id) DO NOTHING cosi un retry non duplichi.`,
             },
             {
               english: 'Saga Pattern',
@@ -10885,6 +11296,7 @@ export default {
               difficulty: 'advanced',
               code: "PREPARE TRANSACTION 'tx1'; COMMIT PREPARED 'tx1';",
               tool: 'PostgreSQL',
+              task: `Esegui un two-phase commit con PREPARE TRANSACTION 'tx1' e COMMIT PREPARED 'tx1' per coordinare due servizi distribuiti.`,
             },
             {
               english: 'Distributed Eventual Consistency',
@@ -11252,6 +11664,7 @@ export default {
               difficulty: 'advanced',
               code: 'VACUUM ANALYZE users;',
               tool: 'PostgreSQL',
+              task: 'Lancia VACUUM ANALYZE users dopo un backfill notturno per liberare tuple morte e rinfrescare le statistiche del planner.',
             },
             {
               english: 'Autovacuum',
@@ -11275,6 +11688,7 @@ export default {
               code: 'VACUUM FULL VERBOSE users;',
               tool: 'PostgreSQL',
               note: 'Bloccante! Da fare in finestre di manutenzione.',
+              task: 'Pianifica VACUUM FULL VERBOSE users in finestra di manutenzione perché riscrive la tabella prendendo un lock esclusivo.',
             },
             {
               english: 'Maintenance Window',
@@ -11330,6 +11744,7 @@ export default {
               difficulty: 'advanced',
               command: 'pg_upgrade -d /old -D /new',
               tool: 'PostgreSQL',
+              task: 'Migra il cluster Postgres lanciando pg_upgrade -d /old -D /new aggiungendo --link per riusare i file dati ed evitare dump.',
             },
             {
               english: 'Index Rebuild',
@@ -11342,6 +11757,7 @@ export default {
               difficulty: 'advanced',
               code: 'REINDEX INDEX CONCURRENTLY idx_email;',
               tool: 'PostgreSQL',
+              task: `Ricostruisci l'indice gonfio con REINDEX INDEX CONCURRENTLY idx_email per recuperare leaf page senza fermare le scritture.`,
             },
             {
               english: 'Continuous Improvement',

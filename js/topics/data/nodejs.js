@@ -3877,6 +3877,7 @@ export default {
               context: 'middleware',
               difficulty: 'intermediate',
               code: 'app.use((req, res, next) => { next(); });',
+              task: 'Registra un middleware su app che logga ogni richiesta e chiama next() per cedere il controllo al prossimo handler.',
             },
             {
               english: 'next',
@@ -3889,6 +3890,7 @@ export default {
               difficulty: 'intermediate',
               code: 'next();',
               note: 'Senza next() la richiesta resta bloccata.',
+              task: 'Invoca next() al termine della tua funzione middleware altrimenti la richiesta resta appesa fino al timeout del client.',
             },
             {
               english: 'Middleware Chain',
@@ -3940,6 +3942,7 @@ export default {
               context: 'middleware',
               difficulty: 'intermediate',
               code: 'router.use(authMiddleware);',
+              task: `Aggancia authMiddleware al router con router.use cosi' tutte le sue rotte richiedono un JWT valido.`,
             },
             {
               english: 'Route-Specific',
@@ -3951,6 +3954,7 @@ export default {
               context: 'middleware',
               difficulty: 'intermediate',
               code: "app.get('/admin', auth, handler);",
+              task: `Monta il middleware auth solo su GET /admin passandolo come argomento intermedio dell'handler.`,
             },
             {
               english: 'Error Middleware',
@@ -3962,6 +3966,7 @@ export default {
               context: 'middleware',
               difficulty: 'intermediate',
               code: 'app.use((err, req, res, next) => {});',
+              task: 'Definisci un middleware di errore con la firma a quattro parametri (err, req, res, next) per intercettare le eccezioni.',
             },
             {
               english: 'Async Middleware',
@@ -3973,6 +3978,7 @@ export default {
               context: 'middleware',
               difficulty: 'intermediate',
               code: 'app.use(async (req, res, next) => {});',
+              task: 'Scrivi un middleware async che attenda una query al database e allega il risultato a req prima di chiamare next().',
             },
           ],
         },
@@ -3992,6 +3998,7 @@ export default {
               difficulty: 'intermediate',
               code: 'app.use(express.json());',
               note: 'Da Express 4.16+ è incluso in express.json().',
+              task: `Abilita il body parser JSON con app.use(express.json()) cosi' req.body contiene il payload delle richieste POST.`,
             },
             {
               english: 'express.json',
@@ -4003,6 +4010,7 @@ export default {
               context: 'middleware',
               difficulty: 'intermediate',
               code: "app.use(express.json({ limit: '10mb' }));",
+              task: 'Configura express.json con un limit di 10mb per bloccare payload sovradimensionati che potrebbero mandare in crash il server.',
             },
             {
               english: 'express.urlencoded',
@@ -4014,6 +4022,7 @@ export default {
               context: 'middleware',
               difficulty: 'intermediate',
               code: 'app.use(express.urlencoded({ extended: true }));',
+              task: 'Aggiungi express.urlencoded con extended: true per analizzare i form HTML legacy con oggetti annidati.',
             },
             {
               english: 'Multer',
@@ -4026,6 +4035,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'Multer',
               command: 'npm install multer',
+              task: 'Installa Multer da npm per gestire upload multipart/form-data come avatar utente.',
             },
             {
               english: 'File Upload',
@@ -4049,6 +4059,7 @@ export default {
               tool: 'cors',
               command: 'npm install cors',
               note: 'Cross-Origin Resource Sharing.',
+              task: 'Installa il pacchetto cors via npm per abilitare le richieste cross-origin verso la tua API Express.',
             },
             {
               english: 'Origin',
@@ -4081,6 +4092,7 @@ export default {
               context: 'middleware',
               difficulty: 'intermediate',
               code: "cors({ origin: ['https://example.com'] })",
+              task: 'Restringi le origini consentite a https://example.com passando un array al campo origin di cors().',
             },
             {
               english: 'Credentials',
@@ -4092,6 +4104,7 @@ export default {
               context: 'middleware',
               difficulty: 'intermediate',
               code: 'cors({ credentials: true })',
+              task: `Imposta credentials: true nella config CORS cosi' il browser inoltra cookie e header Authorization nelle richieste cross-origin.`,
             },
           ],
         },
@@ -4123,6 +4136,7 @@ export default {
               tool: 'Morgan',
               command: 'npm install morgan',
               code: "app.use(morgan('combined'));",
+              task: `Installa Morgan e applicalo con app.use(morgan('combined')) per produrre log di accesso in formato Apache.`,
             },
             {
               english: 'Pino',
@@ -4158,6 +4172,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'compression',
               code: 'app.use(compression());',
+              task: `Inserisci app.use(compression()) all'inizio della catena per gzippare le risposte e ridurre la banda mobile.`,
             },
             {
               english: 'Gzip',
@@ -4189,6 +4204,7 @@ export default {
               context: 'middleware',
               difficulty: 'intermediate',
               code: 'req.id = uuid();',
+              task: 'Assegna req.id = uuid() in un middleware iniziale per correlare tutte le righe di log di una singola chiamata API.',
             },
             {
               english: 'Correlation ID',
@@ -4227,6 +4243,7 @@ export default {
               context: 'middleware',
               difficulty: 'intermediate',
               code: 'function auth(req, res, next) { /* check */ }',
+              task: 'Crea la funzione auth(req, res, next) che decodifica il JWT, popola req.user e blocca le richieste senza token.',
             },
             {
               english: 'Authorization Header',
@@ -4238,6 +4255,7 @@ export default {
               context: 'middleware',
               difficulty: 'intermediate',
               code: 'req.headers.authorization',
+              task: 'Leggi req.headers.authorization e separa sullo spazio dopo Bearer per estrarre la stringa JWT da verificare.',
             },
             {
               english: 'Bearer Token',
@@ -4249,6 +4267,7 @@ export default {
               context: 'middleware',
               difficulty: 'intermediate',
               code: 'Authorization: Bearer <token>',
+              task: `Allega l'header Authorization: Bearer <token> a ogni richiesta API cosi' il server riconosce l'identita' senza sessioni.`,
             },
             {
               english: 'Protected Route',
@@ -4271,6 +4290,7 @@ export default {
               difficulty: 'intermediate',
               code: "requireRole('admin')",
               note: 'Sigla RBAC.',
+              task: `Proteggi gli endpoint admin con requireRole('admin') che rifiuta chi non ha quel claim nel JWT.`,
             },
             {
               english: 'Route Permissions',
@@ -4294,6 +4314,7 @@ export default {
               difficulty: 'intermediate',
               code: 'app.use(errorHandler);',
               note: 'Va registrato per ultimo.',
+              task: `Registra errorHandler come ultimo app.use cosi' cattura le eccezioni di ogni rotta e risponde con JSON strutturato.`,
             },
             {
               english: '404 Handler',
@@ -4305,6 +4326,7 @@ export default {
               context: 'middleware',
               difficulty: 'intermediate',
               code: 'app.use((req, res) => res.status(404).send());',
+              task: 'Dopo tutte le rotte, monta un middleware finale che risponde con res.status(404).send() per gli URL non corrispondenti.',
             },
             {
               english: 'Helmet',
@@ -4319,6 +4341,7 @@ export default {
               command: 'npm install helmet',
               code: 'app.use(helmet());',
               english_new: 'helmet middleware',
+              task: 'Installa helmet e collegalo con app.use(helmet()) per impostare CSP, X-Frame-Options e altri header di sicurezza.',
             },
             {
               english: 'Trust Proxy',
@@ -4330,6 +4353,7 @@ export default {
               context: 'middleware',
               difficulty: 'intermediate',
               code: "app.set('trust proxy', 1);",
+              task: `Abilita app.set('trust proxy', 1) dietro un load balancer cosi' Express legge il vero client IP da X-Forwarded-For.`,
             },
           ],
         },
@@ -4369,6 +4393,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'Mongoose',
               command: 'npm install mongoose',
+              task: 'Installa Mongoose da npm per modellare le tue collezioni MongoDB con schemi e validazione integrata.',
             },
             {
               english: 'ODM',
@@ -4414,6 +4439,7 @@ export default {
               difficulty: 'intermediate',
               code: 'const userSchema = new mongoose.Schema({});',
               english_new: 'Database Schema',
+              task: 'Definisci userSchema con new mongoose.Schema({}) elencando tipi, default e regole di validazione per ogni campo.',
             },
             {
               english: 'Mongoose Model',
@@ -4426,6 +4452,7 @@ export default {
               difficulty: 'intermediate',
               code: "const User = mongoose.model('User', userSchema);",
               note: `Distinto dal Model generico (MVC) gia' presente al livello 19.`,
+              task: `Compila il modello User con mongoose.model('User', userSchema) per ottenere find, save e update sulla collezione.`,
             },
             {
               english: 'Query',
@@ -4437,6 +4464,7 @@ export default {
               context: 'database',
               difficulty: 'intermediate',
               code: 'await User.find({ active: true });',
+              task: `Recupera tutti gli utenti attivi con await User.find({ active: true }) sfruttando l'API query di Mongoose.`,
             },
             {
               english: 'Populate',
@@ -4448,6 +4476,7 @@ export default {
               context: 'database',
               difficulty: 'intermediate',
               code: "await Post.find().populate('author');",
+              task: `Concatena .populate('author') sulla query dei Post per espandere gli ObjectId in documenti utente completi.`,
             },
             {
               english: 'Aggregate',
@@ -4460,6 +4489,7 @@ export default {
               difficulty: 'advanced',
               code: 'User.aggregate([{ $group: {} }]);',
               english_new: 'MongoDB Aggregate',
+              task: 'Costruisci una pipeline con User.aggregate([{ $group: {} }]) per calcolare statistiche aggregate in un solo round trip.',
             },
           ],
         },
@@ -4533,6 +4563,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'Sequelize',
               command: 'npm install sequelize',
+              task: 'Installa Sequelize da npm per mappare le tue tabelle SQL a modelli con associazioni e chiavi esterne automatiche.',
             },
             {
               english: 'TypeORM',
@@ -4556,6 +4587,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'Knex',
               command: 'npm install knex',
+              task: 'Installa Knex come query builder leggero quando preferisci scrivere SQL parametrizzato con pool di connessioni gestito.',
             },
             {
               english: 'Migration',
@@ -4567,6 +4599,7 @@ export default {
               context: 'database',
               difficulty: 'intermediate',
               command: 'npx sequelize db:migrate',
+              task: `Lancia npx sequelize db:migrate per applicare le migrazioni pendenti e portare lo schema all'ultima versione.`,
             },
             {
               english: 'Seed',
@@ -4578,6 +4611,7 @@ export default {
               context: 'database',
               difficulty: 'intermediate',
               command: 'npx sequelize db:seed:all',
+              task: 'Esegui npx sequelize db:seed:all per popolare il database con utenti e prodotti di esempio per il team QA.',
             },
           ],
         },
@@ -4597,6 +4631,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'Prisma',
               command: 'npm install prisma',
+              task: 'Installa Prisma via npm per ottenere autocompletamento e type-safety su ogni query verso il database.',
             },
             {
               english: 'Schema File',
@@ -4608,6 +4643,7 @@ export default {
               context: 'database',
               difficulty: 'intermediate',
               code: 'model User { id Int @id }',
+              task: `Dichiara una model User con campo id Int @id nel file schema.prisma come fonte di verita' della tua base dati.`,
             },
             {
               english: 'Prisma Client',
@@ -4619,6 +4655,7 @@ export default {
               context: 'database',
               difficulty: 'intermediate',
               command: 'npx prisma generate',
+              task: 'Rigenera il Prisma Client con npx prisma generate dopo ogni modifica allo schema per aggiornare i tipi.',
             },
             {
               english: 'Prisma Migrate',
@@ -4630,6 +4667,7 @@ export default {
               context: 'database',
               difficulty: 'intermediate',
               command: 'npx prisma migrate dev',
+              task: 'Lancia npx prisma migrate dev per creare un file SQL con timestamp e applicarlo al database locale.',
             },
             {
               english: 'Prisma Studio',
@@ -4641,6 +4679,7 @@ export default {
               context: 'database',
               difficulty: 'intermediate',
               command: 'npx prisma studio',
+              task: `Avvia npx prisma studio per aprire l'editor visuale del database e ispezionare i record durante lo sviluppo.`,
             },
             {
               english: 'findUnique',
@@ -4652,6 +4691,7 @@ export default {
               context: 'database',
               difficulty: 'intermediate',
               code: 'prisma.user.findUnique({ where: { id } });',
+              task: 'Recupera un singolo utente con prisma.user.findUnique({ where: { id } }) ottenendo il record o null.',
             },
             {
               english: 'findMany',
@@ -4663,6 +4703,7 @@ export default {
               context: 'database',
               difficulty: 'intermediate',
               code: 'prisma.user.findMany();',
+              task: 'Lista i record con prisma.user.findMany() aggiungendo where e take: 10 per impaginare gli utenti attivi.',
             },
             {
               english: 'Relation',
@@ -4674,6 +4715,7 @@ export default {
               context: 'database',
               difficulty: 'intermediate',
               code: 'posts: Post[]',
+              task: 'Dichiara posts: Post[] nel modello User per modellare la relazione uno-a-molti tra utenti e post.',
             },
             {
               english: 'Transaction',
@@ -4685,6 +4727,7 @@ export default {
               context: 'database',
               difficulty: 'intermediate',
               code: 'await prisma.$transaction([a, b]);',
+              task: `Avvolgi creazione ordine e decremento inventario in await prisma.$transaction([a, b]) per garantire atomicita'.`,
             },
             {
               english: 'Raw Query',
@@ -4696,6 +4739,7 @@ export default {
               context: 'database',
               difficulty: 'intermediate',
               code: 'prisma.$queryRaw`SELECT * FROM users`',
+              task: `Per CTE o window function ricorri a prisma.$queryRaw\`SELECT * FROM users\` quando il query builder non basta.`,
             },
           ],
         },
@@ -4714,6 +4758,7 @@ export default {
               context: 'database',
               difficulty: 'intermediate',
               code: 'postgres://user:pass@host:5432/db',
+              task: `Configura la stringa postgres://user:pass@host:5432/db dentro una variabile d'ambiente, mai nel codice sorgente.`,
             },
             {
               english: 'Connection Pool',
@@ -4736,6 +4781,7 @@ export default {
               context: 'database',
               difficulty: 'intermediate',
               code: 'pool: { max: 10 }',
+              task: 'Imposta pool: { max: 10 } allineando la dimensione del pool ai core CPU del server per evitare contesa.',
             },
             {
               english: 'Idle Timeout',
@@ -4787,6 +4833,7 @@ export default {
               context: 'database',
               difficulty: 'intermediate',
               code: 'CREATE INDEX idx_email ON users(email);',
+              task: 'Lancia CREATE INDEX idx_email ON users(email) per accelerare le ricerche per email su milioni di record.',
             },
             {
               english: 'N+1 Query',
@@ -4809,6 +4856,7 @@ export default {
               context: 'database',
               difficulty: 'advanced',
               code: '{ include: { posts: true } }',
+              task: `Passa { include: { posts: true } } a findMany per caricare utenti e post in una query e risolvere l'N+1.`,
             },
           ],
         },
@@ -4878,6 +4926,7 @@ export default {
               context: 'security',
               difficulty: 'intermediate',
               code: "res.cookie('sid', id);",
+              task: `Emetti res.cookie('sid', id) dopo il login cosi' il browser inoltra la sessione su ogni richiesta successiva.`,
             },
             {
               english: 'HttpOnly',
@@ -4890,6 +4939,7 @@ export default {
               difficulty: 'intermediate',
               code: '{ httpOnly: true }',
               note: 'Mitiga attacchi XSS.',
+              task: `Marca il cookie di sessione con { httpOnly: true } cosi' un eventuale XSS non puo' leggere il token via JavaScript.`,
             },
             {
               english: 'Secure Flag',
@@ -4901,6 +4951,7 @@ export default {
               context: 'security',
               difficulty: 'intermediate',
               code: '{ secure: true }',
+              task: `Abilita { secure: true } sul cookie cosi' il browser lo invia solo su connessioni HTTPS e mai in chiaro.`,
             },
             {
               english: 'SameSite',
@@ -4912,6 +4963,7 @@ export default {
               context: 'security',
               difficulty: 'intermediate',
               code: "{ sameSite: 'lax' }",
+              task: `Imposta { sameSite: 'lax' } sul cookie di sessione per neutralizzare la maggior parte degli attacchi CSRF.`,
             },
             {
               english: 'CSRF',
@@ -4953,6 +5005,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'jsonwebtoken',
               command: 'npm install jsonwebtoken',
+              task: 'Installa jsonwebtoken da npm per firmare e verificare i token JWT emessi al login.',
             },
             {
               english: 'Token',
@@ -4974,6 +5027,7 @@ export default {
               context: 'security',
               difficulty: 'intermediate',
               code: '{ "alg": "HS256", "typ": "JWT" }',
+              task: `Costruisci l'header { "alg": "HS256", "typ": "JWT" } cosi' il verificatore sa quale chiave usare.`,
             },
             {
               english: 'Payload',
@@ -4985,6 +5039,7 @@ export default {
               context: 'security',
               difficulty: 'intermediate',
               code: '{ "sub": "123", "exp": 1700000000 }',
+              task: 'Componi il payload { "sub": "123", "exp": 1700000000 } con id utente e scadenza Unix, mai segreti.',
             },
             {
               english: 'Signature',
@@ -5007,6 +5062,7 @@ export default {
               context: 'security',
               difficulty: 'intermediate',
               code: "jwt.sign({ id }, secret, { expiresIn: '1h' });",
+              task: `Firma il token con jwt.sign({ id }, secret, { expiresIn: '1h' }) per emetterlo dopo un login riuscito.`,
             },
             {
               english: 'Verify',
@@ -5018,6 +5074,7 @@ export default {
               context: 'security',
               difficulty: 'intermediate',
               code: 'const data = jwt.verify(token, secret);',
+              task: `Decodifica il token chiamando const data = jwt.verify(token, secret) all'inizio di ogni rotta protetta.`,
             },
             {
               english: 'Claim',
@@ -5079,6 +5136,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'bcrypt',
               command: 'npm install bcrypt',
+              task: 'Installa bcrypt da npm per applicare hashing lento alle password con cost factor configurabile.',
             },
             {
               english: 'Salt',
@@ -5090,6 +5148,7 @@ export default {
               context: 'security',
               difficulty: 'intermediate',
               code: 'await bcrypt.hash(pw, 12);',
+              task: 'Hasha la password con await bcrypt.hash(pw, 12) lasciando che bcrypt generi e incorpori un salt univoco.',
             },
             {
               english: 'Cost Factor',
@@ -5123,6 +5182,7 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               code: 'crypto.scrypt(pw, salt, 64, cb);',
+              task: 'Sfrutta crypto.scrypt(pw, salt, 64, cb) per hashare password senza dipendenze esterne grazie al modulo nativo.',
             },
             {
               english: 'Compare',
@@ -5134,6 +5194,7 @@ export default {
               context: 'security',
               difficulty: 'intermediate',
               code: 'await bcrypt.compare(pw, hash);',
+              task: `Verifica le credenziali con await bcrypt.compare(pw, hash) confrontando la password inviata con l'hash salvato.`,
             },
             {
               english: 'Timing Attack',
@@ -5145,6 +5206,7 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               code: 'crypto.timingSafeEqual(a, b);',
+              task: 'Confronta segreti in tempo costante con crypto.timingSafeEqual(a, b) per neutralizzare gli attacchi temporali.',
             },
             {
               english: 'Pepper',
@@ -5206,6 +5268,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'Passport.js',
               command: 'npm install passport',
+              task: 'Installa Passport via npm per integrare login Google, GitHub o SAML attraverso strategie middleware.',
             },
             {
               english: 'Strategy',
@@ -5309,6 +5372,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: "throw new Error('Boom');",
+              task: `Lancia un nuovo errore con throw new Error('Boom') quando una precondizione critica fallisce.`,
             },
             {
               english: 'Throw',
@@ -5320,6 +5384,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: "throw new Error('Bad input');",
+              task: `Solleva throw new Error('Bad input') appena il config file manca cosi' l'app si ferma prima di entrare in stato inconsistente.`,
             },
             {
               english: 'Stack Trace',
@@ -5331,6 +5396,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'err.stack',
+              task: `Stampa err.stack nel logger per ricostruire il percorso di chiamate che ha portato all'eccezione.`,
             },
             {
               english: 'TypeError',
@@ -5342,6 +5408,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'null.foo // TypeError',
+              task: 'Riproduci un TypeError eseguendo null.foo per verificare che il tuo error handler intercetti gli accessi su undefined.',
             },
             {
               english: 'RangeError',
@@ -5373,6 +5440,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'class NotFound extends Error {}',
+              task: `Crea class NotFound extends Error cosi' il middleware di errore distingue i 404 dai 500 generici.`,
             },
             {
               english: 'Error Code',
@@ -5384,6 +5452,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: "err.code === 'ENOENT'",
+              task: `Confronta err.code === 'ENOENT' per mostrare un messaggio file non trovato amichevole al posto della stack trace.`,
             },
             {
               english: 'cause',
@@ -5396,6 +5465,7 @@ export default {
               difficulty: 'intermediate',
               code: "new Error('msg', { cause: original });",
               note: 'Disponibile da Node 16.9.',
+              task: `Avvolgi l'errore originale con new Error('msg', { cause: original }) per preservare la stack trace di basso livello.`,
             },
             {
               english: 'AggregateError',
@@ -5426,6 +5496,7 @@ export default {
               difficulty: 'intermediate',
               code: 'try { } catch (e) { }',
               english_new: 'Runtime try/catch',
+              task: `Racchiudi le await in try { } catch (e) { } cosi' le promise rifiutate emergono come eccezioni loggabili.`,
             },
             {
               english: 'process.on finally',
@@ -5438,6 +5509,7 @@ export default {
               difficulty: 'intermediate',
               code: 'try {} finally { cleanup(); }',
               english_new: 'try/finally Cleanup',
+              task: 'Aggiungi un blocco try {} finally { cleanup(); } per chiudere file handle e pool DB anche in caso di errore.',
             },
             {
               english: 'Catch Block',
@@ -5459,6 +5531,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'catch (e) { throw e; }',
+              task: `Dopo aver loggato la diagnostica, rilancia con catch (e) { throw e; } per delegare la risposta all'handler globale.`,
             },
             {
               english: 'Async Error',
@@ -5480,6 +5553,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: "process.on('unhandledRejection', cb);",
+              task: `Registra process.on('unhandledRejection', cb) per intercettare promise senza .catch() prima che Node termini il processo.`,
             },
             {
               english: 'uncaughtException',
@@ -5492,6 +5566,7 @@ export default {
               difficulty: 'intermediate',
               code: "process.on('uncaughtException', cb);",
               note: 'Dopo averlo catturato è meglio terminare il processo.',
+              task: `Ascolta process.on('uncaughtException', cb) per loggare l'errore fatale e svuotare le metriche prima dell'uscita.`,
             },
             {
               english: 'Operational Error',
@@ -5542,6 +5617,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'app.use((err, req, res, next) => {});',
+              task: `Definisci app.use((err, req, res, next) => {}) con quattro parametri cosi' Express lo riconosce come error middleware.`,
             },
             {
               english: 'next(err)',
@@ -5553,6 +5629,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: "next(new Error('fail'));",
+              task: `Inoltra gli errori di validazione con next(new Error('fail')) per saltare al middleware di errore globale.`,
             },
             {
               english: 'Async Wrapper',
@@ -5564,6 +5641,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'const asyncH = fn => (req, res, next) => fn(req, res, next).catch(next);',
+              task: 'Avvolgi gli handler con const asyncH = fn => (req, res, next) => fn(req, res, next).catch(next) per propagare i reject.',
             },
             {
               english: 'express-async-errors',
@@ -5587,6 +5665,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'http-errors',
               code: 'throw createError(404);',
+              task: 'Solleva throw createError(404) dalla libreria http-errors per emettere risposte con status e messaggio coerenti.',
             },
             {
               english: 'Error Status Code',
@@ -5599,6 +5678,7 @@ export default {
               difficulty: 'intermediate',
               code: 'err.status = 404;',
               english_new: 'Error Status Code',
+              task: `Imposta err.status = 404 sulle classi di dominio cosi' i client distinguono not-found da validation 422.`,
             },
             {
               english: 'Error Logger',
@@ -5621,6 +5701,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'Sentry',
               command: 'npm install @sentry/node',
+              task: 'Installa @sentry/node per inviare ogni eccezione non gestita a Sentry e raggrupparla per stack trace.',
             },
             {
               english: 'Rollbar',
@@ -5660,6 +5741,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               command: 'node --inspect server.js',
+              task: 'Avvia il server con node --inspect server.js per collegare un debugger da VS Code o Chrome DevTools.',
             },
             {
               english: 'Inspector',
@@ -5671,6 +5753,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               command: 'node --inspect-brk app.js',
+              task: `Lancia node --inspect-brk app.js per fermarti alla prima riga e impostare breakpoint prima dell'esecuzione.`,
             },
             {
               english: 'Breakpoint',
@@ -5682,6 +5765,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'debugger;',
+              task: 'Inserisci una statement debugger; nel gestore pagamenti per ispezionare req e percorrere la logica di sconto.',
             },
             {
               english: 'Step Over',
@@ -5713,6 +5797,7 @@ export default {
               context: 'runtime',
               difficulty: 'beginner',
               code: "console.log('value:', x);",
+              task: `Stampa lo stato intermedio con console.log('value:', x) per scoprire rapidamente quali variabili contengono valori inattesi.`,
             },
             {
               english: 'console.error',
@@ -5724,6 +5809,7 @@ export default {
               context: 'runtime',
               difficulty: 'beginner',
               code: 'console.error(err);',
+              task: `Emetti console.error(err) cosi' il messaggio finisce su stderr e puoi reindirizzarlo a un file di log dedicato.`,
             },
             {
               english: 'debug Module',
@@ -5736,6 +5822,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'debug',
               code: "const dbg = require('debug')('app:db');",
+              task: `Istanzia const dbg = require('debug')('app:db') per ottenere un logger con namespace abilitabile a runtime.`,
             },
             {
               english: 'DEBUG env',
@@ -5747,6 +5834,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               command: 'DEBUG=app:* node app.js',
+              task: 'Esegui DEBUG=app:* node app.js per attivare tutti i logger del namespace app e nascondere il rumore di terze parti.',
             },
             {
               english: 'Source Map',
@@ -5758,6 +5846,7 @@ export default {
               context: 'runtime',
               difficulty: 'intermediate',
               command: 'node --enable-source-maps app.js',
+              task: `Avvia il build TypeScript con node --enable-source-maps app.js cosi' le stack trace puntano alle righe .ts originali.`,
             },
           ],
         },
@@ -5785,6 +5874,7 @@ export default {
               context: 'streams',
               difficulty: 'intermediate',
               code: "const buf = Buffer.from('hello');",
+              task: `Crea un Buffer dai byte grezzi con const buf = Buffer.from('hello') prima di convertirli in stringa.`,
             },
             {
               english: 'Binary Data',
@@ -5806,6 +5896,7 @@ export default {
               context: 'streams',
               difficulty: 'intermediate',
               code: "Buffer.from('abc', 'utf8');",
+              task: `Usa Buffer.from('abc', 'utf8') per ottenere byte grezzi UTF-8 da passare al modulo crypto per il calcolo dell'hash.`,
             },
             {
               english: 'Buffer.alloc',
@@ -5818,6 +5909,7 @@ export default {
               difficulty: 'intermediate',
               code: 'Buffer.alloc(10);',
               note: 'Riempito di zeri, sicuro.',
+              task: 'Alloca memoria azzerata con Buffer.alloc(10) per evitare leak di dati residui in codice security-sensitive.',
             },
             {
               english: 'Buffer.allocUnsafe',
@@ -5829,6 +5921,7 @@ export default {
               context: 'streams',
               difficulty: 'intermediate',
               code: 'Buffer.allocUnsafe(10);',
+              task: `Riserva memoria non inizializzata con Buffer.allocUnsafe(10) solo dove sovrascrivi subito ogni byte per massima velocita'.`,
             },
             {
               english: 'Stream Encoding',
@@ -5841,6 +5934,7 @@ export default {
               difficulty: 'intermediate',
               code: "buf.toString('base64');",
               english_new: 'Stream Encoding',
+              task: `Converti il buffer in stringa codificata con buf.toString('base64') per inserirla in payload testuali.`,
             },
             {
               english: 'UTF-8',
@@ -5862,6 +5956,7 @@ export default {
               context: 'streams',
               difficulty: 'intermediate',
               code: "buf.toString('base64');",
+              task: `Codifica l'avatar binario con buf.toString('base64') cosi' puoi serializzarlo dentro una risposta JSON.`,
             },
             {
               english: 'Hex',
@@ -5873,6 +5968,7 @@ export default {
               context: 'streams',
               difficulty: 'intermediate',
               code: "buf.toString('hex');",
+              task: `Stampa il pacchetto in esadecimale con buf.toString('hex') per individuare byte null o pattern di rete inattesi.`,
             },
             {
               english: 'Concat',
@@ -5884,6 +5980,7 @@ export default {
               context: 'streams',
               difficulty: 'intermediate',
               code: 'Buffer.concat([a, b]);',
+              task: 'Unisci tutti i chunk raccolti dallo stream con Buffer.concat([a, b]) per ricostruire il file completo.',
             },
           ],
         },
@@ -5913,6 +6010,7 @@ export default {
               context: 'streams',
               difficulty: 'intermediate',
               code: 'const rs = fs.createReadStream(path);',
+              task: 'Apri un readable stream con const rs = fs.createReadStream(path) per elaborare il file 64 KB alla volta.',
             },
             {
               english: 'data Event',
@@ -5924,6 +6022,7 @@ export default {
               context: 'streams',
               difficulty: 'intermediate',
               code: "rs.on('data', chunk => {});",
+              task: `Ascolta rs.on('data', chunk => {}) per processare ogni blocco non appena il sistema operativo lo rende disponibile.`,
             },
             {
               english: 'end Event',
@@ -5935,6 +6034,7 @@ export default {
               context: 'streams',
               difficulty: 'intermediate',
               code: "rs.on('end', () => {});",
+              task: `Registra rs.on('end', () => {}) per finalizzare l'elaborazione quando lo stream segnala l'esaurimento dei chunk.`,
             },
             {
               english: 'Chunk',
@@ -5976,6 +6076,7 @@ export default {
               context: 'streams',
               difficulty: 'advanced',
               code: '{ highWaterMark: 16384 }',
+              task: 'Alza il buffer interno passando { highWaterMark: 16384 } al costruttore dello stream per migliorare il throughput.',
             },
             {
               english: 'Async Iterator',
@@ -5987,6 +6088,7 @@ export default {
               context: 'streams',
               difficulty: 'intermediate',
               code: 'for await (const chunk of rs) {}',
+              task: 'Consuma lo stream con for await (const chunk of rs) {} per gestire backpressure e errori in modo idiomatico.',
             },
             {
               english: 'createReadStream',
@@ -5998,6 +6100,7 @@ export default {
               context: 'streams',
               difficulty: 'intermediate',
               code: "fs.createReadStream('big.csv');",
+              task: `Servi un file pesante con fs.createReadStream('big.csv').pipe(res) senza mai caricarlo intero in memoria.`,
             },
           ],
         },
@@ -6016,6 +6119,7 @@ export default {
               context: 'streams',
               difficulty: 'intermediate',
               code: 'const ws = fs.createWriteStream(path);',
+              task: 'Crea un writable stream con const ws = fs.createWriteStream(path) per appendere log con flush asincrono.',
             },
             {
               english: 'write',
@@ -6027,6 +6131,7 @@ export default {
               context: 'streams',
               difficulty: 'intermediate',
               code: "ws.write('data\\n');",
+              task: `Invia un nuovo blocco al writable con ws.write('data\\n') lasciando che Node lo flushi su disco in background.`,
             },
             {
               english: 'end',
@@ -6038,6 +6143,7 @@ export default {
               context: 'streams',
               difficulty: 'intermediate',
               code: 'ws.end();',
+              task: `Chiudi lo stream con ws.end() per segnalare che non ci saranno altre scritture e attendere l'evento finish.`,
             },
             {
               english: 'Transform Stream',
@@ -6049,6 +6155,7 @@ export default {
               context: 'streams',
               difficulty: 'advanced',
               code: 'new Transform({ transform(chunk, enc, cb) {} });',
+              task: 'Costruisci new Transform({ transform(chunk, enc, cb) {} }) per convertire righe CSV in oggetti JSON nella pipeline.',
             },
             {
               english: 'Duplex Stream',
@@ -6070,6 +6177,7 @@ export default {
               context: 'streams',
               difficulty: 'intermediate',
               code: 'rs.pipe(ws);',
+              task: 'Collega sorgente e destinazione con rs.pipe(ws) lasciando che Node gestisca il flow control automaticamente.',
             },
             {
               english: 'pipeline',
@@ -6083,6 +6191,7 @@ export default {
               code: 'await pipeline(rs, gzip, ws);',
               note: 'Preferito a pipe per la sicurezza.',
               english_new: 'stream pipeline',
+              task: `Componi readable, gzip e writable con await pipeline(rs, gzip, ws) cosi' gli errori si propagano e le risorse si chiudono.`,
             },
             {
               english: 'Backpressure',
@@ -6104,6 +6213,7 @@ export default {
               context: 'streams',
               difficulty: 'advanced',
               code: '{ objectMode: true }',
+              task: 'Attiva { objectMode: true } sul Transform per far transitare oggetti JavaScript invece di buffer grezzi.',
             },
             {
               english: 'zlib',
@@ -6115,6 +6225,7 @@ export default {
               context: 'streams',
               difficulty: 'intermediate',
               code: 'zlib.createGzip()',
+              task: 'Comprimi al volo facendo pipe attraverso zlib.createGzip() per servire risposte gzipped senza file pre-compressi.',
             },
           ],
         },
@@ -6144,6 +6255,7 @@ export default {
               context: 'streams',
               difficulty: 'intermediate',
               code: 'const rl = readline.createInterface({ input });',
+              task: 'Apri il log da 500 MB con const rl = readline.createInterface({ input }) per filtrarlo riga per riga.',
             },
             {
               english: 'HTTP Streaming',
@@ -6155,6 +6267,7 @@ export default {
               context: 'streams',
               difficulty: 'intermediate',
               code: 'fs.createReadStream(path).pipe(res);',
+              task: `Trasmetti il video con fs.createReadStream(path).pipe(res) cosi' il client puo' iniziare la riproduzione subito.`,
             },
             {
               english: 'SSE',
@@ -6177,6 +6290,7 @@ export default {
               context: 'streams',
               difficulty: 'advanced',
               code: 'Transfer-Encoding: chunked',
+              task: `Imposta l'header Transfer-Encoding: chunked per spedire l'HTML mentre la pagina viene ancora renderizzata.`,
             },
             {
               english: 'Memory Efficiency',
@@ -6208,6 +6322,7 @@ export default {
               context: 'streams',
               difficulty: 'intermediate',
               code: "process.stdin.on('data', cb);",
+              task: `Leggi l'input utente con process.stdin.on('data', cb) per dare al tuo CLI un'interfaccia interattiva.`,
             },
             {
               english: 'process.stdout',
@@ -6219,6 +6334,7 @@ export default {
               context: 'streams',
               difficulty: 'intermediate',
               code: "process.stdout.write('hi');",
+              task: `Scrivi direttamente in stdout con process.stdout.write('hi') cosi' l'output puo' essere reindirizzato con > o |.`,
             },
             {
               english: 'Stream Iterator',
@@ -6230,6 +6346,7 @@ export default {
               context: 'streams',
               difficulty: 'intermediate',
               code: 'for await (const c of stream) {}',
+              task: 'Itera lo stream con for await (const c of stream) {} per processare blocchi sequenzialmente senza gestire eventi a mano.',
             },
           ],
         },
@@ -6256,6 +6373,7 @@ export default {
               context: 'events',
               difficulty: 'advanced',
               code: 'const ee = new EventEmitter();',
+              task: `Istanzia const ee = new EventEmitter() per esporre un'API on/emit alle altre parti del modulo.`,
             },
             {
               english: 'on',
@@ -6266,6 +6384,7 @@ export default {
               context: 'events',
               difficulty: 'advanced',
               code: "ee.on('connect', cb);",
+              task: `Sottoscrivi un listener persistente con ee.on('connect', cb) che si attiva ogni volta che l'evento connect viene emesso.`,
             },
             {
               english: 'emit',
@@ -6276,6 +6395,7 @@ export default {
               context: 'events',
               difficulty: 'advanced',
               code: "ee.emit('data', payload);",
+              task: `Notifica gli osservatori chiamando ee.emit('data', payload) cosi' ogni listener registrato riceve il payload.`,
             },
             {
               english: 'once',
@@ -6286,6 +6406,7 @@ export default {
               context: 'events',
               difficulty: 'advanced',
               code: "ee.once('ready', cb);",
+              task: `Aggancia ee.once('ready', cb) quando la logica di inizializzazione deve girare un'unica volta dopo il primo evento ready.`,
             },
             {
               english: 'off',
@@ -6297,6 +6418,7 @@ export default {
               difficulty: 'advanced',
               code: "ee.off('connect', cb);",
               note: 'Alias di removeListener.',
+              task: `Stacca il listener con ee.off('connect', cb) durante l'unmount del componente per prevenire memory leak.`,
             },
             {
               english: 'removeListener',
@@ -6307,6 +6429,7 @@ export default {
               context: 'events',
               difficulty: 'advanced',
               code: "ee.removeListener('data', cb);",
+              task: `Rimuovi un handler specifico con ee.removeListener('data', cb) prima di ricrearlo, evitando duplicazioni.`,
             },
             {
               english: 'removeAllListeners',
@@ -6318,6 +6441,7 @@ export default {
               context: 'events',
               difficulty: 'advanced',
               code: "ee.removeAllListeners('data');",
+              task: `Pulisci ogni sottoscrizione con ee.removeAllListeners('data') durante uno shutdown controllato del servizio.`,
             },
             {
               english: 'Listener',
@@ -6338,6 +6462,7 @@ export default {
               difficulty: 'advanced',
               code: 'ee.setMaxListeners(20);',
               note: 'Default è 10. Avvisa di possibili memory leak.',
+              task: `Alza il limite di sottoscrittori con ee.setMaxListeners(20) per zittire l'avviso di memory leak quando ne servono di piu'.`,
             },
             {
               english: 'EventEmitter Inheritance',
@@ -6348,6 +6473,7 @@ export default {
               context: 'events',
               difficulty: 'advanced',
               code: 'class MyClass extends EventEmitter {}',
+              task: `Dichiara class MyClass extends EventEmitter cosi' i tuoi oggetti di dominio espongono on/emit ai chiamanti.`,
             },
           ],
         },
@@ -6455,6 +6581,7 @@ export default {
               difficulty: 'advanced',
               code: "ee.on('error', cb);",
               note: 'Senza listener, un error event termina il processo.',
+              task: `Aggancia sempre ee.on('error', cb) sugli stream perche' un evento error non gestito termina il processo Node.`,
             },
           ],
         },
@@ -6473,6 +6600,7 @@ export default {
               context: 'events',
               difficulty: 'advanced',
               code: 'class Cart extends EventEmitter {}',
+              task: 'Crea class Cart extends EventEmitter per emettere eventi di dominio dalla logica di business del carrello.',
             },
             {
               english: 'Event Name',
@@ -6483,6 +6611,7 @@ export default {
               context: 'events',
               difficulty: 'advanced',
               code: "cart.emit('item:added', item);",
+              task: `Emetti cart.emit('item:added', item) usando la convenzione namespace:azione per mantenere i nomi ricercabili.`,
             },
             {
               english: 'Event Payload',
@@ -6494,6 +6623,7 @@ export default {
               context: 'events',
               difficulty: 'advanced',
               code: "ee.emit('event', data);",
+              task: `Passa i dati ai sottoscrittori con ee.emit('event', data) cosi' ogni listener riceve lo stesso payload.`,
             },
             {
               english: 'Event Bus',
@@ -6533,6 +6663,7 @@ export default {
               context: 'events',
               difficulty: 'advanced',
               code: "ee.prependListener('event', cb);",
+              task: `Anteponi un hook di metriche con ee.prependListener('event', cb) per garantirgli l'esecuzione prima di altri listener.`,
             },
             {
               english: 'EventTarget',
@@ -6553,6 +6684,7 @@ export default {
               context: 'events',
               difficulty: 'advanced',
               code: "new CustomEvent('name', { detail });",
+              task: `Dispatcha new CustomEvent('name', { detail }) cosi' i listener leggono il payload completo via event.detail.`,
             },
             {
               english: 'Hook',
@@ -6579,6 +6711,7 @@ export default {
               context: 'events',
               difficulty: 'advanced',
               code: "for await (const [v] of on(ee, 'data')) {}",
+              task: `Consuma un emitter come stream asincrono con for await (const [v] of on(ee, 'data')) {} per loop idiomatici.`,
             },
             {
               english: 'events.once',
@@ -6589,6 +6722,7 @@ export default {
               context: 'events',
               difficulty: 'advanced',
               code: "await once(ee, 'ready');",
+              task: `Sospendi il bootstrap con await once(ee, 'ready') finche' il modulo monitorato non emette l'evento ready.`,
             },
             {
               english: 'AbortSignal',
@@ -6599,6 +6733,7 @@ export default {
               context: 'events',
               difficulty: 'advanced',
               code: "await once(ee, 'data', { signal });",
+              task: `Passa { signal } a await once(ee, 'data', { signal }) per annullare l'attesa quando scatta il timeout.`,
             },
             {
               english: 'Async Generator',
@@ -6610,6 +6745,7 @@ export default {
               context: 'events',
               difficulty: 'advanced',
               code: 'async function* gen() { yield 1; }',
+              task: 'Definisci async function* gen() { yield 1; } per esporre un flusso di messaggi consumabile con for await.',
             },
             {
               english: 'Channel',
@@ -6704,6 +6840,7 @@ export default {
               difficulty: 'advanced',
               tool: 'Jest',
               command: 'npm install --save-dev jest',
+              task: 'Installa Jest come dipendenza di sviluppo per ottenere runner, asserzioni e mock in un unico pacchetto.',
             },
             {
               english: 'Mocha',
@@ -6716,6 +6853,7 @@ export default {
               difficulty: 'advanced',
               tool: 'Mocha',
               command: 'npm install --save-dev mocha',
+              task: 'Aggiungi Mocha come dev-dependency quando vuoi assemblare runner, Chai e Sinon in uno stack personalizzato.',
             },
             {
               english: 'Chai',
@@ -6727,6 +6865,7 @@ export default {
               difficulty: 'advanced',
               tool: 'Chai',
               code: 'expect(x).to.equal(1);',
+              task: 'Asserisci con expect(x).to.equal(1) usando lo stile expect di Chai per test leggibili e fluenti.',
             },
             {
               english: 'Vitest',
@@ -6750,6 +6889,7 @@ export default {
               difficulty: 'advanced',
               command: 'node --test',
               note: 'Disponibile da Node 18 senza dipendenze esterne.',
+              task: 'Esegui i test unitari con node --test sfruttando il runner integrato da Node 18 senza dipendenze esterne.',
             },
             {
               english: 'Tap',
@@ -6809,6 +6949,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               code: "describe('User', () => {});",
+              task: `Raggruppa i casi correlati dentro describe('User', () => {}) per ottenere report ordinati per feature.`,
             },
             {
               english: 'it',
@@ -6819,6 +6960,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               code: "it('should sum', () => {});",
+              task: `Scrivi it('should sum', () => {}) formulando il nome come specifica comportamentale del codice sotto test.`,
             },
             {
               english: 'test',
@@ -6829,6 +6971,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               code: "test('sums numbers', () => {});",
+              task: `Dichiara un caso con test('sums numbers', () => {}) usando l'alias accettato da Jest e Vitest.`,
             },
             {
               english: 'expect',
@@ -6839,6 +6982,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               code: 'expect(sum(1,2)).toBe(3);',
+              task: 'Asserisci il risultato con expect(sum(1,2)).toBe(3) ottenendo un diff leggibile in caso di fallimento.',
             },
             {
               english: 'Matcher',
@@ -6849,6 +6993,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               code: '.toBe(), .toEqual(), .toThrow()',
+              task: `Seleziona il matcher giusto fra .toBe(), .toEqual(), .toThrow() in base al valore o all'effetto che vuoi verificare.`,
             },
             {
               english: 'beforeEach',
@@ -6859,6 +7004,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               code: 'beforeEach(() => setup());',
+              task: `Resetta lo stato condiviso con beforeEach(() => setup()) cosi' ogni test parte da fixture note.`,
             },
             {
               english: 'afterEach',
@@ -6869,6 +7015,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               code: 'afterEach(() => cleanup());',
+              task: 'Libera le risorse con afterEach(() => cleanup()) per chiudere server e connessioni anche quando un test fallisce.',
             },
             {
               english: 'beforeAll',
@@ -6914,6 +7061,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               code: "jest.mock('./db');",
+              task: `Sostituisci il modulo db con jest.mock('./db') cosi' i test unitari restano deterministici e isolati.`,
             },
             {
               english: 'Stub',
@@ -6934,6 +7082,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               code: "jest.spyOn(obj, 'method');",
+              task: `Intercetta le chiamate a un metodo reale con jest.spyOn(obj, 'method') senza modificarne il comportamento.`,
             },
             {
               english: 'Fake',
@@ -6955,6 +7104,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               code: 'const fn = jest.fn();',
+              task: 'Crea const fn = jest.fn() e asserisci su fn.mock.calls per verificare argomenti e numero di invocazioni.',
             },
             {
               english: 'mockReturnValue',
@@ -6965,6 +7115,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               code: 'fn.mockReturnValue(42);',
+              task: `Concatena fn.mockReturnValue(42) sul mock cosi' ogni chiamante riceve il valore predefinito 42.`,
             },
             {
               english: 'mockResolvedValue',
@@ -6975,6 +7126,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               code: 'fn.mockResolvedValue(data);',
+              task: `Imposta fn.mockResolvedValue(data) cosi' fare await sul mock risolve con data senza toccare il database reale.`,
             },
             {
               english: 'Sinon',
@@ -7046,6 +7198,7 @@ export default {
               tool: 'supertest',
               command: 'npm install --save-dev supertest',
               code: "request(app).get('/users').expect(200);",
+              task: `Installa supertest e monta l'app con request(app).get('/users').expect(200) per testare le rotte in-process.`,
             },
             {
               english: 'Snapshot Test',
@@ -7056,6 +7209,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               code: 'expect(value).toMatchSnapshot();',
+              task: 'Salva uno snapshot con expect(value).toMatchSnapshot() per intercettare modifiche UI non volute durante la review.',
             },
             {
               english: 'Code Coverage',
@@ -7067,6 +7221,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               command: 'jest --coverage',
+              task: 'Lancia jest --coverage per generare il report di copertura ed evidenziare i rami di logica non testati.',
             },
             {
               english: 'Istanbul',
@@ -7116,6 +7271,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               command: 'jest --watch',
+              task: `Avvia jest --watch durante il TDD cosi' rigira solo i test toccati dall'ultima modifica con feedback sub-secondo.`,
             },
           ],
         },
@@ -7183,6 +7339,7 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               code: "db.query('SELECT * WHERE id = $1', [id]);",
+              task: `Passa l'id utente come parametro a db.query('SELECT * WHERE id = $1', [id]) per neutralizzare la SQL injection.`,
             },
             {
               english: 'Command Injection',
@@ -7204,6 +7361,7 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               code: '../../../etc/passwd',
+              task: 'Sanifica il nome file rifiutando sequenze come ../../../etc/passwd prima di concatenarlo a __dirname.',
             },
             {
               english: 'Validator',
@@ -7252,6 +7410,7 @@ export default {
               tool: 'Helmet',
               code: 'app.use(helmet());',
               note: `Rinominato per distinguere dall'Helmet generico al livello 8.`,
+              task: `Monta app.use(helmet()) all'inizio della catena per applicare CSP, HSTS e X-Frame-Options con default sicuri.`,
             },
             {
               english: 'CSP',
@@ -7262,6 +7421,7 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               code: "Content-Security-Policy: default-src 'self'",
+              task: `Emetti l'header Content-Security-Policy: default-src 'self' per bloccare script inline e fermare gli XSS riflessi.`,
             },
             {
               english: 'HSTS',
@@ -7284,6 +7444,7 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               code: 'X-Frame-Options: DENY',
+              task: 'Aggiungi X-Frame-Options: DENY alle risposte per impedire che la pagina venga incorporata in iframe di terzi.',
             },
             {
               english: 'X-Content-Type-Options',
@@ -7294,6 +7455,7 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               code: 'X-Content-Type-Options: nosniff',
+              task: `Imposta X-Content-Type-Options: nosniff cosi' i browser rispettano il MIME type dichiarato e non sniffano contenuti.`,
             },
             {
               english: 'Referrer Policy',
@@ -7331,6 +7493,7 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               code: 'integrity="sha384-..."',
+              task: `Aggiungi integrity="sha384-..." al tag script del CDN cosi' il browser rifiuta il file se l'hash non corrisponde.`,
             },
             {
               english: 'Trust Boundary',
@@ -7370,6 +7533,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'express-rate-limit',
               command: 'npm install express-rate-limit',
+              task: 'Installa express-rate-limit e applicalo al router di auth con windowMs 60000 per frenare i tentativi di brute force.',
             },
             {
               english: 'Brute Force',
@@ -7464,6 +7628,7 @@ export default {
               context: 'security',
               difficulty: 'intermediate',
               command: 'npm audit',
+              task: `Esegui npm audit nella CI per fallire la build appena una dipendenza transitiva acquisisce un advisory ad alta severita'.`,
             },
             {
               english: 'npm audit fix',
@@ -7475,6 +7640,7 @@ export default {
               context: 'security',
               difficulty: 'intermediate',
               command: 'npm audit fix',
+              task: 'Lancia npm audit fix per aggiornare automaticamente i pacchetti vulnerabili restando dentro i range semver dichiarati.',
             },
             {
               english: 'CVE',
@@ -7547,6 +7713,7 @@ export default {
               difficulty: 'intermediate',
               command: 'npm ci',
               note: 'Usa in CI per build riproducibili.',
+              task: `Preferisci npm ci a npm install sui server CI cosi' la build fallisce se lockfile e package.json sono divergenti.`,
             },
             {
               english: 'Provenance',
@@ -7557,6 +7724,7 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               command: 'npm publish --provenance',
+              task: `Pubblica con npm publish --provenance per allegare metadati firmati che attestano l'origine dal tuo workflow CI.`,
             },
           ],
         },

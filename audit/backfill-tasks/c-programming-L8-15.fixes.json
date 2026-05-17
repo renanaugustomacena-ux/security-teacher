@@ -1,0 +1,1596 @@
+{
+  "fixes": [
+    {
+      "level": "8",
+      "lesson": "c_structs_1",
+      "english": "Structure",
+      "set": {
+        "task": "Definisci una struct Point che raggruppa due interi x e y per rappresentare una coordinata cartesiana."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "c_structs_1",
+      "english": "Member",
+      "set": {
+        "task": "Assegna il valore 10 al membro x di una struct Point gia' dichiarata, usando la notazione puntata."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "c_structs_1",
+      "english": "Dot Operator",
+      "set": {
+        "task": "Accedi al campo name di una struct person tramite l'operatore punto per leggerlo direttamente."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "c_structs_1",
+      "english": "Arrow Operator",
+      "set": {
+        "task": "Leggi il campo name a partire da un puntatore a struct usando l'operatore freccia invece di dereferenziare manualmente."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "c_structs_1",
+      "english": "Struct Initialization",
+      "set": {
+        "task": "Inizializza una struct Point con i valori 10 e 20 usando una lista posizionale tra parentesi graffe."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "c_structs_1",
+      "english": "Designated Struct Initializer",
+      "set": {
+        "task": "Costruisci una struct Point assegnando 10 a .x e 20 a .y tramite inizializzatori designati C99."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "c_structs_1",
+      "english": "Nested Structure",
+      "set": {
+        "task": "Dichiara una struct Rect che annida una struct Point chiamata origin insieme a larghezza e altezza."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "c_structs_1",
+      "english": "Struct Pointer",
+      "set": {
+        "task": "Scrivi una funzione move che riceve un puntatore a struct Point e incrementa il suo campo x di 1."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "c_structs_1",
+      "english": "Struct Assignment",
+      "set": {
+        "task": "Copia tutti i membri di una struct Point a in una nuova struct b tramite un semplice assegnamento con uguale."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "c_structs_1",
+      "english": "Struct Size",
+      "set": {
+        "task": "Stampa la dimensione in byte di struct Point con sizeof e il formato %zu per ispezionare il padding effettivo."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "c_structs_2",
+      "english": "Union",
+      "set": {
+        "task": "Dichiara una union Data capace di contenere alternativamente un int, un float o un char nello stesso spazio."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "c_structs_2",
+      "english": "Tagged Union",
+      "set": {
+        "task": "Modella una struct Variant con un tag type intero e una union interna val che alterna fra int e float."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "c_structs_2",
+      "english": "Enum Definition",
+      "set": {
+        "task": "Definisci un enum Color con tre costanti simboliche RED, GREEN e BLUE per rappresentare canali cromatici."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "c_structs_2",
+      "english": "Enum Value",
+      "set": {
+        "task": "Imposta esplicitamente FIRST a 1 e SECOND a 2 in un enum anonimo per blindare i valori contro riordini futuri."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "c_structs_2",
+      "english": "Bitfield",
+      "set": {
+        "task": "Crea una struct Flags con due bitfield da 1 bit ciascuno chiamati active e ready per compattare due booleani."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "c_structs_2",
+      "english": "Anonymous Structure",
+      "set": {
+        "task": "Dichiara una variabile point come struttura anonima inline con campi x e y senza darle un nome di tipo."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "c_structs_2",
+      "english": "Flexible Array Member",
+      "set": {
+        "task": "Definisci una struct Buffer con un campo len e un array flessibile finale data[] da allocare a misura tramite malloc."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "c_structs_2",
+      "english": "Struct Packing",
+      "set": {
+        "task": "Applica l'attributo __attribute__((packed)) a una struct per eliminare il padding generato dal compilatore."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "c_structs_2",
+      "english": "typedef struct",
+      "set": {
+        "task": "Usa typedef per creare un alias Point su una struct anonima con campi x e y, evitando la parola chiave struct."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "c_structs_3",
+      "english": "Constructor Pattern",
+      "set": {
+        "task": "Dichiara la firma di point_create che prende due interi x e y e ritorna un puntatore a Point appena allocato."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "c_structs_3",
+      "english": "Destructor Pattern",
+      "set": {
+        "task": "Implementa point_destroy che riceve un puntatore a Point e ne libera la memoria con free."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "c_structs_3",
+      "english": "Container Struct",
+      "set": {
+        "task": "Modella una struct Array con un puntatore data, un campo len e un campo cap per gestire un buffer ridimensionabile."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "c_structs_3",
+      "english": "Struct Literal",
+      "set": {
+        "task": "Costruisci al volo un valore temporaneo struct Point con .x=1 e .y=2 usando un compound literal."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "c_structs_3",
+      "english": "Flag Field",
+      "set": {
+        "task": "Dichiara una struct Options con due bitfield verbose e debug da 1 bit per memorizzare opzioni booleane compatte."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "c_structs_4",
+      "english": "Struct Array",
+      "set": {
+        "task": "Dichiara un array statico di 100 elementi struct Student per memorizzare un blocco di record studenti."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "c_structs_4",
+      "english": "Offset",
+      "set": {
+        "task": "Includi stddef.h e calcola con offsetof il numero di byte fra l'inizio di struct Point e il suo campo y."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "c_memory_1",
+      "english": "malloc",
+      "set": {
+        "task": "Alloca dinamicamente sullo heap spazio per 10 interi salvando il puntatore restituito da malloc in una variabile p."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "c_memory_1",
+      "english": "free",
+      "set": {
+        "task": "Rilascia la memoria puntata da ptr con free e azzera subito il puntatore per evitare use-after-free."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "c_memory_1",
+      "english": "calloc",
+      "set": {
+        "task": "Riserva spazio per 10 interi gia' azzerati a zero usando calloc invece di malloc seguito da memset."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "c_memory_1",
+      "english": "realloc",
+      "set": {
+        "task": "Ridimensiona il blocco puntato da p portandolo a 20 interi tramite realloc, riassegnando il risultato a p."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "c_memory_1",
+      "english": "Allocation Failure",
+      "set": {
+        "task": "Verifica che p non sia NULL dopo malloc e in caso di fallimento stampa l'errore con perror e termina con exit(1)."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "c_memory_2",
+      "english": "Memory-Mapped File",
+      "set": {
+        "task": "Mappa in memoria un file descriptor fd in sola lettura usando mmap con flag MAP_PRIVATE e offset zero."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "c_memory_3",
+      "english": "Valgrind",
+      "set": {
+        "task": "Lancia il binario ./program sotto valgrind con --leak-check=full per stanare memory leak e accessi invalidi."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "c_memory_3",
+      "english": "Memory Sanitizer",
+      "set": {
+        "task": "Compila main.c con gcc abilitando il flag -fsanitize=memory per intercettare letture da memoria non inizializzata."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "c_memory_3",
+      "english": "Leak Sanitizer",
+      "set": {
+        "task": "Compila main.c con gcc e -fsanitize=leak per segnalare a fine programma ogni allocazione ancora raggiungibile."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "c_memory_4",
+      "english": "Growable Dynamic Array",
+      "set": {
+        "task": "Raddoppia la capacita' cap e chiama realloc su arr quando len supera cap per mantenere append ammortizzato O(1)."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "c_memory_4",
+      "english": "Node Allocation",
+      "set": {
+        "task": "Alloca dinamicamente un singolo struct Node sullo heap usando malloc e sizeof per inserirlo in una lista linkata."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_1",
+      "english": "File Pointer",
+      "set": {
+        "task": "Dichiara una variabile fp di tipo FILE* destinata a contenere lo stato di un file aperto in seguito."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_1",
+      "english": "fopen",
+      "set": {
+        "task": "Apri il file data.txt in modalita' lettura con fopen e salva il puntatore FILE risultante in fp."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_1",
+      "english": "fclose",
+      "set": {
+        "task": "Chiudi il file referenziato da fp con fclose per svuotare i buffer e rilasciare il descrittore."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_1",
+      "english": "File Mode",
+      "set": {
+        "task": "Ricorda le stringhe di modalita' di fopen: r per leggere, w per scrivere, a per appendere e r+ per lettura/scrittura."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_1",
+      "english": "fprintf",
+      "set": {
+        "task": "Scrivi su fp la riga Score: seguita dal valore intero della variabile score, terminando con newline tramite fprintf."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_1",
+      "english": "fscanf",
+      "set": {
+        "task": "Leggi da fp un intero e una stringa con fscanf usando il formato \"%d %s\" e scrivili in num e name."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_1",
+      "english": "fgets (file I/O)",
+      "set": {
+        "task": "Leggi al massimo sizeof(buf)-1 caratteri da fp dentro buf con fgets per consumare una riga senza overflow."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_1",
+      "english": "fputs",
+      "set": {
+        "task": "Scrivi la stringa Hello con newline finale sul file fp tramite fputs, senza formattazione aggiuntiva."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_1",
+      "english": "End of File",
+      "set": {
+        "task": "Cicla con while leggendo un carattere alla volta con fgetc finche' il valore restituito e' diverso da EOF."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_1",
+      "english": "Error Checking",
+      "set": {
+        "task": "Controlla se fp e' NULL dopo fopen e, in caso, stampa la causa con perror e ritorna 1 dal main."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_2",
+      "english": "Binary File",
+      "set": {
+        "task": "Apri il file data.bin in modalita' binaria di lettura passando la stringa \"rb\" come secondo argomento di fopen."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_2",
+      "english": "fread",
+      "set": {
+        "task": "Leggi count interi binari da fp dentro buffer con fread, specificando sizeof(int) come dimensione di elemento."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_2",
+      "english": "fwrite",
+      "set": {
+        "task": "Riversa su fp count elementi di tipo int presi dall'array data usando fwrite per una scrittura binaria diretta."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_2",
+      "english": "fseek",
+      "set": {
+        "task": "Sposta la posizione corrente di fp esattamente all'inizio del file passando 0 e SEEK_SET a fseek."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_2",
+      "english": "ftell",
+      "set": {
+        "task": "Salva in una variabile long la posizione corrente del puntatore di fp interrogandola con ftell."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_2",
+      "english": "rewind",
+      "set": {
+        "task": "Riporta la posizione di lettura/scrittura di fp all'offset zero con una singola chiamata a rewind."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_2",
+      "english": "fflush",
+      "set": {
+        "task": "Forza la scrittura immediata del buffer di stdout sul terminale o pipe chiamando fflush(stdout)."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_2",
+      "english": "Temporary File",
+      "set": {
+        "task": "Crea un file temporaneo anonimo con tmpfile e salva il FILE* restituito nella variabile tmp."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_3",
+      "english": "Line Reading",
+      "set": {
+        "task": "Itera con while sui contenuti di fp leggendo una riga alla volta in line tramite fgets fino a EOF."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_3",
+      "english": "Character I/O",
+      "set": {
+        "task": "Leggi un singolo carattere da fp con fgetc memorizzando il valore in una variabile int chiamata c."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_3",
+      "english": "Redirection",
+      "set": {
+        "task": "Esegui ./program reindirizzando lo standard output al file output.txt tramite l'operatore > della shell."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_3",
+      "english": "Pipe",
+      "set": {
+        "task": "Concatena con una pipe l'output di cat file.txt all'input di grep \"error\" per filtrare solo le righe di errore."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_3",
+      "english": "ferror",
+      "set": {
+        "task": "Verifica se durante le operazioni su fp si e' verificato un errore interrogando lo stream con ferror."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_3",
+      "english": "feof",
+      "set": {
+        "task": "Continua a iterare finche' feof su fp ritorna falso, ricordando che il flag scatta solo dopo una lettura fallita."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_3",
+      "english": "File Locking",
+      "set": {
+        "task": "Acquisisci un lock esclusivo sul file descriptor fd con flock e flag LOCK_EX per serializzare le scritture."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_4",
+      "english": "Absolute Path",
+      "set": {
+        "task": "Usa il percorso assoluto \"/home/user/data.txt\" che parte dalla radice e non dipende dalla directory corrente."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_4",
+      "english": "Relative Path",
+      "set": {
+        "task": "Riferisci il file \"./data/input.txt\" tramite un percorso relativo che parte dalla directory corrente di esecuzione."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_4",
+      "english": "rename",
+      "set": {
+        "task": "Rinomina il file old.txt in new.txt invocando la funzione di libreria rename con i due nomi come argomenti."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_4",
+      "english": "remove",
+      "set": {
+        "task": "Cancella il file temp.txt dal filesystem chiamando la funzione standard remove con il nome del file."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_4",
+      "english": "Append Mode",
+      "set": {
+        "task": "Apri log.txt in modalita' append con fopen e flag \"a\" cosi' che ogni scrittura si accodi al contenuto esistente."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_4",
+      "english": "File Size",
+      "set": {
+        "task": "Calcola la dimensione di fp facendo fseek a SEEK_END e leggendo poi la posizione finale con ftell."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_4",
+      "english": "stdin",
+      "set": {
+        "task": "Leggi una riga dallo standard input dentro buf passando stdin come ultimo argomento di fgets."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_4",
+      "english": "stderr",
+      "set": {
+        "task": "Stampa un messaggio di errore formattato Error: seguito da msg sullo stream stderr tramite fprintf."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_1",
+      "english": "#include",
+      "set": {
+        "task": "Includi stdio.h dalle directory di sistema con <> e myheader.h dalla directory locale con i doppi apici."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_1",
+      "english": "#define",
+      "set": {
+        "task": "Definisci la costante simbolica PI con valore 3.14159 tramite la direttiva #define del preprocessore."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_1",
+      "english": "Function-like Macro",
+      "set": {
+        "task": "Scrivi una macro MAX(a,b) parametrizzata che ritorna il maggiore, parentesizzando ogni argomento per sicurezza."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_1",
+      "english": "#ifdef",
+      "set": {
+        "task": "Compila la printf di debug solo se la macro DEBUG e' definita, racchiudendola fra #ifdef DEBUG ed #endif."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_1",
+      "english": "#ifndef",
+      "set": {
+        "task": "Proteggi un header definendo MYHEADER_H solo se non e' gia' definita, racchiudendo tutto fra #ifndef ed #endif."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_1",
+      "english": "Header Guard",
+      "set": {
+        "task": "Avvolgi le dichiarazioni di mylib in un classico include guard basato su MYLIB_H per prevenire inclusioni doppie."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_1",
+      "english": "#pragma once",
+      "set": {
+        "task": "Inserisci #pragma once in cima a un header come alternativa moderna e piu' compatta agli include guard tradizionali."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_1",
+      "english": "#undef",
+      "set": {
+        "task": "Rimuovi la definizione della macro MAX precedentemente impostata utilizzando la direttiva #undef."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_1",
+      "english": "Conditional Compilation",
+      "set": {
+        "task": "Seleziona codice specifico per Windows o Unix incapsulandolo in un blocco #if defined(_WIN32) / #else / #endif."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_2",
+      "english": "Stringification",
+      "set": {
+        "task": "Definisci una macro STR(x) che usa l'operatore # per trasformare l'argomento hello nella stringa letterale \"hello\"."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_2",
+      "english": "Token Pasting",
+      "set": {
+        "task": "Realizza una macro CONCAT(a,b) che fonde due token con ## per generare l'identificatore myVar da CONCAT(my,Var)."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_2",
+      "english": "Variadic Macro",
+      "set": {
+        "task": "Scrivi una macro LOG(fmt, ...) che inoltra fmt e __VA_ARGS__ a fprintf su stderr per stampare diagnostica variadica."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_2",
+      "english": "__FILE__",
+      "set": {
+        "task": "Stampa con printf il nome del file sorgente corrente sfruttando l'espansione automatica della macro __FILE__."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_2",
+      "english": "__LINE__",
+      "set": {
+        "task": "Mostra a runtime il numero di riga del sorgente corrente usando il formato %d e la macro __LINE__."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_2",
+      "english": "__func__",
+      "set": {
+        "task": "Stampa con printf il nome della funzione corrente sfruttando l'identificatore predefinito __func__ introdotto in C99."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_2",
+      "english": "Macro Side Effect",
+      "set": {
+        "task": "Evita di passare i++ o j++ alla macro MAX, perche' la doppia espansione incrementerebbe due volte la variabile."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_2",
+      "english": "Inline Function",
+      "set": {
+        "task": "Definisci una funzione static inline max(int a, int b) che ritorna il maggiore, alternativa type-safe alle macro."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_2",
+      "english": "#error",
+      "set": {
+        "task": "Blocca la compilazione con #error \"PLATFORM must be defined\" se la macro PLATFORM non e' stata impostata."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_2",
+      "english": "Include Path",
+      "set": {
+        "task": "Aggiungi /usr/local/include al percorso di ricerca degli header invocando gcc con il flag -I prima di main.c."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_3",
+      "english": "Header Forward Declaration",
+      "set": {
+        "task": "Inserisci la dichiarazione anticipata struct Node; in un header per usare puntatori a Node senza definirne il layout."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_3",
+      "english": "Separate Compilation",
+      "set": {
+        "task": "Compila separatamente file1.c e file2.c in oggetti con -c e poi linka i .o nel binario program con gcc."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_4",
+      "english": "Debug Build",
+      "set": {
+        "task": "Produci un eseguibile di debug compilando main.c con gcc, definendo DEBUG via -D e includendo i simboli con -g."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_4",
+      "english": "Release Build",
+      "set": {
+        "task": "Genera una build di rilascio di main.c con gcc, disabilitando gli assert via -DNDEBUG e ottimizzando con -O2."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_4",
+      "english": "Command-Line Define",
+      "set": {
+        "task": "Inietta la macro VERSION con valore 2 al preprocessore di main.c tramite il flag -DVERSION=2 di gcc."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_4",
+      "english": "Platform Detection",
+      "set": {
+        "task": "Differenzia il codice fra Windows e Linux usando #ifdef _WIN32 con un ramo #elif defined(__linux__) successivo."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_4",
+      "english": "Feature Toggle",
+      "set": {
+        "task": "Avvolgi il codice di logging in un blocco #ifdef ENABLE_LOGGING per attivarlo solo nelle build con quel flag."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_4",
+      "english": "Assert",
+      "set": {
+        "task": "Includi assert.h e verifica che ptr non sia NULL con assert per documentare l'invariante e crashare in debug."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_4",
+      "english": "Static Assert",
+      "set": {
+        "task": "Usa _Static_assert per controllare a compile-time che sizeof(int) sia esattamente 4 byte con messaggio dedicato."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_4",
+      "english": "Predefined Macro",
+      "set": {
+        "task": "Ricorda le macro predefinite __DATE__, __TIME__ e __STDC_VERSION__ per loggare metadati di compilazione."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_4",
+      "english": "Preprocessing Output",
+      "set": {
+        "task": "Stampa a video l'output del preprocessore di main.c eseguendo gcc con il flag -E per fare debug delle macro."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_4",
+      "english": "#line",
+      "set": {
+        "task": "Riscrivi numero di riga e nome file riportati negli errori inserendo #line 100 \"generated.c\" nel sorgente generato."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_1",
+      "english": "malloc (stdlib reference)",
+      "set": {
+        "task": "Alloca con malloc dalla libreria standard memoria sufficiente per 10 interi e assegnala al puntatore p."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_1",
+      "english": "calloc (stdlib reference)",
+      "set": {
+        "task": "Riserva con calloc un buffer di 10 interi gia' azzerati e salva il puntatore in arr in una sola chiamata."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_1",
+      "english": "realloc (stdlib reference)",
+      "set": {
+        "task": "Espandi a 20 interi il blocco riferito da p tramite realloc, riassegnando il risultato per gestire un eventuale spostamento."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_1",
+      "english": "free (stdlib reference)",
+      "set": {
+        "task": "Libera il blocco puntato da p con free e azzera subito p a NULL per evitare dangling pointer."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_1",
+      "english": "atoi (stdlib)",
+      "set": {
+        "task": "Converti la stringa \"42\" in un intero con atoi e salva il risultato nella variabile n, ricordando i suoi limiti."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_1",
+      "english": "atof",
+      "set": {
+        "task": "Trasforma la stringa \"3.14\" in un double tramite atof e memorizza il valore decimale nella variabile d."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_1",
+      "english": "strtol (stdlib reference)",
+      "set": {
+        "task": "Converti la stringa s in long base 10 con strtol, passando &endptr per identificare il primo carattere non valido."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_1",
+      "english": "qsort (stdlib reference)",
+      "set": {
+        "task": "Ordina un array di n interi richiamando qsort con sizeof(int) come dimensione di elemento e cmp come comparatore."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_1",
+      "english": "bsearch (stdlib reference)",
+      "set": {
+        "task": "Cerca key dentro l'array ordinato arr di n interi con bsearch, passando cmp come comparatore per il confronto."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_1",
+      "english": "exit (stdlib)",
+      "set": {
+        "task": "Termina il processo con codice di successo invocando exit(EXIT_SUCCESS), affinche' siano eseguiti gli handler atexit."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_2",
+      "english": "strlen (stdlib reference)",
+      "set": {
+        "task": "Calcola la lunghezza della stringa \"ciao\" con strlen e salva il risultato in una variabile size_t len."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_2",
+      "english": "strcpy (stdlib reference)",
+      "set": {
+        "task": "Copia la stringa sorgente src nel buffer dest con strcpy, sapendo che la funzione non controlla la dimensione."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_2",
+      "english": "strncpy (stdlib reference)",
+      "set": {
+        "task": "Copia da src in dest al massimo sizeof(dest)-1 byte con strncpy per lasciare spazio garantito al terminatore null."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_2",
+      "english": "strcat (stdlib reference)",
+      "set": {
+        "task": "Concatena la stringa \" mondo\" in coda al contenuto di dest tramite strcat, assicurandoti che dest abbia spazio."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_2",
+      "english": "strcmp (stdlib reference)",
+      "set": {
+        "task": "Confronta lessicalmente le stringhe a e b con strcmp e rileva l'uguaglianza testando se il risultato e' 0."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_2",
+      "english": "strchr (stdlib reference)",
+      "set": {
+        "task": "Cerca la prima occorrenza del carattere '@' nella stringa s con strchr per validare un indirizzo email rudimentale."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_2",
+      "english": "strstr (stdlib reference)",
+      "set": {
+        "task": "Cerca la sottostringa \"error\" dentro text con strstr e salva nel puntatore p l'inizio del match o NULL."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_2",
+      "english": "memcpy (stdlib reference)",
+      "set": {
+        "task": "Copia n byte grezzi dalla sorgente src alla destinazione dest con memcpy, garantendo che i buffer non si sovrappongano."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_2",
+      "english": "memset (stdlib reference)",
+      "set": {
+        "task": "Azzera l'intero buffer buf riempiendolo con il byte 0 tramite memset e sizeof(buf) come quantita'."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_2",
+      "english": "memcmp (stdlib reference)",
+      "set": {
+        "task": "Confronta byte per byte i primi n byte dei buffer a e b con memcmp e rileva l'uguaglianza testando 0."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_3",
+      "english": "sin",
+      "set": {
+        "task": "Calcola il seno dell'angolo x espresso in radianti con la funzione sin di math.h e salva il risultato in y."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_3",
+      "english": "cos",
+      "set": {
+        "task": "Ottieni il coseno di un angolo x in radianti tramite cos di math.h e memorizza il valore in y."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_3",
+      "english": "tan",
+      "set": {
+        "task": "Determina la tangente dell'angolo x espresso in radianti chiamando tan e assegna il risultato a y."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_3",
+      "english": "sqrt",
+      "set": {
+        "task": "Estrai la radice quadrata di 2.0 tramite la funzione sqrt e memorizza il valore double risultante in r."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_3",
+      "english": "pow",
+      "set": {
+        "task": "Calcola 2 elevato alla 10 invocando pow(2.0, 10) e salva il risultato come double nella variabile r."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_3",
+      "english": "log",
+      "set": {
+        "task": "Calcola il logaritmo naturale in base e di x tramite log di math.h e salva il valore nella variabile r."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_3",
+      "english": "exp",
+      "set": {
+        "task": "Ottieni e elevato a 1.0 chiamando exp(1.0) e memorizza il risultato, ottenendo cosi' una stima del numero di Eulero."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_3",
+      "english": "floor",
+      "set": {
+        "task": "Arrotonda per difetto il valore 3.7 al piu' vicino intero inferiore tramite floor, salvando il risultato in r."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_3",
+      "english": "ceil",
+      "set": {
+        "task": "Arrotonda per eccesso 3.2 al piu' vicino intero superiore tramite ceil e salva il valore double in r."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_3",
+      "english": "fabs",
+      "set": {
+        "task": "Calcola il valore assoluto di -3.5 tramite fabs di math.h e memorizza il risultato non negativo in r."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_4",
+      "english": "time",
+      "set": {
+        "task": "Recupera il timestamp Unix corrente in secondi chiamando time(NULL) e salva il valore in una variabile time_t now."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_4",
+      "english": "time_t",
+      "set": {
+        "task": "Dichiara una variabile t di tipo time_t pronta a ospitare un valore di tempo calendariale in secondi dal 1970."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_4",
+      "english": "localtime",
+      "set": {
+        "task": "Converti il timestamp now in una struct tm di tempo locale tramite localtime e salva il puntatore restituito in lt."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_4",
+      "english": "strftime",
+      "set": {
+        "task": "Formatta la struct tm lt come stringa YYYY-MM-DD dentro buf usando strftime con il pattern \"%Y-%m-%d\"."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_4",
+      "english": "difftime",
+      "set": {
+        "task": "Misura in secondi quanto e' trascorso fra start e end chiamando difftime e salva il double risultante in d."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_4",
+      "english": "clock",
+      "set": {
+        "task": "Memorizza il tempo CPU iniziale della misurazione chiamando clock() e salvando il valore in una clock_t start."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_4",
+      "english": "rand (stdlib)",
+      "set": {
+        "task": "Genera un numero pseudo-casuale fra 0 e 99 usando rand seguito dal modulo 100, ricordandone i limiti crittografici."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_4",
+      "english": "srand (stdlib)",
+      "set": {
+        "task": "Inizializza il generatore pseudo-casuale con il timestamp corrente passando time(NULL) a srand per variare le sequenze."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_4",
+      "english": "RAND_MAX",
+      "set": {
+        "task": "Normalizza l'uscita di rand fra 0.0 e 1.0 dividendo per la costante RAND_MAX castata a double."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_4",
+      "english": "mktime",
+      "set": {
+        "task": "Trasforma la struct tm lt in un valore time_t calendariale invocando mktime, che normalizza anche i campi."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_1",
+      "english": "errno",
+      "set": {
+        "task": "Includi errno.h e, se fopen ritorna NULL, stampa il codice di errore globale errno con printf e formato %d."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_1",
+      "english": "perror",
+      "set": {
+        "task": "Segnala il fallimento di fopen al terminale con perror(\"fopen failed\"), che antepone il prefisso al messaggio di errno."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_1",
+      "english": "strerror",
+      "set": {
+        "task": "Stampa su stderr la descrizione testuale del codice errno corrente passando strerror(errno) al formato %s di fprintf."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_1",
+      "english": "Error Code",
+      "set": {
+        "task": "Salva il valore di ritorno di do_thing in rc e, se non zero, deviane la gestione su handle_error con il codice."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_1",
+      "english": "Exit Code",
+      "set": {
+        "task": "Esci dal main segnalando un fallimento al sistema operativo restituendo la costante EXIT_FAILURE."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_1",
+      "english": "EAGAIN",
+      "set": {
+        "task": "Riprova l'operazione I/O non bloccante chiamando retry() quando errno e' impostato esattamente a EAGAIN."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_1",
+      "english": "ENOMEM",
+      "set": {
+        "task": "Se l'allocazione p e' fallita imposta errno a ENOMEM e ritorna -1 dalla funzione per propagare l'esaurimento memoria."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_1",
+      "english": "EINVAL",
+      "set": {
+        "task": "Rifiuta input nullo settando errno a EINVAL e ritornando -1 quando il puntatore s passato alla funzione e' NULL."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_1",
+      "english": "EACCES",
+      "set": {
+        "task": "Stampa su stderr \"no permission\" quando errno vale EACCES per segnalare un fallimento dovuto a permessi insufficienti."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_1",
+      "english": "ENOENT",
+      "set": {
+        "task": "Avvisa l'utente stampando \"file mancante\" quando errno e' ENOENT, indicando che il path richiesto non esiste."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_2",
+      "english": "Runtime Assert",
+      "set": {
+        "task": "Verifica a runtime che ptr non sia NULL con assert(ptr != NULL) per documentare e proteggere una precondizione."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_2",
+      "english": "Precondition",
+      "set": {
+        "task": "Definisci una funzione f(int *p) che impone come precondizione p non NULL tramite assert all'ingresso."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_2",
+      "english": "Postcondition",
+      "set": {
+        "task": "Controlla con assert che il risultato calcolato sia non negativo, formalizzando una postcondizione della funzione."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_2",
+      "english": "Invariant",
+      "set": {
+        "task": "Garantisci l'invariante di uno stack verificando con assert che size non superi mai capacity in nessun punto."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_2",
+      "english": "Defensive NULL Check",
+      "set": {
+        "task": "Inserisci un controllo difensivo all'inizio della funzione: se p e' NULL gestisci l'errore prima di dereferenziare."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_2",
+      "english": "Sanity Check",
+      "set": {
+        "task": "Termina subito il programma con abort se n esce dal range previsto, ovvero se n e' negativo o supera MAX."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_2",
+      "english": "Bounds Check",
+      "set": {
+        "task": "Scrivi in arr[i] solo dopo aver verificato che i sia non negativo e strettamente minore di size per evitare overflow."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_2",
+      "english": "abort",
+      "set": {
+        "task": "Termina il processo in modo anomalo invocando abort(), che invia SIGABRT e tipicamente produce un core dump."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_2",
+      "english": "NDEBUG",
+      "set": {
+        "task": "Disabilita tutte le asserzioni di assert.h definendo NDEBUG prima di includere l'header nel sorgente di produzione."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_3",
+      "english": "Goto Cleanup",
+      "set": {
+        "task": "Salta con goto all'etichetta cleanup se fp e' NULL, dove un blocco unico esegue free(buf) prima di uscire."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_3",
+      "english": "Early Return",
+      "set": {
+        "task": "Esci subito dalla funzione restituendo -1 se ptr e' NULL, riducendo l'annidamento del resto del corpo."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_3",
+      "english": "Guard Clause",
+      "set": {
+        "task": "Posiziona in cima alla funzione una guard clause che ritorna ERR_NULL quando input e' NULL, per appiattire i percorsi."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_3",
+      "english": "Return -1",
+      "set": {
+        "task": "Invoca perror(\"read\") quando read sul file descriptor fd ritorna -1, segnalando un fallimento nella lettura POSIX."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_3",
+      "english": "Out Parameter",
+      "set": {
+        "task": "Dichiara parse(const char *s, int *out) che usa out come parametro di uscita per restituire il valore parsato."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_3",
+      "english": "Double Free (error handling)",
+      "set": {
+        "task": "Riconosci come bug il pattern free(p) seguito da un secondo free(p) sulla stessa variabile, classica doppia free."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_3",
+      "english": "Error Propagation",
+      "set": {
+        "task": "Inoltra verso l'alto un codice di errore salvando in rc il ritorno di inner() e propagandolo se diverso da zero."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_3",
+      "english": "Error Cleanup Function",
+      "set": {
+        "task": "Centralizza il rilascio risorse in una funzione cleanup che libera buf con free e chiude il file fp con fclose."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_4",
+      "english": "Signal",
+      "set": {
+        "task": "Includi signal.h per ottenere le dichiarazioni necessarie a registrare handler e inviare segnali asincroni al processo."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_4",
+      "english": "Error Signal Handler",
+      "set": {
+        "task": "Registra la funzione handler come gestore del segnale SIGINT tramite la chiamata signal(SIGINT, handler)."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_4",
+      "english": "raise",
+      "set": {
+        "task": "Invia il segnale SIGTERM allo stesso processo corrente chiamando raise(SIGTERM) per innescare la propria terminazione."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_4",
+      "english": "setjmp",
+      "set": {
+        "task": "Salva il contesto di esecuzione in un jmp_buf env con setjmp e fai eseguire il ramo normale quando ritorna 0."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_4",
+      "english": "longjmp",
+      "set": {
+        "task": "Ripristina il contesto salvato in env chiamando longjmp(env, 1) per saltare non-localmente al setjmp originario."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_4",
+      "english": "jmp_buf",
+      "set": {
+        "task": "Dichiara una variabile env di tipo jmp_buf, usata per memorizzare lo stato di esecuzione fra setjmp e longjmp."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_4",
+      "english": "volatile sig_atomic_t",
+      "set": {
+        "task": "Dichiara la variabile flag come volatile sig_atomic_t per condividerla in sicurezza fra handler di segnale e main."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_4",
+      "english": "atexit (error path)",
+      "set": {
+        "task": "Registra la funzione cleanup con atexit affinche' venga eseguita anche quando il percorso di errore chiama exit."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "c_datastruct_1",
+      "english": "Doubly Linked List Removal",
+      "set": {
+        "task": "Dichiara una struct Node con un valore v e un puntatore next, base minima per implementare poi una lista linkata."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "c_datastruct_1",
+      "english": "Node",
+      "set": {
+        "task": "Definisci il prototipo new_node(int v) che ritorna un puntatore a struct Node appena allocato contenente v."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "c_datastruct_1",
+      "english": "Head Pointer",
+      "set": {
+        "task": "Inizializza il puntatore alla testa head come struct Node* a NULL, indicando una lista linkata inizialmente vuota."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "c_datastruct_1",
+      "english": "Tail Pointer",
+      "set": {
+        "task": "Dichiara e azzera a NULL un puntatore tail di tipo struct Node*, premessa per append in O(1) sulla lista linkata."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "c_datastruct_1",
+      "english": "Doubly Linked List",
+      "set": {
+        "task": "Modella una lista doppiamente concatenata definendo struct DNode con valore v e i puntatori prev e next."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "c_datastruct_1",
+      "english": "Insert",
+      "set": {
+        "task": "Inserisci il nodo n in testa alla lista linkata collegandone next ad head e aggiornando head per puntare a n."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "c_datastruct_1",
+      "english": "Delete",
+      "set": {
+        "task": "Sgancia il nodo curr facendo puntare prev->next a curr->next e poi libera la memoria di curr con free."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "c_datastruct_1",
+      "english": "List Traversal",
+      "set": {
+        "task": "Itera sulla lista linkata con un for partendo da head e avanzando p=p->next finche' p non e' NULL."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "c_datastruct_2",
+      "english": "Stack",
+      "set": {
+        "task": "Definisci una struct Stack con un puntatore data agli elementi interi e un indice top per la cima della pila."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "c_datastruct_2",
+      "english": "Push",
+      "set": {
+        "task": "Inserisci value in cima alla pila incrementando top con pre-incremento e scrivendo in stack[++top]."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "c_datastruct_2",
+      "english": "Pop",
+      "set": {
+        "task": "Estrai dalla pila l'elemento corrente leggendo stack[top--] e salvalo in v, decrementando top dopo la lettura."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "c_datastruct_2",
+      "english": "Peek",
+      "set": {
+        "task": "Sbircia in v il valore in cima alla pila leggendo stack[top] senza modificare l'indice top, lasciando la pila intatta."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "c_datastruct_2",
+      "english": "Circular Buffer",
+      "set": {
+        "task": "Avanza l'indice idx in un buffer circolare con idx = (idx + 1) % capacity per riavvolgerlo allo zero quando finisce."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "c_datastruct_3",
+      "english": "Tree",
+      "set": {
+        "task": "Definisci struct Tree con un valore v e due puntatori left e right per modellare un albero binario."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "c_datastruct_4",
+      "english": "Hash Function",
+      "set": {
+        "task": "Dichiara il prototipo di hash che riceve una stringa C const char *s e ritorna un unsigned int distribuito."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "c_algos_1",
+      "english": "Comparator",
+      "set": {
+        "task": "Dichiara il prototipo di cmp che riceve due const void* e ritorna un int negativo, zero o positivo per qsort."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "c_algos_2",
+      "english": "Linear Search Algorithm",
+      "set": {
+        "task": "Cerca la chiave k in un array di n elementi con un for lineare e ritorna l'indice i alla prima corrispondenza."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "c_algos_2",
+      "english": "Algorithmic Recursion",
+      "set": {
+        "task": "Implementa fact(int n) ricorsivamente: ritorna 1 quando n e' al massimo 1, altrimenti n moltiplicato per fact(n-1)."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "c_algos_3",
+      "english": "Constant Time",
+      "set": {
+        "task": "Annota un blocco di codice come tempo costante O(1) per documentare che il lavoro non dipende dalla dimensione dell'input."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "c_algos_3",
+      "english": "Linear Time",
+      "set": {
+        "task": "Annota una funzione come complessita' O(n) per indicare che il costo scala linearmente con la dimensione dell'input."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "c_algos_3",
+      "english": "Logarithmic Time",
+      "set": {
+        "task": "Marca un algoritmo come O(log n) per dichiararne complessita' logaritmica, tipica della ricerca binaria su dati ordinati."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "c_algos_3",
+      "english": "Quadratic Time",
+      "set": {
+        "task": "Etichetta un blocco come O(n^2) per evidenziare che ha costo quadratico, tipico dei cicli for annidati su un array."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "c_algos_3",
+      "english": "Exponential Time",
+      "set": {
+        "task": "Annota la complessita' O(2^n) per segnalare crescita esponenziale, come nel Fibonacci ricorsivo ingenuo."
+      }
+    }
+  ]
+}

@@ -1,0 +1,948 @@
+{
+  "fixes": [
+    {
+      "level": "12",
+      "lesson": "db_administration_1",
+      "english": "Backup",
+      "set": {
+        "task": "Esegui un backup logico di mydb redirigendo l'output di pg_dump in backup.sql per archiviarlo su S3."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_1",
+      "english": "pg_dump",
+      "set": {
+        "task": "Esporta mydb come dump in formato custom con pg_dump -U postgres -F c -f backup.dump per restore selettivo per tabella."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_1",
+      "english": "mysqldump",
+      "set": {
+        "task": "Lancia mysqldump come root salvando mydb in backup.sql, usando --single-transaction per evitare lock sulle tabelle InnoDB."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_1",
+      "english": "Backup Schedule",
+      "set": {
+        "task": "Schedula in cron una riga 0 3 * * * che invoca /usr/local/bin/backup.sh ogni notte alle 3 del mattino."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_2",
+      "english": "Restore",
+      "set": {
+        "task": "Ripristina mydb dal file backup.dump con pg_restore -d, poi verifica i conteggi di riga sulle tabelle critiche."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_2",
+      "english": "pg_restore",
+      "set": {
+        "task": "Lancia pg_restore -U postgres -d mydb backup.dump aggiungendo -j 4 per parallelizzare il restore con quattro worker."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_2",
+      "english": "Point-in-Time Recovery",
+      "set": {
+        "task": "Imposta recovery_target_time a '2026-04-26 14:00:00' nel recovery.conf per fare PITR fino a quel preciso istante."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_2",
+      "english": "WAL Archive",
+      "set": {
+        "task": "Configura archive_command come 'cp %p /archive/%f' in postgresql.conf per archiviare ogni segmento WAL chiuso."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_3",
+      "english": "CREATE USER",
+      "set": {
+        "task": "Crea l'utente alice con password 'secret' tramite CREATE USER WITH PASSWORD per dargli accesso al cluster."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_3",
+      "english": "CREATE ROLE",
+      "set": {
+        "task": "Definisci un ruolo di gruppo app_readonly con CREATE ROLE per concentrare poi i grant in sola lettura su un unico contenitore."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_3",
+      "english": "GRANT",
+      "set": {
+        "task": "Concedi ad alice il privilegio SELECT sulla tabella users tramite GRANT SELECT ON users TO alice."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_3",
+      "english": "REVOKE",
+      "set": {
+        "task": "Revoca ad alice il privilegio INSERT sulla tabella users con REVOKE INSERT ON users FROM alice."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_3",
+      "english": "Privilege",
+      "set": {
+        "task": "Assegna i quattro privilegi SELECT, INSERT, UPDATE, DELETE separatamente al ruolo applicativo per consentire la CRUD completa."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_3",
+      "english": "Role",
+      "set": {
+        "task": "Assegna il ruolo app_readonly all'utente alice con GRANT app_readonly TO alice invece di permessi per singola tabella."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_3",
+      "english": "Superuser",
+      "set": {
+        "task": "Promuovi l'account admin a superuser con ALTER USER admin WITH SUPERUSER, riservandolo a procedure break-glass."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_3",
+      "english": "pg_hba.conf",
+      "set": {
+        "task": "Aggiungi a pg_hba.conf la riga host all all 0.0.0.0/0 md5 e ricarica PostgreSQL per applicare l'host-based authentication."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_4",
+      "english": "Connection Count",
+      "set": {
+        "task": "Interroga pg_stat_activity con SELECT COUNT(*) per misurare le connessioni attive e confrontarle con max_connections."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_4",
+      "english": "Long-Running Query",
+      "set": {
+        "task": "Filtra pg_stat_activity per state='active' e query_start anteriore a NOW() - INTERVAL '5 minutes' per stanare le query incagliate."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_4",
+      "english": "Lock Contention",
+      "set": {
+        "task": "Interroga pg_locks filtrando WHERE NOT granted per individuare la contesa di lock e capire chi sta bloccando chi."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_4",
+      "english": "Disk Usage",
+      "set": {
+        "task": "Stima lo spazio occupato da mydb chiamando pg_size_pretty(pg_database_size('mydb')) per intercettare in tempo la saturazione del volume."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_4",
+      "english": "Health Check",
+      "set": {
+        "task": "Esponi un /healthz che esegue SELECT 1 sul database per dare al load balancer un segnale di vita immediato."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_1",
+      "english": "Logical Replication",
+      "set": {
+        "task": "Pubblica tutte le tabelle al subscriber con CREATE PUBLICATION pub FOR ALL TABLES per impostare la replica logica tra due major version."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_1",
+      "english": "Synchronous Replication",
+      "set": {
+        "task": "Imposta synchronous_commit = on in postgresql.conf affinché ogni COMMIT attenda la conferma dalla replica sincrona."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_1",
+      "english": "Replication Lag",
+      "set": {
+        "task": "Calcola il lag della replica con SELECT NOW() - pg_last_xact_replay_timestamp() e configura un alert oltre i 5 secondi."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_4",
+      "english": "pg_basebackup",
+      "set": {
+        "task": "Inizializza una nuova replica con pg_basebackup -h primary -D /data -U replicator copiando la directory dati dal primario."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_5",
+      "english": "Hash Sharding",
+      "set": {
+        "task": "Calcola lo shard di destinazione con shard = hash(key) % num_shards per distribuire uniformemente le chiavi sui nodi."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_7",
+      "english": "Table Partitioning",
+      "set": {
+        "task": "Crea la tabella measurements con PARTITION BY RANGE (date) per dividerla mensilmente e poi archiviare le partizioni vecchie."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_7",
+      "english": "Range Partitioning",
+      "set": {
+        "task": "Dichiara PARTITION BY RANGE (created_at) sulla tabella padre cosi ogni partizione mensile contenga una fetta temporale netta."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_7",
+      "english": "List Partitioning",
+      "set": {
+        "task": "Adotta PARTITION BY LIST (country) sulla tabella padre per isolare le righe di ogni nazione in una partizione dedicata."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_7",
+      "english": "Hash Partitioning",
+      "set": {
+        "task": "Distribuisci le righe con PARTITION BY HASH (user_id) su 16 partizioni quando manca una chiave di range naturale."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_7",
+      "english": "Detach Partition",
+      "set": {
+        "task": "Stacca la partizione del 2024 con ALTER TABLE measurements DETACH PARTITION measurements_2024 per archiviarla senza scansionare il padre."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "db_sql_13",
+      "english": "JSONB",
+      "set": {
+        "task": "Crea la tabella events con una colonna data di tipo JSONB per memorizzare payload webhook indicizzabili via GIN."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "db_sql_13",
+      "english": "Array Type",
+      "set": {
+        "task": "Dichiara una colonna tags TEXT[] DEFAULT '{}' per salvare un array di etichette filtrabile con l'operatore di overlap &&."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "db_sql_13",
+      "english": "HSTORE",
+      "set": {
+        "task": "Dichiara una colonna attributes HSTORE quando devi salvare un dizionario chiave-valore piatto senza alcun bisogno di annidamento."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "db_sql_13",
+      "english": "Range Type",
+      "set": {
+        "task": "Modella la colonna period come TSRANGE per rappresentare una finestra temporale e applicarvi un vincolo di esclusione GiST."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "db_sql_13",
+      "english": "PostGIS",
+      "set": {
+        "task": "Abilita le funzioni spaziali eseguendo CREATE EXTENSION postgis prima di eseguire query ST_DWithin sulle coordinate dei negozi."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "db_sql_13",
+      "english": "Extension",
+      "set": {
+        "task": "Installa l'estensione pg_trgm con CREATE EXTENSION pg_trgm per abilitare la ricerca fuzzy via trigrammi sulle colonne testuali."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "db_sql_13",
+      "english": "Foreign Data Wrapper",
+      "set": {
+        "task": "Attiva CREATE EXTENSION postgres_fdw per interrogare un database Postgres remoto come se fosse locale, senza pipeline ETL."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "db_sql_13",
+      "english": "Listen/Notify",
+      "set": {
+        "task": "Pubblica un evento di invalidazione cache con NOTIFY channel, 'message' verso i worker in ascolto sul canale."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "db_sql_13",
+      "english": "PostgreSQL Tablespace",
+      "set": {
+        "task": "Definisci un tablespace fast con CREATE TABLESPACE fast LOCATION '/mnt/ssd' per spostare gli indici caldi sul volume NVMe."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "db_sql_14",
+      "english": "Binary Log",
+      "set": {
+        "task": "Abilita il binary log impostando log_bin = ON in my.cnf per alimentare repliche e pipeline CDC con le modifiche di riga."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "db_sql_14",
+      "english": "GTID",
+      "set": {
+        "task": "Attiva la replica basata su GTID impostando gtid_mode = ON cosi un failover non richieda di tracciare manualmente gli offset del binlog."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "db_sql_14",
+      "english": "Information Schema",
+      "set": {
+        "task": "Interroga information_schema.tables con SELECT * per enumerare ogni tabella del cluster e filtrarla per dimensione."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "db_sql_14",
+      "english": "mysqlbinlog",
+      "set": {
+        "task": "Decodifica gli eventi di binlog.000001 lanciando mysqlbinlog per ricostruire gli statement eseguiti nella finestra incidentale."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "db_sql_15",
+      "english": "Oracle Database",
+      "set": {
+        "task": "Apri una sessione amministrativa locale su Oracle eseguendo sqlplus / as sysdba per gestire tablespace e parametri."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "db_sql_15",
+      "english": "sqlcmd",
+      "set": {
+        "task": "Connettiti all'istanza SQL Server con sqlcmd -S server -d mydb per applicare uno script di migrazione di schema."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "db_modeling_1",
+      "english": "Fact Table",
+      "set": {
+        "task": "Crea la fact_sales con id, date_id, product_id e amount DECIMAL per registrare una riga per evento di vendita."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "db_modeling_1",
+      "english": "Dimension Table",
+      "set": {
+        "task": "Definisci la dimension dim_product con id, name e category denormalizzati cosi gli analisti filtrino senza fare join."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "db_modeling_1",
+      "english": "Dimensional Surrogate Key",
+      "set": {
+        "task": "Dichiara product_sk INT PRIMARY KEY sulla dimensione cosi un cambio di codice sorgente non infranga i fatti storici."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "db_modeling_1",
+      "english": "Dimensional Natural Key",
+      "set": {
+        "task": "Aggiungi accanto alla surrogata una colonna product_code VARCHAR(20) come chiave naturale per agganciare gli export OLTP."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "db_modeling_2",
+      "english": "Effective Date",
+      "set": {
+        "task": "Inserisci effective_from DATE ed effective_to DATE nella dimensione per delimitare la validità temporale di ogni versione."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "db_modeling_2",
+      "english": "Current Flag",
+      "set": {
+        "task": "Aggiungi una colonna is_current BOOLEAN DEFAULT TRUE alla dimensione per filtrare velocemente la versione vigente."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "db_modeling_4",
+      "english": "Materialized Path",
+      "set": {
+        "task": "Memorizza un materialized path tipo '/1/3/7/12/' su ogni nodo cosi una sola LIKE recuperi tutti i discendenti."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "db_modeling_4",
+      "english": "Adjacency List",
+      "set": {
+        "task": "Modella l'albero con parent_id INT REFERENCES nodes(id) e attraversalo poi con una CTE ricorsiva quando serve."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "db_security_1",
+      "english": "SQL Injection",
+      "set": {
+        "task": "Ricrea il caso peggiore di SQL injection concatenando l'input in 'SELECT * FROM users WHERE name = ' + input e osservane l'impatto."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "db_security_1",
+      "english": "Parameterized Query",
+      "set": {
+        "task": "Riscrivi la query in forma parametrizzata SELECT * FROM users WHERE name = $1 lasciando al driver l'escape del valore."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "db_security_1",
+      "english": "Prepared Statement",
+      "set": {
+        "task": "Dichiara PREPARE q AS SELECT * FROM users WHERE id = $1 e poi invoca EXECUTE q(1) per riusare il piano in sicurezza."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "db_security_1",
+      "english": "Bind Parameter",
+      "set": {
+        "task": "Passa user_id come bind parameter con cur.execute('... WHERE id = %s', (user_id,)) cosi le virgolette restino dato non codice."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "db_security_1",
+      "english": "Time-Based Injection",
+      "set": {
+        "task": "Riproduci un payload time-based del tipo \"OR pg_sleep(5)\" per misurare il ritardo della risposta e confermare l'iniezione."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "db_security_1",
+      "english": "sqlmap",
+      "set": {
+        "task": "Avvia sqlmap -u \"http://target/page?id=1\" contro uno staging per verificare se il parametro id è realmente sfruttabile."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "db_security_2",
+      "english": "Column-Level Encryption",
+      "set": {
+        "task": "Applica pgp_sym_encrypt(data, 'key') di pgcrypto sulla colonna sensibile cosi anche i DBA vedano solo ciphertext."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "db_security_2",
+      "english": "pgcrypto",
+      "set": {
+        "task": "Abilita la libreria crittografica con CREATE EXTENSION pgcrypto per usare crypt(), gen_salt() e pgp_sym_encrypt() nelle query."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "db_security_2",
+      "english": "Hashing",
+      "set": {
+        "task": "Esegui l'hash della password chiamando crypt(password, gen_salt('bf')) cosi ogni riga porti un salt bcrypt proprio."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "db_security_2",
+      "english": "SSL Certificate",
+      "set": {
+        "task": "Imponi al driver sslmode=require nella stringa di connessione per rifiutare qualsiasi tentativo di handshake in chiaro."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "db_security_3",
+      "english": "Data Masking",
+      "set": {
+        "task": "Esponi la colonna sensibile come CASE WHEN role='admin' THEN ssn ELSE '***' END per mascherare il dato ai non-amministratori."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "db_security_4",
+      "english": "Row-Level Security",
+      "set": {
+        "task": "Crea la policy user_isolation su orders con USING (user_id = current_user_id()) per filtrare le righe per sessione."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "db_security_4",
+      "english": "Column-Level Security",
+      "set": {
+        "task": "Limita le colonne leggibili con GRANT SELECT (id, name) ON users TO public lasciando il resto delle colonne fuori portata."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "db_security_4",
+      "english": "SECURITY DEFINER",
+      "set": {
+        "task": "Marca la funzione di rotazione con CREATE FUNCTION ... SECURITY DEFINER cosi l'utente la esegua con i privilegi del proprietario."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "db_security_4",
+      "english": "View-Based Security",
+      "set": {
+        "task": "Crea CREATE VIEW user_view AS SELECT id, name FROM users e revoca la tabella sottostante ai ruoli applicativi."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "db_security_4",
+      "english": "Network ACL",
+      "set": {
+        "task": "Restringi l'accesso in pg_hba.conf con host all all 10.0.0.0/24 md5 ammettendo soltanto la subnet applicativa."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_13",
+      "english": "Node",
+      "set": {
+        "task": "Rappresenta una persona nel property graph come (:Person {name: \"Marco\"}) assegnandole label e proprietà chiave-valore."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_13",
+      "english": "Property Graph Edge",
+      "set": {
+        "task": "Collega due nodi con (a)-[:KNOWS]->(b) attaccando all'arco proprietà come un timestamp since per pesare la connessione."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_13",
+      "english": "Relationship (Graph)",
+      "set": {
+        "task": "Disegna una relationship -[:FRIEND_OF]-> tra due nodi User per attraversare la rete sociale in millisecondi."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_13",
+      "english": "Triple",
+      "set": {
+        "task": "Scrivi un fatto RDF come <Marco> <knows> <Anna> . per registrare un singolo arco etichettato subject-predicate-object."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_13",
+      "english": "Shortest Path",
+      "set": {
+        "task": "Invoca shortestPath((a)-[*]-(b)) in Cypher per trovare il cammino minimo di hop tra due nodi del grafo."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_14",
+      "english": "Cypher",
+      "set": {
+        "task": "Estrai tutti i nodi Person scrivendo la query Cypher MATCH (n:Person) RETURN n per ottenere l'elenco completo."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_14",
+      "english": "MATCH",
+      "set": {
+        "task": "Aggancia il pattern degli amici diretti con MATCH (a)-[:FRIEND]->(b) per esplorare la rete di amicizie."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_14",
+      "english": "CREATE (Cypher)",
+      "set": {
+        "task": "Inserisci un nuovo nodo persona con CREATE (a:Person {name: \"Marco\"}) per popolare il grafo iniziale."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_14",
+      "english": "MERGE",
+      "set": {
+        "task": "Garantisci l'idempotenza usando MERGE (a:Person {email: \"x@y.com\"}) cosi rieseguire il load non duplichi nodi."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_14",
+      "english": "RETURN",
+      "set": {
+        "task": "Proietta soltanto le colonne utili al chiamante chiudendo la query con RETURN n.name, n.age."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_14",
+      "english": "Pattern",
+      "set": {
+        "task": "Modella un pattern Cypher come (a)-[r:KNOWS]->(b) per matchare due nodi collegati dall'arco KNOWS."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_14",
+      "english": "Variable Length",
+      "set": {
+        "task": "Cerca utenti entro tre gradi di separazione con MATCH (a)-[:KNOWS*1..3]->(b) usando un pattern di lunghezza variabile."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_14",
+      "english": "WHERE (Cypher)",
+      "set": {
+        "task": "Filtra i nodi adulti aggiungendo WHERE n.age > 18 dopo MATCH (n) per restringere il risultato."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_14",
+      "english": "Cypher WITH",
+      "set": {
+        "task": "Concatena due fasi della query usando MATCH (n) WITH n LIMIT 10 RETURN n per passare i primi dieci nodi alla fase successiva."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_16",
+      "english": "Neo4j",
+      "set": {
+        "task": "Apri una sessione interattiva contro l'istanza Neo4j eseguendo cypher-shell e lanciando le tue prime query MATCH."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_16",
+      "english": "Gremlin",
+      "set": {
+        "task": "Attraversa il grafo TinkerPop con g.V().has('name', 'Marco') per recuperare il vertice di Marco e seguire i suoi archi."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_1",
+      "english": "Tag",
+      "set": {
+        "task": "Scrivi su InfluxDB una line cpu_usage,host=server1,region=eu value=72 cosi le tag indicizzino host e regione."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_1",
+      "english": "Time Bucket",
+      "set": {
+        "task": "Aggrega le letture in finestre orarie con time_bucket('1 hour', ts) per ridurre il volume da scansionare."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_2",
+      "english": "Retention Policy",
+      "set": {
+        "task": "Limita la storicizzazione con CREATE RETENTION POLICY rp1 ON db DURATION 30d REPLICATION 1 per scadere i dati grezzi."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_2",
+      "english": "Continuous Aggregate",
+      "set": {
+        "task": "Costruisci un aggregato continuo con CREATE MATERIALIZED VIEW hourly WITH (timescaledb.continuous) AS SELECT time_bucket('1 hour', ts), AVG(value) FROM data GROUP BY 1 per riassunto orario."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_2",
+      "english": "Compression",
+      "set": {
+        "task": "Attiva la compressione nativa con ALTER TABLE measurements SET (timescaledb.compress) cosi i chunk vecchi occupino una frazione del disco."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_2",
+      "english": "Hypertable",
+      "set": {
+        "task": "Trasforma metrics in hypertable invocando SELECT create_hypertable('metrics', 'ts') per partizionare automaticamente per tempo."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_2",
+      "english": "Drop Chunks",
+      "set": {
+        "task": "Pulisci i dati vecchi chiamando SELECT drop_chunks(INTERVAL '30 days', 'metrics') per recuperare spazio sul nodo analytics."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_3",
+      "english": "InfluxDB",
+      "set": {
+        "task": "Avvia la CLI di InfluxDB lanciando influx per interrogare le serie temporali e gestire database e retention."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_3",
+      "english": "InfluxQL",
+      "set": {
+        "task": "Calcola la media oraria CPU con SELECT mean(value) FROM cpu WHERE time > now() - 1h GROUP BY time(5m)."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_3",
+      "english": "TimescaleDB",
+      "set": {
+        "task": "Collegati a TimescaleDB usando il client psql come per qualsiasi cluster Postgres tradizionale."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_3",
+      "english": "PromQL",
+      "set": {
+        "task": "Misura il tasso di richieste al secondo con l'espressione PromQL rate(http_requests_total[5m]) su finestra di 5 minuti."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_7",
+      "english": "Schedule",
+      "set": {
+        "task": "Pianifica il DAG con schedule_interval='@daily' per farlo partire una volta al giorno dopo il backup OLTP."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_7",
+      "english": "Retry",
+      "set": {
+        "task": "Configura retries=3 sul task Airflow cosi un errore transitorio venga ritentato tre volte prima di marcare il run come failed."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_8",
+      "english": "dbt",
+      "set": {
+        "task": "Compila ed esegui tutti i modelli del progetto lanciando dbt run per materializzare la DAG di trasformazioni."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_8",
+      "english": "Test",
+      "set": {
+        "task": "Esegui le asserzioni di qualità con dbt test per intercettare violazioni di not_null e unique prima che arrivino in BI."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_5",
+      "english": "SELECT FOR UPDATE",
+      "set": {
+        "task": "Blocca la riga con SELECT * FROM accounts WHERE id = 1 FOR UPDATE prima di addebitarla per serializzare i trasferimenti."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_5",
+      "english": "SELECT FOR SHARE",
+      "set": {
+        "task": "Proteggi la riga padre con SELECT * FROM accounts WHERE id = 1 FOR SHARE per impedirne la cancellazione prima del COMMIT."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_5",
+      "english": "NOWAIT",
+      "set": {
+        "task": "Aggiungi NOWAIT a SELECT * FROM t WHERE id = 1 FOR UPDATE NOWAIT cosi la query fallisca subito invece di restare appesa."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_5",
+      "english": "SKIP LOCKED",
+      "set": {
+        "task": "Estrai i prossimi dieci job con SELECT * FROM jobs WHERE status = 'pending' FOR UPDATE SKIP LOCKED LIMIT 10 per worker concorrenti."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_5",
+      "english": "Advisory Lock",
+      "set": {
+        "task": "Prendi un advisory lock chiamando SELECT pg_advisory_lock(123) cosi solo un processo per tenant esegua il job."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_5",
+      "english": "Lock Timeout",
+      "set": {
+        "task": "Limita l'attesa sui lock con SET lock_timeout = '5s' per evitare che una transazione fuori controllo blocchi le scritture."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_5",
+      "english": "Statement Timeout",
+      "set": {
+        "task": "Tappa le query lunghe con SET statement_timeout = '30s' sull'utente analytics per non affamare le connessioni OLTP."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_6",
+      "english": "Deadlock Detection",
+      "set": {
+        "task": "Regola la finestra del rilevatore impostando deadlock_timeout = 1s in postgresql.conf per scegliere quando abortire la vittima."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_7",
+      "english": "XMIN",
+      "set": {
+        "task": "Ispeziona la versione MVCC di una riga con SELECT xmin, xmax, * FROM users per vedere quale transazione l'ha creata."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_8",
+      "english": "Version Number",
+      "set": {
+        "task": "Implementa il locking ottimistico con UPDATE products SET version = version + 1 WHERE id = 1 AND version = 5."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_8",
+      "english": "Atomic Operation",
+      "set": {
+        "task": "Incrementa il contatore atomicamente con UPDATE counters SET value = value + 1 WHERE id = 1 senza letture preventive."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_8",
+      "english": "Idempotency Key",
+      "set": {
+        "task": "Rendi idempotente l'inserimento con INSERT INTO orders (id, ...) VALUES ($1, ...) ON CONFLICT (id) DO NOTHING cosi un retry non duplichi."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_8",
+      "english": "Distributed Two-Phase Commit",
+      "set": {
+        "task": "Esegui un two-phase commit con PREPARE TRANSACTION 'tx1' e COMMIT PREPARED 'tx1' per coordinare due servizi distribuiti."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_8",
+      "english": "VACUUM",
+      "set": {
+        "task": "Lancia VACUUM ANALYZE users dopo un backfill notturno per liberare tuple morte e rinfrescare le statistiche del planner."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_8",
+      "english": "VACUUM FULL",
+      "set": {
+        "task": "Pianifica VACUUM FULL VERBOSE users in finestra di manutenzione perché riscrive la tabella prendendo un lock esclusivo."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_8",
+      "english": "pg_upgrade",
+      "set": {
+        "task": "Migra il cluster Postgres lanciando pg_upgrade -d /old -D /new aggiungendo --link per riusare i file dati ed evitare dump."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_8",
+      "english": "Index Rebuild",
+      "set": {
+        "task": "Ricostruisci l'indice gonfio con REINDEX INDEX CONCURRENTLY idx_email per recuperare leaf page senza fermare le scritture."
+      }
+    }
+  ]
+}

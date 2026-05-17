@@ -1,0 +1,1628 @@
+{
+  "fixes": [
+    {
+      "level": "8",
+      "lesson": "cpp_templates_1",
+      "english": "Template",
+      "set": {
+        "task": "Dichiara un template di funzione add che somma due valori dello stesso tipo T deducendolo dagli argomenti."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cpp_templates_1",
+      "english": "Function Template",
+      "set": {
+        "task": "Scrivi un function template max<T> che restituisce il maggiore fra due valori dello stesso tipo T."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cpp_templates_1",
+      "english": "Type Parameter",
+      "set": {
+        "task": "Introduci un type parameter T usando template<typename T> per parametrizzare la funzione sul tipo degli argomenti."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cpp_templates_1",
+      "english": "Class Keyword Template",
+      "set": {
+        "task": "Usa la parola chiave class al posto di typename per dichiarare il parametro di tipo T del template."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cpp_templates_1",
+      "english": "Template Argument",
+      "set": {
+        "task": "Chiama add specificando esplicitamente l'argomento di template int con la sintassi add<int>(1, 2)."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cpp_templates_1",
+      "english": "Type Deduction",
+      "set": {
+        "task": "Invoca add(1, 2) lasciando che il compilatore deduca T come int senza parentesi angolari esplicite."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cpp_templates_2",
+      "english": "Class Template",
+      "set": {
+        "task": "Definisci una class template Box<T> con un singolo membro value di tipo T per incapsulare un valore generico."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cpp_templates_2",
+      "english": "Class Template Argument Deduction",
+      "set": {
+        "task": "Costruisci std::pair p{1, 2.0} sfruttando CTAD perché il compilatore deduca pair<int,double> automaticamente."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cpp_templates_2",
+      "english": "Deduction Guide",
+      "set": {
+        "task": "Aggiungi una deduction guide template<class T> Box(T) -> Box<T> per consentire la deduzione del tipo dal costruttore."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cpp_templates_2",
+      "english": "Specialization",
+      "set": {
+        "task": "Fornisci una specializzazione completa di Box per il tipo bool con template<> class Box<bool>."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cpp_templates_2",
+      "english": "Partial Specialization",
+      "set": {
+        "task": "Crea una specializzazione parziale di Box per puntatori usando template<class T> class Box<T*>."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cpp_templates_2",
+      "english": "Full Specialization",
+      "set": {
+        "task": "Specializza completamente Box per int scrivendo template<> class Box<int> con una sintassi diversa dal template generico."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cpp_templates_3",
+      "english": "Non-Type Parameter",
+      "set": {
+        "task": "Parametrizza la classe Buffer su un valore int N invece che su un tipo con template<int N>."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cpp_templates_3",
+      "english": "Integer Parameter",
+      "set": {
+        "task": "Istanzia std::array<int, 10> passando 10 come parametro intero non di tipo che fissa la dimensione."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cpp_templates_3",
+      "english": "Auto Template",
+      "set": {
+        "task": "Usa template<auto N> per accettare un valore costante non di tipo lasciando dedurre il tipo al compilatore."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cpp_templates_3",
+      "english": "Template Default Argument",
+      "set": {
+        "task": "Imposta un argomento template di default scrivendo template<class T = int> class A perché T sia int se omesso."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cpp_templates_3",
+      "english": "Template Template",
+      "set": {
+        "task": "Dichiara un parametro template di template con template<template<class> class C> per accettare un container generico."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cpp_templates_3",
+      "english": "Type Alias Template",
+      "set": {
+        "task": "Definisci un alias template Vec<T> equivalente a std::vector<T> usando template<class T> using."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cpp_templates_3",
+      "english": "Variable Template",
+      "set": {
+        "task": "Crea una variabile template pi<T> di valore T(3.14) parametrizzata sul tipo numerico con constexpr."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cpp_templates_4",
+      "english": "Dependent Name",
+      "set": {
+        "task": "Disambigua T::value_type come tipo dipendente anteponendo typename nella dichiarazione typename T::value_type x."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cpp_templates_4",
+      "english": "Template Disambiguation",
+      "set": {
+        "task": "Inserisci la parola chiave template in p.template foo<int>() per disambiguare la chiamata a un membro template."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cpp_templates_4",
+      "english": "Static Assert",
+      "set": {
+        "task": "Aggiungi static_assert(sizeof(int) >= 4, \"min\") per verificare a tempo di compilazione il vincolo sulla dimensione di int."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cpp_templates_4",
+      "english": "Explicit Instantiation",
+      "set": {
+        "task": "Forza l'istanziazione esplicita del template di classe per int scrivendo template class Box<int> in un .cpp."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_1",
+      "english": "Unique Ptr",
+      "set": {
+        "task": "Dichiara uno std::unique_ptr<T> p che gestisca in proprietà esclusiva una risorsa allocata dinamicamente."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_1",
+      "english": "Make Unique",
+      "set": {
+        "task": "Crea un unique_ptr a Foo passando 1 e 2 al costruttore tramite std::make_unique<Foo>(1, 2)."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_1",
+      "english": "Move Only",
+      "set": {
+        "task": "Trasferisci la proprietà del unique_ptr p al nuovo puntatore q con auto q = std::move(p)."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_1",
+      "english": "Reset",
+      "set": {
+        "task": "Azzera il unique_ptr p chiamando p.reset() per distruggere l'oggetto posseduto e lasciare il puntatore vuoto."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_1",
+      "english": "Release",
+      "set": {
+        "task": "Cedi la proprietà del unique_ptr p con p.release(), salvando il puntatore raw da liberare manualmente."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_1",
+      "english": "Get Method",
+      "set": {
+        "task": "Ottieni il puntatore grezzo posseduto dal unique_ptr p chiamando p.get() senza trasferire la proprietà."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_1",
+      "english": "Custom Deleter",
+      "set": {
+        "task": "Costruisci uno unique_ptr<FILE> con deleter personalizzato &fclose per chiudere automaticamente il file."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_1",
+      "english": "Array Unique Ptr",
+      "set": {
+        "task": "Alloca un array di 10 int gestito da unique_ptr con std::make_unique<int[]>(10)."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_2",
+      "english": "Shared Ptr",
+      "set": {
+        "task": "Dichiara uno std::shared_ptr<T> p per gestire la condivisione di proprietà tramite reference counting."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_2",
+      "english": "Make Shared",
+      "set": {
+        "task": "Costruisci uno shared_ptr<Foo> con std::make_shared<Foo>(1, 2) usando una sola allocazione per oggetto e control block."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_2",
+      "english": "Reference Count",
+      "set": {
+        "task": "Interroga il numero di owner condivisi del shared_ptr p chiamando p.use_count()."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_2",
+      "english": "Aliasing Constructor",
+      "set": {
+        "task": "Usa il costruttore di aliasing per ottenere uno shared_ptr a p->member che condivide il control block di p."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_2",
+      "english": "Use Count",
+      "set": {
+        "task": "Salva in n il conteggio dei riferimenti attivi sullo shared_ptr p con auto n = p.use_count()."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_2",
+      "english": "Enable Shared From This",
+      "set": {
+        "task": "Fai ereditare la classe A da std::enable_shared_from_this<A> per ottenere uno shared_ptr a se stessa con shared_from_this."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_3",
+      "english": "Weak Ptr",
+      "set": {
+        "task": "Costruisci uno std::weak_ptr<T> w a partire da uno shared_ptr sp per osservare senza trattenere la risorsa."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_3",
+      "english": "Lock",
+      "set": {
+        "task": "Promuovi il weak_ptr w a shared_ptr con w.lock() e usalo solo se la risorsa è ancora viva."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_3",
+      "english": "Expired",
+      "set": {
+        "task": "Verifica se la risorsa puntata dal weak_ptr w è stata distrutta con w.expired() prima di usarla."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_4",
+      "english": "Lock Guard",
+      "set": {
+        "task": "Proteggi la sezione critica acquisendo il mutex m tramite uno std::lock_guard lk con stile RAII."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_1",
+      "english": "Exception",
+      "set": {
+        "task": "Solleva un'eccezione di tipo std::runtime_error con il messaggio \"boom\" per segnalare un errore non recuperabile."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_1",
+      "english": "Try Block",
+      "set": {
+        "task": "Racchiudi il codice potenzialmente eccezionale in un blocco try per consentirne la gestione successiva."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_1",
+      "english": "Catch Block",
+      "set": {
+        "task": "Aggiungi un blocco catch (const std::exception& e) per intercettare per riferimento qualsiasi eccezione standard."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_1",
+      "english": "Throw",
+      "set": {
+        "task": "Lancia il valore intero 42 con l'istruzione throw 42 mostrando il throw nella forma più essenziale."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_1",
+      "english": "Rethrow",
+      "set": {
+        "task": "Dentro un catch (...) logga l'errore e poi rilancia l'eccezione corrente con un throw senza argomenti."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_1",
+      "english": "Catch All",
+      "set": {
+        "task": "Aggiungi un catch (...) come ultima risorsa per intercettare qualunque eccezione, pur perdendone le informazioni."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_1",
+      "english": "Catch By Reference",
+      "set": {
+        "task": "Cattura sempre per riferimento con catch (const std::exception& e) per evitare slicing e copie inutili."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_2",
+      "english": "std::exception",
+      "set": {
+        "task": "Definisci MyEx come classe derivata da std::exception per integrarla nella gerarchia standard delle eccezioni."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_2",
+      "english": "Runtime Error",
+      "set": {
+        "task": "Solleva uno std::runtime_error(\"oops\") per segnalare un errore rilevabile solo a runtime."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_2",
+      "english": "Logic Error",
+      "set": {
+        "task": "Lancia uno std::logic_error(\"bad arg\") per indicare una violazione di precondizione del codice chiamante."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_2",
+      "english": "Out of Range",
+      "set": {
+        "task": "Accedi al vettore v con v.at(i) per ottenere il controllo dei limiti e un eventuale std::out_of_range."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_2",
+      "english": "What Method",
+      "set": {
+        "task": "Stampa il messaggio descrittivo dell'eccezione e su std::cerr richiamando e.what()."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_2",
+      "english": "Custom Exception",
+      "set": {
+        "task": "Crea una classe NetworkErr che eredita da std::runtime_error per modellare errori di rete specifici."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_3",
+      "english": "Noexcept",
+      "set": {
+        "task": "Marca void swap(A&, A&) noexcept per garantire al compilatore che la funzione non solleva eccezioni."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_3",
+      "english": "Noexcept Query Operator",
+      "set": {
+        "task": "Usa static_assert(noexcept(swap(a, b))) per verificare a tempo di compilazione che swap sia dichiarato noexcept."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_3",
+      "english": "Conditional Noexcept",
+      "set": {
+        "task": "Dichiara f() noexcept(noexcept(g())) per propagare condizionalmente la garanzia di non-throw da g."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_3",
+      "english": "Move Noexcept",
+      "set": {
+        "task": "Marca il costruttore di move A(A&&) noexcept per abilitare le ottimizzazioni di crescita nei container STL."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_3",
+      "english": "Terminate",
+      "set": {
+        "task": "Forza l'interruzione immediata del programma chiamando std::terminate() nella condizione di errore irrecuperabile."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_3",
+      "english": "Set Terminate",
+      "set": {
+        "task": "Registra my_handler come handler di terminazione con std::set_terminate(my_handler)."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_4",
+      "english": "Optional",
+      "set": {
+        "task": "Dichiara uno std::optional<int> n per rappresentare un intero che può anche essere assente."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_4",
+      "english": "Expected",
+      "set": {
+        "task": "Dichiara uno std::expected<int, Error> r per restituire un intero in caso di successo o un Error in caso di fallimento."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_4",
+      "english": "Assertion",
+      "set": {
+        "task": "Inserisci assert(p != nullptr) per verificare in debug che il puntatore p non sia nullo."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_1",
+      "english": "Lambda Expression",
+      "set": {
+        "task": "Crea una lambda f che riceve un int x e restituisce x*2, salvandola in una variabile auto."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_1",
+      "english": "Capture List",
+      "set": {
+        "task": "Specifica nella capture list [x, &y] di catturare x per valore e y per riferimento dalla closure circostante."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_1",
+      "english": "Capture By Value",
+      "set": {
+        "task": "Cattura x per valore con [x] in modo che la lambda lavori su una copia indipendente."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_1",
+      "english": "Capture By Reference",
+      "set": {
+        "task": "Cattura x per riferimento con [&x] e incrementalo nel corpo della lambda con ++x."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_1",
+      "english": "Default Capture",
+      "set": {
+        "task": "Usa la cattura di default per valore [=] per catturare implicitamente tutte le variabili utilizzate nella lambda."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_1",
+      "english": "Init Capture",
+      "set": {
+        "task": "Sposta ptr nella closure con la init capture [p = std::move(ptr)] per dare alla lambda la proprietà della risorsa."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_1",
+      "english": "Mutable Lambda",
+      "set": {
+        "task": "Marca la lambda come mutable in modo da poter modificare la copia di x catturata per valore con ++x."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_1",
+      "english": "Trailing Return",
+      "set": {
+        "task": "Specifica un trailing return type -> double sulla lambda che ritorna 1.0 per forzare il tipo di ritorno."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_2",
+      "english": "std::function",
+      "set": {
+        "task": "Avvolgi una lambda che incrementa di uno in uno std::function<int(int)> per memorizzarla type-erased."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_2",
+      "english": "Function Pointer",
+      "set": {
+        "task": "Dichiara un puntatore a funzione int (*fp)(int) e assegnagli l'indirizzo della funzione add."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_2",
+      "english": "Functor",
+      "set": {
+        "task": "Definisci uno struct F con operator()(int x) per ottenere un funtore richiamabile come una funzione."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_2",
+      "english": "Bind",
+      "set": {
+        "task": "Crea g legando il primo argomento di f a 1 con std::bind(f, 1, std::placeholders::_1)."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_2",
+      "english": "Invoke",
+      "set": {
+        "task": "Invoca uniformemente il callable f con i suoi argomenti tramite std::invoke(f, args)."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_3",
+      "english": "Generic Lambda",
+      "set": {
+        "task": "Scrivi una lambda generica con parametro auto x che restituisce x + 1 indipendentemente dal tipo."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_3",
+      "english": "Template Lambda",
+      "set": {
+        "task": "Dichiara una lambda template C++20 con []<typename T>(T x) per accedere esplicitamente al parametro T."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_3",
+      "english": "Variadic Lambda",
+      "set": {
+        "task": "Crea una lambda variadica [](auto&&... args) che accetta un numero arbitrario di argomenti con forwarding."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_3",
+      "english": "Constexpr Lambda",
+      "set": {
+        "task": "Definisci una lambda constexpr sq che calcola x*x ed è invocabile a tempo di compilazione."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_3",
+      "english": "Recursive Lambda",
+      "set": {
+        "task": "Implementa il fattoriale come lambda ricorsiva salvata in std::function<int(int)> con cattura per riferimento."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_3",
+      "english": "Immediately Invoked",
+      "set": {
+        "task": "Inizializza x invocando immediatamente una lambda che ritorna 42 con la sintassi [](){...}()."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_4",
+      "english": "Functional Header",
+      "set": {
+        "task": "Includi #include <functional> per accedere a std::function, std::bind e ai funtori della libreria standard."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_4",
+      "english": "Greater Functor",
+      "set": {
+        "task": "Ordina il vettore v in modo decrescente passando std::greater<>{} a std::sort come comparatore."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_4",
+      "english": "Less Functor",
+      "set": {
+        "task": "Dichiara uno std::set<int, std::less<>> per ordinare gli elementi in ordine crescente con il funtore less."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_4",
+      "english": "Plus Functor",
+      "set": {
+        "task": "Somma gli elementi di v partendo da 0 chiamando std::accumulate con il funtore std::plus<>{}."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_4",
+      "english": "Reference Wrapper",
+      "set": {
+        "task": "Crea un reference wrapper a x usando std::ref(x) per trasportare un riferimento dentro un container o thread."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_4",
+      "english": "Partial Application",
+      "set": {
+        "task": "Costruisci add5 applicando parzialmente l'argomento 5 a add con std::bind_front(add, 5)."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_1",
+      "english": "Auto Keyword",
+      "set": {
+        "task": "Dichiara x con auto x = 42 lasciando dedurre il tipo int al compilatore."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_1",
+      "english": "Decltype",
+      "set": {
+        "task": "Dichiara y con decltype(x) y = x per assegnargli esattamente lo stesso tipo di x."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_1",
+      "english": "Auto Return",
+      "set": {
+        "task": "Definisci add(int a, int b) con tipo di ritorno auto lasciando dedurre il tipo dal corpo della funzione."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_1",
+      "english": "Decltype Auto",
+      "set": {
+        "task": "Usa decltype(auto) come tipo di ritorno di f() per preservare esattamente value-category e cv di x."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_1",
+      "english": "Nullptr",
+      "set": {
+        "task": "Inizializza il puntatore int* p a nullptr per indicare in modo type-safe l'assenza di un indirizzo valido."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_1",
+      "english": "Range For",
+      "set": {
+        "task": "Itera sul vettore v con un range-for for (auto& x : v) per accedere agli elementi per riferimento."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_1",
+      "english": "Brace Initialization",
+      "set": {
+        "task": "Inizializza l'intero x con la sintassi a graffe int x{42} per attivare i controlli di narrowing."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_1",
+      "english": "Initializer List",
+      "set": {
+        "task": "Inizializza std::vector<int> v dalla lista di inizializzazione {1, 2, 3} con i valori esatti."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_2",
+      "english": "Rvalue Reference",
+      "set": {
+        "task": "Dichiara f(T&& x) con un rvalue reference per ricevere valori temporanei e abilitare le move semantics."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_2",
+      "english": "Std Move",
+      "set": {
+        "task": "Trasforma x in un xvalue con auto y = std::move(x) per consentire il furto delle risorse a y."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_2",
+      "english": "Rvalue Move Constructor",
+      "set": {
+        "task": "Definisci il costruttore di move A(A&& other) noexcept per trasferire le risorse da other senza eccezioni."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_2",
+      "english": "Rvalue Move Assignment",
+      "set": {
+        "task": "Implementa l'operatore di assegnazione di move A& operator=(A&& other) noexcept per riassegnare riusando le risorse."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_3",
+      "english": "Default Function",
+      "set": {
+        "task": "Richiedi al compilatore di generare il costruttore di default scrivendo A() = default."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_3",
+      "english": "Modern Deleted Function",
+      "set": {
+        "task": "Disabilita esplicitamente la copia della classe A con A(const A&) = delete."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_3",
+      "english": "Override Specifier",
+      "set": {
+        "task": "Marca la funzione virtuale ridefinita con il suffisso override perché il compilatore verifichi la firma della base."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_3",
+      "english": "Final Specifier",
+      "set": {
+        "task": "Impedisci ulteriori derivazioni della classe A marcandola con il qualificatore final."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_3",
+      "english": "Constexpr Function Modern",
+      "set": {
+        "task": "Definisci constexpr int sq(int x) che restituisce x*x ed è valutabile a tempo di compilazione."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_3",
+      "english": "Strongly Typed Enum",
+      "set": {
+        "task": "Sostituisci l'enum tradizionale con enum class Color { Red, Green } per ottenere uno scope dedicato e nessuna conversione implicita."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_3",
+      "english": "Modern Static Assert",
+      "set": {
+        "task": "Aggiungi static_assert(sizeof(int) == 4) per imporre a tempo di compilazione che int sia di 4 byte."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_3",
+      "english": "Raw String Literal",
+      "set": {
+        "task": "Salva il percorso C:\\path in s come raw string literal R\"(C:\\path)\" per evitare di escapare i backslash."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_3",
+      "english": "Right Angle Brackets",
+      "set": {
+        "task": "Dichiara std::vector<std::vector<int>> con due >> consecutivi senza inserire spazi grazie al parsing post-C++11."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_3",
+      "english": "Modern User-Defined Literal",
+      "set": {
+        "task": "Importa con using namespace std::chrono_literals per abilitare suffissi user-defined come 1s e 100ms."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_4",
+      "english": "Tuple",
+      "set": {
+        "task": "Crea uno std::tuple<int, std::string> t inizializzato con {1, \"hi\"} per raggruppare valori eterogenei."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_4",
+      "english": "Pair",
+      "set": {
+        "task": "Istanzia uno std::pair<int, std::string> p con {1, \"hi\"} per accoppiare un intero e una stringa."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_4",
+      "english": "Modern Array",
+      "set": {
+        "task": "Dichiara uno std::array<int, 5> a per ottenere un array a dimensione fissa con semantica di container STL."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_4",
+      "english": "Chrono",
+      "set": {
+        "task": "Sospendi il thread corrente per un secondo chiamando std::this_thread::sleep_for(1s) dalla libreria chrono."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_4",
+      "english": "Random",
+      "set": {
+        "task": "Costruisci un generatore Mersenne Twister std::mt19937 gen{42} con seme deterministico 42."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_4",
+      "english": "Regex",
+      "set": {
+        "task": "Compila una std::regex re che riconosce una sequenza di cifre con il pattern raw R\"(\\d+)\"."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_4",
+      "english": "Thread",
+      "set": {
+        "task": "Avvia uno std::thread t che esegue la funzione work in parallelo al thread principale."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_4",
+      "english": "Atomic",
+      "set": {
+        "task": "Dichiara uno std::atomic<int> n inizializzato a 0 per supportare letture e scritture concorrenti senza data race."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_4",
+      "english": "Type Traits",
+      "set": {
+        "task": "Usa std::is_integral_v<int> per ottenere a tempo di compilazione il bool che indica se int è un tipo integrale."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_4",
+      "english": "Modern Make Shared",
+      "set": {
+        "task": "Costruisci uno shared_ptr<Foo> default-inizializzato con auto p = std::make_shared<Foo>()."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_5",
+      "english": "Structured Bindings",
+      "set": {
+        "task": "Decomponi la coppia restituita da std::make_pair(1, 2) nelle variabili a e b con auto [a, b]."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_5",
+      "english": "If Init",
+      "set": {
+        "task": "Combina inizializzazione e condizione con if (auto it = m.find(k); it != m.end()) limitando it allo scope dell'if."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_5",
+      "english": "Constexpr If",
+      "set": {
+        "task": "Discrimina a tempo di compilazione i tipi integrali con if constexpr (std::is_integral_v<T>)."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_5",
+      "english": "Header Inline Variable",
+      "set": {
+        "task": "Definisci nell'header inline constexpr int N = 10 per avere un'unica istanza fra le translation unit."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_5",
+      "english": "Std Optional",
+      "set": {
+        "task": "Dichiara std::optional<int> n = 5 per rappresentare un intero opzionale inizialmente presente con valore 5."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_5",
+      "english": "Std Variant",
+      "set": {
+        "task": "Dichiara uno std::variant<int, std::string> v per una variabile type-safe che può contenere int o string."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_5",
+      "english": "Std Any",
+      "set": {
+        "task": "Salva il valore 42 dentro uno std::any a per memorizzare type-erased un singolo oggetto di qualunque tipo."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_5",
+      "english": "Std String View",
+      "set": {
+        "task": "Dichiara uno std::string_view sv su \"hi\" per ottenere una vista non posseduta della stringa."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_5",
+      "english": "Std Filesystem",
+      "set": {
+        "task": "Crea un std::filesystem::path p impostato a \"/tmp\" per manipolare percorsi in modo portabile."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_5",
+      "english": "Std Visit",
+      "set": {
+        "task": "Applica al variant v il visitor visitor invocando std::visit(visitor, v) per gestire tutte le alternative."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_6",
+      "english": "Concept",
+      "set": {
+        "task": "Definisci il concept Number<T> come std::integral<T> per accettare solo tipi interi nei template."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_6",
+      "english": "Requires Clause",
+      "set": {
+        "task": "Vincola un template con requires Number<T> dopo template<class T> per accettare solo i tipi che soddisfano il concept."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_6",
+      "english": "Requires Expression",
+      "set": {
+        "task": "Costruisci una requires expression requires(T t) { t + t; } che verifica se t supporta la somma."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_6",
+      "english": "Auto Concept",
+      "set": {
+        "task": "Dichiara f con parametro Number auto x usando la sintassi abbreviata del concept con auto."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_6",
+      "english": "Std Integral",
+      "set": {
+        "task": "Vincola un template a soli tipi interi con template<std::integral T> sfruttando il concept della libreria standard."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_7",
+      "english": "Co Await",
+      "set": {
+        "task": "Sospendi la coroutine attendendo il completamento di task con auto x = co_await task."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_7",
+      "english": "Co Yield",
+      "set": {
+        "task": "Produci il valore 42 dalla coroutine con co_yield 42 e sospendi finché il chiamante non riprende."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_7",
+      "english": "Co Return",
+      "set": {
+        "task": "Termina la coroutine restituendo value al chiamante con l'istruzione co_return value."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_7",
+      "english": "Coroutine Handle",
+      "set": {
+        "task": "Dichiara uno std::coroutine_handle<> h come handle generico per controllare lo stato di una coroutine."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_8",
+      "english": "Module",
+      "set": {
+        "task": "Dichiara un modulo C++20 con export module my_mod per sostituire il classico modello a header."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_8",
+      "english": "Export",
+      "set": {
+        "task": "Esporta la dichiarazione di add dal modulo con export int add(int, int) per renderla visibile fuori."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_8",
+      "english": "Import",
+      "set": {
+        "task": "Importa nel translation unit le entità esportate da my_mod scrivendo import my_mod."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_8",
+      "english": "Std Format",
+      "set": {
+        "task": "Formatta una coppia chiave-valore con std::format(\"{} = {}\", k, v) per produrre una stringa type-safe."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_8",
+      "english": "Std Print",
+      "set": {
+        "task": "Stampa su stdout il messaggio formattato \"hi {}\" sostituendo name tramite std::print di C++23."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_8",
+      "english": "Format Spec",
+      "set": {
+        "task": "Formatta 3.14 con due cifre decimali usando la specifica di format {:.2f} dentro std::format."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_8",
+      "english": "Three Way Comparison",
+      "set": {
+        "task": "Genera tutti gli operatori di confronto della classe A dichiarando auto operator<=>(const A&) const = default."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_8",
+      "english": "Designated Initializer",
+      "set": {
+        "task": "Inizializza Point p con i designated initializer {.x = 1, .y = 2} per assegnare esplicitamente i campi."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_5",
+      "english": "Variadic Template",
+      "set": {
+        "task": "Dichiara una funzione f come template variadico con template<class... Args> void f(Args...)."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_5",
+      "english": "Parameter Pack",
+      "set": {
+        "task": "Introduci un parameter pack di tipi Ts con template<class... Ts> per accettare un numero arbitrario di tipi."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_5",
+      "english": "Pack Expansion",
+      "set": {
+        "task": "Espandi il pack args nella chiamata f(args...) inoltrando ogni elemento come argomento separato."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_5",
+      "english": "Sizeof Pack",
+      "set": {
+        "task": "Ottieni a tempo di compilazione il numero di elementi del pack Args con l'operatore sizeof...(Args)."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_5",
+      "english": "Fold Expression",
+      "set": {
+        "task": "Somma tutti gli argomenti del pack args con la fold expression unaria (... + args)."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_5",
+      "english": "Left Fold",
+      "set": {
+        "task": "Applica un left fold sull'operatore + scrivendo (... + args) per piegare il pack da sinistra a destra."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_5",
+      "english": "Right Fold",
+      "set": {
+        "task": "Applica un right fold sull'operatore + scrivendo (args + ...) per piegare il pack da destra a sinistra."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_5",
+      "english": "Tuple Get",
+      "set": {
+        "task": "Accedi al primo elemento del tuple t con std::get<0>(t) usando l'indice noto a tempo di compilazione."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_5",
+      "english": "Apply",
+      "set": {
+        "task": "Chiama la funzione f passandole come argomenti i campi del tuple t tramite std::apply(f, t)."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_6",
+      "english": "Enable If",
+      "set": {
+        "task": "Vincola un template via SFINAE scrivendo std::enable_if_t<cond, T> per abilitarlo solo quando cond è vera."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_6",
+      "english": "Void T",
+      "set": {
+        "task": "Rileva se T offre il metodo foo() con std::void_t<decltype(t.foo())> come trick di detection."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_6",
+      "english": "If Constexpr",
+      "set": {
+        "task": "Seleziona un ramo a tempo di compilazione con if constexpr (cond) else evitando overhead a runtime."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_7",
+      "english": "Type Traits Library",
+      "set": {
+        "task": "Includi #include <type_traits> per accedere alle metafunzioni di introspezione di tipo della libreria standard."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_7",
+      "english": "Is Same",
+      "set": {
+        "task": "Verifica se T coincide con int usando std::is_same_v<int, T> a tempo di compilazione."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_7",
+      "english": "Is Pointer",
+      "set": {
+        "task": "Controlla se T è un tipo puntatore con il type trait std::is_pointer_v<T>."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_7",
+      "english": "Remove Reference",
+      "set": {
+        "task": "Ottieni il tipo T senza riferimento applicando il type trait std::remove_reference_t<T>."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_7",
+      "english": "Remove Const",
+      "set": {
+        "task": "Rimuovi il qualificatore const dal tipo T usando std::remove_const_t<T>."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_7",
+      "english": "Decay",
+      "set": {
+        "task": "Applica std::decay_t<T> per ottenere il tipo \"decayed\" di T eliminando riferimenti, cv e array-to-pointer."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_7",
+      "english": "Conditional",
+      "set": {
+        "task": "Scegli a tempo di compilazione tra T e U in base a b usando l'alias std::conditional_t<b, T, U>."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_7",
+      "english": "Common Type",
+      "set": {
+        "task": "Calcola il tipo comune fra T e U con std::common_type_t<T, U> per la promozione condivisa."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_7",
+      "english": "Integral Constant",
+      "set": {
+        "task": "Avvolgi la costante 5 in un tipo con std::integral_constant<int, 5> per trasportarla come tipo template."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_8",
+      "english": "Constexpr Function",
+      "set": {
+        "task": "Definisci constexpr int sq(int x) che ritorna x*x e può essere valutata in contesti costanti."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_8",
+      "english": "Consteval",
+      "set": {
+        "task": "Marca la funzione f come consteval int f() in modo che venga sempre valutata a tempo di compilazione."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_8",
+      "english": "Constinit",
+      "set": {
+        "task": "Forza l'inizializzazione costante della variabile globale x dichiarandola constinit int x = 5."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_1",
+      "english": "Worker Thread",
+      "set": {
+        "task": "Avvia un thread di lavoro std::thread t passando la funzione work da eseguire in parallelo."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_1",
+      "english": "Join",
+      "set": {
+        "task": "Attendi la terminazione del thread t chiamando t.join() prima che esca dallo scope."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_1",
+      "english": "Detach",
+      "set": {
+        "task": "Scollega il thread t dal proprietario chiamando t.detach() e lascialo eseguire in background."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_1",
+      "english": "Joinable",
+      "set": {
+        "task": "Verifica con t.joinable() che il thread sia ancora associato a un'esecuzione prima di chiamare t.join()."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_1",
+      "english": "Hardware Concurrency",
+      "set": {
+        "task": "Ottieni il numero suggerito di thread paralleli supportati dall'hardware con std::thread::hardware_concurrency()."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_1",
+      "english": "Thread ID",
+      "set": {
+        "task": "Recupera l'identificatore univoco del thread corrente con std::this_thread::get_id()."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_1",
+      "english": "Sleep For",
+      "set": {
+        "task": "Sospendi il thread corrente per un secondo invocando std::this_thread::sleep_for(1s)."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_1",
+      "english": "Yield",
+      "set": {
+        "task": "Cedi volontariamente il time-slice del thread corrente allo scheduler chiamando std::this_thread::yield()."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_1",
+      "english": "Jthread",
+      "set": {
+        "task": "Avvia uno std::jthread t passando work per ottenere un thread auto-joinante allo scope exit."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_1",
+      "english": "Stop Token",
+      "set": {
+        "task": "Dichiara uno std::stop_token st per supportare la richiesta cooperativa di stop in un jthread."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_2",
+      "english": "Mutex",
+      "set": {
+        "task": "Dichiara uno std::mutex m da usare come primitiva di mutua esclusione fra thread."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_2",
+      "english": "Scoped Lock Guard",
+      "set": {
+        "task": "Proteggi la sezione critica acquisendo il mutex m con std::lock_guard lk in stile RAII."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_2",
+      "english": "Unique Lock",
+      "set": {
+        "task": "Acquisisci m con std::unique_lock lk per ottenere un lock RAII flessibile, che supporta rilascio e re-lock."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_2",
+      "english": "Scoped Lock",
+      "set": {
+        "task": "Blocca contemporaneamente m1 e m2 senza deadlock con std::scoped_lock lk(m1, m2)."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_2",
+      "english": "Recursive Mutex",
+      "set": {
+        "task": "Dichiara uno std::recursive_mutex m per consentire allo stesso thread di acquisirlo più volte."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_2",
+      "english": "Shared Mutex",
+      "set": {
+        "task": "Dichiara uno std::shared_mutex m per supportare letture multiple condivise e scritture esclusive."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_2",
+      "english": "Try Lock",
+      "set": {
+        "task": "Tenta di acquisire m senza bloccarti con if (m.try_lock()) e procedi solo se il lock è disponibile."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_3",
+      "english": "Atomic Memory Operation",
+      "set": {
+        "task": "Dichiara uno std::atomic<int> n inizializzato a 0 per supportare letture e scritture atomiche concorrenti."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_3",
+      "english": "Atomic Flag",
+      "set": {
+        "task": "Dichiara uno std::atomic_flag f come flag lock-free per implementare uno spinlock minimale."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_3",
+      "english": "Compare Exchange",
+      "set": {
+        "task": "Aggiorna n da exp a val in modo atomico chiamando n.compare_exchange_strong(exp, val)."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_3",
+      "english": "Memory Order Relaxed",
+      "set": {
+        "task": "Leggi n senza vincoli di sincronizzazione con n.load(std::memory_order_relaxed) per ottenere massima permissività."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_3",
+      "english": "Memory Fence",
+      "set": {
+        "task": "Inserisci una barriera acquire con std::atomic_thread_fence(std::memory_order_acquire) per ordinare le letture successive."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_4",
+      "english": "Future",
+      "set": {
+        "task": "Ottieni uno std::future<int> f lanciando work in modo asincrono con std::async."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_4",
+      "english": "Promise",
+      "set": {
+        "task": "Dichiara uno std::promise<int> p per produrre da un thread il valore consumato altrove da un future."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_4",
+      "english": "Async",
+      "set": {
+        "task": "Lancia work in modo asincrono ottenendo un future con auto f = std::async(work)."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_4",
+      "english": "Get Future Value",
+      "set": {
+        "task": "Recupera il risultato del future f bloccandoti se necessario con int v = f.get()."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_4",
+      "english": "Wait For",
+      "set": {
+        "task": "Attendi al massimo un secondo il completamento di f con auto status = f.wait_for(1s)."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_4",
+      "english": "Packaged Task",
+      "set": {
+        "task": "Avvolgi work in uno std::packaged_task<int(int)> task per ottenere un callable con future associata."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_4",
+      "english": "Shared Future",
+      "set": {
+        "task": "Converti il future f in std::shared_future<int> sf con f.share() per consentire più consumer."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_4",
+      "english": "Condition Variable",
+      "set": {
+        "task": "Risveglia un solo thread in attesa sulla condition variable cv chiamando cv.notify_one()."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_4",
+      "english": "Notify All",
+      "set": {
+        "task": "Risveglia tutti i thread in attesa sulla condition variable cv invocando cv.notify_all()."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_4",
+      "english": "Wait Predicate",
+      "set": {
+        "task": "Attendi sulla cv con cv.wait(lk, []{return ready;}) per gestire automaticamente i spurious wakeup."
+      }
+    }
+  ]
+}

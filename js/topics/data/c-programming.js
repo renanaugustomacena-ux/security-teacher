@@ -3812,6 +3812,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: 'struct Point { int x; int y; };',
+              task: 'Definisci una struct Point che raggruppa due interi x e y per rappresentare una coordinata cartesiana.',
             },
             {
               english: 'Member',
@@ -3823,6 +3824,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: 'p.x = 10;',
+              task: `Assegna il valore 10 al membro x di una struct Point gia' dichiarata, usando la notazione puntata.`,
             },
             {
               english: 'Dot Operator',
@@ -3834,6 +3836,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: 'person.name',
+              task: `Accedi al campo name di una struct person tramite l'operatore punto per leggerlo direttamente.`,
             },
             {
               english: 'Arrow Operator',
@@ -3845,6 +3848,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: 'ptr->name  // same as (*ptr).name',
+              task: `Leggi il campo name a partire da un puntatore a struct usando l'operatore freccia invece di dereferenziare manualmente.`,
             },
             {
               english: 'Struct Initialization',
@@ -3855,6 +3859,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: 'struct Point p = {10, 20};',
+              task: 'Inizializza una struct Point con i valori 10 e 20 usando una lista posizionale tra parentesi graffe.',
             },
             {
               english: 'Designated Struct Initializer',
@@ -3867,6 +3872,7 @@ export default {
               difficulty: 'intermediate',
               code: 'struct Point p = {.x = 10, .y = 20};',
               note: 'Disponibile da C99. Molto più leggibile.',
+              task: 'Costruisci una struct Point assegnando 10 a .x e 20 a .y tramite inizializzatori designati C99.',
             },
             {
               english: 'Nested Structure',
@@ -3878,6 +3884,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: 'struct Rect { struct Point origin; int w, h; };',
+              task: 'Dichiara una struct Rect che annida una struct Point chiamata origin insieme a larghezza e altezza.',
             },
             {
               english: 'Struct Pointer',
@@ -3889,6 +3896,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: 'void move(struct Point *p) { p->x += 1; }',
+              task: 'Scrivi una funzione move che riceve un puntatore a struct Point e incrementa il suo campo x di 1.',
             },
             {
               english: 'Struct Assignment',
@@ -3901,6 +3909,7 @@ export default {
               difficulty: 'intermediate',
               code: 'struct Point b = a; // copies all members',
               note: 'A differenza degli array, le struct possono essere copiate con =.',
+              task: 'Copia tutti i membri di una struct Point a in una nuova struct b tramite un semplice assegnamento con uguale.',
             },
             {
               english: 'Struct Size',
@@ -3912,6 +3921,7 @@ export default {
               difficulty: 'intermediate',
               code: 'printf("%zu", sizeof(struct Point));',
               note: `Usa offsetof e sizeof per ispezionare il layout effettivo e adattare l'ordine dei campi.`,
+              task: 'Stampa la dimensione in byte di struct Point con sizeof e il formato %zu per ispezionare il padding effettivo.',
             },
           ],
         },
@@ -3931,6 +3941,7 @@ export default {
               difficulty: 'intermediate',
               code: 'union Data { int i; float f; char c; };',
               note: 'La dimensione della union è la dimensione del membro più grande.',
+              task: 'Dichiara una union Data capace di contenere alternativamente un int, un float o un char nello stesso spazio.',
             },
             {
               english: 'Tagged Union',
@@ -3942,6 +3953,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: 'struct Variant { int type; union { int i; float f; } val; };',
+              task: 'Modella una struct Variant con un tag type intero e una union interna val che alterna fra int e float.',
             },
             {
               english: 'Enum Definition',
@@ -3953,6 +3965,7 @@ export default {
               difficulty: 'intermediate',
               code: 'enum Color { RED, GREEN, BLUE };',
               note: `Rinominato per distinguerlo dall'item 'Enumeration' del modulo tipi.`,
+              task: 'Definisci un enum Color con tre costanti simboliche RED, GREEN e BLUE per rappresentare canali cromatici.',
             },
             {
               english: 'Enum Value',
@@ -3964,6 +3977,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: 'enum { FIRST = 1, SECOND = 2 };',
+              task: 'Imposta esplicitamente FIRST a 1 e SECOND a 2 in un enum anonimo per blindare i valori contro riordini futuri.',
             },
             {
               english: 'Bitfield',
@@ -3976,6 +3990,7 @@ export default {
               difficulty: 'intermediate',
               code: 'struct Flags { unsigned int active : 1; unsigned int ready : 1; };',
               note: 'Utile per risparmiare memoria o mappare registri hardware.',
+              task: 'Crea una struct Flags con due bitfield da 1 bit ciascuno chiamati active e ready per compattare due booleani.',
             },
             {
               english: 'Anonymous Structure',
@@ -3987,6 +4002,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: 'struct { int x; int y; } point;',
+              task: 'Dichiara una variabile point come struttura anonima inline con campi x e y senza darle un nome di tipo.',
             },
             {
               english: 'Flexible Array Member',
@@ -3999,6 +4015,7 @@ export default {
               difficulty: 'intermediate',
               code: 'struct Buffer { int len; char data[]; };',
               note: 'Introdotto in C99. Allocato con malloc extra.',
+              task: 'Definisci una struct Buffer con un campo len e un array flessibile finale data[] da allocare a misura tramite malloc.',
             },
             {
               english: 'Struct Packing',
@@ -4011,6 +4028,7 @@ export default {
               difficulty: 'intermediate',
               code: '__attribute__((packed))',
               note: 'Riduce la dimensione ma può causare accessi non allineati.',
+              task: `Applica l'attributo __attribute__((packed)) a una struct per eliminare il padding generato dal compilatore.`,
             },
             {
               english: 'Opaque Type',
@@ -4034,6 +4052,7 @@ export default {
               difficulty: 'intermediate',
               code: 'typedef struct { int x, y; } Point;',
               note: 'Permette di usare Point invece di struct Point.',
+              task: 'Usa typedef per creare un alias Point su una struct anonima con campi x e y, evitando la parola chiave struct.',
             },
           ],
         },
@@ -4061,6 +4080,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: 'Point *point_create(int x, int y)',
+              task: 'Dichiara la firma di point_create che prende due interi x e y e ritorna un puntatore a Point appena allocato.',
             },
             {
               english: 'Destructor Pattern',
@@ -4071,6 +4091,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: 'void point_destroy(Point *p) { free(p); }',
+              task: 'Implementa point_destroy che riceve un puntatore a Point e ne libera la memoria con free.',
             },
             {
               english: 'Object-Oriented C',
@@ -4092,6 +4113,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: 'struct Array { int *data; size_t len; size_t cap; };',
+              task: 'Modella una struct Array con un puntatore data, un campo len e un campo cap per gestire un buffer ridimensionabile.',
             },
             {
               english: 'Struct Composition',
@@ -4112,6 +4134,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: '(struct Point){.x = 1, .y = 2}',
+              task: 'Costruisci al volo un valore temporaneo struct Point con .x=1 e .y=2 usando un compound literal.',
             },
             {
               english: 'Bit Manipulation',
@@ -4133,6 +4156,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: 'struct Options { unsigned verbose : 1; unsigned debug : 1; };',
+              task: 'Dichiara una struct Options con due bitfield verbose e debug da 1 bit per memorizzare opzioni booleane compatte.',
             },
             {
               english: 'Struct Comparison',
@@ -4202,6 +4226,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: 'struct Student students[100];',
+              task: 'Dichiara un array statico di 100 elementi struct Student per memorizzare un blocco di record studenti.',
             },
             {
               english: 'Linked Data',
@@ -4233,6 +4258,7 @@ export default {
               difficulty: 'intermediate',
               code: '#include <stddef.h>\noffsetof(struct Point, y)',
               note: `Termine italiano: offset (in inglese nei contesti C/embedded; raramente 'scostamento').`,
+              task: `Includi stddef.h e calcola con offsetof il numero di byte fra l'inizio di struct Point e il suo campo y.`,
             },
             {
               english: 'Memory Pool',
@@ -4291,6 +4317,7 @@ export default {
               difficulty: 'intermediate',
               code: 'int *p = malloc(10 * sizeof(int));',
               note: 'Memory ALLOCation. Restituisce NULL se fallisce.',
+              task: 'Alloca dinamicamente sullo heap spazio per 10 interi salvando il puntatore restituito da malloc in una variabile p.',
             },
             {
               english: 'free',
@@ -4303,6 +4330,7 @@ export default {
               difficulty: 'intermediate',
               code: 'free(ptr); ptr = NULL;',
               note: 'Dopo free, impostare il puntatore a NULL per evitare use-after-free.',
+              task: 'Rilascia la memoria puntata da ptr con free e azzera subito il puntatore per evitare use-after-free.',
             },
             {
               english: 'calloc',
@@ -4315,6 +4343,7 @@ export default {
               difficulty: 'intermediate',
               code: 'int *p = calloc(10, sizeof(int));',
               note: 'A differenza di malloc, inizializza tutti i byte a zero.',
+              task: `Riserva spazio per 10 interi gia' azzerati a zero usando calloc invece di malloc seguito da memset.`,
             },
             {
               english: 'realloc',
@@ -4327,6 +4356,7 @@ export default {
               difficulty: 'intermediate',
               code: 'p = realloc(p, 20 * sizeof(int));',
               note: 'Può spostare il blocco! Salvare il risultato in un puntatore temporaneo.',
+              task: 'Ridimensiona il blocco puntato da p portandolo a 20 interi tramite realloc, riassegnando il risultato a p.',
             },
             {
               english: 'Allocator Memory Leak',
@@ -4358,6 +4388,7 @@ export default {
               context: 'memory',
               difficulty: 'intermediate',
               code: 'if (p == NULL) { perror("malloc"); exit(1); }',
+              task: `Verifica che p non sia NULL dopo malloc e in caso di fallimento stampa l'errore con perror e termina con exit(1).`,
             },
             {
               english: 'Heap',
@@ -4458,6 +4489,7 @@ export default {
               context: 'memory',
               difficulty: 'intermediate',
               code: 'mmap(NULL, size, PROT_READ, MAP_PRIVATE, fd, 0)',
+              task: 'Mappa in memoria un file descriptor fd in sola lettura usando mmap con flag MAP_PRIVATE e offset zero.',
             },
             {
               english: 'Virtual Memory',
@@ -4536,6 +4568,7 @@ export default {
               difficulty: 'intermediate',
               command: 'valgrind --leak-check=full ./program',
               tool: 'Valgrind',
+              task: 'Lancia il binario ./program sotto valgrind con --leak-check=full per stanare memory leak e accessi invalidi.',
             },
             {
               english: 'Out-of-Memory',
@@ -4579,6 +4612,7 @@ export default {
               difficulty: 'intermediate',
               command: 'gcc -fsanitize=memory main.c',
               tool: 'MSan',
+              task: 'Compila main.c con gcc abilitando il flag -fsanitize=memory per intercettare letture da memoria non inizializzata.',
             },
             {
               english: 'Leak Sanitizer',
@@ -4590,6 +4624,7 @@ export default {
               difficulty: 'intermediate',
               command: 'gcc -fsanitize=leak main.c',
               tool: 'LSan',
+              task: 'Compila main.c con gcc e -fsanitize=leak per segnalare a fine programma ogni allocazione ancora raggiungibile.',
             },
             {
               english: 'Heap Overflow',
@@ -4618,6 +4653,7 @@ export default {
               difficulty: 'intermediate',
               code: 'if (len >= cap) { cap *= 2; arr = realloc(arr, cap * sizeof(int)); }',
               note: `Rinominato per distinguerlo dall'item 'Dynamic Array' del modulo puntatori.`,
+              task: `Raddoppia la capacita' cap e chiama realloc su arr quando len supera cap per mantenere append ammortizzato O(1).`,
             },
             {
               english: 'Growth Factor',
@@ -4659,6 +4695,7 @@ export default {
               context: 'memory',
               difficulty: 'intermediate',
               code: 'struct Node *n = malloc(sizeof(struct Node));',
+              task: 'Alloca dinamicamente un singolo struct Node sullo heap usando malloc e sizeof per inserirlo in una lista linkata.',
             },
             {
               english: 'Free List',
@@ -4738,6 +4775,7 @@ export default {
               context: 'io',
               difficulty: 'intermediate',
               code: 'FILE *fp;',
+              task: 'Dichiara una variabile fp di tipo FILE* destinata a contenere lo stato di un file aperto in seguito.',
             },
             {
               english: 'fopen',
@@ -4749,6 +4787,7 @@ export default {
               context: 'io',
               difficulty: 'intermediate',
               code: 'FILE *fp = fopen("data.txt", "r");',
+              task: `Apri il file data.txt in modalita' lettura con fopen e salva il puntatore FILE risultante in fp.`,
             },
             {
               english: 'fclose',
@@ -4760,6 +4799,7 @@ export default {
               context: 'io',
               difficulty: 'intermediate',
               code: 'fclose(fp);',
+              task: 'Chiudi il file referenziato da fp con fclose per svuotare i buffer e rilasciare il descrittore.',
             },
             {
               english: 'File Mode',
@@ -4771,6 +4811,7 @@ export default {
               context: 'io',
               difficulty: 'intermediate',
               code: '"r" "w" "a" "rb" "wb" "r+"',
+              task: `Ricorda le stringhe di modalita' di fopen: r per leggere, w per scrivere, a per appendere e r+ per lettura/scrittura.`,
             },
             {
               english: 'fprintf',
@@ -4782,6 +4823,7 @@ export default {
               context: 'io',
               difficulty: 'intermediate',
               code: 'fprintf(fp, "Score: %d\\n", score);',
+              task: 'Scrivi su fp la riga Score: seguita dal valore intero della variabile score, terminando con newline tramite fprintf.',
             },
             {
               english: 'fscanf',
@@ -4793,6 +4835,7 @@ export default {
               context: 'io',
               difficulty: 'intermediate',
               code: 'fscanf(fp, "%d %s", &num, name);',
+              task: 'Leggi da fp un intero e una stringa con fscanf usando il formato "%d %s" e scrivili in num e name.',
             },
             {
               english: 'fgets (file I/O)',
@@ -4805,6 +4848,7 @@ export default {
               difficulty: 'intermediate',
               code: 'fgets(buf, sizeof(buf), fp);',
               note: `Rinominato per distinguerlo dall'item 'fgets' del modulo stringhe; la funzione C resta fgets.`,
+              task: 'Leggi al massimo sizeof(buf)-1 caratteri da fp dentro buf con fgets per consumare una riga senza overflow.',
             },
             {
               english: 'fputs',
@@ -4816,6 +4860,7 @@ export default {
               context: 'io',
               difficulty: 'intermediate',
               code: 'fputs("Hello\\n", fp);',
+              task: 'Scrivi la stringa Hello con newline finale sul file fp tramite fputs, senza formattazione aggiuntiva.',
             },
             {
               english: 'End of File',
@@ -4826,6 +4871,7 @@ export default {
               context: 'io',
               difficulty: 'intermediate',
               code: 'while ((c = fgetc(fp)) != EOF)',
+              task: `Cicla con while leggendo un carattere alla volta con fgetc finche' il valore restituito e' diverso da EOF.`,
             },
             {
               english: 'Error Checking',
@@ -4837,6 +4883,7 @@ export default {
               context: 'io',
               difficulty: 'intermediate',
               code: 'if (fp == NULL) { perror("fopen"); return 1; }',
+              task: `Controlla se fp e' NULL dopo fopen e, in caso, stampa la causa con perror e ritorna 1 dal main.`,
             },
           ],
         },
@@ -4855,6 +4902,7 @@ export default {
               context: 'io',
               difficulty: 'intermediate',
               code: 'FILE *fp = fopen("data.bin", "rb");',
+              task: `Apri il file data.bin in modalita' binaria di lettura passando la stringa "rb" come secondo argomento di fopen.`,
             },
             {
               english: 'fread',
@@ -4866,6 +4914,7 @@ export default {
               context: 'io',
               difficulty: 'intermediate',
               code: 'fread(buffer, sizeof(int), count, fp);',
+              task: 'Leggi count interi binari da fp dentro buffer con fread, specificando sizeof(int) come dimensione di elemento.',
             },
             {
               english: 'fwrite',
@@ -4877,6 +4926,7 @@ export default {
               context: 'io',
               difficulty: 'intermediate',
               code: 'fwrite(data, sizeof(int), count, fp);',
+              task: `Riversa su fp count elementi di tipo int presi dall'array data usando fwrite per una scrittura binaria diretta.`,
             },
             {
               english: 'fseek',
@@ -4888,6 +4938,7 @@ export default {
               context: 'io',
               difficulty: 'intermediate',
               code: 'fseek(fp, 0, SEEK_SET);',
+              task: `Sposta la posizione corrente di fp esattamente all'inizio del file passando 0 e SEEK_SET a fseek.`,
             },
             {
               english: 'ftell',
@@ -4899,6 +4950,7 @@ export default {
               context: 'io',
               difficulty: 'intermediate',
               code: 'long pos = ftell(fp);',
+              task: 'Salva in una variabile long la posizione corrente del puntatore di fp interrogandola con ftell.',
             },
             {
               english: 'rewind',
@@ -4910,6 +4962,7 @@ export default {
               context: 'io',
               difficulty: 'intermediate',
               code: 'rewind(fp);',
+              task: `Riporta la posizione di lettura/scrittura di fp all'offset zero con una singola chiamata a rewind.`,
             },
             {
               english: 'Stream',
@@ -4942,6 +4995,7 @@ export default {
               context: 'io',
               difficulty: 'intermediate',
               code: 'fflush(stdout);',
+              task: 'Forza la scrittura immediata del buffer di stdout sul terminale o pipe chiamando fflush(stdout).',
             },
             {
               english: 'Temporary File',
@@ -4953,6 +5007,7 @@ export default {
               context: 'io',
               difficulty: 'intermediate',
               code: 'FILE *tmp = tmpfile();',
+              task: 'Crea un file temporaneo anonimo con tmpfile e salva il FILE* restituito nella variabile tmp.',
             },
           ],
         },
@@ -4971,6 +5026,7 @@ export default {
               context: 'io',
               difficulty: 'intermediate',
               code: 'while (fgets(line, sizeof(line), fp))',
+              task: 'Itera con while sui contenuti di fp leggendo una riga alla volta in line tramite fgets fino a EOF.',
             },
             {
               english: 'Text Mode',
@@ -4993,6 +5049,7 @@ export default {
               context: 'io',
               difficulty: 'intermediate',
               code: 'int c = fgetc(fp);',
+              task: 'Leggi un singolo carattere da fp con fgetc memorizzando il valore in una variabile int chiamata c.',
             },
             {
               english: 'File Descriptor',
@@ -5025,6 +5082,7 @@ export default {
               context: 'io',
               difficulty: 'intermediate',
               command: './program > output.txt',
+              task: `Esegui ./program reindirizzando lo standard output al file output.txt tramite l'operatore > della shell.`,
             },
             {
               english: 'Pipe',
@@ -5036,6 +5094,7 @@ export default {
               context: 'io',
               difficulty: 'intermediate',
               command: 'cat file.txt | grep "error"',
+              task: `Concatena con una pipe l'output di cat file.txt all'input di grep "error" per filtrare solo le righe di errore.`,
             },
             {
               english: 'ferror',
@@ -5047,6 +5106,7 @@ export default {
               context: 'io',
               difficulty: 'intermediate',
               code: 'if (ferror(fp)) { ... }',
+              task: `Verifica se durante le operazioni su fp si e' verificato un errore interrogando lo stream con ferror.`,
             },
             {
               english: 'feof',
@@ -5059,6 +5119,7 @@ export default {
               difficulty: 'intermediate',
               code: 'while (!feof(fp))',
               note: 'Attenzione: feof è vero solo DOPO un tentativo di lettura fallito.',
+              task: `Continua a iterare finche' feof su fp ritorna falso, ricordando che il flag scatta solo dopo una lettura fallita.`,
             },
             {
               english: 'File Locking',
@@ -5070,6 +5131,7 @@ export default {
               context: 'io',
               difficulty: 'intermediate',
               code: 'flock(fd, LOCK_EX);',
+              task: 'Acquisisci un lock esclusivo sul file descriptor fd con flock e flag LOCK_EX per serializzare le scritture.',
             },
           ],
         },
@@ -5098,6 +5160,7 @@ export default {
               context: 'io',
               difficulty: 'intermediate',
               code: '"/home/user/data.txt"',
+              task: 'Usa il percorso assoluto "/home/user/data.txt" che parte dalla radice e non dipende dalla directory corrente.',
             },
             {
               english: 'Relative Path',
@@ -5109,6 +5172,7 @@ export default {
               context: 'io',
               difficulty: 'intermediate',
               code: '"./data/input.txt"',
+              task: 'Riferisci il file "./data/input.txt" tramite un percorso relativo che parte dalla directory corrente di esecuzione.',
             },
             {
               english: 'rename',
@@ -5120,6 +5184,7 @@ export default {
               context: 'io',
               difficulty: 'intermediate',
               code: 'rename("old.txt", "new.txt");',
+              task: 'Rinomina il file old.txt in new.txt invocando la funzione di libreria rename con i due nomi come argomenti.',
             },
             {
               english: 'remove',
@@ -5131,6 +5196,7 @@ export default {
               context: 'io',
               difficulty: 'intermediate',
               code: 'remove("temp.txt");',
+              task: 'Cancella il file temp.txt dal filesystem chiamando la funzione standard remove con il nome del file.',
             },
             {
               english: 'Append Mode',
@@ -5141,6 +5207,7 @@ export default {
               context: 'io',
               difficulty: 'intermediate',
               code: 'FILE *fp = fopen("log.txt", "a");',
+              task: `Apri log.txt in modalita' append con fopen e flag "a" cosi' che ogni scrittura si accodi al contenuto esistente.`,
             },
             {
               english: 'Random Access',
@@ -5161,6 +5228,7 @@ export default {
               context: 'io',
               difficulty: 'intermediate',
               code: 'fseek(fp, 0, SEEK_END); long size = ftell(fp);',
+              task: 'Calcola la dimensione di fp facendo fseek a SEEK_END e leggendo poi la posizione finale con ftell.',
             },
             {
               english: 'stdin',
@@ -5173,6 +5241,7 @@ export default {
               difficulty: 'intermediate',
               code: 'fgets(buf, sizeof(buf), stdin);',
               note: 'Termine italiano: stdin (stream standard di input; nome usato anche nel codice e in italiano).',
+              task: 'Leggi una riga dallo standard input dentro buf passando stdin come ultimo argomento di fgets.',
             },
             {
               english: 'stderr',
@@ -5185,6 +5254,7 @@ export default {
               difficulty: 'intermediate',
               code: 'fprintf(stderr, "Error: %s\\n", msg);',
               note: 'Termine italiano: stderr (stream standard di errore; nome usato anche in italiano).',
+              task: 'Stampa un messaggio di errore formattato Error: seguito da msg sullo stream stderr tramite fprintf.',
             },
           ],
         },
@@ -5213,6 +5283,7 @@ export default {
               difficulty: 'intermediate',
               code: '#include <stdio.h>\n#include "myheader.h"',
               note: '<> cerca nelle directory di sistema, "" cerca prima nella directory corrente.',
+              task: 'Includi stdio.h dalle directory di sistema con <> e myheader.h dalla directory locale con i doppi apici.',
             },
             {
               english: '#define',
@@ -5224,6 +5295,7 @@ export default {
               context: 'preprocessor',
               difficulty: 'intermediate',
               code: '#define PI 3.14159',
+              task: 'Definisci la costante simbolica PI con valore 3.14159 tramite la direttiva #define del preprocessore.',
             },
             {
               english: 'Macro',
@@ -5246,6 +5318,7 @@ export default {
               difficulty: 'intermediate',
               code: '#define MAX(a, b) ((a) > (b) ? (a) : (b))',
               note: 'Mettere sempre le parentesi! Senza, MAX(1+2, 3) si espande male.',
+              task: 'Scrivi una macro MAX(a,b) parametrizzata che ritorna il maggiore, parentesizzando ogni argomento per sicurezza.',
             },
             {
               english: '#ifdef',
@@ -5257,6 +5330,7 @@ export default {
               context: 'preprocessor',
               difficulty: 'intermediate',
               code: '#ifdef DEBUG\nprintf("debug info\\n");\n#endif',
+              task: `Compila la printf di debug solo se la macro DEBUG e' definita, racchiudendola fra #ifdef DEBUG ed #endif.`,
             },
             {
               english: '#ifndef',
@@ -5268,6 +5342,7 @@ export default {
               context: 'preprocessor',
               difficulty: 'intermediate',
               code: '#ifndef MYHEADER_H\n#define MYHEADER_H\n...\n#endif',
+              task: `Proteggi un header definendo MYHEADER_H solo se non e' gia' definita, racchiudendo tutto fra #ifndef ed #endif.`,
             },
             {
               english: 'Header Guard',
@@ -5279,6 +5354,7 @@ export default {
               context: 'preprocessor',
               difficulty: 'intermediate',
               code: '#ifndef MYLIB_H\n#define MYLIB_H\n// declarations\n#endif',
+              task: 'Avvolgi le dichiarazioni di mylib in un classico include guard basato su MYLIB_H per prevenire inclusioni doppie.',
             },
             {
               english: '#pragma once',
@@ -5291,6 +5367,7 @@ export default {
               difficulty: 'intermediate',
               code: '#pragma once',
               note: 'Supportato da tutti i compilatori principali ma non è nello standard.',
+              task: `Inserisci #pragma once in cima a un header come alternativa moderna e piu' compatta agli include guard tradizionali.`,
             },
             {
               english: '#undef',
@@ -5302,6 +5379,7 @@ export default {
               context: 'preprocessor',
               difficulty: 'intermediate',
               code: '#undef MAX',
+              task: 'Rimuovi la definizione della macro MAX precedentemente impostata utilizzando la direttiva #undef.',
             },
             {
               english: 'Conditional Compilation',
@@ -5313,6 +5391,7 @@ export default {
               context: 'preprocessor',
               difficulty: 'intermediate',
               code: '#if defined(_WIN32)\n// Windows code\n#else\n// Unix code\n#endif',
+              task: 'Seleziona codice specifico per Windows o Unix incapsulandolo in un blocco #if defined(_WIN32) / #else / #endif.',
             },
           ],
         },
@@ -5331,6 +5410,7 @@ export default {
               context: 'preprocessor',
               difficulty: 'intermediate',
               code: '#define STR(x) #x\nprintf(STR(hello)); // "hello"',
+              task: `Definisci una macro STR(x) che usa l'operatore # per trasformare l'argomento hello nella stringa letterale "hello".`,
             },
             {
               english: 'Token Pasting',
@@ -5342,6 +5422,7 @@ export default {
               context: 'preprocessor',
               difficulty: 'intermediate',
               code: '#define CONCAT(a, b) a##b\nint CONCAT(my, Var) = 5; // int myVar = 5',
+              task: `Realizza una macro CONCAT(a,b) che fonde due token con ## per generare l'identificatore myVar da CONCAT(my,Var).`,
             },
             {
               english: 'Variadic Macro',
@@ -5353,6 +5434,7 @@ export default {
               context: 'preprocessor',
               difficulty: 'intermediate',
               code: '#define LOG(fmt, ...) fprintf(stderr, fmt, __VA_ARGS__)',
+              task: 'Scrivi una macro LOG(fmt, ...) che inoltra fmt e __VA_ARGS__ a fprintf su stderr per stampare diagnostica variadica.',
             },
             {
               english: '__FILE__',
@@ -5364,6 +5446,7 @@ export default {
               context: 'preprocessor',
               difficulty: 'intermediate',
               code: 'printf("File: %s\\n", __FILE__);',
+              task: `Stampa con printf il nome del file sorgente corrente sfruttando l'espansione automatica della macro __FILE__.`,
             },
             {
               english: '__LINE__',
@@ -5375,6 +5458,7 @@ export default {
               context: 'preprocessor',
               difficulty: 'intermediate',
               code: 'printf("Line: %d\\n", __LINE__);',
+              task: 'Mostra a runtime il numero di riga del sorgente corrente usando il formato %d e la macro __LINE__.',
             },
             {
               english: '__func__',
@@ -5387,6 +5471,7 @@ export default {
               difficulty: 'intermediate',
               code: 'printf("Function: %s\\n", __func__);',
               note: 'Introdotto in C99. Non è una macro ma un identificatore predefinito.',
+              task: `Stampa con printf il nome della funzione corrente sfruttando l'identificatore predefinito __func__ introdotto in C99.`,
             },
             {
               english: 'Macro Side Effect',
@@ -5399,6 +5484,7 @@ export default {
               difficulty: 'intermediate',
               code: 'MAX(i++, j++); // i or j incremented twice!',
               note: 'Ecco perché le inline functions sono spesso preferite.',
+              task: `Evita di passare i++ o j++ alla macro MAX, perche' la doppia espansione incrementerebbe due volte la variabile.`,
             },
             {
               english: 'Inline Function',
@@ -5410,6 +5496,7 @@ export default {
               context: 'preprocessor',
               difficulty: 'intermediate',
               code: 'static inline int max(int a, int b) { return a > b ? a : b; }',
+              task: 'Definisci una funzione static inline max(int a, int b) che ritorna il maggiore, alternativa type-safe alle macro.',
             },
             {
               english: '#error',
@@ -5421,6 +5508,7 @@ export default {
               context: 'preprocessor',
               difficulty: 'intermediate',
               code: '#if !defined(PLATFORM)\n#error "PLATFORM must be defined"\n#endif',
+              task: `Blocca la compilazione con #error "PLATFORM must be defined" se la macro PLATFORM non e' stata impostata.`,
             },
             {
               english: 'Include Path',
@@ -5432,6 +5520,7 @@ export default {
               context: 'preprocessor',
               difficulty: 'intermediate',
               command: 'gcc -I/usr/local/include main.c',
+              task: 'Aggiungi /usr/local/include al percorso di ricerca degli header invocando gcc con il flag -I prima di main.c.',
             },
           ],
         },
@@ -5482,6 +5571,7 @@ export default {
               difficulty: 'intermediate',
               code: 'struct Node; // forward declaration',
               note: `Rinominato per distinguerlo dall'item generico del modulo funzioni.`,
+              task: 'Inserisci la dichiarazione anticipata struct Node; in un header per usare puntatori a Node senza definirne il layout.',
             },
             {
               english: 'Circular Dependency',
@@ -5531,6 +5621,7 @@ export default {
               context: 'preprocessor',
               difficulty: 'intermediate',
               command: 'gcc -c file1.c -c file2.c && gcc file1.o file2.o -o program',
+              task: 'Compila separatamente file1.c e file2.c in oggetti con -c e poi linka i .o nel binario program con gcc.',
             },
             {
               english: 'Modularity',
@@ -5559,6 +5650,7 @@ export default {
               context: 'preprocessor',
               difficulty: 'intermediate',
               command: 'gcc -DDEBUG -g main.c',
+              task: 'Produci un eseguibile di debug compilando main.c con gcc, definendo DEBUG via -D e includendo i simboli con -g.',
             },
             {
               english: 'Release Build',
@@ -5569,6 +5661,7 @@ export default {
               context: 'preprocessor',
               difficulty: 'intermediate',
               command: 'gcc -DNDEBUG -O2 main.c',
+              task: 'Genera una build di rilascio di main.c con gcc, disabilitando gli assert via -DNDEBUG e ottimizzando con -O2.',
             },
             {
               english: 'Command-Line Define',
@@ -5580,6 +5673,7 @@ export default {
               context: 'preprocessor',
               difficulty: 'intermediate',
               command: 'gcc -DVERSION=2 main.c',
+              task: 'Inietta la macro VERSION con valore 2 al preprocessore di main.c tramite il flag -DVERSION=2 di gcc.',
             },
             {
               english: 'Platform Detection',
@@ -5591,6 +5685,7 @@ export default {
               context: 'preprocessor',
               difficulty: 'intermediate',
               code: '#ifdef _WIN32\n// Windows\n#elif defined(__linux__)\n// Linux\n#endif',
+              task: 'Differenzia il codice fra Windows e Linux usando #ifdef _WIN32 con un ramo #elif defined(__linux__) successivo.',
             },
             {
               english: 'Feature Toggle',
@@ -5601,6 +5696,7 @@ export default {
               context: 'preprocessor',
               difficulty: 'intermediate',
               code: '#ifdef ENABLE_LOGGING\n// logging code\n#endif',
+              task: 'Avvolgi il codice di logging in un blocco #ifdef ENABLE_LOGGING per attivarlo solo nelle build con quel flag.',
             },
             {
               english: 'Assert',
@@ -5612,6 +5708,7 @@ export default {
               difficulty: 'intermediate',
               code: '#include <assert.h>\nassert(ptr != NULL);',
               note: 'Disabilitato con #define NDEBUG. Usare solo per bug del programma.',
+              task: `Includi assert.h e verifica che ptr non sia NULL con assert per documentare l'invariante e crashare in debug.`,
             },
             {
               english: 'Static Assert',
@@ -5624,6 +5721,7 @@ export default {
               difficulty: 'intermediate',
               code: '_Static_assert(sizeof(int) == 4, "int must be 4 bytes");',
               note: 'Introdotto in C11.',
+              task: 'Usa _Static_assert per controllare a compile-time che sizeof(int) sia esattamente 4 byte con messaggio dedicato.',
             },
             {
               english: 'Predefined Macro',
@@ -5635,6 +5733,7 @@ export default {
               context: 'preprocessor',
               difficulty: 'intermediate',
               code: '__DATE__, __TIME__, __STDC_VERSION__',
+              task: 'Ricorda le macro predefinite __DATE__, __TIME__ e __STDC_VERSION__ per loggare metadati di compilazione.',
             },
             {
               english: 'Preprocessing Output',
@@ -5646,6 +5745,7 @@ export default {
               context: 'preprocessor',
               difficulty: 'intermediate',
               command: 'gcc -E main.c',
+              task: `Stampa a video l'output del preprocessore di main.c eseguendo gcc con il flag -E per fare debug delle macro.`,
             },
             {
               english: '#line',
@@ -5658,6 +5758,7 @@ export default {
               difficulty: 'intermediate',
               code: '#line 100 "generated.c"',
               note: 'Usato dai generatori di codice.',
+              task: 'Riscrivi numero di riga e nome file riportati negli errori inserendo #line 100 "generated.c" nel sorgente generato.',
             },
           ],
         },
@@ -5686,6 +5787,7 @@ export default {
               difficulty: 'intermediate',
               code: 'int *p = malloc(10 * sizeof(int));',
               note: `Rinominato per distinguerlo dall'item 'malloc' del modulo memoria; la funzione C resta malloc.`,
+              task: 'Alloca con malloc dalla libreria standard memoria sufficiente per 10 interi e assegnala al puntatore p.',
             },
             {
               english: 'calloc (stdlib reference)',
@@ -5698,6 +5800,7 @@ export default {
               difficulty: 'intermediate',
               code: 'int *arr = calloc(10, sizeof(int));',
               note: `Rinominato per distinguerlo dall'item 'calloc' del modulo memoria; la funzione C resta calloc.`,
+              task: `Riserva con calloc un buffer di 10 interi gia' azzerati e salva il puntatore in arr in una sola chiamata.`,
             },
             {
               english: 'realloc (stdlib reference)',
@@ -5709,6 +5812,7 @@ export default {
               difficulty: 'intermediate',
               code: 'p = realloc(p, 20 * sizeof(int));',
               note: `Rinominato per distinguerlo dall'item 'realloc' del modulo memoria; la funzione C resta realloc.`,
+              task: 'Espandi a 20 interi il blocco riferito da p tramite realloc, riassegnando il risultato per gestire un eventuale spostamento.',
             },
             {
               english: 'free (stdlib reference)',
@@ -5721,6 +5825,7 @@ export default {
               difficulty: 'intermediate',
               code: 'free(p);\np = NULL;',
               note: `Rinominato per distinguerlo dall'item 'free' del modulo memoria; la funzione C resta free.`,
+              task: 'Libera il blocco puntato da p con free e azzera subito p a NULL per evitare dangling pointer.',
             },
             {
               english: 'atoi (stdlib)',
@@ -5732,6 +5837,7 @@ export default {
               difficulty: 'intermediate',
               code: 'int n = atoi("42");',
               note: `Rinominato per distinguerlo dall'item 'atoi' del modulo funzioni; in C la funzione resta atoi.`,
+              task: 'Converti la stringa "42" in un intero con atoi e salva il risultato nella variabile n, ricordando i suoi limiti.',
             },
             {
               english: 'atof',
@@ -5743,6 +5849,7 @@ export default {
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'double d = atof("3.14");',
+              task: 'Trasforma la stringa "3.14" in un double tramite atof e memorizza il valore decimale nella variabile d.',
             },
             {
               english: 'strtol (stdlib reference)',
@@ -5754,6 +5861,7 @@ export default {
               difficulty: 'intermediate',
               code: 'long n = strtol(s, &endptr, 10);',
               note: `Rinominato per distinguerlo dall'item 'strtol' del modulo stringhe; la funzione C resta strtol.`,
+              task: 'Converti la stringa s in long base 10 con strtol, passando &endptr per identificare il primo carattere non valido.',
             },
             {
               english: 'qsort (stdlib reference)',
@@ -5766,6 +5874,7 @@ export default {
               difficulty: 'intermediate',
               code: 'qsort(arr, n, sizeof(int), cmp);',
               note: `Rinominato per distinguerlo dall'item 'qsort' del modulo puntatori; la funzione C resta qsort.`,
+              task: 'Ordina un array di n interi richiamando qsort con sizeof(int) come dimensione di elemento e cmp come comparatore.',
             },
             {
               english: 'bsearch (stdlib reference)',
@@ -5777,6 +5886,7 @@ export default {
               difficulty: 'intermediate',
               code: 'int *r = bsearch(&key, arr, n, sizeof(int), cmp);',
               note: `Rinominato per distinguerlo dall'item 'bsearch' del modulo puntatori avanzati; la funzione C resta bsearch.`,
+              task: `Cerca key dentro l'array ordinato arr di n interi con bsearch, passando cmp come comparatore per il confronto.`,
             },
             {
               english: 'exit (stdlib)',
@@ -5788,6 +5898,7 @@ export default {
               difficulty: 'intermediate',
               code: 'exit(EXIT_SUCCESS);',
               note: `Rinominato per distinguerlo dall'item 'exit' del modulo funzioni; la funzione C resta exit.`,
+              task: `Termina il processo con codice di successo invocando exit(EXIT_SUCCESS), affinche' siano eseguiti gli handler atexit.`,
             },
           ],
         },
@@ -5806,6 +5917,7 @@ export default {
               difficulty: 'intermediate',
               code: 'size_t len = strlen("ciao");',
               note: `Rinominato per distinguerlo dall'item 'strlen' del modulo array; la funzione C resta strlen.`,
+              task: 'Calcola la lunghezza della stringa "ciao" con strlen e salva il risultato in una variabile size_t len.',
             },
             {
               english: 'strcpy (stdlib reference)',
@@ -5818,6 +5930,7 @@ export default {
               difficulty: 'intermediate',
               code: 'strcpy(dest, src);',
               note: `Rinominato per distinguerlo dall'item 'strcpy' del modulo array; la funzione C resta strcpy.`,
+              task: 'Copia la stringa sorgente src nel buffer dest con strcpy, sapendo che la funzione non controlla la dimensione.',
             },
             {
               english: 'strncpy (stdlib reference)',
@@ -5829,6 +5942,7 @@ export default {
               difficulty: 'intermediate',
               code: 'strncpy(dest, src, sizeof(dest) - 1);',
               note: `Rinominato per distinguerlo dall'item 'strncpy' del modulo stringhe; la funzione C resta strncpy.`,
+              task: 'Copia da src in dest al massimo sizeof(dest)-1 byte con strncpy per lasciare spazio garantito al terminatore null.',
             },
             {
               english: 'strcat (stdlib reference)',
@@ -5840,6 +5954,7 @@ export default {
               difficulty: 'intermediate',
               code: 'strcat(dest, " mondo");',
               note: `Rinominato per distinguerlo dall'item 'strcat' del modulo array; la funzione C resta strcat.`,
+              task: 'Concatena la stringa " mondo" in coda al contenuto di dest tramite strcat, assicurandoti che dest abbia spazio.',
             },
             {
               english: 'strcmp (stdlib reference)',
@@ -5851,6 +5966,7 @@ export default {
               difficulty: 'intermediate',
               code: 'if (strcmp(a, b) == 0) { /* uguali */ }',
               note: `Rinominato per distinguerlo dall'item 'strcmp' del modulo array; la funzione C resta strcmp.`,
+              task: `Confronta lessicalmente le stringhe a e b con strcmp e rileva l'uguaglianza testando se il risultato e' 0.`,
             },
             {
               english: 'strchr (stdlib reference)',
@@ -5863,6 +5979,7 @@ export default {
               difficulty: 'intermediate',
               code: "char *p = strchr(s, '@');",
               note: `Rinominato per distinguerlo dall'item 'strchr' del modulo stringhe; la funzione C resta strchr.`,
+              task: `Cerca la prima occorrenza del carattere '@' nella stringa s con strchr per validare un indirizzo email rudimentale.`,
             },
             {
               english: 'strstr (stdlib reference)',
@@ -5875,6 +5992,7 @@ export default {
               difficulty: 'intermediate',
               code: 'char *p = strstr(text, "error");',
               note: `Rinominato per distinguerlo dall'item 'strstr' del modulo stringhe; la funzione C resta strstr.`,
+              task: `Cerca la sottostringa "error" dentro text con strstr e salva nel puntatore p l'inizio del match o NULL.`,
             },
             {
               english: 'memcpy (stdlib reference)',
@@ -5887,6 +6005,7 @@ export default {
               difficulty: 'intermediate',
               code: 'memcpy(dest, src, n);',
               note: `Rinominato per distinguerlo dall'item 'memcpy' del modulo puntatori avanzati; la funzione C resta memcpy.`,
+              task: 'Copia n byte grezzi dalla sorgente src alla destinazione dest con memcpy, garantendo che i buffer non si sovrappongano.',
             },
             {
               english: 'memset (stdlib reference)',
@@ -5898,6 +6017,7 @@ export default {
               difficulty: 'intermediate',
               code: 'memset(buf, 0, sizeof(buf));',
               note: `Rinominato per distinguerlo dall'item 'memset' del modulo puntatori avanzati; la funzione C resta memset.`,
+              task: `Azzera l'intero buffer buf riempiendolo con il byte 0 tramite memset e sizeof(buf) come quantita'.`,
             },
             {
               english: 'memcmp (stdlib reference)',
@@ -5909,6 +6029,7 @@ export default {
               difficulty: 'intermediate',
               code: 'if (memcmp(a, b, n) == 0) { /* uguali */ }',
               note: `Rinominato per distinguerlo dall'item 'memcmp' del modulo puntatori avanzati; la funzione C resta memcmp.`,
+              task: `Confronta byte per byte i primi n byte dei buffer a e b con memcmp e rileva l'uguaglianza testando 0.`,
             },
           ],
         },
@@ -5928,6 +6049,7 @@ export default {
               difficulty: 'intermediate',
               code: 'double y = sin(x);',
               note: 'Compila con -lm su Linux per linkare la libreria matematica.',
+              task: `Calcola il seno dell'angolo x espresso in radianti con la funzione sin di math.h e salva il risultato in y.`,
             },
             {
               english: 'cos',
@@ -5939,6 +6061,7 @@ export default {
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'double y = cos(x);',
+              task: 'Ottieni il coseno di un angolo x in radianti tramite cos di math.h e memorizza il valore in y.',
             },
             {
               english: 'tan',
@@ -5950,6 +6073,7 @@ export default {
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'double y = tan(x);',
+              task: `Determina la tangente dell'angolo x espresso in radianti chiamando tan e assegna il risultato a y.`,
             },
             {
               english: 'sqrt',
@@ -5961,6 +6085,7 @@ export default {
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'double r = sqrt(2.0);',
+              task: 'Estrai la radice quadrata di 2.0 tramite la funzione sqrt e memorizza il valore double risultante in r.',
             },
             {
               english: 'pow',
@@ -5972,6 +6097,7 @@ export default {
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'double r = pow(2.0, 10);',
+              task: 'Calcola 2 elevato alla 10 invocando pow(2.0, 10) e salva il risultato come double nella variabile r.',
             },
             {
               english: 'log',
@@ -5984,6 +6110,7 @@ export default {
               difficulty: 'intermediate',
               code: 'double r = log(x);',
               note: 'Per il logaritmo in base 10 usa log10.',
+              task: 'Calcola il logaritmo naturale in base e di x tramite log di math.h e salva il valore nella variabile r.',
             },
             {
               english: 'exp',
@@ -5995,6 +6122,7 @@ export default {
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'double r = exp(1.0);',
+              task: `Ottieni e elevato a 1.0 chiamando exp(1.0) e memorizza il risultato, ottenendo cosi' una stima del numero di Eulero.`,
             },
             {
               english: 'floor',
@@ -6006,6 +6134,7 @@ export default {
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'double r = floor(3.7);',
+              task: `Arrotonda per difetto il valore 3.7 al piu' vicino intero inferiore tramite floor, salvando il risultato in r.`,
             },
             {
               english: 'ceil',
@@ -6017,6 +6146,7 @@ export default {
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'double r = ceil(3.2);',
+              task: `Arrotonda per eccesso 3.2 al piu' vicino intero superiore tramite ceil e salva il valore double in r.`,
             },
             {
               english: 'fabs',
@@ -6029,6 +6159,7 @@ export default {
               difficulty: 'intermediate',
               code: 'double r = fabs(-3.5);',
               note: 'Per gli interi usa abs (in stdlib.h).',
+              task: 'Calcola il valore assoluto di -3.5 tramite fabs di math.h e memorizza il risultato non negativo in r.',
             },
           ],
         },
@@ -6048,6 +6179,7 @@ export default {
               difficulty: 'intermediate',
               code: 'time_t now = time(NULL);',
               note: 'Restituisce i secondi dal 1 gennaio 1970 (epoch Unix).',
+              task: 'Recupera il timestamp Unix corrente in secondi chiamando time(NULL) e salva il valore in una variabile time_t now.',
             },
             {
               english: 'time_t',
@@ -6059,6 +6191,7 @@ export default {
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'time_t t;',
+              task: 'Dichiara una variabile t di tipo time_t pronta a ospitare un valore di tempo calendariale in secondi dal 1970.',
             },
             {
               english: 'localtime',
@@ -6071,6 +6204,7 @@ export default {
               difficulty: 'intermediate',
               code: 'struct tm *lt = localtime(&now);',
               note: 'Non thread-safe: usa localtime_r in codice multi-thread.',
+              task: 'Converti il timestamp now in una struct tm di tempo locale tramite localtime e salva il puntatore restituito in lt.',
             },
             {
               english: 'strftime',
@@ -6082,6 +6216,7 @@ export default {
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'strftime(buf, sizeof(buf), "%Y-%m-%d", lt);',
+              task: 'Formatta la struct tm lt come stringa YYYY-MM-DD dentro buf usando strftime con il pattern "%Y-%m-%d".',
             },
             {
               english: 'difftime',
@@ -6093,6 +6228,7 @@ export default {
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'double d = difftime(end, start);',
+              task: `Misura in secondi quanto e' trascorso fra start e end chiamando difftime e salva il double risultante in d.`,
             },
             {
               english: 'clock',
@@ -6105,6 +6241,7 @@ export default {
               difficulty: 'intermediate',
               code: 'clock_t start = clock();',
               note: 'Dividi per CLOCKS_PER_SEC per ottenere i secondi.',
+              task: 'Memorizza il tempo CPU iniziale della misurazione chiamando clock() e salvando il valore in una clock_t start.',
             },
             {
               english: 'rand (stdlib)',
@@ -6116,6 +6253,7 @@ export default {
               difficulty: 'intermediate',
               code: 'int n = rand() % 100;',
               note: `Rinominato per distinguerlo dall'item 'rand' del modulo funzioni; la funzione C resta rand.`,
+              task: 'Genera un numero pseudo-casuale fra 0 e 99 usando rand seguito dal modulo 100, ricordandone i limiti crittografici.',
             },
             {
               english: 'srand (stdlib)',
@@ -6127,6 +6265,7 @@ export default {
               difficulty: 'intermediate',
               code: 'srand(time(NULL));',
               note: `Rinominato per distinguerlo dall'item 'srand' del modulo funzioni; la funzione C resta srand.`,
+              task: 'Inizializza il generatore pseudo-casuale con il timestamp corrente passando time(NULL) a srand per variare le sequenze.',
             },
             {
               english: 'RAND_MAX',
@@ -6138,6 +6277,7 @@ export default {
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'double r = rand() / (double)RAND_MAX;',
+              task: `Normalizza l'uscita di rand fra 0.0 e 1.0 dividendo per la costante RAND_MAX castata a double.`,
             },
             {
               english: 'mktime',
@@ -6149,6 +6289,7 @@ export default {
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'time_t t = mktime(&lt);',
+              task: 'Trasforma la struct tm lt in un valore time_t calendariale invocando mktime, che normalizza anche i campi.',
             },
           ],
         },
@@ -6177,6 +6318,7 @@ export default {
               difficulty: 'advanced',
               code: '#include <errno.h>\nif (fopen("f", "r") == NULL) printf("%d\\n", errno);',
               note: 'Variabile globale (thread-local in pratica) impostata dalle chiamate fallite.',
+              task: 'Includi errno.h e, se fopen ritorna NULL, stampa il codice di errore globale errno con printf e formato %d.',
             },
             {
               english: 'perror',
@@ -6189,6 +6331,7 @@ export default {
               difficulty: 'advanced',
               code: 'perror("fopen failed");',
               note: 'Stampa il prefisso, due punti e la descrizione di errno.',
+              task: 'Segnala il fallimento di fopen al terminale con perror("fopen failed"), che antepone il prefisso al messaggio di errno.',
             },
             {
               english: 'strerror',
@@ -6200,6 +6343,7 @@ export default {
               context: 'error-handling',
               difficulty: 'advanced',
               code: 'fprintf(stderr, "%s\\n", strerror(errno));',
+              task: 'Stampa su stderr la descrizione testuale del codice errno corrente passando strerror(errno) al formato %s di fprintf.',
             },
             {
               english: 'Error Code',
@@ -6211,6 +6355,7 @@ export default {
               context: 'error-handling',
               difficulty: 'advanced',
               code: 'int rc = do_thing();\nif (rc != 0) handle_error(rc);',
+              task: 'Salva il valore di ritorno di do_thing in rc e, se non zero, deviane la gestione su handle_error con il codice.',
             },
             {
               english: 'Exit Code',
@@ -6223,6 +6368,7 @@ export default {
               difficulty: 'advanced',
               code: 'return EXIT_FAILURE;',
               note: "In bash, $? contiene il codice di uscita dell'ultimo comando.",
+              task: 'Esci dal main segnalando un fallimento al sistema operativo restituendo la costante EXIT_FAILURE.',
             },
             {
               english: 'EAGAIN',
@@ -6235,6 +6381,7 @@ export default {
               difficulty: 'advanced',
               code: 'if (errno == EAGAIN) retry();',
               note: 'Tipico delle I/O non bloccanti.',
+              task: `Riprova l'operazione I/O non bloccante chiamando retry() quando errno e' impostato esattamente a EAGAIN.`,
             },
             {
               english: 'ENOMEM',
@@ -6246,6 +6393,7 @@ export default {
               context: 'error-handling',
               difficulty: 'advanced',
               code: 'if (!p) { errno = ENOMEM; return -1; }',
+              task: `Se l'allocazione p e' fallita imposta errno a ENOMEM e ritorna -1 dalla funzione per propagare l'esaurimento memoria.`,
             },
             {
               english: 'EINVAL',
@@ -6257,6 +6405,7 @@ export default {
               context: 'error-handling',
               difficulty: 'advanced',
               code: 'if (!s) { errno = EINVAL; return -1; }',
+              task: `Rifiuta input nullo settando errno a EINVAL e ritornando -1 quando il puntatore s passato alla funzione e' NULL.`,
             },
             {
               english: 'EACCES',
@@ -6268,6 +6417,7 @@ export default {
               context: 'error-handling',
               difficulty: 'advanced',
               code: 'if (errno == EACCES) fprintf(stderr, "no permission\\n");',
+              task: 'Stampa su stderr "no permission" quando errno vale EACCES per segnalare un fallimento dovuto a permessi insufficienti.',
             },
             {
               english: 'ENOENT',
@@ -6279,6 +6429,7 @@ export default {
               context: 'error-handling',
               difficulty: 'advanced',
               code: 'if (errno == ENOENT) printf("file mancante\\n");',
+              task: `Avvisa l'utente stampando "file mancante" quando errno e' ENOENT, indicando che il path richiesto non esiste.`,
             },
           ],
         },
@@ -6297,6 +6448,7 @@ export default {
               difficulty: 'advanced',
               code: 'assert(ptr != NULL);',
               note: `Rinominato per distinguerlo dall'item 'Assert' del modulo preprocessore.`,
+              task: 'Verifica a runtime che ptr non sia NULL con assert(ptr != NULL) per documentare e proteggere una precondizione.',
             },
             {
               english: 'Precondition',
@@ -6308,6 +6460,7 @@ export default {
               context: 'error-handling',
               difficulty: 'advanced',
               code: 'void f(int *p) { assert(p); /* ... */ }',
+              task: `Definisci una funzione f(int *p) che impone come precondizione p non NULL tramite assert all'ingresso.`,
             },
             {
               english: 'Postcondition',
@@ -6319,6 +6472,7 @@ export default {
               context: 'error-handling',
               difficulty: 'advanced',
               code: 'assert(result >= 0);',
+              task: 'Controlla con assert che il risultato calcolato sia non negativo, formalizzando una postcondizione della funzione.',
             },
             {
               english: 'Invariant',
@@ -6330,6 +6484,7 @@ export default {
               context: 'error-handling',
               difficulty: 'advanced',
               code: 'assert(stack->size <= stack->capacity);',
+              task: `Garantisci l'invariante di uno stack verificando con assert che size non superi mai capacity in nessun punto.`,
             },
             {
               english: 'Defensive NULL Check',
@@ -6342,6 +6497,7 @@ export default {
               difficulty: 'advanced',
               code: 'if (p == NULL) { /* errore */ }',
               note: `Rinominato per distinguerlo dall'item 'Null Check' del modulo puntatori.`,
+              task: `Inserisci un controllo difensivo all'inizio della funzione: se p e' NULL gestisci l'errore prima di dereferenziare.`,
             },
             {
               english: 'Defensive Programming',
@@ -6364,6 +6520,7 @@ export default {
               context: 'error-handling',
               difficulty: 'advanced',
               code: 'if (n < 0 || n > MAX) abort();',
+              task: `Termina subito il programma con abort se n esce dal range previsto, ovvero se n e' negativo o supera MAX.`,
             },
             {
               english: 'Bounds Check',
@@ -6375,6 +6532,7 @@ export default {
               context: 'error-handling',
               difficulty: 'advanced',
               code: 'if (i >= 0 && i < size) arr[i] = x;',
+              task: 'Scrivi in arr[i] solo dopo aver verificato che i sia non negativo e strettamente minore di size per evitare overflow.',
             },
             {
               english: 'abort',
@@ -6387,6 +6545,7 @@ export default {
               difficulty: 'advanced',
               code: 'abort();',
               note: 'Genera SIGABRT e produce un core dump.',
+              task: 'Termina il processo in modo anomalo invocando abort(), che invia SIGABRT e tipicamente produce un core dump.',
             },
             {
               english: 'NDEBUG',
@@ -6398,6 +6557,7 @@ export default {
               context: 'error-handling',
               difficulty: 'advanced',
               code: '#define NDEBUG\n#include <assert.h>',
+              task: `Disabilita tutte le asserzioni di assert.h definendo NDEBUG prima di includere l'header nel sorgente di produzione.`,
             },
           ],
         },
@@ -6417,6 +6577,7 @@ export default {
               difficulty: 'advanced',
               code: 'if (!fp) goto cleanup;\n/* ... */\ncleanup: free(buf);',
               note: 'Pattern comune nel kernel Linux: rara eccezione al "goto è cattivo".',
+              task: `Salta con goto all'etichetta cleanup se fp e' NULL, dove un blocco unico esegue free(buf) prima di uscire.`,
             },
             {
               english: 'Early Return',
@@ -6428,6 +6589,7 @@ export default {
               context: 'error-handling',
               difficulty: 'advanced',
               code: 'if (!ptr) return -1;',
+              task: `Esci subito dalla funzione restituendo -1 se ptr e' NULL, riducendo l'annidamento del resto del corpo.`,
             },
             {
               english: 'Guard Clause',
@@ -6439,6 +6601,7 @@ export default {
               context: 'error-handling',
               difficulty: 'advanced',
               code: 'if (!input) return ERR_NULL;',
+              task: `Posiziona in cima alla funzione una guard clause che ritorna ERR_NULL quando input e' NULL, per appiattire i percorsi.`,
             },
             {
               english: 'Return -1',
@@ -6450,6 +6613,7 @@ export default {
               context: 'error-handling',
               difficulty: 'advanced',
               code: 'if (read(fd, buf, n) == -1) perror("read");',
+              task: 'Invoca perror("read") quando read sul file descriptor fd ritorna -1, segnalando un fallimento nella lettura POSIX.',
             },
             {
               english: 'Out Parameter',
@@ -6461,6 +6625,7 @@ export default {
               context: 'error-handling',
               difficulty: 'advanced',
               code: 'int parse(const char *s, int *out);',
+              task: 'Dichiara parse(const char *s, int *out) che usa out come parametro di uscita per restituire il valore parsato.',
             },
             {
               english: 'Resource Leak',
@@ -6482,6 +6647,7 @@ export default {
               difficulty: 'advanced',
               code: 'free(p); /* ... */ free(p); /* BUG */',
               note: `Rinominato per distinguerlo dall'item 'Double Free' del modulo puntatori avanzati.`,
+              task: 'Riconosci come bug il pattern free(p) seguito da un secondo free(p) sulla stessa variabile, classica doppia free.',
             },
             {
               english: 'Use-After-Free',
@@ -6502,6 +6668,7 @@ export default {
               context: 'error-handling',
               difficulty: 'advanced',
               code: 'int rc = inner(); if (rc) return rc;',
+              task: `Inoltra verso l'alto un codice di errore salvando in rc il ritorno di inner() e propagandolo se diverso da zero.`,
             },
             {
               english: 'Error Cleanup Function',
@@ -6513,6 +6680,7 @@ export default {
               difficulty: 'advanced',
               code: 'void cleanup(void) { free(buf); fclose(fp); }',
               note: `Rinominato per distinguerlo dall'item 'Cleanup Function' del modulo memoria.`,
+              task: 'Centralizza il rilascio risorse in una funzione cleanup che libera buf con free e chiude il file fp con fclose.',
             },
           ],
         },
@@ -6531,6 +6699,7 @@ export default {
               context: 'error-handling',
               difficulty: 'advanced',
               code: '#include <signal.h>',
+              task: 'Includi signal.h per ottenere le dichiarazioni necessarie a registrare handler e inviare segnali asincroni al processo.',
             },
             {
               english: 'Error Signal Handler',
@@ -6542,6 +6711,7 @@ export default {
               difficulty: 'advanced',
               code: 'signal(SIGINT, handler);',
               note: `Rinominato per distinguerlo dall'item 'Signal Handler' del modulo puntatori avanzati.`,
+              task: 'Registra la funzione handler come gestore del segnale SIGINT tramite la chiamata signal(SIGINT, handler).',
             },
             {
               english: 'SIGSEGV',
@@ -6574,6 +6744,7 @@ export default {
               context: 'error-handling',
               difficulty: 'advanced',
               code: 'raise(SIGTERM);',
+              task: 'Invia il segnale SIGTERM allo stesso processo corrente chiamando raise(SIGTERM) per innescare la propria terminazione.',
             },
             {
               english: 'setjmp',
@@ -6586,6 +6757,7 @@ export default {
               difficulty: 'advanced',
               code: 'jmp_buf env;\nif (setjmp(env) == 0) { /* normale */ }',
               note: 'Forma di "eccezione" rudimentale, usare con estrema cautela.',
+              task: 'Salva il contesto di esecuzione in un jmp_buf env con setjmp e fai eseguire il ramo normale quando ritorna 0.',
             },
             {
               english: 'longjmp',
@@ -6597,6 +6769,7 @@ export default {
               context: 'error-handling',
               difficulty: 'advanced',
               code: 'longjmp(env, 1);',
+              task: 'Ripristina il contesto salvato in env chiamando longjmp(env, 1) per saltare non-localmente al setjmp originario.',
             },
             {
               english: 'jmp_buf',
@@ -6608,6 +6781,7 @@ export default {
               context: 'error-handling',
               difficulty: 'advanced',
               code: 'jmp_buf env;',
+              task: 'Dichiara una variabile env di tipo jmp_buf, usata per memorizzare lo stato di esecuzione fra setjmp e longjmp.',
             },
             {
               english: 'volatile sig_atomic_t',
@@ -6619,6 +6793,7 @@ export default {
               context: 'error-handling',
               difficulty: 'advanced',
               code: 'volatile sig_atomic_t flag = 0;',
+              task: 'Dichiara la variabile flag come volatile sig_atomic_t per condividerla in sicurezza fra handler di segnale e main.',
             },
             {
               english: 'atexit (error path)',
@@ -6631,6 +6806,7 @@ export default {
               difficulty: 'advanced',
               code: 'atexit(cleanup);',
               note: `Rinominato per distinguerlo dall'item 'atexit' del modulo puntatori avanzati; la funzione C resta atexit.`,
+              task: `Registra la funzione cleanup con atexit affinche' venga eseguita anche quando il percorso di errore chiama exit.`,
             },
           ],
         },
@@ -6659,6 +6835,7 @@ export default {
               difficulty: 'advanced',
               code: 'struct Node { int v; struct Node *next; };',
               note: `Rinominato per distinguerlo dall'item generico 'Doubly Linked List' presente piu' avanti nello stesso modulo.`,
+              task: 'Dichiara una struct Node con un valore v e un puntatore next, base minima per implementare poi una lista linkata.',
             },
             {
               english: 'Node',
@@ -6670,6 +6847,7 @@ export default {
               context: 'data-structures',
               difficulty: 'advanced',
               code: 'struct Node *new_node(int v);',
+              task: 'Definisci il prototipo new_node(int v) che ritorna un puntatore a struct Node appena allocato contenente v.',
             },
             {
               english: 'Head Pointer',
@@ -6681,6 +6859,7 @@ export default {
               context: 'data-structures',
               difficulty: 'advanced',
               code: 'struct Node *head = NULL;',
+              task: 'Inizializza il puntatore alla testa head come struct Node* a NULL, indicando una lista linkata inizialmente vuota.',
             },
             {
               english: 'Tail Pointer',
@@ -6691,6 +6870,7 @@ export default {
               context: 'data-structures',
               difficulty: 'advanced',
               code: 'struct Node *tail = NULL;',
+              task: 'Dichiara e azzera a NULL un puntatore tail di tipo struct Node*, premessa per append in O(1) sulla lista linkata.',
             },
             {
               english: 'Doubly Linked List',
@@ -6702,6 +6882,7 @@ export default {
               context: 'data-structures',
               difficulty: 'advanced',
               code: 'struct DNode { int v; struct DNode *prev, *next; };',
+              task: 'Modella una lista doppiamente concatenata definendo struct DNode con valore v e i puntatori prev e next.',
             },
             {
               english: 'Circular List',
@@ -6723,6 +6904,7 @@ export default {
               context: 'data-structures',
               difficulty: 'advanced',
               code: 'n->next = head; head = n;',
+              task: 'Inserisci il nodo n in testa alla lista linkata collegandone next ad head e aggiornando head per puntare a n.',
             },
             {
               english: 'Delete',
@@ -6734,6 +6916,7 @@ export default {
               context: 'data-structures',
               difficulty: 'advanced',
               code: 'prev->next = curr->next; free(curr);',
+              task: 'Sgancia il nodo curr facendo puntare prev->next a curr->next e poi libera la memoria di curr con free.',
             },
             {
               english: 'List Traversal',
@@ -6745,6 +6928,7 @@ export default {
               difficulty: 'advanced',
               code: 'for (Node *p = head; p; p = p->next) ...',
               note: `Rinominato per distinguerlo dall'item generico 'Traversal' del modulo array.`,
+              task: `Itera sulla lista linkata con un for partendo da head e avanzando p=p->next finche' p non e' NULL.`,
             },
             {
               english: 'Sentinel Node',
@@ -6773,6 +6957,7 @@ export default {
               context: 'data-structures',
               difficulty: 'advanced',
               code: 'struct Stack { int *data; int top; };',
+              task: 'Definisci una struct Stack con un puntatore data agli elementi interi e un indice top per la cima della pila.',
             },
             {
               english: 'Push',
@@ -6784,6 +6969,7 @@ export default {
               context: 'data-structures',
               difficulty: 'advanced',
               code: 'stack[++top] = value;',
+              task: 'Inserisci value in cima alla pila incrementando top con pre-incremento e scrivendo in stack[++top].',
             },
             {
               english: 'Pop',
@@ -6795,6 +6981,7 @@ export default {
               context: 'data-structures',
               difficulty: 'advanced',
               code: 'int v = stack[top--];',
+              task: `Estrai dalla pila l'elemento corrente leggendo stack[top--] e salvalo in v, decrementando top dopo la lettura.`,
             },
             {
               english: 'Peek',
@@ -6806,6 +6993,7 @@ export default {
               context: 'data-structures',
               difficulty: 'advanced',
               code: 'int v = stack[top];',
+              task: `Sbircia in v il valore in cima alla pila leggendo stack[top] senza modificare l'indice top, lasciando la pila intatta.`,
             },
             {
               english: 'Queue',
@@ -6848,6 +7036,7 @@ export default {
               difficulty: 'advanced',
               code: 'idx = (idx + 1) % capacity;',
               note: 'Detto anche ring buffer, usato in I/O e audio.',
+              task: `Avanza l'indice idx in un buffer circolare con idx = (idx + 1) % capacity per riavvolgerlo allo zero quando finisce.`,
             },
             {
               english: 'Priority Queue',
@@ -6887,6 +7076,7 @@ export default {
               context: 'data-structures',
               difficulty: 'advanced',
               code: 'struct Tree { int v; struct Tree *left, *right; };',
+              task: 'Definisci struct Tree con un valore v e due puntatori left e right per modellare un albero binario.',
             },
             {
               english: 'Binary Tree',
@@ -7004,6 +7194,7 @@ export default {
               context: 'data-structures',
               difficulty: 'advanced',
               code: 'unsigned hash(const char *s);',
+              task: 'Dichiara il prototipo di hash che riceve una stringa C const char *s e ritorna un unsigned int distribuito.',
             },
             {
               english: 'Collision',
@@ -7204,6 +7395,7 @@ export default {
               difficulty: 'advanced',
               code: 'int cmp(const void *a, const void *b);',
               note: 'Per qsort il comparator deve restituire un int negativo, zero o positivo in stile strcmp.',
+              task: 'Dichiara il prototipo di cmp che riceve due const void* e ritorna un int negativo, zero o positivo per qsort.',
             },
           ],
         },
@@ -7222,6 +7414,7 @@ export default {
               difficulty: 'advanced',
               code: 'for (int i = 0; i < n; i++) if (a[i] == k) return i;',
               note: `Rinominato per distinguerlo dall'item 'Linear Search' del modulo array.`,
+              task: `Cerca la chiave k in un array di n elementi con un for lineare e ritorna l'indice i alla prima corrispondenza.`,
             },
             {
               english: 'Binary Search',
@@ -7245,6 +7438,7 @@ export default {
               difficulty: 'advanced',
               code: 'int fact(int n) { return n <= 1 ? 1 : n * fact(n-1); }',
               note: `Rinominato per distinguerlo dall'item generico 'Recursion' del modulo funzioni.`,
+              task: `Implementa fact(int n) ricorsivamente: ritorna 1 quando n e' al massimo 1, altrimenti n moltiplicato per fact(n-1).`,
             },
             {
               english: 'Recursion Base Case',
@@ -7364,6 +7558,7 @@ export default {
               context: 'algorithms',
               difficulty: 'advanced',
               code: '/* O(1) */',
+              task: `Annota un blocco di codice come tempo costante O(1) per documentare che il lavoro non dipende dalla dimensione dell'input.`,
             },
             {
               english: 'Linear Time',
@@ -7374,6 +7569,7 @@ export default {
               context: 'algorithms',
               difficulty: 'advanced',
               code: '/* O(n) */',
+              task: `Annota una funzione come complessita' O(n) per indicare che il costo scala linearmente con la dimensione dell'input.`,
             },
             {
               english: 'Logarithmic Time',
@@ -7384,6 +7580,7 @@ export default {
               context: 'algorithms',
               difficulty: 'advanced',
               code: '/* O(log n) */',
+              task: `Marca un algoritmo come O(log n) per dichiararne complessita' logaritmica, tipica della ricerca binaria su dati ordinati.`,
             },
             {
               english: 'Quadratic Time',
@@ -7395,6 +7592,7 @@ export default {
               context: 'algorithms',
               difficulty: 'advanced',
               code: '/* O(n^2) */',
+              task: 'Etichetta un blocco come O(n^2) per evidenziare che ha costo quadratico, tipico dei cicli for annidati su un array.',
             },
             {
               english: 'Exponential Time',
@@ -7406,6 +7604,7 @@ export default {
               context: 'algorithms',
               difficulty: 'advanced',
               code: '/* O(2^n) */',
+              task: `Annota la complessita' O(2^n) per segnalare crescita esponenziale, come nel Fibonacci ricorsivo ingenuo.`,
             },
             {
               english: 'Worst Case',
@@ -7566,6 +7765,7 @@ export default {
               difficulty: 'advanced',
               command: 'gcc main.c -o main',
               tool: 'gcc',
+              task: 'Compila il sorgente main.c con gcc producendo un eseguibile chiamato main.',
             },
             {
               english: 'Clang',
@@ -7579,6 +7779,7 @@ export default {
               command: 'clang main.c -o main',
               tool: 'clang',
               note: 'Front-end del progetto LLVM.',
+              task: 'Usa clang per compilare main.c sfruttando i suoi messaggi diagnostici dettagliati basati su LLVM.',
             },
             {
               english: '-Wall',
@@ -7590,6 +7791,7 @@ export default {
               difficulty: 'advanced',
               command: 'gcc -Wall main.c',
               note: 'Termine italiano: -Wall (flag GCC/Clang; resta in inglese nel codice e nei makefile).',
+              task: `Abilita il set di warning -Wall sul progetto C per intercettare bug latenti gia' a tempo di compilazione.`,
             },
             {
               english: '-Werror',
@@ -7601,6 +7803,7 @@ export default {
               context: 'build',
               difficulty: 'advanced',
               command: 'gcc -Wall -Werror main.c',
+              task: 'Combina -Wall e -Werror in modo che il build fallisca subito quando il compilatore emette un warning.',
             },
             {
               english: '-O2',
@@ -7612,6 +7815,7 @@ export default {
               context: 'build',
               difficulty: 'advanced',
               command: 'gcc -O2 main.c',
+              task: 'Attiva le ottimizzazioni di livello 2 con -O2 per la build di release di main.c.',
             },
             {
               english: '-O0',
@@ -7623,6 +7827,7 @@ export default {
               difficulty: 'advanced',
               command: 'gcc -O0 -g main.c',
               note: 'Termine italiano: -O0 (flag di ottimizzazione GCC/Clang; resta invariato).',
+              task: 'Disabilita le ottimizzazioni con -O0 e includi i simboli -g per una sessione gdb fedele al sorgente.',
             },
             {
               english: '-g',
@@ -7635,6 +7840,7 @@ export default {
               difficulty: 'advanced',
               command: 'gcc -g main.c',
               note: 'Indispensabile per usare gdb in modo efficace.',
+              task: 'Aggiungi il flag -g al comando gcc per incorporare i simboli di debug richiesti da gdb.',
             },
             {
               english: '-std=c11',
@@ -7646,6 +7852,7 @@ export default {
               context: 'build',
               difficulty: 'advanced',
               command: 'gcc -std=c11 main.c',
+              task: 'Forza il compilatore al dialetto C11 passando -std=c11 al comando gcc per main.c.',
             },
             {
               english: 'Cross Compiler',
@@ -7657,6 +7864,7 @@ export default {
               context: 'build',
               difficulty: 'advanced',
               command: 'arm-linux-gnueabihf-gcc',
+              task: 'Invoca il cross compiler arm-linux-gnueabihf-gcc per produrre binari ARM da una macchina host x86.',
             },
             {
               english: 'Compilation Unit',
@@ -7685,6 +7893,7 @@ export default {
               difficulty: 'advanced',
               command: 'make',
               tool: 'GNU make',
+              task: 'Lancia make nella radice del progetto e lascia che il Makefile ricompili solo i sorgenti modificati.',
             },
             {
               english: 'Makefile',
@@ -7706,6 +7915,7 @@ export default {
               context: 'build',
               difficulty: 'advanced',
               code: 'all: main.o',
+              task: 'Dichiara nel Makefile il target predefinito all che dipende dal file oggetto main.o.',
             },
             {
               english: 'Rule',
@@ -7717,6 +7927,7 @@ export default {
               context: 'build',
               difficulty: 'advanced',
               code: 'main.o: main.c\n\tgcc -c main.c',
+              task: 'Scrivi una regola del Makefile che produca main.o da main.c invocando gcc -c.',
             },
             {
               english: 'Recipe',
@@ -7750,6 +7961,7 @@ export default {
               context: 'build',
               difficulty: 'advanced',
               code: '.PHONY: clean test',
+              task: 'Dichiara .PHONY: clean test nel Makefile per evitare collisioni con file omonimi sul disco.',
             },
             {
               english: 'Clean Target',
@@ -7760,6 +7972,7 @@ export default {
               context: 'build',
               difficulty: 'advanced',
               command: 'make clean',
+              task: 'Esegui make clean per ripulire gli artefatti di build e ripartire da uno stato riproducibile.',
             },
             {
               english: 'Make Variable',
@@ -7771,6 +7984,7 @@ export default {
               difficulty: 'advanced',
               code: 'CC=gcc\nCFLAGS=-Wall -O2',
               note: `Rinominato per distinguerlo dall'item 'Variable' nelle fondamenta C.`,
+              task: 'Centralizza le opzioni del compilatore definendo CC=gcc e CFLAGS=-Wall -O2 in cima al Makefile.',
             },
             {
               english: 'Pattern Rule',
@@ -7782,6 +7996,7 @@ export default {
               context: 'build',
               difficulty: 'advanced',
               code: '%.o: %.c\n\t$(CC) -c $< -o $@',
+              task: 'Scrivi una regola pattern %.o: %.c che invochi $(CC) -c $< -o $@ su qualunque sorgente.',
             },
           ],
         },
@@ -7811,6 +8026,7 @@ export default {
               difficulty: 'advanced',
               command: 'gcc -c main.c',
               note: `Rinominato per distinguerlo dall'item generico 'Object File' del modulo fondamenta.`,
+              task: `Genera il file oggetto rilocabile main.o invocando gcc -c senza ancora linkare l'eseguibile finale.`,
             },
             {
               english: 'Library Linking',
@@ -7832,6 +8048,7 @@ export default {
               context: 'build',
               difficulty: 'advanced',
               command: 'ar rcs libfoo.a foo.o',
+              task: `Crea la libreria statica libfoo.a impacchettando foo.o con l'archiver ar rcs.`,
             },
             {
               english: 'Shared Library',
@@ -7844,6 +8061,7 @@ export default {
               difficulty: 'advanced',
               command: 'gcc -shared -o libfoo.so foo.o',
               note: 'Su macOS è .dylib, su Windows .dll.',
+              task: 'Produci la libreria condivisa libfoo.so da foo.o usando gcc con il flag -shared.',
             },
             {
               english: 'Dynamic Linking',
@@ -7865,6 +8083,7 @@ export default {
               difficulty: 'advanced',
               command: 'nm main.o',
               note: 'Usa nm o objdump -t per ispezionare la tabella dei simboli.',
+              task: 'Ispeziona la tabella dei simboli di main.o con nm per verificare quali funzioni sono esportate.',
             },
             {
               english: 'Undefined Reference',
@@ -7887,6 +8106,7 @@ export default {
               difficulty: 'advanced',
               command: 'gcc main.c -lm',
               note: 'Il flag -l si combina con -L che specifica le directory in cui cercare; nomi separati per evitare la collisione tra -l e -L nella stessa lezione.',
+              task: 'Linka la libreria matematica al binario passando -lm dopo main.c sulla linea di comando di gcc.',
             },
             {
               english: '-L flag',
@@ -7898,6 +8118,7 @@ export default {
               context: 'build',
               difficulty: 'advanced',
               command: 'gcc -L/usr/local/lib main.c -lfoo',
+              task: 'Indica al linker il percorso /usr/local/lib con -L per risolvere -lfoo durante il link di main.c.',
             },
           ],
         },
@@ -7917,6 +8138,7 @@ export default {
               difficulty: 'advanced',
               command: 'cmake -B build && cmake --build build',
               tool: 'cmake',
+              task: 'Configura il progetto con cmake -B build e poi compilalo lanciando cmake --build build.',
             },
             {
               english: 'CMakeLists.txt',
@@ -7928,6 +8150,7 @@ export default {
               context: 'build',
               difficulty: 'advanced',
               code: 'cmake_minimum_required(VERSION 3.10)\nproject(myapp)',
+              task: 'Scrivi un CMakeLists.txt che imponga cmake_minimum_required(VERSION 3.10) e dichiari il progetto myapp.',
             },
             {
               english: 'Ninja',
@@ -7940,6 +8163,7 @@ export default {
               difficulty: 'advanced',
               command: 'ninja',
               tool: 'ninja',
+              task: 'Lancia il build con ninja dopo aver generato i file di build da CMake con il generatore Ninja.',
             },
             {
               english: 'autoconf',
@@ -7962,6 +8186,7 @@ export default {
               context: 'build',
               difficulty: 'advanced',
               command: './configure --prefix=/usr/local',
+              task: `Esegui ./configure --prefix=/usr/local per adattare la build all'ambiente host prima di make.`,
             },
             {
               english: 'Build Directory',
@@ -7973,6 +8198,7 @@ export default {
               context: 'build',
               difficulty: 'advanced',
               command: 'mkdir build && cd build',
+              task: 'Crea una directory build dedicata e spostati al suo interno per tenere sorgenti e artefatti separati.',
             },
             {
               english: 'Install',
@@ -7984,6 +8210,7 @@ export default {
               context: 'build',
               difficulty: 'advanced',
               command: 'sudo make install',
+              task: 'Installa i binari compilati nelle directory di sistema lanciando sudo make install.',
             },
             {
               english: 'pkg-config',
@@ -7996,6 +8223,7 @@ export default {
               difficulty: 'advanced',
               command: 'pkg-config --cflags --libs gtk+-3.0',
               tool: 'pkg-config',
+              task: 'Interroga pkg-config per ottenere CFLAGS e LIBS della libreria gtk+-3.0 da passare a gcc.',
             },
             {
               english: 'Continuous Integration',
@@ -8045,6 +8273,7 @@ export default {
               difficulty: 'advanced',
               command: 'gdb ./main',
               tool: 'gdb',
+              task: `Avvia una sessione interattiva del debugger gdb sull'eseguibile ./main per ispezionarne l'esecuzione.`,
             },
             {
               english: 'lldb',
@@ -8057,6 +8286,7 @@ export default {
               difficulty: 'advanced',
               command: 'lldb ./main',
               tool: 'lldb',
+              task: 'Apri il debugger lldb su ./main quando lavori su una toolchain basata su LLVM.',
             },
             {
               english: 'Breakpoint',
@@ -8068,6 +8298,7 @@ export default {
               context: 'debugging',
               difficulty: 'advanced',
               command: '(gdb) break main.c:42',
+              task: 'Imposta un breakpoint alla riga 42 di main.c dentro gdb con il comando break main.c:42.',
             },
             {
               english: 'Step',
@@ -8079,6 +8310,7 @@ export default {
               context: 'debugging',
               difficulty: 'advanced',
               command: '(gdb) step',
+              task: 'Esegui il comando step in gdb per entrare nella prossima chiamata di funzione e tracciarla.',
             },
             {
               english: 'Next',
@@ -8090,6 +8322,7 @@ export default {
               context: 'debugging',
               difficulty: 'advanced',
               command: '(gdb) next',
+              task: 'Avanza alla riga successiva con next in gdb senza scendere dentro le chiamate di funzione.',
             },
             {
               english: 'Continue',
@@ -8101,6 +8334,7 @@ export default {
               context: 'debugging',
               difficulty: 'advanced',
               command: '(gdb) continue',
+              task: `Riprendi l'esecuzione dopo un breakpoint impartendo continue al prompt di gdb.`,
             },
             {
               english: 'Watchpoint',
@@ -8112,6 +8346,7 @@ export default {
               context: 'debugging',
               difficulty: 'advanced',
               command: '(gdb) watch x',
+              task: 'Installa un watchpoint su x con watch x per fermare il programma a ogni modifica della variabile.',
             },
             {
               english: 'Backtrace',
@@ -8123,6 +8358,7 @@ export default {
               context: 'debugging',
               difficulty: 'advanced',
               command: '(gdb) bt',
+              task: 'Stampa la traccia dello stack con il comando bt in gdb dopo un crash per risalire al chiamante.',
             },
             {
               english: 'Print Value Command',
@@ -8135,6 +8371,7 @@ export default {
               difficulty: 'advanced',
               command: '(gdb) print x',
               note: 'Nel debugger lo si scrive solitamente print o p; nome esteso scelto per evitare confusione con altri item Print.',
+              task: 'Visualizza il valore corrente della variabile x lanciando print x dal prompt di gdb.',
             },
             {
               english: 'Frame',
@@ -8146,6 +8383,7 @@ export default {
               context: 'debugging',
               difficulty: 'advanced',
               command: '(gdb) frame 2',
+              task: 'Spostati al frame 2 dello stack con frame 2 in gdb per ispezionare le variabili del chiamante.',
             },
           ],
         },
@@ -8175,6 +8413,7 @@ export default {
               context: 'debugging',
               difficulty: 'advanced',
               command: 'ulimit -c unlimited',
+              task: 'Abilita la generazione di core dump nella shell con ulimit -c unlimited prima di riprodurre il crash.',
             },
             {
               english: 'Null Dereference',
@@ -8186,6 +8425,7 @@ export default {
               context: 'debugging',
               difficulty: 'advanced',
               code: 'int *p = NULL;\n*p = 5; /* CRASH */',
+              task: 'Riproduci una dereferenza nulla assegnando NULL a un puntatore e scrivendoci dentro per osservare il SIGSEGV.',
             },
             {
               english: 'Buffer Overflow (debugging)',
@@ -8278,6 +8518,7 @@ export default {
               command: 'valgrind --leak-check=full ./main',
               tool: 'valgrind',
               note: `Rinominato per distinguerlo dall'item 'Valgrind' del modulo memoria.`,
+              task: 'Esegui valgrind --leak-check=full su ./main per scovare memory leak e accessi invalidi.',
             },
             {
               english: 'AddressSanitizer',
@@ -8290,6 +8531,7 @@ export default {
               difficulty: 'advanced',
               command: 'gcc -fsanitize=address main.c',
               note: 'Sigla ASan. Più veloce di Valgrind.',
+              task: 'Ricompila main.c con -fsanitize=address per intercettare buffer overflow e use-after-free a runtime.',
             },
             {
               english: 'UndefinedBehaviorSanitizer',
@@ -8302,6 +8544,7 @@ export default {
               difficulty: 'advanced',
               command: 'gcc -fsanitize=undefined main.c',
               note: 'Termine italiano: UndefinedBehaviorSanitizer o UBSan (nome dello strumento, non si traduce).',
+              task: 'Compila main.c con -fsanitize=undefined per smascherare overflow di interi e undefined behavior.',
             },
             {
               english: 'ThreadSanitizer',
@@ -8314,6 +8557,7 @@ export default {
               difficulty: 'advanced',
               command: 'gcc -fsanitize=thread main.c',
               note: 'Sigla TSan.',
+              task: 'Costruisci il binario con -fsanitize=thread quando vuoi cacciare data race tra thread concorrenti.',
             },
             {
               english: 'MemorySanitizer',
@@ -8326,6 +8570,7 @@ export default {
               difficulty: 'advanced',
               command: 'clang -fsanitize=memory main.c',
               note: 'Sigla MSan: solo Clang.',
+              task: 'Usa clang -fsanitize=memory su main.c per individuare letture di memoria non inizializzata.',
             },
             {
               english: 'Memcheck',
@@ -8337,6 +8582,7 @@ export default {
               context: 'debugging',
               difficulty: 'advanced',
               command: 'valgrind --tool=memcheck',
+              task: `Lancia esplicitamente il tool memcheck di valgrind con --tool=memcheck per concentrare l'analisi sulla memoria.`,
             },
             {
               english: 'Definitely Lost',
@@ -8367,6 +8613,7 @@ export default {
               context: 'debugging',
               difficulty: 'advanced',
               command: 'valgrind --suppressions=my.supp ./main',
+              task: 'Passa a valgrind un file di soppressioni my.supp con --suppressions per silenziare i falsi positivi noti.',
             },
             {
               english: 'rr',
@@ -8380,6 +8627,7 @@ export default {
               command: 'rr record ./main && rr replay',
               tool: 'rr',
               note: 'Permette di tornare indietro nel tempo durante il debug.',
+              task: `Registra l'esecuzione di ./main con rr record e poi rigiocala deterministicamente lanciando rr replay.`,
             },
           ],
         },
@@ -8398,6 +8646,7 @@ export default {
               difficulty: 'advanced',
               code: 'printf("DEBUG: x=%d\\n", x);',
               note: 'La tecnica più antica e ancora utile.',
+              task: 'Inserisci una printf di debug che stampi il valore di x sulla console per tracciarne il flusso.',
             },
             {
               english: 'Logging',
@@ -8439,6 +8688,7 @@ export default {
               context: 'debugging',
               difficulty: 'advanced',
               command: 'git bisect start',
+              task: 'Avvia una ricerca dicotomica con git bisect start per individuare il commit che ha introdotto il bug.',
             },
             {
               english: 'Heisenbug',
@@ -8493,6 +8743,7 @@ export default {
               difficulty: 'advanced',
               command: 'strace -e openat ./main',
               tool: 'strace',
+              task: 'Traccia solo le syscall openat di ./main con strace -e openat per capire quali file viene a leggere.',
             },
           ],
         },
@@ -8531,6 +8782,7 @@ export default {
               context: 'systems',
               difficulty: 'advanced',
               code: 'int fd = open("file", O_RDONLY);',
+              task: 'Apri il file in sola lettura con la syscall open passando il flag O_RDONLY e conserva il file descriptor.',
             },
             {
               english: 'read',
@@ -8542,6 +8794,7 @@ export default {
               context: 'systems',
               difficulty: 'advanced',
               code: 'ssize_t n = read(fd, buf, len);',
+              task: 'Leggi fino a len byte dal file descriptor fd dentro buf utilizzando la syscall read e controlla il valore di ritorno.',
             },
             {
               english: 'write',
@@ -8553,6 +8806,7 @@ export default {
               context: 'systems',
               difficulty: 'advanced',
               code: 'write(fd, buf, len);',
+              task: 'Invia len byte dal buffer buf al file descriptor fd con la syscall write.',
             },
             {
               english: 'close',
@@ -8564,6 +8818,7 @@ export default {
               context: 'systems',
               difficulty: 'advanced',
               code: 'close(fd);',
+              task: 'Rilascia il file descriptor fd al kernel chiamando la syscall close non appena le operazioni I/O finiscono.',
             },
             {
               english: 'POSIX File Descriptor',
@@ -8585,6 +8840,7 @@ export default {
               context: 'systems',
               difficulty: 'advanced',
               code: 'lseek(fd, 0, SEEK_END);',
+              task: `Posiziona l'offset del file alla fine con lseek(fd, 0, SEEK_END) prima di calcolarne la dimensione.`,
             },
             {
               english: 'mmap',
@@ -8596,6 +8852,7 @@ export default {
               context: 'systems',
               difficulty: 'advanced',
               code: 'void *p = mmap(NULL, len, PROT_READ, MAP_SHARED, fd, 0);',
+              task: 'Mappa il file in memoria in sola lettura con mmap usando PROT_READ e MAP_SHARED per evitare copie.',
             },
             {
               english: 'fcntl',
@@ -8607,6 +8864,7 @@ export default {
               context: 'systems',
               difficulty: 'advanced',
               code: 'fcntl(fd, F_SETFL, O_NONBLOCK);',
+              task: `Imposta il file descriptor fd in modalita' non bloccante chiamando fcntl con F_SETFL e O_NONBLOCK.`,
             },
             {
               english: 'ioctl',
@@ -8646,6 +8904,7 @@ export default {
               difficulty: 'advanced',
               code: 'pid_t pid = fork();',
               note: 'Restituisce 0 nel figlio, il PID nel padre, -1 in errore.',
+              task: 'Crea un processo figlio invocando la syscall fork e gestisci separatamente i due rami secondo il PID restituito.',
             },
             {
               english: 'exec',
@@ -8657,6 +8916,7 @@ export default {
               context: 'systems',
               difficulty: 'advanced',
               code: 'execl("/bin/ls", "ls", NULL);',
+              task: `Sostituisci l'immagine del processo corrente lanciando execl("/bin/ls", "ls", NULL) dopo il fork.`,
             },
             {
               english: 'wait',
@@ -8668,6 +8928,7 @@ export default {
               context: 'systems',
               difficulty: 'advanced',
               code: 'int status; wait(&status);',
+              task: `Blocca il genitore chiamando wait(&status) finche' un figlio non termina e raccoglie lo stato di uscita.`,
             },
             {
               english: 'waitpid',
@@ -8679,6 +8940,7 @@ export default {
               context: 'systems',
               difficulty: 'advanced',
               code: 'waitpid(pid, &status, 0);',
+              task: 'Attendi uno specifico processo figlio passando il suo pid a waitpid(pid, &status, 0).',
             },
             {
               english: 'PID',
@@ -8690,6 +8952,7 @@ export default {
               difficulty: 'advanced',
               code: 'pid_t pid = getpid();',
               note: 'Termine italiano: PID (Process ID, acronimo invariato in italiano).',
+              task: 'Recupera il PID del processo corrente con la syscall getpid e salvalo in un pid_t per logging.',
             },
             {
               english: 'Zombie Process',
@@ -8734,6 +8997,7 @@ export default {
               context: 'systems',
               difficulty: 'advanced',
               code: 'const char *path = getenv("PATH");',
+              task: `Leggi la variabile d'ambiente PATH con getenv("PATH") e usala per costruire il search path del processo.`,
             },
           ],
         },
@@ -8764,6 +9028,7 @@ export default {
               difficulty: 'advanced',
               code: 'int fds[2]; pipe(fds);',
               note: `Rinominato per distinguerlo dall'item 'Pipe' del modulo I/O.`,
+              task: 'Crea una pipe anonima con pipe(fds) per collegare lo stdout del genitore allo stdin di un figlio dopo fork.',
             },
             {
               english: 'Named Pipe',
@@ -8775,6 +9040,7 @@ export default {
               context: 'systems',
               difficulty: 'advanced',
               command: 'mkfifo /tmp/myfifo',
+              task: 'Materializza una FIFO sul filesystem con mkfifo /tmp/myfifo per far dialogare due processi non imparentati.',
             },
             {
               english: 'Shared Memory',
@@ -8786,6 +9052,7 @@ export default {
               context: 'systems',
               difficulty: 'advanced',
               code: 'int shmid = shmget(key, size, IPC_CREAT|0600);',
+              task: 'Alloca un segmento di shared memory con shmget passando IPC_CREAT|0600 per condividerlo tra processi.',
             },
             {
               english: 'Message Queue',
@@ -8807,6 +9074,7 @@ export default {
               context: 'systems',
               difficulty: 'advanced',
               code: 'sem_wait(&sem); /* sezione critica */ sem_post(&sem);',
+              task: 'Proteggi una sezione critica tra processi avvolgendola tra sem_wait(&sem) e sem_post(&sem).',
             },
             {
               english: 'Unix Socket',
@@ -8818,6 +9086,7 @@ export default {
               context: 'systems',
               difficulty: 'advanced',
               code: 'int s = socket(AF_UNIX, SOCK_STREAM, 0);',
+              task: 'Apri un socket Unix locale chiamando socket(AF_UNIX, SOCK_STREAM, 0) per IPC su filesystem.',
             },
             {
               english: 'dup2',
@@ -8830,6 +9099,7 @@ export default {
               difficulty: 'advanced',
               code: 'dup2(fd, STDOUT_FILENO);',
               note: 'Base per implementare la redirezione della shell.',
+              task: `Reindirizza l'output del processo verso fd duplicandolo su STDOUT_FILENO con dup2.`,
             },
             {
               english: 'POSIX Shared Memory',
@@ -8841,6 +9111,7 @@ export default {
               context: 'systems',
               difficulty: 'advanced',
               code: 'int fd = shm_open("/myshm", O_CREAT|O_RDWR, 0600);',
+              task: `Apri un oggetto di shared memory POSIX chiamato /myshm con shm_open in modalita' O_CREAT|O_RDWR e permessi 0600.`,
             },
             {
               english: 'Memory Map',
@@ -8852,6 +9123,7 @@ export default {
               context: 'systems',
               difficulty: 'advanced',
               command: 'cat /proc/$$/maps',
+              task: 'Ispeziona la mappa di memoria del processo corrente leggendo /proc/$$/maps con cat.',
             },
           ],
         },
@@ -8934,6 +9206,7 @@ export default {
               difficulty: 'advanced',
               code: 'struct sigaction sa = {0};\nsa.sa_handler = handler;\nsigaction(SIGINT, &sa, NULL);',
               note: 'Preferiscilo a signal(): comportamento più portabile.',
+              task: 'Installa un handler affidabile per SIGINT popolando una struct sigaction e chiamando sigaction(SIGINT, &sa, NULL).',
             },
             {
               english: 'kill',
@@ -8945,6 +9218,7 @@ export default {
               context: 'systems',
               difficulty: 'advanced',
               code: 'kill(pid, SIGTERM);',
+              task: 'Invia SIGTERM al processo identificato da pid chiamando kill(pid, SIGTERM) per una terminazione ordinata.',
             },
             {
               english: 'Signal Mask',
@@ -8956,6 +9230,7 @@ export default {
               context: 'systems',
               difficulty: 'advanced',
               code: 'sigprocmask(SIG_BLOCK, &set, NULL);',
+              task: 'Blocca temporaneamente i segnali del set con sigprocmask(SIG_BLOCK, &set, NULL) attorno alla sezione critica.',
             },
             {
               english: 'Async-Signal-Safe',
@@ -9006,6 +9281,7 @@ export default {
               difficulty: 'advanced',
               code: '#include <pthread.h>',
               note: 'Compilare con -lpthread o -pthread.',
+              task: `Includi l'header pthread.h per accedere alle API del thread POSIX dal tuo programma C.`,
             },
             {
               english: 'pthread_create',
@@ -9017,6 +9293,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'pthread_create(&t, NULL, worker, arg);',
+              task: 'Avvia un nuovo thread POSIX con pthread_create passando worker come funzione e arg come argomento.',
             },
             {
               english: 'pthread_join',
@@ -9028,6 +9305,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'pthread_join(t, &result);',
+              task: 'Sincronizzati con la fine del thread t chiamando pthread_join(t, &result) e raccogli il risultato.',
             },
             {
               english: 'pthread_detach',
@@ -9039,6 +9317,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'pthread_detach(t);',
+              task: 'Stacca il thread t con pthread_detach in modo che liberi automaticamente le risorse quando termina.',
             },
             {
               english: 'Thread Local',
@@ -9051,6 +9330,7 @@ export default {
               difficulty: 'advanced',
               code: '_Thread_local int tls_var;',
               note: '_Thread_local introdotto in C11.',
+              task: 'Dichiara la variabile tls_var con _Thread_local per dare a ogni thread la propria copia indipendente.',
             },
             {
               english: 'Thread Pool',
@@ -9111,6 +9391,7 @@ export default {
               difficulty: 'advanced',
               code: 'pthread_mutex_t m = PTHREAD_MUTEX_INITIALIZER;',
               note: 'Acronimo di MUTual EXclusion.',
+              task: 'Inizializza staticamente il mutex m con PTHREAD_MUTEX_INITIALIZER per proteggere lo stato condiviso.',
             },
             {
               english: 'Lock',
@@ -9122,6 +9403,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'pthread_mutex_lock(&m);',
+              task: 'Acquisisci il mutex m con pthread_mutex_lock prima di accedere alla risorsa condivisa.',
             },
             {
               english: 'Unlock',
@@ -9133,6 +9415,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'pthread_mutex_unlock(&m);',
+              task: 'Rilascia il mutex m con pthread_mutex_unlock al termine della sezione critica del thread.',
             },
             {
               english: 'Critical Section',
@@ -9154,6 +9437,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'pthread_rwlock_t rw;',
+              task: 'Dichiara un lock lettori-scrittori pthread_rwlock_t rw per permettere letture concorrenti e scritture esclusive.',
             },
             {
               english: 'Spinlock',
@@ -9185,6 +9469,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'if (pthread_mutex_trylock(&m) == 0) ...',
+              task: 'Prova ad acquisire il mutex m con pthread_mutex_trylock e fai altro lavoro se ritorna diverso da zero.',
             },
             {
               english: 'Lock Contention',
@@ -9222,6 +9507,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'pthread_cond_t cv;',
+              task: `Dichiara la variabile di condizione pthread_cond_t cv per coordinare l'attesa di un evento tra thread.`,
             },
             {
               english: 'pthread_cond_wait',
@@ -9233,6 +9519,7 @@ export default {
               difficulty: 'advanced',
               code: 'pthread_cond_wait(&cv, &m);',
               note: 'Termine italiano: pthread_cond_wait (funzione POSIX, nome resta invariato).',
+              task: `Sospendi il thread sulla condition variable cv chiamando pthread_cond_wait(&cv, &m) con il mutex gia' acquisito.`,
             },
             {
               english: 'pthread_cond_signal',
@@ -9245,6 +9532,7 @@ export default {
               difficulty: 'advanced',
               code: 'pthread_cond_signal(&cv);',
               note: 'Termine italiano: pthread_cond_signal (funzione POSIX, nome resta invariato).',
+              task: 'Sveglia esattamente un thread in attesa sulla cv invocando pthread_cond_signal(&cv).',
             },
             {
               english: 'Broadcast',
@@ -9256,6 +9544,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'pthread_cond_broadcast(&cv);',
+              task: 'Risveglia tutti i thread bloccati sulla cv chiamando pthread_cond_broadcast(&cv) dopo aver cambiato lo stato.',
             },
             {
               english: 'Producer-Consumer',
@@ -9277,6 +9566,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'pthread_barrier_t b;',
+              task: 'Dichiara una barriera pthread_barrier_t b per costringere i thread paralleli ad allinearsi a un punto comune.',
             },
             {
               english: 'Latch',
@@ -9309,6 +9599,7 @@ export default {
               context: 'concurrency',
               difficulty: 'advanced',
               code: '__sync_synchronize();',
+              task: 'Inserisci una barriera di memoria con __sync_synchronize per impedire il riordino di letture e scritture.',
             },
             {
               english: 'Happens-Before',
@@ -9387,6 +9678,7 @@ export default {
               difficulty: 'advanced',
               code: '_Atomic int counter = 0;',
               note: '_Atomic introdotto in C11.',
+              task: 'Dichiara il contatore condiviso counter come _Atomic int per garantirne aggiornamenti indivisibili tra thread.',
             },
             {
               english: 'Compare-and-Swap',
@@ -9398,6 +9690,7 @@ export default {
               difficulty: 'advanced',
               code: 'atomic_compare_exchange_strong(&v, &exp, new);',
               note: 'Sigla CAS.',
+              task: 'Aggiorna atomicamente v solo se vale exp invocando atomic_compare_exchange_strong(&v, &exp, new).',
             },
             {
               english: 'Lock-Free',
@@ -9429,6 +9722,7 @@ export default {
               difficulty: 'advanced',
               code: 'volatile int *reg;',
               note: 'In codice multi-thread serve _Atomic o le primitive di <stdatomic.h>, non volatile.',
+              task: 'Marca il puntatore al registro hardware come volatile int *reg per evitare che il compilatore cachi le letture.',
             },
           ],
         },
@@ -9456,6 +9750,7 @@ export default {
               context: 'network',
               difficulty: 'advanced',
               code: 'int s = socket(AF_INET, SOCK_STREAM, 0);',
+              task: 'Crea un socket TCP IPv4 invocando socket(AF_INET, SOCK_STREAM, 0) e conserva il descrittore restituito.',
             },
             {
               english: 'AF_INET',
@@ -9507,6 +9802,7 @@ export default {
               difficulty: 'advanced',
               code: 'struct sockaddr_in addr;',
               note: 'Termine italiano: sockaddr (struct POSIX; nome invariato).',
+              task: 'Dichiara una struct sockaddr_in addr da popolare con famiglia, porta e indirizzo prima di bind.',
             },
             {
               english: 'Port',
@@ -9518,6 +9814,7 @@ export default {
               context: 'network',
               difficulty: 'advanced',
               code: 'addr.sin_port = htons(8080);',
+              task: `Configura la porta 8080 nell'indirizzo del socket scrivendo addr.sin_port = htons(8080).`,
             },
             {
               english: 'IP Address',
@@ -9529,6 +9826,7 @@ export default {
               context: 'network',
               difficulty: 'advanced',
               code: 'inet_pton(AF_INET, "127.0.0.1", &addr.sin_addr);',
+              task: 'Converti la stringa 127.0.0.1 in formato binario IPv4 con inet_pton e salvala in addr.sin_addr.',
             },
             {
               english: 'htons',
@@ -9541,6 +9839,7 @@ export default {
               difficulty: 'advanced',
               code: 'addr.sin_port = htons(80);',
               note: 'Network byte order è big-endian.',
+              task: `Converti la porta 80 dall'host order al network order assegnando addr.sin_port = htons(80).`,
             },
             {
               english: 'Byte Order',
@@ -9569,6 +9868,7 @@ export default {
               context: 'network',
               difficulty: 'advanced',
               code: 'bind(s, (struct sockaddr*)&addr, sizeof(addr));',
+              task: `Associa il socket s all'indirizzo locale addr invocando bind con il cast a struct sockaddr*.`,
             },
             {
               english: 'listen',
@@ -9580,6 +9880,7 @@ export default {
               context: 'network',
               difficulty: 'advanced',
               code: 'listen(s, BACKLOG);',
+              task: 'Metti il socket s in ascolto delle connessioni in arrivo chiamando listen con coda BACKLOG.',
             },
             {
               english: 'accept',
@@ -9591,6 +9892,7 @@ export default {
               context: 'network',
               difficulty: 'advanced',
               code: 'int c = accept(s, NULL, NULL);',
+              task: 'Accetta la prossima connessione in coda sul socket s con accept(s, NULL, NULL) ottenendo un nuovo descrittore client.',
             },
             {
               english: 'Backlog',
@@ -9612,6 +9914,7 @@ export default {
               difficulty: 'advanced',
               code: 'setsockopt(s, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(yes));',
               note: 'Utile per evitare "Address already in use" durante lo sviluppo.',
+              task: 'Abilita SO_REUSEADDR sul socket con setsockopt per ribindare velocemente la porta dopo un riavvio.',
             },
             {
               english: 'Connection',
@@ -9681,6 +9984,7 @@ export default {
               context: 'network',
               difficulty: 'advanced',
               code: 'connect(s, (struct sockaddr*)&addr, sizeof(addr));',
+              task: `Avvia una connessione TCP dal lato client chiamando connect(s, ..., sizeof(addr)) verso l'indirizzo remoto.`,
             },
             {
               english: 'send',
@@ -9692,6 +9996,7 @@ export default {
               context: 'network',
               difficulty: 'advanced',
               code: 'send(s, buf, len, 0);',
+              task: 'Trasmetti len byte dal buffer buf attraverso il socket connesso s usando send(s, buf, len, 0).',
             },
             {
               english: 'recv',
@@ -9703,6 +10008,7 @@ export default {
               context: 'network',
               difficulty: 'advanced',
               code: 'ssize_t n = recv(s, buf, len, 0);',
+              task: 'Leggi fino a len byte in arrivo nel buffer buf con recv(s, buf, len, 0) e controlla il valore di ritorno.',
             },
             {
               english: 'sendto',
@@ -9734,6 +10040,7 @@ export default {
               context: 'network',
               difficulty: 'advanced',
               code: 'shutdown(s, SHUT_WR);',
+              task: 'Chiudi ordinatamente la direzione di scrittura del socket s invocando shutdown(s, SHUT_WR).',
             },
             {
               english: 'getaddrinfo',
@@ -9745,6 +10052,7 @@ export default {
               context: 'network',
               difficulty: 'advanced',
               code: 'getaddrinfo("example.com", "80", &hints, &res);',
+              task: 'Risolvi example.com sulla porta 80 con getaddrinfo per ottenere indirizzi adatti a un socket TCP.',
             },
             {
               english: 'DNS Lookup',
@@ -9775,6 +10083,7 @@ export default {
               context: 'network',
               difficulty: 'advanced',
               code: 'fcntl(s, F_SETFL, O_NONBLOCK);',
+              task: `Porta il socket s in modalita' non bloccante chiamando fcntl(s, F_SETFL, O_NONBLOCK).`,
             },
           ],
         },
@@ -9794,6 +10103,7 @@ export default {
               difficulty: 'advanced',
               code: 'select(nfds, &readset, NULL, NULL, &tv);',
               note: 'Limitato a FD_SETSIZE descrittori (di solito 1024).',
+              task: 'Multiplexa i descrittori in readset con select(nfds, &readset, NULL, NULL, &tv) usando il timeout tv.',
             },
             {
               english: 'poll',
@@ -9805,6 +10115,7 @@ export default {
               context: 'network',
               difficulty: 'advanced',
               code: 'struct pollfd pfd; poll(&pfd, 1, -1);',
+              task: 'Monitora il descrittore pfd con poll(&pfd, 1, -1) e attendi indefinitamente la prontezza in lettura.',
             },
             {
               english: 'epoll',
@@ -9817,6 +10128,7 @@ export default {
               difficulty: 'advanced',
               code: 'int ep = epoll_create1(0);',
               note: 'Specifico Linux: su BSD/macOS usa kqueue.',
+              task: `Crea un'istanza epoll su Linux con epoll_create1(0) per gestire migliaia di socket simultanei.`,
             },
             {
               english: 'kqueue',
@@ -9946,6 +10258,7 @@ export default {
               difficulty: 'advanced',
               code: 'for (int i = 0; i <= n; i++) /* BUG */',
               note: 'Tipicamente capita nei loop con <= invece di < o nel calcolo della dimensione di terminatori null.',
+              task: `Riconosci l'off-by-one in for (int i = 0; i <= n; i++) e correggilo a i < n per non sforare il buffer.`,
             },
             {
               english: 'Stack Canary',
@@ -9958,6 +10271,7 @@ export default {
               difficulty: 'advanced',
               command: 'gcc -fstack-protector-strong',
               note: 'Come i canarini in miniera: avvisano del pericolo.',
+              task: 'Inserisci uno stack canary in ogni funzione compilando con gcc -fstack-protector-strong.',
             },
             {
               english: 'ASLR',
@@ -9990,6 +10304,7 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               command: 'gcc -D_FORTIFY_SOURCE=2 -O2',
+              task: 'Attiva i controlli runtime di fortify source compilando con -D_FORTIFY_SOURCE=2 -O2.',
             },
             {
               english: 'Security Bounds Checking',
@@ -10030,6 +10345,7 @@ export default {
               difficulty: 'advanced',
               code: 'printf(user_input); /* PERICOLOSO */',
               note: `Rinominato per distinguerlo dall'item 'Format String Vulnerability' introduttivo del modulo stringhe.`,
+              task: `Sostituisci printf(user_input) con printf("%s", user_input) per neutralizzare l'attacco format string.`,
             },
             {
               english: 'Command Injection',
@@ -10051,6 +10367,7 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               code: 'size_t total = a + b; /* può overflowed */',
+              task: 'Sospetta un overflow di interi nella somma size_t total = a + b e controllane il wrap prima di allocare.',
             },
             {
               english: 'Integer Underflow',
@@ -10062,6 +10379,7 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               code: 'size_t n = 0 - 1; /* enorme! */',
+              task: `Mostra come size_t n = 0 - 1 produca un valore enorme per via dell'underflow unsigned.`,
             },
             {
               english: 'Signed Overflow',
@@ -10201,6 +10519,7 @@ export default {
               difficulty: 'advanced',
               command: 'gcc -fPIE -pie',
               note: 'Position Independent Executable.',
+              task: 'Compila il binario come PIE passando a gcc i flag -fPIE -pie per abilitare ASLR completo.',
             },
             {
               english: 'RELRO',
@@ -10212,6 +10531,7 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               command: 'gcc -Wl,-z,relro,-z,now',
+              task: 'Indurisci la GOT del binario passando al linker gcc -Wl,-z,relro,-z,now per attivare RELRO completo.',
             },
             {
               english: 'CFI',
@@ -10234,6 +10554,7 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               command: 'gcc -fstack-protector-all -D_FORTIFY_SOURCE=2',
+              task: 'Indurisci la build combinando -fstack-protector-all e -D_FORTIFY_SOURCE=2 nei flag di gcc.',
             },
           ],
         },
@@ -10273,6 +10594,7 @@ export default {
               difficulty: 'advanced',
               code: 'memcmp è NON costante: usa CRYPTO_memcmp.',
               note: `Rinominato per distinguerlo dall'item generico 'Constant Time' del modulo algoritmi.`,
+              task: 'Confronta i tag MAC con CRYPTO_memcmp invece di memcmp per evitare timing side channel sul confronto.',
             },
             {
               english: 'Side Channel',
@@ -10294,6 +10616,7 @@ export default {
               difficulty: 'advanced',
               code: 'explicit_bzero(key, sizeof(key));',
               note: 'memset può essere ottimizzato via dal compilatore.',
+              task: 'Azzera in modo sicuro la chiave segreta con explicit_bzero(key, sizeof(key)) prima di liberarne la memoria.',
             },
             {
               english: 'Privilege Drop',
@@ -10305,6 +10628,7 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               code: 'setuid(unprivileged_uid);',
+              task: `Riduci i privilegi del daemon dopo il bind chiamando setuid(unprivileged_uid) sull'UID non privilegiato.`,
             },
             {
               english: 'chroot',
@@ -10316,6 +10640,7 @@ export default {
               context: 'security',
               difficulty: 'advanced',
               code: 'chroot("/jail");',
+              task: 'Confina il processo nella sandbox /jail chiamando chroot("/jail") prima di servire richieste.',
             },
             {
               english: 'Seccomp',
@@ -10436,6 +10761,7 @@ export default {
               context: 'embedded',
               difficulty: 'advanced',
               code: 'MEMORY { FLASH (rx) : ORIGIN = 0x08000000 }',
+              task: 'Definisci la regione FLASH a 0x08000000 in un linker script con MEMORY { FLASH (rx) : ORIGIN = 0x08000000 }.',
             },
             {
               english: 'Startup Code',
@@ -10484,6 +10810,7 @@ export default {
               context: 'embedded',
               difficulty: 'advanced',
               code: '#define UART_DR (*(volatile uint32_t*)0x40011000)',
+              task: `Definisci il registro UART_DR come (*(volatile uint32_t*)0x40011000) per accedere all'MMIO della periferica.`,
             },
             {
               english: 'volatile (MMIO)',
@@ -10538,6 +10865,7 @@ export default {
               context: 'embedded',
               difficulty: 'advanced',
               code: 'reg & 0xFF',
+              task: 'Isola i 4 bit meno significativi del registro applicando la maschera di bit reg & 0xFF al valore letto.',
             },
             {
               english: 'Register Bit Shift',
@@ -10550,6 +10878,7 @@ export default {
               difficulty: 'advanced',
               code: 'reg = 1 << 5;',
               note: `Distinto dall'item 'Bit Shift' nel modulo controllo; qui il contesto e' hardware-register programming.`,
+              task: 'Sposta il valore 1 nel bit 5 del registro con uno shift a sinistra: reg = 1 << 5.',
             },
             {
               english: 'Set Bit',
@@ -10561,6 +10890,7 @@ export default {
               context: 'embedded',
               difficulty: 'advanced',
               code: 'reg |= (1 << 5);',
+              task: `Setta il bit 5 del registro senza toccare gli altri con l'idioma reg |= (1 << 5).`,
             },
             {
               english: 'Clear Bit',
@@ -10572,6 +10902,7 @@ export default {
               context: 'embedded',
               difficulty: 'advanced',
               code: 'reg &= ~(1 << 5);',
+              task: 'Azzera il bit 5 del registro lasciando inalterati gli altri con reg &= ~(1 << 5).',
             },
             {
               english: 'Toggle Bit',
@@ -10582,6 +10913,7 @@ export default {
               context: 'embedded',
               difficulty: 'advanced',
               code: 'reg ^= (1 << 5);',
+              task: `Inverti lo stato del bit 5 del registro applicando l'XOR reg ^= (1 << 5).`,
             },
           ],
         },
@@ -10611,6 +10943,7 @@ export default {
               difficulty: 'advanced',
               code: 'void __attribute__((interrupt)) USART1_IRQHandler(void);',
               note: 'Interrupt Service Routine. Tieni breve!',
+              task: `Dichiara la ISR USART1_IRQHandler con __attribute__((interrupt)) per gestire l'interrupt UART su Cortex-M.`,
             },
             {
               english: 'IRQ',
@@ -10641,6 +10974,7 @@ export default {
               context: 'embedded',
               difficulty: 'advanced',
               code: '__enable_irq();',
+              task: 'Abilita globalmente gli interrupt su Cortex-M chiamando __enable_irq() dopo il setup delle periferiche.',
             },
             {
               english: 'Disable Interrupts',
@@ -10651,6 +10985,7 @@ export default {
               context: 'embedded',
               difficulty: 'advanced',
               code: '__disable_irq();',
+              task: `Disabilita brevemente gli interrupt con __disable_irq() attorno all'aggiornamento di una variabile condivisa con la ISR.`,
             },
             {
               english: 'NVIC',
@@ -10741,6 +11076,7 @@ export default {
               difficulty: 'advanced',
               code: 'xTaskCreate(blinky, "blinky", 128, NULL, 1, NULL);',
               note: `Termine italiano: task (in contesti RTOS si lascia invariato; piu' specifico di 'processo' o 'thread').`,
+              task: `Crea un task FreeRTOS chiamato blinky con stack di 128 word e priorita' 1 invocando xTaskCreate.`,
             },
             {
               english: 'Scheduler',
@@ -10950,6 +11286,7 @@ export default {
               difficulty: 'advanced',
               command: 'cppcheck --enable=all main.c',
               tool: 'cppcheck',
+              task: `Esegui un'analisi statica completa su main.c lanciando cppcheck --enable=all per scovare bug noti.`,
             },
             {
               english: 'clang-tidy',
@@ -10962,6 +11299,7 @@ export default {
               difficulty: 'advanced',
               command: 'clang-tidy main.c',
               tool: 'clang-tidy',
+              task: 'Fai analizzare main.c da clang-tidy per applicare linee guida moderne e segnalare antipattern.',
             },
             {
               english: 'clang-format',
@@ -10974,6 +11312,7 @@ export default {
               difficulty: 'advanced',
               command: 'clang-format -i main.c',
               tool: 'clang-format',
+              task: 'Riformatta in place main.c con clang-format -i per uniformare lo stile del codice al progetto.',
             },
             {
               english: 'Coverity',
@@ -11028,6 +11367,7 @@ export default {
               difficulty: 'advanced',
               command: 'gcc --coverage main.c && gcov main',
               tool: 'gcov, lcov',
+              task: 'Misura la copertura del codice compilando con gcc --coverage e analizzando i contatori con gcov main.',
             },
             {
               english: 'Fuzzing',
@@ -11108,6 +11448,7 @@ export default {
               context: 'professional',
               difficulty: 'advanced',
               code: '#define MAX_USERS 100',
+              task: 'Elimina il numero magico 100 dal codice definendolo come costante #define MAX_USERS 100.',
             },
             {
               english: 'Naming Convention',
@@ -11140,6 +11481,7 @@ export default {
               difficulty: 'advanced',
               code: '#ifndef MY_H\n#define MY_H\n/* ... */\n#endif',
               note: `Rinominato per distinguerlo dall'item 'Header Guard' del modulo preprocessore.`,
+              task: `Proteggi l'header con il trio classico #ifndef MY_H / #define MY_H / #endif per prevenire inclusioni multiple.`,
             },
             {
               english: 'Documentation Comment',
@@ -11152,6 +11494,7 @@ export default {
               difficulty: 'advanced',
               code: '/** @brief Adds two numbers */',
               tool: 'Doxygen',
+              task: 'Anteponi alla funzione un commento Doxygen /** @brief Adds two numbers */ per documentare il suo scopo.',
             },
           ],
         },

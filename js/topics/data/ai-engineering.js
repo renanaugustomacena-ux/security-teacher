@@ -66,6 +66,7 @@ export default {
               difficulty: 'beginner',
               code: 'dataset = pd.read_csv("data.csv")',
               note: 'Termine spesso lasciato in inglese anche in italiano.',
+              task: `Carica un dataset da un file CSV in un DataFrame pandas pronto per l'analisi.`,
             },
             {
               english: 'Model',
@@ -77,6 +78,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'model = LinearRegression()',
+              task: 'Istanzia un modello di regressione lineare di scikit-learn da addestrare sui dati.',
             },
             {
               english: 'Training',
@@ -89,6 +91,7 @@ export default {
               difficulty: 'beginner',
               code: 'model.fit(X_train, y_train)',
               note: 'Falso amico: "training" in ML è "addestramento", non "allenamento".',
+              task: `Avvia l'addestramento del modello sui dati di training X_train e sulle etichette y_train.`,
             },
             {
               english: 'Inference',
@@ -100,6 +103,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'predictions = model.predict(X_new)',
+              task: `Esegui l'inferenza del modello su dati nuovi mai visti durante l'addestramento.`,
             },
             {
               english: 'Algorithm',
@@ -121,6 +125,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'y_pred = model.predict(X_test)',
+              task: 'Genera le predizioni del modello sul test set per poi confrontarle con i valori reali.',
             },
             {
               english: 'Data Science',
@@ -288,6 +293,7 @@ export default {
               difficulty: 'beginner',
               code: 'df.describe()',
               note: 'Abbreviata EDA. Usa visualizzazioni e statistica descrittiva.',
+              task: `Calcola statistiche descrittive su ogni colonna numerica del DataFrame per orientare l'analisi esplorativa.`,
             },
             {
               english: 'Model Selection',
@@ -310,6 +316,7 @@ export default {
               difficulty: 'beginner',
               code: 'X_train, X_test = train_test_split(X)',
               note: 'Tipicamente 70-80% del dataset totale.',
+              task: `Suddividi le feature in training set e test set usando l'utility di scikit-learn.`,
             },
             {
               english: 'Test Set',
@@ -503,6 +510,7 @@ export default {
               difficulty: 'beginner',
               code: 'X = df[["age", "income", "city"]]',
               note: 'In italiano si usa anche "feature" senza tradurre.',
+              task: 'Seleziona le colonne age, income e city dal DataFrame per costruire la matrice di feature X.',
             },
             {
               english: 'Label',
@@ -515,6 +523,7 @@ export default {
               difficulty: 'beginner',
               code: 'y = df["target"]',
               note: 'Detta anche target o variabile dipendente.',
+              task: `Estrai la colonna target dal DataFrame come vettore di etichette per l'addestramento supervisionato.`,
             },
             {
               english: 'Numerical Data',
@@ -630,6 +639,7 @@ export default {
               context: 'data-engineering',
               difficulty: 'beginner',
               code: 'df.isnull().sum()',
+              task: 'Conta quanti valori mancanti sono presenti in ogni colonna del DataFrame.',
             },
             {
               english: 'Imputation',
@@ -641,6 +651,7 @@ export default {
               context: 'data-engineering',
               difficulty: 'beginner',
               code: 'df.fillna(df.mean())',
+              task: 'Sostituisci i valori mancanti del DataFrame con la media di ogni colonna numerica.',
             },
             {
               english: 'Outlier',
@@ -663,6 +674,7 @@ export default {
               context: 'data-engineering',
               difficulty: 'beginner',
               code: 'df.drop_duplicates()',
+              task: `Rimuovi le righe duplicate dal DataFrame per evitare bias durante l'addestramento.`,
             },
             {
               english: 'Noise',
@@ -734,6 +746,7 @@ export default {
               context: 'data-engineering',
               difficulty: 'beginner',
               code: 'from sklearn.preprocessing import MinMaxScaler',
+              task: `Importa lo scaler MinMaxScaler di scikit-learn per riportare le feature nell'intervallo [0, 1].`,
             },
             {
               english: 'Standardization',
@@ -746,6 +759,7 @@ export default {
               difficulty: 'beginner',
               code: 'StandardScaler().fit_transform(X)',
               note: 'Detta anche Z-score normalization.',
+              task: 'Standardizza le feature X portandole a media zero e deviazione standard unitaria.',
             },
             {
               english: 'Min-Max Scaling',
@@ -757,6 +771,7 @@ export default {
               context: 'data-engineering',
               difficulty: 'beginner',
               code: '(x - x.min()) / (x.max() - x.min())',
+              task: `Riscala manualmente una feature nell'intervallo [0, 1] usando minimo e massimo del campione.`,
             },
             {
               english: 'Z-Score',
@@ -768,6 +783,7 @@ export default {
               context: 'data-engineering',
               difficulty: 'beginner',
               code: '(x - mean) / std',
+              task: 'Trasforma una variabile nel suo z-score sottraendo la media e dividendo per la deviazione standard.',
             },
             {
               english: 'Robust Scaling',
@@ -779,6 +795,7 @@ export default {
               context: 'data-engineering',
               difficulty: 'beginner',
               code: 'RobustScaler().fit_transform(X)',
+              task: 'Applica il RobustScaler per scalare le feature usando mediana e IQR, resistendo agli outlier.',
             },
             {
               english: 'Log Transformation',
@@ -791,6 +808,7 @@ export default {
               difficulty: 'beginner',
               code: 'np.log1p(X)',
               note: 'Utile per dati con distribuzioni esponenziali tipo prezzi o redditi.',
+              task: 'Applica la trasformazione log(1 + x) per comprimere code lunghe in una distribuzione skewed.',
             },
             {
               english: 'Power Transformation',
@@ -802,6 +820,7 @@ export default {
               context: 'data-engineering',
               difficulty: 'beginner',
               code: 'PowerTransformer().fit_transform(X)',
+              task: `Applica una trasformazione di potenza per rendere le feature piu' gaussiane prima dell'addestramento.`,
             },
             {
               english: 'Box-Cox Transformation',
@@ -823,6 +842,7 @@ export default {
               context: 'data-engineering',
               difficulty: 'beginner',
               code: 'np.mean(X)',
+              task: 'Calcola la media aritmetica del vettore X con NumPy per ottenere una statistica di sintesi.',
             },
             {
               english: 'Standard Deviation',
@@ -835,6 +855,7 @@ export default {
               difficulty: 'beginner',
               code: 'np.std(X)',
               note: 'Abbreviata sigma o std.',
+              task: 'Misura la deviazione standard di X per quantificare la dispersione dei valori intorno alla media.',
             },
           ],
         },
@@ -854,6 +875,7 @@ export default {
               difficulty: 'beginner',
               code: 'pd.get_dummies(df["color"])',
               note: 'Crea una colonna per ogni categoria con 0 o 1.',
+              task: 'Converti la colonna categorica color in variabili dummy binarie con pandas.',
             },
             {
               english: 'Label Encoding',
@@ -866,6 +888,7 @@ export default {
               difficulty: 'beginner',
               code: 'LabelEncoder().fit_transform(y)',
               note: 'Attenzione: introduce un ordine artificiale.',
+              task: 'Trasforma le etichette categoriche y in interi consecutivi usando LabelEncoder.',
             },
             {
               english: 'Ordinal Encoding',
@@ -877,6 +900,7 @@ export default {
               context: 'data-engineering',
               difficulty: 'beginner',
               code: 'OrdinalEncoder().fit_transform(X)',
+              task: 'Codifica le feature categoriche ordinate in interi che ne preservano la relazione di ordine.',
             },
             {
               english: 'Target Encoding',
@@ -899,6 +923,7 @@ export default {
               context: 'data-engineering',
               difficulty: 'beginner',
               code: 'train_test_split(X, y, test_size=0.2)',
+              task: `Suddividi i dati riservando il 20 percento al test set e l'80 percento al training set.`,
             },
             {
               english: 'Stratified Sampling',
@@ -911,6 +936,7 @@ export default {
               difficulty: 'beginner',
               code: 'train_test_split(X, y, stratify=y)',
               note: 'Cruciale per dataset sbilanciati.',
+              task: 'Esegui uno split stratificato sulle etichette y per preservare le proporzioni delle classi in entrambi gli insiemi.',
             },
             {
               english: 'Cross-Validation',
@@ -922,6 +948,7 @@ export default {
               context: 'data-engineering',
               difficulty: 'beginner',
               code: 'cross_val_score(model, X, y, cv=5)',
+              task: 'Valuta il modello tramite cross-validation a 5 fold per stimare le sue prestazioni medie.',
             },
             {
               english: 'K-Fold',
@@ -934,6 +961,7 @@ export default {
               difficulty: 'beginner',
               code: 'KFold(n_splits=5)',
               note: 'Tipicamente k=5 o k=10.',
+              task: 'Configura una k-fold con 5 partizioni per dividere il dataset in train e validation a rotazione.',
             },
             {
               english: 'Data Leakage',
@@ -983,6 +1011,7 @@ export default {
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'model.predict(X_test)',
+              task: 'Classifica gli esempi del test set assegnando a ciascuno una classe predetta dal modello.',
             },
             {
               english: 'Binary Classification',
@@ -1016,6 +1045,7 @@ export default {
               difficulty: 'beginner',
               code: 'LogisticRegression().fit(X, y)',
               note: 'Nonostante il nome, è un algoritmo di classificazione.',
+              task: 'Addestra un classificatore di regressione logistica sui dati X con etichette binarie y.',
             },
             {
               english: 'Decision Tree',
@@ -1028,6 +1058,7 @@ export default {
               difficulty: 'beginner',
               code: 'DecisionTreeClassifier().fit(X, y)',
               note: 'Facile da interpretare ma soggetto a overfitting.',
+              task: 'Costruisci un albero di decisione sui dati X e y per ottenere un modello interpretabile.',
             },
             {
               english: 'Random Forest',
@@ -1040,6 +1071,7 @@ export default {
               difficulty: 'beginner',
               code: 'RandomForestClassifier(n_estimators=100)',
               note: 'Termine spesso lasciato in inglese.',
+              task: `Configura un random forest con 100 alberi per migliorare l'accuratezza rispetto a un singolo decision tree.`,
             },
             {
               english: 'Support Vector Machine',
@@ -1052,6 +1084,7 @@ export default {
               difficulty: 'beginner',
               code: 'SVC(kernel="rbf")',
               note: 'Abbreviata SVM. Storicamente molto popolare prima del deep learning.',
+              task: 'Addestra un classificatore SVM con kernel RBF per separare classi non linearmente separabili.',
             },
             {
               english: 'K-Nearest Neighbors',
@@ -1064,6 +1097,7 @@ export default {
               difficulty: 'beginner',
               code: 'KNeighborsClassifier(n_neighbors=5)',
               note: 'Abbreviato KNN. Algoritmo lazy: nessun vero addestramento.',
+              task: `Configura un classificatore KNN che assegna ogni punto in base ai 5 vicini piu' simili.`,
             },
             {
               english: 'Naive Bayes',
@@ -1076,6 +1110,7 @@ export default {
               difficulty: 'beginner',
               code: 'GaussianNB().fit(X, y)',
               note: 'Veloce e sorprendentemente efficace nel text classification.',
+              task: 'Addestra un classificatore Naive Bayes gaussiano sulle feature X e sulle etichette y.',
             },
             {
               english: 'Probability Threshold',
@@ -1116,6 +1151,7 @@ export default {
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'LinearRegression().fit(X, y)',
+              task: 'Adatta una regressione lineare alle feature X per predire un target continuo y.',
             },
             {
               english: 'Polynomial Regression',
@@ -1127,6 +1163,7 @@ export default {
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'PolynomialFeatures(degree=2)',
+              task: 'Genera feature polinomiali di secondo grado per catturare relazioni non lineari con una regressione lineare.',
             },
             {
               english: 'Multiple Regression',
@@ -1149,6 +1186,7 @@ export default {
               difficulty: 'beginner',
               code: 'Ridge(alpha=1.0).fit(X, y)',
               note: 'Aiuta quando ci sono molte feature correlate.',
+              task: `Addestra una ridge regression con alpha 1.0 per ridurre l'overfitting tramite regolarizzazione L2.`,
             },
             {
               english: 'Lasso Regression',
@@ -1161,6 +1199,7 @@ export default {
               difficulty: 'beginner',
               code: 'Lasso(alpha=0.1).fit(X, y)',
               note: 'Usa regolarizzazione L1, può azzerare coefficienti.',
+              task: 'Addestra una lasso regression con alpha 0.1 per ottenere coefficienti sparsi tramite regolarizzazione L1.',
             },
             {
               english: 'Coefficient',
@@ -1172,6 +1211,7 @@ export default {
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'model.coef_',
+              task: 'Ispeziona i coefficienti del modello addestrato per capire il peso di ogni feature.',
             },
             {
               english: 'Intercept',
@@ -1183,6 +1223,7 @@ export default {
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'model.intercept_',
+              task: `Recupera l'intercetta del modello, ovvero il valore predetto quando tutte le feature sono nulle.`,
             },
             {
               english: 'Residual',
@@ -1194,6 +1235,7 @@ export default {
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'residuals = y_true - y_pred',
+              task: `Calcola i residui sottraendo le predizioni dai valori reali per diagnosticare la qualita' del fit.`,
             },
             {
               english: 'R-Squared',
@@ -1206,6 +1248,7 @@ export default {
               difficulty: 'beginner',
               code: 'model.score(X_test, y_test)',
               note: 'Va da 0 a 1; vicino a 1 significa buona qualità.',
+              task: `Calcola il coefficiente di determinazione R-squared sul test set per misurare la bonta' del modello.`,
             },
           ],
         },
@@ -1310,6 +1353,7 @@ export default {
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'plot_learning_curve(model, X, y)',
+              task: 'Disegna la learning curve del modello al variare della dimensione del training set per diagnosticare bias e varianza.',
             },
             {
               english: 'Capacity',
@@ -1351,6 +1395,7 @@ export default {
               difficulty: 'beginner',
               code: 'BaggingClassifier(estimator=tree, n_estimators=10)',
               note: 'Bootstrap Aggregating: ridurre la varianza.',
+              task: 'Addestra un ensemble bagging di 10 alberi per ridurre la varianza del classificatore base.',
             },
             {
               english: 'Boosting',
@@ -1373,6 +1418,7 @@ export default {
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'GradientBoostingClassifier()',
+              task: 'Costruisci un classificatore gradient boosting che aggiunge alberi correggendo gli errori dei precedenti.',
             },
             {
               english: 'XGBoost',
@@ -1386,6 +1432,7 @@ export default {
               code: 'import xgboost as xgb',
               tool: 'XGBoost',
               note: 'Standard de-facto per dati tabulari nelle competizioni Kaggle.',
+              task: `Importa la libreria XGBoost per accedere a un'implementazione veloce e regolarizzata di gradient boosting.`,
             },
             {
               english: 'Stacking',
@@ -1397,6 +1444,7 @@ export default {
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'StackingClassifier(estimators=base, final_estimator=meta)',
+              task: `Combina piu' modelli base in uno stacking classifier con un meta-modello finale che pesa le predizioni.`,
             },
             {
               english: 'Voting',
@@ -1408,6 +1456,7 @@ export default {
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'VotingClassifier(estimators=[...], voting="hard")',
+              task: `Aggrega le predizioni di piu' classificatori tramite voto di maggioranza usando un VotingClassifier.`,
             },
             {
               english: 'Weak Learner',
@@ -1479,6 +1528,7 @@ export default {
               difficulty: 'beginner',
               code: 'KMeans(n_clusters=3).fit(X)',
               note: 'Algoritmo di clustering più popolare.',
+              task: 'Esegui il clustering k-means con 3 cluster sulle feature X per scoprire gruppi naturali nei dati.',
             },
             {
               english: 'Centroid',
@@ -1490,6 +1540,7 @@ export default {
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'kmeans.cluster_centers_',
+              task: 'Estrai le coordinate dei centroidi calcolati da k-means per rappresentare il centro di ogni cluster.',
             },
             {
               english: 'Hierarchical Clustering',
@@ -1501,6 +1552,7 @@ export default {
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'AgglomerativeClustering(n_clusters=3)',
+              task: `Applica un clustering gerarchico agglomerativo per ottenere 3 cluster fondendo iterativamente i piu' vicini.`,
             },
             {
               english: 'Dendrogram',
@@ -1512,6 +1564,7 @@ export default {
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'from scipy.cluster.hierarchy import dendrogram',
+              task: 'Importa la funzione dendrogram di SciPy per visualizzare la gerarchia dei cluster prodotti.',
             },
             {
               english: 'DBSCAN',
@@ -1524,6 +1577,7 @@ export default {
               difficulty: 'beginner',
               code: 'DBSCAN(eps=0.3, min_samples=10)',
               note: 'Identifica anche outlier come "rumore".',
+              task: `Esegui DBSCAN con eps 0.3 e min_samples 10 per individuare cluster a densita' variabile e outlier.`,
             },
             {
               english: 'Silhouette Score',
@@ -1536,6 +1590,7 @@ export default {
               difficulty: 'beginner',
               code: 'silhouette_score(X, labels)',
               note: 'Va da -1 a 1; più alto è meglio.',
+              task: 'Calcola il silhouette score dei cluster ottenuti per valutare quanto sono ben separati.',
             },
             {
               english: 'Elbow Method',
@@ -1597,6 +1652,7 @@ export default {
               difficulty: 'beginner',
               code: 'PCA(n_components=2).fit_transform(X)',
               note: 'Principal Component Analysis: tecnica fondamentale.',
+              task: 'Riduci le feature a 2 componenti principali tramite PCA per visualizzare i dati su un piano.',
             },
             {
               english: 'Principal Component',
@@ -1608,6 +1664,7 @@ export default {
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'pca.components_',
+              task: 'Ispeziona i vettori delle componenti principali calcolate da PCA per capire le direzioni di massima varianza.',
             },
             {
               english: 'Explained Variance',
@@ -1619,6 +1676,7 @@ export default {
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'pca.explained_variance_ratio_',
+              task: 'Mostra la frazione di varianza spiegata da ogni componente principale per decidere quante mantenerne.',
             },
             {
               english: 't-SNE',
@@ -1631,6 +1689,7 @@ export default {
               difficulty: 'beginner',
               code: 'TSNE(n_components=2).fit_transform(X)',
               note: 't-distributed Stochastic Neighbor Embedding. Usato per visualizzazione, non riduzione.',
+              task: 'Proietta i dati ad alta dimensione in 2D con t-SNE per visualizzare cluster nascosti.',
             },
             {
               english: 'UMAP',
@@ -1643,6 +1702,7 @@ export default {
               difficulty: 'beginner',
               code: 'umap.UMAP().fit_transform(X)',
               tool: 'umap-learn',
+              task: `Riduci la dimensionalita' delle feature con UMAP preservando la struttura locale e globale dei dati.`,
             },
             {
               english: 'Curse of Dimensionality',
@@ -1735,6 +1795,7 @@ export default {
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'support = freq(X) / total',
+              task: 'Calcola il supporto di un itemset come la sua frequenza relativa nel totale delle transazioni.',
             },
             {
               english: 'Confidence',
@@ -1746,6 +1807,7 @@ export default {
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'confidence = P(Y | X)',
+              task: `Calcola la confidenza di una regola di associazione come probabilita' condizionata di Y dato X.`,
             },
             {
               english: 'Lift',
@@ -1788,6 +1850,7 @@ export default {
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'IsolationForest(contamination=0.1)',
+              task: 'Addestra un isolation forest con contaminazione del 10 percento per individuare anomalie nei dati.',
             },
             {
               english: 'One-Class SVM',
@@ -1799,6 +1862,7 @@ export default {
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'OneClassSVM(nu=0.05)',
+              task: `Configura una One-Class SVM con nu 0.05 per modellare la regione di normalita' e isolare gli outlier.`,
             },
           ],
         },
@@ -1962,6 +2026,7 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'Dense(units=64)',
+              task: 'Crea un layer fully-connected con 64 neuroni da inserire nella rete neurale.',
             },
             {
               english: 'Hidden Layer',
@@ -1984,6 +2049,7 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'Input(shape=(784,))',
+              task: `Definisci l'input layer della rete con shape 784 per ricevere immagini MNIST appiattite.`,
             },
             {
               english: 'Output Layer',
@@ -2005,6 +2071,7 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'model.weights',
+              task: `Accedi all'elenco dei pesi apprendibili del modello per ispezionarne i valori o salvarli.`,
             },
             {
               english: 'Bias Term',
@@ -2056,6 +2123,7 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'Dense(64, activation="relu")',
+              task: `Aggiungi un Dense layer con 64 neuroni e attivazione ReLU per introdurre non linearita'.`,
             },
             {
               english: 'Sigmoid',
@@ -2068,6 +2136,7 @@ export default {
               difficulty: 'intermediate',
               code: '1 / (1 + np.exp(-x))',
               note: 'Soffre del problema del vanishing gradient.',
+              task: `Implementa manualmente la funzione sigmoid per mappare un valore reale nell'intervallo (0, 1).`,
             },
             {
               english: 'Tanh',
@@ -2079,6 +2148,7 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'np.tanh(x)',
+              task: `Applica la funzione di attivazione tanh per mappare gli input nell'intervallo (-1, 1).`,
             },
             {
               english: 'ReLU',
@@ -2091,6 +2161,7 @@ export default {
               difficulty: 'intermediate',
               code: 'max(0, x)',
               note: 'Rectified Linear Unit. Standard nelle reti moderne.',
+              task: `Implementa la ReLU restituendo il massimo tra zero e l'input per azzerare i valori negativi.`,
             },
             {
               english: 'Leaky ReLU',
@@ -2103,6 +2174,7 @@ export default {
               difficulty: 'intermediate',
               code: 'LeakyReLU(alpha=0.01)',
               note: 'Permette piccoli valori negativi invece di zero.',
+              task: 'Usa una Leaky ReLU con alpha 0.01 per evitare il problema dei neuroni morti tipico della ReLU.',
             },
             {
               english: 'Softmax',
@@ -2115,6 +2187,7 @@ export default {
               difficulty: 'intermediate',
               code: 'Dense(10, activation="softmax")',
               note: 'Standard per output di classificazione multiclasse.',
+              task: `Aggiungi un layer di output con 10 neuroni e softmax per ottenere una distribuzione di probabilita' sulle classi.`,
             },
             {
               english: 'GELU',
@@ -2137,6 +2210,7 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'x * sigmoid(x)',
+              task: `Implementa la funzione di attivazione Swish moltiplicando l'input per la sua sigmoide.`,
             },
             {
               english: 'Logit',
@@ -2188,6 +2262,7 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'output = model(input)',
+              task: `Esegui il forward pass passando l'input nel modello per ottenere l'output predetto.`,
             },
             {
               english: 'Backward Pass',
@@ -2199,6 +2274,7 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'loss.backward()',
+              task: 'Calcola i gradienti della loss rispetto ai parametri tramite backpropagation in PyTorch.',
             },
             {
               english: 'Gradient',
@@ -2254,6 +2330,7 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'torch.nn.utils.clip_grad_norm_(params, 1.0)',
+              task: `Limita la norma globale dei gradienti a 1.0 per stabilizzare l'addestramento e prevenire esplosioni numeriche.`,
             },
             {
               english: 'Automatic Differentiation',
@@ -2293,6 +2370,7 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'kernel_initializer="he_normal"',
+              task: 'Inizializza i pesi del layer con lo schema He normal, indicato per attivazioni ReLU.',
             },
             {
               english: 'Xavier Initialization',
@@ -2326,6 +2404,7 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'batch_size=32',
+              task: `Imposta un batch size di 32 per dividere l'addestramento in mini-batch piu' efficienti.`,
             },
             {
               english: 'Stochastic Gradient Descent',
@@ -2338,6 +2417,7 @@ export default {
               difficulty: 'intermediate',
               code: 'optimizer = SGD(lr=0.01)',
               note: 'Abbreviato SGD.',
+              task: 'Configura un ottimizzatore SGD con learning rate 0.01 per aggiornare i pesi sulla base di mini-batch.',
             },
             {
               english: 'Adam Optimizer',
@@ -2350,6 +2430,7 @@ export default {
               difficulty: 'intermediate',
               code: 'optimizer = Adam(lr=0.001)',
               note: 'Default popolare per la maggior parte dei modelli.',
+              task: `Imposta l'ottimizzatore Adam con learning rate 0.001 per un addestramento adattivo e robusto.`,
             },
             {
               english: 'Momentum',
@@ -2361,6 +2442,7 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'SGD(lr=0.01, momentum=0.9)',
+              task: 'Aggiungi un termine di momentum 0.9 a SGD per accelerare la convergenza lungo le direzioni consistenti.',
             },
             {
               english: 'Weight Decay',
@@ -2395,6 +2477,7 @@ export default {
               difficulty: 'intermediate',
               code: 'MLPClassifier(hidden_layer_sizes=(64, 32))',
               note: 'Abbreviato MLP.',
+              task: 'Costruisci un MLP con due hidden layer da 64 e 32 neuroni per un task di classificazione.',
             },
           ],
         },
@@ -2433,6 +2516,7 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'Conv2D(32, (3, 3))',
+              task: 'Aggiungi un layer convoluzionale con 32 filtri di dimensione 3x3 per estrarre feature spaziali dalle immagini.',
             },
             {
               english: 'Filter',
@@ -2466,6 +2550,7 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'Conv2D(32, (3, 3), strides=2)',
+              task: 'Configura una convoluzione con stride 2 per dimezzare la risoluzione della feature map ad ogni passaggio.',
             },
             {
               english: 'Padding',
@@ -2477,6 +2562,7 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'Conv2D(32, (3, 3), padding="same")',
+              task: `Applica un padding same alla convoluzione per mantenere invariate le dimensioni spaziali dell'output.`,
             },
             {
               english: 'Pooling',
@@ -2488,6 +2574,7 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'MaxPooling2D((2, 2))',
+              task: `Inserisci un max pooling 2x2 per ridurre le dimensioni della feature map mantenendo le attivazioni piu' forti.`,
             },
             {
               english: 'Max Pooling',
@@ -2549,6 +2636,7 @@ export default {
               difficulty: 'intermediate',
               code: 'LSTM(128)',
               note: 'Long Short-Term Memory.',
+              task: `Aggiungi un layer LSTM con 128 unita' per modellare dipendenze a lungo termine in una sequenza.`,
             },
             {
               english: 'GRU',
@@ -2561,6 +2649,7 @@ export default {
               difficulty: 'intermediate',
               code: 'GRU(64)',
               note: 'Gated Recurrent Unit.',
+              task: `Usa un layer GRU con 64 unita' come alternativa piu' leggera all'LSTM per dati sequenziali.`,
             },
             {
               english: 'Hidden State',
@@ -2613,6 +2702,7 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'Bidirectional(LSTM(64))',
+              task: `Avvolgi un LSTM da 64 unita' in un layer bidirezionale per leggere la sequenza in entrambe le direzioni.`,
             },
             {
               english: 'Time Step',
@@ -2653,6 +2743,7 @@ export default {
               difficulty: 'intermediate',
               code: 'Dropout(rate=0.5)',
               note: 'Termine sempre lasciato in inglese.',
+              task: `Inserisci un layer di dropout con probabilita' 0.5 per ridurre l'overfitting disattivando neuroni casualmente.`,
             },
             {
               english: 'Batch Normalization',
@@ -2665,6 +2756,7 @@ export default {
               difficulty: 'intermediate',
               code: 'BatchNormalization()',
               note: 'Spesso abbreviata BatchNorm.',
+              task: `Aggiungi un layer di batch normalization per stabilizzare l'addestramento normalizzando le attivazioni del mini-batch.`,
             },
             {
               english: 'Layer Normalization',
@@ -2676,6 +2768,7 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'LayerNormalization()',
+              task: 'Applica la layer normalization per normalizzare le attivazioni lungo la dimensione delle feature di ogni esempio.',
             },
             {
               english: 'L1 Regularization',
@@ -2687,6 +2780,7 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'kernel_regularizer=l1(0.01)',
+              task: 'Aggiungi una regolarizzazione L1 con coefficiente 0.01 sul kernel per favorire pesi sparsi.',
             },
             {
               english: 'L2 Regularization',
@@ -2698,6 +2792,7 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'kernel_regularizer=l2(0.001)',
+              task: 'Applica una regolarizzazione L2 con coefficiente 0.001 sul kernel per penalizzare pesi grandi.',
             },
             {
               english: 'Data Augmentation',
@@ -2709,6 +2804,7 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'ImageDataGenerator(rotation_range=20)',
+              task: 'Configura una data augmentation che ruota le immagini fino a 20 gradi per ampliare il training set.',
             },
             {
               english: 'Label Smoothing',
@@ -2720,6 +2816,7 @@ export default {
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'CategoricalCrossentropy(label_smoothing=0.1)',
+              task: 'Imposta un label smoothing 0.1 nella cross-entropy per evitare che il modello diventi troppo sicuro.',
             },
             {
               english: 'Stochastic Depth',
@@ -2893,6 +2990,7 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               code: 'tokenizer.tokenize("Hello world")',
+              task: 'Tokenizza la frase Hello world spezzandola nei singoli token che il modello accetta in ingresso.',
             },
             {
               english: 'Token',
@@ -2937,6 +3035,7 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               code: 'len(tokenizer.vocab)',
+              task: `Conta quante voci compongono il vocabolario del tokenizer per dimensionare l'embedding layer.`,
             },
             {
               english: 'Stop Word',
@@ -2959,6 +3058,7 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               code: 'PorterStemmer().stem("running")',
+              task: 'Riduci la parola running alla sua radice con il PorterStemmer per normalizzare il testo.',
             },
             {
               english: 'Lemmatization',
@@ -2971,6 +3071,7 @@ export default {
               difficulty: 'intermediate',
               code: 'lemmatizer.lemmatize("running")',
               note: 'Più accurata dello stemming, ma più lenta.',
+              task: 'Lemmatizza la parola running riportandola alla forma base del lemma.',
             },
             {
               english: 'Bag of Words',
@@ -2983,6 +3084,7 @@ export default {
               difficulty: 'intermediate',
               code: 'CountVectorizer().fit_transform(corpus)',
               note: 'Abbreviato BoW.',
+              task: 'Trasforma il corpus in una matrice bag-of-words contando le occorrenze di ogni parola.',
             },
             {
               english: 'TF-IDF',
@@ -2995,6 +3097,7 @@ export default {
               difficulty: 'intermediate',
               code: 'TfidfVectorizer().fit_transform(corpus)',
               note: 'Term Frequency - Inverse Document Frequency.',
+              task: `Costruisci la rappresentazione TF-IDF del corpus per pesare le parole rare piu' delle comuni.`,
             },
           ],
         },
@@ -3014,6 +3117,7 @@ export default {
               difficulty: 'intermediate',
               code: 'Embedding(vocab_size, 128)',
               note: 'Termine sempre lasciato in inglese.',
+              task: 'Definisci un embedding layer che mappa il vocabolario in vettori densi di dimensione 128.',
             },
             {
               english: 'Word2Vec',
@@ -3025,6 +3129,7 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               code: 'Word2Vec(sentences, vector_size=100)',
+              task: 'Addestra un modello Word2Vec sulle frasi del corpus producendo vettori di parole da 100 dimensioni.',
             },
             {
               english: 'GloVe',
@@ -3079,6 +3184,7 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               code: 'cosine_similarity(v1, v2)',
+              task: `Calcola la similarita' coseno tra due vettori per misurare quanto sono allineati semanticamente.`,
             },
             {
               english: 'Vector Space',
@@ -3181,6 +3287,7 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               code: 'model.generate(input_ids, num_beams=5)',
+              task: `Genera testo con beam search a 5 raggi per esplorare piu' ipotesi prima di scegliere la migliore.`,
             },
             {
               english: 'Greedy Decoding',
@@ -3223,6 +3330,7 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               code: 'perplexity = exp(loss)',
+              task: 'Calcola la perplexity del modello linguistico come esponenziale della loss media sul test set.',
             },
           ],
         },
@@ -3383,6 +3491,7 @@ export default {
               context: 'architectures',
               difficulty: 'intermediate',
               code: 'MultiHeadAttention(num_heads=8)',
+              task: 'Aggiungi un layer di multi-head attention con 8 teste per catturare relazioni diverse tra i token.',
             },
             {
               english: 'Positional Encoding',
@@ -3415,6 +3524,7 @@ export default {
               context: 'architectures',
               difficulty: 'intermediate',
               code: 'x = x + sublayer(x)',
+              task: `Aggiungi una connessione residua sommando l'input al risultato del sublayer per favorire il gradient flow.`,
             },
             {
               english: 'Feed-Forward Network',
@@ -3574,6 +3684,7 @@ export default {
               context: 'architectures',
               difficulty: 'intermediate',
               code: 'AutoModel.from_pretrained("bert-base")',
+              task: `Carica il modello pre-addestrato bert-base dall'hub di Hugging Face come punto di partenza.`,
             },
           ],
         },
@@ -3645,6 +3756,7 @@ export default {
               context: 'architectures',
               difficulty: 'intermediate',
               code: 'model.generate(input_ids, max_length=100)',
+              task: 'Genera testo dal modello fino a un massimo di 100 token a partire dagli input_ids forniti.',
             },
             {
               english: 'Top-K Sampling',
@@ -3656,6 +3768,7 @@ export default {
               context: 'architectures',
               difficulty: 'intermediate',
               code: 'model.generate(top_k=50)',
+              task: `Configura una generazione con top-k sampling a 50 per limitare il campionamento ai token piu' probabili.`,
             },
             {
               english: 'Top-P Sampling',
@@ -3668,6 +3781,7 @@ export default {
               difficulty: 'intermediate',
               code: 'model.generate(top_p=0.9)',
               note: 'Detto anche nucleus sampling.',
+              task: `Usa top-p sampling con soglia 0.9 per campionare dai token che coprono il 90 percento della massa di probabilita'.`,
             },
             {
               english: 'In-Context Learning',
@@ -3709,6 +3823,7 @@ export default {
               difficulty: 'intermediate',
               code: 'trainer.train()',
               note: 'Termine spesso lasciato in inglese.',
+              task: 'Avvia il fine-tuning del modello pre-addestrato sui dati specifici del task tramite il Trainer di Hugging Face.',
             },
             {
               english: 'Transfer Learning',
@@ -3763,6 +3878,7 @@ export default {
               context: 'architectures',
               difficulty: 'intermediate',
               code: 'layer.trainable = False',
+              task: `Congela il layer impostando trainable a False per escluderlo dall'aggiornamento durante il fine-tuning.`,
             },
             {
               english: 'Instruction Tuning',
@@ -3834,6 +3950,7 @@ export default {
               context: 'computer-vision',
               difficulty: 'intermediate',
               code: 'model.predict(image)',
+              task: `Classifica un'immagine passandola al modello di visione per ottenere la classe predetta.`,
             },
             {
               english: 'ImageNet',
@@ -3918,6 +4035,7 @@ export default {
               context: 'computer-vision',
               difficulty: 'intermediate',
               code: 'image.shape  # (224, 224, 3)',
+              task: 'Verifica che il tensore immagine abbia shape (224, 224, 3) prima di passarlo alla rete.',
             },
             {
               english: 'Channel',
@@ -3956,6 +4074,7 @@ export default {
               context: 'computer-vision',
               difficulty: 'intermediate',
               code: 'bbox = [x_min, y_min, x_max, y_max]',
+              task: 'Definisci una bounding box tramite i quattro vertici x_min, y_min, x_max, y_max per localizzare un oggetto.',
             },
             {
               english: 'YOLO',
@@ -4010,6 +4129,7 @@ export default {
               context: 'computer-vision',
               difficulty: 'intermediate',
               code: 'cv2.dnn.NMSBoxes(boxes, scores, 0.5, 0.4)',
+              task: 'Applica la non-maximum suppression di OpenCV per scartare bounding box sovrapposte sopra una soglia IoU di 0.4.',
             },
             {
               english: 'Confidence Score',
@@ -4302,6 +4422,7 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               code: 'messages = [{"role": "system", "content": "..."}]',
+              task: `Costruisci il messaggio di system prompt che definisce il ruolo e il comportamento dell'assistente.`,
             },
             {
               english: 'User Prompt',
@@ -4354,6 +4475,7 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               code: '```text```',
+              task: 'Racchiudi una porzione di testo tra delimitatori tripli backtick per separarla chiaramente dal resto del prompt.',
             },
             {
               english: 'Output Format',
@@ -4385,6 +4507,7 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               code: 'PromptTemplate(template="Answer: {question}")',
+              task: 'Definisci un PromptTemplate con il placeholder question per riutilizzare lo stesso schema su input diversi.',
             },
           ],
         },
@@ -4629,6 +4752,7 @@ export default {
               difficulty: 'intermediate',
               code: 'model.generate(temperature=0.7)',
               note: 'Tipicamente da 0 a 2. Bassa: deterministico. Alta: creativo.',
+              task: `Imposta una temperature di 0.7 nella generazione per bilanciare creativita' e coerenza dell'output.`,
             },
             {
               english: 'Max Tokens',
@@ -4640,6 +4764,7 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               code: 'max_tokens=500',
+              task: `Limita la risposta del modello a 500 token per controllare il costo e la lunghezza dell'output.`,
             },
             {
               english: 'Stop Sequence',
@@ -4651,6 +4776,7 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               code: 'stop=["\\n\\n", "User:"]',
+              task: 'Imposta come stop sequence una doppia newline o la stringa User: per troncare la generazione al punto giusto.',
             },
             {
               english: 'Frequency Penalty',
@@ -4662,6 +4788,7 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               code: 'frequency_penalty=0.5',
+              task: `Applica una frequency penalty di 0.5 per scoraggiare la ripetizione dei token gia' usati.`,
             },
             {
               english: 'Presence Penalty',
@@ -4683,6 +4810,7 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               code: 'response = client.completions.create(stream=True)',
+              task: 'Abilita lo streaming nella chiamata API per ricevere la risposta token per token man mano che viene generata.',
             },
             {
               english: 'Hallucination',
@@ -4705,6 +4833,7 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               code: 'tools=[{"type": "function", "function": {...}}]',
+              task: `Dichiara nello schema tools una funzione che il modello puo' invocare per eseguire azioni esterne.`,
             },
             {
               english: 'JSON Mode',
@@ -4716,6 +4845,7 @@ export default {
               context: 'nlp',
               difficulty: 'intermediate',
               code: 'response_format={"type": "json_object"}',
+              task: 'Forza il modello a rispondere in JSON valido impostando response_format al tipo json_object.',
             },
             {
               english: 'Guardrails',
@@ -4766,6 +4896,7 @@ export default {
               difficulty: 'intermediate',
               code: 'optimizer = Adam(lr=0.001)',
               note: 'Spesso lasciato in inglese: "il learning rate".',
+              task: `Imposta un learning rate di 0.001 nell'ottimizzatore Adam per controllare l'ampiezza degli aggiornamenti.`,
             },
             {
               english: 'Batch Size',
@@ -4777,6 +4908,7 @@ export default {
               context: 'model-training',
               difficulty: 'intermediate',
               code: 'model.fit(batch_size=64)',
+              task: `Addestra il modello con batch size 64 per bilanciare velocita' di calcolo e stabilita' dei gradienti.`,
             },
             {
               english: 'Epoch',
@@ -4788,6 +4920,7 @@ export default {
               context: 'model-training',
               difficulty: 'intermediate',
               code: 'model.fit(epochs=10)',
+              task: 'Addestra il modello per 10 epoche complete sul training set.',
             },
             {
               english: 'Warmup Steps',
@@ -4820,6 +4953,7 @@ export default {
               context: 'model-training',
               difficulty: 'intermediate',
               code: 'GridSearchCV(model, param_grid)',
+              task: 'Esegui una grid search esaustiva sugli iperparametri elencati in param_grid per trovare la combinazione migliore.',
             },
             {
               english: 'Random Search',
@@ -4831,6 +4965,7 @@ export default {
               context: 'model-training',
               difficulty: 'intermediate',
               code: 'RandomizedSearchCV(model, param_dist)',
+              task: 'Esplora lo spazio degli iperparametri con randomized search campionando da param_dist.',
             },
             {
               english: 'Bayesian Optimization',
@@ -4853,6 +4988,7 @@ export default {
               context: 'model-training',
               difficulty: 'intermediate',
               code: 'ReduceLROnPlateau(patience=3)',
+              task: 'Configura uno scheduler che riduce il learning rate dopo 3 epoche senza miglioramenti sulla validation loss.',
             },
           ],
         },
@@ -4882,6 +5018,7 @@ export default {
               context: 'model-training',
               difficulty: 'intermediate',
               code: 'loss = CrossEntropyLoss()',
+              task: 'Istanzia la cross-entropy loss come criterio di ottimizzazione per un task di classificazione.',
             },
             {
               english: 'Mean Squared Error',
@@ -4894,6 +5031,7 @@ export default {
               difficulty: 'intermediate',
               code: 'loss = nn.MSELoss()',
               note: 'Abbreviata MSE.',
+              task: 'Imposta la MSE loss come criterio per un task di regressione che penalizza gli errori grandi quadraticamente.',
             },
             {
               english: 'Mean Absolute Error',
@@ -4905,6 +5043,7 @@ export default {
               context: 'model-training',
               difficulty: 'intermediate',
               code: 'loss = nn.L1Loss()',
+              task: 'Usa la L1 loss come metrica robusta agli outlier per task di regressione.',
             },
             {
               english: 'Hinge Loss',
@@ -4959,6 +5098,7 @@ export default {
               context: 'model-training',
               difficulty: 'intermediate',
               code: 'plt.plot(history.history["loss"])',
+              task: `Disegna la loss curve estratta dallo storico dell'addestramento per diagnosticare convergenza e overfitting.`,
             },
             {
               english: 'Custom Loss',
@@ -4998,6 +5138,7 @@ export default {
               context: 'model-training',
               difficulty: 'intermediate',
               code: 'model.compile(optimizer="adam")',
+              task: 'Compila il modello specificando adam come ottimizzatore degli aggiornamenti dei pesi.',
             },
             {
               english: 'AdamW',
@@ -5010,6 +5151,7 @@ export default {
               difficulty: 'intermediate',
               code: 'AdamW(model.parameters(), lr=1e-4)',
               note: 'Standard moderno per i transformer.',
+              task: 'Configura AdamW con learning rate 1e-4 per applicare correttamente il weight decay disaccoppiato.',
             },
             {
               english: 'RMSProp',
@@ -5021,6 +5163,7 @@ export default {
               context: 'model-training',
               difficulty: 'intermediate',
               code: 'optimizer = RMSprop(lr=0.001)',
+              task: 'Imposta RMSProp con learning rate 0.001 come ottimizzatore adattivo per dati non stazionari.',
             },
             {
               english: 'Nesterov Momentum',
@@ -5032,6 +5175,7 @@ export default {
               context: 'model-training',
               difficulty: 'intermediate',
               code: 'SGD(momentum=0.9, nesterov=True)',
+              task: 'Attiva il Nesterov momentum in SGD con coefficiente 0.9 per anticipare il passo successivo.',
             },
             {
               english: 'Learning Rate Warmup',
@@ -5054,6 +5198,7 @@ export default {
               context: 'model-training',
               difficulty: 'intermediate',
               code: 'CosineAnnealingLR(optimizer, T_max=10)',
+              task: 'Configura uno scheduler di cosine annealing su 10 epoche per decrescere il learning rate gradualmente.',
             },
             {
               english: 'Saddle Point',
@@ -5136,6 +5281,7 @@ export default {
               context: 'model-training',
               difficulty: 'intermediate',
               code: 'with torch.cuda.amp.autocast():',
+              task: 'Avvolgi il forward pass in un blocco autocast di PyTorch per abilitare il mixed precision su GPU.',
             },
             {
               english: 'Distributed Training',
@@ -5179,6 +5325,7 @@ export default {
               context: 'model-training',
               difficulty: 'intermediate',
               code: 'gradient_accumulation_steps=4',
+              task: `Accumula i gradienti per 4 step prima di aggiornare i pesi, simulando un batch piu' grande.`,
             },
             {
               english: 'Checkpointing',
@@ -5190,6 +5337,7 @@ export default {
               context: 'model-training',
               difficulty: 'intermediate',
               code: 'torch.save(model.state_dict(), "ckpt.pt")',
+              task: 'Salva su disco lo state_dict del modello nel file ckpt.pt per ripartire da un checkpoint.',
             },
             {
               english: 'Gradient Checkpointing',
@@ -5228,6 +5376,7 @@ export default {
               difficulty: 'intermediate',
               code: 'accuracy_score(y_true, y_pred)',
               note: 'Falso amico: in italiano "accuratezza" non "accuracia".',
+              task: `Calcola l'accuracy del classificatore confrontando etichette vere e predette.`,
             },
             {
               english: 'Precision',
@@ -5239,6 +5388,7 @@ export default {
               context: 'evaluation',
               difficulty: 'intermediate',
               code: 'precision_score(y_true, y_pred)',
+              task: 'Calcola la precision del classificatore per misurare quanti dei positivi predetti sono effettivamente positivi.',
             },
             {
               english: 'Recall',
@@ -5251,6 +5401,7 @@ export default {
               difficulty: 'intermediate',
               code: 'recall_score(y_true, y_pred)',
               note: 'Detto anche sensibilità o true positive rate.',
+              task: 'Calcola la recall del classificatore per misurare quanti dei positivi reali sono stati identificati.',
             },
             {
               english: 'F1 Score',
@@ -5263,6 +5414,7 @@ export default {
               difficulty: 'intermediate',
               code: 'f1_score(y_true, y_pred)',
               note: 'Media armonica di precision e recall.',
+              task: `Calcola l'F1 score come media armonica tra precision e recall del classificatore.`,
             },
             {
               english: 'Confusion Matrix',
@@ -5274,6 +5426,7 @@ export default {
               context: 'evaluation',
               difficulty: 'intermediate',
               code: 'confusion_matrix(y_true, y_pred)',
+              task: 'Costruisci la confusion matrix per analizzare la distribuzione di veri positivi, falsi positivi e falsi negativi.',
             },
             {
               english: 'True Positive',
@@ -5328,6 +5481,7 @@ export default {
               context: 'evaluation',
               difficulty: 'intermediate',
               code: 'balanced_accuracy_score(y_true, y_pred)',
+              task: 'Calcola la balanced accuracy per ottenere una metrica robusta in presenza di classi sbilanciate.',
             },
           ],
         },
@@ -5358,6 +5512,7 @@ export default {
               difficulty: 'intermediate',
               code: 'roc_auc_score(y_true, y_score)',
               note: 'Area Under the Curve.',
+              task: `Calcola l'area sotto la curva ROC per valutare la capacita' discriminativa del classificatore probabilistico.`,
             },
             {
               english: 'Precision-Recall Curve',
@@ -5379,6 +5534,7 @@ export default {
               context: 'evaluation',
               difficulty: 'intermediate',
               code: 'average_precision_score(y_true, y_score)',
+              task: `Calcola l'average precision dai punteggi predetti per riassumere la curva precision-recall in un singolo valore.`,
             },
             {
               english: 'Threshold Tuning',
@@ -5421,6 +5577,7 @@ export default {
               context: 'evaluation',
               difficulty: 'intermediate',
               code: 'cohen_kappa_score(y_true, y_pred)',
+              task: `Calcola il Cohen kappa per misurare l'accordo tra etichette vere e predette al netto del caso.`,
             },
             {
               english: 'Matthews Correlation',
@@ -5433,6 +5590,7 @@ export default {
               difficulty: 'intermediate',
               code: 'matthews_corrcoef(y_true, y_pred)',
               note: 'Abbreviato MCC.',
+              task: 'Calcola il coefficiente di correlazione di Matthews come metrica robusta su classi sbilanciate.',
             },
             {
               english: 'Log Loss',
@@ -5444,6 +5602,7 @@ export default {
               context: 'evaluation',
               difficulty: 'intermediate',
               code: 'log_loss(y_true, y_proba)',
+              task: `Calcola la log loss confrontando le probabilita' predette con le etichette reali per penalizzare predizioni sbagliate e sicure.`,
             },
           ],
         },
@@ -5463,6 +5622,7 @@ export default {
               difficulty: 'intermediate',
               code: 'mean_squared_error(y_true, y_pred, squared=False)',
               note: 'Root Mean Squared Error.',
+              task: `Calcola l'RMSE chiamando mean_squared_error con squared False per ottenere l'errore in unita' del target.`,
             },
             {
               english: 'MAPE',
@@ -5475,6 +5635,7 @@ export default {
               difficulty: 'intermediate',
               code: 'mean_absolute_percentage_error(y_true, y_pred)',
               note: 'Mean Absolute Percentage Error.',
+              task: `Calcola il MAPE per esprimere l'errore medio del modello in termini percentuali rispetto ai valori reali.`,
             },
             {
               english: 'Pseudo R-Squared',
@@ -5486,6 +5647,7 @@ export default {
               difficulty: 'intermediate',
               code: 'r2_score(y_true, y_pred)',
               note: 'Esistono diverse formulazioni: McFadden, Cox-Snell, Nagelkerke.',
+              task: `Calcola l'R-squared sui valori predetti per misurare la quota di varianza spiegata dal modello di regressione.`,
             },
             {
               english: 'Adjusted R-Squared',
@@ -5507,6 +5669,7 @@ export default {
               context: 'evaluation',
               difficulty: 'intermediate',
               code: 'median_absolute_error(y_true, y_pred)',
+              task: 'Calcola la mediana degli errori assoluti come metrica robusta agli outlier per la regressione.',
             },
             {
               english: 'Predicted vs Actual Plot',
@@ -5587,6 +5750,7 @@ export default {
               context: 'evaluation',
               difficulty: 'intermediate',
               code: 'StratifiedKFold(n_splits=5)',
+              task: 'Configura una stratified k-fold a 5 partizioni per preservare le proporzioni delle classi in ogni fold.',
             },
             {
               english: 'Leave-One-Out',
@@ -5599,6 +5763,7 @@ export default {
               difficulty: 'intermediate',
               code: 'LeaveOneOut()',
               note: 'Abbreviata LOOCV. Costosa per dataset grandi.',
+              task: 'Imposta una cross-validation leave-one-out per addestrare il modello su tutti gli esempi tranne uno alla volta.',
             },
             {
               english: 'Time Series Split',
@@ -5611,6 +5776,7 @@ export default {
               difficulty: 'intermediate',
               code: 'TimeSeriesSplit(n_splits=5)',
               note: 'Mai mescolare dati temporali!',
+              task: 'Configura un TimeSeriesSplit a 5 partizioni per validare modelli su serie temporali senza fuga dal futuro.',
             },
             {
               english: 'Nested Cross-Validation',

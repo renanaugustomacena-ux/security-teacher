@@ -1,0 +1,1788 @@
+{
+  "fixes": [
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_1",
+      "english": "Class",
+      "set": {
+        "task": "Definisci una classe Dog che racchiuda stato e comportamento di un cane in un unico tipo."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_1",
+      "english": "Object",
+      "set": {
+        "task": "Istanzia sullo stack un oggetto rex di tipo Dog usando il costruttore di default."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_1",
+      "english": "Namespace",
+      "set": {
+        "task": "Racchiudi una variabile globale x in un namespace app per evitare collisioni di nomi con altre librerie."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_1",
+      "english": "std::cout",
+      "set": {
+        "task": "Stampa la stringa Hello seguita da un newline sullo standard output usando std::cout."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_1",
+      "english": "std::cin",
+      "set": {
+        "task": "Leggi un intero dalla console nella variabile n usando std::cin e l'operatore di estrazione."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_1",
+      "english": "Stream Insertion",
+      "set": {
+        "task": "Concatena in una singola istruzione il valore di x e un newline sullo stream di output con l'operatore <<."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_1",
+      "english": "Stream Extraction",
+      "set": {
+        "task": "Estrai un valore dallo standard input nella variabile x utilizzando l'operatore >>."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_1",
+      "english": "Header",
+      "set": {
+        "task": "Includi l'header standard iostream per poter usare gli stream di input e output."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_1",
+      "english": "Main Function",
+      "set": {
+        "task": "Scrivi la funzione main che restituisce 0 al sistema operativo come codice di uscita di successo."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_1",
+      "english": "Endline",
+      "set": {
+        "task": "Stampa la stringa hi seguita da std::endl per andare a capo e svuotare il buffer di output."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_2",
+      "english": "New Operator",
+      "set": {
+        "task": "Alloca dinamicamente un singolo intero inizializzato a 5 sull'heap con l'operatore new."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_2",
+      "english": "Delete Operator",
+      "set": {
+        "task": "Libera la memoria puntata da p chiamando delete per evitare un memory leak."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_2",
+      "english": "Stack",
+      "set": {
+        "task": "Dichiara una variabile locale x con valore 5 allocata automaticamente sullo stack."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_2",
+      "english": "Pointer",
+      "set": {
+        "task": "Crea un puntatore p a intero e fallo puntare all'indirizzo della variabile x."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_2",
+      "english": "Dereference",
+      "set": {
+        "task": "Leggi il valore puntato dal puntatore p applicando l'operatore di dereferenziazione * e copialo in v."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_2",
+      "english": "Address-of",
+      "set": {
+        "task": "Ottieni l'indirizzo di memoria della variabile x con l'operatore & e salvalo in un puntatore p."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_2",
+      "english": "Null Pointer",
+      "set": {
+        "task": "Inizializza un puntatore p a nullptr per indicare esplicitamente che non punta a nulla."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_2",
+      "english": "Array New",
+      "set": {
+        "task": "Alloca dinamicamente sull'heap un array di 10 interi con la sintassi new int[10]."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_2",
+      "english": "Array Delete",
+      "set": {
+        "task": "Dealloca un array dinamico arr con delete[] per invocare il distruttore di ogni elemento."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_3",
+      "english": "Compiler",
+      "set": {
+        "task": "Compila main.cpp con g++ producendo un eseguibile chiamato main."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_3",
+      "english": "Standard Version",
+      "set": {
+        "task": "Compila main.cpp imponendo lo standard C++20 con il flag -std=c++20."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_3",
+      "english": "Header File",
+      "set": {
+        "task": "Includi il file di intestazione locale myclass.h con virgolette doppie per cercare prima nella directory corrente."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_3",
+      "english": "Object File",
+      "set": {
+        "task": "Genera il file oggetto di main.cpp con il flag -c senza linkare per accelerare le ricompilazioni successive."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_3",
+      "english": "Warning Flag",
+      "set": {
+        "task": "Abilita i flag di avviso -Wall -Wextra -Wpedantic per intercettare il maggior numero di bug a tempo di compilazione."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_3",
+      "english": "Optimization Level",
+      "set": {
+        "task": "Compila main.cpp con livello di ottimizzazione -O2 per generare una build release performante."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_3",
+      "english": "Debug Symbols",
+      "set": {
+        "task": "Aggiungi i simboli di debug a main.cpp con il flag -g per poter ispezionare variabili in GDB."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_3",
+      "english": "Executable",
+      "set": {
+        "task": "Compila main.cpp specificando con -o app il nome dell'eseguibile finale prodotto dal linker."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_4",
+      "english": "Integer",
+      "set": {
+        "task": "Dichiara una variabile intera x inizializzata al valore 42 da usare come contatore."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_4",
+      "english": "Floating Point",
+      "set": {
+        "task": "Dichiara una variabile a virgola mobile di tipo double chiamata pi e inizializzala con il valore 3.14159."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_4",
+      "english": "Character",
+      "set": {
+        "task": "Dichiara una variabile di tipo char chiamata c e inizializzala con il letterale 'A'."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_4",
+      "english": "Boolean",
+      "set": {
+        "task": "Dichiara un flag booleano ready inizializzato a true per indicare uno stato attivo."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_4",
+      "english": "Void",
+      "set": {
+        "task": "Dichiara una funzione log che restituisce void perché non ha bisogno di restituire alcun valore."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_4",
+      "english": "Auto Type",
+      "set": {
+        "task": "Sfrutta auto per dichiarare una variabile x inizializzata a 42 lasciando dedurre il tipo al compilatore."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_4",
+      "english": "Const Qualifier",
+      "set": {
+        "task": "Definisci una costante intera MAX con valore 100 usando il qualificatore const per impedirne la modifica."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_4",
+      "english": "Size Type",
+      "set": {
+        "task": "Memorizza la dimensione del container v in una variabile di tipo std::size_t per evitare warning di confronto."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_4",
+      "english": "Type Cast",
+      "set": {
+        "task": "Converti il letterale 3.14 in int usando static_cast e troncando esplicitamente la parte frazionaria."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cpp_foundations_4",
+      "english": "Initialization",
+      "set": {
+        "task": "Inizializza un intero x al valore 5 con la sintassi a graffe per attivare il controllo contro le narrowing conversion."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_5",
+      "english": "Reference",
+      "set": {
+        "task": "Crea un riferimento r legato alla variabile esistente x in modo che entrambi i nomi identifichino la stessa cella di memoria."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_5",
+      "english": "Lvalue Reference",
+      "set": {
+        "task": "Dichiara un riferimento lvalue ref alla variabile con nome x per poterla manipolare senza copie."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_5",
+      "english": "Const Reference",
+      "set": {
+        "task": "Dichiara una funzione f che accetta una std::string per riferimento const per evitare copie e proibire modifiche."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_5",
+      "english": "Pass by Reference",
+      "set": {
+        "task": "Definisci la funzione inc che riceve un intero per riferimento e ne incrementa il valore originale di uno."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_5",
+      "english": "Pass by Value",
+      "set": {
+        "task": "Dichiara una funzione f che riceve un intero n per valore producendo una copia locale del parametro."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_5",
+      "english": "Return by Reference",
+      "set": {
+        "task": "Dichiara la funzione at che restituisce per riferimento l'elemento i-esimo di un std::vector<int> per permettere modifiche in-place."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_5",
+      "english": "Range For Loop",
+      "set": {
+        "task": "Itera tutti gli elementi del container vec con un ciclo range-based for usando auto& per evitare copie."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_5",
+      "english": "Auto Reference",
+      "set": {
+        "task": "Scorri vec catturando ogni elemento come auto& item per modificarlo in-place senza specificare il tipo esplicito."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_6",
+      "english": "Function Overloading",
+      "set": {
+        "task": "Dichiara due overload della funzione add: uno per coppie di int e uno per coppie di double."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_6",
+      "english": "Default Argument",
+      "set": {
+        "task": "Dichiara la funzione f con un argomento di default x pari a 0 per permettere chiamate senza argomenti."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_6",
+      "english": "Inline Function",
+      "set": {
+        "task": "Definisci una funzione inline sq che restituisce il quadrato di un intero suggerendo al compilatore di espanderla."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_6",
+      "english": "Const Method",
+      "set": {
+        "task": "Dichiara un metodo size marcato const che restituisce un intero senza modificare lo stato dell'oggetto."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_6",
+      "english": "String Object",
+      "set": {
+        "task": "Crea un oggetto std::string chiamato s inizializzato con il letterale hello e dotato di gestione automatica della memoria."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_6",
+      "english": "String Concatenation",
+      "set": {
+        "task": "Concatena due std::string a e b con l'operatore + e salva il risultato in una nuova stringa s."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_6",
+      "english": "String Length",
+      "set": {
+        "task": "Ricava la lunghezza della stringa s invocando il metodo size() e salvala in una variabile auto."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_6",
+      "english": "String Literal",
+      "set": {
+        "task": "Crea una std::string s dal letterale hello usando il suffisso s introdotto in C++14."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_6",
+      "english": "C-Style String",
+      "set": {
+        "task": "Dichiara una stringa stile C come puntatore const char* inizializzato con il letterale hi terminato da null."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_7",
+      "english": "Boolean Literal",
+      "set": {
+        "task": "Assegna il letterale booleano true al flag ok per indicare che un'operazione è andata a buon fine."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_7",
+      "english": "Logical Operator",
+      "set": {
+        "task": "Combina due condizioni a e b con l'operatore logico && in un if per eseguire un blocco solo se entrambe sono vere."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_7",
+      "english": "Enum",
+      "set": {
+        "task": "Definisci un'enumerazione Color con i tre valori RED, GREEN e BLUE per rappresentare i canali base."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_7",
+      "english": "Enum Class",
+      "set": {
+        "task": "Dichiara un enum class Color con i valori Red e Green per ottenere costanti con scope forte e tipizzate."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_7",
+      "english": "Scoped Enum",
+      "set": {
+        "task": "Assegna il valore Color::Red alla variabile c sfruttando uno scoped enum per evitare collisioni di nomi."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_7",
+      "english": "Underlying Type",
+      "set": {
+        "task": "Definisci un enum class Code con tipo sottostante uint8_t per limitarne l'occupazione di memoria a un byte."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_7",
+      "english": "Switch Statement",
+      "set": {
+        "task": "Scrivi un'istruzione switch su una variabile c di tipo Color con un case dedicato a Color::Red."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_7",
+      "english": "Case Label",
+      "set": {
+        "task": "Aggiungi un'etichetta case 1 in uno switch che chiama doSomething() e termina con break per evitare il fall-through."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_7",
+      "english": "Constexpr",
+      "set": {
+        "task": "Marca la funzione sq come constexpr in modo che il compilatore possa valutarla a tempo di compilazione."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_8",
+      "english": "iostream",
+      "set": {
+        "task": "Includi l'header iostream per abilitare gli stream standard di input e output nel tuo file."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_8",
+      "english": "std::cerr",
+      "set": {
+        "task": "Scrivi il messaggio Error sullo standard error con std::cerr per garantire la stampa anche dopo un crash."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_8",
+      "english": "std::clog",
+      "set": {
+        "task": "Scrivi un messaggio info sul log standard std::clog sfruttandone il buffering per ridurre il costo di I/O."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_8",
+      "english": "Stream Manipulator",
+      "set": {
+        "task": "Applica il manipolatore di stream std::setw(5) prima di stampare x per allineare l'output su 5 colonne."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_8",
+      "english": "File Stream",
+      "set": {
+        "task": "Apri il file data.txt in lettura tramite uno stream std::ifstream chiamato f."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_8",
+      "english": "Output File Stream",
+      "set": {
+        "task": "Apri il file log.txt in scrittura attraverso uno stream di output std::ofstream chiamato out."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_8",
+      "english": "GetLine",
+      "set": {
+        "task": "Leggi un'intera riga di testo dallo standard input nella variabile line con std::getline preservando gli spazi."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_8",
+      "english": "Buffer Flush",
+      "set": {
+        "task": "Forza lo svuotamento del buffer di std::cout dopo aver stampato la lettera x usando std::flush."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_8",
+      "english": "Stream State",
+      "set": {
+        "task": "Verifica con il metodo good() che lo stream in sia in stato valido prima di leggere ulteriori dati."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_8",
+      "english": "EOF",
+      "set": {
+        "task": "Itera lo stream di input in finché eof() non segnala il raggiungimento della fine del file."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_1",
+      "english": "Member Variable",
+      "set": {
+        "task": "Definisci una classe A con una variabile membro intera x che ne rappresenta lo stato interno."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_1",
+      "english": "Member Function",
+      "set": {
+        "task": "Aggiungi alla classe A una funzione membro run che agisce sui dati membro dell'oggetto."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_1",
+      "english": "Constructor",
+      "set": {
+        "task": "Aggiungi un costruttore di default alla classe A che inizializza l'oggetto al momento della creazione."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_1",
+      "english": "Destructor",
+      "set": {
+        "task": "Dichiara un distruttore ~A() vuoto sulla classe A per rilasciare automaticamente le risorse a fine vita."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_1",
+      "english": "This Pointer",
+      "set": {
+        "task": "Assegna il valore 5 alla variabile membro x tramite il puntatore this all'interno di un metodo."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_1",
+      "english": "Object Instance",
+      "set": {
+        "task": "Crea due istanze indipendenti a1 e a2 della classe A sullo stack con una sola dichiarazione."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_1",
+      "english": "Class Definition",
+      "set": {
+        "task": "Scrivi la definizione di una classe Box terminandola correttamente con il punto e virgola finale."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_1",
+      "english": "Struct",
+      "set": {
+        "task": "Definisci una struct Point con due campi interi pubblici x e y per rappresentare una coordinata 2D."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_1",
+      "english": "Member Initializer List",
+      "set": {
+        "task": "Scrivi un costruttore A che inizializza i membri x e y a zero tramite la lista di inizializzazione."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_2",
+      "english": "Public",
+      "set": {
+        "task": "Marca il metodo getValue come public esponendolo come parte ufficiale dell'API della classe."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_2",
+      "english": "Private",
+      "set": {
+        "task": "Dichiara come private il campo balance per impedire l'accesso diretto dall'esterno della classe."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_2",
+      "english": "Protected",
+      "set": {
+        "task": "Marca il contatore counter come protected per renderlo visibile solo alle classi derivate."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_2",
+      "english": "Getter",
+      "set": {
+        "task": "Definisci un getter getX const che restituisce il valore della variabile membro x senza modificarla."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_2",
+      "english": "Setter",
+      "set": {
+        "task": "Scrivi un setter setX che riceve un intero v e lo assegna al campo membro x."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_2",
+      "english": "Friend",
+      "set": {
+        "task": "Dichiara la classe Bar come friend per concederle accesso ai membri privati dell'attuale classe."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_3",
+      "english": "Default Constructor",
+      "set": {
+        "task": "Forza la generazione del costruttore di default sulla classe A con la sintassi = default."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_3",
+      "english": "Copy Constructor",
+      "set": {
+        "task": "Dichiara il costruttore di copia di A che accetta un riferimento const al sorgente other."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_3",
+      "english": "Copy Assignment",
+      "set": {
+        "task": "Dichiara l'operatore di assegnazione di copia di A che restituisce un riferimento al destinatario."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_3",
+      "english": "Move Constructor",
+      "set": {
+        "task": "Dichiara un costruttore di spostamento noexcept per la classe A che trasferisce le risorse da un rvalue."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_3",
+      "english": "Move Assignment",
+      "set": {
+        "task": "Dichiara per A un operator= di move noexcept che restituisce un riferimento e accetta un rvalue."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_3",
+      "english": "Explicit Constructor",
+      "set": {
+        "task": "Marca con explicit il costruttore A(int) per impedire conversioni implicite da int a A."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_3",
+      "english": "Delegating Constructor",
+      "set": {
+        "task": "Implementa il costruttore di default di A in modo che deleghi al costruttore A(int) passando 0."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_3",
+      "english": "Defaulted Function",
+      "set": {
+        "task": "Genera automaticamente il costruttore di default di A con la sintassi = default lasciando l'implementazione al compilatore."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_3",
+      "english": "Deleted Function",
+      "set": {
+        "task": "Disabilita esplicitamente il costruttore di copia di A marcandolo come = delete per impedirne l'uso."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_4",
+      "english": "Static Member",
+      "set": {
+        "task": "Aggiungi alla classe A un membro statico count condiviso da tutte le istanze della classe."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_4",
+      "english": "Static Function",
+      "set": {
+        "task": "Dichiara una funzione statica total che opera a livello di classe senza richiedere un'istanza."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_4",
+      "english": "Static Initialization",
+      "set": {
+        "task": "Definisci fuori dalla classe il membro statico A::count inizializzandolo a zero per fornirne lo storage."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_4",
+      "english": "Inline Variable",
+      "set": {
+        "task": "Dichiara una variabile inline static count inizializzata a zero per poterla definire direttamente in un header."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_4",
+      "english": "Singleton",
+      "set": {
+        "task": "Dichiara il metodo statico instance che restituisce un riferimento all'unica istanza A del singleton."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_4",
+      "english": "Class Constant",
+      "set": {
+        "task": "Definisci una costante di classe MAX come static constexpr int con valore 100 condivisa e immutabile."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_4",
+      "english": "Member Pointer",
+      "set": {
+        "task": "Dichiara un puntatore a membro ptr che riferisce il campo x della classe A."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_4",
+      "english": "Nested Class",
+      "set": {
+        "task": "Inserisci dentro la classe A una classe annidata B che ne ridefinisce lo scope di visibilità."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cpp_oop_5",
+      "english": "Base Class",
+      "set": {
+        "task": "Definisci una classe base Animal che farà da genitore in una gerarchia di ereditarietà."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cpp_oop_5",
+      "english": "Derived Class",
+      "set": {
+        "task": "Crea la classe derivata Dog che eredita pubblicamente dalla classe Animal."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cpp_oop_5",
+      "english": "Public Inheritance",
+      "set": {
+        "task": "Dichiara la classe Cat come derivata di Animal tramite ereditarietà pubblica per modellare una relazione is-a."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cpp_oop_5",
+      "english": "Private Inheritance",
+      "set": {
+        "task": "Fai ereditare la classe A da B tramite ereditarietà privata per riusarne l'implementazione senza esporne l'interfaccia."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cpp_oop_5",
+      "english": "Constructor Chaining",
+      "set": {
+        "task": "Implementa il costruttore di Dog in modo che concateni al costruttore di Animal passando la stringa dog."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cpp_oop_6",
+      "english": "Virtual Function",
+      "set": {
+        "task": "Dichiara nella classe base una funzione virtuale speak per abilitare il dispatch dinamico nelle classi derivate."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cpp_oop_6",
+      "english": "Override Keyword",
+      "set": {
+        "task": "Sovrascrivi nella classe derivata la funzione speak marcando esplicitamente la dichiarazione con override."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cpp_oop_6",
+      "english": "Final Keyword",
+      "set": {
+        "task": "Marca la funzione speak come final per impedire a ulteriori classi derivate di sovrascriverla."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cpp_oop_6",
+      "english": "Virtual Destructor",
+      "set": {
+        "task": "Aggiungi alla classe Base un distruttore virtuale di default per consentire delete sicuri attraverso puntatore alla base."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cpp_oop_6",
+      "english": "Multiple Inheritance",
+      "set": {
+        "task": "Definisci la classe C che eredita pubblicamente sia da A che da B sfruttando l'ereditarietà multipla."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cpp_oop_6",
+      "english": "Virtual Inheritance",
+      "set": {
+        "task": "Fai ereditare la classe B da A in modo virtuale per evitare duplicazioni del sottooggetto in gerarchie a diamante."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cpp_oop_6",
+      "english": "Using Declaration",
+      "set": {
+        "task": "Inserisci nella classe derivata una dichiarazione using Base::method per rendere visibili gli overload nascosti dalla base."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cpp_oop_7",
+      "english": "Abstract Class",
+      "set": {
+        "task": "Trasforma Shape in classe astratta dichiarando draw come funzione virtuale pura uguagliata a zero."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cpp_oop_7",
+      "english": "Pure Virtual",
+      "set": {
+        "task": "Dichiara la funzione f come puramente virtuale aggiungendo = 0 per obbligare le sottoclassi a implementarla."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cpp_oop_8",
+      "english": "Polymorphic Container",
+      "set": {
+        "task": "Costruisci un vettore zoo di std::unique_ptr<Animal> in grado di contenere sottotipi diversi gestiti polimorficamente."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cpp_oop_8",
+      "english": "Up-Cast",
+      "set": {
+        "task": "Esegui un up-cast implicito assegnando un puntatore Dog appena creato a un puntatore Animal."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cpp_oop_8",
+      "english": "Down-Cast",
+      "set": {
+        "task": "Effettua un down-cast sicuro da Animal* a Dog* utilizzando dynamic_cast e controllando l'eventuale nullptr."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cpp_oop_9",
+      "english": "typeid",
+      "set": {
+        "task": "Ricava informazioni sul tipo dinamico puntato da p invocando typeid sull'oggetto dereferenziato e salvando la reference."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cpp_oop_9",
+      "english": "Dynamic Cast",
+      "set": {
+        "task": "Converti il puntatore polimorfico a in un Dog* con dynamic_cast e gestisci esplicitamente il caso di fallimento."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cpp_oop_10",
+      "english": "Pure Virtual Function",
+      "set": {
+        "task": "Dichiara la funzione virtuale draw come pura assegnandole = 0 per rendere astratta la classe contenitore."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cpp_oop_10",
+      "english": "Sealed Class",
+      "set": {
+        "task": "Marca la classe Foo come final per sigillarla e impedire qualsiasi ulteriore ereditarietà."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cpp_oop_11",
+      "english": "Precondition",
+      "set": {
+        "task": "Verifica con assert che il puntatore p non sia nullptr come precondizione prima di procedere con la sua dereferenziazione."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cpp_oop_12",
+      "english": "Variant Polymorphism",
+      "set": {
+        "task": "Dichiara una variabile animal di tipo std::variant<Cat, Dog> per modellare polimorficamente uno tra Cat e Dog."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cpp_oop_12",
+      "english": "CRTP",
+      "set": {
+        "task": "Dichiara un template Base parametrizzato su T come scheletro del pattern CRTP per condividere funzionalità senza virtual."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cpp_oop_13",
+      "english": "Operator Overloading",
+      "set": {
+        "task": "Sovraccarica l'operatore + per la classe Vec come funzione libera che riceve due Vec per riferimento const."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cpp_oop_13",
+      "english": "Operator Plus",
+      "set": {
+        "task": "Dichiara dentro Vec l'operator+ membro che riceve un altro Vec per riferimento const e restituisce la somma."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cpp_oop_13",
+      "english": "Operator Minus",
+      "set": {
+        "task": "Definisci l'operator- per Vec che sottrae componente a componente un altro Vec passato per riferimento const."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cpp_oop_13",
+      "english": "Compound Assignment",
+      "set": {
+        "task": "Implementa l'operatore di assegnazione composta += per Vec che accumula in-place e restituisce un riferimento all'oggetto."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cpp_oop_13",
+      "english": "Unary Operator",
+      "set": {
+        "task": "Definisci un operatore unario - su Vec marcato const che restituisce un nuovo Vec con segno opposto."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cpp_oop_13",
+      "english": "Increment Operator",
+      "set": {
+        "task": "Sovraccarica il pre-incremento ++ sulla classe A restituendo un riferimento all'oggetto dopo l'aggiornamento."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cpp_oop_13",
+      "english": "Decrement Operator",
+      "set": {
+        "task": "Sovraccarica il pre-decremento -- sulla classe A restituendo un riferimento all'oggetto dopo la diminuzione."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cpp_oop_14",
+      "english": "Equality Operator",
+      "set": {
+        "task": "Definisci l'operatore di uguaglianza operator== const su A che confronta i membri di due oggetti."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cpp_oop_14",
+      "english": "Inequality Operator",
+      "set": {
+        "task": "Implementa l'operatore di disuguaglianza operator!= const su A coerentemente con la definizione di operator==."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cpp_oop_14",
+      "english": "Less Than",
+      "set": {
+        "task": "Dichiara su A l'operatore minore-di operator< const per renderla ordinabile da std::sort."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cpp_oop_14",
+      "english": "Spaceship Operator",
+      "set": {
+        "task": "Aggiungi su A un operatore spaceship <=> messo a default per generare automaticamente tutti gli operatori di confronto."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cpp_oop_14",
+      "english": "Default Comparison",
+      "set": {
+        "task": "Lascia che il compilatore generi il confronto di uguaglianza membro per membro dichiarando operator== const = default."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cpp_oop_14",
+      "english": "Implicit Bool",
+      "set": {
+        "task": "Definisci un operatore di conversione a bool marcato explicit per consentire l'uso dell'oggetto in condizioni if."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cpp_oop_15",
+      "english": "Stream Operator",
+      "set": {
+        "task": "Dichiara come funzione libera l'operator<< che inserisce un oggetto A in un std::ostream e ne restituisce il riferimento."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cpp_oop_15",
+      "english": "Subscript Operator",
+      "set": {
+        "task": "Sovraccarica l'operatore di indicizzazione [] su una classe restituendo per riferimento l'elemento all'indice i."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cpp_oop_15",
+      "english": "Function Call Operator",
+      "set": {
+        "task": "Implementa l'operator() const sulla classe per trasformarla in un functor invocabile come una funzione su un intero."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cpp_oop_15",
+      "english": "Conversion Operator",
+      "set": {
+        "task": "Definisci un operatore di conversione const verso double che restituisce una rappresentazione numerica dell'oggetto."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cpp_oop_15",
+      "english": "Friend Function",
+      "set": {
+        "task": "Dichiara come funzione amica l'operator<< per std::ostream e A in modo che possa accedere ai membri privati."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cpp_oop_15",
+      "english": "Arrow Operator",
+      "set": {
+        "task": "Sovraccarica l'operatore freccia -> in modo che restituisca un puntatore al tipo T da rivelare al chiamante."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cpp_oop_15",
+      "english": "New/Delete Overload",
+      "set": {
+        "task": "Sovraccarica operator new accettando un size_t per instradare le allocazioni della classe verso un allocatore custom."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cpp_oop_16",
+      "english": "User-Defined Literal",
+      "set": {
+        "task": "Crea un letterale definito dall'utente _km e usalo per esprimere 10 chilometri come 10_km."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cpp_oop_16",
+      "english": "Self-Assignment",
+      "set": {
+        "task": "Proteggi l'operator= controllando l'auto-assegnazione con un confronto tra this e l'indirizzo di other prima della logica di copia."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_1",
+      "english": "Vector",
+      "set": {
+        "task": "Costruisci un std::vector<int> chiamato v inizializzato con i tre valori 1, 2 e 3 tramite brace initialization."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_1",
+      "english": "List",
+      "set": {
+        "task": "Dichiara una std::list<int> vuota chiamata l da popolare in seguito sfruttando il doppio collegamento dei nodi."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_1",
+      "english": "Forward List",
+      "set": {
+        "task": "Dichiara una std::forward_list<int> fl che usa una lista a collegamento singolo per ridurre overhead di memoria."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_1",
+      "english": "Deque",
+      "set": {
+        "task": "Crea una std::deque<int> dq per gestire inserimenti e rimozioni in O(1) sia in testa sia in coda."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_1",
+      "english": "Array",
+      "set": {
+        "task": "Dichiara un std::array di 5 interi chiamato a per ottenere un array a dimensione fissa con interfaccia STL."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_1",
+      "english": "Span",
+      "set": {
+        "task": "Costruisci una std::span<int> view che riferisce gli elementi di vec senza copiarne i dati."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_1",
+      "english": "Capacity",
+      "set": {
+        "task": "Recupera la capacità allocata del vettore v richiamando il metodo capacity() per controllare lo spazio riservato."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_1",
+      "english": "Reserve",
+      "set": {
+        "task": "Riserva preventivamente spazio per 1000 elementi nel vettore v con reserve(1000) per evitare riallocazioni durante l'inserimento."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_1",
+      "english": "Push Back",
+      "set": {
+        "task": "Aggiungi il valore 42 in coda al vettore v invocando il metodo push_back."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_1",
+      "english": "Emplace Back",
+      "set": {
+        "task": "Costruisci in coda al vettore v un nuovo elemento passando direttamente gli argomenti 1 e 2 a emplace_back."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_2",
+      "english": "Map",
+      "set": {
+        "task": "Dichiara una std::map che associa chiavi std::string a valori int mantenendole ordinate alfabeticamente."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_2",
+      "english": "Set",
+      "set": {
+        "task": "Crea un std::set<int> chiamato s per memorizzare interi unici e mantenerli automaticamente ordinati."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_2",
+      "english": "Multimap",
+      "set": {
+        "task": "Dichiara una std::multimap<int, std::string> mm capace di contenere più valori associati alla stessa chiave numerica."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_2",
+      "english": "Multiset",
+      "set": {
+        "task": "Dichiara un std::multiset<int> chiamato ms per mantenere ordinati anche valori duplicati."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_2",
+      "english": "Unordered Map",
+      "set": {
+        "task": "Crea un std::unordered_map che mappa std::string a int sfruttando una tabella hash per lookup medi in O(1)."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_2",
+      "english": "Unordered Set",
+      "set": {
+        "task": "Crea un std::unordered_set<int> chiamato us basato su hash per garantire test di appartenenza in tempo costante medio."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_2",
+      "english": "Hash Function",
+      "set": {
+        "task": "Invoca std::hash<std::string> sulla stringa s ricavandone il valore hash da usare come identificatore."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_2",
+      "english": "Insert",
+      "set": {
+        "task": "Inserisci nella mappa m la coppia chiave-valore (k, v) catturando con destructuring l'iteratore e il flag di successo."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_2",
+      "english": "Find",
+      "set": {
+        "task": "Cerca la chiave key nella mappa m con il metodo find e conserva l'iteratore restituito in it."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_3",
+      "english": "Stack Adapter",
+      "set": {
+        "task": "Dichiara un std::stack<int> chiamato st come adattatore LIFO sopra un container sottostante predefinito."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_3",
+      "english": "Queue Adapter",
+      "set": {
+        "task": "Dichiara una std::queue<int> q come adattatore FIFO per gestire elementi in ordine di arrivo."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_3",
+      "english": "Priority Queue",
+      "set": {
+        "task": "Crea una std::priority_queue<int> pq che restituisce sempre da top() l'elemento con priorità più alta."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_3",
+      "english": "Top",
+      "set": {
+        "task": "Recupera in v l'elemento attualmente in cima allo stack st chiamando il metodo top() senza rimuoverlo."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_3",
+      "english": "Pop",
+      "set": {
+        "task": "Rimuovi l'elemento in cima allo stack st invocando pop() dopo averne letto il valore con top()."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_3",
+      "english": "Front",
+      "set": {
+        "task": "Ottieni l'elemento in testa alla queue q tramite il metodo front() e salvalo nella variabile v."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_3",
+      "english": "Back",
+      "set": {
+        "task": "Recupera con back() l'ultimo elemento inserito nella queue q senza rimuoverlo dalla coda."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_3",
+      "english": "Empty Check",
+      "set": {
+        "task": "Verifica con il metodo empty() che il container v non sia vuoto prima di accedere ai suoi elementi."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_4",
+      "english": "Iterator",
+      "set": {
+        "task": "Ottieni l'iteratore al primo elemento del vettore v invocando il metodo begin() e salvalo in it."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_4",
+      "english": "Begin",
+      "set": {
+        "task": "Recupera con begin() un iteratore al primo elemento del container v come punto di partenza della traversata."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_4",
+      "english": "End",
+      "set": {
+        "task": "Ottieni con end() l'iteratore sentinella appena oltre l'ultimo elemento del container v senza dereferenziarlo."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_4",
+      "english": "Const Iterator",
+      "set": {
+        "task": "Richiedi un iteratore const al container v invocando cbegin() per garantire l'immutabilità degli elementi visitati."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_4",
+      "english": "Reverse Iterator",
+      "set": {
+        "task": "Scorri il container v dall'ultimo al primo elemento usando un iteratore inverso ottenuto con rbegin() e rend()."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_4",
+      "english": "Iterator Adapter",
+      "set": {
+        "task": "Copia tutti gli elementi di a nel container b passando a std::copy l'adattatore di iteratori std::back_inserter."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_5",
+      "english": "Sort",
+      "set": {
+        "task": "Ordina in-place il vettore v in ordine crescente chiamando std::sort sull'intervallo begin/end."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_5",
+      "english": "Stable Sort",
+      "set": {
+        "task": "Ordina il vettore v con std::stable_sort per preservare l'ordine relativo degli elementi considerati uguali."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_5",
+      "english": "Std Find Algorithm",
+      "set": {
+        "task": "Cerca il valore x nel vettore v con l'algoritmo std::find sull'intervallo begin/end e conserva l'iteratore risultante."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_5",
+      "english": "Find If",
+      "set": {
+        "task": "Individua nel vettore v il primo elemento che soddisfa il predicato pred utilizzando std::find_if."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_5",
+      "english": "Binary Search",
+      "set": {
+        "task": "Verifica con std::binary_search se il valore x è presente nel vettore ordinato v in tempo logaritmico."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_5",
+      "english": "Lower Bound",
+      "set": {
+        "task": "Trova con std::lower_bound il primo iteratore in v il cui valore non sia minore di x."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_5",
+      "english": "Upper Bound",
+      "set": {
+        "task": "Trova con std::upper_bound il primo iteratore in v il cui valore sia strettamente maggiore di x."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_5",
+      "english": "Min Element",
+      "set": {
+        "task": "Individua l'elemento minimo nel vettore v invocando std::min_element sull'intervallo begin/end."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_5",
+      "english": "Max Element",
+      "set": {
+        "task": "Recupera con std::max_element l'iteratore al valore massimo presente nel vettore v."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_5",
+      "english": "Comparator",
+      "set": {
+        "task": "Ordina il vettore v in modo decrescente passando std::greater<>{} come comparatore a std::sort."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_6",
+      "english": "Transform",
+      "set": {
+        "task": "Applica la funzione f a ogni elemento di a scrivendo il risultato in b tramite l'algoritmo std::transform."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_6",
+      "english": "Copy",
+      "set": {
+        "task": "Copia con std::copy gli elementi di a nel container b a partire dal suo iteratore di inizio."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_6",
+      "english": "Move",
+      "set": {
+        "task": "Sposta tutti gli elementi da a verso b con std::move trasferendone la proprietà senza copie profonde."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_6",
+      "english": "Fill",
+      "set": {
+        "task": "Riempi il vettore v con il valore 0 attraverso std::fill applicato all'intervallo begin/end."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_6",
+      "english": "Generate",
+      "set": {
+        "task": "Popola il vettore v invocando std::generate con un generatore rng che produce ogni nuovo valore."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_6",
+      "english": "Replace",
+      "set": {
+        "task": "Sostituisci nel vettore v ogni occorrenza di 0 con 1 utilizzando l'algoritmo std::replace."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_6",
+      "english": "Remove",
+      "set": {
+        "task": "Sposta in fondo a v tutte le occorrenze di 0 con std::remove e conserva l'iteratore al nuovo end logico."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_6",
+      "english": "Erase Remove Idiom",
+      "set": {
+        "task": "Elimina fisicamente tutte le occorrenze di 0 da v applicando l'idioma erase-remove con std::remove ed erase."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_6",
+      "english": "Unique",
+      "set": {
+        "task": "Comprimi i duplicati consecutivi nel vettore v invocando std::unique e conservando l'iteratore al nuovo end logico."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_6",
+      "english": "Reverse",
+      "set": {
+        "task": "Inverti in-place l'ordine degli elementi nel vettore v applicando std::reverse sull'intervallo begin/end."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_7",
+      "english": "Accumulate",
+      "set": {
+        "task": "Calcola la somma di tutti gli elementi di v partendo da 0 invocando std::accumulate dall'header numeric."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_7",
+      "english": "Reduce",
+      "set": {
+        "task": "Aggrega gli elementi di v con std::reduce sfruttando la potenziale esecuzione parallela introdotta in C++17."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_7",
+      "english": "Inner Product",
+      "set": {
+        "task": "Calcola con std::inner_product il prodotto scalare tra i vettori a e b partendo dall'accumulatore 0."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_7",
+      "english": "Partial Sum",
+      "set": {
+        "task": "Genera nel vettore b le somme parziali progressive dei valori di a invocando std::partial_sum."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_7",
+      "english": "Adjacent Difference",
+      "set": {
+        "task": "Scrivi in b le differenze tra elementi consecutivi di a applicando std::adjacent_difference."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_7",
+      "english": "Iota",
+      "set": {
+        "task": "Riempi il vettore v con la sequenza 0, 1, 2, ... usando std::iota a partire dal valore iniziale 0."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_7",
+      "english": "Count",
+      "set": {
+        "task": "Conta con std::count quante volte il valore 1 compare nel vettore v lungo l'intervallo begin/end."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_7",
+      "english": "Count If",
+      "set": {
+        "task": "Conta con std::count_if quanti elementi di v soddisfano il predicato pred passato come terzo argomento."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_7",
+      "english": "All Of",
+      "set": {
+        "task": "Verifica con std::all_of che tutti gli elementi di v rispettino la condizione descritta dal predicato pred."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_7",
+      "english": "Any Of",
+      "set": {
+        "task": "Verifica con std::any_of se almeno un elemento di v soddisfa il predicato pred passato all'algoritmo."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_8",
+      "english": "Ranges Library",
+      "set": {
+        "task": "Includi l'header <ranges> per abilitare la libreria ranges di C++20 con i suoi algoritmi e adattatori."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_8",
+      "english": "Range",
+      "set": {
+        "task": "Ordina il container v in-place passandolo direttamente come range a std::ranges::sort senza iteratori espliciti."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_8",
+      "english": "View",
+      "set": {
+        "task": "Costruisci una view lazy degli interi da 0 a 9 utilizzando std::views::iota e salvala in v."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_8",
+      "english": "Filter View",
+      "set": {
+        "task": "Crea una vista filtro evens che lascia passare solo gli elementi pari del vettore v tramite std::views::filter."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_8",
+      "english": "Transform View",
+      "set": {
+        "task": "Crea una vista sq che eleva al quadrato ogni elemento di v tramite std::views::transform con una lambda."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_8",
+      "english": "Take View",
+      "set": {
+        "task": "Costruisci una vista first3 con std::views::take che restituisce solo i primi tre elementi del range v."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_8",
+      "english": "Drop View",
+      "set": {
+        "task": "Costruisci una vista rest con std::views::drop che salta i primi tre elementi del range v."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_8",
+      "english": "Pipe Operator",
+      "set": {
+        "task": "Concatena con l'operatore pipe la view filter(p) e transform(f) sul range v per comporre una pipeline lazy."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cpp_stl_8",
+      "english": "Range Algorithm",
+      "set": {
+        "task": "Cerca il valore x nel container v con l'algoritmo su range std::ranges::find passando direttamente v come argomento."
+      }
+    }
+  ]
+}

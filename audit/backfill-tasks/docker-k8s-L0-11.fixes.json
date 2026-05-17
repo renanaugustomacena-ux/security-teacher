@@ -1,0 +1,2052 @@
+{
+  "fixes": [
+    {
+      "level": "0",
+      "lesson": "dk_containers_1",
+      "english": "Image",
+      "set": {
+        "task": "Elenca tutte le immagini Docker presenti localmente sulla macchina."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dk_containers_3",
+      "english": "Image Manifest",
+      "set": {
+        "task": "Definisci un manifest OCI con schemaVersion 2 e l'elenco dei layer che compongono l'immagine."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dk_containers_4",
+      "english": "Skopeo",
+      "set": {
+        "task": "Copia l'immagine nginx:latest da Docker Hub al registry myregistry usando Skopeo senza scaricarla localmente."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_1",
+      "english": "docker run",
+      "set": {
+        "task": "Avvia un container basato sull'immagine nginx con la configurazione di default."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_1",
+      "english": "Detached Mode",
+      "set": {
+        "task": "Avvia il container nginx in modalità detached così continua a girare in background."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_1",
+      "english": "Interactive Mode",
+      "set": {
+        "task": "Apri una shell bash interattiva all'interno di un container Ubuntu collegando il terminale."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_1",
+      "english": "Container Name",
+      "set": {
+        "task": "Esegui un container nginx assegnandogli il nome 'myapp' per referenziarlo facilmente."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_1",
+      "english": "Port Mapping",
+      "set": {
+        "task": "Pubblica la porta 80 del container nginx sulla porta 8080 dell'host."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_1",
+      "english": "Environment Variable",
+      "set": {
+        "task": "Avvia il container myapp iniettando la variabile d'ambiente DB_HOST con valore localhost."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_1",
+      "english": "Restart Policy",
+      "set": {
+        "task": "Esegui nginx impostando la politica di riavvio su unless-stopped per ripartire automaticamente dopo i crash."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_1",
+      "english": "Auto-Remove",
+      "set": {
+        "task": "Lancia un container Alpine usa-e-getta che stampa 'hello' e viene rimosso automaticamente alla terminazione."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_1",
+      "english": "Resource Limits",
+      "set": {
+        "task": "Avvia un container nginx limitando il consumo a 512 MB di memoria e 1.5 CPU."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_2",
+      "english": "docker ps",
+      "set": {
+        "task": "Mostra l'elenco dei container attualmente in esecuzione."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_2",
+      "english": "docker ps -a",
+      "set": {
+        "task": "Elenca tutti i container presenti sull'host, inclusi quelli fermati o usciti."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_2",
+      "english": "docker stop",
+      "set": {
+        "task": "Ferma in modo ordinato il container chiamato myapp inviandogli SIGTERM."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_2",
+      "english": "docker kill",
+      "set": {
+        "task": "Termina forzatamente il container myapp inviando SIGKILL senza attendere uno spegnimento pulito."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_2",
+      "english": "docker rm",
+      "set": {
+        "task": "Rimuovi dal sistema il container fermato chiamato myapp liberandone lo spazio."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_2",
+      "english": "Force Remove",
+      "set": {
+        "task": "Forza la rimozione del container myapp anche se è ancora in esecuzione."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_2",
+      "english": "docker start",
+      "set": {
+        "task": "Riavvia il container myapp precedentemente fermato senza ricrearlo."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_2",
+      "english": "docker restart",
+      "set": {
+        "task": "Riavvia il container myapp fermandolo e rimettendolo subito in esecuzione."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_2",
+      "english": "docker pause",
+      "set": {
+        "task": "Sospendi tutti i processi del container myapp usando il cgroup freezer."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_2",
+      "english": "docker rename",
+      "set": {
+        "task": "Cambia il nome del container da 'old' a 'new' senza ricrearlo."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_3",
+      "english": "docker pull",
+      "set": {
+        "task": "Scarica dal registry la versione 1.25 dell'immagine nginx."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_3",
+      "english": "docker push",
+      "set": {
+        "task": "Carica l'immagine taggata myuser/myapp:1.0 sul registry remoto."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_3",
+      "english": "docker images",
+      "set": {
+        "task": "Mostra l'elenco delle immagini Docker presenti localmente."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_3",
+      "english": "docker rmi",
+      "set": {
+        "task": "Elimina dalla cache locale l'immagine nginx:1.25 per liberare spazio disco."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_3",
+      "english": "docker tag",
+      "set": {
+        "task": "Crea il nuovo tag myapp:1.0 puntandolo all'immagine myapp:latest."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_3",
+      "english": "docker pull --all-tags",
+      "set": {
+        "task": "Scarica tutti i tag dell'immagine nginx disponibili sul registry."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_3",
+      "english": "docker save",
+      "set": {
+        "task": "Esporta l'immagine nginx:latest in un archivio tar chiamato nginx.tar."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_3",
+      "english": "docker load",
+      "set": {
+        "task": "Carica nel motore Docker locale l'immagine contenuta nell'archivio nginx.tar."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_3",
+      "english": "docker pull --platform",
+      "set": {
+        "task": "Scarica la variante linux/arm64 dell'immagine nginx ignorando l'architettura corrente."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_4",
+      "english": "docker logs",
+      "set": {
+        "task": "Visualizza i log generati dal container myapp."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_4",
+      "english": "docker logs -f",
+      "set": {
+        "task": "Segui in tempo reale i log del container myapp via tail."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_4",
+      "english": "docker exec",
+      "set": {
+        "task": "Apri una shell bash interattiva dentro il container myapp in esecuzione."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_4",
+      "english": "docker inspect",
+      "set": {
+        "task": "Mostra i metadati completi del container myapp in formato JSON."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_4",
+      "english": "docker stats",
+      "set": {
+        "task": "Visualizza in tempo reale le statistiche di CPU, memoria e I/O dei container attivi."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_4",
+      "english": "docker top",
+      "set": {
+        "task": "Elenca i processi in esecuzione dentro il container myapp."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_4",
+      "english": "docker port",
+      "set": {
+        "task": "Mostra le mappature di porte attive per il container myapp."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_4",
+      "english": "docker cp",
+      "set": {
+        "task": "Copia il file file.txt dall'host alla directory /app/ all'interno del container myapp."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_4",
+      "english": "docker diff",
+      "set": {
+        "task": "Mostra le modifiche al filesystem del container myapp rispetto all'immagine di base."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dk_cli_4",
+      "english": "docker events",
+      "set": {
+        "task": "Mostra in tempo reale lo stream degli eventi emessi dal Docker daemon."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dk_dockerfile_1",
+      "english": "FROM",
+      "set": {
+        "task": "Dichiara nel Dockerfile l'immagine base ubuntu:22.04 da cui partire."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dk_dockerfile_1",
+      "english": "RUN",
+      "set": {
+        "task": "Aggiungi al Dockerfile un'istruzione RUN che aggiorna apt e installa il pacchetto curl."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dk_dockerfile_1",
+      "english": "COPY",
+      "set": {
+        "task": "Copia nel Dockerfile il contenuto della cartella src/ del contesto dentro /app/src/ dell'immagine."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dk_dockerfile_1",
+      "english": "ADD",
+      "set": {
+        "task": "Scarica nell'immagine l'archivio file.tar.gz da example.com posizionandolo in /tmp/."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dk_dockerfile_1",
+      "english": "WORKDIR",
+      "set": {
+        "task": "Imposta /app come directory di lavoro per le istruzioni successive del Dockerfile."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dk_dockerfile_1",
+      "english": "EXPOSE",
+      "set": {
+        "task": "Dichiara nel Dockerfile che il container ascolterà sulla porta 8080 a scopo documentale."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dk_dockerfile_1",
+      "english": "CMD",
+      "set": {
+        "task": "Specifica come comando di default del container l'esecuzione di nginx in foreground in forma exec."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dk_dockerfile_1",
+      "english": "LABEL",
+      "set": {
+        "task": "Aggiungi all'immagine la label maintainer con l'email dev@example.com."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dk_dockerfile_1",
+      "english": "docker build",
+      "set": {
+        "task": "Costruisci un'immagine dal Dockerfile nella directory corrente taggandola come myapp:1.0."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dk_dockerfile_2",
+      "english": ".dockerignore",
+      "set": {
+        "task": "Crea un file .dockerignore che escluda dal contesto di build node_modules, .git e i file .log."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dk_dockerfile_2",
+      "english": "Build Argument",
+      "set": {
+        "task": "Costruisci l'immagine passando il build-arg VERSION=2.0 al Dockerfile."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dk_dockerfile_2",
+      "english": "Image Tag",
+      "set": {
+        "task": "Costruisci l'immagine taggandola come myorg/myapp:1.0 dal contesto corrente."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dk_dockerfile_2",
+      "english": "Build Cache",
+      "set": {
+        "task": "Forza la ricostruzione completa dell'immagine myapp ignorando la cache dei layer."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dk_dockerfile_2",
+      "english": "Squash",
+      "set": {
+        "task": "Costruisci l'immagine myapp compattando tutti i layer intermedi in uno solo."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dk_dockerfile_3",
+      "english": "Alpine",
+      "set": {
+        "task": "Usa nel Dockerfile l'immagine base alpine:3.19 per ottenere un'immagine finale leggera."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dk_dockerfile_3",
+      "english": "Distroless",
+      "set": {
+        "task": "Parti dall'immagine distroless gcr.io/distroless/static per eliminare shell e package manager dal container."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dk_dockerfile_3",
+      "english": "Combine RUN",
+      "set": {
+        "task": "Unisci aggiornamento apt, installazione di curl e pulizia delle liste in un'unica istruzione RUN."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dk_dockerfile_3",
+      "english": "Apt Clean",
+      "set": {
+        "task": "Aggiungi un RUN che esegue apt-get clean e rimuove /var/lib/apt/lists/* per ridurre l'immagine."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dk_dockerfile_3",
+      "english": "Image Layers",
+      "set": {
+        "task": "Mostra la cronologia dei layer dell'immagine myapp:1.0 con le dimensioni di ognuno."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dk_dockerfile_3",
+      "english": "Slim Image",
+      "set": {
+        "task": "Parti nel Dockerfile dall'immagine debian:bookworm-slim per ridurre la dimensione finale."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dk_dockerfile_3",
+      "english": "Volume",
+      "set": {
+        "task": "Dichiara nel Dockerfile un volume sul percorso /data per persistere i dati del container."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dk_dockerfile_4",
+      "english": "Semantic Versioning",
+      "set": {
+        "task": "Tagga l'immagine myapp con la versione semantica 1.2.3 nel formato MAJOR.MINOR.PATCH."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dk_dockerfile_4",
+      "english": "Digest",
+      "set": {
+        "task": "Scarica nginx riferendo l'immagine tramite il suo digest SHA256 anziché il tag."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dk_dockerfile_4",
+      "english": "Image Push",
+      "set": {
+        "task": "Pubblica l'immagine myapp:1.0 sul registry privato registry.example.com."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dk_dockerfile_4",
+      "english": "Image Annotation",
+      "set": {
+        "task": "Annota l'immagine con la label OCI image.source che punta al repository github.com/me/repo."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dk_dockerfile_4",
+      "english": "Image Inspect",
+      "set": {
+        "task": "Ispeziona l'immagine nginx:latest per vedere variabili, porte ed entrypoint configurati."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dk_dockerfile_adv_1",
+      "english": "Multi-Stage Build",
+      "set": {
+        "task": "Crea un Dockerfile multi-stage che compila in uno stage golang:1.21 chiamato builder e copia il binario in un'immagine Alpine finale."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dk_dockerfile_adv_1",
+      "english": "AS Stage",
+      "set": {
+        "task": "Nomina lo stage di build come 'build' partendo dall'immagine node:20 per poterlo referenziare in seguito."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dk_dockerfile_adv_1",
+      "english": "COPY --from",
+      "set": {
+        "task": "Copia dalla stage 'build' la cartella /app/dist verso /usr/share/nginx/html nell'immagine finale."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dk_dockerfile_adv_1",
+      "english": "Build Target",
+      "set": {
+        "task": "Costruisci solo lo stage 'build' del Dockerfile taggando il risultato come myapp:dev."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dk_dockerfile_adv_2",
+      "english": "ENTRYPOINT",
+      "set": {
+        "task": "Imposta nel Dockerfile l'ENTRYPOINT in forma exec sul binario /app/server."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dk_dockerfile_adv_2",
+      "english": "CMD as Args",
+      "set": {
+        "task": "Configura ENTRYPOINT su nginx e CMD con i flag '-g daemon off;' come argomenti di default sovrascrivibili."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dk_dockerfile_adv_2",
+      "english": "Exec Form",
+      "set": {
+        "task": "Specifica CMD in forma exec come array JSON con echo e l'argomento 'hello' senza passare da /bin/sh."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dk_dockerfile_adv_2",
+      "english": "Shell Form",
+      "set": {
+        "task": "Scrivi un CMD in forma shell che esegue echo hello passando per /bin/sh -c."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dk_dockerfile_adv_2",
+      "english": "tini",
+      "set": {
+        "task": "Esegui il container myapp avvolgendolo con tini tramite il flag --init per gestire correttamente i segnali."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dk_dockerfile_adv_2",
+      "english": "Override CMD",
+      "set": {
+        "task": "Avvia il container myapp sovrascrivendo il CMD predefinito con 'custom-arg'."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dk_dockerfile_adv_2",
+      "english": "Wrapper Script",
+      "set": {
+        "task": "Configura come ENTRYPOINT lo script /entrypoint.sh che eseguirà inizializzazioni prima del processo principale."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dk_dockerfile_adv_3",
+      "english": "ARG",
+      "set": {
+        "task": "Dichiara nel Dockerfile l'argomento di build NODE_VERSION con valore predefinito 20."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dk_dockerfile_adv_3",
+      "english": "ENV",
+      "set": {
+        "task": "Imposta nel Dockerfile la variabile d'ambiente NODE_ENV a 'production' nell'immagine."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dk_dockerfile_adv_3",
+      "english": "USER",
+      "set": {
+        "task": "Cambia l'utente che esegue i comandi successivi nel Dockerfile a 'appuser' per non girare come root."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dk_dockerfile_adv_3",
+      "english": "Non-Root User",
+      "set": {
+        "task": "Crea l'utente appuser con UID 1000 nel Dockerfile e imposta USER appuser per le istruzioni successive."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dk_dockerfile_adv_3",
+      "english": "WORKDIR advanced usage",
+      "set": {
+        "task": "Imposta /app come WORKDIR nello stage corrente del Dockerfile multi-stage."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dk_dockerfile_adv_3",
+      "english": "SHELL",
+      "set": {
+        "task": "Cambia la shell predefinita per le istruzioni RUN del Dockerfile a /bin/bash -c."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dk_dockerfile_adv_3",
+      "english": "STOPSIGNAL",
+      "set": {
+        "task": "Configura SIGINT come segnale di stop predefinito del container nel Dockerfile."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dk_dockerfile_adv_3",
+      "english": "ONBUILD",
+      "set": {
+        "task": "Definisci un trigger ONBUILD che copierà il contesto corrente in /app quando l'immagine sarà usata come base."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dk_dockerfile_adv_3",
+      "english": "Default ARG",
+      "set": {
+        "task": "Dichiara nel Dockerfile l'argomento di build VERSION con valore predefinito 1.0."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dk_dockerfile_adv_4",
+      "english": "HEALTHCHECK",
+      "set": {
+        "task": "Aggiungi al Dockerfile un HEALTHCHECK che usa curl su localhost ed esce con 1 in caso di fallimento."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dk_dockerfile_adv_4",
+      "english": "Health Status",
+      "set": {
+        "task": "Estrai dal container myapp il solo campo State.Health.Status usando un template Go di docker inspect."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dk_dockerfile_adv_4",
+      "english": "Probe Interval",
+      "set": {
+        "task": "Configura un HEALTHCHECK con intervallo di 30s e timeout di 3s che esegue curl su localhost."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dk_dockerfile_adv_4",
+      "english": "Linting",
+      "set": {
+        "task": "Esegui hadolint sul Dockerfile della directory corrente per individuare problemi di linting."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dk_dockerfile_adv_4",
+      "english": "Pinned Versions",
+      "set": {
+        "task": "Installa con apt-get la versione specifica 7.88.1-10 di curl per garantire build riproducibili."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dk_dockerfile_adv_4",
+      "english": "COPY ownership",
+      "set": {
+        "task": "Copia il contesto in /app assegnando in un solo layer la proprietà a appuser:appuser."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dk_network_1",
+      "english": "Bridge Network",
+      "set": {
+        "task": "Crea una rete Docker chiamata 'mynet' con driver bridge per isolare un gruppo di container."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dk_network_1",
+      "english": "Host Network",
+      "set": {
+        "task": "Avvia nginx condividendo direttamente lo stack di rete dell'host invece di usare una rete bridge."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dk_network_1",
+      "english": "None Network",
+      "set": {
+        "task": "Esegui un container Alpine completamente isolato a livello di rete usando il driver 'none'."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dk_network_1",
+      "english": "User-Defined Bridge",
+      "set": {
+        "task": "Crea la rete bridge personalizzata 'app-network' per permettere la risoluzione DNS tra i container."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dk_network_2",
+      "english": "Publish Port",
+      "set": {
+        "task": "Pubblica la porta 80 del container nginx sulla porta 8080 dell'host."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dk_network_2",
+      "english": "Random Port",
+      "set": {
+        "task": "Avvia nginx pubblicando automaticamente tutte le porte EXPOSE su porte casuali dell'host."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dk_network_2",
+      "english": "Bind to Interface",
+      "set": {
+        "task": "Esegui nginx vincolando la pubblicazione della porta 80 alla sola interfaccia 127.0.0.1:8080 dell'host."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dk_network_2",
+      "english": "UDP Port",
+      "set": {
+        "task": "Pubblica la porta 53 in UDP del container dns-server mappandola sulla 53 dell'host."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dk_network_2",
+      "english": "Port Range",
+      "set": {
+        "task": "Pubblica l'intervallo di porte 8000-8010 del container myapp sullo stesso range dell'host."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dk_network_2",
+      "english": "Localhost Binding",
+      "set": {
+        "task": "Avvia PostgreSQL vincolando la porta 5432 a 127.0.0.1 per impedire accessi da altre macchine."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dk_network_3",
+      "english": "docker network create",
+      "set": {
+        "task": "Crea una rete Docker chiamata 'app-network' per isolare i container applicativi."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dk_network_3",
+      "english": "docker network ls",
+      "set": {
+        "task": "Elenca tutte le reti Docker configurate sull'host."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dk_network_3",
+      "english": "docker network inspect",
+      "set": {
+        "task": "Ispeziona la rete 'app-network' per vedere container connessi e IP assegnati."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dk_network_3",
+      "english": "docker network connect",
+      "set": {
+        "task": "Collega il container myapp in esecuzione alla rete 'app-network' senza riavviarlo."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dk_network_3",
+      "english": "docker network disconnect",
+      "set": {
+        "task": "Scollega il container myapp dalla rete 'app-network' per isolarlo."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dk_network_3",
+      "english": "Network Alias",
+      "set": {
+        "task": "Avvia un container PostgreSQL assegnandogli l'alias di rete 'db' per la service discovery."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dk_network_3",
+      "english": "Subnet",
+      "set": {
+        "task": "Crea la rete 'mynet' con sottorete personalizzata 192.168.1.0/24 per evitare conflitti IP."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dk_network_3",
+      "english": "Gateway",
+      "set": {
+        "task": "Crea la rete 'mynet' impostando 192.168.1.1 come gateway predefinito per i container."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dk_network_4",
+      "english": "Container IP",
+      "set": {
+        "task": "Estrai l'indirizzo IP del container myapp usando un template Go su docker inspect."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dk_network_4",
+      "english": "Hostname",
+      "set": {
+        "task": "Avvia nginx impostando 'myapp' come hostname interno del container."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dk_network_4",
+      "english": "Link (legacy)",
+      "set": {
+        "task": "Avvia myapp creando un link legacy verso il container 'db' (approccio deprecato)."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dk_network_4",
+      "english": "Service Name",
+      "set": {
+        "task": "Usa nella stringa di connessione il service name 'db' come hostname per raggiungere PostgreSQL sulla porta 5432."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dk_network_4",
+      "english": "Internal Network",
+      "set": {
+        "task": "Crea la rete interna 'backend' che non espone i container all'esterno dell'host."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dk_network_4",
+      "english": "Custom DNS",
+      "set": {
+        "task": "Avvia nginx configurando 8.8.8.8 come server DNS personalizzato del container."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dk_volumes_1",
+      "english": "Named Volume",
+      "set": {
+        "task": "Crea il volume Docker con nome 'mydata' per persistere dati indipendentemente dal container."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dk_volumes_1",
+      "english": "Bind Mount",
+      "set": {
+        "task": "Avvia nginx montando in bind la directory /host/path dell'host sul percorso /container/path del container."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dk_volumes_1",
+      "english": "tmpfs Mount",
+      "set": {
+        "task": "Esegui nginx montando un filesystem tmpfs in /tmp di 100 MB in lettura-scrittura."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dk_volumes_1",
+      "english": "Anonymous Volume",
+      "set": {
+        "task": "Avvia nginx dichiarando un volume anonimo sul percorso /data del container."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dk_volumes_1",
+      "english": "Read-Only Mount",
+      "set": {
+        "task": "Esegui nginx montando il volume 'config' in /app/config in sola lettura."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dk_volumes_2",
+      "english": "docker volume create",
+      "set": {
+        "task": "Crea il volume Docker con nome 'db-data' destinato al database."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dk_volumes_2",
+      "english": "docker volume ls",
+      "set": {
+        "task": "Elenca tutti i volumi Docker presenti sull'host."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dk_volumes_2",
+      "english": "docker volume inspect",
+      "set": {
+        "task": "Mostra i dettagli del volume 'db-data' incluso il mountpoint sull'host."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dk_volumes_2",
+      "english": "docker volume rm",
+      "set": {
+        "task": "Elimina il volume 'db-data' non più collegato ad alcun container."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dk_volumes_2",
+      "english": "docker volume prune",
+      "set": {
+        "task": "Rimuovi tutti i volumi Docker inutilizzati per recuperare spazio disco."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dk_volumes_2",
+      "english": "--mount Flag",
+      "set": {
+        "task": "Avvia nginx montando il volume 'mydata' su /data tramite la sintassi esplicita --mount."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dk_volumes_2",
+      "english": "-v Flag",
+      "set": {
+        "task": "Esegui nginx montando il volume 'mydata' su /data con la sintassi breve -v."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dk_volumes_2",
+      "english": "Volume Backup",
+      "set": {
+        "task": "Esegui un backup del volume 'mydata' in backup.tar.gz lanciando un container Alpine temporaneo che lo archivi."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dk_volumes_2",
+      "english": "Volume Restore",
+      "set": {
+        "task": "Ripristina il contenuto di backup.tar.gz nel volume 'mydata' usando un container Alpine temporaneo."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dk_volumes_2",
+      "english": "Volume Label",
+      "set": {
+        "task": "Crea il volume 'mydata' applicandogli la label env=prod per filtrarlo per ambiente."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dk_volumes_3",
+      "english": "Hot Reload",
+      "set": {
+        "task": "Avvia il container myapp montando in bind la directory corrente su /app e pubblicando la porta 3000 per l'hot reload."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dk_volumes_3",
+      "english": "SELinux Label",
+      "set": {
+        "task": "Monta /data del container nginx come bind mount aggiungendo l'etichetta SELinux :Z su sistemi RHEL."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dk_volumes_3",
+      "english": "Read-Write Mount",
+      "set": {
+        "task": "Esegui nginx montando /data in modalità esplicita di lettura-scrittura."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dk_volumes_4",
+      "english": "Volume Driver",
+      "set": {
+        "task": "Crea il volume 'mydata' usando il driver NFS invece del driver local predefinito."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dk_volumes_4",
+      "english": "NFS Driver",
+      "set": {
+        "task": "Crea un volume 'mydata' con driver local di tipo NFS che punta al device remoto :/path."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dk_volumes_4",
+      "english": "Volume Plugin",
+      "set": {
+        "task": "Installa il plugin Docker rexray/ebs per provisionare volumi AWS EBS dinamicamente."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dk_compose_1",
+      "english": "Service",
+      "set": {
+        "task": "Dichiara nel compose.yaml il servizio 'web' che usa l'immagine nginx."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dk_compose_1",
+      "english": "docker compose up",
+      "set": {
+        "task": "Avvia in background tutti i servizi definiti nel compose.yaml della directory corrente."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dk_compose_1",
+      "english": "docker compose down",
+      "set": {
+        "task": "Ferma e rimuovi container, reti e risorse create da docker compose up."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dk_compose_1",
+      "english": "docker compose logs",
+      "set": {
+        "task": "Segui in tempo reale i log aggregati di tutti i servizi gestiti da Compose."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dk_compose_1",
+      "english": "docker compose ps",
+      "set": {
+        "task": "Elenca i container avviati dal progetto Compose corrente con il loro stato."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dk_compose_1",
+      "english": "Project Name",
+      "set": {
+        "task": "Avvia lo stack Compose usando 'myapp' come nome del progetto per separare risorse."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dk_compose_2",
+      "english": "Compose image field",
+      "set": {
+        "task": "Definisci il servizio 'db' nel compose.yaml usando l'immagine postgres:16 dal registry."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dk_compose_2",
+      "english": "build",
+      "set": {
+        "task": "Configura il servizio 'web' affinché Compose costruisca l'immagine dal Dockerfile nella directory corrente."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dk_compose_2",
+      "english": "depends_on",
+      "set": {
+        "task": "Dichiara che il servizio 'web' dipende dal servizio 'db' nel compose.yaml."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dk_compose_2",
+      "english": "environment",
+      "set": {
+        "task": "Imposta nel servizio la variabile d'ambiente DATABASE_URL con valore postgres://db."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dk_compose_2",
+      "english": "env_file",
+      "set": {
+        "task": "Configura il servizio per caricare le variabili dal file .env.production via env_file."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dk_compose_2",
+      "english": "ports",
+      "set": {
+        "task": "Mappa nel campo ports la porta 80 del container sulla porta 8080 dell'host."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dk_compose_2",
+      "english": "volumes",
+      "set": {
+        "task": "Monta il volume con nome 'db-data' nel servizio sul percorso /var/lib/postgresql/data."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dk_compose_2",
+      "english": "networks",
+      "set": {
+        "task": "Collega il servizio alla rete 'backend' definita nel compose.yaml."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dk_compose_2",
+      "english": "command",
+      "set": {
+        "task": "Sovrascrivi il CMD dell'immagine impostando come comando del servizio l'esecuzione di npm start."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dk_compose_2",
+      "english": "restart",
+      "set": {
+        "task": "Configura il servizio con politica di restart 'unless-stopped' per rilanciarlo dopo i crash."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dk_compose_3",
+      "english": "Top-Level Networks",
+      "set": {
+        "task": "Dichiara al livello principale del compose.yaml la rete 'backend' con driver bridge."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dk_compose_3",
+      "english": "Top-Level Volumes",
+      "set": {
+        "task": "Dichiara al livello principale del compose.yaml il volume 'db-data' con driver local."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dk_compose_3",
+      "english": "External Network",
+      "set": {
+        "task": "Dichiara la rete 'shared' come esterna nel compose.yaml per riusarla tra più stack."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dk_compose_3",
+      "english": "External Volume",
+      "set": {
+        "task": "Dichiara il volume 'shared-data' come esterno nel compose.yaml per condividerlo tra progetti."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dk_compose_3",
+      "english": "Compose network alias",
+      "set": {
+        "task": "Assegna al servizio l'alias 'db' nella rete 'backend' affinché altri container lo risolvano con questo nome DNS."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dk_compose_3",
+      "english": "IPv6",
+      "set": {
+        "task": "Abilita IPv6 sulla rete 'backend' del compose.yaml per supportare client dual-stack."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dk_compose_3",
+      "english": "Subnet Configuration",
+      "set": {
+        "task": "Configura la rete 'backend' usando IPAM con sottorete 172.20.0.0/16."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dk_compose_4",
+      "english": "Profile",
+      "set": {
+        "task": "Assegna al servizio 'debug' il profilo 'dev' per attivarlo solo in sviluppo."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dk_compose_4",
+      "english": "--profile",
+      "set": {
+        "task": "Avvia lo stack Compose attivando il profilo 'dev' per includere i servizi di sviluppo."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dk_compose_4",
+      "english": "-f Flag",
+      "set": {
+        "task": "Avvia lo stack combinando i file base.yaml e prod.yaml in sequenza tramite il flag -f."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dk_compose_4",
+      "english": "Extension Field",
+      "set": {
+        "task": "Definisci nel compose.yaml l'estensione 'x-defaults' con restart: always da riusare con ancore YAML."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dk_compose_4",
+      "english": "YAML Anchor",
+      "set": {
+        "task": "Definisci l'ancora YAML 'base' con restart: always e fondila nel servizio 'web' tramite <<: *base."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dk_compose_4",
+      "english": "Variable Interpolation",
+      "set": {
+        "task": "Imposta image: nginx:${TAG:-latest} nel compose.yaml per interpolare la variabile TAG con fallback a 'latest'."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dk_compose_4",
+      "english": ".env File",
+      "set": {
+        "task": "Crea un file .env con TAG=1.2.3 e DB_PASSWORD=secret per fornire variabili a Compose."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dk_compose_4",
+      "english": "Default Value",
+      "set": {
+        "task": "Configura la variabile PORT nel compose.yaml con valore di default 8080 quando non definita."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dk_compose_4",
+      "english": "Compose Convert",
+      "set": {
+        "task": "Stampa la configurazione Compose effettiva dopo merge e interpolazione delle variabili."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dk_compose_adv_1",
+      "english": "Compose healthcheck",
+      "set": {
+        "task": "Aggiungi al servizio un healthcheck Compose che esegue curl -f http://localhost ogni 30 secondi."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dk_compose_adv_1",
+      "english": "depends_on with condition",
+      "set": {
+        "task": "Imposta che il servizio dipenda da 'db' solo quando questo risulta service_healthy."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dk_compose_adv_1",
+      "english": "Healthcheck Test",
+      "set": {
+        "task": "Configura il test del healthcheck con CMD-SHELL per eseguire pg_isready -U postgres."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dk_compose_adv_1",
+      "english": "start_period",
+      "set": {
+        "task": "Imposta start_period a 40s nel healthcheck per dare tempo al servizio di inizializzarsi."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dk_compose_adv_1",
+      "english": "retries",
+      "set": {
+        "task": "Configura il healthcheck con retries: 3 prima di considerare il servizio unhealthy."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dk_compose_adv_1",
+      "english": "timeout",
+      "set": {
+        "task": "Imposta un timeout di 10s sul healthcheck del servizio."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dk_compose_adv_1",
+      "english": "interval",
+      "set": {
+        "task": "Configura un intervallo di 30s tra le esecuzioni del healthcheck."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dk_compose_adv_1",
+      "english": "service_completed_successfully",
+      "set": {
+        "task": "Fai dipendere il servizio dal completamento riuscito del servizio 'init' tramite service_completed_successfully."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dk_compose_adv_2",
+      "english": "deploy.resources",
+      "set": {
+        "task": "Imposta nel deploy del servizio limiti di 0.5 CPU e 512M di memoria."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dk_compose_adv_2",
+      "english": "CPU Limit",
+      "set": {
+        "task": "Limita il consumo di CPU del servizio a 0.5 nel campo cpus."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dk_compose_adv_2",
+      "english": "Memory Limit",
+      "set": {
+        "task": "Imposta un limite di memoria pari a 512M sul servizio."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dk_compose_adv_2",
+      "english": "Reservations",
+      "set": {
+        "task": "Riserva al servizio almeno 0.25 CPU e 256M di memoria come base garantita."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dk_compose_adv_2",
+      "english": "mem_limit (legacy)",
+      "set": {
+        "task": "Limita la memoria del servizio a 512m usando il campo mem_limit legacy di Compose v1."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dk_compose_adv_2",
+      "english": "cpu_shares",
+      "set": {
+        "task": "Assegna al servizio 1024 cpu_shares per regolarne il peso in caso di contesa CPU."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dk_compose_adv_2",
+      "english": "pids_limit",
+      "set": {
+        "task": "Imposta pids_limit a 100 sul servizio per prevenire fork bomb."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dk_compose_adv_2",
+      "english": "shm_size",
+      "set": {
+        "task": "Aumenta shm_size del servizio a 256m per database che usano memoria condivisa."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dk_compose_adv_2",
+      "english": "ulimits",
+      "set": {
+        "task": "Configura sul servizio ulimits nofile con soft 1024 e hard 4096."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dk_compose_adv_3",
+      "english": "Secret",
+      "set": {
+        "task": "Dichiara il secret 'db_password' caricandolo dal file locale ./db_password.txt."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dk_compose_adv_3",
+      "english": "Config",
+      "set": {
+        "task": "Dichiara la config 'app_config' caricandola dal file ./config.yaml."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dk_compose_adv_3",
+      "english": "External Secret",
+      "set": {
+        "task": "Marca il secret 'db_password' come external nel compose.yaml perché creato fuori da Compose."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dk_compose_adv_3",
+      "english": "Mount Secret",
+      "set": {
+        "task": "Collega il secret 'db_password' al servizio 'app' affinché sia disponibile in /run/secrets/."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dk_compose_adv_3",
+      "english": "Secret Target",
+      "set": {
+        "task": "Monta il secret 'db_password' nel container al percorso personalizzato /etc/db_pass."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dk_compose_adv_4",
+      "english": "docker compose scale",
+      "set": {
+        "task": "Avvia lo stack Compose scalando il servizio 'web' a 3 istanze concorrenti."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dk_compose_adv_4",
+      "english": "replicas",
+      "set": {
+        "task": "Configura il deploy del servizio per mantenere costantemente 3 repliche attive."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dk_compose_adv_4",
+      "english": "Update Config",
+      "set": {
+        "task": "Configura update_config con parallelism 2 e delay 10s per rolling update controllato."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dk_compose_adv_4",
+      "english": "Rollback",
+      "set": {
+        "task": "Configura rollback_config con parallelism 1 per ripristinare la versione precedente una replica alla volta."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dk_compose_adv_4",
+      "english": "Restart Condition",
+      "set": {
+        "task": "Imposta la condizione di riavvio del servizio su 'on-failure' nel deploy.restart_policy."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dk_compose_adv_4",
+      "english": "Placement",
+      "set": {
+        "task": "Limita il posizionamento del servizio ai nodi con role worker tramite placement.constraints."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dk_compose_adv_4",
+      "english": "Mode (replicated/global)",
+      "set": {
+        "task": "Configura il deploy in modalità 'global' affinché il servizio giri su ogni nodo del cluster."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dk_registry_1",
+      "english": "Private Registry",
+      "set": {
+        "task": "Avvia in background un registry Docker privato sulla porta 5000 usando l'immagine registry:2."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dk_registry_1",
+      "english": "docker login",
+      "set": {
+        "task": "Autentica il client Docker contro il registry registry.example.com."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dk_registry_1",
+      "english": "docker logout",
+      "set": {
+        "task": "Rimuovi le credenziali memorizzate per il registry registry.example.com."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dk_registry_2",
+      "english": "Versioned Tag",
+      "set": {
+        "task": "Crea il tag myorg/myapp:1.2.3 a partire dall'immagine locale myapp seguendo SemVer."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dk_registry_2",
+      "english": "Git SHA Tag",
+      "set": {
+        "task": "Costruisci l'immagine myapp taggandola con lo SHA git corto del commit corrente."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dk_registry_2",
+      "english": "Branch Tag",
+      "set": {
+        "task": "Costruisci l'immagine myapp taggandola con il nome del branch 'feature-login'."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dk_registry_2",
+      "english": "Multi-Architecture",
+      "set": {
+        "task": "Costruisci con Buildx l'immagine myapp per le piattaforme linux/amd64 e linux/arm64."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dk_registry_2",
+      "english": "Buildx",
+      "set": {
+        "task": "Crea e attiva un nuovo builder Buildx per build multi-piattaforma."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dk_registry_2",
+      "english": "Manifest List",
+      "set": {
+        "task": "Combina le immagini myapp:1.0-amd64 e myapp:1.0-arm64 in una manifest list pubblicabile come myapp:1.0."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dk_registry_3",
+      "english": "Cosign",
+      "set": {
+        "task": "Firma l'immagine myimage:1.0 con Cosign usando la chiave cosign.key."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dk_registry_3",
+      "english": "Content Trust",
+      "set": {
+        "task": "Abilita Docker Content Trust esportando DOCKER_CONTENT_TRUST=1 per accettare solo immagini firmate."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dk_registry_3",
+      "english": "SBOM",
+      "set": {
+        "task": "Genera con Syft l'SBOM dell'immagine myimage:1.0 in formato SPDX JSON salvandolo in sbom.json."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dk_registry_3",
+      "english": "Verify Signature",
+      "set": {
+        "task": "Verifica con Cosign la firma dell'immagine myimage:1.0 usando la chiave pubblica cosign.pub."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dk_registry_4",
+      "english": "GitHub Actions",
+      "set": {
+        "task": "Aggiungi al workflow GitHub Actions lo step uses: docker/build-push-action@v5 per build e push."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dk_registry_4",
+      "english": "Pipeline Cache",
+      "set": {
+        "task": "Costruisci con Buildx l'immagine sfruttando la cache GitHub Actions tramite cache-from e cache-to type=gha."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dk_security_1",
+      "english": "Rootless Mode",
+      "set": {
+        "task": "Avvia il daemon Docker in modalità rootless eseguendo lo script dockerd-rootless.sh."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dk_security_1",
+      "english": "Privileged Container",
+      "set": {
+        "task": "Avvia un container Ubuntu in modalità privilegiata con accesso completo all'host."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dk_security_1",
+      "english": "--cap-add",
+      "set": {
+        "task": "Esegui nginx aggiungendo solo la capability NET_ADMIN al set di default."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dk_security_1",
+      "english": "--cap-drop",
+      "set": {
+        "task": "Avvia nginx eliminando tutte le capability e riabilitando soltanto NET_BIND_SERVICE."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dk_security_1",
+      "english": "No New Privileges",
+      "set": {
+        "task": "Avvia nginx con l'opzione di sicurezza no-new-privileges per bloccare l'escalation via setuid."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dk_security_1",
+      "english": "Read-Only Filesystem",
+      "set": {
+        "task": "Esegui nginx con filesystem in sola lettura tramite il flag --read-only."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dk_security_2",
+      "english": "Seccomp",
+      "set": {
+        "task": "Avvia nginx applicando il profilo seccomp personalizzato profile.json per filtrare le syscall."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dk_security_2",
+      "english": "AppArmor",
+      "set": {
+        "task": "Esegui nginx applicando il profilo AppArmor docker-default come security-opt."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dk_security_2",
+      "english": "unconfined",
+      "set": {
+        "task": "Avvia nginx disattivando il filtro seccomp impostando il profilo unconfined (solo per debug)."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dk_security_3",
+      "english": "Trivy",
+      "set": {
+        "task": "Scansiona con Trivy l'immagine myapp:1.0 per individuare vulnerabilità note."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dk_security_3",
+      "english": "Snyk",
+      "set": {
+        "task": "Esegui snyk container test sull'immagine myapp:1.0 per analizzare le dipendenze vulnerabili."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dk_security_3",
+      "english": "Grype",
+      "set": {
+        "task": "Scansiona l'immagine myapp:1.0 con Grype per rilevare CVE nei pacchetti installati."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dk_security_3",
+      "english": "Severity Level",
+      "set": {
+        "task": "Filtra la scansione Trivy dell'immagine myapp mostrando solo i livelli di severità HIGH e CRITICAL."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dk_k8s_intro_1",
+      "english": "Node",
+      "set": {
+        "task": "Elenca con kubectl tutti i nodi che compongono il cluster Kubernetes."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dk_k8s_intro_3",
+      "english": "Pod",
+      "set": {
+        "task": "Mostra l'elenco dei pod presenti nel namespace corrente del cluster."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dk_k8s_intro_3",
+      "english": "Node Status",
+      "set": {
+        "task": "Visualizza la descrizione dettagliata del nodo 'my-node' inclusi condizioni e capacità."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dk_k8s_intro_3",
+      "english": "Cordon",
+      "set": {
+        "task": "Marca il nodo 'my-node' come non schedulabile per impedire nuovi pod durante la manutenzione."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dk_k8s_intro_3",
+      "english": "Drain",
+      "set": {
+        "task": "Evacua tutti i pod dal nodo 'my-node' ignorando i DaemonSet prima di un intervento."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dk_k8s_intro_3",
+      "english": "Uncordon",
+      "set": {
+        "task": "Riabilita il nodo 'my-node' alla schedulazione di nuovi pod dopo la manutenzione."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dk_k8s_intro_4",
+      "english": "kubectl get",
+      "set": {
+        "task": "Elenca tutti i pod presenti in ogni namespace del cluster."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dk_k8s_intro_4",
+      "english": "kubectl describe",
+      "set": {
+        "task": "Mostra i dettagli e gli eventi del pod 'my-pod' per diagnosticarne lo stato."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dk_k8s_intro_4",
+      "english": "kubectl apply",
+      "set": {
+        "task": "Applica al cluster il manifest deployment.yaml creando o aggiornando le risorse dichiarate."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dk_k8s_intro_4",
+      "english": "kubectl delete",
+      "set": {
+        "task": "Elimina dal cluster il pod chiamato 'my-pod'."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dk_k8s_intro_4",
+      "english": "kubectl logs",
+      "set": {
+        "task": "Segui in tempo reale i log del pod 'my-pod'."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dk_k8s_intro_4",
+      "english": "kubectl exec",
+      "set": {
+        "task": "Apri una shell bash interattiva all'interno del pod 'my-pod'."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dk_k8s_intro_4",
+      "english": "Context",
+      "set": {
+        "task": "Cambia il contesto attivo di kubectl impostandolo a 'prod' per puntare al cluster di produzione."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dk_k8s_intro_4",
+      "english": "Kubernetes Namespace",
+      "set": {
+        "task": "Elenca i pod presenti nel namespace di sistema 'kube-system' del cluster."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dk_pods_1",
+      "english": "Pod Resource",
+      "set": {
+        "task": "Definisci un manifest Pod chiamato 'nginx' con un container basato sull'immagine nginx."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dk_pods_2",
+      "english": "Init Container",
+      "set": {
+        "task": "Aggiungi al pod un initContainer 'setup' basato su busybox che esegua un semplice echo prima dei container principali."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dk_pods_2",
+      "english": "Restartable Init",
+      "set": {
+        "task": "Configura l'init container con restartPolicy: Always per farlo girare come sidecar nativo K8s 1.28+."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dk_pods_2",
+      "english": "Pre-Stop Hook",
+      "set": {
+        "task": "Aggiungi al container un preStop hook che esegua sleep 10 prima dello shutdown per drenare le connessioni."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dk_pods_3",
+      "english": "Resource Request",
+      "set": {
+        "task": "Imposta sul container resources.requests con 100m di CPU e 128Mi di memoria per guidare lo scheduler."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dk_pods_3",
+      "english": "Resource Limit",
+      "set": {
+        "task": "Imposta sul container resources.limits con 500m di CPU e 512Mi di memoria come tetto massimo."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dk_pods_4",
+      "english": "Liveness Probe",
+      "set": {
+        "task": "Configura una livenessProbe HTTP che chiami il path /healthz sulla porta 8080 del container."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dk_pods_4",
+      "english": "Readiness Probe",
+      "set": {
+        "task": "Configura una readinessProbe HTTP che chiami /ready sulla porta 8080 per gestire il traffico verso il pod."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dk_pods_4",
+      "english": "Startup Probe",
+      "set": {
+        "task": "Configura una startupProbe HTTP su /startup porta 8080 con failureThreshold 30 per app lente all'avvio."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dk_pods_4",
+      "english": "TCP Probe",
+      "set": {
+        "task": "Imposta una livenessProbe TCP sulla porta 5432 per verificare che il database accetti connessioni."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dk_pods_4",
+      "english": "Exec Probe",
+      "set": {
+        "task": "Configura una livenessProbe exec che verifichi la presenza del file /tmp/healthy nel container."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dk_pods_4",
+      "english": "gRPC Probe",
+      "set": {
+        "task": "Aggiungi una livenessProbe gRPC sulla porta 9000 per sondare nativamente i microservizi gRPC."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dk_pods_4",
+      "english": "initialDelaySeconds",
+      "set": {
+        "task": "Imposta initialDelaySeconds a 30 sulla probe per dare tempo al container di avviarsi prima dei controlli."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dk_pods_4",
+      "english": "failureThreshold",
+      "set": {
+        "task": "Configura failureThreshold a 3 sulla probe per tollerare brevi instabilità prima del fallimento."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dk_pods_4",
+      "english": "periodSeconds",
+      "set": {
+        "task": "Imposta periodSeconds a 10 sulla probe per controllare il container ogni 10 secondi."
+      }
+    }
+  ]
+}

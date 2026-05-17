@@ -3884,6 +3884,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git stash',
               note: 'Lo "stash" è una pila (stack) di modifiche temporanee.',
+              task: 'Metti da parte le modifiche non committate in una riserva temporanea per liberare la working tree.',
             },
             {
               english: 'git stash',
@@ -3895,6 +3896,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git stash',
+              task: 'Salva il lavoro in corso nello stash quando devi cambiare contesto in fretta senza fare commit.',
             },
             {
               english: 'git stash push',
@@ -3906,6 +3908,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git stash push -m "WIP login"',
+              task: 'Crea uno stash etichettato "WIP login" per ritrovarlo facilmente nella lista degli stash futuri.',
             },
             {
               english: 'git stash pop',
@@ -3917,6 +3920,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git stash pop',
+              task: `Riapplica l'ultimo stash sulla working tree corrente e rimuovilo dalla pila in un colpo solo.`,
             },
             {
               english: 'git stash apply',
@@ -3928,6 +3932,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git stash apply',
+              task: 'Riapplica le modifiche dello stash piu recente mantenendolo nella pila per riusarlo altrove.',
             },
             {
               english: 'git stash list',
@@ -3939,6 +3944,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git stash list',
+              task: 'Elenca tutti gli stash accumulati per scegliere quale riapplicare o eliminare.',
             },
             {
               english: 'git stash drop',
@@ -3950,6 +3956,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git stash drop stash@{0}',
+              task: 'Scarta definitivamente lo stash@{0} quando le modifiche non ti servono piu.',
             },
             {
               english: 'git stash clear',
@@ -3962,6 +3969,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git stash clear',
               note: 'Irreversibile. Verifica con stash list prima.',
+              task: 'Svuota completamente la pila degli stash dopo aver verificato di non avere lavoro da recuperare.',
             },
             {
               english: 'Stash Reference',
@@ -3973,6 +3981,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               code: 'stash@{0}',
+              task: 'Punta esplicitamente allo stash piu recente con la sintassi stash@{0} per usarlo nei comandi.',
             },
             {
               english: 'Stash with Untracked',
@@ -3984,6 +3993,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git stash push -u',
+              task: 'Includi anche i file nuovi non tracciati nello stash usando il flag -u per non perderli.',
             },
           ],
         },
@@ -4002,6 +4012,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git reset HEAD~1',
+              task: 'Sposta HEAD indietro di un commit mantenendo la modalita predefinita mixed per le modifiche.',
             },
             {
               english: '--soft',
@@ -4013,6 +4024,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git reset --soft HEAD~1',
+              task: 'Riporta indietro HEAD di un commit lasciando tutte le modifiche pronte nello staging area.',
             },
             {
               english: '--mixed',
@@ -4025,6 +4037,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git reset --mixed HEAD~1',
               note: 'Comportamento di default di git reset.',
+              task: `Annulla l'ultimo commit togliendo i file dallo staging ma mantenendo le modifiche sul disco.`,
             },
             {
               english: '--hard',
@@ -4037,6 +4050,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git reset --hard HEAD~1',
               note: 'Pericoloso: distrugge il lavoro non committato.',
+              task: `Cancella in modo distruttivo l'ultimo commit insieme a tutte le modifiche su working tree e indice.`,
             },
             {
               english: 'Reset to Commit',
@@ -4048,6 +4062,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git reset --hard a3f5e21',
+              task: 'Riporta il branch esattamente al commit a3f5e21 scartando tutto cio che e venuto dopo.',
             },
             {
               english: 'Unstage File',
@@ -4060,6 +4075,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git restore --staged file.txt',
               note: 'Equivalente moderno: git restore --staged.',
+              task: 'Togli file.txt dallo staging area senza modificarne il contenuto sul disco.',
             },
             {
               english: 'Reset HEAD',
@@ -4071,6 +4087,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git reset HEAD',
+              task: `Sposta HEAD allo stato attuale per ripulire l'indice dai file accidentalmente in staging.`,
             },
             {
               english: 'Undo Commit',
@@ -4082,6 +4099,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git reset --soft HEAD~1',
+              task: `Annulla l'ultimo commit conservando le modifiche in staging, pronte per essere ricommittate.`,
             },
             {
               english: 'ORIG_HEAD',
@@ -4093,6 +4111,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git reset --hard ORIG_HEAD',
+              task: 'Recupera lo stato precedente al reset puntando al riferimento automatico ORIG_HEAD.',
             },
             {
               english: 'Reset Caution',
@@ -4123,6 +4142,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git restore file.txt',
               note: 'Da Git 2.23, sostituisce alcuni usi di checkout e reset.',
+              task: 'Ripristina file.txt alla versione di HEAD scartando le modifiche locali non committate.',
             },
             {
               english: 'restore --staged',
@@ -4134,6 +4154,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git restore --staged file.txt',
+              task: 'Togli file.txt dallo staging area usando il comando moderno restore, sostituto di reset HEAD.',
             },
             {
               english: 'restore --source',
@@ -4145,6 +4166,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git restore --source HEAD~3 file.txt',
+              task: 'Recupera la versione di file.txt da tre commit fa senza alterare HEAD o gli altri file.',
             },
             {
               english: 'git clean',
@@ -4157,6 +4179,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git clean -fd',
               note: 'Distruttivo. Sempre fare dry-run prima.',
+              task: 'Elimina file e directory non tracciate per ripulire la working tree dai residui di build.',
             },
             {
               english: 'Clean Dry Run',
@@ -4168,6 +4191,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git clean -n',
+              task: 'Mostra in anteprima quali file non tracciati verrebbero cancellati prima di eseguire la pulizia vera.',
             },
             {
               english: 'Clean Force',
@@ -4179,6 +4203,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git clean -f',
+              task: 'Forza la cancellazione dei file non tracciati con il flag -f richiesto per evitare azioni accidentali.',
             },
             {
               english: 'Clean Directories',
@@ -4190,6 +4215,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git clean -fd',
+              task: 'Rimuovi anche le directory non tracciate insieme ai file aggiungendo il flag -d al comando clean.',
             },
             {
               english: 'Clean Ignored',
@@ -4202,6 +4228,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git clean -fdx',
               note: 'Pulisce anche node_modules e build/ se sono in gitignore.',
+              task: 'Pulisci aggressivamente includendo anche i file ignorati come node_modules e cartelle build.',
             },
             {
               english: 'Discard All Changes',
@@ -4213,6 +4240,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git restore .',
+              task: 'Scarta tutte le modifiche non in staging ripristinando ogni file alla versione di HEAD.',
             },
             {
               english: 'Reset to HEAD',
@@ -4224,6 +4252,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git reset --hard HEAD',
+              task: 'Riallinea completamente working tree e indice al commit puntato da HEAD scartando ogni differenza.',
             },
           ],
         },
@@ -4242,6 +4271,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git stash && git switch main',
+              task: 'Salva il lavoro in corso nello stash e poi passa al branch main senza perdere le modifiche.',
             },
             {
               english: 'Stash Branch',
@@ -4253,6 +4283,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git stash branch new-feature',
+              task: 'Crea un nuovo branch new-feature applicandovi automaticamente lo stash piu recente.',
             },
             {
               english: 'Stash Show',
@@ -4264,6 +4295,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git stash show -p',
+              task: 'Visualizza in formato patch il contenuto completo dello stash piu recente per ispezionarlo.',
             },
             {
               english: 'Partial Stash',
@@ -4275,6 +4307,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git stash push -m "css" -- src/style.css',
+              task: 'Stasha solo il file src/style.css con etichetta "css" lasciando il resto della working tree intatto.',
             },
             {
               english: 'Interactive Stash',
@@ -4286,6 +4319,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git stash push -p',
+              task: 'Seleziona interattivamente quali hunk includere nello stash usando il flag -p del comando push.',
             },
             {
               english: 'Keep Index',
@@ -4297,6 +4331,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git stash --keep-index',
+              task: `Stasha solo i file non in staging mantenendo intatto l'indice gia preparato per il prossimo commit.`,
             },
             {
               english: 'Stash Multiple',
@@ -4308,6 +4343,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git stash list',
+              task: 'Visualizza tutti gli stash accumulati sulla pila per gestire piu contesti di lavoro paralleli.',
             },
             {
               english: 'Apply Specific Stash',
@@ -4319,6 +4355,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git stash apply stash@{2}',
+              task: 'Riapplica lo stash@{2} dalla pila quando vuoi recuperare un lavoro non piu in cima.',
             },
             {
               english: 'Stash Conflict',
@@ -4342,6 +4379,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git fsck --unreachable',
               note: 'Cerca tra gli oggetti unreachable.',
+              task: 'Cerca tra gli oggetti unreachable con fsck per recuperare uno stash droppato per errore.',
             },
           ],
         },
@@ -4370,6 +4408,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git commit --amend',
               note: "Cambia anche l'hash del commit. Mai dopo aver pushato.",
+              task: `Modifica l'ultimo commit per aggiungervi file dimenticati o cambiare il messaggio senza creare un nuovo commit.`,
             },
             {
               english: 'Amend Message',
@@ -4381,6 +4420,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git commit --amend -m "New message"',
+              task: `Sostituisci il messaggio dell'ultimo commit con "New message" senza alterare lo snapshot dei file.`,
             },
             {
               english: 'Amend No Edit',
@@ -4392,6 +4432,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git commit --amend --no-edit',
+              task: `Aggiungi nuovi file all'ultimo commit conservando il messaggio originale grazie al flag --no-edit.`,
             },
             {
               english: 'git revert',
@@ -4404,6 +4445,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git revert a3f5e21',
               note: 'Sicuro per rami pubblici: non riscrive la storia.',
+              task: 'Crea un nuovo commit che annulla le modifiche del commit a3f5e21 preservando la storia pubblica.',
             },
             {
               english: 'Revert Range',
@@ -4415,6 +4457,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git revert HEAD~3..HEAD',
+              task: `Annulla con un revert tutti i commit dall'antenato HEAD~3 fino a HEAD creando commit di compensazione.`,
             },
             {
               english: 'Revert Merge',
@@ -4426,6 +4469,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git revert -m 1 a3f5e21',
+              task: 'Annulla il merge commit a3f5e21 specificando con -m 1 quale ramo mainline preservare.',
             },
             {
               english: 'Continue Revert',
@@ -4437,6 +4481,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git revert --continue',
+              task: `Prosegui il revert in corso dopo aver risolto i conflitti che bloccavano l'operazione.`,
             },
             {
               english: 'Abort Revert',
@@ -4448,6 +4493,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git revert --abort',
+              task: 'Interrompi il revert in corso e ripristina la working tree allo stato precedente al comando.',
             },
             {
               english: 'Revert Commit',
@@ -4488,6 +4534,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git cherry-pick a3f5e21',
               note: 'Letteralmente "raccogliere ciliegie". Prendere il singolo commit.',
+              task: 'Applica il singolo commit a3f5e21 sul branch corrente senza importare gli altri commit del ramo originale.',
             },
             {
               english: 'Cherry-pick Range',
@@ -4499,6 +4546,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git cherry-pick A..B',
+              task: `Riporta sul branch corrente tutti i commit dall'antenato A fino a B usando un cherry-pick di intervallo.`,
             },
             {
               english: 'Cherry-pick Merge',
@@ -4510,6 +4558,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git cherry-pick -m 1 a3f5e21',
+              task: 'Esegui il cherry-pick di un merge commit a3f5e21 indicando con -m 1 il parent mainline di riferimento.',
             },
             {
               english: 'Cherry-pick No Commit',
@@ -4521,6 +4570,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git cherry-pick -n a3f5e21',
+              task: 'Applica le modifiche del commit a3f5e21 nella working tree senza creare automaticamente il commit finale.',
             },
             {
               english: 'Cherry-pick Conflict',
@@ -4532,6 +4582,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git cherry-pick --continue',
+              task: 'Riprendi il cherry-pick interrotto dopo aver risolto i conflitti che lo avevano bloccato.',
             },
             {
               english: 'Backport',
@@ -4544,6 +4595,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git cherry-pick a3f5e21',
               note: 'Pratica comune nei progetti con LTS.',
+              task: 'Porta una correzione sul branch di release facendo il cherry-pick del commit a3f5e21 da main.',
             },
             {
               english: 'Forwardport',
@@ -4565,6 +4617,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git cherry-pick -x a3f5e21',
+              task: 'Esegui il cherry-pick di a3f5e21 aggiungendo con -x un riferimento al commit originale nel messaggio.',
             },
             {
               english: 'Skip Commit During Rebase',
@@ -4576,6 +4629,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git cherry-pick --skip',
               note: 'Il commit saltato non finisce nella nuova history e va perso se non referenziato.',
+              task: 'Salta il commit corrente che sta dando conflitti nel cherry-pick e prosegui con quelli successivi.',
             },
             {
               english: 'Cherry-pick Strategy',
@@ -4587,6 +4641,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git cherry-pick -X theirs a3f5e21',
+              task: 'Risolvi automaticamente i conflitti di cherry-pick di a3f5e21 preferendo la versione "theirs".',
             },
           ],
         },
@@ -4606,6 +4661,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git reflog',
               note: 'Salvavita per recuperare commit "persi".',
+              task: 'Consulta il reflog locale per ritrovare ogni movimento di HEAD avvenuto negli ultimi giorni.',
             },
             {
               english: 'git reflog',
@@ -4617,6 +4673,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git reflog show',
+              task: 'Mostra il log dei riferimenti per rintracciare commit perduti dopo un reset o un rebase sbagliato.',
             },
             {
               english: 'HEAD@{n}',
@@ -4628,6 +4685,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git reset --hard HEAD@{1}',
+              task: `Riporta HEAD allo stato precedente all'ultima modifica usando il riferimento temporale HEAD@{1}.`,
             },
             {
               english: 'Recover Commit',
@@ -4639,6 +4697,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git checkout -b rescue a3f5e21',
+              task: 'Crea il branch rescue puntato al commit a3f5e21 per salvarlo prima che il garbage collector lo rimuova.',
             },
             {
               english: 'Reflog Expire',
@@ -4650,6 +4709,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git reflog expire --expire=30.days',
+              task: 'Forza la scadenza delle voci del reflog piu vecchie di trenta giorni per liberare spazio.',
             },
             {
               english: 'Branch Reflog',
@@ -4661,6 +4721,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git reflog show feature',
+              task: 'Visualizza il reflog dedicato al branch feature per ricostruire la sua storia di movimenti locali.',
             },
             {
               english: 'Stash Reflog',
@@ -4672,6 +4733,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git reflog show stash',
+              task: 'Ispeziona il reflog dello stash per recuperare riferimenti a stash droppati o sostituiti.',
             },
             {
               english: 'Garbage Collection',
@@ -4683,6 +4745,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git gc',
+              task: 'Avvia la garbage collection per compattare gli oggetti e rimuovere quelli irraggiungibili scaduti.',
             },
             {
               english: 'Unreachable Object',
@@ -4694,6 +4757,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git fsck --unreachable',
+              task: 'Elenca tutti gli oggetti unreachable per identificare commit perduti recuperabili manualmente.',
             },
             {
               english: 'fsck',
@@ -4705,6 +4769,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git fsck --full',
+              task: `Esegui una verifica integrale dell'object database per individuare oggetti corrotti o danneggiati.`,
             },
           ],
         },
@@ -4724,6 +4789,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git bisect start',
               note: 'Bisect = bisezione. Divide la storia a metà.',
+              task: 'Avvia una sessione di bisect per restringere col metodo binario il commit che ha introdotto un bug.',
             },
             {
               english: 'bisect start',
@@ -4735,6 +4801,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git bisect start',
+              task: 'Inizia il bisect a partire dallo stato attuale per cominciare la ricerca binaria del commit difettoso.',
             },
             {
               english: 'bisect bad',
@@ -4746,6 +4813,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git bisect bad',
+              task: 'Segna il commit corrente come bad indicando a bisect che contiene la regressione cercata.',
             },
             {
               english: 'bisect good',
@@ -4757,6 +4825,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git bisect good v1.0',
+              task: 'Marca il tag v1.0 come good per fornire a bisect un punto noto in cui il bug non era presente.',
             },
             {
               english: 'bisect reset',
@@ -4768,6 +4837,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git bisect reset',
+              task: 'Termina la sessione di bisect e riporta HEAD al branch originale da cui sei partito.',
             },
             {
               english: 'bisect run',
@@ -4779,6 +4849,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git bisect run npm test',
+              task: 'Automatizza la ricerca facendo eseguire a bisect il comando npm test su ogni commit candidato.',
             },
             {
               english: 'Binary Search',
@@ -4811,6 +4882,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git bisect skip',
+              task: 'Salta il commit attuale quando non puoi testarlo facilmente, lasciando che bisect ne provi un altro.',
             },
             {
               english: 'bisect log',
@@ -4822,6 +4894,7 @@ export default {
               context: 'history',
               difficulty: 'intermediate',
               command: 'git bisect log > bisect.log',
+              task: `Esporta il log della sessione di bisect nel file bisect.log per documentare l'indagine svolta.`,
             },
           ],
         },
@@ -4850,6 +4923,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git tag v1.0',
               note: 'Riferimento immutabile a un commit, perfetto per versioni.',
+              task: 'Crea il tag v1.0 sul commit corrente per marcare in modo permanente un punto di release.',
             },
             {
               english: 'git tag',
@@ -4861,6 +4935,7 @@ export default {
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git tag',
+              task: 'Elenca tutti i tag esistenti nel repository per scegliere su quale versione fare checkout.',
             },
             {
               english: 'Lightweight Tag',
@@ -4873,6 +4948,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git tag v1.0.1',
               note: 'Senza metadati: solo un nome che punta a un commit.',
+              task: 'Crea un tag leggero v1.0.1 come semplice puntatore a un commit, senza metadati aggiuntivi.',
             },
             {
               english: 'Annotated Tag',
@@ -4885,6 +4961,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git tag -a v1.0 -m "Release 1.0"',
               note: 'Consigliato per release: contiene metadati come un commit.',
+              task: 'Aggiungi un tag annotato v1.0 con il messaggio "Release 1.0" per registrare autore, data e descrizione.',
             },
             {
               english: 'Tag Message',
@@ -4896,6 +4973,7 @@ export default {
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git tag -a v2.0 -m "Major release"',
+              task: 'Marca la release con il tag annotato v2.0 includendo "Major release" come messaggio descrittivo.',
             },
             {
               english: 'List Tags',
@@ -4907,6 +4985,7 @@ export default {
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git tag -l "v1.*"',
+              task: `Filtra l'elenco dei tag per mostrare solo quelli che iniziano con "v1." tramite un pattern glob.`,
             },
             {
               english: 'Show Tag',
@@ -4918,6 +4997,7 @@ export default {
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git show v1.0',
+              task: `Visualizza il contenuto del tag v1.0 con il commit referenziato e l'eventuale messaggio annotato.`,
             },
             {
               english: 'Tag Specific Commit',
@@ -4929,6 +5009,7 @@ export default {
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git tag v0.9 a3f5e21',
+              task: 'Marca retroattivamente il commit a3f5e21 con il tag v0.9 quando il tag originale era stato dimenticato.',
             },
             {
               english: 'Delete Tag',
@@ -4940,6 +5021,7 @@ export default {
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git tag -d v1.0',
+              task: 'Cancella localmente il tag v1.0 quando devi correggere una release marcata sul commit sbagliato.',
             },
             {
               english: 'Checkout Tag',
@@ -4952,6 +5034,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git checkout v1.0',
               note: 'Detached HEAD: per modifiche crea un branch.',
+              task: 'Passa allo stato del tag v1.0 in detached HEAD per ispezionare o ricostruire quella versione.',
             },
           ],
         },
@@ -4991,6 +5074,7 @@ export default {
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git tag v2.0.0',
+              task: 'Pubblica una major release con il tag v2.0.0 quando introduci breaking change incompatibili con la v1.',
             },
             {
               english: 'Minor Version',
@@ -5002,6 +5086,7 @@ export default {
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git tag v1.1.0',
+              task: 'Marca con il tag v1.1.0 una release che aggiunge nuove funzionalita retrocompatibili al ramo v1.',
             },
             {
               english: 'Patch Version',
@@ -5013,6 +5098,7 @@ export default {
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git tag v1.0.1',
+              task: 'Pubblica la patch v1.0.1 per distribuire bugfix senza alterare le API esistenti.',
             },
             {
               english: 'Pre-release',
@@ -5024,6 +5110,7 @@ export default {
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git tag v1.0.0-alpha.1',
+              task: 'Crea il tag v1.0.0-alpha.1 per distribuire una versione pre-release agli early adopter.',
             },
             {
               english: 'Release Candidate',
@@ -5035,6 +5122,7 @@ export default {
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git tag v2.0.0-rc.1',
+              task: 'Marca con v2.0.0-rc.1 una release candidate pronta per il test finale prima della pubblicazione stabile.',
             },
             {
               english: 'Build Metadata',
@@ -5046,6 +5134,7 @@ export default {
               context: 'branching',
               difficulty: 'intermediate',
               code: 'v1.0.0+20230101',
+              task: 'Allega al tag v1.0.0 il metadato di build +20230101 per distinguere artefatti generati in giorni diversi.',
             },
             {
               english: 'Breaking Change',
@@ -5069,6 +5158,7 @@ export default {
               difficulty: 'intermediate',
               code: 'feat: add login\\nfix: typo\\nBREAKING CHANGE: remove API',
               note: 'Standard per generare changelog automatici.',
+              task: 'Struttura i messaggi di commit con i prefissi feat, fix e BREAKING CHANGE per abilitare il versioning automatico.',
             },
           ],
         },
@@ -5088,6 +5178,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git push origin v1.0',
               note: 'I tag NON vengono pushati con un normale git push.',
+              task: 'Pubblica sul remote origin il singolo tag v1.0 quando vuoi rendere disponibile una release specifica.',
             },
             {
               english: 'Push All Tags',
@@ -5099,6 +5190,7 @@ export default {
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git push --tags',
+              task: 'Sincronizza con il remote tutti i tag locali in un colpo solo usando il flag --tags.',
             },
             {
               english: 'Push with Follow Tags',
@@ -5110,6 +5202,7 @@ export default {
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git push --follow-tags',
+              task: 'Pubblica i commit insieme ai soli tag annotati che li referenziano grazie al flag --follow-tags.',
             },
             {
               english: 'Delete Remote Tag',
@@ -5121,6 +5214,7 @@ export default {
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git push origin --delete v1.0',
+              task: 'Rimuovi dal remote origin il tag v1.0 quando devi ritirare una release pubblicata per errore.',
             },
             {
               english: 'Fetch Tags',
@@ -5132,6 +5226,7 @@ export default {
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git fetch --tags',
+              task: 'Scarica dal remote tutti i tag mancanti localmente per allinearti con le release pubblicate.',
             },
             {
               english: 'tagOpt',
@@ -5143,6 +5238,7 @@ export default {
               context: 'branching',
               difficulty: 'intermediate',
               code: 'remote.origin.tagOpt = --tags',
+              task: 'Configura il remote origin con tagOpt = --tags affinche ogni fetch scarichi automaticamente tutti i tag.',
             },
             {
               english: 'Force Push Tag',
@@ -5155,6 +5251,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git push origin v1.0 --force',
               note: 'Sconsigliato: i tag dovrebbero essere immutabili.',
+              task: 'Forza la sovrascrittura del tag v1.0 sul remote quando devi correggere un tag pubblicato sul commit sbagliato.',
             },
             {
               english: 'Tag Protection',
@@ -5177,6 +5274,7 @@ export default {
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git tag -v v1.0',
+              task: `Verifica la firma GPG del tag v1.0 per accertare l'autenticita della release ricevuta dal remote.`,
             },
             {
               english: 'Sign Tag',
@@ -5188,6 +5286,7 @@ export default {
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git tag -s v1.0 -m "Signed release"',
+              task: `Firma il tag v1.0 con GPG e il messaggio "Signed release" per garantire l'autenticita della release.`,
             },
           ],
         },
@@ -5218,6 +5317,7 @@ export default {
               difficulty: 'intermediate',
               command: 'gh release create v1.0',
               tool: 'gh',
+              task: 'Crea una GitHub Release agganciata al tag v1.0 usando la CLI gh per pubblicarla automaticamente.',
             },
             {
               english: 'Release Notes',
@@ -5241,6 +5341,7 @@ export default {
               difficulty: 'intermediate',
               code: '## [1.0.0] - 2024-01-01\\n### Added\\n- Login feature',
               tool: 'keep-a-changelog',
+              task: 'Documenta la release 1.0.0 nel CHANGELOG.md elencando le nuove funzionalita aggiunte come la login.',
             },
             {
               english: 'Draft Release',
@@ -5252,6 +5353,7 @@ export default {
               context: 'branching',
               difficulty: 'intermediate',
               command: 'gh release create v1.0 --draft',
+              task: 'Crea una bozza della release v1.0 con il flag --draft per rivederla prima di pubblicarla.',
             },
             {
               english: 'Release Asset',
@@ -5263,6 +5365,7 @@ export default {
               context: 'branching',
               difficulty: 'intermediate',
               command: 'gh release upload v1.0 build.zip',
+              task: 'Allega il file build.zip alla release v1.0 come asset scaricabile dagli utenti.',
             },
             {
               english: 'Latest Release',
@@ -5274,6 +5377,7 @@ export default {
               context: 'branching',
               difficulty: 'intermediate',
               command: 'gh release view --latest',
+              task: `Recupera con la CLI gh i dettagli dell'ultima release pubblicata per verificarne contenuto e asset.`,
             },
             {
               english: 'Pre-release Tag',
@@ -5285,6 +5389,7 @@ export default {
               context: 'branching',
               difficulty: 'intermediate',
               command: 'gh release create v1.0-beta --prerelease',
+              task: 'Pubblica la release v1.0-beta marcandola come prerelease in modo che non venga proposta come ultima stabile.',
             },
             {
               english: 'Release Workflow',
@@ -5337,6 +5442,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git commit -S -m "Signed commit"',
               note: 'Su GitHub appare il badge "Verified".',
+              task: `Crea un commit firmato con GPG e il messaggio "Signed commit" per attestarne l'autore in modo crittografico.`,
             },
             {
               english: 'GPG',
@@ -5360,6 +5466,7 @@ export default {
               context: 'workflow',
               difficulty: 'intermediate',
               command: 'gpg --full-generate-key',
+              task: 'Genera una nuova coppia di chiavi GPG con la procedura full per poter firmare commit e tag.',
             },
             {
               english: 'signingKey',
@@ -5371,6 +5478,7 @@ export default {
               context: 'workflow',
               difficulty: 'intermediate',
               command: 'git config --global user.signingkey ABCD1234',
+              task: 'Configura la chiave ABCD1234 come signingkey globale di Git per firmare automaticamente commit e tag.',
             },
             {
               english: 'commit.gpgsign',
@@ -5382,6 +5490,7 @@ export default {
               context: 'workflow',
               difficulty: 'intermediate',
               command: 'git config --global commit.gpgsign true',
+              task: 'Attiva globalmente commit.gpgsign cosi ogni commit verra firmato automaticamente senza dover passare -S.',
             },
             {
               english: 'SSH Signing',
@@ -5394,6 +5503,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git config gpg.format ssh',
               note: 'Più semplice di GPG, supportato da Git 2.34+.',
+              task: 'Configura gpg.format come ssh per firmare i commit con la chiave SSH invece che con una chiave GPG.',
             },
             {
               english: 'Verified Badge',
@@ -5416,6 +5526,7 @@ export default {
               context: 'workflow',
               difficulty: 'intermediate',
               command: 'gpg --armor --export ABCD1234',
+              task: 'Esporta in formato ASCII armored la chiave pubblica ABCD1234 da caricare poi su GitHub per la verifica.',
             },
             {
               english: 'Vigilant Mode',
@@ -5458,6 +5569,7 @@ export default {
               difficulty: 'intermediate',
               code: '.git/hooks/pre-commit',
               note: 'Script eseguibili nella cartella .git/hooks.',
+              task: 'Posiziona lo script pre-commit dentro .git/hooks per agganciare logica personalizzata al ciclo di Git.',
             },
             {
               english: 'pre-commit Hook',
@@ -5469,6 +5581,7 @@ export default {
               context: 'workflow',
               difficulty: 'intermediate',
               code: '#!/bin/sh\\nnpm test',
+              task: 'Scrivi un hook pre-commit che lanci npm test per impedire commit che rompono la suite di test.',
             },
             {
               english: 'commit-msg Hook',
@@ -5491,6 +5604,7 @@ export default {
               context: 'workflow',
               difficulty: 'intermediate',
               code: '.git/hooks/pre-push',
+              task: `Aggiungi un hook pre-push in .git/hooks per validare il branch prima di consentire l'invio al remote.`,
             },
             {
               english: 'post-commit Hook',
@@ -5514,6 +5628,7 @@ export default {
               tool: 'husky',
               command: 'npx husky init',
               note: 'Standard de facto in JavaScript per hook condivisi.',
+              task: 'Inizializza Husky nel progetto Node con npx husky init per gestire gli hook tramite package.json.',
             },
             {
               english: 'lint-staged',
@@ -5526,6 +5641,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'lint-staged',
               code: '"*.js": ["eslint --fix", "prettier --write"]',
+              task: 'Configura lint-staged perche su ogni file *.js lanci eslint --fix e prettier --write prima del commit.',
             },
             {
               english: 'pre-commit Framework',
@@ -5538,6 +5654,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'pre-commit',
               command: 'pre-commit install',
+              task: 'Installa gli hook del framework pre-commit per agganciare check di qualita configurati in YAML.',
             },
             {
               english: 'Skip Hooks',
@@ -5550,6 +5667,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git commit --no-verify',
               note: 'Da usare con cautela: bypassa controlli di qualità.',
+              task: `Bypassa l'esecuzione degli hook con --no-verify solo in situazioni di emergenza, mai abitualmente.`,
             },
             {
               english: 'Server-side Hook',
@@ -5561,6 +5679,7 @@ export default {
               context: 'workflow',
               difficulty: 'intermediate',
               code: 'pre-receive, update, post-receive',
+              task: 'Configura sul server gli hook pre-receive, update e post-receive per applicare policy lato remote.',
             },
           ],
         },
@@ -5602,6 +5721,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'eslint',
               command: 'npx eslint .',
+              task: `Lancia ESLint sull'intero progetto per individuare problemi di stile e potenziali bug nel codice JavaScript.`,
             },
             {
               english: 'Prettier',
@@ -5614,6 +5734,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'prettier',
               command: 'npx prettier --write .',
+              task: 'Riformatta tutti i file del progetto con Prettier per uniformare lo stile prima di committare.',
             },
             {
               english: 'EditorConfig',
@@ -5625,6 +5746,7 @@ export default {
               context: 'workflow',
               difficulty: 'intermediate',
               code: 'indent_size = 2\\nend_of_line = lf',
+              task: `Configura indent_size = 2 e end_of_line = lf in .editorconfig per uniformare le impostazioni dell'editor.`,
             },
             {
               english: 'Type Checking',
@@ -5636,6 +5758,7 @@ export default {
               context: 'workflow',
               difficulty: 'intermediate',
               command: 'npx tsc --noEmit',
+              task: 'Esegui il type check TypeScript con tsc --noEmit per verificare i tipi senza generare file JS.',
             },
             {
               english: 'Code Review Checklist',
@@ -5670,6 +5793,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'codecov',
               command: 'npm test -- --coverage',
+              task: 'Lancia la suite di test con --coverage per misurare quanta parte del codice e coperta dai test.',
             },
             {
               english: 'Quality Gate',
@@ -5699,6 +5823,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git commit -m "feat: add login"',
               note: 'La convenzione prevede subject di max 50 caratteri e body wrappato a 72.',
+              task: 'Componi un commit message con il prefisso feat e un riassunto sintetico secondo i conventional commits.',
             },
             {
               english: 'Subject Line',
@@ -5732,6 +5857,7 @@ export default {
               context: 'workflow',
               difficulty: 'intermediate',
               code: 'feat: add login\\n\\nUsers can now sign in via email.',
+              task: 'Aggiungi al messaggio di commit un body dopo una riga vuota per spiegare i dettagli della feature login.',
             },
             {
               english: 'Commit Footer',
@@ -5743,6 +5869,7 @@ export default {
               context: 'workflow',
               difficulty: 'intermediate',
               code: 'Closes #42\\nReviewed-by: Alice',
+              task: `Concludi il messaggio con un footer che chiude l'issue #42 e attribuisce la review ad Alice.`,
             },
             {
               english: 'Type Prefix',
@@ -5754,6 +5881,7 @@ export default {
               context: 'workflow',
               difficulty: 'intermediate',
               code: 'feat(auth): add 2FA support',
+              task: `Apri il messaggio con il prefisso feat(auth) per segnalare una nuova funzionalita relativa all'autenticazione.`,
             },
             {
               english: 'Scope',
@@ -5765,6 +5893,7 @@ export default {
               context: 'workflow',
               difficulty: 'intermediate',
               code: 'fix(api): handle null user',
+              task: `Restringi l'ambito del commit fix(api) per indicare che la correzione riguarda solo il modulo API.`,
             },
             {
               english: 'Atomic Commit Principle',
@@ -5788,6 +5917,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'commitlint',
               code: 'extends: ["@commitlint/config-conventional"]',
+              task: 'Estendi la configurazione di commitlint con @commitlint/config-conventional per validare i messaggi automaticamente.',
             },
             {
               english: 'Co-authored-by',
@@ -5800,6 +5930,7 @@ export default {
               difficulty: 'intermediate',
               code: 'Co-authored-by: Alice <alice@ex.com>',
               note: 'GitHub mostra entrambi gli avatar nella history.',
+              task: 'Attribuisci un commit a piu autori aggiungendo il trailer Co-authored-by con nome ed email di Alice.',
             },
           ],
         },
@@ -5827,6 +5958,7 @@ export default {
               context: 'config',
               difficulty: 'intermediate',
               command: 'git config --list',
+              task: `Elenca tutte le configurazioni di Git attive a partire dai vari livelli per ispezionarne l'origine.`,
             },
             {
               english: 'System Config',
@@ -5839,6 +5971,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git config --system',
               code: '/etc/gitconfig',
+              task: 'Modifica la configurazione di sistema in /etc/gitconfig che si applica a tutti gli utenti della macchina.',
             },
             {
               english: 'Global Config',
@@ -5851,6 +5984,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git config --global user.name "Alice"',
               code: '~/.gitconfig',
+              task: 'Imposta il nome utente "Alice" a livello globale in ~/.gitconfig per identificarti in tutti i repository.',
             },
             {
               english: 'Local Config',
@@ -5864,6 +5998,7 @@ export default {
               command: 'git config --local',
               code: '.git/config',
               note: 'Sovrascrive global e system per quel repo.',
+              task: 'Modifica le impostazioni locali in .git/config che hanno la precedenza solo per il repository corrente.',
             },
             {
               english: 'user.name',
@@ -5875,6 +6010,7 @@ export default {
               context: 'config',
               difficulty: 'intermediate',
               command: 'git config --global user.name "Mario Rossi"',
+              task: 'Imposta "Mario Rossi" come user.name globale per firmare i commit con il tuo nome reale.',
             },
             {
               english: 'user.email',
@@ -5887,6 +6023,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git config --global user.email "you@ex.com"',
               note: 'Usa la noreply email di GitHub per privacy.',
+              task: `Configura la user.email globale con l'indirizzo che vuoi associare ai commit creati su questa macchina.`,
             },
             {
               english: 'core.editor',
@@ -5898,6 +6035,7 @@ export default {
               context: 'config',
               difficulty: 'intermediate',
               command: 'git config --global core.editor "code --wait"',
+              task: 'Imposta VS Code in modalita wait come editor predefinito per i messaggi di commit e i rebase interattivi.',
             },
             {
               english: 'core.autocrlf',
@@ -5910,6 +6048,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git config --global core.autocrlf input',
               note: 'true su Windows, input su Unix.',
+              task: 'Configura core.autocrlf su input per normalizzare i fine riga a LF nei repository condivisi con Windows.',
             },
             {
               english: 'init.defaultBranch',
@@ -5921,6 +6060,7 @@ export default {
               context: 'config',
               difficulty: 'intermediate',
               command: 'git config --global init.defaultBranch main',
+              task: 'Imposta main come nome predefinito del branch iniziale per ogni nuovo repository creato con git init.',
             },
             {
               english: 'pull.rebase global default',
@@ -5933,6 +6073,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git config --global pull.rebase true',
               note: `Il valore 'merges' preserva i merge commit locali durante il rebase del pull.`,
+              task: 'Configura pull.rebase a true globalmente cosi git pull eseguira un rebase invece di un merge.',
             },
           ],
         },
@@ -5951,6 +6092,7 @@ export default {
               context: 'config',
               difficulty: 'intermediate',
               command: 'git config --global alias.co checkout',
+              task: `Crea l'alias globale co per richiamare il comando checkout digitando meno caratteri.`,
             },
             {
               english: 'alias.co',
@@ -5962,6 +6104,7 @@ export default {
               context: 'config',
               difficulty: 'intermediate',
               command: 'git config alias.co checkout',
+              task: 'Definisci alias.co come scorciatoia per checkout solo nel repository corrente, senza propagarla globalmente.',
             },
             {
               english: 'alias.st',
@@ -5973,6 +6116,7 @@ export default {
               context: 'config',
               difficulty: 'intermediate',
               command: 'git config alias.st status',
+              task: 'Imposta st come abbreviazione di status per controllare velocemente lo stato del repository.',
             },
             {
               english: 'alias.lg',
@@ -5984,6 +6128,7 @@ export default {
               context: 'config',
               difficulty: 'intermediate',
               code: 'alias.lg = log --graph --oneline --all',
+              task: `Crea l'alias lg che mostra il log come grafo a una riga includendo tutti i branch in vista compatta.`,
             },
             {
               english: 'Shell Alias',
@@ -5995,6 +6140,7 @@ export default {
               context: 'config',
               difficulty: 'intermediate',
               code: 'alias.cleanup = !git branch --merged | grep -v main | xargs git branch -d',
+              task: 'Definisci un alias cleanup che esegue uno script shell per cancellare tutti i branch gia mergati su main.',
             },
             {
               english: 'Multi-command Alias',
@@ -6006,6 +6152,7 @@ export default {
               context: 'config',
               difficulty: 'intermediate',
               code: 'alias.acp = !git add -A && git commit -m "$1" && git push',
+              task: `Crea l'alias acp che concatena add, commit e push in un unico comando passando il messaggio come parametro.`,
             },
             {
               english: 'alias.unstage',
@@ -6017,6 +6164,7 @@ export default {
               context: 'config',
               difficulty: 'intermediate',
               code: 'alias.unstage = reset HEAD --',
+              task: 'Definisci alias.unstage come scorciatoia per reset HEAD -- e togliere file dallo staging.',
             },
             {
               english: 'alias.last',
@@ -6028,6 +6176,7 @@ export default {
               context: 'config',
               difficulty: 'intermediate',
               code: 'alias.last = log -1 HEAD',
+              task: 'Aggiungi alias.last come scorciatoia per visualizzare il solo ultimo commit con log -1 HEAD.',
             },
             {
               english: 'alias.amend',
@@ -6039,6 +6188,7 @@ export default {
               context: 'config',
               difficulty: 'intermediate',
               code: 'alias.amend = commit --amend --no-edit',
+              task: `Crea alias.amend per richiamare commit --amend --no-edit quando vuoi aggiungere file all'ultimo commit.`,
             },
             {
               english: 'List Aliases',
@@ -6050,6 +6200,7 @@ export default {
               context: 'config',
               difficulty: 'intermediate',
               command: 'git config --get-regexp alias',
+              task: 'Estrai con una regexp tutti gli alias configurati per consultarli rapidamente quando ne dimentichi uno.',
             },
           ],
         },
@@ -6069,6 +6220,7 @@ export default {
               difficulty: 'intermediate',
               code: '[includeIf "gitdir:~/work/"]\\n  path = .gitconfig-work',
               note: 'Perfetto per separare email lavoro/personale.',
+              task: 'Configura includeIf per caricare .gitconfig-work solo quando lavori in repository sotto ~/work/.',
             },
             {
               english: 'gitdir Pattern',
@@ -6080,6 +6232,7 @@ export default {
               context: 'config',
               difficulty: 'intermediate',
               code: 'gitdir:~/work/',
+              task: 'Usa il pattern gitdir:~/work/ per attivare condizionalmente impostazioni in base alla cartella del repository.',
             },
             {
               english: 'onbranch Pattern',
@@ -6091,6 +6244,7 @@ export default {
               context: 'config',
               difficulty: 'intermediate',
               code: '[includeIf "onbranch:main"]',
+              task: 'Applica un blocco includeIf con onbranch:main per attivare config specifiche solo quando sei sul ramo main.',
             },
             {
               english: 'Work Profile',
@@ -6102,6 +6256,7 @@ export default {
               context: 'config',
               difficulty: 'intermediate',
               code: '[user]\\n  email = alice@company.com',
+              task: 'Crea un profilo aziendale che sovrascriva user.email con alice@company.com nei repository di lavoro.',
             },
             {
               english: 'Personal Profile',
@@ -6123,6 +6278,7 @@ export default {
               context: 'config',
               difficulty: 'intermediate',
               code: '~/.config/git/config',
+              task: 'Sposta la tua gitconfig globale in ~/.config/git/config seguendo la specifica XDG Base Directory.',
             },
             {
               english: 'Worktree Config',
@@ -6134,6 +6290,7 @@ export default {
               context: 'config',
               difficulty: 'intermediate',
               command: 'git config extensions.worktreeConfig true',
+              task: 'Abilita extensions.worktreeConfig per avere configurazioni distinte in ogni worktree dello stesso repo.',
             },
             {
               english: 'Insteadof',
@@ -6145,6 +6302,7 @@ export default {
               context: 'config',
               difficulty: 'intermediate',
               code: 'url."git@github.com:".insteadOf = "https://github.com/"',
+              task: 'Riscrivi automaticamente gli URL HTTPS di GitHub in SSH grazie a url.insteadOf nella tua gitconfig.',
             },
             {
               english: 'Credential Helper',
@@ -6156,6 +6314,7 @@ export default {
               context: 'config',
               difficulty: 'intermediate',
               command: 'git config --global credential.helper store',
+              task: 'Attiva il credential helper store per salvare in chiaro le credenziali HTTPS sul filesystem dopo il primo login.',
             },
             {
               english: 'rerere.enabled',
@@ -6167,6 +6326,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git config --global rerere.enabled true',
               note: 'Chiave booleana di config. Quando attiva, Git salva le risoluzioni dei conflitti in .git/rr-cache e le riapplica.',
+              task: 'Abilita rerere globalmente per far ricordare a Git le risoluzioni dei conflitti ricorrenti.',
             },
           ],
         },
@@ -6185,6 +6345,7 @@ export default {
               difficulty: 'intermediate',
               code: 'node_modules/\\n.env\\n*.log',
               note: `A differenza del .gitignore di progetto, vale per tutti i repo dell'utente.`,
+              task: 'Aggiungi al gitignore globale le voci node_modules/, .env e *.log per ignorarle in tutti i progetti.',
             },
             {
               english: 'Glob Pattern',
@@ -6196,6 +6357,7 @@ export default {
               context: 'config',
               difficulty: 'intermediate',
               code: '**/dist/\\n*.tmp',
+              task: 'Definisci i pattern glob **/dist/ e *.tmp nel gitignore per escludere ricorsivamente cartelle e file temporanei.',
             },
             {
               english: 'Negation Pattern',
@@ -6207,6 +6369,7 @@ export default {
               context: 'config',
               difficulty: 'intermediate',
               code: '*.log\\n!important.log',
+              task: 'Ignora tutti i *.log ma riammetti important.log con un pattern di negazione prefissato da punto esclamativo.',
             },
             {
               english: 'core.excludesFile Path',
@@ -6219,6 +6382,7 @@ export default {
               difficulty: 'intermediate',
               command: 'git config --global core.excludesFile ~/.gitignore_global',
               note: `Il default e' ~/.config/git/ignore se la chiave non e' impostata.`,
+              task: 'Punta core.excludesFile a ~/.gitignore_global per centralizzare le esclusioni valide su tutti i repository.',
             },
             {
               english: '.gitattributes',
@@ -6230,6 +6394,7 @@ export default {
               context: 'config',
               difficulty: 'intermediate',
               code: '*.sh text eol=lf\\n*.png binary',
+              task: 'Dichiara in .gitattributes che *.sh deve usare LF e *.png va trattato come binario non diffabile.',
             },
             {
               english: 'Line Ending Normalization',
@@ -6241,6 +6406,7 @@ export default {
               context: 'config',
               difficulty: 'intermediate',
               code: '* text=auto eol=lf',
+              task: 'Forza la normalizzazione dei fine riga a LF per tutti i file di testo aggiungendo * text=auto eol=lf.',
             },
             {
               english: 'export-ignore',
@@ -6253,6 +6419,7 @@ export default {
               difficulty: 'intermediate',
               code: 'tests/ export-ignore',
               note: 'Attributo di .gitattributes che esclude i file dagli archivi generati da git archive (tar/zip).',
+              task: 'Marca la cartella tests/ con export-ignore per escluderla dagli archivi generati da git archive.',
             },
             {
               english: 'merge=ours',
@@ -6264,6 +6431,7 @@ export default {
               context: 'config',
               difficulty: 'intermediate',
               code: 'CHANGELOG.md merge=ours',
+              task: 'Configura merge=ours per CHANGELOG.md in modo che nei merge venga preservata sempre la versione locale.',
             },
             {
               english: 'diff Driver',
@@ -6275,6 +6443,7 @@ export default {
               context: 'config',
               difficulty: 'intermediate',
               code: '*.docx diff=word',
+              task: 'Assegna a *.docx il driver diff=word per ottenere differenze leggibili sui documenti Word binari.',
             },
             {
               english: 'gitignore.io',
@@ -6315,6 +6484,7 @@ export default {
               difficulty: 'advanced',
               command: 'git submodule add <url>',
               note: 'Punta a uno specifico commit del sub-repo.',
+              task: 'Aggiungi un submodule esterno per integrare un repository di libreria condiviso dentro il progetto corrente.',
             },
             {
               english: 'git submodule add',
@@ -6326,6 +6496,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git submodule add https://github.com/lib/lib.git lib/',
+              task: 'Aggiungi come submodule il repository lib.git nella cartella lib/ del progetto corrente.',
             },
             {
               english: '.gitmodules',
@@ -6337,6 +6508,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               code: '[submodule "lib"]\\n  path = lib\\n  url = https://github.com/lib/lib.git',
+              task: `Registra in .gitmodules il submodule lib con il path lib e l'URL del repository di provenienza.`,
             },
             {
               english: 'submodule init',
@@ -6348,6 +6520,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git submodule init',
+              task: 'Inizializza i submodule registrati in .gitmodules registrando le loro URL nella configurazione locale.',
             },
             {
               english: 'submodule update',
@@ -6359,6 +6532,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git submodule update --init --recursive',
+              task: 'Inizializza e clona ricorsivamente tutti i submodule annidati con un singolo comando update.',
             },
             {
               english: 'Recursive Clone',
@@ -6370,6 +6544,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git clone --recurse-submodules <url>',
+              task: 'Clona un repository portandosi dietro tutti i submodule grazie al flag --recurse-submodules.',
             },
             {
               english: 'submodule status',
@@ -6381,6 +6556,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git submodule status',
+              task: `Mostra lo stato corrente di tutti i submodule con il SHA pinnato e l'eventuale drift locale.`,
             },
             {
               english: 'Update Pin',
@@ -6392,6 +6568,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'cd lib && git pull && cd .. && git add lib && git commit',
+              task: 'Aggiorna il pin del submodule lib facendo pull al suo interno e committando il nuovo SHA nel superprogetto.',
             },
             {
               english: 'foreach',
@@ -6403,6 +6580,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git submodule foreach git pull',
+              task: 'Esegui git pull in ogni submodule del progetto in un colpo solo con il comando foreach.',
             },
             {
               english: 'Deinit Submodule',
@@ -6415,6 +6593,7 @@ export default {
               difficulty: 'advanced',
               command: 'git submodule deinit lib',
               note: 'Per rimuovere completamente: rm -rf .git/modules/lib.',
+              task: 'Rimuovi dal repository il submodule lib con deinit, prima passo per cancellarlo definitivamente.',
             },
           ],
         },
@@ -6444,6 +6623,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git subtree add --prefix=lib <url> main --squash',
+              task: 'Inietta un repository esterno nella cartella lib/ usando subtree add con squash per appiattirne la storia.',
             },
             {
               english: 'subtree pull',
@@ -6455,6 +6635,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git subtree pull --prefix=lib <url> main --squash',
+              task: 'Aggiorna la subtree lib/ pullando le ultime modifiche da main del repository upstream con squash.',
             },
             {
               english: 'subtree push',
@@ -6466,6 +6647,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git subtree push --prefix=lib <url> main',
+              task: 'Pubblica le modifiche fatte localmente nella subtree lib/ verso il branch main del repository upstream.',
             },
             {
               english: 'Squash Merge Strategy',
@@ -6478,6 +6660,7 @@ export default {
               difficulty: 'advanced',
               command: 'git subtree add --squash',
               note: `Mantiene una history lineare ma perde la granularita' dei commit originali.`,
+              task: 'Usa --squash quando aggiungi una subtree per evitare di importarne tutta la storia commit per commit.',
             },
             {
               english: 'Subtree Split',
@@ -6489,6 +6672,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git subtree split --prefix=lib -b lib-split',
+              task: 'Estrai la cronologia della cartella lib in un nuovo branch lib-split per pubblicarla come repo indipendente.',
             },
             {
               english: 'subrepo',
@@ -6550,6 +6734,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'cd lib && git checkout v1.0',
+              task: 'Pinna il submodule lib al tag stabile v1.0 entrando nella sua cartella e facendo checkout su quel tag.',
             },
             {
               english: 'Tracking Branch',
@@ -6561,6 +6746,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git submodule set-branch --branch main lib',
+              task: 'Configura il submodule lib affinche segua il branch main del repository upstream invece di un SHA fisso.',
             },
             {
               english: 'remote-tracking',
@@ -6572,6 +6758,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git submodule update --remote',
+              task: 'Aggiorna i submodule alla cima del loro branch remoto tracciato passando il flag --remote a update.',
             },
             {
               english: 'Shallow Submodule',
@@ -6583,6 +6770,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git submodule add --depth=1 <url>',
+              task: `Aggiungi il submodule clonandone solo l'ultimo commit con --depth=1 per ridurre il tempo di clone.`,
             },
             {
               english: 'Submodule Branch',
@@ -6594,6 +6782,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               code: '[submodule "lib"]\\n  branch = main',
+              task: 'Specifica in .gitmodules che il submodule lib deve seguire il branch main per gli update da remote.',
             },
             {
               english: 'Submodule Conflict',
@@ -6627,6 +6816,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git config submodule.lib.url <new-url>',
+              task: 'Aggiorna la URL del submodule lib quando il repository upstream cambia hosting o organizzazione.',
             },
             {
               english: 'Sync Submodules',
@@ -6638,6 +6828,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git submodule sync',
+              task: 'Risincronizza le URL dei submodule da .gitmodules al config locale dopo un cambio di indirizzo upstream.',
             },
             {
               english: 'fetchJobs',
@@ -6649,6 +6840,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git config submodule.fetchJobs 4',
+              task: 'Configura submodule.fetchJobs a 4 per scaricare in parallelo piu submodule e velocizzare il clone.',
             },
           ],
         },
@@ -6698,6 +6890,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               code: 'vendor/',
+              task: 'Riserva la cartella vendor/ per le dipendenze di terze parti committate insieme al codice del progetto.',
             },
             {
               english: 'Release Train Cadence',
@@ -6719,6 +6912,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               code: 'package-lock.json\\nyarn.lock\\nCargo.lock',
+              task: 'Committa i lockfile package-lock.json, yarn.lock e Cargo.lock per fissare le versioni esatte delle dipendenze.',
             },
             {
               english: 'Dependency Graph',
@@ -6810,6 +7004,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git lfs install',
+              task: 'Installa i filter di Git LFS nella tua configurazione utente per abilitare il tracciamento dei file grandi.',
             },
             {
               english: 'lfs track',
@@ -6821,6 +7016,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git lfs track "*.psd"',
+              task: 'Configura LFS perche gestisca tutti i file *.psd registrandoli in .gitattributes con il filter giusto.',
             },
             {
               english: 'Pointer File',
@@ -6832,6 +7028,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               code: 'version https://git-lfs.github.com/spec/v1\\noid sha256:abc...\\nsize 12345',
+              task: 'Memorizza nel repository il pointer file LFS con OID sha256 e dimensione al posto del contenuto binario reale.',
             },
             {
               english: 'lfs ls-files',
@@ -6843,6 +7040,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git lfs ls-files',
+              task: 'Elenca tutti i file LFS tracciati nel repository con il loro OID per verificare cosa viene gestito da LFS.',
             },
             {
               english: 'lfs status',
@@ -6854,6 +7052,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git lfs status',
+              task: 'Controlla lo stato corrente dei file LFS in working tree per vedere quali sono modificati o pendenti.',
             },
             {
               english: 'lfs pull',
@@ -6865,6 +7064,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git lfs pull',
+              task: 'Scarica gli oggetti LFS reali dal remote sostituendo i pointer file con i contenuti binari completi.',
             },
             {
               english: 'lfs fetch',
@@ -6876,6 +7076,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git lfs fetch --all',
+              task: 'Recupera dal remote tutti gli oggetti LFS di tutte le ref con --all per averli disponibili offline.',
             },
             {
               english: 'lfs push',
@@ -6887,6 +7088,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git lfs push origin main',
+              task: 'Carica sul remote origin gli oggetti LFS del branch main dopo aver committato grossi asset binari.',
             },
           ],
         },
@@ -6938,6 +7140,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               code: 'oid sha256:abc123...',
+              task: 'Identifica un oggetto LFS tramite il suo OID sha256 univoco registrato nel pointer file.',
             },
             {
               english: 'LFS Storage Quota',
@@ -6971,6 +7174,7 @@ export default {
               difficulty: 'advanced',
               command: 'git lfs lock asset.psd',
               note: 'Cruciale per binari non mergeable (Photoshop).',
+              task: 'Acquisisci un lock esclusivo sul file asset.psd per impedire ad altri di modificarlo in parallelo.',
             },
             {
               english: 'Unlock',
@@ -6982,6 +7186,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git lfs unlock asset.psd',
+              task: 'Rilascia il lock su asset.psd quando hai finito di lavorarci cosi che altri possano modificarlo.',
             },
             {
               english: 'Lockable Attribute',
@@ -6993,6 +7198,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               code: '*.psd filter=lfs lockable',
+              task: 'Marca *.psd come lockable in .gitattributes per richiedere un lock LFS prima di consentirne la modifica.',
             },
             {
               english: 'Migrate to LFS',
@@ -7005,6 +7211,7 @@ export default {
               difficulty: 'advanced',
               command: 'git lfs migrate import --include="*.psd"',
               note: 'Riscrive la history: coordinare con il team.',
+              task: 'Migra retroattivamente in LFS tutti i file *.psd presenti nella storia del repository con migrate import.',
             },
           ],
         },
@@ -7023,6 +7230,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git lfs untrack "*.zip"',
+              task: 'Smetti di tracciare i file *.zip con LFS rimuovendo il pattern da .gitattributes tramite untrack.',
             },
             {
               english: 'lfs prune',
@@ -7034,6 +7242,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git lfs prune',
+              task: 'Cancella dalla cache locale di LFS gli oggetti vecchi non piu referenziati per liberare spazio sul disco.',
             },
             {
               english: 'Skip Smudge',
@@ -7046,6 +7255,7 @@ export default {
               difficulty: 'advanced',
               command: 'GIT_LFS_SKIP_SMUDGE=1 git clone <url>',
               note: 'Per clonare velocemente senza scaricare blob.',
+              task: 'Clona il repository senza scaricare i pesanti oggetti LFS impostando la variabile GIT_LFS_SKIP_SMUDGE.',
             },
             {
               english: 'Selective Checkout',
@@ -7057,6 +7267,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git lfs pull --include="assets/*.png"',
+              task: 'Scarica solo gli oggetti LFS della cartella assets in formato PNG limitando il pull con --include.',
             },
             {
               english: 'LFS in CI',
@@ -7068,6 +7279,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               code: 'with:\\n  lfs: true',
+              task: 'Attiva lfs: true nello step di checkout della CI affinche i runner scarichino gli oggetti LFS reali.',
             },
             {
               english: 'Custom Endpoint',
@@ -7079,6 +7291,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git config lfs.url https://lfs.example.com',
+              task: 'Punta lfs.url a un server LFS personalizzato come https://lfs.example.com per usare uno storage proprietario.',
             },
             {
               english: 'LFS Alternative',
@@ -7142,6 +7355,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git lfs fsck',
+              task: 'Diagnostica oggetti LFS mancanti localmente con fsck per individuare pointer senza contenuto reale.',
             },
             {
               english: 'lfs fsck',
@@ -7153,6 +7367,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git lfs fsck',
+              task: 'Esegui il check di integrita degli oggetti LFS locali per scoprire file corrotti o non sincronizzati.',
             },
             {
               english: 'lfs env',
@@ -7164,6 +7379,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git lfs env',
+              task: `Stampa l'ambiente LFS corrente per ispezionare endpoint, cartelle cache e variabili di configurazione.`,
             },
             {
               english: 'Quota Exceeded',
@@ -7186,6 +7402,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git lfs fetch --all',
+              task: 'Recupera con fetch --all gli oggetti reali quando hai solo i pointer LFS senza i contenuti scaricati.',
             },
             {
               english: 'Wrong Filter',
@@ -7208,6 +7425,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git lfs uninstall && git lfs install',
+              task: 'Reinstalla LFS da zero disinstallando e reinstallando i filter quando lo stato locale e in errore.',
             },
             {
               english: 'Concurrent Transfer',
@@ -7219,6 +7437,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git config lfs.concurrenttransfers 8',
+              task: 'Aumenta lfs.concurrenttransfers a 8 per scaricare piu oggetti LFS in parallelo e accelerare il pull.',
             },
             {
               english: 'LFS Cache',
@@ -7230,6 +7449,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               code: '.git/lfs/objects/',
+              task: 'Ispeziona la cache locale in .git/lfs/objects per vedere quali oggetti LFS sono materializzati sul disco.',
             },
             {
               english: 'Corrupt Pointer',
@@ -7241,6 +7461,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git lfs migrate fix',
+              task: 'Ripara i pointer LFS corrotti nella storia del repository con migrate fix per ripristinare il tracciamento.',
             },
           ],
         },
@@ -7269,6 +7490,7 @@ export default {
               difficulty: 'advanced',
               code: '.git/objects/',
               note: 'Database content-addressable di Git.',
+              task: 'Esplora la cartella .git/objects per ispezionare la struttura interna dove Git conserva blob, tree e commit.',
             },
             {
               english: 'Blob',
@@ -7281,6 +7503,7 @@ export default {
               difficulty: 'advanced',
               command: 'git cat-file -p <hash>',
               note: 'Binary Large OBject. Solo contenuto, niente filename.',
+              task: 'Stampa il contenuto di un blob a partire dal suo hash usando cat-file in modalita pretty.',
             },
             {
               english: 'Tree',
@@ -7293,6 +7516,7 @@ export default {
               difficulty: 'advanced',
               command: 'git ls-tree HEAD',
               note: 'Equivale a una directory: lista di entry.',
+              task: 'Elenca le entry del tree puntato da HEAD per vedere la struttura dei file della commit corrente.',
             },
             {
               english: 'Commit Object',
@@ -7305,6 +7529,7 @@ export default {
               difficulty: 'advanced',
               command: 'git cat-file -p HEAD',
               note: 'Contiene tree, parent(s), author, committer, message.',
+              task: `Visualizza l'oggetto commit puntato da HEAD per ispezionarne parent, autore, tree e messaggio.`,
             },
             {
               english: 'Tag Object',
@@ -7316,6 +7541,7 @@ export default {
               context: 'internals',
               difficulty: 'advanced',
               command: 'git cat-file -p v1.0',
+              task: 'Mostra il contenuto del tag object v1.0 per leggere autore, data e messaggio annotato della release.',
             },
             {
               english: 'SHA-1',
@@ -7328,6 +7554,7 @@ export default {
               difficulty: 'advanced',
               code: 'a3f5e21b9c4d',
               note: 'Migrazione a SHA-256 in corso.',
+              task: 'Identifica un oggetto Git tramite il suo hash SHA-1 abbreviato a3f5e21b9c4d per riferirlo nei comandi.',
             },
             {
               english: 'SHA-256',
@@ -7339,6 +7566,7 @@ export default {
               context: 'internals',
               difficulty: 'advanced',
               command: 'git init --object-format=sha256',
+              task: 'Inizializza un nuovo repository scegliendo SHA-256 come algoritmo di hashing degli oggetti.',
             },
             {
               english: 'cat-file',
@@ -7350,6 +7578,7 @@ export default {
               context: 'internals',
               difficulty: 'advanced',
               command: 'git cat-file -t <hash>',
+              task: 'Determina il tipo di un oggetto a partire dal suo hash usando cat-file con il flag -t.',
             },
             {
               english: 'hash-object',
@@ -7361,6 +7590,7 @@ export default {
               context: 'internals',
               difficulty: 'advanced',
               command: 'git hash-object file.txt',
+              task: `Calcola l'hash SHA-1 che Git assegnerebbe a file.txt senza aggiungerlo realmente all'object store.`,
             },
             {
               english: 'Plumbing Command',
@@ -7390,6 +7620,7 @@ export default {
               difficulty: 'advanced',
               code: 'refs/heads/main',
               note: 'Le symbolic ref permettono il dereference automatico verso il commit reale.',
+              task: 'Risolvi il riferimento simbolico refs/heads/main per ottenere il commit a cui punta il branch.',
             },
             {
               english: 'refs/heads',
@@ -7401,6 +7632,7 @@ export default {
               context: 'internals',
               difficulty: 'advanced',
               code: '.git/refs/heads/main',
+              task: 'Apri il file .git/refs/heads/main per leggere lo SHA del commit di vertice del branch main.',
             },
             {
               english: 'refs/tags',
@@ -7412,6 +7644,7 @@ export default {
               context: 'internals',
               difficulty: 'advanced',
               code: '.git/refs/tags/v1.0',
+              task: `Ispeziona .git/refs/tags/v1.0 per vedere l'oggetto a cui il tag v1.0 punta direttamente.`,
             },
             {
               english: 'refs/remotes layout',
@@ -7424,6 +7657,7 @@ export default {
               difficulty: 'advanced',
               code: '.git/refs/remotes/origin/main',
               note: 'Le ref vengono spesso compattate in .git/packed-refs per efficienza.',
+              task: 'Esamina .git/refs/remotes/origin/main per scoprire dove Git tiene la cima del branch remoto tracciato.',
             },
             {
               english: 'HEAD File',
@@ -7435,6 +7669,7 @@ export default {
               context: 'internals',
               difficulty: 'advanced',
               code: 'ref: refs/heads/main',
+              task: 'Apri .git/HEAD per vedere il riferimento simbolico ref: refs/heads/main che indica il branch corrente.',
             },
             {
               english: 'Symbolic Ref',
@@ -7446,6 +7681,7 @@ export default {
               context: 'internals',
               difficulty: 'advanced',
               command: 'git symbolic-ref HEAD',
+              task: 'Risolvi HEAD con symbolic-ref per scoprire a quale ref symbolic punta realmente in questo momento.',
             },
             {
               english: 'packed-refs',
@@ -7457,6 +7693,7 @@ export default {
               context: 'internals',
               difficulty: 'advanced',
               command: 'git pack-refs --all',
+              task: `Compatta tutti i ref sciolti in un singolo file packed-refs con pack-refs per ridurre l'I/O del filesystem.`,
             },
             {
               english: 'show-ref',
@@ -7468,6 +7705,7 @@ export default {
               context: 'internals',
               difficulty: 'advanced',
               command: 'git show-ref',
+              task: 'Elenca tutti i ref del repository con i loro SHA usando show-ref per fare un inventario completo.',
             },
             {
               english: 'update-ref',
@@ -7480,6 +7718,7 @@ export default {
               difficulty: 'advanced',
               command: 'git update-ref refs/heads/main <sha>',
               note: 'Pericoloso: bypassa controlli del porcelain.',
+              task: 'Sposta a mano il branch main su un SHA specifico usando update-ref per intervenire a basso livello.',
             },
             {
               english: 'Loose Object',
@@ -7491,6 +7730,7 @@ export default {
               context: 'internals',
               difficulty: 'advanced',
               code: '.git/objects/a3/f5e21...',
+              task: 'Esplora .git/objects/a3/f5e21 per vedere come Git memorizza un oggetto sciolto in una directory a due lettere.',
             },
           ],
         },
@@ -7510,6 +7750,7 @@ export default {
               difficulty: 'advanced',
               code: '.git/objects/pack/pack-*.pack',
               note: 'Usa delta compression: ottimi ratio.',
+              task: 'Ispeziona i packfile in .git/objects/pack per capire come Git compatta gli oggetti in un singolo binario.',
             },
             {
               english: 'Pack Index',
@@ -7521,6 +7762,7 @@ export default {
               context: 'internals',
               difficulty: 'advanced',
               code: '.git/objects/pack/pack-*.idx',
+              task: 'Esamina i file .idx in .git/objects/pack che indicizzano la posizione di ogni oggetto dentro il packfile.',
             },
             {
               english: 'Delta Compression',
@@ -7542,6 +7784,7 @@ export default {
               context: 'internals',
               difficulty: 'advanced',
               command: 'git gc --aggressive',
+              task: 'Esegui una garbage collection aggressiva per ricomprimere oggetti e ridurre al massimo la dimensione del repo.',
             },
             {
               english: 'repack',
@@ -7553,6 +7796,7 @@ export default {
               context: 'internals',
               difficulty: 'advanced',
               command: 'git repack -a -d',
+              task: 'Ricostruisci da zero il packfile con repack -a -d eliminando oggetti duplicati e quelli ormai sciolti.',
             },
             {
               english: 'Reachability',
@@ -7575,6 +7819,7 @@ export default {
               context: 'internals',
               difficulty: 'advanced',
               command: 'git config repack.writeBitmaps true',
+              task: 'Abilita la scrittura dei bitmap index in repack per velocizzare il calcolo di reachability nei fetch.',
             },
             {
               english: 'Multi-pack Index',
@@ -7586,6 +7831,7 @@ export default {
               context: 'internals',
               difficulty: 'advanced',
               command: 'git multi-pack-index write',
+              task: 'Genera il multi-pack index con multi-pack-index write per ottimizzare lookup su repository con tanti packfile.',
             },
             {
               english: 'Commit Graph',
@@ -7597,6 +7843,7 @@ export default {
               context: 'internals',
               difficulty: 'advanced',
               command: 'git commit-graph write',
+              task: 'Costruisci il commit graph con commit-graph write per accelerare drasticamente i comandi di history walk.',
             },
             {
               english: 'Maintenance',
@@ -7608,6 +7855,7 @@ export default {
               context: 'internals',
               difficulty: 'advanced',
               command: 'git maintenance start',
+              task: 'Attiva la manutenzione automatica in background con maintenance start per far girare gc e repack pianificati.',
             },
           ],
         },
@@ -7647,6 +7895,7 @@ export default {
               context: 'internals',
               difficulty: 'advanced',
               command: 'git config --global protocol.version 2',
+              task: 'Configura globalmente protocol.version a 2 per usare il protocollo wire piu efficiente nei fetch e push.',
             },
             {
               english: 'upload-pack',
@@ -7709,6 +7958,7 @@ export default {
               context: 'internals',
               difficulty: 'advanced',
               code: 'git@github.com:user/repo.git',
+              task: 'Cita un repository tramite trasporto SSH con la sintassi git@github.com:user/repo.git per autenticarti con chiave.',
             },
             {
               english: 'HTTPS Transport',
@@ -7720,6 +7970,7 @@ export default {
               context: 'internals',
               difficulty: 'advanced',
               code: 'https://github.com/user/repo.git',
+              task: `Riferisci un repository tramite trasporto HTTPS con l'URL https://github.com/user/repo.git per il clone via web.`,
             },
           ],
         },
@@ -7748,6 +7999,7 @@ export default {
               difficulty: 'advanced',
               tool: 'GitHub Actions',
               code: '.github/workflows/ci.yml',
+              task: 'Crea il file .github/workflows/ci.yml per attivare la pipeline CI di GitHub Actions su ogni push.',
             },
             {
               english: 'Workflow File',
@@ -7760,6 +8012,7 @@ export default {
               difficulty: 'advanced',
               code: 'name: CI\\non: push',
               note: 'I file di workflow sono YAML e supportano matrici, condizioni e reusable workflows.',
+              task: `Definisci un workflow file con 'name: CI' e trigger 'on: push' per orchestrare la pipeline.`,
             },
             {
               english: 'Trigger',
@@ -7771,6 +8024,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'on:\\n  push:\\n    branches: [main]',
+              task: `Imposta il trigger 'on: push' limitato alle branches [main] per eseguire il workflow solo sul ramo principale.`,
             },
             {
               english: 'Job',
@@ -7782,6 +8036,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'jobs:\\n  test:\\n    runs-on: ubuntu-latest',
+              task: `Dichiara un job 'test' con runs-on ubuntu-latest per eseguire i controlli automatici.`,
             },
             {
               english: 'Step',
@@ -7793,6 +8048,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'steps:\\n  - run: npm test',
+              task: `Aggiungi uno step che esegue 'npm test' per validare il codice nella pipeline.`,
             },
             {
               english: 'Runner',
@@ -7805,6 +8061,7 @@ export default {
               difficulty: 'advanced',
               code: 'runs-on: ubuntu-latest',
               note: 'GitHub-hosted o self-hosted.',
+              task: `Specifica 'runs-on: ubuntu-latest' per delegare l'esecuzione al runner ospitato da GitHub.`,
             },
             {
               english: 'Action',
@@ -7816,6 +8073,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               code: '- uses: actions/checkout@v4',
+              task: `Richiama l'action ufficiale 'actions/checkout@v4' per scaricare il repository nel runner.`,
             },
             {
               english: 'actions/checkout',
@@ -7827,6 +8085,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               code: '- uses: actions/checkout@v4\\n  with:\\n    fetch-depth: 0',
+              task: `Configura actions/checkout@v4 con fetch-depth: 0 per ottenere l'intera history Git nel job.`,
             },
             {
               english: 'Matrix Build',
@@ -7838,6 +8097,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'strategy:\\n  matrix:\\n    node: [18, 20, 22]',
+              task: 'Imposta una matrix con node: [18, 20, 22] per testare la libreria su piu versioni in parallelo.',
             },
             {
               english: 'Secret',
@@ -7849,6 +8109,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               code: '${{ secrets.NPM_TOKEN }}',
+              task: 'Inietta il secret NPM_TOKEN tramite ${{ secrets.NPM_TOKEN }} per autenticare la pubblicazione del pacchetto.',
             },
           ],
         },
@@ -7868,6 +8129,7 @@ export default {
               difficulty: 'advanced',
               tool: 'GitLab CI',
               code: '.gitlab-ci.yml',
+              task: 'Crea il file .gitlab-ci.yml nella root del repository per attivare le pipeline di GitLab CI.',
             },
             {
               english: 'Pipeline',
@@ -7889,6 +8151,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'stages:\\n  - test\\n  - build\\n  - deploy',
+              task: 'Dichiara gli stages test, build, deploy per scandire le fasi sequenziali della pipeline GitLab.',
             },
             {
               english: 'GitLab Runner',
@@ -7911,6 +8174,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'artifacts:\\n  paths:\\n    - dist/',
+              task: 'Pubblica la cartella dist/ come artefatto per passarla tra i job della pipeline.',
             },
             {
               english: 'Cache',
@@ -7922,6 +8186,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'cache:\\n  paths:\\n    - node_modules/',
+              task: 'Cacheia node_modules/ tra i run per evitare reinstallazioni costose delle dipendenze.',
             },
             {
               english: 'Environment',
@@ -7933,6 +8198,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'environment:\\n  name: production',
+              task: `Associa il job all'environment 'production' per tracciare i deploy verso il target finale.`,
             },
             {
               english: 'Manual Job',
@@ -7944,6 +8210,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'when: manual',
+              task: `Marca il job con 'when: manual' per richiedere conferma esplicita prima dell'esecuzione.`,
             },
             {
               english: 'Include',
@@ -7955,6 +8222,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'include:\\n  - template: Code-Quality.gitlab-ci.yml',
+              task: 'Includi il template Code-Quality.gitlab-ci.yml per riutilizzare la configurazione di code quality.',
             },
             {
               english: 'Auto DevOps',
@@ -7995,6 +8263,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'on: push',
+              task: `Reagisci all'evento 'on: push' per far girare la pipeline CI a ogni commit pushato.`,
             },
             {
               english: 'Pull Request Event',
@@ -8006,6 +8275,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'on: pull_request',
+              task: `Aggancia il workflow all'evento 'on: pull_request' per validare ogni PR prima del merge.`,
             },
             {
               english: 'Tag Event',
@@ -8017,6 +8287,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               code: "on:\\n  push:\\n    tags: ['v*']",
+              task: `Filtra il push solo sui tags ['v*'] per lanciare la release sui tag di versione.`,
             },
             {
               english: 'Schedule',
@@ -8028,6 +8299,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               code: "on:\\n  schedule:\\n    - cron: '0 2 * * *'",
+              task: `Schedula il workflow con cron '0 2 * * *' per eseguirlo ogni notte alle 02:00 UTC.`,
             },
             {
               english: 'workflow_dispatch',
@@ -8039,6 +8311,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'on: workflow_dispatch',
+              task: `Abilita 'on: workflow_dispatch' per offrire un trigger manuale dalla UI di GitHub Actions.`,
             },
             {
               english: 'repository_dispatch',
@@ -8050,6 +8323,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'on: repository_dispatch',
+              task: `Configura 'on: repository_dispatch' per lanciare il workflow da chiamate API esterne.`,
             },
             {
               english: 'Status Check',
@@ -8081,6 +8355,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               code: '{"ref": "refs/heads/main", "commits": [...]}',
+              task: `Ispeziona il payload del webhook con ref 'refs/heads/main' e l'array commits per decidere cosa fare.`,
             },
           ],
         },
@@ -8143,6 +8418,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               command: 'git revert HEAD',
+              task: `Esegui 'git revert HEAD' per generare un commit di rollback che annulla l'ultimo deploy.`,
             },
             {
               english: 'Tag-based Deploy',
@@ -8154,6 +8430,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               code: "on:\\n  push:\\n    tags: ['v*']",
+              task: `Triggera il deploy automatico filtrando i push con tags: ['v*'] per ogni release versionata.`,
             },
             {
               english: 'Branch-based Deploy',
@@ -8165,6 +8442,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               code: "if: github.ref == 'refs/heads/main'",
+              task: `Vincola lo step di deploy con "if: github.ref == 'refs/heads/main'" per pubblicare solo dal ramo main.`,
             },
             {
               english: 'Preview Deploy',
@@ -8237,6 +8515,7 @@ export default {
               context: 'monorepo',
               difficulty: 'advanced',
               code: '"workspaces": ["packages/*"]',
+              task: 'Dichiara "workspaces": ["packages/*"] nel package.json per abilitare il monorepo multi-pacchetto.',
             },
             {
               english: 'Package',
@@ -8248,6 +8527,7 @@ export default {
               context: 'monorepo',
               difficulty: 'advanced',
               code: 'packages/api/package.json',
+              task: `Crea il file packages/api/package.json per definire l'API come pacchetto autonomo del monorepo.`,
             },
             {
               english: 'pnpm Workspace',
@@ -8260,6 +8540,7 @@ export default {
               difficulty: 'advanced',
               tool: 'pnpm',
               code: "packages:\\n  - 'apps/*'\\n  - 'libs/*'",
+              task: `Configura pnpm-workspace.yaml elencando 'apps/*' e 'libs/*' per scoprire i pacchetti del workspace pnpm.`,
             },
             {
               english: 'yarn Workspace',
@@ -8283,6 +8564,7 @@ export default {
               difficulty: 'advanced',
               tool: 'npm',
               command: 'npm install -ws',
+              task: `Lancia 'npm install -ws' per installare le dipendenze di tutti i workspace npm in una sola passata.`,
             },
             {
               english: 'Lerna',
@@ -8306,6 +8588,7 @@ export default {
               context: 'monorepo',
               difficulty: 'advanced',
               code: '"@org/api": "workspace:*"',
+              task: 'Linka una dipendenza interna con "@org/api": "workspace:*" per puntare alla versione locale del pacchetto.',
             },
             {
               english: 'Hoisting',
@@ -8345,6 +8628,7 @@ export default {
               difficulty: 'advanced',
               tool: 'nx',
               command: 'npx nx build api',
+              task: `Buildda il pacchetto api del monorepo con 'npx nx build api' sfruttando la cache intelligente di Nx.`,
             },
             {
               english: 'Turborepo',
@@ -8357,6 +8641,7 @@ export default {
               difficulty: 'advanced',
               tool: 'turborepo',
               code: 'turbo.json',
+              task: 'Crea il file turbo.json nella root per definire le pipeline di Turborepo del monorepo.',
             },
             {
               english: 'Affected Build',
@@ -8368,6 +8653,7 @@ export default {
               context: 'monorepo',
               difficulty: 'advanced',
               command: 'npx nx affected --target=test',
+              task: `Esegui 'npx nx affected --target=test' per testare solo i progetti impattati dalle modifiche correnti.`,
             },
             {
               english: 'Remote Cache',
@@ -8390,6 +8676,7 @@ export default {
               context: 'monorepo',
               difficulty: 'advanced',
               code: '"build": {"dependsOn": ["^build"]}',
+              task: 'Definisci "build": {"dependsOn": ["^build"]} per costruire prima le dipendenze a monte.',
             },
             {
               english: 'Bazel',
@@ -8434,6 +8721,7 @@ export default {
               context: 'monorepo',
               difficulty: 'advanced',
               command: 'npx nx graph',
+              task: `Apri il grafo dei progetti con 'npx nx graph' per visualizzare le dipendenze tra i pacchetti del monorepo.`,
             },
             {
               english: 'Distributed Task Execution',
@@ -8464,6 +8752,7 @@ export default {
               difficulty: 'advanced',
               command: 'git sparse-checkout init --cone',
               note: 'Cruciale in monorepo enormi.',
+              task: `Inizializza lo sparse checkout con 'git sparse-checkout init --cone' per scaricare solo parte del monorepo.`,
             },
             {
               english: 'Cone Mode',
@@ -8475,6 +8764,7 @@ export default {
               context: 'monorepo',
               difficulty: 'advanced',
               command: 'git sparse-checkout init --cone',
+              task: `Attiva la cone mode tramite 'git sparse-checkout init --cone' per uno sparse checkout piu veloce e pulito.`,
             },
             {
               english: 'sparse-checkout set',
@@ -8486,6 +8776,7 @@ export default {
               context: 'monorepo',
               difficulty: 'advanced',
               command: 'git sparse-checkout set apps/api libs/shared',
+              task: `Restringi il working tree con 'git sparse-checkout set apps/api libs/shared' per lavorare su due cartelle.`,
             },
             {
               english: 'sparse-checkout list',
@@ -8497,6 +8788,7 @@ export default {
               context: 'monorepo',
               difficulty: 'advanced',
               command: 'git sparse-checkout list',
+              task: `Lancia 'git sparse-checkout list' per ispezionare i path attualmente inclusi nello sparse checkout.`,
             },
             {
               english: 'sparse-checkout disable',
@@ -8508,6 +8800,7 @@ export default {
               context: 'monorepo',
               difficulty: 'advanced',
               command: 'git sparse-checkout disable',
+              task: `Disattiva lo sparse checkout con 'git sparse-checkout disable' per ripristinare il checkout completo del repo.`,
             },
             {
               english: 'Partial Clone',
@@ -8519,6 +8812,7 @@ export default {
               context: 'monorepo',
               difficulty: 'advanced',
               command: 'git clone --filter=blob:none <url>',
+              task: `Clona in modalita partial con 'git clone --filter=blob:none <url>' per rimandare il download dei blob.`,
             },
             {
               english: 'Blobless Clone',
@@ -8530,6 +8824,7 @@ export default {
               context: 'monorepo',
               difficulty: 'advanced',
               command: 'git clone --filter=blob:none --no-checkout <url>',
+              task: `Effettua un clone blobless con 'git clone --filter=blob:none --no-checkout <url>' senza materializzare il working tree.`,
             },
             {
               english: 'Treeless Clone',
@@ -8541,6 +8836,7 @@ export default {
               context: 'monorepo',
               difficulty: 'advanced',
               command: 'git clone --filter=tree:0 <url>',
+              task: `Risparmia ancora piu spazio con 'git clone --filter=tree:0 <url>', saltando anche gli oggetti tree.`,
             },
             {
               english: 'Scalar',
@@ -8554,6 +8850,7 @@ export default {
               tool: 'scalar',
               command: 'scalar clone <url>',
               note: 'Sviluppato da Microsoft per Windows monorepo.',
+              task: `Lancia 'scalar clone <url>' per usare il tool Scalar di Microsoft ottimizzato per repository giganti.`,
             },
             {
               english: 'VFS for Git',
@@ -8584,6 +8881,7 @@ export default {
               context: 'monorepo',
               difficulty: 'advanced',
               code: '/apps/api/ @backend-team',
+              task: 'Assegna ownership della cartella /apps/api/ al team @backend-team via CODEOWNERS per le code review.',
             },
             {
               english: 'Conventional Folders',
@@ -8595,6 +8893,7 @@ export default {
               context: 'monorepo',
               difficulty: 'advanced',
               code: 'apps/\\nlibs/\\ntools/',
+              task: 'Organizza il monorepo nelle cartelle convenzionali apps/, libs/, tools/ per separare app, librerie e script.',
             },
             {
               english: 'Release per Package',
@@ -8618,6 +8917,7 @@ export default {
               difficulty: 'advanced',
               tool: 'changesets',
               command: 'npx changeset',
+              task: `Annota una modifica versionabile con 'npx changeset' per pilotare la release multi-pacchetto via Changesets.`,
             },
             {
               english: 'Release Please',
@@ -8720,6 +9020,7 @@ export default {
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git reflog --all',
+              task: `Ispeziona il reflog di tutti i ref con 'git reflog --all' per ritrovare un commit apparentemente perso.`,
             },
             {
               english: 'Dangling Commit',
@@ -8731,6 +9032,7 @@ export default {
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git fsck --lost-found',
+              task: `Esegui 'git fsck --lost-found' per elencare i commit dangling rimasti senza ref nel repository.`,
             },
             {
               english: 'Lost and Found',
@@ -8742,6 +9044,7 @@ export default {
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git fsck --lost-found',
+              task: `Recupera oggetti orfani usando 'git fsck --lost-found' prima che il prossimo gc li elimini definitivamente.`,
             },
             {
               english: 'Restore Branch',
@@ -8753,6 +9056,7 @@ export default {
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git checkout -b feature HEAD@{1}',
+              task: `Ricrea un branch perso con 'git checkout -b feature HEAD@{1}' puntando alla posizione precedente di HEAD.`,
             },
             {
               english: 'Cherry-pick Lost Work',
@@ -8764,6 +9068,7 @@ export default {
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git cherry-pick <hash>',
+              task: `Riporta un commit recuperato sul ramo corrente con 'git cherry-pick <hash>' indicando lo SHA trovato nel reflog.`,
             },
             {
               english: 'Orphan Commit',
@@ -8807,6 +9112,7 @@ export default {
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git branch lost-found <hash>',
+              task: `Ancora un commit orfano creando un branch con 'git branch lost-found <hash>' per evitarne la garbage collection.`,
             },
           ],
         },
@@ -8836,6 +9142,7 @@ export default {
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git reflog show origin/main',
+              task: `Esegui 'git reflog show origin/main' per leggere lo stato del remote main prima di un force push distruttivo.`,
             },
             {
               english: 'GitHub Events API',
@@ -8869,6 +9176,7 @@ export default {
               difficulty: 'advanced',
               command: 'git push --force-with-lease',
               note: 'Usalo SEMPRE invece di --force.',
+              task: `Sostituisci --force con 'git push --force-with-lease' per non sovrascrivere lavoro remoto altrui non visto.`,
             },
             {
               english: 'Branch Protection Bypass',
@@ -8891,6 +9199,7 @@ export default {
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git clone --mirror <url>',
+              task: `Ripristina il repo da un backup eseguendo 'git clone --mirror <url>' per ricreare tutti i ref originali.`,
             },
             {
               english: 'Backup Repo',
@@ -8902,6 +9211,7 @@ export default {
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git clone --mirror <url> backup.git',
+              task: `Genera un mirror di backup con 'git clone --mirror <url> backup.git' da archiviare come polizza assicurativa.`,
             },
             {
               english: 'GitHub Audit Log',
@@ -8924,6 +9234,7 @@ export default {
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git push origin <hash>:main --force',
+              task: `Ripristina main forzato con 'git push origin <hash>:main --force' partendo da un reflog locale ancora integro.`,
             },
           ],
         },
@@ -8942,6 +9253,7 @@ export default {
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git fsck --full',
+              task: `Diagnostica oggetti corrotti del repository con 'git fsck --full' per identificare la causa del danno.`,
             },
             {
               english: 'Missing Object Recovery',
@@ -8954,6 +9266,7 @@ export default {
               difficulty: 'advanced',
               command: 'git fetch origin',
               note: `Se l'oggetto non e' in alcun remote, e' definitivamente perso.`,
+              task: `Tenta il recupero di oggetti mancanti con 'git fetch origin' attingendo dal remote considerato integro.`,
             },
             {
               english: 'Broken Index',
@@ -8965,6 +9278,7 @@ export default {
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'rm .git/index && git reset',
+              task: `Rigenera un index rotto eseguendo 'rm .git/index && git reset' senza perdere i file di lavoro.`,
             },
             {
               english: 'Repair from Remote',
@@ -8976,6 +9290,7 @@ export default {
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git fetch origin --refetch',
+              task: `Forza il recupero completo degli oggetti dal remote con 'git fetch origin --refetch' ignorando la cache locale.`,
             },
             {
               english: 'Bundle',
@@ -8987,6 +9302,7 @@ export default {
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git bundle create repo.bundle --all',
+              task: `Crea un bundle portabile dell'intero repository con 'git bundle create repo.bundle --all' per il trasporto offline.`,
             },
             {
               english: 'Restore from Bundle',
@@ -8998,6 +9314,7 @@ export default {
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git clone repo.bundle restored',
+              task: `Ricostruisci un repo da bundle invocando 'git clone repo.bundle restored' per riavere ref e history.`,
             },
             {
               english: 'Disk Failure',
@@ -9019,6 +9336,7 @@ export default {
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git fetch --unshallow',
+              task: `Promuovi un clone shallow a full con 'git fetch --unshallow' per recuperare l'intera history.`,
             },
             {
               english: 'fsck --no-dangling',
@@ -9030,6 +9348,7 @@ export default {
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git fsck --no-dangling',
+              task: `Silenzia i warning sui dangling con 'git fsck --no-dangling' quando ti interessano solo gli oggetti corrotti.`,
             },
             {
               english: 'Re-clone',
@@ -9041,6 +9360,7 @@ export default {
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git clone <url> fresh',
+              task: `Quando tutto fallisce, clona da zero con 'git clone <url> fresh' nella cartella fresh per un repo pulito.`,
             },
           ],
         },
@@ -9059,6 +9379,7 @@ export default {
               difficulty: 'advanced',
               command: 'git switch -c rescue',
               note: 'Per non perdere il lavoro, crea subito un branch con git switch -c.',
+              task: `Salva subito il lavoro in detached HEAD con 'git switch -c rescue' creando un branch chiamato rescue.`,
             },
             {
               english: 'Wrong Branch Commit',
@@ -9070,6 +9391,7 @@ export default {
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git checkout correct-branch && git cherry-pick <hash>',
+              task: `Trasferisci un commit sbagliato eseguendo 'git checkout correct-branch && git cherry-pick <hash>' verso il ramo giusto.`,
             },
             {
               english: 'Wrong Author',
@@ -9081,6 +9403,7 @@ export default {
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git commit --amend --author="Alice <a@ex.com>"',
+              task: `Correggi l'autore dell'ultimo commit con 'git commit --amend --author="Alice <a@ex.com>"' senza cambiare i contenuti.`,
             },
             {
               english: 'Big File Mistake',
@@ -9114,6 +9437,7 @@ export default {
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git revert -m 1 <merge-hash>',
+              task: `Annulla un merge sbagliato con 'git revert -m 1 <merge-hash>' specificando il parent principale da preservare.`,
             },
             {
               english: 'Stuck Rebase',
@@ -9125,6 +9449,7 @@ export default {
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git rebase --abort',
+              task: `Sblocca un rebase bloccato lanciando 'git rebase --abort' per tornare allo stato precedente.`,
             },
             {
               english: 'Detached Stash',
@@ -9136,6 +9461,7 @@ export default {
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git fsck --no-reflog',
+              task: `Cerca stash orfani con 'git fsck --no-reflog' per ritrovarli tra gli oggetti raggiungibili.`,
             },
             {
               english: 'Filename Case',
@@ -9147,6 +9473,7 @@ export default {
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git config core.ignoreCase false',
+              task: `Disattiva l'ignore del case con 'git config core.ignoreCase false' per gestire correttamente rename su file system case-insensitive.`,
             },
             {
               english: 'CRLF Issue',
@@ -9158,6 +9485,7 @@ export default {
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git config core.autocrlf input',
+              task: `Normalizza i line ending alla checkout con 'git config core.autocrlf input' per evitare diff spuri tra OS.`,
             },
           ],
         },
@@ -9186,6 +9514,7 @@ export default {
               difficulty: 'advanced',
               command: 'git worktree add ../hotfix main',
               note: 'Lavorare su due branch in parallelo senza stash.',
+              task: `Apri un secondo working tree con 'git worktree add ../hotfix main' per lavorare in parallelo sul ramo main.`,
             },
             {
               english: 'worktree add',
@@ -9197,6 +9526,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git worktree add -b feature ../feature',
+              task: `Aggiungi un worktree su un nuovo branch con 'git worktree add -b feature ../feature' per isolare la feature.`,
             },
             {
               english: 'worktree list',
@@ -9208,6 +9538,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git worktree list',
+              task: `Elenca i worktree attivi del repository con 'git worktree list' per vedere percorsi e branch agganciati.`,
             },
             {
               english: 'worktree remove',
@@ -9219,6 +9550,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git worktree remove ../feature',
+              task: `Smonta un worktree ormai inutile con 'git worktree remove ../feature' liberando la cartella associata.`,
             },
             {
               english: 'worktree prune',
@@ -9230,6 +9562,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git worktree prune',
+              task: `Ripulisci i ref di worktree obsoleti eseguendo 'git worktree prune' dopo cancellazioni manuali della cartella.`,
             },
             {
               english: 'Linked Worktree',
@@ -9251,6 +9584,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git clone --bare <url>',
+              task: `Crea un repo bare con 'git clone --bare <url>' per ospitare worktree come sotto-cartelle sorelle.`,
             },
             {
               english: 'Worktree per PR',
@@ -9262,6 +9596,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'gh pr checkout 42',
+              task: `Checka la PR #42 in un worktree dedicato lanciando 'gh pr checkout 42' per la review isolata.`,
             },
             {
               english: 'lock Worktree',
@@ -9273,6 +9608,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git worktree lock ../old',
+              task: `Blocca un worktree inattivo con 'git worktree lock ../old' per impedire che il prossimo prune lo cancelli.`,
             },
             {
               english: 'move Worktree',
@@ -9284,6 +9620,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git worktree move ../old ../new',
+              task: `Sposta un worktree sulla nuova path con 'git worktree move ../old ../new' senza ricrearlo manualmente.`,
             },
           ],
         },
@@ -9303,6 +9640,7 @@ export default {
               difficulty: 'advanced',
               command: 'git filter-branch --tree-filter <cmd>',
               note: 'Sostituito da filter-repo, più veloce e sicuro.',
+              task: `Per scopi legacy, riscrivi la history con 'git filter-branch --tree-filter <cmd>' applicando il comando a ogni commit.`,
             },
             {
               english: 'git filter-repo',
@@ -9315,6 +9653,7 @@ export default {
               difficulty: 'advanced',
               tool: 'git-filter-repo',
               command: 'git filter-repo --path-glob "*.log" --invert-paths',
+              task: `Purga tutti i file *.log dalla history eseguendo 'git filter-repo --path-glob "*.log" --invert-paths'.`,
             },
             {
               english: 'BFG',
@@ -9328,6 +9667,7 @@ export default {
               tool: 'BFG',
               command: 'bfg --delete-files secret.key',
               note: 'Più semplice di filter-repo per casi comuni.',
+              task: `Elimina il file secret.key da tutta la history con 'bfg --delete-files secret.key' usando BFG Repo-Cleaner.`,
             },
             {
               english: 'Rewrite History with filter-repo',
@@ -9350,6 +9690,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git filter-repo --path libs/shared',
+              task: `Estrai la sotto-cartella libs/shared come repo autonomo via 'git filter-repo --path libs/shared'.`,
             },
             {
               english: 'Author Rewrite',
@@ -9361,6 +9702,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git filter-repo --mailmap mailmap.txt',
+              task: `Riscrivi gli autori applicando un mailmap esterno con 'git filter-repo --mailmap mailmap.txt'.`,
             },
             {
               english: 'mailmap',
@@ -9372,6 +9714,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               code: 'Alice <alice@new.com> <alice@old.com>',
+              task: `Crea un file mailmap con 'Alice <alice@new.com> <alice@old.com>' per normalizzare le identita autore nei log.`,
             },
             {
               english: 'replace',
@@ -9384,6 +9727,7 @@ export default {
               difficulty: 'advanced',
               command: 'git replace <old> <new>',
               note: 'Non riscrive: aggiunge un alias virtuale.',
+              task: `Aggiungi un alias virtuale con 'git replace <old> <new>' senza riscrivere la history fisicamente.`,
             },
             {
               english: 'Grafts',
@@ -9395,6 +9739,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               code: '.git/info/grafts',
+              task: 'Riconosci la legacy del file .git/info/grafts ormai sostituito da git replace per innestare history alternative.',
             },
             {
               english: 'Force Push After Rewrite',
@@ -9406,6 +9751,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git push --force-with-lease',
+              task: `Dopo aver riscritto la history, fai 'git push --force-with-lease' per propagare al remote senza schiacciare lavoro altrui.`,
             },
           ],
         },
@@ -9424,6 +9770,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git archive --format=tar.gz HEAD > release.tar.gz',
+              task: `Esporta uno snapshot di release con 'git archive --format=tar.gz HEAD > release.tar.gz' senza i metadata .git.`,
             },
             {
               english: 'git notes',
@@ -9435,6 +9782,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git notes add -m "Reviewed by Alice"',
+              task: `Allega metadata a un commit eseguendo 'git notes add -m "Reviewed by Alice"' per tracciare review fuori banda.`,
             },
             {
               english: 'git rev-parse',
@@ -9446,6 +9794,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git rev-parse HEAD',
+              task: `Risolvi un riferimento simbolico in SHA completo con 'git rev-parse HEAD' utile in script di automazione.`,
             },
             {
               english: 'git for-each-ref',
@@ -9457,6 +9806,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git for-each-ref --sort=-committerdate refs/heads',
+              task: `Lista le branch ordinate per data ultimo commit con 'git for-each-ref --sort=-committerdate refs/heads'.`,
             },
             {
               english: 'git ls-files',
@@ -9468,6 +9818,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git ls-files',
+              task: `Stampa l'elenco completo dei file tracciati eseguendo 'git ls-files' per ispezionare l'index.`,
             },
             {
               english: 'git diff-tree',
@@ -9479,6 +9830,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git diff-tree -r HEAD',
+              task: `Mostra le modifiche introdotte da HEAD con 'git diff-tree -r HEAD' utile per script che processano commit.`,
             },
             {
               english: 'git rev-list',
@@ -9490,6 +9842,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git rev-list --count HEAD',
+              task: `Conta i commit raggiungibili da HEAD con 'git rev-list --count HEAD' per ricavare metriche del branch.`,
             },
             {
               english: 'git ls-remote',
@@ -9501,6 +9854,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git ls-remote origin',
+              task: `Interroga i ref del remote origin con 'git ls-remote origin' senza fare un fetch completo.`,
             },
             {
               english: 'git instaweb',
@@ -9512,6 +9866,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git instaweb',
+              task: `Avvia un browser web locale del repo con 'git instaweb' per esplorare history e oggetti via gitweb.`,
             },
             {
               english: 'git rerere',
@@ -9523,6 +9878,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git config rerere.enabled true',
+              task: `Attiva il riuso delle risoluzioni di conflitto con 'git config rerere.enabled true' utile in rebase ricorrenti.`,
             },
           ],
         },
@@ -9541,6 +9897,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'GIT_TRACE=1 git fetch',
+              task: `Esegui 'GIT_TRACE=1 git fetch' per stampare il trace delle operazioni interne durante il fetch.`,
             },
             {
               english: 'GIT_TRACE_PERFORMANCE',
@@ -9552,6 +9909,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'GIT_TRACE_PERFORMANCE=1 git status',
+              task: `Misura i tempi delle fasi interne con 'GIT_TRACE_PERFORMANCE=1 git status' per individuare colli di bottiglia.`,
             },
             {
               english: 'fsmonitor',
@@ -9563,6 +9921,7 @@ export default {
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git config core.fsmonitor true',
+              task: `Velocizza 'git status' su grandi repo abilitando l'fsmonitor con 'git config core.fsmonitor true'.`,
             },
             {
               english: 'gitfast',
@@ -9641,6 +10000,7 @@ export default {
               difficulty: 'advanced',
               tool: 'difftastic',
               command: 'git config diff.external difft',
+              task: `Sostituisci il diff predefinito con difftastic eseguendo 'git config diff.external difft' per diff syntax-aware.`,
             },
           ],
         },
@@ -9669,6 +10029,7 @@ export default {
               difficulty: 'advanced',
               command: 'git config credential.helper store',
               note: `Preferisci 'manager' su Windows/macOS o 'libsecret' su Linux per cifratura nativa.`,
+              task: `Abilita un helper temporaneo con 'git config credential.helper store' sapendo che salva le credenziali in chiaro.`,
             },
             {
               english: 'credential.helper store',
@@ -9681,6 +10042,7 @@ export default {
               difficulty: 'advanced',
               command: 'git config --global credential.helper store',
               note: 'INSICURO: file ~/.git-credentials in chiaro.',
+              task: `Configura globalmente l'helper store con 'git config --global credential.helper store' solo in ambienti di test isolati.`,
             },
             {
               english: 'credential.helper cache',
@@ -9692,6 +10054,7 @@ export default {
               context: 'strategy',
               difficulty: 'advanced',
               command: 'git config credential.helper "cache --timeout=3600"',
+              task: `Tieni le credenziali in RAM per un'ora con 'git config credential.helper "cache --timeout=3600"'.`,
             },
             {
               english: 'macOS Keychain',
@@ -9703,6 +10066,7 @@ export default {
               context: 'strategy',
               difficulty: 'advanced',
               command: 'git config credential.helper osxkeychain',
+              task: `Su macOS integra il portachiavi nativo con 'git config credential.helper osxkeychain' per cifrare le credenziali.`,
             },
             {
               english: 'Windows Credential Manager',
@@ -9714,6 +10078,7 @@ export default {
               context: 'strategy',
               difficulty: 'advanced',
               command: 'git config credential.helper manager',
+              task: `Su Windows aggancia il Credential Manager con 'git config credential.helper manager' per autenticazione sicura.`,
             },
             {
               english: 'libsecret',
@@ -9725,6 +10090,7 @@ export default {
               context: 'strategy',
               difficulty: 'advanced',
               command: 'git config credential.helper libsecret',
+              task: `Su Linux usa GNOME Keyring impostando 'git config credential.helper libsecret' per cifrare le credenziali Git.`,
             },
             {
               english: 'Fine-grained Personal Access Token',
@@ -9770,6 +10136,7 @@ export default {
               difficulty: 'advanced',
               command: 'gh auth login',
               tool: 'gh',
+              task: `Autentica la CLI di GitHub con 'gh auth login' seguendo il flusso OAuth in browser.`,
             },
           ],
         },
@@ -9789,6 +10156,7 @@ export default {
               difficulty: 'advanced',
               command: 'ssh-keygen -t ed25519',
               note: 'ssh-agent memorizza la passphrase decifrata per la sessione corrente.',
+              task: `Genera una chiave SSH protetta da passphrase con 'ssh-keygen -t ed25519' rispondendo al prompt della frase segreta.`,
             },
             {
               english: 'ed25519',
@@ -9800,6 +10168,7 @@ export default {
               context: 'strategy',
               difficulty: 'advanced',
               command: 'ssh-keygen -t ed25519 -C "you@ex.com"',
+              task: `Crea una chiave moderna ed25519 con 'ssh-keygen -t ed25519 -C "you@ex.com"' includendo un commento identificativo.`,
             },
             {
               english: 'Public Key Fingerprint',
@@ -9811,6 +10180,7 @@ export default {
               difficulty: 'advanced',
               code: '~/.ssh/id_ed25519.pub',
               note: 'Le fingerprint moderne usano SHA256 mentre quelle legacy usavano MD5.',
+              task: 'Estrai la chiave pubblica da ~/.ssh/id_ed25519.pub e confronta il suo fingerprint con quello registrato su GitHub.',
             },
             {
               english: 'Private Key Permissions',
@@ -9823,6 +10193,7 @@ export default {
               difficulty: 'advanced',
               code: '~/.ssh/id_ed25519',
               note: 'Usa chmod 600 ~/.ssh/id_ed25519 per allinearti al requisito di SSH.',
+              task: 'Imposta permessi 600 sul file ~/.ssh/id_ed25519 affinche il client SSH accetti di utilizzare la chiave privata.',
             },
             {
               english: 'ssh-agent forwarding',
@@ -9835,6 +10206,7 @@ export default {
               difficulty: 'advanced',
               command: 'eval "$(ssh-agent -s)" && ssh-add',
               note: `Da usare con cautela: chi e' root sul server puo' usare le tue chiavi.`,
+              task: `Avvia l'agent e carica la chiave con 'eval "$(ssh-agent -s)" && ssh-add' per evitare prompt ripetuti della passphrase.`,
             },
             {
               english: 'authorized_keys',
@@ -9846,6 +10218,7 @@ export default {
               context: 'strategy',
               difficulty: 'advanced',
               code: '~/.ssh/authorized_keys',
+              task: 'Aggiungi la chiave pubblica al file ~/.ssh/authorized_keys del server remoto per consentire login senza password.',
             },
             {
               english: 'Deploy Key',
@@ -9869,6 +10242,7 @@ export default {
               difficulty: 'advanced',
               tool: 'YubiKey',
               command: 'ssh-keygen -t ed25519-sk',
+              task: `Genera una chiave bound a YubiKey con 'ssh-keygen -t ed25519-sk' che richiede il touch del token a ogni uso.`,
             },
             {
               english: 'Passphrase',
@@ -9890,6 +10264,7 @@ export default {
               context: 'strategy',
               difficulty: 'advanced',
               code: 'Host github.com\\n  IdentityFile ~/.ssh/id_work',
+              task: `Configura ~/.ssh/config con 'Host github.com' e 'IdentityFile ~/.ssh/id_work' per usare la chiave di lavoro.`,
             },
           ],
         },
@@ -9920,6 +10295,7 @@ export default {
               difficulty: 'advanced',
               tool: 'gitleaks',
               command: 'gitleaks detect',
+              task: `Scansiona il repo alla ricerca di segreti hardcoded eseguendo 'gitleaks detect' dalla CLI di gitleaks.`,
             },
             {
               english: 'truffleHog',
@@ -9932,6 +10308,7 @@ export default {
               difficulty: 'advanced',
               tool: 'trufflehog',
               command: 'trufflehog git file://.',
+              task: `Analizza la history Git locale con 'trufflehog git file://.' per trovare credenziali ad alta entropia.`,
             },
             {
               english: 'detect-secrets',
@@ -9944,6 +10321,7 @@ export default {
               difficulty: 'advanced',
               tool: 'detect-secrets',
               command: 'detect-secrets scan',
+              task: `Crea un baseline iniziale dei segreti del repository eseguendo 'detect-secrets scan' per gli audit successivi.`,
             },
             {
               english: 'Push Protection',
@@ -9967,6 +10345,7 @@ export default {
               difficulty: 'advanced',
               code: '~/.git-credentials',
               note: 'Aggiungi a .gitignore globale per sicurezza.',
+              task: 'Aggiungi il path ~/.git-credentials al .gitignore globale per impedire che finisca per sbaglio in un commit.',
             },
             {
               english: '.env File',
@@ -9979,6 +10358,7 @@ export default {
               difficulty: 'advanced',
               code: '.env',
               note: 'Sempre nel .gitignore. Usare .env.example come template.',
+              task: 'Inserisci il file .env nel .gitignore e mantieni un .env.example come template condivisibile delle variabili.',
             },
             {
               english: 'Token Rotation',
@@ -10001,6 +10381,7 @@ export default {
               context: 'strategy',
               difficulty: 'advanced',
               code: '- repo: https://github.com/Yelp/detect-secrets',
+              task: 'Aggancia il repo Yelp/detect-secrets nel file .pre-commit-config.yaml per bloccare commit di segreti prima del push.',
             },
             {
               english: 'Sealed Secrets',
@@ -10030,6 +10411,7 @@ export default {
               context: 'strategy',
               difficulty: 'advanced',
               command: 'git tag -s v1.0',
+              task: `Firma il tag di release v1.0 con 'git tag -s v1.0' per provare l'autenticita della versione tramite GPG.`,
             },
             {
               english: 'Branch Protection Rules',
@@ -10163,6 +10545,7 @@ export default {
               difficulty: 'advanced',
               tool: 'gh',
               command: 'gh pr create',
+              task: `Apri una nuova pull request da terminale con 'gh pr create' sfruttando la CLI ufficiale gh di GitHub.`,
             },
             {
               english: 'GitHub Issues',
@@ -10174,6 +10557,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               command: 'gh issue create',
+              task: `Crea una issue dal terminale eseguendo 'gh issue create' per tracciare il bug senza aprire il browser.`,
             },
             {
               english: 'GitHub Discussions',
@@ -10304,6 +10688,7 @@ export default {
               difficulty: 'advanced',
               tool: 'glab',
               command: 'glab mr create',
+              task: `Apri una merge request su GitLab da CLI con 'glab mr create' usando il client glab ufficiale.`,
             },
             {
               english: 'Merge Request Pipeline',
@@ -10556,6 +10941,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               command: 'git push --mirror <other-url>',
+              task: `Replica integralmente il repo verso un'altra piattaforma con 'git push --mirror <other-url>' includendo tutti i ref.`,
             },
             {
               english: 'Vendor Lock-in',
@@ -10624,6 +11010,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               code: '#!/bin/sh\\nnpm test',
+              task: `Scrivi un hook con shebang '#!/bin/sh' che lancia 'npm test' per validare il codice prima di ogni commit.`,
             },
             {
               english: 'Shared Hook',
@@ -10646,6 +11033,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               command: 'git config core.hooksPath .githooks',
+              task: `Punta gli hook a una cartella versionata eseguendo 'git config core.hooksPath .githooks' per condividerli nel team.`,
             },
             {
               english: 'Post-receive Hook',
@@ -10657,6 +11045,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'while read old new ref; do ... done',
+              task: `Implementa un post-receive che cicla 'while read old new ref; do ... done' per reagire a ogni ref pushato.`,
             },
             {
               english: 'pre-receive Hook',
@@ -10688,6 +11077,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'if [ "$ref" = "refs/heads/main" ]; then deploy; fi',
+              task: `Aggiungi 'if [ "$ref" = "refs/heads/main" ]; then deploy; fi' all'hook per lanciare il deploy solo su main.`,
             },
             {
               english: 'Hook Permissions',
@@ -10699,6 +11089,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               command: 'chmod +x .git/hooks/pre-commit',
+              task: `Rendi eseguibile lo script con 'chmod +x .git/hooks/pre-commit' altrimenti Git lo ignorera silenziosamente.`,
             },
             {
               english: 'Skip Verification',
@@ -10710,6 +11101,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               command: 'git push --no-verify',
+              task: `Bypassa temporaneamente gli hook con 'git push --no-verify' solo quando hai conferma esplicita del maintainer.`,
             },
             {
               english: 'Hook Library',
@@ -10740,6 +11132,7 @@ export default {
               tool: 'Dependabot',
               code: '.github/dependabot.yml',
               note: `Si configurano in .github/dependabot.yml con la chiave 'groups'.`,
+              task: `Configura aggiornamenti raggruppati creando .github/dependabot.yml con la chiave 'groups' per ridurre le PR settimanali.`,
             },
             {
               english: 'Renovate',
@@ -10752,6 +11145,7 @@ export default {
               difficulty: 'advanced',
               tool: 'Renovate',
               code: 'renovate.json',
+              task: 'Aggiungi il file renovate.json alla root del repository per attivare la gestione dipendenze tramite Renovate.',
             },
             {
               english: 'Greenkeeper',
@@ -10787,6 +11181,7 @@ export default {
               difficulty: 'advanced',
               tool: 'stale',
               code: 'days-before-stale: 60',
+              task: `Imposta 'days-before-stale: 60' nella configurazione del bot per marcare come obsolete le issue ferme da 60 giorni.`,
             },
             {
               english: 'Probot',
@@ -10860,6 +11255,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               command: 'gh api repos/owner/repo',
+              task: `Interroga l'API GitHub direttamente con 'gh api repos/owner/repo' riusando l'autenticazione della CLI gh.`,
             },
             {
               english: 'curl GitHub API',
@@ -10871,6 +11267,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               command: 'curl -H "Authorization: token $TOKEN" https://api.github.com/user',
+              task: `Chiama l'endpoint /user con 'curl -H "Authorization: token $TOKEN" https://api.github.com/user' per recuperare il profilo autenticato.`,
             },
             {
               english: 'Octokit',
@@ -10936,6 +11333,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               code: '.github/pull_request_template.md',
+              task: 'Crea .github/pull_request_template.md per imporre un template uniforme a tutte le pull request del repo.',
             },
             {
               english: 'Issue Template',
@@ -10947,6 +11345,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               code: '.github/ISSUE_TEMPLATE/bug.yml',
+              task: 'Scrivi .github/ISSUE_TEMPLATE/bug.yml per guidare gli utenti nella stesura strutturata di un bug report.',
             },
             {
               english: 'Workflow Reuse',
@@ -10958,6 +11357,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'on: workflow_call',
+              task: `Marca un workflow come riusabile con 'on: workflow_call' per richiamarlo da altri workflow del repository.`,
             },
           ],
         },
@@ -10976,6 +11376,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               code: '#!/bin/bash\\nfor branch in $(git branch); do ...',
+              task: `Scrivi uno script '#!/bin/bash' che itera 'for branch in $(git branch); do ...' per automatizzare task Git ricorrenti.`,
             },
             {
               english: 'Python Automation',
@@ -10999,6 +11400,7 @@ export default {
               difficulty: 'advanced',
               code: 'action.yml',
               note: 'Tre tipi: JavaScript, Docker, composite.',
+              task: `Definisci una GitHub Action personalizzata creando il file action.yml nella root del repo dell'action.`,
             },
             {
               english: 'Composite Action',
@@ -11010,6 +11412,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'runs:\\n  using: composite\\n  steps: ...',
+              task: `Componi piu step in un'action composite specificando 'runs: using: composite, steps: ...' nel file action.yml.`,
             },
             {
               english: 'Docker Action',
@@ -11021,6 +11424,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'using: docker\\nimage: Dockerfile',
+              task: `Costruisci un'action containerizzata indicando 'using: docker' e 'image: Dockerfile' per eseguirla in un container.`,
             },
             {
               english: 'GitHub Marketplace',
@@ -11054,6 +11458,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               code: "cron: '0 0 * * *'",
+              task: `Schedula un workflow ricorrente con "cron: '0 0 * * *'" per eseguirlo automaticamente a mezzanotte UTC.`,
             },
             {
               english: 'Auto-rebase',
@@ -11076,6 +11481,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               code: '${{ secrets.GITHUB_TOKEN }}',
+              task: 'Autentica le chiamate API del workflow passando ${{ secrets.GITHUB_TOKEN }} come header Authorization.',
             },
           ],
         },
@@ -11154,6 +11560,7 @@ export default {
               difficulty: 'advanced',
               code: 'v2024.04.26',
               note: 'Usato da Ubuntu, JetBrains.',
+              task: `Taggia la release seguendo lo schema CalVer come 'v2024.04.26' per esprimere la data nel numero di versione.`,
             },
             {
               english: 'Backport Policy',
@@ -11212,6 +11619,7 @@ export default {
               context: 'strategy',
               difficulty: 'advanced',
               code: '/api/ @backend\\n*.md @docs',
+              task: `Scrivi nel file CODEOWNERS le regole '/api/ @backend' e '*.md @docs' per assegnare review automatiche per path.`,
             },
             {
               english: 'Contribution Guide',
@@ -11223,6 +11631,7 @@ export default {
               context: 'strategy',
               difficulty: 'advanced',
               code: 'CONTRIBUTING.md',
+              task: 'Crea il file CONTRIBUTING.md nella root del repository per spiegare ai nuovi contributor come aprire PR e issue.',
             },
             {
               english: 'Code of Conduct',
@@ -11235,6 +11644,7 @@ export default {
               difficulty: 'advanced',
               code: 'CODE_OF_CONDUCT.md',
               note: 'Standard: Contributor Covenant.',
+              task: 'Adotta il Contributor Covenant aggiungendo CODE_OF_CONDUCT.md al repository per definire le regole della community.',
             },
             {
               english: 'License File Header',
@@ -11246,6 +11656,7 @@ export default {
               difficulty: 'advanced',
               code: 'LICENSE',
               note: `Strumenti come addlicense automatizzano l'inserimento dell'header nei file.`,
+              task: `Inserisci il file LICENSE nella root e usa addlicense per propagarne l'header in cima a ogni sorgente.`,
             },
             {
               english: 'CLA Bot',
@@ -11268,6 +11679,7 @@ export default {
               context: 'strategy',
               difficulty: 'advanced',
               command: 'git commit --signoff',
+              task: `Conferma il developer certificate of origin firmando ogni commit con 'git commit --signoff' prima di pushare.`,
             },
             {
               english: 'Maintainer Responsibility',
@@ -11279,6 +11691,7 @@ export default {
               difficulty: 'advanced',
               code: 'MAINTAINERS.md',
               note: `I burnout dei maintainer sono uno dei rischi di sostenibilita' nell'open source.`,
+              task: 'Documenta i maintainer attuali nel file MAINTAINERS.md per chiarire le responsabilita di triage e merge.',
             },
             {
               english: 'RFC Process',
@@ -11301,6 +11714,7 @@ export default {
               context: 'strategy',
               difficulty: 'advanced',
               code: 'docs/adr/0001-use-postgres.md',
+              task: `Versiona una decisione di architettura come docs/adr/0001-use-postgres.md per consolidare l'ADR nel repository.`,
             },
             {
               english: 'Roadmap',
@@ -11312,6 +11726,7 @@ export default {
               context: 'strategy',
               difficulty: 'advanced',
               code: 'ROADMAP.md',
+              task: 'Pubblica la roadmap pubblica del progetto in ROADMAP.md per allineare community e contributor sui prossimi step.',
             },
           ],
         },
@@ -11330,6 +11745,7 @@ export default {
               difficulty: 'advanced',
               code: 'README.md',
               note: 'Servizi come shields.io generano badge SVG da metriche di repo o CI.',
+              task: 'Aggiungi al README.md un badge di stato CI generato da shields.io per comunicare la salute della build.',
             },
             {
               english: 'Setup Guide',
@@ -11341,6 +11757,7 @@ export default {
               context: 'strategy',
               difficulty: 'advanced',
               code: 'docs/SETUP.md',
+              task: `Redigi docs/SETUP.md per guidare i nuovi membri del team nella configurazione iniziale dell'ambiente di sviluppo.`,
             },
             {
               english: 'Devcontainer',
@@ -11353,6 +11770,7 @@ export default {
               difficulty: 'advanced',
               code: '.devcontainer/devcontainer.json',
               tool: 'VS Code Dev Containers',
+              task: 'Definisci .devcontainer/devcontainer.json per offrire un ambiente di sviluppo riproducibile via VS Code Dev Containers.',
             },
             {
               english: 'Issue Triage',
@@ -11374,6 +11792,7 @@ export default {
               context: 'strategy',
               difficulty: 'advanced',
               code: 'label: good-first-issue',
+              task: `Etichetta una issue entry-level con 'label: good-first-issue' per segnalarla ai contributor alle prime armi.`,
             },
             {
               english: 'Mentorship',
@@ -11406,6 +11825,7 @@ export default {
               context: 'strategy',
               difficulty: 'advanced',
               code: 'STYLE.md',
+              task: 'Crea il file STYLE.md alla root del repository per imporre convenzioni di stile uniformi a tutti i contributor.',
             },
             {
               english: 'Documentation Site',
@@ -11428,6 +11848,7 @@ export default {
               context: 'strategy',
               difficulty: 'advanced',
               code: 'docs/GLOSSARY.md',
+              task: 'Pubblica docs/GLOSSARY.md per raccogliere i termini di dominio condivisi tra team e community.',
             },
           ],
         },
@@ -11466,6 +11887,7 @@ export default {
               context: 'strategy',
               difficulty: 'advanced',
               code: 'github.com/username',
+              task: 'Cura la pagina github.com/username come CV pubblico esponendo repo pinned, contributi e descrizioni leggibili.',
             },
             {
               english: 'README Profile',

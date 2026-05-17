@@ -1,0 +1,540 @@
+{
+  "fixes": [
+    {
+      "level": "0",
+      "lesson": "net_foundations_3",
+      "english": "Latency",
+      "set": {
+        "task": "Misura il tempo di andata e ritorno verso il resolver pubblico di Google inviando un ping di prova."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "net_foundations_3",
+      "english": "Packet Loss",
+      "set": {
+        "task": "Invia 100 pacchetti ICMP verso example.com per calcolare la percentuale di pacchetti persi sul percorso."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "net_foundations_4",
+      "english": "NIC",
+      "set": {
+        "task": "Elenca tutte le schede di rete fisiche e virtuali presenti sul sistema con il loro stato operativo."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "net_osi_3",
+      "english": "MTU",
+      "set": {
+        "task": "Controlla il valore MTU configurato sull'interfaccia eth0 per individuare eventuali problemi di frammentazione."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "net_tcpip_1",
+      "english": "Socket",
+      "set": {
+        "task": "Crea un socket TCP IPv4 invocando la system call socket() con famiglia AF_INET e tipo SOCK_STREAM."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "net_tcpip_3",
+      "english": "Listening Port",
+      "set": {
+        "task": "Mostra tutte le porte TCP e UDP in ascolto sulla macchina senza risolvere i nomi dei servizi."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "net_tcpip_4",
+      "english": "TIME_WAIT",
+      "set": {
+        "task": "Filtra le sole connessioni TCP nello stato TIME_WAIT per stimare quante chiusure recenti il kernel sta ancora tracciando."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_addressing_1",
+      "english": "IP Address",
+      "set": {
+        "task": "Visualizza tutti gli indirizzi IPv4 e IPv6 assegnati alle interfacce di rete locali."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_addressing_1",
+      "english": "Localhost",
+      "set": {
+        "task": "Esegui il ping verso l'indirizzo di loopback per confermare che lo stack TCP/IP locale risponda correttamente."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_addressing_1",
+      "english": "Default Gateway",
+      "set": {
+        "task": "Mostra la rotta predefinita attualmente in uso per identificare l'indirizzo del gateway di uscita."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_addressing_4",
+      "english": "TTL",
+      "set": {
+        "task": "Invia un ping verso example.com forzando un TTL iniziale di 64 hop per osservare il decremento lungo il percorso."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "net_switching_1",
+      "english": "MAC Address",
+      "set": {
+        "task": "Elenca le interfacce di rete del sistema per leggere il MAC address assegnato a ciascuna scheda."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "net_switching_2",
+      "english": "MAC Table",
+      "set": {
+        "task": "Mostra la tabella MAC dello switch per individuare su quale porta sia appreso ogni indirizzo."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "net_switching_2",
+      "english": "Port Security",
+      "set": {
+        "task": "Configura la port-security sull'interfaccia limitando a due il numero massimo di MAC consentiti."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "net_switching_3",
+      "english": "VLAN",
+      "set": {
+        "task": "Assegna la porta alla VLAN 10 in modalita' access per separarla dal traffico delle altre VLAN."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "net_switching_3",
+      "english": "Trunk Port",
+      "set": {
+        "task": "Configura l'interfaccia in modalita' trunk per trasportare il traffico di piu' VLAN verso un altro switch."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "net_switching_3",
+      "english": "Access Port",
+      "set": {
+        "task": "Imposta la porta in modalita' access per collegarvi un singolo dispositivo end-user appartenente a una VLAN."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "net_switching_4",
+      "english": "BPDU Guard",
+      "set": {
+        "task": "Attiva BPDU Guard sulla porta in modo da disattivarla automaticamente se riceve un BPDU inatteso."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "net_switching_4",
+      "english": "ARP",
+      "set": {
+        "task": "Mostra la cache ARP locale per vedere la corrispondenza tra indirizzi IP e MAC dei vicini di rete."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "net_switching_4",
+      "english": "ARP Cache",
+      "set": {
+        "task": "Interroga la tabella dei vicini del kernel per ispezionare lo stato delle entry ARP risolte."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "net_routing_1",
+      "english": "Routing Table",
+      "set": {
+        "task": "Stampa la tabella di routing IPv4 del kernel per verificare quali reti sono raggiungibili e tramite quale next-hop."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "net_routing_1",
+      "english": "Hop",
+      "set": {
+        "task": "Traccia il percorso verso google.com elencando ogni hop intermedio attraversato e la sua latenza."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "net_routing_1",
+      "english": "Default Route",
+      "set": {
+        "task": "Aggiungi una rotta predefinita che instradi tutto il traffico sconosciuto verso il gateway 192.168.1.1."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "net_routing_2",
+      "english": "Static Route",
+      "set": {
+        "task": "Dichiara una rotta statica per la rete 10.0.0.0/8 con next-hop 192.168.1.254 sulla configurazione del router Cisco."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "net_routing_2",
+      "english": "Black Hole Route",
+      "set": {
+        "task": "Crea una rotta blackhole per il prefisso 1.2.3.0/24 in modo da scartare silenziosamente il traffico diretto a quella subnet."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "net_routing_3",
+      "english": "Neighbor",
+      "set": {
+        "task": "Visualizza la tabella dei vicini OSPF per verificare quali router hanno stabilito un'adiacenza FULL."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "net_routing_4",
+      "english": "SVI",
+      "set": {
+        "task": "Definisci l'interfaccia VLAN 10 assegnandole l'indirizzo 10.0.0.1/24 per fungere da gateway dei client di quella VLAN."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "net_routing_4",
+      "english": "Loopback Interface",
+      "set": {
+        "task": "Configura un'interfaccia loopback con indirizzo 1.1.1.1/32 da usare come router-id stabile nei protocolli di routing."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "net_routing_4",
+      "english": "Redistribution",
+      "set": {
+        "task": "Ridistribuisci le rotte statiche dentro il processo OSPF 1 per propagarle al resto dell'area."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "net_dns_1",
+      "english": "Resolver",
+      "set": {
+        "task": "Ispeziona il file resolv.conf per scoprire quali server DNS il sistema interroga di default."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "net_dns_2",
+      "english": "A Record",
+      "set": {
+        "task": "Interroga il record A di example.com per ottenere l'indirizzo IPv4 associato al dominio."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "net_dns_2",
+      "english": "AAAA Record",
+      "set": {
+        "task": "Recupera il record AAAA di example.com per scoprire l'indirizzo IPv6 pubblicato per quel dominio."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "net_dns_2",
+      "english": "CNAME",
+      "set": {
+        "task": "Interroga il record CNAME di www.example.com per identificare il nome canonico verso cui punta l'alias."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "net_dns_2",
+      "english": "MX Record",
+      "set": {
+        "task": "Estrai i record MX di example.com per capire quali mail server accettano la posta per quel dominio."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "net_dns_2",
+      "english": "NS Record",
+      "set": {
+        "task": "Recupera i record NS di example.com per scoprire quali server DNS sono autoritativi per la zona."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "net_dns_2",
+      "english": "PTR Record",
+      "set": {
+        "task": "Effettua una reverse lookup sull'indirizzo 8.8.8.8 per ottenere il nome PTR associato."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "net_dns_3",
+      "english": "DNS Cache",
+      "set": {
+        "task": "Stampa le statistiche del resolver di systemd per vedere quante query sono state servite dalla cache."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "net_dns_3",
+      "english": "Reverse DNS",
+      "set": {
+        "task": "Risolvi 8.8.8.8 al contrario con host per ottenere il record PTR pubblicato per quell'indirizzo."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "net_protocols_2",
+      "english": "Request",
+      "set": {
+        "task": "Effettua una richiesta HTTP GET verso example.com per scaricarne il corpo della risposta in HTTPS."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "net_protocols_2",
+      "english": "HTTP Header",
+      "set": {
+        "task": "Recupera solo gli header della risposta di example.com senza scaricarne il body per ispezionare i metadati."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "net_protocols_2",
+      "english": "POST",
+      "set": {
+        "task": "Invia una richiesta POST con il campo x=1 verso l'API HTTPS di esempio per testare un endpoint di scrittura."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "net_protocols_3",
+      "english": "Certificate",
+      "set": {
+        "task": "Apri una connessione TLS verso example.com sulla porta 443 per ispezionare il certificato server presentato."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "net_protocols_3",
+      "english": "Cipher Suite",
+      "set": {
+        "task": "Identifica la cipher suite TLS_AES_256_GCM_SHA384 negoziata da TLS 1.3 e analizzane gli algoritmi componenti."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "net_wireless_1",
+      "english": "Signal Strength",
+      "set": {
+        "task": "Avvia iwconfig per leggere il livello di segnale e la qualita' del link Wi-Fi attualmente associato."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "net_firewalls_1",
+      "english": "Firewall Rule",
+      "set": {
+        "task": "Elenca tutte le regole iptables correnti in formato numerico senza risolvere porte e indirizzi."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "net_firewalls_1",
+      "english": "Default Policy",
+      "set": {
+        "task": "Imposta la policy di default della catena INPUT su DROP per bloccare tutto il traffico non esplicitamente permesso."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "net_firewalls_2",
+      "english": "Stateful Firewall",
+      "set": {
+        "task": "Consenti in INPUT i pacchetti appartenenti a connessioni gia' ESTABLISHED per abilitare il filtraggio stateful."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "net_firewalls_2",
+      "english": "Connection Table",
+      "set": {
+        "task": "Lista tutte le connessioni tracciate da conntrack per ispezionare lo stato attuale del firewall stateful."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "net_firewalls_3",
+      "english": "Standard ACL",
+      "set": {
+        "task": "Definisci la standard ACL numero 10 per autorizzare il traffico proveniente dalla subnet 192.168.1.0/24."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "net_firewalls_3",
+      "english": "Extended ACL",
+      "set": {
+        "task": "Crea l'extended ACL 100 per permettere il traffico TCP verso la porta 80 da qualsiasi sorgente."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "net_firewalls_3",
+      "english": "Named ACL",
+      "set": {
+        "task": "Apri una named ACL estesa chiamata WEB_TRAFFIC per raggruppare le regole relative ai servizi HTTP e HTTPS."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "net_firewalls_4",
+      "english": "iptables",
+      "set": {
+        "task": "Aggiungi una regola iptables che consenta in INPUT il traffico TCP destinato alla porta 22 per abilitare SSH."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "net_firewalls_4",
+      "english": "nftables",
+      "set": {
+        "task": "Dump l'intero ruleset nftables per verificare tabelle, catene e regole attualmente caricate nel kernel."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "net_firewalls_4",
+      "english": "ufw",
+      "set": {
+        "task": "Apri la porta TCP 22 con ufw per abilitare le connessioni SSH in arrivo sul server."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "net_firewalls_4",
+      "english": "firewalld",
+      "set": {
+        "task": "Mostra la configurazione completa della zona attiva di firewalld per controllare servizi, porte e regole effettive."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "net_firewalls_4",
+      "english": "Rate Limiting",
+      "set": {
+        "task": "Limita a tre tentativi al minuto le connessioni SSH in ingresso per mitigare attacchi di forza bruta sulla porta 22."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "net_vpn_1",
+      "english": "MTU Issue",
+      "set": {
+        "task": "Invia un ping con bit don't-fragment e payload di 1472 byte verso 8.8.8.8 per individuare l'MTU effettivo del percorso VPN."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "net_vpn_3",
+      "english": "WireGuard",
+      "set": {
+        "task": "Mostra lo stato delle interfacce WireGuard attive per controllare peer connessi, handshake e contatori di traffico."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "net_vpn_3",
+      "english": "Peer Configuration",
+      "set": {
+        "task": "Dichiara una sezione [Peer] WireGuard con la chiave pubblica del remoto e AllowedIPs 10.0.0.2/32."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "net_vpn_3",
+      "english": "Public Key",
+      "set": {
+        "task": "Genera una chiave privata WireGuard e ne ricava la corrispondente chiave pubblica in un'unica pipeline."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "net_services_nat_1",
+      "english": "Source NAT",
+      "set": {
+        "task": "Abilita il source NAT mascherando in POSTROUTING l'indirizzo sorgente del traffico in uscita verso Internet."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "net_services_nat_1",
+      "english": "Destination NAT",
+      "set": {
+        "task": "Inoltra in PREROUTING le connessioni TCP destinate alla porta 80 verso il server interno 10.0.0.2."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "net_services_nat_1",
+      "english": "NAT Table",
+      "set": {
+        "task": "Esplora le entry della tabella conntrack per osservare quali traduzioni NAT sono attive in questo momento."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "net_services_proxy_2",
+      "english": "SOCKS Proxy",
+      "set": {
+        "task": "Stabilisci un tunnel SSH dinamico esponendo localmente un proxy SOCKS sulla porta 1080 tramite il server remoto."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "net_services_proxy_2",
+      "english": "HTTP Proxy",
+      "set": {
+        "task": "Effettua una richiesta HTTPS verso example.com instradandola attraverso il proxy HTTP in ascolto su 3128."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "net_services_pf_4",
+      "english": "Local Forward",
+      "set": {
+        "task": "Inoltra la porta locale 8080 verso la porta 80 dell'host remoto tramite un tunnel SSH di tipo local forward."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "net_services_pf_4",
+      "english": "Remote Forward",
+      "set": {
+        "task": "Esponi sulla porta 8080 dell'host remoto il servizio in ascolto sulla porta 80 locale tramite un remote forward."
+      }
+    }
+  ]
+}

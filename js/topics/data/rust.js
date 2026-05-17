@@ -33,6 +33,7 @@ export default {
               difficulty: 'beginner',
               code: 'let x = 5;',
               note: 'In Rust le variabili sono immutabili per default.',
+              task: 'Dichiara una variabile immutabile chiamata x legata al valore 5 usando la parola chiave let.',
             },
             {
               english: 'Let Binding',
@@ -45,6 +46,7 @@ export default {
               difficulty: 'beginner',
               code: 'let name = "Alice";',
               note: 'In Rust si usa "binding" perché la variabile è legata a un valore, non solo un alias.',
+              task: 'Crea un let binding che lega il nome name al letterale stringa Alice in una singola istruzione.',
             },
             {
               english: 'Mutable',
@@ -57,6 +59,7 @@ export default {
               difficulty: 'beginner',
               code: 'let mut x = 5; x = 10;',
               note: 'Senza mut, riassegnare una variabile causa un errore di compilazione.',
+              task: 'Definisci una variabile mutabile inizializzata a 5 e poi riassegnale 10 sfruttando la parola chiave mut.',
             },
             {
               english: 'Immutable',
@@ -68,6 +71,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'let x = 5; // cannot change x',
+              task: `Lega il valore 5 a una variabile immutabile e aggiungi un commento che ne segnali l'impossibilita di modifica.`,
             },
             {
               english: 'Function',
@@ -79,6 +83,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'fn greet() { println!("Hello"); }',
+              task: 'Scrivi una funzione greet senza argomenti che stampa il saluto Hello tramite la macro println.',
             },
             {
               english: 'Main Function',
@@ -91,6 +96,7 @@ export default {
               difficulty: 'beginner',
               code: 'fn main() { println!("Hello!"); }',
               note: 'Il punto di ingresso di ogni eseguibile Rust.',
+              task: 'Implementa la funzione main come punto di ingresso del binario e fai stampare il messaggio Hello a console.',
             },
             {
               english: 'Println Macro',
@@ -103,6 +109,7 @@ export default {
               difficulty: 'beginner',
               code: 'println!("Hello, World!");',
               note: 'Il punto esclamativo indica una macro, non una funzione.',
+              task: 'Stampa la frase Hello, World seguita da un newline sullo standard output usando la macro println.',
             },
             {
               english: 'Expression',
@@ -115,6 +122,7 @@ export default {
               difficulty: 'beginner',
               code: 'let y = { let x = 3; x + 1 };',
               note: "Quasi tutto in Rust è un'espressione che restituisce un valore.",
+              task: 'Assegna a y il valore prodotto da un blocco-espressione che dichiara x uguale a 3 e restituisce x + 1.',
             },
             {
               english: 'Statement',
@@ -126,6 +134,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'let x = 5;',
+              task: `Componi un'istruzione che lega il numero 5 a una variabile x senza restituire alcun valore.`,
             },
             {
               english: 'Semicolon',
@@ -138,6 +147,7 @@ export default {
               difficulty: 'beginner',
               code: 'x + 1; // statement (no value)',
               note: "Senza punto e virgola, l'espressione restituisce un valore.",
+              task: `Trasforma l'espressione x + 1 in una statement aggiungendo il punto e virgola finale che ne scarta il risultato.`,
             },
           ],
         },
@@ -179,6 +189,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               command: 'cargo new my_project',
+              task: 'Genera un nuovo progetto Rust chiamato my_project tramite cargo new completo di Cargo.toml e src/main.rs.',
             },
             {
               english: 'Cargo Build',
@@ -190,6 +201,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               command: 'cargo build',
+              task: 'Compila il progetto corrente in modalita debug invocando cargo build e producendo un binario in target/debug.',
             },
             {
               english: 'Cargo Run',
@@ -201,6 +213,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               command: 'cargo run',
+              task: 'Compila ed esegui il binario del progetto in un solo passaggio sfruttando il comando cargo run.',
             },
             {
               english: 'Cargo.toml',
@@ -213,6 +226,7 @@ export default {
               difficulty: 'beginner',
               code: '[package]\nname = "myapp"',
               note: 'Contiene metadati e dipendenze del progetto.',
+              task: 'Configura la sezione [package] del file Cargo.toml impostando il campo name del crate sul valore myapp.',
             },
             {
               english: 'Cargo.lock',
@@ -236,6 +250,7 @@ export default {
               difficulty: 'beginner',
               tool: 'rustc',
               command: 'rustc main.rs',
+              task: 'Invoca direttamente il compilatore Rust rustc sul file main.rs senza passare attraverso cargo.',
             },
             {
               english: 'Rustup',
@@ -248,6 +263,7 @@ export default {
               difficulty: 'beginner',
               tool: 'rustup',
               command: 'rustup update stable',
+              task: `Aggiorna il canale stable della toolchain Rust all'ultima release disponibile tramite rustup update.`,
             },
             {
               english: 'Edition',
@@ -260,6 +276,7 @@ export default {
               difficulty: 'beginner',
               code: 'edition = "2021"',
               note: 'Le edizioni permettono cambi di sintassi senza rompere il codice esistente.',
+              task: 'Imposta in Cargo.toml il campo edition al valore 2021 cosi il compilatore usa la sintassi piu recente.',
             },
           ],
         },
@@ -278,6 +295,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               command: 'cargo build',
+              task: 'Avvia la compilazione del crate con cargo build ottenendo un binario nativo senza overhead a runtime.',
             },
             {
               english: 'Compiler Error',
@@ -300,6 +318,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'let _unused = 5; // suppress warning',
+              task: 'Sopprimi il warning di variabile non usata anteponendo un underscore al nome della variabile, come in _unused.',
             },
             {
               english: 'Release Build',
@@ -312,6 +331,7 @@ export default {
               difficulty: 'beginner',
               command: 'cargo build --release',
               note: 'Le build di rilascio sono molto più veloci ma compilano più lentamente.',
+              task: 'Produci una build ottimizzata del progetto eseguendo cargo build con il flag --release per la distribuzione finale.',
             },
             {
               english: 'Debug Build',
@@ -323,6 +343,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               command: 'cargo build',
+              task: 'Genera una build di debug con cargo build per disporre di simboli e controlli runtime durante lo sviluppo.',
             },
             {
               english: 'Target Directory',
@@ -334,6 +355,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: '// target/debug/myapp\n// target/release/myapp',
+              task: 'Localizza i binari compilati nelle sottocartelle target/debug e target/release create automaticamente da cargo.',
             },
             {
               english: 'Cargo Check',
@@ -346,6 +368,7 @@ export default {
               difficulty: 'beginner',
               command: 'cargo check',
               note: 'Più veloce di cargo build, utile durante lo sviluppo.',
+              task: 'Verifica rapidamente che il codice superi il typecheck senza produrre un binario invocando cargo check.',
             },
             {
               english: 'Cargo Clean',
@@ -357,6 +380,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               command: 'cargo clean',
+              task: 'Rimuovi tutti gli artefatti di build accumulati nella cartella target/ eseguendo cargo clean per liberare spazio.',
             },
             {
               english: 'Binary Crate',
@@ -368,6 +392,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: '// src/main.rs is required',
+              task: 'Configura un binary crate dichiarando il punto di ingresso obbligatorio in src/main.rs per produrre un eseguibile.',
             },
             {
               english: 'Library Crate',
@@ -379,6 +404,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: '// src/lib.rs is required',
+              task: 'Struttura un library crate riutilizzabile partendo dal file src/lib.rs come root della libreria.',
             },
           ],
         },
@@ -397,6 +423,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: '// This is a comment',
+              task: `Inserisci un commento a riga singola con la sintassi // per documentare brevemente l'intento di una sezione di codice.`,
             },
             {
               english: 'Block Comment',
@@ -407,6 +434,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: '/* multiple\n   lines */',
+              task: `Avvolgi una spiegazione su piu righe dentro un block comment delimitato da /* e */ per documentare un'intera sezione.`,
             },
             {
               english: 'Doc Comment',
@@ -419,6 +447,7 @@ export default {
               difficulty: 'beginner',
               code: '/// Adds two numbers',
               note: 'Si usano tre slash /// e supportano Markdown.',
+              task: 'Anteponi a una funzione un doc comment con tre slash /// che descrive che somma due numeri per la documentazione.',
             },
             {
               english: 'Snake Case',
@@ -431,6 +460,7 @@ export default {
               difficulty: 'beginner',
               code: 'let user_name = "Alice";',
               note: 'Convenzione standard per identificatori in Rust.',
+              task: 'Dichiara una variabile user_name secondo la convenzione snake_case standard di Rust per identificatori.',
             },
             {
               english: 'Pascal Case',
@@ -442,6 +472,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'struct UserProfile { ... }',
+              task: 'Definisci una struct chiamata UserProfile applicando la convenzione PascalCase tipica dei tipi in Rust.',
             },
             {
               english: 'Screaming Snake Case',
@@ -453,6 +484,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'const MAX_SIZE: u32 = 100;',
+              task: 'Dichiara una costante MAX_SIZE di tipo u32 fissata a 100 seguendo lo screaming snake case per le costanti.',
             },
             {
               english: 'Rustfmt',
@@ -465,6 +497,7 @@ export default {
               difficulty: 'beginner',
               tool: 'rustfmt',
               command: 'cargo fmt',
+              task: 'Formatta tutti i file sorgente del progetto secondo lo stile ufficiale eseguendo cargo fmt che invoca rustfmt.',
             },
             {
               english: 'Clippy',
@@ -478,6 +511,7 @@ export default {
               tool: 'clippy',
               command: 'cargo clippy',
               note: 'Linter ufficiale di Rust con oltre 600 lint disponibili.',
+              task: 'Esegui cargo clippy sul crate per individuare anti-pattern e suggerimenti idiomatici prima di committare.',
             },
             {
               english: 'Curly Braces',
@@ -489,6 +523,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'fn main() { /* body */ }',
+              task: `Delimita il corpo della funzione main con parentesi graffe lasciando il commento /* body */ all'interno.`,
             },
             {
               english: 'Indentation',
@@ -528,6 +563,7 @@ export default {
               difficulty: 'beginner',
               code: 'let x: i32 = 42;',
               note: 'Il tipo intero predefinito quando il compilatore non riesce a inferirlo.',
+              task: 'Annota esplicitamente una variabile x come i32 inizializzandola al valore 42 con la sintassi let x: i32.',
             },
             {
               english: 'u32',
@@ -539,6 +575,7 @@ export default {
               context: 'types',
               difficulty: 'beginner',
               code: 'let x: u32 = 100;',
+              task: 'Crea una variabile x di tipo u32 con valore 100, indicando che non potra mai essere negativa.',
             },
             {
               english: 'i64',
@@ -550,6 +587,7 @@ export default {
               context: 'types',
               difficulty: 'beginner',
               code: 'let big: i64 = 9_000_000_000;',
+              task: 'Memorizza il numero nove miliardi in una variabile annotata come i64 per evitare overflow su i32.',
             },
             {
               english: 'u64',
@@ -561,6 +599,7 @@ export default {
               context: 'types',
               difficulty: 'beginner',
               code: 'let count: u64 = 18_000_000_000;',
+              task: 'Lega un contatore di valore 18 miliardi a una variabile annotata u64 per supportare grandi quantita non negative.',
             },
             {
               english: 'i8',
@@ -572,6 +611,7 @@ export default {
               context: 'types',
               difficulty: 'beginner',
               code: 'let small: i8 = -50;',
+              task: 'Dichiara una variabile small di tipo i8 contenente -50, sfruttando il range ridotto da -128 a 127.',
             },
             {
               english: 'u8',
@@ -584,6 +624,7 @@ export default {
               difficulty: 'beginner',
               code: 'let byte: u8 = 255;',
               note: 'Spesso usato per rappresentare singoli byte.',
+              task: 'Assegna il valore massimo 255 a una variabile byte tipata u8 per rappresentare un singolo byte.',
             },
             {
               english: 'isize',
@@ -596,6 +637,7 @@ export default {
               difficulty: 'beginner',
               code: 'let idx: isize = -1;',
               note: '32 bit su sistemi a 32 bit, 64 bit su sistemi a 64 bit.',
+              task: 'Dichiara una variabile idx di tipo isize con valore -1 sfruttando la larghezza che corrisponde al puntatore.',
             },
             {
               english: 'usize',
@@ -608,6 +650,7 @@ export default {
               difficulty: 'beginner',
               code: 'let len: usize = vec.len();',
               note: 'Tipo standard per indici di array e dimensioni.',
+              task: 'Salva la lunghezza di un Vec in una variabile len di tipo usize, il tipo standard per dimensioni e indici.',
             },
             {
               english: 'Integer Overflow',
@@ -620,6 +663,7 @@ export default {
               difficulty: 'beginner',
               code: 'let x: u8 = 255 + 1; // panic',
               note: 'In release wraps invece di andare in panic. Usa checked_add per controllo esplicito.',
+              task: 'Provoca volutamente un integer overflow sommando 1 a un u8 inizializzato a 255 e osserva il panic in debug.',
             },
             {
               english: 'Numeric Literal',
@@ -631,6 +675,7 @@ export default {
               context: 'types',
               difficulty: 'beginner',
               code: 'let million = 1_000_000;',
+              task: 'Scrivi il letterale numerico un milione usando gli underscore come separatori delle migliaia per migliorare la leggibilita.',
             },
           ],
         },
@@ -649,6 +694,7 @@ export default {
               context: 'types',
               difficulty: 'beginner',
               code: 'let pi: f32 = 3.14;',
+              task: `Lega 3.14 a una variabile pi annotata f32 per risparmiare memoria quando l'alta precisione non serve.`,
             },
             {
               english: 'f64',
@@ -661,6 +707,7 @@ export default {
               difficulty: 'beginner',
               code: 'let e = 2.71828;',
               note: 'Doppia precisione, predefinito quando il tipo non è specificato.',
+              task: 'Assegna alla costante matematica e il valore 2.71828 lasciando inferire il tipo predefinito f64.',
             },
             {
               english: 'Bool',
@@ -673,6 +720,7 @@ export default {
               difficulty: 'beginner',
               code: 'let is_ready: bool = true;',
               note: 'In Rust, bool occupa 1 byte ma rappresenta solo true/false.',
+              task: 'Dichiara una variabile is_ready di tipo bool impostandola sul valore true per indicare lo stato pronto.',
             },
             {
               english: 'Char',
@@ -685,6 +733,7 @@ export default {
               difficulty: 'beginner',
               code: "let letter: char = 'A';",
               note: 'A differenza di C, char in Rust è 4 byte e supporta Unicode completo.',
+              task: 'Lega il singolo carattere maiuscolo A a una variabile letter di tipo char usando gli apici singoli.',
             },
             {
               english: 'Unicode Scalar',
@@ -697,6 +746,7 @@ export default {
               difficulty: 'beginner',
               code: "let heart: char = '\\u{2764}';",
               note: 'Include emoji, accenti e caratteri non-latini.',
+              task: `Definisci un char chiamato heart usando l'escape Unicode \\u{2764} per rappresentare il simbolo del cuore.`,
             },
             {
               english: 'Numeric Suffix',
@@ -708,6 +758,7 @@ export default {
               context: 'types',
               difficulty: 'beginner',
               code: 'let x = 42i64;',
+              task: 'Forza il tipo del letterale 42 a i64 aggiungendo direttamente il suffisso numerico i64 al valore.',
             },
             {
               english: 'Type Annotation',
@@ -719,6 +770,7 @@ export default {
               context: 'types',
               difficulty: 'beginner',
               code: 'let x: u32 = 5;',
+              task: `Annota esplicitamente come u32 una variabile x inizializzata a 5 quando l'inferenza non basta.`,
             },
             {
               english: 'Type Inference',
@@ -731,6 +783,7 @@ export default {
               difficulty: 'beginner',
               code: 'let x = 5; // i32 inferred',
               note: 'Rust ha un sistema di inferenza di tipo molto potente, simile a Haskell.',
+              task: 'Lascia che il compilatore inferisca il tipo i32 per una variabile x legata a 5 senza annotazione esplicita.',
             },
             {
               english: 'Type Cast',
@@ -743,6 +796,7 @@ export default {
               difficulty: 'beginner',
               code: 'let x: u8 = 256 as u8; // wraps',
               note: "In Rust non c'è conversione implicita: tutto va esplicitato.",
+              task: `Converti 256 in u8 usando l'operatore as e osserva il wrapping che riduce il valore al modulo 256.`,
             },
             {
               english: 'Unit Type',
@@ -755,6 +809,7 @@ export default {
               difficulty: 'beginner',
               code: 'fn nothing() -> () { }',
               note: 'Equivalente a void in C, ma è un vero tipo con un solo valore: ().',
+              task: 'Scrivi una funzione nothing che restituisce esplicitamente il tipo unit () e ha corpo vuoto.',
             },
           ],
         },
@@ -773,6 +828,7 @@ export default {
               context: 'types',
               difficulty: 'beginner',
               code: "let t: (i32, f64, char) = (1, 2.0, 'a');",
+              task: `Crea una tupla t con tipi misti (i32, f64, char) contenente i valori 1, 2.0 e 'a'.`,
             },
             {
               english: 'Tuple Indexing',
@@ -785,6 +841,7 @@ export default {
               difficulty: 'beginner',
               code: 'let first = t.0;',
               note: 'Diverso dagli array: si usa il punto invece delle parentesi quadre.',
+              task: 'Estrai il primo elemento di una tupla t accedendovi con la notazione a punto t.0.',
             },
             {
               english: 'Tuple Destructuring',
@@ -796,6 +853,7 @@ export default {
               context: 'types',
               difficulty: 'beginner',
               code: 'let (x, y, z) = (1, 2, 3);',
+              task: 'Destruttura la tupla (1, 2, 3) in tre variabili separate x, y e z con un singolo let.',
             },
             {
               english: 'Array',
@@ -808,6 +866,7 @@ export default {
               difficulty: 'beginner',
               code: 'let arr: [i32; 5] = [1, 2, 3, 4, 5];',
               note: 'A differenza dei Vec, gli array hanno dimensione fissa.',
+              task: 'Inizializza un array di cinque i32 contenente i valori da 1 a 5 dichiarato con tipo [i32; 5].',
             },
             {
               english: 'Array Length',
@@ -819,6 +878,7 @@ export default {
               context: 'types',
               difficulty: 'beginner',
               code: 'let n = arr.len();',
+              task: 'Ottieni il numero di elementi di un array chiamando il metodo len e salvalo nella variabile n.',
             },
             {
               english: 'Array Indexing',
@@ -831,6 +891,7 @@ export default {
               difficulty: 'beginner',
               code: 'let first = arr[0];',
               note: "L'accesso fuori dai limiti causa panic, non corruption come in C.",
+              task: 'Leggi il primo elemento di un array indicizzandolo con la notazione a parentesi quadre arr[0].',
             },
             {
               english: 'Array Initializer',
@@ -842,6 +903,7 @@ export default {
               context: 'types',
               difficulty: 'beginner',
               code: 'let zeros = [0; 100];',
+              task: `Crea un array di cento zeri sfruttando la sintassi abbreviata [0; 100] dell'array initializer.`,
             },
             {
               english: 'Slice',
@@ -854,6 +916,7 @@ export default {
               difficulty: 'beginner',
               code: 'let s: &[i32] = &arr[1..3];',
               note: 'Una slice non possiede i dati: è una "finestra" su altri dati.',
+              task: 'Ricava una slice immutabile &[i32] che copre gli indici da 1 a 3 di un array preesistente.',
             },
             {
               english: 'Range Expression',
@@ -865,6 +928,7 @@ export default {
               context: 'types',
               difficulty: 'beginner',
               code: 'for i in 0..10 { ... }',
+              task: 'Itera con un ciclo for sui dieci interi da 0 a 9 generati dalla range expression 0..10.',
             },
             {
               english: 'Inclusive Range',
@@ -877,6 +941,7 @@ export default {
               difficulty: 'beginner',
               code: 'for i in 0..=10 { ... }',
               note: "L'uguale dopo i due punti rende il range inclusivo.",
+              task: `Cicla con for sui valori da 0 a 10 inclusi usando l'inclusive range 0..=10.`,
             },
           ],
         },
@@ -896,6 +961,7 @@ export default {
               difficulty: 'beginner',
               code: 'let s: String = String::from("hello");',
               note: "String è proprietaria dei dati, allocata sull'heap.",
+              task: `Costruisci una String owned sull'heap partendo dal letterale hello tramite la funzione String::from.`,
             },
             {
               english: 'String Slice',
@@ -908,6 +974,7 @@ export default {
               difficulty: 'beginner',
               code: 'let s: &str = "hello";',
               note: 'Il tipo &str si pronuncia "string slice".',
+              task: 'Lega il letterale hello a una variabile s tipata &str cosi da ottenere una string slice presa in prestito.',
             },
             {
               english: 'String Literal',
@@ -920,6 +987,7 @@ export default {
               difficulty: 'beginner',
               code: 'let greeting = "Hello, World!";',
               note: "I letterali stringa sono memorizzati nel binario, vivono per tutta l'esecuzione.",
+              task: `Memorizza la frase Hello, World! in una variabile greeting come letterale stringa con lifetime 'static.`,
             },
             {
               english: 'String Concatenation',
@@ -931,6 +999,7 @@ export default {
               context: 'types',
               difficulty: 'beginner',
               code: 'let s = s1 + &s2;',
+              task: `Concatena due String s1 e s2 con l'operatore + ricordando di prendere in prestito la seconda con &.`,
             },
             {
               english: 'Format Macro',
@@ -942,6 +1011,7 @@ export default {
               context: 'types',
               difficulty: 'beginner',
               code: 'let s = format!("{}-{}", a, b);',
+              task: 'Costruisci una String formattata con due segnaposto separati da trattino usando la macro format e i valori a e b.',
             },
             {
               english: 'String Push',
@@ -952,6 +1022,7 @@ export default {
               context: 'types',
               difficulty: 'beginner',
               code: 's.push_str(" world");',
+              task: 'Aggiungi in coda alla String s la stringa  world mutandola in place tramite il metodo push_str.',
             },
             {
               english: 'String Length',
@@ -964,6 +1035,7 @@ export default {
               difficulty: 'beginner',
               code: 'let n = s.len();',
               note: 'Importante: len restituisce byte, non caratteri Unicode.',
+              task: 'Salva la lunghezza in byte di una String chiamando il metodo len sulla variabile s.',
             },
             {
               english: 'UTF-8',
@@ -986,6 +1058,7 @@ export default {
               context: 'types',
               difficulty: 'beginner',
               code: 'for b in s.bytes() { ... }',
+              task: 'Itera con un ciclo for sui singoli byte di una stringa ottenuti dal metodo bytes della String.',
             },
             {
               english: 'String Chars',
@@ -998,6 +1071,7 @@ export default {
               difficulty: 'beginner',
               code: 'for c in s.chars() { ... }',
               note: 'Per gestire correttamente caratteri non-ASCII, usare chars() invece di bytes().',
+              task: 'Scorri tutti i caratteri Unicode di una stringa usando il metodo chars in un ciclo for su c.',
             },
           ],
         },
@@ -1026,6 +1100,7 @@ export default {
               difficulty: 'beginner',
               code: 'let x = if cond { 1 } else { 2 };',
               note: 'Diverso da molti linguaggi: if restituisce un valore, come ?: in C.',
+              task: `Assegna a x il valore restituito da un'espressione if che torna 1 quando cond e vero e 2 altrimenti.`,
             },
             {
               english: 'Else Branch',
@@ -1037,6 +1112,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'if x > 0 { ... } else { ... }',
+              task: 'Costruisci un if che esegue blocchi differenti a seconda che x sia maggiore di 0 o no usando il ramo else.',
             },
             {
               english: 'Else If',
@@ -1048,6 +1124,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'if a { } else if b { } else { }',
+              task: 'Concatena condizioni alternative con else if per gestire i tre rami in funzione di booleani a e b.',
             },
             {
               english: 'Boolean Condition',
@@ -1059,6 +1136,7 @@ export default {
               difficulty: 'beginner',
               code: 'if x > 0 { ... }',
               note: 'A differenza di C, valori non-booleani non sono accettati come condizioni.',
+              task: 'Scrivi un if con condizione booleana esplicita x > 0 ricordando che Rust non accetta valori truthy.',
             },
             {
               english: 'Comparison Operator',
@@ -1070,6 +1148,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'if x == y { ... }',
+              task: `Verifica con l'operatore di uguaglianza == se x e y coincidono dentro la condizione di un if.`,
             },
             {
               english: 'Logical AND',
@@ -1081,6 +1160,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'if a && b { ... }',
+              task: `Combina due booleani a e b con l'operatore && per entrare nel blocco solo quando entrambi sono veri.`,
             },
             {
               english: 'Logical OR',
@@ -1092,6 +1172,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'if a || b { ... }',
+              task: `Unisci due condizioni booleane a e b con l'operatore || sfruttando la valutazione a corto circuito.`,
             },
             {
               english: 'Logical NOT',
@@ -1102,6 +1183,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'if !is_ready { ... }',
+              task: `Inverti il valore booleano is_ready anteponendo l'operatore ! dentro la condizione di un if.`,
             },
             {
               english: 'Ternary Alternative',
@@ -1114,6 +1196,7 @@ export default {
               difficulty: 'beginner',
               code: 'let max = if a > b { a } else { b };',
               note: "Sostituisce l'operatore ternario di C/Java con if come espressione.",
+              task: `Assegna a max il maggiore tra a e b usando un'espressione if al posto del ternario assente in Rust.`,
             },
             {
               english: 'Branch',
@@ -1125,6 +1208,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'let n = if c { 1 } else { 2 };',
+              task: 'Definisci due rami if/else che restituiscono entrambi un i32, scegliendo 1 o 2 in base al booleano c.',
             },
           ],
         },
@@ -1144,6 +1228,7 @@ export default {
               difficulty: 'beginner',
               code: 'loop { println!("forever"); }',
               note: 'Diverso da while(true): è una keyword dedicata che permette break con valore.',
+              task: 'Avvia un ciclo infinito con la parola chiave loop che stampa la stringa forever ad ogni iterazione.',
             },
             {
               english: 'While Loop',
@@ -1155,6 +1240,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'while x < 10 { x += 1; }',
+              task: 'Itera con un while finche x resta minore di 10 incrementandola di uno ad ogni passaggio.',
             },
             {
               english: 'For Loop',
@@ -1167,6 +1253,7 @@ export default {
               difficulty: 'beginner',
               code: 'for i in 0..10 { println!("{}", i); }',
               note: 'In Rust, for itera sempre su un Iterator, non con indice.',
+              task: 'Stampa i numeri da 0 a 9 con un for che itera sulla range 0..10 e usa println per ogni i.',
             },
             {
               english: 'Break',
@@ -1178,6 +1265,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'if done { break; }',
+              task: `Esci anticipatamente dal loop corrente con l'istruzione break quando il flag done risulta vero.`,
             },
             {
               english: 'Break With Value',
@@ -1190,6 +1278,7 @@ export default {
               difficulty: 'beginner',
               code: 'let r = loop { break 42; };',
               note: 'Caratteristica unica di Rust: solo loop (non while/for) può avere break con valore.',
+              task: 'Ottieni 42 come valore di un loop usando break 42 per restituirlo direttamente al binding r.',
             },
             {
               english: 'Continue',
@@ -1200,6 +1289,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'if skip { continue; }',
+              task: `Salta l'iterazione corrente con continue quando il flag skip risulta vero dentro un ciclo.`,
             },
             {
               english: 'Loop Label',
@@ -1211,6 +1301,7 @@ export default {
               difficulty: 'beginner',
               code: "'outer: loop { break 'outer; }",
               note: 'Le etichette iniziano con apostrofo, come le lifetime.',
+              task: `Etichetta un loop esterno con 'outer e usa break 'outer per uscirne da un loop annidato interno.`,
             },
             {
               english: 'Iterator',
@@ -1222,6 +1313,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'for x in vec.iter() { ... }',
+              task: `Scorri con un for ogni elemento x di un Vec ottenendo l'iteratore tramite il metodo iter.`,
             },
             {
               english: 'Range',
@@ -1233,6 +1325,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'for i in 0..n { ... }',
+              task: `Itera con for sull'intervallo numerico 0..n generando esattamente n valori interi consecutivi da 0.`,
             },
             {
               english: 'Reverse Iteration',
@@ -1244,6 +1337,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'for i in (0..10).rev() { ... }',
+              task: `Percorri al contrario gli interi da 0 a 9 applicando il metodo rev all'iteratore della range.`,
             },
           ],
         },
@@ -1263,6 +1357,7 @@ export default {
               difficulty: 'beginner',
               code: 'match x { 1 => "one", _ => "other" }',
               note: 'Più potente dello switch di C/Java: supporta pattern complessi e binding.',
+              task: 'Discrimina con match il valore x restituendo one quando vale 1 e other per qualunque altro caso.',
             },
             {
               english: 'Match Arm',
@@ -1274,6 +1369,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'pattern => expression,',
+              task: 'Scrivi un braccio match con sintassi pattern => expression seguito dalla virgola separatrice.',
             },
             {
               english: 'Wildcard Pattern',
@@ -1286,6 +1382,7 @@ export default {
               difficulty: 'beginner',
               code: '_ => "anything",',
               note: 'Equivalente al "default" di switch in C, ma obbligatorio per esaustività.',
+              task: 'Aggiungi un ramo di match con il pattern jolly underscore che cattura anything e rende esaustivo il match.',
             },
             {
               english: 'Pattern Matching',
@@ -1297,6 +1394,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'match pair { (0, _) => "x is 0", _ => "" }',
+              task: 'Esegui pattern matching su una coppia (i32, i32) restituendo una stringa quando il primo elemento e zero.',
             },
             {
               english: 'Match Guard',
@@ -1309,6 +1407,7 @@ export default {
               difficulty: 'beginner',
               code: 'n if n > 0 => "positive",',
               note: 'Permette di combinare pattern matching con condizioni booleane.',
+              task: 'Aggiungi una match guard if n > 0 a un ramo che lega n cosi da restituire positive solo nei casi positivi.',
             },
             {
               english: 'Exhaustiveness',
@@ -1330,6 +1429,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: '1 | 2 | 3 => "small",',
+              task: 'Raggruppa con un or pattern i valori 1, 2 e 3 in un unico ramo match che restituisce small.',
             },
             {
               english: 'Range Pattern',
@@ -1341,6 +1441,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: '1..=9 => "single digit",',
+              task: 'Cattura tutti gli interi tra 1 e 9 inclusi con il range pattern 1..=9 in un ramo single digit.',
             },
             {
               english: 'Binding',
@@ -1352,6 +1453,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'n @ 1..=5 => println!("{}", n),',
+              task: `Lega con l'operatore @ il valore matchato a una variabile n quando ricade nel range 1..=5.`,
             },
             {
               english: 'If Let',
@@ -1364,6 +1466,7 @@ export default {
               difficulty: 'beginner',
               code: 'if let Some(x) = opt { ... }',
               note: 'Alternativa più sintetica a match quando si gestisce un solo pattern.',
+              task: 'Estrai il valore interno di un Option con if let Some(x) ignorando completamente il caso None.',
             },
           ],
         },
@@ -1382,6 +1485,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'fn add(a: i32, b: i32) -> i32 { a + b }',
+              task: 'Definisci una funzione add che accetta due parametri a e b di tipo i32 e ne restituisce la somma.',
             },
             {
               english: 'Return Type',
@@ -1393,6 +1497,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'fn double(x: i32) -> i32 { x * 2 }',
+              task: 'Dichiara la funzione double che dopo la freccia indica i32 come tipo di ritorno e raddoppia x.',
             },
             {
               english: 'Implicit Return',
@@ -1405,6 +1510,7 @@ export default {
               difficulty: 'beginner',
               code: 'fn add(a: i32, b: i32) -> i32 { a + b }',
               note: 'Più idiomatico in Rust rispetto al return esplicito.',
+              task: `Sfrutta il ritorno implicito facendo terminare add con l'espressione a + b senza punto e virgola.`,
             },
             {
               english: 'Explicit Return',
@@ -1415,6 +1521,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'if cond { return 0; }',
+              task: 'Esci subito da una funzione con return 0 dentro un if che controlla la condizione cond.',
             },
             {
               english: 'Function Body',
@@ -1426,6 +1533,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'fn name() { /* body */ }',
+              task: 'Definisci la struttura minima di una funzione name con corpo racchiuso tra parentesi graffe vuote.',
             },
             {
               english: 'Function Signature',
@@ -1437,6 +1545,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'fn add(a: i32, b: i32) -> i32',
+              task: 'Scrivi la firma fn add(a: i32, b: i32) -> i32 dichiarando nome, parametri e tipo di ritorno.',
             },
             {
               english: 'Diverging Function',
@@ -1449,6 +1558,7 @@ export default {
               difficulty: 'beginner',
               code: 'fn fail() -> ! { panic!("oops") }',
               note: 'Il tipo ! significa "non ritorna mai". Utile per panic e exit.',
+              task: 'Definisci una funzione divergente fail che restituisce il never type ! invocando la macro panic.',
             },
             {
               english: 'Function Pointer',
@@ -1460,6 +1570,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'let f: fn(i32) -> i32 = double;',
+              task: 'Lega il nome della funzione double a una variabile f tipata come function pointer fn(i32) -> i32.',
             },
             {
               english: 'Recursive Function',
@@ -1471,6 +1582,7 @@ export default {
               context: 'foundations',
               difficulty: 'beginner',
               code: 'fn fact(n: u64) -> u64 { if n<=1 {1} else {n*fact(n-1)} }',
+              task: 'Implementa una funzione fact ricorsiva su u64 che restituisce 1 per n<=1 e n*fact(n-1) altrimenti.',
             },
             {
               english: 'Constant',
@@ -1483,6 +1595,7 @@ export default {
               difficulty: 'beginner',
               code: 'const MAX: u32 = 100;',
               note: 'Diverso da let: const può essere usato a livello globale e deve essere costante a tempo di compilazione.',
+              task: 'Dichiara una costante MAX di tipo u32 con valore 100 utilizzando la parola chiave const.',
             },
           ],
         },
@@ -1521,6 +1634,7 @@ export default {
               difficulty: 'beginner',
               code: 'let s = String::from("hello");',
               note: 'Regola fondamentale: un solo proprietario alla volta per ogni valore.',
+              task: `Crea una String owned legandola alla variabile s che diventa l'unico proprietario del dato sull'heap.`,
             },
             {
               english: 'Move Semantics',
@@ -1532,6 +1646,7 @@ export default {
               difficulty: 'beginner',
               code: 'let s2 = s1; // s1 invalid now',
               note: "Diverso da C++: dopo move, l'originale non può più essere usato.",
+              task: `Trasferisci l'ownership di s1 a s2 tramite assegnamento, rendendo s1 inutilizzabile per move semantics.`,
             },
             {
               english: 'Scope',
@@ -1543,6 +1658,7 @@ export default {
               context: 'ownership',
               difficulty: 'beginner',
               code: '{ let x = 5; } // x dropped here',
+              task: `Limita la vita di x dentro un blocco { let x = 5; } cosi viene droppato all'uscita dello scope.`,
             },
             {
               english: 'Drop',
@@ -1555,6 +1671,7 @@ export default {
               difficulty: 'beginner',
               code: 'drop(s); // explicit drop',
               note: 'Drop è automatico alla fine dello scope, drop() forza il rilascio anticipato.',
+              task: 'Forza il rilascio anticipato della variabile s invocando la funzione drop(s) prima della fine dello scope.',
             },
             {
               english: 'RAII',
@@ -1626,6 +1743,7 @@ export default {
               context: 'ownership',
               difficulty: 'beginner',
               code: 'let s2 = s1; // s1 moved',
+              task: 'Sposta il contenuto di s1 in s2 con un semplice assegnamento attivando le move semantics di Rust.',
             },
             {
               english: 'Copy',
@@ -1638,6 +1756,7 @@ export default {
               difficulty: 'beginner',
               code: 'let x = 5; let y = x; // both valid',
               note: 'I tipi primitivi (int, bool, char) implementano Copy.',
+              task: 'Duplica il valore intero x in y con un assegnamento, sfruttando il trait Copy implementato dai primitivi.',
             },
             {
               english: 'Copy Trait',
@@ -1650,6 +1769,7 @@ export default {
               difficulty: 'beginner',
               code: '#[derive(Copy, Clone)]',
               note: 'Copy richiede sempre Clone come prerequisito.',
+              task: `Deriva i trait Copy e Clone su un tipo aggiungendo l'attributo #[derive(Copy, Clone)] sopra la definizione.`,
             },
             {
               english: 'Clone',
@@ -1661,6 +1781,7 @@ export default {
               difficulty: 'beginner',
               code: 'let s2 = s1.clone();',
               note: 'Clone è esplicito e potenzialmente costoso, Copy è implicito ed economico.',
+              task: 'Crea una copia profonda di s1 chiamando il metodo clone e legandola a una nuova variabile s2.',
             },
             {
               english: 'Clone Trait',
@@ -1672,6 +1793,7 @@ export default {
               context: 'ownership',
               difficulty: 'beginner',
               code: '#[derive(Clone)]',
+              task: `Abilita la duplicazione esplicita di una struct annotandola con l'attributo #[derive(Clone)] sulla definizione.`,
             },
             {
               english: 'Shallow Copy',
@@ -1694,6 +1816,7 @@ export default {
               context: 'ownership',
               difficulty: 'beginner',
               code: 'let v2 = v1.clone();',
+              task: 'Ottieni una copia profonda di un Vec v1 chiamando v1.clone e legando il risultato a v2.',
             },
             {
               english: 'Use After Move',
@@ -1716,6 +1839,7 @@ export default {
               context: 'ownership',
               difficulty: 'beginner',
               code: 'fn take(s: String) { ... }',
+              task: `Definisci la funzione take che riceve una String per valore, prendendone l'ownership al momento della chiamata.`,
             },
             {
               english: 'Return Ownership',
@@ -1727,6 +1851,7 @@ export default {
               context: 'ownership',
               difficulty: 'beginner',
               code: 'fn give() -> String { String::from("hi") }',
+              task: `Scrivi la funzione give che restituisce una nuova String hi trasferendone l'ownership al chiamante.`,
             },
           ],
         },
@@ -1746,6 +1871,7 @@ export default {
               difficulty: 'beginner',
               code: 'impl Drop for Foo { fn drop(&mut self) { } }',
               note: 'Equivalente al destruttore in C++.',
+              task: 'Implementa il Drop trait sulla struct Foo definendo il metodo drop con riferimento mutabile a self.',
             },
             {
               english: 'Destructor',
@@ -1809,6 +1935,7 @@ export default {
               difficulty: 'beginner',
               code: 'std::mem::forget(value);',
               note: 'Crea un memory leak intenzionale. Raramente necessario.',
+              task: `Sopprimi l'esecuzione del destructor di value invocando std::mem::forget per cedere la pulizia al chiamante FFI.`,
             },
             {
               english: 'Replace',
@@ -1820,6 +1947,7 @@ export default {
               context: 'ownership',
               difficulty: 'beginner',
               code: 'let old = std::mem::replace(&mut x, new);',
+              task: 'Sostituisci il contenuto di x con new memorizzando il valore precedente in old tramite std::mem::replace.',
             },
             {
               english: 'Swap',
@@ -1831,6 +1959,7 @@ export default {
               context: 'ownership',
               difficulty: 'beginner',
               code: 'std::mem::swap(&mut a, &mut b);',
+              task: 'Scambia i contenuti delle variabili a e b chiamando std::mem::swap con due riferimenti mutabili.',
             },
             {
               english: 'Take',
@@ -1841,6 +1970,7 @@ export default {
               context: 'ownership',
               difficulty: 'beginner',
               code: 'let v = std::mem::take(&mut opt);',
+              task: 'Estrai il valore corrente di opt sostituendolo con il suo Default usando std::mem::take e legalo a v.',
             },
           ],
         },
@@ -1922,6 +2052,7 @@ export default {
               context: 'ownership',
               difficulty: 'beginner',
               code: 'let s: String = "hello".to_string();',
+              task: 'Trasforma il letterale hello da &str in una String owned applicando il metodo to_string.',
             },
             {
               english: 'Box',
@@ -1934,6 +2065,7 @@ export default {
               difficulty: 'beginner',
               code: 'let b = Box::new(5);',
               note: "Smart pointer più semplice: ownership di un singolo valore sull'heap.",
+              task: `Sposta il valore intero 5 sull'heap incapsulandolo in un Box tramite la funzione Box::new.`,
             },
             {
               english: 'Heap Allocation',
@@ -1944,6 +2076,7 @@ export default {
               context: 'ownership',
               difficulty: 'beginner',
               code: 'Box::new(value)',
+              task: `Alloca un valore generico sull'heap chiamando Box::new(value) cosi da ottenere un handle pointer-sized sullo stack.`,
             },
             {
               english: 'Deallocation',
@@ -1981,6 +2114,7 @@ export default {
               context: 'ownership',
               difficulty: 'intermediate',
               code: 'let r: &String = &s;',
+              task: 'Prendi in prestito s in sola lettura creando un reference &String e legandolo alla variabile r.',
             },
             {
               english: 'Borrow',
@@ -1993,6 +2127,7 @@ export default {
               difficulty: 'intermediate',
               code: 'fn read(s: &String) { ... }',
               note: 'Termine Rust senza diretta traduzione: si dice "borrow" o "prestito".',
+              task: 'Dichiara una funzione read che fa borrow di una String tramite il parametro &String senza prenderne ownership.',
             },
             {
               english: 'Immutable Reference',
@@ -2004,6 +2139,7 @@ export default {
               context: 'ownership',
               difficulty: 'intermediate',
               code: 'let r = &s; // can read s through r',
+              task: 'Crea un riferimento immutabile a s legandolo a r cosi da poter leggere il valore senza poterlo modificare.',
             },
             {
               english: 'Reference Operator',
@@ -2015,6 +2151,7 @@ export default {
               context: 'ownership',
               difficulty: 'intermediate',
               code: '&value',
+              task: `Ottieni un reference condiviso a value applicando l'operatore & davanti al nome della variabile.`,
             },
             {
               english: 'Dereference',
@@ -2027,6 +2164,7 @@ export default {
               difficulty: 'intermediate',
               code: 'let val = *reference;',
               note: 'Spesso il compilatore aggiunge automaticamente il deref tramite auto-deref.',
+              task: `Accedi al valore puntato da reference applicando l'operatore di dereferenziazione * e salvalo in val.`,
             },
             {
               english: 'Auto Deref',
@@ -2037,6 +2175,7 @@ export default {
               context: 'ownership',
               difficulty: 'intermediate',
               code: 's.len() // auto-derefs',
+              task: `Invoca s.len su una String dietro Box affidandoti all'auto-deref che inserisce automaticamente l'asterisco.`,
             },
             {
               english: 'Multiple Borrows',
@@ -2048,6 +2187,7 @@ export default {
               context: 'ownership',
               difficulty: 'intermediate',
               code: 'let r1 = &s; let r2 = &s;',
+              task: 'Crea contemporaneamente due reference immutabili r1 e r2 a s sfruttando la regola dei borrow multipli condivisi.',
             },
             {
               english: 'Borrowing Rules',
@@ -2079,6 +2219,7 @@ export default {
               context: 'ownership',
               difficulty: 'intermediate',
               code: 'fn print(s: &str) { println!("{}", s); }',
+              task: 'Definisci una funzione print che riceve la stringa per riferimento come &str e la stampa con println.',
             },
           ],
         },
@@ -2097,6 +2238,7 @@ export default {
               context: 'ownership',
               difficulty: 'intermediate',
               code: 'let r: &mut String = &mut s;',
+              task: 'Costruisci un riferimento mutabile a s con &mut s legandolo a r per poter modificare la String.',
             },
             {
               english: 'Exclusive Reference',
@@ -2129,6 +2271,7 @@ export default {
               context: 'ownership',
               difficulty: 'intermediate',
               code: '&mut value',
+              task: 'Prefigura un borrow mutabile applicando &mut davanti a value cosi da poter modificare il dato attraverso il riferimento.',
             },
             {
               english: 'Reborrow',
@@ -2141,6 +2284,7 @@ export default {
               difficulty: 'intermediate',
               code: 'let r2: &mut T = &mut *r1;',
               note: 'Spesso fatto automaticamente dal compilatore.',
+              task: 'Genera un nuovo borrow mutabile r2 partendo da r1 con la sintassi &mut *r1 per eseguire un reborrow.',
             },
             {
               english: 'Data Race',
@@ -2163,6 +2307,7 @@ export default {
               context: 'ownership',
               difficulty: 'intermediate',
               code: '*r = 10;',
+              task: 'Modifica il valore puntato da r assegnandogli 10 tramite la dereferenziazione *r = 10.',
             },
             {
               english: 'Method Receiver',
@@ -2174,6 +2319,7 @@ export default {
               context: 'ownership',
               difficulty: 'intermediate',
               code: 'fn push(&mut self, x: T) { ... }',
+              task: 'Definisci il metodo push che riceve self per riferimento mutabile e accetta un nuovo elemento x di tipo T.',
             },
             {
               english: 'Self Reference',
@@ -2185,6 +2331,7 @@ export default {
               context: 'ownership',
               difficulty: 'intermediate',
               code: 'fn len(&self) -> usize { ... }',
+              task: 'Definisci il metodo len che prende &self come riferimento immutabile e restituisce un usize.',
             },
             {
               english: 'NLL',
@@ -2245,6 +2392,7 @@ export default {
               context: 'ownership',
               difficulty: 'intermediate',
               code: 'let r1 = &mut s; let r2 = &mut s; // error',
+              task: `Provoca volutamente un borrow conflict creando due reference mutabili contemporanei a s per osservare l'errore del compilatore.`,
             },
             {
               english: 'Out of Scope',
@@ -2277,6 +2425,7 @@ export default {
               context: 'ownership',
               difficulty: 'intermediate',
               code: `let s: &'static str = "hello";`,
+              task: `Lega il letterale hello a una variabile s annotandone esplicitamente la static lifetime con il tipo &'static str.`,
             },
             {
               english: 'Borrow Error',
@@ -2325,6 +2474,7 @@ export default {
               context: 'ownership',
               difficulty: 'intermediate',
               code: 'let hello = &s[0..5];',
+              task: 'Estrai i primi cinque byte di s come slice presa in prestito di tipo &str con &s[0..5].',
             },
             {
               english: 'Array Slice',
@@ -2336,6 +2486,7 @@ export default {
               context: 'ownership',
               difficulty: 'intermediate',
               code: 'let s = &arr[1..4];',
+              task: 'Ricava una slice da un array arr che copre gli indici 1, 2 e 3 con la sintassi &arr[1..4].',
             },
             {
               english: 'Mutable Slice',
@@ -2347,6 +2498,7 @@ export default {
               context: 'ownership',
               difficulty: 'intermediate',
               code: 'let s: &mut [i32] = &mut arr[..];',
+              task: `Costruisci una slice mutabile &mut [i32] su tutto l'array arr per poter modificare gli elementi sottostanti.`,
             },
             {
               english: 'Slice Length',
@@ -2358,6 +2510,7 @@ export default {
               context: 'ownership',
               difficulty: 'intermediate',
               code: 's.len()',
+              task: 'Ottieni il numero di elementi di una slice s chiamando il metodo len senza argomenti.',
             },
             {
               english: 'Slice Fat Pointer',
@@ -2379,6 +2532,7 @@ export default {
               context: 'ownership',
               difficulty: 'intermediate',
               code: 'let empty: &[i32] = &[];',
+              task: 'Definisci una slice vuota di interi con tipo &[i32] inizializzata letteralmente a &[].',
             },
             {
               english: 'Slice From Vec',
@@ -2390,6 +2544,7 @@ export default {
               context: 'ownership',
               difficulty: 'intermediate',
               code: 'let s: &[i32] = &v[..];',
+              task: 'Costruisci una slice &[i32] che copre tutti gli elementi di un Vec v con la sintassi &v[..].',
             },
             {
               english: 'Slice Indexing',
@@ -2401,6 +2556,7 @@ export default {
               context: 'ownership',
               difficulty: 'intermediate',
               code: 'let part = &s[2..5];',
+              task: 'Estrai dalla slice s gli elementi dagli indici 2 a 4 con il subslice &s[2..5] legandolo a part.',
             },
             {
               english: 'Bounds Checking',
@@ -2423,6 +2579,7 @@ export default {
               context: 'ownership',
               difficulty: 'intermediate',
               code: 'let r: &str = &s;',
+              task: 'Riconverti la String s in una slice &str ottenendone un riferimento condiviso con &s.',
             },
           ],
         },
@@ -2450,6 +2607,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: 'struct User { name: String, age: u32 }',
+              task: 'Dichiara una struct User che aggrega due campi: name di tipo String e age di tipo u32.',
             },
             {
               english: 'Field',
@@ -2461,6 +2619,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: 'name: String,',
+              task: `Definisci all'interno di una struct un campo name di tipo String terminato dalla virgola separatrice.`,
             },
             {
               english: 'Field Access',
@@ -2472,6 +2631,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: 'let n = user.name;',
+              task: 'Estrai il campo name dalla variabile user tramite la notazione punto user.name salvandolo in n.',
             },
             {
               english: 'Struct Instantiation',
@@ -2483,6 +2643,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: 'User { name: String::from("A"), age: 30 }',
+              task: 'Istanzia una User assegnando il campo name a String::from("A") e age a 30 con sintassi a graffe.',
             },
             {
               english: 'Field Init Shorthand',
@@ -2494,6 +2655,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: 'User { name, age }',
+              task: 'Sfrutta la field init shorthand creando una User con le variabili name e age omettendo le ripetizioni esplicite.',
             },
             {
               english: 'Struct Update',
@@ -2506,6 +2668,7 @@ export default {
               difficulty: 'intermediate',
               code: 'User { name: new_name, ..base }',
               note: 'Sintassi struct update molto utile per costruire variazioni.',
+              task: 'Costruisci una nuova User cambiando solo il campo name in new_name e copiando il resto da base con ..base.',
             },
             {
               english: 'Tuple Struct',
@@ -2517,6 +2680,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: 'struct Point(i32, i32);',
+              task: 'Definisci una tuple struct Point con due campi posizionali i32 accessibili come .0 e .1.',
             },
             {
               english: 'Unit Struct',
@@ -2529,6 +2693,7 @@ export default {
               difficulty: 'intermediate',
               code: 'struct Marker;',
               note: 'Utile per implementare trait senza dati.',
+              task: 'Dichiara una unit struct Marker senza campi terminandola con il punto e virgola per usarla come tag.',
             },
             {
               english: 'Pub Field',
@@ -2540,6 +2705,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: 'pub struct User { pub name: String }',
+              task: `Esponi pubblicamente il campo name di una struct User marcandolo con pub all'interno di una pub struct.`,
             },
             {
               english: 'Encapsulation',
@@ -2568,6 +2734,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: 'impl User { fn name(&self) -> &str { &self.name } }',
+              task: 'Apri un blocco impl per User definendo al suo interno il metodo name che restituisce uno slice &str.',
             },
             {
               english: 'Method',
@@ -2579,6 +2746,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: 'fn area(&self) -> f64 { ... }',
+              task: 'Definisci il metodo area che prende &self e restituisce un f64 calcolato a partire dai campi della struct.',
             },
             {
               english: 'Self Parameter',
@@ -2590,6 +2758,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: 'fn name(&self) -> &str',
+              task: 'Dichiara il metodo name con il parametro self in modalita borrow immutabile come &self che restituisce &str.',
             },
             {
               english: 'Associated Function',
@@ -2602,6 +2771,7 @@ export default {
               difficulty: 'intermediate',
               code: 'fn new() -> Self { ... }',
               note: 'Equivalente a "static method" in altri linguaggi. Esempio: String::new().',
+              task: `Crea la funzione associata new senza self che restituisce un'istanza Self del tipo costruita ex novo.`,
             },
             {
               english: 'Constructor',
@@ -2614,6 +2784,7 @@ export default {
               difficulty: 'intermediate',
               code: 'impl User { fn new() -> Self { ... } }',
               note: 'Rust non ha veri costruttori: new() è solo una convenzione.',
+              task: 'Implementa il costruttore convenzionale new su User dentro un impl block che restituisce Self.',
             },
             {
               english: 'Self Type',
@@ -2626,6 +2797,7 @@ export default {
               difficulty: 'intermediate',
               code: 'fn new() -> Self',
               note: "Self maiuscolo è il tipo, self minuscolo è l'istanza.",
+              task: `Definisci il costruttore new il cui tipo di ritorno e Self, riferendosi al tipo dell'impl block.`,
             },
             {
               english: 'Method Chain',
@@ -2637,6 +2809,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: 'builder.add(1).add(2).build()',
+              task: 'Concatena le chiamate add(1) e add(2) seguite da build su builder per costruire un valore in fluent style.',
             },
             {
               english: 'Struct Builder Pattern',
@@ -2648,6 +2821,7 @@ export default {
               difficulty: 'intermediate',
               code: 'Config::new().host("x").port(8080).build()',
               note: 'Pattern molto comune in Rust per costruire oggetti complessi.',
+              task: 'Costruisci una Config con il builder pattern concatenando host, port e build per impostare solo i campi necessari.',
             },
             {
               english: 'Owned Method',
@@ -2659,6 +2833,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: 'fn into_inner(self) -> T { self.0 }',
+              task: `Definisci un metodo into_inner che consuma l'istanza prendendo self per valore e restituisce il campo .0.`,
             },
             {
               english: 'Mutable Method',
@@ -2670,6 +2845,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: 'fn push(&mut self, x: T) { ... }',
+              task: `Definisci il metodo push che riceve &mut self e aggiunge l'argomento x di tipo T modificando l'istanza.`,
             },
           ],
         },
@@ -2688,6 +2864,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: '#[derive(Debug, Clone)]',
+              task: 'Annota una struct con #[derive(Debug, Clone)] cosi il compilatore implementa entrambi i trait automaticamente.',
             },
             {
               english: 'Debug Trait',
@@ -2700,6 +2877,7 @@ export default {
               difficulty: 'intermediate',
               code: '#[derive(Debug)]',
               note: 'Praticamente sempre utile in fase di sviluppo.',
+              task: 'Deriva il trait Debug sulla struct con #[derive(Debug)] per stamparla usando il format specifier {:?}.',
             },
             {
               english: 'Display Trait',
@@ -2712,6 +2890,7 @@ export default {
               difficulty: 'intermediate',
               code: 'impl Display for X { fn fmt(&self, ...) { ... } }',
               note: 'Display non è derivabile: va implementato manualmente.',
+              task: `Implementa manualmente Display per il tipo X scrivendo il metodo fmt che produce l'output user-facing.`,
             },
             {
               english: 'PartialEq',
@@ -2723,6 +2902,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: '#[derive(PartialEq)]',
+              task: `Aggiungi #[derive(PartialEq)] sulla struct cosi le istanze diventano confrontabili con l'operatore ==.`,
             },
             {
               english: 'Eq Trait',
@@ -2734,6 +2914,7 @@ export default {
               difficulty: 'intermediate',
               code: '#[derive(Eq, PartialEq)]',
               note: 'Float types implementano solo PartialEq, non Eq, per via di NaN.',
+              task: 'Deriva sia Eq che PartialEq sulla struct con #[derive(Eq, PartialEq)] per uguaglianza totale e riflessiva.',
             },
             {
               english: 'Hash Trait',
@@ -2745,6 +2926,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: '#[derive(Hash)]',
+              task: 'Annota la struct con #[derive(Hash)] cosi le istanze possono essere usate come chiavi in una HashMap.',
             },
             {
               english: 'Default Trait',
@@ -2756,6 +2938,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: 'let x = User::default();',
+              task: `Ottieni un'istanza User con valori predefiniti chiamando la funzione associata User::default fornita dal trait.`,
             },
             {
               english: 'Clone Derive',
@@ -2767,6 +2950,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: '#[derive(Clone)]',
+              task: 'Aggiungi #[derive(Clone)] alla struct per generare automaticamente il metodo clone che copia ogni campo.',
             },
             {
               english: 'Ord Trait',
@@ -2778,6 +2962,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: '#[derive(Ord, PartialOrd, Eq, PartialEq)]',
+              task: 'Deriva i trait Ord, PartialOrd, Eq e PartialEq in un unico attributo per rendere il tipo ordinabile.',
             },
             {
               english: 'Custom Derive',
@@ -2790,6 +2975,7 @@ export default {
               difficulty: 'intermediate',
               code: '#[derive(Serialize, Deserialize)]',
               note: 'Crate famosi come serde forniscono derive personalizzati.',
+              task: 'Applica i derive custom Serialize e Deserialize di serde sulla struct con #[derive(Serialize, Deserialize)].',
             },
           ],
         },
@@ -2808,6 +2994,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: 'pub struct Point { ... }',
+              task: 'Esponi pubblicamente la struct Point fuori dal modulo anteponendo la parola chiave pub alla definizione.',
             },
             {
               english: 'Private Field',
@@ -2829,6 +3016,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: 'pub(crate) struct Internal;',
+              task: 'Limita la struct Internal al crate corrente usando il modificatore di visibilita pub(crate) prima di struct.',
             },
             {
               english: 'Module Visibility',
@@ -2840,6 +3028,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: 'pub(super) fn helper() { ... }',
+              task: 'Rendi la funzione helper visibile solo al modulo padre usando il modificatore di visibilita pub(super).',
             },
             {
               english: 'Newtype Pattern',
@@ -2852,6 +3041,7 @@ export default {
               difficulty: 'intermediate',
               code: 'struct UserId(u64);',
               note: 'Pattern molto Rust: distinguere semanticamente tipi che hanno la stessa rappresentazione.',
+              task: `Definisci un newtype UserId che incapsula un u64 in una tuple struct per distinguere semanticamente l'id.`,
             },
             {
               english: 'Phantom Data',
@@ -2864,6 +3054,7 @@ export default {
               difficulty: 'intermediate',
               code: 'struct Wrap<T> { _t: PhantomData<T> }',
               note: 'Necessario quando un tipo generico non appare nei campi.',
+              task: 'Definisci una struct generica Wrap<T> che contiene un campo PhantomData<T> per tracciare T senza memorizzarlo.',
             },
             {
               english: 'Field Order',
@@ -2887,6 +3078,7 @@ export default {
               difficulty: 'intermediate',
               code: '#[repr(C)] struct Point { x: f64, y: f64 }',
               note: 'Necessario per FFI con codice C.',
+              task: 'Annota la struct Point con #[repr(C)] cosi il suo layout di memoria diventa compatibile con il codice C.',
             },
             {
               english: 'Memory Layout',
@@ -2908,6 +3100,7 @@ export default {
               context: 'structs',
               difficulty: 'intermediate',
               code: 'std::mem::size_of::<User>()',
+              task: 'Calcola la dimensione in byte del tipo User invocando std::mem::size_of con la turbofish ::<User>.',
             },
           ],
         },
@@ -2936,6 +3129,7 @@ export default {
               difficulty: 'intermediate',
               code: 'enum Direction { North, South, East, West }',
               note: 'Più potente degli enum di C: ogni variante può portare dati.',
+              task: 'Dichiara un enum Direction con le quattro varianti North, South, East e West come tipo somma.',
             },
             {
               english: 'Variant',
@@ -2947,6 +3141,7 @@ export default {
               context: 'enums',
               difficulty: 'intermediate',
               code: 'Direction::North',
+              task: `Riferisciti alla variante North dell'enum Direction usando la sintassi qualificata Direction::North.`,
             },
             {
               english: 'Tagged Union',
@@ -2969,6 +3164,7 @@ export default {
               context: 'enums',
               difficulty: 'intermediate',
               code: 'enum Shape { Circle(f64), Square(f64) }',
+              task: 'Definisci un enum Shape con due varianti che trasportano un f64 di payload: Circle e Square.',
             },
             {
               english: 'Struct-Like Variant',
@@ -2980,6 +3176,7 @@ export default {
               context: 'enums',
               difficulty: 'intermediate',
               code: 'enum Msg { Move { x: i32, y: i32 } }',
+              task: `Dichiara nell'enum Msg una variante struct-like Move con i campi nominati x e y di tipo i32.`,
             },
             {
               english: 'Enum Method',
@@ -2991,6 +3188,7 @@ export default {
               context: 'enums',
               difficulty: 'intermediate',
               code: 'impl Direction { fn rotate(&self) { ... } }',
+              task: 'Aggiungi a Direction un blocco impl con il metodo rotate che prende &self per applicare una rotazione.',
             },
             {
               english: 'Discriminant',
@@ -3002,6 +3200,7 @@ export default {
               context: 'enums',
               difficulty: 'intermediate',
               code: 'enum E { A = 1, B = 2 }',
+              task: 'Definisci un enum E con due varianti A e B assegnando esplicitamente i discriminanti interi 1 e 2.',
             },
             {
               english: 'C-Like Enum',
@@ -3013,6 +3212,7 @@ export default {
               context: 'enums',
               difficulty: 'intermediate',
               code: 'enum Status { Active = 0, Pending = 1 }',
+              task: 'Dichiara un C-like enum Status con varianti Active = 0 e Pending = 1 mappate a interi espliciti.',
             },
             {
               english: 'Repr U8',
@@ -3024,6 +3224,7 @@ export default {
               context: 'enums',
               difficulty: 'intermediate',
               code: '#[repr(u8)] enum Code { Ok = 0 }',
+              task: 'Forza il discriminante di un enum Code a un singolo byte annotandolo con #[repr(u8)] per il protocollo binario.',
             },
             {
               english: 'Empty Enum',
@@ -3036,6 +3237,7 @@ export default {
               difficulty: 'intermediate',
               code: 'enum Never {}',
               note: 'Tipo "never" per indicare un valore impossibile.',
+              task: 'Definisci un enum Never senza alcuna variante per modellare un tipo che non puo mai avere istanze.',
             },
           ],
         },
@@ -3055,6 +3257,7 @@ export default {
               difficulty: 'intermediate',
               code: 'let x: Option<i32> = Some(5);',
               note: 'Sostituto type-safe per null. Niente NullPointerException in Rust.',
+              task: 'Lega Some(5) a una variabile x annotata Option<i32> per rappresentare un valore opzionale presente.',
             },
             {
               english: 'Some',
@@ -3066,6 +3269,7 @@ export default {
               context: 'enums',
               difficulty: 'intermediate',
               code: 'let x = Some(42);',
+              task: 'Costruisci la variante Some di Option avvolgendo il numero 42 e legalo alla variabile x.',
             },
             {
               english: 'None',
@@ -3077,6 +3281,7 @@ export default {
               context: 'enums',
               difficulty: 'intermediate',
               code: 'let x: Option<i32> = None;',
+              task: 'Inizializza una variabile x di tipo Option<i32> con la variante None per segnalare assenza di valore.',
             },
             {
               english: 'Unwrap',
@@ -3089,6 +3294,7 @@ export default {
               difficulty: 'intermediate',
               code: 'let val = opt.unwrap();',
               note: 'Da evitare in codice di produzione: meglio gestire None esplicitamente.',
+              task: 'Estrai il valore interno di opt chiamando unwrap, accettando il panic in caso di None a runtime.',
             },
             {
               english: 'Unwrap Or',
@@ -3100,6 +3306,7 @@ export default {
               context: 'enums',
               difficulty: 'intermediate',
               code: 'let val = opt.unwrap_or(0);',
+              task: `Estrai il valore di opt fornendo 0 come fallback sicuro tramite unwrap_or quando l'Option e None.`,
             },
             {
               english: 'Map',
@@ -3111,6 +3318,7 @@ export default {
               context: 'enums',
               difficulty: 'intermediate',
               code: 'let doubled = opt.map(|x| x * 2);',
+              task: 'Trasforma il valore interno di opt raddoppiandolo con una closure |x| x * 2 passata al metodo map.',
             },
             {
               english: 'And Then',
@@ -3123,6 +3331,7 @@ export default {
               difficulty: 'intermediate',
               code: 'opt.and_then(|x| if x > 0 { Some(x) } else { None })',
               note: 'Equivalente a flatMap in altri linguaggi.',
+              task: 'Concatena su opt una closure che restituisce Some(x) per x positivi e None altrimenti, sfruttando and_then.',
             },
             {
               english: 'Is Some',
@@ -3134,6 +3343,7 @@ export default {
               context: 'enums',
               difficulty: 'intermediate',
               code: 'if opt.is_some() { ... }',
+              task: 'Verifica con is_some se opt contiene un valore prima di entrare nel ramo if che lo usa.',
             },
             {
               english: 'Is None',
@@ -3145,6 +3355,7 @@ export default {
               context: 'enums',
               difficulty: 'intermediate',
               code: 'if opt.is_none() { ... }',
+              task: `Controlla con il metodo is_none se l'Option opt non contiene alcun valore senza consumarla.`,
             },
             {
               english: 'Option::take',
@@ -3155,6 +3366,7 @@ export default {
               context: 'enums',
               difficulty: 'intermediate',
               code: 'let val = opt.take();',
+              task: 'Sostituisci opt con None e ricevi il valore originale chiamando il metodo take su un riferimento mutabile.',
             },
           ],
         },
@@ -3184,6 +3396,7 @@ export default {
               context: 'enums',
               difficulty: 'intermediate',
               code: 'match s { Some(x) => x, None => 0 }',
+              task: 'Discrimina con match la variante di s estraendo x dalla forma Some e restituendo 0 per None.',
             },
             {
               english: 'Struct Pattern',
@@ -3195,6 +3408,7 @@ export default {
               context: 'enums',
               difficulty: 'intermediate',
               code: 'match p { Point { x, y } => ... }',
+              task: 'Destruttura la variabile p della struct Point in un ramo match estraendo i campi x e y per nome.',
             },
             {
               english: 'Tuple Pattern',
@@ -3206,6 +3420,7 @@ export default {
               context: 'enums',
               difficulty: 'intermediate',
               code: 'match (x, y) { (0, _) => ..., (_, 0) => ... }',
+              task: 'Discrimina con match la coppia (x, y) catturando i casi (0, _) e (_, 0) come pattern di tupla.',
             },
             {
               english: 'Reference Pattern',
@@ -3217,6 +3432,7 @@ export default {
               context: 'enums',
               difficulty: 'intermediate',
               code: 'match &x { ref r => ... }',
+              task: 'Lega un reference dentro un pattern match con la parola chiave ref applicata a x preso per riferimento.',
             },
             {
               english: 'If Let Else Chain',
@@ -3227,6 +3443,7 @@ export default {
               context: 'enums',
               difficulty: 'intermediate',
               code: 'if let Some(x) = opt { use(x); }',
+              task: 'Estrai il valore di opt con if let Some(x) e utilizza la closure use(x) solo quando la variante e Some.',
             },
             {
               english: 'While Let',
@@ -3238,6 +3455,7 @@ export default {
               context: 'enums',
               difficulty: 'intermediate',
               code: 'while let Some(x) = stack.pop() { ... }',
+              task: 'Svuota uno stack iterando con while let Some(x) = stack.pop finche pop restituisce una variante popolata.',
             },
             {
               english: 'Let Else',
@@ -3250,6 +3468,7 @@ export default {
               difficulty: 'intermediate',
               code: 'let Some(x) = opt else { return; };',
               note: "Stabile da Rust 1.65, riduce l'indentazione.",
+              task: 'Usa let-else per estrarre Some(x) da opt e fai return dalla funzione nel caso il pattern fallisca.',
             },
             {
               english: 'Nested Pattern',
@@ -3261,6 +3480,7 @@ export default {
               context: 'enums',
               difficulty: 'intermediate',
               code: 'match v { Some(Some(x)) => ... }',
+              task: 'Discrimina con un pattern annidato il caso Some(Some(x)) di una variabile v di tipo Option<Option<T>>.',
             },
             {
               english: 'Rest Pattern',
@@ -3272,6 +3492,7 @@ export default {
               context: 'enums',
               difficulty: 'intermediate',
               code: '[first, .., last] => ...',
+              task: 'Cattura primo e ultimo elemento di una slice con il rest pattern [first, .., last] ignorando il resto.',
             },
           ],
         },
@@ -3290,6 +3511,7 @@ export default {
               context: 'enums',
               difficulty: 'intermediate',
               code: 'enum Conn { Idle, Connected, Closed }',
+              task: 'Modella una connessione come state machine definendo un enum Conn con varianti Idle, Connected e Closed.',
             },
             {
               english: 'Type State',
@@ -3354,6 +3576,7 @@ export default {
               context: 'enums',
               difficulty: 'intermediate',
               code: 'enum AppError { NotFound, Forbidden, Internal }',
+              task: 'Definisci un enum AppError con le varianti NotFound, Forbidden e Internal per discriminare le cause di errore.',
             },
             {
               english: 'Recursive Enum',
@@ -3365,6 +3588,7 @@ export default {
               context: 'enums',
               difficulty: 'intermediate',
               code: 'enum List { Cons(i32, Box<List>), Nil }',
+              task: 'Dichiara un enum List ricorsivo con varianti Cons(i32, Box<List>) e Nil per modellare una lista concatenata.',
             },
             {
               english: 'Variant Constructor',
@@ -3376,6 +3600,7 @@ export default {
               context: 'enums',
               difficulty: 'intermediate',
               code: 'let nums = vec![1, 2].into_iter().map(Some);',
+              task: 'Costruisci un iteratore di Option avvolgendo i numeri 1 e 2 con map(Some) come variant constructor.',
             },
             {
               english: 'Marker Variant',
@@ -3387,6 +3612,7 @@ export default {
               context: 'enums',
               difficulty: 'intermediate',
               code: 'enum Tag { Active, Inactive }',
+              task: 'Definisci un enum Tag con due marker variant Active e Inactive senza dati associati per segnalare lo stato.',
             },
           ],
         },
@@ -3415,6 +3641,7 @@ export default {
               difficulty: 'intermediate',
               code: 'fn divide(a: i32, b: i32) -> Result<i32, String>',
               note: 'Sostituto type-safe per eccezioni: niente try/catch in Rust.',
+              task: 'Dichiara la funzione divide che accetta due i32 e restituisce Result<i32, String> per modellare il fallimento.',
             },
             {
               english: 'Ok Variant',
@@ -3426,6 +3653,7 @@ export default {
               context: 'error-handling',
               difficulty: 'intermediate',
               code: 'Ok(42)',
+              task: 'Costruisci la variante Ok di Result avvolgendo il valore di successo 42 come payload del caso positivo.',
             },
             {
               english: 'Err Variant',
@@ -3437,6 +3665,7 @@ export default {
               context: 'error-handling',
               difficulty: 'intermediate',
               code: 'Err("not found".to_string())',
+              task: 'Costruisci la variante Err di Result avvolgendo la String not found come messaggio di fallimento.',
             },
             {
               english: 'Result Unwrap',
@@ -3448,6 +3677,7 @@ export default {
               difficulty: 'intermediate',
               code: 'let val = result.unwrap();',
               note: "Sconsigliato in produzione: meglio gestire l'errore esplicitamente.",
+              task: 'Estrai il valore di successo da result chiamando unwrap, accettando il panic in caso di Err.',
             },
             {
               english: 'Expect',
@@ -3458,6 +3688,7 @@ export default {
               context: 'error-handling',
               difficulty: 'intermediate',
               code: 'let val = result.expect("expected value");',
+              task: 'Estrai il valore di result con expect fornendo il messaggio expected value che apparira in caso di panic.',
             },
             {
               english: 'Question Mark',
@@ -3469,6 +3700,7 @@ export default {
               difficulty: 'intermediate',
               code: 'let val = some_op()?;',
               note: 'Caratteristica iconica di Rust: gestione errori sintetica e idiomatica.',
+              task: `Propaga automaticamente l'errore di some_op al chiamante applicando l'operatore ? subito dopo la chiamata.`,
             },
             {
               english: 'Error Propagation',
@@ -3479,6 +3711,7 @@ export default {
               context: 'error-handling',
               difficulty: 'intermediate',
               code: 'let f = File::open("x")?;',
+              task: `Apri il file x e propaga eventuali io::Error con l'operatore ? legando il risultato alla variabile f.`,
             },
             {
               english: 'Match Result',
@@ -3490,6 +3723,7 @@ export default {
               context: 'error-handling',
               difficulty: 'intermediate',
               code: 'match r { Ok(v) => ..., Err(e) => ... }',
+              task: 'Discrimina r con match gestendo entrambi i rami Ok(v) ed Err(e) in maniera esaustiva ed esplicita.',
             },
             {
               english: 'Is Ok',
@@ -3501,6 +3735,7 @@ export default {
               context: 'error-handling',
               difficulty: 'intermediate',
               code: 'if r.is_ok() { ... }',
+              task: 'Verifica con il metodo is_ok se r contiene il caso di successo prima di proseguire nel ramo if.',
             },
             {
               english: 'Is Err',
@@ -3512,6 +3747,7 @@ export default {
               context: 'error-handling',
               difficulty: 'intermediate',
               code: 'if r.is_err() { ... }',
+              task: 'Controlla con is_err se il Result r e nella variante di errore senza consumarlo per decidere il flusso.',
             },
           ],
         },
@@ -3531,6 +3767,7 @@ export default {
               difficulty: 'intermediate',
               code: 'panic!("unrecoverable error");',
               note: 'Per errori non recuperabili. Diverso dalle eccezioni: non si fa "catch" idiomaticamente.',
+              task: `Forza l'arresto del thread invocando la macro panic con il messaggio unrecoverable error per bug irrecuperabili.`,
             },
             {
               english: 'Panic Macro',
@@ -3542,6 +3779,7 @@ export default {
               context: 'error-handling',
               difficulty: 'intermediate',
               code: 'panic!("invalid value: {}", x);',
+              task: 'Genera un panic formattato passando alla macro panic la stringa invalid value: {} e la variabile x.',
             },
             {
               english: 'Stack Unwinding',
@@ -3565,6 +3803,7 @@ export default {
               difficulty: 'intermediate',
               code: '[profile.release]\npanic = "abort"',
               note: 'Riduce dimensione binaria, non chiama Drop.',
+              task: 'Configura nel profilo [profile.release] il campo panic uguale a "abort" per disabilitare lo srotolamento dello stack.',
             },
             {
               english: 'Catch Unwind',
@@ -3576,6 +3815,7 @@ export default {
               difficulty: 'intermediate',
               code: 'std::panic::catch_unwind(|| { ... });',
               note: 'Da usare solo per casi specifici come FFI boundaries.',
+              task: 'Cattura un eventuale panic eseguendo una closure rischiosa dentro la chiamata std::panic::catch_unwind.',
             },
             {
               english: 'Assert Macro',
@@ -3587,6 +3827,7 @@ export default {
               context: 'error-handling',
               difficulty: 'intermediate',
               code: 'assert!(x > 0);',
+              task: `Valida l'invariante x > 0 con la macro assert facendo fallire subito il programma se la condizione non vale.`,
             },
             {
               english: 'Assert Eq',
@@ -3598,6 +3839,7 @@ export default {
               context: 'error-handling',
               difficulty: 'intermediate',
               code: 'assert_eq!(a, b);',
+              task: 'Confronta i valori a e b con la macro assert_eq facendo fallire il test se non risultano uguali.',
             },
             {
               english: 'Debug Assert',
@@ -3609,6 +3851,7 @@ export default {
               context: 'error-handling',
               difficulty: 'intermediate',
               code: 'debug_assert!(invariant);',
+              task: `Inserisci un debug_assert sull'espressione invariant cosi la verifica avviene solo nelle build di debug.`,
             },
             {
               english: 'Unreachable',
@@ -3620,6 +3863,7 @@ export default {
               context: 'error-handling',
               difficulty: 'intermediate',
               code: 'unreachable!();',
+              task: 'Marca un ramo logicamente irraggiungibile chiamando la macro unreachable senza argomenti dopo un match esaustivo.',
             },
             {
               english: 'Todo Macro',
@@ -3632,6 +3876,7 @@ export default {
               difficulty: 'intermediate',
               code: 'todo!()',
               note: 'Compila ma causa panic a runtime: utile durante lo sviluppo.',
+              task: 'Lascia un segnaposto in una funzione non implementata invocando la macro todo che fa panic a runtime.',
             },
           ],
         },
@@ -3649,6 +3894,7 @@ export default {
               context: 'error-handling',
               difficulty: 'intermediate',
               code: 'impl std::error::Error for MyErr {}',
+              task: `Implementa il trait std::error::Error per il tipo MyErr fornendo un'impl vuota integrabile nei Result.`,
             },
             {
               english: 'From Trait',
@@ -3660,6 +3906,7 @@ export default {
               difficulty: 'intermediate',
               code: 'impl From<io::Error> for MyError { ... }',
               note: 'Senza From, il ? non può convertire fra tipi di errore diversi.',
+              task: `Implementa From<io::Error> per MyError cosi l'operatore ? puo convertire automaticamente gli errori di I/O.`,
             },
             {
               english: 'Box Dyn Error',
@@ -3672,6 +3919,7 @@ export default {
               difficulty: 'intermediate',
               code: 'fn run() -> Result<(), Box<dyn Error>>',
               note: 'Comodo per main e prototipi, meno specifico.',
+              task: 'Dichiara la funzione run che restituisce Result<(), Box<dyn Error>> per propagare qualunque tipo di errore.',
             },
             {
               english: 'Error Enum',
@@ -3683,6 +3931,7 @@ export default {
               context: 'error-handling',
               difficulty: 'intermediate',
               code: 'enum AppError { NotFound, Invalid }',
+              task: 'Definisci un enum AppError con varianti NotFound e Invalid per centralizzare gli errori della libreria.',
             },
             {
               english: 'Thiserror',
@@ -3696,6 +3945,7 @@ export default {
               tool: 'thiserror',
               code: '#[derive(thiserror::Error, Debug)]',
               note: 'Crate molto popolare per definire tipi di errore concisi.',
+              task: 'Annota il tipo di errore con #[derive(thiserror::Error, Debug)] per generare Display, Error e From automaticamente.',
             },
             {
               english: 'Anyhow',
@@ -3709,6 +3959,7 @@ export default {
               tool: 'anyhow',
               code: 'use anyhow::Result;',
               note: 'Per applicazioni: dynamic error type. thiserror per librerie.',
+              task: `Importa l'alias Result di anyhow con use anyhow::Result per gestire errori boxed con contesto ricco.`,
             },
             {
               english: 'Error Source',
@@ -3720,6 +3971,7 @@ export default {
               context: 'error-handling',
               difficulty: 'intermediate',
               code: "fn source(&self) -> Option<&(dyn Error + 'static)>",
+              task: `Implementa il metodo source che restituisce Option<&(dyn Error + 'static)> per esporre l'errore radice.`,
             },
             {
               english: 'Error Context',
@@ -3731,6 +3983,7 @@ export default {
               context: 'error-handling',
               difficulty: 'intermediate',
               code: 'op().context("failed loading config")?',
+              task: `Aggiungi contesto a un'operazione fallibile chiamando context("failed loading config") prima dell'operatore ?.`,
             },
             {
               english: 'Result Type Alias',
@@ -3742,6 +3995,7 @@ export default {
               context: 'error-handling',
               difficulty: 'intermediate',
               code: 'type Result<T> = std::result::Result<T, MyError>;',
+              task: 'Definisci type Result<T> come alias di std::result::Result<T, MyError> per ridurre la verbosita.',
             },
             {
               english: 'Error Chain',
@@ -3771,6 +4025,7 @@ export default {
               context: 'error-handling',
               difficulty: 'intermediate',
               code: 'r.map(|v| v * 2)',
+              task: 'Trasforma il payload Ok di r raddoppiandolo con la closure |v| v * 2 passata al metodo map.',
             },
             {
               english: 'Map Err',
@@ -3781,6 +4036,7 @@ export default {
               context: 'error-handling',
               difficulty: 'intermediate',
               code: 'r.map_err(|e| format!("{}", e))',
+              task: `Converti l'errore di r in una String formattata con map_err sfruttando la closure |e| format!("{}", e).`,
             },
             {
               english: 'Result And Then',
@@ -3792,6 +4048,7 @@ export default {
               context: 'error-handling',
               difficulty: 'intermediate',
               code: 'r.and_then(|v| validate(v))',
+              task: 'Concatena su r una closure di validazione che restituisce un Result usando il combinator and_then.',
             },
             {
               english: 'Or Else',
@@ -3803,6 +4060,7 @@ export default {
               context: 'error-handling',
               difficulty: 'intermediate',
               code: 'r.or_else(|_| fallback())',
+              task: `Recupera dal fallimento di r invocando or_else con una closure che ignora l'errore e chiama fallback.`,
             },
             {
               english: 'Result Unwrap Or',
@@ -3814,6 +4072,7 @@ export default {
               context: 'error-handling',
               difficulty: 'intermediate',
               code: 'r.unwrap_or(0)',
+              task: 'Estrai il valore di r oppure ricadi sul fallback 0 chiamando unwrap_or senza generare panic.',
             },
             {
               english: 'Unwrap Or Else',
@@ -3825,6 +4084,7 @@ export default {
               context: 'error-handling',
               difficulty: 'intermediate',
               code: 'r.unwrap_or_else(|e| compute(e))',
+              task: `Calcola il fallback in modo lazy con unwrap_or_else passando una closure |e| compute(e) che usa l'errore.`,
             },
             {
               english: 'Ok Method',
@@ -3835,6 +4095,7 @@ export default {
               context: 'error-handling',
               difficulty: 'intermediate',
               code: 'let opt = r.ok();',
+              task: `Converti r in Option<T> scartando completamente l'errore chiamando il metodo ok sul Result.`,
             },
             {
               english: 'Collect Result',
@@ -3846,6 +4107,7 @@ export default {
               context: 'error-handling',
               difficulty: 'intermediate',
               code: 'iter.map(parse).collect::<Result<Vec<_>, _>>()?',
+              task: 'Raccogli un iteratore di Result in Vec con collect::<Result<Vec<_>, _>>()? fermandoti al primo errore.',
             },
             {
               english: 'Try From',
@@ -3857,6 +4119,7 @@ export default {
               context: 'error-handling',
               difficulty: 'intermediate',
               code: 'let n: u8 = u8::try_from(255i32)?;',
+              task: `Converti 255 da i32 a u8 con la conversione fallibile u8::try_from propagando l'errore con ?.`,
             },
             {
               english: 'Default Error',
@@ -3868,6 +4131,7 @@ export default {
               context: 'error-handling',
               difficulty: 'intermediate',
               code: 'let v = opt.ok_or("missing")?;',
+              task: `Trasforma una Option opt in Result fornendo l'errore di default missing tramite ok_or e poi propagalo con ?.`,
             },
           ],
         },
@@ -7644,6 +7908,7 @@ export default {
               context: 'async',
               difficulty: 'advanced',
               code: 'async fn fetch() -> String { ... }',
+              task: 'Definisci una funzione async fetch() che restituisce una String per essere usata con il runtime tokio.',
             },
             {
               english: 'Await',
@@ -7656,6 +7921,7 @@ export default {
               difficulty: 'advanced',
               code: 'let val = future.await;',
               note: 'In Rust .await è postfix, diverso da await in JS che è prefix.',
+              task: 'Sospendi il future con .await e assegna il valore risolto alla variabile val.',
             },
             {
               english: 'Future',
@@ -7666,6 +7932,7 @@ export default {
               context: 'async',
               difficulty: 'advanced',
               code: 'impl Future for X { ... }',
+              task: 'Implementa il trait Future per la struct X dichiarando il tipo Output e il metodo poll.',
             },
             {
               english: 'Poll',
@@ -7677,6 +7944,7 @@ export default {
               context: 'async',
               difficulty: 'advanced',
               code: 'fn poll(self: Pin<&mut Self>, cx: &mut Context)',
+              task: 'Scrivi la firma del metodo poll che riceve Pin<&mut Self> e un Context mutabile per pilotare il future.',
             },
             {
               english: 'Pending',
@@ -7687,6 +7955,7 @@ export default {
               context: 'async',
               difficulty: 'advanced',
               code: 'Poll::Pending',
+              task: 'Restituisci Poll::Pending dal metodo poll quando il future non ha ancora un risultato pronto.',
             },
             {
               english: 'Ready',
@@ -7698,6 +7967,7 @@ export default {
               context: 'async',
               difficulty: 'advanced',
               code: 'Poll::Ready(value)',
+              task: 'Restituisci Poll::Ready(value) da poll quando il future ha completato il lavoro con il valore finale.',
             },
             {
               english: 'Async Block',
@@ -7709,6 +7979,7 @@ export default {
               context: 'async',
               difficulty: 'advanced',
               code: 'let f = async { 42 };',
+              task: 'Crea un blocco async inline che restituisce 42 e assegnalo alla variabile f come future.',
             },
             {
               english: 'Async Move',
@@ -7719,6 +7990,7 @@ export default {
               context: 'async',
               difficulty: 'advanced',
               code: 'async move { use(data) }',
+              task: `Usa async move per catturare data per valore e passarne l'ownership al future spawnato.`,
             },
             {
               english: 'Cooperative Scheduling',
@@ -7769,6 +8041,7 @@ export default {
               difficulty: 'advanced',
               tool: 'tokio',
               code: '#[tokio::main]\nasync fn main() { }',
+              task: `Annota fn main con #[tokio::main] cosi' il runtime parte prima del corpo async.`,
             },
             {
               english: 'Async-std',
@@ -7821,6 +8094,7 @@ export default {
               context: 'async',
               difficulty: 'advanced',
               code: 'tokio::spawn(async { work().await })',
+              task: 'Lancia un task concorrente con tokio::spawn passando un blocco async che chiama work().await.',
             },
             {
               english: 'Task',
@@ -7843,6 +8117,7 @@ export default {
               context: 'async',
               difficulty: 'advanced',
               code: 'rt.block_on(future)',
+              task: 'Pilota un future fino al completamento da codice sincrono chiamando rt.block_on(future).',
             },
             {
               english: 'Multi Thread Runtime',
@@ -7854,6 +8129,7 @@ export default {
               context: 'async',
               difficulty: 'advanced',
               code: '#[tokio::main(flavor = "multi_thread")]',
+              task: 'Configura il runtime tokio multi-thread annotando main con flavor = "multi_thread".',
             },
           ],
         },
@@ -7872,6 +8148,7 @@ export default {
               context: 'async',
               difficulty: 'advanced',
               code: 'tokio::join!(f1, f2)',
+              task: 'Esegui due future concorrentemente con tokio::join!(f1, f2) attendendo entrambi.',
             },
             {
               english: 'Select',
@@ -7883,6 +8160,7 @@ export default {
               context: 'async',
               difficulty: 'advanced',
               code: 'tokio::select! { x = f1 => ... }',
+              task: 'Metti in gara due future con tokio::select! e ramifica sul primo che si completa.',
             },
             {
               english: 'Try Join',
@@ -7893,6 +8171,7 @@ export default {
               context: 'async',
               difficulty: 'advanced',
               code: 'tokio::try_join!(f1, f2)',
+              task: 'Attendi entrambi i future con tokio::try_join!(f1, f2) fallendo subito al primo errore.',
             },
             {
               english: 'Async Trait',
@@ -7906,6 +8185,7 @@ export default {
               tool: 'async-trait',
               code: '#[async_trait]',
               note: 'Da Rust 1.75 supportato nativamente, prima serviva la crate async-trait.',
+              task: 'Annota un trait con #[async_trait] per dichiarare metodi async in versioni Rust precedenti alla 1.75.',
             },
             {
               english: 'Boxed Future',
@@ -7917,6 +8197,7 @@ export default {
               context: 'async',
               difficulty: 'advanced',
               code: 'Pin<Box<dyn Future<Output = T>>>',
+              task: `Dichiara un tipo Pin<Box<dyn Future<Output = T>>> per memorizzare un future eterogeneo sull'heap.`,
             },
             {
               english: 'Stream',
@@ -7928,6 +8209,7 @@ export default {
               context: 'async',
               difficulty: 'advanced',
               code: 'use futures::Stream;',
+              task: 'Importa il trait Stream da futures per consumare valori asincroni in modo pigro.',
             },
             {
               english: 'Async Iter',
@@ -7938,6 +8220,7 @@ export default {
               context: 'async',
               difficulty: 'advanced',
               code: 'while let Some(x) = stream.next().await { }',
+              task: 'Itera uno stream con while let Some(x) = stream.next().await consumando un valore alla volta.',
             },
             {
               english: 'Async Pin',
@@ -7949,6 +8232,7 @@ export default {
               difficulty: 'advanced',
               code: 'Pin<&mut Future>',
               note: 'Critico per future self-referential.',
+              task: 'Dichiara il parametro come Pin<&mut Future> per garantire che il future non venga mosso in memoria.',
             },
             {
               english: 'Cancellation',
@@ -7970,6 +8254,7 @@ export default {
               context: 'async',
               difficulty: 'advanced',
               code: 'timeout(Duration::from_secs(5), f).await',
+              task: 'Limita la durata di un future a cinque secondi con timeout(Duration::from_secs(5), f).await.',
             },
           ],
         },
@@ -7988,6 +8273,7 @@ export default {
               context: 'async',
               difficulty: 'advanced',
               code: 'use tokio::io::AsyncReadExt;',
+              task: 'Importa tokio::io::AsyncReadExt per abilitare letture asincrone non bloccanti su file e socket.',
             },
             {
               english: 'AsyncWrite',
@@ -7999,6 +8285,7 @@ export default {
               context: 'async',
               difficulty: 'advanced',
               code: 'use tokio::io::AsyncWriteExt;',
+              task: 'Importa tokio::io::AsyncWriteExt per scrivere asincronicamente su socket e file senza bloccare il runtime.',
             },
             {
               english: 'Tcp Listener',
@@ -8010,6 +8297,7 @@ export default {
               context: 'async',
               difficulty: 'advanced',
               code: 'TcpListener::bind("0.0.0.0:8080").await?',
+              task: 'Fai bind di un TcpListener su 0.0.0.0:8080 e attendi la connessione in arrivo con .await.',
             },
             {
               english: 'Tcp Stream',
@@ -8021,6 +8309,7 @@ export default {
               context: 'async',
               difficulty: 'advanced',
               code: 'tokio::net::TcpStream',
+              task: 'Dichiara il tipo tokio::net::TcpStream per rappresentare una connessione TCP asincrona.',
             },
             {
               english: 'Async Channel',
@@ -8031,6 +8320,7 @@ export default {
               context: 'async',
               difficulty: 'advanced',
               code: 'tokio::sync::mpsc::channel(100)',
+              task: `Crea un canale async multi-producer con tokio::sync::mpsc::channel(100) e capacita' di cento messaggi.`,
             },
             {
               english: 'Async Mutex',
@@ -8043,6 +8333,7 @@ export default {
               difficulty: 'advanced',
               code: 'tokio::sync::Mutex::new(value)',
               note: 'Diverso da std::sync::Mutex: non blocca i thread.',
+              task: 'Costruisci un tokio::sync::Mutex::new(value) per proteggere una sezione critica che contiene punti await.',
             },
             {
               english: 'Notify',
@@ -8054,6 +8345,7 @@ export default {
               context: 'async',
               difficulty: 'advanced',
               code: 'tokio::sync::Notify',
+              task: `Importa tokio::sync::Notify per risvegliare task in attesa quando un dato e' pronto.`,
             },
             {
               english: 'Oneshot',
@@ -8065,6 +8357,7 @@ export default {
               context: 'async',
               difficulty: 'advanced',
               code: 'tokio::sync::oneshot::channel()',
+              task: 'Crea un canale a singolo invio con tokio::sync::oneshot::channel() per restituire un risultato unico.',
             },
             {
               english: 'Broadcast Channel',
@@ -8076,6 +8369,7 @@ export default {
               context: 'async',
               difficulty: 'advanced',
               code: 'tokio::sync::broadcast::channel(100)',
+              task: `Apri un canale broadcast con tokio::sync::broadcast::channel(100) per fare fan-out a piu' subscriber.`,
             },
             {
               english: 'Async Drop',
@@ -8114,6 +8408,7 @@ export default {
               context: 'macros',
               difficulty: 'advanced',
               code: 'macro_rules! say { () => { println!("hi") } }',
+              task: 'Definisci una macro dichiarativa say con macro_rules! che espande in println!("hi").',
             },
             {
               english: 'Macro Pattern',
@@ -8125,6 +8420,7 @@ export default {
               context: 'macros',
               difficulty: 'advanced',
               code: '($x:expr) => { ... };',
+              task: `Scrivi un pattern di macro ($x:expr) che cattura un'espressione e la usa nel corpo della macro.`,
             },
             {
               english: 'Macro Fragment',
@@ -8135,6 +8431,7 @@ export default {
               context: 'macros',
               difficulty: 'advanced',
               code: '$x:expr, $i:ident, $t:ty',
+              task: 'Combina frammenti di macro come $x:expr, $i:ident e $t:ty per accettare espressioni, identificatori e tipi.',
             },
             {
               english: 'Macro Repetition',
@@ -8146,6 +8443,7 @@ export default {
               context: 'macros',
               difficulty: 'advanced',
               code: '$($x:expr),*',
+              task: 'Costruisci una ripetizione $($x:expr),* per accettare una lista di espressioni separate da virgola.',
             },
             {
               english: 'Macro Hygiene',
@@ -8166,6 +8464,7 @@ export default {
               context: 'macros',
               difficulty: 'advanced',
               code: 'println!("hello")',
+              task: 'Invoca la macro println! passando la stringa "hello" come unico argomento.',
             },
             {
               english: 'Vec Macro Repeat',
@@ -8177,6 +8476,7 @@ export default {
               context: 'macros',
               difficulty: 'advanced',
               code: 'vec![1, 2, 3]',
+              task: 'Inizializza un Vec con tre elementi usando vec![1, 2, 3] al posto di push ripetuti.',
             },
             {
               english: 'Println Format Macro',
@@ -8188,6 +8488,7 @@ export default {
               context: 'macros',
               difficulty: 'advanced',
               code: 'println!("{}", x)',
+              task: 'Stampa il valore di x su stdout con println!("{}", x) usando la format string controllata a compile-time.',
             },
             {
               english: 'Format Args',
@@ -8199,6 +8500,7 @@ export default {
               context: 'macros',
               difficulty: 'advanced',
               code: 'format_args!("{}", x)',
+              task: 'Costruisci una struct Arguments senza allocazione con format_args!("{}", x).',
             },
             {
               english: 'Recursive Macro',
@@ -8228,6 +8530,7 @@ export default {
               context: 'macros',
               difficulty: 'advanced',
               code: '#[proc_macro] fn my_macro(input: TokenStream)',
+              task: 'Annota una funzione con #[proc_macro] che riceve un TokenStream come input per definire una macro procedurale.',
             },
             {
               english: 'Token Stream',
@@ -8239,6 +8542,7 @@ export default {
               context: 'macros',
               difficulty: 'advanced',
               code: 'use proc_macro::TokenStream;',
+              task: 'Importa il tipo TokenStream da proc_macro per ricevere e produrre flussi di token nelle proc macro.',
             },
             {
               english: 'Derive Macro',
@@ -8250,6 +8554,7 @@ export default {
               context: 'macros',
               difficulty: 'advanced',
               code: '#[proc_macro_derive(MyTrait)]',
+              task: 'Annota la funzione con #[proc_macro_derive(MyTrait)] per definire una macro derive personalizzata.',
             },
             {
               english: 'Attribute Macro',
@@ -8262,6 +8567,7 @@ export default {
               difficulty: 'advanced',
               code: '#[proc_macro_attribute]',
               note: 'Usate per #[tokio::main], #[get("/")] in framework web, ecc.',
+              task: `Annota la funzione con #[proc_macro_attribute] per creare una macro che riscrive l'item annotato.`,
             },
             {
               english: 'Function Like Macro',
@@ -8273,6 +8579,7 @@ export default {
               context: 'macros',
               difficulty: 'advanced',
               code: 'sql!(SELECT * FROM users)',
+              task: 'Invoca una function-like proc macro come sql!(SELECT * FROM users) per embeddare un DSL nel sorgente.',
             },
             {
               english: 'Syn',
@@ -8296,6 +8603,7 @@ export default {
               difficulty: 'advanced',
               tool: 'quote',
               code: 'quote! { fn #name() { ... } }',
+              task: 'Genera codice Rust con quote! { fn #name() { ... } } interpolando il nome catturato nella proc macro.',
             },
             {
               english: 'Proc Macro Crate',
@@ -8307,6 +8615,7 @@ export default {
               context: 'macros',
               difficulty: 'advanced',
               code: '[lib]\nproc-macro = true',
+              task: 'Marca il crate come proc-macro impostando proc-macro = true nella sezione [lib] di Cargo.toml.',
             },
             {
               english: 'Custom Derive Helper Attribute',
@@ -8317,6 +8626,7 @@ export default {
               context: 'macros',
               difficulty: 'advanced',
               code: '#[derive(Serialize)]',
+              task: 'Annota una struct con #[derive(Serialize)] per attivare la macro derive che legge gli helper attribute serde.',
             },
             {
               english: 'AST Manipulation',
@@ -8345,6 +8655,7 @@ export default {
               context: 'macros',
               difficulty: 'advanced',
               code: 'print!("hello");',
+              task: 'Scrivi su stdout senza newline finale invocando print!("hello").',
             },
             {
               english: 'Eprintln',
@@ -8356,6 +8667,7 @@ export default {
               context: 'macros',
               difficulty: 'advanced',
               code: 'eprintln!("error: {}", e);',
+              task: `Stampa il messaggio di errore su stderr con eprintln!("error: {}", e) cosi' che le diagnostiche siano filtrabili.`,
             },
             {
               english: 'Write Macro',
@@ -8367,6 +8679,7 @@ export default {
               context: 'macros',
               difficulty: 'advanced',
               code: 'write!(f, "{}", x)',
+              task: 'Formatta il valore di x nel formatter f chiamando write!(f, "{}", x) dentro un impl di Display.',
             },
             {
               english: 'Dbg Macro',
@@ -8379,6 +8692,7 @@ export default {
               difficulty: 'advanced',
               code: 'let y = dbg!(x * 2);',
               note: 'Strumento di debug rapidissimo: stampa file, riga, espressione e valore.',
+              task: `Avvolgi l'espressione x * 2 con dbg! e assegna il risultato a y per stampare file, riga e valore su stderr.`,
             },
             {
               english: 'Assert Macros',
@@ -8390,6 +8704,7 @@ export default {
               context: 'macros',
               difficulty: 'advanced',
               code: 'assert!(x > 0);',
+              task: 'Verifica con assert!(x > 0) che la variabile x sia positiva facendo panic in caso contrario.',
             },
             {
               english: 'Panic Macro Formatting',
@@ -8401,6 +8716,7 @@ export default {
               context: 'macros',
               difficulty: 'advanced',
               code: 'panic!("error");',
+              task: `Interrompi l'esecuzione invocando panic!("error") con il messaggio diagnostico fisso.`,
             },
             {
               english: 'Unimplemented',
@@ -8412,6 +8728,7 @@ export default {
               context: 'macros',
               difficulty: 'advanced',
               code: 'unimplemented!()',
+              task: 'Stub di un metodo trait con unimplemented!() in modo che il codice compili ma fallisca a runtime.',
             },
             {
               english: 'Concat Macro',
@@ -8422,6 +8739,7 @@ export default {
               context: 'macros',
               difficulty: 'advanced',
               code: 'concat!("a", "b", "c")',
+              task: `Concatena tre stringhe letterali a compile-time con concat!("a", "b", "c") in un singolo &'static str.`,
             },
             {
               english: 'Stringify',
@@ -8432,6 +8750,7 @@ export default {
               context: 'macros',
               difficulty: 'advanced',
               code: 'stringify!(let x = 5)',
+              task: 'Converti il letterale let x = 5 nel suo testo sorgente con stringify!(let x = 5) per il debug.',
             },
             {
               english: 'Include Bytes',
@@ -8442,6 +8761,7 @@ export default {
               context: 'macros',
               difficulty: 'advanced',
               code: 'const ICON: &[u8] = include_bytes!("icon.png");',
+              task: `Embedda l'asset binario icon.png nel binario dichiarando una const ICON come slice di byte con include_bytes!.`,
             },
           ],
         },
@@ -8470,6 +8790,7 @@ export default {
               context: 'macros',
               difficulty: 'advanced',
               code: '/// Example: my_macro!()',
+              task: `Documenta una macro con il commento /// Example: my_macro!() cosi' rustdoc renderizza l'uso su docs.rs.`,
             },
             {
               english: 'Macro Export',
@@ -8481,6 +8802,7 @@ export default {
               context: 'macros',
               difficulty: 'advanced',
               code: '#[macro_export]\nmacro_rules! my { ... }',
+              task: `Aggiungi #[macro_export] sopra macro_rules! my cosi' i crate downstream possono invocarla.`,
             },
             {
               english: 'Macro Path',
@@ -8492,6 +8814,7 @@ export default {
               context: 'macros',
               difficulty: 'advanced',
               code: '$crate::path::Item',
+              task: 'Usa il percorso $crate::path::Item dentro una macro esportata per riferirti agli item del crate definente.',
             },
             {
               english: 'Macro 2.0',
@@ -8514,6 +8837,7 @@ export default {
               context: 'macros',
               difficulty: 'advanced',
               command: 'cargo expand',
+              task: 'Esegui cargo expand per vedere il codice generato da una macro prima della compilazione completa.',
             },
             {
               english: 'Trace Macros',
@@ -8583,6 +8907,7 @@ export default {
               context: 'unsafe',
               difficulty: 'advanced',
               code: 'unsafe { *raw_ptr = 5; }',
+              task: 'Confina la dereferenza di raw_ptr dentro un blocco unsafe per scrivere il valore 5 nella memoria.',
             },
             {
               english: 'Unsafe Function',
@@ -8594,6 +8919,7 @@ export default {
               context: 'unsafe',
               difficulty: 'advanced',
               code: 'unsafe fn dangerous() { ... }',
+              task: 'Dichiara una funzione unsafe fn dangerous() che richiede invarianti non verificabili dal compilatore.',
             },
             {
               english: 'Unsafe Trait',
@@ -8604,6 +8930,7 @@ export default {
               context: 'unsafe',
               difficulty: 'advanced',
               code: 'unsafe trait Send {}',
+              task: 'Marca il trait Send come unsafe per imporre che gli implementatori garantiscano la safety del trasferimento tra thread.',
             },
             {
               english: 'Raw Pointer',
@@ -8615,6 +8942,7 @@ export default {
               difficulty: 'advanced',
               code: 'let p: *const i32 = &x;',
               note: 'Niente garanzie di validità, niente borrow checking.',
+              task: 'Costruisci un raw pointer *const i32 da un riferimento &x per interfacciarti con codice C.',
             },
             {
               english: 'Const Pointer',
@@ -8626,6 +8954,7 @@ export default {
               context: 'unsafe',
               difficulty: 'advanced',
               code: '*const i32',
+              task: 'Dichiara il tipo *const i32 per un puntatore non mutabile da passare oltre il confine FFI.',
             },
             {
               english: 'Mut Pointer',
@@ -8637,6 +8966,7 @@ export default {
               context: 'unsafe',
               difficulty: 'advanced',
               code: '*mut i32',
+              task: 'Dichiara il tipo *mut i32 quando devi modificare la memoria puntata tramite ptr::write.',
             },
             {
               english: 'Pointer Dereference',
@@ -8648,6 +8978,7 @@ export default {
               context: 'unsafe',
               difficulty: 'advanced',
               code: 'unsafe { *p }',
+              task: 'Dereferenzia il raw pointer p dentro un blocco unsafe { *p } per leggere il valore puntato.',
             },
             {
               english: 'Undefined Behavior',
@@ -8681,6 +9012,7 @@ export default {
               context: 'unsafe',
               difficulty: 'advanced',
               code: '// SAFETY: ptr is valid here',
+              task: `Documenta l'invariante con un commento // SAFETY: ptr is valid here sopra ogni blocco unsafe.`,
             },
           ],
         },
@@ -8710,6 +9042,7 @@ export default {
               context: 'unsafe',
               difficulty: 'advanced',
               code: 'extern "C" { fn abs(x: i32) -> i32; }',
+              task: 'Dichiara la funzione C abs dentro un extern "C" block per chiamarla dal codice Rust tramite il linker.',
             },
             {
               english: 'Extern C',
@@ -8721,6 +9054,7 @@ export default {
               context: 'unsafe',
               difficulty: 'advanced',
               code: 'extern "C" fn callback() { }',
+              task: 'Definisci extern "C" fn callback() per esporre una funzione Rust con la calling convention C.',
             },
             {
               english: 'FFI Repr C',
@@ -8731,6 +9065,7 @@ export default {
               context: 'unsafe',
               difficulty: 'advanced',
               code: '#[repr(C)] struct Point { x: f64, y: f64 }',
+              task: 'Annota struct Point con #[repr(C)] e due campi f64 per garantire layout compatibile con il C.',
             },
             {
               english: 'C String',
@@ -8742,6 +9077,7 @@ export default {
               context: 'unsafe',
               difficulty: 'advanced',
               code: 'CString::new("hello")?',
+              task: `Costruisci una CString null-terminata dalla stringa "hello" gestendo l'errore con l'operatore ?.`,
             },
             {
               english: 'C Str',
@@ -8752,6 +9088,7 @@ export default {
               context: 'unsafe',
               difficulty: 'advanced',
               code: 'CStr::from_ptr(ptr)',
+              task: 'Crea una vista &CStr da un raw pointer chiamando CStr::from_ptr(ptr) per leggere una stringa C-terminata da NUL.',
             },
             {
               english: 'Bindgen',
@@ -8785,6 +9122,7 @@ export default {
               difficulty: 'advanced',
               code: '#[no_mangle] pub extern "C" fn my_fn() { }',
               note: 'Necessario per essere chiamabile da C senza name mangling.',
+              task: `Annota pub extern "C" fn my_fn con #[no_mangle] cosi' il linker conserva il nome del simbolo.`,
             },
             {
               english: 'Library Linking',
@@ -8796,6 +9134,7 @@ export default {
               context: 'unsafe',
               difficulty: 'advanced',
               code: '#[link(name = "ssl")]',
+              task: `Specifica la libreria nativa da linkare con #[link(name = "ssl")] sopra l'extern block.`,
             },
           ],
         },
@@ -8815,6 +9154,7 @@ export default {
               difficulty: 'advanced',
               code: 'std::mem::transmute::<f32, u32>(x)',
               note: 'Una delle operazioni più pericolose: cast bit-level fra tipi.',
+              task: 'Reinterpreta i bit di un f32 come u32 con std::mem::transmute::<f32, u32>(x) dopo aver verificato la dimensione.',
             },
             {
               english: 'Static Mut',
@@ -8827,6 +9167,7 @@ export default {
               difficulty: 'advanced',
               code: 'static mut COUNTER: u32 = 0;',
               note: 'Sconsigliato: meglio usare AtomicU32 o Mutex.',
+              task: 'Dichiara una variabile globale mutabile static mut COUNTER: u32 = 0 a cui accederai solo in blocchi unsafe.',
             },
             {
               english: 'Union',
@@ -8838,6 +9179,7 @@ export default {
               context: 'unsafe',
               difficulty: 'advanced',
               code: 'union U { i: i32, f: f32 }',
+              task: 'Definisci union U { i: i32, f: f32 } per sovrapporre la rappresentazione in memoria di un intero e di un float.',
             },
             {
               english: 'Pointer Offset',
@@ -8849,6 +9191,7 @@ export default {
               context: 'unsafe',
               difficulty: 'advanced',
               code: 'p.offset(1)',
+              task: 'Avanza il puntatore p di una posizione con p.offset(1) per scorrere un array C contiguo.',
             },
             {
               english: 'Read Volatile',
@@ -8861,6 +9204,7 @@ export default {
               difficulty: 'advanced',
               code: 'std::ptr::read_volatile(p)',
               note: 'Usato per memory-mapped I/O e hardware.',
+              task: 'Leggi il valore puntato in modo non ottimizzabile con std::ptr::read_volatile(p) per registri memory-mapped.',
             },
             {
               english: 'Manually Drop',
@@ -8871,6 +9215,7 @@ export default {
               context: 'unsafe',
               difficulty: 'advanced',
               code: 'ManuallyDrop::new(value)',
+              task: `Avvolgi value in ManuallyDrop::new(value) per disabilitare il drop automatico quando trasferisci l'ownership via FFI.`,
             },
             {
               english: 'Maybe Uninit',
@@ -8882,6 +9227,7 @@ export default {
               context: 'unsafe',
               difficulty: 'advanced',
               code: 'MaybeUninit::<T>::uninit()',
+              task: 'Crea uno spazio non inizializzato di tipo T con MaybeUninit::<T>::uninit() per inizializzarlo successivamente.',
             },
             {
               english: 'Inline Assembly',
@@ -8892,6 +9238,7 @@ export default {
               context: 'unsafe',
               difficulty: 'advanced',
               code: 'unsafe { asm!("nop") }',
+              task: `Emetti un'istruzione nop con unsafe { asm!("nop") } per inserire assembly inline nel binario.`,
             },
             {
               english: 'Pointer Cast',
@@ -8903,6 +9250,7 @@ export default {
               context: 'unsafe',
               difficulty: 'advanced',
               code: 'let p2 = p as *const u8;',
+              task: 'Esegui un cast tra puntatori scrivendo let p2 = p as *const u8 per reinterpretarne il tipo.',
             },
             {
               english: 'Null Pointer',
@@ -8914,6 +9262,7 @@ export default {
               context: 'unsafe',
               difficulty: 'advanced',
               code: 'std::ptr::null::<i32>()',
+              task: 'Ottieni un raw pointer nullo per i32 chiamando std::ptr::null::<i32>() come valore sentinella.',
             },
           ],
         },
@@ -8942,6 +9291,7 @@ export default {
               difficulty: 'advanced',
               tool: 'miri',
               command: 'cargo miri test',
+              task: `Verifica l'assenza di undefined behavior eseguendo cargo miri test sul tuo codice unsafe.`,
             },
             {
               english: 'Sanitizer',
@@ -8963,6 +9313,7 @@ export default {
               context: 'unsafe',
               difficulty: 'advanced',
               code: 'UnsafeCell::new(value)',
+              task: `Costruisci un UnsafeCell::new(value) come base per implementare un tipo a mutabilita' interna sicura.`,
             },
             {
               english: 'Aliasing Rule',
@@ -9007,6 +9358,7 @@ export default {
               difficulty: 'advanced',
               code: '#![no_std]',
               note: 'Per ambiente embedded o kernel: niente alloc, std, threads.',
+              task: `Marca la crate come no_std aggiungendo l'attributo a livello modulo #![no_std] per ambienti embedded.`,
             },
             {
               english: 'Core Library',
@@ -9018,6 +9370,7 @@ export default {
               context: 'unsafe',
               difficulty: 'advanced',
               code: 'use core::mem;',
+              task: 'Importa il modulo mem dalla core library con use core::mem per usarlo in un crate no_std.',
             },
             {
               english: 'Embedded Rust',
@@ -9056,6 +9409,7 @@ export default {
               context: 'traits',
               difficulty: 'advanced',
               code: 'trait Iter { type Item; }',
+              task: `Definisci un trait Iter con un tipo associato Item che ogni implementatore fissera' al proprio tipo elemento.`,
             },
             {
               english: 'Type Projection',
@@ -9066,6 +9420,7 @@ export default {
               context: 'traits',
               difficulty: 'advanced',
               code: '<T as Iter>::Item',
+              task: 'Riferisciti al tipo elemento di T scrivendo la proiezione <T as Iter>::Item in una signature generica.',
             },
             {
               english: 'GAT',
@@ -9078,6 +9433,7 @@ export default {
               difficulty: 'advanced',
               code: "type Item<'a>: 'a;",
               note: 'Stabilizzato in Rust 1.65, abilita pattern molto avanzati.',
+              task: `Dichiara un generic associated type type Item<'a>: 'a per parametrizzare un tipo associato con una lifetime.`,
             },
             {
               english: 'Trait Object',
@@ -9089,6 +9445,7 @@ export default {
               context: 'traits',
               difficulty: 'advanced',
               code: 'Box<dyn Display>',
+              task: 'Memorizza un trait object eterogeneo dichiarando Box<dyn Display> come tipo del campo.',
             },
             {
               english: 'Trait Object Safety',
@@ -9109,6 +9466,7 @@ export default {
               context: 'traits',
               difficulty: 'advanced',
               code: 'fn f<T: ?Sized>(x: &T)',
+              task: 'Rilassa il vincolo Sized di default scrivendo fn f<T: ?Sized>(x: &T) per accettare anche dynamically sized types.',
             },
             {
               english: 'Dyn Compatible',
@@ -9131,6 +9489,7 @@ export default {
               context: 'traits',
               difficulty: 'advanced',
               code: 'fn new() -> Self where Self: Sized;',
+              task: `Aggiungi where Self: Sized al metodo new() -> Self cosi' resta utilizzabile solo per tipi di dimensione nota.`,
             },
             {
               english: 'Type Family',
@@ -9152,6 +9511,7 @@ export default {
               difficulty: 'advanced',
               code: 'trait Stringy = Display + Clone;',
               note: 'Ancora unstable in Rust.',
+              task: 'Definisci un trait alias trait Stringy = Display + Clone per raggruppare i due bound sotto un solo nome.',
             },
           ],
         },
@@ -9189,6 +9549,7 @@ export default {
               context: 'traits',
               difficulty: 'advanced',
               code: 'trait_obj.method()',
+              task: 'Invoca un metodo via dispatch dinamico chiamando trait_obj.method() sul trait object.',
             },
             {
               english: 'Static vs Dynamic',
@@ -9220,6 +9581,7 @@ export default {
               context: 'traits',
               difficulty: 'advanced',
               code: 'any.downcast_ref::<MyType>()',
+              task: `Tenta il downcast di un &dyn Any a MyType chiamando any.downcast_ref::<MyType>() e gestendo l'Option.`,
             },
             {
               english: 'Any Trait',
@@ -9231,6 +9593,7 @@ export default {
               context: 'traits',
               difficulty: 'advanced',
               code: 'use std::any::Any;',
+              task: 'Importa il trait di identificazione runtime con use std::any::Any per abilitare il downcasting dinamico.',
             },
             {
               english: 'Type Id',
@@ -9242,6 +9605,7 @@ export default {
               context: 'traits',
               difficulty: 'advanced',
               code: 'TypeId::of::<T>()',
+              task: `Ottieni l'identificatore univoco del tipo T a runtime chiamando TypeId::of::<T>().`,
             },
             {
               english: 'Erased Type',
@@ -9262,6 +9626,7 @@ export default {
               context: 'traits',
               difficulty: 'advanced',
               code: 'Box<dyn Display + Send>',
+              task: 'Dichiara un trait object combinato Box<dyn Display + Send> per richiedere entrambi i trait sullo stesso valore.',
             },
           ],
         },
@@ -9279,6 +9644,7 @@ export default {
               context: 'traits',
               difficulty: 'advanced',
               code: 'trait Cat: Animal { ... }',
+              task: 'Definisci trait Cat: Animal per imporre che ogni implementatore di Cat implementi prima Animal.',
             },
             {
               english: 'Blanket Impl',
@@ -9290,6 +9656,7 @@ export default {
               context: 'traits',
               difficulty: 'advanced',
               code: 'impl<T: Display> ToString for T',
+              task: 'Scrivi una blanket impl<T: Display> ToString for T per fornire automaticamente ToString a ogni tipo con Display.',
             },
             {
               english: 'Coherence Orphan Rule',
@@ -9311,6 +9678,7 @@ export default {
               context: 'traits',
               difficulty: 'advanced',
               code: 'struct Wrapper(Vec<i32>);',
+              task: 'Avvolgi Vec<i32> in struct Wrapper(Vec<i32>) per aggirare la orphan rule e implementare un trait esterno.',
             },
             {
               english: 'Trait Inheritance Bound',
@@ -9351,6 +9719,7 @@ export default {
               context: 'traits',
               difficulty: 'advanced',
               code: 'impl !Send for X {}',
+              task: 'Dichiara impl !Send for X {} per opt-out esplicito dal trait Send sul tipo X.',
             },
             {
               english: 'Trait Specialization',
@@ -9397,6 +9766,7 @@ export default {
               context: 'traits',
               difficulty: 'advanced',
               code: 'Config::new().host(...).port(...).build()',
+              task: 'Costruisci la configurazione con il pattern builder Config::new().host(...).port(...).build() in modo fluente.',
             },
             {
               english: 'Trait Visitor Pattern',
@@ -9449,6 +9819,7 @@ export default {
               context: 'traits',
               difficulty: 'advanced',
               code: 'trait MyExt { fn extra(&self); }',
+              task: 'Definisci un extension trait MyExt con un metodo extra(&self) per arricchire un tipo esistente.',
             },
             {
               english: 'Trait Object Method',
@@ -9470,6 +9841,7 @@ export default {
               context: 'traits',
               difficulty: 'advanced',
               code: 'PhantomData<T>',
+              task: 'Aggiungi un campo PhantomData<T> alla struct per tracciare il typestate senza occupare memoria a runtime.',
             },
             {
               english: 'Witness Type',
@@ -9507,6 +9879,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               code: '#[test]\nfn it_works() { ... }',
+              task: `Annota la funzione it_works con #[test] cosi' cargo test la raccoglie come unit test.`,
             },
             {
               english: 'Test Module',
@@ -9518,6 +9891,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               code: '#[cfg(test)]\nmod tests { ... }',
+              task: 'Definisci un modulo tests annotato con #[cfg(test)] per escluderlo dalle build release.',
             },
             {
               english: 'Cargo Test Filter',
@@ -9529,6 +9903,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               command: 'cargo test',
+              task: 'Esegui cargo test per lanciare la suite completa di unit e integration test del workspace.',
             },
             {
               english: 'Should Panic',
@@ -9540,6 +9915,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               code: '#[should_panic(expected = "msg")]',
+              task: 'Annota il test con #[should_panic(expected = "msg")] per richiedere un panic con messaggio specifico.',
             },
             {
               english: 'Ignore Attribute',
@@ -9550,6 +9926,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               code: '#[test]\n#[ignore]',
+              task: `Aggiungi #[ignore] sopra un #[test] lento cosi' viene saltato di default e gira solo con --ignored.`,
             },
             {
               english: 'Test Filter',
@@ -9561,6 +9938,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               command: 'cargo test add',
+              task: `Filtra l'esecuzione ai soli test il cui nome contiene add lanciando cargo test add.`,
             },
             {
               english: 'Test Assert Eq',
@@ -9571,6 +9949,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               code: 'assert_eq!(actual, expected);',
+              task: 'Confronta actual ed expected dentro un test con assert_eq!(actual, expected) per fallire stampando entrambi i valori.',
             },
             {
               english: 'Assert Ne',
@@ -9581,6 +9960,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               code: 'assert_ne!(a, b);',
+              task: 'Verifica che a e b siano diversi con assert_ne!(a, b) per controlli di regressione su trasformazioni.',
             },
             {
               english: 'Test Output',
@@ -9592,6 +9972,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               command: 'cargo test -- --nocapture',
+              task: `Esegui cargo test -- --nocapture per vedere l'output di println! anche per i test che passano.`,
             },
             {
               english: 'Test Threading',
@@ -9603,6 +9984,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               command: 'cargo test -- --test-threads=1',
+              task: `Forza l'esecuzione sequenziale dei test con cargo test -- --test-threads=1 quando condividono risorse globali.`,
             },
           ],
         },
@@ -9620,6 +10002,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               code: '// tests/integration.rs',
+              task: `Crea un integration test nel file tests/integration.rs per esercitare solo l'API pubblica del crate.`,
             },
             {
               english: 'Tests Directory',
@@ -9641,6 +10024,7 @@ export default {
               difficulty: 'advanced',
               code: '/// ```\n/// assert_eq!(2 + 2, 4);\n/// ```',
               note: 'Caratteristica unica di Rust: documentazione testabile automaticamente.',
+              task: `Aggiungi un doc test in un blocco /// \`\`\` con assert_eq!(2 + 2, 4) cosi' la documentazione viene compilata.`,
             },
             {
               english: 'Common Module',
@@ -9763,6 +10147,7 @@ export default {
               difficulty: 'advanced',
               tool: 'cargo-fuzz',
               command: 'cargo fuzz run target',
+              task: 'Avvia il fuzzer su un target specifico con cargo fuzz run target per scoprire crash da input casuali.',
             },
             {
               english: 'Shrinking',
@@ -9839,6 +10224,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               command: 'cargo bench',
+              task: `Misura le performance dei benchmark in modalita' release lanciando cargo bench.`,
             },
             {
               english: 'Criterion',
@@ -9862,6 +10248,7 @@ export default {
               context: 'testing',
               difficulty: 'advanced',
               code: 'black_box(value)',
+              task: 'Avvolgi value con black_box(value) per impedire al compilatore di ottimizzare via il calcolo nel benchmark.',
             },
             {
               english: 'Throughput',
@@ -9962,6 +10349,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'fs::read_to_string("file.txt")?',
+              task: `Carica l'intero contenuto di file.txt in una String con fs::read_to_string("file.txt")?.`,
             },
             {
               english: 'Write File',
@@ -9973,6 +10361,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'fs::write("file.txt", data)?',
+              task: 'Scrivi atomicamente data nel file file.txt con fs::write("file.txt", data)? in una sola syscall.',
             },
             {
               english: 'File Open',
@@ -9984,6 +10373,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'let f = File::open("data.txt")?;',
+              task: `Apri il file data.txt in sola lettura legando l'handle a f con let f = File::open("data.txt")?.`,
             },
             {
               english: 'Buf Reader',
@@ -9995,6 +10385,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'let r = BufReader::new(file);',
+              task: 'Avvolgi un File in un BufReader::new(file) per ridurre il numero di syscall di lettura.',
             },
             {
               english: 'Buf Writer',
@@ -10006,6 +10397,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'let w = BufWriter::new(file);',
+              task: 'Avvolgi un File in un BufWriter::new(file) per accumulare le scritture in un buffer.',
             },
             {
               english: 'Read Line',
@@ -10016,6 +10408,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'for line in r.lines() { ... }',
+              task: 'Itera le righe del reader con for line in r.lines() per processare un log file una riga alla volta.',
             },
             {
               english: 'Stdin',
@@ -10027,6 +10420,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'std::io::stdin().read_line(&mut s)?;',
+              task: `Leggi una riga dall'input standard nella stringa s con std::io::stdin().read_line(&mut s)?.`,
             },
             {
               english: 'Stdout',
@@ -10038,6 +10432,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'stdout().write_all(b"hi")?;',
+              task: `Scrivi i byte b"hi" sull'output standard con stdout().write_all(b"hi")? gestendo l'errore.`,
             },
             {
               english: 'Filesystem Path',
@@ -10049,6 +10444,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'use std::path::Path;',
+              task: 'Porta in scope il tipo std::path::Path con use std::path::Path per manipolare percorsi di filesystem.',
             },
             {
               english: 'PathBuf',
@@ -10060,6 +10456,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'PathBuf::from("/etc/hosts")',
+              task: 'Crea un PathBuf proprietario dal letterale /etc/hosts chiamando PathBuf::from("/etc/hosts").',
             },
           ],
         },
@@ -10078,6 +10475,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'TcpListener::bind("0.0.0.0:8080")?',
+              task: 'Fai bind di un TcpListener sincrono su 0.0.0.0:8080 per accettare connessioni TCP bloccanti.',
             },
             {
               english: 'Blocking TCP Stream',
@@ -10089,6 +10487,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'TcpStream::connect("127.0.0.1:8080")?',
+              task: `Apri una connessione TCP sincrona a 127.0.0.1:8080 con TcpStream::connect e gestisci l'errore.`,
             },
             {
               english: 'UDP Socket',
@@ -10100,6 +10499,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'UdpSocket::bind("0.0.0.0:5000")?',
+              task: 'Crea un socket UDP in ascolto su 0.0.0.0:5000 chiamando UdpSocket::bind("0.0.0.0:5000")?.',
             },
             {
               english: 'Socket Address',
@@ -10110,6 +10510,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'use std::net::SocketAddr;',
+              task: 'Importa il tipo std::net::SocketAddr per rappresentare in modo tipato un indirizzo IP con porta.',
             },
             {
               english: 'Hyper',
@@ -10132,6 +10533,7 @@ export default {
               difficulty: 'advanced',
               tool: 'reqwest',
               code: 'reqwest::get(url).await?.text().await?',
+              task: `Recupera il corpo testuale di una URL via reqwest::get(url).await?.text().await? in un'unica catena async.`,
             },
             {
               english: 'Axum',
@@ -10194,6 +10596,7 @@ export default {
               difficulty: 'advanced',
               tool: 'serde',
               code: 'use serde::{Serialize, Deserialize};',
+              task: 'Porta in scope i trait Serialize e Deserialize di serde con use serde::{Serialize, Deserialize}.',
             },
             {
               english: 'Serialize',
@@ -10205,6 +10608,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: '#[derive(Serialize)]',
+              task: 'Annota la struct con #[derive(Serialize)] per generare automaticamente il codice di serializzazione serde.',
             },
             {
               english: 'Deserialize',
@@ -10216,6 +10620,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: '#[derive(Deserialize)]',
+              task: 'Annota la struct con #[derive(Deserialize)] per generare il parser dai formati supportati da serde.',
             },
             {
               english: 'Serde JSON',
@@ -10227,6 +10632,7 @@ export default {
               difficulty: 'advanced',
               tool: 'serde_json',
               code: 'serde_json::to_string(&user)?',
+              task: `Converti la struct user in una stringa JSON con serde_json::to_string(&user)? gestendo l'errore.`,
             },
             {
               english: 'Serde YAML',
@@ -10248,6 +10654,7 @@ export default {
               difficulty: 'advanced',
               tool: 'toml',
               code: 'toml::from_str::<Config>(s)?',
+              task: 'Deserializza una stringa TOML in una struct Config con toml::from_str::<Config>(s)?.',
             },
             {
               english: 'Bincode',
@@ -10279,6 +10686,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: '#[serde(skip)]\npassword: String,',
+              task: 'Esegui lo skip del campo password aggiungendo #[serde(skip)] sopra la sua dichiarazione.',
             },
             {
               english: 'Rename Field',
@@ -10289,6 +10697,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: '#[serde(rename = "user_name")]',
+              task: 'Rinomina la chiave esterna del campo a user_name con #[serde(rename = "user_name")] sopra la dichiarazione.',
             },
           ],
         },
@@ -10307,6 +10716,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'tokio::fs::read_to_string("f").await?',
+              task: 'Leggi asincronamente il file f in una String con tokio::fs::read_to_string("f").await? sotto il runtime tokio.',
             },
             {
               english: 'Tokio Net',
@@ -10318,6 +10728,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'tokio::net::TcpStream',
+              task: 'Usa il tipo tokio::net::TcpStream per gestire connessioni TCP asincrone non bloccanti.',
             },
             {
               english: 'Async Read Ext',
@@ -10328,6 +10739,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'use tokio::io::AsyncReadExt;',
+              task: 'Importa il trait di estensione asincrona con use tokio::io::AsyncReadExt per usare read_to_end sui socket.',
             },
             {
               english: 'Async Write Ext',
@@ -10339,6 +10751,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'use tokio::io::AsyncWriteExt;',
+              task: 'Importa use tokio::io::AsyncWriteExt per chiamare write_all su un TcpStream asincrono.',
             },
             {
               english: 'Async Buf Read',
@@ -10358,6 +10771,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'tokio::spawn(async { ... })',
+              task: 'Lancia un task indipendente sul runtime tokio con tokio::spawn(async { ... }) passando un blocco async.',
             },
             {
               english: 'Tokio Mpsc',
@@ -10368,6 +10782,7 @@ export default {
               context: 'io',
               difficulty: 'advanced',
               code: 'tokio::sync::mpsc::channel(100)',
+              task: `Crea un canale async multi-producer con tokio::sync::mpsc::channel(100) di capacita' cento per fare fan-in.`,
             },
             {
               english: 'Async Server',
@@ -10651,6 +11066,7 @@ export default {
               difficulty: 'advanced',
               tool: 'clap',
               code: '#[derive(Parser)]',
+              task: 'Deriva il parser CLI annotando la struct di configurazione con #[derive(Parser)] di clap.',
             },
             {
               english: 'Structopt',
@@ -10903,6 +11319,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               command: 'cargo clippy -- -D warnings',
+              task: 'Esegui cargo clippy -- -D warnings in CI per trattare ogni lint Clippy come errore bloccante.',
             },
             {
               english: 'Cargo Fmt',
@@ -10913,6 +11330,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               command: 'cargo fmt --check',
+              task: 'Verifica la formattazione senza modificare i file con cargo fmt --check da agganciare a un hook pre-commit.',
             },
             {
               english: 'Type Driven Design',
@@ -10935,6 +11353,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               code: 'struct Username(String);',
+              task: 'Avvolgi una String in struct Username(String) per dare semantica forte al tipo username.',
             },
             {
               english: 'Strong Typing',
@@ -10995,6 +11414,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               command: 'cargo build --release',
+              task: 'Compila il binario con tutte le ottimizzazioni eseguendo cargo build --release.',
             },
             {
               english: 'Profile',
@@ -11005,6 +11425,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               code: '[profile.release]\nopt-level = 3',
+              task: 'Personalizza il profilo release in Cargo.toml impostando opt-level = 3 sotto [profile.release].',
             },
             {
               english: 'LTO',
@@ -11017,6 +11438,7 @@ export default {
               difficulty: 'advanced',
               code: 'lto = "fat"',
               note: 'Più lento da compilare ma binario più ottimizzato.',
+              task: 'Abilita la link-time optimization fat impostando lto = "fat" nel profilo release di Cargo.toml.',
             },
             {
               english: 'PGO',
@@ -11038,6 +11460,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               code: '#[inline]\nfn fast() { ... }',
+              task: `Suggerisci l'inlining della funzione fast annotandola con #[inline] sopra la firma fn fast().`,
             },
             {
               english: 'Const Fn',
@@ -11048,6 +11471,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               code: 'const fn double(x: u32) -> u32 { x * 2 }',
+              task: `Dichiara const fn double(x: u32) -> u32 { x * 2 } cosi' la funzione e' valutabile a compile-time.`,
             },
             {
               english: 'Branch Prediction',
@@ -11105,6 +11529,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               code: '#![no_std]',
+              task: `Marca la crate embedded come no_std aggiungendo l'attributo #![no_std] in cima al lib.rs.`,
             },
             {
               english: 'No Main',
@@ -11115,6 +11540,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               code: '#![no_main]',
+              task: `Abilita #![no_main] nel bootloader per delegare il punto d'ingresso al linker invece di main().`,
             },
             {
               english: 'Embedded HAL',
@@ -11179,6 +11605,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               code: '#[panic_handler]',
+              task: 'Annota una funzione con #[panic_handler] per definire la gestione panic in una crate no_std.',
             },
             {
               english: 'Bare Metal',
@@ -11198,6 +11625,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               command: 'cargo build --target thumbv7m-none-eabi',
+              task: 'Esegui cargo build --target thumbv7m-none-eabi per cross-compilare il firmware verso un Cortex-M.',
             },
           ],
         },
@@ -11237,6 +11665,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               code: 'edition = "2024"',
+              task: `Imposta edition = "2024" in Cargo.toml per attivare la sintassi e i lint dell'edizione 2024.`,
             },
             {
               english: 'Stable Release',
@@ -11257,6 +11686,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               command: 'rustup default beta',
+              task: 'Cambia il toolchain default al canale beta con rustup default beta per testare la prossima release stabile.',
             },
             {
               english: 'Nightly Channel',
@@ -11267,6 +11697,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               command: 'rustup default nightly',
+              task: 'Passa al toolchain nightly con rustup default nightly per accedere alle feature instabili del compilatore.',
             },
             {
               english: 'Rust Survey',
@@ -11298,6 +11729,7 @@ export default {
               context: 'foundations',
               difficulty: 'advanced',
               command: 'cargo publish',
+              task: 'Pubblica la tua crate sul registry ufficiale eseguendo cargo publish dal workspace.',
             },
             {
               english: 'Most Loved Language',

@@ -512,6 +512,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'beginner',
               code: 'jobs:\n  build:\n    runs-on: ubuntu-latest',
+              task: 'Definisci un job di build chiamato build che gira su ubuntu-latest dentro il workflow di CI.',
             },
             {
               english: 'Step',
@@ -544,6 +545,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'beginner',
               code: 'on:\n  push:\n    branches: [main]',
+              task: 'Configura il trigger del workflow per eseguirsi automaticamente a ogni push sul branch main.',
             },
             {
               english: 'Trigger',
@@ -716,6 +718,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'beginner',
               code: 'uses: actions/checkout@v4',
+              task: `Includi l'action ufficiale di checkout alla versione v4 come primo step della pipeline.`,
             },
             {
               english: 'Workflow File',
@@ -727,6 +730,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'beginner',
               code: '.github/workflows/ci.yml',
+              task: 'Crea il file di workflow sotto .github/workflows/ci.yml per definire la pipeline di GitHub Actions.',
             },
             {
               english: 'Matrix Build',
@@ -738,6 +742,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'beginner',
               code: 'strategy:\n  matrix:\n    node: [18, 20, 22]',
+              task: 'Imposta una matrix build che esegua i test in parallelo su Node 18, 20 e 22.',
             },
             {
               english: 'Self-Hosted Runner',
@@ -771,6 +776,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'beginner',
               code: 'environment: production',
+              task: `Associa il job all'environment production per attivare approval gate e segreti dedicati.`,
             },
             {
               english: 'Secret Variable',
@@ -782,6 +788,7 @@ export default {
               context: 'secrets',
               difficulty: 'beginner',
               code: '${{ secrets.API_TOKEN }}',
+              task: 'Inietta il segreto API_TOKEN dal vault di GitHub senza mai stamparlo nei log.',
             },
             {
               english: 'OIDC Token',
@@ -804,6 +811,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'beginner',
               code: 'permissions:\n  contents: read',
+              task: 'Restringi i permessi del workflow al solo accesso in lettura sui contenuti per ridurre il blast radius.',
             },
           ],
         },
@@ -852,6 +860,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'beginner',
               code: "if: github.ref == 'refs/heads/main'",
+              task: 'Esegui lo step di deploy solo quando il ref corrisponde a refs/heads/main.',
             },
             {
               english: 'Reusable Workflow',
@@ -863,6 +872,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'beginner',
               code: 'uses: org/.github/.../sec.yml@v1',
+              task: 'Richiama il workflow riutilizzabile sec.yml versione v1 dalla repo centrale di security.',
             },
             {
               english: 'Composite Action',
@@ -884,6 +894,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'beginner',
               command: 'actions/cache@v4',
+              task: 'Aggiungi actions/cache@v4 per memorizzare le dipendenze e velocizzare le build successive.',
             },
             {
               english: 'Ephemeral Runner',
@@ -1056,6 +1067,7 @@ export default {
               tool: 'SonarQube',
               command: 'sonar-scanner -Dsonar.projectKey=app',
               note: `Piattaforma di analisi statica della qualita' del codice; supporta molti linguaggi e integra regole di sicurezza.`,
+              task: 'Lancia sonar-scanner specificando la projectKey app per analizzare la qualita e la sicurezza del codice.',
             },
             {
               english: 'Semgrep',
@@ -1069,6 +1081,7 @@ export default {
               tool: 'Semgrep',
               command: 'semgrep --config auto .',
               note: 'SAST open source basato su regole semantiche scritte in YAML; veloce e personalizzabile.',
+              task: 'Avvia la scansione SAST con Semgrep usando la configurazione auto sulla directory corrente.',
             },
             {
               english: 'CodeQL',
@@ -1094,6 +1107,7 @@ export default {
               tool: 'Bandit',
               command: 'bandit -r myproject/',
               note: 'SAST specifico per codice Python, mantenuto dal progetto PyCQA.',
+              task: 'Analizza ricorsivamente il pacchetto myproject con Bandit per individuare pattern Python insicuri.',
             },
             {
               english: 'gosec',
@@ -1107,6 +1121,7 @@ export default {
               tool: 'gosec',
               command: 'gosec ./...',
               note: 'SAST specifico per codice Go: cerca pattern non sicuri tipici del linguaggio.',
+              task: 'Esegui gosec su tutti i package Go per rilevare bug di sicurezza tipici del linguaggio.',
             },
             {
               english: 'Brakeman',
@@ -1120,6 +1135,7 @@ export default {
               tool: 'Brakeman',
               command: 'brakeman -A',
               note: 'SAST dedicato alle applicazioni Ruby on Rails.',
+              task: 'Lancia Brakeman in modalita full sul progetto Rails per intercettare vulnerabilita comuni.',
             },
             {
               english: 'Checkmarx',
@@ -1195,6 +1211,7 @@ export default {
               context: 'sast',
               difficulty: 'beginner',
               code: 'query = "SELECT * FROM u WHERE id=" + input',
+              task: `Riscrivi la query usando parametri preparati invece di concatenare l'input direttamente nella SELECT.`,
             },
             {
               english: 'Cross-Site Scripting',
@@ -1237,6 +1254,7 @@ export default {
               context: 'sast',
               difficulty: 'beginner',
               code: 'open("../../etc/passwd")',
+              task: 'Valida e normalizza il percorso prima di aprire il file per bloccare attacchi tipo ../../etc/passwd.',
             },
             {
               english: 'Buffer Overflow',
@@ -1365,6 +1383,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'beginner',
               code: 'CODEOWNERS file',
+              task: 'Definisci nel file CODEOWNERS i revisori obbligatori per ogni area sensibile della codebase.',
             },
             {
               english: 'Checklist',
@@ -1446,6 +1465,7 @@ export default {
               difficulty: 'beginner',
               note: 'Common Vulnerabilities and Exposures.',
               code: 'CVE-2021-44228 (Log4Shell)',
+              task: 'Verifica se le dipendenze del progetto sono vulnerabili alla CVE-2021-44228 nota come Log4Shell.',
             },
             {
               english: 'CVSS Score',
@@ -1478,6 +1498,7 @@ export default {
               context: 'sca',
               difficulty: 'beginner',
               code: 'package-lock.json, poetry.lock, Cargo.lock',
+              task: 'Committa i lock file package-lock.json, poetry.lock e Cargo.lock per ricostruire build deterministiche.',
             },
             {
               english: 'Pinning',
@@ -1499,6 +1520,7 @@ export default {
               context: 'sca',
               difficulty: 'beginner',
               code: 'package.json, pyproject.toml',
+              task: 'Dichiara le dipendenze dirette del progetto nel manifest package.json o pyproject.toml.',
             },
             {
               english: 'Vulnerability Database',
@@ -1530,6 +1552,7 @@ export default {
               tool: 'Snyk',
               command: 'snyk test',
               note: 'Piattaforma commerciale per sicurezza di dipendenze, container, IaC e codice.',
+              task: 'Esegui snyk test per analizzare le dipendenze del progetto e ottenere il report delle vulnerabilita note.',
             },
             {
               english: 'Dependabot',
@@ -1543,6 +1566,7 @@ export default {
               tool: 'Dependabot',
               code: 'updates:\n  - package-ecosystem: npm',
               note: 'Servizio GitHub che apre automaticamente pull request per aggiornare dipendenze vulnerabili.',
+              task: `Attiva gli aggiornamenti automatici di Dependabot per l'ecosistema npm tramite il file di configurazione.`,
             },
             {
               english: 'Renovate',
@@ -1567,6 +1591,7 @@ export default {
               difficulty: 'beginner',
               tool: 'OWASP Dependency-Check',
               command: 'dependency-check.sh --scan ./',
+              task: 'Lancia dependency-check.sh sulla directory corrente per individuare CVE nelle dipendenze Java e Node.',
             },
             {
               english: 'npm audit',
@@ -1578,6 +1603,7 @@ export default {
               context: 'sca',
               difficulty: 'beginner',
               command: 'npm audit --production',
+              task: 'Esegui npm audit limitato alle dipendenze di produzione per ignorare le dev-dependency.',
             },
             {
               english: 'pip-audit',
@@ -1589,6 +1615,7 @@ export default {
               context: 'sca',
               difficulty: 'beginner',
               command: 'pip-audit -r requirements.txt',
+              task: 'Scansiona le dipendenze elencate in requirements.txt con pip-audit per identificare CVE Python.',
             },
             {
               english: 'cargo-audit',
@@ -1600,6 +1627,7 @@ export default {
               context: 'sca',
               difficulty: 'beginner',
               command: 'cargo audit',
+              task: 'Avvia cargo audit sul progetto Rust per controllare le vulnerabilita nel database RustSec.',
             },
             {
               english: 'GitHub Advisory',
@@ -1687,6 +1715,7 @@ export default {
               tool: 'Syft',
               command: 'syft myimage:latest -o cyclonedx-json',
               note: 'CLI di Anchore per generare SBOM in formati SPDX o CycloneDX da immagini e filesystem.',
+              task: `Genera un SBOM in formato CycloneDX dall'immagine myimage:latest usando Syft.`,
             },
             {
               english: 'Grype',
@@ -1700,6 +1729,7 @@ export default {
               tool: 'Grype',
               command: 'grype sbom:./sbom.json',
               note: `Scanner di vulnerabilita' di Anchore: legge SBOM o immagini e confronta con i database CVE.`,
+              task: `Passa l'SBOM sbom.json a Grype per ottenere il report delle vulnerabilita senza scansionare di nuovo l'immagine.`,
             },
             {
               english: 'VEX',
@@ -1732,6 +1762,7 @@ export default {
               context: 'sca',
               difficulty: 'beginner',
               code: 'pkg:npm/lodash@4.17.21',
+              task: 'Identifica univocamente la dipendenza lodash 4.17.21 tramite il Package URL pkg:npm/lodash@4.17.21.',
             },
             {
               english: 'License Compliance',
@@ -1802,6 +1833,7 @@ export default {
               context: 'sca',
               difficulty: 'beginner',
               code: '^1.2.3',
+              task: 'Vincola la dipendenza alla versione ^1.2.3 per accettare patch e minor compatibili semver.',
             },
             {
               english: 'EOL Library',
@@ -1824,6 +1856,7 @@ export default {
               context: 'sca',
               difficulty: 'beginner',
               command: 'bundle audit check',
+              task: 'Esegui bundle audit check sulla Gemfile per individuare gem Ruby con vulnerabilita note.',
             },
             {
               english: 'Auto-Merge',
@@ -2004,6 +2037,7 @@ export default {
               tool: 'Vault',
               command: 'vault kv get secret/db',
               note: 'Gestore enterprise di segreti, chiavi e credenziali dinamiche con motore di policy ACL.',
+              task: 'Recupera la credenziale secret/db da Vault tramite il comando vault kv get senza esporla in chiaro.',
             },
             {
               english: 'AWS Secrets Manager',
@@ -2017,6 +2051,7 @@ export default {
               tool: 'AWS Secrets Manager',
               command: 'aws secretsmanager get-secret-value --secret-id db',
               note: 'Servizio AWS per archiviare e ruotare automaticamente segreti e credenziali di database.',
+              task: `Recupera il valore del segreto db da AWS Secrets Manager con l'AWS CLI per iniettarlo nell'app.`,
             },
             {
               english: 'AWS Parameter Store',
@@ -2030,6 +2065,7 @@ export default {
               tool: 'AWS SSM',
               command: 'aws ssm get-parameter --name /app/db --with-decryption',
               note: `Servizio AWS Systems Manager per parametri di configurazione e segreti, piu' economico di Secrets Manager.`,
+              task: 'Leggi il parametro /app/db da SSM Parameter Store con --with-decryption per ottenere il valore in chiaro.',
             },
             {
               english: 'Azure Key Vault',
@@ -2043,6 +2079,7 @@ export default {
               tool: 'Azure Key Vault',
               command: 'az keyvault secret show --name api --vault-name kv',
               note: 'Servizio Azure per chiavi crittografiche, segreti e certificati, con backend HSM opzionale.',
+              task: 'Ottieni il valore del segreto api dal Key Vault kv tramite il comando az keyvault secret show.',
             },
             {
               english: 'GCP Secret Manager',
@@ -2056,6 +2093,7 @@ export default {
               tool: 'GCP Secret Manager',
               command: 'gcloud secrets versions access latest --secret=db',
               note: 'Servizio Google Cloud per archiviare segreti versionati con controllo IAM granulare.',
+              task: `Accedi all'ultima versione del segreto db su GCP Secret Manager con gcloud secrets versions access latest.`,
             },
             {
               english: 'Sealed Secret',
@@ -2102,6 +2140,7 @@ export default {
               difficulty: 'intermediate',
               tool: '1Password',
               command: 'op run -- ./app',
+              task: `Lancia l'applicazione tramite op run per iniettare i segreti di 1Password come variabili d'ambiente.`,
             },
             {
               english: 'KMS',
@@ -2143,6 +2182,7 @@ export default {
               tool: 'Gitleaks',
               command: 'gitleaks detect --source .',
               note: 'Scanner open source per intercettare segreti e chiavi commessi nella storia git.',
+              task: 'Esegui gitleaks detect sulla repository corrente per scoprire segreti committati nella storia git.',
             },
             {
               english: 'TruffleHog',
@@ -2156,6 +2196,7 @@ export default {
               tool: 'TruffleHog',
               command: 'trufflehog filesystem --directory=.',
               note: 'Scanner di segreti per repository git, capace di verificare se le chiavi trovate sono ancora attive.',
+              task: 'Scansiona il filesystem locale con trufflehog per intercettare segreti e verificare se sono ancora attivi.',
             },
             {
               english: 'detect-secrets',
@@ -2169,6 +2210,7 @@ export default {
               tool: 'detect-secrets',
               command: 'detect-secrets scan',
               note: 'Strumento Yelp con baseline auditabile per evitare commit di nuovi segreti tramite pre-commit hook.',
+              task: 'Lancia detect-secrets scan per generare la baseline dei segreti gia presenti e bloccare i nuovi.',
             },
             {
               english: 'GitHub Secret Scanning',
@@ -2211,6 +2253,7 @@ export default {
               context: 'secrets',
               difficulty: 'intermediate',
               code: '/AKIA[0-9A-Z]{16}/',
+              task: 'Definisci la regex /AKIA[0-9A-Z]{16}/ per individuare AWS Access Key ID nei file della repo.',
             },
             {
               english: 'BFG Repo-Cleaner',
@@ -2223,6 +2266,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'BFG Repo-Cleaner',
               command: 'bfg --delete-files secrets.txt',
+              task: 'Usa BFG con --delete-files secrets.txt per rimuovere il file di segreti da tutta la storia git.',
             },
             {
               english: 'Leak Notification',
@@ -2484,6 +2528,7 @@ export default {
               tool: 'OWASP ZAP',
               command: 'zap-baseline.py -t https://target',
               note: 'Zed Attack Proxy: DAST open source di OWASP per intercettare e attaccare traffico HTTP.',
+              task: 'Lancia zap-baseline.py contro https://target per una scansione DAST passiva in pochi minuti.',
             },
             {
               english: 'Burp Suite',
@@ -2509,6 +2554,7 @@ export default {
               tool: 'Nuclei',
               command: 'nuclei -u https://target -t cves/',
               note: 'Scanner di ProjectDiscovery basato su template YAML, ottimo per detection veloce di CVE note.',
+              task: 'Esegui nuclei contro https://target con i template cves per individuare CVE note esposte.',
             },
             {
               english: 'Nikto',
@@ -2522,6 +2568,7 @@ export default {
               tool: 'Nikto',
               command: 'nikto -h target',
               note: 'Scanner web storico in Perl: riconosce vecchie versioni di server e configurazioni a rischio.',
+              task: `Avvia nikto contro l'host target per rilevare versioni vulnerabili del web server e configurazioni a rischio.`,
             },
             {
               english: 'Acunetix',
@@ -2559,6 +2606,7 @@ export default {
               tool: 'Wapiti',
               command: 'wapiti -u https://target',
               note: 'DAST open source in Python che esegue fuzzing dei parametri HTTP.',
+              task: 'Esegui wapiti su https://target per fuzzare i parametri HTTP e scoprire vulnerabilita applicative.',
             },
             {
               english: 'sqlmap',
@@ -2571,6 +2619,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'sqlmap',
               command: 'sqlmap -u "https://target?id=1"',
+              task: 'Testa il parametro id di https://target con sqlmap per verificare la presenza di SQL injection sfruttabili.',
             },
             {
               english: 'Arachni',
@@ -2659,6 +2708,7 @@ export default {
               tool: 'go-fuzz',
               command: 'go test -fuzz=Fuzz',
               note: 'Fuzzer storico per Go di Dmitry Vyukov; oggi sostituito dal fuzzing nativo del compilatore.',
+              task: 'Avvia il fuzzing nativo di Go con go test -fuzz=Fuzz per scovare crash su input inattesi.',
             },
             {
               english: 'OSS-Fuzz',
@@ -2871,6 +2921,7 @@ export default {
               tool: 'Trivy',
               command: 'trivy image nginx:latest',
               note: `Scanner di vulnerabilita' open source di Aqua: copre immagini, filesystem, IaC, segreti e SBOM.`,
+              task: `Scansiona l'immagine nginx:latest con Trivy per ottenere il report di vulnerabilita di pacchetti OS e librerie.`,
             },
             {
               english: 'Grype image scan',
@@ -2884,6 +2935,7 @@ export default {
               tool: 'Grype',
               command: 'grype docker.io/myapp:1.0',
               note: `Grype puo' leggere direttamente un'immagine o un SBOM Syft generato in precedenza.`,
+              task: `Esegui grype sull'immagine docker.io/myapp:1.0 per rilevare CVE nei layer del container.`,
             },
             {
               english: 'Clair',
@@ -2939,6 +2991,7 @@ export default {
               context: 'container-security',
               difficulty: 'intermediate',
               command: 'trivy image --severity HIGH,CRITICAL --exit-code 1 app',
+              task: `Fai fallire la pipeline con Trivy se l'immagine app contiene vulnerabilita HIGH o CRITICAL.`,
             },
             {
               english: 'Image Digest',
@@ -2950,6 +3003,7 @@ export default {
               context: 'supply-chain',
               difficulty: 'intermediate',
               code: 'nginx@sha256:abc123...',
+              task: `Referenzia l'immagine tramite il digest nginx@sha256:abc123 per pinnare il contenuto in modo immutabile.`,
             },
           ],
         },
@@ -2979,6 +3033,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'Google distroless',
               code: 'FROM gcr.io/distroless/static',
+              task: 'Parti da gcr.io/distroless/static come base image per eliminare shell e package manager dal container.',
             },
             {
               english: 'Alpine',
@@ -2990,6 +3045,7 @@ export default {
               context: 'container-security',
               difficulty: 'intermediate',
               code: 'FROM alpine:3.20',
+              task: 'Usa FROM alpine:3.20 come base image minimale per ridurre la superficie di attacco del container.',
             },
             {
               english: 'Multi-Stage Build',
@@ -3001,6 +3057,7 @@ export default {
               context: 'container-security',
               difficulty: 'intermediate',
               code: 'FROM golang AS builder\nFROM alpine AS runtime',
+              task: 'Struttura il Dockerfile con uno stage builder in golang e uno stage runtime in alpine per immagini piu leggere.',
             },
             {
               english: 'Non-Root User',
@@ -3012,6 +3069,7 @@ export default {
               context: 'container-security',
               difficulty: 'intermediate',
               code: 'USER 1001',
+              task: 'Aggiungi la direttiva USER 1001 nel Dockerfile per evitare di eseguire il container come root.',
             },
             {
               english: 'Read-Only Root FS',
@@ -3023,6 +3081,7 @@ export default {
               context: 'container-security',
               difficulty: 'intermediate',
               code: 'readOnlyRootFilesystem: true',
+              task: 'Imposta readOnlyRootFilesystem a true nel SecurityContext del pod per bloccare scritture sul filesystem.',
             },
             {
               english: 'Drop Capabilities',
@@ -3034,6 +3093,7 @@ export default {
               context: 'container-security',
               difficulty: 'intermediate',
               code: 'capabilities:\n  drop: [ALL]',
+              task: 'Configura capabilities.drop a ALL nel pod spec per rimuovere tutti i privilegi Linux non necessari.',
             },
             {
               english: 'No New Privileges',
@@ -3045,6 +3105,7 @@ export default {
               context: 'container-security',
               difficulty: 'intermediate',
               code: 'allowPrivilegeEscalation: false',
+              task: 'Imposta allowPrivilegeEscalation a false nel pod per impedire ai processi figli di ottenere nuovi privilegi.',
             },
             {
               english: 'Minimal Image',
@@ -3096,6 +3157,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'cosign',
               command: 'cosign sign myregistry/app:1.0',
+              task: `Firma l'immagine myregistry/app:1.0 con cosign sign per garantire integrita e provenienza.`,
             },
             {
               english: 'Cosign',
@@ -3109,6 +3171,7 @@ export default {
               tool: 'Cosign (Sigstore)',
               command: 'cosign verify --key cosign.pub myimage',
               note: 'Strumento Sigstore per firmare e verificare immagini container e altri artefatti OCI.',
+              task: 'Verifica la firma di myimage usando la chiave pubblica cosign.pub prima del deploy in cluster.',
             },
             {
               english: 'Notary',
@@ -3185,6 +3248,7 @@ export default {
               context: 'container-security',
               difficulty: 'intermediate',
               code: 'imagePullPolicy: Always',
+              task: 'Imposta imagePullPolicy a Always per forzare il kubelet a recuperare sempre il digest piu recente dal registry.',
             },
           ],
         },
@@ -3235,6 +3299,7 @@ export default {
               tool: 'Hadolint',
               command: 'hadolint Dockerfile',
               note: 'Linter per Dockerfile: segnala anti-pattern di build e di sicurezza.',
+              task: 'Lancia hadolint sul Dockerfile per segnalare anti-pattern di build e issue di sicurezza.',
             },
             {
               english: 'Dockle',
@@ -3248,6 +3313,7 @@ export default {
               tool: 'Dockle',
               command: 'dockle myimage:latest',
               note: 'Linter di sicurezza per immagini container che valida le best practice CIS Docker Benchmark.',
+              task: 'Analizza myimage:latest con dockle per verificare la conformita al CIS Docker Benchmark.',
             },
             {
               english: 'CIS Docker Benchmark',
@@ -3272,6 +3338,7 @@ export default {
               tool: 'kube-bench',
               command: 'kube-bench run --targets node',
               note: `Strumento Aqua che verifica la conformita' di un cluster Kubernetes al CIS Benchmark.`,
+              task: 'Esegui kube-bench con target node per valutare la conformita del nodo Kubernetes al CIS Benchmark.',
             },
             {
               english: 'Quay Security Scanner',
@@ -3346,6 +3413,7 @@ export default {
               tool: 'Terraform',
               command: 'terraform plan',
               note: 'IaC di HashiCorp basato sul DSL HCL: descrive risorse cloud in modo dichiarativo.',
+              task: `Lancia terraform plan per visualizzare le modifiche che verrebbero applicate all'infrastruttura cloud.`,
             },
             {
               english: 'CloudFormation',
@@ -3436,6 +3504,7 @@ export default {
               difficulty: 'intermediate',
               command: 'terraform plan -out=plan.tfplan',
               note: `Output di terraform plan: descrive le modifiche che apply applichera' effettivamente.`,
+              task: 'Salva il piano binario su plan.tfplan per poterlo analizzare e applicare in modo deterministico.',
             },
           ],
         },
@@ -3456,6 +3525,7 @@ export default {
               tool: 'Checkov',
               command: 'checkov -d .',
               note: 'Scanner di sicurezza IaC di Bridgecrew/Prisma per Terraform, CloudFormation, Kubernetes e altri.',
+              task: 'Esegui checkov sulla directory IaC corrente per scansionare Terraform e Kubernetes contro centinaia di policy.',
             },
             {
               english: 'tfsec',
@@ -3469,6 +3539,7 @@ export default {
               tool: 'tfsec',
               command: 'tfsec .',
               note: 'Scanner di sicurezza specifico per Terraform, oggi confluito nel progetto Trivy di Aqua.',
+              task: 'Lancia tfsec sulla directory corrente per individuare misconfiguration di sicurezza nei moduli Terraform.',
             },
             {
               english: 'Terrascan',
@@ -3482,6 +3553,7 @@ export default {
               tool: 'Terrascan',
               command: 'terrascan scan -t aws',
               note: `Scanner IaC di Tenable basato su policy Rego, supporta piu' tipologie di IaC.`,
+              task: 'Avvia terrascan scan con target aws per analizzare i moduli Terraform contro le policy Rego predefinite.',
             },
             {
               english: 'KICS',
@@ -3507,6 +3579,7 @@ export default {
               tool: 'cfn-nag',
               command: 'cfn_nag_scan -i template.yaml',
               note: 'Linter di sicurezza specifico per template CloudFormation, sviluppato da Stelligent.',
+              task: 'Lancia cfn_nag_scan sul template CloudFormation template.yaml per segnalare risorse insicure.',
             },
             {
               english: 'Snyk IaC',
@@ -3519,6 +3592,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'Snyk',
               command: 'snyk iac test main.tf',
+              task: 'Esegui snyk iac test sul file main.tf per rilevare misconfiguration nelle risorse Terraform.',
             },
             {
               english: 'Trivy Config',
@@ -3531,6 +3605,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'Trivy',
               command: 'trivy config .',
+              task: 'Lancia trivy config sulla directory corrente per analizzare Terraform, Kubernetes e Dockerfile in un solo passaggio.',
             },
             {
               english: 'Open Policy Agent',
@@ -3553,6 +3628,7 @@ export default {
               context: 'iac-security',
               difficulty: 'intermediate',
               command: 'terraform show -json plan.tfplan',
+              task: 'Esporta il piano binario in JSON con terraform show -json plan.tfplan per analizzarlo con strumenti di policy.',
             },
             {
               english: 'Policy Pack',
@@ -3581,6 +3657,7 @@ export default {
               context: 'iac-security',
               difficulty: 'intermediate',
               code: 'block_public_acls = true',
+              task: 'Imposta block_public_acls a true sul bucket S3 per impedire ACL pubbliche e prevenire data leak.',
             },
             {
               english: 'Open Security Group',
@@ -3592,6 +3669,7 @@ export default {
               context: 'iac-security',
               difficulty: 'intermediate',
               code: 'cidr_blocks = ["10.0.0.0/16"]',
+              task: 'Restringi cidr_blocks alla rete privata 10.0.0.0/16 invece di lasciare il security group aperto a 0.0.0.0/0.',
             },
             {
               english: 'Unencrypted Volume',
@@ -3603,6 +3681,7 @@ export default {
               context: 'iac-security',
               difficulty: 'intermediate',
               code: 'encrypted = true',
+              task: 'Imposta encrypted a true sul volume EBS per garantire la cifratura at-rest dei dati.',
             },
             {
               english: 'Wildcard IAM',
@@ -3614,6 +3693,7 @@ export default {
               context: 'iac-security',
               difficulty: 'intermediate',
               code: 'Resource: "*"',
+              task: 'Sostituisci Resource: "*" con ARN specifici nella policy IAM per applicare il principio di least privilege.',
             },
             {
               english: 'Hardcoded Region',
@@ -3779,6 +3859,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'Conftest',
               command: 'conftest test main.tf',
+              task: 'Lancia conftest test sul file main.tf per valutare le policy Rego sulla configurazione Terraform.',
             },
             {
               english: 'Cost Estimation',
@@ -3840,6 +3921,7 @@ export default {
               context: 'policy',
               difficulty: 'intermediate',
               code: 'package main\ndeny[msg] { input.kind == "Pod" }',
+              task: 'Scrivi una policy Rego nel package main che nega tutti gli input con kind Pod.',
             },
             {
               english: 'Decision',
@@ -3871,6 +3953,7 @@ export default {
               context: 'policy',
               difficulty: 'intermediate',
               code: 'allow { input.user.role == "admin" }',
+              task: `Definisci una regola allow che concede l'accesso solo quando input.user.role corrisponde ad admin.`,
             },
             {
               english: 'Deny Rule',
@@ -3882,6 +3965,7 @@ export default {
               context: 'policy',
               difficulty: 'intermediate',
               code: 'deny[msg] { not input.tls }',
+              task: 'Scrivi una regola deny che blocca la risorsa quando il campo tls non e impostato.',
             },
             {
               english: 'Input',
@@ -3913,6 +3997,7 @@ export default {
               context: 'policy',
               difficulty: 'intermediate',
               command: 'opa test policy/ -v',
+              task: 'Esegui opa test in modalita verbose sulla directory policy/ per validare ogni regola Rego.',
             },
           ],
         },
@@ -3932,6 +4017,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'Conftest',
               command: 'conftest test deployment.yaml',
+              task: 'Lancia conftest test sul deployment.yaml per validare il manifest Kubernetes contro le policy Rego.',
             },
             {
               english: 'YAML Manifest',
@@ -3953,6 +4039,7 @@ export default {
               context: 'policy',
               difficulty: 'intermediate',
               code: 'deny[msg] { input.From == "latest" }',
+              task: 'Scrivi una regola deny in Rego che blocca i Dockerfile con base image taggata latest.',
             },
             {
               english: 'Resource Limit',
@@ -3964,6 +4051,7 @@ export default {
               context: 'policy',
               difficulty: 'intermediate',
               code: 'deny { not input.spec.resources.limits }',
+              task: 'Definisci una policy deny che blocca i pod senza spec.resources.limits per evitare workload senza tetto.',
             },
             {
               english: 'Required Label',
@@ -4015,6 +4103,7 @@ export default {
               context: 'policy',
               difficulty: 'intermediate',
               code: 'warn[msg] { not input.spec.replicas }',
+              task: 'Scrivi una regola warn che segnala i deployment senza replicas configurate ma non blocca il deploy.',
             },
             {
               english: 'Policy Test Coverage',
@@ -4026,6 +4115,7 @@ export default {
               context: 'policy',
               difficulty: 'intermediate',
               command: 'opa test --coverage',
+              task: 'Lancia opa test --coverage per misurare la percentuale di regole Rego coperte dalle suite di test.',
             },
           ],
         },
@@ -4076,6 +4166,7 @@ export default {
               tool: 'Kyverno',
               code: 'apiVersion: kyverno.io/v1\nkind: ClusterPolicy',
               note: 'Policy engine nativo Kubernetes: le policy si scrivono in YAML invece che in Rego.',
+              task: 'Definisci una ClusterPolicy Kyverno in YAML usando apiVersion kyverno.io/v1 per applicare regole cluster-wide.',
             },
             {
               english: 'OPA Gatekeeper',
@@ -4167,6 +4258,7 @@ export default {
               context: 'policy',
               difficulty: 'intermediate',
               command: 'helm lint ./mychart',
+              task: 'Esegui helm lint sulla cartella ./mychart per verificare la correttezza del chart prima della release.',
             },
             {
               english: 'Kubeconform',
@@ -4180,6 +4272,7 @@ export default {
               tool: 'Kubeconform',
               command: 'kubeconform deploy.yaml',
               note: 'Validatore offline veloce di manifest Kubernetes contro gli OpenAPI schema ufficiali.',
+              task: 'Valida il manifest deploy.yaml con kubeconform contro gli OpenAPI schema ufficiali di Kubernetes.',
             },
             {
               english: 'Policy Pipeline',
@@ -4508,6 +4601,7 @@ export default {
               tool: 'Cosign',
               command: 'cosign sign --key cosign.key myimage',
               note: `Cosign appartiene a Sigstore; in modalita' keyless integra Fulcio e Rekor.`,
+              task: `Firma myimage con cosign sign passando cosign.key per garantire integrita e provenienza nell'OCI registry.`,
             },
             {
               english: 'Fulcio',
@@ -4542,6 +4636,7 @@ export default {
               context: 'supply-chain',
               difficulty: 'intermediate',
               command: 'cosign sign myimage  # OIDC flow',
+              task: `Firma myimage in modalita keyless di Cosign sfruttando l'identita OIDC del CI invece di chiavi long-lived.`,
             },
             {
               english: 'Transparency Log',
@@ -4574,6 +4669,7 @@ export default {
               context: 'supply-chain',
               difficulty: 'intermediate',
               command: 'cosign attest --predicate prov.json',
+              task: `Genera un'attestazione di provenance allegando il predicate prov.json all'immagine con cosign attest.`,
             },
             {
               english: 'Verify Signature',
@@ -4585,6 +4681,7 @@ export default {
               context: 'supply-chain',
               difficulty: 'intermediate',
               command: 'cosign verify --certificate-identity ...',
+              task: `Verifica la firma dell'immagine con cosign verify validando la certificate-identity rilasciata da Fulcio.`,
             },
             {
               english: 'Policy Controller',
@@ -4625,6 +4722,7 @@ export default {
               context: 'supply-chain',
               difficulty: 'intermediate',
               code: 'uses: actions/checkout@8f4b7f8...',
+              task: 'Pinna actions/checkout al SHA completo 8f4b7f8 invece che al tag mutabile per bloccare attacchi alla supply chain.',
             },
             {
               english: 'Lockfile Maintenance',
@@ -4656,6 +4754,7 @@ export default {
               context: 'supply-chain',
               difficulty: 'intermediate',
               command: 'git commit -S -m "msg"',
+              task: `Esegui git commit -S per firmare il commit con la tua chiave GPG e dimostrare l'autenticita dell'autore.`,
             },
             {
               english: 'GPG Key',
@@ -4690,6 +4789,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'OpenSSF Scorecard',
               command: 'scorecard --repo=github.com/foo/bar',
+              task: 'Lancia OpenSSF Scorecard sulla repo github.com/foo/bar per ottenere un voto sulle pratiche di sicurezza.',
             },
             {
               english: 'Sealed Build',
@@ -4847,6 +4947,7 @@ export default {
               tool: 'Chef InSpec',
               command: 'inspec exec my-profile',
               note: 'Framework di compliance di Chef per scrivere controlli eseguibili in un DSL Ruby.',
+              task: `Esegui inspec exec sul profilo my-profile per valutare i controlli di compliance contro l'host target.`,
             },
             {
               english: 'Chef Compliance',
@@ -4871,6 +4972,7 @@ export default {
               tool: 'OpenSCAP',
               command: 'oscap xccdf eval --profile cis',
               note: 'Toolkit open source che automatizza audit di sicurezza basati sullo standard SCAP del NIST.',
+              task: 'Valuta il sistema contro il profilo cis con oscap xccdf eval per generare un report di compliance SCAP.',
             },
             {
               english: 'Compliance Operator',
@@ -5390,6 +5492,7 @@ export default {
               tool: 'Steampipe',
               command: 'steampipe query "select * from aws_s3_bucket"',
               note: 'Strumento di Turbot che espone API cloud come tabelle SQL interrogabili via Postgres.',
+              task: `Interroga i bucket S3 dell'account AWS con la query SQL select * from aws_s3_bucket di Steampipe.`,
             },
             {
               english: 'Prowler',
@@ -5403,6 +5506,7 @@ export default {
               tool: 'Prowler',
               command: 'prowler aws --severity HIGH',
               note: 'Tool open source di audit per AWS, Azure, GCP e Kubernetes, copre CIS, PCI-DSS, HIPAA e altri.',
+              task: `Avvia prowler aws filtrando per severity HIGH per audit di sicurezza mirato sull'account AWS.`,
             },
             {
               english: 'ScoutSuite',
@@ -5416,6 +5520,7 @@ export default {
               tool: 'ScoutSuite',
               command: 'scout aws',
               note: 'Strumento open source di NCC Group per audit multi-cloud delle configurazioni di sicurezza.',
+              task: 'Esegui scout aws per generare il report HTML di audit multi-servizio delle configurazioni cloud.',
             },
           ],
         },
@@ -6032,6 +6137,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'pytm',
               code: 'tm = TM("MyApp")',
+              task: `Istanzia un threat model pytm per l'applicazione "MyApp" come punto di partenza dell'analisi as-code.`,
             },
             {
               english: 'Data Flow Diagram',
@@ -6587,6 +6693,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               code: 'limit_req zone=api burst=10;',
+              task: `Applica il rate limiting sulla zona api con burst di 10 richieste per proteggere l'endpoint da abusi.`,
             },
             {
               english: 'Quota',
@@ -6944,6 +7051,7 @@ export default {
               difficulty: 'advanced',
               tool: 'Newman',
               command: 'newman run collection.json',
+              task: 'Esegui la collection Postman collection.json con Newman per validare la API dalla pipeline CI.',
             },
             {
               english: 'Schemathesis',
@@ -6957,6 +7065,7 @@ export default {
               tool: 'Schemathesis',
               command: 'schemathesis run openapi.yaml',
               note: 'Fuzzer property-based che genera test partendo da schemi OpenAPI o GraphQL.',
+              task: 'Lancia Schemathesis sullo schema openapi.yaml per fare fuzzing property-based degli endpoint.',
             },
             {
               english: 'API Fuzzing',
@@ -7154,6 +7263,7 @@ export default {
               tool: 'Falco',
               command: 'falco --rule-file rules.yaml',
               note: 'Progetto CNCF graduated, originariamente sviluppato da Sysdig.',
+              task: 'Avvia Falco con il file di regole rules.yaml per rilevare comportamenti anomali a runtime nei container.',
             },
             {
               english: 'Tetragon',
@@ -7240,6 +7350,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               code: 'seccompProfile:\n  type: RuntimeDefault',
+              task: 'Imposta il seccompProfile di tipo RuntimeDefault per filtrare le syscall pericolose del container.',
             },
             {
               english: 'Cilium',
@@ -7341,6 +7452,7 @@ export default {
               tool: 'Osquery',
               command: 'osqueryi "SELECT * FROM users"',
               note: 'Strumento di Facebook/Meta che espone lo stato di un endpoint come tabelle SQL interrogabili.',
+              task: `Interroga l'host con osqueryi tramite la query SQL su FROM users per ispezionare gli account presenti.`,
             },
             {
               english: 'Wazuh',
@@ -7492,6 +7604,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               code: 'apiVersion: security.istio.io/v1\nkind: AuthorizationPolicy',
+              task: 'Definisci una AuthorizationPolicy Istio v1 per regolare il traffico autorizzato tra i servizi mesh.',
             },
           ],
         },
@@ -7631,6 +7744,7 @@ export default {
               difficulty: 'advanced',
               command: 'git commit -S -m "msg"',
               note: 'Esistono anche varianti S/MIME e SSH; GPG resta lo standard storico su GitHub e GitLab.',
+              task: `Crea il commit firmato con GPG usando -S per dimostrare l'autenticità dell'autore nella supply chain.`,
             },
             {
               english: 'Signed Tag',
@@ -7642,6 +7756,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               command: 'git tag -s v1.0.0',
+              task: 'Genera il tag firmato v1.0.0 con -s per attestare crittograficamente la release pubblicata.',
             },
             {
               english: 'GPG Sign',
@@ -7653,6 +7768,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'commit.gpgsign = true',
+              task: 'Abilita commit.gpgsign a true in git config per firmare automaticamente ogni commit del repository.',
             },
             {
               english: 'SSH Sign',
@@ -7664,6 +7780,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'gpg.format = ssh',
+              task: 'Configura gpg.format su ssh per firmare commit e tag usando la chiave SSH al posto di GPG.',
             },
             {
               english: 'Verified Commit Badge',
@@ -7717,6 +7834,7 @@ export default {
               difficulty: 'advanced',
               tool: 'gitsign',
               command: 'git config --global gpg.x509.program gitsign',
+              task: 'Registra gitsign come gpg.x509.program globale per firmare i commit via Sigstore senza chiavi long-lived.',
             },
             {
               english: 'Hardware Token',
@@ -7786,6 +7904,7 @@ export default {
               difficulty: 'advanced',
               code: '* @platform-team',
               note: 'GitHub e GitLab impongono automaticamente il review degli owner sui path indicati.',
+              task: `Assegna @platform-team come owner di tutti i path con \`*\` per imporre il review sulla policy-as-code.`,
             },
             {
               english: 'Stale Review Dismissal',
@@ -8271,6 +8390,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               command: 'kubectl logs -f pod-name',
+              task: 'Segui in tempo reale i log del pod pod-name con kubectl logs -f durante il triage di un incidente.',
             },
             {
               english: 'Pattern Search',
@@ -8303,6 +8423,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               code: '{"level":"INFO","msg":"login","user":"x"}',
+              task: `Emetti il logging strutturato in JSON con i campi level, msg e user per facilitare l'analisi nel SIEM.`,
             },
           ],
         },
@@ -8660,6 +8781,7 @@ export default {
               context: 'automation',
               difficulty: 'advanced',
               command: 'kubectl rollout undo deploy/app',
+              task: `Annulla l'ultima rollout con kubectl rollout undo del deploy/app per ripristinare la versione precedente.`,
             },
             {
               english: 'Hotfix Pipeline',
@@ -8789,6 +8911,7 @@ export default {
               context: 'automation',
               difficulty: 'advanced',
               command: 'dd if=/dev/sda of=image.raw bs=4M',
+              task: `Acquisisci l'immagine forense di /dev/sda con dd e blocchi da 4M scrivendo su image.raw per la chain-of-custody.`,
             },
             {
               english: 'Memory Dump',
@@ -8842,6 +8965,7 @@ export default {
               context: 'automation',
               difficulty: 'advanced',
               command: 'sha256sum image.raw',
+              task: `Calcola lo sha256sum di image.raw per verificare l'integrità della copia forense rispetto all'originale.`,
             },
             {
               english: 'Cold Storage',
@@ -8901,6 +9025,7 @@ export default {
               difficulty: 'advanced',
               code: 'kind: Role\nrules:\n- verbs: [get,list]',
               note: `Diverso dal generico Role IAM cloud del Livello 11: qui e' una risorsa K8s RBAC namespaced.`,
+              task: 'Definisci una Role Kubernetes che conceda solo i verbi get e list, applicando il principio del minimo privilegio.',
             },
             {
               english: 'ClusterRole',
@@ -8932,6 +9057,7 @@ export default {
               context: 'container-security',
               difficulty: 'advanced',
               code: 'serviceAccountName: my-sa',
+              task: `Associa al pod il serviceAccountName my-sa per legare l'identità del workload alle RBAC del cluster.`,
             },
             {
               english: 'Subject',
@@ -9001,6 +9127,7 @@ export default {
               context: 'container-security',
               difficulty: 'advanced',
               code: 'kind: NetworkPolicy\npodSelector: {}',
+              task: 'Crea una NetworkPolicy con podSelector vuoto per applicare default-deny sul traffico del namespace.',
             },
             {
               english: 'Default Deny',
@@ -9195,6 +9322,7 @@ export default {
               context: 'container-security',
               difficulty: 'advanced',
               code: 'pod-security.kubernetes.io/enforce: restricted',
+              task: `Imposta la label pod-security.kubernetes.io/enforce su restricted per bloccare i pod non conformi all'admission.`,
             },
             {
               english: 'Validating Admission Policy',
@@ -9234,6 +9362,7 @@ export default {
               context: 'container-security',
               difficulty: 'advanced',
               code: 'EncryptionConfiguration with aescbc',
+              task: 'Abilita la cifratura at-rest di etcd con una EncryptionConfiguration che usi il provider aescbc.',
             },
             {
               english: 'Audit Policy',
@@ -9265,6 +9394,7 @@ export default {
               context: 'container-security',
               difficulty: 'advanced',
               command: 'kubectl taint nodes node1 sec=true:NoSchedule',
+              task: 'Marca il node1 con il taint sec=true:NoSchedule per riservarlo solo ai workload sensibili tollerati.',
             },
             {
               english: 'GVisor',
@@ -9299,6 +9429,7 @@ export default {
               difficulty: 'advanced',
               tool: 'Trivy',
               command: 'trivy k8s cluster',
+              task: `Esegui trivy k8s cluster per scansionare l'intero cluster Kubernetes e raccogliere le misconfigurazioni.`,
             },
             {
               english: 'kubescape',
@@ -9312,6 +9443,7 @@ export default {
               tool: 'kubescape',
               command: 'kubescape scan framework nsa',
               note: 'Scanner di sicurezza Kubernetes open source di ARMO, copre framework NSA-CISA, MITRE ATT&CK e altri.',
+              task: 'Lancia kubescape scan con il framework nsa per misurare la postura del cluster contro le linee guida NSA-CISA.',
             },
             {
               english: 'CIS K8s Benchmark',
@@ -10626,6 +10758,7 @@ export default {
               context: 'culture',
               difficulty: 'advanced',
               code: 'cur.execute("SELECT * FROM u WHERE id=?", (id,))',
+              task: 'Usa cur.execute con il placeholder ? e la tupla (id,) per parametrizzare la query e prevenire SQL injection.',
             },
             {
               english: 'Safe Defaults',

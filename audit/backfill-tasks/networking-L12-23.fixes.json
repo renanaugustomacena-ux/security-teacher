@@ -1,0 +1,436 @@
+{
+  "fixes": [
+    {
+      "level": "12",
+      "lesson": "net_protocols_email_1",
+      "english": "MX Lookup",
+      "set": {
+        "task": "Interroga i record MX di example.com per scoprire quali server SMTP gestiscono la posta del dominio."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "net_protocols_file_2",
+      "english": "SFTP",
+      "set": {
+        "task": "Apri una sessione SFTP cifrata verso server come user, trasferendo file via SSH sulla porta 22."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "net_protocols_file_2",
+      "english": "SCP",
+      "set": {
+        "task": "Copia file.txt sul server remoto dentro /tmp/ usando il protocollo SCP sopra SSH."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "net_protocols_file_2",
+      "english": "Rsync",
+      "set": {
+        "task": "Sincronizza la directory src/ verso /dst/ sul server remoto con rsync, attivando archivio, verbose e compressione."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "net_protocols_remote_3",
+      "english": "SSH",
+      "set": {
+        "task": "Avvia una shell remota cifrata verso server autenticandoti come user tramite SSH sulla porta 22."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "net_protocols_remote_3",
+      "english": "SSH Key",
+      "set": {
+        "task": "Genera una coppia di chiavi SSH ed25519 da usare per l'autenticazione passwordless sui server."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "net_protocols_remote_3",
+      "english": "Known Hosts",
+      "set": {
+        "task": "Consulta ~/.ssh/known_hosts per verificare le fingerprint dei server già visitati e prevenire attacchi MITM."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "net_protocols_remote_3",
+      "english": "SSH Agent",
+      "set": {
+        "task": "Carica la chiave privata id_ed25519 dentro ssh-agent per evitare di sbloccarla a ogni connessione."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "net_protocols_remote_3",
+      "english": "Jump Host",
+      "set": {
+        "task": "Collegati al server interno passando per il bastion host jump usando l'opzione -J di SSH."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "net_protocols_other_4",
+      "english": "SNMP",
+      "set": {
+        "task": "Esegui un walk SNMPv2c con community public sul dispositivo 192.168.1.1 per enumerare le OID disponibili."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "net_protocols_other_4",
+      "english": "NTP",
+      "set": {
+        "task": "Verifica lo stato della sincronizzazione NTP del sistema con timedatectl, controllando se l'orologio è allineato."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_basic_1",
+      "english": "ping",
+      "set": {
+        "task": "Invia 4 pacchetti ICMP echo a 8.8.8.8 per testare la raggiungibilità del resolver pubblico di Google."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_basic_1",
+      "english": "traceroute",
+      "set": {
+        "task": "Traccia gli hop intermedi verso google.com per individuare in che punto il routing introduce latenza."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_basic_1",
+      "english": "mtr",
+      "set": {
+        "task": "Combina ping e traceroute verso google.com con mtr per monitorare in tempo reale perdita pacchetti e latenza per hop."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_basic_1",
+      "english": "hostname",
+      "set": {
+        "task": "Mostra l'FQDN completo della macchina locale con hostname -f, includendo dominio DNS."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_basic_1",
+      "english": "nslookup",
+      "set": {
+        "task": "Risolvi il record A di example.com con nslookup interrogando il resolver DNS configurato."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_basic_1",
+      "english": "dig",
+      "set": {
+        "task": "Esegui un trace iterativo dei delegati DNS per example.com partendo dai root server con dig +trace."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_basic_1",
+      "english": "host command",
+      "set": {
+        "task": "Risolvi il nome example.com con il comando host, ottenendo record A, AAAA e MX in output compatto."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_basic_1",
+      "english": "whois",
+      "set": {
+        "task": "Interroga i registri whois per example.com per scoprire registrant, registrar e date di scadenza del dominio."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_basic_1",
+      "english": "arp command",
+      "set": {
+        "task": "Mostra la tabella ARP locale in forma numerica con arp -n per mappare IP a indirizzi MAC."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_basic_1",
+      "english": "ifconfig",
+      "set": {
+        "task": "Elenca tutte le interfacce di rete del sistema, incluse quelle down, con ifconfig -a."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_modern_2",
+      "english": "ip command",
+      "set": {
+        "task": "Visualizza gli indirizzi IPv4 e IPv6 assegnati a ogni interfaccia con il moderno comando ip addr show."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_modern_2",
+      "english": "ss",
+      "set": {
+        "task": "Elenca con ss tutti i socket TCP e UDP in ascolto, mostrando i processi che li tengono aperti."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_modern_2",
+      "english": "netstat",
+      "set": {
+        "task": "Mostra con netstat le porte TCP e UDP in listen e i processi associati, in modo numerico."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_modern_2",
+      "english": "nmcli",
+      "set": {
+        "task": "Visualizza con nmcli l'elenco delle connessioni di rete gestite da NetworkManager con i loro stati."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_modern_2",
+      "english": "iperf3",
+      "set": {
+        "task": "Misura la banda passante TCP verso il server iperf3 collegandoti come client a server.example.com."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_modern_2",
+      "english": "ethtool",
+      "set": {
+        "task": "Interroga con ethtool i parametri fisici dell'interfaccia eth0 come velocità, duplex e auto-negoziazione."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_modern_2",
+      "english": "iw",
+      "set": {
+        "task": "Mostra con iw lo stato del link wireless dell'interfaccia wlan0, includendo SSID, frequenza e potenza segnale."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_modern_2",
+      "english": "route",
+      "set": {
+        "task": "Elenca la tabella di routing IPv4 in forma numerica con route -n, evitando la risoluzione DNS dei gateway."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_capture_3",
+      "english": "tcpdump",
+      "set": {
+        "task": "Cattura con tcpdump il traffico HTTP sulla porta 80 dell'interfaccia eth0 senza risolvere i nomi DNS."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_capture_3",
+      "english": "tshark",
+      "set": {
+        "task": "Avvia una cattura pacchetti in tempo reale sull'interfaccia eth0 con tshark, la versione CLI di Wireshark."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_capture_3",
+      "english": "pcap",
+      "set": {
+        "task": "Salva con tcpdump tutto il traffico catturato nel file capture.pcap per analizzarlo poi con Wireshark."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_capture_3",
+      "english": "BPF",
+      "set": {
+        "task": "Filtra in cattura solo i pacchetti destinati a 1.2.3.4 sulla porta 443 usando una espressione BPF."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_capture_3",
+      "english": "Display Filter",
+      "set": {
+        "task": "Filtra in Wireshark solo i pacchetti TCP sulla porta 443 applicando il display filter tcp.port == 443."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_scan_4",
+      "english": "nmap",
+      "set": {
+        "task": "Esegui con nmap una scansione delle porte 1-1000 sulla subnet 192.168.1.0/24 rilevando anche le versioni dei servizi."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_scan_4",
+      "english": "SYN Scan",
+      "set": {
+        "task": "Lancia con nmap una SYN scan stealth contro il target inviando solo SYN senza completare il three-way handshake."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_scan_4",
+      "english": "fping",
+      "set": {
+        "task": "Pinga in parallelo tutti gli host della subnet 192.168.1.0/24 con fping per identificare velocemente quelli attivi."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_scan_4",
+      "english": "Service Detection",
+      "set": {
+        "task": "Identifica con nmap -sV le versioni dei servizi in ascolto sul target interrogandoli con probe specifici."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_scan_4",
+      "english": "OS Detection",
+      "set": {
+        "task": "Rileva con nmap -O il sistema operativo del target analizzando il fingerprint dello stack TCP/IP."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_scan_4",
+      "english": "NSE",
+      "set": {
+        "task": "Esegui sul target gli script NSE della categoria vuln per cercare vulnerabilità note nei servizi esposti."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "net_troubleshoot_1",
+      "english": "packet loss rate",
+      "set": {
+        "task": "Misura con mtr il tasso di perdita pacchetti verso google.com facendo 100 cicli in modalità report."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "net_troubleshoot_2",
+      "english": "path MTU",
+      "set": {
+        "task": "Imposta l'MTU dell'interfaccia eth0 al valore standard Ethernet di 1500 byte per evitare la frammentazione."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "net_troubleshoot_2",
+      "english": "MSS Clamping",
+      "set": {
+        "task": "Applica MSS clamping con iptables sui SYN forwardati per agganciare l'MSS al PMTU del path ed evitare blackhole."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "net_troubleshoot_2",
+      "english": "Don't Fragment",
+      "set": {
+        "task": "Verifica il path MTU verso google.com inviando ping da 1472 byte con flag Don't Fragment attivo."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "net_qos_1",
+      "english": "Traffic Shaping",
+      "set": {
+        "task": "Limita il traffico in uscita di eth0 a 1 Mbit/s con tc tbf, impostando burst da 32 kbit e latenza 400 ms."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "net_qos_linux_4",
+      "english": "tc",
+      "set": {
+        "task": "Visualizza con tc le qdisc attive sull'interfaccia eth0 per ispezionare le code di traffico configurate."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "net_qos_linux_4",
+      "english": "iptables Mark",
+      "set": {
+        "task": "Marca con iptables a 1 i pacchetti SSH in uscita per poi instradarli o limitarli tramite tc."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "net_qos_linux_4",
+      "english": "Class",
+      "set": {
+        "task": "Elenca con tc le classi di traffico configurate sull'interfaccia eth0 sotto le qdisc gerarchiche come HTB."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "net_qos_linux_4",
+      "english": "Filter",
+      "set": {
+        "task": "Mostra con tc i filtri di classificazione applicati a eth0 che assegnano i flussi alle relative classi."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_tools_1",
+      "english": "Playbook",
+      "set": {
+        "task": "Scrivi un playbook Ansible che usa il modulo cisco.ios.ios_interface per abilitare la GigabitEthernet1."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_apis_2",
+      "english": "REST API",
+      "set": {
+        "task": "Interroga con curl la REST API del dispositivo facendo GET su /api/v1/interfaces per leggere lo stato delle porte."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_python_3",
+      "english": "Netmiko",
+      "set": {
+        "task": "Importa ConnectHandler dalla libreria Netmiko per aprire una sessione SSH programmatica verso dispositivi di rete multi-vendor."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_snmp_2",
+      "english": "SNMP Polling",
+      "set": {
+        "task": "Recupera con snmpget il valore dell'OID sysUpTime.0 da 192.168.1.1 via SNMPv2c con community public."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_snmp_2",
+      "english": "SNMP Walk",
+      "set": {
+        "task": "Esegui un walk SNMP partendo dalla OID 1.3.6.1.2.1 per enumerare l'intero ramo MIB-2 del dispositivo."
+      }
+    }
+  ]
+}

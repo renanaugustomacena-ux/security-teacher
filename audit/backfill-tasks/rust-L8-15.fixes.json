@@ -1,0 +1,1900 @@
+{
+  "fixes": [
+    {
+      "level": "8",
+      "lesson": "Vec / Vector",
+      "english": "Vec",
+      "set": {
+        "task": "Dichiara un Vec<i32> vuoto usando Vec::new() per accumulare i risultati di una scansione."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "Vec / Vector",
+      "english": "Vec Macro",
+      "set": {
+        "task": "Inizializza un Vec con i valori 1, 2, 3 usando la macro vec! invece di tre push successivi."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "Vec / Vector",
+      "english": "Push",
+      "set": {
+        "task": "Aggiungi il valore 42 in coda al Vec mutabile v chiamando il metodo push."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "Vec / Vector",
+      "english": "Pop",
+      "set": {
+        "task": "Rimuovi l'ultimo elemento dal Vec v salvandolo in last come Option<T>."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "Vec / Vector",
+      "english": "Index",
+      "set": {
+        "task": "Accedi al primo elemento del Vec v tramite indicizzazione diretta [0], accettando il panic se vuoto."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "Vec / Vector",
+      "english": "Get",
+      "set": {
+        "task": "Recupera l'elemento all'indice 0 in modo sicuro con v.get(0), ottenendo un Option<&T>."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "Vec / Vector",
+      "english": "Length",
+      "set": {
+        "task": "Salva in n il numero di elementi attualmente contenuti nel Vec v invocando len()."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "Vec / Vector",
+      "english": "Capacity",
+      "set": {
+        "task": "Leggi quanti slot ha gia allocato il Vec v sull'heap chiamando capacity()."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "Vec / Vector",
+      "english": "With Capacity",
+      "set": {
+        "task": "Pre-alloca un Vec da 100 slot con Vec::with_capacity(100) per evitare riallocazioni durante l'inserimento."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "Vec / Vector",
+      "english": "Iterate",
+      "set": {
+        "task": "Percorri ogni elemento del Vec v in sola lettura con un ciclo for su v.iter()."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "HashMap & HashSet / HashMap e HashSet",
+      "english": "HashMap",
+      "set": {
+        "task": "Importa HashMap da std::collections per costruire un dizionario chiave-valore in memoria."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "HashMap & HashSet / HashMap e HashSet",
+      "english": "Insert",
+      "set": {
+        "task": "Inserisci nella HashMap map la coppia chiave \"key\" e valore 42 tramite il metodo insert."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "HashMap & HashSet / HashMap e HashSet",
+      "english": "Get From Map",
+      "set": {
+        "task": "Recupera dalla HashMap il valore associato a \"key\" usando map.get e gestendo il risultato Option."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "HashMap & HashSet / HashMap e HashSet",
+      "english": "Remove",
+      "set": {
+        "task": "Elimina dalla HashMap la voce con chiave \"key\" invocando il metodo remove."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "HashMap & HashSet / HashMap e HashSet",
+      "english": "Contains Key",
+      "set": {
+        "task": "Verifica se la HashMap map possiede gia la chiave \"k\" prima di sovrascrivere la voce."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "HashMap & HashSet / HashMap e HashSet",
+      "english": "Entry API",
+      "set": {
+        "task": "Usa l'API entry sulla chiave k per inserire 0 se mancante, evitando una doppia lookup nella HashMap."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "HashMap & HashSet / HashMap e HashSet",
+      "english": "HashSet",
+      "set": {
+        "task": "Importa HashSet da std::collections per memorizzare un insieme di valori unici senza duplicati."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "HashMap & HashSet / HashMap e HashSet",
+      "english": "BTreeMap",
+      "set": {
+        "task": "Carica BTreeMap da std::collections quando ti serve una mappa con chiavi ordinate su B-tree."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "HashMap & HashSet / HashMap e HashSet",
+      "english": "VecDeque",
+      "set": {
+        "task": "Importa VecDeque da std::collections per implementare una coda con push e pop a entrambi gli estremi."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "HashMap & HashSet / HashMap e HashSet",
+      "english": "BinaryHeap",
+      "set": {
+        "task": "Importa BinaryHeap da std::collections per gestire una coda di priorita max-heap."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "Iterators / Iteratori",
+      "english": "Iterator Trait",
+      "set": {
+        "task": "Definisci il trait Iterator con tipo associato Item e metodo next per modellare una sequenza pigra."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "Iterators / Iteratori",
+      "english": "Iter",
+      "set": {
+        "task": "Costruisci un iteratore di riferimenti immutabili al Vec v invocando il metodo iter."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "Iterators / Iteratori",
+      "english": "Iter Mut",
+      "set": {
+        "task": "Crea un iteratore di riferimenti mutabili sul Vec v tramite iter_mut per modificare ogni elemento sul posto."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "Iterators / Iteratori",
+      "english": "Into Iter",
+      "set": {
+        "task": "Consuma il Vec v con into_iter ottenendo un iteratore che restituisce i valori per ownership."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "Iterators / Iteratori",
+      "english": "Map Iter",
+      "set": {
+        "task": "Applica map sull'iteratore di v per raddoppiare ogni elemento tramite la closure |x| x * 2."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "Iterators / Iteratori",
+      "english": "Filter",
+      "set": {
+        "task": "Filtra l'iteratore di v mantenendo solo gli elementi maggiori di zero con il predicato |&&x| x > 0."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "Iterators / Iteratori",
+      "english": "Collect",
+      "set": {
+        "task": "Materializza l'iteratore iter in un Vec<_> tramite collect, annotando il tipo della collezione di destinazione."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "Iterators / Iteratori",
+      "english": "Sum",
+      "set": {
+        "task": "Calcola la somma degli i32 nel Vec v consumando l'iteratore con il metodo terminale sum."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "Iterators / Iteratori",
+      "english": "Count",
+      "set": {
+        "task": "Conta quanti elementi attraversa l'iteratore iter usando il consumatore count."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "String Operations / Operazioni sulle Stringhe",
+      "english": "String Push Char",
+      "set": {
+        "task": "Aggiungi il carattere '!' in fondo alla String s mutabile usando il metodo push."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "String Operations / Operazioni sulle Stringhe",
+      "english": "String Split",
+      "set": {
+        "task": "Suddividi la stringa s sui caratteri virgola ottenendo un iteratore di slice tramite split(',')."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "String Operations / Operazioni sulle Stringhe",
+      "english": "String Trim",
+      "set": {
+        "task": "Rimuovi gli spazi iniziali e finali dalla stringa s salvando il risultato in t tramite trim."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "String Operations / Operazioni sulle Stringhe",
+      "english": "String Replace",
+      "set": {
+        "task": "Sostituisci tutte le occorrenze di \"foo\" con \"bar\" nella stringa s usando il metodo replace."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "String Operations / Operazioni sulle Stringhe",
+      "english": "To Lowercase",
+      "set": {
+        "task": "Trasforma tutti i caratteri della stringa s in minuscolo chiamando to_lowercase."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "String Operations / Operazioni sulle Stringhe",
+      "english": "To Uppercase",
+      "set": {
+        "task": "Converti tutti i caratteri della stringa s in maiuscolo invocando to_uppercase."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "String Operations / Operazioni sulle Stringhe",
+      "english": "String Contains",
+      "set": {
+        "task": "Verifica se la stringa s include la sottostringa \"hello\" tramite il metodo contains."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "String Operations / Operazioni sulle Stringhe",
+      "english": "String Starts With",
+      "set": {
+        "task": "Controlla se la stringa s comincia con il prefisso \"http\" usando il metodo starts_with."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "String Operations / Operazioni sulle Stringhe",
+      "english": "Parse",
+      "set": {
+        "task": "Converti la stringa \"42\" in un i32 chiamando parse e propagando l'eventuale errore con l'operatore ?."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "String Operations / Operazioni sulle Stringhe",
+      "english": "String Format",
+      "set": {
+        "task": "Componi una String che concatena a e b separati da trattino tramite la macro format!(\"{}-{}\", a, b)."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "Trait Basics / Basi dei Trait",
+      "english": "Trait",
+      "set": {
+        "task": "Definisci il trait Greet con il metodo hello che riceve &self per descrivere il comportamento di saluto."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "Trait Basics / Basi dei Trait",
+      "english": "Trait Implementation",
+      "set": {
+        "task": "Implementa il trait Greet per la struct User fornendo il corpo del metodo hello nel blocco impl."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "Trait Basics / Basi dei Trait",
+      "english": "Trait Method",
+      "set": {
+        "task": "Dichiara nel trait un metodo area che riceve &self e restituisce f64, senza corpo per ora."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "Trait Basics / Basi dei Trait",
+      "english": "Default Implementation",
+      "set": {
+        "task": "Fornisci nel trait un'implementazione di default per name che restituisca lo slice \"default\"."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "Trait Basics / Basi dei Trait",
+      "english": "Trait Bound",
+      "set": {
+        "task": "Scrivi la funzione generica print che accetta un T vincolato dal trait bound Display."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "Trait Basics / Basi dei Trait",
+      "english": "Multiple Bounds",
+      "set": {
+        "task": "Combina i trait bound Clone e Debug sul parametro T della funzione f usando l'operatore +."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "Trait Basics / Basi dei Trait",
+      "english": "Where Clause",
+      "set": {
+        "task": "Sposta i trait bound Clone e Debug del parametro T della funzione f in una clausola where dedicata."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "Trait Basics / Basi dei Trait",
+      "english": "Impl Trait",
+      "set": {
+        "task": "Restituisci da make_iter un tipo opaco con sintassi impl Iterator<Item=i32> senza nominare il concreto."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "Trait Basics / Basi dei Trait",
+      "english": "Trait Function",
+      "set": {
+        "task": "Aggiungi al trait una funzione associata create senza &self che restituisce Self come costruttore."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "Trait Basics / Basi dei Trait",
+      "english": "Associated Constant",
+      "set": {
+        "task": "Dichiara nel trait una costante associata MAX di tipo u32 che ogni implementazione dovra definire."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "Common Traits / Trait Comuni",
+      "english": "Display",
+      "set": {
+        "task": "Implementa il trait Display per la struct X definendo il metodo fmt per la formattazione user-facing."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "Common Traits / Trait Comuni",
+      "english": "Debug",
+      "set": {
+        "task": "Stampa il valore x in formato di debug usando la macro println! con il segnaposto {:?}."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "Common Traits / Trait Comuni",
+      "english": "Explicit Clone Trait",
+      "set": {
+        "task": "Duplica esplicitamente il valore x in y invocando clone, copia profonda fornita dal trait Clone."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "Common Traits / Trait Comuni",
+      "english": "Marker Copy Trait",
+      "set": {
+        "task": "Applica derive(Copy, Clone) sulla struct per abilitare la copia bit-a-bit implicita ad ogni move."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "Common Traits / Trait Comuni",
+      "english": "Std Iterator Trait",
+      "set": {
+        "task": "Implementa il metodo next con firma fn next(&mut self) -> Option<Self::Item> per il trait Iterator."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "Common Traits / Trait Comuni",
+      "english": "IntoIterator",
+      "set": {
+        "task": "Sfrutta IntoIterator iterando con un for su collection: il compiler chiama into_iter implicitamente."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "Common Traits / Trait Comuni",
+      "english": "PartialOrd",
+      "set": {
+        "task": "Aggiungi derive(PartialOrd) sulla struct per ottenere automaticamente gli operatori <, >, <=, >=."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "Common Traits / Trait Comuni",
+      "english": "AsRef",
+      "set": {
+        "task": "Accetta in read un argomento generico P vincolato da AsRef<Path> per supportare String, &str e PathBuf."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "Common Traits / Trait Comuni",
+      "english": "From",
+      "set": {
+        "task": "Implementa From<&str> per String per definire una conversione infallibile dal tipo sorgente."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "Common Traits / Trait Comuni",
+      "english": "Into",
+      "set": {
+        "task": "Converti lo slice \"hi\" in una String dichiarando il tipo destinazione e chiamando into."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "Trait Objects / Oggetti Trait",
+      "english": "Boxed Trait Object",
+      "set": {
+        "task": "Memorizza in s un trait object Box<dyn Shape> per gestire dinamicamente diverse implementazioni dello stesso trait."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "Trait Objects / Oggetti Trait",
+      "english": "Dyn Keyword",
+      "set": {
+        "task": "Annota il parametro s come &dyn Shape per indicare un trait object con dispatch dinamico."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "Trait Objects / Oggetti Trait",
+      "english": "Boxed Trait",
+      "set": {
+        "task": "Alloca un Circle sull'heap dentro un Box<dyn Shape> per usarlo come trait object polimorfico."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "Trait Objects / Oggetti Trait",
+      "english": "Trait Reference",
+      "set": {
+        "task": "Definisci la funzione print che accetta &dyn Display, passando il trait object per riferimento senza allocazione."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "Trait Objects / Oggetti Trait",
+      "english": "Trait Vec",
+      "set": {
+        "task": "Dichiara un Vec<Box<dyn Shape>> vuoto per raccogliere implementazioni eterogenee del trait Shape."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "Trait Composition / Composizione di Trait",
+      "english": "Supertrait",
+      "set": {
+        "task": "Definisci Animal come supertrait di Display, imponendo che ogni implementatore esponga anche Display."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "Trait Composition / Composizione di Trait",
+      "english": "Blanket Implementation",
+      "set": {
+        "task": "Scrivi un'impl blanket di ToString per ogni T che implementa Display."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "Trait Composition / Composizione di Trait",
+      "english": "Marker Trait",
+      "set": {
+        "task": "Definisci il marker trait Send senza metodi per categorizzare i tipi trasferibili tra thread."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "Trait Composition / Composizione di Trait",
+      "english": "Negative Impl",
+      "set": {
+        "task": "Dichiara un'implementazione negativa impl !Send per X per escludere esplicitamente la trasferibilita tra thread."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "Trait Composition / Composizione di Trait",
+      "english": "Trait Aliasing",
+      "set": {
+        "task": "Definisci l'alias di trait MyBounds = Display + Clone per riutilizzare un set di trait bound ricorrenti."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "Generic Functions / Funzioni Generiche",
+      "english": "Generic Function",
+      "set": {
+        "task": "Scrivi la funzione generica id che accetta e restituisce un valore di tipo T arbitrario."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "Generic Functions / Funzioni Generiche",
+      "english": "Type Parameter",
+      "set": {
+        "task": "Introduci il parametro di tipo T nella firma della funzione f per renderla generica sul tipo argomento."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "Generic Functions / Funzioni Generiche",
+      "english": "Type Argument",
+      "set": {
+        "task": "Indica esplicitamente che parse deve produrre i32 invocandolo come parse::<i32>(\"42\")."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "Generic Functions / Funzioni Generiche",
+      "english": "Turbofish",
+      "set": {
+        "task": "Specifica il tipo di destinazione di collect con la sintassi turbofish ::<Vec<_>>."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "Generic Functions / Funzioni Generiche",
+      "english": "Generic Type",
+      "set": {
+        "task": "Annota una variabile con il tipo generico Vec<i32>, applicando il parametro i32 al costruttore Vec."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "Generic Functions / Funzioni Generiche",
+      "english": "Type Constraint",
+      "set": {
+        "task": "Imponi il vincolo Display sul parametro T della funzione f per poterlo stampare con println!."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "Generic Functions / Funzioni Generiche",
+      "english": "Multiple Type Parameters",
+      "set": {
+        "task": "Definisci la funzione pair con due parametri di tipo distinti A e B per accettare argomenti eterogenei."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "Generic Functions / Funzioni Generiche",
+      "english": "Default Type Parameter",
+      "set": {
+        "task": "Assegna u32 come tipo predefinito al parametro generico T della struct Counter."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "Generic Functions / Funzioni Generiche",
+      "english": "Const Generic",
+      "set": {
+        "task": "Parametrizza la funzione arr su una const generic N: usize per restituire un array di taglia fissa."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "Generic Functions / Funzioni Generiche",
+      "english": "Generic Constraint Inference",
+      "set": {
+        "task": "Lascia che il compiler inferisca Vec<i32> da vec![1, 2, 3] senza annotare i parametri generici."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "Generic Structs / Struct Generiche",
+      "english": "Generic Struct",
+      "set": {
+        "task": "Definisci la struct generica Point<T> con i campi x e y dello stesso tipo T."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "Generic Structs / Struct Generiche",
+      "english": "Generic Enum",
+      "set": {
+        "task": "Modella la propria Option<T> come enum generico con varianti Some(T) e None."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "Generic Structs / Struct Generiche",
+      "english": "Generic Impl",
+      "set": {
+        "task": "Implementa per Point<T> un metodo x che restituisce un riferimento al campo x del tipo generico."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "Generic Structs / Struct Generiche",
+      "english": "Conditional Impl",
+      "set": {
+        "task": "Esponi il metodo show solo quando T: Display tramite un'impl condizionale su Point<T>."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "Generic Structs / Struct Generiche",
+      "english": "Generic Method",
+      "set": {
+        "task": "Aggiungi al tipo un metodo convert con parametro generico U vincolato dalla clausola where T: Into<U>."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "Generic Structs / Struct Generiche",
+      "english": "Generic Trait",
+      "set": {
+        "task": "Definisci il trait generico Container<T> con il metodo add che accetta un nuovo elemento di tipo T."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "Generic Structs / Struct Generiche",
+      "english": "Phantom Type",
+      "set": {
+        "task": "Aggiungi un campo PhantomData<T> alla struct per associare il parametro T senza occupare spazio in memoria."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "Generic Structs / Struct Generiche",
+      "english": "Generic Type Alias",
+      "set": {
+        "task": "Crea l'alias generico Result<T> = std::result::Result<T, MyError> per fissare il tipo di errore di crate."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "Generic Structs / Struct Generiche",
+      "english": "Generic Container",
+      "set": {
+        "task": "Costruisci un Vec<String> applicando il parametro generico String al contenitore Vec della stdlib."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "Monomorphization / Monomorfizzazione",
+      "english": "Inlining",
+      "set": {
+        "task": "Annota la funzione con l'attributo #[inline] per suggerire al compiler di espanderla inline al call site."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "Advanced Generics / Generici Avanzati",
+      "english": "Where Clause (generic context)",
+      "set": {
+        "task": "Sposta i vincoli T: Display e U: Debug della funzione f in una clausola where per migliorare la leggibilita."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "Advanced Generics / Generici Avanzati",
+      "english": "Higher-Ranked Trait Bound",
+      "set": {
+        "task": "Vincola la closure F con un HRTB for<'a> Fn(&'a str) per accettare riferimenti di qualsiasi lifetime."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "Advanced Generics / Generici Avanzati",
+      "english": "Closure Bound",
+      "set": {
+        "task": "Definisci apply con il parametro F vincolato da Fn(i32) -> i32 per accettare una closure callable piu volte."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "Advanced Generics / Generici Avanzati",
+      "english": "Type State Pattern",
+      "set": {
+        "task": "Modella Conn<S> con PhantomData<S> per codificare lo stato della connessione a livello di tipo."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "Advanced Generics / Generici Avanzati",
+      "english": "Generic Constants",
+      "set": {
+        "task": "Dichiara la const generic N: usize sulla funzione arr per fissare la dimensione dell'array a compile time."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "Advanced Generics / Generici Avanzati",
+      "english": "Sized Trait",
+      "set": {
+        "task": "Rilassa il vincolo implicito Sized aggiungendo T: ?Sized per accettare anche tipi DST come [T] o str."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "Advanced Generics / Generici Avanzati",
+      "english": "Trait Inheritance (generic bounds)",
+      "set": {
+        "task": "Stabilisci che Animal eredita da Display rendendo quest'ultimo un supertrait obbligatorio."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "Advanced Generics / Generici Avanzati",
+      "english": "Generic Lifetime",
+      "set": {
+        "task": "Parametrizza longest sulla lifetime generica 'a affinche input e output condividano la stessa durata."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "Lifetime Basics / Basi delle Lifetime",
+      "english": "Lifetime Annotation",
+      "set": {
+        "task": "Annota la funzione f con la lifetime 'a su un riferimento &'a str per esplicitarne la durata."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "Lifetime Basics / Basi delle Lifetime",
+      "english": "Lifetime Parameter",
+      "set": {
+        "task": "Introduci il parametro di lifetime 'a nella firma di f sul riferimento &'a i32."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "Lifetime Basics / Basi delle Lifetime",
+      "english": "Static Lifetime Bound",
+      "set": {
+        "task": "Lega la slice \"hello\" alla lifetime 'static dichiarando la variabile s come &'static str."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "Lifetime Basics / Basi delle Lifetime",
+      "english": "Lifetime Elision",
+      "set": {
+        "task": "Sfrutta la lifetime elision lasciando f(x: &str) -> &str senza annotazioni esplicite di lifetime."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "Lifetime Basics / Basi delle Lifetime",
+      "english": "Lifetime Bound",
+      "set": {
+        "task": "Imponi il vincolo T: 'a sul tipo generico T della funzione f per garantire che T viva almeno 'a."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "Lifetime Basics / Basi delle Lifetime",
+      "english": "Outlives",
+      "set": {
+        "task": "Dichiara nella firma di f il vincolo 'b: 'a affinche la lifetime 'b sopravviva ad 'a."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "Lifetime Basics / Basi delle Lifetime",
+      "english": "Anonymous Lifetime",
+      "set": {
+        "task": "Usa la lifetime anonima '_ nella firma di f(x: &'_ str) per evitare di nominarla esplicitamente."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "Lifetime Annotations / Annotazioni di Lifetime",
+      "english": "Function Lifetime",
+      "set": {
+        "task": "Annota longest in modo che entrambi gli input &'a str e l'output condividano la stessa lifetime 'a."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "Lifetime Annotations / Annotazioni di Lifetime",
+      "english": "Struct Lifetime",
+      "set": {
+        "task": "Definisci la struct Wrapper<'a> con campo data: &'a str per memorizzare un riferimento preso in prestito."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "Lifetime Annotations / Annotazioni di Lifetime",
+      "english": "Impl Lifetime",
+      "set": {
+        "task": "Apri il blocco impl<'a> Wrapper<'a> dichiarando la lifetime 'a prima del nome del tipo."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "Lifetime Annotations / Annotazioni di Lifetime",
+      "english": "Method Lifetime",
+      "set": {
+        "task": "Aggiungi al metodo extend la lifetime 'b sull'argomento other: &'b Self separata da quella di &self."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "Lifetime Annotations / Annotazioni di Lifetime",
+      "english": "Multiple Lifetimes",
+      "set": {
+        "task": "Dichiara nella firma di f due lifetime indipendenti 'a e 'b sui rispettivi argomenti &str."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "Borrow Checker / Controllo dei Borrow",
+      "english": "Two Phase Borrow",
+      "set": {
+        "task": "Sfrutta il two-phase borrow chiamando v.push(v.len()) in cui la lettura precede il borrow mutabile."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "Borrow Checker / Controllo dei Borrow",
+      "english": "Lifetime Reborrow",
+      "set": {
+        "task": "Esegui un reborrow di r1 in r2 con &mut *r1, restringendo la lifetime senza consumare l'originale."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "Advanced Lifetimes / Lifetime Avanzate",
+      "english": "Generic Lifetime (advanced)",
+      "set": {
+        "task": "Parametrizza longest sulla stessa lifetime 'a per entrambi gli argomenti &'a str affinche output e input coincidano."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "Advanced Lifetimes / Lifetime Avanzate",
+      "english": "HRTB",
+      "set": {
+        "task": "Vincola la closure F con l'HRTB for<'a> Fn(&'a str) per accettare riferimenti con lifetime qualsiasi."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "Advanced Lifetimes / Lifetime Avanzate",
+      "english": "Pin",
+      "set": {
+        "task": "Avvolgi il riferimento mutabile a Future in un Pin<&mut Future> per garantire che non venga spostato."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "Advanced Lifetimes / Lifetime Avanzate",
+      "english": "Lifetime Bound on Generic",
+      "set": {
+        "task": "Aggiungi il vincolo T: 'a alla funzione f per imporre che il tipo generico viva almeno quanto 'a."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "Advanced Lifetimes / Lifetime Avanzate",
+      "english": "Static Bound",
+      "set": {
+        "task": "Limita il parametro F della funzione spawn al vincolo 'static, escludendo cattura di riferimenti temporanei."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "Advanced Lifetimes / Lifetime Avanzate",
+      "english": "Lifetime in Traits",
+      "set": {
+        "task": "Definisci il trait Iter<'a> con tipo associato Item vincolato dalla lifetime 'a."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "Advanced Lifetimes / Lifetime Avanzate",
+      "english": "Move Closure",
+      "set": {
+        "task": "Passa a thread::spawn una closure move per trasferire l'ownership delle variabili catturate al nuovo thread."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Module System / Sistema dei Moduli",
+      "english": "Module",
+      "set": {
+        "task": "Definisci inline il modulo network con la sintassi mod network { ... } per raggruppare elementi correlati."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Module System / Sistema dei Moduli",
+      "english": "Mod Keyword",
+      "set": {
+        "task": "Dichiara con mod utils; che il modulo utils risiede in utils.rs o utils/mod.rs accanto al file corrente."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Module System / Sistema dei Moduli",
+      "english": "Use Statement",
+      "set": {
+        "task": "Importa HashMap nel namespace corrente con use std::collections::HashMap per evitare di ripetere il percorso."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Module System / Sistema dei Moduli",
+      "english": "Path",
+      "set": {
+        "task": "Riferisci la funzione helper col percorso assoluto crate::utils::helper a partire dalla radice del crate."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Module System / Sistema dei Moduli",
+      "english": "Pub Keyword",
+      "set": {
+        "task": "Anteponi pub alla funzione greet per esporla all'esterno del modulo che la definisce."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Module System / Sistema dei Moduli",
+      "english": "Crate Root",
+      "set": {
+        "task": "Posiziona la radice del crate libreria nel file src/lib.rs, punto di partenza dell'albero dei moduli."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Module System / Sistema dei Moduli",
+      "english": "Crate Keyword",
+      "set": {
+        "task": "Usa la parola chiave crate per riferire utils dalla radice con use crate::utils."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Module System / Sistema dei Moduli",
+      "english": "Super Path",
+      "set": {
+        "task": "Risali al modulo padre per importare Helper tramite use super::Helper invece di un percorso assoluto."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Module System / Sistema dei Moduli",
+      "english": "Self Path",
+      "set": {
+        "task": "Riferisci il sottomodulo utils nello scope corrente con use self::utils per esplicitarne la posizione."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Module System / Sistema dei Moduli",
+      "english": "Module File",
+      "set": {
+        "task": "Crea il file src/network.rs per ospitare il codice del modulo network dichiarato altrove con mod network;."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Cargo Workspace / Workspace Cargo",
+      "english": "Workspace",
+      "set": {
+        "task": "Configura la sezione [workspace] del Cargo.toml elencando members = [\"app\", \"lib\"] per gestire piu crate insieme."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Cargo Workspace / Workspace Cargo",
+      "english": "Path Dependency",
+      "set": {
+        "task": "Aggiungi una dipendenza locale helpers indicando path = \"../helpers\" invece di pubblicarla su crates.io."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Cargo Workspace / Workspace Cargo",
+      "english": "Dependency",
+      "set": {
+        "task": "Inserisci serde = \"1.0\" nella sezione [dependencies] del Cargo.toml per usarlo come dipendenza di runtime."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Cargo Workspace / Workspace Cargo",
+      "english": "Dev Dependency",
+      "set": {
+        "task": "Dichiara proptest = \"1\" come dev-dependency cosi viene compilato solo durante test e benchmark."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Cargo Workspace / Workspace Cargo",
+      "english": "Build Dependency",
+      "set": {
+        "task": "Apri la sezione [build-dependencies] del Cargo.toml per dichiarare i crate necessari al build.rs."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Cargo Workspace / Workspace Cargo",
+      "english": "Feature Flag",
+      "set": {
+        "task": "Definisci nel Cargo.toml la feature flag async che abilita la dipendenza opzionale tokio."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Cargo Workspace / Workspace Cargo",
+      "english": "Version Specifier",
+      "set": {
+        "task": "Specifica serde = \"^1.0\" come vincolo caret per accettare aggiornamenti compatibili in ambito SemVer."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Module Privacy / Privacy dei Moduli",
+      "english": "Public",
+      "set": {
+        "task": "Esponi la funzione api come parte dell'API pubblica del modulo aggiungendo il modificatore pub."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Module Privacy / Privacy dei Moduli",
+      "english": "Pub Crate",
+      "set": {
+        "task": "Limita la visibilita di internal al solo crate corrente usando il qualificatore pub(crate)."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Module Privacy / Privacy dei Moduli",
+      "english": "Pub Super",
+      "set": {
+        "task": "Restringi la funzione shared al modulo padre tramite il modificatore pub(super)."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Module Privacy / Privacy dei Moduli",
+      "english": "Pub Use",
+      "set": {
+        "task": "Ri-esporta Helper dal modulo utils con pub use crate::utils::Helper per renderlo accessibile dall'esterno."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Module Privacy / Privacy dei Moduli",
+      "english": "Private Module",
+      "set": {
+        "task": "Dichiara mod internal; senza pub per mantenere il modulo privato all'interno del modulo padre."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Module Privacy / Privacy dei Moduli",
+      "english": "Glob Import",
+      "set": {
+        "task": "Importa tutti gli elementi di std::prelude con use std::prelude::*; tramite un glob import."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Module Privacy / Privacy dei Moduli",
+      "english": "Re-Export",
+      "set": {
+        "task": "Ri-esporta il tipo Connection col percorso pubblico pub use crate::network::Connection."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Cargo Tooling / Strumenti Cargo",
+      "english": "Cargo Test",
+      "set": {
+        "task": "Lancia l'intera suite di test del crate eseguendo cargo test dalla radice del progetto."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Cargo Tooling / Strumenti Cargo",
+      "english": "Cargo Doc",
+      "set": {
+        "task": "Genera la documentazione HTML del crate e aprila nel browser con cargo doc --open."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Cargo Tooling / Strumenti Cargo",
+      "english": "Cargo Update",
+      "set": {
+        "task": "Aggiorna le versioni delle dipendenze nel Cargo.lock entro i vincoli SemVer con cargo update."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Cargo Tooling / Strumenti Cargo",
+      "english": "Cargo Add",
+      "set": {
+        "task": "Inserisci serde fra le dipendenze del Cargo.toml senza modificarlo a mano con cargo add serde."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Cargo Tooling / Strumenti Cargo",
+      "english": "Cargo Remove",
+      "set": {
+        "task": "Rimuovi serde dalle dipendenze del Cargo.toml lanciando cargo remove serde."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Cargo Tooling / Strumenti Cargo",
+      "english": "Cargo Publish",
+      "set": {
+        "task": "Pubblica il crate corrente su crates.io eseguendo cargo publish dopo aver fatto login con il token."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Cargo Tooling / Strumenti Cargo",
+      "english": "Cargo Bench",
+      "set": {
+        "task": "Esegui i benchmark nightly del crate con cargo bench per misurare le prestazioni delle funzioni critiche."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Cargo Tooling / Strumenti Cargo",
+      "english": "Cargo Tree",
+      "set": {
+        "task": "Visualizza l'albero gerarchico delle dipendenze del progetto eseguendo cargo tree."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Cargo Tooling / Strumenti Cargo",
+      "english": "Cargo Audit",
+      "set": {
+        "task": "Scansiona le dipendenze alla ricerca di vulnerabilita note con cargo audit."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Cargo Tooling / Strumenti Cargo",
+      "english": "Cargo Expand",
+      "set": {
+        "task": "Espandi tutte le macro del crate per ispezionarne il codice generato lanciando cargo expand."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Closure Basics / Basi delle Closure",
+      "english": "Closure",
+      "set": {
+        "task": "Definisci la closure add che cattura due argomenti x e y e ne restituisce la somma."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Closure Basics / Basi delle Closure",
+      "english": "Pipe Syntax",
+      "set": {
+        "task": "Scrivi la closure |x| x * 2 sfruttando la sintassi a pipe per delimitare il parametro."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Closure Basics / Basi delle Closure",
+      "english": "Capture",
+      "set": {
+        "task": "Crea la closure add_n che cattura n dall'ambiente esterno e lo somma all'argomento x."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Closure Basics / Basi delle Closure",
+      "english": "Iterator Move Closure",
+      "set": {
+        "task": "Passa a thread::spawn una closure move che acquisisce ownership di data prima di invocare work."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Closure Basics / Basi delle Closure",
+      "english": "Fn Trait",
+      "set": {
+        "task": "Dichiara apply con il trait bound F: Fn(i32) -> i32 per accettare closure callable piu volte senza mutare lo stato."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Closure Basics / Basi delle Closure",
+      "english": "FnMut Trait",
+      "set": {
+        "task": "Vincola la closure f della funzione run al trait FnMut per consentirle di mutare le variabili catturate."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Closure Basics / Basi delle Closure",
+      "english": "FnOnce Trait",
+      "set": {
+        "task": "Limita la closure f al trait FnOnce per permettere il consumo definitivo delle variabili catturate."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Closure Basics / Basi delle Closure",
+      "english": "Type Inference Closure",
+      "set": {
+        "task": "Sfrutta l'inferenza di tipo lasciando la closure |x| x + 1 senza annotazioni esplicite di parametro o ritorno."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Iterator Adaptors / Adattatori di Iterator",
+      "english": "Iterator Adaptor",
+      "set": {
+        "task": "Componi gli adattatori map e filter sull'iteratore iter per costruire una pipeline pigra."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Iterator Adaptors / Adattatori di Iterator",
+      "english": "Map Adaptor",
+      "set": {
+        "task": "Trasforma ogni elemento del Vec v raddoppiandolo tramite l'adattatore map con closure |x| x * 2."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Iterator Adaptors / Adattatori di Iterator",
+      "english": "Filter Adaptor",
+      "set": {
+        "task": "Mantieni dal Vec v solo i valori positivi applicando l'adattatore filter con predicato |&&x| x > 0."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Iterator Adaptors / Adattatori di Iterator",
+      "english": "Iterator Take",
+      "set": {
+        "task": "Limita l'iteratore iter ai primi 5 elementi tramite l'adattatore take(5)."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Iterator Adaptors / Adattatori di Iterator",
+      "english": "Skip",
+      "set": {
+        "task": "Scarta i primi 3 elementi dell'iteratore iter chiamando l'adattatore skip(3)."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Iterator Adaptors / Adattatori di Iterator",
+      "english": "Zip",
+      "set": {
+        "task": "Combina elemento per elemento gli iteratori di a e b in tuple usando l'adattatore zip."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Iterator Adaptors / Adattatori di Iterator",
+      "english": "Chain",
+      "set": {
+        "task": "Concatena in sequenza gli iteratori di a e b producendo una singola sequenza tramite chain."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Iterator Adaptors / Adattatori di Iterator",
+      "english": "Enumerate",
+      "set": {
+        "task": "Itera v con enumerate ottenendo la tupla (i, x) che accoppia ogni elemento al suo indice progressivo."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Iterator Adaptors / Adattatori di Iterator",
+      "english": "Flat Map",
+      "set": {
+        "task": "Applica flat_map all'iteratore per generare un Vec con ogni x duplicato in vec![x, x] e appiattirne i livelli."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Iterator Adaptors / Adattatori di Iterator",
+      "english": "Peekable",
+      "set": {
+        "task": "Rendi peekable l'iteratore di v cosi da poter ispezionare il prossimo elemento senza consumarlo."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Iterator Consumers / Consumatori di Iterator",
+      "english": "Collect (terminal)",
+      "set": {
+        "task": "Termina la pipeline di iter materializzandone i risultati in un Vec<_> con il consumatore collect."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Iterator Consumers / Consumatori di Iterator",
+      "english": "Fold",
+      "set": {
+        "task": "Accumula da sinistra gli elementi di iter partendo da 0 sommandoli col consumatore fold."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Iterator Consumers / Consumatori di Iterator",
+      "english": "Reduce",
+      "set": {
+        "task": "Riduci l'iteratore iter senza valore iniziale sommando gli elementi con il consumatore reduce."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Iterator Consumers / Consumatori di Iterator",
+      "english": "Sum (terminal)",
+      "set": {
+        "task": "Calcola il totale degli i32 in v consumando l'iteratore con il metodo terminale sum."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Iterator Consumers / Consumatori di Iterator",
+      "english": "Product",
+      "set": {
+        "task": "Moltiplica fra loro tutti gli i32 del Vec v consumando l'iteratore con il metodo product."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Iterator Consumers / Consumatori di Iterator",
+      "english": "Max",
+      "set": {
+        "task": "Estrai l'elemento massimo dal Vec v invocando il consumatore max sull'iteratore."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Iterator Consumers / Consumatori di Iterator",
+      "english": "Min",
+      "set": {
+        "task": "Trova l'elemento minimo del Vec v consumando l'iteratore con il metodo min."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Iterator Consumers / Consumatori di Iterator",
+      "english": "Find",
+      "set": {
+        "task": "Cerca il primo elemento del Vec v maggiore di 10 utilizzando il consumatore find con predicato."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Iterator Consumers / Consumatori di Iterator",
+      "english": "Any",
+      "set": {
+        "task": "Determina se almeno un elemento di v supera 0 invocando any sull'iteratore."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Iterator Consumers / Consumatori di Iterator",
+      "english": "All",
+      "set": {
+        "task": "Verifica che ogni elemento di v sia maggiore di zero applicando il consumatore all all'iteratore."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Custom Iterators / Iteratori Personalizzati",
+      "english": "Custom Iterator",
+      "set": {
+        "task": "Implementa il trait Iterator per la struct Counter definendo il proprio Item e il metodo next."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Custom Iterators / Iteratori Personalizzati",
+      "english": "Next Method",
+      "set": {
+        "task": "Definisci il metodo next con firma fn next(&mut self) -> Option<Self::Item> per produrre il prossimo valore."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Custom Iterators / Iteratori Personalizzati",
+      "english": "Item Type",
+      "set": {
+        "task": "Imposta il tipo associato Item = u32 all'interno dell'impl Iterator per dichiarare il tipo emesso."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Custom Iterators / Iteratori Personalizzati",
+      "english": "Double Ended",
+      "set": {
+        "task": "Sfrutta il trait DoubleEndedIterator chiamando next_back per consumare elementi dalla coda della sequenza."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Custom Iterators / Iteratori Personalizzati",
+      "english": "Exact Size",
+      "set": {
+        "task": "Leggi la lunghezza esatta rimanente dell'iteratore tramite il metodo len di ExactSizeIterator."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Custom Iterators / Iteratori Personalizzati",
+      "english": "Infinite Iterator",
+      "set": {
+        "task": "Genera la sequenza infinita (0..) e fermane la valutazione ai primi 10 elementi con take(10)."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Custom Iterators / Iteratori Personalizzati",
+      "english": "Iterator Composition",
+      "set": {
+        "task": "Componi gli adattatori map, filter e il consumatore collect in un'unica pipeline pigra di iteratori."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Custom Iterators / Iteratori Personalizzati",
+      "english": "Itertools",
+      "set": {
+        "task": "Importa il trait Itertools da itertools per accedere ad adattatori avanzati come unique e chunks."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "Box / Box",
+      "english": "Box Smart Pointer",
+      "set": {
+        "task": "Alloca il valore 5 sull'heap dentro lo smart pointer Box::new salvando il puntatore in b."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "Box / Box",
+      "english": "Box New",
+      "set": {
+        "task": "Sposta value dallo stack all'heap costruendo un Box con Box::new(value)."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "Box / Box",
+      "english": "Recursive Type",
+      "set": {
+        "task": "Definisci la lista ricorsiva List come enum con Cons(i32, Box<List>) e Nil per spezzare la ricorsione di taglia."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "Box / Box",
+      "english": "Trait Object Box",
+      "set": {
+        "task": "Dichiara il trait object Box<dyn Display> per memorizzare un valore dynamic dispatch su heap."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "Box / Box",
+      "english": "Box Leak",
+      "set": {
+        "task": "Promuovi il contenuto del Box b a una slice &'static str rilasciandone la memoria con Box::leak."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "Box / Box",
+      "english": "Deref",
+      "set": {
+        "task": "Dereferenzia lo smart pointer b con l'operatore * per ottenere il valore puntato grazie al trait Deref."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "Box / Box",
+      "english": "Unboxing",
+      "set": {
+        "task": "Estrai il valore contenuto in b applicando *b, operazione di unboxing che sposta il contenuto fuori dal Box."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "Rc & Arc / Rc e Arc",
+      "english": "Rc",
+      "set": {
+        "task": "Avvolgi il valore 5 in un Rc::new per condividerne la ownership con reference counting non thread-safe."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "Rc & Arc / Rc e Arc",
+      "english": "Arc",
+      "set": {
+        "task": "Avvolgi value in un Arc::new per condividere ownership in modo atomico fra thread multipli."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "Rc & Arc / Rc e Arc",
+      "english": "Strong Count",
+      "set": {
+        "task": "Leggi il numero attuale di riferimenti forti sull'Rc rc invocando la funzione Rc::strong_count."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "Rc & Arc / Rc e Arc",
+      "english": "Weak Reference",
+      "set": {
+        "task": "Ottieni un riferimento debole all'Rc rc tramite Rc::downgrade per spezzare cicli di reference counting."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "Rc & Arc / Rc e Arc",
+      "english": "Clone Rc",
+      "set": {
+        "task": "Duplica il puntatore Rc senza copiare il contenuto chiamando Rc::clone(&rc) e incrementando lo strong count."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "RefCell & Mutex / RefCell e Mutex",
+      "english": "RefCell",
+      "set": {
+        "task": "Avvolgi il valore 5 in un RefCell::new per consentire borrow check a runtime in una struct immutabile."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "RefCell & Mutex / RefCell e Mutex",
+      "english": "Borrow Method",
+      "set": {
+        "task": "Ottieni un riferimento immutabile al contenuto della RefCell cell tramite il metodo borrow."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "RefCell & Mutex / RefCell e Mutex",
+      "english": "Borrow Mut",
+      "set": {
+        "task": "Acquisisci un riferimento mutabile al contenuto della RefCell cell invocando borrow_mut, che panica se attivo un altro borrow."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "RefCell & Mutex / RefCell e Mutex",
+      "english": "Mutex",
+      "set": {
+        "task": "Proteggi il valore 0 con un Mutex::new per consentire accesso esclusivo sincronizzato fra thread."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "RefCell & Mutex / RefCell e Mutex",
+      "english": "Lock",
+      "set": {
+        "task": "Acquisisci il blocco esclusivo del Mutex m chiamando lock e gestendo l'eventuale poisoning con unwrap."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "RefCell & Mutex / RefCell e Mutex",
+      "english": "RwLock",
+      "set": {
+        "task": "Avvolgi value in un RwLock::new per consentire molti lettori contemporanei o un singolo scrittore."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "Drop & Deref / Drop e Deref",
+      "english": "Deref Trait",
+      "set": {
+        "task": "Implementa il trait Deref per X definendo il tipo associato Target da puntare via dereferenziazione."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "Drop & Deref / Drop e Deref",
+      "english": "DerefMut",
+      "set": {
+        "task": "Implementa DerefMut per X per consentire la dereferenziazione mutabile dello smart pointer."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "Drop & Deref / Drop e Deref",
+      "english": "Drop Method",
+      "set": {
+        "task": "Definisci il metodo drop con firma fn drop(&mut self) per rilasciare risorse alla distruzione del valore."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "Drop & Deref / Drop e Deref",
+      "english": "Smart Pointer Auto Deref",
+      "set": {
+        "task": "Invoca direttamente method sullo smart pointer box: il compiler applica deref coercion attraverso il trait Deref."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "Drop & Deref / Drop e Deref",
+      "english": "Cell",
+      "set": {
+        "task": "Avvolgi il valore 5 in un Cell::new per ottenere mutabilita interna su tipi Copy senza borrow check."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "Drop & Deref / Drop e Deref",
+      "english": "Cow",
+      "set": {
+        "task": "Dichiara il tipo Cow<'a, str> per rappresentare uno slice che diventa di proprieta solo se mutato."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "Drop & Deref / Drop e Deref",
+      "english": "OnceCell",
+      "set": {
+        "task": "Costruisci una OnceCell::new vuota per memorizzare un valore inizializzato pigramente una sola volta."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "Drop & Deref / Drop e Deref",
+      "english": "LazyCell",
+      "set": {
+        "task": "Crea una LazyCell::new che esegue la closure compute solo al primo accesso al valore contenuto."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "Threads / Thread",
+      "english": "Thread",
+      "set": {
+        "task": "Importa il modulo std::thread per accedere alle API native di creazione e gestione di thread OS."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "Threads / Thread",
+      "english": "Thread Spawn",
+      "set": {
+        "task": "Avvia un nuovo thread OS che esegue la closure /* work */ chiamando thread::spawn."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "Threads / Thread",
+      "english": "Join Handle",
+      "set": {
+        "task": "Salva in h il JoinHandle restituito da thread::spawn per poter attendere il risultato 42 prodotto dal thread."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "Threads / Thread",
+      "english": "Join",
+      "set": {
+        "task": "Attendi che il thread associato all'handle h termini invocando join e gestendone il Result con unwrap."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "Threads / Thread",
+      "english": "Thread Move Closure",
+      "set": {
+        "task": "Passa a thread::spawn una closure move che trasferisce ownership di data al nuovo thread."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "Threads / Thread",
+      "english": "Thread Local",
+      "set": {
+        "task": "Definisci con la macro thread_local! la variabile X di tipo u32 inizializzata a 0 per ogni thread."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "Threads / Thread",
+      "english": "Sleep",
+      "set": {
+        "task": "Sospendi l'esecuzione del thread corrente per un secondo chiamando thread::sleep con Duration::from_secs(1)."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "Threads / Thread",
+      "english": "Park",
+      "set": {
+        "task": "Metti in pausa il thread corrente con thread::park, in attesa di un unpark esplicito da un altro thread."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "Channels / Canali",
+      "english": "Channel",
+      "set": {
+        "task": "Importa il modulo std::sync::mpsc per costruire canali di comunicazione fra thread."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "Channels / Canali",
+      "english": "MPSC",
+      "set": {
+        "task": "Crea con mpsc::channel un canale multi-producer single-consumer estraendo le estremita tx e rx."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "Channels / Canali",
+      "english": "Sender",
+      "set": {
+        "task": "Spedisci value sul canale tramite il Sender tx invocando send e gestendo l'errore con unwrap."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "Channels / Canali",
+      "english": "Receiver",
+      "set": {
+        "task": "Ricevi in modo bloccante il prossimo messaggio dal canale tramite rx.recv salvandolo in val."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "Channels / Canali",
+      "english": "Sync Channel",
+      "set": {
+        "task": "Crea un canale sincrono con buffer da 10 elementi invocando mpsc::sync_channel(10) per applicare backpressure."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "Channels / Canali",
+      "english": "Try Recv",
+      "set": {
+        "task": "Polla in modo non bloccante il Receiver rx con try_recv e gestisci tutte le varianti del Result."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "Send & Sync / Send e Sync",
+      "english": "Atomic Type",
+      "set": {
+        "task": "Importa AtomicI32 da std::sync::atomic per implementare contatori condivisi senza Mutex."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "Send & Sync / Send e Sync",
+      "english": "Memory Ordering",
+      "set": {
+        "task": "Specifica Ordering::SeqCst sull'operazione atomica per imporre l'ordering piu restrittivo fra tutti i thread."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "Send & Sync / Send e Sync",
+      "english": "Compare and Swap",
+      "set": {
+        "task": "Esegui un'operazione atomica condizionale invocando atomic.compare_exchange per aggiornare il valore solo se invariato."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "Synchronization / Sincronizzazione",
+      "english": "Std Mutex",
+      "set": {
+        "task": "Combina Arc e Mutex<T> della stdlib per condividere uno stato mutabile sincronizzato fra piu thread."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "Synchronization / Sincronizzazione",
+      "english": "Std RwLock",
+      "set": {
+        "task": "Acquisisci un accesso in sola lettura sull'RwLock chiamando read e gestendo l'eventuale poisoning con unwrap."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "Synchronization / Sincronizzazione",
+      "english": "Barrier",
+      "set": {
+        "task": "Costruisci una Barrier::new(n) per sincronizzare n thread che devono raggiungere insieme un punto di rendez-vous."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "Synchronization / Sincronizzazione",
+      "english": "Condvar",
+      "set": {
+        "task": "Istanzia una Condvar::new per permettere ai thread di attendere e segnalare il verificarsi di una condizione."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "Synchronization / Sincronizzazione",
+      "english": "Once",
+      "set": {
+        "task": "Dichiara la static INIT di tipo std::sync::Once tramite Once::new per garantire un'unica inizializzazione globale."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "Synchronization / Sincronizzazione",
+      "english": "Rayon",
+      "set": {
+        "task": "Parallelizza la pipeline su v sostituendo iter con par_iter di rayon prima di applicare map."
+      }
+    }
+  ]
+}

@@ -1,0 +1,1076 @@
+{
+  "fixes": [
+    {
+      "level": "16",
+      "lesson": "cpp_memory_5",
+      "english": "Move Constructor Impl",
+      "set": {
+        "task": "Scrivi il move constructor di una classe A che ruba il puntatore data dall'oggetto sorgente e lo resetta a nullptr."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_5",
+      "english": "Noexcept Move",
+      "set": {
+        "task": "Marca il move constructor di A come noexcept = default così std::vector lo preferisce alla copia durante le riallocazioni."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_5",
+      "english": "Move Iterator",
+      "set": {
+        "task": "Avvolgi un iteratore in std::move_iterator per trasformare un std::copy in un trasferimento basato su move."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_5",
+      "english": "Self Move",
+      "set": {
+        "task": "Inserisci la guardia if (this == &other) return *this; in operator= per difenderti da un self-move che distruggerebbe lo stato."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_6",
+      "english": "Universal Reference",
+      "set": {
+        "task": "Dichiara una template<class T> void f(T&& x); per ottenere un riferimento universale che deduce lvalue o rvalue."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_6",
+      "english": "Std Forward",
+      "set": {
+        "task": "Inoltra il parametro arg con std::forward<T>(arg) dentro un wrapper per preservare la value category originale."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_6",
+      "english": "Perfect Forwarding",
+      "set": {
+        "task": "Implementa template<class T> void f(T&& a) { g(std::forward<T>(a)); } per ottenere perfect forwarding verso g."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_6",
+      "english": "Make Unique Forwarding",
+      "set": {
+        "task": "Costruisci uno std::unique_ptr<Foo> con std::make_unique<Foo>(args...) sfruttando il forwarding perfetto degli argomenti."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_6",
+      "english": "Emplace Forwarding",
+      "set": {
+        "task": "Inserisci un elemento in un std::vector con v.emplace_back(args...) per costruirlo in loco senza copie temporanee."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_7",
+      "english": "Sink Argument",
+      "set": {
+        "task": "Definisci void store(std::string s); accettando il parametro per valore così il chiamante decide se fare move o copia."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_8",
+      "english": "Thread Local",
+      "set": {
+        "task": "Dichiara thread_local int counter; così ogni thread mantiene la propria copia senza bisogno di sincronizzazione."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_8",
+      "english": "Lifetime Extension",
+      "set": {
+        "task": "Lega il temporary restituito da makeStr() a const std::string& s per estenderne la lifetime oltre l'espressione."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_1",
+      "english": "Singleton Pattern",
+      "set": {
+        "task": "Esponi un'unica istanza A tramite static A& instance() { static A a; return a; } applicando il pattern singleton."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_1",
+      "english": "Factory",
+      "set": {
+        "task": "Definisci std::unique_ptr<Animal> make(Type t); come factory che restituisce la giusta sottoclasse concreta in base al tag."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_1",
+      "english": "Prototype",
+      "set": {
+        "task": "Aggiungi virtual std::unique_ptr<A> clone() const; alla base per permettere la duplicazione di un prototipo a runtime."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_1",
+      "english": "Static Factory",
+      "set": {
+        "task": "Sostituisci un costruttore complesso con una static A make(...); per centralizzare la logica di costruzione."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_1",
+      "english": "Named Constructor",
+      "set": {
+        "task": "Esponi static A from_string(std::string); come named constructor per chiarire l'intento al call site."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_2",
+      "english": "CRTP Pattern",
+      "set": {
+        "task": "Definisci template<class D> struct Base{} per applicare il pattern CRTP e iniettare metodi specializzati senza dispatch virtuale."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_2",
+      "english": "Pimpl Idiom",
+      "set": {
+        "task": "Nascondi i membri privati di A dietro class Impl; std::unique_ptr<Impl> p; applicando l'idioma pimpl."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_3",
+      "english": "Visitor",
+      "set": {
+        "task": "Percorri un std::variant chiamando std::visit(visitor, variant); per applicare logica diversa a ogni alternativa."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_4",
+      "english": "Strong Typedef",
+      "set": {
+        "task": "Avvolgi un int in struct UserId { int v; }; come strong typedef per impedire al compilatore di mescolarlo con altri ID."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_4",
+      "english": "Tag Type",
+      "set": {
+        "task": "Dichiara struct InPlace_t {}; come tipo tag vuoto per disambiguare overload o trasportare informazione compile-time."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_1",
+      "english": "Setw",
+      "set": {
+        "task": "Allinea una colonna larga 10 caratteri inserendo std::setw(10) prima del valore x nello std::cout."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_1",
+      "english": "Setprecision",
+      "set": {
+        "task": "Limita la stampa di pi greco a 2 cifre significative inserendo std::setprecision(2) nello std::cout."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_1",
+      "english": "Hex",
+      "set": {
+        "task": "Stampa il valore 255 in esadecimale inserendo std::hex nel std::cout prima di scrivere il numero."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_1",
+      "english": "Fixed",
+      "set": {
+        "task": "Forza il valore 3.14 in notazione a virgola fissa inserendo std::fixed nello std::cout invece della notazione scientifica."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_1",
+      "english": "Scientific",
+      "set": {
+        "task": "Cambia il formato di std::cout in notazione scientifica inserendo std::scientific per quantita' molto piccole o grandi."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_1",
+      "english": "Fill Character",
+      "set": {
+        "task": "Imposta lo zero come carattere di riempimento applicando std::setfill('0') prima di un setw per padding numerico."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_1",
+      "english": "Boolalpha",
+      "set": {
+        "task": "Attiva std::boolalpha su std::cout per stampare true al posto di 1 in log destinati all'utente."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_1",
+      "english": "Stream Iterator",
+      "set": {
+        "task": "Crea uno std::ostream_iterator<int>(cout, \" \") per scrivere interi separati da spazio direttamente dallo std::copy."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_1",
+      "english": "Stream Locale",
+      "set": {
+        "task": "Imbui lo std::cout con std::locale(\"it_IT\") per formattare i numeri secondo le convenzioni italiane di separatori."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_2",
+      "english": "Bidirectional File Stream",
+      "set": {
+        "task": "Apri il file data come std::fstream f(\"data\"); per leggere e scrivere sullo stesso handle bidirezionale."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_2",
+      "english": "Open Mode",
+      "set": {
+        "task": "Apri il file log in modalita' append usando std::ofstream f(\"log\", std::ios::app); senza troncare i contenuti esistenti."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_2",
+      "english": "Binary Mode",
+      "set": {
+        "task": "Leggi un'immagine PNG con std::ifstream f(\"img\", std::ios::binary); per evitare traduzioni CRLF su Windows."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_2",
+      "english": "Read",
+      "set": {
+        "task": "Estrai un blocco di n byte da uno stream binario invocando f.read(buf, n); e controlla quanti sono davvero arrivati."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_2",
+      "english": "Write",
+      "set": {
+        "task": "Persisti n byte raw su disco invocando f.write(buf, n); per salvare un record binario in formato packed."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_2",
+      "english": "Tellg",
+      "set": {
+        "task": "Memorizza l'offset di lettura corrente con auto pos = f.tellg(); per poter tornare allo stesso punto piu' tardi."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_2",
+      "english": "Seekg",
+      "set": {
+        "task": "Riposiziona la lettura all'inizio del file con f.seekg(0, std::ios::beg); dopo aver sondato l'header."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_3",
+      "english": "String Stream",
+      "set": {
+        "task": "Costruisci uno std::stringstream ss(s); per parsare o comporre testo in memoria senza toccare il filesystem."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_3",
+      "english": "OStringStream",
+      "set": {
+        "task": "Componi una riga di log in uno std::ostringstream oss; prima di recuperare il buffer finale con .str()."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_3",
+      "english": "IStringStream",
+      "set": {
+        "task": "Parsa un record separato da spazi avvolgendo la riga s in uno std::istringstream iss(s); ed estraendo i campi."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_3",
+      "english": "Str Method",
+      "set": {
+        "task": "Recupera il contenuto accumulato da uno std::ostringstream con auto s = oss.str(); pronto per la spedizione."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_3",
+      "english": "StoX Functions",
+      "set": {
+        "task": "Converti la stringa \"42\" in intero con int n = std::stoi(\"42\"); gestendo l'eccezione su input malformati."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_3",
+      "english": "From Chars",
+      "set": {
+        "task": "Parsa rapidamente un numero da un buffer con std::from_chars(p, end, n); evitando la gestione del locale."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_3",
+      "english": "To Chars",
+      "set": {
+        "task": "Formatta un intero n in un buffer raw con std::to_chars(p, end, n); per conversioni veloci locale-free."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_1",
+      "english": "CMake",
+      "set": {
+        "task": "Configura un progetto CMake eseguendo cmake -S . -B build per generare la cartella di build dal sorgente corrente."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_1",
+      "english": "CMakeLists",
+      "set": {
+        "task": "Apri il file CMakeLists.txt con project(app CXX) per dichiarare un progetto C++ chiamato app."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_1",
+      "english": "Add Executable",
+      "set": {
+        "task": "Registra un target eseguibile dentro CMakeLists scrivendo add_executable(app main.cpp) collegato al sorgente principale."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_1",
+      "english": "Add Library",
+      "set": {
+        "task": "Dichiara una libreria mylib con add_library(mylib src.cpp) cosi' altri target la possono linkare in seguito."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_1",
+      "english": "Target Link Libraries",
+      "set": {
+        "task": "Collega la libreria mylib al target app con target_link_libraries(app PRIVATE mylib) come dipendenza privata."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_1",
+      "english": "Find Package",
+      "set": {
+        "task": "Localizza Boost installato sul sistema invocando find_package(Boost REQUIRED) dentro CMakeLists per poterla linkare."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_1",
+      "english": "Target Include Directories",
+      "set": {
+        "task": "Estendi i percorsi di include del target app con target_include_directories(app PUBLIC inc) per esporre header pubblici."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_1",
+      "english": "CMake Build",
+      "set": {
+        "task": "Compila il progetto configurato lanciando cmake --build build per costruire i target nella cartella build."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_1",
+      "english": "CMake Install",
+      "set": {
+        "task": "Installa binari e header generati nella destinazione di sistema eseguendo cmake --install build dopo la build."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_1",
+      "english": "CTest",
+      "set": {
+        "task": "Esegui la suite di test registrata in CMake invocando ctest --test-dir build dopo la fase di compilazione."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_2",
+      "english": "Conan",
+      "set": {
+        "task": "Risolvi le dipendenze del progetto con conan install . --build=missing scaricando o compilando le librerie mancanti."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_2",
+      "english": "Vcpkg",
+      "set": {
+        "task": "Installa la libreria boost tramite vcpkg eseguendo vcpkg install boost cosi' CMake la trova automaticamente."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_2",
+      "english": "Profile",
+      "set": {
+        "task": "Genera il profilo Conan della macchina corrente con conan profile detect per fissare compilatore e ABI."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_3",
+      "english": "Preprocessor",
+      "set": {
+        "task": "Ispeziona l'output del preprocessore lanciando g++ -E main.cpp per vedere il sorgente dopo espansione include e macro."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_3",
+      "english": "Internal Linkage",
+      "set": {
+        "task": "Marca la variabile con static int x = 5; per darle linkage interno ed evitare conflitti tra translation unit."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_3",
+      "english": "External Linkage",
+      "set": {
+        "task": "Dichiara extern int counter; in un header per esporre una variabile a linkage esterno definita altrove."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_4",
+      "english": "Precompiled Header",
+      "set": {
+        "task": "Forza l'inclusione di un header precompilato con g++ -include pch.h main.cpp per accelerare i rebuild incrementali."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_4",
+      "english": "Forward Declaration",
+      "set": {
+        "task": "Sostituisci un #include pesante con una forward declaration class Foo; quando ti basta solo il puntatore."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_4",
+      "english": "Include Guard",
+      "set": {
+        "task": "Proteggi un header dalla doppia inclusione avvolgendolo in #ifndef X_H / #define X_H prima delle dichiarazioni."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_4",
+      "english": "Pragma Once",
+      "set": {
+        "task": "Sostituisci la classica include guard mettendo #pragma once in cima all'header come direttiva singola."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_4",
+      "english": "LTO",
+      "set": {
+        "task": "Abilita la link-time optimization compilando con g++ -flto per permettere al linker di inlinare tra translation unit."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_4",
+      "english": "Ninja",
+      "set": {
+        "task": "Genera la build con il generatore Ninja eseguendo cmake -G Ninja per accelerare i rebuild incrementali."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_1",
+      "english": "Prefetching",
+      "set": {
+        "task": "Inserisci __builtin_prefetch(p); prima del loop interno per pre-caricare in cache L1 il prossimo blocco di dati."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_2",
+      "english": "Valgrind",
+      "set": {
+        "task": "Profila il binario sotto Valgrind invocando valgrind --tool=callgrind ./app per misurare le funzioni piu' chiamate."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_2",
+      "english": "Perf",
+      "set": {
+        "task": "Cattura il profilo di esecuzione con perf record ./app per identificare le hot function senza ricompilare."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_2",
+      "english": "Benchmark Library",
+      "set": {
+        "task": "Registra una funzione da misurare con la macro BENCHMARK(BM_func); della Google Benchmark Library."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_3",
+      "english": "AVX",
+      "set": {
+        "task": "Compila con g++ -mavx2 per sbloccare istruzioni AVX2 e vettorizzare il kernel di calcolo matriciale."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_3",
+      "english": "Intrinsics",
+      "set": {
+        "task": "Somma due vettori SIMD chiamando l'intrinseca _mm256_add_ps(a, b); invece di scrivere assembly inline."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_3",
+      "english": "Parallel STL",
+      "set": {
+        "task": "Ordina un vettore in parallelo con std::sort(std::execution::par, v.begin(), v.end()); sfruttando la STL parallela."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_3",
+      "english": "OpenMP",
+      "set": {
+        "task": "Distribuisci le iterazioni di un loop su piu' core annotandolo con #pragma omp parallel for di OpenMP."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_3",
+      "english": "Std Execution",
+      "set": {
+        "task": "Scegli la policy std::execution::par_unseq per autorizzare esecuzione parallela e vettorizzazione di un algoritmo STL."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_4",
+      "english": "Branch Prediction Hint",
+      "set": {
+        "task": "Annota il ramo comune con if (x) [[likely]] {} per dare al compilatore un hint di branch prediction."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_4",
+      "english": "Restrict",
+      "set": {
+        "task": "Promuovi la vettorizzazione dichiarando void f(int* __restrict a); per garantire al compilatore l'assenza di aliasing."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_4",
+      "english": "Profile Guided",
+      "set": {
+        "task": "Riusa i contatori del run precedente compilando con g++ -fprofile-use per abilitare la profile-guided optimization."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_4",
+      "english": "No Discard",
+      "set": {
+        "task": "Annota la funzione con [[nodiscard]] int compute(); per far avvisare il compilatore quando il chiamante ignora il risultato."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_1",
+      "english": "Metafunction",
+      "set": {
+        "task": "Dichiara una metafunzione template<class T> struct add_const; che mappa un tipo a una sua versione const a compile time."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_1",
+      "english": "Type List",
+      "set": {
+        "task": "Costruisci una lista di tipi vuota con template<class... Ts> struct list {}; come contenitore variadico per metaprogrammazione."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_1",
+      "english": "Tuple Manipulation",
+      "set": {
+        "task": "Estrai il primo elemento da una tupla t con std::get<0>(t); usando l'indicizzazione compile-time."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_1",
+      "english": "Index Sequence",
+      "set": {
+        "task": "Genera una sequenza di indici 0..4 con std::make_index_sequence<5> per spacchettare una tupla in una chiamata."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_2",
+      "english": "Constexpr Compile Time Computation",
+      "set": {
+        "task": "Calcola fattoriale di 5 a compile time con constexpr int n = factorial(5); incorporando la costante direttamente nel binario."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_2",
+      "english": "Constexpr Variable",
+      "set": {
+        "task": "Definisci una costante compile-time con constexpr int N = 10; utilizzabile come dimensione di array statici."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_2",
+      "english": "Compile Time If Branch",
+      "set": {
+        "task": "Discrimina un branch a compile time con if constexpr (sizeof(T) == 4) {} per evitare istanziazione del ramo rifiutato."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_3",
+      "english": "Is Constructible",
+      "set": {
+        "task": "Verifica a compile time se T accetta un int come argomento con std::is_constructible_v<T, int> prima di istanziare la factory."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_3",
+      "english": "Is Trivial",
+      "set": {
+        "task": "Proteggi un fast path memcpy con std::is_trivial_v<T> per usarlo solo quando la copia bit a bit e' lecita."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_3",
+      "english": "Is Standard Layout",
+      "set": {
+        "task": "Documenta il contratto ABI di una struct asserendo std::is_standard_layout_v<T> per garantire compatibilita' con consumatori C."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_3",
+      "english": "Conjunction",
+      "set": {
+        "task": "Combina due tratti in AND logico con std::conjunction_v<A, B> per costruire predicati compositi a compile time."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_4",
+      "english": "Custom Concept",
+      "set": {
+        "task": "Definisci un concept personalizzato template<class T> concept Sortable = requires(T t) { std::sort(t.begin(), t.end()); };"
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_4",
+      "english": "Compound Requirement",
+      "set": {
+        "task": "Imponi che f() ritorni un tipo integrale con il requisito composto requires { { f() } -> std::integral; }."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_4",
+      "english": "Nested Requirement",
+      "set": {
+        "task": "Aggiungi un requisito annidato requires { requires sizeof(T) == 4; } per esigere un tipo di esattamente 4 byte."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_4",
+      "english": "Type Requirement",
+      "set": {
+        "task": "Esigi che T esponga un alias value_type con il requisito di tipo requires { typename T::value_type; }."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_4",
+      "english": "Metaprogramming Constexpr Lambda",
+      "set": {
+        "task": "Crea una lambda compile-time con auto sq = [](int x) constexpr { return x*x; }; utilizzabile in contesti constexpr."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_4",
+      "english": "Concepts Library",
+      "set": {
+        "task": "Importa la libreria di concept standard con #include <concepts> per riusare std::regular, std::invocable e gli altri."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_4",
+      "english": "Trailing Requires",
+      "set": {
+        "task": "Applica un vincolo dopo la firma con void f(T x) requires Number<T>; per riusare i nomi dei parametri."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_1",
+      "english": "Test Macro",
+      "set": {
+        "task": "Registra un test GoogleTest con TEST(MathTest, AddsTwo) { /* ... */ } generando una classe e collegandola al runner."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_1",
+      "english": "Expect",
+      "set": {
+        "task": "Verifica che add(1,2) restituisca 3 con EXPECT_EQ(add(1,2), 3); senza interrompere il test al fallimento."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_1",
+      "english": "Assert",
+      "set": {
+        "task": "Blocca subito il test su precondizione critica con ASSERT_NE(p, nullptr); per evitare dereferenze pericolose successive."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_1",
+      "english": "Test Fixture",
+      "set": {
+        "task": "Crea una fixture GoogleTest ereditando con class MyTest : public ::testing::Test {}; per condividere setup tra casi correlati."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_1",
+      "english": "Parameterized Test",
+      "set": {
+        "task": "Itera su una serie di input con INSTANTIATE_TEST_SUITE_P(...) per generare un test parametrizzato da una sola dichiarazione."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_1",
+      "english": "Death Test",
+      "set": {
+        "task": "Verifica che f() abortisca con il messaggio atteso scrivendo EXPECT_DEATH(f(), \"regex\"); come death test GoogleTest."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_2",
+      "english": "Test Case",
+      "set": {
+        "task": "Dichiara un caso di test Catch2 con TEST_CASE(\"adds two\") { /* ... */ } per descriverne uno scenario isolato."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_2",
+      "english": "Section",
+      "set": {
+        "task": "Suddividi le varianti di uno scenario Catch2 in SECTION(\"with zero\") {} per riusare il setup circostante."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_2",
+      "english": "Require",
+      "set": {
+        "task": "Affidati a REQUIRE(x == 5); come asserzione critica Catch2 che aborta immediatamente il caso al fallimento."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_2",
+      "english": "Check",
+      "set": {
+        "task": "Continua dopo un fallimento usando CHECK(x == 5); come asserzione Catch2 non fatale per raccogliere piu' errori."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_2",
+      "english": "Approx",
+      "set": {
+        "task": "Tollera arrotondamenti in virgola mobile confrontando con REQUIRE(x == Approx(3.14)); nello scenario Catch2."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_2",
+      "english": "Tag",
+      "set": {
+        "task": "Etichetta uno scenario Catch2 con TEST_CASE(\"foo\", \"[fast]\") per filtrarlo poi tramite tag in CI."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_2",
+      "english": "BDD Style",
+      "set": {
+        "task": "Scrivi uno scenario Catch2 in stile BDD con GIVEN(\"...\"); WHEN(\"...\"); THEN(\"...\"); leggibile anche da non ingegneri."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_3",
+      "english": "Mock Class",
+      "set": {
+        "task": "Genera una classe mock con class MockDb : public Db { MOCK_METHOD(...); }; per iniettarla al posto della dipendenza reale."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_3",
+      "english": "Mock Method",
+      "set": {
+        "task": "Dichiara un metodo mock overridabile con MOCK_METHOD(int, get, (), (override)); per registrare chiamate e ritornare valori scriptati."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_3",
+      "english": "Expectation",
+      "set": {
+        "task": "Imposta un'aspettativa GoogleMock con EXPECT_CALL(db, get()).WillOnce(Return(5)); per scriptare il valore di ritorno."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_3",
+      "english": "LibFuzzer",
+      "set": {
+        "task": "Compila un entry point fuzz-friendly con clang++ -fsanitize=fuzzer per integrarlo con libFuzzer di LLVM."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_4",
+      "english": "Gcov",
+      "set": {
+        "task": "Genera il report di copertura per riga eseguendo gcov main.cpp sui file .gcda prodotti da una build instrumentata."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_9",
+      "english": "GSL",
+      "set": {
+        "task": "Sostituisci un puntatore raw con una vista sicura gsl::span<int> s; dalla Guidelines Support Library."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_9",
+      "english": "Resource Pointer",
+      "set": {
+        "task": "Annota un puntatore proprietario con gsl::owner<T*> p; per dichiarare chi e' responsabile della liberazione."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_9",
+      "english": "Not Null",
+      "set": {
+        "task": "Promuovi un puntatore a non nullo con gsl::not_null<T*> p; per spostare il controllo a costruzione."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_9",
+      "english": "Narrow Cast",
+      "set": {
+        "task": "Rendi esplicita una conversione restringente con auto i = gsl::narrow<int>(big); lanciando se perde informazione."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_9",
+      "english": "Final Action",
+      "set": {
+        "task": "Aggancia un'azione di cleanup con auto cleanup = gsl::finally([&]{ /* ... */ }); che parte anche se eccezione."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_10",
+      "english": "Sanitizer",
+      "set": {
+        "task": "Strumenta il binario di test con g++ -fsanitize=address per intercettare bug di memoria al primo accesso illegale."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_10",
+      "english": "Address Sanitizer",
+      "set": {
+        "task": "Attiva AddressSanitizer passando -fsanitize=address al compilatore per catturare overflow di heap e use-after-free."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_10",
+      "english": "Undefined Behavior Sanitizer",
+      "set": {
+        "task": "Accendi UBSan passando -fsanitize=undefined al compilatore per segnalare overflow signed e load disallineati a runtime."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_10",
+      "english": "Thread Sanitizer",
+      "set": {
+        "task": "Rileva data race tra thread compilando con -fsanitize=thread per attivare ThreadSanitizer durante lo smoke test."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_10",
+      "english": "Memory Sanitizer",
+      "set": {
+        "task": "Traccia letture di byte non inizializzati compilando con -fsanitize=memory per accendere MemorySanitizer in debug."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_10",
+      "english": "Leak Sanitizer",
+      "set": {
+        "task": "Abilita LeakSanitizer aggiungendo -fsanitize=leak alla compilazione per stampare stack trace delle allocazioni mai liberate."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_10",
+      "english": "Clang Tidy",
+      "set": {
+        "task": "Analizza main.cpp eseguendo clang-tidy main.cpp per ottenere suggerimenti di modernizzazione e check sui pattern legacy."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_10",
+      "english": "Cppcheck",
+      "set": {
+        "task": "Sottoponi main.cpp all'analisi statica eseguendo cppcheck main.cpp per scoprire variabili non inizializzate e codice morto."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_10",
+      "english": "Compiler Warning",
+      "set": {
+        "task": "Promuovi ogni warning a errore compilando con g++ -Werror per impedire l'accumulo di avvisi nel codice."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_11",
+      "english": "Modernize",
+      "set": {
+        "task": "Aggiorna codice legacy lanciando clang-tidy --checks=modernize-* per applicare auto, nullptr e range-for in massa."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_11",
+      "english": "C Style Cast",
+      "set": {
+        "task": "Rimpiazza un cast stile C con static_cast<int>(x); per rendere esplicito l'intento e facilitare la ricerca."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_11",
+      "english": "Replace TypeDef",
+      "set": {
+        "task": "Sostituisci un typedef vecchio con using IntList = std::vector<int>; per abilitare alias templatizzati piu' espressivi."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_12",
+      "english": "Format Check",
+      "set": {
+        "task": "Forza la formattazione del sorgente eseguendo clang-format -i main.cpp per riallinearlo allo stile .clang-format del progetto."
+      }
+    }
+  ]
+}

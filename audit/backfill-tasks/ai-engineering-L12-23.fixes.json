@@ -1,0 +1,532 @@
+{
+  "fixes": [
+    {
+      "level": "12",
+      "lesson": "TensorFlow & Keras",
+      "english": "TensorFlow",
+      "set": {
+        "task": "Importa TensorFlow per costruire il sistema di serving in produzione del modello di classificazione immagini."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "TensorFlow & Keras",
+      "english": "Keras",
+      "set": {
+        "task": "Carica Keras per prototipare rapidamente una rete neurale in poche righe di codice Python."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "TensorFlow & Keras",
+      "english": "Sequential Model",
+      "set": {
+        "task": "Costruisci un modello sequenziale Keras con uno strato Dense da 64 unita seguito da uno strato di output a 10 classi."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "TensorFlow & Keras",
+      "english": "Functional API",
+      "set": {
+        "task": "Definisci una rete con l'API funzionale di Keras collegando l'input a uno strato Dense da 64 unita."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "TensorFlow & Keras",
+      "english": "Tensor",
+      "set": {
+        "task": "Crea un tensore costante 2x2 in TensorFlow da usare come dato di input per il grafo di computazione."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "TensorFlow & Keras",
+      "english": "Graph Mode",
+      "set": {
+        "task": "Annota la funzione con tf.function per compilarla in modalita grafo ed eliminare l'overhead Python in produzione."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "TensorFlow & Keras",
+      "english": "Callback",
+      "set": {
+        "task": "Configura una callback di early stopping con pazienza 3 per interrompere l'addestramento quando la loss smette di migliorare."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "TensorFlow & Keras",
+      "english": "TensorBoard",
+      "set": {
+        "task": "Avvia TensorBoard puntando alla cartella logs/ per visualizzare curve di loss e gradienti in tempo reale."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "TensorFlow & Keras",
+      "english": "tf.data",
+      "set": {
+        "task": "Costruisci una pipeline tf.data a partire dall'array X per alimentare il batch successivo senza lasciare la GPU inattiva."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "PyTorch",
+      "english": "PyTorch",
+      "set": {
+        "task": "Inizializza l'ambiente PyTorch per sfruttare il grafo di computazione dinamico nella tua ricerca accademica."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "PyTorch",
+      "english": "nn.Module",
+      "set": {
+        "task": "Definisci una rete neurale personalizzata Net che eredita da nn.Module e implementa il metodo forward."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "PyTorch",
+      "english": "Autograd",
+      "set": {
+        "task": "Esegui il backward pass per far calcolare ad autograd i gradienti della loss rispetto a tutti i parametri."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "PyTorch",
+      "english": "DataLoader",
+      "set": {
+        "task": "Crea un DataLoader sul dataset con batch da 32 e mescolamento attivo per il ciclo di addestramento."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "PyTorch",
+      "english": "Collate Function",
+      "set": {
+        "task": "Implementa una sottoclasse di Dataset per fornire al DataLoader sequenze a lunghezza variabile da raggruppare con collate_fn."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "PyTorch",
+      "english": "Tensor (PyTorch)",
+      "set": {
+        "task": "Genera un tensore casuale 2x3 su GPU per sfruttare l'accelerazione hardware durante le operazioni matriciali."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "PyTorch",
+      "english": "Optimizer Step",
+      "set": {
+        "task": "Esegui un passo dell'ottimizzatore per aggiornare i parametri del modello dopo il calcolo dei gradienti."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "PyTorch",
+      "english": "TorchScript",
+      "set": {
+        "task": "Esporta il modello PyTorch in TorchScript per il deploy in un ambiente C++ senza runtime Python."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "PyTorch",
+      "english": "torch.compile",
+      "set": {
+        "task": "Compila il modello Transformer con torch.compile per velocizzare l'inferenza del 40% senza modifiche al codice."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "scikit-learn & Classic ML / scikit-learn e ML Classico",
+      "english": "scikit-learn",
+      "set": {
+        "task": "Importa il modulo datasets di scikit-learn per caricare dati standard su cui addestrare una random forest."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "scikit-learn & Classic ML / scikit-learn e ML Classico",
+      "english": "Pipeline",
+      "set": {
+        "task": "Componi una pipeline scikit-learn che applica StandardScaler prima di addestrare un classificatore SVC sui dati."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "scikit-learn & Classic ML / scikit-learn e ML Classico",
+      "english": "fit",
+      "set": {
+        "task": "Addestra il modello sui dati X_train e y_train per imparare i parametri dalla distribuzione di training."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "scikit-learn & Classic ML / scikit-learn e ML Classico",
+      "english": "predict",
+      "set": {
+        "task": "Genera le predizioni del modello sul test set X_test per ottenere le etichette stimate dal classificatore."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "scikit-learn & Classic ML / scikit-learn e ML Classico",
+      "english": "predict_proba",
+      "set": {
+        "task": "Recupera le probabilita di classe per ciascun esempio del test set per regolare la soglia di decisione."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "scikit-learn & Classic ML / scikit-learn e ML Classico",
+      "english": "NumPy",
+      "set": {
+        "task": "Carica NumPy per eseguire operazioni veloci su array che alimenteranno la pipeline di preprocessing del dataset."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "scikit-learn & Classic ML / scikit-learn e ML Classico",
+      "english": "pandas",
+      "set": {
+        "task": "Importa pandas per pulire ed esplorare il dataset tabulare di transazioni prima della modellazione."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "scikit-learn & Classic ML / scikit-learn e ML Classico",
+      "english": "JAX",
+      "set": {
+        "task": "Importa jax.numpy per eseguire calcoli NumPy accelerati via hardware con differenziazione automatica integrata."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Hugging Face & LLM Tools / Hugging Face e Strumenti LLM",
+      "english": "Transformers Library",
+      "set": {
+        "task": "Importa AutoModel dalla libreria transformers per accedere a centinaia di modelli pre-addestrati come BERT e GPT."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Hugging Face & LLM Tools / Hugging Face e Strumenti LLM",
+      "english": "AutoModel",
+      "set": {
+        "task": "Carica il checkpoint bert-base-uncased con AutoModel per selezionare automaticamente l'architettura corretta."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Hugging Face & LLM Tools / Hugging Face e Strumenti LLM",
+      "english": "Tokenizer",
+      "set": {
+        "task": "Carica il tokenizer di gpt2 per convertire il testo in token con lo stesso vocabolario del pre-addestramento."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Hugging Face & LLM Tools / Hugging Face e Strumenti LLM",
+      "english": "Pipeline (HF)",
+      "set": {
+        "task": "Applica una pipeline Hugging Face di sentiment analysis al testo per ottenere etichetta e punteggio in una chiamata."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Hugging Face & LLM Tools / Hugging Face e Strumenti LLM",
+      "english": "Datasets Library",
+      "set": {
+        "task": "Importa load_dataset dalla libreria datasets per fare streaming di terabyte di dati senza scaricare tutto su disco."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "Hugging Face & LLM Tools / Hugging Face e Strumenti LLM",
+      "english": "Trainer",
+      "set": {
+        "task": "Istanzia un Trainer Hugging Face con modello, argomenti e train_dataset per gestire l'intero ciclo di addestramento."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Feature Selection / Selezione Feature",
+      "english": "Filter Method",
+      "set": {
+        "task": "Seleziona le 10 feature piu informative con SelectKBest usando ANOVA F come funzione di scoring."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Feature Selection / Selezione Feature",
+      "english": "Recursive Feature Elimination",
+      "set": {
+        "task": "Riduci il dataset a 10 feature applicando RFE con l'estimatore scelto per rimuovere iterativamente le meno importanti."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Feature Selection / Selezione Feature",
+      "english": "Mutual Information",
+      "set": {
+        "task": "Calcola l'informazione mutua tra ogni feature in X e il target y per individuare relazioni non lineari forti."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Feature Selection / Selezione Feature",
+      "english": "Chi-Squared Test",
+      "set": {
+        "task": "Applica il test chi-quadro alle feature categoriche X per classificarle in base alla dipendenza dal target y."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Feature Selection / Selezione Feature",
+      "english": "Feature Importance",
+      "set": {
+        "task": "Estrai i punteggi di importanza delle feature dal modello random forest per individuare i predittori dominanti."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Feature Selection / Selezione Feature",
+      "english": "Permutation Importance",
+      "set": {
+        "task": "Misura l'importanza per permutazione del modello su X e y mescolando ogni feature e osservando il calo di accuratezza."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Feature Selection / Selezione Feature",
+      "english": "Variance Threshold",
+      "set": {
+        "task": "Rimuovi le feature a varianza nulla applicando VarianceThreshold con soglia 0 per eliminare le colonne costanti."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Feature Extraction / Estrazione Feature",
+      "english": "Polynomial Features",
+      "set": {
+        "task": "Genera feature polinomiali di grado 2 solo per interazioni per catturare relazioni non lineari tra dimensione e prezzo."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Feature Extraction / Estrazione Feature",
+      "english": "Binning",
+      "set": {
+        "task": "Discretizza i valori continui di eta in 5 bin con KBinsDiscretizer per migliorare la robustezza del modello."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Feature Extraction / Estrazione Feature",
+      "english": "Date Features",
+      "set": {
+        "task": "Estrai il giorno della settimana dal timestamp per la previsione della domanda settimanale."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Feature Extraction / Estrazione Feature",
+      "english": "Cyclic Encoding",
+      "set": {
+        "task": "Applica la codifica ciclica all'ora con la trasformata seno su 24 ore per avvicinare 23:00 e 00:00."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Feature Extraction / Estrazione Feature",
+      "english": "Aggregation",
+      "set": {
+        "task": "Aggrega le transazioni per utente calcolando il prezzo medio per ricavare feature comportamentali a livello cliente."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Feature Extraction / Estrazione Feature",
+      "english": "Lag Feature",
+      "set": {
+        "task": "Crea una feature di lag a 1 periodo sulla colonna value per fornire al modello di serie storica il valore precedente."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Feature Extraction / Estrazione Feature",
+      "english": "Rolling Window",
+      "set": {
+        "task": "Calcola la media mobile a 7 periodi della colonna value per attenuare il rumore giornaliero ed evidenziare il trend."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Encoding Strategies / Strategie di Codifica",
+      "english": "Frequency Encoding",
+      "set": {
+        "task": "Codifica la colonna cat sostituendo ogni valore con la sua frequenza di apparizione nei dati di addestramento."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Encoding Strategies / Strategie di Codifica",
+      "english": "Embedding Layer",
+      "set": {
+        "task": "Definisci uno strato di embedding addestrabile per mappare 1000 ID prodotto in vettori densi a 32 dimensioni."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Domain Knowledge / Conoscenza di Dominio",
+      "english": "Ratio Feature",
+      "set": {
+        "task": "Costruisci la feature prezzo per metro quadro dividendo il prezzo dell'immobile per la sua superficie in mq."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Domain Knowledge / Conoscenza di Dominio",
+      "english": "Difference Feature",
+      "set": {
+        "task": "Calcola la differenza tra le rilevazioni t1 e t0 per generare la feature delta che evidenzia la variazione tra periodi."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "Domain Knowledge / Conoscenza di Dominio",
+      "english": "Image Features",
+      "set": {
+        "task": "Estrai le feature visuali dall'immagine con il backbone ResNet-50 per alimentare il classificatore a valle."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "Diffusion Models / Modelli a Diffusione",
+      "english": "Classifier-Free Guidance",
+      "set": {
+        "task": "Imposta il guidance scale a 7.5 nel modello a diffusione per generare immagini piu fedeli al prompt testuale."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "Experiment Tracking / Tracciamento Esperimenti",
+      "english": "MLflow",
+      "set": {
+        "task": "Registra una metrica di accuratezza pari a 0.95 in MLflow per tracciare le prestazioni della run di addestramento."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "Experiment Tracking / Tracciamento Esperimenti",
+      "english": "Run",
+      "set": {
+        "task": "Apri una nuova run MLflow tramite context manager per raggruppare parametri, metriche e artefatti di un singolo esperimento."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "Experiment Tracking / Tracciamento Esperimenti",
+      "english": "Metric Logging",
+      "set": {
+        "task": "Logga loss e accuratezza correnti su Weights & Biases a ogni epoca per il confronto successivo tra esperimenti."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "Experiment Tracking / Tracciamento Esperimenti",
+      "english": "Sweep",
+      "set": {
+        "task": "Lancia un agente W&B sullo sweep configurato per esplorare 200 configurazioni di iperparametri della funzione di training."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "Model Serving / Servizio Modelli",
+      "english": "REST API",
+      "set": {
+        "task": "Esponi un endpoint POST /predict per ricevere payload JSON dai partner esterni e restituire la predizione del modello."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "Optimization / Ottimizzazione",
+      "english": "Quantization",
+      "set": {
+        "task": "Quantizza dinamicamente il modello a INT8 per ridurre la dimensione di 4 volte mantenendo l'accuratezza quasi invariata."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "Containerization & Cloud / Container e Cloud",
+      "english": "Dockerfile",
+      "set": {
+        "task": "Parti dall'immagine base pytorch/pytorch nel Dockerfile per costruire un container riproducibile con CUDA e dipendenze."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "Production Best Practices / Buone Pratiche di Produzione",
+      "english": "Health Check",
+      "set": {
+        "task": "Aggiungi un endpoint GET /health che permetta a Kubernetes di verificare ogni 30 secondi che il modello sia raggiungibile."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "Production Best Practices / Buone Pratiche di Produzione",
+      "english": "Logging",
+      "set": {
+        "task": "Emetti un log strutturato a livello info per ogni predizione effettuata, includendo i campi necessari al debugging."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "Production Best Practices / Buone Pratiche di Produzione",
+      "english": "Rollback",
+      "set": {
+        "task": "Esegui il rollback del deployment my-model su Kubernetes per ripristinare la versione precedente dopo un calo dei ricavi."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "Explainability / Spiegabilità",
+      "english": "SHAP",
+      "set": {
+        "task": "Istanzia un TreeExplainer SHAP sul modello ad alberi per quantificare il contributo di ogni feature alla predizione."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "Data Storage / Archiviazione Dati",
+      "english": "Parquet",
+      "set": {
+        "task": "Salva il DataFrame in formato Parquet per ridurre l'uso disco del 75% rispetto al CSV grazie alla compressione colonnare."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "Big Data Tools / Strumenti Big Data",
+      "english": "Airflow DAG",
+      "set": {
+        "task": "Definisci un DAG Airflow con schedulazione giornaliera per orchestrare l'intera pipeline ML con dipendenze tra task."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "Experimental Method / Metodo Sperimentale",
+      "english": "Random Seed",
+      "set": {
+        "task": "Fissa il seed casuale di PyTorch a 42 per garantire che ogni membro del team possa riprodurre la stessa run."
+      }
+    }
+  ]
+}

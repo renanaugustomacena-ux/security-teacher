@@ -1,0 +1,572 @@
+{
+  "fixes": [
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_3",
+      "english": "SET",
+      "set": {
+        "task": "Avvia il framework in un lab isolato per simulare campagne di phishing autorizzate e formare gli utenti aziendali."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_3",
+      "english": "theHarvester Subdomain Scan",
+      "set": {
+        "task": "Raccogli i sottodomini esposti del tuo dominio per misurare la superficie OSINT visibile a un attaccante."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_3",
+      "english": "Email Spoofing",
+      "set": {
+        "task": "Simula in lab un mittente falsificato per verificare che SPF, DKIM e DMARC blocchino davvero il messaggio."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_1",
+      "english": "Metasploit",
+      "set": {
+        "task": "Apri il framework nel tuo lab di pentest autorizzato per riprodurre exploit noti e validare le patch installate."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_1",
+      "english": "msfconsole",
+      "set": {
+        "task": "Lancia la console silenziosa in lab per caricare moduli senza output banner durante una sessione di studio."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_1",
+      "english": "Module",
+      "set": {
+        "task": "Carica il modulo EternalBlue contro una VM Windows non patchata per dimostrare l'urgenza del fix MS17-010."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_1",
+      "english": "Auxiliary Module",
+      "set": {
+        "task": "Esegui un modulo ausiliario di scansione SMB sul lab interno per catalogare versioni e mitigazioni note."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_1",
+      "english": "Workspace",
+      "set": {
+        "task": "Crea un workspace dedicato a un engagement per isolare host e credenziali raccolti dal resto dei test."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_1",
+      "english": "Sessions",
+      "set": {
+        "task": "Elenca le sessioni attive del lab per tracciare ogni shell aperta durante un esercizio di red team."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_1",
+      "english": "Resource Script",
+      "set": {
+        "task": "Riproduci uno scenario ripetibile caricando uno script di risorsa che automatizza la fase di set-up del lab."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_2",
+      "english": "Nmap",
+      "set": {
+        "task": "Mappa la tua rete interna autorizzata combinando scansione di porte, versione e script default per l'inventario."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_2",
+      "english": "Service Version Detection",
+      "set": {
+        "task": "Identifica le versioni dei servizi esposti per incrociarle con il database CVE e prioritizzare le patch."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_2",
+      "english": "OS Detection",
+      "set": {
+        "task": "Rileva il sistema operativo degli host autorizzati per allineare l'inventario asset con i baseline di hardening."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_2",
+      "english": "NSE",
+      "set": {
+        "task": "Sfrutta gli script NSE della categoria vuln per cercare CVE noti durante un assessment autorizzato."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_2",
+      "english": "Output Formats",
+      "set": {
+        "task": "Salva i risultati in tutti i formati per importarli poi nel SIEM e generare il report di pentest."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_2",
+      "english": "Masscan",
+      "set": {
+        "task": "Esegui una scansione ad alta velocita' sul range autorizzato per scoprire rapidamente servizi esposti su HTTPS."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_2",
+      "english": "RustScan",
+      "set": {
+        "task": "Combina una scansione rapida con Nmap per ottenere un inventario completo della rete lab in pochi secondi."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_3",
+      "english": "Display Filter",
+      "set": {
+        "task": "Applica un filtro Wireshark per isolare il traffico HTTPS verso un host sospetto durante un'analisi di incident response."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_3",
+      "english": "Capture Filter",
+      "set": {
+        "task": "Restringi la cattura ai soli flussi web per ridurre il volume dei dati raccolti dal sensore di rete."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_3",
+      "english": "tcpdump",
+      "set": {
+        "task": "Cattura il traffico TLS dell'interfaccia per inviarlo al team SOC che indaghera' su un alert."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_3",
+      "english": "tshark",
+      "set": {
+        "task": "Analizza un PCAP in batch con tshark per estrarre IOC da pacchetti raccolti durante un incidente."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_4",
+      "english": "sqlmap Tamper Script",
+      "set": {
+        "task": "Testa una webapp del tuo lab DVWA per validare che il WAF blocchi le iniezioni anche con script di tamper."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_4",
+      "english": "Nikto Web Vulnerability Scan",
+      "set": {
+        "task": "Esegui uno scan delle misconfigurazioni note contro un'app di staging prima del rilascio in produzione."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_4",
+      "english": "Hydra HTTP Form Login",
+      "set": {
+        "task": "Verifica in lab che la policy di lockout regga davvero a un attacco brute force su un form di login."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_2",
+      "english": "sekurlsa",
+      "set": {
+        "task": "Studia in un lab isolato come Mimikatz estrae credenziali da LSASS per costruire detection EDR mirate."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_2",
+      "english": "lsadump",
+      "set": {
+        "task": "Riproduci un DCSync in laboratorio per validare che il SOC rilevi la replica anomala dal DC."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_2",
+      "english": "Rubeus",
+      "set": {
+        "task": "Simula in lab un attacco kerberoasting per misurare la forza delle password degli account di servizio."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_2",
+      "english": "Pypykatz",
+      "set": {
+        "task": "Analizza un dump LSASS in un sandbox forense per esercitarti nella detection di furto credenziali."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_2",
+      "english": "LaZagne",
+      "set": {
+        "task": "Lancia il tool in un endpoint lab per inventariare i segreti memorizzati e definire policy di pulizia."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_2",
+      "english": "WinPEAS",
+      "set": {
+        "task": "Esegui lo script su una VM Windows lab per individuare percorsi di privilege escalation prima di un attaccante."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_3",
+      "english": "SharpHound",
+      "set": {
+        "task": "Raccogli i dati di Active Directory in un dominio lab per analizzare gli attack path con BloodHound."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_3",
+      "english": "Cypher Query",
+      "set": {
+        "task": "Costruisci una query nel grafo BloodHound per trovare il percorso piu' breve verso Domain Admin nel lab."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_3",
+      "english": "PowerView",
+      "set": {
+        "task": "Enumera in lab gli account con SPN per identificare quelli a rischio kerberoasting e ruotare le password."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_3",
+      "english": "Certipy",
+      "set": {
+        "task": "Esegui un audit dei template ADCS del dominio lab per scovare misconfigurazioni ESC1-ESC11 prima di sanarle."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_3",
+      "english": "NTLM Relay",
+      "set": {
+        "task": "Riproduci un relay verso LDAP in lab per verificare che SMB signing e LDAP channel binding siano forzati."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_4",
+      "english": "Responder Analyze Mode",
+      "set": {
+        "task": "Avvia la modalita' di analisi passiva nel lab per scoprire quali protocolli legacy ancora circolano in rete."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_4",
+      "english": "CrackMapExec SMB Module",
+      "set": {
+        "task": "Verifica in un dominio lab quali share di rete sono accessibili con credenziali standard per stringere le ACL."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_4",
+      "english": "NetExec LDAP Module",
+      "set": {
+        "task": "Estrai la password policy del dominio lab via LDAP per documentare i requisiti minimi durante l'assessment."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_4",
+      "english": "GetUserSPNs.py",
+      "set": {
+        "task": "Richiedi i ticket TGS degli account di servizio del dominio lab per testarne la robustezza offline."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_4",
+      "english": "GetNPUsers.py",
+      "set": {
+        "task": "Identifica gli account con pre-autenticazione Kerberos disabilitata per chiudere quella esposizione AS-REP."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_4",
+      "english": "evil-winrm",
+      "set": {
+        "task": "Connettiti in WinRM al lab usando un hash NTLM per validare la difesa contro il pass-the-hash."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_4",
+      "english": "pwntools",
+      "set": {
+        "task": "Importa la libreria in uno script CTF per automatizzare l'interazione con un binario vulnerabile in lab."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_1",
+      "english": "APK Decompilation",
+      "set": {
+        "task": "Decompila un APK della tua azienda per controllare che non contenga API key embedded prima della pubblicazione."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_1",
+      "english": "apktool",
+      "set": {
+        "task": "Estrai risorse e manifest di un APK in lab per verificare permessi richiesti e impostazioni di network security."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_1",
+      "english": "ADB",
+      "set": {
+        "task": "Apri una shell sull'emulatore di test per esaminare il filesystem e i log dell'app durante un audit mobile."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_2",
+      "english": "Frida",
+      "set": {
+        "task": "Hooka una funzione di un'app mobile di test in lab per verificare il controllo di root e jailbreak detection."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_2",
+      "english": "Objection",
+      "set": {
+        "task": "Esplora a runtime un'app del tuo lab per validare cifratura dei dati locali e protezioni anti-tampering."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_4",
+      "english": "apkleaks",
+      "set": {
+        "task": "Scansiona un APK prima del rilascio per intercettare token, URL interni e secret hardcoded dimenticati dagli sviluppatori."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_1",
+      "english": "S3 Bucket Enumeration",
+      "set": {
+        "task": "Verifica che i bucket dell'azienda non rispondano a richieste anonime per prevenire data leak tipo Capital One."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_1",
+      "english": "Instance Metadata",
+      "set": {
+        "task": "Testa l'endpoint IMDS dal lab per confermare che IMDSv2 sia forzato e mitighi gli attacchi SSRF noti."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_1",
+      "english": "AssumeRole",
+      "set": {
+        "task": "Esercita un AssumeRole legittimo nel lab per validare le condizioni della trust policy e il logging CloudTrail."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_1",
+      "english": "aws cli",
+      "set": {
+        "task": "Stampa l'identita' AWS corrente per confermare quale principal stai usando prima di operazioni sensibili."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_2",
+      "english": "GCP Bucket",
+      "set": {
+        "task": "Elenca il contenuto di un bucket GCP autorizzato per verificare che le ACL non espongano file sensibili."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_3",
+      "english": "Wildcard Trust",
+      "set": {
+        "task": "Cerca nelle trust policy IAM principal con asterisco per chiudere subito i ruoli accessibili dal mondo intero."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_4",
+      "english": "Privileged Container",
+      "set": {
+        "task": "Esegui in lab un container privilegiato per dimostrare al team perche' va vietato in produzione tramite policy."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_4",
+      "english": "Docker Socket",
+      "set": {
+        "task": "Verifica che il socket Docker non sia montato dentro container applicativi per evitare escape verso l'host."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_4",
+      "english": "kubectl",
+      "set": {
+        "task": "Lista i permessi effettivi del tuo service account nel cluster lab per applicare il principio del minimo privilegio."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_4",
+      "english": "Service Account Token",
+      "set": {
+        "task": "Controlla che il token sia montato solo nei pod che ne hanno davvero bisogno per ridurre la superficie di attacco."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_4",
+      "english": "ScoutSuite",
+      "set": {
+        "task": "Lancia un audit dell'account AWS aziendale per generare un report di misconfigurazioni da rimediare."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_1",
+      "english": "Strings",
+      "set": {
+        "task": "Estrai le stringhe stampabili da un campione sospetto nel sandbox per individuare URL, mutex e IOC iniziali."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_1",
+      "english": "YARA Rule",
+      "set": {
+        "task": "Lancia le regole YARA contro un campione in quarantena per classificarlo nella famiglia malware corretta."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_1",
+      "english": "YARA Signature",
+      "set": {
+        "task": "Scrivi una firma per la stringa univoca di un trojan analizzato per arricchire il feed di detection del SOC."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_3",
+      "english": "radare2",
+      "set": {
+        "task": "Apri il binario sospetto nel framework di reverse engineering per studiarne il flusso di controllo nel lab."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_1",
+      "english": "Null-Free Shellcode",
+      "set": {
+        "task": "Riscrivi le istruzioni di azzeramento usando XOR per studiare come gli exploit aggirano filtri sui null byte."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_1",
+      "english": "syscall",
+      "set": {
+        "task": "Componi una syscall execve in assembly per capire come uno shellcode minimale entra nel kernel."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_2",
+      "english": "ROPgadget",
+      "set": {
+        "task": "Estrai i gadget da un binario vulnerabile del lab per costruire una catena ROP a scopo didattico."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_2",
+      "english": "Format String",
+      "set": {
+        "task": "Riproduci un bug di stringa di formato in lab per dimostrare come leakare la stack senza buffer overflow."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_3",
+      "english": "Sanitizer",
+      "set": {
+        "task": "Compila il codice C di test con AddressSanitizer per rilevare use-after-free e overflow prima del rilascio."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_4",
+      "english": "Capabilities",
+      "set": {
+        "task": "Elenca i binari con capability speciali sul sistema lab per chiudere percorsi di privilege escalation."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_3",
+      "english": "Log Tampering",
+      "set": {
+        "task": "Riproduci in lab la cancellazione del log Security per validare che il forwarding al SIEM preservi gli eventi."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "ethack_ctf_labs_1",
+      "english": "Flag",
+      "set": {
+        "task": "Sottometti la flag trovata nel CTF di training rispettando il formato richiesto dalla piattaforma."
+      }
+    }
+  ]
+}

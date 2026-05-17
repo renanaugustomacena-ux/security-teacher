@@ -66,6 +66,7 @@ export default {
               context: 'observability',
               difficulty: 'beginner',
               code: 'cpu_usage{host="web-1"} 0.72',
+              task: `Esponi una metrica di utilizzo CPU per l'host web-1 con valore 0.72.`,
             },
             {
               english: 'Log',
@@ -77,6 +78,7 @@ export default {
               context: 'observability',
               difficulty: 'beginner',
               command: 'tail -f /var/log/syslog',
+              task: 'Segui in tempo reale gli eventi che si accodano al file /var/log/syslog del sistema.',
             },
             {
               english: 'Trace',
@@ -150,6 +152,7 @@ export default {
               context: 'observability',
               difficulty: 'beginner',
               command: 'uptime',
+              task: `Mostra da quanto tempo il sistema e' acceso insieme al carico medio attuale.`,
             },
             {
               english: 'Downtime',
@@ -265,6 +268,7 @@ export default {
               context: 'observability',
               difficulty: 'beginner',
               command: 'curl http://localhost:8080/health',
+              task: `Esegui un controllo di salute sull'endpoint /health del servizio in ascolto sulla porta 8080.`,
             },
             {
               english: 'Heartbeat',
@@ -362,6 +366,7 @@ export default {
               context: 'observability',
               difficulty: 'beginner',
               code: 'GET /metrics',
+              task: `Interroga l'endpoint /metrics in GET per recuperare i dati esposti dal servizio.`,
             },
           ],
         },
@@ -391,6 +396,7 @@ export default {
               context: 'observability',
               difficulty: 'beginner',
               code: '1717840800',
+              task: `Rappresenta l'istante temporale 1717840800 come Unix timestamp in formato epoch.`,
             },
             {
               english: 'Sample',
@@ -413,6 +419,7 @@ export default {
               difficulty: 'beginner',
               code: 'scrape_interval: 15s',
               tool: 'Prometheus',
+              task: 'Configura Prometheus per fare scraping dei target ogni 15 secondi.',
             },
             {
               english: 'Resolution',
@@ -434,6 +441,7 @@ export default {
               context: 'observability',
               difficulty: 'beginner',
               code: '--storage.tsdb.retention.time=30d',
+              task: 'Avvia Prometheus con una retention dei dati TSDB di 30 giorni.',
             },
             {
               english: 'Aggregation',
@@ -445,6 +453,7 @@ export default {
               context: 'observability',
               difficulty: 'beginner',
               code: 'sum(rate(http_requests_total[5m]))',
+              task: 'Aggrega con sum() il rate delle richieste HTTP totali su una finestra di 5 minuti.',
             },
             {
               english: 'Downsampling',
@@ -504,6 +513,7 @@ export default {
               difficulty: 'beginner',
               command: 'top',
               code: 'rate(node_cpu_seconds_total{mode!="idle"}[5m])',
+              task: `Visualizza i processi piu' affamati di CPU con top o calcola l'uso non idle tramite rate() su 5 minuti.`,
             },
             {
               english: 'Load Average',
@@ -516,6 +526,7 @@ export default {
               difficulty: 'beginner',
               command: 'uptime',
               note: 'Su Linux include processi in I/O wait, non solo CPU.',
+              task: 'Mostra il carico medio del sistema su 1, 5 e 15 minuti tramite uptime.',
             },
             {
               english: 'Memory Usage',
@@ -526,6 +537,7 @@ export default {
               context: 'metrics',
               difficulty: 'beginner',
               command: 'free -h',
+              task: `Mostra l'utilizzo della memoria in formato leggibile con unita' di misura compatte.`,
             },
             {
               english: 'RAM',
@@ -548,6 +560,7 @@ export default {
               context: 'metrics',
               difficulty: 'beginner',
               command: 'swapon --show',
+              task: 'Elenca i dispositivi di swap attivi con la rispettiva dimensione e utilizzo.',
             },
             {
               english: 'OOM Killer',
@@ -569,6 +582,7 @@ export default {
               context: 'metrics',
               difficulty: 'beginner',
               command: 'vmstat 1',
+              task: 'Campiona statistiche di memoria virtuale e page fault ogni secondo con vmstat.',
             },
             {
               english: 'Cache Hit Ratio',
@@ -580,6 +594,7 @@ export default {
               context: 'metrics',
               difficulty: 'beginner',
               code: 'cache_hits / (cache_hits + cache_misses)',
+              task: 'Calcola il rapporto di hit dividendo cache_hits per la somma di hit e miss.',
             },
             {
               english: 'Context Switch',
@@ -591,6 +606,7 @@ export default {
               context: 'metrics',
               difficulty: 'beginner',
               command: 'pidstat -w',
+              task: 'Mostra il numero di context switch volontari e involontari per processo con pidstat -w.',
             },
             {
               english: 'CPU Throttling',
@@ -603,6 +619,7 @@ export default {
               difficulty: 'beginner',
               code: 'container_cpu_cfs_throttled_seconds_total',
               note: 'In Kubernetes, accade quando si supera il "limit" di CPU.',
+              task: 'Monitora i secondi di CPU sottratti ai container per throttling tramite container_cpu_cfs_throttled_seconds_total.',
             },
           ],
         },
@@ -621,6 +638,7 @@ export default {
               context: 'metrics',
               difficulty: 'beginner',
               command: 'df -h',
+              task: 'Mostra spazio occupato e libero per ogni filesystem montato con valori in formato leggibile.',
             },
             {
               english: 'Disk I/O',
@@ -632,6 +650,7 @@ export default {
               context: 'metrics',
               difficulty: 'beginner',
               command: 'iostat -x 1',
+              task: 'Campiona ogni secondo le statistiche estese di I/O dei dischi con iostat -x.',
             },
             {
               english: 'IOPS',
@@ -684,6 +703,7 @@ export default {
               context: 'metrics',
               difficulty: 'beginner',
               command: 'df -i',
+              task: `Visualizza l'utilizzo degli inode su ogni filesystem per evitare esaurimenti silenziosi.`,
             },
             {
               english: 'Disk Saturation',
@@ -695,6 +715,7 @@ export default {
               context: 'metrics',
               difficulty: 'beginner',
               command: 'iostat -x 1',
+              task: 'Identifica la saturazione del disco controllando la colonna %util con iostat -x 1.',
             },
             {
               english: 'Filesystem',
@@ -706,6 +727,7 @@ export default {
               context: 'metrics',
               difficulty: 'beginner',
               command: 'mount | grep ro',
+              task: `Filtra i filesystem rimontati in sola lettura cercando il flag ro nell'elenco mount.`,
             },
             {
               english: 'Disk Free',
@@ -716,6 +738,7 @@ export default {
               context: 'metrics',
               difficulty: 'beginner',
               code: 'node_filesystem_free_bytes / node_filesystem_size_bytes < 0.1',
+              task: 'Allerta quando lo spazio libero scende sotto il 10% confrontando free_bytes con size_bytes.',
             },
           ],
         },
@@ -734,6 +757,7 @@ export default {
               context: 'metrics',
               difficulty: 'beginner',
               command: 'iftop',
+              task: 'Mostra il throughput di rete in tempo reale per interfaccia con iftop.',
             },
             {
               english: 'Bandwidth',
@@ -755,6 +779,7 @@ export default {
               difficulty: 'beginner',
               command: 'ping example.com',
               rename_to: 'End-to-End Latency',
+              task: 'Misura la latenza ICMP inviando pacchetti ping verso il dominio example.com.',
             },
             {
               english: 'Packet Loss',
@@ -765,6 +790,7 @@ export default {
               context: 'metrics',
               difficulty: 'beginner',
               command: 'mtr example.com',
+              task: 'Diagnostica la perdita di pacchetti hop per hop verso example.com con mtr.',
             },
             {
               english: 'Jitter',
@@ -797,6 +823,7 @@ export default {
               context: 'metrics',
               difficulty: 'beginner',
               command: 'ss -s',
+              task: 'Mostra il riepilogo statistico delle connessioni e dei socket aperti con ss -s.',
             },
             {
               english: 'Errors per Second',
@@ -808,6 +835,7 @@ export default {
               context: 'metrics',
               difficulty: 'beginner',
               code: 'rate(http_requests_total{code=~"5.."}[5m])',
+              task: 'Calcola al secondo gli errori HTTP 5xx tramite rate() su una finestra di 5 minuti.',
             },
             {
               english: 'TCP Retransmit',
@@ -819,6 +847,7 @@ export default {
               context: 'metrics',
               difficulty: 'beginner',
               command: 'netstat -s | grep retrans',
+              task: 'Estrai i contatori di ritrasmissione TCP dalle statistiche di rete con netstat -s.',
             },
             {
               english: 'Socket',
@@ -830,6 +859,7 @@ export default {
               context: 'metrics',
               difficulty: 'beginner',
               command: 'ss -tuln',
+              task: 'Elenca i socket TCP e UDP in ascolto sul sistema senza risolvere i nomi.',
             },
           ],
         },
@@ -847,6 +877,7 @@ export default {
               context: 'metrics',
               difficulty: 'beginner',
               code: 'rate(http_requests_total[5m])',
+              task: 'Calcola il numero di richieste HTTP al secondo con rate() su una finestra di 5 minuti.',
             },
             {
               english: 'Error Rate',
@@ -857,6 +888,7 @@ export default {
               context: 'metrics',
               difficulty: 'beginner',
               code: 'sum(rate(http_requests_total{code=~"5.."}[5m])) / sum(rate(http_requests_total[5m]))',
+              task: 'Determina la frazione di richieste 5xx sul totale come tasso di errore in PromQL.',
             },
             {
               english: 'Response Time',
@@ -879,6 +911,7 @@ export default {
               difficulty: 'beginner',
               code: 'histogram_quantile(0.99, sum(rate(http_request_duration_seconds_bucket[5m])) by (le))',
               note: 'P50 = mediana, P95 e P99 mostrano la coda lenta.',
+              task: `Stima il percentile P99 della latenza delle richieste a partire dai bucket dell'istogramma.`,
             },
             {
               english: 'Queue Length',
@@ -966,6 +999,7 @@ export default {
               context: 'logs',
               difficulty: 'beginner',
               code: 'logger.setLevel("DEBUG")',
+              task: 'Imposta il livello di log del logger a DEBUG per emettere ogni messaggio diagnostico.',
             },
             {
               english: 'Debug',
@@ -978,6 +1012,7 @@ export default {
               difficulty: 'beginner',
               code: 'logger.debug("entering function")',
               note: 'Solo in sviluppo, troppo verboso in produzione.',
+              task: 'Emetti un messaggio di debug quando il flusso entra nella funzione corrente.',
             },
             {
               english: 'Info',
@@ -989,6 +1024,7 @@ export default {
               context: 'logs',
               difficulty: 'beginner',
               code: 'logger.info("user logged in")',
+              task: 'Registra un evento informativo per documentare il login di un utente.',
             },
             {
               english: 'Warning',
@@ -1000,6 +1036,7 @@ export default {
               context: 'logs',
               difficulty: 'beginner',
               code: 'logger.warn("retrying request")',
+              task: 'Emetti un warning quando il client effettua un retry su una richiesta fallita.',
             },
             {
               english: 'Error',
@@ -1011,6 +1048,7 @@ export default {
               context: 'logs',
               difficulty: 'beginner',
               code: 'logger.error("db connection failed")',
+              task: `Loga come error il fallimento della connessione al database per attivare l'investigazione.`,
             },
             {
               english: 'Critical',
@@ -1022,6 +1060,7 @@ export default {
               context: 'logs',
               difficulty: 'beginner',
               code: 'logger.critical("system unrecoverable")',
+              task: 'Marca come critical una condizione di sistema non recuperabile che richiede pager immediato.',
             },
             {
               english: 'Fatal',
@@ -1084,6 +1123,7 @@ export default {
               difficulty: 'beginner',
               code: '{"level":"info","msg":"login","user_id":42}',
               note: 'Tipicamente JSON, una riga per evento.',
+              task: 'Scrivi una riga di log strutturato in JSON con livello info, evento login e user_id 42.',
             },
             {
               english: 'JSON Log',
@@ -1136,6 +1176,7 @@ export default {
               context: 'logs',
               difficulty: 'beginner',
               code: 'X-Request-ID: 7f3c...',
+              task: `Propaga l'ID di correlazione 7f3c... nell'header X-Request-ID per tracciare la richiesta tra servizi.`,
             },
             {
               english: 'Plain Text Log',
@@ -1166,6 +1207,7 @@ export default {
               context: 'logs',
               difficulty: 'beginner',
               code: 'logger = logging.getLogger(__name__)',
+              task: `Ottieni un'istanza di logger nominata sul modulo corrente tramite __name__.`,
             },
             {
               english: 'Handler',
@@ -1177,6 +1219,7 @@ export default {
               context: 'logs',
               difficulty: 'beginner',
               code: 'handler = FileHandler("/var/log/app.log")',
+              task: 'Configura un FileHandler che scriva i log nel file /var/log/app.log.',
             },
           ],
         },
@@ -1206,6 +1249,7 @@ export default {
               context: 'logs',
               difficulty: 'beginner',
               command: 'logrotate -f /etc/logrotate.conf',
+              task: `Forza l'esecuzione della rotazione log usando la configurazione /etc/logrotate.conf.`,
             },
             {
               english: 'Compression',
@@ -1217,6 +1261,7 @@ export default {
               context: 'logs',
               difficulty: 'beginner',
               command: 'gzip /var/log/app.log.1',
+              task: `Comprimi il file di log gia' ruotato /var/log/app.log.1 con gzip per ridurne la dimensione.`,
             },
             {
               english: 'Archive',
@@ -1251,6 +1296,7 @@ export default {
               difficulty: 'beginner',
               command: 'logger -p local0.info "test message"',
               tool: 'rsyslog, syslog-ng',
+              task: `Invia un messaggio di prova a syslog con facility local0 e priorita' info.`,
             },
             {
               english: 'Journald',
@@ -1264,6 +1310,7 @@ export default {
               command: 'journalctl -u nginx -f',
               tool: 'systemd',
               note: 'Su distribuzioni Linux moderne con systemd.',
+              task: 'Segui in tempo reale i log della unit systemd nginx tramite journalctl.',
             },
             {
               english: 'Facility',
@@ -1295,6 +1342,7 @@ export default {
               context: 'logs',
               difficulty: 'beginner',
               command: 'tail -f /var/log/app.log',
+              task: 'Visualizza in tempo reale le ultime righe scritte sul file /var/log/app.log.',
             },
           ],
         },
@@ -1345,6 +1393,7 @@ export default {
               context: 'logs',
               difficulty: 'beginner',
               command: 'grep -i "error" /var/log/app.log',
+              task: `Cerca senza distinzione di maiuscole il pattern error all'interno del file /var/log/app.log.`,
             },
             {
               english: 'Tail',
@@ -1356,6 +1405,7 @@ export default {
               context: 'logs',
               difficulty: 'beginner',
               command: 'tail -f /var/log/syslog',
+              task: 'Segui le ultime righe del file /var/log/syslog stampando ogni nuova voce in tempo reale.',
             },
             {
               english: 'Awk',
@@ -1367,6 +1417,7 @@ export default {
               context: 'logs',
               difficulty: 'beginner',
               command: "awk '{print $9}' access.log",
+              task: 'Estrai la nona colonna da access.log con awk per leggere lo status code di ogni richiesta.',
             },
             {
               english: 'Pattern Matching',
@@ -1410,6 +1461,7 @@ export default {
               context: 'logs',
               difficulty: 'beginner',
               command: 'curl -v https://example.com',
+              task: 'Esegui curl con output verboso verso example.com per ispezionare header e handshake TLS.',
             },
           ],
         },
@@ -1450,6 +1502,7 @@ export default {
               command: 'curl http://localhost:9200/_cat/indices',
               tool: 'Elasticsearch',
               note: 'Motore di ricerca e analisi distribuito basato su Lucene; cuore dello stack ELK per indicizzare e interrogare grandi volumi di log.',
+              task: `Interroga l'API _cat/indices di Elasticsearch sulla porta 9200 per elencare gli indici esistenti.`,
             },
             {
               english: 'Logstash',
@@ -1497,6 +1550,7 @@ export default {
               difficulty: 'beginner',
               tool: 'Filebeat',
               code: 'paths: ["/var/log/*.log"]',
+              task: 'Configura Filebeat per seguire tutti i file con estensione .log presenti in /var/log.',
             },
             {
               english: 'Index',
@@ -1508,6 +1562,7 @@ export default {
               context: 'logs',
               difficulty: 'beginner',
               code: 'logs-app-2026.04.26',
+              task: `Nomina l'indice giornaliero come logs-app-2026.04.26 per separare i documenti per data.`,
             },
             {
               english: 'Shard',
@@ -1530,6 +1585,7 @@ export default {
               context: 'logs',
               difficulty: 'beginner',
               code: 'input { beats {} } filter { ... } output { elasticsearch {} }',
+              task: 'Definisci una pipeline Logstash con input beats, blocco filter e output verso Elasticsearch.',
             },
             {
               english: 'KQL',
@@ -1544,6 +1600,7 @@ export default {
               tool: 'Kibana',
               note: 'Kibana Query Language: sintassi compatta per filtrare documenti in Kibana usando coppie campo:valore e operatori booleani.',
               rename_to: 'Kibana Query Language',
+              task: `Filtra in Kibana i documenti con status_code 500 sull'host web-1 usando KQL.`,
             },
           ],
         },
@@ -1575,6 +1632,7 @@ export default {
               difficulty: 'beginner',
               code: '{job="nginx"} |= "error"',
               tool: 'Loki',
+              task: 'Filtra in LogQL i log della job nginx selezionando le righe che contengono la stringa error.',
             },
             {
               english: 'Promtail',
@@ -1598,6 +1656,7 @@ export default {
               difficulty: 'beginner',
               code: '{app="api", env="prod"}',
               note: 'Centrali in Loki: meno label, più efficienza.',
+              task: 'Seleziona in Loki le serie con etichette app=api ed env=prod per restringere il set.',
             },
             {
               english: 'Stream',
@@ -1631,6 +1690,7 @@ export default {
               context: 'logs',
               difficulty: 'beginner',
               code: '|= "panic" |~ "error: \\d+"',
+              task: 'Filtra le righe che contengono panic e poi applica un match regex su error: \\d+.',
             },
             {
               english: 'Log Volume',
@@ -1653,6 +1713,7 @@ export default {
               difficulty: 'beginner',
               code: 'X-Scope-OrgID: team-a',
               tool: 'Loki',
+              task: `Identifica il tenant team-a in Loki valorizzando l'header X-Scope-OrgID nella richiesta.`,
             },
             {
               english: 'Live Tail',
@@ -1706,6 +1767,7 @@ export default {
               context: 'logs',
               difficulty: 'beginner',
               code: '<source>\n  @type tail\n  path /var/log/*.log\n</source>',
+              task: 'Definisci in Fluentd una source di tipo tail che legga tutti i file .log sotto /var/log.',
             },
             {
               english: 'Match',
@@ -1717,6 +1779,7 @@ export default {
               context: 'logs',
               difficulty: 'beginner',
               code: '<match nginx.**>\n  @type elasticsearch\n</match>',
+              task: 'Instrada con un blocco match Fluentd gli eventi nginx.** verso il plugin di output elasticsearch.',
             },
             {
               english: 'Filter',
@@ -1728,6 +1791,7 @@ export default {
               context: 'logs',
               difficulty: 'beginner',
               code: '<filter app.**>\n  @type record_transformer\n</filter>',
+              task: 'Applica un filtro record_transformer agli eventi app.** per arricchirne o trasformarne i campi.',
             },
             {
               english: 'Buffer',
@@ -1751,6 +1815,7 @@ export default {
               difficulty: 'beginner',
               code: 'tag nginx.access',
               rename_to: 'Fluentd Tag',
+              task: 'Marca gli eventi Fluentd in ingresso con il tag nginx.access per indirizzarli ai match successivi.',
             },
             {
               english: 'Plugin',
@@ -1762,6 +1827,7 @@ export default {
               context: 'logs',
               difficulty: 'beginner',
               command: 'fluent-gem install fluent-plugin-s3',
+              task: 'Installa il plugin fluent-plugin-s3 per inoltrare i log da Fluentd verso S3.',
             },
             {
               english: 'Output',
@@ -1803,6 +1869,7 @@ export default {
               tool: 'AWS CloudWatch',
               command: 'aws logs tail /aws/lambda/my-fn --follow',
               note: 'Servizio AWS per raccogliere, conservare e ricercare log di applicazioni e servizi cloud; integrato con CloudWatch Metrics e Alarms.',
+              task: 'Segui in tempo reale il gruppo di log Lambda /aws/lambda/my-fn tramite la CLI AWS.',
             },
             {
               english: 'Log Group',
@@ -1838,6 +1905,7 @@ export default {
               code: 'fields @timestamp, @message | sort @timestamp desc',
               tool: 'AWS CloudWatch',
               note: 'Linguaggio di query interattivo di CloudWatch Logs per aggregare, filtrare e visualizzare log con sintassi simile a pipe.',
+              task: 'Costruisci una query Logs Insights con @timestamp e @message ordinati per timestamp decrescente.',
             },
             {
               english: 'Stackdriver',
@@ -1863,6 +1931,7 @@ export default {
               command: 'gcloud logging read "severity>=ERROR"',
               note: 'Servizio gestito di Google Cloud per ingestione, conservazione e ricerca dei log; integrato con Cloud Monitoring e BigQuery.',
               rename_to: 'GCP Cloud Logging',
+              task: 'Estrai da GCP Cloud Logging tutte le voci con severity maggiore o uguale a ERROR.',
             },
             {
               english: 'Azure Monitor Logs',
@@ -1938,6 +2007,7 @@ export default {
               difficulty: 'intermediate',
               code: 'expr: avg(cpu_usage) > 0.9',
               tool: 'Prometheus',
+              task: `Definisci una regola di alert che scatti quando l'uso medio della CPU supera il 90%.`,
             },
             {
               english: 'Threshold',
@@ -1982,6 +2052,7 @@ export default {
               difficulty: 'intermediate',
               code: 'for: 5m',
               tool: 'Prometheus',
+              task: `Stabilizza l'alert con una clausola for di 5 minuti per evitare flapping su picchi brevi.`,
             },
             {
               english: 'Severity Level',
@@ -1993,6 +2064,7 @@ export default {
               context: 'alerting',
               difficulty: 'intermediate',
               code: 'labels:\n  severity: critical',
+              task: `Imposta sulla regola di alert la label severity al valore critical per attivare l'on-call.`,
             },
             {
               english: 'Annotation',
@@ -2004,6 +2076,7 @@ export default {
               difficulty: 'intermediate',
               code: 'annotations:\n  summary: "DB latency high"',
               rename_to: 'Alertmanager Annotation',
+              task: `Aggiungi all'alert l'annotazione summary con il testo DB latency high per il routing in PagerDuty.`,
             },
             {
               english: 'Notification',
@@ -2206,6 +2279,7 @@ export default {
               context: 'alerting',
               difficulty: 'intermediate',
               code: 'POST https://hooks.slack.com/services/...',
+              task: `Invia gli alert con una POST verso l'URL del webhook Slack su hooks.slack.com/services/...`,
             },
             {
               english: 'Microsoft Teams',
@@ -2360,6 +2434,7 @@ export default {
               context: 'alerting',
               difficulty: 'intermediate',
               code: 'annotations:\n  runbook_url: https://wiki/runbooks/db',
+              task: `Aggiungi all'annotazione runbook_url il link alla pagina di runbook per il database.`,
             },
             {
               english: 'Tuning',
@@ -2420,6 +2495,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               command: 'curl http://localhost:9090/metrics',
+              task: `Verifica l'endpoint /metrics esposto da Prometheus sulla porta 9090 con una richiesta curl.`,
             },
             {
               english: 'Target',
@@ -2431,6 +2507,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'static_configs:\n  - targets: ["app:8080"]',
+              task: `Configura un target statico Prometheus che punti all'host app sulla porta 8080.`,
             },
             {
               english: 'Job',
@@ -2442,6 +2519,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: '- job_name: "node"\n  static_configs: [...]',
+              task: 'Crea un job Prometheus chiamato node con configurazione static_configs per i target.',
             },
             {
               english: 'Service Discovery',
@@ -2477,6 +2555,7 @@ export default {
               tool: 'Pushgateway',
               command:
                 'echo "my_metric 42" | curl --data-binary @- http://pgw:9091/metrics/job/batch',
+              task: 'Invia la metrica my_metric con valore 42 al Push Gateway sulla porta 9091 per la job batch.',
             },
             {
               english: 'TSDB',
@@ -2498,6 +2577,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: '/federate?match[]={job="api"}',
+              task: 'Estrai via federation tutte le serie con label job=api da un Prometheus regionale.',
             },
           ],
         },
@@ -2528,6 +2608,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'node_exporter',
               command: 'curl http://localhost:9100/metrics',
+              task: `Interroga l'endpoint /metrics del Node Exporter in ascolto sulla porta 9100.`,
             },
             {
               english: 'cAdvisor',
@@ -2551,6 +2632,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'blackbox_exporter',
               code: 'modules:\n  http_2xx:\n    prober: http',
+              task: 'Definisci un modulo http_2xx con prober http per le sonde Blackbox Exporter.',
             },
             {
               english: 'MySQL Exporter',
@@ -2573,6 +2655,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'from prometheus_client import start_http_server, Gauge',
+              task: 'Costruisci un esportatore custom importando start_http_server e Gauge da prometheus_client.',
             },
             {
               english: 'Instrumentation',
@@ -2584,6 +2667,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'http_requests_total.WithLabelValues("GET").Inc()',
+              task: 'Incrementa il contatore http_requests_total etichettato con il metodo HTTP GET.',
             },
             {
               english: 'Client Library',
@@ -2595,6 +2679,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'pip install prometheus_client',
+              task: 'Installa la libreria client Prometheus per Python tramite pip install prometheus_client.',
             },
             {
               english: 'Metric Endpoint',
@@ -2606,6 +2691,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'GET /metrics',
+              task: `Esponi l'endpoint /metrics in GET da cui Prometheus scarichera' i campioni.`,
             },
             {
               english: 'Exposition Format',
@@ -2617,6 +2703,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: '# HELP http_requests Total\n# TYPE http_requests counter\nhttp_requests{code="200"} 1027',
+              task: 'Dichiara con HELP e TYPE la metrica counter http_requests e annota il sample con code=200.',
             },
           ],
         },
@@ -2636,6 +2723,7 @@ export default {
               difficulty: 'intermediate',
               code: 'http_requests_total{code="200"}',
               note: 'Sempre da usare con rate() o increase().',
+              task: 'Modella le richieste HTTP con codice 200 come metrica counter http_requests_total.',
             },
             {
               english: 'Gauge',
@@ -2647,6 +2735,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'memory_used_bytes',
+              task: 'Rappresenta la memoria usata in byte come metrica gauge memory_used_bytes.',
             },
             {
               english: 'Histogram',
@@ -2658,6 +2747,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'http_request_duration_seconds_bucket{le="0.5"}',
+              task: 'Definisci un bucket di istogramma per la durata delle richieste HTTP con soglia le=0.5.',
             },
             {
               english: 'Summary',
@@ -2670,6 +2760,7 @@ export default {
               difficulty: 'intermediate',
               code: 'http_request_duration_seconds{quantile="0.99"}',
               note: 'Più costoso del histogram, non aggregabile.',
+              task: 'Esponi la durata delle richieste HTTP come summary con quantile 0.99.',
             },
             {
               english: 'Bucket',
@@ -2681,6 +2772,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'le="+Inf"',
+              task: 'Definisci il bucket finale di istogramma con label le=+Inf per catturare tutti i valori.',
             },
             {
               english: 'Quantile',
@@ -2692,6 +2784,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'histogram_quantile(0.99, ...)',
+              task: `Calcola il quantile 0.99 della latenza usando histogram_quantile sul bucket dell'istogramma.`,
             },
             {
               english: 'Label Cardinality',
@@ -2703,6 +2796,7 @@ export default {
               difficulty: 'intermediate',
               code: 'http_requests_total{code="200", method="GET"}',
               note: `Rinominato per distinguerlo dall'item 'Label' del modulo tooling log.`,
+              task: `Limita la cardinalita' delle label di http_requests_total a code e method per contenere la memoria.`,
             },
             {
               english: 'Cardinality',
@@ -2725,6 +2819,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'http_requests_total',
+              task: 'Segui la convenzione di naming Prometheus nominando il contatore http_requests_total con suffisso _total.',
             },
             {
               english: 'Help Text',
@@ -2736,6 +2831,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: '# HELP http_requests_total Total HTTP requests',
+              task: 'Documenta il counter http_requests_total con il testo HELP Total HTTP requests.',
             },
           ],
         },
@@ -2754,6 +2850,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'record: job:http_inprogress_requests:sum',
+              task: 'Pre-calcola con una recording rule il valore aggregato job:http_inprogress_requests:sum.',
             },
             {
               english: 'Alerting Rule',
@@ -2764,6 +2861,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'alert: HighErrorRate\nexpr: ...\nfor: 5m',
+              task: 'Definisci una alerting rule HighErrorRate che resti vera per 5 minuti prima di scattare.',
             },
             {
               english: 'Group',
@@ -2775,6 +2873,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'groups:\n  - name: http\n    rules: [...]',
+              task: 'Raggruppa sotto il nome http un insieme di regole Prometheus da valutare insieme.',
             },
             {
               english: 'Evaluation Interval',
@@ -2786,6 +2885,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'evaluation_interval: 30s',
+              task: `Imposta l'intervallo di valutazione globale delle regole Prometheus a 30 secondi.`,
             },
             {
               english: 'Block',
@@ -2827,6 +2927,7 @@ export default {
               difficulty: 'intermediate',
               code: 'remote_write:\n  - url: https://thanos/api/v1/write',
               tool: 'Thanos, Mimir',
+              task: `Configura il remote write di Prometheus verso Thanos all'URL /api/v1/write.`,
             },
             {
               english: 'Remote Read',
@@ -2849,6 +2950,7 @@ export default {
               difficulty: 'intermediate',
               command: 'promtool check rules /etc/prometheus/rules.yml',
               tool: 'promtool',
+              task: 'Valida la sintassi delle regole di alert nel file /etc/prometheus/rules.yml con promtool.',
             },
           ],
         },
@@ -2887,6 +2989,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'http_requests_total',
+              task: 'Recupera un instant vector per la metrica http_requests_total senza specificare una finestra.',
             },
             {
               english: 'Range Vector',
@@ -2898,6 +3001,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'http_requests_total[5m]',
+              task: 'Seleziona un range vector di http_requests_total sugli ultimi 5 minuti come input per rate().',
             },
             {
               english: 'Selector',
@@ -2909,6 +3013,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'up{job="api"}',
+              task: 'Restringi la metrica up con un selettore PromQL alla sola job api.',
             },
             {
               english: 'Label Matcher',
@@ -2920,6 +3025,7 @@ export default {
               difficulty: 'intermediate',
               code: '{code=~"5.."}',
               note: 'Operatori: =, !=, =~ (regex), !~ (regex).',
+              task: 'Filtra le serie con un matcher di label regex sui codici di stato 5xx tramite code=~5..',
             },
             {
               english: 'Equality Match',
@@ -2930,6 +3036,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'job="prometheus"',
+              task: 'Seleziona con un match di uguaglianza le serie della job prometheus tramite job=prometheus.',
             },
             {
               english: 'Regex Match',
@@ -2940,6 +3047,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'instance=~"web-.*"',
+              task: 'Filtra con un match regex tutti gli instance il cui nome inizia per web- tramite =~web-.*.',
             },
             {
               english: 'Negative Match',
@@ -2950,6 +3058,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'mode!="idle"',
+              task: `Escludi con un match negativo tutte le serie in modalita' idle tramite mode!=idle.`,
             },
             {
               english: 'Offset',
@@ -2961,6 +3070,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'http_requests_total offset 1h',
+              task: 'Sposta indietro nel tempo la query http_requests_total di 1 ora con il modificatore offset.',
             },
             {
               english: 'At Modifier',
@@ -2972,6 +3082,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'http_requests_total @ 1717000000',
+              task: 'Ancora la valutazione di http_requests_total al timestamp Unix 1717000000 con il modificatore @.',
             },
           ],
         },
@@ -2991,6 +3102,7 @@ export default {
               difficulty: 'intermediate',
               code: 'rate(http_requests_total[5m])',
               note: 'Solo per counter, mai per gauge.',
+              task: 'Calcola il rate medio al secondo di http_requests_total su una finestra mobile di 5 minuti.',
             },
             {
               english: 'irate()',
@@ -3002,6 +3114,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'irate(http_requests_total[5m])',
+              task: 'Calcola con irate() il tasso istantaneo di http_requests_total usando gli ultimi due campioni.',
             },
             {
               english: 'increase()',
@@ -3013,6 +3126,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'increase(http_requests_total[1h])',
+              task: `Calcola con increase() l'incremento totale di http_requests_total nell'arco di un'ora.`,
             },
             {
               english: 'sum()',
@@ -3024,6 +3138,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'sum(rate(http_requests_total[5m]))',
+              task: 'Aggrega con sum() il rate di http_requests_total su 5 minuti in un singolo valore globale.',
             },
             {
               english: 'avg()',
@@ -3035,6 +3150,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'avg(node_cpu_seconds_total) by (instance)',
+              task: 'Calcola la media di node_cpu_seconds_total raggruppando per label instance con la clausola by.',
             },
             {
               english: 'max()',
@@ -3046,6 +3162,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'max(memory_used_bytes) by (instance)',
+              task: 'Trova con max() il valore massimo di memory_used_bytes per ciascuna istanza.',
             },
             {
               english: 'min()',
@@ -3057,6 +3174,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'min(node_filesystem_free_bytes) by (instance)',
+              task: 'Identifica con min() il nodo con il minimo spazio libero su filesystem per istanza.',
             },
             {
               english: 'count()',
@@ -3068,6 +3186,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'count(up == 1)',
+              task: 'Conta con count() quanti target Prometheus risultano attualmente up uguale a 1.',
             },
             {
               english: 'topk()',
@@ -3079,6 +3198,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'topk(5, rate(http_requests_total[5m]))',
+              task: 'Estrai con topk() le prime cinque serie per rate di http_requests_total su 5 minuti.',
             },
             {
               english: 'histogram_quantile()',
@@ -3090,6 +3210,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'histogram_quantile(0.99, sum(rate(latency_bucket[5m])) by (le))',
+              task: 'Calcola il quantile 0.99 della latenza aggregando latency_bucket per la label le su 5 minuti.',
             },
           ],
         },
@@ -3108,6 +3229,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'sum(rate(http_requests_total[5m])) by (instance)',
+              task: 'Conserva il dettaglio per instance aggregando il rate di http_requests_total con sum by(instance).',
             },
             {
               english: 'without Clause',
@@ -3119,6 +3241,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'sum(http_requests_total) without (pod)',
+              task: `Rimuovi la label pod dall'aggregazione di http_requests_total con la clausola without.`,
             },
             {
               english: 'Vector Matching',
@@ -3140,6 +3263,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'a / on(instance) b',
+              task: 'Abbina due metriche a e b nella divisione utilizzando solo la label instance con on(instance).',
             },
             {
               english: 'ignoring Clause',
@@ -3151,6 +3275,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'a / ignoring(pod) b',
+              task: `Dividi due metriche ignorando la label pod nell'abbinamento delle serie con ignoring(pod).`,
             },
             {
               english: 'group_left',
@@ -3162,6 +3287,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'a * on(job) group_left b',
+              task: 'Arricchisci una metrica a con label di b tramite many-to-one usando on(job) group_left.',
             },
             {
               english: 'group_right',
@@ -3183,6 +3309,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'a / b * 100',
+              task: `Costruisci un rapporto percentuale tra due metriche con l'operatore binario a / b * 100.`,
             },
             {
               english: 'Comparison Operator',
@@ -3194,6 +3321,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'memory_usage > 0.8',
+              task: `Filtra con l'operatore di confronto > 0.8 le serie con memory_usage oltre la soglia dell'80%.`,
             },
             {
               english: 'Logical Operator',
@@ -3205,6 +3333,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'up == 0 unless on(instance) under_maintenance',
+              task: 'Combina up==0 con unless on(instance) under_maintenance per escludere il downtime pianificato.',
             },
           ],
         },
@@ -3223,6 +3352,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'sum(rate(http_requests_total[5m])) by (status)',
+              task: 'Aggrega il rate di http_requests_total su 5 minuti con sum by(status) per ottenere il tasso per codice.',
             },
             {
               english: 'Error Rate Query',
@@ -3234,6 +3364,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'sum(rate(http_requests_total{code=~"5.."}[5m])) / sum(rate(http_requests_total[5m]))',
+              task: 'Calcola il tasso di errore dividendo il rate dei 5xx per il rate totale su una finestra di 5 minuti.',
             },
             {
               english: 'P99 Latency',
@@ -3245,6 +3376,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'histogram_quantile(0.99, sum(rate(http_request_duration_seconds_bucket[5m])) by (le))',
+              task: 'Determina la latenza P99 con histogram_quantile(0.99) sul bucket aggregato per label le su 5 minuti.',
             },
             {
               english: 'Up Metric',
@@ -3256,6 +3388,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'up{job="api"} == 0',
+              task: 'Allerta quando la metrica up della job api vale 0 indicando uno scrape fallito.',
             },
             {
               english: 'Saturation Query',
@@ -3267,6 +3400,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: '(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes',
+              task: 'Calcola la saturazione di memoria dividendo MemTotal meno MemAvailable per MemTotal.',
             },
             {
               english: 'Disk Free Query',
@@ -3278,6 +3412,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: '(node_filesystem_avail_bytes / node_filesystem_size_bytes) < 0.1',
+              task: 'Filtra i filesystem con avail_bytes su size_bytes sotto il 10% per allertare sullo spazio in esaurimento.',
             },
             {
               english: 'CPU Usage Query',
@@ -3289,6 +3424,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: '1 - avg(rate(node_cpu_seconds_total{mode="idle"}[5m])) by (instance)',
+              task: 'Calcola la CPU usata sottraendo da 1 la media del rate del mode idle aggregata per instance.',
             },
             {
               english: 'Apdex',
@@ -3300,6 +3436,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               code: '(satisfied + tolerating/2) / total',
+              task: `Calcola l'Apdex come (satisfied + tolerating/2) / total a partire dai conteggi delle richieste.`,
             },
             {
               english: 'Burn Rate',
@@ -3312,6 +3449,7 @@ export default {
               difficulty: 'intermediate',
               code: 'error_rate / (1 - slo)',
               note: 'Concetto chiave SRE.',
+              task: 'Determina il burn rate del budget di errore dividendo error_rate per (1 - slo).',
             },
             {
               english: 'Multi-Burn-Rate',
@@ -3573,6 +3711,7 @@ export default {
               context: 'grafana',
               difficulty: 'intermediate',
               code: '$instance',
+              task: 'Riferisci nella query del pannello la variabile dashboard $instance per filtrare per host.',
             },
             {
               english: 'Query Variable',
@@ -3584,6 +3723,7 @@ export default {
               context: 'grafana',
               difficulty: 'intermediate',
               code: 'label_values(up, instance)',
+              task: 'Popola una variabile da query con label_values(up, instance) per elencare gli instance Prometheus.',
             },
             {
               english: 'Custom Variable',
@@ -3625,6 +3765,7 @@ export default {
               context: 'grafana',
               difficulty: 'intermediate',
               code: '/^web-.*/',
+              task: 'Applica alla variabile un filtro regex /^web-.*/ per mostrare solo gli host con prefisso web-.',
             },
             {
               english: 'Chained Variable',
@@ -3636,6 +3777,7 @@ export default {
               context: 'grafana',
               difficulty: 'intermediate',
               code: 'label_values(up{instance=~"$instance"}, job)',
+              task: `Definisci una variabile concatenata che restituisca le job filtrate dall'instance selezionato.`,
             },
             {
               english: 'Constant',
@@ -3657,6 +3799,7 @@ export default {
               context: 'grafana',
               difficulty: 'intermediate',
               code: '$interval',
+              task: 'Esponi nel dashboard la variabile $interval per controllare la risoluzione temporale dei pannelli.',
             },
             {
               english: 'Data Source Variable',
@@ -3844,6 +3987,7 @@ export default {
               context: 'dashboards',
               difficulty: 'intermediate',
               code: '.*',
+              task: `Mappa l'opzione All della variabile sulla regex .* per aggregare su tutti i valori disponibili.`,
             },
             {
               english: 'Refresh on Time Range',
@@ -3865,6 +4009,7 @@ export default {
               context: 'dashboards',
               difficulty: 'intermediate',
               code: '?var-instance=web-1',
+              task: 'Condividi il dashboard con var-instance=web-1 in querystring per fissare il valore selezionato.',
             },
             {
               english: 'Sort Order',
@@ -4022,6 +4167,7 @@ export default {
               context: 'dashboards',
               difficulty: 'intermediate',
               code: 'apiVersion: 1\nproviders: [...]',
+              task: 'Dichiara il file di provisioning Grafana con apiVersion 1 e la sezione providers.',
             },
             {
               english: 'Dashboard JSON',
@@ -4033,6 +4179,7 @@ export default {
               context: 'dashboards',
               difficulty: 'intermediate',
               code: '{ "title": "API", "panels": [...] }',
+              task: `Definisci il JSON del dashboard impostando il campo title su API e l'array panels.`,
             },
             {
               english: 'Provider',
@@ -4074,6 +4221,7 @@ export default {
               context: 'dashboards',
               difficulty: 'intermediate',
               code: 'datasources:\n  - name: Prometheus\n    url: http://prom:9090',
+              task: `Provisiona via YAML un datasource Prometheus chiamato Prometheus all'URL http://prom:9090.`,
             },
             {
               english: 'Allow UI Updates',
@@ -4095,6 +4243,7 @@ export default {
               context: 'dashboards',
               difficulty: 'intermediate',
               command: 'curl -X POST /api/admin/provisioning/dashboards/reload',
+              task: `Ricarica i dashboard provisionati richiamando in POST l'endpoint /api/admin/provisioning/dashboards/reload.`,
             },
             {
               english: 'Drift',
@@ -4134,6 +4283,7 @@ export default {
               difficulty: 'intermediate',
               command: 'grafana-cli plugins install grafana-piechart-panel',
               note: `Rinominato per distinguerlo dall'item 'Plugin' del modulo tooling log.`,
+              task: `Installa con grafana-cli il plugin di datasource grafana-piechart-panel sull'istanza Grafana.`,
             },
             {
               english: 'Panel Plugin',
@@ -4274,6 +4424,7 @@ export default {
               context: 'traces',
               difficulty: 'intermediate',
               code: 'span = tracer.start_span("db_query")',
+              task: 'Apri uno span chiamato db_query tramite il tracer per misurare la durata della query al database.',
             },
             {
               english: 'Root Span',
@@ -4305,6 +4456,7 @@ export default {
               context: 'traces',
               difficulty: 'intermediate',
               code: '7f3c1bc0e4a... (128-bit hex)',
+              task: 'Identifica una traccia distribuita con un trace ID esadecimale a 128 bit come 7f3c1bc0e4a...',
             },
             {
               english: 'Span ID',
@@ -4347,6 +4499,7 @@ export default {
               difficulty: 'intermediate',
               code: 'span.set_tag("user.id", 42)',
               note: `Rinominato per distinguerlo dall'item 'Tag' del modulo Grafana.`,
+              task: 'Aggiungi allo span il tag user.id con valore 42 per filtrare le tracce per utente.',
             },
           ],
         },
@@ -4420,6 +4573,7 @@ export default {
               context: 'traces',
               difficulty: 'intermediate',
               code: 'sampler: probabilistic, param: 0.01',
+              task: 'Configura il sampler probabilistico con parametro 0.01 per registrare una traccia ogni cento.',
             },
             {
               english: 'Adaptive Sampling',
@@ -4491,6 +4645,7 @@ export default {
               context: 'traces',
               difficulty: 'intermediate',
               code: 'X-B3-TraceId: ...\nX-B3-SpanId: ...',
+              task: 'Propaga la traccia tra servizi legacy con gli header X-B3-TraceId e X-B3-SpanId.',
             },
             {
               english: 'Tempo',
@@ -4515,6 +4670,7 @@ export default {
               difficulty: 'intermediate',
               code: '{ duration > 5s }',
               tool: 'Tempo',
+              task: 'Filtra in TraceQL su Tempo tutte le tracce con duration maggiore di 5 secondi.',
             },
             {
               english: 'Span Metrics',
@@ -4629,6 +4785,7 @@ export default {
               context: 'traces',
               difficulty: 'intermediate',
               code: 'span.add_event("cache.miss")',
+              task: `Aggiungi allo span un evento cache.miss per marcare l'istante esatto del miss della cache.`,
             },
             {
               english: 'Status Code',
@@ -4640,6 +4797,7 @@ export default {
               context: 'traces',
               difficulty: 'intermediate',
               code: 'span.set_status(StatusCode.ERROR)',
+              task: `Imposta sullo span lo status code ERROR per evidenziare un'operazione fallita nelle UI di tracing.`,
             },
             {
               english: 'Exemplar',
@@ -4804,6 +4962,7 @@ export default {
               context: 'apm',
               difficulty: 'intermediate',
               command: 'go tool pprof http://localhost:6060/debug/pprof/profile',
+              task: `Acquisisci un profilo CPU tramite go tool pprof contro l'endpoint /debug/pprof/profile.`,
             },
             {
               english: 'Continuous Profiling',
@@ -4845,6 +5004,7 @@ export default {
               context: 'apm',
               difficulty: 'intermediate',
               code: 'SELECT count(*) FROM Transaction',
+              task: 'Conta in NRQL il numero totale di eventi nella tabella Transaction con SELECT count(*).',
             },
             {
               english: 'License Key',
@@ -4866,6 +5026,7 @@ export default {
               difficulty: 'intermediate',
               command: 'pip install newrelic',
               note: `Rinominato per distinguerlo dall'item 'Agent' del modulo trace.`,
+              task: `Installa l'agent APM newrelic per Python tramite pip per strumentare l'applicazione.`,
             },
             {
               english: 'Application',
@@ -4959,6 +5120,7 @@ export default {
               context: 'apm',
               difficulty: 'intermediate',
               command: 'helm install datadog datadog/datadog',
+              task: `Distribuisci l'agent Datadog sul cluster Kubernetes installando la chart helm datadog/datadog.`,
             },
             {
               english: 'Custom Metric',
@@ -4971,6 +5133,7 @@ export default {
               difficulty: 'intermediate',
               code: 'statsd.gauge("orders.queue", 42)',
               note: 'Datadog fa pagare per metrica custom: attenzione ai costi.',
+              task: 'Emetti via DogStatsD una metrica gauge orders.queue con valore 42.',
             },
             {
               english: 'DogStatsD',
@@ -5064,6 +5227,7 @@ export default {
               context: 'apm',
               difficulty: 'intermediate',
               command: 'opentelemetry-instrument python app.py',
+              task: `Avvia l'app Python con il wrapper opentelemetry-instrument per generare span automaticamente.`,
             },
             {
               english: 'Manual Instrumentation',
@@ -5075,6 +5239,7 @@ export default {
               context: 'apm',
               difficulty: 'intermediate',
               code: 'with tracer.start_as_current_span("checkout"): ...',
+              task: 'Apri manualmente uno span chiamato checkout con tracer.start_as_current_span come context manager.',
             },
             {
               english: 'Cardinality Limit',
@@ -5096,6 +5261,7 @@ export default {
               context: 'apm',
               difficulty: 'intermediate',
               code: 'OTEL_TRACES_SAMPLER_ARG=0.01',
+              task: `Imposta il sampling rate delle tracce all'1% via OTEL_TRACES_SAMPLER_ARG=0.01.`,
             },
             {
               english: 'PII Scrubbing',
@@ -5128,6 +5294,7 @@ export default {
               context: 'apm',
               difficulty: 'intermediate',
               code: 'env: production',
+              task: 'Etichetta le metriche con il tag env: production per distinguere gli ambienti di deploy.',
             },
             {
               english: 'Version Tag',
@@ -5139,6 +5306,7 @@ export default {
               context: 'apm',
               difficulty: 'intermediate',
               code: 'version: v1.4.2',
+              task: 'Marca le metriche con il tag version: v1.4.2 per separare gli error rate tra release.',
             },
             {
               english: 'Trace Sampling Strategy',
@@ -5188,6 +5356,7 @@ export default {
               command: 'curl http://localhost:9100/metrics',
               rename_to: 'Node Exporter Collector',
               note: `Rinominato per distinguerlo dall'item 'Node Exporter' del modulo Prometheus.`,
+              task: `Verifica l'endpoint /metrics di Node Exporter sulla porta 9100 dove confluiscono anche i textfile.`,
             },
             {
               english: 'Collector Module',
@@ -5198,6 +5367,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'intermediate',
               code: '--collector.systemd',
+              task: 'Abilita in Node Exporter il modulo collector --collector.systemd per esporre lo stato delle unit.',
             },
             {
               english: 'Textfile Collector',
@@ -5209,6 +5379,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'intermediate',
               code: '--collector.textfile.directory=/var/lib/node_exporter/textfile_collector',
+              task: 'Punta il textfile collector alla directory /var/lib/node_exporter/textfile_collector dei file .prom.',
             },
             {
               english: 'cAdvisor Container Metric',
@@ -5243,6 +5414,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'intermediate',
               code: 'node_systemd_unit_state{name="nginx.service",state="active"}',
+              task: 'Allerta quando node_systemd_unit_state per nginx.service nello stato active vale 0.',
             },
             {
               english: 'Hardware Sensor',
@@ -5254,6 +5426,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'intermediate',
               command: 'sensors',
+              task: `Leggi temperature, voltaggi e velocita' delle ventole dai sensori hardware con sensors.`,
             },
             {
               english: 'IPMI',
@@ -5337,6 +5510,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'intermediate',
               code: '1.3.6.1.2.1.1.5.0',
+              task: `Interroga via SNMP l'OID 1.3.6.1.2.1.1.5.0 per leggere lo sysName del dispositivo.`,
             },
             {
               english: 'NetFlow',
@@ -5372,6 +5546,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'blackbox_exporter',
               code: 'modules:\n  http_2xx:\n    prober: http',
+              task: 'Definisci una sonda blackbox http_2xx con prober http per verificare risposte 2xx.',
             },
             {
               english: 'ICMP Probe',
@@ -5383,6 +5558,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'intermediate',
               command: 'ping -c 4 example.com',
+              task: 'Esegui una sonda ICMP inviando quattro pacchetti ping verso example.com.',
             },
             {
               english: 'TLS Expiry',
@@ -5394,6 +5570,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'intermediate',
               code: 'probe_ssl_earliest_cert_expiry - time() < 14*24*3600',
+              task: 'Allerta quando probe_ssl_earliest_cert_expiry meno time() scende sotto 14 giorni in secondi.',
             },
             {
               english: 'DNS Probe',
@@ -5405,6 +5582,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'intermediate',
               command: 'dig +short example.com',
+              task: 'Esegui una sonda DNS risolvendo example.com con dig +short per ottenere solo gli IP.',
             },
           ],
         },
@@ -5423,6 +5601,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'intermediate',
               code: 'container_memory_usage_bytes',
+              task: 'Monitora il consumo di memoria dei container tramite la metrica container_memory_usage_bytes.',
             },
             {
               english: 'cgroup',
@@ -5444,6 +5623,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'intermediate',
               code: 'kube_pod_container_status_restarts_total',
+              task: 'Allerta sul numero di restart dei container tramite kube_pod_container_status_restarts_total.',
             },
             {
               english: 'OOM Kill',
@@ -5454,6 +5634,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'intermediate',
               command: 'dmesg | grep -i oom',
+              task: 'Cerca nel buffer del kernel gli eventi di OOM kill filtrando dmesg per la parola oom.',
             },
             {
               english: 'CrashLoopBackOff',
@@ -5485,6 +5666,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'intermediate',
               code: 'resources:\n  requests:\n    cpu: 100m',
+              task: 'Dichiara per il container una requests.cpu pari a 100m per guidare lo scheduler Kubernetes.',
             },
             {
               english: 'Resource Limit',
@@ -5496,6 +5678,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'intermediate',
               code: 'resources:\n  limits:\n    memory: 512Mi',
+              task: 'Imposta sul container un limits.memory di 512Mi per evitare che saturi il nodo.',
             },
             {
               english: 'Image Vulnerability',
@@ -5537,6 +5720,7 @@ export default {
               difficulty: 'intermediate',
               code: 'slow_query_log = ON\nlong_query_time = 1',
               tool: 'MySQL',
+              task: 'Attiva su MySQL lo slow query log impostando long_query_time a 1 secondo.',
             },
             {
               english: 'Connection Pool',
@@ -5558,6 +5742,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'intermediate',
               code: 'pg_replication_lag_seconds',
+              task: 'Monitora il ritardo della replica PostgreSQL tramite la metrica pg_replication_lag_seconds.',
             },
             {
               english: 'Buffer Pool',
@@ -5599,6 +5784,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'intermediate',
               command: 'EXPLAIN ANALYZE SELECT ...',
+              task: 'Ottieni il piano di esecuzione effettivo di una SELECT con EXPLAIN ANALYZE per ottimizzarla.',
             },
             {
               english: 'Index Usage',
@@ -5670,6 +5856,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'intermediate',
               command: 'aws cloudwatch put-metric-alarm --alarm-name CPU90 ...',
+              task: 'Crea un alarm CloudWatch chiamato CPU90 che invii notifiche SNS al superamento della soglia di CPU.',
             },
             {
               english: 'Metric Filter',
@@ -5692,6 +5879,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'intermediate',
               command: 'sudo amazon-cloudwatch-agent-ctl -a start',
+              task: `Avvia il CloudWatch Agent sull'istanza EC2 con il comando amazon-cloudwatch-agent-ctl per iniziare a raccogliere metriche.`,
             },
             {
               english: 'EMF',
@@ -5704,6 +5892,7 @@ export default {
               difficulty: 'intermediate',
               code: '{"_aws":{"CloudWatchMetrics":[...]},"value":42}',
               note: 'Embedded Metric Format: convenzione JSON di AWS per emettere metriche custom direttamente nei log CloudWatch senza chiamate PutMetricData.',
+              task: 'Emetti un payload JSON in formato EMF dentro il log Lambda con la chiave _aws e value 42 per pubblicare metriche custom.',
             },
             {
               english: 'X-Ray',
@@ -5800,6 +5989,7 @@ export default {
               tool: 'Azure Monitor',
               note: `Rinominato per distinguerlo dall'item 'KQL' (Kibana Query Language) del modulo tooling log.`,
               rename_to: 'Azure KQL',
+              task: 'Interroga AppRequests in KQL filtrando ResultCode 500 e raggruppando il conteggio per bucket di 5 minuti.',
             },
             {
               english: 'Application Insights',
@@ -5952,6 +6142,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'intermediate',
               command: 'gcloud logging sinks create my-sink ...',
+              task: 'Definisci un log sink in gcloud chiamato my-sink che instradi i log verso BigQuery o Pub/Sub.',
             },
             {
               english: 'Metric Descriptor',
@@ -6002,6 +6193,7 @@ export default {
               difficulty: 'intermediate',
               command: 'aws cloudwatch put-metric-data ...',
               note: `Rinominato per distinguerlo dall'item 'Custom Metric' del modulo APM.`,
+              task: `Pubblica una metrica EMF su CloudWatch invocando put-metric-data dall'AWS CLI con il payload appropriato.`,
             },
             {
               english: 'Custom Namespace',
@@ -6012,6 +6204,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'intermediate',
               code: 'Namespace: MyApp/Orders',
+              task: `Imposta il namespace personalizzato MyApp/Orders sulla metrica CloudWatch per separare i dati dell'app da quelli AWS.`,
             },
             {
               english: 'Dimension',
@@ -6023,6 +6216,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'intermediate',
               code: 'Dimensions=[{"Name":"Service","Value":"checkout"}]',
+              task: 'Aggiungi la dimensione Service=checkout alla metrica CloudWatch per consentire viste segmentate per servizio.',
             },
             {
               english: 'Statistic',
@@ -6132,6 +6326,7 @@ export default {
               code: 'availability_slo: 99.9%',
               rename_to: 'Service Level Objective (SLO)',
               note: `Rinominato per distinguerlo dall'item 'SLO' del modulo osservabilita' base.`,
+              task: 'Definisci una finestra SLO con availability_slo al 99.9% calcolata su 28 giorni mobili.',
             },
             {
               english: 'SLI Query',
@@ -6144,6 +6339,7 @@ export default {
               code: 'sum(rate(http_requests_total{code!~"5.."}[28d])) / sum(rate(http_requests_total[28d]))',
               rename_to: 'Service Level Indicator (SLI)',
               note: `Rinominato per distinguerlo dall'item 'SLI' del modulo osservabilita' base.`,
+              task: `Calcola l'SLI di disponibilità con un rapporto PromQL fra rate delle richieste non 5xx e rate totale su 28 giorni.`,
             },
             {
               english: 'Error Budget Burn',
@@ -7091,6 +7287,7 @@ export default {
               difficulty: 'advanced',
               command:
                 'curl -H "Authorization: Token token=$PD" https://api.pagerduty.com/incidents',
+              task: `Effettua una chiamata curl all'API PagerDuty inviando l'API token nell'header Authorization per recuperare gli incident.`,
             },
           ],
         },
@@ -7174,6 +7371,7 @@ export default {
               context: 'alerting',
               difficulty: 'advanced',
               code: 'receivers:\n  - name: pagerduty\n    pagerduty_configs: [...]',
+              task: 'Configura in Alertmanager un receiver chiamato pagerduty con un blocco pagerduty_configs per inoltrare gli alert.',
             },
             {
               english: 'Route',
@@ -7185,6 +7383,7 @@ export default {
               context: 'alerting',
               difficulty: 'advanced',
               code: 'route:\n  match:\n    severity: critical',
+              task: 'Imposta una route in Alertmanager che intercetti tramite match gli alert con severity critical.',
             },
             {
               english: 'Inhibition',
@@ -7244,6 +7443,7 @@ export default {
               context: 'alerting',
               difficulty: 'advanced',
               code: 'group_by: ["alertname", "cluster"]',
+              task: 'Raggruppa gli alert per le label alertname e cluster con la direttiva group_by in Alertmanager.',
             },
             {
               english: 'Group Wait',
@@ -7254,6 +7454,7 @@ export default {
               context: 'alerting',
               difficulty: 'advanced',
               code: 'group_wait: 30s',
+              task: 'Imposta group_wait a 30s per attendere altri alert correlati prima di inviare la prima notifica del gruppo.',
             },
             {
               english: 'Group Interval',
@@ -7265,6 +7466,7 @@ export default {
               context: 'alerting',
               difficulty: 'advanced',
               code: 'group_interval: 5m',
+              task: 'Configura group_interval a 5m come distanza minima tra notifiche successive per lo stesso gruppo di alert.',
             },
             {
               english: 'Repeat Interval',
@@ -7275,6 +7477,7 @@ export default {
               context: 'alerting',
               difficulty: 'advanced',
               code: 'repeat_interval: 4h',
+              task: `Definisci repeat_interval a 4h per rinotificare alert ancora attivi non risolti dall'on-call.`,
             },
             {
               english: 'Suppression',
@@ -7470,6 +7673,7 @@ export default {
               context: 'observability',
               difficulty: 'advanced',
               command: 'pip install opentelemetry-sdk',
+              task: `Installa l'SDK Python di OpenTelemetry tramite pip per strumentare l'applicazione.`,
             },
             {
               english: 'API',
@@ -7513,6 +7717,7 @@ export default {
               difficulty: 'advanced',
               code: 'receivers:\n  otlp:\n    protocols:\n      grpc:',
               note: `Rinominato per distinguerlo dall'item 'Receiver' del modulo Alertmanager.`,
+              task: 'Abilita nel Collector OpenTelemetry il receiver otlp sul protocollo gRPC per accogliere i dati di telemetria.',
             },
             {
               english: 'Processor',
@@ -7524,6 +7729,7 @@ export default {
               context: 'observability',
               difficulty: 'advanced',
               code: 'processors:\n  batch:\n    timeout: 5s',
+              task: `Aggiungi nel Collector un processor batch con timeout 5s per accorpare span prima dell'esportazione.`,
             },
             {
               english: 'OTel Exporter',
@@ -7535,6 +7741,7 @@ export default {
               context: 'observability',
               difficulty: 'advanced',
               code: 'exporters:\n  otlphttp:\n    endpoint: https://api.honeycomb.io',
+              task: `Configura un exporter otlphttp che inoltri la telemetria all'endpoint https://api.honeycomb.io.`,
             },
             {
               english: 'Processor Chain',
@@ -7546,6 +7753,7 @@ export default {
               difficulty: 'advanced',
               code: 'service:\n  pipelines:\n    traces:\n      receivers: [otlp]',
               note: `Rinominato per distinguerlo dall'item 'Pipeline' del modulo tooling log.`,
+              task: 'Componi la pipeline traces nel Collector OpenTelemetry concatenando receiver otlp con i processor e gli exporter.',
             },
           ],
         },
@@ -7563,6 +7771,7 @@ export default {
               context: 'observability',
               difficulty: 'advanced',
               command: 'opentelemetry-instrument python app.py',
+              task: `Lancia l'applicazione Python con opentelemetry-instrument per attivare l'auto-instrumentation senza modifiche al codice.`,
             },
             {
               english: 'Java Agent',
@@ -7573,6 +7782,7 @@ export default {
               context: 'observability',
               difficulty: 'advanced',
               command: 'java -javaagent:opentelemetry-javaagent.jar -jar app.jar',
+              task: `Aggancia l'agent Java di OpenTelemetry alla JVM con il flag -javaagent puntando al jar opentelemetry-javaagent.jar.`,
             },
             {
               english: 'Tracer',
@@ -7584,6 +7794,7 @@ export default {
               context: 'observability',
               difficulty: 'advanced',
               code: 'tracer = trace.get_tracer(__name__)',
+              task: 'Ottieni un tracer chiamando trace.get_tracer con il nome del modulo come identificativo della libreria strumentata.',
             },
             {
               english: 'Meter',
@@ -7595,6 +7806,7 @@ export default {
               context: 'observability',
               difficulty: 'advanced',
               code: 'meter = metrics.get_meter("orders")',
+              task: `Crea un meter chiamato orders con metrics.get_meter per registrare counter e histogram dell'app.`,
             },
             {
               english: 'Span Kind',
@@ -7605,6 +7817,7 @@ export default {
               context: 'observability',
               difficulty: 'advanced',
               code: 'span = tracer.start_span("checkout", kind=SpanKind.SERVER)',
+              task: 'Apri uno span chiamato checkout con kind SpanKind.SERVER per dichiararne il ruolo nel grafo distribuito.',
             },
             {
               english: 'Attribute',
@@ -7616,6 +7829,7 @@ export default {
               context: 'observability',
               difficulty: 'advanced',
               code: 'span.set_attribute("http.method", "POST")',
+              task: 'Arricchisci lo span chiamando set_attribute con la chiave http.method e il valore POST.',
             },
             {
               english: 'Resource',
@@ -7627,6 +7841,7 @@ export default {
               context: 'observability',
               difficulty: 'advanced',
               code: 'service.name=orders, service.version=1.2.3',
+              task: `Dichiara nella resource OpenTelemetry service.name=orders e service.version=1.2.3 per identificare l'emittente.`,
             },
             {
               english: 'Semantic Convention',
@@ -7676,6 +7891,7 @@ export default {
               context: 'observability',
               difficulty: 'advanced',
               code: 'traceparent: 00-7f3c1bc0e4a-b8d3-01',
+              task: `Propaga il contesto W3C tramite l'header traceparent 00-7f3c1bc0e4a-b8d3-01 nella chiamata HTTP downstream.`,
             },
             {
               english: 'Tracestate',
@@ -7707,6 +7923,7 @@ export default {
               context: 'observability',
               difficulty: 'advanced',
               code: 'set_global_textmap(B3MultiFormat())',
+              task: 'Registra B3MultiFormat come propagator globale chiamando set_global_textmap per usare la propagazione di Zipkin.',
             },
             {
               english: 'Inject',
@@ -7718,6 +7935,7 @@ export default {
               context: 'observability',
               difficulty: 'advanced',
               code: 'inject(carrier=headers)',
+              task: 'Inietta il contesto di trace negli header HTTP uscenti invocando inject sul carrier degli headers.',
             },
             {
               english: 'Extract',
@@ -7729,6 +7947,7 @@ export default {
               context: 'observability',
               difficulty: 'advanced',
               code: 'context = extract(carrier=headers)',
+              task: 'Estrai il contesto di trace dagli header in arrivo invocando extract sul carrier headers.',
             },
             {
               english: 'gRPC Metadata',
@@ -7828,6 +8047,7 @@ export default {
               context: 'observability',
               difficulty: 'advanced',
               code: 'tail_sampling:\n  policies: [...]',
+              task: 'Attiva il tail_sampling nel Collector dichiarando le policies dopo aver bufferizzato i trace completi.',
             },
             {
               english: 'Head Sampling',
@@ -7848,6 +8068,7 @@ export default {
               context: 'observability',
               difficulty: 'advanced',
               code: 'processors:\n  memory_limiter:\n    limit_mib: 1500',
+              task: 'Limita la memoria del Collector OpenTelemetry impostando memory_limiter a 1500 MiB per evitare OOM.',
             },
             {
               english: 'Batch Processor',
@@ -7879,6 +8100,7 @@ export default {
               context: 'observability',
               difficulty: 'advanced',
               command: 'curl http://localhost:13133/',
+              task: `Verifica lo stato del Collector OpenTelemetry interrogando con curl la porta 13133 dell'health check endpoint.`,
             },
           ],
         },
@@ -7917,6 +8139,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'advanced',
               code: 'kube_pod_status_phase{phase="Running"}',
+              task: 'Interroga kube_pod_status_phase con phase Running per contare i pod attivi nel cluster.',
             },
             {
               english: 'Node Status',
@@ -7928,6 +8151,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'advanced',
               code: 'kube_node_status_condition{condition="Ready",status="true"}',
+              task: 'Controlla kube_node_status_condition filtrando condition Ready e status true per identificare i nodi sani.',
             },
             {
               english: 'Deployment Replicas',
@@ -7939,6 +8163,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'advanced',
               code: 'kube_deployment_status_replicas_available',
+              task: 'Visualizza kube_deployment_status_replicas_available per monitorare le repliche disponibili di ogni deployment.',
             },
             {
               english: 'Job Status',
@@ -7949,6 +8174,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'advanced',
               code: 'kube_job_status_failed > 0',
+              task: 'Genera un alert quando kube_job_status_failed supera zero per intercettare job Kubernetes andati in errore.',
             },
             {
               english: 'CronJob',
@@ -7960,6 +8186,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'advanced',
               code: 'kube_cronjob_next_schedule_time',
+              task: 'Monitora kube_cronjob_next_schedule_time per controllare quando ogni CronJob verrà eseguito la prossima volta.',
             },
             {
               english: 'PVC',
@@ -7971,6 +8198,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'advanced',
               code: 'kube_persistentvolumeclaim_status_phase',
+              task: 'Osserva kube_persistentvolumeclaim_status_phase per tracciare la fase di binding dei PVC nel cluster.',
             },
             {
               english: 'HPA',
@@ -7982,6 +8210,7 @@ export default {
               difficulty: 'advanced',
               code: 'kube_horizontalpodautoscaler_status_current_replicas',
               note: 'Horizontal Pod Autoscaler: oggetto Kubernetes che ridimensiona automaticamente le repliche di un Deployment in base alle metriche.',
+              task: `Estrai kube_horizontalpodautoscaler_status_current_replicas per seguire le repliche scelte dall'HPA in tempo reale.`,
             },
             {
               english: 'Resource Quota',
@@ -7992,6 +8221,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'advanced',
               code: 'kube_resourcequota{resource="cpu", type="hard"}',
+              task: 'Esamina kube_resourcequota filtrando resource cpu e type hard per conoscere il tetto CPU del namespace.',
             },
             {
               english: 'Label Selector',
@@ -8003,6 +8233,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'advanced',
               code: 'app=api',
+              task: `Filtra i pod del cluster usando il label selector app=api per isolare i workload dell'API.`,
             },
           ],
         },
@@ -8031,6 +8262,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'advanced',
               command: 'helm install monitoring prometheus-community/kube-prometheus-stack',
+              task: 'Installa il chart kube-prometheus-stack via Helm nel namespace monitoring per avere Prometheus e Grafana pronti.',
             },
             {
               english: 'ServiceMonitor',
@@ -8042,6 +8274,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'advanced',
               code: 'apiVersion: monitoring.coreos.com/v1\nkind: ServiceMonitor',
+              task: `Dichiara un ServiceMonitor di monitoring.coreos.com/v1 per istruire l'operator a scrappare endpoint di un Service.`,
             },
             {
               english: 'PodMonitor',
@@ -8053,6 +8286,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'advanced',
               code: 'apiVersion: monitoring.coreos.com/v1\nkind: PodMonitor',
+              task: 'Crea un PodMonitor della stessa API monitoring.coreos.com/v1 per scrappare direttamente le porte dei pod selezionati.',
             },
             {
               english: 'PrometheusRule',
@@ -8064,6 +8298,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'advanced',
               code: 'apiVersion: monitoring.coreos.com/v1\nkind: PrometheusRule',
+              task: 'Definisci una risorsa PrometheusRule per dichiarare in modo nativo regole di recording e alerting nel cluster.',
             },
             {
               english: 'AlertmanagerConfig',
@@ -8115,6 +8350,7 @@ export default {
               difficulty: 'advanced',
               command:
                 'helm repo add prometheus-community https://prometheus-community.github.io/helm-charts',
+              task: 'Aggiungi il repository Helm prometheus-community con helm repo add come passo preliminare al deploy del chart.',
             },
           ],
         },
@@ -8133,6 +8369,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'advanced',
               command: 'kubectl logs -f mypod',
+              task: `Segui i log del pod mypod in streaming con kubectl logs -f per osservare l'output in tempo reale.`,
             },
             {
               english: 'Pod Logs',
@@ -8144,6 +8381,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'advanced',
               command: 'kubectl logs mypod -c myc',
+              task: 'Recupera i log del container myc dentro il pod mypod usando il flag -c di kubectl logs.',
             },
             {
               english: 'Previous Container',
@@ -8155,6 +8393,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'advanced',
               command: 'kubectl logs mypod --previous',
+              task: `Ispeziona i log dell'esecuzione precedente di mypod aggiungendo il flag --previous a kubectl logs.`,
             },
             {
               english: 'Log Driver',
@@ -8176,6 +8415,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'advanced',
               code: '/var/log/pods/<ns>_<pod>_<id>/',
+              task: 'Esplora il path /var/log/pods/<ns>_<pod>_<id>/ sul nodo per trovare i file di log grezzi dei container.',
             },
             {
               english: 'Audit Log',
@@ -8187,6 +8427,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'advanced',
               command: 'kubectl get --raw /api/v1/namespaces/kube-system/pods',
+              task: `Interroga direttamente l'audit log dell'API Server con kubectl get --raw sul percorso dei pod kube-system.`,
             },
             {
               english: 'Event',
@@ -8198,6 +8439,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'advanced',
               command: 'kubectl get events --sort-by=.lastTimestamp',
+              task: 'Elenca gli event del cluster ordinati per lastTimestamp con kubectl get events per ricostruire la timeline degli incidenti.',
             },
             {
               english: 'Stern',
@@ -8210,6 +8452,7 @@ export default {
               difficulty: 'advanced',
               command: 'stern -n default app=api',
               tool: 'stern',
+              task: 'Lancia stern nel namespace default con selector app=api per leggere log multipod in parallelo e colorati.',
             },
             {
               english: 'Logging Sidecar',
@@ -8378,6 +8621,7 @@ export default {
               context: 'capacity',
               difficulty: 'advanced',
               code: 'predict_linear(disk_used_bytes[24h], 7*24*3600)',
+              task: `Esegui predict_linear su disk_used_bytes campionato su 24h per stimare l'occupazione disco fra 7 giorni.`,
             },
             {
               english: 'Seasonality',
@@ -8428,6 +8672,7 @@ export default {
               context: 'capacity',
               difficulty: 'advanced',
               code: 'holt_winters(memory_used[1h], 0.3, 0.1)',
+              task: `Applica holt_winters a memory_used dell'ultima ora con smoothing 0.3 e trend 0.1 per prevedere il consumo.`,
             },
             {
               english: 'Confidence Interval',
@@ -8869,6 +9114,7 @@ export default {
               context: 'observability',
               difficulty: 'advanced',
               code: 'detection:\n  selection:\n    EventID: 4625',
+              task: `Scrivi una regola Sigma con selection sull'EventID 4625 per intercettare tentativi falliti di logon Windows.`,
             },
             {
               english: 'Use Case',
@@ -8926,6 +9172,7 @@ export default {
               context: 'observability',
               difficulty: 'advanced',
               command: 'sudo grep "Failed password" /var/log/auth.log',
+              task: 'Estrai i tentativi falliti dal log /var/log/auth.log filtrando con grep la stringa Failed password.',
             },
             {
               english: 'CloudTrail',
@@ -9385,6 +9632,7 @@ export default {
               context: 'automation',
               difficulty: 'advanced',
               code: '(value - mean) / stddev',
+              task: 'Calcola lo z-score della metrica sottraendo la media e dividendo per la deviazione standard per rilevare anomalie.',
             },
             {
               english: 'EWMA',
@@ -9754,6 +10002,7 @@ export default {
               context: 'automation',
               difficulty: 'advanced',
               command: 'kubectl apply -f manifest.yaml --dry-run=server',
+              task: 'Esegui kubectl apply su manifest.yaml con --dry-run=server per validare le risorse senza modificare il cluster.',
             },
             {
               english: 'Approval Workflow',
@@ -9820,6 +10069,7 @@ export default {
               context: 'automation',
               difficulty: 'advanced',
               code: '/incident declare',
+              task: 'Digita lo slash command /incident declare nella chat ChatOps per aprire ufficialmente un nuovo incident.',
             },
             {
               english: 'Hubot',
@@ -9931,6 +10181,7 @@ export default {
               context: 'automation',
               difficulty: 'advanced',
               code: 'restartPolicy: Always',
+              task: 'Imposta restartPolicy Always nel pod spec per far ripartire automaticamente i container che terminano.',
             },
             {
               english: 'PDB',
@@ -10003,6 +10254,7 @@ export default {
               context: 'automation',
               difficulty: 'advanced',
               code: 'sleep(2 ** attempt + random.uniform(0, 1))',
+              task: 'Implementa un retry con backoff esponenziale dormendo 2**attempt secondi più un jitter casuale fra 0 e 1.',
             },
           ],
         },
@@ -10156,6 +10408,7 @@ export default {
               difficulty: 'advanced',
               code: 'provider "grafana" {\n  url  = "https://grafana.example.com"\n  auth = var.api_key\n}',
               note: `Rinominato per distinguerlo dall'item 'Provider' del modulo dashboards-as-code.`,
+              task: 'Dichiara il provider grafana puntando a https://grafana.example.com e leggendo la API key dalla variabile api_key.',
             },
             {
               english: 'Terraform Resource',
@@ -10168,6 +10421,7 @@ export default {
               difficulty: 'advanced',
               code: 'resource "grafana_dashboard" "api" { ... }',
               note: `Rinominato per distinguerlo dall'item 'Resource' del modulo OpenTelemetry.`,
+              task: 'Crea una resource grafana_dashboard chiamata api per gestire la dashboard come codice versionato.',
             },
             {
               english: 'Module',
@@ -10179,6 +10433,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               code: 'module "service_dashboard" { source = "./dashboards" }',
+              task: 'Riutilizza il modulo service_dashboard puntando il source alla directory locale ./dashboards.',
             },
             {
               english: 'State',
@@ -10190,6 +10445,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               command: 'terraform show',
+              task: 'Ispeziona lo state Terraform corrente con terraform show per leggere le risorse già gestite.',
             },
             {
               english: 'Plan',
@@ -10200,6 +10456,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               command: 'terraform plan -out=plan.bin',
+              task: 'Genera un plan Terraform salvato come plan.bin con terraform plan -out per congelare le modifiche da applicare.',
             },
             {
               english: 'Apply',
@@ -10210,6 +10467,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               command: 'terraform apply plan.bin',
+              task: 'Applica le modifiche al backend di osservabilità eseguendo terraform apply sul file plan.bin precedentemente generato.',
             },
             {
               english: 'Datadog Provider',
@@ -10242,6 +10500,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               command: 'terraform workspace new prod',
+              task: `Inizializza un nuovo workspace prod con terraform workspace new per isolare lo state dell'ambiente di produzione.`,
             },
           ],
         },
@@ -10262,6 +10521,7 @@ export default {
               tool: 'Jsonnet',
               command: 'jsonnet -J vendor dashboard.jsonnet > dash.json',
               note: 'Linguaggio di templating JSON sviluppato in Google.',
+              task: 'Compila la dashboard scritta in Jsonnet con jsonnet -J vendor producendo dash.json importabile in Grafana.',
             },
             {
               english: 'Grafonnet',
@@ -10318,6 +10578,7 @@ export default {
               difficulty: 'advanced',
               command: 'jb install github.com/grafana/grafonnet-lib/grafonnet',
               note: 'jsonnet-bundler: gestore di dipendenze Jsonnet.',
+              task: 'Installa la libreria grafonnet dal repository grafana/grafonnet-lib usando jb install per renderla disponibile come dipendenza.',
             },
             {
               english: 'Templating',
@@ -10404,6 +10665,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               command: 'promtool check rules rules.yml',
+              task: 'Valida le regole Prometheus dentro rules.yml lanciando promtool check rules come step di CI.',
             },
             {
               english: 'Pull Request Review',
@@ -10495,6 +10757,7 @@ export default {
               difficulty: 'advanced',
               code: 'apiVersion: openslo/v1\nkind: SLO',
               note: 'Standard aperto per la definizione di SLO sotto la CNCF.',
+              task: 'Modella uno SLO in OpenSLO usando apiVersion openslo/v1 e kind SLO per descriverlo come codice portabile.',
             },
             {
               english: 'SLO Definition',
@@ -10515,6 +10778,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               code: 'expr: error_budget_burn_rate > 14.4',
+              task: `Definisci un alert sul burn rate dell'error budget con espressione error_budget_burn_rate maggiore di 14.4.`,
             },
             {
               english: 'Auto-Generated Rules',

@@ -1,0 +1,1156 @@
+{
+  "fixes": [
+    {
+      "level": "16",
+      "lesson": "c_build_1",
+      "english": "GCC",
+      "set": {
+        "task": "Compila il sorgente main.c con gcc producendo un eseguibile chiamato main."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_1",
+      "english": "Clang",
+      "set": {
+        "task": "Usa clang per compilare main.c sfruttando i suoi messaggi diagnostici dettagliati basati su LLVM."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_1",
+      "english": "-Wall",
+      "set": {
+        "task": "Abilita il set di warning -Wall sul progetto C per intercettare bug latenti gia' a tempo di compilazione."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_1",
+      "english": "-Werror",
+      "set": {
+        "task": "Combina -Wall e -Werror in modo che il build fallisca subito quando il compilatore emette un warning."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_1",
+      "english": "-O2",
+      "set": {
+        "task": "Attiva le ottimizzazioni di livello 2 con -O2 per la build di release di main.c."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_1",
+      "english": "-O0",
+      "set": {
+        "task": "Disabilita le ottimizzazioni con -O0 e includi i simboli -g per una sessione gdb fedele al sorgente."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_1",
+      "english": "-g",
+      "set": {
+        "task": "Aggiungi il flag -g al comando gcc per incorporare i simboli di debug richiesti da gdb."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_1",
+      "english": "-std=c11",
+      "set": {
+        "task": "Forza il compilatore al dialetto C11 passando -std=c11 al comando gcc per main.c."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_1",
+      "english": "Cross Compiler",
+      "set": {
+        "task": "Invoca il cross compiler arm-linux-gnueabihf-gcc per produrre binari ARM da una macchina host x86."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_2",
+      "english": "Make",
+      "set": {
+        "task": "Lancia make nella radice del progetto e lascia che il Makefile ricompili solo i sorgenti modificati."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_2",
+      "english": "Target",
+      "set": {
+        "task": "Dichiara nel Makefile il target predefinito all che dipende dal file oggetto main.o."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_2",
+      "english": "Rule",
+      "set": {
+        "task": "Scrivi una regola del Makefile che produca main.o da main.c invocando gcc -c."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_2",
+      "english": "Phony Target",
+      "set": {
+        "task": "Dichiara .PHONY: clean test nel Makefile per evitare collisioni con file omonimi sul disco."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_2",
+      "english": "Clean Target",
+      "set": {
+        "task": "Esegui make clean per ripulire gli artefatti di build e ripartire da uno stato riproducibile."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_2",
+      "english": "Make Variable",
+      "set": {
+        "task": "Centralizza le opzioni del compilatore definendo CC=gcc e CFLAGS=-Wall -O2 in cima al Makefile."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_2",
+      "english": "Pattern Rule",
+      "set": {
+        "task": "Scrivi una regola pattern %.o: %.c che invochi $(CC) -c $< -o $@ su qualunque sorgente."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_3",
+      "english": "Relocatable Object File",
+      "set": {
+        "task": "Genera il file oggetto rilocabile main.o invocando gcc -c senza ancora linkare l'eseguibile finale."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_3",
+      "english": "Static Library",
+      "set": {
+        "task": "Crea la libreria statica libfoo.a impacchettando foo.o con l'archiver ar rcs."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_3",
+      "english": "Shared Library",
+      "set": {
+        "task": "Produci la libreria condivisa libfoo.so da foo.o usando gcc con il flag -shared."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_3",
+      "english": "Symbol",
+      "set": {
+        "task": "Ispeziona la tabella dei simboli di main.o con nm per verificare quali funzioni sono esportate."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_3",
+      "english": "-l link flag",
+      "set": {
+        "task": "Linka la libreria matematica al binario passando -lm dopo main.c sulla linea di comando di gcc."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_3",
+      "english": "-L flag",
+      "set": {
+        "task": "Indica al linker il percorso /usr/local/lib con -L per risolvere -lfoo durante il link di main.c."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_4",
+      "english": "CMake",
+      "set": {
+        "task": "Configura il progetto con cmake -B build e poi compilalo lanciando cmake --build build."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_4",
+      "english": "CMakeLists.txt",
+      "set": {
+        "task": "Scrivi un CMakeLists.txt che imponga cmake_minimum_required(VERSION 3.10) e dichiari il progetto myapp."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_4",
+      "english": "Ninja",
+      "set": {
+        "task": "Lancia il build con ninja dopo aver generato i file di build da CMake con il generatore Ninja."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_4",
+      "english": "./configure",
+      "set": {
+        "task": "Esegui ./configure --prefix=/usr/local per adattare la build all'ambiente host prima di make."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_4",
+      "english": "Build Directory",
+      "set": {
+        "task": "Crea una directory build dedicata e spostati al suo interno per tenere sorgenti e artefatti separati."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_4",
+      "english": "Install",
+      "set": {
+        "task": "Installa i binari compilati nelle directory di sistema lanciando sudo make install."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_4",
+      "english": "pkg-config",
+      "set": {
+        "task": "Interroga pkg-config per ottenere CFLAGS e LIBS della libreria gtk+-3.0 da passare a gcc."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_1",
+      "english": "gdb",
+      "set": {
+        "task": "Avvia una sessione interattiva del debugger gdb sull'eseguibile ./main per ispezionarne l'esecuzione."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_1",
+      "english": "lldb",
+      "set": {
+        "task": "Apri il debugger lldb su ./main quando lavori su una toolchain basata su LLVM."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_1",
+      "english": "Breakpoint",
+      "set": {
+        "task": "Imposta un breakpoint alla riga 42 di main.c dentro gdb con il comando break main.c:42."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_1",
+      "english": "Step",
+      "set": {
+        "task": "Esegui il comando step in gdb per entrare nella prossima chiamata di funzione e tracciarla."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_1",
+      "english": "Next",
+      "set": {
+        "task": "Avanza alla riga successiva con next in gdb senza scendere dentro le chiamate di funzione."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_1",
+      "english": "Continue",
+      "set": {
+        "task": "Riprendi l'esecuzione dopo un breakpoint impartendo continue al prompt di gdb."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_1",
+      "english": "Watchpoint",
+      "set": {
+        "task": "Installa un watchpoint su x con watch x per fermare il programma a ogni modifica della variabile."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_1",
+      "english": "Backtrace",
+      "set": {
+        "task": "Stampa la traccia dello stack con il comando bt in gdb dopo un crash per risalire al chiamante."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_1",
+      "english": "Print Value Command",
+      "set": {
+        "task": "Visualizza il valore corrente della variabile x lanciando print x dal prompt di gdb."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_1",
+      "english": "Frame",
+      "set": {
+        "task": "Spostati al frame 2 dello stack con frame 2 in gdb per ispezionare le variabili del chiamante."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_2",
+      "english": "Core Dump",
+      "set": {
+        "task": "Abilita la generazione di core dump nella shell con ulimit -c unlimited prima di riprodurre il crash."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_2",
+      "english": "Null Dereference",
+      "set": {
+        "task": "Riproduci una dereferenza nulla assegnando NULL a un puntatore e scrivendoci dentro per osservare il SIGSEGV."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_3",
+      "english": "Valgrind suite",
+      "set": {
+        "task": "Esegui valgrind --leak-check=full su ./main per scovare memory leak e accessi invalidi."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_3",
+      "english": "AddressSanitizer",
+      "set": {
+        "task": "Ricompila main.c con -fsanitize=address per intercettare buffer overflow e use-after-free a runtime."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_3",
+      "english": "UndefinedBehaviorSanitizer",
+      "set": {
+        "task": "Compila main.c con -fsanitize=undefined per smascherare overflow di interi e undefined behavior."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_3",
+      "english": "ThreadSanitizer",
+      "set": {
+        "task": "Costruisci il binario con -fsanitize=thread quando vuoi cacciare data race tra thread concorrenti."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_3",
+      "english": "MemorySanitizer",
+      "set": {
+        "task": "Usa clang -fsanitize=memory su main.c per individuare letture di memoria non inizializzata."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_3",
+      "english": "Memcheck",
+      "set": {
+        "task": "Lancia esplicitamente il tool memcheck di valgrind con --tool=memcheck per concentrare l'analisi sulla memoria."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_3",
+      "english": "Suppression File",
+      "set": {
+        "task": "Passa a valgrind un file di soppressioni my.supp con --suppressions per silenziare i falsi positivi noti."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_3",
+      "english": "rr",
+      "set": {
+        "task": "Registra l'esecuzione di ./main con rr record e poi rigiocala deterministicamente lanciando rr replay."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_4",
+      "english": "Printf Debugging",
+      "set": {
+        "task": "Inserisci una printf di debug che stampi il valore di x sulla console per tracciarne il flusso."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_4",
+      "english": "Bisect",
+      "set": {
+        "task": "Avvia una ricerca dicotomica con git bisect start per individuare il commit che ha introdotto il bug."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_4",
+      "english": "strace",
+      "set": {
+        "task": "Traccia solo le syscall openat di ./main con strace -e openat per capire quali file viene a leggere."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "c_systems_1",
+      "english": "open",
+      "set": {
+        "task": "Apri il file in sola lettura con la syscall open passando il flag O_RDONLY e conserva il file descriptor."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "c_systems_1",
+      "english": "read",
+      "set": {
+        "task": "Leggi fino a len byte dal file descriptor fd dentro buf utilizzando la syscall read e controlla il valore di ritorno."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "c_systems_1",
+      "english": "write",
+      "set": {
+        "task": "Invia len byte dal buffer buf al file descriptor fd con la syscall write."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "c_systems_1",
+      "english": "close",
+      "set": {
+        "task": "Rilascia il file descriptor fd al kernel chiamando la syscall close non appena le operazioni I/O finiscono."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "c_systems_1",
+      "english": "lseek",
+      "set": {
+        "task": "Posiziona l'offset del file alla fine con lseek(fd, 0, SEEK_END) prima di calcolarne la dimensione."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "c_systems_1",
+      "english": "mmap",
+      "set": {
+        "task": "Mappa il file in memoria in sola lettura con mmap usando PROT_READ e MAP_SHARED per evitare copie."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "c_systems_1",
+      "english": "fcntl",
+      "set": {
+        "task": "Imposta il file descriptor fd in modalita' non bloccante chiamando fcntl con F_SETFL e O_NONBLOCK."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "c_systems_2",
+      "english": "fork",
+      "set": {
+        "task": "Crea un processo figlio invocando la syscall fork e gestisci separatamente i due rami secondo il PID restituito."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "c_systems_2",
+      "english": "exec",
+      "set": {
+        "task": "Sostituisci l'immagine del processo corrente lanciando execl(\"/bin/ls\", \"ls\", NULL) dopo il fork."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "c_systems_2",
+      "english": "wait",
+      "set": {
+        "task": "Blocca il genitore chiamando wait(&status) finche' un figlio non termina e raccoglie lo stato di uscita."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "c_systems_2",
+      "english": "waitpid",
+      "set": {
+        "task": "Attendi uno specifico processo figlio passando il suo pid a waitpid(pid, &status, 0)."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "c_systems_2",
+      "english": "PID",
+      "set": {
+        "task": "Recupera il PID del processo corrente con la syscall getpid e salvalo in un pid_t per logging."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "c_systems_2",
+      "english": "Environment Variable",
+      "set": {
+        "task": "Leggi la variabile d'ambiente PATH con getenv(\"PATH\") e usala per costruire il search path del processo."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "c_systems_3",
+      "english": "IPC Pipe",
+      "set": {
+        "task": "Crea una pipe anonima con pipe(fds) per collegare lo stdout del genitore allo stdin di un figlio dopo fork."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "c_systems_3",
+      "english": "Named Pipe",
+      "set": {
+        "task": "Materializza una FIFO sul filesystem con mkfifo /tmp/myfifo per far dialogare due processi non imparentati."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "c_systems_3",
+      "english": "Shared Memory",
+      "set": {
+        "task": "Alloca un segmento di shared memory con shmget passando IPC_CREAT|0600 per condividerlo tra processi."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "c_systems_3",
+      "english": "Semaphore",
+      "set": {
+        "task": "Proteggi una sezione critica tra processi avvolgendola tra sem_wait(&sem) e sem_post(&sem)."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "c_systems_3",
+      "english": "Unix Socket",
+      "set": {
+        "task": "Apri un socket Unix locale chiamando socket(AF_UNIX, SOCK_STREAM, 0) per IPC su filesystem."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "c_systems_3",
+      "english": "dup2",
+      "set": {
+        "task": "Reindirizza l'output del processo verso fd duplicandolo su STDOUT_FILENO con dup2."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "c_systems_3",
+      "english": "POSIX Shared Memory",
+      "set": {
+        "task": "Apri un oggetto di shared memory POSIX chiamato /myshm con shm_open in modalita' O_CREAT|O_RDWR e permessi 0600."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "c_systems_3",
+      "english": "Memory Map",
+      "set": {
+        "task": "Ispeziona la mappa di memoria del processo corrente leggendo /proc/$$/maps con cat."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "c_systems_4",
+      "english": "sigaction",
+      "set": {
+        "task": "Installa un handler affidabile per SIGINT popolando una struct sigaction e chiamando sigaction(SIGINT, &sa, NULL)."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "c_systems_4",
+      "english": "kill",
+      "set": {
+        "task": "Invia SIGTERM al processo identificato da pid chiamando kill(pid, SIGTERM) per una terminazione ordinata."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "c_systems_4",
+      "english": "Signal Mask",
+      "set": {
+        "task": "Blocca temporaneamente i segnali del set con sigprocmask(SIG_BLOCK, &set, NULL) attorno alla sezione critica."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "c_concurrency_1",
+      "english": "pthread",
+      "set": {
+        "task": "Includi l'header pthread.h per accedere alle API del thread POSIX dal tuo programma C."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "c_concurrency_1",
+      "english": "pthread_create",
+      "set": {
+        "task": "Avvia un nuovo thread POSIX con pthread_create passando worker come funzione e arg come argomento."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "c_concurrency_1",
+      "english": "pthread_join",
+      "set": {
+        "task": "Sincronizzati con la fine del thread t chiamando pthread_join(t, &result) e raccogli il risultato."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "c_concurrency_1",
+      "english": "pthread_detach",
+      "set": {
+        "task": "Stacca il thread t con pthread_detach in modo che liberi automaticamente le risorse quando termina."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "c_concurrency_1",
+      "english": "Thread Local",
+      "set": {
+        "task": "Dichiara la variabile tls_var con _Thread_local per dare a ogni thread la propria copia indipendente."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "c_concurrency_2",
+      "english": "Mutex",
+      "set": {
+        "task": "Inizializza staticamente il mutex m con PTHREAD_MUTEX_INITIALIZER per proteggere lo stato condiviso."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "c_concurrency_2",
+      "english": "Lock",
+      "set": {
+        "task": "Acquisisci il mutex m con pthread_mutex_lock prima di accedere alla risorsa condivisa."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "c_concurrency_2",
+      "english": "Unlock",
+      "set": {
+        "task": "Rilascia il mutex m con pthread_mutex_unlock al termine della sezione critica del thread."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "c_concurrency_2",
+      "english": "Read-Write Lock",
+      "set": {
+        "task": "Dichiara un lock lettori-scrittori pthread_rwlock_t rw per permettere letture concorrenti e scritture esclusive."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "c_concurrency_2",
+      "english": "Trylock",
+      "set": {
+        "task": "Prova ad acquisire il mutex m con pthread_mutex_trylock e fai altro lavoro se ritorna diverso da zero."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "c_concurrency_3",
+      "english": "Condition Variable",
+      "set": {
+        "task": "Dichiara la variabile di condizione pthread_cond_t cv per coordinare l'attesa di un evento tra thread."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "c_concurrency_3",
+      "english": "pthread_cond_wait",
+      "set": {
+        "task": "Sospendi il thread sulla condition variable cv chiamando pthread_cond_wait(&cv, &m) con il mutex gia' acquisito."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "c_concurrency_3",
+      "english": "pthread_cond_signal",
+      "set": {
+        "task": "Sveglia esattamente un thread in attesa sulla cv invocando pthread_cond_signal(&cv)."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "c_concurrency_3",
+      "english": "Broadcast",
+      "set": {
+        "task": "Risveglia tutti i thread bloccati sulla cv chiamando pthread_cond_broadcast(&cv) dopo aver cambiato lo stato."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "c_concurrency_3",
+      "english": "Barrier",
+      "set": {
+        "task": "Dichiara una barriera pthread_barrier_t b per costringere i thread paralleli ad allinearsi a un punto comune."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "c_concurrency_3",
+      "english": "Memory Barrier",
+      "set": {
+        "task": "Inserisci una barriera di memoria con __sync_synchronize per impedire il riordino di letture e scritture."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "c_concurrency_4",
+      "english": "Atomic",
+      "set": {
+        "task": "Dichiara il contatore condiviso counter come _Atomic int per garantirne aggiornamenti indivisibili tra thread."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "c_concurrency_4",
+      "english": "Compare-and-Swap",
+      "set": {
+        "task": "Aggiorna atomicamente v solo se vale exp invocando atomic_compare_exchange_strong(&v, &exp, new)."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "c_concurrency_4",
+      "english": "volatile (concurrency)",
+      "set": {
+        "task": "Marca il puntatore al registro hardware come volatile int *reg per evitare che il compilatore cachi le letture."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "c_sockets_1",
+      "english": "Socket",
+      "set": {
+        "task": "Crea un socket TCP IPv4 invocando socket(AF_INET, SOCK_STREAM, 0) e conserva il descrittore restituito."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "c_sockets_1",
+      "english": "sockaddr",
+      "set": {
+        "task": "Dichiara una struct sockaddr_in addr da popolare con famiglia, porta e indirizzo prima di bind."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "c_sockets_1",
+      "english": "Port",
+      "set": {
+        "task": "Configura la porta 8080 nell'indirizzo del socket scrivendo addr.sin_port = htons(8080)."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "c_sockets_1",
+      "english": "IP Address",
+      "set": {
+        "task": "Converti la stringa 127.0.0.1 in formato binario IPv4 con inet_pton e salvala in addr.sin_addr."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "c_sockets_1",
+      "english": "htons",
+      "set": {
+        "task": "Converti la porta 80 dall'host order al network order assegnando addr.sin_port = htons(80)."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "c_sockets_2",
+      "english": "bind",
+      "set": {
+        "task": "Associa il socket s all'indirizzo locale addr invocando bind con il cast a struct sockaddr*."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "c_sockets_2",
+      "english": "listen",
+      "set": {
+        "task": "Metti il socket s in ascolto delle connessioni in arrivo chiamando listen con coda BACKLOG."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "c_sockets_2",
+      "english": "accept",
+      "set": {
+        "task": "Accetta la prossima connessione in coda sul socket s con accept(s, NULL, NULL) ottenendo un nuovo descrittore client."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "c_sockets_2",
+      "english": "SO_REUSEADDR",
+      "set": {
+        "task": "Abilita SO_REUSEADDR sul socket con setsockopt per ribindare velocemente la porta dopo un riavvio."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "c_sockets_3",
+      "english": "connect",
+      "set": {
+        "task": "Avvia una connessione TCP dal lato client chiamando connect(s, ..., sizeof(addr)) verso l'indirizzo remoto."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "c_sockets_3",
+      "english": "send",
+      "set": {
+        "task": "Trasmetti len byte dal buffer buf attraverso il socket connesso s usando send(s, buf, len, 0)."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "c_sockets_3",
+      "english": "recv",
+      "set": {
+        "task": "Leggi fino a len byte in arrivo nel buffer buf con recv(s, buf, len, 0) e controlla il valore di ritorno."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "c_sockets_3",
+      "english": "shutdown",
+      "set": {
+        "task": "Chiudi ordinatamente la direzione di scrittura del socket s invocando shutdown(s, SHUT_WR)."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "c_sockets_3",
+      "english": "getaddrinfo",
+      "set": {
+        "task": "Risolvi example.com sulla porta 80 con getaddrinfo per ottenere indirizzi adatti a un socket TCP."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "c_sockets_3",
+      "english": "Non-blocking",
+      "set": {
+        "task": "Porta il socket s in modalita' non bloccante chiamando fcntl(s, F_SETFL, O_NONBLOCK)."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "c_sockets_4",
+      "english": "select",
+      "set": {
+        "task": "Multiplexa i descrittori in readset con select(nfds, &readset, NULL, NULL, &tv) usando il timeout tv."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "c_sockets_4",
+      "english": "poll",
+      "set": {
+        "task": "Monitora il descrittore pfd con poll(&pfd, 1, -1) e attendi indefinitamente la prontezza in lettura."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "c_sockets_4",
+      "english": "epoll",
+      "set": {
+        "task": "Crea un'istanza epoll su Linux con epoll_create1(0) per gestire migliaia di socket simultanei."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "c_security_1",
+      "english": "Off-by-One",
+      "set": {
+        "task": "Riconosci l'off-by-one in for (int i = 0; i <= n; i++) e correggilo a i < n per non sforare il buffer."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "c_security_1",
+      "english": "Stack Canary",
+      "set": {
+        "task": "Inserisci uno stack canary in ogni funzione compilando con gcc -fstack-protector-strong."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "c_security_1",
+      "english": "Fortify Source",
+      "set": {
+        "task": "Attiva i controlli runtime di fortify source compilando con -D_FORTIFY_SOURCE=2 -O2."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "c_security_2",
+      "english": "Printf Format String Attack",
+      "set": {
+        "task": "Sostituisci printf(user_input) con printf(\"%s\", user_input) per neutralizzare l'attacco format string."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "c_security_2",
+      "english": "Integer Overflow",
+      "set": {
+        "task": "Sospetta un overflow di interi nella somma size_t total = a + b e controllane il wrap prima di allocare."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "c_security_2",
+      "english": "Integer Underflow",
+      "set": {
+        "task": "Mostra come size_t n = 0 - 1 produca un valore enorme per via dell'underflow unsigned."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "c_security_3",
+      "english": "PIE",
+      "set": {
+        "task": "Compila il binario come PIE passando a gcc i flag -fPIE -pie per abilitare ASLR completo."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "c_security_3",
+      "english": "RELRO",
+      "set": {
+        "task": "Indurisci la GOT del binario passando al linker gcc -Wl,-z,relro,-z,now per attivare RELRO completo."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "c_security_3",
+      "english": "Hardening",
+      "set": {
+        "task": "Indurisci la build combinando -fstack-protector-all e -D_FORTIFY_SOURCE=2 nei flag di gcc."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "c_security_4",
+      "english": "Constant-Time Comparison",
+      "set": {
+        "task": "Confronta i tag MAC con CRYPTO_memcmp invece di memcmp per evitare timing side channel sul confronto."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "c_security_4",
+      "english": "Zeroize",
+      "set": {
+        "task": "Azzera in modo sicuro la chiave segreta con explicit_bzero(key, sizeof(key)) prima di liberarne la memoria."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "c_security_4",
+      "english": "Privilege Drop",
+      "set": {
+        "task": "Riduci i privilegi del daemon dopo il bind chiamando setuid(unprivileged_uid) sull'UID non privilegiato."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "c_security_4",
+      "english": "chroot",
+      "set": {
+        "task": "Confina il processo nella sandbox /jail chiamando chroot(\"/jail\") prima di servire richieste."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "c_embedded_1",
+      "english": "Linker Script",
+      "set": {
+        "task": "Definisci la regione FLASH a 0x08000000 in un linker script con MEMORY { FLASH (rx) : ORIGIN = 0x08000000 }."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "c_embedded_2",
+      "english": "Register",
+      "set": {
+        "task": "Definisci il registro UART_DR come (*(volatile uint32_t*)0x40011000) per accedere all'MMIO della periferica."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "c_embedded_2",
+      "english": "Bit Mask",
+      "set": {
+        "task": "Isola i 4 bit meno significativi del registro applicando la maschera di bit reg & 0xFF al valore letto."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "c_embedded_2",
+      "english": "Register Bit Shift",
+      "set": {
+        "task": "Sposta il valore 1 nel bit 5 del registro con uno shift a sinistra: reg = 1 << 5."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "c_embedded_2",
+      "english": "Set Bit",
+      "set": {
+        "task": "Setta il bit 5 del registro senza toccare gli altri con l'idioma reg |= (1 << 5)."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "c_embedded_2",
+      "english": "Clear Bit",
+      "set": {
+        "task": "Azzera il bit 5 del registro lasciando inalterati gli altri con reg &= ~(1 << 5)."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "c_embedded_2",
+      "english": "Toggle Bit",
+      "set": {
+        "task": "Inverti lo stato del bit 5 del registro applicando l'XOR reg ^= (1 << 5)."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "c_embedded_3",
+      "english": "ISR",
+      "set": {
+        "task": "Dichiara la ISR USART1_IRQHandler con __attribute__((interrupt)) per gestire l'interrupt UART su Cortex-M."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "c_embedded_3",
+      "english": "Enable Interrupts",
+      "set": {
+        "task": "Abilita globalmente gli interrupt su Cortex-M chiamando __enable_irq() dopo il setup delle periferiche."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "c_embedded_3",
+      "english": "Disable Interrupts",
+      "set": {
+        "task": "Disabilita brevemente gli interrupt con __disable_irq() attorno all'aggiornamento di una variabile condivisa con la ISR."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "c_embedded_4",
+      "english": "Task",
+      "set": {
+        "task": "Crea un task FreeRTOS chiamato blinky con stack di 128 word e priorita' 1 invocando xTaskCreate."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "c_pro_2",
+      "english": "cppcheck",
+      "set": {
+        "task": "Esegui un'analisi statica completa su main.c lanciando cppcheck --enable=all per scovare bug noti."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "c_pro_2",
+      "english": "clang-tidy",
+      "set": {
+        "task": "Fai analizzare main.c da clang-tidy per applicare linee guida moderne e segnalare antipattern."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "c_pro_2",
+      "english": "clang-format",
+      "set": {
+        "task": "Riformatta in place main.c con clang-format -i per uniformare lo stile del codice al progetto."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "c_pro_2",
+      "english": "Code Coverage",
+      "set": {
+        "task": "Misura la copertura del codice compilando con gcc --coverage e analizzando i contatori con gcov main."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "c_pro_3",
+      "english": "Magic Number",
+      "set": {
+        "task": "Elimina il numero magico 100 dal codice definendolo come costante #define MAX_USERS 100."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "c_pro_3",
+      "english": "Modern Header Guard",
+      "set": {
+        "task": "Proteggi l'header con il trio classico #ifndef MY_H / #define MY_H / #endif per prevenire inclusioni multiple."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "c_pro_3",
+      "english": "Documentation Comment",
+      "set": {
+        "task": "Anteponi alla funzione un commento Doxygen /** @brief Adds two numbers */ per documentare il suo scopo."
+      }
+    }
+  ]
+}

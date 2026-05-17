@@ -1,0 +1,1596 @@
+{
+  "fixes": [
+    {
+      "level": "12",
+      "lesson": "dk_workloads_1",
+      "english": "Deployment",
+      "set": {
+        "task": "Definisci un Deployment chiamato nginx con apiVersion apps/v1 per gestire i pod replicati dell'applicazione."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "dk_workloads_1",
+      "english": "Replica Count",
+      "set": {
+        "task": "Imposta il numero di repliche a 3 nello spec del Deployment per garantire alta disponibilità."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "dk_workloads_1",
+      "english": "Rolling Update",
+      "set": {
+        "task": "Configura la strategy RollingUpdate del Deployment con maxSurge e maxUnavailable al 25% per un rollout graduale."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "dk_workloads_1",
+      "english": "Recreate Strategy",
+      "set": {
+        "task": "Applica la strategy Recreate al Deployment quando due versioni dell'applicazione non possono coesistere."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "dk_workloads_1",
+      "english": "Rollout",
+      "set": {
+        "task": "Monitora in tempo reale lo stato del rollout del deployment nginx per verificare l'avanzamento dell'aggiornamento."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "dk_workloads_1",
+      "english": "Deployment Rollback",
+      "set": {
+        "task": "Esegui il rollback del deployment nginx alla revisione precedente dopo un aggiornamento problematico."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "dk_workloads_1",
+      "english": "Revision History",
+      "set": {
+        "task": "Consulta lo storico delle revisioni del deployment nginx per identificare a quale versione tornare."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "dk_workloads_2",
+      "english": "StatefulSet",
+      "set": {
+        "task": "Crea uno StatefulSet chiamato postgres con apiVersion apps/v1 per gestire pod con identità stabile."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "dk_workloads_2",
+      "english": "Headless Service",
+      "set": {
+        "task": "Configura un Service headless impostando clusterIP a None per esporre singolarmente ogni pod dello StatefulSet."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "dk_workloads_2",
+      "english": "volumeClaimTemplates",
+      "set": {
+        "task": "Definisci un volumeClaimTemplate denominato data con accessModes ReadWriteOnce per provisionare volumi per ciascun pod."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "dk_workloads_2",
+      "english": "Pod Management Policy",
+      "set": {
+        "task": "Imposta podManagementPolicy a Parallel per avviare simultaneamente tutti i pod dello StatefulSet."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "dk_workloads_2",
+      "english": "serviceName",
+      "set": {
+        "task": "Collega lo StatefulSet al Service headless postgres tramite il campo serviceName per abilitare la risoluzione DNS dei pod."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "dk_workloads_3",
+      "english": "DaemonSet",
+      "set": {
+        "task": "Definisci un DaemonSet con apiVersion apps/v1 per eseguire un pod agente su ogni nodo del cluster."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "dk_workloads_3",
+      "english": "Node Selector",
+      "set": {
+        "task": "Aggiungi un nodeSelector con disktype: ssd per schedulare il workload solo sui nodi dotati di storage SSD."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "dk_workloads_3",
+      "english": "Toleration",
+      "set": {
+        "task": "Imposta una toleration con operator Exists per consentire la schedulazione su nodi con qualsiasi taint."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "dk_workloads_3",
+      "english": "hostNetwork",
+      "set": {
+        "task": "Abilita hostNetwork: true nello spec per far condividere al pod il namespace di rete del nodo host."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "dk_workloads_4",
+      "english": "Job",
+      "set": {
+        "task": "Definisci un Job con apiVersion batch/v1 per eseguire un'operazione batch una tantum nel cluster."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "dk_workloads_4",
+      "english": "CronJob",
+      "set": {
+        "task": "Pianifica un CronJob con schedule '0 2 * * *' per eseguire il backup notturno alle 2 di mattina."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "dk_workloads_4",
+      "english": "completions",
+      "set": {
+        "task": "Imposta completions a 5 nello spec del Job affinché il controller esegua cinque completamenti riusciti."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "dk_workloads_4",
+      "english": "parallelism",
+      "set": {
+        "task": "Configura parallelism a 3 nel Job per eseguire tre pod in parallelo e accelerare il batch processing."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "dk_workloads_4",
+      "english": "backoffLimit",
+      "set": {
+        "task": "Imposta backoffLimit a 4 nel Job per tollerare fino a quattro retry prima di marcarlo come Failed."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "dk_workloads_4",
+      "english": "activeDeadlineSeconds",
+      "set": {
+        "task": "Definisci activeDeadlineSeconds a 600 nel Job per terminare l'esecuzione dopo 10 minuti."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "dk_workloads_4",
+      "english": "concurrencyPolicy",
+      "set": {
+        "task": "Imposta concurrencyPolicy a Forbid nel CronJob per impedire l'esecuzione simultanea di più istanze."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "dk_workloads_4",
+      "english": "startingDeadlineSeconds",
+      "set": {
+        "task": "Configura startingDeadlineSeconds a 200 nel CronJob per saltare i job che non partono entro la finestra."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "dk_workloads_4",
+      "english": "successfulJobsHistoryLimit",
+      "set": {
+        "task": "Riduci successfulJobsHistoryLimit a 3 nel CronJob per limitare l'accumulo di pod completati in etcd."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dk_services_1",
+      "english": "Kubernetes Service",
+      "set": {
+        "task": "Definisci un Service Kubernetes con apiVersion v1 per fornire un IP virtuale stabile e DNS a un gruppo di pod."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dk_services_1",
+      "english": "ClusterIP",
+      "set": {
+        "task": "Imposta il type del Service a ClusterIP per esporre l'applicazione esclusivamente all'interno del cluster."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dk_services_1",
+      "english": "NodePort",
+      "set": {
+        "task": "Configura un Service NodePort sulla porta 30080 per esporre l'applicazione tramite ogni nodo del cluster."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dk_services_1",
+      "english": "LoadBalancer",
+      "set": {
+        "task": "Imposta il type del Service a LoadBalancer per ottenere un load balancer cloud esterno gestito automaticamente."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dk_services_1",
+      "english": "ExternalName",
+      "set": {
+        "task": "Crea un Service di tipo ExternalName che alias api.example.com per integrare un servizio esterno tramite DNS."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dk_services_1",
+      "english": "Kubernetes Headless Service",
+      "set": {
+        "task": "Imposta clusterIP a None per creare un Service headless che esponga direttamente gli IP dei singoli pod."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dk_services_1",
+      "english": "Selector",
+      "set": {
+        "task": "Configura il selector del Service con label app: nginx per indirizzare il traffico ai pod corrispondenti."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dk_services_1",
+      "english": "Endpoints",
+      "set": {
+        "task": "Elenca gli endpoint del service my-service per verificare quali pod sono effettivamente collegati al Service."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dk_services_1",
+      "english": "Session Affinity",
+      "set": {
+        "task": "Attiva sessionAffinity: ClientIP nel Service per garantire che lo stesso client raggiunga sempre lo stesso pod."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dk_services_2",
+      "english": "Ingress",
+      "set": {
+        "task": "Definisci una risorsa Ingress con apiVersion networking.k8s.io/v1 per esporre servizi HTTP esterni al cluster."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dk_services_2",
+      "english": "IngressClass",
+      "set": {
+        "task": "Specifica ingressClassName: nginx nello spec dell'Ingress per indicare quale controller deve gestirlo."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dk_services_2",
+      "english": "Path-Based Routing",
+      "set": {
+        "task": "Configura il path /api con pathType Prefix nell'Ingress per instradare le richieste dell'API verso il backend dedicato."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dk_services_2",
+      "english": "Host-Based Routing",
+      "set": {
+        "task": "Aggiungi una rule con host api.example.com all'Ingress per instradare il traffico in base al nome di dominio."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dk_services_2",
+      "english": "TLS Termination",
+      "set": {
+        "task": "Configura la sezione tls dell'Ingress con il secret tls-cert per terminare HTTPS sull'host api.example.com."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dk_services_2",
+      "english": "Annotations",
+      "set": {
+        "task": "Aggiungi l'annotation nginx.ingress.kubernetes.io/rewrite-target: / per riscrivere il path prima di raggiungere il backend."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dk_services_4",
+      "english": "Gateway API",
+      "set": {
+        "task": "Adotta la Gateway API con apiVersion gateway.networking.k8s.io/v1 come alternativa moderna all'Ingress tradizionale."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dk_services_4",
+      "english": "HTTPRoute",
+      "set": {
+        "task": "Definisci una risorsa di tipo HTTPRoute per configurare regole di routing HTTP tramite la Gateway API."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dk_services_4",
+      "english": "BackendRef",
+      "set": {
+        "task": "Configura backendRefs con il service my-service sulla porta 80 per indirizzare il traffico all'applicazione di destinazione."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dk_services_4",
+      "english": "Traffic Splitting",
+      "set": {
+        "task": "Distribuisci il traffico tra v1 e v2 con weight 90 e 10 per implementare un canary rollout progressivo."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dk_services_4",
+      "english": "Header-Based Match",
+      "set": {
+        "task": "Aggiungi un match basato sull'header x-version: v2 per instradare condizionalmente il traffico verso una versione specifica."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dk_config_1",
+      "english": "ConfigMap",
+      "set": {
+        "task": "Definisci un ConfigMap chiamato app-config con apiVersion v1 per esternalizzare la configurazione dell'applicazione."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dk_config_1",
+      "english": "kubectl create configmap",
+      "set": {
+        "task": "Crea il ConfigMap app-config da riga di comando con --from-literal=KEY=value per definire chiavi al volo."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dk_config_1",
+      "english": "From File",
+      "set": {
+        "task": "Genera il ConfigMap app-config a partire dal file config.yaml usando --from-file per importarne il contenuto."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dk_config_1",
+      "english": "data Field",
+      "set": {
+        "task": "Popola il campo data del ConfigMap con log-level: debug e database-url per esporre la configurazione ai pod."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dk_config_1",
+      "english": "envFrom",
+      "set": {
+        "task": "Inietta tutte le chiavi del ConfigMap app-config come variabili d'ambiente del container tramite envFrom."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dk_config_1",
+      "english": "Mount as Volume",
+      "set": {
+        "task": "Monta il ConfigMap app-config come volume nel pod per esporre le chiavi come file nel filesystem."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dk_config_1",
+      "english": "Immutable ConfigMap",
+      "set": {
+        "task": "Marca il ConfigMap come immutable: true per impedire modifiche accidentali e migliorare le performance."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dk_config_2",
+      "english": "Kubernetes Secret",
+      "set": {
+        "task": "Definisci un Secret di tipo Opaque con apiVersion v1 per memorizzare dati sensibili come password e token."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dk_config_2",
+      "english": "TLS Secret",
+      "set": {
+        "task": "Crea un Secret TLS chiamato my-tls a partire dai file cert.crt e key.key per servire HTTPS dal cluster."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dk_config_2",
+      "english": "docker-registry Secret",
+      "set": {
+        "task": "Genera il Secret docker-registry regcred con le credenziali del registry privato per il pull delle immagini."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dk_config_2",
+      "english": "imagePullSecrets",
+      "set": {
+        "task": "Configura imagePullSecrets con regcred nel pod per autenticare il pull delle immagini dal registry privato."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dk_config_3",
+      "english": "env field",
+      "set": {
+        "task": "Definisci la variabile d'ambiente LOG_LEVEL con value info nel campo env del container."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dk_config_3",
+      "english": "valueFrom",
+      "set": {
+        "task": "Imposta una variabile con valueFrom che referenzi la chiave log-level del configMap app-config."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dk_config_3",
+      "english": "secretKeyRef",
+      "set": {
+        "task": "Inietta la password del database recuperandola dalla chiave password del secret db tramite secretKeyRef."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dk_config_3",
+      "english": "fieldRef",
+      "set": {
+        "task": "Usa fieldRef con fieldPath metadata.name per esporre al container il nome del pod come variabile d'ambiente."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dk_config_3",
+      "english": "Variable Expansion",
+      "set": {
+        "task": "Costruisci value: $(POD_NAME)-suffix per espandere dinamicamente il nome del pod all'interno di un'altra variabile."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dk_config_3",
+      "english": "POD_NAME",
+      "set": {
+        "task": "Esponi POD_NAME come variabile d'ambiente del container leggendo metadata.name dalla Downward API."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dk_config_3",
+      "english": "POD_IP",
+      "set": {
+        "task": "Recupera l'IP del pod tramite fieldRef con fieldPath status.podIP per usarlo nella configurazione applicativa."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dk_config_3",
+      "english": "NODE_NAME",
+      "set": {
+        "task": "Inietta il nome del nodo ospitante leggendo spec.nodeName tramite fieldRef della Downward API."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dk_config_4",
+      "english": "metadata.labels",
+      "set": {
+        "task": "Esponi le label del pod come file labels nel volume downwardAPI per renderle leggibili dal container."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dk_config_4",
+      "english": "Resource Limits Field",
+      "set": {
+        "task": "Usa resourceFieldRef con resource limits.memory per esporre al container il proprio limite di memoria configurato."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dk_config_4",
+      "english": "Volume Projection",
+      "set": {
+        "task": "Combina configMap e secret in un singolo volume projected per montare più source sotto lo stesso mountPath."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dk_config_4",
+      "english": "Service Account Token",
+      "set": {
+        "task": "Proietta il token del service account come file token tramite serviceAccountToken nel volume projected."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dk_config_4",
+      "english": "subPath",
+      "set": {
+        "task": "Monta solo il file app.conf del configMap config sulla path /etc/app.conf usando subPath per isolare il file."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dk_config_4",
+      "english": "defaultMode",
+      "set": {
+        "task": "Imposta defaultMode 0400 nel volume per montare i file in sola lettura accessibili solo al proprietario."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dk_storage_1",
+      "english": "PersistentVolume",
+      "set": {
+        "task": "Definisci un PersistentVolume con apiVersion v1 per esporre storage durevole utilizzabile dai pod del cluster."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dk_storage_1",
+      "english": "PV Capacity",
+      "set": {
+        "task": "Imposta capacity storage 10Gi nel PersistentVolume per dichiarare la dimensione disponibile alle PVC."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dk_storage_1",
+      "english": "ReadWriteOnce",
+      "set": {
+        "task": "Configura accessModes ReadWriteOnce nel PersistentVolume per consentire il mount in lettura/scrittura da un singolo nodo."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dk_storage_1",
+      "english": "Reclaim Policy",
+      "set": {
+        "task": "Imposta persistentVolumeReclaimPolicy a Retain per preservare i dati anche dopo l'eliminazione della PVC."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dk_storage_1",
+      "english": "Volume Mode",
+      "set": {
+        "task": "Specifica volumeMode Filesystem nel PersistentVolume per esporre lo storage come filesystem montabile."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dk_storage_2",
+      "english": "PersistentVolumeClaim",
+      "set": {
+        "task": "Definisci una PersistentVolumeClaim con apiVersion v1 per richiedere storage durevole dal cluster."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dk_storage_2",
+      "english": "Storage Request",
+      "set": {
+        "task": "Richiedi 5Gi di storage nella PVC tramite resources.requests.storage per dimensionare correttamente il volume."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dk_storage_2",
+      "english": "Volume Binding",
+      "set": {
+        "task": "Imposta volumeBindingMode WaitForFirstConsumer nello StorageClass per provisionare il volume solo dopo lo scheduling del pod."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dk_storage_2",
+      "english": "PVC in Pod",
+      "set": {
+        "task": "Monta la PVC my-pvc nel pod tramite il volume data per accedere allo storage persistente richiesto."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dk_storage_3",
+      "english": "StorageClass",
+      "set": {
+        "task": "Definisci uno StorageClass con apiVersion storage.k8s.io/v1 per provisionare dinamicamente volumi su richiesta."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dk_storage_3",
+      "english": "Provisioner",
+      "set": {
+        "task": "Imposta provisioner kubernetes.io/aws-ebs nello StorageClass per allocare automaticamente volumi EBS su AWS."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dk_storage_3",
+      "english": "Default StorageClass",
+      "set": {
+        "task": "Marca lo StorageClass come default tramite l'annotation storageclass.kubernetes.io/is-default-class: true."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dk_storage_3",
+      "english": "Parameters",
+      "set": {
+        "task": "Definisci i parametri type gp3 e iops 3000 nello StorageClass per provisionare volumi EBS gp3 ad alte prestazioni."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dk_storage_3",
+      "english": "allowVolumeExpansion",
+      "set": {
+        "task": "Abilita allowVolumeExpansion: true nello StorageClass per consentire l'espansione dei volumi senza ricreare la PVC."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dk_storage_3",
+      "english": "reclaimPolicy",
+      "set": {
+        "task": "Imposta reclaimPolicy a Delete nello StorageClass per eliminare automaticamente il PV quando la PVC viene cancellata."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dk_storage_4",
+      "english": "CSI Driver",
+      "set": {
+        "task": "Registra un CSIDriver nel cluster per integrare uno storage backend tramite l'interfaccia standard CSI."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dk_storage_4",
+      "english": "Volume Snapshot",
+      "set": {
+        "task": "Crea una risorsa VolumeSnapshot per catturare uno snapshot point-in-time di un PersistentVolume tramite CSI."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dk_storage_4",
+      "english": "Volume Cloning",
+      "set": {
+        "task": "Configura dataSource che referenzi la PVC source-pvc per clonare un volume esistente in una nuova PVC."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dk_storage_4",
+      "english": "Ephemeral Volume",
+      "set": {
+        "task": "Definisci un volume ephemeral scratch tramite volumeClaimTemplate per ottenere storage temporaneo legato al ciclo di vita del pod."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_1",
+      "english": "Pod CIDR",
+      "set": {
+        "task": "Inizializza il cluster con --pod-network-cidr=10.244.0.0/16 per riservare il range di IP destinato ai pod."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_1",
+      "english": "Service CIDR",
+      "set": {
+        "task": "Configura --service-cidr=10.96.0.0/12 in kubeadm per definire il range di IP virtuali assegnati ai Service ClusterIP."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_2",
+      "english": "NetworkPolicy",
+      "set": {
+        "task": "Definisci una NetworkPolicy con apiVersion networking.k8s.io/v1 per controllare il traffico in ingresso e uscita dei pod."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_2",
+      "english": "Ingress Rules",
+      "set": {
+        "task": "Configura ingress rules che consentano solo ai pod con label role: frontend di raggiungere il backend."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_2",
+      "english": "Egress Rules",
+      "set": {
+        "task": "Limita l'egress dei pod permettendo solo connessioni verso il CIDR 10.0.0.0/24 tramite ipBlock."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_2",
+      "english": "podSelector",
+      "set": {
+        "task": "Applica un podSelector con label app: api per stabilire a quali pod si applica la NetworkPolicy."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_2",
+      "english": "ipBlock",
+      "set": {
+        "task": "Definisci un ipBlock 172.17.0.0/16 escludendo 172.17.1.0/24 per consentire il traffico verso una rete con eccezioni."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_3",
+      "english": "dnsPolicy",
+      "set": {
+        "task": "Imposta dnsPolicy ClusterFirst nel pod per risolvere prima i nomi tramite CoreDNS del cluster."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_3",
+      "english": "Corefile",
+      "set": {
+        "task": "Configura il Corefile di CoreDNS con il plugin kubernetes per cluster.local e forward verso il resolver di sistema."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_4",
+      "english": "externalTrafficPolicy",
+      "set": {
+        "task": "Imposta externalTrafficPolicy Local nel Service per preservare l'IP del client e instradare al pod sullo stesso nodo."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_1",
+      "english": "Chart",
+      "set": {
+        "task": "Installa il chart locale ./mychart come release myrelease per distribuire l'applicazione tramite Helm."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_1",
+      "english": "Repository",
+      "set": {
+        "task": "Aggiungi il repository bitnami all'indice locale di Helm per scaricarne i chart pubblicati."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_1",
+      "english": "helm install",
+      "set": {
+        "task": "Installa il chart bitnami/postgresql come release myapp per provisionare un database PostgreSQL nel cluster."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_1",
+      "english": "helm upgrade",
+      "set": {
+        "task": "Aggiorna la release myapp con la versione modificata del chart locale ./mychart tramite helm upgrade."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_1",
+      "english": "helm uninstall",
+      "set": {
+        "task": "Disinstalla la release myapp dal cluster rimuovendo tutte le risorse Kubernetes associate."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_1",
+      "english": "helm list",
+      "set": {
+        "task": "Elenca tutte le release Helm installate in ogni namespace del cluster tramite il flag -A."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_1",
+      "english": "helm rollback",
+      "set": {
+        "task": "Esegui il rollback della release myapp alla revisione 1 dopo un upgrade problematico."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_1",
+      "english": "helm search",
+      "set": {
+        "task": "Cerca chart contenenti nginx nei repository configurati per individuare il pacchetto più adatto."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_2",
+      "english": "Chart.yaml",
+      "set": {
+        "task": "Compila Chart.yaml con apiVersion v2, name myapp e version 1.0.0 come metadati identificativi del chart."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_2",
+      "english": "values.yaml",
+      "set": {
+        "task": "Imposta replicaCount 3 e image.repository nginx con tag 1.25 in values.yaml come default override-abili."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_2",
+      "english": "_helpers.tpl",
+      "set": {
+        "task": "Definisci il template myapp.fullname in _helpers.tpl per generare nomi consistenti da .Release.Name e .Chart.Name."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_2",
+      "english": "Chart Version",
+      "set": {
+        "task": "Aggiorna il campo version a 1.0.0 in Chart.yaml seguendo il versioning semver del chart Helm."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_2",
+      "english": "appVersion",
+      "set": {
+        "task": "Imposta appVersion: 1.16.0 in Chart.yaml per dichiarare la versione dell'applicazione distribuita."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_2",
+      "english": "Dependencies",
+      "set": {
+        "task": "Dichiara la dipendenza postgresql 12.x.x dal repo bitnami nel campo dependencies di Chart.yaml."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_3",
+      "english": "Go Template",
+      "set": {
+        "task": "Inserisci .Values.image.repository in un template Go per rendere parametrizzabile l'immagine del container."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_3",
+      "english": ".Values",
+      "set": {
+        "task": "Referenzia .Values.replicaCount nel template per leggere il numero di repliche da values.yaml."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_3",
+      "english": ".Release",
+      "set": {
+        "task": "Usa .Release.Name nel template per generare nomi risorse coerenti con la release Helm in uso."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_3",
+      "english": ".Chart",
+      "set": {
+        "task": "Concatena .Chart.Name e .Chart.Version nel template per inserire metadati identificativi del chart nelle label."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_3",
+      "english": "Pipeline",
+      "set": {
+        "task": "Applica una pipeline che usi default latest e quote sul tag dell'immagine per garantire un valore quotato sempre presente."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_3",
+      "english": "if/else",
+      "set": {
+        "task": "Avvolgi il manifest dell'ingress in un blocco if .Values.ingress.enabled per renderlo opzionale tramite values.yaml."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_3",
+      "english": "range",
+      "set": {
+        "task": "Itera con range su .Values.servers nel template per generare dinamicamente una voce per ciascun server."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_3",
+      "english": "with",
+      "set": {
+        "task": "Usa with .Values.image per restringere il contesto e referenziare .repository senza il prefisso completo."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_3",
+      "english": "include",
+      "set": {
+        "task": "Includi il named template myapp.labels con indentazione 4 spazi tramite include e nindent."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_3",
+      "english": "tpl Function",
+      "set": {
+        "task": "Applica la funzione tpl a .Values.someTemplate per renderizzare a runtime una stringa che contiene direttive Go template."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_4",
+      "english": "Hook",
+      "set": {
+        "task": "Annota la risorsa con helm.sh/hook: pre-install per eseguirla prima dell'installazione effettiva della release."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_4",
+      "english": "Hook Weight",
+      "set": {
+        "task": "Imposta helm.sh/hook-weight a 0 per controllare l'ordine di esecuzione degli hook all'interno della stessa fase."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_4",
+      "english": "helm dependency update",
+      "set": {
+        "task": "Esegui helm dependency update per scaricare e aggiornare le dipendenze dichiarate in Chart.yaml."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_4",
+      "english": "Library Chart",
+      "set": {
+        "task": "Dichiara type: library in Chart.yaml per creare un chart riusabile che fornisce solo template helper."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_4",
+      "english": "helm package",
+      "set": {
+        "task": "Esegui helm package ./mychart per generare l'archivio .tgz pronto per essere pubblicato sul repository."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_1",
+      "english": "Role",
+      "set": {
+        "task": "Definisci un Role che conceda i verbi get e list sulle risorse pods nell'apiGroup core."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_1",
+      "english": "RoleBinding",
+      "set": {
+        "task": "Crea un RoleBinding che leghi l'utente alice al Role pod-reader per concedergli i permessi definiti."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_1",
+      "english": "apiGroups",
+      "set": {
+        "task": "Specifica apiGroups: [apps] nelle regole RBAC per concedere permessi sulle risorse del gruppo apps come i Deployment."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_1",
+      "english": "kubectl auth can-i",
+      "set": {
+        "task": "Verifica se l'utente corrente può creare pod tramite kubectl auth can-i prima di tentare l'operazione."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_1",
+      "english": "Aggregated Role",
+      "set": {
+        "task": "Configura aggregationRule con matchLabels rbac.example.com/aggregate per aggregare permessi da più ClusterRole."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_2",
+      "english": "ServiceAccount",
+      "set": {
+        "task": "Definisci un ServiceAccount chiamato my-sa con apiVersion v1 per fornire un'identità ai pod del namespace."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_2",
+      "english": "automountServiceAccountToken",
+      "set": {
+        "task": "Disabilita automountServiceAccountToken nel pod per impedire il mount automatico del token del service account."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_3",
+      "english": "securityContext",
+      "set": {
+        "task": "Imposta securityContext con runAsNonRoot true e readOnlyRootFilesystem true per hardenizzare il container."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_3",
+      "english": "runAsUser",
+      "set": {
+        "task": "Configura runAsUser: 1000 nel securityContext per eseguire il processo del container con uno UID non privilegiato."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_3",
+      "english": "fsGroup",
+      "set": {
+        "task": "Imposta fsGroup: 2000 nel pod per assegnare il gruppo proprietario ai file dei volumi montati."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_3",
+      "english": "seccompProfile",
+      "set": {
+        "task": "Applica seccompProfile di tipo RuntimeDefault per restringere le syscall consentite al container."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_4",
+      "english": "Rego",
+      "set": {
+        "task": "Scrivi una policy Rego nel package k8srequiredlabels che produca una violation quando mancano le label richieste."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_4",
+      "english": "Audit Mode",
+      "set": {
+        "task": "Imposta enforcementAction: dryrun sul constraint per valutare le violazioni senza bloccare effettivamente le richieste."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_1",
+      "english": "HPA",
+      "set": {
+        "task": "Definisci un HorizontalPodAutoscaler con apiVersion autoscaling/v2 per scalare automaticamente le repliche del deployment."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_1",
+      "english": "Target Utilization",
+      "set": {
+        "task": "Configura una metrica Resource cpu con averageUtilization 70 nell'HPA per scalare al raggiungimento del 70% di CPU."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_1",
+      "english": "minReplicas",
+      "set": {
+        "task": "Imposta minReplicas: 2 nell'HPA per mantenere sempre almeno due pod attivi anche con carico minimo."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_1",
+      "english": "maxReplicas",
+      "set": {
+        "task": "Imposta maxReplicas: 10 nell'HPA per limitare la scalabilità massima e proteggere il cluster dal sovraccarico."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_1",
+      "english": "Custom Metric",
+      "set": {
+        "task": "Configura una metrica Pods chiamata requests_per_second per scalare l'applicazione in base al traffico applicativo."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_1",
+      "english": "Scale Behavior",
+      "set": {
+        "task": "Imposta scaleDown con stabilizationWindowSeconds 300 nell'HPA per evitare downscaling oscillanti."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_2",
+      "english": "VPA",
+      "set": {
+        "task": "Definisci un VerticalPodAutoscaler per regolare automaticamente le request di CPU e memoria dei pod."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_2",
+      "english": "Auto Mode",
+      "set": {
+        "task": "Imposta updateMode Auto nel VPA per applicare automaticamente le raccomandazioni di risorse ricreando i pod."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_2",
+      "english": "Recommendation Mode",
+      "set": {
+        "task": "Configura updateMode Off nel VPA per generare solo raccomandazioni senza modificare i pod in esecuzione."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_3",
+      "english": "PodDisruptionBudget",
+      "set": {
+        "task": "Definisci un PodDisruptionBudget con minAvailable 2 che selezioni i pod con label app: web."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_3",
+      "english": "minAvailable",
+      "set": {
+        "task": "Imposta minAvailable: 80% nel PDB per garantire che almeno l'80% dei pod resti attivo durante le disruption."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_3",
+      "english": "maxUnavailable (PDB)",
+      "set": {
+        "task": "Configura maxUnavailable: 1 nel PDB per limitare a un solo pod indisponibile durante un drain del nodo."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_3",
+      "english": "Graceful Termination",
+      "set": {
+        "task": "Imposta terminationGracePeriodSeconds: 30 nel pod per dare 30 secondi all'applicazione per chiudersi correttamente."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_3",
+      "english": "Pod Priority",
+      "set": {
+        "task": "Assegna priorityClassName high-priority al pod per garantirne la schedulazione prioritaria in caso di pressione."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_4",
+      "english": "ScaledObject",
+      "set": {
+        "task": "Definisci un ScaledObject KEDA con scaleTargetRef my-deployment per scalare in base a metriche esterne."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_4",
+      "english": "Trigger",
+      "set": {
+        "task": "Configura un trigger kafka con metadata topic: orders per scalare il deployment in base alla coda di messaggi."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_4",
+      "english": "Polling Interval",
+      "set": {
+        "task": "Imposta pollingInterval: 30 nel ScaledObject per far interrogare a KEDA le metriche ogni 30 secondi."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_4",
+      "english": "Cooldown",
+      "set": {
+        "task": "Configura cooldownPeriod: 300 nel ScaledObject per attendere 5 minuti prima di scalare a zero dopo l'inattività."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_4",
+      "english": "ScaledJob",
+      "set": {
+        "task": "Definisci una risorsa ScaledJob in KEDA per avviare Job batch on-demand in base agli eventi della coda."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_1",
+      "english": "Metrics Server",
+      "set": {
+        "task": "Esegui kubectl top nodes per leggere CPU e memoria dei nodi tramite il Metrics Server installato."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_1",
+      "english": "kubectl top",
+      "set": {
+        "task": "Lancia kubectl top pod -n default per visualizzare il consumo di CPU e memoria dei pod nel namespace default."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_1",
+      "english": "PromQL",
+      "set": {
+        "task": "Scrivi la query PromQL rate(http_requests_total[5m]) per calcolare le richieste HTTP al secondo sugli ultimi 5 minuti."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_1",
+      "english": "ServiceMonitor",
+      "set": {
+        "task": "Crea una risorsa ServiceMonitor del Prometheus Operator per dichiarare quali Service devono essere scrapeati."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_1",
+      "english": "Scrape Interval",
+      "set": {
+        "task": "Imposta scrape_interval a 15s nella configurazione di Prometheus per raccogliere metriche ogni 15 secondi."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_2",
+      "english": "Liveness Endpoint",
+      "set": {
+        "task": "Configura una livenessProbe HTTP sul path /healthz per consentire al kubelet di rilevare pod bloccati."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_2",
+      "english": "Readiness Endpoint",
+      "set": {
+        "task": "Definisci una readinessProbe HTTP sul path /ready per controllare quando il pod è pronto a ricevere traffico."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_3",
+      "english": "Structured Logging",
+      "set": {
+        "task": "Emetti log strutturati in JSON con campi level, msg e status per facilitare l'ingestion in stack ELK o Loki."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_2",
+      "english": "Application",
+      "set": {
+        "task": "Definisci una risorsa Application di ArgoCD con apiVersion argoproj.io/v1alpha1 per gestire un'app GitOps."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_2",
+      "english": "Source",
+      "set": {
+        "task": "Configura la source dell'Application ArgoCD con repoURL del repo GitHub e path manifests da sincronizzare."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_2",
+      "english": "Destination",
+      "set": {
+        "task": "Imposta destination con server in-cluster e namespace production come target di deploy dell'Application ArgoCD."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_2",
+      "english": "Sync",
+      "set": {
+        "task": "Lancia argocd app sync myapp per allineare manualmente lo stato del cluster al manifest del repo Git."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_2",
+      "english": "Auto Sync",
+      "set": {
+        "task": "Abilita syncPolicy automated con prune e selfHeal nell'Application per mantenere il cluster sempre allineato a Git."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_2",
+      "english": "Sync Wave",
+      "set": {
+        "task": "Aggiungi l'annotation argocd.argoproj.io/sync-wave: 1 alla risorsa per controllarne l'ordine di sync."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_3",
+      "english": "GitRepository",
+      "set": {
+        "task": "Definisci una risorsa GitRepository di Flux con url del repo GitHub come sorgente dei manifest."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_3",
+      "english": "Kustomization",
+      "set": {
+        "task": "Crea una Kustomization di Flux per applicare automaticamente i manifest del GitRepository al cluster."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_1",
+      "english": "CRD",
+      "set": {
+        "task": "Definisci una CustomResourceDefinition con apiVersion apiextensions.k8s.io/v1 per estendere l'API di Kubernetes."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_1",
+      "english": "OpenAPI Schema",
+      "set": {
+        "task": "Specifica uno schema openAPIV3Schema di tipo object nel CRD per validare i campi delle custom resource."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_1",
+      "english": "Status Subresource",
+      "set": {
+        "task": "Abilita la subresource status nel CRD per separare la gestione di spec e status delle custom resource."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_1",
+      "english": "Finalizer",
+      "set": {
+        "task": "Aggiungi il finalizer mycontroller.example.com/cleanup ai metadata per consentire al controller di gestire l'eliminazione."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_1",
+      "english": "Scoped Resource",
+      "set": {
+        "task": "Imposta scope: Namespaced nel CRD per rendere la custom resource limitata al namespace di creazione."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_1",
+      "english": "Short Name",
+      "set": {
+        "task": "Aggiungi shortNames: [mr] al CRD per consentire l'uso di un alias breve nei comandi kubectl."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_3",
+      "english": "Operator SDK",
+      "set": {
+        "task": "Inizializza un nuovo operator con operator-sdk init --domain example.com come scaffolding di partenza."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_3",
+      "english": "Kubebuilder",
+      "set": {
+        "task": "Scaffolda un progetto operator con kubebuilder init --domain example.com per generarne struttura e Makefile."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_3",
+      "english": "Reconciler",
+      "set": {
+        "task": "Implementa la funzione Reconcile del controller per riconciliare lo stato corrente con lo spec della custom resource."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_1",
+      "english": "Imperative Commands",
+      "set": {
+        "task": "Avvia rapidamente un pod nginx esponendo la porta 80 tramite kubectl run nello stile imperativo CKAD."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_1",
+      "english": "--dry-run",
+      "set": {
+        "task": "Genera lo YAML del pod nginx con --dry-run=client -o yaml senza creare effettivamente la risorsa nel cluster."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_1",
+      "english": "kubectl Alias",
+      "set": {
+        "task": "Crea l'alias k=kubectl nella shell per velocizzare la digitazione durante gli esami CKA e CKAD."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_1",
+      "english": "kubectl-debug",
+      "set": {
+        "task": "Avvia una sessione di debug interattiva nel pod myapp usando un container busybox per ispezionare i problemi."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_2",
+      "english": "Topology Spread",
+      "set": {
+        "task": "Configura un topologySpreadConstraint con maxSkew 1 sulla topologyKey zone per distribuire equamente i pod tra zone."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_2",
+      "english": "Anti-Affinity",
+      "set": {
+        "task": "Imposta podAntiAffinity required durante lo scheduling per evitare che due repliche dell'applicazione finiscano sullo stesso nodo."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_2",
+      "english": "Taint",
+      "set": {
+        "task": "Applica il taint key=value:NoSchedule al nodo node1 per impedire la schedulazione di pod privi della relativa toleration."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_2",
+      "english": "Pod Toleration",
+      "set": {
+        "task": "Aggiungi una toleration con key, operator Equal, value e effect NoSchedule per consentire la schedulazione sul nodo taintato."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_2",
+      "english": "Cluster Node Selector",
+      "set": {
+        "task": "Usa nodeSelector disktype: ssd nel pod per vincolarne la schedulazione sui soli nodi con storage SSD."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_2",
+      "english": "Bootstrap",
+      "set": {
+        "task": "Inizializza il control plane con kubeadm init --pod-network-cidr=10.244.0.0/16 per il bootstrap del cluster."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_3",
+      "english": "etcd Backup",
+      "set": {
+        "task": "Salva uno snapshot di etcd in backup.db con etcdctl per garantire un punto di ripristino del cluster."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_3",
+      "english": "Velero Backup",
+      "set": {
+        "task": "Esegui velero backup create my-backup includendo il namespace production per proteggerne le risorse e i volumi."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_4",
+      "english": "Resource Quota",
+      "set": {
+        "task": "Definisci una ResourceQuota con requests.cpu 10 e requests.memory 20Gi per limitare il consumo del namespace."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_4",
+      "english": "LimitRange",
+      "set": {
+        "task": "Imposta un LimitRange con default cpu 500m per assegnare limiti predefiniti ai container privi di esplicita configurazione."
+      }
+    }
+  ]
+}

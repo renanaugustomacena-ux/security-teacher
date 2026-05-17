@@ -1,0 +1,1348 @@
+{
+  "fixes": [
+    {
+      "level": "8",
+      "lesson": "node_middleware_1",
+      "english": "Middleware",
+      "set": {
+        "task": "Registra un middleware su app che logga ogni richiesta e chiama next() per cedere il controllo al prossimo handler."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "node_middleware_1",
+      "english": "next",
+      "set": {
+        "task": "Invoca next() al termine della tua funzione middleware altrimenti la richiesta resta appesa fino al timeout del client."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "node_middleware_1",
+      "english": "Router-Level",
+      "set": {
+        "task": "Aggancia authMiddleware al router con router.use cosi' tutte le sue rotte richiedono un JWT valido."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "node_middleware_1",
+      "english": "Route-Specific",
+      "set": {
+        "task": "Monta il middleware auth solo su GET /admin passandolo come argomento intermedio dell'handler."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "node_middleware_1",
+      "english": "Error Middleware",
+      "set": {
+        "task": "Definisci un middleware di errore con la firma a quattro parametri (err, req, res, next) per intercettare le eccezioni."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "node_middleware_1",
+      "english": "Async Middleware",
+      "set": {
+        "task": "Scrivi un middleware async che attenda una query al database e allega il risultato a req prima di chiamare next()."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "node_middleware_2",
+      "english": "Body Parser",
+      "set": {
+        "task": "Abilita il body parser JSON con app.use(express.json()) cosi' req.body contiene il payload delle richieste POST."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "node_middleware_2",
+      "english": "express.json",
+      "set": {
+        "task": "Configura express.json con un limit di 10mb per bloccare payload sovradimensionati che potrebbero mandare in crash il server."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "node_middleware_2",
+      "english": "express.urlencoded",
+      "set": {
+        "task": "Aggiungi express.urlencoded con extended: true per analizzare i form HTML legacy con oggetti annidati."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "node_middleware_2",
+      "english": "Multer",
+      "set": {
+        "task": "Installa Multer da npm per gestire upload multipart/form-data come avatar utente."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "node_middleware_2",
+      "english": "CORS",
+      "set": {
+        "task": "Installa il pacchetto cors via npm per abilitare le richieste cross-origin verso la tua API Express."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "node_middleware_2",
+      "english": "Allowed Origins",
+      "set": {
+        "task": "Restringi le origini consentite a https://example.com passando un array al campo origin di cors()."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "node_middleware_2",
+      "english": "Credentials",
+      "set": {
+        "task": "Imposta credentials: true nella config CORS cosi' il browser inoltra cookie e header Authorization nelle richieste cross-origin."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "node_middleware_3",
+      "english": "Morgan",
+      "set": {
+        "task": "Installa Morgan e applicalo con app.use(morgan('combined')) per produrre log di accesso in formato Apache."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "node_middleware_3",
+      "english": "Compression",
+      "set": {
+        "task": "Inserisci app.use(compression()) all'inizio della catena per gzippare le risposte e ridurre la banda mobile."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "node_middleware_3",
+      "english": "Request ID",
+      "set": {
+        "task": "Assegna req.id = uuid() in un middleware iniziale per correlare tutte le righe di log di una singola chiamata API."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "node_middleware_4",
+      "english": "Auth Middleware",
+      "set": {
+        "task": "Crea la funzione auth(req, res, next) che decodifica il JWT, popola req.user e blocca le richieste senza token."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "node_middleware_4",
+      "english": "Authorization Header",
+      "set": {
+        "task": "Leggi req.headers.authorization e separa sullo spazio dopo Bearer per estrarre la stringa JWT da verificare."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "node_middleware_4",
+      "english": "Bearer Token",
+      "set": {
+        "task": "Allega l'header Authorization: Bearer <token> a ogni richiesta API cosi' il server riconosce l'identita' senza sessioni."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "node_middleware_4",
+      "english": "Role-Based Access",
+      "set": {
+        "task": "Proteggi gli endpoint admin con requireRole('admin') che rifiuta chi non ha quel claim nel JWT."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "node_middleware_4",
+      "english": "Error Handler",
+      "set": {
+        "task": "Registra errorHandler come ultimo app.use cosi' cattura le eccezioni di ogni rotta e risponde con JSON strutturato."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "node_middleware_4",
+      "english": "404 Handler",
+      "set": {
+        "task": "Dopo tutte le rotte, monta un middleware finale che risponde con res.status(404).send() per gli URL non corrispondenti."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "node_middleware_4",
+      "english": "Helmet",
+      "set": {
+        "task": "Installa helmet e collegalo con app.use(helmet()) per impostare CSP, X-Frame-Options e altri header di sicurezza."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "node_middleware_4",
+      "english": "Trust Proxy",
+      "set": {
+        "task": "Abilita app.set('trust proxy', 1) dietro un load balancer cosi' Express legge il vero client IP da X-Forwarded-For."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "node_database_1",
+      "english": "Mongoose",
+      "set": {
+        "task": "Installa Mongoose da npm per modellare le tue collezioni MongoDB con schemi e validazione integrata."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "node_database_1",
+      "english": "Mongoose Schema",
+      "set": {
+        "task": "Definisci userSchema con new mongoose.Schema({}) elencando tipi, default e regole di validazione per ogni campo."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "node_database_1",
+      "english": "Mongoose Model",
+      "set": {
+        "task": "Compila il modello User con mongoose.model('User', userSchema) per ottenere find, save e update sulla collezione."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "node_database_1",
+      "english": "Query",
+      "set": {
+        "task": "Recupera tutti gli utenti attivi con await User.find({ active: true }) sfruttando l'API query di Mongoose."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "node_database_1",
+      "english": "Populate",
+      "set": {
+        "task": "Concatena .populate('author') sulla query dei Post per espandere gli ObjectId in documenti utente completi."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "node_database_1",
+      "english": "Aggregate",
+      "set": {
+        "task": "Costruisci una pipeline con User.aggregate([{ $group: {} }]) per calcolare statistiche aggregate in un solo round trip."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "node_database_2",
+      "english": "Sequelize",
+      "set": {
+        "task": "Installa Sequelize da npm per mappare le tue tabelle SQL a modelli con associazioni e chiavi esterne automatiche."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "node_database_2",
+      "english": "Knex",
+      "set": {
+        "task": "Installa Knex come query builder leggero quando preferisci scrivere SQL parametrizzato con pool di connessioni gestito."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "node_database_2",
+      "english": "Migration",
+      "set": {
+        "task": "Lancia npx sequelize db:migrate per applicare le migrazioni pendenti e portare lo schema all'ultima versione."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "node_database_2",
+      "english": "Seed",
+      "set": {
+        "task": "Esegui npx sequelize db:seed:all per popolare il database con utenti e prodotti di esempio per il team QA."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "node_database_3",
+      "english": "Prisma",
+      "set": {
+        "task": "Installa Prisma via npm per ottenere autocompletamento e type-safety su ogni query verso il database."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "node_database_3",
+      "english": "Schema File",
+      "set": {
+        "task": "Dichiara una model User con campo id Int @id nel file schema.prisma come fonte di verita' della tua base dati."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "node_database_3",
+      "english": "Prisma Client",
+      "set": {
+        "task": "Rigenera il Prisma Client con npx prisma generate dopo ogni modifica allo schema per aggiornare i tipi."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "node_database_3",
+      "english": "Prisma Migrate",
+      "set": {
+        "task": "Lancia npx prisma migrate dev per creare un file SQL con timestamp e applicarlo al database locale."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "node_database_3",
+      "english": "Prisma Studio",
+      "set": {
+        "task": "Avvia npx prisma studio per aprire l'editor visuale del database e ispezionare i record durante lo sviluppo."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "node_database_3",
+      "english": "findUnique",
+      "set": {
+        "task": "Recupera un singolo utente con prisma.user.findUnique({ where: { id } }) ottenendo il record o null."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "node_database_3",
+      "english": "findMany",
+      "set": {
+        "task": "Lista i record con prisma.user.findMany() aggiungendo where e take: 10 per impaginare gli utenti attivi."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "node_database_3",
+      "english": "Relation",
+      "set": {
+        "task": "Dichiara posts: Post[] nel modello User per modellare la relazione uno-a-molti tra utenti e post."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "node_database_3",
+      "english": "Transaction",
+      "set": {
+        "task": "Avvolgi creazione ordine e decremento inventario in await prisma.$transaction([a, b]) per garantire atomicita'."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "node_database_3",
+      "english": "Raw Query",
+      "set": {
+        "task": "Per CTE o window function ricorri a prisma.$queryRaw`SELECT * FROM users` quando il query builder non basta."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "node_database_4",
+      "english": "Connection String",
+      "set": {
+        "task": "Configura la stringa postgres://user:pass@host:5432/db dentro una variabile d'ambiente, mai nel codice sorgente."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "node_database_4",
+      "english": "Pool Size",
+      "set": {
+        "task": "Imposta pool: { max: 10 } allineando la dimensione del pool ai core CPU del server per evitare contesa."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "node_database_4",
+      "english": "Index",
+      "set": {
+        "task": "Lancia CREATE INDEX idx_email ON users(email) per accelerare le ricerche per email su milioni di record."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "node_database_4",
+      "english": "Eager Loading",
+      "set": {
+        "task": "Passa { include: { posts: true } } a findMany per caricare utenti e post in una query e risolvere l'N+1."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "node_security_1",
+      "english": "Cookie",
+      "set": {
+        "task": "Emetti res.cookie('sid', id) dopo il login cosi' il browser inoltra la sessione su ogni richiesta successiva."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "node_security_1",
+      "english": "HttpOnly",
+      "set": {
+        "task": "Marca il cookie di sessione con { httpOnly: true } cosi' un eventuale XSS non puo' leggere il token via JavaScript."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "node_security_1",
+      "english": "Secure Flag",
+      "set": {
+        "task": "Abilita { secure: true } sul cookie cosi' il browser lo invia solo su connessioni HTTPS e mai in chiaro."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "node_security_1",
+      "english": "SameSite",
+      "set": {
+        "task": "Imposta { sameSite: 'lax' } sul cookie di sessione per neutralizzare la maggior parte degli attacchi CSRF."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "node_security_2",
+      "english": "JWT",
+      "set": {
+        "task": "Installa jsonwebtoken da npm per firmare e verificare i token JWT emessi al login."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "node_security_2",
+      "english": "Header (JWT)",
+      "set": {
+        "task": "Costruisci l'header { \"alg\": \"HS256\", \"typ\": \"JWT\" } cosi' il verificatore sa quale chiave usare."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "node_security_2",
+      "english": "Payload",
+      "set": {
+        "task": "Componi il payload { \"sub\": \"123\", \"exp\": 1700000000 } con id utente e scadenza Unix, mai segreti."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "node_security_2",
+      "english": "Sign",
+      "set": {
+        "task": "Firma il token con jwt.sign({ id }, secret, { expiresIn: '1h' }) per emetterlo dopo un login riuscito."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "node_security_2",
+      "english": "Verify",
+      "set": {
+        "task": "Decodifica il token chiamando const data = jwt.verify(token, secret) all'inizio di ogni rotta protetta."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "node_security_3",
+      "english": "bcrypt",
+      "set": {
+        "task": "Installa bcrypt da npm per applicare hashing lento alle password con cost factor configurabile."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "node_security_3",
+      "english": "Salt",
+      "set": {
+        "task": "Hasha la password con await bcrypt.hash(pw, 12) lasciando che bcrypt generi e incorpori un salt univoco."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "node_security_3",
+      "english": "scrypt",
+      "set": {
+        "task": "Sfrutta crypto.scrypt(pw, salt, 64, cb) per hashare password senza dipendenze esterne grazie al modulo nativo."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "node_security_3",
+      "english": "Compare",
+      "set": {
+        "task": "Verifica le credenziali con await bcrypt.compare(pw, hash) confrontando la password inviata con l'hash salvato."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "node_security_3",
+      "english": "Timing Attack",
+      "set": {
+        "task": "Confronta segreti in tempo costante con crypto.timingSafeEqual(a, b) per neutralizzare gli attacchi temporali."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "node_security_4",
+      "english": "Passport.js",
+      "set": {
+        "task": "Installa Passport via npm per integrare login Google, GitHub o SAML attraverso strategie middleware."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "node_runtime_9",
+      "english": "Error",
+      "set": {
+        "task": "Lancia un nuovo errore con throw new Error('Boom') quando una precondizione critica fallisce."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "node_runtime_9",
+      "english": "Throw",
+      "set": {
+        "task": "Solleva throw new Error('Bad input') appena il config file manca cosi' l'app si ferma prima di entrare in stato inconsistente."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "node_runtime_9",
+      "english": "Stack Trace",
+      "set": {
+        "task": "Stampa err.stack nel logger per ricostruire il percorso di chiamate che ha portato all'eccezione."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "node_runtime_9",
+      "english": "TypeError",
+      "set": {
+        "task": "Riproduci un TypeError eseguendo null.foo per verificare che il tuo error handler intercetti gli accessi su undefined."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "node_runtime_9",
+      "english": "Custom Error",
+      "set": {
+        "task": "Crea class NotFound extends Error cosi' il middleware di errore distingue i 404 dai 500 generici."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "node_runtime_9",
+      "english": "Error Code",
+      "set": {
+        "task": "Confronta err.code === 'ENOENT' per mostrare un messaggio file non trovato amichevole al posto della stack trace."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "node_runtime_9",
+      "english": "cause",
+      "set": {
+        "task": "Avvolgi l'errore originale con new Error('msg', { cause: original }) per preservare la stack trace di basso livello."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "node_runtime_10",
+      "english": "async try/catch",
+      "set": {
+        "task": "Racchiudi le await in try { } catch (e) { } cosi' le promise rifiutate emergono come eccezioni loggabili."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "node_runtime_10",
+      "english": "process.on finally",
+      "set": {
+        "task": "Aggiungi un blocco try {} finally { cleanup(); } per chiudere file handle e pool DB anche in caso di errore."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "node_runtime_10",
+      "english": "Rethrow",
+      "set": {
+        "task": "Dopo aver loggato la diagnostica, rilancia con catch (e) { throw e; } per delegare la risposta all'handler globale."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "node_runtime_10",
+      "english": "Unhandled Rejection",
+      "set": {
+        "task": "Registra process.on('unhandledRejection', cb) per intercettare promise senza .catch() prima che Node termini il processo."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "node_runtime_10",
+      "english": "uncaughtException",
+      "set": {
+        "task": "Ascolta process.on('uncaughtException', cb) per loggare l'errore fatale e svuotare le metriche prima dell'uscita."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "node_runtime_11",
+      "english": "Error-Handling Middleware",
+      "set": {
+        "task": "Definisci app.use((err, req, res, next) => {}) con quattro parametri cosi' Express lo riconosce come error middleware."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "node_runtime_11",
+      "english": "next(err)",
+      "set": {
+        "task": "Inoltra gli errori di validazione con next(new Error('fail')) per saltare al middleware di errore globale."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "node_runtime_11",
+      "english": "Async Wrapper",
+      "set": {
+        "task": "Avvolgi gli handler con const asyncH = fn => (req, res, next) => fn(req, res, next).catch(next) per propagare i reject."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "node_runtime_11",
+      "english": "HTTP Error",
+      "set": {
+        "task": "Solleva throw createError(404) dalla libreria http-errors per emettere risposte con status e messaggio coerenti."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "node_runtime_11",
+      "english": "Error Status Code",
+      "set": {
+        "task": "Imposta err.status = 404 sulle classi di dominio cosi' i client distinguono not-found da validation 422."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "node_runtime_11",
+      "english": "Sentry",
+      "set": {
+        "task": "Installa @sentry/node per inviare ogni eccezione non gestita a Sentry e raggrupparla per stack trace."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "node_runtime_12",
+      "english": "Debugger",
+      "set": {
+        "task": "Avvia il server con node --inspect server.js per collegare un debugger da VS Code o Chrome DevTools."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "node_runtime_12",
+      "english": "Inspector",
+      "set": {
+        "task": "Lancia node --inspect-brk app.js per fermarti alla prima riga e impostare breakpoint prima dell'esecuzione."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "node_runtime_12",
+      "english": "Breakpoint",
+      "set": {
+        "task": "Inserisci una statement debugger; nel gestore pagamenti per ispezionare req e percorrere la logica di sconto."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "node_runtime_12",
+      "english": "console.log",
+      "set": {
+        "task": "Stampa lo stato intermedio con console.log('value:', x) per scoprire rapidamente quali variabili contengono valori inattesi."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "node_runtime_12",
+      "english": "console.error",
+      "set": {
+        "task": "Emetti console.error(err) cosi' il messaggio finisce su stderr e puoi reindirizzarlo a un file di log dedicato."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "node_runtime_12",
+      "english": "debug Module",
+      "set": {
+        "task": "Istanzia const dbg = require('debug')('app:db') per ottenere un logger con namespace abilitabile a runtime."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "node_runtime_12",
+      "english": "DEBUG env",
+      "set": {
+        "task": "Esegui DEBUG=app:* node app.js per attivare tutti i logger del namespace app e nascondere il rumore di terze parti."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "node_runtime_12",
+      "english": "Source Map",
+      "set": {
+        "task": "Avvia il build TypeScript con node --enable-source-maps app.js cosi' le stack trace puntano alle righe .ts originali."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "node_streams_1",
+      "english": "Buffer",
+      "set": {
+        "task": "Crea un Buffer dai byte grezzi con const buf = Buffer.from('hello') prima di convertirli in stringa."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "node_streams_1",
+      "english": "Buffer.from",
+      "set": {
+        "task": "Usa Buffer.from('abc', 'utf8') per ottenere byte grezzi UTF-8 da passare al modulo crypto per il calcolo dell'hash."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "node_streams_1",
+      "english": "Buffer.alloc",
+      "set": {
+        "task": "Alloca memoria azzerata con Buffer.alloc(10) per evitare leak di dati residui in codice security-sensitive."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "node_streams_1",
+      "english": "Buffer.allocUnsafe",
+      "set": {
+        "task": "Riserva memoria non inizializzata con Buffer.allocUnsafe(10) solo dove sovrascrivi subito ogni byte per massima velocita'."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "node_streams_1",
+      "english": "Stream Encoding",
+      "set": {
+        "task": "Converti il buffer in stringa codificata con buf.toString('base64') per inserirla in payload testuali."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "node_streams_1",
+      "english": "Base64",
+      "set": {
+        "task": "Codifica l'avatar binario con buf.toString('base64') cosi' puoi serializzarlo dentro una risposta JSON."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "node_streams_1",
+      "english": "Hex",
+      "set": {
+        "task": "Stampa il pacchetto in esadecimale con buf.toString('hex') per individuare byte null o pattern di rete inattesi."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "node_streams_1",
+      "english": "Concat",
+      "set": {
+        "task": "Unisci tutti i chunk raccolti dallo stream con Buffer.concat([a, b]) per ricostruire il file completo."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "node_streams_2",
+      "english": "Readable Stream",
+      "set": {
+        "task": "Apri un readable stream con const rs = fs.createReadStream(path) per elaborare il file 64 KB alla volta."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "node_streams_2",
+      "english": "data Event",
+      "set": {
+        "task": "Ascolta rs.on('data', chunk => {}) per processare ogni blocco non appena il sistema operativo lo rende disponibile."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "node_streams_2",
+      "english": "end Event",
+      "set": {
+        "task": "Registra rs.on('end', () => {}) per finalizzare l'elaborazione quando lo stream segnala l'esaurimento dei chunk."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "node_streams_2",
+      "english": "High Water Mark",
+      "set": {
+        "task": "Alza il buffer interno passando { highWaterMark: 16384 } al costruttore dello stream per migliorare il throughput."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "node_streams_2",
+      "english": "Async Iterator",
+      "set": {
+        "task": "Consuma lo stream con for await (const chunk of rs) {} per gestire backpressure e errori in modo idiomatico."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "node_streams_2",
+      "english": "createReadStream",
+      "set": {
+        "task": "Servi un file pesante con fs.createReadStream('big.csv').pipe(res) senza mai caricarlo intero in memoria."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "node_streams_3",
+      "english": "Writable Stream",
+      "set": {
+        "task": "Crea un writable stream con const ws = fs.createWriteStream(path) per appendere log con flush asincrono."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "node_streams_3",
+      "english": "write",
+      "set": {
+        "task": "Invia un nuovo blocco al writable con ws.write('data\\n') lasciando che Node lo flushi su disco in background."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "node_streams_3",
+      "english": "end",
+      "set": {
+        "task": "Chiudi lo stream con ws.end() per segnalare che non ci saranno altre scritture e attendere l'evento finish."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "node_streams_3",
+      "english": "Transform Stream",
+      "set": {
+        "task": "Costruisci new Transform({ transform(chunk, enc, cb) {} }) per convertire righe CSV in oggetti JSON nella pipeline."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "node_streams_3",
+      "english": "pipe",
+      "set": {
+        "task": "Collega sorgente e destinazione con rs.pipe(ws) lasciando che Node gestisca il flow control automaticamente."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "node_streams_3",
+      "english": "pipeline",
+      "set": {
+        "task": "Componi readable, gzip e writable con await pipeline(rs, gzip, ws) cosi' gli errori si propagano e le risorse si chiudono."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "node_streams_3",
+      "english": "Object Mode",
+      "set": {
+        "task": "Attiva { objectMode: true } sul Transform per far transitare oggetti JavaScript invece di buffer grezzi."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "node_streams_3",
+      "english": "zlib",
+      "set": {
+        "task": "Comprimi al volo facendo pipe attraverso zlib.createGzip() per servire risposte gzipped senza file pre-compressi."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "node_streams_4",
+      "english": "Line Reader",
+      "set": {
+        "task": "Apri il log da 500 MB con const rl = readline.createInterface({ input }) per filtrarlo riga per riga."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "node_streams_4",
+      "english": "HTTP Streaming",
+      "set": {
+        "task": "Trasmetti il video con fs.createReadStream(path).pipe(res) cosi' il client puo' iniziare la riproduzione subito."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "node_streams_4",
+      "english": "Chunked Transfer",
+      "set": {
+        "task": "Imposta l'header Transfer-Encoding: chunked per spedire l'HTML mentre la pagina viene ancora renderizzata."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "node_streams_4",
+      "english": "process.stdin",
+      "set": {
+        "task": "Leggi l'input utente con process.stdin.on('data', cb) per dare al tuo CLI un'interfaccia interattiva."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "node_streams_4",
+      "english": "process.stdout",
+      "set": {
+        "task": "Scrivi direttamente in stdout con process.stdout.write('hi') cosi' l'output puo' essere reindirizzato con > o |."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "node_streams_4",
+      "english": "Stream Iterator",
+      "set": {
+        "task": "Itera lo stream con for await (const c of stream) {} per processare blocchi sequenzialmente senza gestire eventi a mano."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_1",
+      "english": "EventEmitter",
+      "set": {
+        "task": "Istanzia const ee = new EventEmitter() per esporre un'API on/emit alle altre parti del modulo."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_1",
+      "english": "on",
+      "set": {
+        "task": "Sottoscrivi un listener persistente con ee.on('connect', cb) che si attiva ogni volta che l'evento connect viene emesso."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_1",
+      "english": "emit",
+      "set": {
+        "task": "Notifica gli osservatori chiamando ee.emit('data', payload) cosi' ogni listener registrato riceve il payload."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_1",
+      "english": "once",
+      "set": {
+        "task": "Aggancia ee.once('ready', cb) quando la logica di inizializzazione deve girare un'unica volta dopo il primo evento ready."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_1",
+      "english": "off",
+      "set": {
+        "task": "Stacca il listener con ee.off('connect', cb) durante l'unmount del componente per prevenire memory leak."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_1",
+      "english": "removeListener",
+      "set": {
+        "task": "Rimuovi un handler specifico con ee.removeListener('data', cb) prima di ricrearlo, evitando duplicazioni."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_1",
+      "english": "removeAllListeners",
+      "set": {
+        "task": "Pulisci ogni sottoscrizione con ee.removeAllListeners('data') durante uno shutdown controllato del servizio."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_1",
+      "english": "Max Listeners",
+      "set": {
+        "task": "Alza il limite di sottoscrittori con ee.setMaxListeners(20) per zittire l'avviso di memory leak quando ne servono di piu'."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_1",
+      "english": "EventEmitter Inheritance",
+      "set": {
+        "task": "Dichiara class MyClass extends EventEmitter cosi' i tuoi oggetti di dominio espongono on/emit ai chiamanti."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_2",
+      "english": "Error Event",
+      "set": {
+        "task": "Aggancia sempre ee.on('error', cb) sugli stream perche' un evento error non gestito termina il processo Node."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_3",
+      "english": "Custom Emitter",
+      "set": {
+        "task": "Crea class Cart extends EventEmitter per emettere eventi di dominio dalla logica di business del carrello."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_3",
+      "english": "Event Name",
+      "set": {
+        "task": "Emetti cart.emit('item:added', item) usando la convenzione namespace:azione per mantenere i nomi ricercabili."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_3",
+      "english": "Event Payload",
+      "set": {
+        "task": "Passa i dati ai sottoscrittori con ee.emit('event', data) cosi' ogni listener riceve lo stesso payload."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_3",
+      "english": "prependListener",
+      "set": {
+        "task": "Anteponi un hook di metriche con ee.prependListener('event', cb) per garantirgli l'esecuzione prima di altri listener."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_3",
+      "english": "CustomEvent",
+      "set": {
+        "task": "Dispatcha new CustomEvent('name', { detail }) cosi' i listener leggono il payload completo via event.detail."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_4",
+      "english": "events.on",
+      "set": {
+        "task": "Consuma un emitter come stream asincrono con for await (const [v] of on(ee, 'data')) {} per loop idiomatici."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_4",
+      "english": "events.once",
+      "set": {
+        "task": "Sospendi il bootstrap con await once(ee, 'ready') finche' il modulo monitorato non emette l'evento ready."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_4",
+      "english": "AbortSignal",
+      "set": {
+        "task": "Passa { signal } a await once(ee, 'data', { signal }) per annullare l'attesa quando scatta il timeout."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_4",
+      "english": "Async Generator",
+      "set": {
+        "task": "Definisci async function* gen() { yield 1; } per esporre un flusso di messaggi consumabile con for await."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_1",
+      "english": "Jest",
+      "set": {
+        "task": "Installa Jest come dipendenza di sviluppo per ottenere runner, asserzioni e mock in un unico pacchetto."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_1",
+      "english": "Mocha",
+      "set": {
+        "task": "Aggiungi Mocha come dev-dependency quando vuoi assemblare runner, Chai e Sinon in uno stack personalizzato."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_1",
+      "english": "Chai",
+      "set": {
+        "task": "Asserisci con expect(x).to.equal(1) usando lo stile expect di Chai per test leggibili e fluenti."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_1",
+      "english": "node:test",
+      "set": {
+        "task": "Esegui i test unitari con node --test sfruttando il runner integrato da Node 18 senza dipendenze esterne."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_2",
+      "english": "describe",
+      "set": {
+        "task": "Raggruppa i casi correlati dentro describe('User', () => {}) per ottenere report ordinati per feature."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_2",
+      "english": "it",
+      "set": {
+        "task": "Scrivi it('should sum', () => {}) formulando il nome come specifica comportamentale del codice sotto test."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_2",
+      "english": "test",
+      "set": {
+        "task": "Dichiara un caso con test('sums numbers', () => {}) usando l'alias accettato da Jest e Vitest."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_2",
+      "english": "expect",
+      "set": {
+        "task": "Asserisci il risultato con expect(sum(1,2)).toBe(3) ottenendo un diff leggibile in caso di fallimento."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_2",
+      "english": "Matcher",
+      "set": {
+        "task": "Seleziona il matcher giusto fra .toBe(), .toEqual(), .toThrow() in base al valore o all'effetto che vuoi verificare."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_2",
+      "english": "beforeEach",
+      "set": {
+        "task": "Resetta lo stato condiviso con beforeEach(() => setup()) cosi' ogni test parte da fixture note."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_2",
+      "english": "afterEach",
+      "set": {
+        "task": "Libera le risorse con afterEach(() => cleanup()) per chiudere server e connessioni anche quando un test fallisce."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_3",
+      "english": "Mock",
+      "set": {
+        "task": "Sostituisci il modulo db con jest.mock('./db') cosi' i test unitari restano deterministici e isolati."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_3",
+      "english": "Spy",
+      "set": {
+        "task": "Intercetta le chiamate a un metodo reale con jest.spyOn(obj, 'method') senza modificarne il comportamento."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_3",
+      "english": "Mock Function",
+      "set": {
+        "task": "Crea const fn = jest.fn() e asserisci su fn.mock.calls per verificare argomenti e numero di invocazioni."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_3",
+      "english": "mockReturnValue",
+      "set": {
+        "task": "Concatena fn.mockReturnValue(42) sul mock cosi' ogni chiamante riceve il valore predefinito 42."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_3",
+      "english": "mockResolvedValue",
+      "set": {
+        "task": "Imposta fn.mockResolvedValue(data) cosi' fare await sul mock risolve con data senza toccare il database reale."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_4",
+      "english": "Supertest",
+      "set": {
+        "task": "Installa supertest e monta l'app con request(app).get('/users').expect(200) per testare le rotte in-process."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_4",
+      "english": "Snapshot Test",
+      "set": {
+        "task": "Salva uno snapshot con expect(value).toMatchSnapshot() per intercettare modifiche UI non volute durante la review."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_4",
+      "english": "Code Coverage",
+      "set": {
+        "task": "Lancia jest --coverage per generare il report di copertura ed evidenziare i rami di logica non testati."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_4",
+      "english": "Test in Watch Mode",
+      "set": {
+        "task": "Avvia jest --watch durante il TDD cosi' rigira solo i test toccati dall'ultima modifica con feedback sub-secondo."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_5",
+      "english": "Parameterized Query",
+      "set": {
+        "task": "Passa l'id utente come parametro a db.query('SELECT * WHERE id = $1', [id]) per neutralizzare la SQL injection."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_5",
+      "english": "Path Traversal",
+      "set": {
+        "task": "Sanifica il nome file rifiutando sequenze come ../../../etc/passwd prima di concatenarlo a __dirname."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_6",
+      "english": "helmet middleware",
+      "set": {
+        "task": "Monta app.use(helmet()) all'inizio della catena per applicare CSP, HSTS e X-Frame-Options con default sicuri."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_6",
+      "english": "CSP",
+      "set": {
+        "task": "Emetti l'header Content-Security-Policy: default-src 'self' per bloccare script inline e fermare gli XSS riflessi."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_6",
+      "english": "X-Frame-Options",
+      "set": {
+        "task": "Aggiungi X-Frame-Options: DENY alle risposte per impedire che la pagina venga incorporata in iframe di terzi."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_6",
+      "english": "X-Content-Type-Options",
+      "set": {
+        "task": "Imposta X-Content-Type-Options: nosniff cosi' i browser rispettano il MIME type dichiarato e non sniffano contenuti."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_6",
+      "english": "Subresource Integrity",
+      "set": {
+        "task": "Aggiungi integrity=\"sha384-...\" al tag script del CDN cosi' il browser rifiuta il file se l'hash non corrisponde."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_7",
+      "english": "express-rate-limit",
+      "set": {
+        "task": "Installa express-rate-limit e applicalo al router di auth con windowMs 60000 per frenare i tentativi di brute force."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_8",
+      "english": "npm audit",
+      "set": {
+        "task": "Esegui npm audit nella CI per fallire la build appena una dipendenza transitiva acquisisce un advisory ad alta severita'."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_8",
+      "english": "npm audit fix",
+      "set": {
+        "task": "Lancia npm audit fix per aggiornare automaticamente i pacchetti vulnerabili restando dentro i range semver dichiarati."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_8",
+      "english": "npm ci",
+      "set": {
+        "task": "Preferisci npm ci a npm install sui server CI cosi' la build fallisce se lockfile e package.json sono divergenti."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_8",
+      "english": "Provenance",
+      "set": {
+        "task": "Pubblica con npm publish --provenance per allegare metadati firmati che attestano l'origine dal tuo workflow CI."
+      }
+    }
+  ]
+}

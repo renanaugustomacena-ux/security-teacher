@@ -1,0 +1,228 @@
+{
+  "fixes": [
+    {
+      "level": "12",
+      "lesson": "dso_threat_modeling_4",
+      "english": "pytm",
+      "set": {
+        "task": "Istanzia un threat model pytm per l'applicazione \"MyApp\" come punto di partenza dell'analisi as-code."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dso_tools_api_1",
+      "english": "Rate Limiting",
+      "set": {
+        "task": "Applica il rate limiting sulla zona api con burst di 10 richieste per proteggere l'endpoint da abusi."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dso_tools_api_4",
+      "english": "Newman",
+      "set": {
+        "task": "Esegui la collection Postman collection.json con Newman per validare la API dalla pipeline CI."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dso_tools_api_4",
+      "english": "Schemathesis",
+      "set": {
+        "task": "Lancia Schemathesis sullo schema openapi.yaml per fare fuzzing property-based degli endpoint."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dso_tools_runtime_2",
+      "english": "Falco runtime detection",
+      "set": {
+        "task": "Avvia Falco con il file di regole rules.yaml per rilevare comportamenti anomali a runtime nei container."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dso_tools_runtime_2",
+      "english": "Seccomp",
+      "set": {
+        "task": "Imposta il seccompProfile di tipo RuntimeDefault per filtrare le syscall pericolose del container."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dso_tools_runtime_3",
+      "english": "Osquery",
+      "set": {
+        "task": "Interroga l'host con osqueryi tramite la query SQL su FROM users per ispezionare gli account presenti."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dso_tools_runtime_4",
+      "english": "Authorization Policy",
+      "set": {
+        "task": "Definisci una AuthorizationPolicy Istio v1 per regolare il traffico autorizzato tra i servizi mesh."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dso_ci_cd_gitops_2",
+      "english": "GPG-Signed Commit",
+      "set": {
+        "task": "Crea il commit firmato con GPG usando -S per dimostrare l'autenticità dell'autore nella supply chain."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dso_ci_cd_gitops_2",
+      "english": "Signed Tag",
+      "set": {
+        "task": "Genera il tag firmato v1.0.0 con -s per attestare crittograficamente la release pubblicata."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dso_ci_cd_gitops_2",
+      "english": "GPG Sign",
+      "set": {
+        "task": "Abilita commit.gpgsign a true in git config per firmare automaticamente ogni commit del repository."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dso_ci_cd_gitops_2",
+      "english": "SSH Sign",
+      "set": {
+        "task": "Configura gpg.format su ssh per firmare commit e tag usando la chiave SSH al posto di GPG."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dso_ci_cd_gitops_2",
+      "english": "gitsign",
+      "set": {
+        "task": "Registra gitsign come gpg.x509.program globale per firmare i commit via Sigstore senza chiavi long-lived."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dso_ci_cd_gitops_3",
+      "english": "Repository Code Owner",
+      "set": {
+        "task": "Assegna @platform-team come owner di tutti i path con `*` per imporre il review sulla policy-as-code."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dso_tools_monitoring_3",
+      "english": "Tail",
+      "set": {
+        "task": "Segui in tempo reale i log del pod pod-name con kubectl logs -f durante il triage di un incidente."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dso_tools_monitoring_3",
+      "english": "Structured Logging",
+      "set": {
+        "task": "Emetti il logging strutturato in JSON con i campi level, msg e user per facilitare l'analisi nel SIEM."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dso_automation_incident_3",
+      "english": "Rollback",
+      "set": {
+        "task": "Annulla l'ultima rollout con kubectl rollout undo del deploy/app per ripristinare la versione precedente."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dso_automation_incident_4",
+      "english": "Disk Image",
+      "set": {
+        "task": "Acquisisci l'immagine forense di /dev/sda con dd e blocchi da 4M scrivendo su image.raw per la chain-of-custody."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dso_automation_incident_4",
+      "english": "Hash Verification",
+      "set": {
+        "task": "Calcola lo sha256sum di image.raw per verificare l'integrità della copia forense rispetto all'originale."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dso_container_security_k8s_1",
+      "english": "Kubernetes Role",
+      "set": {
+        "task": "Definisci una Role Kubernetes che conceda solo i verbi get e list, applicando il principio del minimo privilegio."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dso_container_security_k8s_1",
+      "english": "ServiceAccount",
+      "set": {
+        "task": "Associa al pod il serviceAccountName my-sa per legare l'identità del workload alle RBAC del cluster."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dso_container_security_k8s_2",
+      "english": "Network Policy",
+      "set": {
+        "task": "Crea una NetworkPolicy con podSelector vuoto per applicare default-deny sul traffico del namespace."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dso_container_security_k8s_3",
+      "english": "Pod Security Admission",
+      "set": {
+        "task": "Imposta la label pod-security.kubernetes.io/enforce su restricted per bloccare i pod non conformi all'admission."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dso_container_security_k8s_4",
+      "english": "etcd Encryption",
+      "set": {
+        "task": "Abilita la cifratura at-rest di etcd con una EncryptionConfiguration che usi il provider aescbc."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dso_container_security_k8s_4",
+      "english": "Taint",
+      "set": {
+        "task": "Marca il node1 con il taint sec=true:NoSchedule per riservarlo solo ai workload sensibili tollerati."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dso_container_security_k8s_4",
+      "english": "Trivy K8s",
+      "set": {
+        "task": "Esegui trivy k8s cluster per scansionare l'intero cluster Kubernetes e raccogliere le misconfigurazioni."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dso_container_security_k8s_4",
+      "english": "kubescape",
+      "set": {
+        "task": "Lancia kubescape scan con il framework nsa per misurare la postura del cluster contro le linee guida NSA-CISA."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dso_culture_training_4",
+      "english": "Parameterized Query",
+      "set": {
+        "task": "Usa cur.execute con il placeholder ? e la tupla (id,) per parametrizzare la query e prevenire SQL injection."
+      }
+    }
+  ]
+}
