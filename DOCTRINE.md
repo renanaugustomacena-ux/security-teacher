@@ -1,9 +1,20 @@
 # DOCTRINE.md — Knowledge AIO Engineering Doctrine
 
-> **Version:** 1.5.0 — 2026-05-02
+> **Version:** 2.0.0 — 2026-05-17
 > **Status:** Ratified, in force.
 > **Scope:** All code, configuration, deployment artifacts, and operational
 > procedures within this repository.
+
+> **v2.0.0 amendments** (2026-05-17): Educational Methods Doctrine — adds
+> §23-§42 governing pedagogy, adaptive learning, gamification, assessment,
+> and content quality. Informed by competitive analysis of 150+ education
+> platforms. New services: FSRS v5 SRS (§23), per-item Analytics (§24),
+> 7-stage Mastery model (§25), Adaptive Difficulty (§26), Error Analysis
+> (§27), Leech Detection (§28), Hint System (§29), Quest System (§30),
+> Virtual Currency (§31), Study Plan (§32), Push Notifications (§33),
+> Placement Test (§34), SmartScore (§35), Statistics Dashboard (§36),
+> Certificates (§37), Solution Comparison (§38), Reference/Cheatsheet (§39),
+> Knowledge Graph (§40), Branching Lessons (§41), AI Tutoring (§42).
 
 > **v1.5.0 amendments** (2026-05-02, ratified concurrent with implementation
 > per §21.4 — the rule and the artefact ship together because the bug it
@@ -391,6 +402,184 @@ an amendment commit that updates this file in the same PR.
 
 ---
 
+## §23. Spaced Repetition — v2.0.0
+
+| Rule  | Statement |
+| ----- | --------- |
+| 23.1  | The SRS algorithm MUST implement FSRS v5 with per-card Difficulty, Stability, and Retrievability parameters. |
+| 23.2  | SM-2 is DEPRECATED. Existing SM-2 card data MUST be migrated to FSRS format on first load after upgrade. |
+| 23.3  | Migration MUST preserve `_legacySM2` field for 30 days, then garbage-collect. |
+| 23.4  | Default desired retention MUST be 0.90 (90%). |
+| 23.5  | Review session UI MUST show predicted interval for each rating button before the user clicks. |
+
+## §24. Per-Item Analytics — v2.0.0
+
+| Rule  | Statement |
+| ----- | --------- |
+| 24.1  | Every exercise response MUST be recorded to the analytics store with: itemKey, timestamp, exerciseMode, correct, responseTimeMs, userAnswer, expectedAnswer. |
+| 24.2  | Analytics MUST store the last 50 responses per item (ring buffer). |
+| 24.3  | Aggregate analytics MUST be recomputed on every response. |
+| 24.4  | Analytics MUST be persisted to IndexedDB within 5 seconds of recording (debounced save). |
+| 24.5  | IndexedDB schema version MUST be ≥ 3 to include the analytics object store. |
+
+## §25. Mastery System — v2.0.0
+
+| Rule  | Statement |
+| ----- | --------- |
+| 25.1  | Every item MUST have a mastery stage (0-6: Unseen → Introduced → Practicing → Familiar → Proficient → Mastered → Burned). |
+| 25.2  | Stage transitions MUST be based on BKT P(L), exercise modes used, and days with correct answers. |
+| 25.3  | Stage decay MUST occur after 3+ consecutive failures. |
+| 25.4  | BURNED stage requires 30+ days of sustained mastery with no lapses. |
+| 25.5  | Mastery indicators MUST be visible on level cards in the topic view. |
+
+## §26. Adaptive Difficulty — v2.0.0
+
+| Rule  | Statement |
+| ----- | --------- |
+| 26.1  | Practice question selection MUST prefer items near the student's mastery frontier (Zone of Proximal Development). |
+| 26.2  | Items with mastery > 0.95 MUST be deprioritized (but not excluded) from practice pools. |
+| 26.3  | Distractor plausibility MUST scale with student ability. |
+| 26.4  | Exercise mode selection for weak review MUST use the mode where the student has lowest accuracy for that item. |
+
+## §27. Error Analysis — v2.0.0
+
+| Rule  | Statement |
+| ----- | --------- |
+| 27.1  | The system MUST track the top 3 most-chosen wrong answers per item. |
+| 27.2  | Confusion pairs (items frequently confused with each other) MUST be computable. |
+| 27.3  | Per-mode accuracy MUST be computed for each item. |
+
+## §28. Leech Detection — v2.0.0
+
+| Rule  | Statement |
+| ----- | --------- |
+| 28.1  | An item with 5+ consecutive failures MUST be flagged as a leech. |
+| 28.2  | Leech items MUST have a visual indicator in the mastery view. |
+| 28.3  | The system MUST suggest alternative exercise modes for leech items. |
+
+## §29. Hint System — v2.0.0
+
+| Rule  | Statement |
+| ----- | --------- |
+| 29.1  | Progressive hints (3 levels) MUST be available in all practice modes except Boss Challenge and Velocita. |
+| 29.2  | Hint usage MUST reduce XP: Hint 1 → 80%, Hint 2 → 50%, Hint 3 → 20%. |
+| 29.3  | Hints MUST be auto-generated from item data (no manual hint authoring). |
+| 29.4  | Hint usage MUST be recorded in analytics. |
+
+## §30. Quest System — v2.0.0
+
+| Rule  | Statement |
+| ----- | --------- |
+| 30.1  | 3 weekly quests MUST be active at all times (reset Monday). |
+| 30.2  | 1 daily bonus quest MUST be active. |
+| 30.3  | Quest selection MUST be deterministic per week (same user, same week = same quests). |
+| 30.4  | Quest rewards MUST be Knowledge Coins. |
+
+## §31. Virtual Currency — v2.0.0
+
+| Rule  | Statement |
+| ----- | --------- |
+| 31.1  | Knowledge Coins (KC) are the single virtual currency. |
+| 31.2  | KC MUST be earned from learning activities, NEVER purchasable with real money. |
+| 31.3  | KC MUST be spendable on streak freezes, streak repairs, double XP sessions, hint tokens, and cosmetic unlocks. |
+| 31.4  | KC balance MUST be visible in the main navigation. |
+| 31.5  | All KC transactions MUST be logged. |
+
+## §32. Study Plan — v2.0.0
+
+| Rule  | Statement |
+| ----- | --------- |
+| 32.1  | Daily goal targets MUST be user-configurable with at least 3 presets and a custom option. |
+| 32.2  | Goal date estimation MUST account for current mastery data and learning pace. |
+| 32.3  | Study plan MUST persist across sessions. |
+
+## §33. Push Notifications — v2.0.0
+
+| Rule  | Statement |
+| ----- | --------- |
+| 33.1  | Notification permission MUST NOT be requested on first visit (dark pattern). |
+| 33.2  | Permission MUST be requested after the 3rd study day at earliest. |
+| 33.3  | Notification timing MUST adapt to the user's historical study time. |
+| 33.4  | The user MUST be able to disable all notifications in settings. |
+
+## §34. Placement Test — v2.0.0
+
+| Rule  | Statement |
+| ----- | --------- |
+| 34.1  | Placement test MUST use adaptive question selection (CAT-like). |
+| 34.2  | Placement test MUST be 12 questions (4 rounds of 3). |
+| 34.3  | Completing placement test MUST unlock levels up to estimated ability. |
+| 34.4  | Placement test MUST be optional (can skip and start at Level 0). |
+
+## §35. SmartScore — v2.0.0
+
+| Rule  | Statement |
+| ----- | --------- |
+| 35.1  | SmartScore (0-100) MUST be tracked per topic × level. |
+| 35.2  | Correct answers MUST increase score by 1-8 (inversely proportional to current score). |
+| 35.3  | Wrong answers MUST decrease score by 3-20 (proportional to current score). |
+| 35.4  | SmartScore 100 requires sustained perfect accuracy at high scores. |
+| 35.5  | SmartScore milestones: 0-29 Beginner, 30-59 Developing, 60-79 Proficient, 80-89 Advanced, 90-99 Expert, 100 Mastered. |
+
+## §36. Review Statistics — v2.0.0
+
+| Rule  | Statement |
+| ----- | --------- |
+| 36.1  | Statistics dashboard MUST include: accuracy over time, mastery distribution, mode performance, topic comparison. |
+| 36.2  | Charts MUST use Canvas API (no external charting library per §6). |
+| 36.3  | Statistics MUST update as underlying data changes. |
+
+## §37. Certificates — v2.0.0
+
+| Rule  | Statement |
+| ----- | --------- |
+| 37.1  | Certificate generation MUST trigger when all items in a topic reach PROFICIENT (Stage 4) or higher. |
+| 37.2  | Certificates MUST be generated as PNG via Canvas API (no PDF library). |
+| 37.3  | Certificate MUST include: user name, topic name, item count, SmartScore, date. |
+
+## §38. Solution Comparison — v2.0.0
+
+| Rule  | Statement |
+| ----- | --------- |
+| 38.1  | Model solutions MUST be shown after incorrect answers in command/terminal/codelab/codechallenge modes. |
+| 38.2  | Model solution MUST include the expected command/code and the item's task description. |
+
+## §39. Reference / Cheatsheet — v2.0.0
+
+| Rule  | Statement |
+| ----- | --------- |
+| 39.1  | A reference panel MUST be accessible during practice sessions (except Boss Challenge and Velocita). |
+| 39.2  | Reference content MUST be auto-generated from topic data items. |
+| 39.3  | Using the reference panel MUST NOT affect XP or scoring. |
+
+## §40. Knowledge Graph — v2.0.0
+
+| Rule  | Statement |
+| ----- | --------- |
+| 40.1  | Context-level prerequisites MUST be definable per topic. |
+| 40.2  | The system MUST compute the inner fringe (contexts where all prerequisites are mastered). |
+| 40.3  | Adaptive practice SHOULD prefer items from the inner fringe when prerequisites are defined. |
+
+## §41. Branching Lessons — v2.0.0
+
+| Rule  | Statement |
+| ----- | --------- |
+| 41.1  | Quick check results MUST determine the next lesson stage. |
+| 41.2  | 0/2 correct → remedial re-teach with the same items before retry. |
+| 41.3  | 2/2 correct → skip ahead past the next group (accelerated path). |
+| 41.4  | Stars MUST be adjusted for the path taken. |
+
+## §42. AI Tutoring — v2.0.0
+
+| Rule  | Statement |
+| ----- | --------- |
+| 42.1  | Grammar rules in AIService MUST cover at least 80 patterns. |
+| 42.2  | Contextual explanations SHOULD be shown for wrong answers when available. |
+| 42.3  | Any LLM integration MUST be opt-in and MUST NOT be required for core functionality. |
+| 42.4  | LLM responses MUST be sandboxed and MUST NOT execute code or modify DOM outside designated containers. |
+
+---
+
 ## Appendix A — Rule Count
 
 | Section                                    | Count   |
@@ -418,7 +607,27 @@ an amendment commit that updates this file in the same PR.
 | §20 Threat Model & Incident Response       | 6       |
 | §21 Doctrine Governance                    | 4       |
 | §22 Native Packaging (Android APK)         | 15      |
-| **Total**                                  | **174** |
+| §23 Spaced Repetition                      | 5       |
+| §24 Per-Item Analytics                     | 5       |
+| §25 Mastery System                         | 5       |
+| §26 Adaptive Difficulty                    | 4       |
+| §27 Error Analysis                         | 3       |
+| §28 Leech Detection                        | 3       |
+| §29 Hint System                            | 4       |
+| §30 Quest System                           | 4       |
+| §31 Virtual Currency                       | 5       |
+| §32 Study Plan                             | 3       |
+| §33 Push Notifications                     | 4       |
+| §34 Placement Test                         | 4       |
+| §35 SmartScore                             | 5       |
+| §36 Review Statistics                      | 3       |
+| §37 Certificates                           | 3       |
+| §38 Solution Comparison                    | 2       |
+| §39 Reference / Cheatsheet                 | 3       |
+| §40 Knowledge Graph                        | 3       |
+| §41 Branching Lessons                      | 4       |
+| §42 AI Tutoring                            | 4       |
+| **Total**                                  | **250** |
 
 ## Appendix B — Quick-Reference Index
 
@@ -434,6 +643,10 @@ an amendment commit that updates this file in the same PR.
 - **APK build:** manual dispatch via Actions → "APK Build" (§22.9).
 - **Deployment URL (web):** `https://renanaugustomacena-ux.github.io/security-teacher/` (§0.5).
 - **Local dev:** `docker compose up --build -d` → `http://localhost:8080` (§2.10).
+- **Adding a new pedagogy service:** §23-§42 governs educational methods. New services MUST follow §1.3 + §17.9 (matching test file) + §5.6 (sw.js entry).
+- **SRS algorithm changes:** §23 — FSRS v5 only, SM-2 is deprecated.
+- **Gamification additions:** §30 (quests) + §31 (currency) + §35 (SmartScore).
+- **Chart/visualization additions:** §36.2 — Canvas API only, no external chart libraries.
 
 ## Appendix C — Glossary
 

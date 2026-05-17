@@ -18,6 +18,7 @@ import { questService } from './services/QuestService.js';
 import { currencyService } from './services/CurrencyService.js';
 import { studyPlanService } from './services/StudyPlanService.js';
 import { smartScoreService } from './services/SmartScoreService.js';
+import { notificationService } from './services/NotificationService.js';
 import { lyricsService } from './services/LyricsService.js';
 import { MusicManager } from './music.js';
 import { ProgressManager } from './progress.js';
@@ -139,6 +140,7 @@ class App {
       await currencyService.init();
       await studyPlanService.init();
       await smartScoreService.init();
+      await notificationService.init();
     } catch (err) {
       console.warn('[pedagogy] analytics/mastery/quest/currency init failed:', err);
     }
