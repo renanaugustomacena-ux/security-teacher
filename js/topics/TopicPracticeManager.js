@@ -1825,6 +1825,8 @@ export class TopicPracticeManager {
       ? `<div class="feedback-accent-hint">Attenzione agli accenti: <strong>${this.escapeHtml(correctAnswer)}</strong></div>`
       : '';
 
+    const modelSolutionHtml = !isCorrect ? this._getModelSolutionHtml() : '';
+
     container.innerHTML = `
       <div class="feedback-card ${isCorrect ? 'feedback-correct' : 'feedback-incorrect'}">
         <div class="feedback-icon">${isCorrect ? '\u2705' : '\u{1F4A1}'}</div>
@@ -1832,6 +1834,7 @@ export class TopicPracticeManager {
         ${isCorrect && xpEarned > 0 ? `<div class="feedback-xp">+${xpEarned} XP</div>` : ''}
         ${accentHintHtml}
         ${!isCorrect ? `<div class="feedback-answer">La risposta era: <strong>${this.escapeHtml(correctAnswer)}</strong></div>` : ''}
+        ${modelSolutionHtml}
         <div class="feedback-progress-bar">
           <div class="feedback-progress-fill"></div>
         </div>
@@ -1842,8 +1845,41 @@ export class TopicPracticeManager {
       this.showFloatingXP(xpEarned);
     }
 
-    const dwell = isCorrect ? FEEDBACK_DWELL.correct : FEEDBACK_DWELL.incorrect;
+    const hasModelSolution = modelSolutionHtml.length > 0;
+    const dwell = isCorrect
+      ? FEEDBACK_DWELL.correct
+      : hasModelSolution
+        ? FEEDBACK_DWELL.incorrect + 2000
+        : FEEDBACK_DWELL.incorrect;
     setTimeout(() => this.nextQuestion(), dwell);
+  }
+
+  _getModelSolutionHtml() {
+    const codeModes = ['command', 'codechallenge', 'terminal', 'codelab', 'codeoutput'];
+    if (!codeModes.includes(this.currentMode)) return '';
+
+    const q = this.questions[this.currentQuestionIndex];
+    if (!q) return '';
+
+    const item = q.item || q;
+    const command = item.command || q.command;
+    const code = item.code || q.code;
+    const task = item.task || item.example || item.note || '';
+
+    const solution = code || command;
+    if (!solution) return '';
+
+    const isMultiLine = solution.includes('\n');
+    const solutionHtml = isMultiLine
+      ? `<pre class="model-solution-code">${this.escapeHtml(solution)}</pre>`
+      : `<code class="model-solution-code">${this.escapeHtml(solution)}</code>`;
+
+    return `
+      <div class="model-solution">
+        <div class="model-solution-header">Model Solution</div>
+        ${solutionHtml}
+        ${task ? `<div class="model-solution-desc">${this.escapeHtml(task)}</div>` : ''}
+      </div>`;
   }
 
   nextQuestion() {

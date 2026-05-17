@@ -2060,6 +2060,47 @@ h3 {
   margin-bottom: var(--space-md);
 }
 
+.model-solution {
+  margin-top: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(0, 255, 65, 0.03);
+  border: 1px solid rgba(0, 255, 65, 0.15);
+  border-radius: 6px;
+  text-align: left;
+}
+
+.model-solution-header {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent-primary, #00ff41);
+  margin-bottom: var(--space-xs, 4px);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.model-solution-code {
+  display: block;
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  background: rgba(0, 0, 0, 0.3);
+  padding: var(--space-xs, 4px) var(--space-sm, 8px);
+  border-radius: 4px;
+  white-space: pre-wrap;
+  word-break: break-all;
+  margin: 0;
+}
+
+pre.model-solution-code {
+  overflow-x: auto;
+}
+
+.model-solution-desc {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-top: var(--space-xs, 4px);
+}
+
 .feedback-progress-bar {
   width: 100%;
   max-width: 200px;
