@@ -61,6 +61,8 @@ const STATIC_ASSETS = [
   './js/services/SmartScoreService.js',
   './js/services/StudyPlanService.js',
   './js/services/ReferenceService.js',
+  './js/services/KnowledgeGraphService.js',
+  './js/services/StatsDashboardService.js',
   './js/services/TTSService.js',
   './js/store/index.js',
   './js/utils/DateUtils.js',

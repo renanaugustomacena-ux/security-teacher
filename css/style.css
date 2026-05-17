@@ -3663,6 +3663,39 @@ pre.model-solution-code {
   padding-top: var(--space-md);
 }
 
+/* Branching lesson: remedial review */
+.remedial-group {
+  border-color: #e67e22;
+}
+
+.remedial-notice {
+  color: #e67e22;
+  font-size: 0.85rem;
+  text-align: center;
+  padding: var(--space-sm) 0;
+}
+
+.context-item-card.remedial {
+  border-left: 3px solid #e67e22;
+}
+
+/* Branching lesson: skip notice */
+.skip-notice {
+  text-align: center;
+  padding: var(--space-xl);
+}
+
+.skip-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-sm);
+}
+
+.skip-message {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: var(--space-md);
+}
+
 /* --- Stage 3: Quick Check --- */
 .quick-check {
   background: var(--glass-bg);

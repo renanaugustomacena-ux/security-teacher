@@ -690,6 +690,7 @@ export class TopicLessonEngine {
     this._currentQuestions = questions;
     this._currentQuestionIndex = 0;
     this._groupCorrectCount = 0;
+    this._isRemedial = false;
 
     this._renderQuestion(0);
   }
@@ -829,18 +830,92 @@ export class TopicLessonEngine {
         this._currentQuestionIndex = nextQIndex;
         this._renderQuestion(nextQIndex);
       } else {
-        // Save stars for this group (max 2 per group)
         this.groupStars[this.currentGroupIndex] = this._groupCorrectCount;
-
-        // Advance to next group or summary
-        const nextGroupIndex = this.currentGroupIndex + 1;
-        if (nextGroupIndex < this.contextGroups.length) {
-          this.renderContextGroup(nextGroupIndex);
-        } else {
-          this.renderSummary();
-        }
+        this._branchAfterQuickCheck();
       }
     }, 1500);
+  }
+
+  _branchAfterQuickCheck() {
+    const score = this._groupCorrectCount;
+    const groupIndex = this.currentGroupIndex;
+    const nextGroupIndex = groupIndex + 1;
+    const isLastGroup = nextGroupIndex >= this.contextGroups.length;
+
+    if (score === 0 && !this._isRemedial) {
+      this._renderRemedialReview(groupIndex);
+      return;
+    }
+
+    if (score === 2 && !isLastGroup && nextGroupIndex + 1 < this.contextGroups.length) {
+      this.groupStars[nextGroupIndex] = 2;
+      this.totalCorrect += 2;
+      this._showSkipNotice(nextGroupIndex, nextGroupIndex + 1);
+      return;
+    }
+
+    if (isLastGroup) {
+      this.renderSummary();
+    } else {
+      this.renderContextGroup(nextGroupIndex);
+    }
+  }
+
+  _renderRemedialReview(groupIndex) {
+    if (!this.container) return;
+    this._isRemedial = true;
+    const group = this.contextGroups[groupIndex];
+    const topicColor = this._getTopicColor();
+
+    const itemCards = group.items
+      .map(
+        (item) => `
+      <div class="context-item-card remedial">
+        <div class="context-item-main">
+          <div class="context-item-english">${this.escapeHtml(item.english)}</div>
+          <div class="context-item-italian">${this.escapeHtml(item.italian)}</div>
+        </div>
+        ${item.example ? `<div class="context-item-example">"${this.escapeHtml(item.example)}"</div>` : ''}
+      </div>`
+      )
+      .join('');
+
+    this.container.innerHTML = `
+      <div class="lesson-engine">
+        <div class="context-group remedial-group" style="--topic-color: ${topicColor}">
+          <div class="context-group-header">
+            <span class="context-group-name">Review: ${this.escapeHtml(this._formatContextName(group.context))}</span>
+          </div>
+          <div class="remedial-notice">Take another look at these terms before trying again.</div>
+          <div class="context-group-items">${itemCards}</div>
+          <div class="context-group-actions">
+            <button class="btn lesson-start-btn" data-action="lessonEngine.advanceToQuickCheck" data-group="${groupIndex}">
+              Riprova / Retry
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  _showSkipNotice(skippedIndex, nextIndex) {
+    if (!this.container) return;
+    const skippedGroup = this.contextGroups[skippedIndex];
+    const topicColor = this._getTopicColor();
+
+    this.container.innerHTML = `
+      <div class="lesson-engine">
+        <div class="context-group skip-notice" style="--topic-color: ${topicColor}">
+          <div class="skip-icon">⚡</div>
+          <div class="skip-message">Perfect score! Skipping ahead past <strong>${this.escapeHtml(this._formatContextName(skippedGroup.context))}</strong>.</div>
+          <div class="context-group-actions">
+            <button class="btn lesson-start-btn" data-action="lessonEngine.advanceToGroup" data-group="${nextIndex}">
+              Avanti / Continue
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
   }
 
   // ─── STAGE 4: SUMMARY ─────────────────────────────
