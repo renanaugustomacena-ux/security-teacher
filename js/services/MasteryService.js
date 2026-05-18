@@ -41,6 +41,8 @@ class MasteryService {
     const { masteryP, totalAttempts, consecutiveFails, modeAccuracy, lastCorrect } = analytics;
 
     const entry = this._items[itemKey] || this._newEntry(0);
+    if (!Array.isArray(entry.modesCorrect)) entry.modesCorrect = [];
+    if (!Array.isArray(entry.daysCorrect)) entry.daysCorrect = [];
     const today = new Date().toISOString().slice(0, 10);
 
     // Update modes with at least one correct answer

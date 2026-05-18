@@ -53,8 +53,8 @@ class AdaptiveDifficultyService {
         }
 
         // Recency penalty: recently seen items get lower priority
-        if (analytics.lastSeenMs) {
-          const elapsed = now - analytics.lastSeenMs;
+        if (analytics.lastAttempt) {
+          const elapsed = now - new Date(analytics.lastAttempt).getTime();
           const recencyBonus = Math.min(1, elapsed / (RECENCY_DECAY_MS * 7));
           priority += recencyBonus * 0.3;
         } else {

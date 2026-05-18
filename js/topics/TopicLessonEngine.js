@@ -869,6 +869,11 @@ export class TopicLessonEngine {
     }
   }
 
+  _getTopicColor() {
+    const meta = getTopicMeta(this.topicId);
+    return meta ? meta.color : 'var(--accent-primary)';
+  }
+
   _renderRemedialReview(groupIndex) {
     if (!this.container) return;
     this._isRemedial = true;

@@ -81,8 +81,8 @@ class CurrencyService {
     this._persist();
   }
 
-  _persist() {
-    storageService.save('progress', {
+  async _persist() {
+    await storageService.save('progress', {
       userId: 'currency',
       balance: this.balance,
       totalEarned: this.totalEarned,
