@@ -37,7 +37,7 @@
     "eslint-plugin-prettier": "^5.5.5",
     "husky": "^9.1.7",
     "prettier": "^3.8.1",
-    "vitest": "^4.0.18"
+    "vitest": "^4.1.6"
   },
   "dependencies": {
     "@capawesome/capacitor-google-sign-in": "0.1.2"
