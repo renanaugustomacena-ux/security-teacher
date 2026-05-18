@@ -71,6 +71,10 @@ const FORBIDDEN_PATTERN_ALLOWLIST = new Set([
   // ethical-hacking.js shows XSS payloads as quoted *example strings* — they
   // are never executed; they are rendered as text in lesson content.
   'js/topics/data/ethical-hacking.js',
+  // ai-engineering.js contains PyTorch model.eval() in code snippet strings.
+  'js/topics/data/ai-engineering.js',
+  // devsecops.js references eval() in educational text about ESLint rules.
+  'js/topics/data/devsecops.js',
 ]);
 
 const failures = [];
