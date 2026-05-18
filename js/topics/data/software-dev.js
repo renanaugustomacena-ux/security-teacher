@@ -6998,7 +6998,7 @@ function Dashboard() {
                 "By prefetching the next page while the user reads the current one, navigation feels instantaneous. = Con il prefetching della pagina successiva mentre l'utente legge quella corrente, la navigazione sembra istantanea.",
               context: 'performance',
               difficulty: 'advanced',
-              code: `<link rel="prefetch" href="/checkout.js" as="script">
+              code: `<link rel="prefetch" href="./checkout.js" as="script">
 <link rel="preconnect" href="https://api.payments.example.com">`,
               task: `Aggiungi nell'head della pagina un hint di prefetch per lo script del checkout e un preconnect verso il gateway di pagamento, cosi' la navigazione successiva risulta istantanea.`,
             },
