@@ -17,6 +17,8 @@
 
 import { sfxService } from '../services/SfxService.js';
 import { practiceHUD } from '../PracticeHUD.js';
+import { questService } from '../services/QuestService.js';
+import { currencyService } from '../services/CurrencyService.js';
 
 const RECORDS_KEY = 'velocita-records-v1';
 const MAX_RECORDS = 50;
@@ -316,6 +318,7 @@ export class TopicVelocita {
       if (this.combo > this.maxCombo) this.maxCombo = this.combo;
       this.metronomeFreq = Math.min(880, 440 + this.combo * 8);
       sfxService.correct();
+      currencyService.earn(1, 'velocita_correct');
       if (btnEl) btnEl.classList.add('velocita-option-correct');
     } else {
       this.combo = 0;
@@ -375,6 +378,18 @@ export class TopicVelocita {
       .filter((r) => r.duration === record.duration)
       .map((r) => r.score);
     const pct = percentile(score, sameModeScores);
+    const isPB = pct === 100 || sameModeScores.length === 0;
+
+    // Quest + currency integration
+    questService.recordMetric('velocitaRuns', 1);
+    questService.recordMetric('velocitaScore', this.correct);
+    questService.recordMetric('weekXP', xpEarned);
+    questService.recordMetric('maxStreak', this.maxCombo);
+    if (isPB && allRecords.length > 0) {
+      questService.recordMetric('velocitaPB', 1);
+      currencyService.earn(10, 'velocita_pb');
+    }
+    currencyService.earn(5, 'velocita_complete');
 
     this.renderSummary(record, pct);
   }
@@ -402,6 +417,10 @@ export class TopicVelocita {
           <div><span>Q/s</span><strong>${(record.attempts / record.duration).toFixed(2)}</strong></div>
         </div>
         <div class="velocita-summary-pct">${escapeHtml(pctLine)}</div>
+        <div class="velocita-summary-rewards">
+          <span class="velocita-reward-xp">+${Math.round(record.score * 0.4)} XP</span>
+          <span class="velocita-reward-coins">+${record.correct + 5 + (pct === 100 ? 10 : 0)} KC</span>
+        </div>
         <div class="velocita-summary-actions">
           <button class="btn btn-primary" id="velocita-again">Ancora / Again</button>
           <button class="btn btn-secondary" id="velocita-back">Indietro / Back</button>

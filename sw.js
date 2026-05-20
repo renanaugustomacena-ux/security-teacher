@@ -13,7 +13,7 @@
  *   - fetch handler integrity gate: cross-origin responses never enter cache,
  *     opaque responses are passed through but never persisted.
  */
-const CACHE_NAME = 'kaio-v8';
+const CACHE_NAME = 'kaio-v9';
 
 const STATIC_ASSETS = [
   './',

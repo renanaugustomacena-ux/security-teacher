@@ -8210,3 +8210,97 @@ body.login-wall-active > *:not(.login-wall):not(#matrix-morph) {
 .login-wall-retry {
   width: auto;
 }
+
+/* ── Knowledge Coins (KC) Balance Bar ── */
+.kc-balance-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 12px;
+  margin: 8px 16px;
+  background: rgba(241, 196, 15, 0.08);
+  border: 1px solid rgba(241, 196, 15, 0.25);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #f1c40f;
+}
+.kc-icon { font-size: 1rem; }
+.kc-amount { font-variant-numeric: tabular-nums; }
+.kc-label { font-size: 0.7rem; opacity: 0.7; }
+
+/* ── Quest Widget ── */
+#quest-widget h3,
+#quest-widget h4 {
+  margin: 0 0 10px;
+  font-size: 0.95rem;
+  color: var(--text-primary, #e0e0e0);
+}
+.quest-daily-title {
+  margin-top: 12px !important;
+  font-size: 0.8rem !important;
+  color: var(--text-secondary, #999) !important;
+}
+.quest-list { display: flex; flex-direction: column; gap: 8px; }
+.quest-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+  transition: border-color 0.2s;
+}
+.quest-row.quest-done { border-color: rgba(0,255,65,0.3); background: rgba(0,255,65,0.03); }
+.quest-row.quest-claimed { opacity: 0.5; }
+.quest-icon { font-size: 1.2rem; flex-shrink: 0; }
+.quest-info { flex: 1; min-width: 0; }
+.quest-label { display: block; font-size: 0.8rem; color: var(--text-primary, #e0e0e0); margin-bottom: 4px; }
+.quest-bar {
+  height: 4px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 2px;
+}
+.quest-bar-fill {
+  height: 100%;
+  background: var(--accent-primary, #00ff41);
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+.quest-nums { font-size: 0.7rem; color: var(--text-secondary, #999); }
+.quest-claim-btn {
+  background: var(--accent-primary, #00ff41);
+  color: #000;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  animation: quest-pulse 1.5s infinite;
+}
+.quest-check { font-size: 1rem; }
+@keyframes quest-pulse {
+  0%, 100% { box-shadow: 0 0 4px rgba(0,255,65,0.2); }
+  50% { box-shadow: 0 0 12px rgba(0,255,65,0.5); }
+}
+
+/* ── Boss / Velocita Reward Badges ── */
+.boss-results-rewards,
+.velocita-summary-rewards {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 12px 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.boss-results-xp,
+.velocita-reward-xp { color: var(--accent-primary, #00ff41); }
+.boss-results-coins,
+.velocita-reward-coins { color: #f1c40f; }

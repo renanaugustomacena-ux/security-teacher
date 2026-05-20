@@ -346,6 +346,14 @@ class App {
     registerAction('practice.close', () => window.closePractice?.());
     registerAction('topic.backToDetail', () => this.topicManager?.backToDetail());
     registerAction('topicPractice.close', () => this.topicPracticeManager?.closePractice());
+    registerAction('quest.claim', (ds) => {
+      const reward = questService.claimReward(ds.questId);
+      if (reward > 0) {
+        currencyService.earn(reward, `quest:${ds.questId}`);
+        this._renderQuestWidget();
+        this._updateCurrencyDisplay();
+      }
+    });
     bindGlobalDispatch();
   }
 
@@ -456,8 +464,58 @@ class App {
     this._setText('home-streak', data.streak?.current ?? 0);
 
     this.dailyGoalsManager?.renderGoalsWidget();
+    this._renderQuestWidget();
+    this._updateCurrencyDisplay();
 
     this._initTranslationBox();
+  }
+
+  _renderQuestWidget() {
+    const container = document.getElementById('quest-widget');
+    if (!container) return;
+
+    const { weekly, dailyBonus } = questService.getActiveQuests();
+    if (!weekly || weekly.length === 0) {
+      container.innerHTML = '';
+      return;
+    }
+
+    const renderQuest = (q) => {
+      const pct = q.target > 0 ? Math.min(100, Math.round((q.progress / q.target) * 100)) : 0;
+      const isDone = q.state === 'completed' || q.state === 'claimed';
+      const isClaimed = q.state === 'claimed';
+      return `
+        <div class="quest-row ${isDone ? 'quest-done' : ''} ${isClaimed ? 'quest-claimed' : ''}">
+          <span class="quest-icon">${q.icon || ''}</span>
+          <div class="quest-info">
+            <span class="quest-label">${q.label}</span>
+            <div class="quest-bar"><div class="quest-bar-fill" style="width:${pct}%"></div></div>
+            <span class="quest-nums">${q.progress || 0} / ${q.target}</span>
+          </div>
+          ${q.state === 'completed' ? `<button class="quest-claim-btn" data-action="quest.claim" data-quest-id="${q.id}">+${q.reward} KC</button>` : ''}
+          ${isClaimed ? '<span class="quest-check">&#x2705;</span>' : ''}
+        </div>`;
+    };
+
+    container.innerHTML = `
+      <h3>Missioni / Quests</h3>
+      <div class="quest-list">
+        ${weekly.map(renderQuest).join('')}
+      </div>
+      ${
+        dailyBonus
+          ? `
+        <h4 class="quest-daily-title">Bonus Giornaliero / Daily Bonus</h4>
+        ${renderQuest(dailyBonus)}
+      `
+          : ''
+      }
+    `;
+  }
+
+  _updateCurrencyDisplay() {
+    const el = document.getElementById('kc-balance-display');
+    if (el) el.textContent = currencyService.getBalance();
   }
 
   _initTranslationBox() {

@@ -12,6 +12,8 @@
 import { ttsService } from '../services/TTSService.js';
 import { registerAction } from '../utils/EventDispatch.js';
 import { escapeAttr as escapeForAttr } from '../utils/SanitizeHtml.js';
+import { questService } from '../services/QuestService.js';
+import { currencyService } from '../services/CurrencyService.js';
 
 const BOSS_TOTAL_QUESTIONS = 15;
 const BOSS_TIME_LIMIT = 300; // 5 minutes in seconds
@@ -684,6 +686,7 @@ export class TopicBossChallenge {
     if (isCorrect) {
       this.correctCount++;
       this.currentStreak++;
+      currencyService.earn(1, 'boss_correct');
     } else {
       this.currentStreak = 0;
     }
@@ -754,6 +757,18 @@ export class TopicBossChallenge {
     this.progressManager.addXP(xpEarned);
     this.progressManager.recordPracticeSession(this.correctCount, this.totalQuestions);
 
+    // Quest + currency integration
+    const coinsEarned = this.correctCount;
+    if (defeated) {
+      questService.recordMetric('bossWins', 1);
+      currencyService.earn(15, 'boss_defeated');
+    }
+    if (stars === 3) {
+      questService.recordMetric('boss3Stars', 1);
+      currencyService.earn(10, 'boss_3stars');
+    }
+    questService.recordMetric('weekXP', xpEarned);
+
     // Star display
     let starsHtml = '';
     for (let i = 0; i < 3; i++) {
@@ -784,7 +799,10 @@ export class TopicBossChallenge {
             <span class="boss-stat-label">Best Streak</span>
           </div>
         </div>
-        <div class="boss-results-xp">+${xpEarned} XP</div>
+        <div class="boss-results-rewards">
+          <span class="boss-results-xp">+${xpEarned} XP</span>
+          <span class="boss-results-coins">+${coinsEarned + (defeated ? 15 : 0) + (stars === 3 ? 10 : 0)} KC</span>
+        </div>
         <div class="boss-results-actions">
           <button class="btn btn-secondary" id="boss-retry-btn">Riprova / Retry</button>
           <button class="btn btn-primary" id="boss-back-btn">Torna al Topic / Back to Topic</button>
