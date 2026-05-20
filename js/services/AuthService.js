@@ -32,12 +32,17 @@ const MAX_SESSION_AGE_MS = 24 * 60 * 60 * 1000;
 // Clock-skew grace window for iat / nbf / exp (seconds).
 const CLOCK_SKEW_S = 300;
 
+// Rate-limit: max credential callbacks per window before temporary lockout.
+const AUTH_RATE_LIMIT = 5;
+const AUTH_RATE_WINDOW_MS = 60_000;
+
 export class AuthService {
   constructor() {
     this.user = null;
     this.clientId = null;
     this._ready = false;
     this._listeners = new Set();
+    this._authAttempts = [];
     this._gisInitialized = false;
     this._capacitorInitialized = false;
   }
@@ -268,6 +273,13 @@ export class AuthService {
 
   async _onCredential(response) {
     if (!response?.credential) return;
+    const now = Date.now();
+    this._authAttempts = this._authAttempts.filter((t) => now - t < AUTH_RATE_WINDOW_MS);
+    if (this._authAttempts.length >= AUTH_RATE_LIMIT) {
+      console.warn('[auth] rate-limited — too many credential attempts');
+      return;
+    }
+    this._authAttempts.push(now);
     const decoded = this._decodeJwtPayload(response.credential);
     const reject = (reason) => {
       console.warn('[auth] ID token rejected:', reason);

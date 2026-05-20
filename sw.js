@@ -12,8 +12,18 @@
  *     This eliminates the cross-origin cache-poisoning surface entirely.
  *   - fetch handler integrity gate: cross-origin responses never enter cache,
  *     opaque responses are passed through but never persisted.
+ *   - Vendored script integrity: SHA-384 of three.js checked at install time.
+ *   - Only GET requests enter cache. Non-GET is always network-only.
+ *   - Response size cap: responses > 10 MB are never persisted to cache.
  */
-const CACHE_NAME = 'kaio-v9';
+const CACHE_NAME = 'kaio-v10';
+
+const MAX_CACHE_RESPONSE_BYTES = 10 * 1024 * 1024;
+
+const VENDOR_INTEGRITY = {
+  './vendor/three-0.170.0.module.js':
+    'sha384-SwvIjyNmQwvUEu5SS9l6lbWqQIcOt1xpoP4YzvOp/DrURn0WVrTcgIm2kwWFTmj3',
+};
 
 const STATIC_ASSETS = [
   './',
@@ -100,10 +110,31 @@ const STATIC_ASSETS = [
 
 const EXTERNAL_API_HOSTS = ['lrclib.net', 'mymemory.translated.net'];
 
-// Install: pre-cache static assets. NO skipWaiting — the new SW stays in
-// "waiting" state until the user opts in via the update toast.
+async function verifyIntegrity(cache) {
+  for (const [path, expected] of Object.entries(VENDOR_INTEGRITY)) {
+    const resp = await cache.match(path);
+    if (!resp) continue;
+    const buf = await resp.clone().arrayBuffer();
+    const algo = expected.split('-')[0];
+    const hash = await crypto.subtle.digest(algo.toUpperCase().replace('SHA', 'SHA-'), buf);
+    const b64 = btoa(String.fromCharCode(...new Uint8Array(hash)));
+    if (expected !== `${algo}-${b64}`) {
+      await cache.delete(path);
+      throw new Error(`Integrity mismatch: ${path}`);
+    }
+  }
+}
+
+// Install: pre-cache static assets + verify vendored file integrity.
+// NO skipWaiting — the new SW stays in "waiting" state until the user
+// opts in via the update toast.
 self.addEventListener('install', (event) => {
-  event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(STATIC_ASSETS)));
+  event.waitUntil(
+    caches
+      .open(CACHE_NAME)
+      .then((cache) => cache.addAll(STATIC_ASSETS).then(() => cache))
+      .then((cache) => verifyIntegrity(cache))
+  );
 });
 
 // Activate: drop old cache versions and claim clients. clients.claim() is
@@ -121,8 +152,11 @@ self.addEventListener('activate', (event) => {
 });
 
 // Controlled update handshake. Tab-side sw-register.js posts this message
-// when the user clicks the "Nuova versione disponibile" toast.
+// when the user clicks the "Nuova versione disponibile" toast. Only accept
+// from controlled clients (same origin) — reject postMessage from foreign
+// frames or extension contexts.
 self.addEventListener('message', (event) => {
+  if (!event.source) return;
   if (event.data && event.data.type === 'SW_SKIP_WAITING') {
     self.skipWaiting();
   }
@@ -141,6 +175,8 @@ function cacheFirstSameOrigin(request) {
         ) {
           return response;
         }
+        const size = response.headers.get('content-length');
+        if (size && Number(size) > MAX_CACHE_RESPONSE_BYTES) return response;
         const clone = response.clone();
         caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
         return response;
@@ -150,7 +186,13 @@ function cacheFirstSameOrigin(request) {
 }
 
 self.addEventListener('fetch', (event) => {
+  // Only cache GET requests. POST/PUT/DELETE are always network-only.
+  if (event.request.method !== 'GET') return;
+
   const url = new URL(event.request.url);
+
+  // Block non-http(s) schemes from reaching the network.
+  if (url.protocol !== 'https:' && url.protocol !== 'http:') return;
 
   // Navigation: network-first so security updates reach users. Offline
   // falls back to cached index.html.

@@ -1,3 +1,5 @@
+import { sanitizePlainObject } from '../utils/SanitizeHtml.js';
+
 /**
  * Storage Service
  * Handles IndexedDB interaction and File System Access API
@@ -169,7 +171,10 @@ class StorageService {
       const store = transaction.objectStore(storeName);
       const request = store.get(key);
 
-      request.onsuccess = (e) => resolve(e.target.result);
+      request.onsuccess = (e) => {
+        const raw = e.target.result;
+        resolve(raw ? sanitizePlainObject(raw, { maxDepth: 12 }) : raw);
+      };
       request.onerror = (e) => reject(e.target.error);
     });
   }
@@ -181,7 +186,10 @@ class StorageService {
       const store = transaction.objectStore(storeName);
       const request = store.getAll();
 
-      request.onsuccess = (e) => resolve(e.target.result || []);
+      request.onsuccess = (e) => {
+        const raw = e.target.result || [];
+        resolve(raw.map((item) => sanitizePlainObject(item, { maxDepth: 12 })));
+      };
       request.onerror = (e) => reject(e.target.error);
     });
   }
