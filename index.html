@@ -961,6 +961,22 @@
               <!-- Dynamic practice content -->
             </div>
           </div>
+
+          <!-- Placement Test Container (PlacementTestService) -->
+          <div id="placement-test-container" class="hidden" role="main" aria-label="Placement Test">
+            <!-- Dynamically rendered by TopicManager placement methods -->
+          </div>
+
+          <!-- Reference Panel (ReferenceService) -->
+          <div
+            id="reference-panel"
+            class="reference-panel hidden"
+            aria-hidden="true"
+            role="complementary"
+            aria-label="Reference Card"
+          >
+            <!-- Dynamically rendered by TopicManager.showReference() -->
+          </div>
         </section>
 
         <!-- PROGRESS SECTION -->
@@ -995,6 +1011,49 @@
 
           <div id="streak-info-container"></div>
           <div id="streak-calendar-container"></div>
+
+          <!-- Stats Dashboard (StatsDashboardService) -->
+          <div class="stats-dashboard" id="stats-dashboard">
+            <h3 class="stats-dashboard-title">Analisi Apprendimento / Learning Analytics</h3>
+            <div class="stats-charts-grid">
+              <div class="stats-chart-card">
+                <h4>Precisione nel Tempo / Accuracy Over Time</h4>
+                <canvas
+                  id="chart-accuracy"
+                  width="400"
+                  height="200"
+                  aria-label="Accuracy over time chart"
+                ></canvas>
+              </div>
+              <div class="stats-chart-card">
+                <h4>Distribuzione Padronanza / Mastery Distribution</h4>
+                <canvas
+                  id="chart-mastery"
+                  width="300"
+                  height="300"
+                  aria-label="Mastery distribution chart"
+                ></canvas>
+              </div>
+              <div class="stats-chart-card">
+                <h4>Prestazione per Modalit&#224; / Mode Performance</h4>
+                <canvas
+                  id="chart-modes"
+                  width="400"
+                  height="200"
+                  aria-label="Mode performance chart"
+                ></canvas>
+              </div>
+              <div class="stats-chart-card">
+                <h4>Confronto Topic / Topic Comparison</h4>
+                <canvas
+                  id="chart-topics"
+                  width="400"
+                  height="200"
+                  aria-label="Topic comparison chart"
+                ></canvas>
+              </div>
+            </div>
+          </div>
 
           <div class="progress-section">
             <h3>Livello Attuale / Current Level</h3>

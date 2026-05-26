@@ -36,6 +36,7 @@ import { nearMiss } from '../utils/StringDistance.js';
 import { TopicVelocita } from './TopicVelocita.js';
 import { delegate } from '../utils/EventDispatch.js';
 import { escapeAttr as escapeForAttr } from '../utils/SanitizeHtml.js';
+import { adaptiveDifficultyService } from '../services/AdaptiveDifficultyService.js';
 
 // Feedback cadence — collapse the answer→next gap on correct, give
 // reading time on incorrect. Aligns with .feedback-progress-fill CSS.
@@ -426,7 +427,9 @@ export class TopicPracticeManager {
 
     if (levelNum !== null && data.levels[levelNum]) {
       data.levels[levelNum].lessons.forEach((lesson) => {
-        pool = pool.concat(lesson.items);
+        pool = pool.concat(
+          lesson.items.map((item) => ({ ...item, _topicId: topicId, _level: levelNum }))
+        );
       });
     } else {
       const stats = this.progressManager.getTopicStats(topicId);
@@ -435,7 +438,9 @@ export class TopicPracticeManager {
       unlockedLevels.forEach((lvl) => {
         if (data.levels[lvl]) {
           data.levels[lvl].lessons.forEach((lesson) => {
-            pool = pool.concat(lesson.items);
+            pool = pool.concat(
+              lesson.items.map((item) => ({ ...item, _topicId: topicId, _level: lvl }))
+            );
           });
         }
       });
@@ -504,7 +509,9 @@ export class TopicPracticeManager {
       pool = pool.filter(isDistinctTranslation);
     }
 
-    this.questions = this.shuffleArray(pool).slice(0, 10);
+    this.questions = adaptiveDifficultyService.selectItems(pool, 10, (key) =>
+      analyticsService.getItemAnalytics(key)
+    );
   }
 
   // ─── TERMINAL SIMULATOR QUESTION GENERATION ───

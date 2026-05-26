@@ -117,6 +117,10 @@ class MasteryService {
     return this._aggregate(prefix);
   }
 
+  getMasteryMap() {
+    return new Map(Object.entries(this._items));
+  }
+
   _aggregate(prefix) {
     const counts = { 0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 };
     let total = 0;

@@ -35,6 +35,7 @@ import { StreakCalendarManager } from './StreakCalendarManager.js';
 import { LeaderboardManager } from './LeaderboardManager.js';
 import { ConversationManager } from './ConversationManager.js';
 import { MorphBackground } from './MorphBackground.js';
+import { statsDashboardService } from './services/StatsDashboardService.js';
 import { CursorParticles } from './CursorParticles.js';
 import { techTalkScenarios } from './topics/data/techtalk-scenarios.js';
 import { authService } from './services/AuthService.js';
@@ -422,7 +423,10 @@ class App {
       closeSidebar();
 
       if (section === 'home') this._renderHome();
-      if (section === 'progress') this._renderStreakCalendar();
+      if (section === 'progress') {
+        this._renderStreakCalendar();
+        this._renderStatsDashboard();
+      }
       if (section === 'topics') this.topicManager?.renderTopicsHub();
       if (section === 'badges') this._renderBadges();
       if (section === 'leaderboard') this._renderLeaderboard();
@@ -559,6 +563,54 @@ class App {
   _renderStreakCalendar() {
     this.streakCalendarManager?.renderCalendar('streak-calendar-container');
     this.streakCalendarManager?.renderStreakInfo('streak-info-container');
+  }
+
+  // -- Stats Dashboard Rendering (StatsDashboardService) --
+
+  _renderStatsDashboard() {
+    const accuracyCanvas = document.getElementById('chart-accuracy');
+    const masteryCanvas = document.getElementById('chart-mastery');
+    const modesCanvas = document.getElementById('chart-modes');
+    const topicsCanvas = document.getElementById('chart-topics');
+
+    if (!accuracyCanvas) return;
+
+    const responses = analyticsService.getAllResponses();
+    const { dates, accuracies } = statsDashboardService.getAccuracyOverTime(responses, 14);
+    const shortDates = dates.map((d) => d.slice(5)); // MM-DD
+    statsDashboardService.renderChart(accuracyCanvas, 'line', {
+      values: accuracies,
+      labels: shortDates,
+    });
+
+    if (masteryCanvas) {
+      const masteryMap = masteryService.getMasteryMap();
+      const dist = statsDashboardService.getMasteryDistribution(masteryMap);
+      statsDashboardService.renderChart(masteryCanvas, 'pie', {
+        values: dist.counts,
+        labels: dist.labels,
+        colors: dist.colors,
+      });
+    }
+
+    if (modesCanvas) {
+      const analyticsMap = analyticsService.getAnalyticsMap();
+      const modPerf = statsDashboardService.getModePerformance(analyticsMap);
+      statsDashboardService.renderChart(modesCanvas, 'bar', {
+        values: modPerf.accuracies,
+        labels: modPerf.modes,
+      });
+    }
+
+    if (topicsCanvas) {
+      const analyticsMap = analyticsService.getAnalyticsMap();
+      const topicIds = ['cybersecurity', 'python', 'linux', 'software-dev'];
+      const comp = statsDashboardService.getTopicComparison(analyticsMap, topicIds);
+      statsDashboardService.renderChart(topicsCanvas, 'bar', {
+        values: comp.percentages,
+        labels: comp.topics,
+      });
+    }
   }
 
   // -- Badges Page Rendering --

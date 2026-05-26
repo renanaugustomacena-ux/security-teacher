@@ -984,6 +984,21 @@ export class ProgressManager {
   }
 
   /**
+   * Bulk-unlock topic levels (used by PlacementTestService results).
+   * @param {string} topicId
+   * @param {number[]} levels - array of level indices to unlock
+   */
+  unlockTopicLevels(topicId, levels) {
+    const tp = this.ensureTopicProgress(topicId);
+    for (const lvl of levels) {
+      if (!tp.unlockedLevels.includes(lvl)) {
+        tp.unlockedLevels.push(lvl);
+      }
+    }
+    this.saveProgress();
+  }
+
+  /**
    * Get topic stats
    */
   getTopicStats(topicId) {

@@ -170,6 +170,22 @@ class AnalyticsService {
     return results;
   }
 
+  getAnalyticsMap() {
+    return this._items;
+  }
+
+  getAllResponses() {
+    const all = [];
+    for (const [, item] of this._items) {
+      if (Array.isArray(item.responses)) {
+        for (const r of item.responses) {
+          all.push(r);
+        }
+      }
+    }
+    return all;
+  }
+
   getTopicAccuracy(topicId) {
     const prefix = `${topicId}:`;
     let totalCorrect = 0;

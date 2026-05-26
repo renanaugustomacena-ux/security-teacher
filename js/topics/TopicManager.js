@@ -15,6 +15,12 @@ import { topicsRegistry, getTopicMeta } from './registry.js';
 import { ttsService } from '../services/TTSService.js';
 import { TopicLessonEngine } from './TopicLessonEngine.js';
 import { delegate } from '../utils/EventDispatch.js';
+import { referenceService } from '../services/ReferenceService.js';
+import { placementTestService } from '../services/PlacementTestService.js';
+import { certificateService } from '../services/CertificateService.js';
+import { analyticsService } from '../services/AnalyticsService.js';
+import { authService } from '../services/AuthService.js';
+import { knowledgeGraphService } from '../services/KnowledgeGraphService.js';
 
 export class TopicManager {
   constructor(progressManager) {
@@ -49,8 +55,21 @@ export class TopicManager {
       'topic.nextItem': () => this.nextItem(),
       'topic.modeSelect': (ds) => this.showModeSelector(ds.topicId, Number(ds.level)),
       'topic.startMode': (ds) => this.startModeFromSelector(ds.mode, ds.topicId, Number(ds.level)),
+      'topic.reference': (ds) => this.showReference(ds.topicId, Number(ds.level)),
+      'topic.referenceClose': () => this.hideReference(),
+      'topic.placementStart': (ds) => this.startPlacementTest(ds.topicId),
+      'topic.placementAnswer': (ds) =>
+        this.recordPlacementAnswer(ds.topicId, ds.correct === 'true'),
+      'topic.placementSkip': (ds) => this.skipPlacementTest(ds.topicId),
+      'topic.downloadCert': (ds) => this.downloadCertificate(ds.topicId),
     };
-    const ids = ['topics-hub', 'topic-detail', 'topic-lesson-content'];
+    const ids = [
+      'topics-hub',
+      'topic-detail',
+      'topic-lesson-content',
+      'placement-test-container',
+      'reference-panel',
+    ];
     for (const id of ids) {
       const el = document.getElementById(id);
       if (el) delegate(el, map);
@@ -67,11 +86,46 @@ export class TopicManager {
     try {
       const module = await import(`./data/${topicId}.js`);
       this.dataCache[topicId] = module.default;
+      this._registerKnowledgeGraph(topicId, module.default);
       return module.default;
     } catch (err) {
       console.error(`Failed to load topic data for "${topicId}":`, err);
       return null;
     }
+  }
+
+  /**
+   * Auto-generate and register prerequisite chains for KnowledgeGraphService.
+   * Builds a linear chain from contexts in level order (level 0 first).
+   * Each context's prerequisite is the previous distinct context seen.
+   */
+  _registerKnowledgeGraph(topicId, data) {
+    if (!data?.levels) return;
+
+    // Collect unique contexts in level-ascending order
+    const seen = new Set();
+    const ordered = [];
+    const levelKeys = Object.keys(data.levels).sort((a, b) => Number(a) - Number(b));
+    for (const lk of levelKeys) {
+      const level = data.levels[lk];
+      for (const lesson of level.lessons || []) {
+        for (const item of lesson.items || []) {
+          const ctx = item.context || 'general';
+          if (!seen.has(ctx)) {
+            seen.add(ctx);
+            ordered.push(ctx);
+          }
+        }
+      }
+    }
+
+    // Build prerequisite map: each context requires the one before it
+    const prerequisites = {};
+    for (let i = 1; i < ordered.length; i++) {
+      prerequisites[ordered[i]] = [ordered[i - 1]];
+    }
+
+    knowledgeGraphService.registerPrerequisites(topicId, prerequisites);
   }
 
   // ─── STAR HELPERS ─────────────────────────────
@@ -213,6 +267,14 @@ export class TopicManager {
         detail.innerHTML =
           '<div class="text-center" style="padding: 2rem;">Errore nel caricamento / Loading error</div>';
       }
+      return;
+    }
+
+    // Offer placement test on first visit (zero topic progress)
+    const stats = this.progressManager.getTopicStats(topicId);
+    const isFirstVisit = !stats || (stats.completedLevels.length === 0 && stats.wordsLearned === 0);
+    if (isFirstVisit && data.levels && Object.keys(data.levels).length > 2) {
+      this._showPlacementOffer(topicId, meta, data);
       return;
     }
 
@@ -381,6 +443,9 @@ export class TopicManager {
         <button class="btn btn-primary level-practice-btn" data-action="topic.practice" data-topic-id="${topicId}" data-level="${levelNum}">
           \u270D\uFE0F Pratica Livello / Practice Level
         </button>
+        <button class="btn btn-secondary level-reference-btn" data-action="topic.reference" data-topic-id="${topicId}" data-level="${levelNum}">
+          \u{1F4D6} Scheda Riferimento / Reference Card
+        </button>
       </div>
     `;
     expansionEl.style.display = 'block';
@@ -430,9 +495,12 @@ export class TopicManager {
       notice.className = 'locked-notice';
       notice.style.borderColor = 'var(--success)';
       notice.style.color = 'var(--success)';
-      notice.innerHTML = '\u{1F389} Tutto completato! / All complete!';
+      notice.innerHTML = `&#x1F389; Tutto completato! / All complete! &nbsp;
+        <button class="btn btn-secondary cert-btn" data-action="topic.downloadCert" data-topic-id="${topicId}" style="margin-top:8px">
+          &#x1F393; Scarica Certificato / Download Certificate
+        </button>`;
       detail.prepend(notice);
-      setTimeout(() => notice.remove(), 3000);
+      setTimeout(() => notice.remove(), 5000);
     }
   }
 
@@ -634,6 +702,205 @@ export class TopicManager {
     this.currentLevel = levelNum;
     this.showView('lesson');
     await this.showModeSelector(topicId, levelNum);
+  }
+
+  async showReference(topicId, levelNum) {
+    const data = await this.loadTopicData(topicId);
+    if (!data || !data.levels[levelNum]) return;
+
+    const sections = referenceService.generateCheatsheet(data, levelNum);
+    const html = referenceService.formatForDisplay(sections);
+
+    const panel = document.getElementById('reference-panel');
+    if (!panel) return;
+
+    const meta = getTopicMeta(topicId);
+    const levelLabel = data.levels[levelNum].title || `Level ${levelNum + 1}`;
+    panel.innerHTML = `
+      <div class="reference-panel-inner">
+        <div class="reference-panel-header" style="--topic-color: ${meta ? meta.color : '#6b7280'}">
+          <span class="reference-panel-title">📖 ${levelLabel}</span>
+          <button class="reference-panel-close" data-action="topic.referenceClose">&#x00D7;</button>
+        </div>
+        <div class="reference-panel-body">${html}</div>
+      </div>
+    `;
+    panel.classList.remove('hidden');
+    panel.setAttribute('aria-hidden', 'false');
+  }
+
+  hideReference() {
+    const panel = document.getElementById('reference-panel');
+    if (!panel) return;
+    panel.classList.add('hidden');
+    panel.setAttribute('aria-hidden', 'true');
+    panel.innerHTML = '';
+  }
+
+  // ─── CERTIFICATE (CertificateService) ──────────────────────
+
+  async downloadCertificate(topicId) {
+    const data = await this.loadTopicData(topicId);
+    const meta = getTopicMeta(topicId);
+    if (!data || !meta) return;
+
+    const stats = this.progressManager.getTopicStats(topicId);
+    const accuracy = analyticsService.getTopicAccuracy(topicId);
+    const itemsCount = stats ? stats.wordsLearned || 0 : 0;
+    const levelsCount = stats ? stats.completedLevels?.length || 0 : 0;
+
+    const user = authService.getCurrentUser?.();
+    const userName = user?.name || user?.email || 'Anonymous Learner';
+
+    certificateService.downloadCertificate(topicId, userName, {
+      itemsCount,
+      levelsCount,
+      smartScore: 0,
+      accuracy,
+    });
+  }
+
+  // ─── PLACEMENT TEST (PlacementTestService) ─────────────────
+
+  _showPlacementOffer(topicId, meta, data) {
+    const detail = document.getElementById('topic-detail');
+    if (!detail) {
+      this.renderLevels(meta, data);
+      return;
+    }
+
+    detail.innerHTML = `
+      <button class="btn btn-secondary topic-back-btn" data-action="topic.backToHub">
+        &#x2190; Indietro / Back
+      </button>
+      <div class="placement-offer" style="--topic-color: ${meta.color}">
+        <div class="placement-offer-icon">${meta.icon}</div>
+        <h2>${meta.title}</h2>
+        <p>Prima volta qui? Fai il test di ingresso per saltare i livelli gi&#xe0; noti.<br>
+           First time here? Take the placement test to skip levels you already know.</p>
+        <div class="placement-offer-buttons">
+          <button class="btn btn-primary" data-action="topic.placementStart" data-topic-id="${topicId}">
+            &#x1F4CB; Test di Ingresso / Placement Test
+          </button>
+          <button class="btn btn-secondary" data-action="topic.placementSkip" data-topic-id="${topicId}">
+            Salta / Skip — Inizia dal Livello 1
+          </button>
+        </div>
+      </div>
+    `;
+    this._placementData = data;
+    this._placementMeta = meta;
+  }
+
+  async startPlacementTest(topicId) {
+    const data = this._placementData || (await this.loadTopicData(topicId));
+    if (!data) return;
+    const numLevels = Object.keys(data.levels).length;
+    placementTestService.startTest(numLevels);
+    this._placementData = data;
+    this._renderPlacementQuestion(topicId);
+  }
+
+  _renderPlacementQuestion(topicId) {
+    const state = placementTestService.getCurrentState();
+    if (!state || state.isComplete) return;
+
+    const data = this._placementData;
+    const levelNum = state.currentLevel;
+    const level = data?.levels?.[levelNum];
+    if (!level) return;
+
+    // Pick a random item from the current level
+    const allItems = level.lessons.flatMap((l) => l.items || []);
+    if (allItems.length === 0) return;
+    const item = allItems[Math.floor(Math.random() * allItems.length)];
+
+    // Build 3 distractor options from other levels
+    const otherItems = Object.values(data.levels)
+      .filter((_, i) => i !== levelNum)
+      .flatMap((lvl) => lvl.lessons.flatMap((l) => l.items || []))
+      .filter((i) => i.italian !== item.italian);
+
+    const shuffled = [...otherItems].sort(() => Math.random() - 0.5).slice(0, 3);
+    const options = [...shuffled, item].sort(() => Math.random() - 0.5);
+
+    const container = document.getElementById('placement-test-container');
+    if (!container) return;
+
+    const answeredInRound = state.responses.length % 3;
+    container.innerHTML = `
+      <div class="placement-test-inner">
+        <div class="placement-test-header">
+          <span>Test di Ingresso / Placement Test</span>
+          <span>Round ${state.currentRound + 1}/4 &middot; Q${answeredInRound + 1}/3</span>
+        </div>
+        <div class="placement-test-prompt">
+          <p class="placement-term">${item.english}</p>
+          <p class="placement-context">${item.context || ''}</p>
+        </div>
+        <div class="placement-options">
+          ${options
+            .map(
+              (opt) => `
+            <button class="placement-option" data-action="topic.placementAnswer"
+              data-topic-id="${topicId}"
+              data-correct="${opt.italian === item.italian}">
+              ${opt.italian}
+            </button>`
+            )
+            .join('')}
+        </div>
+      </div>
+    `;
+    container.classList.remove('hidden');
+    document.getElementById('topic-detail')?.classList.add('hidden');
+    this._pendingPlacementItem = item;
+  }
+
+  recordPlacementAnswer(topicId, correct) {
+    placementTestService.recordAnswer(correct);
+    const state = placementTestService.getCurrentState();
+    const answersInRound = state.responses.length % 3;
+
+    if (answersInRound === 0) {
+      const result = placementTestService.advanceRound();
+      if (result) {
+        this._finishPlacementTest(topicId, result);
+        return;
+      }
+    }
+    this._renderPlacementQuestion(topicId);
+  }
+
+  _finishPlacementTest(topicId, result) {
+    this.progressManager.unlockTopicLevels(topicId, result.levelsToUnlock);
+
+    const container = document.getElementById('placement-test-container');
+    if (!container) return;
+
+    const pct = Math.round(result.accuracy * 100);
+    container.innerHTML = `
+      <div class="placement-result">
+        <div class="placement-result-icon">${result.estimatedLevel > 0 ? '&#x1F3C6;' : '&#x1F4AA;'}</div>
+        <h2>Livello Stimato: ${result.estimatedLevel + 1} / Estimated Level: ${result.estimatedLevel + 1}</h2>
+        <p>${result.levelsToUnlock.length} livell${result.levelsToUnlock.length === 1 ? 'o sbloccato' : 'i sbloccati'} / ${result.levelsToUnlock.length} level${result.levelsToUnlock.length === 1 ? '' : 's'} unlocked</p>
+        <p>Precisione / Accuracy: ${pct}% (${result.totalCorrect}/${result.totalQuestions})</p>
+        <button class="btn btn-primary" data-action="topic.placementSkip" data-topic-id="${topicId}">
+          Inizia / Start Learning
+        </button>
+      </div>
+    `;
+  }
+
+  async skipPlacementTest(topicId) {
+    placementTestService.reset();
+    const container = document.getElementById('placement-test-container');
+    if (container) container.classList.add('hidden');
+    const detail = document.getElementById('topic-detail');
+    if (detail) detail.classList.remove('hidden');
+    const data = this._placementData || (await this.loadTopicData(topicId));
+    const meta = this._placementMeta || getTopicMeta(topicId);
+    if (data && meta) this.renderLevels(meta, data);
   }
 
   async showModeSelector(topicId, levelNum) {
