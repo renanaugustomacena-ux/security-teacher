@@ -11,135 +11,23 @@
 
 import { ttsService } from '../services/TTSService.js';
 import { registerAction } from '../utils/EventDispatch.js';
-import { escapeAttr as escapeForAttr } from '../utils/SanitizeHtml.js';
+import { escapeHtml, escapeAttr as escapeForAttr } from '../utils/SanitizeHtml.js';
 import { questService } from '../services/QuestService.js';
 import { currencyService } from '../services/CurrencyService.js';
+import {
+  ENCOURAGING_CORRECT,
+  ENCOURAGING_INCORRECT,
+  shuffleArray,
+  normalize,
+  normalizeWithAccents,
+  isContentWord,
+  pickBestBlankIndex,
+  formatContextLabel,
+} from '../utils/PracticeUtils.js';
 
 const BOSS_TOTAL_QUESTIONS = 15;
 const BOSS_TIME_LIMIT = 300; // 5 minutes in seconds
 
-const ENCOURAGING_CORRECT = [
-  'Perfetto! / Perfect!',
-  'Ottimo! / Great!',
-  'Bravo/Brava!',
-  'Esatto! / Exactly!',
-  'Fantastico! / Fantastic!',
-  'Ci sei! / You got it!',
-];
-
-const ENCOURAGING_INCORRECT = [
-  'Quasi! / Almost!',
-  'Ci sei vicino! / So close!',
-  'Riprova! / Try again!',
-  'Non mollare! / Keep going!',
-  'Stai imparando! / You are learning!',
-];
-
-// Question types available for the boss challenge
-const QUESTION_TYPES = ['listening', 'writing', 'matching', 'fillblank', 'context'];
-
-// Common Linux command aliases (for command checking)
-const COMMAND_ALIASES = {
-  'ls -la': ['ls -al', 'ls -l -a', 'ls -a -l'],
-  'ls -al': ['ls -la', 'ls -l -a', 'ls -a -l'],
-  'ls -l': ['ll'],
-  'cd ~': ['cd'],
-  'rm -rf': ['rm -fr'],
-  'rm -fr': ['rm -rf'],
-  'ps aux': ['ps -aux'],
-  'ps -aux': ['ps aux'],
-  'grep -r': ['grep -R', 'grep --recursive'],
-  'grep -R': ['grep -r', 'grep --recursive'],
-  'chmod -R': ['chmod --recursive'],
-  'chown -R': ['chown --recursive'],
-  'mkdir -p': ['mkdir --parents'],
-  'cp -r': ['cp -R', 'cp --recursive'],
-  'cp -R': ['cp -r', 'cp --recursive'],
-};
-
-// Function words to skip in fill-in-the-blank
-const ENGLISH_FUNCTION_WORDS = new Set([
-  'the',
-  'a',
-  'an',
-  'is',
-  'am',
-  'are',
-  'was',
-  'were',
-  'be',
-  'been',
-  'being',
-  'to',
-  'of',
-  'in',
-  'on',
-  'at',
-  'for',
-  'with',
-  'by',
-  'from',
-  'and',
-  'or',
-  'but',
-  'not',
-  'it',
-  'its',
-  'he',
-  'she',
-  'we',
-  'they',
-  'i',
-  'you',
-  'my',
-  'your',
-  'his',
-  'her',
-  'our',
-  'their',
-  'this',
-  'that',
-  'these',
-  'those',
-  'do',
-  'does',
-  'did',
-  'has',
-  'have',
-  'had',
-  'will',
-  'would',
-  'can',
-  'could',
-  'should',
-]);
-
-const ITALIAN_FUNCTION_WORDS = new Set([
-  'il',
-  'lo',
-  'la',
-  'i',
-  'gli',
-  'le',
-  'un',
-  'uno',
-  'una',
-  'di',
-  'a',
-  'da',
-  'in',
-  'con',
-  'su',
-  'per',
-  'tra',
-  'fra',
-  'e',
-  'o',
-  'ma',
-  'che',
-  'se',
-  'non',
-]);
 
 export class TopicBossChallenge {
   constructor(progressManager) {
@@ -248,7 +136,7 @@ export class TopicBossChallenge {
 
     container.innerHTML = `
       <div class="boss-prescreen">
-        <div class="boss-prescreen-title">Boss Challenge - Level ${this.levelNum}: ${this.escapeHtml(levelName)}</div>
+        <div class="boss-prescreen-title">Boss Challenge - Level ${this.levelNum}: ${escapeHtml(levelName)}</div>
         <div class="boss-prescreen-meta">
           <div class="boss-prescreen-meta-item">15 questions</div>
           <div class="boss-prescreen-meta-item">5 minutes</div>
@@ -277,7 +165,7 @@ export class TopicBossChallenge {
   // ─── QUESTION GENERATION ─────────────────────
 
   generateQuestions() {
-    const items = this.shuffleArray([...this.pool]);
+    const items = shuffleArray([...this.pool]);
     this.questions = [];
 
     const hasCommand = items.some((item) => item.command);
@@ -455,15 +343,15 @@ export class TopicBossChallenge {
             <div class="exercise-instruction">
               ${q._bossType === 'listening' ? 'Ascolta e scegli:' : 'Qual \u00E8 la traduzione di:'}
             </div>
-            <div class="exercise-target">${this.escapeHtml(q.english)} ${ttsBtn}</div>
-            ${q.pronunciation ? `<div class="exercise-pronunciation">${this.escapeHtml(q.pronunciation)}</div>` : ''}
+            <div class="exercise-target">${escapeHtml(q.english)} ${ttsBtn}</div>
+            ${q.pronunciation ? `<div class="exercise-pronunciation">${escapeHtml(q.pronunciation)}</div>` : ''}
             <div class="options-grid">
               ${options
                 .map(
                   (opt) => `
                 <button class="btn btn-secondary option-btn"
                   data-action="boss.checkOption" data-opt="${escapeForAttr(opt)}" data-correct="${escapeForAttr(q.italian)}">
-                  ${this.escapeHtml(opt)}
+                  ${escapeHtml(opt)}
                 </button>
               `
                 )
@@ -478,8 +366,8 @@ export class TopicBossChallenge {
         return `
           <div class="exercise-card">
             <div class="exercise-instruction">Scrivi la traduzione in italiano:</div>
-            <div class="exercise-target">${this.escapeHtml(q.english)} ${writingTtsBtn}</div>
-            ${q.pronunciation ? `<div class="exercise-pronunciation">${this.escapeHtml(q.pronunciation)}</div>` : ''}
+            <div class="exercise-target">${escapeHtml(q.english)} ${writingTtsBtn}</div>
+            ${q.pronunciation ? `<div class="exercise-pronunciation">${escapeHtml(q.pronunciation)}</div>` : ''}
             <input type="text" id="boss-writing-input" class="practice-input" placeholder="Scrivi qui..." autofocus>
             <button class="btn btn-primary boss-submit-btn" style="margin-top: 1rem;"
               data-action="boss.checkWriting" data-correct="${escapeForAttr(q.italian)}">
@@ -494,15 +382,15 @@ export class TopicBossChallenge {
         const parts = sentence.split(' = ');
         const targetPhrase = parts[0];
         const words = targetPhrase.split(' ');
-        const missingIdx = this.pickBestBlankIndex(words, q.english);
+        const missingIdx = pickBestBlankIndex(words, q.english);
         const missingWord = words[missingIdx]?.trim() || '';
         const displaySentence = words.map((w, i) => (i === missingIdx ? '_____' : w)).join(' ');
 
         return `
           <div class="exercise-card">
             <div class="exercise-instruction">Completa la frase:</div>
-            <div class="exercise-target">${this.escapeHtml(displaySentence)}</div>
-            <p class="translation-hint">Traduzione: ${this.escapeHtml(parts[1] || '')}</p>
+            <div class="exercise-target">${escapeHtml(displaySentence)}</div>
+            <p class="translation-hint">Traduzione: ${escapeHtml(parts[1] || '')}</p>
             <input type="text" id="boss-writing-input" class="practice-input" placeholder="Parola mancante..." autofocus>
             <button class="btn btn-primary boss-submit-btn" style="margin-top: 1rem;"
               data-action="boss.checkWriting" data-correct="${escapeForAttr(missingWord)}">
@@ -520,15 +408,15 @@ export class TopicBossChallenge {
         return `
           <div class="exercise-card">
             <div class="exercise-instruction">In quale contesto si usa questo termine?</div>
-            <div class="exercise-target">${this.escapeHtml(q.english)} ${contextTtsBtn}</div>
-            ${q.pronunciation ? `<div class="exercise-pronunciation">${this.escapeHtml(q.pronunciation)}</div>` : ''}
+            <div class="exercise-target">${escapeHtml(q.english)} ${contextTtsBtn}</div>
+            ${q.pronunciation ? `<div class="exercise-pronunciation">${escapeHtml(q.pronunciation)}</div>` : ''}
             <div class="options-grid">
               ${contextOptions
                 .map(
                   (ctx) => `
                 <button class="btn btn-secondary option-btn"
                   data-action="boss.checkOption" data-opt="${escapeForAttr(ctx)}" data-correct="${escapeForAttr(correctContext)}">
-                  ${this.escapeHtml(this.formatContextLabel(ctx))}
+                  ${escapeHtml(formatContextLabel(ctx))}
                 </button>
               `
                 )
@@ -542,8 +430,8 @@ export class TopicBossChallenge {
         return `
           <div class="exercise-card">
             <div class="exercise-instruction">Scrivi il comando per:</div>
-            <div class="exercise-target">${this.escapeHtml(q.italian)}</div>
-            <p class="translation-hint">${this.escapeHtml(q.english)}</p>
+            <div class="exercise-target">${escapeHtml(q.italian)}</div>
+            <p class="translation-hint">${escapeHtml(q.english)}</p>
             <input type="text" id="boss-writing-input" class="practice-input practice-input-mono" placeholder="$ " autofocus>
             <button class="btn btn-primary boss-submit-btn" style="margin-top: 1rem;"
               data-action="boss.checkCommand" data-correct="${escapeForAttr(q.command)}">
@@ -575,7 +463,7 @@ export class TopicBossChallenge {
 
     // Phase 1: Adjacent level items (harder distractors)
     const adjacentFiltered = this.adjacentPool.filter((it) => isPlausible(it[field]));
-    const shuffledAdj = this.shuffleArray(adjacentFiltered);
+    const shuffledAdj = shuffleArray(adjacentFiltered);
     for (const item of shuffledAdj) {
       if (distractors.size >= 2) break;
       distractors.add(item[field]);
@@ -586,7 +474,7 @@ export class TopicBossChallenge {
     const sameCtxItems = (this.contextIndex.get(currentCtx) || []).filter((it) =>
       isPlausible(it[field])
     );
-    const shuffledCtx = this.shuffleArray(sameCtxItems);
+    const shuffledCtx = shuffleArray(sameCtxItems);
     for (const item of shuffledCtx) {
       if (distractors.size >= 3) break;
       distractors.add(item[field]);
@@ -595,21 +483,21 @@ export class TopicBossChallenge {
     // Phase 3: Full pool fallback
     if (distractors.size < 3) {
       const remaining = [...this.pool, ...this.adjacentPool].filter((it) => isPlausible(it[field]));
-      const shuffledAll = this.shuffleArray(remaining);
+      const shuffledAll = shuffleArray(remaining);
       for (const item of shuffledAll) {
         if (distractors.size >= 3) break;
         if (!distractors.has(item[field])) distractors.add(item[field]);
       }
     }
 
-    return this.shuffleArray([correct, ...Array.from(distractors).slice(0, 3)]);
+    return shuffleArray([correct, ...Array.from(distractors).slice(0, 3)]);
   }
 
   generateContextOptions(correctContext) {
     const allContexts = Array.from(this.contextIndex.keys());
     const options = [correctContext];
 
-    const others = this.shuffleArray(allContexts.filter((c) => c !== correctContext));
+    const others = shuffleArray(allContexts.filter((c) => c !== correctContext));
     for (let i = 0; i < 3 && i < others.length; i++) {
       options.push(others[i]);
     }
@@ -618,7 +506,7 @@ export class TopicBossChallenge {
       options.push(`other-${options.length}`);
     }
 
-    return this.shuffleArray(options);
+    return shuffleArray(options);
   }
 
   // ─── ANSWER CHECKING ─────────────────────────
@@ -632,14 +520,14 @@ export class TopicBossChallenge {
     if (!input) return;
 
     const userValue = input.value;
-    const exactMatch = this.normalize(userValue) === this.normalize(correct);
+    const exactMatch = normalize(userValue) === normalize(correct);
 
     if (exactMatch) {
       this.handleResult(true, correct);
       return;
     }
 
-    const accentMatch = this.normalizeWithAccents(userValue) === this.normalizeWithAccents(correct);
+    const accentMatch = normalizeWithAccents(userValue) === normalizeWithAccents(correct);
     if (accentMatch) {
       this.handleResult(true, correct);
       return;
@@ -720,7 +608,7 @@ export class TopicBossChallenge {
           <div class="feedback-card ${isCorrect ? 'feedback-correct' : 'feedback-incorrect'}">
             <div class="feedback-icon">${isCorrect ? '\u2705' : '\u{1F4A1}'}</div>
             <div class="feedback-message">${message}</div>
-            ${!isCorrect ? `<div class="feedback-answer">La risposta era: <strong>${this.escapeHtml(correctAnswer)}</strong></div>` : ''}
+            ${!isCorrect ? `<div class="feedback-answer">La risposta era: <strong>${escapeHtml(correctAnswer)}</strong></div>` : ''}
             <div class="feedback-progress-bar">
               <div class="feedback-progress-fill"></div>
             </div>
@@ -832,91 +720,4 @@ export class TopicBossChallenge {
     return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
   }
 
-  shuffleArray(array) {
-    const newArr = [...array];
-    for (let i = newArr.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
-    }
-    return newArr;
-  }
-
-  escapeHtml(str) {
-    if (!str) return '';
-    const div = document.createElement('div');
-    div.textContent = str;
-    return div.innerHTML;
-  }
-
-  escapeAttr(str) {
-    if (str == null) return '';
-    return String(str)
-      .replace(/\\/g, '\\\\')
-      .replace(/\r/g, '\\r')
-      .replace(/\n/g, '\\n')
-      .replace(/'/g, "\\'")
-      .replace(/&/g, '&amp;')
-      .replace(/"/g, '&quot;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;');
-  }
-
-  normalize(str) {
-    return str
-      .toLowerCase()
-      .replace(/[.,?!;:'"()]/g, '')
-      .trim();
-  }
-
-  normalizeWithAccents(str) {
-    return str
-      .toLowerCase()
-      .replace(/[.,?!;:'"()]/g, '')
-      .replace(/[\u00E0\u00E1\u00E2\u00E3]/g, 'a')
-      .replace(/[\u00E8\u00E9\u00EA\u00EB]/g, 'e')
-      .replace(/[\u00EC\u00ED\u00EE\u00EF]/g, 'i')
-      .replace(/[\u00F2\u00F3\u00F4\u00F5]/g, 'o')
-      .replace(/[\u00F9\u00FA\u00FB\u00FC]/g, 'u')
-      .trim();
-  }
-
-  isContentWord(word) {
-    const cleaned = word.toLowerCase().replace(/[.,?!;:'"()]/g, '');
-    if (cleaned.length <= 1) return false;
-    return !ENGLISH_FUNCTION_WORDS.has(cleaned) && !ITALIAN_FUNCTION_WORDS.has(cleaned);
-  }
-
-  pickBestBlankIndex(words, targetWord) {
-    if (targetWord) {
-      const targetLower = targetWord.toLowerCase();
-      const targetIdx = words.findIndex(
-        (w) => w.toLowerCase().replace(/[.,?!;:'"()]/g, '') === targetLower
-      );
-      if (targetIdx !== -1) return targetIdx;
-    }
-
-    const candidates = words
-      .map((w, i) => ({ word: w, index: i }))
-      .filter((c) => this.isContentWord(c.word))
-      .sort((a, b) => b.word.length - a.word.length);
-
-    if (candidates.length > 0) {
-      const topN = candidates.slice(0, Math.min(3, candidates.length));
-      return topN[Math.floor(Math.random() * topN.length)].index;
-    }
-
-    const nonTrivial = words
-      .map((w, i) => ({ word: w, index: i }))
-      .filter((c) => c.word.length > 2);
-
-    if (nonTrivial.length > 0) {
-      return nonTrivial[Math.floor(Math.random() * nonTrivial.length)].index;
-    }
-
-    return Math.floor(Math.random() * words.length);
-  }
-
-  formatContextLabel(contextKey) {
-    return contextKey.replace(/[-_]/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
-  }
 }

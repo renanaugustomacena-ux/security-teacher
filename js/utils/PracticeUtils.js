@@ -233,3 +233,7 @@ export function calculateXP(responseSeconds, consecutiveCorrect) {
 
   return Math.round(XP_BASE * timeMult * streakMult);
 }
+
+export function formatContextLabel(contextKey) {
+  return contextKey.replace(/[-_]/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+}
