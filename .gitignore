@@ -116,6 +116,7 @@ dist
 # OS metadata
 .DS_Store
 Thumbs.db
+desktop.ini
 
 # Claude AI session data
 .claude/
