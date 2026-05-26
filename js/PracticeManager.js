@@ -16,186 +16,21 @@
 
 import { lessonsDatabase } from './lessons.js';
 import { songsDatabase } from './songs.js';
-import { ttsService } from './services/TTSService.js';
 import { sfxService } from './services/SfxService.js';
 import { practiceHUD } from './PracticeHUD.js';
 import { nearMiss } from './utils/StringDistance.js';
+import { escapeHtml } from './utils/SanitizeHtml.js';
+import { practiceRenderingMixin } from './PracticeRendering.js';
+import {
+  FEEDBACK_DWELL,
+  ENCOURAGING_CORRECT,
+  ENCOURAGING_INCORRECT,
+  shuffleArray,
+  normalize,
+  normalizeWithAccents,
+  calculateXP,
+} from './utils/PracticeUtils.js';
 
-// Feedback cadence — collapse the answer→next gap on correct, give
-// reading time on incorrect. Aligns with .feedback-progress-fill CSS.
-const FEEDBACK_DWELL = {
-  correct: 400,
-  incorrect: 2200,
-  partial: 1800,
-  nearMiss: 1800,
-};
-
-const ENCOURAGING_CORRECT = [
-  'Perfetto! / Perfect!',
-  'Ottimo! / Great!',
-  'Bravo/Brava!',
-  'Esatto! / Exactly!',
-  'Fantastico! / Fantastic!',
-  'Ci sei! / You got it!',
-  'Bravissimo/a!',
-];
-
-const ENCOURAGING_INCORRECT = [
-  'Quasi! / Almost!',
-  'Ci sei vicino! / So close!',
-  'Riprova! / Try again!',
-  'Non mollare! / Keep going!',
-  'Stai imparando! / You are learning!',
-];
-
-// XP Calculation Constants
-const XP_BASE = 10;
-const TIME_THRESHOLDS = [
-  { maxSeconds: 5, multiplier: 2.0 },
-  { maxSeconds: 10, multiplier: 1.5 },
-  { maxSeconds: 20, multiplier: 1.0 },
-];
-const TIME_DEFAULT_MULTIPLIER = 0.7;
-const STREAK_BONUSES = [
-  { minStreak: 10, multiplier: 2.0 },
-  { minStreak: 5, multiplier: 1.5 },
-  { minStreak: 3, multiplier: 1.2 },
-];
-
-// Function words to skip in fill-in-the-blank
-const ENGLISH_FUNCTION_WORDS = new Set([
-  'the',
-  'a',
-  'an',
-  'is',
-  'am',
-  'are',
-  'was',
-  'were',
-  'be',
-  'been',
-  'being',
-  'to',
-  'of',
-  'in',
-  'on',
-  'at',
-  'for',
-  'with',
-  'by',
-  'from',
-  'and',
-  'or',
-  'but',
-  'not',
-  'it',
-  'its',
-  'he',
-  'she',
-  'we',
-  'they',
-  'i',
-  'you',
-  'my',
-  'your',
-  'his',
-  'her',
-  'our',
-  'their',
-  'this',
-  'that',
-  'these',
-  'those',
-  'do',
-  'does',
-  'did',
-  'has',
-  'have',
-  'had',
-  'will',
-  'would',
-  'can',
-  'could',
-  'should',
-]);
-
-const ITALIAN_FUNCTION_WORDS = new Set([
-  'il',
-  'lo',
-  'la',
-  'i',
-  'gli',
-  'le',
-  'un',
-  'uno',
-  'una',
-  'di',
-  'a',
-  'da',
-  'in',
-  'con',
-  'su',
-  'per',
-  'tra',
-  'fra',
-  'e',
-  'o',
-  'ma',
-  'che',
-  'se',
-  'non',
-  'anche',
-  'del',
-  'dello',
-  'della',
-  'dei',
-  'degli',
-  'delle',
-  'al',
-  'allo',
-  'alla',
-  'ai',
-  'agli',
-  'alle',
-  'dal',
-  'dallo',
-  'dalla',
-  'dai',
-  'dagli',
-  'dalle',
-  'nel',
-  'nello',
-  'nella',
-  'nei',
-  'negli',
-  'nelle',
-  'sul',
-  'sullo',
-  'sulla',
-  'sui',
-  'sugli',
-  'sulle',
-]);
-
-// Expanded scenario templates
-const SCENARIO_TEMPLATES = [
-  'Sei in un colloquio di lavoro...',
-  'Stai presentando un progetto al team...',
-  'Sei in una riunione informale con colleghi...',
-  'Stai parlando con il tuo capo di un problema...',
-  'Sei a un evento di networking professionale...',
-  'Stai chattando con un amico americano...',
-  'Sei a una cena con amici internazionali...',
-  'Stai conoscendo qualcuno a una festa...',
-  'Sei al telefono con un servizio clienti americano...',
-  'Stai dando consigli a un amico che studia inglese...',
-  'Sei in un seminario universitario...',
-  'Stai discutendo un articolo con un collega...',
-  'Sei in una lezione e devi fare una domanda...',
-  'Sei in aeroporto e devi chiedere indicazioni...',
-  'Stai ordinando al ristorante in un paese anglofono...',
-  'Sei in un hotel e hai un problema con la stanza...',
-];
 
 export class PracticeManager {
   constructor(progressManager) {
@@ -222,15 +57,7 @@ export class PracticeManager {
     window.practiceManager = this;
   }
 
-  /**
-   * Escape HTML entities to prevent XSS
-   */
-  escapeHtml(str) {
-    if (!str) return '';
-    const div = document.createElement('div');
-    div.textContent = str;
-    return div.innerHTML;
-  }
+
 
   /**
    * Start a practice session.
@@ -339,446 +166,7 @@ export class PracticeManager {
 
     // Store full pool before slicing for distractor generation
     this.fullPool = [...pool];
-    this.questions = this.shuffleArray(pool).slice(0, 10);
-  }
-
-  shuffleArray(array) {
-    const newArr = [...array];
-    for (let i = newArr.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
-    }
-    return newArr;
-  }
-
-  /**
-   * Check if a word is a content word (not a function word)
-   */
-  isContentWord(word) {
-    const cleaned = word.toLowerCase().replace(/[.,?!;:'"()]/g, '');
-    if (cleaned.length <= 1) return false;
-    return !ENGLISH_FUNCTION_WORDS.has(cleaned) && !ITALIAN_FUNCTION_WORDS.has(cleaned);
-  }
-
-  /**
-   * Pick the best word index to blank in a sentence.
-   * Prioritizes the target vocabulary word, then content words by length.
-   */
-  pickBestBlankIndex(words, targetWord) {
-    // Priority 1: Target vocabulary word
-    if (targetWord) {
-      const targetLower = targetWord.toLowerCase();
-      const targetIdx = words.findIndex(
-        (w) => w.toLowerCase().replace(/[.,?!;:'"()]/g, '') === targetLower
-      );
-      if (targetIdx !== -1) return targetIdx;
-    }
-
-    // Priority 2: Content words, prefer longer ones
-    const candidates = words
-      .map((w, i) => ({ word: w, index: i }))
-      .filter((c) => this.isContentWord(c.word))
-      .sort((a, b) => b.word.length - a.word.length);
-
-    if (candidates.length > 0) {
-      const topN = candidates.slice(0, Math.min(3, candidates.length));
-      return topN[Math.floor(Math.random() * topN.length)].index;
-    }
-
-    // Fallback: any word longer than 2 chars
-    const nonTrivial = words
-      .map((w, i) => ({ word: w, index: i }))
-      .filter((c) => c.word.length > 2);
-
-    if (nonTrivial.length > 0) {
-      return nonTrivial[Math.floor(Math.random() * nonTrivial.length)].index;
-    }
-
-    return Math.floor(Math.random() * words.length);
-  }
-
-  /**
-   * Normalize text with accent tolerance for comparison
-   */
-  normalizeWithAccents(str) {
-    return str
-      .toLowerCase()
-      .replace(/[.,?!;:'"()]/g, '')
-      .replace(/[àáâã]/g, 'a')
-      .replace(/[èéêë]/g, 'e')
-      .replace(/[ìíîï]/g, 'i')
-      .replace(/[òóôõ]/g, 'o')
-      .replace(/[ùúûü]/g, 'u')
-      .trim();
-  }
-
-  /**
-   * Basic normalization without accent stripping
-   */
-  normalize(str) {
-    return str
-      .toLowerCase()
-      .replace(/[.,?!;:'"()]/g, '')
-      .trim();
-  }
-
-  renderQuestion() {
-    const container = document.getElementById('practice-content');
-    if (!container || this.questions.length === 0) return;
-
-    const question = this.questions[this.currentQuestionIndex];
-    document.getElementById('practice-progress').textContent =
-      `${this.currentQuestionIndex + 1}/${this.questions.length}`;
-
-    let html = '';
-    let correctAnswer = '';
-
-    if (this.currentMode === 'listening' || this.currentMode === 'matching') {
-      const options = this.generateOptions(question.italian);
-      correctAnswer = question.italian;
-      const ttsBtn = ttsService.isSupported ? ttsService.speakerButtonHTML(question.english) : '';
-      html = `
-                <div class="exercise-card">
-                    <div class="exercise-instruction">
-                        ${this.currentMode === 'listening' ? 'Ascolta e scegli:' : 'Qual \u00E8 la traduzione di:'}
-                    </div>
-                    ${
-                      this.currentMode === 'listening'
-                        ? `<div class="exercise-target">${ttsBtn}</div>`
-                        : `<div class="exercise-target">${this.escapeHtml(question.english)} ${ttsBtn}</div>
-                    ${question.pronunciation ? `<div class="exercise-pronunciation">${this.escapeHtml(question.pronunciation)}</div>` : ''}`
-                    }
-                    <div class="options-grid">
-                        ${options
-                          .map(
-                            (opt, idx) => `
-                            <button class="btn btn-secondary option-btn" data-option-idx="${idx}">
-                                ${this.escapeHtml(opt)}
-                            </button>
-                        `
-                          )
-                          .join('')}
-                    </div>
-                </div>
-            `;
-
-      container.innerHTML = html;
-      ttsService.attachTTSListeners(container);
-
-      // Auto-play TTS for listening mode (gated by user preference)
-      if (this.currentMode === 'listening' && ttsService.isSupported) {
-        ttsService.speakAuto(question.english);
-      }
-
-      options.forEach((opt, idx) => {
-        const btn = container.querySelector(`[data-option-idx="${idx}"]`);
-        if (btn) {
-          btn.addEventListener('click', () => this.checkAnswer(opt, correctAnswer));
-        }
-      });
-    } else if (this.currentMode === 'writing') {
-      correctAnswer = question.italian;
-      const ttsBtn = ttsService.isSupported ? ttsService.speakerButtonHTML(question.english) : '';
-      html = `
-                <div class="exercise-card">
-                    <div class="exercise-instruction">Scrivi la traduzione in italiano:</div>
-                    <div class="exercise-target">${this.escapeHtml(question.english)} ${ttsBtn}</div>
-                    ${question.pronunciation ? `<div class="exercise-pronunciation">${this.escapeHtml(question.pronunciation)}</div>` : ''}
-                    <input type="text" id="writing-input" class="practice-input" placeholder="Scrivi qui..." autofocus>
-                    <button class="btn btn-primary submit-btn" style="margin-top: 1rem;">Invia / Submit</button>
-                </div>
-            `;
-      container.innerHTML = html;
-      ttsService.attachTTSListeners(container);
-
-      container
-        .querySelector('.submit-btn')
-        ?.addEventListener('click', () => this.checkWritingAnswer(correctAnswer));
-    } else if (this.currentMode === 'fillblank') {
-      const sentence = question.example || question.usage;
-      const parts = sentence.split(' = ');
-      const targetPhrase = parts[0];
-      const words = targetPhrase.split(' ');
-      const missingIdx = this.pickBestBlankIndex(words, question.english);
-      const missingWord = words[missingIdx].trim();
-      const displaySentence = words.map((w, i) => (i === missingIdx ? '_____' : w)).join(' ');
-      correctAnswer = missingWord;
-
-      html = `
-                <div class="exercise-card">
-                    <div class="exercise-instruction">Completa la frase:</div>
-                    <div class="exercise-target">${this.escapeHtml(displaySentence)}</div>
-                    <input type="text" id="writing-input" class="practice-input" placeholder="Parola mancante..." autofocus>
-                    <button class="btn btn-primary submit-btn" style="margin-top: 1rem;">Invia / Submit</button>
-                </div>
-            `;
-      container.innerHTML = html;
-
-      container
-        .querySelector('.submit-btn')
-        ?.addEventListener('click', () => this.checkWritingAnswer(correctAnswer));
-    } else if (this.currentMode === 'sentence') {
-      const sentence = (question.example || question.usage).split(' = ')[0];
-      const words = this.shuffleArray(sentence.split(' '));
-      correctAnswer = sentence;
-
-      html = `
-                <div class="exercise-card">
-                    <div class="exercise-instruction">Ricostruisci la frase (Inglese):</div>
-                    <div class="scrambled-words">
-                        ${words.map((w) => `<span class="word-chip">${this.escapeHtml(w)}</span>`).join(' ')}
-                    </div>
-                    <input type="text" id="writing-input" class="practice-input" placeholder="Scrivi la frase completa..." autofocus>
-                    <button class="btn btn-primary submit-btn" style="margin-top: 1rem;">Invia / Submit</button>
-                </div>
-            `;
-      container.innerHTML = html;
-
-      container
-        .querySelector('.submit-btn')
-        ?.addEventListener('click', () => this.checkSentenceAnswer(correctAnswer));
-    } else if (this.currentMode === 'comprehension') {
-      // Build a longer paragraph from the full pool
-      const allWithExamples = this.fullPool.filter((q) => q.example);
-      const paragraphSentences = this.buildComprehensionParagraph(
-        allWithExamples,
-        this.currentQuestionIndex
-      );
-      const paragraph = `${paragraphSentences.join('. ')}.`;
-      const correctStatement = (question.example || '').split(' = ')[0];
-
-      const wrongOptions = this.generateComprehensionDistractors(
-        correctStatement,
-        paragraphSentences,
-        allWithExamples
-      );
-      const allOptions = this.shuffleArray([correctStatement, ...wrongOptions]);
-      correctAnswer = correctStatement;
-
-      html = `
-                <div class="exercise-card">
-                    <div class="exercise-instruction">Leggi il paragrafo e scegli l'affermazione corretta:</div>
-                    <div class="exercise-paragraph">${this.escapeHtml(paragraph)}</div>
-                    <div class="exercise-comprehension-question">Quale affermazione è vera in base al testo? / Which statement is true?</div>
-                    <div class="options-grid">
-                        ${allOptions
-                          .map(
-                            (opt, idx) => `
-                            <button class="btn btn-secondary option-btn" data-option-idx="${idx}">
-                                ${this.escapeHtml(opt)}
-                            </button>
-                        `
-                          )
-                          .join('')}
-                    </div>
-                </div>
-            `;
-
-      container.innerHTML = html;
-
-      allOptions.forEach((opt, idx) => {
-        const btn = container.querySelector(`[data-option-idx="${idx}"]`);
-        if (btn) {
-          btn.addEventListener('click', () => this.checkAnswer(opt, correctAnswer));
-        }
-      });
-    } else if (this.currentMode === 'scenario') {
-      const exampleParts = (question.example || '').split(' = ');
-      const englishPhrase = exampleParts[0] || '';
-
-      const targetWord = question.english;
-      const blankedPhrase = englishPhrase.replace(
-        new RegExp(targetWord.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i'),
-        '_____'
-      );
-
-      const scenario = SCENARIO_TEMPLATES[this.currentQuestionIndex % SCENARIO_TEMPLATES.length];
-
-      const options = this.generateOptions(targetWord);
-      correctAnswer = targetWord;
-
-      const ttsBtn = ttsService.isSupported ? ttsService.speakerButtonHTML(englishPhrase) : '';
-      html = `
-                <div class="exercise-card">
-                    <div class="exercise-instruction">Scenario:</div>
-                    <div class="exercise-scenario">${this.escapeHtml(scenario)}</div>
-                    <div class="exercise-target">${this.escapeHtml(blankedPhrase)} ${ttsBtn}</div>
-                    <div class="options-grid">
-                        ${options
-                          .map(
-                            (opt, idx) => `
-                            <button class="btn btn-secondary option-btn" data-option-idx="${idx}">
-                                ${this.escapeHtml(opt)}
-                            </button>
-                        `
-                          )
-                          .join('')}
-                    </div>
-                </div>
-            `;
-
-      container.innerHTML = html;
-      ttsService.attachTTSListeners(container);
-
-      options.forEach((opt, idx) => {
-        const btn = container.querySelector(`[data-option-idx="${idx}"]`);
-        if (btn) {
-          btn.addEventListener('click', () => this.checkAnswer(opt, correctAnswer));
-        }
-      });
-    } else {
-      container.innerHTML = html;
-    }
-
-    const input = document.getElementById('writing-input');
-    if (input) {
-      input.focus();
-      input.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') {
-          const submitBtn = container.querySelector('.submit-btn');
-          if (submitBtn) submitBtn.click();
-        }
-      });
-    }
-  }
-
-  /**
-   * Generate semantically-related options for multiple choice.
-   * Prefers items from the same lesson, then same level, then full pool.
-   */
-  generateOptions(correct) {
-    const field = this.currentMode === 'scenario' ? 'english' : 'italian';
-    const currentQ = this.questions[this.currentQuestionIndex];
-    const correctLen = correct.length;
-    const minLen = Math.max(1, Math.floor(correctLen * 0.4));
-    const maxLen = Math.ceil(correctLen * 2.5);
-
-    const isPlausible = (val) => {
-      if (!val || val === correct) return false;
-      return val.length >= minLen && val.length <= maxLen;
-    };
-
-    const distractors = new Set();
-
-    // Phase 1: Same lesson items
-    if (currentQ._lessonId) {
-      const sameLesson = this.fullPool.filter(
-        (it) => it._lessonId === currentQ._lessonId && isPlausible(it[field])
-      );
-      const shuffled = this.shuffleArray(sameLesson);
-      for (const item of shuffled) {
-        if (distractors.size >= 3) break;
-        distractors.add(item[field]);
-      }
-    }
-
-    // Phase 2: Same level items
-    if (distractors.size < 3 && currentQ._level) {
-      const sameLevel = this.fullPool.filter(
-        (it) =>
-          it._level === currentQ._level &&
-          it._lessonId !== currentQ._lessonId &&
-          isPlausible(it[field])
-      );
-      const shuffled = this.shuffleArray(sameLevel);
-      for (const item of shuffled) {
-        if (distractors.size >= 3) break;
-        if (!distractors.has(item[field])) distractors.add(item[field]);
-      }
-    }
-
-    // Phase 3: Full pool fallback
-    if (distractors.size < 3) {
-      const remaining = this.fullPool.filter((it) => isPlausible(it[field]));
-      const shuffled = this.shuffleArray(remaining);
-      for (const item of shuffled) {
-        if (distractors.size >= 3) break;
-        if (!distractors.has(item[field])) distractors.add(item[field]);
-      }
-    }
-
-    return this.shuffleArray([correct, ...Array.from(distractors).slice(0, 3)]);
-  }
-
-  /**
-   * Build a comprehension paragraph with 5-7 sentences from the pool
-   */
-  buildComprehensionParagraph(allWithExamples, currentIdx) {
-    const sentences = [];
-    const used = new Set();
-    const targetCount = 6;
-
-    // Start with current question's example
-    const currentQ = this.questions[currentIdx];
-    if (currentQ && currentQ.example) {
-      const sent = currentQ.example.split(' = ')[0];
-      if (sent) {
-        sentences.push(sent);
-        used.add((currentQ.english || '').toLowerCase());
-      }
-    }
-
-    // Add from nearby questions first
-    for (let r = 1; sentences.length < targetCount && r < this.questions.length; r++) {
-      for (const offset of [-r, r]) {
-        const idx = currentIdx + offset;
-        if (
-          idx >= 0 &&
-          idx < this.questions.length &&
-          !used.has((this.questions[idx]?.english || '').toLowerCase())
-        ) {
-          const q = this.questions[idx];
-          if (q && q.example) {
-            const sent = q.example.split(' = ')[0];
-            if (sent && sent.length > 10) {
-              sentences.push(sent);
-              used.add((q.english || '').toLowerCase());
-            }
-          }
-        }
-        if (sentences.length >= targetCount) break;
-      }
-    }
-
-    // If still need more, draw from full pool
-    if (sentences.length < targetCount) {
-      const extras = this.shuffleArray(allWithExamples).filter(
-        (q) => !used.has((q.english || '').toLowerCase()) && q.example
-      );
-      for (const q of extras) {
-        if (sentences.length >= targetCount) break;
-        const sent = q.example.split(' = ')[0];
-        if (sent && sent.length > 10) {
-          sentences.push(sent);
-          used.add((q.english || '').toLowerCase());
-        }
-      }
-    }
-
-    return sentences;
-  }
-
-  /**
-   * Generate plausible comprehension distractors from sentences NOT in the paragraph
-   */
-  generateComprehensionDistractors(correctSentence, paragraphSentences, allWithExamples) {
-    const paragraphSet = new Set(paragraphSentences);
-    const distractors = [];
-
-    const candidates = allWithExamples
-      .map((q) => q.example.split(' = ')[0])
-      .filter((s) => s && !paragraphSet.has(s) && s !== correctSentence && s.length > 10);
-
-    const shuffled = this.shuffleArray(candidates);
-    for (const s of shuffled) {
-      if (distractors.length >= 3) break;
-      if (!distractors.includes(s)) distractors.push(s);
-    }
-
-    while (distractors.length < 3) {
-      distractors.push(`Not in the text ${distractors.length + 1}`);
-    }
-    return distractors;
+    this.questions = shuffleArray(pool).slice(0, 10);
   }
 
   // ─── TIMER & XP ──────────────────────────────
@@ -808,26 +196,6 @@ export class PracticeManager {
 
   getResponseTimeSeconds() {
     return (Date.now() - this.questionStartTime) / 1000;
-  }
-
-  calculateXP(responseSeconds) {
-    let timeMult = TIME_DEFAULT_MULTIPLIER;
-    for (const t of TIME_THRESHOLDS) {
-      if (responseSeconds <= t.maxSeconds) {
-        timeMult = t.multiplier;
-        break;
-      }
-    }
-
-    let streakMult = 1.0;
-    for (const s of STREAK_BONUSES) {
-      if (this.consecutiveCorrect >= s.minStreak) {
-        streakMult = s.multiplier;
-        break;
-      }
-    }
-
-    return Math.round(XP_BASE * timeMult * streakMult);
   }
 
   updateProgressBar() {
@@ -871,7 +239,7 @@ export class PracticeManager {
     if (!input) return;
 
     const userValue = input.value;
-    const exactMatch = this.normalize(userValue) === this.normalize(correct);
+    const exactMatch = normalize(userValue) === normalize(correct);
 
     if (exactMatch) {
       this.handleResult(true, correct);
@@ -879,7 +247,7 @@ export class PracticeManager {
     }
 
     // Accent-tolerant match
-    const accentMatch = this.normalizeWithAccents(userValue) === this.normalizeWithAccents(correct);
+    const accentMatch = normalizeWithAccents(userValue) === normalizeWithAccents(correct);
     if (accentMatch) {
       this.handleResult(true, correct, true);
       return;
@@ -903,7 +271,7 @@ export class PracticeManager {
     const responseTime = this.getResponseTimeSeconds();
     this.totalResponseTime += responseTime;
 
-    const xpEarned = Math.round(this.calculateXP(responseTime) * 0.5);
+    const xpEarned = Math.round(calculateXP(responseTime, this.consecutiveCorrect) * 0.5);
     this.sessionXP += xpEarned;
     this.progressManager.addXP(xpEarned);
     this.consecutiveCorrect = 0;
@@ -923,7 +291,7 @@ export class PracticeManager {
         <div class="feedback-message">Quasi! Hai sbagliato di poco / Just a typo away</div>
         ${xpEarned > 0 ? `<div class="feedback-xp">+${xpEarned} XP (parziale)</div>` : ''}
         <div class="near-miss-diff">${diffHtml}</div>
-        <div class="feedback-answer">La risposta era: <strong>${this.escapeHtml(correctAnswer)}</strong></div>
+        <div class="feedback-answer">La risposta era: <strong>${escapeHtml(correctAnswer)}</strong></div>
         <div class="feedback-progress-bar"><div class="feedback-progress-fill"></div></div>
       </div>
     `;
@@ -943,7 +311,7 @@ export class PracticeManager {
       const match = ch !== '' && ch.toLowerCase() === expected.toLowerCase();
       const display = ch || '·';
       const cls = match ? 'char-match' : 'char-miss';
-      html += `<span class="${cls}">${this.escapeHtml(display)}</span>`;
+      html += `<span class="${cls}">${escapeHtml(display)}</span>`;
     }
     return html;
   }
@@ -959,7 +327,7 @@ export class PracticeManager {
     const correctWords = correct.trim().split(/\s+/);
 
     // Exact match
-    if (this.normalize(input.value) === this.normalize(correct)) {
+    if (normalize(input.value) === normalize(correct)) {
       this.handleResult(true, correct);
       return;
     }
@@ -995,7 +363,7 @@ export class PracticeManager {
     const responseTime = this.getResponseTimeSeconds();
     this.totalResponseTime += responseTime;
 
-    const xpEarned = Math.round(this.calculateXP(responseTime) * 0.5);
+    const xpEarned = Math.round(calculateXP(responseTime, this.consecutiveCorrect) * 0.5);
     this.sessionXP += xpEarned;
     this.progressManager.addXP(xpEarned);
     this.consecutiveCorrect = 0;
@@ -1009,7 +377,7 @@ export class PracticeManager {
     const wordsHtml = positions
       .map(
         (p) =>
-          `<span class="word-chip ${p.correct ? 'word-correct' : 'word-incorrect'}">${this.escapeHtml(p.word || '___')}</span>`
+          `<span class="word-chip ${p.correct ? 'word-correct' : 'word-incorrect'}">${escapeHtml(p.word || '___')}</span>`
       )
       .join(' ');
 
@@ -1018,7 +386,7 @@ export class PracticeManager {
         <div class="feedback-message">Quasi perfetto! ${correctCount}/${totalWords} parole corrette</div>
         ${xpEarned > 0 ? `<div class="feedback-xp">+${xpEarned} XP (parziale)</div>` : ''}
         <div class="sentence-feedback">${wordsHtml}</div>
-        <div class="feedback-answer">La frase corretta: <strong>${this.escapeHtml(correctAnswer)}</strong></div>
+        <div class="feedback-answer">La frase corretta: <strong>${escapeHtml(correctAnswer)}</strong></div>
         <div class="feedback-progress-bar"><div class="feedback-progress-fill"></div></div>
       </div>
     `;
@@ -1039,7 +407,7 @@ export class PracticeManager {
       if (this.consecutiveCorrect > this.maxStreak) {
         this.maxStreak = this.consecutiveCorrect;
       }
-      xpEarned = this.calculateXP(responseTime);
+      xpEarned = calculateXP(responseTime, this.consecutiveCorrect);
       this.sessionXP += xpEarned;
       this.progressManager.addXP(xpEarned);
       this.progressManager.incrementWordCount();
@@ -1089,7 +457,7 @@ export class PracticeManager {
       : ENCOURAGING_INCORRECT[Math.floor(Math.random() * ENCOURAGING_INCORRECT.length)];
 
     const accentHintHtml = accentHint
-      ? `<div class="feedback-accent-hint">Attenzione agli accenti: <strong>${this.escapeHtml(correctAnswer)}</strong></div>`
+      ? `<div class="feedback-accent-hint">Attenzione agli accenti: <strong>${escapeHtml(correctAnswer)}</strong></div>`
       : '';
 
     const feedbackHtml = `
@@ -1098,7 +466,7 @@ export class PracticeManager {
                 <div class="feedback-message">${message}</div>
                 ${isCorrect && xpEarned > 0 ? `<div class="feedback-xp">+${xpEarned} XP</div>` : ''}
                 ${accentHintHtml}
-                ${!isCorrect ? `<div class="feedback-answer">La risposta era: <strong>${this.escapeHtml(correctAnswer)}</strong></div>` : ''}
+                ${!isCorrect ? `<div class="feedback-answer">La risposta era: <strong>${escapeHtml(correctAnswer)}</strong></div>` : ''}
                 <div class="feedback-progress-bar">
                     <div class="feedback-progress-fill"></div>
                 </div>
@@ -1127,7 +495,7 @@ export class PracticeManager {
     container.innerHTML = `
             <div class="feedback-card feedback-${type}">
                 <div class="feedback-icon"></div>
-                <div class="feedback-message">${this.escapeHtml(message)}</div>
+                <div class="feedback-message">${escapeHtml(message)}</div>
                 <button class="btn btn-secondary" data-action="back" style="margin-top: 1rem;">\u2190 Indietro / Back</button>
             </div>
         `;
@@ -1250,3 +618,5 @@ export class PracticeManager {
     this.songFilter = null;
   }
 }
+
+Object.assign(PracticeManager.prototype, practiceRenderingMixin);
