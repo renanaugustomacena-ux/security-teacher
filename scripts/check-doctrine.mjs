@@ -112,6 +112,11 @@ function extractNginxCsp(conf) {
   return m ? m[1] : null;
 }
 
+function extractNetlifyCsp(toml) {
+  const m = toml.match(/Content-Security-Policy\s*=\s*"([^"]*)"/i);
+  return m ? m[1] : null;
+}
+
 async function checkMetaCsp() {
   for (const file of HTML_FILES) {
     const html = await readText(file);
@@ -135,22 +140,34 @@ async function checkMetaCsp() {
   }
 }
 
+function compareCspPair(label, a, b, aName, bName) {
+  const allKeys = new Set([...a.keys(), ...b.keys()]);
+  for (const k of allKeys) {
+    if (!a.has(k)) fail('§3.7', `${bName} CSP has '${k}' but ${aName} CSP does not`);
+    else if (!b.has(k)) fail('§3.7', `${aName} CSP has '${k}' but ${bName} CSP does not`);
+    else if (a.get(k) !== b.get(k)) {
+      fail('§3.7', `directive '${k}' differs:\n  ${aName}: ${a.get(k)}\n  ${bName}: ${b.get(k)}`);
+    }
+  }
+}
+
 async function checkCspAlignment() {
   const html = await readText('index.html');
   const conf = await readText('nginx.conf');
   const meta = extractMetaCsp(html);
   const nginx = extractNginxCsp(conf);
-  if (!meta || !nginx) return; // already reported by §17.6 / nginx will be caught visually
-  const a = parseCspDirectives(meta);
-  const b = parseCspDirectives(nginx);
-  const allKeys = new Set([...a.keys(), ...b.keys()]);
-  for (const k of allKeys) {
-    if (!a.has(k)) fail('§3.7', `nginx CSP has '${k}' but meta CSP does not`);
-    else if (!b.has(k)) fail('§3.7', `meta CSP has '${k}' but nginx CSP does not`);
-    else if (a.get(k) !== b.get(k)) {
-      fail('§3.7', `directive '${k}' differs:\n  meta:  ${a.get(k)}\n  nginx: ${b.get(k)}`);
-    }
+  if (!meta || !nginx) return;
+  compareCspPair('meta-vs-nginx', parseCspDirectives(meta), parseCspDirectives(nginx), 'meta', 'nginx');
+
+  let toml;
+  try {
+    toml = await readText('netlify.toml');
+  } catch {
+    return;
   }
+  const netlify = extractNetlifyCsp(toml);
+  if (!netlify) return;
+  compareCspPair('meta-vs-netlify', parseCspDirectives(meta), parseCspDirectives(netlify), 'meta', 'netlify');
 }
 
 async function* walk(dir) {
