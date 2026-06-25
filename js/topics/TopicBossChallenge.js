@@ -24,9 +24,11 @@ import {
   pickBestBlankIndex,
   formatContextLabel,
 } from '../utils/PracticeUtils.js';
+import { COMMAND_ALIASES } from './TopicPracticeConstants.js';
 
 const BOSS_TOTAL_QUESTIONS = 15;
 const BOSS_TIME_LIMIT = 300; // 5 minutes in seconds
+const QUESTION_TYPES = ['listening', 'writing', 'matching', 'fillblank', 'context'];
 
 
 export class TopicBossChallenge {

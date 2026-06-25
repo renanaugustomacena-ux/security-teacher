@@ -1,6 +1,7 @@
 import { escapeHtml, escapeAttr as escapeForAttr } from '../utils/SanitizeHtml.js';
-import { normalize } from '../utils/PracticeUtils.js';
+import { normalize, XP_BASE } from '../utils/PracticeUtils.js';
 import { advancedQuestionsMixin } from './TopicPracticeAdvancedQuestions.js';
+import { COMMAND_ALIASES, TECHTALK_GRAMMAR_RULES } from './TopicPracticeConstants.js';
 
 const _renderHandleMethods = {
   // ─── TERMINAL SIMULATOR ──────────────────────

@@ -1,7 +1,7 @@
-import { escapeHtml } from '../utils/SanitizeHtml.js';
-import { escapeAttr as escapeForAttr } from '../utils/SanitizeHtml.js';
-import { shuffleArray, pickBestBlankIndex, normalize } from '../utils/PracticeUtils.js';
+import { escapeHtml, escapeAttr as escapeForAttr } from '../utils/SanitizeHtml.js';
+import { shuffleArray, pickBestBlankIndex } from '../utils/PracticeUtils.js';
 import { ttsService } from '../services/TTSService.js';
+import { TECH_SCENARIO_TEMPLATES } from './TopicPracticeConstants.js';
 
 export const renderingMixin = {
   // ─── RENDERING ─────────────────────────────────

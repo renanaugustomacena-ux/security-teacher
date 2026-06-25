@@ -96,6 +96,7 @@ const STATIC_ASSETS = [
   './js/topics/TopicBossChallenge.js',
   './js/topics/TopicLessonEngine.js',
   './js/topics/TopicPracticeManager.js',
+  './js/topics/TopicPracticeConstants.js',
   './js/topics/TopicPracticeAdvancedModes.js',
   './js/topics/TopicPracticeAdvancedQuestions.js',
   './js/topics/TopicPracticeRendering.js',
