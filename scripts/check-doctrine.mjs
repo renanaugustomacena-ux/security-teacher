@@ -184,7 +184,7 @@ async function* walk(dir) {
 async function checkForbiddenPatterns() {
   const jsRoot = resolve(REPO, 'js');
   for await (const file of walk(jsRoot)) {
-    const rel = relative(REPO, file);
+    const rel = relative(REPO, file).replace(/\\/g, '/');
     if (!rel.endsWith('.js')) continue;
     const content = await readFile(file, 'utf8');
     for (const { name, re } of FORBIDDEN_PATTERNS) {
