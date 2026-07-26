@@ -14,6 +14,8 @@ export class HintService {
     switch (mode) {
       case 'listening':
       case 'matching':
+      case 'pairs':
+      case 'readout':
       case 'context':
         return this._listeningMatchingContext(question);
 
@@ -22,6 +24,8 @@ export class HintService {
 
       case 'command':
       case 'codechallenge':
+      case 'dictation':
+      case 'cmdcloze':
         return this._commandCodechallenge(question);
 
       case 'terminal':

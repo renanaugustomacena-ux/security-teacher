@@ -34,6 +34,8 @@ import { adaptiveDifficultyService } from '../services/AdaptiveDifficultyService
 import { advancedModesMixin } from './TopicPracticeAdvancedModes.js';
 import { renderingMixin } from './TopicPracticeRendering.js';
 import { resultHandlerMixin } from './TopicPracticeResultHandler.js';
+import { matchModeMixin } from './TopicPracticeMatchMode.js';
+import { outputModesMixin } from './TopicPracticeOutputModes.js';
 import { COMMAND_ALIASES } from './TopicPracticeConstants.js';
 import {
   FEEDBACK_DWELL,
@@ -85,6 +87,9 @@ export class TopicPracticeManager {
       'topicPractice.checkChain': (ds) => this.checkChainAnswer(ds.opt, ds.correct),
       'topicPractice.checkChainTyping': (ds) => this.checkChainTypingAnswer(ds.correct),
       'topicPractice.checkChainCommand': (ds) => this.checkChainCommandAnswer(ds.correct),
+      'topicPractice.tapPair': (ds) => this.tapPair(ds),
+      'topicPractice.checkCmdCloze': (ds) => this.checkCmdCloze(ds),
+      'topicPractice.replayDictation': (ds) => this.replayDictation(ds),
     };
     const container = document.getElementById('topic-practice-content');
     if (container) delegate(container, map);
@@ -232,6 +237,26 @@ export class TopicPracticeManager {
 
     if (mode === 'chain') {
       this.questions = this.generateChainQuestions(pool);
+      return;
+    }
+
+    if (mode === 'pairs') {
+      this.questions = this.generatePairsQuestions(pool);
+      return;
+    }
+
+    if (mode === 'readout') {
+      this.questions = this.generateReadoutQuestions(pool);
+      return;
+    }
+
+    if (mode === 'dictation') {
+      this.questions = this.generateDictationQuestions(pool);
+      return;
+    }
+
+    if (mode === 'cmdcloze') {
+      this.questions = this.generateCmdClozeQuestions(pool);
       return;
     }
 
@@ -667,4 +692,11 @@ export class TopicPracticeManager {
   }
 }
 
-Object.assign(TopicPracticeManager.prototype, advancedModesMixin, renderingMixin, resultHandlerMixin);
+Object.assign(
+  TopicPracticeManager.prototype,
+  advancedModesMixin,
+  renderingMixin,
+  resultHandlerMixin,
+  matchModeMixin,
+  outputModesMixin
+);

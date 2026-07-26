@@ -34,6 +34,7 @@ export default {
               note: 'In italiano si usa spesso "password" direttamente, ma la pronuncia inglese \u00E8 diversa!',
               command: 'openssl rand -base64 24',
               task: 'Genera una password casuale a entropia elevata partendo da byte sicuri prelevati dal generatore crittografico del sistema.',
+              taskEn: 'Generate a random, high-entropy 24-byte password encoded in base64.',
             },
             {
               english: 'Hacker',
@@ -58,6 +59,7 @@ export default {
               note: 'La pronuncia inglese \u00E8 "VAI-res", non "VI-rus" come in italiano.',
               command: 'clamscan --infected --recursive /home/user/Downloads',
               task: 'Ispeziona ricorsivamente la cartella dei download segnalando soltanto i file riconosciuti come infetti dal motore antivirus.',
+              taskEn: 'Recursively scan the Downloads folder and report only the infected files.',
             },
             {
               english: 'Malware',
@@ -71,6 +73,7 @@ export default {
               note: 'Combinazione di "malicious" + "software". Include virus, trojan, worm, ecc.',
               command: 'yara -r /opt/yara-rules/malware_index.yar /var/www',
               task: 'Esegui le regole YARA contro la document root cercando firme note di malware tra i file caricati dagli utenti.',
+              taskEn: 'Run the YARA rules recursively against the web document root to find known malware.',
             },
             {
               english: 'Firewall',
@@ -85,6 +88,7 @@ export default {
               note: 'Letteralmente "muro di fuoco". Filtra il traffico di rete.',
               command: 'sudo ufw default deny incoming && sudo ufw allow 22/tcp && sudo ufw enable',
               task: `Configura il firewall in modalita' deny-by-default lasciando aperta soltanto la porta SSH per l'amministrazione remota.`,
+              taskEn: 'Configure the firewall to deny incoming traffic by default, allowing only SSH.',
             },
             {
               english: 'Security',

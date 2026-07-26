@@ -203,6 +203,10 @@ export const topicPlacementMixin = {
       { id: 'codelab', name: 'Code Lab', desc: 'Completa il codice mancante / Complete the missing code', icon: '\u{1F9EA}', enabled: hasMultiLineCode },
       { id: 'techtalk', name: 'Tech Talk', desc: 'Conversazione tecnica / Technical conversation', icon: '\u{1F4AC}', enabled: true },
       { id: 'chain', name: 'Sfida a Catena / Chain Challenge', desc: '5 domande collegate / 5 connected questions', icon: '⛓️', enabled: hasEnglishItalian },
+      { id: 'pairs', name: 'Coppie / Tap the Pairs', desc: 'Abbina termini e traduzioni / Tap matching pairs', icon: '\u{1F9E9}', enabled: hasEnglishItalian },
+      { id: 'readout', name: 'Output / Read the Output', desc: "Leggi l'output e scegli / Read output, pick meaning", icon: '\u{1F4DF}', enabled: hasCommand },
+      { id: 'dictation', name: 'Dettato / Dictation', desc: 'Ascolta e scrivi il comando / Hear it, type the command', icon: '\u{1F3A7}', enabled: hasCommand },
+      { id: 'cmdcloze', name: 'Comando Cloze / Command Cloze', desc: 'Completa il comando / Fill the missing token', icon: '⌨️', enabled: hasCommand },
       { id: 'velocita', name: "Velocita' / Speed Run", desc: '60-90s a tutta velocita / 60-90s rapid-fire', icon: '⚡', enabled: hasEnglishItalian },
     ];
 

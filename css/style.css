@@ -8600,3 +8600,448 @@ body.login-wall-active > *:not(.login-wall):not(#matrix-morph) {
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+   LESSON V2 — redesigned teach-then-practice loop + in-lesson lab
+   Instrument-HUD aesthetic (doctrine §0.3): graphite surfaces, gold accent,
+   mono for anything terminal. No mascots, no confetti.
+   ========================================================================== */
+
+.lesson-v2 {
+  --tc: var(--topic-color, var(--accent-primary));
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--space-md);
+  animation: v2-rise var(--transition-normal) both;
+}
+
+@keyframes v2-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.v2-beat-label {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-left: 2px solid var(--tc);
+  padding-left: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+/* ---- Present (teach) cards ---- */
+.v2-present-cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.v2-present-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-left: 3px solid var(--tc);
+  border-radius: var(--radius-md);
+  padding: var(--space-card);
+  box-shadow: var(--shadow-sm);
+}
+
+.v2-present-head {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.v2-present-en {
+  font-family: var(--font-display);
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.v2-present-it {
+  color: var(--gold-accent);
+  font-size: var(--font-size-base);
+}
+
+.v2-present-pron {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  margin-top: var(--space-xs);
+}
+
+.v2-present-example {
+  margin-top: var(--space-sm);
+  color: var(--text-secondary);
+  font-style: italic;
+  border-top: 1px dashed var(--glass-border);
+  padding-top: var(--space-sm);
+}
+
+.v2-present-command {
+  margin-top: var(--space-sm);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  display: flex;
+  gap: var(--space-xs);
+  align-items: center;
+  overflow-x: auto;
+}
+
+.v2-present-command .v2-tag {
+  color: var(--tc);
+}
+
+.v2-present-command code {
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.v2-present-tool {
+  margin-top: var(--space-xs);
+  display: inline-block;
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-full);
+  padding: 2px 10px;
+}
+
+.v2-present-note {
+  margin-top: var(--space-sm);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.v2-continue {
+  width: 100%;
+}
+
+/* ---- Question surface (warmup + drills) ---- */
+.v2-q-prompt {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-sm);
+}
+
+.v2-q-target {
+  font-family: var(--font-display);
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.v2-q-sentence {
+  font-size: var(--font-size-lg);
+  color: var(--text-primary);
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: var(--space-lg);
+}
+
+.v2-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+}
+
+.v2-option {
+  padding: var(--space-md);
+  text-align: left;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.v2-option:hover:not(:disabled) {
+  transform: translateY(-2px);
+  border-color: var(--tc);
+}
+
+.v2-option.v2-correct {
+  border-color: var(--success);
+  box-shadow: 0 0 0 1px var(--success), 0 0 14px rgba(16, 185, 129, 0.25);
+}
+
+.v2-option.v2-wrong {
+  border-color: var(--danger);
+  opacity: 0.85;
+}
+
+.v2-input {
+  width: 100%;
+}
+
+.v2-drill-actions {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.v2-hint {
+  margin-top: var(--space-sm);
+  min-height: 1.2em;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  color: var(--gold-accent);
+}
+
+.v2-audio-btn,
+.dictation-audio-btn {
+  font-size: var(--font-size-lg);
+}
+
+.v2-feedback {
+  margin-top: var(--space-md);
+  min-height: 1.4em;
+  text-align: center;
+  font-weight: 600;
+}
+
+.v2-fb-correct {
+  color: var(--success);
+}
+
+.v2-fb-wrong {
+  color: var(--danger);
+}
+
+.v2-lab-loading {
+  text-align: center;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  padding: var(--space-2xl);
+}
+
+/* ---- Summary ---- */
+.v2-summary {
+  text-align: center;
+}
+
+.v2-summary-stars {
+  font-size: 2.4rem;
+  letter-spacing: 0.2em;
+}
+
+.v2-summary-title {
+  color: var(--gold-accent);
+  margin-bottom: var(--space-lg);
+}
+
+.v2-summary-stats {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xl);
+  margin: var(--space-lg) 0;
+}
+
+.v2-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.v2-stat-value {
+  font-family: var(--font-display);
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--tc);
+}
+
+.v2-stat-label {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.v2-summary-actions {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   LAB PANEL — reuses .terminal-sim chrome, adds brief + task + hint framing
+   ========================================================================== */
+.lab-panel {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.lab-brief {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  padding: var(--space-md);
+}
+
+.lab-brief-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.lab-brief-intro {
+  color: var(--text-secondary);
+  margin-top: var(--space-xs);
+  font-size: var(--font-size-sm);
+}
+
+.lab-task {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: baseline;
+  margin-bottom: var(--space-sm);
+}
+
+.lab-task-label {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 1px 6px;
+}
+
+.lab-task-text {
+  color: var(--text-primary);
+}
+
+.lab-history-line {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+}
+
+.lab-output-error {
+  color: var(--danger);
+}
+
+.lab-hint {
+  margin-top: var(--space-sm);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  color: var(--gold-accent);
+}
+
+.lab-actions {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+  padding: var(--space-sm) 0;
+}
+
+.lab-done-line {
+  color: var(--success);
+  font-family: var(--font-mono);
+  margin-top: var(--space-sm);
+}
+
+/* ==========================================================================
+   TAP-THE-PAIRS — real matching board (opaque data-key, no answer leak)
+   ========================================================================== */
+.pairs-progress {
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: var(--space-md);
+}
+
+.pairs-board {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.pairs-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.pairs-tile {
+  padding: var(--space-md);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  background: var(--glass-bg);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: transform var(--transition-fast), border-color var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+.pairs-tile:hover:not(:disabled) {
+  transform: translateY(-2px);
+  border-color: var(--accent-primary);
+}
+
+.pairs-tile.pairs-selected {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 1px var(--accent-primary), var(--shadow-glow);
+}
+
+.pairs-tile.pairs-matched {
+  border-color: var(--success);
+  opacity: 0.4;
+  cursor: default;
+}
+
+.pairs-tile.pairs-wrong {
+  border-color: var(--danger);
+  animation: pairs-shake 0.35s;
+}
+
+@keyframes pairs-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+/* ---- Output modes ---- */
+.readout-output {
+  border-left: 3px solid var(--accent-primary);
+}
+
+.cmdcloze-target {
+  font-family: var(--font-mono);
+  letter-spacing: 0.02em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lesson-v2,
+  .pairs-tile.pairs-wrong {
+    animation: none;
+  }
+  .v2-option:hover:not(:disabled),
+  .pairs-tile:hover:not(:disabled) {
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .v2-options,
+  .pairs-board {
+    grid-template-columns: 1fr;
+  }
+  .v2-summary-stats {
+    gap: var(--space-md);
+  }
+}

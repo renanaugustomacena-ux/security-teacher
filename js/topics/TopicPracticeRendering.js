@@ -366,6 +366,26 @@ export const renderingMixin = {
         return; // Chain handles its own rendering
       }
 
+      case 'pairs': {
+        this.renderPairsQuestion(container, q);
+        return; // Tap-the-pairs owns its DOM + tap lifecycle
+      }
+
+      case 'readout': {
+        this.renderReadout(container, q);
+        return; // Output-comprehension owns its rendering
+      }
+
+      case 'dictation': {
+        this.renderDictation(container, q);
+        return; // Dictation owns its audio + input binding
+      }
+
+      case 'cmdcloze': {
+        this.renderCmdCloze(container, q);
+        return; // Command-cloze owns its input binding
+      }
+
       default:
         html = '<p>Modalit\u00E0 non disponibile / Mode not available</p>';
     }

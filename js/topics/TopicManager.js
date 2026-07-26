@@ -14,6 +14,8 @@
 import { topicsRegistry, getTopicMeta } from './registry.js';
 import { ttsService } from '../services/TTSService.js';
 import { TopicLessonEngine } from './TopicLessonEngine.js';
+import { LessonV2Engine } from './lesson2/LessonV2Engine.js';
+import { useLessonV2 } from './lesson2/lessonFlags.js';
 import { delegate } from '../utils/EventDispatch.js';
 import { escapeHtml } from '../utils/SanitizeHtml.js';
 import { referenceService } from '../services/ReferenceService.js';
@@ -543,8 +545,11 @@ export class TopicManager {
 
     this.showView('lesson');
 
-    // Use the stage-based lesson engine instead of flat item-by-item view
-    const engine = new TopicLessonEngine(this.progressManager);
+    // Redesigned teach-then-practice loop for pilot topics (per lessonFlags);
+    // the proven TopicLessonEngine still drives every other domain.
+    const engine = useLessonV2(topicId)
+      ? new LessonV2Engine(this.progressManager)
+      : new TopicLessonEngine(this.progressManager);
     engine.start(lesson, topicId, levelNum);
   }
 
