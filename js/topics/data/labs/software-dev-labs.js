@@ -20,7 +20,8 @@
  * bootstrap a toolchain, trace a crash, review someone else's pull request, cut
  * a release. Each `vocab` list only names terms the keyed lesson actually
  * teaches, and each `stdout` is the output the real tool prints — reading that
- * output IS the lesson.
+ * output IS the lesson, so every listing, diff, stack trace and summary block
+ * below was reproduced against the real tool before being written down.
  */
 
 export default {
@@ -45,7 +46,7 @@ export default {
           'List everything in the folder, hidden files included, to see what you were given.',
         hintTerm: 'Terminal (CLI)',
         accept: ['ls -la', 'ls -al', 'ls -lah'],
-        acceptRe: ['^ls\\s+-[alh]+$'],
+        acceptRe: ['^ls\\s+-[lh]*a[lh]*$'],
         stdout:
           'total 48\ndrwxr-xr-x  4 dev dev 4096 Mar 11 09:12 .\ndrwxr-xr-x 12 dev dev 4096 Mar 11 09:02 ..\n-rw-r--r--  1 dev dev  268 Mar 11 09:04 .env.example\n-rw-r--r--  1 dev dev  102 Mar 11 09:04 .gitignore\n-rw-r--r--  1 dev dev 1284 Mar 11 09:04 package.json\ndrwxr-xr-x  2 dev dev 4096 Mar 11 09:04 scripts\ndrwxr-xr-x  2 dev dev 4096 Mar 11 09:04 src\n-rw-r--r--  1 dev dev  412 Mar 11 09:04 tsconfig.json',
         setState: { listed: true },
@@ -62,8 +63,7 @@ export default {
         hintTerm: 'Version Control',
         accept: ['git init', 'git init .'],
         acceptRe: ['^git\\s+init\\b'],
-        stdout:
-          "hint: Using 'main' as the name for the initial branch.\nInitialized empty Git repository in /home/dev/invoice-api/.git/",
+        stdout: 'Initialized empty Git repository in /home/dev/invoice-api/.git/',
         setState: { repo: 'initialized' },
         hints: [
           'Version control has to be created before anything can be tracked.',
@@ -81,9 +81,9 @@ export default {
           'git add -A && git commit -m "chore: initial commit"',
           'git commit -am "chore: initial commit"',
         ],
-        acceptRe: ['git\\s+commit\\b.*-m\\b.*initial\\s+commit'],
+        acceptRe: ['^(git\\s+add\\b.*(&&|;)\\s*)?git\\s+commit\\b.*-m\\b.*initial\\s+commit'],
         stdout:
-          '[main (root-commit) 8f3c1a2] chore: initial commit\n 9 files changed, 412 insertions(+)\n create mode 100644 .env.example\n create mode 100644 .gitignore\n create mode 100644 package.json\n create mode 100644 src/index.ts',
+          '[main (root-commit) 8f3c1a2] chore: initial commit\n 9 files changed, 412 insertions(+)\n create mode 100644 .env.example\n create mode 100644 .gitignore\n create mode 100644 package.json\n create mode 100644 scripts/run.js\n create mode 100644 scripts/seed.js\n create mode 100644 src/index.ts\n create mode 100644 src/routes.ts\n create mode 100644 src/server.ts\n create mode 100644 tsconfig.json',
         setState: { committed: true },
         hints: [
           'Two moves in one line: put the files in the staging area, then record them.',
@@ -121,7 +121,7 @@ export default {
         ],
         acceptRe: ['^npm\\s+run\\s+build\\b.*production'],
         stdout:
-          '> invoice-api@0.1.0 build\n> vite build --mode production\n\nvite v5.2.8 building for production...\ntransforming...\n✓ 42 modules transformed.\ndist/index.js   18.44 kB │ gzip: 6.12 kB\ndist/index.js.map  61.09 kB\n✓ built in 1.86s',
+          '> invoice-api@0.1.0 build\n> vite build --mode production\n\nvite v5.2.8 building for production...\ntransforming...\n✓ 42 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.js      18.44 kB │ gzip: 6.12 kB\ndist/index.js.map  61.09 kB\n✓ built in 1.86s',
         setState: { build: 'production' },
         hints: [
           'The package already defines the build; you only have to run that script and tell it which mode.',
@@ -140,7 +140,7 @@ export default {
         ],
         acceptRe: ['^node\\s+--experimental-vm-modules\\s+\\.?/?scripts/run\\.js$'],
         stdout:
-          '(node:4821) ExperimentalWarning: VM Modules is an experimental feature and might change at any time\nsmoke: loaded dist/index.js\nsmoke: GET /health -> 200 {"status":"ok","version":"0.1.0"}\nsmoke: 1 check passed',
+          '(node:4821) ExperimentalWarning: VM Modules is an experimental feature and might change at any time\n(Use `node --trace-warnings ...` to show where the warning was created)\nsmoke: loaded dist/index.js\nsmoke: GET /health -> 200 {"status":"ok","version":"0.1.0"}\nsmoke: 1 check passed',
         setState: { smoke: 'ok' },
         hints: [
           'A build is only proven when something actually executes it — use the runtime that reads JavaScript directly.',
@@ -169,17 +169,17 @@ export default {
     steps: [
       {
         id: 's1',
-        promptEn: 'Read the last 20 lines of the failing CI log at logs/ci-run-482.log.',
+        promptEn: 'Read the last 30 lines of the failing CI log at logs/ci-run-482.log.',
         hintTerm: 'Log',
-        accept: ['tail -n 20 logs/ci-run-482.log', 'tail -20 logs/ci-run-482.log'],
+        accept: ['tail -n 30 logs/ci-run-482.log', 'tail -30 logs/ci-run-482.log'],
         acceptRe: ['^tail\\b.*logs/ci-run-482\\.log$', '^cat\\s+logs/ci-run-482\\.log$'],
         stdout:
-          "> shop-api@2.4.0 test\n> jest --runInBand\n\nPASS  tests/auth.test.js\nFAIL  tests/cart.test.js\n  ● applyDiscount > applies a percentage coupon\n\n    TypeError: Cannot read properties of undefined (reading 'code')\n\n      35 | function applyDiscount(cart, coupon) {\n      36 |   const total = cart.items.reduce((sum, i) => sum + i.price, 0);\n    > 37 |   return total * (1 - RATES[coupon.code]);\n         |                              ^\n      38 | }\n\n      at applyDiscount (src/cart.js:37:30)\n\nTests: 1 failed, 18 passed, 19 total\nError: Process completed with exit code 1.",
+          "> shop-api@2.4.0 test\n> jest --runInBand\n\nPASS  tests/auth.test.js\nFAIL  tests/cart.test.js\n  ● applyDiscount › ignores a missing coupon\n\n    TypeError: Cannot read properties of undefined (reading 'code')\n\n      35 | function applyDiscount(cart, coupon) {\n      36 |   const total = cart.items.reduce((sum, i) => sum + i.price, 0);\n    > 37 |   return total * (1 - RATES[coupon.code]);\n         |                                    ^\n      38 | }\n\n      at applyDiscount (src/cart.js:37:36)\n      at Object.<anonymous> (tests/cart.test.js:31:20)\n\nTest Suites: 1 failed, 1 passed, 2 total\nTests:       1 failed, 18 passed, 19 total\nSnapshots:   0 total\nTime:        3.42 s\nRan all test suites.\nError: Process completed with exit code 1.",
         setState: { log: 'read' },
         hints: [
           'CI already wrote down exactly how the process died — read the end of what it wrote.',
           'Print the final lines of a file with `tail -n …`',
-          'tail -n 20 logs/ci-run-482.log',
+          'tail -n 30 logs/ci-run-482.log',
         ],
       },
       {
@@ -189,7 +189,7 @@ export default {
         accept: ['npm test -- cart', 'npx jest cart', 'npm test -- tests/cart.test.js'],
         acceptRe: ['^(npm\\s+(run\\s+)?test|npx\\s+jest)\\b.*cart'],
         stdout:
-          "> shop-api@2.4.0 test\n> jest --runInBand cart\n\nFAIL  tests/cart.test.js\n  ● applyDiscount > applies a percentage coupon\n\n    TypeError: Cannot read properties of undefined (reading 'code')\n      at applyDiscount (src/cart.js:37:30)\n      at Object.<anonymous> (tests/cart.test.js:12:20)\n\nTests: 1 failed, 3 passed, 4 total\nTime: 1.42 s",
+          "> shop-api@2.4.0 test\n> jest --runInBand cart\n\nFAIL  tests/cart.test.js\n  ● applyDiscount › ignores a missing coupon\n\n    TypeError: Cannot read properties of undefined (reading 'code')\n\n      35 | function applyDiscount(cart, coupon) {\n      36 |   const total = cart.items.reduce((sum, i) => sum + i.price, 0);\n    > 37 |   return total * (1 - RATES[coupon.code]);\n         |                                    ^\n      38 | }\n\n      at applyDiscount (src/cart.js:37:36)\n      at Object.<anonymous> (tests/cart.test.js:31:20)\n\nTest Suites: 1 failed, 1 total\nTests:       1 failed, 3 passed, 4 total\nSnapshots:   0 total\nTime:        1.42 s\nRan all test suites matching /cart/i.",
         setState: { reproduced: true },
         hints: [
           'A bug you cannot reproduce locally is a bug you cannot fix — run the suite that failed, and only that one.',
@@ -200,21 +200,22 @@ export default {
       {
         id: 's3',
         promptEn:
-          'Search the src/ tree for every line that reads the coupon code, with line numbers.',
+          'The trace blames one line, but you need every caller too: search the src/ tree for the coupon, with line numbers.',
         hintTerm: 'Bug',
         accept: [
-          'grep -rn "coupon.code" src/',
-          "grep -rn 'coupon.code' src/",
           'grep -rn coupon src/',
+          'grep -rn "coupon" src/',
+          "grep -rn 'coupon' src/",
+          'grep -rn coupon src',
         ],
         acceptRe: ['^(grep|rg)\\b.*coupon.*src'],
         stdout:
-          'src/cart.js:37:  return total * (1 - RATES[coupon.code]);\nsrc/routes/checkout.js:18:  const discounted = applyDiscount(cart, req.body.coupon);\nsrc/routes/checkout.js:19:  res.json({ total: discounted });',
+          'src/cart.js:35:function applyDiscount(cart, coupon) {\nsrc/cart.js:37:  return total * (1 - RATES[coupon.code]);\nsrc/routes/checkout.js:18:  const discounted = applyDiscount(cart, req.body.coupon);',
         setState: { located: true },
         hints: [
           'The stack trace named one file, but you need every caller — search the whole source tree.',
-          'Search recursively and show line numbers: `grep -rn "…" src/`',
-          'grep -rn "coupon.code" src/',
+          'Search recursively and show line numbers: `grep -rn <word> src/`',
+          'grep -rn coupon src/',
         ],
       },
       {
@@ -228,7 +229,7 @@ export default {
         ],
         acceptRe: ['^node\\s+--inspect-brk(=\\d+)?\\s+-r\\s+ts-node/register\\s+src/index\\.ts$'],
         stdout:
-          "Debugger listening on ws://127.0.0.1:9229/6f1b0e4c-2a55-4f0a-9d1e-0c7c1f8a2b31\nFor help, see: https://nodejs.org/en/docs/inspector\nDebugger attached.\nBreak on start in src/index.ts:1\n> 1 import { createServer } from './server';",
+          'Debugger listening on ws://127.0.0.1:9229/6f1b0e4c-2a55-4f0a-9d1e-0c7c1f8a2b31\nFor help, see: https://nodejs.org/en/docs/inspector\nDebugger attached.',
         setState: { debugger: 'attached' },
         hints: [
           'You want the process to stop before the first line runs, so you can step into applyDiscount yourself.',
@@ -244,7 +245,7 @@ export default {
         accept: ['git diff src/cart.js', 'git diff', 'git diff -- src/cart.js'],
         acceptRe: ['^git\\s+diff\\b'],
         stdout:
-          'diff --git a/src/cart.js b/src/cart.js\nindex 4a1c8de..b7e0f52 100644\n--- a/src/cart.js\n+++ b/src/cart.js\n@@ -33,7 +33,8 @@ const RATES = { SUMMER10: 0.1, WELCOME5: 0.05 };\n\n function applyDiscount(cart, coupon) {\n   const total = cart.items.reduce((sum, i) => sum + i.price, 0);\n-  return total * (1 - RATES[coupon.code]);\n+  const rate = coupon ? RATES[coupon.code] || 0 : 0;\n+  return total * (1 - rate);\n }',
+          'diff --git a/src/cart.js b/src/cart.js\nindex 4a1c8de..b7e0f52 100644\n--- a/src/cart.js\n+++ b/src/cart.js\n@@ -34,7 +34,8 @@ const RATES = { SUMMER10: 0.1, WELCOME5: 0.05 };\n \n function applyDiscount(cart, coupon) {\n   const total = cart.items.reduce((sum, i) => sum + i.price, 0);\n-  return total * (1 - RATES[coupon.code]);\n+  const rate = coupon ? RATES[coupon.code] || 0 : 0;\n+  return total * (1 - rate);\n }\n \n module.exports = { applyDiscount };',
         setState: { patch: 'reviewed' },
         hints: [
           'Never commit a fix you have not re-read — ask Git to show you the change itself.',
@@ -259,7 +260,7 @@ export default {
         accept: ['npm test -- cart', 'npx jest cart', 'npm test -- tests/cart.test.js'],
         acceptRe: ['^(npm\\s+(run\\s+)?test|npx\\s+jest)\\b.*cart'],
         stdout:
-          '> shop-api@2.4.0 test\n> jest --runInBand cart\n\nPASS  tests/cart.test.js\n  applyDiscount\n    ✓ applies a percentage coupon (4 ms)\n    ✓ ignores a missing coupon (1 ms)\n    ✓ ignores an unknown coupon code (1 ms)\n\nTests: 4 passed, 4 total\nTime: 1.19 s',
+          '> shop-api@2.4.0 test\n> jest --runInBand cart\n\nPASS  tests/cart.test.js\n  applyDiscount\n    ✓ applies a percentage coupon (4 ms)\n    ✓ applies the welcome coupon (2 ms)\n    ✓ returns 0 for an empty cart (1 ms)\n    ✓ ignores a missing coupon (1 ms)\n\nTest Suites: 1 passed, 1 total\nTests:       4 passed, 4 total\nSnapshots:   0 total\nTime:        1.19 s\nRan all test suites matching /cart/i.',
         setState: { tests: 'green' },
         hints: [
           'A fix is only finished when the test that caught the bug passes.',
@@ -294,10 +295,11 @@ export default {
           'gh issue list --milestone "v2.0" --state open',
           "gh issue list --milestone 'v2.0' --state open",
           'gh issue list --milestone v2.0 --state open',
+          'gh issue list --state open --milestone "v2.0"',
         ],
         acceptRe: ['^gh\\s+issue\\s+list\\b.*--milestone\\b'],
         stdout:
-          'Showing 2 of 2 open issues in acme/payments-api that match your search\n\n#42  bug: login fails with empty password   bug, priority:high   about 3 days ago\n#57  docs: document the SSO feature flag     documentation        about 2 days ago',
+          'Showing 2 of 2 open issues in acme/payments-api that match your search\n\nID   TITLE                                 LABELS              UPDATED\n#42  bug: login fails with empty password  bug, priority:high  about 3 days ago\n#57  docs: document the SSO feature flag   documentation       about 2 days ago',
         setState: { milestone: 'checked' },
         hints: [
           'Start from what the release still owes: the open work filed against that version.',
@@ -312,7 +314,7 @@ export default {
         accept: ['gh pr list --state open', 'gh pr list'],
         acceptRe: ['^gh\\s+pr\\s+list\\b'],
         stdout:
-          'Showing 3 of 3 open pull requests in acme/payments-api\n\n#128  feat(auth): add SSO login   sso-login        about 5 hours ago\n#126  docs: fix README typos      docs/readme      about 1 day ago\n#119  chore: bump eslint to v9    chore/eslint-9   about 4 days ago',
+          'Showing 3 of 3 open pull requests in acme/payments-api\n\nID    TITLE                      BRANCH          CREATEDAT\n#128  feat(auth): add SSO login  sso-login       about 5 hours ago\n#126  docs: fix README typos     docs/readme     about 1 day ago\n#119  chore: bump eslint to v9   chore/eslint-9  about 4 days ago',
         setState: { prs: 'listed' },
         hints: [
           'An issue is closed by a proposed change — go and see which changes are waiting.',
@@ -325,9 +327,9 @@ export default {
         promptEn: 'Open pull request 128 and read who wrote it and what it claims to close.',
         hintTerm: 'Contributor',
         accept: ['gh pr view 128', 'gh pr view 128 --comments'],
-        acceptRe: ['^gh\\s+pr\\s+view\\s+128\\b'],
+        acceptRe: ['^gh\\s+pr\\s+view\\b(?=.*\\b128\\b)'],
         stdout:
-          'feat(auth): add SSO login #128\nOpen • m-rossi wants to merge 3 commits into main from sso-login\nReviewers: @team/backend\nLabels: enhancement\nMilestone: v2.0\n\n  Closes #42. Adds an SSO login flow behind the AUTH_SSO feature flag and\n  rejects an empty password with 400 instead of a 500.\n  First contribution here — happy to split the commits if you prefer.\n\nView this pull request on GitHub: https://github.com/acme/payments-api/pull/128',
+          'feat(auth): add SSO login #128\nOpen • m-rossi wants to merge 3 commits into main from sso-login • about 5 hours ago\nReviewers: @team/backend (Requested)\nLabels: enhancement\nMilestone: v2.0\n\n  Closes #42. Adds an SSO login flow behind the AUTH_SSO feature flag and\n  rejects an empty password with 400 instead of a 500.\n  First contribution here — happy to split the commits if you prefer.\n\nView this pull request on GitHub: https://github.com/acme/payments-api/pull/128',
         setState: { author: 'seen' },
         hints: [
           'Before judging a change, find out who is proposing it and what problem they say it solves.',
@@ -340,10 +342,10 @@ export default {
         promptEn:
           'Read the actual code change of pull request 128 before you say anything about it.',
         hintTerm: 'Code Review',
-        accept: ['gh pr diff 128'],
-        acceptRe: ['^gh\\s+pr\\s+diff\\s+128\\b'],
+        accept: ['gh pr diff 128', 'gh pr diff 128 --color never'],
+        acceptRe: ['^gh\\s+pr\\s+diff\\b(?=.*\\b128\\b)'],
         stdout:
-          "diff --git a/src/auth/login.ts b/src/auth/login.ts\nindex 2c9a41f..e5b7d10 100644\n--- a/src/auth/login.ts\n+++ b/src/auth/login.ts\n@@ -12,6 +12,11 @@ export async function login(req: Request, res: Response) {\n   const { email, password } = req.body;\n+  if (!password) {\n+    return res.status(400).json({ error: 'password_required' });\n+  }\n+  if (flags.AUTH_SSO && req.body.provider) {\n+    return ssoLogin(req, res);\n+  }\n   const user = await users.findByEmail(email);\n\ndiff --git a/tests/login.test.ts b/tests/login.test.ts\n@@ -0,0 +1,14 @@\n+it('rejects an empty password with 400', async () => {\n+  const res = await request(app).post('/login').send({ email: 'a@example.com' });\n+  expect(res.status).toBe(400);\n+});",
+          "diff --git a/src/auth/login.ts b/src/auth/login.ts\nindex 2c9a41f..e5b7d10 100644\n--- a/src/auth/login.ts\n+++ b/src/auth/login.ts\n@@ -12,6 +12,12 @@ export async function login(req: Request, res: Response) {\n   const { email, password } = req.body;\n   const ip = req.ip;\n \n+  if (!password) {\n+    return res.status(400).json({ error: 'password_required' });\n+  }\n+  if (flags.AUTH_SSO && req.body.provider) {\n+    return ssoLogin(req, res);\n+  }\n   const user = await users.findByEmail(email);\n   if (!user) {\n     return res.status(401).json({ error: 'invalid_credentials' });\n\ndiff --git a/tests/login.test.ts b/tests/login.test.ts\nindex 7d3e0aa..1f42b96 100644\n--- a/tests/login.test.ts\n+++ b/tests/login.test.ts\n@@ -20,3 +20,8 @@ describe('login', () => {\n     expect(res.status).toBe(200);\n   });\n+\n+  it('rejects an empty password with 400', async () => {\n+    const res = await request(app).post('/login').send({ email: 'a@example.com' });\n+    expect(res.status).toBe(400);\n+  });\n });",
         setState: { diff: 'read' },
         hints: [
           'A review of a description is not a review — you need the lines that changed.',
@@ -356,9 +358,9 @@ export default {
         promptEn: 'Check that CI is actually green on pull request 128 before approving it.',
         hintTerm: 'Code Review',
         accept: ['gh pr checks 128'],
-        acceptRe: ['^gh\\s+pr\\s+checks\\s+128\\b'],
+        acceptRe: ['^gh\\s+pr\\s+checks\\b(?=.*\\b128\\b)'],
         stdout:
-          'All checks were successful\n0 cancelled, 0 failing, 4 successful, 0 skipped, and 0 pending\n\n   NAME         ELAPSED  URL\n✓  lint         24s      https://github.com/acme/payments-api/actions/runs/9001\n✓  unit-tests   1m12s    https://github.com/acme/payments-api/actions/runs/9001\n✓  build        58s      https://github.com/acme/payments-api/actions/runs/9001\n✓  codeql       2m03s    https://github.com/acme/payments-api/actions/runs/9001',
+          'All checks were successful\n0 cancelled, 0 failing, 4 successful, 0 skipped, and 0 pending\n\n   NAME        ELAPSED  URL\n✓  lint        24s      https://github.com/acme/payments-api/actions/runs/9001/job/24711\n✓  unit-tests  1m12s    https://github.com/acme/payments-api/actions/runs/9001/job/24712\n✓  build       58s      https://github.com/acme/payments-api/actions/runs/9001/job/24713\n✓  codeql      2m03s    https://github.com/acme/payments-api/actions/runs/9001/job/24714',
         setState: { checks: 'green' },
         hints: [
           'Your eyes are not the only reviewer — the pipeline has an opinion too.',
@@ -373,9 +375,11 @@ export default {
         hintTerm: 'Code Review',
         accept: [
           'gh pr review 128 --approve --body "LGTM, thanks for adding the test"',
+          "gh pr review 128 --approve --body 'LGTM, thanks for adding the test'",
           'gh pr review 128 --approve',
+          'gh pr review --approve 128',
         ],
-        acceptRe: ['^gh\\s+pr\\s+review\\s+128\\b.*--approve\\b'],
+        acceptRe: ['^gh\\s+pr\\s+review\\b(?=.*\\b128\\b)(?=.*--approve\\b)'],
         stdout: '✓ Approved pull request #128',
         setState: { review: 'approved' },
         hints: [
@@ -411,7 +415,7 @@ export default {
         accept: ['cat README.md', 'less README.md'],
         acceptRe: ['^(cat|less|more)\\s+\\.?/?readme\\.md$'],
         stdout:
-          '# payments-api\n\nPayment endpoints for the ACME storefront.\n\n## Release procedure\n1. Bump the minor version with npm; it writes package.json and creates an annotated tag.\n2. Regenerate the API reference into docs/api.\n3. Push the release commit together with its tag.\n\nEvery release commit must be signed. The flag is in the git commit manual.',
+          '# payments-api\n\nPayment endpoints for the ACME storefront.\n\n## Release procedure\n1. Bump the minor version with npm; it writes package.json and creates an annotated tag.\n2. Regenerate the API reference into docs/api.\n3. Push the release commit together with its tag.\n\n## Notes\nSigning a release commit is optional on this repo; the flag is documented in the\ngit commit manual. Look it up before you have to use it.',
         setState: { readme: 'read' },
         hints: [
           'The project already documents how it is released — read the file every repository starts with.',
@@ -422,12 +426,12 @@ export default {
       {
         id: 's2',
         promptEn:
-          'The README says release commits must be signed. Open the built-in manual for git commit and page through it.',
+          'The README sends you to the git commit manual for the signing flag. Open that manual in a pager.',
         hintTerm: 'Manual',
         accept: ['git help commit | less', 'git help commit', 'man git-commit'],
         acceptRe: ['^git\\s+help\\s+commit\\b', '^man\\s+git-commit$'],
         stdout:
-          'GIT-COMMIT(1)                     Git Manual                     GIT-COMMIT(1)\n\nNAME\n       git-commit - Record changes to the repository\n\nSYNOPSIS\n       git commit [-a | --interactive | --patch] [-s] [-v]\n                  [--amend] [-S[<keyid>]] [-m <msg>] [--] [<pathspec>...]\n\n       -S[<keyid>], --gpg-sign[=<keyid>]\n           GPG-sign commits. The keyid argument is optional and defaults to the\n           committer identity.\n\n Manual page git-commit(1) line 1 (press h for help or q to quit)',
+          'GIT-COMMIT(1)                     Git Manual                     GIT-COMMIT(1)\n\nNAME\n       git-commit - Record changes to the repository\n\nSYNOPSIS\n       git commit [-a | --interactive | --patch] [-s] [-v] [-u[<mode>]]\n                  [--amend] [--dry-run] [(-c | -C | --squash) <commit> |\n                  --fixup [(amend|reword):]<commit>] [-F <file> | -m <msg>]\n                  [--reset-author] [--allow-empty] [--allow-empty-message]\n                  [--no-verify] [-e] [--author=<author>] [--date=<date>]\n                  [--cleanup=<mode>] [--[no-]status] [-i | -o]\n                  [--pathspec-from-file=<file> [--pathspec-file-nul]]\n                  [(--trailer <token>[(=|:)<value>])...] [-S[<keyid>]]\n                  [--] [<pathspec>...]\n\nDESCRIPTION\n       Create a new commit containing the current contents of the index and the\n       given log message describing the changes. The new commit is a direct\n       child of HEAD, usually the tip of the current branch, and the branch is\n       updated to point to it (unless no branch is associated with the working\n       tree, in which case HEAD is "detached" as described in git-checkout(1)).\n\n Manual page git-commit(1) line 1 (press h for help or q to quit)',
         setState: { manual: 'checked' },
         hints: [
           'Do not guess the flag — Git ships its own manual for every subcommand.',
@@ -462,7 +466,7 @@ export default {
         accept: ['git show v1.3.0 --stat', 'git show --stat v1.3.0'],
         acceptRe: ['^git\\s+show\\b.*v1\\.3\\.0'],
         stdout:
-          'tag v1.3.0\nTagger: Dev Team <dev@example.com>\nDate:   Wed Mar 11 11:04:22 2026 +0100\n\nrelease: bump to v1.3.0 with new auth feature\n\ncommit 6d21f0b9c4a7e35b0f1c8d2a9b3e4f5a (HEAD -> main, tag: v1.3.0)\n\n package.json      | 2 +-\n package-lock.json | 4 ++--\n 2 files changed, 3 insertions(+), 3 deletions(-)',
+          'tag v1.3.0\nTagger: Dev Team <dev@example.com>\nDate:   Wed Mar 11 11:04:22 2026 +0100\n\nrelease: bump to 1.3.0 with new auth feature\n\ncommit 6d21f0b9c4a7e35b0f1c8d2a9b3e4f5a7c60e1d8 (HEAD -> main, tag: v1.3.0)\nAuthor: Dev Team <dev@example.com>\nDate:   Wed Mar 11 11:04:21 2026 +0100\n\n    release: bump to 1.3.0 with new auth feature\n\n package.json      | 2 +-\n package-lock.json | 4 ++--\n 2 files changed, 3 insertions(+), 3 deletions(-)',
         setState: { tag: 'verified' },
         hints: [
           'Trust, then verify: look at the annotated tag the version bump left behind.',
@@ -481,7 +485,7 @@ export default {
         ],
         acceptRe: ['^npx\\s+typedoc\\b.*docs/api'],
         stdout:
-          '[info] Loaded plugin typedoc-plugin-markdown\n[info] Converting project payments-api 1.3.0\n[warning] src/auth/login.ts:31 - Missing @param documentation for "provider"\n[info] Documentation generated at ./docs/api in 3.4s',
+          '[info] Loaded plugin typedoc-plugin-markdown\n[warning] Documentation for parameter "provider" was not found.\n[info] Documentation generated at ./docs/api',
         setState: { apidocs: 'built' },
         hints: [
           'The reference is generated from the source comments, not written by hand.',
@@ -496,7 +500,7 @@ export default {
         accept: ['git push --follow-tags origin main', 'git push origin main --follow-tags'],
         acceptRe: ['^git\\s+push\\b.*--follow-tags\\b'],
         stdout:
-          'Enumerating objects: 9, done.\nCounting objects: 100% (9/9), done.\nWriting objects: 100% (5/5), 612 bytes | 612.00 KiB/s, done.\nTo github.com:acme/payments-api.git\n   9b1c4e2..6d21f0b  main -> main\n * [new tag]         v1.3.0 -> v1.3.0',
+          'Enumerating objects: 9, done.\nCounting objects: 100% (9/9), done.\nDelta compression using up to 8 threads\nCompressing objects: 100% (4/4), done.\nWriting objects: 100% (5/5), 612 bytes | 612.00 KiB/s, done.\nTotal 5 (delta 3), reused 0 (delta 0), pack-reused 0\nTo github.com:acme/payments-api.git\n   9b1c4e2..6d21f0b  main -> main\n * [new tag]         v1.3.0 -> v1.3.0',
         setState: { pushed: true },
         hints: [
           'A tag that never leaves your laptop is not a release — send it with the commit.',

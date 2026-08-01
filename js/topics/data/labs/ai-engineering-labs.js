@@ -211,7 +211,7 @@ export default {
           '  1. "customer_id"\n' +
           '      Type of data:         Number\n' +
           '      Contains null values: False\n' +
-          '      Unique values:        8198\n' +
+          '      Unique values:        8160\n' +
           '  2. "signup_date"\n' +
           '      Type of data:         Date\n' +
           '      Contains null values: False\n' +
@@ -222,13 +222,20 @@ export default {
           '      Contains null values: True (excluded from calculations)\n' +
           '      Smallest value:       0\n' +
           '      Largest value:        999999\n' +
-          '      Mean:                 231.87\n' +
+          '      Mean:                 1807.24\n' +
           '      Median:               58.4\n' +
           '  4. "country"\n' +
           '      Type of data:         Text\n' +
           '      Contains null values: False\n' +
           '      Unique values:        37\n' +
-          '      Most common values:   IT (3011x), it (742x), ITA (96x)\n' +
+          '      Most common values:   IT (3011x)\n' +
+          '                            it (742x)\n' +
+          '                            ITA (96x)\n' +
+          '  5. "email"\n' +
+          '      Type of data:         Text\n' +
+          '      Contains null values: False\n' +
+          '      Unique values:        8198\n' +
+          '      Longest value:        34 characters\n' +
           '\n' +
           'Row count: 8412',
         setState: { profiled: true },
@@ -244,7 +251,7 @@ export default {
           'The row count is higher than the number of unique customer_id values. Report the duplicate rows.',
         hintTerm: 'Duplicate',
         accept: ['python scripts/dupes.py', 'python scripts/dupes.py customers.csv'],
-        acceptRe: ['^(python3?\\s+)?(scripts/)?dupes(\\.py)?\\b'],
+        acceptRe: ['^(python3?\\s+|\\./|(\\./)?scripts/)\\S*dupes(\\.py)?\\b'],
         stdout:
           'scanning customers.csv (8,412 rows)\n' +
           'exact duplicate rows:                      214\n' +
@@ -269,8 +276,9 @@ export default {
           'python scripts/dupes.py --drop',
           'python scripts/dupes.py --drop --ignore-case',
           'python scripts/dupes.py --drop customers.csv',
+          'python scripts/dupes.py customers.csv --drop',
         ],
-        acceptRe: ['^(python3?\\s+)?(scripts/)?dupes(\\.py)?\\s+--drop\\b'],
+        acceptRe: ['^(python3?\\s+|\\./|(\\./)?scripts/)\\S*dupes(\\.py)?\\b.*--drop\\b'],
         stdout:
           'normalising text columns: country (it, It, ITA -> IT), email (lowercased)\n' +
           'dropped 214 exact duplicates + 38 case-insensitive duplicates\n' +
@@ -294,7 +302,7 @@ export default {
           'python scripts/outliers.py monthly_spend',
           'python scripts/outliers.py',
         ],
-        acceptRe: ['^(python3?\\s+)?(scripts/)?outliers(\\.py)?\\b'],
+        acceptRe: ['^(python3?\\s+|\\./|(\\./)?scripts/)\\S*outliers(\\.py)?\\b'],
         stdout:
           'column: monthly_spend   n=8,160   missing=1,043 (12.8%)\n' +
           'quartiles: q1=22.10  median=58.40  q3=162.30\n' +
@@ -321,11 +329,11 @@ export default {
           'python scripts/impute.py --strategy median',
           'python scripts/impute.py --column monthly_spend --strategy median --sentinel 999999',
         ],
-        acceptRe: ['^(python3?\\s+)?(scripts/)?impute(\\.py)?\\b.*\\bmedian\\b'],
+        acceptRe: ['^(python3?\\s+|\\./|(\\./)?scripts/)\\S*impute(\\.py)?\\b.*\\bmedian\\b'],
         stdout:
           'monthly_spend: 12 sentinel values (999999) -> NaN\n' +
           'monthly_spend: 1,055 missing values filled with the median = 58.40\n' +
-          'monthly_spend: mean 231.87 -> 148.62, max 999999.00 -> 4820.00\n' +
+          'monthly_spend: mean 1807.24 -> 113.20, max 999999.00 -> 4820.00\n' +
           'added flag column monthly_spend_was_missing (1,055 rows = 1)\n' +
           'wrote data/customers_clean.csv',
         setState: { imputed: true },
@@ -384,7 +392,7 @@ export default {
         ],
         acceptRe: ['^llm\\s+embed-multi\\s+helpdesk\\b'],
         stdout:
-          'Embedding: 100%|##########################| 128/128 [00:11<00:00, 11.4 docs/s]\n' +
+          'Embedding  [####################################]  100%\n' +
           "collection 'helpdesk': 128 documents, 1536 dimensions, model 3-small\n" +
           'stored in ~/.config/io.datasette.llm/embeddings.db',
         setState: { indexed: true },
@@ -439,8 +447,12 @@ export default {
         accept: [
           'llm -f docs/account/reset-password.md -s "answer only from this article" "how do I reset my password"',
           'llm -s "answer only from this article" "how do I reset my password"',
+          'cat docs/account/reset-password.md | llm -s "answer only from this article" "how do I reset my password"',
         ],
-        acceptRe: ['^llm\\s+-(f|s|m|t)\\b'],
+        acceptRe: [
+          '^llm\\b.*\\s-(f|s)\\b.*(reset|password)',
+          '^cat\\b.*\\|\\s*llm\\b.*(reset|password)',
+        ],
         stdout:
           'To reset your password, open the sign-in screen and choose "Forgot password".\n' +
           'We email a one-time link that stays valid for 30 minutes; opening it lets\n' +
@@ -467,11 +479,11 @@ export default {
           '    "prompt": "how do I reset my password",\n' +
           '    "input_tokens": 1834,\n' +
           '    "output_tokens": 96,\n' +
-          '    "token_details": {"cached_input_tokens": 1024},\n' +
-          '    "duration_ms": 1420\n' +
+          '    "token_details": {"cached_tokens": 1024},\n' +
+          '    "duration_ms": 1420,\n' +
+          '    "datetime_utc": "2024-11-30T09:14:22.481Z"\n' +
           '  }\n' +
-          ']\n' +
-          '1 conversation, 1930 tokens total',
+          ']',
         setState: { tokens: 'checked' },
         hints: [
           'Every call is billed by the size of what goes in and what comes out — the CLI already recorded it.',
@@ -485,7 +497,7 @@ export default {
           "Run sentiment analysis over yesterday's tickets to see whether the assistant is actually helping.",
         hintTerm: 'Sentiment Analysis',
         accept: ['cat tickets.csv | llm -t sentiment', 'llm -t sentiment < tickets.csv'],
-        acceptRe: ['\\bllm\\b.*\\bsentiment\\b'],
+        acceptRe: ['\\bllm\\b.*--?t(emplate)?\\s+sentiment\\b', '\\bllm\\b.*\\s-s\\b.*sentiment'],
         stdout:
           'label      tickets   share\n' +
           'positive       412   61.2%\n' +
@@ -525,7 +537,7 @@ export default {
         promptEn: 'Re-run the training job and watch the training and validation loss per epoch.',
         hintTerm: 'Overfitting',
         accept: ['python train.py', 'python3 train.py', 'python train.py --epochs 40'],
-        acceptRe: ['^python3?\\s+train\\.py\\b'],
+        acceptRe: ['^(python3?\\s+|\\./)train\\.py\\b'],
         stdout:
           'epoch  1/40   train_loss 0.681   val_loss 0.674   val_auc 0.612\n' +
           'epoch  5/40   train_loss 0.402   val_loss 0.418   val_auc 0.803\n' +
@@ -550,7 +562,7 @@ export default {
           'python plot_curve.py --run latest',
           'python3 plot_curve.py',
         ],
-        acceptRe: ['^(python3?\\s+)?plot_curve(\\.py)?\\b'],
+        acceptRe: ['^(python3?\\s+|\\./)plot_curve(\\.py)?\\b'],
         stdout:
           'run: latest (40 epochs)\n' +
           'train_loss  0.681 -> 0.009   still falling, no floor reached\n' +
@@ -574,7 +586,9 @@ export default {
           'python train.py --regularization l2 --l2 0.01',
           'python train.py --weight-decay 0.01',
         ],
-        acceptRe: ['^python3?\\s+train\\.py\\b.*(--l2|--weight-decay|--regulari[sz]ation)\\b'],
+        acceptRe: [
+          '^(python3?\\s+|\\./)train\\.py\\b.*(--l2|--weight[-_]decay|--regulari[sz]ation)\\b',
+        ],
         stdout:
           'regularization: l2 (lambda = 0.01)\n' +
           'epoch 10/40   train_loss 0.318   val_loss 0.342   val_auc 0.858\n' +
@@ -599,7 +613,7 @@ export default {
           'python train.py --early-stopping --patience 5',
           'python train.py --early-stopping',
         ],
-        acceptRe: ['^python3?\\s+train\\.py\\b.*--early[-_]?stop'],
+        acceptRe: ['^(python3?\\s+|\\./)train\\.py\\b.*--early[-_]?stop'],
         stdout:
           'regularization: l2 (lambda = 0.01)\n' +
           'early stopping: monitor=val_loss, patience=5, restore_best_weights=True\n' +
@@ -623,14 +637,14 @@ export default {
           'python evaluate.py --test',
           'python evaluate.py',
         ],
-        acceptRe: ['^python3?\\s+evaluate\\.py\\b'],
+        acceptRe: ['^(python3?\\s+|\\./)evaluate\\.py\\b'],
         stdout:
           'model: models/price-es.pkl\n' +
           'split        loss     auc     accuracy\n' +
           'train       0.266   0.901       0.842\n' +
           'validation  0.311   0.874       0.821\n' +
           'test        0.318   0.869       0.818\n' +
-          'generalization gap (train -> test): 0.052   (0.221 before the fix)\n' +
+          'generalization gap (train -> test): 0.052   (0.576 before the fix)\n' +
           'verdict: the model now performs on unseen data almost as well as on its own',
         setState: { generalization: 'checked' },
         hints: [

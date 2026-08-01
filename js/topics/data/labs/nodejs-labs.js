@@ -25,10 +25,16 @@ export default {
   node_foundations_4: {
     title: 'Bring up Node on a fresh machine',
     intro:
-      'Primo giorno, portatile vuoto, turno di reperibilita stanotte. / First day, empty laptop, and you are on call tonight. Install the runtime, pin the LTS line your team runs, and prove the on-call script executes.',
+      'Primo giorno, portatile vuoto, turno di reperibilità stanotte. / First day, empty laptop, and you are on call tonight. Install the runtime, pin the LTS line your team runs, and prove the on-call script executes.',
     cwd0: '/Users/dev/oncall',
-    vocab: ['Install', 'Version', 'LTS', 'NVM', 'Executable', 'Script'],
-    requires: { node_installed: true, lts_active: true, path_known: true, script_ran: true },
+    vocab: ['Install', 'Version', 'Current', 'LTS', 'NVM', 'Executable', 'Script'],
+    requires: {
+      node_installed: true,
+      version_checked: true,
+      lts_active: true,
+      path_known: true,
+      script_ran: true,
+    },
     steps: [
       {
         id: 's1',
@@ -37,7 +43,7 @@ export default {
         accept: ['brew install node', 'brew install nodejs'],
         acceptRe: ['^brew\\s+install\\s+node(js)?(@\\d+)?\\b'],
         stdout:
-          '==> Fetching node\n==> Pouring node--26.2.0.arm64.bottle.tar.gz\n==> Summary\n/opt/homebrew/Cellar/node/26.2.0: 2,451 files, 87.4MB',
+          '==> Fetching node\n==> Pouring node--26.2.0.arm64_sequoia.bottle.tar.gz\n==> Summary\n🍺  /opt/homebrew/Cellar/node/26.2.0: 2,451 files, 87.4MB, built in 4 seconds\n==> Running `brew cleanup node`...',
         setState: { node_installed: true },
         hints: [
           'On a Mac you install developer tools with the package manager, not by downloading an installer.',
@@ -65,9 +71,9 @@ export default {
           'That is the Current release. Your team pins the LTS line — install and switch to the latest LTS with the version manager.',
         hintTerm: 'NVM',
         accept: ['nvm install --lts', 'nvm install 24', 'nvm install lts/*'],
-        acceptRe: ['^nvm\\s+install\\s+(--lts|lts\\/\\*|24(\\.\\d+)*)\\b'],
+        acceptRe: ['^nvm\\s+install\\s+(--lts\\b|lts\\/\\*|24(\\.\\d+)*\\b)'],
         stdout:
-          'Downloading and installing node v24.9.0...\nComputing checksum with sha256sum\nChecksums matched!\nNow using node v24.9.0 (npm v11.4.2)',
+          'Installing latest LTS version.\nDownloading and installing node v24.18.0...\nComputing checksum with shasum -a 256\nChecksums matched!\nNow using node v24.18.0 (npm v11.16.0)',
         setState: { lts_active: true },
         hints: [
           'Homebrew gives you one version. You need the tool that lets several versions coexist and switches between them.',
@@ -82,7 +88,7 @@ export default {
         hintTerm: 'Executable',
         accept: ['which node', 'command -v node', 'type node'],
         acceptRe: ['^which\\s+node\\b', '^command\\s+-v\\s+node\\b', '^type\\s+node\\b'],
-        stdout: '/Users/dev/.nvm/versions/node/v24.9.0/bin/node',
+        stdout: '/Users/dev/.nvm/versions/node/v24.18.0/bin/node',
         setState: { path_known: true },
         hints: [
           'You want the full path of the binary the shell resolves — not its version.',
@@ -97,7 +103,7 @@ export default {
         accept: ['node app.js', 'node ./app.js'],
         acceptRe: ['^node\\s+(\\.\\/)?app\\.js\\b'],
         stdout:
-          '[oncall] runtime v24.9.0\n[oncall] loading roster from ./data/roster.json\n[oncall] digest built: 3 alerts, 0 pages\nDone in 412ms.',
+          '[oncall] runtime v24.18.0\n[oncall] loading roster from ./data/roster.json\n[oncall] digest built: 3 alerts, 0 pages\nDone in 412ms.',
         setState: { script_ran: true },
         hints: [
           'A .js file is not executable by itself — something has to interpret it.',
@@ -128,9 +134,9 @@ export default {
         promptEn:
           'Open an interactive Node session on this box so you can evaluate expressions live.',
         hintTerm: 'REPL',
-        accept: ['node'],
-        acceptRe: ['^node\\s*$'],
-        stdout: 'Welcome to Node.js v24.9.0.\nType ".help" for more information.\n>',
+        accept: ['node', 'node -i', 'node --interactive'],
+        acceptRe: ['^node\\s*$', '^node\\s+(-i|--interactive)\\s*$'],
+        stdout: 'Welcome to Node.js v24.18.0.\nType ".help" for more information.\n>',
         setState: { repl_open: true },
         hints: [
           'The read-eval-print loop needs no file and no arguments.',
@@ -148,7 +154,7 @@ export default {
           '^process\\.versions\\.v8\\b',
           'console\\.log\\(\\s*process\\.versions\\.v8\\s*\\)',
         ],
-        stdout: "'13.6.233.10-node.18'",
+        stdout: "'13.6.233.17-node.50'",
         setState: { v8_known: true },
         hints: [
           'The runtime exposes a global object describing the process it is running in, including every bundled component version.',
@@ -176,10 +182,15 @@ export default {
         promptEn:
           'Count the CPU cores on this box — you need the number to explain why Node still runs your JavaScript on one thread.',
         hintTerm: 'Single-Threaded',
-        accept: ["require('os').cpus().length", 'os.cpus().length'],
+        accept: [
+          "require('os').cpus().length",
+          'os.cpus().length',
+          'os.availableParallelism()',
+          "require('os').availableParallelism()",
+        ],
         acceptRe: [
-          'require\\(\\s*[\'"]os[\'"]\\s*\\)\\.cpus\\(\\)\\.length',
-          '^os\\.cpus\\(\\)\\.length\\b',
+          'require\\(\\s*[\'"]os[\'"]\\s*\\)\\.(cpus\\(\\)\\.length|availableParallelism\\(\\))',
+          '^os\\.(cpus\\(\\)\\.length|availableParallelism\\(\\))',
         ],
         stdout: '8',
         setState: { cores_known: true },
@@ -201,7 +212,7 @@ export default {
         ],
         acceptRe: ['^node\\s+(-p|--print|-e|--eval)\\s+.*process\\.versions'],
         stdout:
-          "{\n  node: '24.9.0',\n  acorn: '8.15.0',\n  ada: '3.2.4',\n  ares: '1.34.5',\n  brotli: '1.1.0',\n  cldr: '47.0',\n  icu: '77.1',\n  llhttp: '9.3.0',\n  modules: '137',\n  napi: '10',\n  nghttp2: '1.65.0',\n  openssl: '3.5.2',\n  simdjson: '3.13.0',\n  tz: '2025b',\n  undici: '7.14.0',\n  unicode: '16.0',\n  uv: '1.51.0',\n  v8: '13.6.233.10-node.18',\n  zlib: '1.3.1'\n}",
+          "{\n  node: '24.18.0',\n  acorn: '8.16.0',\n  ada: '3.4.4',\n  amaro: '1.1.9',\n  ares: '1.34.6',\n  brotli: '1.2.0',\n  cldr: '48.0',\n  icu: '78.3',\n  llhttp: '9.4.2',\n  modules: '137',\n  napi: '10',\n  nbytes: '0.1.4',\n  ncrypto: '0.0.1',\n  nghttp2: '1.69.0',\n  openssl: '3.5.7',\n  simdjson: '4.6.4',\n  simdutf: '6.4.0',\n  sqlite: '3.53.1',\n  tz: '2026b',\n  undici: '7.28.0',\n  unicode: '17.0',\n  uv: '1.52.1',\n  uvwasi: '0.0.23',\n  v8: '13.6.233.17-node.50',\n  zlib: '1.3.1-e00f703',\n  zstd: '1.5.7'\n}",
         setState: { report_ready: true },
         hints: [
           'Node can evaluate one expression and print the result without ever entering the REPL.',
@@ -242,7 +253,7 @@ export default {
         hintTerm: 'NPM',
         accept: ['npm --version', 'npm -v'],
         acceptRe: ['^npm\\s+(-v|--version)\\b'],
-        stdout: '11.4.2',
+        stdout: '11.16.0',
         setState: { npm_ready: true },
         hints: [
           'The package manager ships with Node, but you should still check it answers.',
@@ -258,7 +269,7 @@ export default {
         accept: ['npm init -y', 'npm init --yes'],
         acceptRe: ['^npm\\s+init\\s+(-y|--yes)\\b'],
         stdout:
-          'Wrote to /home/dev/billing-api/package.json:\n\n{\n  "name": "billing-api",\n  "version": "1.0.0",\n  "main": "index.js",\n  "scripts": {\n    "test": "echo \\"Error: no test specified\\" && exit 1"\n  },\n  "keywords": [],\n  "author": "",\n  "license": "ISC",\n  "description": ""\n}',
+          'Wrote to /home/dev/billing-api/package.json:\n\n{\n  "name": "billing-api",\n  "version": "1.0.0",\n  "description": "",\n  "main": "index.js",\n  "scripts": {\n    "test": "echo \\"Error: no test specified\\" && exit 1"\n  },\n  "keywords": [],\n  "author": "",\n  "license": "ISC",\n  "type": "commonjs"\n}',
         setState: { manifest: true },
         hints: [
           'There is a command that writes the manifest for you; a flag makes it skip the questionnaire and accept every default.',
@@ -272,7 +283,7 @@ export default {
           'index.js requires express. Pull that package from the registry as a local dependency of this project.',
         hintTerm: 'npm install',
         accept: ['npm install express', 'npm i express', 'npm add express'],
-        acceptRe: ['^npm\\s+(i|install|add)\\s+express\\b'],
+        acceptRe: ['^npm\\s+(i|install|add)\\s+(-{1,2}[\\w-]+\\s+)*express\\b'],
         stdout:
           'added 69 packages, and audited 70 packages in 3s\n\n14 packages are looking for funding\n  run `npm fund` for details\n\nfound 0 vulnerabilities',
         setState: { express: 'installed' },
@@ -288,7 +299,7 @@ export default {
           'The date maths copied from the old service calls lodash. Install that package locally too.',
         hintTerm: 'Local Install',
         accept: ['npm install lodash', 'npm i lodash', 'npm add lodash'],
-        acceptRe: ['^npm\\s+(i|install|add)\\s+lodash\\b'],
+        acceptRe: ['^npm\\s+(i|install|add)\\s+(-{1,2}[\\w-]+\\s+)*lodash\\b'],
         stdout:
           'added 1 package, and audited 71 packages in 1s\n\n14 packages are looking for funding\n  run `npm fund` for details\n\nfound 0 vulnerabilities',
         setState: { lodash: 'installed' },
@@ -304,7 +315,7 @@ export default {
           'Code review: both lodash helpers you used now exist in the standard library. Remove lodash from the project dependencies.',
         hintTerm: 'Uninstall',
         accept: ['npm uninstall lodash', 'npm remove lodash', 'npm rm lodash'],
-        acceptRe: ['^npm\\s+(uninstall|remove|rm|un)\\s+lodash\\b'],
+        acceptRe: ['^npm\\s+(uninstall|unlink|remove|rm|un|r)\\s+(-{1,2}[\\w-]+\\s+)*lodash\\b'],
         stdout:
           'removed 1 package, and audited 70 packages in 685ms\n\n14 packages are looking for funding\n  run `npm fund` for details\n\nfound 0 vulnerabilities',
         setState: { lodash: 'removed' },
@@ -322,7 +333,7 @@ export default {
         accept: ['npx eslint .', 'npx eslint'],
         acceptRe: ['^npx\\s+eslint\\b'],
         stdout:
-          "Need to install the following packages:\n  eslint@9.34.0\nOk to proceed? (y) y\n\n/home/dev/billing-api/index.js\n  12:7  warning  'total' is assigned a value but never used  no-unused-vars\n\n1 problem (0 errors, 1 warning)",
+          "Need to install the following packages:\n  eslint@10.8.0\nOk to proceed? (y) y\n\n/home/dev/billing-api/index.js\n  12:7  warning  'total' is assigned a value but never used  no-unused-vars\n\n✖ 1 problem (0 errors, 1 warning)",
         setState: { linted: true },
         hints: [
           'There is a runner that fetches a package binary, executes it once, and leaves your dependency list untouched.',
@@ -337,7 +348,7 @@ export default {
   node_foundations_7: {
     title: 'Read the stack trace: a scope bug killed the nightly job',
     intro:
-      'Il job notturno e morto alle 03:00 con un ReferenceError. / The nightly report job died at 03:00 with a ReferenceError. Reproduce it, read the stack trace, and prove exactly which scope rule broke it before you touch the code.',
+      'Il job notturno è morto alle 03:00 con un ReferenceError. / The nightly report job died at 03:00 with a ReferenceError. Reproduce it, read the stack trace, and prove exactly which scope rule broke it before you touch the code.',
     cwd0: '/srv/reports',
     vocab: [
       'let',
@@ -365,7 +376,7 @@ export default {
         accept: ['node report.js', 'node ./report.js'],
         acceptRe: ['^node\\s+(\\.\\/)?report\\.js\\b'],
         stdout:
-          "/srv/reports/report.js:7\n    console.log('rows found:', total);\n                               ^\n\nReferenceError: Cannot access 'total' before initialization\n    at buildReport (/srv/reports/report.js:7:32)\n    at Object.<anonymous> (/srv/reports/report.js:14:29)\n    at Module._compile (node:internal/modules/cjs/loader:1554:14)\n    at Object..js (node:internal/modules/cjs/loader:1706:10)\n    at Module.load (node:internal/modules/cjs/loader:1289:32)\n\nNode.js v24.9.0",
+          "/srv/reports/report.js:7\n    console.log('rows found:', total);\n                               ^\n\nReferenceError: Cannot access 'total' before initialization\n    at buildReport (/srv/reports/report.js:7:32)\n    at Object.<anonymous> (/srv/reports/report.js:14:30)\n    at Module._compile (node:internal/modules/cjs/loader:1871:14)\n    at Object..js (node:internal/modules/cjs/loader:2002:10)\n    at Module.load (node:internal/modules/cjs/loader:1594:32)\n    at Module._load (node:internal/modules/cjs/loader:1396:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47\n\nNode.js v24.18.0",
         setState: { repro: true },
         hints: [
           'You cannot diagnose what you have not seen fail. Execute the file.',
@@ -379,7 +390,7 @@ export default {
           'The trace blames line 7. Print the file with line numbers so you can see how `total` is declared.',
         hintTerm: 'Block Scope',
         accept: ['cat -n report.js', 'cat report.js'],
-        acceptRe: ['^(cat|head|less|bat)\\b.*report\\.js\\b'],
+        acceptRe: ['^(cat|nl|head|less|more|bat)\\b.*report\\.js\\b'],
         stdout:
           "     1\t'use strict';\n     2\t\n     3\tconst rows = require('./rows.json');\n     4\t\n     5\tfunction buildReport() {\n     6\t  if (rows.length) {\n     7\t    console.log('rows found:', total);\n     8\t    let total = rows.length;\n     9\t    return total;\n    10\t  }\n    11\t  return 0;\n    12\t}\n    13\t\n    14\tconsole.log('report total:', buildReport());",
         setState: { read_source: true },
@@ -397,7 +408,7 @@ export default {
         accept: ['node -e "console.log(x); let x = 1;"', "node -e 'console.log(x); let x = 1;'"],
         acceptRe: ['^node\\s+-(e|-eval)\\s+.*let\\s+x'],
         stdout:
-          "[eval]:1\nconsole.log(x); let x = 1;\n            ^\n\nReferenceError: Cannot access 'x' before initialization\n    at [eval]:1:13\n    at runScriptInThisContext (node:internal/vm:209:10)\n    at node:internal/process/execution:118:14\n\nNode.js v24.9.0",
+          "[eval]:1\nconsole.log(x); let x = 1;\n            ^\n\nReferenceError: Cannot access 'x' before initialization\n    at [eval]:1:13\n    at runScriptInThisContext (node:internal/vm:219:10)\n    at node:internal/process/execution:451:12\n    at [eval]-wrapper:6:24\n    at runScriptInContext (node:internal/process/execution:449:60)\n    at evalFunction (node:internal/process/execution:283:30)\n    at evalTypeScript (node:internal/process/execution:295:3)\n    at node:internal/main/eval_string:71:3\n\nNode.js v24.18.0",
         setState: { tdz_proved: true },
         hints: [
           'Shrink the bug to two statements and run them without a file, so nothing else can be blamed.',
@@ -434,7 +445,7 @@ export default {
           '^node\\s+-(e|-eval)\\s+.*const\\s+\\w+\\s*=[^;]*;\\s*\\w+\\s*=',
         ],
         stdout:
-          '[eval]:1\nconst rate = 0.2; rate = 0.3;\n                       ^\n\nTypeError: Assignment to constant variable.\n    at [eval]:1:24\n    at runScriptInThisContext (node:internal/vm:209:10)\n    at node:internal/process/execution:118:14\n\nNode.js v24.9.0',
+          '[eval]:1\nconst rate = 0.2; rate = 0.3;\n                       ^\n\nTypeError: Assignment to constant variable.\n    at [eval]:1:24\n    at runScriptInThisContext (node:internal/vm:219:10)\n    at node:internal/process/execution:451:12\n    at [eval]-wrapper:6:24\n    at runScriptInContext (node:internal/process/execution:449:60)\n    at evalFunction (node:internal/process/execution:283:30)\n    at evalTypeScript (node:internal/process/execution:295:3)\n    at node:internal/main/eval_string:71:3\n\nNode.js v24.18.0',
         setState: { const_proved: true },
         hints: [
           'A binding declared with the immutable keyword cannot be pointed at a new value — the error is a TypeError, not a ReferenceError.',

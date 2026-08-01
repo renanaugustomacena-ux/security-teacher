@@ -39,7 +39,7 @@ export default {
     ],
     requires: {
       source_read: true,
-      missing_header: 'string',
+      missing_header: 'iostream',
       built: true,
       greeted: true,
       endline_seen: true,
@@ -52,7 +52,7 @@ export default {
         accept: ['cat greet.cpp', 'cat ./greet.cpp', 'less greet.cpp'],
         acceptRe: ['^(cat|less|more|bat)\\s+\\.?/?greet\\.cpp$'],
         stdout:
-          '#include <iostream>\n\nstd::string shout(const std::string& word) {\n    if (!word.empty()) {\n        return word + "!";\n    }\n}\n\nint main() {\n    std::string name;\n    std::cout << "Name: ";\n    std::cin >> name;\n    std::cout << "Hello, " << shout(name) << std::endl;\n    return 0;\n}',
+          '#include <string>\n\nstd::string shout(const std::string& word) {\n    if (!word.empty()) {\n        return word + "!";\n    }\n}\n\nint main() {\n    std::string name;\n    std::cin >> name;\n    std::cout << "Hello, " << shout(name) << std::endl;\n    return 0;\n}',
         setState: { source_read: true },
         hints: [
           'Never compile code you have not read. Print the file to the screen first.',
@@ -63,12 +63,12 @@ export default {
       {
         id: 's2',
         promptEn: 'Build it with g++ into an executable called greet, and read what breaks.',
-        hintTerm: 'Main Function',
+        hintTerm: 'std::cout',
         accept: ['g++ greet.cpp -o greet', 'g++ -o greet greet.cpp', 'g++ greet.cpp'],
-        acceptRe: ['^g\\+\\+\\s+(?=.*greet\\.cpp)(?!.*-include).*$'],
+        acceptRe: ['^g\\+\\+(?=\\s)(?=.*greet\\.cpp)(?!.*-include).*$'],
         stdout:
-          "greet.cpp:3:6: error: 'string' in namespace 'std' does not name a type\n    3 | std::string shout(const std::string& word) {\n      |      ^~~~~~\ngreet.cpp:1:1: note: 'std::string' is defined in header '<string>'; did you forget to '#include <string>'?\n  +++ |+#include <string>\n    1 | #include <iostream>",
-        setState: { missing_header: 'string' },
+          "greet.cpp: In function 'int main()':\ngreet.cpp:11:10: error: 'cin' is not a member of 'std'\n   11 |     std::cin >> name;\n      |          ^~~\ngreet.cpp:1:1: note: 'std::cin' is defined in header '<iostream>'; did you forget to '#include <iostream>'?\n  +++ |+#include <iostream>\n    1 | #include <string>\ngreet.cpp:12:10: error: 'cout' is not a member of 'std'\n   12 |     std::cout << \"Hello, \" << shout(name) << std::endl;\n      |          ^~~~\ngreet.cpp:1:1: note: 'std::cout' is defined in header '<iostream>'; did you forget to '#include <iostream>'?\n  +++ |+#include <iostream>\n    1 | #include <string>\ngreet.cpp:12:51: error: 'endl' is not a member of 'std'\n   12 |     std::cout << \"Hello, \" << shout(name) << std::endl;\n      |                                                   ^~~~\ngreet.cpp:1:1: note: 'std::endl' is defined in header '<ostream>'; did you forget to '#include <ostream>'?\n  +++ |+#include <ostream>\n    1 | #include <string>",
+        setState: { missing_header: 'iostream' },
         hints: [
           'The compiler is called g++. Give it the source and name the output binary.',
           'g++ <source> -o <name>',
@@ -81,18 +81,18 @@ export default {
           'Without editing the file, tell g++ to pull in the missing header before line 1, and build greet.',
         hintTerm: 'Header',
         accept: [
-          'g++ -include string greet.cpp -o greet',
-          'g++ -include string -o greet greet.cpp',
-          'g++ greet.cpp -include string -o greet',
+          'g++ -include iostream greet.cpp -o greet',
+          'g++ -include iostream -o greet greet.cpp',
+          'g++ greet.cpp -include iostream -o greet',
         ],
-        acceptRe: ['^g\\+\\+\\s+(?=.*-include\\s+<?string>?)(?=.*greet\\.cpp).*$'],
+        acceptRe: ['^g\\+\\+(?=\\s)(?=.*-include\\s+<?iostream>?)(?=.*greet\\.cpp).*$'],
         stdout:
           "greet.cpp: In function 'std::string shout(const std::string&)':\ngreet.cpp:7:1: warning: control reaches end of non-void function [-Wreturn-type]\n    7 | }\n      | ^",
         setState: { built: true },
         hints: [
-          'g++ can inject a header from the command line, as if it were the first #include.',
+          'g++ can inject a header from the command line, as if it were the first #include. One header fixes all three errors.',
           'The flag takes the header name as its argument: `g++ -include … greet.cpp -o greet`',
-          'g++ -include string greet.cpp -o greet',
+          'g++ -include iostream greet.cpp -o greet',
         ],
       },
       {
@@ -101,7 +101,7 @@ export default {
         hintTerm: 'std::cin',
         accept: ['echo Giulia | ./greet', 'printf Giulia | ./greet', './greet <<< Giulia'],
         acceptRe: ['^(echo|printf)\\s+\\S+\\s*\\|\\s*\\.?/?greet$', '^\\.?/?greet\\s*<<<\\s*\\S+$'],
-        stdout: 'Name: Hello, Giulia!',
+        stdout: 'Hello, Giulia!',
         setState: { greeted: true },
         hints: [
           'The program reads one word from standard input — the shell can supply it for you.',
@@ -119,9 +119,8 @@ export default {
           'echo Giulia | ./greet | xxd',
           'echo Giulia | ./greet | hexdump -C',
         ],
-        acceptRe: ['\\|\\s*(od|xxd|hexdump)\\b'],
-        stdout:
-          '0000000   N   a   m   e   :       H   e   l   l   o   ,       G   i   u\n0000020   l   i   a   !  \\n\n0000025',
+        acceptRe: ['greet\\s*\\|\\s*(od|xxd|hexdump)\\b'],
+        stdout: '0000000   H   e   l   l   o   ,       G   i   u   l   i   a   !  \\n\n0000017',
         setState: { endline_seen: true },
         hints: [
           'A newline is invisible on screen — you need to look at the bytes themselves.',
@@ -182,7 +181,8 @@ export default {
           'g++ -o build/stats src/main.cpp src/stats.cpp',
         ],
         acceptRe: [
-          '^g\\+\\+\\s+(?!.*-std=)(?=.*src/main\\.cpp)(?=.*src/stats\\.cpp)(?=.*-o\\s+build/stats).*$',
+          '^g\\+\\+(?=\\s)(?!.*-std=)(?=.*src/main\\.cpp)(?=.*src/stats\\.cpp)(?=.*-o\\s+build/stats).*$',
+          '^g\\+\\+(?=\\s)(?!.*-std=)(?=.*src/\\*\\.cpp)(?=.*-o\\s+build/stats).*$',
         ],
         stdout:
           "src/stats.cpp: In function 'double stats::median(std::vector<double>&)':\nsrc/stats.cpp:12:10: error: 'ranges' is not a member of 'std'\n   12 |     std::ranges::sort(values);\n      |          ^~~~~~\nsrc/stats.cpp:12:10: note: 'std::ranges' is only available from C++20 onwards",
@@ -204,10 +204,10 @@ export default {
           'g++ -std=c++20 -Wall -Wextra -c src/stats.cpp',
         ],
         acceptRe: [
-          '^g\\+\\+\\s+(?=.*-std=c\\+\\+20)(?=.*-wall)(?=.*\\s-c\\b)(?=.*src/stats\\.cpp).*$',
+          '^g\\+\\+(?=\\s)(?=.*-std=c\\+\\+20)(?=.*-wall)(?=.*\\s-c\\b)(?=.*src/stats\\.cpp).*$',
         ],
         stdout:
-          "src/stats.cpp: In function 'double stats::mean(const std::vector<double>&, int)':\nsrc/stats.cpp:19:23: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<double>::size_type' {aka 'long unsigned int'} [-Wsign-compare]\n   19 |     for (int i = 0; i < values.size(); ++i) {\n      |                     ~~^~~~~~~~~~~~~~~\nsrc/stats.cpp:16:52: warning: unused parameter 'window' [-Wunused-parameter]\n   16 | double stats::mean(const std::vector<double>& values, int window) {\n      |                                                       ~~~~^~~~~~",
+          "src/stats.cpp: In function 'double stats::mean(const std::vector<double>&, int)':\nsrc/stats.cpp:19:23: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<double>::size_type' {aka 'long unsigned int'} [-Wsign-compare]\n   19 |     for (int i = 0; i < values.size(); ++i) {\n      |                     ~~^~~~~~~~~~~~~~~\nsrc/stats.cpp:16:59: warning: unused parameter 'window' [-Wunused-parameter]\n   16 | double stats::mean(const std::vector<double>& values, int window) {\n      |                                                       ~~~~^~~~~~",
         setState: { object_built: true },
         hints: [
           'Three things at once: pick the language standard, ask for every warning, and stop before the linker runs.',
@@ -226,10 +226,10 @@ export default {
           'g++ -O2 -g -Wall -std=c++20 src/main.cpp build/stats.o -o build/stats',
         ],
         acceptRe: [
-          '^g\\+\\+\\s+(?=.*-std=c\\+\\+20)(?=.*-o2\\b)(?=.*\\s-g\\b)(?=.*-o\\s+build/stats\\b).*$',
+          '^g\\+\\+(?=\\s)(?=.*-std=c\\+\\+20)(?=.*-o2\\b)(?=.*\\s-g\\b)(?=.*-wall)(?=.*-o\\s+build/stats(\\s|$)).*$',
         ],
         stdout:
-          "src/main.cpp: In function 'int main(int, char**)':\nsrc/main.cpp:24:30: warning: 'window' may be used uninitialized [-Wmaybe-uninitialized]\n   24 |     const double avg = stats::mean(samples, window);\n      |                        ~~~~~~~~~~~^~~~~~~~~~~~~~~~\nsrc/main.cpp:19:9: note: 'window' was declared here\n   19 |     int window;\n      |         ^~~~~~",
+          "src/main.cpp: In function 'int main(int, char**)':\nsrc/main.cpp:24:35: warning: 'window' may be used uninitialized [-Wmaybe-uninitialized]\n   24 |     const double avg = stats::mean(samples, window);\n      |                        ~~~~~~~~~~~^~~~~~~~~~~~~~~~~\nsrc/main.cpp:19:9: note: 'window' was declared here\n   19 |     int window;\n      |         ^~~~~~",
         setState: { release_built: true },
         hints: [
           'Optimisation is a flag, debug information is another flag, and they are not mutually exclusive. GCC only finds this bug once the optimiser runs.',
@@ -258,7 +258,7 @@ export default {
   cpp_foundations_2: {
     title: 'Find the memory bug the sanitizer sees',
     intro:
-      'Il job notturno muore a metà. / The nightly cache job dies halfway through and the log says nothing useful. Rebuild it under AddressSanitizer and let the tool tell you exactly which line is wrong.',
+      'Il job notturno non crasha mai, eppure la RAM cala. / The nightly cache job never crashes, yet the box it runs on loses memory every night. Rebuild it under AddressSanitizer and let the tool show you the two bugs a clean-looking run is hiding.',
     cwd0: '/home/dev/cache',
     vocab: [
       'New Operator',
@@ -270,7 +270,7 @@ export default {
       'Dereference',
     ],
     requires: {
-      crash_seen: true,
+      baseline_seen: true,
       source_read: true,
       asan_built: true,
       root_cause: 'alloc-dealloc-mismatch',
@@ -279,14 +279,14 @@ export default {
     steps: [
       {
         id: 's1',
-        promptEn: 'Reproduce the failure: run the release binary in bin/cache.',
+        promptEn: 'Reproduce the nightly run: execute the release binary in bin/cache.',
         hintTerm: 'Heap',
         accept: ['./bin/cache', 'bin/cache'],
         acceptRe: ['^\\.?/?bin/cache$'],
-        stdout: 'warming cache with 4 slots\nfree(): invalid pointer\nAborted (core dumped)',
-        setState: { crash_seen: true },
+        stdout: 'warming cache with 4 slots\nhead id 1',
+        setState: { baseline_seen: true },
         hints: [
-          'Start by seeing the failure with your own eyes.',
+          'Start by watching the job work. Undefined behaviour rarely announces itself — exit code 0 is not proof of correctness.',
           'Execute the binary by path, from the current directory.',
           './bin/cache',
         ],
@@ -294,7 +294,7 @@ export default {
       {
         id: 's2',
         promptEn:
-          'Read the source with line numbers, so the sanitizer line references will mean something.',
+          'Nothing looked wrong. Read the source with line numbers, so the sanitizer line references will mean something.',
         hintTerm: 'Pointer',
         accept: ['cat -n src/cache.cpp', 'nl src/cache.cpp', 'nl -ba src/cache.cpp'],
         acceptRe: ['^(cat\\s+-n|nl)\\b.*cache\\.cpp$', '^cat\\s+\\.?/?src/cache\\.cpp$'],
@@ -318,7 +318,7 @@ export default {
           'g++ -fsanitize=address -g src/cache.cpp -o bin/cache-asan',
         ],
         acceptRe: [
-          '^g\\+\\+\\s+(?=.*-fsanitize=address)(?=.*src/cache\\.cpp)(?=.*-o\\s+\\.?/?bin/cache-asan).*$',
+          '^g\\+\\+(?=\\s)(?=.*-fsanitize=address)(?=.*src/cache\\.cpp)(?=.*-o\\s+\\.?/?bin/cache-asan).*$',
         ],
         stdout:
           "src/cache.cpp: In function 'void load(int)':\nsrc/cache.cpp:14:5: warning: 'void operator delete(void*, long unsigned int)' called on pointer returned from a mismatched allocation function [-Wmismatched-new-delete]\n   14 |     delete slots;\n      |     ^~~~~~~~~~~~\nsrc/cache.cpp:9:18: note: returned from 'void* operator new [](long unsigned int)'\n    9 |     int* slots = new int[n];\n      |                  ^~~~~~~~~~",
@@ -415,16 +415,17 @@ export default {
         accept: [
           'g++ -std=c++20 -Wall -Wextra -Iinclude -c src/session.cpp -o build/session.o',
           'g++ -Wall -Wextra -Iinclude -c src/session.cpp -o build/session.o',
+          'g++ -std=c++20 -Wall -Wextra -I include -c src/session.cpp -o build/session.o',
           'g++ -std=c++20 -Wall -Wextra -Iinclude -c src/session.cpp',
         ],
         acceptRe: [
-          '^g\\+\\+\\s+(?=.*-wall)(?=.*\\s-c\\b)(?=.*src/session\\.cpp)(?=.*-iinclude).*$',
+          '^g\\+\\+(?=\\s)(?=.*-wall)(?=.*\\s-c\\b)(?=.*src/session\\.cpp)(?=.*-i\\s?include\\b).*$',
         ],
         stdout:
-          "src/session.cpp: In constructor 'Session::Session(std::string, int)':\nsrc/session.cpp:5:24: warning: 'Session::retries_' will be initialized after [-Wreorder]\n    5 |     : retries_(retries), user_(std::move(user)) {\n      |       ^~~~~~~~\nsrc/session.cpp:5:31: warning:   'std::string Session::user_' [-Wreorder]\n    5 |     : retries_(retries), user_(std::move(user)) {\n      |                          ^~~~~\nsrc/session.cpp:4:10: note:   when initialized here\n    4 | Session::Session(std::string user, int retries)\n      |          ^~~~~~~",
+          "src/session.cpp: In constructor 'Session::Session(std::string, int)':\ninclude/session.hpp:14:9: warning: 'Session::retries_' will be initialized after [-Wreorder]\n   14 |     int retries_;\n      |         ^~~~~~~~\ninclude/session.hpp:13:17: warning:   'std::string Session::user_' [-Wreorder]\n   13 |     std::string user_;\n      |                 ^~~~~\nsrc/session.cpp:4:10: note:   when initialized here\n    4 | Session::Session(std::string user, int retries)\n      |          ^~~~~~~",
         setState: { reorder_seen: true },
         hints: [
-          'Members are always initialised in declaration order, whatever order you wrote them in — the compiler will tell you when the two disagree.',
+          'Members are always initialised in declaration order, whatever order you wrote them in — the compiler will point back at the header when the two disagree.',
           'g++ -Wall -Wextra -Iinclude -c src/session.cpp -o build/session.o',
           'g++ -std=c++20 -Wall -Wextra -Iinclude -c src/session.cpp -o build/session.o',
         ],
@@ -469,7 +470,7 @@ export default {
         promptEn: 'Build the demo executable that links your object file (the Makefile target).',
         hintTerm: 'Object Instance',
         accept: ['make demo', 'make'],
-        acceptRe: ['^make(\\s+demo)?$'],
+        acceptRe: ['^make(\\s+-\\S+)*(\\s+demo)?$'],
         stdout:
           'g++ -std=c++20 -Wall -Wextra -Iinclude -c src/main.cpp -o build/main.o\ng++ -std=c++20 -Wall -Wextra build/main.o build/session.o -o build/demo',
         setState: { linked: true },

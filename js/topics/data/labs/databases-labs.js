@@ -38,7 +38,7 @@ export default {
         accept: ['pg_ctl start', 'pg_ctl -D /var/lib/postgresql/data start', 'sudo pg_ctl start'],
         acceptRe: ['^(sudo\\s+)?pg_ctl\\s+.*\\bstart\\b'],
         stdout:
-          'waiting for server to start....\n2026-03-04 09:12:41.882 CET [4821] LOG:  starting PostgreSQL 16.2 on x86_64-pc-linux-gnu\n2026-03-04 09:12:41.884 CET [4821] LOG:  listening on IPv4 address "127.0.0.1", port 5432\n2026-03-04 09:12:41.951 CET [4824] LOG:  database system was shut down at 2026-03-03 19:40:12 CET\n2026-03-04 09:12:41.962 CET [4821] LOG:  database system is ready to accept connections\n done\nserver started',
+          'waiting for server to start....\n2026-03-02 09:12:41.882 CET [4821] LOG:  starting PostgreSQL 14.11 on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit\n2026-03-02 09:12:41.884 CET [4821] LOG:  listening on IPv4 address "127.0.0.1", port 5432\n2026-03-02 09:12:41.951 CET [4824] LOG:  database system was shut down at 2026-02-27 19:40:12 CET\n2026-03-02 09:12:41.962 CET [4821] LOG:  database system is ready to accept connections\n done\nserver started',
         setState: { server: 'running' },
         hints: [
           'Nothing can connect while the engine itself is down — the server process has to be up first.',
@@ -50,9 +50,17 @@ export default {
         id: 's2',
         promptEn: 'Open an interactive session as the postgres user with the PostgreSQL client.',
         hintTerm: 'Connection',
-        accept: ['psql -U postgres', 'psql --username=postgres', 'psql -U postgres -h localhost'],
-        acceptRe: ['^psql\\s+.*(-u\\s*postgres|--username[=\\s]\\s*postgres)'],
-        stdout: 'psql (16.2)\nType "help" for help.\n\npostgres=#',
+        accept: [
+          'psql -U postgres',
+          'psql --username=postgres',
+          'psql -U postgres -h localhost',
+          'sudo -u postgres psql',
+        ],
+        acceptRe: [
+          '^psql\\s+.*(-u\\s*postgres|--username[=\\s]\\s*postgres)',
+          '^sudo\\s+-u\\s+postgres\\s+psql\\b',
+        ],
+        stdout: 'psql (14.11)\nType "help" for help.\n\npostgres=#',
         setState: { connected: true },
         hints: [
           'The server is listening now; you still need a client to open the connection.',
@@ -64,14 +72,14 @@ export default {
         id: 's3',
         promptEn: 'List every database this server hosts.',
         hintTerm: 'PostgreSQL',
-        accept: ['\\l', '\\list', 'SELECT datname FROM pg_database;'],
-        acceptRe: ['^\\\\l(ist)?\\s*;?\\s*$', '^select\\s+datname\\s+from\\s+pg_database\\b'],
+        accept: ['\\l', '\\list', '\\l+'],
+        acceptRe: ['^\\\\l(ist)?\\+?\\s*;?\\s*$'],
         stdout:
-          '                              List of databases\n   Name    |  Owner   | Encoding |   Collate   |    Ctype    | Access privileges\n-----------+----------+----------+-------------+-------------+-------------------\n postgres  | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |\n shop      | dev      | UTF8     | en_US.UTF-8 | en_US.UTF-8 |\n template0 | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres\n template1 | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres\n(4 rows)',
+          '                                  List of databases\n   Name    |  Owner   | Encoding |   Collate   |    Ctype    |   Access privileges\n-----------+----------+----------+-------------+-------------+-----------------------\n postgres  | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |\n shop      | dev      | UTF8     | en_US.UTF-8 | en_US.UTF-8 |\n template0 | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +\n           |          |          |             |             | postgres=CTc/postgres\n template1 | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +\n           |          |          |             |             | postgres=CTc/postgres\n(4 rows)',
         setState: { listed: true },
         hints: [
           'psql answers questions about the server itself with short meta-commands that start with a backslash.',
-          'Backslash plus the first letter of "list" — or query the pg_database catalog with SQL.',
+          'Backslash plus the first letter of "list" — no SQL, no semicolon needed.',
           '\\l',
         ],
       },
@@ -93,10 +101,10 @@ export default {
         id: 's5',
         promptEn: 'Show which tables live inside the shop database.',
         hintTerm: 'RDBMS',
-        accept: ['\\dt', '\\dt public.*'],
-        acceptRe: ['^\\\\dt\\b', '^\\\\d\\s*;?\\s*$'],
+        accept: ['\\dt', '\\dt+', '\\dt public.*'],
+        acceptRe: ['^\\\\dt\\b'],
         stdout:
-          '        List of relations\n Schema |   Name    | Type  | Owner\n--------+-----------+-------+-------\n public | customers | table | dev\n public | orders    | table | dev\n public | products  | table | dev\n(3 rows)',
+          '         List of relations\n Schema |   Name    | Type  | Owner\n--------+-----------+-------+-------\n public | customers | table | dev\n public | orders    | table | dev\n public | products  | table | dev\n(3 rows)',
         setState: { tables: 'seen' },
         hints: [
           'A relational engine stores everything in relations — ask psql to describe the ones in this database.',
@@ -148,7 +156,9 @@ export default {
           "The wireless mouse 'MS-1140' was imported at 2.45 instead of 24.50. Correct that single row.",
         hintTerm: 'UPDATE',
         accept: ["UPDATE products SET price = 24.50 WHERE sku = 'MS-1140';"],
-        acceptRe: ['^update\\s+products\\s+set\\s+price\\s*=\\s*24\\.50?\\s+where\\b'],
+        acceptRe: [
+          '^update\\s+products\\b[\\s\\S]*\\bset\\b[\\s\\S]*\\bprice\\s*=\\s*24\\.50?\\b[\\s\\S]*\\bwhere\\b',
+        ],
         stdout: 'UPDATE 1',
         setState: { priced: true },
         hints: [
@@ -196,7 +206,7 @@ export default {
         promptEn:
           'Verify the repair: read sku, name and price of the whole catalogue, sorted by sku.',
         accept: ['SELECT sku, name, price FROM products ORDER BY sku;'],
-        acceptRe: ['^select\\b[\\s\\S]*\\bfrom\\s+products\\b'],
+        acceptRe: ['^select\\s+(?!count\\b)[\\s\\S]*\\bfrom\\s+products\\b'],
         stdout:
           '   sku   |        name         | price\n---------+---------------------+--------\n CB-0450 | USB-C Cable 2m      |   9.90\n KB-2001 | Mechanical Keyboard |  89.90\n MS-1140 | Wireless Mouse      |  24.50\n SD-3300 | USB-C Dock          |  74.00\n WH-7720 | Headset Pro         | 129.00\n(5 rows)',
         setState: { verified: true },
@@ -228,7 +238,9 @@ export default {
         id: 's1',
         promptEn: 'Count the rows in the orders table so you have a baseline to compare against.',
         accept: ['SELECT COUNT(*) FROM orders;'],
-        acceptRe: ['^select\\s+count\\s*\\(.*\\)\\s+from\\s+orders\\b'],
+        acceptRe: [
+          '^select\\s+count\\s*\\([^)]*\\)[\\s\\S]*\\bfrom\\s+orders\\b(\\s+\\w+)?\\s*;?$',
+        ],
         stdout: ' count\n-------\n    42\n(1 row)',
         setState: { baseline: true },
         hints: [
@@ -247,7 +259,7 @@ export default {
           'SELECT COUNT(*) FROM orders o INNER JOIN customers c ON o.customer_id = c.id;',
         ],
         acceptRe: [
-          '^select\\s+count\\s*\\(.*\\)\\s+from\\s+orders\\b[\\s\\S]*\\bjoin\\s+customers\\b[\\s\\S]*\\bon\\b',
+          '^select\\s+count\\s*\\([^)]*\\)[\\s\\S]*\\bfrom\\s+orders\\b[\\s\\S]*\\bjoin\\s+customers\\b[\\s\\S]*\\bon\\b',
         ],
         stdout: ' count\n-------\n    39\n(1 row)',
         setState: { gap: true },
@@ -282,7 +294,9 @@ export default {
         promptEn:
           'Two customer ids are suspect: 508 and 541. Check whether those customers exist in the customers table at all.',
         accept: ['SELECT id, email FROM customers WHERE id IN (508, 541);'],
-        acceptRe: ['^select\\b[\\s\\S]*\\bfrom\\s+customers\\b[\\s\\S]*\\b(508|541)\\b'],
+        acceptRe: [
+          '^select\\b[\\s\\S]*\\bfrom\\s+customers\\b[\\s\\S]*\\bwhere\\b[\\s\\S]*\\b(508|541)\\b',
+        ],
         stdout: ' id | email\n----+-------\n(0 rows)',
         setState: { confirmed: true },
         hints: [
@@ -301,8 +315,8 @@ export default {
           'SELECT COUNT(*) FROM orders, customers;',
         ],
         acceptRe: [
-          '^select\\s+count\\s*\\(.*\\)\\s+from\\s+orders\\s+cross\\s+join\\s+customers\\b',
-          '^select\\s+count\\s*\\(.*\\)\\s+from\\s+orders\\s*,\\s*customers\\s*;?$',
+          '^select\\s+count\\s*\\([^)]*\\)[\\s\\S]*\\bfrom\\s+orders\\b[\\s\\S]*\\bcross\\s+join\\s+customers\\b',
+          '^select\\s+count\\s*\\([^)]*\\)[\\s\\S]*\\bfrom\\s+orders\\b\\s*(\\w+\\s*)?,\\s*customers\\b',
         ],
         stdout: ' count\n-------\n  5040\n(1 row)',
         setState: { cartesian: true },
@@ -324,7 +338,7 @@ export default {
           '^select\\b[\\s\\S]*\\bfrom\\s+orders\\b[\\s\\S]*\\bleft\\s+(outer\\s+)?join\\s+customers\\b[\\s\\S]*\\border\\s+by\\b',
         ],
         stdout:
-          ' id |         email\n----+------------------------\n  1 | lu.rossi@example.org\n  2 | m.bianchi@example.org\n  3 |\n  4 | s.conti@example.org\n  5 | g.ferrari@example.org\n(5 rows)',
+          ' id |         email\n----+-----------------------\n  1 | lu.rossi@example.org\n  2 | m.bianchi@example.org\n  3 |\n  4 | s.conti@example.org\n  5 | g.ferrari@example.org\n(5 rows)',
         setState: { report: true },
         hints: [
           'The report must never lose an order again, so keep the same join type that exposed the orphans.',
@@ -367,10 +381,15 @@ export default {
         promptEn:
           'Four seconds for one row is wrong. Ask the planner what it actually did, with real execution timings.',
         hintTerm: 'SELECT',
-        accept: ["EXPLAIN ANALYZE SELECT * FROM users WHERE email = 'ada@example.org';"],
-        acceptRe: ['^explain\\b[\\s\\S]*\\bselect\\b[\\s\\S]*\\bfrom\\s+users\\b'],
+        accept: [
+          "EXPLAIN ANALYZE SELECT * FROM users WHERE email = 'ada@example.org';",
+          "EXPLAIN (ANALYZE) SELECT * FROM users WHERE email = 'ada@example.org';",
+        ],
+        acceptRe: [
+          '^explain\\s+(analy[sz]e\\b|\\([^)]*\\banaly[sz]e\\b[^)]*\\))[\\s\\S]*\\bselect\\b[\\s\\S]*\\bfrom\\s+users\\b',
+        ],
         stdout:
-          "                                                    QUERY PLAN\n-------------------------------------------------------------------------------------------------------------------\n Seq Scan on users  (cost=0.00..29518.00 rows=1 width=68) (actual time=2874.011..4127.902 rows=1 loops=1)\n   Filter: (email = 'ada@example.org'::text)\n   Rows Removed by Filter: 1199999\n Planning Time: 0.132 ms\n Execution Time: 4127.961 ms\n(5 rows)",
+          "                                                    QUERY PLAN\n-------------------------------------------------------------------------------------------------------------------\n Seq Scan on users  (cost=0.00..29518.00 rows=1 width=68) (actual time=2874.011..4127.902 rows=1 loops=1)\n   Filter: (email = 'ada@example.org'::text)\n   Rows Removed by Filter: 1199999\n Planning Time: 0.132 ms\n Execution Time: 4127.961 ms\n(5 rows)\n\nTime: 4128.663 ms (00:04.129)",
         setState: { explained: true },
         hints: [
           'PostgreSQL can show you its own strategy for a query instead of just running it.',
@@ -398,10 +417,15 @@ export default {
       {
         id: 's4',
         promptEn: 'Re-read the plan for the same lookup and confirm the sequential scan is gone.',
-        accept: ["EXPLAIN ANALYZE SELECT * FROM users WHERE email = 'ada@example.org';"],
-        acceptRe: ['^explain\\b[\\s\\S]*\\bselect\\b[\\s\\S]*\\bfrom\\s+users\\b'],
+        accept: [
+          "EXPLAIN ANALYZE SELECT * FROM users WHERE email = 'ada@example.org';",
+          "EXPLAIN (ANALYZE) SELECT * FROM users WHERE email = 'ada@example.org';",
+        ],
+        acceptRe: [
+          '^explain\\s+(analy[sz]e\\b|\\([^)]*\\banaly[sz]e\\b[^)]*\\))[\\s\\S]*\\bselect\\b[\\s\\S]*\\bfrom\\s+users\\b',
+        ],
         stdout:
-          "                                                            QUERY PLAN\n------------------------------------------------------------------------------------------------------------------------\n Index Scan using users_email_idx on users  (cost=0.43..8.45 rows=1 width=68) (actual time=0.049..0.052 rows=1 loops=1)\n   Index Cond: (email = 'ada@example.org'::text)\n Planning Time: 0.204 ms\n Execution Time: 0.081 ms\n(4 rows)",
+          "                                                            QUERY PLAN\n------------------------------------------------------------------------------------------------------------------------\n Index Scan using users_email_idx on users  (cost=0.43..8.45 rows=1 width=68) (actual time=0.049..0.052 rows=1 loops=1)\n   Index Cond: (email = 'ada@example.org'::text)\n Planning Time: 0.204 ms\n Execution Time: 0.081 ms\n(4 rows)\n\nTime: 0.633 ms",
         setState: { fast: true },
         hints: [
           'Nothing is fixed until the planner says so — run the same inspection again.',
@@ -412,7 +436,7 @@ export default {
       {
         id: 's5',
         promptEn:
-          "Now answer the ticket itself: email and country of the users from Italy or Spain ('IT', 'ES') who signed up between 2025-11-01 and 2025-11-30.",
+          "Now answer the ticket itself: email and country of the users from Italy or Spain ('IT', 'ES') who signed up between 2025-11-01 and 2025-11-30. The new index only covers email, so watch the timing.",
         hintTerm: 'BETWEEN',
         accept: [
           "SELECT email, country FROM users WHERE country IN ('IT', 'ES') AND signup_date BETWEEN '2025-11-01' AND '2025-11-30';",
@@ -422,7 +446,7 @@ export default {
           '^select\\b[\\s\\S]*\\bfrom\\s+users\\b[\\s\\S]*\\bcountry\\b[\\s\\S]*\\bsignup_date\\b[\\s\\S]*\\band\\b',
         ],
         stdout:
-          '         email          | country\n------------------------+---------\n ada@example.org        | IT\n bruno.sala@example.org | IT\n c.moreno@example.org   | ES\n p.lopez@example.org    | ES\n(4 rows)\n\nTime: 3.884 ms',
+          '         email          | country\n------------------------+---------\n ada@example.org        | IT\n bruno.sala@example.org | IT\n c.moreno@example.org   | ES\n p.lopez@example.org    | ES\n(4 rows)\n\nTime: 918.407 ms',
         setState: { filtered: true },
         hints: [
           'Two conditions have to hold at once: a membership test on the country and a range test on the date.',

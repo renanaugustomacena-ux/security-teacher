@@ -219,7 +219,7 @@ export default {
           'sudo du -sh /var/* | sort -h',
         ],
         acceptRe: ['^(sudo\\s+)?du\\b.*\\/var'],
-        stdout: '116M\t/var/cache\n344M\t/var/spool\n1.3G\t/var/tmp\n4.2G\t/var/log\n81G\t/var/lib',
+        stdout: '116M\t/var/cache\n344M\t/var/spool\n1.3G\t/var/tmp\n4.2G\t/var/log\n94G\t/var/lib',
         setState: { hog: 'var-lib' },
         hints: [
           'df tells you the filesystem is full; a different tool tells you which directory is responsible.',
@@ -240,7 +240,7 @@ export default {
         ],
         acceptRe: ['^(sudo\\s+)?du\\b.*postgresql'],
         stdout:
-          '4.0K\t/var/lib/postgresql/16/main/pg_notify\n4.0K\t/var/lib/postgresql/16/main/pg_serial\n16M\t/var/lib/postgresql/16/main/global\n2.1G\t/var/lib/postgresql/16/main/base\n78G\t/var/lib/postgresql/16/main/pg_wal',
+          '4.0K\t/var/lib/postgresql/16/main/pg_notify\n4.0K\t/var/lib/postgresql/16/main/pg_serial\n16M\t/var/lib/postgresql/16/main/global\n2.1G\t/var/lib/postgresql/16/main/base\n92G\t/var/lib/postgresql/16/main/pg_wal',
         setState: { wal: 'stalled' },
         hints: [
           'Repeat the same measurement one level deeper, inside the database data directory.',
@@ -468,7 +468,7 @@ export default {
         accept: ['ls -lh /var/log/app.log*', 'ls -l /var/log/app.log*', 'ls -lh app.log*'],
         acceptRe: ['^ls\\b.*app\\.log'],
         stdout:
-          '-rw-r----- 1 app adm 212M Aug  1 09:20 /var/log/app.log\n-rw-r----- 1 app adm 1.1G Jul 31 00:00 /var/log/app.log.1\n-rw-r----- 1 app adm  36M Jul 30 00:00 /var/log/app.log.2.gz\n-rw-r----- 1 app adm  34M Jul 29 00:00 /var/log/app.log.3.gz\n-rw-r----- 1 app adm  35M Jul 28 00:00 /var/log/app.log.4.gz',
+          '-rw-r----- 1 app adm 430M Aug  1 09:20 /var/log/app.log\n-rw-r----- 1 app adm 1.1G Aug  1 00:00 /var/log/app.log.1\n-rw-r----- 1 app adm  36M Jul 31 00:00 /var/log/app.log.2.gz\n-rw-r----- 1 app adm  34M Jul 30 00:00 /var/log/app.log.3.gz\n-rw-r----- 1 app adm  35M Jul 29 00:00 /var/log/app.log.4.gz',
         setState: { archive: 'inspected' },
         hints: [
           'Rotated files keep the same base name with a number appended, and the older ones are compressed. List them all at once.',
@@ -488,7 +488,7 @@ export default {
         ],
         acceptRe: ['^(sudo\\s+)?logrotate\\s+(-d\\b|--debug\\b)'],
         stdout:
-          'WARNING: logrotate in debug mode does nothing except printing debug messages!\n\nreading config file /etc/logrotate.d/app\nHandling 1 logs\n\nrotating pattern: /var/log/app.log  after 1 days (7 rotations)\nempty log files are not rotated, old logs are removed\nconsidering log /var/log/app.log\n  Now: 2026-08-01 09:22\n  Last rotated at 2026-07-31 00:00\n  log does not need rotating (log has already been rotated)',
+          'WARNING: logrotate in debug mode does nothing except printing debug messages!  Consider using verbose mode (-v) instead.\n\nreading config file /etc/logrotate.d/app\nReading state from file: /var/lib/logrotate/status\nAllocating hash table for state file, size 64 entries\n\nHandling 1 logs\n\nrotating pattern: /var/log/app.log  after 1 days (7 rotations)\nempty log files are not rotated, old logs are removed\nconsidering log /var/log/app.log\n  Now: 2026-08-01 09:22\n  Last rotated at 2026-08-01 00:00\n  log does not need rotating (log has already been rotated)',
         setState: { policy: 'checked' },
         hints: [
           'Before you touch production logs, ask the tool what it would do. It has a mode that only prints its plan.',
@@ -510,7 +510,7 @@ export default {
         ],
         acceptRe: ['^(sudo\\s+)?logrotate\\s+-[a-z]*f\\b', '^(sudo\\s+)?logrotate\\s+.*--force\\b'],
         stdout:
-          'reading config file /etc/logrotate.conf\nincluding /etc/logrotate.d\nrotating pattern: /var/log/app.log forced from command line (7 rotations)\nempty log files are rotated, old logs are removed\nconsidering log /var/log/app.log\n  log needs rotating\nrotating log /var/log/app.log, log->rotateCount is 7\nrenaming /var/log/app.log.4.gz to /var/log/app.log.5.gz\nrenaming /var/log/app.log.1 to /var/log/app.log.2\nrenaming /var/log/app.log to /var/log/app.log.1\nrunning postrotate script',
+          'reading config file /etc/logrotate.conf\nincluding /etc/logrotate.d\nreading config file app\nReading state from file: /var/lib/logrotate/status\n\nrotating pattern: /var/log/app.log forced from command line (7 rotations)\nempty log files are not rotated, old logs are removed\nconsidering log /var/log/app.log\n  Now: 2026-08-01 09:23\n  Last rotated at 2026-08-01 00:00\n  log needs rotating\nrotating log /var/log/app.log, log->rotateCount is 7\nrenaming /var/log/app.log.4.gz to /var/log/app.log.5.gz (rotatecount 7, logstart 1, i 4),\nrenaming /var/log/app.log.3.gz to /var/log/app.log.4.gz (rotatecount 7, logstart 1, i 3),\nrenaming /var/log/app.log.2.gz to /var/log/app.log.3.gz (rotatecount 7, logstart 1, i 2),\nrenaming /var/log/app.log.1 to /var/log/app.log.2 (rotatecount 7, logstart 1, i 1),\nrenaming /var/log/app.log to /var/log/app.log.1 (rotatecount 7, logstart 1, i 0),\ncreating new /var/log/app.log mode = 0640 uid = 106 gid = 4\nrunning postrotate script',
         setState: { rotated: true },
         hints: [
           'Debug mode printed the plan; now you want the plan executed even though the daily timer has not fired yet.',
@@ -521,7 +521,7 @@ export default {
       {
         id: 's5',
         promptEn:
-          'The freshly rotated /var/log/app.log.1 is still uncompressed. Compress it and print the ratio it saved.',
+          'The policy has no compress directive, so the freshly rotated /var/log/app.log.1 is still plain text. Compress it and print the ratio it saved.',
         hintTerm: 'Compression',
         accept: [
           'gzip -v /var/log/app.log.1',
@@ -530,7 +530,7 @@ export default {
           'gzip /var/log/app.log.1',
         ],
         acceptRe: ['^(sudo\\s+)?gzip\\b.*app\\.log\\.1\\b'],
-        stdout: '/var/log/app.log.1:\t96.7% -- replaced with /var/log/app.log.1.gz',
+        stdout: '/var/log/app.log.1:\t 96.7% -- replaced with /var/log/app.log.1.gz',
         setState: { compressed: true },
         hints: [
           'Text logs compress by a factor of roughly thirty. The other archives already end in .gz — make this one match.',

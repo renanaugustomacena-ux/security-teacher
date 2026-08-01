@@ -65,15 +65,8 @@ export default {
         promptEn:
           'Compile greet.c into an executable called greet, with the basic warnings turned on.',
         hintTerm: 'Compiler',
-        accept: [
-          'gcc -Wall greet.c -o greet',
-          'gcc -Wall -o greet greet.c',
-          'gcc greet.c -o greet',
-        ],
-        acceptRe: [
-          '^gcc\\s+.*greet\\.c.*-o\\s+greet\\b',
-          '^gcc\\s+.*-o\\s+greet\\s+.*greet\\.c\\b',
-        ],
+        accept: ['gcc -Wall greet.c -o greet', 'gcc -Wall -o greet greet.c'],
+        acceptRe: ['^gcc\\b(?=.*-wall\\b)(?=.*greet\\.c\\b)(?=.*-o\\s+greet\\b).*'],
         stdout:
           "greet.c: In function 'main':\ngreet.c:4:9: warning: unused variable 'count' [-Wunused-variable]\n    4 |     int count = 3;\n      |         ^~~~~",
         setState: { built: true },
@@ -143,8 +136,8 @@ export default {
         promptEn:
           'Compile calc.c to an object file only — do not link yet — and keep the warnings on.',
         hintTerm: 'Object File',
-        accept: ['gcc -Wall -c calc.c', 'gcc -c -Wall calc.c', 'gcc -c calc.c'],
-        acceptRe: ['^gcc\\s+.*-c\\b.*calc\\.c'],
+        accept: ['gcc -Wall -c calc.c', 'gcc -c -Wall calc.c'],
+        acceptRe: ['^gcc\\b(?=.*-wall\\b)(?=.*-c\\b)(?=.*calc\\.c\\b).*'],
         stdout:
           "calc.c: In function 'main':\ncalc.c:10:20: warning: format '%d' expects argument of type 'int', but argument 2 has type 'double' [-Wformat=]\n   10 |     printf(\"area = %d\\n\", area);\n      |                    ~^     ~~~~\n      |                     |     |\n      |                     int   double\n      |                    %f",
         setState: { object_built: true },
@@ -267,9 +260,10 @@ export default {
         accept: [
           'gcc -Wall -Wextra totals.c -o totals',
           'gcc -Wextra -Wall totals.c -o totals',
+          'gcc -Wall -Wextra -o totals totals.c',
           'gcc -Wall totals.c -o totals',
         ],
-        acceptRe: ['^gcc\\s+.*-wall\\b.*totals\\.c.*-o\\s+totals\\b'],
+        acceptRe: ['^gcc\\b(?=.*-wall\\b)(?=.*totals\\.c\\b).*'],
         stdout:
           "totals.c: In function 'main':\ntotals.c:8:15: warning: 'total' is used uninitialized [-Wuninitialized]\n    8 |         total += values[i];\n      |         ~~~~~~^~~~~~~~~~~~\ntotals.c:5:9: note: 'total' was declared here\n    5 |     int total;\n      |         ^~~~~",
         setState: { warned: true },
@@ -345,7 +339,7 @@ export default {
           'Peek at the first 15 lines the program prints, without letting it flood your terminal.',
         hintTerm: 'Infinite Loop',
         accept: ['./countdown | head -15', 'timeout 3 ./countdown | head -15'],
-        acceptRe: ['\\./countdown\\s*\\|\\s*head', '^timeout\\s+\\d+s?\\s+\\./countdown\\s*$'],
+        acceptRe: ['\\./countdown\\s*\\|\\s*head\\b'],
         stdout:
           'tick 10\ntick 9\ntick 8\ntick 7\ntick 6\ntick 5\ntick 4\ntick 3\ntick 2\ntick 1\ntick 0\ntick 4294967295\ntick 4294967294\ntick 4294967293\ntick 4294967292',
         setState: { hang_seen: true },
