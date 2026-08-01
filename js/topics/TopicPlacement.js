@@ -1,10 +1,51 @@
 import { getTopicMeta } from './registry.js';
+import { escapeHtml } from '../utils/SanitizeHtml.js';
 import { placementTestService } from '../services/PlacementTestService.js';
 import { certificateService } from '../services/CertificateService.js';
 import { analyticsService } from '../services/AnalyticsService.js';
 import { authService } from '../services/AuthService.js';
 import { canRunVeroFalso, canRunDefinizione } from './TopicPracticeExtraModes.js';
 import { isTypeableAnswer, MIN_TYPEABLE_ITEMS } from './TopicPracticeConstants.js';
+import { loadLabsFor, labsForLevel } from './TopicPracticeLabMode.js';
+
+/**
+ * How the practice modes are presented. Grouped by the learner's INTENT rather
+ * than by implementation, because a flat list of 23 cards is a wall. Any mode
+ * missing from every group would never render, so the set is asserted in
+ * tests/topic-placement-groups.test.js.
+ */
+export const MODE_GROUPS = [
+  {
+    id: 'vocab',
+    name: 'Vocabolario / Vocabulary',
+    ids: ['listening', 'matching', 'writing', 'context', 'pairs', 'definizione'],
+  },
+  {
+    id: 'comprehension',
+    name: 'Comprensione / Comprehension',
+    ids: ['fillblank', 'sentence', 'comprehension', 'scenario', 'verofalso'],
+  },
+  {
+    id: 'handson',
+    name: 'Pratica Tecnica / Hands-on',
+    ids: [
+      'lab',
+      'terminal',
+      'command',
+      'cmdcloze',
+      'codelab',
+      'codechallenge',
+      'codeoutput',
+      'readout',
+      'dictation',
+    ],
+  },
+  {
+    id: 'challenge',
+    name: 'Sfide / Challenges',
+    ids: ['chain', 'velocita', 'techtalk'],
+  },
+];
 
 export const topicPlacementMixin = {
   async downloadCertificate(topicId) {
@@ -190,6 +231,12 @@ export const topicPlacementMixin = {
     // `writing` asks the learner to reproduce the Italian exactly. A level whose
     // glosses are all sentence-length (reference-derived content, mostly) would
     // offer a card that is really a typing test, so require a few short answers.
+    // Labs are authored per lesson, so the card is offered only when THIS level
+    // actually has one. showModeSelector is already async, so the lazy import
+    // costs nothing until the learner opens the picker.
+    const levelLabs = labsForLevel(await loadLabsFor(topicId), level);
+    const hasLab = levelLabs.length > 0;
+
     const hasTypeableAnswers =
       pool.filter((item) => item.english && isTypeableAnswer(item)).length >= MIN_TYPEABLE_ITEMS;
     // Both gates count DISTINCT Italian glosses / notes, not items: the
@@ -347,6 +394,13 @@ export const topicPlacementMixin = {
         enabled: hasCommand,
       },
       {
+        id: 'lab',
+        name: 'Lab / Hands-on Lab',
+        desc: 'Risolvi il caso al terminale / Work the case at the terminal',
+        icon: '\u{1F9EA}',
+        enabled: hasLab,
+      },
+      {
         id: 'velocita',
         name: "Velocita' / Speed Run",
         desc: '60-90s a tutta velocita / 60-90s rapid-fire',
@@ -363,24 +417,44 @@ export const topicPlacementMixin = {
     if (titleEl) titleEl.textContent = `Livello ${levelNum}: ${level.name}`;
     if (progressEl) progressEl.textContent = "Scegli modalita'";
 
+    // 23 modes in one flat grid is choice paralysis, and interleaving the
+    // unavailable ones makes it worse. Group by what the learner is trying to
+    // DO, put the available modes first inside each group, and drop a group
+    // entirely when this level cannot offer any of it.
+    const grouped = MODE_GROUPS.map((group) => ({
+      ...group,
+      modes: modes
+        .filter((m) => group.ids.includes(m.id))
+        .sort((a, b) => Number(b.enabled) - Number(a.enabled)),
+    })).filter((group) => group.modes.some((m) => m.enabled));
+
+    let cardIndex = 0;
+    const cardHtml = (mode) => {
+      const delay = cardIndex * 40;
+      cardIndex += 1;
+      return `
+            <div class="mode-card ${mode.enabled ? '' : 'mode-disabled'}"
+                 ${mode.enabled ? 'role="button" tabindex="0"' : 'aria-disabled="true"'}
+                 style="animation-delay: ${delay}ms"
+                 ${mode.enabled ? `data-action="topic.startMode" data-mode="${mode.id}" data-topic-id="${topicId}" data-level="${levelNum}"` : ''}>
+              <div class="mode-card-icon" aria-hidden="true">${mode.icon}</div>
+              <div class="mode-card-name">${mode.name}</div>
+              <div class="mode-card-desc">${mode.desc}</div>
+            </div>`;
+    };
+
     container.innerHTML = `
       <div class="mode-selector">
         <h3 class="mode-selector-title">Scegli come esercitarti / Choose practice mode</h3>
-        <div class="mode-selector-grid">
-          ${modes
-            .map(
-              (mode, idx) => `
-            <div class="mode-card ${mode.enabled ? '' : 'mode-disabled'}"
-                 style="animation-delay: ${idx * 60}ms"
-                 ${mode.enabled ? `data-action="topic.startMode" data-mode="${mode.id}" data-topic-id="${topicId}" data-level="${levelNum}"` : ''}>
-              <div class="mode-card-icon">${mode.icon}</div>
-              <div class="mode-card-name">${mode.name}</div>
-              <div class="mode-card-desc">${mode.desc}</div>
-            </div>
-          `
-            )
-            .join('')}
-        </div>
+        ${grouped
+          .map(
+            (group) => `
+          <section class="mode-group">
+            <h4 class="mode-group-title">${escapeHtml(group.name)}</h4>
+            <div class="mode-selector-grid">${group.modes.map(cardHtml).join('')}</div>
+          </section>`
+          )
+          .join('')}
       </div>
     `;
   },

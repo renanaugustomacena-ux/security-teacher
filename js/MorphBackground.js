@@ -136,6 +136,13 @@ export class MorphBackground {
     this._onTouchMove = this._handleTouchMove.bind(this);
     this._onMouseLeave = this._handleMouseLeave.bind(this);
     this._onResize = this._handleResize.bind(this);
+    // Doctrine §13.4 — every animation timer pauses when the tab is hidden.
+    // pause()/resume() already existed but nothing ever called them, so the
+    // WebGL rain kept rendering in background tabs and drained the battery.
+    this._onVisibilityChange = () => {
+      if (document.visibilityState === 'hidden') this.pause();
+      else this.resume();
+    };
   }
 
   /* ---------------------------------------------------------------- */
@@ -453,6 +460,7 @@ export class MorphBackground {
     window.addEventListener('touchmove', this._onTouchMove, { passive: true });
     document.addEventListener('mouseleave', this._onMouseLeave);
     window.addEventListener('resize', this._onResize);
+    document.addEventListener('visibilitychange', this._onVisibilityChange);
   }
 
   _handleMouseMove(e) {
@@ -552,6 +560,7 @@ export class MorphBackground {
     window.removeEventListener('touchmove', this._onTouchMove);
     document.removeEventListener('mouseleave', this._onMouseLeave);
     window.removeEventListener('resize', this._onResize);
+    document.removeEventListener('visibilitychange', this._onVisibilityChange);
 
     if (this.renderer) {
       this.renderer.dispose();

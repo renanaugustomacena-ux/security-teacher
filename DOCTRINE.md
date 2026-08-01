@@ -630,6 +630,17 @@ an amendment commit that updates this file in the same PR.
 | 44.4  | Generated data MUST be split so that no single emitted file exceeds the §13.2 300 KB budget. Splitting into sibling chunk modules composed by the topic file is the sanctioned pattern; the graph still loads lazily as one unit. |
 | 44.5  | An item whose answer text is too long for type-the-answer practice MUST be flagged in the data (`longAnswer: true`) so the mode selector can gate it out. Asking a learner to type a 70-character definition is a bug, not a hard question. |
 
+## §45. Terminal Labs — v2.1.0
+
+| Rule  | Statement |
+| ----- | --------- |
+| 45.1  | A lab script is pure declarative data: `export default` only, NO imports, NO functions, NO regex literals (patterns are SOURCE STRINGS in `acceptRe`, compiled by the engine). This matches §1.4 for data modules and keeps lab content reviewable by a non-programmer. |
+| 45.2  | A lab bundle at `js/topics/data/labs/<topicId>-labs.js` is keyed by REAL lesson ids from that topic. A key that is not a lesson id means the lab silently never loads and nobody finds out — `tests/lab-scripts.test.js` gates this. |
+| 45.3  | Every key in a lab's `requires` MUST be produced by some step's `setState`, or the lab can never complete and the learner is trapped. Gated by test. |
+| 45.4  | Every step's own `accept[0]` MUST pass `matchStep` — the intended solution must actually be accepted. Gated by test, because an over-strict pattern rejects the very answer the hints tell the learner to type. |
+| 45.5  | Labs grade by GOAL, not by string: any command reaching the step's `setState` goal is accepted, a wrong command NEVER ends the run, and hints escalate over exactly three stages (nudge → partial → answer). This is the app's only non-punitive grading model and it must stay that way (§14.1). |
+| 45.6  | A lab MUST NOT present a destructive command (`rm -rf /`, `DROP DATABASE`, `mkfs`, raw `dd` to a device) as routine, and MUST NOT contain real hostnames, credentials or secrets. Gated by test. |
+
 ---
 
 ## Appendix A — Rule Count
@@ -681,7 +692,8 @@ an amendment commit that updates this file in the same PR.
 | §42 AI Tutoring                            | 4       |
 | §43 Lesson Layouts                         | 9       |
 | §44 Generated Content Ingestion            | 5       |
-| **Total**                                  | **264** |
+| §45 Terminal Labs                          | 6       |
+| **Total**                                  | **270** |
 
 ## Appendix B — Quick-Reference Index
 
@@ -702,6 +714,7 @@ an amendment commit that updates this file in the same PR.
 - **Gamification additions:** §30 (quests) + §31 (currency) + §35 (SmartScore).
 - **Chart/visualization additions:** §36.2 — Canvas API only, no external chart libraries.
 - **Adding a lesson layout:** §43 — export `LAYOUT_META` + `canRender` + the engine class, register it in `js/topics/TopicLessonLayouts.js`, dynamic-import it (§43.6), add the `sw.js` entry (§5.6), bump `CACHE_NAME` (§5.5), add a test (§17.1), and style new classes in the `LESSON LAYOUTS` block of `css/style.css`.
+- **Authoring a terminal lab:** §45 — add `js/topics/data/labs/<topicId>-labs.js` keyed by real lesson ids, add the `sw.js` entry (§5.6), bump `CACHE_NAME` (§5.5). `tests/lab-scripts.test.js` proves the intended solution path actually completes every lab.
 - **Regenerating library-sourced content:** `npm run ingest:glossaries` (§44) — reads the study-library glossaries, rewrites `js/topics/data/library-glossary.js` and its `library/*.js` chunks, and prints the exact `sw.js` lines to add. Never edit those files by hand.
 
 ## Appendix C — Glossary

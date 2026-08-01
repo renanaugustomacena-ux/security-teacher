@@ -215,7 +215,7 @@ export class TopicManager {
                 ? `<span class="topic-card-stars">\u2605 ${starInfo.earned}</span>`
                 : '';
             return `
-            <div class="topic-card" style="--topic-color: ${topic.color}" data-action="topic.open" data-topic-id="${topic.id}">
+            <div class="topic-card" role="button" tabindex="0" style="--topic-color: ${topic.color}" data-action="topic.open" data-topic-id="${topic.id}">
               <div class="topic-card-icon">${topic.icon}</div>
               <h3 class="topic-card-title">${topic.title}</h3>
               <p class="topic-card-title-it">${topic.titleIt}</p>
@@ -419,6 +419,7 @@ export class TopicManager {
               : '';
             return `
             <div class="lesson-card-mini ${isCompleted ? 'completed' : ''}"
+                 role="button" tabindex="0"
                  data-action="topic.openLesson"
                  data-topic-id="${topicId}"
                  data-level="${levelNum}"

@@ -37,6 +37,7 @@ import { advancedModesMixin } from './TopicPracticeAdvancedModes.js';
 import { extraModesMixin } from './TopicPracticeExtraModes.js';
 import { renderingMixin } from './TopicPracticeRendering.js';
 import { resultHandlerMixin } from './TopicPracticeResultHandler.js';
+import { labModeMixin } from './TopicPracticeLabMode.js';
 import { matchModeMixin } from './TopicPracticeMatchMode.js';
 import { outputModesMixin } from './TopicPracticeOutputModes.js';
 import { COMMAND_ALIASES, isTypeableAnswer } from './TopicPracticeConstants.js';
@@ -155,6 +156,24 @@ export class TopicPracticeManager {
       if (fillEl) fillEl.style.width = '0%';
       if (!this.velocita) this.velocita = new TopicVelocita(this.progressManager);
       this.velocita.showDurationPicker(pool, topicId, levelNum);
+      return;
+    }
+
+    // Labs are lazily imported per topic, so this path is async and cannot go
+    // through the synchronous generateQuestions().
+    if (mode === 'lab') {
+      this.questions = await this.generateLabQuestions(data, topicId, levelNum);
+      if (this.questions.length === 0) {
+        this.showNotification(
+          'Nessun lab disponibile per questo livello. / No lab available for this level.',
+          'warning'
+        );
+        return;
+      }
+      this.showPracticeUI();
+      this.startQuestionTimer();
+      this.updateMetaDisplay();
+      this.renderQuestion();
       return;
     }
 
@@ -721,5 +740,6 @@ Object.assign(
   renderingMixin,
   resultHandlerMixin,
   matchModeMixin,
-  outputModesMixin
+  outputModesMixin,
+  labModeMixin
 );

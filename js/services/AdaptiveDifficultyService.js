@@ -10,6 +10,8 @@ const MODE_DIFFICULTY = {
   // Conceptual recall of a full Italian description, not a one-word gloss.
   definizione: 0.42,
   readout: 0.4,
+  // Multi-step, goal-graded, with escalating hints — the hardest thing here.
+  lab: 0.7,
   scenario: 0.45,
   writing: 0.5,
   sentence: 0.55,

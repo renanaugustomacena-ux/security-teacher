@@ -374,6 +374,11 @@ export const renderingMixin = {
         return; // Definizione handles its own rendering
       }
 
+      case 'lab': {
+        this.renderLabQuestion(container, q);
+        return; // LabEngine owns its container, input and completion screen
+      }
+
       case 'pairs': {
         this.renderPairsQuestion(container, q);
         return; // Tap-the-pairs owns its DOM + tap lifecycle

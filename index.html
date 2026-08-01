@@ -101,7 +101,13 @@
   </head>
 
   <body>
-    <canvas id="matrix-morph"></canvas>
+    <!--
+      Doctrine §15.6 — skip link. The sidebar puts ten nav items before the
+      content, so without this a keyboard user tabs through all of them on
+      every screen. Visually hidden until focused (see .skip-link).
+    -->
+    <a class="skip-link" href="#main-content">Vai al contenuto / Skip to content</a>
+    <canvas id="matrix-morph" aria-hidden="true"></canvas>
 
     <!-- Splash Screen -->
     <div id="splash-screen" class="splash-screen">
@@ -469,7 +475,7 @@
       <div class="sidebar-overlay" id="sidebar-overlay"></div>
 
       <!-- Main Content Area -->
-      <main class="main-content">
+      <main class="main-content" id="main-content" tabindex="-1">
         <!-- HOME SECTION -->
         <section id="home" class="section active">
           <header class="section-header">
@@ -751,37 +757,73 @@
           </header>
 
           <div class="practice-grid">
-            <div class="practice-card" data-action="practice.start" data-mode="listening">
+            <div
+              class="practice-card"
+              role="button"
+              tabindex="0"
+              data-action="practice.start"
+              data-mode="listening"
+            >
               <div class="practice-icon"></div>
               <h3>Ascolto / Listening</h3>
               <p>Ascolta e scegli la parola corretta / Listen and choose the correct word</p>
             </div>
 
-            <div class="practice-card" data-action="practice.start" data-mode="writing">
+            <div
+              class="practice-card"
+              role="button"
+              tabindex="0"
+              data-action="practice.start"
+              data-mode="writing"
+            >
               <div class="practice-icon"></div>
               <h3>Scrittura / Writing</h3>
               <p>Scrivi la traduzione / Write the translation</p>
             </div>
 
-            <div class="practice-card" data-action="practice.start" data-mode="matching">
+            <div
+              class="practice-card"
+              role="button"
+              tabindex="0"
+              data-action="practice.start"
+              data-mode="matching"
+            >
               <div class="practice-icon"></div>
               <h3>Abbinamento / Matching</h3>
               <p>Abbina parole e significati / Match words and meanings</p>
             </div>
 
-            <div class="practice-card" data-action="practice.start" data-mode="fillblank">
+            <div
+              class="practice-card"
+              role="button"
+              tabindex="0"
+              data-action="practice.start"
+              data-mode="fillblank"
+            >
               <div class="practice-icon"></div>
               <h3>Completa / Fill in the Blank</h3>
               <p>Completa le frasi delle canzoni / Complete song lyrics</p>
             </div>
 
-            <div class="practice-card" data-action="practice.start" data-mode="sentence">
+            <div
+              class="practice-card"
+              role="button"
+              tabindex="0"
+              data-action="practice.start"
+              data-mode="sentence"
+            >
               <div class="practice-icon"></div>
               <h3>Ricostruisci / Sentence</h3>
               <p>Ordina le parole della frase / Order the words in the sentence</p>
             </div>
 
-            <div class="practice-card" data-action="practice.start" data-mode="comprehension">
+            <div
+              class="practice-card"
+              role="button"
+              tabindex="0"
+              data-action="practice.start"
+              data-mode="comprehension"
+            >
               <div class="practice-icon">
                 <svg
                   width="32"
@@ -803,7 +845,13 @@
               <p>Leggi e rispondi alle domande / Read and answer questions</p>
             </div>
 
-            <div class="practice-card" data-action="practice.start" data-mode="scenario">
+            <div
+              class="practice-card"
+              role="button"
+              tabindex="0"
+              data-action="practice.start"
+              data-mode="scenario"
+            >
               <div class="practice-icon">
                 <svg
                   width="32"
@@ -827,6 +875,8 @@
             <div
               class="practice-card"
               id="practice-card-pronunciation"
+              role="button"
+              tabindex="0"
               data-action="practice.startPronunciation"
             >
               <div class="practice-icon">
@@ -850,7 +900,12 @@
               <p>Pratica la pronuncia / Practice your pronunciation</p>
             </div>
 
-            <div class="practice-card srs-review-card" data-action="practice.startSrsReview">
+            <div
+              class="practice-card srs-review-card"
+              role="button"
+              tabindex="0"
+              data-action="practice.startSrsReview"
+            >
               <div class="practice-icon">
                 <svg
                   width="32"

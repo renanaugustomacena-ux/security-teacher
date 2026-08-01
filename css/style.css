@@ -690,7 +690,7 @@ h3 {
   border-radius: var(--radius-md);
   padding: 0.5rem 0.75rem;
   color: var(--text-primary);
-  font-family: var(--font-body);
+  font-family: var(--font-sans);
   font-size: 0.95rem;
   outline: none;
   transition: border-color var(--transition-fast);
@@ -1288,7 +1288,7 @@ h3 {
   min-width: auto !important;
   flex: 0 0 auto !important;
   background: var(--bg-tertiary);
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   color: var(--text-secondary);
   cursor: pointer;
@@ -9835,4 +9835,206 @@ body.login-wall-active > *:not(.login-wall):not(#matrix-morph) {
   .v2-summary-stats {
     gap: var(--space-md);
   }
+}
+
+/* ═══════════════════════════════════════════════════
+   KEYBOARD ACCESSIBILITY (doctrine §15.1, §15.5)
+   The UI dispatches from card-shaped divs as well as
+   real buttons. EventDispatch makes them operable with
+   Enter/Space; these rules make them VISIBLE to a
+   keyboard user, which §15.5 requires and the codebase
+   previously had almost none of.
+   :focus-visible is used rather than :focus so a mouse
+   click never paints a ring the pointer user did not ask
+   for, while every keyboard tab-stop always shows one.
+   ═══════════════════════════════════════════════════ */
+
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--accent-secondary, #f39c12);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* Cards are large surfaces — a ring alone reads as an artefact, so lift and
+   tint them too, matching what hover already does for pointer users. */
+.topic-card:focus-visible,
+.lesson-card-mini:focus-visible,
+.mode-card:focus-visible,
+.practice-card:focus-visible {
+  outline: 2px solid var(--accent-secondary, #f39c12);
+  outline-offset: 3px;
+  background: var(--bg-tertiary);
+  border-color: var(--topic-color, var(--accent-primary));
+}
+
+/* A disabled mode card is not a tab stop and must not look actionable. */
+/* Disabled cards are not tab stops (pointer-events + no tabindex), so they
+   need neither a cursor nor a focus ring — see the .mode-disabled rule in the
+   MODE PICKER GROUPS block for their appearance. */
+
+/* Non-native controls still need a pointer affordance. */
+.topic-card,
+.lesson-card-mini,
+.mode-card:not(.mode-disabled),
+.practice-card {
+  cursor: pointer;
+}
+
+/* §15.4 — honour reduced motion on the surfaces added for lesson layouts and
+   the lab. The static state must look intentional, not broken: the elements
+   simply appear, already in their final position. */
+@media (prefers-reduced-motion: reduce) {
+  .drill-card-back,
+  .discovery-reveal,
+  .discovery-consolidate,
+  .lesson-v2,
+  .story-passage,
+  .lab-panel {
+    animation: none !important;
+  }
+
+  .topic-card:hover,
+  .lesson-card-mini:hover,
+  .mode-card:hover,
+  .practice-card:hover,
+  .story-bank-word:hover,
+  .drill-rate-btn:hover,
+  .definizione-option-btn:hover,
+  .verofalso-verdict-btn:hover,
+  .verofalso-rationale-btn:hover {
+    transform: none;
+  }
+}
+
+/* Touch targets: the WCAG 2.2 target-size floor is 24px, and these are all
+   primary actions on a phone. The rating and option rows were already 46-48px;
+   these are the ones that were not. */
+.mode-card,
+.practice-card {
+  min-height: 44px;
+}
+
+/* ═══════════════════════════════════════════════════
+   MODE PICKER GROUPS
+   23 practice modes in one flat grid was a wall. They
+   are now grouped by what the learner is trying to DO,
+   with the unavailable ones sorted to the end of their
+   group and whole groups dropped when a level cannot
+   offer any of them.
+   ═══════════════════════════════════════════════════ */
+
+.mode-group {
+  margin-bottom: var(--space-xl);
+}
+
+.mode-group:last-child {
+  margin-bottom: 0;
+}
+
+.mode-group-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+  font-family: var(--font-display);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* Hairline rule trailing the label — groups the cards without adding a box. */
+.mode-group-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--border-color), transparent);
+}
+
+/* An unavailable mode stays visible so the learner can see it exists and what
+   would unlock it, but must never read as actionable. */
+.mode-card.mode-disabled {
+  /* Faint enough to read as unavailable, legible enough to still tell the
+     learner what it is and why it is greyed out. Below ~0.5 the label drops
+     under 3:1 on this surface and becomes guesswork. */
+  opacity: 0.55;
+  filter: grayscale(0.5);
+  pointer-events: none;
+}
+
+.mode-card.mode-disabled:hover {
+  transform: none;
+  border-color: var(--border-color);
+}
+
+/* ═══════════════════════════════════════════════════
+   INPUT FOCUS RINGS (doctrine §15.5)
+   Six typing surfaces set `outline: none` with either no
+   replacement or a tint too faint to read as focus. The
+   global :focus-visible rule cannot reach them: it uses
+   :where(), which has zero specificity, so a plain class
+   selector beats it. These restore a visible ring at
+   matching specificity, and only for keyboard focus, so
+   clicking into a field stays quiet.
+   ═══════════════════════════════════════════════════ */
+
+.translate-input:focus-visible,
+.practice-input:focus-visible,
+.chat-input:focus-visible,
+.terminal-input:focus-visible,
+.codelab-input:focus-visible {
+  outline: 2px solid var(--accent-secondary);
+  outline-offset: 2px;
+}
+
+/* The lab terminal reuses .terminal-input, so it inherits the ring above. Its
+   surrounding panel gets a matching cue since the input sits on black. */
+.lab-terminal:focus-within {
+  border-color: var(--accent-secondary);
+}
+
+/* Doctrine §15.6 — skip link. Off-screen until focused, then pinned to the
+   top-left over everything. Uses a real offset rather than display:none so it
+   stays in the tab order. */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 10000;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--accent-primary);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+}
+
+.skip-link:focus {
+  left: var(--space-md);
+  top: var(--space-md);
+}
+
+/* The jump target is focusable only programmatically; it must never paint a
+   ring of its own when focus lands there. */
+.main-content:focus {
+  outline: none;
+}
+
+/* ═══════════════════════════════════════════════════
+   LESSON V2 BEAT WRAPPERS
+   The warmup and drill beats emit a bare wrapper whose
+   children are styled but which had no rule of its own,
+   so those two beats sat flush against the panel edge
+   while every other beat was inset. Cosmetic, but it
+   made the loop feel inconsistent as it advanced.
+   ═══════════════════════════════════════════════════ */
+
+.v2-warmup,
+.v2-drill {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: var(--space-md) 0;
 }
