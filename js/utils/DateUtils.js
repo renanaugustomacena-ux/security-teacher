@@ -1,6 +1,6 @@
 /**
- * Date Utilities - FlowLearn
- * ==========================
+ * Date Utilities - Knowledge AIO
+ * ==============================
  *
  * Shared date utility functions for progress tracking,
  * streaks, and calendar rendering.

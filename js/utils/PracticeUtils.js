@@ -184,9 +184,7 @@ export function pickBestBlankIndex(words, targetWord) {
     return topN[Math.floor(Math.random() * topN.length)].index;
   }
 
-  const nonTrivial = words
-    .map((w, i) => ({ word: w, index: i }))
-    .filter((c) => c.word.length > 2);
+  const nonTrivial = words.map((w, i) => ({ word: w, index: i })).filter((c) => c.word.length > 2);
 
   if (nonTrivial.length > 0) {
     return nonTrivial[Math.floor(Math.random() * nonTrivial.length)].index;

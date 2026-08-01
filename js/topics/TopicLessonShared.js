@@ -1,6 +1,6 @@
 /**
- * TOPIC LESSON SHARED - FlowLearn
- * ================================
+ * TOPIC LESSON SHARED - Knowledge AIO
+ * ===================================
  *
  * Common building blocks for every lesson layout (TopicLessonEngine and the
  * alternative layouts registered in TopicLessonLayouts.js).

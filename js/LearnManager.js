@@ -1,6 +1,6 @@
 /**
  * LEARN MODULE - Knowledge AIO
- * =============================
+ * ============================
  *
  * Gestisce le lezioni e i livelli di apprendimento.
  * Uses inline feedback instead of alert() for all user messages.

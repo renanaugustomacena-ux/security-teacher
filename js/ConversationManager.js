@@ -1,6 +1,6 @@
 /**
  * CONVERSATION MANAGER - Knowledge AIO
- * =====================================
+ * ====================================
  *
  * Manages the AI Conversation Partner feature:
  *   - Topic selector grid

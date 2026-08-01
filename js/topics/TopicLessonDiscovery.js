@@ -1,6 +1,6 @@
 /**
- * TOPIC LESSON DISCOVERY - FlowLearn
- * ===================================
+ * TOPIC LESSON DISCOVERY - Knowledge AIO
+ * ======================================
  *
  * "Scoperta / Discovery" — a PRETESTING layout, the pedagogical inverse of the
  * default engine. The learner GUESSES each term's meaning BEFORE being taught

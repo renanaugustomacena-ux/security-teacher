@@ -1,6 +1,6 @@
 /**
- * TOPIC LESSON DRILL - FlowLearn
- * ===============================
+ * TOPIC LESSON DRILL - Knowledge AIO
+ * ==================================
  *
  * "Ripasso / Drill" layout: one self-rated flip card per item, in lesson order.
  *

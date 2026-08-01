@@ -157,7 +157,13 @@ async function checkCspAlignment() {
   const meta = extractMetaCsp(html);
   const nginx = extractNginxCsp(conf);
   if (!meta || !nginx) return;
-  compareCspPair('meta-vs-nginx', parseCspDirectives(meta), parseCspDirectives(nginx), 'meta', 'nginx');
+  compareCspPair(
+    'meta-vs-nginx',
+    parseCspDirectives(meta),
+    parseCspDirectives(nginx),
+    'meta',
+    'nginx'
+  );
 
   let toml;
   try {
@@ -167,7 +173,13 @@ async function checkCspAlignment() {
   }
   const netlify = extractNetlifyCsp(toml);
   if (!netlify) return;
-  compareCspPair('meta-vs-netlify', parseCspDirectives(meta), parseCspDirectives(netlify), 'meta', 'netlify');
+  compareCspPair(
+    'meta-vs-netlify',
+    parseCspDirectives(meta),
+    parseCspDirectives(netlify),
+    'meta',
+    'netlify'
+  );
 }
 
 async function* walk(dir) {

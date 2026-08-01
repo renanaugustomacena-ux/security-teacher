@@ -1,7 +1,6 @@
 import { shuffleArray } from '../utils/PracticeUtils.js';
 
 export const advancedQuestionsMixin = {
-
   generateTerminalQuestions(pool) {
     const commandItems = pool.filter((item) => item.command);
     if (commandItems.length === 0) return [];

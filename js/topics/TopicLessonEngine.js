@@ -1,6 +1,6 @@
 /**
- * TOPIC LESSON ENGINE - FlowLearn
- * ================================
+ * TOPIC LESSON ENGINE - Knowledge AIO
+ * ===================================
  *
  * Stage-based lesson engine that replaces the flat item-by-item lesson view.
  *
@@ -20,7 +20,6 @@ import {
   ENCOURAGING_CORRECT,
   ENCOURAGING_WRONG,
 } from './data/topic-lesson-intros.js';
-
 
 export class TopicLessonEngine {
   constructor(progressManager) {

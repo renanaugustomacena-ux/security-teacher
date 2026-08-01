@@ -1,6 +1,6 @@
 /**
- * TOPIC LESSON LAYOUTS - FlowLearn
- * =================================
+ * TOPIC LESSON LAYOUTS - Knowledge AIO
+ * ====================================
  *
  * Registry + selection logic for lesson layouts.
  *

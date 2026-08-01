@@ -1,6 +1,6 @@
 /**
- * PYTHON PROGRAMMING TOPIC DATA - FlowLearn
- * ==========================================
+ * PYTHON PROGRAMMING TOPIC DATA - Knowledge AIO
+ * =============================================
  *
  * 12 levels of English Python programming terminology.
  * Progression: Foundations → Pro Ecosystem

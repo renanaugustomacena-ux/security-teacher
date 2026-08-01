@@ -1,6 +1,6 @@
 /**
  * LEADERBOARD MANAGER - Knowledge AIO
- * =====================================
+ * ===================================
  *
  * Personal records and self-competition leaderboard for a local-first app.
  * Tracks personal bests, weekly stats snapshots, and all-time statistics.

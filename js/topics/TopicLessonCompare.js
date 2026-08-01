@@ -1,6 +1,6 @@
 /**
- * TOPIC LESSON COMPARE - FlowLearn
- * =================================
+ * TOPIC LESSON COMPARE - Knowledge AIO
+ * ====================================
  *
  * Contrast-based lesson layout ("Confronto / Compare").
  *

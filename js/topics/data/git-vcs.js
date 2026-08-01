@@ -1,6 +1,6 @@
 /**
- * GIT & VERSION CONTROL TOPIC DATA - FlowLearn
- * ============================================
+ * GIT & VERSION CONTROL TOPIC DATA - Knowledge AIO
+ * ================================================
  *
  * 24 levels of English Git and version control terminology.
  * Each level has 4 lessons with 10 items each (40 per level).

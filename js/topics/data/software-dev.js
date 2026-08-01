@@ -1,6 +1,6 @@
 /**
- * SOFTWARE DEVELOPMENT TOPIC DATA - FlowLearn
- * ============================================
+ * SOFTWARE DEVELOPMENT TOPIC DATA - Knowledge AIO
+ * ===============================================
  *
  * 12 levels of English software development terminology.
  * Progression: Foundations → Career & Communication

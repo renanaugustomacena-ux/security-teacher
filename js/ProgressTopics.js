@@ -1,5 +1,4 @@
 export const progressTopicsMixin = {
-
   ensureTopicProgress(topicId) {
     if (!this.data.topicProgress) {
       this.data.topicProgress = {};

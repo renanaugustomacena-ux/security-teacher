@@ -1,6 +1,6 @@
 /**
- * TOPIC MANAGER - FlowLearn
- * =========================
+ * TOPIC MANAGER - Knowledge AIO
+ * =============================
  *
  * Manages the Technical Topics section:
  * - Topics Hub (grid of 4 topic cards with star counts)

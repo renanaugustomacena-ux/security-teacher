@@ -15,7 +15,6 @@ import {
 } from '../utils/PracticeUtils.js';
 
 export const resultHandlerMixin = {
-
   handleResult(isCorrect, correct, accentHint = false) {
     this.clearTimer();
     const responseTime = this.getResponseTimeSeconds();

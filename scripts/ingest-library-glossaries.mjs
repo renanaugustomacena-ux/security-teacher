@@ -344,7 +344,11 @@ ${chunks.map((c, i) => `    ${i}: ${c.varName},`).join('\n')}
 
   await mkdir(CHUNK_DIR, { recursive: true });
   for (const chunk of chunks) {
-    await writeFile(join(CHUNK_DIR, `${chunk.fileSlug}.js`), await format(chunkFile(chunk)), 'utf8');
+    await writeFile(
+      join(CHUNK_DIR, `${chunk.fileSlug}.js`),
+      await format(chunkFile(chunk)),
+      'utf8'
+    );
   }
   await writeFile(OUT, await format(indexFile), 'utf8');
   console.log(`[ingest] wrote ${chunks.length} chunks + ${OUT}`);

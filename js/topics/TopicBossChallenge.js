@@ -1,6 +1,6 @@
 /**
- * TOPIC BOSS CHALLENGE - FlowLearn
- * =================================
+ * TOPIC BOSS CHALLENGE - Knowledge AIO
+ * ====================================
  *
  * Boss challenge mode for topic levels.
  * 15 mixed-format questions from all lessons in a level,
@@ -20,7 +20,6 @@ import {
   shuffleArray,
   normalize,
   normalizeWithAccents,
-  isContentWord,
   pickBestBlankIndex,
   formatContextLabel,
 } from '../utils/PracticeUtils.js';
@@ -29,7 +28,6 @@ import { COMMAND_ALIASES } from './TopicPracticeConstants.js';
 const BOSS_TOTAL_QUESTIONS = 15;
 const BOSS_TIME_LIMIT = 300; // 5 minutes in seconds
 const QUESTION_TYPES = ['listening', 'writing', 'matching', 'fillblank', 'context'];
-
 
 export class TopicBossChallenge {
   constructor(progressManager) {
@@ -721,5 +719,4 @@ export class TopicBossChallenge {
     const s = seconds % 60;
     return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
   }
-
 }
