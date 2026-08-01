@@ -13,7 +13,7 @@
 
 import { topicsRegistry, getTopicMeta } from './registry.js';
 import { ttsService } from '../services/TTSService.js';
-import { TopicLessonEngine } from './TopicLessonEngine.js';
+import { createLessonEngine, predictLayoutId, getLayoutMeta } from './TopicLessonLayouts.js';
 import { delegate } from '../utils/EventDispatch.js';
 import { escapeHtml } from '../utils/SanitizeHtml.js';
 import { referenceService } from '../services/ReferenceService.js';
@@ -413,6 +413,10 @@ export class TopicManager {
               lesson.id
             );
             const stars = this.getLessonStars(topicId, levelNum, lesson.id);
+            const layout = getLayoutMeta(predictLayoutId(lesson));
+            const layoutBadge = layout
+              ? `<span class="lesson-card-mini-layout" title="${escapeHtml(`${layout.nameIt} / ${layout.name}`)}">${layout.icon} ${escapeHtml(layout.nameIt)}</span>`
+              : '';
             return `
             <div class="lesson-card-mini ${isCompleted ? 'completed' : ''}"
                  data-action="topic.openLesson"
@@ -421,8 +425,11 @@ export class TopicManager {
                  data-lesson-id="${lesson.id}">
               <div class="lesson-card-mini-num">${idx + 1}</div>
               <div class="lesson-card-mini-info">
-                <div class="lesson-card-mini-title">${lesson.title}</div>
-                <div class="lesson-card-mini-stars">${this.renderStars(stars, 3)}</div>
+                <div class="lesson-card-mini-title">${escapeHtml(lesson.title)}</div>
+                <div class="lesson-card-mini-meta">
+                  <div class="lesson-card-mini-stars">${this.renderStars(stars, 3)}</div>
+                  ${layoutBadge}
+                </div>
               </div>
               <div class="lesson-card-mini-status">${isCompleted ? '\u2705' : ''}</div>
             </div>
@@ -543,8 +550,9 @@ export class TopicManager {
 
     this.showView('lesson');
 
-    // Use the stage-based lesson engine instead of flat item-by-item view
-    const engine = new TopicLessonEngine(this.progressManager);
+    // Resolve which lesson layout teaches this lesson. Falls back to the
+    // classic staged engine when the rotated layout cannot render the data.
+    const { engine } = await createLessonEngine(lesson, this.progressManager);
     engine.start(lesson, topicId, levelNum);
   }
 
@@ -779,7 +787,6 @@ export class TopicManager {
 
     setTimeout(() => notice.remove(), 3000);
   }
-
 }
 
 Object.assign(TopicManager.prototype, topicPlacementMixin);

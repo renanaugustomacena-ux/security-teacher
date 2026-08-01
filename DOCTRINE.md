@@ -1,9 +1,29 @@
 # DOCTRINE.md — Knowledge AIO Engineering Doctrine
 
-> **Version:** 2.0.0 — 2026-05-17
+> **Version:** 2.1.0 — 2026-08-01
 > **Status:** Ratified, in force.
 > **Scope:** All code, configuration, deployment artifacts, and operational
 > procedures within this repository.
+
+> **v2.1.0 amendments** (2026-08-01): Lesson Layouts — adds §43. Until now
+> every one of the ~900 lessons rendered through the single hardcoded
+> 4-stage pipeline in `js/topics/TopicLessonEngine.js` (intro → context
+> cards → exactly 2 MCQs → summary). The maintainer's report: it *"gets
+> boring before finishing the first levels of any domain"*. A lesson now
+> resolves through `js/topics/TopicLessonLayouts.js` to one of several
+> layouts that teach the SAME lesson data with different structure —
+> `classic` (teach then quiz), `discovery` (guess first, then teach),
+> `compare` (contrast confusable pairs), `story` (narrative cloze) and
+> `drill` (self-rated flip cards). Selection is deterministic per lesson,
+> so variety is stable rather than random. Shared bookkeeping (grouping,
+> distractors, scoring, persistence, summary markup) lives in
+> `js/topics/TopicLessonShared.js` so a new layout owns only its pedagogy.
+> New artefacts: `TopicLessonShared.js`, `TopicLessonLayouts.js`,
+> `TopicLessonDiscovery.js`, `TopicLessonCompare.js`, `TopicLessonStory.js`,
+> `TopicLessonDrill.js`, their tests, and the `LESSON LAYOUTS` block in
+> `css/style.css`. Pedagogy sources: the maintainer's personal study
+> library, whose modules teach the same material through guided ideas,
+> contrast pairs, cloze passages and try-before-you-reveal drills.
 
 > **v2.0.0 amendments** (2026-05-17): Educational Methods Doctrine — adds
 > §23-§42 governing pedagogy, adaptive learning, gamification, assessment,
@@ -578,6 +598,19 @@ an amendment commit that updates this file in the same PR.
 | 42.3  | Any LLM integration MUST be opt-in and MUST NOT be required for core functionality. |
 | 42.4  | LLM responses MUST be sandboxed and MUST NOT execute code or modify DOM outside designated containers. |
 
+## §43. Lesson Layouts — v2.1.0
+
+| Rule  | Statement |
+| ----- | --------- |
+| 43.1  | A lesson MUST be rendered by an engine resolved through `TopicLessonLayouts.createLessonEngine()`. `TopicManager.openLesson` is the ONLY construction site; no other module may instantiate a lesson engine directly. This keeps layout choice in one auditable place. |
+| 43.2  | A layout module MUST export `LAYOUT_META` (with `id`, `name`, `nameIt`, `icon`), a `canRender(lesson)` predicate, and a class exposing `constructor(progressManager)` and `start(lesson, topicId, levelNum)`. Anything less cannot be rotated into. |
+| 43.3  | Layout selection MUST be deterministic: an explicit `lesson.layout` field wins, otherwise a stable hash of the lesson id picks from the rotation pool. The same lesson MUST always resolve to the same layout — variety across lessons, never a reshuffle between sessions of the same lesson. |
+| 43.4  | A layout that cannot teach a given lesson MUST return `false` from `canRender` (e.g. Story requires ≥3 examples whose English half contains the term). Resolution falls through to the next candidate and ultimately to `classic`, which has no preconditions. A failed dynamic import MUST degrade to `classic`, never to a blank screen. |
+| 43.5  | A layout MUST call `finalizeLesson()` from `TopicLessonShared.js` EXACTLY ONCE per lesson, behind a re-entry guard. A layout MUST NOT call `progressManager` star / XP / completion methods directly. Double-award bugs from a double-tapped button are otherwise undetectable. |
+| 43.6  | Alternative layouts MUST be dynamically imported so they cost nothing against the §13.1 initial-bundle budget, and MUST still be listed in `sw.js#STATIC_ASSETS` (§5.6) so offline play is unaffected. |
+| 43.7  | Layout interactivity MUST use `data-action` + `registerAction` under a namespace unique to that layout (§3.4 forbids inline handlers). Every emitted `data-action` MUST have a matching registration and vice versa. |
+| 43.8  | Wrong answers in any layout MUST follow §14.1 — corrective, never punitive — and MUST NOT use the danger/red register (§14.6). Amber is the correction colour. |
+
 ---
 
 ## Appendix A — Rule Count
@@ -627,7 +660,8 @@ an amendment commit that updates this file in the same PR.
 | §40 Knowledge Graph                        | 3       |
 | §41 Branching Lessons                      | 4       |
 | §42 AI Tutoring                            | 4       |
-| **Total**                                  | **250** |
+| §43 Lesson Layouts                         | 8       |
+| **Total**                                  | **258** |
 
 ## Appendix B — Quick-Reference Index
 
@@ -647,6 +681,7 @@ an amendment commit that updates this file in the same PR.
 - **SRS algorithm changes:** §23 — FSRS v5 only, SM-2 is deprecated.
 - **Gamification additions:** §30 (quests) + §31 (currency) + §35 (SmartScore).
 - **Chart/visualization additions:** §36.2 — Canvas API only, no external chart libraries.
+- **Adding a lesson layout:** §43 — export `LAYOUT_META` + `canRender` + the engine class, register it in `js/topics/TopicLessonLayouts.js`, dynamic-import it (§43.6), add the `sw.js` entry (§5.6), bump `CACHE_NAME` (§5.5), add a test (§17.1), and style new classes in the `LESSON LAYOUTS` block of `css/style.css`.
 
 ## Appendix C — Glossary
 
