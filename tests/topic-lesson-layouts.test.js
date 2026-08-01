@@ -169,4 +169,65 @@ describe('TopicLessonLayouts', () => {
     expect(typeof engine.start).toBe('function');
     expect(layoutId).toBeTruthy();
   });
+
+  // ── Per-topic pinning (replaces lessonFlags.useLessonV2) ──
+  // LessonV2 is a long-form loop, not a variation, so a topic opts into it
+  // instead of meeting it at random. This is the mechanism that absorbed the
+  // old boolean flag when the pilot branch merged in.
+
+  it('registers lessonv2 but keeps it OUT of the rotation', () => {
+    expect(layouts.LAYOUT_IDS).toContain('lessonv2');
+    const rotated = new Set();
+    for (let i = 0; i < 200; i += 1) {
+      rotated.add(layouts.predictLayoutId({ id: `some_lesson_${i}` }));
+    }
+    // No un-pinned topic should ever land on it by chance.
+    expect(rotated.has('lessonv2')).toBe(false);
+  });
+
+  it('pins a topic to its default layout', () => {
+    expect(layouts.TOPIC_DEFAULT_LAYOUT.cybersecurity).toBe('lessonv2');
+    const lesson = { id: 'cyber_basics_1' };
+    expect(layouts.predictLayoutId(lesson, 'cybersecurity')).toBe('lessonv2');
+    // The same lesson id in an unpinned topic still rotates normally.
+    expect(layouts.predictLayoutId(lesson, 'linux')).not.toBe('lessonv2');
+  });
+
+  it('an explicit lesson.layout still beats the topic pin', () => {
+    const lesson = { id: 'cyber_basics_1', layout: 'drill' };
+    expect(layouts.predictLayoutId(lesson, 'cybersecurity')).toBe('drill');
+  });
+
+  it('builds the pinned engine for a pinned topic', async () => {
+    const { engine, layoutId } = await layouts.createLessonEngine(
+      richLesson('cyber_basics_1'),
+      {},
+      'cybersecurity'
+    );
+    expect(layoutId).toBe('lessonv2');
+    expect(typeof engine.start).toBe('function');
+  });
+
+  it('falls back to the rotation when the pinned layout cannot render', async () => {
+    // lessonv2 splits the lesson into two drilled chunks, so it needs >= 4
+    // translatable items. A thin lesson must not dead-end on the pin.
+    const thin = {
+      id: 'cyber_thin',
+      title: 'Thin',
+      items: [{ english: 'solo', italian: 'unico', context: 'x' }],
+    };
+    const { engine, layoutId } = await layouts.createLessonEngine(thin, {}, 'cybersecurity');
+    expect(layoutId).not.toBe('lessonv2');
+    expect(typeof engine.start).toBe('function');
+  });
+
+  it('an unknown topic pin does not break selection', async () => {
+    const { engine, layoutId } = await layouts.createLessonEngine(
+      richLesson('l1'),
+      {},
+      'no-such-topic'
+    );
+    expect(layouts.LAYOUT_IDS).toContain(layoutId);
+    expect(typeof engine.start).toBe('function');
+  });
 });

@@ -109,6 +109,14 @@ const STATIC_ASSETS = [
   './js/topics/TopicPracticeRendering.js',
   './js/topics/TopicPracticeResultHandler.js',
   './js/topics/TopicVelocita.js',
+  './js/topics/TopicPracticeMatchMode.js',
+  './js/topics/TopicPracticeOutputModes.js',
+  './js/topics/lesson2/LessonV2Scheduler.js',
+  './js/topics/lesson2/LessonV2Engine.js',
+  './js/topics/lesson2/LessonV2Beats.js',
+  './js/topics/lesson2/LessonV2Drills.js',
+  './js/topics/lab/LabMatch.js',
+  './js/topics/lab/LabEngine.js',
   './js/topics/registry.js',
   './js/topics/data/topic-lesson-intros.js',
   './js/topics/data/ai-engineering.js',
@@ -143,6 +151,8 @@ const STATIC_ASSETS = [
   './js/topics/data/library/10-migrazione-vmware-proxmox.js',
   './js/topics/data/library/11-godot-engine.js',
   './js/topics/data/library/12-software-engineering-extra.js',
+  // Declarative terminal-lab scripts consumed by LabEngine.
+  './js/topics/data/labs/cybersecurity-labs.js',
   './vendor/three-0.170.0.module.js',
   './vendor/fonts/fonts.css',
 ];

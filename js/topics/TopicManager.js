@@ -413,7 +413,7 @@ export class TopicManager {
               lesson.id
             );
             const stars = this.getLessonStars(topicId, levelNum, lesson.id);
-            const layout = getLayoutMeta(predictLayoutId(lesson));
+            const layout = getLayoutMeta(predictLayoutId(lesson, topicId));
             const layoutBadge = layout
               ? `<span class="lesson-card-mini-layout" title="${escapeHtml(`${layout.nameIt} / ${layout.name}`)}">${layout.icon} ${escapeHtml(layout.nameIt)}</span>`
               : '';
@@ -550,9 +550,11 @@ export class TopicManager {
 
     this.showView('lesson');
 
-    // Resolve which lesson layout teaches this lesson. Falls back to the
-    // classic staged engine when the rotated layout cannot render the data.
-    const { engine } = await createLessonEngine(lesson, this.progressManager);
+    // Resolve which lesson layout teaches this lesson. A topic may pin a
+    // layout (cybersecurity pins the LessonV2 teach-then-practice loop);
+    // otherwise the rotation picks one, always degrading to the classic
+    // staged engine when the chosen layout cannot render the data.
+    const { engine } = await createLessonEngine(lesson, this.progressManager, topicId);
     engine.start(lesson, topicId, levelNum);
   }
 

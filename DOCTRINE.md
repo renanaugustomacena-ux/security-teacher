@@ -612,7 +612,8 @@ an amendment commit that updates this file in the same PR.
 | ----- | --------- |
 | 43.1  | A lesson MUST be rendered by an engine resolved through `TopicLessonLayouts.createLessonEngine()`. `TopicManager.openLesson` is the ONLY construction site; no other module may instantiate a lesson engine directly. This keeps layout choice in one auditable place. |
 | 43.2  | A layout module MUST export `LAYOUT_META` (with `id`, `name`, `nameIt`, `icon`), a `canRender(lesson)` predicate, and a class exposing `constructor(progressManager)` and `start(lesson, topicId, levelNum)`. Anything less cannot be rotated into. |
-| 43.3  | Layout selection MUST be deterministic: an explicit `lesson.layout` field wins, otherwise a stable hash of the lesson id picks from the rotation pool. The same lesson MUST always resolve to the same layout — variety across lessons, never a reshuffle between sessions of the same lesson. |
+| 43.3  | Layout selection MUST be deterministic, in this precedence order: (1) an explicit `lesson.layout` field, (2) a per-topic pin in `TOPIC_DEFAULT_LAYOUT`, (3) a stable hash of the lesson id over the rotation pool. The same lesson MUST always resolve to the same layout — variety across lessons, never a reshuffle between sessions of the same lesson. |
+| 43.9  | A layout that is a long-form arc rather than a variation on a single lesson (e.g. `lessonv2`, which runs warmup → present → drill → interleave → applied lab → summary) MUST set `rotate: false` and be reached only via an explicit `lesson.layout` or a `TOPIC_DEFAULT_LAYOUT` pin. Learners must not meet a multi-stage loop by chance. A per-topic pin is the sanctioned replacement for a per-topic feature-flag module. |
 | 43.4  | A layout that cannot teach a given lesson MUST return `false` from `canRender` (e.g. Story requires ≥3 examples whose English half contains the term). Resolution falls through to the next candidate and ultimately to `classic`, which has no preconditions. A failed dynamic import MUST degrade to `classic`, never to a blank screen. |
 | 43.5  | A layout MUST call `finalizeLesson()` from `TopicLessonShared.js` EXACTLY ONCE per lesson, behind a re-entry guard. A layout MUST NOT call `progressManager` star / XP / completion methods directly. Double-award bugs from a double-tapped button are otherwise undetectable. |
 | 43.6  | Alternative layouts MUST be dynamically imported so they cost nothing against the §13.1 initial-bundle budget, and MUST still be listed in `sw.js#STATIC_ASSETS` (§5.6) so offline play is unaffected. |
@@ -678,9 +679,9 @@ an amendment commit that updates this file in the same PR.
 | §40 Knowledge Graph                        | 3       |
 | §41 Branching Lessons                      | 4       |
 | §42 AI Tutoring                            | 4       |
-| §43 Lesson Layouts                         | 8       |
+| §43 Lesson Layouts                         | 9       |
 | §44 Generated Content Ingestion            | 5       |
-| **Total**                                  | **263** |
+| **Total**                                  | **264** |
 
 ## Appendix B — Quick-Reference Index
 

@@ -14,16 +14,25 @@
  *   compare   — contrast confusable pairs   (discrimination practice)
  *   story     — narrative cloze passage     (vocabulary in connected prose)
  *   drill     — self-rated flip cards       (fast, low-friction recall)
+ *   lessonv2  — chunked teach→practice loop with interleaving and a terminal
+ *               lab (LessonV2Engine). Deeper than the rotating layouts: it
+ *               climbs recognition→cued→production, mixes chunks plus spaced
+ *               older items, and ends in a real scripted lab. Because it is a
+ *               long-form loop rather than a variation, it is NOT in the
+ *               rotation — a topic opts into it explicitly.
  *
  * Selection rules, in order:
  *   1. An explicit `layout` field on the lesson always wins (authored content
  *      can pin a layout that suits its material).
- *   2. Otherwise the layout is chosen by a stable hash of the lesson id, so a
+ *   2. A per-topic default (TOPIC_DEFAULT_LAYOUT) wins next. This replaces the
+ *      old `lessonFlags.useLessonV2(topicId)` boolean: a topic pin is just a
+ *      layout choice, so one mechanism now covers both.
+ *   3. Otherwise the layout is chosen by a stable hash of the lesson id, so a
  *      given lesson always renders the same way (no surprise reshuffle between
  *      sessions) while consecutive lessons differ.
- *   3. A candidate layout that reports `canRender(lesson) === false` is skipped
+ *   4. A candidate layout that reports `canRender(lesson) === false` is skipped
  *      — Story, for example, needs enough usable example sentences.
- *   4. Anything that fails to load or cannot render falls back to `classic`,
+ *   5. Anything that fails to load or cannot render falls back to `classic`,
  *      which has no preconditions.
  *
  * The alternative layouts are dynamically imported so they cost nothing on the
@@ -95,6 +104,28 @@ const REGISTRY = {
       return { Cls: m.TopicLessonDrill, canRender: m.canRender };
     },
   },
+  lessonv2: {
+    id: 'lessonv2',
+    name: 'Deep Loop',
+    nameIt: 'Ciclo Completo',
+    icon: '🧪',
+    // Out of rotation: this is a long-form loop (warmup → present → drill →
+    // interleave → applied lab → summary), not a variation on one lesson, so a
+    // topic opts in rather than meeting it at random.
+    rotate: false,
+    load: async () => {
+      const m = await import('./lesson2/LessonV2Engine.js');
+      return { Cls: m.LessonV2Engine, canRender: m.canRender };
+    },
+  },
+};
+
+/**
+ * Topics that always use a specific layout, replacing the old
+ * `lessonFlags.useLessonV2()` boolean. An explicit `lesson.layout` still wins.
+ */
+export const TOPIC_DEFAULT_LAYOUT = {
+  cybersecurity: 'lessonv2',
 };
 
 /** Deterministic rotation order. Keep stable — changing it reshuffles every lesson. */
@@ -115,20 +146,25 @@ export function getLayoutMeta(layoutId) {
  * badge on lesson cards. Note this ignores `canRender`, which needs the module —
  * the resolved layout may differ if the preferred one bails out.
  */
-export function predictLayoutId(lesson) {
+export function predictLayoutId(lesson, topicId) {
   if (!lesson) return 'classic';
   if (typeof lesson.layout === 'string' && REGISTRY[lesson.layout]) return lesson.layout;
+  const pinned = TOPIC_DEFAULT_LAYOUT[topicId];
+  if (pinned && REGISTRY[pinned]) return pinned;
   const pool = ROTATION.filter((id) => REGISTRY[id]?.rotate);
   if (pool.length === 0) return 'classic';
   return pool[hashString(lesson.id || lesson.title || '') % pool.length];
 }
 
 /** Candidate ids to try, in preference order, always ending at `classic`. */
-function candidateIds(lesson) {
-  const preferred = predictLayoutId(lesson);
+function candidateIds(lesson, topicId) {
+  const preferred = predictLayoutId(lesson, topicId);
   const pool = ROTATION.filter((id) => REGISTRY[id]?.rotate);
-  const start = Math.max(0, pool.indexOf(preferred));
   const ordered = [];
+  // A non-rotating preference (a pinned layout) is tried first, then the
+  // rotation acts as the fallback chain behind it.
+  if (!pool.includes(preferred)) ordered.push(preferred);
+  const start = Math.max(0, pool.indexOf(preferred));
   for (let i = 0; i < pool.length; i += 1) {
     ordered.push(pool[(start + i) % pool.length]);
   }
@@ -142,8 +178,8 @@ function candidateIds(lesson) {
  *
  * @returns {Promise<{engine: object, layoutId: string, meta: object}>}
  */
-export async function createLessonEngine(lesson, progressManager) {
-  for (const id of candidateIds(lesson)) {
+export async function createLessonEngine(lesson, progressManager, topicId) {
+  for (const id of candidateIds(lesson, topicId)) {
     const entry = REGISTRY[id];
     if (!entry) continue;
     try {

@@ -1,6 +1,7 @@
 const MODE_DIFFICULTY = {
   listening: 0.1,
   matching: 0.2,
+  pairs: 0.2,
   context: 0.25,
   // Two-stage: the verdict is a coin flip, the rationale is the real test.
   verofalso: 0.3,
@@ -8,12 +9,15 @@ const MODE_DIFFICULTY = {
   comprehension: 0.4,
   // Conceptual recall of a full Italian description, not a one-word gloss.
   definizione: 0.42,
+  readout: 0.4,
   scenario: 0.45,
   writing: 0.5,
   sentence: 0.55,
   codeoutput: 0.6,
+  cmdcloze: 0.6,
   command: 0.65,
   codechallenge: 0.7,
+  dictation: 0.7,
   codelab: 0.75,
   terminal: 0.85,
   chain: 0.9,

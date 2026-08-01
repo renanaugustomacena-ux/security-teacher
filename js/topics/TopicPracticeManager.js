@@ -37,6 +37,8 @@ import { advancedModesMixin } from './TopicPracticeAdvancedModes.js';
 import { extraModesMixin } from './TopicPracticeExtraModes.js';
 import { renderingMixin } from './TopicPracticeRendering.js';
 import { resultHandlerMixin } from './TopicPracticeResultHandler.js';
+import { matchModeMixin } from './TopicPracticeMatchMode.js';
+import { outputModesMixin } from './TopicPracticeOutputModes.js';
 import { COMMAND_ALIASES, isTypeableAnswer } from './TopicPracticeConstants.js';
 import {
   FEEDBACK_DWELL,
@@ -93,6 +95,9 @@ export class TopicPracticeManager {
       'topicPractice.veroFalsoRationale': (ds) => this.answerVeroFalsoRationale(Number(ds.idx)),
       'topicPractice.checkDefinizione': (ds, _e, el) =>
         this.checkDefinizioneAnswer(el, ds.opt, ds.correct),
+      'topicPractice.tapPair': (ds) => this.tapPair(ds),
+      'topicPractice.checkCmdCloze': (ds) => this.checkCmdCloze(ds),
+      'topicPractice.replayDictation': (ds) => this.replayDictation(ds),
     };
     const container = document.getElementById('topic-practice-content');
     if (container) delegate(container, map);
@@ -250,6 +255,26 @@ export class TopicPracticeManager {
 
     if (mode === 'definizione') {
       this.questions = this.generateDefinizioneQuestions(pool);
+      return;
+    }
+
+    if (mode === 'pairs') {
+      this.questions = this.generatePairsQuestions(pool);
+      return;
+    }
+
+    if (mode === 'readout') {
+      this.questions = this.generateReadoutQuestions(pool);
+      return;
+    }
+
+    if (mode === 'dictation') {
+      this.questions = this.generateDictationQuestions(pool);
+      return;
+    }
+
+    if (mode === 'cmdcloze') {
+      this.questions = this.generateCmdClozeQuestions(pool);
       return;
     }
 
@@ -694,5 +719,7 @@ Object.assign(
   advancedModesMixin,
   extraModesMixin,
   renderingMixin,
-  resultHandlerMixin
+  resultHandlerMixin,
+  matchModeMixin,
+  outputModesMixin
 );
