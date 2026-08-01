@@ -16,7 +16,7 @@
  *   - Only GET requests enter cache. Non-GET is always network-only.
  *   - Response size cap: responses > 10 MB are never persisted to cache.
  */
-const CACHE_NAME = 'kaio-v11';
+const CACHE_NAME = 'kaio-v12';
 
 const MAX_CACHE_RESPONSE_BYTES = 10 * 1024 * 1024;
 
@@ -105,6 +105,7 @@ const STATIC_ASSETS = [
   './js/topics/TopicPracticeConstants.js',
   './js/topics/TopicPracticeAdvancedModes.js',
   './js/topics/TopicPracticeAdvancedQuestions.js',
+  './js/topics/TopicPracticeExtraModes.js',
   './js/topics/TopicPracticeRendering.js',
   './js/topics/TopicPracticeResultHandler.js',
   './js/topics/TopicVelocita.js',
@@ -128,6 +129,20 @@ const STATIC_ASSETS = [
   './js/topics/data/software-dev.js',
   './js/topics/data/system-monitoring.js',
   './js/topics/data/techtalk-scenarios.js',
+  // Generated from the study library — see scripts/ingest-library-glossaries.mjs.
+  // Split into chunks so no single data file exceeds the §13.2 budget (§44.4).
+  './js/topics/data/library-glossary.js',
+  './js/topics/data/library/02-linux-poweruser.js',
+  './js/topics/data/library/03-windows-poweruser.js',
+  './js/topics/data/library/04-programmazione-python.js',
+  './js/topics/data/library/05-sviluppo-web.js',
+  './js/topics/data/library/06-gestione-piattaforme.js',
+  './js/topics/data/library/07-github-e-gitactions.js',
+  './js/topics/data/library/08-manutenzione-it.js',
+  './js/topics/data/library/09-automazioni-flussi-di-lavoro.js',
+  './js/topics/data/library/10-migrazione-vmware-proxmox.js',
+  './js/topics/data/library/11-godot-engine.js',
+  './js/topics/data/library/12-software-engineering-extra.js',
   './vendor/three-0.170.0.module.js',
   './vendor/fonts/fonts.css',
 ];

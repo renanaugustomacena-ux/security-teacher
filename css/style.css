@@ -9215,3 +9215,171 @@ body.login-wall-active > *:not(.login-wall):not(#matrix-morph) {
     grid-template-columns: 1fr;
   }
 }
+
+/* ═══════════════════════════════════════════════════
+   EXTRA PRACTICE MODES
+   verofalso (Vero o Falso) and definizione (Definizione).
+   Both run on the base item schema, so every topic gets them.
+   Palette rule §14.6: amber is the highlight/correction
+   register; red is reserved for hard-fail states and is
+   never used for a wrong answer.
+   ═══════════════════════════════════════════════════ */
+
+/* ── Vero o Falso ───────────────────────────────── */
+
+.verofalso-card {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.verofalso-stage-label {
+  display: inline-block;
+  padding: 3px 10px;
+  margin-bottom: var(--space-md);
+  border-radius: 999px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--glass-border);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.verofalso-statement {
+  font-size: var(--font-size-lg);
+  line-height: 1.6;
+  color: var(--text-primary);
+  margin-bottom: var(--space-lg);
+  padding: var(--space-md);
+  border-left: 3px solid var(--accent-primary);
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-sm);
+  text-align: left;
+  word-break: break-word;
+}
+
+.verofalso-verdict-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.verofalso-verdict-btn {
+  min-height: 56px;
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.verofalso-verdict-btn:hover {
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+}
+
+/* Stage 2 recap: states which verdict the learner chose WITHOUT revealing
+   whether it was right — the rationale step must stay a real question. */
+.verofalso-recap {
+  margin-bottom: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  background: var(--bg-tertiary);
+  border: 1px dashed var(--border-color);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.verofalso-rationales {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  text-align: left;
+}
+
+.verofalso-rationale-btn {
+  min-height: 48px;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  text-align: left;
+  white-space: normal;
+  transition: all var(--transition-fast);
+}
+
+.verofalso-rationale-btn:hover {
+  border-color: var(--accent-primary);
+  background: rgba(230, 126, 34, 0.08);
+}
+
+@media (max-width: 480px) {
+  .verofalso-verdict-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .verofalso-statement {
+    font-size: var(--font-size-base);
+  }
+}
+
+/* ── Definizione ────────────────────────────────── */
+
+.definizione-card {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.definizione-term {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: var(--space-lg);
+  word-break: break-word;
+}
+
+/* Definitions are sentences, not words: full-width stacked options, left
+   aligned and free to wrap. A 2-up grid would truncate or look ragged. */
+.definizione-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.definizione-option-btn {
+  min-height: 48px;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  text-align: left;
+  white-space: normal;
+  transition: all var(--transition-fast);
+}
+
+.definizione-option-btn:hover {
+  border-color: var(--accent-primary);
+  background: rgba(230, 126, 34, 0.08);
+  transform: translateX(2px);
+}

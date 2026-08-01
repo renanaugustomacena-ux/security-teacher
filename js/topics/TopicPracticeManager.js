@@ -1,6 +1,6 @@
 /**
- * TOPIC PRACTICE MANAGER - FlowLearn
- * ===================================
+ * TOPIC PRACTICE MANAGER - Knowledge AIO
+ * ======================================
  *
  * Handles practice exercises for technical topics.
  * Reuses the 5 existing exercise types + 4 technical types + 4 advanced modes.
@@ -21,6 +21,8 @@
  * 13. codelab      - Code Lab: complete missing lines in code blocks
  * 14. techtalk     - Tech Talk: technical conversation with keyword/grammar checks
  * 15. chain        - Chain Challenge: 5 connected questions with streak multiplier
+ * 16. verofalso    - Vero o Falso: judge a statement, then justify the verdict
+ * 17. definizione  - Definizione: pick the Italian description of a term
  */
 
 import { sfxService } from '../services/SfxService.js';
@@ -32,9 +34,10 @@ import { delegate } from '../utils/EventDispatch.js';
 import { escapeHtml } from '../utils/SanitizeHtml.js';
 import { adaptiveDifficultyService } from '../services/AdaptiveDifficultyService.js';
 import { advancedModesMixin } from './TopicPracticeAdvancedModes.js';
+import { extraModesMixin } from './TopicPracticeExtraModes.js';
 import { renderingMixin } from './TopicPracticeRendering.js';
 import { resultHandlerMixin } from './TopicPracticeResultHandler.js';
-import { COMMAND_ALIASES } from './TopicPracticeConstants.js';
+import { COMMAND_ALIASES, isTypeableAnswer } from './TopicPracticeConstants.js';
 import {
   FEEDBACK_DWELL,
   shuffleArray,
@@ -85,6 +88,11 @@ export class TopicPracticeManager {
       'topicPractice.checkChain': (ds) => this.checkChainAnswer(ds.opt, ds.correct),
       'topicPractice.checkChainTyping': (ds) => this.checkChainTypingAnswer(ds.correct),
       'topicPractice.checkChainCommand': (ds) => this.checkChainCommandAnswer(ds.correct),
+      // dataset values are always strings — coerce before use.
+      'topicPractice.veroFalsoVerdict': (ds) => this.answerVeroFalsoVerdict(ds.verdict === 'true'),
+      'topicPractice.veroFalsoRationale': (ds) => this.answerVeroFalsoRationale(Number(ds.idx)),
+      'topicPractice.checkDefinizione': (ds, _e, el) =>
+        this.checkDefinizioneAnswer(el, ds.opt, ds.correct),
     };
     const container = document.getElementById('topic-practice-content');
     if (container) delegate(container, map);
@@ -235,6 +243,16 @@ export class TopicPracticeManager {
       return;
     }
 
+    if (mode === 'verofalso') {
+      this.questions = this.generateVeroFalsoQuestions(pool);
+      return;
+    }
+
+    if (mode === 'definizione') {
+      this.questions = this.generateDefinizioneQuestions(pool);
+      return;
+    }
+
     // Translation modes (listening/matching/writing) and scenario render the
     // English target alongside the Italian translation as the answer. When
     // english === italian the prompt and the correct option are the SAME
@@ -258,6 +276,11 @@ export class TopicPracticeManager {
       pool = pool.filter((item) => item.example);
     } else if (mode === 'scenario') {
       pool = pool.filter((item) => item.example && isDistinctTranslation(item));
+    } else if (mode === 'writing') {
+      // Typing is the only mode where the Italian side must be reproduced
+      // character by character, so long glosses are excluded here and here
+      // only — they remain available in every recognition mode.
+      pool = pool.filter((item) => isDistinctTranslation(item) && isTypeableAnswer(item));
     } else {
       pool = pool.filter(isDistinctTranslation);
     }
@@ -266,7 +289,6 @@ export class TopicPracticeManager {
       analyticsService.getItemAnalytics(key)
     );
   }
-
 
   // ─── UTILITY ───────────────────────────────────
 
@@ -667,4 +689,10 @@ export class TopicPracticeManager {
   }
 }
 
-Object.assign(TopicPracticeManager.prototype, advancedModesMixin, renderingMixin, resultHandlerMixin);
+Object.assign(
+  TopicPracticeManager.prototype,
+  advancedModesMixin,
+  extraModesMixin,
+  renderingMixin,
+  resultHandlerMixin
+);

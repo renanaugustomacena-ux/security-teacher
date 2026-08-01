@@ -5,7 +5,15 @@
 > **Scope:** All code, configuration, deployment artifacts, and operational
 > procedures within this repository.
 
-> **v2.1.0 amendments** (2026-08-01): Lesson Layouts — adds §43. Until now
+> **v2.1.0 amendments** (2026-08-01): Lesson Layouts (§43) and Generated
+> Content Ingestion (§44). §44 governs topic data derived from an external
+> corpus: the first such artefact is `js/topics/data/library-glossary.js`,
+> ~1,290 terms lifted from the per-domain glossaries of the maintainer's own
+> study library by `scripts/ingest-library-glossaries.mjs`, split into
+> `library/*.js` chunks to respect §13.2. The corpus itself is deliberately
+> NOT vendored — the script takes its path and fails loudly when absent.
+>
+> §43 exists because until now
 > every one of the ~900 lessons rendered through the single hardcoded
 > 4-stage pipeline in `js/topics/TopicLessonEngine.js` (intro → context
 > cards → exactly 2 MCQs → summary). The maintainer's report: it *"gets
@@ -611,6 +619,16 @@ an amendment commit that updates this file in the same PR.
 | 43.7  | Layout interactivity MUST use `data-action` + `registerAction` under a namespace unique to that layout (§3.4 forbids inline handlers). Every emitted `data-action` MUST have a matching registration and vice versa. |
 | 43.8  | Wrong answers in any layout MUST follow §14.1 — corrective, never punitive — and MUST NOT use the danger/red register (§14.6). Amber is the correction colour. |
 
+## §44. Generated Content Ingestion — v2.1.0
+
+| Rule  | Statement |
+| ----- | --------- |
+| 44.1  | Topic data derived from an external corpus MUST be produced by a checked-in script under `scripts/`, never hand-edited. The generated file's header MUST say `GENERATED FILE — do not edit by hand` and name the regeneration command. Hand-patching generated content is silently lost on the next run. |
+| 44.2  | The source corpus MUST NOT be vendored into this repository. The script takes its path as an argument with a sensible default, and exits non-zero with an actionable message when the corpus is absent — the build must never depend on a directory that only exists on one machine. |
+| 44.3  | Generated content MUST pass the same structural gates as authored content: a test asserting the item schema, id uniqueness, absence of degenerate identity translations, and that no source markup (table pipes, `**bold**`) leaks into user-visible fields. |
+| 44.4  | Generated data MUST be split so that no single emitted file exceeds the §13.2 300 KB budget. Splitting into sibling chunk modules composed by the topic file is the sanctioned pattern; the graph still loads lazily as one unit. |
+| 44.5  | An item whose answer text is too long for type-the-answer practice MUST be flagged in the data (`longAnswer: true`) so the mode selector can gate it out. Asking a learner to type a 70-character definition is a bug, not a hard question. |
+
 ---
 
 ## Appendix A — Rule Count
@@ -661,7 +679,8 @@ an amendment commit that updates this file in the same PR.
 | §41 Branching Lessons                      | 4       |
 | §42 AI Tutoring                            | 4       |
 | §43 Lesson Layouts                         | 8       |
-| **Total**                                  | **258** |
+| §44 Generated Content Ingestion            | 5       |
+| **Total**                                  | **263** |
 
 ## Appendix B — Quick-Reference Index
 
@@ -682,6 +701,7 @@ an amendment commit that updates this file in the same PR.
 - **Gamification additions:** §30 (quests) + §31 (currency) + §35 (SmartScore).
 - **Chart/visualization additions:** §36.2 — Canvas API only, no external chart libraries.
 - **Adding a lesson layout:** §43 — export `LAYOUT_META` + `canRender` + the engine class, register it in `js/topics/TopicLessonLayouts.js`, dynamic-import it (§43.6), add the `sw.js` entry (§5.6), bump `CACHE_NAME` (§5.5), add a test (§17.1), and style new classes in the `LESSON LAYOUTS` block of `css/style.css`.
+- **Regenerating library-sourced content:** `npm run ingest:glossaries` (§44) — reads the study-library glossaries, rewrites `js/topics/data/library-glossary.js` and its `library/*.js` chunks, and prints the exact `sw.js` lines to add. Never edit those files by hand.
 
 ## Appendix C — Glossary
 

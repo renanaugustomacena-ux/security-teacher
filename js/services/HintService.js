@@ -30,6 +30,12 @@ export class HintService {
       case 'codelab':
         return this._codelab(question);
 
+      case 'verofalso':
+        return this._veroFalso(question);
+
+      case 'definizione':
+        return this._definizione(question);
+
       default:
         return this._default(question);
     }
@@ -111,6 +117,30 @@ export class HintService {
     const firstKeyword = blankedLine.split(/\s+/)[0] || '';
 
     return [`This line ${task}`, firstKeyword, this._blankLastToken(blankedLine)];
+  }
+
+  _veroFalso(question) {
+    const english = question.english || question.item?.english || '';
+    const answer = question.italian || question.item?.italian || '';
+    const context = question.context || question.item?.context || 'General';
+
+    return [
+      `Contesto / Context: ${context}`,
+      `La traduzione di / The translation of '${english}' inizia con / starts with '${answer[0] || ''}' (${answer.length})`,
+      `Traduzione / Translation: ${this._blankMiddle(answer)}`,
+    ];
+  }
+
+  _definizione(question) {
+    const answer = question.italian || question.item?.italian || '';
+    const note = question.note || question.item?.note || '';
+    const context = question.context || question.item?.context || 'General';
+
+    return [
+      `Contesto / Context: ${context}`,
+      `Traduzione / Translation: ${answer}`,
+      `Inizia con / Starts with: ${note.slice(0, 25)}...`,
+    ];
   }
 
   _default(question) {

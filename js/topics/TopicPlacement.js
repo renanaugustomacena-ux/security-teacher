@@ -3,9 +3,10 @@ import { placementTestService } from '../services/PlacementTestService.js';
 import { certificateService } from '../services/CertificateService.js';
 import { analyticsService } from '../services/AnalyticsService.js';
 import { authService } from '../services/AuthService.js';
+import { canRunVeroFalso, canRunDefinizione } from './TopicPracticeExtraModes.js';
+import { isTypeableAnswer, MIN_TYPEABLE_ITEMS } from './TopicPracticeConstants.js';
 
 export const topicPlacementMixin = {
-
   async downloadCertificate(topicId) {
     const data = await this.loadTopicData(topicId);
     const meta = getTopicMeta(topicId);
@@ -186,24 +187,144 @@ export const topicPlacementMixin = {
         item.code.split('\n').filter((l) => l.trim()).length >= 2
     );
     const hasEnglishItalian = pool.some((item) => item.english && item.italian);
+    // `writing` asks the learner to reproduce the Italian exactly. A level whose
+    // glosses are all sentence-length (reference-derived content, mostly) would
+    // offer a card that is really a typing test, so require a few short answers.
+    const hasTypeableAnswers =
+      pool.filter((item) => item.english && isTypeableAnswer(item)).length >= MIN_TYPEABLE_ITEMS;
+    // Both gates count DISTINCT Italian glosses / notes, not items: the
+    // generators need the variety, and counting items alone enables a card
+    // that then produces zero questions.
+    const hasVeroFalsoPool = canRunVeroFalso(pool);
+    const hasDefinitionPool = canRunDefinizione(pool);
 
     const modes = [
-      { id: 'listening', name: 'Ascolto / Listening', desc: 'Scegli la traduzione corretta', icon: '\u{1F442}', enabled: hasEnglishItalian },
-      { id: 'writing', name: 'Scrittura / Writing', desc: 'Scrivi la traduzione', icon: '✏️', enabled: hasEnglishItalian },
-      { id: 'matching', name: 'Abbinamento / Matching', desc: 'Abbina termini e traduzioni', icon: '\u{1F517}', enabled: hasEnglishItalian },
-      { id: 'fillblank', name: 'Completa / Fill Blank', desc: 'Completa la frase', icon: '\u{1F4DD}', enabled: hasExample },
-      { id: 'sentence', name: 'Ricostruisci / Sentence', desc: 'Ordina le parole', icon: '\u{1F9E9}', enabled: hasExample },
-      { id: 'comprehension', name: 'Comprensione / Comprehension', desc: 'Leggi e rispondi', icon: '\u{1F4D6}', enabled: hasExample },
-      { id: 'scenario', name: 'Scenario / Dialogue', desc: 'Completa il dialogo situazionale', icon: '\u{1F4AC}', enabled: hasExample && hasEnglishItalian },
-      { id: 'context', name: 'Contesto / Context', desc: 'In quale ambito si usa?', icon: '\u{1F3AF}', enabled: hasEnglishItalian },
-      { id: 'command', name: 'Comando / Command', desc: 'Scrivi il comando corretto', icon: '\u{1F4BB}', enabled: hasCommand },
-      { id: 'codeoutput', name: 'Code Output', desc: 'Che concetto dimostra il codice?', icon: '\u{1F40D}', enabled: hasCode },
-      { id: 'codechallenge', name: 'Code Challenge', desc: 'Scrivi il codice/comando', icon: '\u{1F680}', enabled: hasCommand || hasCode },
-      { id: 'terminal', name: 'Terminale / Terminal', desc: 'Simula comandi in sequenza / Simulate commands in sequence', icon: '\u{1F4BB}', enabled: hasCommand },
-      { id: 'codelab', name: 'Code Lab', desc: 'Completa il codice mancante / Complete the missing code', icon: '\u{1F9EA}', enabled: hasMultiLineCode },
-      { id: 'techtalk', name: 'Tech Talk', desc: 'Conversazione tecnica / Technical conversation', icon: '\u{1F4AC}', enabled: true },
-      { id: 'chain', name: 'Sfida a Catena / Chain Challenge', desc: '5 domande collegate / 5 connected questions', icon: '⛓️', enabled: hasEnglishItalian },
-      { id: 'velocita', name: "Velocita' / Speed Run", desc: '60-90s a tutta velocita / 60-90s rapid-fire', icon: '⚡', enabled: hasEnglishItalian },
+      {
+        id: 'listening',
+        name: 'Ascolto / Listening',
+        desc: 'Scegli la traduzione corretta',
+        icon: '\u{1F442}',
+        enabled: hasEnglishItalian,
+      },
+      {
+        id: 'writing',
+        name: 'Scrittura / Writing',
+        desc: 'Scrivi la traduzione',
+        icon: '✏️',
+        enabled: hasEnglishItalian && hasTypeableAnswers,
+      },
+      {
+        id: 'matching',
+        name: 'Abbinamento / Matching',
+        desc: 'Abbina termini e traduzioni',
+        icon: '\u{1F517}',
+        enabled: hasEnglishItalian,
+      },
+      {
+        id: 'fillblank',
+        name: 'Completa / Fill Blank',
+        desc: 'Completa la frase',
+        icon: '\u{1F4DD}',
+        enabled: hasExample,
+      },
+      {
+        id: 'sentence',
+        name: 'Ricostruisci / Sentence',
+        desc: 'Ordina le parole',
+        icon: '\u{1F9E9}',
+        enabled: hasExample,
+      },
+      {
+        id: 'comprehension',
+        name: 'Comprensione / Comprehension',
+        desc: 'Leggi e rispondi',
+        icon: '\u{1F4D6}',
+        enabled: hasExample,
+      },
+      {
+        id: 'scenario',
+        name: 'Scenario / Dialogue',
+        desc: 'Completa il dialogo situazionale',
+        icon: '\u{1F4AC}',
+        enabled: hasExample && hasEnglishItalian,
+      },
+      {
+        id: 'context',
+        name: 'Contesto / Context',
+        desc: 'In quale ambito si usa?',
+        icon: '\u{1F3AF}',
+        enabled: hasEnglishItalian,
+      },
+      {
+        id: 'verofalso',
+        name: 'Vero o Falso / True or False',
+        desc: 'Giudica la frase e spiega perché / Judge the statement and say why',
+        icon: '⚖️',
+        enabled: hasVeroFalsoPool,
+      },
+      {
+        id: 'definizione',
+        name: 'Definizione / Definition',
+        desc: 'Scegli la descrizione giusta / Pick the right description',
+        icon: '\u{1F4D4}',
+        enabled: hasDefinitionPool,
+      },
+      {
+        id: 'command',
+        name: 'Comando / Command',
+        desc: 'Scrivi il comando corretto',
+        icon: '\u{1F4BB}',
+        enabled: hasCommand,
+      },
+      {
+        id: 'codeoutput',
+        name: 'Code Output',
+        desc: 'Che concetto dimostra il codice?',
+        icon: '\u{1F40D}',
+        enabled: hasCode,
+      },
+      {
+        id: 'codechallenge',
+        name: 'Code Challenge',
+        desc: 'Scrivi il codice/comando',
+        icon: '\u{1F680}',
+        enabled: hasCommand || hasCode,
+      },
+      {
+        id: 'terminal',
+        name: 'Terminale / Terminal',
+        desc: 'Simula comandi in sequenza / Simulate commands in sequence',
+        icon: '\u{1F4BB}',
+        enabled: hasCommand,
+      },
+      {
+        id: 'codelab',
+        name: 'Code Lab',
+        desc: 'Completa il codice mancante / Complete the missing code',
+        icon: '\u{1F9EA}',
+        enabled: hasMultiLineCode,
+      },
+      {
+        id: 'techtalk',
+        name: 'Tech Talk',
+        desc: 'Conversazione tecnica / Technical conversation',
+        icon: '\u{1F4AC}',
+        enabled: true,
+      },
+      {
+        id: 'chain',
+        name: 'Sfida a Catena / Chain Challenge',
+        desc: '5 domande collegate / 5 connected questions',
+        icon: '⛓️',
+        enabled: hasEnglishItalian,
+      },
+      {
+        id: 'velocita',
+        name: "Velocita' / Speed Run",
+        desc: '60-90s a tutta velocita / 60-90s rapid-fire',
+        icon: '⚡',
+        enabled: hasEnglishItalian,
+      },
     ];
 
     const container = document.getElementById('topic-lesson-content');

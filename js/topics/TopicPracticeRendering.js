@@ -245,9 +245,7 @@ export const renderingMixin = {
             seen.add(rule);
           }
         };
-        for (const it of shuffleArray(
-          paragraphItems.filter((p) => p.english !== target.english)
-        )) {
+        for (const it of shuffleArray(paragraphItems.filter((p) => p.english !== target.english))) {
           if (distractors.length >= 3) break;
           addDistractor(pickRule(it));
         }
@@ -366,6 +364,16 @@ export const renderingMixin = {
         return; // Chain handles its own rendering
       }
 
+      case 'verofalso': {
+        this.renderVeroFalsoQuestion(container, q);
+        return; // Vero o Falso handles its own two-stage rendering
+      }
+
+      case 'definizione': {
+        this.renderDefinizioneQuestion(container, q);
+        return; // Definizione handles its own rendering
+      }
+
       default:
         html = '<p>Modalit\u00E0 non disponibile / Mode not available</p>';
     }
@@ -393,6 +401,4 @@ export const renderingMixin = {
       });
     }
   },
-
-
 };

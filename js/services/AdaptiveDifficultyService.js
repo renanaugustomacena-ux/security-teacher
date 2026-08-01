@@ -2,8 +2,12 @@ const MODE_DIFFICULTY = {
   listening: 0.1,
   matching: 0.2,
   context: 0.25,
+  // Two-stage: the verdict is a coin flip, the rationale is the real test.
+  verofalso: 0.3,
   fillblank: 0.35,
   comprehension: 0.4,
+  // Conceptual recall of a full Italian description, not a one-word gloss.
+  definizione: 0.42,
   scenario: 0.45,
   writing: 0.5,
   sentence: 0.55,
