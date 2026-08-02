@@ -18,7 +18,7 @@
  */
 
 import { escapeHtml, escapeAttr } from '../utils/SanitizeHtml.js';
-import { shuffleArray } from '../utils/PracticeUtils.js';
+import { shuffleArray, containsFolded, containsWholeWord } from '../utils/PracticeUtils.js';
 import { adaptiveDifficultyService } from '../services/AdaptiveDifficultyService.js';
 import { analyticsService } from '../services/AnalyticsService.js';
 import { ttsService } from '../services/TTSService.js';
@@ -31,7 +31,16 @@ export const outputModesMixin = {
   // ─── READOUT ──────────────────────────────────────
 
   generateReadoutQuestions(pool) {
-    const items = pool.filter((i) => i.command && (i.example || '').includes(' = '));
+    // The question shows `$ <command>` and asks which sentence describes it.
+    // When that sentence names the program itself ("Nmap scans the target…"
+    // under `$ nmap …`) it can be matched on the token alone, no comprehension
+    // required — 22.6% of otherwise eligible items. Excluded rather than
+    // masked: masking only the correct option would be its own tell.
+    const namesItsProgram = (item) =>
+      containsWholeWord(enOf(item), (item.command || '').trim().split(/\s+/)[0]);
+    const items = pool.filter(
+      (i) => i.command && (i.example || '').includes(' = ') && !namesItsProgram(i)
+    );
     const selected = adaptiveDifficultyService.selectItems(items, MAX_Q, (key) =>
       analyticsService.getItemAnalytics(key)
     );
@@ -146,7 +155,10 @@ export const outputModesMixin = {
         item,
         english: item.english,
         context: item.context,
-        hintEn: item.english,
+        // The vocab hint is deliberately the blanked token's own term, so for
+        // 15.0% of eligible commands it spelled the answer out ("Vocab: Help"
+        // above `rsync ____` → `--help`). Withhold it in exactly those cases.
+        hintEn: containsFolded(blank, item.english) ? '' : item.english,
       });
     }
     return out;

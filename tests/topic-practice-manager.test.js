@@ -1,13 +1,17 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 
-// TopicPracticeManager.generateQuestions() must drop items whose English and
-// Italian fields are identical from the translation modes (listening,
-// matching, writing, scenario). Otherwise the rendered prompt and the
-// correct option are the SAME string — the answer is given for free.
+// TopicPracticeManager.generateQuestions() must drop items whose Italian gloss
+// CONTAINS the English prompt from the translation modes (listening, matching,
+// writing, scenario). Otherwise the rendered prompt appears inside its own
+// correct option — the answer is given for free.
+//
+// Containment, not equality: "shell" / "shell di sistema" reads as a real
+// translation pair but hands the answer over just as completely as
+// "Bash" / "Bash". Equality alone missed 2.6% of the corpus.
 //
 // Other modes (codeoutput, command, comprehension, context) are unaffected
-// by this pattern (different prompt/answer fields), so identity-translation
-// items continue to feed those pools.
+// by this pattern (different prompt/answer fields), so such items continue to
+// feed those pools.
 
 describe('TopicPracticeManager.generateQuestions — identity-translation filter', () => {
   let TopicPracticeManager;
@@ -61,13 +65,22 @@ describe('TopicPracticeManager.generateQuestions — identity-translation filter
     { english: 'shell', italian: 'shell di sistema', context: 'cli', code: 'sh -c ls' },
   ];
 
-  it('listening mode excludes items where english === italian', () => {
+  it('listening mode excludes items whose italian contains the english prompt', () => {
     const tpm = new TopicPracticeManager();
     tpm.generateQuestions('listening', fixture());
-    expect(tpm.questions.length).toBe(2);
-    for (const q of tpm.questions) {
-      expect(q.english.toLowerCase()).not.toBe(q.italian.toLowerCase());
-    }
+    // Only 'kernel' / 'nucleo' survives: 'Bash' and 'Console' are identities,
+    // and 'shell' / 'shell di sistema' prints the prompt inside the answer.
+    expect(tpm.questions.length).toBe(1);
+    expect(tpm.questions[0].english).toBe('kernel');
+  });
+
+  it('containment leak is dropped even when the pair looks like a real translation', () => {
+    const tpm = new TopicPracticeManager();
+    tpm.generateQuestions('listening', [
+      { english: 'Callback', italian: 'Funzione di callback' },
+      { english: 'thread', italian: 'filo di esecuzione' },
+    ]);
+    expect(tpm.questions.map((q) => q.english)).toEqual(['thread']);
   });
 
   it('matching mode excludes identity-translation items', () => {

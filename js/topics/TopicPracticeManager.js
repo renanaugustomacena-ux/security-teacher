@@ -47,6 +47,8 @@ import {
   normalize,
   normalizeWithAccents,
   calculateXP,
+  containsWholeWord,
+  stripRedundantGloss,
 } from '../utils/PracticeUtils.js';
 
 export class TopicPracticeManager {
@@ -60,6 +62,7 @@ export class TopicPracticeManager {
     this.contextIndex = new Map();
     this.currentQuestionIndex = 0;
     this.score = 0;
+    this.sessionSeed = 0;
 
     // XP & Timer state
     this.questionStartTime = 0;
@@ -120,6 +123,10 @@ export class TopicPracticeManager {
     this.consecutiveCorrect = 0;
     this.maxStreak = 0;
     this.totalResponseTime = 0;
+    // Offsets every fixed template rotation. Without it `index % length` gives
+    // the identical sequence in every session forever, and any template past
+    // the question count is unreachable.
+    this.sessionSeed = Math.floor(Math.random() * 1000);
     practiceHUD.reset();
 
     // Load topic data
@@ -213,7 +220,7 @@ export class TopicPracticeManager {
     if (levelNum !== null && data.levels[levelNum]) {
       data.levels[levelNum].lessons.forEach((lesson) => {
         pool = pool.concat(
-          lesson.items.map((item) => ({ ...item, _topicId: topicId, _level: levelNum }))
+          lesson.items.map((item) => this._preparePoolItem(item, topicId, levelNum))
         );
       });
     } else {
@@ -224,7 +231,7 @@ export class TopicPracticeManager {
         if (data.levels[lvl]) {
           data.levels[lvl].lessons.forEach((lesson) => {
             pool = pool.concat(
-              lesson.items.map((item) => ({ ...item, _topicId: topicId, _level: lvl }))
+              lesson.items.map((item) => this._preparePoolItem(item, topicId, lvl))
             );
           });
         }
@@ -232,6 +239,33 @@ export class TopicPracticeManager {
     }
 
     return pool;
+  }
+
+  /**
+   * Stamp provenance and clean the Italian gloss.
+   *
+   * Cleaning here rather than at render time keeps the correct answer and every
+   * distractor in the same shape, and keeps grading comparing against exactly
+   * what the learner was shown.
+   */
+  _preparePoolItem(item, topicId, level) {
+    return {
+      ...item,
+      italian: stripRedundantGloss(item.italian, item.english),
+      _topicId: topicId,
+      _level: level,
+    };
+  }
+
+  /**
+   * Rough ability estimate for distractor calibration, 0-1.
+   * getTopicAccuracy returns 0 both for "no data yet" and for a genuine 0%;
+   * treating that as neutral keeps a first-time learner off the easiest
+   * possible distractors.
+   */
+  _studentAbility() {
+    const accuracy = analyticsService.getTopicAccuracy(this.currentTopicId);
+    return accuracy > 0 ? accuracy : 0.5;
   }
 
   /**
@@ -298,12 +332,16 @@ export class TopicPracticeManager {
     }
 
     // Translation modes (listening/matching/writing) and scenario render the
-    // English target alongside the Italian translation as the answer. When
-    // english === italian the prompt and the correct option are the SAME
-    // string — the answer is given for free. Filter those items out at
-    // pool-build time so the user never sees a degenerate question.
+    // English target alongside the Italian translation as the answer. When the
+    // Italian gloss CONTAINS the English prompt the answer is given for free —
+    // an equality test missed every "Funzione di callback" for prompt
+    // "Callback". Pool items already had their redundant "(Term)" parenthetical
+    // stripped, so what survives this filter is a genuine leak (2.6% of the
+    // corpus) rather than a formatting convention.
     const isDistinctTranslation = (item) =>
-      item.english && item.italian && item.english.toLowerCase() !== item.italian.toLowerCase();
+      Boolean(item.english) &&
+      Boolean(item.italian) &&
+      !containsWholeWord(item.italian, item.english);
 
     if (mode === 'fillblank' || mode === 'sentence') {
       pool = pool.filter((item) => item.example);
@@ -319,7 +357,16 @@ export class TopicPracticeManager {
     } else if (mode === 'comprehension') {
       pool = pool.filter((item) => item.example);
     } else if (mode === 'scenario') {
-      pool = pool.filter((item) => item.example && isDistinctTranslation(item));
+      // The prompt is the example sentence with the term blanked out. If the
+      // term is not in the sentence as a whole word, blanking silently does
+      // nothing (15.0% of eligible items) or eats half a word, leaving the
+      // suffix as a giveaway (4.1%). Require a blankable occurrence.
+      pool = pool.filter(
+        (item) =>
+          item.example &&
+          isDistinctTranslation(item) &&
+          containsWholeWord((item.example || '').split(' = ')[0] || '', item.english)
+      );
     } else if (mode === 'writing') {
       // Typing is the only mode where the Italian side must be reproduced
       // character by character, so long glosses are excluded here and here
@@ -354,114 +401,71 @@ export class TopicPracticeManager {
   // ─── OPTION GENERATION ─────────────────────────
 
   /**
-   * Generate semantically-related options using context/difficulty grouping
+   * Build the option set for a multiple-choice question.
+   *
+   * The previous implementation grouped candidates by context, then by
+   * difficulty, then fell back to the whole pool — but both of those fields
+   * hold a single constant value within a level for 313 of the corpus's 371
+   * levels, so all three phases collapsed into "any other item in this level,
+   * within a string-length band". Distractors were therefore never chosen for
+   * meaning or spelling, which is what made the correct answer stand out.
+   *
+   * Now the length band is only a plausibility floor (it stops a 3-character
+   * option sitting next to a 40-character one, which is its own giveaway) and
+   * the ranking is delegated to the ability-calibrated engine.
    */
   generateOptions(correct) {
     const field =
       this.currentMode === 'codeoutput' || this.currentMode === 'scenario' ? 'english' : 'italian';
-    const currentQ = this.questions[this.currentQuestionIndex];
+    const currentQ = this.questions[this.currentQuestionIndex] || {};
     const correctLen = correct.length;
     const minLen = Math.max(1, Math.floor(correctLen * 0.4));
     const maxLen = Math.ceil(correctLen * 2.5);
 
-    const isPlausible = (val) => {
-      if (!val || val === correct) return false;
-      return val.length >= minLen && val.length <= maxLen;
-    };
-
-    const distractors = new Set();
-
-    // Phase 1: Same context items
-    const currentCtx = currentQ.context || 'general';
-    const sameCtxItems = (this.contextIndex.get(currentCtx) || []).filter((it) =>
-      isPlausible(it[field])
-    );
-    const shuffledCtx = shuffleArray(sameCtxItems);
-    for (const item of shuffledCtx) {
-      if (distractors.size >= 3) break;
-      distractors.add(item[field]);
+    // De-duplicate by displayed text: two identically-worded options, one of
+    // them flagged wrong, is unanswerable.
+    const seen = new Set([correct]);
+    const candidates = [];
+    const relaxed = [];
+    for (const item of this.fullPool) {
+      const value = item[field];
+      if (!value || seen.has(value)) continue;
+      seen.add(value);
+      if (value.length >= minLen && value.length <= maxLen) candidates.push(item);
+      else relaxed.push(item);
     }
 
-    // Phase 2: Same difficulty items
-    if (distractors.size < 3 && currentQ.difficulty) {
-      const sameDiff = this.fullPool.filter(
-        (it) =>
-          it.difficulty === currentQ.difficulty &&
-          it.context !== currentCtx &&
-          isPlausible(it[field])
-      );
-      const shuffledDiff = shuffleArray(sameDiff);
-      for (const item of shuffledDiff) {
-        if (distractors.size >= 3) break;
-        if (!distractors.has(item[field])) distractors.add(item[field]);
-      }
-    }
+    // Thin levels may not have 3 same-length candidates; widening beats
+    // padding the grid with filler.
+    const pool = candidates.length >= 3 ? candidates : [...candidates, ...relaxed];
 
-    // Phase 3: Full pool fallback
-    if (distractors.size < 3) {
-      const remaining = this.fullPool.filter((it) => isPlausible(it[field]));
-      const shuffledAll = shuffleArray(remaining);
-      for (const item of shuffledAll) {
-        if (distractors.size >= 3) break;
-        if (!distractors.has(item[field])) distractors.add(item[field]);
-      }
-    }
+    const distractors = adaptiveDifficultyService
+      .selectDistractors(currentQ, pool, 3, this._studentAbility(), { field })
+      .map((item) => item[field])
+      .filter(Boolean);
 
-    return shuffleArray([correct, ...Array.from(distractors).slice(0, 3)]);
+    return shuffleArray([correct, ...distractors.slice(0, 3)]);
   }
 
   /**
-   * Generate context sub-category options from the context index
+   * Generate context sub-category options from the context index.
+   * Never pads: an option reading "Other 1" is not a distractor, it is a tell.
+   * Levels too thin to offer real alternatives do not offer the mode at all.
    */
   generateContextOptions(correctContext) {
-    const allContexts = Array.from(this.contextIndex.keys());
-    const options = [correctContext];
+    const others = shuffleArray(
+      Array.from(this.contextIndex.keys()).filter((c) => c !== correctContext)
+    ).slice(0, 3);
 
-    const others = shuffleArray(allContexts.filter((c) => c !== correctContext));
-    for (let i = 0; i < 3 && i < others.length; i++) {
-      options.push(others[i]);
-    }
-
-    while (options.length < 4) {
-      options.push(`other-${options.length}`);
-    }
-
-    return shuffleArray(options);
+    return shuffleArray([correctContext, ...others]);
   }
 
+  /**
+   * Scenario options are English terms; `generateOptions` already selects on
+   * the English field for this mode, so it is the same construction.
+   */
   generateScenarioOptions(correct) {
-    const currentQ = this.questions[this.currentQuestionIndex];
-    const correctLen = correct.length;
-    const minLen = Math.max(1, Math.floor(correctLen * 0.4));
-    const maxLen = Math.ceil(correctLen * 2.5);
-
-    const isPlausible = (val) => {
-      if (!val || val === correct) return false;
-      return val.length >= minLen && val.length <= maxLen;
-    };
-
-    const distractors = new Set();
-
-    // Prefer same context
-    const currentCtx = currentQ.context || 'general';
-    const sameCtx = (this.contextIndex.get(currentCtx) || []).filter((it) =>
-      isPlausible(it.english)
-    );
-    for (const item of shuffleArray(sameCtx)) {
-      if (distractors.size >= 3) break;
-      distractors.add(item.english);
-    }
-
-    // Fallback to full pool
-    if (distractors.size < 3) {
-      const remaining = this.fullPool.filter((it) => isPlausible(it.english));
-      for (const item of shuffleArray(remaining)) {
-        if (distractors.size >= 3) break;
-        if (!distractors.has(item.english)) distractors.add(item.english);
-      }
-    }
-
-    return shuffleArray([correct, ...Array.from(distractors).slice(0, 3)]);
+    return this.generateOptions(correct);
   }
 
   // ─── TIMER & XP ──────────────────────────────

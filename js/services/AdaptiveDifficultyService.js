@@ -1,3 +1,5 @@
+import { levenshtein } from '../utils/StringDistance.js';
+
 const MODE_DIFFICULTY = {
   listening: 0.1,
   matching: 0.2,
@@ -111,15 +113,24 @@ class AdaptiveDifficultyService {
 
   /**
    * Generate distractors calibrated to student ability.
+   *
+   * Similarity is dominated by orthographic confusability (edit distance over
+   * the answer strings themselves), so a strong student choosing between
+   * "Rete locale" and "Rete geografica" has to actually know the difference.
+   * Ranking by length alone — the previous behaviour of the only caller — made
+   * every wrong option obviously wrong.
+   *
    * @param {Object} correctItem - The correct answer item
    * @param {Array} pool - Pool of candidate distractor items
    * @param {number} count - Number of distractors to generate
    * @param {number} studentAbility - Student ability 0-1
+   * @param {Object} [options] - { field } — item field holding the answer text
    * @returns {Array} Array of distractor items
    */
-  selectDistractors(correctItem, pool, count, studentAbility) {
+  selectDistractors(correctItem, pool, count, studentAbility, options = {}) {
     if (!pool || pool.length === 0) return [];
 
+    const field = options.field || 'english';
     const ability = Math.max(0, Math.min(1, studentAbility));
     const correctKey = this._itemKey(correctItem);
 
@@ -128,26 +139,36 @@ class AdaptiveDifficultyService {
     if (candidates.length === 0) return [];
     if (candidates.length <= count) return this._shuffle([...candidates]);
 
-    const correctLen = (correctItem.english || '').length;
+    const correctText = String(correctItem[field] || correctItem.english || '');
+    const correctLen = correctText.length;
     const correctContext = correctItem.context;
 
     // Score candidates based on similarity
     const scored = candidates.map((item) => {
+      const text = String(item[field] || '');
       let similarity = 0;
 
       // Same context = more similar
       if (item.context === correctContext) {
-        similarity += 0.4;
+        similarity += 0.3;
+      }
+
+      // Orthographic confusability — the strongest signal available without
+      // authored semantics.
+      if (correctLen > 0 && text.length > 0) {
+        const distance = levenshtein(text.toLowerCase(), correctText.toLowerCase());
+        const editSimilarity = 1 - distance / Math.max(text.length, correctLen);
+        similarity += Math.max(0, editSimilarity) * 0.4;
       }
 
       // Similar length = more similar
-      const lenDiff = Math.abs((item.english || '').length - correctLen);
+      const lenDiff = Math.abs(text.length - correctLen);
       const lenSimilarity = Math.max(0, 1 - lenDiff / 20);
-      similarity += lenSimilarity * 0.3;
+      similarity += lenSimilarity * 0.2;
 
       // Same topic = more similar
       if (item._topicId === correctItem._topicId) {
-        similarity += 0.3;
+        similarity += 0.1;
       }
 
       return { item, similarity };

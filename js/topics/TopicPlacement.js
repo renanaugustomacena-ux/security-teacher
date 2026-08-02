@@ -239,6 +239,14 @@ export const topicPlacementMixin = {
 
     const hasTypeableAnswers =
       pool.filter((item) => item.english && isTypeableAnswer(item)).length >= MIN_TYPEABLE_ITEMS;
+    // `context` asks which sub-context a term belongs to, drawing the wrong
+    // options from the other contexts present. 313 of the corpus's 371 levels
+    // carry exactly one context, which left the generator padding the grid with
+    // "Other 1 / Other 2 / Other 3" beside the single real answer — a free
+    // point, ten times a session. Offer the card only where the level can
+    // actually field a full set of genuine alternatives.
+    const distinctContexts = new Set(pool.map((item) => item.context || 'general'));
+    const hasContextVariety = distinctContexts.size >= 4;
     // Both gates count DISTINCT Italian glosses / notes, not items: the
     // generators need the variety, and counting items alone enables a card
     // that then produces zero questions.
@@ -300,7 +308,7 @@ export const topicPlacementMixin = {
         name: 'Contesto / Context',
         desc: 'In quale ambito si usa?',
         icon: '\u{1F3AF}',
-        enabled: hasEnglishItalian,
+        enabled: hasEnglishItalian && hasContextVariety,
       },
       {
         id: 'verofalso',

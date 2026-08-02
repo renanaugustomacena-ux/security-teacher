@@ -16,7 +16,7 @@
  *   - Only GET requests enter cache. Non-GET is always network-only.
  *   - Response size cap: responses > 10 MB are never persisted to cache.
  */
-const CACHE_NAME = 'kaio-v14';
+const CACHE_NAME = 'kaio-v15';
 
 const MAX_CACHE_RESPONSE_BYTES = 10 * 1024 * 1024;
 

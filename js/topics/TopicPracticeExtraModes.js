@@ -20,7 +20,7 @@
  */
 
 import { escapeHtml, escapeAttr as escapeForAttr } from '../utils/SanitizeHtml.js';
-import { shuffleArray } from '../utils/PracticeUtils.js';
+import { shuffleArray, containsWholeWord } from '../utils/PracticeUtils.js';
 import { ttsService } from '../services/TTSService.js';
 
 /** A `note` shorter than this is a label, not a definition. */
@@ -63,11 +63,17 @@ export function hasDistinctTranslation(item) {
   return english.toLowerCase() !== italian.toLowerCase();
 }
 
-/** True when the item carries an Italian `note` long enough to be a definition. */
+/**
+ * True when the item carries an Italian `note` long enough to be a definition.
+ * A note that spells out the prompt term ("In italiano si usa il termine
+ * inglese \"host\" senza tradurlo." for prompt "Host") identifies itself among
+ * the options without the learner knowing anything, so it is not usable here.
+ */
 export function hasUsableDefinition(item) {
   if (!item || typeof item.english !== 'string' || typeof item.note !== 'string') return false;
   if (!item.english.trim()) return false;
-  return item.note.trim().length >= MIN_DEFINITION_NOTE_LENGTH;
+  if (item.note.trim().length < MIN_DEFINITION_NOTE_LENGTH) return false;
+  return !containsWholeWord(item.note, item.english);
 }
 
 const distinctCount = (list, read) =>

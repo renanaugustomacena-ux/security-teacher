@@ -150,6 +150,76 @@ export const ITALIAN_FUNCTION_WORDS = new Set([
   'sulle',
 ]);
 
+/** Case- and accent-insensitive form used for all leak detection below. */
+function foldForMatch(value) {
+  return String(value ?? '')
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .toLowerCase()
+    .trim();
+}
+
+/** Substring match, ignoring case and accents. */
+export function containsFolded(haystack, needle) {
+  const h = foldForMatch(haystack);
+  const n = foldForMatch(needle);
+  if (!h || !n) return false;
+  return h.includes(n);
+}
+
+/** Whole-word match, ignoring case and accents. */
+export function containsWholeWord(haystack, needle) {
+  const h = foldForMatch(haystack);
+  const n = foldForMatch(needle);
+  if (!h || !n) return false;
+  const escaped = n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  try {
+    return new RegExp(`(^|[^a-z0-9])${escaped}([^a-z0-9]|$)`).test(h);
+  } catch (_e) {
+    return h.includes(n);
+  }
+}
+
+/**
+ * Drop a parenthetical that merely repeats the prompt term.
+ *
+ * The corpus convention appends the untranslated English term to the Italian
+ * gloss — "Contenitore di dati (Dataset)". In a recognition question that
+ * prints the prompt word inside its own correct option, so the answer is free
+ * (§26.3). Measured over the 15,696-item corpus: 20.8% of items leak this way
+ * and stripping the redundant parenthetical clears 87.4% of them without
+ * removing a single item from the pool.
+ *
+ * Applied at pool-build time so the correct answer AND every distractor are
+ * cleaned identically — a lone stripped option would be its own shape tell.
+ */
+export function stripRedundantGloss(value, term) {
+  if (!value || !term) return value;
+  const target = foldForMatch(term);
+  const stripped = String(value)
+    .replace(/\s*\(([^)]*)\)/g, (match, inner) => (foldForMatch(inner) === target ? '' : match))
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+  return stripped.length > 0 ? stripped : String(value);
+}
+
+/**
+ * Replace the first whole-word occurrence of `term` with a blank.
+ * Naive substring replacement blanked inside longer words ("_____s" for
+ * "Packet") and silently rendered no blank at all when the term was absent —
+ * 15.0% and 4.1% of scenario-eligible items respectively.
+ */
+export function blankTermInPhrase(phrase, term, placeholder = '_____') {
+  const source = String(phrase ?? '');
+  if (!source || !term) return source;
+  const escaped = String(term).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  try {
+    return source.replace(new RegExp(`\\b${escaped}\\b`, 'i'), placeholder);
+  } catch (_e) {
+    return source;
+  }
+}
+
 export function shuffleArray(array) {
   const newArr = [...array];
   for (let i = newArr.length - 1; i > 0; i--) {

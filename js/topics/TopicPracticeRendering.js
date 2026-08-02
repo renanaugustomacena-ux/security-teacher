@@ -1,5 +1,5 @@
 import { escapeHtml, escapeAttr as escapeForAttr } from '../utils/SanitizeHtml.js';
-import { shuffleArray, pickBestBlankIndex } from '../utils/PracticeUtils.js';
+import { shuffleArray, pickBestBlankIndex, blankTermInPhrase } from '../utils/PracticeUtils.js';
 import { ttsService } from '../services/TTSService.js';
 import { TECH_SCENARIO_TEMPLATES } from './TopicPracticeConstants.js';
 
@@ -288,13 +288,12 @@ export const renderingMixin = {
         const englishPhrase = exampleParts[0] || '';
 
         const targetWord = q.english;
-        const blankedPhrase = englishPhrase.replace(
-          new RegExp(targetWord.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i'),
-          '_____'
-        );
+        const blankedPhrase = blankTermInPhrase(englishPhrase, targetWord);
 
         const scenario =
-          TECH_SCENARIO_TEMPLATES[this.currentQuestionIndex % TECH_SCENARIO_TEMPLATES.length];
+          TECH_SCENARIO_TEMPLATES[
+            (this.sessionSeed + this.currentQuestionIndex) % TECH_SCENARIO_TEMPLATES.length
+          ];
         const options = this.generateScenarioOptions(targetWord);
         const scenarioTtsBtn = ttsService.isSupported
           ? ttsService.speakerButtonHTML(englishPhrase)
