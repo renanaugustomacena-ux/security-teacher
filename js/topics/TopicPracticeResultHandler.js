@@ -29,7 +29,11 @@ export const resultHandlerMixin = {
       if (this.consecutiveCorrect > this.maxStreak) {
         this.maxStreak = this.consecutiveCorrect;
       }
-      xpEarned = calculateXP(responseTime, this.consecutiveCorrect);
+      // §29.2 — hints cost XP: 80% after one, 50% after two, 20% after three.
+      xpEarned = Math.round(
+        calculateXP(responseTime, this.consecutiveCorrect) *
+          hintService.getXPMultiplier(this.hintLevel || 0)
+      );
       this.sessionXP += xpEarned;
       this.progressManager.addXP(xpEarned);
       this.progressManager.incrementTopicWord(this.currentTopicId);
@@ -64,10 +68,16 @@ export const resultHandlerMixin = {
       exerciseMode: this.currentMode,
       correct: isCorrect,
       responseTimeMs: Math.round(responseTimeSec * 1000),
-      userAnswer: expectedAnswer || '',
+      // What the learner actually chose or typed. This recorded the expected
+      // answer instead, so every wrong response was logged as if it were the
+      // right one — §27 error analysis ("top 3 most-chosen wrong answers") was
+      // reading a column that could not contain a wrong answer.
+      userAnswer: this._lastUserAnswer || '',
       expectedAnswer: expectedAnswer || '',
+      hintsUsed: this.hintLevel || 0,
       streakAtTime: this.consecutiveCorrect,
     });
+    this._lastUserAnswer = '';
 
     if (this.currentTopicId && this.currentLevel != null) {
       smartScoreService.updateScore(this.currentTopicId, this.currentLevel, isCorrect);

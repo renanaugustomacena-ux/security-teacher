@@ -2258,6 +2258,45 @@ pre.model-solution-code {
   font-weight: 600;
 }
 
+/* Progressive hints (§29). Deliberately quiet: asking for help is a choice,
+   so the control must not compete with the answer options. */
+.practice-hint-bar {
+  margin-top: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.practice-hint-btn {
+  font-size: 0.85rem;
+  padding: var(--space-sm) var(--space-lg);
+  opacity: 0.85;
+}
+
+.practice-hint-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.practice-hint-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  width: 100%;
+}
+
+.practice-hint {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  background: var(--bg-tertiary);
+  border-left: 3px solid var(--gold-accent);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm) var(--space-md);
+  margin: 0;
+  text-align: left;
+}
+
 /* ==========================================
    COMPLETION OVERLAY (Practice & Lessons)
    ========================================== */

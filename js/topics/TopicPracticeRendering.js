@@ -1,9 +1,45 @@
 import { escapeHtml, escapeAttr as escapeForAttr } from '../utils/SanitizeHtml.js';
 import { shuffleArray, pickBestBlankIndex, blankTermInPhrase } from '../utils/PracticeUtils.js';
 import { ttsService } from '../services/TTSService.js';
+import { hintService } from '../services/HintService.js';
 import { TECH_SCENARIO_TEMPLATES } from './TopicPracticeConstants.js';
 
 export const renderingMixin = {
+  /**
+   * Append the progressive-hint control (§29.1).
+   *
+   * Rendered here rather than inside each mode's template so every format
+   * reached through the shared switch gets it from one place. Boss Challenge
+   * and Velocita run their own renderers and are excluded by construction, as
+   * the doctrine requires; the modes that own their rendering (codelab,
+   * techtalk) already carry their own hint affordance.
+   */
+  _renderHintBar(container) {
+    const question = this.questions?.[this.currentQuestionIndex];
+    if (!container || !question) return;
+
+    const hints = hintService.generateHints(question, this.currentMode) || [];
+    const available = Math.min(3, hints.filter(Boolean).length);
+    if (available === 0) return;
+
+    const bar = document.createElement('div');
+    bar.className = 'practice-hint-bar';
+
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'btn btn-secondary practice-hint-btn';
+    button.dataset.action = 'topicPractice.showHint';
+    button.textContent = `\u{1F4A1} Aiuto / Hint 1/${available} (XP 80%)`;
+
+    const list = document.createElement('div');
+    list.className = 'practice-hint-list';
+    list.id = 'practice-hint-list';
+
+    bar.appendChild(button);
+    bar.appendChild(list);
+    container.appendChild(bar);
+  },
+
   // ─── RENDERING ─────────────────────────────────
 
   showPracticeUI() {
@@ -18,6 +54,16 @@ export const renderingMixin = {
   renderQuestion() {
     const container = document.getElementById('topic-practice-content');
     if (!container || this.questions.length === 0) return;
+
+    // An adaptive session carries a per-question format. Switching the mode
+    // here means option building, answer checking and analytics all see the
+    // format this question is actually being asked in.
+    if (this.sessionMode === 'adaptive' && this.adaptivePlan?.[this.currentQuestionIndex]) {
+      this.currentMode = this.adaptivePlan[this.currentQuestionIndex].mode;
+    }
+
+    // Hints are per question, never carried over.
+    this.hintLevel = 0;
 
     const q = this.questions[this.currentQuestionIndex];
     document.getElementById('topic-practice-progress').textContent =
@@ -403,6 +449,7 @@ export const renderingMixin = {
     }
 
     container.innerHTML = html;
+    this._renderHintBar(container);
     ttsService.attachTTSListeners(container);
 
     // Auto-play TTS for listening mode (gated by user preference)

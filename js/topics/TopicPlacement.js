@@ -43,7 +43,7 @@ export const MODE_GROUPS = [
   {
     id: 'challenge',
     name: 'Sfide / Challenges',
-    ids: ['chain', 'velocita', 'techtalk'],
+    ids: ['adaptive', 'chain', 'velocita', 'techtalk'],
   },
 ];
 
@@ -105,6 +105,9 @@ export const topicPlacementMixin = {
     const numLevels = Object.keys(data.levels).length;
     placementTestService.startTest(numLevels);
     this._placementData = data;
+    // Every answer is real evidence about a real item. Kept so it can be
+    // replayed into analytics once the test finishes.
+    this._placementLog = [];
     this._renderPlacementQuestion(topicId);
   },
 
@@ -140,17 +143,17 @@ export const topicPlacementMixin = {
           <span>Round ${state.currentRound + 1}/4 &middot; Q${answeredInRound + 1}/3</span>
         </div>
         <div class="placement-test-prompt">
-          <p class="placement-term">${item.english}</p>
-          <p class="placement-context">${item.context || ''}</p>
+          <p class="placement-term">${escapeHtml(item.english)}</p>
+          <p class="placement-context">${escapeHtml(item.context || '')}</p>
         </div>
         <div class="placement-options">
           ${options
             .map(
               (opt) => `
             <button class="placement-option" data-action="topic.placementAnswer"
-              data-topic-id="${topicId}"
+              data-topic-id="${escapeHtml(topicId)}"
               data-correct="${opt.italian === item.italian}">
-              ${opt.italian}
+              ${escapeHtml(opt.italian)}
             </button>`
             )
             .join('')}
@@ -159,10 +162,16 @@ export const topicPlacementMixin = {
     `;
     container.classList.remove('hidden');
     document.getElementById('topic-detail')?.classList.add('hidden');
-    this._pendingPlacementItem = item;
+    // Stamped with its level so the answer can be keyed the same way practice
+    // and lessons key theirs.
+    this._pendingPlacementItem = { ...item, _level: levelNum };
   },
 
   recordPlacementAnswer(topicId, correct) {
+    if (this._pendingPlacementItem) {
+      if (!this._placementLog) this._placementLog = [];
+      this._placementLog.push({ item: this._pendingPlacementItem, correct });
+    }
     placementTestService.recordAnswer(correct);
     const state = placementTestService.getCurrentState();
     const answersInRound = state.responses.length % 3;
@@ -177,27 +186,74 @@ export const topicPlacementMixin = {
     this._renderPlacementQuestion(topicId);
   },
 
+  /**
+   * Replay the placement answers into per-item analytics.
+   *
+   * Without this the twelve answers are discarded the moment the screen
+   * closes, so the learner's very first practice session has no evidence to
+   * work from and degenerates into a plain shuffle. Seeded, the items the
+   * learner just missed are the ones selectItems surfaces first.
+   */
+  _seedPlacementAnalytics(topicId) {
+    const timestamp = new Date().toISOString();
+    for (const entry of this._placementLog || []) {
+      const item = entry.item;
+      if (!item || !item.english) continue;
+      analyticsService.recordResponse({
+        itemKey: `${topicId}:${item._level}:${item.context}:${item.english}`,
+        correct: entry.correct,
+        responseTimeMs: 0,
+        userAnswer: '',
+        exerciseMode: 'placement',
+        timestamp,
+      });
+    }
+    this._placementLog = [];
+  },
+
+  /**
+   * The end of the test routes the learner somewhere; it does not grade them.
+   *
+   * The previous screen led with an estimated level and an accuracy
+   * percentage, then handed off to a button that started at Level 0 anyway —
+   * all judgement, no consequence. There is deliberately no score here.
+   */
   _finishPlacementTest(topicId, result) {
     this.progressManager.unlockTopicLevels(topicId, result.levelsToUnlock);
+    this.progressManager.recordTopicPlacement?.(topicId, {
+      level: result.estimatedLevel,
+      accuracy: result.accuracy,
+    });
+    this._seedPlacementAnalytics(topicId);
 
     const container = document.getElementById('placement-test-container');
     if (!container) return;
 
-    const pct = Math.round(result.accuracy * 100);
+    const startLevel = result.estimatedLevel;
+    const unlocked = result.levelsToUnlock.length;
     container.innerHTML = `
       <div class="placement-result">
-        <div class="placement-result-icon">${result.estimatedLevel > 0 ? '&#x1F3C6;' : '&#x1F4AA;'}</div>
-        <h2>Livello Stimato: ${result.estimatedLevel + 1} / Estimated Level: ${result.estimatedLevel + 1}</h2>
-        <p>${result.levelsToUnlock.length} livell${result.levelsToUnlock.length === 1 ? 'o sbloccato' : 'i sbloccati'} / ${result.levelsToUnlock.length} level${result.levelsToUnlock.length === 1 ? '' : 's'} unlocked</p>
-        <p>Precisione / Accuracy: ${pct}% (${result.totalCorrect}/${result.totalQuestions})</p>
-        <button class="btn btn-primary" data-action="topic.placementSkip" data-topic-id="${topicId}">
-          Inizia / Start Learning
+        <div class="placement-result-icon">&#x1F680;</div>
+        <h2>Partiamo dal Livello ${startLevel + 1} / Starting at Level ${startLevel + 1}</h2>
+        <p>${unlocked} livell${unlocked === 1 ? 'o' : 'i'} sbloccat${unlocked === 1 ? 'o' : 'i'} / ${unlocked} level${unlocked === 1 ? '' : 's'} unlocked</p>
+        <p class="placement-result-note">
+          I livelli precedenti restano aperti, se vuoi ripassare.<br>
+          Earlier levels stay open whenever you want to review.
+        </p>
+        <button class="btn btn-primary" data-action="topic.placementBegin"
+          data-topic-id="${escapeHtml(topicId)}">
+          Inizia dal Livello ${startLevel + 1} / Start at Level ${startLevel + 1}
+        </button>
+        <button class="btn btn-secondary" data-action="topic.placementSkip"
+          data-topic-id="${escapeHtml(topicId)}">
+          Preferisco partire dal Livello 1 / I'd rather start at Level 1
         </button>
       </div>
     `;
   },
 
-  async skipPlacementTest(topicId) {
+  /** Tear down the placement UI and restore the level path. */
+  async _closePlacement(topicId) {
     placementTestService.reset();
     const container = document.getElementById('placement-test-container');
     if (container) container.classList.add('hidden');
@@ -206,6 +262,20 @@ export const topicPlacementMixin = {
     const data = this._placementData || (await this.loadTopicData(topicId));
     const meta = this._placementMeta || getTopicMeta(topicId);
     if (data && meta) this.renderLevels(meta, data);
+  },
+
+  /** Take the learner to where the test placed them. */
+  async beginFromPlacement(topicId) {
+    await this._closePlacement(topicId);
+    this.continueLearning(topicId);
+  },
+
+  async skipPlacementTest(topicId) {
+    // Recorded even when declined, so the offer is not shown again on every
+    // visit — and recorded AFTER a completed test too, because choosing to
+    // start at Level 1 anyway is a decision that must outrank the estimate.
+    this.progressManager.recordTopicPlacement?.(topicId, { level: 0, skipped: true });
+    await this._closePlacement(topicId);
   },
 
   async showModeSelector(topicId, levelNum) {
@@ -254,6 +324,15 @@ export const topicPlacementMixin = {
     const hasDefinitionPool = canRunDefinizione(pool);
 
     const modes = [
+      {
+        id: 'adaptive',
+        name: 'Allenamento Adattivo / Adaptive Training',
+        desc: 'Formato diverso ad ogni domanda, calibrato sul tuo livello',
+        icon: '\u{1F9E0}',
+        // Needs a second format to move to; with only translation items every
+        // question would land back on listening/matching anyway.
+        enabled: hasEnglishItalian && (hasExample || hasCommand || hasCode),
+      },
       {
         id: 'listening',
         name: 'Ascolto / Listening',

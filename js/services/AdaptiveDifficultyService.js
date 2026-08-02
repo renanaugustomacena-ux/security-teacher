@@ -28,6 +28,8 @@ const MODE_DIFFICULTY = {
 };
 
 const MASTERY_THRESHOLD = 0.8;
+/** Neutral ability, used only when a learner has left no evidence at all. */
+const DEFAULT_ABILITY = 0.5;
 const RECENCY_DECAY_MS = 1000 * 60 * 60 * 24; // 1 day
 
 class AdaptiveDifficultyService {
@@ -182,6 +184,48 @@ class AdaptiveDifficultyService {
     }
 
     return scored.slice(0, count).map((s) => s.item);
+  }
+
+  /**
+   * Estimate how able this learner currently is, 0-1.
+   *
+   * Both callers that need an ability — distractor calibration and mode
+   * selection — must read the same number, or the session contradicts itself.
+   * Evidence is used in order of how directly it reflects current performance:
+   *
+   *   SmartScore for this exact topic × level, when the learner has played it;
+   *   BKT accuracy across the topic, when they have played it at all;
+   *   otherwise the placement estimate, which is the only signal available on
+   *   day one and previously influenced nothing after the result screen.
+   *
+   * A learner placed into level 9 of 24 therefore starts on harder distractors
+   * than one starting at level 0, instead of both getting a flat default.
+   *
+   * @param {Object} evidence - { smartScore, hasSmartScore, topicAccuracy,
+   *   hasAnalytics, placementLevel, levelCount }
+   * @returns {number} ability 0-1
+   */
+  estimateAbility(evidence = {}) {
+    const clamp = (n) => Math.max(0, Math.min(1, n));
+    const signals = [];
+
+    if (evidence.hasSmartScore && Number.isFinite(evidence.smartScore)) {
+      signals.push({ value: clamp(evidence.smartScore / 100), weight: 0.6 });
+    }
+    if (evidence.hasAnalytics && Number.isFinite(evidence.topicAccuracy)) {
+      signals.push({ value: clamp(evidence.topicAccuracy), weight: 0.4 });
+    }
+
+    if (signals.length === 0) {
+      const { placementLevel, levelCount } = evidence;
+      if (Number.isFinite(placementLevel) && Number.isFinite(levelCount) && levelCount > 1) {
+        return clamp(placementLevel / (levelCount - 1));
+      }
+      return DEFAULT_ABILITY;
+    }
+
+    const totalWeight = signals.reduce((sum, s) => sum + s.weight, 0);
+    return clamp(signals.reduce((sum, s) => sum + s.value * s.weight, 0) / totalWeight);
   }
 
   /**

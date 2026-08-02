@@ -27,12 +27,14 @@
 
 import { sfxService } from '../services/SfxService.js';
 import { analyticsService } from '../services/AnalyticsService.js';
+import { hintService } from '../services/HintService.js';
 import { practiceHUD } from '../PracticeHUD.js';
 import { nearMiss } from '../utils/StringDistance.js';
 import { TopicVelocita } from './TopicVelocita.js';
 import { delegate } from '../utils/EventDispatch.js';
 import { escapeHtml } from '../utils/SanitizeHtml.js';
 import { adaptiveDifficultyService } from '../services/AdaptiveDifficultyService.js';
+import { smartScoreService } from '../services/SmartScoreService.js';
 import { advancedModesMixin } from './TopicPracticeAdvancedModes.js';
 import { extraModesMixin } from './TopicPracticeExtraModes.js';
 import { renderingMixin } from './TopicPracticeRendering.js';
@@ -63,6 +65,9 @@ export class TopicPracticeManager {
     this.currentQuestionIndex = 0;
     this.score = 0;
     this.sessionSeed = 0;
+    // Hints revealed for the CURRENT question (§29). Reset per question.
+    this.hintLevel = 0;
+    this._lastUserAnswer = '';
 
     // XP & Timer state
     this.questionStartTime = 0;
@@ -102,6 +107,7 @@ export class TopicPracticeManager {
       'topicPractice.tapPair': (ds) => this.tapPair(ds),
       'topicPractice.checkCmdCloze': (ds) => this.checkCmdCloze(ds),
       'topicPractice.replayDictation': (ds) => this.replayDictation(ds),
+      'topicPractice.showHint': () => this.showHint(),
     };
     const container = document.getElementById('topic-practice-content');
     if (container) delegate(container, map);
@@ -115,6 +121,10 @@ export class TopicPracticeManager {
    */
   async startPractice(mode, topicId, levelNum = null) {
     this.currentMode = mode;
+    // The mode the learner chose. `currentMode` is what the CURRENT question
+    // is being asked in, which an adaptive session varies per question.
+    this.sessionMode = mode;
+    this.adaptivePlan = null;
     this.currentTopicId = topicId;
     this.currentLevel = levelNum;
     this.currentQuestionIndex = 0;
@@ -135,6 +145,9 @@ export class TopicPracticeManager {
       this.showNotification('Errore nel caricamento dei dati. / Error loading data.', 'warning');
       return;
     }
+
+    // Level count feeds the placement-derived ability prior.
+    this._levelCount = Object.keys(data.levels || {}).length;
 
     // Build question pool and context index
     const pool = this.buildPool(data, topicId, levelNum);
@@ -258,14 +271,26 @@ export class TopicPracticeManager {
   }
 
   /**
-   * Rough ability estimate for distractor calibration, 0-1.
-   * getTopicAccuracy returns 0 both for "no data yet" and for a genuine 0%;
-   * treating that as neutral keeps a first-time learner off the easiest
-   * possible distractors.
+   * Ability estimate driving distractor calibration and mode selection, 0-1.
+   * Both read this one number so a session cannot contradict itself.
    */
   _studentAbility() {
-    const accuracy = analyticsService.getTopicAccuracy(this.currentTopicId);
-    return accuracy > 0 ? accuracy : 0.5;
+    const topicId = this.currentTopicId;
+    const smartScore =
+      this.currentLevel !== null ? smartScoreService.getScore(topicId, this.currentLevel) : 0;
+    const topicAccuracy = analyticsService.getTopicAccuracy(topicId);
+    const placement = this.progressManager?.getTopicPlacement?.(topicId);
+
+    return adaptiveDifficultyService.estimateAbility({
+      smartScore,
+      // Both getters return 0 for "never played" and for a genuine zero, so
+      // presence is asserted separately rather than inferred from the value.
+      hasSmartScore: smartScore > 0,
+      topicAccuracy,
+      hasAnalytics: topicAccuracy > 0,
+      placementLevel: placement && !placement.skipped ? placement.level : undefined,
+      levelCount: this._levelCount,
+    });
   }
 
   /**
@@ -280,7 +305,111 @@ export class TopicPracticeManager {
     }
   }
 
+  /**
+   * Modes an adaptive session can interleave.
+   *
+   * Restricted to the formats whose question object IS the pool item and which
+   * render through the shared switch, so a plan can move between them question
+   * by question. The multi-stage formats (terminal, chain, lab, techtalk…) own
+   * their own question shape and lifecycle and stay standalone.
+   *
+   * Ordered by the difficulty table in AdaptiveDifficultyService, which is
+   * what turns a rising ability into a shift from recognition to recall.
+   */
+  static get ADAPTIVE_MODES() {
+    return [
+      'listening',
+      'matching',
+      'context',
+      'fillblank',
+      'comprehension',
+      'scenario',
+      'writing',
+      'sentence',
+      'codeoutput',
+      'command',
+      'codechallenge',
+    ];
+  }
+
+  /** Can this specific item be asked in this format at all? */
+  _itemSupportsMode(item, mode) {
+    const distinct =
+      Boolean(item.english) &&
+      Boolean(item.italian) &&
+      !containsWholeWord(item.italian, item.english);
+    const englishPhrase = (item.example || '').split(' = ')[0] || '';
+
+    switch (mode) {
+      case 'listening':
+      case 'matching':
+        return distinct;
+      case 'writing':
+        return distinct && isTypeableAnswer(item);
+      case 'fillblank':
+      case 'sentence':
+      case 'comprehension':
+        return Boolean(item.example);
+      case 'scenario':
+        return distinct && Boolean(item.example) && containsWholeWord(englishPhrase, item.english);
+      case 'codeoutput':
+        return Boolean(item.code);
+      case 'command':
+        return Boolean(item.command);
+      case 'codechallenge':
+        return Boolean(item.command) || (Boolean(item.code) && !item.code.includes('\n'));
+      case 'context':
+        return this.contextIndex.size >= 4;
+      default:
+        return false;
+    }
+  }
+
+  /**
+   * Plan a session that changes format as it goes.
+   *
+   * Every other mode runs one template ten times, which is the single biggest
+   * reason a session feels like filling in a form. Here each question picks the
+   * format nearest the learner's ability from those the item can actually
+   * support, so a stronger learner drifts from "choose the translation" toward
+   * "write the command" without ever being told they were assessed.
+   */
+  generateAdaptiveQuestions(pool) {
+    const ability = this._studentAbility();
+    const items = adaptiveDifficultyService.selectItems(pool, 10, (key) =>
+      analyticsService.getItemAnalytics(key)
+    );
+
+    const plan = [];
+    let previousMode = null;
+    for (const item of items) {
+      const supported = TopicPracticeManager.ADAPTIVE_MODES.filter((mode) =>
+        this._itemSupportsMode(item, mode)
+      );
+      if (supported.length === 0) continue;
+
+      // Back-to-back repeats are what the learner reads as monotony, so they
+      // are avoided whenever the item leaves a choice. Bound to a const so the
+      // filter does not close over the loop-mutated variable.
+      const avoidMode = previousMode;
+      const varied = supported.filter((mode) => mode !== avoidMode);
+      const eligible = varied.length > 0 ? varied : supported;
+
+      const mode = adaptiveDifficultyService.selectMode(eligible, ability) || eligible[0];
+      previousMode = mode;
+      plan.push({ item, mode });
+    }
+
+    this.adaptivePlan = plan;
+    return plan.map((entry) => entry.item);
+  }
+
   generateQuestions(mode, pool) {
+    if (mode === 'adaptive') {
+      this.questions = this.generateAdaptiveQuestions(pool);
+      return;
+    }
+
     if (mode === 'terminal') {
       this.questions = this.generateTerminalQuestions(pool);
       return;
@@ -529,7 +658,53 @@ export class TopicPracticeManager {
   // ─── ANSWER CHECKING ──────────────────────────
 
   checkAnswer(btnEl, selected, correct) {
+    this._lastUserAnswer = selected;
     this.handleResult(selected === correct, correct);
+  }
+
+  /**
+   * Reveal the next hint for the current question (§29).
+   *
+   * HintService has implemented this ladder — three progressively more
+   * revealing hints per mode, plus the XP cost curve — since v2.0.0 with no
+   * caller. Meanwhile several modes printed an unconditional "Vocab: X" line
+   * that was sometimes the answer itself. This is the intended mechanism: the
+   * learner asks, and pays for it.
+   */
+  showHint() {
+    const question = this.questions[this.currentQuestionIndex];
+    if (!question) return;
+
+    const hints = hintService.generateHints(question, this.currentMode) || [];
+    const level = this.hintLevel || 0;
+    if (level >= Math.min(3, hints.length)) return;
+
+    const text = hints[level];
+    this.hintLevel = level + 1;
+
+    const list = document.getElementById('practice-hint-list');
+    if (list && text) {
+      const line = document.createElement('p');
+      line.className = 'practice-hint';
+      // textContent, not innerHTML: hint strings are built from item data.
+      line.textContent = text;
+      list.appendChild(line);
+    }
+    this._updateHintButton(hints.length);
+  }
+
+  _updateHintButton(hintCount) {
+    const btn = document.querySelector('.practice-hint-btn');
+    if (!btn) return;
+    const max = Math.min(3, hintCount);
+    const used = this.hintLevel || 0;
+    if (used >= max) {
+      btn.disabled = true;
+      btn.textContent = 'Nessun altro aiuto / No more hints';
+      return;
+    }
+    const remainingXp = Math.round(hintService.getXPMultiplier(used) * 100);
+    btn.textContent = `\u{1F4A1} Aiuto / Hint ${used + 1}/${max} (XP ${remainingXp}%)`;
   }
 
   /**
@@ -540,6 +715,7 @@ export class TopicPracticeManager {
     if (!input) return;
 
     const userValue = input.value;
+    this._lastUserAnswer = userValue;
     const exactMatch = normalize(userValue) === normalize(correct);
 
     if (exactMatch) {
