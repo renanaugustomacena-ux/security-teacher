@@ -555,6 +555,47 @@ h3 {
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
+/* Short viewports: the sidebar stacks ~950px of chrome (logo + ten nav
+   items + footer) inside a fixed 100vh column, so on laptop screens the
+   bottom buttons need scrolling to reach. Shrink the decorative chrome —
+   never the 44px tap targets — so navigation fits; the overflow-y on
+   .sidebar stays as the fallback for extreme cases. */
+@media (max-height: 1000px) {
+  .sidebar {
+    padding: var(--space-md);
+  }
+
+  .logo {
+    padding: var(--space-sm) 0;
+    margin-bottom: var(--space-sm);
+  }
+
+  .logo-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .logo-accent {
+    font-size: 1.8rem;
+  }
+
+  .logo-title {
+    font-size: 1rem;
+  }
+
+  .nav-menu {
+    gap: var(--space-xs);
+  }
+
+  .nav-item {
+    padding: var(--space-sm) var(--space-lg);
+  }
+
+  .sidebar-footer {
+    padding-top: var(--space-sm);
+  }
+}
+
 .github-link {
   display: flex;
   align-items: center;
