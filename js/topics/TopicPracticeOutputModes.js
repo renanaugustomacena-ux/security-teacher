@@ -188,6 +188,124 @@ export const outputModesMixin = {
     this.handleResult(norm(input.value) === norm(ds.correct), ds.correct);
   },
 
+  // ─── TASK → COMMAND ───────────────────────────────
+
+  /**
+   * "Which command does this job?" — a technical question, not a translation.
+   *
+   * Every other recognition mode in the app is ultimately "what is the word
+   * for X". This one prompts with the goal the learner wants to achieve and
+   * answers with a command, so the wrong options are other real commands. Its
+   * distractors prefer the same tool, which is what makes it hard in a useful
+   * way: four `git` subcommands, not four unrelated programs.
+   */
+  /**
+   * Items that can be asked as "which command does this?".
+   *
+   * Excludes the 12.2% of task descriptions that quote the command they are
+   * asking for, and the 5.4% that carry a backticked fragment — in both cases
+   * the prompt contains its own answer. These are dropped rather than masked:
+   * masking the tool out of "check which version of ___ is running" produces a
+   * question nobody can answer.
+   */
+  taskCommandCandidates(pool) {
+    return (pool || []).filter((item) => {
+      const task = item.task || item.taskEn;
+      if (!task || !item.command) return false;
+      if (task.includes('`')) return false;
+      return !task.toLowerCase().includes(item.command.trim().toLowerCase());
+    });
+  },
+
+  /**
+   * Build one task→command question, or null when the pool cannot field
+   * enough distinct commands to make a real choice.
+   * Shared by the standalone mode and the adaptive planner.
+   */
+  buildTaskCommandQuestion(item, candidatePool, ability) {
+    if (!item || !item.command) return null;
+    const correct = item.command.trim();
+    const prompt = item.task || item.taskEn || '';
+    if (!prompt) return null;
+
+    const programOf = (command) =>
+      String(command || '')
+        .trim()
+        .split(/\s+/)[0];
+    const program = programOf(correct);
+
+    const seen = new Set([correct]);
+    const candidates = [];
+    for (const other of candidatePool) {
+      const command = (other.command || '').trim();
+      if (!command || seen.has(command)) continue;
+      seen.add(command);
+      candidates.push(other);
+    }
+
+    // A task legitimately names the tool ("compile main.c with gcc"). That is
+    // only a giveaway when the other options are different programs, so when
+    // the prompt names it the wrong answers must come from the SAME program —
+    // then the choice is decided by the flags, which is the point. 54% of
+    // items have the peers for this; the rest simply do not run in this mode.
+    const namesProgram = containsWholeWord(prompt, program);
+    const eligible = namesProgram
+      ? candidates.filter((other) => programOf(other.command) === program)
+      : candidates;
+    if (eligible.length < 2) return null;
+
+    const distractors = adaptiveDifficultyService
+      .selectDistractors(item, eligible, 3, ability, {
+        field: 'command',
+        contextField: '_subContext',
+      })
+      .map((other) => (other.command || '').trim())
+      .filter(Boolean);
+    if (distractors.length < 2) return null;
+
+    return {
+      ...item,
+      type: 'taskcommand',
+      prompt,
+      options: shuffleArray([correct, ...distractors.slice(0, 3)]),
+      correct,
+    };
+  },
+
+  generateTaskCommandQuestions(pool) {
+    const items = this.taskCommandCandidates(pool);
+    if (items.length < 2) return [];
+
+    const selected = adaptiveDifficultyService.selectItems(items, MAX_Q, (key) =>
+      analyticsService.getItemAnalytics(key)
+    );
+    const ability = this._studentAbility();
+
+    return selected
+      .map((item) => this.buildTaskCommandQuestion(item, items, ability))
+      .filter(Boolean);
+  },
+
+  renderTaskCommand(container, q) {
+    container.innerHTML = `
+      <div class="exercise-card">
+        <div class="exercise-instruction">Quale comando svolge questo compito? / Which command does this?</div>
+        <div class="exercise-target">${escapeHtml(q.prompt)}</div>
+        <div class="options-grid options-grid-mono">
+          ${q.options
+            .map(
+              (opt) => `
+            <button class="btn btn-secondary option-btn option-btn-mono"
+              data-action="topicPractice.checkAnswer" data-opt="${escapeAttr(opt)}" data-correct="${escapeAttr(q.correct)}">
+              <code>${escapeHtml(opt)}</code>
+            </button>`
+            )
+            .join('')}
+        </div>
+      </div>
+    `;
+  },
+
   // ─── SHARED ───────────────────────────────────────
 
   _bindWritingEnter(container) {

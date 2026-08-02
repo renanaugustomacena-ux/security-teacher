@@ -226,7 +226,7 @@ export const renderingMixin = {
       }
 
       case 'context': {
-        const correctContext = q.context || 'general';
+        const correctContext = this.groupContextOf(q);
         const contextOptions = this.generateContextOptions(correctContext);
         const contextTtsBtn = ttsService.isSupported ? ttsService.speakerButtonHTML(q.english) : '';
 
@@ -442,6 +442,12 @@ export const renderingMixin = {
       case 'cmdcloze': {
         this.renderCmdCloze(container, q);
         return; // Command-cloze owns its input binding
+      }
+
+      case 'taskcommand': {
+        this.renderTaskCommand(container, q);
+        this._renderHintBar(container);
+        return; // Task→command owns its monospace option grid
       }
 
       default:

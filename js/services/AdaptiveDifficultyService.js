@@ -12,6 +12,10 @@ const MODE_DIFFICULTY = {
   // Conceptual recall of a full Italian description, not a one-word gloss.
   definizione: 0.42,
   readout: 0.4,
+  // Recognising the right command for a goal. Sits between reading a command
+  // and writing one from memory, filling the gap that made the jump from
+  // matching (0.2) to command (0.65) so abrupt.
+  taskcommand: 0.45,
   // Multi-step, goal-graded, with escalating hints — the hardest thing here.
   lab: 0.7,
   scenario: 0.45,
@@ -133,6 +137,9 @@ class AdaptiveDifficultyService {
     if (!pool || pool.length === 0) return [];
 
     const field = options.field || 'english';
+    // Which field groups "related" items. Callers pass the derived sub-context
+    // when a level's authored context is a single constant.
+    const contextField = options.contextField || 'context';
     const ability = Math.max(0, Math.min(1, studentAbility));
     const correctKey = this._itemKey(correctItem);
 
@@ -143,7 +150,7 @@ class AdaptiveDifficultyService {
 
     const correctText = String(correctItem[field] || correctItem.english || '');
     const correctLen = correctText.length;
-    const correctContext = correctItem.context;
+    const correctContext = correctItem[contextField];
 
     // Score candidates based on similarity
     const scored = candidates.map((item) => {
@@ -151,7 +158,7 @@ class AdaptiveDifficultyService {
       let similarity = 0;
 
       // Same context = more similar
-      if (item.context === correctContext) {
+      if (correctContext !== undefined && item[contextField] === correctContext) {
         similarity += 0.3;
       }
 

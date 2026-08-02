@@ -220,6 +220,28 @@ export function blankTermInPhrase(phrase, term, placeholder = '_____') {
   }
 }
 
+/**
+ * A finer grouping key than the authored `context`.
+ *
+ * 313 of the corpus's 371 levels carry exactly one `context` value, so any
+ * logic that groups "semantically related" items by it is really grouping by
+ * "everything in this level". The tool a command belongs to is a real
+ * category the data already encodes — 1,813 distinct programs across the
+ * corpus — and grouping by it makes same-group distractors genuinely
+ * confusable: four `git` subcommands rather than four unrelated glosses.
+ *
+ * Never overwrites `context`, which is part of the analytics item key.
+ */
+export function deriveSubContext(item) {
+  if (!item) return 'general';
+  if (item.tool) return String(item.tool).trim().toLowerCase();
+  const program = String(item.command || '')
+    .trim()
+    .split(/\s+/)[0];
+  if (program && /^[a-z][a-z0-9._-]*$/i.test(program)) return program.toLowerCase();
+  return item.context || 'general';
+}
+
 export function shuffleArray(array) {
   const newArr = [...array];
   for (let i = newArr.length - 1; i > 0; i--) {

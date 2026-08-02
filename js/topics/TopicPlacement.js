@@ -6,6 +6,7 @@ import { analyticsService } from '../services/AnalyticsService.js';
 import { authService } from '../services/AuthService.js';
 import { canRunVeroFalso, canRunDefinizione } from './TopicPracticeExtraModes.js';
 import { isTypeableAnswer, MIN_TYPEABLE_ITEMS } from './TopicPracticeConstants.js';
+import { deriveSubContext } from '../utils/PracticeUtils.js';
 import { loadLabsFor, labsForLevel } from './TopicPracticeLabMode.js';
 
 /**
@@ -31,6 +32,7 @@ export const MODE_GROUPS = [
     ids: [
       'lab',
       'terminal',
+      'taskcommand',
       'command',
       'cmdcloze',
       'codelab',
@@ -315,8 +317,21 @@ export const topicPlacementMixin = {
     // "Other 1 / Other 2 / Other 3" beside the single real answer — a free
     // point, ten times a session. Offer the card only where the level can
     // actually field a full set of genuine alternatives.
-    const distinctContexts = new Set(pool.map((item) => item.context || 'general'));
+    // The derived sub-context (tool / command program) is what the session
+    // groups by when a level's authored context is a single constant.
+    const distinctContexts = new Set(pool.map((item) => deriveSubContext(item)));
     const hasContextVariety = distinctContexts.size >= 4;
+    // Task→command needs enough goals AND enough distinct commands, or the
+    // option grid repeats itself.
+    const taskCommandItems = pool.filter((item) => {
+      const task = item.task || item.taskEn;
+      if (!task || !item.command) return false;
+      if (task.includes('`')) return false;
+      return !task.toLowerCase().includes(item.command.trim().toLowerCase());
+    });
+    const hasTaskCommands =
+      taskCommandItems.length >= 6 &&
+      new Set(taskCommandItems.map((item) => item.command.trim())).size >= 4;
     // Both gates count DISTINCT Italian glosses / notes, not items: the
     // generators need the variety, and counting items alone enables a card
     // that then produces zero questions.
@@ -402,6 +417,13 @@ export const topicPlacementMixin = {
         desc: 'Scegli la descrizione giusta / Pick the right description',
         icon: '\u{1F4D4}',
         enabled: hasDefinitionPool,
+      },
+      {
+        id: 'taskcommand',
+        name: 'Quale Comando? / Which Command?',
+        desc: 'Scegli il comando che svolge il compito',
+        icon: '\u{1F3AF}',
+        enabled: hasTaskCommands,
       },
       {
         id: 'command',

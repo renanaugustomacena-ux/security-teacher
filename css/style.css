@@ -3028,6 +3028,27 @@ pre.model-solution-code {
   margin: var(--space-xl) auto 0;
 }
 
+/* Command options are code, not prose: one per row so a long invocation is
+   readable, and never wrapped mid-flag. */
+.options-grid-mono {
+  grid-template-columns: 1fr;
+  max-width: 640px;
+}
+
+.option-btn-mono {
+  text-align: left !important;
+  justify-content: flex-start !important;
+}
+
+.option-btn-mono code {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: none;
+  padding: 0;
+}
+
 .option-btn {
   padding: var(--space-md) var(--space-lg) !important;
   font-size: 1rem !important;

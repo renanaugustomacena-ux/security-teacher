@@ -51,6 +51,7 @@ import {
   calculateXP,
   containsWholeWord,
   stripRedundantGloss,
+  deriveSubContext,
 } from '../utils/PracticeUtils.js';
 
 export class TopicPracticeManager {
@@ -265,6 +266,7 @@ export class TopicPracticeManager {
     return {
       ...item,
       italian: stripRedundantGloss(item.italian, item.english),
+      _subContext: deriveSubContext(item),
       _topicId: topicId,
       _level: level,
     };
@@ -296,13 +298,30 @@ export class TopicPracticeManager {
   /**
    * Build an index of items grouped by their context field
    */
+  /**
+   * Group the pool for distractor selection and for the `context` question.
+   *
+   * Prefers the derived sub-context (tool / command program) when the level
+   * actually has several, and falls back to the authored `context` otherwise.
+   * Almost every level carries a single authored context, which silently
+   * reduced "pick semantically related distractors" to "pick anything here".
+   */
   buildContextIndex(pool) {
+    const derived = new Set(pool.map((item) => item._subContext).filter(Boolean));
+    this.contextField = derived.size >= 4 ? '_subContext' : 'context';
+
     this.contextIndex = new Map();
     for (const item of pool) {
-      const ctx = item.context || 'general';
-      if (!this.contextIndex.has(ctx)) this.contextIndex.set(ctx, []);
-      this.contextIndex.get(ctx).push(item);
+      const key = item[this.contextField] || item.context || 'general';
+      if (!this.contextIndex.has(key)) this.contextIndex.set(key, []);
+      this.contextIndex.get(key).push(item);
     }
+  }
+
+  /** The grouping key this session is using for the given item. */
+  groupContextOf(item) {
+    if (!item) return 'general';
+    return item[this.contextField || 'context'] || item.context || 'general';
   }
 
   /**
@@ -329,6 +348,7 @@ export class TopicPracticeManager {
       'codeoutput',
       'command',
       'codechallenge',
+      'taskcommand',
     ];
   }
 
@@ -358,6 +378,8 @@ export class TopicPracticeManager {
         return Boolean(item.command);
       case 'codechallenge':
         return Boolean(item.command) || (Boolean(item.code) && !item.code.includes('\n'));
+      case 'taskcommand':
+        return this.taskCommandCandidates([item]).length === 1;
       case 'context':
         return this.contextIndex.size >= 4;
       default:
@@ -396,6 +418,28 @@ export class TopicPracticeManager {
       const eligible = varied.length > 0 ? varied : supported;
 
       const mode = adaptiveDifficultyService.selectMode(eligible, ability) || eligible[0];
+
+      // taskcommand needs a built question object rather than the bare item.
+      // If the level cannot field enough distinct commands to make a real
+      // choice, fall back to a format the item can definitely support.
+      if (mode === 'taskcommand') {
+        const built = this.buildTaskCommandQuestion(
+          item,
+          this.taskCommandCandidates(this.fullPool),
+          ability
+        );
+        if (built) {
+          previousMode = mode;
+          plan.push({ item: built, mode });
+          continue;
+        }
+        const fallback = eligible.find((candidate) => candidate !== 'taskcommand');
+        if (!fallback) continue;
+        previousMode = fallback;
+        plan.push({ item, mode: fallback });
+        continue;
+      }
+
       previousMode = mode;
       plan.push({ item, mode });
     }
@@ -457,6 +501,11 @@ export class TopicPracticeManager {
 
     if (mode === 'cmdcloze') {
       this.questions = this.generateCmdClozeQuestions(pool);
+      return;
+    }
+
+    if (mode === 'taskcommand') {
+      this.questions = this.generateTaskCommandQuestions(pool);
       return;
     }
 
@@ -569,7 +618,10 @@ export class TopicPracticeManager {
     const pool = candidates.length >= 3 ? candidates : [...candidates, ...relaxed];
 
     const distractors = adaptiveDifficultyService
-      .selectDistractors(currentQ, pool, 3, this._studentAbility(), { field })
+      .selectDistractors(currentQ, pool, 3, this._studentAbility(), {
+        field,
+        contextField: this.contextField,
+      })
       .map((item) => item[field])
       .filter(Boolean);
 
