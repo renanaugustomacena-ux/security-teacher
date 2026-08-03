@@ -51,7 +51,7 @@ jobs:
 
       - name: Open / update integrity-drift issue
         if: steps.probe.outputs.drift == 'true'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             const fs = require('fs');
