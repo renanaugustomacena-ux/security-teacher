@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@capacitor/android": "8.3.1",
-    "@capacitor/cli": "8.3.1",
+    "@capacitor/cli": "8.4.2",
     "@capacitor/core": "8.3.1",
     "@commitlint/cli": "^20.4.1",
     "@commitlint/config-conventional": "^20.4.1",
