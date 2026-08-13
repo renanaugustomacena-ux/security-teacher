@@ -690,7 +690,7 @@ h3 {
   border-radius: var(--radius-md);
   padding: 0.5rem 0.75rem;
   color: var(--text-primary);
-  font-family: var(--font-body);
+  font-family: var(--font-sans);
   font-size: 0.95rem;
   outline: none;
   transition: border-color var(--transition-fast);
@@ -1288,7 +1288,7 @@ h3 {
   min-width: auto !important;
   flex: 0 0 auto !important;
   background: var(--bg-tertiary);
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   color: var(--text-secondary);
   cursor: pointer;
@@ -8358,8 +8358,8 @@ body.login-wall-active > *:not(.login-wall):not(#matrix-morph) {
   right: 0;
   width: min(420px, 100vw);
   height: 100dvh;
-  background: var(--surface-2, #1e1e2e);
-  border-left: 1px solid var(--border, rgba(255, 255, 255, 0.1));
+  background: var(--bg-secondary);
+  border-left: 1px solid var(--glass-border);
   z-index: 1000;
   overflow-y: auto;
   transition: transform 0.25s ease;
@@ -8418,7 +8418,7 @@ body.login-wall-active > *:not(.login-wall):not(#matrix-morph) {
   color: var(--text-muted, #888);
   margin-bottom: var(--space-xs);
   padding-bottom: var(--space-xs);
-  border-bottom: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+  border-bottom: 1px solid var(--glass-border);
 }
 
 .reference-item {
@@ -8427,7 +8427,7 @@ body.login-wall-active > *:not(.login-wall):not(#matrix-morph) {
   gap: 4px;
   align-items: baseline;
   padding: var(--space-xs) 0;
-  border-bottom: 1px solid var(--border, rgba(255, 255, 255, 0.05));
+  border-bottom: 1px solid var(--glass-border);
 }
 
 .reference-item-term {
@@ -8479,8 +8479,8 @@ body.login-wall-active > *:not(.login-wall):not(#matrix-morph) {
 }
 
 .stats-chart-card {
-  background: var(--surface-2, #1e1e2e);
-  border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+  background: var(--bg-secondary);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius-md, 8px);
   padding: var(--space-md);
 }
@@ -8566,8 +8566,8 @@ body.login-wall-active > *:not(.login-wall):not(#matrix-morph) {
 
 .placement-option {
   padding: var(--space-sm) var(--space-md);
-  background: var(--surface-2, #1e1e2e);
-  border: 1px solid var(--border, rgba(255, 255, 255, 0.1));
+  background: var(--bg-secondary);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius-md, 8px);
   color: var(--text-primary, #e0e0e0);
   cursor: pointer;
@@ -8579,7 +8579,7 @@ body.login-wall-active > *:not(.login-wall):not(#matrix-morph) {
 }
 
 .placement-option:hover {
-  background: var(--surface-3, #2a2a3e);
+  background: var(--bg-tertiary);
   border-color: var(--accent-primary, #00ff41);
 }
 
