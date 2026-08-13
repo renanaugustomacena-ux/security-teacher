@@ -36,7 +36,7 @@ userAnswer: expectedAnswer || '',
 expectedAnswer: expectedAnswer || '',
 ```
 
-Both fields receive the *correct* answer; the learner's actual answer is never
+Both fields receive the _correct_ answer; the learner's actual answer is never
 captured. `AnalyticsService._trackError(item, userAnswer)` therefore records the
 right answer as if it were a wrong one. Consequences: §27.1 (top 3 wrong answers
 per item), §27.2 (confusion pairs), and the distractor-plausibility half of
@@ -49,14 +49,14 @@ call and passes the real answer.
 
 Settled with the maintainer before this design was written:
 
-| Question | Decision |
-| --- | --- |
-| Stack | Vanilla ES6 modules + the already-vendored Three.js. No bundler, no transpiler, no framework, no backend. No doctrine amendment required. |
-| Migration | Games and legacy exercises **coexist**; migrate level by level. |
-| Teaching | The game replaces **both** teaching and testing for its level. |
-| Other surfaces | SRS review, boss challenges, Velocità, pronunciation and the placement test **stay generic** shared modes. Games are level-only. |
-| SDK shape | Ledger + game-owned flow (option C of three considered). |
-| Aesthetics | Deliberately out of scope. Decided per 6-level band during game authoring. |
+| Question       | Decision                                                                                                                                  |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| Stack          | Vanilla ES6 modules + the already-vendored Three.js. No bundler, no transpiler, no framework, no backend. No doctrine amendment required. |
+| Migration      | Games and legacy exercises **coexist**; migrate level by level.                                                                           |
+| Teaching       | The game replaces **both** teaching and testing for its level.                                                                            |
+| Other surfaces | SRS review, boss challenges, Velocità, pronunciation and the placement test **stay generic** shared modes. Games are level-only.          |
+| SDK shape      | Ledger + game-owned flow (option C of three considered).                                                                                  |
+| Aesthetics     | Deliberately out of scope. Decided per 6-level band during game authoring.                                                                |
 
 **Band** (used throughout): a run of 6 consecutive levels within a topic that
 share a visual and mechanical identity — levels 1–6, 7–12, 13–18, 19–24. A
@@ -112,11 +112,11 @@ absent from `STATIC_ASSETS` does not exist on Android.
 ```js
 const session = await createLevelSession({ topicId: 'nodejs', level: 0 });
 
-session.items          // ~40 item handles, in lesson order
-session.lessons        // the 4 lesson groups, for games that pace by lesson
-session.queue()        // adaptive-ordered suggestion (§26.1 ZPD), optional
-session.progress()     // { introduced, attempted, cleared, total, accuracy }
-session.finish()       // pass/fail + batch mastery update + summary
+session.items; // ~40 item handles, in lesson order
+session.lessons; // the 4 lesson groups, for games that pace by lesson
+session.queue(); // adaptive-ordered suggestion (§26.1 ZPD), optional
+session.progress(); // { introduced, attempted, cleared, total, accuracy }
+session.finish(); // pass/fail + batch mastery update + summary
 ```
 
 Item handles expose content read-only and carry their own state:
@@ -243,12 +243,12 @@ after a Gradle build in `apk.yml`, which is far too late a signal.
 
 Every failure path ends somewhere other than a white screen (§11.2).
 
-| Failure | Behaviour |
-| --- | --- |
-| Game module fails to import | Fall back to that level's legacy exercises with a visible bilingual notice. |
-| Crash inside the game loop | Error boundary destroys the game, offers retry or the legacy path. Answers already given survive, because analytics flush within 5 s (§24.4). |
-| WebGL context loss | `GameHost` handles `webglcontextlost` and degrades rather than dying (§11.1); common on mid-range Android. |
-| Game reports an unknown item key | SDK rejects the report and warns, rather than corrupting analytics. |
+| Failure                          | Behaviour                                                                                                                                     |
+| -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| Game module fails to import      | Fall back to that level's legacy exercises with a visible bilingual notice.                                                                   |
+| Crash inside the game loop       | Error boundary destroys the game, offers retry or the legacy path. Answers already given survive, because analytics flush within 5 s (§24.4). |
+| WebGL context loss               | `GameHost` handles `webglcontextlost` and degrades rather than dying (§11.1); common on mid-range Android.                                    |
+| Game reports an unknown item key | SDK rejects the report and warns, rather than corrupting analytics.                                                                           |
 
 ---
 
@@ -313,10 +313,10 @@ The SDK is only proven by a real game. The recommended first slice is:
 
 1. `LevelSession.js`, `GameHost.js`, `registry.js`, and the conformance harness.
 2. One complete Node.js level-1 game (topic `nodejs`, level index 0,
-   *Fondamenti / Foundations*, 40 items across 4 lessons) built on the band-I
+   _Fondamenti / Foundations_, 40 items across 4 lessons) built on the band-I
    runtime.
 3. The two CI gates from §9.
 
 Levels 2–6 then reuse the band-I runtime and are mostly content and mechanics.
-Level 7 (index 6, *Express Fondamenti*) opens band II and is the first test of
+Level 7 (index 6, _Express Fondamenti_) opens band II and is the first test of
 whether the band boundary is a real code-sharing seam.
