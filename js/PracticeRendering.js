@@ -22,7 +22,6 @@ const SCENARIO_TEMPLATES = [
 ];
 
 export const practiceRenderingMixin = {
-
   renderQuestion() {
     const container = document.getElementById('practice-content');
     if (!container || this.questions.length === 0) return;

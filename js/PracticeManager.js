@@ -31,7 +31,6 @@ import {
   calculateXP,
 } from './utils/PracticeUtils.js';
 
-
 export class PracticeManager {
   constructor(progressManager) {
     this.progressManager = progressManager;
@@ -56,8 +55,6 @@ export class PracticeManager {
   init() {
     window.practiceManager = this;
   }
-
-
 
   /**
    * Start a practice session.

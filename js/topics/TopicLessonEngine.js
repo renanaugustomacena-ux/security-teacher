@@ -21,7 +21,6 @@ import {
   ENCOURAGING_WRONG,
 } from './data/topic-lesson-intros.js';
 
-
 export class TopicLessonEngine {
   constructor(progressManager) {
     this.progressManager = progressManager;

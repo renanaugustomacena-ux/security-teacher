@@ -245,9 +245,7 @@ export const renderingMixin = {
             seen.add(rule);
           }
         };
-        for (const it of shuffleArray(
-          paragraphItems.filter((p) => p.english !== target.english)
-        )) {
+        for (const it of shuffleArray(paragraphItems.filter((p) => p.english !== target.english))) {
           if (distractors.length >= 3) break;
           addDistractor(pickRule(it));
         }
@@ -393,6 +391,4 @@ export const renderingMixin = {
       });
     }
   },
-
-
 };

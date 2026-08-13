@@ -5,7 +5,6 @@ import { analyticsService } from '../services/AnalyticsService.js';
 import { authService } from '../services/AuthService.js';
 
 export const topicPlacementMixin = {
-
   async downloadCertificate(topicId) {
     const data = await this.loadTopicData(topicId);
     const meta = getTopicMeta(topicId);
@@ -188,22 +187,118 @@ export const topicPlacementMixin = {
     const hasEnglishItalian = pool.some((item) => item.english && item.italian);
 
     const modes = [
-      { id: 'listening', name: 'Ascolto / Listening', desc: 'Scegli la traduzione corretta', icon: '\u{1F442}', enabled: hasEnglishItalian },
-      { id: 'writing', name: 'Scrittura / Writing', desc: 'Scrivi la traduzione', icon: '✏️', enabled: hasEnglishItalian },
-      { id: 'matching', name: 'Abbinamento / Matching', desc: 'Abbina termini e traduzioni', icon: '\u{1F517}', enabled: hasEnglishItalian },
-      { id: 'fillblank', name: 'Completa / Fill Blank', desc: 'Completa la frase', icon: '\u{1F4DD}', enabled: hasExample },
-      { id: 'sentence', name: 'Ricostruisci / Sentence', desc: 'Ordina le parole', icon: '\u{1F9E9}', enabled: hasExample },
-      { id: 'comprehension', name: 'Comprensione / Comprehension', desc: 'Leggi e rispondi', icon: '\u{1F4D6}', enabled: hasExample },
-      { id: 'scenario', name: 'Scenario / Dialogue', desc: 'Completa il dialogo situazionale', icon: '\u{1F4AC}', enabled: hasExample && hasEnglishItalian },
-      { id: 'context', name: 'Contesto / Context', desc: 'In quale ambito si usa?', icon: '\u{1F3AF}', enabled: hasEnglishItalian },
-      { id: 'command', name: 'Comando / Command', desc: 'Scrivi il comando corretto', icon: '\u{1F4BB}', enabled: hasCommand },
-      { id: 'codeoutput', name: 'Code Output', desc: 'Che concetto dimostra il codice?', icon: '\u{1F40D}', enabled: hasCode },
-      { id: 'codechallenge', name: 'Code Challenge', desc: 'Scrivi il codice/comando', icon: '\u{1F680}', enabled: hasCommand || hasCode },
-      { id: 'terminal', name: 'Terminale / Terminal', desc: 'Simula comandi in sequenza / Simulate commands in sequence', icon: '\u{1F4BB}', enabled: hasCommand },
-      { id: 'codelab', name: 'Code Lab', desc: 'Completa il codice mancante / Complete the missing code', icon: '\u{1F9EA}', enabled: hasMultiLineCode },
-      { id: 'techtalk', name: 'Tech Talk', desc: 'Conversazione tecnica / Technical conversation', icon: '\u{1F4AC}', enabled: true },
-      { id: 'chain', name: 'Sfida a Catena / Chain Challenge', desc: '5 domande collegate / 5 connected questions', icon: '⛓️', enabled: hasEnglishItalian },
-      { id: 'velocita', name: "Velocita' / Speed Run", desc: '60-90s a tutta velocita / 60-90s rapid-fire', icon: '⚡', enabled: hasEnglishItalian },
+      {
+        id: 'listening',
+        name: 'Ascolto / Listening',
+        desc: 'Scegli la traduzione corretta',
+        icon: '\u{1F442}',
+        enabled: hasEnglishItalian,
+      },
+      {
+        id: 'writing',
+        name: 'Scrittura / Writing',
+        desc: 'Scrivi la traduzione',
+        icon: '✏️',
+        enabled: hasEnglishItalian,
+      },
+      {
+        id: 'matching',
+        name: 'Abbinamento / Matching',
+        desc: 'Abbina termini e traduzioni',
+        icon: '\u{1F517}',
+        enabled: hasEnglishItalian,
+      },
+      {
+        id: 'fillblank',
+        name: 'Completa / Fill Blank',
+        desc: 'Completa la frase',
+        icon: '\u{1F4DD}',
+        enabled: hasExample,
+      },
+      {
+        id: 'sentence',
+        name: 'Ricostruisci / Sentence',
+        desc: 'Ordina le parole',
+        icon: '\u{1F9E9}',
+        enabled: hasExample,
+      },
+      {
+        id: 'comprehension',
+        name: 'Comprensione / Comprehension',
+        desc: 'Leggi e rispondi',
+        icon: '\u{1F4D6}',
+        enabled: hasExample,
+      },
+      {
+        id: 'scenario',
+        name: 'Scenario / Dialogue',
+        desc: 'Completa il dialogo situazionale',
+        icon: '\u{1F4AC}',
+        enabled: hasExample && hasEnglishItalian,
+      },
+      {
+        id: 'context',
+        name: 'Contesto / Context',
+        desc: 'In quale ambito si usa?',
+        icon: '\u{1F3AF}',
+        enabled: hasEnglishItalian,
+      },
+      {
+        id: 'command',
+        name: 'Comando / Command',
+        desc: 'Scrivi il comando corretto',
+        icon: '\u{1F4BB}',
+        enabled: hasCommand,
+      },
+      {
+        id: 'codeoutput',
+        name: 'Code Output',
+        desc: 'Che concetto dimostra il codice?',
+        icon: '\u{1F40D}',
+        enabled: hasCode,
+      },
+      {
+        id: 'codechallenge',
+        name: 'Code Challenge',
+        desc: 'Scrivi il codice/comando',
+        icon: '\u{1F680}',
+        enabled: hasCommand || hasCode,
+      },
+      {
+        id: 'terminal',
+        name: 'Terminale / Terminal',
+        desc: 'Simula comandi in sequenza / Simulate commands in sequence',
+        icon: '\u{1F4BB}',
+        enabled: hasCommand,
+      },
+      {
+        id: 'codelab',
+        name: 'Code Lab',
+        desc: 'Completa il codice mancante / Complete the missing code',
+        icon: '\u{1F9EA}',
+        enabled: hasMultiLineCode,
+      },
+      {
+        id: 'techtalk',
+        name: 'Tech Talk',
+        desc: 'Conversazione tecnica / Technical conversation',
+        icon: '\u{1F4AC}',
+        enabled: true,
+      },
+      {
+        id: 'chain',
+        name: 'Sfida a Catena / Chain Challenge',
+        desc: '5 domande collegate / 5 connected questions',
+        icon: '⛓️',
+        enabled: hasEnglishItalian,
+      },
+      {
+        id: 'velocita',
+        name: "Velocita' / Speed Run",
+        desc: '60-90s a tutta velocita / 60-90s rapid-fire',
+        icon: '⚡',
+        enabled: hasEnglishItalian,
+      },
     ];
 
     const container = document.getElementById('topic-lesson-content');

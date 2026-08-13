@@ -779,7 +779,6 @@ export class TopicManager {
 
     setTimeout(() => notice.remove(), 3000);
   }
-
 }
 
 Object.assign(TopicManager.prototype, topicPlacementMixin);

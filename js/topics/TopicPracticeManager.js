@@ -267,7 +267,6 @@ export class TopicPracticeManager {
     );
   }
 
-
   // ─── UTILITY ───────────────────────────────────
 
   maskTermInText(text, term) {
@@ -667,4 +666,9 @@ export class TopicPracticeManager {
   }
 }
 
-Object.assign(TopicPracticeManager.prototype, advancedModesMixin, renderingMixin, resultHandlerMixin);
+Object.assign(
+  TopicPracticeManager.prototype,
+  advancedModesMixin,
+  renderingMixin,
+  resultHandlerMixin
+);

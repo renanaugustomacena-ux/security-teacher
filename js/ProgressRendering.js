@@ -1,5 +1,4 @@
 export const progressRenderingMixin = {
-
   renderProgress() {
     if (!this.data) return;
     const wordsEl = document.getElementById('total-words');

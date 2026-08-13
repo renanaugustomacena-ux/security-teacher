@@ -1,5 +1,4 @@
 export const musicPlayerUIMixin = {
-
   _showPlayer() {
     const selection = document.getElementById('song-selection');
     const container = document.getElementById('karaoke-container');
