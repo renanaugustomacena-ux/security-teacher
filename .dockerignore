@@ -35,3 +35,8 @@ docker-compose.yml
 # OS artifacts
 Thumbs.db
 .DS_Store
+
+# design-sync tooling (Doctrine §1.9) — dev-only, not part of the image.
+.design-sync/
+.ds-sync/
+ds-bundle/

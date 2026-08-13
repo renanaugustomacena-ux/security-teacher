@@ -20,3 +20,7 @@ package-lock.json
 # files are spec, not source). Re-evaluate if Prettier ships a fix.
 DOCTRINE.md
 SECURITY.md
+
+# design-sync generated bundle + staged converter scripts.
+ds-bundle/
+.ds-sync/

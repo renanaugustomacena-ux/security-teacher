@@ -1,0 +1,44 @@
+{
+  "projectId": "d746331c-7876-42df-9fd1-351cca88cd20",
+  "shape": "package",
+  "pkg": "@knowledge-aio/ds",
+  "globalName": "KnowledgeAIO",
+  "srcDir": "src",
+  "readmeHeader": ".design-sync/conventions.md",
+  "cssEntry": "generated/app.css",
+  "extraFonts": ["generated/fonts/fonts.css"],
+  "componentSrcMap": {
+    "Button": "src/Button.tsx",
+    "NavItem": "src/NavItem.tsx",
+    "UserLevel": "src/UserLevel.tsx",
+    "GlassCard": "src/GlassCard.tsx",
+    "ActionCard": "src/ActionCard.tsx",
+    "StatCard": "src/StatCard.tsx",
+    "LevelProgress": "src/LevelProgress.tsx",
+    "WeeklyChart": "src/WeeklyChart.tsx",
+    "BadgeCard": "src/BadgeCard.tsx",
+    "AchievementToast": "src/AchievementToast.tsx",
+    "ModeCard": "src/ModeCard.tsx",
+    "ActivityList": "src/ActivityList.tsx"
+  },
+  "dtsPropsFor": {
+    "Button": "/** Visual register. `danger` is reserved for hard-fail states only — never for a wrong answer. */\n  variant?: 'primary' | 'secondary' | 'success' | 'danger';\n  /** Leading glyph, rendered before the label. */\n  icon?: React.ReactNode;\n  disabled?: boolean;\n  type?: 'button' | 'submit' | 'reset';\n  onClick?: React.MouseEventHandler<HTMLButtonElement>;\n  className?: string;\n  children?: React.ReactNode;",
+    "NavItem": "/** Bilingual label — Italian first, then English. */\n  label: React.ReactNode;\n  /** Line-based SVG or glyph, stroke-width 1.5-2. */\n  icon?: React.ReactNode;\n  /** Marks the current section: gold left rail plus amber gradient fill. */\n  active?: boolean;\n  onClick?: React.MouseEventHandler<HTMLButtonElement>;\n  className?: string;",
+    "UserLevel": "/** The level readout, e.g. `Livello 7`. */\n  badge: React.ReactNode;\n  /** Sub-caption under the badge, e.g. `Studente Avanzato`. */\n  label?: React.ReactNode;\n  /** Enlarges the badge line — used on the profile screen. */\n  large?: boolean;\n  className?: string;",
+    "GlassCard": "/** Optional heading rendered as the card's `h3`. */\n  title?: React.ReactNode;\n  /** Promotes the card: amber border plus accent glow. */\n  featured?: boolean;\n  className?: string;\n  children?: React.ReactNode;",
+    "ActionCard": "/** Large glyph shown above the title. */\n  icon?: React.ReactNode;\n  title: React.ReactNode;\n  /** Bilingual supporting copy — Italian first. */\n  description?: React.ReactNode;\n  /** Promotes the card: amber border plus accent glow. */\n  featured?: boolean;\n  onClick?: React.MouseEventHandler<HTMLDivElement>;\n  className?: string;\n  /** Trailing content, typically a `Button`. */\n  children?: React.ReactNode;",
+    "StatCard": "/** Glyph above the value. */\n  icon?: React.ReactNode;\n  /** The headline number, rendered at 2.5rem in amber. */\n  value: React.ReactNode;\n  /** Bilingual caption under the value. */\n  label: React.ReactNode;\n  className?: string;",
+    "LevelProgress": "/** Current level readout, e.g. `7`. */\n  level: React.ReactNode;\n  /** Bilingual level name shown under the badge. */\n  levelName?: React.ReactNode;\n  /** Fill percentage, 0-100. Clamped internally. */\n  percent: number;\n  className?: string;",
+    "WeeklyChart": "/** One row per bar. */\n  bars?: Array<{ label: React.ReactNode; value: number; display?: React.ReactNode }>;\n  /** Upper bound for the track. Defaults to the largest `value`. */\n  max?: number;\n  /** Shown in italics when `bars` is empty. */\n  emptyMessage?: React.ReactNode;\n  className?: string;",
+    "BadgeCard": "/** Achievement glyph, rendered at 3rem. */\n  icon?: React.ReactNode;\n  /** English title. */\n  title: React.ReactNode;\n  /** Italian title, shown under the English one. */\n  titleIt?: React.ReactNode;\n  description?: React.ReactNode;\n  /** Italian description, rendered in italics. */\n  descriptionIt?: React.ReactNode;\n  /** Unlock date, shown in the mono face in gold. */\n  date?: React.ReactNode;\n  /** `unlocked` adds gold border and shimmer; `locked` desaturates; `secret` hides further. */\n  state?: 'unlocked' | 'locked' | 'secret';\n  className?: string;",
+    "AchievementToast": "/** Achievement glyph, rendered at 2.5rem with the unlock pop. */\n  icon?: React.ReactNode;\n  /** Small uppercase eyebrow, e.g. `Traguardo sbloccato`. */\n  label?: React.ReactNode;\n  /** The achievement name. */\n  title: React.ReactNode;\n  /** Slides the toast in from the right edge. Off-canvas when false. */\n  visible?: boolean;\n  className?: string;",
+    "ModeCard": "/** Mode glyph, rendered at 2.5rem. */\n  icon?: React.ReactNode;\n  /** Mode name in the display face. */\n  name: React.ReactNode;\n  /** Bilingual one-line explanation of the mode. */\n  description?: React.ReactNode;\n  /** Greys the card out and blocks the hover lift. */\n  disabled?: boolean;\n  onClick?: React.MouseEventHandler<HTMLDivElement>;\n  className?: string;",
+    "ActivityList": "/** Panel heading, e.g. `Attività recente / Recent activity`. */\n  title?: React.ReactNode;\n  items?: Array<{ icon?: React.ReactNode; text: React.ReactNode }>;\n  className?: string;"
+  },
+  "provider": {
+    "component": "AppSurface"
+  },
+  "overrides": {
+    "AchievementToast": { "cardMode": "single", "viewport": "520x230" }
+  }
+}

@@ -11,3 +11,9 @@ node_modules/
 
 # Removed — old playground.
 ideanew/
+
+# design-sync tooling — dev-only React wrappers + generated bundle for the
+# claude.ai/design sync. Never shipped, never imported by the app.
+.design-sync/
+.ds-sync/
+ds-bundle/

@@ -72,6 +72,9 @@ jobs:
             --exclude='.husky/' \
             --exclude='.vscode/' \
             --exclude='.claude/' \
+            --exclude='.design-sync/' \
+            --exclude='.ds-sync/' \
+            --exclude='ds-bundle/' \
             --exclude='netlify/' \
             --exclude='netlify.toml' \
             --exclude='_redirects' \

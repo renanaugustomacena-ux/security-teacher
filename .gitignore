@@ -143,3 +143,13 @@ android/captured-ims-config.json
 
 # Capacitor web bundle — populated by scripts/cap-prepare.mjs (Doctrine §22.15).
 www/
+
+# design-sync tooling (claude.ai/design sync) — dev-only, never shipped.
+# Committed: .design-sync/{config.json,NOTES.md,conventions.md,ds-src/,previews/}
+# Ignored: staged converter scripts, generated bundle, machine-local state.
+.ds-sync/
+ds-bundle/
+.design-sync/learnings/
+
+# design-sync: generated verbatim copy of css/style.css (see .design-sync/NOTES.md)
+.design-sync/ds-src/generated/

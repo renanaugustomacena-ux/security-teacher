@@ -1,0 +1,9 @@
+{
+  "name": "@knowledge-aio/ds",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "React wrappers over the Knowledge AIO app stylesheet, used only to sync the design system to claude.ai/design. Never shipped, never imported by the app.",
+  "module": "src/index.tsx",
+  "main": "src/index.tsx"
+}
