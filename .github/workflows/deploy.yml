@@ -92,6 +92,7 @@ jobs:
             --exclude='.nvmrc' \
             --exclude='package.json' \
             --exclude='package-lock.json' \
+            --exclude='docs/' \
             --exclude='DOCTRINE.md' \
             --exclude='SECURITY.md' \
             --exclude='README*.md' \
