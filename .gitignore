@@ -143,3 +143,6 @@ android/captured-ims-config.json
 
 # Capacitor web bundle — populated by scripts/cap-prepare.mjs (Doctrine §22.15).
 www/
+
+# Local-only assessment data (sensitive, not to be pushed)
+css/adami/
