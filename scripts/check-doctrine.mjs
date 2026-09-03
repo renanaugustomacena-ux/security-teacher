@@ -15,6 +15,10 @@
  *   §17.6  meta CSP present in both index.html and 404.html
  *   §17.9  every js/services/*.js has a matching tests/<kebab>.test.js
  *          (added 2026-04-29 in doctrine v1.1.0)
+ *   §43.3  js/games/registry.js and sw.js#STATIC_ASSETS agree — no game is
+ *          registered but unshipped, or shipped but unregistered
+ *   §43.4  total size of js/games/** stays inside the level-game budget
+ *          (both added 2026-09-03 in doctrine v2.1.0)
  *   §17.10 when capacitor.config.json exists, validate §22.2 shape, assert
  *          no keystore artifacts in tracked tree (§22.8), assert
  *          .gitignore covers §22.13 build outputs (incl. www/), and assert
@@ -352,6 +356,92 @@ async function checkCapacitorConfig() {
   }
 }
 
+// §43.3 / §43.4 — level-game registry integrity and total size budget.
+//
+// The registry is the coexistence mechanism: a level with an entry opens its
+// game, a level without one falls through to the legacy exercises. Two ways
+// that can rot silently, both invisible until a user reaches the level:
+//   - registered but not in STATIC_ASSETS: the module 404s offline, and it is
+//     also absent from the APK, because scripts/cap-prepare.mjs builds www/
+//     from that same list;
+//   - shipped but not registered: dead weight in the bundle and the budget.
+//
+// The size cap is a *total* over js/games/**, not a per-file cap, so an author
+// may trade a heavier band runtime against lighter games. Checking at PR time
+// is deliberate: the §22.12 APK gate only fires after a Gradle build, which is
+// far too late a signal.
+const GAMES_TOTAL_BUDGET_BYTES = 24 * 1024 * 1024;
+
+async function checkGameRegistry() {
+  const registryPath = resolve(REPO, 'js/games/registry.js');
+  let registrySource;
+  try {
+    registrySource = await readFile(registryPath, 'utf8');
+  } catch {
+    return; // no games registered yet: the gate is dormant
+  }
+
+  const block = registrySource.match(/const GAMES\s*=\s*\{([\s\S]*?)\n\};/);
+  if (!block) {
+    fail('§43.3', 'js/games/registry.js does not define a GAMES map');
+    return;
+  }
+
+  const entryPattern = /['"]([^'"]+)['"]\s*:\s*\(\)\s*=>\s*import\(['"]\.\/([^'"]+)['"]\)/g;
+  const entries = Array.from(block[1].matchAll(entryPattern)).map((m) => ({
+    key: m[1],
+    rel: `js/games/${m[2]}`,
+  }));
+
+  const sw = await readText('sw.js');
+  const swBlock = sw.match(/STATIC_ASSETS\s*=\s*\[([\s\S]*?)\]/);
+  const listed = new Set(
+    swBlock ? Array.from(swBlock[1].matchAll(/['"]\.\/([^'"]+)['"]/g)).map((m) => m[1]) : []
+  );
+
+  const registered = new Set();
+  for (const { key, rel } of entries) {
+    registered.add(rel);
+    try {
+      await stat(resolve(REPO, rel));
+    } catch {
+      fail('§43.3', `registry entry '${key}' points at missing module '${rel}'`);
+      continue;
+    }
+    if (!listed.has(rel)) {
+      fail('§43.3', `game '${key}' is registered but '${rel}' is not in sw.js STATIC_ASSETS`);
+    }
+  }
+
+  const levelsDir = resolve(REPO, 'js/games/levels');
+  let hasLevels = true;
+  try {
+    await stat(levelsDir);
+  } catch {
+    hasLevels = false;
+  }
+  if (hasLevels) {
+    for await (const file of walk(levelsDir)) {
+      const rel = relative(REPO, file).replace(/\\/g, '/');
+      if (!rel.endsWith('.js')) continue;
+      if (!registered.has(rel)) {
+        fail('§43.3', `'${rel}' ships under js/games/levels/ but no registry entry loads it`);
+      }
+    }
+  }
+
+  const gamesRoot = resolve(REPO, 'js/games');
+  let total = 0;
+  for await (const file of walk(gamesRoot)) {
+    total += (await stat(file)).size;
+  }
+  if (total > GAMES_TOTAL_BUDGET_BYTES) {
+    const mb = (total / 1024 / 1024).toFixed(1);
+    const cap = (GAMES_TOTAL_BUDGET_BYTES / 1024 / 1024).toFixed(0);
+    fail('§43.4', `js/games/** is ${mb} MB, over the ${cap} MB level-game budget`);
+  }
+}
+
 // §22.8 — keystore artifacts must never enter the tracked tree.
 async function checkNoKeystoreInRepo() {
   const forbidden = /\.(keystore|jks|p12|pfx)$|release-keystore|signing-key/i;
@@ -385,6 +475,7 @@ await checkForbiddenPatterns();
 await checkSwStaticAssets();
 await checkVendorTree();
 await checkServiceTestCoverage();
+await checkGameRegistry();
 await checkCapacitorConfig();
 await checkNoKeystoreInRepo();
 

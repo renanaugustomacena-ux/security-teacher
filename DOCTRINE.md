@@ -1,9 +1,23 @@
 # DOCTRINE.md — Knowledge AIO Engineering Doctrine
 
-> **Version:** 2.0.0 — 2026-05-17
+> **Version:** 2.1.0 — 2026-09-03
 > **Status:** Ratified, in force.
 > **Scope:** All code, configuration, deployment artifacts, and operational
 > procedures within this repository.
+
+> **v2.1.0 amendments** (2026-09-03): Level Games — adds §43, governing the
+> bespoke per-level minigames that replace the lesson engine and practice
+> exercises level by level. A rules addition, not a weakening: nothing in
+> §0-§42 is relaxed, and games live under `js/` and ship through
+> `sw.js#STATIC_ASSETS` like every other module. Design of record:
+> `docs/superpowers/specs/2026-08-13-level-game-sdk-design.md`. New artefacts:
+> `js/games/{KaioEngine,LevelItem,LevelSession,GameHost,registry}.js`,
+> `js/games/levels/`, `js/services/GameAudioService.js`, the conformance
+> harness at `tests/helpers/game-conformance.js`, and two new gates in
+> `scripts/check-doctrine.mjs` (§43.3 registry/STATIC_ASSETS agreement,
+> §43.4 total size budget). Closes the §43.2 defect: the legacy call site in
+> `TopicPracticeResultHandler.js` recorded the correct answer as the
+> learner’s, so §27 error analysis ran on meaningless data.
 
 > **v2.0.0 amendments** (2026-05-17): Educational Methods Doctrine — adds
 > §23-§42 governing pedagogy, adaptive learning, gamification, assessment,
@@ -580,6 +594,26 @@ an amendment commit that updates this file in the same PR.
 
 ---
 
+## §43. Level Games — v2.1.0
+
+Design of record: `docs/superpowers/specs/2026-08-13-level-game-sdk-design.md`.
+A level game replaces both the teaching and the testing of the level it is
+registered for; every other surface (SRS review, boss challenge, Velocità,
+pronunciation, placement) stays a generic shared mode.
+
+| Rule | Statement                                                                                                                                                                                                                                                                                                    |
+| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 43.1 | A game MUST report every graded response through `LevelItem#attempt`. A game MUST NOT call `analyticsService`, `masteryService`, `smartScoreService`, `currencyService`, `questService` or `progressManager.addXP` directly — that fan-out belongs to the SDK, and bypassing it degrades §23-§42 silently.    |
+| 43.2 | When a game reports, `analyticsService.recordResponse` MUST receive the learner's own answer in `userAnswer` and the target in `expectedAnswer`. The two MUST NOT be the same string when the response was wrong; §27 error analysis is built on that distinction, and a regression test is required. Known debt: the legacy call site `TopicPracticeResultHandler#handleResult` passes the expected answer in both fields and is exempt only until its levels migrate.                                  |
+| 43.3 | `js/games/registry.js` and `sw.js#STATIC_ASSETS` MUST agree: no game may be registered but unshipped, or shipped under `js/games/levels/` but unregistered. The first 404s offline and is absent from the APK (§22.15); the second is dead weight. `npm run doctrine:check` enforces both directions.         |
+| 43.4 | Total size of `js/games/**` MUST stay within the level-game budget (24 MB), checked at PR time by `npm run doctrine:check`. It is a total, not a per-file cap, so an author may trade a heavier band runtime against lighter games. Games MUST NOT ship sprite atlases or audio files (§14.3, §6.1).          |
+| 43.5 | `session.finish()` MUST refuse level completion while any item is still `unseen` or unattempted. A game that never presents part of its level does not complete it, however well it plays.                                                                                                                    |
+| 43.6 | Every game MUST pass the headless conformance harness (`tests/helpers/game-conformance.js`) before it is registered: lifecycle present, no throw across every chapter and beat, full item coverage under a scripted bot, `prefers-reduced-motion` honoured, playable with a coarse pointer and with a keyboard. |
+| 43.7 | A game owns the canvas; the app owns the chrome. Inside the canvas the palette, figure, ground, movement and typeface come from the game's assigned visual register. Outside it, GameHost's chrome stays in the app's register and §14.6-§14.7 apply unchanged: bilingual copy, and never red for a wrong answer. |
+| 43.8 | A game module load failure, a crash inside its loop, or a lost canvas context MUST end at the level's legacy exercises with a visible bilingual notice — never a white screen (§11.2).                                                                                                                        |
+
+---
+
 ## Appendix A — Rule Count
 
 | Section                                    | Count   |
@@ -627,7 +661,8 @@ an amendment commit that updates this file in the same PR.
 | §40 Knowledge Graph                        | 3       |
 | §41 Branching Lessons                      | 4       |
 | §42 AI Tutoring                            | 4       |
-| **Total**                                  | **250** |
+| §43 Level Games                           | 8       |
+| **Total**                                  | **258** |
 
 ## Appendix B — Quick-Reference Index
 
@@ -635,6 +670,7 @@ an amendment commit that updates this file in the same PR.
 - **Adding a vendored asset:** §6.2 + §7.1 + bump `CACHE_NAME` (§5.5) + update `vendor/integrity.json`.
 - **Adding an external origin:** §10.1 → CSP `connect-src` → §3.4 → doctrine amendment.
 - **Adding a new module under `js/`:** §1.3 + §1.5 + register in `sw.js#STATIC_ASSETS` (§5.6) + add a test (§17.1).
+- **Adding a level game:** §43.3 — one module under `js/games/levels/`, one `registry.js` entry, one `sw.js#STATIC_ASSETS` entry, and the §43.6 conformance suite. Grade only through `LevelItem#attempt` (§43.1).
 - **Force-purge a poisoned SW:** SECURITY.md Runbook 2.
 - **Rotating Google Client ID (web):** SECURITY.md Runbook 1.
 - **Generating / rotating the Android signing keystore:** SECURITY.md Runbook 6 (§22.8).
