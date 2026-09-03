@@ -8600,3 +8600,383 @@ body.login-wall-active > *:not(.login-wall):not(#matrix-morph) {
     grid-template-columns: 1fr;
   }
 }
+
+/* ============================================
+   LEVEL GAMES — chrome only
+   ricerca/42 §42.2: the frame belongs to the app, the glass belongs to the
+   game. Everything below is frame: glass, gold-on-graphite, mono numerals.
+   Nothing here reaches inside the canvas, whose palette, figure, ground,
+   movement and typeface come from the game's own visual register.
+   ============================================ */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* The game draws its own back control; the lesson header would duplicate it.
+   Applies to both lesson containers: #lesson-container (Learn) and
+   #topic-lesson-container (topics). */
+.game-mode > .lesson-header {
+  display: none;
+}
+
+.level-play-btn {
+  width: 100%;
+}
+
+.level-game-note {
+  margin: var(--space-xs) 0 var(--space-sm);
+  font-size: var(--font-size-sm);
+  text-align: center;
+}
+
+.game-panel-level .game-panel-actions {
+  margin-top: var(--space-md);
+}
+
+.game-host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  min-height: 0;
+}
+
+.game-topbar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.game-topbar-id {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.game-topbar-level {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.game-topbar-title {
+  font-family: var(--font-display);
+  font-size: var(--font-size-lg);
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.game-topbar-title-en {
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.game-topbar-actions {
+  display: flex;
+  gap: var(--space-xs);
+  flex: 0 0 auto;
+}
+
+.game-chip {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 var(--space-sm);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+}
+
+.game-chip:hover,
+.game-chip:focus-visible {
+  border-color: var(--accent-primary);
+}
+
+.game-chip-value {
+  color: var(--gold-accent);
+}
+
+.game-stage {
+  position: relative;
+  width: 100%;
+  max-width: min(100%, calc((100vh - 220px) * 0.4615));
+  aspect-ratio: 420 / 910;
+  margin: 0 auto;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #1b130d;
+  box-shadow:
+    var(--shadow-lg),
+    0 0 0 1px var(--glass-border);
+}
+
+.game-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  cursor: pointer;
+}
+
+.game-overlay {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+  background: rgba(6, 5, 4, 0.78);
+  backdrop-filter: blur(8px);
+}
+
+.game-overlay.is-active {
+  display: flex;
+}
+
+.game-panel {
+  width: 100%;
+  max-width: 320px;
+  max-height: 100%;
+  overflow-y: auto;
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  background: var(--bg-secondary);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-lg);
+  color: var(--text-primary);
+}
+
+.game-panel-eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: var(--space-md) 0 var(--space-sm);
+}
+
+.game-panel-eyebrow:first-child {
+  margin-top: 0;
+}
+
+.game-panel-title {
+  font-family: var(--font-display);
+  font-size: var(--font-size-xl);
+  margin: 0 0 var(--space-sm);
+}
+
+.game-panel-body {
+  color: var(--text-secondary);
+  margin: 0 0 var(--space-md);
+}
+
+.game-panel-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+/* The coach panel: three lines, in order — what happened, what it cost, the
+   rule. It is the third rung of the error ladder (ricerca/00 passo 6) and the
+   only explanatory text a game is allowed. Amber for the rule, never red:
+   a misunderstanding is not a fault (§14.6). */
+.game-panel-coach .game-coach-what {
+  font-family: var(--font-display);
+  font-size: var(--font-size-lg);
+  line-height: 1.35;
+  margin: 0;
+}
+
+.game-panel-coach .game-coach-effect {
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin: var(--space-sm) 0 0;
+}
+
+.game-panel-coach .game-coach-rule {
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+  color: var(--accent-secondary);
+  margin: var(--space-md) 0 0;
+}
+
+.game-coach-extra {
+  margin: var(--space-md) 0 0;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  background: rgba(0, 0, 0, 0.35);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+}
+
+.game-coach-hint {
+  margin: var(--space-sm) 0 var(--space-md);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+.game-coach-close {
+  width: 100%;
+}
+
+.game-panel-done {
+  text-align: center;
+}
+
+.game-done-eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.game-done-title {
+  font-family: var(--font-display);
+  font-size: var(--font-size-xl);
+  line-height: 1.25;
+  margin: var(--space-sm) 0 0;
+}
+
+.game-done-subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin: var(--space-sm) 0 var(--space-md);
+}
+
+.game-marks {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: center;
+  margin-bottom: var(--space-md);
+}
+
+.game-mark {
+  width: 30px;
+  height: 5px;
+  border-radius: var(--radius-full);
+  background: rgba(230, 126, 34, 0.22);
+}
+
+.game-mark.is-on {
+  background: var(--accent-primary);
+}
+
+.game-grid {
+  display: grid;
+  gap: var(--space-xs);
+}
+
+.game-grid-chapters {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.game-grid-beats {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.game-grid-btn {
+  min-height: 44px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  background: rgba(246, 231, 200, 0.08);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+}
+
+.game-grid-btn:hover,
+.game-grid-btn:focus-visible {
+  border-color: var(--accent-primary);
+}
+
+.game-grid-btn.is-on {
+  border-color: var(--accent-primary);
+  color: var(--gold-accent);
+}
+
+.game-panel-pause .btn,
+.game-panel-pause .game-resume {
+  width: 100%;
+}
+
+.game-rail {
+  max-width: min(100%, calc((100vh - 220px) * 0.4615));
+  margin: 0 auto;
+  width: 100%;
+}
+
+.game-rail-line {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-sm);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.game-rail-chapter,
+.game-rail-count {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+.game-rail-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.game-rail-bar {
+  height: 3px;
+  margin-top: var(--space-xs);
+  border-radius: var(--radius-full);
+  background: var(--glass-border);
+  overflow: hidden;
+}
+
+.game-rail-fill {
+  height: 100%;
+  background: var(--accent-gradient);
+  transition: width var(--transition-normal);
+}
+
+.game-unavailable {
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .game-rail-fill {
+    transition: none;
+  }
+
+  .game-overlay {
+    backdrop-filter: none;
+  }
+}

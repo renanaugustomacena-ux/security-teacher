@@ -19,6 +19,7 @@ import { escapeHtml } from '../utils/SanitizeHtml.js';
 import { referenceService } from '../services/ReferenceService.js';
 import { knowledgeGraphService } from '../services/KnowledgeGraphService.js';
 import { topicPlacementMixin } from './TopicPlacement.js';
+import { hasGame, loadGame } from '../games/registry.js';
 
 export class TopicManager {
   constructor(progressManager) {
@@ -29,6 +30,7 @@ export class TopicManager {
     this.currentLesson = null;
     this.currentItemIndex = 0;
     this.expandedLevel = null; // Track which level is currently expanded
+    this.gameHost = null; // the mounted level game, when a level has one (§43)
   }
 
   init() {
@@ -48,6 +50,7 @@ export class TopicManager {
       'topic.boss': (ds) => this.startBossChallenge(ds.topicId, Number(ds.level)),
       'topic.practice': (ds) => this.practiceLevel(ds.topicId, Number(ds.level)),
       'topic.openLesson': (ds) => this.openLesson(ds.topicId, Number(ds.level), ds.lessonId),
+      'topic.playGame': (ds) => this.startGame(ds.topicId, Number(ds.level)),
       'topic.openLevel': (ds) => this.openLevel(ds.topicId, Number(ds.level)),
       'topic.prevItem': () => this.prevItem(),
       'topic.nextItem': () => this.nextItem(),
@@ -403,8 +406,17 @@ export class TopicManager {
       this.progressManager.isTopicLessonCompleted(topicId, levelNum, l.id)
     );
 
-    expansionEl.innerHTML = `
-      <div class="level-expansion-inner" style="--topic-color: ${meta.color}">
+    // A level with a registered game replaces both its lessons and its
+    // practice (DOCTRINE \u00A743, SDK design \u00A72); boss and reference stay, they
+    // are shared modes. The lookup is the whole coexistence mechanism.
+    const teaching = hasGame(topicId, levelNum)
+      ? `
+        <button class="btn btn-primary level-play-btn" data-action="topic.playGame" data-topic-id="${topicId}" data-level="${levelNum}">
+          \u{1F3AE} Gioca il livello / Play the level
+        </button>
+        <p class="text-muted level-game-note">${level.lessons.length} lezioni in un gioco solo / ${level.lessons.length} lessons in one game</p>
+      `
+      : `
         ${level.lessons
           .map((lesson, idx) => {
             const isCompleted = this.progressManager.isTopicLessonCompleted(
@@ -429,6 +441,14 @@ export class TopicManager {
           `;
           })
           .join('')}
+        <button class="btn btn-primary level-practice-btn" data-action="topic.practice" data-topic-id="${topicId}" data-level="${levelNum}">
+          \u270D\uFE0F Pratica Livello / Practice Level
+        </button>
+      `;
+
+    expansionEl.innerHTML = `
+      <div class="level-expansion-inner" style="--topic-color: ${meta.color}">
+        ${teaching}
         ${
           allLessonsComplete
             ? `
@@ -438,15 +458,127 @@ export class TopicManager {
         `
             : ''
         }
-        <button class="btn btn-primary level-practice-btn" data-action="topic.practice" data-topic-id="${topicId}" data-level="${levelNum}">
-          \u270D\uFE0F Pratica Livello / Practice Level
-        </button>
         <button class="btn btn-secondary level-reference-btn" data-action="topic.reference" data-topic-id="${topicId}" data-level="${levelNum}">
           \u{1F4D6} Scheda Riferimento / Reference Card
         </button>
       </div>
     `;
     expansionEl.style.display = 'block';
+  }
+
+  // \u2500\u2500\u2500 LEVEL GAME (DOCTRINE \u00A743) \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
+
+  /**
+   * Mount the level's game into the lesson container. Mirrors
+   * LearnManager#startGame for the topic surfaces: the SDK, the engine and the
+   * game are all lazy, and every failure path ends at the legacy lessons with
+   * a visible bilingual notice, never a white screen (\u00A711.2, \u00A743.8).
+   *
+   * @returns {Promise<boolean>} false when the game could not be mounted
+   */
+  async startGame(topicId, levelNum) {
+    const container = document.getElementById('topic-lesson-content');
+    const wrapper = document.getElementById('topic-lesson-container');
+    if (!container || !wrapper) return false;
+
+    const data = await this.loadTopicData(topicId);
+    const level = data && data.levels ? data.levels[levelNum] : null;
+    if (!level) return false;
+
+    this.currentTopicId = topicId;
+    this.currentLevel = levelNum;
+    this.currentLesson = null;
+    this.showView('lesson');
+    // GameHost draws its own top bar with a back control; the lesson header
+    // would duplicate it.
+    wrapper.classList.add('game-mode');
+    container.innerHTML = '';
+
+    const [game, sdk, host] = await Promise.all([
+      loadGame(topicId, levelNum),
+      import('../games/LevelSession.js'),
+      import('../games/GameHost.js'),
+    ]);
+    const session = game
+      ? await sdk.createLevelSession({
+          surface: topicId,
+          level: levelNum,
+          mode: 'game',
+          progressManager: this.progressManager,
+        })
+      : null;
+
+    if (!game || !session) {
+      this.showGameUnavailable(container, wrapper);
+      return false;
+    }
+
+    this.gameHost = await host.mountGame({
+      container,
+      game,
+      session,
+      props: {},
+      onExit: () => {
+        this.gameHost = null;
+        wrapper.classList.remove('game-mode');
+        this.backToDetail();
+      },
+      onFallback: () => {
+        this.gameHost = null;
+        wrapper.classList.remove('game-mode');
+        const first = level.lessons[0];
+        if (first) this.openLesson(topicId, levelNum, first.id);
+        else this.backToDetail();
+      },
+      onLevelComplete: () => this.completeGameLevel(topicId, levelNum, level),
+    });
+
+    if (!this.gameHost) {
+      this.showGameUnavailable(container, wrapper);
+      return false;
+    }
+    return true;
+  }
+
+  showGameUnavailable(container, wrapper) {
+    wrapper.classList.remove('game-mode');
+    container.innerHTML = `
+      <div class="lesson-item-card game-unavailable">
+        <p>${escapeHtml('Il gioco di questo livello non si \u00E8 caricato. / This level\u2019s game did not load.')}</p>
+        <p class="text-muted">${escapeHtml('Continuiamo con le lezioni. / Carrying on with the lessons.')}</p>
+      </div>
+    `;
+  }
+
+  /**
+   * The SDK reports the level complete once every item is cleared and the
+   * ledger passed `session.finish()` (\u00A743.5). Mark the level's lessons the way
+   * TopicLessonEngine marks them \u2014 once, so a replay never counts twice.
+   * completeTopicLesson already handles level completion and unlocking.
+   */
+  completeGameLevel(topicId, levelNum, level) {
+    const fresh = level.lessons.filter(
+      (lesson) => !this.progressManager.isTopicLessonCompleted(topicId, levelNum, lesson.id)
+    );
+    if (fresh.length === 0) return;
+
+    for (const lesson of fresh) {
+      this.progressManager.completeTopicLesson(topicId, levelNum, lesson.id);
+      this.progressManager.incrementDailyLessons?.();
+    }
+
+    if (window.srsManager) {
+      const words = fresh
+        .flatMap((lesson) => lesson.items || [])
+        .filter((item) => item.english && item.italian)
+        .map((item) => ({
+          english: item.english,
+          italian: item.italian,
+          pronunciation: item.pronunciation || '',
+          example: item.example || '',
+        }));
+      if (words.length) window.srsManager.addWords(words, `game-${topicId}-${levelNum}`);
+    }
   }
 
   /**
@@ -742,6 +874,15 @@ export class TopicManager {
     const detail = document.getElementById('topic-detail');
     const lesson = document.getElementById('topic-lesson-container');
     const practice = document.getElementById('topic-practice-container');
+
+    // Leaving the lesson view while a game is mounted tears it down: the
+    // engine's loop, listeners and drone must not outlive the view (§43.8).
+    if (view !== 'lesson' && this.gameHost) {
+      const host = this.gameHost;
+      this.gameHost = null;
+      host.destroy();
+      if (lesson) lesson.classList.remove('game-mode');
+    }
 
     if (hub) hub.classList.toggle('hidden', view !== 'hub');
     if (detail) detail.classList.toggle('hidden', view !== 'detail');

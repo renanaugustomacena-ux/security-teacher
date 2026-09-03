@@ -1,5 +1,17 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 
+// The level-game registry is the coexistence switch (DOCTRINE §43): these
+// tests flip it per case. The SDK modules behind it are stubbed so this suite
+// never boots the real services.
+const registryMock = vi.hoisted(() => ({
+  hasGame: vi.fn(() => false),
+  loadGame: vi.fn(async () => null),
+  LEARN_SURFACE: 'learn',
+}));
+vi.mock('../js/games/registry.js', () => registryMock);
+vi.mock('../js/games/LevelSession.js', () => ({ createLevelSession: vi.fn(async () => null) }));
+vi.mock('../js/games/GameHost.js', () => ({ mountGame: vi.fn(async () => null) }));
+
 describe('TopicManager', () => {
   let TopicManager;
 
@@ -160,5 +172,87 @@ describe('TopicManager', () => {
     const result = await tm.loadTopicData('my-topic');
 
     expect(result).toBe(fakeData);
+  });
+
+  // ── level games (DOCTRINE §43) ──
+
+  function expandLevel(pm) {
+    const el = { style: {}, innerHTML: '' };
+    globalThis.document.getElementById = vi.fn((id) => (id === 'level-expand-1' ? el : null));
+    const tm = new TopicManager(pm);
+    tm.dataCache.cybersecurity = makeLevelData();
+    return { tm, el };
+  }
+
+  it('expands a level into lesson cards and a practice button when no game is registered', async () => {
+    registryMock.hasGame.mockReturnValue(false);
+    const { tm, el } = expandLevel(makeProgressManager());
+
+    await tm.toggleLevelExpansion('cybersecurity', 1);
+
+    expect(registryMock.hasGame).toHaveBeenCalledWith('cybersecurity', 1);
+    expect(el.innerHTML).toContain('topic.openLesson');
+    expect(el.innerHTML).toContain('topic.practice');
+    expect(el.innerHTML).not.toContain('topic.playGame');
+    expect(el.style.display).toBe('block');
+  });
+
+  it('a registered game replaces the lessons and the practice and keeps the reference (§43)', async () => {
+    registryMock.hasGame.mockReturnValue(true);
+    const { tm, el } = expandLevel(makeProgressManager());
+
+    await tm.toggleLevelExpansion('cybersecurity', 1);
+
+    expect(el.innerHTML).toContain('topic.playGame');
+    expect(el.innerHTML).toContain('Gioca il livello / Play the level');
+    expect(el.innerHTML).not.toContain('topic.openLesson');
+    expect(el.innerHTML).not.toContain('topic.practice');
+    expect(el.innerHTML).toContain('topic.reference');
+  });
+
+  it('completeGameLevel marks only the lessons not yet completed, once each', () => {
+    const pm = makeProgressManager({
+      isTopicLessonCompleted: vi.fn((topicId, level, lessonId) => lessonId === 'l1'),
+    });
+    const tm = new TopicManager(pm);
+
+    tm.completeGameLevel('cybersecurity', 1, makeLevelData().levels[1]);
+
+    expect(pm.completeTopicLesson).toHaveBeenCalledTimes(1);
+    expect(pm.completeTopicLesson).toHaveBeenCalledWith('cybersecurity', 1, 'l2');
+    expect(pm.incrementDailyLessons).toHaveBeenCalledTimes(1);
+  });
+
+  it('completeGameLevel is a no-op when every lesson is already complete', () => {
+    const pm = makeProgressManager({ isTopicLessonCompleted: vi.fn(() => true) });
+    const tm = new TopicManager(pm);
+
+    tm.completeGameLevel('cybersecurity', 1, makeLevelData().levels[1]);
+
+    expect(pm.completeTopicLesson).not.toHaveBeenCalled();
+    expect(pm.incrementDailyLessons).not.toHaveBeenCalled();
+  });
+
+  it('startGame ends at a bilingual notice, not a white screen, when the game does not load (§43.8)', async () => {
+    registryMock.hasGame.mockReturnValue(true);
+    registryMock.loadGame.mockResolvedValue(null);
+    const container = { innerHTML: '' };
+    const wrapper = { classList: { add: vi.fn(), remove: vi.fn(), toggle: vi.fn() } };
+    globalThis.document.getElementById = vi.fn((id) => {
+      if (id === 'topic-lesson-content') return container;
+      if (id === 'topic-lesson-container') return wrapper;
+      return null;
+    });
+    const tm = new TopicManager(makeProgressManager());
+    tm.dataCache.cybersecurity = makeLevelData();
+
+    const mounted = await tm.startGame('cybersecurity', 1);
+
+    expect(mounted).toBe(false);
+    expect(tm.gameHost).toBeNull();
+    expect(container.innerHTML).toContain('Continuiamo con le lezioni');
+    expect(container.innerHTML).toContain('did not load');
+    expect(wrapper.classList.add).toHaveBeenCalledWith('game-mode');
+    expect(wrapper.classList.remove).toHaveBeenCalledWith('game-mode');
   });
 });

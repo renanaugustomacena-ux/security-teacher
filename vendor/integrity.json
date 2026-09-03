@@ -1,8 +1,8 @@
 {
   "description": "sha256 hashes of vendored assets, as they exist on disk in this repo. Consumed by .github/workflows/integrity.yml (weekly cron) to detect drift between the deployed artifact and the repo pin. Regenerate after any vendor/ update via `sha256sum vendor/<file>` and commit the updated value here. Doctrine §6.1, §6.2, §7.",
-  "generated": "2026-04-29",
+  "generated": "2026-09-03",
   "assets": {
     "/vendor/three-0.170.0.module.js": "fd330f2a15d1549ca23c0ca3c5c942207d013bd4278c7a2fd00b46a4786d948d",
-    "/vendor/fonts/fonts.css": "edd0577d62c58af0754bbf8f93dc87930e3f773dc81b23c1e26559015e6d9b93"
+    "/vendor/fonts/fonts.css": "71a84a36ebacaf4dede542795f3df053865aec4a5f4ddaa72272c8d471b60af8"
   }
 }

@@ -16,7 +16,7 @@
  *   - Only GET requests enter cache. Non-GET is always network-only.
  *   - Response size cap: responses > 10 MB are never persisted to cache.
  */
-const CACHE_NAME = 'kaio-v11';
+const CACHE_NAME = 'kaio-v12';
 
 const MAX_CACHE_RESPONSE_BYTES = 10 * 1024 * 1024;
 
@@ -62,6 +62,7 @@ const STATIC_ASSETS = [
   './js/data/lessons-level-2.js',
   './js/data/lessons-level-3.js',
   './js/services/AIService.js',
+  './js/services/GameAudioService.js',
   './js/services/AudioService.js',
   './js/services/data/ai-grammar-rules.js',
   './js/services/data/ai-scenarios.js',
@@ -91,6 +92,13 @@ const STATIC_ASSETS = [
   './js/views/login-wall.js',
   './js/utils/PracticeUtils.js',
   './js/utils/StringDistance.js',
+  './js/games/GameHost.js',
+  './js/games/KaioEngine.js',
+  './js/games/LevelItem.js',
+  './js/games/LevelSession.js',
+  './js/games/registry.js',
+  './js/games/levels/inglese-l0-taverna.js',
+  './js/games/levels/inglese-l1-guado.js',
   './js/topics/TopicPlacement.js',
   './js/topics/TopicManager.js',
   './js/topics/TopicBossChallenge.js',
