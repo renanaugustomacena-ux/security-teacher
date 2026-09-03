@@ -1,12 +1,40 @@
 /**
- * TOPIC PRACTICE CONSTANTS - FlowLearn
- * ====================================
+ * TOPIC PRACTICE CONSTANTS - Knowledge AIO
+ * ========================================
  *
  * Shared, immutable lookup tables for the topic practice flow. Extracted into a
  * standalone module so the focused practice sub-modules (manager, rendering,
  * advanced modes, boss challenge) can each import exactly what they use without
  * creating a circular dependency on TopicPracticeManager.
  */
+
+/**
+ * Longest Italian answer a learner should be asked to TYPE from memory.
+ *
+ * `writing` mode renders `item.italian` as the expected input. Across the
+ * corpus about 10% of items carry a gloss longer than this — a 70-character
+ * definition is not a hard question, it is a typing test that grades as wrong
+ * on a single typo. Such items stay available in the recognition modes
+ * (listening / matching / definizione), they are only excluded from typing.
+ *
+ * Same reasoning as the `codechallenge` filter, which excludes multi-line code
+ * so nobody is asked to type a 5-line decorator into a one-line box.
+ */
+export const MAX_TYPED_ANSWER_LENGTH = 40;
+
+/** Minimum typeable items in a level before the `writing` card is offered. */
+export const MIN_TYPEABLE_ITEMS = 4;
+
+/**
+ * Can this item's Italian side reasonably be typed from memory?
+ * Content generated from reference material flags long answers explicitly
+ * (`longAnswer: true`); hand-authored content is measured.
+ */
+export function isTypeableAnswer(item) {
+  if (!item || !item.italian) return false;
+  if (item.longAnswer) return false;
+  return item.italian.length <= MAX_TYPED_ANSWER_LENGTH;
+}
 
 // Expanded tech scenario templates
 export const TECH_SCENARIO_TEMPLATES = [

@@ -167,7 +167,7 @@ function press(host, key) {
 
 /**
  * The same bot with no pointer at all: a digit picks the card, ↑/↓ pick the
- * counter, space or Enter serves. §43.6: playable with a keyboard.
+ * counter, space or Enter serves. §46.6: playable with a keyboard.
  */
 function playBeatByKeyboard(host, ctx, { maxFrames = 8000 } = {}) {
   const served = [];
@@ -203,7 +203,7 @@ function eachBeatViaEngine(host, fn) {
   }
 }
 
-describe('La taverna — conformance (SDK design §8, DOCTRINE §43)', () => {
+describe('La taverna — conformance (SDK design §8, DOCTRINE §46)', () => {
   let ctx;
   let restoreDocument;
 
@@ -253,7 +253,7 @@ describe('La taverna — conformance (SDK design §8, DOCTRINE §43)', () => {
     }
   });
 
-  it('follows the chapter the engine installed, so every one of the thirty phrases anchors a round (§43.5)', async () => {
+  it('follows the chapter the engine installed, so every one of the thirty phrases anchors a round (§46.5)', async () => {
     const s = await session();
     const host = makeHost(game, s);
     game.init(host);
@@ -287,7 +287,7 @@ describe('La taverna — conformance (SDK design §8, DOCTRINE §43)', () => {
         host.state.beat = beat;
         game.reset(host, beat);
         expect(host.queue).toHaveLength(host.cfg.need);
-        // The round's own phrase walks in first (§43.5, deterministic coverage).
+        // The round's own phrase walks in first (§46.5, deterministic coverage).
         const j = (chapter % 2) * 5 + beat;
         expect(host.queue[0]).toBe(lesson.items[j % lesson.items.length]);
         for (const item of host.queue) {
@@ -365,7 +365,7 @@ describe('La taverna — conformance (SDK design §8, DOCTRINE §43)', () => {
   });
 
   /**
-   * §43.5: the whole level, beat after beat, under the bot. Afterwards the
+   * §46.5: the whole level, beat after beat, under the bot. Afterwards the
    * ledger must let the level pass — every one of the thirty phrases attempted.
    */
   it('the bot playing all thirty rounds through the engine completes the level ledger', async () => {
@@ -422,7 +422,7 @@ describe('La taverna — conformance (SDK design §8, DOCTRINE §43)', () => {
     expect(result.missed).toEqual([]);
   });
 
-  it('grades a wrong serve through the SDK with the real pick against the real target (§43.2)', async () => {
+  it('grades a wrong serve through the SDK with the real pick against the real target (§46.2)', async () => {
     const s = await session();
     const host = makeHost(game, s);
     game.init(host);

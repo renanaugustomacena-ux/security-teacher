@@ -40,7 +40,7 @@ function makeHost() {
 }
 
 describe('KaioEngine — the chapter/beat spine', () => {
-  it('a game reset() at a chapter boundary already sees the new chapter (§43.5)', () => {
+  it('a game reset() at a chapter boundary already sees the new chapter (§46.5)', () => {
     const host = makeHost();
     engine.goBeat(host, 0, 1);
     expect(host.seen.at(-1)).toEqual({ chapter: 1, beat: 0, cfg: '1.0' });

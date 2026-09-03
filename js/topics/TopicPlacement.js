@@ -1,8 +1,53 @@
 import { getTopicMeta } from './registry.js';
+import { escapeHtml } from '../utils/SanitizeHtml.js';
 import { placementTestService } from '../services/PlacementTestService.js';
 import { certificateService } from '../services/CertificateService.js';
 import { analyticsService } from '../services/AnalyticsService.js';
 import { authService } from '../services/AuthService.js';
+import { canRunVeroFalso, canRunDefinizione } from './TopicPracticeExtraModes.js';
+import { isTypeableAnswer, MIN_TYPEABLE_ITEMS } from './TopicPracticeConstants.js';
+import { deriveSubContext } from '../utils/PracticeUtils.js';
+import { loadLabsFor, labsForLevel } from './TopicPracticeLabMode.js';
+
+/**
+ * How the practice modes are presented. Grouped by the learner's INTENT rather
+ * than by implementation, because a flat list of 23 cards is a wall. Any mode
+ * missing from every group would never render, so the set is asserted in
+ * tests/topic-placement-groups.test.js.
+ */
+export const MODE_GROUPS = [
+  {
+    id: 'vocab',
+    name: 'Vocabolario / Vocabulary',
+    ids: ['listening', 'matching', 'writing', 'context', 'pairs', 'definizione'],
+  },
+  {
+    id: 'comprehension',
+    name: 'Comprensione / Comprehension',
+    ids: ['fillblank', 'sentence', 'comprehension', 'scenario', 'verofalso'],
+  },
+  {
+    id: 'handson',
+    name: 'Pratica Tecnica / Hands-on',
+    ids: [
+      'lab',
+      'terminal',
+      'taskcommand',
+      'command',
+      'cmdcloze',
+      'codelab',
+      'codechallenge',
+      'codeoutput',
+      'readout',
+      'dictation',
+    ],
+  },
+  {
+    id: 'challenge',
+    name: 'Sfide / Challenges',
+    ids: ['adaptive', 'chain', 'velocita', 'techtalk'],
+  },
+];
 
 export const topicPlacementMixin = {
   async downloadCertificate(topicId) {
@@ -62,6 +107,9 @@ export const topicPlacementMixin = {
     const numLevels = Object.keys(data.levels).length;
     placementTestService.startTest(numLevels);
     this._placementData = data;
+    // Every answer is real evidence about a real item. Kept so it can be
+    // replayed into analytics once the test finishes.
+    this._placementLog = [];
     this._renderPlacementQuestion(topicId);
   },
 
@@ -97,17 +145,17 @@ export const topicPlacementMixin = {
           <span>Round ${state.currentRound + 1}/4 &middot; Q${answeredInRound + 1}/3</span>
         </div>
         <div class="placement-test-prompt">
-          <p class="placement-term">${item.english}</p>
-          <p class="placement-context">${item.context || ''}</p>
+          <p class="placement-term">${escapeHtml(item.english)}</p>
+          <p class="placement-context">${escapeHtml(item.context || '')}</p>
         </div>
         <div class="placement-options">
           ${options
             .map(
               (opt) => `
             <button class="placement-option" data-action="topic.placementAnswer"
-              data-topic-id="${topicId}"
+              data-topic-id="${escapeHtml(topicId)}"
               data-correct="${opt.italian === item.italian}">
-              ${opt.italian}
+              ${escapeHtml(opt.italian)}
             </button>`
             )
             .join('')}
@@ -116,10 +164,16 @@ export const topicPlacementMixin = {
     `;
     container.classList.remove('hidden');
     document.getElementById('topic-detail')?.classList.add('hidden');
-    this._pendingPlacementItem = item;
+    // Stamped with its level so the answer can be keyed the same way practice
+    // and lessons key theirs.
+    this._pendingPlacementItem = { ...item, _level: levelNum };
   },
 
   recordPlacementAnswer(topicId, correct) {
+    if (this._pendingPlacementItem) {
+      if (!this._placementLog) this._placementLog = [];
+      this._placementLog.push({ item: this._pendingPlacementItem, correct });
+    }
     placementTestService.recordAnswer(correct);
     const state = placementTestService.getCurrentState();
     const answersInRound = state.responses.length % 3;
@@ -134,27 +188,74 @@ export const topicPlacementMixin = {
     this._renderPlacementQuestion(topicId);
   },
 
+  /**
+   * Replay the placement answers into per-item analytics.
+   *
+   * Without this the twelve answers are discarded the moment the screen
+   * closes, so the learner's very first practice session has no evidence to
+   * work from and degenerates into a plain shuffle. Seeded, the items the
+   * learner just missed are the ones selectItems surfaces first.
+   */
+  _seedPlacementAnalytics(topicId) {
+    const timestamp = new Date().toISOString();
+    for (const entry of this._placementLog || []) {
+      const item = entry.item;
+      if (!item || !item.english) continue;
+      analyticsService.recordResponse({
+        itemKey: `${topicId}:${item._level}:${item.context}:${item.english}`,
+        correct: entry.correct,
+        responseTimeMs: 0,
+        userAnswer: '',
+        exerciseMode: 'placement',
+        timestamp,
+      });
+    }
+    this._placementLog = [];
+  },
+
+  /**
+   * The end of the test routes the learner somewhere; it does not grade them.
+   *
+   * The previous screen led with an estimated level and an accuracy
+   * percentage, then handed off to a button that started at Level 0 anyway —
+   * all judgement, no consequence. There is deliberately no score here.
+   */
   _finishPlacementTest(topicId, result) {
     this.progressManager.unlockTopicLevels(topicId, result.levelsToUnlock);
+    this.progressManager.recordTopicPlacement?.(topicId, {
+      level: result.estimatedLevel,
+      accuracy: result.accuracy,
+    });
+    this._seedPlacementAnalytics(topicId);
 
     const container = document.getElementById('placement-test-container');
     if (!container) return;
 
-    const pct = Math.round(result.accuracy * 100);
+    const startLevel = result.estimatedLevel;
+    const unlocked = result.levelsToUnlock.length;
     container.innerHTML = `
       <div class="placement-result">
-        <div class="placement-result-icon">${result.estimatedLevel > 0 ? '&#x1F3C6;' : '&#x1F4AA;'}</div>
-        <h2>Livello Stimato: ${result.estimatedLevel + 1} / Estimated Level: ${result.estimatedLevel + 1}</h2>
-        <p>${result.levelsToUnlock.length} livell${result.levelsToUnlock.length === 1 ? 'o sbloccato' : 'i sbloccati'} / ${result.levelsToUnlock.length} level${result.levelsToUnlock.length === 1 ? '' : 's'} unlocked</p>
-        <p>Precisione / Accuracy: ${pct}% (${result.totalCorrect}/${result.totalQuestions})</p>
-        <button class="btn btn-primary" data-action="topic.placementSkip" data-topic-id="${topicId}">
-          Inizia / Start Learning
+        <div class="placement-result-icon">&#x1F680;</div>
+        <h2>Partiamo dal Livello ${startLevel + 1} / Starting at Level ${startLevel + 1}</h2>
+        <p>${unlocked} livell${unlocked === 1 ? 'o' : 'i'} sbloccat${unlocked === 1 ? 'o' : 'i'} / ${unlocked} level${unlocked === 1 ? '' : 's'} unlocked</p>
+        <p class="placement-result-note">
+          I livelli precedenti restano aperti, se vuoi ripassare.<br>
+          Earlier levels stay open whenever you want to review.
+        </p>
+        <button class="btn btn-primary" data-action="topic.placementBegin"
+          data-topic-id="${escapeHtml(topicId)}">
+          Inizia dal Livello ${startLevel + 1} / Start at Level ${startLevel + 1}
+        </button>
+        <button class="btn btn-secondary" data-action="topic.placementSkip"
+          data-topic-id="${escapeHtml(topicId)}">
+          Preferisco partire dal Livello 1 / I'd rather start at Level 1
         </button>
       </div>
     `;
   },
 
-  async skipPlacementTest(topicId) {
+  /** Tear down the placement UI and restore the level path. */
+  async _closePlacement(topicId) {
     placementTestService.reset();
     const container = document.getElementById('placement-test-container');
     if (container) container.classList.add('hidden');
@@ -163,6 +264,20 @@ export const topicPlacementMixin = {
     const data = this._placementData || (await this.loadTopicData(topicId));
     const meta = this._placementMeta || getTopicMeta(topicId);
     if (data && meta) this.renderLevels(meta, data);
+  },
+
+  /** Take the learner to where the test placed them. */
+  async beginFromPlacement(topicId) {
+    await this._closePlacement(topicId);
+    this.continueLearning(topicId);
+  },
+
+  async skipPlacementTest(topicId) {
+    // Recorded even when declined, so the offer is not shown again on every
+    // visit — and recorded AFTER a completed test too, because choosing to
+    // start at Level 1 anyway is a decision that must outrank the estimate.
+    this.progressManager.recordTopicPlacement?.(topicId, { level: 0, skipped: true });
+    await this._closePlacement(topicId);
   },
 
   async showModeSelector(topicId, levelNum) {
@@ -185,8 +300,54 @@ export const topicPlacementMixin = {
         item.code.split('\n').filter((l) => l.trim()).length >= 2
     );
     const hasEnglishItalian = pool.some((item) => item.english && item.italian);
+    // `writing` asks the learner to reproduce the Italian exactly. A level whose
+    // glosses are all sentence-length (reference-derived content, mostly) would
+    // offer a card that is really a typing test, so require a few short answers.
+    // Labs are authored per lesson, so the card is offered only when THIS level
+    // actually has one. showModeSelector is already async, so the lazy import
+    // costs nothing until the learner opens the picker.
+    const levelLabs = labsForLevel(await loadLabsFor(topicId), level);
+    const hasLab = levelLabs.length > 0;
+
+    const hasTypeableAnswers =
+      pool.filter((item) => item.english && isTypeableAnswer(item)).length >= MIN_TYPEABLE_ITEMS;
+    // `context` asks which sub-context a term belongs to, drawing the wrong
+    // options from the other contexts present. 313 of the corpus's 371 levels
+    // carry exactly one context, which left the generator padding the grid with
+    // "Other 1 / Other 2 / Other 3" beside the single real answer — a free
+    // point, ten times a session. Offer the card only where the level can
+    // actually field a full set of genuine alternatives.
+    // The derived sub-context (tool / command program) is what the session
+    // groups by when a level's authored context is a single constant.
+    const distinctContexts = new Set(pool.map((item) => deriveSubContext(item)));
+    const hasContextVariety = distinctContexts.size >= 4;
+    // Task→command needs enough goals AND enough distinct commands, or the
+    // option grid repeats itself.
+    const taskCommandItems = pool.filter((item) => {
+      const task = item.task || item.taskEn;
+      if (!task || !item.command) return false;
+      if (task.includes('`')) return false;
+      return !task.toLowerCase().includes(item.command.trim().toLowerCase());
+    });
+    const hasTaskCommands =
+      taskCommandItems.length >= 6 &&
+      new Set(taskCommandItems.map((item) => item.command.trim())).size >= 4;
+    // Both gates count DISTINCT Italian glosses / notes, not items: the
+    // generators need the variety, and counting items alone enables a card
+    // that then produces zero questions.
+    const hasVeroFalsoPool = canRunVeroFalso(pool);
+    const hasDefinitionPool = canRunDefinizione(pool);
 
     const modes = [
+      {
+        id: 'adaptive',
+        name: 'Allenamento Adattivo / Adaptive Training',
+        desc: 'Formato diverso ad ogni domanda, calibrato sul tuo livello',
+        icon: '\u{1F9E0}',
+        // Needs a second format to move to; with only translation items every
+        // question would land back on listening/matching anyway.
+        enabled: hasEnglishItalian && (hasExample || hasCommand || hasCode),
+      },
       {
         id: 'listening',
         name: 'Ascolto / Listening',
@@ -199,7 +360,7 @@ export const topicPlacementMixin = {
         name: 'Scrittura / Writing',
         desc: 'Scrivi la traduzione',
         icon: '✏️',
-        enabled: hasEnglishItalian,
+        enabled: hasEnglishItalian && hasTypeableAnswers,
       },
       {
         id: 'matching',
@@ -241,7 +402,28 @@ export const topicPlacementMixin = {
         name: 'Contesto / Context',
         desc: 'In quale ambito si usa?',
         icon: '\u{1F3AF}',
-        enabled: hasEnglishItalian,
+        enabled: hasEnglishItalian && hasContextVariety,
+      },
+      {
+        id: 'verofalso',
+        name: 'Vero o Falso / True or False',
+        desc: 'Giudica la frase e spiega perché / Judge the statement and say why',
+        icon: '⚖️',
+        enabled: hasVeroFalsoPool,
+      },
+      {
+        id: 'definizione',
+        name: 'Definizione / Definition',
+        desc: 'Scegli la descrizione giusta / Pick the right description',
+        icon: '\u{1F4D4}',
+        enabled: hasDefinitionPool,
+      },
+      {
+        id: 'taskcommand',
+        name: 'Quale Comando? / Which Command?',
+        desc: 'Scegli il comando che svolge il compito',
+        icon: '\u{1F3AF}',
+        enabled: hasTaskCommands,
       },
       {
         id: 'command',
@@ -293,6 +475,41 @@ export const topicPlacementMixin = {
         enabled: hasEnglishItalian,
       },
       {
+        id: 'pairs',
+        name: 'Coppie / Tap the Pairs',
+        desc: 'Abbina termini e traduzioni / Tap matching pairs',
+        icon: '\u{1F9E9}',
+        enabled: hasEnglishItalian,
+      },
+      {
+        id: 'readout',
+        name: 'Output / Read the Output',
+        desc: "Leggi l'output e scegli / Read output, pick meaning",
+        icon: '\u{1F4DF}',
+        enabled: hasCommand,
+      },
+      {
+        id: 'dictation',
+        name: 'Dettato / Dictation',
+        desc: 'Ascolta e scrivi il comando / Hear it, type the command',
+        icon: '\u{1F3A7}',
+        enabled: hasCommand,
+      },
+      {
+        id: 'cmdcloze',
+        name: 'Comando Cloze / Command Cloze',
+        desc: 'Completa il comando / Fill the missing token',
+        icon: '\u2328\ufe0f',
+        enabled: hasCommand,
+      },
+      {
+        id: 'lab',
+        name: 'Lab / Hands-on Lab',
+        desc: 'Risolvi il caso al terminale / Work the case at the terminal',
+        icon: '\u{1F9EA}',
+        enabled: hasLab,
+      },
+      {
         id: 'velocita',
         name: "Velocita' / Speed Run",
         desc: '60-90s a tutta velocita / 60-90s rapid-fire',
@@ -309,24 +526,44 @@ export const topicPlacementMixin = {
     if (titleEl) titleEl.textContent = `Livello ${levelNum}: ${level.name}`;
     if (progressEl) progressEl.textContent = "Scegli modalita'";
 
+    // 23 modes in one flat grid is choice paralysis, and interleaving the
+    // unavailable ones makes it worse. Group by what the learner is trying to
+    // DO, put the available modes first inside each group, and drop a group
+    // entirely when this level cannot offer any of it.
+    const grouped = MODE_GROUPS.map((group) => ({
+      ...group,
+      modes: modes
+        .filter((m) => group.ids.includes(m.id))
+        .sort((a, b) => Number(b.enabled) - Number(a.enabled)),
+    })).filter((group) => group.modes.some((m) => m.enabled));
+
+    let cardIndex = 0;
+    const cardHtml = (mode) => {
+      const delay = cardIndex * 40;
+      cardIndex += 1;
+      return `
+            <div class="mode-card ${mode.enabled ? '' : 'mode-disabled'}"
+                 ${mode.enabled ? 'role="button" tabindex="0"' : 'aria-disabled="true"'}
+                 style="animation-delay: ${delay}ms"
+                 ${mode.enabled ? `data-action="topic.startMode" data-mode="${mode.id}" data-topic-id="${topicId}" data-level="${levelNum}"` : ''}>
+              <div class="mode-card-icon" aria-hidden="true">${mode.icon}</div>
+              <div class="mode-card-name">${mode.name}</div>
+              <div class="mode-card-desc">${mode.desc}</div>
+            </div>`;
+    };
+
     container.innerHTML = `
       <div class="mode-selector">
         <h3 class="mode-selector-title">Scegli come esercitarti / Choose practice mode</h3>
-        <div class="mode-selector-grid">
-          ${modes
-            .map(
-              (mode, idx) => `
-            <div class="mode-card ${mode.enabled ? '' : 'mode-disabled'}"
-                 style="animation-delay: ${idx * 60}ms"
-                 ${mode.enabled ? `data-action="topic.startMode" data-mode="${mode.id}" data-topic-id="${topicId}" data-level="${levelNum}"` : ''}>
-              <div class="mode-card-icon">${mode.icon}</div>
-              <div class="mode-card-name">${mode.name}</div>
-              <div class="mode-card-desc">${mode.desc}</div>
-            </div>
-          `
-            )
-            .join('')}
-        </div>
+        ${grouped
+          .map(
+            (group) => `
+          <section class="mode-group">
+            <h4 class="mode-group-title">${escapeHtml(group.name)}</h4>
+            <div class="mode-selector-grid">${group.modes.map(cardHtml).join('')}</div>
+          </section>`
+          )
+          .join('')}
       </div>
     `;
   },

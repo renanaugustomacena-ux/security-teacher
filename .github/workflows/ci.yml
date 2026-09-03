@@ -55,8 +55,11 @@ jobs:
           set -e
           # Accept everything that's a real URL (http://, https://, //) or a
           # regex literal (/.../). Reject ['"]/foo/... or "(/foo/" patterns
-          # that would target a server root.
-          violations="$(grep -rEn "['\"\(]/[a-zA-Z][a-zA-Z0-9_/-]*\.(js|css|html|json|png|svg|woff|woff2|mp3|jpg)" \
+          # that would target a server root. Lab transcript data (§45) is
+          # excluded: simulated terminal output legitimately prints absolute
+          # filesystem paths (stack traces, ls listings) that are rendered as
+          # text and never fetched — §2.1 governs URLs the app *emits*.
+          violations="$(grep -rEn --exclude-dir=labs "['\"\(]/[a-zA-Z][a-zA-Z0-9_/-]*\.(js|css|html|json|png|svg|woff|woff2|mp3|jpg)" \
             index.html 404.html sw.js js css manifest.json 2>/dev/null \
             | grep -vE "(://)" \
             || true)"

@@ -174,7 +174,7 @@ function anchorFor(items, chapterIndex, beat) {
 
 /**
  * The evening's queue. The template filled it at random, so covering all
- * thirty phrases was luck; §43.5 wants certainty. The beat's own phrase walks
+ * thirty phrases was luck; §46.5 wants certainty. The beat's own phrase walks
  * in first, the rest of the lesson follows shuffled, and if the beat needs more
  * customers than the lesson has phrases the lesson repeats.
  */
@@ -333,7 +333,7 @@ function changeMind(host, k) {
 /**
  * A customer who reaches the till unserved is not a graded response — the
  * learner produced nothing — so nothing is reported. The same phrase joins the
- * back of the queue: the beat still has to ask it (§43.5).
+ * back of the queue: the beat still has to ask it (§46.5).
  */
 function lose(host, k) {
   k.gone = true;
@@ -375,8 +375,8 @@ function persist(host) {
 
 /**
  * The serve is the graded response: the learner's real pick against the phrase
- * the customer asked for, through the SDK and never a local `===` (§43.1,
- * §43.2). The cue is `silent` because the game answers diegetically — the
+ * the customer asked for, through the SDK and never a local `===` (§46.1,
+ * §46.2). The cue is `silent` because the game answers diegetically — the
  * heart and the chime, or the shaken bubble and the card sliding back.
  */
 function resolve(host) {

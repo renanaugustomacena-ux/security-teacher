@@ -5,7 +5,7 @@ import { describe, it, expect, beforeEach, vi } from 'vitest';
  * GameHost is DOM chrome, so most of it is exercised in the browser. What is
  * unit-tested here is the one piece of pedagogy it owns: closing the level
  * ledger exactly once, through `session.complete()`, the beat every item has
- * been cleared (DOCTRINE §43.5) — and telling the caller so the lessons are
+ * been cleared (DOCTRINE §46.5) — and telling the caller so the lessons are
  * marked complete. Before this hook existed a game could never complete its
  * level, however well it was played.
  */
@@ -88,7 +88,7 @@ function clearEverything(s) {
   }
 }
 
-describe('GameHost — closing the level ledger (§43.5)', () => {
+describe('GameHost — closing the level ledger (§46.5)', () => {
   beforeEach(() => {
     saved.length = 0;
     storedRecord = null;

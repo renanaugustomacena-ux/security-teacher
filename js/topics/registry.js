@@ -1,6 +1,6 @@
 /**
- * TOPIC REGISTRY - FlowLearn
- * ==========================
+ * TOPIC REGISTRY - Knowledge AIO
+ * ==============================
  *
  * Metadata registry for all technical topics.
  * Actual data is lazy-loaded via dynamic import() when user navigates to a topic.
@@ -177,6 +177,18 @@ export const topicsRegistry = [
     descriptionIt: 'Impara la terminologia inglese di Git e del controllo versione',
     levelCount: 24,
     color: '#a855f7',
+  },
+  // Generated from the maintainer's personal study library glossaries — one
+  // level per library domain. See scripts/ingest-library-glossaries.mjs.
+  {
+    id: 'library-glossary',
+    title: 'Study Library Glossary',
+    titleIt: 'Glossario della Libreria',
+    icon: '\u{1F4DA}',
+    description: 'Terminology from your own study library, one level per domain',
+    descriptionIt: 'Terminologia dalla tua libreria di studio, un livello per dominio',
+    levelCount: 11,
+    color: '#14b8a6',
   },
 ];
 

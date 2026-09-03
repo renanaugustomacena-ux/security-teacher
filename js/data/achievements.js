@@ -1,6 +1,6 @@
 /**
  * ACHIEVEMENT DEFINITIONS - Knowledge AIO
- * ========================================
+ * =======================================
  *
  * Badge definitions for the achievement system.
  * Each badge has conditions evaluated against progress data.

@@ -66,7 +66,7 @@ export function goBeat(host, beat, chapterIndex) {
   // A game's reset() reads host.state.chapter to pick the beat's item, so the
   // state must already name the new chapter when reset() runs — otherwise the
   // first beat of every chapter is built for the previous one and its item is
-  // never presented (§43.5). setState() then re-renders the chrome.
+  // never presented (§46.5). setState() then re-renders the chrome.
   host.state.chapter = c;
   host.state.beat = beat;
   host.reset(beat);

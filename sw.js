@@ -16,7 +16,7 @@
  *   - Only GET requests enter cache. Non-GET is always network-only.
  *   - Response size cap: responses > 10 MB are never persisted to cache.
  */
-const CACHE_NAME = 'kaio-v12';
+const CACHE_NAME = 'kaio-v18';
 
 const MAX_CACHE_RESPONSE_BYTES = 10 * 1024 * 1024;
 
@@ -103,13 +103,29 @@ const STATIC_ASSETS = [
   './js/topics/TopicManager.js',
   './js/topics/TopicBossChallenge.js',
   './js/topics/TopicLessonEngine.js',
+  './js/topics/TopicLessonShared.js',
+  './js/topics/TopicLessonLayouts.js',
+  './js/topics/TopicLessonDiscovery.js',
+  './js/topics/TopicLessonCompare.js',
+  './js/topics/TopicLessonStory.js',
+  './js/topics/TopicLessonDrill.js',
   './js/topics/TopicPracticeManager.js',
   './js/topics/TopicPracticeConstants.js',
   './js/topics/TopicPracticeAdvancedModes.js',
   './js/topics/TopicPracticeAdvancedQuestions.js',
+  './js/topics/TopicPracticeExtraModes.js',
   './js/topics/TopicPracticeRendering.js',
   './js/topics/TopicPracticeResultHandler.js',
   './js/topics/TopicVelocita.js',
+  './js/topics/TopicPracticeLabMode.js',
+  './js/topics/TopicPracticeMatchMode.js',
+  './js/topics/TopicPracticeOutputModes.js',
+  './js/topics/lesson2/LessonV2Scheduler.js',
+  './js/topics/lesson2/LessonV2Engine.js',
+  './js/topics/lesson2/LessonV2Beats.js',
+  './js/topics/lesson2/LessonV2Drills.js',
+  './js/topics/lab/LabMatch.js',
+  './js/topics/lab/LabEngine.js',
   './js/topics/registry.js',
   './js/topics/data/topic-lesson-intros.js',
   './js/topics/data/ai-engineering.js',
@@ -130,6 +146,35 @@ const STATIC_ASSETS = [
   './js/topics/data/software-dev.js',
   './js/topics/data/system-monitoring.js',
   './js/topics/data/techtalk-scenarios.js',
+  // Generated from the study library — see scripts/ingest-library-glossaries.mjs.
+  // Split into chunks so no single data file exceeds the §13.2 budget (§44.4).
+  './js/topics/data/library-glossary.js',
+  './js/topics/data/library/02-linux-poweruser.js',
+  './js/topics/data/library/03-windows-poweruser.js',
+  './js/topics/data/library/04-programmazione-python.js',
+  './js/topics/data/library/05-sviluppo-web.js',
+  './js/topics/data/library/06-gestione-piattaforme.js',
+  './js/topics/data/library/07-github-e-gitactions.js',
+  './js/topics/data/library/08-manutenzione-it.js',
+  './js/topics/data/library/09-automazioni-flussi-di-lavoro.js',
+  './js/topics/data/library/10-migrazione-vmware-proxmox.js',
+  './js/topics/data/library/11-godot-engine.js',
+  './js/topics/data/library/12-software-engineering-extra.js',
+  // Declarative terminal-lab scripts consumed by LabEngine (§45).
+  './js/topics/data/labs/ai-engineering-labs.js',
+  './js/topics/data/labs/c-programming-labs.js',
+  './js/topics/data/labs/cloud-computing-labs.js',
+  './js/topics/data/labs/cpp-labs.js',
+  './js/topics/data/labs/cybersecurity-labs.js',
+  './js/topics/data/labs/databases-labs.js',
+  './js/topics/data/labs/docker-k8s-labs.js',
+  './js/topics/data/labs/git-vcs-labs.js',
+  './js/topics/data/labs/networking-labs.js',
+  './js/topics/data/labs/nodejs-labs.js',
+  './js/topics/data/labs/python-labs.js',
+  './js/topics/data/labs/rust-labs.js',
+  './js/topics/data/labs/software-dev-labs.js',
+  './js/topics/data/labs/system-monitoring-labs.js',
   './vendor/three-0.170.0.module.js',
   './vendor/fonts/fonts.css',
 ];

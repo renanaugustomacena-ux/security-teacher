@@ -1,6 +1,6 @@
 /**
  * CursorParticles - Antigravity-style cursor particle effect
- * Matches FlowLearn's matrix theme with orange/yellow accent colors.
+ * Matches Knowledge AIO's matrix theme with orange/yellow accent colors.
  *
  * Enhancements over original:
  *   - Object pooling eliminates GC pressure (no per-frame allocations)

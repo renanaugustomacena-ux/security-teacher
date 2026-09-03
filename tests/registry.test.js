@@ -30,9 +30,17 @@ const REQUIRED_FIELDS = [
 ];
 
 describe('topicsRegistry', () => {
-  it('is an array with exactly 17 entries', () => {
+  it('is an array with exactly 18 entries', () => {
     expect(Array.isArray(topicsRegistry)).toBe(true);
-    expect(topicsRegistry).toHaveLength(17);
+    expect(topicsRegistry).toHaveLength(18);
+  });
+
+  it('includes the generated library-glossary topic', () => {
+    const topic = topicsRegistry.find((t) => t.id === 'library-glossary');
+    expect(topic, 'library-glossary topic missing from the registry').toBeDefined();
+    // One level per library domain that ships a glossary. If the ingestion
+    // script picks up more domains, this number and the data file move together.
+    expect(topic.levelCount).toBe(11);
   });
 
   it('every entry has all required fields', () => {

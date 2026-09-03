@@ -1,6 +1,6 @@
 /**
  * STREAK CALENDAR MANAGER - Knowledge AIO
- * ========================================
+ * =======================================
  *
  * Renders a GitHub-style contribution graph showing study activity
  * over the last 26 weeks (6 months). Manages streak freeze logic:

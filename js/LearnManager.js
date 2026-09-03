@@ -1,6 +1,6 @@
 /**
  * LEARN MODULE - Knowledge AIO
- * =============================
+ * ============================
  *
  * Gestisce le lezioni e i livelli di apprendimento.
  * Uses inline feedback instead of alert() for all user messages.
@@ -137,7 +137,7 @@ export class LearnManager {
 
   /**
    * GameHost reports the level complete once every item is cleared and the
-   * ledger passed `session.finish()` (§43.5). A game replaces the teaching and
+   * ledger passed `session.finish()` (§46.5). A game replaces the teaching and
    * the testing of its level, so its lessons are marked the way the
    * item-by-item view marks them — once: a replay must not count twice, and
    * the lesson count feeds the daily goals and the achievements.

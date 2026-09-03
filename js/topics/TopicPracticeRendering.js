@@ -1,9 +1,45 @@
 import { escapeHtml, escapeAttr as escapeForAttr } from '../utils/SanitizeHtml.js';
-import { shuffleArray, pickBestBlankIndex } from '../utils/PracticeUtils.js';
+import { shuffleArray, pickBestBlankIndex, blankTermInPhrase } from '../utils/PracticeUtils.js';
 import { ttsService } from '../services/TTSService.js';
+import { hintService } from '../services/HintService.js';
 import { TECH_SCENARIO_TEMPLATES } from './TopicPracticeConstants.js';
 
 export const renderingMixin = {
+  /**
+   * Append the progressive-hint control (§29.1).
+   *
+   * Rendered here rather than inside each mode's template so every format
+   * reached through the shared switch gets it from one place. Boss Challenge
+   * and Velocita run their own renderers and are excluded by construction, as
+   * the doctrine requires; the modes that own their rendering (codelab,
+   * techtalk) already carry their own hint affordance.
+   */
+  _renderHintBar(container) {
+    const question = this.questions?.[this.currentQuestionIndex];
+    if (!container || !question) return;
+
+    const hints = hintService.generateHints(question, this.currentMode) || [];
+    const available = Math.min(3, hints.filter(Boolean).length);
+    if (available === 0) return;
+
+    const bar = document.createElement('div');
+    bar.className = 'practice-hint-bar';
+
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'btn btn-secondary practice-hint-btn';
+    button.dataset.action = 'topicPractice.showHint';
+    button.textContent = `\u{1F4A1} Aiuto / Hint 1/${available} (XP 80%)`;
+
+    const list = document.createElement('div');
+    list.className = 'practice-hint-list';
+    list.id = 'practice-hint-list';
+
+    bar.appendChild(button);
+    bar.appendChild(list);
+    container.appendChild(bar);
+  },
+
   // ─── RENDERING ─────────────────────────────────
 
   showPracticeUI() {
@@ -18,6 +54,16 @@ export const renderingMixin = {
   renderQuestion() {
     const container = document.getElementById('topic-practice-content');
     if (!container || this.questions.length === 0) return;
+
+    // An adaptive session carries a per-question format. Switching the mode
+    // here means option building, answer checking and analytics all see the
+    // format this question is actually being asked in.
+    if (this.sessionMode === 'adaptive' && this.adaptivePlan?.[this.currentQuestionIndex]) {
+      this.currentMode = this.adaptivePlan[this.currentQuestionIndex].mode;
+    }
+
+    // Hints are per question, never carried over.
+    this.hintLevel = 0;
 
     const q = this.questions[this.currentQuestionIndex];
     document.getElementById('topic-practice-progress').textContent =
@@ -180,7 +226,7 @@ export const renderingMixin = {
       }
 
       case 'context': {
-        const correctContext = q.context || 'general';
+        const correctContext = this.groupContextOf(q);
         const contextOptions = this.generateContextOptions(correctContext);
         const contextTtsBtn = ttsService.isSupported ? ttsService.speakerButtonHTML(q.english) : '';
 
@@ -288,13 +334,12 @@ export const renderingMixin = {
         const englishPhrase = exampleParts[0] || '';
 
         const targetWord = q.english;
-        const blankedPhrase = englishPhrase.replace(
-          new RegExp(targetWord.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i'),
-          '_____'
-        );
+        const blankedPhrase = blankTermInPhrase(englishPhrase, targetWord);
 
         const scenario =
-          TECH_SCENARIO_TEMPLATES[this.currentQuestionIndex % TECH_SCENARIO_TEMPLATES.length];
+          TECH_SCENARIO_TEMPLATES[
+            (this.sessionSeed + this.currentQuestionIndex) % TECH_SCENARIO_TEMPLATES.length
+          ];
         const options = this.generateScenarioOptions(targetWord);
         const scenarioTtsBtn = ttsService.isSupported
           ? ttsService.speakerButtonHTML(englishPhrase)
@@ -364,11 +409,53 @@ export const renderingMixin = {
         return; // Chain handles its own rendering
       }
 
+      case 'verofalso': {
+        this.renderVeroFalsoQuestion(container, q);
+        return; // Vero o Falso handles its own two-stage rendering
+      }
+
+      case 'definizione': {
+        this.renderDefinizioneQuestion(container, q);
+        return; // Definizione handles its own rendering
+      }
+
+      case 'lab': {
+        this.renderLabQuestion(container, q);
+        return; // LabEngine owns its container, input and completion screen
+      }
+
+      case 'pairs': {
+        this.renderPairsQuestion(container, q);
+        return; // Tap-the-pairs owns its DOM + tap lifecycle
+      }
+
+      case 'readout': {
+        this.renderReadout(container, q);
+        return; // Output-comprehension owns its rendering
+      }
+
+      case 'dictation': {
+        this.renderDictation(container, q);
+        return; // Dictation owns its audio + input binding
+      }
+
+      case 'cmdcloze': {
+        this.renderCmdCloze(container, q);
+        return; // Command-cloze owns its input binding
+      }
+
+      case 'taskcommand': {
+        this.renderTaskCommand(container, q);
+        this._renderHintBar(container);
+        return; // Task→command owns its monospace option grid
+      }
+
       default:
         html = '<p>Modalit\u00E0 non disponibile / Mode not available</p>';
     }
 
     container.innerHTML = html;
+    this._renderHintBar(container);
     ttsService.attachTTSListeners(container);
 
     // Auto-play TTS for listening mode (gated by user preference)

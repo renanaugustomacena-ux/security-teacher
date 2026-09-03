@@ -1,6 +1,6 @@
 /**
- * PRACTICE MODULE - FlowLearn
- * ===========================
+ * PRACTICE MODULE - Knowledge AIO
+ * ===============================
  *
  * Gestisce gli esercizi interattivi:
  * - Listening (Ascolto)

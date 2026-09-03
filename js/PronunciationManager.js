@@ -1,6 +1,6 @@
 /**
- * PRONUNCIATION PRACTICE MODULE - FlowLearn
- * ==========================================
+ * PRONUNCIATION PRACTICE MODULE - Knowledge AIO
+ * =============================================
  *
  * Gestisce la pratica di pronuncia:
  * - Speech Recognition per catturare l'audio dell'utente

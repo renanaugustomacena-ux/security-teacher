@@ -156,3 +156,6 @@ ds-bundle/
 
 # JetBrains IDE state
 .idea/
+
+# Local-only assessment data (sensitive, not to be pushed)
+css/adami/

@@ -1,6 +1,6 @@
 /**
- * TOPIC PRACTICE MANAGER - FlowLearn
- * ===================================
+ * TOPIC PRACTICE MANAGER - Knowledge AIO
+ * ======================================
  *
  * Handles practice exercises for technical topics.
  * Reuses the 5 existing exercise types + 4 technical types + 4 advanced modes.
@@ -21,26 +21,37 @@
  * 13. codelab      - Code Lab: complete missing lines in code blocks
  * 14. techtalk     - Tech Talk: technical conversation with keyword/grammar checks
  * 15. chain        - Chain Challenge: 5 connected questions with streak multiplier
+ * 16. verofalso    - Vero o Falso: judge a statement, then justify the verdict
+ * 17. definizione  - Definizione: pick the Italian description of a term
  */
 
 import { sfxService } from '../services/SfxService.js';
 import { analyticsService } from '../services/AnalyticsService.js';
+import { hintService } from '../services/HintService.js';
 import { practiceHUD } from '../PracticeHUD.js';
 import { nearMiss } from '../utils/StringDistance.js';
 import { TopicVelocita } from './TopicVelocita.js';
 import { delegate } from '../utils/EventDispatch.js';
 import { escapeHtml } from '../utils/SanitizeHtml.js';
 import { adaptiveDifficultyService } from '../services/AdaptiveDifficultyService.js';
+import { smartScoreService } from '../services/SmartScoreService.js';
 import { advancedModesMixin } from './TopicPracticeAdvancedModes.js';
+import { extraModesMixin } from './TopicPracticeExtraModes.js';
 import { renderingMixin } from './TopicPracticeRendering.js';
 import { resultHandlerMixin } from './TopicPracticeResultHandler.js';
-import { COMMAND_ALIASES } from './TopicPracticeConstants.js';
+import { labModeMixin } from './TopicPracticeLabMode.js';
+import { matchModeMixin } from './TopicPracticeMatchMode.js';
+import { outputModesMixin } from './TopicPracticeOutputModes.js';
+import { COMMAND_ALIASES, isTypeableAnswer } from './TopicPracticeConstants.js';
 import {
   FEEDBACK_DWELL,
   shuffleArray,
   normalize,
   normalizeWithAccents,
   calculateXP,
+  containsWholeWord,
+  stripRedundantGloss,
+  deriveSubContext,
 } from '../utils/PracticeUtils.js';
 
 export class TopicPracticeManager {
@@ -54,6 +65,10 @@ export class TopicPracticeManager {
     this.contextIndex = new Map();
     this.currentQuestionIndex = 0;
     this.score = 0;
+    this.sessionSeed = 0;
+    // Hints revealed for the CURRENT question (§29). Reset per question.
+    this.hintLevel = 0;
+    this._lastUserAnswer = '';
 
     // XP & Timer state
     this.questionStartTime = 0;
@@ -85,6 +100,15 @@ export class TopicPracticeManager {
       'topicPractice.checkChain': (ds) => this.checkChainAnswer(ds.opt, ds.correct),
       'topicPractice.checkChainTyping': (ds) => this.checkChainTypingAnswer(ds.correct),
       'topicPractice.checkChainCommand': (ds) => this.checkChainCommandAnswer(ds.correct),
+      // dataset values are always strings — coerce before use.
+      'topicPractice.veroFalsoVerdict': (ds) => this.answerVeroFalsoVerdict(ds.verdict === 'true'),
+      'topicPractice.veroFalsoRationale': (ds) => this.answerVeroFalsoRationale(Number(ds.idx)),
+      'topicPractice.checkDefinizione': (ds, _e, el) =>
+        this.checkDefinizioneAnswer(el, ds.opt, ds.correct),
+      'topicPractice.tapPair': (ds) => this.tapPair(ds),
+      'topicPractice.checkCmdCloze': (ds) => this.checkCmdCloze(ds),
+      'topicPractice.replayDictation': (ds) => this.replayDictation(ds),
+      'topicPractice.showHint': () => this.showHint(),
     };
     const container = document.getElementById('topic-practice-content');
     if (container) delegate(container, map);
@@ -98,6 +122,10 @@ export class TopicPracticeManager {
    */
   async startPractice(mode, topicId, levelNum = null) {
     this.currentMode = mode;
+    // The mode the learner chose. `currentMode` is what the CURRENT question
+    // is being asked in, which an adaptive session varies per question.
+    this.sessionMode = mode;
+    this.adaptivePlan = null;
     this.currentTopicId = topicId;
     this.currentLevel = levelNum;
     this.currentQuestionIndex = 0;
@@ -106,6 +134,10 @@ export class TopicPracticeManager {
     this.consecutiveCorrect = 0;
     this.maxStreak = 0;
     this.totalResponseTime = 0;
+    // Offsets every fixed template rotation. Without it `index % length` gives
+    // the identical sequence in every session forever, and any template past
+    // the question count is unreachable.
+    this.sessionSeed = Math.floor(Math.random() * 1000);
     practiceHUD.reset();
 
     // Load topic data
@@ -114,6 +146,9 @@ export class TopicPracticeManager {
       this.showNotification('Errore nel caricamento dei dati. / Error loading data.', 'warning');
       return;
     }
+
+    // Level count feeds the placement-derived ability prior.
+    this._levelCount = Object.keys(data.levels || {}).length;
 
     // Build question pool and context index
     const pool = this.buildPool(data, topicId, levelNum);
@@ -142,6 +177,24 @@ export class TopicPracticeManager {
       if (fillEl) fillEl.style.width = '0%';
       if (!this.velocita) this.velocita = new TopicVelocita(this.progressManager);
       this.velocita.showDurationPicker(pool, topicId, levelNum);
+      return;
+    }
+
+    // Labs are lazily imported per topic, so this path is async and cannot go
+    // through the synchronous generateQuestions().
+    if (mode === 'lab') {
+      this.questions = await this.generateLabQuestions(data, topicId, levelNum);
+      if (this.questions.length === 0) {
+        this.showNotification(
+          'Nessun lab disponibile per questo livello. / No lab available for this level.',
+          'warning'
+        );
+        return;
+      }
+      this.showPracticeUI();
+      this.startQuestionTimer();
+      this.updateMetaDisplay();
+      this.renderQuestion();
       return;
     }
 
@@ -181,7 +234,7 @@ export class TopicPracticeManager {
     if (levelNum !== null && data.levels[levelNum]) {
       data.levels[levelNum].lessons.forEach((lesson) => {
         pool = pool.concat(
-          lesson.items.map((item) => ({ ...item, _topicId: topicId, _level: levelNum }))
+          lesson.items.map((item) => this._preparePoolItem(item, topicId, levelNum))
         );
       });
     } else {
@@ -192,7 +245,7 @@ export class TopicPracticeManager {
         if (data.levels[lvl]) {
           data.levels[lvl].lessons.forEach((lesson) => {
             pool = pool.concat(
-              lesson.items.map((item) => ({ ...item, _topicId: topicId, _level: lvl }))
+              lesson.items.map((item) => this._preparePoolItem(item, topicId, lvl))
             );
           });
         }
@@ -203,18 +256,204 @@ export class TopicPracticeManager {
   }
 
   /**
+   * Stamp provenance and clean the Italian gloss.
+   *
+   * Cleaning here rather than at render time keeps the correct answer and every
+   * distractor in the same shape, and keeps grading comparing against exactly
+   * what the learner was shown.
+   */
+  _preparePoolItem(item, topicId, level) {
+    return {
+      ...item,
+      italian: stripRedundantGloss(item.italian, item.english),
+      _subContext: deriveSubContext(item),
+      _topicId: topicId,
+      _level: level,
+    };
+  }
+
+  /**
+   * Ability estimate driving distractor calibration and mode selection, 0-1.
+   * Both read this one number so a session cannot contradict itself.
+   */
+  _studentAbility() {
+    const topicId = this.currentTopicId;
+    const smartScore =
+      this.currentLevel !== null ? smartScoreService.getScore(topicId, this.currentLevel) : 0;
+    const topicAccuracy = analyticsService.getTopicAccuracy(topicId);
+    const placement = this.progressManager?.getTopicPlacement?.(topicId);
+
+    return adaptiveDifficultyService.estimateAbility({
+      smartScore,
+      // Both getters return 0 for "never played" and for a genuine zero, so
+      // presence is asserted separately rather than inferred from the value.
+      hasSmartScore: smartScore > 0,
+      topicAccuracy,
+      hasAnalytics: topicAccuracy > 0,
+      placementLevel: placement && !placement.skipped ? placement.level : undefined,
+      levelCount: this._levelCount,
+    });
+  }
+
+  /**
    * Build an index of items grouped by their context field
    */
+  /**
+   * Group the pool for distractor selection and for the `context` question.
+   *
+   * Prefers the derived sub-context (tool / command program) when the level
+   * actually has several, and falls back to the authored `context` otherwise.
+   * Almost every level carries a single authored context, which silently
+   * reduced "pick semantically related distractors" to "pick anything here".
+   */
   buildContextIndex(pool) {
+    const derived = new Set(pool.map((item) => item._subContext).filter(Boolean));
+    this.contextField = derived.size >= 4 ? '_subContext' : 'context';
+
     this.contextIndex = new Map();
     for (const item of pool) {
-      const ctx = item.context || 'general';
-      if (!this.contextIndex.has(ctx)) this.contextIndex.set(ctx, []);
-      this.contextIndex.get(ctx).push(item);
+      const key = item[this.contextField] || item.context || 'general';
+      if (!this.contextIndex.has(key)) this.contextIndex.set(key, []);
+      this.contextIndex.get(key).push(item);
     }
   }
 
+  /** The grouping key this session is using for the given item. */
+  groupContextOf(item) {
+    if (!item) return 'general';
+    return item[this.contextField || 'context'] || item.context || 'general';
+  }
+
+  /**
+   * Modes an adaptive session can interleave.
+   *
+   * Restricted to the formats whose question object IS the pool item and which
+   * render through the shared switch, so a plan can move between them question
+   * by question. The multi-stage formats (terminal, chain, lab, techtalk…) own
+   * their own question shape and lifecycle and stay standalone.
+   *
+   * Ordered by the difficulty table in AdaptiveDifficultyService, which is
+   * what turns a rising ability into a shift from recognition to recall.
+   */
+  static get ADAPTIVE_MODES() {
+    return [
+      'listening',
+      'matching',
+      'context',
+      'fillblank',
+      'comprehension',
+      'scenario',
+      'writing',
+      'sentence',
+      'codeoutput',
+      'command',
+      'codechallenge',
+      'taskcommand',
+    ];
+  }
+
+  /** Can this specific item be asked in this format at all? */
+  _itemSupportsMode(item, mode) {
+    const distinct =
+      Boolean(item.english) &&
+      Boolean(item.italian) &&
+      !containsWholeWord(item.italian, item.english);
+    const englishPhrase = (item.example || '').split(' = ')[0] || '';
+
+    switch (mode) {
+      case 'listening':
+      case 'matching':
+        return distinct;
+      case 'writing':
+        return distinct && isTypeableAnswer(item);
+      case 'fillblank':
+      case 'sentence':
+      case 'comprehension':
+        return Boolean(item.example);
+      case 'scenario':
+        return distinct && Boolean(item.example) && containsWholeWord(englishPhrase, item.english);
+      case 'codeoutput':
+        return Boolean(item.code);
+      case 'command':
+        return Boolean(item.command);
+      case 'codechallenge':
+        return Boolean(item.command) || (Boolean(item.code) && !item.code.includes('\n'));
+      case 'taskcommand':
+        return this.taskCommandCandidates([item]).length === 1;
+      case 'context':
+        return this.contextIndex.size >= 4;
+      default:
+        return false;
+    }
+  }
+
+  /**
+   * Plan a session that changes format as it goes.
+   *
+   * Every other mode runs one template ten times, which is the single biggest
+   * reason a session feels like filling in a form. Here each question picks the
+   * format nearest the learner's ability from those the item can actually
+   * support, so a stronger learner drifts from "choose the translation" toward
+   * "write the command" without ever being told they were assessed.
+   */
+  generateAdaptiveQuestions(pool) {
+    const ability = this._studentAbility();
+    const items = adaptiveDifficultyService.selectItems(pool, 10, (key) =>
+      analyticsService.getItemAnalytics(key)
+    );
+
+    const plan = [];
+    let previousMode = null;
+    for (const item of items) {
+      const supported = TopicPracticeManager.ADAPTIVE_MODES.filter((mode) =>
+        this._itemSupportsMode(item, mode)
+      );
+      if (supported.length === 0) continue;
+
+      // Back-to-back repeats are what the learner reads as monotony, so they
+      // are avoided whenever the item leaves a choice. Bound to a const so the
+      // filter does not close over the loop-mutated variable.
+      const avoidMode = previousMode;
+      const varied = supported.filter((mode) => mode !== avoidMode);
+      const eligible = varied.length > 0 ? varied : supported;
+
+      const mode = adaptiveDifficultyService.selectMode(eligible, ability) || eligible[0];
+
+      // taskcommand needs a built question object rather than the bare item.
+      // If the level cannot field enough distinct commands to make a real
+      // choice, fall back to a format the item can definitely support.
+      if (mode === 'taskcommand') {
+        const built = this.buildTaskCommandQuestion(
+          item,
+          this.taskCommandCandidates(this.fullPool),
+          ability
+        );
+        if (built) {
+          previousMode = mode;
+          plan.push({ item: built, mode });
+          continue;
+        }
+        const fallback = eligible.find((candidate) => candidate !== 'taskcommand');
+        if (!fallback) continue;
+        previousMode = fallback;
+        plan.push({ item, mode: fallback });
+        continue;
+      }
+
+      previousMode = mode;
+      plan.push({ item, mode });
+    }
+
+    this.adaptivePlan = plan;
+    return plan.map((entry) => entry.item);
+  }
+
   generateQuestions(mode, pool) {
+    if (mode === 'adaptive') {
+      this.questions = this.generateAdaptiveQuestions(pool);
+      return;
+    }
+
     if (mode === 'terminal') {
       this.questions = this.generateTerminalQuestions(pool);
       return;
@@ -235,13 +474,52 @@ export class TopicPracticeManager {
       return;
     }
 
+    if (mode === 'verofalso') {
+      this.questions = this.generateVeroFalsoQuestions(pool);
+      return;
+    }
+
+    if (mode === 'definizione') {
+      this.questions = this.generateDefinizioneQuestions(pool);
+      return;
+    }
+
+    if (mode === 'pairs') {
+      this.questions = this.generatePairsQuestions(pool);
+      return;
+    }
+
+    if (mode === 'readout') {
+      this.questions = this.generateReadoutQuestions(pool);
+      return;
+    }
+
+    if (mode === 'dictation') {
+      this.questions = this.generateDictationQuestions(pool);
+      return;
+    }
+
+    if (mode === 'cmdcloze') {
+      this.questions = this.generateCmdClozeQuestions(pool);
+      return;
+    }
+
+    if (mode === 'taskcommand') {
+      this.questions = this.generateTaskCommandQuestions(pool);
+      return;
+    }
+
     // Translation modes (listening/matching/writing) and scenario render the
-    // English target alongside the Italian translation as the answer. When
-    // english === italian the prompt and the correct option are the SAME
-    // string — the answer is given for free. Filter those items out at
-    // pool-build time so the user never sees a degenerate question.
+    // English target alongside the Italian translation as the answer. When the
+    // Italian gloss CONTAINS the English prompt the answer is given for free —
+    // an equality test missed every "Funzione di callback" for prompt
+    // "Callback". Pool items already had their redundant "(Term)" parenthetical
+    // stripped, so what survives this filter is a genuine leak (2.6% of the
+    // corpus) rather than a formatting convention.
     const isDistinctTranslation = (item) =>
-      item.english && item.italian && item.english.toLowerCase() !== item.italian.toLowerCase();
+      Boolean(item.english) &&
+      Boolean(item.italian) &&
+      !containsWholeWord(item.italian, item.english);
 
     if (mode === 'fillblank' || mode === 'sentence') {
       pool = pool.filter((item) => item.example);
@@ -257,7 +535,21 @@ export class TopicPracticeManager {
     } else if (mode === 'comprehension') {
       pool = pool.filter((item) => item.example);
     } else if (mode === 'scenario') {
-      pool = pool.filter((item) => item.example && isDistinctTranslation(item));
+      // The prompt is the example sentence with the term blanked out. If the
+      // term is not in the sentence as a whole word, blanking silently does
+      // nothing (15.0% of eligible items) or eats half a word, leaving the
+      // suffix as a giveaway (4.1%). Require a blankable occurrence.
+      pool = pool.filter(
+        (item) =>
+          item.example &&
+          isDistinctTranslation(item) &&
+          containsWholeWord((item.example || '').split(' = ')[0] || '', item.english)
+      );
+    } else if (mode === 'writing') {
+      // Typing is the only mode where the Italian side must be reproduced
+      // character by character, so long glosses are excluded here and here
+      // only — they remain available in every recognition mode.
+      pool = pool.filter((item) => isDistinctTranslation(item) && isTypeableAnswer(item));
     } else {
       pool = pool.filter(isDistinctTranslation);
     }
@@ -287,114 +579,74 @@ export class TopicPracticeManager {
   // ─── OPTION GENERATION ─────────────────────────
 
   /**
-   * Generate semantically-related options using context/difficulty grouping
+   * Build the option set for a multiple-choice question.
+   *
+   * The previous implementation grouped candidates by context, then by
+   * difficulty, then fell back to the whole pool — but both of those fields
+   * hold a single constant value within a level for 313 of the corpus's 371
+   * levels, so all three phases collapsed into "any other item in this level,
+   * within a string-length band". Distractors were therefore never chosen for
+   * meaning or spelling, which is what made the correct answer stand out.
+   *
+   * Now the length band is only a plausibility floor (it stops a 3-character
+   * option sitting next to a 40-character one, which is its own giveaway) and
+   * the ranking is delegated to the ability-calibrated engine.
    */
   generateOptions(correct) {
     const field =
       this.currentMode === 'codeoutput' || this.currentMode === 'scenario' ? 'english' : 'italian';
-    const currentQ = this.questions[this.currentQuestionIndex];
+    const currentQ = this.questions[this.currentQuestionIndex] || {};
     const correctLen = correct.length;
     const minLen = Math.max(1, Math.floor(correctLen * 0.4));
     const maxLen = Math.ceil(correctLen * 2.5);
 
-    const isPlausible = (val) => {
-      if (!val || val === correct) return false;
-      return val.length >= minLen && val.length <= maxLen;
-    };
-
-    const distractors = new Set();
-
-    // Phase 1: Same context items
-    const currentCtx = currentQ.context || 'general';
-    const sameCtxItems = (this.contextIndex.get(currentCtx) || []).filter((it) =>
-      isPlausible(it[field])
-    );
-    const shuffledCtx = shuffleArray(sameCtxItems);
-    for (const item of shuffledCtx) {
-      if (distractors.size >= 3) break;
-      distractors.add(item[field]);
+    // De-duplicate by displayed text: two identically-worded options, one of
+    // them flagged wrong, is unanswerable.
+    const seen = new Set([correct]);
+    const candidates = [];
+    const relaxed = [];
+    for (const item of this.fullPool) {
+      const value = item[field];
+      if (!value || seen.has(value)) continue;
+      seen.add(value);
+      if (value.length >= minLen && value.length <= maxLen) candidates.push(item);
+      else relaxed.push(item);
     }
 
-    // Phase 2: Same difficulty items
-    if (distractors.size < 3 && currentQ.difficulty) {
-      const sameDiff = this.fullPool.filter(
-        (it) =>
-          it.difficulty === currentQ.difficulty &&
-          it.context !== currentCtx &&
-          isPlausible(it[field])
-      );
-      const shuffledDiff = shuffleArray(sameDiff);
-      for (const item of shuffledDiff) {
-        if (distractors.size >= 3) break;
-        if (!distractors.has(item[field])) distractors.add(item[field]);
-      }
-    }
+    // Thin levels may not have 3 same-length candidates; widening beats
+    // padding the grid with filler.
+    const pool = candidates.length >= 3 ? candidates : [...candidates, ...relaxed];
 
-    // Phase 3: Full pool fallback
-    if (distractors.size < 3) {
-      const remaining = this.fullPool.filter((it) => isPlausible(it[field]));
-      const shuffledAll = shuffleArray(remaining);
-      for (const item of shuffledAll) {
-        if (distractors.size >= 3) break;
-        if (!distractors.has(item[field])) distractors.add(item[field]);
-      }
-    }
+    const distractors = adaptiveDifficultyService
+      .selectDistractors(currentQ, pool, 3, this._studentAbility(), {
+        field,
+        contextField: this.contextField,
+      })
+      .map((item) => item[field])
+      .filter(Boolean);
 
-    return shuffleArray([correct, ...Array.from(distractors).slice(0, 3)]);
+    return shuffleArray([correct, ...distractors.slice(0, 3)]);
   }
 
   /**
-   * Generate context sub-category options from the context index
+   * Generate context sub-category options from the context index.
+   * Never pads: an option reading "Other 1" is not a distractor, it is a tell.
+   * Levels too thin to offer real alternatives do not offer the mode at all.
    */
   generateContextOptions(correctContext) {
-    const allContexts = Array.from(this.contextIndex.keys());
-    const options = [correctContext];
+    const others = shuffleArray(
+      Array.from(this.contextIndex.keys()).filter((c) => c !== correctContext)
+    ).slice(0, 3);
 
-    const others = shuffleArray(allContexts.filter((c) => c !== correctContext));
-    for (let i = 0; i < 3 && i < others.length; i++) {
-      options.push(others[i]);
-    }
-
-    while (options.length < 4) {
-      options.push(`other-${options.length}`);
-    }
-
-    return shuffleArray(options);
+    return shuffleArray([correctContext, ...others]);
   }
 
+  /**
+   * Scenario options are English terms; `generateOptions` already selects on
+   * the English field for this mode, so it is the same construction.
+   */
   generateScenarioOptions(correct) {
-    const currentQ = this.questions[this.currentQuestionIndex];
-    const correctLen = correct.length;
-    const minLen = Math.max(1, Math.floor(correctLen * 0.4));
-    const maxLen = Math.ceil(correctLen * 2.5);
-
-    const isPlausible = (val) => {
-      if (!val || val === correct) return false;
-      return val.length >= minLen && val.length <= maxLen;
-    };
-
-    const distractors = new Set();
-
-    // Prefer same context
-    const currentCtx = currentQ.context || 'general';
-    const sameCtx = (this.contextIndex.get(currentCtx) || []).filter((it) =>
-      isPlausible(it.english)
-    );
-    for (const item of shuffleArray(sameCtx)) {
-      if (distractors.size >= 3) break;
-      distractors.add(item.english);
-    }
-
-    // Fallback to full pool
-    if (distractors.size < 3) {
-      const remaining = this.fullPool.filter((it) => isPlausible(it.english));
-      for (const item of shuffleArray(remaining)) {
-        if (distractors.size >= 3) break;
-        if (!distractors.has(item.english)) distractors.add(item.english);
-      }
-    }
-
-    return shuffleArray([correct, ...Array.from(distractors).slice(0, 3)]);
+    return this.generateOptions(correct);
   }
 
   // ─── TIMER & XP ──────────────────────────────
@@ -458,7 +710,53 @@ export class TopicPracticeManager {
   // ─── ANSWER CHECKING ──────────────────────────
 
   checkAnswer(btnEl, selected, correct) {
+    this._lastUserAnswer = selected;
     this.handleResult(selected === correct, correct);
+  }
+
+  /**
+   * Reveal the next hint for the current question (§29).
+   *
+   * HintService has implemented this ladder — three progressively more
+   * revealing hints per mode, plus the XP cost curve — since v2.0.0 with no
+   * caller. Meanwhile several modes printed an unconditional "Vocab: X" line
+   * that was sometimes the answer itself. This is the intended mechanism: the
+   * learner asks, and pays for it.
+   */
+  showHint() {
+    const question = this.questions[this.currentQuestionIndex];
+    if (!question) return;
+
+    const hints = hintService.generateHints(question, this.currentMode) || [];
+    const level = this.hintLevel || 0;
+    if (level >= Math.min(3, hints.length)) return;
+
+    const text = hints[level];
+    this.hintLevel = level + 1;
+
+    const list = document.getElementById('practice-hint-list');
+    if (list && text) {
+      const line = document.createElement('p');
+      line.className = 'practice-hint';
+      // textContent, not innerHTML: hint strings are built from item data.
+      line.textContent = text;
+      list.appendChild(line);
+    }
+    this._updateHintButton(hints.length);
+  }
+
+  _updateHintButton(hintCount) {
+    const btn = document.querySelector('.practice-hint-btn');
+    if (!btn) return;
+    const max = Math.min(3, hintCount);
+    const used = this.hintLevel || 0;
+    if (used >= max) {
+      btn.disabled = true;
+      btn.textContent = 'Nessun altro aiuto / No more hints';
+      return;
+    }
+    const remainingXp = Math.round(hintService.getXPMultiplier(used) * 100);
+    btn.textContent = `\u{1F4A1} Aiuto / Hint ${used + 1}/${max} (XP ${remainingXp}%)`;
   }
 
   /**
@@ -469,6 +767,7 @@ export class TopicPracticeManager {
     if (!input) return;
 
     const userValue = input.value;
+    this._lastUserAnswer = userValue;
     const exactMatch = normalize(userValue) === normalize(correct);
 
     if (exactMatch) {
@@ -669,6 +968,10 @@ export class TopicPracticeManager {
 Object.assign(
   TopicPracticeManager.prototype,
   advancedModesMixin,
+  extraModesMixin,
   renderingMixin,
-  resultHandlerMixin
+  resultHandlerMixin,
+  matchModeMixin,
+  outputModesMixin,
+  labModeMixin
 );

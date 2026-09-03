@@ -195,6 +195,7 @@ body {
   top: 0;
   width: var(--sidebar-width);
   height: 100vh;
+  overflow-y: auto;
   background: rgba(10, 18, 35, 0.1);
   border-right: 1px solid var(--border-color);
   backdrop-filter: blur(6px);
@@ -552,6 +553,47 @@ h3 {
   margin-top: auto;
   padding-top: var(--space-lg);
   border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Short viewports: the sidebar stacks ~950px of chrome (logo + ten nav
+   items + footer) inside a fixed 100vh column, so on laptop screens the
+   bottom buttons need scrolling to reach. Shrink the decorative chrome —
+   never the 44px tap targets — so navigation fits; the overflow-y on
+   .sidebar stays as the fallback for extreme cases. */
+@media (max-height: 1000px) {
+  .sidebar {
+    padding: var(--space-md);
+  }
+
+  .logo {
+    padding: var(--space-sm) 0;
+    margin-bottom: var(--space-sm);
+  }
+
+  .logo-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .logo-accent {
+    font-size: 1.8rem;
+  }
+
+  .logo-title {
+    font-size: 1rem;
+  }
+
+  .nav-menu {
+    gap: var(--space-xs);
+  }
+
+  .nav-item {
+    padding: var(--space-sm) var(--space-lg);
+  }
+
+  .sidebar-footer {
+    padding-top: var(--space-sm);
+  }
 }
 
 .github-link {
@@ -2216,6 +2258,45 @@ pre.model-solution-code {
   font-weight: 600;
 }
 
+/* Progressive hints (§29). Deliberately quiet: asking for help is a choice,
+   so the control must not compete with the answer options. */
+.practice-hint-bar {
+  margin-top: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.practice-hint-btn {
+  font-size: 0.85rem;
+  padding: var(--space-sm) var(--space-lg);
+  opacity: 0.85;
+}
+
+.practice-hint-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.practice-hint-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  width: 100%;
+}
+
+.practice-hint {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  background: var(--bg-tertiary);
+  border-left: 3px solid var(--gold-accent);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm) var(--space-md);
+  margin: 0;
+  text-align: left;
+}
+
 /* ==========================================
    COMPLETION OVERLAY (Practice & Lessons)
    ========================================== */
@@ -2945,6 +3026,27 @@ pre.model-solution-code {
   gap: var(--space-md);
   max-width: 500px;
   margin: var(--space-xl) auto 0;
+}
+
+/* Command options are code, not prose: one per row so a long invocation is
+   readable, and never wrapped mid-flag. */
+.options-grid-mono {
+  grid-template-columns: 1fr;
+  max-width: 640px;
+}
+
+.option-btn-mono {
+  text-align: left !important;
+  justify-content: flex-start !important;
+}
+
+.option-btn-mono code {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: none;
+  padding: 0;
 }
 
 .option-btn {
@@ -8979,4 +9081,1442 @@ body.login-wall-active > *:not(.login-wall):not(#matrix-morph) {
   .game-overlay {
     backdrop-filter: none;
   }
+}
+
+/* ═══════════════════════════════════════════════════
+   LESSON LAYOUTS
+   Alternative lesson engines registered in
+   js/topics/TopicLessonLayouts.js. Each layout teaches the
+   same lesson data with a different structure so consecutive
+   lessons do not feel identical.
+   Palette rule §14.6: gold-on-graphite, amber is the
+   highlight register, red is reserved for hard-fail states —
+   never for a wrong answer.
+   ═══════════════════════════════════════════════════ */
+
+/* ── Layout badge on lesson cards ───────────────── */
+
+.lesson-card-mini-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.lesson-card-mini-layout {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--font-size-xs);
+  line-height: 1;
+  padding: 2px 7px;
+  border-radius: 999px;
+  color: var(--text-muted);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--glass-border);
+  white-space: nowrap;
+}
+
+.lesson-card-mini:hover .lesson-card-mini-layout {
+  color: var(--text-secondary);
+  border-color: var(--topic-color, var(--accent-primary));
+}
+
+.summary-layout-badge {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* ═══ DRILL — self-rated flip cards ═══════════════ */
+
+.drill-card {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-top: 3px solid var(--topic-color, var(--accent-primary));
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.drill-card-front {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.drill-term {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  word-break: break-word;
+}
+
+.drill-pronunciation {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.drill-prompt {
+  font-size: var(--font-size-sm);
+  font-style: italic;
+  color: var(--text-muted);
+  margin-top: var(--space-sm);
+}
+
+.drill-reveal-btn {
+  width: 100%;
+  margin-top: var(--space-sm);
+  min-height: 46px;
+}
+
+.drill-card-back {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px dashed var(--border-color);
+  animation: drill-reveal-in 220ms ease-out;
+}
+
+@keyframes drill-reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.drill-translation {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--topic-color, var(--accent-primary));
+  word-break: break-word;
+}
+
+.drill-example {
+  margin: var(--space-md) 0;
+  padding-left: var(--space-md);
+  border-left: 2px solid var(--border-color);
+  text-align: left;
+}
+
+.drill-example-en {
+  display: block;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.drill-example-it {
+  display: block;
+  margin-top: 2px;
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+.drill-note {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  text-align: left;
+}
+
+.drill-rating-label {
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-sm);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.drill-rating-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
+}
+
+.drill-rate-btn {
+  min-height: 46px;
+  font-size: var(--font-size-xs);
+  padding: var(--space-sm) var(--space-xs);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--glass-border);
+  color: var(--text-secondary);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.drill-rate-btn:hover {
+  transform: translateY(-2px);
+}
+
+.drill-rate-known {
+  border-color: rgba(16, 185, 129, 0.4);
+  color: var(--success);
+}
+
+.drill-rate-almost {
+  border-color: rgba(245, 158, 11, 0.4);
+  color: var(--warning);
+}
+
+/* Deliberately NOT red — "did not know" is a coach prompt, not a failure. */
+.drill-rate-unknown {
+  border-color: var(--glass-border);
+  color: var(--text-muted);
+}
+
+@media (max-width: 480px) {
+  .drill-rating-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ═══ STORY — narrative cloze passage ═════════════ */
+
+.story-passage {
+  max-width: 640px;
+  margin: 0 auto var(--space-lg);
+  padding: var(--space-lg) var(--space-md);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  line-height: 2.1;
+}
+
+.story-sentence {
+  display: block;
+  margin-bottom: var(--space-sm);
+  font-size: var(--font-size-base);
+  color: var(--text-secondary);
+}
+
+.story-stage-title {
+  font-family: var(--font-display);
+  font-size: var(--font-size-lg);
+  color: var(--topic-color, var(--accent-primary));
+  text-align: center;
+  margin-bottom: var(--space-xs);
+}
+
+.story-instructions {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: var(--space-md);
+}
+
+.story-slot {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 3px;
+  min-width: 84px;
+  padding: 1px 8px;
+  margin: 0 2px;
+  border: 1px dashed var(--accent-primary);
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  background: rgba(230, 126, 34, 0.06);
+  cursor: pointer;
+  vertical-align: baseline;
+}
+
+.story-slot-filled {
+  border-style: solid;
+  border-color: var(--accent-primary);
+  background: rgba(230, 126, 34, 0.14);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.story-slot-correct {
+  border-color: var(--success);
+  background: rgba(16, 185, 129, 0.14);
+  color: var(--success);
+  cursor: default;
+}
+
+/* Amber, not red: a corrected blank is a teaching moment (§14.1). */
+.story-slot-fixed {
+  border-color: var(--warning);
+  background: rgba(245, 158, 11, 0.12);
+  color: var(--warning);
+  cursor: default;
+}
+
+.story-slot-was {
+  font-size: var(--font-size-xs);
+  text-decoration: line-through;
+  opacity: 0.65;
+}
+
+.story-slot-num {
+  font-size: 0.65em;
+  opacity: 0.7;
+  vertical-align: super;
+}
+
+.story-bank {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  justify-content: center;
+  max-width: 640px;
+  margin: 0 auto var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border-color);
+}
+
+.story-bank-label {
+  width: 100%;
+  text-align: center;
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: var(--space-xs);
+}
+
+.story-bank-word {
+  padding: 6px 14px;
+  min-height: 38px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.story-bank-word:hover {
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+}
+
+.story-bank-word-used {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+
+.story-feedback {
+  max-width: 640px;
+  margin: 0 auto var(--space-md);
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.story-translation {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+}
+
+.story-translation-row {
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.story-translation-row:last-child {
+  border-bottom: none;
+}
+
+.story-translation-en {
+  display: block;
+  font-size: var(--font-size-base);
+  color: var(--text-primary);
+}
+
+.story-translation-it {
+  display: block;
+  margin-top: 3px;
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+.story-gloss {
+  display: inline-block;
+  margin-top: 3px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--glass-border);
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+/* ═══ DISCOVERY — guess first, then be taught ═════ */
+
+.discovery-guess {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  text-align: center;
+}
+
+.discovery-guess-label {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--glass-border);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.discovery-guess-term {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  word-break: break-word;
+  line-height: 1.2;
+}
+
+.discovery-guess-hint {
+  font-size: var(--font-size-sm);
+  font-style: italic;
+  color: var(--text-muted);
+  max-width: 40ch;
+}
+
+.discovery-reveal {
+  animation: discovery-reveal-in 240ms ease-out;
+}
+
+@keyframes discovery-reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.discovery-reveal-banner {
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--accent-primary);
+  background: var(--bg-tertiary);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.discovery-reveal-banner.correct {
+  border-left-color: var(--success);
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--success);
+}
+
+/* Wrong guesses are a teaching moment, never a failure state (§14.1). */
+.discovery-reveal-banner.taught {
+  border-left-color: var(--accent-primary);
+  background: rgba(230, 126, 34, 0.1);
+  color: var(--accent-secondary);
+}
+
+.discovery-reveal-picked {
+  display: block;
+  margin-top: 4px;
+  font-weight: 400;
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+.discovery-example-it {
+  display: block;
+  margin-top: 2px;
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+.discovery-consolidate {
+  animation: discovery-reveal-in 240ms ease-out;
+}
+
+.discovery-consolidate-intro {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: var(--space-md);
+}
+
+.discovery-summary-note {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  text-align: center;
+  font-style: italic;
+  margin: var(--space-sm) 0;
+}
+
+/* ═══ COMPARE — contrast confusable pairs ═════════ */
+
+.compare-stage {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-top: 3px solid var(--topic-color, var(--accent-primary));
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.compare-stage-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xs);
+  flex-wrap: wrap;
+}
+
+.compare-stage-label {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--topic-color, var(--accent-primary));
+}
+
+.compare-stage-progress {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+.compare-stage-hint {
+  font-size: var(--font-size-sm);
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: var(--space-md);
+}
+
+.compare-pair-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: stretch;
+  gap: var(--space-md);
+}
+
+.compare-pair-solo {
+  grid-template-columns: 1fr;
+  max-width: 28rem;
+  margin: 0 auto;
+}
+
+.compare-vs {
+  align-self: center;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.compare-card {
+  height: 100%;
+  border-top: 2px solid var(--topic-color, var(--accent-primary));
+}
+
+.compare-example-en {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+.compare-example-it {
+  display: block;
+  margin-top: 2px;
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+.compare-question {
+  border: 1px solid var(--border-color);
+  border-left: 3px solid var(--topic-color, var(--accent-primary));
+  border-radius: var(--radius-md);
+  padding: var(--space-lg) var(--space-md);
+}
+
+.compare-binary-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.compare-clue {
+  margin: var(--space-sm) 0 var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  border-left: 2px solid var(--border-color);
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-sm);
+  font-style: italic;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+@media (max-width: 640px) {
+  .compare-pair-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .compare-vs {
+    display: none;
+  }
+
+  .compare-binary-options {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ═══════════════════════════════════════════════════
+   EXTRA PRACTICE MODES
+   verofalso (Vero o Falso) and definizione (Definizione).
+   Both run on the base item schema, so every topic gets them.
+   Palette rule §14.6: amber is the highlight/correction
+   register; red is reserved for hard-fail states and is
+   never used for a wrong answer.
+   ═══════════════════════════════════════════════════ */
+
+/* ── Vero o Falso ───────────────────────────────── */
+
+.verofalso-card {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.verofalso-stage-label {
+  display: inline-block;
+  padding: 3px 10px;
+  margin-bottom: var(--space-md);
+  border-radius: 999px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--glass-border);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.verofalso-statement {
+  font-size: var(--font-size-lg);
+  line-height: 1.6;
+  color: var(--text-primary);
+  margin-bottom: var(--space-lg);
+  padding: var(--space-md);
+  border-left: 3px solid var(--accent-primary);
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-sm);
+  text-align: left;
+  word-break: break-word;
+}
+
+.verofalso-verdict-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.verofalso-verdict-btn {
+  min-height: 56px;
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.verofalso-verdict-btn:hover {
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+}
+
+/* Stage 2 recap: states which verdict the learner chose WITHOUT revealing
+   whether it was right — the rationale step must stay a real question. */
+.verofalso-recap {
+  margin-bottom: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  background: var(--bg-tertiary);
+  border: 1px dashed var(--border-color);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.verofalso-rationales {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  text-align: left;
+}
+
+.verofalso-rationale-btn {
+  min-height: 48px;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  text-align: left;
+  white-space: normal;
+  transition: all var(--transition-fast);
+}
+
+.verofalso-rationale-btn:hover {
+  border-color: var(--accent-primary);
+  background: rgba(230, 126, 34, 0.08);
+}
+
+@media (max-width: 480px) {
+  .verofalso-verdict-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .verofalso-statement {
+    font-size: var(--font-size-base);
+  }
+}
+
+/* ── Definizione ────────────────────────────────── */
+
+.definizione-card {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.definizione-term {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: var(--space-lg);
+  word-break: break-word;
+}
+
+/* Definitions are sentences, not words: full-width stacked options, left
+   aligned and free to wrap. A 2-up grid would truncate or look ragged. */
+.definizione-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.definizione-option-btn {
+  min-height: 48px;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  text-align: left;
+  white-space: normal;
+  transition: all var(--transition-fast);
+}
+
+.definizione-option-btn:hover {
+  border-color: var(--accent-primary);
+  background: rgba(230, 126, 34, 0.08);
+  transform: translateX(2px);
+}
+
+/* ==========================================================================
+   LESSON V2 — redesigned teach-then-practice loop + in-lesson lab
+   Instrument-HUD aesthetic (doctrine §0.3): graphite surfaces, gold accent,
+   mono for anything terminal. No mascots, no confetti.
+   ========================================================================== */
+
+.lesson-v2 {
+  --tc: var(--topic-color, var(--accent-primary));
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--space-md);
+  animation: v2-rise var(--transition-normal) both;
+}
+
+@keyframes v2-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.v2-beat-label {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-left: 2px solid var(--tc);
+  padding-left: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+/* ---- Present (teach) cards ---- */
+.v2-present-cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.v2-present-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-left: 3px solid var(--tc);
+  border-radius: var(--radius-md);
+  padding: var(--space-card);
+  box-shadow: var(--shadow-sm);
+}
+
+.v2-present-head {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.v2-present-en {
+  font-family: var(--font-display);
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.v2-present-it {
+  color: var(--gold-accent);
+  font-size: var(--font-size-base);
+}
+
+.v2-present-pron {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  margin-top: var(--space-xs);
+}
+
+.v2-present-example {
+  margin-top: var(--space-sm);
+  color: var(--text-secondary);
+  font-style: italic;
+  border-top: 1px dashed var(--glass-border);
+  padding-top: var(--space-sm);
+}
+
+.v2-present-command {
+  margin-top: var(--space-sm);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  display: flex;
+  gap: var(--space-xs);
+  align-items: center;
+  overflow-x: auto;
+}
+
+.v2-present-command .v2-tag {
+  color: var(--tc);
+}
+
+.v2-present-command code {
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.v2-present-tool {
+  margin-top: var(--space-xs);
+  display: inline-block;
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-full);
+  padding: 2px 10px;
+}
+
+.v2-present-note {
+  margin-top: var(--space-sm);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.v2-continue {
+  width: 100%;
+}
+
+/* ---- Question surface (warmup + drills) ---- */
+.v2-q-prompt {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-sm);
+}
+
+.v2-q-target {
+  font-family: var(--font-display);
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.v2-q-sentence {
+  font-size: var(--font-size-lg);
+  color: var(--text-primary);
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: var(--space-lg);
+}
+
+.v2-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+}
+
+.v2-option {
+  padding: var(--space-md);
+  text-align: left;
+  transition:
+    transform var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.v2-option:hover:not(:disabled) {
+  transform: translateY(-2px);
+  border-color: var(--tc);
+}
+
+.v2-option.v2-correct {
+  border-color: var(--success);
+  box-shadow:
+    0 0 0 1px var(--success),
+    0 0 14px rgba(16, 185, 129, 0.25);
+}
+
+.v2-option.v2-wrong {
+  border-color: var(--danger);
+  opacity: 0.85;
+}
+
+.v2-input {
+  width: 100%;
+}
+
+.v2-drill-actions {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.v2-hint {
+  margin-top: var(--space-sm);
+  min-height: 1.2em;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  color: var(--gold-accent);
+}
+
+.v2-audio-btn,
+.dictation-audio-btn {
+  font-size: var(--font-size-lg);
+}
+
+.v2-feedback {
+  margin-top: var(--space-md);
+  min-height: 1.4em;
+  text-align: center;
+  font-weight: 600;
+}
+
+.v2-fb-correct {
+  color: var(--success);
+}
+
+.v2-fb-wrong {
+  color: var(--danger);
+}
+
+.v2-lab-loading {
+  text-align: center;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  padding: var(--space-2xl);
+}
+
+/* ---- Summary ---- */
+.v2-summary {
+  text-align: center;
+}
+
+.v2-summary-stars {
+  font-size: 2.4rem;
+  letter-spacing: 0.2em;
+}
+
+.v2-summary-title {
+  color: var(--gold-accent);
+  margin-bottom: var(--space-lg);
+}
+
+.v2-summary-stats {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xl);
+  margin: var(--space-lg) 0;
+}
+
+.v2-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.v2-stat-value {
+  font-family: var(--font-display);
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--tc);
+}
+
+.v2-stat-label {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.v2-summary-actions {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   LAB PANEL — reuses .terminal-sim chrome, adds brief + task + hint framing
+   ========================================================================== */
+.lab-panel {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.lab-brief {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  padding: var(--space-md);
+}
+
+.lab-brief-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.lab-brief-intro {
+  color: var(--text-secondary);
+  margin-top: var(--space-xs);
+  font-size: var(--font-size-sm);
+}
+
+.lab-task {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: baseline;
+  margin-bottom: var(--space-sm);
+}
+
+.lab-task-label {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 1px 6px;
+}
+
+.lab-task-text {
+  color: var(--text-primary);
+}
+
+.lab-history-line {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+}
+
+.lab-output-error {
+  color: var(--danger);
+}
+
+.lab-hint {
+  margin-top: var(--space-sm);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  color: var(--gold-accent);
+}
+
+.lab-actions {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+  padding: var(--space-sm) 0;
+}
+
+.lab-done-line {
+  color: var(--success);
+  font-family: var(--font-mono);
+  margin-top: var(--space-sm);
+}
+
+/* ==========================================================================
+   TAP-THE-PAIRS — real matching board (opaque data-key, no answer leak)
+   ========================================================================== */
+.pairs-progress {
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: var(--space-md);
+}
+
+.pairs-board {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.pairs-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.pairs-tile {
+  padding: var(--space-md);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  background: var(--glass-bg);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition:
+    transform var(--transition-fast),
+    border-color var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+.pairs-tile:hover:not(:disabled) {
+  transform: translateY(-2px);
+  border-color: var(--accent-primary);
+}
+
+.pairs-tile.pairs-selected {
+  border-color: var(--accent-primary);
+  box-shadow:
+    0 0 0 1px var(--accent-primary),
+    var(--shadow-glow);
+}
+
+.pairs-tile.pairs-matched {
+  border-color: var(--success);
+  opacity: 0.4;
+  cursor: default;
+}
+
+.pairs-tile.pairs-wrong {
+  border-color: var(--danger);
+  animation: pairs-shake 0.35s;
+}
+
+@keyframes pairs-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+/* ---- Output modes ---- */
+.readout-output {
+  border-left: 3px solid var(--accent-primary);
+}
+
+.cmdcloze-target {
+  font-family: var(--font-mono);
+  letter-spacing: 0.02em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lesson-v2,
+  .pairs-tile.pairs-wrong {
+    animation: none;
+  }
+  .v2-option:hover:not(:disabled),
+  .pairs-tile:hover:not(:disabled) {
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .v2-options,
+  .pairs-board {
+    grid-template-columns: 1fr;
+  }
+  .v2-summary-stats {
+    gap: var(--space-md);
+  }
+}
+
+/* ═══════════════════════════════════════════════════
+   KEYBOARD ACCESSIBILITY (doctrine §15.1, §15.5)
+   The UI dispatches from card-shaped divs as well as
+   real buttons. EventDispatch makes them operable with
+   Enter/Space; these rules make them VISIBLE to a
+   keyboard user, which §15.5 requires and the codebase
+   previously had almost none of.
+   :focus-visible is used rather than :focus so a mouse
+   click never paints a ring the pointer user did not ask
+   for, while every keyboard tab-stop always shows one.
+   ═══════════════════════════════════════════════════ */
+
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--accent-secondary, #f39c12);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* Cards are large surfaces — a ring alone reads as an artefact, so lift and
+   tint them too, matching what hover already does for pointer users. */
+.topic-card:focus-visible,
+.lesson-card-mini:focus-visible,
+.mode-card:focus-visible,
+.practice-card:focus-visible {
+  outline: 2px solid var(--accent-secondary, #f39c12);
+  outline-offset: 3px;
+  background: var(--bg-tertiary);
+  border-color: var(--topic-color, var(--accent-primary));
+}
+
+/* A disabled mode card is not a tab stop and must not look actionable. */
+/* Disabled cards are not tab stops (pointer-events + no tabindex), so they
+   need neither a cursor nor a focus ring — see the .mode-disabled rule in the
+   MODE PICKER GROUPS block for their appearance. */
+
+/* Non-native controls still need a pointer affordance. */
+.topic-card,
+.lesson-card-mini,
+.mode-card:not(.mode-disabled),
+.practice-card {
+  cursor: pointer;
+}
+
+/* §15.4 — honour reduced motion on the surfaces added for lesson layouts and
+   the lab. The static state must look intentional, not broken: the elements
+   simply appear, already in their final position. */
+@media (prefers-reduced-motion: reduce) {
+  .drill-card-back,
+  .discovery-reveal,
+  .discovery-consolidate,
+  .lesson-v2,
+  .story-passage,
+  .lab-panel {
+    animation: none !important;
+  }
+
+  .topic-card:hover,
+  .lesson-card-mini:hover,
+  .mode-card:hover,
+  .practice-card:hover,
+  .story-bank-word:hover,
+  .drill-rate-btn:hover,
+  .definizione-option-btn:hover,
+  .verofalso-verdict-btn:hover,
+  .verofalso-rationale-btn:hover {
+    transform: none;
+  }
+}
+
+/* Touch targets: the WCAG 2.2 target-size floor is 24px, and these are all
+   primary actions on a phone. The rating and option rows were already 46-48px;
+   these are the ones that were not. */
+.mode-card,
+.practice-card {
+  min-height: 44px;
+}
+
+/* ═══════════════════════════════════════════════════
+   MODE PICKER GROUPS
+   23 practice modes in one flat grid was a wall. They
+   are now grouped by what the learner is trying to DO,
+   with the unavailable ones sorted to the end of their
+   group and whole groups dropped when a level cannot
+   offer any of them.
+   ═══════════════════════════════════════════════════ */
+
+.mode-group {
+  margin-bottom: var(--space-xl);
+}
+
+.mode-group:last-child {
+  margin-bottom: 0;
+}
+
+.mode-group-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+  font-family: var(--font-display);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* Hairline rule trailing the label — groups the cards without adding a box. */
+.mode-group-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--border-color), transparent);
+}
+
+/* An unavailable mode stays visible so the learner can see it exists and what
+   would unlock it, but must never read as actionable. */
+.mode-card.mode-disabled {
+  /* Faint enough to read as unavailable, legible enough to still tell the
+     learner what it is and why it is greyed out. Below ~0.5 the label drops
+     under 3:1 on this surface and becomes guesswork. */
+  opacity: 0.55;
+  filter: grayscale(0.5);
+  pointer-events: none;
+}
+
+.mode-card.mode-disabled:hover {
+  transform: none;
+  border-color: var(--border-color);
+}
+
+/* ═══════════════════════════════════════════════════
+   INPUT FOCUS RINGS (doctrine §15.5)
+   Six typing surfaces set `outline: none` with either no
+   replacement or a tint too faint to read as focus. The
+   global :focus-visible rule cannot reach them: it uses
+   :where(), which has zero specificity, so a plain class
+   selector beats it. These restore a visible ring at
+   matching specificity, and only for keyboard focus, so
+   clicking into a field stays quiet.
+   ═══════════════════════════════════════════════════ */
+
+.translate-input:focus-visible,
+.practice-input:focus-visible,
+.chat-input:focus-visible,
+.terminal-input:focus-visible,
+.codelab-input:focus-visible {
+  outline: 2px solid var(--accent-secondary);
+  outline-offset: 2px;
+}
+
+/* The lab terminal reuses .terminal-input, so it inherits the ring above. Its
+   surrounding panel gets a matching cue since the input sits on black. */
+.lab-terminal:focus-within {
+  border-color: var(--accent-secondary);
+}
+
+/* Doctrine §15.6 — skip link. Off-screen until focused, then pinned to the
+   top-left over everything. Uses a real offset rather than display:none so it
+   stays in the tab order. */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 10000;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--accent-primary);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+}
+
+.skip-link:focus {
+  left: var(--space-md);
+  top: var(--space-md);
+}
+
+/* The jump target is focusable only programmatically; it must never paint a
+   ring of its own when focus lands there. */
+.main-content:focus {
+  outline: none;
+}
+
+/* ═══════════════════════════════════════════════════
+   LESSON V2 BEAT WRAPPERS
+   The warmup and drill beats emit a bare wrapper whose
+   children are styled but which had no rule of its own,
+   so those two beats sat flush against the panel edge
+   while every other beat was inset. Cosmetic, but it
+   made the loop feel inconsistent as it advanced.
+   ═══════════════════════════════════════════════════ */
+
+.v2-warmup,
+.v2-drill {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: var(--space-md) 0;
 }

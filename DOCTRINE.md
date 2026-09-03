@@ -1,11 +1,11 @@
 # DOCTRINE.md — Knowledge AIO Engineering Doctrine
 
-> **Version:** 2.1.0 — 2026-09-03
+> **Version:** 2.2.0 — 2026-09-03
 > **Status:** Ratified, in force.
 > **Scope:** All code, configuration, deployment artifacts, and operational
 > procedures within this repository.
 
-> **v2.1.0 amendments** (2026-09-03): Level Games — adds §43, governing the
+> **v2.2.0 amendments** (2026-09-03): Level Games — adds §46, governing the
 > bespoke per-level minigames that replace the lesson engine and practice
 > exercises level by level. A rules addition, not a weakening: nothing in
 > §0-§42 is relaxed, and games live under `js/` and ship through
@@ -14,10 +14,38 @@
 > `js/games/{KaioEngine,LevelItem,LevelSession,GameHost,registry}.js`,
 > `js/games/levels/`, `js/services/GameAudioService.js`, the conformance
 > harness at `tests/helpers/game-conformance.js`, and two new gates in
-> `scripts/check-doctrine.mjs` (§43.3 registry/STATIC_ASSETS agreement,
-> §43.4 total size budget). Closes the §43.2 defect: the legacy call site in
+> `scripts/check-doctrine.mjs` (§46.3 registry/STATIC_ASSETS agreement,
+> §46.4 total size budget). Closes the §46.2 defect: the legacy call site in
 > `TopicPracticeResultHandler.js` recorded the correct answer as the
 > learner’s, so §27 error analysis ran on meaningless data.
+>
+> **v2.1.0 amendments** (2026-08-01): Lesson Layouts (§43) and Generated
+> Content Ingestion (§44). §44 governs topic data derived from an external
+> corpus: the first such artefact is `js/topics/data/library-glossary.js`,
+> ~1,290 terms lifted from the per-domain glossaries of the maintainer's own
+> study library by `scripts/ingest-library-glossaries.mjs`, split into
+> `library/*.js` chunks to respect §13.2. The corpus itself is deliberately
+> NOT vendored — the script takes its path and fails loudly when absent.
+>
+> §43 exists because until now
+> every one of the ~900 lessons rendered through the single hardcoded
+> 4-stage pipeline in `js/topics/TopicLessonEngine.js` (intro → context
+> cards → exactly 2 MCQs → summary). The maintainer's report: it *"gets
+> boring before finishing the first levels of any domain"*. A lesson now
+> resolves through `js/topics/TopicLessonLayouts.js` to one of several
+> layouts that teach the SAME lesson data with different structure —
+> `classic` (teach then quiz), `discovery` (guess first, then teach),
+> `compare` (contrast confusable pairs), `story` (narrative cloze) and
+> `drill` (self-rated flip cards). Selection is deterministic per lesson,
+> so variety is stable rather than random. Shared bookkeeping (grouping,
+> distractors, scoring, persistence, summary markup) lives in
+> `js/topics/TopicLessonShared.js` so a new layout owns only its pedagogy.
+> New artefacts: `TopicLessonShared.js`, `TopicLessonLayouts.js`,
+> `TopicLessonDiscovery.js`, `TopicLessonCompare.js`, `TopicLessonStory.js`,
+> `TopicLessonDrill.js`, their tests, and the `LESSON LAYOUTS` block in
+> `css/style.css`. Pedagogy sources: the maintainer's personal study
+> library, whose modules teach the same material through guided ideas,
+> contrast pairs, cloze passages and try-before-you-reveal drills.
 
 > **v2.0.0 amendments** (2026-05-17): Educational Methods Doctrine — adds
 > §23-§42 governing pedagogy, adaptive learning, gamification, assessment,
@@ -592,9 +620,44 @@ an amendment commit that updates this file in the same PR.
 | 42.3  | Any LLM integration MUST be opt-in and MUST NOT be required for core functionality. |
 | 42.4  | LLM responses MUST be sandboxed and MUST NOT execute code or modify DOM outside designated containers. |
 
+## §43. Lesson Layouts — v2.1.0
+
+| Rule  | Statement |
+| ----- | --------- |
+| 43.1  | A lesson MUST be rendered by an engine resolved through `TopicLessonLayouts.createLessonEngine()`. `TopicManager.openLesson` is the ONLY construction site; no other module may instantiate a lesson engine directly. This keeps layout choice in one auditable place. |
+| 43.2  | A layout module MUST export `LAYOUT_META` (with `id`, `name`, `nameIt`, `icon`), a `canRender(lesson)` predicate, and a class exposing `constructor(progressManager)` and `start(lesson, topicId, levelNum)`. Anything less cannot be rotated into. |
+| 43.3  | Layout selection MUST be deterministic, in this precedence order: (1) an explicit `lesson.layout` field, (2) a per-topic pin in `TOPIC_DEFAULT_LAYOUT`, (3) a stable hash of the lesson id over the rotation pool. The same lesson MUST always resolve to the same layout — variety across lessons, never a reshuffle between sessions of the same lesson. |
+| 43.9  | A layout that is a long-form arc rather than a variation on a single lesson (e.g. `lessonv2`, which runs warmup → present → drill → interleave → applied lab → summary) MUST set `rotate: false` and be reached only via an explicit `lesson.layout` or a `TOPIC_DEFAULT_LAYOUT` pin. Learners must not meet a multi-stage loop by chance. A per-topic pin is the sanctioned replacement for a per-topic feature-flag module. |
+| 43.4  | A layout that cannot teach a given lesson MUST return `false` from `canRender` (e.g. Story requires ≥3 examples whose English half contains the term). Resolution falls through to the next candidate and ultimately to `classic`, which has no preconditions. A failed dynamic import MUST degrade to `classic`, never to a blank screen. |
+| 43.5  | A layout MUST call `finalizeLesson()` from `TopicLessonShared.js` EXACTLY ONCE per lesson, behind a re-entry guard. A layout MUST NOT call `progressManager` star / XP / completion methods directly. Double-award bugs from a double-tapped button are otherwise undetectable. |
+| 43.6  | Alternative layouts MUST be dynamically imported so they cost nothing against the §13.1 initial-bundle budget, and MUST still be listed in `sw.js#STATIC_ASSETS` (§5.6) so offline play is unaffected. |
+| 43.7  | Layout interactivity MUST use `data-action` + `registerAction` under a namespace unique to that layout (§3.4 forbids inline handlers). Every emitted `data-action` MUST have a matching registration and vice versa. |
+| 43.8  | Wrong answers in any layout MUST follow §14.1 — corrective, never punitive — and MUST NOT use the danger/red register (§14.6). Amber is the correction colour. |
+
+## §44. Generated Content Ingestion — v2.1.0
+
+| Rule  | Statement |
+| ----- | --------- |
+| 44.1  | Topic data derived from an external corpus MUST be produced by a checked-in script under `scripts/`, never hand-edited. The generated file's header MUST say `GENERATED FILE — do not edit by hand` and name the regeneration command. Hand-patching generated content is silently lost on the next run. |
+| 44.2  | The source corpus MUST NOT be vendored into this repository. The script takes its path as an argument with a sensible default, and exits non-zero with an actionable message when the corpus is absent — the build must never depend on a directory that only exists on one machine. |
+| 44.3  | Generated content MUST pass the same structural gates as authored content: a test asserting the item schema, id uniqueness, absence of degenerate identity translations, and that no source markup (table pipes, `**bold**`) leaks into user-visible fields. |
+| 44.4  | Generated data MUST be split so that no single emitted file exceeds the §13.2 300 KB budget. Splitting into sibling chunk modules composed by the topic file is the sanctioned pattern; the graph still loads lazily as one unit. |
+| 44.5  | An item whose answer text is too long for type-the-answer practice MUST be flagged in the data (`longAnswer: true`) so the mode selector can gate it out. Asking a learner to type a 70-character definition is a bug, not a hard question. |
+
+## §45. Terminal Labs — v2.1.0
+
+| Rule  | Statement |
+| ----- | --------- |
+| 45.1  | A lab script is pure declarative data: `export default` only, NO imports, NO functions, NO regex literals (patterns are SOURCE STRINGS in `acceptRe`, compiled by the engine). This matches §1.4 for data modules and keeps lab content reviewable by a non-programmer. |
+| 45.2  | A lab bundle at `js/topics/data/labs/<topicId>-labs.js` is keyed by REAL lesson ids from that topic. A key that is not a lesson id means the lab silently never loads and nobody finds out — `tests/lab-scripts.test.js` gates this. |
+| 45.3  | Every key in a lab's `requires` MUST be produced by some step's `setState`, or the lab can never complete and the learner is trapped. Gated by test. |
+| 45.4  | Every step's own `accept[0]` MUST pass `matchStep` — the intended solution must actually be accepted. Gated by test, because an over-strict pattern rejects the very answer the hints tell the learner to type. |
+| 45.5  | Labs grade by GOAL, not by string: any command reaching the step's `setState` goal is accepted, a wrong command NEVER ends the run, and hints escalate over exactly three stages (nudge → partial → answer). This is the app's only non-punitive grading model and it must stay that way (§14.1). |
+| 45.6  | A lab MUST NOT present a destructive command (`rm -rf /`, `DROP DATABASE`, `mkfs`, raw `dd` to a device) as routine, and MUST NOT contain real hostnames, credentials or secrets. Gated by test. |
+
 ---
 
-## §43. Level Games — v2.1.0
+## §46. Level Games — v2.2.0
 
 Design of record: `docs/superpowers/specs/2026-08-13-level-game-sdk-design.md`.
 A level game replaces both the teaching and the testing of the level it is
@@ -603,14 +666,14 @@ pronunciation, placement) stays a generic shared mode.
 
 | Rule | Statement                                                                                                                                                                                                                                                                                                    |
 | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 43.1 | A game MUST report every graded response through `LevelItem#attempt`. A game MUST NOT call `analyticsService`, `masteryService`, `smartScoreService`, `currencyService`, `questService` or `progressManager.addXP` directly — that fan-out belongs to the SDK, and bypassing it degrades §23-§42 silently.    |
-| 43.2 | When a game reports, `analyticsService.recordResponse` MUST receive the learner's own answer in `userAnswer` and the target in `expectedAnswer`. The two MUST NOT be the same string when the response was wrong; §27 error analysis is built on that distinction, and a regression test is required. Known debt: the legacy call site `TopicPracticeResultHandler#handleResult` passes the expected answer in both fields and is exempt only until its levels migrate.                                  |
-| 43.3 | `js/games/registry.js` and `sw.js#STATIC_ASSETS` MUST agree: no game may be registered but unshipped, or shipped under `js/games/levels/` but unregistered. The first 404s offline and is absent from the APK (§22.15); the second is dead weight. `npm run doctrine:check` enforces both directions.         |
-| 43.4 | Total size of `js/games/**` MUST stay within the level-game budget (24 MB), checked at PR time by `npm run doctrine:check`. It is a total, not a per-file cap, so an author may trade a heavier band runtime against lighter games. Games MUST NOT ship sprite atlases or audio files (§14.3, §6.1).          |
-| 43.5 | `session.finish()` MUST refuse level completion while any item is still `unseen` or unattempted. A game that never presents part of its level does not complete it, however well it plays.                                                                                                                    |
-| 43.6 | Every game MUST pass the headless conformance harness (`tests/helpers/game-conformance.js`) before it is registered: lifecycle present, no throw across every chapter and beat, full item coverage under a scripted bot, `prefers-reduced-motion` honoured, playable with a coarse pointer and with a keyboard. |
-| 43.7 | A game owns the canvas; the app owns the chrome. Inside the canvas the palette, figure, ground, movement and typeface come from the game's assigned visual register. Outside it, GameHost's chrome stays in the app's register and §14.6-§14.7 apply unchanged: bilingual copy, and never red for a wrong answer. |
-| 43.8 | A game module load failure, a crash inside its loop, or a lost canvas context MUST end at the level's legacy exercises with a visible bilingual notice — never a white screen (§11.2).                                                                                                                        |
+| 46.1 | A game MUST report every graded response through `LevelItem#attempt`. A game MUST NOT call `analyticsService`, `masteryService`, `smartScoreService`, `currencyService`, `questService` or `progressManager.addXP` directly — that fan-out belongs to the SDK, and bypassing it degrades §23-§42 silently.    |
+| 46.2 | When a game reports, `analyticsService.recordResponse` MUST receive the learner's own answer in `userAnswer` and the target in `expectedAnswer`. The two MUST NOT be the same string when the response was wrong; §27 error analysis is built on that distinction, and a regression test is required. Known debt: the legacy call site `TopicPracticeResultHandler#handleResult` passes the expected answer in both fields and is exempt only until its levels migrate.                                  |
+| 46.3 | `js/games/registry.js` and `sw.js#STATIC_ASSETS` MUST agree: no game may be registered but unshipped, or shipped under `js/games/levels/` but unregistered. The first 404s offline and is absent from the APK (§22.15); the second is dead weight. `npm run doctrine:check` enforces both directions.         |
+| 46.4 | Total size of `js/games/**` MUST stay within the level-game budget (24 MB), checked at PR time by `npm run doctrine:check`. It is a total, not a per-file cap, so an author may trade a heavier band runtime against lighter games. Games MUST NOT ship sprite atlases or audio files (§14.3, §6.1).          |
+| 46.5 | `session.finish()` MUST refuse level completion while any item is still `unseen` or unattempted. A game that never presents part of its level does not complete it, however well it plays.                                                                                                                    |
+| 46.6 | Every game MUST pass the headless conformance harness (`tests/helpers/game-conformance.js`) before it is registered: lifecycle present, no throw across every chapter and beat, full item coverage under a scripted bot, `prefers-reduced-motion` honoured, playable with a coarse pointer and with a keyboard. |
+| 46.7 | A game owns the canvas; the app owns the chrome. Inside the canvas the palette, figure, ground, movement and typeface come from the game's assigned visual register. Outside it, GameHost's chrome stays in the app's register and §14.6-§14.7 apply unchanged: bilingual copy, and never red for a wrong answer. |
+| 46.8 | A game module load failure, a crash inside its loop, or a lost canvas context MUST end at the level's legacy exercises with a visible bilingual notice — never a white screen (§11.2).                                                                                                                        |
 
 ---
 
@@ -661,8 +724,11 @@ pronunciation, placement) stays a generic shared mode.
 | §40 Knowledge Graph                        | 3       |
 | §41 Branching Lessons                      | 4       |
 | §42 AI Tutoring                            | 4       |
-| §43 Level Games                           | 8       |
-| **Total**                                  | **258** |
+| §43 Lesson Layouts                         | 9       |
+| §44 Generated Content Ingestion            | 5       |
+| §45 Terminal Labs                          | 6       |
+| §46 Level Games                            | 8       |
+| **Total**                                  | **278** |
 
 ## Appendix B — Quick-Reference Index
 
@@ -670,7 +736,7 @@ pronunciation, placement) stays a generic shared mode.
 - **Adding a vendored asset:** §6.2 + §7.1 + bump `CACHE_NAME` (§5.5) + update `vendor/integrity.json`.
 - **Adding an external origin:** §10.1 → CSP `connect-src` → §3.4 → doctrine amendment.
 - **Adding a new module under `js/`:** §1.3 + §1.5 + register in `sw.js#STATIC_ASSETS` (§5.6) + add a test (§17.1).
-- **Adding a level game:** §43.3 — one module under `js/games/levels/`, one `registry.js` entry, one `sw.js#STATIC_ASSETS` entry, and the §43.6 conformance suite. Grade only through `LevelItem#attempt` (§43.1).
+- **Adding a level game:** §46.3 — one module under `js/games/levels/`, one `registry.js` entry, one `sw.js#STATIC_ASSETS` entry, and the §46.6 conformance suite. Grade only through `LevelItem#attempt` (§46.1).
 - **Force-purge a poisoned SW:** SECURITY.md Runbook 2.
 - **Rotating Google Client ID (web):** SECURITY.md Runbook 1.
 - **Generating / rotating the Android signing keystore:** SECURITY.md Runbook 6 (§22.8).
@@ -683,6 +749,9 @@ pronunciation, placement) stays a generic shared mode.
 - **SRS algorithm changes:** §23 — FSRS v5 only, SM-2 is deprecated.
 - **Gamification additions:** §30 (quests) + §31 (currency) + §35 (SmartScore).
 - **Chart/visualization additions:** §36.2 — Canvas API only, no external chart libraries.
+- **Adding a lesson layout:** §43 — export `LAYOUT_META` + `canRender` + the engine class, register it in `js/topics/TopicLessonLayouts.js`, dynamic-import it (§43.6), add the `sw.js` entry (§5.6), bump `CACHE_NAME` (§5.5), add a test (§17.1), and style new classes in the `LESSON LAYOUTS` block of `css/style.css`.
+- **Authoring a terminal lab:** §45 — add `js/topics/data/labs/<topicId>-labs.js` keyed by real lesson ids, add the `sw.js` entry (§5.6), bump `CACHE_NAME` (§5.5). `tests/lab-scripts.test.js` proves the intended solution path actually completes every lab.
+- **Regenerating library-sourced content:** `npm run ingest:glossaries` (§44) — reads the study-library glossaries, rewrites `js/topics/data/library-glossary.js` and its `library/*.js` chunks, and prints the exact `sw.js` lines to add. Never edit those files by hand.
 
 ## Appendix C — Glossary
 

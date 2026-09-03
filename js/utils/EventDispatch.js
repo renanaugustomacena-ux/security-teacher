@@ -25,19 +25,45 @@ export function delegate(container, dispatchMap) {
   if (!container || typeof container.addEventListener !== 'function') {
     return () => {};
   }
-  const handler = (e) => {
-    if (!(e.target instanceof Element)) return;
+  const resolve = (e) => {
+    if (!(e.target instanceof Element)) return null;
     const el = e.target.closest('[data-action]');
-    if (!el || !container.contains(el)) return;
-    if (el.matches('[disabled]')) return;
-    const action = el.dataset.action;
-    const fn = dispatchMap[action];
-    if (typeof fn !== 'function') return;
-    e.preventDefault();
-    fn(el.dataset, e, el);
+    if (!el || !container.contains(el)) return null;
+    if (el.matches('[disabled]')) return null;
+    const fn = dispatchMap[el.dataset.action];
+    return typeof fn === 'function' ? { el, fn } : null;
   };
+
+  const handler = (e) => {
+    const hit = resolve(e);
+    if (!hit) return;
+    e.preventDefault();
+    hit.fn(hit.el.dataset, e, hit.el);
+  };
+
+  // Doctrine §15.1: every interactive element must be keyboard-reachable.
+  // Much of the UI dispatches from card-shaped <div>s rather than <button>s
+  // (topic cards, lesson cards, mode cards, practice cards). Those fire on
+  // click but a keyboard user could never trigger them. Handling Enter/Space
+  // here fixes every current and future data-action element in one place —
+  // the alternative was re-tagging a dozen call sites and hoping the next one
+  // remembers. Native controls are skipped because the browser already
+  // synthesises a click for them, which would otherwise fire the action twice.
+  const keyHandler = (e) => {
+    if (e.key !== 'Enter' && e.key !== ' ' && e.key !== 'Spacebar') return;
+    const hit = resolve(e);
+    if (!hit) return;
+    if (hit.el.matches('button, a[href], input, select, textarea')) return;
+    e.preventDefault();
+    hit.fn(hit.el.dataset, e, hit.el);
+  };
+
   container.addEventListener('click', handler);
-  return () => container.removeEventListener('click', handler);
+  container.addEventListener('keydown', keyHandler);
+  return () => {
+    container.removeEventListener('click', handler);
+    container.removeEventListener('keydown', keyHandler);
+  };
 }
 
 const globalActions = Object.create(null);

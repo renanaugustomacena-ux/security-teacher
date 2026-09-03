@@ -197,16 +197,20 @@ export const advancedQuestionsMixin = {
   },
 
   buildChainQuestion(items) {
-    const questionTypes = [
+    // Same three-recognition / two-recall balance as before, but shuffled: the
+    // order was hardcoded, so every chain in every session ran the identical
+    // sequence. A command link replaces a typing link wherever the item can
+    // support one, instead of only ever at index 3.
+    const questionTypes = shuffleArray([
       'multiple-choice',
       'typing',
       'multiple-choice',
       'typing',
       'multiple-choice',
-    ];
+    ]);
     const links = items.map((item, idx) => {
       let qType = questionTypes[idx];
-      if (item.command && idx === 3) {
+      if (item.command && qType === 'typing') {
         qType = 'command';
       }
       return {

@@ -1,6 +1,6 @@
 /**
- * TTS Service - FlowLearn
- * =======================
+ * TTS Service - Knowledge AIO
+ * ===========================
  *
  * Singleton service wrapping window.speechSynthesis.
  * Provides text-to-speech for English vocabulary with preferred voices,

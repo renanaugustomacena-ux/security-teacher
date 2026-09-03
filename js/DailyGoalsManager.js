@@ -1,6 +1,6 @@
 /**
  * DAILY GOALS & CHALLENGES - Knowledge AIO
- * ==========================================
+ * ========================================
  *
  * Tracks daily learning goals and presents a rotating challenge:
  * - Lessons completed (target: 2)

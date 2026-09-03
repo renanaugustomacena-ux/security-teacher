@@ -95,7 +95,32 @@ export const progressTopicsMixin = {
         tp.unlockedLevels.push(lvl);
       }
     }
+    tp.unlockedLevels.sort((a, b) => a - b);
     this.saveProgress();
+  },
+
+  /**
+   * Remember where the placement test put this learner.
+   *
+   * Previously the estimate was shown once and thrown away, so "Continue"
+   * still walked to Level 0 Lesson 1 and the topic re-offered the test on the
+   * next visit. `skipped` records a deliberate "start me at the beginning",
+   * which must survive as a decision rather than as an absent record.
+   */
+  recordTopicPlacement(topicId, placement = {}) {
+    const tp = this.ensureTopicProgress(topicId);
+    tp.placement = {
+      level: Number(placement.level) || 0,
+      accuracy: Number(placement.accuracy) || 0,
+      skipped: Boolean(placement.skipped),
+      takenAt: new Date().toISOString(),
+    };
+    if (!placement.skipped) tp.lastActiveLevel = tp.placement.level;
+    this.saveProgress();
+  },
+
+  getTopicPlacement(topicId) {
+    return this.data.topicProgress?.[topicId]?.placement || null;
   },
 
   getTopicStats(topicId) {

@@ -1,6 +1,6 @@
 /**
- * TOPIC BOSS CHALLENGE - FlowLearn
- * =================================
+ * TOPIC BOSS CHALLENGE - Knowledge AIO
+ * ====================================
  *
  * Boss challenge mode for topic levels.
  * 15 mixed-format questions from all lessons in a level,

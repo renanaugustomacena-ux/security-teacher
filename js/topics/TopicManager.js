@@ -1,6 +1,6 @@
 /**
- * TOPIC MANAGER - FlowLearn
- * =========================
+ * TOPIC MANAGER - Knowledge AIO
+ * =============================
  *
  * Manages the Technical Topics section:
  * - Topics Hub (grid of 4 topic cards with star counts)
@@ -13,7 +13,7 @@
 
 import { topicsRegistry, getTopicMeta } from './registry.js';
 import { ttsService } from '../services/TTSService.js';
-import { TopicLessonEngine } from './TopicLessonEngine.js';
+import { createLessonEngine, predictLayoutId, getLayoutMeta } from './TopicLessonLayouts.js';
 import { delegate } from '../utils/EventDispatch.js';
 import { escapeHtml } from '../utils/SanitizeHtml.js';
 import { referenceService } from '../services/ReferenceService.js';
@@ -30,7 +30,7 @@ export class TopicManager {
     this.currentLesson = null;
     this.currentItemIndex = 0;
     this.expandedLevel = null; // Track which level is currently expanded
-    this.gameHost = null; // the mounted level game, when a level has one (§43)
+    this.gameHost = null; // the mounted level game, when a level has one (§46)
   }
 
   init() {
@@ -62,6 +62,7 @@ export class TopicManager {
       'topic.placementAnswer': (ds) =>
         this.recordPlacementAnswer(ds.topicId, ds.correct === 'true'),
       'topic.placementSkip': (ds) => this.skipPlacementTest(ds.topicId),
+      'topic.placementBegin': (ds) => this.beginFromPlacement(ds.topicId),
       'topic.downloadCert': (ds) => this.downloadCertificate(ds.topicId),
     };
     const ids = [
@@ -218,7 +219,7 @@ export class TopicManager {
                 ? `<span class="topic-card-stars">\u2605 ${starInfo.earned}</span>`
                 : '';
             return `
-            <div class="topic-card" style="--topic-color: ${topic.color}" data-action="topic.open" data-topic-id="${topic.id}">
+            <div class="topic-card" role="button" tabindex="0" style="--topic-color: ${topic.color}" data-action="topic.open" data-topic-id="${topic.id}">
               <div class="topic-card-icon">${topic.icon}</div>
               <h3 class="topic-card-title">${topic.title}</h3>
               <p class="topic-card-title-it">${topic.titleIt}</p>
@@ -271,9 +272,17 @@ export class TopicManager {
       return;
     }
 
-    // Offer placement test on first visit (zero topic progress)
+    // Offer the placement test on first visit (zero topic progress).
+    // `placement` records that the learner already answered this question —
+    // by taking the test or by declining it. Without that check the gate keyed
+    // on counters the placement never moves (`wordsLearned` only rises during
+    // practice), so the offer came back on every visit until the learner
+    // happened to run a practice session.
     const stats = this.progressManager.getTopicStats(topicId);
-    const isFirstVisit = !stats || (stats.completedLevels.length === 0 && stats.wordsLearned === 0);
+    const placementSettled = Boolean(stats && stats.placement);
+    const isFirstVisit =
+      !placementSettled &&
+      (!stats || (stats.completedLevels.length === 0 && stats.wordsLearned === 0));
     if (isFirstVisit && data.levels && Object.keys(data.levels).length > 2) {
       this._showPlacementOffer(topicId, meta, data);
       return;
@@ -425,16 +434,24 @@ export class TopicManager {
               lesson.id
             );
             const stars = this.getLessonStars(topicId, levelNum, lesson.id);
+            const layout = getLayoutMeta(predictLayoutId(lesson, topicId));
+            const layoutBadge = layout
+              ? `<span class="lesson-card-mini-layout" title="${escapeHtml(`${layout.nameIt} / ${layout.name}`)}">${layout.icon} ${escapeHtml(layout.nameIt)}</span>`
+              : '';
             return `
             <div class="lesson-card-mini ${isCompleted ? 'completed' : ''}"
+                 role="button" tabindex="0"
                  data-action="topic.openLesson"
                  data-topic-id="${topicId}"
                  data-level="${levelNum}"
                  data-lesson-id="${lesson.id}">
               <div class="lesson-card-mini-num">${idx + 1}</div>
               <div class="lesson-card-mini-info">
-                <div class="lesson-card-mini-title">${lesson.title}</div>
-                <div class="lesson-card-mini-stars">${this.renderStars(stars, 3)}</div>
+                <div class="lesson-card-mini-title">${escapeHtml(lesson.title)}</div>
+                <div class="lesson-card-mini-meta">
+                  <div class="lesson-card-mini-stars">${this.renderStars(stars, 3)}</div>
+                  ${layoutBadge}
+                </div>
               </div>
               <div class="lesson-card-mini-status">${isCompleted ? '\u2705' : ''}</div>
             </div>
@@ -601,7 +618,22 @@ export class TopicManager {
 
     const levelKeys = Object.keys(data.levels).sort((a, b) => Number(a) - Number(b));
 
-    for (const levelKey of levelKeys) {
+    // Honour the placement estimate. Scanning strictly from level 0 sent a
+    // learner who had just tested into level 9 back to Level 0 Lesson 1, which
+    // made the whole test pointless. Earlier levels stay reachable — they are
+    // simply searched after the placement level, so "Continue" resumes there
+    // only once nothing is left further up.
+    const placement = this.progressManager.getTopicPlacement?.(topicId);
+    const startLevel = placement && !placement.skipped ? placement.level : 0;
+    const orderedKeys =
+      startLevel > 0
+        ? [
+            ...levelKeys.filter((k) => Number(k) >= startLevel),
+            ...levelKeys.filter((k) => Number(k) < startLevel),
+          ]
+        : levelKeys;
+
+    for (const levelKey of orderedKeys) {
       const lvlNum = Number(levelKey);
       const isUnlocked = this.progressManager.isTopicLevelUnlocked(topicId, lvlNum);
       if (!isUnlocked) continue;
@@ -675,8 +707,11 @@ export class TopicManager {
 
     this.showView('lesson');
 
-    // Use the stage-based lesson engine instead of flat item-by-item view
-    const engine = new TopicLessonEngine(this.progressManager);
+    // Resolve which lesson layout teaches this lesson. A topic may pin a
+    // layout (cybersecurity pins the LessonV2 teach-then-practice loop);
+    // otherwise the rotation picks one, always degrading to the classic
+    // staged engine when the chosen layout cannot render the data.
+    const { engine } = await createLessonEngine(lesson, this.progressManager, topicId);
     engine.start(lesson, topicId, levelNum);
   }
 
@@ -876,7 +911,7 @@ export class TopicManager {
     const practice = document.getElementById('topic-practice-container');
 
     // Leaving the lesson view while a game is mounted tears it down: the
-    // engine's loop, listeners and drone must not outlive the view (§43.8).
+    // engine's loop, listeners and drone must not outlive the view (§46.8).
     if (view !== 'lesson' && this.gameHost) {
       const host = this.gameHost;
       this.gameHost = null;

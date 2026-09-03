@@ -360,7 +360,7 @@ describe('Il guado — conformance (SDK design §8)', () => {
  * Regression: KaioEngine.goBeat used to call reset() before updating
  * host.state.chapter, so the first beat of every chapter was built for the
  * previous one and seven of the forty sentences were never presented by their
- * own beat (§43.5). The engine now updates the state first; this drives the
+ * own beat (§46.5). The engine now updates the state first; this drives the
  * real transition path rather than the harness's useChapter shortcut.
  */
 describe('Il guado — chapter boundaries through the real engine', () => {

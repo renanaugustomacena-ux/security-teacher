@@ -6,6 +6,12 @@ import { sanitizePlainObject } from '../utils/SanitizeHtml.js';
  */
 class StorageService {
   constructor() {
+    // Legacy codename, deliberately NOT renamed to match the "Knowledge AIO"
+    // branding. This string is the live IndexedDB database name: changing it
+    // points every installed client at a fresh, empty database and orphans all
+    // existing progress, XP, streaks and SRS state. Renaming it requires a
+    // real migration (open the old DB, copy every store, then delete), not a
+    // find-and-replace.
     this.dbName = 'FlowLearnDB';
     this.dbVersion = 3;
     this.db = null;

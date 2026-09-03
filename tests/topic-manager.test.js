@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 
-// The level-game registry is the coexistence switch (DOCTRINE §43): these
+// The level-game registry is the coexistence switch (DOCTRINE §46): these
 // tests flip it per case. The SDK modules behind it are stubbed so this suite
 // never boots the real services.
 const registryMock = vi.hoisted(() => ({
@@ -174,7 +174,7 @@ describe('TopicManager', () => {
     expect(result).toBe(fakeData);
   });
 
-  // ── level games (DOCTRINE §43) ──
+  // ── level games (DOCTRINE §46) ──
 
   function expandLevel(pm) {
     const el = { style: {}, innerHTML: '' };
@@ -197,7 +197,7 @@ describe('TopicManager', () => {
     expect(el.style.display).toBe('block');
   });
 
-  it('a registered game replaces the lessons and the practice and keeps the reference (§43)', async () => {
+  it('a registered game replaces the lessons and the practice and keeps the reference (§46)', async () => {
     registryMock.hasGame.mockReturnValue(true);
     const { tm, el } = expandLevel(makeProgressManager());
 
@@ -233,7 +233,7 @@ describe('TopicManager', () => {
     expect(pm.incrementDailyLessons).not.toHaveBeenCalled();
   });
 
-  it('startGame ends at a bilingual notice, not a white screen, when the game does not load (§43.8)', async () => {
+  it('startGame ends at a bilingual notice, not a white screen, when the game does not load (§46.8)', async () => {
     registryMock.hasGame.mockReturnValue(true);
     registryMock.loadGame.mockResolvedValue(null);
     const container = { innerHTML: '' };

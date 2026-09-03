@@ -84,7 +84,7 @@ export class GameHost {
    * @param {() => void} [opts.onExit] - back to the calling view
    * @param {() => void} [opts.onFallback] - open the legacy exercises instead
    * @param {(result: object) => void} [opts.onLevelComplete] - fired once, the
-   *   first time `session.finish()` passes (§43.5); the caller marks the
+   *   first time `session.finish()` passes (§46.5); the caller marks the
    *   level's lessons complete in ProgressManager
    */
   constructor({ container, game, session, props, onExit, onFallback, onLevelComplete }) {

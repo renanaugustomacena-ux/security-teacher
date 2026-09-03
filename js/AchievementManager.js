@@ -1,6 +1,6 @@
 /**
  * ACHIEVEMENT MANAGER - Knowledge AIO
- * =====================================
+ * ===================================
  *
  * Manages badge unlocking, toast notifications, and the badge gallery.
  * Evaluates achievement conditions against current progress data.

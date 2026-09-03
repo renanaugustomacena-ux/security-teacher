@@ -1,6 +1,6 @@
 /**
- * PROGRESS MODULE - FlowLearn
- * ===========================
+ * PROGRESS MODULE - Knowledge AIO
+ * ===============================
  *
  * Tracks and persists learning progress:
  * - Parole imparate / Words learned

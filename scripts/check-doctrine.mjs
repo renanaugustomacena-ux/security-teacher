@@ -15,9 +15,9 @@
  *   §17.6  meta CSP present in both index.html and 404.html
  *   §17.9  every js/services/*.js has a matching tests/<kebab>.test.js
  *          (added 2026-04-29 in doctrine v1.1.0)
- *   §43.3  js/games/registry.js and sw.js#STATIC_ASSETS agree — no game is
+ *   §46.3  js/games/registry.js and sw.js#STATIC_ASSETS agree — no game is
  *          registered but unshipped, or shipped but unregistered
- *   §43.4  total size of js/games/** stays inside the level-game budget
+ *   §46.4  total size of js/games/** stays inside the level-game budget
  *          (both added 2026-09-03 in doctrine v2.1.0)
  *   §17.10 when capacitor.config.json exists, validate §22.2 shape, assert
  *          no keystore artifacts in tracked tree (§22.8), assert
@@ -356,7 +356,7 @@ async function checkCapacitorConfig() {
   }
 }
 
-// §43.3 / §43.4 — level-game registry integrity and total size budget.
+// §46.3 / §46.4 — level-game registry integrity and total size budget.
 //
 // The registry is the coexistence mechanism: a level with an entry opens its
 // game, a level without one falls through to the legacy exercises. Two ways
@@ -383,7 +383,7 @@ async function checkGameRegistry() {
 
   const block = registrySource.match(/const GAMES\s*=\s*\{([\s\S]*?)\n\};/);
   if (!block) {
-    fail('§43.3', 'js/games/registry.js does not define a GAMES map');
+    fail('§46.3', 'js/games/registry.js does not define a GAMES map');
     return;
   }
 
@@ -405,11 +405,11 @@ async function checkGameRegistry() {
     try {
       await stat(resolve(REPO, rel));
     } catch {
-      fail('§43.3', `registry entry '${key}' points at missing module '${rel}'`);
+      fail('§46.3', `registry entry '${key}' points at missing module '${rel}'`);
       continue;
     }
     if (!listed.has(rel)) {
-      fail('§43.3', `game '${key}' is registered but '${rel}' is not in sw.js STATIC_ASSETS`);
+      fail('§46.3', `game '${key}' is registered but '${rel}' is not in sw.js STATIC_ASSETS`);
     }
   }
 
@@ -425,7 +425,7 @@ async function checkGameRegistry() {
       const rel = relative(REPO, file).replace(/\\/g, '/');
       if (!rel.endsWith('.js')) continue;
       if (!registered.has(rel)) {
-        fail('§43.3', `'${rel}' ships under js/games/levels/ but no registry entry loads it`);
+        fail('§46.3', `'${rel}' ships under js/games/levels/ but no registry entry loads it`);
       }
     }
   }
@@ -438,7 +438,7 @@ async function checkGameRegistry() {
   if (total > GAMES_TOTAL_BUDGET_BYTES) {
     const mb = (total / 1024 / 1024).toFixed(1);
     const cap = (GAMES_TOTAL_BUDGET_BYTES / 1024 / 1024).toFixed(0);
-    fail('§43.4', `js/games/** is ${mb} MB, over the ${cap} MB level-game budget`);
+    fail('§46.4', `js/games/** is ${mb} MB, over the ${cap} MB level-game budget`);
   }
 }
 

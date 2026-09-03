@@ -342,7 +342,7 @@ describe('LevelSession — persistence across sittings', () => {
   });
 });
 
-describe('LevelSession — completing a level once (§43.5)', () => {
+describe('LevelSession — completing a level once (§46.5)', () => {
   beforeEach(() => {
     saved.length = 0;
     storedRecord = null;

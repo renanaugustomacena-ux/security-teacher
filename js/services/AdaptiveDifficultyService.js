@@ -1,21 +1,39 @@
+import { levenshtein } from '../utils/StringDistance.js';
+
 const MODE_DIFFICULTY = {
   listening: 0.1,
   matching: 0.2,
+  pairs: 0.2,
   context: 0.25,
+  // Two-stage: the verdict is a coin flip, the rationale is the real test.
+  verofalso: 0.3,
   fillblank: 0.35,
   comprehension: 0.4,
+  // Conceptual recall of a full Italian description, not a one-word gloss.
+  definizione: 0.42,
+  readout: 0.4,
+  // Recognising the right command for a goal. Sits between reading a command
+  // and writing one from memory, filling the gap that made the jump from
+  // matching (0.2) to command (0.65) so abrupt.
+  taskcommand: 0.45,
+  // Multi-step, goal-graded, with escalating hints — the hardest thing here.
+  lab: 0.7,
   scenario: 0.45,
   writing: 0.5,
   sentence: 0.55,
   codeoutput: 0.6,
+  cmdcloze: 0.6,
   command: 0.65,
   codechallenge: 0.7,
+  dictation: 0.7,
   codelab: 0.75,
   terminal: 0.85,
   chain: 0.9,
 };
 
 const MASTERY_THRESHOLD = 0.8;
+/** Neutral ability, used only when a learner has left no evidence at all. */
+const DEFAULT_ABILITY = 0.5;
 const RECENCY_DECAY_MS = 1000 * 60 * 60 * 24; // 1 day
 
 class AdaptiveDifficultyService {
@@ -101,15 +119,27 @@ class AdaptiveDifficultyService {
 
   /**
    * Generate distractors calibrated to student ability.
+   *
+   * Similarity is dominated by orthographic confusability (edit distance over
+   * the answer strings themselves), so a strong student choosing between
+   * "Rete locale" and "Rete geografica" has to actually know the difference.
+   * Ranking by length alone — the previous behaviour of the only caller — made
+   * every wrong option obviously wrong.
+   *
    * @param {Object} correctItem - The correct answer item
    * @param {Array} pool - Pool of candidate distractor items
    * @param {number} count - Number of distractors to generate
    * @param {number} studentAbility - Student ability 0-1
+   * @param {Object} [options] - { field } — item field holding the answer text
    * @returns {Array} Array of distractor items
    */
-  selectDistractors(correctItem, pool, count, studentAbility) {
+  selectDistractors(correctItem, pool, count, studentAbility, options = {}) {
     if (!pool || pool.length === 0) return [];
 
+    const field = options.field || 'english';
+    // Which field groups "related" items. Callers pass the derived sub-context
+    // when a level's authored context is a single constant.
+    const contextField = options.contextField || 'context';
     const ability = Math.max(0, Math.min(1, studentAbility));
     const correctKey = this._itemKey(correctItem);
 
@@ -118,26 +148,36 @@ class AdaptiveDifficultyService {
     if (candidates.length === 0) return [];
     if (candidates.length <= count) return this._shuffle([...candidates]);
 
-    const correctLen = (correctItem.english || '').length;
-    const correctContext = correctItem.context;
+    const correctText = String(correctItem[field] || correctItem.english || '');
+    const correctLen = correctText.length;
+    const correctContext = correctItem[contextField];
 
     // Score candidates based on similarity
     const scored = candidates.map((item) => {
+      const text = String(item[field] || '');
       let similarity = 0;
 
       // Same context = more similar
-      if (item.context === correctContext) {
-        similarity += 0.4;
+      if (correctContext !== undefined && item[contextField] === correctContext) {
+        similarity += 0.3;
+      }
+
+      // Orthographic confusability — the strongest signal available without
+      // authored semantics.
+      if (correctLen > 0 && text.length > 0) {
+        const distance = levenshtein(text.toLowerCase(), correctText.toLowerCase());
+        const editSimilarity = 1 - distance / Math.max(text.length, correctLen);
+        similarity += Math.max(0, editSimilarity) * 0.4;
       }
 
       // Similar length = more similar
-      const lenDiff = Math.abs((item.english || '').length - correctLen);
+      const lenDiff = Math.abs(text.length - correctLen);
       const lenSimilarity = Math.max(0, 1 - lenDiff / 20);
-      similarity += lenSimilarity * 0.3;
+      similarity += lenSimilarity * 0.2;
 
       // Same topic = more similar
       if (item._topicId === correctItem._topicId) {
-        similarity += 0.3;
+        similarity += 0.1;
       }
 
       return { item, similarity };
@@ -151,6 +191,48 @@ class AdaptiveDifficultyService {
     }
 
     return scored.slice(0, count).map((s) => s.item);
+  }
+
+  /**
+   * Estimate how able this learner currently is, 0-1.
+   *
+   * Both callers that need an ability — distractor calibration and mode
+   * selection — must read the same number, or the session contradicts itself.
+   * Evidence is used in order of how directly it reflects current performance:
+   *
+   *   SmartScore for this exact topic × level, when the learner has played it;
+   *   BKT accuracy across the topic, when they have played it at all;
+   *   otherwise the placement estimate, which is the only signal available on
+   *   day one and previously influenced nothing after the result screen.
+   *
+   * A learner placed into level 9 of 24 therefore starts on harder distractors
+   * than one starting at level 0, instead of both getting a flat default.
+   *
+   * @param {Object} evidence - { smartScore, hasSmartScore, topicAccuracy,
+   *   hasAnalytics, placementLevel, levelCount }
+   * @returns {number} ability 0-1
+   */
+  estimateAbility(evidence = {}) {
+    const clamp = (n) => Math.max(0, Math.min(1, n));
+    const signals = [];
+
+    if (evidence.hasSmartScore && Number.isFinite(evidence.smartScore)) {
+      signals.push({ value: clamp(evidence.smartScore / 100), weight: 0.6 });
+    }
+    if (evidence.hasAnalytics && Number.isFinite(evidence.topicAccuracy)) {
+      signals.push({ value: clamp(evidence.topicAccuracy), weight: 0.4 });
+    }
+
+    if (signals.length === 0) {
+      const { placementLevel, levelCount } = evidence;
+      if (Number.isFinite(placementLevel) && Number.isFinite(levelCount) && levelCount > 1) {
+        return clamp(placementLevel / (levelCount - 1));
+      }
+      return DEFAULT_ABILITY;
+    }
+
+    const totalWeight = signals.reduce((sum, s) => sum + s.weight, 0);
+    return clamp(signals.reduce((sum, s) => sum + s.value * s.weight, 0) / totalWeight);
   }
 
   /**
