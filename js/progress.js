@@ -14,7 +14,7 @@ import { storageService } from './services/StorageService.js';
 import { getToday, getDaysBetween } from './utils/DateUtils.js';
 import { sanitizePlainObject } from './utils/SanitizeHtml.js';
 import { progressRenderingMixin } from './ProgressRendering.js';
-import { progressTopicsMixin } from './ProgressTopics.js';
+import { progressTopicsMixin, normalizeTopicRecord } from './ProgressTopics.js';
 
 // localStorage marker key — only tracks "there was a save" so legacy recovery
 // code can still detect a prior session. The full blob no longer lives in
@@ -249,6 +249,18 @@ export class ProgressManager {
       1_000_000
     );
     safe.bestChainStreak = this._clampNumber(safe.bestChainStreak, 0, 100_000);
+
+    // Topic records from older versions may lack fields the Topics hub reads
+    // on its very first render; bring each one up to shape here, once.
+    if (safe.topicProgress && typeof safe.topicProgress === 'object') {
+      for (const topicId of Object.keys(safe.topicProgress)) {
+        const tp = safe.topicProgress[topicId];
+        if (tp && typeof tp === 'object') normalizeTopicRecord(tp);
+        else delete safe.topicProgress[topicId];
+      }
+    } else {
+      safe.topicProgress = {};
+    }
 
     if (safe.xp && typeof safe.xp === 'object') {
       safe.xp = {

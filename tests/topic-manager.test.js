@@ -256,3 +256,20 @@ describe('TopicManager', () => {
     expect(wrapper.classList.remove).toHaveBeenCalledWith('game-mode');
   });
 });
+
+describe('TopicManager — hub survives topic records from older app versions', () => {
+  it('renders the hub when a stored record has no completedLevels', async () => {
+    const hub = { innerHTML: '', classList: { toggle: vi.fn() } };
+    globalThis.document.getElementById = vi.fn((id) => (id === 'topics-hub' ? hub : null));
+    const { TopicManager } = await import('../js/topics/TopicManager.js');
+    const tm = new TopicManager({
+      getTopicStats: vi.fn((id) => (id === 'cybersecurity' ? { completedLessons: {} } : null)),
+      isTopicLessonCompleted: vi.fn(() => false),
+      getXP: vi.fn(() => ({ total: 0 })),
+    });
+
+    expect(() => tm.renderTopicsHub()).not.toThrow();
+    expect((hub.innerHTML.match(/class="topic-card"/g) || []).length).toBeGreaterThan(10);
+    expect(hub.innerHTML).toContain('0/12 livelli');
+  });
+});

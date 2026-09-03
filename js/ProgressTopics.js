@@ -1,3 +1,26 @@
+/**
+ * Bring a stored topic record up to the current shape, in place. Every field
+ * the readers touch is guaranteed to exist afterwards, whatever version of
+ * the app wrote the record.
+ */
+export function normalizeTopicRecord(tp) {
+  if (!tp || typeof tp !== 'object') return tp;
+  if (!tp.completedLessons || typeof tp.completedLessons !== 'object') tp.completedLessons = {};
+  if (!Array.isArray(tp.completedLevels)) tp.completedLevels = [];
+  if (!Array.isArray(tp.unlockedLevels)) tp.unlockedLevels = [0];
+  if (!tp.unlockedLevels.includes(0)) tp.unlockedLevels.unshift(0);
+  if (typeof tp.wordsLearned !== 'number' || !Number.isFinite(tp.wordsLearned)) tp.wordsLearned = 0;
+  if (typeof tp.lastActiveLevel !== 'number' || !Number.isFinite(tp.lastActiveLevel)) {
+    tp.lastActiveLevel = 0;
+  }
+  if (!tp.practiceStats || typeof tp.practiceStats !== 'object') {
+    tp.practiceStats = { totalQuestions: 0, correctAnswers: 0 };
+  }
+  if (!tp.lessonStars || typeof tp.lessonStars !== 'object') tp.lessonStars = {};
+  if (!tp.bossResults || typeof tp.bossResults !== 'object') tp.bossResults = {};
+  return tp;
+}
+
 export const progressTopicsMixin = {
   ensureTopicProgress(topicId) {
     if (!this.data.topicProgress) {
@@ -15,10 +38,10 @@ export const progressTopicsMixin = {
         bossResults: {},
       };
     }
-    const tp = this.data.topicProgress[topicId];
-    if (!tp.lessonStars) tp.lessonStars = {};
-    if (!tp.bossResults) tp.bossResults = {};
-    return this.data.topicProgress[topicId];
+    // Records written by earlier versions of the app predate some of these
+    // fields; a missing `completedLevels` used to throw on the first render of
+    // the Topics hub and took the whole section down.
+    return normalizeTopicRecord(this.data.topicProgress[topicId]);
   },
 
   completeTopicLesson(topicId, level, lessonId) {
@@ -85,7 +108,7 @@ export const progressTopicsMixin = {
     if (level === 0) return true;
     const tp = this.data.topicProgress?.[topicId];
     if (!tp) return level === 0;
-    return tp.unlockedLevels.includes(level);
+    return normalizeTopicRecord(tp).unlockedLevels.includes(level);
   },
 
   unlockTopicLevels(topicId, levels) {
@@ -124,7 +147,8 @@ export const progressTopicsMixin = {
   },
 
   getTopicStats(topicId) {
-    return this.data.topicProgress?.[topicId] || null;
+    const tp = this.data.topicProgress?.[topicId];
+    return tp ? normalizeTopicRecord(tp) : null;
   },
 
   incrementTopicWord(topicId) {

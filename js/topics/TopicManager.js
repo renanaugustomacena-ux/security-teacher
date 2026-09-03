@@ -207,7 +207,9 @@ export class TopicManager {
         ${topicsRegistry
           .map((topic) => {
             const stats = this.progressManager.getTopicStats(topic.id);
-            const completedLevels = stats ? stats.completedLevels.length : 0;
+            const completedLevels = Array.isArray(stats?.completedLevels)
+              ? stats.completedLevels.length
+              : 0;
             // Calculate total stars from cached data if available
             const cachedData = this.dataCache[topic.id];
             let starInfo = { earned: 0, possible: 0 };
@@ -297,7 +299,8 @@ export class TopicManager {
 
     const stats = this.progressManager.getTopicStats(meta.id);
     const levelKeys = Object.keys(data.levels).sort((a, b) => Number(a) - Number(b));
-    const completedLevelsCount = stats ? stats.completedLevels.length : 0;
+    const completedLevelList = Array.isArray(stats?.completedLevels) ? stats.completedLevels : [];
+    const completedLevelsCount = completedLevelList.length;
     const percent = Math.round((completedLevelsCount / meta.levelCount) * 100);
 
     // Calculate aggregate stats
@@ -340,7 +343,7 @@ export class TopicManager {
             const level = data.levels[levelKey];
             const lvlNum = Number(levelKey);
             const isUnlocked = this.progressManager.isTopicLevelUnlocked(meta.id, lvlNum);
-            const isCompleted = stats && stats.completedLevels.includes(lvlNum);
+            const isCompleted = completedLevelList.includes(lvlNum);
             const totalItems = level.lessons.reduce((sum, l) => sum + l.items.length, 0);
             const completedLessons = level.lessons.filter((l) =>
               this.progressManager.isTopicLessonCompleted(meta.id, lvlNum, l.id)
