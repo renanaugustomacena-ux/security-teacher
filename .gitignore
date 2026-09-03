@@ -159,3 +159,6 @@ ds-bundle/
 
 # Local-only assessment data (sensitive, not to be pushed)
 css/adami/
+
+# Netlify CLI state (site link written by `netlify deploy` / the Netlify MCP)
+.netlify/
