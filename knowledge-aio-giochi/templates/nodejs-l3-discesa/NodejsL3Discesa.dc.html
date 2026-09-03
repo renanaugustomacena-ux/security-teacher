@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Node.js L3 — La discesa dei moduli" description="Livello 3, banda 1: corsa infinita in discesa (archetipo runner) sulla risoluzione di require. Cinque lezioni, tre imbocchi identici, nessun colore che aiuti." -->
+<!--
+  SCHEDA DI PROGETTO (ricerca/00 §0.3)
+  GIOCO ...... La discesa dei moduli
+  LIVELLO .... Node.js, L3 Moduli CommonJS, banda 1
+  CAPITOLO ... 2 di 8 — come require trova un modulo
+  CONCETTO ... Quando chiedi una cosa per nome, chi te la porta la cerca
+               sempre nello stesso ordine di posti. Se non è in nessuno,
+               si ferma tutto.
+  FORMA ...... ordinamento           VERBO ... deviare
+  ARCHETIPO .. ricerca/12 endless runner — Temple Run
+  VINCI SE ... arrivi in fondo alla discesa con il pacco che cercavi
+  PERDI SE ... prendi l'imbocco dove il pacco non è: la galleria finisce
+               contro la roccia
+  SBAGLI ..... 1 sbandi entrando di traverso, la corsa continua
+               2 al bivio successivo dello stesso tipo i tre cartelli si
+                 illuminano nell'ordine di ricerca
+               3 dopo lo schianto l'imbocco giusto resta illuminato
+  BEAT ....... 1 due imbocchi, uno murato · 2 ./ è la cartella di fianco
+               3 FRATTURA: nome nudo, si risale fino a node_modules
+               4 misti, 1,0 s fra i bivi · 5 tutti i casi, 1,4 s
+  MONDO ...... miniera in discesa, gallerie di legno, lanterne, cartelli
+               inchiodati sopra ogni imbocco
+  NUMERI ..... visibilità 2,6 s costante (la scala si riduce al crescere
+               della velocità), buffer 350/120 ms, hit-stop 90 ms,
+               riavvio 700 ms
+  TEST 1 ..... i tre imbocchi sono identici, stessa pietra, ordine
+               casuale a ogni bivio. L'unico segnale è il cartello.
+  TEST 2 ..... "Scelgo l'imbocco dove Node cercherebbe, prima di arrivarci"
+  TEST 3 ..... si corre già; il primo bivio ha un imbocco murato
+-->
+<helmet>
+<script src="./ds-base.js"></script>
+<style>
+*{box-sizing:border-box}html,body{margin:0;padding:0;height:100%;background:#07080a}
+@keyframes om-fade{from{opacity:0}to{opacity:1}}
+@keyframes om-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes om-dig{0%{transform:translateY(0);opacity:0}12%{opacity:1}70%{transform:translateY(-46px);opacity:1}90%{transform:translateY(-46px);opacity:0}100%{opacity:0}}
+</style>
+</helmet>
+<div style="position:fixed;inset:0;background:radial-gradient(130% 90% at 50% -10%,#111820 0%,#0a0d11 55%,#06080a 100%);display:grid;place-items:center;font-family:Raleway,system-ui,sans-serif;overflow:hidden;padding:18px">
+<div style="display:flex;align-items:center;justify-content:center;gap:26px;max-width:100%">
+<div style="position:relative;height:min(910px,calc(100vh - 36px),max(480px,calc((100vw - 280px) * 2.1667)));aspect-ratio:420/910;border-radius:24px;overflow:hidden;box-shadow:0 50px 130px -34px rgba(0,0,0,.95),0 0 0 1px rgba(150,190,220,.12);flex:0 0 auto">
+<canvas ref="{{ cvRef }}" style="display:block;width:100%;height:100%;touch-action:none;cursor:grab"></canvas>
+<sc-if value="{{ coachOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;left:14px;right:14px;top:14px;padding:20px 20px 16px;border-radius:18px;background:linear-gradient(180deg,rgba(18,25,32,.97),rgba(11,15,20,.97));box-shadow:0 24px 60px -18px rgba(0,0,0,.9),inset 0 1px 0 rgba(150,190,220,.18);animation:om-rise .26s cubic-bezier(.16,1,.3,1) both;cursor:pointer">
+<div style="font-size:20px;line-height:1.45;color:#e6eef4;font-weight:500">{{ coachWhat }}</div>
+<div style="font-size:20px;line-height:1.45;color:#a9bccb;margin-top:10px">{{ coachEffect }}</div>
+<div style="font-size:20px;line-height:1.45;color:#7fc4e8;margin-top:14px;font-weight:600">{{ coachRule }}</div>
+<div style="margin-top:18px;height:104px;border-radius:12px;background:rgba(0,0,0,.4);position:relative;overflow:hidden;display:flex;align-items:flex-end;gap:10px;padding:10px 14px">
+<div style="flex:1;display:flex;flex-direction:column;gap:5px;align-items:center">
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8ea6b8">./</div>
+<div style="width:100%;height:26px;border-radius:4px 4px 0 0;background:rgba(150,190,220,.14)"></div>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:5px;align-items:center">
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8ea6b8">../</div>
+<div style="width:100%;height:44px;border-radius:4px 4px 0 0;background:rgba(150,190,220,.14)"></div>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:5px;align-items:center;position:relative">
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7fc4e8">node_modules</div>
+<div style="width:100%;height:66px;border-radius:4px 4px 0 0;background:rgba(127,196,232,.24)"></div>
+<div style="position:absolute;left:50%;bottom:8px;width:12px;height:12px;margin-left:-6px;border-radius:2px;background:#c99a5a;animation:om-dig 2.2s ease-in-out infinite"></div>
+</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ doneOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(70% 50% at 50% 45%,rgba(16,26,34,.9),rgba(6,8,10,.96));animation:om-fade .22s ease both;cursor:pointer">
+<div style="text-align:center;padding:0 30px">
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:34px;font-weight:600;color:#eaf2f7;letter-spacing:-.01em">Consegnato</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:34px;font-weight:600;color:#eaf2f7;letter-spacing:-.01em">Delivered</div></sc-if>
+<div style="display:flex;gap:10px;justify-content:center;margin-top:26px">
+<sc-for list="{{ marks }}" as="m" hint-placeholder-count="5">
+<div style="width:34px;height:6px;border-radius:3px;background:rgba(127,196,232,.2);position:relative;overflow:hidden">
+<sc-if value="{{ m.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;background:#7fc4e8"></div></sc-if>
+</div>
+</sc-for>
+</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#8b9aa0;margin-top:22px;letter-spacing:.04em">{{ doneHint }}</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ pauseOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;backdrop-filter:blur(9px);background:rgba(7,9,12,.72);display:grid;place-items:center;animation:om-fade .2s ease both">
+<div style="width:290px;padding:24px;border-radius:20px;background:linear-gradient(180deg,rgba(20,28,36,.98),rgba(11,15,20,.98));box-shadow:0 30px 70px -20px rgba(0,0,0,.9),inset 0 1px 0 rgba(150,190,220,.16)">
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#7b8fa0;font-family:'JetBrains Mono',monospace">In pausa</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#7b8fa0;font-family:'JetBrains Mono',monospace">Paused</div></sc-if>
+<div style="display:flex;flex-direction:column;gap:9px;margin-top:16px">
+<div onClick="{{ resume }}" style="padding:14px 16px;border-radius:12px;background:#7fc4e8;color:#0a1218;font-size:17px;font-weight:600;text-align:center;cursor:pointer" style-hover="background:#98d2f0"><sc-if value="{{ it }}" hint-placeholder-val="{{ true }}">Riprendi</sc-if><sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">Resume</sc-if></div>
+<div onClick="{{ toggleLang }}" style="padding:13px 16px;border-radius:12px;background:rgba(127,196,232,.1);color:#dceaf2;font-size:16px;display:flex;justify-content:space-between;cursor:pointer" style-hover="background:rgba(127,196,232,.18)"><span><sc-if value="{{ it }}" hint-placeholder-val="{{ true }}">Lingua</sc-if><sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">Language</sc-if></span><span style="font-family:'JetBrains Mono',monospace;color:#7fc4e8">{{ langLabel }}</span></div>
+<div onClick="{{ toggleMute }}" style="padding:13px 16px;border-radius:12px;background:rgba(127,196,232,.1);color:#dceaf2;font-size:16px;display:flex;justify-content:space-between;cursor:pointer" style-hover="background:rgba(127,196,232,.18)"><span>Audio</span><span style="font-family:'JetBrains Mono',monospace;color:#7fc4e8">{{ audioState }}</span></div>
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#7b8fa0;font-family:'JetBrains Mono',monospace;margin-top:12px">Lezione</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#7b8fa0;font-family:'JetBrains Mono',monospace;margin-top:12px">Lesson</div></sc-if>
+<div style="display:flex;gap:7px">
+<sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+<div onClick="{{ l.go }}" style="flex:1;padding:11px 0;border-radius:10px;background:rgba(127,196,232,.1);color:#dceaf2;font-family:'JetBrains Mono',monospace;font-size:15px;text-align:center;cursor:pointer;position:relative" style-hover="background:rgba(127,196,232,.2)">{{ l.n }}
+<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:50%;bottom:5px;width:14px;height:2px;margin-left:-7px;background:#7fc4e8;border-radius:1px"></div></sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</div>
+</sc-if>
+</div>
+<div style="flex:0 1 212px;min-width:0;min-height:0;max-height:min(910px,calc(100vh - 36px));overflow-y:auto;display:flex;flex-direction:column;gap:14px;padding-right:4px;color:#9fb2c0">
+<div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#7e9096">L2 · Moduli e NPM</div>
+<div style="font-size:23px;font-weight:600;color:#e6eef4;margin-top:4px;line-height:1.2">La discesa dei moduli</div>
+<div style="font-size:14px;line-height:1.5;color:#7b8fa0;margin-top:8px">L2 Moduli e NPM · capitoli 1-3 · runner</div>
+</div>
+<div style="height:1px;background:rgba(127,196,232,.14)"></div>
+<div style="display:flex;flex-direction:column;gap:5px">
+<sc-for list="{{ chapters }}" as="c" hint-placeholder-count="3">
+<div onClick="{{ c.go }}" style="padding:9px 11px;border-radius:8px;background:rgba(127,196,232,.06);cursor:pointer;display:flex;gap:10px;align-items:baseline" style-hover="background:rgba(127,196,232,.14)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#7fc4e8;width:12px">{{ c.n }}</div>
+<div style="flex:1;min-width:0">
+<div style="font-size:14px;color:#dceaf2;line-height:1.3">{{ c.title }}</div>
+<sc-if value="{{ c.on }}" hint-placeholder-val="{{ false }}"><div style="height:2px;background:#7fc4e8;border-radius:1px;margin-top:6px"></div></sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7e9096">Lezione {{ chapterNo }}.x</div>
+<div style="display:flex;flex-direction:column;gap:7px">
+<sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+<div onClick="{{ l.go }}" style="padding:11px 13px;border-radius:11px;background:rgba(127,196,232,.07);cursor:pointer;display:flex;gap:11px;align-items:baseline" style-hover="background:rgba(127,196,232,.15)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#7fc4e8;width:14px">{{ l.n }}</div>
+<div style="flex:1;min-width:0">
+<div style="font-size:15px;color:#dceaf2;line-height:1.3">{{ l.title }}</div>
+<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><div style="height:2px;background:#7fc4e8;border-radius:1px;margin-top:7px"></div></sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="font-size:13px;line-height:1.55;color:#7e9096">Scorri a destra e sinistra, o usa le frecce, per prendere l'imbocco dove Node cercherebbe il pacco che porti. <span style="color:#7b8fa0">Esc</span> per la pausa.</div>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:940,&quot;height&quot;:1000},&quot;capitolo&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;],&quot;default&quot;:&quot;1&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;lezione&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;],&quot;default&quot;:&quot;1&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;lingua&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;it&quot;,&quot;en&quot;],&quot;default&quot;:&quot;it&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;diagnostica&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Taratura&quot;}}">
+const W=420,H=910,RY=.72,VIS=2.6;
+const LAB=['./','../','node_modules'];
+const B=(o)=>Object.assign({names:['./attrezzi'],mouths:3,gap:1.6,v:190,steps:5,walled:false},o);
+/* L2 Moduli e NPM — capitoli 1-3 di 8 (i 4-6 sono Il magazzino delle versioni,
+   i 7-8 La soglia). Vedi ricerca/32 §32.7. */
+const CH=[
+ {t:['Dove si cerca','Where it looks'],titles:[['Una via sola','One way only'],['La cartella di fianco','The folder beside'],['Due di fianco','Two beside'],['Senza fermarti','No pause'],['Il ritmo','The rhythm']],
+  beats:[B({names:['./attrezzi','./lampade'],mouths:2,gap:2.0,v:165,steps:4,walled:true}),
+   B({names:['./attrezzi','./lampade'],mouths:2,gap:1.8,v:175,steps:5,walled:true}),
+   B({names:['./attrezzi','./lampade','./picconi'],mouths:3,gap:1.7,v:185,steps:5}),
+   B({names:['./attrezzi','./lampade','./picconi','./carrelli'],mouths:3,gap:1.2,v:215,steps:7}),
+   B({names:['./attrezzi','./lampade','./picconi'],mouths:3,gap:1.6,v:190,steps:6})]},
+ {t:['Il nome nudo','The bare name'],titles:[['Sale express','express appears'],['Non è di fianco','Not beside'],['Si risale','You climb'],['Nudi e relativi','Bare and relative'],['Adesso lo sai','Now you know']],
+  beats:[B({names:['express','./attrezzi'],mouths:3,gap:1.9,v:170,steps:4}),
+   B({names:['express','lodash','./attrezzi'],mouths:3,gap:1.7,v:185,steps:5}),
+   B({names:['express','lodash','chalk','./attrezzi'],mouths:3,gap:1.6,v:195,steps:5}),
+   B({names:['express','./attrezzi','lodash','./lampade','chalk'],mouths:3,gap:1.15,v:225,steps:7}),
+   B({names:['express','lodash','./attrezzi','chalk'],mouths:3,gap:1.55,v:200,steps:6})]},
+ {t:['Su di un piano','One floor up'],titles:[['Il pozzo','The shaft'],['Due punti','Two dots'],['Piano sopra, piano sotto','Up and down'],['Tutti i casi','Every case'],['Tutta la miniera','The whole mine']],
+  beats:[B({names:['../comune','./attrezzi'],mouths:3,gap:1.9,v:170,steps:4}),
+   B({names:['../comune','../base','./attrezzi'],mouths:3,gap:1.7,v:185,steps:5}),
+   B({names:['../comune','./attrezzi','express'],mouths:3,gap:1.6,v:195,steps:6}),
+   B({names:['../comune','../base','./attrezzi','./lampade','express','lodash'],mouths:3,gap:1.1,v:230,steps:8}),
+   B({names:['../comune','./attrezzi','express','chalk','./lampade'],mouths:3,gap:1.5,v:200,steps:6})]}];
+const T={it:{what:n=>'Sei entrato dove '+n+' non era.',fx:'La galleria finiva contro la roccia.',rule:'Un nome senza ./ non sta di fianco: si risale a node_modules.',ruleRel:'./ è la cartella di fianco. ../ è un piano sopra.',tap:'tocca per continuare'},
+ en:{what:n=>'You went where '+n+' was not.',fx:'The tunnel ended against the rock.',rule:'A name without ./ is not beside you: you climb to node_modules.',ruleRel:'./ is the folder beside. ../ is one floor up.',tap:'tap to continue'}};
+const KEY='kaio.l3.discesa';
+const want=n=>n.startsWith('./')?'./':n.startsWith('../')?'../':'node_modules';
+
+class Component extends DCLogic{
+ state={beat:0,chapter:0,lang:'it',paused:false,coach:null,done:false,muted:false,step:0};
+ renderVals(){
+  const s=this.state,L=T[s.lang],c=s.coach,it=s.lang==='it',TT=CH[s.chapter].titles;
+  return {cvRef:this.cv||(this.cv=React.createRef()),
+   it,en:!it,coachOpen:!!c,doneOpen:s.done,pauseOpen:s.paused,
+   coachWhat:c?L.what(c.name):'',coachEffect:c?L.fx:'',coachRule:c?(c.rel?L.ruleRel:L.rule):'',
+   doneHint:L.tap,audioState:s.muted?'—':'ON',langLabel:it?'IT':'EN',
+   chapterNo:String(s.chapter+1),chapterOf:String(CH.length),chapterTitle:CH[s.chapter].t[it?0:1],
+   chapters:CH.map((ch,i)=>({n:String(i+1),title:ch.t[it?0:1],on:i===s.chapter,go:()=>this.goChapter(i)})),
+   marks:TT.map((t,i)=>({on:i<=s.beat})),
+   lessons:TT.map((t,i)=>({n:String(i+1),title:t[it?0:1],on:i===s.beat,go:()=>this.goBeat(i)})),
+   resume:()=>this.setState({paused:false}),
+   toggleLang:()=>{const l=this.state.lang==='it'?'en':'it';this.setState({lang:l});this.save({lang:l})},
+   toggleMute:()=>{const m=!this.state.muted;this.setState({muted:m});if(this.rumble)this.rumble.gain.gain.value=m?0:.03;this.save({muted:m})}};
+ }
+ save(o){try{localStorage.setItem(KEY,JSON.stringify(Object.assign({beat:this.state.beat,chapter:this.state.chapter,lang:this.state.lang,muted:this.state.muted},o)))}catch(e){}}
+ componentDidMount(){
+  let sv={};try{sv=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
+  const pc=parseInt(this.props.capitolo,10);
+  const ci=Number.isFinite(pc)&&pc>=1&&pc<=CH.length?pc-1:Math.min(CH.length-1,sv.chapter||0);
+  this.BEATS=CH[ci].beats;
+  const pb=parseInt(this.props.lezione,10);
+  const beat=Number.isFinite(pb)&&pb>=1&&pb<=5?pb-1:Math.min(4,sv.beat||0);
+  this.setState({beat,chapter:ci,lang:this.props.lingua||sv.lang||'it',muted:!!sv.muted});
+  this.reset(beat);
+  let el=this.cv&&this.cv.current;
+  if(el&&!el.getContext)el=el.querySelector&&el.querySelector('canvas');
+  if(!el||!el.getContext)return;
+  this.el=el;this.ctx=el.getContext('2d');
+  this.onResize=()=>{const r=el.getBoundingClientRect(),d=Math.min(window.devicePixelRatio||1,2.5);el.width=Math.round(r.width*d);el.height=Math.round(r.height*d);this.sc=el.width/W};
+  this.onResize();window.addEventListener('resize',this.onResize);
+  this.ro=window.ResizeObserver?new ResizeObserver(this.onResize):null;if(this.ro)this.ro.observe(el);
+  const px=e=>{const r=el.getBoundingClientRect();return{x:(e.clientX-r.left)/r.width*W,y:(e.clientY-r.top)/r.height*H}};
+  this.down=e=>{el.setPointerCapture&&el.setPointerCapture(e.pointerId);this.audio();this.p0=px(e);this.swiped=false;
+   if(this.state.coach){this.setState({coach:null});this.deaths=0;return}
+   if(this.state.done){this.next();return}};
+  this.move=e=>{if(!this.p0||this.swiped)return;const p=px(e);const dx=p.x-this.p0.x,dy=p.y-this.p0.y;
+   if(this.p0.y<20&&dy>44){this.p0=null;this.setState({paused:true});return}
+   if(Math.abs(dx)>28&&Math.abs(dx)>Math.abs(dy)){this.want(dx>0?1:-1);this.swiped=true;this.p0=p}};
+  this.up=e=>{if(this.p0&&!this.swiped){const p=px(e&&e.clientX!=null?e:{clientX:0,clientY:0});}this.p0=null;this.swiped=false};
+  this.tap=e=>{const p=px(e);if(!this.state.paused&&!this.state.done&&!this.state.coach){const lane=p.x<W/3?0:p.x<2*W/3?1:2;this.setLane(lane)}};
+  el.addEventListener('pointerdown',this.down);el.addEventListener('pointermove',this.move);
+  el.addEventListener('click',this.tap);
+  window.addEventListener('pointerup',this.up);window.addEventListener('pointercancel',this.up);
+  this.onKey=e=>{if(e.key==='Escape'){e.preventDefault();this.setState(s=>({paused:!s.paused}));return}
+   if(e.key==='ArrowLeft'||e.key==='a'){this.want(-1);e.preventDefault()}
+   if(e.key==='ArrowRight'||e.key==='d'){this.want(1);e.preventDefault()}};
+  window.addEventListener('keydown',this.onKey);
+  this.last=this.lastT=performance.now();this.loop=this.loop.bind(this);this.raf=requestAnimationFrame(this.loop);
+  this.iv=setInterval(()=>{const n=performance.now();if(n-this.lastT>120)this.frame(n)},33);
+  this.draw();
+ }
+ componentDidUpdate(pp){
+  if(pp.capitolo!==this.props.capitolo){const c=parseInt(this.props.capitolo,10);if(Number.isFinite(c)&&c>=1&&c<=CH.length&&c-1!==this.state.chapter)this.goChapter(c-1)}
+  if(pp.lezione!==this.props.lezione){const n=parseInt(this.props.lezione,10);if(Number.isFinite(n)&&n>=1&&n<=5&&n-1!==this.state.beat)this.goBeat(n-1)}
+  if(pp.lingua!==this.props.lingua&&this.props.lingua)this.setState({lang:this.props.lingua});
+ }
+ componentWillUnmount(){cancelAnimationFrame(this.raf);clearInterval(this.iv);window.removeEventListener('resize',this.onResize);window.removeEventListener('pointerup',this.up);window.removeEventListener('pointercancel',this.up);window.removeEventListener('keydown',this.onKey);if(this.ro)this.ro.disconnect();if(this.ac)this.ac.close()}
+
+ audio(){if(this.ac)return;try{const A=window.AudioContext||window.webkitAudioContext;this.ac=new A();const g=this.ac.createGain();g.gain.value=this.state.muted?0:.03;g.connect(this.ac.destination);const o=this.ac.createOscillator();o.type='sawtooth';o.frequency.value=44;const f=this.ac.createBiquadFilter();f.type='lowpass';f.frequency.value=180;o.connect(f);f.connect(g);o.start();this.rumble={osc:o,gain:g,filt:f}}catch(e){}}
+ snd(k){const ac=this.ac;if(!ac||this.state.muted)return;const t=ac.currentTime,g=ac.createGain();g.connect(ac.destination);
+  if(k==='pass'){const b=ac.createBufferSource(),n=ac.createBuffer(1,5200,ac.sampleRate),d=n.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=(Math.random()*2-1)*Math.sin(Math.PI*i/d.length);b.buffer=n;const f=ac.createBiquadFilter();f.type='bandpass';f.frequency.setValueAtTime(500,t);f.frequency.exponentialRampToValueAtTime(1900,t+.14);b.connect(f);f.connect(g);g.gain.setValueAtTime(.14,t);g.gain.exponentialRampToValueAtTime(.001,t+.2);b.start(t)}
+  else if(k==='crash'){const b=ac.createBufferSource(),n=ac.createBuffer(1,14000,ac.sampleRate),d=n.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/d.length,1.7);b.buffer=n;const f=ac.createBiquadFilter();f.type='lowpass';f.frequency.setValueAtTime(1100,t);f.frequency.exponentialRampToValueAtTime(160,t+.5);b.connect(f);f.connect(g);g.gain.setValueAtTime(.42,t);g.gain.exponentialRampToValueAtTime(.001,t+.6);b.start(t)}
+  else if(k==='skid'){const o=ac.createOscillator();o.type='triangle';o.frequency.setValueAtTime(220,t);o.frequency.exponentialRampToValueAtTime(120,t+.18);o.connect(g);g.gain.setValueAtTime(.1,t);g.gain.exponentialRampToValueAtTime(.001,t+.22);o.start(t);o.stop(t+.24)}
+  else if(k==='done'){[392,523,659].forEach((hz,i)=>{const o=ac.createOscillator(),gg=ac.createGain();o.type='sine';o.frequency.value=hz;o.connect(gg);gg.connect(ac.destination);gg.gain.setValueAtTime(0,t+i*.11);gg.gain.linearRampToValueAtTime(.12,t+i*.11+.02);gg.gain.exponentialRampToValueAtTime(.001,t+i*.11+.42);o.start(t+i*.11);o.stop(t+i*.11+.44)})}}
+
+ reset(beat){const c=this.BEATS[beat];this.cfg=c;this.needed=c.steps;
+  this.s=0;this.v=c.v;this.lane=1;this.laneX=1;this.forks=[];this.dust=[];this.hitstop=0;this.shake=0;
+  this.dead=0;this.deadFork=null;this.deaths=this.deaths||0;this.hintFork=false;this.tilt=0;this.wantAt=-9;this.wantDir=0;
+  this.nextS=this.v*VIS*.9;this.pack=c.names[0];this.pi=0}
+ goBeat(i,ci){const c=ci==null?this.state.chapter:ci;if(c!==this.state.chapter)this.BEATS=CH[c].beats;
+  this.reset(i);this.deaths=0;this.setState({beat:i,chapter:c,step:0,done:false,coach:null,paused:false});this.save({beat:i,chapter:c})}
+ goChapter(c){this.goBeat(0,c)}
+ next(){if(this.state.beat<4){this.goBeat(this.state.beat+1);return}
+  const c=this.state.chapter+1;this.goBeat(0,c<CH.length?c:0)}
+ want(d){this.wantAt=this.s;this.wantDir=d;this.setLane(Math.max(0,Math.min(this.cfg.mouths-1,this.lane+d)))}
+ setLane(l){if(l===this.lane)return;const m=this.cfg.mouths;if(l<0||l>=m)return;this.lane=l;this.tilt=(l-this.laneX)>0?1:-1}
+
+ spawnFork(){const c=this.cfg,m=c.mouths;
+  const order=LAB.slice(0,3).sort(()=>Math.random()-.5).slice(0,m);
+  const w=want(this.pack);let idx=order.indexOf(w);
+  if(idx<0){order[Math.floor(Math.random()*m)]=w;idx=order.indexOf(w)}
+  const walled=c.walled?order.map((o,i)=>i!==idx&&Math.random()<.9):order.map(()=>false);
+  this.forks.push({s:this.nextS,order,idx,walled,name:this.pack,done:false,hint:this.hintFork});this.hintFork=false;
+  this.nextS+=this.v*c.gap}
+
+ update(dt){const c=this.cfg;
+  if(this.dead>0){this.dead-=dt;if(this.dead<=0){this.s=Math.max(0,this.s-this.v*1.6);this.forks=this.forks.filter(f=>f.s>this.s+this.v*.7);this.deadFork=null;this.setState({step:0});this.pi=0;this.pack=c.names[0]}
+   return}
+  this.v*=Math.pow(1.07,dt/15);if(this.v>c.v*2.1)this.v=c.v*2.1;
+  this.s+=this.v*dt;
+  if(this.rumble)this.rumble.filt.frequency.value=150+this.v*.5;
+  this.laneX+=(this.lane-this.laneX)*Math.min(1,dt/.14);
+  this.tilt*=Math.max(0,1-dt*5);
+  if(!this.forks.length||this.nextS-this.s<this.v*VIS*1.3)this.spawnFork();
+  for(const f of this.forks){
+   if(f.done||f.s>this.s)continue;
+   f.done=true;
+   const lane=Math.round(this.laneX);
+   const late=Math.abs(this.laneX-this.lane)>.35;
+   if(lane===f.idx&&!f.walled[lane]){
+    this.snd('pass');if(late)this.snd('skid');
+    for(let i=0;i<10;i++)this.dust.push({x:W*(.5+(Math.random()-.5)*.6),y:H*RY,vx:(Math.random()-.5)*90,vy:-60-Math.random()*140,l:0,m:.5});
+    const step=this.state.step+1;this.setState({step});
+    this.pi++;this.pack=c.names[this.pi%c.names.length];
+    if(step>=this.needed){this.snd('done');this.setState({done:true})}
+   } else {
+    this.snd('crash');this.hitstop=90;this.shake=1;this.dead=.75;this.deadFork=f;this.deaths++;
+    for(let i=0;i<22;i++)this.dust.push({x:W*(.2+this.laneX*.3),y:H*RY,vx:(Math.random()-.5)*260,vy:-90-Math.random()*220,l:0,m:.7});
+    if(this.deaths===2)this.hintFork=true;
+    if(this.deaths>=3){this.setState({coach:{name:f.name,rel:want(f.name)!=='node_modules'}});this.deaths=0}
+   }}
+  this.forks=this.forks.filter(f=>f.s>this.s-this.v*.6);
+  for(const d of this.dust){d.l+=dt;d.vy+=420*dt;d.x+=d.vx*dt;d.y+=d.vy*dt}
+  this.dust=this.dust.filter(d=>d.l<d.m);
+  if(this.shake>0)this.shake-=dt*3}
+
+ frame(t){const dt=Math.min(.048,(t-this.last)/1000);this.last=t;this.lastT=t;const s=this.state;
+  try{
+   if(!s.paused&&!s.done&&!s.coach){if(this.hitstop>0)this.hitstop-=dt*1000;else this.update(dt)}
+   this.draw();
+  }catch(err){if(!this.reported){this.reported=1;console.error('L3',err)}}}
+ loop(t){this.frame(t);this.raf=requestAnimationFrame(this.loop)}
+
+ draw(){const x=this.ctx;if(!x)return;const sc=this.sc||1;x.setTransform(sc,0,0,sc,0,0);
+  const m=this.cfg.mouths,scale=(H*RY)/(this.v*VIS);
+  x.save();if(this.shake>0)x.translate((Math.random()*2-1)*5*this.shake,(Math.random()*2-1)*4*this.shake);
+  const g=x.createLinearGradient(0,0,0,H);g.addColorStop(0,'#05070a');g.addColorStop(.42,'#0d131a');g.addColorStop(1,'#151d26');x.fillStyle=g;x.fillRect(-8,-8,W+16,H+16);
+  const lanes=[];for(let i=0;i<m;i++)lanes.push(W*(i+.5)/m);
+  x.strokeStyle='rgba(150,190,220,.07)';x.lineWidth=1;
+  for(let i=1;i<m;i++){x.beginPath();x.moveTo(W*i/m,0);x.lineTo(W*i/m,H);x.stroke()}
+  const beam=this.v*.42;const off=(this.s%beam)*scale;
+  for(let k=-1;k<24;k++){const y=H*RY-(k*beam*scale)+off;if(y<-20||y>H+20)continue;
+   const a=Math.max(0,Math.min(.5,(1-Math.abs(y-H*RY)/(H*.9))*.5));
+   x.strokeStyle='rgba(120,150,175,'+(a*.5)+')';x.lineWidth=Math.max(1,3*scale*1.6);x.beginPath();x.moveTo(10,y);x.lineTo(W-10,y);x.stroke()}
+  const wall=x.createLinearGradient(0,0,26,0);wall.addColorStop(0,'rgba(4,6,9,.9)');wall.addColorStop(1,'rgba(4,6,9,0)');
+  x.fillStyle=wall;x.fillRect(0,0,26,H);x.save();x.translate(W,0);x.scale(-1,1);x.fillStyle=wall;x.fillRect(0,0,26,H);x.restore();
+  for(let k=0;k<7;k++){const y=((this.s*.5+k*260)%(H+200))-100,lx=k%2?15:W-15;
+   const gl=x.createRadialGradient(lx,y,1,lx,y,38);gl.addColorStop(0,'rgba(255,206,140,.42)');gl.addColorStop(1,'rgba(255,206,140,0)');x.fillStyle=gl;
+   x.beginPath();x.arc(lx,y,38,0,6.283);x.fill();
+   x.strokeStyle='rgba(90,70,44,.8)';x.lineWidth=1.5;x.beginPath();x.moveTo(lx,y-14);x.lineTo(lx,y-5);x.stroke();
+   x.fillStyle='rgba(255,228,178,.9)';x.beginPath();x.arc(lx,y,3,0,6.283);x.fill()}
+  for(const f of this.forks){const y=H*RY-(f.s-this.s)*scale;if(y<-160||y>H+60)continue;
+   const near=Math.max(.25,Math.min(1,1-(f.s-this.s)/(this.v*VIS)));
+   const mw=W/m,ah=Math.min(170,120*scale*2.6+46);
+   x.fillStyle='rgba(26,20,14,'+(.5+near*.45)+')';x.fillRect(6,y-6,W-12,10+near*6);
+   x.strokeStyle='rgba(120,88,52,'+(.35*near)+')';x.lineWidth=1;x.beginPath();x.moveTo(6,y-6);x.lineTo(W-6,y-6);x.stroke();
+   for(let i=0;i<m;i++){const cx=lanes[i],x0=cx-mw*.42;
+    x.fillStyle='rgba(8,11,15,'+(.6+near*.38)+')';
+    x.beginPath();x.moveTo(x0,y);x.lineTo(x0,y-ah*.48);x.arc(cx,y-ah*.48,mw*.42,Math.PI,0);x.lineTo(x0+mw*.84,y);x.closePath();
+    if(f.walled[i]){x.fillStyle='rgba(38,30,22,'+(.6+near*.35)+')';x.fill();
+     x.strokeStyle='rgba(120,88,52,'+(.5*near)+')';x.lineWidth=4*near;for(let b=0;b<3;b++){x.beginPath();x.moveTo(x0+4,y-14-b*22);x.lineTo(x0+mw*.84-4,y-22-b*22);x.stroke()}}
+    else x.fill();
+    x.strokeStyle='rgba(150,190,220,'+(.16*near)+')';x.lineWidth=2;x.stroke();
+    const lit=(this.deadFork===f&&i===f.idx)||(f.hint&&i===f.idx);
+    if(lit){x.fillStyle='rgba(127,196,232,.16)';x.fill();x.strokeStyle='rgba(127,196,232,.75)';x.lineWidth=3;x.stroke()}
+    const sy=y-ah*.62-16,sw=Math.min(mw*.92,x.measureText?0:0);
+    x.save();x.font='500 '+Math.max(11,Math.round(15*Math.min(1.2,near*1.25)))+'px "JetBrains Mono",monospace';
+    const tw=x.measureText(f.order[i]).width+14;
+    x.fillStyle='rgba(112,80,46,'+(.55+near*.45)+')';x.beginPath();x.roundRect?x.roundRect(cx-tw/2,sy-13,tw,22,3):x.rect(cx-tw/2,sy-13,tw,22);x.fill();
+    x.fillStyle='rgba(20,14,8,'+(.5+near*.5)+')';x.textAlign='center';x.textBaseline='middle';x.fillText(f.order[i],cx,sy-1.5);
+    x.fillStyle='rgba(240,226,200,'+(.3+near*.6)+')';x.fillText(f.order[i],cx,sy-2.5);x.restore()}}
+  const rx=W*.06+lanes[0]+(this.laneX)*(W/m),ry=H*RY;
+  const px=lanes[0]+this.laneX*(W/m);
+  x.save();x.translate(px,ry);x.rotate(this.tilt*.16);
+  x.fillStyle='rgba(0,0,0,.45)';x.beginPath();x.ellipse(0,20,26,7,0,0,6.283);x.fill();
+  x.fillStyle='#1d2a34';x.beginPath();x.roundRect?x.roundRect(-13,-30,26,34,6):x.rect(-13,-30,26,34);x.fill();
+  x.fillStyle='#c99a5a';x.beginPath();x.roundRect?x.roundRect(-19,-52,38,26,4):x.rect(-19,-52,38,26);x.fill();
+  x.strokeStyle='rgba(90,60,28,.7)';x.lineWidth=1.5;x.beginPath();x.moveTo(-19,-40);x.lineTo(19,-40);x.stroke();
+  x.font='600 13px "JetBrains Mono",monospace';x.textAlign='center';x.textBaseline='middle';
+  x.fillStyle='rgba(40,26,10,.9)';x.fillText(this.pack,0,-38);
+  x.fillStyle='rgba(255,246,230,.5)';x.beginPath();x.arc(0,-34,4.5,0,6.283);x.fill();
+  x.restore();
+  for(const d of this.dust){x.globalAlpha=Math.max(0,1-d.l/d.m)*.8;x.fillStyle='#8b93a0';x.beginPath();x.arc(d.x,d.y,2.2,0,6.283);x.fill()}x.globalAlpha=1;
+  if(this.v>this.cfg.v*1.25){x.globalAlpha=Math.min(.5,(this.v/this.cfg.v-1.25)*.7);x.strokeStyle='#cfe4f2';x.lineWidth=1;
+   for(let i=0;i<9;i++){const lx=(i%2?18:W-18)+(Math.random()*8),ly=((this.s*3+i*180)%H);x.beginPath();x.moveTo(lx,ly);x.lineTo(lx,ly+40);x.stroke()}x.globalAlpha=1}
+  const vg=x.createRadialGradient(W/2,H*.55,H*.28,W/2,H*.55,H*.78);vg.addColorStop(0,'rgba(0,0,0,0)');vg.addColorStop(1,'rgba(0,0,0,.7)');x.fillStyle=vg;x.fillRect(0,0,W,H);
+  if(this.dead>0){x.fillStyle='rgba(6,8,11,'+Math.min(.55,(0.75-this.dead)*1.4)+')';x.fillRect(0,0,W,H)}
+  if(this.props.diagnostica){x.fillStyle='rgba(160,230,255,.9)';x.font='500 12px "JetBrains Mono",monospace';x.textAlign='left';
+   x.fillText('beat '+(this.state.beat+1)+'  v '+this.v.toFixed(0)+'  scala '+scale.toFixed(2)+'  corsia '+this.lane+'  passo '+this.state.step+'/'+this.needed,12,24);
+   x.fillText('pacco '+this.pack+' → '+want(this.pack),12,42)}
+  x.restore()}
+}
+</script>
+</body>
+</html>

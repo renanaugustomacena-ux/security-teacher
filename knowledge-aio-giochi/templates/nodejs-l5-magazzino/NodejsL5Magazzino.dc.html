@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Node.js L5 — Il magazzino delle versioni" description="Livello 5, banda 1: allinea-tre (archetipo Candy Crush) su semver. Non si allineano le uguali: si allineano quelle che possono sostituirsi." -->
+<!--
+  SCHEDA DI PROGETTO (ricerca/00 §0.3)
+  GIOCO ...... Il magazzino delle versioni
+  LIVELLO .... Node.js, L5 npm, banda 1
+  CAPITOLO ... 5 di 8 — semver, caret, tilde, versioni compatibili
+  CONCETTO ... Un ricambio non deve essere identico all'originale: deve essere
+               uno che ci va. E la regola di cosa ci va è scritta sulla cassa.
+  FORMA ...... identità               VERBO ... scambiare due casse vicine
+  ARCHETIPO .. ricerca/14 match-3 — Candy Crush
+  VINCI SE ... l'ordine è completo entro le mosse disponibili
+  PERDI SE ... finiscono le mosse: il camion parte con i buchi
+  SBAGLI ..... 1 scambio che non allinea niente: le casse tornano, non costa
+               2 allineamento di tre incompatibili: la mossa si consuma e
+                 compare il righello con gli intervalli veri
+               3 pannello di coaching, quattro righe, la quarta è animata
+  BEAT ....... 1 solo versioni esatte identiche · 2 entra ^1.2.0
+               3 FRATTURA: ^0.2.1 con 0.3.0. Sotto l'uno il caret blocca
+                 anche il secondo numero: sembra compatibile e non lo è
+               4 caret, tilde e x mescolati, 8 mosse
+               5 tutti i casi, 12 mosse
+  MONDO ...... magazzino ricambi di notte, casse tutte dello stesso legno,
+               etichette stampigliate a inchiostro, lavagna delle mosse
+  NUMERI ..... da ricerca/31: sparizione 260 ms, caduta 120 ms/cella,
+               cascata 180 ms +1 semitono, cella 62 px, mosse 12→8
+  TEST 1 ..... nessun colore distingue le compatibili: la sagoma della cassa
+               dice solo di quale pezzo si tratta (serve per allineare),
+               la compatibilità sta soltanto nella stringa di versione.
+               Le mosse sono contate e l'ipotesi sbagliata costa.
+  TEST 2 ..... "Scambio casse per allineare tre versioni che possono
+               sostituirsi, prima che finiscano le mosse"
+  TEST 3 ..... due casse vicine oscillano insieme: il primo scambio nasce da lì
+-->
+<helmet>
+<script src="./ds-base.js"></script>
+<script src="../kaio-engine.js"></script>
+<style>
+*{box-sizing:border-box}html,body{margin:0;padding:0;height:100%;background:#080705}
+@keyframes om-fade{from{opacity:0}to{opacity:1}}
+@keyframes om-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes om-rule{0%,100%{transform:scaleX(.4)}50%{transform:scaleX(1)}}
+</style>
+</helmet>
+<div style="position:fixed;inset:0;background:radial-gradient(130% 90% at 50% -10%,#1a1409 0%,#0d0a07 55%,#070605 100%);display:grid;place-items:center;font-family:Raleway,system-ui,sans-serif;overflow:hidden;padding:18px">
+<div style="display:flex;align-items:center;justify-content:center;gap:26px;max-width:100%">
+<div style="position:relative;height:min(910px,calc(100vh - 36px),max(480px,calc((100vw - 280px) * 2.1667)));aspect-ratio:420/910;border-radius:24px;overflow:hidden;box-shadow:0 50px 130px -34px rgba(0,0,0,.95),0 0 0 1px rgba(226,170,90,.14);flex:0 0 auto">
+<canvas ref="{{ cvRef }}" style="display:block;width:100%;height:100%;touch-action:none;cursor:pointer"></canvas>
+<sc-if value="{{ coachOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;left:14px;right:14px;top:14px;padding:20px 20px 16px;border-radius:18px;background:linear-gradient(180deg,rgba(30,23,14,.97),rgba(20,15,10,.97));box-shadow:0 24px 60px -18px rgba(0,0,0,.9),inset 0 1px 0 rgba(226,170,90,.18);animation:om-rise .26s cubic-bezier(.16,1,.3,1) both;cursor:pointer">
+<div style="font-size:20px;line-height:1.45;color:#f0e6d6;font-weight:500">{{ coachWhat }}</div>
+<div style="font-size:20px;line-height:1.45;color:#c9b795;margin-top:10px">{{ coachEffect }}</div>
+<div style="font-size:20px;line-height:1.45;color:#e2aa5a;margin-top:14px;font-weight:600">{{ coachRule }}</div>
+<div style="margin-top:18px;height:96px;border-radius:12px;background:rgba(0,0,0,.34);position:relative;overflow:hidden;padding:14px 16px">
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#e8d9bd;letter-spacing:.03em">{{ coachA }}</div>
+<div style="margin-top:8px;height:8px;border-radius:4px;background:rgba(226,170,90,.5);transform-origin:left center;animation:om-rule 2.2s ease-in-out infinite"></div>
+<div style="margin-top:12px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#c9b795;letter-spacing:.03em">{{ coachB }}</div>
+<div style="margin-top:8px;height:8px;width:34%;border-radius:4px;background:rgba(226,170,90,.22)"></div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ doneOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(70% 50% at 50% 45%,rgba(30,22,12,.9),rgba(8,7,5,.96));animation:om-fade .22s ease both;cursor:pointer">
+<div style="text-align:center;padding:0 30px">
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:34px;font-weight:600;color:#f4ebdc;letter-spacing:-.01em">Ordine completo</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:34px;font-weight:600;color:#f4ebdc;letter-spacing:-.01em">Order complete</div></sc-if>
+<div style="display:flex;gap:10px;justify-content:center;margin-top:26px">
+<sc-for list="{{ marks }}" as="m" hint-placeholder-count="5">
+<div style="width:34px;height:6px;border-radius:3px;background:rgba(226,170,90,.22);position:relative;overflow:hidden">
+<sc-if value="{{ m.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;background:#e2aa5a"></div></sc-if>
+</div>
+</sc-for>
+</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#a3937a;margin-top:22px;letter-spacing:.04em">{{ doneHint }}</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ pauseOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;backdrop-filter:blur(9px);background:rgba(10,8,6,.72);display:grid;place-items:center;animation:om-fade .2s ease both">
+<div style="width:290px;padding:24px;border-radius:20px;background:linear-gradient(180deg,rgba(32,25,16,.98),rgba(19,15,10,.98));box-shadow:0 30px 70px -20px rgba(0,0,0,.9),inset 0 1px 0 rgba(226,170,90,.16)">
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace">In pausa</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace">Paused</div></sc-if>
+<div style="display:flex;flex-direction:column;gap:9px;margin-top:16px">
+<div onClick="{{ resume }}" style="padding:14px 16px;border-radius:12px;background:#e2aa5a;color:#191207;font-size:17px;font-weight:600;text-align:center;cursor:pointer" style-hover="background:#eeb867"><sc-if value="{{ it }}" hint-placeholder-val="{{ true }}">Riprendi</sc-if><sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">Resume</sc-if></div>
+<div onClick="{{ toggleLang }}" style="padding:13px 16px;border-radius:12px;background:rgba(226,170,90,.1);color:#e8d9bd;font-size:16px;display:flex;justify-content:space-between;cursor:pointer" style-hover="background:rgba(226,170,90,.18)"><span><sc-if value="{{ it }}" hint-placeholder-val="{{ true }}">Lingua</sc-if><sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">Language</sc-if></span><span style="font-family:'JetBrains Mono',monospace;color:#e2aa5a">{{ langLabel }}</span></div>
+<div onClick="{{ toggleMute }}" style="padding:13px 16px;border-radius:12px;background:rgba(226,170,90,.1);color:#e8d9bd;font-size:16px;display:flex;justify-content:space-between;cursor:pointer" style-hover="background:rgba(226,170,90,.18)"><span>Audio</span><span style="font-family:'JetBrains Mono',monospace;color:#e2aa5a">{{ audioState }}</span></div>
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace;margin-top:12px">Lezione</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace;margin-top:12px">Lesson</div></sc-if>
+<div style="display:flex;gap:7px">
+<sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+<div onClick="{{ l.go }}" style="flex:1;padding:11px 0;border-radius:10px;background:rgba(226,170,90,.1);color:#e8d9bd;font-family:'JetBrains Mono',monospace;font-size:15px;text-align:center;cursor:pointer;position:relative" style-hover="background:rgba(226,170,90,.2)">{{ l.n }}
+<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:50%;bottom:5px;width:14px;height:2px;margin-left:-7px;background:#e2aa5a;border-radius:1px"></div></sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</div>
+</sc-if>
+</div>
+<div style="flex:0 1 212px;min-width:0;min-height:0;max-height:min(910px,calc(100vh - 36px));overflow-y:auto;display:flex;flex-direction:column;gap:14px;padding-right:4px;color:#b6a68b">
+<div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#a3937a">L2 · Moduli e NPM</div>
+<div style="font-size:23px;font-weight:600;color:#f0e6d6;margin-top:4px;line-height:1.2">Il magazzino delle versioni</div>
+<div style="font-size:14px;line-height:1.5;color:#8d7f68;margin-top:8px">Capitoli 4-6 · allinea-tre</div>
+</div>
+<div style="height:1px;background:rgba(226,170,90,.14)"></div>
+<div style="display:flex;flex-direction:column;gap:5px">
+<sc-for list="{{ chapters }}" as="c" hint-placeholder-count="3">
+<div onClick="{{ c.go }}" style="padding:9px 11px;border-radius:9px;background:rgba(226,170,90,.06);cursor:pointer;display:flex;gap:10px;align-items:baseline" style-hover="background:rgba(226,170,90,.14)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#e2aa5a;width:12px">{{ c.n }}</div>
+<div style="flex:1;min-width:0">
+<div style="font-size:14px;color:#e8d9bd;line-height:1.3">{{ c.title }}</div>
+<sc-if value="{{ c.on }}" hint-placeholder-val="{{ false }}"><div style="height:2px;background:#e2aa5a;border-radius:1px;margin-top:6px"></div></sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#a3937a">Lezione {{ chapterNo }}.x</div>
+<div style="display:flex;flex-direction:column;gap:7px">
+<sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+<div onClick="{{ l.go }}" style="padding:11px 13px;border-radius:11px;background:rgba(226,170,90,.07);cursor:pointer;display:flex;gap:11px;align-items:baseline" style-hover="background:rgba(226,170,90,.15)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#e2aa5a;width:14px">{{ l.n }}</div>
+<div style="flex:1;min-width:0">
+<div style="font-size:15px;color:#e8d9bd;line-height:1.3">{{ l.title }}</div>
+<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><div style="height:2px;background:#e2aa5a;border-radius:1px;margin-top:7px"></div></sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="font-size:13px;line-height:1.55;color:#a3937a">Scambia due casse vicine dello stesso pezzo. Tre in fila si spediscono solo se una versione sola può sostituirle tutte. <span style="color:#8d7f68">Esc</span> per la pausa.</div>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:940,&quot;height&quot;:1000},&quot;capitolo&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;],&quot;default&quot;:&quot;1&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;lezione&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;],&quot;default&quot;:&quot;1&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;lingua&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;it&quot;,&quot;en&quot;],&quot;default&quot;:&quot;it&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;diagnostica&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Taratura&quot;}}">
+const W=420,H=910,KEY='kaio.l5.magazzino',C=6,R=7,S=66;
+const GX=W/2-C*S/2,GY=H*.235;
+const VERS=['0.2.1','0.2.5','0.3.0','1.2.0','1.2.3','1.3.0','1.9.9','2.0.0'];
+const PARTS=['perno','ruota','nastro','chiave','molla'];
+const num=v=>v.split('.').map(Number);
+const lt=(a,b)=>{for(let i=0;i<3;i++){if(a[i]!==b[i])return a[i]<b[i]}return false};
+const ge=(a,b)=>!lt(a,b);
+function sat(tok){const out=[];
+ if(tok[0]==='^'){const p=num(tok.slice(1)),hi=p[0]>0?[p[0]+1,0,0]:[0,p[1]+1,0];
+  for(const v of VERS){const n=num(v);if(ge(n,p)&&lt(n,hi))out.push(v)}}
+ else if(tok[0]==='~'){const p=num(tok.slice(1)),hi=[p[0],p[1]+1,0];
+  for(const v of VERS){const n=num(v);if(ge(n,p)&&lt(n,hi))out.push(v)}}
+ else if(tok.indexOf('x')>=0){const maj=Number(tok.split('.')[0]);
+  for(const v of VERS){const n=num(v);if(n[0]===maj)out.push(v)}}
+ else out.push(tok);
+ return out}
+const compat=toks=>{let s=sat(toks[0]);for(let i=1;i<toks.length;i++){const t=sat(toks[i]);s=s.filter(v=>t.indexOf(v)>=0)}return s};
+const B=(o)=>Object.assign({toks:['1.2.3','1.3.0','1.2.0'],parts:4,moves:12,orders:4,trap:false},o);
+/* L2 Moduli e NPM — capitoli 4-6 di 8 (1-3 La discesa dei moduli, 7-8 La soglia) */
+const CH=[
+ {t:['Il caret','The caret'],titles:[['Uguali','Identical'],['Entra ^','^ arrives'],['Fino al due','Up to two'],['Ordine stretto','Tight order'],['Padronanza','Mastery']],
+  beats:[B({toks:['1.2.3','1.3.0','1.2.0'],parts:3,moves:99,orders:3}),
+   B({toks:['1.2.3','1.3.0','^1.2.0'],parts:3,moves:14,orders:4}),
+   B({toks:['1.2.3','1.3.0','1.9.9','^1.2.0'],parts:4,moves:13,orders:4}),
+   B({toks:['1.2.3','1.3.0','1.9.9','^1.2.0','2.0.0'],parts:5,moves:8,orders:5}),
+   B({toks:['1.2.3','1.3.0','1.9.9','^1.2.0'],parts:4,moves:12,orders:4})]},
+ {t:['La tilde e la x','Tilde and x'],titles:[['Entra ~','~ arrives'],['Solo la patch','Patch only'],['La x apre','x opens up'],['Tre regole','Three rules'],['A occhio','At a glance']],
+  beats:[B({toks:['1.2.3','~1.2.3','1.2.0'],parts:3,moves:14,orders:4}),
+   B({toks:['1.2.3','~1.2.3','1.3.0'],parts:4,moves:13,orders:4}),
+   B({toks:['1.2.3','1.x','1.9.9','~1.2.3'],parts:4,moves:12,orders:5}),
+   B({toks:['^1.2.0','~1.2.3','1.x','1.2.3','1.3.0'],parts:5,moves:8,orders:5}),
+   B({toks:['^1.2.0','~1.2.3','1.x','1.2.3'],parts:4,moves:12,orders:4})]},
+ {t:["Sotto l'uno",'Below one'],titles:[['Zero punto','Zero dot'],['Sembra compatibile','Looks compatible'],['E invece no','And it is not'],['Tutti i casi','Every case'],['Tutto il magazzino','The whole warehouse']],
+  beats:[B({toks:['^0.2.1','0.2.5','0.2.1'],parts:3,moves:14,orders:3}),
+   B({toks:['^0.2.1','0.2.5','0.3.0'],parts:4,moves:12,orders:4,trap:true}),
+   B({toks:['^0.2.1','0.3.0','0.2.5','^1.2.0'],parts:4,moves:11,orders:5,trap:true}),
+   B({toks:['^0.2.1','0.3.0','^1.2.0','~1.2.3','1.x','1.2.3'],parts:5,moves:8,orders:5,trap:true}),
+   B({toks:['^1.2.0','~1.2.3','1.x','1.2.3','1.3.0','1.9.9','^0.2.1','0.2.5','0.3.0'],parts:5,moves:12,orders:5})]}];
+const T={it:{no:'Hai allineato tre che non possono sostituirsi.',noFx:'La mossa si è consumata: era un\'ipotesi, non un errore di mira.',rule:'Sotto l\'uno il caret blocca anche il secondo numero.',
+ out:'Sono finite le mosse.',outFx:'Il camion è partito con i buchi dell\'ordine.',outRule:'Conta le mosse: allineare a caso le brucia.'},
+ en:{no:'You lined up three that cannot replace each other.',noFx:'The move was spent: it was a hypothesis, not a misclick.',rule:'Below one, the caret locks the second number too.',
+ out:'You ran out of moves.',outFx:'The truck left with holes in the order.',outRule:'Count the moves: guessing burns them.'}};
+
+class Component extends DCLogic{
+ state={beat:0,chapter:0,lang:'it',paused:false,coach:null,done:false,muted:false,step:0,moves:0};
+ renderVals(){const s=this.state,L=T[s.lang],c=s.coach;
+  return Object.assign(KAIO.vals(this),{
+   coachWhat:c?(c.kind==='no'?L.no:L.out):'',
+   coachEffect:c?(c.kind==='no'?L.noFx:L.outFx):'',
+   coachRule:c?(c.kind==='no'?L.rule:L.outRule):'',
+   coachA:c&&c.a?c.a:'^0.2.1  →  0.2.1 … 0.2.9',
+   coachB:c&&c.b?c.b:'0.3.0  →  fuori'});
+ }
+ componentDidMount(){
+  KAIO.init(this,{W,H,key:KEY,chapters:CH,
+   onTap:p=>this.pick(p),
+   onKey:e=>{}});
+  KAIO.audio(this);}
+ componentDidUpdate(pp){KAIO.sync(this,pp)}
+ componentWillUnmount(){KAIO.destroy(this)}
+
+ reset(beat){const c=this.BEATS[beat];this.cfg=c;this.needed=c.orders;
+  this.g=[];for(let r=0;r<R;r++){const row=[];for(let i=0;i<C;i++)row.push(this.tile());this.g.push(row)}
+  this.sel=null;this.phase='idle';this.pt=0;this.pair=null;this.clearing=[];this.fallOff=null;
+  this.ruler=null;this.cascade=0;this.parts=[];this.shake=0;this.flash=0;this.made=0;this.trapDone=false;
+  this.setState({moves:c.moves});
+  let guard=0;while(this.findGroups().length&&guard++<60)this.reseed()}
+
+ tile(){const c=this.cfg;
+  return {p:Math.floor(Math.random()*c.parts),t:c.toks[Math.floor(Math.random()*c.toks.length)],dy:0,sc:1}}
+ reseed(){for(const gr of this.findGroups())for(const[r,i]of gr.cells)this.g[r][i]=this.tile()}
+
+ findGroups(){const out=[];
+  for(let r=0;r<R;r++){let run=[[r,0]];
+   for(let i=1;i<=C;i++){const same=i<C&&this.g[r][i].p===this.g[r][i-1].p;
+    if(same)run.push([r,i]);else{if(run.length>=3)out.push({cells:run.slice()});run=i<C?[[r,i]]:[]}}}
+  for(let i=0;i<C;i++){let run=[[0,i]];
+   for(let r=1;r<=R;r++){const same=r<R&&this.g[r][i].p===this.g[r-1][i].p;
+    if(same)run.push([r,i]);else{if(run.length>=3)out.push({cells:run.slice()});run=r<R?[[r,i]]:[]}}}
+  return out}
+
+ pick(p){if(this.phase!=='idle')return;
+  const i=Math.floor((p.x-GX)/S),r=Math.floor((p.y-GY)/S);
+  if(i<0||i>=C||r<0||r>=R){this.sel=null;return}
+  if(!this.sel){this.sel=[r,i];KAIO.snd(this,'click',{hz:1400,v:.09});return}
+  const[sr,si]=this.sel;
+  if(sr===r&&si===i){this.sel=null;return}
+  if(Math.abs(sr-r)+Math.abs(si-i)!==1){this.sel=[r,i];KAIO.snd(this,'click',{hz:1400,v:.09});return}
+  this.swap([sr,si],[r,i]);this.sel=null}
+
+ swap(a,b){this.pair=[a,b];this.phase='swap';this.pt=0;KAIO.snd(this,'pop',{hz:360,v:.1})}
+ apply(a,b){const t=this.g[a[0]][a[1]];this.g[a[0]][a[1]]=this.g[b[0]][b[1]];this.g[b[0]][b[1]]=t}
+
+ resolve(){const groups=this.findGroups();
+  if(!groups.length){this.phase='back';this.pt=0;KAIO.snd(this,'fall');return}
+  const good=[],bad=[];
+  for(const gr of groups){const toks=gr.cells.map(([r,i])=>this.g[r][i].t);
+   (compat(toks).length?good:bad).push(gr)}
+  if(good.length){this.clearing=good;this.phase='clear';this.pt=0;
+   KAIO.snd(this,'tone',{from:520+this.cascade*70,to:820+this.cascade*90,v:.16});return}
+  const gr=bad[0],toks=gr.cells.map(([r,i])=>this.g[r][i].t);
+  this.ruler={cells:gr.cells,toks,t:1.1};
+  KAIO.snd(this,'thud',{v:.2});this.shake=.5;
+  const moves=Math.max(0,this.state.moves-1);this.setState({moves});
+  this.err('no',toks);
+  this.phase='idle';
+  if(moves<=0&&this.made<this.needed)this.fail()}
+
+ fail(){KAIO.snd(this,'whir');this.setState({coach:{kind:'out'}});
+  const b=this.state.beat;setTimeout(()=>{if(this.state)this.reset(b)},60)}
+
+ err(kind,toks){const s=this.streak||(this.streak={kind:null,n:0});
+  if(s.kind===kind)s.n++;else{s.kind=kind;s.n=1}
+  if(s.n>=3&&toks){const t=toks.slice().sort((a,b)=>sat(a).length-sat(b).length);
+   this.setState({coach:{kind,a:t[0]+'  →  '+(sat(t[0]).join(' ')||'—'),b:t[t.length-1]+'  →  '+(sat(t[t.length-1]).join(' ')||'—')}});
+   this.streak={kind:null,n:0}}}
+ onCoachClose(){this.streak={kind:null,n:0}}
+
+ collapse(){const moved=[];
+  for(let i=0;i<C;i++){let write=R-1;
+   for(let r=R-1;r>=0;r--){if(this.g[r][i]){if(write!==r){this.g[write][i]=this.g[r][i];this.g[write][i].dy=(write-r)*S;moved.push([write,i]);this.g[r][i]=null}write--}}
+   for(let r=write;r>=0;r--){this.g[r][i]=this.tile();this.g[r][i].dy=(write+1-r)*S+S*0;moved.push([r,i])}}
+  this.phase='fall';this.pt=0}
+
+ update(dt){
+  if(this.shake>0)this.shake-=dt*3.4;if(this.flash>0)this.flash-=dt*3;
+  if(this.ruler){this.ruler.t-=dt;if(this.ruler.t<=0)this.ruler=null}
+  this.pt+=dt;
+  if(this.phase==='swap'&&this.pt>=.18){this.apply(this.pair[0],this.pair[1]);
+   const moves=this.state.moves;this.resolve();
+   if(this.phase==='clear'&&moves<99)this.setState({moves:Math.max(0,moves-1)})}
+  else if(this.phase==='back'&&this.pt>=.2){this.apply(this.pair[0],this.pair[1]);this.pair=null;this.phase='idle'}
+  else if(this.phase==='clear'&&this.pt>=.26){
+   let n=0;for(const gr of this.clearing)for(const[r,i]of gr.cells){if(this.g[r][i]){KAIO.burst(this.parts,GX+i*S+S/2,GY+r*S+S/2,6,'#e2aa5a',{up:20,v1:120});this.g[r][i]=null;n++}}
+   this.made+=this.clearing.length;this.flash=1;this.cascade++;
+   this.setState({step:this.made});
+   this.clearing=[];
+   if(this.made>=this.needed){KAIO.snd(this,'chime');this.setState({done:true});this.phase='idle';return}
+   this.collapse()}
+  else if(this.phase==='fall'&&this.pt>=.18){
+   let any=false;
+   for(let r=0;r<R;r++)for(let i=0;i<C;i++){const t=this.g[r][i];if(t&&t.dy>0){t.dy=Math.max(0,t.dy-S*dt/.12*3);if(t.dy>0)any=true}}
+   if(!any){this.pt=0;const groups=this.findGroups();
+    const good=groups.filter(gr=>compat(gr.cells.map(([r,i])=>this.g[r][i].t)).length);
+    if(good.length){this.clearing=good;this.phase='clear';
+     KAIO.snd(this,'tone',{from:520+this.cascade*70,to:820+this.cascade*90,v:.14})}
+    else{this.cascade=0;this.phase='idle';
+     if(this.state.moves<=0&&this.made<this.needed)this.fail()}}}
+  for(let r=0;r<R;r++)for(let i=0;i<C;i++){const t=this.g[r][i];if(t&&t.dy>0)t.dy=Math.max(0,t.dy-S*dt/.14)}
+  this.parts=KAIO.parts(this.parts,dt,700)}
+
+ draw(x){const sc=this.sc||1;x.setTransform(sc,0,0,sc,0,0);x.save();KAIO.shake(x,this.shake);
+  const g=x.createLinearGradient(0,0,0,H);g.addColorStop(0,'#150f07');g.addColorStop(.4,'#191106');g.addColorStop(1,'#0b0806');x.fillStyle=g;x.fillRect(-8,-8,W+16,H+16);
+  const cone=x.createRadialGradient(W/2,GY-40,10,W/2,H*.55,W*.85);cone.addColorStop(0,'rgba(255,214,150,.13)');cone.addColorStop(.55,'rgba(226,170,90,.045)');cone.addColorStop(1,'rgba(0,0,0,0)');
+  x.fillStyle=cone;x.fillRect(0,0,W,H);
+  x.strokeStyle='rgba(120,96,60,.5)';x.lineWidth=2;x.beginPath();x.moveTo(W/2,0);x.lineTo(W/2,22);x.stroke();
+  x.fillStyle='#2c2318';x.beginPath();x.moveTo(W/2-20,40);x.lineTo(W/2+20,40);x.lineTo(W/2+10,22);x.lineTo(W/2-10,22);x.closePath();x.fill();
+  x.fillStyle='rgba(255,222,166,.9)';x.beginPath();x.arc(W/2,42,5,0,6.283);x.fill();
+  x.fillStyle='#1a1a16';x.beginPath();KAIO.rr(x,20,H*.075,W-40,58,6);x.fill();
+  x.strokeStyle='rgba(226,170,90,.2)';x.lineWidth=2;x.stroke();
+  x.font='500 13px "JetBrains Mono",monospace';x.textAlign='left';x.textBaseline='middle';
+  x.fillStyle='#a3937a';x.fillText(this.state.lang==='en'?'TRUCK':'CAMION',34,H*.075+18);
+  x.font='500 13px "JetBrains Mono",monospace';x.fillStyle='#a3937a';
+  x.fillText((this.state.lang==='en'?'to load: ':'da caricare: ')+Math.max(0,this.needed-this.made),34,H*.075+40);
+  const mv=this.state.moves;
+  if(mv<90){x.textAlign='right';x.fillStyle='#a3937a';x.fillText(this.state.lang==='en'?'MOVES':'MOSSE',W-34,H*.075+18);
+   for(let i=0;i<Math.min(mv,14);i++){const px=W-34-i*13,py=H*.075+40;
+    x.strokeStyle='rgba(226,206,170,.7)';x.lineWidth=2.5;x.beginPath();x.moveTo(px,py-9);x.lineTo(px-3,py+9);x.stroke()}}
+  x.fillStyle='rgba(10,8,5,.5)';x.beginPath();KAIO.rr(x,GX-8,GY-8,C*S+16,R*S+16,10);x.fill();
+  for(let r=0;r<R;r++)for(let i=0;i<C;i++){const t=this.g[r][i];if(!t)continue;
+   let px=GX+i*S,py=GY+r*S-t.dy,scl=1;
+   if(this.phase==='swap'||this.phase==='back'){const k=Math.min(1,this.pt/.18);
+    const[a,b]=this.pair;const ka=(this.phase==='back')?1-k:k;
+    if(r===a[0]&&i===a[1]){px+=(b[1]-a[1])*S*ka;py+=(b[0]-a[0])*S*ka}
+    else if(r===b[0]&&i===b[1]){px+=(a[1]-b[1])*S*ka;py+=(a[0]-b[0])*S*ka}}
+   const dying=this.phase==='clear'&&this.clearing.some(gr=>gr.cells.some(([rr,ii])=>rr===r&&ii===i));
+   if(dying){const k=Math.min(1,this.pt/.26);scl=k<.3?1+k*.6:1.18*(1-(k-.3)/.7)}
+   const selected=this.sel&&this.sel[0]===r&&this.sel[1]===i;
+   const ruled=this.ruler&&this.ruler.cells.some(([rr,ii])=>rr===r&&ii===i);
+   this.crate(x,px,py,t,scl,selected,ruled)}
+  const ty=GY+R*S+30;
+  x.fillStyle='#0e0b08';x.fillRect(0,ty+34,W,H-ty-34);
+  x.fillStyle='#241a10';x.beginPath();KAIO.rr(x,26,ty+30,W-52,16,4);x.fill();
+  x.fillStyle='#1b1410';x.beginPath();x.arc(70,ty+52,13,0,6.283);x.fill();x.beginPath();x.arc(W-70,ty+52,13,0,6.283);x.fill();
+  x.strokeStyle='rgba(226,170,90,.25)';x.lineWidth=1.5;x.beginPath();x.arc(70,ty+52,13,0,6.283);x.stroke();x.beginPath();x.arc(W-70,ty+52,13,0,6.283);x.stroke();
+  for(let i=0;i<this.made&&i<this.needed;i++){const bx=40+i*(S*.62),bw=S*.56;
+   const gg=x.createLinearGradient(0,ty-bw,0,ty+bw*0);gg.addColorStop(0,'#96683c');gg.addColorStop(1,'#5a3b21');x.fillStyle=gg;
+   x.beginPath();KAIO.rr(x,bx,ty+30-bw,bw,bw,4);x.fill();
+   x.strokeStyle='rgba(48,32,16,.5)';x.lineWidth=1.4;x.beginPath();KAIO.rr(x,bx,ty+30-bw,bw,bw,4);x.stroke()}
+  KAIO.drawParts(x,this.parts);
+  if(this.flash>0){x.fillStyle='rgba(255,228,180,'+(this.flash*.07)+')';x.fillRect(0,0,W,H)}
+  if(this.props.diagnostica){x.fillStyle='rgba(160,230,255,.9)';x.font='500 12px "JetBrains Mono",monospace';x.textAlign='left';
+   x.fillText('beat '+(this.state.beat+1)+'  fase '+this.phase+'  gruppi '+this.made+'/'+this.needed+'  mosse '+this.state.moves,12,H-14)}
+  x.restore()}
+
+ crate(x,px,py,t,scl,sel,ruled){const p=S-8,cx=px+S/2,cy=py+S/2;
+  x.save();x.translate(cx,cy);x.scale(scl,scl);x.translate(-cx,-cy);
+  x.fillStyle='rgba(0,0,0,'+(sel?.5:.34)+')';x.beginPath();KAIO.rr(x,px+6,py+(sel?8:6),p,p,6);x.fill();
+  const g=x.createLinearGradient(0,py,0,py+p);g.addColorStop(0,'#96683c');g.addColorStop(.55,'#7a5330');g.addColorStop(1,'#5a3b21');x.fillStyle=g;
+  x.beginPath();KAIO.rr(x,px+4,py+4-(sel?2:0),p,p,6);x.fill();
+  x.strokeStyle=sel?'rgba(255,214,150,.95)':ruled?'rgba(226,170,90,.9)':'rgba(48,32,16,.5)';x.lineWidth=sel||ruled?2.5:1.5;
+  x.beginPath();KAIO.rr(x,px+4,py+4-(sel?2:0),p,p,6);x.stroke();
+  this.stamp(x,t.p,px+11,py+10-(sel?2:0));
+  let f=13;x.font='600 '+f+'px "JetBrains Mono",monospace';
+  while(x.measureText(t.t).width>p-10&&f>9){f--;x.font='600 '+f+'px "JetBrains Mono",monospace'}
+  x.textAlign='center';x.textBaseline='middle';
+  x.fillStyle='rgba(255,236,205,.14)';x.fillText(t.t,cx,cy+9.2-(sel?2:0));
+  x.fillStyle='rgba(30,18,7,.86)';x.fillText(t.t,cx,cy+8-(sel?2:0));
+  x.restore()}
+
+ stamp(x,i,px,py){x.strokeStyle='rgba(42,28,12,.55)';x.lineWidth=1.6;x.beginPath();
+  if(i===0){x.arc(px+6,py+6,5,0,6.283);x.moveTo(px+6,py+1);x.lineTo(px+6,py+11)}
+  else if(i===1){x.arc(px+6,py+6,5.5,0,6.283);x.moveTo(px+2,py+6);x.lineTo(px+10,py+6)}
+  else if(i===2){x.moveTo(px,py+3);x.lineTo(px+12,py+3);x.moveTo(px,py+9);x.lineTo(px+12,py+9)}
+  else if(i===3){x.moveTo(px+2,py+10);x.lineTo(px+8,py+2);x.arc(px+9,py+3,3,0,6.283)}
+  else{x.moveTo(px,py+9);x.quadraticCurveTo(px+4,py+1,px+7,py+9);x.quadraticCurveTo(px+10,py+1,px+13,py+9)}
+  x.stroke()}
+}
+</script>
+</body>
+</html>

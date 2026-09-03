@@ -40,3 +40,6 @@ Thumbs.db
 .design-sync/
 .ds-sync/
 ds-bundle/
+
+# Level-game design pack (Doctrine §1.9) — source material, not runtime.
+knowledge-aio-giochi/

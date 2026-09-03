@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Node.js L8 — L'indirizzario" description="Livello 8, banda 2: progettazione API REST. Componi l'indirizzo pezzo per pezzo — il nome dice cosa è, il verbo lo dice il metodo." -->
+<!--
+  SCHEDA (ricerca/00 §0.3) — GIOCO L'indirizzario
+  LIVELLO Node.js L8 Progettazione API REST, banda 2 — 8 capitoli, 40 lezioni
+  CONCETTO Il nome di una risorsa dice cosa è, non cosa fare. Cosa fare lo
+           dice il metodo. E le risorse si annidano: la parte dopo appartiene
+           alla parte prima.
+  FORMA contenimento · VERBO comporre (agganciare i pezzi in sequenza)
+  ARCHETIPO ricerca/15 stacking, in forma di composizione vincolata
+  VINCI SE tutte le commesse del capitolo hanno un indirizzo valido
+  PERDI SE tre indirizzi vengono rifiutati dal collaudo
+  SBAGLI 1 il pezzo non si aggancia e torna nella riserva
+         2 il pezzo che serviva pulsa una volta
+         3 coaching, quattro righe, la quarta animata
+  CAPITOLI 1 nome e metodo · 2 il plurale · 3 FRATTURA il verbo non va
+           nell'indirizzo · 4 l'identificatore · 5 le risorse annidate
+           6 filtri e non percorsi · 7 a raffica · 8 il collaudo intero
+  MONDO banco di composizione di banda 2: guide d'acciaio, pezzi d'ottone
+        incisi, timbro di collaudo
+  NUMERI composizione senza timer fino al capitolo 7, poi 20 s per commessa
+  TEST 1 i pezzi sono tutti dello stesso ottone e della stessa forma: l'unico
+         segnale è la parola incisa e la commessa scritta sulla bolla.
+  TEST 2 "Compongo l'indirizzo che descrive la cosa chiesta, col metodo che
+         descrive l'azione"
+  TEST 3 la bolla è già appesa e un pezzo pulsa nella riserva
+-->
+<helmet>
+<script src="./ds-base.js"></script>
+<script src="../kaio-engine.js"></script>
+<style>
+*{box-sizing:border-box}html,body{margin:0;padding:0;height:100%;background:#080b0d}
+@keyframes om-fade{from{opacity:0}to{opacity:1}}
+@keyframes om-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes om-snap{0%,100%{transform:translateX(0)}45%{transform:translateX(-9px)}}
+</style>
+</helmet>
+<div style="position:fixed;inset:0;background:radial-gradient(130% 90% at 50% -10%,#131c22 0%,#0c1114 55%,#070a0c 100%);display:grid;place-items:center;font-family:Raleway,system-ui,sans-serif;overflow:hidden;padding:18px">
+<div style="display:flex;align-items:center;justify-content:center;gap:26px;max-width:100%">
+<div style="position:relative;height:min(910px,calc(100vh - 36px),max(480px,calc((100vw - 280px) * 2.1667)));aspect-ratio:420/910;border-radius:24px;overflow:hidden;box-shadow:0 50px 130px -34px rgba(0,0,0,.95),0 0 0 1px rgba(201,162,39,.16);flex:0 0 auto">
+<canvas ref="{{ cvRef }}" style="display:block;width:100%;height:100%;touch-action:none;cursor:pointer"></canvas>
+<sc-if value="{{ coachOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;left:14px;right:14px;top:14px;padding:20px;border-radius:14px;background:linear-gradient(180deg,rgba(20,28,34,.97),rgba(12,17,20,.97));box-shadow:0 24px 60px -18px rgba(0,0,0,.9),inset 0 1px 0 rgba(201,162,39,.22);animation:om-rise .26s cubic-bezier(.16,1,.3,1) both;cursor:pointer">
+<div style="font-size:20px;line-height:1.45;color:#e8e2d0;font-weight:500">{{ coachWhat }}</div>
+<div style="font-size:20px;line-height:1.45;color:#9fb0b4;margin-top:10px">{{ coachEffect }}</div>
+<div style="font-size:20px;line-height:1.45;color:#d9b448;margin-top:14px;font-weight:600">{{ coachRule }}</div>
+<div style="margin-top:18px;height:88px;border-radius:10px;background:rgba(0,0,0,.42);display:flex;flex-direction:column;justify-content:center;gap:10px;padding:0 16px">
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#d6603c;animation:om-snap 2.2s ease-in-out infinite">{{ coachA }}</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#d9b448">{{ coachB }}</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ doneOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(70% 50% at 50% 45%,rgba(18,28,34,.92),rgba(6,9,11,.96));animation:om-fade .22s ease both;cursor:pointer">
+<div style="text-align:center;padding:0 30px">
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:34px;font-weight:600;color:#eef0e6">Collaudo passato</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:34px;font-weight:600;color:#eef0e6">Inspection passed</div></sc-if>
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#7e9096;margin-top:10px">{{ chapterNo }}/{{ chapterOf }} · {{ chapterTitle }}</div>
+<div style="display:flex;gap:10px;justify-content:center;margin-top:24px">
+<sc-for list="{{ marks }}" as="m" hint-placeholder-count="5">
+<div style="width:34px;height:6px;border-radius:2px;background:rgba(201,162,39,.2);position:relative;overflow:hidden">
+<sc-if value="{{ m.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;background:#c9a227"></div></sc-if>
+</div>
+</sc-for>
+</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#8b9aa0;margin-top:22px">{{ doneHint }}</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ pauseOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;backdrop-filter:blur(9px);background:rgba(8,11,13,.74);display:grid;place-items:center;animation:om-fade .2s ease both;padding:16px;overflow-y:auto">
+<div style="width:290px;padding:24px;border-radius:16px;background:linear-gradient(180deg,rgba(22,30,36,.98),rgba(12,17,20,.98));box-shadow:0 30px 70px -20px rgba(0,0,0,.9),inset 0 1px 0 rgba(201,162,39,.2)">
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#7e9096;font-family:'JetBrains Mono',monospace">In pausa</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#7e9096;font-family:'JetBrains Mono',monospace">Paused</div></sc-if>
+<div style="display:flex;flex-direction:column;gap:9px;margin-top:16px">
+<div onClick="{{ resume }}" style="padding:14px 16px;border-radius:8px;background:#c9a227;color:#14191c;font-size:17px;font-weight:600;text-align:center;cursor:pointer" style-hover="background:#d9b448"><sc-if value="{{ it }}" hint-placeholder-val="{{ true }}">Riprendi</sc-if><sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">Resume</sc-if></div>
+<div onClick="{{ toggleLang }}" style="padding:13px 16px;border-radius:8px;background:rgba(201,162,39,.1);color:#dfe4dc;font-size:16px;display:flex;justify-content:space-between;cursor:pointer"><span>Lingua</span><span style="font-family:'JetBrains Mono',monospace;color:#d9b448">{{ langLabel }}</span></div>
+<div onClick="{{ toggleMute }}" style="padding:13px 16px;border-radius:8px;background:rgba(201,162,39,.1);color:#dfe4dc;font-size:16px;display:flex;justify-content:space-between;cursor:pointer"><span>Audio</span><span style="font-family:'JetBrains Mono',monospace;color:#d9b448">{{ audioState }}</span></div>
+<div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#7e9096;font-family:'JetBrains Mono',monospace;margin-top:12px">Capitolo</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px">
+<sc-for list="{{ chapters }}" as="c" hint-placeholder-count="8">
+<div onClick="{{ c.go }}" style="padding:10px 0;border-radius:6px;background:rgba(201,162,39,.1);color:#dfe4dc;font-family:'JetBrains Mono',monospace;font-size:14px;text-align:center;cursor:pointer;position:relative">{{ c.n }}
+<sc-if value="{{ c.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:50%;bottom:4px;width:12px;height:2px;margin-left:-6px;background:#c9a227"></div></sc-if>
+</div>
+</sc-for>
+</div>
+<div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#7e9096;font-family:'JetBrains Mono',monospace;margin-top:10px">Lezione</div>
+<div style="display:flex;gap:7px">
+<sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+<div onClick="{{ l.go }}" style="flex:1;padding:11px 0;border-radius:6px;background:rgba(201,162,39,.1);color:#dfe4dc;font-family:'JetBrains Mono',monospace;font-size:15px;text-align:center;cursor:pointer;position:relative">{{ l.n }}
+<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:50%;bottom:5px;width:14px;height:2px;margin-left:-7px;background:#c9a227"></div></sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</div>
+</sc-if>
+</div>
+<div style="flex:0 1 212px;min-width:0;min-height:0;max-height:min(910px,calc(100vh - 36px));overflow-y:auto;display:flex;flex-direction:column;gap:14px;padding-right:4px;color:#9fb0b4">
+<div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#7e9096">L8 · API REST · banda 2</div>
+<div style="font-size:23px;font-weight:600;color:#e8e2d0;margin-top:4px;line-height:1.2">L'indirizzario</div>
+<div style="font-size:14px;line-height:1.5;color:#7e9096;margin-top:8px">Comporre l'indirizzo · 8 capitoli</div>
+</div>
+<div style="height:1px;background:rgba(201,162,39,.16)"></div>
+<div style="display:flex;flex-direction:column;gap:5px">
+<sc-for list="{{ chapters }}" as="c" hint-placeholder-count="8">
+<div onClick="{{ c.go }}" style="padding:9px 11px;border-radius:8px;background:rgba(201,162,39,.06);cursor:pointer;display:flex;gap:10px;align-items:baseline" style-hover="background:rgba(201,162,39,.14)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#d9b448;width:12px">{{ c.n }}</div>
+<div style="flex:1;min-width:0">
+<div style="font-size:14px;color:#dfe4dc;line-height:1.3">{{ c.title }}</div>
+<sc-if value="{{ c.on }}" hint-placeholder-val="{{ false }}"><div style="height:2px;background:#c9a227;margin-top:6px"></div></sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="height:1px;background:rgba(201,162,39,.16)"></div>
+<div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7e9096;margin-bottom:6px">Lezione {{ chapterNo }}.x</div>
+<div style="display:flex;flex-direction:column;gap:5px">
+<sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+<div onClick="{{ l.go }}" style="padding:8px 11px;border-radius:6px;background:rgba(201,162,39,.05);cursor:pointer;display:flex;gap:10px;align-items:baseline" style-hover="background:rgba(201,162,39,.13)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7e9096;width:12px">{{ l.n }}</div>
+<div style="flex:1;min-width:0">
+<div style="font-size:13px;color:#9fb0b4;line-height:1.3">{{ l.title }}</div>
+<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><div style="height:2px;background:#c9a227;margin-top:5px"></div></sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="font-size:13px;line-height:1.55;color:#7e9096">Leggi la bolla, scegli il metodo, poi aggancia i pezzi dell'indirizzo nell'ordine. Tocca un pezzo agganciato per staccarlo. Il timbro collauda. <span style="color:#7e9096">Esc</span> per la pausa.</div>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:940,&quot;height&quot;:1000},&quot;capitolo&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;,&quot;6&quot;,&quot;7&quot;,&quot;8&quot;],&quot;default&quot;:&quot;1&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;lezione&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;],&quot;default&quot;:&quot;1&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;lingua&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;it&quot;,&quot;en&quot;],&quot;default&quot;:&quot;it&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;diagnostica&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Taratura&quot;}}">
+const W=420,H=910,KEY='kaio.l8.indirizzario';
+const SLOTY=H*.3,METHY=H*.19,TRAYY=H*.52,STAMP={x:W/2,y:H*.86};
+const METHODS=['GET','POST','PUT','DELETE'];
+/* Commessa: cosa chiede il cliente (in italiano, banda 2 = analogia + nome vero)
+   sol: [metodo, pezzi...] — la soluzione attesa */
+const J=(ask,en,m,parts)=>({ask,en,m,parts});
+const B=(o)=>Object.assign({jobs:[],tray:['clienti','ordini'],need:3,timer:0},o);
+const CH=[
+ {t:['Nome e metodo','Name and method'],titles:[['La prima bolla','First docket'],['Chiedere la lista','Asking the list'],['Un altro nome','Another name'],['Due bolle','Two dockets'],['Il ritmo','The rhythm']],
+  beats:[B({tray:['clienti'],jobs:[J('La lista dei clienti','The list of customers','GET',['clienti'])],need:2}),
+   B({tray:['clienti','ordini'],jobs:[J('La lista dei clienti','The list of customers','GET',['clienti']),J('La lista degli ordini','The list of orders','GET',['ordini'])],need:3}),
+   B({tray:['clienti','ordini','prodotti'],jobs:[J('La lista dei prodotti','The list of products','GET',['prodotti']),J('La lista degli ordini','The list of orders','GET',['ordini'])],need:3}),
+   B({tray:['clienti','ordini','prodotti'],jobs:[J('La lista dei clienti','The list of customers','GET',['clienti']),J('La lista dei prodotti','The list of products','GET',['prodotti']),J('La lista degli ordini','The list of orders','GET',['ordini'])],need:4}),
+   B({tray:['clienti','ordini','prodotti'],jobs:[J('La lista degli ordini','The list of orders','GET',['ordini']),J('La lista dei clienti','The list of customers','GET',['clienti'])],need:3})]},
+ {t:['Il plurale','The plural'],titles:[['Uno o molti','One or many'],['Sempre plurale','Always plural'],['Non il singolare','Not the singular'],['Misti','Mixed'],['A occhio','At a glance']],
+  beats:[B({tray:['clienti','cliente','ordini'],jobs:[J('La lista dei clienti','The list of customers','GET',['clienti'])],need:2}),
+   B({tray:['clienti','cliente','ordini','ordine'],jobs:[J('La lista dei clienti','The list of customers','GET',['clienti']),J('La lista degli ordini','The list of orders','GET',['ordini'])],need:3}),
+   B({tray:['clienti','cliente','prodotti','prodotto'],jobs:[J('La lista dei prodotti','The list of products','GET',['prodotti']),J('La lista dei clienti','The list of customers','GET',['clienti'])],need:3}),
+   B({tray:['clienti','cliente','ordini','ordine','prodotti'],jobs:[J('La lista degli ordini','The list of orders','GET',['ordini']),J('La lista dei prodotti','The list of products','GET',['prodotti']),J('La lista dei clienti','The list of customers','GET',['clienti'])],need:4}),
+   B({tray:['clienti','cliente','ordini','ordine'],jobs:[J('La lista dei clienti','The list of customers','GET',['clienti']),J('La lista degli ordini','The list of orders','GET',['ordini'])],need:3})]},
+ {t:["Il verbo non va nell'indirizzo",'The verb is not in the address'],titles:[['getClienti','getClienti'],['Solo il nome','Just the name'],['Il metodo lo dice','The method says it'],['Creare','Creating'],['Adesso lo sai','Now you know']],
+  beats:[B({tray:['clienti','getClienti','ordini'],jobs:[J('La lista dei clienti','The list of customers','GET',['clienti'])],need:2}),
+   B({tray:['clienti','getClienti','creaCliente','ordini'],jobs:[J('La lista dei clienti','The list of customers','GET',['clienti']),J('Un cliente nuovo','A new customer','POST',['clienti'])],need:3}),
+   B({tray:['clienti','creaCliente','ordini','creaOrdine'],jobs:[J('Un cliente nuovo','A new customer','POST',['clienti']),J('Un ordine nuovo','A new order','POST',['ordini'])],need:3}),
+   B({tray:['clienti','getClienti','creaCliente','ordini','cancellaOrdine'],jobs:[J('Un cliente nuovo','A new customer','POST',['clienti']),J('La lista degli ordini','The list of orders','GET',['ordini']),J('Un ordine nuovo','A new order','POST',['ordini'])],need:4}),
+   B({tray:['clienti','getClienti','creaCliente','ordini'],jobs:[J('Un cliente nuovo','A new customer','POST',['clienti']),J('La lista dei clienti','The list of customers','GET',['clienti'])],need:3})]},
+ {t:["L'identificatore",'The identifier'],titles:[['Il numero','The number'],['Uno solo','Just one'],['Non la lista','Not the list'],['Cambiare','Updating'],['Cancellare','Deleting']],
+  beats:[B({tray:['clienti',':id','ordini'],jobs:[J('Il cliente numero 7','Customer number 7','GET',['clienti',':id'])],need:2}),
+   B({tray:['clienti',':id','ordini'],jobs:[J('Il cliente numero 7','Customer number 7','GET',['clienti',':id']),J('La lista dei clienti','The list of customers','GET',['clienti'])],need:3}),
+   B({tray:['clienti',':id','ordini','prodotti'],jobs:[J("L'ordine numero 3",'Order number 3','GET',['ordini',':id']),J('La lista dei prodotti','The list of products','GET',['prodotti'])],need:3}),
+   B({tray:['clienti',':id','ordini','prodotti'],jobs:[J('Cambiare il cliente 7','Update customer 7','PUT',['clienti',':id']),J('Il cliente numero 7','Customer number 7','GET',['clienti',':id']),J('Un cliente nuovo','A new customer','POST',['clienti'])],need:4}),
+   B({tray:['clienti',':id','ordini'],jobs:[J("Cancellare l'ordine 3",'Delete order 3','DELETE',['ordini',':id']),J('Il cliente numero 7','Customer number 7','GET',['clienti',':id'])],need:3})]},
+ {t:['Le risorse annidate','Nested resources'],titles:[['Dentro un cliente','Inside a customer'],['Gli ordini di uno','One customer orders'],['Non due liste','Not two lists'],["L'ordine dell'ordine",'Order of the order'],['Padronanza','Mastery']],
+  beats:[B({tray:['clienti',':id','ordini'],jobs:[J('Gli ordini del cliente 7','Orders of customer 7','GET',['clienti',':id','ordini'])],need:2}),
+   B({tray:['clienti',':id','ordini','prodotti'],jobs:[J('Gli ordini del cliente 7','Orders of customer 7','GET',['clienti',':id','ordini']),J('La lista dei clienti','The list of customers','GET',['clienti'])],need:3}),
+   B({tray:['clienti',':id','ordini','righe'],jobs:[J("Le righe dell'ordine 3",'Lines of order 3','GET',['ordini',':id','righe']),J('Gli ordini del cliente 7','Orders of customer 7','GET',['clienti',':id','ordini'])],need:3}),
+   B({tray:['clienti',':id','ordini','righe','prodotti'],jobs:[J('Un ordine nuovo per il cliente 7','A new order for customer 7','POST',['clienti',':id','ordini']),J("Le righe dell'ordine 3",'Lines of order 3','GET',['ordini',':id','righe']),J('La lista dei prodotti','The list of products','GET',['prodotti'])],need:4}),
+   B({tray:['clienti',':id','ordini','righe'],jobs:[J('Gli ordini del cliente 7','Orders of customer 7','GET',['clienti',':id','ordini']),J("Le righe dell'ordine 3",'Lines of order 3','GET',['ordini',':id','righe'])],need:3})]},
+ {t:['Filtri, non percorsi','Filters, not paths'],titles:[['Gli attivi','The active ones'],['Non una cartella','Not a folder'],['Il punto di domanda','The question mark'],['Filtro e annidato','Filter and nested'],['Padronanza','Mastery']],
+  beats:[B({tray:['clienti','attivi','?stato=attivo'],jobs:[J('I clienti attivi','The active customers','GET',['clienti','?stato=attivo'])],need:2}),
+   B({tray:['clienti','attivi','?stato=attivo','ordini'],jobs:[J('I clienti attivi','The active customers','GET',['clienti','?stato=attivo']),J('La lista degli ordini','The list of orders','GET',['ordini'])],need:3}),
+   B({tray:['ordini','aperti','?stato=aperto',':id'],jobs:[J('Gli ordini aperti','The open orders','GET',['ordini','?stato=aperto']),J("L'ordine numero 3",'Order number 3','GET',['ordini',':id'])],need:3}),
+   B({tray:['clienti',':id','ordini','?stato=aperto','attivi'],jobs:[J('Gli ordini aperti del cliente 7','Open orders of customer 7','GET',['clienti',':id','ordini','?stato=aperto']),J('I clienti attivi','The active customers','GET',['clienti','?stato=attivo'])],need:3}),
+   B({tray:['clienti',':id','ordini','?stato=attivo','?stato=aperto'],jobs:[J('I clienti attivi','The active customers','GET',['clienti','?stato=attivo']),J('Gli ordini del cliente 7','Orders of customer 7','GET',['clienti',':id','ordini'])],need:3})]},
+ {t:['A raffica','In bursts'],titles:[['Col cronometro','On the clock'],['Meno tempo','Less time'],['Cinque bolle','Five dockets'],['Il picco','The peak'],['Automatico','Automatic']],
+  beats:[B({tray:['clienti',':id','ordini','righe','?stato=aperto'],timer:26,jobs:[J('Gli ordini del cliente 7','Orders of customer 7','GET',['clienti',':id','ordini']),J('Un cliente nuovo','A new customer','POST',['clienti']),J("Le righe dell'ordine 3",'Lines of order 3','GET',['ordini',':id','righe'])],need:4}),
+   B({tray:['clienti',':id','ordini','righe','?stato=aperto','getClienti'],timer:23,jobs:[J('Gli ordini aperti','The open orders','GET',['ordini','?stato=aperto']),J('Cambiare il cliente 7','Update customer 7','PUT',['clienti',':id']),J('La lista dei clienti','The list of customers','GET',['clienti'])],need:4}),
+   B({tray:['clienti',':id','ordini','righe','prodotti','?stato=aperto'],timer:21,jobs:[J("Cancellare l'ordine 3",'Delete order 3','DELETE',['ordini',':id']),J('Un ordine nuovo per il cliente 7','A new order for customer 7','POST',['clienti',':id','ordini']),J('La lista dei prodotti','The list of products','GET',['prodotti'])],need:5}),
+   B({tray:['clienti',':id','ordini','righe','prodotti','?stato=attivo','creaCliente'],timer:19,jobs:[J('I clienti attivi','The active customers','GET',['clienti','?stato=attivo']),J('Un cliente nuovo','A new customer','POST',['clienti']),J("Le righe dell'ordine 3",'Lines of order 3','GET',['ordini',':id','righe']),J('Il cliente numero 7','Customer number 7','GET',['clienti',':id'])],need:5}),
+   B({tray:['clienti',':id','ordini','righe','?stato=aperto'],timer:24,jobs:[J('Gli ordini del cliente 7','Orders of customer 7','GET',['clienti',':id','ordini']),J('La lista degli ordini','The list of orders','GET',['ordini'])],need:4})]},
+ {t:['Il collaudo intero','The whole inspection'],titles:[['Tutto insieme','All together'],['Senza rete','No net'],['La prova','The test'],['Il picco','The peak'],['Chiusura','Closing']],
+  beats:[B({tray:['clienti',':id','ordini','righe','?stato=aperto','getClienti','cliente'],timer:24,jobs:[J('Gli ordini del cliente 7','Orders of customer 7','GET',['clienti',':id','ordini']),J('Un cliente nuovo','A new customer','POST',['clienti']),J('Gli ordini aperti','The open orders','GET',['ordini','?stato=aperto'])],need:4}),
+   B({tray:['clienti',':id','ordini','righe','prodotti','?stato=attivo','creaOrdine','ordine'],timer:22,jobs:[J("Le righe dell'ordine 3",'Lines of order 3','GET',['ordini',':id','righe']),J('Cambiare il cliente 7','Update customer 7','PUT',['clienti',':id']),J('I clienti attivi','The active customers','GET',['clienti','?stato=attivo'])],need:5}),
+   B({tray:['clienti',':id','ordini','righe','prodotti','?stato=aperto','getOrdini','creaCliente'],timer:20,jobs:[J('Un ordine nuovo per il cliente 7','A new order for customer 7','POST',['clienti',':id','ordini']),J("Cancellare l'ordine 3",'Delete order 3','DELETE',['ordini',':id']),J('Gli ordini aperti','The open orders','GET',['ordini','?stato=aperto']),J('La lista dei prodotti','The list of products','GET',['prodotti'])],need:5}),
+   B({tray:['clienti',':id','ordini','righe','prodotti','?stato=attivo','?stato=aperto','creaCliente','cliente'],timer:18,jobs:[J('I clienti attivi','The active customers','GET',['clienti','?stato=attivo']),J('Gli ordini del cliente 7','Orders of customer 7','GET',['clienti',':id','ordini']),J("Le righe dell'ordine 3",'Lines of order 3','GET',['ordini',':id','righe']),J('Un cliente nuovo','A new customer','POST',['clienti']),J('Il cliente numero 7','Customer number 7','GET',['clienti',':id'])],need:6}),
+   B({tray:['clienti',':id','ordini','righe','?stato=aperto'],timer:26,jobs:[J('Gli ordini del cliente 7','Orders of customer 7','GET',['clienti',':id','ordini']),J('La lista dei clienti','The list of customers','GET',['clienti'])],need:4})]}];
+const T={it:{verb:'Hai messo un verbo dentro l\'indirizzo.',verbFx:'Il collaudo lo respinge: l\'indirizzo dice cosa è, non cosa fare.',verbRule:'Il verbo lo porta il metodo. L\'indirizzo porta solo il nome della cosa.',
+ wrong:'L\'indirizzo non descrive la cosa chiesta.',wrongFx:'Il collaudo lo respinge.',wrongRule:'La parte dopo appartiene alla parte prima: /clienti/:id/ordini.',
+ a:'POST /creaCliente',b:'POST /clienti'},
+ en:{verb:'You put a verb inside the address.',verbFx:'Inspection rejects it: the address says what a thing is, not what to do.',verbRule:'The verb is carried by the method. The address carries only the name.',
+ wrong:'The address does not describe what was asked.',wrongFx:'Inspection rejects it.',wrongRule:'The later part belongs to the earlier one: /clienti/:id/ordini.',
+ a:'POST /creaCliente',b:'POST /clienti'}};
+const isVerbPiece=p=>/^(get|post|put|crea|cancella|aggiorna)/i.test(p)&&p!==':id';
+
+class Component extends DCLogic{
+ state={beat:0,chapter:0,lang:'it',paused:false,coach:null,done:false,muted:false,step:0,bad:0};
+ renderVals(){const s=this.state,L=T[s.lang],c=s.coach;
+  return Object.assign(KAIO.vals(this),{
+   coachWhat:c?(c.kind==='verb'?L.verb:L.wrong):'',
+   coachEffect:c?(c.kind==='verb'?L.verbFx:L.wrongFx):'',
+   coachRule:c?(c.kind==='verb'?L.verbRule:L.wrongRule):'',
+   coachA:L.a,coachB:L.b});
+ }
+ componentDidMount(){KAIO.init(this,{W,H,key:KEY,chapters:CH,onTap:p=>this.tap(p)});
+  KAIO.audio(this);KAIO.drone(this,45,'triangle',.013,130);}
+ componentDidUpdate(pp){KAIO.sync(this,pp)}
+ componentWillUnmount(){KAIO.destroy(this)}
+
+ reset(beat){const c=this.BEATS[beat];this.cfg=c;this.needed=c.need;
+  this.ji=0;this.built=[];this.meth=null;this.made=0;this.parts=[];
+  this.shake=0;this.flash=0;this.pulse=0;this.pulseK=null;this.streak={kind:null,n:0};
+  this.timer=c.timer;this.setState({bad:0,step:0})}
+
+ job(){const j=this.cfg.jobs;return j[this.ji%j.length]}
+ trayXY(i){const cols=2,r=Math.floor(i/cols),cc=i%cols,w=W/(cols+.3);
+  return{x:W*.5+(cc-(cols-1)/2)*w,y:TRAYY+r*58}}
+ methXY(i){const w=W/(METHODS.length+.4);return{x:W*.5+(i-(METHODS.length-1)/2)*w,y:METHY}}
+
+ tap(p){
+  for(let i=0;i<METHODS.length;i++){const q=this.methXY(i);
+   if(Math.hypot(p.x-q.x,p.y-q.y)<30){this.meth=METHODS[i];KAIO.snd(this,'click',{hz:1200,v:.14});return}}
+  if(Math.hypot(p.x-STAMP.x,p.y-STAMP.y)<40){this.check();return}
+  if(Math.abs(p.y-SLOTY)<32&&this.built.length){this.built.pop();KAIO.snd(this,'fall');return}
+  const tray=this.cfg.tray;
+  for(let i=0;i<tray.length;i++){const q=this.trayXY(i);
+   if(Math.hypot(p.x-q.x,p.y-q.y)<32){
+    if(this.built.length<5){this.built.push(tray[i]);KAIO.snd(this,'pop',{hz:340,v:.13})}
+    else{KAIO.snd(this,'fall');this.shake=.3}
+    return}}}
+
+ check(){const j=this.job();
+  if(!this.meth||!this.built.length){KAIO.snd(this,'fall');this.shake=.4;return}
+  const okPath=this.built.length===j.parts.length&&this.built.every((p,i)=>p===j.parts[i]);
+  const okMeth=this.meth===j.m;
+  if(okPath&&okMeth){this.made++;this.flash=1;this.streak={kind:null,n:0};
+   KAIO.snd(this,'tone',{from:600,to:940,v:.16});KAIO.burst(this.parts,STAMP.x,STAMP.y,12,'#d9b448');
+   this.built=[];this.meth=null;this.ji++;this.timer=this.cfg.timer;
+   this.setState({step:this.made});
+   if(this.made>=this.needed){KAIO.snd(this,'chime',{notes:[440,587,740]});this.setState({done:true})}
+   return}
+  const kind=this.built.some(isVerbPiece)?'verb':'wrong';
+  this.shake=.8;KAIO.snd(this,'whir');KAIO.burst(this.parts,STAMP.x,STAMP.y,8,'#6f8288');
+  const s=this.streak;if(s.kind===kind)s.n++;else{s.kind=kind;s.n=1}
+  if(s.n===2){this.pulse=.8;this.pulseK=j.parts[this.built.length]||j.parts[0]}
+  if(s.n>=3){this.setState({coach:{kind}});this.streak={kind:null,n:0}}
+  const bad=this.state.bad+1;this.setState({bad});
+  this.built=[];
+  if(bad>=3){this.reset(this.state.beat)}}
+
+ update(dt){
+  if(this.flash>0)this.flash-=dt*3;if(this.shake>0)this.shake-=dt*3.4;if(this.pulse>0)this.pulse-=dt;
+  if(this.cfg.timer){this.timer-=dt;
+   if(this.timer<=0){this.timer=this.cfg.timer;this.shake=.7;KAIO.snd(this,'whir');
+    const bad=this.state.bad+1;this.setState({bad});this.built=[];this.meth=null;
+    if(bad>=3)this.reset(this.state.beat)}}
+  this.parts=KAIO.parts(this.parts,dt,420)}
+
+ draw(x){const sc=this.sc||1;x.setTransform(sc,0,0,sc,0,0);x.save();KAIO.shake(x,this.shake);
+  const g=x.createLinearGradient(0,0,0,H);g.addColorStop(0,'#11191f');g.addColorStop(.5,'#0d1316');g.addColorStop(1,'#0a0f12');x.fillStyle=g;x.fillRect(-8,-8,W+16,H+16);
+  x.strokeStyle='rgba(160,190,200,.045)';x.lineWidth=1;
+  for(let i=1;i<8;i++){x.beginPath();x.moveTo(0,i*H/8);x.lineTo(W,i*H/8);x.stroke()}
+  const j=this.job(),it=this.state.lang==='it';
+  x.fillStyle='rgba(232,226,208,.96)';KAIO.rr(x,18,H*.055,W-36,58,4);x.fill();
+  x.fillStyle='rgba(70,60,40,.9)';x.font='600 16px "JetBrains Mono",monospace';x.textAlign='left';x.textBaseline='middle';
+  let f=16,txt=it?j.ask:j.en;x.font='600 '+f+'px "JetBrains Mono",monospace';
+  while(x.measureText(txt).width>W-64&&f>13){f--;x.font='600 '+f+'px "JetBrains Mono",monospace'}
+  x.fillText(txt,32,H*.055+30);
+  if(this.cfg.timer){const k=Math.max(0,this.timer/this.cfg.timer);
+   x.fillStyle='rgba(201,162,39,.5)';x.fillRect(18,H*.055+54,(W-36)*k,4)}
+  METHODS.forEach((m,i)=>{const q=this.methXY(i),on=this.meth===m;
+   x.fillStyle=on?'#c9a227':'#1a2429';KAIO.rr(x,q.x-34,q.y-19,68,38,4);x.fill();
+   x.strokeStyle=on?'rgba(255,236,180,.9)':'rgba(201,162,39,.35)';x.lineWidth=on?2.5:1.8;
+   KAIO.rr(x,q.x-34,q.y-19,68,38,4);x.stroke();
+   x.font='600 14px "JetBrains Mono",monospace';x.textAlign='center';x.textBaseline='middle';
+   x.fillStyle=on?'#14191c':'rgba(217,180,72,.75)';x.fillText(m,q.x,q.y)});
+  x.fillStyle='rgba(20,28,34,.7)';KAIO.rr(x,14,SLOTY-30,W-28,60,6);x.fill();
+  x.strokeStyle='rgba(201,162,39,.25)';x.lineWidth=1.5;KAIO.rr(x,14,SLOTY-30,W-28,60,6);x.stroke();
+  let px=26;
+  x.font='600 15px "JetBrains Mono",monospace';x.textBaseline='middle';x.textAlign='left';
+  x.fillStyle='#7e9096';x.fillText('/',px,SLOTY);px+=12;
+  this.built.forEach((p,i)=>{x.font='600 15px "JetBrains Mono",monospace';
+   const w=x.measureText(p).width+18;
+   x.fillStyle='#8a6f20';KAIO.rr(x,px,SLOTY-17,w,34,3);x.fill();
+   x.strokeStyle='rgba(232,200,90,.6)';x.lineWidth=1.5;KAIO.rr(x,px,SLOTY-17,w,34,3);x.stroke();
+   x.fillStyle='rgba(255,244,214,.95)';x.textAlign='center';x.fillText(p,px+w/2,SLOTY);
+   px+=w+4;
+   if(i<this.built.length-1){x.fillStyle='#7e9096';x.textAlign='left';x.fillText('/',px,SLOTY);px+=12}});
+  if(!this.built.length){x.fillStyle='#7e9096';x.textAlign='left';x.font='500 14px "JetBrains Mono",monospace';
+   x.fillText(it?'aggancia i pezzi':'hook the parts',px+4,SLOTY)}
+  x.fillStyle='rgba(20,28,34,.55)';KAIO.rr(x,14,TRAYY-36,W-28,H*.26,8);x.fill();
+  this.cfg.tray.forEach((p,i)=>{const q=this.trayXY(i),lit=this.pulse>0&&this.pulseK===p;
+   x.font='600 14px "JetBrains Mono",monospace';
+   const w=Math.max(96,x.measureText(p).width+26);
+   x.fillStyle='#243036';KAIO.rr(x,q.x-w/2,q.y-20,w,40,4);x.fill();
+   x.strokeStyle=lit?'rgba(232,200,90,'+(.4+.5*Math.sin(this.pulse*15))+')':'rgba(201,162,39,.4)';
+   x.lineWidth=lit?3:1.8;KAIO.rr(x,q.x-w/2,q.y-20,w,40,4);x.stroke();
+   x.textAlign='center';x.textBaseline='middle';x.fillStyle='#e8c85a';x.fillText(p,q.x,q.y)});
+  x.fillStyle='#243036';x.beginPath();x.arc(STAMP.x,STAMP.y,36,0,6.283);x.fill();
+  x.strokeStyle='rgba(201,162,39,.6)';x.lineWidth=3;x.beginPath();x.arc(STAMP.x,STAMP.y,36,0,6.283);x.stroke();
+  x.font='600 14px "JetBrains Mono",monospace';x.textAlign='center';x.textBaseline='middle';
+  x.fillStyle='#e8c85a';x.fillText(it?'COLLAUDA':'CHECK',STAMP.x,STAMP.y);
+  for(let i=0;i<3;i++){const off=i<this.state.bad;
+   x.strokeStyle=off?'rgba(140,110,70,.5)':'rgba(201,162,39,.8)';x.lineWidth=2;
+   x.beginPath();x.arc(W-26,H*.155+i*22,5.5,0,6.283);off?x.stroke():x.fill()}
+  x.textAlign='left';x.font='500 18px "JetBrains Mono",monospace';x.fillStyle='#7e9096';
+  x.fillText(this.made+'/'+this.needed,20,H*.155);
+  KAIO.drawParts(x,this.parts);
+  if(this.flash>0){x.fillStyle='rgba(232,220,170,'+(this.flash*.06)+')';x.fillRect(0,0,W,H)}
+  if(this.props.diagnostica){x.fillStyle='rgba(160,230,255,.9)';x.font='500 11px "JetBrains Mono",monospace';
+   x.fillText('c'+(this.state.chapter+1)+'.'+(this.state.beat+1)+'  atteso '+j.m+' /'+j.parts.join('/'),12,H-14)}
+  x.restore()}
+}
+</script>
+</body>
+</html>

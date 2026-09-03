@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Node.js L9 — La sala di smistamento" description="Livello 9, banda 2: smistamento a corsie sull'event loop. Quattro code, una porta sola, e un ordine di precedenza che non è la fila." -->
+<!--
+  SCHEDA DI PROGETTO (ricerca/00 §0.3)
+  GIOCO ...... La sala di smistamento
+  LIVELLO .... Node.js, L9 Event loop, banda 2
+  CAPITOLO ... 6 di 8 — nextTick e microtask passano avanti alle altre code
+  CONCETTO ... Alcune cose in attesa hanno il diritto di passare davanti a
+               tutte le altre, anche a chi era in fila da prima. E quel
+               diritto vale ogni volta che si finisce una cosa.
+  FORMA ...... precedenza             VERBO ... dare la corsia
+  ARCHETIPO .. ricerca/16 lane sorting — dal Semaforo
+  VINCI SE ... il turno finisce con tutte le code sotto la soglia
+  PERDI SE ... una coda arriva a cinque: la sala si blocca
+  SBAGLI ..... 1 il pacco esce fuori ordine: il banco lo respinge e torna
+               in fondo alla sua coda — la coda cresce per colpa tua
+               2 alla seconda volta la targhetta giusta pulsa una volta
+               3 pannello di coaching, quattro righe, la quarta è animata
+  BEAT ....... 1 una coda sola: si impara la leva · 2 due code, precedenza
+               3 FRATTURA: arriva un nextTick mentre un timer aspetta da otto
+                 secondi. L'istinto è servire chi aspetta da più tempo
+               4 quattro code, arrivi rapidi, rischio di far morire di fame
+                 la coda in fondo alla precedenza
+               5 tutti i casi, più lento
+  MONDO ...... sala di smistamento postale, banda 2: acciaio, nastri, leve
+               con targhette di ottone incise coi nomi veri, quadrante a
+               lancetta per il carico. Niente legno, niente lanterne.
+  NUMERI ..... da ricerca/31: transito 2,4 s, arrivi 2,8 → 1,4 s, coda max 5,
+               leva 220 ms con overshoot, ingorgo hit-stop 140 ms
+  TEST 1 ..... i pacchi sono identici: stessa carta, stesso spago. L'unico
+               segnale è il timbro di ceralacca, cioè il tipo di attesa.
+               L'ordine delle corsie cambia a ogni mano.
+  TEST 2 ..... "Do la corsia a chi ha la precedenza, prima che le code
+               si intasino"
+  TEST 3 ..... un pacco scende sul nastro e una leva oscilla appena
+-->
+<helmet>
+<script src="./ds-base.js"></script>
+<script src="../kaio-engine.js"></script>
+<style>
+*{box-sizing:border-box}html,body{margin:0;padding:0;height:100%;background:#080b0d}
+@keyframes om-fade{from{opacity:0}to{opacity:1}}
+@keyframes om-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes om-jump{0%{transform:translateY(0)}45%{transform:translateY(-34px)}100%{transform:translateY(-34px)}}
+@keyframes om-wait{0%,100%{transform:translateY(0)}50%{transform:translateY(2px)}}
+</style>
+</helmet>
+<div style="position:fixed;inset:0;background:radial-gradient(130% 90% at 50% -10%,#131c22 0%,#0c1114 55%,#070a0c 100%);display:grid;place-items:center;font-family:Raleway,system-ui,sans-serif;overflow:hidden;padding:18px">
+<div style="display:flex;align-items:center;justify-content:center;gap:26px;max-width:100%">
+<div style="position:relative;height:min(910px,calc(100vh - 36px),max(480px,calc((100vw - 280px) * 2.1667)));aspect-ratio:420/910;border-radius:24px;overflow:hidden;box-shadow:0 50px 130px -34px rgba(0,0,0,.95),0 0 0 1px rgba(201,162,39,.16);flex:0 0 auto">
+<canvas ref="{{ cvRef }}" style="display:block;width:100%;height:100%;touch-action:none;cursor:pointer"></canvas>
+<sc-if value="{{ coachOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;left:14px;right:14px;top:14px;padding:20px 20px 16px;border-radius:14px;background:linear-gradient(180deg,rgba(20,28,34,.97),rgba(12,17,20,.97));box-shadow:0 24px 60px -18px rgba(0,0,0,.9),inset 0 1px 0 rgba(201,162,39,.22);animation:om-rise .26s cubic-bezier(.16,1,.3,1) both;cursor:pointer">
+<div style="font-size:20px;line-height:1.45;color:#e8e2d0;font-weight:500">{{ coachWhat }}</div>
+<div style="font-size:20px;line-height:1.45;color:#9fb0b4;margin-top:10px">{{ coachEffect }}</div>
+<div style="font-size:20px;line-height:1.45;color:#d9b448;margin-top:14px;font-weight:600">{{ coachRule }}</div>
+<div style="margin-top:18px;height:104px;border-radius:10px;background:rgba(0,0,0,.42);position:relative;overflow:hidden;display:flex;align-items:flex-end;gap:12px;padding:12px 16px">
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px">
+<div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#d9b448">nextTick</div>
+<div style="width:26px;height:22px;border-radius:2px;background:#c9a227;animation:om-jump 2.2s ease-in-out infinite"></div>
+<div style="width:100%;height:3px;background:rgba(201,162,39,.4)"></div>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px">
+<div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#7e9096">timers</div>
+<div style="display:flex;gap:3px">
+<div style="width:22px;height:22px;border-radius:2px;background:#4e6068;animation:om-wait 1.6s ease-in-out infinite"></div>
+<div style="width:22px;height:22px;border-radius:2px;background:#3f4f56"></div>
+<div style="width:22px;height:22px;border-radius:2px;background:#38464c"></div>
+</div>
+<div style="width:100%;height:3px;background:rgba(126,144,150,.3)"></div>
+</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ doneOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(70% 50% at 50% 45%,rgba(18,28,34,.92),rgba(6,9,11,.96));animation:om-fade .22s ease both;cursor:pointer">
+<div style="text-align:center;padding:0 30px">
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:34px;font-weight:600;color:#eef0e6;letter-spacing:-.01em">Turno smistato</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:34px;font-weight:600;color:#eef0e6;letter-spacing:-.01em">Shift sorted</div></sc-if>
+<div style="display:flex;gap:10px;justify-content:center;margin-top:26px">
+<sc-for list="{{ marks }}" as="m" hint-placeholder-count="5">
+<div style="width:34px;height:6px;border-radius:2px;background:rgba(201,162,39,.2);position:relative;overflow:hidden">
+<sc-if value="{{ m.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;background:#c9a227"></div></sc-if>
+</div>
+</sc-for>
+</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#8b9aa0;margin-top:22px;letter-spacing:.04em">{{ doneHint }}</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ pauseOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;backdrop-filter:blur(9px);background:rgba(8,11,13,.74);display:grid;place-items:center;animation:om-fade .2s ease both">
+<div style="width:290px;padding:24px;border-radius:16px;background:linear-gradient(180deg,rgba(22,30,36,.98),rgba(12,17,20,.98));box-shadow:0 30px 70px -20px rgba(0,0,0,.9),inset 0 1px 0 rgba(201,162,39,.2)">
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#7e9096;font-family:'JetBrains Mono',monospace">In pausa</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#7e9096;font-family:'JetBrains Mono',monospace">Paused</div></sc-if>
+<div style="display:flex;flex-direction:column;gap:9px;margin-top:16px">
+<div onClick="{{ resume }}" style="padding:14px 16px;border-radius:8px;background:#c9a227;color:#14191c;font-size:17px;font-weight:600;text-align:center;cursor:pointer" style-hover="background:#d9b448"><sc-if value="{{ it }}" hint-placeholder-val="{{ true }}">Riprendi</sc-if><sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">Resume</sc-if></div>
+<div onClick="{{ toggleLang }}" style="padding:13px 16px;border-radius:8px;background:rgba(201,162,39,.1);color:#dfe4dc;font-size:16px;display:flex;justify-content:space-between;cursor:pointer" style-hover="background:rgba(201,162,39,.18)"><span><sc-if value="{{ it }}" hint-placeholder-val="{{ true }}">Lingua</sc-if><sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">Language</sc-if></span><span style="font-family:'JetBrains Mono',monospace;color:#d9b448">{{ langLabel }}</span></div>
+<div onClick="{{ toggleMute }}" style="padding:13px 16px;border-radius:8px;background:rgba(201,162,39,.1);color:#dfe4dc;font-size:16px;display:flex;justify-content:space-between;cursor:pointer" style-hover="background:rgba(201,162,39,.18)"><span>Audio</span><span style="font-family:'JetBrains Mono',monospace;color:#d9b448">{{ audioState }}</span></div>
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#7e9096;font-family:'JetBrains Mono',monospace;margin-top:12px">Lezione</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#7e9096;font-family:'JetBrains Mono',monospace;margin-top:12px">Lesson</div></sc-if>
+<div style="display:flex;gap:7px">
+<sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+<div onClick="{{ l.go }}" style="flex:1;padding:11px 0;border-radius:6px;background:rgba(201,162,39,.1);color:#dfe4dc;font-family:'JetBrains Mono',monospace;font-size:15px;text-align:center;cursor:pointer;position:relative" style-hover="background:rgba(201,162,39,.2)">{{ l.n }}
+<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:50%;bottom:5px;width:14px;height:2px;margin-left:-7px;background:#c9a227"></div></sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</div>
+</sc-if>
+</div>
+<div style="flex:0 1 212px;min-width:0;min-height:0;max-height:min(910px,calc(100vh - 36px));overflow-y:auto;display:flex;flex-direction:column;gap:14px;padding-right:4px;color:#9fb0b4">
+<div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#7e9096">L4 · Asincrono base</div>
+<div style="font-size:23px;font-weight:600;color:#e8e2d0;margin-top:4px;line-height:1.2">La sala di smistamento</div>
+<div style="font-size:14px;line-height:1.5;color:#7e9096;margin-top:8px">Capitoli 5-8 · precedenza fra code</div>
+</div>
+<div style="height:1px;background:rgba(201,162,39,.16)"></div>
+<div style="display:flex;flex-direction:column;gap:5px">
+<sc-for list="{{ chapters }}" as="c" hint-placeholder-count="4">
+<div onClick="{{ c.go }}" style="padding:9px 11px;border-radius:8px;background:rgba(201,162,39,.06);cursor:pointer;display:flex;gap:10px;align-items:baseline" style-hover="background:rgba(201,162,39,.14)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#d9b448;width:12px">{{ c.n }}</div>
+<div style="flex:1;min-width:0">
+<div style="font-size:14px;color:#dfe4dc;line-height:1.3">{{ c.title }}</div>
+<sc-if value="{{ c.on }}" hint-placeholder-val="{{ false }}"><div style="height:2px;background:#c9a227;margin-top:6px"></div></sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7e9096">Lezione {{ chapterNo }}.x</div>
+<div style="display:flex;flex-direction:column;gap:7px">
+<sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+<div onClick="{{ l.go }}" style="padding:11px 13px;border-radius:8px;background:rgba(201,162,39,.06);cursor:pointer;display:flex;gap:11px;align-items:baseline" style-hover="background:rgba(201,162,39,.14)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#d9b448;width:14px">{{ l.n }}</div>
+<div style="flex:1;min-width:0">
+<div style="font-size:15px;color:#dfe4dc;line-height:1.3">{{ l.title }}</div>
+<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><div style="height:2px;background:#c9a227;margin-top:7px"></div></sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="font-size:13px;line-height:1.55;color:#7e9096">Tira la leva della coda che ha diritto di passare. Il banco respinge chi esce fuori ordine, e quel pacco torna in fondo. <span style="color:#7e9096">1-4</span> o tocco. <span style="color:#7e9096">Esc</span> per la pausa.</div>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:940,&quot;height&quot;:1000},&quot;capitolo&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;],&quot;default&quot;:&quot;1&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;lezione&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;],&quot;default&quot;:&quot;1&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;lingua&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;it&quot;,&quot;en&quot;],&quot;default&quot;:&quot;it&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;diagnostica&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Taratura&quot;}}">
+const W=420,H=910,KEY='kaio.l9.smistamento';
+const Q=[{n:'nextTick',c:'#c9a227'},{n:'microtask',c:'#b9a06a'},{n:'timers',c:'#6f8288'},{n:'poll',c:'#5c7076'}];
+const CAP=5,BELT=H*.2,LANEY=H*.42,DOOR=H*.83;
+const B=(o)=>Object.assign({lanes:[2,3],arrive:2.6,need:8,rate:[.5,.5],trap:false},o);
+/* L4 Asincrono Base — capitoli 5-8 di 8 (1-4 La cucina di notte) */
+const CH=[
+ {t:['Le code','The queues'],titles:[['La leva','The lever'],['Due code','Two queues'],['Chi prima','Who first'],['Senza fermarti','No pause'],['Il ritmo','The rhythm']],
+  beats:[B({lanes:[2],arrive:3.6,need:5,rate:[1]}),
+   B({lanes:[2],arrive:3.2,need:6,rate:[1]}),
+   B({lanes:[2,3],arrive:3.0,need:7,rate:[.5,.5]}),
+   B({lanes:[2,3],arrive:2.1,need:9,rate:[.5,.5]}),
+   B({lanes:[2,3],arrive:2.8,need:7,rate:[.5,.5]})]},
+ {t:['Il diritto di passare','The right to pass'],titles:[['Sale nextTick','nextTick arrives'],['Passa avanti','It goes first'],['Anche a chi aspetta','Even past the waiting'],['Due precedenze','Two precedences'],['Adesso lo sai','Now you know']],
+  beats:[B({lanes:[0,2],arrive:3.0,need:6,rate:[.35,.65]}),
+   B({lanes:[0,2],arrive:2.8,need:7,rate:[.35,.65],trap:true}),
+   B({lanes:[0,2,3],arrive:2.6,need:8,rate:[.25,.4,.35],trap:true}),
+   B({lanes:[0,1,2,3],arrive:1.9,need:10,rate:[.2,.2,.3,.3],trap:true}),
+   B({lanes:[0,1,2,3],arrive:2.5,need:9,rate:[.2,.2,.3,.3]})]},
+ {t:['Morire di fame','Starvation'],titles:[['La coda in fondo','The last queue'],['Cresce','It grows'],['Non basta la regola','The rule is not enough'],['Il picco','The peak'],['Equilibrio','Balance']],
+  beats:[B({lanes:[0,2,3],arrive:2.4,need:8,rate:[.3,.3,.4]}),
+   B({lanes:[0,2,3],arrive:2.2,need:9,rate:[.35,.25,.4]}),
+   B({lanes:[0,1,2,3],arrive:2.0,need:10,rate:[.3,.2,.2,.3]}),
+   B({lanes:[0,1,2,3],arrive:1.7,need:12,rate:[.3,.2,.2,.3]}),
+   B({lanes:[0,1,2,3],arrive:2.4,need:9,rate:[.25,.25,.25,.25]})]},
+ {t:['Il turno','The shift'],titles:[['Tutto insieme','All together'],['Senza rete','No net'],['La prova','The test'],['Il picco del turno','Shift peak'],['Chiusura','Closing']],
+  beats:[B({lanes:[0,1,2,3],arrive:2.3,need:10,rate:[.2,.2,.3,.3]}),
+   B({lanes:[0,1,2,3],arrive:2.0,need:11,rate:[.25,.25,.25,.25],trap:true}),
+   B({lanes:[0,1,2,3],arrive:1.8,need:12,rate:[.25,.25,.25,.25],trap:true}),
+   B({lanes:[0,1,2,3],arrive:1.6,need:14,rate:[.25,.25,.25,.25]}),
+   B({lanes:[0,1,2,3],arrive:2.3,need:10,rate:[.25,.25,.25,.25]})]}];
+const T={it:{what:n=>'Hai fatto uscire un pacco di '+n+'.',fx:'Un\'altra coda aveva la precedenza: il banco lo ha respinto e il pacco è tornato in fondo.',rule:'La fila non decide: decide il diritto di passare.',
+ jam:'Una coda è arrivata a cinque.',jamFx:'La sala si è bloccata: da lì non passa più niente.',jamRule:'Anche la coda in fondo alla precedenza va svuotata, o intasa.'},
+ en:{what:n=>'You released a parcel from '+n+'.',fx:'Another queue had precedence: the desk rejected it and it went back to the end.',rule:'The line does not decide: the right to pass does.',
+ jam:'A queue reached five.',jamFx:'The hall jammed: nothing passes any more.',jamRule:'Even the lowest-priority queue must be drained, or it clogs.'}};
+
+class Component extends DCLogic{
+ state={beat:0,chapter:0,lang:'it',paused:false,coach:null,done:false,muted:false,step:0};
+ renderVals(){const s=this.state,L=T[s.lang],c=s.coach;
+  return Object.assign(KAIO.vals(this),{
+   coachWhat:c?(c.kind==='order'?L.what(c.q):L.jam):'',
+   coachEffect:c?(c.kind==='order'?L.fx:L.jamFx):'',
+   coachRule:c?(c.kind==='order'?L.rule:L.jamRule):''});
+ }
+ componentDidMount(){
+  KAIO.init(this,{W,H,key:KEY,chapters:CH,
+   onTap:p=>{const i=this.laneAt(p);if(i>=0)this.pull(i)},
+   onKey:e=>{const n=parseInt(e.key,10);if(n>=1&&n<=this.order.length){this.pull(this.order[n-1]);e.preventDefault()}}});
+  KAIO.audio(this);KAIO.drone(this,41,'sawtooth',.02,120);}
+ componentDidUpdate(pp){KAIO.sync(this,pp)}
+ componentWillUnmount(){KAIO.destroy(this)}
+
+ reset(beat){const c=this.BEATS[beat];this.cfg=c;this.needed=c.need;
+  this.order=c.lanes.slice().sort(()=>Math.random()-.5);
+  this.q={};for(const i of c.lanes)this.q[i]=[];
+  this.belt=[];this.out=[];this.parts=[];this.levers={};for(const i of c.lanes)this.levers[i]=0;
+  this.arriveT=.9;this.made=0;this.shake=0;this.flash=0;this.jam=0;
+  this.streak={kind:null,n:0};this.pulse=0;this.pulseQ=-1;this.trapDone=false;this.spawned=0}
+
+ laneX(i){const n=this.order.length,slot=this.order.indexOf(i);return W*(slot+.5)/n}
+ laneAt(p){if(p.y<LANEY-40)return -1;const n=this.order.length,i=Math.floor(p.x/(W/n));return i>=0&&i<n?this.order[i]:-1}
+ top(){for(const i of this.cfg.lanes)if(this.q[i]&&this.q[i].length)return i;return -1}
+
+ pull(i){if(!this.q[i]||!this.q[i].length){KAIO.snd(this,'fall');return}
+  this.levers[i]=1;
+  const want=this.top();
+  const p=this.q[i].shift();
+  if(i===want){this.out.push({q:i,x:this.laneX(i),y:LANEY+70,ok:true,t:0});
+   KAIO.snd(this,'click',{hz:1500,v:.16});this.flash=1;
+   this.made++;this.setState({step:this.made});
+   KAIO.burst(this.parts,this.laneX(i),DOOR-20,9,'#d9b448');
+   if(this.made>=this.needed){KAIO.snd(this,'chime',{notes:[440,587,740]});this.setState({done:true})}}
+  else{this.out.push({q:i,x:this.laneX(i),y:LANEY+70,ok:false,t:0,back:p});
+   KAIO.snd(this,'thud',{v:.26});this.shake=.6;this.err('order',Q[i].n,want)}}
+
+ err(kind,q,want){const s=this.streak;if(s.kind===kind)s.n++;else{s.kind=kind;s.n=1}
+  if(s.n===2){this.pulse=.8;this.pulseQ=want!=null?want:-1}
+  if(s.n>=3){this.setState({coach:{kind,q}});this.streak={kind:null,n:0}}}
+ onCoachClose(){this.streak={kind:null,n:0}}
+
+ spawn(){const c=this.cfg;let i;
+  if(c.trap&&!this.trapDone&&this.q[2]&&this.q[2].length>=2&&this.q[2][0].age>6){this.trapDone=true;i=0}
+  else{let r=Math.random(),acc=0;i=c.lanes[0];
+   for(let k=0;k<c.lanes.length;k++){acc+=c.rate[k];if(r<=acc){i=c.lanes[k];break}}}
+  this.belt.push({q:i,x:W*.5,y:-20,age:0});this.spawned++}
+
+ update(dt){const c=this.cfg;
+  if(this.flash>0)this.flash-=dt*3;if(this.shake>0)this.shake-=dt*3.2;if(this.pulse>0)this.pulse-=dt;
+  for(const i of c.lanes)if(this.levers[i]>0)this.levers[i]=Math.max(0,this.levers[i]-dt*4);
+  if(this.jam>0)return;
+  this.arriveT-=dt;
+  if(this.arriveT<=0&&this.spawned<this.needed+6){this.spawn();this.arriveT=c.arrive*(.85+Math.random()*.3)}
+  for(const p of this.belt){p.age+=dt;
+   const tx=this.laneX(p.q);
+   if(p.y<BELT){p.y+=(BELT-p.y)*Math.min(1,dt*4)+30*dt}
+   else{p.x+=(tx-p.x)*Math.min(1,dt*5);p.y+=(LANEY-p.y)*Math.min(1,dt*4);
+    if(Math.abs(p.x-tx)<3&&Math.abs(p.y-LANEY)<4){p.done=true;
+     this.q[p.q].push({age:0});KAIO.snd(this,'pop',{hz:260,v:.07})}}}
+  this.belt=this.belt.filter(p=>!p.done);
+  for(const i of c.lanes)for(const it of this.q[i])it.age+=dt;
+  for(const o of this.out){o.t+=dt;o.y+=(DOOR-o.y)*Math.min(1,dt*6);
+   if(o.t>.42&&!o.settled){o.settled=true;
+    if(!o.ok){this.q[o.q].push({age:0});KAIO.burst(this.parts,o.x,DOOR,6,'#6f8288')}}}
+  this.out=this.out.filter(o=>o.t<.8);
+  for(const i of c.lanes)if(this.q[i].length>=CAP){this.jam=1;this.hitstop=140;
+   KAIO.snd(this,'whir');this.shake=1;this.err('jam',Q[i].n);
+   const b=this.state.beat;setTimeout(()=>{if(this.state)this.reset(b);this.setState({step:0})},900);break}
+  this.parts=KAIO.parts(this.parts,dt,500)}
+
+ draw(x){const sc=this.sc||1;x.setTransform(sc,0,0,sc,0,0);x.save();KAIO.shake(x,this.shake);
+  const g=x.createLinearGradient(0,0,0,H);g.addColorStop(0,'#11191f');g.addColorStop(.5,'#0d1316');g.addColorStop(1,'#0a0f12');x.fillStyle=g;x.fillRect(-8,-8,W+16,H+16);
+  x.strokeStyle='rgba(160,190,200,.045)';x.lineWidth=1;
+  for(let i=1;i<8;i++){x.beginPath();x.moveTo(0,i*H/8);x.lineTo(W,i*H/8);x.stroke()}
+  x.fillStyle='rgba(160,200,215,.05)';x.fillRect(0,0,W,BELT-24);
+  x.fillStyle='#1b262c';x.fillRect(0,BELT-22,W,26);
+  x.strokeStyle='rgba(201,162,39,.2)';x.lineWidth=1.5;
+  for(let i=0;i<11;i++){const bx=((this.spawned*7+i*42)%(W+42))-21;x.beginPath();x.moveTo(bx,BELT-20);x.lineTo(bx+12,BELT+2);x.stroke()}
+  const n=this.order.length;
+  for(let s=0;s<n;s++){const i=this.order[s],cx=W*(s+.5)/n,q=this.q[i];
+   x.strokeStyle='rgba(160,190,200,.1)';x.lineWidth=1;
+   if(s>0){x.beginPath();x.moveTo(s*W/n,BELT+8);x.lineTo(s*W/n,DOOR-30);x.stroke()}
+   x.fillStyle='#1a2429';x.beginPath();KAIO.rr(x,cx-W/n*.42,LANEY-26,W/n*.84,20,3);x.fill();
+   x.strokeStyle='rgba(201,162,39,.5)';x.lineWidth=1.5;x.beginPath();KAIO.rr(x,cx-W/n*.42,LANEY-26,W/n*.84,20,3);x.stroke();
+   let f=18;x.font='600 '+f+'px "JetBrains Mono",monospace';
+   while(x.measureText(Q[i].n).width>W/n*.84&&f>16){f--;x.font='600 '+f+'px "JetBrains Mono",monospace'}
+   x.textAlign='center';x.textBaseline='middle';x.fillStyle='#d9b448';x.fillText(Q[i].n,cx,LANEY-15);
+   for(let k=0;k<q.length;k++){const py=LANEY+22+k*44,aged=q[k].age>6;
+    this.parcel(x,cx,py,i,aged,k===0)}
+   if(q.length>=CAP-1){x.strokeStyle='rgba(214,96,60,'+(.3+.3*Math.sin(this.spawned+performance.now()/200))+')';x.lineWidth=2;
+    x.beginPath();KAIO.rr(x,cx-30,LANEY+16,60,q.length*44,4);x.stroke()}
+   const lv=this.levers[i]||0;
+   x.fillStyle='#243036';x.beginPath();KAIO.rr(x,cx-22,DOOR-26,44,30,4);x.fill();
+   x.strokeStyle=lv>0?'#e8c85a':'rgba(201,162,39,.45)';x.lineWidth=2;x.beginPath();KAIO.rr(x,cx-22,DOOR-26,44,30,4);x.stroke();
+   x.save();x.translate(cx,DOOR-6);x.rotate(-.5+lv*.9);
+   x.strokeStyle='#c9a227';x.lineWidth=4;x.beginPath();x.moveTo(0,0);x.lineTo(0,-20);x.stroke();
+   x.fillStyle='#e8c85a';x.beginPath();x.arc(0,-22,4.5,0,6.283);x.fill();x.restore();
+   if(this.pulse>0&&this.pulseQ===i){x.strokeStyle='rgba(232,200,90,'+(.35+.45*Math.sin(this.pulse*15))+')';x.lineWidth=3;
+    x.beginPath();KAIO.rr(x,cx-22,DOOR-32,44,42,6);x.stroke()}
+   x.font='600 18px "JetBrains Mono",monospace';x.fillStyle='#7e9096';x.fillText(String(s+1),cx,DOOR+22)}
+  for(const p of this.belt)this.parcel(x,p.x,p.y,p.q,false,false);
+  for(const o of this.out)this.parcel(x,o.x,o.y,o.q,false,false,o.ok?1:-1);
+  x.fillStyle='#151e23';x.fillRect(0,DOOR+26,W,H-DOOR-26);
+  x.strokeStyle='rgba(201,162,39,.25)';x.lineWidth=1.5;x.beginPath();x.moveTo(0,DOOR+26);x.lineTo(W,DOOR+26);x.stroke();
+  const gx=W-52,gy=H-42,load=Math.min(1,Object.values(this.q).reduce((a,b)=>a+b.length,0)/(CAP*n));
+  x.fillStyle='#0e1417';x.beginPath();x.arc(gx,gy,26,0,6.283);x.fill();
+  x.strokeStyle='rgba(201,162,39,.4)';x.lineWidth=2;x.beginPath();x.arc(gx,gy,26,0,6.283);x.stroke();
+  x.strokeStyle='rgba(160,190,200,.25)';x.lineWidth=1;
+  for(let k=0;k<=8;k++){const a=-2.6+k*(5.2/8);x.beginPath();x.moveTo(gx+Math.cos(a)*20,gy+Math.sin(a)*20);x.lineTo(gx+Math.cos(a)*24,gy+Math.sin(a)*24);x.stroke()}
+  const a=-2.6+load*5.2;x.strokeStyle=load>.7?'#d6603c':'#e8c85a';x.lineWidth=2.5;
+  x.beginPath();x.moveTo(gx,gy);x.lineTo(gx+Math.cos(a)*19,gy+Math.sin(a)*19);x.stroke();
+  x.fillStyle='#c9a227';x.beginPath();x.arc(gx,gy,3,0,6.283);x.fill();
+  x.textAlign='left';x.font='500 18px "JetBrains Mono",monospace';x.fillStyle='#7e9096';
+  x.fillText(this.made+'/'+this.needed,18,H-48);
+  for(let k=0;k<this.needed;k++){const px=18+k*10,py=H-30;
+   x.fillStyle=k<this.made?'#c9a227':'rgba(160,190,200,.18)';x.fillRect(px,py,6,10)}
+  KAIO.drawParts(x,this.parts);
+  if(this.flash>0){x.fillStyle='rgba(232,220,170,'+(this.flash*.06)+')';x.fillRect(0,0,W,H)}
+  if(this.jam>0){x.fillStyle='rgba(214,96,60,.14)';x.fillRect(0,0,W,H)}
+  if(this.props.diagnostica){x.fillStyle='rgba(160,230,255,.9)';x.font='500 11px "JetBrains Mono",monospace';x.textAlign='left';
+   x.fillText('beat '+(this.state.beat+1)+'  code '+this.cfg.lanes.map(i=>Q[i].n+':'+this.q[i].length).join(' ')+'  top '+(this.top()>=0?Q[this.top()].n:'—'),10,BELT-32)}
+  x.restore()}
+
+ parcel(x,cx,cy,qi,aged,front,out){const w=52,h=38;
+  x.fillStyle='rgba(0,0,0,.4)';x.beginPath();KAIO.rr(x,cx-w/2+3,cy-h/2+4,w,h,3);x.fill();
+  const g=x.createLinearGradient(0,cy-h/2,0,cy+h/2);
+  g.addColorStop(0,aged?'#8d7f66':'#a89b80');g.addColorStop(1,aged?'#6e6350':'#8a7f68');x.fillStyle=g;
+  x.beginPath();KAIO.rr(x,cx-w/2,cy-h/2,w,h,3);x.fill();
+  x.strokeStyle=out===1?'#e8c85a':out===-1?'#d6603c':front?'rgba(232,200,90,.7)':'rgba(40,34,24,.5)';
+  x.lineWidth=out||front?2:1.2;x.beginPath();KAIO.rr(x,cx-w/2,cy-h/2,w,h,3);x.stroke();
+  x.strokeStyle='rgba(60,50,34,.5)';x.lineWidth=1;
+  x.beginPath();x.moveTo(cx-w/2,cy-4);x.lineTo(cx+w/2,cy-4);x.stroke();
+  x.beginPath();x.moveTo(cx-6,cy-h/2);x.lineTo(cx-6,cy+h/2);x.stroke();
+  const sx=cx+w/2-15,sy=cy;
+  x.fillStyle=Q[qi].c;x.beginPath();x.arc(sx,sy,12,0,6.283);x.fill();
+  x.strokeStyle='rgba(20,16,10,.45)';x.lineWidth=1.2;x.beginPath();x.arc(sx,sy,12,0,6.283);x.stroke();
+  x.strokeStyle='rgba(24,20,12,.7)';x.lineWidth=2;x.beginPath();
+  if(qi===0){x.moveTo(sx-5,sy+3);x.lineTo(sx,sy-5);x.lineTo(sx+5,sy+3)}
+  else if(qi===1){x.moveTo(sx-5,sy);x.lineTo(sx+5,sy);x.moveTo(sx,sy-5);x.lineTo(sx,sy+5)}
+  else if(qi===2){x.arc(sx,sy,5,0,6.283);x.moveTo(sx,sy-5);x.lineTo(sx,sy)}
+  else{x.moveTo(sx-5,sy-3);x.lineTo(sx+5,sy-3);x.moveTo(sx-5,sy+3);x.lineTo(sx+5,sy+3)}
+  x.stroke();
+  if(aged){x.strokeStyle='rgba(214,96,60,.55)';x.lineWidth=2.5;
+   x.beginPath();x.moveTo(cx-w/2+7,cy+10);x.lineTo(cx-w/2+26,cy+10);x.stroke()}}
+}
+</script>
+</body>
+</html>

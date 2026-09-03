@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Node.js L6 — Il centralino di notte" description="Livello 6 completo: 8 capitoli × 5 lezioni. HTTP e server — metodo, indirizzo e il numero che dice com'è andata." -->
+<!--
+  SCHEDA (ricerca/00 §0.3) — GIOCO Il centralino di notte
+  LIVELLO Node.js L6 HTTP e Server, banda 1 — 8 capitoli, 40 lezioni
+  CONCETTO Ogni chiamata che arriva porta un metodo e un indirizzo. Si innesta
+           dove quel metodo su quell'indirizzo è previsto, e la risposta è un
+           numero che dice com'è andata. Se non c'è presa, la risposta è 404.
+  FORMA instradamento · VERBO innestare (trascinare lo spinotto)
+  ARCHETIPO ricerca/16 lane sorting, in forma di centralino
+  VINCI SE tutte le chiamate del capitolo trovano risposta
+  PERDI SE tre chiamate cadono: la linea si chiude
+  SBAGLI 1 lo spinotto rimbalza fuori, la chiamata resta appesa
+         2 la presa giusta si illumina una volta
+         3 coaching, quattro righe, la quarta animata
+  CAPITOLI 1 innestare · 2 due indirizzi · 3 FRATTURA il metodo conta
+           4 il numero dopo il nome · 5 il timbro della risposta
+           6 quando non c'è presa · 7 a raffica · 8 il turno intero
+  MONDO centralino di notte, legno e ottone, prese incise, timbri di gomma
+  NUMERI transito 2,8→1,9 s (mai sotto 1,8), tre lampade, coda max 3
+  TEST 1 gli spinotti sono tutti identici: l'unico segnale è il cartellino
+         con metodo e indirizzo. Le prese cambiano posto a ogni chiamata.
+  TEST 2 "Innesto ogni chiamata nella presa del suo metodo e indirizzo,
+         prima che cada"
+  TEST 3 uno spinotto scende dondolando e una presa vuota lo aspetta
+-->
+<helmet>
+<script src="./ds-base.js"></script>
+<script src="../kaio-engine.js"></script>
+<style>
+*{box-sizing:border-box}html,body{margin:0;padding:0;height:100%;background:#080705}
+@keyframes om-fade{from{opacity:0}to{opacity:1}}
+@keyframes om-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes om-plug{0%{transform:translate(0,0);opacity:0}18%{opacity:1}66%{transform:translate(72px,26px);opacity:1}86%{transform:translate(72px,26px);opacity:0}100%{opacity:0}}
+</style>
+</helmet>
+<div style="position:fixed;inset:0;background:radial-gradient(130% 90% at 50% -10%,#1a1409 0%,#0d0a07 55%,#070605 100%);display:grid;place-items:center;font-family:Raleway,system-ui,sans-serif;overflow:hidden;padding:18px">
+<div style="display:flex;align-items:center;justify-content:center;gap:26px;max-width:100%">
+<div style="position:relative;height:min(910px,calc(100vh - 36px),max(480px,calc((100vw - 280px) * 2.1667)));aspect-ratio:420/910;border-radius:24px;overflow:hidden;box-shadow:0 50px 130px -34px rgba(0,0,0,.95),0 0 0 1px rgba(226,170,90,.14);flex:0 0 auto">
+<canvas ref="{{ cvRef }}" style="display:block;width:100%;height:100%;touch-action:none;cursor:grab"></canvas>
+<sc-if value="{{ coachOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;left:14px;right:14px;top:14px;padding:20px;border-radius:18px;background:linear-gradient(180deg,rgba(30,23,14,.97),rgba(20,15,10,.97));box-shadow:0 24px 60px -18px rgba(0,0,0,.9),inset 0 1px 0 rgba(226,170,90,.18);animation:om-rise .26s cubic-bezier(.16,1,.3,1) both;cursor:pointer">
+<div style="font-size:20px;line-height:1.45;color:#f0e6d6;font-weight:500">{{ coachWhat }}</div>
+<div style="font-size:20px;line-height:1.45;color:#c9b795;margin-top:10px">{{ coachEffect }}</div>
+<div style="font-size:20px;line-height:1.45;color:#e2aa5a;margin-top:14px;font-weight:600">{{ coachRule }}</div>
+<div style="margin-top:18px;height:92px;border-radius:12px;background:rgba(0,0,0,.34);position:relative;overflow:hidden">
+<div style="position:absolute;left:16px;top:14px;font-family:'JetBrains Mono',monospace;font-size:14px;color:#e8d9bd">{{ coachA }}</div>
+<div style="position:absolute;right:18px;bottom:16px;width:56px;height:26px;border-radius:4px;background:rgba(226,170,90,.22);border:2px solid rgba(226,170,90,.55)"></div>
+<div style="position:absolute;right:82px;bottom:18px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#c9b795">{{ coachB }}</div>
+<div style="position:absolute;left:22px;bottom:18px;width:26px;height:22px;border-radius:3px;background:#c99a5a;animation:om-plug 2.2s ease-in-out infinite"></div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ doneOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(70% 50% at 50% 45%,rgba(30,22,12,.9),rgba(8,7,5,.96));animation:om-fade .22s ease both;cursor:pointer">
+<div style="text-align:center;padding:0 30px">
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:34px;font-weight:600;color:#f4ebdc">Linea libera</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:34px;font-weight:600;color:#f4ebdc">Line clear</div></sc-if>
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#8d7f68;margin-top:10px">{{ chapterNo }}/{{ chapterOf }} · {{ chapterTitle }}</div>
+<div style="display:flex;gap:10px;justify-content:center;margin-top:24px">
+<sc-for list="{{ marks }}" as="m" hint-placeholder-count="5">
+<div style="width:34px;height:6px;border-radius:3px;background:rgba(226,170,90,.22);position:relative;overflow:hidden">
+<sc-if value="{{ m.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;background:#e2aa5a"></div></sc-if>
+</div>
+</sc-for>
+</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#a3937a;margin-top:22px">{{ doneHint }}</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ pauseOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;backdrop-filter:blur(9px);background:rgba(10,8,6,.72);display:grid;place-items:center;animation:om-fade .2s ease both;padding:16px;overflow-y:auto">
+<div style="width:290px;padding:24px;border-radius:20px;background:linear-gradient(180deg,rgba(32,25,16,.98),rgba(19,15,10,.98));box-shadow:0 30px 70px -20px rgba(0,0,0,.9),inset 0 1px 0 rgba(226,170,90,.16)">
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace">In pausa</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace">Paused</div></sc-if>
+<div style="display:flex;flex-direction:column;gap:9px;margin-top:16px">
+<div onClick="{{ resume }}" style="padding:14px 16px;border-radius:12px;background:#e2aa5a;color:#191207;font-size:17px;font-weight:600;text-align:center;cursor:pointer" style-hover="background:#eeb867"><sc-if value="{{ it }}" hint-placeholder-val="{{ true }}">Riprendi</sc-if><sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">Resume</sc-if></div>
+<div onClick="{{ toggleLang }}" style="padding:13px 16px;border-radius:12px;background:rgba(226,170,90,.1);color:#e8d9bd;font-size:16px;display:flex;justify-content:space-between;cursor:pointer"><span>Lingua</span><span style="font-family:'JetBrains Mono',monospace;color:#e2aa5a">{{ langLabel }}</span></div>
+<div onClick="{{ toggleMute }}" style="padding:13px 16px;border-radius:12px;background:rgba(226,170,90,.1);color:#e8d9bd;font-size:16px;display:flex;justify-content:space-between;cursor:pointer"><span>Audio</span><span style="font-family:'JetBrains Mono',monospace;color:#e2aa5a">{{ audioState }}</span></div>
+<div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace;margin-top:12px">Capitolo</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px">
+<sc-for list="{{ chapters }}" as="c" hint-placeholder-count="8">
+<div onClick="{{ c.go }}" style="padding:10px 0;border-radius:9px;background:rgba(226,170,90,.1);color:#e8d9bd;font-family:'JetBrains Mono',monospace;font-size:14px;text-align:center;cursor:pointer;position:relative">{{ c.n }}
+<sc-if value="{{ c.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:50%;bottom:4px;width:12px;height:2px;margin-left:-6px;background:#e2aa5a"></div></sc-if>
+</div>
+</sc-for>
+</div>
+<div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace;margin-top:10px">Lezione</div>
+<div style="display:flex;gap:7px">
+<sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+<div onClick="{{ l.go }}" style="flex:1;padding:11px 0;border-radius:10px;background:rgba(226,170,90,.1);color:#e8d9bd;font-family:'JetBrains Mono',monospace;font-size:15px;text-align:center;cursor:pointer;position:relative">{{ l.n }}
+<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:50%;bottom:5px;width:14px;height:2px;margin-left:-7px;background:#e2aa5a"></div></sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</div>
+</sc-if>
+</div>
+<div style="flex:0 1 212px;min-width:0;min-height:0;max-height:min(910px,calc(100vh - 36px));overflow-y:auto;display:flex;flex-direction:column;gap:14px;padding-right:4px;color:#b6a68b">
+<div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#a3937a">L6 · HTTP e server</div>
+<div style="font-size:23px;font-weight:600;color:#f0e6d6;margin-top:4px;line-height:1.2">Il centralino di notte</div>
+<div style="font-size:14px;line-height:1.5;color:#8d7f68;margin-top:8px">Banda 1 · innestare · 8 capitoli</div>
+</div>
+<div style="height:1px;background:rgba(226,170,90,.14)"></div>
+<div style="display:flex;flex-direction:column;gap:5px">
+<sc-for list="{{ chapters }}" as="c" hint-placeholder-count="8">
+<div onClick="{{ c.go }}" style="padding:9px 11px;border-radius:9px;background:rgba(226,170,90,.06);cursor:pointer;display:flex;gap:10px;align-items:baseline" style-hover="background:rgba(226,170,90,.14)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#e2aa5a;width:12px">{{ c.n }}</div>
+<div style="flex:1;min-width:0">
+<div style="font-size:14px;color:#e8d9bd;line-height:1.3">{{ c.title }}</div>
+<sc-if value="{{ c.on }}" hint-placeholder-val="{{ false }}"><div style="height:2px;background:#e2aa5a;border-radius:1px;margin-top:6px"></div></sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="height:1px;background:rgba(226,170,90,.14)"></div>
+<div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#a3937a;margin-bottom:6px">Lezione {{ chapterNo }}.x</div>
+<div style="display:flex;flex-direction:column;gap:5px">
+<sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+<div onClick="{{ l.go }}" style="padding:8px 11px;border-radius:8px;background:rgba(226,170,90,.05);cursor:pointer;display:flex;gap:10px;align-items:baseline" style-hover="background:rgba(226,170,90,.13)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8d7f68;width:12px">{{ l.n }}</div>
+<div style="flex:1;min-width:0">
+<div style="font-size:13px;color:#c9b795;line-height:1.3">{{ l.title }}</div>
+<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><div style="height:2px;background:#e2aa5a;border-radius:1px;margin-top:5px"></div></sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="font-size:13px;line-height:1.55;color:#a3937a">Trascina lo spinotto nella presa che porta lo stesso metodo e lo stesso indirizzo. Dal capitolo 5 timbri anche la risposta. Se nessuna presa combacia, il timbro è 404. <span style="color:#8d7f68">Esc</span> per la pausa.</div>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:940,&quot;height&quot;:1000},&quot;capitolo&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;,&quot;6&quot;,&quot;7&quot;,&quot;8&quot;],&quot;default&quot;:&quot;1&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;lezione&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;],&quot;default&quot;:&quot;1&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;lingua&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;it&quot;,&quot;en&quot;],&quot;default&quot;:&quot;it&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;diagnostica&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Taratura&quot;}}">
+const W=420,H=910,KEY='kaio.l6.centralino';
+const BOARD=H*.5,DROP=H*.2,STAMPY=H*.83;
+const STAMPS=['200','201','404','500'];
+const B=(o)=>Object.assign({routes:[['GET','/clienti']],calls:[['GET','/clienti']],fall:2.8,need:5,stamp:false,noJack:false,max:1},o);
+const CH=[
+ {t:['Innestare','Plugging in'],titles:[['La prima presa','First socket'],['Ancora una','One more'],['Due chiamate','Two calls'],['Più svelto','Quicker'],['Il ritmo','The rhythm']],
+  beats:[B({routes:[['GET','/clienti']],calls:[['GET','/clienti']],fall:3.4,need:3}),
+   B({routes:[['GET','/clienti']],calls:[['GET','/clienti']],fall:3.0,need:4}),
+   B({routes:[['GET','/clienti'],['GET','/ordini']],calls:[['GET','/clienti'],['GET','/ordini']],fall:2.9,need:5}),
+   B({routes:[['GET','/clienti'],['GET','/ordini']],calls:[['GET','/clienti'],['GET','/ordini']],fall:2.2,need:6,max:2}),
+   B({routes:[['GET','/clienti'],['GET','/ordini']],calls:[['GET','/clienti'],['GET','/ordini']],fall:2.7,need:5})]},
+ {t:['Due indirizzi','Two addresses'],titles:[['Tre prese','Three sockets'],['Leggi la coda','Read the tail'],['Simili','Similar'],['Stretti','Tight'],['A occhio','At a glance']],
+  beats:[B({routes:[['GET','/clienti'],['GET','/ordini'],['GET','/prodotti']],calls:[['GET','/clienti'],['GET','/ordini'],['GET','/prodotti']],fall:3.0,need:4}),
+   B({routes:[['GET','/clienti'],['GET','/clienti/attivi'],['GET','/ordini']],calls:[['GET','/clienti'],['GET','/clienti/attivi'],['GET','/ordini']],fall:2.8,need:5}),
+   B({routes:[['GET','/ordini'],['GET','/ordini/aperti'],['GET','/prodotti']],calls:[['GET','/ordini'],['GET','/ordini/aperti'],['GET','/prodotti']],fall:2.6,need:5}),
+   B({routes:[['GET','/clienti'],['GET','/clienti/attivi'],['GET','/ordini'],['GET','/prodotti']],calls:[['GET','/clienti'],['GET','/clienti/attivi'],['GET','/ordini'],['GET','/prodotti']],fall:2.0,need:7,max:2}),
+   B({routes:[['GET','/clienti'],['GET','/clienti/attivi'],['GET','/ordini']],calls:[['GET','/clienti'],['GET','/clienti/attivi'],['GET','/ordini']],fall:2.6,need:5})]},
+ {t:['Il metodo conta','The method counts'],titles:[['Entra POST','POST arrives'],['Stesso indirizzo','Same address'],['Prese diverse','Different sockets'],['Tre metodi','Three methods'],['Adesso lo sai','Now you know']],
+  beats:[B({routes:[['GET','/clienti'],['POST','/clienti']],calls:[['GET','/clienti'],['POST','/clienti']],fall:3.0,need:4}),
+   B({routes:[['GET','/clienti'],['POST','/clienti'],['GET','/ordini']],calls:[['GET','/clienti'],['POST','/clienti'],['GET','/ordini']],fall:2.8,need:5}),
+   B({routes:[['GET','/clienti'],['POST','/clienti'],['GET','/ordini'],['POST','/ordini']],calls:[['GET','/clienti'],['POST','/clienti'],['GET','/ordini'],['POST','/ordini']],fall:2.6,need:6}),
+   B({routes:[['GET','/clienti'],['POST','/clienti'],['DELETE','/clienti'],['GET','/ordini']],calls:[['GET','/clienti'],['POST','/clienti'],['DELETE','/clienti'],['GET','/ordini']],fall:2.0,need:7,max:2}),
+   B({routes:[['GET','/clienti'],['POST','/clienti'],['GET','/ordini'],['POST','/ordini']],calls:[['GET','/clienti'],['POST','/clienti'],['GET','/ordini'],['POST','/ordini']],fall:2.6,need:6})]},
+ {t:['Il numero dopo il nome','The number after the name'],titles:[['La presa con :id','The :id socket'],['Uno qualsiasi','Any one'],['Non è la lista','Not the list'],['Misti','Mixed'],['Padronanza','Mastery']],
+  beats:[B({routes:[['GET','/clienti'],['GET','/clienti/:id']],calls:[['GET','/clienti'],['GET','/clienti/7']],fall:3.0,need:4}),
+   B({routes:[['GET','/clienti'],['GET','/clienti/:id']],calls:[['GET','/clienti/7'],['GET','/clienti/42'],['GET','/clienti']],fall:2.8,need:5}),
+   B({routes:[['GET','/clienti'],['GET','/clienti/:id'],['GET','/ordini/:id']],calls:[['GET','/clienti/7'],['GET','/ordini/3'],['GET','/clienti']],fall:2.6,need:6}),
+   B({routes:[['GET','/clienti'],['GET','/clienti/:id'],['POST','/clienti'],['GET','/ordini/:id']],calls:[['GET','/clienti/7'],['POST','/clienti'],['GET','/ordini/9'],['GET','/clienti']],fall:2.0,need:7,max:2}),
+   B({routes:[['GET','/clienti'],['GET','/clienti/:id'],['GET','/ordini/:id']],calls:[['GET','/clienti/7'],['GET','/ordini/3'],['GET','/clienti']],fall:2.6,need:6})]},
+ {t:['Il timbro della risposta','The response stamp'],titles:[['Duecento','Two hundred'],['Creato','Created'],['Non è sempre 200','Not always 200'],['Timbra svelto','Stamp quickly'],['Le due risposte','The two answers']],
+  beats:[B({routes:[['GET','/clienti']],calls:[['GET','/clienti']],fall:3.2,need:4,stamp:true}),
+   B({routes:[['GET','/clienti'],['POST','/clienti']],calls:[['GET','/clienti'],['POST','/clienti']],fall:3.0,need:5,stamp:true}),
+   B({routes:[['GET','/clienti'],['POST','/clienti'],['GET','/ordini']],calls:[['GET','/clienti'],['POST','/clienti'],['GET','/ordini']],fall:2.8,need:5,stamp:true}),
+   B({routes:[['GET','/clienti'],['POST','/clienti'],['GET','/ordini'],['POST','/ordini']],calls:[['GET','/clienti'],['POST','/clienti'],['GET','/ordini'],['POST','/ordini']],fall:2.2,need:7,stamp:true,max:2}),
+   B({routes:[['GET','/clienti'],['POST','/clienti'],['GET','/ordini']],calls:[['GET','/clienti'],['POST','/clienti'],['GET','/ordini']],fall:2.8,need:5,stamp:true})]},
+ {t:["Quando non c'è presa",'When there is no socket'],titles:[['Il primo 404','First 404'],['Non forzarlo','Do not force it'],['Timbra e basta','Just stamp'],['Fra i validi','Among the valid'],['Tutti i casi','Every case']],
+  beats:[B({routes:[['GET','/clienti']],calls:[['GET','/clienti'],['GET','/fatture']],fall:3.2,need:4,stamp:true,noJack:true}),
+   B({routes:[['GET','/clienti'],['GET','/ordini']],calls:[['GET','/clienti'],['GET','/fatture'],['GET','/ordini']],fall:3.0,need:5,stamp:true,noJack:true}),
+   B({routes:[['GET','/clienti'],['POST','/clienti']],calls:[['GET','/clienti'],['DELETE','/clienti'],['POST','/clienti']],fall:2.8,need:5,stamp:true,noJack:true}),
+   B({routes:[['GET','/clienti'],['GET','/clienti/:id'],['POST','/clienti']],calls:[['GET','/clienti/7'],['GET','/fatture'],['POST','/clienti'],['PUT','/clienti']],fall:2.2,need:7,stamp:true,noJack:true,max:2}),
+   B({routes:[['GET','/clienti'],['GET','/clienti/:id'],['POST','/clienti'],['GET','/ordini']],calls:[['GET','/clienti/7'],['GET','/fatture'],['POST','/clienti'],['GET','/ordini']],fall:2.7,need:6,stamp:true,noJack:true})]},
+ {t:['A raffica','In bursts'],titles:[['Due in aria','Two in the air'],['Meno tempo','Less time'],['Sei chiamate','Six calls'],['Il picco','The peak'],['Automatico','Automatic']],
+  beats:[B({routes:[['GET','/clienti'],['POST','/clienti'],['GET','/ordini']],calls:[['GET','/clienti'],['POST','/clienti'],['GET','/ordini']],fall:2.2,need:6,max:2,stamp:true}),
+   B({routes:[['GET','/clienti'],['GET','/clienti/:id'],['POST','/clienti'],['GET','/ordini']],calls:[['GET','/clienti/7'],['POST','/clienti'],['GET','/ordini'],['GET','/clienti']],fall:2.1,need:7,max:2,stamp:true}),
+   B({routes:[['GET','/clienti'],['POST','/clienti'],['GET','/ordini'],['POST','/ordini']],calls:[['GET','/clienti'],['POST','/clienti'],['GET','/ordini'],['POST','/ordini']],fall:2.0,need:7,max:2,stamp:true,noJack:true}),
+   B({routes:[['GET','/clienti'],['GET','/clienti/:id'],['POST','/clienti'],['GET','/ordini/:id']],calls:[['GET','/clienti/7'],['POST','/clienti'],['GET','/ordini/3'],['GET','/fatture']],fall:1.9,need:8,max:3,stamp:true,noJack:true}),
+   B({routes:[['GET','/clienti'],['POST','/clienti'],['GET','/ordini']],calls:[['GET','/clienti'],['POST','/clienti'],['GET','/ordini']],fall:2.4,need:6,max:2,stamp:true})]},
+ {t:['Il turno intero','The whole shift'],titles:[['Tutto insieme','All together'],['Senza rete','No net'],['La prova','The test'],['Il picco','The peak'],['Chiusura','Closing']],
+  beats:[B({routes:[['GET','/clienti'],['GET','/clienti/:id'],['POST','/clienti'],['GET','/ordini']],calls:[['GET','/clienti/7'],['POST','/clienti'],['GET','/ordini'],['GET','/clienti']],fall:2.4,need:7,max:2,stamp:true}),
+   B({routes:[['GET','/clienti'],['GET','/clienti/:id'],['POST','/clienti'],['DELETE','/clienti/:id']],calls:[['GET','/clienti/7'],['DELETE','/clienti/7'],['POST','/clienti'],['GET','/fatture']],fall:2.2,need:8,max:2,stamp:true,noJack:true}),
+   B({routes:[['GET','/clienti'],['GET','/clienti/:id'],['POST','/clienti'],['GET','/ordini/:id'],['DELETE','/clienti/:id']],calls:[['GET','/clienti/7'],['POST','/clienti'],['DELETE','/clienti/9'],['GET','/fatture'],['PUT','/ordini']],fall:2.0,need:8,max:3,stamp:true,noJack:true}),
+   B({routes:[['GET','/clienti'],['GET','/clienti/:id'],['POST','/clienti'],['GET','/ordini/:id'],['POST','/ordini']],calls:[['GET','/clienti/7'],['POST','/clienti'],['GET','/ordini/3'],['POST','/ordini'],['GET','/fatture']],fall:1.9,need:9,max:3,stamp:true,noJack:true}),
+   B({routes:[['GET','/clienti'],['GET','/clienti/:id'],['POST','/clienti'],['GET','/ordini']],calls:[['GET','/clienti/7'],['POST','/clienti'],['GET','/ordini'],['GET','/clienti']],fall:2.5,need:6,max:2,stamp:true})]}];
+const T={it:{wrong:(m,p)=>'Hai innestato '+m+' '+p+' nella presa sbagliata.',wrongFx:'Quella presa porta un altro metodo o un altro indirizzo: la chiamata è caduta.',wrongRule:'Contano entrambi: il metodo e l\'indirizzo.',
+ drop:(m,p)=>m+' '+p+' è caduta senza risposta.',dropFx:'Nessuno l\'ha innestata né timbrata in tempo.',dropRule:'Ogni chiamata vuole una risposta, anche quando è un 404.',
+ force:(m,p)=>'Hai cercato una presa per '+m+' '+p+'.',forceFx:'Quella presa non esiste sul quadro.',forceRule:'Se non c\'è presa la risposta è 404: si timbra, non si forza.'},
+ en:{wrong:(m,p)=>'You plugged '+m+' '+p+' into the wrong socket.',wrongFx:'That socket carries another method or address: the call dropped.',wrongRule:'Both count: the method and the address.',
+ drop:(m,p)=>m+' '+p+' dropped with no answer.',dropFx:'Nobody plugged or stamped it in time.',dropRule:'Every call wants an answer, even when it is a 404.',
+ force:(m,p)=>'You looked for a socket for '+m+' '+p+'.',forceFx:'That socket does not exist on the board.',forceRule:'With no socket the answer is 404: you stamp it, you do not force it.'}};
+const key=r=>r[0]+' '+r[1];
+const matches=(call,route)=>{if(call[0]!==route[0])return false;
+ const a=call[1].split('/'),b=route[1].split('/');
+ if(a.length!==b.length)return false;
+ for(let i=0;i<a.length;i++){if(b[i]===':id'){if(!/^\d+$/.test(a[i]))return false}else if(a[i]!==b[i])return false}
+ return true};
+const wantStamp=(call,routes)=>{const r=routes.find(rt=>matches(call,rt));
+ if(!r)return '404';return call[0]==='POST'?'201':'200'};
+
+class Component extends DCLogic{
+ state={beat:0,chapter:0,lang:'it',paused:false,coach:null,done:false,muted:false,step:0,left:0};
+ renderVals(){const s=this.state,L=T[s.lang],c=s.coach;
+  return Object.assign(KAIO.vals(this),{
+   coachWhat:c?(c.kind==='wrong'?L.wrong(c.m,c.p):c.kind==='force'?L.force(c.m,c.p):L.drop(c.m,c.p)):'',
+   coachEffect:c?(c.kind==='wrong'?L.wrongFx:c.kind==='force'?L.forceFx:L.dropFx):'',
+   coachRule:c?(c.kind==='wrong'?L.wrongRule:c.kind==='force'?L.forceRule:L.dropRule):'',
+   coachA:c?c.m+' '+c.p:'GET /clienti',coachB:c&&c.kind==='force'?'404':'200'});
+ }
+ componentDidMount(){
+  KAIO.init(this,{W,H,key:KEY,chapters:CH,
+   onDown:p=>this.grab(p),onDrag:(a,b)=>{if(this.drag){this.drag.x=b.x;this.drag.y=b.y}},
+   onUp:p=>this.release(p)});
+  KAIO.audio(this);KAIO.drone(this,46,'triangle',.012,130);}
+ componentDidUpdate(pp){KAIO.sync(this,pp)}
+ componentWillUnmount(){KAIO.destroy(this)}
+
+ reset(beat){const c=this.BEATS[beat];this.cfg=c;this.needed=c.need;
+  this.calls=[];this.parts=[];this.drag=null;this.spawnT=.8;this.made=0;this.spawned=0;
+  this.shake=0;this.flash=0;this.streak={kind:null,n:0};this.pulse=0;this.pulseJ=-1;
+  this.jacks=c.routes.slice().sort(()=>Math.random()-.5);
+  this.pending=null;this.setState({left:0})}
+
+ jackXY(i){const n=this.jacks.length,cols=Math.min(3,n),r=Math.floor(i/cols),cc=i%cols;
+  const w=W/(cols+.5);return{x:W*.5+(cc-(cols-1)/2)*w,y:BOARD+r*86}}
+ stampXY(i){const n=STAMPS.length,w=W/(n+.6);return{x:W*.5+(i-(n-1)/2)*w,y:STAMPY}}
+
+ spawn(){const c=this.cfg;let call=c.calls[Math.floor(Math.random()*c.calls.length)];
+  this.calls.push({m:call[0],p:call[1],y:DROP-60,sway:Math.random()*6.28,live:true,plugged:false});
+  this.spawned++}
+
+ grab(p){if(this.pending){for(let i=0;i<STAMPS.length;i++){const s=this.stampXY(i);
+   if(Math.hypot(p.x-s.x,p.y-s.y)<34){this.stamp(STAMPS[i]);return}}
+  return}
+  for(const c of this.calls){if(!c.live||c.plugged)continue;
+   if(Math.abs(p.x-W/2)<120&&Math.abs(p.y-c.y)<46){this.drag={c,x:p.x,y:p.y};KAIO.snd(this,'click',{hz:1100,v:.16});return}}
+  if(this.cfg.stamp){for(let i=0;i<STAMPS.length;i++){const s=this.stampXY(i);
+   if(Math.hypot(p.x-s.x,p.y-s.y)<34){const c=this.calls.find(k=>k.live&&!k.plugged);
+    if(c)this.stampDirect(c,STAMPS[i]);return}}}}
+
+ release(p){const d=this.drag;this.drag=null;if(!d||!p)return;
+  let hit=-1;
+  for(let i=0;i<this.jacks.length;i++){const s=this.jackXY(i);
+   if(Math.hypot(p.x-s.x,p.y-s.y)<40){hit=i;break}}
+  if(hit<0)return;
+  const call=[d.c.m,d.c.p],route=this.jacks[hit];
+  if(matches(call,route)){d.c.plugged=true;d.c.jack=hit;
+   KAIO.snd(this,'pop',{hz:520,v:.16});KAIO.burst(this.parts,this.jackXY(hit).x,this.jackXY(hit).y,8,'#e2aa5a');
+   if(this.cfg.stamp)this.pending={c:d.c,want:wantStamp(call,this.cfg.routes)};
+   else this.ok(d.c)}
+  else{const exists=this.cfg.routes.some(rt=>matches(call,rt));
+   this.fail(d.c,exists?'wrong':'force')}}
+
+ stampDirect(c,val){const want=wantStamp([c.m,c.p],this.cfg.routes);
+  if(val===want&&want==='404'){this.ok(c)}
+  else if(val===want){this.ok(c)}
+  else this.fail(c,'wrong')}
+ stamp(val){const p=this.pending;if(!p)return;this.pending=null;
+  if(val===p.want)this.ok(p.c);else this.fail(p.c,'wrong')}
+
+ ok(c){c.live=false;this.made++;this.flash=1;this.streak={kind:null,n:0};
+  KAIO.snd(this,'tone',{from:580,to:920,v:.16});KAIO.burst(this.parts,W/2,BOARD-60,10,'#f0d9a8');
+  this.setState({step:this.made});
+  if(this.made>=this.needed){KAIO.snd(this,'chime');this.setState({done:true})}}
+
+ fail(c,kind){c.live=false;this.pending=null;this.shake=.8;
+  KAIO.snd(this,'whir');KAIO.burst(this.parts,W/2,c.y,10,'#6b5636');
+  const s=this.streak;if(s.kind===kind)s.n++;else{s.kind=kind;s.n=1}
+  if(s.n===2){this.pulse=.8;this.pulseJ=this.jacks.findIndex(rt=>matches([c.m,c.p],rt))}
+  if(s.n>=3){this.setState({coach:{kind,m:c.m,p:c.p}});this.streak={kind:null,n:0}}
+  const left=this.state.left+1;this.setState({left});
+  if(left>=3){this.reset(this.state.beat);this.setState({step:0})}}
+
+ update(dt){const c=this.cfg;
+  if(this.flash>0)this.flash-=dt*3;if(this.shake>0)this.shake-=dt*3.4;if(this.pulse>0)this.pulse-=dt;
+  const live=this.calls.filter(k=>k.live&&!k.plugged).length;
+  this.spawnT-=dt;
+  if(this.spawnT<=0&&live<c.max&&this.spawned<this.needed+4){this.spawn();this.spawnT=c.fall*.55}
+  for(const k of this.calls){if(!k.live)continue;k.sway+=dt*1.7;
+   if(!k.plugged&&!this.pending){k.y+=(H*.34)/c.fall*dt;
+    if(k.y>DROP+H*.16){this.fail(k,'drop')}}}
+  this.calls=this.calls.filter(k=>k.live);
+  this.parts=KAIO.parts(this.parts,dt,420)}
+
+ draw(x){const sc=this.sc||1;x.setTransform(sc,0,0,sc,0,0);x.save();KAIO.shake(x,this.shake);
+  const g=x.createLinearGradient(0,0,0,H);g.addColorStop(0,'#140e07');g.addColorStop(.45,'#191106');g.addColorStop(1,'#0b0806');x.fillStyle=g;x.fillRect(-8,-8,W+16,H+16);
+  const cone=x.createRadialGradient(W/2,H*.22,10,W/2,H*.52,W*.8);cone.addColorStop(0,'rgba(255,214,150,.13)');cone.addColorStop(.55,'rgba(226,170,90,.045)');cone.addColorStop(1,'rgba(0,0,0,0)');
+  x.fillStyle=cone;x.fillRect(0,0,W,H);
+  x.strokeStyle='rgba(120,96,60,.5)';x.lineWidth=2;x.beginPath();x.moveTo(W/2,0);x.lineTo(W/2,24);x.stroke();
+  x.fillStyle='#2c2318';x.beginPath();x.moveTo(W/2-20,42);x.lineTo(W/2+20,42);x.lineTo(W/2+10,24);x.lineTo(W/2-10,24);x.closePath();x.fill();
+  x.fillStyle='rgba(255,222,166,.9)';x.beginPath();x.arc(W/2,44,5,0,6.283);x.fill();
+  const rows=Math.ceil(this.jacks.length/Math.min(3,this.jacks.length));
+  const bh=rows*86+34;
+  const pg=x.createLinearGradient(0,BOARD-52,0,BOARD-52+bh);pg.addColorStop(0,'#5c3e22');pg.addColorStop(1,'#3a2716');
+  x.fillStyle=pg;KAIO.rr(x,14,BOARD-52,W-28,bh,10);x.fill();
+  x.strokeStyle='rgba(226,170,90,.2)';x.lineWidth=2;KAIO.rr(x,14,BOARD-52,W-28,bh,10);x.stroke();
+  this.jacks.forEach((rt,i)=>{const s=this.jackXY(i),lit=this.pulse>0&&this.pulseJ===i;
+   x.fillStyle='#241a10';x.beginPath();x.arc(s.x,s.y,24,0,6.283);x.fill();
+   x.strokeStyle=lit?'rgba(255,214,150,'+(.5+.5*Math.sin(this.pulse*15))+')':'rgba(226,170,90,.45)';
+   x.lineWidth=lit?4:2.5;x.beginPath();x.arc(s.x,s.y,24,0,6.283);x.stroke();
+   x.fillStyle='#0d0a07';x.beginPath();x.arc(s.x,s.y,9,0,6.283);x.fill();
+   const plugged=this.calls.find(k=>k.plugged&&k.jack===i);
+   if(plugged){x.fillStyle='#c99a5a';x.beginPath();x.arc(s.x,s.y,11,0,6.283);x.fill()}
+   x.font='600 13px "JetBrains Mono",monospace';x.textAlign='center';x.textBaseline='middle';
+   x.fillStyle='rgba(240,226,200,.9)';x.fillText(rt[0],s.x,s.y-38);
+   let f=13;x.font='500 '+f+'px "JetBrains Mono",monospace';
+   const maxw=W/Math.min(3,this.jacks.length)-14;
+   while(x.measureText(rt[1]).width>maxw&&f>13){f--}
+   x.fillStyle='#b6a68b';x.fillText(rt[1],s.x,s.y+36)});
+  for(const k of this.calls){if(!k.live)continue;
+   const sway=Math.sin(k.sway)*(k.plugged?0:9);
+   const cx=k.plugged?this.jackXY(k.jack).x:W/2+sway,cy=k.plugged?this.jackXY(k.jack).y-46:k.y;
+   x.strokeStyle='rgba(201,162,39,.5)';x.lineWidth=3;x.beginPath();x.moveTo(W/2,0);
+   x.quadraticCurveTo(W/2+sway*2,cy*.55,cx,cy-18);x.stroke();
+   this.plugCard(x,cx,cy,k.m,k.p,false)}
+  if(this.drag){const d=this.drag;this.plugCard(x,d.x,d.y,d.c.m,d.c.p,true)}
+  if(this.cfg.stamp){
+   x.fillStyle='rgba(20,14,8,.6)';KAIO.rr(x,14,STAMPY-40,W-28,80,10);x.fill();
+   STAMPS.forEach((s,i)=>{const p=this.stampXY(i),act=!!this.pending;
+    x.fillStyle=act?'#8a5f36':'#3a2a19';KAIO.rr(x,p.x-30,p.y-24,60,48,6);x.fill();
+    x.strokeStyle=act?'rgba(240,217,168,.8)':'rgba(226,170,90,.3)';x.lineWidth=2;KAIO.rr(x,p.x-30,p.y-24,60,48,6);x.stroke();
+    x.font='600 18px "JetBrains Mono",monospace';x.textAlign='center';x.textBaseline='middle';
+    x.fillStyle=act?'rgba(255,244,220,.95)':'rgba(226,206,170,.45)';x.fillText(s,p.x,p.y)})}
+  for(let i=0;i<3;i++){const off=i<this.state.left;
+   x.strokeStyle=off?'rgba(140,110,70,.6)':'rgba(226,170,90,.8)';x.lineWidth=2;
+   x.beginPath();x.arc(W-26,H*.1+i*24,6,0,6.283);off?x.stroke():x.fill()}
+  x.textAlign='left';x.font='500 18px "JetBrains Mono",monospace';x.fillStyle='#a3937a';
+  x.fillText(this.made+'/'+this.needed,18,H*.1);
+  KAIO.drawParts(x,this.parts);
+  if(this.flash>0){x.fillStyle='rgba(255,228,180,'+(this.flash*.08)+')';x.fillRect(0,0,W,H)}
+  if(this.props.diagnostica){x.fillStyle='rgba(160,230,255,.9)';x.font='500 12px "JetBrains Mono",monospace';
+   x.fillText('c'+(this.state.chapter+1)+'.'+(this.state.beat+1)+'  prese '+this.jacks.length+'  attesa '+(this.pending?this.pending.want:'—'),14,H-14)}
+  x.restore()}
+
+ plugCard(x,cx,cy,m,p,held){
+  x.font='600 15px "JetBrains Mono",monospace';
+  const t=m+' '+p,w=Math.max(120,x.measureText(t).width+26),h=40;
+  x.fillStyle='rgba(0,0,0,.42)';KAIO.rr(x,cx-w/2+3,cy-h/2+4,w,h,5);x.fill();
+  const g=x.createLinearGradient(0,cy-h/2,0,cy+h/2);g.addColorStop(0,'#e8d9bd');g.addColorStop(1,'#c9b795');
+  x.fillStyle=g;KAIO.rr(x,cx-w/2,cy-h/2,w,h,5);x.fill();
+  x.strokeStyle=held?'rgba(255,214,150,.95)':'rgba(90,66,36,.5)';x.lineWidth=held?2.5:1.4;
+  KAIO.rr(x,cx-w/2,cy-h/2,w,h,5);x.stroke();
+  x.fillStyle='#8a5f36';KAIO.rr(x,cx-9,cy+h/2-2,18,12,3);x.fill();
+  x.textAlign='center';x.textBaseline='middle';
+  x.fillStyle='rgba(40,28,12,.9)';x.fillText(t,cx,cy)}
+}
+</script>
+</body>
+</html>

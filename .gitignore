@@ -153,3 +153,6 @@ ds-bundle/
 
 # design-sync: generated verbatim copy of css/style.css (see .design-sync/NOTES.md)
 .design-sync/ds-src/generated/
+
+# JetBrains IDE state
+.idea/

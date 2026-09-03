@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Node.js L1 — Il chiosco di notte" description="Livello 1 completo: 8 capitoli × 5 lezioni = 40 lezioni. Gestione del tempo su cosa fa un server. Ogni capitolo aggiunge una meccanica, non solo difficoltà." -->
+<!--
+  SCHEDA DI PROGETTO (ricerca/00 §0.3)
+  GIOCO ...... Il chiosco di notte
+  LIVELLO .... Node.js, L1 Fondamenti, banda 1 — 8 capitoli, 40 lezioni
+  CONCETTO ... C'è un posto che aspetta che qualcuno chieda qualcosa. Quando
+               glielo chiedono lo prepara e lo dà. Se nessuno chiede non fa
+               niente, e non può indovinare cosa gli chiederanno.
+  FORMA ...... simultaneità          VERBO ... servire (cosa faccio adesso)
+  ARCHETIPO .. ricerca/10 time management — Diner Dash
+  VINCI SE ... tutti i biglietti del capitolo escono dallo sportello
+  PERDI SE ... tre clienti se ne vanno: il chiosco si svuota e chiude
+  SBAGLI ..... 1 mani occupate: il tocco non prende, si sente
+               2 alla seconda attesa lunga il fornello giusto pulsa
+               3 pannello di coaching, quattro righe, la quarta è animata
+  CAPITOLI ... 1 il verbo · 2 due che aspettano · 3 FRATTURA non si indovina
+               4 respiro: cambia idea · 5 due cose in un ordine
+               6 il biglietto coperto · 7 a raffica · 8 il turno intero
+               (curva dei capitoli e dei beat: ricerca/03 §3.3 e §3.4)
+  MONDO ...... chiosco di notte, finestrella, fornelli, ripiano, sportello
+  NUMERI ..... da ricerca/31: azione 0,8-1,6 s, pazienza 34→20 s a tre stati,
+               clienti 1→4, mano 45-70 s
+  TEST 1 ..... i biglietti non hanno colore: portano una sagoma incisa. La
+               pazienza si legge dalla postura. Al capitolo 3 anticipare costa,
+               al 4 la memoria tradisce, al 6 non si sa prima di accettare.
+  TEST 2 ..... "Preparo quello che mi è stato chiesto, prima che chi aspetta
+               se ne vada"
+  TEST 3 ..... un cliente arriva alla finestrella e il suo biglietto oscilla
+-->
+<helmet>
+<script src="./ds-base.js"></script>
+<script src="../kaio-engine.js"></script>
+<style>
+*{box-sizing:border-box}html,body{margin:0;padding:0;height:100%;background:#080705}
+@keyframes om-fade{from{opacity:0}to{opacity:1}}
+@keyframes om-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes om-wait{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes om-serve{0%{transform:translate(0,0);opacity:0}16%{opacity:1}64%{transform:translate(86px,0);opacity:1}84%{transform:translate(86px,0);opacity:0}100%{opacity:0}}
+</style>
+</helmet>
+<div style="position:fixed;inset:0;background:radial-gradient(130% 90% at 50% -10%,#1a1409 0%,#0d0a07 55%,#070605 100%);display:grid;place-items:center;font-family:Raleway,system-ui,sans-serif;overflow:hidden;padding:18px">
+<div style="display:flex;align-items:center;justify-content:center;gap:26px;max-width:100%">
+<div style="position:relative;height:min(910px,calc(100vh - 36px),max(480px,calc((100vw - 280px) * 2.1667)));aspect-ratio:420/910;border-radius:24px;overflow:hidden;box-shadow:0 50px 130px -34px rgba(0,0,0,.95),0 0 0 1px rgba(226,170,90,.14);flex:0 0 auto">
+<canvas ref="{{ cvRef }}" style="display:block;width:100%;height:100%;touch-action:none;cursor:pointer"></canvas>
+<sc-if value="{{ coachOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;left:14px;right:14px;top:14px;padding:20px 20px 16px;border-radius:18px;background:linear-gradient(180deg,rgba(30,23,14,.97),rgba(20,15,10,.97));box-shadow:0 24px 60px -18px rgba(0,0,0,.9),inset 0 1px 0 rgba(226,170,90,.18);animation:om-rise .26s cubic-bezier(.16,1,.3,1) both;cursor:pointer">
+<div style="font-size:20px;line-height:1.45;color:#f0e6d6;font-weight:500">{{ coachWhat }}</div>
+<div style="font-size:20px;line-height:1.45;color:#c9b795;margin-top:10px">{{ coachEffect }}</div>
+<div style="font-size:20px;line-height:1.45;color:#e2aa5a;margin-top:14px;font-weight:600">{{ coachRule }}</div>
+<div style="margin-top:18px;height:92px;border-radius:12px;background:rgba(0,0,0,.34);position:relative;overflow:hidden">
+<div style="position:absolute;left:16px;top:16px;width:34px;height:44px;border-radius:3px;background:#e8d9bd;animation:om-wait 1.8s ease-in-out infinite"></div>
+<div style="position:absolute;left:150px;top:20px;width:38px;height:38px;border-radius:50%;background:rgba(226,170,90,.3);border:2px solid rgba(226,170,90,.6)"></div>
+<div style="position:absolute;left:60px;top:26px;width:26px;height:26px;border-radius:5px;background:#c99a5a;animation:om-serve 1.8s ease-in-out infinite"></div>
+<div style="position:absolute;left:16px;bottom:10px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#8d7f68;letter-spacing:.05em">{{ coachHint }}</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ doneOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(70% 50% at 50% 45%,rgba(30,22,12,.9),rgba(8,7,5,.96));animation:om-fade .22s ease both;cursor:pointer">
+<div style="text-align:center;padding:0 30px">
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:34px;font-weight:600;color:#f4ebdc;letter-spacing:-.01em">Turno servito</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:34px;font-weight:600;color:#f4ebdc;letter-spacing:-.01em">Shift served</div></sc-if>
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#8d7f68;margin-top:10px">{{ chapterNo }}/{{ chapterOf }} · {{ chapterTitle }}</div>
+<div style="display:flex;gap:10px;justify-content:center;margin-top:24px">
+<sc-for list="{{ marks }}" as="m" hint-placeholder-count="5">
+<div style="width:34px;height:6px;border-radius:3px;background:rgba(226,170,90,.22);position:relative;overflow:hidden">
+<sc-if value="{{ m.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;background:#e2aa5a"></div></sc-if>
+</div>
+</sc-for>
+</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#a3937a;margin-top:22px;letter-spacing:.04em">{{ doneHint }}</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ pauseOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;backdrop-filter:blur(9px);background:rgba(10,8,6,.72);display:grid;place-items:center;animation:om-fade .2s ease both;padding:16px;overflow-y:auto">
+<div style="width:290px;padding:24px;border-radius:20px;background:linear-gradient(180deg,rgba(32,25,16,.98),rgba(19,15,10,.98));box-shadow:0 30px 70px -20px rgba(0,0,0,.9),inset 0 1px 0 rgba(226,170,90,.16)">
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace">In pausa</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace">Paused</div></sc-if>
+<div style="display:flex;flex-direction:column;gap:9px;margin-top:16px">
+<div onClick="{{ resume }}" style="padding:14px 16px;border-radius:12px;background:#e2aa5a;color:#191207;font-size:17px;font-weight:600;text-align:center;cursor:pointer" style-hover="background:#eeb867"><sc-if value="{{ it }}" hint-placeholder-val="{{ true }}">Riprendi</sc-if><sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">Resume</sc-if></div>
+<div onClick="{{ toggleLang }}" style="padding:13px 16px;border-radius:12px;background:rgba(226,170,90,.1);color:#e8d9bd;font-size:16px;display:flex;justify-content:space-between;cursor:pointer" style-hover="background:rgba(226,170,90,.18)"><span><sc-if value="{{ it }}" hint-placeholder-val="{{ true }}">Lingua</sc-if><sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">Language</sc-if></span><span style="font-family:'JetBrains Mono',monospace;color:#e2aa5a">{{ langLabel }}</span></div>
+<div onClick="{{ toggleMute }}" style="padding:13px 16px;border-radius:12px;background:rgba(226,170,90,.1);color:#e8d9bd;font-size:16px;display:flex;justify-content:space-between;cursor:pointer" style-hover="background:rgba(226,170,90,.18)"><span>Audio</span><span style="font-family:'JetBrains Mono',monospace;color:#e2aa5a">{{ audioState }}</span></div>
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace;margin-top:12px">Capitolo</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace;margin-top:12px">Chapter</div></sc-if>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px">
+<sc-for list="{{ chapters }}" as="c" hint-placeholder-count="8">
+<div onClick="{{ c.go }}" style="padding:10px 0;border-radius:9px;background:rgba(226,170,90,.1);color:#e8d9bd;font-family:'JetBrains Mono',monospace;font-size:14px;text-align:center;cursor:pointer;position:relative" style-hover="background:rgba(226,170,90,.2)">{{ c.n }}
+<sc-if value="{{ c.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:50%;bottom:4px;width:12px;height:2px;margin-left:-6px;background:#e2aa5a;border-radius:1px"></div></sc-if>
+</div>
+</sc-for>
+</div>
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace;margin-top:10px">Lezione</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace;margin-top:10px">Lesson</div></sc-if>
+<div style="display:flex;gap:7px">
+<sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+<div onClick="{{ l.go }}" style="flex:1;padding:11px 0;border-radius:10px;background:rgba(226,170,90,.1);color:#e8d9bd;font-family:'JetBrains Mono',monospace;font-size:15px;text-align:center;cursor:pointer;position:relative" style-hover="background:rgba(226,170,90,.2)">{{ l.n }}
+<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:50%;bottom:5px;width:14px;height:2px;margin-left:-7px;background:#e2aa5a;border-radius:1px"></div></sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</div>
+</sc-if>
+</div>
+<div style="flex:0 1 212px;min-width:0;min-height:0;max-height:min(910px,calc(100vh - 36px));overflow-y:auto;display:flex;flex-direction:column;gap:14px;padding-right:4px;color:#b6a68b">
+<div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#a3937a">L1 · Fondamenti</div>
+<div style="font-size:23px;font-weight:600;color:#f0e6d6;margin-top:4px;line-height:1.2">Il chiosco di notte</div>
+<div style="font-size:14px;line-height:1.5;color:#8d7f68;margin-top:8px">Banda 1 · gestione del tempo · 8 capitoli</div>
+</div>
+<div style="height:1px;background:rgba(226,170,90,.14)"></div>
+<div style="display:flex;flex-direction:column;gap:5px">
+<sc-for list="{{ chapters }}" as="c" hint-placeholder-count="8">
+<div onClick="{{ c.go }}" style="padding:9px 11px;border-radius:9px;background:rgba(226,170,90,.06);cursor:pointer;display:flex;gap:10px;align-items:baseline" style-hover="background:rgba(226,170,90,.14)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#e2aa5a;width:12px">{{ c.n }}</div>
+<div style="flex:1;min-width:0">
+<div style="font-size:14px;color:#e8d9bd;line-height:1.3">{{ c.title }}</div>
+<sc-if value="{{ c.on }}" hint-placeholder-val="{{ false }}"><div style="height:2px;background:#e2aa5a;border-radius:1px;margin-top:6px"></div></sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="height:1px;background:rgba(226,170,90,.14)"></div>
+<div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#a3937a;margin-bottom:6px">Lezione {{ chapterNo }}.x</div>
+<div style="display:flex;flex-direction:column;gap:5px">
+<sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+<div onClick="{{ l.go }}" style="padding:8px 11px;border-radius:8px;background:rgba(226,170,90,.05);cursor:pointer;display:flex;gap:10px;align-items:baseline" style-hover="background:rgba(226,170,90,.13)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8d7f68;width:12px">{{ l.n }}</div>
+<div style="flex:1;min-width:0">
+<div style="font-size:13px;color:#c9b795;line-height:1.3">{{ l.title }}</div>
+<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><div style="height:2px;background:#e2aa5a;border-radius:1px;margin-top:5px"></div></sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="font-size:13px;line-height:1.55;color:#a3937a">Tocca il biglietto per prenderlo, il fornello con la stessa sagoma per cuocerlo, lo sportello per consegnare. Le mani sono un paio solo. <span style="color:#8d7f68">Esc</span> per la pausa.</div>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:940,&quot;height&quot;:1000},&quot;capitolo&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;,&quot;6&quot;,&quot;7&quot;,&quot;8&quot;],&quot;default&quot;:&quot;1&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;lezione&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;],&quot;default&quot;:&quot;1&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;lingua&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;it&quot;,&quot;en&quot;],&quot;default&quot;:&quot;it&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;diagnostica&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Taratura&quot;}}">
+const W=420,H=910,KEY='kaio.l1.chiosco';
+const HOB=[{x:W*.24,y:H*.52},{x:W*.5,y:H*.52},{x:W*.76,y:H*.52}];
+const HATCH={x:W*.5,y:H*.78};
+/* Beat: hobs, max clienti, arrive, pat, tickets, queue,
+   free=puoi cuocere senza biglietto, trap=indice dello spawn che punisce
+   l'anticipo, two=ordini a due sagome, chg=cambiano idea, blind=biglietto
+   coperto, rush=arrivi a raffica. Curva 0,2/0,45/0,7/1,0/0,6 (ricerca/03 §3.3) */
+const B=(o)=>Object.assign({hobs:2,max:2,arrive:6.5,pat:30,tickets:4,queue:1,free:false,trap:-1,two:false,chg:false,blind:false,rush:false},o);
+const CH=[
+ {t:['Uno alla volta','One at a time'],titles:[['Il primo','The first'],['Ancora uno','One more'],['Due di fila','Two in a row'],['Senza fermarti','No pause'],['Il ritmo','The rhythm']],
+  beats:[B({hobs:1,max:1,arrive:7.5,pat:40,tickets:2}),B({hobs:1,max:1,arrive:6.5,pat:36,tickets:3}),B({hobs:1,max:1,arrive:5.5,pat:32,tickets:4}),B({hobs:1,max:2,arrive:4.6,pat:28,tickets:5}),B({hobs:1,max:1,arrive:6.0,pat:34,tickets:4})]},
+ {t:['Due che aspettano','Two waiting'],titles:[['Il secondo fornello','The second hob'],['Chi prima','Who first'],['Due sagome','Two shapes'],['Stretti','Tight'],['A memoria','By heart']],
+  beats:[B({hobs:2,max:1,arrive:7.0,pat:36,tickets:3}),B({hobs:2,max:2,arrive:6.5,pat:32,tickets:4}),B({hobs:2,max:2,arrive:6.0,pat:30,tickets:5}),B({hobs:2,max:3,arrive:4.4,pat:24,tickets:6}),B({hobs:2,max:2,arrive:6.0,pat:30,tickets:5})]},
+ {t:['Non si indovina','No guessing'],titles:[['Il ripiano libero','The free shelf'],['Tentazione','Temptation'],['Cotto per niente','Cooked for nothing'],['Ripiano pieno','Full shelf'],['Solo su richiesta','On request only']],
+  beats:[B({hobs:2,max:2,arrive:7.0,pat:34,tickets:3,free:true}),B({hobs:2,max:2,arrive:6.6,pat:30,tickets:4,free:true}),B({hobs:2,max:2,arrive:6.4,pat:28,tickets:5,free:true,trap:1}),B({hobs:3,max:3,arrive:4.6,pat:22,tickets:6,free:true,trap:2}),B({hobs:2,max:2,arrive:6.2,pat:28,tickets:5,free:true})]},
+ {t:['Cambia idea','Changed mind'],titles:[['Il primo ripensamento','First rethink'],['Rileggi','Read again'],['Mentre cuoci','While cooking'],['Due ripensamenti','Two rethinks'],['Sempre il biglietto','Always the ticket']],
+  beats:[B({hobs:2,max:2,arrive:7.0,pat:34,tickets:3,chg:true}),B({hobs:2,max:2,arrive:6.5,pat:30,tickets:4,chg:true}),B({hobs:2,max:2,arrive:6.2,pat:28,tickets:5,chg:true}),B({hobs:3,max:3,arrive:5.0,pat:24,tickets:6,chg:true}),B({hobs:2,max:2,arrive:6.4,pat:30,tickets:5,chg:true})]},
+ {t:['Due cose in un ordine','Two in one order'],titles:[['Il doppio','The double'],['Uno e due','One and two'],['Ordine misto','Mixed order'],['Tre doppi','Three doubles'],['Composizione','Composition']],
+  beats:[B({hobs:2,max:1,arrive:8.0,pat:40,tickets:3,two:true}),B({hobs:2,max:2,arrive:7.4,pat:36,tickets:4,two:true}),B({hobs:3,max:2,arrive:7.0,pat:32,tickets:4,two:true}),B({hobs:3,max:3,arrive:5.6,pat:26,tickets:5,two:true}),B({hobs:3,max:2,arrive:7.0,pat:34,tickets:4,two:true})]},
+ {t:['Il biglietto coperto','The face-down ticket'],titles:[['Coperto','Face down'],['Accetta prima','Accept first'],['Non si sbircia','No peeking'],['Coperti e doppi','Face down and double'],['Alla cieca','Blind']],
+  beats:[B({hobs:2,max:2,arrive:7.0,pat:34,tickets:3,blind:true}),B({hobs:2,max:2,arrive:6.6,pat:30,tickets:4,blind:true}),B({hobs:3,max:2,arrive:6.2,pat:28,tickets:5,blind:true}),B({hobs:3,max:3,arrive:5.0,pat:24,tickets:6,blind:true,two:true}),B({hobs:3,max:2,arrive:6.6,pat:30,tickets:5,blind:true})]},
+ {t:['A raffica','In bursts'],titles:[['La prima raffica','First burst'],['Tre insieme','Three at once'],['Coda di azioni','Action queue'],['Il picco','The peak'],['Automatico','Automatic']],
+  beats:[B({hobs:3,max:3,arrive:5.4,pat:30,tickets:5,rush:true,queue:2}),B({hobs:3,max:3,arrive:4.8,pat:28,tickets:6,rush:true,queue:2}),B({hobs:3,max:4,arrive:4.2,pat:24,tickets:7,rush:true,queue:2}),B({hobs:3,max:4,arrive:3.6,pat:21,tickets:8,rush:true,queue:2}),B({hobs:3,max:3,arrive:5.0,pat:28,tickets:6,rush:true,queue:2})]},
+ {t:['Il turno intero','The whole shift'],titles:[['Tutto insieme','All together'],['Senza rete','No net'],['La prova','The test'],['Il picco del turno','Shift peak'],['Chiusura','Closing']],
+  beats:[B({hobs:3,max:3,arrive:5.6,pat:30,tickets:6,two:true,chg:true,queue:2}),B({hobs:3,max:3,arrive:5.0,pat:27,tickets:7,two:true,blind:true,queue:2}),B({hobs:3,max:4,arrive:4.4,pat:24,tickets:8,two:true,chg:true,blind:true,free:true,trap:3,queue:2}),B({hobs:3,max:4,arrive:3.8,pat:21,tickets:9,two:true,chg:true,blind:true,rush:true,queue:2}),B({hobs:3,max:3,arrive:5.4,pat:30,tickets:6,two:true,chg:true,queue:2})]}];
+const T={it:{busy:'Hai cotto qualcosa che nessuno aveva chiesto.',busyFx:'Il ripiano era occupato quando è arrivata la richiesta vera.',busyRule:'Il chiosco non indovina: prima la richiesta, poi il lavoro.',
+ late:'Un cliente se n\'è andato mentre eri altrove.',lateFx:'Il suo biglietto era in attesa da troppo tempo.',lateRule:'Un paio di mani sole: scegli chi servire adesso.',
+ chg:'Hai cotto la sagoma vecchia.',chgFx:'Quel cliente aveva cambiato il biglietto mentre cuocevi.',chgRule:'Vale quello che c\'è scritto adesso, non quello che ricordi.',
+ hint:'prima il biglietto, poi il fornello'},
+ en:{busy:'You cooked something nobody asked for.',busyFx:'The shelf was taken when the real request came in.',busyRule:'The kiosk does not guess: request first, then work.',
+ late:'A customer left while you were elsewhere.',lateFx:'Their ticket had been waiting too long.',lateRule:'Only one pair of hands: choose who to serve now.',
+ chg:'You cooked the old shape.',chgFx:'That customer changed the ticket while you were cooking.',chgRule:'What counts is what it says now, not what you remember.',
+ hint:'ticket first, then the hob'}};
+
+class Component extends DCLogic{
+ state={beat:0,chapter:0,lang:'it',paused:false,coach:null,done:false,muted:false,step:0,left:0};
+ renderVals(){const s=this.state,L=T[s.lang],c=s.coach;
+  return Object.assign(KAIO.vals(this),{
+   coachWhat:c?(c.kind==='busy'?L.busy:c.kind==='chg'?L.chg:L.late):'',
+   coachEffect:c?(c.kind==='busy'?L.busyFx:c.kind==='chg'?L.chgFx:L.lateFx):'',
+   coachRule:c?(c.kind==='busy'?L.busyRule:c.kind==='chg'?L.chgRule:L.lateRule):'',
+   coachHint:L.hint});
+ }
+ componentDidMount(){
+  KAIO.init(this,{W,H,key:KEY,chapters:CH,onTap:p=>this.tap(p)});
+  KAIO.audio(this);KAIO.drone(this,52,'triangle',.014,150);}
+ componentDidUpdate(pp){KAIO.sync(this,pp)}
+ componentWillUnmount(){KAIO.destroy(this)}
+
+ reset(beat){const c=this.BEATS[beat];this.cfg=c;this.needed=c.tickets;
+  this.cust=[];this.shelf=[];this.queue=[];this.parts=[];
+  this.hands={x:W*.5,y:H*.66,busy:0,total:0,at:null,job:null};
+  this.arriveT=1.1;this.made=0;this.gone=0;this.spawned=0;this.burstLeft=0;
+  this.streak={kind:null,n:0};this.pulse=0;this.pulseHob=-1;this.shake=0;this.flash=0}
+
+ want(o){return o.shapes[o.stage]}
+
+ tap(p){for(const c of this.cust){if(c.dead)continue;
+   if(Math.hypot(p.x-c.x,p.y-c.ty-24)<60){if(!c.taken){this.act({t:'take',c});return}}}
+  for(let i=0;i<this.cfg.hobs;i++){if(Math.hypot(p.x-HOB[i].x,p.y-HOB[i].y)<50){this.act({t:'cook',i});return}}
+  if(Math.hypot(p.x-HATCH.x,p.y-HATCH.y)<56){this.act({t:'give'});return}
+  KAIO.snd(this,'fall')}
+
+ act(j){const h=this.hands;
+  if(h.busy>0){if(this.cfg.queue>1&&this.queue.length<this.cfg.queue-1){this.queue.push(j);KAIO.snd(this,'pop',{hz:300,v:.07})}
+   else{KAIO.snd(this,'fall');this.shake=.5}
+   return}
+  this.start(j)}
+
+ start(j){const h=this.hands;
+  if(j.t==='take'){const c=j.c;if(!c||c.taken||c.dead)return;
+   const trav=Math.hypot(h.x-c.x,h.y-c.ty)/W*.9;
+   h.job={t:'take',c};h.total=h.busy=.8+trav;h.at={x:c.x,y:c.ty};c.taken=true;
+   KAIO.snd(this,'click',{hz:900,v:.2});return}
+  if(j.t==='cook'){const i=j.i;
+   const target=this.cust.find(c=>c.taken&&!c.dead&&c.stage<c.shapes.length&&this.want(c)===i);
+   const trav=Math.hypot(h.x-HOB[i].x,h.y-HOB[i].y)/W*.9;
+   h.job={t:'cook',i,c:target||null,shape:target?target.shapes[target.stage]:i};
+   h.total=h.busy=1.5+trav;h.at=HOB[i];KAIO.snd(this,'pop',{hz:220,v:.12});return}
+  if(j.t==='give'){const ready=this.cust.find(c=>!c.dead&&c.taken&&c.stage>=c.shapes.length);
+   const waste=this.shelf.findIndex(s=>!s.for);
+   const trav=Math.hypot(h.x-HATCH.x,h.y-HATCH.y)/W*.9;
+   h.job={t:'give',c:ready||null,waste};h.total=h.busy=.8+trav;h.at=HATCH;
+   KAIO.snd(this,'click',{hz:600,v:.16})}}
+
+ finish(){const h=this.hands,j=h.job;h.job=null;h.busy=0;
+  if(!j){if(this.queue.length)this.start(this.queue.shift());return}
+  if(j.t==='cook'){
+   const c=j.c;
+   if(c&&!c.dead){
+    if(this.want(c)!==j.i){this.shelf.push({shape:j.i,for:null});KAIO.snd(this,'thud',{v:.2});this.err('chg')}
+    else{c.stage++;this.shelf.push({shape:j.i,for:c});
+     KAIO.snd(this,'tone',{from:480+c.stage*60,to:720+c.stage*70,v:.13});
+     KAIO.burst(this.parts,HOB[j.i].x,HOB[j.i].y,8,'#f0d9a8')}}
+   else{this.shelf.push({shape:j.i,for:null});KAIO.snd(this,'thud',{v:.2});this.err('busy')}}
+  else if(j.t==='give'){
+   if(j.c&&!j.c.dead&&j.c.stage>=j.c.shapes.length){
+    const c=j.c;c.dead=true;c.served=true;this.made++;this.flash=1;
+    this.shelf=this.shelf.filter(s=>s.for!==c);
+    KAIO.snd(this,'tone',{from:620,to:980,v:.18});KAIO.burst(this.parts,HATCH.x,HATCH.y,12,'#e2aa5a');
+    this.setState({step:this.made});
+    if(this.made>=this.needed){KAIO.snd(this,'chime');this.setState({done:true})}}
+   else if(j.waste>=0&&this.shelf[j.waste]){this.shelf.splice(j.waste,1);
+    KAIO.snd(this,'thud',{v:.16});KAIO.burst(this.parts,HATCH.x,HATCH.y,5,'#6b5636')}
+   else{KAIO.snd(this,'fall');this.shake=.4}}
+  if(this.queue.length)this.start(this.queue.shift())}
+
+ err(kind){const s=this.streak;if(s.kind===kind)s.n++;else{s.kind=kind;s.n=1}
+  if(s.n===2){this.pulse=.7;const c=this.cust.find(k=>k.taken&&!k.dead&&k.stage<k.shapes.length);this.pulseHob=c?this.want(c):-1}
+  if(s.n>=3){this.setState({coach:{kind}});this.streak={kind:null,n:0}}}
+ onCoachClose(){this.streak={kind:null,n:0}}
+
+ spawn(){const c=this.cfg;
+  let a=Math.floor(Math.random()*c.hobs);
+  if(this.spawned===c.trap){const w=this.shelf.find(s=>!s.for);if(w)a=(w.shape+1)%c.hobs}
+  const shapes=[a];
+  if(c.two&&Math.random()<.7){let b=Math.floor(Math.random()*c.hobs);if(b===a)b=(b+1)%c.hobs;shapes.push(b)}
+  const slots=[W*.17,W*.39,W*.61,W*.83];
+  const used=this.cust.filter(k=>!k.dead).length;
+  this.cust.push({x:slots[used%slots.length],ty:H*.17,shapes,stage:0,pat:c.pat,pat0:c.pat,
+   taken:false,dead:false,served:false,wob:Math.random()*6.28,in:0,
+   covered:c.blind,chgAt:c.chg?2.5+Math.random()*4:0,flip:0});
+  this.spawned++}
+
+ update(dt){const c=this.cfg,h=this.hands;
+  if(this.flash>0)this.flash-=dt*3.2;if(this.shake>0)this.shake-=dt*3.4;if(this.pulse>0)this.pulse-=dt;
+  const alive=this.cust.filter(k=>!k.dead).length;
+  this.arriveT-=dt;
+  if(this.arriveT<=0&&alive<c.max&&this.spawned<this.needed+this.gone){
+   this.spawn();
+   if(c.rush){if(this.burstLeft>0){this.burstLeft--;this.arriveT=.7}
+    else{this.burstLeft=2;this.arriveT=c.arrive*1.3}}
+   else this.arriveT=c.arrive*(.85+Math.random()*.3)}
+  if(h.busy>0){h.busy-=dt;
+   if(h.at){h.x+=(h.at.x-h.x)*Math.min(1,dt*7);h.y+=(h.at.y-h.y)*Math.min(1,dt*7)}
+   if(h.busy<=0)this.finish()}
+  for(const k of this.cust){if(k.dead)continue;
+   k.in=Math.min(1,k.in+dt*2.4);k.wob+=dt*2.2;
+   if(k.flip>0)k.flip-=dt*3;
+   if(k.taken&&k.covered){k.covered=false;k.flip=1;KAIO.snd(this,'pop',{hz:520,v:.1})}
+   if(k.chgAt>0&&!k.served){k.chgAt-=dt;
+    if(k.chgAt<=0&&k.stage<k.shapes.length){
+     let n=Math.floor(Math.random()*c.hobs);if(n===k.shapes[k.stage])n=(n+1)%c.hobs;
+     k.shapes[k.stage]=n;k.flip=1;k.chgAt=0;
+     KAIO.snd(this,'pop',{hz:380,v:.12})}}
+   if(!k.served){k.pat-=dt;
+    if(k.pat<=0){k.dead=true;this.gone++;KAIO.snd(this,'whir');this.shake=.7;
+     for(const it of this.shelf)if(it.for===k)it.for=null;
+     const left=this.state.left+1;this.setState({left});this.err('late');
+     if(left>=3){this.reset(this.state.beat);this.setState({step:0,left:0});return}}}}
+  this.cust=this.cust.filter(k=>!k.dead);
+  this.parts=KAIO.parts(this.parts,dt,420)}
+
+ draw(x){const sc=this.sc||1;x.setTransform(sc,0,0,sc,0,0);x.save();KAIO.shake(x,this.shake);
+  const g=x.createLinearGradient(0,0,0,H);g.addColorStop(0,'#120d06');g.addColorStop(.42,'#191106');g.addColorStop(1,'#0b0806');x.fillStyle=g;x.fillRect(-8,-8,W+16,H+16);
+  const cone=x.createRadialGradient(W/2,H*.3,10,W/2,H*.5,W*.7);cone.addColorStop(0,'rgba(255,214,150,.13)');cone.addColorStop(.5,'rgba(226,170,90,.045)');cone.addColorStop(1,'rgba(0,0,0,0)');
+  x.fillStyle=cone;x.fillRect(0,0,W,H);
+  x.fillStyle='rgba(6,5,4,.92)';x.fillRect(0,0,W,H*.09);
+  x.fillStyle='#2a1e12';x.fillRect(10,H*.09,W-20,11);
+  x.fillStyle='rgba(255,222,170,.9)';x.beginPath();x.arc(W*.5,H*.055,6,0,6.283);x.fill();
+  x.globalAlpha=.3;x.beginPath();x.arc(W*.5,H*.055,20,0,6.283);x.fill();x.globalAlpha=1;
+  x.strokeStyle='rgba(226,170,90,.18)';x.lineWidth=2;x.beginPath();x.moveTo(14,H*.29);x.lineTo(W-14,H*.29);x.stroke();
+  for(const k of this.cust){if(k.dead)continue;
+   const st=k.pat/k.pat0,wob=st<.34?Math.sin(k.wob*3.4)*4:st<.66?Math.sin(k.wob*1.7)*2:0;
+   const y=k.ty-40*(1-k.in)+wob;
+   x.fillStyle='rgba(0,0,0,.5)';x.beginPath();x.ellipse(k.x,y+70,28,7,0,0,6.283);x.fill();
+   x.fillStyle=st<.34?'#3a2d1e':'#2d2418';x.beginPath();KAIO.rr(x,k.x-23,y-4,46,74,11);x.fill();
+   x.beginPath();x.arc(k.x,y-18,17,0,6.283);x.fill();
+   const two=k.shapes.length>1,tw=two?56:42,th=54,tx=k.x-tw/2,ty=y+14+(st<.34?Math.sin(k.wob*5)*2:0);
+   const fl=k.flip>0?Math.abs(Math.cos(k.flip*3.14)):1;
+   x.save();x.translate(k.x,ty+th/2);x.scale(fl,1);x.translate(-k.x,-(ty+th/2));
+   x.fillStyle=k.covered?'#8a7458':(k.taken?'rgba(232,217,189,.42)':'#e8d9bd');
+   x.beginPath();KAIO.rr(x,tx,ty,tw,th,3);x.fill();
+   if(k.covered){x.strokeStyle='rgba(60,44,22,.5)';x.lineWidth=1.5;
+    x.beginPath();x.moveTo(tx+6,ty+8);x.lineTo(tx+tw-6,ty+th-8);x.stroke();
+    x.beginPath();x.moveTo(tx+tw-6,ty+8);x.lineTo(tx+6,ty+th-8);x.stroke()}
+   else{x.strokeStyle='rgba(90,66,36,.55)';x.lineWidth=1;x.beginPath();x.moveTo(tx+5,ty+10);x.lineTo(tx+tw-5,ty+10);x.stroke();
+    k.shapes.forEach((sh,i)=>{const gx=two?(tx+14+i*28):k.x;
+     const doneS=i<k.stage;x.globalAlpha=doneS?.32:1;
+     this.glyph(x,sh,gx,ty+34,12,'rgba(60,42,20,.85)');x.globalAlpha=1;
+     if(doneS){x.strokeStyle='rgba(60,42,20,.6)';x.lineWidth=2;x.beginPath();x.moveTo(gx-11,ty+34);x.lineTo(gx+11,ty+34);x.stroke()}})}
+   x.restore();
+   if(st<.34){x.strokeStyle='rgba(226,170,90,'+(.3+.3*Math.sin(k.wob*6))+')';x.lineWidth=2;x.beginPath();x.arc(k.x,y-18,26,0,6.283);x.stroke()}}
+  const by=H*.6;
+  x.fillStyle='#0b0806';x.fillRect(0,by,W,H-by);
+  const bg=x.createLinearGradient(0,by-6,0,by+14);bg.addColorStop(0,'#8a5f36');bg.addColorStop(1,'#5c3e22');x.fillStyle=bg;x.fillRect(8,by-6,W-16,20);
+  for(let i=0;i<this.cfg.hobs;i++){const p=HOB[i],on=this.hands.job&&this.hands.job.t==='cook'&&this.hands.job.i===i;
+   x.fillStyle='#241a10';x.beginPath();x.arc(p.x,p.y,41,0,6.283);x.fill();
+   x.strokeStyle=on?'rgba(255,180,90,.9)':'rgba(226,170,90,.3)';x.lineWidth=on?4:2.5;x.beginPath();x.arc(p.x,p.y,41,0,6.283);x.stroke();
+   if(this.pulse>0&&this.pulseHob===i){x.strokeStyle='rgba(226,170,90,'+(.4+.4*Math.sin(this.pulse*14))+')';x.lineWidth=5;x.beginPath();x.arc(p.x,p.y,48,0,6.283);x.stroke()}
+   this.glyph(x,i,p.x,p.y,18,'rgba(226,170,90,.6)');
+   if(on){const k=1-this.hands.busy/this.hands.total;x.strokeStyle='rgba(255,206,140,.95)';x.lineWidth=4;x.beginPath();x.arc(p.x,p.y,50,-1.57,-1.57+6.283*k);x.stroke()}}
+  const sy=H*.68;
+  x.fillStyle='rgba(20,14,8,.8)';x.fillRect(W*.16,sy,W*.68,10);
+  this.shelf.forEach((s,i)=>{const px=W*.22+i*40;
+   x.fillStyle=s.for?'#c99a5a':'#6b5636';x.beginPath();KAIO.rr(x,px-15,sy-30,30,30,5);x.fill();
+   this.glyph(x,s.shape,px,sy-15,9,'rgba(40,28,12,.75)');
+   if(!s.for){x.strokeStyle='rgba(160,130,90,.7)';x.lineWidth=1.5;x.beginPath();x.moveTo(px-9,sy-24);x.lineTo(px+9,sy-6);x.stroke()}});
+  x.fillStyle='#241a10';x.beginPath();KAIO.rr(x,HATCH.x-54,HATCH.y-23,108,46,8);x.fill();
+  x.strokeStyle='rgba(226,170,90,.3)';x.lineWidth=2;x.stroke();
+  x.fillStyle='#e2aa5a';x.font='500 18px "JetBrains Mono",monospace';x.textAlign='center';x.textBaseline='middle';
+  x.fillText(this.state.lang==='en'?'OUT':'FUORI',HATCH.x,HATCH.y);
+  const h=this.hands;
+  x.fillStyle='rgba(0,0,0,.4)';x.beginPath();x.ellipse(h.x,h.y+14,18,5,0,0,6.283);x.fill();
+  x.fillStyle=h.busy>0?'#d8b483':'#b99367';x.beginPath();KAIO.rr(x,h.x-15,h.y-12,30,24,10);x.fill();
+  x.fillStyle='rgba(255,255,255,.14)';x.beginPath();KAIO.rr(x,h.x-11,h.y-9,22,7,4);x.fill();
+  if(this.queue.length){x.fillStyle='rgba(226,170,90,.8)';for(let i=0;i<this.queue.length;i++){x.beginPath();x.arc(h.x+22+i*9,h.y-14,3.2,0,6.283);x.fill()}}
+  for(let i=0;i<3;i++){const off=i<this.state.left;
+   x.strokeStyle=off?'rgba(140,110,70,.6)':'rgba(226,170,90,.75)';x.lineWidth=2;
+   x.beginPath();x.arc(W-26,H*.135+i*24,6,0,6.283);off?x.stroke():x.fill()}
+  x.textAlign='left';x.font='500 18px "JetBrains Mono",monospace';x.fillStyle='#a3937a';
+  x.fillText(this.made+'/'+this.needed,18,H-26);
+  KAIO.drawParts(x,this.parts);
+  if(this.flash>0){x.fillStyle='rgba(255,228,180,'+(this.flash*.09)+')';x.fillRect(0,0,W,H)}
+  if(this.props.diagnostica){x.fillStyle='rgba(160,230,255,.9)';x.font='500 12px "JetBrains Mono",monospace';x.textAlign='left';
+   x.fillText('c'+(this.state.chapter+1)+'.'+(this.state.beat+1)+'  clienti '+this.cust.length+'/'+this.cfg.max+'  serviti '+this.made+'/'+this.needed+'  persi '+this.state.left,12,H*.09+30)}
+  x.restore()}
+
+ glyph(x,i,cx,cy,r,col){x.fillStyle=col;x.beginPath();
+  if(i===0)x.arc(cx,cy,r,0,6.283);
+  else if(i===1)x.rect(cx-r*.86,cy-r*.86,r*1.72,r*1.72);
+  else{x.moveTo(cx,cy-r);x.lineTo(cx+r*.92,cy+r*.72);x.lineTo(cx-r*.92,cy+r*.72);x.closePath()}
+  x.fill()}
+}
+</script>
+</body>
+</html>

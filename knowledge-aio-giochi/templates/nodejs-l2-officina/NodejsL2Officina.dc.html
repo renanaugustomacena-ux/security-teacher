@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Node.js L5 — L'officina di notte" description="Livello 5 completo: 8 capitoli × 5 lezioni. File system e path — quali attrezzi il tuo bancone possiede, e quali percorsi tengono davvero." -->
+<!--
+  SCHEDA DI PROGETTO (ricerca/00 §0.3)
+  GIOCO ...... L'officina di notte
+  LIVELLO .... Node.js, L5 File System e Path, banda 1 — 8 capitoli, 40 lezioni
+  CONCETTO ... Gli attrezzi per toccare i file esistono solo dove il programma
+               gira davvero. E un percorso non è una stringa: è una strada, e
+               scriverla a mano è il modo di sbagliarla.
+  FORMA ...... contenimento          VERBO ... afferrare al volo
+  ARCHETIPO .. ricerca/11 slash — Fruit Ninja
+  VINCI SE ... il pezzo sul bancone è finito e il motore è ancora acceso
+  PERDI SE ... afferri un attrezzo che il bancone non possiede: il motore si
+               spegne, buio, il pezzo resta a metà
+  SBAGLI ..... 1 la mano attraversa, l'attrezzo cade e si sente
+               2 il bancone si illumina 400 ms e mostra cosa contiene
+               3 pannello di coaching, quattro righe, la quarta è animata
+  CAPITOLI ... 1 il gesto · 2 entra un estraneo · 3 FRATTURA fetch
+               4 respiro: la presa doppia · 5 i percorsi scritti a mano
+               6 sincrono e asincrono · 7 a raffica · 8 il pezzo intero
+  MONDO ...... officina di notte, un bancone, luce calda dall'alto
+  NUMERI ..... volo 2,6→1,9 s (mai sotto 1,8: il manico va letto), hang ×0,72,
+               hit-stop 45/110 ms, scia 260 ms, max 3 in aria
+  TEST 1 ..... manici tutti dello stesso legno, quattro sagome distribuite fra
+               presenti e assenti, lato d'ingresso e apice casuali. L'unico
+               segnale è il nome stampato.
+  TEST 2 ..... "Afferro al volo solo gli attrezzi che il mio bancone possiede,
+               prima che il pezzo si fermi"
+  TEST 3 ..... un attrezzo sale dal buio verso una mano già aperta
+-->
+<helmet>
+<script src="./ds-base.js"></script>
+<script src="../kaio-engine.js"></script>
+<style>
+*{box-sizing:border-box}html,body{margin:0;padding:0;height:100%;background:#080705}
+@keyframes om-fade{from{opacity:0}to{opacity:1}}
+@keyframes om-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes om-slide{0%{transform:translate(0,0) rotate(-10deg);opacity:0}14%{opacity:1}62%{transform:translate(84px,30px) rotate(4deg);opacity:1}84%{transform:translate(84px,30px) rotate(4deg);opacity:0}100%{transform:translate(0,0) rotate(-10deg);opacity:0}}
+@keyframes om-land{0%,58%{transform:scaleY(1)}66%{transform:scaleY(.9)}74%{transform:scaleY(1)}100%{transform:scaleY(1)}}
+</style>
+</helmet>
+<div style="position:fixed;inset:0;background:radial-gradient(130% 90% at 50% -10%,#1a1409 0%,#0d0a07 55%,#070605 100%);display:grid;place-items:center;font-family:Raleway,system-ui,sans-serif;overflow:hidden;padding:18px">
+<div style="display:flex;align-items:center;justify-content:center;gap:26px;max-width:100%">
+<div style="position:relative;height:min(910px,calc(100vh - 36px),max(480px,calc((100vw - 280px) * 2.1667)));aspect-ratio:420/910;border-radius:24px;overflow:hidden;box-shadow:0 50px 130px -34px rgba(0,0,0,.95),0 0 0 1px rgba(226,170,90,.14);flex:0 0 auto">
+<canvas ref="{{ cvRef }}" style="display:block;width:100%;height:100%;touch-action:none;cursor:crosshair"></canvas>
+<sc-if value="{{ coachOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;left:14px;right:14px;top:14px;padding:20px 20px 16px;border-radius:18px;background:linear-gradient(180deg,rgba(30,23,14,.97),rgba(20,15,10,.97));box-shadow:0 24px 60px -18px rgba(0,0,0,.9),inset 0 1px 0 rgba(226,170,90,.18);animation:om-rise .26s cubic-bezier(.16,1,.3,1) both;cursor:pointer">
+<div style="font-size:20px;line-height:1.45;color:#f0e6d6;font-weight:500">{{ coachWhat }}</div>
+<div style="font-size:20px;line-height:1.45;color:#c9b795;margin-top:10px">{{ coachEffect }}</div>
+<div style="font-size:20px;line-height:1.45;color:#e2aa5a;margin-top:14px;font-weight:600">{{ coachRule }}</div>
+<div style="margin-top:18px;height:96px;border-radius:12px;background:rgba(0,0,0,.34);position:relative;overflow:hidden">
+<div style="position:absolute;left:16px;bottom:14px;width:150px;height:16px;border-radius:3px;background:linear-gradient(180deg,#8a5f36,#5d3f22);animation:om-land 2.4s ease-in-out infinite"></div>
+<div style="position:absolute;left:24px;bottom:32px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#e8d9bd;letter-spacing:.04em">{{ coachBench }}</div>
+<div style="position:absolute;left:22px;top:16px;display:flex;align-items:center;gap:8px;animation:om-slide 2.4s ease-in-out infinite">
+<div style="width:56px;height:14px;border-radius:3px;background:linear-gradient(180deg,#8a5f36,#5f4025)"></div>
+<div style="width:16px;height:20px;border-radius:3px;background:linear-gradient(180deg,#b9bfc4,#7d858c)"></div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#f0e6d6;letter-spacing:.03em">{{ coachTool }}</div>
+</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ doneOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(70% 50% at 50% 45%,rgba(30,22,12,.9),rgba(8,7,5,.96));animation:om-fade .22s ease both;cursor:pointer">
+<div style="text-align:center;padding:0 30px">
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:34px;font-weight:600;color:#f4ebdc;letter-spacing:-.01em">Pezzo finito</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:34px;font-weight:600;color:#f4ebdc;letter-spacing:-.01em">Piece finished</div></sc-if>
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#8d7f68;margin-top:10px">{{ chapterNo }}/{{ chapterOf }} · {{ chapterTitle }}</div>
+<div style="display:flex;gap:10px;justify-content:center;margin-top:24px">
+<sc-for list="{{ marks }}" as="m" hint-placeholder-count="5">
+<div style="width:34px;height:6px;border-radius:3px;background:rgba(226,170,90,.22);position:relative;overflow:hidden">
+<sc-if value="{{ m.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;background:#e2aa5a"></div></sc-if>
+</div>
+</sc-for>
+</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#a3937a;margin-top:22px;letter-spacing:.04em">{{ doneHint }}</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ pauseOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;backdrop-filter:blur(9px);background:rgba(10,8,6,.72);display:grid;place-items:center;animation:om-fade .2s ease both;padding:16px;overflow-y:auto">
+<div style="width:290px;padding:24px;border-radius:20px;background:linear-gradient(180deg,rgba(32,25,16,.98),rgba(19,15,10,.98));box-shadow:0 30px 70px -20px rgba(0,0,0,.9),inset 0 1px 0 rgba(226,170,90,.16)">
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace">In pausa</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace">Paused</div></sc-if>
+<div style="display:flex;flex-direction:column;gap:9px;margin-top:16px">
+<div onClick="{{ resume }}" style="padding:14px 16px;border-radius:12px;background:#e2aa5a;color:#191207;font-size:17px;font-weight:600;text-align:center;cursor:pointer" style-hover="background:#eeb867"><sc-if value="{{ it }}" hint-placeholder-val="{{ true }}">Riprendi</sc-if><sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">Resume</sc-if></div>
+<div onClick="{{ toggleLang }}" style="padding:13px 16px;border-radius:12px;background:rgba(226,170,90,.1);color:#e8d9bd;font-size:16px;display:flex;justify-content:space-between;cursor:pointer" style-hover="background:rgba(226,170,90,.18)"><span><sc-if value="{{ it }}" hint-placeholder-val="{{ true }}">Lingua</sc-if><sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">Language</sc-if></span><span style="font-family:'JetBrains Mono',monospace;color:#e2aa5a">{{ langLabel }}</span></div>
+<div onClick="{{ toggleMute }}" style="padding:13px 16px;border-radius:12px;background:rgba(226,170,90,.1);color:#e8d9bd;font-size:16px;display:flex;justify-content:space-between;cursor:pointer" style-hover="background:rgba(226,170,90,.18)"><span>Audio</span><span style="font-family:'JetBrains Mono',monospace;color:#e2aa5a">{{ audioState }}</span></div>
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace;margin-top:12px">Capitolo</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace;margin-top:12px">Chapter</div></sc-if>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px">
+<sc-for list="{{ chapters }}" as="c" hint-placeholder-count="8">
+<div onClick="{{ c.go }}" style="padding:10px 0;border-radius:9px;background:rgba(226,170,90,.1);color:#e8d9bd;font-family:'JetBrains Mono',monospace;font-size:14px;text-align:center;cursor:pointer;position:relative" style-hover="background:rgba(226,170,90,.2)">{{ c.n }}
+<sc-if value="{{ c.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:50%;bottom:4px;width:12px;height:2px;margin-left:-6px;background:#e2aa5a;border-radius:1px"></div></sc-if>
+</div>
+</sc-for>
+</div>
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace;margin-top:10px">Lezione</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace;margin-top:10px">Lesson</div></sc-if>
+<div style="display:flex;gap:7px">
+<sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+<div onClick="{{ l.go }}" style="flex:1;padding:11px 0;border-radius:10px;background:rgba(226,170,90,.1);color:#e8d9bd;font-family:'JetBrains Mono',monospace;font-size:15px;text-align:center;cursor:pointer;position:relative" style-hover="background:rgba(226,170,90,.2)">{{ l.n }}
+<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:50%;bottom:5px;width:14px;height:2px;margin-left:-7px;background:#e2aa5a;border-radius:1px"></div></sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</div>
+</sc-if>
+</div>
+<div style="flex:0 1 212px;min-width:0;min-height:0;max-height:min(910px,calc(100vh - 36px));overflow-y:auto;display:flex;flex-direction:column;gap:14px;padding-right:4px;color:#b6a68b">
+<div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#a3937a">L5 · File system e path</div>
+<div style="font-size:23px;font-weight:600;color:#f0e6d6;margin-top:4px;line-height:1.2">L'officina di notte</div>
+<div style="font-size:14px;line-height:1.5;color:#8d7f68;margin-top:8px">Banda 1 · presa al volo · 8 capitoli</div>
+</div>
+<div style="height:1px;background:rgba(226,170,90,.14)"></div>
+<div style="display:flex;flex-direction:column;gap:5px">
+<sc-for list="{{ chapters }}" as="c" hint-placeholder-count="8">
+<div onClick="{{ c.go }}" style="padding:9px 11px;border-radius:9px;background:rgba(226,170,90,.06);cursor:pointer;display:flex;gap:10px;align-items:baseline" style-hover="background:rgba(226,170,90,.14)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#e2aa5a;width:12px">{{ c.n }}</div>
+<div style="flex:1;min-width:0">
+<div style="font-size:14px;color:#e8d9bd;line-height:1.3">{{ c.title }}</div>
+<sc-if value="{{ c.on }}" hint-placeholder-val="{{ false }}"><div style="height:2px;background:#e2aa5a;border-radius:1px;margin-top:6px"></div></sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="height:1px;background:rgba(226,170,90,.14)"></div>
+<div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#a3937a;margin-bottom:6px">Lezione {{ chapterNo }}.x</div>
+<div style="display:flex;flex-direction:column;gap:5px">
+<sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+<div onClick="{{ l.go }}" style="padding:8px 11px;border-radius:8px;background:rgba(226,170,90,.05);cursor:pointer;display:flex;gap:10px;align-items:baseline" style-hover="background:rgba(226,170,90,.13)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8d7f68;width:12px">{{ l.n }}</div>
+<div style="flex:1;min-width:0">
+<div style="font-size:13px;color:#c9b795;line-height:1.3">{{ l.title }}</div>
+<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><div style="height:2px;background:#e2aa5a;border-radius:1px;margin-top:5px"></div></sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="font-size:13px;line-height:1.55;color:#a3937a">Trascina attraverso un attrezzo per afferrarlo. Quelli che il bancone non possiede vanno lasciati cadere. Gli attrezzi con la fascetta vanno presi due volte. <span style="color:#8d7f68">Esc</span> per la pausa.</div>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:940,&quot;height&quot;:1000},&quot;capitolo&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;,&quot;6&quot;,&quot;7&quot;,&quot;8&quot;],&quot;default&quot;:&quot;1&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;lezione&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;],&quot;default&quot;:&quot;1&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;lingua&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;it&quot;,&quot;en&quot;],&quot;default&quot;:&quot;it&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;diagnostica&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Taratura&quot;}}">
+const W=420,H=910,KEY='kaio.l5.officina';
+const SH=['chiave','cacciavite','martello','pinza'];
+/* Ogni attrezzo: [sagoma, presente?, doppia presa?] — le sagome sono
+   distribuite fra presenti e assenti perché non siano una scorciatoia. */
+const TOOLS={
+ 'fs':[0,1,0],'path':[1,1,0],'os':[2,1,0],'process':[3,1,0],'Buffer':[0,1,0],'fetch':[1,1,0],
+ '__dirname':[2,1,0],'path.join':[3,1,0],'path.resolve':[0,1,0],'basename':[1,1,0],
+ 'readFileSync':[2,1,0],'existsSync':[3,1,0],'mkdirSync':[0,1,0],
+ 'readFile':[1,1,1],'writeFile':[2,1,1],'readdir':[3,1,1],
+ 'document':[2,0,0],'window':[3,0,0],'localStorage':[0,0,0],'alert':[1,0,0],
+ 'XMLHttpRequest':[2,0,0],'sessionStorage':[3,0,0],
+ "'../dati'":[0,0,0],"'C:\\\\dati'":[1,0,0],"'./a'+'/b'":[2,0,0]};
+const B=(o)=>Object.assign({have:['fs','path'],lack:[],flight:2.3,air:2,spawn:2.0,steps:4,lives:3,absRate:.35},o);
+const CH=[
+ {t:['Il gesto','The gesture'],titles:[['Il primo attrezzo','First tool'],['Ancora uno','One more'],['Due in aria','Two in the air'],['Più svelto','Quicker'],['Il ritmo','The rhythm']],
+  beats:[B({have:['fs','path'],flight:2.6,air:1,spawn:2.4,steps:3,lives:Infinity,absRate:0}),
+   B({have:['fs','path','os'],flight:2.5,air:1,spawn:2.2,steps:3,lives:Infinity,absRate:0}),
+   B({have:['fs','path','os'],flight:2.4,air:2,spawn:2.1,steps:4,lives:Infinity,absRate:0}),
+   B({have:['fs','path','os','process'],flight:2.1,air:2,spawn:1.6,steps:5,lives:3,absRate:0}),
+   B({have:['fs','path','os','process'],flight:2.4,air:2,spawn:2.0,steps:4,lives:3,absRate:0})]},
+ {t:['Entra un estraneo','A stranger arrives'],titles:[['Il primo assente','First absent'],['Lascia cadere','Let it fall'],['Due estranei','Two strangers'],['Misti','Mixed'],['Occhio al manico','Watch the handle']],
+  beats:[B({have:['fs','path','os'],lack:['document'],flight:2.5,spawn:2.2,steps:4,absRate:.3}),
+   B({have:['fs','path','os'],lack:['document','window'],flight:2.4,spawn:2.1,steps:4,absRate:.36}),
+   B({have:['fs','path','os','process'],lack:['document','window'],flight:2.3,spawn:2.0,steps:5,absRate:.4}),
+   B({have:['fs','path','os','process','Buffer'],lack:['document','window','alert'],flight:1.9,air:3,spawn:1.4,steps:6,absRate:.44}),
+   B({have:['fs','path','os','process','Buffer'],lack:['document','window','alert'],flight:2.2,spawn:1.8,steps:5,absRate:.4})]},
+ {t:['La cosa che sembra','The one that looks it'],titles:[['Sale fetch','fetch rises'],['Non è del browser','Not the browser\'s'],['Con i suoi simili','Among its kind'],['Sotto pressione','Under pressure'],['Adesso lo sai','Now you know']],
+  beats:[B({have:['fetch','process','path'],lack:['XMLHttpRequest'],flight:2.5,spawn:2.2,steps:4,absRate:.3}),
+   B({have:['fetch','process','path'],lack:['XMLHttpRequest','localStorage'],flight:2.4,spawn:2.1,steps:5,absRate:.38}),
+   B({have:['fetch','fs','path','Buffer'],lack:['XMLHttpRequest','localStorage','window'],flight:2.2,spawn:1.9,steps:5,absRate:.42}),
+   B({have:['fetch','fs','path','Buffer','os'],lack:['XMLHttpRequest','localStorage','window','document'],flight:1.9,air:3,spawn:1.4,steps:6,absRate:.46}),
+   B({have:['fetch','fs','path','Buffer','os'],lack:['XMLHttpRequest','localStorage','window'],flight:2.2,spawn:1.8,steps:5,absRate:.4})]},
+ {t:['La presa doppia','The double grab'],titles:[['La fascetta','The band'],['Due volte','Twice'],['Non lasciarlo','Don\'t drop it'],['Doppi e assenti','Doubles and absents'],['Mano ferma','Steady hand']],
+  beats:[B({have:['fs','readFile'],flight:2.6,air:1,spawn:2.4,steps:3,absRate:0}),
+   B({have:['fs','readFile','writeFile'],flight:2.5,air:2,spawn:2.2,steps:4,absRate:0}),
+   B({have:['readFile','writeFile','readdir'],flight:2.4,air:2,spawn:2.1,steps:4,absRate:0}),
+   B({have:['readFile','writeFile','fs','path'],lack:['document','window'],flight:2.1,air:3,spawn:1.6,steps:5,absRate:.36}),
+   B({have:['readFile','readdir','fs','path'],lack:['window'],flight:2.4,air:2,spawn:2.0,steps:5,absRate:.3})]},
+ {t:['Percorsi scritti a mano','Hand-written paths'],titles:[['La strada giusta','The right road'],['La barra sbagliata','The wrong slash'],['Incollato a mano','Glued by hand'],['Tutti i falsi','All the fakes'],['Sempre join','Always join']],
+  beats:[B({have:['path.join','__dirname'],lack:["'../dati'"],flight:2.6,air:1,spawn:2.3,steps:3,absRate:.34}),
+   B({have:['path.join','__dirname','path.resolve'],lack:["'../dati'","'C:\\\\dati'"],flight:2.5,spawn:2.1,steps:4,absRate:.4}),
+   B({have:['path.join','path.resolve','basename'],lack:["'./a'+'/b'","'C:\\\\dati'"],flight:2.4,spawn:2.0,steps:5,absRate:.44}),
+   B({have:['path.join','path.resolve','basename','__dirname'],lack:["'../dati'","'C:\\\\dati'","'./a'+'/b'"],flight:2.0,air:3,spawn:1.5,steps:6,absRate:.46}),
+   B({have:['path.join','path.resolve','__dirname'],lack:["'../dati'","'./a'+'/b'"],flight:2.3,spawn:1.9,steps:5,absRate:.4})]},
+ {t:['Sincrono e asincrono','Sync and async'],titles:[['Uno solo','Just one'],['Sync di fianco','Sync alongside'],['Il bancone fermo','The bench stalls'],['Tutti e due i tipi','Both kinds'],['Scelta libera','Free choice']],
+  beats:[B({have:['readFileSync','fs'],flight:2.6,air:1,spawn:2.3,steps:3,absRate:0}),
+   B({have:['readFileSync','readFile','fs'],flight:2.5,air:2,spawn:2.1,steps:4,absRate:0}),
+   B({have:['readFileSync','readFile','existsSync','readdir'],flight:2.3,air:2,spawn:2.0,steps:5,absRate:0}),
+   B({have:['readFileSync','readFile','existsSync','mkdirSync','writeFile'],lack:['localStorage','window'],flight:2.0,air:3,spawn:1.5,steps:6,absRate:.34}),
+   B({have:['readFileSync','readFile','existsSync','writeFile'],lack:['window'],flight:2.3,air:2,spawn:1.9,steps:5,absRate:.3})]},
+ {t:['A raffica','In bursts'],titles:[['Tre in aria','Three in the air'],['Senza respiro','No breath'],['Manici lunghi','Long handles'],['Il picco','The peak'],['Automatico','Automatic']],
+  beats:[B({have:['fs','path','os','process'],lack:['document','window'],flight:2.1,air:3,spawn:1.5,steps:6,absRate:.4}),
+   B({have:['fs','path','os','process','Buffer'],lack:['document','window','alert'],flight:2.0,air:3,spawn:1.35,steps:7,absRate:.42}),
+   B({have:['path.join','path.resolve','readFileSync','existsSync'],lack:['localStorage','sessionStorage',"'../dati'"],flight:2.0,air:3,spawn:1.35,steps:7,absRate:.44}),
+   B({have:['fs','path','fetch','Buffer','readFile'],lack:['document','window','alert','XMLHttpRequest'],flight:1.9,air:3,spawn:1.25,steps:8,absRate:.46}),
+   B({have:['fs','path','os','fetch','readFileSync'],lack:['document','window'],flight:2.2,air:3,spawn:1.7,steps:6,absRate:.38})]},
+ {t:['Il pezzo intero','The whole piece'],titles:[['Tutto insieme','All together'],['Senza rete','No net'],['La prova','The test'],['Il picco del turno','Shift peak'],['Chiusura','Closing']],
+  beats:[B({have:['fs','path','os','process','fetch','path.join'],lack:['document','window','localStorage'],flight:2.2,air:3,spawn:1.7,steps:6,absRate:.4}),
+   B({have:['fs','path.join','path.resolve','readFile','Buffer'],lack:['document',"'../dati'","'C:\\\\dati'"],flight:2.1,air:3,spawn:1.6,steps:7,absRate:.42}),
+   B({have:['readFileSync','readFile','path.join','__dirname','fetch'],lack:['XMLHttpRequest','localStorage',"'./a'+'/b'",'alert'],flight:2.0,air:3,spawn:1.45,steps:8,absRate:.46}),
+   B({have:['fs','path','fetch','readFile','writeFile','path.join'],lack:['document','window','alert','sessionStorage',"'../dati'"],flight:1.9,air:3,spawn:1.3,steps:9,absRate:.48}),
+   B({have:['fs','path','os','fetch','path.join','readFileSync'],lack:['document','window'],flight:2.3,air:3,spawn:1.8,steps:6,absRate:.36})]}];
+const T={it:{grabbed:n=>'Hai afferrato '+n+'.',grabbedFx:'Il bancone non lo aveva: il motore si è spento e il pezzo è rimasto a metà.',rule:'Chiedere un attrezzo che qui non c\'è ferma tutto.',
+ missed:n=>'Hai lasciato cadere '+n+'.',missedFx:'Era sul tuo bancone: il pezzo è rimasto fermo.',ruleMiss:'Quello che il bancone possiede va afferrato.',
+ half:n=>'Hai preso '+n+' una volta sola.',halfFx:'La fascetta vuole due prese: la lavorazione è rimasta aperta.',ruleHalf:'Chi risponde dopo va ripreso quando risponde.',
+ bench:'sul bancone',tap:'tocca per continuare'},
+ en:{grabbed:n=>'You grabbed '+n+'.',grabbedFx:'The bench did not have it: the motor cut out and the piece was left half done.',rule:'Asking for a tool that is not here stops everything.',
+ missed:n=>'You let '+n+' fall.',missedFx:'It was on your bench: the piece stayed put.',ruleMiss:'What the bench owns must be grabbed.',
+ half:n=>'You grabbed '+n+' only once.',halfFx:'The banded ones need two grabs: the job stayed open.',ruleHalf:'What answers later must be caught when it answers.',
+ bench:'on the bench',tap:'tap to continue'}};
+
+class Component extends DCLogic{
+ state={beat:0,chapter:0,lang:'it',paused:false,coach:null,done:false,muted:false,blown:0,step:0};
+ renderVals(){const s=this.state,L=T[s.lang],c=s.coach;
+  return Object.assign(KAIO.vals(this),{
+   coachWhat:c?(c.kind==='grab'?L.grabbed(c.tool):c.kind==='half'?L.half(c.tool):L.missed(c.tool)):'',
+   coachEffect:c?(c.kind==='grab'?L.grabbedFx:c.kind==='half'?L.halfFx:L.missedFx):'',
+   coachRule:c?(c.kind==='grab'?L.rule:c.kind==='half'?L.ruleHalf:L.ruleMiss):'',
+   coachTool:c?c.tool:'',coachBench:L.bench,doneHint:L.tap});
+ }
+ componentDidMount(){
+  KAIO.init(this,{W,H,key:KEY,chapters:CH,
+   onDrag:(a,b)=>{const dt=Math.max(8,b.t-a.t)/1000,sp=Math.hypot(b.x-a.x,b.y-a.y)/dt;
+    this.trail.push({x:b.x,y:b.y,t:0});if(this.trail.length>26)this.trail.shift();
+    if(sp>=220)this.slice(a,b)}});
+  KAIO.audio(this);KAIO.drone(this,58,'triangle',.018,0);}
+ componentDidUpdate(pp){KAIO.sync(this,pp)}
+ componentWillUnmount(){KAIO.destroy(this)}
+
+ reset(beat){const c=this.BEATS[beat];this.cfg=c;this.needed=c.steps;
+  this.tools=[];this.parts=[];this.trail=[];this.spawnT=.6;this.shake=0;
+  this.motor=1;this.motorT=0;this.reveal=0;this.ghost=0;this.streak={kind:null,n:0};this.flash=0;this.lit=1;
+  this.setState({blown:0})}
+
+ spawn(){const c=this.cfg;const useAbs=c.lack.length&&Math.random()<c.absRate;
+  const pool=useAbs?c.lack:c.have;
+  const name=pool[Math.floor(Math.random()*pool.length)];const meta=TOOLS[name]||[0,1,0];
+  const x=W*(.16+Math.random()*.68);const apex=H*(.38+(Math.random()*.16-.08));
+  const y0=H+46,d=y0-apex,f=c.flight,tr=f/2,g=2*d/(tr*tr);
+  this.tools.push({name,shape:SH[meta[0]],have:!!meta[1],twice:!!meta[2],grabs:0,
+   x,y:y0,vx:(W/2-x)*.2+(Math.random()*40-20),vy:-2*d/tr,g,v0:2*d/tr,
+   rot:Math.random()*.6-.3,vr:(Math.random()*1.4-.7),gone:false,grab:0,len:128});
+  if(this.state.chapter===0&&this.state.beat===0&&this.ghost===0&&this.tools.length===1)this.ghost=.01}
+
+ slice(a,b){const tol=this.touch?12:4;
+  for(const t of this.tools){if(t.gone||t.grab)continue;
+   const R=t.len*.44+tol;const dx=b.x-a.x,dy=b.y-a.y,L2=dx*dx+dy*dy||1;
+   let u=((t.x-a.x)*dx+(t.y-a.y)*dy)/L2;u=Math.max(0,Math.min(1,u));
+   if(Math.hypot(a.x+u*dx-t.x,a.y+u*dy-t.y)>R)continue;
+   if(!t.have){this.bad(t);return}
+   t.grabs++;
+   if(t.twice&&t.grabs<2){this.hitstop=30;KAIO.snd(this,'pop',{hz:640,v:.12});
+    KAIO.burst(this.parts,t.x,t.y,5,'#c9b795',{v1:90});t.vr*=.6;return}
+   this.good(t);return}}
+
+ good(t){t.grab=1;t.gx=t.x;t.gy=t.y;this.hitstop=45;KAIO.snd(this,'click',{hz:1750,v:.5});
+  this.flash=1;KAIO.burst(this.parts,t.x,t.y,9,'#f0d9a8');this.streak={kind:null,n:0}}
+ bad(t){t.gone=true;this.hitstop=110;KAIO.snd(this,'whir');this.motor=0;this.motorT=.75;this.shake=1;
+  const blown=Math.min(3,this.state.blown+1);this.setState({blown,step:0});
+  this.err('grab',t.name)}
+ err(kind,tool){const s=this.streak;if(s.kind===kind&&s.tool===tool)s.n++;else{s.kind=kind;s.tool=tool;s.n=1}
+  if(s.n===2)this.reveal=.4;
+  if(s.n>=3){this.setState({coach:{kind,tool}});this.streak={kind:null,n:0}}}
+ onCoachClose(){this.streak={kind:null,n:0}}
+
+ update(dt){const c=this.cfg;
+  if(this.motor===0){this.motorT-=dt;if(this.motorT<=0){this.motor=1;this.tools=[];this.spawnT=.5;
+    if(this.state.blown>=3)this.setState({blown:0})}}
+  this.lit+=((this.motor?1:.14)-this.lit)*Math.min(1,dt*9);
+  if(this.reveal>0)this.reveal-=dt;if(this.flash>0)this.flash-=dt*4;if(this.shake>0)this.shake-=dt*3.4;
+  if(this.ghost>0&&this.ghost<1.6)this.ghost+=dt;
+  if(this.motor){this.spawnT-=dt;
+   const air=this.tools.filter(t=>!t.gone&&!t.grab).length;
+   if(this.spawnT<=0&&air<c.air){this.spawn();this.spawnT=c.spawn*(.85+Math.random()*.3)}}
+  for(const t of this.tools){
+   if(t.grab){t.grab+=dt/.26;const e=1-Math.pow(1-Math.min(1,t.grab),3);
+    t.x=t.gx+(W/2-t.gx)*e;t.y=t.gy+(H-186-t.gy)*e;t.rot*=.9;
+    if(t.grab>=1&&!t.gone){t.gone=true;KAIO.burst(this.parts,W/2,H-186,12,'#e2aa5a');
+     KAIO.snd(this,'tone',{from:560,to:880,v:.16});
+     const step=this.state.step+1;this.setState({step});
+     if(step>=this.needed){KAIO.snd(this,'chime');this.setState({done:true})}}
+    continue}
+   if(t.gone)continue;
+   const slow=Math.abs(t.vy)<t.v0*.3?.72:1;
+   t.vy+=t.g*slow*dt;t.y+=t.vy*dt;t.x+=t.vx*dt;t.rot+=t.vr*dt;
+   if(t.x<40||t.x>W-40)t.vx*=-1;
+   if(t.y>H+70){t.gone=true;
+    if(t.have&&t.grabs===0){KAIO.snd(this,'thud');this.shake=.8;KAIO.burst(this.parts,t.x,H-140,7,'#6b5636');this.err('miss',t.name)}
+    else if(t.have&&t.twice&&t.grabs===1){KAIO.snd(this,'thud',{v:.22});this.shake=.6;this.err('half',t.name)}
+    else if(!t.have){KAIO.snd(this,'fall');this.streak={kind:null,n:0}}}}
+  this.tools=this.tools.filter(t=>!t.gone||t.grab);
+  this.parts=KAIO.parts(this.parts,dt,520);
+  for(const q of this.trail)q.t+=dt;this.trail=this.trail.filter(q=>q.t<.26)}
+
+ draw(x){const sc=this.sc||1;const lit=this.lit;x.setTransform(sc,0,0,sc,0,0);
+  x.save();KAIO.shake(x,this.shake);
+  const g=x.createLinearGradient(0,0,0,H);g.addColorStop(0,'#171106');g.addColorStop(.5,'#0d0a07');g.addColorStop(1,'#080706');x.fillStyle=g;x.fillRect(-8,-8,W+16,H+16);
+  x.globalAlpha=.5*lit;x.strokeStyle='#2a1f12';x.lineWidth=1;
+  for(let i=1;i<7;i++){x.beginPath();x.moveTo(i*W/7,0);x.lineTo(i*W/7,H-150);x.stroke()}x.globalAlpha=1;
+  const cone=x.createRadialGradient(W/2,-30,20,W/2,H*.62,W*.92);
+  cone.addColorStop(0,'rgba(255,214,150,'+(.3*lit)+')');cone.addColorStop(.45,'rgba(226,170,90,'+(.09*lit)+')');cone.addColorStop(1,'rgba(0,0,0,0)');
+  x.fillStyle=cone;x.fillRect(0,0,W,H);
+  x.strokeStyle='rgba(120,96,60,'+(.5*lit)+')';x.lineWidth=2;x.beginPath();x.moveTo(W/2,0);x.lineTo(W/2,34);x.stroke();
+  x.fillStyle='#2c2318';x.beginPath();x.moveTo(W/2-30,58);x.lineTo(W/2+30,58);x.lineTo(W/2+16,34);x.lineTo(W/2-16,34);x.closePath();x.fill();
+  x.fillStyle='rgba(255,222,166,'+(.95*lit)+')';x.beginPath();x.arc(W/2,60,7,0,6.283);x.fill();
+  const inf=this.cfg.lives===Infinity;
+  for(let i=0;i<3;i++){const bx=W-34,by=128+i*46,on=inf||i>=this.state.blown;
+   x.strokeStyle='rgba(120,96,60,.5)';x.lineWidth=1.5;x.beginPath();x.moveTo(bx,by-14);x.lineTo(bx,by-7);x.stroke();
+   if(on){x.fillStyle='rgba(255,214,150,'+(.9*lit)+')';x.beginPath();x.arc(bx,by,6.5,0,6.283);x.fill();
+    x.globalAlpha=.28*lit;x.beginPath();x.arc(bx,by,15,0,6.283);x.fill();x.globalAlpha=1}
+   else{x.strokeStyle='rgba(90,76,56,.7)';x.lineWidth=1.4;x.beginPath();x.arc(bx,by,6.5,0,6.283);x.stroke();
+    x.beginPath();x.moveTo(bx-4,by-4);x.lineTo(bx+4,by+4);x.stroke()}}
+  const by=H-150;
+  x.fillStyle='#0a0806';x.fillRect(0,by+22,W,H-by);
+  const bg=x.createLinearGradient(0,by,0,by+22);bg.addColorStop(0,'#8a5f36');bg.addColorStop(1,'#5c3e22');x.fillStyle=bg;x.fillRect(14,by,W-28,22);
+  x.fillStyle='rgba(0,0,0,.32)';x.fillRect(14,by+22,W-28,9);
+  x.globalAlpha=.35;x.strokeStyle='#3d2916';for(let i=0;i<5;i++){x.beginPath();x.moveTo(30+i*76,by+4);x.lineTo(30+i*76,by+18);x.stroke()}x.globalAlpha=1;
+  if(this.reveal>0){const a=Math.min(1,this.reveal/.4);x.globalAlpha=a*.9;
+   let f=15;x.font='500 '+f+'px "JetBrains Mono",monospace';x.textAlign='center';
+   const txt=this.cfg.have.join('  ·  ');
+   while(x.measureText(txt).width>W-30&&f>11){f--;x.font='500 '+f+'px "JetBrains Mono",monospace'}
+   x.fillStyle='#f0d9a8';x.fillText(txt,W/2,by-13);x.globalAlpha=1}
+  this.piece(x,by);
+  for(const t of this.tools)if(!t.gone||t.grab)this.tool(x,t);
+  KAIO.drawParts(x,this.parts);
+  if(this.trail.length>1){x.lineCap='round';
+   for(let i=1;i<this.trail.length;i++){const q=this.trail[i],p=this.trail[i-1],k=i/this.trail.length,a=Math.max(0,1-q.t/.26);
+    x.strokeStyle='rgba(255,224,170,'+(a*a*.7)+')';x.lineWidth=1+k*6;x.beginPath();x.moveTo(p.x,p.y);x.lineTo(q.x,q.y);x.stroke()}}
+  if(this.ghost>0&&this.ghost<1.6&&this.tools.length){const t=this.tools[0],k=Math.min(1,this.ghost/1.2);
+   x.setLineDash([5,7]);x.strokeStyle='rgba(255,224,170,.34)';x.lineWidth=2;
+   x.beginPath();x.moveTo(t.x-90,t.y+34);x.lineTo(t.x+90,t.y-34);x.stroke();x.setLineDash([]);
+   const gx=t.x-90+180*k,gy=t.y+34-68*k;x.fillStyle='rgba(255,232,190,.8)';x.beginPath();x.arc(gx,gy,7,0,6.283);x.fill();
+   x.globalAlpha=.3;x.beginPath();x.arc(gx,gy,16,0,6.283);x.fill();x.globalAlpha=1}
+  if(this.flash>0){x.fillStyle='rgba(255,228,180,'+(this.flash*.1)+')';x.fillRect(0,0,W,H)}
+  if(lit<.9){x.fillStyle='rgba(4,3,2,'+((1-lit)*.82)+')';x.fillRect(0,0,W,H)}
+  if(this.props.diagnostica){x.fillStyle='rgba(160,230,255,.85)';x.font='500 12px "JetBrains Mono",monospace';x.textAlign='left';
+   x.fillText('c'+(this.state.chapter+1)+'.'+(this.state.beat+1)+'  volo '+this.cfg.flight.toFixed(2)+'s  aria '+this.tools.length+'/'+this.cfg.air+'  passo '+this.state.step+'/'+this.needed,14,26)}
+  x.restore()}
+
+ piece(x,by){const step=this.state.step,n=this.needed,w=132,h=26,px=W/2-w/2,py=by-h+4;
+  const done=step>=n;
+  const vg=x.createLinearGradient(0,py-6,0,by+6);vg.addColorStop(0,'#5b6167');vg.addColorStop(1,'#31363b');x.fillStyle=vg;
+  x.beginPath();KAIO.rr(x,px-30,py-4,22,h+10,3);x.fill();
+  x.beginPath();KAIO.rr(x,px+w+8,py-4,22,h+10,3);x.fill();
+  x.strokeStyle='rgba(255,255,255,.14)';x.lineWidth=1;x.beginPath();x.moveTo(px-28,py-2);x.lineTo(px-10,py-2);x.stroke();
+  const g=x.createLinearGradient(0,py,0,py+h);g.addColorStop(0,done?'#f0d9a8':'#b9bfc4');g.addColorStop(1,done?'#c39a5c':'#79818a');x.fillStyle=g;
+  x.beginPath();KAIO.rr(x,px,py,w,h,4);x.fill();
+  x.fillStyle='#0d0a07';for(let i=0;i<step&&i<n;i++){const cx=px+10+i*((w-20)/n);
+   x.beginPath();x.moveTo(cx,py);x.lineTo(cx+8,py);x.lineTo(cx+4,py+11);x.closePath();x.fill()}
+  x.strokeStyle='rgba(255,255,255,.22)';x.lineWidth=1;x.beginPath();x.moveTo(px+2,py+2);x.lineTo(px+w-2,py+2);x.stroke();
+  if(done){x.globalAlpha=.5;x.fillStyle='rgba(255,214,150,.5)';x.beginPath();x.arc(W/2,py+h/2,52,0,6.283);x.fill();x.globalAlpha=1}}
+
+ tool(x,t){const f=18;x.save();x.font='500 '+f+'px "JetBrains Mono",monospace';
+  const tw=x.measureText(t.name).width;const hl=Math.max(84,tw+26);t.len=hl+36;
+  x.translate(t.x,t.y);x.rotate(t.rot);x.translate(-t.len/2,0);
+  x.fillStyle='rgba(0,0,0,.4)';x.beginPath();x.ellipse(t.len/2,16,t.len*.36,6,0,0,6.283);x.fill();
+  const g=x.createLinearGradient(0,-11,0,11);g.addColorStop(0,'#96683c');g.addColorStop(.5,'#7a5330');g.addColorStop(1,'#573a20');x.fillStyle=g;
+  x.beginPath();KAIO.rr(x,0,-11,hl,22,5);x.fill();
+  x.globalAlpha=.3;x.strokeStyle='#4a3018';x.lineWidth=1;
+  for(let i=1;i<4;i++){x.beginPath();x.moveTo(6,-11+i*5.5);x.lineTo(hl-6,-11+i*5.5);x.stroke()}x.globalAlpha=1;
+  if(t.twice){x.fillStyle=t.grabs>0?'rgba(240,217,168,.9)':'rgba(201,183,149,.75)';
+   x.beginPath();KAIO.rr(x,hl*.5-5,-13,10,26,2);x.fill()}
+  const mg=x.createLinearGradient(0,-13,0,13);mg.addColorStop(0,'#c6ccd1');mg.addColorStop(.55,'#9aa0a6');mg.addColorStop(1,'#6e767d');x.fillStyle=mg;
+  const hx=hl;
+  if(t.shape==='chiave'){x.beginPath();x.arc(hx+17,0,13,0,6.283);x.fill();
+   x.fillStyle='#0d0a07';x.beginPath();x.arc(hx+17,0,6.5,0,6.283);x.fill();x.fillStyle=mg;
+   x.beginPath();x.rect(hx-2,-7,10,14);x.fill()}
+  else if(t.shape==='martello'){x.beginPath();x.rect(hx,-15,26,30);x.fill();
+   x.fillStyle='rgba(0,0,0,.2)';x.beginPath();x.rect(hx+18,-15,8,30);x.fill()}
+  else if(t.shape==='cacciavite'){x.beginPath();x.moveTo(hx,-6);x.lineTo(hx+30,-3);x.lineTo(hx+30,3);x.lineTo(hx,6);x.closePath();x.fill()}
+  else{x.beginPath();x.moveTo(hx,-6);x.quadraticCurveTo(hx+22,-16,hx+32,-6);x.lineTo(hx+26,-2);x.quadraticCurveTo(hx+18,-9,hx,-1);x.closePath();x.fill();
+   x.beginPath();x.moveTo(hx,6);x.quadraticCurveTo(hx+22,16,hx+32,6);x.lineTo(hx+26,2);x.quadraticCurveTo(hx+18,9,hx,1);x.closePath();x.fill()}
+  x.textAlign='center';x.textBaseline='middle';
+  x.fillStyle='rgba(255,236,205,.16)';x.fillText(t.name,hl/2,1.2);
+  x.fillStyle='rgba(28,16,6,.82)';x.fillText(t.name,hl/2,0);
+  x.restore()}
+}
+</script>
+</body>
+</html>

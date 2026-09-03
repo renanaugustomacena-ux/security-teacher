@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Node.js L4 — La soglia" description="Livello 4, banda 1: impilamento (archetipo Tetris) su import/export ESM. Quello che non metti sulla soglia, da fuori nessuno lo prende." -->
+<!--
+  SCHEDA DI PROGETTO (ricerca/00 §0.3)
+  GIOCO ...... La soglia
+  LIVELLO .... Node.js, L4 Moduli ESM, banda 1
+  CAPITOLO ... 3 di 8 — cosa esporti e cosa resta dentro
+  CONCETTO ... Ogni stanza decide cosa mettere sulla soglia. Quello che tieni
+               dentro esiste, si vede anche dalla porta, ma da fuori nessuno
+               lo può prendere. E una volta che una cassa è sepolta, è sepolta.
+  FORMA ...... contenimento          VERBO ... posare (impilare a scelta)
+  ARCHETIPO .. ricerca/15 stacking — Tetris
+  VINCI SE ... il fattorino porta via tutte le casse della lista
+  PERDI SE ... la soglia si riempie fino allo stipite: la porta non chiude
+               più e il turno finisce
+  SBAGLI ..... 1 la cassa richiesta finisce dentro: il fattorino allunga il
+               braccio, non la raggiunge, e una lampada si spegne
+               2 alla seconda volta la lista sulla porta pulsa quando la
+                 cassa richiesta sta scendendo
+               3 pannello di coaching, quattro righe, la quarta è animata
+  BEAT ....... 1 solo casse richieste, la stanza è murata: si impara a posare
+               2 entra la prima cassa non richiesta: dentro
+               3 FRATTURA: la lista chiede una cassa che hai già messo dentro.
+                 Esiste, la vedi dalla porta, e non si può prendere
+               4 lista di tre, soglia strettissima, caduta più rapida
+               5 tutti i casi, caduta lenta
+  MONDO ...... stanza in sezione di notte, porta a destra, lanterna calda:
+               stessa famiglia della banda 1
+  NUMERI ..... da ricerca/31: caduta 1,1 → 0,45 s/cella, lock delay 500 ms,
+               anteprima 2, colonne 3+3, cella 48 px
+  TEST 1 ..... le casse sono tutte dello stesso legno e dello stesso formato:
+               il nome dipinto e la lista sulla porta sono l'unico segnale.
+               Nessuna cassa "sembra" privata.
+  TEST 2 ..... "Poso sulla soglia solo le casse della lista, prima che la
+               soglia si riempia"
+  TEST 3 ..... una cassa scende e l'ombra di destinazione è già sul pavimento
+-->
+<helmet>
+<script src="./ds-base.js"></script>
+<script src="../kaio-engine.js"></script>
+<style>
+*{box-sizing:border-box}html,body{margin:0;padding:0;height:100%;background:#080705}
+@keyframes om-fade{from{opacity:0}to{opacity:1}}
+@keyframes om-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes om-reach{0%,100%{transform:translateX(0)}45%{transform:translateX(-26px)}55%{transform:translateX(-26px)}}
+</style>
+</helmet>
+<div style="position:fixed;inset:0;background:radial-gradient(130% 90% at 50% -10%,#1a1409 0%,#0d0a07 55%,#070605 100%);display:grid;place-items:center;font-family:Raleway,system-ui,sans-serif;overflow:hidden;padding:18px">
+<div style="display:flex;align-items:center;justify-content:center;gap:26px;max-width:100%">
+<div style="position:relative;height:min(910px,calc(100vh - 36px),max(480px,calc((100vw - 280px) * 2.1667)));aspect-ratio:420/910;border-radius:24px;overflow:hidden;box-shadow:0 50px 130px -34px rgba(0,0,0,.95),0 0 0 1px rgba(226,170,90,.14);flex:0 0 auto">
+<canvas ref="{{ cvRef }}" style="display:block;width:100%;height:100%;touch-action:none;cursor:pointer"></canvas>
+<sc-if value="{{ coachOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;left:14px;right:14px;top:14px;padding:20px 20px 16px;border-radius:18px;background:linear-gradient(180deg,rgba(30,23,14,.97),rgba(20,15,10,.97));box-shadow:0 24px 60px -18px rgba(0,0,0,.9),inset 0 1px 0 rgba(226,170,90,.18);animation:om-rise .26s cubic-bezier(.16,1,.3,1) both;cursor:pointer">
+<div style="font-size:20px;line-height:1.45;color:#f0e6d6;font-weight:500">{{ coachWhat }}</div>
+<div style="font-size:20px;line-height:1.45;color:#c9b795;margin-top:10px">{{ coachEffect }}</div>
+<div style="font-size:20px;line-height:1.45;color:#e2aa5a;margin-top:14px;font-weight:600">{{ coachRule }}</div>
+<div style="margin-top:18px;height:96px;border-radius:12px;background:rgba(0,0,0,.34);position:relative;overflow:hidden">
+<div style="position:absolute;left:0;top:0;bottom:0;width:112px;background:rgba(226,170,90,.06);border-right:3px solid rgba(226,170,90,.28)"></div>
+<div style="position:absolute;left:22px;bottom:14px;width:34px;height:26px;border-radius:3px;background:#8a5f36"></div>
+<div style="position:absolute;left:62px;bottom:14px;width:34px;height:26px;border-radius:3px;background:#8a5f36"></div>
+<div style="position:absolute;left:130px;bottom:14px;width:34px;height:26px;border-radius:3px;background:#c99a5a"></div>
+<div style="position:absolute;right:16px;bottom:16px;width:22px;height:44px;border-radius:4px;background:#2d2418;animation:om-reach 2.2s ease-in-out infinite"></div>
+<div style="position:absolute;left:16px;top:12px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#8d7f68;letter-spacing:.05em">{{ coachHint }}</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ doneOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(70% 50% at 50% 45%,rgba(30,22,12,.9),rgba(8,7,5,.96));animation:om-fade .22s ease both;cursor:pointer">
+<div style="text-align:center;padding:0 30px">
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:34px;font-weight:600;color:#f4ebdc;letter-spacing:-.01em">Consegna completa</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:34px;font-weight:600;color:#f4ebdc;letter-spacing:-.01em">Delivery complete</div></sc-if>
+<div style="display:flex;gap:10px;justify-content:center;margin-top:26px">
+<sc-for list="{{ marks }}" as="m" hint-placeholder-count="5">
+<div style="width:34px;height:6px;border-radius:3px;background:rgba(226,170,90,.22);position:relative;overflow:hidden">
+<sc-if value="{{ m.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;background:#e2aa5a"></div></sc-if>
+</div>
+</sc-for>
+</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#a3937a;margin-top:22px;letter-spacing:.04em">{{ doneHint }}</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ pauseOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;backdrop-filter:blur(9px);background:rgba(10,8,6,.72);display:grid;place-items:center;animation:om-fade .2s ease both">
+<div style="width:290px;padding:24px;border-radius:20px;background:linear-gradient(180deg,rgba(32,25,16,.98),rgba(19,15,10,.98));box-shadow:0 30px 70px -20px rgba(0,0,0,.9),inset 0 1px 0 rgba(226,170,90,.16)">
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace">In pausa</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace">Paused</div></sc-if>
+<div style="display:flex;flex-direction:column;gap:9px;margin-top:16px">
+<div onClick="{{ resume }}" style="padding:14px 16px;border-radius:12px;background:#e2aa5a;color:#191207;font-size:17px;font-weight:600;text-align:center;cursor:pointer" style-hover="background:#eeb867"><sc-if value="{{ it }}" hint-placeholder-val="{{ true }}">Riprendi</sc-if><sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">Resume</sc-if></div>
+<div onClick="{{ toggleLang }}" style="padding:13px 16px;border-radius:12px;background:rgba(226,170,90,.1);color:#e8d9bd;font-size:16px;display:flex;justify-content:space-between;cursor:pointer" style-hover="background:rgba(226,170,90,.18)"><span><sc-if value="{{ it }}" hint-placeholder-val="{{ true }}">Lingua</sc-if><sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">Language</sc-if></span><span style="font-family:'JetBrains Mono',monospace;color:#e2aa5a">{{ langLabel }}</span></div>
+<div onClick="{{ toggleMute }}" style="padding:13px 16px;border-radius:12px;background:rgba(226,170,90,.1);color:#e8d9bd;font-size:16px;display:flex;justify-content:space-between;cursor:pointer" style-hover="background:rgba(226,170,90,.18)"><span>Audio</span><span style="font-family:'JetBrains Mono',monospace;color:#e2aa5a">{{ audioState }}</span></div>
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace;margin-top:12px">Lezione</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace;margin-top:12px">Lesson</div></sc-if>
+<div style="display:flex;gap:7px">
+<sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+<div onClick="{{ l.go }}" style="flex:1;padding:11px 0;border-radius:10px;background:rgba(226,170,90,.1);color:#e8d9bd;font-family:'JetBrains Mono',monospace;font-size:15px;text-align:center;cursor:pointer;position:relative" style-hover="background:rgba(226,170,90,.2)">{{ l.n }}
+<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:50%;bottom:5px;width:14px;height:2px;margin-left:-7px;background:#e2aa5a;border-radius:1px"></div></sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</div>
+</sc-if>
+</div>
+<div style="flex:0 1 212px;min-width:0;min-height:0;max-height:min(910px,calc(100vh - 36px));overflow-y:auto;display:flex;flex-direction:column;gap:14px;padding-right:4px;color:#b6a68b">
+<div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#a3937a">L2 · Moduli e NPM</div>
+<div style="font-size:23px;font-weight:600;color:#f0e6d6;margin-top:4px;line-height:1.2">La soglia</div>
+<div style="font-size:14px;line-height:1.5;color:#8d7f68;margin-top:8px">Capitoli 7-8 · impilamento</div>
+</div>
+<div style="height:1px;background:rgba(226,170,90,.14)"></div>
+<div style="display:flex;flex-direction:column;gap:5px">
+<sc-for list="{{ chapters }}" as="c" hint-placeholder-count="2">
+<div onClick="{{ c.go }}" style="padding:9px 11px;border-radius:9px;background:rgba(226,170,90,.06);cursor:pointer;display:flex;gap:10px;align-items:baseline" style-hover="background:rgba(226,170,90,.14)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#e2aa5a;width:12px">{{ c.n }}</div>
+<div style="flex:1;min-width:0">
+<div style="font-size:14px;color:#e8d9bd;line-height:1.3">{{ c.title }}</div>
+<sc-if value="{{ c.on }}" hint-placeholder-val="{{ false }}"><div style="height:2px;background:#e2aa5a;border-radius:1px;margin-top:6px"></div></sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#a3937a">Lezione {{ chapterNo }}.x</div>
+<div style="display:flex;flex-direction:column;gap:7px">
+<sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+<div onClick="{{ l.go }}" style="padding:11px 13px;border-radius:11px;background:rgba(226,170,90,.07);cursor:pointer;display:flex;gap:11px;align-items:baseline" style-hover="background:rgba(226,170,90,.15)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#e2aa5a;width:14px">{{ l.n }}</div>
+<div style="flex:1;min-width:0">
+<div style="font-size:15px;color:#e8d9bd;line-height:1.3">{{ l.title }}</div>
+<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><div style="height:2px;background:#e2aa5a;border-radius:1px;margin-top:7px"></div></sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="font-size:13px;line-height:1.55;color:#a3937a">Tocca una colonna, o usa le frecce, per posare la cassa che scende. A destra della riga di calce è la soglia. <span style="color:#8d7f68">Esc</span> per la pausa.</div>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:940,&quot;height&quot;:1000},&quot;capitolo&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;1&quot;,&quot;2&quot;],&quot;default&quot;:&quot;1&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;lezione&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;],&quot;default&quot;:&quot;1&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;lingua&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;it&quot;,&quot;en&quot;],&quot;default&quot;:&quot;it&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;diagnostica&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Taratura&quot;}}">
+const W=420,H=910,KEY='kaio.l4.soglia',CW=76,CH=44,COLS=4,ROOM=2;
+const X0=32,FLOOR=H*.88,DX=X0+COLS*CW,LX=X0+ROOM*CW;
+const NAMES=['calcola','TAU','formatta','cache','misura','unisci','soglia','tara'];
+const B=(o)=>Object.assign({rows:5,fall:.95,ask:2,pool:4,onlyAsked:false,steps:5,trap:false},o);
+/* L2 Moduli e NPM — capitoli 7-8 di 8 (1-3 La discesa, 4-6 Il magazzino) */
+const CHAPS=[
+ {t:['Cosa esce dalla stanza','What leaves the room'],titles:[['Solo richieste','Only requested'],['Cosa resta dentro','What stays in'],['Lista di due','A list of two'],['Soglia stretta','Narrow threshold'],['Padronanza','Mastery']],
+  beats:[B({rows:5,fall:1.15,ask:1,pool:2,onlyAsked:true,steps:3}),
+   B({rows:5,fall:1.05,ask:1,pool:4,steps:4}),
+   B({rows:5,fall:.95,ask:2,pool:4,steps:5}),
+   B({rows:4,fall:.6,ask:3,pool:6,steps:6}),
+   B({rows:5,fall:.9,ask:2,pool:6,steps:5})]},
+ {t:['Sepolta','Buried'],titles:[['La prima sepolta','First buried'],['La vedi e non la prendi','Seen, not taken'],['Torna la richiesta','The request returns'],['Tutti i casi','Every case'],['Chiusura','Closing']],
+  beats:[B({rows:5,fall:1.0,ask:2,pool:4,steps:4,trap:true}),
+   B({rows:5,fall:.92,ask:2,pool:5,steps:5,trap:true}),
+   B({rows:4,fall:.85,ask:2,pool:5,steps:6,trap:true}),
+   B({rows:4,fall:.55,ask:3,pool:6,steps:7,trap:true}),
+   B({rows:5,fall:.85,ask:2,pool:6,steps:5})]}];
+const T={it:{what:n=>'La lista chiedeva '+n+'.',fx:'Era dentro la stanza: il fattorino la vede e non la raggiunge.',rule:'Da fuori si prende solo quello che sta sulla soglia.',
+ full:'La soglia è arrivata allo stipite.',fullFx:'Non c\'era più spazio per la prossima consegna.',fullRule:'Sulla soglia va solo il necessario: il resto sta dentro.',hint:'la soglia è a destra della calce'},
+ en:{what:n=>'The list asked for '+n+'.',fx:'It was inside the room: the courier sees it and cannot reach it.',rule:'From outside you can only take what sits on the threshold.',
+ full:'The threshold reached the doorframe.',fullFx:'There was no room left for the next delivery.',fullRule:'Only what is needed goes on the threshold: the rest stays in.',hint:'the threshold is right of the chalk line'}};
+
+class Component extends DCLogic{
+ state={beat:0,chapter:0,lang:'it',paused:false,coach:null,done:false,muted:false,step:0,lamps:0};
+ renderVals(){const s=this.state,L=T[s.lang],c=s.coach;
+  return Object.assign(KAIO.vals(this),{
+   coachWhat:c?(c.kind==='buried'?L.what(c.name):L.full):'',
+   coachEffect:c?(c.kind==='buried'?L.fx:L.fullFx):'',
+   coachRule:c?(c.kind==='buried'?L.rule:L.fullRule):'',
+   coachHint:L.hint});
+ }
+ componentDidMount(){
+  KAIO.init(this,{W,H,key:KEY,chapters:CHAPS,
+   onTap:p=>this.aim(Math.max(0,Math.min(COLS-1,Math.floor((p.x-X0)/CW)))),
+   onKey:e=>{const k=e.key;
+    if(k==='ArrowLeft'||k==='a'){this.aim(this.col-1);e.preventDefault()}
+    else if(k==='ArrowRight'||k==='d'){this.aim(this.col+1);e.preventDefault()}
+    else if(k==='ArrowDown'||k===' '){this.slam();e.preventDefault()}}});
+  KAIO.audio(this);}
+ componentDidUpdate(pp){KAIO.sync(this,pp)}
+ componentWillUnmount(){KAIO.destroy(this)}
+
+ reset(beat){const c=this.BEATS[beat];this.cfg=c;this.needed=c.steps;
+  this.stack=[];for(let i=0;i<COLS;i++)this.stack.push([]);
+  this.parts=[];this.done=0;this.streak={kind:null,n:0};this.shake=0;this.flash=0;this.pulse=0;
+  this.pool=NAMES.slice(0,Math.max(2,c.pool));
+  this.list=this.pool.slice(0,c.ask);
+  this.queue=[];for(let i=0;i<4;i++)this.queue.push(this.pick());
+  this.col=ROOM;this.colX=ROOM;this.lock=0;this.reach=0;this.trapDone=false;
+  this.spawn()}
+
+ pick(){const c=this.cfg;
+  if(c.onlyAsked)return this.list[Math.floor(Math.random()*this.list.length)];
+  return this.pool[Math.floor(Math.random()*this.pool.length)]}
+
+ spawn(){this.cur={name:this.queue.shift(),y:-CH,ay:-CH};this.queue.push(this.pick());
+  this.col=this.colX=ROOM;this.lock=0;
+  if(this.pulse>0)this.pulse=this.list.indexOf(this.cur.name)>=0?.7:0}
+
+ aim(c){if(!this.cur)return;const n=Math.max(0,Math.min(COLS-1,c));if(n===this.col)return;
+  this.col=n;KAIO.snd(this,'click',{hz:1200,v:.1});if(this.lock>0)this.lock=Math.min(this.lock,.35)}
+ slam(){if(this.cur)this.cur.y=this.landY(this.col)-1}
+
+ landY(c){return FLOOR-this.stack[c].length*CH-CH}
+
+ land(){const c=this.col,name=this.cur.name,onSill=c>=ROOM;
+  this.stack[c].push({name});this.cur=null;
+  KAIO.snd(this,'thud',{v:.22});KAIO.burst(this.parts,X0+c*CW+CW/2,FLOOR-(this.stack[c].length-1)*CH,6,'#6b5636',{up:10,v1:70});
+  const asked=this.list.indexOf(name)>=0;
+  if(asked&&onSill){
+   const i=this.list.indexOf(name);this.list.splice(i,1);
+   this.done++;this.flash=1;KAIO.snd(this,'tone',{from:600,to:940,v:.16});
+   KAIO.burst(this.parts,X0+c*CW+CW/2,FLOOR-(this.stack[c].length-1)*CH,12,'#e2aa5a');
+   this.reach=.5;this.setState({step:this.done});
+   this.stack[c].pop();
+   if(this.list.length<this.cfg.ask&&this.done+this.list.length<this.needed)this.list.push(this.freshAsk());
+   if(this.done>=this.needed){KAIO.snd(this,'chime');this.setState({done:true});return}}
+  else if(asked&&!onSill){
+   this.reach=1.1;KAIO.snd(this,'whir');this.shake=.8;
+   const lamps=Math.min(3,this.state.lamps+1);this.setState({lamps});
+   this.err('buried',name);
+   if(lamps>=3){this.reset(this.state.beat);this.setState({step:0,lamps:0});return}}
+  if(this.stack.slice(ROOM).some(s=>s.length>=this.cfg.rows)){
+   KAIO.snd(this,'crash');this.shake=1;this.err('full',name);
+   this.reset(this.state.beat);this.setState({step:0,lamps:0});return}
+  if(this.stack.slice(0,ROOM).every(s=>s.length>=this.cfg.rows+1)){
+   for(let i=0;i<ROOM;i++)this.stack[i]=[]}
+  this.spawn()}
+
+ freshAsk(){const buried=[];for(let i=0;i<ROOM;i++)for(const b of this.stack[i])buried.push(b.name);
+  if(this.cfg.trap&&!this.trapDone&&buried.length){this.trapDone=true;return buried[buried.length-1]}
+  const out=this.pool.filter(n=>this.list.indexOf(n)<0);
+  return out.length?out[Math.floor(Math.random()*out.length)]:this.pool[0]}
+
+ err(kind,name){const s=this.streak;if(s.kind===kind)s.n++;else{s.kind=kind;s.n=1}
+  if(s.n===2)this.pulse=.7;
+  if(s.n>=3){this.setState({coach:{kind,name}});this.streak={kind:null,n:0}}}
+ onCoachClose(){this.streak={kind:null,n:0}}
+
+ update(dt){const c=this.cfg;
+  if(this.flash>0)this.flash-=dt*3;if(this.shake>0)this.shake-=dt*3.2;
+  if(this.reach>0)this.reach-=dt;if(this.pulse>0)this.pulse-=dt;
+  this.colX+=(this.col-this.colX)*Math.min(1,dt/.11);
+  if(this.cur){const v=CH/c.fall;this.cur.y+=v*dt;
+   const ly=this.landY(this.col);
+   if(this.cur.y>=ly){this.cur.y=ly;this.lock+=dt;if(this.lock>=.5)this.land()}
+   else this.lock=0}
+  this.parts=KAIO.parts(this.parts,dt,600)}
+
+ draw(x){const sc=this.sc||1;x.setTransform(sc,0,0,sc,0,0);x.save();KAIO.shake(x,this.shake);
+  const g=x.createLinearGradient(0,0,0,H);g.addColorStop(0,'#140e07');g.addColorStop(.45,'#191106');g.addColorStop(1,'#0b0806');x.fillStyle=g;x.fillRect(-8,-8,W+16,H+16);
+  const cone=x.createRadialGradient(W*.42,H*.16,10,W*.42,H*.5,W*.8);cone.addColorStop(0,'rgba(255,214,150,.14)');cone.addColorStop(.55,'rgba(226,170,90,.05)');cone.addColorStop(1,'rgba(0,0,0,0)');
+  x.fillStyle=cone;x.fillRect(0,0,W,H);
+  const lampx=X0+CW*1.5;
+  x.strokeStyle='rgba(120,96,60,.5)';x.lineWidth=2;x.beginPath();x.moveTo(lampx,0);x.lineTo(lampx,26);x.stroke();
+  x.fillStyle='#2c2318';x.beginPath();x.moveTo(lampx-22,44);x.lineTo(lampx+22,44);x.lineTo(lampx+11,26);x.lineTo(lampx-11,26);x.closePath();x.fill();
+  x.fillStyle='rgba(255,222,166,.9)';x.beginPath();x.arc(lampx,46,5.5,0,6.283);x.fill();
+  const dx=LX,SW=W-DX-10;
+  x.fillStyle='rgba(6,5,4,.8)';x.fillRect(DX,0,W-DX,H);
+  x.fillStyle='#241a10';x.fillRect(DX-5,FLOOR-CH*5.6,9,CH*5.6+8);
+  x.fillStyle='rgba(232,217,189,.96)';x.beginPath();KAIO.rr(x,DX+5,H*.18,SW,28+this.cfg.ask*24,4);x.fill();
+  x.font='600 13px "JetBrains Mono",monospace';x.textAlign='center';x.textBaseline='middle';
+  x.fillStyle='rgba(90,66,36,.85)';x.fillText(this.state.lang==='en'?'TAKE':'RITIRO',DX+5+SW/2,H*.18+13);
+  this.list.forEach((n,i)=>{const cx=DX+5+SW/2,cy=H*.18+38+i*24;
+   const pulse=this.pulse>0&&this.cur&&this.cur.name===n;
+   x.font='600 13px "JetBrains Mono",monospace';
+   x.fillStyle=pulse?'rgba(200,120,20,'+(.5+.5*Math.sin(this.pulse*16))+')':'rgba(46,32,14,.9)';
+   x.fillText(n,cx,cy)});
+  x.strokeStyle='rgba(240,230,210,.5)';x.lineWidth=3;x.setLineDash([7,7]);
+  x.beginPath();x.moveTo(dx,FLOOR-CH*5.8);x.lineTo(dx,FLOOR+4);x.stroke();x.setLineDash([]);
+  x.fillStyle='#3a2a19';x.fillRect(X0-8,FLOOR,COLS*CW+16,12);
+  x.fillStyle='rgba(226,170,90,.05)';x.fillRect(X0,FLOOR-CH*5.8,ROOM*CW,CH*5.8);
+  for(let i=0;i<COLS;i++){x.strokeStyle='rgba(226,170,90,.07)';x.lineWidth=1;x.beginPath();x.moveTo(X0+i*CW,FLOOR-CH*5.8);x.lineTo(X0+i*CW,FLOOR);x.stroke()}
+  if(this.cur){const gy=this.landY(this.col);
+   x.strokeStyle='rgba(226,170,90,.4)';x.lineWidth=2;x.setLineDash([5,5]);
+   x.beginPath();x.rect(X0+this.col*CW+3,gy+2,CW-6,CH-4);x.stroke();x.setLineDash([])}
+  for(let i=0;i<COLS;i++)this.stack[i].forEach((b,j)=>this.crate(x,X0+i*CW,FLOOR-(j+1)*CH,b.name,i>=ROOM));
+  if(this.cur)this.crate(x,X0+this.colX*CW,this.cur.y,this.cur.name,this.colX>=ROOM-.5,this.lock>.3);
+  this.queue.slice(0,2).forEach((n,i)=>{const qx=X0+CW*3.1,qy=70+i*36;
+   x.globalAlpha=.5-i*.18;this.crate(x,qx,qy,n,false);x.globalAlpha=1});
+  const cy=FLOOR-30,cxx=W-26+ (this.reach>0?-30*Math.sin(Math.min(1,this.reach)*Math.PI):0);
+  x.fillStyle='rgba(0,0,0,.5)';x.beginPath();x.ellipse(cxx,FLOOR+2,18,5,0,0,6.283);x.fill();
+  x.fillStyle='#2d2418';x.beginPath();KAIO.rr(x,cxx-13,cy-16,26,48,8);x.fill();
+  x.beginPath();x.arc(cxx,cy-24,11,0,6.283);x.fill();
+  if(this.reach>0){x.strokeStyle='#2d2418';x.lineWidth=7;x.beginPath();x.moveTo(cxx-6,cy-4);x.lineTo(cxx-30,cy-8);x.stroke()}
+  for(let i=0;i<3;i++){const off=i<this.state.lamps;
+   x.strokeStyle=off?'rgba(140,110,70,.55)':'rgba(226,170,90,.8)';x.lineWidth=2;
+   x.beginPath();x.arc(20,H*.2+i*26,6,0,6.283);off?x.stroke():x.fill()}
+  KAIO.drawParts(x,this.parts);
+  if(this.flash>0){x.fillStyle='rgba(255,228,180,'+(this.flash*.08)+')';x.fillRect(0,0,W,H)}
+  if(this.props.diagnostica){x.fillStyle='rgba(160,230,255,.9)';x.font='500 12px "JetBrains Mono",monospace';x.textAlign='left';
+   x.fillText('beat '+(this.state.beat+1)+'  lista '+this.list.join(',')+'  fatte '+this.done+'/'+this.needed+'  lampade '+this.state.lamps,10,H-16)}
+  x.restore()}
+
+ crate(x,px,py,name,sill,locking){
+  x.fillStyle='rgba(0,0,0,.35)';x.beginPath();KAIO.rr(x,px+5,py+6,CW-8,CH-6,5);x.fill();
+  const g=x.createLinearGradient(0,py,0,py+CH);g.addColorStop(0,'#96683c');g.addColorStop(.55,'#7a5330');g.addColorStop(1,'#57391f');x.fillStyle=g;
+  x.beginPath();KAIO.rr(x,px+3,py+2,CW-6,CH-4,5);x.fill();
+  x.strokeStyle=locking?'rgba(255,206,140,.9)':'rgba(48,32,16,.55)';x.lineWidth=locking?2.5:1.5;
+  x.beginPath();KAIO.rr(x,px+3,py+2,CW-6,CH-4,5);x.stroke();
+  x.globalAlpha=.25;x.strokeStyle='#4a3018';x.lineWidth=1;
+  x.beginPath();x.moveTo(px+7,py+CH*.36);x.lineTo(px+CW-7,py+CH*.36);x.stroke();
+  x.beginPath();x.moveTo(px+7,py+CH*.68);x.lineTo(px+CW-7,py+CH*.68);x.stroke();x.globalAlpha=1;
+  let f=13;x.font='600 '+f+'px "JetBrains Mono",monospace';
+  while(x.measureText(name).width>CW-12&&f>13){f--;x.font='600 '+f+'px "JetBrains Mono",monospace'}
+  x.textAlign='center';x.textBaseline='middle';
+  x.fillStyle='rgba(255,236,205,.14)';x.fillText(name,px+CW/2,py+CH/2+1.2);
+  x.fillStyle='rgba(30,18,7,.85)';x.fillText(name,px+CW/2,py+CH/2)}
+}
+</script>
+</body>
+</html>

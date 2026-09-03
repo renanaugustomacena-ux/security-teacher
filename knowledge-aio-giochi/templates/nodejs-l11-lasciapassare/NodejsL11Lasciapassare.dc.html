@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Node.js L11 — Il lasciapassare" description="Livello 11, banda 2: autenticazione. Chi dice di essere qualcuno deve portare una prova che non può essersi fabbricato da solo." -->
+<!--
+  SCHEDA (ricerca/00 §0.3) — GIOCO Il lasciapassare
+  LIVELLO Node.js L11 Autenticazione, banda 2 — 8 capitoli, 40 lezioni
+  CONCETTO Chi dice di essere qualcuno deve portare una prova che non può
+           essersi fabbricato da solo. Il sigillo si controlla col punzone,
+           non si legge: quello che c'è scritto sopra lo scrive chi passa.
+  FORMA identità · VERBO confrontare (calare il punzone sul sigillo)
+  ARCHETIPO nuovo, parente di ricerca/14 (identità) — il punzone
+  VINCI SE tutti i lasciapassare del capitolo sono giudicati bene
+  PERDI SE tre giudizi sbagliati: il varco viene chiuso
+  SBAGLI 1 il punzone non combacia e si vede il perché
+         2 la parte del sigillo che non torna pulsa
+         3 coaching, quattro righe, la quarta animata
+  CAPITOLI 1 il punzone · 2 la firma · 3 FRATTURA il timbro si legge, non prova
+           4 la scadenza · 5 chi l'ha firmato · 6 i diritti scritti dentro
+           7 a raffica · 8 il varco intero
+  MONDO gabbiotto del varco, banda 2: acciaio, punzone d'ottone, lampade
+  NUMERI transito 3,0→2,0 s (mai sotto 1,8: il sigillo va letto), tre lampade
+  TEST 1 i lasciapassare sono identici: cambia solo cosa c'è scritto e se il
+         sigillo combacia col punzone. Nessun colore aiuta.
+  TEST 2 "Calo il punzone sul sigillo e decido se passa, prima che scada"
+  TEST 3 un lasciapassare arriva sul banco e il punzone pende sopra
+-->
+<helmet>
+<script src="./ds-base.js"></script>
+<script src="../kaio-engine.js"></script>
+<style>
+*{box-sizing:border-box}html,body{margin:0;padding:0;height:100%;background:#080b0d}
+@keyframes om-fade{from{opacity:0}to{opacity:1}}
+@keyframes om-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes om-press{0%,100%{transform:translateY(-10px)}50%{transform:translateY(0)}}
+</style>
+</helmet>
+<div style="position:fixed;inset:0;background:radial-gradient(130% 90% at 50% -10%,#131c22 0%,#0c1114 55%,#070a0c 100%);display:grid;place-items:center;font-family:Raleway,system-ui,sans-serif;overflow:hidden;padding:18px">
+<div style="display:flex;align-items:center;justify-content:center;gap:26px;max-width:100%">
+<div style="position:relative;height:min(910px,calc(100vh - 36px),max(480px,calc((100vw - 280px) * 2.1667)));aspect-ratio:420/910;border-radius:24px;overflow:hidden;box-shadow:0 50px 130px -34px rgba(0,0,0,.95),0 0 0 1px rgba(201,162,39,.16);flex:0 0 auto">
+<canvas ref="{{ cvRef }}" style="display:block;width:100%;height:100%;touch-action:none;cursor:pointer"></canvas>
+<sc-if value="{{ coachOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;left:14px;right:14px;top:14px;padding:20px;border-radius:14px;background:linear-gradient(180deg,rgba(20,28,34,.97),rgba(12,17,20,.97));box-shadow:0 24px 60px -18px rgba(0,0,0,.9),inset 0 1px 0 rgba(201,162,39,.22);animation:om-rise .26s cubic-bezier(.16,1,.3,1) both;cursor:pointer">
+<div style="font-size:20px;line-height:1.45;color:#e8e2d0;font-weight:500">{{ coachWhat }}</div>
+<div style="font-size:20px;line-height:1.45;color:#9fb0b4;margin-top:10px">{{ coachEffect }}</div>
+<div style="font-size:20px;line-height:1.45;color:#d9b448;margin-top:14px;font-weight:600">{{ coachRule }}</div>
+<div style="margin-top:18px;height:88px;border-radius:10px;background:rgba(0,0,0,.42);display:flex;align-items:center;justify-content:space-around;padding:0 14px">
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7e9096">{{ coachA }}</div>
+<div style="width:44px;height:26px;border-radius:3px;background:#4e6068"></div>
+</div>
+<div style="width:30px;height:30px;border-radius:4px;background:#c9a227;animation:om-press 1.6s ease-in-out infinite"></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#d9b448">{{ coachB }}</div>
+<div style="width:44px;height:26px;border-radius:3px;background:#8a6f20"></div>
+</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ doneOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(70% 50% at 50% 45%,rgba(18,28,34,.92),rgba(6,9,11,.96));animation:om-fade .22s ease both;cursor:pointer">
+<div style="text-align:center;padding:0 30px">
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:34px;font-weight:600;color:#eef0e6">Varco in ordine</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:34px;font-weight:600;color:#eef0e6">Gate in order</div></sc-if>
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#7e9096;margin-top:10px">{{ chapterNo }}/{{ chapterOf }} · {{ chapterTitle }}</div>
+<div style="display:flex;gap:10px;justify-content:center;margin-top:24px">
+<sc-for list="{{ marks }}" as="m" hint-placeholder-count="5">
+<div style="width:34px;height:6px;border-radius:2px;background:rgba(201,162,39,.2);position:relative;overflow:hidden">
+<sc-if value="{{ m.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;background:#c9a227"></div></sc-if>
+</div>
+</sc-for>
+</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#8b9aa0;margin-top:22px">{{ doneHint }}</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ pauseOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;backdrop-filter:blur(9px);background:rgba(8,11,13,.74);display:grid;place-items:center;animation:om-fade .2s ease both;padding:16px;overflow-y:auto">
+<div style="width:290px;padding:24px;border-radius:16px;background:linear-gradient(180deg,rgba(22,30,36,.98),rgba(12,17,20,.98));box-shadow:0 30px 70px -20px rgba(0,0,0,.9),inset 0 1px 0 rgba(201,162,39,.2)">
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#7e9096;font-family:'JetBrains Mono',monospace">In pausa</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#7e9096;font-family:'JetBrains Mono',monospace">Paused</div></sc-if>
+<div style="display:flex;flex-direction:column;gap:9px;margin-top:16px">
+<div onClick="{{ resume }}" style="padding:14px 16px;border-radius:8px;background:#c9a227;color:#14191c;font-size:17px;font-weight:600;text-align:center;cursor:pointer" style-hover="background:#d9b448"><sc-if value="{{ it }}" hint-placeholder-val="{{ true }}">Riprendi</sc-if><sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">Resume</sc-if></div>
+<div onClick="{{ toggleLang }}" style="padding:13px 16px;border-radius:8px;background:rgba(201,162,39,.1);color:#dfe4dc;font-size:16px;display:flex;justify-content:space-between;cursor:pointer"><span>Lingua</span><span style="font-family:'JetBrains Mono',monospace;color:#d9b448">{{ langLabel }}</span></div>
+<div onClick="{{ toggleMute }}" style="padding:13px 16px;border-radius:8px;background:rgba(201,162,39,.1);color:#dfe4dc;font-size:16px;display:flex;justify-content:space-between;cursor:pointer"><span>Audio</span><span style="font-family:'JetBrains Mono',monospace;color:#d9b448">{{ audioState }}</span></div>
+<div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#7e9096;font-family:'JetBrains Mono',monospace;margin-top:12px">Capitolo</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px">
+<sc-for list="{{ chapters }}" as="c" hint-placeholder-count="8">
+<div onClick="{{ c.go }}" style="padding:10px 0;border-radius:6px;background:rgba(201,162,39,.1);color:#dfe4dc;font-family:'JetBrains Mono',monospace;font-size:14px;text-align:center;cursor:pointer;position:relative">{{ c.n }}
+<sc-if value="{{ c.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:50%;bottom:4px;width:12px;height:2px;margin-left:-6px;background:#c9a227"></div></sc-if>
+</div>
+</sc-for>
+</div>
+<div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#7e9096;font-family:'JetBrains Mono',monospace;margin-top:10px">Lezione</div>
+<div style="display:flex;gap:7px">
+<sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+<div onClick="{{ l.go }}" style="flex:1;padding:11px 0;border-radius:6px;background:rgba(201,162,39,.1);color:#dfe4dc;font-family:'JetBrains Mono',monospace;font-size:15px;text-align:center;cursor:pointer;position:relative">{{ l.n }}
+<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:50%;bottom:5px;width:14px;height:2px;margin-left:-7px;background:#c9a227"></div></sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</div>
+</sc-if>
+</div>
+<div style="flex:0 1 212px;min-width:0;min-height:0;max-height:min(910px,calc(100vh - 36px));overflow-y:auto;display:flex;flex-direction:column;gap:14px;padding-right:4px;color:#9fb0b4">
+<div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#7e9096">L11 · Autenticazione · banda 2</div>
+<div style="font-size:23px;font-weight:600;color:#e8e2d0;margin-top:4px;line-height:1.2">Il lasciapassare</div>
+<div style="font-size:14px;line-height:1.5;color:#7e9096;margin-top:8px">Calare il punzone · 8 capitoli</div>
+</div>
+<div style="height:1px;background:rgba(201,162,39,.16)"></div>
+<div style="display:flex;flex-direction:column;gap:5px">
+<sc-for list="{{ chapters }}" as="c" hint-placeholder-count="8">
+<div onClick="{{ c.go }}" style="padding:9px 11px;border-radius:8px;background:rgba(201,162,39,.06);cursor:pointer;display:flex;gap:10px;align-items:baseline" style-hover="background:rgba(201,162,39,.14)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#d9b448;width:12px">{{ c.n }}</div>
+<div style="flex:1;min-width:0">
+<div style="font-size:14px;color:#dfe4dc;line-height:1.3">{{ c.title }}</div>
+<sc-if value="{{ c.on }}" hint-placeholder-val="{{ false }}"><div style="height:2px;background:#c9a227;margin-top:6px"></div></sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="height:1px;background:rgba(201,162,39,.16)"></div>
+<div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7e9096;margin-bottom:6px">Lezione {{ chapterNo }}.x</div>
+<div style="display:flex;flex-direction:column;gap:5px">
+<sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+<div onClick="{{ l.go }}" style="padding:8px 11px;border-radius:6px;background:rgba(201,162,39,.05);cursor:pointer;display:flex;gap:10px;align-items:baseline" style-hover="background:rgba(201,162,39,.13)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7e9096;width:12px">{{ l.n }}</div>
+<div style="flex:1;min-width:0">
+<div style="font-size:13px;color:#9fb0b4;line-height:1.3">{{ l.title }}</div>
+<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><div style="height:2px;background:#c9a227;margin-top:5px"></div></sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="font-size:13px;line-height:1.55;color:#7e9096">Cala il punzone sul sigillo per vedere se combacia, poi apri il varco o respingi. Quello che c'è scritto sul lasciapassare non è una prova. <span style="color:#7e9096">Esc</span> per la pausa.</div>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:940,&quot;height&quot;:1000},&quot;capitolo&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;,&quot;6&quot;,&quot;7&quot;,&quot;8&quot;],&quot;default&quot;:&quot;1&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;lezione&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;],&quot;default&quot;:&quot;1&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;lingua&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;it&quot;,&quot;en&quot;],&quot;default&quot;:&quot;it&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;diagnostica&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Taratura&quot;}}">
+const W=420,H=910,KEY='kaio.l11.lascia';
+const DESK=H*.42,PUNCH={x:W/2,y:H*.66},PASS={x:W*.26,y:H*.86},DENY={x:W*.74,y:H*.86};
+/* Lasciapassare: cosa dichiara e cosa è vero.
+   sig=sigillo valido (firmato dalla casa) · exp=scaduto · role=diritti scritti
+   issuer=chi l'ha firmato · claim=chi dice di essere */
+const B=(o)=>Object.assign({passes:[],need:5,fall:3.0,checkExp:false,checkRole:false,checkIss:false},o);
+const P=(o)=>Object.assign({claim:'operaio',sig:true,exp:false,role:'operaio',issuer:'casa',want:'ammesso'},o);
+const CH=[
+ {t:['Il punzone','The punch'],titles:[['Il primo sigillo','First seal'],['Non combacia','Does not match'],['Due al banco','Two at the desk'],['Più svelto','Quicker'],['Il ritmo','The rhythm']],
+  beats:[B({fall:3.6,need:3,passes:[P({}),P({sig:false,want:'respinto'})]}),
+   B({fall:3.4,need:4,passes:[P({}),P({sig:false,want:'respinto'}),P({})]}),
+   B({fall:3.2,need:5,passes:[P({}),P({sig:false,want:'respinto'}),P({}),P({sig:false,want:'respinto'})]}),
+   B({fall:2.4,need:6,passes:[P({}),P({sig:false,want:'respinto'}),P({}),P({sig:false,want:'respinto'}),P({})]}),
+   B({fall:3.0,need:5,passes:[P({}),P({sig:false,want:'respinto'}),P({})]})]},
+ {t:['La firma','The signature'],titles:[['Il punzone della casa','The house punch'],['Il falso','The forgery'],['Fatto in casa propria','Home-made'],['Misti','Mixed'],['A occhio','At a glance']],
+  beats:[B({fall:3.4,need:4,passes:[P({}),P({sig:false,want:'respinto'})]}),
+   B({fall:3.2,need:5,passes:[P({}),P({sig:false,want:'respinto'}),P({sig:false,want:'respinto'})]}),
+   B({fall:3.0,need:5,passes:[P({claim:'capo',role:'operaio'}),P({sig:false,want:'respinto'}),P({})]}),
+   B({fall:2.3,need:6,passes:[P({}),P({sig:false,want:'respinto'}),P({}),P({sig:false,want:'respinto'}),P({})]}),
+   B({fall:3.0,need:5,passes:[P({}),P({sig:false,want:'respinto'}),P({})]})]},
+ {t:['Il timbro si legge, non prova','The stamp reads, it does not prove'],titles:[['Dice di essere il capo','Says they are the boss'],['Nessuno lo ha firmato','Nobody signed it'],['Scritto non è provato','Written is not proven'],['Tre al banco','Three at the desk'],['Adesso lo sai','Now you know']],
+  beats:[B({fall:3.4,need:4,passes:[P({claim:'capo',sig:false,want:'respinto'}),P({})]}),
+   B({fall:3.2,need:5,passes:[P({claim:'capo',sig:false,want:'respinto'}),P({claim:'capo',role:'capo'}),P({})]}),
+   B({fall:3.0,need:5,passes:[P({claim:'direttore',sig:false,want:'respinto'}),P({claim:'capo',role:'capo'}),P({sig:false,want:'respinto'})]}),
+   B({fall:2.3,need:6,passes:[P({claim:'capo',sig:false,want:'respinto'}),P({}),P({claim:'direttore',sig:false,want:'respinto'}),P({claim:'capo',role:'capo'}),P({})]}),
+   B({fall:3.0,need:5,passes:[P({claim:'capo',sig:false,want:'respinto'}),P({claim:'capo',role:'capo'}),P({})]})]},
+ {t:['La scadenza','The expiry'],titles:[['La data','The date'],['Scaduto ieri','Expired yesterday'],['Sigillo buono, data no','Good seal, bad date'],['Misti','Mixed'],['Padronanza','Mastery']],
+  beats:[B({checkExp:true,fall:3.4,need:4,passes:[P({}),P({exp:true,want:'respinto'})]}),
+   B({checkExp:true,fall:3.2,need:5,passes:[P({}),P({exp:true,want:'respinto'}),P({sig:false,want:'respinto'})]}),
+   B({checkExp:true,fall:3.0,need:5,passes:[P({exp:true,want:'respinto'}),P({}),P({exp:true,want:'respinto'})]}),
+   B({checkExp:true,fall:2.3,need:6,passes:[P({}),P({exp:true,want:'respinto'}),P({sig:false,want:'respinto'}),P({}),P({exp:true,want:'respinto'})]}),
+   B({checkExp:true,fall:3.0,need:5,passes:[P({}),P({exp:true,want:'respinto'}),P({})]})]},
+ {t:["Chi l'ha firmato",'Who signed it'],titles:[["L'altra casa",'The other house'],['Firma sconosciuta','Unknown signature'],['Buono altrove','Good elsewhere'],['Tre controlli','Three checks'],['Padronanza','Mastery']],
+  beats:[B({checkIss:true,fall:3.4,need:4,passes:[P({}),P({issuer:'altra casa',want:'respinto'})]}),
+   B({checkIss:true,fall:3.2,need:5,passes:[P({}),P({issuer:'altra casa',want:'respinto'}),P({sig:false,want:'respinto'})]}),
+   B({checkIss:true,checkExp:true,fall:3.0,need:5,passes:[P({issuer:'altra casa',want:'respinto'}),P({exp:true,want:'respinto'}),P({})]}),
+   B({checkIss:true,checkExp:true,fall:2.3,need:6,passes:[P({}),P({issuer:'altra casa',want:'respinto'}),P({exp:true,want:'respinto'}),P({sig:false,want:'respinto'}),P({})]}),
+   B({checkIss:true,checkExp:true,fall:3.0,need:5,passes:[P({}),P({issuer:'altra casa',want:'respinto'}),P({})]})]},
+ {t:['I diritti scritti dentro','The rights written inside'],titles:[['Solo operai','Workers only'],['Il capo passa','The boss passes'],['Diritti non suoi','Not their rights'],['Quattro controlli','Four checks'],['Padronanza','Mastery']],
+  beats:[B({checkRole:true,fall:3.4,need:4,passes:[P({claim:'capo',role:'capo'}),P({claim:'capo',role:'operaio',want:'respinto'})]}),
+   B({checkRole:true,fall:3.2,need:5,passes:[P({claim:'capo',role:'capo'}),P({claim:'capo',role:'operaio',want:'respinto'}),P({})]}),
+   B({checkRole:true,checkExp:true,fall:3.0,need:5,passes:[P({claim:'capo',role:'operaio',want:'respinto'}),P({claim:'capo',role:'capo',exp:true,want:'respinto'}),P({claim:'capo',role:'capo'})]}),
+   B({checkRole:true,checkExp:true,checkIss:true,fall:2.3,need:6,passes:[P({claim:'capo',role:'capo'}),P({claim:'capo',role:'operaio',want:'respinto'}),P({issuer:'altra casa',want:'respinto'}),P({exp:true,want:'respinto'}),P({})]}),
+   B({checkRole:true,checkExp:true,fall:3.0,need:5,passes:[P({claim:'capo',role:'capo'}),P({claim:'capo',role:'operaio',want:'respinto'}),P({})]})]},
+ {t:['A raffica','In bursts'],titles:[['Due al banco','Two at the desk'],['Meno tempo','Less time'],['Sei lasciapassare','Six passes'],['Il picco','The peak'],['Automatico','Automatic']],
+  beats:[B({checkRole:true,checkExp:true,checkIss:true,fall:2.5,need:6,passes:[P({}),P({sig:false,want:'respinto'}),P({exp:true,want:'respinto'}),P({claim:'capo',role:'capo'}),P({claim:'capo',role:'operaio',want:'respinto'})]}),
+   B({checkRole:true,checkExp:true,checkIss:true,fall:2.3,need:7,passes:[P({}),P({issuer:'altra casa',want:'respinto'}),P({exp:true,want:'respinto'}),P({claim:'capo',role:'capo'}),P({sig:false,want:'respinto'}),P({})]}),
+   B({checkRole:true,checkExp:true,checkIss:true,fall:2.2,need:7,passes:[P({claim:'direttore',sig:false,want:'respinto'}),P({}),P({exp:true,want:'respinto'}),P({claim:'capo',role:'operaio',want:'respinto'}),P({claim:'capo',role:'capo'})]}),
+   B({checkRole:true,checkExp:true,checkIss:true,fall:2.0,need:8,passes:[P({}),P({sig:false,want:'respinto'}),P({exp:true,want:'respinto'}),P({issuer:'altra casa',want:'respinto'}),P({claim:'capo',role:'capo'}),P({claim:'capo',role:'operaio',want:'respinto'}),P({})]}),
+   B({checkRole:true,checkExp:true,fall:2.6,need:6,passes:[P({}),P({exp:true,want:'respinto'}),P({claim:'capo',role:'capo'}),P({})]})]},
+ {t:['Il varco intero','The whole gate'],titles:[['Tutto insieme','All together'],['Senza rete','No net'],['La prova','The test'],['Il picco','The peak'],['Chiusura','Closing']],
+  beats:[B({checkRole:true,checkExp:true,checkIss:true,fall:2.6,need:6,passes:[P({}),P({sig:false,want:'respinto'}),P({exp:true,want:'respinto'}),P({claim:'capo',role:'capo'}),P({claim:'capo',role:'operaio',want:'respinto'})]}),
+   B({checkRole:true,checkExp:true,checkIss:true,fall:2.4,need:7,passes:[P({claim:'capo',sig:false,want:'respinto'}),P({}),P({issuer:'altra casa',want:'respinto'}),P({claim:'capo',role:'capo',exp:true,want:'respinto'}),P({claim:'capo',role:'capo'}),P({})]}),
+   B({checkRole:true,checkExp:true,checkIss:true,fall:2.2,need:8,passes:[P({}),P({claim:'direttore',sig:false,want:'respinto'}),P({exp:true,want:'respinto'}),P({issuer:'altra casa',want:'respinto'}),P({claim:'capo',role:'capo'}),P({claim:'capo',role:'operaio',want:'respinto'}),P({})]}),
+   B({checkRole:true,checkExp:true,checkIss:true,fall:2.0,need:9,passes:[P({}),P({sig:false,want:'respinto'}),P({exp:true,want:'respinto'}),P({issuer:'altra casa',want:'respinto'}),P({claim:'capo',role:'capo'}),P({claim:'capo',role:'operaio',want:'respinto'}),P({claim:'direttore',sig:false,want:'respinto'}),P({})]}),
+   B({checkRole:true,checkExp:true,fall:2.8,need:6,passes:[P({}),P({exp:true,want:'respinto'}),P({claim:'capo',role:'capo'}),P({})]})]}];
+const T={it:{letIn:'Hai fatto passare un lasciapassare che non regge.',letInFx:'Il punzone non combaciava, o la data era vecchia, o i diritti non erano suoi.',letInRule:'Il sigillo prova. Quello che c\'è scritto lo scrive chi passa.',
+ kept:'Hai respinto un lasciapassare in regola.',keptFx:'Il sigillo combaciava e la data teneva: quella persona aveva diritto di entrare.',keptRule:'Controlla il sigillo prima di decidere, non la faccia.',
+ a:'dice: capo',b:'sigillo: operaio'},
+ en:{letIn:'You let through a pass that does not hold.',letInFx:'The punch did not match, or the date was old, or the rights were not theirs.',letInRule:'The seal proves. What is written is written by whoever carries it.',
+ kept:'You turned away a legitimate pass.',keptFx:'The punch matched and the date held: that person had the right to enter.',keptRule:'Check the seal before deciding, not the face.',
+ a:'claims: boss',b:'seal: worker'}};
+
+class Component extends DCLogic{
+ state={beat:0,chapter:0,lang:'it',paused:false,coach:null,done:false,muted:false,step:0,bad:0};
+ renderVals(){const s=this.state,L=T[s.lang],c=s.coach;
+  return Object.assign(KAIO.vals(this),{
+   coachWhat:c?(c.kind==='letIn'?L.letIn:L.kept):'',
+   coachEffect:c?(c.kind==='letIn'?L.letInFx:L.keptFx):'',
+   coachRule:c?(c.kind==='letIn'?L.letInRule:L.keptRule):'',
+   coachA:L.a,coachB:L.b});
+ }
+ componentDidMount(){KAIO.init(this,{W,H,key:KEY,chapters:CH,onTap:p=>this.tap(p)});
+  KAIO.audio(this);KAIO.drone(this,43,'triangle',.013,120);}
+ componentDidUpdate(pp){KAIO.sync(this,pp)}
+ componentWillUnmount(){KAIO.destroy(this)}
+
+ reset(beat){const c=this.BEATS[beat];this.cfg=c;this.needed=c.need;
+  this.pi=0;this.cur=null;this.punched=false;this.punchY=0;this.made=0;this.parts=[];
+  this.shake=0;this.flash=0;this.pulse=0;this.streak={kind:null,n:0};this.wait=.6;
+  this.setState({bad:0,step:0})}
+
+ ok(p){const c=this.cfg;
+  if(!p.sig)return false;
+  if(c.checkExp&&p.exp)return false;
+  if(c.checkIss&&p.issuer!=='casa')return false;
+  if(c.checkRole&&p.role!==p.claim)return false;
+  return true}
+
+ tap(pt){
+  if(!this.cur){KAIO.snd(this,'fall');return}
+  if(Math.hypot(pt.x-PUNCH.x,pt.y-PUNCH.y)<52){if(!this.punched){this.punched=true;this.punchY=1;
+    KAIO.snd(this,'click',{hz:520,v:.24});KAIO.burst(this.parts,PUNCH.x,DESK+30,7,'#d9b448',{v1:70})}
+   return}
+  if(Math.hypot(pt.x-PASS.x,pt.y-PASS.y)<44){this.judge(true);return}
+  if(Math.hypot(pt.x-DENY.x,pt.y-DENY.y)<44){this.judge(false);return}
+  KAIO.snd(this,'fall')}
+
+ judge(letIn){const p=this.cur;if(!p)return;
+  const right=this.ok(p);
+  if(letIn===right){this.made++;this.flash=1;this.streak={kind:null,n:0};
+   KAIO.snd(this,'tone',{from:580,to:900,v:.15});KAIO.burst(this.parts,letIn?PASS.x:DENY.x,PASS.y,10,'#e8c85a');
+   this.next();this.setState({step:this.made});
+   if(this.made>=this.needed){KAIO.snd(this,'chime',{notes:[440,587,740]});this.setState({done:true})}
+   return}
+  const kind=letIn?'letIn':'kept';
+  this.shake=.8;KAIO.snd(this,'whir');KAIO.burst(this.parts,W/2,DESK,9,'#6f8288');
+  const s=this.streak;if(s.kind===kind)s.n++;else{s.kind=kind;s.n=1}
+  if(s.n===2)this.pulse=.9;
+  if(s.n>=3){this.setState({coach:{kind}});this.streak={kind:null,n:0}}
+  const bad=this.state.bad+1;this.setState({bad});this.next();
+  if(bad>=3)this.reset(this.state.beat)}
+
+ next(){this.cur=null;this.punched=false;this.punchY=0;this.wait=.5;this.pi++}
+
+ update(dt){const c=this.cfg;
+  if(this.flash>0)this.flash-=dt*3;if(this.shake>0)this.shake-=dt*3.4;if(this.pulse>0)this.pulse-=dt;
+  if(this.punchY>0)this.punchY=Math.max(0,this.punchY-dt*3);
+  if(!this.cur){this.wait-=dt;
+   if(this.wait<=0){const src=c.passes[this.pi%c.passes.length];
+    this.cur=Object.assign({},src,{t:0});this.punched=false}
+   return}
+  this.cur.t+=dt;
+  if(this.cur.t>c.fall){this.shake=.6;KAIO.snd(this,'whir');
+   const bad=this.state.bad+1;this.setState({bad});this.next();
+   if(bad>=3)this.reset(this.state.beat)}
+  this.parts=KAIO.parts(this.parts,dt,400)}
+
+ draw(x){const sc=this.sc||1;x.setTransform(sc,0,0,sc,0,0);x.save();KAIO.shake(x,this.shake);
+  const g=x.createLinearGradient(0,0,0,H);g.addColorStop(0,'#11191f');g.addColorStop(.5,'#0d1316');g.addColorStop(1,'#0a0f12');x.fillStyle=g;x.fillRect(-8,-8,W+16,H+16);
+  x.strokeStyle='rgba(160,190,200,.045)';x.lineWidth=1;
+  for(let i=1;i<8;i++){x.beginPath();x.moveTo(0,i*H/8);x.lineTo(W,i*H/8);x.stroke()}
+  const it=this.state.lang==='it';
+  x.fillStyle='#151e23';x.fillRect(0,0,W,H*.2);
+  x.strokeStyle='rgba(201,162,39,.18)';x.lineWidth=2;x.beginPath();x.moveTo(0,H*.2);x.lineTo(W,H*.2);x.stroke();
+  x.textAlign='left';x.font='500 14px "JetBrains Mono",monospace';x.fillStyle='#d9b448';
+  x.fillText(it?'CONTROLLI ATTIVI':'ACTIVE CHECKS',20,H*.055);
+  const checks=[[it?'sigillo':'seal',true],[it?'scadenza':'expiry',this.cfg.checkExp],[it?'firmatario':'issuer',this.cfg.checkIss],[it?'diritti':'rights',this.cfg.checkRole]];
+  checks.forEach(([n,on],i)=>{const cx=24+i*(W-48)/4;
+   x.fillStyle=on?'rgba(201,162,39,.9)':'rgba(120,140,150,.25)';
+   x.beginPath();x.arc(cx+5,H*.1,5,0,6.283);x.fill();
+   x.font='500 13px "JetBrains Mono",monospace';x.fillStyle=on?'#d9b448':'#7e9096';
+   x.fillText(n,cx+15,H*.1)});
+  x.fillStyle='#3a2716';x.fillRect(0,DESK+56,W,14);
+  const dg=x.createLinearGradient(0,DESK-70,0,DESK+56);dg.addColorStop(0,'#1b262c');dg.addColorStop(1,'#243036');
+  x.fillStyle=dg;x.fillRect(0,DESK-70,W,126);
+  if(this.cur)this.card(x,this.cur);
+  const py=PUNCH.y-this.punchY*80;
+  x.fillStyle='#8a6f20';KAIO.rr(x,PUNCH.x-30,py-34,60,58,5);x.fill();
+  x.strokeStyle='rgba(232,200,90,.7)';x.lineWidth=2;KAIO.rr(x,PUNCH.x-30,py-34,60,58,5);x.stroke();
+  x.fillStyle='#c9a227';KAIO.rr(x,PUNCH.x-12,py+22,24,26,3);x.fill();
+  x.font='600 13px "JetBrains Mono",monospace';x.textAlign='center';x.textBaseline='middle';
+  x.fillStyle='rgba(20,16,6,.85)';x.fillText(it?'PUNZ':'PUNCH',PUNCH.x,py-6);
+  [[PASS,it?'AMMESSO':'ADMIT'],[DENY,it?'RESPINTO':'REJECT']].forEach(([p,label])=>{
+   const live=!!this.cur;
+   x.fillStyle=live?'#243036':'#1a2429';x.beginPath();x.arc(p.x,p.y,40,0,6.283);x.fill();
+   x.strokeStyle=live?'rgba(201,162,39,.6)':'rgba(201,162,39,.22)';x.lineWidth=live?3:2;
+   x.beginPath();x.arc(p.x,p.y,40,0,6.283);x.stroke();
+   x.font='600 13px "JetBrains Mono",monospace';x.fillStyle=live?'#e8c85a':'rgba(217,180,72,.4)';
+   x.fillText(label,p.x,p.y)});
+  for(let i=0;i<3;i++){const off=i<this.state.bad;
+   x.strokeStyle=off?'rgba(140,110,70,.5)':'rgba(201,162,39,.8)';x.lineWidth=2;
+   x.beginPath();x.arc(W-24,H*.145+i*20,5,0,6.283);off?x.stroke():x.fill()}
+  x.textAlign='left';x.font='500 18px "JetBrains Mono",monospace';x.fillStyle='#7e9096';
+  x.fillText(this.made+'/'+this.needed,20,H*.15);
+  KAIO.drawParts(x,this.parts);
+  if(this.flash>0){x.fillStyle='rgba(232,220,170,'+(this.flash*.06)+')';x.fillRect(0,0,W,H)}
+  if(this.props.diagnostica&&this.cur){x.fillStyle='rgba(160,230,255,.9)';x.font='500 11px "JetBrains Mono",monospace';
+   x.fillText('c'+(this.state.chapter+1)+'.'+(this.state.beat+1)+'  giusto: '+(this.ok(this.cur)?'ammesso':'respinto'),12,H-14)}
+  x.restore()}
+
+ card(x,p){const w=250,h=104,cx=W/2,cy=DESK-6,it=this.state.lang==='it';
+  x.fillStyle='rgba(0,0,0,.42)';KAIO.rr(x,cx-w/2+4,cy-h/2+5,w,h,4);x.fill();
+  x.fillStyle='#e8e2d0';KAIO.rr(x,cx-w/2,cy-h/2,w,h,4);x.fill();
+  x.strokeStyle='rgba(90,80,50,.4)';x.lineWidth=1.4;KAIO.rr(x,cx-w/2,cy-h/2,w,h,4);x.stroke();
+  x.textAlign='left';x.textBaseline='middle';
+  x.font='500 13px "JetBrains Mono",monospace';x.fillStyle='rgba(120,105,70,.85)';
+  x.fillText(it?'DICE DI ESSERE':'CLAIMS TO BE',cx-w/2+14,cy-h/2+18);
+  x.font='600 20px "JetBrains Mono",monospace';x.fillStyle='rgba(46,38,18,.92)';
+  x.fillText(p.claim,cx-w/2+14,cy-h/2+42);
+  x.font='500 13px "JetBrains Mono",monospace';x.fillStyle='rgba(120,105,70,.8)';
+  x.fillText((it?'firmato: ':'issued: ')+p.issuer,cx-w/2+14,cy+h/2-30);
+  x.fillText((it?'valido: ':'valid: ')+(p.exp?(it?'scaduto':'expired'):(it?'oggi':'today')),cx-w/2+14,cy+h/2-12);
+  const sx=cx+w/2-46,sy=cy;
+  x.fillStyle=this.punched?(p.sig?'#c9a227':'#4e6068'):'#b8ae90';
+  x.beginPath();x.arc(sx,sy,26,0,6.283);x.fill();
+  x.strokeStyle='rgba(70,60,30,.5)';x.lineWidth=1.5;x.beginPath();x.arc(sx,sy,26,0,6.283);x.stroke();
+  x.textAlign='center';
+  if(!this.punched){x.font='500 13px "JetBrains Mono",monospace';x.fillStyle='rgba(60,52,26,.7)';
+   x.fillText(it?'sigillo':'seal',sx,sy)}
+  else{x.font='600 13px "JetBrains Mono",monospace';x.fillStyle=p.sig?'rgba(30,24,6,.9)':'rgba(220,230,235,.9)';
+   x.fillText(p.sig?(it?'combacia':'match'):(it?'falso':'forged'),sx,sy-6);
+   x.font='500 13px "JetBrains Mono",monospace';x.fillStyle=p.sig?'rgba(50,40,10,.75)':'rgba(200,215,222,.75)';
+   x.fillText(this.cfg.checkRole?p.role:'—',sx,sy+11)}
+  const k=Math.max(0,1-this.cur.t/this.cfg.fall);
+  x.fillStyle=k<.3?'#d6603c':'rgba(201,162,39,.6)';x.fillRect(cx-w/2,cy+h/2-5,w*k,4)}
+}
+</script>
+</body>
+</html>

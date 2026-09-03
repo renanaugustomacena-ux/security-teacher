@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Node.js L9 — La catena di controllo" description="Livello 9, banda 2: middleware. Ogni stazione vede la richiesta a metà strada e decide se farla proseguire — o la lascia appesa." -->
+<!--
+  SCHEDA (ricerca/00 §0.3) — GIOCO La catena di controllo
+  LIVELLO Node.js L9 Middleware, banda 2 — 8 capitoli, 40 lezioni
+  CONCETTO Ogni pezzo della catena vede la richiesta a metà strada e decide se
+           farla proseguire. Se non la passa e non risponde, resta appesa per
+           sempre: nessuno la sta più aspettando.
+  FORMA trasformazione · VERBO dare il via (premere la valvola giusta)
+  ARCHETIPO ricerca/16 lane sorting, in forma di catena verticale
+  VINCI SE tutte le richieste del capitolo escono con una risposta
+  PERDI SE tre richieste restano appese o escono trasformate male
+  SBAGLI 1 la richiesta si ferma e la stazione lampeggia una volta
+         2 la valvola che serviva pulsa
+         3 coaching, quattro righe, la quarta animata
+  CAPITOLI 1 dare il via · 2 due stazioni · 3 FRATTURA senza next resta appesa
+           4 aggiungere al pacco · 5 chi risponde chiude · 6 l'ordine dei
+           gestori · 7 a raffica · 8 la catena intera
+  MONDO condotto verticale di banda 2: valvole d'acciaio, targhette d'ottone
+        incise, manometro
+  NUMERI transito 2,6 s per stazione, coda max 3, tre lampade
+  TEST 1 le richieste sono capsule identiche: l'unico segnale è cosa portano
+         e cosa la stazione dichiara di fare.
+  TEST 2 "Do il via alla richiesta quando la stazione ha finito, prima che
+         resti appesa"
+  TEST 3 una capsula scende nel condotto e una valvola pulsa
+-->
+<helmet>
+<script src="./ds-base.js"></script>
+<script src="../kaio-engine.js"></script>
+<style>
+*{box-sizing:border-box}html,body{margin:0;padding:0;height:100%;background:#080b0d}
+@keyframes om-fade{from{opacity:0}to{opacity:1}}
+@keyframes om-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes om-hang{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(4px);opacity:1}}
+</style>
+</helmet>
+<div style="position:fixed;inset:0;background:radial-gradient(130% 90% at 50% -10%,#131c22 0%,#0c1114 55%,#070a0c 100%);display:grid;place-items:center;font-family:Raleway,system-ui,sans-serif;overflow:hidden;padding:18px">
+<div style="display:flex;align-items:center;justify-content:center;gap:26px;max-width:100%">
+<div style="position:relative;height:min(910px,calc(100vh - 36px),max(480px,calc((100vw - 280px) * 2.1667)));aspect-ratio:420/910;border-radius:24px;overflow:hidden;box-shadow:0 50px 130px -34px rgba(0,0,0,.95),0 0 0 1px rgba(201,162,39,.16);flex:0 0 auto">
+<canvas ref="{{ cvRef }}" style="display:block;width:100%;height:100%;touch-action:none;cursor:pointer"></canvas>
+<sc-if value="{{ coachOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;left:14px;right:14px;top:14px;padding:20px;border-radius:14px;background:linear-gradient(180deg,rgba(20,28,34,.97),rgba(12,17,20,.97));box-shadow:0 24px 60px -18px rgba(0,0,0,.9),inset 0 1px 0 rgba(201,162,39,.22);animation:om-rise .26s cubic-bezier(.16,1,.3,1) both;cursor:pointer">
+<div style="font-size:20px;line-height:1.45;color:#e8e2d0;font-weight:500">{{ coachWhat }}</div>
+<div style="font-size:20px;line-height:1.45;color:#9fb0b4;margin-top:10px">{{ coachEffect }}</div>
+<div style="font-size:20px;line-height:1.45;color:#d9b448;margin-top:14px;font-weight:600">{{ coachRule }}</div>
+<div style="margin-top:18px;height:88px;border-radius:10px;background:rgba(0,0,0,.42);display:flex;align-items:center;justify-content:space-around;padding:0 14px">
+<div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7e9096">{{ coachA }}</div>
+<div style="width:26px;height:26px;border-radius:4px;background:#4e6068;animation:om-hang 1.8s ease-in-out infinite"></div>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#d9b448">{{ coachB }}</div>
+<div style="width:26px;height:26px;border-radius:4px;background:#c9a227"></div>
+</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ doneOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(70% 50% at 50% 45%,rgba(18,28,34,.92),rgba(6,9,11,.96));animation:om-fade .22s ease both;cursor:pointer">
+<div style="text-align:center;padding:0 30px">
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:34px;font-weight:600;color:#eef0e6">Catena libera</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:34px;font-weight:600;color:#eef0e6">Chain clear</div></sc-if>
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#7e9096;margin-top:10px">{{ chapterNo }}/{{ chapterOf }} · {{ chapterTitle }}</div>
+<div style="display:flex;gap:10px;justify-content:center;margin-top:24px">
+<sc-for list="{{ marks }}" as="m" hint-placeholder-count="5">
+<div style="width:34px;height:6px;border-radius:2px;background:rgba(201,162,39,.2);position:relative;overflow:hidden">
+<sc-if value="{{ m.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;background:#c9a227"></div></sc-if>
+</div>
+</sc-for>
+</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#8b9aa0;margin-top:22px">{{ doneHint }}</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ pauseOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;backdrop-filter:blur(9px);background:rgba(8,11,13,.74);display:grid;place-items:center;animation:om-fade .2s ease both;padding:16px;overflow-y:auto">
+<div style="width:290px;padding:24px;border-radius:16px;background:linear-gradient(180deg,rgba(22,30,36,.98),rgba(12,17,20,.98));box-shadow:0 30px 70px -20px rgba(0,0,0,.9),inset 0 1px 0 rgba(201,162,39,.2)">
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#7e9096;font-family:'JetBrains Mono',monospace">In pausa</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#7e9096;font-family:'JetBrains Mono',monospace">Paused</div></sc-if>
+<div style="display:flex;flex-direction:column;gap:9px;margin-top:16px">
+<div onClick="{{ resume }}" style="padding:14px 16px;border-radius:8px;background:#c9a227;color:#14191c;font-size:17px;font-weight:600;text-align:center;cursor:pointer" style-hover="background:#d9b448"><sc-if value="{{ it }}" hint-placeholder-val="{{ true }}">Riprendi</sc-if><sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">Resume</sc-if></div>
+<div onClick="{{ toggleLang }}" style="padding:13px 16px;border-radius:8px;background:rgba(201,162,39,.1);color:#dfe4dc;font-size:16px;display:flex;justify-content:space-between;cursor:pointer"><span>Lingua</span><span style="font-family:'JetBrains Mono',monospace;color:#d9b448">{{ langLabel }}</span></div>
+<div onClick="{{ toggleMute }}" style="padding:13px 16px;border-radius:8px;background:rgba(201,162,39,.1);color:#dfe4dc;font-size:16px;display:flex;justify-content:space-between;cursor:pointer"><span>Audio</span><span style="font-family:'JetBrains Mono',monospace;color:#d9b448">{{ audioState }}</span></div>
+<div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#7e9096;font-family:'JetBrains Mono',monospace;margin-top:12px">Capitolo</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px">
+<sc-for list="{{ chapters }}" as="c" hint-placeholder-count="8">
+<div onClick="{{ c.go }}" style="padding:10px 0;border-radius:6px;background:rgba(201,162,39,.1);color:#dfe4dc;font-family:'JetBrains Mono',monospace;font-size:14px;text-align:center;cursor:pointer;position:relative">{{ c.n }}
+<sc-if value="{{ c.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:50%;bottom:4px;width:12px;height:2px;margin-left:-6px;background:#c9a227"></div></sc-if>
+</div>
+</sc-for>
+</div>
+<div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#7e9096;font-family:'JetBrains Mono',monospace;margin-top:10px">Lezione</div>
+<div style="display:flex;gap:7px">
+<sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+<div onClick="{{ l.go }}" style="flex:1;padding:11px 0;border-radius:6px;background:rgba(201,162,39,.1);color:#dfe4dc;font-family:'JetBrains Mono',monospace;font-size:15px;text-align:center;cursor:pointer;position:relative">{{ l.n }}
+<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:50%;bottom:5px;width:14px;height:2px;margin-left:-7px;background:#c9a227"></div></sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</div>
+</sc-if>
+</div>
+<div style="flex:0 1 212px;min-width:0;min-height:0;max-height:min(910px,calc(100vh - 36px));overflow-y:auto;display:flex;flex-direction:column;gap:14px;padding-right:4px;color:#9fb0b4">
+<div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#7e9096">L9 · Middleware · banda 2</div>
+<div style="font-size:23px;font-weight:600;color:#e8e2d0;margin-top:4px;line-height:1.2">La catena di controllo</div>
+<div style="font-size:14px;line-height:1.5;color:#7e9096;margin-top:8px">Dare il via · 8 capitoli</div>
+</div>
+<div style="height:1px;background:rgba(201,162,39,.16)"></div>
+<div style="display:flex;flex-direction:column;gap:5px">
+<sc-for list="{{ chapters }}" as="c" hint-placeholder-count="8">
+<div onClick="{{ c.go }}" style="padding:9px 11px;border-radius:8px;background:rgba(201,162,39,.06);cursor:pointer;display:flex;gap:10px;align-items:baseline" style-hover="background:rgba(201,162,39,.14)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#d9b448;width:12px">{{ c.n }}</div>
+<div style="flex:1;min-width:0">
+<div style="font-size:14px;color:#dfe4dc;line-height:1.3">{{ c.title }}</div>
+<sc-if value="{{ c.on }}" hint-placeholder-val="{{ false }}"><div style="height:2px;background:#c9a227;margin-top:6px"></div></sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="height:1px;background:rgba(201,162,39,.16)"></div>
+<div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7e9096;margin-bottom:6px">Lezione {{ chapterNo }}.x</div>
+<div style="display:flex;flex-direction:column;gap:5px">
+<sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+<div onClick="{{ l.go }}" style="padding:8px 11px;border-radius:6px;background:rgba(201,162,39,.05);cursor:pointer;display:flex;gap:10px;align-items:baseline" style-hover="background:rgba(201,162,39,.13)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7e9096;width:12px">{{ l.n }}</div>
+<div style="flex:1;min-width:0">
+<div style="font-size:13px;color:#9fb0b4;line-height:1.3">{{ l.title }}</div>
+<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><div style="height:2px;background:#c9a227;margin-top:5px"></div></sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="font-size:13px;line-height:1.55;color:#7e9096">Quando la stazione ha finito, premi <span style="font-family:'JetBrains Mono',monospace;color:#d9b448">next</span> per far proseguire la capsula. Se la stazione risponde da sé, premi il tappo: la catena si chiude lì. <span style="color:#7e9096">Esc</span> per la pausa.</div>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:940,&quot;height&quot;:1000},&quot;capitolo&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;,&quot;6&quot;,&quot;7&quot;,&quot;8&quot;],&quot;default&quot;:&quot;1&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;lezione&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;],&quot;default&quot;:&quot;1&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;lingua&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;it&quot;,&quot;en&quot;],&quot;default&quot;:&quot;it&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;diagnostica&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Taratura&quot;}}">
+const W=420,H=910,KEY='kaio.l9.catena';
+const TOP=H*.14,BOT=H*.78,NEXT={x:W*.3,y:H*.88},SEAL={x:W*.7,y:H*.88};
+/* Stazione: nome vero + cosa fa quando la capsula arriva.
+   pass = va dato il via · seal = risponde lei, va chiusa · add = aggiunge al pacco */
+const MW={
+ log:{n:'log',kind:'pass'},
+ json:{n:'json()',kind:'add',adds:'body'},
+ auth:{n:'auth',kind:'gate',needs:'token'},
+ user:{n:'loadUser',kind:'add',adds:'user'},
+ limit:{n:'rateLimit',kind:'gate',needs:'quota'},
+ cache:{n:'cache',kind:'seal'},
+ error:{n:'errorHandler',kind:'seal'},
+ route:{n:'handler',kind:'seal'}};
+const B=(o)=>Object.assign({chain:['log','route'],caps:[{}],need:4,speed:2.6},o);
+const C=(o)=>Object.assign({token:true,quota:true,cached:false,body:false,user:false},o);
+const CH=[
+ {t:['Dare il via','Give the go'],titles:[['La prima valvola','First valve'],['Ancora una','One more'],['Due capsule','Two capsules'],['Più svelto','Quicker'],['Il ritmo','The rhythm']],
+  beats:[B({chain:['log','route'],caps:[C({}),C({})],need:3,speed:3.2}),
+   B({chain:['log','route'],caps:[C({}),C({}),C({})],need:4,speed:3.0}),
+   B({chain:['log','json','route'],caps:[C({}),C({})],need:4,speed:2.9}),
+   B({chain:['log','json','route'],caps:[C({}),C({}),C({}),C({})],need:6,speed:2.2}),
+   B({chain:['log','json','route'],caps:[C({}),C({})],need:5,speed:2.8})]},
+ {t:['Due stazioni','Two stations'],titles:[['La seconda','The second'],['In fila','In line'],['Tre in fila','Three in line'],['Stretti','Tight'],['A occhio','At a glance']],
+  beats:[B({chain:['log','auth','route'],caps:[C({}),C({token:false})],need:4,speed:3.0}),
+   B({chain:['log','auth','route'],caps:[C({}),C({token:false}),C({})],need:5,speed:2.8}),
+   B({chain:['log','auth','json','route'],caps:[C({}),C({token:false}),C({})],need:5,speed:2.7}),
+   B({chain:['log','auth','json','route'],caps:[C({}),C({token:false}),C({}),C({})],need:6,speed:2.1}),
+   B({chain:['log','auth','json','route'],caps:[C({}),C({token:false}),C({})],need:5,speed:2.7})]},
+ {t:['Senza next resta appesa','Without next it hangs'],titles:[['La capsula appesa','The hanging capsule'],['Nessuno la aspetta','Nobody waits'],['Non basta finire','Finishing is not enough'],['Tre stazioni','Three stations'],['Adesso lo sai','Now you know']],
+  beats:[B({chain:['log','user','route'],caps:[C({}),C({})],need:4,speed:3.0}),
+   B({chain:['log','user','json','route'],caps:[C({}),C({}),C({})],need:5,speed:2.8}),
+   B({chain:['log','auth','user','route'],caps:[C({}),C({token:false}),C({})],need:5,speed:2.6}),
+   B({chain:['log','auth','user','json','route'],caps:[C({}),C({token:false}),C({}),C({})],need:6,speed:2.1}),
+   B({chain:['log','auth','user','route'],caps:[C({}),C({}),C({token:false})],need:5,speed:2.7})]},
+ {t:['Aggiungere al pacco','Adding to the parcel'],titles:[['Il corpo','The body'],["L'utente",'The user'],['Due aggiunte','Two additions'],['Chi serve dopo','Who needs it later'],['Padronanza','Mastery']],
+  beats:[B({chain:['json','route'],caps:[C({}),C({})],need:4,speed:3.0}),
+   B({chain:['auth','user','route'],caps:[C({}),C({token:false})],need:4,speed:2.9}),
+   B({chain:['json','auth','user','route'],caps:[C({}),C({}),C({token:false})],need:5,speed:2.7}),
+   B({chain:['json','auth','user','log','route'],caps:[C({}),C({token:false}),C({}),C({})],need:6,speed:2.2}),
+   B({chain:['json','auth','user','route'],caps:[C({}),C({}),C({token:false})],need:5,speed:2.8})]},
+ {t:['Chi risponde chiude','Whoever answers closes'],titles:[['La cache','The cache'],['Non passare oltre','Do not pass on'],['Cache e handler','Cache and handler'],['Due tappi','Two seals'],['Padronanza','Mastery']],
+  beats:[B({chain:['cache','route'],caps:[C({cached:true}),C({})],need:4,speed:3.0}),
+   B({chain:['log','cache','route'],caps:[C({cached:true}),C({}),C({cached:true})],need:5,speed:2.8}),
+   B({chain:['log','cache','json','route'],caps:[C({cached:true}),C({}),C({})],need:5,speed:2.7}),
+   B({chain:['log','auth','cache','json','route'],caps:[C({cached:true}),C({token:false}),C({}),C({cached:true})],need:6,speed:2.2}),
+   B({chain:['log','cache','route'],caps:[C({cached:true}),C({}),C({cached:true})],need:5,speed:2.8})]},
+ {t:["L'ordine dei gestori",'Order of handlers'],titles:[['Il limite prima','Limit first'],['Il gestore in fondo','Handler at the end'],["L'errore in coda",'Error handler last'],['Cinque stazioni','Five stations'],['Padronanza','Mastery']],
+  beats:[B({chain:['limit','auth','route'],caps:[C({}),C({quota:false}),C({token:false})],need:5,speed:2.9}),
+   B({chain:['limit','auth','json','route'],caps:[C({}),C({quota:false}),C({token:false}),C({})],need:5,speed:2.7}),
+   B({chain:['limit','auth','json','route','error'],caps:[C({}),C({quota:false}),C({token:false})],need:5,speed:2.6}),
+   B({chain:['limit','auth','user','json','route','error'],caps:[C({}),C({quota:false}),C({token:false}),C({}),C({})],need:6,speed:2.1}),
+   B({chain:['limit','auth','json','route','error'],caps:[C({}),C({quota:false}),C({})],need:5,speed:2.7})]},
+ {t:['A raffica','In bursts'],titles:[['Due in condotto','Two in the duct'],['Meno tempo','Less time'],['Sei capsule','Six capsules'],['Il picco','The peak'],['Automatico','Automatic']],
+  beats:[B({chain:['limit','auth','json','user','route'],caps:[C({}),C({quota:false}),C({token:false}),C({}),C({})],need:6,speed:2.2}),
+   B({chain:['limit','auth','json','user','route'],caps:[C({}),C({quota:false}),C({token:false}),C({}),C({}),C({})],need:7,speed:2.0}),
+   B({chain:['limit','auth','cache','json','route'],caps:[C({cached:true}),C({quota:false}),C({}),C({token:false}),C({cached:true}),C({})],need:7,speed:2.0}),
+   B({chain:['limit','auth','cache','json','user','route','error'],caps:[C({}),C({quota:false}),C({cached:true}),C({token:false}),C({}),C({}),C({})],need:8,speed:1.9}),
+   B({chain:['limit','auth','json','route'],caps:[C({}),C({quota:false}),C({}),C({})],need:6,speed:2.4})]},
+ {t:['La catena intera','The whole chain'],titles:[['Tutto insieme','All together'],['Senza rete','No net'],['La prova','The test'],['Il picco','The peak'],['Chiusura','Closing']],
+  beats:[B({chain:['limit','auth','json','user','route','error'],caps:[C({}),C({quota:false}),C({token:false}),C({}),C({})],need:6,speed:2.3}),
+   B({chain:['limit','auth','cache','json','user','route','error'],caps:[C({cached:true}),C({quota:false}),C({token:false}),C({}),C({}),C({})],need:7,speed:2.1}),
+   B({chain:['limit','auth','cache','json','user','route','error'],caps:[C({cached:true}),C({quota:false}),C({token:false}),C({}),C({cached:true}),C({}),C({})],need:8,speed:2.0}),
+   B({chain:['limit','auth','cache','json','user','route','error'],caps:[C({}),C({quota:false}),C({cached:true}),C({token:false}),C({}),C({}),C({}),C({})],need:9,speed:1.9}),
+   B({chain:['limit','auth','json','user','route','error'],caps:[C({}),C({}),C({quota:false}),C({})],need:6,speed:2.5})]}];
+const T={it:{hang:'Una capsula è rimasta appesa alla stazione.',hangFx:'La stazione aveva finito e nessuno le ha dato il via: da lì non si muove più.',hangRule:'Finire non basta: senza next la richiesta resta appesa.',
+ seal:'Hai dato il via a una stazione che aveva già risposto.',sealFx:'La risposta era partita: la capsula è proseguita a vuoto.',sealRule:'Chi risponde chiude la catena: non si passa oltre.',
+ gate:'Hai fatto proseguire una capsula che il controllo aveva respinto.',gateFx:'È arrivata in fondo senza averne il diritto.',gateRule:'Il controllo che respinge risponde lui: si chiude, non si passa.',
+ a:'senza next',b:'con next'},
+ en:{hang:'A capsule was left hanging at the station.',hangFx:'The station had finished and nobody gave it the go: it never moves again.',hangRule:'Finishing is not enough: without next the request hangs.',
+ seal:'You gave the go to a station that had already answered.',sealFx:'The answer had gone out: the capsule travelled on empty.',sealRule:'Whoever answers closes the chain: you do not pass on.',
+ gate:'You passed on a capsule the check had rejected.',gateFx:'It reached the end without the right to.',gateRule:'A check that rejects answers itself: it closes, it does not pass.',
+ a:'no next',b:'with next'}};
+
+class Component extends DCLogic{
+ state={beat:0,chapter:0,lang:'it',paused:false,coach:null,done:false,muted:false,step:0,bad:0};
+ renderVals(){const s=this.state,L=T[s.lang],c=s.coach;
+  return Object.assign(KAIO.vals(this),{
+   coachWhat:c?L[c.kind]:'',coachEffect:c?L[c.kind+'Fx']:'',coachRule:c?L[c.kind+'Rule']:'',
+   coachA:L.a,coachB:L.b});
+ }
+ componentDidMount(){KAIO.init(this,{W,H,key:KEY,chapters:CH,onTap:p=>this.tap(p)});
+  KAIO.audio(this);KAIO.drone(this,42,'sawtooth',.015,120);}
+ componentDidUpdate(pp){KAIO.sync(this,pp)}
+ componentWillUnmount(){KAIO.destroy(this)}
+
+ reset(beat){const c=this.BEATS[beat];this.cfg=c;this.needed=c.need;
+  this.caps=[];this.ci=0;this.spawnT=.7;this.made=0;this.parts=[];
+  this.shake=0;this.flash=0;this.pulse=0;this.pulseK=null;this.streak={kind:null,n:0};
+  this.setState({bad:0,step:0})}
+
+ stY(i){const n=this.cfg.chain.length;return TOP+(BOT-TOP)*(i+.5)/n}
+
+ tap(p){
+  const held=this.caps.find(c=>c.wait);
+  if(Math.hypot(p.x-NEXT.x,p.y-NEXT.y)<40){if(held)this.give(held,'next');else KAIO.snd(this,'fall');return}
+  if(Math.hypot(p.x-SEAL.x,p.y-SEAL.y)<40){if(held)this.give(held,'seal');else KAIO.snd(this,'fall');return}
+  KAIO.snd(this,'fall')}
+
+ give(c,act){const mw=MW[this.cfg.chain[c.at]];
+  let want='next';
+  if(mw.kind==='seal')want='seal';
+  else if(mw.kind==='gate')want=(mw.needs==='token'?c.token:c.quota)?'next':'seal';
+  else if(mw.kind==='add'&&mw.adds==='body')want='next';
+  if(act===want){
+   if(mw.kind==='add')c[mw.adds]=true;
+   if(want==='seal'){this.close(c)}
+   else{c.wait=false;c.at++;KAIO.snd(this,'pop',{hz:420,v:.14});
+    KAIO.burst(this.parts,W/2,this.stY(c.at-1),6,'#d9b448',{v1:80})}
+   return}
+  const kind=mw.kind==='seal'?'seal':mw.kind==='gate'?'gate':'hang';
+  this.fail(c,kind)}
+
+ close(c){c.dead=true;this.made++;this.flash=1;this.streak={kind:null,n:0};
+  KAIO.snd(this,'tone',{from:580,to:900,v:.15});KAIO.burst(this.parts,W/2,this.stY(c.at),12,'#e8c85a');
+  this.setState({step:this.made});
+  if(this.made>=this.needed){KAIO.snd(this,'chime',{notes:[440,587,740]});this.setState({done:true})}}
+
+ fail(c,kind){c.dead=true;this.shake=.8;KAIO.snd(this,'whir');
+  KAIO.burst(this.parts,W/2,this.stY(c.at),9,'#6f8288');
+  const s=this.streak;if(s.kind===kind)s.n++;else{s.kind=kind;s.n=1}
+  if(s.n===2)this.pulse=.8;
+  if(s.n>=3){this.setState({coach:{kind}});this.streak={kind:null,n:0}}
+  const bad=this.state.bad+1;this.setState({bad});
+  if(bad>=3)this.reset(this.state.beat)}
+
+ update(dt){const c=this.cfg;
+  if(this.flash>0)this.flash-=dt*3;if(this.shake>0)this.shake-=dt*3.4;if(this.pulse>0)this.pulse-=dt;
+  this.spawnT-=dt;
+  const live=this.caps.filter(k=>!k.dead).length;
+  if(this.spawnT<=0&&live<2&&this.ci<c.caps.length){
+   const src=c.caps[this.ci%c.caps.length];
+   this.caps.push(Object.assign({},src,{y:TOP-40,at:0,wait:false,dead:false,hang:0}));
+   this.ci++;this.spawnT=c.speed*.8}
+  for(const k of this.caps){if(k.dead)continue;
+   const ty=this.stY(k.at);
+   if(k.wait){k.hang+=dt;
+    if(k.hang>c.speed*1.6)this.fail(k,'hang');
+    continue}
+   k.y+=(ty-k.y)*Math.min(1,dt*3.2)+18*dt;
+   if(Math.abs(k.y-ty)<6){if(k.at<c.chain.length){k.wait=true;k.hang=0;
+     KAIO.snd(this,'click',{hz:900,v:.1})}}
+   if(k.at>=c.chain.length){k.dead=true;this.fail(k,'hang')}}
+  this.caps=this.caps.filter(k=>!k.dead);
+  this.parts=KAIO.parts(this.parts,dt,380)}
+
+ draw(x){const sc=this.sc||1;x.setTransform(sc,0,0,sc,0,0);x.save();KAIO.shake(x,this.shake);
+  const g=x.createLinearGradient(0,0,0,H);g.addColorStop(0,'#11191f');g.addColorStop(.5,'#0d1316');g.addColorStop(1,'#0a0f12');x.fillStyle=g;x.fillRect(-8,-8,W+16,H+16);
+  x.strokeStyle='rgba(160,190,200,.045)';x.lineWidth=1;
+  for(let i=1;i<8;i++){x.beginPath();x.moveTo(0,i*H/8);x.lineTo(W,i*H/8);x.stroke()}
+  x.fillStyle='#151e23';x.fillRect(W/2-38,TOP-50,76,BOT-TOP+70);
+  x.strokeStyle='rgba(201,162,39,.16)';x.lineWidth=2;x.strokeRect(W/2-38,TOP-50,76,BOT-TOP+70);
+  const chain=this.cfg.chain;
+  chain.forEach((k,i)=>{const y=this.stY(i),mw=MW[k];
+   const lit=this.pulse>0&&this.caps.some(c=>!c.dead&&c.wait&&c.at===i);
+   x.fillStyle='#243036';KAIO.rr(x,W/2-56,y-22,112,44,4);x.fill();
+   x.strokeStyle=lit?'rgba(232,200,90,'+(.4+.5*Math.sin(this.pulse*15))+')':'rgba(201,162,39,.5)';
+   x.lineWidth=lit?3:2;KAIO.rr(x,W/2-56,y-22,112,44,4);x.stroke();
+   let f=13;x.font='600 '+f+'px "JetBrains Mono",monospace';
+   while(x.measureText(mw.n).width>100&&f>13){f--}
+   x.textAlign='center';x.textBaseline='middle';x.fillStyle='#e8c85a';x.fillText(mw.n,W/2,y-4);
+   const tag=mw.kind==='seal'?(this.state.lang==='en'?'answers':'risponde'):mw.kind==='gate'?(this.state.lang==='en'?'checks':'controlla'):mw.kind==='add'?'+'+mw.adds:(this.state.lang==='en'?'passes':'passa');
+   x.font='500 13px "JetBrains Mono",monospace';x.fillStyle='#7e9096';x.fillText(tag,W/2,y+13);
+   x.fillStyle='rgba(201,162,39,.3)';x.fillRect(W/2-70,y-1,14,2);x.fillRect(W/2+56,y-1,14,2)});
+  for(const k of this.caps){if(k.dead)continue;this.capsule(x,k)}
+  [[NEXT,'next',true],[SEAL,this.state.lang==='en'?'answer':'tappo',false]].forEach(([p,label,isNext])=>{
+   const held=this.caps.some(c=>!c.dead&&c.wait);
+   x.fillStyle=held?'#8a6f20':'#243036';x.beginPath();x.arc(p.x,p.y,36,0,6.283);x.fill();
+   x.strokeStyle=held?'rgba(255,236,180,.85)':'rgba(201,162,39,.35)';x.lineWidth=held?3:2;
+   x.beginPath();x.arc(p.x,p.y,36,0,6.283);x.stroke();
+   x.font='600 14px "JetBrains Mono",monospace';x.textAlign='center';x.textBaseline='middle';
+   x.fillStyle=held?'rgba(255,244,214,.95)':'rgba(217,180,72,.6)';x.fillText(label,p.x,p.y)});
+  for(let i=0;i<3;i++){const off=i<this.state.bad;
+   x.strokeStyle=off?'rgba(140,110,70,.5)':'rgba(201,162,39,.8)';x.lineWidth=2;
+   x.beginPath();x.arc(W-24,H*.08+i*22,5.5,0,6.283);off?x.stroke():x.fill()}
+  x.textAlign='left';x.font='500 18px "JetBrains Mono",monospace';x.fillStyle='#7e9096';
+  x.fillText(this.made+'/'+this.needed,20,H*.08);
+  KAIO.drawParts(x,this.parts);
+  if(this.flash>0){x.fillStyle='rgba(232,220,170,'+(this.flash*.06)+')';x.fillRect(0,0,W,H)}
+  if(this.props.diagnostica){x.fillStyle='rgba(160,230,255,.9)';x.font='500 11px "JetBrains Mono",monospace';
+   const w=this.caps.find(c=>!c.dead&&c.wait);
+   x.fillText('c'+(this.state.chapter+1)+'.'+(this.state.beat+1)+'  attesa '+(w?MW[chain[w.at]].n:'—'),12,H-14)}
+  x.restore()}
+
+ capsule(x,k){const w=58,h=40,cy=k.y;
+  x.fillStyle='rgba(0,0,0,.42)';KAIO.rr(x,W/2-w/2+3,cy-h/2+4,w,h,8);x.fill();
+  const g=x.createLinearGradient(0,cy-h/2,0,cy+h/2);g.addColorStop(0,'#5c7076');g.addColorStop(1,'#3f4f56');x.fillStyle=g;
+  KAIO.rr(x,W/2-w/2,cy-h/2,w,h,8);x.fill();
+  x.strokeStyle=k.wait?'rgba(232,200,90,.9)':'rgba(160,190,200,.3)';x.lineWidth=k.wait?2.5:1.4;
+  KAIO.rr(x,W/2-w/2,cy-h/2,w,h,8);x.stroke();
+  const marks=[];if(k.token)marks.push('T');if(k.quota)marks.push('Q');if(k.cached)marks.push('C');
+  if(k.body)marks.push('{}');if(k.user)marks.push('U');
+  x.font='600 13px "JetBrains Mono",monospace';x.textAlign='center';x.textBaseline='middle';
+  x.fillStyle='rgba(230,238,240,.9)';x.fillText(marks.join('')||'·',W/2,cy);
+  if(k.wait){const t=Math.min(1,k.hang/(this.cfg.speed*1.6));
+   x.strokeStyle=t>.6?'#d6603c':'rgba(232,200,90,.7)';x.lineWidth=3;
+   x.beginPath();x.arc(W/2,cy,30,-1.57,-1.57+6.283*(1-t));x.stroke()}}
+}
+</script>
+</body>
+</html>

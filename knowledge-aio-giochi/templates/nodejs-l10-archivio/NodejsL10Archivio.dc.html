@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Node.js L10 — L'archivio" description="Livello 10, banda 2: database. Chiedere la cosa giusta costa mille volte meno che chiedere tutto e scegliere dopo." -->
+<!--
+  SCHEDA (ricerca/00 §0.3) — GIOCO L'archivio
+  LIVELLO Node.js L10 Integrazione Database, banda 2 — 8 capitoli, 40 lezioni
+  CONCETTO Chiedere la cosa giusta costa mille volte meno che chiedere tutto e
+           scegliere dopo. Il costo sta nel trasporto, non nella scelta.
+  FORMA trasformazione · VERBO comporre la richiesta (montare la scheda)
+  ARCHETIPO ricerca/15 stacking in forma di composizione vincolata,
+            con il budget di ricerca/18 (la decisione si paga dopo)
+  VINCI SE tutte le commesse escono entro il budget di trasporto
+  PERDI SE il montacarichi si sovraccarica tre volte
+  SBAGLI 1 la scheda torna indietro e il peso trasportato si vede
+         2 il pezzo che avrebbe alleggerito pulsa
+         3 coaching, quattro righe, la quarta animata
+  CAPITOLI 1 la scheda · 2 solo le colonne che servono · 3 FRATTURA non filtrare
+           a valle · 4 il limite · 5 l'ordinamento · 6 l'indice
+           7 a raffica · 8 il turno intero
+  MONDO archivio sotterraneo di banda 2: montacarichi, schede d'ottone, bilancia
+        di carico con lancetta
+  NUMERI budget per commessa, nessun timer fino al capitolo 7
+  TEST 1 le schede sono identiche: l'unico segnale è cosa chiedi e quanto pesa
+         quello che torna. Il peso è calcolato, non decorativo.
+  TEST 2 "Compongo la richiesta che porta su solo quello che serve"
+  TEST 3 la commessa è appesa e un pezzo pulsa nella riserva
+-->
+<helmet>
+<script src="./ds-base.js"></script>
+<script src="../kaio-engine.js"></script>
+<style>
+*{box-sizing:border-box}html,body{margin:0;padding:0;height:100%;background:#080b0d}
+@keyframes om-fade{from{opacity:0}to{opacity:1}}
+@keyframes om-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes om-lift{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+</style>
+</helmet>
+<div style="position:fixed;inset:0;background:radial-gradient(130% 90% at 50% -10%,#131c22 0%,#0c1114 55%,#070a0c 100%);display:grid;place-items:center;font-family:Raleway,system-ui,sans-serif;overflow:hidden;padding:18px">
+<div style="display:flex;align-items:center;justify-content:center;gap:26px;max-width:100%">
+<div style="position:relative;height:min(910px,calc(100vh - 36px),max(480px,calc((100vw - 280px) * 2.1667)));aspect-ratio:420/910;border-radius:24px;overflow:hidden;box-shadow:0 50px 130px -34px rgba(0,0,0,.95),0 0 0 1px rgba(201,162,39,.16);flex:0 0 auto">
+<canvas ref="{{ cvRef }}" style="display:block;width:100%;height:100%;touch-action:none;cursor:pointer"></canvas>
+<sc-if value="{{ coachOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;left:14px;right:14px;top:14px;padding:20px;border-radius:14px;background:linear-gradient(180deg,rgba(20,28,34,.97),rgba(12,17,20,.97));box-shadow:0 24px 60px -18px rgba(0,0,0,.9),inset 0 1px 0 rgba(201,162,39,.22);animation:om-rise .26s cubic-bezier(.16,1,.3,1) both;cursor:pointer">
+<div style="font-size:20px;line-height:1.45;color:#e8e2d0;font-weight:500">{{ coachWhat }}</div>
+<div style="font-size:20px;line-height:1.45;color:#9fb0b4;margin-top:10px">{{ coachEffect }}</div>
+<div style="font-size:20px;line-height:1.45;color:#d9b448;margin-top:14px;font-weight:600">{{ coachRule }}</div>
+<div style="margin-top:18px;height:88px;border-radius:10px;background:rgba(0,0,0,.42);display:flex;align-items:center;justify-content:space-around;padding:0 14px">
+<div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#d6603c">{{ coachA }}</div>
+<div style="width:52px;height:34px;border-radius:3px;background:#4e6068;animation:om-lift 1.8s ease-in-out infinite"></div>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#d9b448">{{ coachB }}</div>
+<div style="width:20px;height:14px;border-radius:3px;background:#c9a227"></div>
+</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ doneOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(70% 50% at 50% 45%,rgba(18,28,34,.92),rgba(6,9,11,.96));animation:om-fade .22s ease both;cursor:pointer">
+<div style="text-align:center;padding:0 30px">
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:34px;font-weight:600;color:#eef0e6">Commesse evase</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:34px;font-weight:600;color:#eef0e6">Orders filled</div></sc-if>
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#7e9096;margin-top:10px">{{ chapterNo }}/{{ chapterOf }} · {{ chapterTitle }}</div>
+<div style="display:flex;gap:10px;justify-content:center;margin-top:24px">
+<sc-for list="{{ marks }}" as="m" hint-placeholder-count="5">
+<div style="width:34px;height:6px;border-radius:2px;background:rgba(201,162,39,.2);position:relative;overflow:hidden">
+<sc-if value="{{ m.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;background:#c9a227"></div></sc-if>
+</div>
+</sc-for>
+</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#8b9aa0;margin-top:22px">{{ doneHint }}</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ pauseOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;backdrop-filter:blur(9px);background:rgba(8,11,13,.74);display:grid;place-items:center;animation:om-fade .2s ease both;padding:16px;overflow-y:auto">
+<div style="width:290px;padding:24px;border-radius:16px;background:linear-gradient(180deg,rgba(22,30,36,.98),rgba(12,17,20,.98));box-shadow:0 30px 70px -20px rgba(0,0,0,.9),inset 0 1px 0 rgba(201,162,39,.2)">
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#7e9096;font-family:'JetBrains Mono',monospace">In pausa</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#7e9096;font-family:'JetBrains Mono',monospace">Paused</div></sc-if>
+<div style="display:flex;flex-direction:column;gap:9px;margin-top:16px">
+<div onClick="{{ resume }}" style="padding:14px 16px;border-radius:8px;background:#c9a227;color:#14191c;font-size:17px;font-weight:600;text-align:center;cursor:pointer" style-hover="background:#d9b448"><sc-if value="{{ it }}" hint-placeholder-val="{{ true }}">Riprendi</sc-if><sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">Resume</sc-if></div>
+<div onClick="{{ toggleLang }}" style="padding:13px 16px;border-radius:8px;background:rgba(201,162,39,.1);color:#dfe4dc;font-size:16px;display:flex;justify-content:space-between;cursor:pointer"><span>Lingua</span><span style="font-family:'JetBrains Mono',monospace;color:#d9b448">{{ langLabel }}</span></div>
+<div onClick="{{ toggleMute }}" style="padding:13px 16px;border-radius:8px;background:rgba(201,162,39,.1);color:#dfe4dc;font-size:16px;display:flex;justify-content:space-between;cursor:pointer"><span>Audio</span><span style="font-family:'JetBrains Mono',monospace;color:#d9b448">{{ audioState }}</span></div>
+<div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#7e9096;font-family:'JetBrains Mono',monospace;margin-top:12px">Capitolo</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px">
+<sc-for list="{{ chapters }}" as="c" hint-placeholder-count="8">
+<div onClick="{{ c.go }}" style="padding:10px 0;border-radius:6px;background:rgba(201,162,39,.1);color:#dfe4dc;font-family:'JetBrains Mono',monospace;font-size:14px;text-align:center;cursor:pointer;position:relative">{{ c.n }}
+<sc-if value="{{ c.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:50%;bottom:4px;width:12px;height:2px;margin-left:-6px;background:#c9a227"></div></sc-if>
+</div>
+</sc-for>
+</div>
+<div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#7e9096;font-family:'JetBrains Mono',monospace;margin-top:10px">Lezione</div>
+<div style="display:flex;gap:7px">
+<sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+<div onClick="{{ l.go }}" style="flex:1;padding:11px 0;border-radius:6px;background:rgba(201,162,39,.1);color:#dfe4dc;font-family:'JetBrains Mono',monospace;font-size:15px;text-align:center;cursor:pointer;position:relative">{{ l.n }}
+<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:50%;bottom:5px;width:14px;height:2px;margin-left:-7px;background:#c9a227"></div></sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</div>
+</sc-if>
+</div>
+<div style="flex:0 1 212px;min-width:0;min-height:0;max-height:min(910px,calc(100vh - 36px));overflow-y:auto;display:flex;flex-direction:column;gap:14px;padding-right:4px;color:#9fb0b4">
+<div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#7e9096">L10 · Database · banda 2</div>
+<div style="font-size:23px;font-weight:600;color:#e8e2d0;margin-top:4px;line-height:1.2">L'archivio</div>
+<div style="font-size:14px;line-height:1.5;color:#7e9096;margin-top:8px">Comporre la richiesta · 8 capitoli</div>
+</div>
+<div style="height:1px;background:rgba(201,162,39,.16)"></div>
+<div style="display:flex;flex-direction:column;gap:5px">
+<sc-for list="{{ chapters }}" as="c" hint-placeholder-count="8">
+<div onClick="{{ c.go }}" style="padding:9px 11px;border-radius:8px;background:rgba(201,162,39,.06);cursor:pointer;display:flex;gap:10px;align-items:baseline" style-hover="background:rgba(201,162,39,.14)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#d9b448;width:12px">{{ c.n }}</div>
+<div style="flex:1;min-width:0">
+<div style="font-size:14px;color:#dfe4dc;line-height:1.3">{{ c.title }}</div>
+<sc-if value="{{ c.on }}" hint-placeholder-val="{{ false }}"><div style="height:2px;background:#c9a227;margin-top:6px"></div></sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="height:1px;background:rgba(201,162,39,.16)"></div>
+<div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7e9096;margin-bottom:6px">Lezione {{ chapterNo }}.x</div>
+<div style="display:flex;flex-direction:column;gap:5px">
+<sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+<div onClick="{{ l.go }}" style="padding:8px 11px;border-radius:6px;background:rgba(201,162,39,.05);cursor:pointer;display:flex;gap:10px;align-items:baseline" style-hover="background:rgba(201,162,39,.13)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7e9096;width:12px">{{ l.n }}</div>
+<div style="flex:1;min-width:0">
+<div style="font-size:13px;color:#9fb0b4;line-height:1.3">{{ l.title }}</div>
+<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><div style="height:2px;background:#c9a227;margin-top:5px"></div></sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="font-size:13px;line-height:1.55;color:#7e9096">Aggiungi alla scheda solo i pezzi che servono, poi tira la leva. La lancetta mostra quanto pesa quello che sale: il budget è quello scritto sulla commessa. <span style="color:#7e9096">Esc</span> per la pausa.</div>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:940,&quot;height&quot;:1000},&quot;capitolo&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;,&quot;6&quot;,&quot;7&quot;,&quot;8&quot;],&quot;default&quot;:&quot;1&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;lezione&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;],&quot;default&quot;:&quot;1&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;lingua&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;it&quot;,&quot;en&quot;],&quot;default&quot;:&quot;it&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;diagnostica&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Taratura&quot;}}">
+const W=420,H=910,KEY='kaio.l10.archivio';
+const CARDY=H*.3,TRAYY=H*.53,LEVER={x:W/2,y:H*.86};
+/* Pezzi della scheda: costo/beneficio sul peso trasportato.
+   cols riduce il peso per riga · where riduce le righe · limit taglia il totale
+   index non cambia il peso ma abbatte il tempo · all* sono le trappole */
+const P={
+ 'SELECT *':{w:1,rows:1,tag:'tutte le colonne'},
+ 'SELECT nome,email':{w:.25,rows:1,tag:'due colonne'},
+ 'SELECT nome':{w:.15,rows:1,tag:'una colonna'},
+ 'WHERE attivo':{w:1,rows:.2,tag:'solo gli attivi'},
+ 'WHERE id=7':{w:1,rows:.02,tag:'una riga'},
+ 'LIMIT 20':{w:1,rows:.05,tag:'venti righe'},
+ 'ORDER BY data':{w:1,rows:1,tag:'ordinate'},
+ 'INDEX(email)':{w:1,rows:1,tag:'indice',idx:true},
+ 'JOIN ordini':{w:2.2,rows:1,tag:'unisce gli ordini'},
+ 'COUNT(*)':{w:.02,rows:.001,tag:'solo il numero'}};
+const J=(ask,en,budget,want)=>({ask,en,budget,want});
+const B=(o)=>Object.assign({jobs:[],tray:['SELECT *','SELECT nome,email'],need:3,rows:1000,timer:0},o);
+const CH=[
+ {t:['La scheda','The card'],titles:[['Il primo pezzo','First part'],['Tira la leva','Pull the lever'],['Due commesse','Two orders'],['Il peso si vede','Weight shows'],['Il ritmo','The rhythm']],
+  beats:[B({tray:['SELECT *'],jobs:[J('Tutti i dati dei clienti','All customer data',1200,['SELECT *'])],need:2}),
+   B({tray:['SELECT *','WHERE attivo'],jobs:[J('Tutti i dati dei clienti attivi','All data of active customers',300,['SELECT *','WHERE attivo'])],need:3}),
+   B({tray:['SELECT *','WHERE attivo','WHERE id=7'],jobs:[J('Tutti i dati del cliente 7','All data of customer 7',60,['SELECT *','WHERE id=7']),J('Tutti i dati dei clienti attivi','All data of active customers',300,['SELECT *','WHERE attivo'])],need:3}),
+   B({tray:['SELECT *','WHERE attivo','WHERE id=7','LIMIT 20'],jobs:[J('I primi venti clienti','The first twenty customers',80,['SELECT *','LIMIT 20']),J('Tutti i dati del cliente 7','All data of customer 7',60,['SELECT *','WHERE id=7']),J('Tutti i dati dei clienti attivi','All data of active customers',300,['SELECT *','WHERE attivo'])],need:4}),
+   B({tray:['SELECT *','WHERE attivo','WHERE id=7','LIMIT 20'],jobs:[J('Tutti i dati del cliente 7','All data of customer 7',60,['SELECT *','WHERE id=7']),J('I primi venti clienti','The first twenty customers',80,['SELECT *','LIMIT 20'])],need:3})]},
+ {t:['Solo le colonne che servono','Only the columns you need'],titles:[['Due colonne','Two columns'],['Una sola','Just one'],['Non tutte','Not all'],['Colonne e filtro','Columns and filter'],['A occhio','At a glance']],
+  beats:[B({tray:['SELECT *','SELECT nome,email'],jobs:[J('Nome e email dei clienti','Name and email of customers',320,['SELECT nome,email'])],need:2}),
+   B({tray:['SELECT *','SELECT nome,email','SELECT nome'],jobs:[J('Solo i nomi dei clienti','Just the customer names',180,['SELECT nome']),J('Nome e email dei clienti','Name and email of customers',320,['SELECT nome,email'])],need:3}),
+   B({tray:['SELECT *','SELECT nome,email','SELECT nome','WHERE attivo'],jobs:[J('Nome e email degli attivi','Name and email of active ones',70,['SELECT nome,email','WHERE attivo']),J('Solo i nomi dei clienti','Just the customer names',180,['SELECT nome'])],need:3}),
+   B({tray:['SELECT *','SELECT nome,email','SELECT nome','WHERE attivo','WHERE id=7'],jobs:[J('Il nome del cliente 7','The name of customer 7',6,['SELECT nome','WHERE id=7']),J('Nome e email degli attivi','Name and email of active ones',70,['SELECT nome,email','WHERE attivo']),J('Solo i nomi dei clienti','Just the customer names',180,['SELECT nome'])],need:4}),
+   B({tray:['SELECT *','SELECT nome,email','SELECT nome','WHERE attivo'],jobs:[J('Nome e email degli attivi','Name and email of active ones',70,['SELECT nome,email','WHERE attivo']),J('Solo i nomi dei clienti','Just the customer names',180,['SELECT nome'])],need:3})]},
+ {t:['Non filtrare a valle','Do not filter downstream'],titles:[['Tutto e poi scegli','All then choose'],['Il montacarichi','The hoist'],['Filtra a monte','Filter upstream'],['Il conto','The count'],['Adesso lo sai','Now you know']],
+  beats:[B({tray:['SELECT *','WHERE attivo','SELECT nome'],jobs:[J('Quanti clienti attivi ci sono','How many active customers',4,['COUNT(*)','WHERE attivo'])],need:2,rows:1000}),
+   B({tray:['SELECT *','WHERE attivo','SELECT nome','COUNT(*)'],jobs:[J('Quanti clienti attivi ci sono','How many active customers',4,['COUNT(*)','WHERE attivo']),J('Solo i nomi degli attivi','Just names of active ones',40,['SELECT nome','WHERE attivo'])],need:3}),
+   B({tray:['SELECT *','WHERE attivo','WHERE id=7','SELECT nome','COUNT(*)'],jobs:[J('Quanti clienti ci sono','How many customers',4,['COUNT(*)']),J('Quanti clienti attivi ci sono','How many active customers',4,['COUNT(*)','WHERE attivo'])],need:3}),
+   B({tray:['SELECT *','WHERE attivo','WHERE id=7','SELECT nome','SELECT nome,email','COUNT(*)','LIMIT 20'],jobs:[J('Quanti clienti attivi ci sono','How many active customers',4,['COUNT(*)','WHERE attivo']),J('Il nome del cliente 7','The name of customer 7',6,['SELECT nome','WHERE id=7']),J('I primi venti nomi','The first twenty names',12,['SELECT nome','LIMIT 20'])],need:4}),
+   B({tray:['SELECT *','WHERE attivo','SELECT nome','COUNT(*)'],jobs:[J('Quanti clienti attivi ci sono','How many active customers',4,['COUNT(*)','WHERE attivo']),J('Solo i nomi degli attivi','Just names of active ones',40,['SELECT nome','WHERE attivo'])],need:3})]},
+ {t:['Il limite','The limit'],titles:[['Venti righe','Twenty rows'],['Una pagina','One page'],['Limite e colonne','Limit and columns'],['Non tutto','Not everything'],['Padronanza','Mastery']],
+  beats:[B({tray:['SELECT *','LIMIT 20','SELECT nome'],jobs:[J('I primi venti nomi','The first twenty names',12,['SELECT nome','LIMIT 20'])],need:2}),
+   B({tray:['SELECT *','LIMIT 20','SELECT nome','SELECT nome,email'],jobs:[J('Nome e email dei primi venti','Name and email of the first twenty',22,['SELECT nome,email','LIMIT 20']),J('I primi venti nomi','The first twenty names',12,['SELECT nome','LIMIT 20'])],need:3}),
+   B({tray:['SELECT *','LIMIT 20','SELECT nome','WHERE attivo'],jobs:[J('I primi venti nomi degli attivi','First twenty names of active ones',10,['SELECT nome','WHERE attivo','LIMIT 20']),J('I primi venti nomi','The first twenty names',12,['SELECT nome','LIMIT 20'])],need:3}),
+   B({tray:['SELECT *','LIMIT 20','SELECT nome','SELECT nome,email','WHERE attivo','COUNT(*)'],jobs:[J('I primi venti nomi degli attivi','First twenty names of active ones',10,['SELECT nome','WHERE attivo','LIMIT 20']),J('Quanti attivi ci sono','How many active ones',4,['COUNT(*)','WHERE attivo']),J('Nome e email dei primi venti','Name and email of the first twenty',22,['SELECT nome,email','LIMIT 20'])],need:4}),
+   B({tray:['SELECT *','LIMIT 20','SELECT nome','WHERE attivo'],jobs:[J('I primi venti nomi','The first twenty names',12,['SELECT nome','LIMIT 20']),J('I primi venti nomi degli attivi','First twenty names of active ones',10,['SELECT nome','WHERE attivo','LIMIT 20'])],need:3})]},
+ {t:["L'ordinamento",'Sorting'],titles:[['Per data','By date'],['Ordina e limita','Sort and limit'],["L'ordine costa",'Sorting costs'],['I più recenti','The most recent'],['Padronanza','Mastery']],
+  beats:[B({tray:['SELECT nome','ORDER BY data','LIMIT 20'],jobs:[J('I nomi in ordine di data','Names in date order',180,['SELECT nome','ORDER BY data'])],need:2}),
+   B({tray:['SELECT nome','ORDER BY data','LIMIT 20','SELECT *'],jobs:[J('I venti più recenti, solo nome','The twenty most recent, name only',12,['SELECT nome','ORDER BY data','LIMIT 20'])],need:3}),
+   B({tray:['SELECT nome','SELECT nome,email','ORDER BY data','LIMIT 20','WHERE attivo'],jobs:[J('I venti attivi più recenti','The twenty most recent active ones',10,['SELECT nome','WHERE attivo','ORDER BY data','LIMIT 20']),J('I venti più recenti, solo nome','The twenty most recent, name only',12,['SELECT nome','ORDER BY data','LIMIT 20'])],need:3}),
+   B({tray:['SELECT nome','SELECT nome,email','ORDER BY data','LIMIT 20','WHERE attivo','COUNT(*)','SELECT *'],jobs:[J('I venti attivi più recenti','The twenty most recent active ones',10,['SELECT nome','WHERE attivo','ORDER BY data','LIMIT 20']),J('Quanti attivi ci sono','How many active ones',4,['COUNT(*)','WHERE attivo']),J('Nome e email dei primi venti','Name and email of the first twenty',22,['SELECT nome,email','LIMIT 20'])],need:4}),
+   B({tray:['SELECT nome','ORDER BY data','LIMIT 20','WHERE attivo'],jobs:[J('I venti più recenti, solo nome','The twenty most recent, name only',12,['SELECT nome','ORDER BY data','LIMIT 20']),J('I venti attivi più recenti','The twenty most recent active ones',10,['SELECT nome','WHERE attivo','ORDER BY data','LIMIT 20'])],need:3})]},
+ {t:["L'indice",'The index'],titles:[["L'indice non alleggerisce",'Index does not lighten'],['Ma fa in fretta','But it is fast'],['Con il filtro','With the filter'],['Quando serve','When it helps'],['Padronanza','Mastery']],
+  beats:[B({tray:['SELECT nome','WHERE attivo','INDEX(email)'],jobs:[J('I nomi degli attivi, in fretta','Names of active ones, fast',40,['SELECT nome','WHERE attivo','INDEX(email)'])],need:2}),
+   B({tray:['SELECT nome','WHERE attivo','WHERE id=7','INDEX(email)'],jobs:[J('Il nome del cliente 7, in fretta','Name of customer 7, fast',6,['SELECT nome','WHERE id=7','INDEX(email)']),J('I nomi degli attivi, in fretta','Names of active ones, fast',40,['SELECT nome','WHERE attivo','INDEX(email)'])],need:3}),
+   B({tray:['SELECT nome','SELECT *','WHERE attivo','INDEX(email)','LIMIT 20'],jobs:[J('I primi venti nomi, in fretta','First twenty names, fast',12,['SELECT nome','LIMIT 20','INDEX(email)']),J('I nomi degli attivi, in fretta','Names of active ones, fast',40,['SELECT nome','WHERE attivo','INDEX(email)'])],need:3}),
+   B({tray:['SELECT nome','SELECT nome,email','WHERE attivo','WHERE id=7','INDEX(email)','LIMIT 20','COUNT(*)'],jobs:[J('Il nome del cliente 7, in fretta','Name of customer 7, fast',6,['SELECT nome','WHERE id=7','INDEX(email)']),J('Quanti attivi','How many active',4,['COUNT(*)','WHERE attivo']),J('I primi venti nomi, in fretta','First twenty names, fast',12,['SELECT nome','LIMIT 20','INDEX(email)'])],need:4}),
+   B({tray:['SELECT nome','WHERE attivo','INDEX(email)','LIMIT 20'],jobs:[J('I nomi degli attivi, in fretta','Names of active ones, fast',40,['SELECT nome','WHERE attivo','INDEX(email)']),J('I primi venti nomi, in fretta','First twenty names, fast',12,['SELECT nome','LIMIT 20','INDEX(email)'])],need:3})]},
+ {t:['A raffica','In bursts'],titles:[['Col cronometro','On the clock'],['Meno tempo','Less time'],['Cinque commesse','Five orders'],['Il picco','The peak'],['Automatico','Automatic']],
+  beats:[B({timer:26,tray:['SELECT *','SELECT nome','SELECT nome,email','WHERE attivo','WHERE id=7','LIMIT 20','COUNT(*)'],jobs:[J('Il nome del cliente 7','The name of customer 7',6,['SELECT nome','WHERE id=7']),J('Quanti attivi','How many active',4,['COUNT(*)','WHERE attivo']),J('I primi venti nomi','The first twenty names',12,['SELECT nome','LIMIT 20'])],need:4}),
+   B({timer:23,tray:['SELECT *','SELECT nome','SELECT nome,email','WHERE attivo','LIMIT 20','ORDER BY data','COUNT(*)'],jobs:[J('I venti più recenti, solo nome','The twenty most recent, name only',12,['SELECT nome','ORDER BY data','LIMIT 20']),J('Quanti clienti','How many customers',4,['COUNT(*)']),J('Nome e email degli attivi','Name and email of active ones',70,['SELECT nome,email','WHERE attivo'])],need:4}),
+   B({timer:21,tray:['SELECT *','SELECT nome','WHERE attivo','WHERE id=7','LIMIT 20','ORDER BY data','INDEX(email)','COUNT(*)'],jobs:[J('I venti attivi più recenti','The twenty most recent active ones',10,['SELECT nome','WHERE attivo','ORDER BY data','LIMIT 20']),J('Il nome del cliente 7','The name of customer 7',6,['SELECT nome','WHERE id=7']),J('Quanti attivi','How many active',4,['COUNT(*)','WHERE attivo'])],need:5}),
+   B({timer:19,tray:['SELECT *','SELECT nome','SELECT nome,email','WHERE attivo','WHERE id=7','LIMIT 20','ORDER BY data','INDEX(email)','COUNT(*)','JOIN ordini'],jobs:[J('Il nome del cliente 7','The name of customer 7',6,['SELECT nome','WHERE id=7']),J('I venti attivi più recenti','The twenty most recent active ones',10,['SELECT nome','WHERE attivo','ORDER BY data','LIMIT 20']),J('Quanti clienti','How many customers',4,['COUNT(*)']),J('I primi venti nomi','The first twenty names',12,['SELECT nome','LIMIT 20'])],need:5}),
+   B({timer:25,tray:['SELECT nome','SELECT nome,email','WHERE attivo','LIMIT 20','COUNT(*)'],jobs:[J('Quanti attivi','How many active',4,['COUNT(*)','WHERE attivo']),J('I primi venti nomi','The first twenty names',12,['SELECT nome','LIMIT 20'])],need:4})]},
+ {t:['Il turno intero','The whole shift'],titles:[['Tutto insieme','All together'],['Senza rete','No net'],['La prova','The test'],['Il picco','The peak'],['Chiusura','Closing']],
+  beats:[B({timer:24,tray:['SELECT *','SELECT nome','SELECT nome,email','WHERE attivo','WHERE id=7','LIMIT 20','ORDER BY data','COUNT(*)'],jobs:[J('I venti attivi più recenti','The twenty most recent active ones',10,['SELECT nome','WHERE attivo','ORDER BY data','LIMIT 20']),J('Quanti attivi','How many active',4,['COUNT(*)','WHERE attivo']),J('Il nome del cliente 7','The name of customer 7',6,['SELECT nome','WHERE id=7'])],need:4}),
+   B({timer:22,tray:['SELECT *','SELECT nome','SELECT nome,email','WHERE attivo','WHERE id=7','LIMIT 20','ORDER BY data','INDEX(email)','COUNT(*)'],jobs:[J('Il nome del cliente 7, in fretta','Name of customer 7, fast',6,['SELECT nome','WHERE id=7','INDEX(email)']),J('Nome e email dei primi venti','Name and email of the first twenty',22,['SELECT nome,email','LIMIT 20']),J('Quanti clienti','How many customers',4,['COUNT(*)'])],need:5}),
+   B({timer:20,tray:['SELECT *','SELECT nome','SELECT nome,email','WHERE attivo','WHERE id=7','LIMIT 20','ORDER BY data','INDEX(email)','COUNT(*)','JOIN ordini'],jobs:[J('I venti attivi più recenti','The twenty most recent active ones',10,['SELECT nome','WHERE attivo','ORDER BY data','LIMIT 20']),J('Quanti attivi','How many active',4,['COUNT(*)','WHERE attivo']),J('Il nome del cliente 7, in fretta','Name of customer 7, fast',6,['SELECT nome','WHERE id=7','INDEX(email)']),J('I primi venti nomi','The first twenty names',12,['SELECT nome','LIMIT 20'])],need:5}),
+   B({timer:18,tray:['SELECT *','SELECT nome','SELECT nome,email','WHERE attivo','WHERE id=7','LIMIT 20','ORDER BY data','INDEX(email)','COUNT(*)','JOIN ordini'],jobs:[J('Quanti attivi','How many active',4,['COUNT(*)','WHERE attivo']),J('I venti attivi più recenti','The twenty most recent active ones',10,['SELECT nome','WHERE attivo','ORDER BY data','LIMIT 20']),J('Il nome del cliente 7','The name of customer 7',6,['SELECT nome','WHERE id=7']),J('Nome e email degli attivi','Name and email of active ones',70,['SELECT nome,email','WHERE attivo']),J('I primi venti nomi','The first twenty names',12,['SELECT nome','LIMIT 20'])],need:6}),
+   B({timer:26,tray:['SELECT nome','WHERE attivo','LIMIT 20','COUNT(*)','ORDER BY data'],jobs:[J('I venti attivi più recenti','The twenty most recent active ones',10,['SELECT nome','WHERE attivo','ORDER BY data','LIMIT 20']),J('Quanti attivi','How many active',4,['COUNT(*)','WHERE attivo'])],need:4})]}];
+const T={it:{over:'Il montacarichi si è sovraccaricato.',overFx:'Hai chiesto più di quello che serviva: il peso di troppo è tutto trasporto sprecato.',overRule:'Si filtra a monte, non dopo: quello che non chiedi non pesa.',
+ miss:'La scheda non porta su quello che era chiesto.',missFx:'La commessa torna indietro vuota.',missRule:'Prima la cosa giusta, poi il risparmio.',
+ a:'SELECT *',b:'COUNT(*)'},
+ en:{over:'The hoist was overloaded.',overFx:'You asked for more than needed: the extra weight is pure wasted transport.',overRule:'Filter upstream, not after: what you do not ask for weighs nothing.',
+ miss:'The card does not bring up what was asked.',missFx:'The order comes back empty.',missRule:'First the right thing, then the saving.',
+ a:'SELECT *',b:'COUNT(*)'}};
+
+class Component extends DCLogic{
+ state={beat:0,chapter:0,lang:'it',paused:false,coach:null,done:false,muted:false,step:0,bad:0};
+ renderVals(){const s=this.state,L=T[s.lang],c=s.coach;
+  return Object.assign(KAIO.vals(this),{
+   coachWhat:c?(c.kind==='over'?L.over:L.miss):'',
+   coachEffect:c?(c.kind==='over'?L.overFx:L.missFx):'',
+   coachRule:c?(c.kind==='over'?L.overRule:L.missRule):'',
+   coachA:L.a,coachB:L.b});
+ }
+ componentDidMount(){KAIO.init(this,{W,H,key:KEY,chapters:CH,onTap:p=>this.tap(p)});
+  KAIO.audio(this);KAIO.drone(this,40,'triangle',.014,120);}
+ componentDidUpdate(pp){KAIO.sync(this,pp)}
+ componentWillUnmount(){KAIO.destroy(this)}
+
+ reset(beat){const c=this.BEATS[beat];this.cfg=c;this.needed=c.need;
+  this.ji=0;this.card=[];this.made=0;this.parts=[];this.load=0;this.loadShown=0;
+  this.shake=0;this.flash=0;this.pulse=0;this.pulseK=null;this.streak={kind:null,n:0};
+  this.timer=c.timer;this.setState({bad:0,step:0})}
+
+ job(){const j=this.cfg.jobs;return j[this.ji%j.length]}
+ trayXY(i){const cols=2,r=Math.floor(i/cols),cc=i%cols,w=W/(cols+.2);
+  return{x:W*.5+(cc-(cols-1)/2)*w,y:TRAYY+r*50}}
+
+ weight(parts){const rows=this.cfg.rows;
+  let w=1,rf=1,sel=false;
+  for(const p of parts){const d=P[p];if(!d)continue;
+   if(p.indexOf('SELECT')===0||p==='COUNT(*)'){w=d.w;sel=true}
+   if(p==='JOIN ordini')w*=d.w;
+   rf*=d.rows}
+  if(!sel)w=1;
+  return Math.max(1,Math.round(rows*rf*w))}
+
+ tap(p){
+  if(Math.hypot(p.x-LEVER.x,p.y-LEVER.y)<44){this.pull();return}
+  if(Math.abs(p.y-CARDY)<44&&this.card.length){this.card.pop();KAIO.snd(this,'fall');return}
+  const tray=this.cfg.tray;
+  for(let i=0;i<tray.length;i++){const q=this.trayXY(i);
+   if(Math.hypot(p.x-q.x,p.y-q.y)<30){
+    if(this.card.indexOf(tray[i])>=0){KAIO.snd(this,'fall');return}
+    if(this.card.length<5){this.card.push(tray[i]);KAIO.snd(this,'pop',{hz:330,v:.13})}
+    else{KAIO.snd(this,'fall');this.shake=.3}
+    return}}}
+
+ pull(){const j=this.job();
+  if(!this.card.length){KAIO.snd(this,'fall');this.shake=.4;return}
+  const w=this.weight(this.card);this.load=w;
+  const has=j.want.every(p=>this.card.indexOf(p)>=0);
+  const noExtra=this.card.every(p=>j.want.indexOf(p)>=0);
+  if(has&&noExtra&&w<=j.budget){
+   this.made++;this.flash=1;this.streak={kind:null,n:0};
+   KAIO.snd(this,'tone',{from:600,to:940,v:.16});KAIO.burst(this.parts,LEVER.x,LEVER.y-40,12,'#d9b448');
+   this.card=[];this.ji++;this.timer=this.cfg.timer;this.setState({step:this.made});
+   if(this.made>=this.needed){KAIO.snd(this,'chime',{notes:[440,587,740]});this.setState({done:true})}
+   return}
+  const kind=has?'over':'miss';
+  this.shake=.8;KAIO.snd(this,'whir');KAIO.burst(this.parts,LEVER.x,LEVER.y-30,9,'#6f8288');
+  const s=this.streak;if(s.kind===kind)s.n++;else{s.kind=kind;s.n=1}
+  if(s.n===2){this.pulse=.8;this.pulseK=j.want.find(p=>this.card.indexOf(p)<0)||j.want[0]}
+  if(s.n>=3){this.setState({coach:{kind}});this.streak={kind:null,n:0}}
+  const bad=this.state.bad+1;this.setState({bad});this.card=[];
+  if(bad>=3)this.reset(this.state.beat)}
+
+ update(dt){
+  if(this.flash>0)this.flash-=dt*3;if(this.shake>0)this.shake-=dt*3.4;if(this.pulse>0)this.pulse-=dt;
+  const target=this.card.length?this.weight(this.card):0;
+  this.loadShown+=(target-this.loadShown)*Math.min(1,dt*6);
+  if(this.cfg.timer){this.timer-=dt;
+   if(this.timer<=0){this.timer=this.cfg.timer;this.shake=.7;KAIO.snd(this,'whir');
+    const bad=this.state.bad+1;this.setState({bad});this.card=[];
+    if(bad>=3)this.reset(this.state.beat)}}
+  this.parts=KAIO.parts(this.parts,dt,420)}
+
+ draw(x){const sc=this.sc||1;x.setTransform(sc,0,0,sc,0,0);x.save();KAIO.shake(x,this.shake);
+  const g=x.createLinearGradient(0,0,0,H);g.addColorStop(0,'#11191f');g.addColorStop(.5,'#0d1316');g.addColorStop(1,'#0a0f12');x.fillStyle=g;x.fillRect(-8,-8,W+16,H+16);
+  x.strokeStyle='rgba(160,190,200,.045)';x.lineWidth=1;
+  for(let i=1;i<8;i++){x.beginPath();x.moveTo(0,i*H/8);x.lineTo(W,i*H/8);x.stroke()}
+  const j=this.job(),it=this.state.lang==='it';
+  x.fillStyle='rgba(232,226,208,.96)';KAIO.rr(x,18,H*.05,W-36,62,4);x.fill();
+  x.textAlign='left';x.textBaseline='middle';
+  let f=16,txt=it?j.ask:j.en;x.font='600 '+f+'px "JetBrains Mono",monospace';
+  while(x.measureText(txt).width>W-64&&f>13){f--;x.font='600 '+f+'px "JetBrains Mono",monospace'}
+  x.fillStyle='rgba(70,60,40,.9)';x.fillText(txt,32,H*.05+24);
+  x.font='500 13px "JetBrains Mono",monospace';x.fillStyle='rgba(120,100,60,.85)';
+  x.fillText((it?'budget ':'budget ')+j.budget,32,H*.05+46);
+  if(this.cfg.timer){const k=Math.max(0,this.timer/this.cfg.timer);
+   x.fillStyle='rgba(201,162,39,.5)';x.fillRect(18,H*.05+58,(W-36)*k,4)}
+  const over=this.loadShown>j.budget;
+  const gx=W-58,gy=H*.2;
+  x.fillStyle='#0e1417';x.beginPath();x.arc(gx,gy,30,0,6.283);x.fill();
+  x.strokeStyle='rgba(201,162,39,.4)';x.lineWidth=2;x.beginPath();x.arc(gx,gy,30,0,6.283);x.stroke();
+  const k=Math.min(1.15,this.loadShown/Math.max(1,j.budget)),a=-2.6+Math.min(1,k)*5.2;
+  x.strokeStyle=over?'#d6603c':'#e8c85a';x.lineWidth=3;
+  x.beginPath();x.moveTo(gx,gy);x.lineTo(gx+Math.cos(a)*22,gy+Math.sin(a)*22);x.stroke();
+  x.fillStyle='#c9a227';x.beginPath();x.arc(gx,gy,3.5,0,6.283);x.fill();
+  x.textAlign='center';x.font='500 15px "JetBrains Mono",monospace';x.fillStyle=over?'#d6603c':'rgba(160,190,200,.7)';
+  x.fillText(String(Math.round(this.loadShown)),gx,gy+46);
+  x.fillStyle='rgba(20,28,34,.7)';KAIO.rr(x,14,CARDY-44,W-104,88,6);x.fill();
+  x.strokeStyle='rgba(201,162,39,.25)';x.lineWidth=1.5;KAIO.rr(x,14,CARDY-44,W-104,88,6);x.stroke();
+  if(!this.card.length){x.textAlign='left';x.font='500 14px "JetBrains Mono",monospace';x.fillStyle='#7e9096';
+   x.fillText(it?'aggiungi i pezzi':'add the parts',30,CARDY)}
+  this.card.forEach((p,i)=>{const cy=CARDY-30+i*18;
+   x.textAlign='left';x.font='600 14px "JetBrains Mono",monospace';x.fillStyle='#e8c85a';
+   x.fillText(p,30,cy)});
+  x.fillStyle='rgba(20,28,34,.55)';KAIO.rr(x,14,TRAYY-32,W-28,H*.28,8);x.fill();
+  this.cfg.tray.forEach((p,i)=>{const q=this.trayXY(i),used=this.card.indexOf(p)>=0,lit=this.pulse>0&&this.pulseK===p;
+   x.font='600 13px "JetBrains Mono",monospace';
+   const w=Math.max(150,x.measureText(p).width+22);
+   x.fillStyle=used?'#1a2429':'#243036';KAIO.rr(x,q.x-w/2,q.y-18,w,36,4);x.fill();
+   x.strokeStyle=lit?'rgba(232,200,90,'+(.4+.5*Math.sin(this.pulse*15))+')':used?'rgba(201,162,39,.2)':'rgba(201,162,39,.42)';
+   x.lineWidth=lit?3:1.8;KAIO.rr(x,q.x-w/2,q.y-18,w,36,4);x.stroke();
+   x.textAlign='center';x.textBaseline='middle';x.fillStyle=used?'rgba(217,180,72,.35)':'#e8c85a';
+   x.fillText(p,q.x,q.y)});
+  x.fillStyle='#243036';x.beginPath();x.arc(LEVER.x,LEVER.y,40,0,6.283);x.fill();
+  x.strokeStyle='rgba(201,162,39,.6)';x.lineWidth=3;x.beginPath();x.arc(LEVER.x,LEVER.y,40,0,6.283);x.stroke();
+  x.font='600 14px "JetBrains Mono",monospace';x.textAlign='center';x.textBaseline='middle';
+  x.fillStyle='#e8c85a';x.fillText(it?'SALI':'HOIST',LEVER.x,LEVER.y);
+  for(let i=0;i<3;i++){const off=i<this.state.bad;
+   x.strokeStyle=off?'rgba(140,110,70,.5)':'rgba(201,162,39,.8)';x.lineWidth=2;
+   x.beginPath();x.arc(24,H*.2+i*22,5.5,0,6.283);off?x.stroke():x.fill()}
+  x.textAlign='left';x.font='500 18px "JetBrains Mono",monospace';x.fillStyle='#7e9096';
+  x.fillText(this.made+'/'+this.needed,52,H*.2);
+  KAIO.drawParts(x,this.parts);
+  if(this.flash>0){x.fillStyle='rgba(232,220,170,'+(this.flash*.06)+')';x.fillRect(0,0,W,H)}
+  if(this.props.diagnostica){x.fillStyle='rgba(160,230,255,.9)';x.font='500 11px "JetBrains Mono",monospace';
+   x.fillText('c'+(this.state.chapter+1)+'.'+(this.state.beat+1)+'  peso '+this.weight(this.card)+'/'+j.budget+'  atteso '+j.want.join('+'),12,H-14)}
+  x.restore()}
+}
+</script>
+</body>
+</html>

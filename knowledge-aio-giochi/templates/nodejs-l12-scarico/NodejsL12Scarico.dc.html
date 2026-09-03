@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Node.js L12 — Lo scarico" description="Livello 12, banda 2: gestione errori. Un errore che nessuno prende in mano sale, e in cima spegne tutto." -->
+<!--
+  SCHEDA (ricerca/00 §0.3) — GIOCO Lo scarico
+  LIVELLO Node.js L12 Gestione Errori, banda 2 — 8 capitoli, 40 lezioni
+  CONCETTO Un errore che nessuno prende in mano non si fermа lì: sale di
+           livello, e se arriva in cima spegne tutto. Alcuni non li prendi
+           col guanto giusto: l'asincrono che non attendi passa attraverso.
+  FORMA instradamento · VERBO afferrare al volo (col guanto giusto)
+  ARCHETIPO ricerca/11 slash, in forma di afferrare a due mani
+  VINCI SE il turno finisce col quadro ancora acceso
+  PERDI SE tre errori arrivano in cima: il quadro salta
+  SBAGLI 1 il guanto sbagliato scivola e l'errore continua a salire
+         2 il guanto giusto pulsa una volta
+         3 coaching, quattro righe, la quarta animata
+  CAPITOLI 1 afferrare · 2 due guanti · 3 FRATTURA l'asincrono passa attraverso
+           4 rilanciare · 5 il guanto in cima · 6 finally · 7 a raffica
+           8 il quadro intero
+  MONDO vano tecnico verticale, banda 2: condotti d'acciaio, guanti appesi,
+        quadro elettrico in cima
+  NUMERI salita 2,8→1,9 s (mai sotto 1,8), tre spie
+  TEST 1 gli errori sono capsule identiche: l'unico segnale è la targhetta
+         del tipo. I guanti non hanno colori diversi.
+  TEST 2 "Afferro ogni errore col guanto che lo tiene, prima che arrivi in cima"
+  TEST 3 un errore sale dal basso e un guanto pende sopra
+-->
+<helmet>
+<script src="./ds-base.js"></script>
+<script src="../kaio-engine.js"></script>
+<style>
+*{box-sizing:border-box}html,body{margin:0;padding:0;height:100%;background:#080b0d}
+@keyframes om-fade{from{opacity:0}to{opacity:1}}
+@keyframes om-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes om-thru{0%{transform:translateY(20px);opacity:0}20%{opacity:1}100%{transform:translateY(-40px);opacity:0}}
+</style>
+</helmet>
+<div style="position:fixed;inset:0;background:radial-gradient(130% 90% at 50% -10%,#131c22 0%,#0c1114 55%,#070a0c 100%);display:grid;place-items:center;font-family:Raleway,system-ui,sans-serif;overflow:hidden;padding:18px">
+<div style="display:flex;align-items:center;justify-content:center;gap:26px;max-width:100%">
+<div style="position:relative;height:min(910px,calc(100vh - 36px),max(480px,calc((100vw - 280px) * 2.1667)));aspect-ratio:420/910;border-radius:24px;overflow:hidden;box-shadow:0 50px 130px -34px rgba(0,0,0,.95),0 0 0 1px rgba(201,162,39,.16);flex:0 0 auto">
+<canvas ref="{{ cvRef }}" style="display:block;width:100%;height:100%;touch-action:none;cursor:pointer"></canvas>
+<sc-if value="{{ coachOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;left:14px;right:14px;top:14px;padding:20px;border-radius:14px;background:linear-gradient(180deg,rgba(20,28,34,.97),rgba(12,17,20,.97));box-shadow:0 24px 60px -18px rgba(0,0,0,.9),inset 0 1px 0 rgba(201,162,39,.22);animation:om-rise .26s cubic-bezier(.16,1,.3,1) both;cursor:pointer">
+<div style="font-size:20px;line-height:1.45;color:#e8e2d0;font-weight:500">{{ coachWhat }}</div>
+<div style="font-size:20px;line-height:1.45;color:#9fb0b4;margin-top:10px">{{ coachEffect }}</div>
+<div style="font-size:20px;line-height:1.45;color:#d9b448;margin-top:14px;font-weight:600">{{ coachRule }}</div>
+<div style="margin-top:18px;height:92px;border-radius:10px;background:rgba(0,0,0,.42);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-around;padding:0 16px">
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7e9096">{{ coachA }}</div>
+<div style="width:34px;height:22px;border-radius:3px;background:#4e6068;position:relative">
+<div style="position:absolute;left:6px;top:0;width:22px;height:18px;border-radius:3px;background:#8a6f20;animation:om-thru 2.2s ease-in-out infinite"></div>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#d9b448">{{ coachB }}</div>
+<div style="width:34px;height:22px;border-radius:3px;background:#c9a227"></div>
+</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ doneOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(70% 50% at 50% 45%,rgba(18,28,34,.92),rgba(6,9,11,.96));animation:om-fade .22s ease both;cursor:pointer">
+<div style="text-align:center;padding:0 30px">
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:34px;font-weight:600;color:#eef0e6">Quadro acceso</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:34px;font-weight:600;color:#eef0e6">Panel still on</div></sc-if>
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#7e9096;margin-top:10px">{{ chapterNo }}/{{ chapterOf }} · {{ chapterTitle }}</div>
+<div style="display:flex;gap:10px;justify-content:center;margin-top:24px">
+<sc-for list="{{ marks }}" as="m" hint-placeholder-count="5">
+<div style="width:34px;height:6px;border-radius:2px;background:rgba(201,162,39,.2);position:relative;overflow:hidden">
+<sc-if value="{{ m.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;background:#c9a227"></div></sc-if>
+</div>
+</sc-for>
+</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#8b9aa0;margin-top:22px">{{ doneHint }}</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ pauseOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;backdrop-filter:blur(9px);background:rgba(8,11,13,.74);display:grid;place-items:center;animation:om-fade .2s ease both;padding:16px;overflow-y:auto">
+<div style="width:290px;padding:24px;border-radius:16px;background:linear-gradient(180deg,rgba(22,30,36,.98),rgba(12,17,20,.98));box-shadow:0 30px 70px -20px rgba(0,0,0,.9),inset 0 1px 0 rgba(201,162,39,.2)">
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#7e9096;font-family:'JetBrains Mono',monospace">In pausa</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#7e9096;font-family:'JetBrains Mono',monospace">Paused</div></sc-if>
+<div style="display:flex;flex-direction:column;gap:9px;margin-top:16px">
+<div onClick="{{ resume }}" style="padding:14px 16px;border-radius:8px;background:#c9a227;color:#14191c;font-size:17px;font-weight:600;text-align:center;cursor:pointer" style-hover="background:#d9b448"><sc-if value="{{ it }}" hint-placeholder-val="{{ true }}">Riprendi</sc-if><sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">Resume</sc-if></div>
+<div onClick="{{ toggleLang }}" style="padding:13px 16px;border-radius:8px;background:rgba(201,162,39,.1);color:#dfe4dc;font-size:16px;display:flex;justify-content:space-between;cursor:pointer"><span>Lingua</span><span style="font-family:'JetBrains Mono',monospace;color:#d9b448">{{ langLabel }}</span></div>
+<div onClick="{{ toggleMute }}" style="padding:13px 16px;border-radius:8px;background:rgba(201,162,39,.1);color:#dfe4dc;font-size:16px;display:flex;justify-content:space-between;cursor:pointer"><span>Audio</span><span style="font-family:'JetBrains Mono',monospace;color:#d9b448">{{ audioState }}</span></div>
+<div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#7e9096;font-family:'JetBrains Mono',monospace;margin-top:12px">Capitolo</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px">
+<sc-for list="{{ chapters }}" as="c" hint-placeholder-count="8">
+<div onClick="{{ c.go }}" style="padding:10px 0;border-radius:6px;background:rgba(201,162,39,.1);color:#dfe4dc;font-family:'JetBrains Mono',monospace;font-size:14px;text-align:center;cursor:pointer;position:relative">{{ c.n }}
+<sc-if value="{{ c.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:50%;bottom:4px;width:12px;height:2px;margin-left:-6px;background:#c9a227"></div></sc-if>
+</div>
+</sc-for>
+</div>
+<div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#7e9096;font-family:'JetBrains Mono',monospace;margin-top:10px">Lezione</div>
+<div style="display:flex;gap:7px">
+<sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+<div onClick="{{ l.go }}" style="flex:1;padding:11px 0;border-radius:6px;background:rgba(201,162,39,.1);color:#dfe4dc;font-family:'JetBrains Mono',monospace;font-size:15px;text-align:center;cursor:pointer;position:relative">{{ l.n }}
+<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:50%;bottom:5px;width:14px;height:2px;margin-left:-7px;background:#c9a227"></div></sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</div>
+</sc-if>
+</div>
+<div style="flex:0 1 212px;min-width:0;min-height:0;max-height:min(910px,calc(100vh - 36px));overflow-y:auto;display:flex;flex-direction:column;gap:14px;padding-right:4px;color:#9fb0b4">
+<div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#7e9096">L12 · Errori · banda 2</div>
+<div style="font-size:23px;font-weight:600;color:#e8e2d0;margin-top:4px;line-height:1.2">Lo scarico</div>
+<div style="font-size:14px;line-height:1.5;color:#7e9096;margin-top:8px">Afferrare col guanto giusto · 8 capitoli</div>
+</div>
+<div style="height:1px;background:rgba(201,162,39,.16)"></div>
+<div style="display:flex;flex-direction:column;gap:5px">
+<sc-for list="{{ chapters }}" as="c" hint-placeholder-count="8">
+<div onClick="{{ c.go }}" style="padding:9px 11px;border-radius:8px;background:rgba(201,162,39,.06);cursor:pointer;display:flex;gap:10px;align-items:baseline" style-hover="background:rgba(201,162,39,.14)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#d9b448;width:12px">{{ c.n }}</div>
+<div style="flex:1;min-width:0">
+<div style="font-size:14px;color:#dfe4dc;line-height:1.3">{{ c.title }}</div>
+<sc-if value="{{ c.on }}" hint-placeholder-val="{{ false }}"><div style="height:2px;background:#c9a227;margin-top:6px"></div></sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="height:1px;background:rgba(201,162,39,.16)"></div>
+<div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7e9096;margin-bottom:6px">Lezione {{ chapterNo }}.x</div>
+<div style="display:flex;flex-direction:column;gap:5px">
+<sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+<div onClick="{{ l.go }}" style="padding:8px 11px;border-radius:6px;background:rgba(201,162,39,.05);cursor:pointer;display:flex;gap:10px;align-items:baseline" style-hover="background:rgba(201,162,39,.13)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7e9096;width:12px">{{ l.n }}</div>
+<div style="flex:1;min-width:0">
+<div style="font-size:13px;color:#9fb0b4;line-height:1.3">{{ l.title }}</div>
+<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><div style="height:2px;background:#c9a227;margin-top:5px"></div></sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="font-size:13px;line-height:1.55;color:#7e9096">Tocca il guanto che tiene quel tipo di errore mentre sale. L'asincrono che nessuno attende passa attraverso <span style="font-family:'JetBrains Mono',monospace;color:#d9b448">try/catch</span>: per quello serve l'altro guanto. <span style="color:#7e9096">Esc</span> per la pausa.</div>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:940,&quot;height&quot;:1000},&quot;capitolo&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;,&quot;6&quot;,&quot;7&quot;,&quot;8&quot;],&quot;default&quot;:&quot;1&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;lezione&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;],&quot;default&quot;:&quot;1&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;lingua&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;it&quot;,&quot;en&quot;],&quot;default&quot;:&quot;it&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;diagnostica&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Taratura&quot;}}">
+const W=420,H=910,KEY='kaio.l12.scarico';
+const TOPY=H*.16,BOTY=H*.72,GLOVEY=H*.82;
+/* Guanti: quale tipo di errore tengono davvero.
+   try = sincrono · catch-async = await dentro try · onRejected = .catch()
+   process = handler globale (ultima rete) · finally = non ferma, ripulisce */
+const G={
+ 'try/catch':{holds:['sync','throw']},
+ '.catch()':{holds:['promise','reject']},
+ 'await+try':{holds:['await','reject']},
+ 'process.on':{holds:['sync','throw','promise','reject','await','uncaught']},
+ 'finally':{holds:[]}};
+const B=(o)=>Object.assign({gloves:['try/catch'],errs:['sync'],need:5,rise:2.8,rethrow:false},o);
+const CH=[
+ {t:['Afferrare','Catching'],titles:[['Il primo errore','First error'],['Ancora uno','One more'],['Due che salgono','Two rising'],['Più svelto','Quicker'],['Il ritmo','The rhythm']],
+  beats:[B({gloves:['try/catch'],errs:['sync'],need:3,rise:3.4}),
+   B({gloves:['try/catch'],errs:['sync','throw'],need:4,rise:3.2}),
+   B({gloves:['try/catch','finally'],errs:['sync','throw'],need:5,rise:3.0}),
+   B({gloves:['try/catch','finally'],errs:['sync','throw','sync'],need:6,rise:2.2}),
+   B({gloves:['try/catch','finally'],errs:['sync','throw'],need:5,rise:2.9})]},
+ {t:['Due guanti','Two gloves'],titles:[['Il guanto delle promesse','The promise glove'],['Non quello','Not that one'],['Due tipi','Two kinds'],['Stretti','Tight'],['A occhio','At a glance']],
+  beats:[B({gloves:['try/catch','.catch()'],errs:['sync','promise'],need:4,rise:3.2}),
+   B({gloves:['try/catch','.catch()'],errs:['sync','promise','reject'],need:5,rise:3.0}),
+   B({gloves:['try/catch','.catch()','finally'],errs:['throw','promise','reject'],need:5,rise:2.8}),
+   B({gloves:['try/catch','.catch()','finally'],errs:['sync','promise','reject','throw'],need:6,rise:2.1}),
+   B({gloves:['try/catch','.catch()'],errs:['sync','promise','reject'],need:5,rise:2.8})]},
+ {t:["L'asincrono passa attraverso",'Async passes through'],titles:[['Sembra preso','Looks caught'],['Passa attraverso','Passes through'],['Serve await','await is needed'],['Tre guanti','Three gloves'],['Adesso lo sai','Now you know']],
+  beats:[B({gloves:['try/catch','await+try'],errs:['await','sync'],need:4,rise:3.2}),
+   B({gloves:['try/catch','await+try'],errs:['await','sync','await'],need:5,rise:3.0}),
+   B({gloves:['try/catch','await+try','.catch()'],errs:['await','promise','sync'],need:5,rise:2.8}),
+   B({gloves:['try/catch','await+try','.catch()','finally'],errs:['await','promise','sync','reject'],need:6,rise:2.1}),
+   B({gloves:['try/catch','await+try','.catch()'],errs:['await','sync','promise'],need:5,rise:2.8})]},
+ {t:['Rilanciare','Rethrowing'],titles:[['Preso e rilanciato','Caught and rethrown'],['Sale di nuovo','Rises again'],['Due volte','Twice'],['Chi lo prende dopo','Who catches next'],['Padronanza','Mastery']],
+  beats:[B({rethrow:true,gloves:['try/catch','.catch()'],errs:['sync','promise'],need:4,rise:3.2}),
+   B({rethrow:true,gloves:['try/catch','.catch()','process.on'],errs:['sync','promise','throw'],need:5,rise:3.0}),
+   B({rethrow:true,gloves:['try/catch','await+try','process.on'],errs:['await','sync','throw'],need:5,rise:2.8}),
+   B({rethrow:true,gloves:['try/catch','await+try','.catch()','process.on'],errs:['await','promise','sync','reject'],need:6,rise:2.1}),
+   B({rethrow:true,gloves:['try/catch','.catch()','process.on'],errs:['sync','promise','throw'],need:5,rise:2.8})]},
+ {t:['Il guanto in cima','The glove at the top'],titles:[['La rete finale','The final net'],['Ultima presa','Last catch'],['Non la prima scelta','Not the first choice'],['Quattro guanti','Four gloves'],['Padronanza','Mastery']],
+  beats:[B({gloves:['process.on'],errs:['uncaught'],need:3,rise:3.2}),
+   B({gloves:['try/catch','process.on'],errs:['sync','uncaught'],need:4,rise:3.0}),
+   B({gloves:['try/catch','.catch()','process.on'],errs:['sync','promise','uncaught'],need:5,rise:2.8}),
+   B({gloves:['try/catch','await+try','.catch()','process.on'],errs:['sync','await','promise','uncaught'],need:6,rise:2.1}),
+   B({gloves:['try/catch','.catch()','process.on'],errs:['sync','promise','uncaught'],need:5,rise:2.8})]},
+ {t:['finally','finally'],titles:[['Non ferma niente','It stops nothing'],['Ripulisce','It cleans up'],['Serve comunque','Still needed'],['Con gli altri','With the others'],['Padronanza','Mastery']],
+  beats:[B({gloves:['try/catch','finally'],errs:['sync','throw'],need:4,rise:3.2}),
+   B({gloves:['try/catch','finally','.catch()'],errs:['sync','promise'],need:5,rise:3.0}),
+   B({gloves:['try/catch','finally','await+try'],errs:['await','sync'],need:5,rise:2.8}),
+   B({gloves:['try/catch','finally','await+try','.catch()','process.on'],errs:['await','promise','sync','uncaught'],need:6,rise:2.1}),
+   B({gloves:['try/catch','finally','.catch()'],errs:['sync','promise','throw'],need:5,rise:2.9})]},
+ {t:['A raffica','In bursts'],titles:[['Due in condotto','Two in the duct'],['Meno tempo','Less time'],['Sei errori','Six errors'],['Il picco','The peak'],['Automatico','Automatic']],
+  beats:[B({gloves:['try/catch','await+try','.catch()','process.on'],errs:['sync','await','promise','reject','throw'],need:6,rise:2.3}),
+   B({gloves:['try/catch','await+try','.catch()','process.on'],errs:['sync','await','promise','reject','uncaught','throw'],need:7,rise:2.1}),
+   B({gloves:['try/catch','await+try','.catch()','finally','process.on'],errs:['await','promise','sync','reject','uncaught'],need:7,rise:2.0}),
+   B({gloves:['try/catch','await+try','.catch()','finally','process.on'],errs:['sync','await','promise','reject','uncaught','throw','await'],need:8,rise:1.9}),
+   B({gloves:['try/catch','await+try','.catch()','process.on'],errs:['sync','await','promise','throw'],need:6,rise:2.4})]},
+ {t:['Il quadro intero','The whole panel'],titles:[['Tutto insieme','All together'],['Senza rete','No net'],['La prova','The test'],['Il picco','The peak'],['Chiusura','Closing']],
+  beats:[B({rethrow:true,gloves:['try/catch','await+try','.catch()','process.on'],errs:['sync','await','promise','reject','throw'],need:6,rise:2.4}),
+   B({rethrow:true,gloves:['try/catch','await+try','.catch()','finally','process.on'],errs:['sync','await','promise','reject','uncaught','throw'],need:7,rise:2.2}),
+   B({rethrow:true,gloves:['try/catch','await+try','.catch()','finally','process.on'],errs:['await','promise','sync','reject','uncaught','throw','await'],need:8,rise:2.0}),
+   B({rethrow:true,gloves:['try/catch','await+try','.catch()','finally','process.on'],errs:['sync','await','promise','reject','uncaught','throw','await','promise'],need:9,rise:1.9}),
+   B({gloves:['try/catch','await+try','.catch()','process.on'],errs:['sync','await','promise','throw'],need:6,rise:2.6})]}];
+const T={it:{through:'Il guanto non lo ha tenuto: gli è passato attraverso.',throughFx:'Un errore asincrono che nessuno attende non si ferma nel try: continua a salire.',throughRule:'Per tenerlo serve await dentro il try, o il guanto delle promesse.',
+ top:'Un errore è arrivato in cima.',topFx:'Nessuno lo ha preso lungo il condotto: il quadro ha saltato.',topRule:'Chi non viene preso sale sempre di un livello.',
+ a:'try senza await',b:'await dentro try'},
+ en:{through:'The glove did not hold it: it passed straight through.',throughFx:'An async error nobody awaits does not stop in the try: it keeps rising.',throughRule:'To hold it you need await inside the try, or the promise glove.',
+ top:'An error reached the top.',topFx:'Nobody caught it along the duct: the panel tripped.',topRule:'Whatever is not caught always rises one level.',
+ a:'try without await',b:'await inside try'}};
+const LBL={sync:'TypeError',throw:'throw',promise:'rejection',reject:'reject()',await:'await',uncaught:'uncaught'};
+
+class Component extends DCLogic{
+ state={beat:0,chapter:0,lang:'it',paused:false,coach:null,done:false,muted:false,step:0,bad:0};
+ renderVals(){const s=this.state,L=T[s.lang],c=s.coach;
+  return Object.assign(KAIO.vals(this),{
+   coachWhat:c?(c.kind==='through'?L.through:L.top):'',
+   coachEffect:c?(c.kind==='through'?L.throughFx:L.topFx):'',
+   coachRule:c?(c.kind==='through'?L.throughRule:L.topRule):'',
+   coachA:L.a,coachB:L.b});
+ }
+ componentDidMount(){KAIO.init(this,{W,H,key:KEY,chapters:CH,onTap:p=>this.tap(p)});
+  KAIO.audio(this);KAIO.drone(this,47,'sawtooth',.014,120);}
+ componentDidUpdate(pp){KAIO.sync(this,pp)}
+ componentWillUnmount(){KAIO.destroy(this)}
+
+ reset(beat){const c=this.BEATS[beat];this.cfg=c;this.needed=c.need;
+  this.errs=[];this.ei=0;this.spawnT=.7;this.made=0;this.parts=[];
+  this.shake=0;this.flash=0;this.pulse=0;this.pulseG=-1;this.streak={kind:null,n:0};this.zap=0;
+  this.setState({bad:0,step:0})}
+
+ gloveXY(i){const n=this.cfg.gloves.length,w=W/(n+.3);
+  return{x:W*.5+(i-(n-1)/2)*w,y:GLOVEY}}
+
+ tap(p){
+  for(let i=0;i<this.cfg.gloves.length;i++){const q=this.gloveXY(i);
+   if(Math.hypot(p.x-q.x,p.y-q.y)<40){this.grab(i);return}}
+  KAIO.snd(this,'fall')}
+
+ grab(gi){const g=this.cfg.gloves[gi],holds=G[g].holds;
+  const target=this.errs.find(e=>!e.dead&&e.y<BOTY&&e.y>TOPY-20);
+  if(!target){KAIO.snd(this,'fall');return}
+  if(holds.indexOf(target.kind)>=0){
+   if(this.cfg.rethrow&&!target.re&&Math.random()<.4&&g!=='process.on'){
+    target.re=true;target.y=BOTY-20;target.kind=target.kind==='sync'?'uncaught':target.kind;
+    KAIO.snd(this,'pop',{hz:380,v:.14});return}
+   target.dead=true;this.made++;this.flash=1;this.streak={kind:null,n:0};
+   KAIO.snd(this,'click',{hz:1500,v:.3});KAIO.burst(this.parts,this.gloveXY(gi).x,target.y,10,'#e8c85a');
+   this.setState({step:this.made});
+   if(this.made>=this.needed){KAIO.snd(this,'chime',{notes:[440,587,740]});this.setState({done:true})}
+   return}
+  if(g==='finally'){KAIO.snd(this,'fall');KAIO.burst(this.parts,this.gloveXY(gi).x,target.y,5,'#6f8288');return}
+  target.thru=.4;KAIO.snd(this,'whoosh');this.shake=.4;
+  this.err('through')}
+
+ err(kind){const s=this.streak;if(s.kind===kind)s.n++;else{s.kind=kind;s.n=1}
+  if(s.n===2){this.pulse=.9;
+   const t=this.errs.find(e=>!e.dead);
+   if(t)this.pulseG=this.cfg.gloves.findIndex(g=>G[g].holds.indexOf(t.kind)>=0)}
+  if(s.n>=3){this.setState({coach:{kind}});this.streak={kind:null,n:0}}}
+
+ update(dt){const c=this.cfg;
+  if(this.flash>0)this.flash-=dt*3;if(this.shake>0)this.shake-=dt*3.4;
+  if(this.pulse>0)this.pulse-=dt;if(this.zap>0)this.zap-=dt*2;
+  this.spawnT-=dt;
+  const live=this.errs.filter(e=>!e.dead).length;
+  if(this.spawnT<=0&&live<2&&this.ei<this.needed+3){
+   const k=c.errs[this.ei%c.errs.length];
+   this.errs.push({kind:k,y:BOTY+30,dead:false,thru:0,re:false,wob:Math.random()*6.28});
+   this.ei++;this.spawnT=c.rise*.7}
+  const v=(BOTY-TOPY+40)/c.rise;
+  for(const e of this.errs){if(e.dead)continue;
+   e.wob+=dt*2;if(e.thru>0)e.thru-=dt;
+   e.y-=v*dt;
+   if(e.y<TOPY-16){e.dead=true;this.zap=1;this.shake=.9;KAIO.snd(this,'crash');
+    KAIO.burst(this.parts,W/2,TOPY,14,'#d6603c');
+    const bad=this.state.bad+1;this.setState({bad});this.err('top');
+    if(bad>=3)this.reset(this.state.beat)}}
+  this.errs=this.errs.filter(e=>!e.dead);
+  this.parts=KAIO.parts(this.parts,dt,320)}
+
+ draw(x){const sc=this.sc||1;x.setTransform(sc,0,0,sc,0,0);x.save();KAIO.shake(x,this.shake);
+  const g=x.createLinearGradient(0,0,0,H);g.addColorStop(0,'#11191f');g.addColorStop(.5,'#0d1316');g.addColorStop(1,'#0a0f12');x.fillStyle=g;x.fillRect(-8,-8,W+16,H+16);
+  x.strokeStyle='rgba(160,190,200,.045)';x.lineWidth=1;
+  for(let i=1;i<8;i++){x.beginPath();x.moveTo(0,i*H/8);x.lineTo(W,i*H/8);x.stroke()}
+  x.fillStyle='#151e23';x.fillRect(W/2-52,TOPY,104,BOTY-TOPY+40);
+  x.strokeStyle='rgba(201,162,39,.14)';x.lineWidth=2;x.strokeRect(W/2-52,TOPY,104,BOTY-TOPY+40);
+  const it=this.state.lang==='it';
+  const zap=this.zap>0;
+  x.fillStyle=zap?'#4a1c12':'#243036';KAIO.rr(x,W/2-84,TOPY-70,168,60,6);x.fill();
+  x.strokeStyle=zap?'#d6603c':'rgba(201,162,39,.5)';x.lineWidth=zap?4:2.5;KAIO.rr(x,W/2-84,TOPY-70,168,60,6);x.stroke();
+  x.font='600 14px "JetBrains Mono",monospace';x.textAlign='center';x.textBaseline='middle';
+  x.fillStyle=zap?'#f0b8a4':'#e8c85a';x.fillText(it?'QUADRO':'PANEL',W/2,TOPY-52);
+  for(let i=0;i<3;i++){const off=i<this.state.bad;
+   x.fillStyle=off?'rgba(120,60,40,.8)':'rgba(232,200,90,.9)';
+   x.beginPath();x.arc(W/2-24+i*24,TOPY-28,6,0,6.283);x.fill()}
+  for(const e of this.errs){if(e.dead)continue;this.capsule(x,e)}
+  this.cfg.gloves.forEach((gn,i)=>{const q=this.gloveXY(i),lit=this.pulse>0&&this.pulseG===i;
+   x.font='600 12px "JetBrains Mono",monospace';
+   const w=Math.max(84,x.measureText(gn).width+18);
+   x.fillStyle='#8a6f20';KAIO.rr(x,q.x-w/2,q.y-26,w,52,6);x.fill();
+   x.strokeStyle=lit?'rgba(255,236,180,'+(.5+.5*Math.sin(this.pulse*15))+')':'rgba(232,200,90,.55)';
+   x.lineWidth=lit?3.5:2;KAIO.rr(x,q.x-w/2,q.y-26,w,52,6);x.stroke();
+   x.fillStyle='#c9a227';KAIO.rr(x,q.x-10,q.y-38,20,14,3);x.fill();
+   x.textAlign='center';x.textBaseline='middle';x.fillStyle='rgba(24,18,4,.9)';
+   x.fillText(gn,q.x,q.y)});
+  x.textAlign='left';x.font='500 18px "JetBrains Mono",monospace';x.fillStyle='#7e9096';
+  x.fillText(this.made+'/'+this.needed,20,H*.08);
+  KAIO.drawParts(x,this.parts);
+  if(this.flash>0){x.fillStyle='rgba(232,220,170,'+(this.flash*.06)+')';x.fillRect(0,0,W,H)}
+  if(this.zap>0){x.fillStyle='rgba(214,96,60,'+(this.zap*.16)+')';x.fillRect(0,0,W,H)}
+  if(this.props.diagnostica){x.fillStyle='rgba(160,230,255,.9)';x.font='500 11px "JetBrains Mono",monospace';
+   const t=this.errs.find(e=>!e.dead);
+   x.fillText('c'+(this.state.chapter+1)+'.'+(this.state.beat+1)+'  in salita '+(t?t.kind:'—'),12,H-14)}
+  x.restore()}
+
+ capsule(x,e){const w=92,h=42,cx=W/2+Math.sin(e.wob)*4,cy=e.y;
+  x.fillStyle='rgba(0,0,0,.42)';KAIO.rr(x,cx-w/2+3,cy-h/2+4,w,h,6);x.fill();
+  const g=x.createLinearGradient(0,cy-h/2,0,cy+h/2);
+  g.addColorStop(0,e.re?'#7a5a2a':'#5c7076');g.addColorStop(1,e.re?'#5a3f18':'#3f4f56');x.fillStyle=g;
+  KAIO.rr(x,cx-w/2,cy-h/2,w,h,6);x.fill();
+  x.strokeStyle=e.thru>0?'#d6603c':'rgba(160,190,200,.35)';x.lineWidth=e.thru>0?3:1.4;
+  KAIO.rr(x,cx-w/2,cy-h/2,w,h,6);x.stroke();
+  let f=14;x.font='600 '+f+'px "JetBrains Mono",monospace';
+  const t=LBL[e.kind]||e.kind;
+  while(x.measureText(t).width>w-14&&f>13){f--;x.font='600 '+f+'px "JetBrains Mono",monospace'}
+  x.textAlign='center';x.textBaseline='middle';x.fillStyle='rgba(232,238,240,.95)';x.fillText(t,cx,cy);
+  if(e.re){x.font='500 13px "JetBrains Mono",monospace';x.fillStyle='#ffe6b4';
+   x.fillText('rethrown',cx,cy+h/2+9)}}
+}
+</script>
+</body>
+</html>

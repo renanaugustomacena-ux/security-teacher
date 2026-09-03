@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Inglese L0 — Sotto la Rocca · La taverna" description="Galleria 2 della campagna di inglese (Sopravvivenza, 30 frasi dell'app): 6 turni × 5. Loop Tapper: servi al cliente la frase inglese che risponde a ciò che chiede. Registro R10 Fiera e baraccone." -->
+<!--
+  SCHEDA DI PROGETTO (ricerca/00 §0.3) + SCHEDA VISIVA (ricerca/42 §42.3)
+  GIOCO ...... Sotto la Rocca — galleria 2: La taverna
+  TOPIC ...... Inglese, L0 Sopravvivenza (js/data/lessons-level-0.js: 3 lezioni × 10 frasi)
+  CONCETTO ... In uno scambio vero la frase si riconosce intera e in fretta: ciò che
+               una persona vuole dire (italiano) ↔ la frase inglese che lo dice.
+  FORMA ...... corrispondenza + simultaneità   VERBO ... servire la frase giusta al cliente giusto
+  ARCHETIPO .. Tapper (ricerca/41.7 ★★★), gestione del tempo (ricerca/10)
+  VINCI SE ... i clienti del turno sono serviti tutti (need)
+  PERDI SE ... tre clienti arrivano alla cassa senza essere serviti: il turno ricomincia
+  SBAGLI ..... 1 il cliente respinge la carta (scivola indietro), fumetto che trema, tonfo
+               2 alla seconda, la carta giusta si accende
+               3 coaching: cosa hai servito, cosa voleva dire, la frase intera
+  CAPITOLI ... 1 il primo cliente · 2 due banconi · 3 la fila · 4 FRATTURA il ripensamento
+               (il cliente cambia richiesta a metà bancone) · 5 il vassoio pieno · 6 la serata
+  MONDO ...... la taverna sotto la Rocca: tendone a strisce, lampadine, quattro banconi
+               di legno, avventurieri che parlano italiano nei fumetti, il vassoio con le
+               insegne dipinte in inglese; l'oste sei tu
+  REGISTRO ... R10 Fiera e baraccone: rosso/crema, legno, ottone, lampadine calde
+               figura: gli avventurieri (cappelli diversi, facce) · suolo: il bancone
+               movimento: passo che ondeggia, carta che scivola sul bancone, pop
+               carattere: Alfa Slab One per l'insegna, Baloo 2 per le carte
+  NUMERI ..... cammino 11→17 px/s su 300 px (27→18 s di pazienza); arrivi 5,5→3,2 s;
+               scivolata 0,5 s; clienti insieme 1→4; carte sul vassoio 2→4
+  TEST 1 ..... le carte sono tutte uguali (stessa insegna): cambia solo la frase. La
+               posizione sul vassoio è casuale e cambia a ogni cliente. Si vince solo
+               capendo cosa dice il fumetto e quale frase inglese lo dice.
+  TEST 2 ..... "Servo al cliente la frase inglese che risponde a ciò che chiede, prima
+               che arrivi alla cassa"
+  TEST 3 ..... un avventuriero entra da sinistra con un fumetto, sul vassoio compare
+               una carta con la sua frase: la si trascina verso di lui
+-->
+<helmet>
+<script src="./ds-base.js"></script>
+<script src="../kaio-engine.js"></script>
+<script src="./taverna.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}html,body{margin:0;padding:0;height:100%;background:#070605}
+@keyframes om-fade{from{opacity:0}to{opacity:1}}
+@keyframes om-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes om-lamp{0%,100%{box-shadow:0 0 10px 3px rgba(255,179,0,.55)}50%{box-shadow:0 0 16px 6px rgba(255,179,0,.85)}}
+</style>
+</helmet>
+<div style="position:fixed;inset:0;background:radial-gradient(120% 80% at 50% -10%,#1a1208 0%,#0c0906 55%,#070605 100%);display:grid;place-items:center;font-family:Raleway,system-ui,sans-serif;overflow:hidden;padding:18px">
+<div style="display:flex;align-items:center;justify-content:center;gap:28px;max-width:100%">
+<div style="position:relative;height:min(910px,calc(100vh - 36px),max(480px,calc((100vw - 300px) * 2.1667)));aspect-ratio:420/910;border-radius:24px;overflow:hidden;box-shadow:0 50px 130px -34px rgba(0,0,0,.95),0 0 0 1px rgba(246,231,200,.12);flex:0 0 auto;background:#2A1A10">
+<canvas ref="{{ cvRef }}" style="display:block;width:100%;height:100%;touch-action:none;cursor:pointer"></canvas>
+<sc-if value="{{ coachOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;left:14px;right:14px;top:150px;padding:20px 20px 16px;border-radius:18px;background:linear-gradient(180deg,#FFF4D6,#F3E2BF);box-shadow:0 24px 60px -18px rgba(0,0,0,.9),inset 0 0 0 3px #C8102E,inset 0 0 0 5px #FFF4D6;animation:om-rise .26s cubic-bezier(.16,1,.3,1) both;cursor:pointer">
+<div style="font-family:'Alfa Slab One','Baloo 2',serif;font-size:20px;line-height:1.3;color:#1D4E89">{{ coachWhat }}</div>
+<div style="font-size:18px;line-height:1.45;color:#2b1a05;margin-top:10px">{{ coachEffect }}</div>
+<div style="font-size:17px;line-height:1.45;color:#C8102E;margin-top:14px;font-weight:600">{{ coachRule }}</div>
+<div style="margin-top:14px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#7a6a55;letter-spacing:.05em">{{ coachHint }}</div>
+</div>
+</sc-if>
+<sc-if value="{{ doneOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(70% 50% at 50% 45%,rgba(60,32,14,.9),rgba(14,8,5,.96));animation:om-fade .22s ease both;cursor:pointer">
+<div style="text-align:center;padding:0 28px">
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#a3937a">Turno servito</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#a3937a">Round served</div></sc-if>
+<div style="font-family:'Alfa Slab One','Baloo 2',serif;font-size:30px;line-height:1.2;color:#FFF4D6;margin-top:14px">{{ servedNo }} / {{ needNo }}</div>
+<div style="font-size:17px;line-height:1.4;color:#a3937a;margin-top:12px">{{ chapterNo }}/{{ chapterOf }} · {{ chapterTitle }}</div>
+<div style="display:flex;gap:10px;justify-content:center;margin-top:16px">
+<sc-for list="{{ marks }}" as="m" hint-placeholder-count="5">
+<div style="width:34px;height:6px;border-radius:3px;background:rgba(255,179,0,.2);position:relative;overflow:hidden">
+<sc-if value="{{ m.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;background:#FFB300"></div></sc-if>
+</div>
+</sc-for>
+</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#a3937a;margin-top:22px;letter-spacing:.04em">{{ doneHint }}</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ pauseOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;backdrop-filter:blur(9px);background:rgba(10,8,6,.72);display:grid;place-items:center;animation:om-fade .2s ease both;padding:16px;overflow-y:auto">
+<div style="width:290px;padding:24px;border-radius:20px;background:linear-gradient(180deg,#2e2014,#1a120b);box-shadow:0 30px 70px -20px rgba(0,0,0,.9),inset 0 1px 0 rgba(246,231,200,.16)">
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace">In pausa</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace">Paused</div></sc-if>
+<div style="display:flex;flex-direction:column;gap:9px;margin-top:16px">
+<div onClick="{{ resume }}" style="padding:14px 16px;border-radius:12px;background:#FFB300;color:#1a120b;font-size:17px;font-weight:600;text-align:center;cursor:pointer" style-hover="background:#ffc233"><sc-if value="{{ it }}" hint-placeholder-val="{{ true }}">Riprendi</sc-if><sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">Resume</sc-if></div>
+<div onClick="{{ toggleLang }}" style="padding:13px 16px;border-radius:12px;background:rgba(246,231,200,.08);color:#e8d9bd;font-size:16px;display:flex;justify-content:space-between;cursor:pointer" style-hover="background:rgba(246,231,200,.16)"><span><sc-if value="{{ it }}" hint-placeholder-val="{{ true }}">Lingua</sc-if><sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">Language</sc-if></span><span style="font-family:'JetBrains Mono',monospace;color:#FFB300">{{ langLabel }}</span></div>
+<div onClick="{{ toggleMute }}" style="padding:13px 16px;border-radius:12px;background:rgba(246,231,200,.08);color:#e8d9bd;font-size:16px;display:flex;justify-content:space-between;cursor:pointer" style-hover="background:rgba(246,231,200,.16)"><span>Audio</span><span style="font-family:'JetBrains Mono',monospace;color:#FFB300">{{ audioState }}</span></div>
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace;margin-top:12px">Serata</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace;margin-top:12px">Evening</div></sc-if>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px">
+<sc-for list="{{ chapters }}" as="c" hint-placeholder-count="6">
+<div onClick="{{ c.go }}" style="padding:10px 0;border-radius:9px;background:rgba(246,231,200,.08);color:#e8d9bd;font-family:'JetBrains Mono',monospace;font-size:14px;text-align:center;cursor:pointer;position:relative" style-hover="background:rgba(246,231,200,.18)">{{ c.n }}
+<sc-if value="{{ c.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:50%;bottom:4px;width:12px;height:2px;margin-left:-6px;background:#FFB300;border-radius:1px"></div></sc-if>
+</div>
+</sc-for>
+</div>
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace;margin-top:10px">Turno</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace;margin-top:10px">Round</div></sc-if>
+<div style="display:flex;gap:7px">
+<sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+<div onClick="{{ l.go }}" style="flex:1;padding:11px 0;border-radius:10px;background:rgba(246,231,200,.08);color:#e8d9bd;font-family:'JetBrains Mono',monospace;font-size:15px;text-align:center;cursor:pointer;position:relative" style-hover="background:rgba(246,231,200,.18)">{{ l.n }}
+<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:50%;bottom:5px;width:14px;height:2px;margin-left:-7px;background:#FFB300;border-radius:1px"></div></sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</div>
+</sc-if>
+</div>
+<div style="flex:0 1 240px;min-width:0;min-height:0;max-height:min(910px,calc(100vh - 36px));overflow-y:auto;display:flex;flex-direction:column;gap:14px;padding-right:4px;color:#b6a68b">
+<div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#a3937a">Inglese · L0 Sopravvivenza</div>
+<div style="font-family:'Alfa Slab One','Baloo 2',serif;font-size:24px;color:#F6E7C8;margin-top:4px;line-height:1.15">La taverna</div>
+<div style="font-size:14px;line-height:1.5;color:#8d7f68;margin-top:6px">Sotto la Rocca · galleria 2 · servire la frase / serve the phrase · 6 serate, 30 frasi</div>
+</div>
+<div style="flex:0 0 auto;border-radius:14px;overflow:hidden;box-shadow:0 20px 50px -20px rgba(0,0,0,.9);background:#1F2A24;border:6px solid #7A4A2A">
+<div style="height:22px;background:repeating-linear-gradient(90deg,#C8102E 0 14px,#FFF4D6 14px 28px)"></div>
+<div style="padding:12px 12px 8px;font-family:'Alfa Slab One','Baloo 2',serif;font-size:13px;letter-spacing:.08em;color:#E8E4D8;text-align:center;border-bottom:1px dashed rgba(232,228,216,.3)">MENÙ DELLA SERA</div>
+<div onClick="{{ goCh1 }}" style="display:flex;gap:10px;align-items:center;padding:10px 12px;cursor:pointer" style-hover="background:rgba(232,228,216,.06)"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#FFB300;width:14px">1</div><div style="flex:1;min-width:0"><div style="font-size:14px;color:#E8E4D8;line-height:1.2">Il primo cliente <span style="opacity:.6">/ First customer</span></div><div style="font-size:11px;color:#9fb3a8;margin-top:2px">Saluti e presentazioni / Greetings</div></div><sc-if value="{{ ch1On }}" hint-placeholder-val="{{ true }}"><div style="width:10px;height:10px;border-radius:50%;background:#FFB300;animation:om-lamp 1.6s ease-in-out infinite"></div></sc-if></div>
+<div onClick="{{ goCh2 }}" style="display:flex;gap:10px;align-items:center;padding:10px 12px;cursor:pointer" style-hover="background:rgba(232,228,216,.06)"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#FFB300;width:14px">2</div><div style="flex:1;min-width:0"><div style="font-size:14px;color:#E8E4D8;line-height:1.2">Due banconi <span style="opacity:.6">/ Two counters</span></div><div style="font-size:11px;color:#9fb3a8;margin-top:2px">Saluti e presentazioni / Greetings</div></div><sc-if value="{{ ch2On }}" hint-placeholder-val="{{ false }}"><div style="width:10px;height:10px;border-radius:50%;background:#FFB300;animation:om-lamp 1.6s ease-in-out infinite"></div></sc-if></div>
+<div onClick="{{ goCh3 }}" style="display:flex;gap:10px;align-items:center;padding:10px 12px;cursor:pointer" style-hover="background:rgba(232,228,216,.06)"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#FFB300;width:14px">3</div><div style="flex:1;min-width:0"><div style="font-size:14px;color:#E8E4D8;line-height:1.2">La fila <span style="opacity:.6">/ The queue</span></div><div style="font-size:11px;color:#9fb3a8;margin-top:2px">Frasi essenziali / Essential phrases</div></div><sc-if value="{{ ch3On }}" hint-placeholder-val="{{ false }}"><div style="width:10px;height:10px;border-radius:50%;background:#FFB300;animation:om-lamp 1.6s ease-in-out infinite"></div></sc-if></div>
+<div onClick="{{ goCh4 }}" style="display:flex;gap:10px;align-items:center;padding:10px 12px;cursor:pointer" style-hover="background:rgba(232,228,216,.06)"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#FFB300;width:14px">4</div><div style="flex:1;min-width:0"><div style="font-size:14px;color:#E8E4D8;line-height:1.2">Il ripensamento <span style="opacity:.6">/ Second thoughts</span></div><div style="font-size:11px;color:#9fb3a8;margin-top:2px">Frasi essenziali / Essential phrases</div></div><sc-if value="{{ ch4On }}" hint-placeholder-val="{{ false }}"><div style="width:10px;height:10px;border-radius:50%;background:#FFB300;animation:om-lamp 1.6s ease-in-out infinite"></div></sc-if></div>
+<div onClick="{{ goCh5 }}" style="display:flex;gap:10px;align-items:center;padding:10px 12px;cursor:pointer" style-hover="background:rgba(232,228,216,.06)"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#FFB300;width:14px">5</div><div style="flex:1;min-width:0"><div style="font-size:14px;color:#E8E4D8;line-height:1.2">Il vassoio pieno <span style="opacity:.6">/ The full tray</span></div><div style="font-size:11px;color:#9fb3a8;margin-top:2px">Verbi di ogni giorno / Everyday verbs</div></div><sc-if value="{{ ch5On }}" hint-placeholder-val="{{ false }}"><div style="width:10px;height:10px;border-radius:50%;background:#FFB300;animation:om-lamp 1.6s ease-in-out infinite"></div></sc-if></div>
+<div onClick="{{ goCh6 }}" style="display:flex;gap:10px;align-items:center;padding:10px 12px 14px;cursor:pointer" style-hover="background:rgba(232,228,216,.06)"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#FFB300;width:14px">6</div><div style="flex:1;min-width:0"><div style="font-size:14px;color:#E8E4D8;line-height:1.2">La serata intera <span style="opacity:.6">/ The whole evening</span></div><div style="font-size:11px;color:#9fb3a8;margin-top:2px">Verbi di ogni giorno / Everyday verbs</div></div><sc-if value="{{ ch6On }}" hint-placeholder-val="{{ false }}"><div style="width:10px;height:10px;border-radius:50%;background:#FFB300;animation:om-lamp 1.6s ease-in-out infinite"></div></sc-if></div>
+</div>
+<div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#a3937a;margin-bottom:6px">Turno {{ chapterNo }}.x / Round</div>
+<div style="display:flex;gap:6px">
+<sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+<div onClick="{{ l.go }}" style="flex:1;padding:9px 0;border-radius:8px;background:rgba(246,231,200,.06);color:#e8d9bd;font-family:'JetBrains Mono',monospace;font-size:13px;text-align:center;cursor:pointer;position:relative" style-hover="background:rgba(246,231,200,.14)">{{ l.n }}
+<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:50%;bottom:4px;width:12px;height:2px;margin-left:-6px;background:#FFB300;border-radius:1px"></div></sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="font-size:12px;line-height:1.5;color:#6f624f">Loop: Tapper (ricerca/41.7) · Registro R10 Fiera e baraccone (ricerca/42) · Frasi: lessons-level-0.js dell'app · Mappa del topic: ricerca/35</div>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;capitolo&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:1,&quot;min&quot;:1,&quot;max&quot;:6,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Partita&quot;},&quot;lezione&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:1,&quot;min&quot;:1,&quot;max&quot;:5,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Partita&quot;},&quot;lingua&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;it&quot;,&quot;options&quot;:[&quot;it&quot;,&quot;en&quot;],&quot;tsType&quot;:&quot;'it' | 'en'&quot;,&quot;section&quot;:&quot;Partita&quot;}}">
+class Component extends DCLogic{
+ state={beat:0,chapter:0,lang:'it',paused:false,coach:null,done:false,muted:false,step:0};
+ renderVals(){const s=this.state,L=TAVERNA.TX[s.lang]||TAVERNA.TX.it,c=s.coach,ci=s.chapter||0;
+  const sub=t=>t.replace('{pick}',c&&c.pick||'').replace('{word}',c&&c.word||'').replace('{it}',c&&c.it||'');
+  const v=Object.assign(KAIO.vals(this),{
+   coachWhat:c?sub(L[c.kind][0]):'',coachEffect:c?sub(L[c.kind][1]):'',coachRule:c?sub(L[c.kind][2]):'',coachHint:L.hint,
+   servedNo:String(this.served||0),needNo:String(this.cfg?this.cfg.need:0)});
+  for(let i=0;i<6;i++){v['goCh'+(i+1)]=()=>KAIO.goChapter(this,i);v['ch'+(i+1)+'On']=ci===i}
+  return v}
+ componentDidMount(){TAVERNA.init(this);
+  KAIO.init(this,{W:TAVERNA.W,H:TAVERNA.H,key:'kaio-inglese-taverna',chapters:TAVERNA.CH,onDown:p=>TAVERNA.down(this,p),onDrag:(q,p)=>TAVERNA.drag(this,q,p),onUp:p=>TAVERNA.up(this,p),onKey:e=>TAVERNA.key(this,e)});
+  KAIO.audio(this);KAIO.drone(this,55,'triangle',.01,160);
+  fetch('./frasi.json').then(r=>r.json()).then(d=>{this.DATA=d;this.reset(this.state.beat)}).catch(e=>console.error('frasi.json: '+e))}
+ componentDidUpdate(pp){KAIO.sync(this,pp)}
+ componentWillUnmount(){KAIO.destroy(this)}
+ reset(beat){TAVERNA.reset(this,beat)}
+ update(dt){TAVERNA.update(this,dt)}
+ draw(x){TAVERNA.draw(this,x)}
+ onCoachClose(){if(this.coachKind==='lost')TAVERNA.rebuild(this);this.coachKind=null}
+}
+</script>
+</body>
+</html>

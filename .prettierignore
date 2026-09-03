@@ -24,3 +24,7 @@ SECURITY.md
 # design-sync generated bundle + staged converter scripts.
 ds-bundle/
 .ds-sync/
+
+# Level-game design pack — upstream handoff, kept byte-identical so a diff
+# against a re-export stays readable. See .eslintignore for the full rationale.
+knowledge-aio-giochi/

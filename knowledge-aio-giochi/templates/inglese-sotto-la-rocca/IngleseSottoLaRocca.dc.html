@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Inglese L1 — Sotto la Rocca · Il guado" description="Campagna di inglese (Vita quotidiana, 40 frasi dell'app): 8 gallerie × 5 frasi. Loop Frogger: salta sul carrello che porta la prossima parola della frase. Registro R4 Terra a strati." -->
+<!--
+  SCHEDA DI PROGETTO (ricerca/00 §0.3) + SCHEDA VISIVA (ricerca/42 §42.3)
+  GIOCO ...... Sotto la Rocca — galleria 1: Il guado dei carrelli
+  TOPIC ...... Inglese, L1 Vita quotidiana (js/data/lessons-level-1.js: 4 lezioni × 10 frasi)
+  CONCETTO ... La frase inglese si costruisce da sinistra a destra, una parola alla
+               volta, e la forma di ogni parola dipende da quella che l'ha preceduta.
+  FORMA ...... sequenza + corrispondenza     VERBO ... saltare sul carrello giusto
+  ARCHETIPO .. Frogger (ricerca/40.8, ★★★): ogni corsia è una posizione della frase
+  VINCI SE ... la frase è attraversata: tutte le parole raccolte nell'ordine
+  PERDI SE ... la lanterna si spegne (budget 6,5 s a parola): risali e riprovi
+  SBAGLI ..... 1 il carrello sobbalza e ti rimanda al livello sopra (tonfo, mai rosso)
+               2 alla seconda, il carrello giusto prende la luce della lanterna
+               3 coaching: cosa hai preso, perché non va qui, la regola
+  CAPITOLI ... 1 il salto · 2 contromano · 3 FRATTURA la forma giusta (has/have)
+               4 due parole insieme · 5 il cartello si spegne · 6 il quarto carrello
+               7 a raffica · 8 la galleria intera
+  MONDO ...... sottosuolo a strati sotto una rocca: gallerie con carrelli da miniera
+               che portano parole su targhe di legno; il cartello in italiano in cima,
+               la frase inglese che si scava scendendo; una camera col forziere in fondo
+  REGISTRO ... R4 Terra a strati: ocra→arancio→bruno→viola, gallerie nere, rotaie
+               figura: l'esploratore con la lanterna sull'elmo · suolo: gli strati
+               movimento: carrelli in loop, salto ad arco con squash · carattere: Baloo 2
+  NUMERI ..... carrelli 62→96 px/s (un carrello resta a schermo ≥ 4,4 s, ricerca/31)
+               salto 0,42 s · rientro dopo errore 0,6 s · lanterna (6,5·N+10) s × oil
+  TEST 1 ..... i carrelli sono identici: cambia solo la parola. Posizione e colore non
+               dicono nulla; i distrattori sono le altre parole della frase (ordine) e
+               le forme vicine (has/have, a/an, to/too). Si vince solo leggendo.
+  TEST 2 ..... "Salto sul carrello che porta la prossima parola della frase, prima che
+               la lanterna si spenga"
+  TEST 3 ..... un esploratore fermo sull'orlo del pozzo, carrelli con parole che
+               scorrono sotto, il primo giusto brilla piano: la mano ci va da sola
+-->
+<helmet>
+<script src="./ds-base.js"></script>
+<script src="../kaio-engine.js"></script>
+<script src="./guado.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}html,body{margin:0;padding:0;height:100%;background:#070605}
+@keyframes om-fade{from{opacity:0}to{opacity:1}}
+@keyframes om-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes om-lamp{0%,100%{box-shadow:0 0 10px 3px rgba(255,179,0,.55)}50%{box-shadow:0 0 16px 6px rgba(255,179,0,.85)}}
+</style>
+</helmet>
+<div style="position:fixed;inset:0;background:radial-gradient(120% 80% at 50% -10%,#1a1208 0%,#0c0906 55%,#070605 100%);display:grid;place-items:center;font-family:Raleway,system-ui,sans-serif;overflow:hidden;padding:18px">
+<div style="display:flex;align-items:center;justify-content:center;gap:28px;max-width:100%">
+<div style="position:relative;height:min(910px,calc(100vh - 36px),max(480px,calc((100vw - 300px) * 2.1667)));aspect-ratio:420/910;border-radius:24px;overflow:hidden;box-shadow:0 50px 130px -34px rgba(0,0,0,.95),0 0 0 1px rgba(246,231,200,.12);flex:0 0 auto;background:#1B130D">
+<canvas ref="{{ cvRef }}" style="display:block;width:100%;height:100%;touch-action:none;cursor:pointer"></canvas>
+<sc-if value="{{ coachOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;left:14px;right:14px;top:170px;padding:20px 20px 16px;border-radius:18px;background:linear-gradient(180deg,#3a2718,#22160d);box-shadow:0 24px 60px -18px rgba(0,0,0,.9),inset 0 1px 0 rgba(246,231,200,.18);animation:om-rise .26s cubic-bezier(.16,1,.3,1) both;cursor:pointer">
+<div style="font-family:'Baloo 2',Raleway,sans-serif;font-size:21px;line-height:1.35;color:#F6E7C8;font-weight:700">{{ coachWhat }}</div>
+<div style="font-size:18px;line-height:1.45;color:#D9C4A0;margin-top:10px">{{ coachEffect }}</div>
+<div style="font-size:18px;line-height:1.45;color:#FFB300;margin-top:14px;font-weight:600">{{ coachRule }}</div>
+<div style="margin-top:18px;padding:12px 14px;border-radius:12px;background:rgba(0,0,0,.35);font-family:'Baloo 2',Raleway,sans-serif;font-size:17px;color:#F6E7C8;font-weight:700;line-height:1.4">{{ soFar }}</div>
+<div style="margin-top:12px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#8d7f68;letter-spacing:.05em">{{ coachHint }}</div>
+</div>
+</sc-if>
+<sc-if value="{{ doneOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(70% 50% at 50% 45%,rgba(40,26,14,.9),rgba(10,7,5,.96));animation:om-fade .22s ease both;cursor:pointer">
+<div style="text-align:center;padding:0 28px">
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#a3937a">Frase attraversata</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#a3937a">Sentence crossed</div></sc-if>
+<div style="font-family:'Baloo 2',Raleway,sans-serif;font-size:30px;line-height:1.25;font-weight:700;color:#F6E7C8;margin-top:14px">{{ sentEn }}</div>
+<div style="font-size:17px;line-height:1.4;color:#a3937a;margin-top:12px">{{ sentIt }}</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#8d7f68;margin-top:18px">{{ chapterNo }}/{{ chapterOf }} · {{ chapterTitle }}</div>
+<div style="display:flex;gap:10px;justify-content:center;margin-top:16px">
+<sc-for list="{{ marks }}" as="m" hint-placeholder-count="5">
+<div style="width:34px;height:6px;border-radius:3px;background:rgba(255,179,0,.2);position:relative;overflow:hidden">
+<sc-if value="{{ m.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;background:#FFB300"></div></sc-if>
+</div>
+</sc-for>
+</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#a3937a;margin-top:22px;letter-spacing:.04em">{{ doneHint }}</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ pauseOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;backdrop-filter:blur(9px);background:rgba(10,8,6,.72);display:grid;place-items:center;animation:om-fade .2s ease both;padding:16px;overflow-y:auto">
+<div style="width:290px;padding:24px;border-radius:20px;background:linear-gradient(180deg,#2e2014,#1a120b);box-shadow:0 30px 70px -20px rgba(0,0,0,.9),inset 0 1px 0 rgba(246,231,200,.16)">
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace">In pausa</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace">Paused</div></sc-if>
+<div style="display:flex;flex-direction:column;gap:9px;margin-top:16px">
+<div onClick="{{ resume }}" style="padding:14px 16px;border-radius:12px;background:#FFB300;color:#1a120b;font-size:17px;font-weight:600;text-align:center;cursor:pointer" style-hover="background:#ffc233"><sc-if value="{{ it }}" hint-placeholder-val="{{ true }}">Riprendi</sc-if><sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">Resume</sc-if></div>
+<div onClick="{{ toggleLang }}" style="padding:13px 16px;border-radius:12px;background:rgba(246,231,200,.08);color:#e8d9bd;font-size:16px;display:flex;justify-content:space-between;cursor:pointer" style-hover="background:rgba(246,231,200,.16)"><span><sc-if value="{{ it }}" hint-placeholder-val="{{ true }}">Lingua</sc-if><sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">Language</sc-if></span><span style="font-family:'JetBrains Mono',monospace;color:#FFB300">{{ langLabel }}</span></div>
+<div onClick="{{ toggleMute }}" style="padding:13px 16px;border-radius:12px;background:rgba(246,231,200,.08);color:#e8d9bd;font-size:16px;display:flex;justify-content:space-between;cursor:pointer" style-hover="background:rgba(246,231,200,.16)"><span>Audio</span><span style="font-family:'JetBrains Mono',monospace;color:#FFB300">{{ audioState }}</span></div>
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace;margin-top:12px">Galleria</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace;margin-top:12px">Gallery</div></sc-if>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px">
+<sc-for list="{{ chapters }}" as="c" hint-placeholder-count="8">
+<div onClick="{{ c.go }}" style="padding:10px 0;border-radius:9px;background:rgba(246,231,200,.08);color:#e8d9bd;font-family:'JetBrains Mono',monospace;font-size:14px;text-align:center;cursor:pointer;position:relative" style-hover="background:rgba(246,231,200,.18)">{{ c.n }}
+<sc-if value="{{ c.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:50%;bottom:4px;width:12px;height:2px;margin-left:-6px;background:#FFB300;border-radius:1px"></div></sc-if>
+</div>
+</sc-for>
+</div>
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace;margin-top:10px">Frase</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace;margin-top:10px">Sentence</div></sc-if>
+<div style="display:flex;gap:7px">
+<sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+<div onClick="{{ l.go }}" style="flex:1;padding:11px 0;border-radius:10px;background:rgba(246,231,200,.08);color:#e8d9bd;font-family:'JetBrains Mono',monospace;font-size:15px;text-align:center;cursor:pointer;position:relative" style-hover="background:rgba(246,231,200,.18)">{{ l.n }}
+<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:50%;bottom:5px;width:14px;height:2px;margin-left:-7px;background:#FFB300;border-radius:1px"></div></sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</div>
+</sc-if>
+</div>
+<div style="flex:0 1 240px;min-width:0;min-height:0;max-height:min(910px,calc(100vh - 36px));overflow-y:auto;display:flex;flex-direction:column;gap:14px;padding-right:4px;color:#b6a68b">
+<div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#a3937a">Inglese · L1 Vita quotidiana</div>
+<div style="font-family:'Baloo 2',Raleway,sans-serif;font-size:26px;font-weight:700;color:#F6E7C8;margin-top:2px;line-height:1.15">Sotto la Rocca</div>
+<div style="font-size:14px;line-height:1.5;color:#8d7f68;margin-top:6px">Il guado dei carrelli · attraversare la frase / cross the sentence · 8 gallerie, 40 frasi</div>
+</div>
+<div style="flex:0 0 auto;border-radius:14px;overflow:hidden;box-shadow:0 20px 50px -20px rgba(0,0,0,.9),0 0 0 1px rgba(246,231,200,.1)">
+<div style="height:46px;background:linear-gradient(180deg,#0B1026,#243063);position:relative">
+<div style="position:absolute;left:14px;bottom:0;width:60px;height:22px;background:#0A0B16"></div>
+<div style="position:absolute;left:10px;bottom:0;width:12px;height:32px;background:#0A0B16"></div>
+<div style="position:absolute;left:66px;bottom:0;width:12px;height:38px;background:#0A0B16"></div>
+<div style="position:absolute;left:28px;bottom:22px;width:6px;height:5px;background:#0A0B16"></div>
+<div style="position:absolute;left:42px;bottom:22px;width:6px;height:5px;background:#0A0B16"></div>
+<div style="position:absolute;left:56px;bottom:22px;width:6px;height:5px;background:#0A0B16"></div>
+<div style="position:absolute;right:18px;top:10px;width:14px;height:14px;border-radius:50%;background:#F3EBD3"></div>
+<div style="position:absolute;left:0;right:0;bottom:0;height:5px;background:#3B6B3A"></div>
+<div style="position:absolute;right:14px;bottom:4px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;color:rgba(246,231,200,.7)">LA ROCCA</div>
+</div>
+<div onClick="{{ goCh1 }}" style="position:relative;min-height:56px;background:#E0A23A;cursor:pointer;display:flex;align-items:center;gap:10px;padding:8px 12px 16px" style-hover="filter:brightness(1.08)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#3a2200;width:14px">1</div>
+<div style="flex:1;min-width:0"><div style="font-size:14px;font-weight:600;color:#2b1a05;line-height:1.2">Il salto <span style="font-weight:400;opacity:.7">/ The hop</span></div><div style="font-size:11px;color:#3a2200;opacity:.8;margin-top:2px">Descrivere persone / Describing people</div></div>
+<sc-if value="{{ ch1On }}" hint-placeholder-val="{{ true }}"><div style="width:10px;height:10px;border-radius:50%;background:#FFB300;animation:om-lamp 1.6s ease-in-out infinite"></div></sc-if>
+<div style="position:absolute;left:0;right:0;bottom:0;height:10px;background:#120E0B"></div>
+</div>
+<div onClick="{{ goCh2 }}" style="position:relative;min-height:56px;background:#D2691E;cursor:pointer;display:flex;align-items:center;gap:10px;padding:8px 12px 16px" style-hover="filter:brightness(1.08)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#3a1a00;width:14px">2</div>
+<div style="flex:1;min-width:0"><div style="font-size:14px;font-weight:600;color:#2b1200;line-height:1.2">Contromano <span style="font-weight:400;opacity:.7">/ Two ways</span></div><div style="font-size:11px;color:#3a1a00;opacity:.8;margin-top:2px">Descrivere persone / Describing people</div></div>
+<sc-if value="{{ ch2On }}" hint-placeholder-val="{{ false }}"><div style="width:10px;height:10px;border-radius:50%;background:#FFB300;animation:om-lamp 1.6s ease-in-out infinite"></div></sc-if>
+<div style="position:absolute;left:0;right:0;bottom:0;height:10px;background:#120E0B"></div>
+</div>
+<div onClick="{{ goCh3 }}" style="position:relative;min-height:56px;background:#8B3A1E;cursor:pointer;display:flex;align-items:center;gap:10px;padding:8px 12px 16px" style-hover="filter:brightness(1.12)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#FFD9B8;width:14px">3</div>
+<div style="flex:1;min-width:0"><div style="font-size:14px;font-weight:600;color:#FFF0E0;line-height:1.2">La forma giusta <span style="font-weight:400;opacity:.7">/ The right form</span></div><div style="font-size:11px;color:#FFD9B8;opacity:.8;margin-top:2px">Routine quotidiana / Daily routines</div></div>
+<sc-if value="{{ ch3On }}" hint-placeholder-val="{{ false }}"><div style="width:10px;height:10px;border-radius:50%;background:#FFB300;animation:om-lamp 1.6s ease-in-out infinite"></div></sc-if>
+<div style="position:absolute;left:0;right:0;bottom:0;height:10px;background:#120E0B"></div>
+</div>
+<div onClick="{{ goCh4 }}" style="position:relative;min-height:56px;background:#4B1E4B;cursor:pointer;display:flex;align-items:center;gap:10px;padding:8px 12px 16px" style-hover="filter:brightness(1.15)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#E9C8E9;width:14px">4</div>
+<div style="flex:1;min-width:0"><div style="font-size:14px;font-weight:600;color:#F7E8F7;line-height:1.2">Due parole insieme <span style="font-weight:400;opacity:.7">/ Two words</span></div><div style="font-size:11px;color:#E9C8E9;opacity:.8;margin-top:2px">Routine quotidiana / Daily routines</div></div>
+<sc-if value="{{ ch4On }}" hint-placeholder-val="{{ false }}"><div style="width:10px;height:10px;border-radius:50%;background:#FFB300;animation:om-lamp 1.6s ease-in-out infinite"></div></sc-if>
+<div style="position:absolute;left:0;right:0;bottom:0;height:10px;background:#120E0B"></div>
+</div>
+<div onClick="{{ goCh5 }}" style="position:relative;min-height:56px;background:#2E3A5C;cursor:pointer;display:flex;align-items:center;gap:10px;padding:8px 12px 16px" style-hover="filter:brightness(1.15)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#C9D3F0;width:14px">5</div>
+<div style="flex:1;min-width:0"><div style="font-size:14px;font-weight:600;color:#EEF2FF;line-height:1.2">Il cartello si spegne <span style="font-weight:400;opacity:.7">/ Sign goes dark</span></div><div style="font-size:11px;color:#C9D3F0;opacity:.8;margin-top:2px">Opinioni e preferenze / Opinions</div></div>
+<sc-if value="{{ ch5On }}" hint-placeholder-val="{{ false }}"><div style="width:10px;height:10px;border-radius:50%;background:#FFB300;animation:om-lamp 1.6s ease-in-out infinite"></div></sc-if>
+<div style="position:absolute;left:0;right:0;bottom:0;height:10px;background:#120E0B"></div>
+</div>
+<div onClick="{{ goCh6 }}" style="position:relative;min-height:56px;background:#1F5148;cursor:pointer;display:flex;align-items:center;gap:10px;padding:8px 12px 16px" style-hover="filter:brightness(1.15)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#C5E6DE;width:14px">6</div>
+<div style="flex:1;min-width:0"><div style="font-size:14px;font-weight:600;color:#EAF7F3;line-height:1.2">Il quarto carrello <span style="font-weight:400;opacity:.7">/ Fourth cart</span></div><div style="font-size:11px;color:#C5E6DE;opacity:.8;margin-top:2px">Opinioni e preferenze / Opinions</div></div>
+<sc-if value="{{ ch6On }}" hint-placeholder-val="{{ false }}"><div style="width:10px;height:10px;border-radius:50%;background:#FFB300;animation:om-lamp 1.6s ease-in-out infinite"></div></sc-if>
+<div style="position:absolute;left:0;right:0;bottom:0;height:10px;background:#120E0B"></div>
+</div>
+<div onClick="{{ goCh7 }}" style="position:relative;min-height:56px;background:#6B2D3A;cursor:pointer;display:flex;align-items:center;gap:10px;padding:8px 12px 16px" style-hover="filter:brightness(1.15)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#F2CDD6;width:14px">7</div>
+<div style="flex:1;min-width:0"><div style="font-size:14px;font-weight:600;color:#FBEDF0;line-height:1.2">A raffica <span style="font-weight:400;opacity:.7">/ Rapid fire</span></div><div style="font-size:11px;color:#F2CDD6;opacity:.8;margin-top:2px">Cibo e vita sociale / Food and social life</div></div>
+<sc-if value="{{ ch7On }}" hint-placeholder-val="{{ false }}"><div style="width:10px;height:10px;border-radius:50%;background:#FFB300;animation:om-lamp 1.6s ease-in-out infinite"></div></sc-if>
+<div style="position:absolute;left:0;right:0;bottom:0;height:10px;background:#120E0B"></div>
+</div>
+<div onClick="{{ goCh8 }}" style="position:relative;min-height:56px;background:#2C2C4A;cursor:pointer;display:flex;align-items:center;gap:10px;padding:8px 12px 16px" style-hover="filter:brightness(1.2)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#CFCFEA;width:14px">8</div>
+<div style="flex:1;min-width:0"><div style="font-size:14px;font-weight:600;color:#EFEFFA;line-height:1.2">La galleria intera <span style="font-weight:400;opacity:.7">/ Whole gallery</span></div><div style="font-size:11px;color:#CFCFEA;opacity:.8;margin-top:2px">Cibo e vita sociale / Food and social life</div></div>
+<sc-if value="{{ ch8On }}" hint-placeholder-val="{{ false }}"><div style="width:10px;height:10px;border-radius:50%;background:#FFB300;animation:om-lamp 1.6s ease-in-out infinite"></div></sc-if>
+<div style="position:absolute;left:0;right:0;bottom:0;height:10px;background:#120E0B"></div>
+</div>
+</div>
+<div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#a3937a;margin-bottom:6px">Frase {{ chapterNo }}.x / Sentence</div>
+<div style="display:flex;gap:6px">
+<sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+<div onClick="{{ l.go }}" style="flex:1;padding:9px 0;border-radius:8px;background:rgba(246,231,200,.06);color:#e8d9bd;font-family:'JetBrains Mono',monospace;font-size:13px;text-align:center;cursor:pointer;position:relative" style-hover="background:rgba(246,231,200,.14)">{{ l.n }}
+<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:50%;bottom:4px;width:12px;height:2px;margin-left:-6px;background:#FFB300;border-radius:1px"></div></sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="font-size:12px;line-height:1.5;color:#6f624f">Loop: Frogger (ricerca/40.8) · Registro R4 Terra a strati (ricerca/42) · Frasi: lessons-level-1.js dell'app</div>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;capitolo&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:1,&quot;min&quot;:1,&quot;max&quot;:8,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Partita&quot;},&quot;lezione&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:1,&quot;min&quot;:1,&quot;max&quot;:5,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Partita&quot;},&quot;lingua&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;it&quot;,&quot;options&quot;:[&quot;it&quot;,&quot;en&quot;],&quot;tsType&quot;:&quot;'it' | 'en'&quot;,&quot;section&quot;:&quot;Partita&quot;},&quot;eroe&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;minatore&quot;,&quot;options&quot;:[&quot;minatore&quot;,&quot;cavaliere&quot;,&quot;maga&quot;],&quot;tsType&quot;:&quot;'minatore' | 'cavaliere' | 'maga'&quot;,&quot;section&quot;:&quot;Cabinet&quot;},&quot;velocita&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;normale&quot;,&quot;options&quot;:[&quot;lenta&quot;,&quot;normale&quot;,&quot;veloce&quot;],&quot;tsType&quot;:&quot;'lenta' | 'normale' | 'veloce'&quot;,&quot;section&quot;:&quot;Cabinet&quot;}}">
+class Component extends DCLogic{
+ state={beat:0,chapter:0,lang:'it',paused:false,coach:null,done:false,muted:false,step:0};
+ renderVals(){const s=this.state,L=GUADO.TX[s.lang]||GUADO.TX.it,c=s.coach,ci=s.chapter||0;
+  const sub=t=>t.replace('{pick}',c&&c.pick||'').replace('{word}',c&&c.word||'').replace('{en}',this.sent?this.sent.en:'');
+  const v=Object.assign(KAIO.vals(this),{
+   coachWhat:c?sub(L[c.kind][0]):'',coachEffect:c?sub(L[c.kind][1]):'',coachRule:c?sub(L[c.kind][2]):'',coachHint:L.hint,
+   soFar:(this.got||[]).join(' ')+(this.steps&&this.got&&this.got.length<this.steps.length?' ▁▁▁':''),
+   sentEn:this.sent?this.sent.en:'',sentIt:this.sent?this.sent.it:''});
+  for(let i=0;i<8;i++){v['goCh'+(i+1)]=()=>KAIO.goChapter(this,i);v['ch'+(i+1)+'On']=ci===i}
+  return v}
+ componentDidMount(){GUADO.init(this);
+  KAIO.init(this,{W:GUADO.W,H:GUADO.H,key:'kaio-inglese-sotto-la-rocca',chapters:GUADO.CH,onTap:p=>GUADO.tap(this,p),onKey:e=>GUADO.key(this,e)});
+  KAIO.audio(this);KAIO.drone(this,42,'triangle',.012,120);
+  fetch('./frasi.json').then(r=>r.json()).then(d=>{this.DATA=d;this.reset(this.state.beat)}).catch(e=>console.error('frasi.json: '+e));
+  if(document.fonts&&document.fonts.load)document.fonts.load('700 17px "Baloo 2"').then(()=>GUADO.remeasure(this)).catch(()=>{})}
+ componentDidUpdate(pp){KAIO.sync(this,pp);if(pp.eroe!==this.props.eroe||pp.velocita!==this.props.velocita)GUADO.tune(this)}
+ componentWillUnmount(){KAIO.destroy(this)}
+ reset(beat){GUADO.reset(this,beat)}
+ update(dt){GUADO.update(this,dt)}
+ draw(x){GUADO.draw(this,x)}
+ onCoachClose(){if(this.coachKind==='dark')GUADO.rebuild(this);this.coachKind=null}
+}
+</script>
+</body>
+</html>

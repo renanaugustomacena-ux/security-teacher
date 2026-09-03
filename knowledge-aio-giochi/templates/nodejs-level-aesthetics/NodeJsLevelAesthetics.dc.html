@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Node.js · 4 bande estetiche" description="Sistema livello-gioco per un topic da 24 livelli: 4 estetiche, rampa di difficoltà, 3 schermate condivise." --><helmet><script src="./ds-base.js"></script><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""></link><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Chakra+Petch:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"></link><style>body{margin:0;background:#000}*{box-sizing:border-box}a{color:#d4a574}a:hover{color:#e67e22}@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}@keyframes belt{to{background-position:-48px 0}}@media (prefers-reduced-motion:reduce){*{animation:none!important}}</style></helmet><div style="background:#000;font-family:'Inter',system-ui,sans-serif;color:#e8f5e9">
+<header style="max-width:1280px;margin:0 auto;padding:72px 40px 48px">
+<div style="display:flex;gap:12px;align-items:center;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#66bb6a"><span style="width:8px;height:8px;background:#e67e22;border-radius:50%"></span><span>Knowledge AIO · sistema livelli-gioco / level-game system</span></div>
+<h1 style="font-size:64px;line-height:1.02;margin:24px 0 0;font-weight:700;letter-spacing:-.03em;color:#fff;text-wrap:balance">Node.js — 24 livelli,<br></br>24 giochi, 4 estetiche</h1>
+<p style="max-width:620px;margin:20px 0 0;font-size:17px;line-height:1.55;color:#a5d6a7;text-wrap:pretty">Ogni livello è un gioco su misura: 40 lezioni = 8 capitoli × 5 beat, con il capitolo che si chiude su un boss. L'estetica si ri-tira ogni 6 livelli — e con lei sale il registro, dalle analogie al terminale vero.</p>
+<p style="max-width:620px;margin:10px 0 0;font-size:15px;line-height:1.55;color:#66bb6a;text-wrap:pretty">Every level is a bespoke game: 40 lessons = 8 chapters × 5 beats, each chapter ending on a boss. The aesthetic re-rolls every 6 levels — and the register climbs with it, from analogies to a real terminal.</p>
+<div style="display:flex;flex-wrap:wrap;gap:32px;margin-top:36px;padding-top:28px;border-top:1px solid rgba(212,165,116,.22)">
+<div><div style="font-size:32px;font-weight:600;color:#d4a574;font-variant-numeric:tabular-nums">960</div><div style="font-size:12px;color:#66bb6a;letter-spacing:.06em">lezioni nel topic / lessons in topic</div></div>
+<div><div style="font-size:32px;font-weight:600;color:#d4a574;font-variant-numeric:tabular-nums">24</div><div style="font-size:12px;color:#66bb6a;letter-spacing:.06em">giochi distinti / distinct games</div></div>
+<div><div style="font-size:32px;font-weight:600;color:#d4a574;font-variant-numeric:tabular-nums">4</div><div style="font-size:12px;color:#66bb6a;letter-spacing:.06em">bande estetiche / aesthetic bands</div></div>
+<div><div style="font-size:32px;font-weight:600;color:#d4a574;font-variant-numeric:tabular-nums">3</div><div style="font-size:12px;color:#66bb6a;letter-spacing:.06em">schermate condivise / shared screens</div></div>
+</div>
+</header>
+<sc-if value="{{ showStrip }}" hint-placeholder-val="{{ true }}"><div style="max-width:1280px;margin:0 auto 8px;padding:0 40px 64px">
+<div style="display:grid;grid-template-columns:repeat(24,1fr);gap:3px;height:56px">
+<div style="background:#c85a3c;border-radius:3px 0 0 3px"></div><div style="background:#c85a3c"></div><div style="background:#c85a3c"></div><div style="background:#c85a3c"></div><div style="background:#c85a3c"></div><div style="background:#c85a3c"></div>
+<div style="background:#38e8ff"></div><div style="background:#38e8ff"></div><div style="background:#38e8ff"></div><div style="background:#38e8ff"></div><div style="background:#38e8ff"></div><div style="background:#38e8ff"></div>
+<div style="background:#7fd4e8"></div><div style="background:#7fd4e8"></div><div style="background:#7fd4e8"></div><div style="background:#7fd4e8"></div><div style="background:#7fd4e8"></div><div style="background:#7fd4e8"></div>
+<div style="background:#4b5c52"></div><div style="background:#4b5c52"></div><div style="background:#4b5c52"></div><div style="background:#4b5c52"></div><div style="background:#4b5c52"></div><div style="background:#4b5c52;border-radius:0 3px 3px 0"></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:3px;margin-top:12px;font-size:12px;color:#a5d6a7">
+<div><b style="color:#fff">I · 1–6</b> — Il Cantiere / The Workshop<div style="color:#66bb6a;margin-top:3px">carta e legno · zero gergo</div></div>
+<div><b style="color:#fff">II · 7–12</b> — Traffico Notturno / Night Traffic<div style="color:#66bb6a;margin-top:3px">neon · arcade a tempo</div></div>
+<div><b style="color:#fff">III · 13–18</b> — Sala Macchine / Machine Room<div style="color:#66bb6a;margin-top:3px">blueprint 3D · si progetta</div></div>
+<div><b style="color:#fff">IV · 19–24</b> — Turno di Notte / Night Shift<div style="color:#66bb6a;margin-top:3px">terminale vero · nessun gioco</div></div>
+</div>
+</div></sc-if>
+
+<sc-if value="{{ showI }}" hint-placeholder-val="{{ true }}"><section style="background:#f2e9dc;color:#241f1a;padding:64px 40px;font-family:'Bricolage Grotesque','Inter',sans-serif">
+<div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:300px 1fr;gap:44px;align-items:start">
+<aside style="display:grid;gap:24px;position:sticky;top:24px">
+<div><div style="font-size:88px;font-weight:800;line-height:.8;letter-spacing:-.05em;color:#c85a3c">I</div><div style="font-size:13px;letter-spacing:.16em;text-transform:uppercase;margin-top:10px;font-weight:600">Livelli 1–6</div><h2 style="font-size:30px;margin:6px 0 0;font-weight:800;letter-spacing:-.02em">Il Cantiere<span style="display:block;font-size:17px;font-weight:400;opacity:.55">The Workshop</span></h2></div>
+<p style="margin:0;font-size:14px;line-height:1.6;font-family:'Inter',sans-serif;text-wrap:pretty">Node come oggetto fisico. Nastri, casse, ingranaggi. Zero gergo non spiegato: "runtime" arriva solo dopo che l'hai visto girare. Tutto a portata di pollice.</p>
+<div><div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.5;margin-bottom:8px;font-family:'Inter',sans-serif">Palette</div><div style="display:flex;gap:6px"><div style="width:34px;height:34px;border-radius:4px;background:#f2e9dc;border:1px solid #241f1a33"></div><div style="width:34px;height:34px;border-radius:4px;background:#e2d3bd"></div><div style="width:34px;height:34px;border-radius:4px;background:#c85a3c"></div><div style="width:34px;height:34px;border-radius:4px;background:#6b7a4a"></div><div style="width:34px;height:34px;border-radius:4px;background:#241f1a"></div></div></div>
+<div style="font-family:'Inter',sans-serif;font-size:12.5px;line-height:1.8"><div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.5;margin-bottom:8px">Livelli / Levels</div><div>1 · Fondamenta</div><div>2 · Runtime</div><div>3 · Moduli CommonJS</div><div>4 · Moduli ESM</div><div>5 · npm</div><div>6 · Callback</div></div>
+<div style="font-family:'Inter',sans-serif;font-size:12.5px;line-height:1.7;border-top:1px solid #241f1a22;padding-top:16px"><b>Resa</b> DOM + CSS, nessun canvas<br></br><b>Input</b> trascina, tocca — target 64px<br></br><b>Tipo</b> Bricolage Grotesque 800<br></br><b>Registro</b> analogia, mai sigle</div>
+</aside>
+<div style="display:grid;gap:24px">
+<figure style="margin:0"><div style="aspect-ratio:16/10;border-radius:14px;background:#e8dcc6;border:2px solid #241f1a;overflow:hidden;display:grid;grid-template-rows:auto 1fr auto;box-shadow:0 18px 0 -6px #241f1a14">
+<div style="display:flex;align-items:center;gap:14px;padding:14px 18px;background:#241f1a;color:#f2e9dc">
+<span style="background:#c85a3c;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:600;letter-spacing:.04em">LIV. 1</span>
+<span style="font-family:'Inter',sans-serif;font-size:13px">La Fabbrica di JavaScript</span>
+<div style="margin-left:auto;display:flex;gap:5px;align-items:center"><span style="width:9px;height:9px;background:#c85a3c;border-radius:2px"></span><span style="width:9px;height:9px;background:#c85a3c;border-radius:2px"></span><span style="width:9px;height:9px;background:#f2e9dc;border-radius:2px"></span><span style="width:9px;height:9px;background:#ffffff33;border-radius:2px"></span><span style="width:9px;height:9px;background:#ffffff33;border-radius:2px"></span><span style="font-family:'Inter',sans-serif;font-size:11px;opacity:.6;margin-left:6px">cap. 2 / 8</span></div>
+<span style="width:26px;height:26px;border:1.5px solid #f2e9dc66;border-radius:50%;display:grid;place-items:center;font-size:12px">II</span>
+</div>
+<div style="position:relative;padding:26px 22px;display:flex;align-items:center;gap:18px">
+<div style="width:96px;height:104px;background:#6b7a4a;border:2px solid #241f1a;border-radius:8px;color:#f2e9dc;display:grid;place-content:center;text-align:center;line-height:1.2;flex:none"><div style="font-size:26px;font-weight:800">V8</div><div style="font-size:10px;font-family:'Inter',sans-serif;opacity:.75">motore</div></div>
+<div style="flex:1;height:104px;position:relative;background:repeating-linear-gradient(115deg,#241f1a 0 10px,#3b332a 10px 24px);border:2px solid #241f1a;border-radius:8px;display:flex;align-items:center;gap:12px;padding:0 14px;animation:belt 1.4s linear infinite">
+<div style="background:#f2e9dc;border:2px solid #241f1a;border-radius:6px;padding:9px 12px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;box-shadow:3px 3px 0 #241f1a">readFile()</div>
+<div style="background:#ffd9a0;border:2px solid #241f1a;border-radius:6px;padding:9px 12px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;box-shadow:3px 3px 0 #241f1a;transform:rotate(-3deg)">console.log()</div>
+<div style="background:#f2e9dc;border:2px solid #241f1a;border-radius:6px;padding:9px 12px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;box-shadow:3px 3px 0 #241f1a">query()</div>
+</div>
+<div style="width:104px;height:104px;border:2px solid #241f1a;border-radius:50%;background:conic-gradient(#c85a3c 0 25%,#e8dcc6 0 100%);display:grid;place-content:center;text-align:center;flex:none"><div style="font-size:11px;font-weight:800;line-height:1.15">EVENT<br></br>LOOP</div></div>
+</div>
+<div style="padding:16px 22px 20px;background:#f2e9dc;border-top:2px solid #241f1a;display:flex;align-items:center;gap:16px">
+<div style="flex:1"><div style="font-size:16px;font-weight:600;letter-spacing:-.01em">Metti sul nastro solo ciò che la macchina fa <i>subito</i>.</div><div style="font-family:'Inter',sans-serif;font-size:12.5px;opacity:.55;margin-top:2px">Put on the belt only what the machine does right away.</div></div>
+<div style="display:flex;gap:10px"><button style="background:#f2e9dc;border:2px solid #241f1a;border-radius:8px;padding:13px 20px;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;box-shadow:3px 3px 0 #241f1a;cursor:pointer">Aiuto</button><button style="background:#c85a3c;color:#fff;border:2px solid #241f1a;border-radius:8px;padding:13px 26px;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;box-shadow:3px 3px 0 #241f1a;cursor:pointer">Avvia il nastro</button></div>
+</div>
+</div><figcaption style="font-family:'Inter',sans-serif;font-size:12px;opacity:.55;margin-top:10px">Livello 1, beat 3/5 — il concetto "non-blocking" prima ancora della parola.</figcaption></figure>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+<figure style="margin:0"><div style="aspect-ratio:4/3;border-radius:14px;background:#241f1a;border:2px solid #241f1a;overflow:hidden;display:grid;place-items:center;padding:26px;text-align:center">
+<div><div style="width:52px;height:52px;border:2px solid #ffd9a0;border-radius:50%;margin:0 auto 16px;display:grid;place-items:center;color:#ffd9a0;font-size:22px">?</div><div style="color:#f2e9dc;font-size:19px;font-weight:600;line-height:1.3">Aspetta — guardiamo insieme.</div><div style="color:#f2e9dc99;font-family:'Inter',sans-serif;font-size:12.5px;margin-top:8px;line-height:1.5;max-width:280px">query() chiede una cosa <i>fuori</i> dalla fabbrica. La macchina non resta ferma ad aspettare: la mette da parte e continua.</div><button style="margin-top:18px;background:#ffd9a0;border:2px solid #241f1a;border-radius:8px;padding:11px 22px;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;cursor:pointer">Fammi vedere</button></div>
+</div><figcaption style="font-family:'Inter',sans-serif;font-size:12px;opacity:.55;margin-top:10px">Condiviso 1/3 — pannello di correzione. Mai rosso, mai buzzer.</figcaption></figure>
+<figure style="margin:0"><div style="aspect-ratio:4/3;border-radius:14px;background:#c85a3c;border:2px solid #241f1a;overflow:hidden;padding:24px;display:grid;align-content:space-between;color:#fff">
+<div><div style="font-size:11px;letter-spacing:.16em;font-family:'Inter',sans-serif;opacity:.8">CAPITOLO 2 · PROVA</div><div style="font-size:26px;font-weight:800;line-height:1.05;margin-top:6px;letter-spacing:-.02em">Il Nastro Impazzito</div></div>
+<div style="display:flex;gap:8px;flex-wrap:wrap"><span style="background:#ffffff22;border:1.5px solid #ffffff55;border-radius:6px;padding:7px 11px;font-family:'IBM Plex Mono',monospace;font-size:12px">fs.readFile</span><span style="background:#ffffff22;border:1.5px solid #ffffff55;border-radius:6px;padding:7px 11px;font-family:'IBM Plex Mono',monospace;font-size:12px">fs.readFileSync</span><span style="background:#ffffff22;border:1.5px solid #ffffff55;border-radius:6px;padding:7px 11px;font-family:'IBM Plex Mono',monospace;font-size:12px">setTimeout</span></div>
+<div style="font-family:'Inter',sans-serif;font-size:12.5px;opacity:.85">5 casse, 20 secondi, una sola corsia. Il boss di capitolo prende i 5 beat e li mescola.</div>
+</div><figcaption style="font-family:'Inter',sans-serif;font-size:12px;opacity:.55;margin-top:10px">Boss di capitolo — stessa estetica, ritmo diverso.</figcaption></figure>
+</div>
+</div>
+</div>
+</section></sc-if>
+
+<sc-if value="{{ showII }}" hint-placeholder-val="{{ true }}"><section style="background:#080b22;color:#dce6ff;padding:64px 40px;font-family:'Chakra Petch','Inter',sans-serif">
+<div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:300px 1fr;gap:44px;align-items:start">
+<aside style="display:grid;gap:24px;position:sticky;top:24px">
+<div><div style="font-size:88px;font-weight:700;line-height:.8;letter-spacing:-.04em;color:#38e8ff;text-shadow:0 0 24px #38e8ff66">II</div><div style="font-size:13px;letter-spacing:.16em;text-transform:uppercase;margin-top:10px;font-weight:600;color:#ff3d81">Livelli 7–12</div><h2 style="font-size:30px;margin:6px 0 0;font-weight:700;letter-spacing:-.01em">Traffico Notturno<span style="display:block;font-size:17px;font-weight:400;opacity:.5;font-family:'Inter',sans-serif">Night Traffic</span></h2></div>
+<p style="margin:0;font-size:14px;line-height:1.6;font-family:'Inter',sans-serif;color:#9fb0d8;text-wrap:pretty">L'asincrono diventa traffico. Corsie, semafori, code che si allungano. Qui entra il tempo: sbagliare non è più gratis, ma la penalità è congestione, non game-over.</p>
+<div><div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.45;margin-bottom:8px;font-family:'Inter',sans-serif">Palette</div><div style="display:flex;gap:6px"><div style="width:34px;height:34px;border-radius:4px;background:#080b22;border:1px solid #ffffff22"></div><div style="width:34px;height:34px;border-radius:4px;background:#161c4a"></div><div style="width:34px;height:34px;border-radius:4px;background:#38e8ff"></div><div style="width:34px;height:34px;border-radius:4px;background:#ff3d81"></div><div style="width:34px;height:34px;border-radius:4px;background:#ffc247"></div></div></div>
+<div style="font-family:'Inter',sans-serif;font-size:12.5px;line-height:1.8;color:#9fb0d8"><div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.6;margin-bottom:8px">Livelli / Levels</div><div>7 · Promise</div><div>8 · async / await</div><div>9 · Event loop</div><div>10 · EventEmitter</div><div>11 · Express · rotte</div><div>12 · Middleware</div></div>
+<div style="font-family:'Inter',sans-serif;font-size:12.5px;line-height:1.7;border-top:1px solid #ffffff1a;padding-top:16px;color:#9fb0d8"><b style="color:#dce6ff">Resa</b> Canvas 2D, 60fps<br></br><b style="color:#dce6ff">Input</b> tap corsia / tasti 1-4<br></br><b style="color:#dce6ff">Tipo</b> Chakra Petch 600<br></br><b style="color:#dce6ff">Registro</b> termine + analogia</div>
+</aside>
+<div style="display:grid;gap:24px">
+<figure style="margin:0"><div style="aspect-ratio:16/10;border-radius:14px;background:radial-gradient(120% 90% at 50% 0%,#1b2260 0%,#080b22 62%);border:1px solid #38e8ff33;overflow:hidden;display:grid;grid-template-rows:auto 1fr auto">
+<div style="display:flex;align-items:center;gap:14px;padding:13px 18px;border-bottom:1px solid #ffffff14">
+<span style="border:1px solid #38e8ff;color:#38e8ff;padding:3px 10px;border-radius:3px;font-size:12px;letter-spacing:.08em">LIV. 09</span>
+<span style="font-size:13px;letter-spacing:.04em">EVENT LOOP DISPATCH</span>
+<div style="margin-left:auto;display:flex;align-items:center;gap:14px"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#ffc247">×7 combo</span><div style="width:150px;height:6px;background:#ffffff1a;border-radius:3px;overflow:hidden"><div style="width:38%;height:100%;background:linear-gradient(90deg,#38e8ff,#ff3d81)"></div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9fb0d8">frame 6ms/16</span></div>
+</div>
+<div style="position:relative;padding:20px 22px;display:grid;gap:10px;align-content:center">
+<div style="display:flex;align-items:center;gap:10px"><span style="width:104px;font-size:11px;letter-spacing:.1em;color:#38e8ff;text-align:right">MICROTASK</span><div style="flex:1;height:44px;border-radius:6px;border:1px solid #38e8ff44;background:linear-gradient(90deg,#38e8ff14,transparent);display:flex;align-items:center;gap:8px;padding:0 10px"><span style="background:#38e8ff;color:#041018;font-family:'IBM Plex Mono',monospace;font-size:11px;padding:5px 9px;border-radius:3px">.then</span><span style="background:#38e8ff;color:#041018;font-family:'IBM Plex Mono',monospace;font-size:11px;padding:5px 9px;border-radius:3px">await</span><span style="background:#38e8ffaa;color:#041018;font-family:'IBM Plex Mono',monospace;font-size:11px;padding:5px 9px;border-radius:3px">queueMicrotask</span></div></div>
+<div style="display:flex;align-items:center;gap:10px"><span style="width:104px;font-size:11px;letter-spacing:.1em;color:#ffc247;text-align:right">TIMERS</span><div style="flex:1;height:44px;border-radius:6px;border:1px solid #ffc24744;background:linear-gradient(90deg,#ffc24714,transparent);display:flex;align-items:center;gap:8px;padding:0 10px"><span style="background:#ffc247;color:#2a1d00;font-family:'IBM Plex Mono',monospace;font-size:11px;padding:5px 9px;border-radius:3px">setTimeout 0</span><span style="background:#ffc247;color:#2a1d00;font-family:'IBM Plex Mono',monospace;font-size:11px;padding:5px 9px;border-radius:3px">setInterval</span></div></div>
+<div style="display:flex;align-items:center;gap:10px"><span style="width:104px;font-size:11px;letter-spacing:.1em;color:#ff3d81;text-align:right">I/O POLL</span><div style="flex:1;height:44px;border-radius:6px;border:1px solid #ff3d8144;background:linear-gradient(90deg,#ff3d8114,transparent);display:flex;align-items:center;gap:8px;padding:0 10px"><span style="background:#ff3d81;color:#fff;font-family:'IBM Plex Mono',monospace;font-size:11px;padding:5px 9px;border-radius:3px">fs.read</span><span style="border:1px dashed #ff3d8188;color:#ff3d81;font-family:'IBM Plex Mono',monospace;font-size:11px;padding:4px 9px;border-radius:3px">in arrivo…</span></div></div>
+<div style="display:flex;align-items:center;gap:10px;opacity:.55"><span style="width:104px;font-size:11px;letter-spacing:.1em;text-align:right">CHECK</span><div style="flex:1;height:44px;border-radius:6px;border:1px solid #ffffff22;display:flex;align-items:center;padding:0 10px"><span style="border:1px solid #ffffff33;font-family:'IBM Plex Mono',monospace;font-size:11px;padding:4px 9px;border-radius:3px;color:#9fb0d8">setImmediate</span></div></div>
+</div>
+<div style="padding:14px 22px;border-top:1px solid #ffffff14;display:flex;align-items:center;gap:16px"><div style="flex:1;font-size:15px;letter-spacing:.01em">Svuota i microtask <i>prima</i> che scada il frame.<span style="display:block;font-family:'Inter',sans-serif;font-size:12px;opacity:.5;margin-top:2px">Drain the microtasks before the frame budget runs out.</span></div><div style="display:flex;gap:8px"><span style="border:1px solid #ffffff33;border-radius:4px;padding:8px 12px;font-family:'IBM Plex Mono',monospace;font-size:12px">1</span><span style="border:1px solid #ffffff33;border-radius:4px;padding:8px 12px;font-family:'IBM Plex Mono',monospace;font-size:12px">2</span><span style="border:1px solid #ffffff33;border-radius:4px;padding:8px 12px;font-family:'IBM Plex Mono',monospace;font-size:12px">3</span><span style="border:1px solid #38e8ff;color:#38e8ff;border-radius:4px;padding:8px 12px;font-family:'IBM Plex Mono',monospace;font-size:12px">4</span></div></div>
+</div><figcaption style="font-family:'Inter',sans-serif;font-size:12px;color:#7e8db5;margin-top:10px">Livello 9 — le fasi del loop diventano corsie. Il nome tecnico è già sullo schermo.</figcaption></figure>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+<figure style="margin:0"><div style="aspect-ratio:4/3;border-radius:14px;background:#080b22;border:1px solid #ffffff1a;overflow:hidden;display:grid;place-items:center;position:relative">
+<div style="position:absolute;inset:0;background:repeating-linear-gradient(0deg,#ffffff08 0 1px,transparent 1px 4px)"></div>
+<div style="position:relative;width:78%;border:1px solid #38e8ff44;border-radius:10px;background:#0d1235;padding:22px;text-align:center">
+<div style="font-size:11px;letter-spacing:.2em;color:#38e8ff">IN PAUSA / PAUSED</div>
+<div style="font-size:22px;font-weight:600;margin-top:8px">Livello 9 · beat 2/5</div>
+<div style="display:grid;gap:8px;margin-top:18px"><button style="background:#38e8ff;color:#041018;border:0;border-radius:6px;padding:12px;font-family:'Chakra Petch',sans-serif;font-size:14px;font-weight:600;cursor:pointer">Riprendi / Resume</button><button style="background:transparent;color:#dce6ff;border:1px solid #ffffff33;border-radius:6px;padding:12px;font-family:'Chakra Petch',sans-serif;font-size:14px;cursor:pointer">Impostazioni / Settings</button><button style="background:transparent;color:#ff3d81;border:1px solid #ff3d8144;border-radius:6px;padding:12px;font-family:'Chakra Petch',sans-serif;font-size:14px;cursor:pointer">Esci — progresso salvato</button></div>
+</div>
+</div><figcaption style="font-family:'Inter',sans-serif;font-size:12px;color:#7e8db5;margin-top:10px">Condiviso 2/3 — pausa. Stessa struttura in tutti e 24 i giochi, pelle diversa.</figcaption></figure>
+<figure style="margin:0"><div style="aspect-ratio:4/3;border-radius:14px;background:linear-gradient(160deg,#ff3d81 0%,#7b1a6a 60%,#161c4a 100%);border:1px solid #ff3d8155;overflow:hidden;padding:24px;display:grid;align-content:space-between">
+<div><div style="font-size:11px;letter-spacing:.18em;opacity:.85">CAPITOLO 5 · BOSS</div><div style="font-size:26px;font-weight:700;line-height:1.05;margin-top:6px">ORA DI PUNTA</div></div>
+<div style="display:grid;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:12px"><div style="display:flex;justify-content:space-between;border-bottom:1px dashed #ffffff33;padding-bottom:4px"><span>richieste/s</span><span>140 ▲</span></div><div style="display:flex;justify-content:space-between;border-bottom:1px dashed #ffffff33;padding-bottom:4px"><span>coda I/O</span><span>93 in attesa</span></div><div style="display:flex;justify-content:space-between"><span>budget frame</span><span>16ms</span></div></div>
+<div style="font-family:'Inter',sans-serif;font-size:12.5px;opacity:.9">Tutte e 4 le corsie insieme, 90 secondi. Nessuna vita: si misura quanta coda hai lasciato crescere.</div>
+</div><figcaption style="font-family:'Inter',sans-serif;font-size:12px;color:#7e8db5;margin-top:10px">Boss di capitolo — la pressione sostituisce il punteggio.</figcaption></figure>
+</div>
+</div>
+</div>
+</section></sc-if>
+
+<sc-if value="{{ showIII }}" hint-placeholder-val="{{ true }}"><section style="background:#0d1b2a;color:#dcecf2;padding:64px 40px;font-family:'IBM Plex Mono',monospace">
+<div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:300px 1fr;gap:44px;align-items:start">
+<aside style="display:grid;gap:24px;position:sticky;top:24px">
+<div><div style="font-size:88px;font-weight:600;line-height:.8;letter-spacing:-.04em;color:#7fd4e8">III</div><div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;margin-top:10px;color:#e8a05f">Livelli 13–18</div><h2 style="font-size:29px;margin:6px 0 0;font-weight:600;letter-spacing:-.01em">Sala Macchine<span style="display:block;font-size:16px;font-weight:400;opacity:.5;font-family:'Inter',sans-serif">Machine Room</span></h2></div>
+<p style="margin:0;font-size:14px;line-height:1.6;font-family:'Inter',sans-serif;color:#93b3c2;text-wrap:pretty">Non si reagisce più: si progetta. Il giocatore costruisce sistemi cablando nodi in uno spazio ortografico 3D, poi li mette sotto carico e guarda dove si rompono.</p>
+<div><div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.45;margin-bottom:8px;font-family:'Inter',sans-serif">Palette</div><div style="display:flex;gap:6px"><div style="width:34px;height:34px;border-radius:4px;background:#0d1b2a;border:1px solid #ffffff22"></div><div style="width:34px;height:34px;border-radius:4px;background:#16324a"></div><div style="width:34px;height:34px;border-radius:4px;background:#7fd4e8"></div><div style="width:34px;height:34px;border-radius:4px;background:#e8a05f"></div><div style="width:34px;height:34px;border-radius:4px;background:#dcecf2"></div></div></div>
+<div style="font-family:'Inter',sans-serif;font-size:12.5px;line-height:1.8;color:#93b3c2"><div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.6;margin-bottom:8px">Livelli / Levels</div><div>13 · API REST</div><div>14 · Validazione input</div><div>15 · Database e pool</div><div>16 · ORM e query plan</div><div>17 · Testing</div><div>18 · Mock e stub</div></div>
+<div style="font-family:'Inter',sans-serif;font-size:12.5px;line-height:1.7;border-top:1px solid #ffffff1a;padding-top:16px;color:#93b3c2"><b style="color:#dcecf2">Resa</b> three.js ortografica<br></br><b style="color:#dcecf2">Input</b> trascina cavi, pizzica zoom<br></br><b style="color:#dcecf2">Tipo</b> IBM Plex Mono 500<br></br><b style="color:#dcecf2">Registro</b> solo termini reali</div>
+</aside>
+<div style="display:grid;gap:24px">
+<figure style="margin:0"><div style="aspect-ratio:16/10;border-radius:12px;background:#0f2236;border:1px solid #7fd4e833;overflow:hidden;display:grid;grid-template-rows:auto 1fr auto;background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);background-size:32px 32px">
+<div style="display:flex;align-items:center;gap:14px;padding:13px 18px;border-bottom:1px solid #7fd4e822;background:#0d1b2ae6"><span style="color:#e8a05f;font-size:12px;letter-spacing:.08em">LIV. 15</span><span style="font-size:13px;color:#dcecf2">REQUEST PIPELINE · costruisci e misura</span><span style="margin-left:auto;font-size:12px;color:#93b3c2">p95 <b style="color:#e8a05f">412ms</b> · target 200ms</span></div>
+<div style="padding:26px 22px;display:flex;align-items:center;justify-content:space-between;gap:6px">
+<div style="text-align:center"><div style="width:74px;height:52px;border:1px solid #7fd4e8;border-radius:4px;background:#7fd4e814;display:grid;place-content:center;font-size:11px;color:#7fd4e8">req</div></div>
+<div style="flex:1;height:1px;background:#7fd4e855"></div>
+<div style="text-align:center"><div style="width:88px;height:52px;border:1px solid #7fd4e8aa;border-radius:4px;background:#0d1b2a;display:grid;place-content:center;font-size:11px">helmet()</div></div>
+<div style="flex:1;height:1px;background:#7fd4e855"></div>
+<div style="text-align:center"><div style="width:88px;height:52px;border:1px solid #7fd4e8aa;border-radius:4px;background:#0d1b2a;display:grid;place-content:center;font-size:11px">verifyJWT</div></div>
+<div style="flex:1;height:1px;background:#e8a05f;position:relative"><span style="position:absolute;left:50%;top:-9px;transform:translateX(-50%);color:#e8a05f;font-size:13px">✕</span></div>
+<div style="text-align:center"><div style="width:96px;height:52px;border:1px dashed #e8a05f;border-radius:4px;background:#e8a05f14;display:grid;place-content:center;font-size:11px;color:#e8a05f">pool.query</div><div style="font-size:10px;color:#e8a05f;margin-top:5px">max=10 · 93 waiting</div></div>
+<div style="flex:1;height:1px;background:#7fd4e833"></div>
+<div style="text-align:center"><div style="width:74px;height:52px;border:1px solid #7fd4e855;border-radius:4px;display:grid;place-content:center;font-size:11px;color:#93b3c2">res</div></div>
+</div>
+<div style="padding:14px 22px;border-top:1px solid #7fd4e822;background:#0d1b2ae6;display:flex;align-items:center;gap:16px"><div style="flex:1;font-size:13.5px;line-height:1.45">Il pool si esaurisce prima dell'auth: stai autenticando <i>dopo</i> aver preso la connessione.<span style="display:block;font-family:'Inter',sans-serif;font-size:12px;color:#93b3c2;margin-top:3px">The pool drains before auth — you are acquiring the connection before verifying the token.</span></div><button style="background:#7fd4e8;color:#0d1b2a;border:0;border-radius:4px;padding:11px 20px;font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;cursor:pointer">Esegui carico</button></div>
+</div><figcaption style="font-family:'Inter',sans-serif;font-size:12px;color:#6f93a5;margin-top:10px">Livello 15 — nessuna analogia. Il feedback è una metrica, non un punteggio.</figcaption></figure>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+<figure style="margin:0"><div style="aspect-ratio:4/3;border-radius:12px;background:#0f2236;border:1px solid #7fd4e833;overflow:hidden;padding:24px;display:grid;align-content:center;gap:14px">
+<div style="font-size:11px;letter-spacing:.18em;color:#7fd4e8">BEAT 4 / 5 — COMPLETATO</div>
+<div style="font-size:20px;line-height:1.25">connection pooling</div>
+<div style="display:grid;gap:7px;font-size:12px;color:#93b3c2"><div style="display:flex;justify-content:space-between;border-bottom:1px solid #ffffff14;padding-bottom:5px"><span>termini nuovi</span><span style="color:#dcecf2">6</span></div><div style="display:flex;justify-content:space-between;border-bottom:1px solid #ffffff14;padding-bottom:5px"><span>p95 finale</span><span style="color:#7fd4e8">188ms</span></div><div style="display:flex;justify-content:space-between"><span>ripasso SRS</span><span style="color:#dcecf2">fra 2 giorni</span></div></div>
+<button style="background:transparent;border:1px solid #7fd4e8;color:#7fd4e8;border-radius:4px;padding:11px;font-family:'IBM Plex Mono',monospace;font-size:13px;cursor:pointer">Beat 5 →</button>
+</div><figcaption style="font-family:'Inter',sans-serif;font-size:12px;color:#6f93a5;margin-top:10px">Condiviso 3a/3 — fine beat. Sempre stessi tre dati.</figcaption></figure>
+<figure style="margin:0"><div style="aspect-ratio:4/3;border-radius:12px;background:#16324a;border:1px solid #e8a05f55;overflow:hidden;padding:24px;display:grid;align-content:space-between">
+<div><div style="font-size:11px;letter-spacing:.18em;color:#e8a05f">CAPITOLO 6 · BOSS</div><div style="font-size:24px;margin-top:6px;line-height:1.1">LOAD TEST</div></div>
+<div style="display:flex;align-items:flex-end;gap:5px;height:78px">
+<div style="flex:1;height:22%;background:#7fd4e8"></div><div style="flex:1;height:34%;background:#7fd4e8"></div><div style="flex:1;height:30%;background:#7fd4e8"></div><div style="flex:1;height:52%;background:#7fd4e8"></div><div style="flex:1;height:71%;background:#e8a05f"></div><div style="flex:1;height:96%;background:#e8a05f"></div><div style="flex:1;height:63%;background:#e8a05f"></div><div style="flex:1;height:41%;background:#7fd4e8"></div><div style="flex:1;height:28%;background:#7fd4e8"></div>
+</div>
+<div style="font-family:'Inter',sans-serif;font-size:12.5px;color:#c9dde6">2.000 richieste in 60s contro la pipeline che hai cablato tu. Passa chi resta sotto SLA — non chi risponde giusto.</div>
+</div><figcaption style="font-family:'Inter',sans-serif;font-size:12px;color:#6f93a5;margin-top:10px">Boss di capitolo — il tuo stesso sistema è l'avversario.</figcaption></figure>
+</div>
+</div>
+</div>
+</section></sc-if>
+
+<sc-if value="{{ showIV }}" hint-placeholder-val="{{ true }}"><section style="background:#05070a;color:#c8d8cc;padding:64px 40px;font-family:'JetBrains Mono',monospace">
+<div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:300px 1fr;gap:44px;align-items:start">
+<aside style="display:grid;gap:24px;position:sticky;top:24px">
+<div><div style="font-size:88px;font-weight:700;line-height:.8;letter-spacing:-.06em;color:#8fa398">IV</div><div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;margin-top:10px;color:#ff6b35">Livelli 19–24</div><h2 style="font-size:28px;margin:6px 0 0;font-weight:700;letter-spacing:-.02em;color:#e6f0e8">Turno di Notte<span style="display:block;font-size:16px;font-weight:400;opacity:.45;font-family:'Inter',sans-serif">Night Shift</span></h2></div>
+<p style="margin:0;font-size:14px;line-height:1.6;font-family:'Inter',sans-serif;color:#7f9186;text-wrap:pretty">Qui il gioco si toglie di mezzo. Terminale vero, sintassi vera, output vero preso dai lab del repo. Non ci sono punti: c'è un incidente e un orologio.</p>
+<div><div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.45;margin-bottom:8px;font-family:'Inter',sans-serif">Palette</div><div style="display:flex;gap:6px"><div style="width:34px;height:34px;border-radius:3px;background:#05070a;border:1px solid #ffffff22"></div><div style="width:34px;height:34px;border-radius:3px;background:#101614"></div><div style="width:34px;height:34px;border-radius:3px;background:#5a6b60"></div><div style="width:34px;height:34px;border-radius:3px;background:#c8d8cc"></div><div style="width:34px;height:34px;border-radius:3px;background:#ff6b35"></div></div></div>
+<div style="font-family:'Inter',sans-serif;font-size:12.5px;line-height:1.8;color:#7f9186"><div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.6;margin-bottom:8px">Livelli / Levels</div><div>19 · Security e audit</div><div>20 · Streams e backpressure</div><div>21 · Performance e profiling</div><div>22 · Deployment e PM2</div><div>23 · Observability</div><div>24 · TypeScript in produzione</div></div>
+<div style="font-family:'Inter',sans-serif;font-size:12.5px;line-height:1.7;border-top:1px solid #ffffff12;padding-top:16px;color:#7f9186"><b style="color:#c8d8cc">Resa</b> emulatore DOM + parser reale<br></br><b style="color:#c8d8cc">Input</b> tastiera; su Android tastiera con tasti tecnici<br></br><b style="color:#c8d8cc">Tipo</b> JetBrains Mono, solo<br></br><b style="color:#c8d8cc">Registro</b> nessuna analogia</div>
+</aside>
+<div style="display:grid;gap:24px">
+<figure style="margin:0"><div style="aspect-ratio:16/10;border-radius:8px;background:#05070a;border:1px solid #1e2a22;overflow:hidden;display:grid;grid-template-rows:auto 1fr auto">
+<div style="display:flex;align-items:center;gap:14px;padding:11px 16px;border-bottom:1px solid #1e2a22;font-size:12px"><span style="color:#ff6b35">● INCIDENT</span><span style="color:#7f9186">liv. 22 · beat 3/5 · deploy</span><span style="margin-left:auto;color:#ff6b35">SLA 04:12</span><span style="color:#8fa398">p95 1.8s ▲</span></div>
+<div style="padding:16px;font-size:12.5px;line-height:1.75;overflow:hidden">
+<div style="color:#8fa398">03:14 · api-prod-2 · 93 conn in attesa, il pod si riavvia ogni 40s.</div>
+<div style="margin-top:10px"><span style="color:#ff6b35">▸</span> pm2 logs api --lines 50 --err</div>
+<div style="color:#7f9186">[api] Error: ECONNRESET<br></br>[api]     at TCP.onStreamRead (node:internal/stream_base_commons:218:20)<br></br>[api] PM2 | App [api:0] exited with code [1] via signal [SIGINT]</div>
+<div style="margin-top:10px"><span style="color:#ff6b35">▸</span> node --inspect=0.0.0.0:9229 server.js</div>
+<div style="color:#7f9186">Debugger listening on ws://0.0.0.0:9229/6f1b0e4c-2a55-4f0a-9d1e-0c7c1f8a2b31<br></br>For help, see: https://nodejs.org/en/docs/inspector</div>
+<div style="margin-top:10px"><span style="color:#ff6b35">▸</span> <span style="display:inline-block;width:9px;height:15px;background:#c8d8cc;vertical-align:-3px;animation:blink 1.1s step-end infinite"></span></div>
+</div>
+<div style="padding:11px 16px;border-top:1px solid #1e2a22;display:flex;gap:8px;align-items:center;font-size:11px;color:#8fa398"><span style="border:1px solid #1e2a22;border-radius:3px;padding:6px 9px;color:#c8d8cc">pm2</span><span style="border:1px solid #1e2a22;border-radius:3px;padding:6px 9px;color:#c8d8cc">docker</span><span style="border:1px solid #1e2a22;border-radius:3px;padding:6px 9px;color:#c8d8cc">--inspect</span><span style="border:1px solid #1e2a22;border-radius:3px;padding:6px 9px;color:#c8d8cc">|</span><span style="border:1px solid #1e2a22;border-radius:3px;padding:6px 9px;color:#c8d8cc">▲</span><span style="margin-left:auto">tastiera tecnica — solo Android</span></div>
+</div><figcaption style="font-family:'Inter',sans-serif;font-size:12px;color:#8fa398;margin-top:10px">Livello 22 — comandi reali, output reale. La lezione è risolvere, non rispondere.</figcaption></figure>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+<figure style="margin:0"><div style="aspect-ratio:4/3;border-radius:8px;background:#05070a;border:1px solid #1e2a22;overflow:hidden;padding:22px;display:grid;align-content:center;gap:12px;font-size:12.5px">
+<div style="color:#8fa398">─── livello 22 · chiuso ───────────────</div>
+<div style="color:#e6f0e8;font-size:17px">40/40 lezioni · 8 capitoli</div>
+<div style="display:grid;gap:5px;color:#7f9186"><div>incidenti risolti     <span style="color:#c8d8cc;float:right">8 / 8</span></div><div>comandi digitati      <span style="color:#c8d8cc;float:right">214</span></div><div>senza suggerimento    <span style="color:#c8d8cc;float:right">73%</span></div><div>tempo medio SLA       <span style="color:#c8d8cc;float:right">02:41</span></div></div>
+<div style="color:#8fa398;border-top:1px solid #1e2a22;padding-top:10px">prossimo → liv. 23 observability</div>
+</div><figcaption style="font-family:'Inter',sans-serif;font-size:12px;color:#8fa398;margin-top:10px">Condiviso 3b/3 — fine livello. Nessun coriandolo: un report.</figcaption></figure>
+<figure style="margin:0"><div style="aspect-ratio:4/3;border-radius:8px;background:#101614;border:1px solid #ff6b3544;overflow:hidden;padding:22px;display:grid;align-content:space-between;font-size:12.5px">
+<div><div style="color:#ff6b35;letter-spacing:.14em;font-size:11px">CAPITOLO 8 · BOSS</div><div style="color:#e6f0e8;font-size:20px;margin-top:6px">POST-MORTEM</div></div>
+<div style="color:#7f9186;line-height:1.7"><span style="color:#8fa398">$</span> git commit -m "fix: acquire pool<br></br>&nbsp;&nbsp;after auth, cap at 25"<br></br><span style="color:#8fa398">$</span> scrivi la causa radice in inglese</div>
+<div style="font-family:'Inter',sans-serif;color:#7f9186">L'ultimo capitolo chiude in scrittura: descrivi l'incidente con i termini che il livello ti ha insegnato. È l'unico esercizio di testo rimasto — e ora ha senso.</div>
+</div><figcaption style="font-family:'Inter',sans-serif;font-size:12px;color:#8fa398;margin-top:10px">Boss finale — il testo torna, ma come output professionale.</figcaption></figure>
+</div>
+</div>
+</div>
+</section></sc-if>
+
+<sc-if value="{{ showRamp }}" hint-placeholder-val="{{ true }}"><section style="background:#000;padding:72px 40px 96px">
+<div style="max-width:1280px;margin:0 auto">
+<div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#66bb6a">La rampa / The ramp</div>
+<h2 style="font-size:38px;margin:12px 0 8px;font-weight:600;letter-spacing:-.02em;color:#fff">Stesso concetto, quattro registri</h2>
+<p style="margin:0 0 36px;font-size:15px;color:#a5d6a7;max-width:640px">L'event loop compare in tutte e quattro le bande. Cambia solo quanto ti fidi del giocatore.</p>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px">
+<div style="border:1px solid #c85a3c55;border-radius:10px;padding:22px;background:#c85a3c0f"><div style="color:#c85a3c;font-size:12px;letter-spacing:.12em">LIV. 2 · BANDA I</div><div style="font-family:'Bricolage Grotesque',sans-serif;font-size:19px;font-weight:600;color:#fff;margin:10px 0 8px;line-height:1.25">"La macchina non aspetta mai ferma."</div><div style="font-size:13px;color:#a5d6a7;line-height:1.55">Trascina la cassa lenta fuori dalla corsia. Nessuna parola tecnica sullo schermo.</div></div>
+<div style="border:1px solid #38e8ff44;border-radius:10px;padding:22px;background:#38e8ff0d"><div style="color:#38e8ff;font-size:12px;letter-spacing:.12em">LIV. 9 · BANDA II</div><div style="font-family:'Chakra Petch',sans-serif;font-size:19px;font-weight:600;color:#fff;margin:10px 0 8px;line-height:1.25">"Microtask prima dei macrotask. Sempre."</div><div style="font-size:13px;color:#a5d6a7;line-height:1.55">Instrada a tempo. La regola è detta, l'analogia regge ancora la scena.</div></div>
+<div style="border:1px solid #7fd4e844;border-radius:10px;padding:22px;background:#7fd4e80d"><div style="color:#7fd4e8;font-size:12px;letter-spacing:.12em">LIV. 16 · BANDA III</div><div style="font-family:'IBM Plex Mono',monospace;font-size:17px;font-weight:500;color:#fff;margin:10px 0 8px;line-height:1.3">process.nextTick() precede il resolve</div><div style="font-size:13px;color:#a5d6a7;line-height:1.55">Ordina le fasi del ciclo nel grafo. Sbagliare produce una latenza, non un errore.</div></div>
+<div style="border:1px solid #ff6b3544;border-radius:10px;padding:22px;background:#ff6b350d"><div style="color:#ff6b35;font-size:12px;letter-spacing:.12em">LIV. 23 · BANDA IV</div><div style="font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:400;color:#fff;margin:10px 0 8px;line-height:1.45">node --trace-events-enabled<br></br>--trace-event-categories v8</div><div style="font-size:13px;color:#a5d6a7;line-height:1.55">Leggi la traccia e dimmi quale fase ha mangiato il frame budget.</div></div>
+</div>
+<div style="margin-top:56px;padding-top:32px;border-top:1px solid rgba(212,165,116,.22);display:grid;grid-template-columns:repeat(3,1fr);gap:32px">
+<div><div style="color:#d4a574;font-size:13px;font-weight:600;margin-bottom:8px">Cosa resta identico</div><div style="font-size:13.5px;color:#a5d6a7;line-height:1.6">Solo tre schermate: pausa/esci/impostazioni, fine beat e fine livello, pannello di correzione. Stessa posizione, stesso ordine, stessi tre dati — pelle diversa in ogni banda.</div></div>
+<div><div style="color:#d4a574;font-size:13px;font-weight:600;margin-bottom:8px">Cosa cambia sempre</div><div style="font-size:13.5px;color:#a5d6a7;line-height:1.6">Meccanica, palette, tipografia, resa, input primario e registro linguistico. Nessun gioco riusa la meccanica di un altro, nemmeno dentro la stessa banda.</div></div>
+<div><div style="color:#d4a574;font-size:13px;font-weight:600;margin-bottom:8px">Come si applica agli altri topic</div><div style="font-size:13.5px;color:#a5d6a7;line-height:1.6">Topic da 12 livelli → due bande. Topic da 24 → quattro. Il taglio è sempre ogni 6 livelli, così la rampa resta leggibile e il lavoro resta finito.</div></div>
+</div>
+</div>
+</section></sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;bandFocus&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Tutte / All&quot;,&quot;I · Il Cantiere&quot;,&quot;II · Traffico Notturno&quot;,&quot;III · Sala Macchine&quot;,&quot;IV · Turno di Notte&quot;],&quot;default&quot;:&quot;Tutte / All&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Vista / View&quot;},&quot;showStrip&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Vista / View&quot;},&quot;showRamp&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Vista / View&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const f = this.props.bandFocus ?? 'Tutte / All';
+    const on = (n) => f === 'Tutte / All' || f === n;
+    return {
+      showI: on('I · Il Cantiere'),
+      showII: on('II · Traffico Notturno'),
+      showIII: on('III · Sala Macchine'),
+      showIV: on('IV · Turno di Notte'),
+      showStrip: this.props.showStrip ?? true,
+      showRamp: this.props.showRamp ?? true,
+    };
+  }
+}
+</script>
+</body>
+</html>

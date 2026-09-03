@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Node.js L19 — tsc" description="Livello 19, banda 4: TypeScript. Apre la banda tecnica: nessun mondo, nessuna analogia. Un terminale vero, tsc vero, nano vero. L'obiettivo è uno stato del progetto, non un comando da indovinare." -->
+<!--
+  SCHEDA (ricerca/00 §0.3 · ricerca/22) — GIOCO tsc
+  LIVELLO Node.js L19 TypeScript Base, banda 4 — 8 capitoli, 40 lezioni
+  APERTURA DI BANDA: dopo diciotto livelli di mondi, qui non c'è mondo.
+           È il messaggio più forte del prodotto: adesso stai lavorando (22 §22.8).
+  CONCETTO Dichiarare la forma di un dato è un contratto che si controlla prima
+           di partire. E un contratto che accetta tutto non controlla niente.
+  FORMA identità · VERBO dichiarare e far compilare
+  ARCHETIPO ricerca/22 terminale + ricerca/21 mutazione (il probe è la mutazione)
+  OBIETTIVO src/ senza errori E test/probe.ts rifiutato. Verificato sullo stato
+           del progetto, non sulla stringa digitata (22 §22.3 leva 1)
+  VINCOLO capitolo 4 e 8: numero massimo di comandi (22 §22.3 leva 2)
+  PERDI SE non si perde. C'è il tempo che ci metti e i comandi che spendi,
+           e restano scritti accanto — non sopra (22 §22.4.1)
+  SBAGLI 1 l'output vero di tsc, e lo stato non cambia
+         2 dopo 90 s senza comandi utili, una riga dice dove guardare
+         3 non esiste: il ragazzo ha l'output vero, leggerlo è l'esercizio
+  FRATTURA capitolo 3 — scrivere `any` fa sparire l'errore E fa sparire il
+           controllo: tsc tace, e il probe sbagliato compila. Si vede nello
+           stato, non in un messaggio
+  CAPITOLI 1 il primo errore · 2 due file · 3 FRATTURA any · 4 in quattro comandi
+           5 opzionale non è undefined · 6 array e interface
+           7 unioni e restringimento · 8 la prova
+  MONDO nessuno. Nero, monospaziato, ambra per gli errori, un solo accento oro.
+        Nessun punteggio, nessuna stella, nessuna barra
+  NUMERI da 22.6 — output 18 ms/riga, latenza 90-180 ms, righe visibili 14,
+         suggerimento a 90 s, cursore a 1,06 Hz
+  TEST 1 non si risolve senza leggere l'output: il file e la riga cambiano fra i
+         beat, e il tipo giusto non è deducibile dal nome del campo
+  TEST 2 "Eseguo tsc, leggo dove punta, apro quel file, correggo il tipo,
+         rieseguo"
+  TEST 3 il prompt è già attivo e l'obiettivo è una riga sola
+-->
+<helmet>
+<script src="./ds-base.js"></script>
+<script src="../kaio-engine.js"></script>
+<style>
+*{box-sizing:border-box}html,body{margin:0;padding:0;height:100%;background:#07080b}
+a{color:#d9b448}a:hover{color:#e8c46a}
+@keyframes om-fade{from{opacity:0}to{opacity:1}}
+@keyframes om-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes om-cur{0%,49%{opacity:1}50%,100%{opacity:0}}
+input,textarea{font:inherit;color:inherit;background:none;border:none;outline:none;padding:0;margin:0;width:100%}
+::selection{background:#d9b448;color:#0b0c0f}
+</style>
+</helmet>
+<div style="position:fixed;inset:0;background:#07080b;display:grid;place-items:center;font-family:Raleway,system-ui,sans-serif;overflow:hidden;padding:18px">
+<div style="display:flex;align-items:center;justify-content:center;gap:26px;max-width:100%">
+<div ref="{{ frameRef }}" style="position:relative;height:min(910px,calc(100vh - 36px),max(480px,calc((100vw - 280px) * 2.1667)));aspect-ratio:420/910;border-radius:10px;overflow:hidden;box-shadow:0 50px 130px -34px rgba(0,0,0,.95),0 0 0 1px rgba(217,180,72,.14);flex:0 0 auto;background:#0b0c0f">
+<div ref="{{ stageRef }}" style="width:420px;height:910px;transform-origin:0 0;display:flex;flex-direction:column;position:relative">
+<div style="flex:0 0 auto;padding:12px 16px 10px;border-bottom:1px solid rgba(217,180,72,.14);display:flex;align-items:baseline;gap:10px">
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#d9b448">~/api</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#8b939c;flex:1">node 22 · typescript 5.6</div>
+<div onClick="{{ openPause }}" style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#8b939c;cursor:pointer" style-hover="color:#d6dbe0">esc</div>
+</div>
+<div style="flex:0 0 auto;padding:11px 16px;border-bottom:1px solid rgba(217,180,72,.14);background:rgba(217,180,72,.045)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8b939c">{{ goalLabel }}</div>
+<div style="display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:7px">
+<div style="display:flex;align-items:center;gap:7px">
+<sc-if value="{{ okSrc }}" hint-placeholder-val="{{ false }}"><div style="width:15px;height:15px;border-radius:3px;background:#d9b448;color:#0b0c0f;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:15px;text-align:center">✓</div></sc-if>
+<sc-if value="{{ noSrc }}" hint-placeholder-val="{{ true }}"><div style="width:15px;height:15px;border-radius:3px;border:1px solid #5b636c"></div></sc-if>
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#d6dbe0">{{ srcLabel }}</div>
+</div>
+<div style="display:flex;align-items:center;gap:7px">
+<sc-if value="{{ okProbe }}" hint-placeholder-val="{{ false }}"><div style="width:15px;height:15px;border-radius:3px;background:#d9b448;color:#0b0c0f;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:15px;text-align:center">✓</div></sc-if>
+<sc-if value="{{ noProbe }}" hint-placeholder-val="{{ true }}"><div style="width:15px;height:15px;border-radius:3px;border:1px solid #5b636c"></div></sc-if>
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#d6dbe0">{{ probeLabel }}</div>
+</div>
+</div>
+</div>
+<sc-if value="{{ shellMode }}" hint-placeholder-val="{{ true }}">
+<div ref="{{ scrollRef }}" style="flex:1 1 auto;min-height:0;overflow-y:auto;padding:14px 16px;font-family:'JetBrains Mono',monospace;font-size:14px;line-height:1.62">
+<sc-for list="{{ lines }}" as="l" hint-placeholder-count="6">
+<sc-if value="{{ l.isCmd }}"><div style="color:#d9b448;white-space:pre-wrap;word-break:break-word">{{ l.t }}</div></sc-if>
+<sc-if value="{{ l.isErr }}"><div style="color:#e0a06a;padding-left:13px;border-left:2px solid rgba(224,160,106,.5);white-space:pre-wrap;word-break:break-word">{{ l.t }}</div></sc-if>
+<sc-if value="{{ l.isDim }}"><div style="color:#8b939c;white-space:pre-wrap;word-break:break-word">{{ l.t }}</div></sc-if>
+<sc-if value="{{ l.isOut }}"><div style="color:#c8cfd6;white-space:pre-wrap;word-break:break-word">{{ l.t }}</div></sc-if>
+</sc-for>
+</div>
+<div style="flex:0 0 auto;padding:9px 16px;border-top:1px solid rgba(217,180,72,.14);display:flex;flex-wrap:wrap;gap:4px 14px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#8b939c">
+<div>errors src/ <span style="color:#d6dbe0">{{ nErr }}</span></div>
+<div>cmd <span style="color:#d6dbe0">{{ nCmd }}</span></div>
+<div style="flex:1"></div>
+<div>{{ clock }}</div>
+</div>
+<div style="flex:0 0 auto;padding:12px 16px;display:flex;gap:9px;align-items:baseline;font-family:'JetBrains Mono',monospace;font-size:15px;background:rgba(217,180,72,.04);cursor:text" onClick="{{ focusCmd }}">
+<div style="color:#d9b448">$</div>
+<div style="position:relative;flex:1;min-width:0;display:flex;align-items:baseline">
+<div style="color:#e8eef3;white-space:pre-wrap;word-break:break-word">{{ cmd }}</div>
+<div style="width:9px;height:17px;background:#d9b448;animation:om-cur .943s step-end infinite;flex:0 0 auto;margin-left:1px"></div>
+<input ref="{{ cmdRef }}" value="{{ cmd }}" onInput="{{ onCmd }}" onKeyDown="{{ onCmdKey }}" spellcheck="false" autocapitalize="off" autocomplete="off" style="position:absolute;left:0;top:0;right:0;bottom:0;color:transparent;caret-color:transparent" />
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ nanoMode }}" hint-placeholder-val="{{ false }}">
+<div style="flex:0 0 auto;padding:7px 16px;background:#d6dbe0;color:#0b0c0f;font-family:'JetBrains Mono',monospace;font-size:13px;display:flex;gap:10px">
+<div style="font-weight:600">GNU nano 8.1</div>
+<div style="flex:1;text-align:center">{{ nanoFile }}</div>
+<sc-if value="{{ nanoDirty }}" hint-placeholder-val="{{ false }}"><div>Modified</div></sc-if>
+</div>
+<div style="flex:1 1 auto;min-height:0;overflow-y:auto;padding:12px 0;font-family:'JetBrains Mono',monospace;font-size:14px;line-height:1.75">
+<sc-for list="{{ nanoLines }}" as="n" hint-placeholder-count="5">
+<sc-if value="{{ n.editing }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;gap:12px;padding:0 16px;background:rgba(217,180,72,.13)">
+<div style="color:#8b939c;width:20px;text-align:right;flex:0 0 auto">{{ n.n }}</div>
+<input ref="{{ editRef }}" value="{{ nanoEdit }}" onInput="{{ onEdit }}" onKeyDown="{{ onEditKey }}" spellcheck="false" autocapitalize="off" autocomplete="off" style="color:#e8eef3;flex:1" />
+</div>
+</sc-if>
+<sc-if value="{{ n.plain }}" hint-placeholder-val="{{ true }}">
+<div onClick="{{ n.tap }}" style="display:flex;gap:12px;padding:0 16px;cursor:text" style-hover="background:rgba(214,219,224,.07)">
+<div style="color:#8b939c;width:20px;text-align:right;flex:0 0 auto">{{ n.n }}</div>
+<div style="color:#c8cfd6;white-space:pre-wrap;flex:1">{{ n.t }}</div>
+</div>
+</sc-if>
+</sc-for>
+</div>
+<div style="flex:0 0 auto;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(214,219,224,.16);font-family:'JetBrains Mono',monospace;font-size:13px">
+<div onClick="{{ nanoWrite }}" style="padding:11px 14px;background:#0b0c0f;color:#c8cfd6;cursor:pointer" style-hover="background:#15171c"><span style="background:#d6dbe0;color:#0b0c0f;padding:0 3px">^O</span> Write Out</div>
+<div onClick="{{ nanoExit }}" style="padding:11px 14px;background:#0b0c0f;color:#c8cfd6;cursor:pointer" style-hover="background:#15171c"><span style="background:#d6dbe0;color:#0b0c0f;padding:0 3px">^X</span> Exit</div>
+</div>
+</sc-if>
+<div style="flex:0 0 auto;display:flex;gap:7px;padding:10px 12px;border-top:1px solid rgba(217,180,72,.14);overflow-x:auto">
+<sc-for list="{{ chips }}" as="c" hint-placeholder-count="6">
+<div onClick="{{ c.tap }}" style="flex:0 0 auto;padding:8px 12px;border-radius:6px;background:rgba(214,219,224,.09);color:#d6dbe0;font-family:'JetBrains Mono',monospace;font-size:14px;cursor:pointer;white-space:nowrap" style-hover="background:rgba(217,180,72,.22)">{{ c.t }}</div>
+</sc-for>
+</div>
+<sc-if value="{{ doneOpen }}" hint-placeholder-val="{{ false }}">
+<div onClick="{{ advance }}" style="position:absolute;inset:0;display:grid;place-items:center;background:rgba(7,8,11,.94);animation:om-fade .2s ease both;cursor:pointer">
+<div style="text-align:center;padding:0 30px;font-family:'JetBrains Mono',monospace">
+<div style="font-size:15px;color:#8b939c">{{ chapterNo }}/{{ chapterOf }} · {{ chapterTitle }}</div>
+<div style="font-size:26px;color:#e8eef3;margin-top:14px;font-weight:600">{{ doneTitle }}</div>
+<div style="font-size:15px;color:#d9b448;margin-top:12px">{{ doneStats }}</div>
+<div style="font-size:14px;color:#8b939c;margin-top:26px">{{ doneHint }}</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ pauseOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;backdrop-filter:blur(9px);background:rgba(7,8,11,.8);display:grid;place-items:center;animation:om-fade .2s ease both;padding:16px;overflow-y:auto">
+<div style="width:290px;padding:24px;border-radius:10px;background:#0e1014;box-shadow:0 30px 70px -20px rgba(0,0,0,.9),inset 0 1px 0 rgba(217,180,72,.2)">
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8b939c;font-family:'JetBrains Mono',monospace">In pausa</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8b939c;font-family:'JetBrains Mono',monospace">Paused</div></sc-if>
+<div style="display:flex;flex-direction:column;gap:9px;margin-top:16px">
+<div onClick="{{ resume }}" style="padding:14px 16px;border-radius:6px;background:#d9b448;color:#0b0c0f;font-size:17px;font-weight:600;text-align:center;cursor:pointer" style-hover="background:#e8c46a"><sc-if value="{{ it }}" hint-placeholder-val="{{ true }}">Riprendi</sc-if><sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">Resume</sc-if></div>
+<div onClick="{{ toggleLang }}" style="padding:13px 16px;border-radius:6px;background:rgba(217,180,72,.12);color:#d6dbe0;font-size:16px;display:flex;justify-content:space-between;cursor:pointer"><span>Lingua</span><span style="font-family:'JetBrains Mono',monospace;color:#d9b448">{{ langLabel }}</span></div>
+<div onClick="{{ restart }}" style="padding:13px 16px;border-radius:6px;background:rgba(217,180,72,.12);color:#d6dbe0;font-size:16px;display:flex;justify-content:space-between;cursor:pointer"><span>{{ restartLabel }}</span><span style="font-family:'JetBrains Mono',monospace;color:#d9b448">git checkout .</span></div>
+<div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8b939c;font-family:'JetBrains Mono',monospace;margin-top:12px">Capitolo</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px">
+<sc-for list="{{ chapters }}" as="c" hint-placeholder-count="8">
+<div onClick="{{ c.go }}" style="padding:10px 0;border-radius:5px;background:rgba(217,180,72,.12);color:#d6dbe0;font-family:'JetBrains Mono',monospace;font-size:14px;text-align:center;cursor:pointer;position:relative">{{ c.n }}
+<sc-if value="{{ c.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:50%;bottom:4px;width:12px;height:2px;margin-left:-6px;background:#d9b448"></div></sc-if>
+</div>
+</sc-for>
+</div>
+<div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8b939c;font-family:'JetBrains Mono',monospace;margin-top:10px">Lezione</div>
+<div style="display:flex;gap:7px">
+<sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+<div onClick="{{ l.go }}" style="flex:1;padding:11px 0;border-radius:5px;background:rgba(217,180,72,.12);color:#d6dbe0;font-family:'JetBrains Mono',monospace;font-size:15px;text-align:center;cursor:pointer;position:relative">{{ l.n }}
+<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:50%;bottom:5px;width:14px;height:2px;margin-left:-7px;background:#d9b448"></div></sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</div>
+</sc-if>
+</div>
+</div>
+<div style="flex:0 1 212px;min-width:0;min-height:0;max-height:min(910px,calc(100vh - 36px));overflow-y:auto;display:flex;flex-direction:column;gap:14px;padding-right:4px;color:#8b939c">
+<div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8b939c">L19 · TypeScript · banda 4</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:600;color:#e8eef3;margin-top:5px;line-height:1.2">tsc</div>
+<div style="font-size:14px;line-height:1.5;color:#8b939c;margin-top:8px">Dichiarare e far compilare · 8 capitoli</div>
+</div>
+<div style="height:1px;background:rgba(217,180,72,.16)"></div>
+<div style="display:flex;flex-direction:column;gap:5px">
+<sc-for list="{{ chapters }}" as="c" hint-placeholder-count="8">
+<div onClick="{{ c.go }}" style="padding:9px 11px;border-radius:6px;background:rgba(217,180,72,.06);cursor:pointer;display:flex;gap:10px;align-items:baseline" style-hover="background:rgba(217,180,72,.15)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#d9b448;width:12px">{{ c.n }}</div>
+<div style="flex:1;min-width:0">
+<div style="font-size:14px;color:#d6dbe0;line-height:1.3">{{ c.title }}</div>
+<sc-if value="{{ c.on }}" hint-placeholder-val="{{ false }}"><div style="height:2px;background:#d9b448;margin-top:6px"></div></sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="height:1px;background:rgba(217,180,72,.16)"></div>
+<div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8b939c;margin-bottom:6px">Lezione {{ chapterNo }}.x</div>
+<div style="display:flex;flex-direction:column;gap:5px">
+<sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+<div onClick="{{ l.go }}" style="padding:8px 11px;border-radius:5px;background:rgba(217,180,72,.05);cursor:pointer;display:flex;gap:10px;align-items:baseline" style-hover="background:rgba(217,180,72,.14)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#8b939c;width:12px">{{ l.n }}</div>
+<div style="flex:1;min-width:0">
+<div style="font-size:13px;color:#8b939c;line-height:1.3">{{ l.title }}</div>
+<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><div style="height:2px;background:#d9b448;margin-top:5px"></div></sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="height:1px;background:rgba(217,180,72,.16)"></div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.75;color:#8b939c">
+<div>ls · cat · nano · tsc</div>
+<div>tab · completa il percorso</div>
+<div>↑ · comando precedente</div>
+</div>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:700,&quot;height&quot;:940},&quot;capitolo&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:1,&quot;min&quot;:1,&quot;max&quot;:8,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Navigazione&quot;},&quot;lezione&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:1,&quot;min&quot;:1,&quot;max&quot;:5,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Navigazione&quot;},&quot;lingua&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;it&quot;,&quot;en&quot;],&quot;default&quot;:&quot;it&quot;,&quot;tsType&quot;:&quot;'it'|'en'&quot;,&quot;section&quot;:&quot;Navigazione&quot;}}">
+const KEY='kaio-nodejs-l19';
+/* Un beat descrive un progetto vero e tre diagnostiche vere. Il checker gira
+   sullo stato del file, non sulla stringa digitata (ricerca/22 §22.3 leva 1). */
+const P=o=>o;
+const CHAP=[
+ {t:['Il primo errore','The first error'],titles:[['Leggi dove punta','Read where it points'],['Il numero del tipo','The type number'],["L'operatore",'The operator'],['Il metodo che non esiste','The method that does not exist'],['A colpo sicuro','Straight away']],
+  beats:[P({I:'User',f:'age',x:'string',w:'number',fn:'birthday',e:'u.age + 1',bad:'"quaranta"',bt:'string',hc:2365,hm:"Operator '+' cannot be applied to types 'string' and 'number'."}),
+   P({I:'Order',f:'total',x:'string',w:'number',fn:'withTax',e:'u.total * 1.22',bad:'"12.50"',bt:'string',hc:2362,hm:"The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type."}),
+   P({I:'Product',f:'stock',x:'boolean',w:'number',fn:'restock',e:'u.stock + 10',bad:'true',bt:'boolean',hc:2365,hm:"Operator '+' cannot be applied to types 'boolean' and 'number'."}),
+   P({I:'Account',f:'label',x:'number',w:'string',fn:'clean',e:'u.label.trim()',bad:'42',bt:'number',hc:2339,hm:"Property 'trim' does not exist on type 'number'."}),
+   P({I:'Session',f:'token',x:'number',w:'string',fn:'short',e:'u.token.slice(0, 8)',bad:'99',bt:'number',hc:2339,hm:"Property 'slice' does not exist on type 'number'."})]},
+ {t:['Due file','Two files'],titles:[["L'errore è a valle",'The error is downstream'],['La causa è a monte','The cause is upstream'],['Non dove segnala','Not where it reports'],['Risali','Walk back'],['Padronanza','Mastery']],
+  beats:[P({I:'Invoice',f:'amount',x:'string',w:'number',fn:'due',e:'u.amount - 100',bad:'"900"',bt:'string',hc:2362,hm:"The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type."}),
+   P({I:'Customer',f:'active',x:'string',w:'boolean',fn:'isOn',e:'u.active === true',bad:'"si"',bt:'string',hc:2367,hm:"This comparison appears to be unintentional because the types 'string' and 'boolean' have no overlap."}),
+   P({I:'Ticket',f:'priority',x:'string',w:'number',fn:'bump',e:'u.priority + 1',bad:'"alta"',bt:'string',hc:2365,hm:"Operator '+' cannot be applied to types 'string' and 'number'."}),
+   P({I:'Payment',f:'paid',x:'number',w:'boolean',fn:'settled',e:'u.paid && true',bad:'1',bt:'number',hc:2322,hm:"Type 'number' is not assignable to type 'boolean'."}),
+   P({I:'Shipment',f:'code',x:'number',w:'string',fn:'upper',e:'u.code.toUpperCase()',bad:'7',bt:'number',hc:2339,hm:"Property 'toUpperCase' does not exist on type 'number'."})]},
+ {t:['any','any'],titles:[["L'errore sparisce",'The error disappears'],['E il controllo?','And the check?'],['FRATTURA','FRACTURE'],['Il probe compila','The probe compiles'],['Adesso lo sai','Now you know']],
+  beats:[P({I:'Profile',f:'score',x:'string',w:'number',fn:'rank',e:'u.score * 10',bad:'"alto"',bt:'string',hc:2362,hm:"The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type."}),
+   P({I:'Metric',f:'value',x:'string',w:'number',fn:'double',e:'u.value * 2',bad:'"12"',bt:'string',hc:2362,hm:"The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type."}),
+   P({I:'Reading',f:'celsius',x:'string',w:'number',fn:'toF',e:'u.celsius * 1.8 + 32',bad:'"20"',bt:'string',hc:2362,hm:"The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type."}),
+   P({I:'Batch',f:'size',x:'boolean',w:'number',fn:'half',e:'u.size / 2',bad:'false',bt:'boolean',hc:2362,hm:"The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type."}),
+   P({I:'Quota',f:'used',x:'string',w:'number',fn:'left',e:'1000 - u.used',bad:'"200"',bt:'string',hc:2363,hm:"The right-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type."})]},
+ {t:['In quattro comandi','In four commands'],titles:[['Pensa prima','Think first'],['Quattro','Four'],['Tre','Three'],['Il picco','The peak'],['Senza vincolo','No constraint']],
+  beats:[P({I:'Node',f:'depth',x:'string',w:'number',fn:'deeper',e:'u.depth + 1',bad:'"3"',bt:'string',hc:2365,hm:"Operator '+' cannot be applied to types 'string' and 'number'.",mc:5}),
+   P({I:'Queue',f:'length',x:'string',w:'number',fn:'grow',e:'u.length * 2',bad:'"10"',bt:'string',hc:2362,hm:"The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.",mc:4}),
+   P({I:'Cache',f:'hits',x:'boolean',w:'number',fn:'ratio',e:'u.hits / 100',bad:'true',bt:'boolean',hc:2362,hm:"The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.",mc:3}),
+   P({I:'Worker',f:'name',x:'number',w:'string',fn:'tag',e:'u.name.padEnd(8)',bad:'5',bt:'number',hc:2339,hm:"Property 'padEnd' does not exist on type 'number'.",mc:3}),
+   P({I:'Stream',f:'chunks',x:'string',w:'number',fn:'total',e:'u.chunks + 0',bad:'"7"',bt:'string',hc:2365,hm:"Operator '+' cannot be applied to types 'string' and 'number'."})]},
+ {t:['Opzionale non è undefined','Optional is not undefined'],titles:[['Il punto di domanda','The question mark'],['Possibly undefined','Possibly undefined'],['Non è lo stesso','Not the same'],['Due campi','Two fields'],['Padronanza','Mastery']],
+  beats:[P({I:'Contact',f:'phone',x:'string',w:'string | undefined',fn:'has',e:'u.phone?.length ?? 0',bad:'null',bt:'null',hc:2322,hm:"Type 'null' is not assignable to type 'string'."}),
+   P({I:'Address',f:'unit',x:'string',w:'string | undefined',fn:'label',e:'u.unit?.trim() ?? "-"',bad:'null',bt:'null',hc:2322,hm:"Type 'null' is not assignable to type 'string'."}),
+   P({I:'Coupon',f:'discount',x:'number',w:'number | null',fn:'apply',e:'u.discount ?? 0',bad:'undefined',bt:'undefined',hc:2322,hm:"Type 'undefined' is not assignable to type 'number'."}),
+   P({I:'Draft',f:'title',x:'string',w:'string | null',fn:'show',e:'u.title ?? "senza titolo"',bad:'undefined',bt:'undefined',hc:2322,hm:"Type 'undefined' is not assignable to type 'string'."}),
+   P({I:'Reply',f:'body',x:'string',w:'string | undefined',fn:'len',e:'u.body?.length ?? 0',bad:'null',bt:'null',hc:2322,hm:"Type 'null' is not assignable to type 'string'."})]},
+ {t:['Array e interface','Arrays and interfaces'],titles:[['Le parentesi quadre','The square brackets'],['map non esiste','map does not exist'],['Array di cosa','Array of what'],['Annidato','Nested'],['Padronanza','Mastery']],
+  beats:[P({I:'Post',f:'tags',x:'string',w:'string[]',fn:'clean',e:'u.tags.map(t => t.trim())',bad:'"a,b"',bt:'string',hc:2339,hm:"Property 'map' does not exist on type 'string'.",wr:'string[]'}),
+   P({I:'Cart',f:'prices',x:'number',w:'number[]',fn:'sum',e:'u.prices.reduce((a, b) => a + b, 0)',bad:'12',bt:'number',hc:2339,hm:"Property 'reduce' does not exist on type 'number'."}),
+   P({I:'Playlist',f:'ids',x:'string[]',w:'number[]',fn:'first',e:'u.ids[0] + 1',bad:'["1"]',bt:'string[]',hc:2365,hm:"Operator '+' cannot be applied to types 'string' and 'number'."}),
+   P({I:'Team',f:'members',x:'string',w:'string[]',fn:'count',e:'u.members.length + 0',bad:'"ada"',bt:'string',hc:2365,hm:"Operator '+' cannot be applied to types 'number' and 'number'."}),
+   P({I:'Log',f:'levels',x:'number',w:'string[]',fn:'join',e:'u.levels.join(", ")',bad:'3',bt:'number',hc:2339,hm:"Property 'join' does not exist on type 'number'."})]},
+ {t:['Unioni e restringimento','Unions and narrowing'],titles:[['Due tipi in uno','Two types in one'],['typeof','typeof'],['Non entrambi','Not both'],['Restringi','Narrow'],['Padronanza','Mastery']],
+  beats:[P({I:'Field',f:'raw',x:'number',w:'string | number',fn:'text',e:'String(u.raw)',bad:'true',bt:'boolean',hc:2322,hm:"Type 'boolean' is not assignable to type 'number'."}),
+   P({I:'Input',f:'val',x:'string',w:'string | number',fn:'norm',e:'typeof u.val === "number" ? u.val : Number(u.val)',bad:'null',bt:'null',hc:2322,hm:"Type 'null' is not assignable to type 'string'."}),
+   P({I:'Cell',f:'data',x:'boolean',w:'string | number',fn:'show',e:'`${u.data}`',bad:'false',bt:'boolean',hc:2322,hm:"Type 'boolean' is not assignable to type 'string | number'.",only:true}),
+   P({I:'Param',f:'arg',x:'string',w:'string | number',fn:'idOf',e:'typeof u.arg === "string" ? u.arg.length : u.arg',bad:'[]',bt:'never[]',hc:2339,hm:"Property 'length' does not exist on type 'string | number'."}),
+   P({I:'Row',f:'key',x:'number',w:'string | number',fn:'k',e:'String(u.key).padStart(4, "0")',bad:'{}',bt:'{}',hc:2322,hm:"Type '{}' is not assignable to type 'number'."})]},
+ {t:['La prova','The test'],titles:[['Tutto insieme','All together'],['Senza rete','No net'],['Un tentativo','One attempt'],['Il picco','The peak'],['Chiusura','Closing']],
+  beats:[P({I:'Job',f:'attempts',x:'string',w:'number',fn:'retry',e:'u.attempts + 1',bad:'"2"',bt:'string',hc:2365,hm:"Operator '+' cannot be applied to types 'string' and 'number'.",mc:4}),
+   P({I:'Lease',f:'expires',x:'string',w:'number',fn:'left',e:'u.expires - Date.now()',bad:'"1000"',bt:'string',hc:2362,hm:"The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.",mc:4}),
+   P({I:'Token',f:'scopes',x:'string',w:'string[]',fn:'can',e:'u.scopes.includes("read")',bad:'"read"',bt:'string',hc:2339,hm:"Property 'includes' does not exist on type 'string'.",mc:3}),
+   P({I:'Handle',f:'fd',x:'string',w:'number',fn:'close',e:'u.fd + 0',bad:'"3"',bt:'string',hc:2365,hm:"Operator '+' cannot be applied to types 'string' and 'number'.",mc:3}),
+   P({I:'Runtime',f:'pid',x:'string',w:'number',fn:'kill',e:'u.pid * 1',bad:'"512"',bt:'string',hc:2362,hm:"The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type."})]}];
+
+const T={it:{goal:'obiettivo',src:'src/ compila',probe:'test/probe.ts rifiutato',
+ done:'Contratto in piedi',hint:'tocca per continuare',restart:'Ripristina',
+ look:"— l'informazione che ti serve è in "},
+ en:{goal:'objective',src:'src/ compiles',probe:'test/probe.ts rejected',
+ done:'Contract holds',hint:'tap to continue',restart:'Restore',
+ look:'— the information you need is in '}};
+
+class Component extends DCLogic{
+ state={beat:0,chapter:0,lang:'it',paused:false,done:false,muted:false,
+  lines:[],cmd:'',nano:null,nanoEdit:'',editing:-1,dirty:false,nCmd:0,clock:'00:00',okSrc:false,okProbe:false,nErr:0};
+
+ componentDidMount(){KAIO.init(this,{W:420,H:910,key:KEY,chapters:CHAP});
+  this.iv=setInterval(()=>this.tick(),1000);
+  this.tv=setInterval(()=>this.flush(),18);
+  /* Come i quindici giochi a canvas: il terminale è disegnato a 420×910 logici
+     e scalato sul telaio, così il testo non va mai a capo a metà parola. */
+  this.fit=()=>{const f=this.fr&&this.fr.current,s=this.st&&this.st.current;
+   if(!f||!s)return;const r=f.getBoundingClientRect();
+   if(r.height)s.style.transform='scale('+(r.height/910).toFixed(5)+')'};
+  window.addEventListener('resize',this.fit);
+  this.fro=window.ResizeObserver?new ResizeObserver(this.fit):null;
+  if(this.fro&&this.fr&&this.fr.current)this.fro.observe(this.fr.current);
+  this.fit();requestAnimationFrame(this.fit);
+  setTimeout(()=>this.focusCmd(),160);}
+ componentDidUpdate(pp){KAIO.sync(this,pp);if(this.fit)this.fit()}
+ componentWillUnmount(){clearInterval(this.iv);clearInterval(this.tv);
+  window.removeEventListener('resize',this.fit);if(this.fro)this.fro.disconnect();
+  KAIO.destroy(this)}
+
+ /* ---- progetto virtuale ---- */
+ reset(beat){const b=this.BEATS[beat];this.b=b;
+  this.mod=b.I.toLowerCase();
+  this.files={};
+  this.files['src/'+this.mod+'.ts']=['export interface '+b.I+' {','  id: number;','  '+b.f+': '+b.x+';','}'];
+  this.files['src/handler.ts']=["import { "+b.I+" } from './"+this.mod+"';",'','export function '+b.fn+'(u: '+b.I+'): '+this.ret()+' {','  return '+b.e+';','}'];
+  this.files['test/probe.ts']=["import { "+b.fn+" } from '../src/handler';",'',b.fn+'({ id: 1, '+b.f+': '+b.bad+' });'];
+  this.files['tsconfig.json']=['{','  "compilerOptions": {','    "strict": true,','    "noEmit": true','  }','}'];
+  this.files['package.json']=['{','  "name": "api",','  "type": "module"','}'];
+  this.q=[];this.hist=[];this.hi=-1;this.t0=Date.now();this.lastUseful=Date.now();this.hinted=false;
+  this.setState({lines:[],cmd:'',nano:null,editing:-1,dirty:false,nCmd:0,clock:'00:00',okSrc:false,okProbe:false,nErr:1,done:false});
+  this.print('api@1.0.0  ·  tsconfig strict: true','dim');
+  this.print('','out');
+  this.print('$ tsc','cmd');
+  this.print('src/handler.ts:4:10 - error TS'+b.hc+': '+b.hm,'err');
+  this.print('','out');
+  this.print('Found 1 error in src/handler.ts:4','dim');
+  this.print('','out');}
+ ret(){const b=this.b;return b.w.indexOf('|')>=0?b.w.split('|')[0].trim():b.w}
+
+ /* ---- output a righe, 18 ms per riga (ricerca/22 §22.7) ---- */
+ print(t,k){this.q.push({t,k})}
+ out(rows){for(const r of rows)this.print(r[0],r[1])}
+ flush(){if(!this.q.length)return;const r=this.q.shift();
+  const L=this.state.lines.concat([{t:r.t,k:r.k}]);
+  this.setState({lines:L.slice(-200)});
+  const el=this.sr&&this.sr.current;if(el)requestAnimationFrame(()=>{el.scrollTop=el.scrollHeight});}
+
+ tick(){if(this.state.paused||this.state.done)return;
+  const s=Math.floor((Date.now()-this.t0)/1000);
+  this.setState({clock:String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')});
+  if(!this.hinted&&Date.now()-this.lastUseful>90000){this.hinted=true;
+   this.print(T[this.state.lang].look+'src/'+this.mod+'.ts:3','dim')}}
+
+ /* ---- il checker: gira sul file, non sulla stringa ---- */
+ /* `|` sta SOLO nella seconda passata: metterlo anche nella classe di escape
+    produceva `\\s*` letterale e rendeva impossibili i 10 beat con unione. */
+ rx(t){return t.replace(/[.*+?^${}()[\]\\]/g,'\\$&').replace(/\s*\|\s*/g,'\\s*\\|\\s*')}
+ check(){const b=this.b,cur=(this.files['src/'+this.mod+'.ts'][2]||'');
+  const pats=[new RegExp('^\\s*'+b.f+'\\s*:\\s*'+this.rx(b.w)+'\\s*;?\\s*$')];
+  /* `phone?: string` è equivalente a `phone: string | undefined`: si accetta. */
+  const opt=b.w.match(/^(.*?)\s*\|\s*undefined$/);
+  if(opt)pats.push(new RegExp('^\\s*'+b.f+'\\?\\s*:\\s*'+this.rx(opt[1])+'\\s*;?\\s*$'));
+  const ok=pats.some(p=>p.test(cur));
+  const any=/:\s*any(\[\])?\s*;?\s*$/.test(cur);
+  const orig=new RegExp('^\\s*'+b.f+'\\s*:\\s*'+b.x.replace(/[[\]|]/g,'\\$&')+'\\s*;?\\s*$').test(cur);
+  return {srcOk:ok||any,probeRejected:ok,any,orig,cur};}
+
+ tsc(){const b=this.b,r=this.check(),errs=[];
+  if(!r.srcOk){
+   if(r.orig)errs.push(['src/handler.ts:4:10 - error TS'+b.hc+': '+b.hm,'src/handler.ts:4']);
+   else errs.push(["src/"+this.mod+".ts:3:3 - error TS1005: ';' expected.",'src/'+this.mod+'.ts:3']);}
+  else if(r.probeRejected){
+   const col=12+b.f.length+2;
+   errs.push(['test/probe.ts:3:'+col+' - error TS2322: '+"Type '"+b.bt+"' is not assignable to type '"+b.w+"'.",'test/probe.ts:3']);}
+  if(!errs.length){this.print('','out')}
+  else{for(const e of errs)this.print(e[0],'err');
+   this.print('','out');
+   this.print('Found '+errs.length+' error in '+errs[0][1],'dim');
+   this.print('','out')}
+  const won=r.srcOk&&r.probeRejected;
+  /* Il contatore conta SOLO src/: l'output pu\u00f2 dire «Found 1 error in
+     test/probe.ts» mentre qui c'\u00e8 0, e le due cose non si contraddicono
+     perch\u00e9 l'etichetta dice quale insieme conta (ricerca/22 \u00a722.3 leva 3). */
+  this.setState({okSrc:r.srcOk,okProbe:r.probeRejected,nErr:r.srcOk?0:errs.length});
+  if(won&&!this.state.done)setTimeout(()=>this.setState({done:true}),520);}
+
+ run(raw){const c=raw.trim();if(!c)return;
+  this.print('$ '+c,'cmd');
+  const n=this.state.nCmd+1;this.setState({nCmd:n,cmd:''});
+  this.hist.push(c);this.hi=this.hist.length;
+  const mc=this.b.mc||0;
+  const a=c.split(/\s+/),cmd=a[0],arg=a[1]||'';
+  if(cmd==='clear'){this.setState({lines:[]});this.q=[];return}
+  if(cmd==='ls'){const dir=arg.replace(/\/$/,'');
+   const set=Object.keys(this.files).filter(f=>dir?f.indexOf(dir+'/')===0:f.indexOf('/')<0);
+   const dirs=dir?[]:['src','test'];
+   this.print(dirs.concat(set.map(f=>dir?f.slice(dir.length+1):f)).join('  '),'out');
+   this.print('','out');return}
+  if(cmd==='cat'){const f=this.resolve(arg);
+   if(!f){this.print('cat: '+arg+': No such file or directory','err');this.print('','out');return}
+   for(const l of this.files[f])this.print(l,'out');this.print('','out');
+   this.lastUseful=Date.now();return}
+  if(cmd==='grep'){const pat=arg.replace(/^-\w+\s*/,'').replace(/['"]/g,'');
+   let hit=0;for(const f of Object.keys(this.files))this.files[f].forEach((l,i)=>{
+    if(pat&&l.indexOf(pat)>=0){this.print(f+':'+(i+1)+':'+l,'out');hit++}});
+   if(!hit)this.print('','out');else this.print('','out');return}
+  if(cmd==='nano'||cmd==='vi'||cmd==='vim'){const f=this.resolve(arg);
+   if(!f){this.print('nano: '+arg+': No such file or directory','err');this.print('','out');return}
+   this.lastUseful=Date.now();
+   this.setState({nano:f,editing:-1,dirty:false});return}
+  if(cmd==='tsc'||(cmd==='npx'&&a[1]==='tsc')||(cmd==='npm'&&a[2]==='build')){
+   this.lastUseful=Date.now();
+   if(mc&&n>mc){this.print('','out');
+    this.print('vincolo: '+mc+' comandi. Ne hai spesi '+n+'. git checkout . e ricomincia.','err');
+    this.print('','out');return}
+   this.tsc();return}
+  if(cmd==='pwd'){this.print('/home/api','out');this.print('','out');return}
+  this.print(cmd+': command not found','err');this.print('','out');}
+
+ resolve(a){if(!a)return null;const k=a.replace(/^\.\//,'');
+  if(this.files[k])return k;
+  for(const f of Object.keys(this.files))if(f.split('/').pop()===k)return f;
+  return null}
+
+ /* ---- nano ---- */
+ nanoTap(i){this.setState({editing:i,nanoEdit:this.files[this.state.nano][i]});
+  setTimeout(()=>{const e=this.er&&this.er.current;if(e)e.focus()},40)}
+ nanoCommit(){const i=this.state.editing;if(i<0)return;
+  this.files[this.state.nano][i]=this.state.nanoEdit;
+  this.setState({editing:-1,dirty:true});this.lastUseful=Date.now()}
+ nanoWrite(){this.nanoCommit();const f=this.state.nano;
+  this.setState({dirty:false});
+  this.wrote=f}
+ nanoExit(){this.nanoCommit();
+  this.setState({nano:null,editing:-1});
+  setTimeout(()=>this.focusCmd(),80)}
+
+ focusCmd(){const e=this.cr&&this.cr.current;if(e)e.focus()}
+ chip(t){if(this.state.editing>=0){this.setState(s=>({nanoEdit:s.nanoEdit+t}));
+   setTimeout(()=>{const e=this.er&&this.er.current;if(e)e.focus()},20);return}
+  this.setState(s=>({cmd:s.cmd+t}));setTimeout(()=>this.focusCmd(),20)}
+
+ renderVals(){const s=this.state,L=T[s.lang],b=this.b||{},nano=s.nano;
+  this.sr=this.sr||React.createRef();this.cr=this.cr||React.createRef();this.er=this.er||React.createRef();
+  this.fr=this.fr||React.createRef();this.st=this.st||React.createRef();
+  const mc=b.mc||0;
+  return Object.assign(KAIO.vals(this),{
+   scrollRef:this.sr,cmdRef:this.cr,editRef:this.er,frameRef:this.fr,stageRef:this.st,
+   goalLabel:L.goal+(mc?'  ·  max '+mc+(s.lang==='it'?' comandi':' commands'):''),
+   srcLabel:L.src,probeLabel:L.probe,
+   okSrc:s.okSrc,noSrc:!s.okSrc,okProbe:s.okProbe,noProbe:!s.okProbe,
+   shellMode:!nano,nanoMode:!!nano,nanoFile:nano||'',nanoDirty:s.dirty,
+   nanoLines:nano?this.files[nano].map((t,i)=>({n:String(i+1),t:t===''?' ':t,
+present:true,editing:i===s.editing,plain:i!==s.editing,tap:()=>this.nanoTap(i)})):[],
+   nanoEdit:s.nanoEdit,
+   lines:s.lines.map(l=>({t:l.t===''?' ':l.t,isCmd:l.k==='cmd',isErr:l.k==='err',isDim:l.k==='dim',isOut:l.k==='out'})),
+   cmd:s.cmd,nCmd:String(s.nCmd)+(mc?'/'+mc:''),nErr:String(s.nErr),clock:s.clock,
+   doneTitle:L.done,doneStats:s.nCmd+(s.lang==='it'?' comandi · ':' commands · ')+s.clock,
+   doneHint:L.hint,restartLabel:L.restart,
+   onCmd:e=>this.setState({cmd:e.target.value}),
+   onCmdKey:e=>{if(e.key==='Enter'){e.preventDefault();this.run(this.state.cmd)}
+    else if(e.key==='ArrowUp'){e.preventDefault();if(this.hi>0){this.hi--;this.setState({cmd:this.hist[this.hi]})}}
+    else if(e.key==='ArrowDown'){e.preventDefault();if(this.hi<this.hist.length-1){this.hi++;this.setState({cmd:this.hist[this.hi]})}else{this.hi=this.hist.length;this.setState({cmd:''})}}
+    else if(e.key==='Tab'){e.preventDefault();const v=this.state.cmd,m=v.match(/(\S*)$/)[1];
+     if(m){const hit=Object.keys(this.files).find(f=>f.indexOf(m)===0||f.split('/').pop().indexOf(m)===0);
+      if(hit)this.setState({cmd:v.slice(0,v.length-m.length)+hit})}}
+    else if(e.key==='Escape'){e.preventDefault();this.setState({paused:true})}},
+   onEdit:e=>this.setState({nanoEdit:e.target.value}),
+   onEditKey:e=>{if(e.key==='Enter'){e.preventDefault();this.nanoCommit()}
+    else if(e.key==='Escape'){e.preventDefault();this.setState({editing:-1})}
+    else if(e.key==='o'&&e.ctrlKey){e.preventDefault();this.nanoWrite()}
+    else if(e.key==='x'&&e.ctrlKey){e.preventDefault();this.nanoExit()}},
+   nanoWrite:()=>this.nanoWrite(),nanoExit:()=>this.nanoExit(),
+   focusCmd:()=>this.focusCmd(),openPause:()=>this.setState({paused:true}),
+   advance:()=>KAIO.next(this),
+   restart:()=>{KAIO.goBeat(this,this.state.beat);this.setState({paused:false})},
+   chips:[': number',': string',': boolean','[]','?',' | null',' | undefined','src/','test/'].map(t=>({t,tap:()=>this.chip(t)}))});
+ }
+ reset2(){}
+ update(){}
+ draw(){}
+}
+</script>
+</body>
+</html>

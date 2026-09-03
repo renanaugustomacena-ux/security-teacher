@@ -17,3 +17,9 @@ ideanew/
 .design-sync/
 .ds-sync/
 ds-bundle/
+
+# Level-game design pack (Doctrine §1.9) — the handoff bundle from which the
+# games under js/games/ are ported: React `.dc.html` templates, the design-system
+# bundle, fonts and 25 chapters of research. Never shipped, never imported by the
+# app; the ported modules under js/games/ are the linted artefact.
+knowledge-aio-giochi/

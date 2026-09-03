@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Cyber L1 — La casa di notte" description="Livello 1 di Cybersecurity: 8 capitoli × 5 lezioni = 40. Gestione del tempo sulle protezioni di base; termini inglesi stampigliati sugli oggetti." -->
+<!--
+  SCHEDA DI PROGETTO (ricerca/00 §0.3)
+  GIOCO ...... La casa di notte
+  LIVELLO .... Cybersecurity, L1 Fondamenti, banda 1 — 8 capitoli, 40 lezioni
+  CONCETTO ... Qualcosa di tuo vale anche quando non lo guardi, e chi lo vuole
+               passa dal varco lasciato scoperto. Ogni protezione ferma UN
+               tipo di fatto, non tutti.
+  FORMA ...... contenimento + simultaneità   VERBO ... proteggere
+  ARCHETIPO .. ricerca/10 time management
+  VINCI SE ... i fatti della notte sono tutti coperti (need del beat)
+  PERDI SE ... tre lanterne spente: la casa ha perso troppo
+  SBAGLI ..... 1 viaggio a vuoto: la targa torna, si sente il tonfo
+               2 alla seconda, pulsa la targa giusta per il fatto più vecchio
+               3 pannello di coaching, tre righe + demo, chiude col termine
+  CAPITOLI ... 1 il verbo · 2 due varchi · 3 FRATTURA la pioggia non bussa
+               4 respiro: cambia gesto · 5 il pacco (annusa prima)
+               6 la crepa (patch prima) · 7 a raffica · 8 la notte intera
+  MONDO ...... casa di notte: finestra, porta, cancello, cassa; targhe
+               d'ottone con i termini INGLESI (PASSWORD, FIREWALL, ENCRYPTION,
+               BACKUP, ANTIVIRUS, PATCH); il mondo parla italiano
+  NUMERI ..... da ricerca/31: azione 0,7-1,6 s, pazienza 40→21 s a tre stati,
+               fatti 1→4, arrivi 7,5→3,6 s
+  TEST 1 ..... i fatti si distinguono SOLO dal gesto (maniglia che balla,
+               testa che gira, nuvola che gocciola, pacco che trema); le
+               targhe sono tutte d'ottone uguale. Al cap. 4 i fatti cambiano
+               gesto a metà: chi ha imparato il posto e non il gesto paga.
+  TEST 2 ..... "Metto la protezione giusta davanti a quello che sta
+               succedendo, prima che finisca"
+  TEST 3 ..... una figura arriva alla porta, la maniglia balla, la targa
+               PASSWORD pulsa piano
+-->
+<helmet>
+<script src="./ds-base.js"></script>
+<script src="../kaio-engine.js"></script>
+<style>
+*{box-sizing:border-box}html,body{margin:0;padding:0;height:100%;background:#080705}
+@keyframes om-fade{from{opacity:0}to{opacity:1}}
+@keyframes om-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes om-wait{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes om-serve{0%{transform:translate(0,0);opacity:0}16%{opacity:1}64%{transform:translate(86px,0);opacity:1}84%{transform:translate(86px,0);opacity:0}100%{opacity:0}}
+</style>
+</helmet>
+<div style="position:fixed;inset:0;background:radial-gradient(130% 90% at 50% -10%,#1a1409 0%,#0d0a07 55%,#070605 100%);display:grid;place-items:center;font-family:Raleway,system-ui,sans-serif;overflow:hidden;padding:18px">
+<div style="display:flex;align-items:center;justify-content:center;gap:26px;max-width:100%">
+<div style="position:relative;height:min(910px,calc(100vh - 36px),max(480px,calc((100vw - 280px) * 2.1667)));aspect-ratio:420/910;border-radius:24px;overflow:hidden;box-shadow:0 50px 130px -34px rgba(0,0,0,.95),0 0 0 1px rgba(226,170,90,.14);flex:0 0 auto">
+<canvas ref="{{ cvRef }}" style="display:block;width:100%;height:100%;touch-action:none;cursor:pointer"></canvas>
+<sc-if value="{{ coachOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;left:14px;right:14px;top:14px;padding:20px 20px 16px;border-radius:18px;background:linear-gradient(180deg,rgba(30,23,14,.97),rgba(20,15,10,.97));box-shadow:0 24px 60px -18px rgba(0,0,0,.9),inset 0 1px 0 rgba(226,170,90,.18);animation:om-rise .26s cubic-bezier(.16,1,.3,1) both;cursor:pointer">
+<div style="font-size:20px;line-height:1.45;color:#f0e6d6;font-weight:500">{{ coachWhat }}</div>
+<div style="font-size:20px;line-height:1.45;color:#c9b795;margin-top:10px">{{ coachEffect }}</div>
+<div style="font-size:20px;line-height:1.45;color:#e2aa5a;margin-top:14px;font-weight:600">{{ coachRule }}</div>
+<div style="margin-top:18px;height:92px;border-radius:12px;background:rgba(0,0,0,.34);position:relative;overflow:hidden">
+<div style="position:absolute;left:16px;top:16px;width:34px;height:44px;border-radius:3px;background:#3a2d1e;animation:om-wait 1.8s ease-in-out infinite"></div>
+<div style="position:absolute;left:150px;top:20px;width:38px;height:38px;border-radius:50%;background:rgba(226,170,90,.3);border:2px solid rgba(226,170,90,.6)"></div>
+<div style="position:absolute;left:60px;top:30px;width:34px;height:18px;border-radius:3px;background:#d8b483;animation:om-serve 1.8s ease-in-out infinite"></div>
+<div style="position:absolute;left:16px;bottom:10px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#8d7f68;letter-spacing:.05em">{{ coachHint }}</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ doneOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(70% 50% at 50% 45%,rgba(30,22,12,.9),rgba(8,7,5,.96));animation:om-fade .22s ease both;cursor:pointer">
+<div style="text-align:center;padding:0 30px">
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:34px;font-weight:600;color:#f4ebdc;letter-spacing:-.01em">Notte tenuta</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:34px;font-weight:600;color:#f4ebdc;letter-spacing:-.01em">Night held</div></sc-if>
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#8d7f68;margin-top:10px">{{ chapterNo }}/{{ chapterOf }} · {{ chapterTitle }}</div>
+<div style="display:flex;gap:10px;justify-content:center;margin-top:24px">
+<sc-for list="{{ marks }}" as="m" hint-placeholder-count="5">
+<div style="width:34px;height:6px;border-radius:3px;background:rgba(226,170,90,.22);position:relative;overflow:hidden">
+<sc-if value="{{ m.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;background:#e2aa5a"></div></sc-if>
+</div>
+</sc-for>
+</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#a3937a;margin-top:22px;letter-spacing:.04em">{{ doneHint }}</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ pauseOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;backdrop-filter:blur(9px);background:rgba(10,8,6,.72);display:grid;place-items:center;animation:om-fade .2s ease both;padding:16px;overflow-y:auto">
+<div style="width:290px;padding:24px;border-radius:20px;background:linear-gradient(180deg,rgba(32,25,16,.98),rgba(19,15,10,.98));box-shadow:0 30px 70px -20px rgba(0,0,0,.9),inset 0 1px 0 rgba(226,170,90,.16)">
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace">In pausa</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace">Paused</div></sc-if>
+<div style="display:flex;flex-direction:column;gap:9px;margin-top:16px">
+<div onClick="{{ resume }}" style="padding:14px 16px;border-radius:12px;background:#e2aa5a;color:#191207;font-size:17px;font-weight:600;text-align:center;cursor:pointer" style-hover="background:#eeb867"><sc-if value="{{ it }}" hint-placeholder-val="{{ true }}">Riprendi</sc-if><sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">Resume</sc-if></div>
+<div onClick="{{ toggleLang }}" style="padding:13px 16px;border-radius:12px;background:rgba(226,170,90,.1);color:#e8d9bd;font-size:16px;display:flex;justify-content:space-between;cursor:pointer" style-hover="background:rgba(226,170,90,.18)"><span><sc-if value="{{ it }}" hint-placeholder-val="{{ true }}">Lingua</sc-if><sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">Language</sc-if></span><span style="font-family:'JetBrains Mono',monospace;color:#e2aa5a">{{ langLabel }}</span></div>
+<div onClick="{{ toggleMute }}" style="padding:13px 16px;border-radius:12px;background:rgba(226,170,90,.1);color:#e8d9bd;font-size:16px;display:flex;justify-content:space-between;cursor:pointer" style-hover="background:rgba(226,170,90,.18)"><span>Audio</span><span style="font-family:'JetBrains Mono',monospace;color:#e2aa5a">{{ audioState }}</span></div>
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace;margin-top:12px">Capitolo</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace;margin-top:12px">Chapter</div></sc-if>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px">
+<sc-for list="{{ chapters }}" as="c" hint-placeholder-count="8">
+<div onClick="{{ c.go }}" style="padding:10px 0;border-radius:9px;background:rgba(226,170,90,.1);color:#e8d9bd;font-family:'JetBrains Mono',monospace;font-size:14px;text-align:center;cursor:pointer;position:relative" style-hover="background:rgba(226,170,90,.2)">{{ c.n }}
+<sc-if value="{{ c.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:50%;bottom:4px;width:12px;height:2px;margin-left:-6px;background:#e2aa5a;border-radius:1px"></div></sc-if>
+</div>
+</sc-for>
+</div>
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace;margin-top:10px">Lezione</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace;margin-top:10px">Lesson</div></sc-if>
+<div style="display:flex;gap:7px">
+<sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+<div onClick="{{ l.go }}" style="flex:1;padding:11px 0;border-radius:10px;background:rgba(226,170,90,.1);color:#e8d9bd;font-family:'JetBrains Mono',monospace;font-size:15px;text-align:center;cursor:pointer;position:relative" style-hover="background:rgba(226,170,90,.2)">{{ l.n }}
+<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:50%;bottom:5px;width:14px;height:2px;margin-left:-7px;background:#e2aa5a;border-radius:1px"></div></sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</div>
+</sc-if>
+</div>
+<div style="flex:0 1 212px;min-width:0;min-height:0;max-height:min(910px,calc(100vh - 36px));overflow-y:auto;display:flex;flex-direction:column;gap:14px;padding-right:4px;color:#b6a68b">
+<div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#a3937a">Cyber · L1 Fondamenti</div>
+<div style="font-size:23px;font-weight:600;color:#f0e6d6;margin-top:4px;line-height:1.2">La casa di notte</div>
+<div style="font-size:14px;line-height:1.5;color:#8d7f68;margin-top:8px">Banda 1 · gestione del tempo · 8 capitoli</div>
+</div>
+<div style="height:1px;background:rgba(226,170,90,.14)"></div>
+<div style="display:flex;flex-direction:column;gap:5px">
+<sc-for list="{{ chapters }}" as="c" hint-placeholder-count="8">
+<div onClick="{{ c.go }}" style="padding:9px 11px;border-radius:9px;background:rgba(226,170,90,.06);cursor:pointer;display:flex;gap:10px;align-items:baseline" style-hover="background:rgba(226,170,90,.14)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#e2aa5a;width:12px">{{ c.n }}</div>
+<div style="flex:1;min-width:0">
+<div style="font-size:14px;color:#e8d9bd;line-height:1.3">{{ c.title }}</div>
+<sc-if value="{{ c.on }}" hint-placeholder-val="{{ false }}"><div style="height:2px;background:#e2aa5a;border-radius:1px;margin-top:6px"></div></sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="height:1px;background:rgba(226,170,90,.14)"></div>
+<div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#a3937a;margin-bottom:6px">Lezione {{ chapterNo }}.x</div>
+<div style="display:flex;flex-direction:column;gap:5px">
+<sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+<div onClick="{{ l.go }}" style="padding:8px 11px;border-radius:8px;background:rgba(226,170,90,.05);cursor:pointer;display:flex;gap:10px;align-items:baseline" style-hover="background:rgba(226,170,90,.13)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8d7f68;width:12px">{{ l.n }}</div>
+<div style="flex:1;min-width:0">
+<div style="font-size:13px;color:#c9b795;line-height:1.3">{{ l.title }}</div>
+<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><div style="height:2px;background:#e2aa5a;border-radius:1px;margin-top:5px"></div></sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="font-size:13px;line-height:1.55;color:#a3937a">Guarda il gesto, non la faccia: tocca la targa della protezione giusta e le mani la portano al varco. I pacchi si fanno annusare — ANTIVIRUS — prima di aprirli. <span style="color:#8d7f68">Esc</span> per la pausa.</div>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:940,&quot;height&quot;:1000},&quot;capitolo&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;,&quot;6&quot;,&quot;7&quot;,&quot;8&quot;],&quot;default&quot;:&quot;1&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;lezione&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;],&quot;default&quot;:&quot;1&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;lingua&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;it&quot;,&quot;en&quot;],&quot;default&quot;:&quot;it&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;diagnostica&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Taratura&quot;}}">
+const W=420,H=910,KEY='kaio.cy1.casa';
+const SPOT={finestra:{x:64,y:414},porta:{x:170,y:414},cancello:{x:276,y:414},cassa:{x:378,y:414}};
+const KDEF={prowl:{spot:'porta',tok:'password'},stranger:{spot:'cancello',tok:'firewall'},snoop:{spot:'finestra',tok:'encryption'},rain:{spot:'cassa',tok:'backup'}};
+const TOKL={password:['PASSWORD','la serratura','the lock'],firewall:['FIREWALL','la grata','the grate'],encryption:['ENCRYPTION','il sigillo','the seal'],backup:['BACKUP','la copia','the copy'],antivirus:['ANTIVIRUS','il fiuto','the sniff'],patch:['PATCH','la toppa','the mend']};
+const A1=['prowl','stranger'],A2=['prowl','stranger','snoop'],A3=['prowl','stranger','snoop','rain'];
+const T1=['password','firewall'],T2=T1.concat(['encryption']),T3=T2.concat(['backup']),T4=T3.concat(['antivirus']),T5=T4.concat(['patch']);
+/* Beat: kinds=fatti possibili, toks=targhe sul ripiano, max=fatti insieme,
+   arrive, pat, need=fatti da coprire, chg=cambiano gesto, cracks, rush, queue.
+   Curva 0,2/0,45/0,7/1,0/0,6 (ricerca/03 §3.3); numeri da ricerca/31. */
+const B=o=>Object.assign({kinds:['prowl'],toks:['password'],max:1,arrive:7,pat:36,need:3,chg:false,cracks:0,rush:false,queue:1},o);
+const CH=[
+ {t:['Il primo gesto','First move'],titles:[['La maniglia','The handle'],['Ancora lui','Him again'],['Il cancello','The gate'],['Chi dove','Who where'],['Il ritmo','The rhythm']],beats:[
+  B({need:2,pat:40,arrive:7.5}),B({need:3,pat:36,arrive:6.5}),
+  B({kinds:A1,toks:T1,need:4,pat:32,arrive:6}),B({kinds:A1,toks:T1,need:5,pat:28,arrive:5,max:2}),
+  B({kinds:A1,toks:T1,need:4,pat:32,arrive:6})]},
+ {t:['Due varchi','Two gaps'],titles:[['La finestra','The window'],['Tre protezioni','Three protections'],['Insieme','At once'],['Stretti','Tight'],['A memoria','By heart']],beats:[
+  B({kinds:['snoop','prowl'],toks:T2,need:3,pat:36,arrive:7}),B({kinds:A2,toks:T2,need:4,pat:32,arrive:6.5,max:2}),
+  B({kinds:A2,toks:T2,need:5,pat:30,arrive:6,max:2}),B({kinds:A2,toks:T2,need:6,pat:24,arrive:4.4,max:3}),
+  B({kinds:A2,toks:T2,need:5,pat:30,arrive:6,max:2})]},
+ {t:['La pioggia non bussa','Rain does not knock'],titles:[['La nuvola','The cloud'],['Danno senza faccia','Faceless harm'],['Quale dei due','Which one'],['Temporale','Storm'],['Il sereno','Clearing']],beats:[
+  B({kinds:['rain'],toks:T3,need:2,pat:34,arrive:7}),B({kinds:['rain','prowl'],toks:T3,need:4,pat:32,arrive:6.5,max:2}),
+  B({kinds:['rain','snoop','stranger'],toks:T3,need:5,pat:28,arrive:6,max:2}),B({kinds:A3,toks:T3,need:6,pat:24,arrive:4.6,max:3}),
+  B({kinds:A3,toks:T3,need:5,pat:28,arrive:6,max:2})]},
+ {t:['Cambia gesto','It changes'],titles:[['Il primo trucco','First trick'],['Non fidarti del posto','Trust no spot'],['Mentre porti','Mid-carry'],['Due trucchi','Two tricks'],['L\'occhio','The eye']],beats:[
+  B({kinds:A2,toks:T3,need:3,pat:34,arrive:7,chg:true}),B({kinds:A2,toks:T3,need:4,pat:30,arrive:6.5,chg:true,max:2}),
+  B({kinds:A3,toks:T3,need:5,pat:28,arrive:6,chg:true,max:2}),B({kinds:A3,toks:T3,need:6,pat:24,arrive:5,chg:true,max:3}),
+  B({kinds:A3,toks:T3,need:5,pat:30,arrive:6,chg:true,max:2})]},
+ {t:['Il pacco','The parcel'],titles:[['Annusa prima','Sniff first'],['Buono o no','Good or not'],['Fra le altre cose','Among the rest'],['Consegne fitte','Thick deliveries'],['La regola','The rule']],beats:[
+  B({kinds:['parcel'],toks:T4,need:2,pat:40,arrive:7}),B({kinds:['parcel'],toks:T4,need:3,pat:36,arrive:6,max:2}),
+  B({kinds:['parcel','prowl','rain'],toks:T4,need:5,pat:30,arrive:6,max:2}),B({kinds:['parcel','prowl','rain','stranger'],toks:T4,need:6,pat:24,arrive:5,max:3}),
+  B({kinds:['parcel','snoop'],toks:T4,need:5,pat:30,arrive:6,max:2})]},
+ {t:['La crepa','The crack'],titles:[['Il legno cede','Wood gives'],['Prima la toppa','Patch first'],['Due crepe','Two cracks'],['Assalto','Assault'],['Casa sana','Sound house']],beats:[
+  B({kinds:['prowl'],toks:T5,need:3,pat:36,arrive:6.5,cracks:1}),B({kinds:['prowl','snoop'],toks:T5,need:4,pat:32,arrive:6,cracks:1,max:2}),
+  B({kinds:A2,toks:T5,need:5,pat:28,arrive:5.5,cracks:2,max:2}),B({kinds:A3,toks:T5,need:6,pat:24,arrive:4.6,cracks:2,max:3}),
+  B({kinds:A2,toks:T5,need:5,pat:30,arrive:6,cracks:1,max:2})]},
+ {t:['A raffica','In bursts'],titles:[['La prima raffica','First burst'],['Tre insieme','Three at once'],['Coda di gesti','Action queue'],['Il picco','The peak'],['Respiro','Breath']],beats:[
+  B({kinds:A3,toks:T5,need:5,pat:30,arrive:5.4,max:3,rush:true,queue:2}),B({kinds:A3,toks:T5,need:6,pat:28,arrive:4.8,max:3,rush:true,queue:2}),
+  B({kinds:A3.concat(['parcel']),toks:T5,need:7,pat:24,arrive:4.2,max:4,rush:true,queue:2}),B({kinds:A3.concat(['parcel']),toks:T5,need:8,pat:21,arrive:3.6,max:4,rush:true,queue:2}),
+  B({kinds:A3,toks:T5,need:6,pat:28,arrive:5,max:3,rush:true,queue:2})]},
+ {t:['La notte intera','The whole night'],titles:[['Tutto insieme','All together'],['Senza rete','No net'],['La prova','The test'],['Il picco della notte','Night peak'],['L\'alba','Dawn']],beats:[
+  B({kinds:A3,toks:T5,need:6,pat:30,arrive:5.6,max:3,chg:true,queue:2}),B({kinds:A3.concat(['parcel']),toks:T5,need:7,pat:27,arrive:5,max:3,cracks:1,queue:2}),
+  B({kinds:A3.concat(['parcel']),toks:T5,need:8,pat:24,arrive:4.4,max:4,chg:true,cracks:1,queue:2}),B({kinds:A3.concat(['parcel']),toks:T5,need:9,pat:21,arrive:3.8,max:4,chg:true,cracks:2,rush:true,queue:2}),
+  B({kinds:A3,toks:T5,need:6,pat:30,arrive:5.4,max:3,chg:true,queue:2})]}];
+const TX={it:{wrong:'Quella protezione non fermava quello che stava succedendo.',wrongFx:'O il fatto era un altro, o è cambiato mentre arrivavi.',wrongRule:'Ogni protezione ferma un solo tipo di fatto: guarda il gesto, poi scegli.',
+ late:'Un varco è rimasto scoperto troppo a lungo.',lateFx:'Una lanterna si è spenta: qualcosa è andato perso.',lateRule:'Due mani sole: copri prima chi sta per cedere.',
+ gamble:'Hai aperto un pacco senza farlo annusare.',gambleFx:'Se dentro c\'era qualcosa, adesso è in casa.',gambleRule:'ANTIVIRUS prima di aprire: sempre.',
+ crack:'La protezione non tiene sul legno rotto.',crackFx:'Sotto la crepa passa tutto, serratura o no.',crackRule:'Prima PATCH sulla crepa, poi la protezione.',
+ hint:'guarda il gesto, non la faccia'},
+ en:{wrong:'That protection did not stop what was happening.',wrongFx:'Either it was something else, or it changed while you were on the way.',wrongRule:'Each protection stops one kind of event: watch the gesture, then choose.',
+ late:'A gap stayed uncovered too long.',lateFx:'A lantern went out: something was lost.',lateRule:'One pair of hands: cover whoever is about to give in first.',
+ gamble:'You opened a parcel without sniffing it.',gambleFx:'If something was inside, it is in the house now.',gambleRule:'ANTIVIRUS before opening: always.',
+ crack:'A protection does not hold on broken wood.',crackFx:'Everything slips under the crack, lock or no lock.',crackRule:'PATCH the crack first, then the protection.',
+ hint:'watch the gesture, not the face'}};
+
+class Component extends DCLogic{
+ state={beat:0,chapter:0,lang:'it',paused:false,coach:null,done:false,muted:false,step:0,left:0};
+ renderVals(){const s=this.state,L=TX[s.lang],c=s.coach;
+  return Object.assign(KAIO.vals(this),{
+   coachWhat:c?L[c.kind]:'',coachEffect:c?L[c.kind+'Fx']:'',coachRule:c?L[c.kind+'Rule']:'',coachHint:L.hint});}
+ componentDidMount(){KAIO.init(this,{W,H,key:KEY,chapters:CH,onTap:p=>this.tap(p)});
+  KAIO.audio(this);KAIO.drone(this,48,'triangle',.013,140)}
+ componentDidUpdate(pp){KAIO.sync(this,pp)}
+ componentWillUnmount(){KAIO.destroy(this)}
+
+ reset(beat){const c=this.BEATS[beat];this.cfg=c;
+  this.evs=[];this.cracks=[];this.parts=[];this.queue=[];
+  const sp=Object.keys(SPOT);
+  for(let i=0;i<c.cracks;i++){const free=sp.filter(s=>!this.cracks.some(k=>k.spot===s));
+   this.cracks.push({spot:free[Math.floor(Math.random()*free.length)],fixed:false})}
+  this.hands={x:W*.5,y:H*.60,busy:0,total:0,at:null,job:null};
+  this.arriveT=1.2;this.resolved=0;this.gone=0;this.spawned=0;this.burstLeft=0;
+  this.streak={kind:null,n:0};this.pulse=0;this.pulseTok=null;this.shake=0;this.flash=0;this.shed=false}
+
+ plates(){const t=this.cfg.toks,r=[];const w=122,g=10;
+  for(let i=0;i<t.length;i++){const row=Math.floor(i/3),n=Math.min(3,t.length-row*3),x0=(W-(n*w+(n-1)*g))/2;
+   r.push({k:t[i],x:x0+(i%3)*(w+g),y:640+row*54,w,h:44})}return r}
+ crackAt(s){return this.cracks.some(c=>c.spot===s&&!c.fixed)}
+
+ tap(p){for(const pl of this.plates()){if(p.x>=pl.x&&p.x<=pl.x+pl.w&&p.y>=pl.y&&p.y<=pl.y+pl.h){this.act({t:'tok',k:pl.k});return}}
+  for(const e of this.evs){if(e.kind==='parcel'&&!e.dead&&Math.hypot(p.x-e.x,p.y-e.y)<46){this.act({t:'open',ev:e});return}}
+  KAIO.snd(this,'fall')}
+
+ act(j){const h=this.hands;
+  if(h.busy>0){if(this.cfg.queue>1&&this.queue.length<this.cfg.queue-1){this.queue.push(j);KAIO.snd(this,'pop',{hz:300,v:.07})}
+   else{KAIO.snd(this,'fall');this.shake=.4}return}
+  this.start(j)}
+
+ start(j){const h=this.hands,tr=q=>Math.hypot(h.x-q.x,h.y-q.y)/W*.9;
+  if(j.t==='open'){const e=j.ev;if(!e||e.dead)return;
+   h.job={t:'open',ev:e};h.at={x:e.x,y:e.y};h.total=h.busy=.8+tr(e);KAIO.snd(this,'click',{hz:700,v:.15});return}
+  const k=j.k;
+  if(k==='patch'){const cr=this.cracks.find(c=>!c.fixed);
+   if(cr){const q=SPOT[cr.spot];h.job={t:'patch',cr};h.at={x:q.x,y:q.y};h.total=h.busy=1.2+tr(q);KAIO.snd(this,'click',{hz:520,v:.16})}
+   else this.waste();return}
+  if(k==='antivirus'){const e=this.evs.find(e=>e.kind==='parcel'&&!e.dead&&!e.sniffed);
+   if(e){h.job={t:'sniff',ev:e};h.at={x:e.x,y:e.y};h.total=h.busy=1.1+tr(e);KAIO.snd(this,'click',{hz:880,v:.16})}
+   else this.waste();return}
+  const e=this.evs.find(e=>!e.dead&&!e.taken&&e.kind!=='parcel'&&KDEF[e.kind].tok===k);
+  if(e){e.taken=true;h.job={t:'apply',ev:e,k};h.at={x:e.tx,y:e.ty};h.total=h.busy=1.0+tr({x:e.tx,y:e.ty});KAIO.snd(this,'click',{hz:900,v:.18})}
+  else this.waste()}
+
+ waste(){const h=this.hands;h.job={t:'waste'};h.at={x:W*.5,y:H*.585};h.total=h.busy=.7;KAIO.snd(this,'pop',{hz:240,v:.1})}
+
+ finish(){const h=this.hands,j=h.job;h.job=null;h.busy=0;
+  if(!j){this.deq();return}
+  if(j.t==='apply'){const e=j.ev;
+   if(e&&!e.dead&&KDEF[e.kind].tok===j.k){
+    if(this.crackAt(e.spot)){e.taken=false;KAIO.snd(this,'thud',{v:.22});this.shake=.3;this.err('crack')}
+    else this.win1(e)}
+   else{KAIO.snd(this,'thud',{v:.2});if(e&&!e.dead)e.taken=false;this.err('wrong')}}
+  else if(j.t==='patch'){if(!j.cr.fixed){j.cr.fixed=true;KAIO.snd(this,'tone',{from:340,to:520,v:.14});
+   KAIO.burst(this.parts,SPOT[j.cr.spot].x,SPOT[j.cr.spot].y,9,'#c99a5a')}}
+  else if(j.t==='sniff'){const e=j.ev;if(e&&!e.dead){e.sniffed=true;e.flip=1;KAIO.snd(this,'pop',{hz:520,v:.13})}}
+  else if(j.t==='open'){const e=j.ev;
+   if(e&&!e.dead){
+    if(!e.sniffed){this.err('gamble');
+     if(e.bad){e.dead=true;this.gone++;KAIO.snd(this,'crash');this.shake=.8;this.burn()}
+     else this.win1(e)}
+    else if(e.bad){e.dead=true;this.resolved++;this.setState({step:this.resolved});
+     KAIO.snd(this,'whoosh');KAIO.burst(this.parts,e.x,e.y,8,'#6b5636');this.chkWin()}
+    else this.win1(e)}}
+  else if(j.t==='waste'){KAIO.snd(this,'thud',{v:.16});this.err('wrong')}
+  this.deq()}
+ deq(){if(this.queue.length)this.start(this.queue.shift())}
+
+ win1(e){e.dead=true;this.resolved++;this.flash=1;
+  KAIO.snd(this,'tone',{from:560,to:920,v:.16});
+  KAIO.burst(this.parts,e.tx||e.x,e.ty||e.y,10,'#e2aa5a');
+  if(e.kind==='rain'){this.shed=true;KAIO.burst(this.parts,W-22,H*.53,8,'#f0d9a8')}
+  this.setState({step:this.resolved});this.chkWin()}
+ chkWin(){if(this.resolved>=this.cfg.need){KAIO.snd(this,'chime');this.setState({done:true})}}
+ burn(){const left=this.state.left+1;this.setState({left});
+  if(left>=3){this.reset(this.state.beat);this.setState({step:0,left:0})}}
+
+ err(kind){const s=this.streak;if(s.kind===kind)s.n++;else{s.kind=kind;s.n=1}
+  if(s.n===2){this.pulse=.8;const e=this.evs.find(e=>!e.dead&&!e.taken&&e.kind!=='parcel');
+   this.pulseTok=e?KDEF[e.kind].tok:(this.cracks.some(c=>!c.fixed)?'patch':null)}
+  if(s.n>=3){this.setState({coach:{kind}});this.streak={kind:null,n:0}}}
+ onCoachClose(){this.streak={kind:null,n:0}}
+
+ spawn(){const c=this.cfg,live=k=>this.evs.filter(e=>!e.dead&&e.kind===k).length;
+  const pool=c.kinds.filter(k=>k==='parcel'?live('parcel')<2:live(k)===0);
+  if(!pool.length)return false;
+  const kind=pool[Math.floor(Math.random()*pool.length)];
+  let spot,tx,ty;
+  if(kind==='parcel'){spot='porta';tx=SPOT.porta.x-30+live('parcel')*60;ty=SPOT.porta.y+64}
+  else{spot=KDEF[kind].spot;const q=SPOT[spot];tx=q.x;ty=kind==='rain'?q.y-112:q.y-64}
+  this.evs.push({kind,spot,x:tx,y:ty-240,tx,ty,in:0,pat:c.pat,pat0:c.pat,wob:Math.random()*6.28,
+   taken:false,dead:false,sniffed:false,bad:Math.random()<.55,flip:0,
+   morphT:c.chg&&kind!=='rain'&&kind!=='parcel'?(2.5+Math.random()*4):0});
+  this.spawned++;return true}
+
+ update(dt){const c=this.cfg,h=this.hands;
+  if(this.flash>0)this.flash-=dt*3;if(this.shake>0)this.shake-=dt*3.2;if(this.pulse>0)this.pulse-=dt;
+  const alive=this.evs.filter(e=>!e.dead).length;
+  this.arriveT-=dt;
+  if(this.arriveT<=0&&alive<c.max&&this.spawned<c.need+this.gone){
+   const ok=this.spawn();
+   if(c.rush){if(this.burstLeft>0&&ok){this.burstLeft--;this.arriveT=.8}else{this.burstLeft=2;this.arriveT=c.arrive*1.3}}
+   else this.arriveT=ok?c.arrive*(.85+Math.random()*.3):.9}
+  if(h.busy>0){h.busy-=dt;
+   if(h.at){h.x+=(h.at.x-h.x)*Math.min(1,dt*7);h.y+=(h.at.y-h.y)*Math.min(1,dt*7)}
+   if(h.busy<=0)this.finish()}
+  for(const e of this.evs){if(e.dead)continue;
+   e.in=Math.min(1,e.in+dt*2.2);e.wob+=dt*2.2;if(e.flip>0)e.flip-=dt*3;
+   e.y+=(e.ty-e.y)*Math.min(1,dt*3);e.x+=(e.tx-e.x)*Math.min(1,dt*3);
+   if(e.morphT>0){e.morphT-=dt;
+    if(e.morphT<=0&&!e.taken){const alt=c.kinds.filter(k=>k!==e.kind&&k!=='rain'&&k!=='parcel'&&!this.evs.some(o=>!o.dead&&o!==e&&o.kind===k));
+     if(alt.length){const nk=alt[Math.floor(Math.random()*alt.length)];e.kind=nk;e.spot=KDEF[nk].spot;
+      const q=SPOT[e.spot];e.tx=q.x;e.ty=q.y-64;e.flip=1;KAIO.snd(this,'pop',{hz:380,v:.12})}}}
+   e.pat-=dt*(this.crackAt(e.spot)?1.5:1);
+   if(e.pat<=0){e.dead=true;this.gone++;KAIO.snd(this,'whir');this.shake=.7;this.err('late');this.burn();return}}
+  this.evs=this.evs.filter(e=>!e.dead);
+  this.parts=KAIO.parts(this.parts,dt,420)}
+
+ draw(x){const sc=this.sc||1;x.setTransform(sc,0,0,sc,0,0);x.save();KAIO.shake(x,this.shake);
+  const g=x.createLinearGradient(0,0,0,H);g.addColorStop(0,'#120d06');g.addColorStop(.42,'#191106');g.addColorStop(1,'#0b0806');x.fillStyle=g;x.fillRect(-8,-8,W+16,H+16);
+  const cone=x.createRadialGradient(W/2,H*.3,10,W/2,H*.5,W*.7);cone.addColorStop(0,'rgba(255,214,150,.12)');cone.addColorStop(.5,'rgba(226,170,90,.04)');cone.addColorStop(1,'rgba(0,0,0,0)');
+  x.fillStyle=cone;x.fillRect(0,0,W,H);
+  x.fillStyle='rgba(6,5,4,.92)';x.fillRect(0,0,W,H*.09);
+  x.fillStyle='rgba(255,222,170,.9)';x.beginPath();x.arc(W*.5,H*.055,6,0,6.283);x.fill();
+  x.globalAlpha=.3;x.beginPath();x.arc(W*.5,H*.055,20,0,6.283);x.fill();x.globalAlpha=1;
+  x.fillStyle='#1a1209';x.fillRect(0,320,W,20);
+  x.fillStyle='rgba(226,170,90,.18)';x.fillRect(0,338,W,1.5);
+  x.fillStyle='#221709';x.fillRect(0,340,W,138);
+  x.strokeStyle='rgba(0,0,0,.28)';x.lineWidth=1;
+  for(let i=1;i<5;i++){x.beginPath();x.moveTo(0,340+i*27);x.lineTo(W,340+i*27);x.stroke()}
+  const t=performance.now()/1000;
+  const act=k=>this.evs.find(e=>!e.dead&&e.kind===k);
+  for(const id in SPOT){const s=SPOT[id],fx=s.x;
+   x.fillStyle='#241a10';KAIO.rr(x,fx-39,368,78,92,8);x.fill();
+   x.strokeStyle='rgba(226,170,90,.3)';x.lineWidth=2;KAIO.rr(x,fx-39,368,78,92,8);x.stroke();
+   x.fillStyle='#14100a';KAIO.rr(x,fx-30,376,60,76,5);x.fill();
+   if(id==='finestra'){x.strokeStyle='rgba(226,170,90,.25)';x.lineWidth=2;
+    x.beginPath();x.moveTo(fx,378);x.lineTo(fx,450);x.moveTo(fx-28,414);x.lineTo(fx+28,414);x.stroke();
+    if(act('snoop')){x.globalAlpha=.5+.3*Math.sin(t*3);x.fillStyle='#e8d9bd';KAIO.rr(x,fx-16,420,20,24,2);x.fill();x.globalAlpha=1}}
+   else if(id==='porta'){x.strokeStyle='rgba(0,0,0,.4)';x.lineWidth=1.5;
+    for(let i=1;i<4;i++){x.beginPath();x.moveTo(fx-30+i*15,378);x.lineTo(fx-30+i*15,450);x.stroke()}
+    const pr=act('prowl'),jig=pr?Math.sin(t*10)*2.5:0;
+    x.fillStyle='#c99a5a';x.beginPath();x.arc(fx+18,420+jig,4.5,0,6.283);x.fill()}
+   else if(id==='cancello'){x.strokeStyle='#3a2d1e';x.lineWidth=3;
+    for(let i=0;i<5;i++){x.beginPath();x.moveTo(fx-24+i*12,378);x.lineTo(fx-24+i*12,450);x.stroke()}}
+   else{x.fillStyle='#5c3e22';KAIO.rr(x,fx-26,410,52,38,4);x.fill();
+    x.fillStyle='#6d4a2a';KAIO.rr(x,fx-28,398,56,16,4);x.fill();
+    x.fillStyle='#c99a5a';KAIO.rr(x,fx-5,412,10,12,2);x.fill()}
+   const cr=this.cracks.find(c=>c.spot===id);
+   if(cr&&!cr.fixed){x.strokeStyle='#0d0a07';x.lineWidth=3.5;x.beginPath();
+    x.moveTo(fx-26,372);x.lineTo(fx-8,398);x.lineTo(fx-20,418);x.lineTo(fx+2,444);x.lineTo(fx-6,458);x.stroke();
+    x.strokeStyle='rgba(226,170,90,'+(.35+.2*Math.sin(t*4))+')';x.lineWidth=1.5;x.beginPath();
+    x.moveTo(fx-26,372);x.lineTo(fx-8,398);x.lineTo(fx-20,418);x.lineTo(fx+2,444);x.stroke()}
+   else if(cr&&cr.fixed){x.save();x.translate(fx-10,414);x.rotate(-.5);
+    x.fillStyle='#8a5f36';KAIO.rr(x,-9,-34,18,68,3);x.fill();
+    x.fillStyle='#241203';x.beginPath();x.arc(0,-24,1.8,0,6.283);x.arc(0,24,1.8,0,6.283);x.fill();x.restore()}}
+  x.fillStyle='#1a1209';x.beginPath();x.moveTo(W-44,486);x.lineTo(W-8,486);x.lineTo(W-26,466);x.closePath();x.fill();
+  x.strokeStyle='rgba(226,170,90,.25)';x.lineWidth=1.5;x.strokeRect(W-40,486,28,20);
+  if(this.shed){x.fillStyle='#5c3e22';KAIO.rr(x,W-37,491,22,13,2);x.fill()}
+  for(const e of this.evs){if(e.dead)continue;
+   const st=e.pat/e.pat0,wf=st<.34?3.4:st<.66?1.7:1,wob=Math.sin(e.wob*wf)*(st<.34?4:2);
+   const ex=e.x,ey=e.y+wob-40*(1-e.in);
+   const fl=e.flip>0?Math.abs(Math.cos(e.flip*3.14)):1;
+   x.save();x.translate(ex,ey);x.scale(fl,1);x.translate(-ex,-ey);
+   if(e.kind==='rain'){x.fillStyle='#4a3f30';
+    x.beginPath();x.arc(ex-14,ey,13,0,6.283);x.arc(ex+2,ey-8,15,0,6.283);x.arc(ex+16,ey,12,0,6.283);x.fill();
+    x.strokeStyle='rgba(200,210,225,.45)';x.lineWidth=1.5;
+    for(let i=0;i<3;i++){const dy=(e.wob*140+i*45)%96;x.beginPath();x.moveTo(ex-12+i*12,ey+14+dy);x.lineTo(ex-14+i*12,ey+24+dy);x.stroke()}}
+   else if(e.kind==='parcel'){const tw=Math.sin(e.wob*3)>.92?1.07:1;
+    x.save();x.translate(ex,ey);x.scale(tw,tw);x.translate(-ex,-ey);
+    x.fillStyle='rgba(0,0,0,.45)';x.beginPath();x.ellipse(ex,ey+20,26,6,0,0,6.283);x.fill();
+    x.fillStyle='#8a5f36';KAIO.rr(x,ex-23,ey-18,46,36,3);x.fill();
+    x.strokeStyle='rgba(40,28,12,.8)';x.lineWidth=2;
+    x.beginPath();x.moveTo(ex,ey-18);x.lineTo(ex,ey+18);x.moveTo(ex-23,ey);x.lineTo(ex+23,ey);x.stroke();x.restore();
+    if(e.sniffed){x.lineWidth=2.5;
+     if(e.bad){x.strokeStyle='#e2aa5a';x.beginPath();
+      for(let i=0;i<8;i++){const a=i*.785,r1=i%2?7:14;x.lineTo(ex+Math.cos(a)*r1,ey-36+Math.sin(a)*r1)}x.closePath();x.stroke()}
+     else{x.strokeStyle='#e8d9bd';x.beginPath();x.arc(ex,ey-34,9,3.34,6.08);x.stroke();
+      x.beginPath();x.moveTo(ex-9,ey-32);x.lineTo(ex+9,ey-32);x.stroke()}}}
+   else{x.fillStyle='rgba(0,0,0,.5)';x.beginPath();x.ellipse(ex,ey+52,24,6,0,0,6.283);x.fill();
+    const lean=e.kind==='snoop'?.18:0;
+    x.save();x.translate(ex,ey+20);x.rotate(lean);x.translate(-ex,-(ey+20));
+    x.fillStyle=st<.34?'#3a2d1e':'#2d2418';KAIO.rr(x,ex-19,ey-6,38,58,10);x.fill();
+    const hx=e.kind==='stranger'?ex+Math.sin(e.wob*2.5)*6:ex;
+    x.beginPath();x.arc(hx,ey-20,14,0,6.283);x.fill();
+    if(e.kind==='prowl'){x.strokeStyle='#2d2418';x.lineWidth=7;x.lineCap='round';
+     x.beginPath();x.moveTo(ex+16,ey+14);x.lineTo(ex+30,ey+34);x.stroke();x.lineCap='butt'}
+    x.restore();
+    if(e.taken){x.strokeStyle='rgba(226,170,90,.5)';x.lineWidth=2;x.setLineDash([4,4]);
+     x.beginPath();x.arc(ex,ey+20,34,0,6.283);x.stroke();x.setLineDash([])}}
+   x.restore();
+   if(st<.34&&e.kind!=='parcel'){x.strokeStyle='rgba(226,170,90,'+(.3+.3*Math.sin(e.wob*6))+')';x.lineWidth=2;
+    x.beginPath();x.arc(ex,e.kind==='rain'?ey:ey-20,26,0,6.283);x.stroke()}}
+  x.fillStyle='rgba(20,14,8,.8)';x.fillRect(10,632,W-20,this.cfg.toks.length>3?116:62);
+  const hintPlate=this.state.chapter===0&&this.state.beat===0&&this.resolved===0;
+  for(const pl of this.plates()){
+   x.fillStyle='#d8b483';KAIO.rr(x,pl.x,pl.y,pl.w,pl.h,7);x.fill();
+   x.strokeStyle='rgba(60,40,16,.6)';x.lineWidth=1.5;KAIO.rr(x,pl.x,pl.y,pl.w,pl.h,7);x.stroke();
+   const L=TOKL[pl.k];x.textAlign='center';x.textBaseline='alphabetic';
+   x.fillStyle='#241203';x.font='700 14px "JetBrains Mono",monospace';x.fillText(L[0],pl.x+pl.w/2,pl.y+19);
+   x.fillStyle='#4a3014';x.font='500 13px Raleway,sans-serif';x.fillText(this.state.lang==='it'?L[1]:L[2],pl.x+pl.w/2,pl.y+36);
+   if((this.pulse>0&&this.pulseTok===pl.k)||(hintPlate&&pl.k==='password')){
+    const a=hintPlate?.25+.2*Math.sin(t*3):.4+.4*Math.sin(this.pulse*14);
+    x.strokeStyle='rgba(226,170,90,'+a+')';x.lineWidth=4;KAIO.rr(x,pl.x-5,pl.y-5,pl.w+10,pl.h+10,10);x.stroke()}}
+  const h=this.hands;
+  if(h.busy>0&&h.at){const k=1-h.busy/h.total;
+   x.strokeStyle='rgba(255,206,140,.95)';x.lineWidth=4;
+   x.beginPath();x.arc(h.at.x,h.at.y,46,-1.57,-1.57+6.283*k);x.stroke()}
+  x.fillStyle='rgba(0,0,0,.4)';x.beginPath();x.ellipse(h.x,h.y+14,18,5,0,0,6.283);x.fill();
+  x.fillStyle=h.busy>0?'#d8b483':'#b99367';KAIO.rr(x,h.x-15,h.y-12,30,24,10);x.fill();
+  x.fillStyle='rgba(255,255,255,.14)';KAIO.rr(x,h.x-11,h.y-9,22,7,4);x.fill();
+  if(this.queue.length){x.fillStyle='rgba(226,170,90,.8)';
+   for(let i=0;i<this.queue.length;i++){x.beginPath();x.arc(h.x+22+i*9,h.y-14,3.2,0,6.283);x.fill()}}
+  for(let i=0;i<3;i++){const out=i<this.state.left,ly=104+i*36;
+   if(out){x.strokeStyle='rgba(140,110,70,.6)';x.lineWidth=1.5;KAIO.rr(x,W-34,ly,16,22,4);x.stroke()}
+   else{x.fillStyle='#241a10';KAIO.rr(x,W-34,ly,16,22,4);x.fill();
+    x.strokeStyle='rgba(226,170,90,.5)';x.lineWidth=1.5;KAIO.rr(x,W-34,ly,16,22,4);x.stroke();
+    x.fillStyle='rgba(255,222,170,.95)';x.beginPath();x.arc(W-26,ly+11,4,0,6.283);x.fill();
+    x.globalAlpha=.25;x.beginPath();x.arc(W-26,ly+11,9,0,6.283);x.fill();x.globalAlpha=1}}
+  x.textAlign='left';x.font='500 18px "JetBrains Mono",monospace';x.fillStyle='#a3937a';
+  x.fillText(this.resolved+'/'+this.cfg.need,18,H-26);
+  KAIO.drawParts(x,this.parts);
+  if(this.flash>0){x.fillStyle='rgba(255,228,180,'+(this.flash*.09)+')';x.fillRect(0,0,W,H)}
+  if(this.props.diagnostica){x.fillStyle='rgba(160,230,255,.9)';x.font='500 13px "JetBrains Mono",monospace';
+   x.fillText('c'+(this.state.chapter+1)+'.'+(this.state.beat+1)+'  fatti '+this.evs.length+'/'+this.cfg.max+'  coperti '+this.resolved+'/'+this.cfg.need+'  persi '+this.state.left,12,H*.09+30)}
+  x.restore()}
+}
+</script>
+</body>
+</html>

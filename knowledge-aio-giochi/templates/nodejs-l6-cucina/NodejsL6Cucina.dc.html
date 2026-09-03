@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Node.js L6 — La cucina di notte" description="Livello 6, banda 1: sincrono e asincrono. Il tagliere ti tiene il dito premuto per tutto il tempo, il forno lavora da solo. Il dito bloccato è il thread bloccato." -->
+<!--
+  SCHEDA DI PROGETTO (ricerca/00 §0.3)
+  GIOCO ...... La cucina di notte
+  LIVELLO .... Node.js, L6 Callback, banda 1
+  CAPITOLO ... 3 di 8 — sincrono blocca, asincrono libera
+  CONCETTO ... Alcune cose devi starci davanti dall'inizio alla fine. Altre
+               le avvii e puoi andare a fare altro: ti chiamano loro quando
+               sono pronte.
+  FORMA ...... simultaneità          VERBO ... tenere premuto / lasciare
+  ARCHETIPO .. ricerca/10 time management — Diner Dash, verbo press-and-hold
+  VINCI SE ... tutti i piatti del turno escono
+  PERDI SE ... tre clienti se ne vanno: la sala si svuota
+  SBAGLI ..... 1 lasci il tagliere a metà: il piatto si rovina, si sente
+               2 alla seconda volta la postazione che poteva partire da sola
+                 pulsa una volta
+               3 pannello di coaching, quattro righe, la quarta è animata
+  BEAT ....... 1 solo forno: premi e vai · 2 entra il tagliere che ti tiene
+               3 FRATTURA: forno e tagliere insieme. L'istinto è fare prima
+                 chi è arrivato prima; se è il tagliere resti inchiodato
+                 quattro secondi e il forno non è mai partito
+               4 tre postazioni, quattro ordini, pazienza corta
+               5 tutti i casi, più lento
+  MONDO ...... cucina di notte vista dal bancone, tre postazioni, lanterna
+               calda: stessa famiglia della banda 1
+  NUMERI ..... da ricerca/31: azione 1,2-4,0 s, pazienza 30→20 s a tre stati,
+               ordini 1→4, mano 45-70 s
+  TEST 1 ..... le postazioni non hanno colori diversi: si scopre chi ti
+               trattiene solo usandole, e dalla seconda volta lo sai.
+               Il ticket dice quale postazione serve, non quanto costa.
+  TEST 2 ..... "Avvio quello che può lavorare da solo, e uso il mio tempo
+               su quello che non può"
+  TEST 3 ..... un ordine arriva e la postazione che serve oscilla appena
+-->
+<helmet>
+<script src="./ds-base.js"></script>
+<script src="../kaio-engine.js"></script>
+<style>
+*{box-sizing:border-box}html,body{margin:0;padding:0;height:100%;background:#080705}
+@keyframes om-fade{from{opacity:0}to{opacity:1}}
+@keyframes om-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes om-pin{0%,100%{transform:translateY(0)}50%{transform:translateY(3px)}}
+@keyframes om-free{0%{transform:translateX(0);opacity:1}70%{transform:translateX(64px);opacity:1}100%{transform:translateX(64px);opacity:0}}
+</style>
+</helmet>
+<div style="position:fixed;inset:0;background:radial-gradient(130% 90% at 50% -10%,#1a1409 0%,#0d0a07 55%,#070605 100%);display:grid;place-items:center;font-family:Raleway,system-ui,sans-serif;overflow:hidden;padding:18px">
+<div style="display:flex;align-items:center;justify-content:center;gap:26px;max-width:100%">
+<div style="position:relative;height:min(910px,calc(100vh - 36px),max(480px,calc((100vw - 280px) * 2.1667)));aspect-ratio:420/910;border-radius:24px;overflow:hidden;box-shadow:0 50px 130px -34px rgba(0,0,0,.95),0 0 0 1px rgba(226,170,90,.14);flex:0 0 auto">
+<canvas ref="{{ cvRef }}" style="display:block;width:100%;height:100%;touch-action:none;cursor:pointer"></canvas>
+<sc-if value="{{ coachOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;left:14px;right:14px;top:14px;padding:20px 20px 16px;border-radius:18px;background:linear-gradient(180deg,rgba(30,23,14,.97),rgba(20,15,10,.97));box-shadow:0 24px 60px -18px rgba(0,0,0,.9),inset 0 1px 0 rgba(226,170,90,.18);animation:om-rise .26s cubic-bezier(.16,1,.3,1) both;cursor:pointer">
+<div style="font-size:20px;line-height:1.45;color:#f0e6d6;font-weight:500">{{ coachWhat }}</div>
+<div style="font-size:20px;line-height:1.45;color:#c9b795;margin-top:10px">{{ coachEffect }}</div>
+<div style="font-size:20px;line-height:1.45;color:#e2aa5a;margin-top:14px;font-weight:600">{{ coachRule }}</div>
+<div style="margin-top:18px;height:96px;border-radius:12px;background:rgba(0,0,0,.34);position:relative;overflow:hidden;display:flex">
+<div style="flex:1;position:relative;border-right:1px dashed rgba(226,170,90,.2)">
+<div style="position:absolute;left:16px;top:12px;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8d7f68">{{ coachLeft }}</div>
+<div style="position:absolute;left:16px;bottom:16px;width:34px;height:26px;border-radius:4px;background:#8a5f36"></div>
+<div style="position:absolute;left:56px;bottom:16px;width:22px;height:26px;border-radius:4px;background:#d8b483;animation:om-pin 1.4s ease-in-out infinite"></div>
+</div>
+<div style="flex:1;position:relative">
+<div style="position:absolute;left:16px;top:12px;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8d7f68">{{ coachRight }}</div>
+<div style="position:absolute;left:16px;bottom:16px;width:34px;height:26px;border-radius:4px;background:#8a5f36"></div>
+<div style="position:absolute;left:56px;bottom:16px;width:22px;height:26px;border-radius:4px;background:#d8b483;animation:om-free 1.8s ease-in-out infinite"></div>
+</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ doneOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(70% 50% at 50% 45%,rgba(30,22,12,.9),rgba(8,7,5,.96));animation:om-fade .22s ease both;cursor:pointer">
+<div style="text-align:center;padding:0 30px">
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:34px;font-weight:600;color:#f4ebdc;letter-spacing:-.01em">Servizio chiuso</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:34px;font-weight:600;color:#f4ebdc;letter-spacing:-.01em">Service closed</div></sc-if>
+<div style="display:flex;gap:10px;justify-content:center;margin-top:26px">
+<sc-for list="{{ marks }}" as="m" hint-placeholder-count="5">
+<div style="width:34px;height:6px;border-radius:3px;background:rgba(226,170,90,.22);position:relative;overflow:hidden">
+<sc-if value="{{ m.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;background:#e2aa5a"></div></sc-if>
+</div>
+</sc-for>
+</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#a3937a;margin-top:22px;letter-spacing:.04em">{{ doneHint }}</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ pauseOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;backdrop-filter:blur(9px);background:rgba(10,8,6,.72);display:grid;place-items:center;animation:om-fade .2s ease both">
+<div style="width:290px;padding:24px;border-radius:20px;background:linear-gradient(180deg,rgba(32,25,16,.98),rgba(19,15,10,.98));box-shadow:0 30px 70px -20px rgba(0,0,0,.9),inset 0 1px 0 rgba(226,170,90,.16)">
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace">In pausa</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace">Paused</div></sc-if>
+<div style="display:flex;flex-direction:column;gap:9px;margin-top:16px">
+<div onClick="{{ resume }}" style="padding:14px 16px;border-radius:12px;background:#e2aa5a;color:#191207;font-size:17px;font-weight:600;text-align:center;cursor:pointer" style-hover="background:#eeb867"><sc-if value="{{ it }}" hint-placeholder-val="{{ true }}">Riprendi</sc-if><sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">Resume</sc-if></div>
+<div onClick="{{ toggleLang }}" style="padding:13px 16px;border-radius:12px;background:rgba(226,170,90,.1);color:#e8d9bd;font-size:16px;display:flex;justify-content:space-between;cursor:pointer" style-hover="background:rgba(226,170,90,.18)"><span><sc-if value="{{ it }}" hint-placeholder-val="{{ true }}">Lingua</sc-if><sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">Language</sc-if></span><span style="font-family:'JetBrains Mono',monospace;color:#e2aa5a">{{ langLabel }}</span></div>
+<div onClick="{{ toggleMute }}" style="padding:13px 16px;border-radius:12px;background:rgba(226,170,90,.1);color:#e8d9bd;font-size:16px;display:flex;justify-content:space-between;cursor:pointer" style-hover="background:rgba(226,170,90,.18)"><span>Audio</span><span style="font-family:'JetBrains Mono',monospace;color:#e2aa5a">{{ audioState }}</span></div>
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace;margin-top:12px">Lezione</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#8d7f68;font-family:'JetBrains Mono',monospace;margin-top:12px">Lesson</div></sc-if>
+<div style="display:flex;gap:7px">
+<sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+<div onClick="{{ l.go }}" style="flex:1;padding:11px 0;border-radius:10px;background:rgba(226,170,90,.1);color:#e8d9bd;font-family:'JetBrains Mono',monospace;font-size:15px;text-align:center;cursor:pointer;position:relative" style-hover="background:rgba(226,170,90,.2)">{{ l.n }}
+<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:50%;bottom:5px;width:14px;height:2px;margin-left:-7px;background:#e2aa5a;border-radius:1px"></div></sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</div>
+</sc-if>
+</div>
+<div style="flex:0 1 212px;min-width:0;min-height:0;max-height:min(910px,calc(100vh - 36px));overflow-y:auto;display:flex;flex-direction:column;gap:14px;padding-right:4px;color:#b6a68b">
+<div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#a3937a">L4 · Asincrono base</div>
+<div style="font-size:23px;font-weight:600;color:#f0e6d6;margin-top:4px;line-height:1.2">La cucina di notte</div>
+<div style="font-size:14px;line-height:1.5;color:#8d7f68;margin-top:8px">Capitoli 1-4 · tenere premuto</div>
+</div>
+<div style="height:1px;background:rgba(226,170,90,.14)"></div>
+<div style="display:flex;flex-direction:column;gap:5px">
+<sc-for list="{{ chapters }}" as="c" hint-placeholder-count="4">
+<div onClick="{{ c.go }}" style="padding:9px 11px;border-radius:9px;background:rgba(226,170,90,.06);cursor:pointer;display:flex;gap:10px;align-items:baseline" style-hover="background:rgba(226,170,90,.14)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#e2aa5a;width:12px">{{ c.n }}</div>
+<div style="flex:1;min-width:0">
+<div style="font-size:14px;color:#e8d9bd;line-height:1.3">{{ c.title }}</div>
+<sc-if value="{{ c.on }}" hint-placeholder-val="{{ false }}"><div style="height:2px;background:#e2aa5a;border-radius:1px;margin-top:6px"></div></sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#a3937a">Lezione {{ chapterNo }}.x</div>
+<div style="display:flex;flex-direction:column;gap:7px">
+<sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+<div onClick="{{ l.go }}" style="padding:11px 13px;border-radius:11px;background:rgba(226,170,90,.07);cursor:pointer;display:flex;gap:11px;align-items:baseline" style-hover="background:rgba(226,170,90,.15)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#e2aa5a;width:14px">{{ l.n }}</div>
+<div style="flex:1;min-width:0">
+<div style="font-size:15px;color:#e8d9bd;line-height:1.3">{{ l.title }}</div>
+<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><div style="height:2px;background:#e2aa5a;border-radius:1px;margin-top:7px"></div></sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="font-size:13px;line-height:1.55;color:#a3937a">Premi una postazione per iniziare. Alcune ti tengono il dito fino alla fine, altre lavorano da sole appena le hai avviate. <span style="color:#8d7f68">Esc</span> per la pausa.</div>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:940,&quot;height&quot;:1000},&quot;capitolo&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;],&quot;default&quot;:&quot;1&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;lezione&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;],&quot;default&quot;:&quot;1&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;lingua&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;it&quot;,&quot;en&quot;],&quot;default&quot;:&quot;it&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lezione&quot;},&quot;diagnostica&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Taratura&quot;}}">
+const W=420,H=910,KEY='kaio.l6.cucina';
+const ST=[
+ {name:'forno',x:W*.5,y:H*.44,r:52,sync:false,dur:6.0,hands:1.5},
+ {name:'tagliere',x:W*.2,y:H*.62,r:48,sync:true,dur:4.0,hands:4.0},
+ {name:'padella',x:W*.8,y:H*.62,r:48,sync:false,dur:4.4,hands:1.2}];
+const B=(o)=>Object.assign({st:[0,1],max:2,arrive:7.0,pat:30,orders:4,pair:false},o);
+/* L4 Asincrono Base — capitoli 1-4 di 8 (5-8 La sala di smistamento) */
+const CH=[
+ {t:['Premi e vai','Press and go'],titles:[['Il forno','The oven'],['Vai via','Walk away'],['Due infornate','Two bakes'],['Senza fermarti','No pause'],['Il ritmo','The rhythm']],
+  beats:[B({st:[0],max:1,arrive:8.0,pat:38,orders:3}),
+   B({st:[0],max:1,arrive:7.2,pat:34,orders:4}),
+   B({st:[0],max:2,arrive:6.4,pat:30,orders:4}),
+   B({st:[0,2],max:3,arrive:5.0,pat:24,orders:6}),
+   B({st:[0,2],max:2,arrive:6.6,pat:30,orders:5})]},
+ {t:['Chi ti tiene','The one that holds'],titles:[['Il tagliere','The board'],['Non lasciarlo','Do not let go'],['Quattro secondi','Four seconds'],['Uno e uno','One and one'],['Mano ferma','Steady hand']],
+  beats:[B({st:[1],max:1,arrive:8.0,pat:38,orders:3}),
+   B({st:[1],max:1,arrive:7.2,pat:34,orders:4}),
+   B({st:[0,1],max:2,arrive:7.5,pat:32,orders:4}),
+   B({st:[0,1],max:3,arrive:5.6,pat:26,orders:5}),
+   B({st:[0,1],max:2,arrive:7.0,pat:30,orders:5})]},
+ {t:['Tutti e due','Both at once'],titles:[['Arrivano insieme','Together'],["L'istinto sbagliato",'The wrong instinct'],['Prima il forno','Oven first'],['Due coppie','Two pairs'],['Adesso lo sai','Now you know']],
+  beats:[B({st:[0,1],max:2,arrive:8.0,pat:28,orders:4,pair:true}),
+   B({st:[0,1],max:2,arrive:7.4,pat:26,orders:5,pair:true}),
+   B({st:[0,1],max:2,arrive:7.0,pat:24,orders:5,pair:true}),
+   B({st:[0,1,2],max:4,arrive:5.4,pat:21,orders:6,pair:true}),
+   B({st:[0,1,2],max:3,arrive:6.8,pat:26,orders:5})]},
+ {t:['Sala piena','Full room'],titles:[['Tre postazioni','Three stations'],['Quattro ordini','Four orders'],['La padella','The pan'],['Il picco','The peak'],['Il servizio','The service']],
+  beats:[B({st:[0,1,2],max:3,arrive:6.0,pat:28,orders:5}),
+   B({st:[0,1,2],max:4,arrive:5.2,pat:24,orders:6}),
+   B({st:[0,1,2],max:4,arrive:4.8,pat:22,orders:7}),
+   B({st:[0,1,2],max:4,arrive:4.2,pat:20,orders:8}),
+   B({st:[0,1,2],max:3,arrive:6.2,pat:27,orders:6})]}];
+const T={it:{spoil:'Hai lasciato il tagliere a metà.',spoilFx:'Il piatto si è rovinato: quel lavoro va rifatto da capo.',spoilRule:'Chi ti tiene il dito ti tiene fino alla fine.',
+ late:'Un cliente se n\'è andato mentre eri inchiodato.',lateFx:'Il forno poteva partire da solo e non è mai partito.',lateRule:'Prima avvia quello che lavora da solo, poi usa le mani.',
+ l:'tagliere: 4 s di mani',r:'forno: 1,5 s di mani'},
+ en:{spoil:'You left the board halfway.',spoilFx:'The dish is ruined: that work starts over.',spoilRule:'What holds your finger holds it to the end.',
+ late:'A customer left while you were pinned.',lateFx:'The oven could have started alone and never did.',lateRule:'Start what works alone first, then use your hands.',
+ l:'board: 4 s of hands',r:'oven: 1.5 s of hands'}};
+
+class Component extends DCLogic{
+ state={beat:0,chapter:0,lang:'it',paused:false,coach:null,done:false,muted:false,step:0,left:0};
+ renderVals(){const s=this.state,L=T[s.lang],c=s.coach;
+  return Object.assign(KAIO.vals(this),{
+   coachWhat:c?(c.kind==='spoil'?L.spoil:L.late):'',
+   coachEffect:c?(c.kind==='spoil'?L.spoilFx:L.lateFx):'',
+   coachRule:c?(c.kind==='spoil'?L.spoilRule:L.lateRule):'',
+   coachLeft:L.l,coachRight:L.r});
+ }
+ componentDidMount(){
+  KAIO.init(this,{W,H,key:KEY,chapters:CH,
+   onDown:p=>this.press(p),onUp:()=>this.release()});
+  KAIO.audio(this);KAIO.drone(this,48,'triangle',.013,140);}
+ componentDidUpdate(pp){KAIO.sync(this,pp)}
+ componentWillUnmount(){KAIO.destroy(this)}
+
+ reset(beat){const c=this.BEATS[beat];this.cfg=c;this.needed=c.orders;
+  this.ord=[];this.jobs=ST.map(()=>null);this.parts=[];
+  this.hands={x:W*.5,y:H*.78,at:null,busy:0,total:0,st:-1,held:false};
+  this.arriveT=1.0;this.made=0;this.gone=0;this.spawned=0;
+  this.streak={kind:null,n:0};this.pulse=0;this.pulseSt=-1;this.shake=0;this.flash=0;
+  this.trap=beat===2?1:-1}
+
+ hit(p){for(const i of this.cfg.st){if(Math.hypot(p.x-ST[i].x,p.y-ST[i].y)<ST[i].r+8)return i}return -1}
+
+ press(p){const i=this.hit(p);if(i<0)return;
+  const h=this.hands;
+  if(h.busy>0){KAIO.snd(this,'fall');this.shake=.4;return}
+  if(this.jobs[i]){KAIO.snd(this,'fall');return}
+  const o=this.ord.find(k=>!k.dead&&!k.started&&k.st===i);
+  if(!o){KAIO.snd(this,'fall');this.shake=.3;return}
+  o.started=true;
+  const s=ST[i];
+  this.jobs[i]={o,t:0,dur:s.dur,ready:false};
+  h.st=i;h.at={x:s.x,y:s.y+s.r*.1};h.busy=s.hands;h.total=s.hands;h.held=true;
+  KAIO.snd(this,'pop',{hz:s.sync?200:300,v:.12})}
+
+ release(){const h=this.hands;h.held=false;
+  if(h.busy>0&&h.st>=0&&ST[h.st].sync){
+   const j=this.jobs[h.st];
+   if(j){j.o.started=false;this.jobs[h.st]=null}
+   h.busy=0;h.st=-1;h.at=null;
+   KAIO.snd(this,'whir');this.shake=.6;KAIO.burst(this.parts,ST[1].x,ST[1].y,10,'#6b5636');
+   this.err('spoil')}}
+
+ err(kind){const s=this.streak;if(s.kind===kind)s.n++;else{s.kind=kind;s.n=1}
+  if(s.n===2){this.pulse=.8;this.pulseSt=this.cfg.st.find(i=>!ST[i].sync&&this.ord.some(o=>!o.dead&&!o.started&&o.st===i));if(this.pulseSt==null)this.pulseSt=-1}
+  if(s.n>=3){this.setState({coach:{kind}});this.streak={kind:null,n:0}}}
+ onCoachClose(){this.streak={kind:null,n:0}}
+
+ spawn(){const c=this.cfg;let st;
+  if(this.spawned===this.trap){st=1;this.pendingPair=true}
+  else st=c.st[Math.floor(Math.random()*c.st.length)];
+  const slots=[W*.16,W*.38,W*.6,W*.82];
+  const used=this.ord.filter(o=>!o.dead).length;
+  this.ord.push({st,x:slots[used%slots.length],pat:c.pat,pat0:c.pat,started:false,dead:false,wob:Math.random()*6.28,in:0});
+  this.spawned++;
+  if(this.pendingPair){this.pendingPair=false;
+   this.ord.push({st:0,x:slots[(used+1)%slots.length],pat:c.pat,pat0:c.pat,started:false,dead:false,wob:Math.random()*6.28,in:0});this.spawned++}}
+
+ update(dt){const c=this.cfg,h=this.hands;
+  if(this.flash>0)this.flash-=dt*3;if(this.shake>0)this.shake-=dt*3.4;if(this.pulse>0)this.pulse-=dt;
+  const alive=this.ord.filter(o=>!o.dead).length;
+  this.arriveT-=dt;
+  if(this.arriveT<=0&&alive<c.max&&this.spawned<this.needed+this.gone){this.spawn();this.arriveT=c.arrive*(.85+Math.random()*.3)}
+  if(h.busy>0){h.busy-=dt;
+   if(h.at){h.x+=(h.at.x-h.x)*Math.min(1,dt*8);h.y+=(h.at.y-h.y)*Math.min(1,dt*8)}
+   if(h.busy<=0){h.busy=0;h.st=-1;h.at=null;h.held=false;
+    h.rest=1}}
+  else{h.x+=(W*.5-h.x)*Math.min(1,dt*3);h.y+=(H*.78-h.y)*Math.min(1,dt*3)}
+  for(let i=0;i<ST.length;i++){const j=this.jobs[i];if(!j)continue;
+   const s=ST[i];
+   const active=s.sync?(h.st===i&&h.busy>0):true;
+   if(active)j.t+=dt;
+   if(j.t>=j.dur&&!j.ready){j.ready=true;
+    j.o.dead=true;this.made++;this.flash=1;
+    KAIO.snd(this,'tone',{from:600,to:960,v:.17});KAIO.burst(this.parts,s.x,s.y,12,'#e2aa5a');
+    this.jobs[i]=null;this.setState({step:this.made});
+    if(this.made>=this.needed){KAIO.snd(this,'chime');this.setState({done:true});return}}}
+  for(const o of this.ord){if(o.dead)continue;o.in=Math.min(1,o.in+dt*2.4);o.wob+=dt*2.2;
+   o.pat-=dt;
+   if(o.pat<=0){o.dead=true;this.gone++;KAIO.snd(this,'whir');this.shake=.7;
+    if(o.started){const i=o.st;if(this.jobs[i]&&this.jobs[i].o===o)this.jobs[i]=null}
+    const left=this.state.left+1;this.setState({left});this.err('late');
+    if(left>=3){this.reset(this.state.beat);this.setState({step:0,left:0});return}}}
+  this.ord=this.ord.filter(o=>!o.dead);
+  this.parts=KAIO.parts(this.parts,dt,420)}
+
+ draw(x){const sc=this.sc||1;x.setTransform(sc,0,0,sc,0,0);x.save();KAIO.shake(x,this.shake);
+  const g=x.createLinearGradient(0,0,0,H);g.addColorStop(0,'#140e07');g.addColorStop(.45,'#191106');g.addColorStop(1,'#0b0806');x.fillStyle=g;x.fillRect(-8,-8,W+16,H+16);
+  const cone=x.createRadialGradient(W/2,H*.26,10,W/2,H*.6,W*.9);cone.addColorStop(0,'rgba(255,214,150,.13)');cone.addColorStop(.55,'rgba(226,170,90,.045)');cone.addColorStop(1,'rgba(0,0,0,0)');
+  x.fillStyle=cone;x.fillRect(0,0,W,H);
+  x.strokeStyle='rgba(120,96,60,.5)';x.lineWidth=2;x.beginPath();x.moveTo(W/2,0);x.lineTo(W/2,24);x.stroke();
+  x.fillStyle='#2c2318';x.beginPath();x.moveTo(W/2-20,42);x.lineTo(W/2+20,42);x.lineTo(W/2+10,24);x.lineTo(W/2-10,24);x.closePath();x.fill();
+  x.fillStyle='rgba(255,222,166,.9)';x.beginPath();x.arc(W/2,44,5,0,6.283);x.fill();
+  x.fillStyle='rgba(6,5,4,.6)';x.fillRect(0,0,W,H*.075);
+  for(const o of this.ord){const st=o.pat/o.pat0,y=H*.13-30*(1-o.in)+(st<.34?Math.sin(o.wob*4.4)*3:0);
+   x.fillStyle='rgba(0,0,0,.45)';x.beginPath();x.ellipse(o.x,y+46,20,5,0,0,6.283);x.fill();
+   x.fillStyle=o.started?'rgba(232,217,189,.35)':'#e8d9bd';x.beginPath();KAIO.rr(x,o.x-22,y,44,52,3);x.fill();
+   x.strokeStyle='rgba(90,66,36,.5)';x.lineWidth=1;x.beginPath();x.moveTo(o.x-17,y+11);x.lineTo(o.x+17,y+11);x.stroke();
+   this.mark(x,o.st,o.x,y+31,'rgba(60,42,20,.82)');
+   if(st<.34){x.strokeStyle='rgba(226,170,90,'+(.25+.35*Math.sin(o.wob*6))+')';x.lineWidth=2;x.beginPath();KAIO.rr(x,o.x-26,y-4,52,60,5);x.stroke()}}
+  const by=H*.72;
+  x.fillStyle='#0b0806';x.fillRect(0,by,W,H-by);
+  const bg=x.createLinearGradient(0,by-8,0,by+14);bg.addColorStop(0,'#8a5f36');bg.addColorStop(1,'#5c3e22');x.fillStyle=bg;x.fillRect(0,by-8,W,22);
+  for(const i of this.cfg.st){const s=ST[i],j=this.jobs[i],h=this.hands;
+   const held=h.st===i&&h.busy>0;
+   x.fillStyle='#241a10';x.beginPath();x.arc(s.x,s.y,s.r,0,6.283);x.fill();
+   x.strokeStyle=held?'rgba(255,180,90,.95)':'rgba(226,170,90,.3)';x.lineWidth=held?4:2.5;x.beginPath();x.arc(s.x,s.y,s.r,0,6.283);x.stroke();
+   if(this.pulse>0&&this.pulseSt===i){x.strokeStyle='rgba(226,170,90,'+(.35+.45*Math.sin(this.pulse*14))+')';x.lineWidth=5;x.beginPath();x.arc(s.x,s.y,s.r+8,0,6.283);x.stroke()}
+   this.mark(x,i,s.x,s.y,'rgba(226,170,90,.5)',1.7);
+   if(j){const k=Math.min(1,j.t/j.dur);
+    x.strokeStyle='rgba(255,206,140,.9)';x.lineWidth=4;x.beginPath();x.arc(s.x,s.y,s.r+11,-1.57,-1.57+6.283*k);x.stroke();
+    if(!s.sync&&!(h.st===i&&h.busy>0)){x.strokeStyle='rgba(226,170,90,.3)';x.lineWidth=1.5;x.setLineDash([4,6]);x.beginPath();x.arc(s.x,s.y,s.r+18,0,6.283);x.stroke();x.setLineDash([])}}
+   x.font='500 13px "JetBrains Mono",monospace';x.textAlign='center';x.textBaseline='middle';
+   x.fillStyle='#a3937a';x.fillText(s.name,s.x,s.y+s.r+14)}
+  const h=this.hands;
+  x.fillStyle='rgba(0,0,0,.4)';x.beginPath();x.ellipse(h.x,h.y+16,20,5,0,0,6.283);x.fill();
+  const pinned=h.st>=0&&ST[h.st]&&ST[h.st].sync&&h.busy>0;
+  x.fillStyle=pinned?'#e0bf8f':h.busy>0?'#d8b483':'#b99367';
+  x.beginPath();KAIO.rr(x,h.x-17,h.y-13,34,26,11);x.fill();
+  x.fillStyle='rgba(255,255,255,.14)';x.beginPath();KAIO.rr(x,h.x-12,h.y-10,24,8,4);x.fill();
+  if(pinned){x.strokeStyle='rgba(255,206,140,.8)';x.lineWidth=2;x.setLineDash([3,4]);
+   x.beginPath();x.arc(h.x,h.y,25,0,6.283);x.stroke();x.setLineDash([])}
+  for(let i=0;i<3;i++){const off=i<this.state.left;
+   x.strokeStyle=off?'rgba(140,110,70,.5)':'rgba(226,170,90,.8)';x.lineWidth=2;
+   x.beginPath();x.arc(W-22,H*.09+i*22,5.5,0,6.283);off?x.stroke():x.fill()}
+  KAIO.drawParts(x,this.parts);
+  if(this.flash>0){x.fillStyle='rgba(255,228,180,'+(this.flash*.08)+')';x.fillRect(0,0,W,H)}
+  if(this.props.diagnostica){x.fillStyle='rgba(160,230,255,.9)';x.font='500 12px "JetBrains Mono",monospace';x.textAlign='left';
+   x.fillText('beat '+(this.state.beat+1)+'  ordini '+this.ord.length+'/'+this.cfg.max+'  fatti '+this.made+'/'+this.needed+'  persi '+this.state.left,12,H-14)}
+  x.restore()}
+
+ mark(x,i,cx,cy,col,s){const k=s||1;x.strokeStyle=col;x.fillStyle=col;x.lineWidth=2*k;x.beginPath();
+  if(i===0){x.rect(cx-9*k,cy-7*k,18*k,14*k);x.stroke();x.beginPath();x.moveTo(cx-9*k,cy);x.lineTo(cx+9*k,cy);x.stroke()}
+  else if(i===1){x.moveTo(cx-10*k,cy+6*k);x.lineTo(cx+10*k,cy+6*k);x.stroke();x.beginPath();x.moveTo(cx-4*k,cy-7*k);x.lineTo(cx+8*k,cy+3*k);x.stroke()}
+  else{x.arc(cx,cy,8*k,0,6.283);x.stroke();x.beginPath();x.moveTo(cx+8*k,cy);x.lineTo(cx+15*k,cy-3*k);x.stroke()}}
+}
+</script>
+</body>
+</html>

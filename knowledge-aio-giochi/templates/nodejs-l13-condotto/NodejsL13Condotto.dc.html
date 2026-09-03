@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Node.js L13 — Il condotto" description="Livello 13, banda 3: Stream e Buffer. Apre la banda schematica: nessun mondo, un diagramma giocabile. Devi il flusso, e quando il Writable dice no la scelta è fermare a monte o perdere dati." -->
+<!--
+  SCHEDA (ricerca/00 §0.3) — GIOCO Il condotto
+  LIVELLO Node.js L13 Stream e Buffer, banda 3 — 8 capitoli, 40 lezioni
+  APERTURA DI BANDA: primo livello del registro schematico. Il capitolo 1
+           ripresenta la gestione errori del livello 12 come grafo (ricerca/32 §32.4).
+  CONCETTO I dati arrivano a pezzi. Se chi riceve è più lento di chi manda,
+           qualcuno deve rallentare — e quel qualcuno sta a monte, non a valle.
+  FORMA accumulo · VERBO deviare (lo scambio è tuo, il flusso no)
+  ARCHETIPO ricerca/12 endless runner, in forma di diagramma
+  VINCI SE consegni i chunk richiesti senza perderne
+  PERDI SE tre chunk cadono: la coda ha riempito il tronco e nessuno ha fermato
+           la sorgente
+  SBAGLI 1 il chunk si ferma alla bocca del Writable e si vede la coda salire
+         2 il Writable più veloce pulsa una volta
+         3 coaching, quattro righe, la quarta animata
+  CAPITOLI 1 un condotto solo · 2 due destinazioni · 3 FRATTURA write() false
+           4 il freno a monte · 5 highWaterMark · 6 tre destinazioni
+           7 portata piena · 8 il condotto intero
+  MONDO nessuno. Diagramma blu su nero, griglia, tratti da 1,5 px, terminologia
+        vera stampata sugli oggetti: Readable, Writable, highWaterMark, drain
+  NUMERI chunk 16k, cap 100k, hwm 70k, drain 3-9 k/s, tronco 5 chunk,
+         discesa 150 px/s, ritmo 1,1→2,2 s
+  TEST 1 i tre Writable non hanno colori diversi: l'unico segnale è il numero
+         di drain stampato e il livello nella vasca. Il più vuoto non è il più
+         veloce, e questo si legge solo dai numeri.
+  TEST 2 "Guardo quale svuota più in fretta, mando lì, e se si intasa fermo la
+         sorgente invece di insistere"
+  TEST 3 il capitolo 1 apre con un solo condotto attivo: lo scambio non ha
+         alternative e il primo chunk arriva da solo
+-->
+<helmet>
+<script src="./ds-base.js"></script>
+<script src="../kaio-engine.js"></script>
+<style>
+*{box-sizing:border-box}html,body{margin:0;padding:0;height:100%;background:#04070a}
+a{color:#4fb3c8}a:hover{color:#7fd0e2}
+@keyframes om-fade{from{opacity:0}to{opacity:1}}
+@keyframes om-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes om-drop{0%{transform:translateY(-14px);opacity:0}18%{opacity:1}72%{transform:translateY(46px);opacity:1}92%{opacity:0}100%{opacity:0}}
+</style>
+</helmet>
+<div style="position:fixed;inset:0;background:radial-gradient(130% 90% at 50% -10%,#0b1a22 0%,#070e13 55%,#04070a 100%);display:grid;place-items:center;font-family:Raleway,system-ui,sans-serif;overflow:hidden;padding:18px">
+<div style="display:flex;align-items:center;justify-content:center;gap:26px;max-width:100%">
+<div style="position:relative;height:min(910px,calc(100vh - 36px),max(480px,calc((100vw - 280px) * 2.1667)));aspect-ratio:420/910;border-radius:24px;overflow:hidden;box-shadow:0 50px 130px -34px rgba(0,0,0,.95),0 0 0 1px rgba(79,179,200,.18);flex:0 0 auto">
+<canvas ref="{{ cvRef }}" style="display:block;width:100%;height:100%;touch-action:none;cursor:pointer"></canvas>
+<sc-if value="{{ coachOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;left:14px;right:14px;top:14px;padding:20px;border-radius:14px;background:linear-gradient(180deg,rgba(14,26,32,.97),rgba(6,12,16,.97));box-shadow:0 24px 60px -18px rgba(0,0,0,.9),inset 0 1px 0 rgba(79,179,200,.24);animation:om-rise .26s cubic-bezier(.16,1,.3,1) both;cursor:pointer">
+<div style="font-size:20px;line-height:1.45;color:#e4eef1;font-weight:500">{{ coachWhat }}</div>
+<div style="font-size:20px;line-height:1.45;color:#8fa8b0;margin-top:10px">{{ coachEffect }}</div>
+<div style="font-size:20px;line-height:1.45;color:#7fd0e2;margin-top:14px;font-weight:600">{{ coachRule }}</div>
+<div style="margin-top:18px;height:96px;border-radius:10px;background:rgba(0,0,0,.42);position:relative;overflow:hidden;display:flex;align-items:stretch;gap:12px;padding:12px 16px">
+<div style="width:74px;display:flex;flex-direction:column;justify-content:space-between">
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#7fd0e2">{{ coachA }}</div>
+<div style="height:2px;background:#4fb3c8"></div>
+</div>
+<div style="flex:1;position:relative">
+<div style="position:absolute;left:50%;top:0;bottom:0;width:2px;margin-left:-1px;background:rgba(79,179,200,.3)"></div>
+<div style="position:absolute;left:50%;top:0;width:24px;height:16px;margin-left:-12px;border-radius:2px;background:#cfe4ea;animation:om-drop 1.9s cubic-bezier(.4,0,.6,1) infinite"></div>
+</div>
+<div style="width:74px;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-end">
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#8fa8b0">{{ coachB }}</div>
+<div style="height:2px;width:100%;background:rgba(79,179,200,.4)"></div>
+</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ doneOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(70% 50% at 50% 45%,rgba(12,26,32,.92),rgba(4,7,10,.96));animation:om-fade .22s ease both;cursor:pointer">
+<div style="text-align:center;padding:0 30px">
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:34px;font-weight:600;color:#e8f1f3">Flusso chiuso</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:34px;font-weight:600;color:#e8f1f3">Stream closed</div></sc-if>
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#8fa8b0;margin-top:10px">{{ chapterNo }}/{{ chapterOf }} · {{ chapterTitle }}</div>
+<div style="display:flex;gap:10px;justify-content:center;margin-top:24px">
+<sc-for list="{{ marks }}" as="m" hint-placeholder-count="5">
+<div style="width:34px;height:6px;border-radius:2px;background:rgba(79,179,200,.22);position:relative;overflow:hidden">
+<sc-if value="{{ m.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;background:#4fb3c8"></div></sc-if>
+</div>
+</sc-for>
+</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#8fa8b0;margin-top:22px">{{ doneHint }}</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ pauseOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;backdrop-filter:blur(9px);background:rgba(4,8,11,.76);display:grid;place-items:center;animation:om-fade .2s ease both;padding:16px;overflow-y:auto">
+<div style="width:290px;padding:24px;border-radius:16px;background:linear-gradient(180deg,rgba(16,28,34,.98),rgba(6,12,16,.98));box-shadow:0 30px 70px -20px rgba(0,0,0,.9),inset 0 1px 0 rgba(79,179,200,.22)">
+<sc-if value="{{ it }}" hint-placeholder-val="{{ true }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8fa8b0;font-family:'JetBrains Mono',monospace">In pausa</div></sc-if>
+<sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8fa8b0;font-family:'JetBrains Mono',monospace">Paused</div></sc-if>
+<div style="display:flex;flex-direction:column;gap:9px;margin-top:16px">
+<div onClick="{{ resume }}" style="padding:14px 16px;border-radius:8px;background:#4fb3c8;color:#04141a;font-size:17px;font-weight:600;text-align:center;cursor:pointer" style-hover="background:#7fd0e2"><sc-if value="{{ it }}" hint-placeholder-val="{{ true }}">Riprendi</sc-if><sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">Resume</sc-if></div>
+<div onClick="{{ toggleLang }}" style="padding:13px 16px;border-radius:8px;background:rgba(79,179,200,.12);color:#dfeaee;font-size:16px;display:flex;justify-content:space-between;cursor:pointer"><span>Lingua</span><span style="font-family:'JetBrains Mono',monospace;color:#7fd0e2">{{ langLabel }}</span></div>
+<div onClick="{{ toggleMute }}" style="padding:13px 16px;border-radius:8px;background:rgba(79,179,200,.12);color:#dfeaee;font-size:16px;display:flex;justify-content:space-between;cursor:pointer"><span>Audio</span><span style="font-family:'JetBrains Mono',monospace;color:#7fd0e2">{{ audioState }}</span></div>
+<div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8fa8b0;font-family:'JetBrains Mono',monospace;margin-top:12px">Capitolo</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px">
+<sc-for list="{{ chapters }}" as="c" hint-placeholder-count="8">
+<div onClick="{{ c.go }}" style="padding:10px 0;border-radius:6px;background:rgba(79,179,200,.12);color:#dfeaee;font-family:'JetBrains Mono',monospace;font-size:14px;text-align:center;cursor:pointer;position:relative">{{ c.n }}
+<sc-if value="{{ c.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:50%;bottom:4px;width:12px;height:2px;margin-left:-6px;background:#4fb3c8"></div></sc-if>
+</div>
+</sc-for>
+</div>
+<div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8fa8b0;font-family:'JetBrains Mono',monospace;margin-top:10px">Lezione</div>
+<div style="display:flex;gap:7px">
+<sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+<div onClick="{{ l.go }}" style="flex:1;padding:11px 0;border-radius:6px;background:rgba(79,179,200,.12);color:#dfeaee;font-family:'JetBrains Mono',monospace;font-size:15px;text-align:center;cursor:pointer;position:relative">{{ l.n }}
+<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:50%;bottom:5px;width:14px;height:2px;margin-left:-7px;background:#4fb3c8"></div></sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</div>
+</sc-if>
+</div>
+<div style="flex:0 1 212px;min-width:0;min-height:0;max-height:min(910px,calc(100vh - 36px));overflow-y:auto;display:flex;flex-direction:column;gap:14px;padding-right:4px;color:#8fa8b0">
+<div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8fa8b0">L13 · Stream · banda 3</div>
+<div style="font-size:23px;font-weight:600;color:#e4eef1;margin-top:4px;line-height:1.2">Il condotto</div>
+<div style="font-size:14px;line-height:1.5;color:#8fa8b0;margin-top:8px">Deviare il flusso · 8 capitoli</div>
+</div>
+<div style="height:1px;background:rgba(79,179,200,.18)"></div>
+<div style="display:flex;flex-direction:column;gap:5px">
+<sc-for list="{{ chapters }}" as="c" hint-placeholder-count="8">
+<div onClick="{{ c.go }}" style="padding:9px 11px;border-radius:8px;background:rgba(79,179,200,.07);cursor:pointer;display:flex;gap:10px;align-items:baseline" style-hover="background:rgba(79,179,200,.16)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#7fd0e2;width:12px">{{ c.n }}</div>
+<div style="flex:1;min-width:0">
+<div style="font-size:14px;color:#dfeaee;line-height:1.3">{{ c.title }}</div>
+<sc-if value="{{ c.on }}" hint-placeholder-val="{{ false }}"><div style="height:2px;background:#4fb3c8;margin-top:6px"></div></sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="height:1px;background:rgba(79,179,200,.18)"></div>
+<div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8fa8b0;margin-bottom:6px">Lezione {{ chapterNo }}.x</div>
+<div style="display:flex;flex-direction:column;gap:5px">
+<sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+<div onClick="{{ l.go }}" style="padding:8px 11px;border-radius:6px;background:rgba(79,179,200,.06);cursor:pointer;display:flex;gap:10px;align-items:baseline" style-hover="background:rgba(79,179,200,.15)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#8fa8b0;width:12px">{{ l.n }}</div>
+<div style="flex:1;min-width:0">
+<div style="font-size:13px;color:#8fa8b0;line-height:1.3">{{ l.title }}</div>
+<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><div style="height:2px;background:#4fb3c8;margin-top:5px"></div></sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="height:1px;background:rgba(79,179,200,.18)"></div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.7;color:#8fa8b0">
+<div>← → · scambio</div>
+<div>spazio · pause() / resume()</div>
+<div>tocca · corsia o sorgente</div>
+</div>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:700,&quot;height&quot;:940},&quot;capitolo&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:1,&quot;min&quot;:1,&quot;max&quot;:8,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Navigazione&quot;},&quot;lezione&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:1,&quot;min&quot;:1,&quot;max&quot;:5,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Navigazione&quot;},&quot;lingua&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;it&quot;,&quot;en&quot;],&quot;default&quot;:&quot;it&quot;,&quot;tsType&quot;:&quot;'it'|'en'&quot;,&quot;section&quot;:&quot;Navigazione&quot;},&quot;freno&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;capitolo&quot;,&quot;pipe()&quot;,&quot;write()&quot;],&quot;default&quot;:&quot;capitolo&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Gioco&quot;},&quot;diagnostica&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Gioco&quot;}}">
+const W=420,H=910,KEY='kaio-nodejs-l13';
+const SRCY=58,SRCH=64,JY=268,LANEY=298,SINKY=598,TANKY=618,TANKH=152;
+const LX=[86,210,334],CKW=46,CKH=26,GAP=34,TRUNKMAX=4;
+
+/* cfg di un beat: quante corsie, ritmo della sorgente, capacità/hwm/drain per
+   corsia, quanti chunk consegnare, e chi tiene il freno (pipe o write). */
+const B=o=>Object.assign({lanes:2,rate:1.7,size:16,cap:[100,100,100],hwm:[70,70,70],drain:[9,4,6],target:7,auto:false},o);
+const CHAP=[
+ {t:['Un condotto solo','One conduit only'],titles:[['Il primo chunk','The first chunk'],['Arrivano a pezzi','They arrive in pieces'],['La vasca si riempie','The tank fills'],['Si svuota da sola','It drains by itself'],['Ritmo','Rhythm']],
+  beats:[B({lanes:1,rate:2.2,target:4,drain:[9,9,9],auto:true}),
+   B({lanes:1,rate:2,target:5,drain:[8,8,8],auto:true}),
+   B({lanes:1,rate:1.8,target:6,drain:[6,6,6],auto:true}),
+   B({lanes:1,rate:1.7,target:6,drain:[5,5,5],auto:true}),
+   B({lanes:1,rate:1.6,target:7,drain:[6,6,6],auto:true})]},
+ {t:['Due destinazioni','Two destinations'],titles:[['Lo scambio','The switch'],['Uno è più lento','One is slower'],['Leggi il drain','Read the drain'],['Alterna','Alternate'],['A occhio','At a glance']],
+  beats:[B({lanes:2,rate:1.9,target:6,drain:[9,4,4],auto:true}),
+   B({lanes:2,rate:1.8,target:7,drain:[9,3,3],auto:true}),
+   B({lanes:2,rate:1.7,target:7,drain:[8,4,4],auto:true}),
+   B({lanes:2,rate:1.5,target:8,drain:[7,5,5],auto:true}),
+   B({lanes:2,rate:1.7,target:7,drain:[8,4,4],auto:true})]},
+ {t:['write() torna false','write() returns false'],titles:[['La bocca chiusa','The closed mouth'],['La coda sale','The queue rises'],['Insisti e cade','Insist and it drops'],['Il tronco pieno','The trunk full'],['Adesso lo sai','Now you know']],
+  beats:[B({lanes:2,rate:1.6,target:7,drain:[8,3,3],auto:false}),
+   B({lanes:2,rate:1.5,target:8,drain:[7,3,3],auto:false}),
+   B({lanes:2,rate:1.4,target:8,drain:[6,3,3],auto:false}),
+   B({lanes:2,rate:1.3,target:9,drain:[6,3,3],auto:false}),
+   B({lanes:2,rate:1.5,target:8,drain:[7,4,4],auto:false})]},
+ {t:['Il freno a monte','The brake upstream'],titles:[['pause()','pause()'],['Aspetta il drain','Wait for drain'],['resume()','resume()'],['Due freni','Two brakes'],['Padronanza','Mastery']],
+  beats:[B({lanes:2,rate:1.4,target:8,drain:[6,3,3],auto:false}),
+   B({lanes:2,rate:1.3,target:9,drain:[5,3,3],auto:false}),
+   B({lanes:2,rate:1.3,target:9,drain:[5,4,4],auto:false}),
+   B({lanes:2,rate:1.2,target:10,drain:[5,3,3],auto:false}),
+   B({lanes:2,rate:1.4,target:9,drain:[6,4,4],auto:false})]},
+ {t:['highWaterMark','highWaterMark'],titles:[['La linea, non il fondo','The line, not the bottom'],['Soglia bassa','Low threshold'],['Soglie diverse','Different thresholds'],['Il più vuoto non basta','Emptiest is not enough'],['La linea giusta','The right line']],
+  beats:[B({lanes:2,rate:1.5,target:8,hwm:[40,70,70],drain:[9,4,4],auto:false}),
+   B({lanes:2,rate:1.4,target:8,hwm:[32,70,70],drain:[9,4,4],auto:false}),
+   B({lanes:2,rate:1.4,target:9,hwm:[36,84,84],drain:[9,3,3],auto:false}),
+   B({lanes:2,rate:1.3,target:9,hwm:[30,88,88],drain:[9,3,3],auto:false}),
+   B({lanes:2,rate:1.4,target:9,hwm:[38,76,76],drain:[8,4,4],auto:false})]},
+ {t:['Tre destinazioni','Three destinations'],titles:[['La terza corsia','The third lane'],['Tre velocità','Three speeds'],['Il centro è lento','The middle is slow'],['Tutte e tre','All three'],['Padronanza','Mastery']],
+  beats:[B({lanes:3,rate:1.5,target:9,drain:[8,3,6],auto:false}),
+   B({lanes:3,rate:1.4,target:10,drain:[9,3,5],auto:false}),
+   B({lanes:3,rate:1.3,target:10,drain:[8,2,7],hwm:[70,50,70],auto:false}),
+   B({lanes:3,rate:1.2,target:11,drain:[7,3,6],hwm:[64,44,80],auto:false}),
+   B({lanes:3,rate:1.4,target:10,drain:[8,4,6],auto:false})]},
+ {t:['Portata piena','Full throughput'],titles:[['Più veloce','Faster'],['Chunk grossi','Big chunks'],['Poco margine','Little margin'],['Il picco','The peak'],['Automatico','Automatic']],
+  beats:[B({lanes:3,rate:1.2,target:11,drain:[8,4,6],auto:false}),
+   B({lanes:3,rate:1.2,size:22,target:11,drain:[9,5,7],auto:false}),
+   B({lanes:3,rate:1.1,size:20,target:12,hwm:[60,48,68],drain:[8,4,6],auto:false}),
+   B({lanes:3,rate:1.05,size:22,target:13,hwm:[56,44,64],drain:[8,4,7],auto:false}),
+   B({lanes:3,rate:1.3,size:18,target:11,drain:[9,5,7],auto:false})]},
+ {t:['Il condotto intero','The whole conduit'],titles:[['Tutto insieme','All together'],['Senza rete','No net'],['La prova','The test'],['Il picco','The peak'],['Chiusura','Closing']],
+  beats:[B({lanes:3,rate:1.2,size:18,target:12,hwm:[62,46,72],drain:[8,3,6],auto:false}),
+   B({lanes:3,rate:1.15,size:20,target:12,hwm:[58,44,68],drain:[8,3,6],auto:false}),
+   B({lanes:3,rate:1.1,size:20,target:13,hwm:[54,42,64],drain:[7,3,6],auto:false}),
+   B({lanes:3,rate:1.05,size:22,target:14,hwm:[52,40,60],drain:[7,3,5],auto:false}),
+   B({lanes:3,rate:1.3,size:18,target:12,hwm:[64,48,74],drain:[9,4,7],auto:false})]}];
+
+const T={it:{drop:'Tre chunk sono caduti fuori dal condotto.',dropFx:'Il Writable aveva già detto no e la sorgente ha continuato a mandare.',dropRule:'write() che torna false non è un consiglio: è uno stop.',
+ slow:'Hai mandato dove si svuota più piano.',slowFx:"L'altro Writable era libero e drena il doppio: la coda si è formata per questo.",slowRule:'Il più vuoto non è il più veloce: si legge il drain, non il livello.',
+ a:'Readable',b:'Writable'},
+ en:{drop:'Three chunks fell out of the conduit.',dropFx:'The Writable had already said no and the source kept sending.',dropRule:'write() returning false is not advice: it is a stop.',
+ slow:'You sent it where it drains slowest.',slowFx:'The other Writable was free and drains twice as fast: that is why the queue formed.',slowRule:'Emptiest is not fastest: read the drain, not the level.',
+ a:'Readable',b:'Writable'}};
+
+class Component extends DCLogic{
+ state={beat:0,chapter:0,lang:'it',paused:false,coach:null,done:false,muted:false,step:0,drops:0};
+ renderVals(){const s=this.state,L=T[s.lang],c=s.coach;
+  return Object.assign(KAIO.vals(this),{
+   coachWhat:c?(c.kind==='drop'?L.drop:L.slow):'',
+   coachEffect:c?(c.kind==='drop'?L.dropFx:L.slowFx):'',
+   coachRule:c?(c.kind==='drop'?L.dropRule:L.slowRule):'',
+   coachA:L.a,coachB:L.b});
+ }
+ componentDidMount(){KAIO.init(this,{W,H,key:KEY,chapters:CHAP,
+   onTap:p=>this.tap(p),onSwipe:d=>this.swipe(d),onKey:e=>this.key(e)});
+  KAIO.audio(this);KAIO.drone(this,52,'sine',.014,180);}
+ componentDidUpdate(pp){KAIO.sync(this,pp)}
+ componentWillUnmount(){KAIO.destroy(this)}
+
+ freno(){const f=this.props.freno;return f==='pipe()'?true:f==='write()'?false:!!this.cfg.auto}
+
+ reset(beat){const c=this.BEATS[beat];this.cfg=c;
+  this.act=c.lanes===1?[1]:c.lanes===2?[0,2]:[0,1,2];
+  this.li=Math.floor(this.act.length/2);
+  this.fill=[0,0,0];this.chunks=[];this.parts=[];
+  this.spawnT=.7;this.delivered=0;this.dropped=0;this.srcPaused=false;this.autoHold=false;
+  this.shake=0;this.flash=0;this.pulse=0;this.pulseL=-1;this.taught=false;this.tSpent=0;
+  this.setState({drops:0});}
+
+ lane(){return this.act[this.li]}
+ swipe(d){if(d==='left')this.move(-1);else if(d==='right')this.move(1)}
+ move(k){const n=Math.max(0,Math.min(this.act.length-1,this.li+k));
+  if(n===this.li)return;this.li=n;KAIO.snd(this,'click',{hz:2100,v:.3})}
+ key(e){const k=e.key;
+  if(k==='ArrowLeft'||k==='a'||k==='A'){e.preventDefault();this.move(-1)}
+  else if(k==='ArrowRight'||k==='d'||k==='D'){e.preventDefault();this.move(1)}
+  else if(k===' '){e.preventDefault();this.brake()}}
+ brake(){if(this.freno())return;this.srcPaused=!this.srcPaused;
+  KAIO.snd(this,this.srcPaused?'thud':'pop',{v:.2,hz:380})}
+ tap(p){if(p.y<SRCY+SRCH+22){this.brake();return}
+  let best=0,bd=1e9;this.act.forEach((l,i)=>{const d=Math.abs(LX[l]-p.x);if(d<bd){bd=d;best=i}});
+  if(bd<86)this.move(best-this.li)}
+
+ /* Un chunk è bloccato dal chunk sotto di lui nella stessa colonna. */
+ blocked(c,i){for(let j=0;j<this.chunks.length;j++){const o=this.chunks[j];
+   if(j===i||o.y<=c.y)continue;
+   const sameCol=c.lane<0?o.lane<0:(o.lane===c.lane||o.lane<0);
+   if(sameCol&&o.y-c.y<GAP)return true}
+  return false}
+
+ update(dt){const c=this.cfg,auto=this.freno();
+  this.tSpent+=dt;
+  if(this.shake>0)this.shake=Math.max(0,this.shake-dt*3.4);
+  if(this.flash>0)this.flash=Math.max(0,this.flash-dt*2.6);
+  if(this.pulse>0)this.pulse=Math.max(0,this.pulse-dt*1.6);
+  for(let i=0;i<3;i++)this.fill[i]=Math.max(0,this.fill[i]-c.drain[i]*dt);
+
+  const trunk=this.chunks.filter(k=>k.lane<0).length;
+  if(auto)this.autoHold=trunk>=TRUNKMAX-1?true:(trunk<=1?false:this.autoHold);
+  const held=auto?this.autoHold:this.srcPaused;
+
+  if(!held){this.spawnT-=dt;
+   if(this.spawnT<=0){this.spawnT=c.rate;
+    if(trunk>=TRUNKMAX){this.dropped++;this.shake=1;this.flash=1;
+     KAIO.burst(this.parts,LX[1],SRCY+SRCH+14,14,'#cfe4ea',{up:-40,v1:120});
+     KAIO.snd(this,'fall');
+     this.setState({drops:this.dropped});
+     if(this.dropped>=3&&!this.state.coach)this.setState({coach:{kind:'drop'}});}
+    else this.chunks.push({y:SRCY+SRCH+10,lane:-1,size:c.size,stall:false,age:0})}}
+
+  const V=95;
+  for(let i=0;i<this.chunks.length;i++){const k=this.chunks[i];k.age+=dt;
+   if(k.stall){
+    if(this.fill[k.lane]<=c.hwm[k.lane]){k.stall=false;KAIO.snd(this,'pop',{hz:520,v:.12})}
+    continue}
+   if(this.blocked(k,i))continue;
+   k.y+=V*dt;
+   if(k.lane<0&&k.y>=JY){k.lane=this.lane();k.y=JY;
+    KAIO.snd(this,'click',{hz:1400,v:.18})}
+   if(k.y>=SINKY-CKH/2){
+    if(this.fill[k.lane]+k.size>c.hwm[k.lane]){k.y=SINKY-CKH/2;k.stall=true;
+     this.teach(k.lane);KAIO.snd(this,'thud',{v:.16})}
+    else{this.fill[k.lane]+=k.size;this.delivered++;
+     KAIO.burst(this.parts,LX[k.lane],SINKY+8,9,'#7fd0e2',{up:10,v1:90});
+     KAIO.snd(this,'tone',{from:440+this.delivered*14,to:660,v:.1});
+     this.chunks.splice(i--,1);
+     if(this.delivered>=c.target){this.setState({done:true});KAIO.snd(this,'chime')}}}}
+  this.parts=KAIO.parts(this.parts,dt,300);}
+
+ /* Livello 2 di aiuto: se esiste una corsia più veloce e libera, pulsa. */
+ teach(l){const c=this.cfg;let best=-1,bd=-1;
+  for(const o of this.act){if(o===l)continue;
+   if(this.fill[o]<=c.hwm[o]&&c.drain[o]>bd){bd=c.drain[o];best=o}}
+  if(best<0)return;
+  if(c.drain[best]>c.drain[l]){this.pulse=1;this.pulseL=best;
+   if(!this.taught&&!this.state.coach&&this.state.beat>=2){this.taught=true;
+    this.setState({coach:{kind:'slow'}})}}}
+
+ grid(x){x.strokeStyle='rgba(79,179,200,.055)';x.lineWidth=1;
+  for(let gx=0;gx<=W;gx+=28){x.beginPath();x.moveTo(gx,0);x.lineTo(gx,H);x.stroke()}
+  for(let gy=0;gy<=H;gy+=28){x.beginPath();x.moveTo(0,gy);x.lineTo(W,gy);x.stroke()}}
+
+ draw(x){const c=this.cfg,s=this.state,it=s.lang==='it',auto=this.freno();
+  x.save();x.setTransform(this.sc,0,0,this.sc,0,0);
+  const g=x.createLinearGradient(0,0,0,H);g.addColorStop(0,'#0a1620');g.addColorStop(.55,'#060d12');g.addColorStop(1,'#04070a');
+  x.fillStyle=g;x.fillRect(0,0,W,H);
+  this.grid(x);
+  KAIO.shake(x,this.shake);
+  if(this.flash>0){x.fillStyle='rgba(200,120,90,'+(this.flash*.13).toFixed(3)+')';x.fillRect(0,0,W,H)}
+
+  const held=auto?this.autoHold:this.srcPaused;
+  x.textBaseline='middle';
+
+  /* Readable — la sorgente */
+  const sx=LX[1]-84;
+  x.strokeStyle=held?'#3d6b78':'#4fb3c8';x.lineWidth=1.5;
+  KAIO.rr(x,sx,SRCY,168,SRCH,4);x.stroke();
+  x.font='600 15px "JetBrains Mono",monospace';x.textAlign='left';
+  x.fillStyle=held?'#6d8791':'#cfe4ea';x.fillText('Readable',sx+13,SRCY+21);
+  x.font='500 13px "JetBrains Mono",monospace';
+  x.fillStyle=held?'#7fd0e2':'#8fa8b0';x.textAlign='right';
+  x.fillText(held?(auto?'pause() auto':'pause()'):'flowing',sx+155,SRCY+21);
+  x.textAlign='left';x.fillStyle='#8fa8b0';
+  x.fillText(c.size+'k · '+c.rate.toFixed(2)+'s',sx+13,SRCY+44);
+  x.textAlign='right';x.fillStyle='#8fa8b0';
+  x.fillText(auto?'pipe()':'write()',sx+155,SRCY+44);
+
+  /* tronco + coda */
+  x.strokeStyle='rgba(79,179,200,.42)';x.lineWidth=1.5;
+  x.beginPath();x.moveTo(LX[1]-26,SRCY+SRCH);x.lineTo(LX[1]-26,JY);x.stroke();
+  x.beginPath();x.moveTo(LX[1]+26,SRCY+SRCH);x.lineTo(LX[1]+26,JY);x.stroke();
+  x.strokeStyle='rgba(79,179,200,.18)';x.setLineDash([3,7]);
+  x.beginPath();x.moveTo(LX[1],SRCY+SRCH);x.lineTo(LX[1],JY);x.stroke();x.setLineDash([]);
+
+  /* scambio */
+  const cur=this.lane();
+  for(const l of this.act){const on=l===cur;
+   x.strokeStyle=on?'#4fb3c8':'rgba(79,179,200,.2)';x.lineWidth=on?2:1.5;
+   x.beginPath();x.moveTo(LX[1],JY);x.lineTo(LX[l],LANEY+8);x.stroke();
+   x.strokeStyle=on?'rgba(79,179,200,.5)':'rgba(79,179,200,.14)';x.lineWidth=1.5;
+   x.beginPath();x.moveTo(LX[l]-26,LANEY+8);x.lineTo(LX[l]-26,SINKY);x.stroke();
+   x.beginPath();x.moveTo(LX[l]+26,LANEY+8);x.lineTo(LX[l]+26,SINKY);x.stroke();}
+  x.fillStyle='#4fb3c8';x.beginPath();x.arc(LX[1],JY,4.5,0,6.283);x.fill();
+
+  /* Writable — le vasche */
+  for(const l of this.act){const fx=LX[l]-54,cap=c.cap[l],hw=c.hwm[l];
+   const lvl=Math.min(1,this.fill[l]/cap),hy=TANKY+TANKH*(1-hw/cap);
+   const pulsing=this.pulse>0&&this.pulseL===l;
+   x.strokeStyle=pulsing?'#7fd0e2':'rgba(79,179,200,.5)';x.lineWidth=pulsing?2.4:1.5;
+   KAIO.rr(x,fx,TANKY,108,TANKH,4);x.stroke();
+   const lh=TANKH*lvl;
+   x.fillStyle=this.fill[l]>hw?'rgba(127,208,226,.5)':'rgba(79,179,200,.3)';
+   x.fillRect(fx+1.5,TANKY+TANKH-lh,105,lh);
+   x.strokeStyle='#7fd0e2';x.lineWidth=1.5;x.setLineDash([5,4]);
+   x.beginPath();x.moveTo(fx,hy);x.lineTo(fx+108,hy);x.stroke();x.setLineDash([]);
+   x.font='500 13px "JetBrains Mono",monospace';x.textAlign='left';
+   x.fillStyle='#7fd0e2';x.fillText('hwm',fx+5,hy-10);
+   x.textAlign='right';x.fillStyle='#dfeaee';
+   x.fillText(Math.round(this.fill[l])+'k',fx+103,TANKY+15);
+   x.textAlign='center';
+   x.font='600 14px "JetBrains Mono",monospace';x.fillStyle='#cfe4ea';
+   x.fillText('Writable',LX[l],SINKY-38);
+   x.font='500 13px "JetBrains Mono",monospace';x.fillStyle='#8fa8b0';
+   x.fillText('drain '+c.drain[l]+'k/s',LX[l],TANKY+TANKH+18);}
+
+  /* chunk */
+  x.textAlign='center';
+  for(const k of this.chunks){const kx=k.lane<0?LX[1]:LX[k.lane];
+   x.fillStyle=k.stall?'#8fa8b0':'#cfe4ea';
+   KAIO.rr(x,kx-CKW/2,k.y-CKH/2,CKW,CKH,3);x.fill();
+   x.font='600 13px "JetBrains Mono",monospace';x.fillStyle='#06131a';
+   x.fillText(k.size+'k',kx,k.y+1);
+   if(k.stall){x.strokeStyle='#7fd0e2';x.lineWidth=1.5;
+    KAIO.rr(x,kx-CKW/2-3,k.y-CKH/2-3,CKW+6,CKH+6,4);x.stroke()}}
+  KAIO.drawParts(x,this.parts);
+
+  /* obiettivo e conti — sotto, non sopra */
+  x.font='500 14px "JetBrains Mono",monospace';x.textAlign='left';x.fillStyle='#8fa8b0';
+  x.fillText(it?'consegnati':'delivered',22,H-52);
+  x.font='600 22px "JetBrains Mono",monospace';x.fillStyle='#dfeaee';
+  x.fillText(this.delivered+' / '+c.target,22,H-28);
+  x.textAlign='right';x.font='500 14px "JetBrains Mono",monospace';x.fillStyle='#8fa8b0';
+  x.fillText(it?'caduti':'dropped',W-22,H-52);
+  x.font='600 22px "JetBrains Mono",monospace';
+  x.fillStyle=this.dropped>0?'#e0a06a':'#8fa8b0';
+  x.fillText(this.dropped+' / 3',W-22,H-28);
+
+  /* pip dei beat */
+  for(let i=0;i<this.BEATS.length;i++){const on=i<=s.beat;
+   x.strokeStyle=on?'#4fb3c8':'rgba(79,179,200,.25)';x.lineWidth=1.5;
+   x.beginPath();x.arc(W-24,20+i*17,4.5,0,6.283);x.stroke();
+   if(i===s.beat){x.fillStyle='#4fb3c8';x.beginPath();x.arc(W-24,20+i*17,2.4,0,6.283);x.fill()}}
+
+  if(this.props.diagnostica){x.font='500 12px "JetBrains Mono",monospace';x.textAlign='left';
+   x.fillStyle='#4fb3c8';x.fillText('trunk '+this.chunks.filter(k=>k.lane<0).length+' held '+held+' t '+this.tSpent.toFixed(1),12,H-70)}
+  x.restore();}
+}
+</script>
+</body>
+</html>
