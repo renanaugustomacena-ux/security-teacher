@@ -124,6 +124,13 @@ export class GameHost {
     this.state.beat = restored.beat;
 
     this._renderShell();
+
+    if (this.game.kind === 'dom') {
+      this._startDom();
+      this._renderChrome();
+      return;
+    }
+
     this.cv.current = this.container.querySelector('.game-canvas');
 
     this.game.init(this);
@@ -142,6 +149,44 @@ export class GameHost {
     if (this.game.drone) engine.drone(this, this.game.drone);
     this._renderChrome();
     this._remeasureWhenFontLoads();
+  }
+
+  /**
+   * A DOM game (the band-4 terminals: ricerca/22) owns a root element instead
+   * of a canvas and has no frame loop. The host still owns the chrome, the
+   * chapter/beat spine, pause on Escape, and teardown: the game binds its own
+   * listeners and timers to `host.signal` and rebuilds its DOM in `render()`,
+   * which the host calls after every setState — the place React's re-render
+   * used to be in the template.
+   */
+  _startDom() {
+    this.root = this.container.querySelector('[data-role="dom"]');
+    this._abort = new AbortController();
+    this.signal = this._abort.signal;
+    this.CH = this.game.CH;
+    this.reduceMotion = engine.prefersReducedMotion();
+
+    const chapterIndex = Math.max(0, Math.min(this.CH.length - 1, this.state.chapter || 0));
+    engine.useChapter(this, chapterIndex);
+    const beat = Math.max(0, Math.min(this.BEATS.length - 1, this.state.beat || 0));
+    this.state.chapter = chapterIndex;
+    this.state.beat = beat;
+
+    if (typeof window !== 'undefined' && typeof window.addEventListener === 'function') {
+      window.addEventListener(
+        'keydown',
+        (e) => {
+          if (e.key !== 'Escape') return;
+          e.preventDefault();
+          this.setState((s) => ({ paused: !s.paused }));
+        },
+        { signal: this.signal }
+      );
+    }
+
+    this.game.init(this);
+    this.reset(beat);
+    if (typeof this.game.render === 'function') this.game.render(this);
   }
 
   /**
@@ -179,6 +224,9 @@ export class GameHost {
     Object.assign(this.state, next);
     this._checkLevelComplete();
     this._renderChrome();
+    if (this.game.kind === 'dom' && !this._destroyed && typeof this.game.render === 'function') {
+      this.game.render(this);
+    }
   }
 
   /**
@@ -264,8 +312,12 @@ export class GameHost {
             </button>
           </div>
         </div>
-        <div class="game-stage">
-          <canvas class="game-canvas" role="img" aria-label="Area di gioco / Game area"></canvas>
+        <div class="game-stage${this.game.kind === 'dom' ? ' game-stage-dom' : ''}">
+          ${
+            this.game.kind === 'dom'
+              ? '<div class="game-dom" data-role="dom" tabindex="0" aria-label="Area di gioco / Game area"></div>'
+              : '<canvas class="game-canvas" role="img" aria-label="Area di gioco / Game area"></canvas>'
+          }
           <div class="game-overlay" data-role="overlay"></div>
         </div>
         <div class="game-rail" data-role="rail"></div>

@@ -16,7 +16,7 @@
  *   - Only GET requests enter cache. Non-GET is always network-only.
  *   - Response size cap: responses > 10 MB are never persisted to cache.
  */
-const CACHE_NAME = 'kaio-v18';
+const CACHE_NAME = 'kaio-v20';
 
 const MAX_CACHE_RESPONSE_BYTES = 10 * 1024 * 1024;
 
@@ -94,11 +94,29 @@ const STATIC_ASSETS = [
   './js/utils/StringDistance.js',
   './js/games/GameHost.js',
   './js/games/KaioEngine.js',
+  './js/games/LevelBeats.js',
   './js/games/LevelItem.js',
   './js/games/LevelSession.js',
   './js/games/registry.js',
   './js/games/levels/inglese-l0-taverna.js',
   './js/games/levels/inglese-l1-guado.js',
+  './js/games/levels/cyber-l1-casa.js',
+  './js/games/levels/nodejs-l1-chiosco.js',
+  './js/games/levels/nodejs-l10-archivio.js',
+  './js/games/levels/nodejs-l11-lasciapassare.js',
+  './js/games/levels/nodejs-l3-bilancia.js',
+  './js/games/levels/nodejs-l5-officina.js',
+  './js/games/levels/nodejs-l6-centralino.js',
+  './js/games/parts/cyber-l1-casa/draw.js',
+  './js/games/parts/cyber-l1-casa/page.js',
+  './js/games/parts/nodejs-l1-chiosco/draw.js',
+  './js/games/parts/nodejs-l1-chiosco/layout.js',
+  './js/games/parts/nodejs-l10-archivio/tables.js',
+  './js/games/parts/nodejs-l11-lasciapassare/chapters.js',
+  './js/games/parts/nodejs-l11-lasciapassare/glass.js',
+  './js/games/parts/nodejs-l5-officina/chapters.js',
+  './js/games/parts/nodejs-l6-centralino/paint.js',
+  './js/games/parts/nodejs-l6-centralino/tables.js',
   './js/topics/TopicPlacement.js',
   './js/topics/TopicManager.js',
   './js/topics/TopicBossChallenge.js',

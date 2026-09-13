@@ -23,6 +23,13 @@ export const LEARN_SURFACE = 'learn';
 const GAMES = {
   'learn:0': () => import('./levels/inglese-l0-taverna.js'),
   'learn:1': () => import('./levels/inglese-l1-guado.js'),
+  'cybersecurity:0': () => import('./levels/cyber-l1-casa.js'),
+  'nodejs:0': () => import('./levels/nodejs-l1-chiosco.js'),
+  'nodejs:2': () => import('./levels/nodejs-l3-bilancia.js'),
+  'nodejs:4': () => import('./levels/nodejs-l5-officina.js'),
+  'nodejs:5': () => import('./levels/nodejs-l6-centralino.js'),
+  'nodejs:9': () => import('./levels/nodejs-l10-archivio.js'),
+  'nodejs:10': () => import('./levels/nodejs-l11-lasciapassare.js'),
 };
 
 export function gameKey(surface, level) {

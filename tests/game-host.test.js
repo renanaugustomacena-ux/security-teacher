@@ -246,3 +246,92 @@ describe('GameHost — every registered game runs on the real host object', () =
     }
   });
 });
+
+/**
+ * Band-4 games are terminals (ricerca/22): DOM, no canvas, no frame loop. The
+ * host gives them a root element and an AbortSignal, keeps the chapter/beat
+ * spine and the chrome, and re-renders them after every setState.
+ */
+describe('GameHost — DOM games', () => {
+  function domContainer() {
+    const root = { innerHTML: '', focus() {}, addEventListener() {} };
+    const overlay = { innerHTML: '', classList: { toggle() {} } };
+    const rail = { innerHTML: '' };
+    return {
+      root,
+      container: {
+        innerHTML: '',
+        addEventListener() {},
+        removeEventListener() {},
+        querySelector(sel) {
+          if (sel === '[data-role="dom"]') return root;
+          if (sel === '[data-role="overlay"]') return overlay;
+          if (sel === '[data-role="rail"]') return rail;
+          return null;
+        },
+      },
+    };
+  }
+
+  const DOM_GAME = {
+    kind: 'dom',
+    meta: { id: 'term', surface: 'nodejs', level: 18, title: 'tsc', register: 'terminal' },
+    CH: [
+      {
+        t: ['Uno', 'One'],
+        titles: [
+          ['A', 'A'],
+          ['B', 'B'],
+        ],
+        beats: [{ id: '0.0' }, { id: '0.1' }],
+      },
+      { t: ['Due', 'Two'], titles: [['C', 'C']], beats: [{ id: '1.0' }] },
+    ],
+    calls: [],
+    init(host) {
+      this.calls.push(['init', Boolean(host.root), host.signal instanceof AbortSignal]);
+    },
+    reset(host, beat) {
+      this.calls.push(['reset', host.state.chapter, beat, host.BEATS[beat].id]);
+    },
+    render(host) {
+      this.calls.push(['render', host.state.beat, host.state.paused]);
+    },
+    update() {},
+    draw() {},
+  };
+
+  it('mounts a root instead of a canvas, installs the spine and renders', async () => {
+    const s = await session();
+    const { container } = domContainer();
+    DOM_GAME.calls.length = 0;
+    const host = new GameHost({ container, game: DOM_GAME, session: s });
+    await host.start();
+
+    expect(container.innerHTML).toContain('data-role="dom"');
+    expect(container.innerHTML).not.toContain('<canvas');
+    expect(DOM_GAME.calls[0]).toEqual(['init', true, true]);
+    expect(DOM_GAME.calls[1]).toEqual(['reset', 0, 0, '0.0']);
+    expect(DOM_GAME.calls[2]).toEqual(['render', 0, false]);
+
+    host.setState({ paused: true });
+    expect(DOM_GAME.calls.at(-1)).toEqual(['render', 0, true]);
+
+    // The engine's beat spine works without a canvas.
+    const { next } = await import('../js/games/KaioEngine.js');
+    host.setState({ paused: false });
+    next(host);
+    next(host);
+    expect(DOM_GAME.calls.filter((c) => c[0] === 'reset').map((c) => c[3])).toEqual([
+      '0.0',
+      '0.1',
+      '1.0',
+    ]);
+    expect(host.state).toMatchObject({ chapter: 1, beat: 0 });
+
+    const { signal } = host;
+    host.destroy();
+    expect(signal.aborted).toBe(true);
+    expect(container.innerHTML).toBe('');
+  });
+});

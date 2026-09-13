@@ -8723,6 +8723,19 @@ body.login-wall-active > *:not(.login-wall):not(#matrix-morph) {
   border: 0;
 }
 
+/* A DOM game (band-4 terminals) fills the stage with its own root instead of
+   a canvas; the stage keeps the phone aspect so the chrome does not move. */
+.game-dom {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  outline: none;
+}
+
+.game-stage-dom {
+  background: #000;
+}
+
 /* The game draws its own back control; the lesson header would duplicate it.
    Applies to both lesson containers: #lesson-container (Learn) and
    #topic-lesson-container (topics). */
@@ -9071,6 +9084,65 @@ body.login-wall-active > *:not(.login-wall):not(#matrix-morph) {
 
 .game-unavailable {
   text-align: center;
+}
+
+/* On a phone the glass fills the screen (ricerca/42 §42.2): the game container
+   leaves the page flow and covers the app chrome, so the 420 × 910 stage gets
+   the whole viewport height instead of what is left under the header. */
+@media (max-width: 640px) {
+  .game-mode {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-modal);
+    margin: 0;
+    padding: max(env(safe-area-inset-top, 0px), var(--space-xs)) var(--space-xs)
+      max(env(safe-area-inset-bottom, 0px), var(--space-xs));
+    border-radius: 0;
+    background: var(--bg-primary);
+    overflow: auto;
+  }
+
+  .game-mode .game-host {
+    min-height: 100%;
+    gap: var(--space-xs);
+  }
+
+  /* One compact row: the level eyebrow goes, the title truncates, the
+     controls shrink to 40 px targets so the glass keeps the height. */
+  .game-mode .game-topbar {
+    gap: var(--space-xs);
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  .game-mode .game-topbar-level {
+    display: none;
+  }
+
+  .game-mode .game-topbar-title {
+    font-size: var(--font-size-base);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .game-mode .game-exit {
+    min-height: 40px;
+    padding: 0 var(--space-sm);
+    font-size: var(--font-size-sm);
+    white-space: nowrap;
+  }
+
+  .game-mode .game-chip {
+    min-width: 40px;
+    min-height: 40px;
+    padding: 0 var(--space-xs);
+  }
+
+  .game-mode .game-stage,
+  .game-mode .game-rail {
+    max-width: min(100%, calc((100vh - 118px) * 0.4615));
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
