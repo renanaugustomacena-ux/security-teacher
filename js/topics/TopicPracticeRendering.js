@@ -421,7 +421,7 @@ export const renderingMixin = {
 
       case 'lab': {
         this.renderLabQuestion(container, q);
-        return; // LabEngine owns its container, input and completion screen
+        return; // Game registry checked first; LabEngine used as fallback
       }
 
       case 'pairs': {

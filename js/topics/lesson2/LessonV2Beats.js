@@ -14,6 +14,7 @@ import { getTopicMeta } from '../registry.js';
 import { escapeHtml, escapeAttr } from '../../utils/SanitizeHtml.js';
 import { shuffleArray, FEEDBACK_DWELL } from '../../utils/PracticeUtils.js';
 import { LabEngine } from '../lab/LabEngine.js';
+import { hasGame, loadGame } from '../../games/registry.js';
 
 export const lessonV2BeatsMixin = {
   _topicColor() {
@@ -172,6 +173,58 @@ export const lessonV2BeatsMixin = {
     this.container.innerHTML = `
       <div class="lesson-v2"><div class="v2-lab-loading">Preparazione del lab / Preparing the lab…</div></div>`;
 
+    // ── Try the game registry first ──────────────────────────
+    const topicId = this.topicId;
+    const level = this.levelNum;
+    if (topicId != null && level != null && hasGame(topicId, level)) {
+      try {
+        const [game, sdk, host] = await Promise.all([
+          loadGame(topicId, level),
+          import('../../games/LevelSession.js'),
+          import('../../games/GameHost.js'),
+        ]);
+        const session = game
+          ? await sdk.createLevelSession({
+              surface: topicId,
+              level,
+              mode: 'applied',
+              progressManager: this.progressManager,
+            })
+          : null;
+
+        if (game && session) {
+          this._gameHost = await host.mountGame({
+            container: this.container,
+            game,
+            session,
+            props: {},
+            onExit: () => {
+              this._gameHost = null;
+              this._advanceBeat();
+            },
+            onFallback: () => {
+              this._gameHost = null;
+              this._advanceBeat();
+            },
+            onLevelComplete: () => {
+              this._gameHost = null;
+              this._advanceBeat();
+            },
+          });
+          if (this._gameHost) {
+            window._lessonV2Engine = this;
+            return; // game mounted — done
+          }
+        }
+      } catch (err) {
+        console.warn(
+          'Applied beat: game mount failed, falling back to LabEngine:',
+          err && err.message
+        );
+      }
+    }
+
+    // ── Fallback: legacy terminal lab ────────────────────────
     const script = await this._loadLabScript();
     if (!script) {
       this._advanceBeat();

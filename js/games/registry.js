@@ -28,8 +28,14 @@ const GAMES = {
   'nodejs:2': () => import('./levels/nodejs-l3-bilancia.js'),
   'nodejs:4': () => import('./levels/nodejs-l5-officina.js'),
   'nodejs:5': () => import('./levels/nodejs-l6-centralino.js'),
+  'nodejs:6': () => import('./levels/nodejs-l7-linea.js'),
+  'nodejs:7': () => import('./levels/nodejs-l8-indirizzario.js'),
+  'nodejs:8': () => import('./levels/nodejs-l9-catena.js'),
   'nodejs:9': () => import('./levels/nodejs-l10-archivio.js'),
   'nodejs:10': () => import('./levels/nodejs-l11-lasciapassare.js'),
+  'nodejs:11': () => import('./levels/nodejs-l12-scarico.js'),
+  'nodejs:12': () => import('./levels/nodejs-l13-condotto.js'),
+  'nodejs:18': () => import('./levels/nodejs-l19-tsc.js'),
 };
 
 export function gameKey(surface, level) {

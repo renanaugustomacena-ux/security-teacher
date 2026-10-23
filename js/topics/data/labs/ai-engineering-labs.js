@@ -182,7 +182,7 @@ export default {
   ai_data_2: {
     title: 'Rescue a dataset that failed validation',
     intro:
-      'Il job notturno si e fermato: customers.csv non passa la validazione / The nightly job stopped, because customers.csv no longer passes data validation. Find what is wrong with the file, repair it, and prove the repair.',
+      "Il job notturno si e fermato: customers.csv non passa la validazione. Scopri cosa c'è che non va nel file, riparalo e dimostra come hai fatto. / The nightly job stopped, because customers.csv no longer passes data validation. Find what is wrong with the file, repair it, and prove the repair.",
     cwd0: '/home/dev/data-audit',
     vocab: [
       'Data Profiling',

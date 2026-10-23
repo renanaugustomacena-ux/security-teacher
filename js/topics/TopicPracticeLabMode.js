@@ -22,6 +22,7 @@
  */
 
 import { LabEngine } from './lab/LabEngine.js';
+import { hasGame, loadGame } from '../games/registry.js';
 
 /** Minimum shape a lab script needs before we will offer it. */
 function isUsableScript(script) {
@@ -79,13 +80,65 @@ export const labModeMixin = {
   },
 
   /**
-   * Hand the container to LabEngine and let it own the interaction. It renders
-   * its own completion screen with a Continue button, so we advance from its
-   * onComplete rather than showing the shared feedback card over the top.
+   * Hand the container to the best available engine for this lab question.
+   *
+   * If a 2D game is registered for the current topic+level in the game
+   * registry, it is mounted via GameHost — the game replaces the terminal lab
+   * entirely. When no game is registered the legacy LabEngine is used as a
+   * fallback, keeping every topic that has not been migrated yet functional.
    */
-  renderLabQuestion(container, q) {
+  async renderLabQuestion(container, q) {
     if (!container || !q?.script) return;
     this._labResolved = false;
+
+    const topicId = this.currentTopicId;
+    const level = this.currentLevel;
+
+    // ── Try the game registry first ──────────────────────────
+    if (topicId != null && level != null && hasGame(topicId, level)) {
+      try {
+        const [game, sdk, host] = await Promise.all([
+          loadGame(topicId, level),
+          import('../games/LevelSession.js'),
+          import('../games/GameHost.js'),
+        ]);
+        const session = game
+          ? await sdk.createLevelSession({
+              surface: topicId,
+              level,
+              mode: 'lab',
+              progressManager: this.progressManager,
+            })
+          : null;
+
+        if (game && session) {
+          this._gameHost = await host.mountGame({
+            container,
+            game,
+            session,
+            props: {},
+            onExit: () => {
+              this._gameHost = null;
+              this._finishLab({ steps: 0, misses: 0 });
+            },
+            onFallback: () => {
+              // Fallback from a crashed game: finish gracefully.
+              this._gameHost = null;
+              this._finishLab({ steps: 0, misses: 0 });
+            },
+            onLevelComplete: () => {
+              this._gameHost = null;
+              this._finishLab({ steps: 0, misses: 0 });
+            },
+          });
+          if (this._gameHost) return; // game mounted — done
+        }
+      } catch (err) {
+        console.warn('Lab: game mount failed, falling back to LabEngine:', err && err.message);
+      }
+    }
+
+    // ── Fallback: legacy terminal lab ────────────────────────
     this.lab = new LabEngine('topic-practice-content', {
       onComplete: (summary) => this._finishLab(summary),
     });

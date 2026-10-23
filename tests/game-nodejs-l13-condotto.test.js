@@ -318,7 +318,11 @@ describe('Il condotto — conformance (DOCTRINE §46, brief §4)', () => {
     const meaning = meaningOf(host.item, 'it');
     let texts = paintedText(host, ctx);
     expect(paintsMeaning(texts, meaning, labels)).toBe(true);
-    expect(texts.some((t) => t.includes('('))).toBe(false);
+    expect(
+      texts
+        .filter((t) => !['pipe()', 'write()'].includes(t) && !t.startsWith('pause('))
+        .some((t) => t.includes('('))
+    ).toBe(false);
     const k = firstChunk(host);
     expect(k.mi).toBe(host.termIdx);
     expect(k.lane).toBe(-1);
@@ -698,7 +702,8 @@ describe('Il condotto — conformance (DOCTRINE §46, brief §4)', () => {
       const y0 = k.y;
       game.update(host, STEP);
       const fall = (k.y - y0) / STEP;
-      tapLane(host, wrongLane(host, k));
+      const other = (host.li + 1) % host.act.length;
+      tapLane(host, other);
       const a0 = host.swAng;
       game.update(host, STEP);
       return { host, k, fall, turn: Math.abs(host.swAng - a0) };

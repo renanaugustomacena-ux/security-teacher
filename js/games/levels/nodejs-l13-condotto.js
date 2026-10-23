@@ -608,6 +608,8 @@ function installedChapter(host) {
 function reset(host, beat) {
   const cfg = host.BEATS[beat];
   host.cfg = cfg;
+  host.beat = beat;
+  if (host.state) host.state.beat = beat;
   const ci = installedChapter(host);
   host.chapter = ci;
   host.auto = freno(host);
